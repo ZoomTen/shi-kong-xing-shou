@@ -1,942 +1,859 @@
-text_08_46bf::
+text_08_4651::
 	text_init NAME_SNOWY, $08
-	text2 "Wang Wang~"
-	line "Wang~"
+	text2 "Woof! Woof!"
 	done
 
-text_08_46d3::
+text_08_465e::
 	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Small white~"
-	line "Good~ Are you"
-	line "hungry? Let's"
-	line "go to the"
-	para "observatory"
-	line "together, do"
-	line "you find Dad"
-	line "back to eat"
-	para "dinner?"
+	text2 "Aww, Snowy,"
+	line  "are you"
+	cont  "hungry?"
+	para  "Let's go to"
+	line  "the"
+	cont  "observatory"
+	cont  "together and"
+	cont  "call Dad for"
+	cont  "dinner, okay?"
 	done
 
-db 0 ; padding hack (auto translator error)
-
-text_08_4743::
+text_08_46a4::
 	text_init NAME_SNOWY, $08
-	text2 "Wang~ Wang"
-	line "Wang~"
+	text2 "Woof! Woof!"
 	done
 
-text_08_4757::
+text_08_46b1::
 	text_init NAME_BLANK, $1b
-	text2 "Sai Ja? I just"
-	line "talked to him."
-	line "However, after"
-	line "he saw the"
-	para "moon, he ran"
-	line "to the"
-	line "observatory."
+	text2 "Hmm, your"
+	line  "dad? I just"
+	cont  "had a chat"
+	cont  "with him."
+	para  "But as soon"
+	line  "as he saw the"
+	cont  "moon today,"
+	cont  "he"
+	cont  "immediately"
+	cont  "ran towards"
+	cont  "the"
+	cont  "observatory."
+	para  "I wonder"
+	line  "what's up"
+	cont  "with him?"
 	done
 
-text_08_47b3::
+text_08_46fe::
 	text_init NAME_BLANK, $13
-	text2 "⋯what? Go to"
-	line "your father to"
-	line "go home to"
-	line "have dinner."
-	para "It's a filial"
-	line "piety. After"
-	line "the mother is"
-	line "dying, it is"
-	para "stronger! Ah!!"
-	line "Refer to this"
-	line "thing~ It's"
-	line "really sorry."
+	text2 "...Huh? Is"
+	line  "that for your"
+	cont  "dad? How nice"
+	cont  "of you! Your"
+	cont  "mom would be"
+	cont  "proud!"
+	para  "Ah, sorry for"
+	line  "mentioning"
+	cont  "her! You're a"
+	cont  "strong kid!"
 	done
 
-db 0, 0
-
-text_08_4857::
+text_08_4768::
 	text_init NAME_BLANK, $20
-	text2 "It is you!"
-	line "Hahaha~"
-	line "Yesterday's"
-	line "exam, you have"
-	para "taken me! heh~"
-	line "Every ⋯ is ⋯ "
-	line "⋯ me me!"
+	text2 "Haha! Looks"
+	line  "like you lost"
+	cont  "to me in the"
+	cont  "exam!"
+	para  "I win again!"
+	para  "I always do!"
 	done
 
-ds 7, 0
-
-text_08_48b4::
+text_08_47af::
 	text_init NAME_BLANK, $1d
-	text2 "Teacher wants"
-	line "to teach"
-	line "people to make"
-	line "cookies. This"
-	para "time I have to"
-	line "eat light."
-	line "People will"
-	line "not do the"
-	para "strange"
-	line "biscuit again"
-	line "this time!"
+	text2 "The teacher"
+	line  "wants to"
+	cont  "teach people"
+	cont  "how to make"
+	cont  "cookies."
+	para  "I want to eat"
+	line  "all of them."
+	cont  "I won't make"
+	cont  "those weird"
+	cont  "cookies again"
+	cont  "this time!"
 	done
 
-text_08_493d::
+text_08_47fb::
 	text_init NAME_BLANK, $16
-	text2 "Oh, oh~ How do"
-	line "you look at"
-	line "the nearest"
-	line "moon? Is it a"
-	para "bit blue? It"
-	line "must be my"
-	line "eyes."
+	text2 "The moon"
+	line  "seems to have"
+	cont  "a blue tint"
+	cont  "today... Must"
+	cont  "be my"
+	cont  "imagination."
 	done
 
-text_08_4993::
+text_08_4837::
 	text_init NAME_BLANK, $19
-	text2 "News report"
-	line "said that"
-	line "there will be"
-	line "a large-scale"
-	para "meteor rain"
-	line "tomorrow"
-	line "night. I"
-	line "remember my"
-	para "young, I also"
-	line "predicted"
-	line "once. But the"
-	line "prediction"
-	para "error. Tell"
-	line "you! My"
-	line "mother-in-law"
-	line "is young~ It"
-	para "is famous in"
-	line "the village⋯"
-	line "Big ⋯"
-	line "⋯!"
+	text2 "The news has"
+	line  "reported that"
+	cont  "there will be"
+	cont  "a massive"
+	cont  "meteor shower"
+	cont  "tomorrow"
+	cont  "night."
+	para  "I remember"
+	line  "once when I"
+	cont  "was young,"
+	cont  "they forecast"
+	cont  "the same"
+	cont  "thing. But"
+	cont  "that time,"
+	cont  "the"
+	cont  "prediction"
+	cont  "was wrong."
+	para  "I'm telling"
+	line  "you! When my"
+	cont  "grandmother"
+	cont  "was young,"
+	cont  "she was a"
+	cont  "famous beauty"
+	cont  "in the"
+	cont  "village!"
 	done
 
-ds 10, 0
-
-text_08_4a7f::
+text_08_48d0::
 	text_init NAME_BLANK, $22
-	text2 "what!? Do you"
-	line "say that you"
-	line "suddenly want"
-	line "to play"
-	para "tennis? No~"
-	line "has a problem!"
-	line "Dad is going"
-	line "to buy a"
-	para "tennis court!"
+	text2 "What? Hayato"
+	line  "said he"
+	cont  "suddenly"
+	cont  "wanted to"
+	cont  "play"
+	para  "Tennis? No"
+	line  "problem! I'm"
+	cont  "going to buy"
+	cont  "a tennis"
+	cont  "court!"
 	done
 
-text_08_4af2::
+text_08_4911::
 	text_init NAME_12, $26
-	text2 "OH~ Baby~ I"
-	line "went to a"
-	line "friend today"
-	line "and saw a lot"
-	para "of"
-	line "inventories!"
-	line "He is a genius"
-	line "mechanical"
-	para "scientist."
-	line "Scientists who"
-	line "are more"
-	line "powerful than"
-	para "your father!"
+	text2 "Oh, baby~"
+	para  "I went to my"
+	line  "friend's"
+	cont  "house today."
+	cont  "I saw many"
+	cont  "inventions"
+	cont  "there!"
+	para  "He's such a"
+	line  "genius"
+	cont  "roboticist,"
+	cont  "looks like"
+	cont  "your dad can"
+	cont  "learn a thing"
+	cont  "or two from"
+	cont  "him~"
 	done
 
-text_08_4b8e::
+text_08_497a::
 	text_init NAME_BLANK, $1f
-	text2 "Ah!! ! How to"
-	line "bring the dog"
-	line "to someone"
-	line "else. I just"
-	para "changed the"
-	line "new carpet,"
-	line "this is"
-	line "blurred! It's"
-	para "really a"
-	line "child."
+	text2 "Ahhh!!! How"
+	line  "could you"
+	cont  "bring a dog"
+	cont  "into"
+	cont  "someone's"
+	cont  "house?! I"
+	cont  "just cleaned"
+	cont  "my carpet,"
+	cont  "and now it's"
+	cont  "dirty again!"
+	cont  "What an"
+	cont  "uneducated"
+	cont  "child."
 	done
 
-text_08_4c03::
+text_08_49cc::
 	text_init NAME_SNOWY, $08
-	text2 "Woo~ ~ Wang"
-	line "Wang!"
+	text2 "Awoo~ Woof!"
+	line  "Woof!"
 	done
 
-text_08_4c16::
+text_08_49db::
 	text_init NAME_BLANK, $15
-	text2 "Are you coming"
-	line "to find"
-	line "Fangfang?"
-	line "Fellow~"
-	para "Fellow~ ! I am"
-	line "coming to find"
-	line "you~ It's so"
-	line "late, is you"
-	para "staying with a"
-	line "good meal"
-	line "together?"
+	text2 "Did you come"
+	line  "to find"
+	cont  "Fangfang?"
+	para  "Oh, Fangfang!"
+	para  "Your friend"
+	line  "came to"
+	cont  "visit~"
+	para  "Since it's so"
+	line  "late, why not"
+	cont  "stay for"
+	cont  "dinner?"
 	done
 
-text_08_4c9d::
+text_08_4a2e::
 	text_init NAME_BLANK, $18
-	text2 "Saia is a"
-	line "great"
-	line "astronomical"
-	line "scientist. In"
-	para "our"
-	line "astronomical"
-	line "science, he is"
-	line "a genius! Just"
-	para "a little"
-	line "temper⋯"
+	text2 "Saya is a"
+	line  "great"
+	cont  "astronomer."
+	cont  "He's known as"
+	cont  "a prodigy in"
+	cont  "our little"
+	cont  "community!"
+	cont  "He's just a"
+	cont  "bit"
+	cont  "eccentric..."
+	done
+
+text_08_4a87::
+	text_init NAME_13, $1a
+	text2 "Are you here"
+	line  "to play with"
+	cont  "me? I'm so"
+	cont  "glad!"
+	done
+
+text_08_4aac::
+	text_init NAME_BLANK, $15
+	text2 "There will be"
+	line  "a massive"
+	cont  "meteor shower"
+	cont  "tomorrow"
+	cont  "night. I"
+	cont  "can't miss"
+	cont  "this rare"
+	cont  "spectacle!"
+	para  "By the way,"
+	line  "tomorrow"
+	cont  "night, we"
+	cont  "will go to"
+	cont  "your father's"
+	cont  "observatory"
+	cont  "to watch the"
+	cont  "meteor"
+	cont  "shower."
+	done
+
+text_08_4b14::
+	text_init NAME_14, $25
+	text2 "Are you hurt?"
+	para  "If you're"
+	line  "hurt, just go"
+	cont  "inside this"
+	cont  "alpha ray"
+	cont  "emitter and"
+	cont  "you'll"
+	cont  "recover in a"
+	cont  "second! If"
+	cont  "you are"
+	cont  "injured, come"
+	cont  "to Nicole!"
+	done
+
+text_08_4b77::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "The school's"
+	line  "door is"
+	cont  "closed..."
+	done
+
+text_08_4b8b::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Dad! Dinner"
+	line  "is ready!"
+	done
+
+text_08_4b9f::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Dad, time for"
+	line  "dinner!"
+	done
+
+text_08_4baf::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Daaaaaaad!"
+	done
+
+text_08_4bbb::
+	text_init NAME_11, $11
+	text2 "It's Ballot!"
+	para  "..."
+	done
+
+text_08_4bd2::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Dad..."
+	done
+
+text_08_4bdc::
+	text_init NAME_11, $11
+	text2 "Hush, don't"
+	line  "talk. Come"
+	cont  "here."
+	done
+
+text_08_4bf3::
+	text_init NAME_11, $11
+	text2 "I haven't"
+	line  "seen you this"
+	cont  "closely since"
+	cont  "Mom got sick."
+	done
+
+text_08_4c1d::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Dad... What's"
+	line  "wrong with"
+	cont  "you?"
+	done
+
+text_08_4c2e::
+	text_init NAME_11, $11
+	text2 "Don't talk"
+	line  "too much."
+	cont  "Look at"
+	cont  "tonight's"
+	cont  "starry sky."
+	done
+
+text_08_4c4c::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Dad, isn't"
+	line  "the moon"
+	cont  "supposed to"
+	cont  "be pale and"
+	cont  "yellow?"
+	para  "Why is it"
+	line  "looking a"
+	cont  "little blue"
+	cont  "tonight? It's"
+	cont  "a bit"
+	cont  "scary..."
+	done
+
+text_08_4c8c::
+	text_init NAME_11, $11
+	text2 "...It's"
+	line  "finally here?"
+	para  "It's a little"
+	line  "too early"
+	cont  "based on my"
+	cont  "ulations....."
+	done
+
+text_08_4cb5::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "Dad..."
+	done
+
+text_08_4cbd::
+	text_init NAME_11, $11
+	text2 "..."
+	done
+
+text_08_4cc6::
+	text_init NAME_BALLOT, $2d
+	text2 "Oh no! If I"
+	line  "don't hurry"
+	cont  "to school,"
+	cont  "I'll"
+	cont  "definitely be"
+	cont  "late."
+	done
+
+text_08_4cf4::
+	text_init NAME_11, $11
+	text2 "Are you"
+	line  "awake? It's"
+	cont  "time to go to"
+	cont  "school."
 	done
 
 text_08_4d0b::
-	text_init NAME_13, $1a
-	text2 "Are you coming"
-	line "to play with"
-	line "me? Ok~ High~"
-	line "Xing~"
+	text_init NAME_11, $11
+	text2 "Ballot! Wait!"
+	done
+
+text_08_4d1a::
+	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "...?"
+	para  "Dad, what's"
+	line  "the matter?"
+	done
+
+text_08_4d2d::
+	text_init NAME_11, $11
+	text2 "Let's finish"
+	line  "breakfast"
+	cont  "first."
 	done
 
 text_08_4d3e::
-	text_init NAME_BLANK, $15
-	text2 "There will be"
-	line "a large-scale"
-	line "meteor rain"
-	line "tomorrow"
-	para "night. I must"
-	line "not miss this"
-	line "kind of"
-	line "unknown! Yes~"
-	para "Tomorrow"
-	line "evening, we"
-	line "went to your"
-	line "dad's"
-	para "observatory to"
-	line "see the meteor"
-	line "shower."
-	done
-
-db 0 ; 's is 1 byte
-
-text_08_4df2::
-	text_init NAME_14, $25
-	text2 "Is it injured?"
-	line "If you are"
-	line "injured, just"
-	line "go in this"
-	para "α-ray radi, a"
-	line "bit~ Will"
-	line "restore! If"
-	line "you hurt, come"
-	para "to find Nick!"
-	done
-
-text_08_4e69::
 	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "The school's"
-	line "door is gone!"
+	text2 "I can't, dad."
+	line  "I'm already"
+	cont  "late!"
 	done
 
-db 0 ; 's is 1 byte
+text_08_4d56::
+	text_init NAME_11, $11
+	text2 "Ballot, about"
+	line  "that..."
+	done
 
-text_08_4e87::
+text_08_4d70::
 	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Dad~ Go home"
-	line "and eat!"
+	text2 "Huh?"
 	done
 
-text_08_4ea0::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Dad~ time to"
-	line "eat."
+text_08_4d77::
+	text_init NAME_11, $11
+	text2 "...Nevermind."
+	line  "Hurry along"
+	cont  "now."
 	done
 
-text_08_4eb5::
+text_08_4d8f::
 	text_init NAME_BALLOT, $2c
-	text2 "Dad~ !! !"
+	text2 "Dad, ever"
+	line  "since Mom"
+	cont  "left you"
+	cont  "never seem to"
+	cont  "be honest"
+	cont  "with me! I'm"
+	cont  "not a kid"
+	cont  "anymore Dad,"
+	cont  "I'm 12!"
 	done
 
-text_08_4ec2::
+text_08_4e04::
 	text_init NAME_11, $11
-	text2 "Is Balot!⋯"
-	done
-
-text_08_4ed0::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "dad⋯"
-	done
-
-text_08_4ed8::
-	text_init NAME_11, $11
-	text2 "Sh~ Don't talk~"
-	line "Come over~"
-	done
-
-text_08_4ef5::
-	text_init NAME_11, $11
-	text2 "Since your"
-	line "mother is"
-	line "dying, I have"
-	line "not seen you"
-	para "like this."
-	done
-
-text_08_4f33::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Dad⋯ What"
-	line "happened to"
-	line "you?"
-	done
-
-text_08_4f51::
-	text_init NAME_11, $11
-	text2 "Don't talk"
-	line "more. Look at"
-	line "the stars"
-	line "tonight."
-	done
-
-db 0 ; 't is 1 byte
-
-text_08_4f80::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Dad~ Is the"
-	line "color of the"
-	line "moonlight,"
-	line "isn't it a"
-	para "yellow? The"
-	line "moonlight"
-	line "tonight, the"
-	line "blue is a"
-	para "little"
-	line "terrible⋯"
-	done
-
-db 0 ; 't is 1 byte
-
-text_08_4ff0::
-	text_init NAME_11, $11
-	text2 "⋯ finally? The"
-	line "time seems too"
-	line "early⋯"
-	done
-
-text_08_5018::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "dad⋯"
-	done
-
-text_08_5020::
-	text_init NAME_11, $11
-	text2 "⋯."
-	done
-
-text_08_5026::
-	text_init NAME_BALLOT, $2d
-	text2 "Tell! If you"
-	line "don't hurry to"
-	line "school, you"
-	line "will"
-	para "definitely be"
-	line "late."
-	done
-
-db 0 ; 't is 1 byte
-
-text_08_506a::
-	text_init NAME_11, $11
-	text2 "have you woken"
-	line "up? I have"
-	line "learned."
-	done
-
-text_08_5090::
-	text_init NAME_11, $11
-	text2 "Wait~ Barot!"
-	done
-
-text_08_50a0::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "⋯? Dad, is"
-	line "there"
-	line "something?"
-	done
-
-text_08_50bf::
-	text_init NAME_11, $11
-	text2 "Eat the"
-	line "breakfast"
-	line "first."
-	done
-
-text_08_50db::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Can't. Going"
-	line "to school is"
-	line "coming late."
-	done
-
-db 0 ; 't is 1 byte
-
-text_08_5105::
-	text_init NAME_11, $11
-	text2 "⋯ Balot~ About"
-	line "that⋯"
-	done
-
-text_08_511d::
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "Ok?"
-	done
-
-text_08_5124::
-	text_init NAME_11, $11
-	text2 "⋯It's nothing."
-	line "Go to school."
-	done
-
-db 0 ; 's is 1 byte
-
-text_08_5144::
-	text_init NAME_BALLOT, $2c
-	text2 "This is the"
-	line "case! Since my"
-	line "mother passed"
-	line "away, Dad"
-	para "always can't"
-	line "be old P"
-	line "\"real,\", 1; #"
-	line "\"real\" is Wro"
-	para "said what I"
-	line "want to say!"
-	line "Barot is 12"
-	line "years old! Not"
-	para "a child! Dad⋯"
-	line "Dad⋯ big egg!!"
-	line "!"
-	done
-
-db 0 ; 't is 1 byte
-
-text_08_51ff::
-	text_init NAME_11, $11
-	text2 "⋯ go to"
-	line "school."
+	text2 "...Go."
 	done
 
 text_08_4e15::
 	text_init NAME_SNOWY, $08
+	text2 "Woof! Woof!"
 	done
 
-ds 21, 0
-
-text_08_522b::
+text_08_4e23::
 	text_init NAME_BLANK, $1b
-	text2 "News report"
-	line "said that"
-	line "there will be"
-	line "a large-scale"
-	para "meteor rain"
-	line "tonight."
-	line "Really"
-	line "expected!"
+	text2 "The news is"
+	line  "reporting"
+	cont  "that there"
+	cont  "will be a"
+	cont  "massive"
+	cont  "meteor shower"
+	cont  "tonight. I"
+	cont  "really look"
+	cont  "forward to"
+	cont  "it!"
 	done
 
 text_08_4e55::
 	text_init NAME_BLANK, $13
+	text2 "Every time"
+	line  "the meteor"
+	cont  "shower is"
+	cont  "mentioned,"
+	cont  "Saya looks"
+	cont  "troubled..."
+	para  "Ballot, do"
+	line  "you know why?"
 	done
 
 text_08_4eb0::
 	text_init NAME_BLANK, $22
+	text2 "Hi, Ballot!"
+	line  "Hayato's gone"
+	cont  "to school."
 	done
 
 text_08_4ecc::
 	text_init NAME_BLANK, $1f
+	text2 "You.... I"
+	line  "just"
+	cont  "re-washed my"
+	cont  "carpet, and"
+	cont  "you've"
+	cont  "dirtied it"
+	cont  "AGAIN!"
 	done
 
 text_08_4ef4::
 	text_init NAME_BLANK, $15
+	text2 "Are you here"
+	line  "to see"
+	cont  "Fangfang? She"
+	cont  "went to"
+	cont  "school~"
 	done
 
 text_08_4f1a::
 	text_init NAME_BLANK, $15
+	text2 "There will be"
+	line  "a massive"
+	cont  "meteor shower"
+	cont  "tonight. I"
+	cont  "can't miss"
+	cont  "this rare"
+	cont  "spectacle! By"
+	cont  "the way,"
+	cont  "tonight, we"
+	cont  "will go to"
+	cont  "your dad’s"
+	cont  "observatory"
+	cont  "to watch the"
+	cont  "meteor"
+	cont  "shower."
 	done
 
 text_08_4f82::
 	text_init NAME_BALLOT, PIC_BALLOT_0
+	text2 "You're almost"
+	line  "late for"
+	cont  "school! It's"
+	cont  "not the time"
+	cont  "to go"
+	cont  "wandering"
+	cont  "off."
 	done
 
 text_08_4fa8::
 	text_init NAME_15, $24
+	text2 "Good morning,"
+	line  "Ballot."
+	para  "Hurry up,"
+	line  "class is"
+	cont  "about to"
+	cont  "start!"
+	para  "Huh? Don't"
+	line  "you remember"
+	cont  "that your"
+	cont  "class is"
+	cont  "further down"
+	cont  "the hallway?"
 	done
 
 text_08_5001::
 	text_init NAME_16, $16
+	text2 "Ballot, good"
+	line  "morning. Why"
+	cont  "do you look"
+	cont  "glum when"
+	cont  "it's so early"
+	cont  "in the"
+	cont  "morning?"
 	done
 
 text_08_5039::
 	text_init NAME_BLANK, $1e
+	text2 "Today I’m"
+	line  "going to take"
+	cont  "Horticulture"
+	cont  "1. So I"
+	cont  "brought my"
+	cont  "pet mouse~"
+	cont  "Meet Jiji!"
 	done
 
 text_08_506b::
 	text_init NAME_BLANK, $21
+	text2 "My packed"
+	line  "lunch today"
+	cont  "is delicious."
+	cont  "You can't"
+	cont  "have it!"
 	done
 
 text_08_50a3::
 	text_init NAME_12, $26
+	text2 "Oh baby~"
+	para  "Hey Ballot,"
+	line  "you came at a"
+	cont  "great time!"
+	para  "Say hello to"
+	line  "my new"
+	cont  "friend,"
+	cont  "Takayasu"
+	cont  "Hayato Model"
+	cont  "001~."
 	done
 
 text_08_50e8::
 	text_init NAME_BALLOT, $2c
+	text2 "Yeah, that's"
+	line  "cool and all"
+	cont  "but I gotta"
+	cont  "get going"
+	cont  "now!"
 	done
 
-text_08_5105_old::
+text_08_5105::
 	text_init NAME_12, $26
+	text2 "Oh no~"
+	para  "Ballot, don't"
+	line  "be such a"
+	cont  "sour grape."
+	cont  "This is a"
+	cont  "robot that a"
+	cont  "genius"
+	cont  "roboticist"
+	cont  "friend of"
+	cont  "mine lent me."
+	cont  "He is very"
+	cont  "famous. Want"
+	cont  "to know who"
+	cont  "he is?"
 	done
 
 text_08_5188::
 	text_init NAME_BALLOT, $2c
+	text2 "I'm not"
+	line  "really"
+	cont  "interested."
 	done
 
 text_08_5195::
 	text_init NAME_12, $26
+	text2 "Oh baby~"
+	para  "It's rare for"
+	line  "you to show"
+	cont  "this much"
+	cont  "interest, and"
+	cont  "Hayato is"
+	cont  "really moved."
+	cont  "After school,"
+	cont  "Hayato will"
+	cont  "take you to"
+	cont  "find him."
 	done
 
 text_08_51e5::
 	text_init NAME_13, $1a
+	text2 "Ballot! Mr."
+	line  "Mo is here."
+	cont  "Go back to"
+	cont  "your seat."
+	cont  "Your seating"
+	cont  "position"
+	cont  "changed!"
+	cont  "You're now in"
+	cont  "the top right"
+	cont  "seat."
 	done
 
 text_08_522e::
 	text_init NAME_15, $24
+	text2 "Ballot! The"
+	line  "teacher is"
+	cont  "already here,"
+	cont  "where do you"
+	cont  "think you're"
+	cont  "going? Hurry"
+	cont  "up and sit"
+	cont  "down!"
 	done
 
 text_08_5267::
 	text_init NAME_13, $1a
+	text2 "Quickly"
+	line  "return to"
+	cont  "your seat."
+	cont  "You're"
+	cont  "sitting at"
+	cont  "the upper"
+	cont  "right."
 	done
 
 text_08_5291::
 	text_init NAME_12, $26
+	text2 "Oh baby~"
+	para  "It's time for"
+	line  "class and a"
+	cont  "good student"
+	cont  "like me will"
+	cont  "definitely"
+	cont  "pay attention"
+	cont  "to the"
+	cont  "lesson."
 	done
 
 text_08_52d0::
 	text_init NAME_BLANK, $1e
+	text2 "It's time"
+	line  "for..."
+	cont  "class..."
+	cont  "class."
+	cont  "ba-ba-llot..."
+	cont  "go... sit..."
+	cont  "sit... down."
 	done
 
 text_08_5306::
 	text_init NAME_15, $24
+	text2 "There will be"
+	line  "a spectacular"
+	cont  "meteor shower"
+	cont  "tonight. You"
+	cont  "all know"
+	cont  "that, right?"
+	cont  "I'm sure"
+	cont  "you're all"
+	cont  "looking"
+	cont  "forward to"
+	cont  "it!"
 	done
 
 text_08_5346::
 	text_init NAME_12, $26
-; # TEMP
-	text "O", 6
-	text "H"
-	text "~", 2
-	line
-	text "B", 6
-	text "A", 5
-	text "B", 6
-	text "Y"
-	text "~", 2
-	para
-	text "爸", 3
-	text "爸"
-	text "還", 2
-	text "特", 1
-	text "地", 0
-	text "買", 2
-	text "了", 1
-	line
-	text "，", 1
-	cont
-	text "超", 1
-	text "超"
-	text "豪", 4
-	text "華", 1
-	text "天", 0
-	text "文", 3
-	text "望", 4
-	line
-	text "遠", 4
-	text "鏡", 1
-	text "給", 2
-	text "隼", 4
-	text "人", 0
-	text "呢", 2
-	text "。", 1
+	text2 "OH~"
+	para  "BABY~"
+	para  "Dad bought a"
+	line  "super deluxe"
+	cont  "telescope for"
+	cont  "Hayato just"
+	cont  "for the"
+	cont  "occasion."
 	done
 
 text_08_5387::
 	text_init NAME_15, $24
-; # TEMP
-	text "很", 1
-	text "⋯", 2
-	text "很", 1
-	text "好", 2
-	text "⋯⋯"
-	para
-	text "誰", 4
-	text "知", 2
-	text "道", 1
-	text "這", 2
-	text "個"
-	text "流", 0
-	text "星"
-	line
-	text "雨", 0
-	text "的", 1
-	text "詳細"
-	text "資", 4
-	text "料", 3
-	text "?", 1
+	text2 "Very, very"
+	line  "good... Can"
+	cont  "anyone tell"
+	cont  "me more about"
+	cont  "this meteor"
+	cont  "shower?"
 	done
 
 text_08_53af::
 	text_init NAME_BALLOT, $00
-; # TEMP
-	text "弗", 4
-	text "烈", 0
-	text "茲", 4
-	text "星", 0
-	text "系", 4
-	text "流", 0
-	text "星"
-	line
-	text "雨", 0
-	text "，", 1
-	cont
-	text "離", 2
-	text "上"
-	text "次", 3
-	text "流", 0
-	text "星雨"
-	text "事", 2
-	line
-	text "件", 3
-	text "1", 1
-	text "20"
-	text "年", 3
-	text "。", 1
-	para
-	text "距", 4
-	text "地", 0
-	text "球", 2
-	text "1", 1
-	text "932"
-	line
-	text "光", 0
-	text "年", 3
-	text "。", 1
+	text2 "The meteor"
+	line  "shower"
+	cont  "originates in"
+	cont  "the Frigo"
+	cont  "Galaxy."
+	para  "It's been 120"
+	line  "years since"
+	cont  "the last"
+	cont  "meteor shower"
+	cont  "event took"
+	cont  "place, about"
+	cont  "1,932 light"
+	cont  "years from"
+	cont  "Earth."
 	done
 
 text_08_53ef::
 	text_init NAME_15, $24
-; # TEMP
-	text "完", 2
-	text "全", 0
-	text "正"
-	text "確", 1
-	text "!!"
-	para
-	text "為", 4
-	text "了", 1
-	text "獎", 4
-	text "勵"
-	text "大", 0
-	text "家", 3
-	text "，", 1
-	cont
-	text "今", 4
-	text "天", 0
-	text "就", 2
-	text "提", 1
-	text "早", 4
-	text "下", 2
-	text "課", 4
-	line
-	text "吧", 2
-	text "!", 1
-	para
-	text "巴", 0
-	text "洛", 4
-	text "特", 1
-	text "!"
-	para
-	text "老", 2
-	text "師"
-	text "待", 3
-	text "會", 2
-	text "會"
-	text "到", 1
-	text "你", 2
-	line
-	text "家", 3
-	text "。", 1
-	para
-	text "和", 3
-	text "你", 2
-	text "父", 4
-	text "親商"
-	text "量", 2
-	text "，", 1
-	cont
-	text "晚", 2
-	text "上"
-	text "借", 4
-	text "天", 0
-	text "文", 3
-	text "館", 4
-	text "看", 2
-	line
-	text "流", 0
-	text "星雨"
-	text "的", 1
-	text "事", 2
-	text "。", 1
-	para
-	text "待", 3
-	text "會", 2
-	text "見", 4
-	text "了", 1
-	text "。"
+	text2 "Bravo, bravo!"
+	para  "As a reward,"
+	line  "I'll dismiss"
+	cont  "you early"
+	cont  "today!"
+	para  "Ballot! I'll"
+	line  "visit your"
+	cont  "house later"
+	cont  "to ask your"
+	cont  "father about"
+	cont  "watching the"
+	cont  "meteor shower"
+	cont  "at the"
+	cont  "planetarium"
+	cont  "tonight. I'll"
+	cont  "see you"
+	cont  "later."
 	done
 
 text_08_5468::
 	text_init NAME_11, $11
-; # TEMP
-	text "不", 0
-	text "行", 3
-	text "~", 2
-	text "!", 1
-	para
-	text "絕", 2
-	text "對"
-	text "不", 0
-	text "行", 3
-	text "。", 1
+	text2 "No! Certainly"
+	line  "not."
 	done
 
 text_08_547e::
 	text_init NAME_15, $24
-; # TEMP
-	text "我", 2
-	text "不", 0
-	text "曉", 4
-	text "得", 2
-	text "什", 3
-	text "麼", 2
-	text "事"
-	line
-	text "，", 1
-	cont
-	text "讓", 4
-	text "先", 0
-	text "生", 1
-	text "這", 2
-	text "麼"
-	text "生", 1
-	text "氣", 0
-	line
-	text "!", 1
-	para
-	text "但", 4
-	text "出", 2
-	text "借", 4
-	text "天", 0
-	text "文", 3
-	text "館", 4
-	text "，", 1
-	cont
-	text "讓", 4
-	text "小", 0
-	text "朋", 4
-	text "友觀賞"
-	text "流", 0
-	line
-	text "星", 0
-	text "雨"
-	text "，", 1
-	cont
-	text "不", 0
-	text "是", 1
-	text "件", 3
-	text "壞", 4
-	text "事", 2
-	text "吧"
-	text "!", 1
+	text2 "I don't know"
+	line  "why you're"
+	cont  "making such a"
+	cont  "fuss about"
+	cont  "it!"
+	para  "Just let the"
+	line  "kids watch"
+	cont  "the meteor"
+	cont  "shower, what"
+	cont  "could go"
+	cont  "wrong?"
 	done
 
 text_08_54d2::
 	text_init NAME_11, $11
-; # TEMP
-	text "不", 0
-	text "行", 3
-	text "~", 2
-	para
-	text "就", 2
-	text "是", 1
-	text "今", 4
-	text "晚", 2
-	text "不", 0
-	text "行", 3
-	text "!", 1
+	text2 "No, I can't."
+	line  "Especially"
+	cont  "not tonight,"
+	cont  "of all"
+	cont  "nights."
 	done
 
 text_08_54eb::
 	text_init NAME_15, $24
-; # TEMP
-	text "⋯", 2
-	text "⋯"
-	para
-	text "真", 1
-	text "是"
-	text "不", 0
-	text "可", 1
-	text "理", 2
-	text "諭", 4
-	text "!", 1
+	text2 "...You're not"
+	line  "making any"
+	cont  "sense!"
 	done
 
 text_08_5500::
 	text_init NAME_BALLOT, $00
-; # TEMP
-	text "爸", 3
-	text "⋯", 2
-	text "你怎麼"
-	text "了", 1
-	text "!"
+	text2 "Dad...what's"
+	line  "wrong with"
+	cont  "you?!"
 	done
 
 text_08_550e::
 	text_init NAME_11, $11
-; # TEMP
-	text "巴", 0
-	text "洛", 4
-	text "特", 1
-	text "!!"
-	line
-	text "你", 2
-	text "千", 3
-	text "萬", 1
-	text "要記"
-	text "住", 4
-	text "!", 1
-	para
-	text "今", 4
-	text "天", 0
-	text "晚", 2
-	text "上"
-	text "!", 1
-	line
-	text "就", 2
-	text "是", 1
-	text "今", 4
-	text "天", 0
-	text "晚", 2
-	text "上"
-	text "!", 1
-	para
-	text "無", 0
-	text "論", 4
-	text "如"
-	text "何", 2
-	text "~"
-	cont
-	text "你", 2
-	text "都", 3
-	text "要", 1
-	text "待", 3
-	text "在家裡"
-	line
-	text "。", 1
-	para
-	text "無", 0
-	text "論", 4
-	text "聽"
-	text "到", 1
-	text "什", 3
-	text "麼", 2
-	text "聲", 4
-	line
-	text "音", 0
-	text "，", 1
-	cont
-	text "都", 3
-	text "不", 0
-	text "要", 1
-	text "出", 2
-	text "來"
-	text "。", 1
-	para
-	text "知", 2
-	text "道", 1
-	text "嗎?"
+	text2 "Ballot! You"
+	line  "must"
+	cont  "remember!"
+	para  "Tonight, and"
+	line  "only tonight!"
+	para  "No matter"
+	line  "what, you"
+	cont  "must stay"
+	cont  "home. No"
+	cont  "matter what"
+	cont  "you hear,"
+	cont  "don't come"
+	cont  "out. Do you"
+	cont  "understand?"
 	done
 
 text_08_557d::
 	text_init NAME_BALLOT, $00
-; # TEMP
-	text "怎", 2
-	text "麼"
-	text "回", 1
-	text "事", 2
-	text "?", 1
+	text2 "What's going"
+	line  "on?"
 	done
 
 text_08_558a::
 	text_init NAME_11, $11
-; # TEMP
-	text "⋯", 2
-	text "⋯⋯"
+	text2 "..."
 	done
 
 text_08_5592::
 	text_init NAME_15, $24
-; # TEMP
-	text "各", 5
-	text "位", 1
-	text "同", 0
-	text "學", 1
-	text "，"
-	line
-	text "下", 2
-	text "課", 4
-	text "了", 1
-	text "!"
+	text2 "Dear"
+	line  "Students."
+	cont  "Class is"
+	cont  "over!"
 	done
 
 text_08_55a7::
 	text_init NAME_BALLOT, $00
-; # TEMP
-	text "不", 0
-	text "行", 3
-	text "~", 2
-	line
-	text "要", 1
-	text "趕", 4
-	text "快"
-	text "去", 2
-	text "天", 0
-	text "文", 3
-	text "台"
-	para
-	text "找", 1
-	text "爸", 3
-	text "爸"
-	text "回", 1
-	text "家", 3
-	line
-	text "吃", 0
-	text "晚", 2
-	text "飯", 3
-	text "!", 1
+	text2 "I can't~ I"
+	line  "have to go to"
+	cont  "the"
+	cont  "observatory"
+	cont  "quickly, find"
+	cont  "my dad and"
+	cont  "get home for"
+	cont  "dinner!"
 	done
+

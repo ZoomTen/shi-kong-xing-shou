@@ -11,15 +11,15 @@ Script_008_4000::
 	scr_emote 0, EMOTE_HEART
 	scr_delay 3, 32
 	scr_face FACE_DOWN
-	scr_text text_08_4578
-	scr_text text_08_45a4
-	scr_text text_08_45be
+	scr_text text_08_456d
+	scr_text text_08_458a
+	scr_text text_08_45a5
 	scr_face FACE_LEFT
 	scr_move unk_00b_413c
 	scr_move unk_00b_413c
 	scr_face FACE_DOWN
 	scr_move unk_00b_4191
-	scr_text text_08_45ed
+	scr_text text_08_45cc
 	scr_delay 3, 7
 	scr_emote 0, EMOTE_EXCLAMATION
 	scr_delay 3, 32
@@ -29,11 +29,11 @@ Script_008_4000::
 	scr_move unk_00b_413c
 	scr_face FACE_DOWN
 	scr_move unk_00b_4191
-	scr_text text_08_4602
+	scr_text text_08_45db
 	scr_delay 3, 7
 	scr_emote 0, EMOTE_QUESTION
 	scr_delay 3, 32
-	scr_text text_08_461b
+	scr_text text_08_45f0
 	scr_move unk_00b_4191
 	scr_move unk_00b_4191
 	scr_move unk_00b_4191
@@ -43,9 +43,9 @@ Script_008_4000::
 	scr_setmap $01, $08 ; map switch
 ; outside
 	scr_face FACE_RIGHT
-	scr_text text_08_46bf
-	scr_text text_08_46d3
-	scr_text text_08_4743
+	scr_text text_08_4651
+	scr_text text_08_465e
+	scr_text text_08_46a4
 	scr_face FACE_LEFT
 	scr_1f $01 ; story flags?
 	scr_end
@@ -65,46 +65,46 @@ Script_008_408a:
 	scr_01 2, FACE_LEFT
 	scr_move unk_00b_4193
 	scr_move unk_00b_4193
-	scr_text text_08_4e87
+	scr_text text_08_4b8b
 	scr_delay 3, 7
 	scr_move unk_00b_4193
 	scr_move unk_00b_4193
 	scr_face FACE_LEFT
 	scr_move unk_00b_413c
-	scr_text text_08_4ea0
+	scr_text text_08_4b9f
 	scr_delay 3, 7
 	scr_emote 0, EMOTE_ANGER
 	scr_delay 3, 32
 	scr_move unk_00b_413c
 	scr_move unk_00b_413c
-	scr_text text_08_4eb5
+	scr_text text_08_4baf
 	scr_emote 2, EMOTE_EXCLAMATION
 	scr_delay 3, 32
 	scr_01 2, FACE_DOWN
-	scr_text text_08_4ec2
-	scr_text text_08_4ed0
-	scr_text text_08_4ed8
+	scr_text text_08_4bbb
+	scr_text text_08_4bd2
+	scr_text text_08_4bdc
 	scr_move unk_00b_413c
 	scr_move unk_00b_413c
 	scr_face FACE_UP
 	scr_06 2, $00
-	scr_text text_08_4ef5
-	scr_text text_08_4f33
-	scr_text text_08_4f51
+	scr_text text_08_4bf3
+	scr_text text_08_4c1d
+	scr_text text_08_4c2e
 	scr_face FACE_LEFT
 ; Cutscene
 	scr_01 2, FACE_LEFT
 	scr_setmap $2c, $00
 	scr_0d $454f
-	scr_text text_08_4f80
-	scr_text text_08_4ff0
-	scr_text text_08_5018
-	scr_text text_08_5020
+	scr_text text_08_4c4c
+	scr_text text_08_4c8c
+	scr_text text_08_4cb5
+	scr_text text_08_4cbd
 	scr_5e $00
 	scr_setmap $04, $02
 	scr_face FACE_DOWN
 	scr_01 2, FACE_UP
-	scr_text text_08_5026
+	scr_text text_08_4cc6
 	scr_setbit wdaa0, 0 ; set bit 0
 	scr_end
 
@@ -113,27 +113,31 @@ Script_008_408a:
 	scr_end
 
 unk_008_4117:
-	db $11, $05, $03, $00, $00, $00, $00, $00, $00
+	db $11
+	db $05, $03 ; coords
+	db $00, $00, $00, $00, $00, $00
 	dw Script_008_4123
 	db $88
 
 Script_008_4123:
-	scr_04 text_08_506a
+	scr_04 text_08_4cf4
 	scr_end
 
 unk_008_4127:
-	db $11, $05, $03, $00, $00, $00, $00, $00, $00
+	db $11
+	db $05, $03
+	db $00, $00, $00, $00, $00, $00
 	dw Script_008_4133
 	db $88
 
 Script_008_4133:
-	scr_04 text_08_51ff
+	scr_04 text_08_4e04
 	scr_end
 
 Script_008_4137:
 	scr_checkbit wdaa0, 0, .script_414d
 ; No entry
-	scr_text text_08_4e69
+	scr_text text_08_4b77
 	scr_face FACE_DOWN
 	scr_move unk_00b_4191
 	scr_44
@@ -147,7 +151,7 @@ Script_008_4137:
 
 Script_008_4151:
 	scr_checkbit wdaa0, 1, .script_41a3
-	scr_text text_08_5090
+	scr_text text_08_4d0b
 	scr_face FACE_UP
 	scr_01 2, FACE_DOWN
 	scr_06 2, $01 ; TEMP
@@ -155,18 +159,18 @@ Script_008_4151:
 	scr_move unk_00b_4193
 	scr_emote 0, EMOTE_QUESTION
 	scr_delay 3, 32
-	scr_text text_08_50a0
-	scr_text text_08_50bf
-	scr_text text_08_50db
+	scr_text text_08_4d1a
+	scr_text text_08_4d2d
+	scr_text text_08_4d3e
 	scr_emote 2, EMOTE_EXCLAMATION
 	scr_delay 3, 32
-	scr_text text_08_5105
-	scr_text text_08_511d
+	scr_text text_08_4d56
+	scr_text text_08_4d70
 	scr_delay 3, 7
-	scr_text text_08_5124
+	scr_text text_08_4d77
 	scr_emote 0, EMOTE_ANGER
 	scr_delay 3, 32
-	scr_text text_08_5144
+	scr_text text_08_4d8f
 	scr_face FACE_DOWN
 	scr_move unk_00b_4191
 	scr_move unk_00b_4191
@@ -282,20 +286,23 @@ Script_008_4295:
 	scr_end
 
 Script_008_429e:
-	dr $2029e, $202ed
+	dr $2029e, $202a2
+
+Script_008_42a2:
+	dr $202a2, $202ed
 
 Script_008_42ed:
 	scr_checkbit wdaa0, 1, .script_42f7
-	scr_04 text_08_4757
+	scr_04 text_08_46b1
 	scr_end
 
 .script_42f7
-	scr_04 text_08_522b
+	scr_04 text_08_4e23
 	scr_end
 
 Script_008_42fb:
 	scr_checkbit wdaa0, 1, .script_4305
-	scr_04 text_08_47b3
+	scr_04 text_08_46fe
 	scr_end
 
 .script_4305
@@ -303,30 +310,31 @@ Script_008_42fb:
 	scr_end
 
 Script_008_4309:
-	scr_04 text_08_4857
+	scr_04 text_08_4768
 	scr_end
 
 Script_008_430d:
-	scr_04 text_08_48b4
+	scr_04 text_08_47af
 	scr_end
 
 Script_008_4311:
-	scr_04 text_08_493d
+	scr_04 text_08_47fb
 	scr_end
 
 Script_008_4315:
-	scr_04 text_08_4993
+	scr_04 text_08_4837
 	scr_end
 
 Script_008_4319:
-	dr $20319, $2031d
+	scr_04 text_08_4e15
+	scr_end
 
 Script_008_431d:
 	dr $2031d, $20334
 
 Script_008_4334:
 	scr_checkbit wdaa0, 1, .script_433e
-	scr_04 text_08_4a7f
+	scr_04 text_08_48d0
 	scr_end
 
 .script_433e
@@ -334,7 +342,7 @@ Script_008_4334:
 	scr_end
 
 Script_008_4342:
-	scr_04 text_08_4af2
+	scr_04 text_08_4911
 	scr_end
 
 unk_008_4346:
@@ -342,8 +350,8 @@ unk_008_4346:
 
 Script_008_435d:
 	scr_checkbit wdaa0, 1, .script_436a
-	scr_04 text_08_4b8e
-	scr_text text_08_4c03
+	scr_04 text_08_497a
+	scr_text text_08_49cc
 	scr_end
 
 .script_436a
@@ -352,7 +360,7 @@ Script_008_435d:
 
 Script_008_436e:
 	scr_checkbit wdaa0, 1, .script_4378
-	scr_04 text_08_4d3e
+	scr_04 text_08_4aac
 	scr_end
 
 .script_4378
@@ -364,7 +372,7 @@ unk_008_437c:
 
 Script_008_439e:
 	scr_checkbit wdaa0, 1, .script_43a8
-	scr_04 text_08_4c16
+	scr_04 text_08_49db
 	scr_end
 
 .script_43a8
@@ -372,11 +380,11 @@ Script_008_439e:
 	scr_end
 
 Script_008_43ac:
-	scr_04 text_08_4c9d
+	scr_04 text_08_4a2e
 	scr_end
 
 Script_008_43b0:
-	scr_04 text_08_4d0b
+	scr_04 text_08_4a87
 	scr_end
 
 unk_008_43b4:
@@ -384,7 +392,7 @@ unk_008_43b4:
 
 Script_008_43c4:
 	scr_face FACE_UP
-	scr_text text_08_4df2
+	scr_text text_08_4b14
 	scr_end
 
 unk_008_43ca:
@@ -475,8 +483,6 @@ text_08_4537:
 
 INCLUDE "data/english_text/ballots_house_intro.asm"
 INCLUDE "data/english_text/bank08_misc.asm"
-
-SECTION "MeteorCutscene", ROMX[$55d1], BANK[$08]
 
 MeteorCutscene_ApplyTextPals:
 	ld hl, MeteorCutscene_TextPalette
@@ -1223,49 +1229,45 @@ MeteorCutscene_TextPalette:
 INCBIN "gfx/cutscenes/cutscene_text.pal"
 
 MeteorCutscene_Text1_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_1.tilemap"
-
+    ; TODO
 MeteorCutscene_Text4_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_4.tilemap"
+    ; TODO
 
 MeteorCutscene_TextAttr:
 INCBIN "gfx/cutscenes/cutscene_text.attr"
 
 MeteorCutscene_TextGFX_1:
-INCBIN "gfx/cutscenes/meteor/text_gfx_1.2bpp"
-
+    ; TODO
 MeteorCutscene_TextGFX_2:
-INCBIN "gfx/cutscenes/meteor/text_gfx_2.2bpp"
-
+    ; TODO
 MeteorCutscene_TextGFX_3:
-INCBIN "gfx/cutscenes/meteor/text_gfx_3.2bpp"
+    ; TODO
 
 unk_008_6eae:
 INCBIN "data/unk_008_6eae.bin"
 
 MeteorCutscene_Text2_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_2.tilemap"
-
+    ; TODO
 MeteorCutscene_Text3_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_3.tilemap"
+    ; TODO
 
 unk_008_6f26:
 INCBIN "data/unk_008_6f26.bin"
 
 MeteorCutscene_Text5_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_5.tilemap"
+    ; TODO
 
 MeteorCutscene_Text6_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_6.tilemap"
+    ; TODO
 
 MeteorCutscene_Text7_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_7.tilemap"
+    ; TODO
 
 MeteorCutscene_Text8_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_8.tilemap"
+    ; TODO
 
 MeteorCutscene_Text9_Tilemap:
-INCBIN "gfx/cutscenes/meteor/text_9.tilemap"
+    ; TODO
 
 MeteorCutscene_StormTilemap_1:
 INCBIN "gfx/cutscenes/meteor/storm_bg_1.tilemap"

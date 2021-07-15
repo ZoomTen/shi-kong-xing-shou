@@ -11,20 +11,20 @@ House_CutsceneText2::
 	line "taste⋯"
 	done
 
-text_08_4578::
+text_08_456d::
 	text_init NAME_BALLOT, $2a
 	text2 "Success! This"
 	line "is the taste"
 	line "of my mother!"
 	done
 
-text_08_45a4::
+text_08_458a::
 	text_init NAME_BALLOT, $2b
 	text2 "Mom⋯ I really"
 	line "want to⋯"
 	done
 
-text_08_45be::
+text_08_45a5::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "No~ No! I"
 	line "promised my"
@@ -32,19 +32,19 @@ text_08_45be::
 	line "strong!"
 	done
 
-text_08_45ed::
+text_08_45cc::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "Dad~ time to"
 	line "eat!"
 	done
 
-text_08_4602::
+text_08_45db::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "Dad~ Eating~"
 	line "Meal~ !!"
 	done
 
-text_08_461b::
+text_08_45f0::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "Dad went to"
 	line "the"

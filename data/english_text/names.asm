@@ -4,14 +4,11 @@ BlankName::
 	line
 
 BallotName::
-	text2 "T M P"
+	text2 "B a l l o t"
 	line
 
 BuckName::
-	text "巴", 0
-	text " ", 0
-; # F0 xx F0 xx
-	text "克", 4
+	text2 "B u c k"
 	line
 
 NinaName::
@@ -95,9 +92,7 @@ text_0a_471b::
 	line
 
 text_0a_4720::
-	text "賽", 3
-	text " ", 0
-	text "亞", 3
+    text2 "S a y a"
 	line
 
 text_0a_4727::
@@ -137,9 +132,7 @@ text_0a_4749::
 	line
 
 text_0a_4750::
-	text "系", 4
-	text " ", 0
-	text "統", 5
+	text2 "      "
 	line
 
 text_0a_4757::
