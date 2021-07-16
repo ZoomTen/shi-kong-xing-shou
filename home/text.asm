@@ -299,7 +299,7 @@ ENDR
 	nop
 	ld [wCharacterTilePos], a
 	; 14 characters max per line
-	cp 8 * 14
+	cp $38
 	ret c
 
 	xor a
