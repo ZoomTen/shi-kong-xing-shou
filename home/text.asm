@@ -90,15 +90,32 @@ CheckCharacter_Continue::
 	jr z, .delay_text
 
 ; short delay
-	ld a, 1
-	ld [wTextDelayFrames], a
+	; ld a, 1
+	nop
+	nop
+	; ld [wTextDelayFrames], a
+	nop
+	nop
+	nop
 
 .delay_text
-	call DelayFrame
-	ld a, [wTextDelayFrames]
-	dec a
-	ld [wTextDelayFrames], a
-	jr nz, .check_delay
+    ; call DelayFrame
+	nop
+	nop
+	nop
+	; ld a, [wTextDelayFrames]
+	nop
+	nop
+	nop
+	; dec a
+	nop
+	; ld [wTextDelayFrames], a
+	nop
+	nop
+	nop
+	; jr nz, .check_delay
+	nop
+	nop
 
 	call .Func_1a5f
 	ld a, 1
@@ -107,8 +124,13 @@ CheckCharacter_Continue::
 
 	ld hl, wCharacterTilemapPos
 	inc [hl]
-	ld a, 3
-	ld [wTextDelayFrames], a
+	; ld a, 1
+	nop
+	nop
+	; ld [wTextDelayFrames], a
+	nop
+	nop
+	nop
 	jp CheckCharacter
 
 .Func_1a5f:
@@ -266,7 +288,10 @@ ENDR
 	ld [wCharacterTileCount], a
 	ld a, 1
 	ld [wCharacterTileTransferStatus], a
-	call DelayFrame
+	; call DelayFrame
+	nop
+	nop
+	nop
 
 	ld a, [wCharacterTilePos]
 	; add 4
