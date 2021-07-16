@@ -1,5 +1,5 @@
 unk_03f_4000:
-	dr $fc000, $fe84c
+	dr $fc000, $fe850
 
 SECTION "EnglishCharacterSet", ROMX[$6930], BANK[$3f]
 English_Character_Set::

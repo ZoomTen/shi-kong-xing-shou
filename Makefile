@@ -67,6 +67,7 @@ $(ROM): $(OBJS)
 ### Misc file-specific graphics rules
 
 gfx/character_set/image_%.1bpp: tools/gfx += --interleave --png=$<
+gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/character_set/english.1bpp: tools/gfx += --png=$<
 
 ### Translation tool
