@@ -96,9 +96,7 @@ text_0a_4720::
 	line
 
 text_0a_4727::
-	text "伊", 3
-	text "隼", 4
-	text "人", 0
+	text2 "H a y a t o"
 	line
 
 text_0a_472e::
@@ -114,9 +112,7 @@ text_0a_4735::
 	line
 
 text_0a_473c::
-	text "莫", 4
-	text "老", 2
-	text "師"
+	text2 "M r .   M o"
 	line
 
 text_0a_4742::
