@@ -8,3 +8,4 @@ SECTION "Home", ROM0
 
 INCLUDE "home/bank0.asm"
 INCLUDE "home/debug.asm"
+INCLUDE "home/text_en.asm"

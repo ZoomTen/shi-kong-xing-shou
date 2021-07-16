@@ -37,6 +37,15 @@ coord: MACRO
 	endc
 ENDM
 
+ramcoord: MACRO
+; x, y[, origin]
+	if _NARG < 4
+	dw (\2) * SCREEN_WIDTH + (\1) + wTilemap
+	else
+	dw (\2) * SCREEN_WIDTH + (\1) + \3
+	endc
+ENDM
+
 hlbgcoord EQUS "bgcoord hl,"
 bcbgcoord EQUS "bgcoord bc,"
 debgcoord EQUS "bgcoord de,"

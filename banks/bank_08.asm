@@ -521,6 +521,16 @@ MeteorCutscene_ClearSpriteBuffer:
 	jr nz, .clear
 	ret
 
+MeteorCutscene_BlankOutScreen:
+	hlbgcoord 0, 0
+	ld de, MeteorCutscene_BlankTilemap ; hack
+	lb bc, $14, $12
+	ld a, $12
+	ldh [hFF93], a
+	ld a, $14
+	ldh [hFF92], a
+	jp PlaceTilemap_Bank0
+
 MeteorCutscene::
 	ld a, BGM_69
 	call PlaySound
@@ -535,14 +545,13 @@ MeteorCutscene::
 	ld [wdcf4], a
 	ld [wdcf5], a
 
-	hlbgcoord 0, 0
-	ld de, MeteorCutscene_Text1_Tilemap
-	lb bc, $14, $12
-	ld a, $12
-	ldh [hFF93], a
-	ld a, $14
-	ldh [hFF92], a
-	call PlaceTilemap_Bank0
+; load in font
+	ld hl, MeteorCutscene_FontGFX
+	ld de, vTiles2
+	ld bc, $520
+	call CopyBytesVRAM
+
+	call MeteorCutscene_BlankOutScreen
 
 	hlbgcoord 0, 0
 	ld de, MeteorCutscene_TextAttr
@@ -557,11 +566,9 @@ MeteorCutscene::
 	ld de, wcab0
 	ld bc, $40
 	call CopyBytes3
-
-	ld hl, MeteorCutscene_TextGFX_1
-	ld de, vTiles2
-	ld bc, $520
-	call CopyBytesVRAM
+	
+	ld hl, MeteorCutscene_Text1
+	call MeteorCutscene_PrintString
 
 	call MeteorCutscene_ClearSpriteBuffer
 	call MeteorCutscene_HideAllSprites
@@ -1038,15 +1045,13 @@ MeteorCutscene_DoFadeFromMeteors:
 	ld [wdcf3], a
 	ld [wdcf4], a
 
-	hlbgcoord 0, 0
-	ld de, MeteorCutscene_Text4_Tilemap
-	lb bc, $14, $12
-	ld a, $12
-	ldh [hFF93], a
-	ld a, $14
-	ldh [hFF92], a
-	call PlaceTilemap_Bank0
-
+	call MeteorCutscene_BlankOutScreen
+	
+	ld hl, MeteorCutscene_FontGFX
+	ld de, vTiles2
+	ld bc, $520
+	call CopyBytesVRAM
+	
 	hlbgcoord 0, 0
 	ld de, MeteorCutscene_TextAttr
 	lb bc, $14, $12
@@ -1060,16 +1065,9 @@ MeteorCutscene_DoFadeFromMeteors:
 	ld de, wcab0
 	ld bc, $40
 	call CopyBytes3
-
-	ld hl, MeteorCutscene_TextGFX_2
-	ld de, vTiles2
-	ld bc, $800
-	call CopyBytesVRAM
-
-	ld hl, MeteorCutscene_TextGFX_3
-	ld de, vTiles1
-	ld bc, $210
-	call CopyBytesVRAM
+	
+	ld hl, MeteorCutscene_Text4
+	call MeteorCutscene_PrintString
 
 	call MeteorCutscene_ClearSpriteBuffer
 	call MeteorCutscene_HideAllSprites
@@ -1093,6 +1091,7 @@ MeteorCutscene_WaitAndBlackOut:
 	xor a
 	ld [wdcf3], a
 	call MeteorCutscene_ApplyBlackPal
+	call MeteorCutscene_BlankOutScreen
 	ld a, 5
 	ld [wdcf5], a
 	ret
@@ -1111,7 +1110,7 @@ MeteorCutscene_WaitAndShowText:
 	ret
 
 MeteorCutscene_LoadTexts:
-	ld de, .Tilemaps
+	ld de, .Texts
 	ld a, [wdcf4]
 	ld l, a
 	ld h, 0
@@ -1120,15 +1119,7 @@ MeteorCutscene_LoadTexts:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	push hl
-	pop de
-	hlbgcoord 0, 8
-	lb bc, $14, 2
-	ld a, 2
-	ldh [hFF93], a
-	ld a, $14
-	ldh [hFF92], a
-	call PlaceTilemap_Bank0
+	call MeteorCutscene_PrintString
 	ld a, [wdcf4]
 	inc a
 	ld [wdcf4], a
@@ -1146,10 +1137,10 @@ MeteorCutscene_LoadTexts:
 	ld [wdcf5], a
 	ret
 
-.Tilemaps:	; texts 2 and 3
-	dw MeteorCutscene_Text2_Tilemap
-	dw MeteorCutscene_Text3_Tilemap
-	dw MeteorCutscene_Text3_Tilemap
+.Texts:	; texts 2 and 3
+	dw MeteorCutscene_Text2
+	dw MeteorCutscene_Text3
+	dw MeteorCutscene_Text3
 
 MeteorCutscene_WaitAndBlackOut2:
 	ld a, [wdcf3]
@@ -1160,6 +1151,7 @@ MeteorCutscene_WaitAndBlackOut2:
 	xor a
 	ld [wdcf3], a
 	call MeteorCutscene_ApplyBlackPal
+	call MeteorCutscene_BlankOutScreen
 	ld a, 7
 	ld [wdcf5], a
 	ret
@@ -1187,15 +1179,7 @@ MeteorCutscene_LoadTexts2:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	push hl
-	pop de
-	hlbgcoord 0, 8
-	lb bc, $14, 2
-	ld a, 2
-	ldh [hFF93], a
-	ld a, $14
-	ldh [hFF92], a
-	call PlaceTilemap_Bank0
+	call MeteorCutscene_PrintString
 	ld a, [wdcf4]
 	inc a
 	ld [wdcf4], a
@@ -1215,12 +1199,122 @@ MeteorCutscene_LoadTexts2:
 	ret
 
 .Tilemaps:	; texts 5 to 10
-	dw MeteorCutscene_Text5_Tilemap
-	dw MeteorCutscene_Text6_Tilemap
-	dw MeteorCutscene_Text7_Tilemap
-	dw MeteorCutscene_Text8_Tilemap
-	dw MeteorCutscene_Text9_Tilemap
-	dw MeteorCutscene_Text9_Tilemap
+	dw MeteorCutscene_Text5
+	dw MeteorCutscene_Text6
+	dw MeteorCutscene_Text7
+	dw MeteorCutscene_Text8
+	dw MeteorCutscene_Text9
+	dw MeteorCutscene_Text9
+
+MeteorCutscene_PrintString:
+; takes hl as argument
+    ; clear tilemap for use
+    push hl
+        ld hl, wTilemap
+        ld bc, wTilemapEnd - wTilemap
+        ld a, $85 ; blank space
+        call ByteFill
+    pop hl
+    
+    ; first, take the destination address
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
+    inc hl
+    
+    ; backup for later
+    ld a, e
+    ld [$ca88], a
+    ld a, d
+    ld [$ca89], a
+    
+    ; then process it in a loop similar to the text routine
+    ; supported commands: text2; line; done.
+    
+.read_character_loop
+	ld a, [hl]
+    cp $e0
+    jr nc, .commands
+    
+	ld [de], a
+	inc de
+	inc hl
+	
+    jr .read_character_loop
+
+.commands
+	push de
+		push hl
+			ld de, .cmd_word
+			sub $e0
+			ld l, a
+			ld h, 0
+			add hl, hl
+			add hl, de
+			ld a, [hli]
+			ld h, [hl]
+			ld l, a
+			jp hl
+.cmd_word
+	dw .skip	; e0
+	dw .skip	; e1
+	dw .done	; e2
+	dw .skip	; e3
+	dw .skip	; e4
+	dw .skip	; e5
+	dw .skip	; e6
+	dw .skip	; e7
+	dw .skip	; e8
+	dw .skip	; e9
+	dw .skip	; ea
+	dw .skip	; eb
+	dw .skip	; ec
+	dw .line	; ed
+	dw .skip	; ee
+	dw .skip	; ef
+
+.skip
+		pop hl
+	pop de
+	jp .read_character_loop
+
+.line
+		pop hl
+	pop de
+	
+	push hl
+		; restore backup
+		ld a, [$ca88]
+		ld e, a
+		ld a, [$ca89]
+		ld d, a
+    	
+		ld hl, SCREEN_WIDTH * 2
+		add hl, de
+		ld d, h
+		ld e, l
+		
+		; save again
+		ld a, e
+    	ld [$ca88], a
+    	ld a, d
+    	ld [$ca89], a
+	pop hl
+	
+	inc hl
+	jp .read_character_loop
+
+.done
+		pop hl
+	pop de
+	
+	; code to render goes here
+	; hack upon hack
+	; am I VF????
+	call CopyTilemapToVRAM
+	
+	ret
+    
 
 MeteorCutscene_BlackPalette:
 INCBIN "gfx/cutscenes/cutscene_black.pal"
@@ -1228,46 +1322,72 @@ INCBIN "gfx/cutscenes/cutscene_black.pal"
 MeteorCutscene_TextPalette:
 INCBIN "gfx/cutscenes/cutscene_text.pal"
 
-MeteorCutscene_Text1_Tilemap:
-    ; TODO
-MeteorCutscene_Text4_Tilemap:
-    ; TODO
+MeteorCutscene_Text1:
+    ramcoord $01, $08 ; string placement <X> <Y>
+    text2 "[I should've known.["
+    done
+
+MeteorCutscene_Text2:
+    ramcoord $01, $06
+    text2 "That was the last"
+    line  "thing I heard Dad"
+    line  "say,"
+    done
+
+MeteorCutscene_Text3:
+    ramcoord $01, $07
+    text2 "before he ran"
+    line  "off..."
+    done
+
+MeteorCutscene_Text4:
+    ramcoord $01, $08 ; string placement <X> <Y>
+    text2 "The next morning.."
+    done
+
+MeteorCutscene_Text5:
+    ramcoord $01, $07
+    text2 "Dad's observatory"
+    line  "was in ruins."
+    done
+
+MeteorCutscene_Text6:
+    ramcoord $01, $07
+    text2 "No one knew for"
+    line  "sure what had"
+    line  "happened,"
+    done
+
+MeteorCutscene_Text7:
+    ramcoord $01, $07
+    text2 "nor did they ever"
+    line  "see Dad again."
+    done
+
+MeteorCutscene_Text8:
+    ramcoord $01, $06
+    text2 "But I know, that"
+    line  "Dad must be"
+    line  "somewhere in the"
+    line  "world..."
+    done
+
+MeteorCutscene_Text9:
+    ramcoord $02, $08
+    text2 "I will find Dad!"
+    done
 
 MeteorCutscene_TextAttr:
 INCBIN "gfx/cutscenes/cutscene_text.attr"
 
-MeteorCutscene_TextGFX_1:
-    ; TODO
-MeteorCutscene_TextGFX_2:
-    ; TODO
-MeteorCutscene_TextGFX_3:
-    ; TODO
-
 unk_008_6eae:
 INCBIN "data/unk_008_6eae.bin"
-
-MeteorCutscene_Text2_Tilemap:
-    ; TODO
-MeteorCutscene_Text3_Tilemap:
-    ; TODO
 
 unk_008_6f26:
 INCBIN "data/unk_008_6f26.bin"
 
-MeteorCutscene_Text5_Tilemap:
-    ; TODO
-
-MeteorCutscene_Text6_Tilemap:
-    ; TODO
-
-MeteorCutscene_Text7_Tilemap:
-    ; TODO
-
-MeteorCutscene_Text8_Tilemap:
-    ; TODO
-
-MeteorCutscene_Text9_Tilemap:
-    ; TODO
+MeteorCutscene_BlankTilemap:
+INCBIN "gfx/cutscenes/all_black.tilemap"
 
 MeteorCutscene_StormTilemap_1:
 INCBIN "gfx/cutscenes/meteor/storm_bg_1.tilemap"
@@ -1286,6 +1406,9 @@ INCBIN "gfx/cutscenes/meteor/storm.2bpp"
 
 MeteorCutscene_MeteorGFX:
 INCBIN "gfx/cutscenes/meteor/meteor.2bpp"
+
+MeteorCutscene_FontGFX:
+INCBIN "gfx/cutscenes/inverted_font.2bpp"
 
 MeteorCutscene_StormTilemap_2:
 INCBIN "gfx/cutscenes/meteor/storm_bg_2.tilemap"
