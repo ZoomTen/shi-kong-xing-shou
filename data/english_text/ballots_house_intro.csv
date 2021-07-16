@@ -1,0 +1,44 @@
+bank,address,label,original_string,translated_string,notes
+08,4542,House_CutsceneText1,"// init NAME_BALLOT, PIC_BALLOT_0
+嗯~
+放入這個~","// init NAME_BALLOT, PIC_BALLOT_0
+Ah, time to add the finishing touches!",
+08,4552,House_CutsceneText2,"// init NAME_BALLOT, PIC_BALLOT_0
+再加調味料⋯⋯","// init NAME_BALLOT, PIC_BALLOT_0
+Add a bit of seasoning here...",
+08,456d,,"// init NAME_BALLOT, $2a
+成功了!
+這就是媽媽料理
+的味道!","// init NAME_BALLOT, $2a
+That's it!
+It tastes exactly like Mom's cooking!",
+08,458a,,"// init NAME_BALLOT, $2b
+媽媽⋯⋯⋯
+我好想妳⋯⋯
+⋯⋯⋯⋯","// init NAME_BALLOT, $2b
+I miss you, Mom...",
+08,45a5,,"// init NAME_BALLOT, PIC_BALLOT_0
+不行~不行!
+我答應過媽媽，
+要堅強的!","// init NAME_BALLOT, PIC_BALLOT_0
+...However, I promised you that I'd be strong!",
+08,45cc,,"// init NAME_BALLOT, PIC_BALLOT_0
+爸~吃飯了!","// init NAME_BALLOT, PIC_BALLOT_0
+Dad, time for dinner!",
+08,45db,,"// init NAME_BALLOT, PIC_BALLOT_0
+爸~
+吃~飯~了!!","// init NAME_BALLOT, PIC_BALLOT_0
+Daaad, time for dinner!",
+08,45f0,,"// init NAME_BALLOT, PIC_BALLOT_0
+爸又到天文台了
+嗎?
+這陣子常整晚都
+待在天文台裡。
+真是反常⋯⋯
+找爸回來吃飯吧
+!
+不然辛苦做的飯
+菜都冷了。","// init NAME_BALLOT, PIC_BALLOT_0
+Huh, is Dad at the observatory again?
+He's been there all night, that's weird...
+I'll get him to come back for dinner, otherwise the food I've worked hard on gets cold.",

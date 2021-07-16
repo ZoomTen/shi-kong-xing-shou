@@ -69,6 +69,10 @@ $(ROM): $(OBJS)
 gfx/character_set/image_%.1bpp: tools/gfx += --interleave --png=$<
 gfx/character_set/english.1bpp: tools/gfx += --png=$<
 
+### Translation tool
+
+data/english_text/%.asm: data/english_text/%.csv
+	$(PYTHON) tools/csv2asm.py $^ > $@
 
 ### Catch-all graphics rules
 

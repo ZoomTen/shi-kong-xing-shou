@@ -140,7 +140,9 @@ He's such a genius roboticist, looks like your dad can learn a thing or two from
 這下又弄髒了!
 真是沒教養的小
 孩。","// init NAME_BLANK, $1f
-Ahhh!!! How could you bring a dog into someone's house?! I just cleaned my carpet, and now it's dirty again! What an uneducated child.
+Ahhh!!!
+How could you bring a dog into someone's house?!
+I just cleaned my carpet, and now it's dirty again! You uneducated child!
 ","換了新地毯 means ""changed to a new carpet"" but is usually also said to denote having switched it out (for a carpet in the wash)",
 08,49cc,,"// init NAME_SNOWY, $08
 嗚~~汪汪汪!","// init NAME_SNOWY, $08
@@ -167,7 +169,8 @@ Since it's so late, why not stay for dinner?",,
 !
 只是脾氣古怪了
 一點⋯⋯","// init NAME_BLANK, $18
-Saya is a great astronomer. He's known as a prodigy in our little community! He's just a bit eccentric...
+Saya is a great astronomer.
+He's known as a prodigy in our little community! He's just a bit eccentric...
 ",,
 08,4a87,,"// init NAME_13, $1a
 你是來找我一起
@@ -189,7 +192,7 @@ Are you here to play with me? I'm so glad!
 There will be a massive meteor shower tomorrow night. I can't miss this rare spectacle!
 
 By the way, tomorrow night, we will go to your father's observatory to watch the meteor shower.
-",direct deepl translation for now,good enough
+",,
 08,4b14,,"// init NAME_14, $25
 受傷了嗎?
 如果受傷的話，
@@ -201,7 +204,7 @@ By the way, tomorrow night, we will go to your father's observatory to watch the
 就來找妮可吧!","// init NAME_14, $25
 Are you hurt?
 
-If you're hurt, just go inside this alpha ray emitter and you'll recover in a second! If you are injured, come to Nicole!",direct deepl translation for now,good enough
+If you're hurt, just go inside this alpha ray emitter and you'll recover in a second! If you are injured, come to Nicole!",,
 08,4b77,,"// init NAME_BALLOT, PIC_BALLOT_0
 學校的門關起來
 了!","// init NAME_BALLOT, PIC_BALLOT_0
@@ -262,7 +265,7 @@ Why is it looking a little blue tonight? It's a bit scary...",,
 一點⋯⋯","// init NAME_11, $11
 ...It's finally here?
 
-It's a little too early based on my calculations.....",,
+It's a little too early based on my calculations.",,
 08,4cb5,,"// init NAME_BALLOT, PIC_BALLOT_0
 爸⋯","// init NAME_BALLOT, PIC_BALLOT_0
 Dad...",,
@@ -319,7 +322,9 @@ Huh?",,
 不是小孩子了!
 爸⋯爸爸⋯⋯
 大举蛋!!!","// init NAME_BALLOT, $2c
-Dad, ever since Mom left you never seem to be honest with me! I'm not a kid anymore Dad, I'm 12!",machine translation assisted,
+Dad, ever since Mom left you never seem to be honest with me!
+
+I'm not a kid anymore Dad, I'm 12!",,
 08,4e04,,"// init NAME_11, $11
 ⋯⋯
 上學去吧。","// init NAME_11, $11
@@ -354,7 +359,8 @@ Hi, Ballot! Hayato's gone to school.",,
 才剛換了新地毯
 ，
 這下又弄髒了!","// init NAME_BLANK, $1f
-You.... I just re-washed my carpet, and you've dirtied it AGAIN!",,
+You...
+I just re-washed my carpet, and you've dirtied it AGAIN!",,
 08,4ef4,,"// init NAME_BLANK, $15
 你是來找芳芳的
 嗎?
@@ -372,13 +378,16 @@ Are you here to see Fangfang? She went to school~",,
 今天晚上，
 我們去你爸的天
 文台看流星雨。","// init NAME_BLANK, $15
-There will be a massive meteor shower tonight. I can't miss this rare spectacle! By the way, tonight, we will go to your dad’s observatory to watch the meteor shower. ",08:4aac but modified,
+There will be a massive meteor shower tomorrow night. I can't miss this rare spectacle!
+
+By the way, tomorrow night, we will go to your father's observatory to watch the meteor shower.
+",similar to 08:4aac,
 08,4f82,,"// init NAME_BALLOT, PIC_BALLOT_0
 上學快要遲到了
 ，
 不是到處溜噠的
 時間。","// init NAME_BALLOT, PIC_BALLOT_0
-You're almost late for school! It's not the time to go wandering off.",,
+I'm almost late for school! It's not the time to go wandering off.",,
 08,4fa8,,"// init NAME_15, $24
 早啊~巴洛特。
 快點進教窒，
@@ -392,19 +401,21 @@ Good morning, Ballot.
 
 Hurry up, class is about to start!
 
-Huh? Don't you remember that your class is further down the hallway?","machine translation assisted, original translates to ""it's the one above"" but it doesn't make sense if you were to actually say that in real life imo","note: 上面 literally means one above but in context it probably means ""next class over"""
+Huh? Don't you remember that your class is further down the hallway?","note: 上面 literally means one above but in context it probably means ""next class over""",
 08,5001,,"// init NAME_16, $16
 巴洛特，早安。
 怎麼一大早，
 就露出這種心情
 不好的表情呢?","// init NAME_16, $16
-Ballot, good morning. Why do you look glum when it's so early in the morning?",,
+Ballot, good morning.
+Why do you look glum when it's so early in the morning?",,
 08,5039,,"// init NAME_BLANK, $1e
 今天要上的是植
 物課。
 所以我帶了白老
 鼠~吉吉來唷!","// init NAME_BLANK, $1e
-Today I’m going to take Horticulture 1. So I brought my pet mouse~ Meet Jiji!",,
+Today I'm going to take Horticulture 1.
+So I brought my pet mouse! Meet Jiji!",,
 08,506b,,"// init NAME_BLANK, $21
 人家今天的便當
 ，
@@ -412,7 +423,8 @@ Today I’m going to take Horticulture 1. So I brought my pet mouse~ Meet Jiji!"
 。
 才‧不‧給‧你
 ‧吃!","// init NAME_BLANK, $21
-My packed lunch today is delicious. You can't have it!","""you can't have it"" is in a taunting, one word at a time, tone",
+My packed lunch today is delicious.
+You can't have it!","""you can't have it"" is in a taunting, one word at a time, tone",
 08,50a3,,"// init NAME_12, $26
 OH~
 BABY~
@@ -423,11 +435,11 @@ BABY~
 高貴隼人1號。","// init NAME_12, $26
 Oh baby~
 Hey Ballot, you came at a great time!
-Say hello to my new friend, Takayasu Hayato Model 001~.",Takayasu Hayato #1 is presumably the robot,
+Say hello to my new friend, Takayasu Hayato Model 001~",Takayasu Hayato #1 is presumably the robot,
 08,50e8,,"// init NAME_BALLOT, $2c
 很好~了不起!
 我要上課了。","// init NAME_BALLOT, $2c
-Yeah, that's cool and all but I gotta get going now!
+Yeah okay, that's cool and all but I gotta get going now!
 ",/s,
 08,5105,,"// init NAME_12, $26
 OH~NO~
@@ -445,10 +457,12 @@ OH~NO~
 想知道他是誰嗎
 ?","// init NAME_12, $26
 Oh no~
-Ballot, don't be such a sour grape. This is a robot that a genius roboticist friend of mine lent me. He is very famous. Want to know who he is?",,
+Ballot, don't be such a sour grape.
+This is a robot that a genius roboticist friend of mine lent me.
+He's very famous. Wanna know who he is?",,
 08,5188,,"// init NAME_BALLOT, $2c
 沒有興趣。","// init NAME_BALLOT, $2c
-I'm not really interested.",,
+Uhh, I'm not really interested.",,
 08,5195,,"// init NAME_12, $26
 OH~
 BABY~
@@ -459,7 +473,8 @@ BABY~
 隼人就帶你去找
 他。","// init NAME_12, $26
 Oh baby~
-It's rare for you to show this much interest, and Hayato is really moved. After school, Hayato will take you to find him. ","yes, he refers to himself in third person, (but i changed the ballot name to ""you"" to flow better)",
+It's rare for you to show this much interest, and Hayato is really moved.
+After school, Hayato will take you to find him. ","yes, he refers to himself in third person, (but i changed the ballot name to ""you"" to flow better)",
 08,51e5,,"// init NAME_13, $1a
 巴洛特!
 莫老師來了。
@@ -468,7 +483,8 @@ It's rare for you to show this much interest, and Hayato is really moved. After 
 動唷!
 就在最右上方的
 座位。","// init NAME_13, $1a
-Ballot! Mr. Mo is here. Go back to your seat. Your seating position changed! You're now in the top right seat.",,
+Ballot! Mr. Mo is here.
+Go back to your seat. Your seating position changed! You're now in the top right seat.",,
 08,522e,,"// init NAME_15, $24
 巴洛特!
 老師都已經來了
@@ -476,7 +492,8 @@ Ballot! Mr. Mo is here. Go back to your seat. Your seating position changed! You
 你要上哪兒去呢
 ?
 快回去坐好!","// init NAME_15, $24
-Ballot! The teacher is already here, where do you think you're going? Hurry up and sit down!",,
+Ballot!
+The teacher is already here, where do you think you're going? Hurry up and sit down!",,
 08,5267,,"// init NAME_13, $1a
 快回位置坐好。
 你的位置就在最
@@ -498,14 +515,17 @@ It's time for class and a good student like me will definitely pay attention to 
 巴‧巴巴洛特⋯
 快去⋯坐⋯
 坐⋯坐好。","// init NAME_BLANK, $1e
-It's time for... class... class. Ba-ba-ba-llot... go... sit... sit... down.","wow this is a pretty good machine translation, literally and figuratively",
+It's time for... class... class.
+Ba-ba-ba-llot... go... sit... sit... down.","wow this is a pretty good machine translation, literally and figuratively",
 08,5306,,"// init NAME_15, $24
 大家都知道吧?
 晚上會有一場很
 壯觀的流星雨。
 大家一定也很期
 待吧!","// init NAME_15, $24
-There will be a spectacular meteor shower tonight. You all know that, right? I'm sure you're all looking forward to it!",,
+Good morning, class!
+There will be a spectacular meteor shower tonight. You all know that, right?
+I'm sure you're all looking forward to it!",added greeting,
 08,5346,,"// init NAME_12, $26
 OH~
 BABY~
@@ -513,14 +533,14 @@ BABY~
 ，
 超超豪華天文望
 遠鏡給隼人呢。","// init NAME_12, $26
-OH~
-BABY~
+Oh baby~
 Dad bought a super deluxe telescope for Hayato just for the occasion.",,
 08,5387,,"// init NAME_15, $24
 很⋯很好⋯⋯
 誰知道這個流星
 雨的詳細資料?","// init NAME_15, $24
-Very, very good... Can anyone tell me more about this meteor shower?",,
+Yeah... Very, very good...
+Can anyone tell me more about this meteor shower?",mr. mo sweat emote,
 08,53af,,"// init NAME_BALLOT, $00
 弗烈茲星系流星
 雨，
@@ -530,7 +550,7 @@ Very, very good... Can anyone tell me more about this meteor shower?",,
 光年。","// init NAME_BALLOT, $00
 The meteor shower originates in the Frigo Galaxy.
 
-It's been 120 years since the last meteor shower event took place, about 1,932 light years from Earth.","deepl said ""fritz galaxy"", google translate said ""frieze galaxy"", i say ""frigo galaxy""
+It's been 120 years since the last meteor shower event took place, about 1,932 light years from Earth.","deepl said ""fritz galaxy"", google translate said ""frieze galaxy"", i say ""frigo galaxy"" -WHY
 haven't found any other reference and it sounds close enough",
 08,53ef,,"// init NAME_15, $24
 完全正確!!
@@ -548,7 +568,7 @@ Bravo, bravo!
 
 As a reward, I'll dismiss you early today!
 
-Ballot! I'll visit your house later to ask your father about watching the meteor shower at the planetarium tonight. I'll see you later.",,
+Ballot! I'll visit your house later to ask your father about watching the meteor shower at the observatory tonight. I'll see you later.",,
 08,5468,,"// init NAME_11, $11
 不行~!
 絕對不行。","// init NAME_11, $11
@@ -575,7 +595,7 @@ No, I can't. Especially not tonight, of all nights.",,
 ...You're not making any sense!",,
 08,5500,,"// init NAME_BALLOT, $00
 爸⋯你怎麼了!","// init NAME_BALLOT, $00
-Dad...what's wrong with you?!",,
+Dad... what's wrong with you?",,
 08,550e,,"// init NAME_11, $11
 巴洛特!!
 你千萬要記住!
@@ -598,14 +618,14 @@ No matter what, you must stay home. No matter what you hear, don't come out. Do 
 What's going on?",,
 08,558a,,"// init NAME_11, $11
 ⋯⋯⋯","// init NAME_11, $11
-...",,
+...",directly precedes the meteor shower cutscene,
 08,5592,,"// init NAME_15, $24
 各位同學，
 下課了!","// init NAME_15, $24
-Dear Students. Class is over!",,
+Students, class dismissed!",,
 08,55a7,,"// init NAME_BALLOT, $00
 不行~
 要趕快去天文台
 找爸爸回家
 吃晚飯!","// init NAME_BALLOT, $00
-I can't~ I have to go to the observatory quickly, find my dad and get home for dinner!",,
+I can't! I have to go to the observatory quickly, find my dad and get home for dinner!",going out of town before finding dad,
