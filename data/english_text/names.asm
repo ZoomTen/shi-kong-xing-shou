@@ -12,43 +12,31 @@ BuckName::
 	line
 
 NinaName::
-	text "妮", 4
-	text " ", 0
-	text "娜", 5
+	text2 "N i n a"
 	line
 
 ClaudeName::
-	text "克", 4
-	text "勞", 6
-	text "德"
+	text2 "C l a u d e"
 	line
 
 HelenName::
-	text "海", 0
-	text " ", 0
-	text "藍", 3
+	text2 "H e l e n"
 	line
 
 LanteName::
-	text "藍", 3
-	text " ", 0
-	text "特", 1
+	text2 "L a n t e"
 	line
 
 RandtName::
-	text "雷", 0
-	text " ", 0
-	text "德", 6
+	text2 "R a n d t"
 	line
 
 MittName::
-	text "米", 8
-	text " ", 0
-	text "特", 1
+	text2 "M i t t"
 	line
 
 SnowyName::
-	text2 "T M P"
+	text2 "S n o w y"
 	line
 
 text_0a_46f6::
@@ -100,15 +88,11 @@ text_0a_4727::
 	line
 
 text_0a_472e::
-	text "芳", 4
-	text " ", 0
-	text "芳", 4
+	text2 "F a n g f a n g"
 	line
 
 text_0a_4735::
-	text "妮", 4
-	text " ", 0
-	text "可", 1
+	text2 "N i c o l e"
 	line
 
 text_0a_473c::
@@ -116,15 +100,11 @@ text_0a_473c::
 	line
 
 text_0a_4742::
-	text "校", 4
-	text " ", 0
-	text "長", 3
+	text2 "P r i n c i p a l"
 	line
 
 text_0a_4749::
-	text "怪", 1
-	text " ", 0
-	text "獸", 1
+	text2 "M o n s t e r"
 	line
 
 text_0a_4750::
@@ -174,9 +154,7 @@ text_0a_4781::
 	line
 
 text_0a_4788::
-	text "語", 5
-	text " ", 0
-	text "音"
+	text2 "C o m p u t e r"
 	line
 
 text_0a_478e::
