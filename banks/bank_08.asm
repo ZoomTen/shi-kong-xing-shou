@@ -424,7 +424,48 @@ Script_008_4462:
 	scr_end
 
 Script_008_4463:
-	dr $20463, $204d3
+	scr_checkbit wdaa0, 2, .script_44d3
+	scr_face FACE_UP
+	scr_04 text_08_50a3
+	scr_emote 0, EMOTE_ANGER
+	scr_delay 3, 32
+	scr_text text_08_50e8
+	scr_text text_08_5105
+	scr_text text_08_5188
+	scr_text text_08_5195
+	scr_01 $06, FACE_LEFT
+	scr_06 $06, $03
+	scr_06 $06, $03
+	scr_06 $06, $03
+	scr_06 $06, $03
+	scr_06 $06, $03
+	scr_06 $06, $03
+	scr_01 $06, FACE_UP
+	scr_06 $06, $02
+	scr_01 $06, FACE_LEFT
+	scr_06 $06, $03
+	scr_01 $06, FACE_DOWN
+	scr_01 $05, FACE_UP
+	scr_06 $05, $02
+	scr_01 $05, FACE_RIGHT
+	scr_text text_08_51e5
+	scr_01 $05, FACE_UP
+	scr_06 $05, $02
+	scr_06 $05, $02
+	scr_06 $05, $02
+	scr_01 $05, FACE_RIGHT
+	scr_06 $05, $04
+	scr_01 $05, FACE_UP
+	scr_01 $02, FACE_UP
+	scr_01 $04, FACE_UP
+	scr_setbit $daa0, 2
+	scr_1f $03
+	scr_end
+
+.script_44d3
+	scr_04 text_08_5291
+	scr_01 2, FACE_UP
+	scr_end
 
 Script_008_44d3:
 	scr_04 text_08_5291
