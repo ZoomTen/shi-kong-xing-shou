@@ -1127,7 +1127,7 @@ MeteorCutscene_WaitAndBlackOut:
 	ld a, [wdcf3]
 	inc a
 	ld [wdcf3], a
-	cp $60
+	cp $80
 	ret nz
 	xor a
 	ld [wdcf3], a
@@ -1141,7 +1141,7 @@ MeteorCutscene_WaitAndShowText:
 	ld a, [wdcf3]
 	inc a
 	ld [wdcf3], a
-	cp $20
+	cp $10
 	ret nz
 	xor a
 	ld [wdcf3], a
@@ -1187,7 +1187,7 @@ MeteorCutscene_WaitAndBlackOut2:
 	ld a, [wdcf3]
 	inc a
 	ld [wdcf3], a
-	cp $60
+	cp $80
 	ret nz
 	xor a
 	ld [wdcf3], a
@@ -1201,7 +1201,7 @@ MeteorCutscene_WaitAndShowText2:
 	ld a, [wdcf3]
 	inc a
 	ld [wdcf3], a
-	cp $20
+	cp $10
 	ret nz
 	xor a
 	ld [wdcf3], a
