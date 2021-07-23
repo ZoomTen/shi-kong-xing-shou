@@ -490,6 +490,8 @@ Func_1c2c::
 	ld [wCharacterTilemapPos], a
 	ld [wTextLine], a
 	ld [wCharacterTilePos], a
+	ld a, $3f               ; XXX offsets everything after this
+	ld [hTargetBank], a     ; XXX offsets everything after this
 	jp CheckCharacter
 
 Text_End::

@@ -57,7 +57,7 @@ Group00_Signposts:
 	dw text_0c_412a
 	dw text_0c_4133
 
-INCLUDE "data/text/signposts_1.asm"
+INCLUDE "data/english_text/signposts_1.asm"
 
 Group02_Signposts:
 	dw text_0c_4152
