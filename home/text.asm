@@ -1152,9 +1152,9 @@ Func_1fee::
 	ld [de], a
 	ret
 
-Func_2011::
-	ld de, .table_209e
-	ldh a, [hFF9A]
+LoadMapData::
+	ld de, .MapGroupPointers
+	ldh a, [hMapGroup]
 	ld l, a
 	ld c, a
 	ld b, 0
@@ -1171,7 +1171,7 @@ Func_2011::
 	ld a, [hli]
 	ld d, a
 
-	ldh a, [hFF9B]
+	ldh a, [hMapNumber]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -1190,7 +1190,7 @@ ENDR
 	ld a, [hli]
 	ld [wd0cb + 1], a
 	ld bc, $0c
-	ldh a, [hFF9C]
+	ldh a, [hWarpNumber]
 	and a
 	jr z, .asm_2052
 
@@ -1256,9 +1256,9 @@ ENDR
 	jr .asm_2086
 	ret ; ?
 
-.table_209e
-	dba unk_007_4000
-	dba unk_007_430f
+.MapGroupPointers:
+	dba Group00_Maps
+	dba Group01_Maps
 	dba unk_010_4000
 	dba unk_010_487b
 	dba unk_052_4000

@@ -64,6 +64,20 @@ $(ROM): $(OBJS)
 	$(LINK) -n $(SYM) -m $(MAP) -p 0 -o $@ $(OBJS)
 	$(FIX) -cv -t $(ROM_TITLE) -l 0x33 -k A7 -m 0x1b -r 2 -p 0 $@
 
+data/text/%.asm: data/text/%.txt
+	$(PYTHON) tools/tx_parse.py $< > $@
+
+### Generate maps
+
+data/maps/metatiles/%.bin: data/maps/metatiles/%.tmx
+	$(PYTHON) tools/tmx2data.py $< $@
+
+data/maps/blocks/%.bin: data/maps/blocks/%.tmx
+	$(PYTHON) tools/tmx2data.py $< $@
+
+data/maps/layouts/%.bin: data/maps/layouts/%.tmx
+	$(PYTHON) tools/tmx2data.py $< $@
+
 ### Misc file-specific graphics rules
 
 gfx/character_set/image_%.1bpp: tools/gfx += --interleave --png=$<
