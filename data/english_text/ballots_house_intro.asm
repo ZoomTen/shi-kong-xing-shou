@@ -30,10 +30,12 @@ text_08_458a::
 
 text_08_45a5::
 	text_init NAME_BALLOT, PIC_BALLOT_0
-	text2 "...However, I"
-	line  "promised you"
-	cont  "that I'd be"
-	cont  "strong!"
+	text2 "...No, I"
+	line  "can't think"
+	cont  "about that!"
+	para  "I promised"
+	line  "you that I'd"
+	cont  "be strong!"
 	done
 
 text_08_45cc::
@@ -61,9 +63,13 @@ text_08_45f0::
 	para  "I'll get him"
 	line  "to come back"
 	cont  "for dinner,"
-	cont  "otherwise the"
+	cont  "before the"
 	cont  "food I've"
-	cont  "worked hard"
-	cont  "on gets cold."
+	cont  "worked so"
+	cont  "hard on gets"
+	cont  "cold."
+	done
+
+text__::
 	done
 

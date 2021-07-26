@@ -86,6 +86,8 @@ gfx/character_set/english.1bpp: tools/gfx += --png=$<
 
 ### Translation tool
 
+include download_translations.make
+
 data/english_text/%.asm: data/english_text/%.csv
 	$(PYTHON) tools/csv2asm.py $^ > $@
 

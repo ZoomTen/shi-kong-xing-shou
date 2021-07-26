@@ -42,16 +42,18 @@ text_08_46b1::
 
 text_08_46fe::
 	text_init NAME_BLANK, $13
-	text2 "...Huh? Is"
-	line  "that for your"
-	cont  "dad? How nice"
-	cont  "of you! Your"
-	cont  "mom would be"
+	text2 "...Huh?"
+	para  "Is that for"
+	line  "your dad?"
+	para  "How nice of"
+	line  "you! Your mom"
+	cont  "would be"
 	cont  "proud!"
 	para  "Ah, sorry for"
 	line  "mentioning"
-	cont  "her! You're a"
-	cont  "strong kid!"
+	cont  "her! You're"
+	cont  "such a strong"
+	cont  "kid!"
 	done
 
 text_08_4768::
@@ -124,11 +126,10 @@ text_08_48d0::
 	line  "said he"
 	cont  "suddenly"
 	cont  "wanted to"
-	cont  "play"
-	para  "Tennis? No"
-	line  "problem! I'm"
-	cont  "going to buy"
-	cont  "a tennis"
+	cont  "play tennis?"
+	para  "No problem!"
+	para  "I'm going to"
+	line  "buy a tennis"
 	cont  "court!"
 	done
 
@@ -647,13 +648,11 @@ text_08_51e5::
 text_08_522e::
 	text_init NAME_15, $24
 	text2 "Ballot!"
-	para  "The teacher"
-	line  "is already"
-	cont  "here, where"
-	cont  "do you think"
-	cont  "you're going?"
-	cont  "Hurry up and"
-	cont  "sit down!"
+	para  "Where do you"
+	line  "think you're"
+	cont  "going? Hurry"
+	cont  "up and sit"
+	cont  "down!"
 	done
 
 text_08_5267::
@@ -716,17 +715,17 @@ text_08_5346::
 	cont  "telescope for"
 	cont  "Hayato just"
 	cont  "for the"
-	cont  "occasion."
+	cont  "occasion!"
 	done
 
 text_08_5387::
 	text_init NAME_15, $24
 	text2 "Yeah... Very,"
 	line  "very good..."
-	para  "Can anyone"
-	line  "tell me more"
-	cont  "about this"
-	cont  "meteor"
+	para  "Anyway, can"
+	line  "anyone tell"
+	cont  "me more about"
+	cont  "this meteor"
 	cont  "shower?"
 	done
 
@@ -753,7 +752,7 @@ text_08_53ef::
 	text2 "Bravo, bravo!"
 	para  "As a reward,"
 	line  "I'll dismiss"
-	cont  "you early"
+	cont  "you all early"
 	cont  "today!"
 	para  "Ballot! I'll"
 	line  "visit your"
