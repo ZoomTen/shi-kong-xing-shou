@@ -52,8 +52,8 @@ Script_008_4000::
 
 Func_008_4082:
 	xor a
-	ld [wd0fa], a
-	jp Func_023b
+	ld [wTargetMode], a
+	jp JumpToGameMode
 
 Script_008_4089:
 	scr_end
@@ -590,7 +590,7 @@ MeteorCutscene::
 	call PlaySound
 
 	xor a
-	ldh [hFFBF], a
+	ldh [hFade], a
 	ldh [hSCX], a
 	ldh [hFFAF], a
 	ldh [hSCY], a
@@ -639,7 +639,7 @@ MeteorCutscene::
 	ldh a, [hFF9D]
 	inc a
 	ldh [hFF9D], a
-	ldh a, [hFFBF]
+	ldh a, [hFade]
 	and a
 	jr nz, .done
 
@@ -666,11 +666,11 @@ MeteorCutscene::
 
 .done
 	xor a
-	ldh [hFFBF], a
-	ld [wd0fa], a
+	ldh [hFade], a
+	ld [wTargetMode], a
 	ld a, 4
 	ld [hFFBA], a
-	jp Func_0257
+	jp JumpToModeAndSetMapPredefs
 
 .Text2_WaitBlack:
 	call MeteorCutscene_WaitAndBlackOut
@@ -718,7 +718,7 @@ MeteorCutscene_DoFadeToMeteors:
 	ldh [hFFC4], a
 	call FadeOutPalette
 	xor a
-	ldh [hFFBF], a
+	ldh [hFade], a
 	ldh [hSCX], a
 	ldh [hFFAF], a
 	ldh [hSCY], a
@@ -1091,7 +1091,7 @@ MeteorCutscene_DoFadeFromMeteors:
 	ldh [hFFC4], a
 	call FadeOutPalette
 	xor a
-	ldh [hFFBF], a
+	ldh [hFade], a
 	ldh [hSCX], a
 	ldh [hFFAF], a
 	ldh [hSCY], a
@@ -1249,7 +1249,7 @@ MeteorCutscene_LoadTexts2:
 	ld [wdcf4], a
 	ld [wdcf5], a
 	ld a, 1
-	ld [hFFBF], a
+	ld [hFade], a
 	ret
 
 .Tilemaps:	; texts 5 to 10
