@@ -1,8 +1,6 @@
 
 text_0e_4abe::
-	text_init NAME_BALLOT, $00
-; # TEMP
-	text "爸", 3
+	repoint en_text_0e_4abe
 	text "爸"
 	text "一", 0
 	text "定", 1
@@ -36,7 +34,7 @@ text_0e_4abe::
 	done
 
 text_0e_4af9::
-	text_init NAME_BALLOT, $00
+	repoint en_text_0e_4af9
 ; # TEMP
 	text "爸", 3
 	text "爸"
@@ -72,7 +70,7 @@ text_0e_4af9::
 	done
 
 text_0e_4b34::
-	text_init NAME_BALLOT, $2d
+	repoint en_text_0e_4b34
 ; # TEMP
 	text "在", 3
 	text "抽", 4
@@ -89,7 +87,7 @@ text_0e_4b34::
 	done
 
 text_0e_4b4d::
-	text_init NAME_BALLOT, $00
+	repoint en_text_0e_4b4d
 ; # TEMP
 	text "日", 3
 	text "記", 1
@@ -158,7 +156,7 @@ text_0e_4b4d::
 	done
 
 text_0e_4bc0::
-	text_init NAME_BALLOT, $2d
+	repoint en_text_0e_4bc0
 ; # TEMP
 	text "日", 3
 	text "記", 1
@@ -196,7 +194,7 @@ text_0e_4bc0::
 	done
 
 text_0e_4bfb::
-	text_init NAME_BALLOT, $00
+	repoint en_text_0e_4bfb
 ; # TEMP
 	text "爸", 3
 	text "爸"
@@ -263,7 +261,7 @@ text_0e_4bfb::
 	done
 
 text_0e_4c6a::
-	text_init NAME_BALLOT, $2b
+	repoint en_text_0e_4c6a
 ; # TEMP
 	text "伊", 3
 	text "隼", 4
@@ -330,7 +328,7 @@ text_0e_4c6a::
 	done
 
 text_0e_4cdd::
-	text_init NAME_17, $09
+	repoint en_text_0e_4cdd
 ; # TEMP
 	text "嗚", 4
 	text "~", 2
@@ -341,7 +339,7 @@ text_0e_4cdd::
 	done
 
 text_0e_4cec::
-	text_init NAME_BALLOT, $2d
+	repoint en_text_0e_4cec
 ; # TEMP
 	text "不", 0
 	text "⋯", 2
@@ -353,7 +351,7 @@ text_0e_4cec::
 	done
 
 text_0e_4cfd::
-	text_init NAME_17, $09
+	repoint en_text_0e_4cfd
 ; # TEMP
 	text "嗚", 4
 	text "~", 2
@@ -366,7 +364,7 @@ text_0e_4cfd::
 	done
 
 text_0e_4d10::
-	text_init NAME_BALLOT, $2d
+	repoint en_text_0e_4d10
 ; # TEMP
 	text "小", 0
 	text "白", 2
@@ -398,7 +396,7 @@ text_0e_4d10::
 	done
 
 text_0e_4d42::
-	text_init NAME_SNOWY, $09
+	repoint en_text_0e_4d42
 ; # TEMP
 	text "嗚", 4
 	text "汪", 3
@@ -408,7 +406,7 @@ text_0e_4d42::
 	done
 
 text_0e_4d50::
-	text_init NAME_BALLOT, $00
+	repoint en_text_0e_4d50
 ; # TEMP
 	text "看", 2
 	text "來"
@@ -439,7 +437,7 @@ text_0e_4d50::
 	done
 
 text_0e_4d81::
-	text_init NAME_18, $2f
+	repoint en_text_0e_4d81
 ; # TEMP
 	text "星", 0
 	text "獸", 1
@@ -455,7 +453,7 @@ text_0e_4d81::
 	done
 
 text_0e_4d99::
-	text_init NAME_BLANK, $1b
+	repoint en_text_0e_4d99
 ; # TEMP
 	text "亞", 3
 	text "斯", 1
@@ -521,7 +519,7 @@ text_0e_4d99::
 	done
 
 text_0e_4e05::
-	text_init NAME_BLANK, $13
+	repoint en_text_0e_4e05
 ; # TEMP
 	text "新", 1
 	text "聞", 3
@@ -598,7 +596,7 @@ text_0e_4e05::
 	done
 
 text_0e_4e82::
-	text_init NAME_BLANK, $20
+	repoint en_text_0e_4e82
 ; # TEMP
 	text "萬", 1
 	text "歲", 4
@@ -630,7 +628,7 @@ text_0e_4e82::
 	done
 
 text_0e_4eb4::
-	text_init NAME_BLANK, $1d
+	repoint en_text_0e_4eb4
 ; # TEMP
 	text "巴", 0
 	text "‧"
@@ -674,7 +672,7 @@ text_0e_4eb4::
 	done
 
 text_0e_4efa::
-	text_init NAME_BLANK, $16
+	repoint en_text_0e_4efa
 ; # TEMP
 	text "唉", 3
 	text "呀"
@@ -708,7 +706,7 @@ text_0e_4efa::
 	done
 
 text_0e_4f2f::
-	text_init NAME_BLANK, $19
+	repoint en_text_0e_4f2f
 ; # TEMP
 	text "我", 2
 	text "看"
@@ -778,7 +776,7 @@ text_0e_4f2f::
 	done
 
 text_0e_4fa5::
-	text_init NAME_BLANK, $22
+	repoint en_text_0e_4fa5
 ; # TEMP
 	text "槽", 4
 	text "糕"
@@ -854,7 +852,7 @@ text_0e_4fa5::
 	done
 
 text_0e_5023::
-	text_init NAME_12, $26
+	repoint en_text_0e_5023
 ; # TEMP
 	text "O", 6
 	text "H"
@@ -980,7 +978,7 @@ text_0e_5023::
 	done
 
 text_0e_50f6::
-	text_init NAME_12, $26
+	repoint en_text_0e_50f6
 ; # TEMP
 	text "O", 6
 	text "H"
@@ -1038,7 +1036,7 @@ text_0e_50f6::
 	done
 
 text_0e_5154::
-	text_init NAME_BLANK, $1f
+	repoint en_text_0e_5154
 ; # TEMP
 	text "是", 1
 	text "巴", 0
@@ -1085,7 +1083,7 @@ text_0e_5154::
 	done
 
 text_0e_519f::
-	text_init NAME_SNOWY, $09
+	repoint en_text_0e_519f
 ; # TEMP
 	text "嗚", 4
 	text "~", 2
@@ -1098,7 +1096,7 @@ text_0e_519f::
 	done
 
 text_0e_51b1::
-	text_init NAME_BLANK, $1f
+	repoint en_text_0e_51b1
 ; # TEMP
 	text "啊", 3
 	text "啊啊啊啊啊"
@@ -1124,7 +1122,7 @@ text_0e_51b1::
 	done
 
 text_0e_51dd::
-	text_init NAME_BLANK, $15
+	repoint en_text_0e_51dd
 ; # TEMP
 	text "你", 2
 	text "是", 1
@@ -1155,7 +1153,7 @@ text_0e_51dd::
 	done
 
 text_0e_520e::
-	text_init NAME_BLANK, $18
+	repoint en_text_0e_520e
 ; # TEMP
 	text "賽", 3
 	text "亞"
@@ -1209,7 +1207,7 @@ text_0e_520e::
 	done
 
 text_0e_5267::
-	text_init NAME_13, $1a
+	repoint en_text_0e_5267
 ; # TEMP
 	text "你", 2
 	text "是", 1
@@ -1232,7 +1230,7 @@ text_0e_5267::
 	done
 
 text_0e_528c::
-	text_init NAME_BLANK, $15
+	repoint en_text_0e_528c
 ; # TEMP
 	text "流", 0
 	text "星雨"
@@ -1274,7 +1272,7 @@ text_0e_528c::
 	done
 
 text_0e_52d0::
-	text_init NAME_14, $25
+	repoint en_text_0e_52d0
 ; # TEMP
 	text "受", 4
 	text "傷", 0
@@ -1333,7 +1331,7 @@ text_0e_52d0::
 	done
 
 text_0e_5333::
-	text_init NAME_BALLOT, $00
+	repoint en_text_0e_5333
 ; # TEMP
 	text "學", 1
 	text "校", 4
@@ -1348,7 +1346,7 @@ text_0e_5333::
 	done
 
 text_0e_5347::
-	text_init NAME_BLANK, $12
+	repoint en_text_0e_5347
 ; # TEMP
 	text "從", 2
 	text "流", 0
@@ -1421,7 +1419,7 @@ text_0e_5347::
 	done
 
 text_0e_53c0::
-	text_init NAME_BLANK, $1d
+	repoint en_text_0e_53c0
 ; # TEMP
 	text "我", 2
 	text "查過"
@@ -1492,7 +1490,7 @@ text_0e_53c0::
 	done
 
 text_0e_5437::
-	text_init NAME_BLANK, $1e
+	repoint en_text_0e_5437
 ; # TEMP
 	text "哇", 4
 	text "!", 1
@@ -1534,7 +1532,7 @@ text_0e_5437::
 	done
 
 text_0e_547a::
-	text_init NAME_BLANK, $1e
+	repoint en_text_0e_547a
 ; # TEMP
 	text "好", 2
 	text "厲害"
@@ -1560,14 +1558,14 @@ text_0e_547a::
 	done
 
 text_0e_54a2::
-	text_init NAME_BLANK, $1e
+	repoint en_text_0e_54a2
 ; # TEMP
 	text "遜", 5
 	text "!", 1
 	done
 
 text_0e_54aa::
-	text_init NAME_BALLOT, $2d
+	repoint en_text_0e_54aa
 ; # TEMP
 	text "奇", 1
 	text "怪?"
@@ -1589,7 +1587,7 @@ text_0e_54aa::
 	done
 
 text_0e_54ce::
-	text_init NAME_BLANK, $1f
+	repoint en_text_0e_54ce
 ; # TEMP
 	text "唉", 3
 	text "呀"
@@ -1635,7 +1633,7 @@ text_0e_54ce::
 	done
 
 text_0e_5518::
-	text_init NAME_BLANK, $1b
+	repoint en_text_0e_5518
 ; # TEMP
 	text "就", 2
 	text "在", 3
@@ -1673,7 +1671,7 @@ text_0e_5518::
 	done
 
 text_0e_5555::
-	text_init NAME_BLANK, $16
+	repoint en_text_0e_5555
 ; # TEMP
 	text "哎", 4
 	text "唷唷"
@@ -1711,7 +1709,7 @@ text_0e_5555::
 	done
 
 text_0e_5592::
-	text_init NAME_BLANK, $19
+	repoint en_text_0e_5592
 ; # TEMP
 	text "前", 3
 	text "陣"
@@ -1835,7 +1833,7 @@ text_0e_5592::
 	done
 
 text_0e_5666::
-	text_init NAME_BLANK, $17
+	repoint en_text_0e_5666
 ; # TEMP
 	text "這", 2
 	text "裡", 3
@@ -1921,7 +1919,7 @@ text_0e_5666::
 	done
 
 text_0e_56f4::
-	text_init NAME_BLANK, $1c
+	repoint en_text_0e_56f4
 ; # TEMP
 	text "衝", 0
 	text "呀", 3
@@ -1967,7 +1965,7 @@ text_0e_56f4::
 	done
 
 text_0e_5740::
-	text_init NAME_BLANK, $21
+	repoint en_text_0e_5740
 ; # TEMP
 	text "嗚", 4
 	text "~", 2
@@ -1995,7 +1993,7 @@ text_0e_5740::
 	done
 
 text_0e_576d::
-	text_init NAME_BLANK, $1f
+	repoint en_text_0e_576d
 ; # TEMP
 	text "很", 1
 	text "久", 4
@@ -2084,7 +2082,7 @@ text_0e_576d::
 	done
 
 text_0e_5806::
-	text_init NAME_BLANK, $16
+	repoint en_text_0e_5806
 ; # TEMP
 	text "這", 2
 	text "裡", 3
@@ -2126,7 +2124,7 @@ text_0e_5806::
 	done
 
 text_0e_584c::
-	text_init NAME_BLANK, $19
+	repoint en_text_0e_584c
 ; # TEMP
 	text "雷", 0
 	text "歐", 4
@@ -2194,7 +2192,7 @@ text_0e_584c::
 	done
 
 text_0e_58bd::
-	text_init NAME_BLANK, $16
+	repoint en_text_0e_58bd
 ; # TEMP
 	text "科", 1
 	text "技"
@@ -2261,7 +2259,7 @@ text_0e_58bd::
 	done
 
 text_0e_592f::
-	text_init NAME_BLANK, $12
+	repoint en_text_0e_592f
 ; # TEMP
 	text "雷", 0
 	text "歐", 4
@@ -2320,7 +2318,7 @@ text_0e_592f::
 	done
 
 text_0e_5992::
-	text_init NAME_BLANK, $1d
+	repoint en_text_0e_5992
 ; # TEMP
 	text "哼", 4
 	text "!", 1
@@ -2380,7 +2378,7 @@ text_0e_5992::
 	done
 
 text_0e_59f6::
-	text_init NAME_BLANK, $13
+	repoint en_text_0e_59f6
 ; # TEMP
 	text "要", 1
 	text "大", 0
@@ -2440,7 +2438,7 @@ text_0e_59f6::
 	done
 
 text_0e_5a5a::
-	text_init NAME_BLANK, $1b
+	repoint en_text_0e_5a5a
 ; # TEMP
 	text "真", 1
 	text "是"
@@ -2503,7 +2501,7 @@ text_0e_5a5a::
 	done
 
 text_0e_5ac1::
-	text_init NAME_1D, $1a
+	repoint en_text_0e_5ac1
 ; # TEMP
 	text "媽", 3
 	text "媽"
@@ -2555,7 +2553,7 @@ text_0e_5ac1::
 	done
 
 text_0e_5b18::
-	text_init NAME_BLANK, $13
+	repoint en_text_0e_5b18
 ; # TEMP
 	text "不", 0
 	text "‧"
@@ -2564,7 +2562,7 @@ text_0e_5b18::
 	done
 
 text_0e_5b22::
-	text_init NAME_1D, $1a
+	repoint en_text_0e_5b22
 ; # TEMP
 	text "荳", 5
 	text "‧", 0
@@ -2584,7 +2582,7 @@ text_0e_5b22::
 	done
 
 text_0e_5b43::
-	text_init NAME_BLANK, $16
+	repoint en_text_0e_5b43
 ; # TEMP
 	text "城", 4
 	text "裡", 3

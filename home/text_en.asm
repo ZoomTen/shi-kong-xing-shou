@@ -27,3 +27,15 @@ ENDM
 	copyrow 16
 	copyrow 17
 	ret
+
+RepointText::
+	pop hl
+	ld b, [hl]
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, b
+	rst Bankswitch
+	push hl
+	jp CheckCharacter

@@ -305,7 +305,7 @@ CheckCharacter_Commands::
 	dw InterpretTwoOptionMenu ; $e6
 	dw Func_1d41      ; $e7
 	dw Func_1d67      ; $e8
-	dw Text_Init      ; $e9
+	dw RepointText      ; $e9 XXX Temporary measure
 	dw Func_1e0a      ; $ea
 	dw Func_1e1a      ; $eb
 	dw Text_Paragraph ; $ec

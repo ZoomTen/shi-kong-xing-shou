@@ -48,6 +48,13 @@ choice: MACRO
 	db TX_CHOICE
 ENDM
 
+	const_next $e9
+	const TX_EN_REPOINT
+repoint: MACRO
+	db TX_EN_REPOINT
+	dba \1
+ENDM
+
 	const_next $ec
 
 	const TX_PARA ; $ec
