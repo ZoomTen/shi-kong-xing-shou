@@ -1420,7 +1420,7 @@ Func_2123::
 	ld [wd3f4], a
 
 .asm_21a7
-	ldh a, [hFFA7]
+	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
 	ld a, [hl]
