@@ -1085,7 +1085,7 @@ Script_00e_4a81:
 	scr_setbit $dab8, $05 ; TEMP
 	scr_end
 
-INCLUDE "data/text/bank0e_misc.asm"
+INCLUDE "data/english_text/bank0e_misc.asm"
 
 text_0e_5b91:
 	dr $39b91, $39bdd

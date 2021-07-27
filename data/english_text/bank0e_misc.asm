@@ -1,4 +1,4 @@
-en_text_0e_4abe::
+text_0e_4abe::
 	text_init NAME_BALLOT, $00
 	text2 "Dad must be"
 	line  "somewhere."
@@ -9,7 +9,7 @@ en_text_0e_4abe::
 	cont  "somewhere!"
 	done
 
-en_text_0e_4af9::
+text_0e_4af9::
 	text_init NAME_BALLOT, $00
 	text2 "Dad must be"
 	line  "somewhere."
@@ -20,14 +20,14 @@ en_text_0e_4af9::
 	cont  "somewhere!"
 	done
 
-en_text_0e_4b34::
+text_0e_4b34::
 	text_init NAME_BALLOT, $2d
 	text2 "I found a"
 	line  "diary in the"
 	cont  "drawer!"
 	done
 
-en_text_0e_4b4d::
+text_0e_4b4d::
 	text_init NAME_BALLOT, $00
 	text2 "This is"
 	line  "written in"
@@ -47,7 +47,7 @@ en_text_0e_4b4d::
 	cont  "event."
 	done
 
-en_text_0e_4bc0::
+text_0e_4bc0::
 	text_init NAME_BALLOT, $2d
 	text2 "A yellowed"
 	line  "design"
@@ -61,7 +61,7 @@ en_text_0e_4bc0::
 	cont  "nstruction..."
 	done
 
-en_text_0e_4bfb::
+text_0e_4bfb::
 	text_init NAME_BALLOT, $00
 	text2 "Dad must have"
 	line  "wanted to"
@@ -85,7 +85,7 @@ en_text_0e_4bfb::
 	cont  "it..."
 	done
 
-en_text_0e_4c6a::
+text_0e_4c6a::
 	text_init NAME_BALLOT, $2b
 	text2 "Hayato once"
 	line  "mentioned"
@@ -105,26 +105,26 @@ en_text_0e_4c6a::
 	cont  "to..."
 	done
 
-en_text_0e_4cdd::
+text_0e_4cdd::
 	text_init NAME_17, $09
 	text2 "Awoo~ Woof!"
 	line  "Ruff!"
 	done
 
-en_text_0e_4cec::
+text_0e_4cec::
 	text_init NAME_BALLOT, $2d
 	text2 "Don't.. Don't"
 	line  "come any"
 	cont  "closer!"
 	done
 
-en_text_0e_4cfd::
+text_0e_4cfd::
 	text_init NAME_17, $09
 	text2 "Ruff! Ruff!"
 	line  "Woof!"
 	done
 
-en_text_0e_4d10::
+text_0e_4d10::
 	text_init NAME_BALLOT, $2d
 	text2 "Snowy?"
 	para  "It is you!"
@@ -134,12 +134,12 @@ en_text_0e_4d10::
 	line  "happen?"
 	done
 
-en_text_0e_4d42::
+text_0e_4d42::
 	text_init NAME_SNOWY, $09
 	text2 "Ruff! Ruff!"
 	done
 
-en_text_0e_4d50::
+text_0e_4d50::
 	text_init NAME_BALLOT, $00
 	text2 "It seems like"
 	line  "something big"
@@ -150,13 +150,13 @@ en_text_0e_4d50::
 	cont  "Hayato!"
 	done
 
-en_text_0e_4d81::
+text_0e_4d81::
 	text_init NAME_18, $2f
 	text2 "Snowy joined"
 	line  "your party!"
 	done
 
-en_text_0e_4d99::
+text_0e_4d99::
 	text_init NAME_BLANK, $1b
 	text2 "The"
 	line  "observatory"
@@ -177,7 +177,7 @@ en_text_0e_4d99::
 	cont  "for now!"
 	done
 
-en_text_0e_4e05::
+text_0e_4e05::
 	text_init NAME_BLANK, $13
 	text2 "The news"
 	line  "reports say"
@@ -206,7 +206,7 @@ en_text_0e_4e05::
 	cont  "WATCH OUT!"
 	done
 
-en_text_0e_4e82::
+text_0e_4e82::
 	text_init NAME_BLANK, $20
 	text2 "Hooray!"
 	para  "No class"
@@ -215,7 +215,7 @@ en_text_0e_4e82::
 	cont  "shower!"
 	done
 
-en_text_0e_4eb4::
+text_0e_4eb4::
 	text_init NAME_BLANK, $1d
 	text2 "Ballot! I"
 	line  "made cookies!"
@@ -229,7 +229,7 @@ en_text_0e_4eb4::
 	cont  "beasts'!"
 	done
 
-en_text_0e_4efa::
+text_0e_4efa::
 	text_init NAME_BLANK, $16
 	text2 "Is the sky"
 	line  "cracking now"
@@ -237,7 +237,7 @@ en_text_0e_4efa::
 	cont  "crazy?"
 	done
 
-en_text_0e_4f2f::
+text_0e_4f2f::
 	text_init NAME_BLANK, $19
 	text2 "I saw it! I"
 	line  "saw it!"
@@ -258,7 +258,7 @@ en_text_0e_4f2f::
 	cont  "them all!"
 	done
 
-en_text_0e_4fa5::
+text_0e_4fa5::
 	text_init NAME_BLANK, $22
 	text2 "It's a"
 	line  "disaster! It"
@@ -282,7 +282,7 @@ en_text_0e_4fa5::
 	cont  "corps!"
 	done
 
-en_text_0e_5023::
+text_0e_5023::
 	text_init NAME_12, $26
 	text2 "Oh, baby~"
 	line  "What's up?"
@@ -311,7 +311,7 @@ en_text_0e_5023::
 	cont  "like you!"
 	done
 
-en_text_0e_50f6::
+text_0e_50f6::
 	text_init NAME_12, $26
 	text2 "Oh, baby~"
 	line  "What's up?"
@@ -328,7 +328,7 @@ en_text_0e_50f6::
 	cont  "Science~"
 	done
 
-en_text_0e_5154::
+text_0e_5154::
 	text_init NAME_BLANK, $1f
 	text2 "Ahh!!! Not"
 	line  "again!"
@@ -340,19 +340,19 @@ en_text_0e_5154::
 	cont  "with you!"
 	done
 
-en_text_0e_519f::
+text_0e_519f::
 	text_init NAME_SNOWY, $09
 	text2 "Awoooooo!"
 	done
 
-en_text_0e_51b1::
+text_0e_51b1::
 	text_init NAME_BLANK, $1f
 	text2 "Ahhhhh!!!!!"
 	para  "G-Get away"
 	line  "from me!"
 	done
 
-en_text_0e_51dd::
+text_0e_51dd::
 	text_init NAME_BLANK, $15
 	text2 "Did you come"
 	line  "to find"
@@ -363,7 +363,7 @@ en_text_0e_51dd::
 	cont  "visit~"
 	done
 
-en_text_0e_520e::
+text_0e_520e::
 	text_init NAME_BLANK, $18
 	text2 "Saya is a"
 	line  "great"
@@ -377,7 +377,7 @@ en_text_0e_520e::
 	cont  "eccentric..."
 	done
 
-en_text_0e_5267::
+text_0e_5267::
 	text_init NAME_13, $1a
 	text2 "Are you here"
 	line  "to play with"
@@ -385,7 +385,7 @@ en_text_0e_5267::
 	cont  "glad!"
 	done
 
-en_text_0e_528c::
+text_0e_528c::
 	text_init NAME_BLANK, $15
 	text2 "After the"
 	line  "meteor"
@@ -402,7 +402,7 @@ en_text_0e_528c::
 	cont  "up!"
 	done
 
-en_text_0e_52d0::
+text_0e_52d0::
 	text_init NAME_14, $25
 	text2 "Are you hurt?"
 	para  "If you're"
@@ -418,14 +418,14 @@ en_text_0e_52d0::
 	cont  "to Nicole!"
 	done
 
-en_text_0e_5333::
+text_0e_5333::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "The school's"
 	line  "door is"
 	cont  "closed..."
 	done
 
-en_text_0e_5347::
+text_0e_5347::
 	text_init NAME_BLANK, $12
 	text2 "After the"
 	line  "meteor"
@@ -444,7 +444,7 @@ en_text_0e_5347::
 	cont  "don't run!"
 	done
 
-en_text_0e_53c0::
+text_0e_53c0::
 	text_init NAME_BLANK, $1d
 	text2 "In history it"
 	line  "is written"
@@ -466,7 +466,7 @@ en_text_0e_53c0::
 	line  "the Earth!"
 	done
 
-en_text_0e_5437::
+text_0e_5437::
 	text_init NAME_BLANK, $1e
 	text2 "Wow!"
 	para  "I got a star"
@@ -479,7 +479,7 @@ en_text_0e_5437::
 	cont  "'em!"
 	done
 
-en_text_0e_547a::
+text_0e_547a::
 	text_init NAME_BLANK, $1e
 	text2 "That was"
 	line  "awesome!"
@@ -487,19 +487,19 @@ en_text_0e_547a::
 	line  "to tell Dad!"
 	done
 
-en_text_0e_54a2::
+text_0e_54a2::
 	text_init NAME_BLANK, $1e
 	text2 "Laaame!"
 	done
 
-en_text_0e_54aa::
+text_0e_54aa::
 	text_init NAME_BALLOT, $2d
 	text2 "Huh?"
 	para  "Why is it so"
 	line  "dark here?"
 	done
 
-en_text_0e_54ce::
+text_0e_54ce::
 	text_init NAME_BLANK, $1f
 	text2 "How did this"
 	line  "happen?"
@@ -512,7 +512,7 @@ en_text_0e_54ce::
 	cont  "come on!"
 	done
 
-en_text_0e_5518::
+text_0e_5518::
 	text_init NAME_BLANK, $1b
 	text2 "The power"
 	line  "suddenly went"
@@ -524,7 +524,7 @@ en_text_0e_5518::
 	cont  "power plant?"
 	done
 
-en_text_0e_5555::
+text_0e_5555::
 	text_init NAME_BLANK, $16
 	text2 "Ow, it hurts"
 	line  "so much..."
@@ -536,7 +536,7 @@ en_text_0e_5555::
 	cont  "brittle..."
 	done
 
-en_text_0e_5592::
+text_0e_5592::
 	text_init NAME_BLANK, $19
 	text2 "A couple of"
 	line  "days ago, two"
@@ -567,7 +567,7 @@ en_text_0e_5592::
 	cont  "money!"
 	done
 
-en_text_0e_5666::
+text_0e_5666::
 	text_init NAME_BLANK, $17
 	text2 "This city is"
 	line  "known for"
@@ -588,7 +588,7 @@ en_text_0e_5666::
 	cont  "30 million!"
 	done
 
-en_text_0e_56f4::
+text_0e_56f4::
 	text_init NAME_BLANK, $1c
 	text2 "Let's go! My"
 	line  "high-speed"
@@ -602,14 +602,14 @@ en_text_0e_56f4::
 	cont  "to beat them!"
 	done
 
-en_text_0e_5740::
+text_0e_5740::
 	text_init NAME_BLANK, $21
 	text2 "It's so dark!"
 	line  "I'm scared!"
 	cont  "Wow... Wow..."
 	done
 
-en_text_0e_576d::
+text_0e_576d::
 	text_init NAME_BLANK, $1f
 	text2 "A long time"
 	line  "ago, Leo's"
@@ -631,7 +631,7 @@ en_text_0e_576d::
 	cont  "him?"
 	done
 
-en_text_0e_5806::
+text_0e_5806::
 	text_init NAME_BLANK, $16
 	text2 "This is the"
 	line  "scrapyard of"
@@ -642,7 +642,7 @@ en_text_0e_5806::
 	cont  "treasures!"
 	done
 
-en_text_0e_584c::
+text_0e_584c::
 	text_init NAME_BLANK, $19
 	text2 "Dr. Leo is"
 	line  "aging, yet he"
@@ -661,7 +661,7 @@ en_text_0e_584c::
 	cont  "depressed..."
 	done
 
-en_text_0e_58bd::
+text_0e_58bd::
 	text_init NAME_BLANK, $16
 	text2 "Tech City is"
 	line  "a choked"
@@ -684,7 +684,7 @@ en_text_0e_58bd::
 	cont  "strange..."
 	done
 
-en_text_0e_592f::
+text_0e_592f::
 	text_init NAME_BLANK, $12
 	text2 "Leo lost 30"
 	line  "million"
@@ -706,7 +706,7 @@ en_text_0e_592f::
 	cont  "field..."
 	done
 
-en_text_0e_5992::
+text_0e_5992::
 	text_init NAME_BLANK, $1d
 	text2 "I don't want"
 	line  "to! I don't"
@@ -723,7 +723,7 @@ en_text_0e_5992::
 	cont  "3!"
 	done
 
-en_text_0e_59f6::
+text_0e_59f6::
 	text_init NAME_BLANK, $13
 	text2 "It's a joke"
 	line  "to ask"
@@ -739,7 +739,7 @@ en_text_0e_59f6::
 	cont  "anything, yo!"
 	done
 
-en_text_0e_5a5a::
+text_0e_5a5a::
 	text_init NAME_BLANK, $1b
 	text2 "It's a real"
 	line  "pain in the"
@@ -760,7 +760,7 @@ en_text_0e_5a5a::
 	cont  "it?"
 	done
 
-en_text_0e_5ac1::
+text_0e_5ac1::
 	text_init NAME_1D, $1a
 	text2 "Mom? Do you"
 	line  "want to hide"
@@ -777,31 +777,8 @@ en_text_0e_5ac1::
 	cont  "dollars!"
 	done
 
-en_text_0e_5b18::
-	text_init NAME_BLANK, $13
-	text2 "No need!"
-	done
-
-en_text_0e_5b22::
-	text_init NAME_1D, $1a
-	text2 "Dottie is"
-	line  "hiding!"
-	done
-
-en_text_0e_5b43::
-	text_init NAME_BLANK, $16
-	text2 "The power"
-	line  "went out in"
-	cont  "the city, and"
-	cont  "my son, Bot,"
-	cont  "went to the"
-	cont  "power tower"
-	cont  "to fix it! He"
-	cont  "was gone for"
-	cont  "a long time,"
-	cont  "but never"
-	cont  "came back! I"
-	cont  "was so"
-	cont  "worried..."
+text_0e_5b18::
+text_0e_5b22::
+text_0e_5b43::
 	done
 

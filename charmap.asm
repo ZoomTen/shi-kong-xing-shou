@@ -87,6 +87,7 @@ NEWCHARMAP english
 	charmap "α", $87
 	charmap "'r", $88
 	charmap "'m", $89
+	charmap "'t", $8a
 
 NEWCHARMAP charmap0
 ; 40:4000
