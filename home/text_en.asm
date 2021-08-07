@@ -28,6 +28,15 @@ ENDM
 	copyrow 17
 	ret
 
+Func_1c2c_Continue::
+	xor a
+	ld [wCharacterTilemapPos], a
+	ld [wTextLine], a
+	ld [wCharacterTilePos], a
+	ld a, $3f
+	ld [hTargetBank], a
+	jp CheckCharacter
+
 RepointText::
 	pop hl
 	ld b, [hl]

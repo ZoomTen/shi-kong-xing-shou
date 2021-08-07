@@ -486,13 +486,17 @@ Func_1c2c::
 	ld a, h
 	ld [wd0d1 + 1], a
 
-	xor a
-	ld [wCharacterTilemapPos], a
-	ld [wTextLine], a
-	ld [wCharacterTilePos], a
-	ld a, $3f               ; XXX offsets everything after this
-	ld [hTargetBank], a     ; XXX offsets everything after this
-	jp CheckCharacter
+	jp Func_1c2c_Continue
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 Text_End::
 	call Func_1fb9
