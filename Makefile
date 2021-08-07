@@ -82,6 +82,7 @@ data/maps/layouts/%.bin: data/maps/layouts/%.tmx
 
 gfx/character_set/image_%.1bpp: tools/gfx += --interleave --png=$<
 gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
+gfx/title_screen/characters.2bpp: tools/gfx += --interleave --png=$<
 gfx/character_set/english.1bpp: tools/gfx += --png=$<
 
 ### Translation tool
