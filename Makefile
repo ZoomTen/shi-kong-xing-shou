@@ -4,6 +4,7 @@ GFX  := rgbgfx
 FIX  := rgbfix
 MD5  := md5sum -c
 PYTHON := python3
+IPS := tools/flips
 
 ASMFLAGS := -hL
 # Include all labels, including unreferenced and local labels, in the sym/map file if `make` is run with `ALLSYM=1`
@@ -21,6 +22,7 @@ SOURCES := \
 OBJS := $(SOURCES:%.asm=%.o)
 
 ROM := shi_kong_xing_shou.gbc
+PATCH := skxs_en.ips
 MAP := $(ROM:%.gbc=%.map)
 SYM := $(ROM:%.gbc=%.sym)
 
@@ -31,7 +33,7 @@ ROM_TITLE := "TIMER MONSTER  "
 .PRECIOUS:
 .SECONDARY:
 
-all: $(ROM)
+all: $(PATCH)
 
 tools:
 	@$(MAKE) -C tools/
@@ -59,6 +61,9 @@ $(info $(shell $(MAKE) -C tools))
 $(foreach obj, $(OBJS), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 
 endif
+
+$(PATCH): $(ROM)
+	$(IPS) -c -i baserom.gbc $(ROM) $@
 
 $(ROM): $(OBJS)
 	$(LINK) -n $(SYM) -m $(MAP) -p 0 -o $@ $(OBJS)
