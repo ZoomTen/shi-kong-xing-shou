@@ -14,7 +14,7 @@ with open(csv_name, "r") as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
         if row['label'] == '':
-            print(f'text_{row["bank"]}_{row["address"]}::')
+            print(f'text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}::')
         else:
             print(f'{row["label"]}::')
         
