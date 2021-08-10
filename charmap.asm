@@ -81,6 +81,11 @@ NEWCHARMAP english
 	charmap "/", $4e
 	charmap ",", $4f
 
+	charmap "↑", $50
+	charmap "→", $51
+	charmap "↓", $52
+	charmap "←", $53
+
 	charmap "⋯", $84
 	charmap "~", $85
 	charmap "-", $86
@@ -88,6 +93,7 @@ NEWCHARMAP english
 	charmap "'r", $88
 	charmap "'m", $89
 	charmap "'t", $8a
+	charmap "'e", $8b
 
 NEWCHARMAP charmap0
 ; 40:4000
