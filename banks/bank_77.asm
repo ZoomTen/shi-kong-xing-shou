@@ -1720,13 +1720,13 @@ Intro_LoadNewTextSprites:
 Intro_TextSprites:
 	dw .Nothing
 	dw .Ballot
-	dw .Buck
-	dw .Nina
-	dw .Claude
-	dw .Helen
-	dw .Lante
-	dw .Newton
-	dw .Mitt
+	dw .Ballot
+	dw .Ballot
+	dw .Ballot
+	dw .Ballot
+	dw .Ballot
+	dw .Ballot
+	dw .Ballot
 
 .Nothing:
 	dsprite  0,  0,  0,  0, $00, 0

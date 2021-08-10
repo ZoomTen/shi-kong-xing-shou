@@ -42,7 +42,7 @@ compare: $(ROM)
 	$(MD5) rom.md5
 
 clean:
-	$(RM) $(ROM) $(MAP) $(SYM) $(OBJS)
+	$(RM) $(PATCH) $(ROM) $(MAP) $(SYM) $(OBJS)
 	$(MAKE) clean -C tools/
 
 # The dep rules have to be explicit or else missing files won't be reported.
@@ -87,7 +87,7 @@ data/maps/layouts/%.bin: data/maps/layouts/%.tmx
 
 gfx/character_set/image_%.1bpp: tools/gfx += --interleave --png=$<
 gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
-gfx/title_screen/intro/sprites/%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
+gfx/title_screen/intro/sprites/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/title_screen/characters.2bpp: tools/gfx += --interleave --png=$<
 gfx/title_screen/title_screen_sprites.2bpp: tools/gfx += --interleave --png=$<
 gfx/character_set/english.1bpp: tools/gfx += --png=$<
