@@ -5,41 +5,36 @@ text_0e_4abe::
 	cont  "I'm sure"
 	cont  "there'll be a"
 	cont  "lead in the"
-	cont  "house"
-	cont  "somewhere!"
+	cont  "house!"
 	done
 
 text_0e_4af9::
 	text_init NAME_BALLOT, $00
-	text2 "Dad must be"
-	line  "somewhere."
-	cont  "I'm sure"
-	cont  "there'll be a"
-	cont  "lead in the"
-	cont  "house"
-	cont  "somewhere!"
+	text2 "I'll have to"
+	line  "search inside"
+	cont  "first, I'm"
+	cont  "sure there'll"
+	cont  "be a lead"
+	cont  "somewhere."
 	done
 
 text_0e_4b34::
 	text_init NAME_BALLOT, $2d
-	text2 "I found a"
+	text2 "There's a"
 	line  "diary in the"
 	cont  "drawer!"
 	done
 
 text_0e_4b4d::
 	text_init NAME_BALLOT, $00
-	text2 "This is"
-	line  "written in"
-	cont  "the diary:"
-	para  "..."
+	text2 "..."
 	para  "April 20th"
 	para  "There are"
 	line  "signs of the"
 	cont  "moon turning"
-	cont  "blue. If we"
-	cont  "don't"
-	cont  "decipher the"
+	cont  "blue."
+	para  "If we don't"
+	line  "decipher the"
 	cont  "diagram soon,"
 	cont  "I'm afraid we"
 	cont  "won't be able"
@@ -53,12 +48,13 @@ text_0e_4bc0::
 	line  "design"
 	cont  "diagram is"
 	cont  "enclosed in"
-	cont  "the diary."
+	cont  "the diary!"
 	cont  "The diagram"
 	cont  "contains a"
 	cont  "dense"
 	cont  "mechanical"
-	cont  "nstruction..."
+	cont  "con-"
+	cont  "struction..."
 	done
 
 text_0e_4bfb::
@@ -80,7 +76,7 @@ text_0e_4bfb::
 	line  "diagram... no"
 	cont  "matter how"
 	cont  "hard I try, I"
-	cont  "can’t"
+	cont  "can't"
 	cont  "understand"
 	cont  "it..."
 	done
@@ -221,20 +217,21 @@ text_0e_4eb4::
 	line  "made cookies!"
 	para  "Super"
 	line  "de-li-cious!"
-	para  "Wow! Looks"
-	line  "like you're"
+	para  "Ahh! Look"
+	line  "out! You're"
 	cont  "being chased"
 	cont  "by one of"
-	cont  "those 'star"
-	cont  "beasts'!"
+	cont  "those Star"
+	cont  "Beasts!"
 	done
 
 text_0e_4efa::
 	text_init NAME_BLANK, $16
-	text2 "Is the sky"
-	line  "cracking now"
+	text2 "Uhh... Is"
+	line  "that a crack"
+	cont  "in the sky,"
 	cont  "or am I going"
-	cont  "crazy?"
+	cont  "mad?"
 	done
 
 text_0e_4f2f::
@@ -422,15 +419,15 @@ text_0e_5333::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "The school's"
 	line  "door is"
-	cont  "closed..."
+	cont  "locked..."
 	done
 
 text_0e_5347::
 	text_init NAME_BLANK, $12
 	text2 "After the"
 	line  "meteor"
-	cont  "shower, star"
-	cont  "beasts are"
+	cont  "shower, Star"
+	cont  "Beasts are"
 	cont  "out and"
 	cont  "about."
 	para  "After"
@@ -469,8 +466,8 @@ text_0e_53c0::
 text_0e_5437::
 	text_init NAME_BLANK, $1e
 	text2 "Wow!"
-	para  "I got a star"
-	line  "beast, but"
+	para  "I got a Star"
+	line  "Beast, but"
 	cont  "don't tell my"
 	cont  "Dad!"
 	para  "Whoa, you"
@@ -749,8 +746,8 @@ text_0e_5a5a::
 	cont  "I can't see"
 	cont  "the follow-up"
 	cont  "news report"
-	cont  "of the star"
-	cont  "beast. By the"
+	cont  "of the Star"
+	cont  "Beast. By the"
 	cont  "way, why"
 	cont  "hasn't Burt"
 	cont  "come back"

@@ -49,11 +49,10 @@ text_08_46fe::
 	line  "you! Your mom"
 	cont  "would be"
 	cont  "proud!"
-	para  "Ah, sorry for"
-	line  "mentioning"
-	cont  "her! You're"
-	cont  "such a strong"
-	cont  "kid!"
+	para  "Ah, so sorry"
+	line  "for"
+	cont  "mentioning"
+	cont  "her!"
 	done
 
 text_08_4768::
@@ -86,9 +85,9 @@ text_08_47fb::
 	text2 "The moon"
 	line  "seems to have"
 	cont  "a blue tint"
-	cont  "today... Must"
-	cont  "be my"
-	cont  "imagination."
+	cont  "today..."
+	para  "Must be my"
+	line  "imagination."
 	done
 
 text_08_4837::
@@ -254,7 +253,7 @@ text_08_4b77::
 	text_init NAME_BALLOT, PIC_BALLOT_0
 	text2 "The school's"
 	line  "door is"
-	cont  "closed..."
+	cont  "locked..."
 	done
 
 text_08_4b8b::
@@ -337,7 +336,8 @@ text_08_4c8c::
 	line  "finally here?"
 	para  "It's a little"
 	line  "too early"
-	cont  "based on my"
+	cont  "compared to"
+	cont  "my"
 	cont  "calculations."
 	done
 
@@ -742,7 +742,7 @@ text_08_53af::
 	cont  "meteor shower"
 	cont  "event took"
 	cont  "place, about"
-	cont  "1,932 light"
+	cont  "1932 light"
 	cont  "years from"
 	cont  "Earth."
 	done

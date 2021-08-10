@@ -1,12 +1,12 @@
 
 text_0c_40a7::
 	text_sign
-	text2 "School"
+	text2 "↑School"
 	done
 
 text_0c_40af::
 	text_sign
-	text2 "to Observatory"
+	text2 "→Observatory"
 	done
 
 text_0c_40b8::

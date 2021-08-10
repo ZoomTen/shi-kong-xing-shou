@@ -43,7 +43,7 @@ I wonder what's up with him?","machine translation assisted, original mentions t
 ...Huh?
 Is that for your dad?
 How nice of you! Your mom would be proud!
-Ah, sorry for mentioning her! You're such a strong kid!","
+Ah, so sorry for mentioning her!","
 孝順 carries connotations of filial piety but i'm not sure if that translates well in a western context
 
 媽媽病逝後，
@@ -81,7 +81,8 @@ tn: need more context","","","","","","","","","","","","","","","","","","","",
 有點藍藍的呢?
 一定是我眼睛又
 花了。","// init NAME_BLANK, $16
-The moon seems to have a blue tint today... Must be my imagination.
+The moon seems to have a blue tint today...
+Must be my imagination.
 ","""我眼睛又花"" means ""i must be short-sighted again"" but seems long winded","","","","","","","","","","","","","","","","","","","",""
 "08","4837","","// init NAME_BLANK, $19
 新聞報導說，
@@ -266,7 +267,7 @@ Why is it looking a little blue tonight? It's a bit scary...","","","","","","",
 一點⋯⋯","// init NAME_11, $11
 ...It's finally here?
 
-It's a little too early based on my calculations.","","","","","","","","","","","","","","","","","","","","",""
+It's a little too early compared to my calculations.","","","","","","","","","","","","","","","","","","","","",""
 "08","4cb5","","// init NAME_BALLOT, PIC_BALLOT_0
 爸⋯","// init NAME_BALLOT, PIC_BALLOT_0
 Dad...","","","","","","","","","","","","","","","","","","","","",""
@@ -551,7 +552,7 @@ Anyway, can anyone tell me more about this meteor shower?","mr. mo sweat emote",
 光年。","// init NAME_BALLOT, $00
 The meteor shower originates in the Frigo Galaxy.
 
-It's been 120 years since the last meteor shower event took place, about 1,932 light years from Earth.","deepl said ""fritz galaxy"", google translate said ""frieze galaxy"", i say ""frigo galaxy"" -WHY
+It's been 120 years since the last meteor shower event took place, about 1932 light years from Earth.","deepl said ""fritz galaxy"", google translate said ""frieze galaxy"", i say ""frigo galaxy"" -WHY
 haven't found any other reference and it sounds close enough","","","","","","","","","","","","","","","","","","","",""
 "08","53ef","","// init NAME_15, $24
 完全正確!!

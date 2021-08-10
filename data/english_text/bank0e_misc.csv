@@ -6,7 +6,7 @@
 ，
 一定會有線索的
 !","// init NAME_BALLOT, $00
-Dad must be somewhere. I'm sure there'll be a lead in the house somewhere!","after the meteor shower cutscene."
+Dad must be somewhere. I'm sure there'll be a lead in the house!","after the meteor shower cutscene."
 "0e","4af9","","// init NAME_BALLOT, $00
 爸爸一定是到了
 某個地方了。
@@ -14,12 +14,12 @@ Dad must be somewhere. I'm sure there'll be a lead in the house somewhere!","aft
 ，
 一定會有線索的
 !","// init NAME_BALLOT, $00
-Dad must be somewhere. I'm sure there'll be a lead in the house somewhere!","exact same text as before lol
+I'll have to search inside first, I'm sure there'll be a lead somewhere.","originally exact same text as before
 thanks VF, very cool"
 "0e","4b34","","// init NAME_BALLOT, $2d
 在抽罹裡~
 發現了日記!","// init NAME_BALLOT, $2d
-I found a diary in the drawer!",""
+There's a diary in the drawer!",""
 "0e","4b4d","","// init NAME_BALLOT, $00
 日記的內容這麼
 寫道:
@@ -33,17 +33,17 @@ I found a diary in the drawer!",""
 再不快解開圖中
 的祕密，
 恐怕就⋯⋯","// init NAME_BALLOT, $00
-This is written in the diary:
 ...
 April 20th
-There are signs of the moon turning blue. If we don't decipher the diagram soon, I'm afraid we won't be able to stop that event.",""
+There are signs of the moon turning blue.
+If we don't decipher the diagram soon, I'm afraid we won't be able to stop that event.",""
 "0e","4bc0","","// init NAME_BALLOT, $2d
 日記裡夾著一張
 泛黃的設計圖。
 圖裡畫著密密麻
 麻的機械構造圖
 ⋯⋯","// init NAME_BALLOT, $2d
-A yellowed design diagram is enclosed in the diary. The diagram contains a dense mechanical construction...",""
+A yellowed design diagram is enclosed in the diary! The diagram contains a dense mechanical con- struction...",""
 "0e","4bfb","","// init NAME_BALLOT, $00
 爸爸一定想解開
 設計圖中的祕密
@@ -56,7 +56,7 @@ A yellowed design diagram is enclosed in the diary. The diagram contains a dense
 理解⋯","// init NAME_BALLOT, $00
 Dad must have wanted to unearth the secrets of the design schematics. If I can unlock the secrets of the blueprints, I'll probably find Dad.
 
-But this diagram... no matter how hard I try, I can’t understand it...",""
+But this diagram... no matter how hard I try, I can't understand it...",""
 "0e","4c6a","","// init NAME_BALLOT, $2b
 伊隼人曾經提到
 過他的朋友，
@@ -155,7 +155,7 @@ AHH!! BALLOT!! WATCH OUT!",""
 !
 萬歲!","// init NAME_BLANK, $20
 Hooray!
-No class today because of the meteor shower!","deepl"
+No class today because of the meteor shower!",""
 "0e","4eb4","","// init NAME_BLANK, $1d
 巴‧洛‧特~
 人家的餅乾做好
@@ -165,14 +165,14 @@ No class today because of the meteor shower!","deepl"
 怪獸追了!","// init NAME_BLANK, $1d
 Ballot! I made cookies!
 Super de-li-cious!
-Wow! Looks like you're being chased by one of those 'star beasts'!","machine translation assisted"
+Ahh! Look out! You're being chased by one of those 'Star Beasts'!",""
 "0e","4efa","","// init NAME_BLANK, $16
 唉呀~
 怎麼天空上有一
 道裂縫呢?
 一定是我眼睛又
 花了。","// init NAME_BLANK, $16
-Is the sky cracking now or am I going crazy?","machine translation assisted
+Uhh... Is that a crack in the sky, or am I going mad?","
 must be the ""imagination"" guy from earlier, he should take his normal pills"
 "0e","4f2f","","// init NAME_BLANK, $19
 我看到了!
@@ -337,7 +337,7 @@ The school's door is closed...","see 08:4b77"
 起來了!
 啊!就在那邊⋯
 不要跑!!","// init NAME_BLANK, $12
-After the meteor shower, star beasts are out and about.
+After the meteor shower, Star Beasts are out and about.
 After weakening them, you can use this capsule to catch them!
 Ah! There they are... don't run!","modified deepl output
 gotta catch 'em all"
@@ -364,7 +364,7 @@ They saved the Earth!","modified deepl output"
 你也有星獸嗎?
 較量一下吧!","// init NAME_BLANK, $1e
 Wow!
-I got a star beast, but don't tell my Dad!
+I got a Star Beast, but don't tell my Dad!
 Whoa, you have one too? Let's battle 'em!","machine translation assisted
 guy in the 1st route who wants to battle"
 "0e","547a","","// init NAME_BLANK, $1e
@@ -571,7 +571,7 @@ It's a joke to ask everyone to put together this 30 million! Hide this! That one
 了那麼久，
 怎麼還沒有回來
 呢?","// init NAME_BLANK, $1b
-It's a real pain in the ass, the inexplicable power outage. I can't see the follow-up news report of the star beast. By the way, why hasn't Burt come back from his long trip to the tower to fix it?","deepl
+It's a real pain in the ass, the inexplicable power outage. I can't see the follow-up news report of the Star Beast. By the way, why hasn't Burt come back from his long trip to the tower to fix it?","deepl
 yes, it curses
 google says Bot instead of Burt"
 "0e","5ac1","","// init NAME_1D, $1a
