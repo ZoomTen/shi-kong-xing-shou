@@ -70,6 +70,3 @@ text_08_45f0::
 	cont  "cold."
 	done
 
-text_00_0000::
-	done
-

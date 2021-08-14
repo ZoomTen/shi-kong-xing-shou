@@ -237,8 +237,8 @@ text_08_4b14::
 	text_init NAME_14, $25
 	text2 "Are you hurt?"
 	para  "If you're"
-	line  "hurt, just go"
-	cont  "inside this"
+	line  "hurt, just"
+	cont  "enter this"
 	cont  "alpha ray"
 	cont  "emitter and"
 	cont  "you'll"
