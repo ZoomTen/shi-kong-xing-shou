@@ -15,6 +15,10 @@ with open(csv_name, "r") as csv_file:
     for row in reader:
         if row['label'] == '':
             print(f'text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}::')
+            
+            if 'text_kind' in row:
+            	if row['text_kind'] == 'signpost':
+            		print('\ttext_sign')
         else:
             print(f'{row["label"]}::')
         
