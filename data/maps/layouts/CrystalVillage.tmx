@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<map orientation="orthogonal" renderorder="right-down" tilewidth="32" tileheight="32" width="12" height="10">
+	<tileset firstgid="1" tilewidth="32" tileheight="32">
+		<image source="../blocks/CrystalVillage.tmx"/>
+	</tileset>
+	<layer id="1" name="layout" width="12" height="10">
+		<data encoding="csv">
+1,2,3,4,4,5,30,31,32,33,34,35,
+6,7,8,9,10,11,36,37,38,39,40,41,
+12,13,14,15,16,17,17,42,43,44,45,46,
+18,19,20,21,22,23,47,48,49,50,51,52,
+24,25,26,27,28,29,53,54,55,56,57,58,
+57,59,60,61,28,62,83,84,85,25,86,87,
+63,64,23,65,66,17,42,88,89,90,91,92,
+67,68,69,70,23,71,55,25,93,94,95,96,
+72,73,74,75,76,77,97,98,50,99,100,101,
+78,79,80,81,82,5,30,102,103,104,103,105</data>
+	</layer>
+</map>

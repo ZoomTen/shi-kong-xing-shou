@@ -113,22 +113,16 @@ Script_008_408a:
 	scr_end
 
 BallotsHouse1_ObjectEvents2:
-	db $11
-	db $05, $03 ; coords
-	db $00, $00, $00, $00, $00, $00
-	dw Script_008_4123
-	db $88
+	object_event $11,  5,  3, 0, $00, $00, $00, $00, Script_008_4123
+	objects_end
 
 Script_008_4123:
 	scr_04 text_08_4cf4
 	scr_end
 
 BallotsHouse1_ObjectEvents3:
-	db $11
-	db $05, $03
-	db $00, $00, $00, $00, $00, $00
-	dw Script_008_4133
-	db $88
+	object_event $11,  5,  3, 0, $00, $00, $00, $00, Script_008_4133
+	objects_end
 
 Script_008_4133:
 	scr_04 text_08_4e04
@@ -264,11 +258,9 @@ Script_008_4214:
 	scr_end
 
 BallotsHouse1_ObjectEvents4:
-	db $11, $03, $04, $00, $00, $00, $00, $00, $00
-	dw Script_008_4089
-	db $24, $04, $04, $00, $00, $00, $00, $00, $01
-	dw Script_008_4089
-	db $88
+	object_event $11,  3,  4, 0, $00, $00, $00, $00, Script_008_4089
+	object_event $24,  4,  4, 0, $00, $00, $00, $01, Script_008_4089
+	objects_end
 
 Script_008_4285:
 	scr_text text_08_55a7
@@ -340,7 +332,9 @@ Script_008_4319:
 	scr_end
 
 HayatosHouse1_ObjectEvents:
-	dr $2031d, $20334
+	object_event $22,  5,  6, 0, $00, $00, $06, $00, Script_008_4334
+	object_event $26,  8,  3, wdaa0, $01, $00, $00, $01, Script_008_4342
+	objects_end
 
 Script_008_4334:
 	scr_checkbit wdaa0, 1, .script_433e
@@ -356,7 +350,9 @@ Script_008_4342:
 	scr_end
 
 CarpetWomansHouse1_ObjectEvents:
-	dr $20346, $2035d
+	object_event $1f,  4,  6, 0, $00, $00, $06, $00, Script_008_435d
+	object_event $15,  7,  4, 0, $00, $00, $06, $01, Script_008_436e
+	objects_end
 
 Script_008_435d:
 	scr_checkbit wdaa0, 1, .script_436a
@@ -378,7 +374,10 @@ Script_008_436e:
 	scr_end
 
 FangfangsHouse1_ObjectEvents:
-	dr $2037c, $2039e
+	object_event $15,  5,  6, 0, $00, $00, $06, $00, Script_008_439e
+	object_event $18,  8,  3, 0, $00, $00, $0a, $01, Script_008_43ac
+	object_event $1a,  5,  3, wdaa0, $01, $00, $00, $02, Script_008_43b0
+	objects_end
 
 Script_008_439e:
 	scr_checkbit wdaa0, 1, .script_43a8
@@ -398,7 +397,12 @@ Script_008_43b0:
 	scr_end
 
 BellHealingCenter1_ObjectEvents:
-	dr $203b4, $203c4
+	object_event $25,  5,  2, 0, $00, $00, $00, $00, Script_008_43c0
+	objects_end
+
+Script_008_43c0:
+	scr_text text_08_4b14
+	scr_end
 
 Script_008_43c4:
 	scr_face FACE_UP
@@ -406,10 +410,13 @@ Script_008_43c4:
 	scr_end
 
 BellObservatory1_ObjectEvents2:
-	dr $203ca, $203d6
+	object_event $11,  3,  7, 0, $00, $00, $00, $00, Script_008_4089
+	objects_end
 
 BellSchool1_ObjectEvents:
-	dr $203d6, $203ed
+	object_event $24,  4, 13, wdaa0, $03, $00, $00, $00, Script_008_43ed
+	object_event $16,  7,  7, 0, $00, $00, $00, $01, Script_008_43f1
+	objects_end
 
 Script_008_43ed:
 	scr_04 text_08_4fa8
@@ -419,8 +426,10 @@ Script_008_43f1:
 	scr_04 text_08_5001
 	scr_end
 
-BellSchoolSouthClassroom_ObjectEvents:
-	dr $203f5, $2040c
+BellSchoolSouthClassroom1_ObjectEvents:
+	object_event $1e,  7,  6, 0, $00, $00, $00, $00, Script_008_440c
+	object_event $21,  4,  6, 0, $00, $00, $00, $01, Script_008_4410
+	objects_end
 
 Script_008_440c:
 	scr_04 text_08_5039
@@ -430,54 +439,57 @@ Script_008_4410:
 	scr_04 text_08_506b
 	scr_end
 
-unk_008_4414:
-	dr $20414, $20462
+BellSchoolNorthClassroom1_ObjectEvents:
+	object_event $26,  4,  8, 0, $00, $00, $00, $00, Script_008_4463
+	object_event $2c,  3,  8, 0, $00, $00, $00, $01, Script_008_4462
+	object_event $1e,  7,  8, 0, $00, $00, $00, $02, Script_008_44da
+	object_event $1a,  2, 10, wdaa0, $02, $00, $00, $03, Script_008_44e1
+	object_event $1a,  3,  6, wdaa0, $02, $01, $00, $03, Script_008_44e1
+	object_event $24, 12,  3, wdaa0, $02, $00, $00, $04, Script_008_44e8
+	object_event $24,  5,  2, wdaa0, $02, $01, $00, $04, Script_008_44e8
+	objects_end
 
 Script_008_4462:
 	scr_end
 
 Script_008_4463:
-	scr_checkbit wdaa0, 2, .script_44d3
-	scr_face FACE_UP
+	scr_checkbit wdaa0, $02, Script_008_44d3
+	db $24 ; TEMP
+	scr_face $01 ; TEMP
 	scr_04 text_08_50a3
-	scr_emote 0, EMOTE_ANGER
-	scr_delay 3, 32
+	scr_emote $00, $04 ; TEMP
+	scr_delay $03, $20 ; TEMP
 	scr_text text_08_50e8
 	scr_text text_08_5105
 	scr_text text_08_5188
 	scr_text text_08_5195
-	scr_01 $06, FACE_LEFT
-	scr_06 $06, $03
-	scr_06 $06, $03
-	scr_06 $06, $03
-	scr_06 $06, $03
-	scr_06 $06, $03
-	scr_06 $06, $03
-	scr_01 $06, FACE_UP
-	scr_06 $06, $02
-	scr_01 $06, FACE_LEFT
-	scr_06 $06, $03
-	scr_01 $06, FACE_DOWN
-	scr_01 $05, FACE_UP
-	scr_06 $05, $02
-	scr_01 $05, FACE_RIGHT
+	scr_01 $06, $02 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_01 $06, $01 ; TEMP
+	scr_06 $06, $02 ; TEMP
+	scr_01 $06, $02 ; TEMP
+	scr_06 $06, $03 ; TEMP
+	scr_01 $06, $00 ; TEMP
+	scr_01 $05, $01 ; TEMP
+	scr_06 $05, $02 ; TEMP
+	scr_01 $05, $03 ; TEMP
 	scr_text text_08_51e5
-	scr_01 $05, FACE_UP
-	scr_06 $05, $02
-	scr_06 $05, $02
-	scr_06 $05, $02
-	scr_01 $05, FACE_RIGHT
-	scr_06 $05, $04
-	scr_01 $05, FACE_UP
-	scr_01 $02, FACE_UP
-	scr_01 $04, FACE_UP
-	scr_setbit $daa0, 2
-	scr_1f $03
-	scr_end
-
-.script_44d3
-	scr_04 text_08_5291
-	scr_01 2, FACE_UP
+	scr_01 $05, $01 ; TEMP
+	scr_06 $05, $02 ; TEMP
+	scr_06 $05, $02 ; TEMP
+	scr_06 $05, $02 ; TEMP
+	scr_01 $05, $03 ; TEMP
+	scr_06 $05, $04 ; TEMP
+	scr_01 $05, $01 ; TEMP
+	scr_01 $02, $01 ; TEMP
+	scr_01 $04, $01 ; TEMP
+	scr_setbit $daa0, $02 ; TEMP
+	scr_1f $03 ; TEMP
 	scr_end
 
 Script_008_44d3:
@@ -502,16 +514,23 @@ Script_008_44e8:
 
 Script_008_44ef:
 	scr_04 text_08_4519
-	db $3b, $6b, $50, $61
+	scr_3b text_08_506b
+	scr_61
 	scr_end
 
 Script_008_44f7:
 	scr_04 text_08_4519
-	db $3b, $6b, $50, $61
+	scr_3b text_08_506b
+	scr_61
 	scr_end
 
 Script_008_44ff:
-	dr $204ff, $2050c
+	scr_04 text_08_452d
+	scr_checkbit wdaa4, $01, .done
+	scr_35 $01 ; TEMP
+	scr_end
+.done
+	scr_end
 
 Script_008_450c:
 	scr_04 text_08_4537
@@ -523,17 +542,32 @@ Script_008_450c:
 	scr_36
 	scr_end
 
-text_08_4519:
-	dr $20519, $20526
+text_08_4519: ; TODO split this into a text file
+	text_init 0, $1a
+	text "嗯", 1
+	text "，找"
+	text "死", 0
+	text "!", 1
+	line
+	done
 
-text_08_4526:
-	dr $20526, $2052d
+text_08_4526: ; TODO split this into a text file
+	text_init 0, $1a
+	text "!", 1
+	line
+	done
 
-text_08_452d:
-	dr $2052d, $20537
+text_08_452d: ; TODO split this into a text file
+	text_init 0, $1a
+	text "嗯嗯嗯", 1
+	line $e7
+	done
 
-text_08_4537:
-	dr $20537, $20542
+text_08_4537: ; TODO split this into a text file
+	text_init 0, $1a
+	text "嗯嗯嗯", 1
+	line
+	getchoice $1cd0; # TEMP
 
 INCLUDE "data/english_text/ballots_house_intro.asm"
 INCLUDE "data/english_text/bank08_misc.asm"

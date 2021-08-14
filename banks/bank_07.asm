@@ -10,40 +10,40 @@ Group00_Maps::
 	dw BellHealingCenter1_Header
 	dw BellSchool1_Header
 	dw BellObservatory1_Header
-	dw BellSchoolSouthClassroom_Header
-	dw unk_007_44ef
+	dw BellSchoolSouthClassroom1_Header
+	dw TechCity_Header
 	dw unk_007_4579
 	dw unk_007_458b
 	dw unk_007_459d
 	dw unk_007_45af
 	dw unk_007_45c1
 	dw unk_007_45d3
-	dw unk_007_45fd
-	dw unk_007_460f
-	dw unk_007_4621
+	dw TechShop_Header
+	dw TechHealingCenter_Header
+	dw CrystalVillage_Header
 	dw unk_007_4687
 	dw unk_007_4699
 	dw unk_007_46ab
 	dw unk_007_46bd
 	dw unk_007_46cf
-	dw unk_007_46ed
-	dw unk_007_46ff
-	dw unk_007_4711
-	dw unk_007_4747
-	dw unk_007_4765
-	dw unk_007_4783
-	dw unk_007_47a1
-	dw unk_007_47b3
-	dw unk_007_47c5
-	dw unk_007_47fb
-	dw unk_007_480d
-	dw unk_007_484f
-	dw unk_007_4861
-	dw unk_007_487f
-	dw unk_007_489d
-	dw unk_007_41ec
-	dw unk_007_48d3
-	dw unk_007_420a
+	dw CrystalHealingCenter_Header
+	dw Junkyard_Header
+	dw PowerPlantOutside_Header
+	dw PowerPlant1F_Header
+	dw PowerPlant2F_Header
+	dw PowerPlant3F_Header
+	dw PowerPlant4F_Header
+	dw Hideout_Header
+	dw CrystalMines1_Header
+	dw CrystalMines2_Header
+	dw CrystalMines3_Header
+	dw CrystalMines4_Header
+	dw CrystalMines5_Header
+	dw R01_Header
+	dw R02_Header
+	dw BellSchoolNorthClassroom1_Header
+	dw BellObservatoryDestroyed_Header
+	dw BlueMoon_Header
 
 ; BellVillage1
 	map  BellVillage1
@@ -112,44 +112,34 @@ Group00_Maps::
 	warp 0, 1, $b088, BellObservatory1_ObjectEvents2
 	end_map
 
-; BellSchoolSouthClassroom
-	map  BellSchoolSouthClassroom
+; BellSchoolSouthClassroom1
+	map  BellSchoolSouthClassroom1
 	warp 1, 0, $4078
 	end_map
 
-unk_007_41ec::
+BellSchoolNorthClassroom1_Header::
 	; map XXXXX
-	db BANK(BellSchoolNorthClassroom_MapAttributes)
-	ds 3 ; 0 0 0
-	dw BellSchoolNorthClassroom_MapAttributes
-	; warp 1, 0, $4078, unk_008_4414, unk_007_42fa
+	dbaw2 BellSchoolNorthClassroom_MapAttributes
+	; warp 1, 0, $4078, BellSchoolNorthClassroom1_ObjectEvents, BellSchoolNorthClassroom1_MapEvents
 	db 1, 0
 	dw $4078
-	db BANK(unk_008_4414)
-	ds 3 ; 0 0 0
-	dw unk_008_4414
-	dw unk_007_42fa
+	dbaw2 BellSchoolNorthClassroom1_ObjectEvents
+	dw BellSchoolNorthClassroom1_MapEvents
 	; warp 0, 1, $5078, BellObservatory1_ObjectEvents, unk_007_4307
 	db 0, 1
 	dw $5078
-	db BANK(BellObservatory1_ObjectEvents)
-	ds 3 ; 0 0 0
-	dw BellObservatory1_ObjectEvents
+	dbaw2 BellObservatory1_ObjectEvents
 	dw unk_007_4307
 
 
-unk_007_420a::
+BlueMoon_Header::
 	; map XXXXX
-	db BANK(unk_017_4cae)
-	ds 3 ; 0 0 0
-	dw unk_017_4cae
-	; warp 0, 5, $20b0, BellObservatory1_ObjectEvents, unk_007_430e
+	dbaw2 BlueMoon_MapAttributes
+	; warp 0, 5, $20b0, BellObservatory1_ObjectEvents, BlueMoon_MapEvents
 	db 0, 5
 	dw $20b0
-	db BANK(BellObservatory1_ObjectEvents)
-	ds 3 ; 0 0 0
-	dw BellObservatory1_ObjectEvents
-	dw unk_007_430e
+	dbaw2 BellObservatory1_ObjectEvents
+	dw BlueMoon_MapEvents
 
 
 BellVillage1_MapEvents::
@@ -219,11 +209,11 @@ BellObservatory1_MapEvents::
 	warp_event ABSOLUTE, 10, $03, $01, $00 ; TEMP
 	events_end
 
-BellSchoolSouthClassroom_MapEvents::
+BellSchoolSouthClassroom1_MapEvents::
 	warp_event 10, ABSOLUTE, $09, $01, $00 ; TEMP
 	events_end
 
-unk_007_42fa::
+BellSchoolNorthClassroom1_MapEvents::
 	event 10, ABSOLUTE, $01, $00, $b5, $41
 	event 7, 6, $01, $03, $c8, $41
 	events_end
@@ -232,7 +222,7 @@ unk_007_4307::
 	event 10, ABSOLUTE, $01, $00, $14, $42
 	events_end
 
-unk_007_430e::
+BlueMoon_MapEvents::
 	events_end
 
 Group01_Maps::
@@ -247,49 +237,49 @@ Group01_Maps::
 	dw BellHealingCenter2_Header
 	dw BellSchool2_Header
 	dw BellObservatory2_Header
-	dw BellSchoolNorthClassroom_Header
-	dw unk_007_44ef
+	dw BellSchoolSouthClassroom2_Header
+	dw TechCity_Header
 	dw unk_007_4579
 	dw unk_007_458b
 	dw unk_007_459d
 	dw unk_007_45af
 	dw unk_007_45c1
 	dw unk_007_45d3
-	dw unk_007_45fd
-	dw unk_007_460f
-	dw unk_007_4621
+	dw TechShop_Header
+	dw TechHealingCenter_Header
+	dw CrystalVillage_Header
 	dw unk_007_4687
 	dw unk_007_4699
 	dw unk_007_46ab
 	dw unk_007_46bd
 	dw unk_007_46cf
-	dw unk_007_46ed
-	dw unk_007_46ff
-	dw unk_007_4711
-	dw unk_007_4747
-	dw unk_007_4765
-	dw unk_007_4783
-	dw unk_007_47a1
-	dw unk_007_47b3
-	dw unk_007_47c5
-	dw unk_007_47fb
-	dw unk_007_480d
-	dw unk_007_484f
-	dw unk_007_4861
-	dw unk_007_487f
-	dw unk_007_489d
-	dw unk_007_44dd
-	dw unk_007_48d3
-	dw unk_007_48e5
-	dw unk_007_48f7
+	dw CrystalHealingCenter_Header
+	dw Junkyard_Header
+	dw PowerPlantOutside_Header
+	dw PowerPlant1F_Header
+	dw PowerPlant2F_Header
+	dw PowerPlant3F_Header
+	dw PowerPlant4F_Header
+	dw Hideout_Header
+	dw CrystalMines1_Header
+	dw CrystalMines2_Header
+	dw CrystalMines3_Header
+	dw CrystalMines4_Header
+	dw CrystalMines5_Header
+	dw R01_Header
+	dw R02_Header
+	dw BellSchoolNorthClassroom2_Header
+	dw BellObservatoryDestroyed_Header
+	dw BlueMoon2_Header
+	dw TechCityBlackout_Header
 	dw unk_007_49b1
 	dw unk_007_49c3
 	dw unk_007_49d5
 	dw unk_007_49e7
 	dw unk_007_49f9
 	dw unk_007_4a0b
-	dw unk_007_4a29
-	dw unk_007_4a3b
+	dw TechShopBlackout_Header
+	dw TechHealingCenterBlackout_Header
 
 ; BellVillage2
 	map BellVillage2
@@ -354,23 +344,19 @@ Group01_Maps::
 	warp 1, 1, $8068
 	end_map
 
-; BellSchoolNorthClassroom
-	map BellSchoolNorthClassroom
+; BellSchoolSouthClassroom2
+	map BellSchoolSouthClassroom2
 	warp 1, 0, $4078
 	end_map
 
-unk_007_44dd::
+BellSchoolNorthClassroom2_Header::
 	; map XXXXX
-	db BANK(BellSchoolSouthClassroom_MapAttributes)
-	ds 3 ; 0 0 0
-	dw BellSchoolSouthClassroom_MapAttributes
-	warp  1, 0, $4078, BellSchoolOutside2_ObjectEvents, unk_007_4b3d
+	dbaw2 BellSchoolNorthClassroom_MapAttributes
+	warp  1, 0, $4078, BellSchoolOutside2_ObjectEvents, BellSchoolNorthClassroom2_MapEvents
 
-unk_007_44ef::
+TechCity_Header::
 	; map XXXXX
-	db BANK(unk_001_40dc)
-	ds 3 ; 0 0 0
-	dw unk_001_40dc
+	dbaw2 TechCity_MapAttributes
 	warp  6, 7, $9068, unk_00f_42b0, unk_007_4b44
 	warp  0, 0, $2058, unk_00f_42b0, unk_007_4b44
 	warp  13, 0, $2058, unk_00f_42b0, unk_007_4b44
@@ -385,67 +371,49 @@ unk_007_44ef::
 
 unk_007_4579::
 	; map XXXXX
-	db BANK(unk_001_40f0)
-	ds 3 ; 0 0 0
-	dw unk_001_40f0
+	dbaw2 unk_001_40f0
 	warp  0, 0, $8048, unk_00f_401a, unk_007_4ba5
 
 unk_007_458b::
 	; map XXXXX
-	db BANK(unk_001_4104)
-	ds 3 ; 0 0 0
-	dw unk_001_4104
+	dbaw2 unk_001_4104
 	warp  0, 0, $8048, unk_00f_4329, unk_007_4bb2
 
 unk_007_459d::
 	; map XXXXX
-	db BANK(unk_001_4118)
-	ds 3 ; 0 0 0
-	dw unk_001_4118
+	dbaw2 unk_001_4118
 	warp  0, 0, $8058, unk_00f_4000, unk_007_4bbf
 
 unk_007_45af::
 	; map XXXXX
-	db BANK(unk_001_412c)
-	ds 3 ; 0 0 0
-	dw unk_001_412c
+	dbaw2 unk_001_412c
 	warp  0, 0, $8038, unk_00f_4039, unk_007_4bcc
 
 unk_007_45c1::
 	; map XXXXX
-	db BANK(unk_001_4140)
-	ds 3 ; 0 0 0
-	dw unk_001_4140
+	dbaw2 unk_001_4140
 	warp  0, 0, $8058, unk_00f_4348, unk_007_4bd9
 
 unk_007_45d3::
 	; map XXXXX
-	db BANK(unk_001_4154)
-	ds 3 ; 0 0 0
-	dw unk_001_4154
+	dbaw2 unk_001_4154
 	warp  0, 0, $8048, unk_00f_43d2, unk_007_4be6
 	warp  0, 0, $7058, unk_00f_43e9, unk_007_4bf3
 	warp  0, 0, $8048, unk_00f_4416, unk_007_4be6
 
-unk_007_45fd::
+TechShop_Header::
 	; map XXXXX
-	db BANK(unk_001_4168)
-	ds 3 ; 0 0 0
-	dw unk_001_4168
+	dbaw2 TechShop_MapAttributes
 	warp  0, 0, $8058, unk_00f_4375, unk_007_4c06
 
-unk_007_460f::
+TechHealingCenter_Header::
 	; map XXXXX
-	db BANK(unk_001_417c)
-	ds 3 ; 0 0 0
-	dw unk_001_417c
+	dbaw2 TechHealingCenter_MapAttributes
 	warp  0, 0, $8058, unk_00f_4397, unk_007_4c13
 
-unk_007_4621::
+CrystalVillage_Header::
 	; map XXXXX
-	db BANK(unk_001_4190)
-	ds 3 ; 0 0 0
-	dw unk_001_4190
+	dbaw2 CrystalVillage_MapAttributes
 	warp  4, 5, $9048, unk_00e_4903, unk_007_4c26
 	warp  3, 0, $2058, unk_00e_4903, unk_007_4c26
 	warp  5, 0, $5058, unk_00e_4903, unk_007_4c26
@@ -457,182 +425,136 @@ unk_007_4621::
 
 unk_007_4687::
 	; map XXXXX
-	db BANK(unk_001_41a4)
-	ds 3 ; 0 0 0
-	dw unk_001_41a4
+	dbaw2 unk_001_41a4
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4c63
 
 unk_007_4699::
 	; map XXXXX
-	db BANK(unk_001_41b8)
-	ds 3 ; 0 0 0
-	dw unk_001_41b8
+	dbaw2 unk_001_41b8
 	warp  0, 0, $8048, unk_00e_49c5, unk_007_4c70
 
 unk_007_46ab::
 	; map XXXXX
-	db BANK(unk_001_41cc)
-	ds 3 ; 0 0 0
-	dw unk_001_41cc
+	dbaw2 unk_001_41cc
 	warp  0, 0, $8068, unk_00e_49df, unk_007_4c7d
 
 unk_007_46bd::
 	; map XXXXX
-	db BANK(unk_001_41e0)
-	ds 3 ; 0 0 0
-	dw unk_001_41e0
+	dbaw2 unk_001_41e0
 	warp  0, 0, $8058, unk_00e_49ef, unk_007_4c8a
 
 unk_007_46cf::
 	; map XXXXX
-	db BANK(unk_001_41f4)
-	ds 3 ; 0 0 0
-	dw unk_001_41f4
+	dbaw2 unk_001_41f4
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4c97
 	warp  1, 0, $4088, BellSchoolNorthClassroom_ObjectEvents, unk_007_4c97
 
-unk_007_46ed::
+CrystalHealingCenter_Header::
 	; map XXXXX
-	db BANK(unk_001_4208)
-	ds 3 ; 0 0 0
-	dw unk_001_4208
+	dbaw2 CrystalHealingCenter_MapAttributes
 	warp  0, 0, $8068, unk_00e_4664, unk_007_4caa
 
-unk_007_46ff::
+Junkyard_Header::
 	; map XXXXX
-	db BANK(unk_001_421c)
-	ds 3 ; 0 0 0
-	dw unk_001_421c
+	dbaw2 Junkyard_MapAttributes
 	warp  0, 0, $8068, unk_00e_4537, unk_007_4cbd
 
-unk_007_4711::
+PowerPlantOutside_Header::
 	; map XXXXX
-	db BANK(unk_001_4230)
-	ds 3 ; 0 0 0
-	dw unk_001_4230
+	dbaw2 PowerPlantOutside_MapAttributes
 	warp  7, 0, $2068, unk_00f_40c2, unk_007_4cd0
 	warp  0, 0, $7058, unk_00f_40c2, unk_007_4cd0
 	warp  0, 0, $8088, unk_00f_40ab, unk_007_4cd0
 	warp  0, 0, $8088, unk_00f_40c2, unk_007_4cd0
 
-unk_007_4747::
+PowerPlant1F_Header::
 	; map XXXXX
-	db BANK(unk_001_4244)
-	ds 3 ; 0 0 0
-	dw unk_001_4244
+	dbaw2 PowerPlant1F_MapAttributes
 	warp  1, 0, $9038, unk_00f_4160, unk_007_4ce3
 	warp  0, 0, $9028, unk_00f_4160, unk_007_4ce3
 
-unk_007_4765::
+PowerPlant2F_Header::
 	; map XXXXX
-	db BANK(unk_001_4258)
-	ds 3 ; 0 0 0
-	dw unk_001_4258
+	dbaw2 PowerPlant2F_MapAttributes
 	warp  0, 0, $9028, unk_00f_418d, unk_007_4cf0
 	warp  1, 0, $2078, unk_00f_418d, unk_007_4cf0
 
-unk_007_4783::
+PowerPlant3F_Header::
 	; map XXXXX
-	db BANK(unk_001_426c)
-	ds 3 ; 0 0 0
-	dw unk_001_426c
+	dbaw2 PowerPlant3F_MapAttributes
 	warp  1, 0, $2078, unk_00f_41af, unk_007_4cfd
 	warp  0, 0, $9028, unk_00f_41af, unk_007_4cfd
 
-unk_007_47a1::
+PowerPlant4F_Header::
 	; map XXXXX
-	db BANK(unk_001_4280)
-	ds 3 ; 0 0 0
-	dw unk_001_4280
+	dbaw2 PowerPlant4F_MapAttributes
 	warp  0, 0, $9028, unk_00f_41dc, unk_007_4d0a
 
-unk_007_47b3::
+Hideout_Header::
 	; map XXXXX
-	db BANK(unk_001_4294)
-	ds 3 ; 0 0 0
-	dw unk_001_4294
+	dbaw2 Hideout_MapAttributes
 	warp  13, 7, $9088, unk_00e_4a1a, unk_007_4d17
 
-unk_007_47c5::
+CrystalMines1_Header::
 	; map XXXXX
-	db BANK(unk_017_4000)
-	ds 3 ; 0 0 0
-	dw unk_017_4000
+	dbaw2 unk_017_4000
 	warp  0, 3, $9038, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
 	warp  0, 0, $5048, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
 	warp  5, 0, $3088, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
 	warp  5, 3, $7088, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
 
-unk_007_47fb::
+CrystalMines2_Header::
 	; map XXXXX
-	db BANK(unk_017_4014)
-	ds 3 ; 0 0 0
-	dw unk_017_4014
+	dbaw2 unk_017_4014
 	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d49
 
-unk_007_480d::
+CrystalMines3_Header::
 	; map XXXXX
-	db BANK(unk_017_4028)
-	ds 3 ; 0 0 0
-	dw unk_017_4028
+	dbaw2 unk_017_4028
 	warp  5, 3, $5038, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
 	warp  0, 0, $3018, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
 	warp  0, 3, $7018, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
 	warp  4, 0, $2038, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
 	warp  5, 0, $2078, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
 
-unk_007_484f::
+CrystalMines4_Header::
 	; map XXXXX
-	db BANK(unk_017_403c)
-	ds 3 ; 0 0 0
-	dw unk_017_403c
+	dbaw2 unk_017_403c
 	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d87
 
-unk_007_4861::
+CrystalMines5_Header::
 	; map XXXXX
-	db BANK(unk_017_4050)
-	ds 3 ; 0 0 0
-	dw unk_017_4050
+	dbaw2 unk_017_4050
 	warp  5, 5, $9058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d8e
 	warp  7, 5, $9078, unk_00e_4a75, unk_007_4d8e
 
-unk_007_487f::
+R01_Header::
 	; map XXXXX
-	db BANK(unk_017_474b)
-	ds 3 ; 0 0 0
-	dw unk_017_474b
+	dbaw2 unk_017_474b
 	warp  3, 0, $2078, unk_00e_422d, unk_007_4da7
 	warp  0, 0, $2028, unk_00e_422d, unk_007_4da7
 
-unk_007_489d::
+R02_Header::
 	; map XXXXX
-	db BANK(unk_017_475f)
-	ds 3 ; 0 0 0
-	dw unk_017_475f
+	dbaw2 unk_017_475f
 	warp  5, 3, $9068, unk_00f_4000, unk_007_4de4
 	warp  0, 3, $9058, unk_00f_4000, unk_007_4de4
 	warp  5, 0, $2068, unk_00f_4000, unk_007_4de4
 	warp  0, 0, $4028, unk_00f_4000, unk_007_4de4
 
-unk_007_48d3::
+BellObservatoryDestroyed_Header::
 	; map XXXXX
-	db BANK(unk_017_4a09)
-	ds 3 ; 0 0 0
-	dw unk_017_4a09
+	dbaw2 unk_017_4a09
 	warp  0, 1, $8018, BellSchoolNorthClassroom_ObjectEvents, unk_007_4e21
 
-unk_007_48e5::
+BlueMoon2_Header::
 	; map XXXXX
-	db BANK(unk_017_4cae)
-	ds 3 ; 0 0 0
-	dw unk_017_4cae
+	dbaw2 BlueMoon_MapAttributes
 	warp  0, 5, $20b0, BellSchoolNorthClassroom_ObjectEvents, unk_007_4e2e
 
-unk_007_48f7::
+TechCityBlackout_Header::
 	; map XXXXX
-	db BANK(unk_018_4000)
-	ds 3 ; 0 0 0
-	dw unk_018_4000
+	dbaw2 unk_018_4000
 	warp  6, 7, $9068, unk_00e_43d5, unk_007_4e2f
 	warp  0, 0, $2058, unk_00e_43d5, unk_007_4e2f
 	warp  13, 0, $2058, unk_00e_43d5, unk_007_4e2f
@@ -651,59 +573,43 @@ unk_007_48f7::
 
 unk_007_49b1::
 	; map XXXXX
-	db BANK(unk_018_4014)
-	ds 3 ; 0 0 0
-	dw unk_018_4014
+	dbaw2 unk_018_4014
 	warp  0, 0, $8048, unk_00e_4578, unk_007_4e91
 
 unk_007_49c3::
 	; map XXXXX
-	db BANK(unk_018_4028)
-	ds 3 ; 0 0 0
-	dw unk_018_4028
+	dbaw2 unk_018_4028
 	warp  0, 0, $8048, unk_00e_4597, unk_007_4e9e
 
 unk_007_49d5::
 	; map XXXXX
-	db BANK(unk_018_403c)
-	ds 3 ; 0 0 0
-	dw unk_018_403c
+	dbaw2 unk_018_403c
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4eab
 
 unk_007_49e7::
 	; map XXXXX
-	db BANK(unk_018_4050)
-	ds 3 ; 0 0 0
-	dw unk_018_4050
+	dbaw2 unk_018_4050
 	warp  0, 0, $8038, unk_00e_45c0, unk_007_4eb8
 
 unk_007_49f9::
 	; map XXXXX
-	db BANK(unk_018_4064)
-	ds 3 ; 0 0 0
-	dw unk_018_4064
+	dbaw2 unk_018_4064
 	warp  0, 0, $8058, unk_00e_4632, unk_007_4ec5
 
 unk_007_4a0b::
 	; map XXXXX
-	db BANK(unk_018_4078)
-	ds 3 ; 0 0 0
-	dw unk_018_4078
+	dbaw2 unk_018_4078
 	warp  0, 0, $8048, unk_00e_481c, unk_007_4ed2
 	warp  0, 0, $8048, unk_00e_469f, unk_007_4ed2
 
-unk_007_4a29::
+TechShopBlackout_Header::
 	; map XXXXX
-	db BANK(unk_018_408c)
-	ds 3 ; 0 0 0
-	dw unk_018_408c
+	dbaw2 unk_018_408c
 	warp  0, 0, $8058, unk_00e_4642, unk_007_4edf
 
-unk_007_4a3b::
+TechHealingCenterBlackout_Header::
 	; map XXXXX
-	db BANK(unk_018_40a0)
-	ds 3 ; 0 0 0
-	dw unk_018_40a0
+	dbaw2 unk_018_40a0
 	warp  0, 0, $8058, unk_00e_4664, unk_007_4eec
 
 BellVillage2_MapEvents::
@@ -776,11 +682,12 @@ BellObservatory2_MapEvents::
 	events_end
 
 BellSchoolNorthClassroom_MapEvents::
+BellSchoolSouthClassroom2_MapEvents::
 	warp_event 10, ABSOLUTE, $09, $01, $00 ; TEMP
 	event 2, 3, $07, $06, $00, $00
 	events_end
 
-unk_007_4b3d:
+BellSchoolNorthClassroom2_MapEvents:
 	warp_event 10, ABSOLUTE, $09, $02, $00
 	events_end
 

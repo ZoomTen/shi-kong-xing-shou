@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<map orientation="orthogonal" renderorder="right-down" tilewidth="16" tileheight="16" width="2" height="44">
+	<!--Add tilesets as much as needed-->
+	<tileset firstgid="1" tilewidth="16" tileheight="16">
+		<image source="../metatiles/PowerPlant.tmx"/>
+	</tileset>
+	<layer id="1" name="blocks" width="2" height="44">
+		<data encoding="csv">
+20, 40,
+20, 8,
+42, 38,
+6, 6,
+38, 38,
+6, 6,
+38, 42,
+6, 6,
+38, 19,
+44, 19,
+20, 8,
+20, 3,
+6, 6,
+4, 5,
+16, 31,
+37, 38,
+31, 31,
+38, 38,
+31, 25,
+38, 19,
+20, 8,
+34, 31,
+6, 6,
+31, 31,
+6, 6,
+31, 33,
+6, 6,
+6, 6,
+6, 19,
+6, 19,
+38, 39,
+6, 6,
+3, 4,
+6, 6,
+5, 19,
+6, 19,
+20, 45,
+21, 11,
+6, 6,
+11, 11,
+52, 19,
+11, 22,
+1, 19,
+11, 22</data>
+	</layer>
+</map>

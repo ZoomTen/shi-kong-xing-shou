@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<map orientation="orthogonal" renderorder="right-down" tilewidth="32" tileheight="32" width="12" height="5">
+	<tileset firstgid="1" tilewidth="32" tileheight="32">
+		<image source="../blocks/PowerPlantOutside.tmx"/>
+	</tileset>
+	<layer id="1" name="layout" width="12" height="5">
+		<data encoding="csv">
+1,2,3,4,5,6,28,29,28,29,30,6,
+7,8,9,10,11,1,31,29,32,29,33,1,
+12,13,14,15,16,17,34,35,36,37,38,39,
+6,18,19,20,21,22,40,41,42,43,44,31,
+6,23,24,25,26,27,45,46,47,48,28,49</data>
+	</layer>
+</map>

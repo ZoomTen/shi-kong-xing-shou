@@ -169,6 +169,7 @@ Script_00e_4130:
 	scr_setbit $daa2, $02 ; TEMP
 	scr_end
 
+BellSchoolSouthClassroom2_ObjectEvents::
 BellSchoolNorthClassroom_ObjectEvents::
 BellObservatory2_ObjectEvents::
 BellSchool2_ObjectEvents::
@@ -875,7 +876,8 @@ unk_00e_4899:
 	scr_06 $05, $04 ; TEMP
 	scr_06 $05, $04 ; TEMP
 	scr_1c $05 ; TEMP
-	scr_61 $01 ; TEMP
+	scr_61
+	db $01 ; TEMP
 	scr_62 $01, $01 ; TEMP
 	scr_setbit $daa1, $00 ; TEMP
 	scr_end

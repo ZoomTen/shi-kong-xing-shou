@@ -234,10 +234,9 @@ ENDM
 
 	const_def $61
 
-	const script_61 ; $65
+	const script_61 ; $61
 scr_61: MACRO
 	db script_61
-	db \1
 ENDM
 
 	const_def $62

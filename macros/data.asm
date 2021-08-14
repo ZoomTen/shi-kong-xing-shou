@@ -121,3 +121,7 @@ dbaw: MACRO
 ; is skipped
 	dw BANK(\1), \1
 ENDM
+
+dbaw2: MACRO
+	dw BANK(\1), 0, \1
+ENDM

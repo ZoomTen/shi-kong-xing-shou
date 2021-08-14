@@ -22,7 +22,7 @@ unk_017_475f::
 unk_017_4a09::
 	dr $5ca09, $5ccae
 
-unk_017_4cae::
+BlueMoon_MapAttributes::
 	dr $5ccae, $5cf9e
 
 gfx_017_4f9e::
@@ -32,13 +32,13 @@ gfx_017_511e::
 	dr $5d11e, $5d12e
 
 gfx_017_512e::
-	dr $5d12e, $5d78e
+INCBIN "gfx/tilesets/image_17_512e.2bpp"
 
 gfx_017_578e::
-	dr $5d78e, $5dc1e
+INCBIN "gfx/tilesets/image_17_578e.2bpp"
 
 gfx_017_5c1e::
-	dr $5dc1e, $5e12e
+INCBIN "gfx/tilesets/image_17_5c1e.2bpp"
 
 gfx_017_612e::
 	dr $5e12e, $5e6ce
@@ -47,10 +47,10 @@ gfx_017_66ce::
 	dr $5e6ce, $5e80e
 
 gfx_017_680e::
-	dr $5e80e, $5ecae
+INCBIN "gfx/tilesets/image_17_680e.2bpp"
 
 gfx_017_6cae::
-	dr $5ecae, $5f960
+INCBIN "gfx/tilesets/image_17_6cae.2bpp"
 
 SECTION "banknum17", ROMX[$7fff], BANK[$17]
 	db $17
