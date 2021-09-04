@@ -1,7 +1,7 @@
-Func_061_4000::
+MeteorCutscene2::
 	dr $184000, $185d22
 
-Func_061_5d22::
+UnderwaterPictureCutscene::
 	dr $185d22, $186ee0
 
 

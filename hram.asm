@@ -1,3 +1,6 @@
+INCLUDE "constants.asm"
+
+
 SECTION "HRAM", HRAM[$ff8c]
 
 hFF8C:: ds 1

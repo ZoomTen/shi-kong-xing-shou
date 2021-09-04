@@ -261,21 +261,236 @@ MapEvent_07:
 	pop hl
 	ret
 
-Func_005_41fb::
-	dr $141fb, $14275
+Overworld::
+; upon entering overworld
+	call PlayMapMusic
+; ?
+	ld a, $1C
+	ld [wdce7], a
 
-Func_005_4275:
-	dr $14275, $142d3
+	xor a
+	ldh [hFade], a
+	ldh [hFFBC], a	; textbox enable
+	ldh [hFFC2], a	; map animations
 
-Func_005_42d3:
-	dr $142d3, $142f5
+	xor a
+	ldh [hSCX], a
+	ldh [hFFAF], a
+	ldh [hSCY], a
+	ldh [hFFB1], a
+	ldh [hFF9F], a
+	ldh [hFFA0], a
+	ldh [hFFC2], a
+	ldh [hJoypadDown], a
+	ldh [hJoypadPressed], a
+	ld a, $FF
+	ldh [hFF9E], a
 
-Func_005_42f5:
+	ld hl, wd1e3 + 2
+	ld c, $0C
+	xor a
+.fill
+	ld [hli], a
+	dec c
+	jr nz, .fill
+
+	call Func_005_4408
+	call Func_005_5a9c
+	call Func_05ff
+	call Func_005_5a32
+	ld hl, $9800
+	ld de, wTilemap
+	ld bc, $1412
+	ld a, $12
+	ld [hFF93], a
+	ld a, $14
+	ldh [hFF92], a
+	call Func_005_5a59
+	call Func_005_5a8e
+	call Func_005_4662
+	call Func_005_401d
+	call Func_0557
+	call Func_005_4000
+	xor a
+	ldh [hSimulatedJoypadState], a
+	ldh [hFFA4], a
+	call Func_0419
+	ld a, $C7
+	ldh [rLCDC], a
+	ld hl, wcab0
+	xor a
+	ldh [hFFC4], a
+	ldh [hFF9D], a
+	ld [wd9d2], a
+	call FadeInPalette
+
+OverworldLoop:
+	call DelayFrame
+
+; increase frame counter
+	ldh a, [hFF9D]
+	inc a
+	ldh [hFF9D], a
+
+; check if we're fading to another map
+	ldh a, [hFade]
+	and a
+	jp nz, Overworld_DoFade
+
+; check if we have any part of the start menu open
+	ldh a, [hFFC5]
+	and a
+	jp nz, Overworld_GotoProcessStartMenu
+
+; check if we should be in battle
+	ldh a, [hFFD3]
+	and a
+	jp nz, Overworld_GotoBattleJumptable
+
+; not in battle
+
+	call Func_005_43e1
+; update OAM?
+	call Func_0419
+
+; check if we should briefly display
+; a short text scroll now
+	ldh a, [hScrollNumber]
+	and a
+	jp nz, Overworld_GotoProcessScroll
+
+; check if we should be spawning
+; a text box
+	ldh a, [hFFBC]
+	and a
+	jp nz, Overworld_GotoProcessTextbox
+
+; check if we are currently in a script
+	ldh a, [hFFD6]
+	and a
+	jp nz, Overworld_GotoProcessScript
+
+; trigger joypad reading
+	ld a, $01
+	ld [wd082], a
+
+; move one step
+	call Overworld_MovePlayerOneStep
+
+; check for fade (again)
+	ldh a, [hFade]
+	and a
+	jr nz, Overworld_DoFade
+
+; disable joypad reading
+	xor a
+	ld [wd082], a
+
+; if we are in a battle, go back to loop
+	ld a, [hFFD3]
+	and a
+	jr nz, OverworldLoop
+
+; specific events in the overworld
+	call Overworld_DoBlackFlashing
+	call Func_005_4bc1
+	call Overworld_ProcessJoypadInput
+
+; object events?
+	call Func_062c
+	call Func_0426
+	call Func_005_440f
+	jp OverworldLoop
+
+Overworld_GotoProcessScript:
+	xor a
+	ld [wd082], a
+	call Func_06d0
+	call Func_005_440f
+	call Func_0426
+	jp OverworldLoop
+
+Overworld_GotoProcessTextbox:
+	ld hl, wTextStart
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call Func_06c6
+	jp OverworldLoop
+
+Overworld_GotoProcessScroll:
+	call Func_074d
+	jp OverworldLoop
+
+Overworld_GotoProcessStartMenu:
 	call Func_0b39
-	jp Func_005_4275
+	jp OverworldLoop
 
-Func_005_42fb:
-	dr $142fb, $14bc1
+Overworld_GotoBattleJumptable:
+	farcall BattleJumptable
+	jp OverworldLoop
+
+Overworld_DoFade:
+	ld a, [wcd03]
+	ld [wd0e3], a
+	ld a, [wcd23]
+	ld [wdcec], a
+	jp JumpToGameMode
+
+Overworld_DoBlackFlashing:
+; for maps 04:06 through 04:09
+; flashes to black, and then flashes back
+; to the original palette
+	ld a, [hMapGroup]
+	cp $04
+	ret nz
+	ldh a, [hMapNumber]
+	cp $06
+	jr z, .DoFlash
+	cp $07
+	jr z, .DoFlash
+	cp $08
+	jr z, .DoFlash
+	cp $09
+	jr z, .DoFlash
+	ret
+
+.DoFlash:
+	ld a, [wdcb6 + 3]
+	and a
+	jr z, Func_005_434a
+	ld a, [wdcb6 + 2]
+	inc a
+	ld [wdcb6 + 2], a
+	cp $20
+	ret nz
+	xor a
+	ld [wdcb6 + 2], a
+	ld [wdcb6 + 3], a
+	ld hl, unk_005_4394
+	call PartialCopyBackgroundPalettes
+	ret
+
+Func_005_434a:
+	dr $1434a, $14394
+
+unk_005_4394:
+	dr $14394, $143e1
+
+Func_005_43e1:
+	dr $143e1, $14408
+
+Func_005_4408:
+	dr $14408, $1440f
+
+Func_005_440f:
+	dr $1440f, $14662
+
+Func_005_4662:
+	dr $14662, $1495f
+
+Overworld_MovePlayerOneStep:
+	dr $1495f, $14bc1
 
 Func_005_4bc1:
 	dr $14bc1, $14bfa
@@ -360,6 +575,7 @@ Func_005_4f3d:
 	ret
 
 Func_005_4f48:
+; on battle start
 	dr $14f48, $150a5
 
 Func_005_50a5:
@@ -422,7 +638,16 @@ Func_005_51db:
 	ret
 
 Func_005_51ed:
-	dr $151ed, $15a8e
+	dr $151ed, $1576c
+
+Overworld_ProcessJoypadInput:
+	dr $1576c, $15a32
+
+Func_005_5a32:
+	dr $15a32, $15a59
+
+Func_005_5a59:
+	dr $15a59, $15a8e
 
 Func_005_5a8e:
 	ld hl, wcd00

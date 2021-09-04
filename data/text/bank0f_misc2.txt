@@ -1,0 +1,682 @@
+@org $0f, $48f3 (unkText_00f_48f3):
+	init $00, $16; # TEMP
+	text "發條?";
+	para "我忘了放哪裡了";
+	line "⋯⋯";
+	para "就在這些寶貝堆";
+	line "裡，自已找吧!";
+	done;
+
+@org $0f, $492c:
+	init $01, $2a; # TEMP
+	text "得到了發條!";
+	done;
+
+@org $0f, $493b:
+	init $1c, $29; # TEMP
+	text "沒有錯!";
+	para "這就是我想要的";
+	line "發條⋯";
+	para "實在是很丟臉⋯";
+	para "唉~";
+	cont "蒙著臉做就不會";
+	line "這麼覺得吧!";
+	para "等我一下下~";
+	done;
+
+@org $0f, $498f:
+	init $1c, $29; # TEMP
+	text "這就是發條老鼠";
+	line "。";
+	done;
+
+	text "沒想到蒙著臉，";
+	cont "還是覺得一樣的";
+	line "丟臉~";
+	para "喂~巴洛特!";
+	cont "千萬不可以說出";
+	line "去唷。";
+	done;
+
+@org $0f, $49e7:
+	init $01, $2a; # TEMP
+	text "得到了發條老鼠";
+	line "!";
+	done;
+
+@org $0f, $49fb:
+	init $1c, $29; # TEMP
+	text "有了發條老鼠，";
+	cont "應該就可以引開";
+	line "發電塔的貓怪了";
+	line "吧。";
+	para "哎呀~";
+	para "想到就覺得丟臉";
+	line "⋯⋯";
+	done;
+
+@org $0f, $4a46:
+	init $21, $31; # TEMP
+	text "喵嗚~喵~";
+	para "嗚嗚~";
+	done;
+
+@org $0f, $4a5a:
+	init $01, $00; # TEMP
+	text "乖貓咪~";
+	para "快點走開唷~";
+	done;
+
+@org $0f, $4a72:
+	init $01, $2d; # TEMP
+	text "啊!";
+	para "發條的動力用完";
+	line "了⋯";
+	done;
+
+@org $0f, $4a8e:
+	init $21, $31; # TEMP
+	text "嗚~喵吼喵吼吼";
+	line "!";
+	para "(可惡!)";
+	line "(上當了)";
+	done;
+
+@org $0f, $4ab7:
+	init $23, $17; # TEMP
+	text "嗚峨嗚~嗚~";
+	done;
+
+@org $0f, $4ac7:
+	init $01, $00; # TEMP
+	text "大权?怎麼了?";
+	done;
+
+@org $0f, $4ad7:
+	init $23, $17; # TEMP
+	text "真是感謝。";
+	para "科技城停電後，";
+	cont "我就趕來詢視情";
+	line "況。";
+	para "沒想到被閃電隊";
+	line "給綁了起來!";
+	para "真是感謝你!";
+	done;
+
+@org $0f, $4b28:
+	init $1e, $27; # TEMP
+	text "峨~呵呵呵!";
+	para "有了三千萬，";
+	line "我們的夢想就⋯";
+	done;
+
+@org $0f, $4b4c:
+	init $1f, $28; # TEMP
+	text "跟在下想的，";
+	line "一點都沒錯。";
+	para "這樣一來⋯⋯";
+	done;
+
+@org $0f, $4b71:
+	init $1e, $27; # TEMP
+	text "你你⋯你⋯你";
+	line "⋯你怎麼來的?";
+	done;
+
+@org $0f, $4b86:
+	init $1f, $28; # TEMP
+	text "可惡!";
+	para "你是來破壞在下";
+	line "的夢想的嗎?";
+	para "就讓你們來點愛";
+	line "的教育吧!";
+	done;
+
+@org $0f, $4bc3:
+	init $1e, $27; # TEMP
+	text "可可⋯可";
+	line "⋯可惡!";
+	para "你⋯你你⋯們給";
+	line "我⋯記⋯記住!";
+	done;
+
+@org $0f, $4bf0:
+	init $1f, $28; # TEMP
+	text "這次在下就放了";
+	line "你!";
+	cont "要記住在下的恩";
+	line "惠!";
+	para "在下是代表了~";
+	cont "愛、正義、勇氣";
+	line "的閃電隊!";
+	done;
+
+@org $0f, $4c3c:
+	init $01, $2b; # TEMP
+	text "真是⋯⋯⋯";
+	done;
+
+@org $0f, $4c47:
+	init $01, $00; # TEMP
+	text "這個開關是⋯⋯";
+	done;
+
+@org $0f, $4c56:
+	init $00, $1f; # TEMP
+	text "啊!";
+	line "電力又回復了?";
+	para "第一次覺得，";
+	cont "光明是這麼的幸";
+	line "福。";
+	done;
+
+@org $0f, $4c89:
+	init $00, $1b; # TEMP
+	text "原來電力塔早就";
+	line "被閃電隊佔領了";
+	para "這次能回復電力";
+	line "，";
+	cont "真是感謝你及雷";
+	line "歐。";
+	done;
+
+@org $0f, $4cc8:
+	init $00, $16; # TEMP
+	text "好⋯好刺眼⋯⋯";
+	para "眼晴好不容易習";
+	line "慣了黑暗，";
+	cont "對於這麼亮的燈";
+	line "光，";
+	cont "真有點吃不消⋯";
+	done;
+
+@org $0f, $4d0f:
+	init $00, $19; # TEMP
+	text "果然需要雷歐出";
+	line "馬，";
+	cont "才能打敗閃電隊";
+	line "。";
+	para "雷歐博士是最棒";
+	line "的機械發明家。";
+	done;
+
+@org $0f, $4d50:
+	init $00, $17; # TEMP
+	text "你聽過加爾企業";
+	line "嗎?";
+	para "那可是二大知名";
+	line "企業之一啊!";
+	para "加爾企業及邦林";
+	line "企業，";
+	cont "都是數一數二的";
+	line "大企業喲。";
+	done;
+
+@org $0f, $4da4:
+	init $00, $21; # TEMP
+	text "嗚~嗚~";
+	para "電燈又亮了，";
+	cont "人家又要上學了";
+	line "!";
+	para "嗚~~嗚~";
+	done;
+
+@org $0f, $4dd5:
+	init $00, $16; # TEMP
+	text "這裡是科技城的";
+	line "廢鐵集中場。";
+	para "別看這些破破爛";
+	line "爛的東西，";
+	cont "這些全是我的寶";
+	line "貝!";
+	done;
+
+@org $0f, $4e1b:
+	init $00, $12; # TEMP
+	text "前陣子的流星雨";
+	line "，";
+	cont "打壞了通往多魯";
+	line "市的道路。";
+	para "這該怎麼辦呢?";
+	done;
+
+@org $0f, $4e54:
+	init $00, $16; # TEMP
+	text "就是你救了博特";
+	line "嗎?";
+	para "實在是非常的感";
+	line "謝!";
+	para "這個就送給你了";
+	line "，";
+	cont "真是相當的感謝";
+	line "。";
+	done;
+
+@org $0f, $4e9b:
+	init $00, $16; # TEMP
+	text "真是相當的感謝";
+	line "。";
+	done;
+
+@org $0f, $4eae:
+	init $23, $17; # TEMP
+	text "非常的感謝您。";
+	done;
+
+@org $0f, $4ebe:
+	init $19, $22; # TEMP
+	text "電力又回復了，";
+	cont "一大堆帳要補登";
+	line "記⋯";
+	para "忙死了⋯⋯";
+	para "需要什麼服務嗎";
+	line "?";
+	line;
+	unknownE7;
+	done;
+
+@org $0f, $4efb:
+	init $14, $25; # TEMP
+	text "需要妮可治療嗎";
+	line "?";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $0f, $4f13:
+	init $1a, $25; # TEMP
+	text "這裡是星獸膠囊";
+	line "存放銀行。";
+	para "需要艾娜的服務";
+	line "嗎?";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $0f, $4f42:
+	init $1b, $4c; # TEMP
+	text "博士終於做好了";
+	line "反重力裝置了!";
+	para "身為加爾企業採";
+	line "購部經理的我，";
+	cont "終於可以回去參";
+	line "加重要的會議了";
+	done;
+
+@org $0f, $4f94:
+	init $1c, $29; # TEMP
+	text "啊啊啊啊啊!!";
+	para "巴洛特啊!";
+	line "你來的剛剛好!";
+	para "了不起的大發現";
+	line "!";
+	done;
+
+@org $0f, $4fca:
+	init $01, $2d; # TEMP
+	text "了不起的發現?";
+	done;
+
+@org $0f, $4fdc:
+	init $1c, $29; # TEMP
+	text "我看了你的設計";
+	line "圖，";
+	cont "這可是不得了的";
+	line "東西喲!";
+	para "這可是一台超越";
+	line "想像的太空船!";
+	cont "太‧空‧船‧峨";
+	line "!";
+	para "你為什麼會有這";
+	line "張設計圖?";
+	done;
+
+@org $0f, $504b:
+	init $01, $2b; # TEMP
+	text "這是爸爸唯一留";
+	line "下的東西⋯⋯";
+	para "我一直在想，";
+	cont "如照著爸爸的";
+	line "目標走，";
+	para "一定可以相遇的";
+	line "。";
+	done;
+
+@org $0f, $5097:
+	init $1c, $29; # TEMP
+	text "是這樣啊!";
+	para "⋯⋯⋯⋯這是什";
+	line "麼?";
+	para "設計圖的『核』";
+	line "，";
+	cont "怎麼有八個空白";
+	line "的部份?";
+	para "⋯⋯⋯";
+	para "慢著⋯或許⋯⋯";
+	done;
+
+@org $0f, $50ed:
+	init $1c, $29; # TEMP
+	text "就是這個!";
+	line "『動力晶片』!";
+	cont "這是核";
+	forcemap 2 "心";
+	text "的";
+	line "一部份!";
+	para "就我所知，";
+	cont "這晶片共有八";
+	line "個，";
+	cont "分別由八個科學";
+	line "家保管。";
+	para "喂喂~巴洛特!";
+	para "你不是想找到你";
+	line "爸爸嗎?";
+	cont "我們就來做個分";
+	line "工:";
+	para "我負責完成圖上";
+	line "的太空船機體。";
+	para "你就負責尋找，";
+	cont "乘下的七個動力";
+	line "晶片，";
+	para "好嗎?";
+	done;
+
+@org $0f, $51c1:
+	init $01, $2d; # TEMP
+	text "動力晶片?";
+	para "爸爸一定也想解";
+	line "開這個謎團。";
+	para "好的!";
+	para "雷歐博士~";
+	line "我答應你。";
+	done;
+
+@org $0f, $5200:
+	init $1b, $4c; # TEMP
+	text "這個晶片?";
+	para "我好像在董事長";
+	line "那裡，";
+	cont "看過類似的東西";
+	line "。";
+	para "但董事長發生了";
+	line "一件令人難過的";
+	line "事情⋯";
+	para "一言難盡⋯⋯";
+	para "巴洛特要是來到";
+	line "加爾企業，";
+	cont "我再幫你引見董";
+	line "事長。";
+	para "各位，再見了。";
+	done;
+
+@org $0f, $5299:
+	init $1c, $29; # TEMP
+	text "你不是想找到你";
+	line "爸爸嗎?";
+	cont "我們就來做個分";
+	line "工:";
+	para "我負責完成圖上";
+	line "的太空船機體。";
+	para "你就負責尋找，";
+	cont "乘下的七個動力";
+	line "晶片。";
+	done;
+
+@org $0f, $52fb:
+	init $1c, $29; # TEMP
+	text "巴洛特~";
+	line "慢著慢著!";
+	para "先不要急著走。";
+	done;
+
+@org $0f, $531f:
+	init $1c, $29; # TEMP
+	text "這個給你!";
+	para "這是晶片追蹤器";
+	line "及傳送PDA。";
+	para "有了它，就可以";
+	line "知道，";
+	cont "乘餘晶片的所在";
+	line "位置了!";
+	para "PDA則是方便";
+	line "你~";
+	cont "將得到的晶片，";
+	line "傳輸給我。";
+	done;
+
+@org $0f, $538f:
+	init $01, $2a; # TEMP
+	text "得到了追蹤器!";
+	done;
+
+@org $0f, $539e:
+	init $01, $2a; # TEMP
+	text "得到了PDA!";
+	done;
+
+@org $0f, $53ad:
+	init $1c, $29; # TEMP
+	text "巴克~";
+	para "你也跟著巴洛特";
+	line "吧!";
+	para "多個人，也好彼";
+	line "此照應。";
+	done;
+
+@org $0f, $53e1:
+	init $02, $01; # TEMP
+	text "博士‧巴克‧";
+	line "巴克⋯";
+	done;
+
+@org $0f, $53f6:
+	init $1c, $29; # TEMP
+	text "我知道你在想什";
+	line "麼!";
+	para "等你回來~";
+	para "我一定想辦法將";
+	line "你變得像個人類";
+	cont "好嗎?";
+	done;
+
+@org $0f, $5439:
+	init $02, $01; # TEMP
+	text "博士‧真的?";
+	done;
+
+@org $0f, $5446:
+	init $1c, $29; # TEMP
+	text "就這樣改一改⋯";
+	para "就是這裡⋯";
+	para "⋯⋯⋯";
+	para "OK!";
+	line "改造完畢!";
+	para "巴克的新式機械";
+	line "鳥，";
+	cont "將可搭載巴克，";
+	cont "飛過小型的凹地";
+	line "!";
+	done;
+
+@org $0f, $54ad:
+	init $01, $2a; # TEMP
+	text "巴克&機械鳥";
+	line "加入隊伍!";
+	done;
+
+@org $0f, $54c5:
+	init $18, $2f; # TEMP
+	text "星獸‧機械鳥加";
+	line "入隊伍。";
+	para "如果將巴克置於";
+	line "隊伍前頭，";
+	cont "可籍由機械鳥的";
+	line "力量，";
+	cont "飛越地圖的小型";
+	line "凹洞。";
+	done;
+
+@org $0f, $5521:
+	init $1c, $29; # TEMP
+	text "去吧~";
+	para "到加爾企業，";
+	cont "尋找乘下的七個";
+	line "動力晶片吧。";
+	done;
+
+@org $0f, $554f:
+	init $1c, $29; # TEMP
+	text "去吧~";
+	para "到加爾企業，";
+	cont "尋找乘下的七個";
+	line "動力晶片吧。";
+	done;
+
+@org $0f, $557d:
+	init $01, $2b; # TEMP
+	text "這個洞⋯";
+	line "該怎麼通過呢?";
+	done;
+
+@org $0f, $5595:
+	init $02, $01; # TEMP
+	text "巴洛特‧巴克‧";
+	line "換‧在排頭。";
+	para "機械鳥‧飛‧地";
+	line "洞。";
+	done;
+
+@org $0f, $55c3:
+	init $00, $1d; # TEMP
+	text "哼!";
+	para "小毛用他的長腳";
+	line "龜一號欺負人家";
+	para "人家才不要!!";
+	para "爸爸~";
+	cont "好不好啦~";
+	line "爸爸~";
+	para "幫人家改裝這台";
+	line "粉紅豬三號啦!";
+	done;
+
+@org $0f, $5627:
+	init $00, $1c; # TEMP
+	text "衝呀!";
+	para "我的高速賽車~";
+	line "長腳龜一號!";
+	para "只要那些壞人再";
+	line "來的話，";
+	cont "我就用這個打敗";
+	line "他";
+	forcemap 3 "們";
+	text "!";
+	done;
+
+@org $0f, $5673:
+	init $00, $1f; # TEMP
+	text "很久很久之前，";
+	cont "雷歐的曾祖父和";
+	line "其他七名科學家";
+	cont "曾經拯救過地球";
+	line "。";
+	para "所以城裡的人都";
+	line "尊敬他。";
+	done;
+
+@org $0f, $56ca:
+	init $00, $19; # TEMP
+	text "雷歐博士已經上";
+	line "了年紀，";
+	cont "又沒有小孩子。";
+	para "所以製造了一隻";
+	line "叫巴克的機器人";
+	para "是我的錯覺嗎?";
+	para "每次一看到巴克";
+	line "，";
+	cont "就覺得他很憂鬱";
+	line "⋯⋯";
+	done;
+
+@org $0f, $573b:
+	init $00, $16; # TEMP
+	text "科技城是座窒內";
+	line "都市，";
+	cont "照明的設備都需";
+	line "要電力來驅動。";
+	para "可是，";
+	cont "為了要防止類似";
+	line "這種形情發生，";
+	cont "電力塔內設有特";
+	line "殊防範措施啊!";
+	para "真是奇怪⋯";
+	done;
+
+@org $0f, $57ad:
+	init $00, $13; # TEMP
+	text "要大家湊這三千";
+	line "萬，";
+	cont "真是開玩笑!";
+	para "把這個藏起來~";
+	para "荳荳!";
+	line "那個也是!";
+	para "呀!!";
+	cont "你看到了什麼嗎";
+	line "?";
+	para "我什麼都沒有做";
+	line "唷!";
+	done;
+
+@org $0f, $5811:
+	init $00, $1b; # TEMP
+	text "終於來電了!";
+	done;
+
+@org $0f, $5820:
+	init $1d, $1a; # TEMP
+	text "媽媽?";
+	para "荳荳這台光速美";
+	line "少女初號機，";
+	cont "要不要藏起來?";
+	para "荳荳的光速美少";
+	line "女初號機，";
+	cont "價值9456億";
+	line "喲!";
+	done;
+
+@org $0f, $5877:
+	init $00, $13; # TEMP
+	text "不‧用!";
+	done;
+
+@org $0f, $5881:
+	init $1d, $1a; # TEMP
+	text "荳‧荳‧要‧藏";
+	line "‧起‧來‧啦!";
+	done;
+
+@org $0f, $58a2:
+	init $00, $13; # TEMP
+	text "槽糕⋯";
+	para "我的水藍鑽石項";
+	line "鍊，";
+	cont "藏到哪裡去了?";
+	done;
+
+@org $0f, $58cc:
+	init $1d, $1a; # TEMP
+	text "荳荳這台光速美";
+	line "少女初號機，";
+	cont "找到一個藍色石";
+	line "頭。";
+	para "光速美少女初號";
+	line "機~~";
+	cont "使用價值945";
+	line "6億的粉碎鑽頭";
+	para "粉碎藍色石頭!";
+	done;
+
+@org $0f, $5936:
+	init $00, $13; # TEMP
+	text "慢⋯慢‧著!";
+	cont "哇!!!!!";
+	done;
+
+not byte

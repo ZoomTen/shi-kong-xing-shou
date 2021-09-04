@@ -1,10 +1,10 @@
-Func_067_4000::
+BeachCutscene::
 	dr $19c000, $19d06e
 
-Func_067_506e::
+FloatingIslandCutscene1::
 	dr $19d06e, $19d1f5
 
-Func_067_51f5::
+FloatingIslandCutscene2::
 	dr $19d1f5, $19f090
 
 

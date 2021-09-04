@@ -93,39 +93,39 @@ JumpToModeAndSetMapPredefs::
 
 GameModes::
 ; Seems to load on each map entry
-	dba Func_005_41fb   ; $00
+	dba Overworld       ; $00
 	dba MeteorCutscene  ; $01
-	dba Func_03c_40d2   ; $02
-	dba Func_03c_4343   ; $03
-	dba Func_01b_4000   ; $04
-	dba Func_05d_4000   ; $05
-	dba Func_04e_4943   ; $06
-	dba Func_055_4000   ; $07
-	dba Func_01a_4000   ; $08
-	dba Func_061_4000   ; $09
+	dba NewGameContinueMenu   ; $02
+	dba GameOver   ; $03
+	dba GaleCutscene   ; $04
+	dba RhythmMinigame   ; $05
+	dba AirportCutscene1   ; $06
+	dba AirportCutscene2   ; $07
+	dba LetterCutscene   ; $08
+	dba MeteorCutscene2   ; $09
 	dba Func_05c_55e7   ; $0a
-	dba Func_061_5d22   ; $0b
-	dba Func_05e_401c   ; $0c
-	dba Func_05f_4000   ; $0d
-	dba Func_05b_4000   ; $0e
-	dba Func_04e_46e5   ; $0f
-	dba Func_062_4000   ; $10
-	dba Func_04e_4637   ; $11
+	dba UnderwaterPictureCutscene   ; $0b
+	dba RacingMinigame   ; $0c
+	dba CrystalCutscene   ; $0d
+	dba MiceMinigame   ; $0e
+	dba AirportCutscene3   ; $0f
+	dba WorldMap   ; $10
+	dba AirportCutscene4   ; $11
 	dba Intro_VastFame  ; $12
-	dba Func_067_4000   ; $13
-	dba Func_067_506e   ; $14
-	dba Func_067_51f5   ; $15
-	dba Func_062_5df3   ; $16
-	dba Func_03c_40d2   ; $17
-	dba Func_03c_40d2   ; $18
+	dba BeachCutscene   ; $13
+	dba FloatingIslandCutscene1   ; $14
+	dba FloatingIslandCutscene2   ; $15
+	dba WorldMap2   ; $16
+	dba NewGameContinueMenu   ; $17
+	dba NewGameContinueMenu   ; $18
 	dba Debug_SoundTest ; $19
 	dba Func_03c_4c74   ; $1a
 	dba Func_07a_401f   ; $1b
 	dba Func_07a_4188   ; $1c
 	dba Func_06f_4000   ; $1d
 	dba Func_070_4000   ; $1e
-	dba Func_071_4000   ; $1f
-	dba Func_071_5a49   ; $20
+	dba Credits   ; $1f
+	dba TheEnd   ; $20
 
 DelayFrame::
 ; Wastes cycles until the VBlank interrupt occurs, where hVBlank is set to 1
@@ -360,10 +360,10 @@ Func_0531::
 	db $10, $00
 	db $00, $10
 	db $00, $f0
-	db $fa, $ff
-	db $7f, $f5
 
-Func_055b::
+Func_0557::
+	ld a, [_BANKNUM]
+	push af
 	ld a, [wd0c9]
 	ld [wcd01], a
 	ld a, [wd0ca]
@@ -895,7 +895,7 @@ Func_0915::
 	ret
 
 Func_0925::
-	ld a, [wcbfb]
+	ld a, [wSelectedObjectOffset]
 	ld c, a
 	ld b, $cd
 	jp Func_08ae

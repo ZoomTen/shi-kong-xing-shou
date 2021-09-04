@@ -5,10 +5,13 @@ scr_cont: MACRO
 	db script_continue
 ENDM
 
-	const script_01 ; $01
-scr_01: MACRO
-	db script_01
-	db \1 ; sprite ID?
+	const script_spriteface ; $01
+scr_spriteface: MACRO
+; sprite ID 0 is player
+; sprite ID 1 is follower
+; sprite ID 2+ is everything else
+	db script_spriteface
+	db \1 ; sprite ID
 	db \2 ; facing
 ENDM
 
@@ -36,9 +39,14 @@ scr_face: MACRO
 	db \1 ; facing
 ENDM
 
-	const script_06 ; $06
-scr_06: MACRO
-	db script_06
+	const script_spritewalk ; $06
+scr_spritewalk: MACRO
+; move a sprite in the direction
+; specified by MOVE_* in \2
+; this does NOT automatically make
+; the sprite face the appropriate
+; direction
+	db script_spritewalk
 	db \1
 	db \2
 ENDM
@@ -76,15 +84,20 @@ ENDM
 
 	const script_setmap ; $0c
 scr_setmap: MACRO
+; This warps to a map in the same group
+; as the map the script is in.
 	db script_setmap
 	db \1 ; map
 	db \2 ; entrance?
 ENDM
 
-	const script_0d ; $0d
-scr_0d: MACRO
-	db script_0d
-	dw \1
+	const script_movemap ; $0d
+scr_movemap: MACRO
+; Applies movement data to the loaded map.
+; It should be used with maps that have
+; no associated object events.
+	db script_movemap
+	dw \1 ; movement data (same as sprite)
 ENDM
 
 	const script_0e ; $0e
@@ -103,7 +116,22 @@ scr_10: MACRO
 	db script_10
 ENDM
 
-	const_def $14
+	const script_11 ; $11
+scr_11: MACRO
+	db script_11
+	dw \1
+ENDM
+
+	const script_12 ; $12
+scr_12: MACRO
+	db script_12
+ENDM
+
+	const script_13 ; $13
+scr_13: MACRO
+	db script_13
+	dw \1, \2
+ENDM
 
 	const script_text ; $14
 scr_text: MACRO
@@ -118,7 +146,31 @@ scr_emote: MACRO
 	db \2 ; emote
 ENDM
 
-	const_def $1a
+	const script_16 ; $16
+scr_16: MACRO
+	db script_16
+	dw \1
+ENDM
+
+	const script_17 ; $17
+scr_17: MACRO
+	db script_17
+	db \1, \2, \3
+ENDM
+
+	const script_18 ; $18
+scr_18: MACRO
+	db script_18
+	db \1
+	dw \1
+	db \2, \3 ; XXX variable?
+ENDM
+
+	const script_19 ; $19
+scr_19: MACRO
+	db script_19
+	db \1, \2 ; XXX variable?
+ENDM
 
 	const script_1a ; $1a
 scr_1a: MACRO
@@ -138,12 +190,27 @@ scr_1c: MACRO
 	db \1
 ENDM
 
-	const_def $1f
+	const script_1d ; $1d
+scr_1d: MACRO
+	db script_1d
+	db \1
+ENDM
+
+	const script_1e ; $1e
+scr_1e: MACRO
+	db script_1e
+	db \1, \2
+ENDM
 
 	const script_1f ; $1f
 scr_1f: MACRO
 	db script_1f
 	db \1
+ENDM
+
+	const script_20 ; $20
+scr_20: MACRO
+	db script_20
 ENDM
 
 	const_def $2a
@@ -152,6 +219,22 @@ ENDM
 scr_farjump: MACRO
 	db script_farjump
 	dba \1
+ENDM
+
+	const_def $2e
+
+	const script_2e ; $2e
+scr_2e: MACRO
+	db script_2e
+	db \1, \2, \3
+ENDM
+
+	const_def $30
+
+	const script_30 ; $30
+scr_30: MACRO
+	db script_30
+	db \1, \2 ; pointer?
 ENDM
 
 	const_def $34
@@ -251,6 +334,7 @@ ENDM
 scr_63: MACRO
 	db script_63
 	db \1
+	dw \2
 ENDM
 
 	const_def $65

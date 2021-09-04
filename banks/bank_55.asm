@@ -1,4 +1,4 @@
-Func_055_4000::
+AirportCutscene2::
 	dr $154000, $1553ef
 
 Script_055_53ef::

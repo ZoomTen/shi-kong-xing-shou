@@ -1,7 +1,7 @@
-Func_062_4000::
+WorldMap::
 	dr $188000, $189df3
 
-Func_062_5df3::
+WorldMap2::
 	dr $189df3, $189f9c
 
 Debug_SoundTest::

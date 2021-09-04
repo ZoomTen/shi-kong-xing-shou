@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 import math
+import sys
+import re
+from lib.gbtool import addr2offset, str2addr
 
 chars = {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
 
-file = "../shi_kong_xing_shou.gbc"
+file = "baserom.gbc"
 
-for line in open("../charmap.asm"):
+if len(sys.argv) < 3:
+	print(f'{sys.argv[0]} address count')
+	print('\taddress can be in BB:AAAA form or as a hex number')
+	exit(0)
+
+for line in open("charmap.asm"):
     # Get charset
     if line.startswith("NEWCHARMAP"):
         charset = int(line[18])
@@ -23,8 +31,16 @@ for line in open("../charmap.asm"):
             chars[charset][byte] = char
 
 file = open(file, "rb")
-file.seek(int(input("Enter address: "), 16))
-count = int(input("Enter count: "))
+
+s = sys.argv[1]
+s_= re.match('([0-9a-fA-F]+):([0-9a-fA-F]{4})$', s)
+if s_:
+	start = addr2offset(*str2addr(s))
+else:
+	start = int(s, 16)
+
+file.seek(start)
+count = int(sys.argv[2])
 
 def print_text():
     global backup_charset
@@ -55,6 +71,9 @@ def print_text():
             print("\";\n\tchoice;", end="")
             done = 1
             break
+        elif byte == 0xe7:
+            print("\";\n\tunknownE7;", end="")
+            break
         elif byte == 0xec:
             print("\";\n\tpara \"", end="")
         elif byte == 0xed:
@@ -62,7 +81,10 @@ def print_text():
         elif byte == 0xee:
             print("\";\n\tcont \"", end="")
         else:
-            char = chars[backup_charset][byte]
+            try:
+                char = chars[backup_charset][byte]
+            except KeyError:
+                char = 'UNKNOWN'
             print(char, end="")
         
     return done
@@ -88,8 +110,9 @@ while count != 0:
     # get nybbles from byte
     byte_high, charset = divmod(byte, 0x10)
     backup_charset = charset
-    if byte == 0xe0:
+    if (byte == 0xe0) or (byte == 0xe1):
         print("@org $%02x, $%04x:" % (bank, address))
+    if byte == 0xe0:
         arg1 = int.from_bytes(file.read(1), "little")
         arg2 = int.from_bytes(file.read(1), "little")
         print("\tinit $%02x, $%02x; # TEMP" % (arg1, arg2))

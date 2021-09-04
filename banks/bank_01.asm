@@ -772,8 +772,10 @@ BellVillage1_Palettes:
 INCBIN "data/maps/palettes/BellVillage1.bin"
 
 BellVillage1_Collision:
-INCBIN "data/maps/collision/BellVillage1.bin"
+	dr $78de, $791a
 
+unk_001_791a:
+	dr $791a, $79c8
 
 SECTION "banknum1", ROMX[$7fff], BANK[$1]
 	db $1

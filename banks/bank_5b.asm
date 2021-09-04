@@ -1,4 +1,4 @@
-Func_05b_4000::
+MiceMinigame::
 	dr $16c000, $16e980
 
 

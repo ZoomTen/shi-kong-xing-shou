@@ -17,7 +17,8 @@ SCANINC := tools/scan_includes
 SOURCES := \
 	home.asm \
 	main.asm \
-	wram.asm
+	wram.asm \
+	hram.asm
 
 OBJS := $(SOURCES:%.asm=%.o)
 
@@ -43,13 +44,24 @@ compare: $(ROM)
 
 clean:
 	$(RM) $(PATCH) $(ROM) $(MAP) $(SYM) $(OBJS)
+	$(RM) data/text/*.asm
+	$(RM) data/maps/{blocks,layouts,metatiles}/*.bin
+	$(if $(shell find -iname '*.1bpp'),\
+		$(RM) $(shell find -iname '*.1bpp') \
+	)
+	$(if $(shell find -iname '*.2bpp'),\
+		$(RM) $(shell find -iname '*.2bpp') \
+	)
+	$(if $(shell find -iname '*.gbcpal'),\
+		$(RM) $(shell find -iname '*.gbcpal') \
+	)
 	$(MAKE) clean -C tools/
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
 # It doesn't look like $(shell) can be deferred so there might not be a better way.
 define DEP
-$1: $2 $$(shell tools/scan_includes $2)
+$1: $2 $$(shell $(SCANINC) $2)
 	$$(ASM) $$(ASMFLAGS) -o $$@ $$<
 endef
 

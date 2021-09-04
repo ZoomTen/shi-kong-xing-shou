@@ -1,0 +1,1687 @@
+@org $12, $5194:
+	init $00, $15; # TEMP
+	text "這裡是多魯市。";
+	done;
+
+@org $12, $51a6:
+	init $00, $21; # TEMP
+	text "看到那棟最高的";
+	line "建築了嗎?";
+	cont "那就是鼎鼎大名";
+	line "的加爾企業唷!";
+	done;
+
+@org $12, $51d9:
+	init $00, $12; # TEMP
+	text "看過告示版了嗎";
+	line "?真是可憐啊~";
+	cont "加爾企業的董事";
+	line "長正在尋找十六";
+	para "年前失散的孫子";
+	line "呢。";
+	done;
+
+@org $12, $5223:
+	init $00, $23; # TEMP
+	text "往西邊走的話，";
+	line "就是鐘塔了。";
+	cont "那是加爾企業董";
+	line "事長為了紀念去";
+	line "逝的女兒而建的";
+	para "那鐘塔已經成為";
+	line "多魯市的地標了";
+	para "呢。我們都是依";
+	line "照鐘塔上的時間";
+	cont "作息的。";
+	done;
+
+@org $12, $52aa:
+	init $00, $18; # TEMP
+	text "加爾企業董事長";
+	line "失散的孫子，身";
+	para "上掛著一條會發";
+	line "光的月型項鍊，";
+	cont "名叫月琉璃。要";
+	line "是被我找到的話";
+	line "，我就發財了。";
+	done;
+
+@org $12, $530c:
+	init $00, $1c; # TEMP
+	text "峨~鐘塔的時間";
+	line "已經3點了!";
+	para "嘻嘻~點心時間";
+	line "到了!";
+	done;
+
+@org $12, $5338:
+	init $00, $1f; # TEMP
+	text "唉呀~真是不得";
+	line "了!";
+	para "只要能找到加爾";
+	line "企業董事長的孫";
+	para "子，就能獲得一";
+	line "~大筆錢!";
+	para "我一定要搶在別";
+	line "人前面找到!";
+	done;
+
+@org $12, $5396:
+	init $00, $16; # TEMP
+	text "想知道嗎?";
+	line "";
+	getchoice $1cc5; # TEMP
+@org $12, $53a4:
+	init $00, $16; # TEMP
+	text "是這樣子的啊~";
+	done;
+
+@org $12, $53b6:
+	init $00, $16; # TEMP
+	text "十六年前，加爾";
+	line "企業董事長~";
+	cont "哈爾遜的女兒，";
+	line "與一名牧羊人發";
+	line "生了戀情。";
+	para "董事長非常的憤";
+	line "怒，覺得牧羊人";
+	cont "高攀不上他的女";
+	line "兒。";
+	para "於是拆散了二人";
+	line "，並把剛出世的";
+	cont "小嬰兒送走。";
+	para "之後，董事長的";
+	line "女兒便鬱鬱而終";
+	done;
+
+@org $12, $546f:
+	init $00, $19; # TEMP
+	text "往南邊走，就會";
+	line "到達山達農莊。";
+	para "那裡是個純樸的";
+	line "小鎮，主要出産";
+	para "咖啡跟天使之葉";
+	line "。";
+	done;
+
+@org $12, $54b8:
+	init $00, $16; # TEMP
+	text "唉~其實加爾企";
+	line "業董事長的心情";
+	para "，我真的可以體";
+	line "會⋯⋯";
+	para "年老時才發現，";
+	line "沒有人可以繼承";
+	para "他那龐大的事業";
+	line "，那是相當令人";
+	cont "不甘心的。";
+	done;
+
+@org $12, $5528:
+	init $00, $19; # TEMP
+	text "哼!那個加爾企";
+	line "業的董事長，一";
+	cont "點都不可憐呢!";
+	para "當初他要是沒有";
+	line "拆散那對戀人的";
+	para "話，就不會有這";
+	line "種結果了!";
+	done;
+
+@org $12, $5589:
+	init $00, $1b; # TEMP
+	text "十六年前，哈爾";
+	line "遜董事長的女兒";
+	cont "，愛上了一名男";
+	line "人!那名牧羊人";
+	cont "，就是山達農莊";
+	line "的牧羊人。";
+	cont "事後那名牧羊人";
+	line "被趕出這裡，再";
+	cont "也沒有人看過他";
+	line "了⋯⋯";
+	done;
+
+@org $12, $560d:
+	init $00, $1a; # TEMP
+	text "你⋯你後面那隻";
+	line "⋯怪獸⋯";
+	cont "就是爸爸說的星";
+	line "獸嗎?";
+	para "真可怕!!";
+	done;
+
+@org $12, $563e:
+	init $00, $1c; # TEMP
+	text "點心!點心!";
+	line "媽媽~點心時間";
+	cont "到了啦!哥哥沒";
+	line "有回來，人家要";
+	para "吃~雙倍喲!";
+	done;
+
+@org $12, $5682:
+	init $00, $1a; # TEMP
+	text "人家才沒有偷吃";
+	line "櫃子裡的蛋糕唷";
+	cont "!⋯嗚~";
+	para "被你知道了!人";
+	line "家不是故意的嘛";
+	para "!不可以跟哥哥";
+	line "說唷!";
+	para "這是我們的小密";
+	line "祕唷!";
+	done;
+
+@org $12, $56ec:
+	init $00, $15; # TEMP
+	text "我的老公是鐘塔";
+	line "的管理人員。";
+	para "每天都要忙到晚";
+	line "才能回來。";
+	para "真是叫人寂寞啊";
+	line "⋯⋯";
+	done;
+
+@org $12, $5733:
+	init $00, $22; # TEMP
+	text "唉~有機會的話";
+	line "，真想到鄰國做";
+	cont "生意。但是本國";
+	line "和鄰國的關係，";
+	line "一直不是很好。";
+	para "就連來往的通道";
+	line "都被填平了⋯";
+	cont "唉~~";
+	done;
+
+@org $12, $579d:
+	init $1b, $4c; # TEMP
+	text "巴洛特，是你呀";
+	line "。上次提到的動";
+	cont "力晶片，果然董";
+	line "事長身上也有。";
+	para "本來應該要為你";
+	line "引見的，但現在";
+	cont "恐怕不行了⋯";
+	done;
+
+@org $12, $57fa:
+	init $01, $2d; # TEMP
+	text "發生了什麼事嗎";
+	line "?";
+	done;
+
+@org $12, $580d:
+	init $1b, $4c; # TEMP
+	text "是這樣的。十六";
+	line "年前，董事長千";
+	cont "金與一名牧羊人";
+	line "發生戀情，並有";
+	line "了一名小孩。";
+	para "董事長相當憤怒";
+	line "，拆散了二人，";
+	cont "並且把小孩子托";
+	line "管家送走。";
+	para "但董事長年紀大";
+	line "了，後繼無人，";
+	cont "便想找回失散的";
+	line "小孫子。";
+	para "但當年送走小孩";
+	line "子的管家已經去";
+	cont "逝，沒有人知道";
+	line "他的下落了⋯";
+	done;
+
+@org $12, $58ef:
+	init $01, $2b; # TEMP
+	text "這真是遺憾⋯";
+	done;
+
+@org $12, $58fd:
+	init $1b, $4c; # TEMP
+	text "董事長的身體為";
+	line "了這件事情，而";
+	cont "操勞過度!";
+	para "現正休養中，不";
+	line "方便接見客人。";
+	para "關於動力晶片的";
+	line "事情~如果巴洛";
+	para "特可以找到失散";
+	line "的小孫子的話，";
+	para "或許可以向董事";
+	line "長要求動力晶片";
+	cont "吧。";
+	done;
+
+@org $12, $599a:
+	init $1b, $4c; # TEMP
+	text "槽糕~都這麼晚";
+	line "了呀!";
+	para "身為加爾企業採";
+	line "購部經理的我，";
+	cont "必須要趕上這場";
+	line "重要的會議才行";
+	line "!巴洛特，詳細";
+	cont "的細節，你可以";
+	line "看看加爾企業前";
+	line "的告示版。";
+	para "上頭有著尋人";
+	line "的線索。";
+	cont "加油了!";
+	done;
+
+@org $12, $5a30:
+	init $00, $00; # TEMP
+	text "加爾企業公告:";
+	cont "加爾企業尋人啟";
+	line "示";
+	para "尋找哈爾遜董事";
+	line "長十六年前失散";
+	cont "的小孫子身上佩";
+	line "戴著一條弦月型";
+	cont "、發出幽光的項";
+	line "鍊名為月琉璃。";
+	para "如尋獲者，加爾";
+	line "企業將重金禮謝";
+	done;
+
+@org $12, $5abd:
+	init $01, $2e; # TEMP
+	text "這就是基多所說";
+	line "的線索?";
+	cont "月型項鍊?";
+	para "月琉璃這就是基";
+	line "多所說的線索?";
+	para "只要找到月琉璃";
+	line "的主人，就可以";
+	cont "得到動力晶片了";
+	line "!";
+	done;
+
+@org $12, $5b24:
+	init $00, $24; # TEMP
+	text "這個鐘塔是加爾";
+	line "企業的所有物。";
+	para "不可以再進去了";
+	line "喲。尤其是旁邊";
+	cont "那個門!";
+	line "那可以⋯⋯";
+	para "總之不能靠近";
+	line "就是了!";
+	done;
+
+@org $12, $5b82:
+	init $00, $17; # TEMP
+	text "這裡是牧羊的農";
+	line "莊小鎮~";
+	cont "山達農莊。";
+	done;
+
+@org $12, $5ba7:
+	init $00, $20; # TEMP
+	text "興奮~哈哈哈~";
+	line "興奮~哈哈哈~";
+	para "天氣真好~";
+	line "興~興奮~";
+	done;
+
+@org $12, $5bd5:
+	init $00, $12; # TEMP
+	text "真是可怕⋯前陣";
+	line "子的流星雨，擊";
+	cont "中西邊的咖啡林";
+	line "裡的咖啡樹。";
+	para "因此變成了咖啡";
+	line "星怪!咖啡怪有";
+	cont "時會飄來一陣咖";
+	line "啡的香氣~";
+	para "聞到的人都會變";
+	line "得異常的興奮。";
+	done;
+
+@org $12, $5c51:
+	init $00, $1d; # TEMP
+	text "聽說加爾企業啊";
+	line "哈哈⋯就是那個";
+	cont "哈哈哈⋯嗚~";
+	line "一想到就~嗚~";
+	line "好‧興‧奮!";
+	done;
+
+@org $12, $5c92:
+	init $00, $21; # TEMP
+	text "每次只要一聞到";
+	line "咖啡的味道，我";
+	cont "就會趕把鼻子捏";
+	line "起來，有一次還";
+	cont "差點就殺死自己";
+	line "了⋯";
+	cont "加爾企業的董事";
+	line "長重金尋找他失";
+	line "散的孫子。";
+	para "我一定要找到";
+	line "才行!";
+	done;
+
+@org $12, $5d14:
+	init $00, $19; # TEMP
+	text "嗚峨峨峨!";
+	line "這⋯這是什麼?";
+	para "一股力量從我這";
+	line "八十歲的腳底，";
+	para "蔓延到我這八十";
+	line "歲的身體!!";
+	cont "嗚峨峨峨峨峨!";
+	line "我是~女超人嗎";
+	line "?";
+	done;
+
+@org $12, $5d7a:
+	init $00, $1a; # TEMP
+	text "嗚~嗚~大家都";
+	line "變得好奇怪峨!";
+	para "嗚嗚~人家不要";
+	line "啦!";
+	done;
+
+@org $12, $5dab:
+	init $00, $23; # TEMP
+	text "咖啡林的咖啡怪";
+	line "真是可怕!一聞";
+	cont "到牠的氣味，人";
+	line "都會變得非常的";
+	cont "興奮!我得要將";
+	line "門窗關緊才行!";
+	done;
+
+@org $12, $5dff:
+	init $00, $25; # TEMP
+	text "聽說馬克被瘋狂";
+	line "的羊群撞成重傷";
+	cont "，而他的妹妹~";
+	line "妮娜為了照顧他";
+	cont "，把所有值錢的";
+	line "東西都賣了!";
+	para "他們的老閱還因";
+	line "為不要照顧病人";
+	cont "，而把他們解雇";
+	line "了!真是可憐⋯";
+	done;
+
+@org $12, $5e82:
+	init $24, $22; # TEMP
+	text "開什麼玩笑!馬";
+	line "克被瘋狂的羊撞";
+	cont "傷了，才不是我";
+	line "的錯!只能怪他";
+	cont "不小心!妮娜還";
+	line "因為這樣，一直";
+	line "都沒來工作!";
+	para "我對他們實在是";
+	line "太好了!他們才";
+	cont "會這麼放肆!從";
+	line "現在開始，他們";
+	cont "二個都不用來工";
+	line "作了!";
+	done;
+
+@org $12, $5f2e:
+	init $00, $21; # TEMP
+	text "真是麻煩⋯";
+	line "看樣子，馬克";
+	cont "傷得非";
+	forcemap 2, "常";
+	text "的重!";
+	para "要是沒有";
+	line "天使之葉的話，";
+	cont "恐怕是";
+	line "救不活";
+	forcemap 1, "了";
+	text "!";
+	para "為了";
+	forcemap 4, "減";
+	forcemap 4, "少";
+	text "不必要";
+	cont "的麻煩，";
+	cont "解雇他們是非常";
+	cont "正確";
+	forcemap 1, "的";
+	text "選擇。";
+	done;
+
+@org $12, $5fa8:
+	init $00, $1e; # TEMP
+	text "鳴哇~嗚~媽媽";
+	line "變得好可怕啊!";
+	done;
+
+@org $12, $5fc7:
+	init $00, $1f; # TEMP
+	text "呵呵呵~啊!!";
+	line "這個切菜聲⋯⋯";
+	para "怎麼會叫人這麼";
+	line "興奮!興奮興奮";
+	cont "興奮興奮!切骨";
+	line "聲?要是聽到切";
+	cont "骨聲的話，會更";
+	line "興奮吧?";
+	para "老公~切骨聲!";
+	done;
+
+@org $12, $6032:
+	init $00, $18; # TEMP
+	text "老⋯老⋯老婆?";
+	line "妳拿著菜刀做什";
+	cont "麼?不⋯不要過";
+	line "來!!";
+	done;
+
+@org $12, $6064:
+	init $00, $18; # TEMP
+	text "老婆從街上回來";
+	line "後，彷彿就變了";
+	cont "一個人!";
+	para "一定是聞到了咖";
+	line "啡怪的氣味。";
+	para "這該怎麼辦才好";
+	line "?";
+	done;
+
+@org $12, $60b5:
+	init $00, $16; # TEMP
+	text "山達農莊原來是";
+	line "盛産咖啡豆及天";
+	para "使之葉的小鎮。";
+	line "天使之葉?";
+	para "呵呵~不論是多";
+	line "重的傷，只要有";
+	cont "天使之葉的話，";
+	line "都不是問題唷!";
+	para "但自從咖啡林被";
+	line "咖啡怪佔據後，";
+	cont "這些全部都沒有";
+	line "人敢去採收了⋯";
+	done;
+
+@org $12, $6159:
+	init $25, $4f; # TEMP
+	text "⋯呃⋯⋯";
+	done;
+
+@org $12, $6164:
+	init $26, $0b; # TEMP
+	text "咩~咩咩~";
+	done;
+
+@org $12, $6171:
+	init $03, $34; # TEMP
+	text "哥~哥~怎麼辦";
+	cont "連爸爸留下來的";
+	line "那個，都賣掉了";
+	para "⋯已經沒有買蔡";
+	line "的錢了⋯⋯";
+	cont "要怎麼辦?";
+	done;
+
+@org $12, $61be:
+	init $01, $2e; # TEMP
+	text "怎麼回事?";
+	done;
+
+@org $12, $61cb:
+	init $03, $34; # TEMP
+	text "嗚~嗚~哥哥在";
+	line "放羊的時候，羊";
+	para "突然聞到了咖啡";
+	line "怪的味道。";
+	para "全都變得非常的";
+	line "瘋狂，哥哥也受";
+	para "了重傷!我試過";
+	line "很多的蔡，但哥";
+	cont "哥的傷還是愈來";
+	line "愈嚴重⋯";
+	line "怎麼辦?";
+	done;
+
+@org $12, $6253:
+	init $01, $2d; # TEMP
+	text "這弦月型的項鍊";
+	line "好別緻!";
+	cont "項鍊?月琉璃?";
+	para "這不就是月琉璃";
+	line "嗎?難道他就是";
+	cont "⋯⋯";
+	done;
+
+@org $12, $629b:
+	init $03, $34; # TEMP
+	text "哥哥的項鍊，我";
+	line "也是在他受傷時";
+	cont "，才發現的。但";
+	line "是哥哥的狀況，";
+	cont "如果沒有天使之";
+	line "葉的話⋯嗚嗚嗚";
+	line "~";
+	done;
+
+@org $12, $62f3:
+	init $01, $2e; # TEMP
+	text "天使之葉?";
+	done;
+
+@org $12, $6300:
+	init $03, $35; # TEMP
+	text "咖啡林的最深處";
+	line "，有顆天使樹。";
+	para "它的葉子具有強";
+	line "烈的治傷療效。";
+	para "但是咖啡林被咖";
+	line "啡怪佔據了，沒";
+	para "有人敢到裡面採";
+	line "取天使之葉。";
+	done;
+
+@org $12, $636e:
+	init $01, $2e; # TEMP
+	text "咖啡林?";
+	cont "我一定會將天使";
+	line "之葉採回來的!";
+	done;
+
+@org $12, $6394:
+	init $03, $33; # TEMP
+	text "真的?謝謝你~";
+	line "謝謝你!妮娜和";
+	cont "你一起去!";
+	para "咖啡林裡有許多";
+	line "阻擋的刺刺草!";
+	para "如果沒有小綿羊";
+	line "的話，會很麻煩";
+	cont "的!";
+	done;
+
+@org $12, $63f5:
+	init $01, $2e; # TEMP
+	text "妮娜&小綿羊加";
+	line "入隊伍!";
+	done;
+
+@org $12, $640c:
+	init $18, $2f; # TEMP
+	text "如果將妮娜置於";
+	line "隊伍前頭，小線";
+	para "羊可以清除阻擋";
+	line "道路之刺刺草。";
+	done;
+
+@org $12, $6443:
+	init $01, $2c; # TEMP
+	text "嗚~好痛!";
+	cont "被這種草刺到，";
+	line "就像被針刺到一";
+	line "樣!";
+	done;
+
+@org $12, $6471:
+	init $27, $51; # TEMP
+	text "咕嚕~咕嚕~咕";
+	line "嚕~";
+	done;
+
+@org $12, $6486:
+	init $03, $36; # TEMP
+	text "槽了!牠要吐出";
+	line "令人興奮的氣息";
+	cont "了!得趕快打倒";
+	line "牠才行!";
+	done;
+
+@org $12, $64ba:
+	init $00, $1d; # TEMP
+	text "呀!怎麼回事!";
+	line "我做了什麼事嗎";
+	cont "?感覺上，好像";
+	line "做了一場很興奮";
+	line "的夢⋯⋯";
+	done;
+
+@org $12, $64fb:
+	init $03, $33; # TEMP
+	text "這就是天使樹了";
+	line "!只要有天使之";
+	cont "葉的話，哥哥的";
+	line "傷，就一定可以";
+	line "治好的!";
+	done;
+
+@org $12, $653d:
+	init $01, $2e; # TEMP
+	text "得到了天使之葉";
+	line "!";
+	done;
+
+@org $12, $6550:
+	init $00, $20; # TEMP
+	text "咖啡林的咖啡怪";
+	line "消失了?";
+	para "這真是個好消息";
+	line "!";
+	cont "為了表示慶祝，";
+	line "我決定煮一杯超";
+	line "濃的咖啡~";
+	para "好好的興奮個夠";
+	line "!";
+	done;
+
+@org $12, $65ab:
+	init $00, $12; # TEMP
+	text "真是可怕⋯";
+	cont "前陣子的流星雨";
+	line "，擊中西邊的咖";
+	para "啡林裡的咖啡樹";
+	line "。";
+	para "因此變成了咖啡";
+	line "星怪!";
+	cont "咖啡怪有時會飄";
+	line "來一陣咖啡的香";
+	line "氣~";
+	para "聞到的人都會變";
+	line "得異常的興奮。";
+	done;
+
+@org $12, $6629:
+	init $00, $1d; # TEMP
+	text "好像做了一個興";
+	line "奮的夢~";
+	cont "可是又好像是真";
+	line "的⋯⋯";
+	done;
+
+@org $12, $6655:
+	init $00, $19; # TEMP
+	text "剛剛做了一個夢";
+	line "~";
+	para "夢到我這八十歲";
+	line "的老人，竟然是";
+	cont "個~女‧超‧人";
+	line "‧唷!";
+	para "真是令人不好意";
+	line "思⋯⋯";
+	para "不過這真是個累";
+	line "人的夢。";
+	cont "這八十歲的身體";
+	line "，累得像要散了";
+	line "一樣!";
+	done;
+
+@org $12, $66e4:
+	init $00, $1a; # TEMP
+	text "馬克哥哥平常都";
+	cont "會說故事給我們";
+	line "聽唷!";
+	para "他是全世界最棒";
+	line "的人!";
+	cont "媽媽都說他有一";
+	line "種很特殊的氣質";
+	line "唷!";
+	done;
+
+@org $12, $673b:
+	init $00, $23; # TEMP
+	text "其實⋯從很早以";
+	line "前，我就發現~";
+	para "妮娜是個大美女";
+	line "峨!";
+	cont "只要她再花點心";
+	line "打扮一下的話，";
+	line "就不得了!";
+	done;
+
+@org $12, $6796:
+	init $00, $1e; # TEMP
+	text "媽媽又變成原來";
+	line "的媽媽了!";
+	cont "真是太好了。";
+	done;
+
+@org $12, $67b8:
+	init $00, $1f; # TEMP
+	text "發生了什麼事情";
+	line "嗎?";
+	para "為什麼老公跟小";
+	line "孩都那麼看我?";
+	para "真是奇怪!";
+	cont "啊!為什麼到處";
+	line "都有被刀采過的";
+	line "痕跡!";
+	done;
+
+@org $12, $6812:
+	init $00, $18; # TEMP
+	text "就是你打敗了咖";
+	line "啡怪的嗎?";
+	para "真是非常的感謝";
+	line "你!";
+	cont "不然的話，我可";
+	line "能就慘死在菜刀";
+	line "底下了⋯⋯";
+	done;
+
+@org $12, $6864:
+	init $00, $18; # TEMP
+	text "謝謝你!";
+	done;
+
+@org $12, $686f:
+	init $00, $16; # TEMP
+	text "現在是咖啡的盛";
+	line "産季節，得趕緊";
+	para "採收才行!";
+	done;
+
+@org $12, $6898:
+	init $03, $02; # TEMP
+	text "哥~這是天使之";
+	line "葉，趕快吃下!";
+	cont "對~就是這樣⋯";
+	done;
+
+@org $12, $68c4:
+	init $25, $4f; # TEMP
+	text "妮娜?";
+	done;
+
+@org $12, $68ce:
+	init $03, $02; # TEMP
+	text "哥!沒事就好~";
+	line "沒事就好⋯⋯";
+	done;
+
+@org $12, $68e4:
+	init $25, $4f; # TEMP
+	text "妮娜~謝謝妳⋯";
+	done;
+
+@org $12, $68f5:
+	init $03, $36; # TEMP
+	text "哥~你胸前的月";
+	line "型項鍊，真的就";
+	cont "是月琉璃嗎?";
+	done;
+
+@org $12, $691e:
+	init $25, $4f; # TEMP
+	text "月⋯⋯";
+	done;
+
+@org $12, $6927:
+	init $25, $4f; # TEMP
+	text "不⋯⋯不是的!";
+	line "這不是月琉璃，";
+	line "這只是⋯只是⋯";
+	done;
+
+@org $12, $6953:
+	init $01, $2c; # TEMP
+	text "加業企業的董事";
+	line "長，為了尋找他";
+	cont "失散的孫子，己";
+	line "經病倒了，你還";
+	cont "忍心瞧他這樣下";
+	line "去嗎?";
+	done;
+
+@org $12, $69a3:
+	init $03, $02; # TEMP
+	text "哥⋯⋯";
+	done;
+
+@org $12, $69ac:
+	init $25, $4f; # TEMP
+	text "不!我不是那個";
+	line "泠血動物的孫子";
+	cont "!當我為了想活";
+	line "下去，而努力的";
+	cont "工作時，他在哪";
+	line "裡?";
+	cont "這樣的生活，難";
+	line "道不是他賜予的";
+	line "嗎?";
+	para "而當他有需要時";
+	line "，才想起還有我";
+	cont "這樣的一個人!";
+	para "這樣難道一點都";
+	line "不自私嗎?";
+	done;
+
+@org $12, $6a58:
+	init $03, $34; # TEMP
+	text "哥⋯";
+	cont "我記得哥哥曾對";
+	line "我說，要包容別";
+	line "人的錯誤。";
+	para "抱著遺憾的人生";
+	line "，才是最可憐的";
+	done;
+
+@org $12, $6aa0:
+	init $25, $4f; # TEMP
+	text "遺憾⋯⋯不，不";
+	line "會的!";
+	para "再怎麼樣，我也";
+	line "不會跟『他』有";
+	cont "任何關係的!";
+	done;
+
+@org $12, $6adb:
+	init $01, $2c; # TEMP
+	text "槽糕!";
+	cont "馬克的身體才復";
+	line "原，禁不起這樣";
+	line "的劇烈的活動。";
+	done;
+
+@org $12, $6b0f:
+	init $03, $02; # TEMP
+	text "哥哥會不會做出";
+	line "傻事情?";
+	para "真是擔心~";
+	done;
+
+@org $12, $6b30:
+	init $01, $2e; # TEMP
+	text "如果是這樣的話";
+	line "，就槽了!妮娜";
+	cont "，你知道馬克可";
+	line "能去的地點嗎?";
+	done;
+
+@org $12, $6b6a:
+	init $03, $02; # TEMP
+	text "馬克哥哥最喜歡";
+	line "到天之岩頂端呆";
+	cont "望著遠方⋯";
+	done;
+
+@org $12, $6b93:
+	init $01, $2e; # TEMP
+	text "天之岩嗎?得儘";
+	line "快找到馬克才行";
+	cont "!";
+	done;
+
+@org $12, $6bb4:
+	init $03, $02; # TEMP
+	text "我也一起去~";
+	done;
+
+@org $12, $6bc1:
+	init $25, $4f; # TEMP
+	text "為什麼?妮娜，";
+	para "我們兄妹二人，";
+	line "這樣的生活下去";
+	cont "，不是很好嗎?";
+	para "為什麼要逼我呢";
+	line "?";
+	done;
+
+@org $12, $6c0b:
+	init $25, $4f; # TEMP
+	text "當我看到加爾企";
+	line "業的告示時，才";
+	cont "恍然知道自己的";
+	line "身世。";
+	para "然而，我一點都";
+	line "不高興⋯";
+	done;
+
+@org $12, $6c54:
+	init $25, $4f; # TEMP
+	text "『他』為了維持";
+	line "自己的尊嚴，放";
+	cont "还了我的父親，";
+	line "更間接的逼死了";
+	line "媽媽⋯⋯";
+	para "我⋯恨『他』!";
+	done;
+
+@org $12, $6ca6:
+	init $03, $02; # TEMP
+	text "哥~但無論如何";
+	line "，身上流的血，";
+	cont "是揮不斷的。";
+	done;
+
+@org $12, $6cd1:
+	init $25, $4f; # TEMP
+	text "血緣?";
+	cont "這種血緣，我不";
+	line "要!!";
+	done;
+
+@org $12, $6cee:
+	init $25, $4f; # TEMP
+	text "這⋯這是⋯媽⋯";
+	line "媽媽的信?";
+	done;
+
+@org $12, $6d08:
+	init $00, $00; # TEMP
+	text "給我那還不知道";
+	line "名字的兒子:";
+	para "對不起~我想我";
+	line "見不到你了⋯";
+	cont "我的愛~";
+	para "人生充滿了無奈";
+	line "，從與你父親相";
+	cont "遇的那一刻開始。";
+	para "儘管是場悲劇，";
+	line "但心中的果實仍";
+	cont "然甜美。";
+	line "怨恨嗎?";
+	cont "傷心嗎?";
+	line "難過嗎?";
+	para "我那不知名的兒";
+	line "啊~我的愛~";
+	cont "千萬不要如此，";
+	line "因為人總要學著";
+	line "體諒。";
+	para "我就要";
+	forcemap 1, "消";
+	text "失";
+	forcemap 1, "了";
+	text "，";
+	line "我的愛~";
+	cont "希望你也能體諒";
+	line "我的心情⋯";
+	para "儘管你可能看不";
+	line "到⋯對不起~";
+	para "我想我見不到你";
+	line "了⋯我的愛⋯";
+	cont "我那不知名的兒";
+	line "子⋯桑妮絲絕筆~";
+	done;
+
+@org $12, $6e65:
+	init $25, $4f; # TEMP
+	text "媽⋯媽媽⋯⋯";
+	line "嗚~嗚⋯⋯";
+	done;
+
+@org $12, $6e7d:
+	init $03, $02; # TEMP
+	text "哥⋯不管如何，";
+	cont "馬克永遠是我最";
+	line "愛的哥哥!";
+	done;
+
+@org $12, $6ea8:
+	init $25, $4f; # TEMP
+	text "妮娜⋯謝謝你⋯";
+	line "人要學著體諒⋯";
+	cont "是嗎?我會儘力";
+	line "的⋯⋯媽媽⋯";
+	para "我會找『他』，";
+	line "把話說清楚的!";
+	done;
+
+@org $12, $6ef7:
+	init $03, $02; # TEMP
+	text "哥⋯你永遠是我";
+	line "的哥哥⋯永遠⋯";
+	done;
+
+@org $12, $6f16:
+	init $25, $4f; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $12, $6f1e:
+	init $28, $4e; # TEMP
+	text "峨⋯我的孫子⋯";
+	done;
+
+@org $12, $6f2f:
+	init $1b, $4c; # TEMP
+	text "巴洛特啊，真是";
+	line "多虧了你，才能";
+	cont "找回董事長的孫";
+	line "子!加爾企業後";
+	line "繼有人了!";
+	para "身為採購部經理";
+	line "的我，實在是相";
+	cont "當的高興。";
+	done;
+
+@org $12, $6f96:
+	init $25, $4f; # TEMP
+	text "巴洛特⋯謝謝你";
+	line "!";
+	done;
+
+@org $12, $6faa:
+	init $28, $4e; # TEMP
+	text "馬克⋯你還是不";
+	line "肯叫我嗎?";
+	done;
+
+@org $12, $6fc4:
+	init $25, $4f; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $12, $6fcc:
+	init $28, $4e; # TEMP
+	text "也難怪你會如此";
+	line "這全要怪我⋯⋯";
+	done;
+
+@org $12, $6fe9:
+	init $28, $4e; # TEMP
+	text "巴洛特，事情我";
+	line "全聽基多說了!";
+	cont "這個動力晶片，";
+	line "就送給你了。";
+	para "我想妮娜不會介";
+	line "意的。";
+	done;
+
+@org $12, $7033:
+	init $01, $2a; # TEMP
+	text "得到了晶片2!";
+	done;
+
+@org $12, $7042:
+	init $28, $4e; # TEMP
+	text "在馬克重傷的時";
+	line "候，妮娜將這塊";
+	cont "晶片賣給了我⋯";
+	line "只是為了要醫治";
+	line "我的孫兒⋯";
+	para "我真是⋯不配做";
+	line "人家的⋯爺爺⋯";
+	done;
+
+@org $12, $70a2:
+	init $03, $02; # TEMP
+	text "董事長⋯⋯";
+	done;
+
+@org $12, $70af:
+	init $25, $4f; # TEMP
+	text "我不是來了嗎?";
+	cont "媽媽曾說過，人";
+	line "要學著體諒⋯⋯";
+	para "不是嗎?⋯⋯";
+	line "爺‧爺!";
+	done;
+
+@org $12, $70ec:
+	init $28, $4e; # TEMP
+	text "馬⋯馬⋯馬克?";
+	line "你肯叫我了?";
+	cont "這真是太好了";
+	line "你們聽到了嗎?";
+	done;
+
+@org $12, $7122:
+	init $28, $4e; # TEMP
+	text "聽到了嗎?還有";
+	line "~妮娜!你是馬";
+	para "克的妹妹，那妳";
+	line "也該改口了!";
+	done;
+
+@org $12, $7159:
+	init $03, $02; # TEMP
+	text "⋯爺⋯⋯爺爺?";
+	done;
+
+@org $12, $7169:
+	init $28, $4e; # TEMP
+	text "決定了!就是明";
+	cont "天，明天就舉行";
+	line "董事交接典禮!";
+	para "妮娜、巴洛特，";
+	line "你們一定要來參";
+	cont "加!";
+	para "我替你們準備了";
+	line "貴賓房，你們就";
+	cont "在此過夜吧!明";
+	line "天一早，就在大";
+	cont "廳舉行交接典禮";
+	done;
+
+@org $12, $71f8:
+	init $01, $2e; # TEMP
+	text "謝謝您。";
+	line "";
+	done;
+
+@org $12, $7203:
+	init $28, $4e; # TEMP
+	text "馬克!爺爺還有";
+	line "好多話要跟你說";
+	cont "!到爺爺的房間";
+	line "聊聊吧!哈哈~";
+	done;
+
+@org $12, $723c:
+	init $00, $12; # TEMP
+	text "加爾企業董可長";
+	line "找到了孫子?";
+	para "真是替他感到高";
+	line "興~";
+	done;
+
+@org $12, $7267:
+	init $00, $23; # TEMP
+	text "往西邊走的話，";
+	line "就是鐘塔了。";
+	para "那是加爾企業董";
+	line "事長為了紀念去";
+	cont "逝的女兒而建的";
+	line "那鐘塔已經成為";
+	cont "多魯市的地標了";
+	line "呢。";
+	para "我們都是依照鐘";
+	line "塔上的時間座息";
+	cont "的。";
+	done;
+
+@org $12, $72ef:
+	init $00, $18; # TEMP
+	text "真是奇怪!真是";
+	line "奇怪呀!";
+	para "到底什麼事奇怪";
+	line "呢!";
+	para "我也說不上來⋯";
+	done;
+
+@org $12, $7320:
+	init $00, $1c; # TEMP
+	text "嘻嘻~吃點心吃";
+	line "得好飽喲!啊!";
+	cont "這⋯這是怎麼回";
+	line "事?好⋯奇⋯怪";
+	line "!";
+	done;
+
+@org $12, $735b:
+	init $00, $1c; # TEMP
+	text "嘻嘻~";
+	line "吃得好飽喲!";
+	done;
+
+@org $12, $736f:
+	init $00, $1f; # TEMP
+	text "加爾企業明天就";
+	line "要舉行董事交接";
+	cont "典禮!真是期待";
+	done;
+
+@org $12, $739a:
+	init $03, $02; # TEMP
+	text "巴洛特~你真的";
+	line "要去解開那艘太";
+	cont "空船的祕密嗎?";
+	done;
+
+@org $12, $73c5:
+	init $01, $2e; # TEMP
+	text "是的。我一直相";
+	para "信，只要我朝這";
+	line "個方向著手的話";
+	cont "，總有一天，一";
+	line "定會再見到爸爸";
+	line "的。";
+	done;
+
+@org $12, $7412:
+	init $03, $02; # TEMP
+	text "其實，妮娜從很";
+	line "久前，就偷偷看";
+	cont "過爸爸留下來筆";
+	line "記。";
+	para "但是爸爸說，我";
+	line "們還是適合當個";
+	cont "純僕的農夫。";
+	para "妮娜還很難過⋯";
+	line "巴洛特，我好羨";
+	cont "慕你⋯⋯";
+	done;
+
+@org $12, $748c:
+	init $01, $2e; # TEMP
+	text "妮娜⋯⋯";
+	done;
+
+@org $12, $7497:
+	init $03, $02; # TEMP
+	text "巴洛特不要露出";
+	line "這種表情嘛!";
+	cont "我們明天要一起";
+	line "參加哥哥的交接";
+	line "典禮唷!";
+	done;
+
+@org $12, $74d8:
+	init $01, $2e; # TEMP
+	text "嗯!";
+	done;
+
+@org $12, $74df:
+	init $03, $33; # TEMP
+	text "喲好了唷!";
+	line "明天見了~";
+	done;
+
+@org $12, $74f8:
+	init $01, $2b; # TEMP
+	text "爸~你不要走!";
+	cont "不要丟下我一個";
+	line "人!";
+	done;
+
+@org $12, $751b:
+	init $11, $11; # TEMP
+	text "巴洛特，是時候";
+	line "了!再不行動的";
+	cont "話，等『那個』";
+	line "時候到了，就來";
+	line "不及了。";
+	done;
+
+@org $12, $755b:
+	init $01, $2e; # TEMP
+	text "爸~不要丟下我";
+	line "!";
+	done;
+
+@org $12, $756e:
+	init $11, $11; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $12, $7576:
+	init $01, $2e; # TEMP
+	text "爸~!!!";
+	line "為什麼?為什麼";
+	cont "為什麼為什麼為";
+	line "什麼?為什麼要";
+	line "丟下我!";
+	done;
+
+@org $12, $75b7:
+	init $01, $2d; # TEMP
+	text "爸!!";
+	done;
+
+@org $12, $75c0:
+	init $01, $2e; # TEMP
+	text "⋯原來是個夢⋯";
+	done;
+
+@org $12, $75ce:
+	init $03, $02; # TEMP
+	text "巴洛特也起床了";
+	line "嗎?";
+	para "一起到哥哥的交";
+	line "接典禮吧!";
+	done;
+
+@org $12, $75f9:
+	init $01, $2e; # TEMP
+	text "奇怪?典禮不是";
+	line "今天舉行嗎?";
+	para "怎麼一點都沒有";
+	line "舉行的跡像?";
+	cont "這是怎麼回事?";
+	done;
+
+@org $12, $763c:
+	init $1b, $4c; # TEMP
+	text "是巴洛特啊!";
+	line "什麼?";
+	cont "交接典禮?";
+	line "還早啊!你看看";
+	line "時間，天都還沒";
+	cont "暗呢!呵呵呵~";
+	para "巴洛特真是熱心";
+	line "啊。";
+	done;
+
+@org $12, $7696:
+	init $01, $2e; # TEMP
+	text "這是怎麼回事?";
+	line "明明睡了一覺，";
+	cont "現在不是『明天";
+	line "』嗎?";
+	para "這到底是怎麼回";
+	line "事?";
+	done;
+
+@org $12, $76dc:
+	init $00, $18; # TEMP
+	text "真是奇怪!真是";
+	line "奇怪呀!";
+	para "我終於發現奇怪";
+	line "在哪裡了!";
+	para "鐘塔上的時間，";
+	line "似乎動都不動!";
+	cont "是鐘塔出了問題";
+	line "嗎?";
+	para "會是我的錯覺嗎";
+	line "?";
+	done;
+
+@org $12, $7746:
+	init $00, $1c; # TEMP
+	text "好⋯奇⋯怪!";
+	cont "我才剛吃完點心";
+	line "，怎麼還是3點";
+	line "呢?人家好飽⋯";
+	para "不要吃了啦!";
+	done;
+
+@org $12, $7787:
+	init $00, $24; # TEMP
+	text "好⋯好恐佈!";
+	line "鐘塔的擺動停了";
+	cont "，在修理的途中";
+	line "，聽到了怪聲音";
+	para "⋯原來是⋯恐怖";
+	line "的東西⋯";
+	cont "怎⋯怎麼辦⋯";
+	line "我不敢進去⋯";
+	done;
+
+@org $12, $77ea:
+	init $29, $52; # TEMP
+	text "嘀嘀~答答~滴";
+	line "答~";
+	done;
+
+@org $12, $77ff:
+	init $01, $2e; # TEMP
+	text "原來是星獸搞的";
+	line "鬼!牠讓鐘塔的";
+	cont "時間停止了，所";
+	line "以永遠是白天!";
+	para "如果沒有打倒牠";
+	line "的話，馬克的";
+	cont "交接典禮，就永";
+	line "遠無法舉行了!";
+	done;
+
+@org $12, $7870:
+	init $29, $52; # TEMP
+	text "嘀嘀~答答~滴";
+	line "答~";
+	done;
+
+@org $12, $7885:
+	init $00, $18; # TEMP
+	text "真是奇怪!真是";
+	line "奇怪呀!";
+	cont "鐘塔的時間又動";
+	line "了!";
+	para "看來是我的錯覺";
+	line "。";
+	done;
+
+@org $12, $78bd:
+	init $1b, $4c; # TEMP
+	text "真是累人呀~";
+	cont "還是白天，為什";
+	line "麼我覺得這麼累";
+	line "呢?";
+	cont "是我的錯覺嗎?";
+	line "總覺得今天特別";
+	line "的漫長。";
+	para "巴洛特，快去房";
+	line "間休息吧!";
+	cont "明天要準時參加";
+	line "交接典禮唷!";
+	done;
+
+@org $12, $7945:
+	init $03, $02; # TEMP
+	text "巴洛特，明天也";
+	line "要一起參加哥哥";
+	cont "的交接典禮唷!";
+	done;
+
+@org $12, $7970:
+	init $01, $2e; # TEMP
+	text "嗯。";
+	done;
+
+@org $12, $7977:
+	init $03, $02; # TEMP
+	text "巴洛特參加完交";
+	line "接典禮後，就要";
+	cont "離開了嗎?";
+	done;
+
+@org $12, $799d:
+	init $01, $2e; # TEMP
+	text "是的。";
+	line "為了尋找爸爸及";
+	cont "動力晶片，我必";
+	line "須要走了。";
+	done;
+
+@org $12, $79cc:
+	init $03, $02; # TEMP
+	text "⋯⋯⋯";
+	cont "那麼⋯我們就⋯";
+	line "明天見囉!";
+	done;
+
+@org $12, $79ea:
+	signpost; # ???
+	text "昱日";
+	cont "加爾企業舉行了";
+	line "盛大的董可交接";
+	line "儀式。";
+	para "妮娜為此，還頻";
+	line "頻的在會場中落";
+	cont;
+	db $f1, $bc, $53; # "淚。"
+	para "儀式很順利的舉";
+	line "行完畢了。";
+	para "加爾企業，由新";
+	line "一代的董事~";
+	cont "馬克接任。";
+	para "新聞、報紙上滿";
+	line "滿的都是馬克就";
+	cont "職的消息。";
+	done;
+
+@org $12, $7a96:
+	init $25, $4f; # TEMP
+	text "巴洛特，你要走";
+	line "了嗎?";
+	done;
+
+@org $12, $7aac:
+	init $01, $2e; # TEMP
+	text "是的。";
+	cont "必須要動身，尋";
+	line "找其他的動力晶";
+	line "片。";
+	done;
+
+@org $12, $7ad7:
+	init $28, $4e; # TEMP
+	text "動力晶片?";
+	cont "唉~實在是不想";
+	line "要說出來⋯";
+	para "但巴洛特算是我";
+	line "的大恩人⋯⋯";
+	para "加爾企業的對手";
+	line "~邦林企業";
+	cont "，它的總裁手中";
+	line "握中其中之一的";
+	line "晶片。";
+	para "因為他的祖先，";
+	line "也曾是偉大的八";
+	cont "大科學家之一。";
+	done;
+
+@org $12, $7b78:
+	init $01, $2e; # TEMP
+	text "邦林企業?";
+	done;
+
+@org $12, $7b83:
+	init $28, $4e; # TEMP
+	text "是的。";
+	cont "位於";
+	forcemap 0, "天";
+	forcemap 0, "之";
+	text "都裡";
+	line "的邦林企業。";
+	para "是本公司最大的";
+	line "商業對手。";
+	done;
+
+@org $12, $7bbb:
+	init $01, $2e; # TEMP
+	text "但是多魯市，並";
+	line "沒有對外連結的";
+	cont "道路啊!";
+	done;
+
+@org $12, $7be4:
+	init $28, $4e; # TEMP
+	text "呵呵呵~";
+	cont "這個一點都不是";
+	line "個難題。";
+	para "加爾企業是個世";
+	line "界聞名的跨國企";
+	cont "業。";
+	para "對於這種小事，";
+	line "是必須要克服的";
+	cont "。這個給你!";
+	done;
+
+@org $12, $7c4b:
+	init $01, $2a; # TEMP
+	text "得到金鑰匙!";
+	done;
+
+@org $12, $7c5a:
+	init $28, $4e; # TEMP
+	text "鐘塔內有扇密閉";
+	line "的鐵門，就是通";
+	cont "往達瑪之都";
+	line "的通道。";
+	para "這就是加爾企業";
+	line "對外流通的祕密";
+	done;
+
+@org $12, $7ca6:
+	init $01, $2e; # TEMP
+	text "謝謝你~董事長";
+	line "!";
+	done;
+
+@org $12, $7cb9:
+	init $28, $4e; # TEMP
+	text "我也要感謝你~";
+	line "巴洛特!";
+	cont "祝你任務順利!";
+	done;
+
+@org $12, $7cdd:
+	init $03, $02; # TEMP
+	text "巴洛特⋯⋯⋯";
+	line "⋯⋯⋯";
+	done;
+
+@org $12, $7cf0:
+	init $02, $02; # TEMP
+	text "巴洛特~等一等";
+	line "!";
+	done;
+
+@org $12, $7d04:
+	init $01, $2e; # TEMP
+	text "妮娜?";
+	done;
+
+@org $12, $7d0e:
+	init $03, $02; # TEMP
+	text "我⋯我想了很久";
+	line "⋯⋯";
+	cont "哥哥已經成為加";
+	line "爾企業的董事了";
+	cont "⋯妮娜也可以放";
+	line "心了⋯妮娜⋯";
+	cont "要和巴洛特一起";
+	line "解開古代太空船";
+	line "的祕密!";
+	done;
+
+@org $12, $7d79:
+	init $28, $4e; # TEMP
+	text "妮⋯妮娜!";
+	line "那怎麼可以!";
+	done;
+
+@org $12, $7d90:
+	init $25, $4f; # TEMP
+	text "妮娜~從很久";
+	line "之前，妳就對";
+	cont "爸爸留下來的";
+	line "研究，充滿了";
+	line "興趣。";
+	para "尋找妳的興趣";
+	line "吧，哥哥也贊";
+	cont "成妳去!";
+	done;
+
+@org $12, $7de7:
+	init $28, $4e; # TEMP
+	text "馬⋯馬克!";
+	done;
+
+@org $12, $7df5:
+	init $03, $02; # TEMP
+	text "巴洛特⋯⋯";
+	done;
+
+@org $12, $7e02:
+	init $01, $2e; # TEMP
+	text "這⋯⋯好!";
+	line "大家出發吧!";
+	done;
+
+@org $12, $7e1a:
+	init $03, $02; # TEMP
+	text "巴洛特，謝謝";
+	line "你!";
+	done;
+
+@org $12, $7e2d:
+	init $28, $4e; # TEMP
+	text "用金鑰匙打開鐘";
+	line "塔關閉的鐵門。";
+	para "就可以通到達瑪";
+	line "之都了。";
+	para "祝你任務順利。";
+	done;
+
+@org $12, $7e6d:
+	init $25, $4f; # TEMP
+	text "巴洛特!";
+	cont "要好好的照顧妮";
+	line "娜。";
+	para "要是你欺負她的";
+	line "話，我可是不會";
+	cont "放過你!";
+	done;
+

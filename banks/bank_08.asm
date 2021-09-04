@@ -2,10 +2,10 @@ Script_008_4000::
 	scr_face FACE_UP
 	scr_text House_CutsceneText1
 	scr_face FACE_LEFT
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
 	scr_face FACE_UP
 	scr_face FACE_RIGHT
-	scr_move unk_00b_413e
+	scr_move MovementData_OneRight
 	scr_face FACE_UP
 	scr_text House_CutsceneText2
 	scr_emote 0, EMOTE_HEART
@@ -15,32 +15,32 @@ Script_008_4000::
 	scr_text text_08_458a
 	scr_text text_08_45a5
 	scr_face FACE_LEFT
-	scr_move unk_00b_413c
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
+	scr_move MovementData_OneLeft
 	scr_face FACE_DOWN
-	scr_move unk_00b_4191
+	scr_move MovementData_OneDown
 	scr_text text_08_45cc
 	scr_delay 3, 7
 	scr_emote 0, EMOTE_EXCLAMATION
 	scr_delay 3, 32
 	scr_face FACE_LEFT
-	scr_move unk_00b_413c
-	scr_move unk_00b_413c
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
+	scr_move MovementData_OneLeft
+	scr_move MovementData_OneLeft
 	scr_face FACE_DOWN
-	scr_move unk_00b_4191
+	scr_move MovementData_OneDown
 	scr_text text_08_45db
 	scr_delay 3, 7
 	scr_emote 0, EMOTE_QUESTION
 	scr_delay 3, 32
 	scr_text text_08_45f0
-	scr_move unk_00b_4191
-	scr_move unk_00b_4191
-	scr_move unk_00b_4191
-	scr_move unk_00b_4191
+	scr_move MovementData_OneDown
+	scr_move MovementData_OneDown
+	scr_move MovementData_OneDown
+	scr_move MovementData_OneDown
 	scr_5e $01 ; follower
 	scr_face FACE_LEFT
-	scr_setmap $01, $08 ; map switch
+	scr_setmap MAP_BELL_VILLAGE_1, $08 ; map switch
 ; outside
 	scr_face FACE_RIGHT
 	scr_text text_08_4651
@@ -60,56 +60,56 @@ Script_008_4089:
 
 Script_008_408a:
 	scr_checkbit wdaa0, 0, .script_4113 ; check bit 0
-	scr_setmap $0a, $01
+	scr_setmap MAP_BELL_OBSERVATORY_1, $01
 	scr_face FACE_UP
-	scr_01 2, FACE_LEFT
-	scr_move unk_00b_4193
-	scr_move unk_00b_4193
+	scr_spriteface 2, FACE_LEFT
+	scr_move MovementData_OneUp
+	scr_move MovementData_OneUp
 	scr_text text_08_4b8b
 	scr_delay 3, 7
-	scr_move unk_00b_4193
-	scr_move unk_00b_4193
+	scr_move MovementData_OneUp
+	scr_move MovementData_OneUp
 	scr_face FACE_LEFT
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
 	scr_text text_08_4b9f
 	scr_delay 3, 7
 	scr_emote 0, EMOTE_ANGER
 	scr_delay 3, 32
-	scr_move unk_00b_413c
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
+	scr_move MovementData_OneLeft
 	scr_text text_08_4baf
 	scr_emote 2, EMOTE_EXCLAMATION
 	scr_delay 3, 32
-	scr_01 2, FACE_DOWN
+	scr_spriteface 2, FACE_DOWN
 	scr_text text_08_4bbb
 	scr_text text_08_4bd2
 	scr_text text_08_4bdc
-	scr_move unk_00b_413c
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
+	scr_move MovementData_OneLeft
 	scr_face FACE_UP
-	scr_06 2, $00
+	scr_spritewalk 2, $00
 	scr_text text_08_4bf3
 	scr_text text_08_4c1d
 	scr_text text_08_4c2e
 	scr_face FACE_LEFT
 ; Cutscene
-	scr_01 2, FACE_LEFT
-	scr_setmap $2c, $00
-	scr_0d $454f
+	scr_spriteface 2, FACE_LEFT
+	scr_setmap MAP_BLUE_MOON_1, $00
+	scr_movemap MovementData_TwelveUp ; apply movement data to map
 	scr_text text_08_4c4c
 	scr_text text_08_4c8c
 	scr_text text_08_4cb5
 	scr_text text_08_4cbd
 	scr_5e $00
-	scr_setmap $04, $02
+	scr_setmap MAP_BALLOTS_HOUSE_1, $02
 	scr_face FACE_DOWN
-	scr_01 2, FACE_UP
+	scr_spriteface 2, FACE_UP
 	scr_text text_08_4cc6
 	scr_setbit wdaa0, 0 ; set bit 0
 	scr_end
 
 .script_4113
-	scr_setmap $0a, $00
+	scr_setmap MAP_BELL_OBSERVATORY_1, $00
 	scr_end
 
 BallotsHouse1_ObjectEvents2:
@@ -133,24 +133,24 @@ Script_008_4137:
 ; No entry
 	scr_text text_08_4b77
 	scr_face FACE_DOWN
-	scr_move unk_00b_4191
+	scr_move MovementData_OneDown
 	scr_44
-	scr_06 1, $02
-	scr_01 1, FACE_DOWN ; snowy faces down
+	scr_spritewalk 1, $02
+	scr_spriteface 1, FACE_DOWN ; snowy faces down
 	scr_end
 
 .script_414d
-	scr_setmap $09, $00
+	scr_setmap MAP_BELL_SCHOOL_1, $00
 	scr_end
 
 Script_008_4151:
 	scr_checkbit wdaa0, 1, .script_41a3
 	scr_text text_08_4d0b
 	scr_face FACE_UP
-	scr_01 2, FACE_DOWN
-	scr_06 2, $01 ; TEMP
-	scr_06 2, $01 ; TEMP
-	scr_move unk_00b_4193
+	scr_spriteface 2, FACE_DOWN
+	scr_spritewalk 2, $01 ; TEMP
+	scr_spritewalk 2, $01 ; TEMP
+	scr_move MovementData_OneUp
 	scr_emote 0, EMOTE_QUESTION
 	scr_delay 3, 32
 	scr_text text_08_4d1a
@@ -166,47 +166,47 @@ Script_008_4151:
 	scr_delay 3, 32
 	scr_text text_08_4d8f
 	scr_face FACE_DOWN
-	scr_move unk_00b_4191
-	scr_move unk_00b_4191
-	scr_move unk_00b_4191
+	scr_move MovementData_OneDown
+	scr_move MovementData_OneDown
+	scr_move MovementData_OneDown
 	scr_setbit wdaa0, 1
 	scr_1f $02 ; TEMP
 
 .script_41a3
-	scr_setmap $01, $06 ; TEMP
+	scr_setmap MAP_BELL_VILLAGE_1, $06
 	scr_end
 
 Script_008_41a7:
 	scr_checkbit wdaa0, 1, .script_41b1
-	scr_setmap $04, $00
+	scr_setmap MAP_BALLOTS_HOUSE_1, $00
 	scr_end
 
 .script_41b1
-	scr_setmap $04, $03
+	scr_setmap MAP_BALLOTS_HOUSE_1, $03
 	scr_end
 
 Script_008_41b5:
 	scr_checkbit wdaa0, 2, .script_41bf
-	scr_setmap $09, $02 ; TEMP
+	scr_setmap MAP_BELL_SCHOOL_1, $02
 	scr_end
 
 .script_41bf
 	scr_text text_08_522e
 	scr_face FACE_LEFT
-	scr_move unk_00b_413c
+	scr_move MovementData_OneLeft
 	scr_end
 
 Script_008_41c8:
 	scr_face FACE_UP
-	scr_01 6, FACE_RIGHT
-	scr_06 6, $04 ; TEMP
-	scr_01 6, FACE_DOWN
-	scr_06 6, $01 ; TEMP
-	scr_06 6, $01 ; TEMP
-	scr_01 6, FACE_LEFT
-	scr_06 6, $03 ; TEMP
-	scr_01 6, FACE_DOWN
-	scr_06 6, $01 ; TEMP
+	scr_spriteface 6, FACE_RIGHT
+	scr_spritewalk 6, $04 ; TEMP
+	scr_spriteface 6, FACE_DOWN
+	scr_spritewalk 6, $01 ; TEMP
+	scr_spritewalk 6, $01 ; TEMP
+	scr_spriteface 6, FACE_LEFT
+	scr_spritewalk 6, $03 ; TEMP
+	scr_spriteface 6, FACE_DOWN
+	scr_spritewalk 6, $01 ; TEMP
 	scr_text text_08_5306
 	scr_text text_08_5346
 	scr_emote 6, EMOTE_TEAR
@@ -214,38 +214,38 @@ Script_008_41c8:
 	scr_text text_08_5387
 	scr_text text_08_53af
 	scr_text text_08_53ef
-	scr_01 6, FACE_UP
-	scr_06 6, $02 ; TEMP
-	scr_01 6, FACE_DOWN
+	scr_spriteface 6, FACE_UP
+	scr_spritewalk 6, $02 ; TEMP
+	scr_spriteface 6, FACE_DOWN
 	scr_emote 6, EMOTE_HEART
 	scr_delay 3, 32
 	scr_text text_08_5592
-	scr_setmap $2a, $01 ; TEMP
+	scr_setmap MAP_BELL_SCHOOL_NORTH_CLASSROOM_1, $01
 	scr_setbit wdaa0, 3
 	scr_end
 
 Script_008_4214:
-	scr_setmap $04, $04 ; TEMP
+	scr_setmap MAP_BALLOTS_HOUSE_1, $04
 	scr_face FACE_UP
-	scr_01 2, FACE_RIGHT
-	scr_01 3, FACE_LEFT
+	scr_spriteface 2, FACE_RIGHT
+	scr_spriteface 3, FACE_LEFT
 	scr_text text_08_5468
 	scr_text text_08_547e
 	scr_text text_08_54d2
 	scr_emote 3, EMOTE_ANGER
 	scr_delay 3, 32
 	scr_text text_08_54eb
-	scr_01 3, FACE_DOWN
-	scr_01 2, FACE_DOWN
-	scr_06 3, $01 ; TEMP
-	scr_06 3, $01 ; TEMP
-	scr_06 3, $01 ; TEMP
-	scr_06 3, $01 ; TEMP
-	scr_06 3, $01 ; TEMP
-	scr_06 3, $01 ; TEMP
+	scr_spriteface 3, FACE_DOWN
+	scr_spriteface 2, FACE_DOWN
+	scr_spritewalk 3, $01 ; TEMP
+	scr_spritewalk 3, $01 ; TEMP
+	scr_spritewalk 3, $01 ; TEMP
+	scr_spritewalk 3, $01 ; TEMP
+	scr_spritewalk 3, $01 ; TEMP
+	scr_spritewalk 3, $01 ; TEMP
 	scr_1c $03
-	scr_move unk_00b_4193
-	scr_move unk_00b_4193
+	scr_move MovementData_OneUp
+	scr_move MovementData_OneUp
 	scr_emote 0, EMOTE_QUESTION
 	scr_delay 3, 32
 	scr_text text_08_5500
@@ -265,16 +265,16 @@ BallotsHouse1_ObjectEvents4:
 Script_008_4285:
 	scr_text text_08_55a7
 	scr_face FACE_UP
-	scr_move unk_00b_4193
+	scr_move MovementData_OneUp
 	scr_44
-	scr_06 1, $01
-	scr_01 1, FACE_UP
+	scr_spritewalk 1, $01
+	scr_spriteface 1, FACE_UP
 	scr_end
 
 Script_008_4295:
 	scr_text text_08_4f82
 	scr_face FACE_UP
-	scr_move unk_00b_4193
+	scr_move MovementData_OneUp
 	scr_end
 
 BallotsHouse1_ObjectEvents:
@@ -463,53 +463,56 @@ Script_008_4463:
 	scr_text text_08_5105
 	scr_text text_08_5188
 	scr_text text_08_5195
-	scr_01 $06, $02 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_01 $06, $01 ; TEMP
-	scr_06 $06, $02 ; TEMP
-	scr_01 $06, $02 ; TEMP
-	scr_06 $06, $03 ; TEMP
-	scr_01 $06, $00 ; TEMP
-	scr_01 $05, $01 ; TEMP
-	scr_06 $05, $02 ; TEMP
-	scr_01 $05, $03 ; TEMP
+; teacher moves to chair
+	scr_spriteface 6, FACE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spriteface 6, FACE_UP
+	scr_spritewalk 6, MOVE_UP
+	scr_spriteface 6, FACE_LEFT
+	scr_spritewalk 6, MOVE_LEFT
+	scr_spriteface 6, FACE_DOWN
+; female student walks up to player
+	scr_spriteface 5, FACE_UP
+	scr_spritewalk 5, MOVE_UP
+	scr_spriteface 5, FACE_RIGHT
 	scr_text text_08_51e5
-	scr_01 $05, $01 ; TEMP
-	scr_06 $05, $02 ; TEMP
-	scr_06 $05, $02 ; TEMP
-	scr_06 $05, $02 ; TEMP
-	scr_01 $05, $03 ; TEMP
-	scr_06 $05, $04 ; TEMP
-	scr_01 $05, $01 ; TEMP
-	scr_01 $02, $01 ; TEMP
-	scr_01 $04, $01 ; TEMP
-	scr_setbit $daa0, $02 ; TEMP
+; walking to seat
+	scr_spriteface 5, FACE_UP
+	scr_spritewalk 5, MOVE_UP
+	scr_spritewalk 5, MOVE_UP
+	scr_spritewalk 5, MOVE_UP
+	scr_spriteface 5, FACE_RIGHT
+	scr_spritewalk 5, MOVE_RIGHT
+	scr_spriteface 5, FACE_UP
+	scr_spriteface 2, FACE_UP
+	scr_spriteface 4, FACE_UP
+	scr_setbit $daa0, $02
 	scr_1f $03 ; TEMP
 	scr_end
 
 Script_008_44d3:
 	scr_04 text_08_5291
-	scr_01 2, FACE_UP
+	scr_spriteface 2, FACE_UP
 	scr_end
 
 Script_008_44da:
 	scr_04 text_08_52d0
-	scr_01 4, FACE_UP
+	scr_spriteface 4, FACE_UP
 	scr_end
 
 Script_008_44e1:
 	scr_04 text_08_5267
-	scr_01 5, FACE_UP
+	scr_spriteface 5, FACE_UP
 	scr_end
 
 Script_008_44e8:
 	scr_04 text_08_522e
-	scr_01 6, FACE_DOWN
+	scr_spriteface 6, FACE_DOWN
 	scr_end
 
 Script_008_44ef:

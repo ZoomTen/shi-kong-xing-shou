@@ -16,6 +16,9 @@ tokens = [
 	('line',			'TX_LINE'),
 	('cont',			'TX_CONT'),
 	('init',			'TX_INIT'),
+	('unknownE7',			'TX_E7'),
+	('getchoice',			'TX_GET_CHOICE'),
+	('db',			'TX_DB'),
 	('signpost',		'TX_SIGN'),
 	('done',			'TX_END'),
 	('\d+',			 'DECIMAL_NUMBER'),
@@ -133,8 +136,24 @@ for l in t:
 			else:
 				print()
 		
+		elif comm == 'TX_E7':
+			print(f'\tdb $e7')
+		
 		elif comm == 'TX_END':
 			print(f'\tdone')
+		
+		elif comm == 'TX_GET_CHOICE':
+			print(f'\tgetchoice {b[1][1][1]}')
+		
+		elif comm == 'TX_DB':
+			print(f'\tdb ', end='')
+			dbbin = []
+			for q in b[1:]:
+				if q[0] == 'HEXADECIMAL_NUMBER':
+					dbbin.append(q[1].group(1))
+				elif q[0] == 'DECIMAL_NUMBER':
+					dbbin.append(q[1].group(1))
+			print(', '.join(dbbin))
 		
 		elif comm == 'TX_SIGN':
 			print(f'\ttext_sign')

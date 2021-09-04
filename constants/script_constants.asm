@@ -5,6 +5,14 @@
 	const LEFT     ; 2
 	const RIGHT    ; 3
 
+; Script_spritewalk directions
+	const_def
+	const MOVE_DELAY   ; 0
+	const MOVE_DOWN    ; 1
+	const MOVE_UP      ; 2
+	const MOVE_LEFT    ; 3
+	const MOVE_RIGHT   ; 4
+
 ; Facing directions
 	const_def
 	const FACE_DOWN  ; 0

@@ -20,7 +20,7 @@ Func_05e_4011:
 	jr nz, .clear
 	ret
 
-Func_05e_401c::
+RacingMinigame::
 	dr $17801c, $17835f
 
 unk_05e_435f:

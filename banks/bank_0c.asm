@@ -23,9 +23,9 @@ Func_00c_4056::
 
 ; store to text buffer
 	ld a, [hli]
-	ld [wcbfe], a
+	ld [wTextStart], a
 	ld a, [hli]
-	ld [wcbfe + 1], a
+	ld [wTextStart + 1], a
 	ret
 
 .SignpostGroups:

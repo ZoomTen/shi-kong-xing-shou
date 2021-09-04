@@ -84,11 +84,11 @@ wTextNameID:: ds 1
 
 wScriptPos:: ds 2
 wScriptByte:: ds 1
-wcbfb:: ds 1
+wSelectedObjectOffset:: ds 1 ; relative to wVisibleObjects
 wcbfc:: ds 1
 wcbfd:: ds 1
 
-wcbfe:: ds 2
+wTextStart:: ds 2
 
 ; eight 4-color palettes each
 wBGPals1:: ds 8 palettes
@@ -96,6 +96,7 @@ wOBPals1:: ds 8 palettes
 wBGPals2:: ds 8 palettes
 wOBPals2:: ds 8 palettes
 
+UNION
 wcd00:: ds 1 ; Distance to warp border y
 wcd01:: ds 1 ; Distance to warp border x
 
@@ -154,7 +155,19 @@ wcd65:: ds 1
 wcd66:: ds 1
 wcd67:: ds 1
 	ds $78
-
+NEXTU
+wVisibleObjects::
+wPlayerObject::
+	ds $20
+wFollowerObject::
+	ds $20
+wNPCObjects:
+	ds $20 ; id 2
+	ds $20 ; id 3
+	ds $20 ; id 4
+	ds $20 ; id 5
+	ds $20 ; id 6
+ENDU
 ; Start menu
 wcde0:: ds 1
 wcde1:: ds 1
@@ -169,8 +182,10 @@ wcf00:: ds $100
 
 SECTION "WRAM1", WRAMX
 
-wd000:: ds $82
+wd000:: ds $80
 
+wd080:: ds 1
+wd081:: ds 1
 wd082:: ds 1
 wd083:: ds 1
 wd084:: ds 1
@@ -527,7 +542,13 @@ wdb1f:: ds 1
 wdb20:: ds $17e
 
 wdc9e:: ds 1
-wdc9f:: ds $11
+wdc9f:: ds 1
+
+	ds 13
+
+wdcad:: ds 1
+
+	ds 2
 
 wdcb0:: ds 1
 wdcb1:: ds 1
@@ -607,4 +628,3 @@ wdf00:: ds $ff
 
 wdfff:: ds 1
 
-INCLUDE "hram.asm"

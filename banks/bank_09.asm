@@ -1,7 +1,7 @@
 Func_009_4000::
-	ld a, [wcbfb]
+	ld a, [wSelectedObjectOffset]
 	ld c, a
-	ld b, $cd
+	ld b, HIGH(wVisibleObjects)
 	jr Func_009_4010
 
 Func_009_4008::

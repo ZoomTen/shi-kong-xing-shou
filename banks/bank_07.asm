@@ -34,11 +34,11 @@ Group00_Maps::
 	dw PowerPlant3F_Header
 	dw PowerPlant4F_Header
 	dw Hideout_Header
-	dw CrystalMines1_Header
-	dw CrystalMines2_Header
-	dw CrystalMines3_Header
-	dw CrystalMines4_Header
-	dw CrystalMines5_Header
+	dw CrystalMinesP1_Header
+	dw CrystalMinesP2_Header
+	dw CrystalMinesP3_Header
+	dw CrystalMinesP4_Header
+	dw CrystalMinesP5_Header
 	dw R01_Header
 	dw R02_Header
 	dw BellSchoolNorthClassroom1_Header
@@ -261,11 +261,11 @@ Group01_Maps::
 	dw PowerPlant3F_Header
 	dw PowerPlant4F_Header
 	dw Hideout_Header
-	dw CrystalMines1_Header
-	dw CrystalMines2_Header
-	dw CrystalMines3_Header
-	dw CrystalMines4_Header
-	dw CrystalMines5_Header
+	dw CrystalMinesP1_Header
+	dw CrystalMinesP2_Header
+	dw CrystalMinesP3_Header
+	dw CrystalMinesP4_Header
+	dw CrystalMinesP5_Header
 	dw R01_Header
 	dw R02_Header
 	dw BellSchoolNorthClassroom2_Header
@@ -357,71 +357,71 @@ BellSchoolNorthClassroom2_Header::
 TechCity_Header::
 	; map XXXXX
 	dbaw2 TechCity_MapAttributes
-	warp  6, 7, $9068, unk_00f_42b0, unk_007_4b44
-	warp  0, 0, $2058, unk_00f_42b0, unk_007_4b44
-	warp  13, 0, $2058, unk_00f_42b0, unk_007_4b44
-	warp  0, 2, $7028, unk_00f_42b0, unk_007_4b44
-	warp  0, 6, $7028, unk_00f_42b0, unk_007_4b44
-	warp  1, 6, $7058, unk_00f_42b0, unk_007_4b44
-	warp  10, 7, $7038, unk_00f_42b0, unk_007_4b44
-	warp  13, 6, $7048, unk_00f_42b0, unk_007_4b44
-	warp  13, 1, $7068, unk_00f_42b0, unk_007_4b44
-	warp  8, 0, $7048, unk_00f_42b0, unk_007_4b44
-	warp  4, 0, $7058, unk_00f_42b0, unk_007_4b44
+	warp  6, 7, $9068, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  0, 0, $2058, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  13, 0, $2058, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  0, 2, $7028, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  0, 6, $7028, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  1, 6, $7058, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  10, 7, $7038, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  13, 6, $7048, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  13, 1, $7068, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  8, 0, $7048, TechCity_ObjectEvents, TechCity_MapEvents
+	warp  4, 0, $7058, TechCity_ObjectEvents, TechCity_MapEvents
 
 unk_007_4579::
 	; map XXXXX
 	dbaw2 unk_001_40f0
-	warp  0, 0, $8048, unk_00f_401a, unk_007_4ba5
+	warp  0, 0, $8048, ObjectEvents_00f_401a, MapEvents_007_4ba5
 
 unk_007_458b::
 	; map XXXXX
 	dbaw2 unk_001_4104
-	warp  0, 0, $8048, unk_00f_4329, unk_007_4bb2
+	warp  0, 0, $8048, ObjectEvents_00f_4329, MapEvents_007_4bb2
 
 unk_007_459d::
 	; map XXXXX
 	dbaw2 unk_001_4118
-	warp  0, 0, $8058, unk_00f_4000, unk_007_4bbf
+	warp  0, 0, $8058, ObjectEvents_00f_4000, MapEvents_007_4bbf
 
 unk_007_45af::
 	; map XXXXX
 	dbaw2 unk_001_412c
-	warp  0, 0, $8038, unk_00f_4039, unk_007_4bcc
+	warp  0, 0, $8038, ObjectEvents_00f_4039, MapEvents_007_4bcc
 
 unk_007_45c1::
 	; map XXXXX
 	dbaw2 unk_001_4140
-	warp  0, 0, $8058, unk_00f_4348, unk_007_4bd9
+	warp  0, 0, $8058, ObjectEvents_00f_4348, MapEvents_007_4bd9
 
 unk_007_45d3::
 	; map XXXXX
 	dbaw2 unk_001_4154
-	warp  0, 0, $8048, unk_00f_43d2, unk_007_4be6
-	warp  0, 0, $7058, unk_00f_43e9, unk_007_4bf3
-	warp  0, 0, $8048, unk_00f_4416, unk_007_4be6
+	warp  0, 0, $8048, ObjectEvents_00f_43d2, MapEvents_007_4be6
+	warp  0, 0, $7058, ObjectEvents_00f_43e9, MapEvents_007_4bf3
+	warp  0, 0, $8048, ObjectEvents_00f_4416, MapEvents_007_4be6
 
 TechShop_Header::
 	; map XXXXX
 	dbaw2 TechShop_MapAttributes
-	warp  0, 0, $8058, unk_00f_4375, unk_007_4c06
+	warp  0, 0, $8058, TechShop_ObjectEvents, TechShop_MapEvents
 
 TechHealingCenter_Header::
 	; map XXXXX
 	dbaw2 TechHealingCenter_MapAttributes
-	warp  0, 0, $8058, unk_00f_4397, unk_007_4c13
+	warp  0, 0, $8058, TechHealingCenter_ObjectEvents, unk_007_4c13
 
 CrystalVillage_Header::
 	; map XXXXX
 	dbaw2 CrystalVillage_MapAttributes
-	warp  4, 5, $9048, unk_00e_4903, unk_007_4c26
-	warp  3, 0, $2058, unk_00e_4903, unk_007_4c26
-	warp  5, 0, $5058, unk_00e_4903, unk_007_4c26
-	warp  7, 0, $6068, unk_00e_4903, unk_007_4c26
-	warp  0, 5, $8058, unk_00e_4903, unk_007_4c26
-	warp  7, 5, $6068, unk_00e_4903, unk_007_4c26
-	warp  4, 3, $7058, unk_00e_4903, unk_007_4c26
-	warp  0, 0, $6038, unk_00e_4903, unk_007_4c26
+	warp  4, 5, $9048, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  3, 0, $2058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  5, 0, $5058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  7, 0, $6068, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  0, 5, $8058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  7, 5, $6068, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  4, 3, $7058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	warp  0, 0, $6038, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
 
 unk_007_4687::
 	; map XXXXX
@@ -462,85 +462,85 @@ Junkyard_Header::
 PowerPlantOutside_Header::
 	; map XXXXX
 	dbaw2 PowerPlantOutside_MapAttributes
-	warp  7, 0, $2068, unk_00f_40c2, unk_007_4cd0
-	warp  0, 0, $7058, unk_00f_40c2, unk_007_4cd0
-	warp  0, 0, $8088, unk_00f_40ab, unk_007_4cd0
-	warp  0, 0, $8088, unk_00f_40c2, unk_007_4cd0
+	warp  7, 0, $2068, PowerPlantOutside_ObjectEvents, PowerPlantOutside_MapEvents
+	warp  0, 0, $7058, PowerPlantOutside_ObjectEvents, PowerPlantOutside_MapEvents
+	warp  0, 0, $8088, PowerPlantOutside_ObjectEvents2, PowerPlantOutside_MapEvents
+	warp  0, 0, $8088, PowerPlantOutside_ObjectEvents, PowerPlantOutside_MapEvents
 
 PowerPlant1F_Header::
 	; map XXXXX
 	dbaw2 PowerPlant1F_MapAttributes
-	warp  1, 0, $9038, unk_00f_4160, unk_007_4ce3
-	warp  0, 0, $9028, unk_00f_4160, unk_007_4ce3
+	warp  1, 0, $9038, PowerPlant1F_ObjectEvents, PowerPlant1F_MapEvents
+	warp  0, 0, $9028, PowerPlant1F_ObjectEvents, PowerPlant1F_MapEvents
 
 PowerPlant2F_Header::
 	; map XXXXX
 	dbaw2 PowerPlant2F_MapAttributes
-	warp  0, 0, $9028, unk_00f_418d, unk_007_4cf0
-	warp  1, 0, $2078, unk_00f_418d, unk_007_4cf0
+	warp  0, 0, $9028, PowerPlant2F_ObjectEvents, PowerPlant2F_MapEvents
+	warp  1, 0, $2078, PowerPlant2F_ObjectEvents, PowerPlant2F_MapEvents
 
 PowerPlant3F_Header::
 	; map XXXXX
 	dbaw2 PowerPlant3F_MapAttributes
-	warp  1, 0, $2078, unk_00f_41af, unk_007_4cfd
-	warp  0, 0, $9028, unk_00f_41af, unk_007_4cfd
+	warp  1, 0, $2078, PowerPlant3F_ObjectEvents, PowerPlant3F_MapEvents
+	warp  0, 0, $9028, PowerPlant3F_ObjectEvents, PowerPlant3F_MapEvents
 
 PowerPlant4F_Header::
 	; map XXXXX
 	dbaw2 PowerPlant4F_MapAttributes
-	warp  0, 0, $9028, unk_00f_41dc, unk_007_4d0a
+	warp  0, 0, $9028, PowerPlant4F_ObjectEvents, PowerPlant4F_MapEvents
 
 Hideout_Header::
 	; map XXXXX
 	dbaw2 Hideout_MapAttributes
-	warp  13, 7, $9088, unk_00e_4a1a, unk_007_4d17
+	warp  13, 7, $9088, unk_00e_4a1a, Hideout_MapEvents
 
-CrystalMines1_Header::
+CrystalMinesP1_Header::
 	; map XXXXX
 	dbaw2 unk_017_4000
-	warp  0, 3, $9038, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
-	warp  0, 0, $5048, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
-	warp  5, 0, $3088, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
-	warp  5, 3, $7088, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d24
+	warp  0, 3, $9038, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
+	warp  0, 0, $5048, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
+	warp  5, 0, $3088, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
+	warp  5, 3, $7088, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
 
-CrystalMines2_Header::
+CrystalMinesP2_Header::
 	; map XXXXX
 	dbaw2 unk_017_4014
-	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d49
+	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP2_MapEvents
 
-CrystalMines3_Header::
+CrystalMinesP3_Header::
 	; map XXXXX
 	dbaw2 unk_017_4028
-	warp  5, 3, $5038, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
-	warp  0, 0, $3018, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
-	warp  0, 3, $7018, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
-	warp  4, 0, $2038, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
-	warp  5, 0, $2078, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d50
+	warp  5, 3, $5038, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
+	warp  0, 0, $3018, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
+	warp  0, 3, $7018, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
+	warp  4, 0, $2038, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
+	warp  5, 0, $2078, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
 
-CrystalMines4_Header::
+CrystalMinesP4_Header::
 	; map XXXXX
 	dbaw2 unk_017_403c
-	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d87
+	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP4_MapEvents
 
-CrystalMines5_Header::
+CrystalMinesP5_Header::
 	; map XXXXX
 	dbaw2 unk_017_4050
-	warp  5, 5, $9058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4d8e
-	warp  7, 5, $9078, unk_00e_4a75, unk_007_4d8e
+	warp  5, 5, $9058, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP5_MapEvents
+	warp  7, 5, $9078, unk_00e_4a75, CrystalMinesP5_MapEvents
 
 R01_Header::
 	; map XXXXX
 	dbaw2 unk_017_474b
-	warp  3, 0, $2078, unk_00e_422d, unk_007_4da7
-	warp  0, 0, $2028, unk_00e_422d, unk_007_4da7
+	warp  3, 0, $2078, unk_00e_422d, R01_MapEvents
+	warp  0, 0, $2028, unk_00e_422d, R01_MapEvents
 
 R02_Header::
 	; map XXXXX
 	dbaw2 unk_017_475f
-	warp  5, 3, $9068, unk_00f_4000, unk_007_4de4
-	warp  0, 3, $9058, unk_00f_4000, unk_007_4de4
-	warp  5, 0, $2068, unk_00f_4000, unk_007_4de4
-	warp  0, 0, $4028, unk_00f_4000, unk_007_4de4
+	warp  5, 3, $9068, ObjectEvents_00f_4000, R02_MapEvents
+	warp  0, 3, $9058, ObjectEvents_00f_4000, R02_MapEvents
+	warp  5, 0, $2068, ObjectEvents_00f_4000, R02_MapEvents
+	warp  0, 0, $4028, ObjectEvents_00f_4000, R02_MapEvents
 
 BellObservatoryDestroyed_Header::
 	; map XXXXX
@@ -691,7 +691,7 @@ BellSchoolNorthClassroom2_MapEvents:
 	warp_event 10, ABSOLUTE, $09, $02, $00
 	events_end
 
-unk_007_4b44:
+TechCity_MapEvents:
 	warp_event ABSOLUTE, 23, $28, $01, $00
 	warp_event  4,  0, $29, $00, $00
 	warp_event  5,  0, $29, $00, $00
@@ -710,43 +710,43 @@ unk_007_4b44:
 	signpost_event 16, 16, $07
 	events_end
 
-unk_007_4ba5:
+MapEvents_007_4ba5:
 	warp_event ABSOLUTE,  8, $0c, $03, $00
 	event_07  2,  3, $07
 	events_end
 
-unk_007_4bb2:
+MapEvents_007_4bb2:
 	warp_event ABSOLUTE,  8, $0c, $04, $00
 	event_07  3,  3, $08
 	events_end
 
-unk_007_4bbf:
+MapEvents_007_4bbf:
 	warp_event ABSOLUTE,  8, $0c, $05, $00
 	event_07  5,  3, $09
 	events_end
 
-unk_007_4bcc:
+MapEvents_007_4bcc:
 	warp_event ABSOLUTE,  8, $0c, $06, $00
 	event_07  8,  3, $0a
 	events_end
 
-unk_007_4bd9:
+MapEvents_007_4bd9:
 	warp_event ABSOLUTE,  8, $0c, $07, $00
 	event_07  2,  7, $0b
 	events_end
 
-unk_007_4be6:
+MapEvents_007_4be6:
 	warp_event ABSOLUTE,  8, $0c, $08, $00
 	event_07  2,  3, $0c
 	events_end
 
-unk_007_4bf3:
+MapEvents_007_4bf3:
 	script_event  3,  8,  0, Script_00f_44df
 	script_event  4,  8,  0, Script_00f_4592
 	event_07  2,  3, $0c
 	events_end
 
-unk_007_4c06:
+TechShop_MapEvents:
 	warp_event ABSOLUTE,  8, $0c, $0a, $00
 	event_04  4,  3,  0, Script_00f_4385
 	events_end
@@ -757,7 +757,7 @@ unk_007_4c13:
 	event_04  8,  4,  0, Script_00f_43c4
 	events_end
 
-unk_007_4c26:
+CrystalVillage_MapEvents:
 	warp_event ABSOLUTE, 19, $29, $02, $00
 	script_event ABSOLUTE,  0,  0, unk_00e_49ab
 	warp_event 15,  3, $16, $00, $00
@@ -808,38 +808,38 @@ unk_007_4cbd:
 	event_04  8,  3,  0, Script_00e_4129
 	events_end
 
-unk_007_4cd0:
+PowerPlantOutside_MapEvents:
 	warp_event ABSOLUTE,  0, $29, $01, $00
 	warp_event  5,  5, $1e, $00, $00
 	signpost_event  9,  7, $08
 	events_end
 
-unk_007_4ce3:
+PowerPlant1F_MapEvents:
 	warp_event ABSOLUTE,  9, $1d, $01, $00
 	warp_event  1,  8, $1f, $00, $00
 	events_end
 
-unk_007_4cf0:
+PowerPlant2F_MapEvents:
 	warp_event  1,  8, $1e, $01, $00
 	warp_event 10,  1, $20, $00, $00
 	events_end
 
-unk_007_4cfd:
+PowerPlant3F_MapEvents:
 	warp_event 10,  1, $1f, $01, $00
 	warp_event  1,  8, $21, $00, $00
 	events_end
 
-unk_007_4d0a:
+PowerPlant4F_MapEvents:
 	warp_event  1,  8, $20, $01, $00
 	script_event  7,  5,  0, Script_00f_421c
 	events_end
 
-unk_007_4d17:
+Hideout_MapEvents:
 	warp_event ABSOLUTE, 23, $1a, $01, $00
 	script_event 10,  5,  5, unk_00e_4a46
 	events_end
 
-unk_007_4d24:
+CrystalMinesP1_MapEvents:
 	warp_event ABSOLUTE, 15, $15, $01, $00
 	warp_event  4,  3, $24, $00, $00
 	warp_event 19,  2, $25, $01, $00
@@ -848,11 +848,11 @@ unk_007_4d24:
 	warp_event 19, 13, $25, $02, $00
 	events_end
 
-unk_007_4d49:
+CrystalMinesP2_MapEvents:
 	warp_event ABSOLUTE,  9, $23, $01, $00
 	events_end
 
-unk_007_4d50:
+CrystalMinesP3_MapEvents:
 	warp_event 13,  9, $26, $00, $00
 	warp_event  0,  2, $23, $02, $00
 	warp_event  0,  3, $23, $02, $00
@@ -864,18 +864,18 @@ unk_007_4d50:
 	warp_event 18,  0, $27, $01, $00
 	events_end
 
-unk_007_4d87:
+CrystalMinesP4_MapEvents:
 	warp_event ABSOLUTE,  9, $25, $00, $00
 	events_end
 
-unk_007_4d8e:
+CrystalMinesP5_MapEvents:
 	warp_event 14, 19, $25, $03, $00
 	warp_event 15, 19, $25, $03, $00
 	warp_event 21, 19, $25, $04, $00
 	warp_event 22, 19, $25, $04, $00
 	events_end
 
-unk_007_4da7:
+R01_MapEvents:
 	warp_event 12,  0, $01, $00, $00
 	warp_event 13,  0, $01, $00, $00
 	script_event  1,  0,  4, unk_00e_40b9
@@ -888,7 +888,7 @@ unk_007_4da7:
 	signpost_event 14,  3, $0b
 	events_end
 
-unk_007_4de4:
+R02_MapEvents:
 	script_event 16, 15,  0, Script_00f_400a
 	script_event 17, 15,  0, Script_00f_400a
 	warp_event  4, 15, $1d, $00, $00
