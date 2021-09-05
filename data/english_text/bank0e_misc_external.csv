@@ -596,12 +596,12 @@ Ballot. Let Buck lead. Beattro fly over hole.","","","repoint_target"
 我們去找伊隼人
 問天才機械發明
 家的事情⋯⋯","// init NAME_BALLOT, $00
-No! Let's go ask Hayato about the genius mechanical inventor...","why is this here hmmm","vf moment?","repoint_target"
+No! I better ask Hayato about the genius mechanical inventor first...","why is this here hmmm","","repoint_target"
 "0e","7e33","","// init NAME_1C, $29
 如果沒有水晶村
 的彩虹水晶的話
 一定贏不了的。","// init NAME_1C, $29
-Without the Rainbow Crystal from Crystal Town, I'll never win...","","","repoint_target"
+Without the Rainbow Crystal, I'll never win...","","","repoint_target"
 "0e","7e60","","// init NAME_BALLOT, $00
 來吧!","// init NAME_BALLOT, $00
 Come on!","","","repoint_target"
@@ -644,7 +644,7 @@ There's a doorway in the closet! It's open!","","","repoint_target"
 "0e","6647","","// init NAME_20, $30
 輸、入、密、碼
 ?","// init NAME_20, $30
-Access authorization.
+Authorization.
 Password, please.","","","repoint_target"
 "0e","665b","","// init NAME_BUCK, $01
 巴洛特‧巴克‧
@@ -661,7 +661,7 @@ There's a doorway in the closet! It's open!","same as 0e:662c","","repoint_targe
 "0e","66a4","","// init NAME_20, $30
 輸、入、密、碼
 ?","// init NAME_20, $30
-Access authorization.
+Authorization.
 Password, please.","same as 0e:6647","","repoint_target"
 "0e","66b8","","// init NAME_BUCK, $01
 巴克‧解碼。
@@ -927,7 +927,8 @@ This city has the largest racing car manufacturing line in the world.","from 0e5
 。
 所以城裡的人都
 尊敬他。","// init NAME_BLANK, $1f
-A long time ago, Leo's great-grandfather and seven other scientists saved the Earth, so everyone in this city respects him.","from 0e576d","","repoint_target"
+A long time ago, Leo's great-
+grandfather and seven other scientists saved the Earth, so everyone in this city respects him.","from 0e576d","","repoint_target"
 "0e","6dc7","","// init NAME_BLANK, $12
 雷歐博士果然是
 世界第一的機械

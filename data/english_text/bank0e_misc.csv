@@ -384,7 +384,8 @@ guy says this if you run away from the test battle","","","yea this is exactly w
 昏暗?
 怎麼回事?","// init NAME_BALLOT, $2d
 Huh?
-Why is it so dark here? What happened?","upon entering state of science","","","","","","",""
+Why is it so dark here?
+What happened?","upon entering state of science","","","","","","",""
 "0e","54ce","","// init NAME_BLANK, $1f
 唉呀~
 怎麼會停電了呢
@@ -436,9 +437,10 @@ I can hardly see in the dark, and my bones are old and brittle...","machine tran
 哎呀~
 要怎麼籌出三千
 萬!","// init NAME_BLANK, $19
-A couple of days ago, two people calling themselves 'Team Volt' raced against us, and we lost ¥30 million that day!
+A couple of days ago, two people calling themselves Team Volt raced against us, and we lost ¥30 million that day!
 I can't believe it! We specialise in high-speed cars here and we even sent Dr. Leo, our best scientist!
-How could we have lost? We don't even have that amount of money!
+How could we have lost?
+We don't even have that amount of money!
 ","machine translation assisted
 what's the team name here?
 google says ""Chargers""
@@ -493,9 +495,11 @@ It's so dark! I'm scared! Waah...","deepL cannot sufficiently grasp the nuance o
 張!
 我們會不會太高
 估他了?","// init NAME_BLANK, $1f
-A long time ago, Leo's great-grandfather and seven other scientists saved the Earth, so everyone in this city respects him.
+A long time ago, Leo's great-
+grandfather and seven other scientists saved the Earth, so everyone in this city respects him.
 But in this race, Leo lost by a huge margin!
-Are we overestimating him?","","","","","","","",""
+Are we over-
+estimating him?","","","","","","","",""
 "0e","5806","","// init NAME_BLANK, $16
 這裡是科技城的
 廢鐵集中場。
@@ -529,7 +533,7 @@ Is it just me, or is it that every time I see Buck, I get the feeling that he is
 電力塔內設有特
 殊防範措施啊!
 真是奇怪⋯","// init NAME_BLANK, $16
-The State of Science is an enclosed city, and and all our lights are electric lights.
+The State of Science is an enclosed city, and all our lights are electric lights.
 But there are special precautions in the power station to prevent situations like this from happening!
 How odd...","","","","","","","",""
 "0e","592f","","// init NAME_BLANK, $12

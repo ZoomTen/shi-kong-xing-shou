@@ -23,7 +23,7 @@ Doru City, is that the city westward of the state of science?","Dorington :>",""
 千萬，
 還賠上了高速賽
 車之都的名譽⋯","// init NAME_1C, $29
-Alas, thanks to me, the State of Science has not only lost 30 million dollars, but it's also lost its reputation as the capital of high-speed racing.","","","","","","","","","","","","","","","","","","","","",""
+Alas, thanks to me, the State of Science has not only lost 30 million yen, but it's also lost its reputation as the capital of high-speed racing.","","","","","","","","","","","","","","","","","","","","",""
 "0e","5ce0","","// init NAME_BALLOT, $00
 雷歐博士，
 你就是伊隼人所
@@ -95,7 +95,7 @@ Can you help me go to the square outside and see what's happening?","""to not ha
 在下這就來取了
 !","// init NAME_BLANK, $28
 The promised prize money...
-My 30 million dollars! I'm coming to get it!","","","","","","","","","","","","","","","","","","","","",""
+My 30 million yen! I'm coming to get it!","","","","","","","","","","","","","","","","","","","","",""
 "0e","5ee0","","// init NAME_1D, $1a
 爸爸?
 他們是誰啊?","// init NAME_1D, $1a
@@ -302,9 +302,9 @@ I wish I could help them, but I'm not a miner. What am I to do?","","","","","",
 裡面應該有很大
 的祕密!","// init NAME_BLANK, $1d
 Wanna hear a secret?
-That Volt gang seems to have a secret base!
-At least, that's what I heard while eavesdropping!
-There should be a big secret inside!","","","","","","","","","","","","","","","","","","","","",""
+That Volt gang seems to have an under- ground base!
+At least, that's what I heard while eaves- dropping!
+Something big might be in there!","","","","","","","","","","","","","","","","","","","","",""
 "0e","6434","","// init NAME_BLANK, $19
 村裡的男人都失
 業了!
@@ -319,7 +319,7 @@ It's all because of those damned Volt people!","","","","","","","","","","","",
 核心的話，
 那一定就是最高
 級的高速賽車!","// init NAME_BLANK, $1c
-All the best racing cars use a Rainbow Crystal in their core! It's irreplaceable!","translation liberties time","","","","","","","","","","","","","","","","","","","",""
+All the best racing cars use a Rainbow Crystal in their core! It's ir- replaceable!","translation liberties time","","","","","","","","","","","","","","","","","","","",""
 "0e","64ad","","// init NAME_BLANK, $20
 這次不能忘記⋯
 不然頭目就⋯
@@ -327,7 +327,8 @@ All the best racing cars use a Rainbow Crystal in their core! It's irreplaceable
 候⋯
 寫在手心裡⋯
 壁⋯櫥⋯裡⋯⋯","// init NAME_BLANK, $20
-This time, we can't forget it again.. Or Laki will...
+This time, we can't forget it again..
+Or Laki will...
 I think I'll write it on the palm of my hand while no one is looking...
 It's... in... the closet...","it just says ""the leader"" but it's more fun to mention a name","this is clearly referring to the hidden closet passage","","","","","","","","","","","","","","","","","","",""
 "0e","64f7","","// init NAME_BLANK, $20
