@@ -40,43 +40,31 @@ SnowyName::
 	line
 
 text_0a_46f6::
-	text "機", 1
-	text "械", 3
-	text "鳥", 0
+	text2 "B e a t t r o"
 	line
 
 text_0a_46fd::
-	text "小", 0
-	text "綿", 3
-	text "羊"
+	text2 "E l e c t r e e p"
 	line
 
 text_0a_4703::
-	text "鸚", 3
-	text "鵡"
-	text "獸", 1
+	text2 "C h r o m a n i x"
 	line
 
 text_0a_4709::
-	text "水", 0
-	text "精靈"
+	text2 "M e r l i t h"
 	line
 
 text_0a_470e::
-	text "音", 0
-	text "樂", 3
-	text "靈", 0
+	text2 "M u s e r o d e"
 	line
 
 text_0a_4715::
-	text "時", 2
-	text "空", 1
-	text "獸"
+	text2 "S i g n a l i t o n"
 	line
 
 text_0a_471b::
-	text "彩", 3
-	text "繪家"
+	text2 "D r a w v i l e"
 	line
 
 text_0a_4720::
@@ -136,21 +124,15 @@ text_0a_476c::
 	line
 
 text_0a_4773::
-	text "荳", 5
-	text " ", 0
-	text "荳", 5
+	text2 "D o t"
 	line
 
 text_0a_477a::
-	text "拉", 5
-	text " ", 0
-	text "琪", 5
+	text "L a k i"
 	line
 
 text_0a_4781::
-	text "庫", 5
-	text " ", 0
-	text "魯", 5
+	text "K u l u"
 	line
 
 text_0a_4788::
@@ -164,15 +146,11 @@ text_0a_478e::
 	line
 
 text_0a_4795::
-	text "隊", 2
-	text " ", 0
-	text "員", 5
+	text2 "V o l t  G r u n t"
 	line
 
 text_0a_479c::
-	text "博", 4
-	text " ", 0
-	text "多", 4
+	text2 "B u r t"
 	line
 
 text_0a_47a3::
