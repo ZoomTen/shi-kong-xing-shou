@@ -11,6 +11,7 @@ gfx/faces/*.gbcpal
 gfx/monsters/**/*.2bpp
 gfx/monsters/**/*.gbcpal
 gfx/cutscenes/meteor/*.2bpp
+gfx/cutscenes/*.2bpp
 gfx/tilesets/*.2bpp
 gfx/title_screen/*.2bpp
 gfx/intro/**/*.2bpp
@@ -18,6 +19,10 @@ gfx/character_set/*.1bpp
 data/maps/blocks/*.bin
 data/maps/layouts/*.bin
 data/maps/metatiles/*.bin
+
+# compiled text
+data/english_text/*.asm
+data/text/*.asm
 
 # compiled roms
 *.gbc

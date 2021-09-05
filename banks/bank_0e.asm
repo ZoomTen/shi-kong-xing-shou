@@ -1109,7 +1109,7 @@ text_0e_5bf5:
 	text_init $1a, $25 ; TEMP
 	dr $39bf8, $39c24
 
-INCLUDE "data/text/bank0e_misc2.asm"
+INCLUDE "data/english_text/bank0e_misc2.asm"
 
 unk_0e_7e69:
 	dr $3be69, $3beca

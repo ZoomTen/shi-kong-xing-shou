@@ -13,14 +13,18 @@ csv_name = sys.argv[1]
 with open(csv_name, "r") as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
+        if ('text_kind' in row) and (row['text_kind'] == 'repoint_target'):
+            print(f'en_', end='')
         if row['label'] == '':
             print(f'text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}::')
-            
-            if 'text_kind' in row:
-            	if row['text_kind'] == 'signpost':
-            		print('\ttext_sign')
         else:
             print(f'{row["label"]}::')
+        
+        if 'text_kind' in row:
+            if row['text_kind'] == 'signpost':
+                print('\ttext_sign')
+            elif row['text_kind'] == 'repoint_extern':
+                print(f'\trepoint en_text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}')
         
         translated = row["translated_string"]
         tc = 0
@@ -42,4 +46,4 @@ with open(csv_name, "r") as csv_file:
                         print(f'\tline  "{i}"')
                     else:
                         print(f'\tcont  "{i}"')
-        print('\tdone\n')                
+        print('\tdone\n')

@@ -42,6 +42,9 @@ tools:
 compare: $(ROM)
 	$(MD5) rom.md5
 
+clean-csv:
+	$(RM) data/english_text/*.csv
+
 clean:
 	$(RM) $(PATCH) $(ROM) $(MAP) $(SYM) $(OBJS)
 	$(RM) data/text/*.asm
@@ -55,6 +58,7 @@ clean:
 	$(if $(shell find -iname '*.gbcpal'),\
 		$(RM) $(shell find -iname '*.gbcpal') \
 	)
+	$(RM) data/english_text/*.asm
 	$(MAKE) clean -C tools/
 
 # The dep rules have to be explicit or else missing files won't be reported.
@@ -97,7 +101,7 @@ data/maps/layouts/%.bin: data/maps/layouts/%.tmx
 
 ### Misc file-specific graphics rules
 
-gfx/character_set/%.1bpp: tools/gfx += --interleave --png=$<
+gfx/character_set/image_%.1bpp: tools/gfx += --interleave --png=$<
 gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/intro/sprites/%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
 gfx/title_screen/characters.2bpp: tools/gfx += --interleave --png=$<
