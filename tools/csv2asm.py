@@ -6,7 +6,7 @@ import re
 
 def wrap(text):
     # https://stackoverflow.com/a/9968290
-    wrapped = [line.strip() for line in re.findall(r'.{1,13}(?:\s+|$)', text)]
+    wrapped = [line.strip() for line in re.findall(r'.{1,13}(?:\s+|$|-)', text)]
     if (' '.join(wrapped) != text):
         print('\t; XXX Text may be clipped!')
     return wrapped
