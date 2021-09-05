@@ -85,6 +85,7 @@ NEWCHARMAP english
 	charmap "→", $51
 	charmap "↓", $52
 	charmap "←", $53
+	charmap "¥", $54
 
 	charmap "⋯", $84
 	charmap "~", $85
