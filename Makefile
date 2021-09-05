@@ -4,7 +4,7 @@ GFX  := rgbgfx
 FIX  := rgbfix
 MD5  := md5sum -c
 PYTHON := python3
-IPS := tools/flips
+IPS := tools/mkips.py
 
 ASMFLAGS := -hL
 # Include all labels, including unreferenced and local labels, in the sym/map file if `make` is run with `ALLSYM=1`
@@ -79,7 +79,7 @@ $(foreach obj, $(OBJS), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 endif
 
 $(PATCH): $(ROM)
-	$(IPS) -c -i baserom.gbc $(ROM) $@
+	$(IPS) baserom.gbc $(ROM) $@
 
 $(ROM): $(OBJS)
 	$(LINK) -n $(SYM) -m $(MAP) -p 0 -o $@ $(OBJS)
