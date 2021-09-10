@@ -36,14 +36,15 @@ I found a diary in the drawer!","prob first person?","","","","","","",""
 ...
 April 20th
 There are signs of the moon turning blue.
-If we don't decipher the diagram soon, I'm afraid we won't be able to stop that event.","","","","","","","",""
+If we don't decipher the diagram soon, I'm afraid we won't be able to stop it.","","","","","","","",""
 "0e","4bc0","","// init NAME_BALLOT, $2d
 日記裡夾著一張
 泛黃的設計圖。
 圖裡畫著密密麻
 麻的機械構造圖
 ⋯⋯","// init NAME_BALLOT, $2d
-A yellowed design diagram is enclosed in the diary! The diagram contains a dense mechanical con- struction...","","","","","","","",""
+A yellowed design diagram is enclosed in the diary!
+The diagram contains a dense mechanical con- struction...","","","","","","","",""
 "0e","4bfb","","// init NAME_BALLOT, $00
 爸爸一定想解開
 設計圖中的祕密

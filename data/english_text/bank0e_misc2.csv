@@ -167,9 +167,9 @@ No! You can't do this!","","","","","","","","","","","","","","","","","","",""
 ‧問題!
 你們‧才怪‧贏
 !","// init NAME_BUCK, $01
-You should not have won!
-Dr. Leo had minor issue!
-It's only why you won!","google
+ＹＯＵ ＳＨＯＵＬＤ ＮＯＴ ＨＡＶＥ ＷＯＮ！
+ＤＲ． ＬＥＯ ＨＡＤ Ａ ＭＩＮＯＲ ＩＳＳＵＥ！
+ＴＨＡＴ ＩＳ ＷＨＹ ＹＯＵ ＨＡＶＥ ＷＯＮ！","google
 docs translation:
 ""you cheated. will give leo problems. you cheated.""
 how do you represent a robot voice","might just settle on buck having near good grammar
@@ -187,8 +187,8 @@ Dr. Leo, wasn't it?","google","","","","","","","","","","","","","","","","",""
 胡說!
 再比‧雷歐博士
 ‧一定贏!","// init NAME_BUCK, $01
-Impossible!
-Dr. Leo would win a rematch surely!","google
+ＩＭＰＯＳＳＩＢＬＥ！
+ＤＲ． ＬＥＯ ＷＯＵＬＤ ＳＵＲＥＬＹ ＷＩＮ Ａ ＲＥＭＡＴＣＨ！","google
 docs translation:
 ""silence! professor will win again!""
 ????????????","","","","","","","","","","","","","","","","","","","",""
@@ -210,7 +210,7 @@ docs translation:
 Ohohohoho! Without that thing, he'll never beat us, regardless of how many times he tries!
 How about this: We'll give you another chance!
 In 3 days, we'll have another race.
-If you lose, you'll have to cough up the 30 miillion bucks. Ohohoho!!","30 million bucks :buck:","also idk what that thing is","","","","","","","","","","","","","","","","","","",""
+If you lose, you'll have to cough up the 30 million bucks. Ohohoho!!","30 million bucks :buck:","also idk what that thing is","","","","","","","","","","","","","","","","","","",""
 "0e","6188","","// init NAME_BLANK, $1b
 雷歐又要和閃電
 隊比賽一次了!
@@ -224,7 +224,7 @@ Considering what happened last time, I think it'd be easier for us to just find 
 "0e","61da","","// init NAME_BUCK, $01
 再比賽‧雷歐博
 士‧贏‧一定!","// init NAME_BUCK, $01
-Dr. Leo will win the rematch!","","","","","","","","","","","","","","","","","","","","",""
+ＤＲ． ＬＥＯ ＷＩＬＬ ＷＩＮ ＴＨＥ ＲＥＭＡＴＣＨ！","","","","","","","","","","","","","","","","","","","","",""
 "0e","61f6","","// init NAME_0A, $0a
 恰比~恰比比~","// init NAME_0A, $0a
 Chabi chabi!","google","????????????????????????????????????????????????????????????????????????????????????","i have no idea what this means","Beattro","","","","","","","","","","","","","","","","",""
@@ -249,7 +249,7 @@ Without a Rainbow Crystal for my engine core, I stand no chance of winning.","de
 "0e","6292","","// init NAME_BUCK, $01; # TEMP
 巴克‧拿‧
 彩虹水晶!","// init NAME_BUCK, $01
-Buck will go to take Rainbow Crystal!","","","","","","","","","","","","","","","","","","","","",""
+ＢＵＣＫ ＷＩＬＬ ＧＯ ＴＯ ＲＥＴＲＩＥＶＥ ＴＨＥ ＲＡＩＮＢＯＷ ＣＲＹＳＴＡＬ！","","","","","","","","","","","","","","","","","","","","",""
 "0e","62aa","","// init NAME_BALLOT, $2d
 為什麼彩虹水晶
 會停産?","// init NAME_BALLOT, $2d
@@ -267,7 +267,7 @@ I don't know... Crystal Town just stopped producing them one day for no reason."
 This can't be right.. I'll head over there and check it out!","","","","","","","","","","","","","","","","","","","","",""
 "0e","6314","","// init NAME_BUCK, $01
 巴克‧一起去!","// init NAME_BUCK, $01
-Buck go together with Ballot!","","","","","","","","","","","","","","","","","","","","",""
+ＢＵＣＫ ＷＩＬＬ ＧＯ ＷＩＴＨ ＢＡＬＬＯＴ！","","","","","","","","","","","","","","","","","","","","",""
 "0e","6324","","// init NAME_BLANK, $1e
 這裡是水晶村。","// init NAME_BLANK, $1e
 Our little town is known for producing Rainbow Crystals, the most durable source of energy ever made!","the original just says ""this is crystal town"" / ""welcome to crystal town"" so i changed it to something a bit more ""helpful"" -z","","","","","","","","","","","","","","","","","","","",""

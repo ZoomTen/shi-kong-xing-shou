@@ -627,7 +627,9 @@ In my dad's pocket, there is a colorful crystal!","","","repoint_target"
 水晶?
 給巴克‧雷歐博
 士‧要!","// init NAME_BUCK, $01
-Crystal? Give Buck, Dr. Leo want!","r o b o t","","repoint_target"
+ＣＲＹＳＴＡＬ？
+ＧＩＶＥ ＴＯ ＢＵＣＫ！
+ＤＲ． ＬＥＯ ＷＡＮＴ！","r o b o t","","repoint_target"
 "0e","65fc","","// init NAME_BLANK, $1e
 不~要!","// init NAME_BLANK, $1e
 No!","","","repoint_target"
@@ -651,8 +653,8 @@ Password, please.","","","repoint_target"
 試試。
 巴克‧要‧隊伍
 ‧前頭。","// init NAME_BUCK, $01
-Ballot. Buck wants to try.
-Buck will lead the way.","
+ＢＡＬＬＯＴ． ＢＵＣＫ ＷＡＮＴＳ ＴＯ ＴＲＹ．
+ＢＵＣＫ ＷＩＬＬ ＬＥＡＤ ＴＨＥ ＷＡＹ．","
 placing buck at the top of the party list?","","repoint_target"
 "0e","6689","","// init NAME_BALLOT, $2d
 壁櫥裡有個洞!
@@ -669,9 +671,9 @@ Password, please.","same as 0e:6647","","repoint_target"
 MKC-+3
 密碼:
 97‧35","// init NAME_BUCK, $01
-Buck decode.
+ＢＵＣＫ ＴＲＹ ＤＥＣＯＤＩＮＧ．
 ...
-Password is. 9735.
+ＰＡＳＳＷＯＲＤ ＩＳ ９７３５．
 ","might need to adjust the ""decoding"" part since it messes up the game when i converted this","","repoint_target"
 "0e","66eb","","// init NAME_20, $30
 正確~正確。","// init NAME_20, $30
@@ -877,8 +879,8 @@ Hahaha! You won't have to worry about that 30 million yen anymore!","","","repoi
 笑⋯⋯
 巴克⋯⋯想⋯⋯
 笑⋯⋯","// init NAME_BUCK, $01
-Buck cannot laugh...
-Buck want laugh...","","","repoint_target"
+ＢＵＣＫ ＣＡＮＮＯＴ ＬＡＵＧＨ．．．
+ＢＵＣＫ ＷＡＮＴ ＬＡＵＧＨ．．．","","","repoint_target"
 "0e","6c51","","// init NAME_1E, $27
 慢⋯慢⋯慢⋯
 慢著著著著!!

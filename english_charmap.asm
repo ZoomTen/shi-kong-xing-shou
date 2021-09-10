@@ -95,3 +95,44 @@ NEWCHARMAP english
 	charmap "'m", $89
 	charmap "'t", $8a
 	charmap "'e", $8b
+	
+; r o b o t
+	charmap "Ａ", $55
+	charmap "Ｂ", $56
+	charmap "Ｃ", $57
+	charmap "Ｄ", $58
+	charmap "Ｅ", $59
+	charmap "Ｆ", $5a
+	charmap "Ｇ", $5b
+	charmap "Ｈ", $5c
+	charmap "Ｉ", $5d
+	charmap "Ｊ", $5e
+	charmap "Ｋ", $5f
+	charmap "Ｌ", $60
+	charmap "Ｍ", $61
+	charmap "Ｎ", $62
+	charmap "Ｏ", $63
+	charmap "Ｐ", $64
+	charmap "Ｑ", $65
+	charmap "Ｒ", $66
+	charmap "Ｓ", $67
+	charmap "Ｔ", $68
+	charmap "Ｕ", $69
+	charmap "Ｖ", $6a
+	charmap "Ｗ", $6b
+	charmap "Ｘ", $6c
+	charmap "Ｙ", $6d
+	charmap "Ｚ", $6e
+	charmap "０", $6f
+	charmap "１", $70
+	charmap "２", $71
+	charmap "３", $72
+	charmap "４", $73
+	charmap "５", $74
+	charmap "６", $75
+	charmap "７", $76
+	charmap "８", $77
+	charmap "９", $78
+	charmap "！", $79
+	charmap "？", $7a
+	charmap "．", $4d
