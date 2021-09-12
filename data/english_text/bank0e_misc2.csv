@@ -167,13 +167,11 @@ No! You can't do this!","","","","","","","","","","","","","","","","","","",""
 ‧問題!
 你們‧才怪‧贏
 !","// init NAME_BUCK, $01
-ＹＯＵ ＳＨＯＵＬＤ ＮＯＴ ＨＡＶＥ ＷＯＮ！
-ＤＲ． ＬＥＯ ＨＡＤ Ａ ＭＩＮＯＲ ＩＳＳＵＥ！
-ＴＨＡＴ ＩＳ ＷＨＹ ＹＯＵ ＨＡＶＥ ＷＯＮ！","google
+ＴＨＥＲＥ＇Ｓ ＮＯ ＷＡＹ ＹＯＵ ＣＯＵＬＤ ＨＡＶＥ ＷＯＮ！ ＤＲ． ＬＥＯ ＨＡＤ ＩＳＳＵＥＳ ＰＲＯＣＵＲＩＮＧ Ａ ＰＡＲＴ． Ｉ＇Ｍ ＳＵＲＥ ＹＯＵ ＣＨＥＡＴＥＤ！","google
 docs translation:
 ""you cheated. will give leo problems. you cheated.""
 how do you represent a robot voice","might just settle on buck having near good grammar
-(ESL grammar?)","screw it someone can figure out the robot voice later","","","","","","","","","","","","","","","","","",""
+(ESL grammar?)","screw it someone can figure out the robot voice later","There's no way you could have won! Dr. Leo had issues procuring a part. I'm sure you cheated!","","","","","","","","","","","","","","","","",""
 "0e","60a4","","// init NAME_1F, $28
 在下認得你!
 你不就是那個手

@@ -573,9 +573,9 @@ unk_00f_45cf:
 unk_00f_45d4:
 	dr $3c5d4, $3c691
 
-INCLUDE "data/text/bank0f_misc.asm"
+INCLUDE "data/english_text/bank0f_misc.asm"
 
-INCLUDE "data/text/bank0f_misc2.asm"
+INCLUDE "data/english_text/bank0f_misc2.asm"
 
 unk_00f_594f::
 	dr $3d94f, $3d980

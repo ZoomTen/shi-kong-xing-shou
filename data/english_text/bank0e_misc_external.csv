@@ -526,7 +526,7 @@ With more people in the party, it'll be safer for him to travel.","","","repoint
 "0e","7c1d","","// init NAME_BUCK, $01
 博士‧巴克‧
 巴克⋯","// init NAME_BUCK, $01
-Doctor... Buck.... Buck...","","","repoint_target"
+ＤＯＣＴＯＲ．．．． ＢＵＣＫ．．． ＢＵＣＫ．．．","","","repoint_target"
 "0e","7c32","","// init NAME_1C, $29
 我知道你在想什
 麼!
@@ -539,7 +539,7 @@ Once you return safely, I'll figure out something to make you more humanlike!
 How about that?","","","repoint_target"
 "0e","7c75","","// init NAME_BUCK, $01
 博士‧真的?","// init NAME_BUCK, $01
-Doctor.. Really?","","","repoint_target"
+ＤＯＣＴＯＲ．．． ＲＥＡＬＬＹ？","","","repoint_target"
 "0e","7c82","","// init NAME_1C, $29
 就這樣改一改⋯
 就是這裡⋯
@@ -590,7 +590,7 @@ This hole... How will we cross it?","","","repoint_target"
 換‧在排頭。
 機械鳥‧飛‧地
 洞。","// init NAME_BUCK, $01
-Ballot. Let Buck lead. Beattro fly over hole.","","","repoint_target"
+ＢＡＬＬＯＴ！ ＬＥＴ ＢＵＣＫ ＬＥＡＤ． ＢＥＡＴＴＲＯ ＣＡＮ ＦＬＹ ＯＶＥＲ ＨＯＬＥＳ．","","","repoint_target"
 "0e","7dff","","// init NAME_BALLOT, $00
 不行~
 我們去找伊隼人
@@ -627,9 +627,7 @@ In my dad's pocket, there is a colorful crystal!","","","repoint_target"
 水晶?
 給巴克‧雷歐博
 士‧要!","// init NAME_BUCK, $01
-ＣＲＹＳＴＡＬ？
-ＧＩＶＥ ＴＯ ＢＵＣＫ！
-ＤＲ． ＬＥＯ ＷＡＮＴ！","r o b o t","","repoint_target"
+Ａ ＣＲＹＳＴＡＬ？ ＧＩＶＥ ＩＴ ＴＯ ＢＵＣＫ！ ＤＲ． ＬＥＯ ＮＥＥＤＳ ＩＴ！","r o b o t","","repoint_target"
 "0e","65fc","","// init NAME_BLANK, $1e
 不~要!","// init NAME_BLANK, $1e
 No!","","","repoint_target"
@@ -646,8 +644,7 @@ There's a doorway in the closet! It's open!","","","repoint_target"
 "0e","6647","","// init NAME_20, $30
 輸、入、密、碼
 ?","// init NAME_20, $30
-Authorization.
-Password, please.","","","repoint_target"
+ＡＵＴＨＯＲＩＺＡＴＩＯＮ ＮＥＥＤＥＤ． ＰＡＳＳＷＯＲＤ， ＰＬＥＡＳＥ．","","","repoint_target"
 "0e","665b","","// init NAME_BUCK, $01
 巴洛特‧巴克‧
 試試。
@@ -663,21 +660,20 @@ There's a doorway in the closet! It's open!","same as 0e:662c","","repoint_targe
 "0e","66a4","","// init NAME_20, $30
 輸、入、密、碼
 ?","// init NAME_20, $30
-Authorization.
-Password, please.","same as 0e:6647","","repoint_target"
+ＡＵＴＨＯＲＩＺＡＴＩＯＮ ＮＥＥＤＥＤ． ＰＡＳＳＷＯＲＤ， ＰＬＥＡＳＥ．","same as 0e:6647","","repoint_target"
 "0e","66b8","","// init NAME_BUCK, $01
 巴克‧解碼。
 ¢2#×°£
 MKC-+3
 密碼:
 97‧35","// init NAME_BUCK, $01
-ＢＵＣＫ ＴＲＹ ＤＥＣＯＤＩＮＧ．
-...
-ＰＡＳＳＷＯＲＤ ＩＳ ９７３５．
+ＢＵＣＫ ＷＩＬＬ ＴＲＹ ＤＥＣＯＤＩＮＧ ＴＨＥ ＰＡＳＳＷＯＲＤ．
+．．．
+ＰＡＳＳＷＯＲＤ ＩＳ ９７３５
 ","might need to adjust the ""decoding"" part since it messes up the game when i converted this","","repoint_target"
 "0e","66eb","","// init NAME_20, $30
 正確~正確。","// init NAME_20, $30
-Access granted.","","","repoint_target"
+ＡＣＣＥＳＳ ＧＲＡＮＴＥＤ．","","","repoint_target"
 "0e","66fa","","// init NAME_22, $32
 你們是誰?
 侵入祕密基地的
@@ -880,7 +876,7 @@ Hahaha! You won't have to worry about that 30 million yen anymore!","","","repoi
 巴克⋯⋯想⋯⋯
 笑⋯⋯","// init NAME_BUCK, $01
 ＢＵＣＫ ＣＡＮＮＯＴ ＬＡＵＧＨ．．．
-ＢＵＣＫ ＷＡＮＴ ＬＡＵＧＨ．．．","","","repoint_target"
+ＢＵＣＫ ＷＡＮＴＳ ＴＯ ＬＡＵＧＨ．．．","","","repoint_target"
 "0e","6c51","","// init NAME_1E, $27
 慢⋯慢⋯慢⋯
 慢著著著著!!

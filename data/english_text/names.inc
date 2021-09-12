@@ -140,9 +140,7 @@ text_0a_4788::
 	line
 
 text_0a_478e::
-	text "貓", 3
-	text " ", 0
-	text "怪", 1
+	text2 "C a t"
 	line
 
 text_0a_4795::
