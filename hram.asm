@@ -18,11 +18,11 @@ hFF93:: ds 1
 hJoypadPressed:: ds 1
 hJoypadDown:: ds 1
 
-hFF96:: ds 1
-hFF97:: ds 1
+hMapOffsetX:: ds 1
+hMapOffsetY:: ds 1
 
-hFF98:: ds 1
-hFF99:: ds 1
+hMapWidth:: ds 1
+hMapHeight:: ds 1
 
 hMapGroup:: ds 1
 hMapNumber:: ds 1
@@ -50,10 +50,7 @@ hFFAF:: ds 1
 hSCY:: ds 1
 hFFB1:: ds 1
 
-hFFB2:: ds 1
-hFFB3:: ds 1
-hFFB4:: ds 1
-hFFB5:: ds 1
+hMapAttrBank:: ds 4
 hScriptBank:: ds 1
 hFFB7:: ds 1
 hFFB8:: ds 1
