@@ -30,7 +30,7 @@ ParseCurrentMapEvents::
 	srl h
 	rr l
 	ld c, l
-	ldh a, [hFF97]
+	ldh a, [hMapOffsetY]
 	add a
 	add c
 	ld c, a
@@ -57,12 +57,12 @@ ParseCurrentMapEvents::
 	srl h
 	rr l
 	ld b, l
-	ldh a, [hFF96]
+	ldh a, [hMapOffsetX]
 	add a
 	add b
 	ld b, a
 
-	ld hl, wdf00
+	ld hl, wMapEvents
 
 MapEventLoop:
 .check_x

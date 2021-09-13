@@ -364,9 +364,9 @@ Func_0531::
 Func_0557::
 	ld a, [_BANKNUM]
 	push af
-	ld a, [wd0c9]
+	ld a, [wPlayerSpriteX]
 	ld [wcd01], a
-	ld a, [wd0ca]
+	ld a, [wPlayerSpriteY]
 	ld [wcd00], a
 	ld a, 1
 	ld [wcd02], a
@@ -462,7 +462,7 @@ Func_05ff::
 	ld a, [_BANKNUM]
 	push af
 	call LoadMapData
-	call Func_2433
+	call LoadMapAttrs
 	call LoadMapGFX
 	call Func_24be
 	call Func_1fee
@@ -1051,11 +1051,11 @@ Func_0a0a::
 	ld a, [_BANKNUM]
 	push af
 
-	ldh a, [hFFB2]
+	ldh a, [hMapAttrBank]
 	rst Bankswitch
-	ld a, [wd0a8]
+	ld a, [wMapPalettesPointer]
 	ld l, a
-	ld a, [wd0a8 + 1]
+	ld a, [wMapPalettesPointer + 1]
 	ld h, a
 	ld de, wcab0
 	ld c, $40
@@ -1341,20 +1341,20 @@ IncFillBoxVRAM::
 	ldh [rVBK], a
 	ret
 
-Func_0f36::
+LoadMapGFX2::
 	ld a, [_BANKNUM]
 	push af
-	ldh a, [hFFB2]
+	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	call Func_259b
-	ld a, [wd0aa]
+	ld a, [wMapTileset1Pointer]
 	ld l, a
-	ld a, [wd0aa + 1]
+	ld a, [wMapTileset1Pointer + 1]
 	ld h, a
 	or l
 	jr nz, .not_zero
 
-	call Func_25a9
+	call LoadTilesetHeader
 	pop af
 	rst Bankswitch
 	ret
@@ -1363,9 +1363,9 @@ Func_0f36::
 	ld de, $9000
 	ld bc, $800
 	call CopyBytesVRAM
-	ld a, [wd0ac]
+	ld a, [wMapTileset2Pointer]
 	ld l, a
-	ld a, [wd0ac + 1]
+	ld a, [wMapTileset2Pointer + 1]
 	ld h, a
 	ld de, $8800
 	ld bc, $300
@@ -1377,17 +1377,17 @@ Func_0f36::
 LoadMapGFX::
 	ld a, [_BANKNUM]
 	push af
-	ldh a, [hFFB2]
+	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	call Func_25a2
-	ld a, [wd0aa]
+	ld a, [wMapTileset1Pointer]
 	ld l, a
-	ld a, [wd0aa + 1]
+	ld a, [wMapTileset1Pointer + 1]
 	ld h, a
 	or l
 	jr nz, .not_zero
 
-	call Func_25a9
+	call LoadTilesetHeader
 	pop af
 	rst Bankswitch
 	ret
@@ -1397,9 +1397,9 @@ LoadMapGFX::
 	ld bc, $800
 	call CopyBytesVRAM
 	call DelayFrame
-	ld a, [wd0ac]
+	ld a, [wMapTileset2Pointer]
 	ld l, a
-	ld a, [wd0ac + 1]
+	ld a, [wMapTileset2Pointer + 1]
 	ld h, a
 	ld de, $8800
 	ld bc, $300
@@ -2224,9 +2224,9 @@ Func_13d5::
 	push af
 	ldh a, [hScriptBank]
 	rst Bankswitch
-	ld a, [wd0cd]
+	ld a, [wObjectEventPointer]
 	ld l, a
-	ld a, [wd0cd + 1]
+	ld a, [wObjectEventPointer + 1]
 	ld h, a
 	ld de, wda00
 .asm_13e7
@@ -2996,20 +2996,25 @@ Func_19b6::
 
 INCLUDE "home/text.asm"
 
-Func_2433::
-	ldh a, [hFFB2]
+LoadMapAttrs::
+; load map attribute pointer
+	ldh a, [hMapAttrBank]
 	rst Bankswitch
-	ld a, [wd0cb]
+	ld a, [wMapAttrPointer]
 	ld l, a
-	ld a, [wd0cb + 1]
+	ld a, [wMapAttrPointer + 1]
 	ld h, a
-	ld de, hFF98
+
+; map size
+	ld de, hMapWidth
 	ld a, [hli]
 	ld [de], a
-	inc de
+	inc de ; hMapHeight
 	ld a, [hli]
 	ld [de], a
-	ld de, wd0a0
+
+; copy map attribute data
+	ld de, wMapAttributes
 	ld c, $12
 .copy
 	ld a, [hli]
@@ -3018,15 +3023,16 @@ Func_2433::
 	dec c
 	jr nz, .copy
 
+; load map layout?
 	ld a, $98
 	ld [wd0ba + 1], a
 	ld a, $00
 	ld [wd0ba], a
-	ldh a, [hFF98]
+	ldh a, [hMapWidth]
 	add a
 	sub 10
 	ldh [hFFA8], a
-	ldh a, [hFF99]
+	ldh a, [hMapHeight]
 	add a
 	sub 9
 	ldh [hFFA9], a
@@ -3038,7 +3044,7 @@ Func_2433::
 	jr .asm_2478
 
 .asm_2473
-	ldh a, [hFF96]
+	ldh a, [hMapOffsetX]
 	add a
 	ldh [hFFAA], a
 
@@ -3061,7 +3067,7 @@ ENDR
 	jr .asm_24a2
 
 .asm_249d
-	ldh a, [hFF97]
+	ldh a, [hMapOffsetY]
 	add a
 	ldh [hFFAB], a
 
@@ -3134,13 +3140,13 @@ Func_24e6::
 	ret
 
 Func_2529::
-	ld hl, wc100
-	ldh a, [hFF97]
+	ld hl, wMapLayout
+	ldh a, [hMapOffsetY]
 	ld b, a
 	and a
 	jr z, .skip
 
-	ldh a, [hFF98]
+	ldh a, [hMapWidth]
 	ld e, a
 	ld d, 0
 .asm_2537
@@ -3149,20 +3155,20 @@ Func_2529::
 	jr nz, .asm_2537
 
 .skip
-	ldh a, [hFF96]
+	ldh a, [hMapOffsetX]
 	ld e, a
 	ld d, 0
 	add hl, de
 	ld a, l
-	ld [wd0a0], a
+	ld [wMapLayoutPointer], a
 	ld a, h
-	ld [wd0a0 + 1], a
+	ld [wMapLayoutPointer + 1], a
 	ret
 
 Func_254a::
-	ld a, [wd0a6]
+	ld a, [wMapGBCAttrPointer]
 	ld l, a
-	ld a, [wd0a6 + 1]
+	ld a, [wMapGBCAttrPointer + 1]
 	ld h, a
 	ld de, wce00
 .asm_2555
@@ -3175,15 +3181,15 @@ Func_254a::
 
 .asm_255e
 	call Func_2c03
-	ld a, [wd0b0]
+	ld a, [wMapCollisionsPointer]
 	ld l, a
-	ld a, [wd0b0 + 1]
+	ld a, [wMapCollisionsPointer + 1]
 	ld h, a
 	ld de, wcf00
 	ld a, e
-	ld [wd0b0], a
+	ld [wMapCollisionsPointer], a
 	ld a, d
-	ld [wd0b0 + 1], a
+	ld [wMapCollisionsPointer + 1], a
 .asm_2574
 	ld a, [hli]
 	cp $ff
@@ -3193,17 +3199,17 @@ Func_254a::
 	jr .asm_2574
 
 Func_257c::
-	ld a, [wd0a0]
+	ld a, [wMapLayoutPointer]
 	ld l, a
-	ld a, [wd0a0 + 1]
+	ld a, [wMapLayoutPointer + 1]
 	ld h, a
 	ld a, [hli]
 	ld [wd0f4], a
-	ld de, wc100
-	ldh a, [hFF99]
+	ld de, wMapLayout
+	ldh a, [hMapHeight]
 	ld b, a
 .asm_258e
-	ldh a, [hFF98]
+	ldh a, [hMapWidth]
 	ld c, a
 .asm_2591
 	ld a, [hli]
@@ -3225,39 +3231,48 @@ Func_25a2::
 	call Func_0a46
 	ret
 
-Func_25a9::
-	ld a, $06
+LoadTilesetHeader::
+; always from bank 06
+	ld a, BANK(Tilesets)
 	rst Bankswitch
-	ld a, [wd0ac]
+
+	ld a, [wMapTileset2Pointer]
 	ld l, a
-	ld a, [wd0ac + 1]
+	ld a, [wMapTileset2Pointer + 1]
 	ld h, a
-.asm_25b4
+.load_tileset
 	ld a, [hli]
-	cp $ff
+	cp -1
 	ret z
 
-	ld [wd9f9], a
+; load params for CopyBytesVRAM
+; bank
+	ld [wTilesetBank], a
+; location
 	ld a, [hli]
 	ld e, a
 	ld a, [hli]
 	ld d, a
+; byte count
 	ld a, [hli]
 	ld c, a
 	ld a, [hli]
 	ld b, a
+; GFX address
 	ld a, [hli]
 	push hl
 	ld h, [hl]
 	ld l, a
-	ld a, [wd9f9]
+; load tileset to VRAM
+	ld a, [wTilesetBank]
 	rst Bankswitch
 	call CopyBytesVRAM
 	pop hl
 	inc hl
-	ld a, $06
+; bankswitch back
+	ld a, BANK(Tilesets)
 	rst Bankswitch
-	jp .asm_25b4 ; jr
+	jp .load_tileset ; jr
 
 Func_25d6::
 	ld a, [wd08f]
@@ -3431,16 +3446,16 @@ CopyBytes2::
 	ret
 
 Func_26e1::
-	ldh a, [hFFB2]
+	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	ld hl, wc740
 	ld a, l
 	ld [wd0b2], a
 	ld a, h
 	ld [wd0b2 + 1], a
-	ld a, [wd0a0]
+	ld a, [wMapLayoutPointer]
 	ld l, a
-	ld a, [wd0a0 + 1]
+	ld a, [wMapLayoutPointer + 1]
 	ld h, a
 	ld b, 5
 .asm_26f9
@@ -3451,9 +3466,9 @@ Func_26e1::
 	push hl
 	ld l, a
 	ld h, 0
-	ld a, [wd0a2]
+	ld a, [wMapBlocksPointer]
 	ld e, a
-	ld a, [wd0a2 + 1]
+	ld a, [wMapBlocksPointer + 1]
 	ld d, a
 	add hl, hl
 	add hl, hl
@@ -3468,9 +3483,9 @@ Func_26e1::
 	ld h, 0
 	add hl, hl
 	add hl, hl
-	ld a, [wd0a4]
+	ld a, [wMapMetatilesPointer]
 	ld e, a
-	ld a, [wd0a4 + 1]
+	ld a, [wMapMetatilesPointer + 1]
 	ld d, a
 	add hl, de
 	ld a, [wd0b2]
@@ -3510,7 +3525,7 @@ Func_26e1::
 	dec c
 	jp nz, .asm_26fb
 
-	ldh a, [hFF98]
+	ldh a, [hMapWidth]
 	sub 6
 	add l
 	ld l, a

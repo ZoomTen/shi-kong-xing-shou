@@ -53,7 +53,7 @@ wBGMapBufferPointers:: ds $38
 
 wc0e8:: ds $18
 
-wc100:: ds $640
+wMapLayout:: ds $640
 
 wc740:: ds $1e0
 
@@ -205,16 +205,16 @@ wd090:: ds 1
 wd091:: ds 1
 wd092:: ds $e
 
-wd0a0:: ds 2
-wd0a2:: ds 2
-wd0a4:: ds 2
-wd0a6:: ds 2
-wd0a8:: ds 2
-wd0aa:: ds 2
-wd0ac:: ds 2
+wMapAttributes::
+wMapLayoutPointer:: ds 2
+wMapBlocksPointer:: ds 2
+wMapMetatilesPointer:: ds 2
+wMapGBCAttrPointer:: ds 2
+wMapPalettesPointer:: ds 2
+wMapTileset1Pointer:: ds 2
+wMapTileset2Pointer:: ds 2
 wd0ae:: ds 2
-
-wd0b0:: ds 2
+wMapCollisionsPointer:: ds 2
 wd0b2:: ds 2
 wd0b4:: ds 1
 wd0b5:: ds 5
@@ -230,11 +230,11 @@ wd0c4:: ds 2
 wd0c6:: ds 2
 
 wd0c8:: ds 1
-wd0c9:: ds 1
-wd0ca:: ds 1
-wd0cb:: ds 2
+wPlayerSpriteX:: ds 1
+wPlayerSpriteY:: ds 1
+wMapAttrPointer:: ds 2
 
-wd0cd:: ds 2
+wObjectEventPointer:: ds 2
 wTextboxPointer:: ds 2
 wd0d1:: ds 2
 wd0d3:: ds 1
@@ -489,7 +489,7 @@ wd9eb:: ds 5
 wTempBank:: ds 1
 wd9f1:: ds 2
 wd9f3:: ds 6
-wd9f9:: ds 1
+wTilesetBank:: ds 1
 wd9fa:: ds 1
 wd9fb:: ds 1
 wd9fc:: ds 1
@@ -624,7 +624,7 @@ wde6e:: ds $16
 wde84:: ds $16
 wde9a:: ds $66
 
-wdf00:: ds $ff
+wMapEvents:: ds $ff
 
 wdfff:: ds 1
 

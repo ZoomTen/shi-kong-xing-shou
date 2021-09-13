@@ -1468,7 +1468,7 @@ Script_2e:
 	ld b, a
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld hl, wc100
+	ld hl, wMapLayout
 	add hl, bc
 	ld [hl], a
 	xor a

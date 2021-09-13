@@ -1079,9 +1079,9 @@ Func_1fe9::
 Func_1fee::
 	ldh a, [hScriptBank]
 	rst Bankswitch
-	ld a, [wd0cd]
+	ld a, [wObjectEventPointer]
 	ld l, a
-	ld a, [wd0cd + 1]
+	ld a, [wObjectEventPointer + 1]
 	ld h, a
 	ld de, wda00
 .read_byte
@@ -1106,6 +1106,7 @@ Func_1fee::
 	ret
 
 LoadMapData::
+; Load map group
 	ld de, .MapGroupPointers
 	ldh a, [hMapGroup]
 	ld l, a
@@ -1124,6 +1125,7 @@ LoadMapData::
 	ld a, [hli]
 	ld d, a
 
+; Load map header from map number
 	ldh a, [hMapNumber]
 	ld l, a
 	ld h, 0
@@ -1132,48 +1134,58 @@ LoadMapData::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld de, hFFB2
+
+; Load map attribute bank and etc.
+	ld de, hMapAttrBank
 REPT 4
 	ld a, [hli]
 	ld [de], a
 	inc de
 ENDR
+
+; Map attribute pointer
 	ld a, [hli]
-	ld [wd0cb], a
+	ld [wMapAttrPointer], a
 	ld a, [hli]
-	ld [wd0cb + 1], a
+	ld [wMapAttrPointer + 1], a
+
+; warp data length
 	ld bc, $0c
+
+; get warp data
 	ldh a, [hWarpNumber]
 	and a
-	jr z, .asm_2052
-
-.asm_204e
+	jr z, .got_warp
+.get_warp
 	add hl, bc
 	dec a
-	jr nz, .asm_204e
-
-.asm_2052
+	jr nz, .get_warp
+.got_warp
 	ld a, [wd9d2]
 	and a
-	jr z, .asm_205e
+	jr z, .get_spawn_position
 
+; skip placing player
 	ld a, [hli]
 	ld a, [hli]
 	ld a, [hli]
 	ld a, [hli]
-	jr .asm_206c
+	jr .get_scripts
 
-.asm_205e
+.get_spawn_position
+; offset the map
 	ld a, [hli]
-	ldh [hFF96], a
+	ldh [hMapOffsetX], a
 	ld a, [hli]
-	ldh [hFF97], a
+	ldh [hMapOffsetY], a
+; where the player is placed on the screen
 	ld a, [hli]
-	ld [wd0c9], a
+	ld [wPlayerSpriteX], a
 	ld a, [hli]
-	ld [wd0ca], a
+	ld [wPlayerSpriteY], a
 
-.asm_206c
+.get_scripts
+; Script and object event bank
 	ld de, hScriptBank
 	ld a, [hli]
 	ld [de], a
@@ -1186,27 +1198,29 @@ ENDR
 	ld a, [hli]
 	inc de
 
+; Load object event pointer
 	ld a, [hli]
-	ld [wd0cd], a
+	ld [wObjectEventPointer], a
 	ld a, [hli]
-	ld [wd0cd + 1], a
+	ld [wObjectEventPointer + 1], a
+
+; Copy map events to df00
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld de, wdf00
-.asm_2086
+	ld de, wMapEvents
+.copy_map_events
 	ld a, [hli]
 	ld [de], a
 	inc de
-	cp $ff
+	cp -1
 	ret z
-
 REPT 5
 	ld a, [hli]
 	ld [de], a
 	inc de
 ENDR
-	jr .asm_2086
+	jr .copy_map_events
 	ret ; ?
 
 .MapGroupPointers:
@@ -1221,14 +1235,14 @@ ENDR
 	dba Group02_Maps
 
 Func_20b9::
-	ldh a, [hFFB2]
+	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	push de
-	ldh a, [hFF97]
+	ldh a, [hMapOffsetY]
 	add c
 	ld c, a
-	ld hl, wc100
-	ld a, [hFF98]
+	ld hl, wMapLayout
+	ld a, [hMapWidth]
 	ld e, a
 	ld d, 0
 	ld a, c
@@ -1245,13 +1259,13 @@ Func_20b9::
 	ld a, d
 	ld c, a
 	ld d, 0
-	ldh a, [hFF96]
+	ldh a, [hMapOffsetX]
 	add e
 	ld e, a
 	add hl, de
-	ld a, [wd0a2]
+	ld a, [wMapBlocksPointer]
 	ld e, a
-	ld a, [wd0a2 + 1]
+	ld a, [wMapBlocksPointer + 1]
 	ld d, a
 	ld a, [hl]
 	ld l, a
@@ -1272,9 +1286,9 @@ Func_20b9::
 
 	inc hl
 .asm_20f6
-	ld a, [wd0b0]
+	ld a, [wMapCollisionsPointer]
 	ld e, a
-	ld a, [wd0b0 + 1]
+	ld a, [wMapCollisionsPointer + 1]
 	ld d, a
 	ld a, [hl]
 	ld l, a
