@@ -86,6 +86,9 @@ def get_symbol(symbol_table, address):
 	else:
 		return 'unk_%03x_%04x' % offset2addr(address)
 
+def is_symbol_defined(symbol_table, address):
+	return address in symbol_table
+
 # syntactic sugar
 get_number = lambda src, bytes: int.from_bytes(src.read(bytes), byteorder='little')
 
