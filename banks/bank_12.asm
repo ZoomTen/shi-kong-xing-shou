@@ -381,8 +381,8 @@ Script_012_43a1:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_6bc1
 	scr_spriteface  2, FACE_UP
-	scr_spritewalk  2, MOVE_DOWN
-	scr_spritewalk  2, MOVE_DOWN
+	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_UP
 	scr_text text_12_6c0b
 	scr_spriteface  2, FACE_DOWN
 	scr_text text_12_6c54
@@ -421,7 +421,7 @@ Script_012_43a1:
 	scr_spriteface  1, FACE_UP
 	scr_spriteface  3, FACE_UP
 	scr_text text_12_6e65
-	scr_spritewalk  3, MOVE_DOWN
+	scr_spritewalk  3, MOVE_UP
 	scr_spriteface  3, FACE_LEFT
 	scr_face $02 ; TEMP
 	scr_spriteface  1, FACE_LEFT
@@ -432,11 +432,11 @@ Script_012_43a1:
 	scr_face $00 ; TEMP
 	scr_spriteface  1, FACE_DOWN
 	scr_spriteface  2, FACE_DOWN
-	scr_spritewalk  2, MOVE_UP
-	scr_spritewalk  2, MOVE_UP
-	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_DOWN
+	scr_spritewalk  2, MOVE_DOWN
+	scr_spritewalk  2, MOVE_DOWN
 	scr_1c $02 ; TEMP
-	scr_spritewalk  3, MOVE_UP
+	scr_spritewalk  3, MOVE_DOWN
 	scr_text text_12_6ef7
 	scr_spriteface  3, FACE_RIGHT
 	scr_44
@@ -495,7 +495,7 @@ Script_012_44db:
 	scr_face $01 ; TEMP
 	scr_emote $02, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
-	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_DOWN
 	scr_spriteface  2, FACE_RIGHT
 	scr_spriteface  3, FACE_LEFT
 	scr_text text_12_68c4
@@ -508,7 +508,7 @@ Script_012_44db:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_691e
 	scr_spriteface  2, FACE_DOWN
-	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_DOWN
 	scr_face $02 ; TEMP
 	scr_text text_12_6927
 	scr_spriteface  3, FACE_DOWN
@@ -536,7 +536,7 @@ Script_012_44db:
 	scr_text text_12_6b93
 	scr_text text_12_6bb4
 	scr_44
-	scr_spritewalk  3, MOVE_UP
+	scr_spritewalk  3, MOVE_DOWN
 	scr_1c $03 ; TEMP
 	scr_setbit $daa3, $06 ; TEMP
 	scr_end
@@ -581,7 +581,7 @@ Script_012_45b3:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_6394
 	scr_44
-	scr_spritewalk  4, MOVE_UP
+	scr_spritewalk  4, MOVE_DOWN
 	scr_1c $04 ; TEMP
 	scr_44
 	scr_spritewalk  3, MOVE_LEFT
@@ -817,7 +817,7 @@ Script_012_4781:
 	scr_text text_12_7aac
 	scr_emote $02, $03 ; TEMP
 	scr_delay $03, $20 ; TEMP
-	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_DOWN
 	scr_text text_12_7ad7
 	scr_emote $00, $03 ; TEMP
 	scr_delay $03, $20 ; TEMP
@@ -861,11 +861,11 @@ unk_012_4827:
 
 Script_012_482b:
 	scr_text text_12_7cf0
-	scr_spritewalk  4, MOVE_UP
+	scr_spritewalk  4, MOVE_DOWN
 	scr_face $01 ; TEMP
 	scr_move MovementData_OneUp
 	scr_44
-	scr_spritewalk  1, MOVE_UP
+	scr_spritewalk  1, MOVE_DOWN
 	scr_spriteface  1, FACE_UP
 	scr_face $03 ; TEMP
 	scr_move MovementData_OneRight
@@ -877,11 +877,11 @@ Script_012_482b:
 
 Script_012_4850::
 	scr_text text_12_7cf0
-	scr_spritewalk  4, MOVE_UP
+	scr_spritewalk  4, MOVE_DOWN
 	scr_face $01 ; TEMP
 	scr_move MovementData_OneUp
 	scr_44
-	scr_spritewalk  1, MOVE_UP
+	scr_spritewalk  1, MOVE_DOWN
 	scr_spriteface  1, FACE_UP
 
 Script_012_4862:
@@ -894,8 +894,8 @@ Script_012_4862:
 	scr_emote $02, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_7d79
-	scr_spritewalk  3, MOVE_UP
-	scr_spritewalk  3, MOVE_UP
+	scr_spritewalk  3, MOVE_DOWN
+	scr_spritewalk  3, MOVE_DOWN
 	scr_spriteface  3, FACE_RIGHT
 	scr_spriteface  4, FACE_LEFT
 	scr_text text_12_7d90
@@ -907,9 +907,9 @@ Script_012_4862:
 	scr_text text_12_7df5
 	scr_text text_12_7e02
 	scr_text text_12_7e1a
-	scr_spritewalk  4, MOVE_UP
+	scr_spritewalk  4, MOVE_DOWN
 	scr_44
-	scr_spritewalk  4, MOVE_UP
+	scr_spritewalk  4, MOVE_DOWN
 	scr_1c $04 ; TEMP
 	scr_62 $02, $01 ; TEMP
 	scr_1f $0c ; TEMP
@@ -1272,7 +1272,7 @@ unk_012_4b94:
 	scr_text text_12_6fcc
 	scr_spriteface  4, FACE_DOWN
 	scr_spriteface  2, FACE_DOWN
-	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_DOWN
 	scr_spriteface  2, FACE_RIGHT
 	scr_spritewalk  2, MOVE_RIGHT
 	scr_spriteface  2, FACE_DOWN
@@ -1294,7 +1294,7 @@ unk_012_4b94:
 	scr_emote $02, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_spriteface  2, FACE_UP
-	scr_spritewalk  2, MOVE_DOWN
+	scr_spritewalk  2, MOVE_UP
 	scr_spriteface  2, FACE_RIGHT
 	scr_spriteface  4, FACE_LEFT
 	scr_text text_12_70ec
@@ -1302,11 +1302,11 @@ unk_012_4b94:
 	scr_spriteface  4, FACE_DOWN
 	scr_text text_12_7122
 	scr_text text_12_7159
-	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_DOWN
 	scr_text text_12_7169
 	scr_text text_12_71f8
 	scr_spriteface  2, FACE_UP
-	scr_spritewalk  2, MOVE_DOWN
+	scr_spritewalk  2, MOVE_UP
 	scr_spriteface  2, FACE_RIGHT
 	scr_spriteface  4, FACE_LEFT
 	scr_text text_12_7203
@@ -1364,8 +1364,8 @@ Script_012_4c95::
 	scr_text text_12_755b
 	scr_text text_12_756e
 	scr_spriteface  2, FACE_UP
-	scr_spritewalk  2, MOVE_DOWN
-	scr_spritewalk  2, MOVE_DOWN
+	scr_spritewalk  2, MOVE_UP
+	scr_spritewalk  2, MOVE_UP
 	scr_1c $02 ; TEMP
 	scr_move MovementData_OneUp
 	scr_text text_12_7576
@@ -1420,7 +1420,7 @@ unk_012_4d38:
 	scr_face $02 ; TEMP
 	scr_move MovementData_OneLeft
 	scr_44
-	scr_spritewalk  1, MOVE_DOWN
+	scr_spritewalk  1, MOVE_UP
 	scr_spriteface  1, FACE_LEFT
 	scr_emote $00, $03 ; TEMP
 	scr_delay $03, $20 ; TEMP

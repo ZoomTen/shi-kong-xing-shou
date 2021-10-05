@@ -611,7 +611,6 @@ unk_00e_4642:
 
 Script_00e_464e:
 	scr_text text_0e_5b91
-unk_00e_4651:
 	scr_end
 
 unk_00e_4652:

@@ -77,9 +77,9 @@ with open('baserom.gbc', 'rb') as rom:
 				if arg2 == 0:
 					print("\tscr_spritewalk %2d, MOVE_DELAY" % arg1)
 				elif arg2 == 1:
-					print("\tscr_spritewalk %2d, MOVE_UP" % arg1)
-				elif arg2 == 2:
 					print("\tscr_spritewalk %2d, MOVE_DOWN" % arg1)
+				elif arg2 == 2:
+					print("\tscr_spritewalk %2d, MOVE_UP" % arg1)
 				elif arg2 == 3:
 					print("\tscr_spritewalk %2d, MOVE_LEFT" % arg1)
 				elif arg2 == 4:

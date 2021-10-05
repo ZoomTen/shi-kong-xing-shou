@@ -963,7 +963,7 @@ unk_007_4ed2:
 
 unk_007_4edf:
 	warp_event ABSOLUTE,  8, $2d, $0a, $00
-	event_04  4,  3,  0, unk_00e_4651
+	event_04  4,  3,  0, unk_00e_4652
 	events_end
 
 unk_007_4eec:

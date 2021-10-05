@@ -333,6 +333,8 @@ scr_4e: MACRO
 	dw \2
 ENDM
 
+	const_def $52
+
 	const script_52 ; $52
 scr_52: MACRO
 	db script_52
