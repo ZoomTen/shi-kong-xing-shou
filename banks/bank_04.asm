@@ -108,37 +108,37 @@ BallotGFX_HandsUp_Pointers:
 	dw $ffff
 
 BallotWalk_Down1_GFX:
-	dr $1094d, $1098d
+	INCBIN "gfx/sprites/ballot/down1.2bpp"
 
 BallotWalk_Down2_GFX:
-	dr $1098d, $109cd
+	INCBIN "gfx/sprites/ballot/down2.2bpp"
 
 BallotWalk_Down3_GFX:
-	dr $109cd, $10a0d
+	INCBIN "gfx/sprites/ballot/down3.2bpp"
 
 BallotWalk_Sideways1_GFX:
-	dr $10a0d, $10a4d
+	INCBIN "gfx/sprites/ballot/side1.2bpp"
 
 BallotWalk_Sideways2_GFX:
-	dr $10a4d, $10a8d
+	INCBIN "gfx/sprites/ballot/side2.2bpp"
 
 BallotWalk_Sideways3_GFX:
-	dr $10a8d, $10acd
+	INCBIN "gfx/sprites/ballot/side3.2bpp"
 
 BallotWalk_Up1_GFX:
-	dr $10acd, $10b0d
+	INCBIN "gfx/sprites/ballot/up1.2bpp"
 
 BallotWalk_Up2_GFX:
-	dr $10b0d, $10b4d
+	INCBIN "gfx/sprites/ballot/up2.2bpp"
 
 BallotWalk_Up3_GFX:
-	dr $10b4d, $10b8d
+	INCBIN "gfx/sprites/ballot/up3.2bpp"
 
 BallotHoldPDA_GFX:
-	dr $10b8d, $10bcd
+	INCBIN "gfx/sprites/ballot/pda.2bpp"
 
 BallotHandsUp_GFX:
-	dr $10bcd, $10c0d
+	INCBIN "gfx/sprites/ballot/hands_up.2bpp"
 
 SnowyGFX_Pointers:
 	dw SnowyGFX_FacingDown_Pointers
@@ -168,31 +168,31 @@ SnowyGFX_FacingSideways_Pointers:
 	dw $eeee
 
 SnowyWalk_Down1_GFX:
-	dr $10c33, $10c73
+	INCBIN "gfx/sprites/snowy/down1.2bpp"
 
 SnowyWalk_Down2_GFX:
-	dr $10c73, $10cb3
+	INCBIN "gfx/sprites/snowy/down2.2bpp"
 
 SnowyWalk_Down3_GFX:
-	dr $10cb3, $10cf3
+	INCBIN "gfx/sprites/snowy/down3.2bpp"
 
 SnowyWalk_Sideways1_GFX:
-	dr $10cf3, $10d33
+	INCBIN "gfx/sprites/snowy/side1.2bpp"
 
 SnowyWalk_Sideways2_GFX:
-	dr $10d33, $10d73
+	INCBIN "gfx/sprites/snowy/side2.2bpp"
 
 SnowyWalk_Sideways3_GFX:
-	dr $10d73, $10db3
+	INCBIN "gfx/sprites/snowy/side3.2bpp"
 
 SnowyWalk_Up1_GFX:
-	dr $10db3, $10df3
+	INCBIN "gfx/sprites/snowy/up1.2bpp"
 
 SnowyWalk_Up2_GFX:
-	dr $10df3, $10e33
+	INCBIN "gfx/sprites/snowy/up2.2bpp"
 
 SnowyWalk_Up3_GFX:
-	dr $10e33, $10e73
+	INCBIN "gfx/sprites/snowy/up3.2bpp"
 
 BuckGFX_Pointers:
 	dw BuckGFX_FacingDown_Pointers
@@ -1012,31 +1012,31 @@ BladeberusGFX_FacingSideways_Pointers:
 	dw $eeee
 
 BladeberusWalk_Down1_GFX:
-	dr $1314d, $1318d
+	INCBIN "gfx/sprites/bladeberus/down1.2bpp"
 
 BladeberusWalk_Down2_GFX:
-	dr $1318d, $131cd
+	INCBIN "gfx/sprites/bladeberus/down2.2bpp"
 
 BladeberusWalk_Down3_GFX:
-	dr $131cd, $1320d
+	INCBIN "gfx/sprites/bladeberus/down3.2bpp"
 
 BladeberusWalk_Sideways1_GFX:
-	dr $1320d, $1324d
+	INCBIN "gfx/sprites/bladeberus/side1.2bpp"
 
 BladeberusWalk_Sideways2_GFX:
-	dr $1324d, $1328d
+	INCBIN "gfx/sprites/bladeberus/side2.2bpp"
 
 BladeberusWalk_Sideways3_GFX:
-	dr $1328d, $132cd
+	INCBIN "gfx/sprites/bladeberus/side3.2bpp"
 
 BladeberusWalk_Up1_GFX:
-	dr $132cd, $1330d
+	INCBIN "gfx/sprites/bladeberus/up1.2bpp"
 
 BladeberusWalk_Up2_GFX:
-	dr $1330d, $1334d
+	INCBIN "gfx/sprites/bladeberus/up2.2bpp"
 
 BladeberusWalk_Up3_GFX:
-	dr $1334d, $1338d
+	INCBIN "gfx/sprites/bladeberus/up3.2bpp"
 
 SayaGFX_Pointers:
 	dw SayaGFX_FacingDown_Pointers

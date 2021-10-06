@@ -94,6 +94,7 @@ data/maps/layouts/%.bin: data/maps/layouts/%.tmx
 
 gfx/character_set/%.1bpp: tools/gfx += --interleave --png=$<
 gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
+gfx/sprites/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/intro/sprites/%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
 
 ### Catch-all graphics rules
