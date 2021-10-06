@@ -1,4 +1,4 @@
-unk_014_4000::
+Sprites2Eto52GFXPointers::
 	dr $50000, $53dc0
 
 

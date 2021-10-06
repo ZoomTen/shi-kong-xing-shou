@@ -1719,42 +1719,42 @@ Func_22f6::
 Func_2363::
 	ld a, [wdb1f]
 	cp $14
-	jr c, .asm_239f
+	jr c, .sprites1
 	cp $2e
-	jr c, .asm_2390
+	jr c, .sprites2
 	cp $53
-	jr c, .asm_2381
-
-	ld a, BANK(unk_060_4000)
+	jr c, .sprites3
+; 53 onwards
+	ld a, BANK(Sprites53to75GFXPointers)
 	rst Bankswitch
-	ld de, unk_060_4000
+	ld de, Sprites53to75GFXPointers
 	ld a, [wdb1f]
 	sub $53
 	ld [wdb1f], a
 	ret
 
-.asm_2381
-	ld a, BANK(unk_014_4000)
+.sprites3
+	ld a, BANK(Sprites2Eto52GFXPointers)
 	rst Bankswitch
-	ld de, unk_014_4000
+	ld de, Sprites2Eto52GFXPointers
 	ld a, [wdb1f]
 	sub $2e
 	ld [wdb1f], a
 	ret
 
-.asm_2390
-	ld a, BANK(unk_022_4000)
+.sprites2
+	ld a, BANK(Sprites14to2DGFXPointers)
 	rst Bankswitch
-	ld de, unk_022_4000
+	ld de, Sprites14to2DGFXPointers
 	ld a, [wdb1f]
 	sub $14
 	ld [wdb1f], a
 	ret
 
-.asm_239f
-	ld a, BANK(unk_004_48e7)
+.sprites1
+	ld a, BANK(Sprites00to13GFXPointers)
 	rst Bankswitch
-	ld de, unk_004_48e7
+	ld de, Sprites00to13GFXPointers
 	ret
 
 Func_23a6::
