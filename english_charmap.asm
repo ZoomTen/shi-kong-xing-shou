@@ -135,4 +135,7 @@ NEWCHARMAP english
 	charmap "９", $78
 	charmap "！", $79
 	charmap "？", $7a
+	charmap "＇", $7b
+	charmap "，", $7c
+	charmap "－", $86
 	charmap "．", $4d
