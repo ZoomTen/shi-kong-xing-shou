@@ -1,4 +1,4 @@
-Func_020_4000::
+_LoadTextFaceExtraSprites::
 	dr $80000, $83e20
 
 

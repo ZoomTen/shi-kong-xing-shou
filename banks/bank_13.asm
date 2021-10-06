@@ -1,4 +1,4 @@
-Func_013_4000::
+_LoadTextFaceExtraSprites2::
 	dr $4c000, $4fca0
 
 

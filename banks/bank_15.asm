@@ -1,4 +1,4 @@
-Func_015_4000::
+_LoadTextFaceGFX2::
 	dr $54000, $57ca0
 
 

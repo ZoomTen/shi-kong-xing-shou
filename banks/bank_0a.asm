@@ -35,11 +35,11 @@ Func_00a_4000::
 	ld hl, wd1a8
 	call Func_00a_405b
 
-	call Func_0868
+	call LoadTextFaceGFX
 	call DelayFrame
-	call Func_0885
+	call LoadTextFaceExtraSprites
 	call DelayFrame
-	ld hl, $42e3
+	ld hl, unk_00a_42e3
 	ld a, l
 	ld [$dcd6], a
 	ld a, h
@@ -71,7 +71,10 @@ Func_00a_4178::
 	dr $28178, $282db
 
 unk_00a_42db:
-	dr $282db, $28523
+	dr $282db, $282e3
+
+unk_00a_42e3:
+	dr $282e3, $28523
 
 unk_00a_4523:
 	dr $28523, $285ce
