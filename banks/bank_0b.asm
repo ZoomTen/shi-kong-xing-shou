@@ -84,7 +84,7 @@ ScriptCommandTable:
 	dw Script_spriteface       ; $01
 	dw Script_delay    ; $02
 	dw Script_03       ; $03
-	dw Script_04       ; $04
+	dw Script_04       ; $04 another textbox command?
 	dw Script_face     ; $05
 	dw Script_spritewalk       ; $06
 	dw Script_07       ; $07
@@ -102,7 +102,7 @@ ScriptCommandTable:
 	dw Script_13       ; $13
 	dw Script_text     ; $14
 	dw Script_emote    ; $15
-	dw Script_16       ; $16
+	dw Script_16       ; $16 load sprite definitions?
 	dw Script_17       ; $17
 	dw Script_18       ; $18
 	dw Script_19       ; $19
@@ -139,7 +139,7 @@ ScriptCommandTable:
 	dw Script_38       ; $38
 	dw Script_39       ; $39
 	dw Script_3a       ; $3a
-	dw Script_3b       ; $3b
+	dw Script_3b       ; $3b start a battle?
 	dw Script_3c       ; $3c
 	dw Script_3d       ; $3d
 	dw Script_3e       ; $3e
@@ -183,7 +183,7 @@ ScriptCommandTable:
 	dw Script_64       ; $64
 	dw Script_65       ; $65
 	dw Script_66       ; $66
-	dw Script_67       ; $67
+	dw Script_67       ; $67 follower related?
 	dw Script_68       ; $68
 	dw Script_69       ; $69
 	dw Script_6a       ; $6a

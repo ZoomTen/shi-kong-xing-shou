@@ -77,9 +77,9 @@ with open('baserom.gbc', 'rb') as rom:
 				if arg2 == 0:
 					print("\tscr_spritewalk %2d, MOVE_DELAY" % arg1)
 				elif arg2 == 1:
-					print("\tscr_spritewalk %2d, MOVE_UP" % arg1)
-				elif arg2 == 2:
 					print("\tscr_spritewalk %2d, MOVE_DOWN" % arg1)
+				elif arg2 == 2:
+					print("\tscr_spritewalk %2d, MOVE_UP" % arg1)
 				elif arg2 == 3:
 					print("\tscr_spritewalk %2d, MOVE_LEFT" % arg1)
 				elif arg2 == 4:
@@ -148,6 +148,11 @@ with open('baserom.gbc', 'rb') as rom:
 				arg1 = int.from_bytes(rom.read(1), "little")
 				arg2 = int.from_bytes(rom.read(1), "little")
 				print("\tscr_emote $%02x, $%02x ; TEMP" % (arg1, arg2))
+			
+			elif byte == 0x16:
+				arg = int.from_bytes(rom.read(2), "little")
+				sym = get_symbol(rom_sym, addr2offset(bank, arg))
+				print("\tscr_16 %s ; TEMP" % (sym))
 
 			elif byte == 0x1a:
 				arg1 = int.from_bytes(rom.read(1), "little")
@@ -167,6 +172,12 @@ with open('baserom.gbc', 'rb') as rom:
 			elif byte == 0x1f:
 				arg = int.from_bytes(rom.read(1), "little")
 				print("\tscr_1f $%02x ; TEMP" % arg)
+
+			elif byte == 0x24:
+				print("\tscr_24")
+
+			elif byte == 0x25:
+				print("\tscr_25")
 			
 			elif byte == 0x2a:
 				new_bank = int.from_bytes(rom.read(1), "little")
@@ -183,6 +194,10 @@ with open('baserom.gbc', 'rb') as rom:
 				arg = int.from_bytes(rom.read(1), "little")
 				arg2 = int.from_bytes(rom.read(1), "little")
 				print("\tscr_30 $%02x, $%02x ; TEMP" % (arg,arg2))
+			
+			elif byte == 0x33:
+				arg = int.from_bytes(rom.read(1), "little")
+				print("\tscr_33 $%02x ; TEMP" % (arg))
 
 			elif byte == 0x34:
 				arg1 = int.from_bytes(rom.read(1), "little")
@@ -203,6 +218,11 @@ with open('baserom.gbc', 'rb') as rom:
 			elif byte == 0x3b:
 				arg = int.from_bytes(rom.read(2), "little")
 				print("\tscr_3b %s" % get_symbol(rom_sym, addr2offset(bank, arg)))
+			
+			elif byte == 0x3e:
+				arg2 = int.from_bytes(rom.read(2), "little")
+				sym = get_symbol(rom_sym, addr2offset(bank, arg2))
+				print("\tscr_jump %s" % (sym))
 
 			elif byte == 0x44:
 				print("\tscr_44")
@@ -226,10 +246,16 @@ with open('baserom.gbc', 'rb') as rom:
 				arg2 = int.from_bytes(rom.read(2), "little")
 				sym = get_symbol(rom_sym, addr2offset(bank, arg2))
 				print("\tscr_4e $%02x, %s" % (arg1, sym))
+			
+			elif byte == 0x52:
+				print("\tscr_52")
 
 			elif byte == 0x5e:
 				arg = int.from_bytes(rom.read(1), "little")
 				print("\tscr_5e $%02x ; TEMP" % arg)
+			
+			elif byte == 0x5f:
+				print("\tscr_5f")
 			
 			elif byte == 0x61:
 				print("\tscr_61")
@@ -248,6 +274,11 @@ with open('baserom.gbc', 'rb') as rom:
 			elif byte == 0x65:
 				arg = int.from_bytes(rom.read(1), "little")
 				print("\tscr_65 $%02x ; TEMP" % arg)
+			
+			elif byte == 0x69:
+				print("\tscr_69")
+				print("")
+				break
 			
 			else:
 				print("\tdb $%02x ; TEMP" % byte)

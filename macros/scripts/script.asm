@@ -146,7 +146,7 @@ scr_emote: MACRO
 	db \2 ; emote
 ENDM
 
-	const script_16 ; $16
+	const script_16 ; $16 load sprite definitions?
 scr_16: MACRO
 	db script_16
 	dw \1
@@ -213,6 +213,18 @@ scr_20: MACRO
 	db script_20
 ENDM
 
+	const_def $24
+
+	const script_24 ; $24
+scr_24: MACRO
+	db script_24
+ENDM
+
+	const script_25 ; $25
+scr_25: MACRO
+	db script_25
+ENDM
+
 	const_def $2a
 
 	const script_farjump ; $2a
@@ -237,7 +249,13 @@ scr_30: MACRO
 	db \1, \2 ; pointer?
 ENDM
 
-	const_def $34
+	const_def $33
+
+	const script_33 ; $33
+scr_33: MACRO
+	db script_33
+	db \1
+ENDM
 
 	const script_34 ; $34
 scr_34: MACRO
@@ -265,6 +283,14 @@ ENDM
 	const script_3b ; $3b
 scr_3b: MACRO
 	db script_3b
+	dw \1
+ENDM
+
+	const_def $3e
+
+	const script_jump ; $3e
+scr_jump: MACRO
+	db script_jump
 	dw \1
 ENDM
 
@@ -307,12 +333,24 @@ scr_4e: MACRO
 	dw \2
 ENDM
 
+	const_def $52
+
+	const script_52 ; $52
+scr_52: MACRO
+	db script_52
+ENDM
+
 	const_def $5e
 
 	const script_5e ; $5e
 scr_5e: MACRO
 	db script_5e
 	db \1 ; follower
+ENDM
+
+	const script_5f ; $5f
+scr_5f: MACRO
+	db script_5f
 ENDM
 
 	const_def $61
@@ -343,4 +381,11 @@ ENDM
 scr_65: MACRO
 	db script_65
 	db \1
+ENDM
+
+	const_def $69
+
+	const script_69 ; $69
+scr_69: MACRO
+	db script_69
 ENDM

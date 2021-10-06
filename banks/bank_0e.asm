@@ -613,7 +613,7 @@ Script_00e_464e:
 	scr_text text_0e_5b91
 	scr_end
 
-unk_00e_4651:
+unk_00e_4652:
 	scr_face $02 ; TEMP
 	scr_spriteface $02, $03 ; TEMP
 	scr_text text_0e_5b91

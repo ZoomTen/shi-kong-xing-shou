@@ -732,6 +732,7 @@ Func_0817::
 	ret
 
 Func_0827::
+	; on getting item
 	homecall Func_01e_41e8
 	ret
 
