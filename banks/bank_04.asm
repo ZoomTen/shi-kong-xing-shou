@@ -222,31 +222,31 @@ BuckGFX_FacingSideways_Pointers:
 	dw $eeee
 
 BuckWalk_Down1_GFX:
-	dr $10e99, $10ed9
+	INCBIN "gfx/sprites/buck/down1.2bpp"
 
 BuckWalk_Down2_GFX:
-	dr $10ed9, $10f19
+	INCBIN "gfx/sprites/buck/down2.2bpp"
 
 BuckWalk_Down3_GFX:
-	dr $10f19, $10f59
+	INCBIN "gfx/sprites/buck/down3.2bpp"
 
 BuckWalk_Sideways1_GFX:
-	dr $10f59, $10f99
+	INCBIN "gfx/sprites/buck/side1.2bpp"
 
 BuckWalk_Sideways2_GFX:
-	dr $10f99, $10fd9
+	INCBIN "gfx/sprites/buck/side2.2bpp"
 
 BuckWalk_Sideways3_GFX:
-	dr $10fd9, $11019
+	INCBIN "gfx/sprites/buck/side3.2bpp"
 
 BuckWalk_Up1_GFX:
-	dr $11019, $11059
+	INCBIN "gfx/sprites/buck/up1.2bpp"
 
 BuckWalk_Up2_GFX:
-	dr $11059, $11099
+	INCBIN "gfx/sprites/buck/up2.2bpp"
 
 BuckWalk_Up3_GFX:
-	dr $11099, $110d9
+	INCBIN "gfx/sprites/buck/up3.2bpp"
 
 BeattroGFX_Pointers:
 	dw BeattroGFX_FacingDown_Pointers
@@ -276,31 +276,31 @@ BeattroGFX_FacingSideways_Pointers:
 	dw $eeee
 
 BeattroWalk_Down1_GFX:
-	dr $110ff, $1113f
+	INCBIN "gfx/sprites/beattro/down1.2bpp"
 
 BeattroWalk_Down2_GFX:
-	dr $1113f, $1117f
+	INCBIN "gfx/sprites/beattro/down2.2bpp"
 
 BeattroWalk_Down3_GFX:
-	dr $1117f, $111bf
+	INCBIN "gfx/sprites/beattro/down3.2bpp"
 
 BeattroWalk_Sideways1_GFX:
-	dr $111bf, $111ff
+	INCBIN "gfx/sprites/beattro/side1.2bpp"
 
 BeattroWalk_Sideways2_GFX:
-	dr $111ff, $1123f
+	INCBIN "gfx/sprites/beattro/side2.2bpp"
 
 BeattroWalk_Sideways3_GFX:
-	dr $1123f, $1127f
+	INCBIN "gfx/sprites/beattro/side3.2bpp"
 
 BeattroWalk_Up1_GFX:
-	dr $1127f, $112bf
+	INCBIN "gfx/sprites/beattro/up1.2bpp"
 
 BeattroWalk_Up2_GFX:
-	dr $112bf, $112ff
+	INCBIN "gfx/sprites/beattro/up2.2bpp"
 
 BeattroWalk_Up3_GFX:
-	dr $112ff, $1133f
+	INCBIN "gfx/sprites/beattro/up3.2bpp"
 
 NinaGFX_Pointers:
 	dw NinaGFX_FacingDown_Pointers
