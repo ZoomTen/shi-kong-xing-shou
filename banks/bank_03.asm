@@ -556,12 +556,12 @@ unk_003_4265:
 	dw unk_003_5c79
 
 Music_Academy:
-	db $f ; how many channels [in bits]
-	db 0  ; starting channel?
-	dw Music_Academy_Ch1
-	dw Music_Academy_Ch2
-	dw Music_Academy_Ch3
-	dw Music_Academy_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_Academy_Ch1
+	channel Music_Academy_Ch2
+	channel Music_Academy_Ch3
+	channel Music_Academy_Ch4
 
 Music_UnsettlingPlace:
 	db $f
@@ -2981,10 +2981,7 @@ unk_003_5da9: dr $dda9, $ddbf
 unk_003_5dbf: dr $ddbf, $ddd9
 unk_003_5dd9: dr $ddd9, $e593
 
-Music_Academy_Ch1: dr $e593, $e5ee
-Music_Academy_Ch2: dr $e5ee, $e626
-Music_Academy_Ch3: dr $e626, $e6bc
-Music_Academy_Ch4: dr $e6bc, $e6ea
+INCLUDE "audio/music/academy.asm"
 
 Music_UnsettlingPlace_Ch1: dr $e6ea, $e762
 Music_UnsettlingPlace_Ch2: dr $e762, $e888

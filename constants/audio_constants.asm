@@ -28,6 +28,13 @@ NUM_MUSIC_CHANS EQU const_value
 NUM_NOISE_CHANS EQU const_value - NUM_MUSIC_CHANS
 NUM_CHANNELS EQU const_value
 
+; duty cycle values
+	const_def
+	const DUTY_12 ; 0
+	const DUTY_25 ; 1
+	const DUTY_50 ; 2
+	const DUTY_75 ; 3
+
 ; channel_struct members (see macros/wram.asm)
 CHANNEL_SONG_ID                     EQUS "(wChannel1SongID - wChannel1)"
 CHANNEL_FIELD01                     EQUS "(wChannel1Field01 - wChannel1)"
