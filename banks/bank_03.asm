@@ -1412,37 +1412,36 @@ SoundEngine2_SetLengthCounter:
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	or a
-	jr z, asm_003_47d1
+	jr z, SoundEngine2_LowNibbleOnlySwapped
 
-Func_003_47ba:
+SoundEngine2_AtimesHL:
 	cp [hl]
-	jr nc, asm_003_47c7
+	jr nc, .less_than_hl
+; These lines are duplicated below
 	push bc
 	ld c, a
 	ld b, [hl]
 	xor a
-
-asm_003_47c1:
+.multiply_1:
 	add b
 	dec c
-	jr nz, asm_003_47c1
+	jr nz, .multiply_1
 	pop bc
 	ret
-
-asm_003_47c7:
+; Duplicated
+.less_than_hl:
 	push bc
 	ld c, a
 	ld b, [hl]
 	xor a
-
-asm_003_47cb:
+.multiply_2:
 	add b
 	dec c
-	jr nz, asm_003_47cb
+	jr nz, .multiply_2
 	pop bc
 	ret
 
-asm_003_47d1:
+SoundEngine2_LowNibbleOnlySwapped:
 	ld a, [hl]
 	swap a
 	and $f0
@@ -1491,7 +1490,7 @@ SoundEngine2_CommandProcessor:
 	jp hl
 
 .is_dx_command
-; D0 - D9 sets the song speed
+; D0 - DF sets the song speed
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	and $f
@@ -1634,19 +1633,21 @@ SoundEngine2_CommandEA:
 	inc bc
 	ret
 
-; EB xx ? : Set speed and vibrato
+; EB xy : Set vibrato delay and type
 SoundEngine2_CommandEB:
 	inc bc
+; set delay in note length (x)
 	ld a, [bc]
 	swap a
 	and $f
 	ld hl, CHANNEL_SPEED
 	add hl, de
-	call Func_003_47ba
+	call SoundEngine2_AtimesHL
 	ld hl, CHANNEL_VIBRATO_DELAY
 	add hl, de
 	inc a
 	ld [hli], a
+; set type (y)
 	ld a, [bc]
 	and $f
 	push bc
@@ -1659,7 +1660,7 @@ SoundEngine2_CommandEB:
 	ld b, a
 	pop af
 
-asm_003_48e3:
+SoundEngine2_SetWord:
 	ld a, [bc]
 	ld [hli], a
 	inc bc
@@ -1698,6 +1699,8 @@ SoundEngine2_CommandED:
 	inc bc
 	ret
 
+; EE xx (yy zz) : volume related stuff?
+; (yy zz set only if xx > $7f)
 SoundEngine2_CommandEE:
 	inc bc
 
@@ -1724,7 +1727,7 @@ asm_003_4918:
 	pop af
 	ld hl, CHANNEL_INSTRUMENT_POINTER
 	add hl, de
-	jr asm_003_48e3
+	jr SoundEngine2_SetWord
 
 asm_003_492a:
 	inc bc
