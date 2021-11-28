@@ -32,7 +32,7 @@ sound_init: MACRO
 
     db sound_init_cmd + (\1)
 
-IF _NARG > 1
+IF _NARG == 9
     assert 0<=(\2) && (\2)<=3, "sound_init: duty_cycle 1st argument between 0 - 3"
     assert 0<=(\3) && (\3)<=3, "sound_init: duty_cycle 2nd argument between 0 - 3"
     dn (\2), (\3) ; duty cycle
@@ -40,6 +40,8 @@ IF _NARG > 1
     db (\4)
     dn (\5), (\6) ; vibrato
     db (\7), (\8), (\9) ; unknown
+ELIF _NARG == 4
+    db (\2), (\3), (\4)
 endc
 ENDM
 
@@ -123,7 +125,7 @@ ENDM
         
     const unknown_music_f4_cmd ; $f4 xx yy ?
 unknown_music_f4: MACRO
-    db unknown_music_f4_cmd, (\1)
+    db unknown_music_f4_cmd, (\1), (\2)
 ENDM
         
     const sound_nop_cmd        ; $f5
