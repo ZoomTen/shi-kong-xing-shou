@@ -16,7 +16,7 @@ ENDM
 
 ; Channel commands
 note: MACRO
-    dn (\1), (\2) - 1 ; pitch, length
+    dn (\1), (\2) ; pitch, length
 ENDM
 
 rest: MACRO
