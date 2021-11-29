@@ -124,7 +124,7 @@ SoundEngine2_HeaderPointers:
 	dw Music_Meteor
 	dw Music_LevelUpJingle
 	dw Music_ExpJingle
-	dw Music_EnemyFainted
+	dw Music_MonsterFainted
 	dw 0
 	dw 0
 
@@ -611,13 +611,13 @@ Music_ExpJingle:
 	dw Music_ExpJingle_Ch3
 	dw Music_ExpJingle_Ch4
 
-Music_EnemyFainted:
+Music_MonsterFainted:
 	db $f
 	db 0
-	dw Music_EnemyFainted_Ch1
-	dw Music_EnemyFainted_Ch2
-	dw Music_EnemyFainted_Ch3
-	dw Music_EnemyFainted_Ch4
+	dw Music_MonsterFainted_Ch1
+	dw Music_MonsterFainted_Ch2
+	dw Music_MonsterFainted_Ch3
+	dw Music_MonsterFainted_Ch4
 
 	ds 132
 
@@ -2982,41 +2982,13 @@ unk_003_5dbf: dr $ddbf, $ddd9
 unk_003_5dd9: dr $ddd9, $e593
 
 INCLUDE "audio/music/academy.asm"
-
-Music_UnsettlingPlace_Ch1: dr $e6ea, $e762
-Music_UnsettlingPlace_Ch2: dr $e762, $e888
-Music_UnsettlingPlace_Ch3: dr $e888, $e8f8
-Music_UnsettlingPlace_Ch4: dr $e8f8, $e941
-
-Music_Town2_Ch1: dr $e941, $e9c1
-Music_Town2_Ch2: dr $e9c1, $eb01
-Music_Town2_Ch3: dr $eb01, $eb76
-Music_Town2_Ch4: dr $eb76, $eb80
-
-Music_Racing_Ch1: dr $eb80, $ec1a
-Music_Racing_Ch2: dr $ec1a, $eccd
-Music_Racing_Ch3: dr $eccd, $edf7
-Music_Racing_Ch4: dr $edf7, $ee02
-
-Music_Meteor_Ch1: dr $ee02, $ee9d
-Music_Meteor_Ch2: dr $ee9d, $efde
-Music_Meteor_Ch3: dr $efde, $f0d1
-Music_Meteor_Ch4: dr $f0d1, $f0d8
-
-Music_LevelUpJingle_Ch1: dr $f0d8, $f114
-Music_LevelUpJingle_Ch2: dr $f114, $f14b
-Music_LevelUpJingle_Ch3: dr $f14b, $f16b
-Music_LevelUpJingle_Ch4: dr $f16b, $f183
-
-Music_ExpJingle_Ch1: dr $f183, $f1b0
-Music_ExpJingle_Ch2: dr $f1b0, $f1df
-Music_ExpJingle_Ch3: dr $f1df, $f1f6
-Music_ExpJingle_Ch4: dr $f1f6, $f1fc
-
-Music_EnemyFainted_Ch1: dr $f1fc, $f21c
-Music_EnemyFainted_Ch2: dr $f21c, $f23c
-Music_EnemyFainted_Ch3: dr $f23c, $f251
-Music_EnemyFainted_Ch4: dr $f251, $f257
+INCLUDE "audio/music/unsettling_place.asm"
+INCLUDE "audio/music/town_2.asm"
+INCLUDE "audio/music/racing.asm"
+INCLUDE "audio/music/meteor.asm"
+INCLUDE "audio/music/level_up_jingle.asm"
+INCLUDE "audio/music/exp_jingle.asm"
+INCLUDE "audio/music/monster_fainted.asm"
 
 SECTION "banknum3", ROMX[$7fff], BANK[$3]
 	db $3

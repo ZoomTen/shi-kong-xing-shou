@@ -48,18 +48,12 @@ ENDM
     const_skip 15
     const octave_cmd ; $e0
 octave: MACRO
-    assert (\1) <= 7 && 0 < (\1), \
-    "octave: must not exceed 7"
-
     db octave_cmd + (\1)
 ENDM
 
     const_skip 7
     const duty_cycle_cmd ; $e8
 duty_cycle: MACRO
-    assert 0<=(\1) && (\1)<=3, "duty_cycle: 1st argument between 0 - 3"
-    assert 0<=(\2) && (\2)<=3, "duty_cycle: 2nd argument between 0 - 3"
-
     db duty_cycle_cmd
     dn (\1), (\2)
 ENDM
