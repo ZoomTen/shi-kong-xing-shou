@@ -30,6 +30,13 @@ KNOWN_NOTES = [
 	"C_", "C#", "D_", "D#", "E_", "F_", "F#", "G_", "G#", "A_", "A#", "B_"
 ]
 
+KNOWN_STEREO_VALUES = [
+	"STEREO_ALTERNATING",
+	"STEREO_RIGHT",
+	"STEREO_LEFT",
+	"STEREO_CENTER"
+]
+
 addr_str = lambda x: '%03x:%04x' % x
 
 # extract symbols
@@ -128,7 +135,7 @@ with open('baserom.gbc', 'rb') as rom:
 				print("\toctave %d" % args["octave"],end="")
 			elif command == 0xe8:
 				args = {
-					"duty": [(KNOWN_DUTY_VALUES[int(digit, 16)] if int(digit, 16) <= 3 else int(digit, 16)) for digit in hex(get_number(rom, 1))[2:].zfill(2)]
+					"duty": [(KNOWN_DUTY_VALUES[int(digit, 16)] if int(digit, 16) < len(KNOWN_DUTY_VALUES) else int(digit, 16)) for digit in hex(get_number(rom, 1))[2:].zfill(2)]
 				}
 				print("\tduty_cycle %s, %s" % tuple(args["duty"]),end="")
 			elif command == 0xe9:
@@ -173,8 +180,11 @@ with open('baserom.gbc', 'rb') as rom:
 			elif command == 0xf2:
 				print("\tunknown_music_f2 $%x" % get_number(rom, 1),end="")
 			elif command == 0xf3:
-				# XXX turn this into actual stereo panning values
-				print("\tstereo_panning $%x" % get_number(rom, 1),end="")
+				arg = get_number(rom, 1)
+				args = {
+					"stereo": KNOWN_STEREO_VALUES[arg] if arg < len(KNOWN_STEREO_VALUES) else ("$%x" % arg)
+				}
+				print("\tstereo_panning %s" % args["stereo"],end="")
 			elif command == 0xf4:
 				print("\tunknown_music_f4 $%x, $%x" % (
 					get_number(rom, 1), get_number(rom, 1)

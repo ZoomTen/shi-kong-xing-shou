@@ -35,6 +35,13 @@ NUM_CHANNELS EQU const_value
 	const DUTY_50 ; 2
 	const DUTY_75 ; 3
 
+; stereo_panning values
+	const_def
+	const STEREO_ALTERNATING
+	const STEREO_RIGHT
+	const STEREO_LEFT
+	const STEREO_CENTER
+
 ; channel_struct members (see macros/wram.asm)
 CHANNEL_SONG_ID                     EQUS "(wChannel1SongID - wChannel1)"
 CHANNEL_FIELD01                     EQUS "(wChannel1Field01 - wChannel1)"
