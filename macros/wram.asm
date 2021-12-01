@@ -70,6 +70,6 @@ channel_struct: MACRO
 \1LoopPoint2::               dw ; 24
 \1ReturnPoint1::             dw ; 26
 \1ReturnPoint2::             dw ; 28
-\1LoopCounter1:              db ; 2A
+\1LoopCounter1::             db ; 2A
 \1LoopCounter2::             db ; 2B
 ENDM
