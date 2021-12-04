@@ -108,7 +108,7 @@ SoundEngine1_HeaderPointers:
 	dw unk_002_41a5
 	dw Music_Town1
 	dw Music_Battle1
-	dw Music_Blackout
+	dw Music_Trouble
 	dw Music_Ship
 	dw Music_Forest
 	dw Music_Town3
@@ -588,13 +588,13 @@ Music_Battle1:
 	dw Music_Battle1_Ch3
 	dw Music_Battle1_Ch4
 
-Music_Blackout:
+Music_Trouble:
 	db $f
 	db $0
-	dw Music_Blackout_Ch1
-	dw Music_Blackout_Ch2
-	dw Music_Blackout_Ch3
-	dw Music_Blackout_Ch4
+	dw Music_Trouble_Ch1
+	dw Music_Trouble_Ch2
+	dw Music_Trouble_Ch3
+	dw Music_Trouble_Ch4
 
 Music_Ship:
 	db $f

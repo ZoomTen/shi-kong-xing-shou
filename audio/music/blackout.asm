@@ -1,5 +1,5 @@
 
-Music_Blackout_Ch1:
+Music_Trouble_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
 	           $b1, \ ; unknown 1
@@ -215,7 +215,7 @@ Music_Blackout_Ch1:
 	note G_, 2
 	repeat_loop 0 ;------
 
-Music_Blackout_Ch2:
+Music_Trouble_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
 	           $b1, \ ; unknown 1
@@ -338,7 +338,7 @@ Music_Blackout_Ch2:
 	rest 3
 	repeat_loop 0 ;------
 
-Music_Blackout_Ch3:
+Music_Trouble_Ch3:
 	sound_init 7, \ ; speed
 	           $4, $84, $80 ; unknown
 	stereo_panning $4
@@ -464,7 +464,7 @@ Music_Blackout_Ch3:
 	note B_, 2
 	repeat_loop 0 ;------
 
-Music_Blackout_Ch4:
+Music_Trouble_Ch4:
 	sound_init 7 ; speed
 	speed 7
 	mark_loop ;------
