@@ -967,65 +967,23 @@ unk_002_5e21::
 unk_002_5e3b::
 	dr $9e3b, $9fca
 
-Music_Town1_Ch1: dr $9fca, $a045
-Music_Town1_Ch2: dr $a045, $a1c1
-Music_Town1_Ch3: dr $a1c1, $a239
-Music_Town1_Ch4: dr $a239, $a243
-
-Music_Battle1_Ch1: dr $a243, $a3df
-Music_Battle1_Ch2: dr $a3df, $a49f
-Music_Battle1_Ch3: dr $a49f, $a594
-Music_Battle1_Ch4: dr $a594, $a5d9
-
-Music_Blackout_Ch1: dr $a5d9, $a6bb
-Music_Blackout_Ch2: dr $a6bb, $a73d
-Music_Blackout_Ch3: dr $a73d, $a7bf
-Music_Blackout_Ch4: dr $a7bf, $a7d8
-
-Music_Ship_Ch1: dr $a7d8, $a85f
-Music_Ship_Ch2: dr $a85f, $a990
-Music_Ship_Ch3: dr $a990, $aa45
-Music_Ship_Ch4: dr $aa45, $aa77
+include "audio/music/town_1.asm"
+include "audio/music/battle_1.asm"
+include "audio/music/blackout.asm"
+include "audio/music/ship.asm"
 
 Music_Forest_Ch1: dr $aa77, $ab6f
 Music_Forest_Ch2: dr $ab6f, $ac88
 Music_Forest_Ch3: dr $ac88, $ad45
 Music_Forest_Ch4: dr $ad45, $ad8a
 
-Music_Town3_Ch1: dr $ad8a, $ae9a
-Music_Town3_Ch2: dr $ae9a, $af48
-Music_Town3_Ch3: dr $af48, $affe
-Music_Town3_Ch4: dr $affe, $b046
-
-Music_Battle2_Ch1: dr $b046, $b121
-Music_Battle2_Ch2: dr $b121, $b27a
-Music_Battle2_Ch3: dr $b27a, $b323
-Music_Battle2_Ch4: dr $b323, $b348
-
-Music_Town4_Ch1: dr $b348, $b3ce
-Music_Town4_Ch2: dr $b3ce, $b4b3
-Music_Town4_Ch3: dr $b4b3, $b544
-Music_Town4_Ch4: dr $b544, $b54e
-
-Music_Battle3_Ch1: dr $b54e, $b5ca
-Music_Battle3_Ch2: dr $b5ca, $b6f3
-Music_Battle3_Ch3: dr $b6f3, $b7b5
-Music_Battle3_Ch4: dr $b7b5, $b7da
-
-Music_Battle4_Ch1: dr $b7da, $b895
-Music_Battle4_Ch2: dr $b895, $b953
-Music_Battle4_Ch3: dr $b953, $ba37
-Music_Battle4_Ch4: dr $ba37, $ba6f
-
-Music_Routes1_Ch1: dr $ba6f, $bb09
-Music_Routes1_Ch2: dr $bb09, $bbf0
-Music_Routes1_Ch3: dr $bbf0, $bcc9
-Music_Routes1_Ch4: dr $bcc9, $bced
-
-Music_Stargazing_Ch1: dr $bced, $bda7
-Music_Stargazing_Ch2: dr $bda7, $be2d
-Music_Stargazing_Ch3: dr $be2d, $beaa
-Music_Stargazing_Ch4: dr $beaa, $bec0
+include "audio/music/town_3.asm"
+include "audio/music/battle_2.asm"
+include "audio/music/town_4.asm"
+include "audio/music/battle_3.asm"
+include "audio/music/battle_4.asm"
+include "audio/music/routes_1.asm"
+include "audio/music/stargazing.asm"
 
 SECTION "banknum2", ROMX[$7fff], BANK[$2]
 	db $2
