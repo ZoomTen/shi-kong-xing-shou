@@ -1,4 +1,829 @@
 "bank","address","label","original_string","translated_string","text_kind","notes",""
+"12","41f1","","// init $00, $1a
+嗯，找死!","// init $00, $1a
+Well, looking for death!","repoint_target","deepL","needs relocation"
+"12","5194","","// init $00, $15
+這裡是多魯市。
+","// init $00, $15
+Welcome to Dorington, home of the world-famous Gale Enterprises.","repoint_target","",""
+"12","51a6","","// init $00, $21
+看到那棟最高的
+建築了嗎?
+那就是鼎鼎大名
+的加爾企業唷!
+","// init $00, $21
+Do you see that tall tower over there? That building is the headquarters of the famous Gale Enterprises!","repoint_target","",""
+"12","51d9","","// init $00, $12
+看過告示版了嗎
+?真是可憐啊~
+加爾企業的董事
+長正在尋找十六
+年前失散的孫子
+呢。
+","// init $00, $12
+Do you see that noticeboard? How sad.. Gale Enterprises' chairman is still trying to find his grandchild, who vanished 16 years ago.","repoint_target","grandson? or granddaughter?",""
+"12","5223","","// init $00, $23
+往西邊走的話，
+就是鐘塔了。
+那是加爾企業董
+事長為了紀念去
+逝的女兒而建的
+那鐘塔已經成為
+多魯市的地標了
+呢。我們都是依
+照鐘塔上的時間
+作息的。
+","// init $00, $23
+If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.","repoint_target","",""
+"12","52aa","","// init $00, $18
+加爾企業董事長
+失散的孫子，身
+上掛著一條會發
+光的月型項鍊，
+名叫月琉璃。要
+是被我找到的話
+，我就發財了。
+","// init $00, $18
+The grandson of Gale Enterprises' chairman was said to have worn a glowing chain in the shape of the moon, known as the Moonglass. I'm sure it's worth a fortune! If I find it, I'll be rich!","repoint_target","",""
+"12","530c","","// init $00, $1c
+峨~鐘塔的時間
+已經3點了!
+嘻嘻~點心時間
+到了!
+","// init $00, $1c
+The time on the clock tower is 3pm! Hehe, it's teatime!","repoint_target","",""
+"12","5338","","// init $00, $1f
+唉呀~真是不得
+了!
+只要能找到加爾
+企業董事長的孫
+子，就能獲得一
+~大筆錢!
+我一定要搶在別
+人前面找到!
+","// init $00, $1f
+Aiyeee!! This is serious! If I find the chairman's grandson before anyone else, I'll get a lot of money! I must find him before anyone else does!","repoint_target","",""
+"12","5396","","// init $00, $16
+想知道嗎?","// init $00, $16
+Do you want to know something?","repoint_target","",""
+"12","53a4","","// init $00, $16
+是這樣子的啊~
+","// init $00, $16
+It's like this..","repoint_target","",""
+"12","53b6","","// init $00, $16
+十六年前，加爾
+企業董事長~
+哈爾遜的女兒，
+與一名牧羊人發
+生了戀情。
+董事長非常的憤
+怒，覺得牧羊人
+高攀不上他的女
+兒。
+於是拆散了二人
+，並把剛出世的
+小嬰兒送走。
+之後，董事長的
+女兒便鬱鬱而終
+","// init $00, $16
+16 years ago, the daughter of Harrison, Gale Enterprises' chairman, had a relationship with a shepherd. The chairman was furious as he felt that the shepherd was not worthy of his daughter, so he forced them to break up and had the child sent away. The chairman's daughter died of depression shortly after.","repoint_target","",""
+"12","546f","","// init $00, $19
+往南邊走，就會
+到達山達農莊。
+那裡是個純樸的
+小鎮，主要出産
+咖啡跟天使之葉
+。
+","// init $00, $19
+If you go south, you will arrive at Mountreach Farm. It is a simple town that produces mainly coffee and angel leaves.","repoint_target","what is the farm called aaaaaaa","deepL"
+"12","54b8","","// init $00, $16
+唉~其實加爾企
+業董事長的心情
+，我真的可以體
+會⋯⋯
+年老時才發現，
+沒有人可以繼承
+他那龐大的事業
+，那是相當令人
+不甘心的。
+","// init $00, $16
+In fact, I really empathise with the chairman of GaleCorp... it is quite disheartening to find out that there is no one to inherit his huge business in old age. ","repoint_target","",""
+"12","5528","","// init $00, $19
+哼!那個加爾企
+業的董事長，一
+點都不可憐呢!
+當初他要是沒有
+拆散那對戀人的
+話，就不會有這
+種結果了!
+","// init $00, $19
+Hmph! I don't pity the chairman at all! If he hadn't broken up the couple in the first place, they wouldn't have ended up like this! ","repoint_target","",""
+"12","5589","","// init $00, $1b
+十六年前，哈爾
+遜董事長的女兒
+，愛上了一名男
+人!那名牧羊人
+，就是山達農莊
+的牧羊人。
+事後那名牧羊人
+被趕出這裡，再
+也沒有人看過他
+了⋯⋯
+","// init $00, $1b
+Sixteen years ago, Chairman Harrison's daughter fell in love with a man! He was a shepherd at Mountreach Farm. The shepherd was later chased out of here and never seen again...","repoint_target","",""
+"12","560d","","// init $00, $1a
+你⋯你後面那隻
+⋯怪獸⋯
+就是爸爸說的星
+獸嗎?
+真可怕!!
+","// init $00, $1a
+That... monster behind you... is that one of the Star Beasts Dad was talking about? It's scary! ","repoint_target","",""
+"12","563e","","// init $00, $1c
+點心!點心!
+媽媽~點心時間
+到了啦!哥哥沒
+有回來，人家要
+吃~雙倍喲!
+","// init $00, $1c
+Dim Sum! Dim Sum! Mom, it's teatime! Brother hasn't come back, so I want to eat ~ two portions, yo!","repoint_target","",""
+"12","5682","","// init $00, $1a
+人家才沒有偷吃
+櫃子裡的蛋糕唷
+!⋯嗚~
+被你知道了!人
+家不是故意的嘛
+!不可以跟哥哥
+說唷!
+這是我們的小密
+祕唷!
+","// init $00, $1a
+I didn't steal the cake from the cupboard! ⋯You've found me out?! I didn't do it on purpose! Don't tell my brother! It's our little secret! ","repoint_target","",""
+"12","56ec","","// init $00, $15
+我的老公是鐘塔
+的管理人員。
+每天都要忙到晚
+才能回來。
+真是叫人寂寞啊
+⋯⋯
+","// init $00, $15
+My husband is the manager of the clock tower. He has to work late every day. How sad...
+","repoint_target","",""
+"12","5733","","// init $00, $22
+唉~有機會的話
+，真想到鄰國做
+生意。但是本國
+和鄰國的關係，
+一直不是很好。
+就連來往的通道
+都被填平了⋯
+唉~~
+","// init $00, $22
+Haiz... I really want to do business overseas. But the relationship between our country and the neighboring countries isn't very good. Even the road has been blocked... Haiz~
+","repoint_target","",""
+"12","579d","","// init $1b, $4c
+巴洛特，是你呀
+。上次提到的動
+力晶片，果然董
+事長身上也有。
+本來應該要為你
+引見的，但現在
+恐怕不行了⋯
+","// init $1b, $4c
+Ballot, it's you. The power chip that I mentioned last time is really held by the chairman. I was supposed to introduce you, but I'm afraid I can't do that now...
+","repoint_target","",""
+"12","57fa","","// init $01, $2d
+發生了什麼事嗎
+?
+","// init $01, $2d
+Is something wrong?
+","repoint_target","",""
+"12","580d","","// init $1b, $4c
+是這樣的。十六
+年前，董事長千
+金與一名牧羊人
+發生戀情，並有
+了一名小孩。
+董事長相當憤怒
+，拆散了二人，
+並且把小孩子托
+管家送走。
+但董事長年紀大
+了，後繼無人，
+便想找回失散的
+小孫子。
+但當年送走小孩
+子的管家已經去
+逝，沒有人知道
+他的下落了⋯
+","// init $1b, $4c
+Here's the story. Sixteen years ago, the president's daughter fell in love with a shepherd and had a child. The chairman was furious, so he broke up the couple and sent the child away to a trustee. Now that he's old and has no one to take after him, he wants to find his lost grandson. But the housekeeper who sent the child away has passed away, so no one knows where he is anymore.
+","repoint_target","",""
+"12","58ef","","// init $01, $2b
+這真是遺憾⋯
+","// init $01, $2b
+What a shame...
+","repoint_target","",""
+"12","58fd","","// init $1b, $4c
+董事長的身體為
+了這件事情，而
+操勞過度!
+現正休養中，不
+方便接見客人。
+關於動力晶片的
+事情~如果巴洛
+特可以找到失散
+的小孫子的話，
+或許可以向董事
+長要求動力晶片
+吧。
+","// init $1b, $4c
+The Chairman overworked himself for this! He is now recuperating and is not available to receive guests. About the power chip ~ if you can find his lost grandson, maybe he can ask the chairman for the power chip.
+","repoint_target","",""
+"12","599a","","// init $1b, $4c
+槽糕~都這麼晚
+了呀!
+身為加爾企業採
+購部經理的我，
+必須要趕上這場
+重要的會議才行
+!巴洛特，詳細
+的細節，你可以
+看看加爾企業前
+的告示版。
+上頭有著尋人
+的線索。
+加油了!
+","// init $1b, $4c
+Oh dear, look at the time! I have to catch an important meeting as purchasing department manager!
+Ballot, if you need more details, you can read the notice in front of the GaleCorp building.
+Good luck!
+","repoint_target","",""
+"12","5a30","","// init $00, $00
+加爾企業公告:
+加爾企業尋人啟
+示
+尋找哈爾遜董事
+長十六年前失散
+的小孫子身上佩
+戴著一條弦月型
+、發出幽光的項
+鍊名為月琉璃。
+如尋獲者，加爾
+企業將重金禮謝
+","// init $00, $00
+GaleCorp Notice: GaleCorp is looking for the grandson of Chairman Harrison who was lost 16 years ago wearing a moon-shaped, glowing necklace known as the Moon Glaze. GaleCorp will provide a reward for anyone who finds him.
+","repoint_target","",""
+"12","5abd","","// init $01, $2e
+這就是基多所說
+的線索?
+月型項鍊?
+月琉璃這就是基
+多所說的線索?
+只要找到月琉璃
+的主人，就可以
+得到動力晶片了
+!
+","// init $01, $2e
+Was this the clue that the manager was talking about? If I can find who had the Moon Glaze, I'll be able to get the power chip!
+","repoint_target","","to review"
+"12","5b24","","// init $00, $24
+這個鐘塔是加爾
+企業的所有物。
+不可以再進去了
+喲。尤其是旁邊
+那個門!
+那可以⋯⋯
+總之不能靠近
+就是了!
+","// init $00, $24
+This clock tower is owned by GaleCorp. Entry is prohibited. Especially to the side door! You could... Anyway, you can't go near it!
+","repoint_target","","deepL"
+"12","5b82","","// init $00, $17
+這裡是牧羊的農
+莊小鎮~
+山達農莊。
+","// init $00, $17
+This is the farming town of Shepherd's Bush ~ Shanda Farm.
+","repoint_target","","deepL"
+"12","5ba7","","// init $00, $20
+興奮~哈哈哈~
+興奮~哈哈哈~
+天氣真好~
+興~興奮~
+","// init $00, $20
+Excited ~ Hahahaha ~ Excited ~ Hahahaha ~ Beautiful weather ~ Excited ~ Excited ~ Excited ~
+","repoint_target","","deepL"
+"12","5bd5","","// init $00, $12
+真是可怕⋯前陣
+子的流星雨，擊
+中西邊的咖啡林
+裡的咖啡樹。
+因此變成了咖啡
+星怪!咖啡怪有
+時會飄來一陣咖
+啡的香氣~
+聞到的人都會變
+得異常的興奮。
+","// init $00, $12
+What a terrible... meteor shower a while ago, hit the coffee trees in the coffee forest in the west. So it turned into a coffee monster! The coffee monster sometimes floats a burst of coffee aroma ~ smelling people will become unusually excited.
+","repoint_target","","deepL"
+"12","5c51","","// init $00, $1d
+聽說加爾企業啊
+哈哈⋯就是那個
+哈哈哈⋯嗚~
+一想到就~嗚~
+好‧興‧奮!
+","// init $00, $1d
+I heard that the Gar enterprise ahhaha... is that hahaha... wow ~ the thought of it ~ wow ~ so excited!
+","repoint_target","","deepL"
+"12","5c92","","// init $00, $21
+每次只要一聞到
+咖啡的味道，我
+就會趕把鼻子捏
+起來，有一次還
+差點就殺死自己
+了⋯
+加爾企業的董事
+長重金尋找他失
+散的孫子。
+我一定要找到
+才行!
+","// init $00, $21
+Every time I smelled coffee, I would pinch my nose, and once I almost killed myself... The chairman of Garr Enterprises is paying a lot of money to find his long-lost grandson. I had to find him!
+","repoint_target","","deepL"
+"12","5d14","","// init $00, $19
+嗚峨峨峨!
+這⋯這是什麼?
+一股力量從我這
+八十歲的腳底，
+蔓延到我這八十
+歲的身體!!
+嗚峨峨峨峨峨!
+我是~女超人嗎
+?
+","// init $00, $19
+Oooooooh! What... what is this? A power spreads from the bottom of my 80-year-old feet to my 80-year-old body! Awwwwwwwwwwwwww! Am I superwoman?
+","repoint_target","","deepL"
+"12","5d7a","","// init $00, $1a
+嗚~嗚~大家都
+變得好奇怪峨!
+嗚嗚~人家不要
+啦!
+","// init $00, $1a
+Everyone is getting so weird! I don't want to!
+","repoint_target","","deepL"
+"12","5dab","","// init $00, $23
+咖啡林的咖啡怪
+真是可怕!一聞
+到牠的氣味，人
+都會變得非常的
+興奮!我得要將
+門窗關緊才行!
+","// init $00, $23
+The coffee monster in the coffee forest is really scary! When I smell it, people become very excited! I have to close the doors and windows tightly!
+","repoint_target","","deepL"
+"12","5dff","","// init $00, $25
+聽說馬克被瘋狂
+的羊群撞成重傷
+，而他的妹妹~
+妮娜為了照顧他
+，把所有值錢的
+東西都賣了!
+他們的老閱還因
+為不要照顧病人
+，而把他們解雇
+了!真是可憐⋯
+","// init $00, $25
+I heard that Mark was seriously injured by the crazy sheep and his sister ~ Nina sold all her valuable things to take care of him! Their old reading also fired them for not taking care of the patient! What a pity...
+","repoint_target","","deepL"
+"12","5e82","","// init $24, $22
+開什麼玩笑!馬
+克被瘋狂的羊撞
+傷了，才不是我
+的錯!只能怪他
+不小心!妮娜還
+因為這樣，一直
+都沒來工作!
+我對他們實在是
+太好了!他們才
+會這麼放肆!從
+現在開始，他們
+二個都不用來工
+作了!
+","// init $24, $22
+You're kidding! It's not my fault that Mark got hit by a crazy sheep! It's his fault for being careless! And Nina never came to work because of it! I am so good to them! That's why they are so reckless! From now on, they both don't have to come to work!
+","repoint_target","","deepL"
+"12","5f2e","","// init $00, $21
+真是麻煩⋯
+看樣子，馬克
+傷得非
+常
+的重!
+要是沒有
+天使之葉的話，
+恐怕是
+救不活
+了
+!
+為了
+減
+少
+不必要
+的麻煩，
+解雇他們是非常
+正確
+的
+選擇。
+","// init $00, $21
+What a pain in the ass... It looks like Mark is very badly hurt! If there is no Angel Leaf, I'm afraid it can not be saved! In order to reduce unnecessary trouble, dismissing them is the right choice.
+","repoint_target","","deepL"
+"12","5fa8","","// init $00, $1e
+鳴哇~嗚~媽媽
+變得好可怕啊!
+","// init $00, $1e
+Tweet Wow~ Wow~ Mom has become so scary!
+","repoint_target","","deepL"
+"12","5fc7","","// init $00, $1f
+呵呵呵~啊!!
+這個切菜聲⋯⋯
+怎麼會叫人這麼
+興奮!興奮興奮
+興奮興奮!切骨
+聲?要是聽到切
+骨聲的話，會更
+興奮吧?
+老公~切骨聲!
+","// init $00, $1f
+Ohhhhhhhh! The sound of chopping vegetables... how can you be so excited! Excited, excited, excited, excited! Bone cutting sound? If you hear the sound of cutting bones, you will be more excited, right? Honey, the sound of cutting bones!
+","repoint_target","","deepL"
+"12","6032","","// init $00, $18
+老⋯老⋯老婆?
+妳拿著菜刀做什
+麼?不⋯不要過
+來!!
+","// init $00, $18
+Old... old... wife? What are you doing with the kitchen knife? No... don't come here!
+","repoint_target","","deepL"
+"12","6064","","// init $00, $18
+老婆從街上回來
+後，彷彿就變了
+一個人!
+一定是聞到了咖
+啡怪的氣味。
+這該怎麼辦才好
+?
+","// init $00, $18
+When my wife came back from the street, she seemed to be a different person! She must have smelled the coffee monster. What should I do?
+","repoint_target","","deepL"
+"12","60b5","","// init $00, $16
+山達農莊原來是
+盛産咖啡豆及天
+使之葉的小鎮。
+天使之葉?
+呵呵~不論是多
+重的傷，只要有
+天使之葉的話，
+都不是問題唷!
+但自從咖啡林被
+咖啡怪佔據後，
+這些全部都沒有
+人敢去採收了⋯
+","// init $00, $16
+Sandal Farm is a small town that produces coffee beans and angel leaves. Angel leaves? No matter how heavy the injuries are, as long as there are angel leaves, it's not a problem! But since the coffee forest was occupied by the coffee monster, no one has dared to harvest these ...
+","repoint_target","","deepL"
+"12","6159","","// init $25, $4f
+⋯呃⋯⋯
+","// init $25, $4f
+⋯...uh...
+","repoint_target","","deepL"
+"12","6164","","// init $26, $0b
+咩~咩咩~
+","// init $26, $0b
+baa~baa~
+","repoint_target","","deepL"
+"12","6171","","// init $03, $34
+哥~哥~怎麼辦
+連爸爸留下來的
+那個，都賣掉了
+⋯已經沒有買蔡
+的錢了⋯⋯
+要怎麼辦?
+","// init $03, $34
+I'm not sure what I'm going to do, but I'm not sure what I'm going to do.
+","repoint_target","","deepL"
+"12","61be","","// init $01, $2e
+怎麼回事?
+","// init $01, $2e
+What's going on?
+","repoint_target","","deepL"
+"12","61cb","","// init $03, $34
+嗚~嗚~哥哥在
+放羊的時候，羊
+突然聞到了咖啡
+怪的味道。
+全都變得非常的
+瘋狂，哥哥也受
+了重傷!我試過
+很多的蔡，但哥
+哥的傷還是愈來
+愈嚴重⋯
+怎麼辦?
+","// init $03, $34
+When my brother was herding sheep, they suddenly smelled the smell of coffee. They all became very crazy, and my brother was seriously injured! I've tried many things, but my brother's injuries are getting worse and worse... what should I do?
+","repoint_target","","deepL"
+"12","6253","","// init $01, $2d
+這弦月型的項鍊
+好別緻!
+項鍊?月琉璃?
+這不就是月琉璃
+嗎?難道他就是
+⋯⋯
+","// init $01, $2d
+This string moon necklace is so chic! Necklace? Moon glaze? Isn't this the moon glaze? Is it possible that he is...
+","repoint_target","","deepL"
+"12","629b","","// init $03, $34
+哥哥的項鍊，我
+也是在他受傷時
+，才發現的。但
+是哥哥的狀況，
+如果沒有天使之
+葉的話⋯嗚嗚嗚
+~
+","// init $03, $34
+I only found my brother's necklace when he was injured. But brother's condition, if there is no angel leaf ... woo woo woo ~
+","repoint_target","","deepL"
+"12","62f3","","// init $01, $2e
+天使之葉?
+","// init $01, $2e
+Angel Leaf?
+","repoint_target","","deepL"
+"12","6300","","// init $03, $35
+咖啡林的最深處
+，有顆天使樹。
+它的葉子具有強
+烈的治傷療效。
+但是咖啡林被咖
+啡怪佔據了，沒
+有人敢到裡面採
+取天使之葉。
+","// init $03, $35
+In the deepest part of the coffee forest, there is an angel tree. Its leaves have a strong healing effect. But the coffee forest is occupied by coffee monsters, no one dares to take the angel leaves inside.
+","repoint_target","","deepL"
+"12","636e","","// init $01, $2e
+咖啡林?
+我一定會將天使
+之葉採回來的!
+","// init $01, $2e
+The coffee forest? I will definitely pick the angel leaves back!
+","repoint_target","","deepL"
+"12","6394","","// init $03, $33
+真的?謝謝你~
+謝謝你!妮娜和
+你一起去!
+咖啡林裡有許多
+阻擋的刺刺草!
+如果沒有小綿羊
+的話，會很麻煩
+的!
+","// init $03, $33
+Really? Thank you~ Thank you! Nina will go with you! The coffee forest has a lot of blocking thorny grass! Without the sheep, it would have been a problem!
+","repoint_target","","deepL"
+"12","63f5","","// init $01, $2e
+妮娜&小綿羊加
+入隊伍!
+","// init $01, $2e
+Nina & Sheep join the team!
+","repoint_target","","deepL"
+"12","640c","","// init $18, $2f
+如果將妮娜置於
+隊伍前頭，小線
+羊可以清除阻擋
+道路之刺刺草。
+","// init $18, $2f
+If Nina is placed at the front of the team, the lamb can clear the thorny grass that blocks the path.
+","repoint_target","","deepL"
+"12","6443","","// init $01, $2c
+嗚~好痛!
+被這種草刺到，
+就像被針刺到一
+樣!
+","// init $01, $2c
+Ouch! Being pricked by this grass is like being pricked by a needle! ","repoint_target","",""
+"12","6471","","// init $27, $51
+咕嚕~咕嚕~咕
+嚕~
+","// init $27, $51
+gollum~gollum~gollum~
+","repoint_target","","deepL"
+"12","6486","","// init $03, $36
+槽了!牠要吐出
+令人興奮的氣息
+了!得趕快打倒
+牠才行!
+","// init $03, $36
+It's grooving! He's about to spit out an exciting breath! We have to beat it!
+","repoint_target","","deepL"
+"12","64ba","","// init $00, $1d
+呀!怎麼回事!
+我做了什麼事嗎
+?感覺上，好像
+做了一場很興奮
+的夢⋯⋯
+","// init $00, $1d
+Yikes! What the hell! Did I do something? It feels like I'm having a very exciting dream...
+","repoint_target","","deepL"
+"12","64fb","","// init $03, $33
+這就是天使樹了
+!只要有天使之
+葉的話，哥哥的
+傷，就一定可以
+治好的!
+","// init $03, $33
+This is the angel tree! As long as there is an angel leaf, brother's injury can be cured for sure!
+","repoint_target","","deepL"
+"12","653d","","// init $01, $2e
+得到了天使之葉
+!
+","// init $01, $2e
+Got the Angel Leaf!
+","repoint_target","","deepL"
+"12","6550","","// init $00, $20
+咖啡林的咖啡怪
+消失了?
+這真是個好消息
+!
+為了表示慶祝，
+我決定煮一杯超
+濃的咖啡~
+好好的興奮個夠
+!
+","// init $00, $20
+The coffee monster in the coffee forest is gone? That's great news! To celebrate, I decided to make a super strong cup of coffee ~ get excited!
+","repoint_target","","deepL"
+"12","65ab","","// init $00, $12
+真是可怕⋯
+前陣子的流星雨
+，擊中西邊的咖
+啡林裡的咖啡樹
+。
+因此變成了咖啡
+星怪!
+咖啡怪有時會飄
+來一陣咖啡的香
+氣~
+聞到的人都會變
+得異常的興奮。
+","// init $00, $12
+It's scary... The meteor shower a while ago hit the coffee trees in the coffee forest in the west. So it turned into a coffee star monster! The coffee monster sometimes wafts a fragrance of coffee ~ the smell of people will become unusually excited.
+","repoint_target","","deepL"
+"12","6629","","// init $00, $1d
+好像做了一個興
+奮的夢~
+可是又好像是真
+的⋯⋯
+","// init $00, $1d
+It seems to be an exciting dream ~ but it seems to be true ...
+","repoint_target","","deepL"
+"12","6655","","// init $00, $19
+剛剛做了一個夢
+~
+夢到我這八十歲
+的老人，竟然是
+個~女‧超‧人
+‧唷!
+真是令人不好意
+思⋯⋯
+不過這真是個累
+人的夢。
+這八十歲的身體
+，累得像要散了
+一樣!
+","// init $00, $19
+I just had a dream that I, an 80-year-old man, was a superwoman. It was embarrassing... but it was a tiring dream. This 80-year-old body is so tired that it looks like it's going to fall apart!
+","repoint_target","","deepL"
+"12","66e4","","// init $00, $1a
+馬克哥哥平常都
+會說故事給我們
+聽唷!
+他是全世界最棒
+的人!
+媽媽都說他有一
+種很特殊的氣質
+唷!
+","// init $00, $1a
+Brother Mark usually tells us stories! He is the best person in the world! Mom says he has a very special temperament!
+","repoint_target","","deepL"
+"12","673b","","// init $00, $23
+其實⋯從很早以
+前，我就發現~
+妮娜是個大美女
+峨!
+只要她再花點心
+打扮一下的話，
+就不得了!
+","// init $00, $23
+In fact, I found out a long time ago that Nina is a beautiful woman! If she puts a little more effort into dressing up, she'll be great!
+","repoint_target","","deepL"
+"12","6796","","// init $00, $1e
+媽媽又變成原來
+的媽媽了!
+真是太好了。
+","// init $00, $1e
+Mom is back to her old self! It's great.
+","repoint_target","","deepL"
+"12","67b8","","// init $00, $1f
+發生了什麼事情
+嗎?
+為什麼老公跟小
+孩都那麼看我?
+真是奇怪!
+啊!為什麼到處
+都有被刀采過的
+痕跡!
+","// init $00, $1f
+What's going on? Why do my husband and kids look at me like that? That's weird! Ah! Why are there traces of knife picking everywhere!
+","repoint_target","","deepL"
+"12","6812","","// init $00, $18
+就是你打敗了咖
+啡怪的嗎?
+真是非常的感謝
+你!
+不然的話，我可
+能就慘死在菜刀
+底下了⋯⋯
+","// init $00, $18
+Are you the one who defeated the coffee monster? Thank you so much! Otherwise, I might have died under a kitchen knife...
+","repoint_target","","deepL"
+"12","6864","","// init $00, $18
+謝謝你!
+","// init $00, $18
+Thank you!
+","repoint_target","","deepL"
+"12","686f","","// init $00, $16
+現在是咖啡的盛
+産季節，得趕緊
+採收才行!
+","// init $00, $16
+It's coffee season, we need to harvest now!
+","repoint_target","","deepL"
+"12","6898","","// init $03, $02
+哥~這是天使之
+葉，趕快吃下!
+對~就是這樣⋯
+","// init $03, $02
+Brother, this is the angel leaf, eat it now! Yes, that's it...
+","repoint_target","","deepL"
+"12","68c4","","// init $25, $4f
+妮娜?
+","// init $25, $4f
+Nina?
+","repoint_target","","deepL"
+"12","68ce","","// init $03, $02
+哥!沒事就好~
+沒事就好⋯⋯
+","// init $03, $02
+Brother! It's okay~ It's okay...
+","repoint_target","","deepL"
+"12","68e4","","// init $25, $4f
+妮娜~謝謝妳⋯
+","// init $25, $4f
+Nina, thank you...
+","repoint_target","","deepL"
+"12","68f5","","// init $03, $36
+哥~你胸前的月
+型項鍊，真的就
+是月琉璃嗎?
+","// init $03, $36
+Brother, is the moon-shaped necklace on your chest really the moon glaze?
+","repoint_target","","deepL"
+"12","691e","","// init $25, $4f
+月⋯⋯
+","// init $25, $4f
+Moon...
+","repoint_target","","deepL"
+"12","6927","","// init $25, $4f
+不⋯⋯不是的!
+這不是月琉璃，
+這只是⋯只是⋯
+","// init $25, $4f
+No... it's not! It's not Moon Lurie, it's just... just...
+","repoint_target","","deepL"
+"12","6953","","// init $01, $2c
+加業企業的董事
+長，為了尋找他
+失散的孫子，己
+經病倒了，你還
+忍心瞧他這樣下
+去嗎?
+","// init $01, $2c
+The chairman of the board of directors of the Karma Corporation has fallen ill trying to find his lost grandson, can you bear to see him go on like this?
+","repoint_target","","deepL"
+"12","69a3","","// init $03, $02
+哥⋯⋯
+","// init $03, $02
+Brother...
+","repoint_target","","deepL"
 "12","6ea8","","// init $25, $4f
 妮娜⋯謝謝你⋯
 人要學著體諒⋯
@@ -648,9 +1473,6 @@ Ballot!
 Take good care of Nina.
 Otherwise, I won't let you off the hook!
 ","repoint_target","eh, alright",""
-"12","41f1","","// init $00, $1a
-嗯，找死!","// init $00, $1a
-Well, looking for death!","repoint_target","deepL","needs relocation"
 "12","7ebe","","// init $14, $25
 需要妮可治療嗎?","// init $14, $25
 Do you need Nicole's treatment?","repoint_target","deepL",""
@@ -666,824 +1488,3 @@ Do you need Ina's services?","repoint_target","deepL",""
 Do you need any services?","repoint_target","deepL",""
 "12","7eac","","嗨OHBABY
 嗨NO","","repoint_target","???",""
-"12","5194","","// init $00, $15
-這裡是多魯市。
-","// init $00, $15
-Welcome to Dorington, home of the world-famous Gale Enterprises.","repoint_target","",""
-"12","51a6","","// init $00, $21
-看到那棟最高的
-建築了嗎?
-那就是鼎鼎大名
-的加爾企業唷!
-","// init $00, $21
-Do you see that tall tower over there? That building is the headquarters of the famous Gale Enterprises!","repoint_target","",""
-"12","51d9","","// init $00, $12
-看過告示版了嗎
-?真是可憐啊~
-加爾企業的董事
-長正在尋找十六
-年前失散的孫子
-呢。
-","// init $00, $12
-Do you see that noticeboard? How sad.. Gale Enterprises' chairman is still trying to find his grandchild, who vanished 16 years ago.","repoint_target","grandson? or granddaughter?",""
-"12","5223","","// init $00, $23
-往西邊走的話，
-就是鐘塔了。
-那是加爾企業董
-事長為了紀念去
-逝的女兒而建的
-那鐘塔已經成為
-多魯市的地標了
-呢。我們都是依
-照鐘塔上的時間
-作息的。
-","// init $00, $23
-If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.","repoint_target","",""
-"12","52aa","","// init $00, $18
-加爾企業董事長
-失散的孫子，身
-上掛著一條會發
-光的月型項鍊，
-名叫月琉璃。要
-是被我找到的話
-，我就發財了。
-","// init $00, $18
-The grandson of Gale Enterprises' chairman was said to have worn a glowing chain in the shape of the moon, known as the Moonglass. I'm sure it's worth a fortune! If I find it, I'll be rich!","repoint_target","",""
-"12","530c","","// init $00, $1c
-峨~鐘塔的時間
-已經3點了!
-嘻嘻~點心時間
-到了!
-","// init $00, $1c
-The time on the clock tower is 3pm! Hehe, it's teatime!","repoint_target","",""
-"12","5338","","// init $00, $1f
-唉呀~真是不得
-了!
-只要能找到加爾
-企業董事長的孫
-子，就能獲得一
-~大筆錢!
-我一定要搶在別
-人前面找到!
-","// init $00, $1f
-Aiyeee!! This is serious! If I find the chairman's grandson before anyone else, I'll get a lot of money! I must find him before anyone else does!","repoint_target","",""
-"12","5396","","// init $00, $16
-想知道嗎?","// init $00, $16
-Do you want to know something?","repoint_target","",""
-"12","53a4","","// init $00, $16
-是這樣子的啊~
-","// init $00, $16
-It's like this..","repoint_target","",""
-"12","53b6","","// init $00, $16
-十六年前，加爾
-企業董事長~
-哈爾遜的女兒，
-與一名牧羊人發
-生了戀情。
-董事長非常的憤
-怒，覺得牧羊人
-高攀不上他的女
-兒。
-於是拆散了二人
-，並把剛出世的
-小嬰兒送走。
-之後，董事長的
-女兒便鬱鬱而終
-","// init $00, $16
-16 years ago, the daughter of Harrison, Gale Enterprises' chairman, had a relationship with a shepherd. The chairman was furious as he felt that the shepherd was not worthy of his daughter, so he forced them to break up and had the child sent away. The chairman's daughter died of depression shortly after.","repoint_target","",""
-"12","546f","","// init $00, $19
-往南邊走，就會
-到達山達農莊。
-那裡是個純樸的
-小鎮，主要出産
-咖啡跟天使之葉
-。
-","// init $00, $19
-If you go south, you will arrive at Mountreach Farm. It is a simple town that produces mainly coffee and angel leaves.","repoint_target","what is the farm called aaaaaaa","deepL"
-"12","54b8","","// init $00, $16
-唉~其實加爾企
-業董事長的心情
-，我真的可以體
-會⋯⋯
-年老時才發現，
-沒有人可以繼承
-他那龐大的事業
-，那是相當令人
-不甘心的。
-","// init $00, $16
-In fact, I really empathise with the chairman of GaleCorp... it is quite disheartening to find out that there is no one to inherit his huge business in old age. ","repoint_target","",""
-"12","5528","","// init $00, $19
-哼!那個加爾企
-業的董事長，一
-點都不可憐呢!
-當初他要是沒有
-拆散那對戀人的
-話，就不會有這
-種結果了!
-","// init $00, $19
-Hmph! I don't pity the chairman at all! If he hadn't broken up the couple in the first place, they wouldn't have ended up like this! ","repoint_target","",""
-"12","5589","","// init $00, $1b
-十六年前，哈爾
-遜董事長的女兒
-，愛上了一名男
-人!那名牧羊人
-，就是山達農莊
-的牧羊人。
-事後那名牧羊人
-被趕出這裡，再
-也沒有人看過他
-了⋯⋯
-","// init $00, $1b
-Sixteen years ago, Chairman Harrison's daughter fell in love with a man! He was a shepherd at Mountreach Farm. The shepherd was later chased out of here and never seen again...","repoint_target","",""
-"12","560d","","// init $00, $1a
-你⋯你後面那隻
-⋯怪獸⋯
-就是爸爸說的星
-獸嗎?
-真可怕!!
-","// init $00, $1a
-That... monster behind you... is that one of the Star Beasts Dad was talking about? It's scary! ","repoint_target","",""
-"12","563e","","// init $00, $1c
-點心!點心!
-媽媽~點心時間
-到了啦!哥哥沒
-有回來，人家要
-吃~雙倍喲!
-","// init $00, $1c
-Dim Sum! Dim Sum! Mom, it's teatime! Brother hasn't come back, so I want to eat ~ two portions, yo!","repoint_target","",""
-"12","5682","","// init $00, $1a
-人家才沒有偷吃
-櫃子裡的蛋糕唷
-!⋯嗚~
-被你知道了!人
-家不是故意的嘛
-!不可以跟哥哥
-說唷!
-這是我們的小密
-祕唷!
-","// init $00, $1a
-I didn't steal the cake from the cupboard! ⋯You've found me out?! I didn't do it on purpose! Don't tell my brother! It's our little secret! ","repoint_target","",""
-"12","56ec","","// init $00, $15
-我的老公是鐘塔
-的管理人員。
-每天都要忙到晚
-才能回來。
-真是叫人寂寞啊
-⋯⋯
-","// init $00, $15
-My husband is the manager of the clock tower. He has to work late every day. How sad...
-","repoint_target","",""
-"12","5733","","// init $00, $22
-唉~有機會的話
-，真想到鄰國做
-生意。但是本國
-和鄰國的關係，
-一直不是很好。
-就連來往的通道
-都被填平了⋯
-唉~~
-","// init $00, $22
-Haiz... I really want to do business overseas. But the relationship between our country and the neighboring countries isn't very good. Even the road has been blocked... Haiz~
-","repoint_target","",""
-"12","579d","","// init $1b, $4c
-巴洛特，是你呀
-。上次提到的動
-力晶片，果然董
-事長身上也有。
-本來應該要為你
-引見的，但現在
-恐怕不行了⋯
-","// init $1b, $4c
-Ballot, it's you. The power chip that I mentioned last time is really held by the chairman. I was supposed to introduce you, but I'm afraid I can't do that now...
-","repoint_target","",""
-"12","57fa","","// init $01, $2d
-發生了什麼事嗎
-?
-","// init $01, $2d
-Is something wrong?
-","repoint_target","",""
-"12","580d","","// init $1b, $4c
-是這樣的。十六
-年前，董事長千
-金與一名牧羊人
-發生戀情，並有
-了一名小孩。
-董事長相當憤怒
-，拆散了二人，
-並且把小孩子托
-管家送走。
-但董事長年紀大
-了，後繼無人，
-便想找回失散的
-小孫子。
-但當年送走小孩
-子的管家已經去
-逝，沒有人知道
-他的下落了⋯
-","// init $1b, $4c
-Here's the story. Sixteen years ago, the president's daughter fell in love with a shepherd and had a child. The chairman was furious, so he broke up the couple and sent the child away to a trustee. Now that he's old and has no one to take after him, he wants to find his lost grandson. But the housekeeper who sent the child away has passed away, so no one knows where he is anymore.
-","repoint_target","",""
-"12","58ef","","// init $01, $2b
-這真是遺憾⋯
-","// init $01, $2b
-What a shame...
-","repoint_target","",""
-"12","58fd","","// init $1b, $4c
-董事長的身體為
-了這件事情，而
-操勞過度!
-現正休養中，不
-方便接見客人。
-關於動力晶片的
-事情~如果巴洛
-特可以找到失散
-的小孫子的話，
-或許可以向董事
-長要求動力晶片
-吧。
-","// init $1b, $4c
-The Chairman overworked himself for this! He is now recuperating and is not available to receive guests. About the power chip ~ if you can find his lost grandson, maybe he can ask the chairman for the power chip.
-","repoint_target","",""
-"12","599a","","// init $1b, $4c
-槽糕~都這麼晚
-了呀!
-身為加爾企業採
-購部經理的我，
-必須要趕上這場
-重要的會議才行
-!巴洛特，詳細
-的細節，你可以
-看看加爾企業前
-的告示版。
-上頭有著尋人
-的線索。
-加油了!
-","// init $1b, $4c
-Oh dear, look at the time! I have to catch an important meeting as the manager of the purchasing department of GaleCorp! Ballot, for more details, you can read the notice in front of the GaleCorp building.
-You can find more details there. Good luck!
-","repoint_target","",""
-"12","5a30","","// init $00, $00
-加爾企業公告:
-加爾企業尋人啟
-示
-尋找哈爾遜董事
-長十六年前失散
-的小孫子身上佩
-戴著一條弦月型
-、發出幽光的項
-鍊名為月琉璃。
-如尋獲者，加爾
-企業將重金禮謝
-","// init $00, $00
-GaleCorp Notice: GaleCorp is looking for the grandson of Chairman Harrison who was lost 16 years ago wearing a moon-shaped, glowing necklace known as the Moon Glaze. GaleCorp will provide a reward for anyone who finds him.
-","repoint_target","",""
-"12","5abd","","// init $01, $2e
-這就是基多所說
-的線索?
-月型項鍊?
-月琉璃這就是基
-多所說的線索?
-只要找到月琉璃
-的主人，就可以
-得到動力晶片了
-!
-","// init $01, $2e
-This is the clue that Quito was talking about? The moon necklace? This is the clue that Kido was talking about? If you find the owner of the moon glaze, you can get the power chip!
-","repoint_target","","deepL"
-"12","5b24","","// init $00, $24
-這個鐘塔是加爾
-企業的所有物。
-不可以再進去了
-喲。尤其是旁邊
-那個門!
-那可以⋯⋯
-總之不能靠近
-就是了!
-","// init $00, $24
-This clock tower is owned by GaleCorp. Entry is prohibited. Especially to the side door! You could... Anyway, you can't go near it!
-","repoint_target","","deepL"
-"12","5b82","","// init $00, $17
-這裡是牧羊的農
-莊小鎮~
-山達農莊。
-","// init $00, $17
-This is the farming town of Shepherd's Bush ~ Shanda Farm.
-","repoint_target","","deepL"
-"12","5ba7","","// init $00, $20
-興奮~哈哈哈~
-興奮~哈哈哈~
-天氣真好~
-興~興奮~
-","// init $00, $20
-Excited ~ Hahahaha ~ Excited ~ Hahahaha ~ Beautiful weather ~ Excited ~ Excited ~ Excited ~
-","repoint_target","","deepL"
-"12","5bd5","","// init $00, $12
-真是可怕⋯前陣
-子的流星雨，擊
-中西邊的咖啡林
-裡的咖啡樹。
-因此變成了咖啡
-星怪!咖啡怪有
-時會飄來一陣咖
-啡的香氣~
-聞到的人都會變
-得異常的興奮。
-","// init $00, $12
-What a terrible... meteor shower a while ago, hit the coffee trees in the coffee forest in the west. So it turned into a coffee monster! The coffee monster sometimes floats a burst of coffee aroma ~ smelling people will become unusually excited.
-","repoint_target","","deepL"
-"12","5c51","","// init $00, $1d
-聽說加爾企業啊
-哈哈⋯就是那個
-哈哈哈⋯嗚~
-一想到就~嗚~
-好‧興‧奮!
-","// init $00, $1d
-I heard that the Gar enterprise ahhaha... is that hahaha... wow ~ the thought of it ~ wow ~ so excited!
-","repoint_target","","deepL"
-"12","5c92","","// init $00, $21
-每次只要一聞到
-咖啡的味道，我
-就會趕把鼻子捏
-起來，有一次還
-差點就殺死自己
-了⋯
-加爾企業的董事
-長重金尋找他失
-散的孫子。
-我一定要找到
-才行!
-","// init $00, $21
-Every time I smelled coffee, I would pinch my nose, and once I almost killed myself... The chairman of Garr Enterprises is paying a lot of money to find his long-lost grandson. I had to find him!
-","repoint_target","","deepL"
-"12","5d14","","// init $00, $19
-嗚峨峨峨!
-這⋯這是什麼?
-一股力量從我這
-八十歲的腳底，
-蔓延到我這八十
-歲的身體!!
-嗚峨峨峨峨峨!
-我是~女超人嗎
-?
-","// init $00, $19
-Oooooooh! What... what is this? A power spreads from the bottom of my 80-year-old feet to my 80-year-old body! Awwwwwwwwwwwwww! Am I superwoman?
-","repoint_target","","deepL"
-"12","5d7a","","// init $00, $1a
-嗚~嗚~大家都
-變得好奇怪峨!
-嗚嗚~人家不要
-啦!
-","// init $00, $1a
-Everyone is getting so weird! I don't want to!
-","repoint_target","","deepL"
-"12","5dab","","// init $00, $23
-咖啡林的咖啡怪
-真是可怕!一聞
-到牠的氣味，人
-都會變得非常的
-興奮!我得要將
-門窗關緊才行!
-","// init $00, $23
-The coffee monster in the coffee forest is really scary! When I smell it, people become very excited! I have to close the doors and windows tightly!
-","repoint_target","","deepL"
-"12","5dff","","// init $00, $25
-聽說馬克被瘋狂
-的羊群撞成重傷
-，而他的妹妹~
-妮娜為了照顧他
-，把所有值錢的
-東西都賣了!
-他們的老閱還因
-為不要照顧病人
-，而把他們解雇
-了!真是可憐⋯
-","// init $00, $25
-I heard that Mark was seriously injured by the crazy sheep and his sister ~ Nina sold all her valuable things to take care of him! Their old reading also fired them for not taking care of the patient! What a pity...
-","repoint_target","","deepL"
-"12","5e82","","// init $24, $22
-開什麼玩笑!馬
-克被瘋狂的羊撞
-傷了，才不是我
-的錯!只能怪他
-不小心!妮娜還
-因為這樣，一直
-都沒來工作!
-我對他們實在是
-太好了!他們才
-會這麼放肆!從
-現在開始，他們
-二個都不用來工
-作了!
-","// init $24, $22
-You're kidding! It's not my fault that Mark got hit by a crazy sheep! It's his fault for being careless! And Nina never came to work because of it! I am so good to them! That's why they are so reckless! From now on, they both don't have to come to work!
-","repoint_target","","deepL"
-"12","5f2e","","// init $00, $21
-真是麻煩⋯
-看樣子，馬克
-傷得非
-常
-的重!
-要是沒有
-天使之葉的話，
-恐怕是
-救不活
-了
-!
-為了
-減
-少
-不必要
-的麻煩，
-解雇他們是非常
-正確
-的
-選擇。
-","// init $00, $21
-What a pain in the ass... It looks like Mark is very badly hurt! If there is no Angel Leaf, I'm afraid it can not be saved! In order to reduce unnecessary trouble, dismissing them is the right choice.
-","repoint_target","","deepL"
-"12","5fa8","","// init $00, $1e
-鳴哇~嗚~媽媽
-變得好可怕啊!
-","// init $00, $1e
-Tweet Wow~ Wow~ Mom has become so scary!
-","repoint_target","","deepL"
-"12","5fc7","","// init $00, $1f
-呵呵呵~啊!!
-這個切菜聲⋯⋯
-怎麼會叫人這麼
-興奮!興奮興奮
-興奮興奮!切骨
-聲?要是聽到切
-骨聲的話，會更
-興奮吧?
-老公~切骨聲!
-","// init $00, $1f
-Ohhhhhhhh! The sound of chopping vegetables... how can you be so excited! Excited, excited, excited, excited! Bone cutting sound? If you hear the sound of cutting bones, you will be more excited, right? Honey, the sound of cutting bones!
-","repoint_target","","deepL"
-"12","6032","","// init $00, $18
-老⋯老⋯老婆?
-妳拿著菜刀做什
-麼?不⋯不要過
-來!!
-","// init $00, $18
-Old... old... wife? What are you doing with the kitchen knife? No... don't come here!
-","repoint_target","","deepL"
-"12","6064","","// init $00, $18
-老婆從街上回來
-後，彷彿就變了
-一個人!
-一定是聞到了咖
-啡怪的氣味。
-這該怎麼辦才好
-?
-","// init $00, $18
-When my wife came back from the street, she seemed to be a different person! She must have smelled the coffee monster. What should I do?
-","repoint_target","","deepL"
-"12","60b5","","// init $00, $16
-山達農莊原來是
-盛産咖啡豆及天
-使之葉的小鎮。
-天使之葉?
-呵呵~不論是多
-重的傷，只要有
-天使之葉的話，
-都不是問題唷!
-但自從咖啡林被
-咖啡怪佔據後，
-這些全部都沒有
-人敢去採收了⋯
-","// init $00, $16
-Sandal Farm is a small town that produces coffee beans and angel leaves. Angel leaves? No matter how heavy the injuries are, as long as there are angel leaves, it's not a problem! But since the coffee forest was occupied by the coffee monster, no one has dared to harvest these ...
-","repoint_target","","deepL"
-"12","6159","","// init $25, $4f
-⋯呃⋯⋯
-","// init $25, $4f
-⋯...uh...
-","repoint_target","","deepL"
-"12","6164","","// init $26, $0b
-咩~咩咩~
-","// init $26, $0b
-baa~baa~
-","repoint_target","","deepL"
-"12","6171","","// init $03, $34
-哥~哥~怎麼辦
-連爸爸留下來的
-那個，都賣掉了
-⋯已經沒有買蔡
-的錢了⋯⋯
-要怎麼辦?
-","// init $03, $34
-I'm not sure what I'm going to do, but I'm not sure what I'm going to do.
-","repoint_target","","deepL"
-"12","61be","","// init $01, $2e
-怎麼回事?
-","// init $01, $2e
-What's going on?
-","repoint_target","","deepL"
-"12","61cb","","// init $03, $34
-嗚~嗚~哥哥在
-放羊的時候，羊
-突然聞到了咖啡
-怪的味道。
-全都變得非常的
-瘋狂，哥哥也受
-了重傷!我試過
-很多的蔡，但哥
-哥的傷還是愈來
-愈嚴重⋯
-怎麼辦?
-","// init $03, $34
-When my brother was herding sheep, they suddenly smelled the smell of coffee. They all became very crazy, and my brother was seriously injured! I've tried many things, but my brother's injuries are getting worse and worse... what should I do?
-","repoint_target","","deepL"
-"12","6253","","// init $01, $2d
-這弦月型的項鍊
-好別緻!
-項鍊?月琉璃?
-這不就是月琉璃
-嗎?難道他就是
-⋯⋯
-","// init $01, $2d
-This string moon necklace is so chic! Necklace? Moon glaze? Isn't this the moon glaze? Is it possible that he is...
-","repoint_target","","deepL"
-"12","629b","","// init $03, $34
-哥哥的項鍊，我
-也是在他受傷時
-，才發現的。但
-是哥哥的狀況，
-如果沒有天使之
-葉的話⋯嗚嗚嗚
-~
-","// init $03, $34
-I only found my brother's necklace when he was injured. But brother's condition, if there is no angel leaf ... woo woo woo ~
-","repoint_target","","deepL"
-"12","62f3","","// init $01, $2e
-天使之葉?
-","// init $01, $2e
-Angel Leaf?
-","repoint_target","","deepL"
-"12","6300","","// init $03, $35
-咖啡林的最深處
-，有顆天使樹。
-它的葉子具有強
-烈的治傷療效。
-但是咖啡林被咖
-啡怪佔據了，沒
-有人敢到裡面採
-取天使之葉。
-","// init $03, $35
-In the deepest part of the coffee forest, there is an angel tree. Its leaves have a strong healing effect. But the coffee forest is occupied by coffee monsters, no one dares to take the angel leaves inside.
-","repoint_target","","deepL"
-"12","636e","","// init $01, $2e
-咖啡林?
-我一定會將天使
-之葉採回來的!
-","// init $01, $2e
-The coffee forest? I will definitely pick the angel leaves back!
-","repoint_target","","deepL"
-"12","6394","","// init $03, $33
-真的?謝謝你~
-謝謝你!妮娜和
-你一起去!
-咖啡林裡有許多
-阻擋的刺刺草!
-如果沒有小綿羊
-的話，會很麻煩
-的!
-","// init $03, $33
-Really? Thank you~ Thank you! Nina will go with you! The coffee forest has a lot of blocking thorny grass! Without the sheep, it would have been a problem!
-","repoint_target","","deepL"
-"12","63f5","","// init $01, $2e
-妮娜&小綿羊加
-入隊伍!
-","// init $01, $2e
-Nina & Sheep join the team!
-","repoint_target","","deepL"
-"12","640c","","// init $18, $2f
-如果將妮娜置於
-隊伍前頭，小線
-羊可以清除阻擋
-道路之刺刺草。
-","// init $18, $2f
-If Nina is placed at the front of the team, the lamb can clear the thorny grass that blocks the path.
-","repoint_target","","deepL"
-"12","6443","","// init $01, $2c
-嗚~好痛!
-被這種草刺到，
-就像被針刺到一
-樣!
-","// init $01, $2c
-Ouch! Being pricked by this grass is like being pricked by a needle! ","repoint_target","",""
-"12","6471","","// init $27, $51
-咕嚕~咕嚕~咕
-嚕~
-","// init $27, $51
-gollum~gollum~gollum~
-","repoint_target","","deepL"
-"12","6486","","// init $03, $36
-槽了!牠要吐出
-令人興奮的氣息
-了!得趕快打倒
-牠才行!
-","// init $03, $36
-It's grooving! He's about to spit out an exciting breath! We have to beat it!
-","repoint_target","","deepL"
-"12","64ba","","// init $00, $1d
-呀!怎麼回事!
-我做了什麼事嗎
-?感覺上，好像
-做了一場很興奮
-的夢⋯⋯
-","// init $00, $1d
-Yikes! What the hell! Did I do something? It feels like I'm having a very exciting dream...
-","repoint_target","","deepL"
-"12","64fb","","// init $03, $33
-這就是天使樹了
-!只要有天使之
-葉的話，哥哥的
-傷，就一定可以
-治好的!
-","// init $03, $33
-This is the angel tree! As long as there is an angel leaf, brother's injury can be cured for sure!
-","repoint_target","","deepL"
-"12","653d","","// init $01, $2e
-得到了天使之葉
-!
-","// init $01, $2e
-Got the Angel Leaf!
-","repoint_target","","deepL"
-"12","6550","","// init $00, $20
-咖啡林的咖啡怪
-消失了?
-這真是個好消息
-!
-為了表示慶祝，
-我決定煮一杯超
-濃的咖啡~
-好好的興奮個夠
-!
-","// init $00, $20
-The coffee monster in the coffee forest is gone? That's great news! To celebrate, I decided to make a super strong cup of coffee ~ get excited!
-","repoint_target","","deepL"
-"12","65ab","","// init $00, $12
-真是可怕⋯
-前陣子的流星雨
-，擊中西邊的咖
-啡林裡的咖啡樹
-。
-因此變成了咖啡
-星怪!
-咖啡怪有時會飄
-來一陣咖啡的香
-氣~
-聞到的人都會變
-得異常的興奮。
-","// init $00, $12
-It's scary... The meteor shower a while ago hit the coffee trees in the coffee forest in the west. So it turned into a coffee star monster! The coffee monster sometimes wafts a fragrance of coffee ~ the smell of people will become unusually excited.
-","repoint_target","","deepL"
-"12","6629","","// init $00, $1d
-好像做了一個興
-奮的夢~
-可是又好像是真
-的⋯⋯
-","// init $00, $1d
-It seems to be an exciting dream ~ but it seems to be true ...
-","repoint_target","","deepL"
-"12","6655","","// init $00, $19
-剛剛做了一個夢
-~
-夢到我這八十歲
-的老人，竟然是
-個~女‧超‧人
-‧唷!
-真是令人不好意
-思⋯⋯
-不過這真是個累
-人的夢。
-這八十歲的身體
-，累得像要散了
-一樣!
-","// init $00, $19
-I just had a dream that I, an 80-year-old man, was a superwoman. It was embarrassing... but it was a tiring dream. This 80-year-old body is so tired that it looks like it's going to fall apart!
-","repoint_target","","deepL"
-"12","66e4","","// init $00, $1a
-馬克哥哥平常都
-會說故事給我們
-聽唷!
-他是全世界最棒
-的人!
-媽媽都說他有一
-種很特殊的氣質
-唷!
-","// init $00, $1a
-Brother Mark usually tells us stories! He is the best person in the world! Mom says he has a very special temperament!
-","repoint_target","","deepL"
-"12","673b","","// init $00, $23
-其實⋯從很早以
-前，我就發現~
-妮娜是個大美女
-峨!
-只要她再花點心
-打扮一下的話，
-就不得了!
-","// init $00, $23
-In fact, I found out a long time ago that Nina is a beautiful woman! If she puts a little more effort into dressing up, she'll be great!
-","repoint_target","","deepL"
-"12","6796","","// init $00, $1e
-媽媽又變成原來
-的媽媽了!
-真是太好了。
-","// init $00, $1e
-Mom is back to her old self! It's great.
-","repoint_target","","deepL"
-"12","67b8","","// init $00, $1f
-發生了什麼事情
-嗎?
-為什麼老公跟小
-孩都那麼看我?
-真是奇怪!
-啊!為什麼到處
-都有被刀采過的
-痕跡!
-","// init $00, $1f
-What's going on? Why do my husband and kids look at me like that? That's weird! Ah! Why are there traces of knife picking everywhere!
-","repoint_target","","deepL"
-"12","6812","","// init $00, $18
-就是你打敗了咖
-啡怪的嗎?
-真是非常的感謝
-你!
-不然的話，我可
-能就慘死在菜刀
-底下了⋯⋯
-","// init $00, $18
-Are you the one who defeated the coffee monster? Thank you so much! Otherwise, I might have died under a kitchen knife...
-","repoint_target","","deepL"
-"12","6864","","// init $00, $18
-謝謝你!
-","// init $00, $18
-Thank you!
-","repoint_target","","deepL"
-"12","686f","","// init $00, $16
-現在是咖啡的盛
-産季節，得趕緊
-採收才行!
-","// init $00, $16
-It's coffee season, we need to harvest now!
-","repoint_target","","deepL"
-"12","6898","","// init $03, $02
-哥~這是天使之
-葉，趕快吃下!
-對~就是這樣⋯
-","// init $03, $02
-Brother, this is the angel leaf, eat it now! Yes, that's it...
-","repoint_target","","deepL"
-"12","68c4","","// init $25, $4f
-妮娜?
-","// init $25, $4f
-Nina?
-","repoint_target","","deepL"
-"12","68ce","","// init $03, $02
-哥!沒事就好~
-沒事就好⋯⋯
-","// init $03, $02
-Brother! It's okay~ It's okay...
-","repoint_target","","deepL"
-"12","68e4","","// init $25, $4f
-妮娜~謝謝妳⋯
-","// init $25, $4f
-Nina, thank you...
-","repoint_target","","deepL"
-"12","68f5","","// init $03, $36
-哥~你胸前的月
-型項鍊，真的就
-是月琉璃嗎?
-","// init $03, $36
-Brother, is the moon-shaped necklace on your chest really the moon glaze?
-","repoint_target","","deepL"
-"12","691e","","// init $25, $4f
-月⋯⋯
-","// init $25, $4f
-Moon...
-","repoint_target","","deepL"
-"12","6927","","// init $25, $4f
-不⋯⋯不是的!
-這不是月琉璃，
-這只是⋯只是⋯
-","// init $25, $4f
-No... it's not! It's not Moon Lurie, it's just... just...
-","repoint_target","","deepL"
-"12","6953","","// init $01, $2c
-加業企業的董事
-長，為了尋找他
-失散的孫子，己
-經病倒了，你還
-忍心瞧他這樣下
-去嗎?
-","// init $01, $2c
-The chairman of the board of directors of the Karma Corporation has fallen ill trying to find his lost grandson, can you bear to see him go on like this?
-","repoint_target","","deepL"
-"12","69a3","","// init $03, $02
-哥⋯⋯
-","// init $03, $02
-Brother...
-","repoint_target","","deepL"
