@@ -33,7 +33,7 @@ Func_1c2c_Continue::
 	ld [wCharacterTilemapPos], a
 	ld [wTextLine], a
 	ld [wCharacterTilePos], a
-	ld a, $3f
+	ld a, BANK(English_Character_Set)
 	ld [hTargetBank], a
 	jp CheckCharacter
 
