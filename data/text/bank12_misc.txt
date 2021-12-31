@@ -1685,3 +1685,31 @@
 	cont "放過你!";
 	done;
 
+@org $12, $7eac:
+	text "嗨OHBABY";
+	line;
+	line "嗨NO";
+	line;
+	line;
+
+@org $12, $7ebe:
+	init $14, $25; # TEMP
+	text "需要妮可治療嗎";
+	line "?";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $12, $7ed6:
+	init $1a, $25; # TEMP
+	text "這裡是星獸膠囊";
+	line "存放銀行。";
+	para "需要艾娜的服務";
+	line "嗎?";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $12, $7f05:
+	init $19, $22; # TEMP
+	text "需要什麼服務嗎";
+	line "?";
+	line; unknownE7; done;

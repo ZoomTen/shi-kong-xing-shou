@@ -1040,16 +1040,16 @@ ObjectEvents_012_496b:
 	objects_end
 
 unk_012_4982:
-	scr_text unk_012_7ebe
+	scr_text text_12_7ebe
 	scr_end
 
 unk_012_4986:
-	scr_text unk_012_7ed6
+	scr_text text_12_7ed6
 	scr_end
 
 Script_012_498a::
 	scr_face $01 ; TEMP
-	scr_text unk_012_7ebe
+	scr_text text_12_7ebe
 	scr_checkbit wdaa3, $03, unk_012_4997
 	scr_37
 	scr_end
@@ -1059,7 +1059,7 @@ unk_012_4997:
 
 Script_012_4998::
 	scr_face $01 ; TEMP
-	scr_text unk_012_7ed6
+	scr_text text_12_7ed6
 	scr_checkbit wdaa3, $03, unk_012_49a5
 	scr_36
 	scr_end
@@ -1072,13 +1072,13 @@ ObjectEvents_012_49a6::
 	objects_end
 
 unk_012_49b2:
-	scr_04 unk_012_7f05
+	scr_04 text_12_7f05
 	scr_end
 
 Script_012_49b6:
 	scr_face $02 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
-	scr_text unk_012_7f05
+	scr_text text_12_7f05
 	scr_checkbit wdaa4, $01, unk_012_49c7
 	scr_35 $01 ; TEMP
 	scr_end
@@ -1089,7 +1089,7 @@ unk_012_49c7:
 Script_012_49c8:
 	scr_face $02 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
-	scr_text unk_012_7f05
+	scr_text text_12_7f05
 	scr_checkbit wdaa4, $01, unk_012_49c7
 	scr_35 $02 ; TEMP
 	scr_end
@@ -1487,18 +1487,6 @@ unk_012_5167::
 	dr $49167, $49194
 
 INCLUDE "data/text/bank12_misc.asm"
-
-text_12_7eac:
-	dr $4beac, $4bebe
-
-unk_012_7ebe:
-	dr $4bebe, $4bed6
-
-unk_012_7ed6:
-	dr $4bed6, $4bf05
-
-unk_012_7f05:
-	dr $4bf05, $4bf1c
 
 SECTION "banknum12", ROMX[$7fff], BANK[$12]
 	db $12
