@@ -4,7 +4,7 @@ import sys
 from lib.gbtool import *
 
 if len(sys.argv) < 3:
-	print(f'{sys.argv[0]} address endAddress startCh')
+	print(f'{sys.argv[0]} address_end address_start starting_channel')
 	print('\taddresses can be in BB:AAAA form or as a hex number')
 	print('\tstarting channel number must be either: 1, 2, 3, 4')
 	exit(0)
