@@ -101,7 +101,7 @@ data/maps/layouts/%.bin: data/maps/layouts/%.tmx
 
 ### Misc file-specific graphics rules
 
-gfx/character_set/%.1bpp: tools/gfx += --interleave --png=$<
+gfx/character_set/%.1bpp: tools/gfx += --png=$<
 gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/sprites/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/intro/sprites/%.2bpp: tools/gfx += --interleave --png=$<

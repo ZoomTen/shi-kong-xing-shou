@@ -1486,7 +1486,7 @@ unk_012_50f6::
 unk_012_5167::
 	dr $49167, $49194
 
-INCLUDE "data/text/bank12_misc.asm"
+INCLUDE "data/english_text/bank12_misc.asm"
 
 SECTION "banknum12", ROMX[$7fff], BANK[$12]
 	db $12

@@ -326,7 +326,6 @@ INCLUDE "banks/bank_44.asm"
 
 SECTION "bank45", ROMX, BANK[$45]
 ; en patch: repoint text here
-
 INCLUDE "data/english_text/bank0e_misc_external.asm"
 
 SECTION "banknum45", ROMX[$7fff], BANK[$45]
@@ -334,7 +333,8 @@ SECTION "banknum45", ROMX[$7fff], BANK[$45]
 
 
 SECTION "bank46", ROMX, BANK[$46]
-; empty bank
+; en patch: repoint text here
+INCLUDE "data/english_text/bank12_misc_external.asm"
 
 SECTION "banknum46", ROMX[$7fff], BANK[$46]
 	db $46
