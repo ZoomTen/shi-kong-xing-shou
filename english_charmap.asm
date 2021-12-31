@@ -95,7 +95,8 @@ NEWCHARMAP english
 	charmap "'m", $89
 	charmap "'t", $8a
 	charmap "'e", $8b
-	
+	charmap "'", $8c
+
 ; r o b o t
 	charmap "Ａ", $55
 	charmap "Ｂ", $56
