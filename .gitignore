@@ -16,6 +16,7 @@ gfx/tilesets/*.2bpp
 gfx/title_screen/*.2bpp
 gfx/intro/**/*.2bpp
 gfx/character_set/*.1bpp
+gfx/sprites/**/*.2bpp
 data/maps/blocks/*.bin
 data/maps/layouts/*.bin
 data/maps/metatiles/*.bin

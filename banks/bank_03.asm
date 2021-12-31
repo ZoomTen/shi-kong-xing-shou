@@ -124,7 +124,7 @@ SoundEngine2_HeaderPointers:
 	dw Music_Meteor
 	dw Music_LevelUpJingle
 	dw Music_ExpJingle
-	dw Music_EnemyFainted
+	dw Music_MonsterFainted
 	dw 0
 	dw 0
 
@@ -556,68 +556,68 @@ unk_003_4265:
 	dw unk_003_5c79
 
 Music_Academy:
-	db $f ; how many channels [in bits]
-	db 0  ; starting channel?
-	dw Music_Academy_Ch1
-	dw Music_Academy_Ch2
-	dw Music_Academy_Ch3
-	dw Music_Academy_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_Academy_Ch1
+	channel Music_Academy_Ch2
+	channel Music_Academy_Ch3
+	channel Music_Academy_Ch4
 
 Music_UnsettlingPlace:
-	db $f
-	db 0
-	dw Music_UnsettlingPlace_Ch1
-	dw Music_UnsettlingPlace_Ch2
-	dw Music_UnsettlingPlace_Ch3
-	dw Music_UnsettlingPlace_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_UnsettlingPlace_Ch1
+	channel Music_UnsettlingPlace_Ch2
+	channel Music_UnsettlingPlace_Ch3
+	channel Music_UnsettlingPlace_Ch4
 
 Music_Town2:
-	db $f
-	db 0
-	dw Music_Town2_Ch1
-	dw Music_Town2_Ch2
-	dw Music_Town2_Ch3
-	dw Music_Town2_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_Town2_Ch1
+	channel Music_Town2_Ch2
+	channel Music_Town2_Ch3
+	channel Music_Town2_Ch4
 
 Music_Racing:
-	db $f
-	db 0
-	dw Music_Racing_Ch1
-	dw Music_Racing_Ch2
-	dw Music_Racing_Ch3
-	dw Music_Racing_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_Racing_Ch1
+	channel Music_Racing_Ch2
+	channel Music_Racing_Ch3
+	channel Music_Racing_Ch4
 
 Music_Meteor:
-	db $f
-	db 0
-	dw Music_Meteor_Ch1
-	dw Music_Meteor_Ch2
-	dw Music_Meteor_Ch3
-	dw Music_Meteor_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_Meteor_Ch1
+	channel Music_Meteor_Ch2
+	channel Music_Meteor_Ch3
+	channel Music_Meteor_Ch4
 
 Music_LevelUpJingle:
-	db $f
-	db 0
-	dw Music_LevelUpJingle_Ch1
-	dw Music_LevelUpJingle_Ch2
-	dw Music_LevelUpJingle_Ch3
-	dw Music_LevelUpJingle_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_LevelUpJingle_Ch1
+	channel Music_LevelUpJingle_Ch2
+	channel Music_LevelUpJingle_Ch3
+	channel Music_LevelUpJingle_Ch4
 
 Music_ExpJingle:
-	db $f
-	db 0
-	dw Music_ExpJingle_Ch1
-	dw Music_ExpJingle_Ch2
-	dw Music_ExpJingle_Ch3
-	dw Music_ExpJingle_Ch4
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_ExpJingle_Ch1
+	channel Music_ExpJingle_Ch2
+	channel Music_ExpJingle_Ch3
+	channel Music_ExpJingle_Ch4
 
-Music_EnemyFainted:
-	db $f
-	db 0
-	dw Music_EnemyFainted_Ch1
-	dw Music_EnemyFainted_Ch2
-	dw Music_EnemyFainted_Ch3
-	dw Music_EnemyFainted_Ch4
+Music_MonsterFainted:
+	channel_count 4
+	sfx_starting_channel 0
+	channel Music_MonsterFainted_Ch1
+	channel Music_MonsterFainted_Ch2
+	channel Music_MonsterFainted_Ch3
+	channel Music_MonsterFainted_Ch4
 
 	ds 132
 
@@ -701,7 +701,7 @@ SoundEngine2_Load:
 	ld [hli], a
 	ld [hl], b
 	inc hl
-; CHANNEL_LOAD_POINT
+; CHANNEL_LOOP_POINT_2
 	ld [hli], a
 	ld [hl], b
 
@@ -786,7 +786,7 @@ SoundEngine2_Play:
 
 ; finished fading
 	ld [hl], a
-	ld hl, wd580
+	ld hl, wSoundGlobalStereo
 	ld a, [hl]
 	or a
 	jp z, SoundEngine2_ResetSoundRegisters
@@ -794,7 +794,7 @@ SoundEngine2_Play:
 	ld [hl], a
 .run_audio
 	call .ProcessAudio
-	jp asm_003_4bc7
+	jp SoundEngine2_ApplyAudio
 
 .ProcessAudio
 	xor a
@@ -896,7 +896,7 @@ asm_003_44bf:
 	ld b, a
 	ld a, [hl]
 	swap a
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	and 7
@@ -933,7 +933,7 @@ asm_003_44ef:
 	and 7
 	ld c, a
 	or b
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_FIELD12
@@ -963,7 +963,7 @@ asm_003_4525:
 	ld a, [hl]
 	swap a
 	and $f0
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_FIELD0A
@@ -997,7 +997,7 @@ asm_003_454c:
 	and 7
 	ld c, a
 	or b
-	ld hl,CHANNEL_FIELD1F
+	ld hl,CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld a, b
@@ -1026,7 +1026,7 @@ asm_003_4584:
 	ld a, [hl]
 	and $f
 	swap a
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld a, $ff
@@ -1055,7 +1055,7 @@ asm_003_459c:
 
 asm_003_45b8:
 	ld a, $f0
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_FIELD18
@@ -1074,7 +1074,7 @@ asm_003_45d0:
 	ld a, $50
 
 asm_003_45d2:
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_FIELD18
@@ -1095,7 +1095,7 @@ asm_003_45e9:
 
 asm_003_45ed:
 	ld a, 0
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_FIELD18
@@ -1124,6 +1124,7 @@ asm_003_45fa:
 	ld a, [bc]
 	pop bc
 	cp $ff
+; apply envelope on retriggered note
 	jr nz, asm_003_4625
 	ld hl, CHANNEL_INSTRUMENT_VOLUME_OFFSET
 	add hl, de
@@ -1134,7 +1135,7 @@ asm_003_45fa:
 	jr asm_003_4635
 
 asm_003_4625:
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	push af
 	and $f0
@@ -1412,37 +1413,36 @@ SoundEngine2_SetLengthCounter:
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	or a
-	jr z, asm_003_47d1
+	jr z, SoundEngine2_LowNibbleOnlySwapped
 
-Func_003_47ba:
+SoundEngine2_AtimesHL:
 	cp [hl]
-	jr nc, asm_003_47c7
+	jr nc, .less_than_hl
+; These lines are duplicated below
 	push bc
 	ld c, a
 	ld b, [hl]
 	xor a
-
-asm_003_47c1:
+.multiply_1:
 	add b
 	dec c
-	jr nz, asm_003_47c1
+	jr nz, .multiply_1
 	pop bc
 	ret
-
-asm_003_47c7:
+; Duplicated
+.less_than_hl:
 	push bc
 	ld c, a
 	ld b, [hl]
 	xor a
-
-asm_003_47cb:
+.multiply_2:
 	add b
 	dec c
-	jr nz, asm_003_47cb
+	jr nz, .multiply_2
 	pop bc
 	ret
 
-asm_003_47d1:
+SoundEngine2_LowNibbleOnlySwapped:
 	ld a, [hl]
 	swap a
 	and $f0
@@ -1491,7 +1491,7 @@ SoundEngine2_CommandProcessor:
 	jp hl
 
 .is_dx_command
-; D0 - D9 sets the song speed
+; D0 - DF sets the song speed
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	and $f
@@ -1634,19 +1634,21 @@ SoundEngine2_CommandEA:
 	inc bc
 	ret
 
-; EB xx ? : Set speed and vibrato
+; EB xy : Set vibrato delay and type
 SoundEngine2_CommandEB:
 	inc bc
+; set delay in note length (x)
 	ld a, [bc]
 	swap a
 	and $f
 	ld hl, CHANNEL_SPEED
 	add hl, de
-	call Func_003_47ba
+	call SoundEngine2_AtimesHL
 	ld hl, CHANNEL_VIBRATO_DELAY
 	add hl, de
 	inc a
 	ld [hli], a
+; set type (y)
 	ld a, [bc]
 	and $f
 	push bc
@@ -1659,7 +1661,7 @@ SoundEngine2_CommandEB:
 	ld b, a
 	pop af
 
-asm_003_48e3:
+SoundEngine2_SetWord:
 	ld a, [bc]
 	ld [hli], a
 	inc bc
@@ -1687,17 +1689,19 @@ SoundEngine2_CommandED:
 	jr nz, SoundEngine2_CommandSkip
 	inc bc
 	ld a, [bc]
-	ld [wd609], a
+	ld [wCh7TargetWaveform], a
 	inc bc
 	ret
 
 .asm_003_4906
 	inc bc
 	ld a, [bc]
-	ld [wd608], a
+	ld [wCh3TargetWaveform], a
 	inc bc
 	ret
 
+; EE xx (yy zz) : volume related stuff?
+; (yy zz set only if xx > $7f)
 SoundEngine2_CommandEE:
 	inc bc
 
@@ -1707,26 +1711,26 @@ asm_003_490e:
 	add hl, de
 	ld [hli], a
 	add a
-	jr c, asm_003_492a
+	jr c, SoundEngine2_InstrumentSetParams
 
 asm_003_4917:
 	ld a, [bc]
 
-asm_003_4918:
+SoundEngine2_UseInstrument:
 	push bc
 	push af
 	add a
-	add LOW(unk_003_4f17)
+	add LOW(SoundEngine2_InstrumentPointers)
 	ld c, a
-	ld a, HIGH(unk_003_4f17)
+	ld a, HIGH(SoundEngine2_InstrumentPointers)
 	adc 0
 	ld b, a
 	pop af
 	ld hl, CHANNEL_INSTRUMENT_POINTER
 	add hl, de
-	jr asm_003_48e3
+	jr SoundEngine2_SetWord
 
-asm_003_492a:
+SoundEngine2_InstrumentSetParams:
 	inc bc
 	ld a, [bc]
 	ld [hli], a
@@ -1803,7 +1807,8 @@ SoundEngine2_CommandF7:
 	ld h, a
 	inc bc
 	push hl
-	ld hl, CHANNEL_LOOP_POINT_2
+; save the return point
+	ld hl, CHANNEL_RETURN_POINT_1
 	add hl, de
 	ld [hl], c
 	inc hl
@@ -1821,7 +1826,7 @@ SoundEngine2_CommandF8:
 	ld h, a
 	inc bc
 	push hl
-	ld hl, CHANNEL_FIELD28
+	ld hl, CHANNEL_RETURN_POINT_2
 	add hl, de
 	ld [hl], c
 	inc hl
@@ -1831,7 +1836,7 @@ SoundEngine2_CommandF8:
 
 ; F9 : return from F7 xx yy call
 SoundEngine2_CommandF9:
-	ld hl, CHANNEL_LOOP_POINT_2
+	ld hl, CHANNEL_RETURN_POINT_1
 	add hl, de
 	ld a, [hli]
 	ld b, [hl]
@@ -1840,7 +1845,7 @@ SoundEngine2_CommandF9:
 
 ; FA : return from F8 xx yy call
 SoundEngine2_CommandFA:
-	ld hl, CHANNEL_FIELD28
+	ld hl, CHANNEL_RETURN_POINT_2
 	add hl, de
 	ld a, [hli]
 	ld b, [hl]
@@ -1855,19 +1860,20 @@ SoundEngine2_CommandFB:
 	ld a, c
 	ld [hli], a
 	ld [hl], b
-	ld hl, CHANNEL_FIELD2A
+	ld hl, CHANNEL_LOOP_COUNTER_1
 	add hl, de
 	ld [hl], 0
 	ret
 
+; FC : begin a repeating phrase
 SoundEngine2_CommandFC:
 	inc bc
-	ld hl, CHANNEL_LOAD_POINT
+	ld hl, CHANNEL_LOOP_POINT_2
 	add hl, de
 	ld a, c
 	ld [hli], a
 	ld [hl], b
-	ld hl, CHANNEL_FIELD2B
+	ld hl, CHANNEL_LOOP_COUNTER_2
 	add hl, de
 	ld [hl], 0
 	ret
@@ -1879,7 +1885,7 @@ SoundEngine2_CommandFD:
 	ld a, [bc]
 	or a
 	jr z, .goto_loop
-	ld hl, CHANNEL_FIELD2A
+	ld hl, CHANNEL_LOOP_COUNTER_1
 	add hl, de
 	push hl
 	ld h, [hl]
@@ -1905,7 +1911,7 @@ SoundEngine2_CommandFE:
 	ld a, [bc]
 	or a
 	jr z, .goto_loop
-	ld hl, CHANNEL_FIELD2B
+	ld hl, CHANNEL_LOOP_COUNTER_2
 	add hl, de
 	push hl
 	ld h, [hl]
@@ -1914,7 +1920,7 @@ SoundEngine2_CommandFE:
 	jr z, SoundEngine2_DoneRepeating
 	inc [hl]
 .goto_loop
-	ld hl, CHANNEL_LOAD_POINT
+	ld hl, CHANNEL_LOOP_POINT_2
 	add hl, de
 	ld a, [hli]
 	ld c, a
@@ -1951,7 +1957,7 @@ SoundEngine2_CommandFF:
 	ld hl, CHANNEL_FIELD0D
 	add hl, de
 	ld [hl], a
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	xor a
@@ -1977,28 +1983,30 @@ SoundEngine2_CommandFF:
 .asm_003_4a38
 	ld a, 8
 	ldh [rNR10], a
-	ld [wd56e], a
+	ld [wCh1DataCurrentSweep], a
 	jr .asm_003_4a0f
 
 unk_003_4a41:
-	db $fe
-	db $fd
-	db $fb
-	db $f7
-	db $ef
-	db $df
-	db $bf
-	db $7f
+	db $fe  ; ch1
+	db $fd  ; ch2
+	db $fb  ; ch3
+	db $f7  ; ch4
+
+	db $ef  ; ch5
+	db $df  ; ch6
+	db $bf  ; ch7
+	db $7f  ; ch8
 
 unk_003_4a49:
-	db $1
-	db $2
-	db $4
-	db $8
-	db $10
-	db $20
-	db $40
-	db $80
+	db $01  ; ch1
+	db $02  ; ch2
+	db $04  ; ch3
+	db $08  ; ch4
+
+	db $10  ; ch5
+	db $20  ; ch6
+	db $40  ; ch7
+	db $80  ; ch8
 
 Func_003_4a51:
 	ld a, [wSoundCurChannel]
@@ -2045,12 +2053,12 @@ Pointer_03_4a63:
 	adc 0
 	ld h, a
 	pop af
-	ld bc, wd581
+	ld bc, wSoundStereoChannels
 	ld a, [bc]
 	and $ee
 	or [hl]
 	ld [bc], a
-	ld bc, wd56e
+	ld bc, wCh1DataCurrentSweep
 	ld hl, CHANNEL_FIELD02
 	add hl, de
 	ld a, [hl]
@@ -2059,7 +2067,7 @@ Pointer_03_4a63:
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	ld a, [hl]
-	ld [wd598], a
+	ld [wCh1NoteCounter], a
 
 .asm_003_4aa4
 	or a
@@ -2088,7 +2096,7 @@ Pointer_03_4a63:
 	jr .asm_003_4aca
 
 .asm_003_4ac5
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld a, [hl]
 
@@ -2148,16 +2156,16 @@ Pointer_03_4a63:
 	adc 0
 	ld h, a
 	pop af
-	ld bc, wd581
+	ld bc, wSoundStereoChannels
 	ld a, [bc]
 	and $dd
 	or [hl]
 	ld [bc], a
-	ld bc, wd573
+	ld bc, wCh2DataCurrentDutyLength
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	ld a, [hl]
-	ld [wd599], a
+	ld [wCh2NoteCounter], a
 	jr .asm_003_4aa4
 
 .Ch3:
@@ -2178,12 +2186,12 @@ Pointer_03_4a63:
 	adc 0
 	ld h, a
 	pop af
-	ld bc, wd581
+	ld bc, wSoundStereoChannels
 	ld a, [bc]
 	and $bb
 	or [hl]
 	ld [bc], a
-	ld bc, wd577
+	ld bc, wCh3DataEnable
 	ld a, $80
 	ld [bc], a
 	inc bc
@@ -2193,7 +2201,7 @@ Pointer_03_4a63:
 	ld a, [hl]
 	or a
 	jr z, .asm_003_4b61
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -2226,16 +2234,16 @@ Pointer_03_4a63:
 	adc 0
 	ld h, a
 	pop af
-	ld bc, wd581
+	ld bc, wSoundStereoChannels
 	ld a, [bc]
 	and $77
 	or [hl]
 	ld [bc], a
-	ld bc, wd57d
+	ld bc, wCh4DataCurrentEnvelope
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	ld a, [hl]
-	ld [wd59b], a
+	ld [wCh4DataLastEnvelope], a
 	ld hl, CHANNEL_FIELD09
 	add hl, de
 	xor a
@@ -2245,7 +2253,7 @@ Pointer_03_4a63:
 	jr .asm_003_4b9b
 
 .asm_003_4b96
-	ld hl, CHANNEL_FIELD1F
+	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld a, [hl]
 
@@ -2281,95 +2289,134 @@ unk_003_4ba7:
 
 unk_003_4bb7:
 	db $11
-	db $1
+	db $01
 	db $10
 	db $11
 
 unk_003_4bbb:
 	db $22
-	db $2
+	db $02
 	db $20
 	db $22
 
 unk_003_4bbf:
 	db $44
-	db $4
+	db $04
 	db $40
 	db $44
 
 unk_003_4bc3:
 	db $88
-	db $8
+	db $08
 	db $80
 	db $88
 
-asm_003_4bc7:
-	ld hl, wd56e
-	ld de, wd583
-	ld c, $10
-	ld a, [wd598]
+SoundEngine2_ApplyAudio:
+	ld hl, wCh1DataCurrentSweep
+	ld de, wCh1DataLastSweep
+	ld c, LOW(rNR10)
+	ld a, [wCh1NoteCounter]
 	ld b, a
 	or a
-	jr z, asm_003_4bda
+	jr z, .update_sweep
 	ld a, [de]
 	cp [hl]
-	jr z, asm_003_4bde
+	jr z, .next
 
-asm_003_4bda:
+.update_sweep
+; apply Ch1 sweep
 	ld a, [hl]
 	ld [de], a
 	ldh [c], a
-	ldh [c], a
+	ldh [c], a ; ?
 
-asm_003_4bde:
+.next
+; apply Ch1 duty cycle
 	inc hl
 	inc de
 	inc c
-	call Func_003_4ca0
+	call SoundEngine2_UpdateLastData
+
+; apply Ch1 envelope
 	ld a, b
-	call Func_003_4c8c
+	call SoundEngine2_DoUpdateEnvelopes
+
+; apply Ch1 note frequency
 	ld a, b
-	call Func_003_4c9d
-	call Func_003_4cab
+	call SoundEngine2_CheckNeedUpdateLastData
+	call SoundEngine2_DoUpdateFrequency
+
+; next byte is not used
 	inc c
-	call Func_003_4ca0
-	ld a, [wd599]
-	call Func_003_4c8c
-	call Func_003_4ca0
-	call Func_003_4cab
-	call Func_003_4ca0
+
+; apply Ch2 sound length
+	call SoundEngine2_UpdateLastData
+
+; apply Ch2 envelope
+	ld a, [wCh2NoteCounter]
+	call SoundEngine2_DoUpdateEnvelopes
+
+; apply Ch2 note frequency
+	call SoundEngine2_UpdateLastData
+	call SoundEngine2_DoUpdateFrequency
+
+; apply Ch3 enable
+	call SoundEngine2_UpdateLastData
+
+; skip setting length
 	inc hl
 	inc de
 	inc c
-	call Func_003_4ca0
-	call Func_003_4ca0
-	call Func_003_4cab
+
+; apply Ch3 output level
+	call SoundEngine2_UpdateLastData
+
+; apply Ch3 note frequency
+	call SoundEngine2_UpdateLastData
+	call SoundEngine2_DoUpdateFrequency
+
+; skip
 	inc c
+
+; skip audio length
 	inc hl
 	inc de
 	inc c
-	ld a, [wd59b]
-	call Func_003_4c8c
-	call Func_003_4ca0
-	call Func_003_4cab
+
+; apply Ch4 envelope
+	ld a, [wCh4DataLastEnvelope]
+	call SoundEngine2_DoUpdateEnvelopes
+
+; apply Ch4 "frequency"
+	call SoundEngine2_UpdateLastData
+	call SoundEngine2_DoUpdateFrequency
+
+; apply global stereo
 	ld hl, rNR50
-	ld a, [wd580]
+	ld a, [wSoundGlobalStereo]
 	ld [hli], a
-	ld a, [wd581]
+
+; apply sound 
+	ld a, [wSoundStereoChannels]
 	ld [hli], a
+
+; any sfx?
 	ld a, [wChannel7]
 	or a
-	jr nz, asm_003_4c34
-	ld a, [wd608]
-	jr SoundEngine2_UpdateWaveform
+	jr nz, .use_other_waveform
+	ld a, [wCh3TargetWaveform]
+	jr .UpdateWaveform
 
-asm_003_4c34:
-	ld a, [wd609]
+.use_other_waveform
+	ld a, [wCh7TargetWaveform]
 
-SoundEngine2_UpdateWaveform:
-	ld hl, wd60a
+.UpdateWaveform:
+; don't need to update if it's the same as the last one
+	ld hl, wSoundLastWaveform
 	cp [hl]
 	ret z
+
+; find waveform data
 	ld [hl], a
 	push af
 	add a
@@ -2378,76 +2425,37 @@ SoundEngine2_UpdateWaveform:
 	ld a, HIGH(SoundEngine2_Waveforms)
 	adc 0
 	ld h, a
+
+; do overwrite
 	pop af
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld c, $30
+	ld c, LOW(_AUD3WAVERAM)
 	xor a
 	ldh [rNR30], a
+rept 16
 	ld a, [hli]
 	ldh [c], a
 	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, $80
+endr
+	ld a, %10000000
 	ldh [rNR30], a
-	ld a, [wd57b]
-	or $80
+
+; replay ch3
+	ld a, [wCh3DataCurrentFrequency + 1]
+	or %10000000
 	ldh [rNR34], a
 	ret
 
-Func_003_4c8c:
+SoundEngine2_DoUpdateEnvelopes:
 	or a
-	jr z, asm_003_4c93
+	jr z, SoundEngine2_UpdateEnvelopes
 	ld a, [de]
 	cp [hl]
-	jr z, asm_003_4ca7
+	jr z, SoundEngine2_SkipUpdatingLastData
 
-asm_003_4c93:
+SoundEngine2_UpdateEnvelopes:
 	ld a, [hli]
 	ld [de], a
 	ldh [c], a
@@ -2458,32 +2466,32 @@ asm_003_4c93:
 	inc c
 	ret
 
-Func_003_4c9d:
+SoundEngine2_CheckNeedUpdateLastData:
 	or a
-	jr z, asm_003_4ca4
+	jr z, SoundEngine2_DoUpdateLastData
 
-Func_003_4ca0:
+SoundEngine2_UpdateLastData:
 	ld a, [de]
 	cp [hl]
-	jr z, asm_003_4ca7
+	jr z, SoundEngine2_SkipUpdatingLastData
 
-asm_003_4ca4:
+SoundEngine2_DoUpdateLastData:
 	ld a, [hl]
 	ld [de], a
 	ldh [c], a
 
-asm_003_4ca7:
+SoundEngine2_SkipUpdatingLastData:
 	inc hl
 	inc de
 	inc c
 	ret
 
-Func_003_4cab:
+SoundEngine2_DoUpdateFrequency:
 	ld a, [de]
 	bit 7, a
 	jr nz, asm_003_4cb3
 	cp [hl]
-	jr z, asm_003_4ca7
+	jr z, SoundEngine2_SkipUpdatingLastData
 
 asm_003_4cb3:
 	ld a, [hl]
@@ -2503,7 +2511,7 @@ SoundEngine2_ResetSoundRegisters:
 	push de
 	call SoundEngine2_TurnOffChannels
 	ld a, $77
-	ld [wd580], a
+	ld [wSoundGlobalStereo], a
 	jr SoundEngine2_ResetEngineVariables
 
 SoundEngine2_Init:
@@ -2512,7 +2520,7 @@ SoundEngine2_Init:
 	call SoundEngine2_ResetHWVolumes
 	ld a, $77
 	ldh [rNR50], a
-	ld [wd580], a
+	ld [wSoundGlobalStereo], a
 
 SoundEngine2_ResetEngineVariables:
 	ld hl, wChannels
@@ -2555,7 +2563,7 @@ SoundEngine2_ResetEngineVariables:
 	ld [wSoundFadeEnabled], a
 	ld [wSoundFadeTimer], a
 	ld a, $ff
-	ld [wd60a], a
+	ld [wSoundLastWaveform], a
 	pop de
 	pop bc
 	ret
@@ -2567,22 +2575,26 @@ SoundEngine2_ResetHWVolumes:
 	ldh [rNR52], a
 
 SoundEngine2_TurnOffChannels:
+; reset sweep
 	ld a, 8
 	ldh [rNR10], a
-	ld [wd56e], a
+	ld [wCh1DataCurrentSweep], a
+
 	ldh a, [rNR52]
 	bit 0, a
 	jr z, .ch1_is_off
+
+
 	xor a
 	ldh [rNR11], a
-	ld [wd56f], a
+	ld [wCh1DataCurrentDutyLength], a
 	ld a, 8
 	ldh [rNR12], a
-	ld [wd570], a
+	ld [wCh1DataCurrentEnvelope], a
 	xor a
 	ldh [rNR13], a
-	ld [wd571], a
-	ld [wd572], a
+	ld [wCh1DataCurrentFrequency], a
+	ld [wCh1DataCurrentFrequency + 1], a
 	ld a, $80
 	ldh [rNR14], a
 	xor a
@@ -2593,12 +2605,12 @@ SoundEngine2_TurnOffChannels:
 	jr z, .ch2_is_off
 	xor a
 	ldh [rNR21], a
-	ld [wd573], a
+	ld [wCh2DataCurrentDutyLength], a
 	ldh [rNR22], a
-	ld [wd574], a
+	ld [wCh2DataCurrentEnvelope], a
 	ldh [rNR23], a
-	ld [wd575], a
-	ld [wd576], a
+	ld [wCh2DataCurrentFrequency], a
+	ld [wCh2DataCurrentFrequency + 1], a
 	ld a, $80
 	ldh [rNR24], a
 
@@ -2606,10 +2618,11 @@ SoundEngine2_TurnOffChannels:
 	ldh a, [rNR52]
 	bit 2, a
 	jr z, .wave_is_off
+
 	xor a
 	ldh [rNR32], a
-	ld [wd579], a
-	ld [wd57b], a
+	ld [wCh3DataCurrentVolume], a
+	ld [wCh3DataCurrentFrequency + 1], a
 	ld a, $80
 	ldh [rNR34], a
 
@@ -2619,14 +2632,14 @@ SoundEngine2_TurnOffChannels:
 	jr z, .done
 	xor a
 	ldh [rNR41], a
-	ld [wd57c], a
+	ld [wCh4DataCurrentLength], a
 	ld a, 8
 	ldh [rNR42], a
-	ld [wd57d], a
+	ld [wCh4DataCurrentEnvelope], a
 	xor a
 	ldh [rNR43], a
-	ld [wd57e], a
-	ld [wd57f], a
+	ld [wCh4DataCurrentFrequency], a
+	ld [wCh4DataCurrentFrequency + 1], a
 	ld a, $80
 	ldh [rNR44], a
 
@@ -2652,7 +2665,7 @@ SoundEngine2_CommandF4:
 
 asm_003_4da8:
 	ld a, [hl]
-	jp asm_003_4918
+	jp SoundEngine2_UseInstrument
 
 SoundEngine2_NoteFrequencies:
 ; octave 0
@@ -2770,7 +2783,109 @@ unk_003_4ea2: dr $cea2, $cebf
 unk_003_4ebf: dr $cebf, $ceda
 unk_003_4eda: dr $ceda, $cef2
 unk_003_4ef2: dr $cef2, $cf17
-unk_003_4f17: dr $cf17, $cf9f
+
+SoundEngine2_InstrumentPointers:
+	dw .instrument1
+	dw .instrument2
+	dw .instrument3
+	dw .instrument4
+	dw .instrument5
+	dw .instrument6
+	dw .instrument7
+	dw .instrument8
+	dw .instrument9
+	dw .instrument10
+	dw .instrument11
+	dw .instrument12
+	dw .instrument13
+	dw .instrument14
+	dw .instrument15
+	dw .instrument16
+	dw .instrument17
+	dw .instrument18
+	dw .instrument19
+	dw .instrument20
+
+.instrument1:
+	db $8f
+	db -1
+
+.instrument2:
+	db $1f
+	db -1
+
+.instrument3:
+	db $2f
+	db -1
+
+.instrument4:
+	db $3f
+	db -1
+
+.instrument5:
+	db $4f
+	db -1
+
+.instrument6:
+	db $5f
+	db -1
+
+.instrument7:
+	db $6f
+	db -1
+
+.instrument8:
+	db $7f
+	db -1
+
+.instrument9:
+	db $8f
+	db -1
+
+.instrument10:
+	db $9f
+	db -1
+
+.instrument11:
+	db $af
+	db -1
+
+.instrument12:
+	db $bf
+	db -1
+
+.instrument13:
+	db $cf
+	db -1
+
+.instrument14:
+	db $df
+	db -1
+
+.instrument15:
+	db $ef
+	db -1
+
+.instrument16:
+	db $fe
+	db -1
+
+.instrument17:
+	db $b2, $52, $92, $42, $72, $32, $52, $22
+	db -1
+
+.instrument18:
+	db $92, $42, $72, $32, $52, $22, $32, $12
+	db -1
+
+.instrument19:
+	db $b3, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43
+	db -1
+
+.instrument20:
+	db $83, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23
+	db -1
+
 
 SoundEngine2_VibratoTables:
 	dw .vibrato1
@@ -2978,45 +3093,14 @@ unk_003_5da9: dr $dda9, $ddbf
 unk_003_5dbf: dr $ddbf, $ddd9
 unk_003_5dd9: dr $ddd9, $e593
 
-Music_Academy_Ch1: dr $e593, $e5ee
-Music_Academy_Ch2: dr $e5ee, $e626
-Music_Academy_Ch3: dr $e626, $e6bc
-Music_Academy_Ch4: dr $e6bc, $e6ea
-
-Music_UnsettlingPlace_Ch1: dr $e6ea, $e762
-Music_UnsettlingPlace_Ch2: dr $e762, $e888
-Music_UnsettlingPlace_Ch3: dr $e888, $e8f8
-Music_UnsettlingPlace_Ch4: dr $e8f8, $e941
-
-Music_Town2_Ch1: dr $e941, $e9c1
-Music_Town2_Ch2: dr $e9c1, $eb01
-Music_Town2_Ch3: dr $eb01, $eb76
-Music_Town2_Ch4: dr $eb76, $eb80
-
-Music_Racing_Ch1: dr $eb80, $ec1a
-Music_Racing_Ch2: dr $ec1a, $eccd
-Music_Racing_Ch3: dr $eccd, $edf7
-Music_Racing_Ch4: dr $edf7, $ee02
-
-Music_Meteor_Ch1: dr $ee02, $ee9d
-Music_Meteor_Ch2: dr $ee9d, $efde
-Music_Meteor_Ch3: dr $efde, $f0d1
-Music_Meteor_Ch4: dr $f0d1, $f0d8
-
-Music_LevelUpJingle_Ch1: dr $f0d8, $f114
-Music_LevelUpJingle_Ch2: dr $f114, $f14b
-Music_LevelUpJingle_Ch3: dr $f14b, $f16b
-Music_LevelUpJingle_Ch4: dr $f16b, $f183
-
-Music_ExpJingle_Ch1: dr $f183, $f1b0
-Music_ExpJingle_Ch2: dr $f1b0, $f1df
-Music_ExpJingle_Ch3: dr $f1df, $f1f6
-Music_ExpJingle_Ch4: dr $f1f6, $f1fc
-
-Music_EnemyFainted_Ch1: dr $f1fc, $f21c
-Music_EnemyFainted_Ch2: dr $f21c, $f23c
-Music_EnemyFainted_Ch3: dr $f23c, $f251
-Music_EnemyFainted_Ch4: dr $f251, $f257
+INCLUDE "audio/music/academy.asm"
+INCLUDE "audio/music/unsettling_place.asm"
+INCLUDE "audio/music/town_2.asm"
+INCLUDE "audio/music/racing.asm"
+INCLUDE "audio/music/meteor.asm"
+INCLUDE "audio/music/level_up_jingle.asm"
+INCLUDE "audio/music/exp_jingle.asm"
+INCLUDE "audio/music/monster_fainted.asm"
 
 SECTION "banknum3", ROMX[$7fff], BANK[$3]
 	db $3

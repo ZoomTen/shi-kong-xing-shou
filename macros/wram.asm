@@ -64,12 +64,12 @@ channel_struct: MACRO
 \1CurOctave::                db ; 1B
 \1PitchOffset::              db ; 1C
 \1NoteFreq::                 dw ; 1D
-\1Field1F::                  db ; 1F
+\1EnvelopeModifier::         db ; 1F
 \1Playhead::                 dw ; 20
 \1LoopPoint1::               dw ; 22
-\1LoadPoint::                dw ; 24
-\1LoopPoint2::               dw ; 26
-\1Field28::                  dw ; 28
-\1Field2A::                  db ; 2A
-\1Field2B::                  db ; 2B
+\1LoopPoint2::               dw ; 24
+\1ReturnPoint1::             dw ; 26
+\1ReturnPoint2::             dw ; 28
+\1LoopCounter1::             db ; 2A
+\1LoopCounter2::             db ; 2B
 ENDM

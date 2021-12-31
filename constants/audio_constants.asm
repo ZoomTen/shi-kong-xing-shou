@@ -1,3 +1,19 @@
+; pitch
+	const_def 0
+	const C_ ; 0
+	const C# ; 1
+	const D_ ; 2
+	const D# ; 3
+	const E_ ; 4
+	const F_ ; 5
+	const F# ; 6
+	const G_ ; 7
+	const G# ; 8
+	const A_ ; 9
+	const A# ; a
+	const B_ ; b
+	const __ ; c, rest
+
 ; channel
 	const_def
 	const CHAN1 ; 0
@@ -11,6 +27,20 @@ NUM_MUSIC_CHANS EQU const_value
 	const CHAN8 ; 7
 NUM_NOISE_CHANS EQU const_value - NUM_MUSIC_CHANS
 NUM_CHANNELS EQU const_value
+
+; duty cycle values
+	const_def
+	const DUTY_12 ; 0
+	const DUTY_25 ; 1
+	const DUTY_50 ; 2
+	const DUTY_75 ; 3
+
+; stereo_panning values
+	const_def
+	const STEREO_ALTERNATING
+	const STEREO_RIGHT
+	const STEREO_LEFT
+	const STEREO_CENTER
 
 ; channel_struct members (see macros/wram.asm)
 CHANNEL_SONG_ID                     EQUS "(wChannel1SongID - wChannel1)"
@@ -41,13 +71,14 @@ CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG  EQUS "(wChannel1InstrumentUnknown2Retrig - w
 CHANNEL_CUR_OCTAVE                  EQUS "(wChannel1CurOctave - wChannel1)"
 CHANNEL_PITCH_OFFSET                EQUS "(wChannel1PitchOffset - wChannel1)"
 CHANNEL_NOTE_FREQ                   EQUS "(wChannel1NoteFreq - wChannel1)"
-CHANNEL_FIELD1F                     EQUS "(wChannel1Field1F - wChannel1)"
+; The envelope to use every time a note is "retriggered"
+CHANNEL_ENVELOPE_MODIFIER           EQUS "(wChannel1EnvelopeModifier - wChannel1)"
 CHANNEL_PLAYHEAD                    EQUS "(wChannel1Playhead - wChannel1)"
 CHANNEL_LOOP_POINT_1                EQUS "(wChannel1LoopPoint1 - wChannel1)"
-CHANNEL_LOAD_POINT                  EQUS "(wChannel1LoadPoint - wChannel1)"
 CHANNEL_LOOP_POINT_2                EQUS "(wChannel1LoopPoint2 - wChannel1)"
-CHANNEL_FIELD28                     EQUS "(wChannel1Field28 - wChannel1)"
-CHANNEL_FIELD2A                     EQUS "(wChannel1Field2A - wChannel1)"
-CHANNEL_FIELD2B                     EQUS "(wChannel1Field2B - wChannel1)"
+CHANNEL_RETURN_POINT_1              EQUS "(wChannel1ReturnPoint1 - wChannel1)"
+CHANNEL_RETURN_POINT_2              EQUS "(wChannel1ReturnPoint2 - wChannel1)"
+CHANNEL_LOOP_COUNTER_1              EQUS "(wChannel1LoopCounter1 - wChannel1)"
+CHANNEL_LOOP_COUNTER_2              EQUS "(wChannel1LoopCounter2 - wChannel1)"
 
 CHANNEL_STRUCT_LENGTH EQUS "(wChannel2 - wChannel1)"

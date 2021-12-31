@@ -1,4 +1,4 @@
-Func_01f_4000::
+_LoadTextFaceGFX::
 ; 2bpp
 	ld de, FacePicPointers
 	ld a, [wTextFaceID]

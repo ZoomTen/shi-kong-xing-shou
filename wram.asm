@@ -343,39 +343,57 @@ wChannel6:: channel_struct wChannel6
 wChannel7:: channel_struct wChannel7
 wChannel8:: channel_struct wChannel8
 
-wd56e:: ds 1
-wd56f:: ds 1
-wd570:: ds 1
-wd571:: ds 1
-wd572:: ds 1
-wd573:: ds 1
-wd574:: ds 1
+wCh1DataCurrentSweep:: ds 1
+wCh1DataCurrentDutyLength:: ds 1
+wCh1DataCurrentEnvelope:: ds 1
+wCh1DataCurrentFrequency:: ds 2
 
-wd575:: ds 1
-wd576:: ds 1
-wd577:: ds 2
-wd579:: ds 1
-wd57a:: ds 1
-wd57b:: ds 1
-wd57c:: ds 1
-wd57d:: ds 1
-wd57e:: ds 1
-wd57f:: ds 1
-wd580:: ds 1
-wd581:: ds 2
-wd583:: ds 1
+wCh2DataCurrentDutyLength:: ds 1
+wCh2DataCurrentEnvelope:: ds 1
+wCh2DataCurrentFrequency:: ds 2
 
-	ds $14
-wd598:: ds 1
-wd599:: ds 2
-wd59b:: ds 1
+wCh3DataEnable:: ds 2
+wCh3DataCurrentVolume:: ds 1
+wCh3DataCurrentFrequency:: ds 2
+
+wCh4DataCurrentLength:: ds 1
+wCh4DataCurrentEnvelope:: ds 1
+wCh4DataCurrentFrequency:: ds 2
+
+wSoundGlobalStereo:: ds 1
+wSoundStereoChannels:: ds 2
+
+wCh1DataLastSweep:: ds 1
+wCh1DataLastDutyLength:: ds 1
+wCh1DataLastEnvelope:: ds 1
+wCh1DataLastFrequency:: ds 2
+
+wCh2DataLastDutyLength:: ds 1
+wCh2DataLastEnvelope:: ds 1
+wCh2DataLastFrequency:: ds 2
+
+wCh3DataLastEnable:: ds 2
+wCh3DataLastVolume:: ds 1
+wCh3DataLastFrequency:: ds 2
+
+wd591:: ds 1
+wd592:: ds 1
+wd593:: ds 2
+
+wd595:: ds 1
+wd596:: ds 1
+wd597:: ds 1
+wCh1NoteCounter:: ds 1 ; 98
+wCh2NoteCounter:: ds 1
+	ds 1
+wCh4DataLastEnvelope:: ds 1
 
 	ds $6b
 
 wd607:: ds 1
-wd608:: ds 1
-wd609:: ds 1
-wd60a:: ds 1
+wCh3TargetWaveform:: ds 1
+wCh7TargetWaveform:: ds 1
+wSoundLastWaveform:: ds 1
 wSoundFadeEnabled:: ds 1
 wSoundFadeTimer:: ds 1
 wd60d:: ds 1

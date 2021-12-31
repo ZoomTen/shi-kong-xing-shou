@@ -752,50 +752,49 @@ Func_085b::
 	homecall Func_01e_4000
 	ret
 
-Func_0868::
+LoadTextFaceGFX::
 ; Load face pic bank
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wTextFaceID]
 	cp 58
-	jr c, .asm_087c
+	jr c, .other_bank
 
 ; [wTextFaceID] >= 58
-	ld a, BANK(Func_015_4000)
+	ld a, BANK(_LoadTextFaceGFX2)
 	rst Bankswitch
-	call Func_015_4000
+	call _LoadTextFaceGFX2
 	pop af
 	rst Bankswitch
 	ret
 
-.asm_087c
-	ld a, BANK(Func_01f_4000)
+.other_bank
+	ld a, BANK(_LoadTextFaceGFX)
 	rst Bankswitch
-	call Func_01f_4000
+	call _LoadTextFaceGFX
 	pop af
 	rst Bankswitch
 	ret
 
-Func_0885::
-; Load face pic bank 2?
+LoadTextFaceExtraSprites::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wTextFaceID]
 	cp 58
-	jr c, .asm_0899
+	jr c, .other_bank
 
 ; [wTextFaceID] >= 58
-	ld a, BANK(Func_013_4000)
+	ld a, BANK(_LoadTextFaceExtraSprites2)
 	rst Bankswitch
-	call Func_013_4000
+	call _LoadTextFaceExtraSprites2
 	pop af
 	rst Bankswitch
 	ret
 
-.asm_0899
-	ld a, BANK(Func_020_4000)
+.other_bank
+	ld a, BANK(_LoadTextFaceExtraSprites)
 	rst Bankswitch
-	call Func_020_4000
+	call _LoadTextFaceExtraSprites
 	pop af
 	rst Bankswitch
 	ret
