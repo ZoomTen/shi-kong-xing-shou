@@ -56,3 +56,21 @@ jobs:
         env:
           CI_DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python3 .github/ok/webhook.py $CI_DISCORD_WEBHOOK
+      
+      - name: Update progress site
+        if: ${{ github.event_name == 'push' && ( ( github.repository_owner == 'ZoomTen' ) || ( github.repository_owner == 'libjet' ) ) }}
+        env:
+          CI_GITHUB_TOKEN: ${{ secrets.UPDATE_SITE_TOKEN }}
+        run: |
+          git clone https://github.com/ZoomTen/skxs-disasm-website
+          # update data in repo
+          python3 .github/ok/add_current_info.py skxs-disasm-website/src/update.json
+          # go into repo and update it
+          cd skxs-disasm-website
+          git config user.name "GitHub Actions"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://github-actions:$CI_GITHUB_TOKEN@github.com/ZoomTen/skxs-disasm-website.git
+          git add src/update.json
+          git commit -m "[AUTO] Update progress JSON"
+          git push origin master
+          
