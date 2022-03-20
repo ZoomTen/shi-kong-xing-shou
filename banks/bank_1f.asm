@@ -42,7 +42,7 @@ Func_01f_4028:
 	ld bc, $100
 	call CopyBytesVRAM
 
-; palette
+; BG palette
 	ld bc, wcab0
 	ld hl, 7
 	add hl, hl
