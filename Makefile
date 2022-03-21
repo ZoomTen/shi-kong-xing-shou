@@ -97,6 +97,11 @@ gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/sprites/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/intro/sprites/%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
 
+### Dialog faces
+
+gfx/faces/%.bg.2bpp gfx/faces/%.obj.2bpp gfx/faces/%.bg.gbcpal gfx/faces/%.obj.gbcpal: gfx/faces/%.ora
+	$(PYTHON) tools/face2gfx.py $<
+
 ### Catch-all graphics rules
 
 %.2bpp: %.png
