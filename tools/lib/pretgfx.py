@@ -40,20 +40,21 @@ def get_image_padding(width, height, wstep=8, hstep=8):
         'bottom': 0,
     }
     if width % wstep and width >= wstep:
-       pad = float(width % wstep) / 2
-       padding['left']   = int(ceil(pad))
-       padding['right']  = int(floor(pad))
+       pad = float(width % wstep) // 2
+       padding['left']   = ceil(pad)
+       padding['right']  = floor(pad)
     if height % hstep and height >= hstep:
-       pad = float(height % hstep) / 2
-       padding['top']    = int(ceil(pad))
-       padding['bottom'] = int(floor(pad))
+       pad = float(height % hstep) // 2
+       padding['top']    = ceil(pad)
+       padding['bottom'] = floor(pad)
     return padding
 
 def png_to_2bpp(filein, palette, **kwargs):
     """
     Convert a png image to planar 2bpp.
 
-    palette: Must be in the form of -> { 'r': 0x00, 'g': 0x00, 'b': 0x00, 'a': 0xff }
+    palette: Must be a list, where each entry is in
+    the form of -> { 'r': 0x00, 'g': 0x00, 'b': 0x00, 'a': 0xff }
     """
     arguments = {
         'tile_padding': 0,
@@ -89,8 +90,8 @@ def png_to_2bpp(filein, palette, **kwargs):
     # Graphics are stored in tiles instead of lines
     tile_width  = 8
     tile_height = 8
-    num_columns = int(max(width, tile_width) / tile_width)
-    num_rows = int(max(height, tile_height) / tile_height)
+    num_columns = max(width, tile_width) // tile_width
+    num_rows = max(height, tile_height) // tile_height
     image = []
     for row in range(num_rows):
         for column in range(num_columns):
@@ -105,7 +106,7 @@ def png_to_2bpp(filein, palette, **kwargs):
                 bottom, top = 0, 0
                 for bit, quad in enumerate(line):
                     bottom += (quad & 1) << (7 - bit)
-                    top += (int(quad/2) & 1) << (7 - bit)
+                    top += ((quad//2) & 1) << (7 - bit)
                 image += [bottom, top]
     dim = arguments['pic_dimensions']
     if dim:
