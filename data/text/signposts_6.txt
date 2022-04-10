@@ -1,6 +1,6 @@
 @org $0c, $42f9:
 	signpost;
-	text "→金鋼山";
+	text "←金鋼山";
 	done;
 
 @org $0c, $4303:
@@ -10,7 +10,7 @@
 
 @org $0c, $430e:
 	signpost;
-	text "←空中港口";
+	text "→空中港口";
 	done;
 
 @org $0c, $431a:

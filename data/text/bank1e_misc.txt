@@ -2,29 +2,29 @@
 	line;
 
 @org $1e, $582a:
-	text "請選擇道具種類。";
+	text "請選擇道具種類⚬";
 	line;
 
 @org $1e, $5836:
-	text "此處無法使用。";
+	text "此處無法使用⚬";
 	line;
 
 @org $1e, $5841:
 	text "此怪";
 	forcemap "獸", 1;
-	text "無法使用。";
+	text "無法使用⚬";
 	line;
 
 @org $1e, $584f:
-	text "技巧已滿，要忘記舊的技巧嗎?";
+	text "技巧已滿﹐要忘記舊的技巧嗎﹖";
 	line;
 
 @org $1e, $585f:
-	text "要忘記哪一項技巧?";
+	text "要忘記哪一項技巧﹖";
 	line;
 
 @org $1e, $586c:
-	text "確定要忘記嗎?";
+	text "確定要忘記嗎﹖";
 	line;
 
 @org $1e, $5875:
@@ -36,15 +36,15 @@
 	line;
 
 @org $1e, $5888:
-	text "買幾個呢?";
+	text "買幾個呢﹖";
 	line;
 
 @org $1e, $5890:
-	text "賣幾個呢?";
+	text "賣幾個呢﹖";
 	line;
 
 @org $1e, $5898:
-	text "請選擇服務項目~";
+	text "請選擇服務項目～";
 	line;
 
 @org $1e, $58a5:
@@ -52,74 +52,74 @@
 	line;
 
 @org $1e, $58b1:
-	text "確定要存放這隻怪獸嗎?";
+	text "確定要存放這隻怪獸嗎﹖";
 	line;
 
 @org $1e, $58c1:
-	text "已成功的存放在盒子裡了。";
+	text "已成功的存放在盒子裡了⚬";
 	done;
 
 @org $1e, $58d4:
-	text "對不起!你這個盒子已經裝不下了!";
+	text "對不起﹗你這個盒子已經裝不下了﹗";
 	done;
 
 @org $1e, $58f0:
-	text "確定要領出嗎?";
+	text "確定要領出嗎﹖";
 	line;
 
 @org $1e, $58fb:
-	text "已成功的領出了!";
+	text "已成功的領出了﹗";
 	done;
 
 @org $1e, $5907:
-	text "對不起!你身上的隊伍已滿!";
+	text "對不起﹗你身上的隊伍已滿﹗";
 	done;
 
 @org $1e, $591f:
-	text "確定要換盒子嗎?";
+	text "確定要換盒子嗎﹖";
 	line;
 
 @org $1e, $592c:
-	text "更換盒子後會自動存檔，確定要更換嗎?";
+	text "更換盒子後會自動存檔﹐確定要更換嗎﹖";
 	line;
 
 @org $1e, $5947:
-	text "成功的換了盒子，並且存檔完成。";
+	text "成功的換了盒子﹐並且存檔完成⚬";
 	done;
 
 @org $1e, $595f:
-	text "確定要將這隻怪獸放生嗎?";
+	text "確定要將這隻怪獸放生嗎﹖";
 	line;
 
 @org $1e, $5971:
-	text "被放生了!";
+	text "被放生了﹗";
 	done;
 
 @org $1e, $597a:
 	text "此怪獸不能放生";
-	forcemap "!", 1;
-	text "!";
+	forcemap "﹗", 1;
+	text "﹗";
 	done;
 
 @org $1e, $598b:
 	text "盒子裡沒有";
 	forcemap "怪", 1;
 	text "獸";
-	forcemap "!", 1;
+	forcemap "﹗", 1;
 	done;
 
 @org $1e, $599b:
-	text "請選擇要領出的怪獸。";
+	text "請選擇要領出的怪獸⚬";
 	line;
 
 @org $1e, $59a9:
-	text "請選擇要換的盒子。";
+	text "請選擇要換的盒子⚬";
 	line;
 
 @org $1e, $59b7:
-	text "選擇要放生的怪獸。";
+	text "選擇要放生的怪獸⚬";
 	line;
 
 @org $1e, $59c4:
-	text "無法寄放!";
+	text "無法寄放﹗";
 	done;

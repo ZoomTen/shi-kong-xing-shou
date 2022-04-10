@@ -5,7 +5,7 @@
 
 @org $0c, $421e:
 	signpost;
-	text "←奇蹟之泉";
+	text "→奇蹟之泉";
 	done;
 
 @org $0c, $4229:
@@ -15,7 +15,7 @@
 
 @org $0c, $4233:
 	signpost;
-	text "→神木村";
+	text "←神木村";
 	done;
 
 @org $0c, $423d:
@@ -53,5 +53,5 @@
 @org $0c, $4283:
 	signpost;
 	text "↓神木村";
-	line "→地熱城";
+	line "←地熱城";
 	done;

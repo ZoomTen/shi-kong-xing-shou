@@ -15,7 +15,7 @@
 
 @org $0c, $42bd:
 	signpost;
-	text "←永凍園";
+	text "→永凍園";
 	done;
 
 @org $0c, $42c7:
@@ -30,7 +30,7 @@
 
 @org $0c, $42db:
 	signpost;
-	text "怪獸区猛";
-	line "請小心!";
+	text "怪獸凶猛";
+	line "請小心﹗";
 	done;
 

@@ -1,12 +1,12 @@
 @org $08, $4519:
 	init 0, $1a;
-	text "嗯，找死!";
+	text "嗯﹐找死﹗";
 	line;
 	done;
 
 @org $08, $4526:
 	init 0, $1a;
-	text "!";
+	text "﹗";
 	line;
 	done;
 

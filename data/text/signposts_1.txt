@@ -61,7 +61,7 @@
 
 @org $c, $4116:
 	signpost;
-	text "←多魯市";
+	text "→多魯市";
 	done;
 
 @org $c, $4120:

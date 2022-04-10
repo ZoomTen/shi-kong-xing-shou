@@ -10,7 +10,7 @@
 
 @org $0c, $41da:
 	signpost;
-	text "←綠色樹海";
+	text "→綠色樹海";
 	done;
 
 @org $0c, $41e5:

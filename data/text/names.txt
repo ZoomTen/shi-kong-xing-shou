@@ -107,7 +107,7 @@
 	line;
 
 @org $0a, $4757:
-	text "老 閱";
+	text "老 闆";
 	line;
 
 @org $0a, $475e:
@@ -339,7 +339,7 @@
 	line;
 
 @org $0a, $48ca:
-	text "薦 拉";
+	text "蓆 拉";
 	line;
 
 @org $0a, $48d1:
@@ -355,7 +355,7 @@
 	line;
 
 @org $0a, $48e5:
-	text "徽罰者";
+	text "懲罰者";
 	line;
 
 @org $0a, $48eb:

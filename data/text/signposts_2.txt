@@ -5,7 +5,7 @@
 
 @org $0c, $415a:
 	signpost;
-	text "←鐘塔";
+	text "→鐘塔";
 	done;
 
 @org $0c, $4162:
@@ -20,7 +20,7 @@
 
 @org $0c, $4176:
 	signpost;
-	text "←咖啡林";
+	text "→咖啡林";
 	done;
 
 @org $0c, $417f:
@@ -36,7 +36,7 @@
 @org $0c, $4194:
 	signpost;
 	text "↑咖啡林";
-	line "←天之岩";
+	line "→天之岩";
 	line "↓山達農莊";
 	done;
 
