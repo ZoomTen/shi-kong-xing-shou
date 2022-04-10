@@ -1,0 +1,25 @@
+@org $08, $4519:
+	init 0, $1a;
+	text "嗯，找死!";
+	line;
+	done;
+
+@org $08, $4526:
+	init 0, $1a;
+	text "!";
+	line;
+	done;
+
+@org $08, $452d:
+	init 0, $1a;
+	text "嗯嗯嗯";
+	line;
+	unknownE7;
+	done;
+
+@org $08, $4537:
+	init 0, $1a;
+	text "嗯嗯嗯";
+	line;
+	getchoice $1cd0;
+

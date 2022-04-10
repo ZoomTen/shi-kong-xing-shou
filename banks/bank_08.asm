@@ -545,33 +545,7 @@ Script_008_450c:
 	scr_36
 	scr_end
 
-text_08_4519: ; TODO split this into a text file
-	text_init 0, $1a
-	text "嗯", 1
-	text "，找"
-	text "死", 0
-	text "!", 1
-	line
-	done
-
-text_08_4526: ; TODO split this into a text file
-	text_init 0, $1a
-	text "!", 1
-	line
-	done
-
-text_08_452d: ; TODO split this into a text file
-	text_init 0, $1a
-	text "嗯嗯嗯", 1
-	line $e7
-	done
-
-text_08_4537: ; TODO split this into a text file
-	text_init 0, $1a
-	text "嗯嗯嗯", 1
-	line
-	getchoice $1cd0; # TEMP
-
+INCLUDE "data/text/bank08_misc2.asm"
 INCLUDE "data/text/ballots_house_intro.asm"
 INCLUDE "data/text/bank08_misc.asm"
 
