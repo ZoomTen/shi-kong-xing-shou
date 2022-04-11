@@ -592,8 +592,10 @@ wdcd3:: ds 2
 wdcd5:: ds 3
 
 wTextFaceID:: ds 1
-wdcd9:: ds 7
-
+wdcd9:: ds 1
+wdcda:: ds 3
+wdcdd:: ds 1
+wdcde:: ds 2
 wCharacterTilePos:: ds 1
 wdce1:: ds 1
 wdce2:: ds 1
@@ -645,4 +647,3 @@ wde9a:: ds $66
 wMapEvents:: ds $ff
 
 wdfff:: ds 1
-
