@@ -986,7 +986,7 @@ Text_Cont::
 Func_1f70::
 	ld hl, wcde0
 	ld [hl], $3f
-	ld a, [hFFD3]
+	ld a, [hBattleJumptableIndex]
 	and a
 	jr nz, .asm_1f81
 

@@ -315,7 +315,7 @@ wd3f7:: ds 1
 wd3f8:: ds 1
 
 wd3f9:: ds 5
-wd3fe:: ds 1
+wBattleIntroJumptableIndex:: ds 1
 wd3ff:: ds 1
 
 ; sound engine
@@ -472,8 +472,10 @@ wd9b2:: ds 1
 wd9b3:: ds 1
 wd9b4:: ds 1
 wd9b5:: ds 1
-wd9b6:: ds 9
-
+wd9b6:: ds 6
+wd9bc:: ds 1
+wd9bd:: ds 1
+wd9be:: ds 1
 wd9bf:: ds 1
 
 wCharacterTileSrc:: ds 2

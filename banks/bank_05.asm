@@ -343,7 +343,7 @@ OverworldLoop:
 	jp nz, Overworld_GotoProcessStartMenu
 
 ; check if we should be in battle
-	ldh a, [hFFD3]
+	ldh a, [hBattleJumptableIndex]
 	and a
 	jp nz, Overworld_GotoBattleJumptable
 
@@ -387,7 +387,7 @@ OverworldLoop:
 	ld [wd082], a
 
 ; if we are in a battle, go back to loop
-	ld a, [hFFD3]
+	ld a, [hBattleJumptableIndex]
 	and a
 	jr nz, OverworldLoop
 

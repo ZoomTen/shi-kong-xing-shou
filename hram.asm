@@ -82,7 +82,7 @@ hFFCF:: ds 1
 hFFD0:: ds 1
 hFFD1:: ds 1
 hFFD2:: ds 1
-hFFD3:: ds 1
+hBattleJumptableIndex:: ds 1
 hFFD4:: ds 1
 hFFD5:: ds 1
 hFFD6:: ds 1 ; execute script?

@@ -1692,7 +1692,7 @@ Script_39:
 Script_3a:
 	dr $2ce0d, $2ce39
 
-Script_3b:
+Script_3b: ; start a battle?
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -1701,9 +1701,9 @@ Script_3b:
 	ld [wMovementPointer + 1], a
 	farcall Func_02d_507b
 	ld a, $01
-	ld [hFFD3], a
+	ld [hBattleJumptableIndex], a
 	xor a
-	ld [wd3fe], a
+	ld [wBattleIntroJumptableIndex], a
 	ld [wScriptByte], a
 	ld a, $0c
 	ld [wd3ff], a
