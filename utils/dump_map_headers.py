@@ -29,19 +29,19 @@ with open('baserom.gbc', 'rb') as rom:
 		start = addr2offset(*str2addr(s))
 	else:
 		start = int(s, 16)
-	
+
 	rom.seek(start)
-	
+
 	# current bank
 	bank_, start_ = offset2addr(start)
-	
+
 	selection = ''
 	while selection.lower() != 'e':
 		cx = addr_str(offset2addr(rom.tell()))
 		cy = hex(rom.tell())[2:]
 		print(f'({cx}, ${cy}) [W]arp / [H]eader / [E]nd? ', end="")
 		selection = input()
-		
+
 		if selection.lower() == 'h':
 			# is header
 			# extract map data
@@ -50,12 +50,12 @@ with open('baserom.gbc', 'rb') as rom:
 			mt2 = get_number(rom, 1)
 			mt3 = get_number(rom, 1)
 			ma  = get_number(rom, 2)
-			
+
 			ma_location = get_symbol(rom_sym, addr2offset(mb, ma))
 			print(f'{get_symbol(rom_sym, int(cy, 16))}:', file=out)
 			print(f'\tdbaw2 {ma_location}', file=out)
 			#print()
-		
+
 		elif selection.lower() == 'w':
 			# is warp
 			x = get_number(rom, 1)
@@ -67,9 +67,12 @@ with open('baserom.gbc', 'rb') as rom:
 			u3 = get_number(rom, 1)
 			objv = get_number(rom, 2)
 			mapv = get_number(rom, 2)
+
+			#obv = get_symbol(rom_sym, addr2offset(bank, objv))
+			obv = "ObjectEvents_%03x_%04x" % (bank, objv)
+			#mpv = get_symbol(rom_sym, addr2offset(bank_, mapv))
+			mpv = "MapEvents_%03x_%04x" % (bank_, mapv)
 			
-			obv = get_symbol(rom_sym, addr2offset(bank, objv))
-			mpv = get_symbol(rom_sym, addr2offset(bank_, mapv))
 			print(f'\t; warp {x}, {y}, ${hex(gb)[2:]}, {obv}, {mpv}', file=out)
 			print(f'\tdb {x}, {y}', file=out)
 			print(f'\tdw ${hex(gb)[2:]}', file=out)
@@ -78,9 +81,8 @@ with open('baserom.gbc', 'rb') as rom:
 			print(f'\tdw {obv}', file=out)
 			print(f'\tdw {mpv}', file=out)
 			print('', file=out)
-		
+
 		else:
 			pass
 
 out.close()
-	
