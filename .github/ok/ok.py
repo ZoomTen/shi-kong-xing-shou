@@ -53,7 +53,7 @@ def check_syms(symfile):
 				totals += 1
 				label = sym_match.group(1)
 				found_undoc = re.search(r'^Func_|^unk_|^asm_|^w[cd]|^hFF', label)
-				found_part = re.search(r'^Layout_|^Metatiles_|^Blocks_|^AttrMap_|^Palettes_|^Collision_|^Script_|^text_|^gfx_|^unkText_|^PointerTable_|^palette_|^image_', label)
+				found_part = re.search(r'^Layout_|^Blocks_|^Metatiles_|^Collision_|^MapAttributes_|^MapHeader_|^ObjectEvents_|^MapEvents_|^Script_|^[Tt]ext_|^String_|^[Gg][Ff][Xx]_|^Pic_|^BGMap_|^WinMap_|^AttrMap_|^Sprite_|^Palette_|^Palettes_|^unkText_|^Pointers_|^Jumptable_|^PointerTable_|^palette_|^image_', label)
 				if found_undoc:
 					undoc += 1
 				if found_part:
@@ -62,7 +62,7 @@ def check_syms(symfile):
 
 if __name__ == '__main__':
 	exit_state = 0
-	
+
 	# check matching
 	print('\nMatching ROM: ', end='')
 	if check_md5('shi_kong_xing_shou.gbc', '24e73734490ad40f9d8228a80ff15c0b'):
@@ -70,7 +70,7 @@ if __name__ == '__main__':
 	else:
 		print('NON MATCH')
 		exit_state += 1
-	
+
 	# enum banks
 	print()
 	bank_file = check_dr('banks/', 0, True)
@@ -84,10 +84,10 @@ if __name__ == '__main__':
 	for bank in range(0x7f):
 		if (bank+1) not in bank_list:
 			bank_list[bank+1] = 0
-	
+
 	for bank in range(0x7f):
 		print('bank %02x: %5d bytes left (%.1f%%)' % (bank+1, bank_list[bank+1], 100-(bank_list[bank+1]/16384*100)))
-	
+
 	# check percentage
 	with open('baserom.gbc', 'rb') as rom:
 		rom.seek(0, 2)
@@ -100,7 +100,7 @@ if __name__ == '__main__':
 				(bytes/rom_size) * 100
 			)
 		)
-	
+
 	# check symfile
 	totals, undoc, partdoc = check_syms('shi_kong_xing_shou.sym')
 	print('\nDecoded symbols:\n\tTotal: %d\n\tDocumented: %d (%.2f%%)\n\tPartially documented: %d (%.2f%%)\n\tUndocumented: %d (%.2f%%)' %
@@ -111,5 +111,5 @@ if __name__ == '__main__':
 			undoc, undoc/totals*100
 		)
 	)
-	
+
 	exit(exit_state)
