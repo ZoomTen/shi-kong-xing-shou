@@ -38,7 +38,7 @@ with open('baserom.gbc', 'rb') as rom:
 			rom_sym, rom.tell(),
 			returns=lambda x:('MapAttributes_%03x_%04x' % x)
 		)
-		print('%s:' % this_label)
+		print('%s:: ; $%x' % (this_label, addr2offset(bank, address)))
 
 		w = get_number(rom, 1)
 		h = get_number(rom, 1)
@@ -81,10 +81,16 @@ with open('baserom.gbc', 'rb') as rom:
 		if tset2 == 0:
 			tset2 = "0"
 		else:
-			tset2 = get_symbol_or_undefined(
-				rom_sym, addr2offset(bank, get_number(rom, 2)),
-				returns=lambda x:('Tileset_%03x_%04x' % x)
-			)
+			if tset1 == "0":
+				tset2 = get_symbol_or_undefined(
+					rom_sym, addr2offset(7, get_number(rom, 2)),
+					returns=lambda x:('Tileset_%03x_%04x' % x)
+				)
+			else:
+				tset2 = get_symbol_or_undefined(
+					rom_sym, addr2offset(bank, get_number(rom, 2)),
+					returns=lambda x:('Tileset_%03x_%04x' % x)
+				)
 
 		colis = get_symbol_or_undefined(
 			rom_sym, addr2offset(bank, get_number(rom, 2)),
@@ -96,5 +102,4 @@ with open('baserom.gbc', 'rb') as rom:
 			layout,block,mtile,atmap,paloc,
 			tset1,tset2,colis
 		))
-
-	print('; $%x' % rom.tell())
+		print('; $%x' % rom.tell())
