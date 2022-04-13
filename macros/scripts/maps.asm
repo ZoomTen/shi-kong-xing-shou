@@ -57,7 +57,7 @@ map_attributes: MACRO
 	dw \1_Collision
 ENDM
 
-map_attr_data:: MACRO ; temporary measure
+map_attr_data: MACRO ; temporary measure
 ; \1 = width
 ; \2 = height
 ; \3 = layout location
@@ -72,6 +72,7 @@ map_attr_data:: MACRO ; temporary measure
 	dw \3, \4, \5, \6, \7, \8, \9
 	dw 0
 	dw \10
+ENDM
 
 tileset_fragment: MACRO
 ; \1 = tileset source
