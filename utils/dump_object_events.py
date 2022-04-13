@@ -48,8 +48,10 @@ with open('baserom.gbc', 'rb') as rom:
 		script = get_number(rom, 2)
 		script = addr2offset(bank_, script)
 
-		# scriptlabel = get_symbol(rom_sym, script)
-		scriptlabel = ("Script_%03x_%04x" % offset2addr(script))
+		scriptlabel = get_symbol_or_undefined(
+			rom_sym, script,
+			returns=lambda x:("Script_%03x_%04x" % x)
+		)
 
 		print(
 			'\tobject_event $%02x, %2d, %2d, %s, $%02x, $%02x, $%02x, $%02x, %s'
