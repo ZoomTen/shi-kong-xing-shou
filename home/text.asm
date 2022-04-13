@@ -1228,7 +1228,7 @@ ENDR
 	dba Group01_Maps
 	dba Group02_Maps
 	dba Group03_Maps
-	dba unk_052_4000
+	dba Group04_Maps
 	dba unk_063_4000
 	dba unk_069_4000
 	dba unk_069_4883
