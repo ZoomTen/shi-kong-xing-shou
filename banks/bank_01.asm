@@ -46,7 +46,7 @@ TechCity_MapAttributes:
 	dw 0
 	dw TechCity_Collision
 
-unk_001_40f0:
+MapAttributes_001_40f0:
 	db 6, 5
 	dw Layout_001_5bb9
 	dw Blocks_001_5bd8
@@ -58,7 +58,7 @@ unk_001_40f0:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4104:
+MapAttributes_001_4104:
 	db 6, 5
 	dw Layout_001_5c18
 	dw Blocks_001_5c37
@@ -70,7 +70,7 @@ unk_001_4104:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4118:
+MapAttributes_001_4118:
 	db 6, 5
 	dw Layout_001_5c7b
 	dw Blocks_001_5c9a
@@ -82,7 +82,7 @@ unk_001_4118:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_412c:
+MapAttributes_001_412c:
 	db 6, 5
 	dw Layout_001_5cd2
 	dw Blocks_001_5cf1
@@ -94,7 +94,7 @@ unk_001_412c:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4140:
+MapAttributes_001_4140:
 	db 6, 5
 	dw Layout_001_5d35
 	dw Blocks_001_5d54
@@ -106,7 +106,7 @@ unk_001_4140:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4154:
+MapAttributes_001_4154:
 	db 6, 5
 	dw Layout_001_5db4
 	dw Blocks_001_5eb3
@@ -154,7 +154,7 @@ CrystalVillage_MapAttributes:
 	dw 0
 	dw CrystalVillage_Collision
 
-unk_001_41a4:
+MapAttributes_001_41a4:
 	db 6, 5
 	dw Layout_001_5076
 	dw Blocks_001_5095
@@ -166,7 +166,7 @@ unk_001_41a4:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41b8:
+MapAttributes_001_41b8:
 	db 6, 5
 	dw Layout_001_50d5
 	dw Blocks_001_50f4
@@ -178,7 +178,7 @@ unk_001_41b8:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41cc:
+MapAttributes_001_41cc:
 	db 6, 5
 	dw Layout_001_5138
 	dw Blocks_001_5157
@@ -190,7 +190,7 @@ unk_001_41cc:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41e0:
+MapAttributes_001_41e0:
 	db 6, 5
 	dw Layout_001_5197
 	dw Blocks_001_51b6
@@ -202,7 +202,7 @@ unk_001_41e0:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41f4:
+MapAttributes_001_41f4:
 	db 6, 5
 	dw Layout_001_51fa
 	dw Blocks_001_5301
@@ -774,7 +774,7 @@ INCBIN "data/maps/palettes/BellVillage1.bin"
 BellVillage1_Collision:
 	dr $78de, $791a
 
-unk_001_791a:
+MapAttributes_001_791a:
 	dr $791a, $79c8
 
 SECTION "banknum1", ROMX[$7fff], BANK[$1]

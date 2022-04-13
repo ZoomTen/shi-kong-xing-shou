@@ -103,7 +103,7 @@ Group04_Maps::
 	dw MapHeader_052_4f18
 
 MapHeader_052_40cc:
-	dbaw2 ObjectEvents_053_4000
+	dbaw2 MapAttributes_053_4000
 	; warp 0, 7, $7038, ObjectEvents_055_53f1, MapEvents_052_4f36
 	db 0, 7
 	dw $7038
@@ -153,7 +153,7 @@ MapHeader_052_40cc:
 	dw MapEvents_052_4f36
 
 MapHeader_052_411a:
-	dbaw2 ObjectEvents_053_4014
+	dbaw2 MapAttributes_053_4014
 	; warp 2, 0, $6058, ObjectEvents_055_53f1, MapEvents_052_4f5b
 	db 2, 0
 	dw $6058
@@ -219,7 +219,7 @@ MapHeader_052_411a:
 	dw MapEvents_052_4f5b
 
 MapHeader_052_4180:
-	dbaw2 ObjectEvents_053_4028
+	dbaw2 MapAttributes_053_4028
 	; warp 3, 0, $2058, ObjectEvents_055_53f1, MapEvents_052_4f8c
 	db 3, 0
 	dw $2058
@@ -253,7 +253,7 @@ MapHeader_052_4180:
 	dw MapEvents_052_4f8c
 
 MapHeader_052_41b6:
-	dbaw2 ObjectEvents_053_403c
+	dbaw2 MapAttributes_053_403c
 	; warp 0, 0, $2058, ObjectEvents_055_53f1, MapEvents_052_4fa5
 	db 0, 0
 	dw $2058
@@ -271,7 +271,7 @@ MapHeader_052_41b6:
 	dw MapEvents_052_4fa5
 
 MapHeader_052_41d4:
-	dbaw2 ObjectEvents_053_49e8
+	dbaw2 MapAttributes_053_49e8
 	; warp 0, 0, $9058, ObjectEvents_055_53f1, MapEvents_052_4fb2
 	db 0, 0
 	dw $9058
@@ -289,7 +289,7 @@ MapHeader_052_41d4:
 	dw MapEvents_052_4fb2
 
 MapHeader_052_41f2:
-	dbaw2 ObjectEvents_053_4c0c
+	dbaw2 MapAttributes_053_4c0c
 	; warp 2, 5, $9048, ObjectEvents_05c_411d, MapEvents_052_4fb9
 	db 2, 5
 	dw $9048
@@ -307,7 +307,7 @@ MapHeader_052_41f2:
 	dw MapEvents_052_4fb9
 
 MapHeader_052_4210:
-	dbaw2 ObjectEvents_053_4c20
+	dbaw2 MapAttributes_053_4c20
 	; warp 5, 3, $5048, ObjectEvents_05c_411d, MapEvents_052_4fc6
 	db 5, 3
 	dw $5048
@@ -325,7 +325,7 @@ MapHeader_052_4210:
 	dw MapEvents_052_4fc6
 
 MapHeader_052_422e:
-	dbaw2 ObjectEvents_053_4c34
+	dbaw2 MapAttributes_053_4c34
 	; warp 5, 0, $3088, ObjectEvents_05c_411d, MapEvents_052_4fd3
 	db 5, 0
 	dw $3088
@@ -343,7 +343,7 @@ MapHeader_052_422e:
 	dw MapEvents_052_4fd3
 
 MapHeader_052_424c:
-	dbaw2 ObjectEvents_053_4c48
+	dbaw2 MapAttributes_053_4c48
 	; warp 5, 3, $5048, ObjectEvents_05c_411d, MapEvents_052_4fe0
 	db 5, 3
 	dw $5048
@@ -361,7 +361,7 @@ MapHeader_052_424c:
 	dw MapEvents_052_4fe0
 
 MapHeader_052_426a:
-	dbaw2 ObjectEvents_053_4c5c
+	dbaw2 MapAttributes_053_4c5c
 	; warp 0, 0, $9068, ObjectEvents_05c_411d, MapEvents_052_4fed
 	db 0, 0
 	dw $9068
@@ -379,7 +379,7 @@ MapHeader_052_426a:
 	dw MapEvents_052_4fed
 
 MapHeader_052_4288:
-	dbaw2 ObjectEvents_053_5315
+	dbaw2 MapAttributes_053_5315
 	; warp 5, 0, $2068, ObjectEvents_055_53f6, MapEvents_052_4ff4
 	db 5, 0
 	dw $2068
@@ -461,7 +461,7 @@ MapHeader_052_4288:
 	dw MapEvents_052_4ff4
 
 MapHeader_052_4306:
-	dbaw2 ObjectEvents_053_575b
+	dbaw2 MapAttributes_053_575b
 	; warp 1, 0, $2048, ObjectEvents_055_5479, MapEvents_052_5031
 	db 1, 0
 	dw $2048
@@ -495,7 +495,7 @@ MapHeader_052_4306:
 	dw MapEvents_052_5031
 
 MapHeader_052_433c:
-	dbaw2 ObjectEvents_053_5973
+	dbaw2 MapAttributes_053_5973
 	; warp 4, 0, $2058, ObjectEvents_055_553e, MapEvents_052_503e
 	db 4, 0
 	dw $2058
@@ -529,7 +529,7 @@ MapHeader_052_433c:
 	dw MapEvents_052_503e
 
 MapHeader_052_4372:
-	dbaw2 ObjectEvents_053_5d29
+	dbaw2 MapAttributes_053_5d29
 	; warp 0, 0, $2038, ObjectEvents_055_561f, MapEvents_052_505d
 	db 0, 0
 	dw $2038
@@ -563,7 +563,7 @@ MapHeader_052_4372:
 	dw MapEvents_052_505d
 
 MapHeader_052_43a8:
-	dbaw2 ObjectEvents_053_606f
+	dbaw2 MapAttributes_053_606f
 	; warp 0, 0, $9058, ObjectEvents_055_53f1, MapEvents_052_5070
 	db 0, 0
 	dw $9058
@@ -589,7 +589,7 @@ MapHeader_052_43a8:
 	dw MapEvents_052_5070
 
 MapHeader_052_43d2:
-	dbaw2 ObjectEvents_053_66e0
+	dbaw2 MapAttributes_053_66e0
 	; warp 0, 0, $2058, ObjectEvents_05c_411d, MapEvents_052_507d
 	db 0, 0
 	dw $2058
@@ -607,7 +607,7 @@ MapHeader_052_43d2:
 	dw MapEvents_052_507d
 
 MapHeader_052_43f0:
-	dbaw2 ObjectEvents_053_6325
+	dbaw2 MapAttributes_053_6325
 	; warp 0, 0, $9058, ObjectEvents_055_55a3, MapEvents_052_5090
 	db 0, 0
 	dw $9058
@@ -617,7 +617,7 @@ MapHeader_052_43f0:
 	dw MapEvents_052_5090
 
 MapHeader_052_4402:
-	dbaw2 ObjectEvents_053_6339
+	dbaw2 MapAttributes_053_6339
 	; warp 0, 0, $9058, ObjectEvents_055_5597, MapEvents_052_509d
 	db 0, 0
 	dw $9058
@@ -635,7 +635,7 @@ MapHeader_052_4402:
 	dw MapEvents_052_509d
 
 MapHeader_052_4420:
-	dbaw2 ObjectEvents_053_634d
+	dbaw2 MapAttributes_053_634d
 	; warp 0, 0, $9058, ObjectEvents_055_5840, MapEvents_052_50aa
 	db 0, 0
 	dw $9058
@@ -645,7 +645,7 @@ MapHeader_052_4420:
 	dw MapEvents_052_50aa
 
 MapHeader_052_4432:
-	dbaw2 ObjectEvents_053_68a9
+	dbaw2 MapAttributes_053_68a9
 	; warp 5, 1, $5048, ObjectEvents_058_453c, MapEvents_052_50bd
 	db 5, 1
 	dw $5048
@@ -719,7 +719,7 @@ MapHeader_052_4432:
 	dw MapEvents_052_50bd
 
 MapHeader_052_44a4:
-	dbaw2 ObjectEvents_057_4000
+	dbaw2 MapAttributes_057_4000
 	; warp 5, 10, $9058, ObjectEvents_058_482c, MapEvents_052_50f4
 	db 5, 10
 	dw $9058
@@ -745,7 +745,7 @@ MapHeader_052_44a4:
 	dw MapEvents_052_50f4
 
 MapHeader_052_44ce:
-	dbaw2 ObjectEvents_057_461a
+	dbaw2 MapAttributes_057_461a
 	; warp 10, 0, $4088, ObjectEvents_058_4749, MapEvents_052_5119
 	db 10, 0
 	dw $4088
@@ -763,7 +763,7 @@ MapHeader_052_44ce:
 	dw MapEvents_052_5119
 
 MapHeader_052_44ec:
-	dbaw2 ObjectEvents_057_4c29
+	dbaw2 MapAttributes_057_4c29
 	; warp 2, 0, $9068, ObjectEvents_058_40ea, MapEvents_052_5120
 	db 2, 0
 	dw $9068
@@ -781,7 +781,7 @@ MapHeader_052_44ec:
 	dw MapEvents_052_5120
 
 MapHeader_052_450a:
-	dbaw2 ObjectEvents_057_4e74
+	dbaw2 MapAttributes_057_4e74
 	; warp 0, 0, $6038, ObjectEvents_058_4139, MapEvents_052_5139
 	db 0, 0
 	dw $6038
@@ -799,7 +799,7 @@ MapHeader_052_450a:
 	dw MapEvents_052_5139
 
 MapHeader_052_4528:
-	dbaw2 ObjectEvents_057_4e88
+	dbaw2 MapAttributes_057_4e88
 	; warp 5, 0, $6068, ObjectEvents_058_4210, MapEvents_052_5152
 	db 5, 0
 	dw $6068
@@ -817,7 +817,7 @@ MapHeader_052_4528:
 	dw MapEvents_052_5152
 
 MapHeader_052_4546:
-	dbaw2 ObjectEvents_057_5208
+	dbaw2 MapAttributes_057_5208
 	; warp 0, 5, $9048, ObjectEvents_059_40ca, MapEvents_052_5165
 	db 0, 5
 	dw $9048
@@ -835,7 +835,7 @@ MapHeader_052_4546:
 	dw MapEvents_052_5165
 
 MapHeader_052_4564:
-	dbaw2 ObjectEvents_057_521c
+	dbaw2 MapAttributes_057_521c
 	; warp 0, 0, $2028, ObjectEvents_059_40ca, MapEvents_052_5184
 	db 0, 0
 	dw $2028
@@ -853,7 +853,7 @@ MapHeader_052_4564:
 	dw MapEvents_052_5184
 
 MapHeader_052_4582:
-	dbaw2 ObjectEvents_057_5230
+	dbaw2 MapAttributes_057_5230
 	; warp 0, 0, $7018, ObjectEvents_059_40ca, MapEvents_052_5191
 	db 0, 0
 	dw $7018
@@ -871,7 +871,7 @@ MapHeader_052_4582:
 	dw MapEvents_052_5191
 
 MapHeader_052_45a0:
-	dbaw2 ObjectEvents_057_5244
+	dbaw2 MapAttributes_057_5244
 	; warp 0, 0, $2068, ObjectEvents_059_4504, MapEvents_052_519e
 	db 0, 0
 	dw $2068
@@ -889,7 +889,7 @@ MapHeader_052_45a0:
 	dw MapEvents_052_519e
 
 MapHeader_052_45be:
-	dbaw2 ObjectEvents_057_59be
+	dbaw2 MapAttributes_057_59be
 	; warp 0, 0, $2028, ObjectEvents_058_40ea, MapEvents_052_51a5
 	db 0, 0
 	dw $2028
@@ -923,7 +923,7 @@ MapHeader_052_45be:
 	dw MapEvents_052_51a5
 
 MapHeader_052_45f4:
-	dbaw2 ObjectEvents_057_5baa
+	dbaw2 MapAttributes_057_5baa
 	; warp 0, 0, $2068, ObjectEvents_058_40ea, MapEvents_052_51c4
 	db 0, 0
 	dw $2068
@@ -941,7 +941,7 @@ MapHeader_052_45f4:
 	dw MapEvents_052_51c4
 
 MapHeader_052_4612:
-	dbaw2 ObjectEvents_057_5ce2
+	dbaw2 MapAttributes_057_5ce2
 	; warp 3, 0, $2068, ObjectEvents_058_4101, MapEvents_052_51d1
 	db 3, 0
 	dw $2068
@@ -991,7 +991,7 @@ MapHeader_052_4612:
 	dw MapEvents_052_51d1
 
 MapHeader_052_4660:
-	dbaw2 ObjectEvents_057_5f06
+	dbaw2 MapAttributes_057_5f06
 	; warp 0, 7, $9058, ObjectEvents_059_471f, MapEvents_052_51d8
 	db 0, 7
 	dw $9058
@@ -1025,7 +1025,7 @@ MapHeader_052_4660:
 	dw MapEvents_052_51d8
 
 MapHeader_052_4696:
-	dbaw2 ObjectEvents_057_5f1a
+	dbaw2 MapAttributes_057_5f1a
 	; warp 0, 0, $3028, ObjectEvents_059_4736, MapEvents_052_51f1
 	db 0, 0
 	dw $3028
@@ -1043,7 +1043,7 @@ MapHeader_052_4696:
 	dw MapEvents_052_51f1
 
 MapHeader_052_46b4:
-	dbaw2 ObjectEvents_057_5f2e
+	dbaw2 MapAttributes_057_5f2e
 	; warp 0, 2, $6068, ObjectEvents_059_4758, MapEvents_052_51fe
 	db 0, 2
 	dw $6068
@@ -1077,7 +1077,7 @@ MapHeader_052_46b4:
 	dw MapEvents_052_51fe
 
 MapHeader_052_46ea:
-	dbaw2 ObjectEvents_057_5f42
+	dbaw2 MapAttributes_057_5f42
 	; warp 0, 7, $9068, ObjectEvents_059_45d4, MapEvents_052_5217
 	db 0, 7
 	dw $9068
@@ -1119,7 +1119,7 @@ MapHeader_052_46ea:
 	dw MapEvents_052_5217
 
 MapHeader_052_472c:
-	dbaw2 ObjectEvents_057_6852
+	dbaw2 MapAttributes_057_6852
 	; warp 7, 0, $2048, ObjectEvents_059_40cb, MapEvents_052_521e
 	db 7, 0
 	dw $2048
@@ -1209,7 +1209,7 @@ MapHeader_052_472c:
 	dw MapEvents_052_521e
 
 MapHeader_052_47b6:
-	dbaw2 ObjectEvents_057_6866
+	dbaw2 MapAttributes_057_6866
 	; warp 7, 0, $2048, ObjectEvents_05a_4255, MapEvents_052_5273
 	db 7, 0
 	dw $2048
@@ -1299,7 +1299,7 @@ MapHeader_052_47b6:
 	dw MapEvents_052_5273
 
 MapHeader_052_4840:
-	dbaw2 ObjectEvents_057_687a
+	dbaw2 MapAttributes_057_687a
 	; warp 7, 0, $2048, ObjectEvents_05a_4255, MapEvents_052_52c2
 	db 7, 0
 	dw $2048
@@ -1389,7 +1389,7 @@ MapHeader_052_4840:
 	dw MapEvents_052_52c2
 
 MapHeader_052_48ca:
-	dbaw2 ObjectEvents_057_7298
+	dbaw2 MapAttributes_057_7298
 	; warp 3, 0, $6088, ObjectEvents_05a_439b, MapEvents_052_5311
 	db 3, 0
 	dw $6088
@@ -1399,7 +1399,7 @@ MapHeader_052_48ca:
 	dw MapEvents_052_5311
 
 MapHeader_052_48dc:
-	dbaw2 ObjectEvents_057_72ac
+	dbaw2 MapAttributes_057_72ac
 	; warp 3, 0, $6088, ObjectEvents_059_443e, MapEvents_052_533c
 	db 3, 0
 	dw $6088
@@ -1417,7 +1417,7 @@ MapHeader_052_48dc:
 	dw MapEvents_052_533c
 
 MapHeader_052_48fa:
-	dbaw2 ObjectEvents_057_7648
+	dbaw2 MapAttributes_057_7648
 	; warp 0, 0, $2068, ObjectEvents_059_40ca, MapEvents_052_536d
 	db 0, 0
 	dw $2068
@@ -1435,7 +1435,7 @@ MapHeader_052_48fa:
 	dw MapEvents_052_536d
 
 MapHeader_052_4918:
-	dbaw2 ObjectEvents_057_78c6
+	dbaw2 MapAttributes_057_78c6
 	; warp 3, 1, $6088, ObjectEvents_059_40ca, MapEvents_052_53b0
 	db 3, 1
 	dw $6088
@@ -1463,7 +1463,7 @@ MapHeader_052_4936:
 	dw MapEvents_052_53c3
 
 MapHeader_052_4948:
-	dbaw2 unk_001_4104
+	dbaw2 MapAttributes_001_4104
 	; warp 0, 0, $8038, ObjectEvents_055_58e2, MapEvents_052_53d0
 	db 0, 0
 	dw $8038
@@ -1473,7 +1473,7 @@ MapHeader_052_4948:
 	dw MapEvents_052_53d0
 
 MapHeader_052_495a:
-	dbaw2 unk_001_412c
+	dbaw2 MapAttributes_001_412c
 	; warp 0, 0, $8038, ObjectEvents_055_58f9, MapEvents_052_53dd
 	db 0, 0
 	dw $8038
@@ -1483,7 +1483,7 @@ MapHeader_052_495a:
 	dw MapEvents_052_53dd
 
 MapHeader_052_496c:
-	dbaw2 unk_001_40f0
+	dbaw2 MapAttributes_001_40f0
 	; warp 0, 0, $8038, ObjectEvents_055_5910, MapEvents_052_53ea
 	db 0, 0
 	dw $8038
@@ -1523,7 +1523,7 @@ MapHeader_052_49a2:
 	dw MapEvents_052_5417
 
 MapHeader_052_49b4:
-	dbaw2 unk_001_4140
+	dbaw2 MapAttributes_001_4140
 	; warp 0, 0, $8058, ObjectEvents_055_591c, MapEvents_052_5424
 	db 0, 0
 	dw $8058
@@ -1533,7 +1533,7 @@ MapHeader_052_49b4:
 	dw MapEvents_052_5424
 
 MapHeader_052_49c6:
-	dbaw2 unk_001_4118
+	dbaw2 MapAttributes_001_4118
 	; warp 0, 0, $8058, ObjectEvents_058_45e9, MapEvents_052_5431
 	db 0, 0
 	dw $8058
@@ -1543,7 +1543,7 @@ MapHeader_052_49c6:
 	dw MapEvents_052_5431
 
 MapHeader_052_49d8:
-	dbaw2 unk_001_4104
+	dbaw2 MapAttributes_001_4104
 	; warp 0, 0, $8038, ObjectEvents_058_4608, MapEvents_052_543e
 	db 0, 0
 	dw $8038
@@ -1553,7 +1553,7 @@ MapHeader_052_49d8:
 	dw MapEvents_052_543e
 
 MapHeader_052_49ea:
-	dbaw2 unk_001_4154
+	dbaw2 MapAttributes_001_4154
 	; warp 0, 0, $8038, ObjectEvents_058_4669, MapEvents_052_544b
 	db 0, 0
 	dw $8038
@@ -1571,7 +1571,7 @@ MapHeader_052_49ea:
 	dw MapEvents_052_544b
 
 MapHeader_052_4a08:
-	dbaw2 unk_001_412c
+	dbaw2 MapAttributes_001_412c
 	; warp 0, 0, $8038, ObjectEvents_058_4627, MapEvents_052_5458
 	db 0, 0
 	dw $8038
@@ -1601,7 +1601,7 @@ MapHeader_052_4a2c:
 	dw MapEvents_052_5472
 
 MapHeader_052_4a3e:
-	dbaw2 unk_011_6a66
+	dbaw2 MapAttributes_011_6a66
 	; warp 0, 0, $8078, ObjectEvents_059_4119, MapEvents_052_5485
 	db 0, 0
 	dw $8078
@@ -1611,7 +1611,7 @@ MapHeader_052_4a3e:
 	dw MapEvents_052_5485
 
 MapHeader_052_4a50:
-	dbaw2 unk_011_6a7a
+	dbaw2 MapAttributes_011_6a7a
 	; warp 0, 0, $8038, ObjectEvents_059_4125, MapEvents_052_5492
 	db 0, 0
 	dw $8038
@@ -1621,7 +1621,7 @@ MapHeader_052_4a50:
 	dw MapEvents_052_5492
 
 MapHeader_052_4a62:
-	dbaw2 unk_011_6a8e
+	dbaw2 MapAttributes_011_6a8e
 	; warp 0, 0, $8038, ObjectEvents_059_413c, MapEvents_052_549f
 	db 0, 0
 	dw $8038
@@ -1631,7 +1631,7 @@ MapHeader_052_4a62:
 	dw MapEvents_052_549f
 
 MapHeader_052_4a74:
-	dbaw2 unk_011_6aa2
+	dbaw2 MapAttributes_011_6aa2
 	; warp 0, 0, $8078, ObjectEvents_059_4153, MapEvents_052_54ac
 	db 0, 0
 	dw $8078
@@ -1641,7 +1641,7 @@ MapHeader_052_4a74:
 	dw MapEvents_052_54ac
 
 MapHeader_052_4a86:
-	dbaw2 unk_011_6ab6
+	dbaw2 MapAttributes_011_6ab6
 	; warp 0, 0, $8038, ObjectEvents_059_442e, MapEvents_052_54b9
 	db 0, 0
 	dw $8038
@@ -1651,7 +1651,7 @@ MapHeader_052_4a86:
 	dw MapEvents_052_54b9
 
 MapHeader_052_4a98:
-	dbaw2 unk_001_4154
+	dbaw2 MapAttributes_001_4154
 	; warp 0, 0, $8038, ObjectEvents_059_416a, MapEvents_052_54c6
 	db 0, 0
 	dw $8038
@@ -1697,7 +1697,7 @@ MapHeader_052_4ad4:
 	dw MapEvents_052_54e6
 
 MapHeader_052_4ae6:
-	dbaw2 unk_050_6ebf
+	dbaw2 MapAttributes_050_6ebf
 	; warp 0, 0, $9058, ObjectEvents_055_53f1, MapEvents_052_54f3
 	db 0, 0
 	dw $9058
@@ -1715,7 +1715,7 @@ MapHeader_052_4ae6:
 	dw MapEvents_052_54f3
 
 MapHeader_052_4b04:
-	dbaw2 unk_050_7132
+	dbaw2 MapAttributes_050_7132
 	; warp 0, 0, $9048, ObjectEvents_055_53f1, MapEvents_052_5506
 	db 0, 0
 	dw $9048
@@ -1733,7 +1733,7 @@ MapHeader_052_4b04:
 	dw MapEvents_052_5506
 
 MapHeader_052_4b22:
-	dbaw2 ObjectEvents_053_575b
+	dbaw2 MapAttributes_053_575b
 	; warp 1, 0, $2048, ObjectEvents_05c_411d, MapEvents_052_550d
 	db 1, 0
 	dw $2048
@@ -1767,7 +1767,7 @@ MapHeader_052_4b22:
 	dw MapEvents_052_550d
 
 MapHeader_052_4b58:
-	dbaw2 ObjectEvents_053_5315
+	dbaw2 MapAttributes_053_5315
 	; warp 5, 0, $2068, ObjectEvents_05c_415c, MapEvents_052_5520
 	db 5, 0
 	dw $2068
@@ -1867,7 +1867,7 @@ MapHeader_052_4be2:
 	dw MapEvents_052_555d
 
 MapHeader_052_4bf4:
-	dbaw2 unk_001_4104
+	dbaw2 MapAttributes_001_4104
 	; warp 0, 0, $8038, ObjectEvents_05c_4289, MapEvents_052_556a
 	db 0, 0
 	dw $8038
@@ -1877,7 +1877,7 @@ MapHeader_052_4bf4:
 	dw MapEvents_052_556a
 
 MapHeader_052_4c06:
-	dbaw2 unk_001_412c
+	dbaw2 MapAttributes_001_412c
 	; warp 0, 0, $8038, ObjectEvents_05c_42de, MapEvents_052_5577
 	db 0, 0
 	dw $8038
@@ -1887,7 +1887,7 @@ MapHeader_052_4c06:
 	dw MapEvents_052_5577
 
 MapHeader_052_4c18:
-	dbaw2 unk_001_40f0
+	dbaw2 MapAttributes_001_40f0
 	; warp 0, 0, $8038, ObjectEvents_05c_42fd, MapEvents_052_5584
 	db 0, 0
 	dw $8038
@@ -1927,7 +1927,7 @@ MapHeader_052_4c4e:
 	dw MapEvents_052_55b1
 
 MapHeader_052_4c60:
-	dbaw2 unk_001_4140
+	dbaw2 MapAttributes_001_4140
 	; warp 0, 0, $8058, ObjectEvents_05c_430d, MapEvents_052_55be
 	db 0, 0
 	dw $8058
@@ -1945,7 +1945,7 @@ MapHeader_052_4c60:
 	dw MapEvents_052_55be
 
 MapHeader_052_4c7e:
-	dbaw2 ObjectEvents_053_6c74
+	dbaw2 MapAttributes_053_6c74
 	; warp 0, 0, $9058, ObjectEvents_05c_41b1, MapEvents_052_55cb
 	db 0, 0
 	dw $9058
@@ -1971,7 +1971,7 @@ MapHeader_052_4c7e:
 	dw MapEvents_052_55cb
 
 MapHeader_052_4ca8:
-	dbaw2 ObjectEvents_053_6eec
+	dbaw2 MapAttributes_053_6eec
 	; warp 0, 7, $9048, ObjectEvents_058_4868, MapEvents_052_55d2
 	db 0, 7
 	dw $9048
@@ -1997,7 +1997,7 @@ MapHeader_052_4ca8:
 	dw MapEvents_052_55d2
 
 MapHeader_052_4cd2:
-	dbaw2 ObjectEvents_057_4c29
+	dbaw2 MapAttributes_057_4c29
 	; warp 2, 0, $9068, ObjectEvents_058_40ea, MapEvents_052_55d9
 	db 2, 0
 	dw $9068
@@ -2015,7 +2015,7 @@ MapHeader_052_4cd2:
 	dw MapEvents_052_55d9
 
 MapHeader_052_4cf0:
-	dbaw2 ObjectEvents_057_4e74
+	dbaw2 MapAttributes_057_4e74
 	; warp 0, 0, $6038, ObjectEvents_058_4a45, MapEvents_052_55f2
 	db 0, 0
 	dw $6038
@@ -2033,7 +2033,7 @@ MapHeader_052_4cf0:
 	dw MapEvents_052_55f2
 
 MapHeader_052_4d0e:
-	dbaw2 ObjectEvents_057_4e88
+	dbaw2 MapAttributes_057_4e88
 	; warp 5, 0, $6068, ObjectEvents_058_41ee, MapEvents_052_560b
 	db 5, 0
 	dw $6068
@@ -2051,7 +2051,7 @@ MapHeader_052_4d0e:
 	dw MapEvents_052_560b
 
 MapHeader_052_4d2c:
-	dbaw2 ObjectEvents_057_7b2f
+	dbaw2 MapAttributes_057_7b2f
 	; warp 0, 0, $20b0, ObjectEvents_059_40ca, MapEvents_052_561e
 	db 0, 0
 	dw $20b0
@@ -2069,7 +2069,7 @@ MapHeader_052_4d2c:
 	dw MapEvents_052_561e
 
 MapHeader_052_4d4a:
-	dbaw2 ObjectEvents_057_7cbb
+	dbaw2 MapAttributes_057_7cbb
 	; warp 0, 0, $6068, ObjectEvents_059_40ca, MapEvents_052_561e
 	db 0, 0
 	dw $6068
@@ -2079,7 +2079,7 @@ MapHeader_052_4d4a:
 	dw MapEvents_052_561e
 
 MapHeader_052_4d5c:
-	dbaw2 ObjectEvents_057_7298
+	dbaw2 MapAttributes_057_7298
 	; warp 3, 0, $6088, ObjectEvents_059_443e, MapEvents_052_561f
 	db 3, 0
 	dw $6088
@@ -2105,7 +2105,7 @@ MapHeader_052_4d5c:
 	dw MapEvents_052_561f
 
 MapHeader_052_4d86:
-	dbaw2 unk_011_6a66
+	dbaw2 MapAttributes_011_6a66
 	; warp 0, 0, $8078, ObjectEvents_05a_42d3, MapEvents_052_5656
 	db 0, 0
 	dw $8078
@@ -2115,7 +2115,7 @@ MapHeader_052_4d86:
 	dw MapEvents_052_5656
 
 MapHeader_052_4d98:
-	dbaw2 unk_011_6a7a
+	dbaw2 MapAttributes_011_6a7a
 	; warp 0, 0, $8038, ObjectEvents_05a_42fe, MapEvents_052_5663
 	db 0, 0
 	dw $8038
@@ -2125,7 +2125,7 @@ MapHeader_052_4d98:
 	dw MapEvents_052_5663
 
 MapHeader_052_4daa:
-	dbaw2 unk_011_6a8e
+	dbaw2 MapAttributes_011_6a8e
 	; warp 0, 0, $8038, ObjectEvents_05a_4341, MapEvents_052_5670
 	db 0, 0
 	dw $8038
@@ -2135,7 +2135,7 @@ MapHeader_052_4daa:
 	dw MapEvents_052_5670
 
 MapHeader_052_4dbc:
-	dbaw2 unk_011_6aa2
+	dbaw2 MapAttributes_011_6aa2
 	; warp 0, 0, $8078, ObjectEvents_05a_4369, MapEvents_052_567d
 	db 0, 0
 	dw $8078
@@ -2145,7 +2145,7 @@ MapHeader_052_4dbc:
 	dw MapEvents_052_567d
 
 MapHeader_052_4dce:
-	dbaw2 unk_011_6ab6
+	dbaw2 MapAttributes_011_6ab6
 	; warp 0, 0, $8038, ObjectEvents_05a_40bd, MapEvents_052_568a
 	db 0, 0
 	dw $8038
@@ -2155,7 +2155,7 @@ MapHeader_052_4dce:
 	dw MapEvents_052_568a
 
 MapHeader_052_4de0:
-	dbaw2 unk_001_4154
+	dbaw2 MapAttributes_001_4154
 	; warp 0, 0, $8038, ObjectEvents_05a_41bd, MapEvents_052_5697
 	db 0, 0
 	dw $8038
@@ -2193,7 +2193,7 @@ MapHeader_052_4e10:
 	dw MapEvents_052_56b7
 
 MapHeader_052_4e22:
-	dbaw2 ObjectEvents_057_7648
+	dbaw2 MapAttributes_057_7648
 	; warp 0, 0, $2068, ObjectEvents_05a_40bd, MapEvents_052_56c4
 	db 0, 0
 	dw $2068
@@ -2211,7 +2211,7 @@ MapHeader_052_4e22:
 	dw MapEvents_052_56c4
 
 MapHeader_052_4e40:
-	dbaw2 ObjectEvents_057_78c6
+	dbaw2 MapAttributes_057_78c6
 	; warp 3, 1, $6088, ObjectEvents_05a_40bd, MapEvents_052_5707
 	db 3, 1
 	dw $6088
@@ -2229,7 +2229,7 @@ MapHeader_052_4e40:
 	dw MapEvents_052_5707
 
 MapHeader_052_4e5e:
-	dbaw2 ObjectEvents_057_5f06
+	dbaw2 MapAttributes_057_5f06
 	; warp 0, 7, $9058, ObjectEvents_05a_40bd, MapEvents_052_571a
 	db 0, 7
 	dw $9058
@@ -2263,7 +2263,7 @@ MapHeader_052_4e5e:
 	dw MapEvents_052_571a
 
 MapHeader_052_4e94:
-	dbaw2 ObjectEvents_057_5f1a
+	dbaw2 MapAttributes_057_5f1a
 	; warp 0, 0, $3028, ObjectEvents_05a_40bd, MapEvents_052_5733
 	db 0, 0
 	dw $3028
@@ -2281,7 +2281,7 @@ MapHeader_052_4e94:
 	dw MapEvents_052_5733
 
 MapHeader_052_4eb2:
-	dbaw2 ObjectEvents_057_5f2e
+	dbaw2 MapAttributes_057_5f2e
 	; warp 0, 2, $6068, ObjectEvents_05a_40bd, MapEvents_052_5740
 	db 0, 2
 	dw $6068
@@ -2315,7 +2315,7 @@ MapHeader_052_4eb2:
 	dw MapEvents_052_5740
 
 MapHeader_052_4ee8:
-	dbaw2 ObjectEvents_057_5f42
+	dbaw2 MapAttributes_057_5f42
 	; warp 0, 7, $9068, ObjectEvents_05a_44d9, MapEvents_052_5759
 	db 0, 7
 	dw $9068
@@ -2325,7 +2325,7 @@ MapHeader_052_4ee8:
 	dw MapEvents_052_5759
 
 MapHeader_052_4efa:
-	dbaw2 unk_050_6ebf
+	dbaw2 MapAttributes_050_6ebf
 	; warp 0, 0, $9058, ObjectEvents_05c_411d, MapEvents_052_5760
 	db 0, 0
 	dw $9058
@@ -2343,7 +2343,7 @@ MapHeader_052_4efa:
 	dw MapEvents_052_5760
 
 MapHeader_052_4f18:
-	dbaw2 unk_050_7132
+	dbaw2 MapAttributes_050_7132
 	; warp 0, 0, $9048, ObjectEvents_05c_4019, MapEvents_052_5773
 	db 0, 0
 	dw $9048
