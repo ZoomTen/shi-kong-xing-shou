@@ -597,8 +597,503 @@ HandleBattleMoves:
 HandleBattleMenu:
 	dr $ae417, $ae847
 
+
 HandleBattleIntro:
-	dr $ae847, $af650
+	ld de, .Jumptable
+	ld a, [wBattleIntroJumptableIndex]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.Jumptable:
+	dw BattleIntro_Jump_1
+	dw BattleIntro_Jump_2
+	dw BattleIntro_Jump_3
+	dw BattleIntro_Jump_4
+	dw BattleIntro_Jump_5
+	dw BattleIntro_Jump_6
+
+BattleIntro_Jump_1:
+	farcall Func_00b_4dc5
+	call DelayFrame
+	farcall Func_00b_4dc5
+	call DelayFrame
+	farcall Func_00b_4dc5
+	call DelayFrame
+	call Func_1159
+	ld a, [wd991]
+	and 7
+	ld [wdcd9], a
+	xor a
+	ld [wdcda], a
+	farcall StartBattleTransition
+	call DelayFrame
+	ld a, $e1
+	ld [wdce7], a
+	ldh [rOBP0], a
+	ldh [rOBP1], a
+	ld a, $80
+	ldh [rLCDC], a
+	ld hl, wcab0
+	ld de, wcb30
+	ld bc, $80
+	call CopyBytes3
+	ld hl, unk_2b38
+	call CopyBackgroundPalettes
+	ld hl, unk_2b38
+	call CopyObjectPalettes
+	ld hl, wVirtualOAM
+	ld bc, $28
+	ld de, 4
+
+asm_02b_68c3:
+	ld a, $a0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, asm_02b_68c3
+	ldh a, [hSCX]
+	ld [wd9ec], a
+	ldh a, [hFFAF]
+	ld [wd9ed], a
+	ldh a, [hSCY]
+	ld [wd9ee], a
+	ldh a, [hFFB1]
+	ld [wd9ef], a
+	xor a
+	ldh [hFade], a
+	ldh [hSCX], a
+	ldh [hFFAF], a
+	ldh [hSCY], a
+	ldh [hFFB1], a
+	ld [wd9f8], a
+	ld [wd08a], a
+	ld [wd9cc], a
+	ld [wd9cd], a
+	ld [wd9ca], a
+	ld [wd9cb], a
+	ld [wd9f6], a
+	ld [wd9f5], a
+	ld [wd9ea], a
+	ld [wdb18], a
+	ld [wd996], a
+	ld [wd997], a
+	ld [wd9b4], a
+	ld [wd9b3], a
+	ld [wd9b8], a
+	ld [wd9b9], a
+	call ClearBGMap0
+	ld hl, wd978
+	ld c, 8
+	xor a
+
+asm_02b_6922:
+	ld [hli], a
+	dec c
+	jr nz, asm_02b_6922
+	ld a, 1
+	ld [wBattleIntroJumptableIndex], a
+	ld bc, wPartyMons
+
+asm_02b_692e:
+	ld hl, $13
+	add hl, bc
+	ld a, [hl]
+	cp $bf
+	jr z, asm_02b_693a
+	and 1
+	ld [hl], a
+
+asm_02b_693a:
+	ld hl, $16
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $80
+	jr c, asm_02b_692e
+	call DelayFrame
+	ret
+
+BattleIntro_Jump_2:
+	call DelayFrame
+	call Func_02b_69fa
+	ld a, [wd981]
+	ld l, a
+	ld a, [wd981 + 1]
+	ld h, a
+	ld a, [hl]
+	ld [wd9e5], a
+	farcall unk_02c_4000
+	call DelayFrame
+	farcall asm_00a_4593
+	call Func_02b_6ad1
+	call DelayFrame
+	ld hl, unk_02b_6cd6
+	ld de, $96d0
+	ld bc, $90
+	call CopyBytesVRAM
+	ld hl, unk_02b_6c06
+	ld de, $9000
+	ld bc, $d0
+	call CopyBytesVRAM
+	call DelayFrame
+	ld hl, unk_02b_6d66
+	ld de, $cab0
+	ld bc, $30
+	call CopyBytes3
+	ld hl, unk_02b_74d6
+	ld de, $caf0
+	ld bc, $30
+	call CopyBytes3
+	call DelayFrame
+	ld de, unk_02b_6e56
+	ld hl, $9802
+	ld bc, $0606
+	ld a, 6
+	ldh [hFF92], a
+	ldh [hFF93], a
+	call PlaceTilemap
+	ld de, unk_02b_6ee6
+	ld hl, $9802
+	ld bc, $0606
+	ld a, 6
+	ldh [hFF92], a
+	ldh [hFF93], a
+	call PlaceAttrmap
+	ld de, unk_02b_6e7a
+	ld hl, $98cc
+	ld bc, $0606
+	ld a, 6
+	ldh [hFF92], a
+	ldh [hFF93], a
+	call PlaceTilemap
+	ld de, unk_02b_6e9e
+	ld hl, $98cc
+	ld bc, $0606
+	ld a, 6
+	ldh [hFF92], a
+	ldh [hFF93], a
+	call PlaceAttrmap
+	call DelayFrame
+	ld a, 2
+	ld [wBattleIntroJumptableIndex], a
+	call Func_02b_6a41
+	ret
+
+Func_02b_69fa:
+	ld de, unk_02b_6a15
+	ld a, [wd9be]
+	ld l, a
+	ld h, 0
+	add hl, de
+	ld a, [hl]
+	call PlaySound
+	ret
+	ld a, $74
+	call PlaySound
+	ret
+	ld a, $69
+	call PlaySound
+	ret
+
+unk_02b_6a15:
+	db BGM_5a, BGM_5f, BGM_61, BGM_62, BGM_5a
+	db BGM_5a, BGM_5f, BGM_61, BGM_62, BGM_5a
+	db BGM_5a, BGM_5f, BGM_61, BGM_62, BGM_5a
+	db BGM_5a, BGM_5f, BGM_61, BGM_62, BGM_5a
+	db BGM_5a, BGM_5f, BGM_61, BGM_62, BGM_5a
+	db BGM_5a, BGM_5f, BGM_61, BGM_62, BGM_5a
+
+	ld hl, wd93c
+	ld c, 6
+	jr asm_02b_6a46
+	ld hl, wd900
+	ld c, 6
+	jr asm_02b_6a46
+
+Func_02b_6a41:
+	ld hl, wd900
+	ld c, $c
+
+asm_02b_6a46:
+	ld a, $a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld a, $a
+	ld [hli], a
+	ld [hli], a
+	dec c
+	jr nz, asm_02b_6a46
+	ret
+
+BattleIntro_Jump_3:
+	di
+	ld a, $30
+	ldh [rLYC], a
+	ei
+	ld a, $40
+	ldh [hSCX], a
+	ld a, $c0
+	ld [wWX], a
+	xor a
+	ld [wWY], a
+	ld hl, $1072
+	ld a, l
+	ld [wd9e0], a
+	ld a, h
+	ld [wd9e1], a
+	ld a, $c7
+	ldh [rLCDC], a
+	ld hl, wcab0
+	call CopyBackgroundPalettes
+	ld hl, wcaf0
+	call CopyObjectPalettes
+	ld a, 3
+	ld [wBattleIntroJumptableIndex], a
+	ret
+
+BattleIntro_Jump_4:
+	ldh a, [hSCX]
+	sub 2
+	ldh [hSCX], a
+	ld a, [wWX]
+	add 2
+	ld [wWX], a
+	and a
+	jr z, asm_02b_6a9f
+	ret
+
+asm_02b_6a9f:
+	ld a, 4
+	ld [wBattleIntroJumptableIndex], a
+	ld de, unk_02b_6d96
+	ld hl, $98e1
+	ld bc, $0904
+	ld a, 9
+	ldh [hFF92], a
+	ld a, 4
+	ldh [hFF93], a
+	call PlaceTilemap
+	call Func_02b_6ae6
+	ret
+	ld de, unk_02b_6dde
+	ld hl, $9980
+	ld bc, $1406
+	ld a, $14
+	ldh [hFF92], a
+	ld a, 6
+	ldh [hFF93], a
+	call PlaceTilemap
+	ret
+
+Func_02b_6ad1:
+	ld hl, wd86a
+	ld a, $55
+	ld [wd08b], a
+	ld a, $61
+	ld [wd08c], a
+	xor a
+	ld [wCharacterTilePos], a
+	call Func_0b65
+	ret
+
+Func_02b_6ae6:
+	xor a
+	ld [wd0c1], a
+	ld de, $9942
+	ld bc, wPartyMons
+
+asm_02b_6af0:
+	ld hl, 0
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, asm_02b_6b20
+	ld hl, 2
+	add hl, bc
+	ld a, [hli]
+	or [hl]
+	jr z, asm_02b_6b08
+	call WaitVRAM_STAT
+	ld a, $6d
+	ld [de], a
+	jr asm_02b_6b0e
+
+asm_02b_6b08:
+	call WaitVRAM_STAT
+	ld a, $6e
+	ld [de], a
+
+asm_02b_6b0e:
+	ld hl, $16
+	add hl, bc
+	push hl
+	pop bc
+	inc e
+	ld a, [wd0c1]
+	inc a
+	ld [wd0c1], a
+	cp 6
+	jr c, asm_02b_6af0
+
+asm_02b_6b20:
+	xor a
+	ld [wd0c1], a
+	ld a, [wd9dc]
+	and a
+	ret z
+	ld de, $988b
+	ld bc, wd876
+
+asm_02b_6b2f:
+	ld hl, 0
+	add hl, bc
+	ld a, [hl]
+	and a
+	ret z
+	ld hl, 2
+	add hl, bc
+	ld a, [hli]
+	or [hl]
+	jr z, asm_02b_6b46
+	call WaitVRAM_STAT
+	ld a, $6d
+	ld [de], a
+	jr asm_02b_6b4c
+
+asm_02b_6b46:
+	call WaitVRAM_STAT
+	ld a, $6e
+	ld [de], a
+
+asm_02b_6b4c:
+	ld hl, $16
+	add hl, bc
+	push hl
+	pop bc
+	inc e
+	ld a, [wd0c1]
+	inc a
+	ld [wd0c1], a
+	cp 6
+	jr c, asm_02b_6b2f
+	ret
+
+BattleIntro_Jump_5:
+	ld a, 1
+	ld [wd986], a
+	ld a, 1
+	ld [wd9b5], a
+	call Func_1159
+	ld a, [wd991]
+	and 1
+	add $55
+	ld [wd3ff], a
+	farcall Func_02d_4000
+	call Func_02b_55cb
+	call Func_02b_55cb
+	xor a
+	ld [wd9b5], a
+	call Func_1159
+	ld a, [wd991]
+	and 1
+	add 2
+	ld [wd3ff], a
+	farcall Func_02d_4000
+	ld a, 9
+	ldh [hFF92], a
+	ld a, 4
+	ldh [hFF93], a
+	ld bc, $0904
+	ld hl, $9829
+	call Func_0fef
+	ld bc, $0904
+	ld hl, $98e1
+	call Func_0fef
+	ld a, $14
+	ldh [hFF92], a
+	ld a, 6
+	ldh [hFF93], a
+	ld bc, $1406
+	ld hl, $9980
+	call Func_0fef
+	ld a, 5
+	ld [wBattleIntroJumptableIndex], a
+	ret
+
+BattleIntro_Jump_6:
+	ld a, [wWX]
+	sub 4
+	ld [wWX], a
+	cp $c0
+	ret nc
+	ld hl, $98cc
+	ld bc, $0606
+	ld a, 6
+	ldh [hFF92], a
+	ld a, 6
+	ldh [hFF93], a
+	call Func_0fef
+	xor a
+	ldh [hSCX], a
+	ld [wWX], a
+	ld a, 2
+	ldh [hBattleJumptableIndex], a
+	xor a
+	ld [wBattleIntroJumptableIndex], a
+	di
+	ld a, $8f
+	ldh [rLYC], a
+	ei
+	ld hl, $106f
+	ld a, l
+	ld [wd9e0], a
+	ld a, h
+	ld [wd9e1], a
+	ret
+
+unk_02b_6c06:
+	dr $aec06, $aecd6
+
+unk_02b_6cd6::
+	dr $aecd6, $aed66
+
+unk_02b_6d66::
+	dr $aed66, $aed96
+
+unk_02b_6d96::
+	dr $aed96, $aedde
+
+unk_02b_6dde::
+	dr $aedde, $aee56
+
+unk_02b_6e56::
+	dr $aee56, $aee7a
+
+unk_02b_6e7a::
+	dr $aee7a, $aee9e
+
+unk_02b_6e9e::
+	dr $aee9e, $aeee6
+
+unk_02b_6ee6::
+	dr $aeee6, $af4d6
+
+unk_02b_74d6::
+	dr $af4d6, $af650
 
 SECTION "banknum2b", ROMX[$7fff], BANK[$2b]
 	db $2b

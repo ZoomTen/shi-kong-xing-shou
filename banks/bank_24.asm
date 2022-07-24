@@ -1,8 +1,15 @@
 unk_024_4000:
 	dr $90000, $90053
 
-Func_024_4053::
-	dr $90053, $90062
+Func_024_4053:
+	ld de, unk_024_6d77
+	ld a, [wd9bf]
+	ld l, a
+	ld h, 0
+	add hl, de
+	ld a, [hl]
+	ld [wd9bf], a
+	ret
 
 Func_024_4062:
 	dr $90062, $900fd
@@ -246,8 +253,10 @@ StartMenu_BounceCursor:
 	ret
 
 Func_024_6bd0:
-	dr $92bd0, $93c10
+	dr $92bd0, $92d77
 
+unk_024_6d77:
+	dr $92d77, $93c10
 
 SECTION "banknum24", ROMX[$7fff], BANK[$24]
 	db $24

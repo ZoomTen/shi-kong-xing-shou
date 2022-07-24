@@ -1970,6 +1970,8 @@ Func_128e::
 	ld c, a
 	ld a, [wd981 + 1]
 	ld b, a
+
+Func_1296::
 	ld hl, 2
 	add hl, bc
 	ld a, [hli]
