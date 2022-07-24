@@ -1,0 +1,29 @@
+@org $0e, $5b91:
+	init $19, $22; # TEMP
+	text "真是麻煩﹗";
+	para "沒有電了﹐";
+	cont "電子收銀台沒辦";
+	line "法使用⋯";
+	para "你要什麼嗎﹖";
+	cont "不要趁黑偷東西";
+	line "喲﹗";
+	line "";
+	unknownE7;
+	done;
+
+@org $0e, $5bdd:
+	init $14, $25; # TEMP
+	text "需要妮可治療嗎";
+	line "﹖";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $0e, $5bf5:
+	init $1a, $25; # TEMP
+	text "這裡是星獸膠囊";
+	line "存放銀行⚬";
+	para "需要艾娜的服務";
+	line "嗎﹖";
+	line "";
+	getchoice $1cc5; # TEMP
+

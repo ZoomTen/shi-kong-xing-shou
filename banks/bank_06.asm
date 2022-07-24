@@ -92,7 +92,7 @@ Tileset_006_40f9:
 	tileset_fragment gfx_017_6cae, $8800, $180
 	end_tileset
 
-unk_006_410f:
+Tileset_006_410f:
 	dr $1810f, $1812d
 
 Tileset_006_412d:
@@ -102,8 +102,29 @@ Tileset_006_412d:
 	tileset_fragment gfx_019_4960, $8980, $80
 	end_tileset
 
-unk_006_414a:
-	dr $1814a, $18660
+Tileset_006_414a:
+	dr $1814a, $18159
+
+Tileset_006_4159:
+	dr $18159, $1816f
+
+Tileset_006_416f:
+	dr $1816f, $1817e
+
+Tileset_006_417e:
+	dr $1817e, $18194
+
+Tileset_006_4194:
+	dr $18194, $181a3
+
+Tileset_006_41a3:
+	dr $181a3, $181b2
+
+Tileset_006_41b2:
+	dr $181b2, $181ba
+
+Tileset_006_41ba:
+	dr $181ba, $18660
 
 SECTION "banknum6", ROMX[$7fff], BANK[$6]
 	db $6

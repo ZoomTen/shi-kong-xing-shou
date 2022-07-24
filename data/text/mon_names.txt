@@ -511,7 +511,7 @@
 	line;
 
 @org $26, $4b7a:
-	text "举举鳥";
+	text "笨笨鳥";
 	line;
 
 @org $26, $4b80:
@@ -579,7 +579,7 @@
 	line;
 
 @org $26, $4bdd:
-	text "銷魂閣";
+	text "銷魂閹";
 	line;
 
 @org $26, $4be4:
@@ -673,11 +673,11 @@
 	line;
 
 @org $26, $4c76:
-	text "徽罰者";
+	text "懲罰者";
 	line;
 
 @org $26, $4c7c:
-	text "徽罰者";
+	text "懲罰者";
 	line;
 
 @org $26, $4c82:

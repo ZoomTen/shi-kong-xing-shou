@@ -200,7 +200,7 @@ wd08c:: ds 1
 
 wd08d:: ds 1 ; selected page
 wd08e:: ds 1 ; selected option
-wd08f:: ds 1
+wLoadedROMBank:: ds 1
 wd090:: ds 1
 wd091:: ds 1
 wd092:: ds $e
@@ -220,8 +220,9 @@ wd0b4:: ds 1
 wd0b5:: ds 5
 
 wd0ba:: ds 2
-wd0bc:: ds 5
+wd0bc:: ds 4
 
+wd0c0:: ds 1
 wd0c1:: ds 1
 wd0c2:: ds 1
 wd0c3:: ds 1
@@ -315,7 +316,7 @@ wd3f7:: ds 1
 wd3f8:: ds 1
 
 wd3f9:: ds 5
-wd3fe:: ds 1
+wBattleIntroJumptableIndex:: ds 1
 wd3ff:: ds 1
 
 ; sound engine
@@ -399,8 +400,12 @@ wSoundFadeTimer:: ds 1
 wd60d:: ds 1
 	ds 8
 wd616:: ds $2c
-wd642:: ds $2c
-wd66e:: ds $2c
+wd642:: ds $14
+wd656:: ds 1
+wd657:: ds 1
+wd658:: ds $16
+wd66e:: ds $1c
+wd68a:: ds $10
 wd69a:: ds 1
 	ds $23
 
@@ -414,8 +419,9 @@ wd6ea:: ds 1
 	ds 7
 
 wd6f2:: ds 1
-	ds $2b
-
+	ds $17
+wd70a:: ds 1
+	ds $13
 wd71e:: ds 1
 	ds $2b
 
@@ -454,8 +460,10 @@ wd98f:: ds 1
 wd990:: ds 1
 wd991:: ds 2
 wd993:: ds 1
-wd994:: ds 4
-
+wd994:: ds 1
+wd995:: ds 1
+wd996:: ds 1
+wd997:: ds 1
 wd998:: ds 1
 wd999:: ds 1
 wd99a:: ds 1
@@ -472,13 +480,20 @@ wd9b2:: ds 1
 wd9b3:: ds 1
 wd9b4:: ds 1
 wd9b5:: ds 1
-wd9b6:: ds 9
-
+wd9b6:: ds 2
+wd9b8:: ds 1
+wd9b9:: ds 3
+wd9bc:: ds 1
+wd9bd:: ds 1
+wd9be:: ds 1
 wd9bf:: ds 1
 
 wCharacterTileSrc:: ds 2
-wd9c2:: ds $c
-
+wd9c2:: ds 8
+wd9ca:: ds 1
+wd9cb:: ds 1
+wd9cc:: ds 1
+wd9cd:: ds 1
 wd9ce:: ds 2
 
 wd9d0:: ds 2
@@ -489,24 +504,35 @@ wd9d6:: ds 1
 wd9d7:: ds 1
 wd9d8:: ds 1
 wd9d9:: ds 1
-wd9da:: ds 3
+wd9da:: ds 2
+wd9dc:: ds 1
 wd9dd:: ds 1
 
 wWX:: ds 1
 wWY:: ds 1
 
-wd9e0:: ds 2
+wd9e0:: ds 1
+wd9e1:: ds 1
 wd9e2:: ds 1
 wd9e3:: ds 1
 wEnemyMonSpecies:: ds 1
 wd9e5:: ds 4
 wd9e9:: ds 1
 wd9ea:: ds 1
-wd9eb:: ds 5
+wd9eb:: ds 1
+wd9ec:: ds 1
+wd9ed:: ds 1
+wd9ee:: ds 1
+wd9ef:: ds 1
 
 wTempBank:: ds 1
 wd9f1:: ds 2
-wd9f3:: ds 6
+wd9f3:: ds 1
+wd9f4:: ds 1
+wd9f5:: ds 1
+wd9f6:: ds 1
+wd9f7:: ds 1
+wd9f8:: ds 1
 wTilesetBank:: ds 1
 wd9fa:: ds 1
 wd9fb:: ds 1
@@ -545,13 +571,14 @@ wdab8:: ds 1
 wdab9:: ds $15
 
 wTextBGMapPointer:: ds 2
-wdad0:: ds $12
-
+wdad0:: ds $10
+wdae0:: ds 2
 wdae2:: ds 1
 wdae3:: ds 4
 wdae7:: ds 4
-wdaeb:: ds $30
+wdaeb:: ds $2d
 
+wdb18:: ds 3
 wGameTimeSeconds:: ds 1
 wdb1c:: ds 1
 wdb1d:: ds 1
@@ -592,8 +619,10 @@ wdcd3:: ds 2
 wdcd5:: ds 3
 
 wTextFaceID:: ds 1
-wdcd9:: ds 7
-
+wdcd9:: ds 1
+wdcda:: ds 3
+wdcdd:: ds 1
+wdcde:: ds 2
 wCharacterTilePos:: ds 1
 wdce1:: ds 1
 wdce2:: ds 1
@@ -645,4 +674,3 @@ wde9a:: ds $66
 wMapEvents:: ds $ff
 
 wdfff:: ds 1
-

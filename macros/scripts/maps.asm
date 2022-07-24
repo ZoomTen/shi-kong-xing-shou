@@ -57,6 +57,23 @@ map_attributes: MACRO
 	dw \1_Collision
 ENDM
 
+map_attr_data: MACRO ; temporary measure
+; \1 = width|height, e.g. $0D12 == $0D $12
+; \2 = layout location
+; \3 = block location
+; \4 = metatile location
+; \5 = attrmap location
+; \6 = palette location
+; \7 = tileset 1
+; \8 = tileset 2
+; \9 = collision location
+	db (\1 >> 8 & $ff), (\1 & $ff)
+	dw \2, \3, \4, \5, \6
+	dw \7, \8
+	dw 0
+	dw \9
+ENDM
+
 tileset_fragment: MACRO
 ; \1 = tileset source
 ; \2 = VRAM destination

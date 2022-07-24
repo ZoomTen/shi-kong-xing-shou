@@ -371,32 +371,32 @@ TechCity_Header::
 
 unk_007_4579::
 	; map XXXXX
-	dbaw2 unk_001_40f0
+	dbaw2 MapAttributes_001_40f0
 	warp  0, 0, $8048, ObjectEvents_00f_401a, MapEvents_007_4ba5
 
 unk_007_458b::
 	; map XXXXX
-	dbaw2 unk_001_4104
+	dbaw2 MapAttributes_001_4104
 	warp  0, 0, $8048, ObjectEvents_00f_4329, MapEvents_007_4bb2
 
 unk_007_459d::
 	; map XXXXX
-	dbaw2 unk_001_4118
+	dbaw2 MapAttributes_001_4118
 	warp  0, 0, $8058, ObjectEvents_00f_4000, MapEvents_007_4bbf
 
 unk_007_45af::
 	; map XXXXX
-	dbaw2 unk_001_412c
+	dbaw2 MapAttributes_001_412c
 	warp  0, 0, $8038, ObjectEvents_00f_4039, MapEvents_007_4bcc
 
 unk_007_45c1::
 	; map XXXXX
-	dbaw2 unk_001_4140
+	dbaw2 MapAttributes_001_4140
 	warp  0, 0, $8058, ObjectEvents_00f_4348, MapEvents_007_4bd9
 
 unk_007_45d3::
 	; map XXXXX
-	dbaw2 unk_001_4154
+	dbaw2 MapAttributes_001_4154
 	warp  0, 0, $8048, ObjectEvents_00f_43d2, MapEvents_007_4be6
 	warp  0, 0, $7058, ObjectEvents_00f_43e9, MapEvents_007_4bf3
 	warp  0, 0, $8048, ObjectEvents_00f_4416, MapEvents_007_4be6
@@ -425,27 +425,27 @@ CrystalVillage_Header::
 
 unk_007_4687::
 	; map XXXXX
-	dbaw2 unk_001_41a4
+	dbaw2 MapAttributes_001_41a4
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4c63
 
 unk_007_4699::
 	; map XXXXX
-	dbaw2 unk_001_41b8
+	dbaw2 MapAttributes_001_41b8
 	warp  0, 0, $8048, unk_00e_49c5, unk_007_4c70
 
 unk_007_46ab::
 	; map XXXXX
-	dbaw2 unk_001_41cc
+	dbaw2 MapAttributes_001_41cc
 	warp  0, 0, $8068, unk_00e_49df, unk_007_4c7d
 
 unk_007_46bd::
 	; map XXXXX
-	dbaw2 unk_001_41e0
+	dbaw2 MapAttributes_001_41e0
 	warp  0, 0, $8058, unk_00e_49ef, unk_007_4c8a
 
 unk_007_46cf::
 	; map XXXXX
-	dbaw2 unk_001_41f4
+	dbaw2 MapAttributes_001_41f4
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, unk_007_4c97
 	warp  1, 0, $4088, BellSchoolNorthClassroom_ObjectEvents, unk_007_4c97
 

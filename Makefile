@@ -84,6 +84,7 @@ $(PATCH): $(ROM)
 $(ROM): $(OBJS)
 	$(LINK) -n $(SYM) -m $(MAP) -p 0 -o $@ $(OBJS)
 	$(FIX) -cv -t $(ROM_TITLE) -l 0x33 -k A7 -m 0x1b -r 2 -p 0 $@
+	$(PYTHON) tools/sort_symbols.py $(SYM)
 
 data/text/%.asm: data/text/%.txt
 	$(PYTHON) tools/tx_parse.py $< > $@
@@ -115,6 +116,11 @@ include download_translations.make
 
 data/english_text/%.asm: data/english_text/%.csv
 	$(PYTHON) tools/csv2asm.py $^ > $@
+
+### Dialog faces
+
+gfx/faces/%.bg.2bpp gfx/faces/%.obj.2bpp gfx/faces/%.bg.gbcpal gfx/faces/%.obj.gbcpal: gfx/faces/%.ora
+	$(PYTHON) tools/face2gfx.py $<
 
 ### Catch-all graphics rules
 

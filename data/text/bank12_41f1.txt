@@ -1,5 +1,5 @@
 @org $12, $41f1 (text_012_41f1):
 	init $00, $1a; # TEMP
-	text "嗯，找死!";
+	text "嗯﹐找死﹗";
 	line "";
 	done;

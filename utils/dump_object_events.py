@@ -25,13 +25,13 @@ with open('baserom.gbc', 'rb') as rom:
 		start = addr2offset(*str2addr(s))
 	else:
 		start = int(s, 16)
-	
+
 	rom.seek(start)
-	
+
 	bank_, start_ = offset2addr(start)
-	
+
 	print(f'{get_symbol(rom_sym, start)}:')
-	
+
 	spid = get_number(rom, 1)
 	while spid != 0x88:
 		x = get_number(rom, 1)
@@ -47,12 +47,16 @@ with open('baserom.gbc', 'rb') as rom:
 		d = get_number(rom, 1)
 		script = get_number(rom, 2)
 		script = addr2offset(bank_, script)
-		
+
+		scriptlabel = get_symbol_or_undefined(
+			rom_sym, script,
+			returns=lambda x:("Script_%03x_%04x" % x)
+		)
+
 		print(
 			'\tobject_event $%02x, %2d, %2d, %s, $%02x, $%02x, $%02x, $%02x, %s'
-			% (spid, x, y, ram, a, b, c, d, get_symbol(rom_sym, script))
+			% (spid, x, y, ram, a, b, c, d, scriptlabel)
 		)
 		spid = get_number(rom, 1)
 	print('\tobjects_end')
-	print(f'; {hex(rom.tell())}')
-	
+	print('; $%x' % rom.tell())

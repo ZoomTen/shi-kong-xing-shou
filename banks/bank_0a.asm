@@ -80,7 +80,42 @@ PATCH_00a_4423:
 	ds $100
 
 unk_00a_4523:
-	dr $28523, $285ce
+	dr $28523, $28593
+
+asm_00a_4593::
+	ld bc, $c0
+	ld hl, $9610
+	xor a
+	call ByteFillVRAM
+	ld a, $61
+	ld [wd08b], a
+	ld a, $6d
+	ld [wd08c], a
+	ld a, [wEnemyMonSpecies]
+	ld [wd9d8], a
+	farcall asm_026_4616
+	ret
+
+asm_00a_45b4:
+	ld bc, wd86a
+	ld de, NamePointers
+	ld a, [wd9dd]
+	inc a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+asm_00a_45c6:
+	ld a, [hli]
+	ld [bc], a
+	inc bc
+	cp $ed
+	jr nz, asm_00a_45c6
+	ret
 
 Func_00a_45ce:
 	ld a, [$d08e]

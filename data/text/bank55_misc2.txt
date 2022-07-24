@@ -1,0 +1,33 @@
+@org $55, $5367:
+	init $14, $25; # TEMP
+	text "需要妮可治療嗎";
+	line "﹖";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $55, $537f:
+	init $1a, $25; # TEMP
+	text "這裡是星獸膠囊";
+	line "存放銀行⚬";
+	para "需要艾娜的服務";
+	line "嗎﹖";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $55, $53ae:
+	init $19, $22; # TEMP
+	text "需要什麼服務嗎";
+	line "﹖";
+	line "";
+	unknownE7;
+	done;
+
+@org $55, $53c5:
+	init $3a, $63; # TEMP
+	text "這裡是星獸膠囊";
+	line "存放銀行⚬";
+	para "需要";
+	forcemap 1, "服";
+	text "務嗎﹖";
+	line "";
+	getchoice $1cc5; # TEMP

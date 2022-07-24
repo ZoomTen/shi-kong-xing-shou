@@ -58,6 +58,9 @@ def print_text():
             byte = int.from_bytes(file.read(1), "little")
             char = chars[new_charset][byte]
             print(char, end="")
+        elif byte == 0xe1:
+            print("\";\n\tsignpost;")
+            break
         elif byte == 0xe2:
             print("\";\n\tdone;")
             done = 1
@@ -73,6 +76,7 @@ def print_text():
             break
         elif byte == 0xe7:
             print("\";\n\tunknownE7;", end="")
+            done = 1
             break
         elif byte == 0xec:
             print("\";\n\tpara \"", end="")
@@ -86,7 +90,7 @@ def print_text():
             except KeyError:
                 char = 'UNKNOWN'
             print(char, end="")
-        
+
     return done
 
 def get_bank_address(offset):
@@ -104,7 +108,7 @@ while count != 0:
     byte = int.from_bytes(file.read(1), "little")
     # print("{:02x}".format(byte))
     if not byte:
-            print("not byte")
+            print("# not byte")
             break
 
     # get nybbles from byte

@@ -46,7 +46,7 @@ TechCity_MapAttributes:
 	dw 0
 	dw TechCity_Collision
 
-unk_001_40f0:
+MapAttributes_001_40f0:
 	db 6, 5
 	dw Layout_001_5bb9
 	dw Blocks_001_5bd8
@@ -58,7 +58,7 @@ unk_001_40f0:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4104:
+MapAttributes_001_4104:
 	db 6, 5
 	dw Layout_001_5c18
 	dw Blocks_001_5c37
@@ -70,7 +70,7 @@ unk_001_4104:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4118:
+MapAttributes_001_4118:
 	db 6, 5
 	dw Layout_001_5c7b
 	dw Blocks_001_5c9a
@@ -82,7 +82,7 @@ unk_001_4118:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_412c:
+MapAttributes_001_412c:
 	db 6, 5
 	dw Layout_001_5cd2
 	dw Blocks_001_5cf1
@@ -94,7 +94,7 @@ unk_001_412c:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4140:
+MapAttributes_001_4140:
 	db 6, 5
 	dw Layout_001_5d35
 	dw Blocks_001_5d54
@@ -106,7 +106,7 @@ unk_001_4140:
 	dw 0
 	dw Collision_001_5fd4
 
-unk_001_4154:
+MapAttributes_001_4154:
 	db 6, 5
 	dw Layout_001_5db4
 	dw Blocks_001_5eb3
@@ -154,7 +154,7 @@ CrystalVillage_MapAttributes:
 	dw 0
 	dw CrystalVillage_Collision
 
-unk_001_41a4:
+MapAttributes_001_41a4:
 	db 6, 5
 	dw Layout_001_5076
 	dw Blocks_001_5095
@@ -166,7 +166,7 @@ unk_001_41a4:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41b8:
+MapAttributes_001_41b8:
 	db 6, 5
 	dw Layout_001_50d5
 	dw Blocks_001_50f4
@@ -178,7 +178,7 @@ unk_001_41b8:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41cc:
+MapAttributes_001_41cc:
 	db 6, 5
 	dw Layout_001_5138
 	dw Blocks_001_5157
@@ -190,7 +190,7 @@ unk_001_41cc:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41e0:
+MapAttributes_001_41e0:
 	db 6, 5
 	dw Layout_001_5197
 	dw Blocks_001_51b6
@@ -202,7 +202,7 @@ unk_001_41e0:
 	dw 0
 	dw Collision_001_544a
 
-unk_001_41f4:
+MapAttributes_001_41f4:
 	db 6, 5
 	dw Layout_001_51fa
 	dw Blocks_001_5301
@@ -312,13 +312,13 @@ Hideout_MapAttributes:
 
 Hideout_Layout:
 	db 14
-INCBIN "data/maps/layouts/Hideout.bin"
+	INCBIN "data/maps/layouts/Hideout.bin"
 
 Hideout_Metatiles:
-INCBIN "data/maps/metatiles/Hideout.bin"
+	INCBIN "data/maps/metatiles/Hideout.bin"
 
 Hideout_Blocks:
-INCBIN "data/maps/blocks/Hideout.bin"
+	INCBIN "data/maps/blocks/Hideout.bin"
 
 Hideout_AttrMap:
 	dr $45a9, $460a
@@ -331,34 +331,34 @@ Hideout_Collision:
 
 PowerPlant1F_Layout:
 	db 6
-INCBIN "data/maps/layouts/PowerPlant1F.bin"
+	INCBIN "data/maps/layouts/PowerPlant1F.bin"
 
 PowerPlant1F_Blocks:
-INCBIN "data/maps/blocks/PowerPlant1F.bin"
+	INCBIN "data/maps/blocks/PowerPlant1F.bin"
 
 PowerPlant2F_Layout:
 	db 7
-INCBIN "data/maps/layouts/PowerPlant2F.bin"
+	INCBIN "data/maps/layouts/PowerPlant2F.bin"
 
 PowerPlant2F_Blocks:
-INCBIN "data/maps/blocks/PowerPlant2F.bin"
+	INCBIN "data/maps/blocks/PowerPlant2F.bin"
 
 PowerPlant3F_Layout:
 	db 8
-INCBIN "data/maps/layouts/PowerPlant3F.bin"
+	INCBIN "data/maps/layouts/PowerPlant3F.bin"
 
 PowerPlant3F_Blocks:
-INCBIN "data/maps/blocks/PowerPlant3F.bin"
+	INCBIN "data/maps/blocks/PowerPlant3F.bin"
 
 PowerPlant4F_Layout:
 	db 9
-INCBIN "data/maps/layouts/PowerPlant4F.bin"
+	INCBIN "data/maps/layouts/PowerPlant4F.bin"
 
 PowerPlant_Metatiles:
-INCBIN "data/maps/metatiles/PowerPlant.bin"
+	INCBIN "data/maps/metatiles/PowerPlant.bin"
 
 PowerPlant4F_Blocks:
-INCBIN "data/maps/blocks/PowerPlant4F.bin"
+	INCBIN "data/maps/blocks/PowerPlant4F.bin"
 
 PowerPlant_AttrMap:
 	dr $4955, $49a6
@@ -371,13 +371,13 @@ PowerPlant_Collision:
 
 PowerPlantOutside_Layout:
 	db 0
-INCBIN "data/maps/layouts/PowerPlantOutside.bin"
+	INCBIN "data/maps/layouts/PowerPlantOutside.bin"
 
 PowerPlantOutside_Metatiles:
-INCBIN "data/maps/metatiles/PowerPlantOutside.bin"
+	INCBIN "data/maps/metatiles/PowerPlantOutside.bin"
 
 PowerPlantOutside_Blocks:
-INCBIN "data/maps/blocks/PowerPlantOutside.bin"
+	INCBIN "data/maps/blocks/PowerPlantOutside.bin"
 
 PowerPlantOutside_AttrMap:
 	dr $4be7, $4c88
@@ -390,13 +390,13 @@ PowerPlantOutside_Collision:
 
 Junkyard_Layout:
 	db 0
-INCBIN "data/maps/layouts/Junkyard.bin"
+	INCBIN "data/maps/layouts/Junkyard.bin"
 
 Junkyard_Metatiles:
-INCBIN "data/maps/metatiles/Junkyard.bin"
+	INCBIN "data/maps/metatiles/Junkyard.bin"
 
 Junkyard_Blocks:
-INCBIN "data/maps/blocks/Junkyard.bin"
+	INCBIN "data/maps/blocks/Junkyard.bin"
 
 Junkyard_AttrMap:
 	dr $4e12, $4e83
@@ -469,13 +469,13 @@ Collision_001_544a:
 
 CrystalVillage_Layout:
 	db 0
-INCBIN "data/maps/layouts/CrystalVillage.bin"
+	INCBIN "data/maps/layouts/CrystalVillage.bin"
 
 CrystalVillage_Metatiles:
-INCBIN "data/maps/metatiles/CrystalVillage.bin"
+	INCBIN "data/maps/metatiles/CrystalVillage.bin"
 
 CrystalVillage_Blocks:
-INCBIN "data/maps/blocks/CrystalVillage.bin"
+	INCBIN "data/maps/blocks/CrystalVillage.bin"
 
 CrystalVillage_AttrMap:
 	dr $5785, $5826
@@ -572,13 +572,13 @@ Collision_001_5fd4:
 
 TechCity_Layout:
 	db 0
-INCBIN "data/maps/layouts/TechCity.bin"
+	INCBIN "data/maps/layouts/TechCity.bin"
 
 TechCity_Metatiles:
-INCBIN "data/maps/metatiles/TechCity.bin"
+	INCBIN "data/maps/metatiles/TechCity.bin"
 
 TechCity_Blocks:
-INCBIN "data/maps/blocks/TechCity.bin"
+	INCBIN "data/maps/blocks/TechCity.bin"
 
 TechCity_AttrMap:
 	dr $636a, $63eb
@@ -591,13 +591,13 @@ TechCity_Collision:
 
 BellSchoolSouthClassroom_Layout:
 	db 0
-INCBIN "data/maps/layouts/BellSchoolSouthClassroom.bin"
+	INCBIN "data/maps/layouts/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_Metatiles:
-INCBIN "data/maps/metatiles/BellSchoolSouthClassroom.bin"
+	INCBIN "data/maps/metatiles/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_Blocks:
-INCBIN "data/maps/blocks/BellSchoolSouthClassroom.bin"
+	INCBIN "data/maps/blocks/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_AttrMap:
 	dr $65b7, $6648
@@ -610,13 +610,13 @@ BellSchoolSouthClassroom_Collision:
 
 BellObservatory1_Layout:
 	db 0
-INCBIN "data/maps/layouts/BellObservatory1.bin"
+	INCBIN "data/maps/layouts/BellObservatory1.bin"
 
 BellObservatory1_Metatiles:
-INCBIN "data/maps/metatiles/BellObservatory1.bin"
+	INCBIN "data/maps/metatiles/BellObservatory1.bin"
 
 BellObservatory1_Blocks:
-INCBIN "data/maps/blocks/BellObservatory1.bin"
+	INCBIN "data/maps/blocks/BellObservatory1.bin"
 
 BellObservatory1_AttrMap:
 	dr $681f, $68c0
@@ -629,13 +629,13 @@ BellObservatory1_Collision:
 
 BellSchool1_Layout:
 	db 0
-INCBIN "data/maps/layouts/BellSchool1.bin"
+	INCBIN "data/maps/layouts/BellSchool1.bin"
 
 BellSchool1_Metatiles:
-INCBIN "data/maps/metatiles/BellSchool1.bin"
+	INCBIN "data/maps/metatiles/BellSchool1.bin"
 
 BellSchool1_Blocks:
-INCBIN "data/maps/blocks/BellSchool1.bin"
+	INCBIN "data/maps/blocks/BellSchool1.bin"
 
 BellSchool1_AttrMap:
 	dr $6a4d, $6a7e
@@ -648,13 +648,13 @@ BellSchool1_Collision:
 
 BellHealingCenter1_Layout:
 	db 0
-INCBIN "data/maps/layouts/BellHealingCenter1.bin"
+	INCBIN "data/maps/layouts/BellHealingCenter1.bin"
 
 BellHealingCenter1_Metatiles:
-INCBIN "data/maps/metatiles/BellHealingCenter1.bin"
+	INCBIN "data/maps/metatiles/BellHealingCenter1.bin"
 
 BellHealingCenter1_Blocks:
-INCBIN "data/maps/blocks/BellHealingCenter1.bin"
+	INCBIN "data/maps/blocks/BellHealingCenter1.bin"
 
 BellHealingCenter1_AttrMap:
 	dr $6bb9, $6c0a
@@ -667,37 +667,37 @@ BellHealingCenter1_Collision:
 
 BallotsHouse1_Layout:
 	db 0
-INCBIN "data/maps/layouts/BallotsHouse1.bin"
+	INCBIN "data/maps/layouts/BallotsHouse1.bin"
 
 BallotsHouse1_Blocks:
-INCBIN "data/maps/blocks/BallotsHouse1.bin"
+	INCBIN "data/maps/blocks/BallotsHouse1.bin"
 
 HayatosHouse1_Layout:
 	db 0
-INCBIN "data/maps/layouts/HayatosHouse1.bin"
+	INCBIN "data/maps/layouts/HayatosHouse1.bin"
 
 HayatosHouse1_Blocks:
-INCBIN "data/maps/blocks/HayatosHouse1.bin"
+	INCBIN "data/maps/blocks/HayatosHouse1.bin"
 
 CarpetWomansHouse1_Layout:
 	db 0
-INCBIN "data/maps/layouts/CarpetWomansHouse1.bin"
+	INCBIN "data/maps/layouts/CarpetWomansHouse1.bin"
 
 CarpetWomansHouse1_Blocks:
-INCBIN "data/maps/blocks/CarpetWomansHouse1.bin"
+	INCBIN "data/maps/blocks/CarpetWomansHouse1.bin"
 
 FangfangsHouse1_Layout:
 	db 0
-INCBIN "data/maps/layouts/FangfangsHouse1.bin"
+	INCBIN "data/maps/layouts/FangfangsHouse1.bin"
 
 BallotsHouse1_Metatiles:
 HayatosHouse1_Metatiles:
 CarpetWomansHouse1_Metatiles:
 FangfangsHouse1_Metatiles:
-INCBIN "data/maps/metatiles/Houses1.bin"
+	INCBIN "data/maps/metatiles/Houses1.bin"
 
 FangfangsHouse1_Blocks:
-INCBIN "data/maps/blocks/FangfangsHouse1.bin"
+	INCBIN "data/maps/blocks/FangfangsHouse1.bin"
 
 BallotsHouse1_AttrMap:
 HayatosHouse1_AttrMap:
@@ -719,13 +719,13 @@ FangfangsHouse1_Collision:
 
 BellObservatoryOutside1_Layout:
 	db 0
-INCBIN "data/maps/layouts/BellObservatoryOutside1.bin"
+	INCBIN "data/maps/layouts/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_Metatiles:
-INCBIN "data/maps/metatiles/BellObservatoryOutside1.bin"
+	INCBIN "data/maps/metatiles/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_Blocks:
-INCBIN "data/maps/blocks/BellObservatoryOutside1.bin"
+	INCBIN "data/maps/blocks/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_AttrMap:
 	dr $715e, $71ff
@@ -738,13 +738,13 @@ BellObservatoryOutside1_Collision:
 
 BellSchoolOutside1_Layout:
 	db 0
-INCBIN "data/maps/layouts/BellSchoolOutside1.bin"
+	INCBIN "data/maps/layouts/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_Metatiles:
-INCBIN "data/maps/metatiles/BellSchoolOutside1.bin"
+	INCBIN "data/maps/metatiles/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_Blocks:
-INCBIN "data/maps/blocks/BellSchoolOutside1.bin"
+	INCBIN "data/maps/blocks/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_AttrMap:
 	dr $7444, $74e5
@@ -757,24 +757,24 @@ BellSchoolOutside1_Collision:
 
 BellVillage1_Layout:
 	db 0	; unknown
-INCBIN "data/maps/layouts/BellVillage1.bin"
+	INCBIN "data/maps/layouts/BellVillage1.bin"
 
 BellVillage1_Metatiles:
-INCBIN "data/maps/metatiles/BellVillage1.bin"
+	INCBIN "data/maps/metatiles/BellVillage1.bin"
 
 BellVillage1_Blocks:
-INCBIN "data/maps/blocks/BellVillage1.bin"
+	INCBIN "data/maps/blocks/BellVillage1.bin"
 
 BellVillage1_AttrMap:
-INCBIN "data/maps/attributes/BellVillage1.bin"
+	INCBIN "data/maps/attributes/BellVillage1.bin"
 
 BellVillage1_Palettes:
-INCBIN "data/maps/palettes/BellVillage1.bin"
+	INCBIN "data/maps/palettes/BellVillage1.bin"
 
 BellVillage1_Collision:
 	dr $78de, $791a
 
-unk_001_791a:
+MapAttributes_001_791a:
 	dr $791a, $79c8
 
 SECTION "banknum1", ROMX[$7fff], BANK[$1]

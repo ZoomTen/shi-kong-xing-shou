@@ -1678,10 +1678,133 @@ Script_37:
 	ret
 
 Func_00b_4d04:
-	dr $2cd04, $2cdc5
+	xor a
+	ld [hFFB9], a
+	ld bc, wde00
+
+asm_00b_4d0b:
+	ld hl, 0
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr nz, asm_00b_4d20
+
+asm_00b_4d13:
+	ld hl, $16
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $b0
+	jr c, asm_00b_4d0b
+	jr asm_00b_4d3c
+
+asm_00b_4d20:
+	push bc
+	call Func_1296
+	pop bc
+	ld hl, 2
+	add hl, bc
+	ld a, [wd99a]
+	ld [hli], a
+	ld a, [wd99b]
+	ld [hli], a
+	ld hl, $13
+	add hl, bc
+	ld [hl], 0
+	call Func_00b_4d6c
+	jr asm_00b_4d13
+
+asm_00b_4d3c:
+	ld bc, wPartyMons
+
+asm_00b_4d3f:
+	ld hl, 0
+	add hl, bc
+	ld a, [hl]
+	and a
+	ret z
+	push bc
+	call Func_1296
+	pop bc
+	ld hl, 2
+	add hl, bc
+	ld a, [wd99a]
+	ld [hli], a
+	ld a, [wd99b]
+	ld [hli], a
+	ld hl, $13
+	add hl, bc
+	ld [hl], 0
+	call Func_00b_4d6c
+	ld hl, $16
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $80
+	jr c, asm_00b_4d3f
+	ret
+
+Func_00b_4d6c:
+	ld hl, 7
+	add hl, bc
+	ld a, [hl]
+	ld [wd9bf], a
+	push bc
+	farcall Func_024_4053
+	pop bc
+	ld hl, 8
+	add hl, bc
+	ld a, [wd9bf]
+	ld [hli], a
+	ld [hli], a
+	ld a, [hl]
+	ld [wd9bf], a
+	push bc
+	farcall Func_024_4053
+	pop bc
+	ld hl, $b
+	add hl, bc
+	ld a, [wd9bf]
+	ld [hli], a
+	ld [hli], a
+	ld a, [hl]
+	ld [wd9bf], a
+	push bc
+	farcall Func_024_4053
+	pop bc
+	ld hl, $e
+	add hl, bc
+	ld a, [wd9bf]
+	ld [hli], a
+	ld [hli], a
+	ld a, [hl]
+	ld [wd9bf], a
+	push bc
+	farcall Func_024_4053
+	pop bc
+	ld hl, $11
+	add hl, bc
+	ld a, [wd9bf]
+	ld [hli], a
+	ld [hli], a
+	ret
 
 Func_00b_4dc5:
-	dr $2cdc5, $2cdea
+	ld hl, unk_2b38
+	call CopyBackgroundPalettes
+	ld hl, unk_2b38
+	call CopyObjectPalettes
+	call DelayFrame
+	call DelayFrame
+	ld hl, wcab0
+	call CopyBackgroundPalettes
+	ld hl, wcaf0
+	call CopyObjectPalettes
+	call DelayFrame
+	call DelayFrame
+	ret
 
 Script_38:
 	dr $2cdea, $2cdf5
@@ -1692,7 +1815,7 @@ Script_39:
 Script_3a:
 	dr $2ce0d, $2ce39
 
-Script_3b:
+Script_3b: ; start a battle?
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -1701,9 +1824,9 @@ Script_3b:
 	ld [wMovementPointer + 1], a
 	farcall Func_02d_507b
 	ld a, $01
-	ld [hFFD3], a
+	ld [hBattleJumptableIndex], a
 	xor a
-	ld [wd3fe], a
+	ld [wBattleIntroJumptableIndex], a
 	ld [wScriptByte], a
 	ld a, $0c
 	ld [wd3ff], a

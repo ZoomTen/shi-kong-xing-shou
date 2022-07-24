@@ -1,162 +1,162 @@
 @org $08, $4651:
 	init NAME_SNOWY, $08;
-	text "汪汪~汪~";
+	text "汪汪～汪～";
 	done;
 
 @org $08, $465e:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "小白~";
-	line "乖~乖~";
-	para "肚子餓了嗎?";
+	text "小白～";
+	line "乖～乖～";
+	para "肚子餓了嗎﹖";
 	para "我們一起去天文";
-	line "台，";
+	line "台﹐";
 	cont "找爸爸回來吃晚";
-	line "餐好嗎?";
+	line "餐好嗎﹖";
 	done;
 
 @org $08, $46a4:
 	init NAME_SNOWY, $08;
-	text "汪~汪汪~";
+	text "汪～汪汪～";
 	done;
 
 @org $08, $46b1:
 	init NAME_BLANK, $1b;
-	text "賽亞?";
+	text "賽亞﹖";
 	para "我剛剛才和他聊";
-	line "過天而已。";
+	line "過天而已⚬";
 	para "不過他一看到月";
-	line "亮之後，";
+	line "亮之後﹐";
 	cont "就緊張兮兮往天";
-	line "文台跑去了。";
+	line "文台跑去了⚬";
 	done;
 
 @org $08, $46fe:
 	init NAME_BLANK, $13;
-	text "⋯啊?";
+	text "⋯啊﹖";
 	cont "要找你爸爸回家";
-	line "吃晚餐啊。";
+	line "吃晚餐啊⚬";
 	para "真是孝順的小孩";
-	line "。";
-	para "媽媽病逝後，";
-	line "要更堅強喲!";
-	para "啊啊啊!!";
-	cont "又提到這件事~";
-	line "真是對不起。";
+	line "⚬";
+	para "媽媽病逝後﹐";
+	line "要更堅強喲﹗";
+	para "啊啊啊﹗﹗";
+	cont "又提到這件事～";
+	line "真是對不起⚬";
 	done;
 
 @org $08, $4768:
 	init NAME_BLANK, $20;
-	text "是你啊!";
-	para "哈哈哈~";
-	cont "昨天考試，你又";
-	line "考輸我了!";
-	para "嘻嘻~";
-	cont "每‧次‧都‧輸";
-	line "‧我!";
+	text "是你啊﹗";
+	para "哈哈哈～";
+	cont "昨天考試﹐你又";
+	line "考輸我了﹗";
+	para "嘻嘻～";
+	cont "每．次．都．輸";
+	line "．我﹗";
 	done;
 
 @org $08, $47af:
 	init NAME_BLANK, $1d;
 	text "老師要教人家做";
-	line "小餅乾。";
-	cont "這次要吃光光峨";
-	line "。";
+	line "小餅乾⚬";
+	cont "這次要吃光光哦";
+	line "⚬";
 	para "人家這次不會再";
 	line "做那種奇怪的餅";
-	line "乾了啦!";
+	line "乾了啦﹗";
 	done;
 
 @org $08, $47fb:
 	init NAME_BLANK, $16;
-	text "唉呀~";
+	text "唉呀～";
 	cont "最近的月亮怎麼";
-	line "看起來，";
-	cont "有點藍藍的呢?";
+	line "看起來﹐";
+	cont "有點藍藍的呢﹖";
 	para "一定是我眼睛又";
-	line "花了。";
+	line "花了⚬";
 	done;
 
 @org $08, $4837:
 	init NAME_BLANK, $19;
-	text "新聞報導說，";
+	text "新聞報導說﹐";
 	cont "明天晚上會有大";
-	line "規模的流星雨。";
+	line "規模的流星雨⚬";
 	para "記得我年輕的時";
-	line "候，";
+	line "候﹐";
 	cont "也曾預測過一次";
-	line "。";
+	line "⚬";
 	para "但那次的預測錯";
-	line "誤。";
-	para "告訴你峨!";
+	line "誤⚬";
+	para "告訴你哦﹗";
 	cont "婆婆年輕的時候";
-	line "~";
+	line "～";
 	cont "是村子裡有名的";
 	line "⋯⋯";
-	cont "大‧美‧女‧峨";
-	line "!";
+	cont "大．美．女．哦";
+	line "﹗";
 	done;
 
 @org $08, $48d0:
 	init NAME_BLANK, $22;
-	text "啊!?";
+	text "啊﹗﹖";
 	cont "隼人說突然想打";
-	line "網球嗎?";
-	para "沒~有問題!";
+	line "網球嗎﹖";
+	para "沒～有問題﹗";
 	para "爸爸馬上去買一";
-	line "個網球場!";
+	line "個網球場﹗";
 	done;
 
 @org $08, $4911:
 	init NAME_12, $26; # TEMP
-	text "OH~";
-	line "BABY~";
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
 	para "我今天到朋友家";
-	line "，";
+	line "﹐";
 	cont "看到了很多的發";
-	line "明品喲!";
+	line "明品喲﹗";
 	para "他可是個天才的";
-	line "機械科學家。";
+	line "機械科學家⚬";
 	para "比你爸爸還厲害";
-	line "的科學家喲!";
+	line "的科學家喲﹗";
 	done;
 
 @org $08, $497a:
 	init NAME_BLANK, $1f;
-	text "啊啊!!!";
+	text "啊啊﹗﹗﹗";
 	para "怎麼把狗帶到別";
-	line "人家裡來。";
+	line "人家裡來⚬";
 	para "我才剛換了新地";
-	line "毯，";
-	cont "這下又弄髒了!";
+	line "毯﹐";
+	cont "這下又弄髒了﹗";
 	para "真是沒教養的小";
-	line "孩。";
+	line "孩⚬";
 	done;
 
 @org $08, $49cc:
 	init NAME_SNOWY, $08; # TEMP
-	text "嗚~~汪汪汪!";
+	text "嗚～～汪汪汪﹗";
 	done;
 
 @org $08, $49db:
 	init NAME_BLANK, $15;
 	text "你是來找芳芳的";
-	line "嗎?";
-	para "芳~芳~!";
+	line "嗎﹖";
+	para "芳～芳～﹗";
 	para "妳的朋友來找你";
-	line "唷~";
-	para "都這麼晚了，";
+	line "唷～";
+	para "都這麼晚了﹐";
 	cont "留下來一起吃晚";
-	line "餐好嗎?";
+	line "餐好嗎﹖";
 	done;
 
 @org $08, $4a2e:
 	init NAME_BLANK, $18;
 	text "賽亞是一個很棒";
-	line "的天文科學家。";
+	line "的天文科學家⚬";
 	para "在我們天文科學";
-	line "界，";
+	line "界﹐";
 	cont "他算是個天才吧";
-	line "!";
+	line "﹗";
 	para "只是脾氣古怪了";
 	line "一點⋯⋯";
 	done;
@@ -164,63 +164,63 @@
 @org $08, $4a87:
 	init NAME_13, $1a; # TEMP
 	text "你是來找我一起";
-	line "玩的嗎?";
-	para "好~高~興~";
+	line "玩的嗎﹖";
+	para "好～高～興～";
 	done;
 
 @org $08, $4aac:
 	init NAME_BLANK, $15;
 	text "明天晚上會有大";
-	line "規模的流星雨。";
+	line "規模的流星雨⚬";
 	para "這種難見的奇景";
-	line "，";
+	line "﹐";
 	cont "我一定不能錯過";
-	line "!";
-	para "對了~";
-	para "明天晚上，";
+	line "﹗";
+	para "對了～";
+	para "明天晚上﹐";
 	cont "我們去你爸的天";
-	line "文台看流星雨。";
+	line "文台看流星雨⚬";
 	done;
 
 @org $08, $4b14:
 	init NAME_14, $25; # TEMP
 	text "受傷了嗎";
-	forcemap "?", 1;
-	para "如果受傷的話，";
+	forcemap "﹖", 1;
+	para "如果受傷的話﹐";
 	cont "只要進去這個α";
-	line "射線放射器裡，";
-	cont "一下下~";
-	line "就會復原喲!";
-	para "要是受傷了，";
-	line "就來找妮可吧!";
+	line "射線放射器裡﹐";
+	cont "一下下～";
+	line "就會復原喲﹗";
+	para "要是受傷了﹐";
+	line "就來找妮可吧﹗";
 	done;
 
 @org $08, $4b77:
 	init NAME_BALLOT, PIC_BALLOT_0;
 	text "學校的門關起來";
-	line "了!";
+	line "了﹗";
 	done;
 
 @org $08, $4b8b:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "爸~";
-	line "回家吃飯了!";
+	text "爸～";
+	line "回家吃飯了﹗";
 	done;
 
 @org $08, $4b9f:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "爸~";
-	line "吃飯了。";
+	text "爸～";
+	line "吃飯了⚬";
 	done;
 
 @org $08, $4baf:
 	init NAME_BALLOT, $2c;
-	text "爸~!!!";
+	text "爸～﹗﹗﹗";
 	done;
 
 @org $08, $4bbb:
 	init NAME_11, $11; # TEMP
-	text "是巴洛特呀!";
+	text "是巴洛特呀﹗";
 	para "⋯⋯⋯⋯⋯";
 	done;
 
@@ -231,46 +231,46 @@
 
 @org $08, $4bdc:
 	init NAME_11, $11; # TEMP
-	text "喧~";
-	para "不要說話~";
-	para "過來~";
+	text "噓～";
+	para "不要說話～";
+	para "過來～";
 	done;
 
 @org $08, $4bf3:
 	init NAME_11, $11; # TEMP
 	text "自從你媽媽病逝";
-	line "後，";
+	line "後﹐";
 	cont "就沒有像這樣仔";
-	line "細的看過你了。";
+	line "細的看過你了⚬";
 	done;
 
 @org $08, $4c1d:
 	init NAME_BALLOT, PIC_BALLOT_0;
 	text "爸爸⋯";
-	para "你怎麼了?";
+	para "你怎麼了﹖";
 	done;
 
 @org $08, $4c2e:
 	init NAME_11, $11; # TEMP
-	text "不要多話。";
+	text "不要多話⚬";
 	para "看看今夜的星空";
-	line "。";
+	line "⚬";
 	done;
 
 @org $08, $4c4c:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "爸~";
-	para "月光的顏色，";
+	text "爸～";
+	para "月光的顏色﹐";
 	cont "不是暖澄澄的黃";
-	line "色嗎?";
-	para "今晚的月光，";
+	line "色嗎﹖";
+	para "今晚的月光﹐";
 	line "藍的有點可怕⋯";
 	done;
 
 @org $08, $4c8c:
 	init NAME_11, $11; # TEMP
 	text "⋯⋯⋯";
-	para "終於來了嗎?";
+	para "終於來了嗎﹖";
 	para "時機似乎太早了";
 	line "一點⋯⋯";
 	done;
@@ -287,394 +287,393 @@
 
 @org $08, $4cc6:
 	init NAME_BALLOT, $2d;
-	text "槽了!";
+	text "糟了﹗";
 	para "再不趕快出發到";
-	line "學校的話，";
-	cont "一定會遲到的。";
+	line "學校的話﹐";
+	cont "一定會遲到的⚬";
 	done;
 
 @org $08, $4cf4:
 	init NAME_11, $11; # TEMP
-	text "起床了嗎?";
+	text "起床了嗎﹖";
 	line;
-	para "該上學了。";
+	para "該上學了⚬";
 	line;
 	done;
 
 @org $08, $4d0b:
 	init NAME_11, $11; # TEMP
-	text "等等~巴洛特!";
+	text "等等～巴洛特﹗";
 	done;
 
 @org $08, $4d1a:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "⋯?";
-	para "爸，有事嗎?";
+	text "⋯﹖";
+	para "爸﹐有事嗎﹖";
 	done;
 
 @org $08, $4d2d:
 	init NAME_11, $11; # TEMP
-	text "先吃完早餐吧。";
+	text "先吃完早餐吧⚬";
 	done;
 
 @org $08, $4d3e:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "不了。";
+	text "不了⚬";
 	para "上學快要遲到了";
-	line "。";
+	line "⚬";
 	done;
 
 @org $08, $4d56:
 	init NAME_11, $11; # TEMP
 	text "⋯⋯";
-	para "巴洛特~";
+	para "巴洛特～";
 	para "關於那個⋯⋯";
 	done;
 
 @org $08, $4d70:
 	init NAME_BALLOT, PIC_BALLOT_0;
-	text "嗯?";
+	text "嗯﹖";
 	done;
 
 @org $08, $4d77:
 	init NAME_11, $11; # TEMP
-	text "⋯⋯沒什麼。";
-	para "上學去吧。";
+	text "⋯⋯沒什麼⚬";
+	para "上學去吧⚬";
 	done;
 
 @org $08, $4d8f:
-	init NAME_BALLOT, $2c;
-	text "又是這樣!";
+	init $01, $2c; # TEMP
+	text "又是這樣﹗";
 	para "自從媽媽過逝後";
-	line "，";
+	line "﹐";
 	cont "爸爸就總是不能";
-	line "老";
-	textmap "實的，", 1; # "實" is wrong
-	cont "說出想說的話!";
+	line "老實的﹐";
+	cont "說出想說的話﹗";
 	para "巴洛特已經";
-	line "12歲了!";
-	para "不是小孩子了!";
+	line "１２歲了﹗";
+	para "不是小孩子了﹗";
 	para "爸⋯爸爸⋯⋯";
-	cont "大举蛋!!!";
+	cont "大笨蛋﹗﹗﹗";
 	done;
 
 @org $08, $4e04:
 	init NAME_11, $11; # TEMP
 	text "⋯⋯";
-	para "上學去吧。";
+	para "上學去吧⚬";
 	done;
 
 @org $08, $4e15:
 	init NAME_SNOWY, $08; # TEMP
-	text "汪汪~汪汪!";
+	text "汪汪～汪汪﹗";
 	done;
 
 @org $08, $4e23:
 	init NAME_BLANK, $1b;
-	text "新聞報導說，";
+	text "新聞報導說﹐";
 	cont "今天晚上會有大";
-	line "規模的流星雨。";
-	para "真是期待呢!";
+	line "規模的流星雨⚬";
+	para "真是期待呢﹗";
 	done;
 
 @org $08, $4e55:
 	init NAME_BLANK, $13;
-	text "不曉得為什麼，";
+	text "不曉得為什麼﹐";
 	cont "只要一提到流星";
-	line "雨的事，";
+	line "雨的事﹐";
 	cont "賽亞就會露出不";
 	line "安的臉色⋯";
-	para "巴洛特呀，";
+	para "巴洛特呀﹐";
 	cont "你知道為什麼嗎";
-	line "?";
+	line "﹖";
 	done;
 
 @org $08, $4eb0:
 	init NAME_BLANK, $22;
-	text "是巴洛特呀!";
-	line "隼人去上學了。";
+	text "是巴洛特呀﹗";
+	line "隼人去上學了⚬";
 	done;
 
 @org $08, $4ecc:
 	init NAME_BLANK, $1f;
-	text "真是可惡~";
+	text "真是可惡～";
 	para "才剛換了新地毯";
-	line "，";
-	cont "這下又弄髒了!";
+	line "﹐";
+	cont "這下又弄髒了﹗";
 	done;
 
 @org $08, $4ef4:
 	init NAME_BLANK, $15;
 	text "你是來找芳芳的";
-	line "嗎?";
+	line "嗎﹖";
 	cont "芳芳上學去了唷";
-	line "~";
+	line "～";
 	done;
 
 @org $08, $4f1a:
 	init NAME_BLANK, $15;
 	text "今天晚上會有大";
-	line "規模的流星雨。";
+	line "規模的流星雨⚬";
 	para "這種難見的奇景";
-	line "，";
+	line "﹐";
 	cont "我一定不能錯過";
-	line "!";
-	para "對了~";
-	para "今天晚上，";
+	line "﹗";
+	para "對了～";
+	para "今天晚上﹐";
 	cont "我們去你爸的天";
-	line "文台看流星雨。";
+	line "文台看流星雨⚬";
 	done;
 
 @org $08, $4f82:
 	init NAME_BALLOT, PIC_BALLOT_0;
 	text "上學快要遲到了";
-	line "，";
+	line "﹐";
 	cont "不是到處溜噠的";
-	line "時間。";
+	line "時間⚬";
 	done;
 
 @org $08, $4fa8:
 	init NAME_15, $24; # TEMP
-	text "早啊~巴洛特。";
-	para "快點進教窒，";
-	line "就要上課了。";
-	para "⋯⋯啊?!";
+	text "早啊～巴洛特⚬";
+	para "快點進教室﹐";
+	line "就要上課了⚬";
+	para "⋯⋯啊﹖﹗";
 	para "巴洛特真是健忘";
-	line "。";
-	cont "教窒就是上面的";
-	line "那間啊!";
+	line "⚬";
+	cont "教室就是上面的";
+	line "那間啊﹗";
 	done;
 
 @org $08, $5001:
 	init NAME_16, $16; # TEMP
-	text "巴洛特，早安。";
-	para "怎麼一大早，";
+	text "巴洛特﹐早安⚬";
+	para "怎麼一大早﹐";
 	cont "就露出這種心情";
-	line "不好的表情呢?";
+	line "不好的表情呢﹖";
 	done;
 
 @org $08, $5039:
 	init NAME_BLANK, $1e; # TEMP
 	text "今天要上的是植";
-	line "物課。";
+	line "物課⚬";
 	para "所以我帶了白老";
-	line "鼠~吉吉來唷!";
+	line "鼠～吉吉來唷﹗";
 	done;
 
 @org $08, $506b:
 	init NAME_BLANK, $21; # TEMP
 	text "人家今天的便當";
-	line "，";
-	cont "很好~很好吃峨";
-	line "。";
-	para "才‧不‧給‧你";
-	line "‧吃!";
+	line "﹐";
+	cont "很好～很好吃哦";
+	line "⚬";
+	para "才．不．給．你";
+	line "．吃﹗";
 	done;
 
 @org $08, $50a3:
 	init NAME_12, $26; # TEMP
-	text "OH~";
-	line "BABY~";
-	para "巴洛特~";
-	line "你來的正好!";
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	para "巴洛特～";
+	line "你來的正好﹗";
 	para "介紹我的新朋友";
-	line "~";
-	cont "高貴隼人1號。";
+	line "～";
+	cont "高貴隼人１號⚬";
 	done;
 
 @org $08, $50e8:
 	init NAME_BALLOT, $2c; # TEMP
-	text "很好~了不起!";
-	para "我要上課了。";
+	text "很好～了不起﹗";
+	para "我要上課了⚬";
 	done;
 
 @org $08, $5105:
 	init NAME_12, $26; # TEMP
-	text "OH~NO~";
+	text "ＯＨ～ＮＯ～";
 	para "巴洛特不要說出";
-	line "，";
+	line "﹐";
 	cont "這種酸萄葡的話";
-	line "。";
+	line "⚬";
 	para "這可是我的一個";
 	line "天才機械發明家";
-	line "朋友，";
+	line "朋友﹐";
 	cont "借給我的機器人";
-	line "。";
+	line "⚬";
 	para "他可是非常的有";
-	line "名唷。";
+	line "名唷⚬";
 	cont "想知道他是誰嗎";
-	line "?";
+	line "﹖";
 	done;
 
 @org $08, $5188:
 	init NAME_BALLOT, $2c; # TEMP
-	text "沒有興趣。";
+	text "沒有興趣⚬";
 	done;
 
 @org $08, $5195:
 	init NAME_12, $26; # TEMP
-	text "OH~";
-	line "BABY~";
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
 	para "難得巴洛特這麼";
-	line "有興趣，";
-	cont "隼人真是感動。";
-	para "放學後，";
+	line "有興趣﹐";
+	cont "隼人真是感動⚬";
+	para "放學後﹐";
 	cont "隼人就帶你去找";
-	line "他。";
+	line "他⚬";
 	done;
 
 @org $08, $51e5:
 	init NAME_13, $1a; # TEMP
-	text "巴洛特!";
-	para "莫老師來了。";
-	para "快回位置坐好。";
+	text "巴洛特﹗";
+	para "莫老師來了⚬";
+	para "快回位置坐好⚬";
 	para "你的位置有點變";
-	line "動唷!";
+	line "動唷﹗";
 	cont "就在最右上方的";
-	line "座位。";
+	line "座位⚬";
 	done;
 
 @org $08, $522e:
 	init NAME_15, $24; # TEMP
-	text "巴洛特!";
+	text "巴洛特﹗";
 	para "老師都已經來了";
-	line "，";
+	line "﹐";
 	cont "你要上哪兒去呢";
-	line "?";
-	para "快回去坐好!";
+	line "﹖";
+	para "快回去坐好﹗";
 	done;
 
 @org $08, $5267:
 	init NAME_13, $1a; # TEMP
-	text "快回位置坐好。";
+	text "快回位置坐好⚬";
 	para "你的位置就在最";
-	line "右上方的座位。";
+	line "右上方的座位⚬";
 	done;
 
 @org $08, $5291:
 	init NAME_12, $26; # TEMP
-	text "OH~";
-	line "BABY~";
-	para "上課了，";
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	para "上課了﹐";
 	cont "像我這樣的好學";
-	line "生，";
+	line "生﹐";
 	cont "一定會專心聽課";
-	line "的。";
+	line "的⚬";
 	done;
 
 @org $08, $52d0:
 	init NAME_BLANK, $1e; # TEMP
 	text "上⋯上⋯";
-	line "上課⋯課了。";
-	para "巴‧巴巴洛特⋯";
+	line "上課⋯課了⚬";
+	para "巴．巴巴洛特⋯";
 	cont "快去⋯坐⋯";
-	line "坐⋯坐好。";
+	line "坐⋯坐好⚬";
 	done;
 
 @org $08, $5306:
 	init NAME_15, $24; # TEMP
-	text "大家都知道吧?";
+	text "大家都知道吧﹖";
 	para "晚上會有一場很";
-	line "壯觀的流星雨。";
+	line "壯觀的流星雨⚬";
 	para "大家一定也很期";
-	line "待吧!";
+	line "待吧﹗";
 	done;
 
 @org $08, $5346:
 	init NAME_12, $26; # TEMP
-	text "OH~";
-	line "BABY~";
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
 	para "爸爸還特地買了";
-	line "，";
+	line "﹐";
 	cont "超超豪華天文望";
-	line "遠鏡給隼人呢。";
+	line "遠鏡給隼人呢⚬";
 	done;
 
 @org $08, $5387:
 	init NAME_15, $24; # TEMP
 	text "很⋯很好⋯⋯";
 	para "誰知道這個流星";
-	line "雨的詳細資料?";
+	line "雨的詳細資料﹖";
 	done;
 
 @org $08, $53af:
 	init NAME_BALLOT, $00; # TEMP
 	text "弗烈茲星系流星";
-	line "雨，";
+	line "雨﹐";
 	cont "離上次流星雨事";
-	line "件120年。";
-	para "距地球1932";
-	line "光年。";
+	line "件１２０年⚬";
+	para "距地球１９３２";
+	line "光年⚬";
 	done;
 
 @org $08, $53ef:
 	init NAME_15, $24; # TEMP
-	text "完全正確!!";
-	para "為了獎勵大家，";
+	text "完全正確﹗﹗";
+	para "為了獎勵大家﹐";
 	cont "今天就提早下課";
-	line "吧!";
-	para "巴洛特!";
+	line "吧﹗";
+	para "巴洛特﹗";
 	para "老師待會會到你";
-	line "家。";
-	para "和你父親商量，";
+	line "家⚬";
+	para "和你父親商量﹐";
 	cont "晚上借天文館看";
-	line "流星雨的事。";
-	para "待會見了。";
+	line "流星雨的事⚬";
+	para "待會見了⚬";
 	done;
 
 @org $08, $5468:
 	init NAME_11, $11; # TEMP
-	text "不行~!";
-	para "絕對不行。";
+	text "不行～﹗";
+	para "絕對不行⚬";
 	done;
 
 @org $08, $547e:
 	init NAME_15, $24; # TEMP
 	text "我不曉得什麼事";
-	line "，";
+	line "﹐";
 	cont "讓先生這麼生氣";
-	line "!";
-	para "但出借天文館，";
+	line "﹗";
+	para "但出借天文館﹐";
 	cont "讓小朋友觀賞流";
-	line "星雨，";
-	cont "不是件壞事吧!";
+	line "星雨﹐";
+	cont "不是件壞事吧﹗";
 	done;
 
 @org $08, $54d2:
 	init NAME_11, $11; # TEMP
-	text "不行~";
-	para "就是今晚不行!";
+	text "不行～";
+	para "就是今晚不行﹗";
 	done;
 
 @org $08, $54eb:
 	init NAME_15, $24; # TEMP
 	text "⋯⋯";
-	para "真是不可理諭!";
+	para "真是不可理諭﹗";
 	done;
 
 @org $08, $5500:
 	init NAME_BALLOT, $00; # TEMP
-	text "爸⋯你怎麼了!";
+	text "爸⋯你怎麼了﹗";
 	done;
 
 @org $08, $550e:
 	init NAME_11, $11; # TEMP
-	text "巴洛特!!";
-	line "你千萬要記住!";
-	para "今天晚上!";
-	line "就是今天晚上!";
-	para "無論如何~";
+	text "巴洛特﹗﹗";
+	line "你千萬要記住﹗";
+	para "今天晚上﹗";
+	line "就是今天晚上﹗";
+	para "無論如何～";
 	cont "你都要待在家裡";
-	line "。";
+	line "⚬";
 	para "無論聽到什麼聲";
-	line "音，";
-	cont "都不要出來。";
-	para "知道嗎?";
+	line "音﹐";
+	cont "都不要出來⚬";
+	para "知道嗎﹖";
 	done;
 
 @org $08, $557d:
 	init NAME_BALLOT, $00; # TEMP
-	text "怎麼回事?";
+	text "怎麼回事﹖";
 	done;
 
 @org $08, $558a:
@@ -684,14 +683,14 @@
 
 @org $08, $5592:
 	init NAME_15, $24; # TEMP
-	text "各位同學，";
-	line "下課了!";
+	text "各位同學﹐";
+	line "下課了﹗";
 	done;
 
 @org $08, $55a7:
 	init NAME_BALLOT, $00; # TEMP
-	text "不行~";
+	text "不行～";
 	line "要趕快去天文台";
 	para "找爸爸回家";
-	line "吃晚飯!";
+	line "吃晚飯﹗";
 	done;

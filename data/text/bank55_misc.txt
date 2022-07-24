@@ -1,0 +1,1409 @@
+@org $55, $5aef:
+	init $00, $12; # TEMP
+	text "少爺～這裡就是";
+	line "東漁市了⚬";
+	para "祝少爺旅程平安";
+	line "順利⚬";
+	done;
+
+@org $55, $5b1f:
+	init $00, $19; # TEMP
+	text "這裡是漁港路都";
+	line "市～東漁市⚬";
+	para "四周就是比底斯";
+	line "海了⚬";
+	done;
+
+@org $55, $5b52:
+	init $00, $1c; # TEMP
+	text "聽說小孩子如果";
+	line "在海邊玩耍的話";
+	para "就會被人魚吃掉";
+	line "哦﹗";
+	para "媽媽說小龜就是";
+	line "被人魚吃掉的﹗";
+	done;
+
+@org $55, $5ba0:
+	init $00, $1a; # TEMP
+	text "在另外的那一邊";
+	line "有一個神木村喲";
+	para "那裡有一棵～";
+	line "好大～";
+	cont "好大的大樹喲﹗";
+	done;
+
+@org $55, $5be3:
+	init $00, $14; # TEMP
+	text "安東的世代都是";
+	line "海洋科學家⚬";
+	para "他的祖先﹐也是";
+	line "八名偉大科學家";
+	cont "的後代喲﹗";
+	done;
+
+@org $55, $5c28:
+	init $00, $13; # TEMP
+	text "嗚～小龜～";
+	line "我的兒子啊～";
+	cont "嗚嗚～";
+	para "小龜被人魚吃掉";
+	line "了﹗";
+	cont "嗚嗚嗚～";
+	line "可惡的人魚﹗";
+	done;
+
+@org $55, $5c6f:
+	init $00, $15; # TEMP
+	text "最近海邊出現了";
+	line "人魚﹐而且靠近";
+	para "海邊的小孩子都";
+	line "莫名的失蹤了﹗";
+	para "一定是被人魚吃";
+	line "掉了﹗";
+	done;
+
+@org $55, $5cbb:
+	init $00, $17; # TEMP
+	text "前陣子看到安東";
+	line "的未婚妻～海藍";
+	para "﹐在海邊與人魚";
+	line "講話⚬";
+	para "是我看錯了嗎﹖";
+	line "我一定要弄清楚";
+	line "﹗";
+	done;
+
+@org $55, $5d0a:
+	init $00, $16; # TEMP
+	text "唉～自從流星雨";
+	line "過後﹐天空就出";
+	cont "現了裂縫⚬";
+	para "咦～那條裂縫好";
+	line "像愈來愈大了﹗";
+	cont "真叫人不安⚬";
+	done;
+
+@org $55, $5d57:
+	init $00, $18; # TEMP
+	text "約三個月前﹐村";
+	line "子裡來了一位大";
+	para "美女﹐名叫海藍";
+	line "可是﹐居然被";
+	forcemap 2, "安";
+	para "東給追走了﹗";
+	line "真是可惜啊～";
+	done;
+
+@org $55, $5da9:
+	init $00, $1d; # TEMP
+	text "追走就追走﹐有";
+	line "什麼好可惜的﹗";
+	done;
+
+@org $55, $5dc7:
+	init $00, $18; # TEMP
+	text "啊⋯是⋯是的⚬";
+	done;
+
+@org $55, $5dd7:
+	init $00, $1d; # TEMP
+	text "喂～老公～";
+	para "我覺得那個海藍";
+	line "怪怪的﹐又說不";
+	cont "出哪裡奇怪⋯";
+	done;
+
+@org $55, $5e09:
+	init $00, $18; # TEMP
+	text "村子裡﹐每個長";
+	line "得比你漂亮的女";
+	para "孩﹐妳哪個不覺";
+	line "得奇怪﹗";
+	done;
+
+@org $55, $5e3e:
+	init $00, $1d; # TEMP
+	text "老⋯老公﹗";
+	line "你皮";
+	forcemap 3, "長";
+	text "厚了﹗";
+	done;
+
+@org $55, $5e56:
+	init $00, $1f; # TEMP
+	text "南方的海島上﹐";
+	line "有座地熱城⚬";
+	para "那裡是一個將地";
+	line "熱轉換成電力的";
+	cont "能源站⚬";
+	done;
+
+@org $55, $5e96:
+	init $00, $1e; # TEMP
+	text "媽媽～琳琳表妹";
+	line "說要寄布拉布拉";
+	para "超人模型給我﹗";
+	line "怎麼還沒有來﹖";
+	cont "我．要．啦﹗﹗";
+	done;
+
+@org $55, $5edc:
+	init $00, $1f; # TEMP
+	text "不要吵﹗";
+	cont "再吵小心被人魚";
+	line "吃掉﹗";
+	done;
+
+@org $55, $5efc:
+	init $00, $1e; # TEMP
+	text "人魚﹗﹗嗚～～";
+	line "嗚嗚～";
+	done;
+
+@org $55, $5f11:
+	init $00, $16; # TEMP
+	text "南方海島上﹐有";
+	line "座衛星雷達站⚬";
+	para "可以直接從衛星";
+	line "接收或發送各種";
+	cont "訊號⚬";
+	para "科技真是方便的";
+	line "東西呀⚬";
+	done;
+
+@org $55, $5f65:
+	init $00, $19; # TEMP
+	text "人魚真是可惡﹗";
+	line "要是捉到了﹐";
+	para "一定要活活將牠";
+	line "燒死﹗";
+	done;
+
+@org $55, $5f91:
+	init $00, $1b; # TEMP
+	text "我曾看過人魚喲";
+	line "長得真是漂亮";
+	cont "可是她們會吃小";
+	line "孩﹐真是可怕⋯";
+	done;
+
+@org $55, $5fc7:
+	init $00, $16; # TEMP
+	text "這裡是東漁市的";
+	line "集會廣場⚬";
+	done;
+
+@org $55, $5fe4:
+	init $05, $04; # TEMP
+	text "前幾天安東收到";
+	line "一封電子郵件後";
+	para "﹐就開始打包行";
+	line "李﹐直說著﹐要";
+	cont "做趟長途的旅行";
+	para "我好不容易⋯";
+	line "才可以和東在一";
+	cont "起⋯⋯";
+	para "要是那個時間到";
+	line "的話⋯⋯";
+	para "不～我不要安東";
+	line "離開我﹗";
+	done;
+
+@org $55, $6073:
+	init $39, $62; # TEMP
+	text "你就是巴洛特嗎";
+	line "﹖";
+	para "我已經收到哈瑪";
+	line "斯總裁的Ｅ～";
+	cont "ＭＡＩＬ了⚬";
+	para "你們要發掘古代";
+	line "科技～";
+	cont "太空船的祕密嗎";
+	line "﹖";
+	cont "這真是太好了⚬";
+	para "父親留給了我這";
+	line "個動力晶片﹐我";
+	cont "一直想了解其中";
+	line "的祕密那我們就";
+	cont "可以一起行動了";
+	line "﹗";
+	done;
+
+@org $55, $6122:
+	init $39, $62; # TEMP
+	text "動力晶片⋯﹗";
+	cont "我的動力晶片呢";
+	line "﹖";
+	done;
+
+@org $55, $6144:
+	init $05, $3c; # TEMP
+	text "不～安東﹗";
+	para "我不要你離開我";
+	line "﹗";
+	cont "我不要﹗";
+	done;
+
+@org $55, $6168:
+	init $39, $62; # TEMP
+	text "海藍～";
+	line "只是個旅行～";
+	cont "將動力晶片給我";
+	line "～好嗎﹖";
+	done;
+
+@org $55, $6193:
+	init $05, $3c; # TEMP
+	text "你⋯你知道嗎﹖";
+	line "為了能和你在一";
+	para "起﹐我做了多大";
+	line "的犧牲嗎﹖";
+	done;
+
+@org $55, $61c5:
+	init $39, $62; # TEMP
+	text "犧牲﹖";
+	done;
+
+@org $55, $61ce:
+	init $05, $3d; # TEMP
+	text "⋯⋯⋯安東大笨";
+	line "蛋﹗";
+	done;
+
+@org $55, $61e2:
+	init $39, $62; # TEMP
+	text "抱歉～海藍對我";
+	line "要旅行的這件事";
+	cont "﹐一直不諒解⋯";
+	line "不過相信一定會";
+	line "沒事的⚬";
+	para "父親的海洋科學";
+	line "筆記真是繁雜～";
+	cont "還來不及整理⚬";
+	para "巴洛特﹐你可以";
+	line "幫我找回海藍嗎";
+	cont "﹖拿回動力晶片";
+	line "後﹐我們就出發";
+	line "吧﹗";
+	done;
+
+@org $55, $6288:
+	init $39, $62; # TEMP
+	text "巴洛特﹐你可以";
+	line "幫我找回海藍嗎";
+	cont "﹖拿回動力晶片";
+	line "後﹐我們就出發";
+	line "吧﹗";
+	done;
+
+@org $55, $62c8:
+	init $00, $1e; # TEMP
+	text "貝殼～挖貝殼～";
+	line "小小的身體～";
+	para "小小的家～";
+	line "啦啦啦啦～";
+	cont "挖挖挖～";
+	done;
+
+@org $55, $62ff:
+	init $00, $1f; # TEMP
+	text "瓜瓜～快回家﹗";
+	line "海邊很危險﹗";
+	cont "趕快回家﹗";
+	done;
+
+@org $55, $6326:
+	init $05, $04; # TEMP
+	text "你們來做什麼﹖";
+	line "你們是來帶走安";
+	cont "東的嗎﹖";
+	para "我永遠都不會原";
+	line "諒你們的﹗";
+	done;
+
+@org $55, $6364:
+	init $01, $2e; # TEMP
+	text "雖然我不懂愛情";
+	line "但是媽媽以前曾";
+	para "說過﹐愛一個人";
+	line "﹐就要給他自由";
+	cont "的空間⚬";
+	line "不是嗎﹖";
+	done;
+
+@org $55, $63b0:
+	init $05, $3d; # TEMP
+	text "住口﹗";
+	cont "你們⋯你們什麼";
+	line "都不懂﹗";
+	para "再過不久～";
+	line "那個時候到了⋯";
+	cont "我就會⋯";
+	line "我就會⋯⋯";
+	para "我決不讓安東離";
+	line "開我﹗";
+	done;
+
+@org $55, $6408:
+	init $00, $1f; # TEMP
+	text "瓜瓜﹗";
+	line "瓜～瓜瓜﹗";
+	cont "怎麼辦﹗";
+	line "怎麼辦﹗";
+	para "瓜瓜被人魚捉走";
+	line "了﹗";
+	para "誰來救救他﹗";
+	line "救命啊﹗";
+	done;
+
+@org $55, $6452:
+	init $00, $2d; # TEMP
+	text "糟糕﹗";
+	done;
+
+@org $55, $645b:
+	init $05, $04; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $6463:
+	signpost;
+	text "好⋯好難過⋯⋯";
+	line "這種感覺⋯⋯";
+	cont "我死了嗎﹖";
+	line "也好⋯";
+	done;
+
+@org $55, $6489:
+	init $01, $2e; # TEMP
+	text "這裡是哪裡﹖";
+	cont "我為什麼在這裡";
+	line "﹖";
+	done;
+
+@org $55, $64aa:
+	init $3a, $63; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64b2:
+	init $3b, $64; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64ba:
+	init $3b, $63; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64c2:
+	init $3c, $65; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64ca:
+	init $3b, $64; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64d2:
+	init $3c, $65; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64da:
+	init $3a, $63; # TEMP
+	text "⋯⋯";
+	done;
+
+@org $55, $64e1:
+	init $3c, $65; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64e9:
+	init $3b, $64; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64f1:
+	init $3c, $65; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64f9:
+	init $3a, $63; # TEMP
+	text "這裡是人魚之家";
+	line "⚬";
+	done;
+
+@org $55, $650e:
+	init $3b, $64; # TEMP
+	text "你們就是海青救";
+	line "起的人類嗎﹖";
+	cont "海青真是個好人";
+	line "魚⋯";
+	done;
+
+@org $55, $653d:
+	init $3a, $63; # TEMP
+	text "海青的姐姐～";
+	line "海藍～";
+	cont "喜歡上了";
+	line "一個人⚬";
+	para "於是便用她的魚";
+	line "之魂﹐向海巫師";
+	para "換取三個月當人";
+	line "的時間⚬";
+	para "三個月後如果沒";
+	line "有回來她就會化";
+	cont "為泡沫⋯";
+	line "真是個傻人魚⋯";
+	done;
+
+@org $55, $65c6:
+	init $3c, $65; # TEMP
+	text "往那邊一直游﹐";
+	line "就可是海巫師的";
+	cont "地方了⚬";
+	para "那海巫師很可怕";
+	line "⋯";
+	cont "只要近接那個地";
+	line "方";
+	forcemap 1, "﹐";
+	text "嗚哦～";
+	cont "身體就不知不覺";
+	line "的捲起來了⚬";
+	done;
+
+@org $55, $6630:
+	init $3b, $64; # TEMP
+	text "上面的人類老是";
+	line "說海青吃掉他們";
+	cont "的小孩﹗";
+	para "才沒有這種事咧";
+	line "﹗";
+	cont "海青常常救起溺";
+	line "水的小孩呢﹗";
+	done;
+
+@org $55, $6684:
+	init $3a, $63; # TEMP
+	text "你是住在上面的";
+	line "人類嗎﹖";
+	para "想要回去上面﹖";
+	line "很抱歉～";
+	cont "現在不行～";
+	para "我正在思考著﹐";
+	line "到底是先有烏龜";
+	para "呢﹐還是先有蛋";
+	line "﹗等我想出來後";
+	para "﹐就載你回陸地";
+	line "上⚬";
+	done;
+
+@org $55, $6704:
+	init $3c, $65; # TEMP
+	text "海青現在到陸地";
+	line "上找海藍了﹗";
+	cont "現在不在﹗";
+	done;
+
+@org $55, $672a:
+	init $3c, $65; # TEMP
+	text "人類最討厭了﹗";
+	done;
+
+@org $55, $673a:
+	init $3c, $65; # TEMP
+	text "你知道嗎﹖人魚";
+	line "有二條靈魂⚬";
+	para "一個是人﹐一個";
+	line "是魚⚬人魚如果";
+	para "失去了魚之魂的";
+	line "話﹐那剩下的人";
+	cont "之魂就會很快速";
+	line "的消失⚬";
+	para "最後變成泡沫喲";
+	line "﹗真是可怕﹗";
+	done;
+
+@org $55, $67b7:
+	init $3b, $64; # TEMP
+	text "我是全比底斯海";
+	line "醫術最高明的螃";
+	cont "蟹⚬";
+	line "受傷了嗎﹖";
+	para "雖然我沒有醫過";
+	line "人類﹐但螃蟹是";
+	para "最有靈性的動物";
+	line "⚬把這個應用到";
+	para "人類身上﹐應該";
+	line "還是行得通吧﹗";
+	line "";
+	getchoice $1cc5; # TEMP
+
+@org $55, $683c:
+	init $3c, $65; # TEMP
+	text "哎呀﹗真是有緣";
+	line "啊～今兒個巡迴";
+	para "來到比底斯海域";
+	line "﹐來到貴寶地～";
+	para "就做大優惠吧～";
+	line "東西便宜賣喲﹗";
+	line "";
+	unknownE7;
+	done;
+
+@org $55, $6894:
+	init $3d, $66; # TEMP
+	text "啊﹗你醒了﹖";
+	line "很是抱歉～潮流";
+	para "異常的大﹐我只";
+	line "能夠救到你⋯⋯";
+	done;
+
+@org $55, $68c8:
+	init $3d, $66; # TEMP
+	text "啊﹖";
+	line "";
+	done;
+
+@org $55, $68d1:
+	init $01, $2e; # TEMP
+	text "那小孩的失蹤﹐";
+	line "真的只是意外的";
+	cont "落水嗎﹖";
+	done;
+
+@org $55, $68f6:
+	init $3d, $66; # TEMP
+	text "我也不清楚⋯⋯";
+	line "不過我看到了延";
+	cont "伸的章魚腳⋯⋯";
+	line "可能是⋯⋯";
+	cont "海巫師⋯⋯";
+	done;
+
+@org $55, $6931:
+	init $01, $2e; # TEMP
+	text "海巫師﹖";
+	done;
+
+@org $55, $693d:
+	init $3d, $66; # TEMP
+	text "是的⋯⋯";
+	cont "姐姐也用了她的";
+	line "魚之魂﹐向海巫";
+	cont "師換來三個月當";
+	line "人類的時間⚬";
+	done;
+
+@org $55, $697d:
+	init $3d, $66; # TEMP
+	text "你見過我的姐姐";
+	line "～海藍嗎﹖";
+	done;
+
+@org $55, $6997:
+	init $01, $2e; # TEMP
+	text "嗯～見過⚬";
+	done;
+
+@org $55, $69a5:
+	init $3d, $66; # TEMP
+	text "那她有說要回來";
+	line "嗎﹖三個月的時";
+	cont "間快到了﹐再不";
+	line "回來的話～";
+	para "姐姐就會變成泡";
+	line "沫了﹗";
+	done;
+
+@org $55, $69eb:
+	init $01, $2e; # TEMP
+	text "怎麼會這樣子呢";
+	line "﹖";
+	cont "有什麼解決的辦";
+	line "法嗎﹖";
+	done;
+
+@org $55, $6a12:
+	init $3d, $66; # TEMP
+	text "只好向海巫師懇";
+	line "求﹐請他還回姐";
+	cont "姐的魚之魂了⚬";
+	done;
+
+@org $55, $6a3e:
+	init $01, $2e; # TEMP
+	text "我知道了⚬";
+	cont "真的非常感謝你";
+	line "的救命之恩⋯";
+	para "我就幫你取回魚";
+	line "之魂好了⚬";
+	done;
+
+@org $55, $6a75:
+	init $3d, $66; # TEMP
+	text "謝謝您～好心的";
+	line "人類⚬";
+	para "但是今天就滿三";
+	line "個月了⋯";
+	para "但是姐姐卻說﹐";
+	line "既使如此﹐也要";
+	cont "在安東的懷裡化";
+	line "為泡沫⚬";
+	para "我不能看著姐姐";
+	line "變成泡沫﹗";
+	para "姐姐要是沒有魚";
+	line "之魂的話⋯⋯";
+	cont "實在很著急⋯";
+	para "我還是跟你去好";
+	line "了﹗";
+	para "我們就在海巫之";
+	line "殿會合吧⚬";
+	done;
+
+@org $55, $6b37:
+	init $01, $2e; # TEMP
+	text "海巫之殿嗎﹖";
+	line "好的⚬";
+	done;
+
+@org $55, $6b4c:
+	init $3d, $66; # TEMP
+	text "這是海巫師設的";
+	line "屏障氣泡～";
+	para "我們人魚身上的";
+	line "黏液﹐可以消除";
+	cont "這道屏障⚬";
+	done;
+
+@org $55, $6b89:
+	init $3d, $66; # TEMP
+	text "三個月的時間﹐";
+	line "就要到了﹗";
+	cont "姐姐﹗";
+	done;
+
+@org $55, $6ba9:
+	init $3d, $66; # TEMP
+	text "海巫師呢﹖";
+	line "海巫大人﹖";
+	cont "到哪裡去了呢﹖";
+	done;
+
+@org $55, $6bce:
+	init $3d, $66; # TEMP
+	text "這個海洞﹖";
+	line "莫非⋯﹖";
+	cont "海巫大人﹗";
+	done;
+
+@org $55, $6bec:
+	init $3d, $66; # TEMP
+	text "海巫大人⋯";
+	line "那名小孩⋯";
+	cont "你⋯⋯";
+	done;
+
+@org $55, $6c08:
+	init $3e, $67; # TEMP
+	text "既然被發現了﹗";
+	line "就沒有什麼好隱";
+	cont "瞞的⚬";
+	para "沒錯﹐為了我們";
+	line "的計劃﹐我正在";
+	cont "抽取著這可愛小";
+	line "孩的生命能量⚬";
+	para "再沒多久﹐偉大";
+	line "的神靈就要誕生";
+	cont "了﹗";
+	done;
+
+@org $55, $6c84:
+	init $01, $2c; # TEMP
+	text "可惡﹗";
+	line "放了那小孩﹗";
+	done;
+
+@org $55, $6c9b:
+	init $3e, $67; # TEMP
+	text "不要輕舉妄動﹐";
+	line "你們不要那條笨";
+	para "人魚的魚之魂了";
+	line "嗎﹖";
+	done;
+
+@org $55, $6ccc:
+	init $3d, $66; # TEMP
+	text "姐⋯姐姐﹗";
+	line "求求您﹐海巫大";
+	cont "人﹐把姐姐的魚";
+	line "之魂還給我﹐好";
+	line "嗎﹖";
+	done;
+
+@org $55, $6d04:
+	init $3e, $67; # TEMP
+	text "要怎麼做﹐相信";
+	line "妳很清楚⚬";
+	para "妳如果『那麼』";
+	line "做的話﹐我甚至";
+	para "還可以把這小孩";
+	line "還給你們唷﹗";
+	done;
+
+@org $55, $6d54:
+	init $3d, $66; # TEMP
+	text "只要能救姐姐和";
+	line "小孩的話﹐我無";
+	cont "所謂⚬";
+	para "海巫大人﹐我答";
+	line "應你﹗";
+	para "但你要";
+	cont "遵守諾言⚬";
+	done;
+
+@org $55, $6d9e:
+	init $3e, $67; # TEMP
+	text "一定﹗";
+	done;
+
+@org $55, $6da7:
+	init $3e, $67; # TEMP
+	text "哦哦哦哦﹗";
+	line "真是充沛的生命";
+	cont "魚之魂的生命力";
+	line "﹐可扺得上一百";
+	line "個小孩啊﹗";
+	para "哈哈哈哈～";
+	line "又是一條笨人魚";
+	para "海藍的那個魚之";
+	line "魂﹐早就被吸收";
+	cont "了﹗笨～蛋﹗";
+	done;
+
+@org $55, $6e1f:
+	init $01, $2c; # TEMP
+	text "可惡﹗";
+	done;
+
+@org $55, $6e29:
+	init $3e, $67; # TEMP
+	text "還有一個笨蛋嗎";
+	line "⚬";
+	cont "也一起跳進生命";
+	line "爐裡吧﹗";
+	done;
+
+@org $55, $6e53:
+	init $00, $1e; # TEMP
+	text "嘔～呃⋯⋯";
+	line "管子裡的水﹐味";
+	cont "道真噁心⋯⋯";
+	para "大哥哥﹐謝謝你";
+	line "﹗";
+	para "我有看到哦﹗";
+	line "很多小朋友﹐都";
+	cont "死在那個生命爐";
+	line "裡呦﹗";
+	done;
+
+@org $55, $6eb9:
+	init $01, $2b; # TEMP
+	text "海青⋯⋯";
+	line "妳真是個大傻瓜";
+	cont "⋯⋯";
+	done;
+
+@org $55, $6ed6:
+	init $01, $2e; # TEMP
+	text "這⋯這就是海青";
+	line "的魚之魂嗎﹖";
+	para "海青⋯";
+	line "我不會讓妳白白";
+	cont "犧牲的﹗";
+	done;
+
+@org $55, $6f0b:
+	init $01, $2e; # TEMP
+	text "得到魚之魂⚬";
+	done;
+
+@org $55, $6f19:
+	init $3f, $75; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $6f21:
+	init $40, $69; # TEMP
+	text "什⋯什麼﹗";
+	line "海巫師失敗了﹖";
+	para "生命能源停止發";
+	line "送﹖";
+	done;
+
+@org $55, $6f4e:
+	init $40, $69; # TEMP
+	text "混帳東西﹗";
+	line "快去給我查出﹐";
+	cont "到底是怎麼回事";
+	line "﹗";
+	para "為了歡迎偉大的";
+	line "『牠』來臨﹐千";
+	cont "萬不可以出錯﹗";
+	done;
+
+@org $55, $6fa0:
+	init $41, $6a; # TEMP
+	text "恰可﹗可﹗";
+	done;
+
+@org $55, $6fab:
+	init $3c, $65; # TEMP
+	text "原來海巫師就是";
+	line "殺掉人類小孩的";
+	para "兇手⚬";
+	line "真是可惡﹗";
+	done;
+
+@org $55, $6fda:
+	init $3b, $64; # TEMP
+	text "嗚嗚嗚～";
+	line "海青真是可憐⋯";
+	para "為了海藍﹐犧牲";
+	line "了自己的生命⋯";
+	para "那個自私的海藍";
+	line "﹐要是回來的話";
+	para "﹐我一定要她賠";
+	line "命﹗";
+	cont "嗚～海青～";
+	done;
+
+@org $55, $7043:
+	init $3a, $63; # TEMP
+	text "到底是先有烏龜";
+	line "呢﹐還是先有蛋";
+	para "﹗還是想不出來";
+	line "⋯⋯什麼﹖";
+	cont "想回陸地上面﹖";
+	line "不行哪～";
+	para "我深奧的沈思還";
+	line "沒有結束⚬";
+	done;
+
+@org $55, $70ad:
+	init $04, $3a; # TEMP
+	text "糟了⋯";
+	line "時間快來不及了";
+	para "不管是先有烏龜";
+	line "還是先有蛋﹐都";
+	cont "不重要啦﹗";
+	done;
+
+@org $55, $70ee:
+	init $3a, $63; # TEMP
+	text "都⋯都不重要嗎";
+	line "﹖哼哼哼哼哼﹗";
+	done;
+
+@org $55, $7109:
+	init $3a, $63; # TEMP
+	text "我怎麼沒有想到";
+	line "這一點﹖";
+	para "先有烏龜的話﹐";
+	line "我還是烏龜～";
+	para "先有蛋的話﹐我";
+	line "還是烏龜啊﹗";
+	para "這麼深奧的理論";
+	line "﹐我終於懂了⚬";
+	para "為了感謝你﹐我";
+	line "就載你回陸地﹗";
+	done;
+
+@org $55, $718d:
+	init $3a, $63; # TEMP
+	text "再見了～我要進";
+	line "行我的第二個深";
+	cont "奧的沈思了⋯";
+	done;
+
+@org $55, $71b9:
+	init $00, $1e; # TEMP
+	text "我⋯我回來了﹗";
+	line "嗚嗚嗚～媽媽﹗";
+	done;
+
+@org $55, $71d4:
+	init $01, $2e; # TEMP
+	text "怎麼回事﹖";
+	line "怎麼都沒有人﹖";
+	para "發生了什麼事﹖";
+	done;
+
+@org $55, $71fc:
+	init $00, $16; # TEMP
+	text "哼﹗我就知道﹗";
+	line "原來海青是人魚";
+	para "變的﹗她和人魚";
+	line "的對話﹐全都被";
+	para "我聽見了﹗";
+	line "哼﹗";
+	cont "燒死她﹐為死去";
+	line "的小孩報仇﹗";
+	done;
+
+@org $55, $725f:
+	init $01, $2e; # TEMP
+	text "安東﹖﹖﹗";
+	line "這是怎麼回事﹖";
+	done;
+
+@org $55, $7279:
+	init $39, $62; # TEMP
+	text "海⋯海藍⋯";
+	line "是人魚的事⋯";
+	cont "被發現了⋯";
+	line "呃⋯⋯";
+	para "他們紅著眼睛⋯";
+	line "失去了理智⋯";
+	cont "強行⋯⋯";
+	line "捉走了海藍⋯";
+	line "呃⋯呃⋯⋯";
+	done;
+
+@org $55, $72dd:
+	init $01, $2e; # TEMP
+	text "振作一點﹐安東";
+	line "﹗";
+	done;
+
+@org $55, $72f1:
+	init $39, $62; # TEMP
+	text "我⋯我⋯";
+	line "沒有辦法⋯";
+	cont "保護海藍⋯";
+	para "請⋯請你們⋯";
+	line "一定要⋯救她⋯";
+	done;
+
+@org $55, $732a:
+	init $01, $2e; # TEMP
+	text "好的﹗";
+	line "我一定會的﹗";
+	cont "安東﹐不要再說";
+	line "話了﹗";
+	line "振作些﹗";
+	para "我這就去救回海";
+	line "藍﹗";
+	done;
+
+@org $55, $736d:
+	init $39, $62; # TEMP
+	text "謝⋯謝⋯⋯";
+	line "海⋯海藍⋯";
+	para "雖然妳騙了我⋯";
+	line "但是⋯我⋯";
+	cont "我還是⋯⋯";
+	line "愛⋯⋯";
+	cont "著⋯⋯⋯";
+	line "妳⋯⋯⋯";
+	done;
+
+@org $55, $73b7:
+	init $01, $2c; # TEMP
+	text "安東﹗﹗﹗﹗";
+	line "可惡﹗";
+	para "為什麼會這樣﹖";
+	line "安東﹗﹗";
+	para "你放心﹐我一定";
+	line "會救出海藍的﹗";
+	done;
+
+@org $55, $73fd:
+	init $00, $16; # TEMP
+	text "哼﹗我就知道﹗";
+	para "原來海青是人魚";
+	line "變的﹗";
+	cont "她和人魚的對話";
+	line "﹐全都被我聽見";
+	line "了﹗";
+	para "哼﹗燒死她﹐為";
+	line "死去的小孩報仇";
+	done;
+
+@org $55, $745b:
+	init $01, $2e; # TEMP
+	text "糟糕～";
+	line "這要怎麼辦﹖";
+	done;
+
+@org $55, $7470:
+	init $01, $2e; # TEMP
+	text "魚之魂傳來了一";
+	line "陣聲音～";
+	done;
+
+@org $55, $748a:
+	init $42, $6b; # TEMP
+	text "到最高處～";
+	line "最高的地方～";
+	done;
+
+@org $55, $74a3:
+	init $01, $2e; # TEMP
+	text "最高的地方﹖";
+	para "東漁市最高的地";
+	line "方﹖";
+	done;
+
+@org $55, $74c3:
+	init $01, $2e; # TEMP
+	text "燈塔﹗﹗﹗";
+	line "魚之魂的聲音﹐";
+	cont "是指燈塔嗎﹖";
+	line "儘快到達吧﹗";
+	done;
+
+@org $55, $74f3:
+	init $3f, $6a; # TEMP
+	text "喀囉～喀喀喀～";
+	done;
+
+@org $55, $7503:
+	init $42, $6b; # TEMP
+	text "丟下吧～";
+	line "丟下我吧～";
+	done;
+
+@org $55, $7515:
+	init $01, $2e; # TEMP
+	text "將魚之魂丟下嗎";
+	line "﹖";
+	done;
+
+@org $55, $7529:
+	init $00, $1f; # TEMP
+	text "你這個妖女﹐殺";
+	line "害我兒子的兇手";
+	cont "我要妳償命﹗";
+	done;
+
+@org $55, $7554:
+	init $05, $3c; # TEMP
+	text "安東⋯放開我﹗";
+	para "安東受了重傷﹐";
+	line "我要去救他﹗";
+	done;
+
+@org $55, $757f:
+	init $00, $20; # TEMP
+	text "安東那傢伙﹐一";
+	line "定和妳串通好了";
+	para "頂著偉大科學";
+	line "家後代的名號﹐";
+	para "卻做這種見不得";
+	line "人的勾當﹗";
+	done;
+
+@org $55, $75d2:
+	init $05, $04; # TEMP
+	text "你胡說﹗";
+	line "他沒有﹗";
+	para "他不曉得這件事";
+	line "放開我～";
+	cont "我要去救安東﹗";
+	done;
+
+@org $55, $7609:
+	init $00, $20; # TEMP
+	text "你們就一起到地";
+	line "獄相見吧﹗";
+	done;
+
+@org $55, $7626:
+	init $05, $04; # TEMP
+	text "不～不要﹗";
+	line "放開我﹗";
+	done;
+
+@org $55, $763b:
+	init $05, $3e; # TEMP
+	text "這是⋯⋯海青﹗";
+	line "海青﹗";
+	cont "妳⋯⋯﹗";
+	done;
+
+@org $55, $765b:
+	init $00, $1e; # TEMP
+	text "媽媽﹗";
+	line "人家好怕啊﹗";
+	done;
+
+@org $55, $7671:
+	init $00, $1f; # TEMP
+	text "瓜⋯瓜瓜﹗";
+	line "我的瓜瓜﹗﹗﹗";
+	done;
+
+@org $55, $768a:
+	init $00, $1e; # TEMP
+	text "是人魚姐姐救了";
+	line "我的⚬";
+	para "我看見了哦﹗";
+	line "有一隻好大～";
+	cont "好大的章魚～";
+	line "殺了很多小朋友";
+	line "哦﹗";
+	done;
+
+@org $55, $76d7:
+	init $00, $20; # TEMP
+	text "這是怎麼回事⋯";
+	done;
+
+@org $55, $76e7:
+	signpost;
+	text "終於～";
+	line "知道了嗎﹖";
+	cont "那又如何⋯⋯";
+	para "海青～原諒我的";
+	line "自私好嗎﹖";
+	para "安東～我⋯我⋯";
+	line "原諒我⋯⋯";
+	done;
+
+@org $55, $772e:
+	init $05, $3d; # TEMP
+	text "這就是安東的動";
+	line "力晶片⚬";
+	para "安東一直說著﹐";
+	line "要和你們一起探";
+	cont "險～";
+	para "眼神是多麼的興";
+	line "奮啊⋯⋯";
+	cont "安東⋯⋯";
+	done;
+
+@org $55, $7788:
+	init $01, $2e; # TEMP
+	text "得到了晶片４﹗";
+	done;
+
+@org $55, $7797:
+	init $05, $04; # TEMP
+	text "巴洛特﹐我會堅";
+	line "強的";
+	forcemap 1, "活";
+	text "下去的⚬";
+	para "為了海青～";
+	line "也為了安東⋯";
+	cont "讓我也加入你好";
+	line "嗎﹖";
+	cont "安東不能做的﹐";
+	line "就由我來完成吧";
+	line "﹗";
+	done;
+
+@org $55, $77f8:
+	init $01, $2e; # TEMP
+	text "海藍＆水精靈加";
+	line "入隊伍⚬";
+	done;
+
+@org $55, $780f:
+	init $18, $2f; # TEMP
+	text "如將海藍置於排";
+	line "頭﹐將可化為人";
+	para "魚﹐通過大海或";
+	line "湖泊⚬";
+	done;
+
+@org $55, $7843:
+	init $00, $1c; # TEMP
+	text "萬歲～";
+	line "又可以到海邊玩";
+	cont "耍了﹗";
+	done;
+
+@org $55, $785f:
+	init $00, $14; # TEMP
+	text "安東⋯";
+	line "我們錯怪他了⋯";
+	para "真不曉得要怎麼";
+	line "向海藍交待⋯";
+	cont "海藍⋯";
+	line "請原諒我們⋯";
+	done;
+
+@org $55, $78a7:
+	init $05, $04; # TEMP
+	text "我不恨你們﹐但";
+	line "也不喜歡你們⚬";
+	cont "離我遠一些﹗";
+	done;
+
+@org $55, $78d2:
+	init $00, $14; # TEMP
+	text "呃⋯是⋯是的⚬";
+	done;
+
+@org $55, $78e2:
+	init $00, $13; # TEMP
+	text "海藍⋯";
+	line "請原諒我們⋯⋯";
+	para "在那種情形下﹐";
+	line "大家都被仇恨沖";
+	cont "昏了頭⋯";
+	line "真是遺憾⋯";
+	done;
+
+@org $55, $7928:
+	init $05, $04; # TEMP
+	text "原諒與否﹐有什";
+	line "麼差別嗎﹖";
+	para "安東不會因此而";
+	line "活過來⋯";
+	done;
+
+@org $55, $7958:
+	init $00, $15; # TEMP
+	text "瓜瓜這次能平安";
+	line "回來﹐真是多虧";
+	cont "了你⋯";
+	para "該怎麼感謝你呢";
+	line "這個就給你了﹗";
+	done;
+
+@org $55, $7991:
+	init $01, $2a; # TEMP
+	text "得到了";
+	line "萬能血清";
+	done;
+
+@org $55, $79a2:
+	init $00, $15; # TEMP
+	text "瓜瓜這次能平安";
+	line "回來﹐真是多虧";
+	cont "了你⋯";
+	line "謝謝你⚬";
+	done;
+
+@org $55, $79cd:
+	init $00, $15; # TEMP
+	text "瓜瓜回來了⋯";
+	done;
+
+@org $55, $79dc:
+	init $00, $17; # TEMP
+	text "安東的死亡⋯";
+	line "都是我的錯⋯";
+	para "我要是沒有嫉妒";
+	line "的話⋯";
+	cont "就不會發生這種";
+	line "事了﹗";
+	cont "都是我不好⋯";
+	done;
+
+@org $55, $7a2c:
+	init $00, $18; # TEMP
+	text "海藍⋯⋯";
+	line "真是抱歉～";
+	para "即使安東走了﹐";
+	line "也要好好的活下";
+	cont "去哦﹗";
+	done;
+
+@org $55, $7a61:
+	init $05, $04; # TEMP
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $7a69:
+	init $00, $1d; # TEMP
+	text "喂～老公～";
+	line "我就說嘛﹗";
+	para "那海藍果然怪怪";
+	line "的﹗";
+	cont "原來真的是人魚";
+	line "變的﹗";
+	done;
+
+@org $55, $7aa3:
+	init $00, $1d; # TEMP
+	text "啊﹗海藍～";
+	line "是妳啊﹗";
+	done;
+
+@org $55, $7ab9:
+	init $00, $1f; # TEMP
+	text "南方的海島上﹐";
+	line "有座地熱城⚬";
+	para "那裡是一個將地";
+	line "熱轉換成電力的";
+	cont "能源站⚬";
+	done;
+
+@org $55, $7af9:
+	init $00, $1e; # TEMP
+	text "媽媽～琳琳表妹";
+	line "說要寄布拉布拉";
+	para "超人模型給我﹗";
+	line "怎麼還沒有來﹖";
+	cont "我．要．啦﹗﹗";
+	done;
+
+@org $55, $7b3f:
+	init $00, $1f; # TEMP
+	text "不要吵﹗";
+	line "再吵小心被章魚";
+	cont "吃掉﹗";
+	done;
+
+@org $55, $7b5f:
+	init $00, $1e; # TEMP
+	text "章魚﹗﹗嗚～～";
+	line "嗚嗚～";
+	done;
+
+@org $55, $7b74:
+	init $00, $1e; # TEMP
+	text "這是⋯⋯布拉布";
+	line "拉超人﹖﹖﹗﹗";
+	cont "太．棒．了﹗";
+	para "這是琳琳表妹要";
+	line "給我的嗎﹖";
+	para "太．高．興．了";
+	line "謝謝你～";
+	para "這個就送給你了";
+	line "好高興﹗";
+	done;
+
+@org $55, $7bda:
+	init $01, $2a; # TEMP
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $55, $7be9:
+	init $00, $1e; # TEMP
+	text "哇～哇～布拉布";
+	line "拉超人耶﹗";
+	cont "哈哈哈哈～";
+	line "我要帶去學校給";
+	cont "大家看﹗";
+	done;
+
+@org $55, $7c25:
+	init $00, $19; # TEMP
+	text "安東～嗚嗚嗚～";
+	done;
+
+@org $55, $7c35:
+	init $00, $1b; # TEMP
+	text "我曾看過人魚喲";
+	line "長得還真是漂亮";
+	done;

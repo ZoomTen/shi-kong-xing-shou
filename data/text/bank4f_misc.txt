@@ -1,22 +1,22 @@
 @org $4f, $4de3:
 	init $00, $16; # TEMP
-	text "這裡是天之都。";
+	text "這裡是天之都⚬";
 	line "那棟最高的建築";
-	cont "物，就是有名的";
-	line "邦林科技大樓。";
+	cont "物﹐就是有名的";
+	line "邦林科技大樓⚬";
 	done;
 
 @org $4f, $4e1c:
 	init $00, $16; # TEMP
 	text "邦林科技要甄選";
 	line "『復古風項鍊』";
-	cont "的女性代言人。";
+	cont "的女性代言人⚬";
 	para "所以舉辦了一場";
-	line "選秀會。";
+	line "選秀會⚬";
 	para "每個女孩為了要";
 	line "選購華麗的衣服";
-	cont "都护得你死我活";
-	line "呢。";
+	cont "都拚得你死我活";
+	line "呢⚬";
 	done;
 
 @org $4f, $4e8b:
@@ -26,41 +26,41 @@
 
 @org $4f, $4e9b:
 	init $00, $14; # TEMP
-	text "真是槽糕!";
+	text "真是糟糕﹗";
 	line "少爺又偷偷從課";
-	cont "堂中溜走了!";
-	para "要到哪裡找呢?";
+	cont "堂中溜走了﹗";
+	para "要到哪裡找呢﹖";
 	line "";
 	para "真是個調皮的傢";
-	line "伙!";
+	line "伙﹗";
 	done;
 
 @org $4f, $4ee0:
 	init $00, $12; # TEMP
 	text "邦林企業總裁的";
-	line "爺爺，也是拯救";
+	line "爺爺﹐也是拯救";
 	cont "地球的八大科學";
-	line "家之一喲。";
+	line "家之一喲⚬";
 	para "把科技的精神企";
-	line "業化，是邦林企";
-	cont "業的口號。";
+	line "業化﹐是邦林企";
+	cont "業的口號⚬";
 	done;
 
 @org $4f, $4f38:
 	init $00, $13; # TEMP
-	text "哎呀~";
+	text "哎呀～";
 	line "不要丟髒我的新";
-	cont "衣服唷!";
-	para "你看~漂亮嗎?";
+	cont "衣服唷﹗";
+	para "你看～漂亮嗎﹖";
 	line "這可是我要參加";
 	cont "選秀會的衣服唷";
-	line "!";
+	line "﹗";
 	done;
 
 @org $4f, $4f81:
 	init $21, $31; # TEMP
-	text "噁~噁~喵~";
-	line "噁~!";
+	text "噁～噁～喵～";
+	line "噁～﹗";
 	done;
 
 @org $4f, $4f98:
@@ -71,10 +71,10 @@
 
 @org $4f, $4fb0:
 	init $00, $1d; # TEMP
-	text "好慢峨~";
+	text "好慢哦～";
 	line "前面的怎麼這麼";
-	cont "慢啦!";
-	para "再慢一點的話，";
+	cont "慢啦﹗";
+	para "再慢一點的話﹐";
 	line "就買不到新衣服";
 	cont "了⋯";
 	done;
@@ -82,45 +82,45 @@
 @org $4f, $4fec:
 	init $00, $1a; # TEMP
 	text "邦林科技選秀會";
-	line "的獎品，很漂亮";
-	cont "喲!";
+	line "的獎品﹐很漂亮";
+	cont "喲﹗";
 	para "復古風造型的項";
-	line "鍊。";
+	line "鍊⚬";
 	para "尤其是鑲在裡面";
-	line "的古代晶片，更";
-	cont "是價值連城唷!";
+	line "的古代晶片﹐更";
+	cont "是價值連城唷﹗";
 	done;
 
 @org $4f, $5048:
 	init $00, $1c; # TEMP
-	text "爸爸說，在邦林";
-	line "企業裡工作，才";
+	text "爸爸說﹐在邦林";
+	line "企業裡工作﹐才";
 	cont "能算是真正的男";
-	line "人。";
+	line "人⚬";
 	para "我以後長大也要";
 	line "在";
 	forcemap 3, "裡";
-	text "面工作。";
+	text "面工作⚬";
 	done;
 
 @org $4f, $5093:
 	init $00, $17; # TEMP
 	text "我老婆就是世界";
-	line "知名的糢特兒~";
-	cont "花露露。";
+	line "知名的糢特兒～";
+	cont "花露露⚬";
 	para "我們家麗子就不";
-	line "得了了!";
+	line "得了了﹗";
 	para "她一定能在選秀";
-	line "會上，大放明星";
-	cont "光彩的!";
-	para "你說是嗎?";
+	line "會上﹐大放明星";
+	cont "光彩的﹗";
+	para "你說是嗎﹖";
 	line "我的親親小蜜糖";
 	done;
 
 @org $4f, $5107:
 	init $00, $17; # TEMP
 	text "我老婆就是世界";
-	line "知名的糢特兒~";
+	line "知名的糢特兒～";
 	cont "";
 	done;
 
@@ -128,81 +128,81 @@
 	init $00, $17; # TEMP
 	text "自從敗";
 	forcemap 1, "選";
-	text "後，";
+	text "後﹐";
 	para "我老婆";
-	forcemap 2, "~";
+	forcemap 2, "～";
 	para "就⋯不知跑到";
 	line "哪裡去了";
-	forcemap 2, "~";
-	para "老婆啊~嗚~";
+	forcemap 2, "～";
+	para "老婆啊～嗚～";
 	done;
 
 @org $4f, $5161:
 	init $35, $5e; # TEMP
-	text "嗯~嗯~嗯~?";
+	text "嗯～嗯～嗯～﹖";
 	line "你是來要簽名的";
-	cont "嗎?";
-	para "嗯~又是一個被";
+	cont "嗎﹖";
+	para "嗯～又是一個被";
 	line "我所迷惑的小羔";
-	cont "羊。";
-	para "女人的身體，是";
-	line "最大的~武~器";
-	cont "嗯~~";
+	cont "羊⚬";
+	para "女人的身體﹐是";
+	line "最大的～武～器";
+	cont "嗯～～";
 	done;
 
 @org $4f, $51ca:
 	init $00, $13; # TEMP
-	text "沒有問題的!";
+	text "沒有問題的﹗";
 	line "以我女兒的姿色";
 	cont "要奪下選秀會的";
-	line "冠軍，絕對沒有";
-	cont "問題的。";
+	line "冠軍﹐絕對沒有";
+	cont "問題的⚬";
 	done;
 
 @org $4f, $5208:
 	init $00, $13; # TEMP
 	text "抱歉";
-	forcemap 2, "~";
+	forcemap 2, "～";
 	line "今日掛號已";
 	forcemap 1, "滿";
-	forcemap 1, "!";
+	forcemap 1, "﹗";
 	line "明";
 	forcemap 3, "日";
-	text "請早!";
+	text "請早﹗";
 	done;
 
 @org $4f, $522b:
 	init $00, $25; # TEMP
-	text "真是緊張，選秀";
-	line "會就要到了!";
+	text "真是緊張﹐選秀";
+	line "會就要到了﹗";
 	para "要是人家真的選";
-	line "上了，該怎麼辦";
+	line "上了﹐該怎麼辦";
 	cont "一想到人家就要";
-	line "成為世界明星，";
-	line "就好緊張喲!";
+	line "成為世界明星﹐";
+	line "就好緊張喲﹗";
 	done;
 
 @org $4f, $5284:
 	init $00, $25; # TEMP
 	text "要世界級明星的";
-	line "我的簽名，";
+	line "我的簽名﹐";
 	para "是";
 	forcemap 1, "要";
-	text "預約的喲~";
-	para "媽!掛號了~";
+	text "預約的喲～";
+	para "媽﹗掛號了～";
 	done;
 
 @org $4f, $52bc:
 	init $00, $16; # TEMP
 	text "在天之都的附近";
-	line "有一座森林，名";
-	cont "叫綠色樹海。";
+	line "有一座森林﹐名";
+	cont "叫綠色樹海⚬";
 	para "但不曉得為什麼";
-	line "突然間~";
+	line "突然間～";
 	cont "所";
 	forcemap 1, "有";
 	text "的樹都";
-	line "變成了石頭。";
+	line "變成了石頭⚬";
 	cont "真是奇怪啊⋯";
 	done;
 
@@ -211,53 +211,53 @@
 	text "綠色樹海裡有很";
 	line "多的小動物⋯";
 	cont "可是突然減少了";
-	line "很多~";
+	line "很多～";
 	cont "還有些被變成了";
-	line "石頭。";
+	line "石頭⚬";
 	para "到底是怎麼回事";
-	line "呢?";
+	line "呢﹖";
 	done;
 
 @org $4f, $5372:
 	init $00, $18; # TEMP
 	text "邦林企業總裁的";
-	line "兒子~";
-	cont "克勞德，是個頑";
-	line "皮的小孩。";
+	line "兒子～";
+	cont "克勞德﹐是個頑";
+	line "皮的小孩⚬";
 	para "不過他卻非常的";
-	line "喜歡小動物。";
+	line "喜歡小動物⚬";
 	para "常看見他對著小";
 	line "動物自言自語⋯";
 	done;
 
 @org $4f, $53d3:
 	init $00, $15; # TEMP
-	text "呀!我要參加選";
+	text "呀﹗我要參加選";
 	line "秀會用的珍珠項";
 	cont "鍊不見了⋯";
-	para "嗚~~";
-	line "要怎麼辦啦!";
+	para "嗚～～";
+	line "要怎麼辦啦﹗";
 	done;
 
 @org $4f, $540f:
 	init $00, $1b; # TEMP
 	text "剛才有隻貓來偷";
-	line "吃魚!";
+	line "吃魚﹗";
 	cont "真是可惡⋯";
 	done;
 
 @org $4f, $5430:
 	init $01, $2e; # TEMP
-	text "爸爸?";
-	line "那不是爸爸嗎?";
+	text "爸爸﹖";
+	line "那不是爸爸嗎﹖";
 	para "我終於找到他了";
-	line "!";
+	line "﹗";
 	done;
 
 @org $4f, $5457:
 	init $2a, $53; # TEMP
-	text "先生您好。";
-	line "大侯光臨~";
+	text "先生您好⚬";
+	line "大侯光臨～";
 	done;
 
 @org $4f, $5470:
@@ -267,192 +267,192 @@
 
 @org $4f, $5477:
 	init $2a, $53; # TEMP
-	text "先生~抱歉!";
+	text "先生～抱歉﹗";
 	cont "裡面就是邦林企";
-	line "業的內部辦公窒";
+	line "業的內部辦公室";
 	para "目前並沒有開放";
-	line "參觀，請您留步";
+	line "參觀﹐請您留步";
 	done;
 
 @org $4f, $54bb:
 	init $01, $2e; # TEMP
 	text "剛才那位先生是";
-	line "?";
+	line "﹖";
 	done;
 
 @org $4f, $54ce:
 	init $2a, $53; # TEMP
 	text "那位先生是總裁";
-	line "的貴賓。";
+	line "的貴賓⚬";
 	done;
 
 @org $4f, $54e8:
 	init $01, $2e; # TEMP
 	text "可是他是我爸爸";
-	line "!";
+	line "﹗";
 	done;
 
 @org $4f, $54fb:
 	init $2a, $53; # TEMP
-	text "先生~";
+	text "先生～";
 	line "請原諒我如此的";
-	line "無禮。";
-	para "專業的訓練，告";
+	line "無禮⚬";
+	para "專業的訓練﹐告";
 	line "訴我們不可相信";
-	cont "這種謊言。";
+	cont "這種謊言⚬";
 	para "邦林企業感謝您";
-	line "的關心，您可以";
+	line "的關心﹐您可以";
 	cont "任意的參觀大廳";
-	line "內的展示。";
-	para "祝您愉快。";
+	line "內的展示⚬";
+	para "祝您愉快⚬";
 	done;
 
 @org $4f, $5580:
 	init $01, $2c; # TEMP
 	text "可惡⋯⋯";
 	line "好不容易找到了";
-	cont "爸爸。";
+	cont "爸爸⚬";
 	line "卻⋯⋯";
 	para "不過至少知道爸";
-	line "爸的行蹤了。";
+	line "爸的行蹤了⚬";
 	done;
 
 @org $4f, $55bf:
 	init $2a, $53; # TEMP
-	text "您好~先生。";
+	text "您好～先生⚬";
 	para "裡面是邦林企業";
-	line "內部辦公窒。";
+	line "內部辦公室⚬";
 	para "並沒有開放參觀";
 	cont "您可以任意的參";
 	line "觀大廳內的展示";
-	cont "祝您愉快。";
+	cont "祝您愉快⚬";
 	done;
 
 @org $4f, $5619:
 	init $00, $1d; # TEMP
-	text "您好~這裡是邦";
+	text "您好～這裡是邦";
 	line "林企業的服務檯";
 	para "在您眼前的商品";
-	line "，都是本企業的";
-	cont "代表作品。";
+	line "﹐都是本企業的";
+	cont "代表作品⚬";
 	para "尤其是前方的復";
-	line "古風項鍊!";
+	line "古風項鍊﹗";
 	para "預估能掀起全球";
-	line "一陣復古風。";
+	line "一陣復古風⚬";
 	done;
 
 @org $4f, $568f:
 	init $00, $1f; # TEMP
-	text "您好~這裡是復";
+	text "您好～這裡是復";
 	line "古風項鍊代言人";
-	cont "選秀會報名處。";
-	line "您要報名嗎?";
+	cont "選秀會報名處⚬";
+	line "您要報名嗎﹖";
 	done;
 
 @org $4f, $56c8:
 	init $2b, $25; # TEMP
-	text "您好~";
-	line "我是産品解說員";
-	cont "~貝貝。";
+	text "您好～";
+	line "我是產品解說員";
+	cont "～貝貝⚬";
 	para "需要我服務的地";
-	line "方嗎?";
+	line "方嗎﹖";
 	done;
 
 @org $4f, $56fa:
 	init $00, $14; # TEMP
-	text "槽了~";
-	line "少爺又溜掉了!";
+	text "糟了～";
+	line "少爺又溜掉了﹗";
 	para "一定又會被總裁";
-	line "罵死的!";
-	cont "怎麼辦?";
+	line "罵死的﹗";
+	cont "怎麼辦﹖";
 	done;
 
 @org $4f, $572e:
 	init $03, $36; # TEMP
-	text "這⋯這項鍊?";
+	text "這⋯這項鍊﹖";
 	cont "這項鍊裡鑲上的";
-	line "東西，不就是動";
-	cont "力晶片嗎?";
+	line "東西﹐不就是動";
+	cont "力晶片嗎﹖";
 	done;
 
 @org $4f, $5762:
 	init $2b, $25; # TEMP
-	text "您好!";
+	text "您好﹗";
 	line "這就是邦林企業";
-	cont "最新的産品~";
-	line "復古風項鍊。";
+	cont "最新的產品～";
+	line "復古風項鍊⚬";
 	para "裡頭崁鑲著古代";
-	line "科技動力晶片。";
+	line "科技動力晶片⚬";
 	para "在高科技的流線";
-	line "體造型下，更襯";
+	line "體造型下﹐更襯";
 	cont "托出整體的復古";
-	line "典雅。";
+	line "典雅⚬";
 	done;
 
 @org $4f, $57d9:
 	init $01, $2e; # TEMP
-	text "動力晶片?";
+	text "動力晶片﹖";
 	done;
 
 @org $4f, $57e7:
 	init $2b, $25; # TEMP
-	text "是的。";
+	text "是的⚬";
 	line "整體的設計都是";
 	cont "由總裁親自設計";
 	para "動力晶片也是由";
-	line "總裁所提供。";
+	line "總裁所提供⚬";
 	done;
 
 @org $4f, $5826:
 	init $01, $2e; # TEMP
 	text "這要如何才能得";
-	line "到呢?";
+	line "到呢﹖";
 	done;
 
 @org $4f, $583e:
 	init $2b, $25; # TEMP
-	text "本産品還在樣品";
-	line "階段。";
+	text "本產品還在樣品";
+	line "階段⚬";
 	para "待在全球打響知";
-	line "名度後，便進行";
-	cont "量産。";
-	para "預訂售價是:";
-	line "4500";
+	line "名度後﹐便進行";
+	cont "量產⚬";
+	para "預訂售價是：";
+	line "４５００";
 	forcemap 1, "萬";
-	text "。";
+	text "⚬";
 	done;
 
 @org $4f, $588e:
 	init $01, $2d; # TEMP
-	text "4⋯";
-	line "4500";
+	text "４⋯";
+	line "４５００";
 	forcemap 1, "萬";
-	text "?";
+	text "﹖";
 	done;
 
 @org $4f, $589f:
 	init $2b, $25; # TEMP
-	text "是的。";
-	line "另外，本公司為";
+	text "是的⚬";
+	line "另外﹐本公司為";
 	cont "打響此商品知名";
-	line "度。";
+	line "度⚬";
 	para "特舉辦了一場盛";
 	line "大的代言選秀會";
 	para "中選者將可獲得";
-	line "本商品。";
+	line "本商品⚬";
 	para "這位小姐看來相";
-	line "當的標緻，可考";
+	line "當的標緻﹐可考";
 	cont "慮到服務檯報名";
-	line "唷!";
+	line "唷﹗";
 	done;
 
 @org $4f, $592a:
 	init $01, $2e; # TEMP
 	text "要如何籌到";
-	line "4500";
+	line "４５００";
 	forcemap 1, "萬";
-	text "呢?";
-	para "該怎麼辦?";
+	text "呢﹖";
+	para "該怎麼辦﹖";
 	done;
 
 @org $4f, $594e:
@@ -462,13 +462,13 @@
 
 @org $4f, $5955:
 	init $01, $2a; # TEMP
-	text "選秀會!妮娜!";
+	text "選秀會﹗妮娜﹗";
 	line "只要妮娜參加的";
-	cont "話，一定就可以";
-	line "中選!";
-	para "這樣一來，就可";
+	cont "話﹐一定就可以";
+	line "中選﹗";
+	para "這樣一來﹐就可";
 	line "以得到動力晶片";
-	cont "了!";
+	cont "了﹗";
 	done;
 
 @org $4f, $59ab:
@@ -481,10 +481,10 @@
 
 @org $4f, $59df:
 	init $01, $2e; # TEMP
-	text "衣服的事情，我";
+	text "衣服的事情﹐我";
 	line "們再另外想辦法";
-	cont "以妮娜的條件，";
-	line "一定可以的。";
+	cont "以妮娜的條件﹐";
+	line "一定可以的⚬";
 	done;
 
 @org $4f, $5a16:
@@ -495,10 +495,10 @@
 
 @org $4f, $5a2d:
 	init $00, $1f; # TEMP
-	text "您好~這裡是復";
+	text "您好～這裡是復";
 	line "古風項鍊代言人";
-	cont "選秀會報名處。";
-	line "您要報名嗎?";
+	cont "選秀會報名處⚬";
+	line "您要報名嗎﹖";
 	line "";
 	getchoice $1cc5; # TEMP
 
@@ -517,35 +517,35 @@
 
 @org $4f, $5a8e:
 	init $00, $1f; # TEMP
-	text "好的。";
+	text "好的⚬";
 	line "這就";
 	forcemap 2, "給";
-	text "您報名。";
-	para "好的~";
+	text "您報名⚬";
+	para "好的～";
 	line "完成了報名手續";
 	para "您的編號是";
-	line "第5932號";
+	line "第５９３２號";
 	done;
 
 @org $4f, $5acf:
 	init $00, $1f; # TEMP
 	text "您的編號是";
-	line "第5932號";
+	line "第５９３２號";
 	done;
 
 @org $4f, $5ae7:
 	init $03, $02; # TEMP
-	text "謝謝您。";
+	text "謝謝您⚬";
 	done;
 
 @org $4f, $5af1:
 	init $00, $1f; # TEMP
-	text "不客氣。";
+	text "不客氣⚬";
 	line "請原諒我的多嘴";
 	para "這位美麗的小姐";
 	line "建議您可以選購";
 	cont "一套適合的服裝";
-	para "這樣一來，一定";
+	para "這樣一來﹐一定";
 	line "可以脫穎而出的";
 	done;
 
@@ -557,165 +557,165 @@
 
 @org $4f, $5b5f:
 	init $00, $15; # TEMP
-	text "怎麼辦?";
-	cont "服飾店的衣服，";
+	text "怎麼辦﹖";
+	cont "服飾店的衣服﹐";
 	line "都被麗子給買下";
-	cont "來了。";
+	cont "來了⚬";
 	para "人家選秀會沒有";
-	line "新衣服可以穿!";
+	line "新衣服可以穿﹗";
 	done;
 
 @org $4f, $5ba1:
 	init $00, $1d; # TEMP
-	text "麗子真是可惡!";
+	text "麗子真是可惡﹗";
 	line "人家買不到新的";
-	cont "衣服，要怎麼上";
-	line "台嘛!";
-	para "人家不要!";
-	line "嗚~嗚嗚~";
+	cont "衣服﹐要怎麼上";
+	line "台嘛﹗";
+	para "人家不要﹗";
+	line "嗚～嗚嗚～";
 	done;
 
 @org $4f, $5be3:
 	init $00, $25; # TEMP
-	text "抱歉~";
+	text "抱歉～";
 	line "本店的服飾全被";
 	cont "麗子給買下來了";
-	line "真是抱歉⋯܅";
+	line "真是抱歉⋯‥";
 	done;
 
 @org $4f, $5c0f:
 	init $1e, $27; # TEMP
 	text "你這個可惡的女";
-	line "人!";
+	line "人﹗";
 	para "竟然搞這種可惡";
-	line "的勾當!";
+	line "的勾當﹗";
 	para "把所有的衣服全";
-	line "收購一空，真是";
-	cont "卑鄙!";
-	para "你這種女人，一";
-	line "‧點‧都‧不‧";
-	cont "可‧愛!";
+	line "收購一空﹐真是";
+	cont "卑鄙﹗";
+	para "你這種女人﹐一";
+	line "．點．都．不．";
+	cont "可．愛﹗";
 	done;
 
 @org $4f, $5c7d:
 	init $1f, $28; # TEMP
-	text "和在下想的，一";
-	line "點都沒有錯。";
-	para "在下認為，你真";
-	line "是個醜八怪!";
+	text "和在下想的﹐一";
+	line "點都沒有錯⚬";
+	para "在下認為﹐你真";
+	line "是個醜八怪﹗";
 	done;
 
 @org $4f, $5cb4:
 	init $35, $5e; # TEMP
-	text "什麼!!";
+	text "什麼﹗﹗";
 	line "竟敢說我不可愛";
-	cont "你們又是誰啊?";
+	cont "你們又是誰啊﹖";
 	done;
 
 @org $4f, $5cdc:
 	init $1e, $27; # TEMP
 	text "你在問我們是誰";
-	line "嗎?";
+	line "嗎﹖";
 	done;
 
 @org $4f, $5cf2:
 	init $1e, $27; # TEMP
 	text "既然你們問起了";
-	line "，那我就仁慈的";
-	cont "告訴你們吧!";
+	line "﹐那我就仁慈的";
+	cont "告訴你們吧﹗";
 	done;
 
 @org $4f, $5d1c:
 	init $1f, $28; # TEMP
 	text "來自銀河系裡的";
-	line "正義使者!";
+	line "正義使者﹗";
 	done;
 
 @org $4f, $5d38:
 	init $1e, $27; # TEMP
 	text "穿梭於黑夜的浪";
-	line "漫勇士!";
+	line "漫勇士﹗";
 	done;
 
 @org $4f, $5d50:
 	init $1f, $28; # TEMP
-	text "貫徹愛‧正義‧";
-	line "勇氣的真理!";
+	text "貫徹愛．正義．";
+	line "勇氣的真理﹗";
 	done;
 
 @org $4f, $5d6b:
 	init $1e, $27; # TEMP
-	text "拉琪!";
+	text "拉琪﹗";
 	done;
 
 @org $4f, $5d74:
 	init $1f, $28; # TEMP
-	text "庫魯!";
+	text "庫魯﹗";
 	done;
 
 @org $4f, $5d7d:
 	init $1e, $27; # TEMP
-	text "閃‧電‧隊~~";
-	line "誕生!!";
+	text "閃．電．隊～～";
+	line "誕生﹗﹗";
 	done;
 
 @org $4f, $5d91:
 	init $35, $5e; # TEMP
-	text "一群神經病!";
-	line "我就是不賣~";
+	text "一群神經病﹗";
+	line "我就是不賣～";
 	para "你們就穿那些破";
-	line "舊的衣服，上台";
-	cont "讓人笑個夠吧!";
-	line "哈哈哈哈~";
+	line "舊的衣服﹐上台";
+	cont "讓人笑個夠吧﹗";
+	line "哈哈哈哈～";
 	done;
 
 @org $4f, $5ddb:
 	init $1f, $28; # TEMP
 	text "你真是在下見過";
 	line "最壞心眼的醜八";
-	line "怪!";
+	line "怪﹗";
 	done;
 
 @org $4f, $5dfe:
 	init $1e, $27; # TEMP
-	text "哼!";
+	text "哼﹗";
 	line "沒什麼了不起的";
 	para "我會讓你這個不";
-	line "可愛的傢伙，見";
-	cont "識到~";
+	line "可愛的傢伙﹐見";
+	cont "識到～";
 	line "什麼叫做女王的";
-	line "風範!";
-	para "峨峨峨峨~";
-	line "呵呵呵呵!";
+	line "風範﹗";
+	para "哦哦哦哦～";
+	line "呵呵呵呵﹗";
 	done;
 
 @org $4f, $5e5b:
 	init $35, $5e; # TEMP
-	text "哼!";
+	text "哼﹗";
 	line "沒有人敢說麗子";
-	line "不可愛!";
-	cont "氣死我了!!";
+	line "不可愛﹗";
+	cont "氣死我了﹗﹗";
 	done;
 
 @org $4f, $5e85:
 	init $35, $5e; # TEMP
-	text "什麼?";
+	text "什麼﹖";
 	line "妳也想要參加";
 	line "";
-	cont "選秀會?";
+	cont "選秀會﹖";
 	done;
 
 @org $4f, $5ea5:
 	init $35, $5e; # TEMP
-	text "哈哈哈哈~";
-	line "不要笑死人了~";
+	text "哈哈哈哈～";
+	line "不要笑死人了～";
 	para "瞧妳那副寒酸樣";
 	line "連衣服穿在妳身";
-	cont "上，都變得很可";
-	line "憐。";
-	line "哈哈哈~";
-	para "妳還是放棄吧!";
-	line "哈哈哈~";
+	cont "上﹐都變得很可";
+	line "憐⚬";
+	line "哈哈哈～";
+	para "妳還是放棄吧﹗";
+	line "哈哈哈～";
 	done;
 
 @org $4f, $5f09:
@@ -726,10 +726,10 @@
 
 @org $4f, $5f1f:
 	init $35, $5e; # TEMP
-	text "真是傷腦筋~";
-	line "衣服這麼多~";
-	para "把乘下來的衣服";
-	line "全都燒掉吧!";
+	text "真是傷腦筋～";
+	line "衣服這麼多～";
+	para "把剩下來的衣服";
+	line "全都燒掉吧﹗";
 	cont "真是麻煩⋯";
 	done;
 
@@ -738,28 +738,28 @@
 	text "巴洛特⋯妮娜⋯";
 	line "不能比賽了⋯⋯";
 	para "妮娜⋯";
-	line "沒有衣服~";
-	cont "麗子小姐說，妮";
+	line "沒有衣服～";
+	cont "麗子小姐說﹐妮";
 	line "娜不適合比賽⋯";
 	done;
 
 @org $4f, $5fa7:
 	init $01, $2e; # TEMP
-	text "沒有那回事的!";
+	text "沒有那回事的﹗";
 	cont "妮娜一定是最漂";
-	line "亮的女孩。";
+	line "亮的女孩⚬";
 	para "只要我們解決了";
 	line "衣服的問題的話";
 	done;
 
 @org $4f, $5feb:
 	init $2c, $55; # TEMP
-	text "咦⋯?";
+	text "咦⋯﹖";
 	done;
 
 @org $4f, $5ff5:
 	init $2c, $55; # TEMP
-	text "啊⋯?";
+	text "啊⋯﹖";
 	done;
 
 @org $4f, $5fff:
@@ -771,8 +771,8 @@
 	init $2c, $55; # TEMP
 	text "這⋯這種心蹦蹦";
 	cont "跳的感覺是什麼";
-	line "?";
-	para "心膩好像被一百";
+	line "﹖";
+	para "心臟好像被一百";
 	line "隻大象踩過一樣";
 	cont "真是奇怪⋯⋯";
 	done;
@@ -781,7 +781,7 @@
 	init $2c, $55; # TEMP
 	text "這⋯這位小姐⋯";
 	line "妳也是要參加選";
-	cont "秀會嗎?";
+	cont "秀會嗎﹖";
 	done;
 
 @org $4f, $6077:
@@ -801,21 +801,21 @@
 
 @org $4f, $60c0:
 	init $03, $02; # TEMP
-	text "面具先生?";
+	text "面具先生﹖";
 	done;
 
 @org $4f, $60cd:
 	init $2c, $55; # TEMP
-	text "峨!!!";
+	text "哦﹗﹗﹗";
 	line "這件事就包在我";
-	cont "身上，我幫你解";
-	line "決衣服的問題。";
+	cont "身上﹐我幫你解";
+	line "決衣服的問題⚬";
 	para "我有個知名的裁";
-	line "縫師朋友。";
+	line "縫師朋友⚬";
 	para "我們就在綠色樹";
-	line "海碰面吧!";
-	para "再見了~";
-	line "一定要來喲!";
+	line "海碰面吧﹗";
+	para "再見了～";
+	line "一定要來喲﹗";
 	done;
 
 @org $4f, $6146:
@@ -825,49 +825,49 @@
 
 @org $4f, $6154:
 	init $03, $02; # TEMP
-	text "巴洛特，現在要";
-	line "怎麼辦?";
+	text "巴洛特﹐現在要";
+	line "怎麼辦﹖";
 	done;
 
 @org $4f, $616c:
 	init $01, $2e; # TEMP
-	text "沒有辦法了~";
+	text "沒有辦法了～";
 	cont "城裡已經買不到";
 	line "衣服⋯";
 	para "只好到綠色樹海";
-	line "與他碰面了。";
+	line "與他碰面了⚬";
 	done;
 
 @org $4f, $61aa:
 	init $01, $2e; # TEMP
 	text "這裡是綠色樹海";
-	line "嗎?";
+	line "嗎﹖";
 	cont "怎麼到處都是石";
-	line "頭做的樹?";
+	line "頭做的樹﹖";
 	para "石頭做的小動物";
-	line "真是奇怪~";
+	line "真是奇怪～";
 	done;
 
 @org $4f, $61ed:
 	init $2d, $56; # TEMP
-	text "拱拱~拱~";
+	text "拱拱～拱～";
 	done;
 
 @org $4f, $61fa:
 	init $2c, $55; # TEMP
-	text "啊?";
-	line "你們來了啊!";
-	line "就在這裡~";
+	text "啊﹖";
+	line "你們來了啊﹗";
+	line "就在這裡～";
 	done;
 
 @org $4f, $621a:
 	init $2c, $55; # TEMP
-	text "跟我來!";
+	text "跟我來﹗";
 	done;
 
 @org $4f, $6225:
 	init $2e, $57; # TEMP
-	text "咕咕咕~咕~";
+	text "咕咕咕～咕～";
 	done;
 
 @org $4f, $6233:
@@ -882,23 +882,23 @@
 
 @org $4f, $6243:
 	init $31, $5a; # TEMP
-	text "喵喵~咪嶼嗚~";
+	text "喵喵～咪噢嗚～";
 	done;
 
 @org $4f, $6254:
 	init $2e, $57; # TEMP
-	text "咕咕~咕咕~";
-	line "咕~";
+	text "咕咕～咕咕～";
+	line "咕～";
 	done;
 
 @org $4f, $6267:
 	init $2d, $56; # TEMP
-	text "拱拱~拱~";
+	text "拱拱～拱～";
 	done;
 
 @org $4f, $6274:
 	init $2d, $56; # TEMP
-	text "拱拱~拱~";
+	text "拱拱～拱～";
 	done;
 
 @org $4f, $6281:
@@ -908,55 +908,55 @@
 
 @org $4f, $6288:
 	init $2c, $55; # TEMP
-	text "咦?";
+	text "咦﹖";
 	cont "妮娜怎麼還沒有";
-	line "來?";
+	line "來﹖";
 	done;
 
 @org $4f, $62a1:
 	init $2c, $55; # TEMP
 	text "這裡就是我朋友";
-	line "的家。";
+	line "的家⚬";
 	done;
 
 @org $4f, $62b9:
 	init $03, $02; # TEMP
-	text "朋友?";
+	text "朋友﹖";
 	done;
 
 @org $4f, $62c2:
 	init $2c, $55; # TEMP
-	text "嗯。";
+	text "嗯⚬";
 	done;
 
 @org $4f, $62c9:
 	init $2c, $55; # TEMP
-	text "那位兔先生，就";
+	text "那位兔先生﹐就";
 	cont "是動物界裡最有";
-	line "名的裁師峨!";
+	line "名的裁師哦﹗";
 	para "但是流星雨事件";
-	line "中，擊中了綠色";
-	cont "樹海的火山岩。";
+	line "中﹐擊中了綠色";
+	cont "樹海的火山岩⚬";
 	para "火山岩變成了火";
-	line "山怪，並把森林";
+	line "山怪﹐並把森林";
 	cont "裡的所有東西變";
-	line "成石頭。";
+	line "成石頭⚬";
 	done;
 
 @org $4f, $634a:
 	init $03, $34; # TEMP
-	text "真是可憐。";
+	text "真是可憐⚬";
 	done;
 
 @org $4f, $6356:
 	init $2c, $55; # TEMP
-	text "森林的動物，有";
-	line "些閃避不及，都";
-	cont "變成了石頭。";
+	text "森林的動物﹐有";
+	line "些閃避不及﹐都";
+	cont "變成了石頭⚬";
 	para "連兔先生最鐘愛";
-	line "的兔小姐，也被";
+	line "的兔小姐﹐也被";
 	cont "變成了石頭⋯";
-	para "所以牠很傷心，";
+	para "所以牠很傷心﹐";
 	line "沒有心情做衣服";
 	cont "了⋯⋯";
 	done;
@@ -971,15 +971,15 @@
 	init $2c, $55; # TEMP
 	text "我們只要打倒了";
 	line "森林裡的火山怪";
-	cont "，應該就可以解";
+	cont "﹐應該就可以解";
 	line "救森林裡被石化";
-	cont "的動物們了。";
+	cont "的動物們了⚬";
 	done;
 
 @org $4f, $6422:
 	init $03, $02; # TEMP
-	text "好的，妮娜會努";
-	line "力的。";
+	text "好的﹐妮娜會努";
+	line "力的⚬";
 	done;
 
 @org $4f, $6438:
@@ -987,46 +987,46 @@
 	text "只有妳一個人去";
 	line "的話⋯";
 	para "我⋯我不能放心";
-	line "我也要跟妳去!";
+	line "我也要跟妳去﹗";
 	done;
 
 @org $4f, $646c:
 	init $03, $02; # TEMP
 	text "面具男鸚鵡怪";
-	line "加入隊伍!";
+	line "加入隊伍﹗";
 	done;
 
 @org $4f, $6483:
 	init $18, $2f; # TEMP
 	text "如果將面具男置";
-	cont "於排頭，鸚鵡怪";
+	cont "於排頭﹐鸚鵡怪";
 	line "便會發揮溝通力";
 	para "了解動物的語言";
-	line "。";
+	line "⚬";
 	done;
 
 @org $4f, $64bf:
 	init $2e, $57; # TEMP
-	text "真是可怕咕~";
+	text "真是可怕咕～";
 	cont "火山怪把森林變";
-	line "成石頭了咕。";
+	line "成石頭了咕⚬";
 	para "連裁縫大師兔先";
-	line "生的偶像~兔小";
+	line "生的偶像～兔小";
 	cont "姐都變成石頭了";
-	line "咕。";
+	line "咕⚬";
 	para "誰來救救我們咕";
-	line "?";
+	line "﹖";
 	done;
 
 @org $4f, $6527:
 	init $2f, $58; # TEMP
-	text "傷心呀~";
-	line "我的性感女神~";
-	cont "兔小姐啊~";
+	text "傷心呀～";
+	line "我的性感女神～";
+	cont "兔小姐啊～";
 	para "妳是為了救我而";
-	line "變成石頭的嗎?";
-	cont "傷心呀~";
-	cont "什麼衣服的，現";
+	line "變成石頭的嗎﹖";
+	cont "傷心呀～";
+	cont "什麼衣服的﹐現";
 	line "在都沒有心情做";
 	line "了⋯";
 	done;
@@ -1038,49 +1038,49 @@
 
 @org $4f, $6594:
 	init $31, $5a; # TEMP
-	text "我是旅行的人~";
-	line "偶爾來到這裡，";
+	text "我是旅行的人～";
+	line "偶爾來到這裡﹐";
 	cont "沒想到居然碰到";
-	line "這種事。";
-	para "雖覺得很恐怖，";
+	line "這種事⚬";
+	para "雖覺得很恐怖﹐";
 	line "但還是要做買賣";
 	para "想要買些什麼";
-	line "?";
+	line "﹖";
 	line "";
 	db $e7, $e2;
 
 @org $4f, $65f8:
 	init $2e, $57; # TEMP
-	text "咕咕~";
-	line "我是名醫~咕咕";
+	text "咕咕～";
+	line "我是名醫～咕咕";
 	para "除了變成石頭之";
-	line "外，其他的我都";
-	cont "能治。";
+	line "外﹐其他的我都";
+	cont "能治⚬";
 	para "需要";
 	forcemap 1, "服";
 	text "務嗎";
-	forcemap 1, "?";
+	forcemap 1, "﹖";
 	line "";
 	getchoice $1cc5; # TEMP
 
 @org $4f, $663f:
 	init $2d, $56; # TEMP
-	text "老婆~拱嗚~";
-	line "拱嗚~";
+	text "老婆～拱嗚～";
+	line "拱嗚～";
 	cont "我們的小孩⋯";
-	line "變成石頭了!";
+	line "變成石頭了﹗";
 	done;
 
 @org $4f, $666c:
 	init $2d, $56; # TEMP
-	text "老公~嗚嗚~";
-	line "拱拱~";
+	text "老公～嗚嗚～";
+	line "拱拱～";
 	cont "如果我們的小孩";
-	line "永遠變成這樣，";
+	line "永遠變成這樣﹐";
 	cont "那我也不要活了";
 	line "⋯⋯";
-	para "用你那性感的撩";
-	line "牙撞死我吧!";
+	para "用你那性感的獠";
+	line "牙撞死我吧﹗";
 	done;
 
 @org $4f, $66c4:
@@ -1090,39 +1090,39 @@
 
 @org $4f, $66cb:
 	init $2d, $56; # TEMP
-	text "是你呀!";
-	line "為了你好，還是";
-	cont "不要過去好了。";
+	text "是你呀﹗";
+	line "為了你好﹐還是";
+	cont "不要過去好了⚬";
 	para "前面就是可怕的";
-	line "火山怪了。";
+	line "火山怪了⚬";
 	done;
 
 @org $4f, $6707:
 	init $2d, $56; # TEMP
-	text "既使這樣，你都";
-	line "還是要過去嗎?";
-	cont "唉~祝福你了⋯";
+	text "既使這樣﹐你都";
+	line "還是要過去嗎﹖";
+	cont "唉～祝福你了⋯";
 	done;
 
 @org $4f, $6734:
 	init $2d, $56; # TEMP
-	text "唉~祝福你了⋯";
+	text "唉～祝福你了⋯";
 	done;
 
 @org $4f, $6746:
 	init $33, $5c; # TEMP
-	text "轟隆~轟隆~";
+	text "轟隆～轟隆～";
 	cont "還有醜陋的活人";
-	line "嗎?";
+	line "嗎﹖";
 	para "變成優美的石像";
 	line "不是件很幸福的";
-	cont "事嗎?";
+	cont "事嗎﹖";
 	done;
 
 @org $4f, $6787:
 	init $2c, $55; # TEMP
-	text "啊!";
-	line "我的面具!";
+	text "啊﹗";
+	line "我的面具﹗";
 	done;
 
 @org $4f, $6799:
@@ -1130,12 +1130,12 @@
 	text "我⋯我叫克勞德";
 	line "我們⋯我們⋯";
 	cont "我們快回去找兔";
-	line "先生吧!";
+	line "先生吧﹗";
 	done;
 
 @org $4f, $67cc:
 	init $2f, $58; # TEMP
-	text "謝謝你!";
+	text "謝謝你﹗";
 	done;
 
 @org $4f, $67d7:
@@ -1145,213 +1145,213 @@
 
 @org $4f, $67de:
 	init $2d, $56; # TEMP
-	text "謝謝你!";
+	text "謝謝你﹗";
 	done;
 
 @org $4f, $67e9:
 	init $2d, $56; # TEMP
-	text "拱拱~拱~";
+	text "拱拱～拱～";
 	done;
 
 @org $4f, $67f6:
 	init $2e, $57; # TEMP
-	text "謝謝你!";
+	text "謝謝你﹗";
 	done;
 
 @org $4f, $6801:
 	init $2e, $57; # TEMP
-	text "咕咕~咕咕~";
+	text "咕咕～咕咕～";
 	done;
 
 @org $4f, $680f:
 	init $2e, $57; # TEMP
-	text "咕~太棒咕~";
-	line "火山怪消失了。";
-	cont "咕~~";
-	line "大家都正常了。";
-	line "咕~~";
+	text "咕～太棒咕～";
+	line "火山怪消失了⚬";
+	cont "咕～～";
+	line "大家都正常了⚬";
+	line "咕～～";
 	done;
 
 @org $4f, $6843:
 	init $34, $5d; # TEMP
-	text "啊?兔先生為了";
-	line "我，傷心的吃不";
-	cont "下紅蘿蔔?";
+	text "啊﹖兔先生為了";
+	line "我﹐傷心的吃不";
+	cont "下紅蘿蔔﹖";
 	line "真是感動啊⋯";
 	done;
 
 @org $4f, $6878:
 	init $31, $31; # TEMP
-	text "我是旅行的人~";
-	line "偶爾來到這裡，";
+	text "我是旅行的人～";
+	line "偶爾來到這裡﹐";
 	cont "沒想到居然碰到";
-	line "這種事。";
-	para "雖覺得很恐怖，";
+	line "這種事⚬";
+	para "雖覺得很恐怖﹐";
 	line "但還是要做買賣";
 	para "想要買些什麼呢";
-	line "?";
+	line "﹖";
 	done;
 
 @org $4f, $68db:
 	init $2e, $57; # TEMP
-	text "咕咕~";
-	line "我是名醫~咕咕。";
+	text "咕咕～";
+	line "我是名醫～咕咕⚬";
 	para "除了變成石頭之";
-	line "外，其他的我都";
-	cont "能治。";
+	line "外﹐其他的我都";
+	cont "能治⚬";
 	line "需要我的服務嗎";
 	done;
 
 @org $4f, $6922:
 	init $2d, $56; # TEMP
-	text "老婆~拱嗚~";
-	line "拱嗚~";
+	text "老婆～拱嗚～";
+	line "拱嗚～";
 	cont "我們的小孩⋯";
-	line "終於正常了!";
+	line "終於正常了﹗";
 	done;
 
 @org $4f, $6950:
 	init $2d, $56; # TEMP
-	text "老公~嗚嗚~";
-	line "拱拱~";
+	text "老公～嗚嗚～";
+	line "拱拱～";
 	cont "我們的小孩又正";
-	line "常了!";
+	line "常了﹗";
 	cont "我真是太高與了";
 	line "⋯⋯";
-	para "用你那性感的撩";
-	line "牙撞一撞我，表";
-	cont "示慶祝吧!";
+	para "用你那性感的獠";
+	line "牙撞一撞我﹐表";
+	cont "示慶祝吧﹗";
 	done;
 
 @org $4f, $69af:
 	init $2d, $56; # TEMP
-	text "拱~嗚啊~";
-	line "睡得好飽啊~";
+	text "拱～嗚啊～";
+	line "睡得好飽啊～";
 	done;
 
 @org $4f, $69c8:
 	init $2f, $58; # TEMP
-	text "感謝你們!";
+	text "感謝你們﹗";
 	line "我又可以和性感";
-	cont "美麗的兔小姐，";
+	cont "美麗的兔小姐﹐";
 	line "一起看森林的日";
-	line "出。";
-	para "為了感謝你們，";
+	line "出⚬";
+	para "為了感謝你們﹐";
 	line "我就做出一件超";
 	cont "性感華麗的禮服";
-	line "吧!";
+	line "吧﹗";
 	para "你們等我一下下";
-	line "。";
+	line "⚬";
 	done;
 
 @org $4f, $6a43:
 	init $2f, $58; # TEMP
-	text "完成了!";
+	text "完成了﹗";
 	line "我用了全身的毛";
 	cont "做了一件媲美兔";
 	line "小姐的超超性感";
-	line "禮服。";
-	para "你們穿上後，一";
-	line "定會超~性感的";
+	line "禮服⚬";
+	para "你們穿上後﹐一";
+	line "定會超～性感的";
 	para "就跟兔小姐一樣";
-	line "。";
+	line "⚬";
 	done;
 
 @org $4f, $6aa8:
 	init $04, $03; # TEMP
-	text "得到性感禮服。";
+	text "得到性感禮服⚬";
 	done;
 
 @org $4f, $6ab8:
 	init $04, $37; # TEMP
-	text "槽了~";
+	text "糟了～";
 	line "時間快來不及了";
 	para "我要先趕回去了";
-	line "!";
+	line "﹗";
 	done;
 
 @org $4f, $6ae3:
 	init $03, $02; # TEMP
-	text "克勞德先生，謝";
-	line "謝你。";
+	text "克勞德先生﹐謝";
+	line "謝你⚬";
 	done;
 
 @org $4f, $6afa:
 	init $04, $03; # TEMP
 	text "不⋯不客氣⋯";
-	line "妮娜~";
+	line "妮娜～";
 	cont "選秀會就快要開";
-	line "始了。";
-	para "不要遲到了喲~";
-	line "我會等你的。";
-	cont "再見~";
+	line "始了⚬";
+	para "不要遲到了喲～";
+	line "我會等你的⚬";
+	cont "再見～";
 	done;
 
 @org $4f, $6b41:
 	init $00, $13; # TEMP
-	text "哎呀~";
+	text "哎呀～";
 	line "選秀會就要開始";
-	cont "了~";
-	line "真是緊張!";
+	cont "了～";
+	line "真是緊張﹗";
 	done;
 
 @org $4f, $6b67:
 	init $00, $13; # TEMP
-	text "恭喜你~";
-	line "妮娜小姐~";
+	text "恭喜你～";
+	line "妮娜小姐～";
 	done;
 
 @org $4f, $6b7c:
 	init $21, $31; # TEMP
-	text "噁~噁~喵~";
-	line "噁~!";
+	text "噁～噁～喵～";
+	line "噁～﹗";
 	done;
 
 @org $4f, $6b93:
 	init $00, $15; # TEMP
 	text "怎麼辦⋯";
 	line "選秀會就要舉行";
-	cont "了，人家還沒有";
-	line "新衣服~";
-	cont "人家不比了啦!";
+	cont "了﹐人家還沒有";
+	line "新衣服～";
+	cont "人家不比了啦﹗";
 	done;
 
 @org $4f, $6bcf:
 	init $00, $1d; # TEMP
-	text "嗚~可惡的麗子~";
-	cont "都是她，害我買";
-	line "不到新衣服!";
+	text "嗚～可惡的麗子～";
+	cont "都是她﹐害我買";
+	line "不到新衣服﹗";
 	done;
 
 @org $4f, $6bf9:
 	init $00, $16; # TEMP
 	text "綠色樹海又變成";
-	line "一片綠油油了。";
+	line "一片綠油油了⚬";
 	para "真是搞不懂怎麼";
-	line "回事。";
+	line "回事⚬";
 	done;
 
 @org $4f, $6c29:
 	init $00, $1f; # TEMP
-	text "好噁心喔!";
+	text "好噁心喔﹗";
 	line "在綠色樹海看到";
 	cont "一隻沒有毛的小";
 	line "白兔⋯";
-	para "小白兔沒有毛，";
+	para "小白兔沒有毛﹐";
 	line "變得好像是長耳";
-	cont "朵的老鼠!";
-	line "好噁心喔!";
+	cont "朵的老鼠﹗";
+	line "好噁心喔﹗";
 	done;
 
 @org $4f, $6c8c:
 	init $00, $14; # TEMP
 	text "少爺總算是回來";
-	line "了!";
-	para "這次的選秀會，";
+	line "了﹗";
+	para "這次的選秀會﹐";
 	line "少爺可是主要的";
-	cont "評審。";
+	cont "評審⚬";
 	para "幸好他準時回來";
-	line "了。";
+	line "了⚬";
 	done;
 
 @org $4f, $6cd2:
@@ -1365,363 +1365,363 @@
 @org $4f, $6ce6:
 	init $00, $1f; # TEMP
 	text "您不是妮娜小姐";
-	line "嗎?";
+	line "嗎﹖";
 	para "選秀會就要快開";
-	line "始了，您準備好";
-	cont "了嗎?";
+	line "始了﹐您準備好";
+	cont "了嗎﹖";
 	line "";
 	getchoice $1cc5; # TEMP
 @org $4f, $6d20:
 	init $00, $1f; # TEMP
-	text "是這樣子的嗎?";
+	text "是這樣子的嗎﹖";
 	line "那您動作就要快";
-	cont "一些了。";
+	cont "一些了⚬";
 	para "選秀會就要舉行";
-	line "了。";
+	line "了⚬";
 	done;
 
 @org $4f, $6d57:
 	init $00, $1f; # TEMP
-	text "好的。";
+	text "好的⚬";
 	para "我這就帶您到會";
-	line "場。";
+	line "場⚬";
 	done;
 
 @org $4f, $6d71:
 	init $35, $5e; # TEMP
-	text "哈哈哈哈~";
+	text "哈哈哈哈～";
 	line "瞧你們那副窮酸";
-	cont "樣~";
+	cont "樣～";
 	para "真是叫人笑到肚";
-	line "子疼~";
+	line "子疼～";
 	done;
 
 @org $4f, $6da3:
 	init $00, $13; # TEMP
 	text "好⋯好緊張⋯";
-	line "深呼吸~";
-	cont "深呼吸~";
+	line "深呼吸～";
+	cont "深呼吸～";
 	done;
 
 @org $4f, $6dc1:
 	init $00, $1d; # TEMP
-	text "可惡的麗子~";
-	line "都是她，害我們";
+	text "可惡的麗子～";
+	line "都是她﹐害我們";
 	cont "沒有新衣服⋯⋯";
 	done;
 
 @org $4f, $6dea:
 	init $00, $25; # TEMP
-	text "不公平~";
-	line "這次選秀會，根";
-	cont "本就不公平~";
+	text "不公平～";
+	line "這次選秀會﹐根";
+	cont "本就不公平～";
 	line "人家沒有衣服穿";
 	done;
 
 @org $4f, $6e1e:
 	init $00, $1f; # TEMP
-	text "圖釘呢?";
-	line "在哪裡?";
-	cont "喔!在這裡!";
-	line "呵呵呵呵~";
-	para "這‧樣‧一‧來";
-	line "就!!!";
-	cont "呵呵呵呵~";
+	text "圖釘呢﹖";
+	line "在哪裡﹖";
+	cont "喔﹗在這裡﹗";
+	line "呵呵呵呵～";
+	para "這．樣．一．來";
+	line "就﹗﹗﹗";
+	cont "呵呵呵呵～";
 	done;
 
 @org $4f, $6e64:
 	init $1e, $27; # TEMP
-	text "峨~呵呵呵!";
-	line "那個举蛋麗子，";
+	text "哦～呵呵呵﹗";
+	line "那個笨蛋麗子﹐";
 	cont "得意不了多久的";
 	line "本女王會讓她見";
-	cont "識到，什麼叫做";
-	line "高貴的風範!";
-	para "而那條項鍊，就";
-	line "是我們的了!";
-	para "峨~呵呵呵~";
-	line "這樣一來，就沒";
-	cont "有問題了!";
-	line "峨峨峨峨~";
-	line "呵呵呵呵!";
+	cont "識到﹐什麼叫做";
+	line "高貴的風範﹗";
+	para "而那條項鍊﹐就";
+	line "是我們的了﹗";
+	para "哦～呵呵呵～";
+	line "這樣一來﹐就沒";
+	cont "有問題了﹗";
+	line "哦哦哦哦～";
+	line "呵呵呵呵﹗";
 	done;
 
 @org $4f, $6f02:
 	init $00, $13; # TEMP
-	text "編號第號，";
-	line "妮娜小姐。";
+	text "編號第號﹐";
+	line "妮娜小姐⚬";
 	para "第一次選秀評分";
-	line "請準備上台。";
+	line "請準備上台⚬";
 	done;
 
 @org $4f, $6f36:
 	init $03, $02; # TEMP
-	text "峨⋯!";
-	line "好的，謝謝您。";
+	text "哦⋯﹗";
+	line "好的﹐謝謝您⚬";
 	done;
 
 @org $4f, $6f4c:
 	init $36, $50; # TEMP
 	text "第一循環淘汰賽";
 	line "比的是反應及機";
-	cont "智。";
-	para "美麗的外表下，";
+	cont "智⚬";
+	para "美麗的外表下﹐";
 	line "包涵了機敏的頭";
-	cont "腦。";
+	cont "腦⚬";
 	para "才是邦林企業的";
-	line "需求。";
-	para "準備好了嗎?";
-	line "妮娜小姐~";
-	cont "測驗開始~";
+	line "需求⚬";
+	para "準備好了嗎﹖";
+	line "妮娜小姐～";
+	cont "測驗開始～";
 	line "後台人員";
-	cont "請準備!";
+	cont "請準備﹗";
 	done;
 
 @org $4f, $6fd2:
 	init $36, $50; # TEMP
-	text "沒有關係，這只";
-	line "是熱身的測試。";
+	text "沒有關係﹐這只";
+	line "是熱身的測試⚬";
 	para "誰沒有失敗的經";
-	line "驗呢?";
-	para "你說是吧~";
-	line "美麗的小姐。";
-	para "再試一下吧!";
+	line "驗呢﹖";
+	para "你說是吧～";
+	line "美麗的小姐⚬";
+	para "再試一下吧﹗";
 	done;
 
 @org $4f, $7023:
 	init $36, $50; # TEMP
-	text "嗯~感覺不錯~";
-	cont "您可以回休息窒";
-	line "了。";
+	text "嗯～感覺不錯～";
+	cont "您可以回休息室";
+	line "了⚬";
 	para "結果我們會通知";
-	line "各位。";
-	cont "辛苦了。";
+	line "各位⚬";
+	cont "辛苦了⚬";
 	done;
 
 @org $4f, $7061:
 	init $03, $02; # TEMP
-	text "謝謝你們。";
+	text "謝謝你們⚬";
 	done;
 
 @org $4f, $706e:
 	init $35, $5e; # TEMP
-	text "哈哈哈哈~";
-	line "妳也比完了嗎?";
-	para "呵呵~";
-	line "這個反應測試~";
+	text "哈哈哈哈～";
+	line "妳也比完了嗎﹖";
+	para "呵呵～";
+	line "這個反應測試～";
 	para "我一定可以通過";
-	line "的。";
+	line "的⚬";
 	done;
 
 @org $4f, $70a6:
 	init $00, $13; # TEMP
-	text "嗚哇~";
-	line "人家剛在台上，";
+	text "嗚哇～";
+	line "人家剛在台上﹐";
 	cont "手腳僵硬⋯";
 	line "根本就沒有辦法";
-	cont "動!";
-	line "完蛋了啦!";
+	cont "動﹗";
+	line "完蛋了啦﹗";
 	done;
 
 @org $4f, $70e3:
 	init $00, $1d; # TEMP
 	text "我用我最深的詛";
-	line "咒!";
+	line "咒﹗";
 	para "詛咒麗子落選吧";
-	line "詛咒~詛咒!";
+	line "詛咒～詛咒﹗";
 	done;
 
 @org $4f, $710f:
 	init $00, $25; # TEMP
-	text "好緊張~";
-	line "好緊張~";
+	text "好緊張～";
+	line "好緊張～";
 	done;
 
 @org $4f, $7124:
 	init $00, $1f; # TEMP
-	text "咭咭咭咭~";
-	cont "我的圖釘戰術~";
-	line "是無敵的!";
+	text "咭咭咭咭～";
+	cont "我的圖釘戰術～";
+	line "是無敵的﹗";
 	done;
 
 @org $4f, $7147:
 	init $1e, $27; # TEMP
-	text "峨~呵呵呵呵!";
-	line "什麼反應測試~";
-	para "在我拉琪看來，";
+	text "哦～呵呵呵呵﹗";
+	line "什麼反應測試～";
+	para "在我拉琪看來﹐";
 	line "不過是小孩子的";
-	cont "遊戲罷了。";
-	para "峨峨峨峨~";
-	line "呵呵呵呵!";
+	cont "遊戲罷了⚬";
+	para "哦哦哦哦～";
+	line "呵呵呵呵﹗";
 	done;
 
 @org $4f, $7197:
 	init $00, $13; # TEMP
-	text "宣佈休息窒";
-	line "初賽入選名單。";
+	text "宣佈休息室";
+	line "初賽入選名單⚬";
 	done;
 
 @org $4f, $71b2:
 	init $00, $1d; # TEMP
-	text "啊!";
-	line "我入選了!";
+	text "啊﹗";
+	line "我入選了﹗";
 	line "";
-	cont "萬歲!";
+	cont "萬歲﹗";
 	done;
 
 @org $4f, $71ca:
 	init $00, $13; # TEMP
-	text "號~";
-	line "麗子小姐。";
+	text "號～";
+	line "麗子小姐⚬";
 	done;
 
 @org $4f, $71dc:
 	init $35, $5e; # TEMP
-	text "呵呵呵~~";
-	line "理所當然的。";
+	text "呵呵呵～～";
+	line "理所當然的⚬";
 	done;
 
 @org $4f, $71f3:
 	init $00, $13; # TEMP
-	text "號~";
-	line "拉琪小姐。";
+	text "號～";
+	line "拉琪小姐⚬";
 	done;
 
 @org $4f, $7205:
 	init $1e, $27; # TEMP
-	text "峨峨峨峨~";
-	line "呵呵呵呵!";
+	text "哦哦哦哦～";
+	line "呵呵呵呵﹗";
 	done;
 
 @org $4f, $7218:
 	init $00, $13; # TEMP
-	text "號~";
-	line "薇薇小姐。";
+	text "號～";
+	line "薇薇小姐⚬";
 	done;
 
 @org $4f, $722a:
 	init $00, $1f; # TEMP
-	text "我⋯我入選了?";
-	line "好高興!";
+	text "我⋯我入選了﹖";
+	line "好高興﹗";
 	done;
 
 @org $4f, $723e:
 	init $03, $02; # TEMP
-	text "沒有希望了嗎?";
+	text "沒有希望了嗎﹖";
 	done;
 
 @org $4f, $724e:
 	init $00, $13; # TEMP
-	text "最後一位~";
-	line "第號~";
-	cont "妮娜小姐。";
+	text "最後一位～";
+	line "第號～";
+	cont "妮娜小姐⚬";
 	done;
 
 @org $4f, $726e:
 	init $03, $33; # TEMP
-	text "妮娜⋯入選了?";
-	line "謝謝⋯謝謝您!";
+	text "妮娜⋯入選了﹖";
+	line "謝謝⋯謝謝您﹗";
 	done;
 
 @org $4f, $7289:
 	init $00, $13; # TEMP
-	text "以上，通過初選";
+	text "以上﹐通過初選";
 	line "的請到展示台上";
 	para "做最後的自選服";
-	line "裝展示。";
+	line "裝展示⚬";
 	done;
 
 @org $4f, $72bd:
 	init $03, $02; # TEMP
 	text "要趕快換上兔先";
-	line "生特製的禮服。";
+	line "生特製的禮服⚬";
 	done;
 
 @org $4f, $72db:
 	init $03, $36; # TEMP
 	text "啊⋯⋯這是什麼";
-	line "?";
+	line "﹖";
 	para "怎⋯怎麼會這樣";
-	line "?";
+	line "﹖";
 	done;
 
 @org $4f, $72fb:
 	init $37, $50; # TEMP
-	text "各位先生~";
-	line "各位女士~";
-	cont "讓大家久等了!";
+	text "各位先生～";
+	line "各位女士～";
+	cont "讓大家久等了﹗";
 	para "邦林企業這次的";
-	line "産品代言人選秀";
-	cont "會，即將到達最";
-	line "高潮。";
+	line "產品代言人選秀";
+	cont "會﹐即將到達最";
+	line "高潮⚬";
 	para "就是美少女自選";
-	line "服裝美儀評鑑。";
-	para "讓我們歡迎~";
-	line "第號的~";
+	line "服裝美儀評鑑⚬";
+	para "讓我們歡迎～";
+	line "第號的～";
 	cont "也就是世界名模";
-	line "千金的~";
-	line "麗子小姐!";
+	line "千金的～";
+	line "麗子小姐﹗";
 	done;
 
 @org $4f, $739e:
 	init $37, $50; # TEMP
 	text "麗子小姐的服裝";
 	line "真是令人賞心悅";
-	cont "目啊!";
+	cont "目啊﹗";
 	line "比賽進行到了這";
-	line "裡~";
-	para "讓我們觀迎~";
-	line "第號的~";
-	cont "拉琪小姐~";
+	line "裡～";
+	para "讓我們觀迎～";
+	line "第號的～";
+	cont "拉琪小姐～";
 	done;
 
 @org $4f, $73f5:
 	init $36, $50; # TEMP
 	text "這⋯這是⋯";
 	line "傳說中的⋯⋯";
-	cont "夏娃的羽衣嗎?";
+	cont "夏娃的羽衣嗎﹖";
 	line "鼻⋯鼻血止不住";
-	line "!!!";
+	line "﹗﹗﹗";
 	done;
 
 @org $4f, $742a:
 	init $1f, $28; # TEMP
-	text "太棒了!";
-	line "拉琪太棒了!";
+	text "太棒了﹗";
+	line "拉琪太棒了﹗";
 	done;
 
 @org $4f, $7440:
 	init $37, $50; # TEMP
 	text "這⋯這真是太勁";
-	line "暴了!";
+	line "暴了﹗";
 	para "沒想到拉琪小姐";
 	line "竟然選擇這種大";
-	cont "膽的作風。";
+	cont "膽的作風⚬";
 	para "由評審員不停流";
-	line "出的鼻血看來~";
+	line "出的鼻血看來～";
 	cont "拉琪小姐似乎獲";
 	line "得了很高的評價";
-	line "!";
+	line "﹗";
 	done;
 
 @org $4f, $74b0:
 	init $37, $50; # TEMP
-	text "接下來，選秀會";
+	text "接下來﹐選秀會";
 	line "的最後一位美少";
-	cont "女。";
-	para "我們一起歡迎，";
-	line "第號的~";
-	cont "妮娜小姐!";
+	cont "女⚬";
+	para "我們一起歡迎﹐";
+	line "第號的～";
+	cont "妮娜小姐﹗";
 	done;
 
 @org $4f, $74f5:
 	init $01, $2e; # TEMP
-	text "妮娜~加油~!";
+	text "妮娜～加油～﹗";
 	done;
 
 @org $4f, $7504:
 	init $37, $50; # TEMP
-	text "妮娜小姐?";
+	text "妮娜小姐﹖";
 	done;
 
 @org $4f, $7512:
@@ -1732,7 +1732,7 @@
 @org $4f, $7520:
 	init $01, $2e; # TEMP
 	text "這就是⋯超性感";
-	line "華麗的禮服?";
+	line "華麗的禮服﹖";
 	done;
 
 @org $4f, $753c:
@@ -1742,247 +1742,247 @@
 
 @org $4f, $754c:
 	init $04, $38; # TEMP
-	text "好呀!";
+	text "好呀﹗";
 	para "好有創意的衣服";
-	line "啊!";
+	line "啊﹗";
 	done;
 
 @org $4f, $7568:
 	init $36, $53; # TEMP
-	text "少⋯少爺?";
-	line "少爺這麼認為?";
+	text "少⋯少爺﹖";
+	line "少爺這麼認為﹖";
 	para "這是多麼有創意";
-	line "的服裝啊!";
+	line "的服裝啊﹗";
 	done;
 
 @org $4f, $759c:
 	init $03, $02; # TEMP
-	text "克勞德?";
+	text "克勞德﹖";
 	line "他怎麼會在評審";
-	cont "席呢?";
+	cont "席呢﹖";
 	done;
 
 @org $4f, $75ba:
 	init $37, $50; # TEMP
-	text "好的。";
+	text "好的⚬";
 	line "所有的美少女都";
 	cont "已經展示過她們";
-	line "的服裝了。";
+	line "的服裝了⚬";
 	done;
 
 @org $4f, $75e3:
 	init $37, $50; # TEMP
-	text "峨峨峨峨!";
-	line "結果出來了!";
+	text "哦哦哦哦﹗";
+	line "結果出來了﹗";
 	cont "最後優勝者是⋯";
 	done;
 
 @org $4f, $7607:
 	init $37, $50; # TEMP
 	text "第號的妮娜";
-	line "小姐!!";
+	line "小姐﹗﹗";
 	done;
 
 @org $4f, $761d:
 	init $03, $33; # TEMP
 	text "謝謝⋯";
-	line "謝謝你們~";
+	line "謝謝你們～";
 	done;
 
 @org $4f, $7630:
 	init $37, $50; # TEMP
-	text "我們這就請~";
+	text "我們這就請～";
 	line "邦林科技的總裁";
-	cont "哈瑪斯先生。";
-	cont "來為妮娜小姐，";
+	cont "哈瑪斯先生⚬";
+	cont "來為妮娜小姐﹐";
 	line "頒發這條價值";
 	cont "萬的復古項";
-	line "鍊!";
-	line "恭喜妮娜!";
+	line "鍊﹗";
+	line "恭喜妮娜﹗";
 	done;
 
 @org $4f, $7689:
 	init $1e, $27; # TEMP
 	text "你們這些沒有眼";
-	line "睛的人!";
+	line "睛的人﹗";
 	para "我閃電隊的高貴";
-	line "女王~拉琪~";
+	line "女王～拉琪～";
 	para "給了各位特別的";
-	line "恩惠，展示了我";
-	cont "傲人的胴體，你";
+	line "恩惠﹐展示了我";
+	cont "傲人的胴體﹐你";
 	line "們居然不會欣賞";
 	line "";
 	done;
 
 @org $4f, $76f5:
 	init $1f, $28; # TEMP
-	text "沒錯!";
-	para "這條項鍊，我們";
-	line "就拿走了!";
+	text "沒錯﹗";
+	para "這條項鍊﹐我們";
+	line "就拿走了﹗";
 	done;
 
 @org $4f, $7717:
 	init $1e, $27; # TEMP
-	text "峨峨~呵呵呵!";
+	text "哦哦～呵呵呵﹗";
 	done;
 
 @org $4f, $7726:
 	init $38, $61; # TEMP
-	text "槽糕!";
-	line "項鍊被搶走了!";
+	text "糟糕﹗";
+	line "項鍊被搶走了﹗";
 	para "得儘快要回來才";
-	line "行!";
+	line "行﹗";
 	done;
 
 @org $4f, $774f:
 	init $01, $2e; # TEMP
-	text "妮娜!";
+	text "妮娜﹗";
 	para "我們得起快搶回";
-	line "項鍊才行啊!";
+	line "項鍊才行啊﹗";
 	done;
 
 @org $4f, $7773:
 	init $03, $02; # TEMP
-	text "好的。";
+	text "好的⚬";
 	done;
 
 @org $4f, $777c:
 	init $04, $03; # TEMP
-	text "妮娜!";
+	text "妮娜﹗";
 	para "閃電隊往大樓內";
-	line "部逃去了!";
+	line "部逃去了﹗";
 	done;
 
 @org $4f, $779e:
 	init $01, $2e; # TEMP
-	text "我們快追!";
+	text "我們快追﹗";
 	done;
 
 @org $4f, $77ab:
 	init $04, $03; # TEMP
-	text "不行!";
+	text "不行﹗";
 	line "妮娜一個人的話";
-	cont "我不放心!";
-	line "我也一起去!";
+	cont "我不放心﹗";
+	line "我也一起去﹗";
 	done;
 
 @org $4f, $77d9:
 	init $1e, $27; # TEMP
-	text "峨~呵呵呵!";
-	line "復古項鍊!";
-	cont "終於到手了!";
+	text "哦～呵呵呵﹗";
+	line "復古項鍊﹗";
+	cont "終於到手了﹗";
 	done;
 
 @org $4f, $77fe:
 	init $1f, $28; # TEMP
 	text "在下真是非常的";
-	line "感動~";
+	line "感動～";
 	para "在下和拉琪的夢";
-	line "想，終於可以實";
-	cont "現了!";
+	line "想﹐終於可以實";
+	cont "現了﹗";
 	done;
 
 @org $4f, $7834:
 	init $1e, $27; # TEMP
 	text "不過還是很生氣";
 	line "我絞盡腦汁想出";
-	cont "的樹裝，真的比";
-	line "不上那隻举白兔";
-	line "嗎?";
+	cont "的樹裝﹐真的比";
+	line "不上那隻笨白兔";
+	line "嗎﹖";
 	done;
 
 @org $4f, $786c:
 	init $1f, $28; # TEMP
-	text "不~!";
-	line "在下認為，拉琪";
+	text "不～﹗";
+	line "在下認為﹐拉琪";
 	cont "的樹葉裝是最棒";
-	line "的!";
+	line "的﹗";
 	done;
 
 @org $4f, $7895:
 	init $1e, $27; # TEMP
-	text "不過話說回來。";
+	text "不過話說回來⚬";
 	line "我們拿到了項鍊";
 	cont "現在要怎麼離開";
-	line "這裡?";
+	line "這裡﹖";
 	done;
 
 @org $4f, $78c5:
 	init $1f, $28; # TEMP
-	text "又是你們!";
+	text "又是你們﹗";
 	line "看來在下要稍";
 	cont "微拿出一點實力";
-	line "了。";
+	line "了⚬";
 	done;
 
 @org $4f, $78f1:
 	init $1e, $27; # TEMP
-	text "峨~呵呵呵!";
-	line "我要讓那隻举白";
-	cont "兔了解，才是真";
-	line "正的女王!";
+	text "哦～呵呵呵﹗";
+	line "我要讓那隻笨白";
+	cont "兔了解﹐才是真";
+	line "正的女王﹗";
 	done;
 
 @org $4f, $7924:
 	init $1e, $27; # TEMP
-	text "哼!";
-	line "還你就還你!";
+	text "哼﹗";
+	line "還你就還你﹗";
 	done;
 
 @org $4f, $7935:
 	init $01, $2e; # TEMP
 	text "得到了復古項鍊";
-	line "!";
+	line "﹗";
 	done;
 
 @org $4f, $7948:
 	init $1f, $28; # TEMP
 	text "知道我們的厲害";
-	line "了吧?";
+	line "了吧﹖";
 	para "這次在下就饒了";
-	line "你們!";
-	para "下次見面時，就";
-	line "不留情了!";
+	line "你們﹗";
+	para "下次見面時﹐就";
+	line "不留情了﹗";
 	done;
 
 @org $4f, $798c:
 	init $21, $31; # TEMP
-	text "嘔~呃~喵~呃";
-	line "哽⋯哽住了!";
+	text "嘔～呃～喵～呃";
+	line "哽⋯哽住了﹗";
 	done;
 
 @org $4f, $79aa:
 	init $04, $37; # TEMP
-	text "怎麼回事?";
+	text "怎麼回事﹖";
 	done;
 
 @org $4f, $79b7:
 	init $21, $31; # TEMP
-	text "喵~啊!";
-	line "終於吐出來了!";
-	para "就是這個石頭，";
+	text "喵～啊﹗";
+	line "終於吐出來了﹗";
+	para "就是這個石頭﹐";
 	line "卡在喉嚨裡好久";
-	cont "了!";
+	cont "了﹗";
 	done;
 
 @org $4f, $79ef:
 	init $04, $03; # TEMP
-	text "得到珍珠項鍊。";
+	text "得到珍珠項鍊⚬";
 	done;
 
 @org $4f, $7a00:
 	init $21, $31; # TEMP
-	text "喵!!";
-	line "真是舒服喵~";
+	text "喵﹗﹗";
+	line "真是舒服喵～";
 	done;
 
 @org $4f, $7a15:
 	init $00, $15; # TEMP
 	text "這不是我的珍珠";
-	line "項鍊嗎?";
-	cont "真是太好了!";
-	para "為了感謝你，這";
-	line "個就送給你了!";
+	line "項鍊嗎﹖";
+	cont "真是太好了﹗";
+	para "為了感謝你﹐這";
+	line "個就送給你了﹗";
 	done;
 
 @org $4f, $7a54:
@@ -1990,34 +1990,34 @@
 	text "得到";
 	forcemap 1, "甦";
 	text "生儀";
-	forcemap 1, "!";
+	forcemap 1, "﹗";
 	done;
 
 @org $4f, $7a62:
 	init $00, $15; # TEMP
-	text "真是謝謝你。";
+	text "真是謝謝你⚬";
 	done;
 
 @org $4f, $7a70:
 	init $00, $15; # TEMP
 	text "這不是我的珍項";
-	line "鍊嗎?";
+	line "鍊嗎﹖";
 	para "我就是因為少了";
-	line "這項鍊，才落選";
+	line "這項鍊﹐才落選";
 	cont "的⋯";
 	para "不過還是要謝謝";
-	line "你。";
-	para "這個就給你了!";
+	line "你⚬";
+	para "這個就給你了﹗";
 	done;
 
 @org $4f, $7ac3:
 	init $01, $2e; # TEMP
 	text "得到巴利果實";
-	forcemap 1, "!";
+	forcemap 1, "﹗";
 	done;
 
 @org $4f, $7ad3:
 	init $00, $15; # TEMP
-	text "真是謝謝你。";
+	text "真是謝謝你⚬";
 	done;
 

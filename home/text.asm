@@ -1016,7 +1016,7 @@ Text_Cont::
 Func_1f70::
 	ld hl, wcde0
 	ld [hl], $3f
-	ld a, [hFFD3]
+	ld a, [hBattleJumptableIndex]
 	and a
 	jr nz, .asm_1f81
 
@@ -1258,7 +1258,7 @@ ENDR
 	dba Group01_Maps
 	dba Group02_Maps
 	dba Group03_Maps
-	dba unk_052_4000
+	dba Group04_Maps
 	dba unk_063_4000
 	dba unk_069_4000
 	dba unk_069_4883
