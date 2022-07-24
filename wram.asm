@@ -286,7 +286,10 @@ wd1e3:: ds 1
 	ds 13
 
 wd1f1:: ds 1
-wd1f2:: ds 7
+wd1f2:: ds 2
+wd1f4:: ds 1
+
+	ds 4
 
 wd1f9:: ds 1
 wd1fa:: ds 1
@@ -497,7 +500,8 @@ wd9cd:: ds 1
 wd9ce:: ds 2
 
 wd9d0:: ds 2
-wd9d2:: ds 2
+wd9d2:: ds 1
+wd9d3:: ds 1
 wd9d4:: ds 2
 
 wd9d6:: ds 1
