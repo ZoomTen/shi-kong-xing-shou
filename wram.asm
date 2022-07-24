@@ -399,8 +399,12 @@ wSoundFadeTimer:: ds 1
 wd60d:: ds 1
 	ds 8
 wd616:: ds $2c
-wd642:: ds $2c
-wd66e:: ds $2c
+wd642:: ds $14
+wd656:: ds 1
+wd657:: ds 1
+wd658:: ds $16
+wd66e:: ds $1c
+wd68a:: ds $10
 wd69a:: ds 1
 	ds $23
 
@@ -414,8 +418,9 @@ wd6ea:: ds 1
 	ds 7
 
 wd6f2:: ds 1
-	ds $2b
-
+	ds $17
+wd70a:: ds 1
+	ds $13
 wd71e:: ds 1
 	ds $2b
 
@@ -547,8 +552,8 @@ wdab8:: ds 1
 wdab9:: ds $15
 
 wTextBGMapPointer:: ds 2
-wdad0:: ds $12
-
+wdad0:: ds $10
+wdae0:: ds 2
 wdae2:: ds 1
 wdae3:: ds 4
 wdae7:: ds 4
