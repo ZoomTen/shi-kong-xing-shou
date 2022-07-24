@@ -16,7 +16,7 @@ csv_name = sys.argv[1]
 with open(csv_name, "r") as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
-        if ('text_kind' in row) and (row['text_kind'] == 'repoint_target'):
+        if ('text_kind' in row) and (row['text_kind'].rfind('repoint_target') != -1):
             print(f'en_', end='')
         if row['label'] == '':
             print(f'text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}::')
@@ -24,9 +24,9 @@ with open(csv_name, "r") as csv_file:
             print(f'{row["label"]}::')
         
         if 'text_kind' in row:
-            if row['text_kind'] == 'signpost':
+            if (row['text_kind'].rfind('signpost') != -1):
                 print('\ttext_sign')
-            elif row['text_kind'] == 'repoint_extern':
+            elif (row['text_kind'].rfind('repoint_extern') != -1):
                 print(f'\trepoint en_text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}')
         
         translated = row["translated_string"]
@@ -67,4 +67,6 @@ with open(csv_name, "r") as csv_file:
                         print(f'\tline  "{i}"')
                     else:
                         print(f'\tcont  "{i}"')
+        if ('text_kind' in row) and (row['text_kind'].rfind('choicer') != -1):
+            print('\tgetchoice $1cc5\n')
         print('\tdone\n')
