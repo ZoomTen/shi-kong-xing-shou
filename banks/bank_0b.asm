@@ -1910,7 +1910,23 @@ Script_47:
 	dr $2d141, $2d16b
 
 Script_48:
-	dr $2d16b, $2d198
+	ld a, SFX_1a
+	call PlaySound
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd1f4], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd9f3], a
+	ld a, 1
+	ld [wd9d3], a
+	farcall asm_039_479f
+	xor a
+	ld [wScriptByte], a
+	ret
+
+unk_00b_5192:
+	dw wd300, wddb0, wd284
 
 Script_49:
 	dr $2d198, $2d235
