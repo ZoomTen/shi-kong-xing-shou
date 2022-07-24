@@ -100,27 +100,19 @@ text_0a_4750::
 	line
 
 text_0a_4757::
-	text "老", 2
-	text " ", 0
-	text "閱", 2
+	text2 "O w n e r"
 	line
 
 text_0a_475e::
-	text "艾", 5
-	text " ", 0
-	text "娜", 5
+	text2 "I n a"
 	line
 
 text_0a_4765::
-	text "基", 2
-	text " ", 0
-	text "多", 4
+	text2 "Q u i t o"
 	line
 
 text_0a_476c::
-	text "雷", 0
-	text " ", 0
-	text "歐", 4
+	text2 "L e o"
 	line
 
 text_0a_4773::
@@ -128,11 +120,11 @@ text_0a_4773::
 	line
 
 text_0a_477a::
-	text "L a k i"
+	text2 "L a k i"
 	line
 
 text_0a_4781::
-	text "K u l u"
+	text2 "K u l u"
 	line
 
 text_0a_4788::
@@ -144,7 +136,7 @@ text_0a_478e::
 	line
 
 text_0a_4795::
-	text2 "V o l t  G r u n t"
+	text2 "V o l t   G r u n t"
 	line
 
 text_0a_479c::
@@ -152,65 +144,43 @@ text_0a_479c::
 	line
 
 text_0a_47a3::
-	text "迪", 7
-	text " ", 0
-	text "普", 2
+	text2 "D i e p"
 	line
 
 text_0a_47aa::
-	text "馬", 3
-	text " ", 0
-	text "克", 4
+	text2 "M a r k"
 	line
 
 text_0a_47b1::
-	text "小", 0
-	text "綿", 3
-	text "羊"
+	text2 "E l e c t r e e p"
 	line
 
 text_0a_47b7::
-	text "咖", 3
-	text "啡"
-	text "怪", 1
+	text2 "C a u n f e e"
 	line
 
 text_0a_47bd::
-	text "哈", 3
-	text "爾", 5
-	text "遜"
+	text2 "H a r r i s o n"
 	line
 
 text_0a_47c3::
-	text "時", 2
-	text "間", 0
-; # fixme
-	text "怪", 1
+	text2 "T y m e r"
 	line
 
 text_0a_47ca::
-	text "黑", 0
-	text "西", 4
-	text "裝", 1
-	text "人", 0
+	text2 "B l a c k s u i t"
 	line
 
 text_0a_47d3::
-	text "貝", 4
-	text " ", 0
-	text "貝", 4
+	text2 "B a b e"
 	line
 
 text_0a_47da::
-	text "面", 3
-	text "具", 1
-	text "男", 2
+	text2 "M a s k e d m a n"
 	line
 
 text_0a_47e1::
-	text "山", 3
-	text " ", 0
-	text "豬", 3
+	text2 "M t n P i g"
 	line
 
 text_0a_47e8::
@@ -262,9 +232,7 @@ text_0a_4818::
 	line
 
 text_0a_481f::
-	text "評", 6
-	text " ", 0
-	text "審", 6
+	text2 "J u d g e s"
 	line
 
 text_0a_4826::
@@ -280,9 +248,7 @@ text_0a_482d::
 	line
 
 text_0a_4834::
-	text "安", 2
-	text " ", 0
-	text "東", 4
+	text2 "A n t o n"
 	line
 
 text_0a_483b::
@@ -304,10 +270,7 @@ text_0a_4849::
 	line
 
 text_0a_4850::
-	text "海", 0
-	text " ", 0
-	text "青", 3
-; # fixme
+	text2 "H a i q i n g"
 	line
 
 text_0a_4857::
@@ -317,9 +280,7 @@ text_0a_4857::
 	line
 
 text_0a_485e::
-	text "神", 0
-	text "祕", 2
-	text "獸", 1
+	text2 "U n k n o w n"
 	line
 
 text_0a_4865::
