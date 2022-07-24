@@ -560,20 +560,14 @@ PrintTwoOptionMenu::
 	jp CheckCharacter
 
 unk_1cc5::
-	text "  ", 0
-	text "是", 1
-	text "  ", 0
-	text "否", 1
+	para
+	line "  Yes"
+	
+unk_1cd0::
+	text2 "   No"
 	choice
 
-unk_1cd0::
-	text "  ", 0
-	text "回", 1
-	text "春", 3
-	text " ", 0
-	text "靈", 0
-	text "動", 2
-	choice
+	ds 12
 
 InterpretTwoOptionMenu::
 	call .Main
