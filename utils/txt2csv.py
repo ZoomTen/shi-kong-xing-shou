@@ -3,10 +3,13 @@ import sys
 import re
 
 signpost = False
+init = False
 
 def something(re):
 	global signpost
+	global init
 	signpost = False
+	init = False
 	p = re.group(4) or ''
 	print(f'{re.group(1)}\t{re.group(2)}\t{p}\t"', end='')
 	return re.string
@@ -15,14 +18,23 @@ def _signpost(re):
 	signpost = True
 	return re.string
 def _init(re):
-	print(f'// init {re.group(1)}, {re.group(2)}')
+	global init
+	init = f'// init {re.group(1)}, {re.group(2)}'
+
+	print(init)
 	return re.string
 def _line(re):
 	print(f'{re.group(2)}')
 	return re.string
 def _mark_done(re):
 	global signpost
-	print(f'"\t\t', end='')
+	global init
+
+	if init:
+		print(f'"\t{init}\t', end='')
+	else:
+		print(f'"\t\t', end='')
+
 	if signpost:
 		print('text_sign')
 	else:
