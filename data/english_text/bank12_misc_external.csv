@@ -1,18 +1,19 @@
-"bank","address","label","original_string","translated_string","text_kind","notes",""
+"bank","address","label","original_string","translated_string","text_kind","notes","","","",""
 "12","41f1","","// init $00, $1a
 嗯，找死!","// init $00, $1a
-Well, looking for death!","repoint_target","deepL","needs relocation"
+OK, I'll risk it!","repoint_target","","needs relocation","context not found","","Running off a supposition.
+Old ver.: Well, looking for death! (from deepl)"
 "12","5194","","// init $00, $15
 這裡是多魯市。
 ","// init $00, $15
-Welcome to Dorington, home of the world-famous Gale Enterprises.","repoint_target","",""
+Welcome to Dorington, home of the world-famous Gale Enterprises.","repoint_target","","","","",""
 "12","51a6","","// init $00, $21
 看到那棟最高的
 建築了嗎?
 那就是鼎鼎大名
 的加爾企業唷!
 ","// init $00, $21
-Do you see that tall tower over there? That building is the headquarters of the famous Gale Enterprises!","repoint_target","",""
+Do you see that tall tower over there? That building is the headquarters of the famous Gale Enterprises!","repoint_target","","","","",""
 "12","51d9","","// init $00, $12
 看過告示版了嗎
 ?真是可憐啊~
@@ -21,7 +22,7 @@ Do you see that tall tower over there? That building is the headquarters of the 
 年前失散的孫子
 呢。
 ","// init $00, $12
-Do you see that noticeboard? How sad.. Gale Enterprises' chairman is still trying to find his grandchild, who vanished 16 years ago.","repoint_target","grandson? or granddaughter?",""
+Do you see that noticeboard? How sad.. Gale Enterprises' chairman is still trying to find his grandchild, who vanished 16 years ago.","repoint_target","grandson? or granddaughter?","","","",""
 "12","5223","","// init $00, $23
 往西邊走的話，
 就是鐘塔了。
@@ -34,7 +35,7 @@ Do you see that noticeboard? How sad.. Gale Enterprises' chairman is still tryin
 照鐘塔上的時間
 作息的。
 ","// init $00, $23
-If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.","repoint_target","",""
+If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.","repoint_target","","","","",""
 "12","52aa","","// init $00, $18
 加爾企業董事長
 失散的孫子，身
@@ -44,14 +45,14 @@ If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises ere
 是被我找到的話
 ，我就發財了。
 ","// init $00, $18
-The grandson of Gale Enterprises' chairman was said to have worn a glowing chain in the shape of the moon, known as the Moonglass. I'm sure it's worth a fortune! If I find it, I'll be rich!","repoint_target","",""
+The grandson of Gale Enterprises' chairman was said to have worn a shiny necklace in the shape of the moon, known as the Moon Glaze. I'm sure it's worth a fortune! If I find it, I'll be rich!","repoint_target","","","","",""
 "12","530c","","// init $00, $1c
 峨~鐘塔的時間
 已經3點了!
 嘻嘻~點心時間
 到了!
 ","// init $00, $1c
-The time on the clock tower is 3pm! Hehe, it's teatime!","repoint_target","",""
+The time on the clock tower is 3pm! Hehe, it's teatime!","repoint_target","","","","",""
 "12","5338","","// init $00, $1f
 唉呀~真是不得
 了!
@@ -62,14 +63,14 @@ The time on the clock tower is 3pm! Hehe, it's teatime!","repoint_target","",""
 我一定要搶在別
 人前面找到!
 ","// init $00, $1f
-Aiyeee!! This is serious! If I find the chairman's grandson before anyone else, I'll get a lot of money! I must find him before anyone else does!","repoint_target","",""
+Aiyeee!! This is serious! If I find the chairman's grandson before anyone else, I'll get a lot of money! I must find him before anyone else does!","repoint_target","","","","",""
 "12","5396","","// init $00, $16
 想知道嗎?","// init $00, $16
-Do you want to know something?","repoint_target","",""
+Do you want to know something?","repoint_target","","","","",""
 "12","53a4","","// init $00, $16
 是這樣子的啊~
 ","// init $00, $16
-It's like this..","repoint_target","",""
+If that's how it is...","repoint_target","","","","",""
 "12","53b6","","// init $00, $16
 十六年前，加爾
 企業董事長~
@@ -86,7 +87,7 @@ It's like this..","repoint_target","",""
 之後，董事長的
 女兒便鬱鬱而終
 ","// init $00, $16
-16 years ago, the daughter of Harrison, Gale Enterprises' chairman, had a relationship with a shepherd. The chairman was furious as he felt that the shepherd was not worthy of his daughter, so he forced them to break up and had the child sent away. The chairman's daughter died of depression shortly after.","repoint_target","",""
+16 years ago, the daughter of Harrison, Gale Enterprises' chairman, had a relationship with a shepherd. The chairman was furious as he felt that the shepherd was not worthy of his daughter, so he forced them to break up and had the child sent away. The chairman's daughter died of depression shortly after.","repoint_target","","","","",""
 "12","546f","","// init $00, $19
 往南邊走，就會
 到達山達農莊。
@@ -95,7 +96,7 @@ It's like this..","repoint_target","",""
 咖啡跟天使之葉
 。
 ","// init $00, $19
-If you go south, you will arrive at Mountreach Farm. It is a simple town that produces mainly coffee and angel leaves.","repoint_target","what is the farm called aaaaaaa","deepL"
+If you go south, you will arrive at Mountreach Farm. It is a simple town that produces mainly coffee and angel leaves.","repoint_target","what is the farm called aaaaaaa","deepL","","",""
 "12","54b8","","// init $00, $16
 唉~其實加爾企
 業董事長的心情
@@ -107,7 +108,7 @@ If you go south, you will arrive at Mountreach Farm. It is a simple town that pr
 ，那是相當令人
 不甘心的。
 ","// init $00, $16
-In fact, I really empathise with the chairman of GaleCorp... it is quite disheartening to find out that there is no one to inherit his huge business in old age. ","repoint_target","",""
+In fact, I really empathise with the chairman of GaleCorp... it is quite disheartening to find out that there is no one to inherit his huge business in old age. ","repoint_target","","","","",""
 "12","5528","","// init $00, $19
 哼!那個加爾企
 業的董事長，一
@@ -117,7 +118,7 @@ In fact, I really empathise with the chairman of GaleCorp... it is quite dishear
 話，就不會有這
 種結果了!
 ","// init $00, $19
-Hmph! I don't pity the chairman at all! If he hadn't broken up the couple in the first place, they wouldn't have ended up like this! ","repoint_target","",""
+Hmph! I don't pity the chairman at all! If he hadn't broken up the couple in the first place, they wouldn't have ended up like this! ","repoint_target","","","","",""
 "12","5589","","// init $00, $1b
 十六年前，哈爾
 遜董事長的女兒
@@ -130,7 +131,7 @@ Hmph! I don't pity the chairman at all! If he hadn't broken up the couple in the
 也沒有人看過他
 了⋯⋯
 ","// init $00, $1b
-Sixteen years ago, Chairman Harrison's daughter fell in love with a man! He was a shepherd at Mountreach Farm. The shepherd was later chased out of here and never seen again...","repoint_target","",""
+Sixteen years ago, Chairman Harrison's daughter fell in love with a man! He was a shepherd at Mountreach Farm. The shepherd was later chased out of here and never seen again...","repoint_target","","","","",""
 "12","560d","","// init $00, $1a
 你⋯你後面那隻
 ⋯怪獸⋯
@@ -138,7 +139,7 @@ Sixteen years ago, Chairman Harrison's daughter fell in love with a man! He was 
 獸嗎?
 真可怕!!
 ","// init $00, $1a
-That... monster behind you... is that one of the Star Beasts Dad was talking about? It's scary! ","repoint_target","",""
+That... monster behind you... is that one of the Star Beasts Dad was talking about? It's scary! ","repoint_target","","","","",""
 "12","563e","","// init $00, $1c
 點心!點心!
 媽媽~點心時間
@@ -146,7 +147,9 @@ That... monster behind you... is that one of the Star Beasts Dad was talking abo
 有回來，人家要
 吃~雙倍喲!
 ","// init $00, $1c
-Dim Sum! Dim Sum! Mom, it's teatime! Brother hasn't come back, so I want to eat ~ two portions, yo!","repoint_target","",""
+Cake! Cake! Mom, it's teatime! 
+Brother isn't back yet, so I wanna eat two parts!","repoint_target","","Dim Sum! Dim Sum! Mom, it's teatime! Brother hasn't come back, so I want to eat ~ two portions, yo!
+(old ver.)","","",""
 "12","5682","","// init $00, $1a
 人家才沒有偷吃
 櫃子裡的蛋糕唷
@@ -156,19 +159,16 @@ Dim Sum! Dim Sum! Mom, it's teatime! Brother hasn't come back, so I want to eat 
 !不可以跟哥哥
 說唷!
 這是我們的小密
-祕唷!
-","// init $00, $1a
-I didn't steal the cake from the cupboard! ⋯You've found me out?! I didn't do it on purpose! Don't tell my brother! It's our little secret! ","repoint_target","",""
+祕唷!","// init $00, $1a
+I didn't steal the cake from the cupboard! ⋯You've found me out?! I didn't do it on purpose! Don't tell my brother! It's our little secret! ","repoint_target","","","","",""
 "12","56ec","","// init $00, $15
 我的老公是鐘塔
 的管理人員。
 每天都要忙到晚
 才能回來。
 真是叫人寂寞啊
-⋯⋯
-","// init $00, $15
-My husband is the manager of the clock tower. He has to work late every day. How sad...
-","repoint_target","",""
+⋯⋯","// init $00, $15
+My husband is the manager of the clock tower. He has to work late every day. How sad...","repoint_target","","","","",""
 "12","5733","","// init $00, $22
 唉~有機會的話
 ，真想到鄰國做
@@ -179,8 +179,7 @@ My husband is the manager of the clock tower. He has to work late every day. How
 都被填平了⋯
 唉~~
 ","// init $00, $22
-Haiz... I really want to do business overseas. But the relationship between our country and the neighboring countries isn't very good. Even the road has been blocked... Haiz~
-","repoint_target","",""
+Haiz... I really want to do business overseas. But the relationship between our country and the neighboring ones isn't good. Even the roads have been blocked... Haiz~","repoint_target","Haiz... I really want to do business overseas. But the relationship between our country and the neighboring countries isn't very good. Even the road has been blocked... Haiz~","","","",""
 "12","579d","","// init $1b, $4c
 巴洛特，是你呀
 。上次提到的動
@@ -188,16 +187,15 @@ Haiz... I really want to do business overseas. But the relationship between our 
 事長身上也有。
 本來應該要為你
 引見的，但現在
-恐怕不行了⋯
-","// init $1b, $4c
-Ballot, it's you. The power chip that I mentioned last time is really held by the chairman. I was supposed to introduce you, but I'm afraid I can't do that now...
-","repoint_target","",""
+恐怕不行了⋯","// init $1b, $4c
+Ballot, it's you. The chairman indeed has that power chip I mentioned last time. I was supposed to introduce you, but I'm afraid I can't do that now...","repoint_target","Ballot, it's you. The power chip that I mentioned last time is really held by the chairman. I was supposed to introduce you, but I'm afraid I can't do that now...
+(old ver.)","","","",""
 "12","57fa","","// init $01, $2d
 發生了什麼事嗎
 ?
 ","// init $01, $2d
 Is something wrong?
-","repoint_target","",""
+","repoint_target","","","","",""
 "12","580d","","// init $1b, $4c
 是這樣的。十六
 年前，董事長千
@@ -218,12 +216,12 @@ Is something wrong?
 他的下落了⋯
 ","// init $1b, $4c
 Here's the story. Sixteen years ago, the president's daughter fell in love with a shepherd and had a child. The chairman was furious, so he broke up the couple and sent the child away to a trustee. Now that he's old and has no one to take after him, he wants to find his lost grandson. But the housekeeper who sent the child away has passed away, so no one knows where he is anymore.
-","repoint_target","",""
+","repoint_target","","","","",""
 "12","58ef","","// init $01, $2b
 這真是遺憾⋯
 ","// init $01, $2b
 What a shame...
-","repoint_target","",""
+","repoint_target","","","","",""
 "12","58fd","","// init $1b, $4c
 董事長的身體為
 了這件事情，而
@@ -239,7 +237,7 @@ What a shame...
 吧。
 ","// init $1b, $4c
 The Chairman overworked himself for this! He is now recuperating and is not available to receive guests. About the power chip ~ if you can find his lost grandson, maybe he can ask the chairman for the power chip.
-","repoint_target","",""
+","repoint_target","","","","",""
 "12","599a","","// init $1b, $4c
 槽糕~都這麼晚
 了呀!
@@ -258,7 +256,7 @@ The Chairman overworked himself for this! He is now recuperating and is not avai
 Oh dear, look at the time! I have to catch an important meeting as purchasing department manager!
 Ballot, if you need more details, you can read the notice in front of the GaleCorp building.
 Good luck!
-","repoint_target","",""
+","repoint_target","","","","",""
 "12","5a30","","// init $00, $00
 加爾企業公告:
 加爾企業尋人啟
@@ -272,8 +270,7 @@ Good luck!
 如尋獲者，加爾
 企業將重金禮謝
 ","// init $00, $00
-GaleCorp Notice: GaleCorp is looking for the grandson of Chairman Harrison who was lost 16 years ago wearing a moon-shaped, glowing necklace known as the Moon Glaze. GaleCorp will provide a reward for anyone who finds him.
-","repoint_target","",""
+GaleCorp Notice: GaleCorp is looking for the grandson of Chairman Harrison who was lost 16 years ago. He was wearing a moon-shaped, glowing necklace known as the Moon Glaze. A reward will be provided to anyone who finds him.","repoint_target","","GaleCorp Notice: GaleCorp is looking for the grandson of Chairman Harrison who was lost 16 years ago. He was wearing a moon-shaped, glowing necklace known as the Moon Glaze. GaleCorp will provide a reward for anyone who finds him.","","",""
 "12","5abd","","// init $01, $2e
 這就是基多所說
 的線索?
@@ -285,8 +282,10 @@ GaleCorp Notice: GaleCorp is looking for the grandson of Chairman Harrison who w
 得到動力晶片了
 !
 ","// init $01, $2e
-Was this the clue that the manager was talking about? If I can find who had the Moon Glaze, I'll be able to get the power chip!
-","repoint_target","","to review"
+The Moon Glaze?
+Is this the clue that the manager was talking about? 
+If I can find who has the Moon Glaze, I'll be able to get the power chip!
+","repoint_target","","to review","","",""
 "12","5b24","","// init $00, $24
 這個鐘塔是加爾
 企業的所有物。
@@ -297,23 +296,25 @@ Was this the clue that the manager was talking about? If I can find who had the 
 總之不能靠近
 就是了!
 ","// init $00, $24
-This clock tower is owned by GaleCorp. Entry is prohibited. Especially to the side door! You could... Anyway, you can't go near it!
-","repoint_target","","deepL"
+This clock tower is owned by GaleCorp. Entry is prohibited. Especially through this door! 
+This could... 
+Anyway, keep out!
+","repoint_target","","","","",""
 "12","5b82","","// init $00, $17
 這裡是牧羊的農
 莊小鎮~
 山達農莊。
 ","// init $00, $17
-This is the farming town of Shepherd's Bush ~ Shanda Farm.
-","repoint_target","","deepL"
+Welcome to Mountreach Farm, the town of shepherds.","repoint_target","","","","",""
 "12","5ba7","","// init $00, $20
 興奮~哈哈哈~
 興奮~哈哈哈~
 天氣真好~
-興~興奮~
-","// init $00, $20
-Excited ~ Hahahaha ~ Excited ~ Hahahaha ~ Beautiful weather ~ Excited ~ Excited ~ Excited ~
-","repoint_target","","deepL"
+興~興奮~","// init $00, $20
+Woohoo! Hahaha!
+Heeheehee! Hohoho!
+Weather's great!
+Eeheeheehee!","repoint_target","","","","",""
 "12","5bd5","","// init $00, $12
 真是可怕⋯前陣
 子的流星雨，擊
@@ -324,19 +325,21 @@ Excited ~ Hahahaha ~ Excited ~ Hahahaha ~ Beautiful weather ~ Excited ~ Excited 
 時會飄來一陣咖
 啡的香氣~
 聞到的人都會變
-得異常的興奮。
-","// init $00, $12
-What a terrible... meteor shower a while ago, hit the coffee trees in the coffee forest in the west. So it turned into a coffee monster! The coffee monster sometimes floats a burst of coffee aroma ~ smelling people will become unusually excited.
-","repoint_target","","deepL"
+得異常的興奮。","// init $00, $12
+How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into a coffee Star Beast!
+That monster sometimes emits a burst of coffee scent...
+Those who smell it become incredibly excited.","repoint_target","","How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into a coffee Star Beast!
+That coffee monster sometimes emits a burst of coffee scent...
+Those who smell it become incredibly excited.","","",""
 "12","5c51","","// init $00, $1d
 聽說加爾企業啊
 哈哈⋯就是那個
 哈哈哈⋯嗚~
 一想到就~嗚~
-好‧興‧奮!
-","// init $00, $1d
-I heard that the Gar enterprise ahhaha... is that hahaha... wow ~ the thought of it ~ wow ~ so excited!
-","repoint_target","","deepL"
+好‧興‧奮!","// init $00, $1d
+I heard that Gale Cohoho... Ahaha... Thahahat's... Whee!
+The thought ohohohof... Whoo!
+I'm! On! FIRE!","repoint_target","","","","",""
 "12","5c92","","// init $00, $21
 每次只要一聞到
 咖啡的味道，我
@@ -350,8 +353,9 @@ I heard that the Gar enterprise ahhaha... is that hahaha... wow ~ the thought of
 我一定要找到
 才行!
 ","// init $00, $21
-Every time I smelled coffee, I would pinch my nose, and once I almost killed myself... The chairman of Garr Enterprises is paying a lot of money to find his long-lost grandson. I had to find him!
-","repoint_target","","deepL"
+Every time I smelled coffee, I would pinch my nose, and almost suffocated once because of that...
+Gale Corp's chairman is offering a lot of money to anyone who can find his long-lost grandson. 
+I must find him!","repoint_target","","","","",""
 "12","5d14","","// init $00, $19
 嗚峨峨峨!
 這⋯這是什麼?
@@ -363,26 +367,29 @@ Every time I smelled coffee, I would pinch my nose, and once I almost killed mys
 我是~女超人嗎
 ?
 ","// init $00, $19
-Oooooooh! What... what is this? A power spreads from the bottom of my 80-year-old feet to my 80-year-old body! Awwwwwwwwwwwwww! Am I superwoman?
-","repoint_target","","deepL"
+Oooooh! 
+What... what is this? 
+A power, coursing through my 80 year-old body, from my feet to my head! 
+WOOOOOH! 
+Am I... a superwoman?","repoint_target","","","","",""
 "12","5d7a","","// init $00, $1a
 嗚~嗚~大家都
 變得好奇怪峨!
 嗚嗚~人家不要
 啦!
 ","// init $00, $1a
-Everyone is getting so weird! I don't want to!
-","repoint_target","","deepL"
+Waaah! Everyone's acting so weird!
+I'm scared! Waaah!","repoint_target","","","","",""
 "12","5dab","","// init $00, $23
 咖啡林的咖啡怪
 真是可怕!一聞
 到牠的氣味，人
 都會變得非常的
 興奮!我得要將
-門窗關緊才行!
-","// init $00, $23
-The coffee monster in the coffee forest is really scary! When I smell it, people become very excited! I have to close the doors and windows tightly!
-","repoint_target","","deepL"
+門窗關緊才行!","// init $00, $23
+The coffee monster lurking in Coffee Forest is real scary! 
+I heard that people who smell its scent go completely mad! 
+I should close all the doors and windows...","repoint_target","","","","",""
 "12","5dff","","// init $00, $25
 聽說馬克被瘋狂
 的羊群撞成重傷
@@ -390,13 +397,14 @@ The coffee monster in the coffee forest is really scary! When I smell it, people
 妮娜為了照顧他
 ，把所有值錢的
 東西都賣了!
-他們的老閱還因
+他們的老闆還因
 為不要照顧病人
 ，而把他們解雇
 了!真是可憐⋯
 ","// init $00, $25
-I heard that Mark was seriously injured by the crazy sheep and his sister ~ Nina sold all her valuable things to take care of him! Their old reading also fired them for not taking care of the patient! What a pity...
-","repoint_target","","deepL"
+I heard that Mark was seriously injured by crazy sheep and his sister, Nina, sold all of her valuables to take care of him!
+Their old boss also fired them for not taking care of the sick... How terrible!
+","repoint_target","","","","",""
 "12","5e82","","// init $24, $22
 開什麼玩笑!馬
 克被瘋狂的羊撞
@@ -410,10 +418,11 @@ I heard that Mark was seriously injured by the crazy sheep and his sister ~ Nina
 會這麼放肆!從
 現在開始，他們
 二個都不用來工
-作了!
-","// init $24, $22
-You're kidding! It's not my fault that Mark got hit by a crazy sheep! It's his fault for being careless! And Nina never came to work because of it! I am so good to them! That's why they are so reckless! From now on, they both don't have to come to work!
-","repoint_target","","deepL"
+作了!","// init $24, $22
+You're kidding me! 
+It's not my fault that Mark got attacked by crazy sheep, it's his fault for being careless!
+And Nina stopped coming to work because of that! And when I was so good to them! 
+These ungrateful little brats! Fine, from now on, they won't have to come to work... ever!","repoint_target","","","","",""
 "12","5f2e","","// init $00, $21
 真是麻煩⋯
 看樣子，馬克
@@ -436,14 +445,13 @@ You're kidding! It's not my fault that Mark got hit by a crazy sheep! It's his f
 的
 選擇。
 ","// init $00, $21
-What a pain in the ass... It looks like Mark is very badly hurt! If there is no Angel Leaf, I'm afraid it can not be saved! In order to reduce unnecessary trouble, dismissing them is the right choice.
-","repoint_target","","deepL"
+What a pain... It looks like Mark is very badly hurt! Without an Angel Leaf, I'm afraid there's no saving him! 
+We don't want any unnecessary trouble, so firing them was the right choice.","repoint_target","","","","",""
 "12","5fa8","","// init $00, $1e
 鳴哇~嗚~媽媽
 變得好可怕啊!
 ","// init $00, $1e
-Tweet Wow~ Wow~ Mom has become so scary!
-","repoint_target","","deepL"
+Sniff... Waaah... Mom has become so scary!","repoint_target","","","","",""
 "12","5fc7","","// init $00, $1f
 呵呵呵~啊!!
 這個切菜聲⋯⋯
@@ -453,18 +461,31 @@ Tweet Wow~ Wow~ Mom has become so scary!
 聲?要是聽到切
 骨聲的話，會更
 興奮吧?
-老公~切骨聲!
-","// init $00, $1f
-Ohhhhhhhh! The sound of chopping vegetables... how can you be so excited! Excited, excited, excited, excited! Bone cutting sound? If you hear the sound of cutting bones, you will be more excited, right? Honey, the sound of cutting bones!
-","repoint_target","","deepL"
+老公~切骨聲!","// init $00, $1f
+Ohohohoho!
+The sweet sound of chopping greens...
+Why is everyone so excited? Wheehee!
+Chop chop chop chop chopping bones...
+The sweet sound of chopping bones...?
+Wouldn't the sound of chopping bones be more exciting?
+Daaarliiing~ Chopping bones!","repoint_target","","","","Ohohohohoho!
+The sweet sound of chopping greens...
+Why is everyone so excited? Wheeheehee!
+Chop chop chop chop chopping bones...
+The sweet sound of chopping bones...?
+Wouldn't the sound of chopping bones be more exciting?
+Daaarliiiing~ Chopping bones!
+
+(old ver.)",""
 "12","6032","","// init $00, $18
 老⋯老⋯老婆?
 妳拿著菜刀做什
 麼?不⋯不要過
 來!!
 ","// init $00, $18
-Old... old... wife? What are you doing with the kitchen knife? No... don't come here!
-","repoint_target","","deepL"
+D... Dear? 
+What are you doing with the kitchen knife? 
+No... S-stay away!","repoint_target","","","","",""
 "12","6064","","// init $00, $18
 老婆從街上回來
 後，彷彿就變了
@@ -472,10 +493,10 @@ Old... old... wife? What are you doing with the kitchen knife? No... don't come 
 一定是聞到了咖
 啡怪的氣味。
 這該怎麼辦才好
-?
-","// init $00, $18
-When my wife came back from the street, she seemed to be a different person! She must have smelled the coffee monster. What should I do?
-","repoint_target","","deepL"
+?","// init $00, $18
+When my wife came back from going outside, she was like a completely different person!
+She must have caught a whiff of the coffee monster's scent.
+What am I supposed to do?","repoint_target","","","","",""
 "12","60b5","","// init $00, $16
 山達農莊原來是
 盛産咖啡豆及天
@@ -490,33 +511,38 @@ When my wife came back from the street, she seemed to be a different person! She
 這些全部都沒有
 人敢去採收了⋯
 ","// init $00, $16
-Sandal Farm is a small town that produces coffee beans and angel leaves. Angel leaves? No matter how heavy the injuries are, as long as there are angel leaves, it's not a problem! But since the coffee forest was occupied by the coffee monster, no one has dared to harvest these ...
-","repoint_target","","deepL"
+Mountreach Farm is a small town that produces coffee beans and Angel Leaves!
+What's an Angel Leaf?
+Heh heh! No matter how serious an injury is, you can heal it with an Angel Leaf!
+But since a coffee monster appeared in Coffee Forest, no one has dared to go harvest them...","repoint_target","","","","",""
 "12","6159","","// init $25, $4f
 ⋯呃⋯⋯
 ","// init $25, $4f
-⋯...uh...
-","repoint_target","","deepL"
+...Uh...
+","repoint_target","","","","",""
 "12","6164","","// init $26, $0b
 咩~咩咩~
 ","// init $26, $0b
-baa~baa~
-","repoint_target","","deepL"
+Baa! Baa!
+","repoint_target","","","","",""
 "12","6171","","// init $03, $34
 哥~哥~怎麼辦
 連爸爸留下來的
 那個，都賣掉了
-⋯已經沒有買蔡
+⋯已經沒有買藥
 的錢了⋯⋯
 要怎麼辦?
 ","// init $03, $34
-I'm not sure what I'm going to do, but I'm not sure what I'm going to do.
-","repoint_target","","deepL"
+Brother... What am I going to do?
+I sold all of father's possessions... But it's still not enough money to buy medicine...
+What should I do?","repoint_target","","// init $03, $34
+Brother... What am I going to do?
+I sold all of father's possessions... But there's still not enough money to buy medicine...
+What should I do?","","",""
 "12","61be","","// init $01, $2e
 怎麼回事?
 ","// init $01, $2e
-What's going on?
-","repoint_target","","deepL"
+What happened?","repoint_target","","What's going on?","","",""
 "12","61cb","","// init $03, $34
 嗚~嗚~哥哥在
 放羊的時候，羊
@@ -525,13 +551,14 @@ What's going on?
 全都變得非常的
 瘋狂，哥哥也受
 了重傷!我試過
-很多的蔡，但哥
+很多的藥，但哥
 哥的傷還是愈來
 愈嚴重⋯
 怎麼辦?
 ","// init $03, $34
-When my brother was herding sheep, they suddenly smelled the smell of coffee. They all became very crazy, and my brother was seriously injured! I've tried many things, but my brother's injuries are getting worse and worse... what should I do?
-","repoint_target","","deepL"
+Sniff... While my brother was herding sheep, they suddenly smelled the scent of coffee from the coffee monster.
+They all went completely crazy and my brother was seriously injured! I tried so many cures, but his injuries are only getting worse...
+What should I do?","repoint_target","","","","",""
 "12","6253","","// init $01, $2d
 這弦月型的項鍊
 好別緻!
@@ -540,8 +567,9 @@ When my brother was herding sheep, they suddenly smelled the smell of coffee. Th
 嗎?難道他就是
 ⋯⋯
 ","// init $01, $2d
-This string moon necklace is so chic! Necklace? Moon glaze? Isn't this the moon glaze? Is it possible that he is...
-","repoint_target","","deepL"
+That crescent moon necklace looks very peculiar!
+Wait... a necklace? A moon necklace...
+Isn't this the Moon Glaze? That would mean that he's...","repoint_target","","","","",""
 "12","629b","","// init $03, $34
 哥哥的項鍊，我
 也是在他受傷時
@@ -551,13 +579,13 @@ This string moon necklace is so chic! Necklace? Moon glaze? Isn't this the moon 
 葉的話⋯嗚嗚嗚
 ~
 ","// init $03, $34
-I only found my brother's necklace when he was injured. But brother's condition, if there is no angel leaf ... woo woo woo ~
-","repoint_target","","deepL"
+I only found my brother's necklace when he was injuried.
+But his condition... Without an Angel Leaf... Sniff...","repoint_target","","","","",""
 "12","62f3","","// init $01, $2e
 天使之葉?
 ","// init $01, $2e
-Angel Leaf?
-","repoint_target","","deepL"
+An Angel Leaf?
+","repoint_target","","","","",""
 "12","6300","","// init $03, $35
 咖啡林的最深處
 ，有顆天使樹。
@@ -568,15 +596,16 @@ Angel Leaf?
 有人敢到裡面採
 取天使之葉。
 ","// init $03, $35
-In the deepest part of the coffee forest, there is an angel tree. Its leaves have a strong healing effect. But the coffee forest is occupied by coffee monsters, no one dares to take the angel leaves inside.
-","repoint_target","","deepL"
+In the deepest part of Coffee Forest is an Angel Tree. Its leaves have strong healing properties.
+But a coffee monster lurks there, so no one dares to go in to harvest Angel Leaves.","repoint_target","","In the deepest part of Coffee Forest is an Angel Tree. Its leaves have strong healing properties.
+But there's a coffee monster lurking in Coffee Forest, so no one dares to go harvest Angel Leaves there.","","",""
 "12","636e","","// init $01, $2e
 咖啡林?
 我一定會將天使
 之葉採回來的!
 ","// init $01, $2e
-The coffee forest? I will definitely pick the angel leaves back!
-","repoint_target","","deepL"
+Coffee Forest?
+Alright, I'll make sure to bring back an Angel Leaf!","repoint_target","","","","",""
 "12","6394","","// init $03, $33
 真的?謝謝你~
 謝謝你!妮娜和
@@ -587,43 +616,42 @@ The coffee forest? I will definitely pick the angel leaves back!
 的話，會很麻煩
 的!
 ","// init $03, $33
-Really? Thank you~ Thank you! Nina will go with you! The coffee forest has a lot of blocking thorny grass! Without the sheep, it would have been a problem!
-","repoint_target","","deepL"
+Really? Thank you, thank you so much! I'll go with you!
+Coffee Forest has a lot of thorn grass blocking the path! Without Electreep, you'd have trouble getting through!","repoint_target","","","","",""
 "12","63f5","","// init $01, $2e
 妮娜&小綿羊加
 入隊伍!
 ","// init $01, $2e
-Nina & Sheep join the team!
-","repoint_target","","deepL"
+Nina & Electreep join the team!
+","repoint_target","","","","",""
 "12","640c","","// init $18, $2f
 如果將妮娜置於
 隊伍前頭，小線
 羊可以清除阻擋
 道路之刺刺草。
 ","// init $18, $2f
-If Nina is placed at the front of the team, the lamb can clear the thorny grass that blocks the path.
-","repoint_target","","deepL"
+If Nina leads the party, Electreep can clear the thorn grass blocking the path.","repoint_target","","","","",""
 "12","6443","","// init $01, $2c
 嗚~好痛!
 被這種草刺到，
 就像被針刺到一
 樣!
 ","// init $01, $2c
-Ouch! Being pricked by this grass is like being pricked by a needle! ","repoint_target","",""
+Ouch! Being pricked by this grass is like being pricked by a needle! ","repoint_target","","","","",""
 "12","6471","","// init $27, $51
 咕嚕~咕嚕~咕
 嚕~
 ","// init $27, $51
-gollum~gollum~gollum~
-","repoint_target","","deepL"
+Gluggo gluggo glug!
+","repoint_target","","","","",""
 "12","6486","","// init $03, $36
-槽了!牠要吐出
+糟了!牠要吐出
 令人興奮的氣息
 了!得趕快打倒
 牠才行!
 ","// init $03, $36
-It's grooving! He's about to spit out an exciting breath! We have to beat it!
-","repoint_target","","deepL"
+Oh no! It is about to emit an exciting scent!
+We have to hurry and defeat it!","repoint_target","","","","",""
 "12","64ba","","// init $00, $1d
 呀!怎麼回事!
 我做了什麼事嗎
@@ -631,8 +659,9 @@ It's grooving! He's about to spit out an exciting breath! We have to beat it!
 做了一場很興奮
 的夢⋯⋯
 ","// init $00, $1d
-Yikes! What the hell! Did I do something? It feels like I'm having a very exciting dream...
-","repoint_target","","deepL"
+Whoa! What's going on! What was I doing? 
+I feels like I was having a very exciting dream...
+","repoint_target","","","","",""
 "12","64fb","","// init $03, $33
 這就是天使樹了
 !只要有天使之
@@ -640,14 +669,13 @@ Yikes! What the hell! Did I do something? It feels like I'm having a very exciti
 傷，就一定可以
 治好的!
 ","// init $03, $33
-This is the angel tree! As long as there is an angel leaf, brother's injury can be cured for sure!
-","repoint_target","","deepL"
+This is the Angel Tree! With an Angel Leaf, my brother's injuries can be cured for sure!","repoint_target","","","","",""
 "12","653d","","// init $01, $2e
 得到了天使之葉
 !
 ","// init $01, $2e
 Got the Angel Leaf!
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","6550","","// init $00, $20
 咖啡林的咖啡怪
 消失了?
@@ -657,10 +685,10 @@ Got the Angel Leaf!
 我決定煮一杯超
 濃的咖啡~
 好好的興奮個夠
-!
-","// init $00, $20
-The coffee monster in the coffee forest is gone? That's great news! To celebrate, I decided to make a super strong cup of coffee ~ get excited!
-","repoint_target","","deepL"
+!","// init $00, $20
+The coffee monster in Coffee Forest is gone? 
+That's great news! 
+To celebrate, I'll make myself a super-strong cup of coffee... I need more excitement!","repoint_target","","","","",""
 "12","65ab","","// init $00, $12
 真是可怕⋯
 前陣子的流星雨
@@ -675,16 +703,16 @@ The coffee monster in the coffee forest is gone? That's great news! To celebrate
 聞到的人都會變
 得異常的興奮。
 ","// init $00, $12
-It's scary... The meteor shower a while ago hit the coffee trees in the coffee forest in the west. So it turned into a coffee star monster! The coffee monster sometimes wafts a fragrance of coffee ~ the smell of people will become unusually excited.
-","repoint_target","","deepL"
+How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into a coffee Star Beast!
+That monster sometimes emits a burst of coffee scent...
+Those who smell it become incredibly excited.","repoint_target","","dupe from 5bd5","","",""
 "12","6629","","// init $00, $1d
 好像做了一個興
 奮的夢~
 可是又好像是真
-的⋯⋯
-","// init $00, $1d
-It seems to be an exciting dream ~ but it seems to be true ...
-","repoint_target","","deepL"
+的⋯⋯","// init $00, $1d
+It feels like I was having a super-exciting dream...
+But it might not have been one, after all...","repoint_target","","","","",""
 "12","6655","","// init $00, $19
 剛剛做了一個夢
 ~
@@ -698,10 +726,10 @@ It seems to be an exciting dream ~ but it seems to be true ...
 人的夢。
 這八十歲的身體
 ，累得像要散了
-一樣!
-","// init $00, $19
-I just had a dream that I, an 80-year-old man, was a superwoman. It was embarrassing... but it was a tiring dream. This 80-year-old body is so tired that it looks like it's going to fall apart!
-","repoint_target","","deepL"
+一樣!","// init $00, $19
+I just had a dream... Little 80 year-old me was a superwoman!
+How embarrassing that was... 
+But it was a really exhausting dream. My poor 80 year-old body feels like its going to crumble right here and now!","repoint_target","","","","",""
 "12","66e4","","// init $00, $1a
 馬克哥哥平常都
 會說故事給我們
@@ -712,26 +740,29 @@ I just had a dream that I, an 80-year-old man, was a superwoman. It was embarras
 種很特殊的氣質
 唷!
 ","// init $00, $1a
-Brother Mark usually tells us stories! He is the best person in the world! Mom says he has a very special temperament!
-","repoint_target","","deepL"
+Mark often tells us stories!
+He's the best person in the whooole world!
+Mom always says that he has a very unique personality!","repoint_target","","not 100% sure about last part - Waddle","","","Mark usually tells us stories!
+He's the best person in the whooole world!
+Mom always says that he has a very unique personality!"
 "12","673b","","// init $00, $23
 其實⋯從很早以
 前，我就發現~
 妮娜是個大美女
-峨!
+哦!
 只要她再花點心
 打扮一下的話，
 就不得了!
 ","// init $00, $23
-In fact, I found out a long time ago that Nina is a beautiful woman! If she puts a little more effort into dressing up, she'll be great!
-","repoint_target","","deepL"
+In fact... I found out some time ago that Nina's a real beauty!
+Would she give what she wears a bit more thought, she'd truly be gorgeous!","repoint_target","","Actually... Quite a long time ago, I found out that Nina's a real beauty!
+If only she would give what she wears a bit more thought, she'd truly be gorgeous!","","",""
 "12","6796","","// init $00, $1e
 媽媽又變成原來
 的媽媽了!
 真是太好了。
 ","// init $00, $1e
-Mom is back to her old self! It's great.
-","repoint_target","","deepL"
+Mom is back to her old self! I'm so relieved.","repoint_target","","","","",""
 "12","67b8","","// init $00, $1f
 發生了什麼事情
 嗎?
@@ -742,8 +773,9 @@ Mom is back to her old self! It's great.
 都有被刀采過的
 痕跡!
 ","// init $00, $1f
-What's going on? Why do my husband and kids look at me like that? That's weird! Ah! Why are there traces of knife picking everywhere!
-","repoint_target","","deepL"
+What happened? 
+Why are my husband and child looking at me like that? How weird!
+Ah! Why are there knife nicks everywhere?","repoint_target","","","","",""
 "12","6812","","// init $00, $18
 就是你打敗了咖
 啡怪的嗎?
@@ -753,62 +785,64 @@ What's going on? Why do my husband and kids look at me like that? That's weird! 
 能就慘死在菜刀
 底下了⋯⋯
 ","// init $00, $18
-Are you the one who defeated the coffee monster? Thank you so much! Otherwise, I might have died under a kitchen knife...
-","repoint_target","","deepL"
+Are you the one who defeated the coffee monster? Thank you so much! 
+Otherwise, I might've ended up chopped into tiny cubes...
+","repoint_target","","took some liberties about the potential knifing of the husband","","",""
 "12","6864","","// init $00, $18
 謝謝你!
 ","// init $00, $18
 Thank you!
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","686f","","// init $00, $16
 現在是咖啡的盛
 産季節，得趕緊
 採收才行!
 ","// init $00, $16
-It's coffee season, we need to harvest now!
-","repoint_target","","deepL"
+It's coffee season, we have to hurry and harvest it!
+","repoint_target","","","","",""
 "12","6898","","// init $03, $02
 哥~這是天使之
 葉，趕快吃下!
 對~就是這樣⋯
 ","// init $03, $02
-Brother, this is the angel leaf, eat it now! Yes, that's it...
-","repoint_target","","deepL"
+Brother... This is an Angel Leaf, hurry, eat it!
+Yes... Like this...","repoint_target","","","","",""
 "12","68c4","","// init $25, $4f
 妮娜?
 ","// init $25, $4f
 Nina?
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","68ce","","// init $03, $02
 哥!沒事就好~
 沒事就好⋯⋯
 ","// init $03, $02
-Brother! It's okay~ It's okay...
-","repoint_target","","deepL"
+Brother! You're okay...!
+You're okay...
+","repoint_target","","","","",""
 "12","68e4","","// init $25, $4f
 妮娜~謝謝妳⋯
 ","// init $25, $4f
 Nina, thank you...
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","68f5","","// init $03, $36
 哥~你胸前的月
 型項鍊，真的就
 是月琉璃嗎?
 ","// init $03, $36
-Brother, is the moon-shaped necklace on your chest really the moon glaze?
-","repoint_target","","deepL"
+Brother, is the moon-shaped necklace around your neck really the Moon Glaze?
+","repoint_target","","","","",""
 "12","691e","","// init $25, $4f
 月⋯⋯
 ","// init $25, $4f
-Moon...
-","repoint_target","","deepL"
+The Moon...
+","repoint_target","","","","",""
 "12","6927","","// init $25, $4f
 不⋯⋯不是的!
 這不是月琉璃，
 這只是⋯只是⋯
 ","// init $25, $4f
-No... it's not! It's not Moon Lurie, it's just... just...
-","repoint_target","","deepL"
+N... No!
+This isn't the Moon Glaze, it's only... only a...","repoint_target","","","","",""
 "12","6953","","// init $01, $2c
 加業企業的董事
 長，為了尋找他
@@ -817,13 +851,14 @@ No... it's not! It's not Moon Lurie, it's just... just...
 忍心瞧他這樣下
 去嗎?
 ","// init $01, $2c
-The chairman of the board of directors of the Karma Corporation has fallen ill trying to find his lost grandson, can you bear to see him go on like this?
-","repoint_target","","deepL"
+Gale Corp's chairman has gotten sick trying to find his lost grandson! Can you bear to see him like this?","repoint_target","","","// init $01, $2c
+The company's chairman has gotten sick trying to find his lost grandson! Do you have the heart to see him like this?
+(old ver.)","",""
 "12","69a3","","// init $03, $02
 哥⋯⋯
 ","// init $03, $02
 Brother...
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","6ea8","","// init $25, $4f
 妮娜⋯謝謝你⋯
 人要學著體諒⋯
@@ -832,24 +867,27 @@ Brother...
 我會找『他』，
 把話說清楚的!
 ","// init $25, $4f
-Nina... thank you... people have to learn to understand... right? I'll do my best... mom... I'll find 'him' and talk it out!
-","repoint_target","","deepL"
+Nina... Thank you... People must learn to show empathy... right?
+I'll do my best... Mom...
+I'll find him and clear everything up!
+","repoint_target","","","","",""
 "12","6ef7","","// init $03, $02
 哥⋯你永遠是我
 的哥哥⋯永遠⋯
 ","// init $03, $02
-Brother... you'll always be my brother... forever...
-","repoint_target","","deepL"
+Mark... You'll always be my brother... 
+Forever and ever...
+","repoint_target","","","","",""
 "12","6f16","","// init $25, $4f
 ⋯⋯⋯
 ","// init $25, $4f
-⋯⋯⋯...
-","repoint_target","","deepL"
+...
+","repoint_target","","","","",""
 "12","6f1e","","// init $28, $4e
-峨⋯我的孫子⋯
+哦⋯我的孫子⋯
 ","// init $28, $4e
-E...my grandson...
-","repoint_target","","deepL"
+Oh... My grandson...
+","repoint_target","","","","",""
 "12","6f2f","","// init $1b, $4c
 巴洛特啊，真是
 多虧了你，才能
@@ -860,31 +898,31 @@ E...my grandson...
 的我，實在是相
 當的高興。
 ","// init $1b, $4c
-Thanks to you, Barrett, I was able to find the chairman's grandson! We have a successor to Garr Enterprises! I am very happy to be the manager of the purchasing department.
-","repoint_target","","deepL"
+Thanks to you, Ballot, the chairman's grandson has been found!
+Gale Corp. has a successor!
+As the manager of the procurement department, I couldn't be happier.","repoint_target","","","","",""
 "12","6f96","","// init $25, $4f
 巴洛特⋯謝謝你
 !
 ","// init $25, $4f
-Barrett... thank you!
-","repoint_target","","deepL"
+Ballot... Thank you!
+","repoint_target","","","","",""
 "12","6faa","","// init $28, $4e
 馬克⋯你還是不
 肯叫我嗎?
 ","// init $28, $4e
-Mark... you still won't call me?
-","repoint_target","","deepL"
+Mark... You still won't talk to me?
+","repoint_target","","not sure. Does it refer to Mark refusing to speak to him or just refusing to refer to him as a family member?","","",""
 "12","6fc4","","// init $25, $4f
 ⋯⋯⋯
 ","// init $25, $4f
-⋯⋯⋯...
-","repoint_target","","deepL"
+...
+","repoint_target","","","","",""
 "12","6fcc","","// init $28, $4e
 也難怪你會如此
 這全要怪我⋯⋯
 ","// init $28, $4e
-It's no wonder you're like this... It's all my fault...
-","repoint_target","","deepL"
+I can't blame you... This is all my fault...","repoint_target","","I can't blame you for being like this... This is all my fault...","","",""
 "12","6fe9","","// init $28, $4e
 巴洛特，事情我
 全聽基多說了!
@@ -893,13 +931,14 @@ It's no wonder you're like this... It's all my fault...
 我想妮娜不會介
 意的。
 ","// init $28, $4e
-Baloth, I've heard everything from Kido! This power chip is for you. I don't think Nina will mind.
-","repoint_target","","deepL"
+Ballot, Quito told me everything!
+This Power Chip is for you.
+I don't think Nina will mind.","repoint_target","","","","",""
 "12","7033","","// init $01, $2a
 得到了晶片2!
 ","// init $01, $2a
-Got chip 2!
-","repoint_target","","deepL"
+Got Chip 2!
+","repoint_target","","","","",""
 "12","7042","","// init $28, $4e
 在馬克重傷的時
 候，妮娜將這塊
@@ -909,13 +948,14 @@ Got chip 2!
 我真是⋯不配做
 人家的⋯爺爺⋯
 ","// init $28, $4e
-When Mark was seriously injured, Nina sold me this chip... just to heal my grandson... I'm so... unworthy to be a... grandfather...
-","repoint_target","","deepL"
+When Mark was seriously injured, Nina sold me this chip... 
+Just to heal my grandson... 
+I truly am... Unworthy to be... your grandpa...","repoint_target","","","","",""
 "12","70a2","","// init $03, $02
 董事長⋯⋯
 ","// init $03, $02
-Chairman of the Board...
-","repoint_target","","deepL"
+Mr. Chairman...
+","repoint_target","","","","",""
 "12","70af","","// init $25, $4f
 我不是來了嗎?
 媽媽曾說過，人
@@ -923,29 +963,32 @@ Chairman of the Board...
 不是嗎?⋯⋯
 爺‧爺!
 ","// init $25, $4f
-I'm here, aren't I? Mother once said that one must learn to understand... didn't she? ⋯⋯...Grandpa!
-","repoint_target","","deepL"
+I came here, didn't I?
+Mom once said that people must learn to show empathy... Didn't she? ...
+Grandpa!","repoint_target","","","","",""
 "12","70ec","","// init $28, $4e
 馬⋯馬⋯馬克?
 你肯叫我了?
 這真是太好了
 你們聽到了嗎?
 ","// init $28, $4e
-Ma...ma...maq? You're calling me now? That's great. Did you hear that?
-","repoint_target","","deepL"
+M... Ma... Mark?
+Did you just speak to me?
+This is great!
+Did you all hear that?","repoint_target","","","","",""
 "12","7122","","// init $28, $4e
 聽到了嗎?還有
 ~妮娜!你是馬
 克的妹妹，那妳
 也該改口了!
 ","// init $28, $4e
-Did you hear that? And, Nina! You're Mark's sister, so it's time for you to change your name!
-","repoint_target","","deepL"
+Did you hear that? And, Nina! You're Mark's sister, so you can call me that too!
+","repoint_target","","","","",""
 "12","7159","","// init $03, $02
 ⋯爺⋯⋯爺爺?
 ","// init $03, $02
-⋯Grandpa... Grandpa?
-","repoint_target","","deepL"
+...Gr... Grandpa?
+","repoint_target","","","","",""
 "12","7169","","// init $28, $4e
 決定了!就是明
 天，明天就舉行
@@ -959,29 +1002,33 @@ Did you hear that? And, Nina! You're Mark's sister, so it's time for you to chan
 天一早，就在大
 廳舉行交接典禮
 ","// init $28, $4e
-It's decided! It's tomorrow, the handover of directors will be held tomorrow! Nina, Barrett, you must come to the ceremony! I have prepared a VIP room for you, so you can spend the night here! The handover ceremony will be held in the lobby early tomorrow morning.
-","repoint_target","","deepL"
+It's decided then! Tomorrow, we'll hold the handover ceremony tomorrow!
+Nina, Ballot, you have to come too!
+I have prepared a VIP room for you, you can stay there for the night! We'll hold the ceremony tomorrow morning, in the lobby.","repoint_target","","It's decided then! It will be tomorrow, we'll hold the handover ceremony tomorrow!
+Nina, Ballot, you have to come too!
+I have prepared a VIP room for you, you can stay there for the night! We'll hold the handover ceremony tomorrow morning, in the lobby.","","",""
 "12","71f8","","// init $01, $2e
 謝謝您。
 ","// init $01, $2e
 Thank you.
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","7203","","// init $28, $4e
 馬克!爺爺還有
 好多話要跟你說
 !到爺爺的房間
 聊聊吧!哈哈~
 ","// init $28, $4e
-Mark! Grandpa has a lot to say to you! The actual fact is that you'll be able to get a lot more than just a few of these. I'm not sure I'm going to be able to do that.
-","repoint_target","","deepL"
+Mark! I have a lot to say to you! 
+Let's go chat in my room! Ha ha ha!","repoint_target","","","","",""
 "12","723c","","// init $00, $12
 加爾企業董可長
 找到了孫子?
 真是替他感到高
 興~
 ","// init $00, $12
-The grandson of the director of Gale Enterprises has been found? I'm so happy for him!
-","repoint_target","","deepL"
+Gale Corp.'s chairman's grandson has been found?
+I'm so happy for him!","repoint_target","","The grandson of the director of Gale Corp. has been found? 
+I'm so happy for him!","","",""
 "12","7267","","// init $00, $23
 往西邊走的話，
 就是鐘塔了。
@@ -995,8 +1042,8 @@ The grandson of the director of Gale Enterprises has been found? I'm so happy fo
 塔上的時間座息
 的。
 ","// init $00, $23
-If you go to the west, you will find the clock tower. The clock tower has become a landmark in the city of Doru, built by the chairman of Gale Corporation in memory of his deceased daughter. We all follow the time on the clock tower.
-","repoint_target","","deepL"
+If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.
+","repoint_target","","dupe of 5223","","",""
 "12","72ef","","// init $00, $18
 真是奇怪!真是
 奇怪呀!
@@ -1004,8 +1051,10 @@ If you go to the west, you will find the clock tower. The clock tower has become
 呢!
 我也說不上來⋯
 ","// init $00, $18
-How strange! What a strange thing! What's so strange? I can't tell you...
-","repoint_target","","deepL"
+It's weird! It's really weird!
+What's so weird? Even I can't tell...","repoint_target","","It's weird! It's really weird!
+What's so weird, exactly?
+Even I can't tell...","","",""
 "12","7320","","// init $00, $1c
 嘻嘻~吃點心吃
 得好飽喲!啊!
@@ -1013,28 +1062,29 @@ How strange! What a strange thing! What's so strange? I can't tell you...
 事?好⋯奇⋯怪
 !
 ","// init $00, $1c
-Heehee~ I'm so full from eating snacks! Ah! What's going on here? It's... strange!
-","repoint_target","","deepL"
+Heehee! I ate so many snacks, I'm full! Ah! 
+What's going on? 
+This is... so strange!","repoint_target","","","","",""
 "12","735b","","// init $00, $1c
 嘻嘻~
 吃得好飽喲!
 ","// init $00, $1c
-Heehee~ I'm so full!
-","repoint_target","","deepL"
+Heehee! I'm so full!
+","repoint_target","","","","",""
 "12","736f","","// init $00, $1f
 加爾企業明天就
 要舉行董事交接
 典禮!真是期待
 ","// init $00, $1f
-Gale Enterprises will be holding a board transition ceremony tomorrow! I'm really looking forward to it!
-","repoint_target","","deepL"
+Gale Corp. will be holding a handover ceremony tomorrow!
+I'm really looking forward to it.","repoint_target","","","","",""
 "12","739a","","// init $03, $02
 巴洛特~你真的
 要去解開那艘太
 空船的祕密嗎?
 ","// init $03, $02
-Barrett, are you really going to unlock the secrets of the space ship?
-","repoint_target","","deepL"
+Ballot... Are you really going to uncover the secrets of that spaceship?
+","repoint_target","","","","",""
 "12","73c5","","// init $01, $2e
 是的。我一直相
 信，只要我朝這
@@ -1043,8 +1093,7 @@ Barrett, are you really going to unlock the secrets of the space ship?
 定會再見到爸爸
 的。
 ","// init $01, $2e
-Yes. I always believed that as long as I started in this direction, one day, I would definitely see my father again.
-","repoint_target","","deepL"
+Yes. I'm sure that, if I keep working towards this goal, I'll see my dad again one day.","repoint_target","","","","",""
 "12","7412","","// init $03, $02
 其實，妮娜從很
 久前，就偷偷看
@@ -1055,98 +1104,90 @@ Yes. I always believed that as long as I started in this direction, one day, I w
 純僕的農夫。
 妮娜還很難過⋯
 巴洛特，我好羨
-慕你⋯⋯
-","// init $03, $02
-In fact, Nina had secretly read the notes left by dad from a long time ago. But Dad said we were better off as mere servants and farmers. Nina is still very sad... Barrett, I envy you so much...
-","repoint_target","","deepL"
+慕你⋯⋯","// init $03, $02
+Actually, a long time ago, I secretly looked through the notes my father left behind. 
+But he said that we were better fit to be servants and farmers.
+I'm still saddened about this...
+Ballot, I envy you so much...","repoint_target","","Either ""envy"" or ""admire""","","",""
 "12","748c","","// init $01, $2e
 妮娜⋯⋯
 ","// init $01, $2e
 Nina...
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","7497","","// init $03, $02
 巴洛特不要露出
 這種表情嘛!
 我們明天要一起
 參加哥哥的交接
-典禮唷!
-","// init $03, $02
-Don't look like that, Barrett! We're going to attend the handover ceremony for my brother tomorrow!
-","repoint_target","","deepL"
+典禮唷!","// init $03, $02
+Don't make that face, Ballot!
+We're going to attend my brother's handover ceremony tomorrow!","repoint_target","","","","",""
 "12","74d8","","// init $01, $2e
 嗯!
 ","// init $01, $2e
 Yeah!
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","74df","","// init $03, $33
 喲好了唷!
-明天見了~
-","// init $03, $33
-Yo, it's done! See you tomorrow!
-","repoint_target","","deepL"
+明天見了~","// init $03, $33
+Alright then!
+See you tomorrow!","repoint_target","","","","",""
 "12","74f8","","// init $01, $2b
 爸~你不要走!
 不要丟下我一個
 人!
 ","// init $01, $2b
-Dad, don't go! Don't leave me alone!
-","repoint_target","","deepL"
+Dad, don't go! 
+Don't leave me alone!","repoint_target","","","","",""
 "12","751b","","// init $11, $11
 巴洛特，是時候
 了!再不行動的
 話，等『那個』
 時候到了，就來
-不及了。
-","// init $11, $11
-Barrett, it's time! If you don't move, it will be too late when 'that' time comes.
-","repoint_target","","deepL"
+不及了。","// init $11, $11
+Ballot, it is time!
+If we don't do anyting, it will be too late when 'that' time comes!","repoint_target","","","","",""
 "12","755b","","// init $01, $2e
 爸~不要丟下我
-!
-","// init $01, $2e
-Dad~ Don't leave me behind!
-","repoint_target","","deepL"
+!","// init $01, $2e
+Dad...! Don't leave me!","repoint_target","","","","",""
 "12","756e","","// init $11, $11
 ⋯⋯⋯
 ","// init $11, $11
-⋯⋯⋯...
-","repoint_target","","deepL"
+...","repoint_target","","","","",""
 "12","7576","","// init $01, $2e
 爸~!!!
 為什麼?為什麼
 為什麼為什麼為
 什麼?為什麼要
-丟下我!
-","// init $01, $2e
-Dad~!!! Why? Why, why, why, why, why? Why did you leave me!
-","repoint_target","","deepL"
+丟下我!","// init $01, $2e
+Daaaaad!!! 
+Why? Why, why, why, why, why? 
+Why did you leave behind!?","repoint_target","","","","",""
 "12","75b7","","// init $01, $2d
 爸!!
 ","// init $01, $2d
 Dad!!!
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","75c0","","// init $01, $2e
-⋯原來是個夢⋯
-","// init $01, $2e
-⋯It was a dream...
-","repoint_target","","deepL"
+⋯原來是個夢⋯","// init $01, $2e
+... It was just a dream...","repoint_target","","","","",""
 "12","75ce","","// init $03, $02
 巴洛特也起床了
 嗎?
 一起到哥哥的交
-接典禮吧!
-","// init $03, $02
-Is Barrett up too? Let's go to your brother's handover ceremony!
-","repoint_target","","deepL"
+接典禮吧!","// init $03, $02
+Ballot, you're up too?
+Let's go to Mark's handover ceremony!","repoint_target","","","","",""
 "12","75f9","","// init $01, $2e
 奇怪?典禮不是
 今天舉行嗎?
 怎麼一點都沒有
 舉行的跡像?
-這是怎麼回事?
-","// init $01, $2e
-Strange? Isn't the ceremony today? Why is there no sign of it happening? What's going on here?
-","repoint_target","","deepL"
+這是怎麼回事?","// init $01, $2e
+Huh? Isn't the ceremony supposed to be today?
+Why is there no sign of it happening?
+What's going on?","repoint_target","","","","",""
 "12","763c","","// init $1b, $4c
 是巴洛特啊!
 什麼?
@@ -1155,20 +1196,25 @@ Strange? Isn't the ceremony today? Why is there no sign of it happening? What's 
 時間，天都還沒
 暗呢!呵呵呵~
 巴洛特真是熱心
-啊。
-","// init $1b, $4c
-It's Baloth! What? The handover ceremony? It's still early! Look at the time, it's not even dark yet! Oh well, Barot is really enthusiastic.
-","repoint_target","","deepL"
+啊。","// init $1b, $4c
+Oh, Ballot!
+What?
+The handover ceremony?
+It's still early for that! Look at the time, it's not even dark yet! Ha ha ha... 
+You're really enthusiastic about this, aren't you, Ballot.","repoint_target","","","","",""
 "12","7696","","// init $01, $2e
 這是怎麼回事?
 明明睡了一覺，
 現在不是『明天
 』嗎?
 這到底是怎麼回
-事?
-","// init $01, $2e
-What's going on here? I slept, but now it's not 'tomorrow'? What the hell is going on here?
-","repoint_target","","deepL"
+事?","// init $01, $2e
+What does that mean?
+I'm sure I had a full night of sleep, but we're not 'tomorrow'? 
+What in the world is going on?","repoint_target","","
+What is the meaning of this?
+I obviously had a full night of sleep, but we're not 'tomorrow'? 
+What in the world is going on here?","","",""
 "12","76dc","","// init $00, $18
 真是奇怪!真是
 奇怪呀!
@@ -1179,19 +1225,20 @@ What's going on here? I slept, but now it's not 'tomorrow'? What the hell is goi
 是鐘塔出了問題
 嗎?
 會是我的錯覺嗎
-?
-","// init $00, $18
-This is weird! That's weird! I finally found out what's weird! The time on the clock tower doesn't seem to be moving! Is there something wrong with the clock tower? Could it be my illusion?
-","repoint_target","","deepL"
+?","// init $00, $18
+How weird! How very weird! I finally figured out what seemed so strange to me!
+The time on the clock tower doesn't seem to advance at all!
+Is something wrong with the clock tower?
+Or am I imagining things?","repoint_target","","","","",""
 "12","7746","","// init $00, $1c
 好⋯奇⋯怪!
 我才剛吃完點心
 ，怎麼還是3點
 呢?人家好飽⋯
-不要吃了啦!
-","// init $00, $1c
-That's odd! I just finished my snack, why is it still 3:00? I'm so full... don't eat anymore!
-","repoint_target","","deepL"
+不要吃了啦!","// init $00, $1c
+That's sooo weird!
+I just finished my snacks, why is it still 3 o'clock?
+I'm full... I don't wanna eat anymore!","repoint_target","","","","",""
 "12","7787","","// init $00, $24
 好⋯好恐佈!
 鐘塔的擺動停了
@@ -1200,16 +1247,17 @@ That's odd! I just finished my snack, why is it still 3:00? I'm so full... don't
 ⋯原來是⋯恐怖
 的東西⋯
 怎⋯怎麼辦⋯
-我不敢進去⋯
-","// init $00, $24
-What a horror! The clock tower stopped swinging, and on the way to repair it, I heard strange noises... and it turned out to be... something scary... what... I didn't dare to go in...
-","repoint_target","","deepL"
+我不敢進去⋯","// init $00, $24
+H... How terrible!
+The clock tower had stopped working, and while repairing it, I heard a strange noise...
+It turned out to be... Something terrifying...
+Wh-what to do...
+I dare not go in...","repoint_target","","","","",""
 "12","77ea","","// init $29, $52
 嘀嘀~答答~滴
 答~
 ","// init $29, $52
-Tick, tick, tick, tick, tick
-","repoint_target","","deepL"
+Tick, tock, click-clock!","repoint_target","","","","",""
 "12","77ff","","// init $01, $2e
 原來是星獸搞的
 鬼!牠讓鐘塔的
@@ -1218,26 +1266,25 @@ Tick, tick, tick, tick, tick
 如果沒有打倒牠
 的話，馬克的
 交接典禮，就永
-遠無法舉行了!
-","// init $01, $2e
-It's the Star Beast's fault! It stopped the clock tower's time, so it's always daytime! If it is not defeated, Mark's handover ceremony will never be held!
-","repoint_target","","deepL"
+遠無法舉行了!","// init $01, $2e
+It's this Star Beast's fault!
+It stopped the time on the clock tower, so it would always be daytime!
+If we don't defeat it, the handover ceremony is never going to be held!","repoint_target","","","","",""
 "12","7870","","// init $29, $52
 嘀嘀~答答~滴
 答~
 ","// init $29, $52
-Tic-Tac~Answer~Tick~
-","repoint_target","","deepL"
+Tick-tick, tock-tock, tick... Tock!","repoint_target","","","","",""
 "12","7885","","// init $00, $18
 真是奇怪!真是
 奇怪呀!
 鐘塔的時間又動
 了!
 看來是我的錯覺
-。
-","// init $00, $18
-That's weird! What a strange thing! The clock tower's time has moved again! It seems to be my mistake.
-","repoint_target","","deepL"
+。","// init $00, $18
+How strange! How very strange!
+The time on the clock tower has started moving again!
+Looks like I was imagining things.","repoint_target","","","","",""
 "12","78bd","","// init $1b, $4c
 真是累人呀~
 還是白天，為什
@@ -1249,57 +1296,54 @@ That's weird! What a strange thing! The clock tower's time has moved again! It s
 巴洛特，快去房
 間休息吧!
 明天要準時參加
-交接典禮唷!
-","// init $1b, $4c
-It's really tiring~ It's still daytime, why do I feel so tired? Is it just me? I feel like it's been a particularly long day. Barrett, go to your room and get some rest! Tomorrow we have to be on time for the handover ceremony!","repoint_target","","deepL"
+交接典禮唷!","// init $1b, $4c
+I feel exhausted...
+It's still daytime, so why do I feel so tired?
+Is it just me? It feels like this has been an extremely long day.
+Ballot, go to your room and get some rest!
+You'll have to be on time for the ceremony tomorrow!","repoint_target","","","","",""
 "12","7945","","// init $03, $02
 巴洛特，明天也
 要一起參加哥哥
-的交接典禮唷!
-","// init $03, $02
-Barrett, you have to join your brother's handover ceremony tomorrow!
-","repoint_target","","deepL"
+的交接典禮唷!","// init $03, $02
+Ballot, let's attend my brother's handover ceremony tomorrow!","repoint_target","","","","",""
 "12","7970","","// init $01, $2e
 嗯。
 ","// init $01, $2e
-Hmm.
-","repoint_target","","deepL"
+Yeah.","repoint_target","","","","",""
 "12","7977","","// init $03, $02
 巴洛特參加完交
 接典禮後，就要
 離開了嗎?
 ","// init $03, $02
-Is Barrett leaving after the handover ceremony?
-","repoint_target","","deepL"
+Are you... going to leave once the handover ceremony is over?","repoint_target","","Ballot... Are you going to leave after the handover ceremony is over?","","",""
 "12","799d","","// init $01, $2e
 是的。
 為了尋找爸爸及
 動力晶片，我必
-須要走了。
-","// init $01, $2e
-Yes. I have to go in order to find my dad and the power chip.
-","repoint_target","","deepL"
+須要走了。","// init $01, $2e
+Yes. 
+I must find dad and the power chips, so I have to go.","repoint_target","","","","",""
 "12","79cc","","// init $03, $02
 ⋯⋯⋯
 那麼⋯我們就⋯
-明天見囉!
-","// init $03, $02
-⋯⋯⋯Well... then... we'll see you tomorrow!
-","repoint_target","","deepL"
+明天見囉!","// init $03, $02
+...
+Then... we... 
+See you tomorrow!","repoint_target","","","","",""
 "12","7a96","","// init $25, $4f
 巴洛特，你要走
 了嗎?
 ","// init $25, $4f
-Barrett, are you leaving?
-","repoint_target","","deepL"
+Ballot, are you leaving?","repoint_target","","","","",""
 "12","7aac","","// init $01, $2e
 是的。
 必須要動身，尋
 找其他的動力晶
 片。
 ","// init $01, $2e
-Yes. Must move and find another power chip.
-","repoint_target","","deepL"
+Yes. 
+I have to keep going and find the other Power Chips.","repoint_target","","","","",""
 "12","7ad7","","// init $28, $4e
 動力晶片?
 唉~實在是不想
@@ -1313,15 +1357,15 @@ Yes. Must move and find another power chip.
 晶片。
 因為他的祖先，
 也曾是偉大的八
-大科學家之一。
-","// init $28, $4e
-A power chip? I hate to say it... but Barot is a great benefactor of mine... a rival of Gale Corporation, Bonlin Corporation, whose president holds one of the chips. Because his ancestor was also one of the great eight scientists.
-","repoint_target","","deepL"
+大科學家之一。","// init $28, $4e
+Power Chips?
+Ah... I hate having to say this...
+But since you helped me so much...
+The president of GaleCorp's rival entreprise, Bang Lin, has another chip.
+That's because his ancestor was also one of the eight great scientists...","repoint_target","","","","",""
 "12","7b78","","// init $01, $2e
-邦林企業?
-","// init $01, $2e
-Bonlin Enterprises?
-","repoint_target","","deepL"
+邦林企業?","// init $01, $2e
+Bang Lin Enterprises?","repoint_target","","","","",""
 "12","7b83","","// init $28, $4e
 是的。
 位於
@@ -1330,17 +1374,13 @@ Bonlin Enterprises?
 都裡
 的邦林企業。
 是本公司最大的
-商業對手。
-","// init $28, $4e
-Yes. The company is located in the city of Tenjin. It is our biggest business rival.
-","repoint_target","","deepL"
+商業對手。","// init $28, $4e
+Yes. It is located in Sky City, and is our biggest business rival.","repoint_target","","","","",""
 "12","7bbb","","// init $01, $2e
 但是多魯市，並
 沒有對外連結的
-道路啊!
-","// init $01, $2e
-But there are no external links to Doru City!
-","repoint_target","","deepL"
+道路啊!","// init $01, $2e
+But there's no way to get there from Dorington!","repoint_target","","","","",""
 "12","7be4","","// init $28, $4e
 呵呵呵~
 這個一點都不是
@@ -1350,55 +1390,56 @@ But there are no external links to Doru City!
 業。
 對於這種小事，
 是必須要克服的
-。這個給你!
-","// init $28, $4e
-This is not a problem at all. Gale Enterprises is a world-renowned multinational corporation. For such a small thing, it is necessary to overcome. Here you go!
-","repoint_target","","deepL"
+。這個給你!","// init $28, $4e
+Heheheh!
+This isn't a problem at all.
+GaleCorp is a world-renowned global company, after all.
+Such an insignificant issue isn't going to stop us.
+This is for you!","repoint_target","","Heheheh!
+This isn't a problem at all.
+GaleCorp is a world-renowned international company, after all.
+Such an insignificant issue isn't going to stop us.
+This is for you!","","",""
 "12","7c4b","","// init $01, $2a
 得到金鑰匙!
 ","// init $01, $2a
-Get the golden key!
-","repoint_target","","deepL"
+Got a Golden Key!","repoint_target","","","","",""
 "12","7c5a","","// init $28, $4e
 鐘塔內有扇密閉
 的鐵門，就是通
 往達瑪之都
 的通道。
 這就是加爾企業
-對外流通的祕密
-","// init $28, $4e
-Inside the Clock Tower, there is a closed iron door that leads to the capital of Dama. This is the secret of the Gale Enterprise to the outside world
-","repoint_target","","deepL"
+對外流通的祕密","// init $28, $4e
+There's an iron door inside the Clock Tower, leading to Dama's capital.
+This is the secret to Gale Corp's worldwide distribution circuit!","repoint_target","","There's a closed iron door inside the Clock Tower, leading to a path towards the capital of Dama.
+This is the secret to Gale Corp's worldwide distribution circuit!","","",""
 "12","7ca6","","// init $01, $2e
 謝謝你~董事長
 !
 ","// init $01, $2e
-Thank you, Chairman!
-","repoint_target","","deepL"
+Thank you, Mr. Chairman!","repoint_target","","","","",""
 "12","7cb9","","// init $28, $4e
 我也要感謝你~
 巴洛特!
-祝你任務順利!
-","// init $28, $4e
-I want to thank you too ~ Barrett! Good luck with your mission!
-","repoint_target","","deepL"
+祝你任務順利!","// init $28, $4e
+Thank you too, Ballot!
+Good luck with your mission!","repoint_target","","","","",""
 "12","7cdd","","// init $03, $02
 巴洛特⋯⋯⋯
 ⋯⋯⋯
 ","// init $03, $02
-Baloth ⋯⋯⋯⋯⋯⋯
-","repoint_target","","deepL"
+Ballot...","repoint_target","","","","",""
 "12","7cf0","","// init $02, $02
 巴洛特~等一等
 !
 ","// init $02, $02
-Balot ~ wait!
-","repoint_target","","deepL"
+Ballot, wait!","repoint_target","","","","",""
 "12","7d04","","// init $01, $2e
 妮娜?
 ","// init $01, $2e
 Nina?
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","7d0e","","// init $03, $02
 我⋯我想了很久
 ⋯⋯
@@ -1408,16 +1449,15 @@ Nina?
 心了⋯妮娜⋯
 要和巴洛特一起
 解開古代太空船
-的祕密!
-","// init $03, $02
-I've been thinking about it for a long time... my brother has become a director of Gale Enterprises... and Nina can rest easy... Nina... is going to work with Baloth to unlock the secrets of the ancient spacecraft!
-","repoint_target","","deepL"
+的祕密!","// init $03, $02
+I... I've been thinking about it for a while...
+Now that my brother has become the director of Gale Corp... I can rest easy... And I...
+I want to uncover the secrets of the spaceship with you, Ballot!","repoint_target","","","","",""
 "12","7d79","","// init $28, $4e
 妮⋯妮娜!
-那怎麼可以!
-","// init $28, $4e
-Nina... Nina! How can that be!
-","repoint_target","","deepL"
+那怎麼可以!","// init $28, $4e
+Ni... Nina! 
+How can that be!","repoint_target","","","","",""
 "12","7d90","","// init $25, $4f
 妮娜~從很久
 之前，妳就對
@@ -1426,32 +1466,31 @@ Nina... Nina! How can that be!
 興趣。
 尋找妳的興趣
 吧，哥哥也贊
-成妳去!
-","// init $25, $4f
-Nina~ Since a long time ago, you've been interested in the research your father left behind. Find your interest, and brother agrees with you!
-","repoint_target","","deepL"
+成妳去!","// init $25, $4f
+Nina... You've been interested in the research that our father left behind for a while now.
+Follow your interests, you have your brother's full support!","repoint_target","","Nina... You've been interested in the research that our father left behind for a while now.
+If it's to look for your interests, you have your brother's full support!","","",""
 "12","7de7","","// init $28, $4e
 馬⋯馬克!
 ","// init $28, $4e
 Ma...Mark!
-","repoint_target","","deepL"
+","repoint_target","","","","",""
 "12","7df5","","// init $03, $02
 巴洛特⋯⋯
 ","// init $03, $02
-Barot...
-","repoint_target","","deepL"
+Ballot...","repoint_target","","","","",""
 "12","7e02","","// init $01, $2e
 這⋯⋯好!
 大家出發吧!
 ","// init $01, $2e
-That's... good! Let's go, everyone!
-","repoint_target","","deepL"
+This... Alright! 
+Let's go, everyone!","repoint_target","","This is... good! 
+Let's go, everyone!","","",""
 "12","7e1a","","// init $03, $02
 巴洛特，謝謝
 你!
 ","// init $03, $02
-Barrett, thank you!
-","repoint_target","","deepL"
+Ballot, thank you!","repoint_target","","","","",""
 "12","7e2d","","// init $28, $4e
 用金鑰匙打開鐘
 塔關閉的鐵門。
@@ -1459,8 +1498,11 @@ Barrett, thank you!
 之都了。
 祝你任務順利。
 ","// init $28, $4e
-Use the golden key to open the iron door of the closed clock tower. You will be able to get to the capital of Darma. Good luck with your mission.
-","repoint_target","","deepL"
+Use the Golden Key to open the door in the Clock Tower.
+You'll be able to get to Dama's capital.
+Good luck with your mission!","repoint_target","","Use the Golden Key to open the closed iron door in the Clock Tower.
+You'll be able to get to the capital of Dama this way.
+Good luck with your mission!","","",""
 "12","7e6d","","// init $25, $4f
 巴洛特!
 要好好的照顧妮
@@ -1472,19 +1514,18 @@ Use the golden key to open the iron door of the closed clock tower. You will be 
 Ballot!
 Take good care of Nina.
 Otherwise, I won't let you off the hook!
-","repoint_target","eh, alright",""
+","repoint_target","eh, alright","","","",""
 "12","7ebe","","// init $14, $25
 需要妮可治療嗎?","// init $14, $25
-Do you need Nicole's treatment?","repoint_target","deepL",""
+Do you need my treatment?","repoint_target choicer","","","","",""
 "12","7ed6","","// init $1a, $25
 這裡是星獸膠囊
 存放銀行。
 需要艾娜的服務
 嗎?","// init $1a, $25
-This is the Star Animal Capsule Storage Bank.
-Do you need Ina's services?","repoint_target","deepL",""
+This is the Star Beast Storage Bank. Do you need my help?","repoint_target choicer","","","","",""
 "12","7f05","","// init $19, $22
 需要什麼服務嗎?","// init $19, $22
-Do you need any services?","repoint_target","deepL",""
+Do you need something?","repoint_target","","","","",""
 "12","7eac","","嗨OHBABY
-嗨NO","","repoint_target","???",""
+嗨NO","","repoint_target","???","","","",""

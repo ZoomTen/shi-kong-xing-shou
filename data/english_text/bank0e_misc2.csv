@@ -68,7 +68,8 @@ I'm too ashamed to be called a genius!","took a bit of translation liberty","","
 What is it?
 Didn't I tell you to forget about asking me to read the blueprint?
 I'm hardly worthy to be called a mechanical genius... and in the darkness, it's impossible to read the diagram anyway.
-This accursed darkness that caused me to lose..","i hope my interpretation of the end where he says ""it wasn't entirely my fault"" is right in that he's referring to the lights going out","","","","","","","","","","","","","","","","","","","",""
+...If it wasn't for that, I might not have lost...","i hope my interpretation of the end where he says ""it wasn't entirely my fault"" is right in that he's referring to the lights going out","Given later NPC dialogue, it seems that he lost because there were no Rainbow Crystals to use as the racing car's core.
+The Volts also mention that they cut the power to get the money faster. -- Waddle","","","","","","","","","","","","","","","","","","",""
 "0e","5e40","","// init NAME_BLANK, $27
 峨~呵呵呵!
 峨峨峨~
@@ -225,7 +226,7 @@ Considering what happened last time, I think it'd be easier for us to just find 
 ＤＲ． ＬＥＯ ＷＩＬＬ ＷＩＮ ＴＨＥ ＲＥＭＡＴＣＨ！","","","","","","","","","","","","","","","","","","","","",""
 "0e","61f6","","// init NAME_0A, $0a
 恰比~恰比比~","// init NAME_0A, $0a
-Chabi chabi!","google","????????????????????????????????????????????????????????????????????????????????????","i have no idea what this means","Beattro","","","","","","","","","","","","","","","","",""
+Chirp! Chirirp!","google","????????????????????????????????????????????????????????????????????????????????????","i have no idea what this means","Beattro","","","","","","","","","","","","","","","","",""
 "0e","6205","","// init NAME_1C, $29
 再比賽一次嗎?
 實在沒有太大的
@@ -289,7 +290,8 @@ The Crystal Mines was inexplicably taken over by the Volts and fired all the emp
 那我要做什麼呢
 ?","// init NAME_BLANK, $14
 They shut down the mines and fired everyone!
-I wish I could help them, but I'm not a miner. What am I to do?","","","","","","","","","","","","","","","","","","","","",""
+How awful...
+If I can't be a miner, what can I do?","","","","","","","","","","","","","","","","","","","","",""
 "0e","63de","","// init NAME_BLANK, $1d
 偷偷告訴你唷!
 那個閃電集團，
@@ -344,7 +346,7 @@ Now SCRAM!","","","","","","","","","","","","","","","","","","","","",""
 不曉得還能煮幾
 回?","// init NAME_BLANK, $15
 Now that my husband is unemployed...
-I don't know how often I'll be able to cook such a fancy lunch.","
+I don't know when I'll be able to cook such fancy lunches again.","
 what does sumptuous mean","sumptuous means a very nice lunch, something like that","yeah, let's just use the simpler word","","","","","","","","","","","","","","","","","",""
 "0e","6550","","// init NAME_BLANK, $1b
 聽說科技城的

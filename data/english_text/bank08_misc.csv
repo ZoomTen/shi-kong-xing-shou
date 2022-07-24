@@ -115,7 +115,7 @@ Did you know? When I was young, I was famous in the village for my beauty!
 爸爸馬上去買一
 個網球場!","// init NAME_BLANK, $22
 What? Hayato said he suddenly wanted to play tennis?
-No problem!
+No~ problem!
 I'm going to buy a tennis court!","said by the dad, presumably, but it doesn't make as much sense in english","","","","","","","","","","","","","","","","","","","",""
 "08","4911","","// init NAME_12, $26
 OH~
@@ -234,7 +234,8 @@ Dad...","","","","","","","","","","","","","","","","","","","","",""
 喧~
 不要說話~
 過來~","// init NAME_11, $11
-Hush, don't talk. Come here.","~ indicating whispering","","","","","","","","","","","","","","","","","","","",""
+Hush, don't talk.
+Come here.","~ indicating whispering","","","","","","","","","","","","","","","","","","","",""
 "08","4bf3","","// init NAME_11, $11
 自從你媽媽病逝
 後，
@@ -249,7 +250,8 @@ Dad... What's wrong?","","","","","","","","","","","","","","","","","","","","
 不要多話。
 看看今夜的星空
 。","// init NAME_11, $11
-Don't talk too much. Look at tonight's starry sky.","","","","","","","","","","","","","","","","","","","","",""
+Shush, don't say anything.
+Take a look at the stars.","","","","","","","","","","","","","","","","","","","","",""
 "08","4c4c","","// init NAME_BALLOT, PIC_BALLOT_0
 爸~
 月光的顏色，
@@ -324,13 +326,15 @@ Huh?","","","","","","","","","","","","","","","","","","","","",""
 不是小孩子了!
 爸⋯爸爸⋯⋯
 大举蛋!!!","// init NAME_BALLOT, $2c
-Dad, ever since Mom left you never seem to be honest with me!
-
-I'm not a kid anymore Dad, I'm 12!","","","","","","","","","","","","","","","","","","","","",""
+Not again!
+Ever since Mom passed away, you just can't seem to speak honestly anymore!
+I'm 12 years old, not a kid!
+D-dad... You big dummy!
+","","","","","","","","","","","","","","","","","","","","",""
 "08","4e04","","// init NAME_11, $11
 ⋯⋯
 上學去吧。","// init NAME_11, $11
-...Go.","","","","","","","","","","","","","","","","","","","","",""
+...Just go.","","","","","","","","","","","","","","","","","","","","",""
 "08","4e15","","// init NAME_SNOWY, $08
 汪汪~汪汪!","// init NAME_SNOWY, $08
 Woof! Woof!","","","","","","","","","","","","","","","","","","","","",""
@@ -517,8 +521,9 @@ It's time for class! You should pay attention to the lesson and be more conscien
 巴‧巴巴洛特⋯
 快去⋯坐⋯
 坐⋯坐好。","// init NAME_BLANK, $1e
-ＩＴ＇Ｓ ＴＩＭＥ ＦＯＲ．．． ＣＬＡＳＳ．．． ＣＬＡＳＳ．
-ＢＡ－ＢＡ－ＢＡ－ＬＬＯＴ．．． ＧＯ．．． ＳＩＴ．．． ＳＩＴ．．． ＤＯＷＮ．","wow this is a pretty good machine translation, literally and figuratively","","","","","","","","","","","","","","","","","","","",""
+It's time for cl... class.
+B-Ba-Ballot...
+G-go sit... sit down.","wow this is a pretty good machine translation, literally and figuratively","","","","","","","","","","","","","","","","","","","",""
 "08","5306","","// init NAME_15, $24
 大家都知道吧?
 晚上會有一場很

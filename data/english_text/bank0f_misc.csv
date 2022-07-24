@@ -23,8 +23,8 @@ What shall we do..?",":vf:","","","","","","","","","","","","","","","","","","
 牠的注意力!
 但是沒有電力，
 該怎麼製作呢⋯","// init NAME_1C, $29
-I've got it! We can use my robot rats to distract him!
-But how can we make those while the power is out..?",":vf:","","","","","","","","","","","","","","","","","","","",""
+I've got it! We can use a robot rat to distract him!
+But how can we make one while the power is out..?",":vf:","","","","","","","","","","","","","","","","","","","",""
 "0f","473b","","// init NAME_1C, $29
 真叫人生氣!
 在不得已的情況
@@ -36,7 +36,7 @@ But how can we make those while the power is out..?",":vf:","","","","","","",""
 你等一下~
 我找一下零件⋯","// init NAME_1C, $29
 How frustrating!
-As a last resort, I'll have to make them spring- powered.
+As a last resort, I'll have to make it spring- powered.
 Even though it would be embarrasing for me to make clockwork rats..
 Give me a bit, and I'll find the parts I need..","","","","","","","","","","","","","","","","","","","","",""
 "0f","479e","","// init NAME_1C, $29
@@ -62,7 +62,7 @@ Got it!","","","","","","","","","","","","","","","","","","","","",""
 ，
 得找到發條才行
 。","// init NAME_1C, $29
-To make the robot rats, we need a spring.","","","","","","","","","","","","","","","","","","","","",""
+To make the robot rat, we need a spring.","","","","","","","","","","","","","","","","","","","","",""
 "0f","4838","","// init NAME_BLANK, $16
 發條?
 雷歐博士要的嗎

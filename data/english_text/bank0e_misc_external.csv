@@ -163,7 +163,7 @@ How em- barrassing.. I'll just have to bite the bullet and do it.","","","repoin
 喂~巴洛特!
 千萬不可以說出
 去唷。","// init NAME_1C, $29
-Here's the clockwork mouse.
+Here's the clockwork rat.
 I still feel ashamed of resorting to such simple tech...
 Ballot! You'd better not tell anyone I made it!","","","repoint_target"
 "0e","726f","","// init NAME_BALLOT, $2a
@@ -213,7 +213,7 @@ Eh? What's happened to you?","","","repoint_target"
 沒想到被閃電隊
 給綁了起來!
 真是感謝你!","// init NAME_23, $17
-Oh, thank you! After the outage in the State of Science, I rushed over to investigate the cause.
+Oh, thank you! After the outage in Tech City, I rushed over to investigate the cause.
 I didn't expect that I would be tied up by Team Volt!
 Thank you for rescuing me!","","","repoint_target"
 "0e","73b0","","// init NAME_1E, $27
@@ -474,7 +474,8 @@ Dr. Leo, it's a deal!","","","repoint_target"
 事長。
 各位，再見了。","// init NAME_1B, $4c
 These circuits?
-I think I remember seeing something like that with the chairman once, but since then, something unfortunate happened...
+I think I remember the chairman having something like that once, but something unfortunate happened since then...
+It's kind of hard to explain...
 Ballot, if you come over to GaleCorp, I'll help you make an appointment with the chairman.
 I've got to go now, see you!","","","repoint_target"
 "0e","7ad8","","// init NAME_1C, $29
@@ -554,7 +555,7 @@ OK!
 Just tweak this, and solder that...
 OK! The modifications are complete!
 Buck, this brand new robot bird is for you!
-I've named it Beattro, and it can carry you across small bumps in the road!","","","repoint_target"
+I've named it Beattro, and it can carry you across small gaps in the road!","","","repoint_target"
 "0e","7ce9","","// init NAME_BALLOT, $2a
 巴克&機械鳥
 加入隊伍!","// init NAME_BALLOT, $2a
@@ -622,7 +623,7 @@ It was inevitable; since the Rainbow Crystal was discontinued, he doesn't have t
 爸爸的口袋裡，
 有一顆七彩的水
 晶耶!","// init NAME_BLANK, $1e
-In my dad's pocket, there is a colorful crystal!","","","repoint_target"
+There's a colorful crystal in my dad's pocket!","tweaked the sentence to flow better - Waddle","","repoint_target"
 "0e","65de","","// init NAME_BUCK, $01
 水晶?
 給巴克‧雷歐博
@@ -701,13 +702,14 @@ No! We need to get out of here!","","","repoint_target"
 讓開!
 不要擋住我徹退
 的路!","// init NAME_22, $32
-Who are you? Get out of the way! ","","","repoint_target"
+Who are you? Get out of the way! 
+You won't stop me from retreating!","","","repoint_target"
 "0e","67ae","","// init NAME_22, $32
 可惡!
 雖然被打敗了，
 但你還是阻止不
 了我的徹退的!","// init NAME_22, $32
-Damn it! I've been beaten! I need to get out of here!","","","repoint_target"
+Damn it! I've been beaten! But you're still no match my retreating skills!","","","repoint_target"
 "0e","67e0","","// init NAME_BALLOT, $00
 這一定就是彩虹
 水晶了!
@@ -741,7 +743,7 @@ Good news! Those volty guys occupying the mine have disappeared!","","","repoint
 結果發現了一隻
 好大的貓怪!
 真是可怕!","// init NAME_BLANK, $19
-A few days ago, while walking past the power plant of the State of Science, there was a giant cat monster! I ran for my life!","","","repoint_target"
+A few days ago, while walking past Tech City's power plant, there was a giant cat monster! I ran for my life!","","","repoint_target"
 "0e","68f4","","// init NAME_BLANK, $15
 哈哈哈~
 老公又有工作了
@@ -952,4 +954,5 @@ Dot's lightspeed machine found a diamond, and it used its drill (worth ¥9456 bi
 "0e","6e80","","// init NAME_BLANK, $13
 慢⋯慢‧著!
 哇!!!!!","// init NAME_BLANK, $13
-S-slow down! Waaah!","","","repoint_target"
+W... Wait, what?! 
+Aaah!","","","repoint_target"

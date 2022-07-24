@@ -22,12 +22,12 @@ Got the Spring!","","duped from bank0e","","","","","","","","","","","","","","
 等我一下下~
 ","// init NAME_1C, $29
 It's not wrong! This is what I want to do with my hair... it's really embarrassing... ugh... if you do it with your face covered, you won't feel that way! I'll be back in a minute.
-","","deepl","","","","","","","","","","","","","","","","","","",""
+","","deepl","What NPC says that?","","","","","","","","","","","","","","","","","",""
 "0f","498f","","// init $1c, $29
 這就是發條老鼠
 。
 ","// init NAME_1C, $29
-Here's the clockwork mouse.
+Here's the clockwork rat.
 I still feel ashamed of resorting to such simple tech...
 Ballot! You'd better not tell anyone I made it!","","dupe","","","","","","","","","","","","","","","","","","",""
 "0f","49e7","","// init $01, $2a
@@ -86,7 +86,7 @@ Eh? What's happened to you?","","dupe","","","","","","","","","","","","","",""
 給綁了起來!
 真是感謝你!
 ","// init NAME_23, $17
-Oh, thank you! After the outage in the State of Science, I rushed over to investigate the cause.
+Oh, thank you! After the outage in Tech City, I rushed over to investigate the cause.
 I didn't expect that I would be tied up by Team Volt!
 Thank you for rescuing me!","","dupe","","","","","","","","","","","","","","","","","","",""
 "0f","4b28","","// init $1e, $27
@@ -257,15 +257,13 @@ I'm very busy, so is there anything you need?","","dupe","","","","","","","",""
 需要妮可治療嗎
 ?
 ","// init $14, $25
-Do you need Nicole's treatment?
-What can I do for you?
-","","deepl","","","","","","","","","","","","","","","","","","",""
+Do you need my treatment?","choicer","","","","","","","","","","","","","","","","","","","",""
 "0f","4f13","","// init $1a, $25
 這裡是星獸膠囊
 存放銀行。
 需要艾娜的服務
 嗎?","// init $1a, $25
-This is the Star Animal Capsule Storage Bank. Do you need Ina's services?","","deepl","","","","","","","","","","","","","","","","","","",""
+This is the Star Beast Storage Bank. Do you need my help?","choicer","","","","","","","","","","","","","","","","","","","",""
 "0f","4f42","","// init $1b, $4c
 博士終於做好了
 反重力裝置了!
@@ -390,8 +388,9 @@ Dr. Leo, it's a deal!","","dupe","","","","","","","","","","","","","","","",""
 各位，再見了。
 ","// init NAME_1B, $4c
 These circuits?
-I think I remember seeing something like that with the chairman once, but since then, something unfortunate happened...
-Ballot, if you come over to GaleCorp, I'll help you make an appointment with the chairman.
+I think I remember the chairman having something like that once, but something unfortunate happened since then...
+It's kind of hard to explain...
+Ballot, if you come over to Gale Corp, I'll help you make an appointment with the chairman.
 I've got to go now, see you!","","dupe","","","","","","","","","","","","","","","","","","",""
 "0f","5299","","// init $1c, $29
 你不是想找到你
@@ -504,14 +503,14 @@ Star Beast Beattro joined the party. If Buck is leading the party, he can use Be
 尋找乘下的七個
 動力晶片吧。
 ","// init NAME_1C, $29
-Go on! You can start at GaleCorp, and find the other 7 circuits from there.","","dupe","","","","","","","","","","","","","","","","","","",""
+Go on! You can start at GaleCorp, and find the other 7 chips from there.","","dupe","","","","","","","","","","","","","","","","","","",""
 "0f","554f","","// init $1c, $29
 去吧~
 到加爾企業，
 尋找乘下的七個
 動力晶片吧。
 ","// init NAME_1C, $29
-Go on! You can start at GaleCorp, and find the other 7 circuits from there.","","dupe","","","","","","","","","","","","","","","","","","",""
+Go on! You can start at GaleCorp, and find the other 7 chips from there.","","dupe","","","","","","","","","","","","","","","","","","",""
 "0f","557d","","// init $01, $2b
 這個洞⋯
 該怎麼通過呢?
@@ -587,7 +586,7 @@ Is it just me, or is it that every time I see Buck, I get the feeling that he is
 殊防範措施啊!
 真是奇怪⋯
 ","// init NAME_BLANK, $16
-The State of Science is an enclosed city, and all our lights are electric lights.
+Tech City is an enclosed city, and all our lights are electric lights.
 But there are special precautions in the power station to prevent situations like this from happening!
 How odd...","","dupe","","","","","","","","","","","","","","","","","","",""
 "0f","57ad","","// init $00, $13
@@ -656,4 +655,5 @@ Dot's lightspeed machine found a diamond, and it used its drill (worth ¥9456 bi
 慢⋯慢‧著!
 哇!!!!!
 ","// init NAME_BLANK, $13
-S-slow down! Waaah!","","dupe","","","","","","","","","","","","","","","","","","",""
+W... Wait, what?! 
+Aaah!","","dupe","","","","","","","","","","","","","","","","","","",""
