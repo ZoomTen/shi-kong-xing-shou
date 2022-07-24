@@ -368,7 +368,7 @@
 	text "⋯⋯⋯";
 	done;
 
-@org $55, $6462:
+@org $55, $6463:
 	signpost;
 	text "好⋯好難過⋯⋯";
 	line "這種感覺⋯⋯";
