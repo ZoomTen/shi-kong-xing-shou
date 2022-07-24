@@ -3275,7 +3275,7 @@ LoadTilesetHeader::
 	jp .load_tileset ; jr
 
 Func_25d6::
-	ld a, [wd08f]
+	ld a, [wLoadedROMBank]
 	push af
 	ld hl, wdae3
 	ld e, [hl]
@@ -3350,7 +3350,7 @@ Func_2612::
 
 Func_262d::
 	call Func_25f5
-	ld a, [wd08f]
+	ld a, [wLoadedROMBank]
 	push af
 	ld a, [wd091]
 	rst Bankswitch
@@ -4017,7 +4017,7 @@ PlaySound::
 .play
 	ld a, d
 	ldh [hCurSound], a
-	ld a, [wd08f]
+	ld a, [wLoadedROMBank]
 	push af
 	ld a, d
 	call Func_25fb

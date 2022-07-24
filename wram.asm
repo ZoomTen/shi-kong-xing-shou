@@ -200,7 +200,7 @@ wd08c:: ds 1
 
 wd08d:: ds 1 ; selected page
 wd08e:: ds 1 ; selected option
-wd08f:: ds 1
+wLoadedROMBank:: ds 1
 wd090:: ds 1
 wd091:: ds 1
 wd092:: ds $e

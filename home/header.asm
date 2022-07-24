@@ -6,7 +6,7 @@ _hl_::
 
 SECTION "rst20", ROM0[$0020]
 Bankswitch::
-	ld [wd08f], a
+	ld [wLoadedROMBank], a
 	ld [rROMB0], a
 	ret
 
