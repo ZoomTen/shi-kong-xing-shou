@@ -29,6 +29,16 @@ done: MACRO
 	db TX_END
 ENDM
 
+	const TX_ITEMNAME ; $e3
+itemname: MACRO
+	db TX_ITEMNAME
+ENDM
+
+	const TX_RETURN ; $e3
+text_return: MACRO
+	db TX_RETURN
+ENDM
+
 	const_next $e5
 
 	const TX_GETCHOICE ; $e5
@@ -41,6 +51,12 @@ ENDM
 	const TX_CHOICE ; $e6
 choice: MACRO
 	db TX_CHOICE
+ENDM
+
+	const_next $ea
+	const TX_ITEMNAME2 ; $ea
+itemname2: MACRO
+	db TX_ITEMNAME2
 ENDM
 
 	const_next $ec

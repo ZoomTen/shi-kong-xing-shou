@@ -65,6 +65,10 @@ def print_text():
             print("\";\n\tdone;")
             done = 1
             break
+        elif byte == 0xe4:
+            print("\";\n\treturn;")
+            done = 1
+            break
         elif byte == 0xe5:
             arg = int.from_bytes(file.read(2), "little")
             print("\";\n\tgetchoice $%04x; # TEMP" % arg, end="")
@@ -114,8 +118,8 @@ while count != 0:
     # get nybbles from byte
     byte_high, charset = divmod(byte, 0x10)
     backup_charset = charset
-    if (byte == 0xe0) or (byte == 0xe1):
-        print("@org $%02x, $%04x:" % (bank, address))
+	
+    print("@org $%02x, $%04x:" % (bank, address))
     if byte == 0xe0:
         arg1 = int.from_bytes(file.read(1), "little")
         arg2 = int.from_bytes(file.read(1), "little")

@@ -389,3 +389,15 @@ ENDM
 scr_69: MACRO
 	db script_69
 ENDM
+
+	const_def $6f
+	const script_6f
+scr_6f: MACRO
+	db script_6f
+ENDM
+
+	const_def $77
+	const script_77
+scr_77: MACRO
+	db script_77
+ENDM

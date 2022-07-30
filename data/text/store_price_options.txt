@@ -1,0 +1,20 @@
+@org $1e, $6ece:
+	text "５００"; forcemap 1 "元";
+	return;
+
+@org $1e, $6ed5:
+	text "１０００"; forcemap 1 "元";
+	return;
+
+@org $1e, $6edd:
+	text "１５００"; forcemap 1 "元";
+	return;
+
+@org $1e, $6ee5:
+	text "２０００"; forcemap 1 "元";
+	return;
+
+@org $1e, $6eed:
+	text "２５００"; forcemap 1 "元";
+	return;
+

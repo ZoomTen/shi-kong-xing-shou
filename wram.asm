@@ -161,7 +161,7 @@ wPlayerObject::
 	ds $20
 wFollowerObject::
 	ds $20
-wNPCObjects:
+wNPCObjects::
 	ds $20 ; id 2
 	ds $20 ; id 3
 	ds $20 ; id 4
@@ -217,9 +217,11 @@ wd0ae:: ds 2
 wMapCollisionsPointer:: ds 2
 wd0b2:: ds 2
 wd0b4:: ds 1
-wd0b5:: ds 5
-
-wd0ba:: ds 2
+wd0b5:: ds 1
+wd0b6:: ds 2
+		ds 2
+wd0ba:: ds 1
+wd0bb:: ds 1
 wd0bc:: ds 4
 
 wd0c0:: ds 1
@@ -495,8 +497,7 @@ wCharacterTileSrc:: ds 2
 wd9c2:: ds 8
 wd9ca:: ds 1
 wd9cb:: ds 1
-wd9cc:: ds 1
-wd9cd:: ds 1
+wd9cc:: ds 2
 wd9ce:: ds 2
 
 wd9d0:: ds 2
@@ -605,8 +606,12 @@ wdcb2:: ds 1
 wdcb3:: ds 1
 wdcb4:: ds 1
 wdcb5:: ds 1
-wdcb6:: ds 5
+wdcb6:: ds 1
+wdcb7:: ds 1
 
+	ds 2
+
+wdcba:: ds 1
 wdcbb:: ds $d
 
 wMovementPointer:: ds 2

@@ -281,14 +281,14 @@ CheckCharacter_Commands::
 	dw Text_Init ; $e0
 	dw Func_1c2c ; $e1 sign?
 	dw Text_End  ; $e2
-	dw Func_1c96 ; $e3
+	dw Text_ItemName ; $e3
 	dw Func_1ca9 ; $e4
 	dw PrintTwoOptionMenu     ; $e5
 	dw InterpretTwoOptionMenu ; $e6
 	dw Func_1d41      ; $e7
 	dw Func_1d67      ; $e8
 	dw Text_Init      ; $e9
-	dw Func_1e0a      ; $ea
+	dw Text_ItemName2 ; $ea
 	dw Func_1e1a      ; $eb
 	dw Text_Paragraph ; $ec
 	dw Text_NextLine  ; $ed
@@ -498,10 +498,11 @@ Func_1c8b::
 	jr nz, .asm_1c91
 	ret
 
-Func_1c96::
+Text_ItemName::
 	call Func_0817
 	pop hl
-	call $421a
+	call Func_01e_421a ; bank 1e set by Func_0827
+; got item name
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]
@@ -752,9 +753,9 @@ ENDR
 Func_1e07::
 	jp CheckCharacter
 
-Func_1e0a::
+Text_ItemName2::
 	pop hl
-	call $6e4d
+	call Func_01e_6e4d
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]
@@ -764,7 +765,7 @@ Func_1e0a::
 
 Func_1e1a::
 	pop hl
-	call $6de3
+	call Func_01e_6de3
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]

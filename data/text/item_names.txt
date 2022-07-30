@@ -1,0 +1,359 @@
+@org $1e, $4f91:
+	text "    ";
+	return;
+
+@org $1e, $4f97:
+	text "怪獸膠囊";
+	return;
+
+@org $1e, $4f9d:
+	text "極速膠囊";
+	return;
+
+@org $1e, $4fa3:
+	text "強力膠囊";
+	return;
+
+@org $1e, $4faa:
+	text "極品膠囊";
+	return;
+
+@org $1e, $4fb0:
+	text "巴利果實";
+	return;
+
+@org $1e, $4fb7:
+	text "醫療包";
+	return;
+
+@org $1e, $4fbe:
+	text "強效藥";
+	return;
+
+@org $1e, $4fc4:
+	text "超濃縮藥";
+	return;
+
+@org $1e, $4fcc:
+	text "健康藥草";
+	return;
+
+@org $1e, $4fd2:
+	text "醫療針劑";
+	return;
+
+@org $1e, $4fda:
+	text "神之花";
+	return;
+
+@org $1e, $4fdf:
+	text "解毒針";
+	return;
+
+@org $1e, $4fe6:
+	text "麻痺血清";
+	return;
+
+@org $1e, $4fed:
+	text "興奮劑";
+	return;
+
+@org $1e, $4ff2:
+	text "除熱藥膏";
+	return;
+
+@org $1e, $4ffa:
+	text "防寒藥膏";
+	return;
+
+@org $1e, $5001:
+	text "萬能血清";
+	return;
+
+@org $1e, $5009:
+	text "急救包";
+	return;
+
+@org $1e, $500e:
+	text "急救機器";
+	return;
+
+@org $1e, $5014:
+	text "甦生儀";
+	return;
+
+@org $1e, $5019:
+	text "精力壽司";
+	return;
+
+@org $1e, $5020:
+	text "能源補充";
+	return;
+
+@org $1e, $5026:
+	text "營養大餐";
+	return;
+
+@org $1e, $502e:
+	text "大力針";
+	return;
+
+@org $1e, $5034:
+	text "硬化針";
+	return;
+
+@org $1e, $503a:
+	text "迴避針";
+	return;
+
+@org $1e, $503f:
+	text "神準針";
+	return;
+
+@org $1e, $5045:
+	text "高速針";
+	return;
+
+@org $1e, $504a:
+	text "軟化噴霧";
+	return;
+
+@org $1e, $5052:
+	text "無力針";
+	return;
+
+@org $1e, $5058:
+	text "呆滯針";
+	return;
+
+@org $1e, $505d:
+	text "刺眼噴霧";
+	return;
+
+@org $1e, $5066:
+	text "遲緩噴霧";
+	return;
+
+@org $1e, $506e:
+	text "煙幕彈";
+	return;
+
+@org $1e, $5073:
+	text "干擾電波";
+	return;
+
+@org $1e, $507b:
+	text "隱身設備";
+	return;
+
+@org $1e, $5083:
+	text "迴避雷達";
+	return;
+
+@org $1e, $508b:
+	text "神奇果實";
+	return;
+
+@org $1e, $5092:
+	text "縮地射線";
+	return;
+
+@org $1e, $5099:
+	text "祕技"; forcemap 1, "１";
+	return;
+
+@org $1e, $50a0:
+	text "祕技"; forcemap 1, "２";
+	return;
+
+@org $1e, $50a7:
+	text "祕技"; forcemap 1, "３";
+	return;
+
+@org $1e, $50ae:
+	text "祕技"; forcemap 1, "４";
+	return;
+
+@org $1e, $50b5:
+	text "祕技"; forcemap 1, "５";
+	return;
+
+@org $1e, $50bc:
+	text "祕技"; forcemap 1, "６";
+	return;
+
+@org $1e, $50c3:
+	text "祕技"; forcemap 1, "７";
+	return;
+
+@org $1e, $50ca:
+	text "祕技"; forcemap 1, "８";
+	return;
+
+@org $1e, $50d1:
+	text "祕技"; forcemap 1, "９";
+	return;
+
+@org $1e, $50d8:
+	text "祕技"; forcemap 1, "１０";
+	return;
+
+@org $1e, $50e0:
+	text "祕技"; forcemap 1, "１１";
+	return;
+
+@org $1e, $50e8:
+	text "祕技"; forcemap 1, "１２";
+	return;
+
+@org $1e, $50f0:
+	text "祕技"; forcemap 1, "１３";
+	return;
+
+@org $1e, $50f8:
+	text "祕技"; forcemap 1, "１４";
+	return;
+
+@org $1e, $5100:
+	text "祕技"; forcemap 1, "１５";
+	return;
+
+@org $1e, $5108:
+	text "祕技"; forcemap 1, "１６";
+	return;
+
+@org $1e, $5110:
+	text "祕技"; forcemap 1, "１７";
+	return;
+
+@org $1e, $5118:
+	text "祕技"; forcemap 1, "１８";
+	return;
+
+@org $1e, $5120:
+	text "祕技"; forcemap 1, "１９";
+	return;
+
+@org $1e, $5128:
+	text "祕技"; forcemap 1, "２０";
+	return;
+
+@org $1e, $5130:
+	text "祕技"; forcemap 1, "２１";
+	return;
+
+@org $1e, $5138:
+	text "祕技"; forcemap 1, "２２";
+	return;
+
+@org $1e, $5140:
+	text "祕技"; forcemap 1, "２３";
+	return;
+
+@org $1e, $5148:
+	text "祕技"; forcemap 1, "２４";
+	return;
+
+@org $1e, $5150:
+	text "祕技"; forcemap 1, "２５";
+	return;
+
+@org $1e, $5158:
+	text "祕技"; forcemap 1, "２６";
+	return;
+
+@org $1e, $5160:
+	text "祕技"; forcemap 1, "２７";
+	return;
+
+@org $1e, $5168:
+	text "祕技"; forcemap 1, "２８";
+	return;
+
+@org $1e, $5170:
+	text "祕技"; forcemap 1, "２９";
+	return;
+
+@org $1e, $5178:
+	text "祕技"; forcemap 1, "３０";
+	return;
+
+@org $1e, $5180:
+	text "祕技"; forcemap 1, "３１";
+	return;
+
+@org $1e, $5188:
+	text "祕技"; forcemap 1, "３２";
+	return;
+
+@org $1e, $5190:
+	text "祕技"; forcemap 1, "３３";
+	return;
+
+@org $1e, $5198:
+	text "祕技"; forcemap 1, "３４";
+	return;
+
+@org $1e, $51a0:
+	text "祕技"; forcemap 1, "３５";
+	return;
+
+@org $1e, $51a8:
+	text "祕技"; forcemap 1, "３６";
+	return;
+
+@org $1e, $51b0:
+	text "祕技"; forcemap 1, "３７";
+	return;
+
+@org $1e, $51b8:
+	text "祕技"; forcemap 1, "３８";
+	return;
+
+@org $1e, $51c0:
+	text "祕技"; forcemap 1, "３９";
+	return;
+
+@org $1e, $51c8:
+	text "祕技"; forcemap 1, "４０";
+	return;
+
+@org $1e, $51d0:
+	text "祕技"; forcemap 1, "４１";
+	return;
+
+@org $1e, $51d8:
+	text "祕技"; forcemap 1, "４２";
+	return;
+
+@org $1e, $51e0:
+	text "祕技"; forcemap 1, "４３";
+	return;
+
+@org $1e, $51e8:
+	text "祕技"; forcemap 1, "４４";
+	return;
+
+@org $1e, $51f0:
+	text "祕技"; forcemap 1, "４５";
+	return;
+
+@org $1e, $51f8:
+	text "祕技"; forcemap 1, "４６";
+	return;
+
+@org $1e, $5200:
+	text "祕技"; forcemap 1, "４７";
+	return;
+
+@org $1e, $5208:
+	text "祕技"; forcemap 1, "４８";
+	return;
+
+@org $1e, $5210:
+	text "祕技"; forcemap 1, "４９";
+	return;
+
+@org $1e, $5218:
+	text "祕技"; forcemap 1, "５０";
+	return;

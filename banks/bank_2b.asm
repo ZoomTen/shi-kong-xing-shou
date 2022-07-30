@@ -542,7 +542,10 @@ BattleJumptable:
 	dw HandleBattleEnd
 
 HandleBattleEnd:
-	dr $ac3c2, $aca40
+	dr $ac3c2, $ac569
+
+Func_02b_4569::
+	dr $ac569, $aca40
 
 Func_02b_4a40:
     dr $aca40, $aca52
@@ -674,7 +677,7 @@ asm_02b_68c3:
 	ld [wd9f8], a
 	ld [wd08a], a
 	ld [wd9cc], a
-	ld [wd9cd], a
+	ld [wd9cc + 1], a
 	ld [wd9ca], a
 	ld [wd9cb], a
 	ld [wd9f6], a
