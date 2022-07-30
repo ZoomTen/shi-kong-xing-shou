@@ -1,0 +1,91 @@
+@org $1e, $5268:
+	text "    ";
+	return;
+
+@org $1e, $526e:
+	text "奇蹟膠囊";
+	return;
+
+@org $1e, $5274:
+	text "元氣點滴";
+	return;
+
+@org $1e, $527c:
+	text "火龍之刺";
+	return;
+
+@org $1e, $5284:
+	text "人魚之刺";
+	return;
+
+@org $1e, $528c:
+	text "雷";
+	db $f1 $b8; #"螯";
+	db $f0; # forcemap 0
+	text "之刺";
+	return;
+
+@org $1e, $5294:
+	text "石螯之刺";
+	return;
+
+@org $1e, $529c:
+	text "風娘之刺";
+	return;
+
+@org $1e, $52a4:
+	text "木靈之刺";
+	return;
+
+@org $1e, $52ab:
+	text "狂神之刺";
+	return;
+
+@org $1e, $52b1:
+	text "火龍鱗";
+	return;
+
+@org $1e, $52b7:
+	text "人魚之";
+	db $f1 $bc; #"淚";
+	return;
+
+@org $1e, $52c0:
+	text "雷淚甲";
+	return;
+
+@org $1e, $52c6:
+	text "石螯之羽";
+	return;
+
+@org $1e, $52cf:
+	text "風娘之衣";
+	return;
+
+@org $1e, $52d8:
+	text "木靈盾";
+	return;
+
+@org $1e, $52de:
+	text "鬧鐘";
+	return;
+
+@org $1e, $52e2:
+	text "神之守護";
+	return;
+
+@org $1e, $52ea:
+	text "救護之玉";
+	return;
+
+@org $1e, $52f2:
+	text "元氣之玉";
+	return;
+
+@org $1e, $52fa:
+	text "奇蹟之玉";
+	return;
+
+@org $1e, $5302:
+	text "幻晶";
+	return;

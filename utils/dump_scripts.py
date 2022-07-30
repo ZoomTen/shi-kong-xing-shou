@@ -69,7 +69,7 @@ with open('baserom.gbc', 'rb') as rom:
 			elif byte == 0x04:
 				arg = int.from_bytes(rom.read(2), "little")
 				sym = get_symbol_or_undefined(
-					rom_sym, addr2offset(bank, arg)
+					rom_sym, addr2offset(bank, arg),
 					returns=lambda x:("text_%02x_%04x" % x)
 				)
 				print("\tscr_04 %s" % sym)
@@ -236,7 +236,7 @@ with open('baserom.gbc', 'rb') as rom:
 			elif byte == 0x3e: # jump
 				arg2 = int.from_bytes(rom.read(2), "little")
 				sym = get_symbol_or_undefined(
-					rom_sym, addr2offset(bank, arg2)
+					rom_sym, addr2offset(bank, arg2),
 					returns=lambda x:("Script_%03x_%04x" % x)
 				)
 				print("\tscr_jump %s" % (sym))
@@ -286,7 +286,7 @@ with open('baserom.gbc', 'rb') as rom:
 				arg = int.from_bytes(rom.read(1), "little")
 				arg2 = int.from_bytes(rom.read(2), "little")
 				sym = get_symbol_or_undefined(
-					rom_sym, addr2offset(bank, arg2)
+					rom_sym, addr2offset(bank, arg2),
 					returns=lambda x:("Script_%03x_%04x" % x)
 				)
 				print("\tscr_63 $%02x, %s" % (arg, sym))

@@ -1,0 +1,164 @@
+@org $1e, $5358:
+	text "    ";
+	return;
+
+@org $1e, $535e:
+	text "設計圖";
+	return;
+
+@org $1e, $5365:
+	text "彩虹水晶";
+	return;
+
+@org $1e, $536e:
+	text "鳳凰號";
+	return;
+
+@org $1e, $5374:
+	text "發條";
+	return;
+
+@org $1e, $5379:
+	text "發條老鼠";
+	return;
+
+@org $1e, $5382:
+	text "追蹤器";
+	return;
+
+@org $1e, $5388:
+	text "ＰＤＡ";
+	return;
+
+@org $1e, $538d:
+	text "天使之葉";
+	return;
+
+@org $1e, $5395:
+	text "晶片２";
+	return;
+
+@org $1e, $539c:
+	text "金鑰匙";
+	return;
+
+@org $1e, $53a2:
+	text "性感禮服";
+	return;
+
+@org $1e, $53aa:
+	text "復古項鍊";
+	return;
+
+@org $1e, $53b3:
+	text "晶片３";
+	return;
+
+@org $1e, $53ba:
+	text "珍珠項鍊";
+	return;
+
+@org $1e, $53c2:
+	text "魚之魂";
+	return;
+
+@org $1e, $53c8:
+	text "晶片４";
+	return;
+
+@org $1e, $53cf:
+	text "絕緣耳機";
+	return;
+
+@org $1e, $53d7:
+	text "晶片５";
+	return;
+
+@org $1e, $53de:
+	text "超人模型";
+	return;
+
+@org $1e, $53e7:
+	text "繩勾";
+	return;
+
+@org $1e, $53ec:
+	text "奇蹟泉水";
+	return;
+
+@org $1e, $53f4:
+	text "傳家懷錶";
+	return;
+
+@org $1e, $53fc:
+	text "程式磁片";
+	return;
+
+@org $1e, $5404:
+	text "晶片６";
+	return;
+
+@org $1e, $540b:
+	text "雪熊爪";
+	return;
+
+@org $1e, $5412:
+	text "父親之帽";
+	return;
+
+@org $1e, $541a:
+	text "紫羅蘭";
+	return;
+
+@org $1e, $5421:
+	text "彩繪筆";
+	return;
+
+@org $1e, $5427:
+	text "地契";
+	return;
+
+@org $1e, $542c:
+	text "音樂盒";
+	return;
+
+@org $1e, $5432:
+	text "星槌";
+	return;
+
+@org $1e, $5437:
+	text "米特日記";
+	return;
+
+@org $1e, $5440:
+	text "全家福照";
+	return;
+
+@org $1e, $5449:
+	db $87;
+	text "燉兔肉";
+	return;
+
+@org $1e, $5451:
+	text "妮妮娃娃";
+	return;
+
+@org $1e, $5458:
+	text "布蘭特熊";
+	return;
+
+@org $1e, $5461:
+	text "晶片７";
+	return;
+
+@org $1e, $5468:
+	text "金鋼鑽";
+	return;
+
+@org $1e, $546f:
+	text "金鋼鑽頭";
+	return;
+
+@org $1e, $5478:
+	text "晶片８";
+	return;
