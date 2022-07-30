@@ -1,0 +1,5 @@
+@org $1e, $4212:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "獲得";
+	itemname;
+	done;

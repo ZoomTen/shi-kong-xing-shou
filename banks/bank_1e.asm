@@ -16,12 +16,7 @@ Func_01e_41bf::
 Func_01e_41e8::
 	dr $781e8, $78212
 
-text_1e_4212:: ; "Got item!"
-	text_init NAME_BALLOT, PIC_BALLOT_0
-	text "獲", 2
-	text "得"
-	itemname
-	done
+INCLUDE "data/text/bank1e_misc3.asm"
 
 Func_01e_421a:: ; get item name?
 	ld a, l
@@ -795,12 +790,7 @@ Func_01e_6de3::
 unk_01e_6e24:
 	dr $7ae24, $7ae44
 
-text_1e_6e44:: ; "Found item!"
-	text_init $01, $2a
-	text "發", 0
-	text "現", 3
-	itemname2
-	done
+INCLUDE "data/text/bank1e_misc4.asm"
 
 Func_01e_6e4d::
 	ld a, l

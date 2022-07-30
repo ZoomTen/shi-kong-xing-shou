@@ -14,6 +14,8 @@ tokens = [
 	('text',			'TX_TEXT'),
 	('para',			'TX_PARA'),
 	('line',			'TX_LINE'),
+	('itemname2',			'TX_ITEMNAME2'),
+	('itemname',			'TX_ITEMNAME'),
 	('cont',			'TX_CONT'),
 	('init',			'TX_INIT'),
 	('unknownE7',			'TX_E7'),
@@ -142,6 +144,12 @@ for l in t:
 		
 		elif comm == 'TX_END':
 			print(f'\tdone')
+		
+		elif comm == 'TX_ITEMNAME':
+			print(f'\titemname')
+		
+		elif comm == 'TX_ITEMNAME2':
+			print(f'\titemname2')
 		
 		elif comm == 'TX_RETURN':
 			print(f'\ttext_return')
