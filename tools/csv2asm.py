@@ -3,12 +3,60 @@
 import csv
 import sys
 import re
+import importlib
 
-def wrap(text):
+def wrap(text, lang):
+    WRAP_LIMIT = 13
     # https://stackoverflow.com/a/9968290
-    wrapped = [line.strip() for line in re.findall(r'.{1,13}(?:\s+|$|-)', text)]
+    wrapped = [line.strip() for line in re.findall(r'.{1,'+str(WRAP_LIMIT)+'}(?:\s+|$|-)', text)]
     if (' '.join(wrapped) != text):
-        print('\t; XXX Text may be clipped!')
+        # text is clipped, try another strategy
+        if importlib.util.find_spec('pyphen'):
+            print('\t; XXX Automatic hyphenation, please check')
+            import pyphen
+            wrapper = pyphen.Pyphen(lang=lang)
+            split_txt = [line.strip() for line in re.findall(r'.+?(?:\s+|$)', text)]
+            num_letters_printed = 0
+            num_letters_to_print = 0
+            joined_txt = ['']
+            for i in range(len(split_txt)):
+                cur_word = split_txt[i]
+                if i != len(split_txt)-1:
+                    cur_word += ' '
+                num_letters_to_print = len(cur_word)
+                
+                #print(cur_word, num_letters_printed, num_letters_to_print, num_letters_printed + num_letters_to_print)
+                if (num_letters_printed + num_letters_to_print) < WRAP_LIMIT:
+                    joined_txt[-1] += cur_word
+                    num_letters_printed += num_letters_to_print
+                elif (num_letters_printed + num_letters_to_print) == WRAP_LIMIT:
+                    joined_txt[-1] += cur_word
+                    num_letters_printed = 0
+                    joined_txt.append('')
+                else:
+                    hyphenated = wrapper.wrap(cur_word, WRAP_LIMIT - num_letters_printed)
+                    if hyphenated:
+                       for part in hyphenated:
+                           if part != hyphenated[0]:
+                               joined_txt.append(part)
+                               num_letters_to_print = 1
+                               num_letters_printed = len(part)
+                           else:
+                               joined_txt[-1] += part
+                    else: # no hyphenation available, make a new line
+                        joined_txt.append(cur_word)
+                        num_letters_to_print = 1
+                        num_letters_printed = len(cur_word)
+            joined_txt = list(
+                map(
+                    lambda x: x.strip(),
+                    filter(lambda x: x.strip() != '', joined_txt)
+                )
+            )
+            wrapped = joined_txt
+        else:
+        # no pyphen lib, fall back
+            print('\t; XXX Pyphen module not found - Text may be clipped!')
     return wrapped
 
 if len(sys.argv) < 3:
@@ -69,7 +117,7 @@ with open(csv_name, "r") as csv_file:
                 print(f'\ttext_init {line[8:]}')
             else:
                 lc = 0
-                for i in wrap(line):
+                for i in wrap(line, lang_code):
                     # substitute back to contractions
                     for og, fr in contractions.items():
                         i = i.replace(fr, og)
