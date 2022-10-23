@@ -15,14 +15,15 @@ def wrap(text, lang):
             print('\t; XXX Automatic hyphenation, please check')
             import pyphen
             wrapper = pyphen.Pyphen(lang=lang)
-            split_txt = [line.strip() for line in re.findall(r'.+?(?:\s+|$)', text)]
+            split_txt = [line.strip() for line in re.findall(r'.+?(?:\s+|$|-)', text)]
             num_letters_printed = 0
             num_letters_to_print = 0
             joined_txt = ['']
             for i in range(len(split_txt)):
                 cur_word = split_txt[i]
                 if i != len(split_txt)-1:
-                    cur_word += ' '
+                    if cur_word[-1] != '-':
+                        cur_word += ' '
                 num_letters_to_print = len(cur_word)
                 
                 #print(cur_word, num_letters_printed, num_letters_to_print, num_letters_printed + num_letters_to_print)
@@ -56,7 +57,10 @@ def wrap(text, lang):
             wrapped = joined_txt
         else:
         # no pyphen lib, fall back
-            print('\t; XXX Pyphen module not found - Text may be clipped!')
+            print('\t; XXX Unable to automatically hyphenate, text may be clipped!')
+    overflows = list(filter(lambda x: len(x) > WRAP_LIMIT, wrapped))
+    if len(overflows) > 0:
+        print('\t; XXX Text overflows on: %s' % str(overflows))
     return wrapped
 
 if len(sys.argv) < 3:
