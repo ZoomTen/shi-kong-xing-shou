@@ -22,7 +22,7 @@ data/maps/layouts/*.bin
 data/maps/metatiles/*.bin
 
 # compiled text
-data/english_text/*.asm
+data/translated/**/*.asm
 data/text/*.asm
 
 # compiled roms

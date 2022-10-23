@@ -1,3 +1,4 @@
+### Set applications
 ASM  := rgbasm
 LINK := rgblink
 GFX  := rgbgfx
@@ -14,39 +15,58 @@ endif
 
 SCANINC := tools/scan_includes
 
+### Project defines
+
 SOURCES := \
 	home.asm \
 	main.asm \
 	wram.asm \
 	hram.asm
-
+	
 OBJS := $(SOURCES:%.asm=%.o)
 
-ROM := shi_kong_xing_shou.gbc
-PATCH := skxs_en.ips
-MAP := $(ROM:%.gbc=%.map)
-SYM := $(ROM:%.gbc=%.sym)
+# language support
+AVAILABLE_LANGUAGES := en fr id
+LANGUAGES := AVAILABLE_LANGUAGES
+
+# language support
+OBJS_en := $(OBJS:%.o=%_en.o)
+OBJS_fr := $(OBJS:%.o=%_fr.o)
+OBJS_id := $(OBJS:%.o=%_id.o)
+$(OBJS_en): ASMFLAGS += -DLANG="en"
+$(OBJS_fr): ASMFLAGS += -DLANG="fr"
+$(OBJS_id): ASMFLAGS += -DLANG="id"
+
+BASENAME := dist/skxs-
+ROMS := $(LANGUAGES:%=$(BASENAME)%.gbc)
+PATCHES := $(LANGUAGES:%=$(BASENAME)%.ips)
+
+MAPS := $(ROM:%.gbc=%.map)
+SYMS := $(ROM:%.gbc=%.sym)
 
 ROM_TITLE := "TIMER MONSTER  "
 
-.PHONY: all tools clean compare
+.PHONY: all tools clean clean-csv tidy
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: $(PATCH)
+all: $(PATCHES)
 
 tools:
 	@$(MAKE) -C tools/
 
-compare: $(ROM)
-	$(MD5) rom.md5
-
 clean-csv:
-	$(RM) data/english_text/*.csv
+	$(RM) data/translated/*.csv
 
-clean:
-	$(RM) $(PATCH) $(ROM) $(MAP) $(SYM) $(OBJS)
+tidy:
+	$(RM) $(MAPS) $(SYMS)
+# language support
+	$(RM) $(OBJS_en) $(OBJS_fr) $(OBJS_id)
+	$(RM) data/translated/**/*.asm
+
+clean: tidy
+	$(RM) $(PATCHES) $(ROMS)
 	$(RM) data/text/*.asm
 	$(RM) data/maps/{blocks,layouts,metatiles}/*.bin
 	$(if $(shell find -iname '*.1bpp'),\
@@ -58,7 +78,6 @@ clean:
 	$(if $(shell find -iname '*.gbcpal'),\
 		$(RM) $(shell find -iname '*.gbcpal') \
 	)
-	$(RM) data/english_text/*.asm
 	$(MAKE) clean -C tools/
 
 # The dep rules have to be explicit or else missing files won't be reported.
@@ -69,22 +88,34 @@ $1: $2 $$(shell $(SCANINC) $2)
 	$$(ASM) $$(ASMFLAGS) -o $$@ $$<
 endef
 
+# translation rules
+define TXT
+data/translated/$1/%.asm: data/translated/%.csv
+	$$(PYTHON) tools/csv2asm.py $$^ $1 > $$@
+endef
+
 # Build tools when building the rom.
 # This has to happen before the rules are processed, since that's when scan_includes is run.
 ifeq (,$(filter clean tools,$(MAKECMDGOALS)))
 
 $(info $(shell $(MAKE) -C tools))
-$(foreach obj, $(OBJS), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach lang, $(AVAILABLE_LANGUAGES), $(eval $(call TXT,$(lang))))
+# language support
+$(foreach obj, $(OBJS_en), $(eval $(call DEP,$(obj),$(obj:%_en.o=%.asm))))
+$(foreach obj, $(OBJS_fr), $(eval $(call DEP,$(obj),$(obj:%_fr.o=%.asm))))
+$(foreach obj, $(OBJS_id), $(eval $(call DEP,$(obj),$(obj:%_id.o=%.asm))))
 
 endif
 
-$(PATCH): $(ROM)
-	$(IPS) baserom.gbc $(ROM) $@
-
-$(ROM): $(OBJS)
-	$(LINK) -n $(SYM) -m $(MAP) -p 0 -o $@ $(OBJS)
+# patch
+$(BASENAME)%.ips: $(BASENAME)%.gbc
+	$(IPS) baserom.gbc $< $@
+	
+# rom
+$(BASENAME)%.gbc: $$(OBJS_$$*)
+	$(LINK) -n $(BASENAME)$*.sym -m $(BASENAME)$*.map -p 0 -o $@ $^
 	$(FIX) -cv -t $(ROM_TITLE) -l 0x33 -k A7 -m 0x1b -r 2 -p 0 $@
-	$(PYTHON) tools/sort_symbols.py $(SYM)
+	$(PYTHON) tools/sort_symbols.py $(BASENAME)$*.sym
 
 data/text/%.asm: data/text/%.txt
 	$(PYTHON) tools/tx_parse.py $< > $@
@@ -113,9 +144,6 @@ gfx/character_set/english.1bpp: tools/gfx += --png=$<
 ### Translation tool
 
 include download_translations.make
-
-data/english_text/%.asm: data/english_text/%.csv
-	$(PYTHON) tools/csv2asm.py $^ > $@
 
 ### Dialog faces
 

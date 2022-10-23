@@ -153,8 +153,13 @@ Func_00a_45ce:
 	ret
 
 INCLUDE "data/name_pointers.asm"
-INCLUDE "data/english_text/names.inc"
-
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/names.inc"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/names.inc"
+ELSE
+INCLUDE "data/translated/en/names.inc"
+ENDC
 
 SECTION "banknum0a", ROMX[$7fff], BANK[$0a]
 	db $0a

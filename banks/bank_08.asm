@@ -545,9 +545,19 @@ Script_008_450c:
 	scr_36
 	scr_end
 
-INCLUDE "data/english_text/bank08_misc2.asm"
-INCLUDE "data/english_text/ballots_house_intro.asm"
-INCLUDE "data/english_text/bank08_misc.asm"
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank08_misc2.asm"
+INCLUDE "data/translated/fr/ballots_house_intro.asm"
+INCLUDE "data/translated/fr/bank08_misc.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank08_misc2.asm"
+INCLUDE "data/translated/id/ballots_house_intro.asm"
+INCLUDE "data/translated/id/bank08_misc.asm"
+ELSE
+INCLUDE "data/translated/en/bank08_misc2.asm"
+INCLUDE "data/translated/en/ballots_house_intro.asm"
+INCLUDE "data/translated/en/bank08_misc.asm"
+ENDC
 
 MeteorCutscene_ApplyTextPals:
 	ld hl, MeteorCutscene_TextPalette

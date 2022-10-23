@@ -1086,9 +1086,19 @@ Script_00e_4a81:
 	scr_setbit $dab8, $05 ; TEMP
 	scr_end
 
-INCLUDE "data/english_text/bank0e_misc.asm"
-INCLUDE "data/english_text/bank0e_misc3.asm"
-INCLUDE "data/english_text/bank0e_misc2.asm"
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank0e_misc.asm"
+INCLUDE "data/translated/fr/bank0e_misc3.asm"
+INCLUDE "data/translated/fr/bank0e_misc2.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank0e_misc.asm"
+INCLUDE "data/translated/id/bank0e_misc3.asm"
+INCLUDE "data/translated/id/bank0e_misc2.asm"
+ELSE
+INCLUDE "data/translated/en/bank0e_misc.asm"
+INCLUDE "data/translated/en/bank0e_misc3.asm"
+INCLUDE "data/translated/en/bank0e_misc2.asm"
+ENDC
 
 unk_0e_7e69:
 	dr $3be69, $3beca

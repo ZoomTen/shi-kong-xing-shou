@@ -1486,7 +1486,14 @@ unk_012_50f6::
 unk_012_5167::
 	dr $49167, $49194
 
-INCLUDE "data/english_text/bank12_misc.asm"
+
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank12_misc.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank12_misc.asm"
+ELSE
+INCLUDE "data/translated/en/bank12_misc.asm"
+ENDC
 
 SECTION "banknum12", ROMX[$7fff], BANK[$12]
 	db $12

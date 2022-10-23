@@ -11,11 +11,24 @@ def wrap(text):
         print('\t; XXX Text may be clipped!')
     return wrapped
 
+if len(sys.argv) < 3:
+    print('''csv2asm.py [csv file] [lang code]
+
+[csv file] = name of csv file
+[lang code] = ISO 639-1 two-letter lang code (en, fr, ar, de, ..)
+              ..or combined with ISO 3166-1 alpha-2 region code (en_GB, en_AU, pt_BR)
+''')
+    exit(0)
+
 csv_name = sys.argv[1]
+lang_code = sys.argv[2]
 
 with open(csv_name, "r") as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
+        if ('translated[%s]' % lang_code) not in row:
+            print("can't find translation entry for %s (must have column named 'translated[%s]')" % (lang_code, lang_code))
+            exit(1)
         if ('text_kind' in row) and (row['text_kind'].rfind('repoint_target') != -1):
             print(f'en_', end='')
         if row['label'] == '':
@@ -29,7 +42,7 @@ with open(csv_name, "r") as csv_file:
             elif (row['text_kind'].rfind('repoint_extern') != -1):
                 print(f'\trepoint en_text_{row["bank"].zfill(2)}_{row["address"].zfill(4)}')
         
-        translated = row["translated_string"]
+        translated = row["translated[%s]" % lang_code]
         
         # substitute contractions for single letters
         contractions = {

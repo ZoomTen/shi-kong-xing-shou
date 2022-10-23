@@ -573,9 +573,16 @@ unk_00f_45cf:
 unk_00f_45d4:
 	dr $3c5d4, $3c691
 
-INCLUDE "data/english_text/bank0f_misc.asm"
-
-INCLUDE "data/english_text/bank0f_misc2.asm"
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank0f_misc.asm"
+INCLUDE "data/translated/fr/bank0f_misc2.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank0f_misc.asm"
+INCLUDE "data/translated/id/bank0f_misc2.asm"
+ELSE
+INCLUDE "data/translated/en/bank0f_misc.asm"
+INCLUDE "data/translated/en/bank0f_misc2.asm"
+ENDC
 
 unk_00f_594f::
 	dr $3d94f, $3d980

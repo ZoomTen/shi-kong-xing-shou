@@ -326,7 +326,13 @@ INCLUDE "banks/bank_44.asm"
 
 SECTION "bank45", ROMX, BANK[$45]
 ; en patch: repoint text here
-INCLUDE "data/english_text/bank0e_misc_external.asm"
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank0e_misc_external.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank0e_misc_external.asm"
+ELSE
+INCLUDE "data/translated/en/bank0e_misc_external.asm"
+ENDC
 
 SECTION "banknum45", ROMX[$7fff], BANK[$45]
 	db $45
@@ -334,7 +340,13 @@ SECTION "banknum45", ROMX[$7fff], BANK[$45]
 
 SECTION "bank46", ROMX, BANK[$46]
 ; en patch: repoint text here
-INCLUDE "data/english_text/bank12_misc_external.asm"
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank12_misc_external.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank12_misc_external.asm"
+ELSE
+INCLUDE "data/translated/en/bank12_misc_external.asm"
+ENDC
 
 SECTION "banknum46", ROMX[$7fff], BANK[$46]
 	db $46
