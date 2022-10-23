@@ -1,0 +1,69 @@
+"bank","address","label","original_string","translated[en]","translated[fr]","translated[id]","notes","general_notes","","","","","","","","","","","","","","","","","","",""
+"08","4542","House_CutsceneText1","// init NAME_BALLOT, PIC_BALLOT_0
+嗯~
+放入這個~","// init NAME_BALLOT, PIC_BALLOT_0
+Ah, time to add the finishing touches!","// init NAME_BALLOT, PIC_BALLOT_0
+Allez, plus qu'à mettre la touche finale!","// init NAME_BALLOT, PIC_BALLOT_0
+Ah, waktunya menambah sentuhan terakhir!","","","","","","","","","","","","","","","","","","","","",""
+"08","4552","House_CutsceneText2","// init NAME_BALLOT, PIC_BALLOT_0
+再加調味料⋯⋯","// init NAME_BALLOT, PIC_BALLOT_0
+Add a bit of seasoning here...","// init NAME_BALLOT, PIC_BALLOT_0
+Un peu d'assaisonnement...","// init NAME_BALLOT, PIC_BALLOT_0
+Tinggal diberi sedikit bumbu...","","","","","","","","","","","","","","","","","","","","",""
+"08","456d","","// init NAME_BALLOT, $2a
+成功了!
+這就是媽媽料理
+的味道!","// init NAME_BALLOT, $2a
+That's it!
+It tastes exactly like Mom's cooking!","// init NAME_BALLOT, $2a
+Et voilà!
+C'est comme ceux de maman!","// init NAME_BALLOT, $2a
+Nah, ini dia!
+Rasanya persis seperti masakan Ibu!","","","","","","","","","","","","","","","","","","","","",""
+"08","458a","","// init NAME_BALLOT, $2b
+媽媽⋯⋯⋯
+我好想妳⋯⋯
+⋯⋯⋯⋯","// init NAME_BALLOT, $2b
+I miss you, Mom...","// init NAME_BALLOT, $2b
+Maman... Tu me manques...","// init NAME_BALLOT, $2b
+Ibu... aku rindu...","","","","","","","","","","","","","","","","","","","","",""
+"08","45a5","","// init NAME_BALLOT, PIC_BALLOT_0
+不行~不行!
+我答應過媽媽，
+要堅強的!","// init NAME_BALLOT, PIC_BALLOT_0
+...No, I can't think about that!
+I promised you that I'd be strong!","// init NAME_BALLOT, PIC_BALLOT_0
+... Non, je ne dois pas y penser!
+J'ai promis d'être fort!","// init NAME_BALLOT, PIC_BALLOT_0
+Jangan! Jangan berpikir seperti itu!
+Aku sudah janji menjadi anak yang tegar!","","","","","","","","","","","","","","","","","","","","",""
+"08","45cc","","// init NAME_BALLOT, PIC_BALLOT_0
+爸~吃飯了!","// init NAME_BALLOT, PIC_BALLOT_0
+Dad, time for dinner!","// init NAME_BALLOT, PIC_BALLOT_0
+Papa, à table!","// init NAME_BALLOT, PIC_BALLOT_0
+Ayah, waktunya makan malam!","","","","","","","","","","","","","","","","","","","","",""
+"08","45db","","// init NAME_BALLOT, PIC_BALLOT_0
+爸~
+吃~飯~了!!","// init NAME_BALLOT, PIC_BALLOT_0
+Daaad, time for dinner!","// init NAME_BALLOT, PIC_BALLOT_0
+Paaapaaa! A table!","// init NAME_BALLOT, PIC_BALLOT_0
+Ayaaaaah! Waktunya makan malam!","","","","","","","","","","","","","","","","","","","","",""
+"08","45f0","","// init NAME_BALLOT, PIC_BALLOT_0
+爸又到天文台了
+嗎?
+這陣子常整晚都
+待在天文台裡。
+真是反常⋯⋯
+找爸回來吃飯吧
+!
+不然辛苦做的飯
+菜都冷了。","// init NAME_BALLOT, PIC_BALLOT_0
+Huh, is Dad at the observatory again?
+He's been there all night, that's weird...
+I'll get him to come back for dinner, before the food I've worked so hard on gets cold.","// init NAME_BALLOT, PIC_BALLOT_0
+Hm, est-ce qu'il est encore à l'observatoire?
+Il reste là-bas toute la nuit, dernièrement...
+C'est bizarre. Il faut que je le ramène à la maison, avant que le dîner que j'ai préparé ne refroidisse.","// init NAME_BALLOT, PIC_BALLOT_0
+Loh, Ayah masih di observatorium?
+Dia sudah di sana semalaman. Aneh...
+Aku harus segera memanggil Ayah untuk makan, sebelum makanan yang sudah susah payah aku siapkan mendingin.","","","","","","","","","","","","","","","","","","","","",""

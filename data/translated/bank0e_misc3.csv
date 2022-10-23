@@ -1,0 +1,21 @@
+"bank","address","label","original_string","translated[en]","translated[fr]","translated[id]","text_kind","notes","","","","","","","","","","","","","","","","","","",""
+"0e","5b91","","// init $19, $22
+真是麻煩﹗
+沒有電了﹐
+電子收銀台沒辦
+法使用⋯
+你要什麼嗎﹖
+不要趁黑偷東西
+喲﹗
+","// init $19, $22
+What a hassle!
+
+There is no electricity, the electronic cash register can't be used...
+
+What do you want? Don't steal in the dark!","","","","unknownE7; command at end","","","","","","","","","","","","","","","","","","",""
+"0e","5bdd","","// init $14, $25
+需要妮可治療嗎﹖","// init $14, $25
+Do you need my treatment?","","","choicer","getchoice $1cc5; command at end","","","","","","","","","","","","","","","","","","",""
+"0e","5bf5","","// init $1a, $25
+這裡是星獸膠囊存放銀行⚬需要艾娜的服務嗎﹖","// init $1a, $25
+This is the Star Beast Storage Bank. Do you need my help?","","","choicer","getchoice $1cc5; command at end","","","","","","","","","","","","","","","","","","",""
