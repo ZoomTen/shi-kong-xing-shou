@@ -27,7 +27,7 @@ OBJS := $(SOURCES:%.asm=%.o)
 
 # language support
 AVAILABLE_LANGUAGES := en fr id
-LANGUAGES := AVAILABLE_LANGUAGES
+LANGUAGES := $(AVAILABLE_LANGUAGES)
 
 # language support
 OBJS_en := $(OBJS:%.o=%_en.o)
