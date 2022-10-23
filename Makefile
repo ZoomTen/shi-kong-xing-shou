@@ -46,7 +46,7 @@ SYMS := $(ROM:%.gbc=%.sym)
 
 ROM_TITLE := "TIMER MONSTER  "
 
-.PHONY: all tools clean clean-csv tidy
+.PHONY: all tools clean clean-csv clean-all tidy
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -66,6 +66,9 @@ tidy:
 	$(RM) data/translated/**/*.asm
 
 clean: tidy
+	$(RM) $(PATCHES) $(ROMS)
+
+clean-all: clean
 	$(RM) $(PATCHES) $(ROMS)
 	$(RM) data/text/*.asm
 	$(RM) data/maps/{blocks,layouts,metatiles}/*.bin
