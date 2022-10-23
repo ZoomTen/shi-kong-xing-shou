@@ -41,8 +41,8 @@ BASENAME := dist/skxs-
 ROMS := $(LANGUAGES:%=$(BASENAME)%.gbc)
 PATCHES := $(LANGUAGES:%=$(BASENAME)%.ips)
 
-MAPS := $(ROM:%.gbc=%.map)
-SYMS := $(ROM:%.gbc=%.sym)
+MAPS := $(ROMS:%.gbc=%.map)
+SYMS := $(ROMS:%.gbc=%.sym)
 
 ROM_TITLE := "TIMER MONSTER  "
 
