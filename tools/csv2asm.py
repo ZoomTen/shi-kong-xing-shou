@@ -102,6 +102,7 @@ with open(csv_name, "r") as csv_file:
             "'r" : "𝖗",
             "'m" : "𝖒",
             "'e" : "𝖊",
+            "..." : "⋯",
         }
         for og, fr in contractions.items():
             translated = translated.replace(og, fr)

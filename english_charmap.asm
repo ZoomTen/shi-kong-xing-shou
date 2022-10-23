@@ -88,6 +88,7 @@ NEWCHARMAP english
 	charmap "¥", $54
 
 	charmap "⋯", $84
+	charmap "...", $84
 	charmap "~", $85
 	charmap "-", $86
 	charmap "α", $87
@@ -96,6 +97,23 @@ NEWCHARMAP english
 	charmap "'t", $8a
 	charmap "'e", $8b
 	charmap "'", $8c
+
+; european
+	charmap "ç", $8d
+	charmap "é", $8e
+	charmap "â", $8f
+	charmap "ê", $90
+	charmap "î", $91
+	charmap "ô", $92
+	charmap "û", $93
+	charmap "à", $94
+	charmap "è", $95
+	charmap "ì", $96
+	charmap "ò", $97
+	charmap "ù", $98
+	charmap "ë", $99
+	charmap "ï", $9a
+	charmap "ü", $9b
 
 ; r o b o t
 	charmap "Ａ", $55
