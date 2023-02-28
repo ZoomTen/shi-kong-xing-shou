@@ -14,7 +14,7 @@ def wrap(text, lang):
         if importlib.util.find_spec('pyphen'):
             print('\t; XXX Automatic hyphenation, please check')
             import pyphen
-            wrapper = pyphen.Pyphen(lang=lang)
+            wrapper = pyphen.Pyphen(lang=pyphen.language_fallback(lang))
             split_txt = [line.strip() for line in re.findall(r'.+?(?:\s+|$|-)', text)]
             num_letters_printed = 0
             num_letters_to_print = 0
@@ -69,17 +69,21 @@ if len(sys.argv) < 3:
 [csv file] = name of csv file
 [lang code] = ISO 639-1 two-letter lang code (en, fr, ar, de, ..)
               ..or combined with ISO 3166-1 alpha-2 region code (en_GB, en_AU, pt_BR)
-''')
+''',file=sys.stderr)
     exit(0)
 
 csv_name = sys.argv[1]
 lang_code = sys.argv[2]
 
+if re.match(r'[a-z]{2}(_[A-Z]{2})?$', lang_code.strip()) is None:
+    print('invalid lang code, use two-letter lang code and two-letter region code e.g. "en_US" or "de"',file=sys.stderr)
+    exit(1)
+
 with open(csv_name, "r") as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
         if ('translated[%s]' % lang_code) not in row:
-            print("can't find translation entry for %s (must have column named 'translated[%s]')" % (lang_code, lang_code))
+            print("can't find translation entry for %s (must have column named \"translated[%s]\")" % (lang_code, lang_code),file=sys.stderr)
             exit(1)
         if ('text_kind' in row) and (row['text_kind'].rfind('repoint_target') != -1):
             print(f'en_', end='')
@@ -106,10 +110,11 @@ with open(csv_name, "r") as csv_file:
             "'r" : "𝖗",
             "'m" : "𝖒",
             "'e" : "𝖊",
-            "..." : "⋯",
+            "..." : "⋯"
         }
         for og, fr in contractions.items():
             translated = translated.replace(og, fr)
+            translated = translated.replace('"', '\'')  # lovely...
         
         tc = 0
         for line in translated.split('\n'):
