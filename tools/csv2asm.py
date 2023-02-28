@@ -110,6 +110,10 @@ with open(csv_name, "r") as csv_file:
             "'r" : "𝖗",
             "'m" : "𝖒",
             "'e" : "𝖊",
+            "'a" : "𝖆",
+            "'i" : "𝖎",
+            "'o" : "𝖔",
+            "'u" : "𝖚",
             "..." : "⋯"
         }
         for og, fr in contractions.items():

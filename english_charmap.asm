@@ -94,8 +94,8 @@ NEWCHARMAP english
 	charmap "α", $87
 	charmap "'r", $88
 	charmap "'m", $89
-	charmap "'t", $8a
-	charmap "'e", $8b
+	charmap "'e", $8a
+	charmap "'a", $8b
 	charmap "'", $8c
 
 ; european
@@ -114,6 +114,11 @@ NEWCHARMAP english
 	charmap "ë", $99
 	charmap "ï", $9a
 	charmap "ü", $9b
+
+; extra contractions
+	charmap "'i", $9c
+	charmap "'o", $9d
+	charmap "'u", $9e
 
 ; r o b o t
 	charmap "Ａ", $55
