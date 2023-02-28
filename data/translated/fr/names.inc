@@ -36,7 +36,7 @@ MittName::
 	line
 
 SnowyName::
-	text2 "S n o w y"
+	text2 "F l o c o n"
 	line
 
 text_0a_46f6::

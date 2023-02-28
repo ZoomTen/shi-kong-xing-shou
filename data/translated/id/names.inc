@@ -36,7 +36,7 @@ MittName::
 	line
 
 SnowyName::
-	text2 "S n o w y"
+	text2 "S i   P u t i h"
 	line
 
 text_0a_46f6::
@@ -68,7 +68,7 @@ text_0a_471b::
 	line
 
 text_0a_4720::
-    text2 "S a y a"
+    text2 "S a i y a"
 	line
 
 text_0a_4727::
@@ -84,11 +84,11 @@ text_0a_4735::
 	line
 
 text_0a_473c::
-	text2 "M r .   M o"
+	text2 "P a k   M o"
 	line
 
 text_0a_4742::
-	text2 "P r i n c i p a l"
+	text2 "K e p s e k"
 	line
 
 text_0a_4749::
