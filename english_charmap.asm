@@ -120,6 +120,24 @@ NEWCHARMAP english
 	charmap "'o", $9d
 	charmap "'u", $9e
 
+; EVEN MORE contractions!
+	charmap "'é", $9f
+	charmap "'â", $a0
+	charmap "'ê", $a1
+	charmap "'î", $a2
+	charmap "'ô", $a3
+	charmap "'û", $a4
+	charmap "'à", $a5
+	charmap "'è", $a6
+	charmap "'ì", $a7
+	charmap "'ò", $a8
+	charmap "'ù", $a9
+	charmap "'ë", $aa
+	charmap "'ï", $ab
+	charmap "'ü", $a
+
+
+
 ; r o b o t
 	charmap "Ａ", $55
 	charmap "Ｂ", $56
