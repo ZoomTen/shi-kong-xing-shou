@@ -52,7 +52,7 @@ Si je ne déchiffre pas le diagramme rapidemment, je crains qu'on ne puisse pas 
 ...
 20 April
 Sudah ada tanda-tanda bulan mulai membiru.
-Jika kita tidak segera menguraikan diagram ini, saya khawatir kita tak akan bisa menghentikannya.","i should try to make quote chars work","","","","","","",""
+Jika kita tidak segera mengerti diagram ini, saya khawatir kita tak akan bisa menghentikan-nya.","i should try to make quote chars work","","","","","","",""
 "0e","4bc0","","// init NAME_BALLOT, $2d
 日記裡夾著一張
 泛黃的設計圖。
@@ -63,8 +63,8 @@ A yellowed design diagram is enclosed in the diary!
 The diagram contains a dense mechanical con- struction...","// init NAME_BALLOT, $2d
 Il y a un schéma technique jauni dans le carnet!
 Il y a une machine compliquée dessinée dessus...","// init NAME_BALLOT, $2d
-Sebuah diagram desain menguning terselip di dalam buku harian!
-Diagram ini mengandung bangunan mekanikal yang padat...","","","","","","","",""
+Sebuah diagram menguning terselip di dalam buku harian!
+Diagram ini menggambarkan bangunan mekanik yang rumit...","","","","","","","",""
 "0e","4bfb","","// init NAME_BALLOT, $00
 爸爸一定想解開
 設計圖中的祕密
@@ -259,7 +259,10 @@ Super de-li-cious!
 Ahh! Look out! You're being chased by one of those Star Beasts!","// init NAME_BLANK, $1d
 Ballot! J'ai préparé des gâteaux!
 Ils sont su-per bons!
-Aah! Attention! Il y a une Bêtoile qui te poursuit!","","","","","","","","",""
+Aah! Attention! Il y a une Bêtoile qui te poursuit!","// init NAME_BLANK, $1d
+Ballot! Aku membuat kue!
+E-nak se-ka-li!
+Ahh! Awas! Kamu dikejar Makhluk Bintang!","","","","","","","",""
 "0e","4efa","","// init NAME_BLANK, $16
 唉呀~
 怎麼天空上有一
@@ -268,7 +271,8 @@ Aah! Attention! Il y a une Bêtoile qui te poursuit!","","","","","","","","",""
 花了。","// init NAME_BLANK, $16
 Uhh... Is that a crack in the sky, or am I going mad?","// init NAME_BLANK, $16
 Hmm... Pourquoi y a-t-il une brèche dans le ciel?
-Ca doit être mon imagination.","","
+Ca doit être mon imagination.","// init NAME_BLANK, $16
+Ahh... itu langitnya terbelah, atau memang saya mulai menggila?","
 must be the ""imagination"" guy from earlier, he should take his normal pills","","","","","","",""
 "0e","4f2f","","// init NAME_BLANK, $19
 我看到了!
@@ -290,7 +294,11 @@ I was so scared that I got rid of them all!","// init NAME_BLANK, $19
 Je l'ai vu! Vraiment!
 La nuit dernière, plusieurs météores se sont écrasés sur l'observatoire!
 Mes lapins ont aussi été frappés, et se sont transformés en monstres!
-J'ai eu si peur que je m'en suis débarrassée!","","machine translation assisted
+J'ai eu si peur que je m'en suis débarrassée!","// init NAME_BLANK, $19
+Aku melihatnya! Aku melihatnya!
+Tadi malam ada meteor mengedor observatorium!
+Kelinci-kelinciku kena, dan mereka berubah menjadi monster!
+Saking takutnya sehingga aku membuang mereka!","machine translation assisted
 throwing away rabbits lol","","literally ""throwing away"" lol","","","","",""
 "0e","4fa5","","// init NAME_BLANK, $22
 槽糕了!
@@ -309,7 +317,10 @@ Some of them are still rampaging about nearby.
 What should I do? I'd better hire a team of bodyguards for Hayato!","// init NAME_BLANK, $22
 C'est terrible! Les animaux frappés par les météores se sont transformés en Bêtoiles!
 Certains sont encore en train de se déchaîner dans les parages. 
-Qu'est-ce je fais?! Je ferais mieux d'engager des gardes du corps pour Hayato!","","","","","","","","",""
+Qu'est-ce je fais?! Je ferais mieux d'engager des gardes du corps pour Hayato!","// init NAME_BLANK, $22
+Ini bencana! Hewan-hewan yang terkena meteor berubah menjadi Makhluk Bintang!
+Beberapa diantaranya masih berkeliaran di sini.
+Apa yang harus saya lakukan? Sebaiknya saya menyewa pengawal untuk Hayato!","","","","","","","",""
 "0e","5023","","// init NAME_12, $26
 OH~
 BABY~
@@ -346,7 +357,14 @@ Son nom est Dr. Léo! Il vit dans la ville d'à côté, Technoville.
 Tu veux que j'y aille avec toi? 
 Non? Tu veux pas?
 Oh, baby~
-Tu es si timide. Je suis peut-être riche, mais je suis toujours ravi de m'occuper d'orphelins comme toi!","","","","","","","","",""
+Tu es si timide. Je suis peut-être riche, mais je suis toujours ravi de m'occuper d'orphelins comme toi!","// init NAME_12, $26
+Oh, baby~ Ada apa?
+Ha? Kamu ingin tahu seorang penemu mekanik genius?
+Aku tahu seseorang, namanya Dr. Leo! Dia tinggal di Kota Tekno, kota sebelah~
+Apa kamu ingin diantar?
+Tidak? Tidak perlu?
+Oh, baby~
+Kamu masih begitu pemalu. Aku memang luhur, tapi aku akan senang mengasuh yatim piatu sepertimu!","","","","","","","",""
 "0e","50f6","","// init NAME_12, $26
 OH~
 BABY~
@@ -363,7 +381,10 @@ Huh? You want to know about a genius mechanical inventor?
 I know one, his name is Dr. Leo! He lives in the next city over, Tech City~","// init NAME_12, $26
 Oh, baby~ Quoi de neuf?
 Hm? Tu veux que je te parle du mécanicien de génie?
-Son nom est Dr. Léo! Il vit dans la ville d'à côté, Technoville.","","","","","","","","",""
+Son nom est Dr. Léo! Il vit dans la ville d'à côté, Technoville.","// init NAME_12, $26
+Oh, baby~ Ada apa?
+Ha? Kamu ingin tahu seorang penemu mekanik genius?
+Aku tahu seseorang, namanya Dr. Leo! Dia tinggal di Kota Tekno, kota sebelah~","","","","","","","",""
 "0e","5154","","// init NAME_BLANK, $1f
 是巴洛特啊~
 啊啊啊!!!
@@ -375,12 +396,15 @@ Son nom est Dr. Léo! Il vit dans la ville d'à côté, Technoville.","","","","
 Ahh!!! Not again!
 Ballot, stop soiling my carpet and take that monster out with you!","// init NAME_BLANK, $1f
 AAH!!! Pas encore!
-Ballot, arrête de salir mon tapis et dégage ce monstre de là!","","","","","","","","",""
+Ballot, arrête de salir mon tapis et dégage ce monstre de là!","// init NAME_BLANK, $1f
+Ahh!!! Lagi-lagi!
+Ballot, berhenti mengotori karpetku dan bawa monster itu dengan kamu!","","","","","","","",""
 "0e","519f","","// init NAME_SNOWY, $09
 嗚~~
 嗚汪汪汪!","// init NAME_SNOWY, $09
 Awoooooo!","// init NAME_SNOWY, $09
-Aouuuuuuh!","","uwu","","","","","","",""
+Aouuuuuuh!","// init NAME_SNOWY, $09
+Auuuuuuu!","uwu","","","","","","",""
 "0e","51b1","","// init NAME_BLANK, $1f
 啊啊啊啊啊啊!
 不⋯⋯
@@ -389,7 +413,9 @@ Aouuuuuuh!","","uwu","","","","","","",""
 Ahhhhh!!!!! Don't bite me!!
 G-Get away from me!","// init NAME_BLANK, $1f
 Aaaah!!! Ne me mange pas...!
-Va... Va-t'en!","","","","","","","","",""
+Va... Va-t'en!","// init NAME_BLANK, $1f
+Ahhhhh!!!!! Jangan gigit aku!!
+Hush!! Sana pergi!!","","","","","","","",""
 "0e","51dd","","// init NAME_BLANK, $15
 你是來找芳芳的
 嗎?
@@ -401,7 +427,10 @@ Oh, Fangfang!
 Your friend came to visit~","// init NAME_BLANK, $15
 Es-tu venu voir Fangfang?
 Hé, Fangfang!
-Ton ami est venu te voir!","","similar to 08:49db","","","","","","",""
+Ton ami est venu te voir!","// init NAME_BLANK, $15
+Apa kau datang mencari Fangfang?
+Fangfang!
+Temanmu datang kemari~","similar to 08:49db","","","","","","",""
 "0e","520e","","// init NAME_BLANK, $18
 賽亞是一個很棒
 的天文科學家。
@@ -416,7 +445,9 @@ He's known as a prodigy in our little community! He's just a bit eccentric...
 ","// init NAME_BLANK, $18
 Saiya est un astronome de renom.
 C'est un vrai prodige dans notre petite communauté! 
-Il est juste un peu excentrique...","","same as 08:4a2e
+Il est juste un peu excentrique...","// init NAME_BLANK, $18
+Saiya seorang astronom yang hebat.
+Dia dikenal jenius di antara masyarakat! Hanya saja, dia agak eksentrik...","same as 08:4a2e
 is VF seriously storing identical maps for each scene or something????","","","","","","",""
 "0e","5267","","// init NAME_13, $1a
 你是來找我一起
@@ -424,7 +455,8 @@ is VF seriously storing identical maps for each scene or something????","","",""
 好~高~興~","// init NAME_13, $1a
 Are you here to play with me? I'm so glad!
 ","// init NAME_13, $1a
-Tu es venu jouer avec moi? Youpi, merci!","","same as 08:4a87","","","","","","",""
+Tu es venu jouer avec moi? Youpi, merci!","// init NAME_13, $1a
+Kakak ke sini mau main? Hore!","same as 08:4a87","","","","","","",""
 "0e","528c","","// init NAME_BLANK, $15
 流星雨過後，
 賽亞就神祕的失
@@ -437,7 +469,10 @@ The observatory was also destroyed...
 Pull yourself together, Ballot! I'm sure he'll be fine.","// init NAME_BLANK, $15
 Personne n'a vu Saiya depuis la pluie de météores.
 Et son observatoire a aussi été détruit...
-Ne t'en fais pas, Ballot! Je suis sûr qu'il va bien.","","","","","","","","",""
+Ne t'en fais pas, Ballot! Je suis sûr qu'il va bien.","// init NAME_BLANK, $15
+Tidak ada yang melihat Saiya semenjak hujan meteor itu.
+Observatoriumnya juga sudah luluh lantak...
+Bertahanlah, Ballot. Saya yakin dia baik-baik saja.","","","","","","","",""
 "0e","52d0","","// init NAME_14, $25
 受傷了嗎?
 如果受傷的話，
@@ -453,12 +488,16 @@ If you're hurt, just enter this alpha ray emitter and you'll recover in a second
 Es-tu blessé?
 
 Si tu t'es fait mal, entre juste dans cet émetteur de rayons alpha et tu seras comme neuf!
-Si tu te blesses, passe me voir!","","see 08:4b14","","","","","","",""
+Si tu te blesses, passe me voir!","// init NAME_14, $25
+Apakah Anda terluka?
+
+Jika terluka, masuklah ke dalam pemancar sinar alfa ini dan anda akan pulih seketika! Jika anda terluka, datanglah ke sini!","see 08:4b14","","","","","","",""
 "0e","5333","","// init NAME_BALLOT, $00
 學校的門關起來
 了!","// init NAME_BALLOT, PIC_BALLOT_0
 The school's door is closed...","// init NAME_BALLOT, PIC_BALLOT_0
-Les portes de l'école sont fermées...","","see 08:4b77","","","","","","",""
+Les portes de l'école sont fermées...","// init NAME_BALLOT, PIC_BALLOT_0
+Pintu sekolah terkunci...","see 08:4b77","","","","","","",""
 "0e","5347","","// init NAME_BLANK, $12
 從流星雨過後，
 有時候可以在道
@@ -475,7 +514,10 @@ After weakening them, you can use this capsule to catch them!
 Ah! There's one over there... don't run!","// init NAME_BLANK, $12
 Depuis la pluie de météores, les Bêtoiles rôdent dans les parages.
 Après les avoir affaiblis, tu pux les capturer avec cette capsule!
-Ah! Y'en a un là-bas... Reviens!","","
+Ah! Y'en a un là-bas... Reviens!","// init NAME_BLANK, $12
+Setelah hujan meteor kemarin, Makhluk Bintang berkeliaran dimana-mana.
+Setelah melemahkan mereka, kamu bisa pakai kapsul ini untuk menangkapnya!
+Ah! Ada satu di sana... jangan lari!","
 gotta catch 'em all","","","","","","",""
 "0e","53c0","","// init NAME_BLANK, $1d
 我查過歷史大事
@@ -494,7 +536,10 @@ Eight scientists of the time worked together to develop a remarkable invention.
 They saved the Earth!","// init NAME_BLANK, $1d
 D'après les livres d'histoire, il y a plus de 100 ans, un grand cataclysme a frappé la Terre.
 Huit scientifiques de l'époque ont coopéré pour créer une invention remarquable.
-Ils ont sauvé le monde!","","","","","","","","",""
+Ils ont sauvé le monde!","// init NAME_BLANK, $1d
+Menurut buku-buku sejarah, lebih dari 100 tahun yang lalu, Bumi berada dalam krisis.
+Pada waktu itu, delapan ilmuwan bekerja-sama untuk membuat penemuan yang luar biasa.
+Mereka berhasil menyelamatkan Bumi!","","","","","","","",""
 "0e","5437","","// init NAME_BLANK, $1e
 哇!!!!
 不要跟爸爸說，
@@ -661,7 +706,8 @@ Meski kita mengirim Dr. Leo, kita tetap kehilangan 30 juta!","","","","","","","
 他們
 !","// init NAME_BLANK, $1c
 Take a look! My high-speed racing car! Tourtega Mk.I! If those scoundrels come again, I'll beat them with this!","// init NAME_BLANK, $1c
-Regarde, regarde! Ma super-voiture de course, Totortue Mk.I! Si ces méchants reviennent, je les battrai avec ça!","","long-legged turtle is a bit eh
+Regarde, regarde! Ma super-voiture de course, Totortue Mk.I! Si ces méchants reviennent, je les battrai avec ça!","// init NAME_BLANK, $1c
+Lihatlah! Mobil balapku yang berkecepatan tinggi! Tortega Mk.I! Kalau bajingan-bajingan itu datang lagi, aku kalahkan mereka dengan ini!","long-legged turtle is a bit eh
 so time to make up names","","","","","","",""
 "0e","5740","","// init NAME_BLANK, $21
 嗚~嗚~
@@ -669,7 +715,8 @@ so time to make up names","","","","","","",""
 人家好怕啊!
 嗚~~嗚~","// init NAME_BLANK, $21
 It's so dark! I'm scared! Waah...","// init NAME_BLANK, $21
-Il fait tout noir! J'ai peur! Ouin...","","deepL cannot sufficiently grasp the nuance of ""Wow"" (awe) vs ""Waaah"" (crying)","","","","","","",""
+Il fait tout noir! J'ai peur! Ouin...","// init NAME_BLANK, $21
+Gelap sekali! Aku takut! Aaaah...","deepL cannot sufficiently grasp the nuance of ""Wow"" (awe) vs ""Waaah"" (crying)","","","","","","",""
 "0e","576d","","// init NAME_BLANK, $1f
 很久很久之前~
 雷歐的曾祖父，
@@ -693,7 +740,10 @@ estimating him?","// init NAME_BLANK, $1f
 Il y a longtemps, l'arrière-
 grand-père de Léo a sauvé le monde avec 7 autres scientifiques, alors tout le monde ici le respecte.
 Mais lors de la course, Léo s'est fait battre à plate couture!
-Est-ce qu'on l'a surestimé?","","","","","","","","",""
+Est-ce qu'on l'a surestimé?","// init NAME_BLANK, $1f
+Dahulu kala, kakek buyut Dr. Leo dan tujuh ilmuwan lainnya menyelamatkan Bumi, jadi semua orang di kota ini menghormatinya.
+Tapi dalam balapan kemarin, Leo kalah besar!
+Mungkin kami terlalu menghargainya?","","","","","","","",""
 "0e","5806","","// init NAME_BLANK, $16
 這裡是科技城的
 廢鐵集中場。
@@ -703,7 +753,8 @@ Est-ce qu'on l'a surestimé?","","","","","","","","",""
 貝!","// init NAME_BLANK, $16
 This is our scrapyard. They may look like pieces of junk, but to me, they're treasure!","// init NAME_BLANK, $16
 Voici le parc à ferrailles de Technoville.
-Tout ça ressemble peut-être à des déchets, mais pour moi, c'est de précieux trésors!","","one mans trash is anothers treasure","","","","","","",""
+Tout ça ressemble peut-être à des déchets, mais pour moi, c'est de précieux trésors!","// init NAME_BLANK, $16
+Ini tempat rongsokan kami. Mungkin bagimu ini sampah, tapi bagiku ini harta!","one mans trash is anothers treasure","","","","","","",""
 "0e","584c","","// init NAME_BLANK, $19
 雷歐博士已經上
 了年紀，
@@ -720,7 +771,10 @@ So, he built a robot named Buck.
 Is it just me, or is it that every time I see Buck, I get the feeling that he is somewhat depressed...","// init NAME_BLANK, $19
 Le Dr. Léo se fait vieux, mais il n'a pas d'enfants.
 Donc il a construit un robot nommé Buck.
-C'est peut-être que moi, mais à chaque fois que je vois Buck, j'ai l'impression qu'il est déprimé...","","deepl screwed up the object/subject of some sentences again","","","","","","",""
+C'est peut-être que moi, mais à chaque fois que je vois Buck, j'ai l'impression qu'il est déprimé...","// init NAME_BLANK, $19
+Dr. Leo makin menua, namun beliau masih belum memiliki anak.
+Jadi, beliau membangun robot bernama Buck.
+Mungkin hanya perasaanku, tapi setiap kali saya melihat Buck, saya merasa beliau sedikit depresi...","deepl screwed up the object/subject of some sentences again","","","","","","",""
 "0e","58bd","","// init NAME_BLANK, $16
 科技城是座窒內
 都市，
@@ -755,7 +809,10 @@ Now I have no idea where to get the ¥30 million from!
 I should have known better than to send Dr. Leo out in the field...","// init NAME_BLANK, $12
 Léo à perdu 30 millions de ¥ lors de la course entre Technoville et la Team Volt!
 Où est-ce qu'on va trouvé ces 30 millions, maintenant?!
-On aurait dû savoir qu'il ne fallait pas envoyer le Dr. Léo...","","deepl","","","","","","",""
+On aurait dû savoir qu'il ne fallait pas envoyer le Dr. Léo...","// init NAME_BLANK, $12
+Leo kalah ¥30 juta balapan melawan Tim Volt mewakili Kota Tekno!
+Aku tidak tahu dari mana kita harus mendapatkan ¥30 juta!
+Seharusnya aku lakukan yang lain daripada mengirim Dr. Leo melawan mereka...","deepl","","","","","","",""
 "0e","5992","","// init NAME_BLANK, $1d
 哼!
 小毛用他的長腳
@@ -769,7 +826,9 @@ On aurait dû savoir qu'il ne fallait pas envoyer le Dr. Léo...","","deepl","",
 Hmph! Hairy's been bullying people with Tourtega Mk.I!
 Dad, please help me modify Pippo Mk.III to stop him!","// init NAME_BLANK, $1d
 Hmpf! Hairy embête tout le monde avec Totortue Mk.I! 
-Papa, aide-moi à améliorer Pippo Mk.III pour le remettre à sa place!","","
+Papa, aide-moi à améliorer Pippo Mk.III pour le remettre à sa place!","// init NAME_BLANK, $1d
+Hmph! Hairy membuli orang dengan Tortega Mk.I!
+Ayah! Tolong bantu aku modifikasi Pipo Mk.III agar dia berhenti!","
 小毛 is just ""Hairy"" then","","i love these car names but they should've been trains","","","","",""
 "0e","59f6","","// init NAME_BLANK, $13
 要大家湊這三千
@@ -793,7 +852,12 @@ Ils demandent à tout le monde de participer pour rassembler les 30 millions de 
 J'vais cacher ça!
 Et ça aussi! Ah!
 Qu'est-ce que tu regardes?
-Y'a rien à voir ici!","","","","","","","","",""
+Y'a rien à voir ici!","// init NAME_BLANK, $13
+Halah, yang benar saja!
+Mereka ingin semua orang menyumbang untuk mengganti kehilangan ¥30 juta itu!
+Sembunyikan itu!
+Yang itu juga! Ya!
+Kamu lihat sesuatu? Tidak ada barang di sini, bung!","","","","","","","",""
 "0e","5a5a","","// init NAME_BLANK, $1b
 真是傷腦筋，
 莫名的停電。
@@ -809,7 +873,10 @@ I can't see the follow-up news reports on the Star Beast incidents.
 By the way, why hasn't Burt come back from his trip to the power plant to fix the outage?","// init NAME_BLANK, $1b
 Cette coupure de courant mystérieuse est une vraie plaie!
 Je ne peux pas voir la suite des reportages sur les incidents liés aux Bêtoiles.
-D'ailleurs, comment ça se fait que Burt ne soit pas revenu de la Centrale? Il devait remettre le courant.","","deepl
+D'ailleurs, comment ça se fait que Burt ne soit pas revenu de la Centrale? Il devait remettre le courant.","// init NAME_BLANK, $1b
+Mati listrik yang tak jelas ini benar-benar menyusahkan!
+Saya tak bisa melihat berita-berita lanjutan tentang peristiwa Makhluk Bintang.
+Omong-omong, mengapa Burt belum kembali dari gedung pembangkit listrik untuk memperbaiki kepadaman ini?","deepl
 yes, it curses
 google says Bot instead of Burt","","it doesn't *exactly* translate as ""a real PITA"", more like ""it hurts the brain"" which is a roughly equivalent statement but with way less vulgarity","","","","",""
 "0e","5ac1","","// init NAME_1D, $1a

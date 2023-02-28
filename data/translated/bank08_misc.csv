@@ -201,7 +201,12 @@ Oh, baby~
 
 Je suis allée chez mon ami aujourd'hui. J'ai pu voir des tas d'inventions!
 
-C'est un génie de la robotique. Ton père pourrait apprendre une chose ou deux de lui!","","","","","","","","","","","","","","","","","","","","","",""
+C'est un génie de la robotique. Ton père pourrait apprendre une chose ou deux de lui!","// init NAME_12, $26
+Oh, baby~
+
+Hari ini aku pergi ke rumah teman. Aku lihat banyak temuan di sana!
+
+Dia seorang perobot jenius, mungkin ayahmu bisa belajar satu atau dua hal darinya~","","","","","","","","","","","","","","","","","","","","",""
 "08","497a","","// init NAME_BLANK, $1f
 啊啊!!!
 怎麼把狗帶到別
@@ -226,7 +231,8 @@ Karpet baru saja saya bersihkan, sekarang kotor lagi! Dasar anak kampungan!
 "08","49cc","","// init NAME_SNOWY, $08
 嗚~~汪汪汪!","// init NAME_SNOWY, $08
 Awoo~ Woof! Woof!","// init NAME_SNOWY, $08
-Aouuh... Ouaf ouaf!","","","","","","","","","","","","","","","","","","","","","",""
+Aouuh... Ouaf ouaf!","// init NAME_SNOWY, $08
+Auuuuu... Wuf wuf!","","","","","","","","","","","","","","","","","","","","",""
 "08","49db","","// init NAME_BLANK, $15
 你是來找芳芳的
 嗎?
@@ -263,7 +269,7 @@ He's known as a prodigy in our little community! He's just a bit eccentric...
 Saiya est un astronome de renom.
 C'est un vrai prodige dans notre petite communauté! 
 Il est juste un peu excentrique...","// init NAME_BLANK, $18
-Saiya seorang astronom ahli.
+Saiya seorang astronom yang hebat.
 Dia dikenal jenius di antara masyarakat! Hanya saja, dia agak eksentrik...","","","","","","","","","","","","","","","","","","","","",""
 "08","4a87","","// init NAME_13, $1a
 你是來找我一起
@@ -271,7 +277,8 @@ Dia dikenal jenius di antara masyarakat! Hanya saja, dia agak eksentrik...","","
 好~高~興~","// init NAME_13, $1a
 Are you here to play with me? I'm so glad!
 ","// init NAME_13, $1a
-Tu es venu jouer avec moi? Youpi, merci!","","~ used to indicate pseudo-singing tone","","","","","","","","","","","","","","","","","","","",""
+Tu es venu jouer avec moi? Youpi, merci!","// init NAME_13, $1a
+Kakak ke sini mau main? Hore!","~ used to indicate pseudo-singing tone","","","","","","","","","","","","","","","","","","","",""
 "08","4aac","","// init NAME_BLANK, $15
 明天晚上會有大
 規模的流星雨。
@@ -289,7 +296,10 @@ By the way, tomorrow night, we will go to your father's observatory to watch the
 ","// init NAME_BLANK, $15
 Il va y avoir une pluie de météores demain soir. Je peux pas me permettre de rater un tel spectacle!
 
-D'ailleurs, demain, on ira regarder la pluie de météores dans l'observatoire de ton papa.","","","","","","","","","","","","","","","","","","","","","",""
+D'ailleurs, demain, on ira regarder la pluie de météores dans l'observatoire de ton papa.","// init NAME_BLANK, $15
+Nanti akan ada hujan meteor yang besar malam ini. Aku tak bisa melewati fenomena langka ini!
+
+Oh, ya, malam ini kita ke observatorium ayahmu untuk melihat hujan meteor itu.","","","","","","","","","","","","","","","","","","","","",""
 "08","4b14","","// init NAME_14, $25
 受傷了嗎?
 如果受傷的話，
@@ -305,7 +315,10 @@ If you're hurt, just enter this alpha ray emitter and you'll recover in a second
 Es-tu blessé?
 
 Si tu t'es fait mal, entre juste dans cet émetteur de rayons alpha et tu seras comme neuf!
-Si tu te blesses, passe me voir!","","","","","","","","","","","","","","","","","","","","","",""
+Si tu te blesses, passe me voir!","// init NAME_14, $25
+Apakah Anda terluka?
+
+Jika terluka, masuklah ke dalam pemancar sinar alfa ini dan anda akan pulih seketika! Jika anda terluka, datanglah ke sini!","","","","","","","","","","","","","","","","","","","","",""
 "08","4b77","","// init NAME_BALLOT, PIC_BALLOT_0
 學校的門關起來
 了!","// init NAME_BALLOT, PIC_BALLOT_0
@@ -352,7 +365,7 @@ Come here.","// init NAME_11, $11
 Chut, ne dis rien.
 Viens par ici.","// init NAME_11, $11
 Hush, jangan bicara.
-Kemari.","~ indicating whispering","","","","","","","","","","","","","","","","","","","",""
+Sini.","~ indicating whispering","","","","","","","","","","","","","","","","","","","",""
 "08","4bf3","","// init NAME_11, $11
 自從你媽媽病逝
 後，
@@ -424,7 +437,7 @@ Ayah...","","","","","","","","","","","","","","","","","","","","",""
 一定會遲到的。","// init NAME_BALLOT, $2d
 Oh no! If I don't hurry to school, I'll definitely be late. ","// init NAME_BALLOT, $2d
 Oh non! Si je me dépêche pas, je vais être en retard pour aller à l'école.","// init NAME_BALLOT, $2d
-Oh tidak! Jika aku tidak bergegas ke sekolah, pastinya aku terlambat.","","","","","","","","","","","","","","","","","","","","",""
+Oh tidak! Jika aku tidak segera ke sekolah, pastinya aku terlambat.","","","","","","","","","","","","","","","","","","","","",""
 "08","4cf4","","// init NAME_11, $11
 起床了嗎?
 該上學了。","// init NAME_11, $11
@@ -510,14 +523,16 @@ D-dasar Ayah...!
 "08","4e15","","// init NAME_SNOWY, $08
 汪汪~汪汪!","// init NAME_SNOWY, $08
 Woof! Woof!","// init NAME_SNOWY, $08
-Ouaf! Ouaf!","","","","","","","","","","","","","","","","","","","","","",""
+Ouaf! Ouaf!","// init NAME_SNOWY, $08
+Guk! Guk!","","","","","","","","","","","","","","","","","","","","",""
 "08","4e23","","// init NAME_BLANK, $1b
 新聞報導說，
 今天晚上會有大
 規模的流星雨。
 真是期待呢!","// init NAME_BLANK, $1b
 The news is reporting that there will be a massive meteor shower tonight. I really look forward to it!","// init NAME_BLANK, $1b
-Ils disent aux infos qu'il va y avoir une pluie de météores cette nuit. J'ai hâte de voir ça!","","","","","","","","","","","","","","","","","","","","","",""
+Ils disent aux infos qu'il va y avoir une pluie de météores cette nuit. J'ai hâte de voir ça!","// init NAME_BLANK, $1b
+Ada berita nanti malam akan ada hujan meteor yang besar. Aku tak sabar ingin melihatnya!","","","","","","","","","","","","","","","","","","","","",""
 "08","4e55","","// init NAME_BLANK, $13
 不曉得為什麼，
 只要一提到流星
@@ -560,7 +575,8 @@ Saya sudah mencuci kembali karpetnya, dan kamu mengotorinya LAGI!","","","","","
 ~","// init NAME_BLANK, $15
 Are you here to see Fangfang? She went to school~","// init NAME_BLANK, $15
 Tu es venu voir Fangfang?
-Elle est partie à l'école.","","","","","","","","","","","","","","","","","","","","","",""
+Elle est partie à l'école.","// init NAME_BLANK, $15
+Kamu ingin bertemu Fangfang? Dia sudah berangkat sekolah.","","","","","","","","","","","","","","","","","","","","",""
 "08","4f1a","","// init NAME_BLANK, $15
 今天晚上會有大
 規模的流星雨。
@@ -577,14 +593,18 @@ There will be a massive meteor shower tonight. I can't miss this rare spectacle!
 By the way, tonight, we will go to your father's observatory to watch the meteor shower.","// init NAME_BLANK, $15
 Il va y avoir une pluie de météores cette nuit. Je peux pas me permettre de rater un tel spectacle!
 
-D'ailleurs, ce soir, on ira regarder la pluie de météores dans l'observatoire de ton papa.","","similar to 08:4aac","","","","","","","","","","","","","","","","","","","",""
+D'ailleurs, ce soir, on ira regarder la pluie de météores dans l'observatoire de ton papa.","// init NAME_BLANK, $15
+Nanti akan ada hujan meteor yang besar malam ini. Aku tak bisa melewati fenomena langka ini!
+
+Oh, ya, malam ini kita ke observatorium ayahmu untuk melihat hujan meteor itu.","similar to 08:4aac","","","","","","","","","","","","","","","","","","","",""
 "08","4f82","","// init NAME_BALLOT, PIC_BALLOT_0
 上學快要遲到了
 ，
 不是到處溜噠的
 時間。","// init NAME_BALLOT, PIC_BALLOT_0
 I'm almost late for school! It's not the time to go wandering off.","// init NAME_BALLOT, PIC_BALLOT_0
-Je vais être en retard à l'école! J'ai pas le temps de flâner.","","","","","","","","","","","","","","","","","","","","","",""
+Je vais être en retard à l'école! J'ai pas le temps de flâner.","// init NAME_BALLOT, PIC_BALLOT_0
+I'm almost late for school! It's not the time to go wandering off.","","","","","","","","","","","","","","","","","","","","",""
 "08","4fa8","","// init NAME_15, $24
 早啊~巴洛特。
 快點進教窒，
@@ -661,7 +681,7 @@ Hé, Ballot! T'arrives à pic!
 Voici mon nouvel ami, Super-Hayato Mk.I!","// init NAME_12, $26
 Oh baby~
 Hei Ballot, pas sekali kau datang!
-Perkenalkan teman baruku, Advanced Hayato Mark I!","Takayasu Hayato #1 is presumably the robot","lol what you translated as ""takayasu"" just means ""high quality""","","","","","","","","","","","","","","","","","","",""
+Perkenalkan teman baruku, Hayato Super Mk.I!","Takayasu Hayato #1 is presumably the robot","lol what you translated as ""takayasu"" just means ""high quality""","","","","","","","","","","","","","","","","","","",""
 "08","50e8","","// init NAME_BALLOT, $2c
 很好~了不起!
 我要上課了。","// init NAME_BALLOT, $2c
@@ -702,7 +722,7 @@ Dia sangat terkenal. Mau tahu siapakah dia?","","","","","","","","","","","",""
 沒有興趣。","// init NAME_BALLOT, $2c
 Uhh, I'm not really interested.","// init NAME_BALLOT, $2c
 Je m'en fiche.","// init NAME_BALLOT, $2c
-Uhh, aku tak tertarik.","","","","","","","","","","","","","","","","","","","","",""
+Uhh... aku tak tertarik.","","","","","","","","","","","","","","","","","","","","",""
 "08","5195","","// init NAME_12, $26
 OH~
 BABY~
@@ -873,7 +893,7 @@ Ballot! Nanti saya berkunjung ke rumahmu untuk menanyakan ayahmu tentang mengama
 絕對不行。","// init NAME_11, $11
 No! Certainly not.","// init NAME_11, $11
 Non! Certainement pas.","// init NAME_11, $11
-Tidak! Tidak boleh.","","","","","","","","","","","","","","","","","","","","",""
+Tidak! Sama sekali tidak.","","","","","","","","","","","","","","","","","","","","",""
 "08","547e","","// init NAME_15, $24
 我不曉得什麼事
 ，

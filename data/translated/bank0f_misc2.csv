@@ -6,11 +6,15 @@
 就在這些寶貝堆
 裡，自已找吧!
 ","// init NAME_BLANK, $16
-The spring? I forgot where I put it, so feel free to search in these piles of treasure!","","","","duped from bank0e","","","","","","","","","","","","","","","","","","",""
+The spring? I forgot where I put it, so feel free to search in these piles of treasure!","// init NAME_BLANK, $16
+Le ressort?
+J'ai oublié où je l'ai mis...
+N'hésite pas à fouiller mes amas de trésors!","","","duped from bank0e","","","","","","","","","","","","","","","","","","",""
 "0f","492c","","// init $01, $2a
 得到了發條!
 ","// init NAME_BALLOT, $2a
-Got the Spring!","","","","duped from bank0e","","","","","","","","","","","","","","","","","","",""
+Got the Spring!","// init NAME_BALLOT, $2a
+Ressort trouvé!","","","duped from bank0e","","","","","","","","","","","","","","","","","","",""
 "0f","493b","","// init $1c, $29
 沒有錯!
 這就是我想要的
@@ -257,13 +261,16 @@ I'm very busy, so is there anything you need?","","","","dupe","","","","","",""
 需要妮可治療嗎
 ?
 ","// init $14, $25
-Do you need my treatment?","","","choicer","","","","","","","","","","","","","","","","","","","",""
+Do you need my treatment?","// init $14, $25
+As-tu besoin de mes services?","","choicer","","","","","","","","","","","","","","","","","","","",""
 "0f","4f13","","// init $1a, $25
 這裡是星獸膠囊
 存放銀行。
 需要艾娜的服務
 嗎?","// init $1a, $25
-This is the Star Beast Storage Bank. Do you need my help?","","","choicer","","","","","","","","","","","","","","","","","","","",""
+This is the Star Beast Storage Bank. Do you need my help?","// init $1a, $25
+Voici le système de stockage de Bêtoiles.
+As-tu besoin de mon aide?","","choicer","","","","","","","","","","","","","","","","","","","",""
 "0f","4f42","","// init $1b, $4c
 博士終於做好了
 反重力裝置了!

@@ -353,7 +353,14 @@ SECTION "banknum46", ROMX[$7fff], BANK[$46]
 
 
 SECTION "bank47", ROMX, BANK[$47]
-; empty bank
+; en patch: repoint text here
+IF "{LANG}" == "fr"
+INCLUDE "data/translated/fr/bank12_misc_external_2.asm"
+ELIF "{LANG}" == "id"
+INCLUDE "data/translated/id/bank12_misc_external_2.asm"
+ELSE
+INCLUDE "data/translated/en/bank12_misc_external_2.asm"
+ENDC
 
 SECTION "banknum47", ROMX[$7fff], BANK[$47]
 	db $47

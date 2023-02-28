@@ -12,16 +12,20 @@ Mom? Do you want to hide Dot's machine too?
 It goes at the speed of light! It's probably worth ¥9456 billion!","// init NAME_1D, $1a
 Maman? Tu veux cacher aussi ma voiture?
 Elle va à la vitesse de la lumière!
-Elle vaut probablement 9456 billions de ¥!","","The girl talks in weird third person but it'd make things more complicated","","repoint_target"
+Elle vaut probablement 9456 billions de ¥!","// init NAME_1D, $1a
+Mama? Ingin menyembunyikan mesinku juga?
+Ia bisa melaju secepat cahaya! Mungkin nilainya ¥9456 miliar!","The girl talks in weird third person but it'd make things more complicated","","repoint_target"
 "0e","5b18","","// init NAME_BLANK, $13
 不‧用!","// init NAME_BLANK, $13
 There's no need!","// init NAME_BLANK, $13
-Pas besoin!","","","","repoint_target"
+Pas besoin!","// init NAME_BLANK, $13
+Tidak perlu!","","","repoint_target"
 "0e","5b22","","// init NAME_1D, $1a
 荳‧荳‧要‧藏
 ‧起‧來‧啦!","// init NAME_1D, $1a
 I'll hide it anyway!","// init NAME_1D, $1a
-Je la cache quand même!","","same girl from 5ac1, her name is Dottie i guess","","repoint_target"
+Je la cache quand même!","// init NAME_1D, $1a
+Aku tetap sembunyikan!","same girl from 5ac1, her name is Dottie i guess","","repoint_target"
 "0e","5b43","","// init NAME_BLANK, $16
 城裡停電了，
 我兒子~博特到
@@ -32,7 +36,9 @@ Je la cache quand même!","","same girl from 5ac1, her name is Dottie i guess","
 The power's gone out, and my son, Burt, went to the power plant to fix it!
 He's been gone for quite a while and I'm worried about him...","// init NAME_BLANK, $16
 Le courant a sauté, et mon fils Burt est parti à la centrale pour le rétablir!
-Mais ça fait un moment qu'il est parti... Je m'inquiète...","","i still dunno who bert/bot is imma have to look
+Mais ça fait un moment qu'il est parti... Je m'inquiète...","// init NAME_BLANK, $16
+Listrik padam, dan anakku, Burt, pergi ke gedung pembangkit listrik untuk menyelesaikannya!
+Dia sudah pergi entah berapa lamanya dan aku khawatir...","i still dunno who bert/bot is imma have to look
 Burt is that guy referenced in 0e:5a5a","","repoint_target"
 "0e","6e99","","// init NAME_1C, $29
 哈哈哈~
@@ -54,12 +60,17 @@ Can you go to the power plant and investigate why?","// init NAME_1C, $29
 Hahaha, tu as vaincu les Volt! Bien joué!
 Mais le courant est toujours coupé...
 Ballot, puis-je te demander une autre faveur?
-Peux-tu aller à la Centrale et voir ce qui s'y passe?","","","","repoint_target"
+Peux-tu aller à la Centrale et voir ce qui s'y passe?","// init NAME_1C, $29
+Hahaha, jadi kamu yang mengalahkan Tim Volt! Kerja yang bagus!
+Tapi, listrik masih padam...
+Ballot, boleh minta bantuan sekali lagi?
+Dapatkah kamu ke gedung pembangkit dan mencaritahu kenapa?","","","repoint_target"
 "0e","6f19","","// init NAME_21, $31
 喵嗚~嗚。
 zZ~zZ~","// init NAME_21, $31
 Miao... Zzzz...","// init NAME_21, $31
-Miaou... Zzzz...","","","","repoint_target"
+Miaou... Zzzz...","// init NAME_21, $31
+Miao... Zzzz...","","","repoint_target"
 "0e","6f32","","// init NAME_BALLOT, $2c
 不行!
 整個入口都被貓
@@ -69,13 +80,16 @@ Miaou... Zzzz...","","","","repoint_target"
 Oh no! The entrance's been blocked by this monstrous cat!
 I'd better go report back to the professor.","// init NAME_BALLOT, $2c
 Oh non! Cet énorme chat bloque l'entrée de la centrale!
-Je ferais mieux d'en parler au professeur.","","","","repoint_target"
+Je ferais mieux d'en parler au professeur.","// init NAME_BALLOT, $2c
+Oh tidak! Pintu masuknya dihalang oleh kucing besar!
+Sebaiknya aku melaporkan ke professor.","","","repoint_target"
 "0e","6f6b","","// init NAME_1C, $29
 什麼?貓怪?
 該怎麼辦才好⋯","// init NAME_1C, $29
 What? A monster cat? What shall we do..?","// init NAME_1C, $29
 Quoi? Un monstre-chat?
-Que pouvons-nous faire...","","","","repoint_target"
+Que pouvons-nous faire...","// init NAME_1C, $29
+Apa? Kucing besar? Apa yang harus kita lakukan...?","","","repoint_target"
 "0e","6f86","","// init NAME_1C, $29
 有了!
 使用老鼠來吸引
@@ -85,7 +99,9 @@ Que pouvons-nous faire...","","","","repoint_target"
 I've got it! We can use a robot rat to distract him!
 But how can we make those while the power is out..?","// init NAME_1C, $29
 Je sais! On peut utiliser une souris pour attirer son attention!
-Mais comment en fabriquer sans électricité...","","","","repoint_target"
+Mais comment en fabriquer sans électricité...","// init NAME_1C, $29
+Oh ya! Kita bisa pakai tikus robot untuk mengalihkan perhatiannya!
+Tapi... bagaimana kita bisa membuatnya jika listriknya masih mati?","","","repoint_target"
 "0e","6fc3","","// init NAME_1C, $29
 真叫人生氣!
 在不得已的情況
@@ -103,7 +119,11 @@ Give me a bit, and I'll find the parts I need..","// init NAME_1C, $29
 Rah!
 Dans le pire des cas, je peux en faire un à ressort.
 Même si c'est un peu humiliant d'en être réduit à faire des souris à ressort...
-Donne-moi quelques minutes, le temps de trouver les composants...","","","","repoint_target"
+Donne-moi quelques minutes, le temps de trouver les composants...","// init NAME_1C, $29
+Menyebalkan!
+Sebagai pilihan terakhir, saya harus membuatnya dengan pér.
+Meski amat memalukan saya membuat tikus mainan pér...
+Tunggu sebentar, saya carikan bahan yang dibutuhkan...","","","repoint_target"
 "0e","7026","","// init NAME_1C, $29
 槽糕~
 我一直認為，
@@ -119,18 +139,22 @@ Donne-moi quelques minutes, le temps de trouver les composants...","","","","rep
 Darn it! I used to think that making clockworks was below me, so I threw all those parts out.
 Sorry, Ballot, but I need some springs!","// init NAME_1C, $29
 Bon sang! Je pensais que faire des mécanismes à ressort n'était pas assez bien pour moi, alors j'ai tout jeté...
-Désolé, Ballot. Il faut trouver des ressorts!","","","","repoint_target"
+Désolé, Ballot. Il faut trouver des ressorts!","// init NAME_1C, $29
+Sialan! Saya berpikir saya terlalu hebat untuk membuat mainan pér, jadi saya membuang semua bahan-bahan itu.
+Maaf, Ballot, tapi saya perlu pér!","","","repoint_target"
 "0e","7090","","// init NAME_BALLOT, $00
 我知道了!","// init NAME_BALLOT, $00
 I've got it!","// init NAME_BALLOT, $00
-Compris!","","","","repoint_target"
+Compris!","// init NAME_BALLOT, $00
+Oke!","","","repoint_target"
 "0e","709b","","// init NAME_1C, $29
 要做成機械老鼠
 ，
 得找到發條才行
 。","// init NAME_1C, $29
 To make the robot rat, we need a spring.","// init NAME_1C, $29
-Pour faire une souris mécanique, il nous faudra un ressort. ","","","","repoint_target"
+Pour faire une souris mécanique, il nous faudra un ressort. ","// init NAME_1C, $29
+Untuk membuat tikus mainan, kita perlu pér.","","","repoint_target"
 "0e","70c0","","// init NAME_BLANK, $16
 發條?
 雷歐博士要的嗎
@@ -151,7 +175,11 @@ Ah, today's weather sure is nice, but dark clouds are gathering...","// init NAM
 Des ressorts?
 Je n'aurais jamais cru que le Dr. Léo aurait besoin d'une chose pareille...
 Où est-ce que je l'ai mis...?
-Ah, il fait bien beau aujourd'hui! Il risque de pleuvoir un peu, mais ça va...","","","","repoint_target"
+Ah, il fait bien beau aujourd'hui! Il risque de pleuvoir un peu, mais ça va...","// init NAME_BLANK, $16
+Pér?
+Tidak pernah saya membayangkan Dr. Leo butuh barang seperti itu...
+Saya taruh dimana ya...?
+Ah, cuaca hari ini memang cerah, tapi awan gelap mulai mengepul...","","","repoint_target"
 "0e","7136","","// init NAME_BLANK, $16
 對了!
 就是發條嘛!
@@ -163,7 +191,9 @@ Ah, il fait bien beau aujourd'hui! Il risque de pleuvoir un peu, mais ça va..."
 Ah, right! The spring!
 I forgot where I put it, so feel free to search in these piles of treasure!","// init NAME_BLANK, $16
 Ah oui! Le ressort!
-J'ai oublié où je l'ai mis, alors n'hésite pas à fouiller mes amas de trésors!","","","","repoint_target"
+J'ai oublié où je l'ai mis, alors n'hésite pas à fouiller mes amas de trésors!","// init NAME_BLANK, $16
+Oh, ya! Pér itu!
+Saya lupa pér taruh dimana, jadi silahkan kamu cari diantara hartaku ini!","","","repoint_target"
 "0e","717b","","// init NAME_BLANK, $16
 發條?
 我忘了放哪裡了
@@ -173,11 +203,13 @@ J'ai oublié où je l'ai mis, alors n'hésite pas à fouiller mes amas de tréso
 The spring? I forgot where I put it, so feel free to search in these piles of treasure!","// init NAME_BLANK, $16
 Le ressort?
 J'ai oublié où je l'ai mis...
-N'hésite pas à fouiller mes amas de trésors!","","","","repoint_target"
+N'hésite pas à fouiller mes amas de trésors!","// init NAME_BLANK, $16
+Pér? Saya lupa taruh dimana, silahkan dicari saja!","","","repoint_target"
 "0e","71b4","","// init NAME_BALLOT, $2a
 得到了發條!","// init NAME_BALLOT, $2a
 Got the Spring!","// init NAME_BALLOT, $2a
-Ressort trouvé!","","","","repoint_target"
+Ressort trouvé!","// init NAME_BALLOT, $2a
+Dapat pér!","","","repoint_target"
 "0e","71c3","","// init NAME_1C, $29
 沒有錯!
 這就是我想要的
@@ -193,7 +225,10 @@ How em- barrassing.. I'll just have to bite the bullet and do it.","// init NAME
 C'est ça!
 C'est le ressort qu'il me faut...
 C'est vraiment gênant...
-Mais il va falloir que je le fasse.","","","","repoint_target"
+Mais il va falloir que je le fasse.","// init NAME_1C, $29
+Benar!
+Ini pér yang saya minta...
+Sunggu memalukan... biar tidak ada listrik tetapi tikus tetap saya buat.","","","repoint_target"
 "0e","7217","","// init NAME_1C, $29
 這就是發條老鼠
 。
@@ -208,12 +243,16 @@ I still feel ashamed of resorting to such simple tech...
 Ballot! You'd better not tell anyone I made it!","// init NAME_1C, $29
 Voici la souris à ressort.
 Je me sens si honteux d'utiliser une technologie si simpliste...
-Ballot! Surtout, ne dis à personne que je l'ai fait!","","","","repoint_target"
+Ballot! Surtout, ne dis à personne que je l'ai fait!","// init NAME_1C, $29
+Ini, tikus mainan pér.
+Memalukan sekali harus membuat sesuatu dengan teknologi rendahan...
+Ballot! Jangan bilang ini saya yang buat!","","","repoint_target"
 "0e","726f","","// init NAME_BALLOT, $2a
 得到了發條老鼠
 !","// init NAME_BALLOT, $2a
 Got the Clockwork Rat!","// init NAME_BALLOT, $2a
-Obtenu Souris à ressort!","","","","repoint_target"
+Obtenu Souris à ressort!","// init NAME_BALLOT, $2a
+Dapat Tikus Mainan!","","","repoint_target"
 "0e","7283","","// init NAME_1C, $29
 有了發條老鼠，
 應該就可以引開
@@ -223,24 +262,29 @@ Obtenu Souris à ressort!","","","","repoint_target"
 想到就覺得丟臉
 ⋯⋯","// init NAME_1C, $29
 With the clockwork rat, you should be able to distract that monster cat. Ah, I feel embarrassed just thinking about it...","// init NAME_1C, $29
-Avec la souris à ressort, tu devrais pouvoir distraire le monstre-chat. Ah, je me sens honteux rien que d'y penser...","","","","repoint_target"
+Avec la souris à ressort, tu devrais pouvoir distraire le monstre-chat. Ah, je me sens honteux rien que d'y penser...","// init NAME_1C, $29
+Dengan tikus mainan itu, kamu dapat mengalihkan perhatian kucing besar itu.
+Ah, benar-benar malu setiap kali kepikiran mainan itu...","","","repoint_target"
 "0e","72ce","","// init NAME_21, $31
 喵嗚~喵~
 嗚嗚~","// init NAME_21, $31
 Miao~ Miao~","// init NAME_21, $31
-Maou... Maou!","","","","repoint_target"
+Maou... Maou!","// init NAME_21, $31
+Miao~ Miao~","","","repoint_target"
 "0e","72e2","","// init NAME_BALLOT, $00
 乖貓咪~
 快點走開唷~","// init NAME_BALLOT, $00
 Good kitty! Just hurry up, and leave..","// init NAME_BALLOT, $00
 Gentil petit chat!
-Allez, ouste...","","","","repoint_target"
+Allez, ouste...","// init NAME_BALLOT, $00
+Mpuss... keluar mpuss...","","","repoint_target"
 "0e","72fa","","// init NAME_BALLOT, $2d
 啊!
 發條的動力用完
 了⋯","// init NAME_BALLOT, $2d
 Ah! The spring's unwound!","// init NAME_BALLOT, $2d
-Ah! Le ressort est à plat!","","","","repoint_target"
+Ah! Le ressort est à plat!","// init NAME_BALLOT, $2d
+Ah! Pérnya terurai!","","","repoint_target"
 "0e","7316","","// init NAME_21, $31
 嗚~喵吼喵吼吼
 !
@@ -249,15 +293,19 @@ Ah! Le ressort est à plat!","","","","repoint_target"
 Miao~ Miao!!!
 (Damn it! I've been tricked!)","// init NAME_21, $31
 Maou... Maou!!!
-(Bon sang! Je me suis fait avoir!)","","boss battle?!","","repoint_target"
+(Bon sang! Je me suis fait avoir!)","// init NAME_21, $31
+Miao~ Miao!!!
+(Sialan, ketipu!!)","boss battle?!","","repoint_target"
 "0e","733f","","// init NAME_23, $17
 嗚峨嗚~嗚~","// init NAME_23, $17
 Waaah...","// init NAME_23, $17
-Waaah...","","","","repoint_target"
+Waaah...","// init NAME_23, $17
+Waaah...","","","repoint_target"
 "0e","734f","","// init NAME_BALLOT, $00
 大权?怎麼了?","// init NAME_BALLOT, $00
 Eh? What's happened to you?","// init NAME_BALLOT, $00
-Que... Qu'est-ce qui vous est arrivé?","","","","repoint_target"
+Que... Qu'est-ce qui vous est arrivé?","// init NAME_BALLOT, $00
+Eh? Ada apa denganmu?","","","repoint_target"
 "0e","735f","","// init NAME_23, $17
 真是感謝。
 科技城停電後，
@@ -271,7 +319,10 @@ I didn't expect that I would be tied up by Team Volt!
 Thank you for rescuing me!","// init NAME_23, $17
 Oh, merci! Après la coupure de courant à Technoville, je me suis précipité ici pour en trouver la cause.
 Je ne m'attendais pas à me faire ligoter par la Team Volt!
-Merci de m'avoir sauvé!","","","","repoint_target"
+Merci de m'avoir sauvé!","// init NAME_23, $17
+Oh, terima kasih! Setelah listrik padam di Kota Tekno, aku segera ke sini untuk menginvestigasi.
+Aku tidak menyangka bakal ditahan oleh Tim Volt!
+Terima kasih telah menyelamatkanku!","","","repoint_target"
 "0e","73b0","","// init NAME_1E, $27
 峨~呵呵呵!
 有了三千萬，
@@ -279,20 +330,25 @@ Merci de m'avoir sauvé!","","","","repoint_target"
 Eheheheh~!
 With these 30 million yen, our dream can finally...","// init NAME_1E, $27
 Héhéhéhé!
-Avec ces 30 millions de ¥, notre rêve peut enfin...","","","","repoint_target"
+Avec ces 30 millions de ¥, notre rêve peut enfin...","// init NAME_1E, $27
+Eheheheh~!
+Dengan 30 juta yen ini, mimpi-mimpi kami akan...","","","repoint_target"
 "0e","73d4","","// init NAME_1F, $28
 跟在下想的，
 一點都沒錯。
 這樣一來⋯⋯","// init NAME_1F, $28
 Just so! Now we can....","// init NAME_1F, $28
-Exactement! Maitenant, on pourra...","","","","repoint_target"
+Exactement! Maitenant, on pourra...","// init NAME_1F, $28
+Iya! Sekarang kita...","","","repoint_target"
 "0e","73f9","","// init NAME_1E, $27
 你你⋯你⋯你
 ⋯你怎麼來的?","// init NAME_1E, $27
 Y-y-yo-you?!
 How did you get here?!","// init NAME_1E, $27
 T-t-toi?!
-Qu'est-ce que tu fais ici?!","","","","repoint_target"
+Qu'est-ce que tu fais ici?!","// init NAME_1E, $27
+K-k-k-kamu?!
+Bagaimana kamu bisa di sini?!","","","repoint_target"
 "0e","740e","","// init NAME_1F, $28
 可惡!
 你是來破壞在下
@@ -301,7 +357,8 @@ Qu'est-ce que tu fais ici?!","","","","repoint_target"
 的教育吧!","// init NAME_1F, $28
 You- Are you here to ruin our dreams again? I think it's time to teach you a lesson!","// init NAME_1F, $28
 Toi... Es-tu là pour brises nos rêves à nouveau?
-Je crois qu'il faut que je te donne une petite leçon!","","cyrus voice intensifies","","repoint_target"
+Je crois qu'il faut que je te donne une petite leçon!","// init NAME_1F, $28
+Kamu- Kamu datang merobohkan impian kami lagi? Mungkin waktunya memberimu pelajaran!","cyrus voice intensifies","","repoint_target"
 "0e","744b","","// init NAME_1E, $27
 可可⋯可
 ⋯可惡!
@@ -309,7 +366,8 @@ Je crois qu'il faut que je te donne une petite leçon!","","cyrus voice intensif
 我⋯記⋯記住!","// init NAME_1E, $27
 Y-you! You'd better remember this!","// init NAME_1E, $27
 B... Bon sang!
-V-vous..! Retenez bien qui nous sommes!","","","","repoint_target"
+V-vous..! Retenez bien qui nous sommes!","// init NAME_1E, $27
+K-kamu! Ingatlah ini!","","","repoint_target"
 "0e","7478","","// init NAME_1F, $28
 這次在下就放了
 你!
@@ -323,15 +381,20 @@ You'd better remember this mercy!
 Truth, justice and courage: Team Volt, out!","// init NAME_1F, $28
 On vous laisse filer cette fois!
 Souvenez-vous de notre clémence!
-Pour la vérité, la justice et l'amour: La Team Volt s'en va!","","","","repoint_target"
+Pour la vérité, la justice et l'amour: La Team Volt s'en va!","// init NAME_1F, $28
+Kali ini kami lepaskan!
+Ingatlah pengampunan kami ini!
+Jujur, adil dan berani: Tim Volt, meluncur!","","","repoint_target"
 "0e","74c4","","// init NAME_BALLOT, $00
 真是⋯⋯⋯","// init NAME_BALLOT, $00
 These guys...","// init NAME_BALLOT, $00
-Sérieusement...","","","","repoint_target"
+Sérieusement...","// init NAME_BALLOT, $00
+Dasar penjahat...","","","repoint_target"
 "0e","74cf","","// init NAME_BALLOT, $00
 這個開關是⋯⋯","// init NAME_BALLOT, $00
 If I flip this...","// init NAME_BALLOT, $00
-Si j'appuie sur ça...","","","","repoint_target"
+Si j'appuie sur ça...","// init NAME_BALLOT, $00
+Jika aku menyetel ini...","","","repoint_target"
 "0e","74de","","// init NAME_BLANK, $1f
 啊!
 電力又回復了?
@@ -341,7 +404,9 @@ Si j'appuie sur ça...","","","","repoint_target"
 Ah! The power is back?
 I've never been this glad to see the light.","// init NAME_BLANK, $1f
 Ah! Le courant est revenu?
-Je n'ai jamais autant été soulagé de voir de la lumière.","","","","repoint_target"
+Je n'ai jamais autant été soulagé de voir de la lumière.","// init NAME_BLANK, $1f
+Ah! Listrik menyala lagi?
+Tak pernah aku sebahagia ini melihat lampu terang benderang.","","","repoint_target"
 "0e","7511","","// init NAME_BLANK, $1b
 原來電力塔早就
 被閃電隊佔領了
@@ -352,7 +417,9 @@ Je n'ai jamais autant été soulagé de voir de la lumière.","","","","repoint_
 Apparently the power went out because of Team Volt.
 Thank you, Ballot, for bringing it back!","// init NAME_BLANK, $1b
 Apparemment, le courant de la centrale avait été coupé par la Team Volt.
-Merci de l'avoir rétabli!","","","","repoint_target"
+Merci de l'avoir rétabli!","// init NAME_BLANK, $1b
+Sepertinya listrik padam gara-gara Tim Volt.
+Terima kasih, Ballot, karena menghidupkannya kembali!","","","repoint_target"
 "0e","7550","","// init NAME_BLANK, $16
 好⋯好刺眼⋯⋯
 眼晴好不容易習
@@ -363,7 +430,9 @@ Merci de l'avoir rétabli!","","","","repoint_target"
 It-It's blinding...
 My eyes had just gotten used to the dark, and suddenly the blinding lights came back on...","// init NAME_BLANK, $16
 M-mes yeux...
-Je venais tout juste de m'habituer à l'obscurité, et là, les lumières se rallument...","","","","repoint_target"
+Je venais tout juste de m'habituer à l'obscurité, et là, les lumières se rallument...","// init NAME_BLANK, $16
+I-ini membutakan...
+Mataku baru saja terbiasa dengan gelap gulita, lalu tiba-tiba saja lampu membuta itu menyala kembali...","","","repoint_target"
 "0e","7597","","// init NAME_BLANK, $19
 果然需要雷歐出
 馬，
@@ -374,7 +443,9 @@ Je venais tout juste de m'habituer à l'obscurité, et là, les lumières se ral
 In the end, Team Volt was only defeated with Dr. Leo's assistance.
 He certainly is the best inventor in the world.","// init NAME_BLANK, $19
 Au final, la Team Volt n'a pu être vaincue qu'avec l'aide du Dr. Léo.
-Je savais qu'il était le meilleur mécanicien du monde.","","","","repoint_target"
+Je savais qu'il était le meilleur mécanicien du monde.","// init NAME_BLANK, $19
+Pada akhirnya, Tim Volt hanya bisa terkalahkan dengan bantuan dari Dr. Leo.
+Beliau benar-benar penemu terhebat di dunia.","","","repoint_target"
 "0e","75d8","","// init NAME_BLANK, $17
 你聽過加爾企業
 嗎?
@@ -387,7 +458,9 @@ Je savais qu'il était le meilleur mécanicien du monde.","","","","repoint_targ
 Have you heard of Gale Enterprises?
 It's one of the biggest companies in the world, second only to Bang Lin!","// init NAME_BLANK, $17
 As-tu entendu parler de Gale Corp.?
-C'est l'une des plus grandes multinationales au monde, juste derrière Banglin!","","Gale is back, babyy, and so is Bang Lin","","repoint_target"
+C'est l'une des plus grandes multinationales au monde, juste derrière Banglin!","// init NAME_BLANK, $17
+Apakah kamu mendengar tentang PT. Gale?
+Mereka salah satu perusahaan terbesar di dunia, kedua setelah Bang Lin!","Gale is back, babyy, and so is Bang Lin","","repoint_target"
 "0e","762c","","// init NAME_BLANK, $21
 嗚~嗚~
 電燈又亮了，
@@ -399,7 +472,10 @@ The lights are back on, so we have to go to school!
 Waaah!","// init NAME_BLANK, $21
 Ouiiin!
 La lumière est revenue, donc il faut retourner à l'école!
-Ouiiiiin!","","","","repoint_target"
+Ouiiiiin!","// init NAME_BLANK, $21
+Oweeek!
+Lampu sudah menyala, jadi kita harus sekolah!
+Oweeek!","","","repoint_target"
 "0e","765d","","// init NAME_BLANK, $16
 這裡是科技城的
 廢鐵集中場。
@@ -409,7 +485,8 @@ Ouiiiiin!","","","","repoint_target"
 貝!","// init NAME_BLANK, $16
 This is the scrapyard of Tech City. They may look like pieces of junk, but to me, they're treasure!","// init NAME_BLANK, $16
 Voici le parc à ferrailles de Technoville.
-Tout ça ressemble peut-être à des déchets, mais pour moi, c'est de précieux trésors!","","from 0e5806","","repoint_target"
+Tout ça ressemble peut-être à des déchets, mais pour moi, c'est de précieux trésors!","// init NAME_BLANK, $16
+Ini tempat rongsokan Kota Tekno. Mungkin bagimu ini sampah, tapi bagiku ini harta!","from 0e5806","","repoint_target"
 "0e","76a3","","// init NAME_BLANK, $12
 前陣子的流星雨
 ，
@@ -419,7 +496,9 @@ Tout ça ressemble peut-être à des déchets, mais pour moi, c'est de précieux
 That meteor shower earlier wrecked most of the roads from here to Dorington!
 What shall I do?","// init NAME_BLANK, $12
 Cette pluie de météorites a détruit la route menant à Dorington!
-Qu'est-ce que je vais faire?","","Dorington makes the much anticipated return","","repoint_target"
+Qu'est-ce que je vais faire?","// init NAME_BLANK, $12
+Hujan meteor kemarin merusak sebagian besar jalanan dari sini ke Dorington!
+Bagaimana ini?","Dorington makes the much anticipated return","","repoint_target"
 "0e","76dc","","// init NAME_BLANK, $16
 就是你救了博特
 嗎?
@@ -432,16 +511,20 @@ Qu'est-ce que je vais faire?","","Dorington makes the much anticipated return","
 You were the one who saved Burt?
 Thank you! Please take this as a token of my gratitude!","// init NAME_BLANK, $16
 C'est toi qui a sauvé Burt?
-Merci! Prends ceci en guise de remerciement!","","","","repoint_target"
+Merci! Prends ceci en guise de remerciement!","// init NAME_BLANK, $16
+Kamulah yang menyelamatkan Burt?
+Terima kasih! Terimalah ini sebagai imbalan!","","","repoint_target"
 "0e","7723","","// init NAME_BLANK, $16
 真是相當的感謝
 。","// init NAME_BLANK, $16
 I can't stress how grateful I am!","// init NAME_BLANK, $16
-Encore une fois, merci beaucoup!","","","","repoint_target"
+Encore une fois, merci beaucoup!","// init NAME_BLANK, $16
+Aku ucapkan terima kasih yang sebesar-besarnya!","","","repoint_target"
 "0e","7736","","// init NAME_23, $17
 非常的感謝您。","// init NAME_23, $17
 Thank you very much for the rescue.","// init NAME_23, $17
-Merci beaucoup de m'avoir sauvé.","","","","repoint_target"
+Merci beaucoup de m'avoir sauvé.","// init NAME_23, $17
+Terima kasih atas penyelamatannya.","","","repoint_target"
 "0e","7746","","// init NAME_19, $22
 電力又回復了，
 一大堆帳要補登
@@ -452,7 +535,9 @@ Merci beaucoup de m'avoir sauvé.","","","","repoint_target"
 The electricity is back, so I have a pile of documents to work on..
 I'm very busy, so is there anything you need?","// init NAME_19, $22
 Le courant est revenu, et j'ai un tas de documents à remplir...
-Je suis occupé, qu'est-ce que tu veux?","","","","repoint_target"
+Je suis occupé, qu'est-ce que tu veux?","// init NAME_19, $22
+Listrik menyala kembali, jadi saya punya setumpuk dokumen yang harus kukerjakan...
+Saya sangat sibuk, kamu perlu apa?","","","repoint_target"
 "0e","7781","","// init NAME_1B, $4c
 博士終於做好了
 反重力裝置了!
@@ -462,7 +547,8 @@ Je suis occupé, qu'est-ce que tu veux?","","","","repoint_target"
 加重要的會議了","// init NAME_1B, $4c
 Dr. Leo finally finished his anti-gravity device! As the manager of the procurement department of GaleCorp, I can finally return for my important meeting!","// init NAME_1B, $4c
 Le Dr. Léo a enfin fini sa machine anti-gravité!
-En tant que manager du département des achats de Gale Corp., je peux enfin revenir pour ma réunion!","","","","repoint_target"
+En tant que manager du département des achats de Gale Corp., je peux enfin revenir pour ma réunion!","// init NAME_1B, $4c
+Dr. Leo akhirnya menyelesaikan alat anti-gravitasi! Sebagai pengelola bagian pengadaan PT. Gale, saya bisa kembali menghadiri rapat penting!","","","repoint_target"
 "0e","77d3","","// init NAME_1C, $29
 啊啊啊啊啊!!
 巴洛特啊!
@@ -474,11 +560,15 @@ Ballot! You're right on time!
 There's been a major breakthrough!","// init NAME_1C, $29
 AAAAAAAHHH!!
 Ballot! Excellent timing!
-On a fait une découverte énorme!","","","","repoint_target"
+On a fait une découverte énorme!","// init NAME_1C, $29
+AAAAAAAHHH!!
+Ballot! Kamu tepat waktu!
+Ada terobosan besar!","","","repoint_target"
 "0e","7809","","// init NAME_BALLOT, $00
 了不起的發現?","// init NAME_BALLOT, $00
 A major breakthrough?","// init NAME_BALLOT, $00
-Une découverte énorme?","","","","repoint_target"
+Une découverte énorme?","// init NAME_BALLOT, $00
+Terobosan yang besar?","","","repoint_target"
 "0e","781b","","// init NAME_1C, $29
 我看了你的設計
 圖，
@@ -495,7 +585,10 @@ These blueprints are for a giant spaceship!
 Where could you have gotten these?","// init NAME_1C, $29
 J'ai jeté un oeil aux diagrammes que tu m'as donné, et ils sont incroyables!
 C'est le schéma d'un énorme vaisseau spatial!
-Où est-ce que tu as trouvé ça?","","","","repoint_target"
+Où est-ce que tu as trouvé ça?","// init NAME_1C, $29
+Saya melihat cetak-cetak biru yang kamu berikan, dan lembaran-lembaran itu benar-benar menakjubkan!
+Cetak biru ini untuk pesawat angkasa yang besar!
+Darimana kamu mendapatkannya?","","","repoint_target"
 "0e","788a","","// init NAME_BALLOT, $2b
 這是爸爸唯一留
 下的東西⋯⋯
@@ -507,7 +600,9 @@ Où est-ce que tu as trouvé ça?","","","","repoint_target"
 This is the only thing my father left behind..
 I hoped that by following in his footsteps, I'd figure out where he went.","// init NAME_BALLOT, $2b
 C'est la dernière chose qu'il me reste de mon père.
-J'espérais qu'en suivant cette piste, je découvrirai où il est allé.","","","","repoint_target"
+J'espérais qu'en suivant cette piste, je découvrirai où il est allé.","// init NAME_BALLOT, $2b
+Ini satu-satunya barang yang ditinggalkan ayahku...
+Aku harap dengan mengikuti jejaknya, aku bisa tahu kemana dia pergi.","","","repoint_target"
 "0e","78d6","","// init NAME_1C, $29
 是這樣啊!
 ⋯⋯⋯⋯這是什
@@ -525,7 +620,11 @@ Unless...","// init NAME_1C, $29
 Je vois!
 ... Attends, qu'est-ce que c'est que ça?
 Dans le schéma pour le noyau énergétique, il manque 8 pièces...
-Se pourrait-il que...","","","","repoint_target"
+Se pourrait-il que...","// init NAME_1C, $29
+Oh, begitu...
+Tunggu, apa ini?
+Dalam cetak biru bagian Inti, ada 8 pecahan yang hilang...
+Kecuali...","","","repoint_target"
 "0e","792c","","// init NAME_1C, $29
 就是這個!
 『動力晶片』!
@@ -561,7 +660,14 @@ De ce que je sais, il s'agit de puces en possession des 8 scientifiques, et j'ai
 Ballot!
 Tu veux retrouver ton père, pas vrai? Que dirais-tu de faire un petit marché?
 Je m'occupe de la coque du vaisseau, et pendant ce temps, tu retrouves les 7 autres puces pour qu'on puisse faire voler l'engin.
-Qu'en dis-tu?","","thank you dr. leo, very cool","","repoint_target"
+Qu'en dis-tu?","// init NAME_1C, $29
+Saya tahu!
+Bagian-bagian ini bersesuaian dengan rangkaian listrik, yang merupakan bagian terpenting dari inti!
+Setahu saya, chip-chip itu berada di tangan 8 ilmuwan, dan saya pegang salah satunya.
+Ballot!
+Kamu ingin mencari ayahmu, kan? Bagaimana jika kita membuat persepakatan?
+Saya menyelesaikan lambung pesawat angkasa, sementara kamu mencari 7 chip lainnya supaya pesawat ini bisa terbang.
+Bagaimana?","thank you dr. leo, very cool","","repoint_target"
 "0e","7a00","","// init NAME_BALLOT, $2d
 動力晶片?
 爸爸一定也想解
@@ -576,7 +682,11 @@ Dr. Leo, it's a deal!","// init NAME_BALLOT, $2d
 Des puces électroniques?
 Papa devait être en train de tenter de résoudre leur mystère.
 Très bien!
-Marché conclu!","","","","repoint_target"
+Marché conclu!","// init NAME_BALLOT, $2d
+Rangkaian listrik?
+Ayah pasti ingin memecahkan rahasia benda-benda ini.
+Oke!
+Dr. Leo, aku sepakat!","","","repoint_target"
 "0e","7a3f","","// init NAME_1B, $4c
 這個晶片?
 我好像在董事長
@@ -601,7 +711,12 @@ Cette puce...
 Je me rappelle que le PDG avait quelque chose comme ça, mais il est arrivé quelque chose depuis...
 C'est... un peu difficile à expliquer.
 Ballot, si tu passes aux locaux de Gale Corp., je pourrai te prendre un rendez-vous avec le PDG.
-Je dois y aller maintenant, au revoir!","","","","repoint_target"
+Je dois y aller maintenant, au revoir!","// init NAME_1B, $4c
+Rangkaian-rangkaian ini?
+Saya ingat Pak Ketua pernah memiliki barang seperti itu, tapi sesuatu yang buruk terjadi sejak itu...
+Agak sulit untuk dijelaskan...
+Ballot, jika kamu berkunjung ke PT. Gale, akan saya adakan pertemuan dengan Pak Ketua.
+Saya harus pergi sekarang, sampai jumpa!","","","repoint_target"
 "0e","7ad8","","// init NAME_1C, $29
 你不是想找到你
 爸爸嗎?
@@ -615,7 +730,9 @@ Je dois y aller maintenant, au revoir!","","","","repoint_target"
 You want to find your father, don't you?
 I'll finish the hull of the spaceship, so go and hunt down the other 7 chips so that we can make this thing fly.","// init NAME_1C, $29
 Tu veux retrouver ton père, pas vrai?
-Je m'occupe de la coque du vaisseau, et pendant ce temps, tu retrouves les 7 autres puces pour qu'on puisse faire voler l'engin.","","","","repoint_target"
+Je m'occupe de la coque du vaisseau, et pendant ce temps, tu retrouves les 7 autres puces pour qu'on puisse faire voler l'engin.","// init NAME_1C, $29
+Kamu ingin mencari ayahmu, kan?
+Saya menyelesaikan lambung pesawat angkasa, sementara kamu mencari 7 chip lainnya supaya pesawat ini bisa terbang.","","","repoint_target"
 "0e","7b3a","","// init NAME_1C, $29
 巴洛特~
 慢著慢著!
@@ -640,7 +757,12 @@ Ballot, attends! Ne pars pas tout de suite.
 Voilà pour toi!
 C'est un radar pour t'aider à trouver les puces, et un PDA.
 Avec ça, tu pourras savoir où se trouvent toutes les puces!
-Et avec le PDA, tu pourras aussi m'envoyer celles que tu trouves.","","","","repoint_target"
+Et avec le PDA, tu pourras aussi m'envoyer celles que tu trouves.","// init NAME_1C, $29
+Ballot, tunggu! Jangan buru-buru.
+Ini untuk kamu!
+Itu pelacak untuk mencari rangkaian-rangkaian itu, dan sebuah PDA.
+Dengan alat-alat ini kamu bisa tahu dimana semua rangkaian berada!
+PDA tentunya akan mempermudah juga: bisa kamu pakai untuk mengirim diagram-diagram yang kamu dapatkan.","","","repoint_target"
 "0e","7bcb","","// init NAME_BALLOT, $2a
 得到了追蹤器!","// init NAME_BALLOT, $2a
 Got the Chip Tracker!","// init NAME_BALLOT, $2a
@@ -660,12 +782,15 @@ Dapat PDA!","","","repoint_target"
 Buck, why don't you go with Ballot?
 With more people in the party, it'll be safer for him to travel.","// init NAME_1C, $29
 Buck, pourquoi n'irais-tu pas avec Ballot?
-Ce sera plus sûr pour lui de voyager avec d'autres personnes.","","","","repoint_target"
+Ce sera plus sûr pour lui de voyager avec d'autres personnes.","// init NAME_1C, $29
+Buck, kenapa kamu tidak pergi saja dengan Ballot?
+Dia akan lebih aman berjalan dengan teman.","","","repoint_target"
 "0e","7c1d","","// init NAME_BUCK, $01
 博士‧巴克‧
 巴克⋯","// init NAME_BUCK, $01
 ＤＯＣＴＯＲ．．．． ＢＵＣＫ．．． ＢＵＣＫ．．．","// init NAME_BUCK, $01
-ＤＯＣＴＥＵＲ．．． ＢＵＣＫ．．． ＢＵＣＫ．．．","","","","repoint_target"
+ＤＯＣＴＥＵＲ．．． ＢＵＣＫ．．． ＢＵＣＫ．．．","// init NAME_BUCK, $01
+ＤＯＫＴＯＲ．．． ＢＵＣＫ．．． ＢＵＣＫ．．．","","","repoint_target"
 "0e","7c32","","// init NAME_1C, $29
 我知道你在想什
 麼!
@@ -678,11 +803,15 @@ Once you return safely, I'll figure out something to make you more humanlike!
 How about that?","// init NAME_1C, $29
 Je sais à quoi tu penses!
 Une fois que tu reviendras, je trouverai quelque chose pour te rendre plus humain!
-Qu'en dis-tu?","","","","repoint_target"
+Qu'en dis-tu?","// init NAME_1C, $29
+Ah, saya tahu yang kamu pikirkan!
+Setelah kamu pulang dengan selamat, saya akan memikirkan sesuatu untuk membuatmu lebih seperti manusia!
+Bagaimana?","","","repoint_target"
 "0e","7c75","","// init NAME_BUCK, $01
 博士‧真的?","// init NAME_BUCK, $01
 ＤＯＣＴＯＲ．．． ＲＥＡＬＬＹ？","// init NAME_BUCK, $01
-ＤＯＣＴＥＵＲ．．． ＶＲＡＩＭＥＮＴ？","","","","repoint_target"
+ＤＯＣＴＥＵＲ．．． ＶＲＡＩＭＥＮＴ？","// init NAME_BUCK, $01
+ＤＯＫＴＯＲ．．． ＢＥＮＡＲＫＡＨ？","","","repoint_target"
 "0e","7c82","","// init NAME_1C, $29
 就這樣改一改⋯
 就是這裡⋯
@@ -701,12 +830,17 @@ I've named it Beattro, and it can carry you across small gaps in the road!","// 
 Juste changer ci, souder ça...
 OK! C'est terminé!
 Buck, ce petit oiseau robot tout neuf est pour toi!
-Je l'ai appelé Beattro. Il peut te transporter par-dessus les trous dans la route!","","","","repoint_target"
+Je l'ai appelé Beattro. Il peut te transporter par-dessus les trous dans la route!","// init NAME_1C, $29
+Tinggal ubah ini, solder itu...
+Oke! Modifikasinya selesai!
+Buck, robot burung baru ini untukmu!
+Namanya Beattro, dan ia bisa membawamu melintas lubang kecil di jalanan!","","","repoint_target"
 "0e","7ce9","","// init NAME_BALLOT, $2a
 巴克&機械鳥
 加入隊伍!","// init NAME_BALLOT, $2a
 Buck and Beattro joined the party!","// init NAME_BALLOT, $2a
-Buck et Beattro ont rejoint l'équipe!","","hmm, shouldn't this have a :vf: text init?","","repoint_target"
+Buck et Beattro ont rejoint l'équipe!","// init NAME_BALLOT, $2a
+Buck dan Beattro bergabung denganmu!","hmm, shouldn't this have a :vf: text init?","","repoint_target"
 "0e","7d01","","// init NAME_18, $2f
 星獸‧機械鳥加
 入隊伍。
@@ -717,26 +851,30 @@ Buck et Beattro ont rejoint l'équipe!","","hmm, shouldn't this have a :vf: text
 飛越地圖的小型
 凹洞。","// init NAME_18, $2f
 Star Beast Beattro joined the party. If Buck is leading the party, he can use Beattro's power to cross small holes in the ground.","// init NAME_18, $2f
-Beattro la Bêtoile a rejoint l'équipe. Si Buck est en tête de l'équipe, il peut utiliser Beattro pour traverser les trous sur le chemin.","","TM get!","oh wait, here it is","repoint_target"
+Beattro la Bêtoile a rejoint l'équipe. Si Buck est en tête de l'équipe, il peut utiliser Beattro pour traverser les trous sur le chemin.","// init NAME_18, $2f
+Makhluk Bintang Beattro bergabung. Jika Buck sedang di depan, dia bisa menggunakan kemampuan Beattro untuk melintasi lubang kecil.","TM get!","oh wait, here it is","repoint_target"
 "0e","7d5d","","// init NAME_1C, $29
 去吧~
 到加爾企業，
 尋找乘下的七個
 動力晶片吧。","// init NAME_1C, $29
 Go on! You can start at GaleCorp, and find the other 7 circuits from there.","// init NAME_1C, $29
-Allez-y! Vous pouvez commencer par Gale Corp., et trouver les 7 autres puces à partir de là.","","","","repoint_target"
+Allez-y! Vous pouvez commencer par Gale Corp., et trouver les 7 autres puces à partir de là.","// init NAME_1C, $29
+Bergeraklah! Kamu bisa mulai di PT. Gale, dan dari sana carilah 7 rangkaian lainnya.","","","repoint_target"
 "0e","7d8b","","// init NAME_1C, $29
 去吧~
 到加爾企業，
 尋找乘下的七個
 動力晶片吧。","// init NAME_1C, $29
 Go on! You can start at GaleCorp, and find the other 7 circuits from there.","// init NAME_1C, $29
-Allez-y! Vous pouvez commencer par Gale Corp., et trouver les 7 autres puces à partir de là.","",":vf:","","repoint_target"
+Allez-y! Vous pouvez commencer par Gale Corp., et trouver les 7 autres puces à partir de là.","// init NAME_1C, $29
+Bergeraklah! Kamu bisa mulai di PT. Gale, dan dari sana carilah 7 rangkaian lainnya.",":vf:","","repoint_target"
 "0e","7db9","","// init NAME_BALLOT, $2b
 這個洞⋯
 該怎麼通過呢?","// init NAME_BALLOT, $2b
 This hole... How will we cross it?","// init NAME_BALLOT, $2b
-Ce trou... Comment le traverser?","","","","repoint_target"
+Ce trou... Comment le traverser?","// init NAME_BALLOT, $2b
+Lubang ini... bagaimana kita melewatinya?","","","repoint_target"
 "0e","7dd1","","// init NAME_BUCK, $01
 巴洛特‧巴克‧
 換‧在排頭。
@@ -744,25 +882,28 @@ Ce trou... Comment le traverser?","","","","repoint_target"
 洞。","// init NAME_BUCK, $01
 ＢＡＬＬＯＴ！ ＬＥＴ ＢＵＣＫ ＬＥＡＤ． ＢＥＡＴＴＲＯ ＣＡＮ ＦＬＹ ＯＶＥＲ ＨＯＬＥＳ．","// init NAME_BUCK, $01
 ＢＡＬＬＯＴ！
-ＬＡＩＳＳＥ ＢＵＣＫ ＭＥＮＥＲ． ＢＥＡＴＴＲＯ ＰＥＵＴ ＶＯＬＥＲ ＰＡＲ－ＤＥＳＳＵＳ ＴＲＯＵＳ．","","","","repoint_target"
+ＬＡＩＳＳＥ ＢＵＣＫ ＭＥＮＥＲ． ＢＥＡＴＴＲＯ ＰＥＵＴ ＶＯＬＥＲ ＰＡＲ－ＤＥＳＳＵＳ ＴＲＯＵＳ．","// init NAME_BUCK, $01
+ＢＡＬＬＯＴ！ ＢＩＡＲ ＢＵＣＫ ＳＡＪＡ ＹＡＮＧ ＰＩＭＰＩＮ． ＢＥＡＴＴＲＯ ＢＩＳＡ ＭＥＬＩＮＴＡＳＩ ＬＵＢＡＮＧ．","","","repoint_target"
 "0e","7dff","","// init NAME_BALLOT, $00
 不行~
 我們去找伊隼人
 問天才機械發明
 家的事情⋯⋯","// init NAME_BALLOT, $00
 No! I better ask Hayato about the genius mechanical inventor first...","// init NAME_BALLOT, $00
-Non! Je ferais mieux d'interroger Hayato sur le mécanicien de génie d'abord...","","why is this here hmmm","","repoint_target"
+Non! Je ferais mieux d'interroger Hayato sur le mécanicien de génie d'abord...","// init NAME_BALLOT, $00
+Tidak! Aku harus tanya Hayato tentang penemu genius itu...","why is this here hmmm","","repoint_target"
 "0e","7e33","","// init NAME_1C, $29
 如果沒有水晶村
 的彩虹水晶的話
 一定贏不了的。","// init NAME_1C, $29
 Without the Rainbow Crystal, I'll never win...","// init NAME_1C, $29
 Sans le Cristal Prismatique, on ne gagnera jamais...","// init NAME_1C, $29
-Tanpa Kristal Pelangi, aku takkan menang...","","","repoint_target"
+Tanpa Kristal Pelangi itu, saya takkan menang...","","","repoint_target"
 "0e","7e60","","// init NAME_BALLOT, $00
 來吧!","// init NAME_BALLOT, $00
 Come on!","// init NAME_BALLOT, $00
-Allez!","","","","repoint_target"
+Allez!","// init NAME_BALLOT, $00
+Ayo!","","","repoint_target"
 "0e","6550","","// init NAME_BLANK, $1b
 聽說科技城的
 雷歐，
@@ -785,18 +926,21 @@ Itu sudah pasti; sejak Kristal Pelangi berhenti produksi, beliau tidak punya suk
 有一顆七彩的水
 晶耶!","// init NAME_BLANK, $1e
 There's a colorful crystal in my dad's pocket!","// init NAME_BLANK, $1e
-Il y a un cristal multicolore dans la poche de papa!","","tweaked the sentence to flow better - Waddle","","repoint_target"
+Il y a un cristal multicolore dans la poche de papa!","// init NAME_BLANK, $1e
+Ada kristal penuh warna di kantong bapakku!","tweaked the sentence to flow better - Waddle","","repoint_target"
 "0e","65de","","// init NAME_BUCK, $01
 水晶?
 給巴克‧雷歐博
 士‧要!","// init NAME_BUCK, $01
 Ａ ＣＲＹＳＴＡＬ？ ＧＩＶＥ ＩＴ ＴＯ ＢＵＣＫ！ ＤＲ． ＬＥＯ ＮＥＥＤＳ ＩＴ！","// init NAME_BUCK, $01
 ＣＲＩＳＴＡＬ？
-ＤＯＮＮＥ Ａ ＢＵＣＫ！ ＤＲ． ＬＥＯ Ａ ＢＥＳＯＩＮ！","","r o b o t","","repoint_target"
+ＤＯＮＮＥ Ａ ＢＵＣＫ！ ＤＲ． ＬＥＯ Ａ ＢＥＳＯＩＮ！","// init NAME_BUCK, $01
+ＫＲＩＳＴＡＬ？ ＢＥＲＩＫＡＮ ＫＥ ＢＵＣＫ！ ＤＲ．ＬＥＯ ＢＵＴＵＨ ＩＴＵ！","r o b o t","","repoint_target"
 "0e","65fc","","// init NAME_BLANK, $1e
 不~要!","// init NAME_BLANK, $1e
 No!","// init NAME_BLANK, $1e
-Non!","","","","repoint_target"
+Non!","// init NAME_BLANK, $1e
+Tidak!","","","repoint_target"
 "0e","6607","","// init NAME_BLANK, $20
 站住!
 這裡是閃電隊的
@@ -804,19 +948,23 @@ Non!","","","","repoint_target"
 Get out!
 This place is the Volts' turf!","// init NAME_BLANK, $20
 Dégage!
-Ce coin appartient aux Volt!","","","team name mentioned here","repoint_target"
+Ce coin appartient aux Volt!","// init NAME_BLANK, $20
+Keluar!
+Ini daerah Tim Volt!","","team name mentioned here","repoint_target"
 "0e","662c","","// init NAME_BALLOT, $2d
 壁櫥裡有個洞!
 打開了!!","// init NAME_BALLOT, $2d
 There's a doorway in the closet! It's open!","// init NAME_BALLOT, $2d
 Il y a un passage dans l'armoire!
-La porte s'ouvre!","","","","repoint_target"
+La porte s'ouvre!","// init NAME_BALLOT, $2d
+Ada pintu di dalam kloset! Pintunya terbuka!","","","repoint_target"
 "0e","6647","","// init NAME_20, $30
 輸、入、密、碼
 ?","// init NAME_20, $30
 ＡＵＴＨＯＲＩＺＡＴＩＯＮ ＮＥＥＤＥＤ． ＰＡＳＳＷＯＲＤ， ＰＬＥＡＳＥ．","// init NAME_20, $30
 ＡＵＴＯＲＩＳＡＴＩＯＮ ＮＥＣＥＳＳＡＩＲＥ．
-ＶＥＵＩＬＬＥＺ ＥＮＴＲＥＲ ＬＥ ＭＯＴ ＤＥ ＰＡＳＳＥ．","","","","repoint_target"
+ＶＥＵＩＬＬＥＺ ＥＮＴＲＥＲ ＬＥ ＭＯＴ ＤＥ ＰＡＳＳＥ．","// init NAME_20, $30
+ＷＡＪＩＢ ＯＴＯＲＩＳＡＳＩ． ＭＯＨＯＮ ＫＡＴＡ ＳＡＮＤＩＮＹＡ．","","","repoint_target"
 "0e","665b","","// init NAME_BUCK, $01
 巴洛特‧巴克‧
 試試。
@@ -825,20 +973,24 @@ La porte s'ouvre!","","","","repoint_target"
 ＢＡＬＬＯＴ． ＢＵＣＫ ＷＡＮＴＳ ＴＯ ＴＲＹ．
 ＢＵＣＫ ＷＩＬＬ ＬＥＡＤ ＴＨＥ ＷＡＹ．","// init NAME_BUCK, $01
 ＢＡＬＬＯＴ， ＢＵＣＫ ＶＡ ＥＳＳＡＹＥＲ．
-ＬＡＩＳＳＥ ＢＵＣＫ ＭＥＮＥＲ．","","
+ＬＡＩＳＳＥ ＢＵＣＫ ＭＥＮＥＲ．","// init NAME_BUCK, $01
+ＢＡＬＬＯＴ． ＢＵＣＫ ＩＮＧＩＮ ＣＯＢＡ．
+ＢＵＣＫ ＡＫＡＮ ＰＩＭＰＩＮ．","
 placing buck at the top of the party list?","","repoint_target"
 "0e","6689","","// init NAME_BALLOT, $2d
 壁櫥裡有個洞!
 打開了!!","// init NAME_BALLOT, $2d
 There's a doorway in the closet! It's open!","// init NAME_BALLOT, $2d
 Il y a un passage dans l'armoire!
-La porte s'ouvre!","","same as 0e:662c","","repoint_target"
+La porte s'ouvre!","// init NAME_BALLOT, $2d
+Ada pintu di dalam kloset! Pintunya terbuka!","same as 0e:662c","","repoint_target"
 "0e","66a4","","// init NAME_20, $30
 輸、入、密、碼
 ?","// init NAME_20, $30
 ＡＵＴＨＯＲＩＺＡＴＩＯＮ ＮＥＥＤＥＤ． ＰＡＳＳＷＯＲＤ， ＰＬＥＡＳＥ．","// init NAME_20, $30
 ＡＵＴＯＲＩＳＡＴＩＯＮ ＮＥＣＥＳＳＡＩＲＥ．
-ＶＥＵＩＬＬＥＺ ＥＮＴＲＥＲ ＬＥ ＭＯＴ ＤＥ ＰＡＳＳＥ．","","same as 0e:6647","","repoint_target"
+ＶＥＵＩＬＬＥＺ ＥＮＴＲＥＲ ＬＥ ＭＯＴ ＤＥ ＰＡＳＳＥ．","// init NAME_20, $30
+ＷＡＪＩＢ ＯＴＯＲＩＳＡＳＩ． ＭＯＨＯＮ ＫＡＴＡ ＳＡＮＤＩＮＹＡ．","same as 0e:6647","","repoint_target"
 "0e","66b8","","// init NAME_BUCK, $01
 巴克‧解碼。
 ¢2#×°£
@@ -850,11 +1002,17 @@ MKC-+3
 ＰＡＳＳＷＯＲＤ ＩＳ ９７３５","// init NAME_BUCK, $01
 ＢＵＣＫ ＶＡ ＤＥＣＯＤＥＲ ＭＯＴ ＤＥ ＰＡＳＳＥ．
 ．．．
-ＭＯＴ ＤＥ ＰＡＳＳＥ： ９７３５","","might need to adjust the ""decoding"" part since it messes up the game when i converted this","","repoint_target"
+ＭＯＴ ＤＥ ＰＡＳＳＥ： ９７３５","// init NAME_BUCK, $01
+ＢＵＣＫ ＣＯＢＡ ＰＥＣＡＨＫＡＮ ＫＡＴＡ ＳＡＮＤＩＮＹＡ．
+．．．
+ＫＡＴＡ ＳＡＮＤＩ
+ＡＤＡＬＡＨ
+９７３５","might need to adjust the ""decoding"" part since it messes up the game when i converted this","","repoint_target"
 "0e","66eb","","// init NAME_20, $30
 正確~正確。","// init NAME_20, $30
 ＡＣＣＥＳＳ ＧＲＡＮＴＥＤ．","// init NAME_20, $30
-ＡＣＣＥＳ ＡＵＴＯＲＩＳＥ．","","","","repoint_target"
+ＡＣＣＥＳ ＡＵＴＯＲＩＳＥ．","// init NAME_20, $30
+ＡＫＳＥＳ ＤＩＢＥＲＩＫＡＮ．","","","repoint_target"
 "0e","66fa","","// init NAME_22, $32
 你們是誰?
 侵入祕密基地的
@@ -866,7 +1024,10 @@ How dare you invade our secret base!
 We'll teach you a lesson!","// init NAME_22, $32
 Qui es-tu? 
 Comment oses-tu t'infiltrer dans notre base secrète!
-Je vais te donner une bonne leçon!","","","","repoint_target"
+Je vais te donner une bonne leçon!","// init NAME_22, $32
+Siapa kamu?
+Berani-beraninya kamu menyusup ke dalam markas rahasia kami!
+Akan kami berikan pelajaran!","","","repoint_target"
 "0e","672d","","// init NAME_22, $32
 可惡!
 這裡失守了嗎?
@@ -876,13 +1037,16 @@ Je vais te donner une bonne leçon!","","","","repoint_target"
 Damn it! We've been found out!
 I'm sorry, chief and big sis, but we need to retreat!","// init NAME_22, $32
 Bon sang! On est découverts!
-Désolé chef, désolé m'dame, mais va falloir fuir!","","","","repoint_target"
+Désolé chef, désolé m'dame, mais va falloir fuir!","// init NAME_22, $32
+Sial! Kita ketahuan!
+Maafkan aku, bos, tapi kita harus kabur!","","","repoint_target"
 "0e","676a","","// init NAME_22, $32
 不行~
 得趕快徹退才行
 !","// init NAME_22, $32
 No! We need to get out of here!","// init NAME_22, $32
-Non! Il faut sortir d'ici!","","","","repoint_target"
+Non! Il faut sortir d'ici!","// init NAME_22, $32
+Tidak! Kita harus keluar!","","","repoint_target"
 "0e","6784","","// init NAME_22, $32
 你們是誰?
 讓開!
@@ -891,7 +1055,9 @@ Non! Il faut sortir d'ici!","","","","repoint_target"
 Who are you? Get out of the way! 
 You won't stop me from retreating!","// init NAME_22, $32
 Qui es-tu? Dégage de là!
-Tu m'empêcheras pas de fuir!","","","","repoint_target"
+Tu m'empêcheras pas de fuir!","// init NAME_22, $32
+Siapa kamu? Minggir!
+Kamu tak akan mencegah kita kabur!","","","repoint_target"
 "0e","67ae","","// init NAME_22, $32
 可惡!
 雖然被打敗了，
@@ -899,7 +1065,9 @@ Tu m'empêcheras pas de fuir!","","","","repoint_target"
 了我的徹退的!","// init NAME_22, $32
 Damn it! I've been beaten! But you're still no match my retreating skills!","// init NAME_22, $32
 Bon sang, j'ai été vaincu!
-Mais tu ne peux rien face à mes capacités de fuite!","","","","repoint_target"
+Mais tu ne peux rien face à mes capacités de fuite!","// init NAME_22, $32
+Sialan, dikalahkan! Tapi kamu tak bisa menandingi kemampuan kami untuk...
+KABUR!","","","repoint_target"
 "0e","67e0","","// init NAME_BALLOT, $00
 這一定就是彩虹
 水晶了!
@@ -909,7 +1077,8 @@ Mais tu ne peux rien face à mes capacités de fuite!","","","","repoint_target"
 閃電隊了!","// init NAME_BALLOT, $00
 This must be the Rainbow Crystal! With this, Dr. Leo will be able to defeat the Volts!","// init NAME_BALLOT, $00
 Ca doit être le Cristal Prismatique!
-Avec ça, le Dr. Léo devrait pouvoir vaincre les Volt!","","","","repoint_target"
+Avec ça, le Dr. Léo devrait pouvoir vaincre les Volt!","// init NAME_BALLOT, $00
+Ini pasti Kristal Pelangi! Dengan ini, Dr. Leo akan bisa mengalahkan para Volt itu!","","","repoint_target"
 "0e","6821","","// init NAME_BALLOT, $2a
 得到彩虹水晶。","// init NAME_BALLOT, $2a
 Got the Rainbow Crystal!","// init NAME_BALLOT, $2a
@@ -926,7 +1095,9 @@ Dapat Kristal Pelangi!","","","repoint_target"
 Those Volt guys ran for the hills!
 We've all gotten our jobs back. I've never been this happy to go to work!","// init NAME_BLANK, $12
 La Team Volt a pris ses jambes à son cou!
-On a tous récupéré nos postes. Je n'ai jamais été aussi heureux d'aller travailler!","","","","repoint_target"
+On a tous récupéré nos postes. Je n'ai jamais été aussi heureux d'aller travailler!","// init NAME_BLANK, $12
+Volt-Volt itu kabur semua!
+Kita bisa bekerja kembali. Tak pernah saya sebahagia ini untuk kembali kerja!","","","repoint_target"
 "0e","6882","","// init NAME_BLANK, $14
 霸佔水晶礦坑的
 閃電集團消失了
@@ -934,7 +1105,8 @@ On a tous récupéré nos postes. Je n'ai jamais été aussi heureux d'aller tra
 好消息。","// init NAME_BLANK, $14
 Good news! Those volty guys occupying the mine have disappeared!","// init NAME_BLANK, $14
 Ces gens de la Team Volt qui bloquaient l'accès aux mines ont disparu.
-Pfiou!","","","","repoint_target"
+Pfiou!","// init NAME_BLANK, $14
+Kabar gembira! Penjahat Volt yang menduduki tambang itu sudah hilang!","","","repoint_target"
 "0e","68b3","","// init NAME_BLANK, $19
 前幾天經過科技
 城的發電塔，
@@ -943,7 +1115,8 @@ Pfiou!","","","","repoint_target"
 真是可怕!","// init NAME_BLANK, $19
 A few days ago, while walking past Tech City's power plant, there was a giant cat monster! I ran for my life!","// init NAME_BLANK, $19
 Il y a quelques jours, je suis passé devant la centrale de Technoville, et il y avait un énorme monstre-chat!
-J'ai eu si peur, j'ai pris mes jambes à mon cou!","","","","repoint_target"
+J'ai eu si peur, j'ai pris mes jambes à mon cou!","// init NAME_BLANK, $19
+Beberapa hari lalu, ketika melewati gedung pembangkit Kota Tekno, ada kucing besar! Aku lari ketakutan!","","","repoint_target"
 "0e","68f4","","// init NAME_BLANK, $15
 哈哈哈~
 老公又有工作了
@@ -953,7 +1126,9 @@ J'ai eu si peur, j'ai pris mes jambes à mon cou!","","","","repoint_target"
 Hahahaha, my hubby has a job again!
 I'll go whip up a deluxe meal!","// init NAME_BLANK, $15
 Hahahaha, mon mari peut retourner au travail!
-Je vais pouvoir lui faire un super-méga- déjeuner!","","","","repoint_target"
+Je vais pouvoir lui faire un super-méga- déjeuner!","// init NAME_BLANK, $15
+Hahahaha, suamiku bekerja lagi!
+Aku masak makanan mewah untuknya!","","","repoint_target"
 "0e","6923","","// init NAME_BLANK, $1e
 爸爸的口袋裡，
 有一顆七彩的水
@@ -964,7 +1139,9 @@ Je vais pouvoir lui faire un super-méga- déjeuner!","","","","repoint_target"
 There's a colourful crystal in my dad's pocket!
 I'll never give this treasure to anyone!","// init NAME_BLANK, $1e
 Il y a un cristal multicolore dans la poche de papa!
-Je le donnerai à personne, c'est un trésor!","","","","repoint_target"
+Je le donnerai à personne, c'est un trésor!","// init NAME_BLANK, $1e
+Ada kristal penuh warna di kantong bapakku!
+Aku tak akan memberinya ke orang!","","","repoint_target"
 "0e","6967","","// init NAME_1C, $29
 這不是彩虹水晶
 嗎?
@@ -976,15 +1153,19 @@ Isn't this a rainbow crystal? That's great!
 Now I can make a new core for the Golden Phoenix!","// init NAME_1C, $29
 Ne serait-ce pas un Cristal Prismatique?
 Super!
-Avec ça, je peux faire un nouveau noyau pour le Phénix d'Or!","","","","repoint_target"
+Avec ça, je peux faire un nouveau noyau pour le Phénix d'Or!","// init NAME_1C, $29
+Bukankah ini Kristal Pelangi? Bagus!
+Saya bisa membuat inti baru untuk Garuda Emas!","","","repoint_target"
 "0e","69a6","","// init NAME_1C, $29
 ⋯⋯⋯","// init NAME_1C, $29
 ...","// init NAME_1C, $29
-...","","","","repoint_target"
+...","// init NAME_1C, $29
+...","","","repoint_target"
 "0e","69ae","","// init NAME_1C, $29
 ⋯⋯⋯","// init NAME_1C, $29
 ...","// init NAME_1C, $29
-...","","","","repoint_target"
+...","// init NAME_1C, $29
+...","","","repoint_target"
 "0e","69b6","","// init NAME_1C, $29
 完成了!
 真‧黃金鳳凰號
@@ -997,12 +1178,16 @@ The True Golden Phoenix!
 With this, I can definitely defeat the Volts!","// init NAME_1C, $29
 Et voilà!
 Le Super Phénix d'Or!
-Avec ça, on va pouvoir vaincre les Volt à coup sûr!","","this is definitely leo speaking lol","","repoint_target"
+Avec ça, on va pouvoir vaincre les Volt à coup sûr!","// init NAME_1C, $29
+Selesai!
+Garuda Emas Sejati!
+Dengan ini saya akhirnya bisa kalahkan para Volt!","this is definitely leo speaking lol","","repoint_target"
 "0e","69ef","","// init NAME_BALLOT, $00
 嗯，一定可以的
 。","// init NAME_BALLOT, $00
 Sure you can...","// init NAME_BALLOT, $00
-Ouais, probablement.","","","","repoint_target"
+Ouais, probablement.","// init NAME_BALLOT, $00
+Itu benar...","","","repoint_target"
 "0e","6a00","","// init NAME_1C, $29
 ⋯⋯⋯
 有了上次輸了的
@@ -1017,11 +1202,15 @@ The shadow of my former loss still haunts me.
 I don't dare to try again, so will you take the True Golden Phoenix and go in my stead to battle Team Volt?","// init NAME_1C, $29
 ...
 Ma précédente défaite me hante encore.
-Je n'ose pas tenter le défi à nouveau... Prends mon Super Phénix d'Or, et va affronter la Team Volt à ma place, d'accord?","","","","repoint_target"
+Je n'ose pas tenter le défi à nouveau... Prends mon Super Phénix d'Or, et va affronter la Team Volt à ma place, d'accord?","// init NAME_1C, $29
+...
+Bayang-bayang kekalahanku yang sebelumnya, masih menghantuiku.
+Saya tak berani coba lagi, jadi maukah kamu mengendalikan Garuda Emas Sejati dan menggantikanku melawan Tim Volt?","","","repoint_target"
 "0e","6a52","","// init NAME_BALLOT, $2a
 得到鳳凰號!","// init NAME_BALLOT, $2a
 Got the Phoenix!","// init NAME_BALLOT, $2a
-Obtenu Phénix!","","","","repoint_target"
+Obtenu Phénix!","// init NAME_BALLOT, $2a
+Dapat Garuda!","","","repoint_target"
 "0e","6a61","","// init NAME_1C, $29
 ⋯⋯⋯
 有了上次輸了的
@@ -1036,13 +1225,17 @@ The shadow of my former loss still haunts me.
 I don't dare to try again, so will you take the True Golden Phoenix and go in my stead to battle Team Volt?","// init NAME_1C, $29
 ...
 Ma précédente défaite me hante encore.
-Je n'ose pas tenter le défi à nouveau... Prends mon Super Phénix d'Or, et va affronter la Team Volt à ma place, d'accord?","","same as 0e:6a00","","repoint_target"
+Je n'ose pas tenter le défi à nouveau... Prends mon Super Phénix d'Or, et va affronter la Team Volt à ma place, d'accord?","// init NAME_1C, $29
+...
+Bayang-bayang kekalahanku yang sebelumnya, masih menghantuiku.
+Saya tak berani coba lagi, jadi maukah kamu mengendalikan Garuda Emas Sejati dan menggantikanku melawan Tim Volt?","same as 0e:6a00","","repoint_target"
 "0e","6ab3","","// init NAME_1E, $27
 峨~呵呵呵~
 你們終於來了。","// init NAME_1E, $27
 Haha! So you finally came!","// init NAME_1E, $27
 Ohohohoho!
-Te voilà enfin!","","","","repoint_target"
+Te voilà enfin!","// init NAME_1E, $27
+Haha! Akhirnya kamu datang juga!","","","repoint_target"
 "0e","6acf","","// init NAME_1F, $28
 在下還以為，
 你們夾著尾巴逃
@@ -1052,7 +1245,9 @@ Te voilà enfin!","","","","repoint_target"
 We thought you'd turned tail and fled!
 Do you still want to battle us, knowing you don't stand a chance?","// init NAME_1F, $28
 On pensait que vous aviez tous fui!
-Comptes-tu vraiment nous affronter, sachant que tu n'as aucune chance de gagner?","","","no more deepl, :gohome:","repoint_target"
+Comptes-tu vraiment nous affronter, sachant que tu n'as aucune chance de gagner?","// init NAME_1F, $28
+Kami kira kamu kabur lontang-lantung!
+Masih beranikah melawan kami, meski tahu kamu takkan menang?","","no more deepl, :gohome:","repoint_target"
 "0e","6b0b","","// init NAME_1E, $27
 峨峨峨峨~
 呵呵呵呵!
@@ -1065,7 +1260,10 @@ I can almost feel the crisp 30 million yen in my hands!
 It's a dream come true!","// init NAME_1E, $27
 Ohohéhéhé!
 Je peux presque sentir ces 30 millions de ¥ dans mes mains!
-Notre rêve va se réaliser!","","","","repoint_target"
+Notre rêve va se réaliser!","// init NAME_1E, $27
+Ehehehehehe!
+Aku hampir bisa merasakan 30 juta yen gemilang ditanganku!
+Sungguh impian yang nyata!","","","repoint_target"
 "0e","6b3f","","// init NAME_1F, $28
 還是不甘心敗在
 在下的手中嗎?
@@ -1073,7 +1271,9 @@ Notre rêve va se réaliser!","","","","repoint_target"
 樣。","// init NAME_1F, $28
 Still not content to quit and save the effort?
 This won't change anything, you know!","// init NAME_1F, $28
-Tu ne comptes toujours pas abandonner? Ca t'épargnerait l'effort, retenter de changera rien!","","","","repoint_target"
+Tu ne comptes toujours pas abandonner? Ca t'épargnerait l'effort, retenter de changera rien!","// init NAME_1F, $28
+Masih tak mau putus asa, menghemat tenaga?
+Ini takkan mengubah apa-apa, tahu!","","","repoint_target"
 "0e","6b6f","","// init NAME_1E, $27
 峨~呵呵呵~
 我就展現高貴的
@@ -1082,12 +1282,14 @@ Tu ne comptes toujours pas abandonner? Ca t'épargnerait l'effort, retenter de c
 會吧!","// init NAME_1E, $27
 Ehehehe~ I'm not usually this patient, but just this once, I'll give you another chance!","// init NAME_1E, $27
 Hi hi hi...
-Je ne suis généralement pas si patiente, mais pour cette fois, je te donne une nouvelle chance!","","racing game START!","@zumi start adding name markers here","repoint_target"
+Je ne suis généralement pas si patiente, mais pour cette fois, je te donne une nouvelle chance!","// init NAME_1E, $27
+Ehehehe~ Tidak biasanya aku sesabar ini, tapi sekali saja, aku berikan kamu kesempatan sekali lagi!","racing game START!","@zumi start adding name markers here","repoint_target"
 "0e","6ba5","","// init NAME_1F, $28
 在下⋯輸了?
 不⋯不可能!","// init NAME_1F, $28
 We... We lost?! Impossible!","// init NAME_1F, $28
-On... On a perdu?! Impossible!","","","","repoint_target"
+On... On a perdu?! Impossible!","// init NAME_1F, $28
+Kami... kami kalah?! Mustahil!","","","repoint_target"
 "0e","6bbd","","// init NAME_BLANK, $1b
 萬歲!
 雷歐的鳳凰號果
@@ -1098,14 +1300,17 @@ On... On a perdu?! Impossible!","","","","repoint_target"
 Hooray! Those dastardly Volts have lost!
 I knew it all along: Dr Leo is the best inventor in the world!","// init NAME_BLANK, $1b
 Hourra! Ces méchants Volt ont perdu!
-Je le savais! Je le savais que le Dr. Léo était le meilleur inventeur du monde!","","","","repoint_target"
+Je le savais! Je le savais que le Dr. Léo était le meilleur inventeur du monde!","// init NAME_BLANK, $1b
+Hore! Volt pengecut itu kalah!
+Benar selama ini: Dr. Leo penemu terhebat di dunia!","","","repoint_target"
 "0e","6c02","","// init NAME_BALLOT, $00
 哈哈哈~
 那三千萬的賭金
 ，
 就這麼算了吧!","// init NAME_BALLOT, $00
 Hahaha! You won't have to worry about that 30 million yen anymore!","// init NAME_BALLOT, $00
-Hahaha! Vous n'avez plus à vous en faire pour les 30 millions de ¥!","","","","repoint_target"
+Hahaha! Vous n'avez plus à vous en faire pour les 30 millions de ¥!","// init NAME_BALLOT, $00
+Hahaha! Kalian tak perlu khawatir tentang 30 juta yen itu lagi!","","","repoint_target"
 "0e","6c29","","// init NAME_BUCK, $01
 ⋯巴克‧不能‧
 笑⋯⋯
@@ -1114,7 +1319,9 @@ Hahaha! Vous n'avez plus à vous en faire pour les 30 millions de ¥!","","","",
 ＢＵＣＫ ＣＡＮＮＯＴ ＬＡＵＧＨ．．．
 ＢＵＣＫ ＷＡＮＴＳ ＴＯ ＬＡＵＧＨ．．．","// init NAME_BUCK, $01
 ＢＵＣＫ ＮＥ ＰＥＵＴ ＰＡＳ ＲＩＲＥ．．．
-ＢＵＣＫ ＶＥＵＴ ＲＩＲＥ．．．","","","","repoint_target"
+ＢＵＣＫ ＶＥＵＴ ＲＩＲＥ．．．","// init NAME_BUCK, $01
+ＢＵＣＫ ＴＡＫ ＢＩＳＡ ＫＥＴＡＷＡ．．．
+ＢＵＣＫ ＩＮＧＩＮ ＫＥＴＡＷＡ．．．","","","repoint_target"
 "0e","6c51","","// init NAME_1E, $27
 慢⋯慢⋯慢⋯
 慢著著著著!!
@@ -1126,7 +1333,10 @@ I still have one last trick up my sleeve!
 Remember this remote?","// init NAME_1E, $27
 Un... UN INSTANT!
 Il nous reste une dernière chose!
-Vous vous souvenez de ce bouton?","","","","repoint_target"
+Vous vous souvenez de ce bouton?","// init NAME_1E, $27
+T... TUNGGU!
+Aku punya satu siasat lagi!
+Ingat remot ini?","","","repoint_target"
 "0e","6c92","","// init NAME_1F, $28
 在下真是佩服拉
 琪的智慧。
@@ -1136,7 +1346,9 @@ Vous vous souvenez de ce bouton?","","","","repoint_target"
 Laki, you genius!
 Just one little press, and...!","// init NAME_1F, $28
 Laki, tu es géniale!
-Une petite pression, et...!","","""thankful for laki's ingenuity"" might need rewording","","repoint_target"
+Une petite pression, et...!","// init NAME_1F, $28
+Laqi, kamu genius!
+Hanya ditekan saja, dan...!","""thankful for laki's ingenuity"" might need rewording","","repoint_target"
 "0e","6cc8","","// init NAME_1E, $27
 沒‧有‧錯!
 峨~呵呵呵呵~
@@ -1150,7 +1362,10 @@ Your precious power plant goes boom!
 You'd better hand over that 30 million anyway!","// init NAME_1E, $27
 Eh oui!
 Votre précieuse centrale va se transformer en feu d'artifice!
-Donc vous feriez mieux de quand même nous filer les 30 millions!","","","","repoint_target"
+Donc vous feriez mieux de quand même nous filer les 30 millions!","// init NAME_1E, $27
+Benar!
+Pembangkit listrik kebanggaanmu itu didor!
+Lebih baik kalian serahkan 30 juta itu saja!","","","repoint_target"
 "0e","6d1a","","// init NAME_BLANK, $19
 雷歐博士終於打
 敗了閃電隊!
@@ -1159,13 +1374,16 @@ Donc vous feriez mieux de quand même nous filer les 30 millions!","","","","rep
 Dr Leo finally defeated the Volts!
 We shouldn't have doubted him.","// init NAME_BLANK, $19
 Le Dr. Léo a enfin vaincu les Volt!
-On n'aurait pas dû douter de lui.","","","","repoint_target"
+On n'aurait pas dû douter de lui.","// init NAME_BLANK, $19
+Dr. Leo akhirnya mengalahkan Tim Volt!
+Kita selayaknya tidak mempertanyakan beliau.","","","repoint_target"
 "0e","6d47","","// init NAME_BLANK, $17
 這裡是全世界最
 大的製作高速賽
 車的城市。","// init NAME_BLANK, $17
 This city has the largest racing car manufacturing line in the world.","// init NAME_BLANK, $17
-Cette ville a la plus grande chaîne de production de voitures de course du monde.","","from 0e5666","","repoint_target"
+Cette ville a la plus grande chaîne de production de voitures de course du monde.","// init NAME_BLANK, $17
+Kota ini memiliki pabrik mobil balap terbesar di dunia.","from 0e5666","","repoint_target"
 "0e","6d70","","// init NAME_BLANK, $1f
 很久很久之前，
 雷歐的曾祖父和
@@ -1176,20 +1394,23 @@ Cette ville a la plus grande chaîne de production de voitures de course du mond
 尊敬他。","// init NAME_BLANK, $1f
 A long time ago, Leo's great-
 grandfather and seven other scientists saved the Earth, so everyone in this city respects him.","// init NAME_BLANK, $1f
-Il y a longtemps, l'arrière grand-père de Léo et 7 autres scientifiques ont sauvé le monde, alors tout le monde ici le respecte.","","from 0e576d","","repoint_target"
+Il y a longtemps, l'arrière grand-père de Léo et 7 autres scientifiques ont sauvé le monde, alors tout le monde ici le respecte.","// init NAME_BLANK, $1f
+Dahulu kala, kakek buyut Dr. Leo dan tujuh ilmuwan lainnya menyelamatkan Bumi, jadi semua orang di kota ini menghormatinya.","from 0e576d","","repoint_target"
 "0e","6dc7","","// init NAME_BLANK, $12
 雷歐博士果然是
 世界第一的機械
 發明家。","// init NAME_BLANK, $12
 Dr Leo is certainly the best inventor in the world.","// init NAME_BLANK, $12
-Y'a pas de doute, le Dr. Léo est le meilleur inventeur du monde.","","","","repoint_target"
+Y'a pas de doute, le Dr. Léo est le meilleur inventeur du monde.","// init NAME_BLANK, $12
+Dr. Leo tentunya adalah penemu terhebat di dunia.","","","repoint_target"
 "0e","6dec","","// init NAME_BLANK, $13
 槽糕⋯
 我的水藍鑽石項
 鍊，
 藏到哪裡去了?","// init NAME_BLANK, $13
 Darn it... Where did my diamond necklace go?","// init NAME_BLANK, $13
-Flûte de zut... Où est passé mon collier en diamants?","","this is the mom who didn't hide the machine earlier","","repoint_target"
+Flûte de zut... Où est passé mon collier en diamants?","// init NAME_BLANK, $13
+Sialan... kemana kalung berlianku?","this is the mom who didn't hide the machine earlier","","repoint_target"
 "0e","6e16","","// init NAME_1D, $1a
 荳荳這台光速美
 少女初號機，
@@ -1201,11 +1422,14 @@ Flûte de zut... Où est passé mon collier en diamants?","","this is the mom wh
 6億的粉碎鑽頭
 粉碎藍色石頭!","// init NAME_1D, $1a
 Dot's lightspeed machine found a diamond, and it used its drill (worth ¥9456 billion) to crush it to pieces!","// init NAME_1D, $1a
-Ma voiture a trouvé un diamant, et a utilisé sa foreuse (à 9456 millions de ¥) pour le réduire en poudre!","","this is the same kid who had the machine earlier","","repoint_target"
+Ma voiture a trouvé un diamant, et a utilisé sa foreuse (à 9456 millions de ¥) pour le réduire en poudre!","// init NAME_1D, $1a
+Mesin supercepat Dot menemukan berlian, dan menggunakan bornya (senilai ¥9456 miliar) untuk menghancurkannya berkeping-keping!","this is the same kid who had the machine earlier","","repoint_target"
 "0e","6e80","","// init NAME_BLANK, $13
 慢⋯慢‧著!
 哇!!!!!","// init NAME_BLANK, $13
 W... Wait, what?! 
 Aaah!","// init NAME_BLANK, $13
 Que... Qu-QUOI?!
-AAAH!","","","","repoint_target"
+AAAH!","// init NAME_BLANK, $13
+A... APA?! 
+AAAAHH!","","","repoint_target"

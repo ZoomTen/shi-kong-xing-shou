@@ -1,0 +1,49 @@
+"bank","address","label","original_string","translated[en]","translated[fr]","translated[id]","text_kind","notes","","","",""
+"12","7e2d","","// init $28, $4e
+用金鑰匙打開鐘
+塔關閉的鐵門。
+就可以通到達瑪
+之都了。
+祝你任務順利。
+","// init $28, $4e
+Use the Golden Key to open the door in the Clock Tower.
+You'll be able to get to Dama's capital.
+Good luck with your mission!","// init $28, $4e
+Utilise la Clé d'Or pour ouvrir la porte dans la Tour.
+Vous pourrez atteindre la capitale de Dama.
+Bonne chance!","","repoint_target","Use the Golden Key to open the closed iron door in the Clock Tower.
+You'll be able to get to the capital of Dama this way.
+Good luck with your mission!","","","",""
+"12","7e6d","","// init $25, $4f
+巴洛特!
+要好好的照顧妮
+娜。
+要是你欺負她的
+話，我可是不會
+放過你!
+","// init $25, $4f
+Ballot!
+Take good care of Nina.
+Otherwise, I won't let you off the hook!
+","// init $25, $4f
+Ballot!
+Prends bien soin de Nina.
+Sinon, je ne te pardonnerai pas!","","repoint_target","eh, alright","","","",""
+"12","7ebe","","// init $14, $25
+需要妮可治療嗎?","// init $14, $25
+Do you need my treatment?","// init $14, $25
+As-tu besoin de mes services?","","repoint_target choicer","","","","",""
+"12","7ed6","","// init $1a, $25
+這裡是星獸膠囊
+存放銀行。
+需要艾娜的服務
+嗎?","// init $1a, $25
+This is the Star Beast Storage Bank. Do you need my help?","// init $1a, $25
+Voici le système de stockage de Bêtoiles.
+As-tu besoin de mon aide?","","repoint_target choicer","","","","",""
+"12","7f05","","// init $19, $22
+需要什麼服務嗎?","// init $19, $22
+Do you need something?","// init $19, $22
+De quoi as-tu besoin?","","repoint_target","","","","",""
+"12","7eac","","嗨OHBABY
+嗨NO","","","","repoint_target","???","","","",""
