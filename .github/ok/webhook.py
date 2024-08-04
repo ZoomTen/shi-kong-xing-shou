@@ -228,7 +228,7 @@ if len(sys.argv) > 1:
 
 	embed_json = {
 		"username": "巴克 (Buck)",
-		"avatar_url": "https://cdn.discordapp.com/attachments/874592023204737044/875625368982269972/buckbox.png",
+		"avatar_url": "https://cdn.discordapp.com/avatars/865933527669407744/74b6bb4243971ea145ecefb1736b2c6c.png",
 		"embeds": [
 			{
 				"title": "Build results",
