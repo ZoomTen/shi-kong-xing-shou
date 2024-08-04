@@ -1,1 +1,1 @@
-_BANKNUM EQU $7fff
+DEF _BANKNUM EQU $7fff

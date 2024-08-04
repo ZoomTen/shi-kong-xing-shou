@@ -1,32 +1,32 @@
 ; Header commands
-channel_count: MACRO
+MACRO channel_count
     assert (\1) <= 4 && 0 < (\1), \
     "channel_count: must not exceed maximum number of GB channels"
 
     db (1 << \1) - 1
 ENDM
 
-sfx_starting_channel: MACRO
+MACRO sfx_starting_channel
     db \1
 ENDM
 
-channel: MACRO
+MACRO channel
     dw \1
 ENDM
 
 ; Channel commands
-note: MACRO
+MACRO note
     dn (\1), (\2) ; pitch, length
 ENDM
 
-rest: MACRO
+MACRO rest
     note __, (\1)
 ENDM
 
     const_def $d0
 
     const sound_init_cmd ; $d0
-sound_init: MACRO
+MACRO sound_init
     assert (\1) <= 15 && 0 < (\1), \
     "sound_init: speed must not exceed 15"
 
@@ -47,45 +47,45 @@ ENDM
 
     const_skip 15
     const octave_cmd ; $e0
-octave: MACRO
+MACRO octave
     db octave_cmd + (\1)
 ENDM
 
     const_skip 7
     const duty_cycle_cmd ; $e8
-duty_cycle: MACRO
+MACRO duty_cycle
     db duty_cycle_cmd
     dn (\1), (\2)
 ENDM
 
     const unknown_music_e9_cmd ; $e9
-unknown_music_e9: MACRO
+MACRO unknown_music_e9
     db unknown_music_e9_cmd, (\1)
 ENDM
 
     const unknown_music_ea_cmd ; $ea
-unknown_music_ea: MACRO
+MACRO unknown_music_ea
     db unknown_music_ea_cmd, (\1)
 ENDM
 
     const vibrato_cmd ; $eb
-vibrato: MACRO
+MACRO vibrato
     db vibrato_cmd
     dn (\1), (\2) 
 ENDM
 
     const transpose_cmd  ;  $ec
-transpose: MACRO
+MACRO transpose
     db transpose_cmd, (\1)
 ENDM
 
     const unknown_music_ed_cmd ; $ed
-unknown_music_ed: MACRO
+MACRO unknown_music_ed
     db unknown_music_ed_cmd, (\1)
 ENDM
 
     const unknown_volume_cmd ; $ee
-unknown_volume: MACRO
+MACRO unknown_volume
     db unknown_volume_cmd, (\1)
 if (\1) > $7f
     db (\2), (\3)
@@ -93,87 +93,87 @@ endc
 ENDM
 
     const fine_pitch_cmd ; $ef
-fine_pitch: MACRO
+MACRO fine_pitch
     db fine_pitch_cmd, (\1)
 ENDM
 
     const unknown_music_f0_cmd ; $f0 xx volume only?
-unknown_music_f0: MACRO
+MACRO unknown_music_f0
     db unknown_music_f0_cmd, (\1)
 ENDM
 
     const unknown_music_f1_cmd ; $f1 xx vol param 1?
-unknown_music_f1: MACRO
+MACRO unknown_music_f1
     db unknown_music_f1_cmd, (\1)
 ENDM
     
     const unknown_music_f2_cmd ; $f2 xx vol param 2?
-unknown_music_f2: MACRO
+MACRO unknown_music_f2
     db unknown_music_f2_cmd, (\1)
 ENDM
     
     const stereo_panning_cmd   ; $f3 xx
-stereo_panning: MACRO
+MACRO stereo_panning
     db stereo_panning_cmd, (\1)
 ENDM
         
     const unknown_music_f4_cmd ; $f4 xx yy ?
-unknown_music_f4: MACRO
+MACRO unknown_music_f4
     db unknown_music_f4_cmd, (\1), (\2)
 ENDM
         
     const sound_nop_cmd        ; $f5
-sound_nop: MACRO
+MACRO sound_nop
     db sound_nop
 ENDM
         
     const speed_cmd            ; $f6
-speed: MACRO
+MACRO speed
     db speed_cmd, (\1)
 ENDM
         
     const sound_call_cmd       ; $f7
-sound_call: MACRO
+MACRO sound_call
     dbw sound_call_cmd, (\1)
 ENDM
         
     const sound_call2_cmd      ; $f8
-sound_call2: MACRO
+MACRO sound_call2
     dbw sound_call2_cmd, (\1)
  ENDM
         
     const sound_ret_cmd        ; $f9
-sound_ret: MACRO
+MACRO sound_ret
     db sound_ret_cmd
 ENDM
         
     const sound_ret2_cmd       ; $fa
-sound_ret2: MACRO
+MACRO sound_ret2
     db sound_ret2_cmd
 ENDM
         
     const mark_loop_cmd        ; $fb
-mark_loop: MACRO
+MACRO mark_loop
     db mark_loop_cmd
 ENDM
         
     const mark_loop2_cmd       ; $fc
-mark_loop2: MACRO
+MACRO mark_loop2
     db mark_loop2_cmd
 ENDM
         
     const repeat_loop_cmd      ; $fd
-repeat_loop: MACRO
+MACRO repeat_loop
     db repeat_loop_cmd, (\1)
 ENDM
         
     const repeat_loop2_cmd     ; $fe
-repeat_loop2: MACRO
+MACRO repeat_loop2
     db repeat_loop2_cmd, (\1)
 ENDM
         
     const sound_end_cmd        ; $ff
-sound_end: MACRO
+MACRO sound_end
     db sound_end_cmd
 ENDM
         

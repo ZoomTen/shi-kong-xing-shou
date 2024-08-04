@@ -1,12 +1,12 @@
 	const_def
 
 	const script_continue ; $00
-scr_cont: MACRO
+MACRO scr_cont
 	db script_continue
 ENDM
 
 	const script_spriteface ; $01
-scr_spriteface: MACRO
+MACRO scr_spriteface
 ; sprite ID 0 is player
 ; sprite ID 1 is follower
 ; sprite ID 2+ is everything else
@@ -16,31 +16,31 @@ scr_spriteface: MACRO
 ENDM
 
 	const script_delay ; $02
-scr_delay: MACRO
+MACRO scr_delay
 	db script_delay
 	db \1 ; mask
 	db \2 ; delay
 ENDM
 
 	const script_03 ; $03
-scr_03: MACRO
+MACRO scr_03
 	db script_03
 ENDM
 
 	const script_04 ; $04
-scr_04: MACRO
+MACRO scr_04
 	db script_04
 	dw \1
 ENDM
 
 	const script_face ; $05
-scr_face: MACRO
+MACRO scr_face
 	db script_face
 	db \1 ; facing
 ENDM
 
 	const script_spritewalk ; $06
-scr_spritewalk: MACRO
+MACRO scr_spritewalk
 ; move a sprite in the direction
 ; specified by MOVE_* in \2
 ; this does NOT automatically make
@@ -52,23 +52,23 @@ scr_spritewalk: MACRO
 ENDM
 
 	const script_07 ; $07
-scr_07: MACRO
+MACRO scr_07
 	db script_07
 ENDM
 
 	const script_08 ; $08
-scr_08: MACRO
+MACRO scr_08
 	db script_08
 	db \1
 ENDM
 
 	const script_end ; $09
-scr_end: MACRO
+MACRO scr_end
 	db script_end
 ENDM
 
 	const script_checkbit ; $0a
-scr_checkbit: MACRO
+MACRO scr_checkbit
 	db script_checkbit
 	dw \1
 	db \2
@@ -76,14 +76,14 @@ scr_checkbit: MACRO
 ENDM
 
 	const script_setbit ; $0b
-scr_setbit: MACRO
+MACRO scr_setbit
 	db script_setbit
 	dw \1
 	db \2
 ENDM
 
 	const script_setmap ; $0c
-scr_setmap: MACRO
+MACRO scr_setmap
 ; This warps to a map in the same group
 ; as the map the script is in.
 	db script_setmap
@@ -92,7 +92,7 @@ scr_setmap: MACRO
 ENDM
 
 	const script_movemap ; $0d
-scr_movemap: MACRO
+MACRO scr_movemap
 ; Applies movement data to the loaded map.
 ; It should be used with maps that have
 ; no associated object events.
@@ -101,65 +101,65 @@ scr_movemap: MACRO
 ENDM
 
 	const script_0e ; $0e
-scr_0e: MACRO
+MACRO scr_0e
 	db script_0e
 ENDM
 
 	const script_move ; $0f
-scr_move: MACRO
+MACRO scr_move
 	db script_move
 	dw \1 ; movement data
 ENDM
 
 	const script_10 ; $10
-scr_10: MACRO
+MACRO scr_10
 	db script_10
 ENDM
 
 	const script_11 ; $11
-scr_11: MACRO
+MACRO scr_11
 	db script_11
 	dw \1
 ENDM
 
 	const script_12 ; $12
-scr_12: MACRO
+MACRO scr_12
 	db script_12
 ENDM
 
 	const script_13 ; $13
-scr_13: MACRO
+MACRO scr_13
 	db script_13
 	dw \1, \2
 ENDM
 
 	const script_text ; $14
-scr_text: MACRO
+MACRO scr_text
 	db script_text
 	dw \1 ; text
 ENDM
 
 	const script_emote ; $15
-scr_emote: MACRO
+MACRO scr_emote
 	db script_emote
 	db \1 ; sprite?
 	db \2 ; emote
 ENDM
 
 	const script_16 ; $16 load sprite definitions?
-scr_16: MACRO
+MACRO scr_16
 	db script_16
 	dw \1
 ENDM
 
 	const script_17 ; $17
-scr_17: MACRO
+MACRO scr_17
 	db script_17
 	db \1, \2, \3
 ENDM
 
 	const script_18 ; $18
-scr_18: MACRO
+MACRO scr_18
 	db script_18
 	db \1
 	dw \1
@@ -167,68 +167,68 @@ scr_18: MACRO
 ENDM
 
 	const script_19 ; $19
-scr_19: MACRO
+MACRO scr_19
 	db script_19
 	db \1, \2 ; XXX variable?
 ENDM
 
 	const script_1a ; $1a
-scr_1a: MACRO
+MACRO scr_1a
 	db script_1a
 	db \1, \2, \3, \4
 ENDM
 
 	const script_1b ; $1b
-scr_1b: MACRO
+MACRO scr_1b
 	db script_1b
 	db \1
 ENDM
 
 	const script_1c ; $1c
-scr_1c: MACRO
+MACRO scr_1c
 	db script_1c
 	db \1
 ENDM
 
 	const script_1d ; $1d
-scr_1d: MACRO
+MACRO scr_1d
 	db script_1d
 	db \1
 ENDM
 
 	const script_1e ; $1e
-scr_1e: MACRO
+MACRO scr_1e
 	db script_1e
 	db \1, \2
 ENDM
 
 	const script_1f ; $1f
-scr_1f: MACRO
+MACRO scr_1f
 	db script_1f
 	db \1
 ENDM
 
 	const script_20 ; $20
-scr_20: MACRO
+MACRO scr_20
 	db script_20
 ENDM
 
 	const_def $24
 
 	const script_24 ; $24
-scr_24: MACRO
+MACRO scr_24
 	db script_24
 ENDM
 
 	const script_25 ; $25
-scr_25: MACRO
+MACRO scr_25
 	db script_25
 ENDM
 
 	const_def $2a
 
 	const script_farjump ; $2a
-scr_farjump: MACRO
+MACRO scr_farjump
 	db script_farjump
 	dba \1
 ENDM
@@ -236,7 +236,7 @@ ENDM
 	const_def $2e
 
 	const script_2e ; $2e
-scr_2e: MACRO
+MACRO scr_2e
 	db script_2e
 	db \1, \2, \3
 ENDM
@@ -244,7 +244,7 @@ ENDM
 	const_def $30
 
 	const script_30 ; $30
-scr_30: MACRO
+MACRO scr_30
 	db script_30
 	db \1, \2 ; pointer?
 ENDM
@@ -252,36 +252,36 @@ ENDM
 	const_def $33
 
 	const script_33 ; $33
-scr_33: MACRO
+MACRO scr_33
 	db script_33
 	db \1
 ENDM
 
 	const script_34 ; $34
-scr_34: MACRO
+MACRO scr_34
 	db script_34
 	db \1 ; cutscene
 	db \2 ; map number
 	db \3 ; warp number
 ENDM
 	const script_35 ; $35
-scr_35: MACRO
+MACRO scr_35
 	db script_35, \1
 ENDM
 	const script_36 ; $36
-scr_36: MACRO
+MACRO scr_36
 	db script_36
 ENDM
 
 	const script_37 ; $37
-scr_37: MACRO
+MACRO scr_37
 	db script_37
 ENDM
 
 	const_def $3b
 
 	const script_3b ; $3b
-scr_3b: MACRO
+MACRO scr_3b
 	db script_3b
 	dw \1
 ENDM
@@ -289,7 +289,7 @@ ENDM
 	const_def $3e
 
 	const script_jump ; $3e
-scr_jump: MACRO
+MACRO scr_jump
 	db script_jump
 	dw \1
 ENDM
@@ -297,14 +297,14 @@ ENDM
 	const_def $44
 
 	const script_44 ; $44
-scr_44: MACRO
+MACRO scr_44
 	db script_44
 ENDM
 
 	const_def $48
 
 	const script_48 ; $48
-scr_48: MACRO
+MACRO scr_48
 	db script_48
 	db \1
 	db \2
@@ -313,7 +313,7 @@ ENDM
 	const_def $4a
 
 	const script_4a ; $4a
-scr_4a: MACRO
+MACRO scr_4a
 	db script_4a
 	db \1
 ENDM
@@ -321,13 +321,13 @@ ENDM
 	const_def $4d
 
 	const script_4d ; $4d
-scr_4d: MACRO
+MACRO scr_4d
 	db script_4d
 	db \1, \2
 ENDM
 
 	const script_4e ; $4e
-scr_4e: MACRO
+MACRO scr_4e
 	db script_4e
 	db \1
 	dw \2
@@ -336,40 +336,40 @@ ENDM
 	const_def $52
 
 	const script_52 ; $52
-scr_52: MACRO
+MACRO scr_52
 	db script_52
 ENDM
 
 	const_def $5e
 
 	const script_5e ; $5e
-scr_5e: MACRO
+MACRO scr_5e
 	db script_5e
 	db \1 ; follower
 ENDM
 
 	const script_5f ; $5f
-scr_5f: MACRO
+MACRO scr_5f
 	db script_5f
 ENDM
 
 	const_def $61
 
 	const script_61 ; $61
-scr_61: MACRO
+MACRO scr_61
 	db script_61
 ENDM
 
 	const_def $62
 
 	const script_62 ; $62
-scr_62: MACRO
+MACRO scr_62
 	db script_62
 	db \1, \2
 ENDM
 
 	const script_63 ; $63
-scr_63: MACRO
+MACRO scr_63
 	db script_63
 	db \1
 	dw \2
@@ -378,7 +378,7 @@ ENDM
 	const_def $65
 
 	const script_65 ; $65
-scr_65: MACRO
+MACRO scr_65
 	db script_65
 	db \1
 ENDM
@@ -386,18 +386,18 @@ ENDM
 	const_def $69
 
 	const script_69 ; $69
-scr_69: MACRO
+MACRO scr_69
 	db script_69
 ENDM
 
 	const_def $6f
 	const script_6f
-scr_6f: MACRO
+MACRO scr_6f
 	db script_6f
 ENDM
 
 	const_def $77
 	const script_77
-scr_77: MACRO
+MACRO scr_77
 	db script_77
 ENDM

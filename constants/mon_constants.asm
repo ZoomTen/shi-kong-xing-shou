@@ -160,4 +160,4 @@
 	const MON_157 ; 9d
 	const MON_158 ; 9e
 	const MON_159 ; 9f
-NUM_MONS EQU const_value
+DEF NUM_MONS EQU const_value

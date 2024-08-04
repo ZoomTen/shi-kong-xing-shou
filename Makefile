@@ -5,7 +5,7 @@ FIX  := rgbfix
 MD5  := md5sum -c
 PYTHON := python3
 
-ASMFLAGS := -hL
+ASMFLAGS := 
 # Include all labels, including unreferenced and local labels, in the sym/map file if `make` is run with `ALLSYM=1`
 ifeq ($(ALLSYM),1)
 ASMFLAGS += -E

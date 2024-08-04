@@ -1,110 +1,110 @@
 ; Borrowed from pret/pokegold
 
-dr: MACRO
+MACRO dr
 	INCBIN "baserom.gbc", \1, \2 +- \1
 ENDM
 
-lb: MACRO ; r, hi, lo
+MACRO lb ; r, hi, lo
 	ld \1, ((\2) & $ff) << 8 | ((\3) & $ff)
 ENDM
 
-ln: MACRO ; r, hi, lo
+MACRO ln ; r, hi, lo
 	ld \1, ((\2) & $f) << 4 | ((\3) & $f)
 ENDM
 
 
 ; Constant data (db, dw, dl) macros
 
-dwb: MACRO
+MACRO dwb
 	dw \1
 	db \2
 ENDM
 
-dbw: MACRO
+MACRO dbw
 	db \1
 	dw \2
 ENDM
 
-dbbw: MACRO
+MACRO dbbw
 	db \1, \2
 	dw \3
 ENDM
 
-dbww: MACRO
+MACRO dbww
 	db \1
 	dw \2, \3
 ENDM
 
-dbwww: MACRO
+MACRO dbwww
 	db \1
 	dw \2, \3, \4
 ENDM
 
-dn: MACRO ; nybbles
+MACRO dn ; nybbles
 rept _NARG / 2
 	db ((\1) << 4) | (\2)
 	shift 2
 endr
 ENDM
 
-dc: MACRO ; "crumbs"
+MACRO dc ; "crumbs"
 rept _NARG / 4
 	db ((\1) << 6) | ((\2) << 4) | ((\3) << 2) | (\4)
 	shift 4
 endr
 ENDM
 
-dx: MACRO
-x = 8 * ((\1) - 1)
+MACRO dx
+DEF x = 8 * ((\1) - 1)
 rept \1
 	db ((\2) >> x) & $ff
-x = x - 8
+DEF x = x - 8
 endr
 ENDM
 
-dt: MACRO ; three-byte (big-endian)
+MACRO dt ; three-byte (big-endian)
 	dx 3, \1
 ENDM
 
-dd: MACRO ; four-byte (big-endian)
+MACRO dd ; four-byte (big-endian)
 	dx 4, \1
 ENDM
 
-bigdw: MACRO ; big-endian word
+MACRO bigdw ; big-endian word
 	dx 2, \1 ; db HIGH(\1), LOW(\1)
 ENDM
 
-dba: MACRO ; dbw bank, address
+MACRO dba ; dbw bank, address
 rept _NARG
 	dbw BANK(\1), \1
 	shift
 endr
 ENDM
 
-dab: MACRO ; dwb address, bank
+MACRO dab ; dwb address, bank
 rept _NARG
 	dwb \1, BANK(\1)
 	shift
 endr
 ENDM
 
-bcd: MACRO
+MACRO bcd
 rept _NARG
 	dn ((\1) % 100) / 10, (\1) % 10
 	shift
 endr
 ENDM
 
-sine_table: MACRO
+MACRO sine_table
 ; \1 samples of sin(x) from x=0 to x<32768 (pi radians)
-x = 0
+DEF x = 0
 rept \1
 	dw (sin(x) + (sin(x) & $ff)) >> 8 ; round up
-x = x + DIV(32768, \1) ; a circle has 65536 "degrees"
+DEF x = x + DIV(32768, \1) ; a circle has 65536 "degrees"
 endr
 ENDM
 
-dsprite: MACRO
+MACRO dsprite
 ; \1 y tile
 ; \2 y pxl
 ; \3 x tile
@@ -116,12 +116,12 @@ dsprite: MACRO
 	db \5, \6
 ENDM
 
-dbaw: MACRO
+MACRO dbaw
 ; odd way of defining a pointer where the second byte
 ; is skipped
 	dw BANK(\1), \1
 ENDM
 
-dbaw2: MACRO
+MACRO dbaw2
 	dw BANK(\1), 0, \1
 ENDM

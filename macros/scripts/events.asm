@@ -1,4 +1,4 @@
-event: MACRO
+MACRO event
 ; Generic event
 ; \1 = X
 ; \2 = Y
@@ -13,7 +13,7 @@ ENDM
 	const_def
 
 	const EV_WARP
-warp_event: MACRO
+MACRO warp_event
 ; $00 - Warp event (to a map in the same group)
 ; \1 = X
 ; \2 = Y
@@ -28,7 +28,7 @@ endc
 ENDM
 
 	const EV_SCRIPT1
-script_event: MACRO
+MACRO script_event
 ; $01 - Script event
 ; \1 = X
 ; \2 = Y
@@ -41,7 +41,7 @@ script_event: MACRO
 ENDM
 
 	const EV_SIGNPOST
-signpost_event: MACRO
+MACRO signpost_event
 ; $02 - Signpost event, accessible by pressing A while facing up
 ; \1 = X
 ; \2 = Y
@@ -50,7 +50,7 @@ signpost_event: MACRO
 ENDM
 
 	const EV_FARWARP
-farwarp_event: MACRO
+MACRO farwarp_event
 ; $03 - Warp event (to a map in another map group)
 ; \1 = X
 ; \2 = Y
@@ -61,7 +61,7 @@ farwarp_event: MACRO
 ENDM
 
 	const EV_SCRIPT2
-event_04: MACRO
+MACRO event_04
 ; $04 - Script event 2
 ; \1 = X
 ; \2 = Y
@@ -74,7 +74,7 @@ event_04: MACRO
 ENDM
 
 	const EV_SCRIPT3
-event_05: MACRO
+MACRO event_05
 ; $05 - Script event 3
 ; \1 = X
 ; \2 = Y
@@ -86,7 +86,7 @@ event_05: MACRO
 ENDM
 
 	const EV_SCRIPT4
-event_06: MACRO
+MACRO event_06
 ; $06 - Script event 4
 ; \1 = X
 ; \2 = Y
@@ -99,7 +99,7 @@ event_06: MACRO
 ENDM
 
 	const EV_07
-event_07: MACRO
+MACRO event_07
 ; $07
 ; \1 = X
 ; \2 = Y
@@ -109,11 +109,11 @@ event_07: MACRO
 	db 0, 0 ; TODO
 ENDM
 
-events_end: MACRO
+MACRO events_end
 	db -1
 ENDM
 
-object_event: MACRO
+MACRO object_event
 ; Object event, interactible sprites
 ; \1 = Sprite ID
 ; \2 = X
@@ -131,7 +131,7 @@ object_event: MACRO
 	dw \9
 ENDM
 
-objects_end: MACRO
+MACRO objects_end
 	db $88
 ENDM
 

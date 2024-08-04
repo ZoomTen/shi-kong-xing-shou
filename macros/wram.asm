@@ -1,4 +1,4 @@
-party_struct: MACRO
+MACRO party_struct
 \1Species:: db
 \1Level::   db
 \1HP::      dw
@@ -22,7 +22,7 @@ party_struct: MACRO
 \1unk22::  db
 ENDM
 
-sprite_oam_struct: MACRO
+MACRO sprite_oam_struct
 \1YCoord::     db
 \1XCoord::     db
 \1TileID::     db
@@ -35,7 +35,7 @@ sprite_oam_struct: MACRO
 ; bit 2-0: pal # (cgb only)
 ENDM
 
-channel_struct: MACRO
+MACRO channel_struct
 \1SongID::                   db ; 00
 \1Field01::                  db ; 01
 \1Field02::                  db ; 02

@@ -85,7 +85,7 @@
 	const SFX_52 ; $52
 
 ; Music
-BGM_START EQU const_value
+DEF BGM_START EQU const_value
 ; BGM $53 to $58 are the same "tom" sound,
 ; essentially dummied out?
 	const BGM_53 ; $53

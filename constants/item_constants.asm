@@ -91,4 +91,4 @@
 	const TM48 ; $57
 	const TM49 ; $58
 	const TM50 ; $59
-NUM_ITEMS EQU const_value - 1
+DEF NUM_ITEMS EQU const_value - 1

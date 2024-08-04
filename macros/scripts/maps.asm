@@ -1,13 +1,13 @@
-map: MACRO
+MACRO map
 ; \1 = map name
 \1_Header:
 	db BANK(\1_MapAttributes)
 	ds 3
 	dw \1_MapAttributes
-__current_map__ equs "\1"
+DEF __current_map__ equs "\1"
 ENDM
 
-warp: MACRO
+MACRO warp
 ; \1 = block view X-offset
 ; \2 = block view Y-offset
 ; \3 = OAM location
@@ -36,11 +36,11 @@ else
 endc
 ENDM
 
-end_map: MACRO
+MACRO end_map
 PURGE __current_map__
 ENDM
 
-map_attributes: MACRO
+MACRO map_attributes
 ; \1 = map name
 ; \2 = map ID
 ; \3 = tileset 1
@@ -57,7 +57,7 @@ map_attributes: MACRO
 	dw \1_Collision
 ENDM
 
-map_attr_data: MACRO ; temporary measure
+MACRO map_attr_data ; temporary measure
 ; \1 = width|height, e.g. $0D12 == $0D $12
 ; \2 = layout location
 ; \3 = block location
@@ -74,7 +74,7 @@ map_attr_data: MACRO ; temporary measure
 	dw \9
 ENDM
 
-tileset_fragment: MACRO
+MACRO tileset_fragment
 ; \1 = tileset source
 ; \2 = VRAM destination
 ; \3 = number of bytes
@@ -83,6 +83,6 @@ tileset_fragment: MACRO
 	dw \1
 ENDM
 
-end_tileset: MACRO
+MACRO end_tileset
 	db -1
 ENDM
