@@ -14,8 +14,9 @@ def get_relative_symbol(sym_table, address):
 
 if __name__ == '__main__':
 	if len(sys.argv) < 2:
-		print(f'{sys.argv[0]} address')
+		print(f'{sys.argv[0]} address [ram]')
 		print('\taddress can be in BB:AAAA form or as a hex number')
+		print('\tif "ram" is specified as the 2nd arg, use RAM symbols for searching instead of ROM symbols')
 		exit(0)
 
 	addr_str = lambda x: '%03x:%04x' % x
@@ -35,4 +36,7 @@ if __name__ == '__main__':
 	else:
 		start = int(s, 16)
 
-	print(get_relative_symbol(rom_sym, start))
+	if (len(sys.argv) > 2) and (sys.argv[2].lower() == "ram"):
+		print(get_relative_symbol(ram_sym, start))
+	else:
+		print(get_relative_symbol(rom_sym, start))
