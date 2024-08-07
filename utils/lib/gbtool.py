@@ -56,7 +56,7 @@ def read_symbols(symbols_string):
 	'''
 	symbols = {}
 	ram = {}
-	for symbol in re.findall('([0-9a-fA-F]+):([0-9a-fA-F]{4})\s+(\w+)', symbols_string):
+	for symbol in re.findall('([0-9a-fA-F]+):([0-9a-fA-F]{4})\s+([\w\.]+)', symbols_string):
 		bank, address, label = symbol
 		bank = int(bank, 16)
 		address = int(address, 16)
