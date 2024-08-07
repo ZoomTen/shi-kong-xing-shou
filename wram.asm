@@ -336,9 +336,9 @@ wd406:: ds 1
 wd407:: ds 1
 wd408:: ds 1
 wd409:: ds 1
-wCurrentWaveInst:: ds 1
-wd40b:: ds 1
-wd40c:: ds 1
+wSound1LastWaveform:: ds 1
+wSound1FadeEnabled:: ds 1
+wSound1FadeTimer:: ds 1
 wd40d:: ds 1
 ; music channels
 wChannels::
@@ -404,9 +404,9 @@ wCh4DataLastEnvelope:: ds 1
 wd607:: ds 1
 wCh3TargetWaveform:: ds 1
 wCh7TargetWaveform:: ds 1
-wSoundLastWaveform:: ds 1
-wSoundFadeEnabled:: ds 1
-wSoundFadeTimer:: ds 1
+wSound2LastWaveform:: ds 1
+wSound2FadeEnabled:: ds 1
+wSound2FadeTimer:: ds 1
 wd60d:: ds 1
 	ds 8
 wd616:: ds $2c

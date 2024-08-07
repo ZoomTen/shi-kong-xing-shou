@@ -2,15 +2,15 @@ SoundEngine1_Load:
 	or a
 	jp z, SoundEngine1_ResetSoundRegisters
 	cp $a
-	jp z, Func_002_446f
+	jp z, SoundEngine1_Fade
 	push bc
 	push de
 	ld [wCurrentSongID], a
 	push af
 	add a
-	add $8d
+	add LOW(SoundEngine1_HeaderPointers)
 	ld l, a
-	ld a, $40 ; 408d
+	ld a, HIGH(SoundEngine1_HeaderPointers)
 	adc 0
 	ld h, a
 	pop af
@@ -143,10 +143,10 @@ Func_002_4443:
 	ld de, wChannel5
 	jp Func_002_43cf
 
-Func_002_446f:
+SoundEngine1_Fade:
 	ld a, 7
-	ld [wd40b], a
-	ld [wd40c], a
+	ld [wSound1FadeEnabled], a
+	ld [wSound1FadeTimer], a
 	ret
 
 SoundEngine1_Play:
@@ -209,10 +209,10 @@ SoundEngine1_ResetEngineVariables:
 	ld [hl], a
 	ld a, 0
 	ld [wd407], a
-	ld [wd40b], a
-	ld [wd40c], a
+	ld [wSound1FadeEnabled], a
+	ld [wSound1FadeTimer], a
 	ld a, $ff
-	ld [wCurrentWaveInst], a
+	ld [wSound1LastWaveform], a
 	pop de
 	pop bc
 	ret

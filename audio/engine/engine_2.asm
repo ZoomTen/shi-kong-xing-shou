@@ -43,7 +43,6 @@ SoundEngine2_Load:
 	ld d, h
 	ld e, l
 	jr .loop
-
 .done
 	pop de
 	pop bc
@@ -149,15 +148,15 @@ SoundEngine2_Load:
 
 SoundEngine2_Fade:
 	ld a, 7
-	ld [wSoundFadeEnabled], a
-	ld [wSoundFadeTimer], a
+	ld [wSound2FadeEnabled], a
+	ld [wSound2FadeTimer], a
 	ret
 
 SoundEngine2_Play:
-	ld a, [wSoundFadeEnabled]
+	ld a, [wSound2FadeEnabled]
 	or a
 	jr z, .run_audio
-	ld hl, wSoundFadeTimer
+	ld hl, wSound2FadeTimer
 	dec [hl]
 	jr nz, .run_audio
 
@@ -1789,7 +1788,7 @@ SoundEngine2_ApplyAudio:
 
 .UpdateWaveform:
 ; don't need to update if it's the same as the last one
-	ld hl, wSoundLastWaveform
+	ld hl, wSound2LastWaveform
 	cp [hl]
 	ret z
 
@@ -1937,10 +1936,10 @@ SoundEngine2_ResetEngineVariables:
 	ld [hl], a
 	ld a, 0
 	ld [wd607], a
-	ld [wSoundFadeEnabled], a
-	ld [wSoundFadeTimer], a
+	ld [wSound2FadeEnabled], a
+	ld [wSound2FadeTimer], a
 	ld a, $ff
-	ld [wSoundLastWaveform], a
+	ld [wSound2LastWaveform], a
 	pop de
 	pop bc
 	ret
