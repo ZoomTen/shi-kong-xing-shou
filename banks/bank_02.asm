@@ -73,6 +73,9 @@ INCLUDE "audio/headers/headers_1.asm"
 
 INCLUDE "audio/engine/engine_1.asm"
 INCLUDE "audio/sfx/sfx_1.asm"
+SoundEngine1_Waveforms:
+INCLUDE "audio/wave_instruments.asm"
+INCLUDE "audio/sfx/sfx_1b.asm"
 include "audio/music/town_1.asm"
 include "audio/music/battle_1.asm"
 include "audio/music/blackout.asm"

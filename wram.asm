@@ -333,8 +333,13 @@ wSoundCurChannel:: ds 1
 wCurrentSongID:: ds 1
 wSoundNumChannels:: ds 1
 wd406:: ds 1
-	ds 7
-
+wd407:: ds 1
+wd408:: ds 1
+wd409:: ds 1
+wCurrentWaveInst:: ds 1
+wd40b:: ds 1
+wd40c:: ds 1
+wd40d:: ds 1
 ; music channels
 wChannels::
 wChannel1:: channel_struct wChannel1
