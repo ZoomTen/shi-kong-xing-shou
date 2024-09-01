@@ -13,6 +13,12 @@ expat_deps := \
 	lib/expat/Xmlparse.c \
 	lib/expat/Xmlrole.c
 
+plum_deps := \
+	lib/plum/libplum.c
+
+miniz_deps := \
+	lib/miniz/miniz.c
+
 all: $(tools)
 	@:
 
