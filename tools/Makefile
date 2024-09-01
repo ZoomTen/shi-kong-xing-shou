@@ -6,7 +6,8 @@ CFLAGS := -O3 -flto -std=c17 -Wall -Wextra -Wno-missing-field-initializers
 tools := \
 	scan_includes \
 	gfx \
-	tmx2data
+	tmx2data \
+	face2gfx
 
 expat_deps := \
 	lib/expat/Xmltok.c \
@@ -28,6 +29,9 @@ clean:
 gfx: common.h
 
 tmx2data: $(expat_deps)
+
+face2gfx: $(miniz_deps)
+face2gfx: CFLAGS=-O0 -g
 
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $(filter-out %.h,$^)
