@@ -22,6 +22,8 @@ static _Bool is_in_data = 0;
 static void XMLCALL start(void *user, const XML_Char *name,
                           const XML_Char **atts)
 {
+	UNUSED(user);
+
 	if (strncmp(name, "data", sizeof("data")))
 	{
 		return;
@@ -36,6 +38,8 @@ static void XMLCALL start(void *user, const XML_Char *name,
 
 static void XMLCALL end(void *user, const XML_Char *name)
 {
+	UNUSED(user);
+
 	if (strncmp(name, "data", 4))
 	{
 		return;
