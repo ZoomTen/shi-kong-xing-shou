@@ -14,7 +14,7 @@
 /* #undef HAVE_ARC4RANDOM */
 
 /* Define to 1 if you have the `arc4random_buf' function. */
-#define HAVE_ARC4RANDOM_BUF 1
+/* #define HAVE_ARC4RANDOM_BUF 1 */
 
 /* define if the compiler supports basic C++11 syntax */
 #define HAVE_CXX11 1
@@ -29,7 +29,7 @@
 #define HAVE_GETPAGESIZE 1
 
 /* Define to 1 if you have the `getrandom' function. */
-#define HAVE_GETRANDOM 1
+/* #define HAVE_GETRANDOM 1 */
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
