@@ -3,7 +3,7 @@
 #include "./face2gfx.h"
 #include <string.h>
 
-int main(int argc, char **argv)
+enum ExitStatus main_(int argc, char **argv)
 {
 	mz_zip_archive zip = {0};
 	struct ImgBuffers img_info;
@@ -17,31 +17,30 @@ int main(int argc, char **argv)
 	if (argc < 2)
 	{
 		fprintf(stderr, "%s face_XX.ora\n", argv[0]);
-		return 1;
+		return INSUFFICIENT_ARGUMENTS;
 	}
 
 	const char *file_name = argv[1];
 
 	zip_result = mz_zip_reader_init_file(&zip, file_name, 0);
-
 	if (!zip_result)
 	{
 		fprintf(stderr, "%s\n", mz_zip_get_error_string(zip.m_last_error));
-		return zip.m_last_error;
+		return CANNOT_LOAD_ZIP;
 	}
 
 	mimecheck = check_mimetype(&zip);
 	if (mimecheck)
 	{
 		mz_zip_reader_end(&zip);
-		return mimecheck;
+		return INVALID_MIMETYPE;
 	}
 
 	extractcheck = extract_imgs_from_zip(&zip, &img_info);
 	if (extractcheck)
 	{
 		mz_zip_reader_end(&zip);
-		return extractcheck;
+		return CANNOT_EXTRACT_IMAGES;
 	}
 
 	mz_zip_reader_end(&zip);
@@ -49,7 +48,7 @@ int main(int argc, char **argv)
 	convert1check = convert_image(&img_info, &baked_img_info);
 	if (convert1check)
 	{
-		return convert1check;
+		return CANNOT_CONVERT_IMAGES;
 	}
 
 	mz_free(img_info.colormap.data);
@@ -59,11 +58,13 @@ int main(int argc, char **argv)
 	savecheck = save_converted_image(file_name, &baked_img_info);
 	if (savecheck)
 	{
-		return savecheck;
+		return CANNOT_SAVE_IMAGES;
 	}
 
-	return 0;
+	return SUCCESS;
 }
+
+int main(int argc, char **argv) { return main_(argc, argv); }
 
 int save_converted_image(const char *original_name, struct Exports *baked)
 {
@@ -84,7 +85,7 @@ int save_converted_image(const char *original_name, struct Exports *baked)
 		*i = '\0'; /* cut the string here */
 	}
 
-	new_name = malloc(len + 1);
+	new_name = (char *) malloc(len + 1);
 
 	{ /* export BG tiles in row-major tile order */
 		snprintf(new_name, len + 1, "%s.bg.2bpp", base_name);
@@ -188,8 +189,8 @@ int gfx_from_index(uint8_t *source_indices, uint8_t *target_bytes,
 	return 0;
 }
 
-int palettize(uint32_t palinfo[NUM_PALETTES],
-              uint8_t gbcpal[PAL_ENTRY_SIZE * NUM_PALETTES])
+void palettize(uint32_t palinfo[NUM_PALETTES],
+               uint8_t gbcpal[PAL_ENTRY_SIZE * NUM_PALETTES])
 {
 	/* Transform to GBC palettes */
 	for (size_t i = 0; i < (PAL_ENTRY_SIZE * NUM_PALETTES); i += 2)
@@ -203,7 +204,6 @@ int palettize(uint32_t palinfo[NUM_PALETTES],
 		gbcpal[i] = (uint8_t)(gp & 0xff);
 		gbcpal[i + 1] = (uint8_t)((gp >> 8) & 0xff);
 	}
-	return 0;
 }
 
 /* Also transforms image into planar data */
@@ -212,6 +212,7 @@ int indexize(struct plum_image *img, uint32_t palinfo[4],
 {
 	int counter = 0;
 	int origindex;
+	int got_matching_entry = 0;
 	uint32_t current_pixel;
 	uint32_t w = img->width;
 	uint32_t h = img->height;
@@ -227,15 +228,25 @@ int indexize(struct plum_image *img, uint32_t palinfo[4],
 				{
 					origindex = (w * (pcol + tcol)) + (prow + trow);
 					current_pixel = img->data32[origindex];
-					
+					got_matching_entry = 0;
+
 					/* try to find matching palettes */
 					for (size_t found = 0; found < 4; found++)
 					{
 						if (current_pixel == palinfo[found])
 						{
 							target_indices[counter] = found;
+							got_matching_entry = 1;
 							break;
 						}
+					}
+					if (!got_matching_entry)
+					{
+						fprintf(stderr,
+						        "unable to find suitable palette entry at "
+						        "index %d\n",
+						        origindex);
+						return 1;
 					}
 					counter++;
 				}
@@ -255,26 +266,57 @@ int convert_image(struct ImgBuffers *img, struct Exports *baked)
 	uint8_t bg_idx[SIZE_OF_COLOR_INDICES];
 	uint8_t obj_idx[SIZE_OF_COLOR_INDICES];
 
-	pal = plum_load_image(&img->colormap, PLUM_MODE_BUFFER, FLAGS, &e);
-
 	bg = plum_load_image(&img->base, PLUM_MODE_BUFFER, FLAGS, &e);
-	memcpy(&rawpal.bg, &pal->data32[0], sizeof(rawpal.bg));
+	if (e)
+	{
+		fprintf(stderr, "error loading base: %s\n",
+		        plum_get_error_text(e));
+		return e;
+	}
 
 	obj = plum_load_image(&img->sprite, PLUM_MODE_BUFFER, FLAGS, &e);
+	if (e)
+	{
+		plum_destroy_image(bg);
+		fprintf(stderr, "error loading sprite: %s\n",
+		        plum_get_error_text(e));
+		return e;
+	}
+
+	pal = plum_load_image(&img->colormap, PLUM_MODE_BUFFER, FLAGS, &e);
+	if (e)
+	{
+		plum_destroy_image(bg);
+		plum_destroy_image(obj);
+		fprintf(stderr, "error loading colormap: %s\n",
+		        plum_get_error_text(e));
+		return e;
+	}
+
+	memcpy(&rawpal.bg, &pal->data32[0], sizeof(rawpal.bg));
 	memcpy(&rawpal.obj, &pal->data32[4], sizeof(rawpal.obj));
+	plum_destroy_image(pal);
 
-	indexize(bg, rawpal.bg, bg_idx);
-	indexize(obj, rawpal.obj, obj_idx);
-
-	palettize(rawpal.bg, baked->bg_pal);
-	palettize(rawpal.obj, baked->obj_pal);
+	if (indexize(bg, rawpal.bg, bg_idx) ||
+	    indexize(obj, rawpal.obj, obj_idx))
+	{
+		plum_destroy_image(bg);
+		plum_destroy_image(obj);
+		return 1;
+	}
 
 	plum_destroy_image(pal);
 	plum_destroy_image(bg);
 	plum_destroy_image(obj);
 
-	gfx_from_index(bg_idx, baked->bg_gfx, sizeof(bg_idx));
-	gfx_from_index(obj_idx, baked->obj_gfx, sizeof(obj_idx));
+	palettize(rawpal.bg, baked->bg_pal);
+	palettize(rawpal.obj, baked->obj_pal);
+
+	if (gfx_from_index(bg_idx, baked->bg_gfx, sizeof(bg_idx)) ||
+	    gfx_from_index(obj_idx, baked->obj_gfx, sizeof(obj_idx)))
+	{
+		return 1;
+	}
 
 	return 0;
 }
@@ -284,30 +326,30 @@ int extract_imgs_from_zip(mz_zip_archive *zip, struct ImgBuffers *im)
 {
 	im->colormap.data = mz_zip_reader_extract_file_to_heap(
 	    zip, "data/layer0.png", &im->colormap.size, 0);
-	
+
 	if (zip->m_last_error != MZ_ZIP_NO_ERROR)
 	{
-		fprintf(stderr, "%s\n",
+		fprintf(stderr, "unable to open data/layer0.png: %s\n",
 		        mz_zip_get_error_string(zip->m_last_error));
 		return zip->m_last_error;
 	}
 
 	im->base.data = mz_zip_reader_extract_file_to_heap(
 	    zip, "data/layer1.png", &im->base.size, 0);
-	
+
 	if (zip->m_last_error != MZ_ZIP_NO_ERROR)
 	{
-		fprintf(stderr, "%s\n",
+		fprintf(stderr, "unable to open data/layer1.png: %s\n",
 		        mz_zip_get_error_string(zip->m_last_error));
 		return zip->m_last_error;
 	}
 
 	im->sprite.data = mz_zip_reader_extract_file_to_heap(
 	    zip, "data/layer2.png", &im->sprite.size, 0);
-	
+
 	if (zip->m_last_error != MZ_ZIP_NO_ERROR)
 	{
-		fprintf(stderr, "%s\n",
+		fprintf(stderr, "unable to open data/layer2.png: %s\n",
 		        mz_zip_get_error_string(zip->m_last_error));
 		return zip->m_last_error;
 	}
@@ -323,20 +365,20 @@ int check_mimetype(mz_zip_archive *zip)
 
 	extract_result = mz_zip_reader_extract_file_to_mem(
 	    zip, "mimetype", mimetype_check, sizeof(ORA_MIMETYPE), 0);
-	
+
 	if (!extract_result)
 	{
-		fprintf(stderr, "%s\n",
+		fprintf(stderr, "unable to open mimetype: %s\n",
 		        mz_zip_get_error_string(zip->m_last_error));
 		return zip->m_last_error;
 	}
-	
+
 	if (strncmp(ORA_MIMETYPE, mimetype_check, sizeof(ORA_MIMETYPE)))
 	{
 		fprintf(stderr, "invalid mimetype for this file\n");
 		return 1;
 	}
-	
+
 	return 0;
 }
 #undef ORA_MIMETYPE

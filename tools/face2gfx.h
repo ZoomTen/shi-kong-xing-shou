@@ -41,6 +41,17 @@ struct OGPalInfo
 	uint32_t obj[NUM_PALETTES];
 };
 
+enum ExitStatus
+{
+	SUCCESS = 0,
+	INSUFFICIENT_ARGUMENTS,
+	CANNOT_LOAD_ZIP,
+	INVALID_MIMETYPE,
+	CANNOT_EXTRACT_IMAGES,
+	CANNOT_CONVERT_IMAGES,
+	CANNOT_SAVE_IMAGES,
+};
+
 static int check_mimetype(mz_zip_archive *zip);
 
 static int extract_imgs_from_zip(mz_zip_archive *zip,
@@ -51,7 +62,7 @@ static int convert_image(struct ImgBuffers *img, struct Exports *baked);
 static int indexize(struct plum_image *img, uint32_t palinfo[NUM_PALETTES],
                     uint8_t *target_indices);
 
-static int palettize(uint32_t palinfo[NUM_PALETTES],
+static void palettize(uint32_t palinfo[NUM_PALETTES],
                      uint8_t gbcpal[PAL_ENTRY_SIZE * NUM_PALETTES]);
 
 static int gfx_from_index(uint8_t *source_indices, uint8_t *target_bytes,
