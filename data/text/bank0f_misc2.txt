@@ -678,5 +678,3 @@
 	text "慢⋯慢．著﹗";
 	cont "哇﹗﹗﹗﹗﹗";
 	done;
-
-not byte
