@@ -41,17 +41,19 @@ compare: $(ROM)
 	$(MD5) rom.md5
 
 clean:
-	$(RM) $(ROM) $(MAP) $(SYM) $(OBJS)
-	$(RM) data/text/*.asm
-	$(RM) data/maps/{blocks,layouts,metatiles}/*.bin
+	$(RM) -fv $(ROM) $(MAP) $(SYM) $(OBJS)
+	$(RM) -fv data/text/*.asm
+	$(RM) -fv data/maps/blocks/*.bin
+	$(RM) -fv data/maps/layouts/*.bin
+	$(RM) -fv data/maps/metatiles/*.bin
 	$(if $(shell find -iname '*.1bpp'),\
-		$(RM) $(shell find -iname '*.1bpp') \
+		$(RM) -fv $(shell find -iname '*.1bpp') \
 	)
 	$(if $(shell find -iname '*.2bpp'),\
-		$(RM) $(shell find -iname '*.2bpp') \
+		$(RM) -fv $(shell find -iname '*.2bpp') \
 	)
 	$(if $(shell find -iname '*.gbcpal'),\
-		$(RM) $(shell find -iname '*.gbcpal') \
+		$(RM) -fv $(shell find -iname '*.gbcpal') \
 	)
 	$(MAKE) clean -C tools/
 
