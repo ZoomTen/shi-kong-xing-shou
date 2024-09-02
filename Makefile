@@ -103,7 +103,7 @@ gfx/intro/sprites/%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
 ### Dialog faces
 
 gfx/faces/%.bg.2bpp gfx/faces/%.obj.2bpp gfx/faces/%.bg.gbcpal gfx/faces/%.obj.gbcpal: gfx/faces/%.ora
-	$(PYTHON) tools/face2gfx.py $<
+	tools/face2gfx $<
 
 ### Catch-all graphics rules
 

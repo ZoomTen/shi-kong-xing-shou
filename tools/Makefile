@@ -30,8 +30,7 @@ gfx: common.h
 
 tmx2data: $(expat_deps)
 
-face2gfx: $(miniz_deps)
-face2gfx: CFLAGS=-O0 -g
+face2gfx: $(miniz_deps) $(plum_deps)
 
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $(filter-out %.h,$^)
