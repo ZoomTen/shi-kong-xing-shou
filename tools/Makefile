@@ -1,11 +1,24 @@
 .PHONY: all clean
 
 CC := gcc
-CFLAGS := -O3 -std=c99 -Wall -Wextra -Wno-missing-field-initializers
+CFLAGS := -O3 -flto -std=c17 -Wall -Wextra -Wno-missing-field-initializers
 
 tools := \
 	scan_includes \
-	gfx
+	gfx \
+	tmx2data \
+	face2gfx
+
+expat_deps := \
+	lib/expat/Xmltok.c \
+	lib/expat/Xmlparse.c \
+	lib/expat/Xmlrole.c
+
+plum_deps := \
+	lib/plum/libplum.c
+
+miniz_deps := \
+	lib/miniz/miniz.c
 
 all: $(tools)
 	@:
@@ -15,5 +28,10 @@ clean:
 
 gfx: common.h
 
+tmx2data: $(expat_deps)
+
+face2gfx: $(miniz_deps)
+face2gfx: CFLAGS=-O0 -g
+
 %: %.c
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $(filter-out %.h,$^)

@@ -1,0 +1,8 @@
+UseTab: ForIndentation
+IndentWidth: 4
+TabWidth: 4
+BreakBeforeBraces: Allman
+ColumnLimit: 75
+SortIncludes: Never
+IndentCaseLabels: true
+SpaceAfterCStyleCast: true

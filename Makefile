@@ -5,7 +5,7 @@ FIX  := rgbfix
 MD5  := md5sum -c
 PYTHON := python3
 
-ASMFLAGS := 
+ASMFLAGS :=
 # Include all labels, including unreferenced and local labels, in the sym/map file if `make` is run with `ALLSYM=1`
 ifeq ($(ALLSYM),1)
 ASMFLAGS += -E
@@ -83,13 +83,13 @@ data/text/%.asm: data/text/%.txt
 ### Generate maps
 
 data/maps/metatiles/%.bin: data/maps/metatiles/%.tmx
-	$(PYTHON) tools/tmx2data.py $< $@
+	tools/tmx2data $< $@
 
 data/maps/blocks/%.bin: data/maps/blocks/%.tmx
-	$(PYTHON) tools/tmx2data.py $< $@
+	tools/tmx2data $< $@
 
 data/maps/layouts/%.bin: data/maps/layouts/%.tmx
-	$(PYTHON) tools/tmx2data.py $< $@
+	tools/tmx2data $< $@
 
 ### Misc file-specific graphics rules
 
