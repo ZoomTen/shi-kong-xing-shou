@@ -15,7 +15,9 @@ INCLUDE "home/load_mon_pics.asm"
 INCLUDE "data/monsters/pic_pointers.asm"
 INCLUDE "home/bank0_d.asm"
 INCLUDE "home/text.asm"
+INCLUDE "home/maps.asm"
 INCLUDE "home/bank0_e.asm"
+INCLUDE "home/maps_2.asm"
 INCLUDE "home/joypad.asm"
 INCLUDE "home/wait_lcd.asm"
 INCLUDE "home/load_oam.asm"
@@ -23,6 +25,10 @@ INCLUDE "home/clear_memory.asm"
 INCLUDE "home/vblank.asm"
 INCLUDE "home/lcd.asm"
 INCLUDE "home/bank0_f.asm"
+INCLUDE "home/sram.asm"
+INCLUDE "home/play_sound.asm"
+INCLUDE "home/bank0_g.asm"
+
 
 SECTION "Debug", ROM0[$2ca4]
 
