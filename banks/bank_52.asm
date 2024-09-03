@@ -2999,5 +2999,3 @@ MapEvents_052_5773:
 unk_052_577a:
     dr $14977a, $149780
 
-SECTION "banknum52", ROMX[$7fff], BANK[$52]
-	db $52

@@ -200,5 +200,3 @@ INCLUDE "data/faces/palettes.asm"
 INCLUDE "data/faces/pics.asm"
 
 
-SECTION "banknum1f", ROMX[$7fff], BANK[$1f]
-	db $1f

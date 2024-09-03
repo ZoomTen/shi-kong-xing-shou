@@ -707,5 +707,3 @@ unk_030_58f8:
 	dr $c18f8, $c39a0
 
 
-SECTION "banknum30", ROMX[$7fff], BANK[$30]
-	db $30

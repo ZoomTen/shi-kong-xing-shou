@@ -28,6 +28,3 @@ INCLUDE "audio/music/meteor.asm"
 INCLUDE "audio/music/level_up_jingle.asm"
 INCLUDE "audio/music/exp_jingle.asm"
 INCLUDE "audio/music/monster_fainted.asm"
-
-SECTION "banknum3", ROMX[$7fff], BANK[$3]
-	db $3

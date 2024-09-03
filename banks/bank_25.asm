@@ -162,5 +162,3 @@ unk_025_645c:
 	db $6e, $78, $78, $78, $78, $6f ; HP Bar
 
 
-SECTION "banknum25", ROMX[$7fff], BANK[$25]
-	db $25

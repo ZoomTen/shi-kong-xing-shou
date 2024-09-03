@@ -17,7 +17,3 @@ Func_009_4010:
 
 unk_009_4193:
 	dr $24193, $24330
-
-
-SECTION "banknum9", ROMX[$7fff], BANK[$9]
-	db $9

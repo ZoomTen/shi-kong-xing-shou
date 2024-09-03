@@ -70,5 +70,3 @@ MapAttributes_050_77c2::
 MapAttributes_050_77d6::
 	dr $1437d6, $143ac0
 
-SECTION "banknum50", ROMX[$7fff], BANK[$50]
-	db $50

@@ -2214,6 +2214,3 @@ Func_00b_65e7::
 
 Func_00b_65f6:
 	dr $2e5f6, $2f1e0
-
-SECTION "banknumb", ROMX[$7fff], BANK[$b]
-	db $b

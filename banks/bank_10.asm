@@ -2160,6 +2160,3 @@ MapEvents_010_51ac:
 MapEvents_010_51b3:
 	warp_event ABSOLUTE,  9, $21, $02, $00
 	events_end
-
-SECTION "banknum10", ROMX[$7fff], BANK[$10]
-	db $10

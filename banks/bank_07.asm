@@ -971,6 +971,3 @@ unk_007_4eec:
 	event_04  4,  4,  0, Script_00e_4683
 	event_04  8,  4,  0, unk_00e_4691
 	events_end
-
-SECTION "banknum7", ROMX[$7fff], BANK[$7]
-	db $7

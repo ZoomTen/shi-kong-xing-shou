@@ -11,5 +11,3 @@ Func_062_6029:
 	dr $18a029, $18a710
 
 
-SECTION "banknum62", ROMX[$7fff], BANK[$62]
-	db $62

@@ -1889,5 +1889,3 @@ BattleTransition_DiagonalCheckerboard:
 unk_02d_6d77:
     dr $b2d77, $b3e8a
 
-SECTION "banknum2c", ROMX[$7fff], BANK[$2c]
-	db $2c

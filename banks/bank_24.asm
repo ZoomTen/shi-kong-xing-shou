@@ -261,5 +261,3 @@ Func_024_6bd0:
 unk_024_6d77:
 	dr $92d77, $93c10
 
-SECTION "banknum24", ROMX[$7fff], BANK[$24]
-	db $24

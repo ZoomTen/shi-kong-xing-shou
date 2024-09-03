@@ -34,5 +34,3 @@ ObjectEvents_05a_439b:
 ObjectEvents_05a_44d9:
 	dr $1684d9, $16b820
 
-SECTION "banknum5a", ROMX[$7fff], BANK[$5a]
-	db $5a

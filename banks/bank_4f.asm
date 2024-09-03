@@ -416,5 +416,3 @@ INCLUDE "data/text/bank4f_misc.asm"
 unk_4f_7ae1::
 	dr $13fae1, $13fcff
 
-SECTION "banknum4f", ROMX[$7fff], BANK[$4f]
-	db $4f

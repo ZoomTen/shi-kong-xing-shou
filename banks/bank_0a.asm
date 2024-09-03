@@ -151,7 +151,3 @@ Func_00a_45ce:
 
 INCLUDE "data/name_pointers.asm"
 INCLUDE "data/text/names.asm"
-
-
-SECTION "banknum0a", ROMX[$7fff], BANK[$0a]
-	db $0a

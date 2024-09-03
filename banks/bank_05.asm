@@ -2091,7 +2091,3 @@ Func_005_5a8e:
 
 Func_005_5a9c:
 	dr $15a9c, $15cf0
-
-
-SECTION "banknum5", ROMX[$7fff], BANK[$5]
-	db $5

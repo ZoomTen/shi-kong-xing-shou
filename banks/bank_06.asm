@@ -125,6 +125,3 @@ Tileset_006_41b2:
 
 Tileset_006_41ba:
 	dr $181ba, $18660
-
-SECTION "banknum6", ROMX[$7fff], BANK[$6]
-	db $6

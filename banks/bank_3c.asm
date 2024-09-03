@@ -11,5 +11,3 @@ Func_03c_4c74::
 	dr $f0c74, $f2c70
 
 
-SECTION "banknum3c", ROMX[$7fff], BANK[$3c]
-	db $3c

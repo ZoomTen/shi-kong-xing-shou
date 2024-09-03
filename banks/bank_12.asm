@@ -1488,5 +1488,3 @@ unk_012_5167::
 
 INCLUDE "data/text/bank12_misc.asm"
 
-SECTION "banknum12", ROMX[$7fff], BANK[$12]
-	db $12

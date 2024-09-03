@@ -867,5 +867,3 @@ PriceTexts:
 	
 INCLUDE "data/text/store_price_options.asm"
 
-SECTION "banknum1e", ROMX[$7fff], BANK[$1e]
-	db $1e

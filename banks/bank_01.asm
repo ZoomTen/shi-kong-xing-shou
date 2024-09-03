@@ -776,6 +776,3 @@ BellVillage1_Collision:
 
 MapAttributes_001_791a:
 	dr $791a, $79c8
-
-SECTION "banknum1", ROMX[$7fff], BANK[$1]
-	db $1

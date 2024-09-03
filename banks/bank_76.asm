@@ -6,6 +6,3 @@ TitleScreenGFX_Sprites:
 
 TitleScreen_MenuGFX:
 	INCBIN "gfx/title_screen/characters.2bpp"
-
-SECTION "banknum76", ROMX[$7fff], BANK[$76]
-	db $76

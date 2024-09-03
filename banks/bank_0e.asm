@@ -1095,7 +1095,3 @@ unk_0e_7e69:
 
 unk_0e_7eca:
 	dr $3beca, $3bf30
-
-
-SECTION "banknume", ROMX[$7fff], BANK[$e]
-	db $e

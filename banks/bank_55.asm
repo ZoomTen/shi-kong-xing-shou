@@ -778,5 +778,3 @@ unk_055_7f40:
 unk_055_7f6d:
 	dr $157f6d, $157fff
 
-SECTION "banknum55", ROMX[$7fff], BANK[$55]
-	db $55

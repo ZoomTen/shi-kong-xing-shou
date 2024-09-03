@@ -342,5 +342,3 @@ FacePicExtrasPointers:
 .face_56:: 	INCBIN "gfx/faces/face_56.obj.2bpp"
 .face_57:: 	INCBIN "gfx/faces/face_57.obj.2bpp"
 
-SECTION "banknum20", ROMX[$7fff], BANK[$20]
-	db $20

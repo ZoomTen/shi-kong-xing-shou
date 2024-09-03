@@ -262,5 +262,3 @@ FaceSprites2_GFX_Pointers:
 .face_119: INCBIN "gfx/faces/face_119.obj.2bpp"
 .face_120: INCBIN "gfx/faces/face_120.obj.2bpp"
 
-SECTION "banknum13", ROMX[$7fff], BANK[$13]
-	db $13

@@ -27,5 +27,3 @@ unk_05e_435f:
 	dr $17835f, $17b900
 
 
-SECTION "banknum5e", ROMX[$7fff], BANK[$5e]
-	db $5e

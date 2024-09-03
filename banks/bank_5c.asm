@@ -52,5 +52,3 @@ ObjectEvents_05c_44ab:
 Func_05c_55e7::
 	dr $1715e7, $172310
 
-SECTION "banknum5c", ROMX[$7fff], BANK[$5c]
-	db $5c

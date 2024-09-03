@@ -10,5 +10,3 @@ unk_043_6000:
 	INCBIN "gfx/character_set/image_43_6000.1bpp"
 
 
-SECTION "banknum43", ROMX[$7fff], BANK[$43]
-	db $43

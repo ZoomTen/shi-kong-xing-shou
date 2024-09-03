@@ -55,5 +55,3 @@ INCBIN "gfx/tilesets/image_16_7aa0.2bpp"
 gfx_016_7da0::
 INCBIN "gfx/tilesets/image_16_7da0.2bpp"
 
-SECTION "banknum16", ROMX[$7fff], BANK[$16]
-	db $16

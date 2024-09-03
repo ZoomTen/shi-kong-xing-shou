@@ -8,5 +8,3 @@ Func_07a_4188::
 	dr $1e8188, $1eba40
 
 
-SECTION "banknum7a", ROMX[$7fff], BANK[$7a]
-	db $7a

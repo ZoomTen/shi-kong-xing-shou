@@ -152,5 +152,3 @@ unk_02d_5294:
 	dr $b5294, $b64b0
 
 
-SECTION "banknum2d", ROMX[$7fff], BANK[$2d]
-	db $2d

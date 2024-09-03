@@ -1199,7 +1199,3 @@ GirlWalk_Up2_GFX:
 
 GirlWalk_Up3_GFX:
 	dr $13a7f, $13abf
-
-
-SECTION "banknum4", ROMX[$7fff], BANK[$4]
-	db $4

@@ -1361,6 +1361,3 @@ INCBIN "gfx/cutscenes/meteor/storm_bg_2.tilemap"
 
 MeteorCutscene_StormTilemap_3:
 INCBIN "gfx/cutscenes/meteor/storm_bg_3.tilemap"
-
-SECTION "banknum8", ROMX[$7fff], BANK[$8]
-	db $8

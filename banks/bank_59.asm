@@ -58,5 +58,3 @@ ObjectEvents_059_4736:
 ObjectEvents_059_4758:
 	dr $164758, $167d00
 
-SECTION "banknum59", ROMX[$7fff], BANK[$59]
-	db $59

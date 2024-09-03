@@ -1098,5 +1098,3 @@ unk_02b_6ee6::
 unk_02b_74d6::
 	dr $af4d6, $af650
 
-SECTION "banknum2b", ROMX[$7fff], BANK[$2b]
-	db $2b

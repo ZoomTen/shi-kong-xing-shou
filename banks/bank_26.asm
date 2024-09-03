@@ -395,5 +395,3 @@ unk_026_53ab:
 	dr $993ab, $9b140
 
 
-SECTION "banknum26", ROMX[$7fff], BANK[$26]
-	db $26

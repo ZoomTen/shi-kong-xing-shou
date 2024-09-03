@@ -442,5 +442,3 @@ Palettes_011_7205:
 Collision_011_724d:
 	dr $4724d, $47270
 
-SECTION "banknum11", ROMX[$7fff], BANK[$11]
-	db $11

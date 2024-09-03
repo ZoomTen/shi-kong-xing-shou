@@ -34,5 +34,3 @@ INCBIN "gfx/intro/background/lante.2bpp"
 IntroLante_WinGFX::
 INCBIN "gfx/intro/window/lante.2bpp"
 
-SECTION "banknum78", ROMX[$7fff], BANK[$78]
-	db $78

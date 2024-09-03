@@ -34,5 +34,3 @@ INCBIN "gfx/intro/sprites/randt.2bpp"
 IntroMitt_TextGFX::
 INCBIN "gfx/intro/sprites/mitt.2bpp"
 
-SECTION "banknum79", ROMX[$7fff], BANK[$79]
-	db $79

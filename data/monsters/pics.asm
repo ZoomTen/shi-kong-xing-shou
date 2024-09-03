@@ -29,10 +29,6 @@ image_27_7840:: INCBIN "gfx/monsters/025/mon_025.2bpp"
 image_27_7a80:: INCBIN "gfx/monsters/026/mon_026.2bpp"
 image_27_7cc0:: INCBIN "gfx/monsters/027/mon_027.2bpp"
 
-SECTION "banknum27", ROMX[$7fff], BANK[$27]
-	db $27
-
-
 SECTION "Pics 2", ROMX, BANK[$28]
 
 image_28_4000:: INCBIN "gfx/monsters/028/mon_028.2bpp"
@@ -63,9 +59,6 @@ image_28_7600:: INCBIN "gfx/monsters/052/mon_052.2bpp"
 image_28_7840:: INCBIN "gfx/monsters/053/mon_053.2bpp"
 image_28_7a80:: INCBIN "gfx/monsters/054/mon_054.2bpp"
 image_28_7cc0:: INCBIN "gfx/monsters/055/mon_055.2bpp"
-
-SECTION "banknum28", ROMX[$7fff], BANK[$28]
-	db $28
 
 
 SECTION "Pics 3", ROMX, BANK[$29]
@@ -99,10 +92,6 @@ image_29_7840:: INCBIN "gfx/monsters/081/mon_081.2bpp"
 image_29_7a80:: INCBIN "gfx/monsters/082/mon_082.2bpp"
 image_29_7cc0:: INCBIN "gfx/monsters/083/mon_083.2bpp"
 
-SECTION "banknum29", ROMX[$7fff], BANK[$29]
-	db $29
-
-
 SECTION "Pics 4", ROMX, BANK[$2a]
 
 image_2a_4000:: INCBIN "gfx/monsters/084/mon_084.2bpp"
@@ -133,10 +122,6 @@ image_2a_7600:: INCBIN "gfx/monsters/108/mon_108.2bpp"
 image_2a_7840:: INCBIN "gfx/monsters/109/mon_109.2bpp"
 image_2a_7a80:: INCBIN "gfx/monsters/110/mon_110.2bpp"
 image_2a_7cc0:: INCBIN "gfx/monsters/111/mon_111.2bpp"
-
-SECTION "banknum2a", ROMX[$7fff], BANK[$2a]
-	db $2a
-
 
 SECTION "Pics 5", ROMX, BANK[$4b]
 
@@ -169,10 +154,6 @@ image_4b_7840:: INCBIN "gfx/monsters/137/mon_137.2bpp"
 image_4b_7a80:: INCBIN "gfx/monsters/138/mon_138.2bpp"
 image_4b_7cc0:: INCBIN "gfx/monsters/139/mon_139.2bpp"
 
-SECTION "banknum4b", ROMX[$7fff], BANK[$4b]
-	db $4b
-
-
 SECTION "Pics 6", ROMX, BANK[$4c]
 
 image_4c_4000:: INCBIN "gfx/monsters/140/mon_140.2bpp"
@@ -195,6 +176,3 @@ image_4c_6400:: INCBIN "gfx/monsters/156/mon_156.2bpp"
 image_4c_6640:: INCBIN "gfx/monsters/157/mon_157.2bpp"
 image_4c_6880:: INCBIN "gfx/monsters/158/mon_158.2bpp"
 image_4c_6ac0:: INCBIN "gfx/monsters/159/mon_159.2bpp"
-
-SECTION "banknum4c", ROMX[$7fff], BANK[$4c]
-	db $4c

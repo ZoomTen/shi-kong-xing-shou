@@ -2893,5 +2893,3 @@ VastFame_Palette:
 VastFameGFX:
 	INCBIN "gfx/intro/vast_fame_logo.2bpp"
 
-SECTION "banknum77", ROMX[$7fff], BANK[$77]
-	db $77

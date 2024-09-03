@@ -25,5 +25,3 @@ unk_018_408c::
 unk_018_40a0::
 	dr $600a0, $60cc0
 
-SECTION "banknum18", ROMX[$7fff], BANK[$18]
-	db $18

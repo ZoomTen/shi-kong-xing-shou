@@ -8,5 +8,3 @@ FloatingIslandCutscene2::
 	dr $19d1f5, $19f090
 
 
-SECTION "banknum67", ROMX[$7fff], BANK[$67]
-	db $67

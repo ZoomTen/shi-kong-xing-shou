@@ -237,7 +237,3 @@ Func_00c_6ed7::
 
 unk_00c_6f22:
 	dr $32f22, $33230
-
-
-SECTION "banknumc", ROMX[$7fff], BANK[$c]
-	db $c

@@ -88,6 +88,3 @@ INCLUDE "audio/music/battle_3.asm"
 INCLUDE "audio/music/battle_4.asm"
 INCLUDE "audio/music/routes_1.asm"
 INCLUDE "audio/music/stargazing.asm"
-
-SECTION "banknum2", ROMX[$7fff], BANK[$2]
-	db $2

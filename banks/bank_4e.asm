@@ -52,5 +52,3 @@ AirportCutscene3::
 AirportCutscene1::
 	dr $138943, $13b280
 
-SECTION "banknum4e", ROMX[$7fff], BANK[$4e]
-	db $4e

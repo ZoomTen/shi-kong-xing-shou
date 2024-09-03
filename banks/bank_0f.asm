@@ -588,6 +588,3 @@ unk_00f_59b1::
 
 unk_00f_5a12::
 	dr $3da12, $3da80
-
-SECTION "banknumf", ROMX[$7fff], BANK[$f]
-	db $f
