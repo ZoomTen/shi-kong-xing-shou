@@ -139,4 +139,3 @@ Func_0da2::
 	rst Bankswitch
 	ret
 
-INCLUDE "data/monsters/pic_pointers.asm"

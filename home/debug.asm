@@ -1,5 +1,3 @@
-SECTION "Debug", ROM0[$2ca4]
-
 Func_2ca4::
 	ld de, wd284
 	ld hl, .unk_2cb8
