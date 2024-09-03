@@ -1,7 +1,7 @@
-unk_069_4000::
+Group06_Maps::
 	dr $1a4000, $1a4883
 
-unk_069_4883::
+Group07_Maps::
 	dr $1a4883, $1a4c50
 
 

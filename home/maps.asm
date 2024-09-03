@@ -152,9 +152,9 @@ ENDR
 	dba Group02_Maps
 	dba Group03_Maps
 	dba Group04_Maps
-	dba unk_063_4000
-	dba unk_069_4000
-	dba unk_069_4883
+	dba Group05_Maps
+	dba Group06_Maps
+	dba Group07_Maps
 	dba Group02_Maps
 
 Func_20b9::
