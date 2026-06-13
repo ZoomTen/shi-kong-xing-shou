@@ -15,6 +15,16 @@ The purpose of this disassembly is to create a code base that compiles 1:1 with 
 * The only thing you should be wise about is translating raw numbers into meaningful constants and labels.
 * Prefer a systematical search and replace operation rather than a carpet-bomb `sed` operation. This gives you time to analyze.
 
+# Command-specific
+
+## grep
+
+When scanning files using `grep`, besides `-n` to give you line numbers, use these for confirming context:
+```
+  -B, --before-context=NUM  print NUM lines of leading context
+  -A, --after-context=NUM   print NUM lines of trailing context
+```
+
 # Determining un-disassembled blocks
 
 Indicated by a `dr` macro (see @macros/data.asm) in ROM offset form. Some calculation may be required to determine its Game Boy address.
@@ -39,10 +49,13 @@ There are two ways to achieve this.
 More effective for finding large shifts.
 
 ```sh
-utils/look_block shi_kong_xing_shou.gbc <start offset>
+utils/look_block shi_kong_xing_shou.gbc <start offset> <lines>
 ```
 
-Start offset is the ROM address. Any deviations will have the bytes under square brackets, like this:
+Start offset is the ROM address. Lines is how many 16-byte rows you want to see at a time.
+A good amount might be 5 or 10. Expand as needed.
+
+Any deviations will have the bytes under square brackets, like this:
 
 ```
 baserom.gbc
@@ -202,8 +215,6 @@ This is usually used to access a part of a struct, where bc is the origin point 
 Setting hl to a low value is usually indicative of such.
 
 # Style guide
-
-This is based off pret's style guide.
 
 ## Constraints
 * As we're working with a newer RGBDS: `DEF constant EQU value`, not `constant EQU value`

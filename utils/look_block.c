@@ -7,36 +7,40 @@
 #include <alloca.h>
 
 #define BASEROM_NAME "baserom.gbc"
-#define DUMP_LINES 8
 #define BYTES_PER_LINE 16
-#define SZ BYTES_PER_LINE * DUMP_LINES
 
-static void dump(uint8_t *buf, uint8_t *diffmap, size_t start);
+static void dump(uint8_t *buf, uint8_t *diffmap, size_t start, int lines);
 static void print_help(void);
 
 int main(int argc, char **argv)
 {
   size_t begin_offset;
-  char *name;
-  char *offset_arg;
+  char *arg_name;
+  char *arg_offset;
+  char *arg_lines;
   int bf;
   int cf;
   int i;
+  int lines;
   uint8_t *bbuf;
   uint8_t *cbuf;
   uint8_t *diffmap;
   uint8_t *bbuf_diff;
   uint8_t *cbuf_diff;
   uint8_t *diffmap_diff;
+  int SZ;
 
-	if (argc != 3){
+	if (argc != 4){
 		print_help();
 		return 0;
 	}
 
-  name = argv[1];
-  offset_arg = argv[2];
-  begin_offset = strtoul(offset_arg, NULL, 16);
+  arg_name = argv[1];
+  arg_offset = argv[2];
+  arg_lines = argv[3];
+  begin_offset = strtoul(arg_offset, NULL, 16);
+  lines = atoi(arg_lines);
+  SZ = BYTES_PER_LINE * lines;
 
   /* setup buffers */
   bbuf = alloca(SZ);
@@ -57,7 +61,7 @@ int main(int argc, char **argv)
     close(bf);
   }
 
-  cf = open(name, O_RDONLY);
+  cf = open(arg_name, O_RDONLY);
   if (cf > -1)
   {
     lseek(cf, begin_offset, SEEK_SET);
@@ -81,19 +85,19 @@ int main(int argc, char **argv)
   }
 
   puts(BASEROM_NAME);
-  dump(bbuf, diffmap, begin_offset);
+  dump(bbuf, diffmap, begin_offset, lines);
   puts("");
-  puts(name);
-  dump(cbuf, diffmap, begin_offset);
+  puts(arg_name);
+  dump(cbuf, diffmap, begin_offset, lines);
   return 0;
 }
 
 void print_help(void)
 {
-  puts("look_block [rom.gbc] [hex offset]");
+  puts("look_block [rom.gbc] [hex offset] [lines]");
 }
 
-void dump(uint8_t *buf, uint8_t *diffmap, size_t start)
+void dump(uint8_t *buf, uint8_t *diffmap, size_t start, int lines)
 {
   int line;
   int i;
@@ -103,7 +107,7 @@ void dump(uint8_t *buf, uint8_t *diffmap, size_t start)
 
   p = buf;
   d = diffmap;
-  for (line = 0; line < DUMP_LINES; line++) {
+  for (line = 0; line < lines; line++) {
     addr = start + (size_t)line * BYTES_PER_LINE;
     printf("%04x%04x: ", (unsigned)(addr >> 16), (unsigned)(addr & 0xFFFF));
     for (i = 0; i < BYTES_PER_LINE; i++)
