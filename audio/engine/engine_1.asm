@@ -6,6 +6,8 @@ SoundEngine1_Load:
 	push bc
 	push de
 	ld [wCurrentSongID], a
+
+; Calculate song header location.
 	push af
 	add a
 	add LOW(SoundEngine1_HeaderPointers)
@@ -18,7 +20,7 @@ SoundEngine1_Load:
 	ld h, [hl]
 	ld l, a
 	or h
-	jr z, Func_002_43e4
+	jr z, .done
 	ld a, [hli]
 	ld [wSoundNumChannels], a
 	ld a, [hli]
@@ -27,70 +29,71 @@ SoundEngine1_Load:
 	ld c, l
 	xor a
 	ld [wd402], a
-	ld de, wChannel1
-
-Func_002_43cf:
+	ld de, wChannels
+.loop
 	ld hl, wSoundNumChannels
 	srl [hl]
-	jr c, Func_002_43e7
-	jr z, Func_002_43e4
-
-Func_002_43d8:
+	jr c, .skip
+	jr z, .done
+.loop2
 	ld hl, wd402
 	inc [hl]
-	ld hl, $2c
+	ld hl, CHANNEL_STRUCT_LENGTH
 	add hl, de
 	ld d, h
 	ld e, l
-	jr Func_002_43cf
-
-Func_002_43e4:
+	jr .loop
+.done
 	pop de
 	pop bc
 	ret
 
-Func_002_43e7:
-	ld hl, 0
+.skip
+	ld hl, CHANNEL_SONG_ID
 	add hl, de
 	ld a, [hli]
 	or a
-	jr z, Func_002_43f9
+	jr z, .load_channel_pointers
 	ld a, [wd406]
 	cp [hl]
-	jr nc, Func_002_43f9
+	jr nc, .load_channel_pointers
 	inc bc
 	inc bc
-	jr Func_002_43d8
+	jr .loop2
 
-Func_002_43f9:
+.load_channel_pointers
 	ld h, b
 	ld l, c
 	ld a, [hli]
 	ld b, [hl]
 	inc hl
 	push hl
-	ld hl, $20
+	ld hl, CHANNEL_PLAYHEAD
 	add hl, de
 	ld [hli], a
 	ld [hl], b
+; CHANNEL_LOOP_POINT_1
 	inc hl
 	ld [hli], a
 	ld [hl], b
 	inc hl
+; CHANNEL_LOOP_POINT_2
 	ld [hli], a
 	ld [hl], b
-	ld hl, $f
+
+; Set default instrument parameters?
+	ld hl, CHANNEL_VIBRATO_TABLE_POINTER
 	add hl, de
-	ld a, $21
+	ld a, $21    ; TODO
 	ld [hli], a
-	ld a, $50
+	ld a, $50    ; TODO
 	ld [hl], a
 	pop bc
 	ld a, [wd402]
 	push af
-	add $ab
+	add $ab    ; TODO
 	ld l, a
-	ld a, $4a
+	ld a, $4a  ; TODO
 	adc 0
 	ld h, a
 	pop af
@@ -113,17 +116,17 @@ Func_002_43f9:
 	ld [hli], a
 	ld a, 1
 	ld [hl], a
-	jr Func_002_43d8
+	jr .loop2
 
-Func_002_4443:
+.asm_002_4443
 	push bc
 	push de
 	ld [wCurrentSongID], a
 	push af
 	add a
-	add $8d
+	add LOW(SoundEngine1_HeaderPointers)
 	ld l, a
-	ld a, $40
+	ld a, HIGH(SoundEngine1_HeaderPointers)
 	adc 0
 	ld h, a
 	pop af
@@ -141,7 +144,7 @@ Func_002_4443:
 	ld a, 4
 	ld [wd402], a
 	ld de, wChannel5
-	jp Func_002_43cf
+	jp .loop
 
 SoundEngine1_Fade:
 	ld a, 7
@@ -152,10 +155,12 @@ SoundEngine1_Fade:
 SoundEngine1_Play:
 	ld a, [wSound1FadeEnabled]
 	or a
-	jr z, .no_fade
+	jr z, .run_audio
 	ld hl, wSound1FadeTimer
 	dec [hl]
-	jr nz, .no_fade
+	jr nz, .run_audio
+
+; finished fading
 	ld [hl], a
 	ld hl, wSoundGlobalStereo
 	ld a, [hl]
@@ -163,26 +168,23 @@ SoundEngine1_Play:
 	jp z, SoundEngine1_ResetSoundRegisters
 	sub $11
 	ld [hl], a
+.run_audio
+	call .ProcessAudio
+	jp SoundEngine1_ApplyAudio
 
-.no_fade:
-	call .ProcessChannels
-	jp Func_002_4c29
-
-.ProcessChannels:
+.ProcessAudio
 	xor a
 	ld [wSoundCurChannel], a
 	ld de, wChannels
-
-.channel_loop:
-	ld hl, 0
+.loop1
+	ld hl, CHANNEL_SONG_ID
 	add hl, de
 	ld a, [hl]
 	or a
-	jr z, .next_channel
-	call .ProcessChannel
+	jr z, .skip
+	call SoundEngine1_UpdateChannels
 	call Func_002_4ab3
-
-.next_channel:
+.skip
 	ld hl, CHANNEL_STRUCT_LENGTH
 	add hl, de
 	ld d, h
@@ -191,7 +193,7 @@ SoundEngine1_Play:
 	inc [hl]
 	ld a, 8
 	cp [hl]
-	jr nz, .channel_loop
+	jr nz, .loop1
 	ld hl, wChannels
 	ld de, CHANNEL_STRUCT_LENGTH
 	ld a, [hl]
@@ -204,15 +206,15 @@ SoundEngine1_Play:
 	ld [wd40d], a
 	ret
 
-.ProcessChannel:
+SoundEngine1_UpdateChannels:
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	inc [hl]
 	dec hl
 	dec [hl]
-	call z, Func_002_46df
+	call z, SoundEngine1_LoadNote
 	ld a, [wSoundCurChannel]
-	cp 3
+	cp CHAN4
 	ret z
 	ld hl, CHANNEL_FIELD09
 	add hl, de
@@ -226,7 +228,7 @@ SoundEngine1_Play:
 	jp nc, .fade_handler
 	ld a, [wSoundCurChannel]
 	and 3
-	cp 2
+	cp CHAN3
 	jp z, .retrig_noise
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG
 	add hl, de
@@ -246,8 +248,6 @@ SoundEngine1_Play:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
-.envelope_dispatch:
 	jp hl
 
 .envelope_jumptable:
@@ -500,6 +500,7 @@ SoundEngine1_Play:
 	ld a, [bc]
 	pop bc
 	cp $ff
+; apply envelope on retriggered note
 	jr nz, .fade_set_envelope
 	ld hl, CHANNEL_INSTRUMENT_VOLUME_OFFSET
 	add hl, de
@@ -577,39 +578,39 @@ Func_002_4697:
 .done:
 	ret
 
-Func_002_46df:
+SoundEngine1_LoadNote:
 	ld hl, CHANNEL_PLAYHEAD
 	add hl, de
 	ld a, [hli]
 	ld c, a
 	ld b, [hl]
 
-.cmd_loop:
+SoundEngine1_ReadMusic:
 	ld a, [bc]
 	cp $d0
-	jr c, .cmd_dispatch
-	call Func_002_484e
-	jr .cmd_loop
+	jr c, .notes_and_rests
+	call SoundEngine1_CommandProcessor
+	jr SoundEngine1_ReadMusic
 
-.cmd_dispatch:
+.notes_and_rests
 	ld a, [wSoundCurChannel]
-	cp 3
-	jp z, .noise_channel
+	cp CHAN4
+	jp z, .channel4
 	ld hl, CHANNEL_FIELD09
 	add hl, de
 	ld a, [bc]
 	cp $c0
-	jr c, .note_on
+	jr c, .is_note
 	ld [hl], 0
-	jp .save_playhead
+	jp .set_length
 
-.note_on:
+.is_note
 	ld [hl], $ff
 	push bc
 	push af
 	ld a, [wSoundCurChannel]
 	cp 7
-	jr z, .ch7_note_on
+	jr z, .sfxchannel4
 	ld hl, CHANNEL_CUR_OCTAVE
 	add hl, de
 	ld a, [hl]
@@ -644,7 +645,7 @@ Func_002_46df:
 	pop bc
 	jr .note_commit
 
-.ch7_note_on:
+.sfxchannel4
 	pop af
 	pop bc
 	and $70
@@ -661,18 +662,18 @@ Func_002_46df:
 	xor a
 	ld [hl], a
 
-.note_commit:
+.note_commit
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	xor a
 	ld [hl], a
 	ld a, [bc]
 	and $f
-	call Func_002_4815
+	call SoundEngine1_SetLengthCounter
 	ld hl, CHANNEL_LENGTH_COUNTER
 	add hl, de
 	ld [hl], a
-	call Func_002_480c
+	call SoundEngine1_WriteToPlayhead
 	ld hl, CHANNEL_FIELD11
 	add hl, de
 	bit 7, [hl]
@@ -711,11 +712,9 @@ Func_002_46df:
 	cp 3
 	jr nz, .check_stereo_panning
 	ld a, 1
-
-.check_stereo_panning:
+.check_stereo_panning
 	xor 3
-
-.has_stereo_panning:
+.has_stereo_panning
 	and 3
 	ld [hl], a
 	ld hl, CHANNEL_INSTRUMENT_PITCH_OFFSET
@@ -739,7 +738,7 @@ Func_002_46df:
 	ld [hl], a
 	ret
 
-.noise_channel:
+.channel4
 	ld a, [wChannel7]
 	cp 6
 	jr c, .noise_skip_retrig
@@ -758,17 +757,17 @@ Func_002_46df:
 	xor a
 	ld [wChannel7Field01], a
 
-.noise_skip_retrig:
+.noise_skip_retrig
 	ld a, [bc]
 	swap a
 	and $f
 	cp $c
-	call nz, Func_002_4443
+	call nz, SoundEngine1_Load.asm_002_4443
 
-.save_playhead:
+.set_length
 	ld a, [bc]
 	and $f
-	call Func_002_4815
+	call SoundEngine1_SetLengthCounter
 	ld hl, CHANNEL_LENGTH_COUNTER
 	add hl, de
 	ld [hl], a
@@ -778,7 +777,7 @@ Func_002_46df:
 	ld [hl], a
 	pop hl
 
-Func_002_480c:
+SoundEngine1_WriteToPlayhead:
 	ld hl, CHANNEL_PLAYHEAD
 	add hl, de
 	inc bc
@@ -787,41 +786,38 @@ Func_002_480c:
 	ld [hl], b
 	ret
 
-Func_002_4815:
+SoundEngine1_SetLengthCounter:
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	or a
-	jr z, Func_002_4833
+	jr z, SoundEngine1_LowNibbleOnlySwapped
 
-Func_002_481c:
+SoundEngine1_AtimesHL:
 	cp [hl]
-	jr nc, .speed_geq
+	jr nc, .less_than_hl
 	push bc
 	ld c, a
 	ld b, [hl]
 	xor a
-
-.speed_mul_a_loop:
+.multiply_1:
 	add b
 	dec c
-	jr nz, .speed_mul_a_loop
+	jr nz, .multiply_1
 	pop bc
 	ret
-
-.speed_geq:
+.less_than_hl:
 	push bc
 	ld c, a
 	ld b, [hl]
 	xor a
-
-.speed_mul_b_loop:
+.multiply_2:
 	add b
 	dec c
-	jr nz, .speed_mul_b_loop
+	jr nz, .multiply_2
 	pop bc
 	ret
 
-Func_002_4833:
+SoundEngine1_LowNibbleOnlySwapped:
 	ld a, [hl]
 	swap a
 	and $f0
@@ -853,9 +849,9 @@ Func_002_4839:
 	jr nz, .interp_c_times_b
 	ret
 
-Func_002_484e:
+SoundEngine1_CommandProcessor:
 	sub $e0
-	jr c, .cmd_table_dispatch
+	jr c, .is_dx_command
 	push af
 	add a
 	add LOW(.cmd_jumptable)
@@ -867,23 +863,22 @@ Func_002_484e:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
-.cmd_dispatch_hl:
 	jp hl
 
-.cmd_table_dispatch:
+.is_dx_command
+; D0 - DF sets the song speed
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	and $f
 	ld [hli], a
 	inc bc
 	ld a, [wSoundCurChannel]
-	cp 3
+	cp CHAN4
 	ret z
-	cp 7
+	cp CHAN8
 	jr z, .cmd_e0_ch7
 	and 3
-	cp 2
+	cp CHAN3
 	jr z, .cmd_e0_ch2
 	ld a, [bc]
 	and $33
@@ -926,14 +921,14 @@ Func_002_484e:
 	ret
 
 .cmd_jumptable:
-	dw .cmd_e0
-	dw .cmd_e0
-	dw .cmd_e0
-	dw .cmd_e0
-	dw .cmd_e0
-	dw .cmd_e0
-	dw .cmd_e0
-	dw .cmd_e0
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
 	dw .cmd_e8
 	dw .cmd_e9
 	dw .cmd_ea
@@ -959,14 +954,16 @@ Func_002_484e:
 	dw .cmd_fe
 	dw .cmd_ff
 
-.cmd_e0:
+; Ex (0-7) : set the current octave
+.cmd_e0toE7
 	ld a, [bc]
 	and 7
 	ld hl, CHANNEL_CUR_OCTAVE
 	add hl, de
-	jr .cmd_store_hl
+	jr .cmd_set_var
 
-.cmd_e8:
+; E8 xy : Set instrument duty cycle pattern
+.cmd_e8
 	inc bc
 	ld a, [wSoundCurChannel]
 	cp 7
@@ -977,33 +974,33 @@ Func_002_484e:
 	add a
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
-	jr .cmd_store_hl
-
-.cmd_e8_ch7:
+	jr .cmd_set_var
+.cmd_e8_ch7
+; always set the duty pattern to $08 if on noise channel
 	ld a, [bc]
 	or a
 	jr z, .cmd_e8_ch7_zero
 	ld a, 8
-
-.cmd_e8_ch7_zero:
+.cmd_e8_ch7_zero
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
-	jr .cmd_store_hl
+	jr .cmd_set_var
 
-.cmd_e9:
+.cmd_e9
 	ld hl, CHANNEL_FIELD0D
 	add hl, de
 	inc bc
 	ld a, [bc]
 
-.cmd_store_hl:
+.cmd_set_var
 	ld [hl], a
 
-.cmd_f5:
+; F5 : does nothing, essentially the sound engine's "nop" instruction
+.cmd_f5
 	inc bc
 	ret
 
-.cmd_ea:
+.cmd_ea
 	ld hl, CHANNEL_FIELD02
 	add hl, de
 	inc bc
@@ -1012,18 +1009,21 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_eb:
+; EB xy : Set vibrato delay and type
+.cmd_eb
 	inc bc
+; set delay in note length (x)
 	ld a, [bc]
 	swap a
 	and $f
 	ld hl, CHANNEL_SPEED
 	add hl, de
-	call Func_002_481c
+	call SoundEngine1_AtimesHL
 	ld hl, CHANNEL_VIBRATO_DELAY
 	add hl, de
 	inc a
 	ld [hli], a
+; set type (y)
 	ld a, [bc]
 	and $f
 	push bc
@@ -1046,7 +1046,8 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_ec:
+; EC xx : set channel transpose
+.cmd_ec
 	ld hl, CHANNEL_GLOBAL_TRANSPOSE
 	add hl, de
 	inc bc
@@ -1057,9 +1058,9 @@ Func_002_484e:
 
 .cmd_ed:
 	ld a, [wSoundCurChannel]
-	cp 2
+	cp CHAN3
 	jr z, .cmd_ed_ch2
-	cp 6
+	cp CHAN7
 	jr nz, .cmd_f5
 	inc bc
 	ld a, [bc]
@@ -1074,10 +1075,12 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_ee:
+; EE xx (yy zz) : volume related stuff?
+; (yy zz set only if xx > $7f)
+.cmd_ee
 	inc bc
 
-.cmd_ee_entry:
+.cmd_ee_entry
 	ld a, [bc]
 	ld hl, CHANNEL_FIELD11
 	add hl, de
@@ -1112,7 +1115,8 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_ef:
+; EF xx : set channel fine pitch
+.cmd_ef
 	ld hl, CHANNEL_GLOBAL_FINE_PITCH
 	add hl, de
 	inc bc
@@ -1148,7 +1152,8 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_f3:
+; F3 xx : set stereo panning
+.cmd_f3
 	ld hl, CHANNEL_GLOBAL_STEREO_PANNING
 	add hl, de
 	inc bc
@@ -1157,7 +1162,8 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_f6:
+; F6 xx : set speed only
+.cmd_f6
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	inc bc
@@ -1166,7 +1172,8 @@ Func_002_484e:
 	inc bc
 	ret
 
-.cmd_f7:
+; F7 xx yy : call a subpart
+.cmd_f7
 	inc bc
 	ld a, [bc]
 	ld l, a
@@ -1175,6 +1182,7 @@ Func_002_484e:
 	ld h, a
 	inc bc
 	push hl
+; save the return point
 	ld hl, CHANNEL_RETURN_POINT_1
 	add hl, de
 	ld [hl], c
@@ -1183,7 +1191,8 @@ Func_002_484e:
 	pop bc
 	ret
 
-.cmd_f8:
+; F8 xx yy : same as above but uses a different variable
+.cmd_f8
 	inc bc
 	ld a, [bc]
 	ld l, a
@@ -1200,7 +1209,8 @@ Func_002_484e:
 	pop bc
 	ret
 
-.cmd_f9:
+; F9 : return from F7 xx yy call
+.cmd_f9
 	ld hl, CHANNEL_RETURN_POINT_1
 	add hl, de
 	ld a, [hli]
@@ -1208,7 +1218,8 @@ Func_002_484e:
 	ld c, a
 	ret
 
-.cmd_fa:
+; FA : return from F8 xx yy call
+.cmd_fa
 	ld hl, CHANNEL_RETURN_POINT_2
 	add hl, de
 	ld a, [hli]
@@ -1216,7 +1227,8 @@ Func_002_484e:
 	ld c, a
 	ret
 
-.cmd_fb:
+; FB : begin a repeating phrase
+.cmd_fb
 	inc bc
 	ld hl, CHANNEL_LOOP_POINT_1
 	add hl, de
@@ -1228,7 +1240,8 @@ Func_002_484e:
 	ld [hl], 0
 	ret
 
-.cmd_fc:
+; FC : begin a repeating phrase
+.cmd_fc
 	inc bc
 	ld hl, CHANNEL_LOOP_POINT_2
 	add hl, de
@@ -1240,7 +1253,9 @@ Func_002_484e:
 	ld [hl], 0
 	ret
 
-.cmd_fd:
+; FD xx : end repeating phrase after xx repetitions
+;         if xx is 0, then loop forever
+.cmd_fd
 	inc bc
 	ld a, [bc]
 	or a
@@ -1253,8 +1268,7 @@ Func_002_484e:
 	pop hl
 	jr z, .cmd_fd_done
 	inc [hl]
-
-.cmd_fd_loop:
+.cmd_fd_loop
 	ld hl, CHANNEL_LOOP_POINT_1
 	add hl, de
 	ld a, [hli]
@@ -1262,11 +1276,12 @@ Func_002_484e:
 	ld b, [hl]
 	ret
 
-.cmd_fd_done:
+.cmd_fd_done
 	ld [hl], 0
 	jp .cmd_f5
 
-.cmd_fe:
+; FE xx : same as above but uses a different variable
+.cmd_fe
 	inc bc
 	ld a, [bc]
 	or a
@@ -1279,8 +1294,7 @@ Func_002_484e:
 	pop hl
 	jr z, .cmd_fd_done
 	inc [hl]
-
-.cmd_fe_loop:
+.cmd_fe_loop
 	ld hl, CHANNEL_LOOP_POINT_2
 	add hl, de
 	ld a, [hli]
@@ -1288,7 +1302,7 @@ Func_002_484e:
 	ld b, [hl]
 	ret
 
-.cmd_ff:
+.cmd_ff
 	ld a, [wSoundCurChannel]
 	push af
 	add LOW(.channel_mask_table)
@@ -1302,21 +1316,19 @@ Func_002_484e:
 	and [hl]
 	ld [hl], a
 	ld a, [wSoundCurChannel]
-	cp 4
+	cp CHAN5
 	jr z, .cmd_ff_ch4
 	and 3
 	jr z, .cmd_ff_ch_03
-	cp 3
+	cp CHAN4
 	jr nz, .cmd_ff_ch_other
 
-.cmd_ff_ch_03:
+.cmd_ff_ch_03
 	ld a, 8
 	jr .cmd_ff_set
-
-.cmd_ff_ch_other:
+.cmd_ff_ch_other
 	xor a
-
-.cmd_ff_set:
+.cmd_ff_set
 	ld hl, CHANNEL_FIELD0D
 	add hl, de
 	ld [hl], a
@@ -1366,8 +1378,6 @@ Func_002_4ab3:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
-.output_dispatch:
 	jp hl
 
 .output_jumptable:
@@ -1631,7 +1641,7 @@ Func_002_4ab3:
 .ch4_stereo_table:
 	db $88, 8, $80, $88
 
-Func_002_4c29:
+SoundEngine1_ApplyAudio:
 	ld hl, wCh1DataCurrentSweep
 	ld de, wCh1DataLastSweep
 	ld c, $10
@@ -1653,33 +1663,33 @@ Func_002_4c29:
 	inc hl
 	inc de
 	inc c
-	call Func_002_4d02
+	call SoundEngine1_UpdateLastData
 	ld a, b
-	call Func_002_4cee
+	call SoundEngine1_DoUpdateEnvelopes
 	ld a, b
-	call Func_002_4cff
-	call Func_002_4d0d
+	call SoundEngine1_CheckNeedUpdateLastData
+	call SoundEngine1_DoUpdateFrequency
 	inc c
-	call Func_002_4d02
+	call SoundEngine1_UpdateLastData
 	ld a, [wCh2NoteCounter]
-	call Func_002_4cee
-	call Func_002_4d02
-	call Func_002_4d0d
-	call Func_002_4d02
+	call SoundEngine1_DoUpdateEnvelopes
+	call SoundEngine1_UpdateLastData
+	call SoundEngine1_DoUpdateFrequency
+	call SoundEngine1_UpdateLastData
 	inc hl
 	inc de
 	inc c
-	call Func_002_4d02
-	call Func_002_4d02
-	call Func_002_4d0d
+	call SoundEngine1_UpdateLastData
+	call SoundEngine1_UpdateLastData
+	call SoundEngine1_DoUpdateFrequency
 	inc c
 	inc hl
 	inc de
 	inc c
 	ld a, [wCh4DataLastEnvelope]
-	call Func_002_4cee
-	call Func_002_4d02
-	call Func_002_4d0d
+	call SoundEngine1_DoUpdateEnvelopes
+	call SoundEngine1_UpdateLastData
+	call SoundEngine1_DoUpdateFrequency
 	ld hl, rNR50
 	ld a, [wSoundGlobalStereo]
 	ld [hli], a
@@ -1768,12 +1778,12 @@ Func_002_4c29:
 	ldh [rNR34], a
 	ret
 
-Func_002_4cee:
+SoundEngine1_DoUpdateEnvelopes:
 	or a
 	jr z, .write_reg
 	ld a, [de]
 	cp [hl]
-	jr z, Func_002_4d09
+	jr z, SoundEngine1_SkipUpdatingLastData
 
 .write_reg:
 	ld a, [hli]
@@ -1786,32 +1796,32 @@ Func_002_4cee:
 	inc c
 	ret
 
-Func_002_4cff:
+SoundEngine1_CheckNeedUpdateLastData:
 	or a
-	jr z, Func_002_4d06
+	jr z, SoundEngine1_DoUpdateLastData
 
-Func_002_4d02:
+SoundEngine1_UpdateLastData:
 	ld a, [de]
 	cp [hl]
-	jr z, Func_002_4d09
+	jr z, SoundEngine1_SkipUpdatingLastData
 
-Func_002_4d06:
+SoundEngine1_DoUpdateLastData:
 	ld a, [hl]
 	ld [de], a
 	ldh [c], a
 
-Func_002_4d09:
+SoundEngine1_SkipUpdatingLastData:
 	inc hl
 	inc de
 	inc c
 	ret
 
-Func_002_4d0d:
+SoundEngine1_DoUpdateFrequency:
 	ld a, [de]
 	bit 7, a
 	jr nz, .write_reg
 	cp [hl]
-	jr z, Func_002_4d09
+	jr z, SoundEngine1_SkipUpdatingLastData
 
 .write_reg:
 	ld a, [hl]
@@ -1843,7 +1853,7 @@ SoundEngine1_Init:
 	ld [wSoundGlobalStereo], a
 
 SoundEngine1_ResetEngineVariables:
-	ld hl, wChannel1
+	ld hl, wChannels
 	ld de, $2c
 	ld a, 0
 	ld [hl], a
