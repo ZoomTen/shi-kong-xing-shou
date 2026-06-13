@@ -91,9 +91,9 @@ SoundEngine2_Load:
 	pop bc
 	ld a, [wd402]
 	push af
-	add LOW(unk_003_4a49)
+	add LOW(SoundEngine2_ChannelMaskTable2)
 	ld l, a
-	ld a, HIGH(unk_003_4a49)
+	ld a, HIGH(SoundEngine2_ChannelMaskTable2)
 	adc 0
 	ld h, a
 	pop af
@@ -1306,9 +1306,9 @@ SoundEngine2_CommandProcessor:
 .cmd_ff
 	ld a, [wSoundCurChannel]
 	push af
-	add LOW(unk_003_4a41)
+	add LOW(SoundEngine2_ChannelMaskTable1)
 	ld c, a
-	ld a, HIGH(unk_003_4a41)
+	ld a, HIGH(SoundEngine2_ChannelMaskTable1)
 	adc 0
 	ld b, a
 	pop af
@@ -1362,7 +1362,7 @@ SoundEngine2_CommandProcessor:
 	ld [wCh1DataCurrentSweep], a
 	jr .cmd_ff_ch_03
 
-unk_003_4a41:
+SoundEngine2_ChannelMaskTable1:
 	db $fe  ; ch1
 	db $fd  ; ch2
 	db $fb  ; ch3
@@ -1373,7 +1373,7 @@ unk_003_4a41:
 	db $bf  ; ch7
 	db $7f  ; ch8
 
-unk_003_4a49:
+SoundEngine2_ChannelMaskTable2:
 	db $01  ; ch1
 	db $02  ; ch2
 	db $04  ; ch3
@@ -1423,9 +1423,9 @@ Func_003_4a51:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bb7)
+	add LOW(.ch1_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bb7)
+	ld a, HIGH(.ch1_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1526,9 +1526,9 @@ Func_003_4a51:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bbb)
+	add LOW(.ch2_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bbb)
+	ld a, HIGH(.ch2_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1556,9 +1556,9 @@ Func_003_4a51:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bbf)
+	add LOW(.ch3_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bbf)
+	ld a, HIGH(.ch3_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1584,9 +1584,9 @@ Func_003_4a51:
 	and $f
 	push bc
 	push af
-	add LOW(unk_003_4ba7)
+	add LOW(.ch3_vol_table)
 	ld c, a
-	ld a, HIGH(unk_003_4ba7)
+	ld a, HIGH(.ch3_vol_table)
 	adc 0
 	ld b, a
 	pop af
@@ -1604,9 +1604,9 @@ Func_003_4a51:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bc3)
+	add LOW(.ch4_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bc3)
+	ld a, HIGH(.ch4_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1645,47 +1645,22 @@ Func_003_4a51:
 	ld [bc], a
 	ret
 
-unk_003_4ba7:
-	db 0
-	db $60
-	db $40
-	db $40
-	db $40
-	db $40
-	db $40
-	db $40
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
+.ch3_vol_table:
+	db 0, $60
+	db $40, $40, $40, $40, $40, $40
+	db $20, $20, $20, $20, $20, $20, $20, $20
 
-unk_003_4bb7:
-	db $11
-	db $01
-	db $10
-	db $11
+.ch1_stereo_table:
+	db $11, 1, $10, $11
 
-unk_003_4bbb:
-	db $22
-	db $02
-	db $20
-	db $22
+.ch2_stereo_table:
+	db $22, 2, $20, $22
 
-unk_003_4bbf:
-	db $44
-	db $04
-	db $40
-	db $44
+.ch3_stereo_table:
+	db $44, 4, $40, $44
 
-unk_003_4bc3:
-	db $88
-	db $08
-	db $80
-	db $88
+.ch4_stereo_table:
+	db $88, 8, $80, $88
 
 SoundEngine2_ApplyAudio:
 	ld hl, wCh1DataCurrentSweep

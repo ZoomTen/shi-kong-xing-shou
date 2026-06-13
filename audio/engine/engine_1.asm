@@ -609,7 +609,7 @@ SoundEngine1_ReadMusic:
 	push bc
 	push af
 	ld a, [wSoundCurChannel]
-	cp 7
+	cp CHAN8
 	jr z, .sfxchannel4
 	ld hl, CHANNEL_CUR_OCTAVE
 	add hl, de
@@ -629,9 +629,9 @@ SoundEngine1_ReadMusic:
 	add [hl]
 	push af
 	add a
-	add $0e
+	add $0e     ; TODO
 	ld c, a
-	ld a, $4e
+	ld a, $4e   ; TODO
 	adc 0
 	ld b, a
 	pop af
@@ -702,7 +702,7 @@ SoundEngine1_ReadMusic:
 	add [hl]
 	ld [hl], a
 
-.skip_vibrato_init:
+.skip_vibrato_init
 	ld hl, CHANNEL_GLOBAL_STEREO_PANNING
 	add hl, de
 	ld a, [hli]
@@ -744,9 +744,9 @@ SoundEngine1_ReadMusic:
 	jr c, .noise_skip_retrig
 	cp $c
 	jr nc, .noise_skip_retrig
-	ld a, $cc
+	ld a, $cc   ; TODO
 	ld [wChannel7Playhead], a
-	ld a, $4e
+	ld a, $4e   ; TODO
 	ld [wChannel7Playhead + 1], a
 	ld a, [wd407]
 	or $40
@@ -756,7 +756,6 @@ SoundEngine1_ReadMusic:
 	ld [wChannel7], a
 	xor a
 	ld [wChannel7Field01], a
-
 .noise_skip_retrig
 	ld a, [bc]
 	swap a
@@ -795,6 +794,7 @@ SoundEngine1_SetLengthCounter:
 SoundEngine1_AtimesHL:
 	cp [hl]
 	jr nc, .less_than_hl
+; These lines are duplicated below
 	push bc
 	ld c, a
 	ld b, [hl]
@@ -805,6 +805,7 @@ SoundEngine1_AtimesHL:
 	jr nz, .multiply_1
 	pop bc
 	ret
+; Duplicated
 .less_than_hl:
 	push bc
 	ld c, a
@@ -856,7 +857,7 @@ SoundEngine1_CommandProcessor:
 	add a
 	add LOW(.cmd_jumptable)
 	ld l, a
-	ld a, $48
+	ld a, HIGH(.cmd_jumptable)
 	adc 0
 	ld h, a
 	pop af
@@ -920,7 +921,7 @@ SoundEngine1_CommandProcessor:
 	inc bc
 	ret
 
-.cmd_jumptable:
+.cmd_jumptable
 	dw .cmd_e0toE7
 	dw .cmd_e0toE7
 	dw .cmd_e0toE7
@@ -941,7 +942,7 @@ SoundEngine1_CommandProcessor:
 	dw .cmd_f1
 	dw .cmd_f2
 	dw .cmd_f3
-	dw $4df7
+	dw $4df7     ; TODO
 	dw .cmd_f5
 	dw .cmd_f6
 	dw .cmd_f7
@@ -966,8 +967,8 @@ SoundEngine1_CommandProcessor:
 .cmd_e8
 	inc bc
 	ld a, [wSoundCurChannel]
-	cp 7
-	jr z, .cmd_e8_ch7
+	cp CHAN8
+	jr z, .cmd_e8_noise
 	ld a, [bc]
 	and $33
 	add a
@@ -975,13 +976,13 @@ SoundEngine1_CommandProcessor:
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
 	jr .cmd_set_var
-.cmd_e8_ch7
+.cmd_e8_noise
 ; always set the duty pattern to $08 if on noise channel
 	ld a, [bc]
 	or a
-	jr z, .cmd_e8_ch7_zero
+	jr z, .cmd_e8_no_params
 	ld a, 8
-.cmd_e8_ch7_zero
+.cmd_e8_no_params
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
 	jr .cmd_set_var
@@ -1029,14 +1030,14 @@ SoundEngine1_CommandProcessor:
 	push bc
 	push af
 	add a
-	add $01
+	add $01     ; TODO
 	ld c, a
-	ld a, $50
+	ld a, $50   ; TODO
 	adc 0
 	ld b, a
 	pop af
 
-.cmd_eb_entry:
+.cmd_set_word
 	ld a, [bc]
 	ld [hli], a
 	inc bc
@@ -1056,10 +1057,10 @@ SoundEngine1_CommandProcessor:
 	inc bc
 	ret
 
-.cmd_ed:
+.cmd_ed
 	ld a, [wSoundCurChannel]
 	cp CHAN3
-	jr z, .cmd_ed_ch2
+	jr z, .cmd_ed_ch3
 	cp CHAN7
 	jr nz, .cmd_f5
 	inc bc
@@ -1068,7 +1069,7 @@ SoundEngine1_CommandProcessor:
 	inc bc
 	ret
 
-.cmd_ed_ch2:
+.cmd_ed_ch3
 	inc bc
 	ld a, [bc]
 	ld [wd408], a
@@ -1088,22 +1089,22 @@ SoundEngine1_CommandProcessor:
 	add a
 	jr c, .cmd_ee_flag
 
-.cmd_ee_no_flag:
+.cmd_ee_no_flag
 	ld a, [bc]
 
-.cmd_ee_ptr_setup:
+.cmd_ee_ptr_setup
 	push bc
 	push af
 	add a
-	add $79
+	add $79     ; TODO
 	ld c, a
-	ld a, $4f
+	ld a, $4f   ; TODO
 	adc 0
 	ld b, a
 	pop af
 	ld hl, CHANNEL_INSTRUMENT_POINTER
 	add hl, de
-	jr .cmd_eb_entry
+	jr .cmd_set_word
 
 .cmd_ee_flag:
 	inc bc
@@ -1125,7 +1126,7 @@ SoundEngine1_CommandProcessor:
 	inc bc
 	ret
 
-.cmd_f0:
+.cmd_f0
 	ld hl, CHANNEL_FIELD11
 	add hl, de
 	inc bc
@@ -1134,7 +1135,7 @@ SoundEngine1_CommandProcessor:
 	inc bc
 	ret
 
-.cmd_f1:
+.cmd_f1
 	ld hl, CHANNEL_FIELD12
 	add hl, de
 	inc bc
@@ -1143,7 +1144,7 @@ SoundEngine1_CommandProcessor:
 	inc bc
 	ret
 
-.cmd_f2:
+.cmd_f2
 	ld hl, CHANNEL_FIELD13
 	add hl, de
 	inc bc
@@ -1305,9 +1306,9 @@ SoundEngine1_CommandProcessor:
 .cmd_ff
 	ld a, [wSoundCurChannel]
 	push af
-	add LOW(.channel_mask_table)
+	add LOW(SoundEngine1_ChannelMaskTable1)
 	ld c, a
-	ld a, $4a
+	ld a, HIGH(SoundEngine1_ChannelMaskTable1)
 	adc 0
 	ld b, a
 	pop af
@@ -1322,10 +1323,10 @@ SoundEngine1_CommandProcessor:
 	jr z, .cmd_ff_ch_03
 	cp CHAN4
 	jr nz, .cmd_ff_ch_other
-
 .cmd_ff_ch_03
 	ld a, 8
 	jr .cmd_ff_set
+
 .cmd_ff_ch_other
 	xor a
 .cmd_ff_set
@@ -1355,15 +1356,33 @@ SoundEngine1_CommandProcessor:
 	pop hl
 	ret
 
-.cmd_ff_ch4:
+.cmd_ff_ch4
 	ld a, 8
 	ldh [rNR10], a
 	ld [wCh1DataCurrentSweep], a
 	jr .cmd_ff_ch_03
 
-.channel_mask_table:
-	db $fe, $fd, $fb, $f7, $ef, $df, $bf, $7f
-	db 1, 2, 4, 8, $10, $20, $40, $80
+SoundEngine1_ChannelMaskTable1:
+	db $fe  ; ch1
+	db $fd  ; ch2
+	db $fb  ; ch3
+	db $f7  ; ch4
+
+	db $ef  ; ch5
+	db $df  ; ch6
+	db $bf  ; ch7
+	db $7f  ; ch8
+
+SoundEngine1_ChannelMaskTable2:
+	db $01  ; ch1
+	db $02  ; ch2
+	db $04  ; ch3
+	db $08  ; ch4
+
+	db $10  ; ch5
+	db $20  ; ch6
+	db $40  ; ch7
+	db $80  ; ch8
 
 Func_002_4ab3:
 	ld a, [wSoundCurChannel]
@@ -1371,7 +1390,7 @@ Func_002_4ab3:
 	add a
 	add LOW(.output_jumptable)
 	ld l, a
-	ld a, $4a
+	ld a, HIGH(.output_jumptable)
 	adc 0
 	ld h, a
 	pop af
@@ -1381,22 +1400,24 @@ Func_002_4ab3:
 	jp hl
 
 .output_jumptable:
-	dw .output_ch1
-	dw .output_ch2
-	dw .output_ch3
-	dw .output_ch4_gate
-	dw .output_ch1_gate
-	dw .output_ch2_gate
-	dw .output_ch3_gate
-	dw .output_ch4
+; music channels
+	dw .Ch5
+	dw .Ch6
+	dw .Ch3
+	dw .Ch4
+; sfx channels
+	dw .Ch1
+	dw .Ch2
+	dw .Ch7
+	dw .Ch8
 
-.output_ch1:
+.Ch5:
 	ld hl, wChannel5
 	ld a, [hl]
 	or a
 	ret nz
 
-.output_ch1_gate:
+.Ch1:
 	ld hl, CHANNEL_CURRENT_STEREO
 	add hl, de
 	ld a, [hl]
@@ -1404,7 +1425,7 @@ Func_002_4ab3:
 	push af
 	add LOW(.ch1_stereo_table)
 	ld l, a
-	ld a, $4c
+	ld a, HIGH(.ch1_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1480,7 +1501,7 @@ Func_002_4ab3:
 	and 7
 	ld [bc], a
 
-.output_ch4_gate:
+.Ch4:
 	ret
 
 .output_freq_negative:
@@ -1493,13 +1514,13 @@ Func_002_4ab3:
 	adc $ff
 	jr .output_freq_hi
 
-.output_ch2:
+.Ch6:
 	ld hl, wChannel6
 	ld a, [hl]
 	or a
 	ret nz
 
-.output_ch2_gate:
+.Ch2:
 	ld hl, CHANNEL_CURRENT_STEREO
 	add hl, de
 	ld a, [hl]
@@ -1507,7 +1528,7 @@ Func_002_4ab3:
 	push af
 	add LOW(.ch2_stereo_table)
 	ld l, a
-	ld a, $4c
+	ld a, HIGH(.ch2_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1516,20 +1537,20 @@ Func_002_4ab3:
 	and $dd
 	or [hl]
 	ld [bc], a
-	ld bc, wCh1DataCurrentSweep + 5
+	ld bc, wCh1DataCurrentSweep + 5 ; TODO
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	ld a, [hl]
 	ld [wCh2NoteCounter], a
 	jr .output_ch1_common
 
-.output_ch3:
+.Ch3:
 	ld hl, wChannel7
 	ld a, [hl]
 	or a
 	ret nz
 
-.output_ch3_gate:
+.Ch7:
 	ld hl, CHANNEL_CURRENT_STEREO
 	add hl, de
 	ld a, [hl]
@@ -1537,7 +1558,7 @@ Func_002_4ab3:
 	push af
 	add LOW(.ch3_stereo_table)
 	ld l, a
-	ld a, $4c
+	ld a, HIGH(.ch3_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1565,7 +1586,7 @@ Func_002_4ab3:
 	push af
 	add LOW(.ch3_vol_table)
 	ld c, a
-	ld a, $4c
+	ld a, HIGH(.ch3_vol_table)
 	adc 0
 	ld b, a
 	pop af
@@ -1577,7 +1598,7 @@ Func_002_4ab3:
 	inc bc
 	jp .output_freq_common
 
-.output_ch4:
+.Ch8:
 	ld hl, CHANNEL_CURRENT_STEREO
 	add hl, de
 	ld a, [hl]
@@ -1585,7 +1606,7 @@ Func_002_4ab3:
 	push af
 	add LOW(.ch4_stereo_table)
 	ld l, a
-	ld a, $4c
+	ld a, HIGH(.ch4_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1644,137 +1665,137 @@ Func_002_4ab3:
 SoundEngine1_ApplyAudio:
 	ld hl, wCh1DataCurrentSweep
 	ld de, wCh1DataLastSweep
-	ld c, $10
+	ld c, LOW(rNR10)
 	ld a, [wCh1NoteCounter]
 	ld b, a
 	or a
-	jr z, .ch1_write_sweep
+	jr z, .update_sweep
 	ld a, [de]
 	cp [hl]
-	jr z, .ch1_sweep_done
+	jr z, .next
 
-.ch1_write_sweep:
+.update_sweep
+; apply Ch1 sweep
 	ld a, [hl]
 	ld [de], a
 	ldh [c], a
-	ldh [c], a
+	ldh [c], a ; ?
 
-.ch1_sweep_done:
+.next
+; apply Ch1 duty cycle
 	inc hl
 	inc de
 	inc c
 	call SoundEngine1_UpdateLastData
+
+; apply Ch1 envelope
 	ld a, b
 	call SoundEngine1_DoUpdateEnvelopes
+
+; apply Ch1 note frequency
 	ld a, b
 	call SoundEngine1_CheckNeedUpdateLastData
 	call SoundEngine1_DoUpdateFrequency
+
+; next byte is not used
 	inc c
+
+; apply Ch2 sound length
 	call SoundEngine1_UpdateLastData
+
+; apply Ch2 envelope
 	ld a, [wCh2NoteCounter]
 	call SoundEngine1_DoUpdateEnvelopes
+
+; apply Ch2 note frequency
 	call SoundEngine1_UpdateLastData
 	call SoundEngine1_DoUpdateFrequency
+
+; apply Ch3 enable
 	call SoundEngine1_UpdateLastData
+
+; skip setting length
 	inc hl
 	inc de
 	inc c
+
+; apply Ch3 output level
 	call SoundEngine1_UpdateLastData
+
+; apply Ch3 note frequency
 	call SoundEngine1_UpdateLastData
 	call SoundEngine1_DoUpdateFrequency
+
+; skip
 	inc c
+
+; skip audio length
 	inc hl
 	inc de
 	inc c
+
+; apply Ch4 envelope
 	ld a, [wCh4DataLastEnvelope]
 	call SoundEngine1_DoUpdateEnvelopes
+
+; apply Ch4 "frequency"
 	call SoundEngine1_UpdateLastData
 	call SoundEngine1_DoUpdateFrequency
+
+; apply global stereo
 	ld hl, rNR50
 	ld a, [wSoundGlobalStereo]
 	ld [hli], a
+
+; apply sound
 	ld a, [wSoundStereoChannels]
 	ld [hli], a
+
+; any sfx?
 	ld a, [wChannel7]
 	or a
-	jr nz, .use_ch7_waveform
+	jr nz, .use_other_waveform
 	ld a, [wd408]
-	jr .waveform_check
+	jr .UpdateWaveform
 
-.use_ch7_waveform:
+.use_other_waveform
 	ld a, [wd409]
 
-.waveform_check:
+.UpdateWaveform:
+; don't need to update if it's the same the last one
 	ld hl, wSound1LastWaveform
 	cp [hl]
 	ret z
+
+; find waveform data
 	ld [hl], a
 	push af
 	add a
-	add $7c
+	add $7c    ; TODO
 	ld l, a
-	ld a, $50
+	ld a, $50    ; TODO
 	adc 0
 	ld h, a
+
+; do overwrite
 	pop af
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld c, $30
+	ld c, LOW(_AUD3WAVERAM)
 	xor a
 	ldh [rNR30], a
+rept 16
 	ld a, [hli]
 	ldh [c], a
 	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, [hli]
-	ldh [c], a
-	inc c
-	ld a, $80
+endr
+	ld a, %10000000
 	ldh [rNR30], a
+
+; replay ch3
 	ld a, [wCh3DataCurrentFrequency + 1]
-	or $80
+	or %10000000
 	ldh [rNR34], a
 	ret
 
@@ -1854,7 +1875,7 @@ SoundEngine1_Init:
 
 SoundEngine1_ResetEngineVariables:
 	ld hl, wChannels
-	ld de, $2c
+	ld de, CHANNEL_STRUCT_LENGTH
 	ld a, 0
 	ld [hl], a
 	add hl, de
@@ -1905,12 +1926,16 @@ SoundEngine1_ResetHWVolumes:
 	ldh [rNR52], a
 
 SoundEngine1_TurnOffChannels:
+; reset sweep
 	ld a, 8
 	ldh [rNR10], a
 	ld [wCh1DataCurrentSweep], a
+
 	ldh a, [rNR52]
 	bit 0, a
 	jr z, .ch1_is_off
+
+
 	xor a
 	ldh [rNR11], a
 	ld [wCh1DataCurrentDutyLength], a
@@ -1944,6 +1969,7 @@ SoundEngine1_TurnOffChannels:
 	ldh a, [rNR52]
 	bit 2, a
 	jr z, .wave_is_off
+
 	xor a
 	ldh [rNR32], a
 	ld [wCh3DataCurrentVolume], a
