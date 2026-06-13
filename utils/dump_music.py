@@ -110,7 +110,7 @@ with open('baserom.gbc', 'rb') as rom:
 						"\n\t"+
 						("           %s, %s, \\ ; duty cycle" % tuple(args["duty"][0]))+
 						"\n\t"+
-						("           $%x, \\ ; unknown 1" % args["unknown1"])+
+						("           $%x, \\ ; volume envelope" % args["unknown1"])+
 						"\n\t"+
 						("           %d, %d, \\ ; vibrato" % tuple(args["vibrato"][0]))+
 						"\n\t"+
@@ -139,7 +139,7 @@ with open('baserom.gbc', 'rb') as rom:
 				}
 				print("\tduty_cycle %s, %s" % tuple(args["duty"]),end="")
 			elif command == 0xe9:
-				print("\tunknown_music_e9 $%x" % get_number(rom, 1),end="")
+				print("\tvolume_envelope $%x" % get_number(rom, 1),end="")
 			elif command == 0xea:
 				print("\tunknown_music_ea $%x" % get_number(rom, 1),end="")
 			elif command == 0xeb:
@@ -154,7 +154,7 @@ with open('baserom.gbc', 'rb') as rom:
 				}
 				print("\ttranspose %d" % args["transpose"],end="")
 			elif command == 0xed:
-				print("\tunknown_music_ed $%x" % get_number(rom, 1),end="")
+				print("\twaveform $%x" % get_number(rom, 1),end="")
 			elif command == 0xee:
 				args = {
 					"unknown1": get_number(rom, 1)
@@ -162,11 +162,11 @@ with open('baserom.gbc', 'rb') as rom:
 				if args["unknown1"] > 127:
 					args["unknown2"] = get_number(rom, 1)
 					args["unknown3"] = get_number(rom, 1)
-					print("\tunknown_volume $%x, $%x, $%x" % (
+					print("\tenvelope_setting $%x, $%x, $%x" % (
 						args["unknown1"],  args["unknown2"],  args["unknown3"]
 					),end="")
 				else:
-					print("\tunknown_volume $%x" % args["unknown1"],end="")
+					print("\tenvelope_setting $%x" % args["unknown1"],end="")
 			elif command == 0xef:
 				arg = get_number(rom, 1)
 				args = {
@@ -174,11 +174,11 @@ with open('baserom.gbc', 'rb') as rom:
 				}
 				print("\tfine_pitch $%x" % args["fine_pitch"],end="")
 			elif command == 0xf0:
-				print("\tunknown_music_f0 $%x" % get_number(rom, 1),end="")
+				print("\tenvelope_mode $%x" % get_number(rom, 1),end="")
 			elif command == 0xf1:
-				print("\tunknown_music_f1 $%x" % get_number(rom, 1),end="")
+				print("\tenvelope_param1 $%x" % get_number(rom, 1),end="")
 			elif command == 0xf2:
-				print("\tunknown_music_f2 $%x" % get_number(rom, 1),end="")
+				print("\tenvelope_param2 $%x" % get_number(rom, 1),end="")
 			elif command == 0xf3:
 				arg = get_number(rom, 1)
 				args = {
@@ -186,7 +186,7 @@ with open('baserom.gbc', 'rb') as rom:
 				}
 				print("\tstereo_panning %s" % args["stereo"],end="")
 			elif command == 0xf4:
-				print("\tunknown_music_f4 $%x, $%x" % (
+				print("\tretrigger $%x, $%x" % (
 					get_number(rom, 1), get_number(rom, 1)
 				),end="")
 			elif command == 0xf5:

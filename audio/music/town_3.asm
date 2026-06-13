@@ -2,7 +2,7 @@
 Music_Town3_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           0, 0, \ ; vibrato
 	           $86, $12, $85 ; unknown 2
 	speed 7
@@ -10,7 +10,7 @@ Music_Town3_Ch1:
 	fine_pitch $2
 	transpose -12
 	mark_loop ;------
-	unknown_music_e9 $81
+	volume_envelope $81
 	duty_cycle DUTY_50, DUTY_50
 	octave 4
 	note E_, 1
@@ -267,14 +267,14 @@ Music_Town3_Ch1:
 Music_Town3_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 7
 	stereo_panning $4
 	fine_pitch $2
 	mark_loop ;------
-	unknown_music_e9 $81
+	volume_envelope $81
 	transpose 0
 	duty_cycle DUTY_12, DUTY_12
 	octave 2

@@ -2,13 +2,13 @@
 Music_Ship_Ch1:
 	sound_init 6, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           0, 0, \ ; vibrato
 	           $86, $12, $85 ; unknown 2
 	speed 7
 	stereo_panning $4
 	fine_pitch $2
-	unknown_music_e9 $a1
+	volume_envelope $a1
 	duty_cycle DUTY_50, DUTY_50
 	mark_loop ;------
 	transpose 0
@@ -130,13 +130,13 @@ Music_Ship_Ch1:
 Music_Ship_Ch2:
 	sound_init 6, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
-	           $a1, \ ; unknown 1
+	           $a1, \ ; volume envelope
 	           2, 5, \ ; vibrato
 	           $8a, $34, $a7 ; unknown 2
 	speed 7
 	stereo_panning STEREO_CENTER
 	fine_pitch $2
-	unknown_music_e9 $a1
+	volume_envelope $a1
 	duty_cycle DUTY_12, DUTY_12
 	mark_loop ;------
 	transpose -24

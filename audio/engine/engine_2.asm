@@ -221,7 +221,7 @@ SoundEngine2_UpdateChannels:
 	ld a, [hl]
 	or a
 	ret z
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld a, [hl]
 	add a
@@ -265,7 +265,7 @@ SoundEngine2_UpdateChannels:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -277,7 +277,7 @@ SoundEngine2_UpdateChannels:
 	ld [hl], a
 	and 7
 	ld c, a
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -297,12 +297,12 @@ SoundEngine2_UpdateChannels:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	and $f0
 	ld b, a
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -312,7 +312,7 @@ SoundEngine2_UpdateChannels:
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -334,7 +334,7 @@ SoundEngine2_UpdateChannels:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -361,13 +361,13 @@ SoundEngine2_UpdateChannels:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	and $f
 	swap a
 	ld b, a
-	ld hl, CHANNEL_FIELD13
+	ld hl, CHANNEL_ENV_PARAM_2
 	add hl, de
 	ld a, [hl]
 	and 7
@@ -379,7 +379,7 @@ SoundEngine2_UpdateChannels:
 	ld a, b
 	swap a
 	push af
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -397,7 +397,7 @@ SoundEngine2_UpdateChannels:
 	pop bc
 
 .envelope_case_8:
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -456,7 +456,7 @@ SoundEngine2_UpdateChannels:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld a, [hl]
 	and $7f
@@ -674,14 +674,14 @@ SoundEngine2_ReadMusic:
 	add hl, de
 	ld [hl], a
 	call SoundEngine2_WriteToPlayhead
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	bit 7, [hl]
 	jr z, .skip_vibrato_init
 	push af
 	and $f
 	ld c, a
-	ld hl, CHANNEL_FIELD13
+	ld hl, CHANNEL_ENV_PARAM_2
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -909,7 +909,7 @@ SoundEngine2_CommandProcessor:
 	dec bc
 	call .cmd_ed
 	ld a, [bc]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld [hli], a
 	add a
@@ -988,7 +988,7 @@ SoundEngine2_CommandProcessor:
 	jr .cmd_set_var
 
 .cmd_e9
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1002,7 +1002,7 @@ SoundEngine2_CommandProcessor:
 	ret
 
 .cmd_ea
-	ld hl, CHANNEL_FIELD02
+	ld hl, CHANNEL_SWEEP
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1083,7 +1083,7 @@ SoundEngine2_CommandProcessor:
 
 .cmd_ee_entry
 	ld a, [bc]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld [hli], a
 	add a
@@ -1127,7 +1127,7 @@ SoundEngine2_CommandProcessor:
 	ret
 
 .cmd_f0
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1136,7 +1136,7 @@ SoundEngine2_CommandProcessor:
 	ret
 
 .cmd_f1
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1145,7 +1145,7 @@ SoundEngine2_CommandProcessor:
 	ret
 
 .cmd_f2
-	ld hl, CHANNEL_FIELD13
+	ld hl, CHANNEL_ENV_PARAM_2
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1330,7 +1330,7 @@ SoundEngine2_CommandProcessor:
 .cmd_ff_ch_other
 	xor a
 .cmd_ff_set
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
@@ -1435,7 +1435,7 @@ Func_003_4a51:
 	or [hl]
 	ld [bc], a
 	ld bc, wCh1DataCurrentSweep
-	ld hl, CHANNEL_FIELD02
+	ld hl, CHANNEL_SWEEP
 	add hl, de
 	ld a, [hl]
 	ld [bc], a
@@ -2032,6 +2032,8 @@ unk_003_4ebf: dr $cebf, $ceda
 unk_003_4eda: dr $ceda, $cef2
 unk_003_4ef2: dr $cef2, $cf17
 
+; these are raw values written to NRx2 each frame
+; terminates on -1
 SoundEngine2_InstrumentPointers:
 	dw .instrument1
 	dw .instrument2

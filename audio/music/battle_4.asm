@@ -2,15 +2,15 @@
 Music_Battle4_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $c1, \ ; unknown 1
+	           $c1, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 7
 	stereo_panning $4
-	unknown_volume $10
+	envelope_setting $10
 	fine_pitch $1
 	duty_cycle DUTY_75, DUTY_75
-	unknown_music_e9 $a1
+	volume_envelope $a1
 	mark_loop ;------
 	transpose 0
 	octave 2
@@ -181,7 +181,7 @@ Music_Battle4_Ch1:
 Music_Battle4_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 7
@@ -189,7 +189,7 @@ Music_Battle4_Ch2:
 	stereo_panning STEREO_LEFT
 	fine_pitch $2
 	transpose -24
-	unknown_music_e9 $c1
+	volume_envelope $c1
 	duty_cycle DUTY_12, DUTY_12
 	octave 4
 	note A_, 1

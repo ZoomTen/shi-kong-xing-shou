@@ -2,7 +2,7 @@
 Music_ExpJingle_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $c1, \ ; unknown 1
+	           $c1, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	fine_pitch $2
@@ -11,7 +11,7 @@ Music_ExpJingle_Ch1:
 	mark_loop ;------
 	duty_cycle DUTY_50, DUTY_50
 	transpose 0
-	unknown_music_e9 $91
+	volume_envelope $91
 	stereo_panning $3
 	octave 3
 	note C_, 2
@@ -40,12 +40,12 @@ Music_ExpJingle_Ch1:
 Music_ExpJingle_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           2, 4, \ ; vibrato
 	           $8b, $35, $c7 ; unknown 2
 	speed 6
 	fine_pitch $2
-	unknown_music_e9 $91
+	volume_envelope $91
 	duty_cycle DUTY_75, 5
 	mark_loop ;------
 	duty_cycle DUTY_50, DUTY_50

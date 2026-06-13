@@ -2,16 +2,16 @@
 Music_Battle3_Ch1:
 	sound_init 6, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           0, 0, \ ; vibrato
 	           $86, $12, $85 ; unknown 2
 	speed 6
 	stereo_panning $4
 	fine_pitch $2
 	transpose 0
-	unknown_volume $10
+	envelope_setting $10
 	mark_loop ;------
-	unknown_music_e9 $81
+	volume_envelope $81
 	duty_cycle DUTY_50, DUTY_50
 	octave 2
 	note A_, 5
@@ -118,15 +118,15 @@ Music_Battle3_Ch1:
 Music_Battle3_Ch2:
 	sound_init 6, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 6
 	stereo_panning STEREO_CENTER
-	unknown_volume $12
+	envelope_setting $12
 	fine_pitch $2
 	mark_loop ;------
-	unknown_music_e9 $81
+	volume_envelope $81
 	transpose -12
 	duty_cycle DUTY_12, DUTY_12
 	octave 2
