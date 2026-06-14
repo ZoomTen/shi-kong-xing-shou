@@ -789,7 +789,7 @@ ENDR
 LoadMap::
 	call LoadMapLayout
 	call Func_24d1
-	call Func_24e6
+	call SetupCrystalMines
 	call GetMapLayoutPointer
 	call BuildBlockmap
 	call LoadMapTileAttrs
@@ -805,39 +805,39 @@ Func_24d1::
 	homecall Func_01e_41bf
 	ret
 
-Func_24e6::
+SetupCrystalMines::
 	ld a, [hMapGroup]
-	cp 1
+	cp MAPGROUP_GROUP_01
 	ret nz
 
 	ld a, [hMapNumber]
-	cp $23
-	jr z, .asm_2504
-	cp $24
-	jr z, .asm_2504
-	cp $25
-	jr z, .asm_2504
-	cp $26
-	jr z, .asm_2504
-	cp $27
-	jr z, .asm_2504
+	cp MAP_CRYSTAL_MINES_P1
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P2
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P3
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P4
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P5
+	jr z, .crystal_mines
 	ret
 
-.asm_2504
+.crystal_mines
 	ld a, [wMapType]
 	cp 1
-	jr z, .asm_251c
+	jr z, .do_special
 	cp 2
-	jr z, .asm_251c
+	jr z, .do_special
 	cp 3
-	jr z, .asm_251c
+	jr z, .do_special
 	cp 4
-	jr z, .asm_251c
+	jr z, .do_special
 	cp 5
-	jr z, .asm_251c
+	jr z, .do_special
 	ret
 
-.asm_251c
+.do_special
 	homecall Func_01e_4194
 	ret
 
