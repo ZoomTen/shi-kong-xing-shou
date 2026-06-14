@@ -19,5 +19,11 @@ INCLUDE "audio/headers/headers_3.asm"
 
 INCLUDE "audio/engine/engine_3.asm"
 INCLUDE "audio/sfx/sfx_3.asm"
-
-	dr $76593, $77380
+INCLUDE "audio/music/intro.asm"
+INCLUDE "audio/music/bgm_6e.asm"
+INCLUDE "audio/music/title.asm"
+INCLUDE "audio/music/bgm_70.asm"
+INCLUDE "audio/music/bgm_71.asm"
+INCLUDE "audio/music/bgm_72.asm"
+INCLUDE "audio/music/bgm_73.asm"
+INCLUDE "audio/music/bgm_74.asm"

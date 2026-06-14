@@ -115,8 +115,6 @@ DEF BGM_START EQU const_value
 	const BGM_LEVEL_UP_JINGLE ; $6a
 	const BGM_EXP_JINGLE ; $6b
 	const BGM_MONSTER_FAINTED ; $6c
-; $6d to $75 are handled by a third sound engine in bank $1d,
-; which is not yet disassembled.
 	const BGM_INTRO ; $6d
 	const BGM_6e ; $6e
 	const BGM_TITLE ; $6f
