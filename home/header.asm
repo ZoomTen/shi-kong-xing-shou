@@ -36,14 +36,17 @@ SECTION "lcd", ROM0[$0048]
 
 
 SECTION "Header Code", ROM0[$00b0]
-Func_00b0::
+Init::
 	push af
 	di
-	ld de, Func_00ca
-	ld hl, wc000
+; "trampoline" jump to some in-RAM code that
+; writes a bunch of bytes (maybe multicart-related?)
+; and only then actually starts the game.
+	ld de, DoInitWrites
+	ld hl, $c000
 	ld bc, $20
 	call CopyBytes
-	jp wc000
+	jp $c000
 
 CopyBytes::
 ; Copy bc bytes from de to hl
@@ -57,7 +60,7 @@ CopyBytes::
 	jr nz, .loop
 	ret
 
-Func_00ca::
+DoInitWrites::
 	ld a, $aa
 	ld [$5180], a
 	ld a, $3a
@@ -71,7 +74,7 @@ Func_00ca::
 SECTION "Header", ROM0[$0100]
 
 Start::
-	jp Func_00b0
+	jp Init
 
 ; The Game Boy cartridge header data is patched over by rgbfix.
 ; This makes sure it doesn't get used for anything else.
