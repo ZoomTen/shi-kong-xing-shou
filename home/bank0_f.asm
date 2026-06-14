@@ -177,7 +177,7 @@ ENDR
 	ret
 
 Func_29c8::
-	ldh a, [hFFC4]
+	ldh a, [hPaletteFadeState]
 	cp 1
 	jp z, .asm_29f1
 	cp 2
@@ -206,7 +206,7 @@ Func_29c8::
 	jr nz, .copy2
 
 	ld a, 1
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	ret
 
 .asm_29f1:
@@ -214,7 +214,7 @@ Func_29c8::
 	ld bc, wBGPals1
 	ld e, $40
 	xor a
-	ld [wd0b5], a
+	ld [wPaletteFadeChanged], a
 
 .asm_29fd:
 	push de
@@ -227,7 +227,7 @@ Func_29c8::
 	jr z, .asm_2a23
 
 	push af
-	ld a, [wd0b4]
+	ld a, [wPaletteFadeDirection]
 	and a
 	jr z, .asm_2a15
 
@@ -243,7 +243,7 @@ Func_29c8::
 
 .asm_2a19:
 	ld a, $01
-	ld [wd0b5], a
+	ld [wPaletteFadeChanged], a
 	ld a, [bc]
 	and $e0
 	or d
@@ -275,7 +275,7 @@ Func_29c8::
 	jr z, .asm_2a76
 
 	push af
-	ld a, [wd0b4]
+	ld a, [wPaletteFadeDirection]
 	and a
 	jr z, .asm_2a52
 
@@ -291,7 +291,7 @@ Func_29c8::
 
 .asm_2a56:
 	ld a, $01
-	ld [wd0b5], a
+	ld [wPaletteFadeChanged], a
 	ld a, d
 	sla a
 	ld d, a
@@ -325,7 +325,7 @@ Func_29c8::
 	jr z, .asm_2aa5
 
 	push af
-	ld a, [wd0b4]
+	ld a, [wPaletteFadeDirection]
 	and a
 	jr z, .asm_2a91
 
@@ -341,7 +341,7 @@ Func_29c8::
 
 .asm_2a95:
 	ld a, $01
-	ld [wd0b5], a
+	ld [wPaletteFadeChanged], a
 	ld a, d
 	sla a
 	sla a
@@ -358,12 +358,12 @@ Func_29c8::
 	dec e
 	jp nz, .asm_29fd
 
-	ld a, [wd0b5]
+	ld a, [wPaletteFadeChanged]
 	and a
 	jr nz, .ret
 
 	ld a, 0
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	ret
 
 .ret

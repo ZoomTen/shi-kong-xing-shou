@@ -16,7 +16,7 @@ unk_055_531a:
 	scr_face $02 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
 	scr_text text_55_53ae
-	scr_checkbit wdaa4, $01, Script_055_532b
+	scr_checkbit wEventFlags + 4, $01, Script_055_532b
 	scr_35 $05 ; TEMP
 	scr_end
 
@@ -39,7 +39,7 @@ Script_055_5347:
 Script_055_534b:
 	scr_face $01 ; TEMP
 	scr_text text_55_5367
-	scr_checkbit wdaa3, $03, Script_055_5358
+	scr_checkbit wEventFlags + 3, $03, Script_055_5358
 	scr_37
 	scr_end
 
@@ -49,7 +49,7 @@ Script_055_5358:
 Script_055_5359:
 	scr_face $01 ; TEMP
 	scr_text text_55_537f
-	scr_checkbit wdaa3, $03, Script_055_5366
+	scr_checkbit wEventFlags + 3, $03, Script_055_5366
 	scr_36
 	scr_end
 
@@ -86,7 +86,7 @@ unk_055_545a:
 	dr $15545a, $155479
 
 ObjectEvents_055_5479:
-	object_event $08,  8,  5, wdaa7, $02, $01, $00, $00, Script_055_54b3
+	object_event $08,  8,  5, wEventFlags + 7, $02, $01, $00, $00, Script_055_54b3
 	object_event $1f,  6,  5, 0, $00, $00, $00, $01, Script_055_5536
 	object_event $1e,  6,  7, 0, $00, $00, $00, $02, Script_055_553a
 	objects_end
@@ -161,8 +161,8 @@ ObjectEvents_055_553e:
 	object_event $53,  2,  6, 0, $00, $00, $00, $02, Script_055_5979
 	object_event $55,  7, 17, 0, $00, $00, $0b, $03, Script_055_598a
 	object_event $54,  9, 11, 0, $00, $00, $09, $04, Script_055_59a5
-	object_event $55,  6,  8, wdaa8, $02, $00, $00, $00, Script_055_59f7
-	object_event $55,  5,  8, wdaa8, $02, $01, $00, $00, Script_055_5a03
+	object_event $55,  6,  8, wEventFlags + 8, $02, $00, $00, $00, Script_055_59f7
+	object_event $55,  5,  8, wEventFlags + 8, $02, $01, $00, $00, Script_055_5a03
 	object_event $53, 16, 15, 0, $00, $00, $00, $01, Script_055_59c0
 	objects_end
 
@@ -171,7 +171,7 @@ ObjectEvents_055_5597:
 	objects_end
 
 ObjectEvents_055_55a3:
-	object_event $4a,  4,  4, wdaa8, $03, $00, $00, $00, Script_055_55af
+	object_event $4a,  4,  4, wEventFlags + 8, $03, $00, $00, $00, Script_055_55af
 	objects_end
 
 Script_055_55af:
@@ -219,14 +219,14 @@ Script_055_55bd:
 	scr_end
 
 ObjectEvents_055_561f:
-	object_event $61,  2,  2, wdaa8, $04, $00, $00, $00, Script_055_53f0
-	object_event $61,  3,  2, wdaa8, $04, $00, $00, $01, Script_055_53f0
+	object_event $61,  2,  2, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
+	object_event $61,  3,  2, wEventFlags + 8, $04, $00, $00, $01, Script_055_53f0
 	objects_end
 
 ObjectEvents_055_5636:
-	object_event $61,  2,  2, wdaa8, $04, $00, $00, $00, Script_055_53f0
-	object_event $61,  3,  2, wdaa8, $04, $00, $00, $01, Script_055_53f0
-	object_event $4a,  2,  3, wdaa8, $04, $00, $00, $02, Script_055_5666
+	object_event $61,  2,  2, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
+	object_event $61,  3,  2, wEventFlags + 8, $04, $00, $00, $01, Script_055_53f0
+	object_event $4a,  2,  3, wEventFlags + 8, $04, $00, $00, $02, Script_055_5666
 	objects_end
 
 unk_055_5658:
@@ -274,7 +274,7 @@ Script_055_5666:
 	scr_end
 
 ObjectEvents_055_56d6:
-	object_event $4a,  6,  4, wdaa8, $04, $00, $00, $00, Script_055_53f0
+	object_event $4a,  6,  4, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
 	objects_end
 
 ObjectEvents_055_56e2:
@@ -295,7 +295,7 @@ Script_055_571d:
 	scr_end
 
 Script_055_5721:
-	scr_checkbit wdaa8, $05, Script_055_571d
+	scr_checkbit wEventFlags + 8, $05, Script_055_571d
 	scr_65 $00 ; TEMP
 	scr_setmap $05, $01 ; TEMP
 	scr_spriteface  3, $04 ; TEMP
@@ -335,7 +335,7 @@ Script_055_5721:
 	scr_text text_55_6e1f
 	scr_text text_55_6e29
 	scr_3b unk_055_4bad
-	scr_checkbit wdaa3, $03, Script_055_5823
+	scr_checkbit wEventFlags + 3, $03, Script_055_5823
 	scr_1c $04 ; TEMP
 	scr_spriteface  3, $05 ; TEMP
 	scr_4e $03, unk_055_7d7f
@@ -421,7 +421,7 @@ Script_055_5884:
 	scr_04 text_55_67b7
 
 Script_055_5887:
-	scr_checkbit wdaa3, $03, Script_055_588f
+	scr_checkbit wEventFlags + 3, $03, Script_055_588f
 	scr_37
 	scr_end
 
@@ -451,7 +451,7 @@ Script_055_58b2:
 	scr_04 text_55_683c
 
 Script_055_58b5:
-	scr_checkbit wdaa4, $01, Script_055_58be
+	scr_checkbit wEventFlags + 4, $01, Script_055_58be
 	scr_35 $06 ; TEMP
 	scr_end
 
@@ -460,7 +460,7 @@ Script_055_58be:
 
 Script_055_58bf:
 	scr_04 text_55_53c5
-	scr_checkbit wdaa3, $03, Script_055_58ca
+	scr_checkbit wEventFlags + 3, $03, Script_055_58ca
 	scr_36
 	scr_end
 
@@ -487,7 +487,7 @@ ObjectEvents_055_5910:
 	objects_end
 
 ObjectEvents_055_591c:
-	object_event $08,  4,  4, wdaa7, $02, $00, $00, $00, Script_055_5a79
+	object_event $08,  4,  4, wEventFlags + 7, $02, $00, $00, $00, Script_055_5a79
 	object_event $4b,  6,  3, 0, $00, $00, $00, $01, Script_055_5a7d
 	objects_end
 
@@ -566,7 +566,7 @@ Script_055_598a:
 	scr_end
 
 Script_055_5992:
-	scr_checkbit wdaa8, $05, Script_055_59a1
+	scr_checkbit wEventFlags + 8, $05, Script_055_59a1
 	scr_04 text_55_65c6
 	scr_setbit $daa7, $07 ; TEMP
 	db $3f ; TEMP
@@ -582,7 +582,7 @@ Script_055_59a5:
 	scr_end
 
 Script_055_59ad:
-	scr_checkbit wdaa8, $05, Script_055_59bc
+	scr_checkbit wEventFlags + 8, $05, Script_055_59bc
 	scr_04 text_55_6630
 	scr_setbit $daa8, $00 ; TEMP
 	db $3f ; TEMP
@@ -598,7 +598,7 @@ Script_055_59c0:
 	scr_end
 
 Script_055_59c8:
-	scr_checkbit wdaa8, $05, Script_055_59d7
+	scr_checkbit wEventFlags + 8, $05, Script_055_59d7
 	scr_04 text_55_6684
 	scr_setbit $daa8, $01 ; TEMP
 	db $3f ; TEMP
@@ -703,7 +703,7 @@ Script_055_5a79:
 	scr_end
 
 Script_055_5a7d:
-	scr_checkbit wdaa7, $02, Script_055_5aeb
+	scr_checkbit wEventFlags + 7, $02, Script_055_5aeb
 	scr_24
 	scr_face $01 ; TEMP
 	scr_5f

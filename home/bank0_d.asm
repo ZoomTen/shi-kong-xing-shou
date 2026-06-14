@@ -43,7 +43,7 @@ IncFillBoxVRAM::
 	add hl, bc
 
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, IncFillBoxVRAM
@@ -214,7 +214,7 @@ Func_0fef::
 	ld h, HIGH(vBGMap0)
 
 .next_row
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, .asm_0ff3
@@ -268,7 +268,7 @@ Func_1022::
 	ld h, HIGH(vBGMap0)
 
 .next_row
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, .asm_102b
@@ -435,7 +435,7 @@ Func_1159::
 	add b
 	inc a
 	ld b, a
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	add b
 	ld b, a
 	ldh a, [rLY]
@@ -904,7 +904,7 @@ Func_1377::
 
 .next_row
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, Func_1377
@@ -1125,7 +1125,7 @@ Func_15a8::
 
 .next_row
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, Func_15a8
@@ -1349,55 +1349,55 @@ Func_1730::
 
 ; wow...
 	ld a, $ff
-	ld [wdaa0], a
+	ld [wEventFlags], a
 	ld a, $ff
-	ld [wdaa1], a
+	ld [wEventFlags + 1], a
 	ld a, $ff
-	ld [wdaa2], a
+	ld [wEventFlags + 2], a
 	ld a, $f7
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	ld a, $ff
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	ld a, $ff
-	ld [wdaa5], a
+	ld [wEventFlags + 5], a
 	ld a, $77
-	ld [wdaa6], a
+	ld [wEventFlags + 6], a
 	ld a, $ff
-	ld [wdaa7], a
+	ld [wEventFlags + 7], a
 	ld a, $ff
-	ld [wdaa8], a
+	ld [wEventFlags + 8], a
 	ld a, $1f
-	ld [wdaa9], a
+	ld [wEventFlags + 9], a
 	ld a, $fc
-	ld [wdaaa], a
+	ld [wEventFlags + $a], a
 	ld a, $ff
-	ld [wdaab], a
+	ld [wEventFlags + $b], a
 	ld a, $fe
-	ld [wdaac], a
+	ld [wEventFlags + $c], a
 	ld a, $ff
-	ld [wdaad], a
+	ld [wEventFlags + $d], a
 	ld a, $3f
-	ld [wdaae], a
+	ld [wEventFlags + $e], a
 	ld a, $ff
-	ld [wdaaf], a
+	ld [wEventFlags + $f], a
 	ld a, $ff
-	ld [wdab0], a
+	ld [wEventFlags + $10], a
 	ld a, $ff
-	ld [wdab1], a
+	ld [wEventFlags + $11], a
 	ld a, $ff
-	ld [wdab2], a
+	ld [wEventFlags + $12], a
 	ld a, $ff
-	ld [wdab3], a
+	ld [wEventFlags + $13], a
 	ld a, $f7
-	ld [wdab4], a
+	ld [wEventFlags + $14], a
 	ld a, $03
-	ld [wdab5], a
+	ld [wEventFlags + $15], a
 	ld a, $00
-	ld [wdab6], a
+	ld [wEventFlags + $16], a
 	ld a, $00
-	ld [wdab7], a
+	ld [wEventFlags + $17], a
 	ld a, $00
-	ld [wdab8], a
+	ld [wEventFlags + $18], a
 
 	ld a, $1a
 	ld [hFFBA], a
@@ -1622,55 +1622,55 @@ Func_1900::
 
 ; wow...
 	ld a, 0
-	ld [wdaa0], a
+	ld [wEventFlags], a
 	ld a, 0
-	ld [wdaa1], a
+	ld [wEventFlags + 1], a
 	ld a, 0
-	ld [wdaa2], a
+	ld [wEventFlags + 2], a
 	ld a, 0
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	ld a, 0
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	ld a, 0
-	ld [wdaa5], a
+	ld [wEventFlags + 5], a
 	ld a, 0
-	ld [wdaa6], a
+	ld [wEventFlags + 6], a
 	ld a, 0
-	ld [wdaa7], a
+	ld [wEventFlags + 7], a
 	ld a, 0
-	ld [wdaa8], a
+	ld [wEventFlags + 8], a
 	ld a, 0
-	ld [wdaa9], a
+	ld [wEventFlags + 9], a
 	ld a, 0
-	ld [wdaaa], a
+	ld [wEventFlags + $a], a
 	ld a, 0
-	ld [wdaab], a
+	ld [wEventFlags + $b], a
 	ld a, 0
-	ld [wdaac], a
+	ld [wEventFlags + $c], a
 	ld a, 0
-	ld [wdaad], a
+	ld [wEventFlags + $d], a
 	ld a, 0
-	ld [wdaae], a
+	ld [wEventFlags + $e], a
 	ld a, 0
-	ld [wdaaf], a
+	ld [wEventFlags + $f], a
 	ld a, 0
-	ld [wdab0], a
+	ld [wEventFlags + $10], a
 	ld a, 0
-	ld [wdab1], a
+	ld [wEventFlags + $11], a
 	ld a, 0
-	ld [wdab2], a
+	ld [wEventFlags + $12], a
 	ld a, 0
-	ld [wdab3], a
+	ld [wEventFlags + $13], a
 	ld a, 0
-	ld [wdab4], a
+	ld [wEventFlags + $14], a
 	ld a, 0
-	ld [wdab5], a
+	ld [wEventFlags + $15], a
 	ld a, 0
-	ld [wdab6], a
+	ld [wEventFlags + $16], a
 	ld a, 0
-	ld [wdab7], a
+	ld [wEventFlags + $17], a
 	ld a, 0
-	ld [wdab8], a
+	ld [wEventFlags + $18], a
 
 	ld a, 0
 	ld [hFFBA], a

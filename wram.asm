@@ -65,7 +65,7 @@ wTilemapEnd::
 
 wca88:: ds $28
 
-wcab0:: ds $40
+wPaletteBuffer:: ds $40
 
 wcaf0:: ds 8 * 8
 
@@ -97,13 +97,15 @@ wBGPals2:: ds 8 palettes
 wOBPals2:: ds 8 palettes
 
 UNION
-wcd00:: ds 1 ; Distance to warp border y
-wcd01:: ds 1 ; Distance to warp border x
+; This isn't actually the position of the player relative to the map,
+; but rather the player's sprite position on the screen.
+wPlayerScreenY:: ds 1
+wPlayerScreenX:: ds 1
 
 wcd02:: ds 1
-wcd03:: ds 1 ; Facing direction
-wcd04:: ds 1 ; OW sprite ID?
-wcd05:: ds 1
+wPlayerFacing:: ds 1
+wPlayerSpriteID:: ds 1
+wPlayerAnimFrame:: ds 1
 wcd06:: ds 1
 wcd07:: ds 1
 wcd08:: ds 1
@@ -111,8 +113,8 @@ wcd09:: ds 1
 wcd0a:: ds 1
 wcd0b:: ds 1
 wcd0c:: ds 6
-wcd12:: ds 1
-wcd13:: ds 1
+wPlayerMapY:: ds 1
+wPlayerMapX:: ds 1
 wcd14:: ds $c
 
 wcd20:: ds 1
@@ -216,17 +218,22 @@ wMapTileset2Pointer:: ds 2
 wd0ae:: ds 2
 wMapCollisionsPointer:: ds 2
 wd0b2:: ds 2
-wd0b4:: ds 1
-wd0b5:: ds 1
+wPaletteFadeDirection:: ds 1
+wPaletteFadeChanged:: ds 1
 wd0b6:: ds 2
 		ds 2
 wd0ba:: ds 1
 wd0bb:: ds 1
 wd0bc:: ds 4
 
+wFacingTileY::
 wd0c0:: ds 1
+wFacingTileX::
 wd0c1:: ds 1
-wd0c2:: ds 1
+
+; seems to be used for scanning?
+wPlayerMap2Y:: ds 1
+wPlayerMap2X::
 wd0c3:: ds 1
 
 wd0c4:: ds 2
@@ -328,12 +335,12 @@ wd3ff:: ds 1
 wd400:: ds 1
 	ds 1
 
-wd402:: ds 1
+wSoundChannelIndex:: ds 1
 wSoundCurChannel:: ds 1
 wCurrentSongID:: ds 1
 wSoundNumChannels:: ds 1
-wd406:: ds 1
-wd407:: ds 1
+wSoundPriority:: ds 1
+wSoundChannelMask:: ds 1
 wd408:: ds 1
 wd409:: ds 1
 wSound1LastWaveform:: ds 1
@@ -552,32 +559,8 @@ wd9fe:: ds 1
 wd9ff:: ds 1
 wda00:: ds $a0
 
-wdaa0:: ds 1
-wdaa1:: ds 1
-wdaa2:: ds 1
-wdaa3:: ds 1
-wdaa4:: ds 1 ; shop menu
-wdaa5:: ds 1
-wdaa6:: ds 1
-wdaa7:: ds 1
-wdaa8:: ds 1
-wdaa9:: ds 1
-wdaaa:: ds 1
-wdaab:: ds 1
-wdaac:: ds 1
-wdaad:: ds 1
-wdaae:: ds 1
-wdaaf:: ds 1
-wdab0:: ds 1
-wdab1:: ds 1
-wdab2:: ds 1
-wdab3:: ds 1
-wdab4:: ds 1
-wdab5:: ds 1
-wdab6:: ds 1
-wdab7:: ds 1
-wdab8:: ds 1
-
+; shop menu is at $daa4
+wEventFlags:: ds $19
 wdab9:: ds $15
 
 wTextBGMapPointer:: ds 2
@@ -654,9 +637,15 @@ wdcea:: ds 1 ; follower?
 wdceb:: ds 1
 wdcec:: ds 7
 
+wIntroStepTimer::
 wdcf3:: ds 1
+
+wIntroScrollMode::
 wdcf4:: ds 1
+
+wIntroSeqStep::
 wdcf5:: ds 1
+
 wdcf6:: ds 1
 wdcf7:: ds 1
 wdcf8:: ds 1

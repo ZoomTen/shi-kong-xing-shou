@@ -88,9 +88,9 @@ Func_024_6ac8:
 .loop
 	call Func_024_4062
 	call DelayFrame
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_6ae0
@@ -181,7 +181,7 @@ StartMenu_Input:
 	cp $11
 	jr z, .check_exit
 
-	ld a, [wcd04]
+	ld a, [wPlayerSpriteID]
 	cp 9
 	jr z, .check_exit
 
@@ -235,7 +235,7 @@ Func_024_6ba1:
 	dr $92ba1, $92bba
 
 StartMenu_BounceCursor:
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and 7 ; 0 or 8
 	ret nz
 

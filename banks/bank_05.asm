@@ -2,7 +2,7 @@ Func_005_4000::
 	ld a, [wPlayerObject]
 	sub $10
 	ld [wd0f9], a
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	sub 8
 	ld [wd3f9], a
 	call Func_005_47e6
@@ -93,9 +93,9 @@ ParseCurrentMapEvents::
 ; Store it to c
 	ldh a, [hSCY]
 	ld l, a
-	ldh a, [hFFB1]
+	ldh a, [hSCYHigh]
 	ld h, a
-	ld a, [wcd00]
+	ld a, [wPlayerScreenY]
 	sub $10
 	ld c, a
 	ld a, 0
@@ -120,9 +120,9 @@ ParseCurrentMapEvents::
 ; Store it to b
 	ldh a, [hSCX]
 	ld l, a
-	ldh a, [hFFAF]
+	ldh a, [hSCXHigh]
 	ld h, a
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	sub 8
 	ld e, a
 	ld a, 0
@@ -351,14 +351,14 @@ Overworld::
 
 	xor a
 	ldh [hFade], a
-	ldh [hFFBC], a	; textbox enable
+	ldh [hTextSource], a
 	ldh [hFFC2], a	; map animations
 
 	xor a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
+	ldh [hSCYHigh], a
 	ldh [hFF9F], a
 	ldh [hFFA0], a
 	ldh [hFFC2], a
@@ -383,9 +383,9 @@ Overworld::
 	ld de, wTilemap
 	ld bc, $1412
 	ld a, $12
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call Func_005_5a59
 	call Func_005_5a8e
 	call Func_005_4662
@@ -398,10 +398,10 @@ Overworld::
 	call Func_0419
 	ld a, $C7
 	ldh [rLCDC], a
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	ld [wd9d2], a
 	call FadeInPalette
 
@@ -409,9 +409,9 @@ OverworldLoop:
 	call DelayFrame
 
 ; increase frame counter
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 
 ; check if we're fading to another map
 	ldh a, [hFade]
@@ -442,7 +442,7 @@ OverworldLoop:
 
 ; check if we should be spawning
 ; a text box
-	ldh a, [hFFBC]
+	ldh a, [hTextSource]
 	and a
 	jp nz, Overworld_GotoProcessTextbox
 
@@ -512,7 +512,7 @@ Overworld_GotoBattleJumptable:
 	jp OverworldLoop
 
 Overworld_DoFade:
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	ld [wd0e3], a
 	ld a, [wcd23]
 	ld [wdcec], a
@@ -573,7 +573,7 @@ Func_005_4662:
 Func_005_46da:
 	ldh a, [hSCY]
 	ld l, a
-	ldh a, [hFFB1]
+	ldh a, [hSCYHigh]
 	ld h, a
 	ld a, [wd0f9]
 	ld c, a
@@ -593,7 +593,7 @@ Func_005_46da:
 	ld c, l
 	ldh a, [hSCX]
 	ld l, a
-	ldh a, [hFFAF]
+	ldh a, [hSCXHigh]
 	ld h, a
 	ld a, [wd3f9]
 	add $10
@@ -620,7 +620,7 @@ Func_005_46da:
 Func_005_472e:
 	ldh a, [hSCY]
 	ld l, a
-	ldh a, [hFFB1]
+	ldh a, [hSCYHigh]
 	ld h, a
 	ld a, [wd0f9]
 	ld c, a
@@ -640,7 +640,7 @@ Func_005_472e:
 	ld c, l
 	ldh a, [hSCX]
 	ld l, a
-	ldh a, [hFFAF]
+	ldh a, [hSCXHigh]
 	ld h, a
 	ld a, [wd3f9]
 	sub $10
@@ -673,7 +673,7 @@ asm_005_4766:
 Func_005_478a:
 	ldh a, [hSCY]
 	ld l, a
-	ldh a, [hFFB1]
+	ldh a, [hSCYHigh]
 	ld h, a
 	ld a, [wd0f9]
 	sub $10
@@ -700,7 +700,7 @@ asm_005_479e:
 	ld c, l
 	ldh a, [hSCX]
 	ld l, a
-	ldh a, [hFFAF]
+	ldh a, [hSCXHigh]
 	ld h, a
 	ld a, [wd3f9]
 	ld e, a
@@ -726,7 +726,7 @@ asm_005_479e:
 Func_005_47e6:
 	ldh a, [hSCY]
 	ld l, a
-	ldh a, [hFFB1]
+	ldh a, [hSCYHigh]
 	ld h, a
 	ld a, [wd0f9]
 	add $10
@@ -747,7 +747,7 @@ Func_005_47e6:
 	ld c, l
 	ldh a, [hSCX]
 	ld l, a
-	ldh a, [hFFAF]
+	ldh a, [hSCXHigh]
 	ld h, a
 	ld a, [wd3f9]
 	ld e, a
@@ -911,7 +911,7 @@ Func_005_50e5:
 	ld a, [hFFBA]
 	cp $11
 	ret z
-	ld a, [wcd04]
+	ld a, [wPlayerSpriteID]
 	cp 9
 	ret z
 	ld a, [wd9dd]
@@ -954,7 +954,7 @@ Func_005_5123:
 	call Func_005_52ba
 	call Func_005_5295
 	call Func_005_51ed
-	ld a, [wcd04]
+	ld a, [wPlayerSpriteID]
 	cp 9
 	jr z, asm_005_5148
 	call Func_005_5179
@@ -964,7 +964,7 @@ Func_005_5123:
 
 asm_005_5148:
 	ld de, wd3f5
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -972,13 +972,13 @@ asm_005_5148:
 	and a
 	ret nz
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd0e4], a
 	ld a, 1
 	ld [hFFAC], a
 	ld [wdcd0], a
 	ld a, 8
-	ld [wcd04], a
+	ld [wPlayerSpriteID], a
 	farcall Func_024_6864
 	call Func_005_51b1
 	call Func_005_4000
@@ -987,7 +987,7 @@ asm_005_5148:
 
 Func_005_5179:
 	ld de, wd3f5
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -999,10 +999,10 @@ Func_005_5179:
 	ret nz
 	farcall Func_024_6864
 	ld a, 9
-	ld [wcd04], a
+	ld [wPlayerSpriteID], a
 	ld [wd0e4], a
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld a, 1
 	ld [hFFAC], a
 	ld [wdcd0], a
@@ -1024,7 +1024,7 @@ Func_005_51b1:
 	ld [wcd26], a
 	ld a, 9
 	ld [wcd24], a
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	ld [wcd23], a
 	ld [wdcec], a
 	call Func_0531
@@ -1049,7 +1049,7 @@ Func_005_51ed:
 	ldh a, [hFFD6]
 	and a
 	ret nz
-	ld a, [hFFBC]
+	ld a, [hTextSource]
 	and a
 	ret nz
 	ld a, [wd9dd]
@@ -1067,7 +1067,7 @@ Func_005_51ed:
 	ld [hFFB8], a
 	xor a
 	ld [wdce8], a
-	ld a, [hFF9D]
+	ld a, [hFadeFrameCounter]
 	and 8
 	jr z, asm_005_5224
 	ld a, 1
@@ -1135,16 +1135,16 @@ Func_005_52ba:
 	ldh a, [hFFD6]
 	and a
 	ret nz
-	ld a, [hFFBC]
+	ld a, [hTextSource]
 	and a
 	ret nz
 	ld a, [wPlayerObject]
 	sub $10
 	ld [wd0f9], a
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	sub 8
 	ld [wd3f9], a
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	cp 0
 	jr z, asm_005_52e7
 	cp 1
@@ -1209,9 +1209,9 @@ asm_005_5330:
 	call Func_005_5504
 	call Func_0827
 	ld a, BANK(text_1e_4212)
-	ldh [hFFC3], a
+	ldh [hTextSourceBank3], a
 	ld a, 3
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	ld hl, text_1e_4212
 	ld a, l
 	ld [wTextStart], a
@@ -1254,8 +1254,8 @@ Func_005_53bb:
 	ld de, unk_005_53d1
 	ld bc, $0202
 	ld a, 2
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call Func_005_5a59
 	ret
 
@@ -1300,8 +1300,8 @@ Func_005_5404:
 	ld de, unk_005_541a
 	ld bc, $0202
 	ld a, 2
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call Func_005_5a59
 	ret
 
@@ -1332,10 +1332,10 @@ Func_005_545e:
 	ld a, [wPlayerObject]
 	sub $10
 	ld [wd0f9], a
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	sub 8
 	ld [wd3f9], a
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	cp 0
 	jr z, asm_005_547d
 	ld a, [wd0f9]
@@ -1406,8 +1406,8 @@ Func_005_54cf:
 asm_005_54ef:
 	ld bc, $0202
 	ld a, 2
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call Func_005_5a59
 	ret
 
@@ -1441,8 +1441,8 @@ Func_005_5504:
 	ld de, unk_005_556d
 	ld bc, $0202
 	ld a, 2
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call Func_005_5a59
 	ld a, [wd0f9]
 	srl a
@@ -1604,13 +1604,13 @@ Func_005_55e9:
 	ld a, [wd1e3]
 	and a
 	ret z
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	cp 1
 	ret nz
 	ld a, 2
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	ld a, $c
-	ldh [hFFC0], a
+	ldh [hTextSourceBank2], a
 	call Func_0740
 	ret
 
@@ -1628,7 +1628,7 @@ Func_005_5604:
 	ld a, SFX_12
 	call PlaySound
 	ld a, 5
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	ld a, BANK(text_1e_6e44)
 	ld [wdcb5], a
 	ld hl, text_1e_6e44
@@ -1644,14 +1644,14 @@ unk_005_5632:
 
 Func_005_56aa:
 	ld de, unk_005_5764
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	call Func_005_56e6
 	and a
 	jr nz, asm_005_56c3
-	ld a, [wd0c2]
-	ld [wcd12], a
-	ld a, [wd0c3]
-	ld [wcd13], a
+	ld a, [wPlayerMap2Y]
+	ld [wPlayerMapY], a
+	ld a, [wPlayerMap2X]
+	ld [wPlayerMapX], a
 	ret
 
 asm_005_56c3:
@@ -1687,11 +1687,11 @@ Func_005_56e6:
 	ld e, a
 	ldh a, [hFFAB]
 	add e
-	ld [wd0c2], a
+	ld [wPlayerMap2Y], a
 	add [hl]
-	ld [wd0c0], a
+	ld [wFacingTileY], a
 	inc hl
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	sub 8
 	srl a
 	srl a
@@ -1700,9 +1700,9 @@ Func_005_56e6:
 	ld e, a
 	ldh a, [hFFAA]
 	add e
-	ld [wd0c3], a
+	ld [wPlayerMap2X], a
 	add [hl]
-	ld [wd0c1], a
+	ld [wFacingTileX], a
 	ld bc, wNPCObjects
 
 asm_005_571f:
@@ -1713,17 +1713,17 @@ asm_005_571f:
 	jr z, asm_005_574b
 	ld hl, $12
 	add hl, bc
-	ld a, [wd0c0]
+	ld a, [wFacingTileY]
 	cp [hl]
 	jr nz, asm_005_574b
 	inc hl
-	ld a, [wd0c1]
+	ld a, [wFacingTileX]
 	cp [hl]
 	jr nz, asm_005_574b
-	ld a, [wd0c2]
-	ld [wcd12], a
-	ld a, [wd0c3]
-	ld [wcd13], a
+	ld a, [wPlayerMap2Y]
+	ld [wPlayerMapY], a
+	ld a, [wPlayerMap2X]
+	ld [wPlayerMapX], a
 	ld a, c
 	ld [wSelectedObjectOffset], a
 	ld a, 1
@@ -1737,10 +1737,10 @@ asm_005_574b:
 	ld a, l
 	cp $e0
 	jr c, asm_005_571f
-	ld a, [wd0c0]
-	ld [wcd12], a
-	ld a, [wd0c1]
-	ld [wcd13], a
+	ld a, [wFacingTileY]
+	ld [wPlayerMapY], a
+	ld a, [wFacingTileX]
+	ld [wPlayerMapX], a
 	xor a
 	ret
 
@@ -2069,7 +2069,7 @@ asm_005_5a77:
 	ld bc, $20
 	add hl, bc
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, Func_005_5a59
@@ -2078,7 +2078,7 @@ asm_005_5a77:
 	ret
 
 Func_005_5a8e:
-	ld hl, wcd00
+	ld hl, wPlayerScreenY
 	ld bc, $100
 .clear
 	xor a

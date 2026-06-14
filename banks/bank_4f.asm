@@ -2,7 +2,7 @@ unk_04f_4000:
 	scr_end
 
 Script_04f_4001:
-	scr_checkbit wdaa6, $04, .skip
+	scr_checkbit wEventFlags + 6, $04, .skip
 	scr_setmap $08, $00 ; TEMP
 	scr_end
 .skip
@@ -40,7 +40,7 @@ Script_04f_404d:
 Script_04f_4051:
 	scr_face $01 ; TEMP
 	scr_text text_4f_407f
-	scr_checkbit wdaa3, $03, .skip
+	scr_checkbit wEventFlags + 3, $03, .skip
 	scr_37
 	scr_end
 .skip
@@ -49,7 +49,7 @@ Script_04f_4051:
 Script_04f_405f:
 	scr_face $01 ; TEMP
 	scr_text text_4f_4097
-	scr_checkbit wdaa3, $03, .skip
+	scr_checkbit wEventFlags + 3, $03, .skip
 	scr_36
 	scr_end
 .skip
@@ -178,17 +178,17 @@ ObjectEvents_04f_4389::
 ObjectEvents_04f_438a:
 	object_event $45,  2,  2, 0, $00, $00, $00, $00, Script_04f_4775
 	object_event $1f,  1,  6, 0, $00, $00, $00, $01, Script_04f_4b77
-	object_event $25, 10,  4, wdaa5, $00, $00, $00, $02, Script_04f_477d
+	object_event $25, 10,  4, wEventFlags + 5, $00, $00, $00, $02, Script_04f_477d
 	object_event $14,  9,  8, 0, $00, $00, $09, $03, Script_04f_4782
 	objects_end
 
 ObjectEvents_04f_43b7:
-	object_event $45,  2,  3, wdab8, $00, $00, $00, $00, Script_04f_4775
-	object_event $45,  2,  2, wdab8, $00, $01, $00, $00, Script_04f_4775
+	object_event $45,  2,  3, wEventFlags + $18, $00, $00, $00, $00, Script_04f_4775
+	object_event $45,  2,  2, wEventFlags + $18, $00, $01, $00, $00, Script_04f_4775
 	object_event $1f,  1,  6, 0, $00, $00, $00, $01, Script_04f_4b77
-	object_event $25, 10,  4, wdaa5, $00, $00, $00, $02, Script_04f_477d
+	object_event $25, 10,  4, wEventFlags + 5, $00, $00, $00, $02, Script_04f_477d
 	object_event $14,  9,  8, 0, $00, $00, $09, $03, Script_04f_4782
-	object_event $11,  2,  2, wdab8, $00, $00, $00, $04, Script_04f_4031
+	object_event $11,  2,  2, wEventFlags + $18, $00, $00, $00, $04, Script_04f_4031
 	objects_end
 
 ObjectEvents_04f_43fa:
@@ -197,26 +197,26 @@ ObjectEvents_04f_43fa:
 	object_event $12, 13, 17, 0, $00, $00, $05, $03, Script_04f_47ba
 	object_event $13,  3,  4, 0, $00, $00, $0b, $03, Script_04f_47be
 	object_event $2b,  6, 24, 0, $00, $00, $00, $00, Script_04f_47d6
-	object_event $15, 26, 14, wdaa5, $01, $00, $00, $01, Script_04f_4809
-	object_event $1d, 26, 15, wdaa5, $01, $00, $00, $02, Script_04f_480d
+	object_event $15, 26, 14, wEventFlags + 5, $01, $00, $00, $01, Script_04f_4809
+	object_event $1d, 26, 15, wEventFlags + 5, $01, $00, $00, $02, Script_04f_480d
 	object_event $1a, 24, 22, 0, $00, $00, $0a, $03, Script_04f_4811
 	object_event $1c,  7, 10, 0, $00, $00, $08, $04, Script_04f_4815
 	objects_end
 
 ObjectEvents_04f_445e:
 	object_event $25,  8,  8, 0, $00, $00, $00, $00, Script_04f_4819
-	object_event $3e,  6,  4, wdaa6, $02, $00, $00, $01, Script_04f_4831
+	object_event $3e,  6,  4, wEventFlags + 6, $02, $00, $00, $01, Script_04f_4831
 	objects_end
 
 ObjectEvents_04f_4475:
 	object_event $25,  8,  8, 0, $00, $00, $00, $00, Script_04f_4819
 	object_event $3e,  6,  4, 0, $00, $00, $00, $01, Script_04f_4831
-	object_event $27,  5,  6, wdaa5, $02, $00, $00, $02, Script_04f_481d
-	object_event $28,  6,  6, wdaa5, $02, $00, $00, $03, Script_04f_4821
+	object_event $27,  5,  6, wEventFlags + 5, $02, $00, $00, $02, Script_04f_481d
+	object_event $28,  6,  6, wEventFlags + 5, $02, $00, $00, $03, Script_04f_4821
 	objects_end
 
 Script_04f_44a2:
-	scr_checkbit wdaa5, $02, .skip
+	scr_checkbit wEventFlags + 5, $02, .skip
 	scr_setmap $0f, $01 ; TEMP
 	scr_face $02 ; TEMP
 	scr_spriteface $02, $02 ; TEMP

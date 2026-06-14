@@ -24,11 +24,11 @@ SoundEngine2_Load:
 	ld a, [hli]
 	ld [wSoundNumChannels], a
 	ld a, [hli]
-	ld [wd406], a
+	ld [wSoundPriority], a
 	ld b, h
 	ld c, l
 	xor a
-	ld [wd402], a
+	ld [wSoundChannelIndex], a
 	ld de, wChannels
 .loop
 	ld hl, wSoundNumChannels
@@ -36,7 +36,7 @@ SoundEngine2_Load:
 	jr c, .skip
 	jr z, .done
 .loop2
-	ld hl, wd402
+	ld hl, wSoundChannelIndex
 	inc [hl]
 	ld hl, CHANNEL_STRUCT_LENGTH
 	add hl, de
@@ -54,7 +54,7 @@ SoundEngine2_Load:
 	ld a, [hli]
 	or a
 	jr z, .load_channel_pointers
-	ld a, [wd406]
+	ld a, [wSoundPriority]
 	cp [hl]
 	jr nc, .load_channel_pointers
 	inc bc
@@ -89,7 +89,7 @@ SoundEngine2_Load:
 	ld a, HIGH(SoundEngine2_VibratoTables.vibrato1)
 	ld [hl], a
 	pop bc
-	ld a, [wd402]
+	ld a, [wSoundChannelIndex]
 	push af
 	add LOW(SoundEngine2_ChannelMaskTable2)
 	ld l, a
@@ -104,7 +104,7 @@ SoundEngine2_Load:
 	ld l, e
 	ld a, [wCurrentSongID]
 	ld [hli], a
-	ld a, [wd406]
+	ld a, [wSoundPriority]
 	ld [hli], a
 	ld a, 8
 	ld [hli], a
@@ -138,11 +138,11 @@ SoundEngine2_Load:
 	swap a
 	ld [wSoundNumChannels], a
 	ld a, [hli]
-	ld [wd406], a
+	ld [wSoundPriority], a
 	ld b, h
 	ld c, l
 	ld a, 4
-	ld [wd402], a
+	ld [wSoundChannelIndex], a
 	ld de, wd6be
 	jp .loop
 

@@ -191,12 +191,12 @@ Func_0506::
 	dw wde9a
 
 Func_0531::
-	ld a, [wcd00]
+	ld a, [wPlayerScreenY]
 	ld b, a
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	ld c, a
 	ld de, .unk_054f
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -219,9 +219,9 @@ Func_0557::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wPlayerSpriteX]
-	ld [wcd01], a
+	ld [wPlayerScreenX], a
 	ld a, [wPlayerSpriteY]
-	ld [wcd00], a
+	ld [wPlayerScreenY], a
 	ld a, 1
 	ld [wcd02], a
 	ldh [hFFAC], a
@@ -229,13 +229,13 @@ Func_0557::
 	ld a, $0a
 	ldh [hFFAD], a
 	ld a, [wd0e3]
-	ld [wcd03], a
+	ld [wPlayerFacing], a
 	ld a, [wd0e4]
 	and a
 	jr z, .asm_058a
 
 	ld a, [wd0e4]
-	ld [wcd04], a
+	ld [wPlayerSpriteID], a
 	jp .asm_05e9 ; jr
 
 .asm_058a
@@ -248,13 +248,13 @@ Func_0557::
 	jr nz, .asm_05a0
 
 	ld a, $36
-	ld [wcd04], a
+	ld [wPlayerSpriteID], a
 	jr .asm_05a7
 
 .asm_05a0
 	ld a, [wd9dd]
 	add a
-	ld [wcd04], a
+	ld [wPlayerSpriteID], a
 
 .asm_05a7
 	ld a, [wdcea]
@@ -283,7 +283,7 @@ Func_0557::
 	ld [wcd24], a
 
 .asm_05ca
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	ld [wcd23], a
 	ld [wdcec], a
 	call Func_0531

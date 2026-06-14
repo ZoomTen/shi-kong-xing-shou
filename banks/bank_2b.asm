@@ -642,7 +642,7 @@ BattleIntro_Jump_1:
 	ldh [rOBP1], a
 	ld a, $80
 	ldh [rLCDC], a
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	ld de, wcb30
 	ld bc, $80
 	call CopyBytes3
@@ -662,18 +662,18 @@ asm_02b_68c3:
 	jr nz, asm_02b_68c3
 	ldh a, [hSCX]
 	ld [wd9ec], a
-	ldh a, [hFFAF]
+	ldh a, [hSCXHigh]
 	ld [wd9ed], a
 	ldh a, [hSCY]
 	ld [wd9ee], a
-	ldh a, [hFFB1]
+	ldh a, [hSCYHigh]
 	ld [wd9ef], a
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
+	ldh [hSCYHigh], a
 	ld [wd9f8], a
 	ld [wd08a], a
 	ld [wd9cc], a
@@ -759,29 +759,29 @@ BattleIntro_Jump_2:
 	ld hl, $9802
 	ld bc, $0606
 	ld a, 6
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ld de, unk_02b_6ee6
 	ld hl, $9802
 	ld bc, $0606
 	ld a, 6
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ld de, unk_02b_6e7a
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ld de, unk_02b_6e9e
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
-	ldh [hFF92], a
-	ldh [hFF93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	call DelayFrame
 	ld a, 2
@@ -860,7 +860,7 @@ BattleIntro_Jump_3:
 	ld [wd9e1], a
 	ld a, $c7
 	ldh [rLCDC], a
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
 	call CopyObjectPalettes
@@ -886,9 +886,9 @@ asm_02b_6a9f:
 	ld hl, $98e1
 	ld bc, $0904
 	ld a, 9
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 4
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	call Func_02b_6ae6
 	ret
@@ -896,9 +896,9 @@ asm_02b_6a9f:
 	ld hl, $9980
 	ld bc, $1406
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 6
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ret
 
@@ -1017,9 +1017,9 @@ BattleIntro_Jump_5:
 	ld [wd3ff], a
 	farcall Func_02d_4000
 	ld a, 9
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 4
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld bc, $0904
 	ld hl, $9829
 	call Func_0fef
@@ -1027,9 +1027,9 @@ BattleIntro_Jump_5:
 	ld hl, $98e1
 	call Func_0fef
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 6
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld bc, $1406
 	ld hl, $9980
 	call Func_0fef
@@ -1046,9 +1046,9 @@ BattleIntro_Jump_6:
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 6
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call Func_0fef
 	xor a
 	ldh [hSCX], a

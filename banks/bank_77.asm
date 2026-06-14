@@ -5,16 +5,16 @@ Intro_VastFame::
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
-	ld [wdcf3], a
-	ld [wdcf4], a
+	ldh [hSCYHigh], a
+	ld [wIntroStepTimer], a
+	ld [wIntroScrollMode], a
 	ld [wdcfb], a
 	ld [wdce8], a
 	ld [wdcf6], a
 	ld [wdcfc], a
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ld [wdcf7], a
 	ld [wdcf8], a
 	ld [wcd40], a
@@ -24,22 +24,22 @@ Intro_VastFame::
 	ld de, VastFame_Tilemap
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 
 	ld hl, vBGMap0
 	ld de, VastFame_Attrs
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 	ld hl, VastFame_Palette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -51,17 +51,17 @@ Intro_VastFame::
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
 
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 
 	call Intro_Delay
 
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call FadeOutPalette
 
 Intro:
@@ -74,22 +74,22 @@ Intro:
 	ld de, IntroStart_Tilemap
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 
 	ld hl, vBGMap0
 	ld de, IntroStart_Attrs
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 	ld hl, IntroStart_BGPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -113,10 +113,10 @@ Intro:
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
 
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 
 Intro_StartingScreen:
@@ -124,9 +124,9 @@ Intro_StartingScreen:
 	call Intro_ClearSprites
 
 ; increase screen counter
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 
 ; screen skip
 	ldh a, [hFade]
@@ -139,9 +139,9 @@ Intro_StartingScreen:
 	jp Intro_StartingScreen
 
 Intro_CharacterCastScreen:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 
 	call FadeOutPalette
 	call ClearBGMap0
@@ -154,14 +154,14 @@ Intro_CharacterCastScreen:
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
-	ld [wdcf3], a
-	ld [wdcf4], a
+	ldh [hSCYHigh], a
+	ld [wIntroStepTimer], a
+	ld [wIntroScrollMode], a
 	ld [wdcfb], a
 	ld [wdce8], a
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 
 .NewScreen:
 	call Intro_SetupNewScreen
@@ -170,19 +170,19 @@ Intro_CharacterCastScreen:
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_WINON | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
 
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 
 .Loop:
 	call DelayFrame
 	call Intro_LoadNewTextSprites
 
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 
 	ldh a, [hFade]
 	and a
@@ -191,7 +191,7 @@ Intro_CharacterCastScreen:
 	call Intro_CheckButtonSkip
 
 ; Intro state manager
-	ld a, [wdcf5]
+	ld a, [wIntroSeqStep]
 	cp 1
 	jr z, .character_slide_up
 	cp 2
@@ -206,9 +206,9 @@ Intro_CharacterCastScreen:
 	jp .Loop
 
 .SkipToTitle
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call Func_096a
 	jp TitleScreen
 
@@ -240,10 +240,10 @@ Intro_CharacterCastScreen:
 	ld c, $40
 	call Intro_DelayCFrames
 	ld a, 0
-	ld [wdcf5], a
-	ld bc, wcab0
+	ld [wIntroSeqStep], a
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call Func_096a
 	call ClearBGMap0
 	call Intro_ClearOAMBuffer
@@ -251,19 +251,19 @@ Intro_CharacterCastScreen:
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
-	ld [wdcf3], a
-	ld [wdcf4], a
+	ldh [hSCYHigh], a
+	ld [wIntroStepTimer], a
+	ld [wIntroScrollMode], a
 	ld [wdcfb], a
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	jp .NewScreen
 
 .begin_screen
 	call Intro_SetupNewScreen
 	ld a, 1
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	jp .Loop
 
 TitleScreen:
@@ -275,35 +275,35 @@ TitleScreen:
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
+	ldh [hSCYHigh], a
 	ld [wdce8], a
-	ld [wdcf3], a
-	ld [wdcf4], a
+	ld [wIntroStepTimer], a
+	ld [wIntroScrollMode], a
 	ld [wdcfb], a
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 
 	ld hl, vBGMap0
 	ld de, TitleScreen_Tilemap
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 
 	ld hl, vBGMap0
 	ld de, TitleScreen_Attrs
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 	ld hl, TitleScreen_BGPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -355,18 +355,18 @@ TitleScreen:
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
 
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 
 .Loop:
 	call DelayFrame
 	call TitleScreen_UpdateSprites
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ldh a, [hFade]
 	and a
 	jr nz, .jump_to_game
@@ -374,7 +374,7 @@ TitleScreen:
 	call TitleScreen_DoSpriteAnimations
 	call TitleScreen_DoSpriteAnimations2
 	call TitleScreen_DoSpriteAnimations3
-	ld a, [wdcf5]
+	ld a, [wIntroSeqStep]
 	cp 1
 	jr z, .asm_42fb
 	cp 2
@@ -453,7 +453,7 @@ TitleScreen_HandleMenuInput:
 	ldh a, [hJoypadDown]
 	bit 6, a
 	jr z, .check_down
-	ld a, [wdcf4]
+	ld a, [wIntroScrollMode]
 	and a
 	ret z
 	ld a, SFX_30
@@ -468,7 +468,7 @@ TitleScreen_HandleMenuInput:
 	ldh a, [hJoypadDown]
 	bit 7, a
 	jr z, .check_confirm
-	ld a, [wdcf4]
+	ld a, [wIntroScrollMode]
 	and a
 	ret z
 	ld a, [wdcfb]
@@ -538,7 +538,7 @@ TitleScreen_AnimateCursorToContinue:
 
 .set_state
 	ld a, 2
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 CheatCode_InputList:
@@ -593,7 +593,7 @@ TitleScreen_CheckCheatCodes:
 	ld [wdcb2], a
 	ld a, 1
 	ld [wcd51], a
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	jr TitleScreen_LoadNewGameMenu
 	ret
 
@@ -620,7 +620,7 @@ TitleScreen_HandleStartInput:
 	call PlaySound
 	call TitleScreen_LoadSaveFile
 	ld a, 1
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 TitleScreen_LoadSaveFile:
@@ -646,7 +646,7 @@ TitleScreen_LoadNewGameMenu:
 	ld a, $85
 	ld [wcd60], a
 	xor a
-	ld [wdcf4], a
+	ld [wIntroScrollMode], a
 	ld [wdcfb], a
 	ld a, $40
 	ld [wcd56], a
@@ -676,7 +676,7 @@ TitleScreen_LoadContinueMenu:
 	ld a, $85
 	ld [wcd60], a
 	ld a, 1
-	ld [wdcf4], a
+	ld [wIntroScrollMode], a
 	ld [wdcfb], a
 	ld a, $40
 	ld [wcd56], a
@@ -689,13 +689,13 @@ TitleScreen_LoadContinueMenu:
 	ret
 
 TitleScreen_PaletteCycle:
-	ld a, [wdcf3]
+	ld a, [wIntroStepTimer]
 	inc a
-	ld [wdcf3], a
+	ld [wIntroStepTimer], a
 	cp 7
 	ret nz
 	xor a
-	ld [wdcf3], a
+	ld [wIntroStepTimer], a
 	ld a, [wdce8]
 	ld de, .Palettes
 	ld l, a
@@ -741,7 +741,7 @@ TitleScreen_DoSpriteAnimations3:
 	ret z
 	and $80
 	jr nz, .restart_animation
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and 1
 	ret nz
 	jr .animate
@@ -787,7 +787,7 @@ TitleScreen_DoSpriteAnimations2:
 	ret z
 	and $80
 	jr nz, .restart_animation
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and 1
 	ret nz
 	jr .animate
@@ -832,7 +832,7 @@ TitleScreen_DoSpriteAnimations:
 	ret z
 	and $80
 	jr nz, .restart_animation
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and 1
 	ret nz
 	jr .animate
@@ -1237,7 +1237,7 @@ Intro_ScrollBG:
 
 .right_done
 	ld a, 1
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 .scroll_left
@@ -1253,7 +1253,7 @@ Intro_ScrollBG:
 
 .left_done
 	ld a, 1
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 .scroll_up
@@ -1269,7 +1269,7 @@ Intro_ScrollBG:
 
 .up_done
 	ld a, 1
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 .scroll_down
@@ -1285,15 +1285,15 @@ Intro_ScrollBG:
 
 .down_done
 	ld a, 1
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 Intro_ScrollTextSpritesUp:
-	ld a, [wdcf3]
+	ld a, [wIntroStepTimer]
 	cp $20
 	jr z, .scroll
 	inc a
-	ld [wdcf3], a
+	ld [wIntroStepTimer], a
 	ret
 
 .scroll
@@ -1303,11 +1303,11 @@ Intro_ScrollTextSpritesUp:
 	cp $38
 	ret nz
 	ld a, 2
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 Intro_ScrollWindow:
-	ld a, [wdcf4]
+	ld a, [wIntroScrollMode]
 	cp 4
 	jp z, .scroll_down
 	cp 3
@@ -1331,7 +1331,7 @@ Intro_ScrollWindow:
 
 .left_done
 	ld a, 4
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 .scroll_up
@@ -1347,7 +1347,7 @@ Intro_ScrollWindow:
 
 .up_done
 	ld a, 4
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 .scroll_left2
@@ -1363,7 +1363,7 @@ Intro_ScrollWindow:
 
 .left2_done
 	ld a, 4
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 .scroll_down
@@ -1379,7 +1379,7 @@ Intro_ScrollWindow:
 
 .down_done
 	ld a, 4
-	ld [wdcf5], a
+	ld [wIntroSeqStep], a
 	ret
 
 
@@ -1394,7 +1394,7 @@ Intro_SetupNewScreen:
 	ld a, [hli]
 	ld [wdcfb], a ; BG scrolling mode
 	ld a, [hli]
-	ld [wdcf4], a ; window scrolling mode
+	ld [wIntroScrollMode], a ; window scrolling mode
 
 ; set initial BG positions
 	ld a, [wdcfb]
@@ -1409,7 +1409,7 @@ Intro_SetupNewScreen:
 	ld [hSCX], a
 
 ; set initial window positions
-	ld a, [wdcf4]
+	ld a, [wIntroScrollMode]
 	ld de, Intro_InitialWindowPositions
 	ld l, a
 	ld h, 0
@@ -1439,9 +1439,9 @@ Intro_SetupNewScreen:
 	ld hl, $9814
 	ld bc, $0a12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld a, [wdce8]
 
@@ -1463,9 +1463,9 @@ Intro_SetupNewScreen:
 	ld hl, $9c00
 	ld bc, $0a12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call Func_1373
 
 ; set bg attributes
@@ -1484,9 +1484,9 @@ Intro_SetupNewScreen:
 	ld hl, $9814
 	ld bc, $0a12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 ; set win attributes
@@ -1507,9 +1507,9 @@ Intro_SetupNewScreen:
 	ld hl, $9c00
 	ld bc, $0a12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call Func_1367
 
 ; set BG palettes
@@ -1522,7 +1522,7 @@ Intro_SetupNewScreen:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -1845,7 +1845,7 @@ Intro_MoveStars:
 
 .MoveStar_Scripted:
 	ld de, .StarMotionScript
-	ld a, [wdcf3]
+	ld a, [wIntroStepTimer]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1884,14 +1884,14 @@ Intro_MoveStars:
 	ld a, 1
 	ld [hl], a
 .script_advance
-	ld a, [wdcf3]
+	ld a, [wIntroStepTimer]
 	add 2
-	ld [wdcf3], a
+	ld [wIntroStepTimer], a
 	jp .next_star
 
 .script_done:
 	xor a
-	ld [wdcf3], a
+	ld [wIntroStepTimer], a
 	ld a, 1
 	ld [hFade], a
 	jp .next_star
@@ -2431,7 +2431,7 @@ Intro_ReloadStartPalette:
 	ld hl, IntroStart_BGPalette
 	call CopyBackgroundPalettes
 	ld hl, IntroStart_BGPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	ret
@@ -2440,7 +2440,7 @@ Intro_ReloadStartPalette:
 	ld hl, unk_077_52f7
 	call CopyBackgroundPalettes
 	ld hl, unk_077_52f7
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	ret
@@ -2449,7 +2449,7 @@ Intro_ReloadStartPalette:
 	ld hl, unk_077_52b7
 	call CopyBackgroundPalettes
 	ld hl, unk_077_52f7
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	ret
@@ -2461,7 +2461,7 @@ Intro_DelayCFrames:
 	ret
 
 Intro_ClearScreenState:
-	ld hl, wcd00
+	ld hl, wVisibleObjects
 	ld bc, $0100
 .loop
 	xor a

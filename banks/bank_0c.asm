@@ -169,9 +169,9 @@ _SRAMTest::
 	ld de, SRAMErrorTilemap
 	lb bc, 14, 1
 	ld a, 14
-	ld [hFF92], a
+	ld [hVRAMCopyWidth], a
 	ld a, 1
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	call PlaceTilemap_Bank0
 
 ; CGB only
@@ -180,9 +180,9 @@ _SRAMTest::
 	ld de, SRAMErrorAttrmap
 	lb bc, 14, 1
 	ld a, 14
-	ld [hFF92], a
+	ld [hVRAMCopyWidth], a
 	ld a, 1
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	call PlaceAttrmap
 
 ; CGB only

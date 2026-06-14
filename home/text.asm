@@ -1,5 +1,5 @@
 Func_19ca::
-	ldh a, [hFFBC] ; text type?
+	ldh a, [hTextSource]
 	cp 1
 	jr z, .type1
 	cp 2
@@ -17,15 +17,15 @@ Func_19ca::
 	jr .select_bank
 
 .type2
-	ldh a, [hFFC0]
+	ldh a, [hTextSourceBank2]
 	jr .select_bank
 
 .type3
-	ldh a, [hFFC3]
+	ldh a, [hTextSourceBank3]
 	jr .select_bank
 
 .type4
-	ldh a, [hFFB7]
+	ldh a, [hTextSourceBank4]
 	jr .select_bank
 
 .type5
@@ -484,7 +484,7 @@ Text_EndCont::
 	rst Bankswitch
 
 	xor a
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	pop hl
 	ret
 
@@ -551,9 +551,9 @@ InterpretTwoOptionMenu::
 	jp Text_EndCont
 
 .Main:
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	res 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	call Func_1f70
 	ld hl, wcde0
 	inc hl
@@ -602,9 +602,9 @@ InterpretTwoOptionMenu::
 	cp $40
 	jr z, .choose_option
 
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	set 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	jr .choose_option
 
 ; ???
@@ -648,10 +648,10 @@ Func_1d6d::
 ; Buy sell cancel menu for real
 
 ; Init position
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	res 0, a
 	res 1, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	call Func_1f70
 	ld hl, wcde0
 	inc hl
@@ -670,7 +670,7 @@ Func_1d6d::
 	jr z, .check_right
 
 ; skip if already on option 0
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	and %11
 	jr z, .check_a
 ; check if on option 1 or 2
@@ -678,16 +678,16 @@ Func_1d6d::
 	jr z, .left_option1
 
 ; on option 2
-	ld a, [wdaa4] ; waste
+	ld a, [wEventFlags + 4] ; waste
 	set 0, a
 	res 1, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_1dd4
 
 .left_option1
-	ld a, [wdaa4] ; waste
+	ld a, [wEventFlags + 4] ; waste
 	res 0, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_1dd4
 
 .check_right
@@ -696,7 +696,7 @@ Func_1d6d::
 	jr z, .check_a
 
 ; skip if already on option 2
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	bit 1, a
 	jr nz, .check_a
 ; check if on option 0 or 1
@@ -705,16 +705,16 @@ Func_1d6d::
 
 ; option 0
 	set 0, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_1dd4
 
 .right_option1
 	set 1, a
 	res 0, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 
 .asm_1dd4:
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	and %11
 ; a = a * $20
 REPT 5
@@ -737,9 +737,9 @@ ENDR
 	cp $40
 	jr z, .exit
 
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	set 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	jr .exit
 
 .loop
@@ -1073,6 +1073,6 @@ Func_1fb9::
 
 Func_1fe9::
 	xor a
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	pop hl
 	ret

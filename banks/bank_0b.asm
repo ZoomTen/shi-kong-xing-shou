@@ -265,7 +265,7 @@ Script_delay:
 Script_03:
 ; Delay?
 	ld hl, wcbfc
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and [hl]
 	ret nz
 	ld a, [wcbfd]
@@ -285,7 +285,7 @@ Script_04:
 	ld a, [wScriptByte]
 	ld [wTextStart + 1], a
 	ld a, 1
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	call AdjustTextboxYPosition
 	xor a
 	ld [wScriptByte], a
@@ -294,7 +294,7 @@ Script_04:
 	ld b, HIGH(wVisibleObjects)
 	ld hl, 3
 	add hl, bc
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	srl a
 	ld a, 0
 	rla
@@ -302,7 +302,7 @@ Script_04:
 	ld a, 1
 	sub e
 	ld e, a
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	and $0e
 	add e
 	ld [hl], a
@@ -313,7 +313,7 @@ AdjustTextboxYPosition:
 	ld a, TEXTBOX_TOP
 	ld [wTextboxPos], a
 ; Check y coord
-	ld a, [wcd00]
+	ld a, [wPlayerScreenY]
 	cp $60
 	ret nc
 
@@ -325,9 +325,9 @@ Script_face:
 ; Makes the player face a certain direction.
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wcd03], a
+	ld [wPlayerFacing], a
 	ld a, 0
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld a, 1
 	ld [hFFAC], a
 	ld [wdcd0], a
@@ -369,7 +369,7 @@ Func_00b_445e:
 	and a
 	ret z
 
-	ld hl, wcd00
+	ld hl, wPlayerScreenY
 	ld a, [wcd08]
 	cp [hl]
 	jr z, .asm_4472
@@ -382,7 +382,7 @@ Func_00b_445e:
 	dec [hl]
 
 .asm_4472
-	ld hl, wcd01
+	ld hl, wPlayerScreenX
 	ld a, [wcd09]
 	cp [hl]
 	ret z
@@ -605,7 +605,7 @@ Script_text:
 
 ; Display text
 	ld a, 1
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	xor a
 	ld [wScriptByte], a
 	ret
@@ -671,7 +671,7 @@ Script_emote:
 
 .asm_4650
 	ld hl, unk_00b_465b
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	sub $0e
 	jr .asm_4636
 	ret ; ?
@@ -873,7 +873,7 @@ Script_1d:
 	ld a, [hFFAA]
 	add l
 	ld [de], a
-	ld [wd0c3], a
+	ld [wPlayerMap2X], a
 	ld a, [bc]
 	sub $10
 	srl a
@@ -885,12 +885,12 @@ Script_1d:
 	add l
 	ld [de], a
 	inc de
-	ld [wd0c2], a
+	ld [wPlayerMap2Y], a
 	ld hl, $12
 	add hl, bc
-	ld a, [wd0c2]
+	ld a, [wPlayerMap2Y]
 	ld [hli], a
-	ld a, [wd0c3]
+	ld a, [wPlayerMap2X]
 	ld [hl], a
 	xor a
 	ld [wScriptByte], a
@@ -981,7 +981,7 @@ asm_00b_4856:
 	inc de
 	ld a, [de]
 	ld l, a
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	add l
 	ld hl, 1
 	add hl, bc
@@ -989,7 +989,7 @@ asm_00b_4856:
 	inc de
 	ld a, [de]
 	ld l, a
-	ld a, [wcd00]
+	ld a, [wPlayerScreenY]
 	add l
 	ld hl, 0
 	add hl, bc
@@ -1183,7 +1183,7 @@ Script_22:
 Script_23:
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld hl, wcd00
+	ld hl, wPlayerScreenY
 	ld bc, $20
 	and a
 	jr z, asm_00b_49ba
@@ -1213,7 +1213,7 @@ asm_00b_49ba:
 	ret
 
 Script_24:
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	cp 1
 	jr z, asm_00b_4a1a
 	cp 0
@@ -1257,7 +1257,7 @@ asm_00b_4a1a:
 	ret
 
 Func_00b_4a1f:
-	ld a, [wcd00]
+	ld a, [wPlayerScreenY]
 	sub $10
 	srl a
 	srl a
@@ -1266,8 +1266,8 @@ Func_00b_4a1f:
 	ld e, a
 	ldh a, [hFFAB]
 	add e
-	ld [wcd12], a
-	ld a, [wcd01]
+	ld [wPlayerMapY], a
+	ld a, [wPlayerScreenX]
 	sub 8
 	srl a
 	srl a
@@ -1276,7 +1276,7 @@ Func_00b_4a1f:
 	ld e, a
 	ldh a, [hFFAA]
 	add e
-	ld [wcd13], a
+	ld [wPlayerMapX], a
 	ret
 
 Script_25:
@@ -1325,10 +1325,10 @@ asm_00b_4a7f:
 	ret
 
 Script_28:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeOutPalette
 	ld a, $c7
 	ldh [rLCDC], a
@@ -1337,10 +1337,10 @@ Script_28:
 	ret
 
 Script_29:
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 	xor a
 	ld [wScriptByte], a
@@ -1363,7 +1363,7 @@ Script_farjump:
 	ret
 
 Script_2b:
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	and a
 	jr z, asm_00b_4ae3
 	ld a, [wScriptPos]
@@ -1390,10 +1390,10 @@ asm_00b_4af7:
 	ret
 
 Script_2c:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call Func_09a6
 	call Func_00b_605c
 	call Func_00b_603d
@@ -1401,12 +1401,12 @@ Script_2c:
 	call Func_00b_604e
 	call Func_0a0a
 	call Func_0a46
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
 	call CopyObjectPalettes
 	ld a, 0
-	ld [wcd00], a
+	ld [wPlayerScreenY], a
 	xor a
 	ld [wScriptByte], a
 	ret
@@ -1430,11 +1430,11 @@ Script_2d:
 	ld e, a
 	ld a, [de]
 	inc de
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld b, a
 	ld a, [de]
 	inc de
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	ld c, a
 
 asm_00b_4b5a:
@@ -1451,7 +1451,7 @@ asm_00b_4b5b:
 	ld bc, $14
 	add hl, bc
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, asm_00b_4b5a
@@ -1494,11 +1494,11 @@ Script_2f:
 	ld e, a
 	ld a, [de]
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	inc de
 	ld a, [de]
 	ld c, a
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	inc de
 	call Func_00b_65e7
 	xor a
@@ -1540,11 +1540,11 @@ Script_31:
 	ld e, a
 	ld a, [de]
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	inc de
 	ld a, [de]
 	ld c, a
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	inc de
 	call Func_00b_65e7
 	xor a
@@ -1552,7 +1552,7 @@ Script_31:
 	ret
 
 Script_32:
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	cp 3
 	jr z, asm_00b_4c5a
 	cp 0
@@ -1596,7 +1596,7 @@ asm_00b_4c5a:
 	ret
 
 Script_33:
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	cp 1
 	jr z, asm_00b_4c9e
 	cp 0
@@ -1798,7 +1798,7 @@ Func_00b_4dc5:
 	call CopyObjectPalettes
 	call DelayFrame
 	call DelayFrame
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
 	call CopyObjectPalettes
@@ -1895,8 +1895,8 @@ Script_43:
 
 Script_44:
 	xor a
-	ld [wcd13], a
-	ld [wcd12], a
+	ld [wPlayerMapX], a
+	ld [wPlayerMapY], a
 	ld [wScriptByte], a
 	ret
 
@@ -2091,7 +2091,7 @@ Func_00b_606f:
 	ld a, [wdccf]
 	and a
 	ret z
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
 
@@ -2116,11 +2116,11 @@ Func_00b_606f:
 	jr z, .asm_60ad
 
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	inc de
 	ld a, [de]
 	ld c, a
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	inc de
 	call Func_00b_65f6
 	ld a, [wdccc]
@@ -2146,13 +2146,13 @@ Func_00b_60b2:
 	ret
 
 asm_00b_60c4:
-	ld a, [wcd00]
+	ld a, [wPlayerScreenY]
 	add [hl]
-	ld [wcd00], a
+	ld [wPlayerScreenY], a
 	inc hl
-	ld a, [wcd01]
+	ld a, [wPlayerScreenX]
 	add [hl]
-	ld [wcd01], a
+	ld [wPlayerScreenX], a
 	inc hl
 	ld a, l
 	ld [wMovementPointer], a

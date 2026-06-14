@@ -198,9 +198,9 @@ Func_07e2::
 	ld de, wd100
 	lb bc, 20, 8
 	ld a, b
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, c
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 
 ; Copy wTilemap textbox into VRAM
@@ -211,9 +211,9 @@ Func_07e2::
 	ld d, a
 	lb bc, 20, 8
 	ld a, b
-	ld [hFF92], a
+	ld [hVRAMCopyWidth], a
 	ld a, c
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ret
 
@@ -317,7 +317,7 @@ Func_08ae::
 	ld [hl], a
 	inc de
 	ld a, [de]
-	ld [wd0c3], a
+	ld [wPlayerMap2X], a
 	ld hl, hFFAA
 	sub [hl]
 REPT 4
@@ -329,7 +329,7 @@ ENDR
 	ld [hld], a
 	inc de
 	ld a, [de]
-	ld [wd0c2], a
+	ld [wPlayerMap2Y], a
 	push hl
 	ld hl, hFFAB
 	sub [hl]
@@ -373,9 +373,9 @@ ENDR
 	ld [hl], a
 	ld hl, $12
 	add hl, bc
-	ld a, [wd0c2]
+	ld a, [wPlayerMap2Y]
 	ld [hli], a
-	ld a, [wd0c3]
+	ld a, [wPlayerMap2X]
 	ld [hl], a
 	call LoadSpritePalette
 	ret
@@ -414,14 +414,14 @@ FadeOutPalette::
 	jr nz, .exit
 
 ; CGB only from here
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ld hl, unk_2b38
 	ld a, 0
-	ld [wd0b4], a
+	ld [wPaletteFadeDirection], a
 	call Func_29c8
-	ldh a, [hFFC4]
+	ldh a, [hPaletteFadeState]
 	and a
 	jr z, .exit
 
@@ -452,14 +452,14 @@ Func_096a::
 	cp BOOTUP_A_CGB
 	jr nz, .exit
 
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ld hl, unk_2b38
 	ld a, 0
-	ld [wd0b4], a
+	ld [wPaletteFadeDirection], a
 	call Func_29c8
-	ldh a, [hFFC4]
+	ldh a, [hPaletteFadeState]
 	and a
 	jr z, .exit
 
@@ -481,14 +481,14 @@ Func_09a6::
 	cp BOOTUP_A_CGB
 	ret nz
 
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ld hl, unk_2ab8
 	ld a, 1
-	ld [wd0b4], a
+	ld [wPaletteFadeDirection], a
 	call Func_29c8
-	ldh a, [hFFC4]
+	ldh a, [hPaletteFadeState]
 	and a
 	jr z, .exit
 
@@ -558,7 +558,7 @@ Func_0a0a::
 	ld l, a
 	ld a, [wMapPalettesPointer + 1]
 	ld h, a
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld c, $40
 .copy1
 	ld a, [hli]
@@ -569,7 +569,7 @@ Func_0a0a::
 	pop af
 	rst Bankswitch
 
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld hl, $30
 	add hl, de
 	push hl

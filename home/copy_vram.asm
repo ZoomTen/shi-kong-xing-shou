@@ -173,7 +173,7 @@ PlaceTilemap::
 
 .next_row
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, PlaceTilemap
@@ -199,14 +199,14 @@ FadeInPalette::
 	ret nz
 
 ; CGB only from here
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ld bc, unk_2b38
 	ld a, 1
-	ld [wd0b4], a
+	ld [wPaletteFadeDirection], a
 	call Func_29c8
-	ldh a, [hFFC4]
+	ldh a, [hPaletteFadeState]
 	and a
 	ret z
 

@@ -13,7 +13,7 @@ unk_00f_4006:
 	scr_end
 
 Script_00f_400a:
-	scr_checkbit wdaa2, $06, unk_00f_4016
+	scr_checkbit wEventFlags + 2, $06, unk_00f_4016
 	db $66 ; TEMP
 	scr_spriteface $40, $0e ; TEMP
 	scr_end
@@ -45,7 +45,7 @@ ObjectEvents_00f_4039:
 	objects_end
 
 unk_00f_405b:
-	scr_checkbit wdaa1, $05, unk_00f_4065
+	scr_checkbit wEventFlags + 1, $05, unk_00f_4065
 	scr_04 text_0f_57ad
 	scr_end
 
@@ -58,7 +58,7 @@ unk_00f_4069:
 	scr_end
 
 unk_00f_406d:
-	scr_checkbit wdaa1, $05, unk_00f_4095
+	scr_checkbit wEventFlags + 1, $05, unk_00f_4095
 	scr_spriteface $04, $03 ; TEMP
 	scr_emote $04, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
@@ -83,21 +83,21 @@ unk_00f_4095:
 	scr_end
 
 PowerPlantOutside_ObjectEvents2:
-	object_event $2b,  5,  6, wdaa2, $04, $00, $00, $00, unk_00f_4001
-	object_event $2e,  7,  7, wdaa2, $04, $00, $00, $01, unk_00f_4001
+	object_event $2b,  5,  6, wEventFlags + 2, $04, $00, $00, $00, unk_00f_4001
+	object_event $2e,  7,  7, wEventFlags + 2, $04, $00, $00, $01, unk_00f_4001
 	objects_end
 
 PowerPlantOutside_ObjectEvents:
-	object_event $2b,  5,  6, wdaa2, $04, $00, $00, $00, unk_00f_40ce
+	object_event $2b,  5,  6, wEventFlags + 2, $04, $00, $00, $00, unk_00f_40ce
 	objects_end
 
 unk_00f_40ce:
-	scr_checkbit wdaa1, $06, unk_00f_40d8
+	scr_checkbit wEventFlags + 1, $06, unk_00f_40d8
 	scr_04 text_0f_4691
 	scr_end
 
 unk_00f_40d8:
-	scr_checkbit wdaa2, $03, unk_00f_40ef
+	scr_checkbit wEventFlags + 2, $03, unk_00f_40ef
 	scr_04 text_0f_4691
 	scr_emote $00, $01 ; TEMP
 	scr_delay $03, $20 ; TEMP
@@ -137,7 +137,7 @@ unk_00f_40ef:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_0f_4a8e
 	scr_3b $4ae3 ; XXX text_0f_4ae3
-	scr_checkbit wdaa3, $03, unk_00f_415c
+	scr_checkbit wEventFlags + 3, $03, unk_00f_415c
 	scr_1c $03 ; TEMP
 	scr_1c $02 ; TEMP
 	scr_setbit $daa2, $04 ; TEMP
@@ -157,7 +157,7 @@ PowerPlant1F_ObjectEvents:
 PowerPlant2F_ObjectEvents:
 	object_event $34,  9,  6, 0, $00, $00, $00, $00, unk_00f_41fe
 	object_event $34,  2,  3, 0, $00, $00, $00, $01, unk_00f_41fe
-	object_event $17,  7,  4, wdaa2, $05, $00, $00, $02, unk_00f_41ff
+	object_event $17,  7,  4, wEventFlags + 2, $05, $00, $00, $02, unk_00f_41ff
 	objects_end
 
 PowerPlant3F_ObjectEvents:
@@ -169,8 +169,8 @@ PowerPlant3F_ObjectEvents:
 
 PowerPlant4F_ObjectEvents:
 	object_event $34,  7,  6, 0, $00, $00, $00, $00, unk_00f_41fe
-	object_event $27,  7,  4, wdaa2, $06, $00, $00, $01, unk_00f_41fe
-	object_event $28,  8,  4, wdaa2, $06, $00, $00, $02, unk_00f_41fe
+	object_event $27,  7,  4, wEventFlags + 2, $06, $00, $00, $01, unk_00f_41fe
+	object_event $28,  8,  4, wEventFlags + 2, $06, $00, $00, $02, unk_00f_41fe
 	objects_end
 
 unk_00f_41fe:
@@ -189,7 +189,7 @@ unk_00f_41ff:
 	scr_end
 
 Script_00f_421c:
-	scr_checkbit wdaa2, $06, unk_00f_42af
+	scr_checkbit wEventFlags + 2, $06, unk_00f_42af
 	scr_spriteface $03, $03 ; TEMP
 	scr_spriteface $04, $02 ; TEMP
 	scr_text text_0f_4b28
@@ -202,7 +202,7 @@ Script_00f_421c:
 	scr_text text_0f_4b71
 	scr_text text_0f_4b86
 	scr_3b $4b12 ; XXX text_0f_4ae3
-	scr_checkbit wdaa3, $03, unk_00f_42a3
+	scr_checkbit wEventFlags + 3, $03, unk_00f_42a3
 	scr_text text_0f_4bc3
 	scr_spriteface $03, $02 ; TEMP
 	scr_spriteface $04, $02 ; TEMP
@@ -306,7 +306,7 @@ ObjectEvents_00f_4348:
 	objects_end
 
 unk_00f_435f:
-	scr_checkbit wdaa2, $07, unk_00f_436d
+	scr_checkbit wEventFlags + 2, $07, unk_00f_436d
 	scr_04 text_0f_4e54
 	scr_setbit $daa2, $07 ; TEMP
 	scr_end
@@ -331,7 +331,7 @@ Script_00f_4385:
 	scr_face $02 ; TEMP
 	scr_spriteface $02, $03 ; TEMP
 	scr_text text_0f_4ebe
-	scr_checkbit wdaa4, $01, unk_00f_4396
+	scr_checkbit wEventFlags + 4, $01, unk_00f_4396
 	scr_35 $00 ; TEMP
 	scr_end
 
@@ -354,7 +354,7 @@ unk_00f_43b2:
 Script_00f_43b6:
 	scr_face $01 ; TEMP
 	scr_text text_0f_4efb
-	scr_checkbit wdaa3, $03, unk_00f_43c3
+	scr_checkbit wEventFlags + 3, $03, unk_00f_43c3
 	scr_37
 	scr_end
 
@@ -364,7 +364,7 @@ unk_00f_43c3:
 Script_00f_43c4:
 	scr_face $01 ; TEMP
 	scr_text text_0f_4f13
-	scr_checkbit wdaa3, $03, unk_00f_43d1
+	scr_checkbit wEventFlags + 3, $03, unk_00f_43d1
 	scr_36
 	scr_end
 
@@ -373,14 +373,14 @@ unk_00f_43d1:
 
 ObjectEvents_00f_43d2:
 	object_event $29,  5,  5, 0, $00, $00, $00, $00, unk_00f_4427
-	object_event $2d,  6,  4, wdaa3, $00, $00, $00, $01, unk_00f_4423
+	object_event $2d,  6,  4, wEventFlags + 3, $00, $00, $00, $01, unk_00f_4423
 	objects_end
 
 ObjectEvents_00f_43e9:
 	object_event $29,  5,  5, 0, $00, $00, $00, $00, unk_00f_44d1
-	object_event $02,  4,  3, wdaa3, $01, $00, $00, $01, unk_00f_4422
-	object_event $03,  3,  3, wdaa3, $01, $00, $00, $02, unk_00f_4422
-	object_event $2d,  6,  4, wdaa3, $00, $00, $00, $03, unk_00f_4422
+	object_event $02,  4,  3, wEventFlags + 3, $01, $00, $00, $01, unk_00f_4422
+	object_event $03,  3,  3, wEventFlags + 3, $01, $00, $00, $02, unk_00f_4422
+	object_event $2d,  6,  4, wEventFlags + 3, $00, $00, $00, $03, unk_00f_4422
 	objects_end
 
 ObjectEvents_00f_4416:
@@ -457,7 +457,7 @@ unk_00f_4427:
 	scr_end
 
 unk_00f_44d1:
-	scr_checkbit wdaa3, $01, unk_00f_44db
+	scr_checkbit wEventFlags + 3, $01, unk_00f_44db
 	scr_04 text_0f_5299
 	scr_end
 
@@ -466,7 +466,7 @@ unk_00f_44db:
 	scr_end
 
 Script_00f_44df:
-	scr_checkbit wdaa3, $01, unk_00f_458e
+	scr_checkbit wEventFlags + 3, $01, unk_00f_458e
 	scr_spriteface $02, $00 ; TEMP
 	scr_text text_0f_52fb
 	scr_face $01 ; TEMP
@@ -533,7 +533,7 @@ unk_00f_458e:
 	scr_end
 
 Script_00f_4592:
-	scr_checkbit wdaa3, $01, unk_00f_458e
+	scr_checkbit wEventFlags + 3, $01, unk_00f_458e
 	scr_spriteface $02, $00 ; TEMP
 	scr_text text_0f_52fb
 	scr_face $01 ; TEMP
@@ -545,7 +545,7 @@ Script_00f_4592:
 	scr_end
 
 Script_00f_45af:
-	scr_checkbit wdaa3, $01, unk_00f_45b9
+	scr_checkbit wEventFlags + 3, $01, unk_00f_45b9
 	scr_setmap $12, $00 ; TEMP
 	scr_end
 
@@ -555,7 +555,7 @@ unk_00f_45b9:
 
 Script_00f_45bd:
 	scr_text text_0f_557d
-	scr_checkbit wdaa3, $01, unk_00f_45c7
+	scr_checkbit wEventFlags + 3, $01, unk_00f_45c7
 	scr_end
 
 unk_00f_45c7:

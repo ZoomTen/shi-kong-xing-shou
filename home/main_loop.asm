@@ -66,9 +66,9 @@ _Start::
 	ld [wTargetMode], a
 
 JumpToGameMode::
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call FadeOutPalette
 	ld de, GameModes
 	ld a, [wTargetMode]

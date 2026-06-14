@@ -75,9 +75,9 @@ Func_025_585a:
 ; Place tilemap
 	lb bc, $06, $04
 	ld a, $06
-	ld [hFF92], a
+	ld [hVRAMCopyWidth], a
 	ld a, $04
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	ld de, unk_025_645c
 	call PlaceTilemap
 
@@ -88,9 +88,9 @@ Func_025_585a:
 	ld h, a
 	lb bc, $06, $04
 	ld a, $06
-	ld [hFF92], a
+	ld [hVRAMCopyWidth], a
 	ld a, $04
-	ld [hFF93], a
+	ld [hVRAMCopyHeight], a
 	ld de, unk_025_6444
 	call PlaceAttrmap
 
@@ -117,8 +117,8 @@ Func_025_585a:
 	ld e, a
 	lb bc, $02, $02
 	ld a, $02
-	ld [hFF92], a
-	ld [hFF93], a
+	ld [hVRAMCopyWidth], a
+	ld [hVRAMCopyHeight], a
 	call IncFillBoxVRAM
 
 	pop bc

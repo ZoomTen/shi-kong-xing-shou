@@ -59,7 +59,7 @@ Script_008_4089:
 	scr_end
 
 Script_008_408a:
-	scr_checkbit wdaa0, 0, .script_4113 ; check bit 0
+	scr_checkbit wEventFlags, 0, .script_4113 ; check bit 0
 	scr_setmap MAP_BELL_OBSERVATORY_1, $01
 	scr_face FACE_UP
 	scr_spriteface 2, FACE_LEFT
@@ -105,7 +105,7 @@ Script_008_408a:
 	scr_face FACE_DOWN
 	scr_spriteface 2, FACE_UP
 	scr_text text_08_4cc6
-	scr_setbit wdaa0, 0 ; set bit 0
+	scr_setbit wEventFlags, 0 ; set bit 0
 	scr_end
 
 .script_4113
@@ -129,7 +129,7 @@ Script_008_4133:
 	scr_end
 
 Script_008_4137:
-	scr_checkbit wdaa0, 0, .script_414d
+	scr_checkbit wEventFlags, 0, .script_414d
 ; No entry
 	scr_text text_08_4b77
 	scr_face FACE_DOWN
@@ -144,7 +144,7 @@ Script_008_4137:
 	scr_end
 
 Script_008_4151:
-	scr_checkbit wdaa0, 1, .script_41a3
+	scr_checkbit wEventFlags, 1, .script_41a3
 	scr_text text_08_4d0b
 	scr_face FACE_UP
 	scr_spriteface 2, FACE_DOWN
@@ -169,7 +169,7 @@ Script_008_4151:
 	scr_move MovementData_OneDown
 	scr_move MovementData_OneDown
 	scr_move MovementData_OneDown
-	scr_setbit wdaa0, 1
+	scr_setbit wEventFlags, 1
 	scr_1f $02 ; TEMP
 
 .script_41a3
@@ -177,7 +177,7 @@ Script_008_4151:
 	scr_end
 
 Script_008_41a7:
-	scr_checkbit wdaa0, 1, .script_41b1
+	scr_checkbit wEventFlags, 1, .script_41b1
 	scr_setmap MAP_BALLOTS_HOUSE_1, $00
 	scr_end
 
@@ -186,7 +186,7 @@ Script_008_41a7:
 	scr_end
 
 Script_008_41b5:
-	scr_checkbit wdaa0, 2, .script_41bf
+	scr_checkbit wEventFlags, 2, .script_41bf
 	scr_setmap MAP_BELL_SCHOOL_1, $02
 	scr_end
 
@@ -221,7 +221,7 @@ Script_008_41c8:
 	scr_delay 3, 32
 	scr_text text_08_5592
 	scr_setmap MAP_BELL_SCHOOL_NORTH_CLASSROOM_1, $01
-	scr_setbit wdaa0, 3
+	scr_setbit wEventFlags, 3
 	scr_end
 
 Script_008_4214:
@@ -290,11 +290,11 @@ BellVillage1_ObjectEvents:
 	object_event $1D, $05, $09,     0, 0, 0, 6, 3, Script_008_430d
 	object_event $16, $0B, $04,     0, 0, 0, 0, 4, Script_008_4311
 	object_event $19, $06, $05,     0, 0, 0, 8, 0, Script_008_4315
-	object_event $01, $05, $10, wdaa0, 1, 1, 0, 0, Script_008_4319
+	object_event $01, $05, $10, wEventFlags, 1, 1, 0, 0, Script_008_4319
 	objects_end
 
 Script_008_42ed:
-	scr_checkbit wdaa0, 1, .script_42f7
+	scr_checkbit wEventFlags, 1, .script_42f7
 	scr_04 text_08_46b1
 	scr_end
 
@@ -303,7 +303,7 @@ Script_008_42ed:
 	scr_end
 
 Script_008_42fb:
-	scr_checkbit wdaa0, 1, .script_4305
+	scr_checkbit wEventFlags, 1, .script_4305
 	scr_04 text_08_46fe
 	scr_end
 
@@ -333,11 +333,11 @@ Script_008_4319:
 
 HayatosHouse1_ObjectEvents:
 	object_event $22,  5,  6, 0, $00, $00, $06, $00, Script_008_4334
-	object_event $26,  8,  3, wdaa0, $01, $00, $00, $01, Script_008_4342
+	object_event $26,  8,  3, wEventFlags, $01, $00, $00, $01, Script_008_4342
 	objects_end
 
 Script_008_4334:
-	scr_checkbit wdaa0, 1, .script_433e
+	scr_checkbit wEventFlags, 1, .script_433e
 	scr_04 text_08_48d0
 	scr_end
 
@@ -355,7 +355,7 @@ CarpetWomansHouse1_ObjectEvents:
 	objects_end
 
 Script_008_435d:
-	scr_checkbit wdaa0, 1, .script_436a
+	scr_checkbit wEventFlags, 1, .script_436a
 	scr_04 text_08_497a
 	scr_text text_08_49cc
 	scr_end
@@ -365,7 +365,7 @@ Script_008_435d:
 	scr_end
 
 Script_008_436e:
-	scr_checkbit wdaa0, 1, .script_4378
+	scr_checkbit wEventFlags, 1, .script_4378
 	scr_04 text_08_4aac
 	scr_end
 
@@ -376,11 +376,11 @@ Script_008_436e:
 FangfangsHouse1_ObjectEvents:
 	object_event $15,  5,  6, 0, $00, $00, $06, $00, Script_008_439e
 	object_event $18,  8,  3, 0, $00, $00, $0a, $01, Script_008_43ac
-	object_event $1a,  5,  3, wdaa0, $01, $00, $00, $02, Script_008_43b0
+	object_event $1a,  5,  3, wEventFlags, $01, $00, $00, $02, Script_008_43b0
 	objects_end
 
 Script_008_439e:
-	scr_checkbit wdaa0, 1, .script_43a8
+	scr_checkbit wEventFlags, 1, .script_43a8
 	scr_04 text_08_49db
 	scr_end
 
@@ -414,7 +414,7 @@ BellObservatory1_ObjectEvents2:
 	objects_end
 
 BellSchool1_ObjectEvents:
-	object_event $24,  4, 13, wdaa0, $03, $00, $00, $00, Script_008_43ed
+	object_event $24,  4, 13, wEventFlags, $03, $00, $00, $00, Script_008_43ed
 	object_event $16,  7,  7, 0, $00, $00, $00, $01, Script_008_43f1
 	objects_end
 
@@ -443,17 +443,17 @@ BellSchoolNorthClassroom1_ObjectEvents:
 	object_event $26,  4,  8, 0, $00, $00, $00, $00, Script_008_4463
 	object_event $2c,  3,  8, 0, $00, $00, $00, $01, Script_008_4462
 	object_event $1e,  7,  8, 0, $00, $00, $00, $02, Script_008_44da
-	object_event $1a,  2, 10, wdaa0, $02, $00, $00, $03, Script_008_44e1
-	object_event $1a,  3,  6, wdaa0, $02, $01, $00, $03, Script_008_44e1
-	object_event $24, 12,  3, wdaa0, $02, $00, $00, $04, Script_008_44e8
-	object_event $24,  5,  2, wdaa0, $02, $01, $00, $04, Script_008_44e8
+	object_event $1a,  2, 10, wEventFlags, $02, $00, $00, $03, Script_008_44e1
+	object_event $1a,  3,  6, wEventFlags, $02, $01, $00, $03, Script_008_44e1
+	object_event $24, 12,  3, wEventFlags, $02, $00, $00, $04, Script_008_44e8
+	object_event $24,  5,  2, wEventFlags, $02, $01, $00, $04, Script_008_44e8
 	objects_end
 
 Script_008_4462:
 	scr_end
 
 Script_008_4463:
-	scr_checkbit wdaa0, $02, Script_008_44d3
+	scr_checkbit wEventFlags, $02, Script_008_44d3
 	db $24 ; TEMP
 	scr_face $01 ; TEMP
 	scr_04 text_08_50a3
@@ -529,7 +529,7 @@ Script_008_44f7:
 
 Script_008_44ff:
 	scr_04 text_08_452d
-	scr_checkbit wdaa4, $01, .done
+	scr_checkbit wEventFlags + 4, $01, .done
 	scr_35 $01 ; TEMP
 	scr_end
 .done
@@ -537,7 +537,7 @@ Script_008_44ff:
 
 Script_008_450c:
 	scr_04 text_08_4537
-	scr_checkbit wdaa3, 3, .script_4517
+	scr_checkbit wEventFlags + 3, 3, .script_4517
 	scr_37
 	scr_end
 
@@ -553,7 +553,7 @@ MeteorCutscene_ApplyTextPals:
 	ld hl, MeteorCutscene_TextPalette
 	call CopyBackgroundPalettes
 	ld hl, MeteorCutscene_TextPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	ret
@@ -562,7 +562,7 @@ MeteorCutscene_ApplyBlackPal:
 	ld hl, MeteorCutscene_BlackPalette
 	call CopyBackgroundPalettes
 	ld hl, MeteorCutscene_BlackPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	ret
@@ -575,7 +575,7 @@ Func_008_55f7:
 	ret
 
 MeteorCutscene_ClearSpriteBuffer:
-	ld hl, wcd00
+	ld hl, wVisibleObjects
 	ld bc, $100
 .clear
 	xor a
@@ -593,9 +593,9 @@ MeteorCutscene::
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
+	ldh [hSCYHigh], a
 	ld [wdcf3], a
 	ld [wdcf4], a
 	ld [wdcf5], a
@@ -604,22 +604,22 @@ MeteorCutscene::
 	ld de, MeteorCutscene_Text1_Tilemap
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 
 	hlbgcoord 0, 0
 	ld de, MeteorCutscene_TextAttr
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 	ld hl, MeteorCutscene_TextPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -632,17 +632,17 @@ MeteorCutscene::
 	call MeteorCutscene_HideAllSprites
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 
 .SceneLoop:
 	call DelayFrame
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
+	ldh [hFadeFrameCounter], a
 	ldh a, [hFade]
 	and a
 	jr nz, .done
@@ -717,16 +717,16 @@ MeteorCutscene::
 	jp .SceneLoop
 
 MeteorCutscene_DoFadeToMeteors:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call FadeOutPalette
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
+	ldh [hSCYHigh], a
 	ld [wdcf3], a
 	ld [wdcf4], a
 	ld [wdcf6], a
@@ -736,22 +736,22 @@ MeteorCutscene_DoFadeToMeteors:
 	ld de, MeteorCutscene_StormTilemap_1
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 
 	hlbgcoord 0, 0
 	ld de, MeteorCutscene_StormAttr
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 	ld hl, MeteorCutscene_MeteorPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -772,10 +772,10 @@ MeteorCutscene_DoFadeToMeteors:
 	call MeteorCutscene_ClearSpriteBuffer
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 	ld a, 2
 	ld [wdcf5], a
@@ -1071,9 +1071,9 @@ MeteorCutscene_AnimateStormBG:
 	hlbgcoord 0, 0
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld a, [wdcf4]
 	inc a
@@ -1090,16 +1090,16 @@ MeteorCutscene_AnimateStormBG:
 	dw MeteorCutscene_StormTilemap_3
 
 MeteorCutscene_DoFadeFromMeteors:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call FadeOutPalette
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
-	ldh [hFFAF], a
+	ldh [hSCXHigh], a
 	ldh [hSCY], a
-	ldh [hFFB1], a
+	ldh [hSCYHigh], a
 	ld [wdcf3], a
 	ld [wdcf4], a
 
@@ -1107,22 +1107,22 @@ MeteorCutscene_DoFadeFromMeteors:
 	ld de, MeteorCutscene_Text4_Tilemap
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 
 	hlbgcoord 0, 0
 	ld de, MeteorCutscene_TextAttr
 	lb bc, $14, $12
 	ld a, $12
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 
 	ld hl, MeteorCutscene_TextPalette
-	ld de, wcab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 
@@ -1140,10 +1140,10 @@ MeteorCutscene_DoFadeFromMeteors:
 	call MeteorCutscene_HideAllSprites
 	ld a, LCDCF_ON | LCDCF_WIN9C00 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON
 	ldh [rLCDC], a
-	ld hl, wcab0
+	ld hl, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
-	ldh [hFF9D], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 	ld a, 4
 	ld [wdcf5], a
@@ -1190,9 +1190,9 @@ MeteorCutscene_LoadTexts:
 	hlbgcoord 0, 8
 	lb bc, $14, 2
 	ld a, 2
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld a, [wdcf4]
 	inc a
@@ -1257,9 +1257,9 @@ MeteorCutscene_LoadTexts2:
 	hlbgcoord 0, 8
 	lb bc, $14, 2
 	ld a, 2
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld a, [wdcf4]
 	inc a

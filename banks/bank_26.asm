@@ -173,9 +173,9 @@ asm_026_46c5:
 	ld de, unk_026_46ab
 	ld bc, $0202
 	ld a, 2
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 2
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 
 asm_026_4734:
@@ -371,7 +371,7 @@ Func_026_4c89:
 	sla a
 	sla a
 	sla a
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld l, a
 	ld h, 0
 	add hl, bc

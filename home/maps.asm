@@ -253,7 +253,7 @@ Func_2123::
 	ld [hl], a
 
 .asm_2130:
-	ld a, [wcd04]
+	ld a, [wPlayerSpriteID]
 	ld [wdb1f], a
 	call Func_2363
 	ld a, [wdb1f]
@@ -264,7 +264,7 @@ Func_2123::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	add a
 	ld e, a
 	ld d, 0
@@ -272,7 +272,7 @@ Func_2123::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wcd05]
+	ld a, [wPlayerAnimFrame]
 	add a
 	ld e, a
 	add hl, de
@@ -286,7 +286,7 @@ Func_2123::
 	jr nz, .asm_216d
 
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
 	ldh [hFFAC], a
@@ -301,7 +301,7 @@ Func_2123::
 	jr nz, .asm_2182
 
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
 	jr .asm_2130
@@ -321,7 +321,7 @@ Func_2123::
 	ld d, $80
 	ld bc, $40
 	call CopyBytesVRAM
-	ld hl, wcd05
+	ld hl, wPlayerAnimFrame
 	inc [hl]
 	ld a, [hl]
 	cp 1
@@ -338,7 +338,7 @@ Func_2123::
 	ret z
 
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
 	ldh [hFFAC], a

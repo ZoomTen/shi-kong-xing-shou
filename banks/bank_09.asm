@@ -6,7 +6,7 @@ Func_009_4000::
 
 Func_009_4008::
 ; Only run on every other tick
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	and 1
 	ret nz
 

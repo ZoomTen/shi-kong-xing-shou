@@ -43,7 +43,7 @@ Func_01f_4028:
 	call CopyBytesVRAM
 
 ; BG palette
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld hl, 7
 	add hl, hl
 	add hl, hl
@@ -51,7 +51,7 @@ Func_01f_4028:
 	add hl, bc
 	ld c, l
 	ld b, h
-	; ld bc, wcab0 + $38
+	; ld bc, wPaletteBuffer + $38
 	ld de, FacePalettePointers
 	pop hl
 	add hl, de
@@ -106,7 +106,7 @@ unk_01f_4091:
 	db $90, $91, $92, $93, $94, $95, $96, $97, $93
 
 Func_01f_409a:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld hl, $38
 	add hl, bc
 	ld c, l
@@ -135,7 +135,7 @@ Func_01f_40b7:
 	ret
 
 .asm_40ca
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld hl, $38
 	add hl, bc
 	ld c, l
@@ -159,10 +159,10 @@ Func_01f_40ea:
 	ld hl, $9822
 	ld a, 16
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 9
 	ld c, a
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call Func_1022
 	ld de, .unk_4119
 	ld a, [wd08e]
@@ -176,10 +176,10 @@ Func_01f_40ea:
 	ld de, .unk_4129
 	ld a, 4
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 4
 	ld c, a
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ret
 

@@ -151,7 +151,7 @@ Func_01e_431f::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd0c3]
+	ld a, [wPlayerMap2X]
 	sla a
 	sla a
 	add $80
