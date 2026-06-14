@@ -1,12 +1,12 @@
 
-Func_2c03::
-	ld hl, wce00
+LoadDefaultTileAttrs::
+	ld hl, wMapTileAttrs
 	ld de, $a0
 	add hl, de
-	ld de, .unk_2c1b
+	ld de, .attrs
 .get_length
 	ld a, [de]
-	cp $ff
+	cp -1
 	ret z
 ; Store length in b
 	ld b, a
@@ -19,17 +19,17 @@ Func_2c03::
 	jr nz, .copy_byte
 	jr .get_length
 
-.unk_2c1b
-	db $01, $06
-	db $07, $06
-	db $48, $06
-	db $10, $07
-	db $ff
+.attrs
+	db $01, 6
+	db $07, 6
+	db $48, 6
+	db $10, 7
+	db -1
 
-unk_2c24::
+DefaultSpritePalettes::
 	db $b5, $56, $00, $00, $1d, $00, $bf, $67
 	db $00, $00, $00, $00, $00, $00, $00, $00
 	db $b5, $56, $00, $00, $d6, $6e, $de, $7b
 
-unk_2c3c::
+Palettes_2c3c::
 	ds 40, 0

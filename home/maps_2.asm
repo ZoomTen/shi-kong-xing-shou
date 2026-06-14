@@ -1,4 +1,4 @@
-Func_26e1::
+BuildBlockmap::
 	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	ld hl, wc740
@@ -45,7 +45,7 @@ Func_26e1::
 	ld e, a
 	ld a, [wd0b2 + 1]
 	ld d, a
-	call Func_278b
+	call PlaceMetatile
 	ld a, [wd0b2]
 	add 2
 	ld [wd0b2], a
@@ -95,7 +95,7 @@ Func_26e1::
 	jp nz, .asm_26f9
 	ret
 
-Func_278b::
+PlaceMetatile::
 	ld a, [hli]
 	ld [de], a
 	inc de

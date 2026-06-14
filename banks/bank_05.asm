@@ -20,7 +20,7 @@ Func_005_401d:
 	ld a, 0
 	ld [wd0b6], a
 	ld hl, wTilemap
-	ld de, wce00
+	ld de, wMapTileAttrs
 	ld a, 1
 	ldh [rVBK], a
 	ld b, $12
@@ -377,7 +377,7 @@ Overworld::
 
 	call Func_005_4408
 	call Func_005_5a9c
-	call Func_05ff
+	call LoadMap_Banked
 	call Func_005_5a32
 	ld hl, $9800
 	ld de, wTilemap
@@ -390,7 +390,7 @@ Overworld::
 	call Func_005_5a8e
 	call Func_005_4662
 	call Func_005_401d
-	call Func_0557
+	call SpawnPlayerSprite
 	call Func_005_4000
 	xor a
 	ldh [hSimulatedJoypadState], a
@@ -479,7 +479,7 @@ OverworldLoop:
 
 ; object events?
 	call Func_062c
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	call Func_005_440f
 	jp OverworldLoop
 
@@ -488,7 +488,7 @@ Overworld_GotoProcessScript:
 	ld [wd082], a
 	call Func_06d0
 	call Func_005_440f
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	jp OverworldLoop
 
 Overworld_GotoProcessTextbox:
@@ -496,7 +496,7 @@ Overworld_GotoProcessTextbox:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call Func_06c6
+	call PrintText_Banked
 	jp OverworldLoop
 
 Overworld_GotoProcessScroll:
@@ -612,7 +612,7 @@ Func_005_46da:
 	rr l
 	rl d
 	ld e, l
-	call Func_0622
+	call GetBlockCollision_Banked
 	ld a, [wd0c8]
 	ld [wd3f8], a
 	ret
@@ -665,7 +665,7 @@ asm_005_4766:
 	rr l
 	rl d
 	ld e, l
-	call Func_0622
+	call GetBlockCollision_Banked
 	ld a, [wd0c8]
 	ld [wd3f7], a
 	ret
@@ -718,7 +718,7 @@ asm_005_479e:
 	rr l
 	rl d
 	ld e, l
-	call Func_0622
+	call GetBlockCollision_Banked
 	ld a, [wd0c8]
 	ld [wd3f6], a
 	ret
@@ -765,7 +765,7 @@ Func_005_47e6:
 	rr l
 	rl d
 	ld e, l
-	call Func_0622
+	call GetBlockCollision_Banked
 	ld a, [wd0c8]
 	ld [wd3f5], a
 	ret
@@ -1027,7 +1027,7 @@ Func_005_51b1:
 	ld a, [wPlayerFacing]
 	ld [wcd23], a
 	ld [wdcec], a
-	call Func_0531
+	call GetPlayerFacingOffset
 	ret
 
 Func_005_51db:
@@ -1061,7 +1061,7 @@ Func_005_51ed:
 	ld a, [hFFB9]
 	inc a
 	ld [hFFB9], a
-	call Func_1159
+	call AdvanceRNG
 	ld a, [wd991]
 	and $f
 	ld [hFFB8], a
@@ -1766,7 +1766,7 @@ Func_005_5900:
 Func_005_5906:
 	ld a, [hli]
 	push hl
-	ld hl, wce00
+	ld hl, wMapTileAttrs
 	add l
 	ld l, a
 	ld a, h

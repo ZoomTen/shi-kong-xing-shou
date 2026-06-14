@@ -209,7 +209,7 @@ Intro_CharacterCastScreen:
 	ld bc, wPaletteBuffer
 	xor a
 	ldh [hPaletteFadeState], a
-	call Func_096a
+	call FadeInScene
 	jp TitleScreen
 
 .character_slide_up
@@ -244,7 +244,7 @@ Intro_CharacterCastScreen:
 	ld bc, wPaletteBuffer
 	xor a
 	ldh [hPaletteFadeState], a
-	call Func_096a
+	call FadeInScene
 	call ClearBGMap0
 	call Intro_ClearOAMBuffer
 

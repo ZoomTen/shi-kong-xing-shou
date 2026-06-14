@@ -628,7 +628,7 @@ BattleIntro_Jump_1:
 	call DelayFrame
 	farcall Func_00b_4dc5
 	call DelayFrame
-	call Func_1159
+	call AdvanceRNG
 	ld a, [wd991]
 	and 7
 	ld [wdcd9], a
@@ -646,9 +646,9 @@ BattleIntro_Jump_1:
 	ld de, wcb30
 	ld bc, $80
 	call CopyBytes3
-	ld hl, unk_2b38
+	ld hl, Palette_White
 	call CopyBackgroundPalettes
-	ld hl, unk_2b38
+	ld hl, Palette_White
 	call CopyObjectPalettes
 	ld hl, wVirtualOAM
 	ld bc, $28
@@ -910,7 +910,7 @@ Func_02b_6ad1:
 	ld [wd08c], a
 	xor a
 	ld [wCharacterTilePos], a
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 Func_02b_6ae6:
@@ -1000,7 +1000,7 @@ BattleIntro_Jump_5:
 	ld [wd986], a
 	ld a, 1
 	ld [wd9b5], a
-	call Func_1159
+	call AdvanceRNG
 	ld a, [wd991]
 	and 1
 	add $55
@@ -1010,7 +1010,7 @@ BattleIntro_Jump_5:
 	call Func_02b_55cb
 	xor a
 	ld [wd9b5], a
-	call Func_1159
+	call AdvanceRNG
 	ld a, [wd991]
 	and 1
 	add 2
@@ -1022,17 +1022,17 @@ BattleIntro_Jump_5:
 	ldh [hVRAMCopyHeight], a
 	ld bc, $0904
 	ld hl, $9829
-	call Func_0fef
+	call ClearBGMapBox
 	ld bc, $0904
 	ld hl, $98e1
-	call Func_0fef
+	call ClearBGMapBox
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
 	ld a, 6
 	ldh [hVRAMCopyHeight], a
 	ld bc, $1406
 	ld hl, $9980
-	call Func_0fef
+	call ClearBGMapBox
 	ld a, 5
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -1049,7 +1049,7 @@ BattleIntro_Jump_6:
 	ldh [hVRAMCopyWidth], a
 	ld a, 6
 	ldh [hVRAMCopyHeight], a
-	call Func_0fef
+	call ClearBGMapBox
 	xor a
 	ldh [hSCX], a
 	ld [wWX], a

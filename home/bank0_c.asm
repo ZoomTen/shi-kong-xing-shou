@@ -4,10 +4,10 @@ WaitVRAM_STAT::
 	ret z
 	jr WaitVRAM_STAT
 
-Func_06c6::
+PrintText_Banked::
 	ld a, [_BANKNUM]
 	push af
-	call Func_19ca
+	call PrintText
 	pop af
 	rst Bankswitch
 	ret
@@ -67,7 +67,7 @@ ENDR
 	add hl, bc
 	ld [hl], $0a
 	push bc
-	call Func_22f6
+	call AnimateQueuedSprite
 
 	pop bc
 	ld hl, 3
@@ -193,7 +193,7 @@ GetTextBGMapPointer::
 	pop bc
 	ret
 
-Func_07e2::
+CopyTextboxToVRAM::
 	push hl
 	ld de, wd100
 	lb bc, 20, 8
@@ -300,17 +300,17 @@ LoadTextFaceExtraSprites::
 	rst Bankswitch
 	ret
 
-Func_08a2::
+LoadObjectSprite::
 	ld bc, wcd40
 .asm_08a5
 	ld hl, 2
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, Func_0915
+	jr nz, NextObjectSpriteSlot
 	inc de
 
-Func_08ae::
+_LoadObjectSprite::
 	ld a, [de]
 	ld hl, 4
 	add hl, bc
@@ -380,7 +380,7 @@ ENDR
 	call LoadSpritePalette
 	ret
 
-Func_0915::
+NextObjectSpriteSlot::
 	ld hl, $20
 	add hl, bc
 	ld a, l
@@ -389,17 +389,17 @@ Func_0915::
 
 	push hl
 	pop bc
-	jr Func_08a2.asm_08a5
+	jr LoadObjectSprite.asm_08a5
 
 .asm_0922
 	ld c, 0
 	ret
 
-Func_0925::
+LoadSelectedObjectSprite::
 	ld a, [wSelectedObjectOffset]
 	ld c, a
 	ld b, $cd
-	jp Func_08ae
+	jp _LoadObjectSprite
 
 FadeOutPalette::
 	ld a, 0
@@ -417,10 +417,10 @@ FadeOutPalette::
 	ldh a, [hFadeFrameCounter]
 	inc a
 	ldh [hFadeFrameCounter], a
-	ld hl, unk_2b38
+	ld hl, Palette_White
 	ld a, 0
 	ld [wPaletteFadeDirection], a
-	call Func_29c8
+	call UpdatePaletteFade
 	ldh a, [hPaletteFadeState]
 	and a
 	jr z, .exit
@@ -439,7 +439,7 @@ FadeOutPalette::
 	ldh [rLCDC], a
 	ret
 
-Func_096a::
+FadeInScene::
 ; Switch intro scene?
 .loop
 	ld a, 0
@@ -455,10 +455,10 @@ Func_096a::
 	ldh a, [hFadeFrameCounter]
 	inc a
 	ldh [hFadeFrameCounter], a
-	ld hl, unk_2b38
+	ld hl, Palette_White
 	ld a, 0
 	ld [wPaletteFadeDirection], a
-	call Func_29c8
+	call UpdatePaletteFade
 	ldh a, [hPaletteFadeState]
 	and a
 	jr z, .exit
@@ -469,14 +469,15 @@ Func_096a::
 	call CopyObjectPalettes
 
 	call DelayFrame
-	jr Func_096a
+	jr FadeInScene
 
 .exit
 	xor a ; LCDCF_OFF
 	ldh [rLCDC], a
 	ret
 
-Func_09a6::
+FadeInPalette2::
+; CGB-only fade
 	ldh a, [hConsoleType]
 	cp BOOTUP_A_CGB
 	ret nz
@@ -484,10 +485,10 @@ Func_09a6::
 	ldh a, [hFadeFrameCounter]
 	inc a
 	ldh [hFadeFrameCounter], a
-	ld hl, unk_2ab8
+	ld hl, Palette_Black
 	ld a, 1
 	ld [wPaletteFadeDirection], a
-	call Func_29c8
+	call UpdatePaletteFade
 	ldh a, [hPaletteFadeState]
 	and a
 	jr z, .exit
@@ -498,7 +499,7 @@ Func_09a6::
 	call CopyObjectPalettes
 
 	call DelayFrame
-	jr Func_09a6
+	jr FadeInPalette2
 
 .exit
 	ret
@@ -548,7 +549,7 @@ ClearBGMap0::
 	ei
 	ret
 
-Func_0a0a::
+LoadMapBGPalettes::
 	ld a, [_BANKNUM]
 	push af
 
@@ -592,8 +593,8 @@ Func_0a0a::
 	dw $792c
 	dw $0000
 
-Func_0a46::
-	ld hl, unk_2c24
+LoadBattlePalettes::
+	ld hl, DefaultSpritePalettes
 	ld de, wcaf0
 	ld c, $40
 .copy1
@@ -733,13 +734,13 @@ unk_0a8b::
 	dw $6a1e
 	dw $73df
 
-Func_0b1b::
+LoadExtraPalettes::
 	ld de, wcaf0
 	ld hl, $18
 	add hl, de
 	push hl
 	pop de
-	ld hl, unk_2c3c
+	ld hl, Palettes_2c3c
 	ld c, 40
 .copy
 	ld a, [hli]

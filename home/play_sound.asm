@@ -19,8 +19,8 @@ PlaySound::
 	ld a, [wLoadedROMBank]
 	push af
 	ld a, d
-	call Func_25fb
-	call Func_25d6
+	call QueueSound
+	call FlushSoundQueue
 	pop af
 	rst Bankswitch
 

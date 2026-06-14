@@ -335,7 +335,7 @@ Script_face:
 	ld [hFFAD], a
 	xor a
 	ld [wScriptByte], a
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	ret
 
 Script_spritewalk:
@@ -361,7 +361,7 @@ Script_spritewalk:
 Script_07:
 	call Func_0639
 	call Func_00b_445e
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	ret
 
 Func_00b_445e:
@@ -552,7 +552,7 @@ Script_move:
 Script_10:
 	call Func_00b_60dd
 	call Func_00b_61d6
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	ret
 
 Script_11:
@@ -569,7 +569,7 @@ Script_11:
 
 Script_12:
 	call Func_00b_60b2
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	ret
 
 Script_13:
@@ -692,7 +692,7 @@ Script_16:
 	ld a, [wScriptByte]
 	ld d, a
 	dec de
-	ld hl, Func_08a2
+	ld hl, LoadObjectSprite
 	ld a, [hScriptBank]
 	ld b, a
 	rst FarCall
@@ -1204,7 +1204,7 @@ asm_00b_49ba:
 	ld e, a
 	ld a, [wScriptByte]
 	ld d, a
-	ld hl, Func_0925
+	ld hl, LoadSelectedObjectSprite
 	ld a, [hScriptBank]
 	ld b, a
 	rst FarCall
@@ -1282,7 +1282,7 @@ Func_00b_4a1f:
 Script_25:
 	call Func_00b_61a2
 	call Func_00b_61d6
-	call Func_0426
+	call UpdatePlayerAnim_Banked
 	call Func_00b_4a1f
 	ret
 
@@ -1394,13 +1394,13 @@ Script_2c:
 	xor a
 	ldh [hPaletteFadeState], a
 	ldh [hFadeFrameCounter], a
-	call Func_09a6
+	call FadeInPalette2
 	call Func_00b_605c
 	call Func_00b_603d
 	call ClearBGMap0
 	call Func_00b_604e
-	call Func_0a0a
-	call Func_0a46
+	call LoadMapBGPalettes
+	call LoadBattlePalettes
 	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
@@ -1792,9 +1792,9 @@ Func_00b_4d6c:
 	ret
 
 Func_00b_4dc5:
-	ld hl, unk_2b38
+	ld hl, Palette_White
 	call CopyBackgroundPalettes
-	ld hl, unk_2b38
+	ld hl, Palette_White
 	call CopyObjectPalettes
 	call DelayFrame
 	call DelayFrame

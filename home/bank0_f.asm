@@ -1,4 +1,4 @@
-Func_28d6::
+UpdateTextLineBGMap::
 ; Clear or duplicate line of text in textbox
 ; Used in para and cont text commands
 	ld a, [wcbf6]
@@ -176,7 +176,7 @@ ENDR
 	ldh [hFFA4], a
 	ret
 
-Func_29c8::
+UpdatePaletteFade::
 	ldh a, [hPaletteFadeState]
 	cp 1
 	jp z, .asm_29f1
@@ -369,12 +369,12 @@ Func_29c8::
 .ret
 	ret
 
-unk_2ab8::
+Palette_Black::
 REPT $40
 	dw $0000
 ENDR
 
-unk_2b38::
+Palette_White::
 REPT $40
 	dw $7fff
 ENDR

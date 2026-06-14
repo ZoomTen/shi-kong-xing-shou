@@ -163,7 +163,7 @@ Func_01f_40ea:
 	ld a, 9
 	ld c, a
 	ldh [hVRAMCopyHeight], a
-	call Func_1022
+	call ClearBGMapBox_VRAM1
 	ld de, .unk_4119
 	ld a, [wd08e]
 	ld l, a

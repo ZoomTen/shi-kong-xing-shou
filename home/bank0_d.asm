@@ -57,7 +57,7 @@ LoadMapGFX2::
 	push af
 	ldh a, [hMapAttrBank]
 	rst Bankswitch
-	call Func_259b
+	call LoadMapPalettes2
 	ld a, [wMapTileset1Pointer]
 	ld l, a
 	ld a, [wMapTileset1Pointer + 1]
@@ -90,7 +90,7 @@ LoadMapGFX::
 	push af
 	ldh a, [hMapAttrBank]
 	rst Bankswitch
-	call Func_25a2
+	call LoadMapPalettes1
 	ld a, [wMapTileset1Pointer]
 	ld l, a
 	ld a, [wMapTileset1Pointer + 1]
@@ -120,7 +120,7 @@ LoadMapGFX::
 	rst Bankswitch
 	ret
 
-Func_0fac::
+NextLivePartyMon::
 	ld de, wdd00
 .asm_0faf
 	ld a, [wd08e]
@@ -138,7 +138,7 @@ Func_0fac::
 	ret nz
 	jr .asm_0faf
 
-Func_0fc4::
+PrevLivePartyMon::
 	ld de, wdd00
 .asm_0fc7
 	ld a, [wd08e]
@@ -156,7 +156,7 @@ Func_0fc4::
 	ret nz
 	jr .asm_0fc7
 
-Func_0fdc::
+GetPartyMonPtr::
 	ld a, [wd08e]
 	ld hl, wPartyMons
 	ld de, $16
@@ -173,7 +173,7 @@ Func_0fdc::
 	pop bc
 	ret
 
-Func_0fef::
+ClearBGMapBox::
 	ld a, 0
 	ldh [rVBK], a
 
@@ -223,7 +223,7 @@ Func_0fef::
 	ldh [rVBK], a
 	ret
 
-Func_1022::
+ClearBGMapBox_VRAM1::
 	ldh a, [hConsoleType]
 	cp BOOTUP_A_CGB
 	ret nz
@@ -426,7 +426,7 @@ Func_114c::
 	homecall Func_025_4110
 	ret
 
-Func_1159::
+AdvanceRNG::
 	push bc
 	ld a, [wd991]
 	ld b, a
@@ -450,7 +450,7 @@ Func_1159::
 	pop bc
 	ret
 
-Func_117b::
+SetStatTile::
 	push hl
 	push de
 	push bc
@@ -495,7 +495,7 @@ Func_117b::
 	pop hl
 	ret
 
-Func_11b3::
+GetStatTile::
 	push hl
 	push de
 	push bc
@@ -538,7 +538,7 @@ Func_11b3::
 	pop hl
 	ret
 
-Func_11e9::
+AddStatTile::
 	push hl
 	push de
 	push bc
@@ -782,7 +782,7 @@ SRAMTest_Fast::
 	ret
 
 Func_132b::
-	call Func_05ff
+	call LoadMap_Banked
 	ret
 
 Func_132f::
@@ -1343,9 +1343,9 @@ Func_1712::
 Func_1730::
 ; Debug code
 	ld bc, 7 * $16
-	call Func_2e13
+	call Debug_GivePartyMon
 	ld bc, 7
-	call Func_2e04
+	call Debug_InitMonFlags
 
 ; wow...
 	ld a, $ff
@@ -1420,8 +1420,8 @@ Func_1730::
 	ld [wMoney + 2], a
 
 	ld bc, $18
-	call Func_2ca4
-	call Func_2d08
+	call Debug_InitDex
+	call Debug_InitParty
 	call Debug_GiveItems
 
 ; 2nd mon
@@ -1616,9 +1616,9 @@ unk_18ea::
 Func_1900::
 ; Debug code
 	ld bc, 1 * $16
-	call Func_2e13
+	call Debug_GivePartyMon
 	ld bc, 1
-	call Func_2e04
+	call Debug_InitMonFlags
 
 ; wow...
 	ld a, 0
@@ -1684,8 +1684,8 @@ Func_1900::
 	ld [wdcbb], a
 
 	ld bc, 1
-	call Func_2ca4
-	call Func_2d08
+	call Debug_InitDex
+	call Debug_InitParty
 	call Debug_GiveItems
 
 ; 5000 money

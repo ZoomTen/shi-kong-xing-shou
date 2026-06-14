@@ -1,4 +1,4 @@
-Func_0cfa::
+LoadMonPic::
 	ld a, [_BANKNUM]
 	push af
 	ld a, $27
@@ -28,7 +28,7 @@ Func_0cfa::
 	rst Bankswitch
 	ret
 
-Func_0d2e::
+LoadMonPic_vTiles9440::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wd9e5]
@@ -49,7 +49,7 @@ Func_0d2e::
 	rst Bankswitch
 	ret
 
-Func_0d52::
+LoadMonPic_vTiles90d0::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wd9e5]
@@ -112,7 +112,7 @@ LoadMonPicBank::
 	rst Bankswitch
 	ret
 
-Func_0da2::
+LoadEnemyMonPic::
 	ld a, [_BANKNUM]
 	push af
 

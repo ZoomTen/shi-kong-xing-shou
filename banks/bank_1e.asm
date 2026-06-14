@@ -24,7 +24,7 @@ Func_01e_421a:: ; get item name?
 	ld a, h
 	ld [wdcd3 + 1], a
 	ld de, Pointers_01e_4d29
-	ld a, [wd0f4]
+	ld a, [wMapType]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -73,7 +73,7 @@ Func_01e_4266::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 Func_01e_4275::
@@ -85,7 +85,7 @@ Func_01e_4275::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 Func_01e_4284:
@@ -119,7 +119,7 @@ Func_01e_4290::
 	ld [wd08c], a
 	xor a
 	ld [wCharacterTilePos], a
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 Func_01e_42ba:

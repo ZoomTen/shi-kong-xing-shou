@@ -2,15 +2,15 @@ Func_0419::
 	homecall Func_004_4000
 	ret
 
-Func_0426::
+UpdatePlayerAnim_Banked::
 	ld a, [_BANKNUM]
 	push af
-	call Func_2108
+	call UpdatePlayerAnim
 	pop af
 	rst Bankswitch
 	ret
 
-Func_0430::
+InitPlayerAnim::
 	ld a, [_BANKNUM]
 	push af
 	ld a, 1
@@ -24,7 +24,7 @@ Func_0430::
 	ld a, $0a
 	ldh [hFFDC], a
 	call Func_0453
-	call Func_2108
+	call UpdatePlayerAnim
 	pop af
 	rst Bankswitch
 	ret
@@ -190,7 +190,7 @@ Func_0506::
 	dw wde84
 	dw wde9a
 
-Func_0531::
+GetPlayerFacingOffset::
 	ld a, [wPlayerScreenY]
 	ld b, a
 	ld a, [wPlayerScreenX]
@@ -215,7 +215,7 @@ Func_0531::
 	db $00, $10
 	db $00, $f0
 
-Func_0557::
+SpawnPlayerSprite::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wPlayerSpriteX]
@@ -286,7 +286,7 @@ Func_0557::
 	ld a, [wPlayerFacing]
 	ld [wcd23], a
 	ld [wdcec], a
-	call Func_0531
+	call GetPlayerFacingOffset
 	ld a, 1
 	ld [wcd22], a
 	ldh [hFFDB], a
@@ -297,7 +297,7 @@ Func_0557::
 	ld [wcd26], a
 
 .asm_05e9
-	call Func_2108
+	call UpdatePlayerAnim
 	call Func_22a4
 	pop af
 	rst Bankswitch
@@ -306,37 +306,37 @@ Func_0557::
 Func_05f2::
 	ld a, [_BANKNUM]
 	push af
-	call Func_2108
+	call UpdatePlayerAnim
 	call Func_22a4
 	pop af
 	rst Bankswitch
 	ret
 
-Func_05ff::
+LoadMap_Banked::
 	ld a, [_BANKNUM]
 	push af
 	call LoadMapData
 	call LoadMapAttrs
 	call LoadMapGFX
-	call Func_24be
-	call Func_1fee
+	call LoadMap
+	call LoadMapObjects
 	call Func_19b6
 	pop af
 	rst Bankswitch
 	ret
 
-Func_0618::
+BuildBlockmap_Banked::
 	ld a, [_BANKNUM]
 	push af
-	call Func_26e1
+	call BuildBlockmap
 	pop af
 	rst Bankswitch
 	ret
 
-Func_0622::
+GetBlockCollision_Banked::
 	ld a, [_BANKNUM]
 	push af
-	call Func_20b9
+	call GetBlockCollision
 	pop af
 	rst Bankswitch
 	ret

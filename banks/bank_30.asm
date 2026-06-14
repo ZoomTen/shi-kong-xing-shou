@@ -574,7 +574,7 @@ Func_030_53ba:
 	ld [wd9b5], a
 	ld a, $3e
 	ld [wd3ff], a
-	call Func_1159
+	call AdvanceRNG
 	call Func_030_53ee
 	and a
 	jr z, .asm_53c1

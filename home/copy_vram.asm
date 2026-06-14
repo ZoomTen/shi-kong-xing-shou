@@ -202,10 +202,10 @@ FadeInPalette::
 	ldh a, [hFadeFrameCounter]
 	inc a
 	ldh [hFadeFrameCounter], a
-	ld bc, unk_2b38
+	ld bc, Palette_White
 	ld a, 1
 	ld [wPaletteFadeDirection], a
-	call Func_29c8
+	call UpdatePaletteFade
 	ldh a, [hPaletteFadeState]
 	and a
 	ret z

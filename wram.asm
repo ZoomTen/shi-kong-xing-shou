@@ -177,9 +177,9 @@ wcde2:: ds 1
 
 wcde3:: ds $1d
 
-wce00:: ds $100
+wMapTileAttrs:: ds $100
 
-wcf00:: ds $100
+wMapCollision:: ds $100
 
 
 SECTION "WRAM1", WRAMX
@@ -270,7 +270,7 @@ wd0ef:: ds 1
 wd0f0:: ds 1
 wd0f1:: ds 1
 wd0f2:: ds 2
-wd0f4:: ds 1
+wMapType:: ds 1
 wd0f5:: ds 1
 
 wCharacterTileDest:: ds 2

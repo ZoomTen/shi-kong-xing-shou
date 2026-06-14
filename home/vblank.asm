@@ -28,7 +28,7 @@ VBlank::
 
 	call LoadCharacter
 	call PrintCharacter
-	call Func_28d6
+	call UpdateTextLineBGMap
 
 	ld a, [_BANKNUM]
 	push af

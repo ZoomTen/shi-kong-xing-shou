@@ -14,6 +14,9 @@ The purpose of this disassembly is to create a code base that compiles 1:1 with 
 * Repeat: do not try to be wise. We're working with code that may be subpar to us, but they must 100% match the base ROM.
 * The only thing you should be wise about is translating raw numbers into meaningful constants and labels.
 * Prefer a systematical search and replace operation rather than a carpet-bomb `sed` operation. This gives you time to analyze.
+* Along the way, analyze and suggest replacement names for the "partially-documented" labels. Stuff like Func_ asm_ unk_. (see Style guide)
+* For unk_ data, analyze and recommend a keyword for them (also see Style guide)
+* Try to also decipher what the local `.asm` labels mean as well.
 
 # Command-specific
 

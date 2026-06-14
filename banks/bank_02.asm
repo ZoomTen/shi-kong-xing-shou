@@ -50,11 +50,11 @@ asm_002_4069:
 	ret z
 	push af
 	call SoundEngine1_Init
-	call Func_267c
+	call WaitSoundFlush
 	pop af
 	ld [wd658], a
-	call Func_25fb
-	jp Func_25d6
+	call QueueSound
+	jp FlushSoundQueue
 
 asm_002_407d:
 	ld a, [wd68a]

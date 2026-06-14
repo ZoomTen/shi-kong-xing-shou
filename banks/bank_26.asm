@@ -28,7 +28,7 @@ asm_026_4616::
 	ld l, a
 	xor a
 	ld [wCharacterTilePos], a
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 asm_026_464a:
@@ -36,7 +36,7 @@ asm_026_464a:
 	jr asm_026_4652
 
 asm_026_464f:
-	call Func_0fdc
+	call GetPartyMonPtr
 
 asm_026_4652:
 	ld a, [bc]
@@ -63,7 +63,7 @@ asm_026_4652:
 	ld [wCharacterTilePos], a
 	push de
 	pop hl
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 asm_026_4680:
@@ -90,7 +90,7 @@ asm_026_4680:
 	ld [wd08c], a
 	xor a
 	ld [wCharacterTilePos], a
-	call Func_0b65
+	call PrintMenuText
 	ret
 
 unk_026_46ab:
@@ -161,7 +161,7 @@ asm_026_46c5:
 	ld [wd08c], a
 	xor a
 	ld [wCharacterTilePos], a
-	call Func_0b65
+	call PrintMenuText
 	ld a, [wd0c1]
 	swap a
 	ld l, a
