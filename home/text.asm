@@ -501,7 +501,7 @@ Func_1c8b::
 Text_ItemName::
 	call Func_0817
 	pop hl
-	call Func_01e_421a ; bank 1e set by SetMapLayoutPatchForItem_Banked
+	call LoadItemNameByMapType ; bank 1e set by SetMapLayoutPatchForItem_Banked
 ; got item name
 	ld a, [wTextStart]
 	ld l, a
@@ -755,7 +755,7 @@ Text_e9_Stub::
 
 Text_ItemName2::
 	pop hl
-	call Func_01e_6e4d
+	call LoadShopItemName
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]
@@ -765,7 +765,7 @@ Text_ItemName2::
 
 Text_eb::
 	pop hl
-	call Func_01e_6de3
+	call LoadItemNameByIndex
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]

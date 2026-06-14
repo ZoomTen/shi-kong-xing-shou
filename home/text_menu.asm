@@ -131,7 +131,7 @@ MenuText_e6::
 MenuText_e5::
 	ld a, [wd9e9]
 	ld d, a
-	farcall Func_01e_4266
+	farcall PrintEquipmentName
 	pop hl
 	push hl
 	jp Menu_CheckCharacter
@@ -139,7 +139,7 @@ MenuText_e5::
 MenuText_e8::
 	ld a, [wd9f3]
 	ld d, a
-	farcall Func_01e_4275
+	farcall PrintItemName
 	pop hl
 	push hl
 	jp Menu_CheckCharacter

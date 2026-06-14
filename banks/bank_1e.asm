@@ -302,7 +302,7 @@ SetMapLayoutPatchForItem::
 
 INCLUDE "data/text/bank1e_misc3.asm"
 
-Func_01e_421a:: ; get item name?
+LoadItemNameByMapType::
 	ld a, l
 	ld [wdcd3], a
 	ld a, h
@@ -348,7 +348,7 @@ Func_01e_421a:: ; get item name?
 	farcall asm_039_479f
 	ret
 
-Func_01e_4266::
+PrintEquipmentName::
 	ld l, d
 	ld h, 0
 	ld de, EquipmentNames
@@ -360,7 +360,7 @@ Func_01e_4266::
 	call PrintMenuText
 	ret
 
-Func_01e_4275::
+PrintItemName::
 	ld l, d
 	ld h, 0
 	ld de, ItemNames
@@ -511,7 +511,7 @@ Func_01e_434d:
 	call PrintMenuText
 	ret
 
-Func_01e_4362:
+DrawItemMenuPage:
 	ld de, Pointers_01e_4ebd
 	ld a, [wd1f4]
 	ld l, a
@@ -844,7 +844,7 @@ Unk_01e_4623:
 Unk_01e_462c:
 	db $01, $02, $10, $11, $12, $13, $14, $15, -1
 
-Func_01e_4635:
+DrawItemPageWithIcons:
 	ld de, Pointers_01e_4849
 	ld a, [wd1f4]
 	ld l, a
@@ -915,7 +915,7 @@ Func_01e_4635:
 	jr c, .loop
 	ret
 
-Func_01e_46a3:
+DrawItemListPage:
 	ld de, Pointers_01e_4849
 	ld a, [wd1f4]
 	ld l, a
@@ -2317,7 +2317,7 @@ unk_01e_614f:
 Pointers_01e_6567:
 	dr $7a567, $7ade3
 
-Func_01e_6de3::
+LoadItemNameByIndex::
 	ld a, l
 	ld [wdcd3], a
 	ld a, h
@@ -2360,7 +2360,7 @@ unk_01e_6e24:
 
 INCLUDE "data/text/bank1e_misc4.asm"
 
-Func_01e_6e4d::
+LoadShopItemName::
 	ld a, l
 	ld [wdcd3], a
 	ld a, h
