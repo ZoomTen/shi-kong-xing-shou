@@ -46,7 +46,7 @@ _Start::
 	ld [wd9e0 + 1], a
 	ei
 	ld a, 2
-	ld [wd091], a
+	ld [wCurrentSoundBank], a
 	call Func_262d
 
 ; Check SRAM

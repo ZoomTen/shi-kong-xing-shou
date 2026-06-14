@@ -32,9 +32,9 @@ VBlank::
 
 	ld a, [_BANKNUM]
 	push af
-	ld a, [wd091]
+	ld a, [wCurrentSoundBank]
 	rst Bankswitch
-	call $4000
+	call SOUND_PLAY
 	pop af
 	rst Bankswitch
 

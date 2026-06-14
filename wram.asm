@@ -204,7 +204,7 @@ wSelectedPage:: ds 1
 wSelectedOption:: ds 1
 wLoadedROMBank:: ds 1
 wd090:: ds 1
-wd091:: ds 1
+wCurrentSoundBank:: ds 1
 wd092:: ds $e
 
 wMapAttributes::

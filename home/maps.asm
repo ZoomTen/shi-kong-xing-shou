@@ -1054,9 +1054,9 @@ Func_262d::
 	call ResetSoundQueue
 	ld a, [wLoadedROMBank]
 	push af
-	ld a, [wd091]
+	ld a, [wCurrentSoundBank]
 	rst Bankswitch
-	call $4006
+	call SOUND_INIT
 	pop af
 	rst Bankswitch
 	ret
@@ -1088,26 +1088,26 @@ PlayQueuedSound::
 	ld a, $03
 
 .asm_265d
-	ld hl, wd091
+	ld hl, wCurrentSoundBank
 	cp [hl]
 	jr z, .asm_2672
 
 	ld d, a
 	push de
 	ld e, 0
-	ld a, [wd091]
+	ld a, [wCurrentSoundBank]
 	call .asm_2672
 	pop de
 	ld a, d
-	ld [wd091], a
+	ld [wCurrentSoundBank], a
 
 .asm_2672
 	rst Bankswitch
 	ld a, e
-	jp $4003
+	jp SOUND_LOAD
 
 .asm_2677
-	ld a, [wd091]
+	ld a, [wCurrentSoundBank]
 	jr .asm_2672
 
 WaitSoundFlush::

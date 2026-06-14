@@ -1,3 +1,12 @@
+; Banked sound driver entry points.
+; The active driver bank is selected by wCurrentSoundBank; code banks it in
+; then calls through these fixed offsets. See SoundEngine1_* (bank 02) and
+; SoundEngine2_* (bank 03).
+DEF SOUND_PLAY EQU $4000
+DEF SOUND_LOAD EQU $4003
+DEF SOUND_INIT EQU $4006
+DEF SOUND_UNKNOWN EQU $4009
+
 ; pitch
 	const_def 0
 	const C_ ; 0

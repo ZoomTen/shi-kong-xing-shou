@@ -1,13 +1,13 @@
-Func_002_4000:
+_SoundEngine1_Play:
 	jp SoundEngine1_Play
 
-Func_002_4003:
+_SoundEngine1_Load:
 	jp SoundEngine1_Load
 
-Func_002_4006:
+_SoundEngine1_Init:
 	jp SoundEngine1_Init
 
-Func_002_4009:
+_SoundEngine1_Unknown:
 	jp SoundEngine1_Unknown
 
 unk_002_400c:
