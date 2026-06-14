@@ -1205,9 +1205,9 @@ asm_005_5330:
 	call PlaySound
 	ld a, [hl]
 	and $f
-	ld [wd0f5], a
+	ld [wItemIndex], a
 	call Func_005_5504
-	call Func_0827
+	call SetMapLayoutPatchForItem_Banked
 	ld a, BANK(text_1e_4212)
 	ldh [hTextSourceBank3], a
 	ld a, 3
@@ -1229,10 +1229,10 @@ asm_005_5390:
 	call PlaySound
 	ld a, [hl]
 	and $f
-	ld [wdcf9], a
+	ld [wMapPatchIndex], a
 	call Func_005_54cf
-	call Func_0834
-	ld a, [wdcf9]
+	call SetMapLayoutPatch_Banked
+	ld a, [wMapPatchIndex]
 	cp 2
 	jr z, asm_005_53b4
 	cp 3
@@ -1245,7 +1245,7 @@ asm_005_53b4:
 	call Func_005_53bb
 
 asm_005_53b7:
-	call Func_0841
+	call ApplyMapLayoutFlagPatches_Banked
 	ret
 
 Func_005_53bb:
@@ -1275,10 +1275,10 @@ Func_005_53d9:
 	call PlaySound
 	ld a, [hl]
 	and $f
-	ld [wdcf9], a
+	ld [wMapPatchIndex], a
 	call Func_005_54ad
-	call Func_085b
-	ld a, [wdcf9]
+	call ClearMapLayoutPatch_Banked
+	ld a, [wMapPatchIndex]
 	cp 2
 	jr z, asm_005_53fd
 	cp 3
@@ -1291,7 +1291,7 @@ asm_005_53fd:
 	call Func_005_5404
 
 asm_005_5400:
-	call Func_084e
+	call ApplyMapLayoutPatchIfClear_Banked
 	ret
 
 Func_005_5404:

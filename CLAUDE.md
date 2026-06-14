@@ -236,6 +236,18 @@ If no such function is available yet, create a label for it in the form `Func_xx
 
 If the farcall lands in the middle of a function, split the function it's pointing to in two just so the farcall has a valid target.
 
+# RAM address identification
+
+To rename `wdxxx` to `wSomething`:
+
+1. Make an alias.
+```diff
++wSomething::
+ wdxxx:: ds 1
+```
+2. Check for all usages of `wdxxx`.
+3. Substitute `wdxxx` for `wSomething` only if you're confident enough that that is indeed how it's used.
+
 # Style guide
 
 ## Constraints

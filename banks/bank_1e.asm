@@ -1,5 +1,5 @@
-Func_01e_4000::
-	ld de, Pointers_01e_402a
+ClearMapLayoutPatch::
+	ld de, LayoutPatches_01e_402a
 	ld a, [wMapType]
 	ld l, a
 	ld h, 0
@@ -9,7 +9,7 @@ Func_01e_4000::
 	ld h, [hl]
 	ld l, a
 	inc hl
-	ld a, [wdcf9]
+	ld a, [wMapPatchIndex]
 	add a
 	ld b, a
 	add a
@@ -30,30 +30,30 @@ Func_01e_4000::
 	call ApplyMapLayoutPatch
 	ret
 
-Pointers_01e_402a:
-	dw RecordList_01e_4036
-	dw RecordList_01e_4036
-	dw RecordList_01e_403d
-	dw RecordList_01e_404a
-	dw RecordList_01e_405d
-	dw RecordList_01e_407c
+LayoutPatches_01e_402a:
+	dw .patch_0
+	dw .patch_0
+	dw .patch_2
+	dw .patch_3
+	dw .patch_4
+	dw .patch_5
 
-RecordList_01e_4036:
+.patch_0:
 	db 0
 	layout_patch 0, 0, 0, 0, 0
 
-RecordList_01e_403d:
+.patch_2:
 	db 2
 	layout_patch wdaba, 6, 2, 5, $26
 	layout_patch wdaba, 6, 2, 5, $26
 
-RecordList_01e_404a:
+.patch_3:
 	db 3
 	layout_patch wdaba, 7, 1, 3, $0e
 	layout_patch wdaba, 7, 1, 3, $0e
 	layout_patch wdaba, 7, 1, 3, $0e
 
-RecordList_01e_405d:
+.patch_4:
 	db 5
 	layout_patch wdabb, 0, 2, 7, $3e
 	layout_patch wdabb, 1, 5, 0, $05
@@ -61,12 +61,12 @@ RecordList_01e_405d:
 	layout_patch wdabb, 0, 2, 7, $3e
 	layout_patch wdabb, 1, 5, 0, $05
 
-RecordList_01e_407c:
+.patch_5:
 	db 1
 	layout_patch wdaba, 5, 3, 1, $04
 
-Func_01e_4083::
-	ld de, Pointers_01e_40ad
+SetMapLayoutPatch::
+	ld de, LayoutPatches_01e_40ad
 	ld a, [wMapType]
 	ld l, a
 	ld h, 0
@@ -76,7 +76,7 @@ Func_01e_4083::
 	ld h, [hl]
 	ld l, a
 	inc hl
-	ld a, [wdcf9]
+	ld a, [wMapPatchIndex]
 	add a
 	ld b, a
 	add a
@@ -97,36 +97,36 @@ Func_01e_4083::
 	call ApplyMapLayoutPatch
 	ret
 
-Pointers_01e_40ad:
-	dw RecordList_01e_40b9
-	dw RecordList_01e_40c0
-	dw RecordList_01e_40c7
-	dw RecordList_01e_40da
-	dw RecordList_01e_40f3
-	dw RecordList_01e_411e
+LayoutPatches_01e_40ad:
+	dw .patch_0
+	dw .patch_1
+	dw .patch_2
+	dw .patch_3
+	dw .patch_4
+	dw .patch_5
 
-RecordList_01e_40b9:
+.patch_0:
 	db 0
 	layout_patch 0, 0, 0, 0, 0
 
-RecordList_01e_40c0:
+.patch_1:
 	db 1
 	layout_patch wdaba, 5, 2, 2, $18
 
-RecordList_01e_40c7:
+.patch_2:
 	db 3
 	layout_patch wdaba, 6, 2, 5, $40
 	layout_patch wdaba, 6, 2, 5, $40
 	layout_patch wdaba, 6, 8, 4, $41
 
-RecordList_01e_40da:
+.patch_3:
 	db 4
 	layout_patch wdaba, 7, 1, 3, $15
 	layout_patch wdaba, 7, 1, 3, $15
 	layout_patch wdaba, 7, 1, 3, $15
 	layout_patch wdaba, 7, 2, 2, $16
 
-RecordList_01e_40f3:
+.patch_4:
 	db 7
 	layout_patch wdabb, 0, 2, 7, $58
 	layout_patch wdabb, 1, 5, 0, $59
@@ -136,12 +136,12 @@ RecordList_01e_40f3:
 	layout_patch wdabb, 0, $0a, 3, $5a
 	layout_patch wdabb, 1, 1, 1, $5b
 
-RecordList_01e_411e:
+.patch_5:
 	db 1
 	layout_patch wdaba, 5, 3, 1, $2e
 
-Func_01e_4125::
-	ld de, Pointers_01e_414f
+ApplyMapLayoutPatchIfClear::
+	ld de, LayoutPatches_01e_414f
 	ld a, [wMapType]
 	ld l, a
 	ld h, 0
@@ -151,7 +151,7 @@ Func_01e_4125::
 	ld h, [hl]
 	ld l, a
 	inc hl
-	ld a, [wdcf9]
+	ld a, [wMapPatchIndex]
 	add a
 	ld b, a
 	add a
@@ -172,25 +172,25 @@ Func_01e_4125::
 	call ApplyMapLayoutPatch
 	ret
 
-Pointers_01e_414f:
-	dw RecordList_01e_415b
-	dw RecordList_01e_415b
-	dw RecordList_01e_415b
-	dw RecordList_01e_4162
-	dw RecordList_01e_4175
-	dw RecordList_01e_415b
+LayoutPatches_01e_414f:
+	dw .patch_none
+	dw .patch_none
+	dw .patch_none
+	dw .patch_3
+	dw .patch_4
+	dw .patch_none
 
-RecordList_01e_415b:
+.patch_none:
 	db 0
 	layout_patch 0, 0, 0, 0, 0
 
-RecordList_01e_4162:
+.patch_3:
 	db 3
 	layout_patch wdaba, 7, 2, 2, $0e
 	layout_patch wdaba, 7, 2, 2, $0e
 	layout_patch wdaba, 7, 2, 2, $0e
 
-RecordList_01e_4175:
+.patch_4:
 	db 5
 	layout_patch wdabb, 0, 2, 7, $3e
 	layout_patch wdabb, 1, 5, 0, $05
@@ -201,7 +201,7 @@ RecordList_01e_4175:
 ; For the current wMapType, walk its patch record list and apply every
 ; patch whose flag bit is set, editing wMapLayout in place.
 ApplyMapLayoutFlagPatches::
-	ld de, Pointers_01e_40ad
+	ld de, LayoutPatches_01e_40ad
 	ld a, [wMapType]
 	ld l, a
 	ld h, 0
@@ -235,9 +235,9 @@ ApplyMapLayoutFlagPatches::
 	ret
 
 ; Same as ApplyMapLayoutFlagPatches but using the secondary record table
-; (Pointers_01e_4910); used when the map is first set up.
+; (LayoutPatches_01e_4910); used when the map is first set up.
 ApplyMapLayoutFlagPatchesInit::
-	ld de, Pointers_01e_4910
+	ld de, LayoutPatches_01e_4910
 	ld a, [wMapType]
 	ld l, a
 	ld h, 0
@@ -268,8 +268,8 @@ ApplyMapLayoutFlagPatchesInit::
 	jr nz, .loop
 	ret
 
-Func_01e_41e8::
-	ld de, Pointers_01e_4910
+SetMapLayoutPatchForItem::
+	ld de, LayoutPatches_01e_4910
 	ld a, [wMapType]
 	ld l, a
 	ld h, 0
@@ -279,7 +279,7 @@ Func_01e_41e8::
 	ld h, [hl]
 	ld l, a
 	inc hl
-	ld a, [wd0f5]
+	ld a, [wItemIndex]
 	add a
 	ld b, a
 	add a
@@ -316,7 +316,7 @@ Func_01e_421a:: ; get item name?
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	ld a, [wd0f5]
+	ld a, [wItemIndex]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -1369,122 +1369,122 @@ TestLayoutFlag:
 	pop bc
 	ret
 
-Pointers_01e_4910:
-	dw unk_01e_4ccf
-	dw unk_01e_4cf5
-	dw unk_01e_4cfc
-	dw unk_01e_4d09
-	dw unk_01e_4d10
-	dw unk_01e_4ccf
-	dw unk_01e_4cc8
-	dw unk_01e_4cc1
-	dw unk_01e_4cba
-	dw unk_01e_4cad
-	dw unk_01e_4c94
-	dw unk_01e_4c87
-	dw unk_01e_4c6e
-	dw unk_01e_4c67
-	dw unk_01e_4cd6
-	dw unk_01e_4c48
-	dw unk_01e_4c35
-	dw unk_01e_4c22
-	dw unk_01e_4bf0
-	dw unk_01e_4bdd
-	dw unk_01e_4b67
-	dw unk_01e_4b7a
-	dw unk_01e_4ba5
-	dw unk_01e_4bb8
-	dw unk_01e_4b4e
-	dw unk_01e_4b3b
-	dw unk_01e_4b2e
-	dw unk_01e_4b21
-	dw unk_01e_4aee
-	dw unk_01e_4b01
-	dw unk_01e_4b14
-	dw unk_01e_4aa0
-	dw unk_01e_4aad
-	dw unk_01e_4aba
-	dw unk_01e_4ac1
-	dw unk_01e_4ad4
-	dw unk_01e_4ae1
-	dw unk_01e_4a6e
-	dw unk_01e_4a87
-	dw unk_01e_49ce
-	dw unk_01e_49e1
-	dw unk_01e_49ee
-	dw unk_01e_49f5
-	dw unk_01e_4a08
-	dw unk_01e_4a1b
-	dw unk_01e_4a3a
-	dw unk_01e_4a41
-	dw unk_01e_4a4e
-	dw unk_01e_4a55
-	dw unk_01e_4980
-	dw unk_01e_4999
-	dw unk_01e_49a6
-	dw unk_01e_49ad
-	dw unk_01e_49b4
-	dw unk_01e_49c1
-	dw unk_01e_4c09
+LayoutPatches_01e_4910:
+	dw MapLayoutPatches_None
+	dw MapLayoutPatches_01e_4cf5
+	dw MapLayoutPatches_01e_4cfc
+	dw MapLayoutPatches_01e_4d09
+	dw MapLayoutPatches_01e_4d10
+	dw MapLayoutPatches_None
+	dw .patch_4cc8
+	dw .patch_4cc1
+	dw .patch_4cba
+	dw .patch_4cad
+	dw .patch_4c94
+	dw .patch_4c87
+	dw .patch_4c6e
+	dw .patch_4c67
+	dw MapLayoutPatches_01e_4cd6
+	dw .patch_4c48
+	dw .patch_4c35
+	dw .patch_4c22
+	dw .patch_4bf0
+	dw .patch_4bdd
+	dw .patch_4b67
+	dw .patch_4b7a
+	dw .patch_4ba5
+	dw .patch_4bb8
+	dw .patch_4b4e
+	dw .patch_4b3b
+	dw .patch_4b2e
+	dw .patch_4b21
+	dw .patch_4aee
+	dw .patch_4b01
+	dw .patch_4b14
+	dw .patch_4aa0
+	dw .patch_4aad
+	dw .patch_4aba
+	dw .patch_4ac1
+	dw .patch_4ad4
+	dw .patch_4ae1
+	dw .patch_4a6e
+	dw .patch_4a87
+	dw .patch_49ce
+	dw .patch_49e1
+	dw .patch_49ee
+	dw .patch_49f5
+	dw .patch_4a08
+	dw .patch_4a1b
+	dw .patch_4a3a
+	dw .patch_4a41
+	dw .patch_4a4e
+	dw .patch_4a55
+	dw .patch_4980
+	dw .patch_4999
+	dw .patch_49a6
+	dw .patch_49ad
+	dw .patch_49b4
+	dw .patch_49c1
+	dw .patch_4c09
 
-unk_01e_4980:
+.patch_4980:
 	db 4
 	layout_patch wdac9, 7, 6, 1, $a2
 	layout_patch wdaca, 0, 8, 1, $a3
 	layout_patch wdaca, 1, $0d, $0b, $a4
 	layout_patch wdaca, 2, $0b, $0c, $a5
 
-unk_01e_4999:
+.patch_4999:
 	db 2
 	layout_patch wdaca, 3, 8, $0a, $aa
 	layout_patch wdaca, 4, $0b, $0d, $ab
 
-unk_01e_49a6:
+.patch_49a6:
 	db 1
 	layout_patch wdaca, 5, 4, 1, $45
 
-unk_01e_49ad:
+.patch_49ad:
 	db 1
 	layout_patch wdaca, 6, 3, 1, $51
 
-unk_01e_49b4:
+.patch_49b4:
 	db 2
 	layout_patch wdaca, 7, 3, 3, $51
 	layout_patch wdacb, 0, 4, 4, $52
 
-unk_01e_49c1:
+.patch_49c1:
 	db 2
 	layout_patch wdacb, 1, 0, 8, $4c
 	layout_patch wdacb, 2, 3, 9, $4d
 
-unk_01e_49ce:
+.patch_49ce:
 	db 3
 	layout_patch wdac6, 6, 2, 1, $47
 	layout_patch wdac6, 7, 4, 1, $48
 	layout_patch wdac7, 0, 5, 1, $49
 
-unk_01e_49e1:
+.patch_49e1:
 	db 2
 	layout_patch wdac7, 1, 3, 5, $55
 	layout_patch wdac7, 2, 0, 6, $56
 
-unk_01e_49ee:
+.patch_49ee:
 	db 1
 	layout_patch wdac7, 3, 2, 3, $32
 
-unk_01e_49f5:
+.patch_49f5:
 	db 3
 	layout_patch wdac7, 4, $0a, 1, $39
 	layout_patch wdac7, 5, $0c, 1, $3a
 	layout_patch wdac7, 6, 6, 4, $3b
 
-unk_01e_4a08:
+.patch_4a08:
 	db 3
 	layout_patch wdac7, 7, 1, 4, $ab
 	layout_patch wdac8, 0, 1, 9, $ac
 	layout_patch wdac8, 1, 2, 9, $ad
 
-unk_01e_4a1b:
+.patch_4a1b:
 	db 5
 	layout_patch wdac8, 2, $0c, 1, $a4
 	layout_patch wdac8, 3, $0d, 2, $a5
@@ -1492,117 +1492,117 @@ unk_01e_4a1b:
 	layout_patch wdac8, 5, 2, $0b, $a7
 	layout_patch wdac8, 6, 0, $0e, $a8
 
-unk_01e_4a3a:
+.patch_4a3a:
 	db 1
 	layout_patch wdac8, 7, 1, 1, $4d
 
-unk_01e_4a41:
+.patch_4a41:
 	db 2
 	layout_patch wdac9, 0, 5, 9, $51
 	layout_patch wdac9, 1, 7, 9, $52
 
-unk_01e_4a4e:
+.patch_4a4e:
 	db 1
 	layout_patch wdac9, 2, 9, 9, $49
 
-unk_01e_4a55:
+.patch_4a55:
 	db 4
 	layout_patch wdac9, 3, 8, 0, $52
 	layout_patch wdac9, 4, 4, 4, $53
 	layout_patch wdac9, 5, 3, 8, $54
 	layout_patch wdac9, 6, 4, 8, $55
 
-unk_01e_4a6e:
+.patch_4a6e:
 	db 4
 	layout_patch wdac5, 6, 3, 7, $9e
 	layout_patch wdac5, 7, $0d, 9, $9f
 	layout_patch wdac6, 0, 0, $0d, $a0
 	layout_patch wdac6, 1, 2, $0d, $a1
 
-unk_01e_4a87:
+.patch_4a87:
 	db 4
 	layout_patch wdac6, 2, 3, 7, $9f
 	layout_patch wdac6, 3, $0d, 9, $a0
 	layout_patch wdac6, 4, 0, $0d, $a1
 	layout_patch wdac6, 5, 2, $0d, $a2
 
-unk_01e_4aa0:
+.patch_4aa0:
 	db 2
 	layout_patch wdac4, 2, 8, 0, $4a
 	layout_patch wdac4, 3, 9, 1, $4b
 
-unk_01e_4aad:
+.patch_4aad:
 	db 2
 	layout_patch wdac4, 4, 1, 7, $47
 	layout_patch wdac4, 5, 3, 7, $48
 
-unk_01e_4aba:
+.patch_4aba:
 	db 1
 	layout_patch wdac4, 6, 1, 6, $47
 
-unk_01e_4ac1:
+.patch_4ac1:
 	db 3
 	layout_patch wdac4, 7, 0, 1, $4b
 	layout_patch wdac5, 0, 2, 1, $4c
 	layout_patch wdac5, 1, 3, 4, $4d
 
-unk_01e_4ad4:
+.patch_4ad4:
 	db 2
 	layout_patch wdac5, 2, 5, 9, $4f
 	layout_patch wdac5, 3, 5, $0a, $50
 
-unk_01e_4ae1:
+.patch_4ae1:
 	db 2
 	layout_patch wdac5, 4, 5, 5, $55
 	layout_patch wdac5, 5, 6, 5, $56
 
-unk_01e_4aee:
+.patch_4aee:
 	db 3
 	layout_patch wdac3, 2, 5, 3, $22
 	layout_patch wdac3, 3, 5, 5, $23
 	layout_patch wdac3, 4, 2, 7, $24
 
-unk_01e_4b01:
+.patch_4b01:
 	db 3
 	layout_patch wdac3, 5, 5, 6, $2e
 	layout_patch wdac3, 6, 7, 8, $2f
 	layout_patch wdac3, 7, 5, 9, $30
 
-unk_01e_4b14:
+.patch_4b14:
 	db 2
 	layout_patch wdac4, 0, 0, 5, $35
 	layout_patch wdac4, 1, 2, 5, $36
 
-unk_01e_4b21:
+.patch_4b21:
 	db 2
 	layout_patch wdac3, 0, 1, 4, $3c
 	layout_patch wdac3, 1, 5, 4, $3d
 
-unk_01e_4b2e:
+.patch_4b2e:
 	db 2
 	layout_patch wdac2, 6, 0, 3, $49
 	layout_patch wdac2, 7, 2, 5, $4a
 
-unk_01e_4b3b:
+.patch_4b3b:
 	db 3
 	layout_patch wdac2, 3, 4, 1, $64
 	layout_patch wdac2, 4, 8, 8, $65
 	layout_patch wdac2, 5, 6, $0a, $66
 
-unk_01e_4b4e:
+.patch_4b4e:
 	db 4
 	layout_patch wdac1, 7, 8, 1, $61
 	layout_patch wdac2, 0, 9, 1, $62
 	layout_patch wdac2, 1, 0, 2, $63
 	layout_patch wdac2, 2, 0, 4, $64
 
-unk_01e_4b67:
+.patch_4b67:
 	db 3
 	layout_patch wdabf, 4, $0a, 1, $3c
 	layout_patch wdabf, 5, 1, 9, $3d
 	layout_patch wdabf, 6, 3, 9, $3e
 
-unk_01e_4b7a:
+.patch_4b7a:
 	db 7
 	layout_patch wdabf, 7, 3, 1, $50
 	layout_patch wdac0, 0, 7, 1, $51
@@ -1612,13 +1612,13 @@ unk_01e_4b7a:
 	layout_patch wdac0, 4, 9, 4, $55
 	layout_patch wdac0, 5, $0a, 5, $56
 
-unk_01e_4ba5:
+.patch_4ba5:
 	db 3
 	layout_patch wdac0, 6, 8, 3, $49
 	layout_patch wdac0, 7, 1, 5, $4a
 	layout_patch wdac1, 0, 7, 8, $4b
 
-unk_01e_4bb8:
+.patch_4bb8:
 	db 6
 	layout_patch wdac1, 1, 4, 4, $42
 	layout_patch wdac1, 2, 8, 4, $43
@@ -1627,39 +1627,39 @@ unk_01e_4bb8:
 	layout_patch wdac1, 5, 3, 8, $46
 	layout_patch wdac1, 6, 3, $0a, $47
 
-unk_01e_4bdd:
+.patch_4bdd:
 	db 3
 	layout_patch wdabf, 1, $0a, 1, $a4
 	layout_patch wdabf, 2, $0b, 2, $a5
 	layout_patch wdabf, 3, 0, 6, $a6
 
-unk_01e_4bf0:
+.patch_4bf0:
 	db 4
 	layout_patch wdabe, 5, 9, 0, $a3
 	layout_patch wdabe, 6, $0d, 5, $a4
 	layout_patch wdabe, 7, 1, 6, $a5
 	layout_patch wdabf, 0, $0e, 7, $a6
 
-unk_01e_4c09:
+.patch_4c09:
 	db 4
 	layout_patch wdabe, 5, 9, 0, $a1
 	layout_patch wdabe, 6, $0d, 5, $a2
 	layout_patch wdabe, 7, 1, 6, $a3
 	layout_patch wdabf, 0, $0e, 7, $a4
 
-unk_01e_4c22:
+.patch_4c22:
 	db 3
 	layout_patch wdabe, 2, 4, 3, $ab
 	layout_patch wdabe, 3, $0e, 6, $ac
 	layout_patch wdabe, 4, 1, $0d, $ad
 
-unk_01e_4c35:
+.patch_4c35:
 	db 3
 	layout_patch wdabd, 7, $0a, 1, $6c
 	layout_patch wdabe, 0, $0b, 2, $6d
 	layout_patch wdabe, 1, 0, 6, $6e
 
-unk_01e_4c48:
+.patch_4c48:
 	db 5
 	layout_patch wdabd, 2, 9, 0, $75
 	layout_patch wdabd, 3, $0a, 0, $76
@@ -1667,51 +1667,51 @@ unk_01e_4c48:
 	layout_patch wdabd, 5, 1, 6, $78
 	layout_patch wdabd, 6, $0e, 7, $79
 
-unk_01e_4c67:
+.patch_4c67:
 	db 1
 	layout_patch wdabd, 1, 4, 4, $2d
 
-unk_01e_4c6e:
+.patch_4c6e:
 	db 4
 	layout_patch wdabc, 5, 6, 1, $3d
 	layout_patch wdabc, 6, 3, 7, $3e
 	layout_patch wdabc, 7, 1, 8, $3f
 	layout_patch wdabd, 0, 3, 8, $40
 
-unk_01e_4c87:
+.patch_4c87:
 	db 2
 	layout_patch wdabc, 3, 4, 4, $4a
 	layout_patch wdabc, 4, $0a, 6, $4b
 
-unk_01e_4c94:
+.patch_4c94:
 	db 4
 	layout_patch wdabb, 7, 1, 1, $43
 	layout_patch wdabc, 0, $0a, 1, $44
 	layout_patch wdabc, 1, $0a, 3, $45
 	layout_patch wdabc, 2, 9, 8, $46
 
-unk_01e_4cad:
+.patch_4cad:
 	db 2
 	layout_patch wdabb, 5, 0, 1, $19
 	layout_patch wdabb, 6, 1, 1, $1a
 
-unk_01e_4cba:
+.patch_4cba:
 	db 1
 	layout_patch wdabb, 4, 2, 4, $14
 
-unk_01e_4cc1:
+.patch_4cc1:
 	db 1
 	layout_patch wdabb, 3, 5, 4, $15
 
-unk_01e_4cc8:
+.patch_4cc8:
 	db 1
 	layout_patch wdabb, 2, 3, 2, $18
 
-unk_01e_4ccf:
+MapLayoutPatches_None:
 	db 0
 	layout_patch 0, 0, 0, 0, 0
 
-unk_01e_4cd6:
+MapLayoutPatches_01e_4cd6:
 	db 5
 	layout_patch wdab9, 0, $0b, 3, $57
 	layout_patch wdab9, 1, 0, $0a, $58
@@ -1719,20 +1719,20 @@ unk_01e_4cd6:
 	layout_patch wdab9, 3, 0, $0b, $5a
 	layout_patch wdab9, 4, 2, $0b, $5b
 
-unk_01e_4cf5:
+MapLayoutPatches_01e_4cf5:
 	db 1
 	layout_patch wdab9, 5, 2, 0, $16
 
-unk_01e_4cfc:
+MapLayoutPatches_01e_4cfc:
 	db 2
 	layout_patch wdab9, 6, 3, 6, $3e
 	layout_patch wdab9, 7, 8, 7, $3f
 
-unk_01e_4d09:
+MapLayoutPatches_01e_4d09:
 	db 1
 	layout_patch wdaba, 0, 2, 0, $14
 
-unk_01e_4d10:
+MapLayoutPatches_01e_4d10:
 	db 4
 	layout_patch wdaba, 1, 1, 0, $54
 	layout_patch wdaba, 2, $0b, 0, $55
@@ -1741,12 +1741,12 @@ unk_01e_4d10:
 
 Pointers_01e_4d29:
 ; appears to be category, index
-	dw unk_01e_4ccf
+	dw MapLayoutPatches_None
 	dw unk_01e_4ead
 	dw unk_01e_4eaf
 	dw unk_01e_4eb3
 	dw unk_01e_4eb5
-	dw unk_01e_4ccf
+	dw MapLayoutPatches_None
 	dw unk_01e_4ea1
 	dw unk_01e_4e9f
 	dw unk_01e_4e9d

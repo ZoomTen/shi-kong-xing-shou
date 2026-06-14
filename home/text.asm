@@ -501,7 +501,7 @@ Func_1c8b::
 Text_ItemName::
 	call Func_0817
 	pop hl
-	call Func_01e_421a ; bank 1e set by Func_0827
+	call Func_01e_421a ; bank 1e set by SetMapLayoutPatchForItem_Banked
 ; got item name
 	ld a, [wTextStart]
 	ld l, a

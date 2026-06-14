@@ -271,7 +271,7 @@ wd0f0:: ds 1
 wd0f1:: ds 1
 wd0f2:: ds 2
 wMapType:: ds 1
-wd0f5:: ds 1
+wItemIndex:: ds 1
 
 wCharacterTileDest:: ds 2
 wd0f8:: ds 1
@@ -674,7 +674,7 @@ wdcf5:: ds 1
 wdcf6:: ds 1
 wdcf7:: ds 1
 wdcf8:: ds 1
-wdcf9:: ds 1
+wMapPatchIndex:: ds 1
 wdcfa:: ds 1
 wdcfb:: ds 1
 wdcfc:: ds 1

@@ -232,25 +232,24 @@ Func_0817::
 	rst Bankswitch
 	ret
 
-Func_0827::
-	; on getting item
-	homecall Func_01e_41e8
+SetMapLayoutPatchForItem_Banked::
+	homecall SetMapLayoutPatchForItem
 	ret
 
-Func_0834::
-	homecall Func_01e_4083
+SetMapLayoutPatch_Banked::
+	homecall SetMapLayoutPatch
 	ret
 
-Func_0841::
+ApplyMapLayoutFlagPatches_Banked::
 	homecall ApplyMapLayoutFlagPatches
 	ret
 
-Func_084e::
-	homecall Func_01e_4125
+ApplyMapLayoutPatchIfClear_Banked::
+	homecall ApplyMapLayoutPatchIfClear
 	ret
 
-Func_085b::
-	homecall Func_01e_4000
+ClearMapLayoutPatch_Banked::
+	homecall ClearMapLayoutPatch
 	ret
 
 LoadTextFaceGFX::
