@@ -1112,7 +1112,7 @@ SoundEngine1_CommandProcessor:
 	add hl, de
 	jr .cmd_set_word
 
-.cmd_ee_flag:
+.cmd_ee_flag
 	inc bc
 	ld a, [bc]
 	ld [hli], a
@@ -2023,6 +2023,3 @@ SoundEngine1_CommandF4:
 .ptr_setup:
 	ld a, [hl]
 	jp SoundEngine1_CommandProcessor.cmd_ee_ptr_setup
-
-SoundEngine1_NoteFrequencies:
-INCLUDE "audio/notes.asm"

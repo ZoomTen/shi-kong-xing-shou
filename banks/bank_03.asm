@@ -19,7 +19,22 @@ INCLUDE "audio/headers/headers_2.asm"
 
 INCLUDE "audio/engine/engine_2.asm"
 
+SoundEngine2_NoteFrequencies:
+INCLUDE "audio/notes.asm"
+
 INCLUDE "audio/sfx/sfx_2.asm"
+
+SoundEngine2_InstrumentPointers:
+INCLUDE "audio/instruments.asm"
+
+SoundEngine2_VibratoTables:
+INCLUDE "audio/vibrato_tables.asm"
+
+SoundEngine2_Waveforms:
+INCLUDE "audio/wave_instruments.asm"
+
+INCLUDE "audio/sfx/sfx_2b.asm"
+
 INCLUDE "audio/music/academy.asm"
 INCLUDE "audio/music/unsettling_place.asm"
 INCLUDE "audio/music/town_2.asm"

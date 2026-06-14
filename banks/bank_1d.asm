@@ -18,7 +18,23 @@ INCLUDE "audio/headers/headers_3.asm"
 	ds 98
 
 INCLUDE "audio/engine/engine_3.asm"
+
+SoundEngine3_NoteFrequencies:
+INCLUDE "audio/notes.asm"
+
 INCLUDE "audio/sfx/sfx_3.asm"
+
+SoundEngine3_InstrumentPointers:
+INCLUDE "audio/instruments.asm"
+
+SoundEngine3_VibratoTables:
+INCLUDE "audio/vibrato_tables.asm"
+
+SoundEngine3_Waveforms:
+INCLUDE "audio/wave_instruments.asm"
+
+INCLUDE "audio/sfx/sfx_3b.asm"
+
 INCLUDE "audio/music/intro.asm"
 INCLUDE "audio/music/junkyard.asm"
 INCLUDE "audio/music/title.asm"

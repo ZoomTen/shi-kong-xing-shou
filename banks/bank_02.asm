@@ -79,10 +79,23 @@ INCLUDE "audio/headers/headers_1.asm"
 	ds 30
 
 INCLUDE "audio/engine/engine_1.asm"
+
+SoundEngine1_NoteFrequencies:
+INCLUDE "audio/notes.asm"
+
 INCLUDE "audio/sfx/sfx_1.asm"
+
+SoundEngine1_InstrumentPointers:
+INCLUDE "audio/instruments.asm"
+
+SoundEngine1_VibratoTables:
+INCLUDE "audio/vibrato_tables.asm"
+
 SoundEngine1_Waveforms:
 INCLUDE "audio/wave_instruments.asm"
+
 INCLUDE "audio/sfx/sfx_1b.asm"
+
 INCLUDE "audio/music/town_1.asm"
 INCLUDE "audio/music/battle_1.asm"
 INCLUDE "audio/music/blackout.asm"
