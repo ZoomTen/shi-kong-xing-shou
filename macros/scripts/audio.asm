@@ -32,17 +32,27 @@ MACRO sound_init
 
     db sound_init_cmd + (\1)
 
-IF _NARG == 9
-    assert 0<=(\2) && (\2)<=3, "sound_init: duty_cycle 1st argument between 0 - 3"
-    assert 0<=(\3) && (\3)<=3, "sound_init: duty_cycle 2nd argument between 0 - 3"
+; pulse channels (1, 2): duty, volume, vibrato, envelope mode, [+ params].
+; envelope mode pulls two parameter bytes when its high bit is set.
+IF _NARG == 9 || _NARG == 7
     dn (\2), (\3) ; duty cycle
-
     db (\4) ; volume envelope
     dn (\5), (\6) ; vibrato
-    db (\7), (\8), (\9) ; envelope params
+IF _NARG == 9
+    db (\7), (\8), (\9) ; envelope mode, params
+ELSE
+    db (\7) ; envelope mode
+endc
+
+; wave channel (3): waveform, envelope mode, [+ params].
+ELIF _NARG == 5
+    db (\2), (\3), (\4), (\5) ; waveform, envelope mode, params
 ELIF _NARG == 4
-    ; waveform + envelope mode
-    db (\2), (\3), (\4)
+    db (\2), (\3), (\4) ; waveform, envelope mode
+ELIF _NARG == 3
+    db (\2), (\3) ; waveform, envelope mode
+
+; noise channel (4): speed only.
 endc
 ENDM
 
@@ -66,9 +76,10 @@ MACRO volume_envelope
     db volume_envelope_cmd, (\1)
 ENDM
 
-    const unknown_music_ea_cmd ; $ea
-MACRO unknown_music_ea
-    db unknown_music_ea_cmd, (\1)
+; xx : raw NR10 value (channel 1 frequency sweep: time, direction, shift)
+    const sweep_cmd ; $ea
+MACRO sweep
+    db sweep_cmd, (\1)
 ENDM
 
     const vibrato_cmd ; $eb

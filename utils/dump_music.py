@@ -141,7 +141,7 @@ with open('baserom.gbc', 'rb') as rom:
 			elif command == 0xe9:
 				print("\tvolume_envelope $%x" % get_number(rom, 1),end="")
 			elif command == 0xea:
-				print("\tunknown_music_ea $%x" % get_number(rom, 1),end="")
+				print("\tsweep $%x" % get_number(rom, 1),end="")
 			elif command == 0xeb:
 				args = {
 					"vibrato": [int(digit, 16) for digit in hex(get_number(rom, 1))[2:].zfill(2)]
