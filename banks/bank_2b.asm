@@ -555,10 +555,10 @@ HandleBattleEnd:
 	jp hl
 
 .Jumptable:
-	dw Func_02b_43d5
-	dw Func_02b_4c92
+	dw BattleEnd_Jump_1
+	dw BattleEnd_Jump_2
 
-Func_02b_43d5:
+BattleEnd_Jump_1:
 	ld de, $55f6
 	farcall unk_02e_4000
 	call Func_02b_4b5b
@@ -574,7 +574,7 @@ Func_02b_43f0:
 	call Func_02b_4bb7
 	and a
 	jr z, Func_02b_4409
-	ld de, Func_02b_55c5
+	ld de, EndBattleTurn
 	farcall unk_02e_4000
 	ld a, 2
 	ld [hBattleJumptableIndex], a
@@ -597,8 +597,8 @@ Func_02b_4409:
 	ld a, $57
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ret
 
 Func_02b_4436:
@@ -611,8 +611,8 @@ Func_02b_4436:
 	ld a, $57
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ret
 
 Func_02b_4454:
@@ -626,8 +626,8 @@ Func_02b_4454:
 	ld a, $29
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ld a, [wd9ea]
 	and a
 	ret nz
@@ -638,8 +638,8 @@ Func_02b_4454:
 	ld a, $2b
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ld a, BGM_EXP_JINGLE
 	call PlaySound
 	ld a, [wd9cc]
@@ -649,8 +649,8 @@ Func_02b_4454:
 	ld a, $2c
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	call Func_02b_4569
 	xor a
 	ld [wSelectedOption], a
@@ -1631,7 +1631,7 @@ Func_02b_4c8a:
 	call Func_02b_6a41
 	ret
 
-Func_02b_4c92:
+BattleEnd_Jump_2:
 	call Func_02b_4519
 	call DelayFrame
 	ld a, $80
@@ -1766,18 +1766,18 @@ HandleBattleTurns:
 	jp hl
 
 .Jumptable:
-	dw Func_02b_4e27
-	dw Func_02b_4ec2
-	dw Func_02b_51ac
-	dw Func_02b_525a
-	dw Func_02b_5547
-	dw Func_02b_55d4
-	dw Func_02b_5559
-	dw Func_02b_523d
-	dw Func_02b_4dc9
-	dw Func_02b_4daf
+	dw BattleTurns_Jump_1
+	dw BattleTurns_Jump_2
+	dw BattleTurns_Jump_3
+	dw BattleTurns_Jump_4
+	dw BattleTurns_Jump_5
+	dw BattleTurns_Jump_6
+	dw BattleTurns_Jump_7
+	dw BattleTurns_Jump_8
+	dw BattleTurns_Jump_9
+	dw BattleTurns_Jump_10
 
-Func_02b_4daf:
+BattleTurns_Jump_10:
 	call DelayFrame
 	call BattleMenu_Jump_4
 	call DelayFrame
@@ -1789,7 +1789,7 @@ Func_02b_4daf:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_4dc9:
+BattleTurns_Jump_9:
 	call DelayFrame
 	call BattleMenu_Jump_4
 	call DelayFrame
@@ -1833,7 +1833,7 @@ Func_02b_4e02:
 	ld [wd98b], a
 	ret
 
-Func_02b_4e27:
+BattleTurns_Jump_1:
 	call Func_02b_7525
 	ld hl, $9980
 	ld bc, $0906
@@ -1854,21 +1854,21 @@ Func_02b_4e27:
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
-	ld de, $6e7a
+	ld de, Battle_EnemyFace_BGMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
 	ldh [$92], a
 	ldh [$93], a
 	call PlaceTilemap
-	ld de, $6e9e
+	ld de, Battle_EnemyFace_AttrMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
 	ldh [$92], a
 	ldh [$93], a
 	call PlaceAttrmap
-	ld de, $6f0a
+	ld de, Battle_Panel10x4_BGMap
 	ld hl, $98e0
 	ld bc, $0a04
 	ld a, $a
@@ -1876,7 +1876,7 @@ Func_02b_4e27:
 	ld a, 4
 	ldh [$93], a
 	call PlaceTilemap
-	ld de, $6f32
+	ld de, Battle_Panel10x4_AttrMap
 	ld hl, $98e0
 	ld bc, $0a04
 	ld a, $a
@@ -1885,7 +1885,7 @@ Func_02b_4e27:
 	ldh [$93], a
 	call PlaceAttrmap
 	call Func_02b_402b
-	ld de, $6dde
+	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406
 	ld a, $14
@@ -1897,7 +1897,7 @@ Func_02b_4e27:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_4ec2:
+BattleTurns_Jump_2:
 	ld a, 2
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
@@ -2122,8 +2122,8 @@ Func_02b_503f:
 
 Func_02b_5044:
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	xor a
 	ldh [$cd], a
 	ld a, $a
@@ -2219,8 +2219,8 @@ Func_02b_50fe:
 	ld a, $1a
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ret
 
 Func_02b_5113:
@@ -2314,8 +2314,8 @@ Func_02b_5195:
 	ld [wd9b5], a
 	ret
 
-Func_02b_51ac:
-	call Func_02b_5270
+BattleTurns_Jump_3:
+	call BattleAI_ChooseAction
 	ld de, $d9f5
 	ld a, [wd986]
 	ld l, a
@@ -2329,7 +2329,7 @@ Func_02b_51ac:
 	ld a, $4f
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	ld a, 5
 	ldh [$d3], a
 	ld a, 1
@@ -2340,7 +2340,7 @@ Func_02b_51d9:
 	ld a, $50
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	call Func_02b_5578
 	ret
 
@@ -2389,7 +2389,7 @@ Func_02b_522d:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_523d:
+BattleTurns_Jump_8:
 	farcall Func_02d_4000
 	call DelayFrame
 	ld a, [wd088]
@@ -2401,7 +2401,7 @@ Func_02b_523d:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_525a:
+BattleTurns_Jump_4:
 	xor a
 	ld [wd989], a
 	farcall Func_02e_400a
@@ -2412,13 +2412,13 @@ Func_02b_525a:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_5270:
+BattleAI_ChooseAction:
 	ld a, [wd986]
 	and a
 	ret nz
 	ld a, [wd9b9]
 	and a
-	jr nz, Func_02b_5289
+	jr nz, BattleAI_Dispatch
 	ld a, 5
 	ld [wd9af], a
 	xor a
@@ -2427,7 +2427,7 @@ Func_02b_5270:
 	and a
 	ret nz
 
-Func_02b_5289:
+BattleAI_Dispatch:
 	ld de, BattleAI_ActionIndex
 	ld a, [wd984]
 	ld l, a
@@ -2448,23 +2448,23 @@ Func_02b_5289:
 	ret
 
 .Jumptable:
-	dw Func_02b_52bb
-	dw Func_02b_52bb
-	dw Func_02b_52d3
-	dw Func_02b_5327
-	dw Func_02b_5362
-	dw Func_02b_5372
-	dw Func_02b_53b9
-	dw Func_02b_53d3
-	dw Func_02b_53e8
-	dw Func_02b_53f5
-	dw Func_02b_540f
+	dw BattleAI_Action0
+	dw BattleAI_Action0
+	dw BattleAI_Action2
+	dw BattleAI_Action3
+	dw BattleAI_Action4
+	dw BattleAI_Action5
+	dw BattleAI_Action6
+	dw BattleAI_Action7
+	dw BattleAI_Action8
+	dw BattleAI_Action9
+	dw BattleAI_Action10
 
-Func_02b_52bb:
+BattleAI_Action0:
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $cc
-	jp nc, Func_02b_5327
+	jp nc, BattleAI_Action3
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
@@ -2472,7 +2472,7 @@ Func_02b_52bb:
 	ld [wd9f5], a
 	ret
 
-Func_02b_52d3:
+BattleAI_Action2:
 	call Func_12bd
 	ld a, [wd99a]
 	ldh [$cb], a
@@ -2514,7 +2514,7 @@ Func_02b_531d:
 	and 1
 	jr Func_02b_532f
 
-Func_02b_5327:
+BattleAI_Action3:
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -2534,13 +2534,13 @@ Func_02b_532f:
 	add hl, de
 	ld a, [hli]
 	and a
-	jr z, Func_02b_5327
+	jr z, BattleAI_Action3
 	ld [wd9e2], a
 	cp $7b
 	jr nz, Func_02b_5353
 	ld a, [wd9b9]
 	and a
-	jr z, Func_02b_5327
+	jr z, BattleAI_Action3
 
 Func_02b_5353:
 	cp $7a
@@ -2554,7 +2554,7 @@ Func_02b_5357:
 	ld [wd9e2], a
 	ret
 
-Func_02b_5362:
+BattleAI_Action4:
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
@@ -2562,7 +2562,7 @@ Func_02b_5362:
 	ld a, 3
 	jp Func_02b_532f
 
-Func_02b_5372:
+BattleAI_Action5:
 	call Func_12bd
 	ld a, [wd99a]
 	ldh [$cb], a
@@ -2596,7 +2596,7 @@ Func_02b_539f:
 	ld a, 3
 	jp Func_02b_532f
 
-Func_02b_53b9:
+BattleAI_Action6:
 	call Func_12bd
 	ld a, [wd99a]
 	ldh [$cb], a
@@ -2607,7 +2607,7 @@ Func_02b_53b9:
 	farcall Func_025_414a
 	jp Func_02b_5389
 
-Func_02b_53d3:
+BattleAI_Action7:
 	call AdvanceRNG
 	cp $cc
 	jp nc, Func_02b_531d
@@ -2617,14 +2617,14 @@ Func_02b_53d3:
 	add 2
 	jp Func_02b_532f
 
-Func_02b_53e8:
+BattleAI_Action8:
 	call AdvanceRNG
 	cp $80
 	jp nc, Func_02b_530e
 	ld a, 3
 	jp Func_02b_532f
 
-Func_02b_53f5:
+BattleAI_Action9:
 	call Func_12bd
 	ld a, [wd99a]
 	ldh [$cb], a
@@ -2635,7 +2635,7 @@ Func_02b_53f5:
 	farcall Func_025_414a
 	jp Func_02b_5389
 
-Func_02b_540f:
+BattleAI_Action10:
 	ld a, [wd9f7]
 	and a
 	jr nz, Func_02b_5419
@@ -2650,7 +2650,7 @@ Func_02b_5419:
 	ld [wd9f5], a
 	ret
 
-; TODO: confirm. Monster state byte -> Func_02b_5289 jumptable index.
+; TODO: confirm. Monster state byte -> BattleAI_Dispatch jumptable index.
 BattleAI_ActionIndex:
 	db $0
 	db $3
@@ -2817,21 +2817,21 @@ BattleAI_ActionIndex:
 GFX_02b_54c7:
 	INCBIN "gfx/battle/image_2b_54c7.2bpp"
 
-Func_02b_5547:
+BattleTurns_Jump_5:
 	ld hl, GFX_02b_54c7
 	ld de, $8680
 	ld bc, $80
 	call CopyBytesVRAM
 	farcall Func_030_4000
 
-Func_02b_5559:
+BattleTurns_Jump_7:
 	ld a, [wd98b]
 	and a
-	jr nz, Func_02b_55c5
+	jr nz, EndBattleTurn
 
 Func_02b_555f:
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	call Func_02b_5e0f
 	ldh a, [$d3]
 	cp 5
@@ -2844,7 +2844,7 @@ Func_02b_555f:
 Func_02b_5578:
 	ld a, [wd98a]
 	cp 2
-	jr z, Func_02b_55a9
+	jr z, ReturnToBattleMenu
 	inc a
 	ld [wd98a], a
 	call Func_02b_4fb7
@@ -2866,7 +2866,7 @@ Func_02b_5578:
 	call Func_02b_4f38
 	ret
 
-Func_02b_55a9:
+ReturnToBattleMenu:
 	call Func_02b_4fb7
 	ld a, [hBattleJumptableIndex]
 	cp 5
@@ -2880,12 +2880,12 @@ Func_02b_55a9:
 	ld [hBattleJumptableIndex], a
 	ret
 
-Func_02b_55c5:
+EndBattleTurn:
 	ld a, 5
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_55cb:
+Wait32Frames:
 	ld c, 32
 .delay
 	call DelayFrame
@@ -2893,7 +2893,7 @@ Func_02b_55cb:
 	jr nz, .delay
 	ret
 
-Func_02b_55d4:
+BattleTurns_Jump_6:
 	ld a, [wd98b]
 	cp 1
 	jp z, Func_02b_5628
@@ -2907,7 +2907,7 @@ Func_02b_55d4:
 	jp z, Func_02b_5611
 	cp 6
 	jr z, Func_02b_55f7
-	jp Func_02b_55a9
+	jp ReturnToBattleMenu
 
 
 Func_02b_55f7:
@@ -2928,7 +2928,7 @@ Func_02b_5607:
 
 Func_02b_5611:
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	xor a
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
@@ -2949,8 +2949,8 @@ Func_02b_5628:
 	ld a, $1b
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	jp Func_02b_55a9
+	call Wait32Frames
+	jp ReturnToBattleMenu
 
 
 Func_02b_5651:
@@ -3069,8 +3069,8 @@ Func_02b_5739:
 	ld a, $27
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ld a, [wd9b0]
 	ldh [$cb], a
 	ld a, [wd9b1]
@@ -3366,14 +3366,14 @@ Func_02b_58df:
 	cp c
 	jr c, Func_02b_5900
 	sub c
-	ld de, $7623
+	ld de, unk_02b_7619 + $a
 	jr Func_02b_5906
 
 Func_02b_5900:
 	ld b, a
 	ld a, c
 	sub b
-	ld de, $7638
+	ld de, unk_02b_7638
 
 Func_02b_5906:
 	cp $14
@@ -3390,7 +3390,7 @@ Func_02b_590c:
 	ret
 
 Func_02b_5912:
-	ld de, $7594
+	ld de, unk_02b_7594
 	ld a, [wd988]
 	ld l, a
 	ld h, 0
@@ -3799,7 +3799,7 @@ Func_02b_5bc9:
 	ld a, $2e
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	ld a, [wd99a]
 	ld [wd9b0], a
 	ld a, [wd99b]
@@ -3990,7 +3990,7 @@ Func_02b_5d28:
 	ld a, $2e
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	call Func_02b_5d7e
 	ld a, [wd99a]
 	ldh [$cb], a
@@ -4014,7 +4014,7 @@ Func_02b_5d28:
 	ld a, $40
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	pop hl
 	pop af
 	ret
@@ -4081,7 +4081,7 @@ Func_02b_5ddd:
 	ld a, $2e
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	xor a
 	ld [wd9b5], a
 	call Func_02b_419d
@@ -4094,7 +4094,7 @@ Func_02b_5ddd:
 	ld [hl], 0
 	pop af
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	ret
 
 Func_02b_5e0c:
@@ -4173,8 +4173,8 @@ Func_02b_5e82:
 	ld a, $40
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ret
 
 Func_02b_5ea6:
@@ -4330,7 +4330,7 @@ Func_02b_5fc1:
 	ld a, $5b
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
+	call Wait32Frames
 	ld a, $a
 	ld [wd9c7], a
 	ld a, $63
@@ -4514,8 +4514,8 @@ Func_02b_612c:
 	ld a, $22
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	ret
 
 Func_02b_6159:
@@ -4568,7 +4568,7 @@ BattleMoves_Init:
 	call ByteFillVRAM
 	call DelayFrame
 	call BattleMoves_LoadList
-	ld de, $6fe4
+	ld de, Battle_Panel11x10_BGMap
 	ld hl, $9909
 	ld bc, $0b0a
 	ld a, $b
@@ -4576,7 +4576,7 @@ BattleMoves_Init:
 	ld a, $a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld de, $7052
+	ld de, Battle_Panel11x10_AttrMap
 	ld hl, $9909
 	ld bc, $0b0a
 	ld a, $b
@@ -4606,7 +4606,7 @@ BattleMoves_Init:
 	ld hl, Func_01e_42f1
 	ld b, $1e
 	rst FarCall
-	ld de, $70c0
+	ld de, Battle_Panel9x6_BGMap
 	ld hl, $9980
 	ld bc, $0906
 	ld a, 9
@@ -4949,14 +4949,14 @@ BattleMenu_Jump_1:
 	call DelayFrame
 	call LoadEnemyMonPic
 	farcall Func_026_4d47
-	ld de, $6e56
+	ld de, Battle_PlayerFace_BGMap
 	ld hl, $9802
 	ld bc, $0606
 	ld a, 6
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld de, $6ee6
+	ld de, Battle_PlayerFace_AttrMap
 	ld hl, $9802
 	ld bc, $0606
 	ld a, 6
@@ -4976,16 +4976,16 @@ BattleMenu_Jump_1:
 	ld a, [wEnemyMonSpecies]
 	ld [wd9d8], a
 	farcall asm_026_4616
-	ld hl, $70f6
+	ld hl, Battle_HUDFont_GFX
 	ld de, $96d0
 	ld bc, $0130
 	call CopyBytesVRAM
 	call DelayFrame
-	ld hl, $7226
+	ld hl, Battle_HUDStats_GFX
 	ld de, $8800
 	ld bc, $02b0
 	call CopyBytesVRAM
-	ld hl, $74e6
+	ld hl, Battle_OBPals + $10
 	ld de, $8700
 	ld bc, $20
 	call CopyBytesVRAM
@@ -5003,7 +5003,7 @@ BattleMenu_Jump_2:
 	ld a, [hl]
 	set 6, a
 	ld [hl], a
-	ld de, $6e9e
+	ld de, Battle_EnemyFace_AttrMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
@@ -5024,7 +5024,7 @@ BattleMenu_Jump_2:
 	ret
 
 .alt:
-	ld de, $6e7a
+	ld de, Battle_EnemyFace_BGMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
@@ -5038,7 +5038,7 @@ BattleMenu_Jump_2:
 	ld a, 6
 	ldh [hVRAMCopyHeight], a
 	call ClearBGMapBox
-	ld de, $6f0a
+	ld de, Battle_Panel10x4_BGMap
 	ld hl, $98e0
 	ld bc, $0a04
 	ld a, $a
@@ -5047,7 +5047,7 @@ BattleMenu_Jump_2:
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	call DelayFrame
-	ld de, $6f32
+	ld de, Battle_Panel10x4_AttrMap
 	ld hl, $98e0
 	ld bc, $0a04
 	ld a, $a
@@ -5055,7 +5055,7 @@ BattleMenu_Jump_2:
 	ld a, 4
 	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
-	ld de, $6f5a
+	ld de, Battle_Panel10x3_BGMap
 	ld hl, $982a
 	ld bc, $0a03
 	ld a, $a
@@ -5063,7 +5063,7 @@ BattleMenu_Jump_2:
 	ld a, 3
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld de, $6f78
+	ld de, Battle_Panel10x3_AttrMap
 	ld hl, $982a
 	ld bc, $0a03
 	ld a, $a
@@ -5073,7 +5073,7 @@ BattleMenu_Jump_2:
 	call PlaceAttrmap
 	call Func_02b_402b
 	call BattleMenu_PrintHelpBar
-	ld de, $6f96
+	ld de, Battle_Panel13x6_BGMap
 	ld hl, $9987
 	ld bc, $0d06
 	ld a, $d
@@ -5393,20 +5393,20 @@ BattleMenu_Jump_4:
 	ld [wd08a], a
 	ld [hFFC6], a
 	call ClearBGMap0
-	ld hl, $6d66
+	ld hl, Battle_BGPals
 	ld de, wca88 + $28
 	ld bc, $30
 	call CopyBytes3
-	ld hl, $74d6
+	ld hl, Battle_OBPals
 	ld de, wcaf0
 	ld bc, $30
 	call CopyBytes3
-	ld hl, $6cd6
+	ld hl, Battle_UI_GFX
 	ld de, $96d0
 	ld bc, $90
 	call CopyBytesVRAM
 	call DelayFrame
-	ld hl, $6c06
+	ld hl, Battle_TextBoxBorder_GFX
 	ld de, $9000
 	ld bc, $d0
 	call CopyBytesVRAM
@@ -5484,12 +5484,12 @@ BattleIntro_Jump_1:
 	ld bc, $28
 	ld de, 4
 
-asm_02b_68c3:
+.oam_loop
 	ld a, $a0
 	ld [hl], a
 	add hl, de
 	dec c
-	jr nz, asm_02b_68c3
+	jr nz, .oam_loop
 	ldh a, [hSCX]
 	ld [wd9ec], a
 	ldh a, [hSCXHigh]
@@ -5525,31 +5525,31 @@ asm_02b_68c3:
 	ld c, 8
 	xor a
 
-asm_02b_6922:
+.clear_loop
 	ld [hli], a
 	dec c
-	jr nz, asm_02b_6922
+	jr nz, .clear_loop
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
 	ld bc, wPartyMons
 
-asm_02b_692e:
+.party_loop
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
 	cp $bf
-	jr z, asm_02b_693a
+	jr z, .next
 	and 1
 	ld [hl], a
 
-asm_02b_693a:
+.next
 	ld hl, $16
 	add hl, bc
 	push hl
 	pop bc
 	ld a, l
 	cp $80
-	jr c, asm_02b_692e
+	jr c, .party_loop
 	call DelayFrame
 	ret
 
@@ -5567,46 +5567,46 @@ BattleIntro_Jump_2:
 	farcall asm_00a_4593
 	call Func_02b_6ad1
 	call DelayFrame
-	ld hl, unk_02b_6cd6
+	ld hl, Battle_UI_GFX
 	ld de, $96d0
 	ld bc, $90
 	call CopyBytesVRAM
-	ld hl, unk_02b_6c06
+	ld hl, Battle_TextBoxBorder_GFX
 	ld de, $9000
 	ld bc, $d0
 	call CopyBytesVRAM
 	call DelayFrame
-	ld hl, unk_02b_6d66
+	ld hl, Battle_BGPals
 	ld de, $cab0
 	ld bc, $30
 	call CopyBytes3
-	ld hl, unk_02b_74d6
+	ld hl, Battle_OBPals
 	ld de, $caf0
 	ld bc, $30
 	call CopyBytes3
 	call DelayFrame
-	ld de, unk_02b_6e56
+	ld de, Battle_PlayerFace_BGMap
 	ld hl, $9802
 	ld bc, $0606
 	ld a, 6
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld de, unk_02b_6ee6
+	ld de, Battle_PlayerFace_AttrMap
 	ld hl, $9802
 	ld bc, $0606
 	ld a, 6
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
-	ld de, unk_02b_6e7a
+	ld de, Battle_EnemyFace_BGMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld de, unk_02b_6e9e
+	ld de, Battle_EnemyFace_AttrMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
@@ -5719,7 +5719,7 @@ BattleIntro_Jump_4:
 asm_02b_6a9f:
 	ld a, 4
 	ld [wBattleIntroJumptableIndex], a
-	ld de, unk_02b_6d96
+	ld de, Battle_StatusPanel_BGMap
 	ld hl, $98e1
 	ld bc, $0904
 	ld a, 9
@@ -5729,7 +5729,7 @@ asm_02b_6a9f:
 	call PlaceTilemap
 	call Func_02b_6ae6
 	ret
-	ld de, unk_02b_6dde
+	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406
 	ld a, $14
@@ -5843,8 +5843,8 @@ BattleIntro_Jump_5:
 	add $55
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	call Func_02b_55cb
-	call Func_02b_55cb
+	call Wait32Frames
+	call Wait32Frames
 	xor a
 	ld [wd9b5], a
 	call AdvanceRNG
@@ -5905,35 +5905,70 @@ BattleIntro_Jump_6:
 	ld [wd9e1], a
 	ret
 
-unk_02b_6c06:
-	dr $aec06, $aecd6
+Battle_TextBoxBorder_GFX:
+	INCBIN "gfx/battle_intro/textbox_border.2bpp"
 
-unk_02b_6cd6::
-	dr $aecd6, $aed66
+Battle_UI_GFX::
+	INCBIN "gfx/battle_intro/ui.2bpp"
 
-unk_02b_6d66::
-	dr $aed66, $aed96
+Battle_BGPals::
+	INCBIN "gfx/battle_intro/bg.pal"
 
-unk_02b_6d96::
-	dr $aed96, $aedde
+Battle_StatusPanel_BGMap::
+	INCBIN "gfx/battle_intro/statuspanel_a.tilemap"
+; Second 9x4 frame, not referenced by disassembled code.
+	INCBIN "gfx/battle_intro/statuspanel_b.tilemap"
 
-unk_02b_6dde::
-	dr $aedde, $aee56
+Battle_HUD_BGMap::
+	INCBIN "gfx/battle_intro/hud.tilemap"
 
-unk_02b_6e56::
-	dr $aee56, $aee7a
+Battle_PlayerFace_BGMap::
+	INCBIN "gfx/battle_intro/face_player.tilemap"
 
-unk_02b_6e7a::
-	dr $aee7a, $aee9e
+Battle_EnemyFace_BGMap::
+	INCBIN "gfx/battle_intro/face_enemy.tilemap"
 
-unk_02b_6e9e::
-	dr $aee9e, $aeee6
+Battle_EnemyFace_AttrMap::
+	INCBIN "gfx/battle_intro/face_enemy_a.gbcattr"
+; Second 6x6 attrmap, not referenced by disassembled code.
+	INCBIN "gfx/battle_intro/face_enemy_b.gbcattr"
 
-unk_02b_6ee6::
-	dr $aeee6, $af4d6
+Battle_PlayerFace_AttrMap::
+	INCBIN "gfx/battle_intro/face_player.gbcattr"
 
-unk_02b_74d6::
-	dr $af4d6, $af506
+Battle_Panel10x4_BGMap::
+	INCBIN "gfx/battle_intro/panel10x4.tilemap"
+
+Battle_Panel10x4_AttrMap::
+	INCBIN "gfx/battle_intro/panel10x4.gbcattr"
+
+Battle_Panel10x3_BGMap::
+	INCBIN "gfx/battle_intro/panel10x3.tilemap"
+
+Battle_Panel10x3_AttrMap::
+	INCBIN "gfx/battle_intro/panel10x3.gbcattr"
+
+Battle_Panel13x6_BGMap::
+	INCBIN "gfx/battle_intro/panel13x6.tilemap"
+
+Battle_Panel11x10_BGMap::
+	INCBIN "gfx/battle_intro/panel11x10.tilemap"
+
+Battle_Panel11x10_AttrMap::
+	INCBIN "gfx/battle_intro/panel11x10.gbcattr"
+
+Battle_Panel9x6_BGMap::
+	INCBIN "gfx/battle_intro/panel9x6.tilemap"
+
+Battle_HUDFont_GFX::
+	INCBIN "gfx/battle_intro/hud_font.2bpp"
+
+Battle_HUDStats_GFX::
+	INCBIN "gfx/battle_intro/hud_stats.2bpp"
+
+; Last $20 bytes alias as GFX copied to vTiles $8700.
+Battle_OBPals::
+	INCBIN "gfx/battle_intro/ob.pal"
 
 ; Source entry consumed by BuildOAMList: y, x, tile, attr.
 ; The third source byte is skipped by the reader, so it is reserved.
@@ -6060,14 +6095,25 @@ OAMList_758e:
 	db -1
 
 
+; TODO: this gets drawn by Func_025_414a
 unk_02b_7594:
-	dr $af594, $af619
+	db $00, $0f, $23, $23, $14, $00, $00, $00, $00, $0f, $37, $00, $00, $00, $00, $28
+	db $0f, $00, $00, $00, $5a, $14, $2a, $00, $00, $1e, $0f, $00, $14, $00, $19, $14
+	db $2d, $28, $00, $00, $00, $00, $00, $00, $00, $00, $37, $14, $14, $23, $44, $00
+	db $00, $19, $1e, $23, $32, $41, $00, $32, $28, $2e, $40, $32, $32, $32, $00, $00
+	db $14, $19, $1e, $37, $4b, $78, $55, $14, $19, $32, $2d, $46, $14, $28, $3c, $50
+	db $0f, $14, $1e, $23, $3a, $50, $00, $14, $0f, $28, $3c, $50, $00, $14, $19, $12
+	db $28, $3c, $50, $00, $00, $00, $00, $0f, $14, $28, $39, $4b, $00, $00, $00, $00
+	db $00, $00, $14, $26, $3e, $0f, $50, $00, $1e, $46, $00, $50, $00, $00, $14, $00
+	db $00, $00, $00, $50, $00
 
-; Paired ramp, ascending to $c8.
+; ramp ascending to $c8
 unk_02b_7619:
-	dr $af619, $af638
+	db $00, $00, $00, $00, $00, $00, $00, $00, $05, $05, $64, $6e, $6e, $78, $78, $82
+	db $82, $8c, $8c, $96, $96, $a0, $a0, $aa, $aa, $b4, $b4, $be, $be, $c8, $c8
 
-; Paired ramp, descending to $00.
+; ramp descending to $00
 unk_02b_7638:
-	dr $af638, $af650
+	db $64, $5f, $5f, $5a, $5a, $55, $55, $50, $50, $4b, $4b, $46, $46, $41, $41, $3c
+	db $3c, $37, $37, $32, $32, $00, $00, $00
 

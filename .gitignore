@@ -5,6 +5,7 @@ data/text/*.asm
 # compiled graphics
 gfx/*.2bpp
 gfx/battle/*.2bpp
+gfx/battle_intro/*.2bpp
 gfx/icons/*.2bpp
 gfx/character_set/*.1bpp
 gfx/faces/*.2bpp
