@@ -2413,7 +2413,7 @@ asm_01e_6e89:
 	ld [wTextStart], a
 	ld a, [hli]
 	ld [wTextStart + 1], a
-	farcall Func_02b_4569
+	farcall AddExpToTotal
 	ret
 
 PriceOptions:

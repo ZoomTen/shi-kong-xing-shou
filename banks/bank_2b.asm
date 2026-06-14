@@ -1,34 +1,34 @@
-asm_02b_4000:
+Func_02b_4000:
 	ld bc, $d200
 
-asm_02b_4003:
+.loop
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, asm_02b_4017
+	jr nz, .check
 
-asm_02b_400b:
+.next
 	ld hl, $16
 	add hl, bc
 	push hl
 	pop bc
 	ld a, l
 	cp $80
-	jr c, asm_02b_4003
+	jr c, .loop
 	ret
 
-asm_02b_4017:
+.check
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
 	cp $bf
-	jr nz, asm_02b_400b
+	jr nz, .next
 	ld [hl], 0
 	ld hl, 2
 	add hl, bc
 	ld [hl], 1
-	jr asm_02b_400b
+	jr .next
 	ret
 
 Func_02b_402b:
@@ -89,16 +89,16 @@ Func_02b_4098:
 Func_02b_409e:
 	ld a, [wd986]
 	and a
-	jr nz, asm_02b_4113
+	jr nz, .enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, asm_02b_4119
+	jr nz, .enemy_only
 
-asm_02b_40aa:
+.player
 	call Func_02b_4296
 	ldh a, [hFFCB]
 	and a
-	jr z, asm_02b_4100
+	jr z, .player_done
 	ld [wd9bd], a
 	call Func_02b_5b4f
 	ld a, [wd984]
@@ -121,7 +121,7 @@ asm_02b_40aa:
 	and a
 	ret z
 
-asm_02b_40dc:
+.player_loop
 	ld a, [wd9bd]
 	and a
 	jp z, asm_02b_5aa5
@@ -135,10 +135,10 @@ asm_02b_40dc:
 	ld a, [wd9bc]
 	dec a
 	ld [wd9bc], a
-	jr nz, asm_02b_40dc
+	jr nz, .player_loop
 	ret
 
-asm_02b_4100:
+.player_done
 	jp asm_02b_5aa5
 	ld a, [wd984]
 	ld c, a
@@ -150,12 +150,12 @@ asm_02b_4100:
 	ld [hl], a
 	ret
 
-asm_02b_4113:
+.enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, asm_02b_40aa
+	jr nz, .player
 
-asm_02b_4119:
+.enemy_only
 	call Func_02b_4374
 	ldh a, [hFFCB]
 	and a
@@ -182,7 +182,7 @@ asm_02b_4119:
 	and a
 	ret z
 
-asm_02b_414c:
+.enemy_loop
 	ld a, [wd9bd]
 	and a
 	jp z, asm_02b_5aaf
@@ -196,7 +196,7 @@ asm_02b_414c:
 	ld a, [wd9bc]
 	dec a
 	ld [wd9bc], a
-	jr nz, asm_02b_414c
+	jr nz, .enemy_loop
 	call Func_02b_402b
 	ret
 	ld a, [wd981]
@@ -226,12 +226,12 @@ asm_02b_414c:
 Func_02b_419d:
 	ld a, [wd986]
 	and a
-	jr nz, asm_02b_41ee
+	jr nz, .enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, asm_02b_41f4
+	jr nz, .enemy_only
 
-asm_02b_41a9:
+.player
 	call Func_02b_4296
 	ldh a, [hFFCB]
 	ld [wd9bd], a
@@ -253,7 +253,7 @@ asm_02b_41a9:
 	inc a
 	ld [wd9bc], a
 
-asm_02b_41d1:
+.player_loop
 	ld a, [wd9bd]
 	call Func_02b_4248
 	call DelayFrame
@@ -264,15 +264,15 @@ asm_02b_41d1:
 	ld a, [wd9bc]
 	dec a
 	ld [wd9bc], a
-	jr nz, asm_02b_41d1
+	jr nz, .player_loop
 	ret
 
-asm_02b_41ee:
+.enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, asm_02b_41a9
+	jr nz, .player
 
-asm_02b_41f4:
+.enemy_only
 	call Func_02b_4374
 	ldh a, [hFFCB]
 	ld [wd9bd], a
@@ -294,7 +294,7 @@ asm_02b_41f4:
 	inc a
 	ld [wd9bc], a
 
-asm_02b_421c:
+.enemy_loop
 	ld a, [wd9bd]
 	call Func_02b_4326
 	call DelayFrame
@@ -305,7 +305,7 @@ asm_02b_421c:
 	ld a, [wd9bc]
 	dec a
 	ld [wd9bc], a
-	jr nz, asm_02b_421c
+	jr nz, .enemy_loop
 	call Func_02b_402b
 	ret
 	call Func_02b_4a40
@@ -334,38 +334,38 @@ Func_02b_4248:
 	push hl
 	ld c, 6
 
-asm_02b_4266:
+.full
 	call WaitVRAM_STAT
 	ld a, $a1
 	ld [hli], a
 	dec c
-	jr nz, asm_02b_4266
+	jr nz, .full
 	pop hl
 	ld a, e
 	ld b, a
 	and a
-	jr z, asm_02b_427e
+	jr z, .remainder
 
-asm_02b_4275:
+.empty
 	call WaitVRAM_STAT
 	ld a, $99
 	ld [hli], a
 	dec e
-	jr nz, asm_02b_4275
+	jr nz, .empty
 
-asm_02b_427e:
+.remainder
 	ld a, b
 	cp 6
 	ret z
 	ld a, e
 	and a
-	jr nz, asm_02b_428c
+	jr nz, .write
 	ld a, d
 	and a
-	jr nz, asm_02b_428c
+	jr nz, .write
 	ld d, 1
 
-asm_02b_428c:
+.write
 	ld a, $a1
 	sub d
 	ld d, a
@@ -458,38 +458,38 @@ Func_02b_4326:
 	push hl
 	ld c, 6
 
-asm_02b_4344:
+.full
 	call WaitVRAM_STAT
 	ld a, $a2
 	ld [hld], a
 	dec c
-	jr nz, asm_02b_4344
+	jr nz, .full
 	pop hl
 	ld a, e
 	ld b, a
 	and a
-	jr z, asm_02b_435c
+	jr z, .remainder
 
-asm_02b_4353:
+.empty
 	call WaitVRAM_STAT
 	ld a, $aa
 	ld [hld], a
 	dec e
-	jr nz, asm_02b_4353
+	jr nz, .empty
 
-asm_02b_435c:
+.remainder
 	ld a, b
 	cp 6
 	ret z
 	ld a, e
 	and a
-	jr nz, asm_02b_436a
+	jr nz, .write
 	ld a, d
 	and a
-	jr nz, asm_02b_436a
+	jr nz, .write
 	ld d, 1
 
-asm_02b_436a:
+.write
 	ld a, $a2
 	add d
 	ld d, a
@@ -591,7 +591,7 @@ Func_02b_4409:
 	ld a, [wdaa3]
 	set 3, a
 	ld [wdaa3], a
-	call asm_02b_4000
+	call Func_02b_4000
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
 	ld a, $57
@@ -651,7 +651,7 @@ Func_02b_4454:
 	farcall Func_02d_4000
 	call Wait32Frames
 	call Wait32Frames
-	call Func_02b_4569
+	call AddExpToTotal
 	xor a
 	ld [wSelectedOption], a
 	ld bc, $d200
@@ -688,8 +688,8 @@ Func_02b_44c3:
 	ld a, [bc]
 	ld [wd9e5], a
 	push bc
-	call Func_02b_457e
-	call Func_02b_45bd
+	call AddMonExp
+	call CheckLevelUp
 	pop bc
 	pop af
 	ld [wSelectedOption], a
@@ -733,30 +733,30 @@ Func_02b_452f:
 Func_02b_453a:
 	ld a, [wd9cb]
 	cp $27
-	jr z, Func_02b_454d
-	jr nc, Func_02b_455e
+	jr z, .check_low
+	jr nc, .max
 	ld [wd9ce], a
 	ld a, [wd9ca]
 	ld [wd9cf], a
 	ret
 
-Func_02b_454d:
+.check_low
 	ld a, [wd9ca]
 	cp $f
-	jr nc, Func_02b_455e
+	jr nc, .max
 	ld [wd9cf], a
 	ld a, [wd9cb]
 	ld [wd9ce], a
 	ret
 
-Func_02b_455e:
+.max
 	ld a, $27
 	ld [wd9ce], a
 	ld a, $f
 	ld [wd9cf], a
 	ret
 
-Func_02b_4569:
+AddExpToTotal:
 	ld hl, $d0d9
 	ld a, [wd9cc]
 	add [hl]
@@ -770,7 +770,7 @@ Func_02b_4569:
 	call Func_02b_4599
 	ret
 
-Func_02b_457e:
+AddMonExp:
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -793,9 +793,9 @@ Func_02b_4599:
 	ld a, [hli]
 	cp 1
 	ret c
-	jr z, Func_02b_45ae
+	jr z, .check_mid
 
-Func_02b_45a2:
+.clamp
 	ld hl, $d0d7
 	ld [hl], 1
 	inc hl
@@ -804,21 +804,21 @@ Func_02b_45a2:
 	ld [hl], $9f
 	ret
 
-Func_02b_45ae:
+.check_mid
 	ld a, [hli]
 	cp $86
 	ret c
-	jr z, Func_02b_45b6
-	jr Func_02b_45a2
+	jr z, .check_low
+	jr .clamp
 
-Func_02b_45b6:
+.check_low
 	ld a, [hli]
 	cp $9f
 	ret c
 	ret z
-	jr Func_02b_45a2
+	jr .clamp
 
-Func_02b_45bd:
+CheckLevelUp:
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -829,7 +829,7 @@ Func_02b_45bd:
 	cp $63
 	ret z
 	cp $3d
-	jr nc, Func_02b_45e5
+	jr nc, .high_level
 	ld de, ExpTable
 	ld l, a
 	ld h, 0
@@ -842,9 +842,9 @@ Func_02b_45bd:
 	ldh [$cc], a
 	ld a, [hli]
 	ldh [$cb], a
-	jr Func_02b_45fd
+	jr .compare
 
-Func_02b_45e5:
+.high_level
 	ld de, ExpTable_HighLevels
 	sub $3d
 	ld l, a
@@ -861,7 +861,7 @@ Func_02b_45e5:
 	ld a, [hli]
 	ld [wdce8], a
 
-Func_02b_45fd:
+.compare
 	ldh a, [$cd]
 	ld d, a
 	ld a, [wd981]
@@ -873,10 +873,10 @@ Func_02b_45fd:
 	ld a, [hl]
 	cp d
 	ret c
-	jr z, Func_02b_4613
-	jr nc, Func_02b_463c
+	jr z, .compare_mid
+	jr nc, .level_up
 
-Func_02b_4613:
+.compare_mid
 	ldh a, [$cc]
 	ld d, a
 	ld a, [wd981]
@@ -888,10 +888,10 @@ Func_02b_4613:
 	ld a, [hl]
 	cp d
 	ret c
-	jr z, Func_02b_4629
-	jr nc, Func_02b_463c
+	jr z, .compare_low
+	jr nc, .level_up
 
-Func_02b_4629:
+.compare_low
 	ldh a, [$cb]
 	ld d, a
 	ld a, [wd981]
@@ -905,7 +905,7 @@ Func_02b_4629:
 	ret z
 	ret c
 
-Func_02b_463c:
+.level_up
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -915,7 +915,7 @@ Func_02b_463c:
 	inc [hl]
 	ld a, [hl]
 	ld [wd9e8], a
-	call Func_02b_47e1
+	call ShowLevelUp
 	ret
 
 MACRO exp_entry ; exp (3-byte BE), level
@@ -1029,9 +1029,9 @@ ExpTable_HighLevels:
 	exp_entry $0ece3b, $62
 	exp_entry $0ece3b, $62
 
-Func_02b_47e1:
+ShowLevelUp:
 	call ClearBGMap0
-	call Func_02b_4807
+	call DrawLevelUpStats
 	ld a, BGM_LEVEL_UP_JINGLE
 	call PlaySound
 	xor a
@@ -1044,7 +1044,7 @@ Func_02b_47e1:
 	farcall Func_04a_4098
 	ret
 
-Func_02b_4807:
+DrawLevelUpStats:
 	ld hl, GFX_02b_54c7
 	ld de, $8680
 	ld bc, $80
@@ -1194,18 +1194,18 @@ Func_02b_4a40:
 Func_02b_4a52:
 	ld a, [wd9e8]
 	and a
-	jr z, Func_02b_4a60
+	jr z, .next_level
 	cp $63
-	jr c, Func_02b_4a61
+	jr c, .lookup
 	ld a, $63
-	jr Func_02b_4a61
+	jr .lookup
 
-Func_02b_4a60:
+.next_level
 	inc a
 
-Func_02b_4a61:
+.lookup
 	cp $3d
-	jr nc, Func_02b_4a79
+	jr nc, .high_level
 	ld de, ExpTable
 	ld l, a
 	ld h, 0
@@ -1218,9 +1218,9 @@ Func_02b_4a61:
 	ldh [$cc], a
 	ld a, [hli]
 	ldh [$cb], a
-	jr Func_02b_4a8d
+	jr .done
 
-Func_02b_4a79:
+.high_level
 	ld de, ExpTable
 	sub $3d
 	ld l, a
@@ -1235,7 +1235,7 @@ Func_02b_4a79:
 	ld a, [hli]
 	ldh [$cb], a
 
-Func_02b_4a8d:
+.done
 	ret
 
 Func_02b_4a8e:
@@ -1439,23 +1439,23 @@ Func_02b_4b4e:
 Func_02b_4b5b:
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_4b69
+	jr nz, .enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, Func_02b_4b6f
-	jr Func_02b_4b74
+	jr nz, .clear
+	jr .set
 
-Func_02b_4b69:
+.enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, Func_02b_4b74
+	jr nz, .set
 
-Func_02b_4b6f:
+.clear
 	xor a
 	ld [wd9b2], a
 	ret
 
-Func_02b_4b74:
+.set
 	ld a, 1
 	ld [wd9b2], a
 	ret
@@ -1503,7 +1503,7 @@ Func_02b_4b7a:
 Func_02b_4bb7:
 	ld a, [wd9b2]
 	and a
-	jp nz, Func_02b_4c48
+	jp nz, .next_enemy
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -1515,39 +1515,39 @@ Func_02b_4bb7:
 	ld [hl], 0
 	ld a, [wdb1c]
 	and a
-	jr z, Func_02b_4be4
+	jr z, .scan_start
 	ld hl, 7
 	add hl, bc
 	ld b, $c
 	ld de, $dcbc
 
-Func_02b_4bde:
+.copy_loop
 	ld a, [de]
 	inc de
 	ld [hli], a
 	dec b
-	jr nz, Func_02b_4bde
+	jr nz, .copy_loop
 
-Func_02b_4be4:
+.scan_start
 	xor a
 	ld [wd983], a
 	ld [wdb18], a
 	ld bc, $d200
 
-Func_02b_4bee:
+.scan_loop
 	ld a, c
 	ld [wd981], a
 	ld a, b
 	ld [wd982], a
 	ld a, [bc]
 	and a
-	jr z, Func_02b_4c35
+	jr z, .next
 	ld hl, 2
 	add hl, bc
 	ld a, [hl]
 	inc hl
 	or [hl]
-	jr z, Func_02b_4c35
+	jr z, .next
 	ld a, [bc]
 	ld [wd9e5], a
 	ld hl, $13
@@ -1568,14 +1568,14 @@ Func_02b_4bee:
 	ld c, 4
 	xor a
 
-Func_02b_4c2d:
+.clear_loop
 	ld [hli], a
 	dec c
-	jr nz, Func_02b_4c2d
+	jr nz, .clear_loop
 	call Func_02b_6a41
 	ret
 
-Func_02b_4c35:
+.next
 	ld hl, $16
 	add hl, bc
 	push hl
@@ -1584,21 +1584,21 @@ Func_02b_4c35:
 	inc a
 	ld [wd983], a
 	cp 6
-	jr c, Func_02b_4bee
+	jr c, .scan_loop
 	xor a
 	ret
 
-Func_02b_4c48:
+.next_enemy
 	ld a, [wd987]
 	inc a
 	ld [wd987], a
 	ld hl, $d876
 	ld bc, $16
 
-Func_02b_4c55:
+.find_slot
 	add hl, bc
 	dec a
-	jr nz, Func_02b_4c55
+	jr nz, .find_slot
 	ld a, l
 	ld [wd984], a
 	ld a, h
@@ -1624,10 +1624,10 @@ Func_02b_4c55:
 	ld c, 4
 	xor a
 
-Func_02b_4c8a:
+.clear_enemy
 	ld [hli], a
 	dec c
-	jr nz, Func_02b_4c8a
+	jr nz, .clear_enemy
 	call Func_02b_6a41
 	ret
 
@@ -1644,12 +1644,12 @@ BattleEnd_Jump_2:
 	ld bc, $28
 	ld de, 4
 
-Func_02b_4cb1:
+.fill_loop
 	ld a, $a0
 	ld [hl], a
 	add hl, de
 	dec c
-	jr nz, Func_02b_4cb1
+	jr nz, .fill_loop
 	call DelayFrame
 	ld a, [wd9ec]
 	ldh [$ae], a
@@ -1690,7 +1690,7 @@ Func_02b_4cb1:
 	call Func_05f2
 	call DelayFrame
 	call Func_02b_4d55
-	call asm_02b_4000
+	call Func_02b_4000
 	ld a, $c7
 	ldh [$40], a
 	ld a, $1c
@@ -1714,12 +1714,12 @@ Func_02b_4cb1:
 Func_02b_4d55:
 	ld bc, $cd20
 
-Func_02b_4d58:
+.loop
 	ld hl, 2
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, Func_02b_4d75
+	jr z, .next
 	ld hl, $d
 	add hl, bc
 	ld [hl], 1
@@ -1732,14 +1732,14 @@ Func_02b_4d58:
 	call Func_06f8
 	pop bc
 
-Func_02b_4d75:
+.next
 	ld hl, $20
 	add hl, bc
 	push hl
 	pop bc
 	ld a, l
 	cp $e0
-	jr c, Func_02b_4d58
+	jr c, .loop
 	ret
 
 Func_02b_4d81:
@@ -1747,10 +1747,10 @@ Func_02b_4d81:
 	ld c, $40
 	xor a
 
-Func_02b_4d87:
+.loop
 	ld [hli], a
 	dec c
-	jr nz, Func_02b_4d87
+	jr nz, .loop
 	ret
 
 HandleBattleTurns:
@@ -1801,7 +1801,7 @@ BattleTurns_Jump_9:
 	ld [wBattleIntroJumptableIndex], a
 	ld a, [wd9ea]
 	cp 1
-	jr nz, Func_02b_4e02
+	jr nz, .check_action
 	xor a
 	ld [wd9b5], a
 	ld a, $31
@@ -1814,7 +1814,7 @@ BattleTurns_Jump_9:
 	ld [wd98a], a
 	ret
 
-Func_02b_4e02:
+.check_action
 	ld a, [wdcaf]
 	and a
 	ret z
@@ -1904,27 +1904,27 @@ BattleTurns_Jump_2:
 	ld [wd98a], a
 	ld a, [wd9e3]
 	cp $1f
-	jr z, Func_02b_4ee4
+	jr z, .enemy
 	cp $20
-	jr z, Func_02b_4ee4
+	jr z, .enemy
 	ld a, [wd9e2]
 	cp $1f
-	jr z, Func_02b_4eeb
+	jr z, .player
 	cp $20
-	jr z, Func_02b_4eeb
-	jr Func_02b_4ef1
+	jr z, .player
+	jr .ai
 
-Func_02b_4ee4:
+.enemy
 	ld a, 1
 	ld [wd986], a
-	jr Func_02b_4f2b
+	jr .done
 
-Func_02b_4eeb:
+.player
 	xor a
 	ld [wd986], a
-	jr Func_02b_4f2b
+	jr .done
 
-Func_02b_4ef1:
+.ai
 	ld a, [wd983]
 	ld [wSelectedOption], a
 	ld a, 3
@@ -1939,16 +1939,16 @@ Func_02b_4ef1:
 	ld [wd986], a
 	ld a, [wd9ea]
 	cp 2
-	jr z, Func_02b_4f2b
+	jr z, .done
 	ldh a, [$cb]
 	ld b, a
 	ld a, [wd0c1]
 	cp b
-	jr nc, Func_02b_4f2b
+	jr nc, .done
 	xor a
 	ld [wd986], a
 
-Func_02b_4f2b:
+.done
 	call Func_02b_4f7b
 	ld a, [wBattleIntroJumptableIndex]
 	cp 2
@@ -1962,18 +1962,18 @@ Func_02b_4f38:
 	ret nz
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_4f4a
+	jr nz, .enemy
 	ld a, [wd9b4]
 	and a
 	ret z
-	jr Func_02b_4f4f
+	jr .trigger
 
-Func_02b_4f4a:
+.enemy
 	ld a, [wd9b3]
 	and a
 	ret z
 
-Func_02b_4f4f:
+.trigger
 	xor a
 	ld [wd9b5], a
 	ld a, $3f
@@ -1982,16 +1982,16 @@ Func_02b_4f4f:
 	ld [wBattleIntroJumptableIndex], a
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_4f69
+	jr nz, .clear_enemy
 	xor a
 	ld [wd9b4], a
-	jr Func_02b_4f6d
+	jr .finish
 
-Func_02b_4f69:
+.clear_enemy
 	xor a
 	ld [wd9b3], a
 
-Func_02b_4f6d:
+.finish
 	xor a
 	ld [wd9b2], a
 	ld a, 5
@@ -2003,14 +2003,14 @@ Func_02b_4f6d:
 Func_02b_4f7b:
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_4f8b
+	jr nz, .enemy
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
 	ld b, a
-	jr Func_02b_4f9d
+	jr .dispatch
 
-Func_02b_4f8b:
+.enemy
 	ld a, [wd9f6]
 	and a
 	ret nz
@@ -2022,7 +2022,7 @@ Func_02b_4f8b:
 	ld a, [wd982]
 	ld b, a
 
-Func_02b_4f9d:
+.dispatch
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
@@ -2039,14 +2039,14 @@ Func_02b_4f9d:
 Func_02b_4fb7:
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_4fc7
+	jr nz, .enemy
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
 	ld b, a
-	jr Func_02b_4fd9
+	jr .dispatch
 
-Func_02b_4fc7:
+.enemy
 	ld a, [wd9f6]
 	and a
 	ret nz
@@ -2058,7 +2058,7 @@ Func_02b_4fc7:
 	ld a, [wd982]
 	ld b, a
 
-Func_02b_4fd9:
+.dispatch
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
@@ -2069,14 +2069,14 @@ Func_02b_4fd9:
 Func_02b_4fe4:
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_4ff4
+	jr nz, .enemy
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
 	ld b, a
-	jr Func_02b_5006
+	jr .dispatch
 
-Func_02b_4ff4:
+.enemy
 	ld a, [wd9f6]
 	and a
 	ret nz
@@ -2088,7 +2088,7 @@ Func_02b_4ff4:
 	ld a, [wd982]
 	ld b, a
 
-Func_02b_5006:
+.dispatch
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
@@ -2148,14 +2148,14 @@ Func_02b_5074:
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
-	jr nz, Func_02b_5089
+	jr nz, .recover
 	ld a, $1e
 	ld [wd3ff], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_5089:
+.recover
 	ld a, [hl]
 	res 1, a
 	ld [hl], a
@@ -2192,10 +2192,10 @@ Func_02b_50a9:
 	farcall asm_025_41b8
 	ldh a, [$cb]
 	and a
-	jr nz, Func_02b_50d8
+	jr nz, .got_value
 	ld a, 1
 
-Func_02b_50d8:
+.got_value
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
@@ -2206,7 +2206,7 @@ Func_02b_50d8:
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, Func_02b_50fe
+	jr z, .play
 	ld a, 2
 	ldh [$c7], a
 	ldh [$cb], a
@@ -2214,7 +2214,7 @@ Func_02b_50d8:
 	ldh a, [$cb]
 	ld [wd9b0], a
 
-Func_02b_50fe:
+.play
 	call Func_02b_409e
 	ld a, $1a
 	ld [wd3ff], a
@@ -2227,7 +2227,7 @@ Func_02b_5113:
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
-	jr z, Func_02b_512c
+	jr z, .recover
 	xor a
 	ld [wd9b5], a
 	ld a, $25
@@ -2236,7 +2236,7 @@ Func_02b_5113:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_512c:
+.recover
 	ld a, [hl]
 	res 4, a
 	ld [hl], a
@@ -2257,7 +2257,7 @@ Func_02b_514b:
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
-	jr z, Func_02b_516c
+	jr z, .recover
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
@@ -2272,7 +2272,7 @@ Func_02b_514b:
 	ld [hl], a
 	ret
 
-Func_02b_516c:
+.recover
 	ld a, [hl]
 	res 5, a
 	ld [hl], a
@@ -2287,20 +2287,20 @@ Func_02b_516c:
 Func_02b_517d:
 	ld a, [wd986]
 	and a
-	jr z, Func_02b_518d
+	jr z, .enemy
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
 	ld b, a
-	jr Func_02b_5195
+	jr .got_actor
 
-Func_02b_518d:
+.enemy
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
 	ld b, a
 
-Func_02b_5195:
+.got_actor
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
@@ -2323,9 +2323,9 @@ BattleTurns_Jump_3:
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, Func_02b_51eb
+	jr z, .status
 	cp 1
-	jr z, Func_02b_51d9
+	jr z, .flee
 	ld a, $4f
 	ld [wd3ff], a
 	farcall Func_02d_4000
@@ -2336,7 +2336,7 @@ BattleTurns_Jump_3:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_51d9:
+.flee
 	ld a, $50
 	ld [wd3ff], a
 	farcall Func_02d_4000
@@ -2344,7 +2344,7 @@ Func_02b_51d9:
 	call Func_02b_5578
 	ret
 
-Func_02b_51eb:
+.status
 	ld de, $d996
 	ld a, [wd986]
 	ld l, a
@@ -2352,7 +2352,7 @@ Func_02b_51eb:
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, Func_02b_520c
+	jr z, .check_swap
 	ld a, $23
 	ld [wd3ff], a
 	ld de, $d9e2
@@ -2361,27 +2361,27 @@ Func_02b_51eb:
 	ld h, 0
 	add hl, de
 	ld [hl], $8d
-	jr Func_02b_522d
+	jr .commit
 
-Func_02b_520c:
+.check_swap
 	ld a, [wd9ea]
 	cp 2
-	jr nz, Func_02b_5220
+	jr nz, .random
 	ld a, [wd986]
 	and a
-	jr z, Func_02b_5220
+	jr z, .random
 	ld a, $30
 	ld [wd3ff], a
-	jr Func_02b_522d
+	jr .commit
 
-Func_02b_5220:
+.random
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
 	add $a
 	ld [wd3ff], a
 
-Func_02b_522d:
+.commit
 	xor a
 	ld [wd9b5], a
 	farcall Func_02d_4000
@@ -2488,10 +2488,10 @@ BattleAI_Action2:
 	ld b, a
 	ld a, [wd999]
 	cp b
-	jr z, Func_02b_5300
+	jr z, .check_low
 	jp nc, Func_02b_530e
 
-Func_02b_5300:
+.check_low
 	ldh a, [$cb]
 	ld b, a
 	ld a, [wd998]
@@ -2537,16 +2537,16 @@ Func_02b_532f:
 	jr z, BattleAI_Action3
 	ld [wd9e2], a
 	cp $7b
-	jr nz, Func_02b_5353
+	jr nz, .check_7a
 	ld a, [wd9b9]
 	and a
 	jr z, BattleAI_Action3
 
-Func_02b_5353:
+.check_7a
 	cp $7a
-	jr z, Func_02b_5357
+	jr z, .force_7b
 
-Func_02b_5357:
+.force_7b
 	ld a, [wd9b9]
 	and a
 	ret z
@@ -2580,10 +2580,10 @@ Func_02b_5389:
 	ld b, a
 	ld a, [wd999]
 	cp b
-	jr z, Func_02b_539f
+	jr z, .check_low
 	jp nc, Func_02b_530e
 
-Func_02b_539f:
+.check_low
 	ldh a, [$cb]
 	ld b, a
 	ld a, [wd998]
@@ -2638,11 +2638,11 @@ BattleAI_Action9:
 BattleAI_Action10:
 	ld a, [wd9f7]
 	and a
-	jr nz, Func_02b_5419
+	jr nz, .has_flag
 	xor a
 	jp Func_02b_532f
 
-Func_02b_5419:
+.has_flag
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
@@ -2915,11 +2915,11 @@ Func_02b_55f7:
 	ld [wd9f6], a
 	ld a, [wd993]
 	and a
-	jr nz, Func_02b_5607
+	jr nz, .commit
 	ld a, 1
 	ld [wd9f6], a
 
-Func_02b_5607:
+.commit
 	ld a, 4
 	ldh [$d3], a
 	ld a, 2
@@ -2967,15 +2967,15 @@ Func_02b_565f:
 	ld hl, $d9c5
 	ld a, [wd9c3]
 	cp [hl]
-	jr c, Func_02b_5677
+	jr c, .compute
 	dec hl
 	ld a, [wd9c2]
 	cp [hl]
-	jr c, Func_02b_5677
+	jr c, .compute
 	call Func_02b_5884
-	jr Func_02b_56e9
+	jr .store
 
-Func_02b_5677:
+.compute
 	call Func_02b_5912
 	ldh [$c7], a
 	ld a, [wd9c4]
@@ -3017,11 +3017,11 @@ Func_02b_5677:
 	ldh [$c7], a
 	farcall asm_025_41b8
 
-Func_02b_56e9:
+.store
 	ldh a, [$cc]
 	ld [wd9b1], a
 	and a
-	jr z, Func_02b_5700
+	jr z, .low_byte
 	ld a, $ff
 	ldh [$cb], a
 	ld [wd9b0], a
@@ -3030,16 +3030,16 @@ Func_02b_56e9:
 	call Func_02b_5712
 	ret
 
-Func_02b_5700:
+.low_byte
 	ldh a, [$cb]
 	ld [wd9b0], a
 	and a
-	jr nz, Func_02b_570e
+	jr nz, .nonzero
 	ld a, 1
 	ld [wd9b0], a
 	ret
 
-Func_02b_570e:
+.nonzero
 	call Func_02b_5712
 	ret
 
@@ -3054,18 +3054,18 @@ Func_02b_5712:
 	ld [wd9af], a
 	call GetStatTile
 	cp $a
-	jr z, Func_02b_5733
+	jr z, .max_grade
 	ld a, [wd991]
 	cp $26
-	jr c, Func_02b_5739
+	jr c, .crit
 	ret
 
-Func_02b_5733:
+.max_grade
 	ld a, [wd991]
 	cp $c
 	ret nc
 
-Func_02b_5739:
+.crit
 	ld a, $27
 	ld [wd3ff], a
 	farcall Func_02d_4000
@@ -3097,44 +3097,44 @@ Func_02b_577c:
 	ret nz
 	ld a, [wd9c7]
 	and a
-	jr z, Func_02b_579b
+	jr z, .grade0
 	cp $14
-	jr z, Func_02b_57a1
+	jr z, .grade14
 	cp $f
-	jr z, Func_02b_57a7
+	jr z, .grade0f
 	cp 5
-	jr z, Func_02b_57ad
+	jr z, .grade5
 	cp 2
-	jr z, Func_02b_57b3
+	jr z, .grade2
 	cp $a
-	jr z, Func_02b_57b9
+	jr z, .grade0a
 
-Func_02b_579b:
+.grade0
 	ld a, $13
 	ld [wd3ff], a
 	ret
 
-Func_02b_57a1:
+.grade14
 	ld a, $14
 	ld [wd3ff], a
 	ret
 
-Func_02b_57a7:
+.grade0f
 	ld a, $15
 	ld [wd3ff], a
 	ret
 
-Func_02b_57ad:
+.grade5
 	ld a, $16
 	ld [wd3ff], a
 	ret
 
-Func_02b_57b3:
+.grade2
 	ld a, $17
 	ld [wd3ff], a
 	ret
 
-Func_02b_57b9:
+.grade0a
 	ld a, $35
 	ld [wd3ff], a
 	ret
@@ -3168,10 +3168,10 @@ Func_02b_57bf:
 	farcall asm_025_41b8
 	ldh a, [$cc]
 	and a
-	jr nz, Func_02b_5808
+	jr nz, .min
 	ldh a, [$cb]
 	cp $14
-	jr nc, Func_02b_5808
+	jr nc, .min
 	ld de, StatDeltaToValue
 	ld l, a
 	ld h, 0
@@ -3179,7 +3179,7 @@ Func_02b_57bf:
 	ld a, [hl]
 	ret
 
-Func_02b_5808:
+.min
 	ld a, 5
 	ret
 
@@ -3364,23 +3364,23 @@ Func_02b_58df:
 	ld [wd9af], a
 	call Func_125b
 	cp c
-	jr c, Func_02b_5900
+	jr c, .descending
 	sub c
 	ld de, unk_02b_7619 + $a
-	jr Func_02b_5906
+	jr .clamp
 
-Func_02b_5900:
+.descending
 	ld b, a
 	ld a, c
 	sub b
 	ld de, unk_02b_7638
 
-Func_02b_5906:
+.clamp
 	cp $14
-	jr c, Func_02b_590c
+	jr c, .lookup
 	ld a, $14
 
-Func_02b_590c:
+.lookup
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -3446,30 +3446,30 @@ Func_02b_591e:
 Func_02b_5998:
 	ld a, [wd986]
 	and a
-	jr z, Func_02b_59a8
+	jr z, .player
 	ld a, [wd984]
 	ld l, a
 	ld a, [wd985]
 	ld h, a
-	jr Func_02b_59b0
+	jr .got_actor
 
-Func_02b_59a8:
+.player
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
 	ld h, a
 
-Func_02b_59b0:
+.got_actor
 	ld bc, $14
 	add hl, bc
 	ld a, [hl]
 	cp $a
-	jr c, Func_02b_59bf
+	jr c, .second
 	cp $10
-	jr nc, Func_02b_59bf
-	jr Func_02b_59c7
+	jr nc, .second
+	jr .match
 
-Func_02b_59bf:
+.second
 	inc hl
 	ld a, [hl]
 	cp $a
@@ -3477,7 +3477,7 @@ Func_02b_59bf:
 	cp $10
 	ret nc
 
-Func_02b_59c7:
+.match
 	ld [wd9e9], a
 	ld de, StatTypeRemap
 	sub $a
@@ -3495,40 +3495,40 @@ Func_02b_59c7:
 Func_02b_59df:
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_59ef
+	jr nz, .enemy
 	ld a, [wd984]
 	ld l, a
 	ld a, [wd985]
 	ld h, a
-	jr Func_02b_59f7
+	jr .got_actor
 
-Func_02b_59ef:
+.enemy
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
 	ld h, a
 
-Func_02b_59f7:
+.got_actor
 	ld bc, $14
 	add hl, bc
 	ld a, [hl]
 	cp 3
-	jr c, Func_02b_5a06
+	jr c, .second
 	cp $a
-	jr nc, Func_02b_5a06
-	jr Func_02b_5a0d
+	jr nc, .second
+	jr .match
 
-Func_02b_5a06:
+.second
 	inc hl
 	cp 3
 	ret c
 	cp $a
 	ret nc
 
-Func_02b_5a0d:
+.match
 	ld [wd9e9], a
 	cp 9
-	jr z, Func_02b_5a22
+	jr z, .bonus
 	ld de, StatTypeRemap
 	sub 3
 	ld l, a
@@ -3538,7 +3538,7 @@ Func_02b_5a0d:
 	cp [hl]
 	ret nz
 
-Func_02b_5a22:
+.bonus
 	ldh a, [$c7]
 	add 3
 	ldh [$c7], a
@@ -3720,16 +3720,16 @@ Func_02b_5b4f:
 	ld b, a
 	ld a, [wd999]
 	cp b
-	jr z, Func_02b_5b61
+	jr z, .check_low
 	jr nc, Func_02b_5b77
-	jr Func_02b_5b67
+	jr .clamp
 
-Func_02b_5b61:
+.check_low
 	ld a, [wd998]
 	cp c
 	jr nc, Func_02b_5b77
 
-Func_02b_5b67:
+.clamp
 	ld a, [wd998]
 	ld [wd9b0], a
 	ld a, [wd999]
@@ -3749,48 +3749,48 @@ Func_02b_5b77:
 Func_02b_5b82:
 	ld a, [wd9c7]
 	and a
-	jr z, Func_02b_5ba5
+	jr z, .none
 	ld a, [wd98e]
 	cp $28
-	jr nc, Func_02b_5bc3
+	jr nc, .dmg28
 	cp $1e
-	jr nc, Func_02b_5bbd
+	jr nc, .dmg1e
 	cp $14
-	jr nc, Func_02b_5bb7
+	jr nc, .dmg14
 	cp $a
-	jr nc, Func_02b_5bb1
+	jr nc, .dmg0a
 	cp 5
-	jr nc, Func_02b_5bab
+	jr nc, .dmg05
 	ld a, $17
 	ld [wd3ff], a
 	ret
 
-Func_02b_5ba5:
+.none
 	ld a, $13
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bab:
+.dmg05
 	ld a, $16
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bb1:
+.dmg0a
 	ld a, $35
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bb7:
+.dmg14
 	ld a, $34
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bbd:
+.dmg1e
 	ld a, $15
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bc3:
+.dmg28
 	ld a, $14
 	ld [wd3ff], a
 	ret
@@ -3820,12 +3820,12 @@ Func_02b_5bfb:
 	ld [wd98b], a
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_5c52
+	jr nz, .enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, Func_02b_5c58
+	jr nz, .enemy_only
 
-Func_02b_5c0b:
+.player
 	call Func_02b_4296
 	ldh a, [$cb]
 	ld [wd98c], a
@@ -3847,7 +3847,7 @@ Func_02b_5c0b:
 	inc a
 	ld [wd98e], a
 
-Func_02b_5c33:
+.player_loop
 	ld a, [wd98c]
 	call Func_02b_4248
 	call DelayFrame
@@ -3858,15 +3858,15 @@ Func_02b_5c33:
 	ld a, [wd98e]
 	dec a
 	ld [wd98e], a
-	jr nz, Func_02b_5c33
+	jr nz, .player_loop
 	jp Func_02b_5b4b
 
-Func_02b_5c52:
+.enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, Func_02b_5c0b
+	jr nz, .player
 
-Func_02b_5c58:
+.enemy_only
 	call Func_02b_4374
 	ldh a, [$cb]
 	ld [wd98c], a
@@ -3888,7 +3888,7 @@ Func_02b_5c58:
 	inc a
 	ld [wd98e], a
 
-Func_02b_5c80:
+.enemy_loop
 	ld a, [wd98c]
 	call Func_02b_4326
 	call DelayFrame
@@ -3899,7 +3899,7 @@ Func_02b_5c80:
 	ld a, [wd98e]
 	dec a
 	ld [wd98e], a
-	jr nz, Func_02b_5c80
+	jr nz, .enemy_loop
 	call Func_02b_402b
 	jp Func_02b_5b4b
 
@@ -3917,16 +3917,16 @@ Func_02b_5ca2:
 	ld d, h
 	ld a, [wd99b]
 	cp d
-	jr c, Func_02b_5cc5
-	jr z, Func_02b_5cbf
+	jr c, .clamp
+	jr z, .check_low
 	jr nc, Func_02b_5ccd
 
-Func_02b_5cbf:
+.check_low
 	ld a, [wd99a]
 	cp e
 	jr nc, Func_02b_5ccd
 
-Func_02b_5cc5:
+.clamp
 	ld a, [wd99a]
 	ld e, a
 	ld a, [wd99b]
@@ -3938,7 +3938,7 @@ Func_02b_5ccd:
 Func_02b_5cce:
 	ld a, [wd986]
 	and a
-	jr z, Func_02b_5ce7
+	jr z, .player
 	call Func_02b_4374
 	ld a, [wd981]
 	ld l, a
@@ -3946,9 +3946,9 @@ Func_02b_5cce:
 	ld a, [wd982]
 	ld h, a
 	ld [wd3f1], a
-	jr Func_02b_5cf8
+	jr .got_actor
 
-Func_02b_5ce7:
+.player
 	call Func_02b_4296
 	ld a, [wd984]
 	ld l, a
@@ -3957,7 +3957,7 @@ Func_02b_5ce7:
 	ld h, a
 	ld [wd3f1], a
 
-Func_02b_5cf8:
+.got_actor
 	xor a
 	ld [wd9b5], a
 	ld bc, $14
@@ -4022,21 +4022,21 @@ Func_02b_5d28:
 Func_02b_5d7e:
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_5d8e
+	jr nz, .enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, Func_02b_5d94
+	jr nz, .alt
 
-Func_02b_5d8a:
+.player
 	call Func_12bd
 	ret
 
-Func_02b_5d8e:
+.enemy
 	ld a, [wd9b5]
 	and a
-	jr nz, Func_02b_5d8a
+	jr nz, .player
 
-Func_02b_5d94:
+.alt
 	call Func_12bd
 	ret
 
@@ -4050,27 +4050,27 @@ Func_02b_5d98:
 	jr nc, Func_02b_5e0c
 	ld a, [wd9e9]
 	cp $12
-	jr z, Func_02b_5db8
+	jr z, .stat12
 	cp $13
-	jr z, Func_02b_5dc3
+	jr z, .stat13
 	cp $14
-	jr z, Func_02b_5dce
+	jr z, .stat14
 
-Func_02b_5db8:
+.stat12
 	ld a, $14
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
 	jr Func_02b_5ddd
 
-Func_02b_5dc3:
+.stat13
 	ld a, $3c
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
 	jr Func_02b_5ddd
 
-Func_02b_5dce:
+.stat14
 	ld a, [wd99a]
 	ld [wd9b0], a
 	ld a, [wd99b]
@@ -4189,19 +4189,19 @@ Func_02b_5ea6:
 Func_02b_5eb7:
 	ld a, [wd9b1]
 	and a
-	jr nz, Func_02b_5ec7
+	jr nz, .swap
 	ld a, [wd9b0]
 	ldh [$cb], a
 	xor a
 	ldh [$cc], a
-	jr Func_02b_5ece
+	jr .convert
 
-Func_02b_5ec7:
+.swap
 	ldh [$cb], a
 	ld a, [wd9b0]
 	ldh [$cc], a
 
-Func_02b_5ece:
+.convert
 	xor a
 	ldh [$cd], a
 	ld a, 2
@@ -4209,13 +4209,13 @@ Func_02b_5ece:
 	farcall asm_025_41b8
 	ldh a, [$cc]
 	and a
-	jr nz, Func_02b_5ee9
+	jr nz, .high
 	ld [wd9b1], a
 	ldh a, [$cb]
 	ld [wd9b0], a
 	ret
 
-Func_02b_5ee9:
+.high
 	ld [wd9b0], a
 	ldh a, [$cb]
 	ld [wd9b1], a
@@ -4295,18 +4295,18 @@ Func_02b_5f79:
 	call SetStatTile
 	ld a, [wd9b1]
 	and a
-	jr nz, Func_02b_5f96
+	jr nz, .swap
 	ldh [$cc], a
 	ld a, [wd9b0]
 	ldh [$cb], a
-	jr Func_02b_5f9d
+	jr .convert
 
-Func_02b_5f96:
+.swap
 	ldh [$cb], a
 	ld a, [wd9b0]
 	ldh [$cc], a
 
-Func_02b_5f9d:
+.convert
 	xor a
 	ldh [$cd], a
 	ld a, 2
@@ -4314,13 +4314,13 @@ Func_02b_5f9d:
 	farcall Func_025_414a
 	ldh a, [$cc]
 	and a
-	jr nz, Func_02b_5fb8
+	jr nz, .high
 	ld [wd9b1], a
 	ldh a, [$cb]
 	ld [wd9b0], a
 	ret
 
-Func_02b_5fb8:
+.high
 	ld [wd9b0], a
 	ldh a, [$cb]
 	ld [wd9b1], a
@@ -4355,11 +4355,11 @@ Func_02b_5ff2:
 	ld [wd9af], a
 	call GetStatTile
 	dec a
-	jr z, Func_02b_6006
+	jr z, .expired
 	call SetStatTile
 	ret
 
-Func_02b_6006:
+.expired
 	call SetStatTile
 	ld a, 4
 	ld [wd9af], a
@@ -4367,7 +4367,7 @@ Func_02b_6006:
 	call SetStatTile
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_602c
+	jr nz, .enemy
 	ld a, [wd9c9]
 	ld [wd9e5], a
 	call LoadMonPic_vTiles90d0
@@ -4376,7 +4376,7 @@ Func_02b_6006:
 	ld [wd9c9], a
 	ret
 
-Func_02b_602c:
+.enemy
 	ld a, [wd9c8]
 	ld [wEnemyMonSpecies], a
 	call LoadEnemyMonPic
@@ -4425,11 +4425,11 @@ Func_02b_608b:
 	ld [wd9af], a
 	call GetStatTile
 	dec a
-	jr z, Func_02b_60a1
+	jr z, .expired
 	call SetStatTile
 	jp Func_02b_60e4
 
-Func_02b_60a1:
+.expired
 	call SetStatTile
 	ld a, 4
 	ld [wd9af], a
@@ -4437,7 +4437,7 @@ Func_02b_60a1:
 	call SetStatTile
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_60cd
+	jr nz, .enemy
 	xor a
 	ld [wd9b8], a
 	ld a, [wd9c9]
@@ -4448,7 +4448,7 @@ Func_02b_60a1:
 	ld [wd9c9], a
 	jp Func_02b_60e4
 
-Func_02b_60cd:
+.enemy
 	xor a
 	ld [wd9b9], a
 	ld a, [wd9c8]
@@ -4475,7 +4475,7 @@ Func_02b_60f7:
 	ld [wd9af], a
 	call GetStatTile
 	dec a
-	jr nz, Func_02b_6115
+	jr nz, .active
 	xor a
 	call SetStatTile
 	ld a, 4
@@ -4484,16 +4484,16 @@ Func_02b_60f7:
 	call SetStatTile
 	ret
 
-Func_02b_6115:
+.active
 	call SetStatTile
 	ld a, [wd986]
 	and a
-	jr nz, Func_02b_6125
+	jr nz, .enemy
 	ld a, [wd9e2]
 	ld [wd9e3], a
 	ret
 
-Func_02b_6125:
+.enemy
 	ld a, [wd9e3]
 	ld [wd9e2], a
 	ret
@@ -4525,7 +4525,7 @@ Func_02b_6159:
 	ld [wd9af], a
 	call GetStatTile
 	dec a
-	jr nz, Func_02b_6178
+	jr nz, .write
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -4534,7 +4534,7 @@ Func_02b_6159:
 	ld [wd9af], a
 	xor a
 
-Func_02b_6178:
+.write
 	call SetStatTile
 	ret
 
@@ -5713,10 +5713,10 @@ BattleIntro_Jump_4:
 	add 2
 	ld [wWX], a
 	and a
-	jr z, asm_02b_6a9f
+	jr z, .done
 	ret
 
-asm_02b_6a9f:
+.done
 	ld a, 4
 	ld [wBattleIntroJumptableIndex], a
 	ld de, Battle_StatusPanel_BGMap
@@ -5756,28 +5756,28 @@ Func_02b_6ae6:
 	ld de, $9942
 	ld bc, wPartyMons
 
-asm_02b_6af0:
+.party_loop
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, asm_02b_6b20
+	jr z, .enemy_start
 	ld hl, 2
 	add hl, bc
 	ld a, [hli]
 	or [hl]
-	jr z, asm_02b_6b08
+	jr z, .party_fainted
 	call WaitVRAM_STAT
 	ld a, $6d
 	ld [de], a
-	jr asm_02b_6b0e
+	jr .party_next
 
-asm_02b_6b08:
+.party_fainted
 	call WaitVRAM_STAT
 	ld a, $6e
 	ld [de], a
 
-asm_02b_6b0e:
+.party_next
 	ld hl, $16
 	add hl, bc
 	push hl
@@ -5787,9 +5787,9 @@ asm_02b_6b0e:
 	inc a
 	ld [wd0c1], a
 	cp 6
-	jr c, asm_02b_6af0
+	jr c, .party_loop
 
-asm_02b_6b20:
+.enemy_start
 	xor a
 	ld [wd0c1], a
 	ld a, [wd9dc]
@@ -5798,7 +5798,7 @@ asm_02b_6b20:
 	ld de, $988b
 	ld bc, wd876
 
-asm_02b_6b2f:
+.enemy_loop
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
@@ -5808,18 +5808,18 @@ asm_02b_6b2f:
 	add hl, bc
 	ld a, [hli]
 	or [hl]
-	jr z, asm_02b_6b46
+	jr z, .enemy_fainted
 	call WaitVRAM_STAT
 	ld a, $6d
 	ld [de], a
-	jr asm_02b_6b4c
+	jr .enemy_next
 
-asm_02b_6b46:
+.enemy_fainted
 	call WaitVRAM_STAT
 	ld a, $6e
 	ld [de], a
 
-asm_02b_6b4c:
+.enemy_next
 	ld hl, $16
 	add hl, bc
 	push hl
@@ -5829,7 +5829,7 @@ asm_02b_6b4c:
 	inc a
 	ld [wd0c1], a
 	cp 6
-	jr c, asm_02b_6b2f
+	jr c, .enemy_loop
 	ret
 
 BattleIntro_Jump_5:
