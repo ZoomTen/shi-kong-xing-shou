@@ -147,9 +147,9 @@ MenuText_e8::
 MenuText_e9::
 	ld hl, wd86a
 	ld a, $b6
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $c2
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText
@@ -184,7 +184,7 @@ Menu_CheckCharacter_Continue::
 	ld [wCurrentCharacterByte], a
 	ld a, [wCharacterTilePos]
 	ld c, a
-	ld a, [wd08b]
+	ld a, [wMenuTextX]
 	add c
 	ld c, a
 	ld [wcbf3], a
@@ -224,7 +224,7 @@ ENDR
 	ld a, 1
 	ld [wCharacterTileTransferStatus], a
 	call DelayFrame
-	ld a, [wd08c]
+	ld a, [wMenuTextEndX]
 	ld c, a
 	ld a, [wCharacterTilePos]
 	add 4

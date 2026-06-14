@@ -1,20 +1,304 @@
 Func_01e_4000::
-	dr $78000, $78083
+	ld de, Pointers_01e_402a
+	ld a, [wMapType]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	ld a, [wdcf9]
+	add a
+	ld b, a
+	add a
+	add a
+	sub b
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	push hl
+	call ClearLayoutFlag
+	pop hl
+	call ApplyMapLayoutPatch
+	ret
+
+Pointers_01e_402a:
+	dw RecordList_01e_4036
+	dw RecordList_01e_4036
+	dw RecordList_01e_403d
+	dw RecordList_01e_404a
+	dw RecordList_01e_405d
+	dw RecordList_01e_407c
+
+RecordList_01e_4036:
+	db 0
+	layout_patch 0, 0, 0, 0, 0
+
+RecordList_01e_403d:
+	db 2
+	layout_patch wdaba, 6, 2, 5, $26
+	layout_patch wdaba, 6, 2, 5, $26
+
+RecordList_01e_404a:
+	db 3
+	layout_patch wdaba, 7, 1, 3, $0e
+	layout_patch wdaba, 7, 1, 3, $0e
+	layout_patch wdaba, 7, 1, 3, $0e
+
+RecordList_01e_405d:
+	db 5
+	layout_patch wdabb, 0, 2, 7, $3e
+	layout_patch wdabb, 1, 5, 0, $05
+	layout_patch wdabb, 0, 2, 7, $3e
+	layout_patch wdabb, 0, 2, 7, $3e
+	layout_patch wdabb, 1, 5, 0, $05
+
+RecordList_01e_407c:
+	db 1
+	layout_patch wdaba, 5, 3, 1, $04
 
 Func_01e_4083::
-	dr $78083, $78125
+	ld de, Pointers_01e_40ad
+	ld a, [wMapType]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	ld a, [wdcf9]
+	add a
+	ld b, a
+	add a
+	add a
+	sub b
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	push hl
+	call SetLayoutFlag
+	pop hl
+	call ApplyMapLayoutPatch
+	ret
+
+Pointers_01e_40ad:
+	dw RecordList_01e_40b9
+	dw RecordList_01e_40c0
+	dw RecordList_01e_40c7
+	dw RecordList_01e_40da
+	dw RecordList_01e_40f3
+	dw RecordList_01e_411e
+
+RecordList_01e_40b9:
+	db 0
+	layout_patch 0, 0, 0, 0, 0
+
+RecordList_01e_40c0:
+	db 1
+	layout_patch wdaba, 5, 2, 2, $18
+
+RecordList_01e_40c7:
+	db 3
+	layout_patch wdaba, 6, 2, 5, $40
+	layout_patch wdaba, 6, 2, 5, $40
+	layout_patch wdaba, 6, 8, 4, $41
+
+RecordList_01e_40da:
+	db 4
+	layout_patch wdaba, 7, 1, 3, $15
+	layout_patch wdaba, 7, 1, 3, $15
+	layout_patch wdaba, 7, 1, 3, $15
+	layout_patch wdaba, 7, 2, 2, $16
+
+RecordList_01e_40f3:
+	db 7
+	layout_patch wdabb, 0, 2, 7, $58
+	layout_patch wdabb, 1, 5, 0, $59
+	layout_patch wdabb, 0, 2, 7, $58
+	layout_patch wdabb, 0, 2, 7, $58
+	layout_patch wdabb, 1, 5, 0, $59
+	layout_patch wdabb, 0, $0a, 3, $5a
+	layout_patch wdabb, 1, 1, 1, $5b
+
+RecordList_01e_411e:
+	db 1
+	layout_patch wdaba, 5, 3, 1, $2e
 
 Func_01e_4125::
-	dr $78125, $78194
+	ld de, Pointers_01e_414f
+	ld a, [wMapType]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	ld a, [wdcf9]
+	add a
+	ld b, a
+	add a
+	add a
+	sub b
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	call TestLayoutFlag
+	and a
+	ret nz
+	call ApplyMapLayoutPatch
+	ret
 
-Func_01e_4194::
-	dr $78194, $781bf
+Pointers_01e_414f:
+	dw RecordList_01e_415b
+	dw RecordList_01e_415b
+	dw RecordList_01e_415b
+	dw RecordList_01e_4162
+	dw RecordList_01e_4175
+	dw RecordList_01e_415b
 
-Func_01e_41bf::
-	dr $781bf, $781e8
+RecordList_01e_415b:
+	db 0
+	layout_patch 0, 0, 0, 0, 0
+
+RecordList_01e_4162:
+	db 3
+	layout_patch wdaba, 7, 2, 2, $0e
+	layout_patch wdaba, 7, 2, 2, $0e
+	layout_patch wdaba, 7, 2, 2, $0e
+
+RecordList_01e_4175:
+	db 5
+	layout_patch wdabb, 0, 2, 7, $3e
+	layout_patch wdabb, 1, 5, 0, $05
+	layout_patch wdabb, 0, 2, 7, $3e
+	layout_patch wdabb, 0, $0a, 3, $2e
+	layout_patch wdabb, 1, 1, 1, $07
+
+; For the current wMapType, walk its patch record list and apply every
+; patch whose flag bit is set, editing wMapLayout in place.
+ApplyMapLayoutFlagPatches::
+	ld de, Pointers_01e_40ad
+	ld a, [wMapType]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [hli]
+	and a
+	ret z
+	ld c, a
+.loop
+	push hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	call TestLayoutFlag
+	and a
+	jr z, .skip
+	call ApplyMapLayoutPatch
+.skip
+	pop hl
+	ld de, 6
+	add hl, de
+	dec c
+	jr nz, .loop
+	ret
+
+; Same as ApplyMapLayoutFlagPatches but using the secondary record table
+; (Pointers_01e_4910); used when the map is first set up.
+ApplyMapLayoutFlagPatchesInit::
+	ld de, Pointers_01e_4910
+	ld a, [wMapType]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [hli]
+	ld c, a
+.loop
+	push hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	call TestLayoutFlag
+	and a
+	jr z, .skip
+	call ApplyMapLayoutPatch
+.skip
+	pop hl
+	ld de, 6
+	add hl, de
+	dec c
+	jr nz, .loop
+	ret
 
 Func_01e_41e8::
-	dr $781e8, $78212
+	ld de, Pointers_01e_4910
+	ld a, [wMapType]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	ld a, [wd0f5]
+	add a
+	ld b, a
+	add a
+	add a
+	sub b
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	push hl
+	call SetLayoutFlag
+	pop hl
+	call ApplyMapLayoutPatch
+	ret
 
 INCLUDE "data/text/bank1e_misc3.asm"
 
@@ -114,20 +398,42 @@ Func_01e_4290::
 	ld h, [hl]
 	ld l, a
 	ld a, $3c
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $40
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText
 	ret
 
 Func_01e_42ba:
-	dr $782ba, $782e4
+	ld l, d
+	ld h, 0
+	ld de, MonIcons
+	add hl, de
+	ld a, [hl]
+	ld [wdce8], a
+	and $0f
+	ld l, a
+	ld h, 0
+	ld de, TypeNames
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, $79
+	ld [wMenuTextX], a
+	ld a, $7d
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
 
 Func_01e_42e4:
 	ld l, d
-	ld a, d ; @bad
+	ld a, d
 	ld h, 0
 	ld de, unk_01e_551f
 	add hl, de
@@ -136,7 +442,31 @@ Func_01e_42e4:
 	ret
 
 Func_01e_42f1:
-	dr $782f1, $7831f
+	ld l, d
+	ld a, d
+	ld [wd9e3], a
+	ld h, 0
+	ld de, unk_01e_551f
+	add hl, de
+	ld a, [hl]
+	ld [wd8ff], a
+	and $0f
+	ld l, a
+	ld h, 0
+	ld de, TypeNames
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, $eb
+	ld [wMenuTextX], a
+	ld a, $fd
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
 
 Func_01e_431f::
 	ld l, d
@@ -168,15 +498,1249 @@ Func_01e_431f::
 	ret
 
 Func_01e_434d:
-	dr $7834d, $787fb
+	ld de, PointerTable_01e_57ed
+	call Func_0b46
+	ld a, [wd08a]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call PrintMenuText
+	ret
+
+Func_01e_4362:
+	ld de, Pointers_01e_4ebd
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, Pointers_01e_44fd
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld a, [wd9f2]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld a, [wSelectedPage]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, de
+	pop de
+	xor a
+	ld [wd0c1], a
+
+.loop
+	ld a, [hli]
+	ld [wd0c3], a
+	push de
+	push hl
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd0c1]
+	sla a
+	sla a
+	sla a
+	sla a
+	add $a8
+	ld [wMenuTextX], a
+	ld a, $f8
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	call Func_01e_43d3
+	pop hl
+	pop de
+	ld a, [wd0c1]
+	inc a
+	ld [wd0c1], a
+	cp 4
+	jr c, .loop
+	ret
+
+Func_01e_43d3:
+	ld de, Pointers_01e_447d
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld a, [wd0c3]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld de, wd1f5
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	dec de
+	ld bc, $988e
+	ld a, [wd0c1]
+	swap a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	ld a, $13
+	ld [wd8fe], a
+	ld a, 1
+	ld [wd1fc], a
+	ld a, 0
+	ld [wd0fd], a
+	ld bc, $0205
+	call Func_113f
+	ret
+
+Func_01e_4416:
+	call Func_01e_4441
+	ld de, wd1f5
+	ldh a, [hFFCD]
+	ld [de], a
+	inc de
+	ldh a, [hFFCC]
+	ld [de], a
+	inc de
+	ldh a, [hFFCB]
+	ld [de], a
+	ld hl, $99ee
+	ld de, wd1f5
+	ld a, $13
+	ld [wd8fe], a
+	ld a, 1
+	ld [wd1fc], a
+	ld [wd0fd], a
+	ld bc, $0305
+	call Func_113f
+	ret
+
+Func_01e_4441:
+	ld de, Pointers_01e_447d
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld a, [wd9f3]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ldh [hFFCC], a
+	ld a, [hli]
+	ldh [hFFCB], a
+	xor a
+	ldh [hFFCD], a
+	ld a, [wd9d3]
+	ldh [hFFC7], a
+	farcall Func_025_414a
+	ld a, [wEventFlags + 4]
+	bit 0, a
+	jr z, .done
+	ld a, 2
+	ldh [hFFC7], a
+	farcall asm_025_41b8
+
+.done
+	ret
+
+; seems to be shop prices
+Pointers_01e_447d:
+	dw Unk_01e_4481
+	dw Unk_01e_44d1
+
+Unk_01e_4481:
+	bigdw 0
+	bigdw 100
+	bigdw 300
+	bigdw 600
+	bigdw 10000
+	bigdw 50
+	bigdw 150
+	bigdw 300
+	bigdw 1000
+	bigdw 20
+	bigdw 80
+	bigdw 3000
+	bigdw 100
+	bigdw 100
+	bigdw 100
+	bigdw 200
+	bigdw 200
+	bigdw 500
+	bigdw 2000
+	bigdw 5000
+	bigdw 10000
+	bigdw 500
+	bigdw 1000
+	bigdw 5000
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 500
+	bigdw 200
+	bigdw 500
+	bigdw 1000
+	bigdw 50000
+	bigdw 1000
+
+Unk_01e_44d1:
+	bigdw 0
+	bigdw 2500
+	bigdw 10000
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1000
+	bigdw 2000
+	bigdw 500
+	bigdw 1500
+	bigdw 3000
+	bigdw 1000
+
+Pointers_01e_44fd:
+	dw Pointers_01e_4501
+	dw Pointers_01e_459b
+
+Pointers_01e_4501:
+	dw Unk_01e_451d
+	dw Unk_01e_4526
+	dw Unk_01e_452f
+	dw Unk_01e_4538
+	dw Unk_01e_4541
+	dw Unk_01e_454a
+	dw Unk_01e_4553
+	dw Unk_01e_455c
+	dw Unk_01e_4565
+	dw Unk_01e_456e
+	dw Unk_01e_4577
+	dw Unk_01e_4580
+	dw Unk_01e_4589
+	dw Unk_01e_4592
+
+Unk_01e_451d:
+	db $01, $05, $0c, $0d, $0e, $12, $18, $27, -1
+Unk_01e_4526:
+	db $02, $05, $06, $0d, $0e, $12, $15, $27, -1
+Unk_01e_452f:
+	db $06, $09, $0c, $0d, $11, $19, $20, $23, -1
+Unk_01e_4538:
+	db $02, $05, $06, $0c, $12, $15, $23, $22, -1
+Unk_01e_4541:
+	db $02, $05, $09, $0a, $0b, $0c, $1c, $1e, -1
+Unk_01e_454a:
+	db $02, $03, $05, $06, $0c, $0d, $12, $15, -1
+Unk_01e_4553:
+	db $02, $03, $0a, $11, $12, $15, $24, $22, -1
+Unk_01e_455c:
+	db $03, $06, $07, $0c, $0d, $0f, $12, $15, -1
+Unk_01e_4565:
+	db $03, $07, $0c, $11, $13, $16, $24, $27, -1
+Unk_01e_456e:
+	db $03, $06, $0c, $0d, $15, $1d, $1a, $1e, -1
+Unk_01e_4577:
+	db $07, $08, $0c, $0d, $11, $16, $24, $27, -1
+Unk_01e_4580:
+	db $03, $08, $0c, $11, $14, $16, $17, $25, -1
+Unk_01e_4589:
+	db $03, $07, $0a, $0c, $11, $13, $15, $17, -1
+Unk_01e_4592:
+	db $03, $04, $08, $11, $13, $16, $22, $25, -1
+
+Pointers_01e_459b:
+	dw Unk_01e_45b7
+	dw Unk_01e_45c0
+	dw Unk_01e_45c9
+	dw Unk_01e_45d2
+	dw Unk_01e_45db
+	dw Unk_01e_45e4
+	dw Unk_01e_45ed
+	dw Unk_01e_45f6
+	dw Unk_01e_45ff
+	dw Unk_01e_4608
+	dw Unk_01e_4611
+	dw Unk_01e_461a
+	dw Unk_01e_4623
+	dw Unk_01e_462c
+
+Unk_01e_45b7:
+	db $08, $09, $0c, $0f, $12, $10, $11, $13, -1
+Unk_01e_45c0:
+	db $08, $05, $0f, $11, $12, $15, $01, $02, -1
+Unk_01e_45c9:
+	db $06, $0d, $10, $13, $15, $09, $02, $01, -1
+Unk_01e_45d2:
+	db $03, $0f, $12, $13, $15, $01, $0e, $0a, -1
+Unk_01e_45db:
+	db $12, $15, $0e, $07, $04, $0a, $0f, $03, -1
+Unk_01e_45e4:
+	db $04, $0b, $0d, $11, $01, $13, $03, $0c, -1
+Unk_01e_45ed:
+	db $0b, $08, $04, $05, $11, $12, $13, $01, -1
+Unk_01e_45f6:
+	db $03, $0a, $09, $15, $10, $05, $0c, $01, -1
+Unk_01e_45ff:
+	db $13, $14, $08, $0a, $0f, $01, $0b, $15, -1
+Unk_01e_4608:
+	db $13, $11, $01, $15, $06, $07, $0c, $0e, -1
+Unk_01e_4611:
+	db $01, $02, $11, $15, $06, $07, $0c, $0e, -1
+Unk_01e_461a:
+	db $01, $02, $11, $13, $14, $15, $10, $09, -1
+Unk_01e_4623:
+	db $0a, $0b, $0c, $0d, $0e, $0f, $14, $10, -1
+Unk_01e_462c:
+	db $01, $02, $10, $11, $12, $13, $14, $15, -1
+
+Func_01e_4635:
+	ld de, Pointers_01e_4849
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, Pointers_01e_4ebd
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	pop hl
+	ld a, [wSelectedPage]
+	add a
+	add a
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	xor a
+	ld [wd0c1], a
+
+.loop
+	ld a, [hli]
+	push de
+	push hl
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd0c1]
+	sla a
+	sla a
+	sla a
+	sla a
+	add $a8
+	ld [wMenuTextX], a
+	ld a, $f8
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	pop hl
+	ld a, [hli]
+	ld [wd0c3], a
+	push hl
+	ld hl, Func_025_4288
+	ld b, $25
+	rst FarCall
+	pop hl
+	pop de
+	ld a, [wd0c1]
+	inc a
+	ld [wd0c1], a
+	cp 4
+	jr c, .loop
+	ret
+
+Func_01e_46a3:
+	ld de, Pointers_01e_4849
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, Pointers_01e_4ebd
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	pop hl
+	ld a, [wSelectedPage]
+	ld c, a
+	add a
+	add a
+	add c
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	xor a
+	ld [wd0c1], a
+
+.loop
+	ld a, [hli]
+	call Func_01e_4719
+	push de
+	push hl
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd0c1]
+	sla a
+	sla a
+	sla a
+	sla a
+	add $40
+	ld [wMenuTextX], a
+	ld a, $90
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	pop hl
+	ld a, [hli]
+	and a
+	jr z, .skip
+	ld [wd0c3], a
+	push hl
+	ld hl, Func_025_425d
+	ld b, $25
+	rst FarCall
+	pop hl
+
+.skip
+	pop de
+	ld a, [wd0c1]
+	inc a
+	ld [wd0c1], a
+	cp 5
+	jr c, .loop
+	ret
+
+Func_01e_4719:
+	push bc
+	ld c, a
+	ld a, [wd1f4]
+	and a
+	jr z, .map0
+	cp 1
+	jr z, .map1
+	ld a, c
+	cp $29
+	jr c, .keep
+	jr .clear
+
+.map1
+	ld a, c
+	cp $16
+	jr c, .keep
+	jr .clear
+
+.map0
+	ld a, c
+	cp $5a
+	jr c, .keep
+
+.clear
+	push hl
+	ld [hl], 0
+	dec hl
+	ld [hl], 0
+	pop hl
+	xor a
+	pop bc
+	ret
+
+.keep
+	ld a, c
+	pop bc
+	ret
+
+Func_01e_4745:
+	ld de, unk_01e_614f
+	ld a, [wd9d4]
+	ld l, a
+	ld a, [wd9d4 + 1]
+	ld h, a
+	ld a, [hl]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp Func_01e_4837
+
+Func_01e_475c:
+	ld de, PointerTable_01e_59cc
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	ld bc, Pointers_01e_44fd
+	pop hl
+	add hl, bc
+	ld a, [hli]
+	ld b, [hl]
+	ld c, a
+	ld a, [wd9f2]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld b, [hl]
+	ld c, a
+	ld a, [wSelectedPage]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	ld c, l
+	ld b, h
+	ld a, [wSelectedOption]
+	ld l, a
+	ld h, 0
+	add hl, bc
+	ld a, [hl]
+	ld [wd9f3], a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, $60
+	ld [wMenuTextX], a
+	ld a, $a8
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
+
+Func_01e_47af:
+	ld de, PointerTable_01e_59cc
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	pop hl
+	ld bc, Pointers_01e_4849
+	add hl, bc
+	ld a, [hli]
+	ld c, a
+	ld [wd1fe], a
+	ld a, [hli]
+	ld b, a
+	ld [wd1ff], a
+	ld a, [wSelectedPage]
+	add a
+	add a
+	ld l, a
+	ld a, [wSelectedOption]
+	add l
+	ld l, a
+	ld [wd1fd], a
+	ld h, 0
+	add hl, hl
+	add hl, bc
+	ld a, [hl]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, $60
+	ld [wMenuTextX], a
+	ld a, $a8
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
 
 Func_01e_47fb:
-	dr $787fb, $78ccf
+	ld de, PointerTable_01e_59cc
+	ld a, [wd1f4]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	pop hl
+	ld bc, Pointers_01e_4849
+	add hl, bc
+	ld a, [hli]
+	ld c, a
+	ld [wd1fe], a
+	ld a, [hli]
+	ld b, a
+	ld [wd1ff], a
+	ld a, [wSelectedPage]
+	ld l, a
+	add a
+	add a
+	add l
+	ld l, a
+	ld a, [wSelectedOption]
+	add l
+	ld l, a
+	ld [wd1fd], a
+	ld h, 0
+	add hl, hl
+	add hl, bc
+	ld a, [hl]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+Func_01e_4837:
+	ld a, $a0
+	ld [wMenuTextX], a
+	ld a, $e8
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
+
+Pointers_01e_4849:
+	dw wd300
+	dw wddb0
+	dw wd284
+
+Func_01e_484f:
+	ld a, [wd1fe]
+	ld l, a
+	ld a, [wd1ff]
+	ld h, a
+	ld a, [wd1fd]
+	add a
+	add l
+	ld l, a
+	ld a, [hl]
+	ld de, Pointers_01e_6567
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, $a0
+	ld [wMenuTextX], a
+	ld a, $e8
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
+
+Func_01e_487b:
+	ld a, [wd1fe]
+	ld l, a
+	ld a, [wd1ff]
+	ld h, a
+	ld a, [wd1fd]
+	add a
+	add l
+	ld l, a
+	ld a, [hl]
+	ld de, Pointers_01e_6567
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, $40
+	ld [wMenuTextX], a
+	ld a, $88
+	ld [wMenuTextEndX], a
+	xor a
+	ld [wCharacterTilePos], a
+	call PrintMenuText
+	ret
+
+; Clear bit b of the flag byte at [de].
+ClearLayoutFlag:
+	ld a, [de]
+	ld l, a
+	ld a, b
+	and a
+	jr z, .done
+.loop
+	rrc l
+	dec a
+	jr nz, .loop
+.done
+	res 0, l
+	ld a, b
+	and a
+	jr z, .done2
+.loop2
+	rlc l
+	dec a
+	jr nz, .loop2
+.done2
+	ld a, l
+	ld [de], a
+	ret
+
+; Set bit b of the flag byte at [de].
+SetLayoutFlag:
+	ld a, [de]
+	ld l, a
+	ld a, b
+	and a
+	jr z, .done
+.loop
+	rrc l
+	dec a
+	jr nz, .loop
+.done
+	set 0, l
+	ld a, b
+	and a
+	jr z, .done2
+.loop2
+	rlc l
+	dec a
+	jr nz, .loop2
+.done2
+	ld a, l
+	ld [de], a
+	ret
+
+; Write the patch's block value into wMapLayout at row*hMapWidth + col.
+; hl -> col (db), row (db), value (db)
+ApplyMapLayoutPatch:
+	push bc
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	push hl
+	ld hl, wMapLayout
+	and a
+	jr z, .skip
+	ld a, [hMapWidth]
+	ld c, a
+	ld b, 0
+.loop
+	add hl, bc
+	dec d
+	jr nz, .loop
+.skip
+	add hl, de
+	ld e, l
+	ld d, h
+	pop hl
+	ld a, [hli]
+	ld [de], a
+	pop bc
+	ret
+
+; Return a = bit b of the flag byte at [de] (0 or 1).
+TestLayoutFlag:
+	push bc
+	push hl
+	ld a, [de]
+	ld l, a
+	ld a, b
+	and a
+	jr z, .done
+.loop
+	rrc l
+	dec a
+	jr nz, .loop
+.done
+	bit 0, l
+	jr z, .clear
+	ld a, 1
+	jr .store
+.clear
+	xor a
+.store
+	pop hl
+	pop bc
+	ret
+
+Pointers_01e_4910:
+	dw unk_01e_4ccf
+	dw unk_01e_4cf5
+	dw unk_01e_4cfc
+	dw unk_01e_4d09
+	dw unk_01e_4d10
+	dw unk_01e_4ccf
+	dw unk_01e_4cc8
+	dw unk_01e_4cc1
+	dw unk_01e_4cba
+	dw unk_01e_4cad
+	dw unk_01e_4c94
+	dw unk_01e_4c87
+	dw unk_01e_4c6e
+	dw unk_01e_4c67
+	dw unk_01e_4cd6
+	dw unk_01e_4c48
+	dw unk_01e_4c35
+	dw unk_01e_4c22
+	dw unk_01e_4bf0
+	dw unk_01e_4bdd
+	dw unk_01e_4b67
+	dw unk_01e_4b7a
+	dw unk_01e_4ba5
+	dw unk_01e_4bb8
+	dw unk_01e_4b4e
+	dw unk_01e_4b3b
+	dw unk_01e_4b2e
+	dw unk_01e_4b21
+	dw unk_01e_4aee
+	dw unk_01e_4b01
+	dw unk_01e_4b14
+	dw unk_01e_4aa0
+	dw unk_01e_4aad
+	dw unk_01e_4aba
+	dw unk_01e_4ac1
+	dw unk_01e_4ad4
+	dw unk_01e_4ae1
+	dw unk_01e_4a6e
+	dw unk_01e_4a87
+	dw unk_01e_49ce
+	dw unk_01e_49e1
+	dw unk_01e_49ee
+	dw unk_01e_49f5
+	dw unk_01e_4a08
+	dw unk_01e_4a1b
+	dw unk_01e_4a3a
+	dw unk_01e_4a41
+	dw unk_01e_4a4e
+	dw unk_01e_4a55
+	dw unk_01e_4980
+	dw unk_01e_4999
+	dw unk_01e_49a6
+	dw unk_01e_49ad
+	dw unk_01e_49b4
+	dw unk_01e_49c1
+	dw unk_01e_4c09
+
+unk_01e_4980:
+	db 4
+	layout_patch wdac9, 7, 6, 1, $a2
+	layout_patch wdaca, 0, 8, 1, $a3
+	layout_patch wdaca, 1, $0d, $0b, $a4
+	layout_patch wdaca, 2, $0b, $0c, $a5
+
+unk_01e_4999:
+	db 2
+	layout_patch wdaca, 3, 8, $0a, $aa
+	layout_patch wdaca, 4, $0b, $0d, $ab
+
+unk_01e_49a6:
+	db 1
+	layout_patch wdaca, 5, 4, 1, $45
+
+unk_01e_49ad:
+	db 1
+	layout_patch wdaca, 6, 3, 1, $51
+
+unk_01e_49b4:
+	db 2
+	layout_patch wdaca, 7, 3, 3, $51
+	layout_patch wdacb, 0, 4, 4, $52
+
+unk_01e_49c1:
+	db 2
+	layout_patch wdacb, 1, 0, 8, $4c
+	layout_patch wdacb, 2, 3, 9, $4d
+
+unk_01e_49ce:
+	db 3
+	layout_patch wdac6, 6, 2, 1, $47
+	layout_patch wdac6, 7, 4, 1, $48
+	layout_patch wdac7, 0, 5, 1, $49
+
+unk_01e_49e1:
+	db 2
+	layout_patch wdac7, 1, 3, 5, $55
+	layout_patch wdac7, 2, 0, 6, $56
+
+unk_01e_49ee:
+	db 1
+	layout_patch wdac7, 3, 2, 3, $32
+
+unk_01e_49f5:
+	db 3
+	layout_patch wdac7, 4, $0a, 1, $39
+	layout_patch wdac7, 5, $0c, 1, $3a
+	layout_patch wdac7, 6, 6, 4, $3b
+
+unk_01e_4a08:
+	db 3
+	layout_patch wdac7, 7, 1, 4, $ab
+	layout_patch wdac8, 0, 1, 9, $ac
+	layout_patch wdac8, 1, 2, 9, $ad
+
+unk_01e_4a1b:
+	db 5
+	layout_patch wdac8, 2, $0c, 1, $a4
+	layout_patch wdac8, 3, $0d, 2, $a5
+	layout_patch wdac8, 4, $0c, 9, $a6
+	layout_patch wdac8, 5, 2, $0b, $a7
+	layout_patch wdac8, 6, 0, $0e, $a8
+
+unk_01e_4a3a:
+	db 1
+	layout_patch wdac8, 7, 1, 1, $4d
+
+unk_01e_4a41:
+	db 2
+	layout_patch wdac9, 0, 5, 9, $51
+	layout_patch wdac9, 1, 7, 9, $52
+
+unk_01e_4a4e:
+	db 1
+	layout_patch wdac9, 2, 9, 9, $49
+
+unk_01e_4a55:
+	db 4
+	layout_patch wdac9, 3, 8, 0, $52
+	layout_patch wdac9, 4, 4, 4, $53
+	layout_patch wdac9, 5, 3, 8, $54
+	layout_patch wdac9, 6, 4, 8, $55
+
+unk_01e_4a6e:
+	db 4
+	layout_patch wdac5, 6, 3, 7, $9e
+	layout_patch wdac5, 7, $0d, 9, $9f
+	layout_patch wdac6, 0, 0, $0d, $a0
+	layout_patch wdac6, 1, 2, $0d, $a1
+
+unk_01e_4a87:
+	db 4
+	layout_patch wdac6, 2, 3, 7, $9f
+	layout_patch wdac6, 3, $0d, 9, $a0
+	layout_patch wdac6, 4, 0, $0d, $a1
+	layout_patch wdac6, 5, 2, $0d, $a2
+
+unk_01e_4aa0:
+	db 2
+	layout_patch wdac4, 2, 8, 0, $4a
+	layout_patch wdac4, 3, 9, 1, $4b
+
+unk_01e_4aad:
+	db 2
+	layout_patch wdac4, 4, 1, 7, $47
+	layout_patch wdac4, 5, 3, 7, $48
+
+unk_01e_4aba:
+	db 1
+	layout_patch wdac4, 6, 1, 6, $47
+
+unk_01e_4ac1:
+	db 3
+	layout_patch wdac4, 7, 0, 1, $4b
+	layout_patch wdac5, 0, 2, 1, $4c
+	layout_patch wdac5, 1, 3, 4, $4d
+
+unk_01e_4ad4:
+	db 2
+	layout_patch wdac5, 2, 5, 9, $4f
+	layout_patch wdac5, 3, 5, $0a, $50
+
+unk_01e_4ae1:
+	db 2
+	layout_patch wdac5, 4, 5, 5, $55
+	layout_patch wdac5, 5, 6, 5, $56
+
+unk_01e_4aee:
+	db 3
+	layout_patch wdac3, 2, 5, 3, $22
+	layout_patch wdac3, 3, 5, 5, $23
+	layout_patch wdac3, 4, 2, 7, $24
+
+unk_01e_4b01:
+	db 3
+	layout_patch wdac3, 5, 5, 6, $2e
+	layout_patch wdac3, 6, 7, 8, $2f
+	layout_patch wdac3, 7, 5, 9, $30
+
+unk_01e_4b14:
+	db 2
+	layout_patch wdac4, 0, 0, 5, $35
+	layout_patch wdac4, 1, 2, 5, $36
+
+unk_01e_4b21:
+	db 2
+	layout_patch wdac3, 0, 1, 4, $3c
+	layout_patch wdac3, 1, 5, 4, $3d
+
+unk_01e_4b2e:
+	db 2
+	layout_patch wdac2, 6, 0, 3, $49
+	layout_patch wdac2, 7, 2, 5, $4a
+
+unk_01e_4b3b:
+	db 3
+	layout_patch wdac2, 3, 4, 1, $64
+	layout_patch wdac2, 4, 8, 8, $65
+	layout_patch wdac2, 5, 6, $0a, $66
+
+unk_01e_4b4e:
+	db 4
+	layout_patch wdac1, 7, 8, 1, $61
+	layout_patch wdac2, 0, 9, 1, $62
+	layout_patch wdac2, 1, 0, 2, $63
+	layout_patch wdac2, 2, 0, 4, $64
+
+unk_01e_4b67:
+	db 3
+	layout_patch wdabf, 4, $0a, 1, $3c
+	layout_patch wdabf, 5, 1, 9, $3d
+	layout_patch wdabf, 6, 3, 9, $3e
+
+unk_01e_4b7a:
+	db 7
+	layout_patch wdabf, 7, 3, 1, $50
+	layout_patch wdac0, 0, 7, 1, $51
+	layout_patch wdac0, 1, 1, 2, $52
+	layout_patch wdac0, 2, 2, 2, $53
+	layout_patch wdac0, 3, 4, 3, $54
+	layout_patch wdac0, 4, 9, 4, $55
+	layout_patch wdac0, 5, $0a, 5, $56
+
+unk_01e_4ba5:
+	db 3
+	layout_patch wdac0, 6, 8, 3, $49
+	layout_patch wdac0, 7, 1, 5, $4a
+	layout_patch wdac1, 0, 7, 8, $4b
+
+unk_01e_4bb8:
+	db 6
+	layout_patch wdac1, 1, 4, 4, $42
+	layout_patch wdac1, 2, 8, 4, $43
+	layout_patch wdac1, 3, 1, 7, $44
+	layout_patch wdac1, 4, 2, 7, $45
+	layout_patch wdac1, 5, 3, 8, $46
+	layout_patch wdac1, 6, 3, $0a, $47
+
+unk_01e_4bdd:
+	db 3
+	layout_patch wdabf, 1, $0a, 1, $a4
+	layout_patch wdabf, 2, $0b, 2, $a5
+	layout_patch wdabf, 3, 0, 6, $a6
+
+unk_01e_4bf0:
+	db 4
+	layout_patch wdabe, 5, 9, 0, $a3
+	layout_patch wdabe, 6, $0d, 5, $a4
+	layout_patch wdabe, 7, 1, 6, $a5
+	layout_patch wdabf, 0, $0e, 7, $a6
+
+unk_01e_4c09:
+	db 4
+	layout_patch wdabe, 5, 9, 0, $a1
+	layout_patch wdabe, 6, $0d, 5, $a2
+	layout_patch wdabe, 7, 1, 6, $a3
+	layout_patch wdabf, 0, $0e, 7, $a4
+
+unk_01e_4c22:
+	db 3
+	layout_patch wdabe, 2, 4, 3, $ab
+	layout_patch wdabe, 3, $0e, 6, $ac
+	layout_patch wdabe, 4, 1, $0d, $ad
+
+unk_01e_4c35:
+	db 3
+	layout_patch wdabd, 7, $0a, 1, $6c
+	layout_patch wdabe, 0, $0b, 2, $6d
+	layout_patch wdabe, 1, 0, 6, $6e
+
+unk_01e_4c48:
+	db 5
+	layout_patch wdabd, 2, 9, 0, $75
+	layout_patch wdabd, 3, $0a, 0, $76
+	layout_patch wdabd, 4, $0d, 5, $77
+	layout_patch wdabd, 5, 1, 6, $78
+	layout_patch wdabd, 6, $0e, 7, $79
+
+unk_01e_4c67:
+	db 1
+	layout_patch wdabd, 1, 4, 4, $2d
+
+unk_01e_4c6e:
+	db 4
+	layout_patch wdabc, 5, 6, 1, $3d
+	layout_patch wdabc, 6, 3, 7, $3e
+	layout_patch wdabc, 7, 1, 8, $3f
+	layout_patch wdabd, 0, 3, 8, $40
+
+unk_01e_4c87:
+	db 2
+	layout_patch wdabc, 3, 4, 4, $4a
+	layout_patch wdabc, 4, $0a, 6, $4b
+
+unk_01e_4c94:
+	db 4
+	layout_patch wdabb, 7, 1, 1, $43
+	layout_patch wdabc, 0, $0a, 1, $44
+	layout_patch wdabc, 1, $0a, 3, $45
+	layout_patch wdabc, 2, 9, 8, $46
+
+unk_01e_4cad:
+	db 2
+	layout_patch wdabb, 5, 0, 1, $19
+	layout_patch wdabb, 6, 1, 1, $1a
+
+unk_01e_4cba:
+	db 1
+	layout_patch wdabb, 4, 2, 4, $14
+
+unk_01e_4cc1:
+	db 1
+	layout_patch wdabb, 3, 5, 4, $15
+
+unk_01e_4cc8:
+	db 1
+	layout_patch wdabb, 2, 3, 2, $18
 
 unk_01e_4ccf:
-	dr $78ccf, $78d29
+	db 0
+	layout_patch 0, 0, 0, 0, 0
+
+unk_01e_4cd6:
+	db 5
+	layout_patch wdab9, 0, $0b, 3, $57
+	layout_patch wdab9, 1, 0, $0a, $58
+	layout_patch wdab9, 2, 2, $0a, $59
+	layout_patch wdab9, 3, 0, $0b, $5a
+	layout_patch wdab9, 4, 2, $0b, $5b
+
+unk_01e_4cf5:
+	db 1
+	layout_patch wdab9, 5, 2, 0, $16
+
+unk_01e_4cfc:
+	db 2
+	layout_patch wdab9, 6, 3, 6, $3e
+	layout_patch wdab9, 7, 8, 7, $3f
+
+unk_01e_4d09:
+	db 1
+	layout_patch wdaba, 0, 2, 0, $14
+
+unk_01e_4d10:
+	db 4
+	layout_patch wdaba, 1, 1, 0, $54
+	layout_patch wdaba, 2, $0b, 0, $55
+	layout_patch wdaba, 3, 0, 8, $56
+	layout_patch wdaba, 4, 5, 8, $57
 
 Pointers_01e_4d29:
+; appears to be category, index
 	dw unk_01e_4ccf
 	dw unk_01e_4ead
 	dw unk_01e_4eaf
@@ -234,261 +1798,259 @@ Pointers_01e_4d29:
 	dw unk_01e_4dad
 	dw unk_01e_4e65
 
-; TODO
-
 unk_01e_4d99:
-	dw $3a00
-	dw $4200
-	dw $3500
-	dw $1700
+	db $00, $3a
+	db $00, $42
+	db $00, $35
+	db $00, $17
 
 unk_01e_4da1:
-	dw $4300
-	dw $4700
+	db $00, $43
+	db $00, $47
 
 unk_01e_4da5:
-	dw $4900
+	db $00, $49
 
 unk_01e_4da7:
-	dw $4c00
+	db $00, $4c
 
 unk_01e_4da9:
-	dw $4f00
-	dw $5100
+	db $00, $4f
+	db $00, $51
 
 unk_01e_4dad:
-	dw $901
-	dw $5300
+	db $01, $09
+	db $00, $53
 
 unk_01e_4db1:
-	dw $2c00
-	dw $a01
-	dw $2e00
+	db $00, $2c
+	db $01, $0a
+	db $00, $2e
 
 unk_01e_4db7:
-	dw $2400
-	dw $2600
+	db $00, $24
+	db $00, $26
 
 unk_01e_4dbb:
-	dw $3e00
+	db $00, $3e
 
 unk_01e_4dbd:
-	dw $c00
-	dw $800
-	dw $300
+	db $00, $0c
+	db $00, $08
+	db $00, $03
 
 unk_01e_4dc3:
-	dw $3b00
-	dw $3000
-	dw $2300
+	db $00, $3b
+	db $00, $30
+	db $00, $23
 
 unk_01e_4dc9:
-	dw $2400
-	dw $b00
-	dw $2200
-	dw $5400
-	dw $2700
+	db $00, $24
+	db $00, $0b
+	db $00, $22
+	db $00, $54
+	db $00, $27
 
 unk_01e_4dd3:
-	dw $4100
+	db $00, $41
 
 unk_01e_4dd5:
-	dw $700
-	dw $4500
+	db $00, $07
+	db $00, $45
 
 unk_01e_4dd9:
-	dw $1d00
+	db $00, $1d
 
 unk_01e_4ddb:
-	dw $4d00
-	dw $2002
-	dw $2400
-	dw $3d00
+	db $00, $4d
+	db $02, $20
+	db $00, $24
+	db $00, $3d
 
 unk_01e_4de3:
-	dw $1401
-	dw $2500
-	dw $d01
-	dw $2600
+	db $01, $14
+	db $00, $25
+	db $01, $0d
+	db $00, $26
 
 unk_01e_4deb:
-	dw $800
-	dw $d00
-	dw $200
-	dw $3600
+	db $00, $08
+	db $00, $0d
+	db $00, $02
+	db $00, $36
 
 unk_01e_4df3:
-	dw $1100
-	dw $2800
+	db $00, $11
+	db $00, $28
 
 unk_01e_4df7:
-	dw $f01
-	dw $4b00
+	db $01, $0f
+	db $00, $4b
 
 unk_01e_4dfb:
-	dw $c00
+	db $00, $0c
 
 unk_01e_4dfd:
-	dw $2a00
-	dw $4a00
-	dw $3800
+	db $00, $2a
+	db $00, $4a
+	db $00, $38
 
 unk_01e_4e03:
-	dw $800
-	dw $1400
+	db $00, $08
+	db $00, $14
 
 unk_01e_4e07:
-	dw $2700
-	dw $300
+	db $00, $27
+	db $00, $03
 
 unk_01e_4e0b:
-	dw $4400
-	dw $5800
+	db $00, $44
+	db $00, $58
 
 unk_01e_4e0f:
-	dw $2700
-	dw $1d00
-	dw $1600
+	db $00, $27
+	db $00, $1d
+	db $00, $16
 
 unk_01e_4e15:
-	dw $1c00
-	dw $3900
-	dw $1300
+	db $00, $1c
+	db $00, $39
+	db $00, $13
 
 unk_01e_4e1b:
-	dw $700
-	dw $1b00
-	dw $3600
-	dw $3200
+	db $00, $07
+	db $00, $1b
+	db $00, $36
+	db $00, $32
 
 unk_01e_4e23:
-	dw $2300
-	dw $1200
-	dw $2200
+	db $00, $23
+	db $00, $12
+	db $00, $22
 
 unk_01e_4e29:
-	dw $1401
-	dw $1501
+	db $01, $14
+	db $01, $15
 
 unk_01e_4e2d:
-	dw $600
-	dw $200
+	db $00, $06
+	db $00, $02
 
 unk_01e_4e31:
-	dw $1d00
-	dw $1100
-	dw $2300
+	db $00, $1d
+	db $00, $11
+	db $00, $23
 
 unk_01e_4e37:
-	dw $600
-	dw $c01
-	dw $1b00
-	dw $1c00
-	dw $c00
-	dw $1301
-	dw $1101
+	db $00, $06
+	db $01, $0c
+	db $00, $1b
+	db $00, $1c
+	db $00, $0c
+	db $01, $13
+	db $01, $11
 
 unk_01e_4e45:
-	dw $1800
-	dw $2300
-	dw $3100
+	db $00, $18
+	db $00, $23
+	db $00, $31
 
 unk_01e_4e4b:
-	dw $2700
-	dw $300
-	dw $2400
-	dw $1300
-	dw $101
-	dw $300
+	db $00, $27
+	db $00, $03
+	db $00, $24
+	db $00, $13
+	db $01, $01
+	db $00, $03
 
 unk_01e_4e57:
-	dw $2700
-	dw $b00
-	dw $400
+	db $00, $27
+	db $00, $0b
+	db $00, $04
 
 unk_01e_4e5d:
-	dw $c00
-	dw $2400
-	dw $100
-	dw $500
+	db $00, $0c
+	db $00, $24
+	db $00, $01
+	db $00, $05
 
 unk_01e_4e65:
-	dw $c00
-	dw $2400
-	dw $100
-	dw $500
+	db $00, $0c
+	db $00, $24
+	db $00, $01
+	db $00, $05
 
 unk_01e_4e6d:
-	dw $200
-	dw $500
-	dw $2100
+	db $00, $02
+	db $00, $05
+	db $00, $21
 
 unk_01e_4e73:
-	dw $4b00
-	dw $801
-	dw $700
+	db $00, $4b
+	db $01, $08
+	db $00, $07
 
 unk_01e_4e79:
-	dw $1100
-	dw $1200
-	dw $2700
-	dw $900
-	dw $c00
+	db $00, $11
+	db $00, $12
+	db $00, $27
+	db $00, $09
+	db $00, $0c
 
 unk_01e_4e83:
-	dw $400
-	dw $5900
-	dw $2700
-	dw $1100
+	db $00, $04
+	db $00, $59
+	db $00, $27
+	db $00, $11
 
 unk_01e_4e8b:
-	dw $a00
-	dw $600
+	db $00, $0a
+	db $00, $06
 
 unk_01e_4e8f:
-	dw $1200
-	dw $3f00
-	dw $4300
-	dw $2600
+	db $00, $12
+	db $00, $3f
+	db $00, $43
+	db $00, $26
 
 unk_01e_4e97:
-	dw $5500
+	db $00, $55
 
 unk_01e_4e99:
-	dw $2700
-	dw $2900
+	db $00, $27
+	db $00, $29
 
 unk_01e_4e9d:
-	dw $1200
+	db $00, $12
 
 unk_01e_4e9f:
-	dw $1100
+	db $00, $11
 
 unk_01e_4ea1:
-	dw $600
+	db $00, $06
 
 unk_01e_4ea3:
-	dw $2700
-	dw $3400
-	dw $100
-	dw $c00
-	dw $2600
+	db $00, $27
+	db $00, $34
+	db $00, $01
+	db $00, $0c
+	db $00, $26
 
 unk_01e_4ead:
-	dw $1300
+	db $00, $13
 
 unk_01e_4eaf:
-	dw $300
-	dw $600
+	db $00, $03
+	db $00, $06
 
 unk_01e_4eb3:
-	dw $a00
-	
+	db $00, $0a
+
 unk_01e_4eb5:
-	dw $202
-	dw $2400
-	dw $1e00
-	dw $2f00
+	db $02, $02
+	db $00, $24
+	db $00, $1e
+	db $00, $2f
 
 Pointers_01e_4ebd:
 	dw ItemNames
@@ -747,7 +2309,13 @@ PointerTable_01e_59cc:
 INCLUDE "data/text/bank1e_misc2.asm"
 
 text_01e_buffer2:
-	dr $79c3f, $7ade3
+	dr $79c3f, $7a14f
+
+unk_01e_614f:
+	dr $7a14f, $7a567
+
+Pointers_01e_6567:
+	dr $7a567, $7ade3
 
 Func_01e_6de3::
 	ld a, l

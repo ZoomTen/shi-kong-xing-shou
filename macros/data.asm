@@ -122,6 +122,16 @@ MACRO dbaw
 	dw BANK(\1), \1
 ENDM
 
+MACRO layout_patch
+; \1 flag byte address
+; \2 bit to test in that flag byte
+; \3 column in wMapLayout
+; \4 row in wMapLayout
+; \5 block value to write
+	dw \1
+	db \2, \3, \4, \5
+ENDM
+
 MACRO dbaw2
 	dw BANK(\1), 0, \1
 ENDM

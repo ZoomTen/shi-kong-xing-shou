@@ -122,7 +122,7 @@ Func_01f_409a:
 	db $ff, $7f, $dc, $01, $0f, $15, $00, $00
 
 Func_01f_40b7:
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	cp 3
 	jr nz, .asm_40ca
 
@@ -141,7 +141,7 @@ Func_01f_40b7:
 	ld c, l
 	ld b, h
 	ld de, FacePalettePointers
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -165,7 +165,7 @@ Func_01f_40ea:
 	ldh [hVRAMCopyHeight], a
 	call ClearBGMapBox_VRAM1
 	ld de, .unk_4119
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
 	add hl, hl

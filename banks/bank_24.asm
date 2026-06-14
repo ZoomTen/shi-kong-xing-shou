@@ -113,15 +113,15 @@ StartMenu_Input:
 ; Pressed down
 	ld a, SFX_11
 	call PlaySound
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	inc a
-	ld [wd08e], a
+	ld [wSelectedOption], a
 	cp 5
 	jr c, .asm_6b1c
 
 ; reached bottom
 	xor a
-	ld [wd08e], a
+	ld [wSelectedOption], a
 	jr .asm_6b1c
 
 .check_up
@@ -132,20 +132,20 @@ StartMenu_Input:
 ; Pressed up
 	ld a, SFX_11
 	call PlaySound
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	and a
 	jr z, .reached_top
 
 	dec a
-	ld [wd08e], a
+	ld [wSelectedOption], a
 	jr .asm_6b1c
 
 .reached_top
 	ld a, 4
-	ld [wd08e], a
+	ld [wSelectedOption], a
 
 .asm_6b1c
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	add a
 	add a
 	add a
@@ -160,7 +160,7 @@ StartMenu_Input:
 	jr z, .check_exit
 
 ; Pressed A
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	and a
 	jr z, .asm_6b3c
 	cp 1
@@ -173,7 +173,7 @@ StartMenu_Input:
 	jr z, .check_exit
 
 .asm_6b42
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	cp 2
 	jr nz, .asm_6b57
 
@@ -196,7 +196,7 @@ StartMenu_Input:
 	ld [wd08a], a
 
 	ld de, unk_024_6b9c
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -205,7 +205,7 @@ StartMenu_Input:
 
 	xor a
 	ld [wd9d8], a
-	ld [wd08d], a
+	ld [wSelectedPage], a
 	jr .ret
 
 .check_exit

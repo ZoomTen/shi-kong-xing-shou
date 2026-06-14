@@ -85,9 +85,9 @@ asm_00a_4593::
 	xor a
 	call ByteFillVRAM
 	ld a, $61
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $6d
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	ld a, [wEnemyMonSpecies]
 	ld [wd9d8], a
 	farcall asm_026_4616

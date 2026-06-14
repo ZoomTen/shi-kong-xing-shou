@@ -2,11 +2,11 @@ Func_026_4000::
 	dr $98000, $98616
 
 asm_026_4616::
-	ld a, [wd08b]
+	ld a, [wMenuTextX]
 	swap a
 	and $f0
 	ld l, a
-	ld a, [wd08b]
+	ld a, [wMenuTextX]
 	swap a
 	and $f
 	or $90
@@ -55,10 +55,10 @@ asm_026_4652:
 	ld d, a
 	call Func_0b46
 	ld a, [wd08a]
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	call Func_0b46
 	ld a, [wd08a]
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
 	push de
@@ -85,9 +85,9 @@ asm_026_4680:
 	add a
 	add d
 	add $80
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $e0
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText
@@ -156,9 +156,9 @@ asm_026_46c5:
 	add a
 	add d
 	add $a8
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $e8
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText

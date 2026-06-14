@@ -512,7 +512,7 @@ Func_02b_4374:
 	xor a
 	ld [wd9d7], a
 	ld a, [wd983]
-	ld [wd08e], a
+	ld [wSelectedOption], a
 	farcall asm_025_410d
 	ld a, [hFFCB]
 	ld [wd99a], a
@@ -905,9 +905,9 @@ asm_02b_6a9f:
 Func_02b_6ad1:
 	ld hl, wd86a
 	ld a, $55
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $61
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText

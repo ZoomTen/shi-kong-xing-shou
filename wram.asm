@@ -197,11 +197,11 @@ wd087:: ds 1
 
 wd088:: ds 2
 wd08a:: ds 1
-wd08b:: ds 1
-wd08c:: ds 1
+wMenuTextX:: ds 1
+wMenuTextEndX:: ds 1
 
-wd08d:: ds 1 ; selected page
-wd08e:: ds 1 ; selected option
+wSelectedPage:: ds 1
+wSelectedOption:: ds 1
 wLoadedROMBank:: ds 1
 wd090:: ds 1
 wd091:: ds 1
@@ -298,13 +298,18 @@ wd1f1:: ds 1
 wd1f2:: ds 2
 wd1f4:: ds 1
 
-	ds 4
+wd1f5:: ds 1
+wd1f6:: ds 1
+wd1f7:: ds 1
+	ds 1
 
 wd1f9:: ds 1
 wd1fa:: ds 1
 wd1fb:: ds 1
 wd1fc:: ds 1
-	ds 3
+wd1fd:: ds 1
+wd1fe:: ds 1
+wd1ff:: ds 1
 
 wPartyMons::
 wPartyMon1:: party_struct wPartyMon1
@@ -543,7 +548,8 @@ wd9ee:: ds 1
 wd9ef:: ds 1
 
 wTempBank:: ds 1
-wd9f1:: ds 2
+wd9f1:: ds 1
+wd9f2:: ds 1
 wd9f3:: ds 1
 wd9f4:: ds 1
 wd9f5:: ds 1
@@ -561,7 +567,26 @@ wda00:: ds $a0
 
 ; shop menu is at $daa4
 wEventFlags:: ds $19
-wdab9:: ds $15
+wdab9:: ds 1
+wdaba:: ds 1
+wdabb:: ds 1
+wdabc:: ds 1
+wdabd:: ds 1
+wdabe:: ds 1
+wdabf:: ds 1
+wdac0:: ds 1
+wdac1:: ds 1
+wdac2:: ds 1
+wdac3:: ds 1
+wdac4:: ds 1
+wdac5:: ds 1
+wdac6:: ds 1
+wdac7:: ds 1
+wdac8:: ds 1
+wdac9:: ds 1
+wdaca:: ds 1
+wdacb:: ds 1
+	ds 2
 
 wTextBGMapPointer:: ds 2
 wdad0:: ds $10

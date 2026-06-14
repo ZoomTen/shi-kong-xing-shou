@@ -242,7 +242,7 @@ Func_0834::
 	ret
 
 Func_0841::
-	homecall Func_01e_4194
+	homecall ApplyMapLayoutFlagPatches
 	ret
 
 Func_084e::

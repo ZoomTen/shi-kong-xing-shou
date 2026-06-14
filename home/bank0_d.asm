@@ -123,10 +123,10 @@ LoadMapGFX::
 NextLivePartyMon::
 	ld de, wdd00
 .asm_0faf
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	inc a
 	and $07
-	ld [wd08e], a
+	ld [wSelectedOption], a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -141,10 +141,10 @@ NextLivePartyMon::
 PrevLivePartyMon::
 	ld de, wdd00
 .asm_0fc7
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	dec a
 	and $07
-	ld [wd08e], a
+	ld [wSelectedOption], a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -157,7 +157,7 @@ PrevLivePartyMon::
 	jr .asm_0fc7
 
 GetPartyMonPtr::
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld hl, wPartyMons
 	ld de, $16
 	and a
@@ -722,7 +722,7 @@ Func_12e6::
 	ld bc, wdb20
 	ld a, [wdc9e]
 	ld l, a
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	add l
 	and a
 	ret z

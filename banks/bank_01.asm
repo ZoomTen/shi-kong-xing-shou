@@ -311,7 +311,7 @@ Hideout_MapAttributes:
 	dw Hideout_Collision
 
 Hideout_Layout:
-	db 14
+	db 14 ; wMapType / index into Pointers_01e_4d29
 	INCBIN "data/maps/layouts/Hideout.bin"
 
 Hideout_Metatiles:

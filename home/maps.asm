@@ -788,21 +788,21 @@ ENDR
 
 LoadMap::
 	call LoadMapLayout
-	call Func_24d1
+	call SetupMapLayoutFlagPatches
 	call SetupCrystalMines
 	call GetMapLayoutPointer
 	call BuildBlockmap
 	call LoadMapTileAttrs
 	ret
 
-Func_24d1::
+SetupMapLayoutFlagPatches::
 	ld a, [wMapType]
 	and a
 	ret z
 	cp 5
 	ret z
 
-	homecall Func_01e_41bf
+	homecall ApplyMapLayoutFlagPatchesInit
 	ret
 
 SetupCrystalMines::
@@ -838,7 +838,7 @@ SetupCrystalMines::
 	ret
 
 .do_special
-	homecall Func_01e_4194
+	homecall ApplyMapLayoutFlagPatches
 	ret
 
 GetMapLayoutPointer::
