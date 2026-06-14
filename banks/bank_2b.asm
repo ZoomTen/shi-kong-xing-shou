@@ -1,5 +1,5 @@
 Func_02b_4000:
-	ld bc, $d200
+	ld bc, wPartyMons
 
 .loop
 	ld hl, 0
@@ -52,7 +52,7 @@ Func_02b_402b:
 	ld h, a
 	ld de, 3
 	add hl, de
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [hld]
 	ld [de], a
 	inc de
@@ -74,7 +74,7 @@ Func_02b_402b:
 	ld hl, $9945
 	ld bc, $0103
 	call Func_113f
-	ld de, $d876
+	ld de, wd876
 	inc de
 	ld hl, $984b
 	ld bc, $0102
@@ -654,7 +654,7 @@ Func_02b_4454:
 	call AddExpToTotal
 	xor a
 	ld [wSelectedOption], a
-	ld bc, $d200
+	ld bc, wPartyMons
 
 Func_02b_44c3:
 	ld hl, 1
@@ -669,7 +669,7 @@ Func_02b_44c3:
 	jr z, Func_02b_4504
 	and $41
 	ld [hl], a
-	ld de, $d1a0
+	ld de, wd1a0
 	ld a, $b
 	ld l, a
 	add a
@@ -756,8 +756,10 @@ Func_02b_453a:
 	ld [wd9cf], a
 	ret
 
+; TODO: dest is wMoney (clamped to 99999, fed from PriceOptions),
+; but caller plays BGM_EXP_JINGLE. money or exp?
 AddExpToTotal:
-	ld hl, $d0d9
+	ld hl, wMoney + 2
 	ld a, [wd9cc]
 	add [hl]
 	ld [hld], a
@@ -767,20 +769,20 @@ AddExpToTotal:
 	ld a, 0
 	adc [hl]
 	ld [hld], a
-	call Func_02b_4599
+	call ClampMoney
 	ret
 
 AddMonExp:
-	ld a, [wd981]
+	ld a, [wActiveMonPtr]
 	ld l, a
-	ld a, [wd982]
+	ld a, [wActiveMonPtr + 1]
 	ld h, a
 	ld bc, 4
 	add hl, bc
-	ld a, [wd9ca]
+	ld a, [wExpGained]
 	add [hl]
 	ld [hli], a
-	ld a, [wd9cb]
+	ld a, [wExpGained + 1]
 	adc [hl]
 	ld [hli], a
 	ld a, 0
@@ -788,15 +790,15 @@ AddMonExp:
 	ld [hli], a
 	ret
 
-Func_02b_4599:
-	ld hl, $d0d7
+ClampMoney:
+	ld hl, wMoney
 	ld a, [hli]
 	cp 1
 	ret c
 	jr z, .check_mid
 
 .clamp
-	ld hl, $d0d7
+	ld hl, wMoney
 	ld [hl], 1
 	inc hl
 	ld [hl], $86
@@ -1085,7 +1087,7 @@ DrawLevelUpStats:
 	ld [wd9d7], a
 	call Func_114c
 	ldh a, [$cc]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	inc de
 	ldh a, [$cb]
@@ -1102,7 +1104,7 @@ DrawLevelUpStats:
 	ld [wd9d7], a
 	call Func_114c
 	ldh a, [$cc]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	inc de
 	ldh a, [$cb]
@@ -1119,7 +1121,7 @@ DrawLevelUpStats:
 	ld [wd9d7], a
 	call Func_114c
 	ldh a, [$cc]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	inc de
 	ldh a, [$cb]
@@ -1136,7 +1138,7 @@ DrawLevelUpStats:
 	ld [wd9d7], a
 	call Func_114c
 	ldh a, [$cc]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	inc de
 	ldh a, [$cb]
@@ -1153,7 +1155,7 @@ DrawLevelUpStats:
 	ld [wd9d7], a
 	call Func_114c
 	ldh a, [$cc]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	inc de
 	ldh a, [$cb]
@@ -1532,7 +1534,7 @@ Func_02b_4bb7:
 	xor a
 	ld [wd983], a
 	ld [wdb18], a
-	ld bc, $d200
+	ld bc, wPartyMons
 
 .scan_loop
 	ld a, c
@@ -1564,7 +1566,7 @@ Func_02b_4bb7:
 	ld [wd9bb], a
 	ld [wd9ba], a
 	ld [wd9ea], a
-	ld hl, $d978
+	ld hl, wd978
 	ld c, 4
 	xor a
 
@@ -1592,7 +1594,7 @@ Func_02b_4bb7:
 	ld a, [wd987]
 	inc a
 	ld [wd987], a
-	ld hl, $d876
+	ld hl, wd876
 	ld bc, $16
 
 .find_slot
@@ -1620,7 +1622,7 @@ Func_02b_4bb7:
 	ld [wd9bb], a
 	ld [wd9ba], a
 	ld [wd9ea], a
-	ld hl, $d97c
+	ld hl, wd97c
 	ld c, 4
 	xor a
 
@@ -1743,7 +1745,7 @@ Func_02b_4d55:
 	ret
 
 Func_02b_4d81:
-	ld hl, $d1a0
+	ld hl, wd1a0
 	ld c, $40
 	xor a
 
@@ -2199,7 +2201,7 @@ Func_02b_50a9:
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
-	ld de, $d9ba
+	ld de, wd9ba
 	ld a, [wd986]
 	ld l, a
 	ld h, 0
@@ -2262,7 +2264,7 @@ Func_02b_514b:
 	ld a, [wd991]
 	and 1
 	push af
-	ld de, $d996
+	ld de, wd996
 	ld a, [wd986]
 	ld l, a
 	ld h, 0
@@ -2276,7 +2278,7 @@ Func_02b_514b:
 	ld a, [hl]
 	res 5, a
 	ld [hl], a
-	ld de, $d996
+	ld de, wd996
 	ld a, [wd986]
 	ld l, a
 	ld h, 0
@@ -2316,7 +2318,7 @@ Func_02b_517d:
 
 BattleTurns_Jump_3:
 	call BattleAI_ChooseAction
-	ld de, $d9f5
+	ld de, wd9f5
 	ld a, [wd986]
 	ld l, a
 	ld h, 0
@@ -2345,7 +2347,7 @@ BattleTurns_Jump_3:
 	ret
 
 .status
-	ld de, $d996
+	ld de, wd996
 	ld a, [wd986]
 	ld l, a
 	ld h, 0
@@ -2355,7 +2357,7 @@ BattleTurns_Jump_3:
 	jr z, .check_swap
 	ld a, $23
 	ld [wd3ff], a
-	ld de, $d9e2
+	ld de, wd9e2
 	ld a, [wd986]
 	ld l, a
 	ld h, 0
@@ -2851,7 +2853,7 @@ Func_02b_5578:
 	ld a, [hBattleJumptableIndex]
 	cp 5
 	ret z
-	ld hl, $d986
+	ld hl, wd986
 	ld a, 1
 	sub [hl]
 	ld [hl], a
@@ -2964,7 +2966,7 @@ Func_02b_5651:
 
 Func_02b_565f:
 	call Func_02b_591e
-	ld hl, $d9c5
+	ld hl, wd9c5
 	ld a, [wd9c3]
 	cp [hl]
 	jr c, .compute
