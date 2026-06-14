@@ -1,4 +1,4 @@
-Music_Bgm6e_Ch1:
+Music_Junkyard_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
 	           $61, \ ; volume envelope
@@ -337,7 +337,7 @@ Music_Bgm6e_Ch1:
 	rest 1
 	repeat_loop 0 ;------
 
-Music_Bgm6e_Ch2:
+Music_Junkyard_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
 	           $a1, \ ; volume envelope
@@ -564,7 +564,7 @@ Music_Bgm6e_Ch2:
 	rest 1
 	repeat_loop 0 ;------
 
-Music_Bgm6e_Ch3:
+Music_Junkyard_Ch3:
 	sound_init 7, \ ; speed
 	           $2, $84, $80 ; unknown
 	stereo_panning STEREO_CENTER
@@ -906,7 +906,7 @@ Music_Bgm6e_Ch3:
 	rest 1
 	repeat_loop 0 ;------
 
-Music_Bgm6e_Ch4:
+Music_Junkyard_Ch4:
 	sound_init 7 ; speed
 	speed 7
 	mark_loop ;------

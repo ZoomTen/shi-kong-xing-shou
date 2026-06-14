@@ -116,12 +116,12 @@ DEF BGM_START EQU const_value
 	const BGM_EXP_JINGLE ; $6b
 	const BGM_MONSTER_FAINTED ; $6c
 	const BGM_INTRO ; $6d
-	const BGM_6e ; $6e
+	const BGM_JUNKYARD ; $6e
 	const BGM_TITLE ; $6f
-	const BGM_70 ; $70
-	const BGM_71 ; $71
-	const BGM_72 ; $72
-	const BGM_73 ; $73
+	const BGM_AIRPORT ; $70
+	const BGM_SHOP ; $71
+	const BGM_HEALING_CENTER ; $72
+	const BGM_BATTLE_TRANSITION ; $73
 	const BGM_74 ; $74
 	const BGM_75 ; $75 - duplicate of $74
 

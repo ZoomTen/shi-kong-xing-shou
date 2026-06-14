@@ -109,12 +109,12 @@ SoundEngine3_HeaderPointers:
 	dw 0
 	dw 0
 	dw Music_Intro
-	dw Music_Bgm6e
+	dw Music_Junkyard
 	dw Music_Title
-	dw Music_Bgm70
-	dw Music_Bgm71
-	dw Music_Bgm72
-	dw Music_Bgm73
+	dw Music_Airport
+	dw Music_Shop
+	dw Music_HealingCenter
+	dw Music_BattleTransition
 	dw Music_Bgm74
 	dw Music_Bgm74
 	dw 0
@@ -563,13 +563,13 @@ Music_Intro:
 	dw Music_Intro_Ch3
 	dw Music_Intro_Ch4
 
-Music_Bgm6e:
+Music_Junkyard:
 	db $f
 	db $0
-	dw Music_Bgm6e_Ch1
-	dw Music_Bgm6e_Ch2
-	dw Music_Bgm6e_Ch3
-	dw Music_Bgm6e_Ch4
+	dw Music_Junkyard_Ch1
+	dw Music_Junkyard_Ch2
+	dw Music_Junkyard_Ch3
+	dw Music_Junkyard_Ch4
 
 Music_Title:
 	db $f
@@ -579,37 +579,37 @@ Music_Title:
 	dw Music_Title_Ch3
 	dw Music_Title_Ch4
 
-Music_Bgm70:
+Music_Airport:
 	db $f
 	db $0
-	dw Music_Bgm70_Ch1
-	dw Music_Bgm70_Ch2
-	dw Music_Bgm70_Ch3
-	dw Music_Bgm70_Ch4
+	dw Music_Airport_Ch1
+	dw Music_Airport_Ch2
+	dw Music_Airport_Ch3
+	dw Music_Airport_Ch4
 
-Music_Bgm71:
+Music_Shop:
 	db $f
 	db $0
-	dw Music_Bgm71_Ch1
-	dw Music_Bgm71_Ch2
-	dw Music_Bgm71_Ch3
-	dw Music_Bgm71_Ch4
+	dw Music_Shop_Ch1
+	dw Music_Shop_Ch2
+	dw Music_Shop_Ch3
+	dw Music_Shop_Ch4
 
-Music_Bgm72:
+Music_HealingCenter:
 	db $f
 	db $0
-	dw Music_Bgm72_Ch1
-	dw Music_Bgm72_Ch2
-	dw Music_Bgm72_Ch3
-	dw Music_Bgm72_Ch4
+	dw Music_HealingCenter_Ch1
+	dw Music_HealingCenter_Ch2
+	dw Music_HealingCenter_Ch3
+	dw Music_HealingCenter_Ch4
 
-Music_Bgm73:
+Music_BattleTransition:
 	db $f
 	db $0
-	dw Music_Bgm73_Ch1
-	dw Music_Bgm73_Ch2
-	dw Music_Bgm73_Ch3
-	dw Music_Bgm73_Ch4
+	dw Music_BattleTransition_Ch1
+	dw Music_BattleTransition_Ch2
+	dw Music_BattleTransition_Ch3
+	dw Music_BattleTransition_Ch4
 
 Music_Bgm74:
 	db $f

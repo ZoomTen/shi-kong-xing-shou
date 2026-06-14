@@ -1,4 +1,4 @@
-Music_Bgm70_Ch1:
+Music_Airport_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
 	           $c1, \ ; volume envelope
@@ -99,7 +99,7 @@ Music_Bgm70_Ch1:
 	rest 1
 	repeat_loop 0 ;------
 
-Music_Bgm70_Ch2:
+Music_Airport_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
 	           $c1, \ ; volume envelope
@@ -190,7 +190,7 @@ Music_Bgm70_Ch2:
 	rest 1
 	repeat_loop2 0 ;------
 
-Music_Bgm70_Ch3:
+Music_Airport_Ch3:
 	sound_init 7, \ ; speed
 	           $5, $86, $b0 ; unknown
 	stereo_panning $4
@@ -296,7 +296,7 @@ Music_Bgm70_Ch3:
 	rest 1
 	repeat_loop 0 ;------
 
-Music_Bgm70_Ch4:
+Music_Airport_Ch4:
 	sound_init 7 ; speed
 	speed 6
 	mark_loop ;------

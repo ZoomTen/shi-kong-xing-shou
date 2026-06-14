@@ -1,4 +1,4 @@
-Music_Bgm73_Ch1:
+Music_BattleTransition_Ch1:
 	sound_init 1, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
 	           $c1, \ ; volume envelope
@@ -83,7 +83,7 @@ Music_Bgm73_Ch1:
 	note G_, 1
 	sound_end
 
-Music_Bgm73_Ch2:
+Music_BattleTransition_Ch2:
 	sound_init 1, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
 	           $b1, \ ; volume envelope
@@ -167,7 +167,7 @@ Music_Bgm73_Ch2:
 	note G_, 1
 	sound_end
 
-Music_Bgm73_Ch3:
+Music_BattleTransition_Ch3:
 	sound_init 1, \ ; speed
 	           $2, $84, $80 ; unknown
 	stereo_panning $4
@@ -268,7 +268,7 @@ Music_Bgm73_Ch3:
 	note G_, 1
 	sound_end
 
-Music_Bgm73_Ch4:
+Music_BattleTransition_Ch4:
 	sound_init 6 ; speed
 	speed 6
 	mark_loop ;------

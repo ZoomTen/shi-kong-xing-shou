@@ -1,4 +1,4 @@
-Music_Bgm72_Ch1:
+Music_HealingCenter_Ch1:
 	sound_init 9, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
 	           $c1, \ ; volume envelope
@@ -210,7 +210,7 @@ Music_Bgm72_Ch1:
 	note D#, 1
 	repeat_loop 0 ;------
 
-Music_Bgm72_Ch2:
+Music_HealingCenter_Ch2:
 	sound_init 9, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
 	           $c1, \ ; volume envelope
@@ -278,7 +278,7 @@ Music_Bgm72_Ch2:
 	rest 2
 	repeat_loop2 0 ;------
 
-Music_Bgm72_Ch3:
+Music_HealingCenter_Ch3:
 	sound_init 9, \ ; speed
 	           $5, $86, $b0 ; unknown
 	stereo_panning $4
@@ -353,7 +353,7 @@ Music_Bgm72_Ch3:
 	rest 1
 	repeat_loop 0 ;------
 
-Music_Bgm72_Ch4:
+Music_HealingCenter_Ch4:
 	sound_init 9 ; speed
 	speed 8
 	mark_loop ;------
