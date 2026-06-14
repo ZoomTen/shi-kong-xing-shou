@@ -1659,7 +1659,7 @@ Script_35:
 	dr $2ccc5, $2ccde
 
 Script_36:
-	ld a, BGM_59
+	ld a, BGM_TOWN1
 	call PlaySound
 	farcall Func_039_4892
 	xor a

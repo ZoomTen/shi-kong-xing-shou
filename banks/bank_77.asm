@@ -67,7 +67,7 @@ Intro_VastFame::
 Intro:
 	call ClearBGMap0
 
-	ld a, BGM_6d
+	ld a, BGM_INTRO
 	call PlaySound
 
 	ld hl, vBGMap0
@@ -148,7 +148,7 @@ Intro_CharacterCastScreen:
 	call Intro_ClearScreenState
 	call Intro_ClearStarObjects
 
-	ld a, BGM_6d
+	ld a, BGM_INTRO
 	call PlaySound
 
 	xor a
@@ -269,7 +269,7 @@ Intro_CharacterCastScreen:
 TitleScreen:
 	call ClearBGMap0
 
-	ld a, BGM_6f
+	ld a, BGM_TITLE
 	call PlaySound
 
 	xor a

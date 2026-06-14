@@ -95,29 +95,31 @@ DEF BGM_START EQU const_value
 	const BGM_57 ; $57
 	const BGM_58 ; $58
 
-	const BGM_59 ; $59
-	const BGM_5a ; $5a
-	const BGM_5b ; $5b
-	const BGM_5c ; $5c
-	const BGM_5d ; $5d
-	const BGM_5e ; $5e
-	const BGM_5f ; $5f
-	const BGM_60 ; $60
-	const BGM_61 ; $61
-	const BGM_62 ; $62
-	const BGM_63 ; $63
-	const BGM_64 ; $64
-	const BGM_65 ; $65
-	const BGM_66 ; $66
-	const BGM_67 ; $67
-	const BGM_68 ; $68
-	const BGM_69 ; $69
-	const BGM_6a ; $6a
-	const BGM_6b ; $6b
-	const BGM_6c ; $6c
-	const BGM_6d ; $6d
+	const BGM_TOWN1 ; $59
+	const BGM_BATTLE1 ; $5a
+	const BGM_TROUBLE ; $5b
+	const BGM_SHIP ; $5c
+	const BGM_FOREST ; $5d
+	const BGM_TOWN3 ; $5e
+	const BGM_BATTLE2 ; $5f
+	const BGM_TOWN4 ; $60
+	const BGM_BATTLE3 ; $61
+	const BGM_BATTLE4 ; $62
+	const BGM_ROUTES1 ; $63
+	const BGM_STARGAZING ; $64
+	const BGM_ACADEMY ; $65
+	const BGM_UNSETTLING_PLACE ; $66
+	const BGM_TOWN2 ; $67
+	const BGM_RACING ; $68
+	const BGM_METEOR ; $69
+	const BGM_LEVEL_UP_JINGLE ; $6a
+	const BGM_EXP_JINGLE ; $6b
+	const BGM_MONSTER_FAINTED ; $6c
+; $6d to $75 are handled by a third sound engine in bank $1d,
+; which is not yet disassembled.
+	const BGM_INTRO ; $6d
 	const BGM_6e ; $6e
-	const BGM_6f ; $6f
+	const BGM_TITLE ; $6f
 	const BGM_70 ; $70
 	const BGM_71 ; $71
 	const BGM_72 ; $72

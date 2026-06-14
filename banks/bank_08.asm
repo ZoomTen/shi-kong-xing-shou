@@ -587,7 +587,7 @@ MeteorCutscene_ClearSpriteBuffer:
 	ret
 
 MeteorCutscene::
-	ld a, BGM_69
+	ld a, BGM_METEOR
 	call PlaySound
 
 	xor a
