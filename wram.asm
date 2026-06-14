@@ -195,7 +195,8 @@ wTextDelayFrames:: ds 1
 wd086:: ds 1
 wd087:: ds 1
 
-wd088:: ds 2
+wd088:: ds 1
+wd089:: ds 1
 wd08a:: ds 1
 wMenuTextX:: ds 1
 wMenuTextEndX:: ds 1
@@ -322,7 +323,10 @@ wPartyMon6:: party_struct wPartyMon6
 wd284:: ds $7c
 
 ; Items (ID, Quantity)
-wd300:: ds $f4
+wd300:: ds $f0
+wd3f0:: ds 1
+wd3f1:: ds 1
+	ds 2
 
 wd3f4:: ds 1
 
@@ -468,16 +472,19 @@ wd93c:: ds $3c
 wd978:: ds 4
 wd97c:: ds 5
 
-wd981:: ds 2
+wd981:: ds 1
+wd982:: ds 1
 wd983:: ds 1
-wd984:: ds 2
+wd984:: ds 1
+wd985:: ds 1
 wd986:: ds 1
 wd987:: ds 1
 wd988:: ds 1
 wd989:: ds 1
 wd98a:: ds 1
 wd98b:: ds 1
-wd98c:: ds 3
+wd98c:: ds 2
+wd98e:: ds 1
 wd98f:: ds 1
 wd990:: ds 1
 wd991:: ds 2
@@ -494,9 +501,12 @@ wd99c:: ds $f
 
 wd9ab:: ds 1
 wd9ac:: ds 1
-wd9ad:: ds 2
+wd9ad:: ds 1
+wd9ae:: ds 1
 
-wd9af:: ds 3
+wd9af:: ds 1
+wd9b0:: ds 1
+wd9b1:: ds 1
 
 wd9b2:: ds 1
 wd9b3:: ds 1
@@ -504,18 +514,29 @@ wd9b4:: ds 1
 wd9b5:: ds 1
 wd9b6:: ds 2
 wd9b8:: ds 1
-wd9b9:: ds 3
+wd9b9:: ds 1
+wd9ba:: ds 1
+wd9bb:: ds 1
 wd9bc:: ds 1
 wd9bd:: ds 1
-wd9be:: ds 1
+wBattleMusic:: ds 1
 wd9bf:: ds 1
 
 wCharacterTileSrc:: ds 2
-wd9c2:: ds 8
+wd9c2:: ds 1
+wd9c3:: ds 1
+wd9c4:: ds 1
+wd9c5:: ds 1
+	ds 1
+wd9c7:: ds 1
+wd9c8:: ds 1
+wd9c9:: ds 1
 wd9ca:: ds 1
 wd9cb:: ds 1
-wd9cc:: ds 2
-wd9ce:: ds 2
+wd9cc:: ds 1
+wd9cd:: ds 1
+wd9ce:: ds 1
+wd9cf:: ds 1
 
 wd9d0:: ds 2
 wd9d2:: ds 1
@@ -538,7 +559,8 @@ wd9e1:: ds 1
 wd9e2:: ds 1
 wd9e3:: ds 1
 wEnemyMonSpecies:: ds 1
-wd9e5:: ds 4
+wd9e5:: ds 3
+wd9e8:: ds 1
 wd9e9:: ds 1
 wd9ea:: ds 1
 wd9eb:: ds 1
@@ -566,7 +588,9 @@ wd9ff:: ds 1
 wda00:: ds $a0
 
 ; shop menu is at $daa4
-wEventFlags:: ds $19
+wEventFlags:: ds 3
+wdaa3:: ds 1
+	ds $15
 wdab9:: ds 1
 wdaba:: ds 1
 wdabb:: ds 1
@@ -611,7 +635,8 @@ wdc9f:: ds 1
 
 wdcad:: ds 1
 
-	ds 2
+	ds 1
+wdcaf:: ds 1
 
 wdcb0:: ds 1
 wdcb1:: ds 1

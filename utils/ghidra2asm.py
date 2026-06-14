@@ -4,17 +4,28 @@ import re
 import sys
 
 def processGhidra(line):
-	
+
+	# Grab the raw instruction bytes (between the address and the mnemonic)
+	# so we can recover immediates Ghidra mislabels as "offset SYMBOL".
+	raw_bytes = re.match('\s*\w+::[0-9a-f]+\s+((?:[0-9a-f]{2} )+)', line)
+	raw_bytes = raw_bytes.group(1).split() if raw_bytes else []
+
 	line = line[29:-1]
 	#print(line)
 	line = ', '.join(line.split(','))
-	
+
 	# delete ghidra cruft
-	line = re.sub('=>\w+', '', line)
+	line = re.sub('=>\w+(\+\d+)?', '', line)
 	line = re.sub('(=\s+.+|undefined .+|)$', '', line)
 	line = re.sub('XREF.+$', '', line)
 	line = re.sub('^\*+|^\*\s+(SUBROUTINE|FUNCTION)\s+\*', ';', line)
-	
+
+	# Ghidra sometimes renders a plain 8-bit immediate as "offset SYMBOL"
+	# (e.g. `LD (HL),offset DAT_d9e2` for the bytes `36 8d`). The symbol is
+	# bogus; recover the real immediate from the last raw byte instead.
+	if 'offset ' in line and raw_bytes:
+		line = re.sub('offset \w+(\+\d+)?', f'${raw_bytes[-1]}', line)
+
 	# address normalization
 	line = re.sub('offset (\w+)(&0xff)?', lambda re: f'{re.group(1)}', line)
 	line = line.replace('0x','$')

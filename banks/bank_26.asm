@@ -384,7 +384,10 @@ Func_026_4c89:
 	ret
 
 Func_026_4cb6:
-	dr $98cb6, $98d47
+	dr $98cb6, $98d1b
+
+Func_026_4d1b:
+	dr $98d1b, $98d47
 
 Func_026_4d47:
 	dr $98d47, $98d73
