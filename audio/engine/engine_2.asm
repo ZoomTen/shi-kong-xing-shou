@@ -97,9 +97,9 @@ SoundEngine2_Load:
 	adc 0
 	ld h, a
 	pop af
-	ld a, [wd607]
+	ld a, [wSound2ChannelMask]
 	or [hl]
-	ld [wd607], a
+	ld [wSound2ChannelMask], a
 	ld h, d
 	ld l, e
 	ld a, [wCurrentSongID]
@@ -118,7 +118,9 @@ SoundEngine2_Load:
 	ld [hl], a
 	jr .loop2
 
-.asm_003_43e1
+; Alternate entry point: play the sound effect whose ID is in a, loading its
+; channels onto the noise/SFX slots (channel 5 onward) instead of channels 1-4.
+SoundEngine2_LoadSfx:
 	push bc
 	push de
 	ld [wCurrentSongID], a
@@ -144,7 +146,7 @@ SoundEngine2_Load:
 	ld a, 4
 	ld [wSoundChannelIndex], a
 	ld de, wd6be
-	jp .loop
+	jp SoundEngine2_Load.loop
 
 SoundEngine2_Fade:
 	ld a, 7
@@ -203,7 +205,7 @@ SoundEngine2_Play:
 	or [hl]
 	add hl, de
 	or [hl]
-	ld [wd60d], a
+	ld [wSound2ChannelsActive], a
 	ret
 
 SoundEngine2_UpdateChannels:
@@ -738,30 +740,34 @@ SoundEngine2_ReadMusic:
 	ld [hl], a
 	ret
 
+; Channel 4 "notes" are actually sound effect calls
 .channel4
+; Don't restart channel 7 if a drum of ID 6-11 is already sounding there.
 	ld a, [wChannel7]
 	cp 6
 	jr c, .noise_skip_retrig
 	cp $c
 	jr nc, .noise_skip_retrig
+; Point channel 7 at the drum sound-effect table and mark it active.
 	ld a, LOW(unk_003_4e6a)
 	ld [wChannel7Playhead], a
 	ld a, HIGH(unk_003_4e6a)
 	ld [wChannel7Playhead + 1], a
-	ld a, [wd607]
-	or $40
-	ld [wd607], a
+	ld a, [wSound2ChannelMask]
+	or 1 << CHAN7
+	ld [wSound2ChannelMask], a
 	ld a, 1
 	ld [wChannel7LengthCounter], a
 	ld [wChannel7], a
 	xor a
 	ld [wChannel7Field01], a
 .noise_skip_retrig
+; Trigger the sound effect selected by the note's high nibble (skip if rest).
 	ld a, [bc]
 	swap a
-	and $f
-	cp $c
-	call nz, SoundEngine2_Load.asm_003_43e1
+	and %1111
+	cp __
+	call nz, SoundEngine2_LoadSfx
 
 .set_length
 	ld a, [bc]
@@ -1313,7 +1319,7 @@ SoundEngine2_CommandProcessor:
 	ld b, a
 	pop af
 	ld a, [bc]
-	ld hl, wd607
+	ld hl, wSound2ChannelMask
 	and [hl]
 	ld [hl], a
 	ld a, [wSoundCurChannel]
@@ -1910,7 +1916,7 @@ SoundEngine2_ResetEngineVariables:
 	add hl, de
 	ld [hl], a
 	ld a, 0
-	ld [wd607], a
+	ld [wSound2ChannelMask], a
 	ld [wSound2FadeEnabled], a
 	ld [wSound2FadeTimer], a
 	ld a, $ff

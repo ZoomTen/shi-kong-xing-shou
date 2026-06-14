@@ -84,22 +84,22 @@ SoundEngine1_Load:
 ; Set default instrument parameters?
 	ld hl, CHANNEL_VIBRATO_TABLE_POINTER
 	add hl, de
-	ld a, $21    ; TODO
+	ld a, LOW(SoundEngine1_VibratoTables.vibrato1)
 	ld [hli], a
-	ld a, $50    ; TODO
+	ld a, HIGH(SoundEngine1_VibratoTables.vibrato1)
 	ld [hl], a
 	pop bc
 	ld a, [wSoundChannelIndex]
 	push af
-	add $ab    ; TODO
+	add LOW(SoundEngine1_ChannelMaskTable2)
 	ld l, a
-	ld a, $4a  ; TODO
+	ld a, HIGH(SoundEngine1_ChannelMaskTable2)
 	adc 0
 	ld h, a
 	pop af
-	ld a, [wSoundChannelMask]
+	ld a, [wSound1ChannelMask]
 	or [hl]
-	ld [wSoundChannelMask], a
+	ld [wSound1ChannelMask], a
 	ld h, d
 	ld l, e
 	ld a, [wCurrentSongID]
@@ -118,7 +118,9 @@ SoundEngine1_Load:
 	ld [hl], a
 	jr .loop2
 
-.asm_002_4443
+; Alternate entry point: play the sound effect whose ID is in a, loading its
+; channels onto the noise/SFX slots (channel 5 onward) instead of channels 1-4.
+SoundEngine1_LoadSfx:
 	push bc
 	push de
 	ld [wCurrentSongID], a
@@ -141,10 +143,10 @@ SoundEngine1_Load:
 	ld [wSoundPriority], a
 	ld b, h
 	ld c, l
-	ld a, 4
+	ld a, CHAN5
 	ld [wSoundChannelIndex], a
 	ld de, wChannel5
-	jp .loop
+	jp SoundEngine1_Load.loop
 
 SoundEngine1_Fade:
 	ld a, 7
@@ -203,7 +205,7 @@ SoundEngine1_Play:
 	or [hl]
 	add hl, de
 	or [hl]
-	ld [wd40d], a
+	ld [wSound1ChannelsActive], a
 	ret
 
 SoundEngine1_UpdateChannels:
@@ -629,9 +631,9 @@ SoundEngine1_ReadMusic:
 	add [hl]
 	push af
 	add a
-	add $0e     ; TODO
+	add LOW(SoundEngine1_NoteFrequencies)
 	ld c, a
-	ld a, $4e   ; TODO
+	ld a, HIGH(SoundEngine1_NoteFrequencies)
 	adc 0
 	ld b, a
 	pop af
@@ -738,30 +740,34 @@ SoundEngine1_ReadMusic:
 	ld [hl], a
 	ret
 
+; Channel 4 "notes" are actually sound effect calls
 .channel4
+; Don't restart channel 7 if a drum of ID 6-11 is already sounding there.
 	ld a, [wChannel7]
 	cp 6
 	jr c, .noise_skip_retrig
 	cp $c
 	jr nc, .noise_skip_retrig
-	ld a, $cc   ; TODO
+; Point channel 7 at the drum sound-effect table and mark it active.
+	ld a, LOW(unk_002_4ecc)
 	ld [wChannel7Playhead], a
-	ld a, $4e   ; TODO
+	ld a, HIGH(unk_002_4ecc)
 	ld [wChannel7Playhead + 1], a
-	ld a, [wSoundChannelMask]
-	or $40
-	ld [wSoundChannelMask], a
+	ld a, [wSound1ChannelMask]
+	or 1 << CHAN7
+	ld [wSound1ChannelMask], a
 	ld a, 1
 	ld [wChannel7LengthCounter], a
 	ld [wChannel7], a
 	xor a
 	ld [wChannel7Field01], a
 .noise_skip_retrig
+; Trigger the sound effect selected by the note's high nibble (skip if rest).
 	ld a, [bc]
 	swap a
-	and $f
-	cp $c
-	call nz, SoundEngine1_Load.asm_002_4443
+	and %1111
+	cp __
+	call nz, SoundEngine1_LoadSfx
 
 .set_length
 	ld a, [bc]
@@ -942,7 +948,7 @@ SoundEngine1_CommandProcessor:
 	dw .cmd_f1
 	dw .cmd_f2
 	dw .cmd_f3
-	dw $4df7     ; TODO
+	dw SoundEngine1_CommandF4
 	dw .cmd_f5
 	dw .cmd_f6
 	dw .cmd_f7
@@ -1030,9 +1036,9 @@ SoundEngine1_CommandProcessor:
 	push bc
 	push af
 	add a
-	add $01     ; TODO
+	add LOW(SoundEngine1_VibratoTables)
 	ld c, a
-	ld a, $50   ; TODO
+	ld a, HIGH(SoundEngine1_VibratoTables)
 	adc 0
 	ld b, a
 	pop af
@@ -1096,9 +1102,9 @@ SoundEngine1_CommandProcessor:
 	push bc
 	push af
 	add a
-	add $79     ; TODO
+	add LOW(SoundEngine1_InstrumentPointers)
 	ld c, a
-	ld a, $4f   ; TODO
+	ld a, HIGH(SoundEngine1_InstrumentPointers)
 	adc 0
 	ld b, a
 	pop af
@@ -1313,7 +1319,7 @@ SoundEngine1_CommandProcessor:
 	ld b, a
 	pop af
 	ld a, [bc]
-	ld hl, wSoundChannelMask
+	ld hl, wSound1ChannelMask
 	and [hl]
 	ld [hl], a
 	ld a, [wSoundCurChannel]
@@ -1537,7 +1543,7 @@ Func_002_4ab3:
 	and $dd
 	or [hl]
 	ld [bc], a
-	ld bc, wCh1DataCurrentSweep + 5 ; TODO
+	ld bc, wCh2DataCurrentDutyLength
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	ld a, [hl]
@@ -1771,9 +1777,9 @@ SoundEngine1_ApplyAudio:
 	ld [hl], a
 	push af
 	add a
-	add $7c    ; TODO
+	add LOW(SoundEngine1_Waveforms)
 	ld l, a
-	ld a, $50    ; TODO
+	ld a, HIGH(SoundEngine1_Waveforms)
 	adc 0
 	ld h, a
 
@@ -1910,7 +1916,7 @@ SoundEngine1_ResetEngineVariables:
 	add hl, de
 	ld [hl], a
 	ld a, 0
-	ld [wSoundChannelMask], a
+	ld [wSound1ChannelMask], a
 	ld [wSound1FadeEnabled], a
 	ld [wSound1FadeTimer], a
 	ld a, $ff
@@ -1997,4 +2003,26 @@ SoundEngine1_TurnOffChannels:
 .done:
 	ret
 
-	dr $8df7, $8ecc
+SoundEngine1_CommandF4:
+	inc bc
+	ld a, [bc]
+	push af
+	ld l, a
+	xor a
+	ld h, a
+	add hl, de
+	inc bc
+	ld a, [bc]
+	add [hl]
+	ld [hl], a
+	pop af
+	cp $11
+	jr z, .ptr_setup
+	jp SoundEngine1_CommandProcessor.cmd_f5
+
+.ptr_setup:
+	ld a, [hl]
+	jp SoundEngine1_CommandProcessor.cmd_ee_ptr_setup
+
+SoundEngine1_NoteFrequencies:
+INCLUDE "audio/notes.asm"

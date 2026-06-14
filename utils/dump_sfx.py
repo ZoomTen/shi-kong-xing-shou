@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# Decodes the bank 3 sound-effect channel streams.
+# Decodes a sound engine's sound-effect channel streams.
 #
-# The SFX header table (SoundEngine2_HeaderPointers) gives, for each effect,
+# The SFX header table (SoundEngineN_HeaderPointers) gives, for each effect,
 # a channel bitmask + priority followed by one `dw` per set bit. The bit
 # position selects the virtual channel slot; its hardware channel type
 # (1/2 = pulse, 3 = wave, 4 = noise) is (pos % 4) + 1 and determines how the
@@ -9,10 +9,15 @@
 # stream pointer's channel type, then disassemble every `dr` block using the
 # same command grammar as dump_music.py.
 #
-# Usage: dump_sfx.py headers.asm blocks.asm [blocks.asm ...]
+# SoundEngine1 (bank 2) and SoundEngine2 (bank 3) share an identical command
+# grammar, so the same decoder serves both; pass --bank to pick the ROM bank.
+#
+# Usage: dump_sfx.py [--bank N] headers.asm blocks.asm [blocks.asm ...]
 import re
 import sys
 from lib.gbtool import *
+
+BANK = 3
 
 KNOWN_DUTY = ["DUTY_12", "DUTY_25", "DUTY_50", "DUTY_75"]
 KNOWN_NOTES = ["C_", "C#", "D_", "D#", "E_", "F_", "F#", "G_", "G#", "A_", "A#", "B_"]
@@ -54,24 +59,33 @@ def header_channels(header_path):
 
 
 def parse_blocks(paths):
-	"""Read (label, gb_start, gb_end) for each dr block; db $ff -> singleton."""
+	"""Read (label, gb_start, gb_end) for each dr block; db $ff -> singleton.
+
+	Handles both layouts in use: `label: dr ...` on one line and a `label::`
+	on its own line followed by an indented `dr` / `db $ff`.
+	"""
 	blocks = []
 	for path in paths:
+		pending = None
 		for l in open(path):
-			m = re.match(r"(\w+):\s*dr\s*\$([0-9a-f]+),\s*\$([0-9a-f]+)", l)
+			m = re.match(r"(\w+):", l)
 			if m:
-				st = offset2addr(int(m.group(2), 16))[1]
-				en = offset2addr(int(m.group(3), 16))[1]
-				blocks.append((m.group(1), st, en))
+				pending = m.group(1)
+			m = re.search(r"dr\s*\$([0-9a-f]+),\s*\$([0-9a-f]+)", l)
+			if m and pending:
+				st = offset2addr(int(m.group(1), 16))[1]
+				en = offset2addr(int(m.group(2), 16))[1]
+				blocks.append((pending, st, en))
+				pending = None
 				continue
-			m = re.match(r"(\w+):\s*db\s*\$ff", l)
-			if m:
-				blocks.append((m.group(1), None, None))
+			if pending and re.search(r"db\s*\$ff\b", l):
+				blocks.append((pending, None, None))
+				pending = None
 	return blocks
 
 
 def label_for(addr):
-	return "unk_003_%04x" % addr
+	return "unk_%03x_%04x" % (BANK, addr)
 
 
 def decode_command(rom, channel):
@@ -163,10 +177,10 @@ def decode_command(rom, channel):
 		out.append("\tspeed %d" % get_number(rom, 1))
 	elif cmd == 0xf7:
 		call = get_number(rom, 2)
-		out.append("\tsound_call %s" % get_symbol(SYM, addr2offset(3, call)))
+		out.append("\tsound_call %s" % get_symbol(SYM, addr2offset(BANK, call)))
 	elif cmd == 0xf8:
 		call = get_number(rom, 2)
-		out.append("\tsound_call2 %s" % get_symbol(SYM, addr2offset(3, call)))
+		out.append("\tsound_call2 %s" % get_symbol(SYM, addr2offset(BANK, call)))
 	elif cmd == 0xf9:
 		out.append("\tsound_ret")
 		term = True
@@ -213,9 +227,9 @@ def trace(rom, entries, region_start, region_end):
 		if addr in seen_routine:
 			continue
 		seen_routine[addr] = channel
-		rom.seek(addr2offset(3, addr))
+		rom.seek(addr2offset(BANK, addr))
 		while True:
-			pos = 0x4000 + (rom.tell() - 3 * 0x4000)
+			pos = offset2addr(rom.tell())[1]
 			if pos >= region_end:
 				break
 			lines, call, term = decode_command(rom, channel)
@@ -230,25 +244,29 @@ def trace(rom, entries, region_start, region_end):
 	return cmd_lines, cmd_channel, entry_addrs
 
 
-def main():
-	global SYM
-	if len(sys.argv) < 3:
-		print("%s headers.asm blocks.asm [blocks.asm ...]" % sys.argv[0])
-		sys.exit(0)
+def contiguous_regions(blocks):
+	"""Group dr blocks into maximal contiguous (start, end) spans.
 
-	SYM = read_symbols(open("shi_kong_xing_shou.sym").read())["rom"]
-	channels = header_channels(sys.argv[1])
-	rom = open("baserom.gbc", "rb")
+	Non-adjacent blocks (e.g. sfx_1 and sfx_1b are separated by the waveform
+	table) become separate regions so the gap is never decoded.
+	"""
+	spans = []
+	for label, gs, ge in blocks:
+		if gs is None:
+			# a db $ff singleton occupies one byte
+			gs, ge = (spans[-1][1], spans[-1][1] + 1) if spans else (None, None)
+		if spans and gs == spans[-1][1]:
+			spans[-1][1] = ge
+		else:
+			spans.append([gs, ge])
+	return [(s, e) for s, e in spans]
 
-	blocks = parse_blocks(sys.argv[2:])
-	# region spans from the first block to the end of the last dr block
-	region_start = min(b[1] for b in blocks if b[1] is not None)
-	region_end = max(b[2] for b in blocks if b[2] is not None)
 
+def process_region(rom, channels, blocks, region_start, region_end):
 	# seed entries: each header-referenced stream with its channel type
 	entries = []
 	for label, gs, ge in blocks:
-		if gs is None:
+		if gs is None or not (region_start <= gs < region_end):
 			continue
 		entries.append((gs, channels.get(label, 1)))
 
@@ -260,7 +278,7 @@ def main():
 	addr = region_start
 	while addr < region_end:
 		if addr in cmd_lines:
-			rom.seek(addr2offset(3, addr))
+			rom.seek(addr2offset(BANK, addr))
 			before = rom.tell()
 			decode_command(rom, cmd_channel[addr])
 			addr += rom.tell() - before
@@ -282,11 +300,29 @@ def main():
 			raise ValueError("%04x: unreached byte in sfx region" % addr)
 		for line in cmd_lines[addr]:
 			print(line)
-		# advance past this command's bytes by re-decoding its length
-		rom.seek(addr2offset(3, addr))
+		rom.seek(addr2offset(BANK, addr))
 		before = rom.tell()
 		decode_command(rom, cmd_channel[addr])
 		addr += rom.tell() - before
+
+
+def main():
+	global SYM, BANK
+	args = sys.argv[1:]
+	if len(args) >= 2 and args[0] == "--bank":
+		BANK = int(args[1])
+		args = args[2:]
+	if len(args) < 2:
+		print("%s [--bank N] headers.asm blocks.asm [blocks.asm ...]" % sys.argv[0])
+		sys.exit(0)
+
+	SYM = read_symbols(open("shi_kong_xing_shou.sym").read())["rom"]
+	channels = header_channels(args[0])
+	rom = open("baserom.gbc", "rb")
+
+	blocks = parse_blocks(args[1:])
+	for region_start, region_end in contiguous_regions(blocks):
+		process_region(rom, channels, blocks, region_start, region_end)
 
 
 SYM = None

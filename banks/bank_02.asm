@@ -7,26 +7,33 @@ _SoundEngine1_Load:
 _SoundEngine1_Init:
 	jp SoundEngine1_Init
 
-_SoundEngine1_Unknown:
-	jp SoundEngine1_Unknown
+_PlayMapSound:
+	jp PlayMapSound
 
-unk_002_400c:
-	dr $800c, $8035
+MapSounds:
+	db $62, $7e, $64, $5e, $65, $61, $67, $5c
+	db $6c, $00, $00, $5d, $6c, $00, $ff, $00
+	db $5e, $00, $59, $63, $00, $63, $6c, $ff
+	db $6d, $7a, $63, $ff, $ff, $73, $ff, $63
+	db $ff, $ff, $ff, $ff
 
-SoundEngine1_Unknown:
+MapSounds_Map10:
+	db $78, $78, $79, $ff, $78
+
+PlayMapSound: ; is this even used??
 	ld hl, wd657
 	ld a, [hl]
 	ld [hl], 0
 	or a
 	ld d, $ff
-	jr nz, asm_002_404b
+	jr nz, .compute
 	ld d, $60
 	ld a, [wd70a]
 	cp $b
-	jr nz, asm_002_404b
+	jr nz, .compute
 	ld d, $7c
 
-asm_002_404b:
+.compute
 	ld a, d
 	ld [wdae0], a
 	ld hl, wd656
@@ -36,8 +43,8 @@ asm_002_404b:
 	ret nz
 	ld a, [wd70a]
 	cp $10
-	jp z, asm_002_407d
-	ld hl, $400b
+	jp z, .map10
+	ld hl, MapSounds - 1
 	add l
 	ld l, a
 	ld a, 0
@@ -45,7 +52,7 @@ asm_002_404b:
 	ld h, a
 	ld a, [hl]
 
-asm_002_4069:
+.play
 	cp $ff
 	ret z
 	push af
@@ -56,16 +63,16 @@ asm_002_4069:
 	call QueueSound
 	jp FlushSoundQueue
 
-asm_002_407d:
+.map10
 	ld a, [wd68a]
 	and 7
-	add $30
+	add LOW(MapSounds_Map10)
 	ld e, a
 	ld a, 0
-	adc $40
+	adc HIGH(MapSounds_Map10)
 	ld d, a
 	ld a, [de]
-	jr asm_002_4069
+	jr .play
 
 INCLUDE "audio/headers/headers_1.asm"
 

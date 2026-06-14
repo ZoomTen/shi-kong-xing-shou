@@ -345,13 +345,13 @@ wSoundCurChannel:: ds 1
 wCurrentSongID:: ds 1
 wSoundNumChannels:: ds 1
 wSoundPriority:: ds 1
-wSoundChannelMask:: ds 1
+wSound1ChannelMask:: ds 1
 wd408:: ds 1
 wd409:: ds 1
 wSound1LastWaveform:: ds 1
 wSound1FadeEnabled:: ds 1
 wSound1FadeTimer:: ds 1
-wd40d:: ds 1
+wSound1ChannelsActive:: ds 1
 ; music channels
 wChannels::
 wChannel1:: channel_struct wChannel1
@@ -413,13 +413,13 @@ wCh4DataLastEnvelope:: ds 1
 
 	ds $6b
 
-wd607:: ds 1
+wSound2ChannelMask:: ds 1
 wCh3TargetWaveform:: ds 1
 wCh7TargetWaveform:: ds 1
 wSound2LastWaveform:: ds 1
 wSound2FadeEnabled:: ds 1
 wSound2FadeTimer:: ds 1
-wd60d:: ds 1
+wSound2ChannelsActive:: ds 1
 	ds 8
 wd616:: ds $2c
 wd642:: ds $14
