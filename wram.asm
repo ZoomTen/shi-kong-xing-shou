@@ -472,6 +472,7 @@ wd93c:: ds $3c
 wd978:: ds 4
 wd97c:: ds 5
 
+wActiveMonPtr::
 wd981:: ds 1
 wd982:: ds 1
 wd983:: ds 1
@@ -531,6 +532,7 @@ wd9c5:: ds 1
 wd9c7:: ds 1
 wd9c8:: ds 1
 wd9c9:: ds 1
+wExpGained::
 wd9ca:: ds 1
 wd9cb:: ds 1
 wd9cc:: ds 1
