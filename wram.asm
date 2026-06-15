@@ -540,7 +540,8 @@ wd9cd:: ds 1
 wd9ce:: ds 1
 wd9cf:: ds 1
 
-wd9d0:: ds 2
+wd9d0:: ds 1
+wd9d1:: ds 1
 wd9d2:: ds 1
 wd9d3:: ds 1
 wd9d4:: ds 2
