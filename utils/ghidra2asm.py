@@ -8,14 +8,24 @@ def processGhidra(line):
 	# Grab the raw instruction bytes (between the address and the mnemonic)
 	# so we can recover immediates Ghidra mislabels as "offset SYMBOL".
 	raw_bytes = re.match('\s*\w+::[0-9a-f]+\s+((?:[0-9a-f]{2} )+)', line)
-	raw_bytes = raw_bytes.group(1).split() if raw_bytes else []
 
-	line = line[29:-1]
+	if raw_bytes:
+		# Instruction line: fixed-column slice keeps the mnemonic's leading
+		# whitespace (turned into a tab later) so it is not read as a label.
+		raw_bytes = raw_bytes.group(1).split()
+		line = line[29:-1]
+	else:
+		# Anything without a `romNN::addr  hexbytes` prefix is a bare label
+		# definition (or a banner/signature line). Strip fully so the i==0
+		# logic emits it as a `Label:` instead of mangling fixed columns.
+		raw_bytes = []
+		line = line.strip()
 	#print(line)
 	line = ', '.join(line.split(','))
 
 	# delete ghidra cruft
-	line = re.sub('=>\w+(\+\d+)?', '', line)
+	line = re.sub('^--.*$', '', line)                       # flow-override notes
+	line = re.sub('=>\w+(\+\d+)?(\[\w+\])?', '', line)       # data xref + array idx
 	line = re.sub('(=\s+.+|undefined .+|)$', '', line)
 	line = re.sub('XREF.+$', '', line)
 	line = re.sub('^\*+|^\*\s+(SUBROUTINE|FUNCTION)\s+\*', ';', line)
@@ -23,8 +33,13 @@ def processGhidra(line):
 	# Ghidra sometimes renders a plain 8-bit immediate as "offset SYMBOL"
 	# (e.g. `LD (HL),offset DAT_d9e2` for the bytes `36 8d`). The symbol is
 	# bogus; recover the real immediate from the last raw byte instead.
-	if 'offset ' in line and raw_bytes:
-		line = re.sub('offset \w+(\+\d+)?', f'${raw_bytes[-1]}', line)
+	# Only fire for data-style labels: a real `offset hFFxx` (LDH operand)
+	# must keep its HRAM symbol, not collapse to the raw low byte.
+	if raw_bytes and re.search('offset (DAT|WORD|BYTE)_', line):
+		line = re.sub('offset (DAT|WORD|BYTE)_\w+(\+\d+)?', f'${raw_bytes[-1]}', line)
+
+	# Ghidra's `addr SYMBOL` pointer-table entry is a 2-byte word.
+	line = re.sub('^(\s*)addr\s+', lambda r: f'{r.group(1)}dw ', line)
 
 	# address normalization
 	line = re.sub('offset (\w+)(&0xff)?', lambda re: f'{re.group(1)}', line)

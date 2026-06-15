@@ -1,8 +1,12 @@
 Func_026_4000::
-	dr $98000, $985b9
+	dr $98000, $98012
+Func_026_4012:
+	dr $98012, $985b9
 
 Func_026_45b9:
-	dr $985b9, $98616
+	dr $985b9, $985f8
+Func_026_45f8:
+	dr $985f8, $98616
 
 asm_026_4616::
 	ld a, [wMenuTextX]
@@ -398,6 +402,10 @@ Func_026_4d47:
 INCLUDE "data/monsters/palettes.asm"
 
 unk_026_53ab:
-	dr $993ab, $9b140
+	dr $993ab, $994cc
+Func_026_54cc:
+	dr $994cc, $99711
+Func_026_5711:
+	dr $99711, $9b140
 
 

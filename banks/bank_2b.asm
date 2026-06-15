@@ -308,8 +308,10 @@ Func_02b_419d:
 	jr nz, .enemy_loop
 	call Func_02b_402b
 	ret
-	call Func_02b_4a40
-	call Func_02b_4a52
+
+GetExpToNextLevel:
+	call GetMonNextLevel
+	call GetExpTableValue
 	ret
 
 Func_02b_4243:
@@ -404,10 +406,10 @@ Func_02b_42c4:
 	ld [hFFCD], a
 	ld a, 2
 	ldh [hFFC7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ld a, $30
 	ldh [hFFC7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ldh a, [hFFCB]
 	push af
 	ldh a, [hFFCC]
@@ -422,7 +424,7 @@ Func_02b_42c4:
 	ldh [hFFCD], a
 	ld a, 2
 	ldh [hFFC7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [hFFCB]
 	ldh [hFFC7], a
 	pop af
@@ -431,7 +433,7 @@ Func_02b_42c4:
 	ldh [hFFCC], a
 	pop af
 	ldh [hFFCB], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ld d, 0
 	ret
 
@@ -1181,7 +1183,7 @@ StatNames_Text:
 	db $f0, $0a
 	db $ed
 
-Func_02b_4a40:
+GetMonNextLevel:
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -1193,7 +1195,7 @@ Func_02b_4a40:
 	ld [wd9e8], a
 	ret
 
-Func_02b_4a52:
+GetExpTableValue:
 	ld a, [wd9e8]
 	and a
 	jr z, .next_level
@@ -1422,7 +1424,7 @@ Func_02b_4b41:
 	push hl
 	push bc
 	push de
-	farcall Func_025_414a
+	farcall Multiply32By8
 	pop de
 	pop bc
 	pop hl
@@ -1432,7 +1434,7 @@ Func_02b_4b4e:
 	push hl
 	push de
 	push bc
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	pop bc
 	pop de
 	pop hl
@@ -2130,7 +2132,7 @@ Func_02b_5044:
 	ldh [$cd], a
 	ld a, $a
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cc]
 	and a
 	jr nz, Func_02b_5069
@@ -2191,7 +2193,7 @@ Func_02b_50a9:
 	ldh [$cd], a
 	ld a, $f
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	and a
 	jr nz, .got_value
@@ -2212,7 +2214,7 @@ Func_02b_50a9:
 	ld a, 2
 	ldh [$c7], a
 	ldh [$cb], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ldh a, [$cb]
 	ld [wd9b0], a
 
@@ -2482,10 +2484,10 @@ BattleAI_Action2:
 	ldh [$cc], a
 	ld a, 2
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $a
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cc]
 	ld b, a
 	ld a, [wd999]
@@ -2572,12 +2574,12 @@ BattleAI_Action5:
 	ldh [$cc], a
 	ld a, 5
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 
 Func_02b_5389:
 	ld a, $a
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cc]
 	ld b, a
 	ld a, [wd999]
@@ -2606,7 +2608,7 @@ BattleAI_Action6:
 	ldh [$cc], a
 	ld a, 3
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	jp Func_02b_5389
 
 BattleAI_Action7:
@@ -2634,7 +2636,7 @@ BattleAI_Action9:
 	ldh [$cc], a
 	ld a, 3
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	jp Func_02b_5389
 
 BattleAI_Action10:
@@ -2986,22 +2988,22 @@ Func_02b_565f:
 	ldh [$cc], a
 	xor a
 	ldh [$cd], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $64
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	call Func_02b_58df
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $64
 	ld [hFFC7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ld a, [wd9c7]
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $a
 	ld [hFFC7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	push af
 	ldh a, [$cc]
@@ -3014,10 +3016,10 @@ Func_02b_565f:
 	ldh [$cb], a
 	xor a
 	ldh [$cd], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $64
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 
 .store
 	ldh a, [$cc]
@@ -3081,10 +3083,10 @@ Func_02b_5712:
 	ldh [$cd], a
 	ld a, $f
 	ld [hFFC7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $a
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	ld [wd9b0], a
 	ldh a, [$cc]
@@ -3167,7 +3169,7 @@ Func_02b_57bf:
 	add hl, de
 	ld a, [hl]
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cc]
 	and a
 	jr nz, .min
@@ -3321,10 +3323,10 @@ Func_02b_5884:
 	ldh [$cc], a
 	xor a
 	ldh [$cd], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $64
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	ld c, a
 	ldh a, [$cc]
@@ -3348,10 +3350,10 @@ Func_02b_5884:
 	ldh [$cd], a
 	ld a, [wd9c7]
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $a
 	ld [hFFC7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ret
 
 Func_02b_58df:
@@ -3414,10 +3416,10 @@ Func_02b_591e:
 	ldh [$c7], a
 	call Func_02b_59df
 	call Func_02b_5998
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $a
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	ld [wd9c2], a
 	ldh a, [$cc]
@@ -3435,10 +3437,10 @@ Func_02b_591e:
 	ldh [$cd], a
 	call GetStatTile
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, $a
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	ld [wd9c4], a
 	ldh a, [$cc]
@@ -4002,7 +4004,7 @@ Func_02b_5d28:
 	ldh [$cd], a
 	ld a, 5
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cb]
 	ld [wd9b0], a
 	ldh a, [$cc]
@@ -4208,7 +4210,7 @@ Func_02b_5eb7:
 	ldh [$cd], a
 	ld a, 2
 	ldh [$c7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 	ldh a, [$cc]
 	and a
 	jr nz, .high
@@ -4313,7 +4315,7 @@ Func_02b_5f79:
 	ldh [$cd], a
 	ld a, 2
 	ldh [$c7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ldh a, [$cc]
 	and a
 	jr nz, .high
@@ -6097,7 +6099,7 @@ OAMList_758e:
 	db -1
 
 
-; TODO: this gets drawn by Func_025_414a
+; TODO: this gets drawn by Multiply32By8
 unk_02b_7594:
 	db $00, $0f, $23, $23, $14, $00, $00, $00, $00, $0f, $37, $00, $00, $00, $00, $28
 	db $0f, $00, $00, $00, $5a, $14, $2a, $00, $00, $1e, $0f, $00, $14, $00, $19, $14

@@ -668,13 +668,13 @@ Func_01e_4441:
 	ldh [hFFCD], a
 	ld a, [wd9d3]
 	ldh [hFFC7], a
-	farcall Func_025_414a
+	farcall Multiply32By8
 	ld a, [wEventFlags + 4]
 	bit 0, a
 	jr z, .done
 	ld a, 2
 	ldh [hFFC7], a
-	farcall asm_025_41b8
+	farcall Divide32By16_4Digit
 
 .done
 	ret

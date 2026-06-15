@@ -221,11 +221,16 @@ wMapCollisionsPointer:: ds 2
 wd0b2:: ds 2
 wPaletteFadeDirection:: ds 1
 wPaletteFadeChanged:: ds 1
-wd0b6:: ds 2
-		ds 2
+wd0b6:: ds 1
+wd0b7:: ds 1
+wd0b8:: ds 1
+wd0b9:: ds 1
 wd0ba:: ds 1
 wd0bb:: ds 1
-wd0bc:: ds 4
+wd0bc:: ds 1
+wd0bd:: ds 1
+wd0be:: ds 1
+wd0bf:: ds 1
 
 wFacingTileY::
 wd0c0:: ds 1
@@ -296,7 +301,8 @@ wd1e3:: ds 1
 	ds 13
 
 wd1f1:: ds 1
-wd1f2:: ds 2
+wd1f2:: ds 1
+wd1f3:: ds 1
 wd1f4:: ds 1
 
 wd1f5:: ds 1
@@ -455,7 +461,12 @@ wd74a:: ds $81
 
 wd7cb:: ds $9f ; mon dex
 
-wd86a:: ds 12
+wd86a:: ds 7
+wd871:: ds 1
+wd872:: ds 1
+wd873:: ds 1
+wd874:: ds 1
+wd875:: ds 1
 
 wd876:: ds $16
 
@@ -544,7 +555,8 @@ wd9d0:: ds 1
 wd9d1:: ds 1
 wd9d2:: ds 1
 wd9d3:: ds 1
-wd9d4:: ds 2
+wd9d4:: ds 1
+wd9d5:: ds 1
 
 wd9d6:: ds 1
 wd9d7:: ds 1
@@ -593,7 +605,7 @@ wda00:: ds $a0
 ; shop menu is at $daa4
 wEventFlags:: ds 3
 wdaa3:: ds 1
-	ds $15
+wdaa4:: ds $15
 wdab9:: ds 1
 wdaba:: ds 1
 wdabb:: ds 1
@@ -629,7 +641,8 @@ wdb1c:: ds 1
 wdb1d:: ds 1
 wCurrentCharacterByte:: ds 1
 wdb1f:: ds 1
-wdb20:: ds $17e
+wdb20:: ds $17d
+wdc9d:: ds 1
 
 wdc9e:: ds 1
 wdc9f:: ds 1
@@ -666,7 +679,9 @@ wdccf:: ds 1
 wdcd0:: ds 1
 wdcd1:: ds 2
 wdcd3:: ds 2
-wdcd5:: ds 3
+wdcd5:: ds 1
+wdcd6:: ds 1
+wdcd7:: ds 1
 
 wTextFaceID:: ds 1
 wdcd9:: ds 1

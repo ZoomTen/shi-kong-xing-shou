@@ -158,7 +158,9 @@ PrevLivePartyMon::
 
 GetPartyMonPtr::
 	ld a, [wSelectedOption]
+asm_0fdf::
 	ld hl, wPartyMons
+asm_0fe2::
 	ld de, $16
 	and a
 	jr z, .asm_0fec
@@ -419,11 +421,11 @@ Func_1123::
 	jp Finish_LCD
 
 Func_113f::
-	homecall Func_025_5df5
+	homecall PrintNumber
 	ret
 
 Func_114c::
-	homecall Func_025_4110
+	homecall ComputeStatValue
 	ret
 
 AdvanceRNG::
@@ -691,7 +693,7 @@ Func_1296::
 	ld [wd999], a
 	xor a
 	ld [wd9d7], a
-	homecall Func_025_4110
+	homecall ComputeStatValue
 	ldh a, [hFFCB]
 	ld [wd99a], a
 	ldh a, [hFFCC]

@@ -1,5 +1,7 @@
 unk_00c_4000:
-	dr $30000, $30056
+	dr $30000, $3002b
+Func_00c_402b:
+	dr $3002b, $30056
 
 Func_00c_4056::
 	ld de, .SignpostGroups
