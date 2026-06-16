@@ -56,7 +56,9 @@ Mismatches usually involved shifted output somehow:
 1. If you find the call instruction parameter differs, perhaps it's a good idea to check out the function it's supposed to be pointing to. It might have shifted due to the code around it.
 2. Maybe a ld/ldh switcharoo, as the game sometimes code `ld [hSomething]` (longer bytes) instead of `ldh [hSomething]` (shorter bytes); RGBDS solidly treats the two differently.
 
-
 If you would like to inspect `check_diff` itself, the source is `utils/check_diff.c`.
 
 Likewise with `look_block`.
+
+If either of those tools aren't available, then run `make` inside the `utils/` folder or let the user do them for you.
+

@@ -403,7 +403,10 @@ Func_030_4873:
 	dr $c0873, $c08bb
 
 Func_030_48bb:
-	dr $c08bb, $c08c5
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	jp Func_030_4bcb
 
 Func_030_48c5:
 	dr $c08c5, $c0919
@@ -442,10 +445,17 @@ Func_030_4aec:
 	dr $c0aec, $c0b1b
 
 Func_030_4b1b:
-	dr $c0b1b, $c0b2d
+	call $537B
+	ld a, $40
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd98b], a
+	xor a
+	ld [wd9b5], a
+	ret
 
 Func_030_4b2d:
-	dr $c0b2d, $c0b30
+	jp Func_030_4e93
 
 Func_030_4b30:
 	dr $c0b30, $c0b4d
@@ -664,7 +674,14 @@ Func_030_5603:
 	dr $c1603, $c164a
 
 Func_030_564a:
-	dr $c164a, $c165c
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 unk_030_565c:
 	dw .image_566a

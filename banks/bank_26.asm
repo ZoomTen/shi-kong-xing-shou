@@ -1,5 +1,15 @@
 Func_026_4000::
-	dr $98000, $98012
+	ld de, $40E2
+	ld a, [wd9d8]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call PrintMenuText
+	ret
 Func_026_4012:
 	dr $98012, $985b9
 

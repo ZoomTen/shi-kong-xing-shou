@@ -24,6 +24,7 @@ Read these on-demand when the task calls for it:
 
 * [check deviations](docs/agents/check-deviations.md) — finding byte/symbol deviations from the base ROM
 * [code patterns](docs/agents/code-patterns.md) — recurring asm patterns (`hl = $XXYY + a`, farcalls, etc.)
+* [disassemble from scratch](docs/agents/disassemble-from-scratch.md) — triage + disassemble a `dr` block when no Ghidra dump is given, and chase what it references
 * [extra asset formats](docs/agents/extra-asset-formats.md) — text `.txt`, map `.tmx`, face `.ora` formats
 * [find closest label/symbol](docs/agents/find-closest-label-or-symbol.md) — `get_nearest_symbol.py` usage
 * [ghidra usage](docs/agents/ghidra-usage.md) — Ghidra MCP + `ghidra2asm.py` workflow
@@ -39,6 +40,8 @@ To determine if the compiled ROM matches the base ROM:
 /home/user/projects/ngbenv/ngbenv exec make compare
 ```
 
+This checks the syntax and determines equality with the base ROM in one go.
+
 To inspect *which* bytes deviate from the base ROM, try `utils/check_diff` / `utils/look_block` (see [check deviations](docs/agents/check-deviations.md)) FIRST.
 
 # Determining un-disassembled blocks
@@ -47,7 +50,11 @@ Indicated by a `dr` macro (see @macros/data.asm) in ROM offset form. Some calcul
 
 `dr` ALWAYS points to a ROM address, not RAM.
 
-This checks the syntax and determines equality with the base ROM in one go.
+You can also use `utils/look_block` (see [check deviations](docs/agents/check-deviations.md)) in conjunction with standard tools to simply look at blocks from either baserom.gbc or the compiled counterpart.
+
+# Resolve a bare address before assuming it's unlabeled
+
+Whenever you encounter a bare ROM/RAM address (a `call`/`jp`/`ld` target, a pointer-table entry, etc.), resolve it with `utils/get_nearest_symbol.py <bank:addr>` (add `ram` for RAM) FIRST. A result like `Func_026_4012 + 200` tells you it's 200 bytes past the nearest label (which symbol it falls under) — open the file there to see whether that's a `dr` block or already-disassembled code. See [find closest label/symbol](docs/agents/find-closest-label-or-symbol.md).
 
 # Confirm context with grep
 

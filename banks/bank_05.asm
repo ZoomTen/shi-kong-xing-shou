@@ -559,10 +559,33 @@ unk_005_4394:
 	dr $14394, $143e1
 
 Func_005_43e1:
-	dr $143e1, $14408
+	ld a, [wdcfa]
+	and a
+	ret z
+	dec a
+	ld [wdcfa], a
+	and a
+	jr z, .set
+	and $07
+	ret nz
+	ld hl, wcd02
+	ld a, $01
+	sub [hl]
+	ld [hl], a
+	jr .done
+.set
+	ld a, $01
+	ld [wcd02], a
+.done
+	ldh [hFFAC], a
+	ld [wdcd0], a
+	ld a, $0A
+	ldh [hFFAD], a
+	ret
 
 Func_005_4408:
-	dr $14408, $1440f
+	farcall asm_00a_45b4
+	ret
 
 Func_005_440f:
 	dr $1440f, $14662
@@ -1757,7 +1780,218 @@ unk_005_5765:
 	db $1
 
 Overworld_ProcessJoypadInput:
-	dr $1576c, $15900
+	ldh a, [hFF9E]
+	cp $80
+	ret nc
+	and a
+	jp z, .asm_5785
+	cp $01
+	jp z, .asm_57ba
+	cp $02
+	jp z, .asm_57ec
+	cp $03
+	jp z, .asm_581e
+	ret
+.asm_5785
+	ld a, [wPlayerObject]
+	cp $50
+	jr nc, .asm_5796
+.asm_578c
+	ld a, $EE
+	ldh [hFF9E], a
+	ld a, $10
+	ld [hFFA6], a
+	ret
+.asm_5796
+	ld hl, hFFA9
+	ldh a, [hFFAB]
+	cp [hl]
+	jr nz, .asm_57ad
+	ld a, [wPlayerObject]
+	cp $90
+	jr c, .asm_578c
+	ld a, $FF
+	ldh [hFF9E], a
+	xor a
+	ldh [hSimulatedJoypadState], a
+	ret
+.asm_57ad
+	call Func_005_5978
+	call BuildBlockmap_Banked
+	call Func_005_406b
+	call .asm_5879
+	ret
+.asm_57ba
+	ld a, [wPlayerObject]
+	cp $60
+	jr c, .asm_57cb
+.asm_57c1
+	ld a, $EE
+	ldh [hFF9E], a
+	ld a, $10
+	ld [hFFA6], a
+	ret
+.asm_57cb
+	ldh a, [hFFAB]
+	and a
+	jr nz, .asm_57df
+	ld a, [wPlayerObject]
+	cp $20
+	jr nc, .asm_57c1
+	ld a, $FF
+	ldh [hFF9E], a
+	xor a
+	ldh [hSimulatedJoypadState], a
+	ret
+.asm_57df
+	call Func_005_59a9
+	call BuildBlockmap_Banked
+	call Func_005_406b
+	call .asm_5853
+	ret
+.asm_57ec
+	ld a, [wPlayerScreenX]
+	cp $58
+	jr c, .asm_57fd
+.asm_57f3
+	ld a, $EE
+	ldh [hFF9E], a
+	ld a, $10
+	ld [hFFA6], a
+	ret
+.asm_57fd
+	ldh a, [hFFAA]
+	and a
+	jr nz, .asm_5811
+	ld a, [wPlayerScreenX]
+	cp $18
+	jr nc, .asm_57f3
+	ld a, $FF
+	ldh [hFF9E], a
+	xor a
+	ldh [hSimulatedJoypadState], a
+	ret
+.asm_5811
+	call Func_005_59dc
+	call BuildBlockmap_Banked
+	call Func_005_406b
+	call .asm_58aa
+	ret
+.asm_581e
+	ld a, [wPlayerScreenX]
+	cp $48
+	jr nc, .asm_582f
+.asm_5825
+	ld a, $EE
+	ldh [hFF9E], a
+	ld a, $10
+	ld [hFFA6], a
+	ret
+.asm_582f
+	ld hl, hFFA8
+	ldh a, [hFFAA]
+	cp [hl]
+	jr nz, .asm_5846
+	ld a, [wPlayerScreenX]
+	cp $90
+	jr c, .asm_5825
+	ld a, $FF
+	ldh [hFF9E], a
+	xor a
+	ldh [hSimulatedJoypadState], a
+	ret
+.asm_5846
+	call Func_005_5a07
+	call BuildBlockmap_Banked
+	call Func_005_406b
+	call .asm_58d0
+	ret
+.asm_5853
+	ld hl, wTilemap
+	ld de, wd128
+	call Func_005_5919
+	ld c, $28
+	call Func_005_5900
+	ld a, [wd0ba]
+	ld e, a
+	ld a, [wd0bb]
+	ld d, a
+	call Func_005_5953
+	ld a, $01
+	ldh [hFFA4], a
+	ld a, $10
+	ldh [hFFA6], a
+	ld a, $FF
+	ldh [hFF9E], a
+	ret
+.asm_5879
+	ld hl, $CA60
+	ld de, wd128
+	call Func_005_5919
+	ld c, $28
+	call Func_005_5900
+	ld a, [wd0ba]
+	ld l, a
+	ld a, [wd0bb]
+	ld h, a
+	ld bc, $0200
+	add hl, bc
+	ld a, h
+	and $03
+	or $98
+	ld e, l
+	ld d, a
+	call Func_005_5953
+	ld a, $01
+	ldh [hFFA4], a
+	ld a, $10
+	ldh [hFFA6], a
+	ld a, $FF
+	ldh [hFF9E], a
+	ret
+.asm_58aa
+	ld hl, wTilemap
+	ld de, wd128
+	call Func_005_5922
+	ld c, $24
+	call Func_005_5900
+	ld a, [wd0ba]
+	ld e, a
+	ld a, [wd0bb]
+	ld d, a
+	call Func_005_5935
+	ld a, $01
+	ldh [hFFA4], a
+	ld a, $10
+	ldh [hFFA6], a
+	ld a, $FF
+	ldh [hFF9E], a
+	ret
+.asm_58d0
+	ld hl, $C932
+	ld de, wd128
+	call Func_005_5922
+	ld c, $24
+	call Func_005_5900
+	ld a, [wd0ba]
+	ld e, a
+	and $E0
+	ld b, a
+	ld a, e
+	add $12
+	and $1F
+	or b
+	ld e, a
+	ld a, [wd0bb]
+	ld d, a
+	call Func_005_5935
+	ld a, $01
+	ldh [hFFA4], a
+	ld a, $10
+	ldh [hFFA6], a
+	ld a, $FF
+	ldh [hFF9E], a
+	ret
 
 Func_005_5900:
 	ld hl, wd128

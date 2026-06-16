@@ -2079,13 +2079,42 @@ Script_77:
 	dr $2e004, $2e03d
 
 Func_00b_603d::
-	dr $2e03d, $2e04e
+	ld hl, wVirtualOAM
+	ld bc, $0028
+	ld de, $0004
+.loop
+	ld a, $A0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .loop
+	ret
 
 Func_00b_604e::
-	dr $2e04e, $2e05c
+	ld hl, wTilemap
+	ld bc, $0190
+.loop
+	xor a
+	ld [hli], a
+	dec bc
+	ld a, c
+	or b
+	jr nz, .loop
+	ret
 
 Func_00b_605c::
-	dr $2e05c, $2e06f
+	ld hl, $9000
+	ld c, $10
+.wait
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .wait
+	ld a, $FF
+	ld [hli], a
+	dec c
+	jr nz, .wait
+	ret
+	ret
 
 Func_00b_606f:
 	ld a, [wdccf]
