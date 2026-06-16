@@ -2384,7 +2384,7 @@ Func_025_501e:
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
-	farcall unk_026_53ab
+	farcall Func_026_53ab
 	xor a
 	ld [wd08a], a
 	ret

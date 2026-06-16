@@ -24,6 +24,14 @@ single-operand ALU ops, `[hli]`/`[hld]`, `ld` vs `ldh` strictly by opcode). Loca
 so re-running on a partly-done block regenerates `.asm_` labels cleanly.
 Paste its output (stdout) over the `dr` line, then verify with `make compare`.
 
+After an unconditional terminator (`ret`/`reti`/`jp`/`jr`/`jp hl`) whose next
+byte nothing jumps to, it emits a speculative `unk_BB_AAAA:` label (or the real
+symbol if one exists) — that byte is unreachable by fall-through, so it's a likely
+boundary between a function and the next function or a data table. (rst is not
+treated as a terminator — most rst vectors, e.g. FarCall, return.) This is how you
+spot the code→data transition inside a single `dr` (e.g. `Func_026_4012`'s code
+ends at a `ret`, then pointer tables follow).
+
 It also prints heuristic warnings to **stderr** when a block smells like data
 rather than code. Strong signals (each fires on its own): illegal/undefined
 opcodes, stray stack-pointer ops (`ld sp` / `add sp`), or a long run of `ld r, r`
@@ -41,6 +49,14 @@ Pitfalls (all confirmed to break `make compare`):
   `ldh [hFFA6]` (2 bytes). Render by opcode, never by address.
 * **`rst $30` is `FarCall`** (calls `b:hl`). `ld hl, X` / `ld b, BANK` / `rst $30`
   collapses to `farcall X` when a label exists at `X`, else `rst FarCall`.
+
+`wXXXX` vs `wXXXX + N`: when code writes a high byte to `$d9db`, render it as
+`wd9da + 1` if `wd9da` is the named symbol and the access is the second half of a
+16-bit value — the tell is two consecutive writes to `wd9da` then `wd9da + 1`. But
+if you also see `+ 2`/`+ 3` writes, that's a struct being filled field-by-field,
+not one 16-bit value — keep the offsets relative to the struct base (`wd9da`) and
+consider naming the base. Don't coin `wd9db` just because an instruction touches
+that byte.
 
 ## 1. Follow the calls
 
@@ -94,6 +110,31 @@ If they decode to real strings (e.g. Chinese move names), it's a text pointer
 table. If they decode to nonsense home-bank labels, the "pointers" are really
 packed data — a different table type.
 
+## 3a. Splitting a `dr` to expose a label
+
+The data you found often sits *inside* a larger `dr`, with no symbol of its own
+(e.g. `$40E2` was `Func_026_4012 + 208`). To give it a label you must split the
+one `dr` into the part before, the labelled region, and the part after. A `dr`
+end is exclusive, so the addresses chain with no gap:
+```
+Func_026_4012:
+	dr $98012, $980e2     ; everything before the table
+MoveName_Pointers:
+	dw $4200, ...         ; the decoded region, now labelled
+MoveName_Text:
+	dr $98200, $985b9     ; everything after
+```
+`dr` takes ROM offsets; the label sits at the boundary. Verify with `make compare`
+— a wrong split shifts bytes and fails immediately.
+
+**Before coining a label, grep the name you're about to use.** Two checks:
+1. Is the *address* already named? Resolve it (`get_nearest_symbol.py`, §1) — reuse
+   that symbol instead of making a parallel one.
+2. Is the *name* already taken? `grep` your proposed label (e.g. `MoveName_Pointers`)
+   across `banks/`, `wram.asm`, `home/`. If it already exists for a different
+   address, that's a conflict — **stop and prompt the user** before proceeding;
+   don't silently rename or shadow.
+
 ## 4. Name it
 
 Per the [style guide](style-guide.md):
@@ -107,6 +148,22 @@ Per the [style guide](style-guide.md):
 Keywords for tables: `Pointers` (data/unknown pointers), `Jumptable` (pointers to
 code). For the pointed-to data: `Text`/`String` (dialog/immediate line), `GFX`,
 `Palette`, etc.
+
+If the label name already states its purpose (`PersonalityDesc_Pointers`,
+`MonsterDesc_Text`), add NO descriptive comment — the name is the documentation.
+Only comment to flag remaining work (a `; TODO`) or to record a non-obvious fact
+(an address-keyed `Func_BB_AAAA` / `unk_BB_AAAA` whose name says nothing).
+
+Whenever you introduce such an address-keyed label — promoting a speculative
+boundary, splitting a `dr`, or naming a still-`dr`'d region — and you know
+*roughly* what it does, leave that purpose as a SHORT single-sentence `; TODO`
+comment above the label.
+Just enough to recall the intent without re-reading the code or re-deriving the
+data shape (e.g. `; TODO: loads a monster's palette into wPaletteBuffer`, or
+`; TODO: monster description pointer table, indexed by wd9d8`). One line per
+label; don't write a paragraph. This applies to the leftover `dr` you leave
+behind too — a named-but-undisassembled `Pointers_BB_AAAA` / `unk_BB_AAAA` block
+should carry the one-line hint so the next pass knows what it's looking at.
 
 ## 5. Verify
 

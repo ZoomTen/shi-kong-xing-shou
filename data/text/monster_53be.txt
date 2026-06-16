@@ -1,0 +1,16 @@
+@org $26, $549e:
+	text "兩塊復亞嗯赤感應";
+	line;
+
+@org $26, $54ae:
+	text "兩回復";
+	db $f1, $1b; #"獸"
+	db $1c; #"竊"
+	db $1d; #"變"
+	text "配信赤";
+	line;
+
+@org $26, $54be:
+	text "兩以復務線復牲勒";
+	line;
+

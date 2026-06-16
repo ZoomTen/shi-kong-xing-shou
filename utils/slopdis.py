@@ -15,6 +15,22 @@ from lib.gbtool import addr2offset, offset2addr, read_symbols, str2addr
 ROM = open("baserom.gbc", "rb").read()
 SYM = read_symbols(open("shi_kong_xing_shou.sym").read())
 # read_symbols keys both tables by ROM offset; 'ram' holds >$7fff (RAM/HRAM).
+# It keeps only ONE name per offset, so a `Parent.local` may shadow the global
+# at the same address (e.g. CopyBytes3 vs CopyBytes3.loop, both at $0b30).
+# Build a global-only ROM map (no `.` names) so call/jp targets resolve to the
+# real function label, not its first local.
+GLOBAL_ROM = {}
+import re as _re
+for _line in open("shi_kong_xing_shou.sym"):
+    _m = _re.match(r"\s*([0-9a-fA-F]+):([0-9a-fA-F]{4})\s+([\w.]+)", _line)
+    if not _m:
+        continue
+    _name = _m.group(3)
+    if "." in _name:
+        continue
+    _off = addr2offset(int(_m.group(1), 16), int(_m.group(2), 16))
+    if int(_m.group(2), 16) < 0x8000:
+        GLOBAL_ROM.setdefault(_off, _name)
 
 def ram_label(addr):
     """RAM/HRAM symbol for a GB address, or None. RAM offset == GB address."""
@@ -26,12 +42,10 @@ def mem(addr):
 
 def global_code_sym(addr, bank):
     """Global (non-local) code symbol at a GB address, or None.
-    Ignores `Parent.local` labels so re-runs regenerate `.asm_` cleanly."""
+    Ignores `Parent.local` labels so re-runs regenerate `.asm_` cleanly and
+    mid-function entries resolve to the parent function label."""
     off = addr2offset(0 if addr < 0x4000 else bank, addr)
-    name = SYM["rom"].get(off)
-    if name and "." not in name:
-        return name
-    return None
+    return GLOBAL_ROM.get(off)
 
 def code_label(addr, bank):
     """jp/call target: in-bank/home label if known, else raw $xxxx."""
@@ -193,8 +207,15 @@ def disassemble(start, end, bank):
             continue
         if tgt in addrs and not is_code_sym(tgt, bank):
             locals_[tgt] = f".asm_{tgt:04x}"
+    # An unconditional terminator whose following address has no label means
+    # the bytes after it are unreachable by fall-through — a likely boundary
+    # (next function, or data). Mark it speculatively so it isn't missed.
+    # NB: rst is excluded — most rst vectors (e.g. FarCall) return, so control
+    # continues past them.
+    UNCOND = {0xC9, 0xD9, 0xC3, 0xE9, 0x18}  # ret reti jp jp[hl] jr
+    next_addr = {ins[i][0]: ins[i + 1][0] for i in range(len(ins) - 1)}
     lines = []
-    for a, m, tgt, _, _ in ins:
+    for a, m, tgt, _, op in ins:
         if a in locals_:
             lines.append(locals_[a])
         if isinstance(m, tuple):
@@ -205,6 +226,14 @@ def disassemble(start, end, bank):
             lines.append("\trst FarCall  ; preceding ld hl/ld b set b:hl")
         else:
             lines.append("\t" + m)
+        nxt = next_addr.get(a)
+        if op in UNCOND and nxt is not None and nxt not in locals_:
+            name = global_code_sym(nxt, bank)
+            if name:
+                lines.append(f"\n{name}:")
+            else:
+                lines.append(f"\n; speculative boundary — new function or data?")
+                lines.append(f"unk_{bank:03x}_{nxt:04x}:")
     return "\n".join(lines), suspicions(ins)
 
 def upper_hex(text):

@@ -2,7 +2,7 @@
 
 The purpose of this disassembly is to create a code base that compiles 1:1 with the base ROM (baserom.gbc), but is easily understandable and editable via the use of macros, constants, clearly-defined code, clearly-defined RAM addresses, and character maps.
 
-"Better code" is not the goal right now. Accuracy however, is.
+As a disassembly, it is a goal to eliminate all `dr` and ensure that compilation is **accurate** to the original source baserom. Hence, "better code" is a non-goal.
 
 * Do not attempt to `git commit` on your own. I want to check your work manually and then commit it myself.
 * Keep comments to an absolute minimum.
@@ -55,6 +55,8 @@ You can also use `utils/look_block` (see [check deviations](docs/agents/check-de
 # Resolve a bare address before assuming it's unlabeled
 
 Whenever you encounter a bare ROM/RAM address (a `call`/`jp`/`ld` target, a pointer-table entry, etc.), resolve it with `utils/get_nearest_symbol.py <bank:addr>` (add `ram` for RAM) FIRST. A result like `Func_026_4012 + 200` tells you it's 200 bytes past the nearest label (which symbol it falls under) — open the file there to see whether that's a `dr` block or already-disassembled code. See [find closest label/symbol](docs/agents/find-closest-label-or-symbol.md).
+
+Before coining a label, run two greps: (1) is the *address* already named? Resolve it (`get_nearest_symbol.py`) and reuse that symbol. (2) is the *name* you're about to use (e.g. `MoveName_Pointers`) already taken for a different address? `grep` it across `banks/`, `wram.asm`, `home/`. If there's a potential conflict, STOP and prompt me — don't silently rename or shadow. If the address sits inside an existing `dr`, split that `dr` to expose the label (see [disassemble from scratch](docs/agents/disassemble-from-scratch.md) §3a).
 
 # Confirm context with grep
 
