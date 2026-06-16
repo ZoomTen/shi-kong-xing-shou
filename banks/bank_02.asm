@@ -21,14 +21,14 @@ MapSounds_Map10:
 	db $78, $78, $79, $ff, $78
 
 PlayMapSound: ; is this even used??
-	ld hl, wd657
+	ld hl, wSound2Channel2NoteFreq
 	ld a, [hl]
 	ld [hl], 0
 	or a
 	ld d, $ff
 	jr nz, .compute
 	ld d, $60
-	ld a, [wd70a]
+	ld a, [wSound2Channel6Playhead]
 	cp $b
 	jr nz, .compute
 	ld d, $7c
@@ -36,12 +36,12 @@ PlayMapSound: ; is this even used??
 .compute
 	ld a, d
 	ld [wdae0], a
-	ld hl, wd656
+	ld hl, wSound2Channel2PitchOffset
 	ld a, [hl]
 	ld [hl], 0
 	or a
 	ret nz
-	ld a, [wd70a]
+	ld a, [wSound2Channel6Playhead]
 	cp $10
 	jp z, .map10
 	ld hl, MapSounds - 1
@@ -59,12 +59,12 @@ PlayMapSound: ; is this even used??
 	call SoundEngine1_Init
 	call WaitSoundFlush
 	pop af
-	ld [wd658], a
+	ld [wSound2Channel2NoteFreq + 1], a
 	call QueueSound
 	jp FlushSoundQueue
 
 .map10
-	ld a, [wd68a]
+	ld a, [wSound2Channel3LoopPoint2]
 	and 7
 	add LOW(MapSounds_Map10)
 	ld e, a

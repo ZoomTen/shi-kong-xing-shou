@@ -29,7 +29,7 @@ SoundEngine1_Load:
 	ld c, l
 	xor a
 	ld [wSoundChannelIndex], a
-	ld de, wChannels
+	ld de, wSound1Channels
 .loop
 	ld hl, wSoundNumChannels
 	srl [hl]
@@ -145,7 +145,7 @@ SoundEngine1_LoadSfx:
 	ld c, l
 	ld a, CHAN5
 	ld [wSoundChannelIndex], a
-	ld de, wChannel5
+	ld de, wSound1Channel5
 	jp SoundEngine1_Load.loop
 
 SoundEngine1_Fade:
@@ -177,7 +177,7 @@ SoundEngine1_Play:
 .ProcessAudio
 	xor a
 	ld [wSoundCurChannel], a
-	ld de, wChannels
+	ld de, wSound1Channels
 .loop1
 	ld hl, CHANNEL_SONG_ID
 	add hl, de
@@ -196,7 +196,7 @@ SoundEngine1_Play:
 	ld a, 8
 	cp [hl]
 	jr nz, .loop1
-	ld hl, wChannels
+	ld hl, wSound1Channels
 	ld de, CHANNEL_STRUCT_LENGTH
 	ld a, [hl]
 	add hl, de
@@ -743,24 +743,24 @@ SoundEngine1_ReadMusic:
 ; Channel 4 "notes" are actually sound effect calls
 .channel4
 ; Don't restart channel 7 if a drum of ID 6-11 is already sounding there.
-	ld a, [wChannel7]
+	ld a, [wSound1Channel7]
 	cp 6
 	jr c, .noise_skip_retrig
 	cp $c
 	jr nc, .noise_skip_retrig
 ; Point channel 7 at the drum sound-effect table and mark it active.
 	ld a, LOW(unk_002_4ecc)
-	ld [wChannel7Playhead], a
+	ld [wSound1Channel7Playhead], a
 	ld a, HIGH(unk_002_4ecc)
-	ld [wChannel7Playhead + 1], a
+	ld [wSound1Channel7Playhead + 1], a
 	ld a, [wSound1ChannelMask]
 	or 1 << CHAN7
 	ld [wSound1ChannelMask], a
 	ld a, 1
-	ld [wChannel7LengthCounter], a
-	ld [wChannel7], a
+	ld [wSound1Channel7LengthCounter], a
+	ld [wSound1Channel7], a
 	xor a
-	ld [wChannel7Field01], a
+	ld [wSound1Channel7Field01], a
 .noise_skip_retrig
 ; Trigger the sound effect selected by the note's high nibble (skip if rest).
 	ld a, [bc]
@@ -1071,14 +1071,14 @@ SoundEngine1_CommandProcessor:
 	jr nz, .cmd_f5
 	inc bc
 	ld a, [bc]
-	ld [wd409], a
+	ld [wSound1Ch7TargetWaveform], a
 	inc bc
 	ret
 
 .cmd_ed_ch3
 	inc bc
 	ld a, [bc]
-	ld [wd408], a
+	ld [wSound1Ch3TargetWaveform], a
 	inc bc
 	ret
 
@@ -1407,23 +1407,23 @@ Func_002_4ab3:
 
 .output_jumptable:
 ; music channels
-	dw .Ch5
-	dw .Ch6
+	dw .Ch1
+	dw .Ch2
 	dw .Ch3
 	dw .Ch4
 ; sfx channels
-	dw .Ch1
-	dw .Ch2
+	dw .Ch5
+	dw .Ch6
 	dw .Ch7
 	dw .Ch8
 
-.Ch5:
-	ld hl, wChannel5
+.Ch1:
+	ld hl, wSound1Channel5
 	ld a, [hl]
 	or a
 	ret nz
 
-.Ch1:
+.Ch5:
 	ld hl, CHANNEL_CURRENT_STEREO
 	add hl, de
 	ld a, [hl]
@@ -1520,13 +1520,13 @@ Func_002_4ab3:
 	adc $ff
 	jr .output_freq_hi
 
-.Ch6:
-	ld hl, wChannel6
+.Ch2:
+	ld hl, wSound1Channel6
 	ld a, [hl]
 	or a
 	ret nz
 
-.Ch2:
+.Ch6:
 	ld hl, CHANNEL_CURRENT_STEREO
 	add hl, de
 	ld a, [hl]
@@ -1551,7 +1551,7 @@ Func_002_4ab3:
 	jr .output_ch1_common
 
 .Ch3:
-	ld hl, wChannel7
+	ld hl, wSound1Channel7
 	ld a, [hl]
 	or a
 	ret nz
@@ -1758,14 +1758,14 @@ SoundEngine1_ApplyAudio:
 	ld [hli], a
 
 ; any sfx?
-	ld a, [wChannel7]
+	ld a, [wSound1Channel7]
 	or a
 	jr nz, .use_other_waveform
-	ld a, [wd408]
+	ld a, [wSound1Ch3TargetWaveform]
 	jr .UpdateWaveform
 
 .use_other_waveform
-	ld a, [wd409]
+	ld a, [wSound1Ch7TargetWaveform]
 
 .UpdateWaveform:
 ; don't need to update if it's the same the last one
@@ -1880,7 +1880,7 @@ SoundEngine1_Init:
 	ld [wSoundGlobalStereo], a
 
 SoundEngine1_ResetEngineVariables:
-	ld hl, wChannels
+	ld hl, wSound1Channels
 	ld de, CHANNEL_STRUCT_LENGTH
 	ld a, 0
 	ld [hl], a
@@ -1898,7 +1898,7 @@ SoundEngine1_ResetEngineVariables:
 	ld [hl], a
 	add hl, de
 	ld [hl], a
-	ld hl, wChannel1Field08
+	ld hl, wSound1Channel1Field08
 	ld a, 1
 	ld [hl], a
 	add hl, de

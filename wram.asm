@@ -350,45 +350,43 @@ wd3ff:: ds 1
 wd400:: ds 1
 	ds 1
 
+; shared across sound engines
 wSoundChannelIndex:: ds 1
 wSoundCurChannel:: ds 1
 wCurrentSongID:: ds 1
 wSoundNumChannels:: ds 1
 wSoundPriority:: ds 1
+
+; engine_1 only
 wSound1ChannelMask:: ds 1
-wd408:: ds 1
-wd409:: ds 1
+wSound1Ch3TargetWaveform:: ds 1
+wSound1Ch7TargetWaveform:: ds 1
 wSound1LastWaveform:: ds 1
 wSound1FadeEnabled:: ds 1
 wSound1FadeTimer:: ds 1
 wSound1ChannelsActive:: ds 1
-; music channels
-wChannels::
-wChannel1:: channel_struct wChannel1
-wChannel2:: channel_struct wChannel2
-wChannel3:: channel_struct wChannel3
-wChannel4:: channel_struct wChannel4
+wSound1Channels::
+wSound1Channel1:: channel_struct wSound1Channel1
+wSound1Channel2:: channel_struct wSound1Channel2
+wSound1Channel3:: channel_struct wSound1Channel3
+wSound1Channel4:: channel_struct wSound1Channel4
+wSound1SFXChannels::
+wSound1Channel5:: channel_struct wSound1Channel5
+wSound1Channel6:: channel_struct wSound1Channel6
+wSound1Channel7:: channel_struct wSound1Channel7
+wSound1Channel8:: channel_struct wSound1Channel8
 
-; sfx channels
-wSFXChannels::
-wChannel5:: channel_struct wChannel5
-wChannel6:: channel_struct wChannel6
-wChannel7:: channel_struct wChannel7
-wChannel8:: channel_struct wChannel8
-
+; shared across sound engines
 wCh1DataCurrentSweep:: ds 1
 wCh1DataCurrentDutyLength:: ds 1
 wCh1DataCurrentEnvelope:: ds 1
 wCh1DataCurrentFrequency:: ds 2
-
 wCh2DataCurrentDutyLength:: ds 1
 wCh2DataCurrentEnvelope:: ds 1
 wCh2DataCurrentFrequency:: ds 2
-
 wCh3DataEnable:: ds 2
 wCh3DataCurrentVolume:: ds 1
 wCh3DataCurrentFrequency:: ds 2
-
 wCh4DataCurrentLength:: ds 1
 wCh4DataCurrentEnvelope:: ds 1
 wCh4DataCurrentFrequency:: ds 2
@@ -400,19 +398,15 @@ wCh1DataLastSweep:: ds 1
 wCh1DataLastDutyLength:: ds 1
 wCh1DataLastEnvelope:: ds 1
 wCh1DataLastFrequency:: ds 2
-
 wCh2DataLastDutyLength:: ds 1
 wCh2DataLastEnvelope:: ds 1
 wCh2DataLastFrequency:: ds 2
-
 wCh3DataLastEnable:: ds 2
 wCh3DataLastVolume:: ds 1
 wCh3DataLastFrequency:: ds 2
-
 wd591:: ds 1
 wd592:: ds 1
 wd593:: ds 2
-
 wd595:: ds 1
 wd596:: ds 1
 wd597:: ds 1
@@ -420,44 +414,31 @@ wCh1NoteCounter:: ds 1 ; 98
 wCh2NoteCounter:: ds 1
 	ds 1
 wCh4DataLastEnvelope:: ds 1
-
 	ds $6b
 
+; engine_2 and engine_3
 wSound2ChannelMask:: ds 1
-wCh3TargetWaveform:: ds 1
-wCh7TargetWaveform:: ds 1
+wSound2Ch3TargetWaveform:: ds 1
+wSound2Ch7TargetWaveform:: ds 1
 wSound2LastWaveform:: ds 1
 wSound2FadeEnabled:: ds 1
 wSound2FadeTimer:: ds 1
 wSound2ChannelsActive:: ds 1
-	ds 8
-wd616:: ds $2c
-wd642:: ds $14
-wd656:: ds 1
-wd657:: ds 1
-wd658:: ds $16
-wd66e:: ds $1c
-wd68a:: ds $10
-wd69a:: ds 1
-	ds $23
 
-wd6be:: ds 1
-	ds 7
+; BUG: some of these are never actually used, as engine_2 & _3 use
+; the wSound1* equivalents instead. (see docs/bugs.md#Broken sound engine) 
+wSound2Channels::
+wSound2Channel1:: channel_struct wSound2Channel1
+wSound2Channel2:: channel_struct wSound2Channel2
+wSound2Channel3:: channel_struct wSound2Channel3
+wSound2Channel4:: channel_struct wSound2Channel4
+wSound2SFXChannels::
+wSound2Channel5:: channel_struct wSound2Channel5
+wSound2Channel6:: channel_struct wSound2Channel6
+wSound2Channel7:: channel_struct wSound2Channel7
+wSound2Channel8:: channel_struct wSound2Channel8
 
-wd6c6:: ds 1
-	ds $23
-
-wd6ea:: ds 1
-	ds 7
-
-wd6f2:: ds 1
-	ds $17
-wd70a:: ds 1
-	ds $13
-wd71e:: ds 1
-	ds $2b
-
-wd74a:: ds $81
+wd76e:: ds $5d
 
 wd7cb:: ds $9f ; mon dex
 
