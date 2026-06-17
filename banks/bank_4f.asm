@@ -10,7 +10,7 @@ Script_04f_4001:
 	scr_spriteface $40, $4e ; TEMP
 	scr_end
 
-ObjectEvents_04f_4010:
+G3_1E_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_04f_401c
 	objects_end
 
@@ -24,7 +24,7 @@ Script_04f_4020::
 Script_04f_4031:
 	scr_end
 
-ObjectEvents_04f_4032:
+G3_1D_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_04f_4049
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_04f_404d
 	objects_end
@@ -172,17 +172,26 @@ Script_04f_432e::
 Script_04f_434c::
 	dr $13c34c, $13c389
 
-ObjectEvents_04f_4389::
+GreenForestP12_ObjectEvents:
+GreenForestP21_ObjectEvents:
+GreenForestP31_ObjectEvents:
+GreenForestP22_ObjectEvents:
+GreenForestP32_ObjectEvents:
+AirportOutside_ObjectEvents:
+G3_15_ObjectEvents:
+G3_16_ObjectEvents:
+G3_18_ObjectEvents:
+G3_1F_ObjectEvents:
 	objects_end
 
-ObjectEvents_04f_438a:
+BanglinCo1f_ObjectEvents:
 	object_event $45,  2,  2, 0, $00, $00, $00, $00, Script_04f_4775
 	object_event $1f,  1,  6, 0, $00, $00, $00, $01, Script_04f_4b77
 	object_event $25, 10,  4, wEventFlags + 5, $00, $00, $00, $02, Script_04f_477d
 	object_event $14,  9,  8, 0, $00, $00, $09, $03, Script_04f_4782
 	objects_end
 
-ObjectEvents_04f_43b7:
+BanglinCo1f_ObjectEvents2:
 	object_event $45,  2,  3, wEventFlags + $18, $00, $00, $00, $00, Script_04f_4775
 	object_event $45,  2,  2, wEventFlags + $18, $00, $01, $00, $00, Script_04f_4775
 	object_event $1f,  1,  6, 0, $00, $00, $00, $01, Script_04f_4b77
@@ -191,7 +200,7 @@ ObjectEvents_04f_43b7:
 	object_event $11,  2,  2, wEventFlags + $18, $00, $00, $00, $04, Script_04f_4031
 	objects_end
 
-ObjectEvents_04f_43fa:
+SkyCity_ObjectEvents:
 	object_event $16, 23,  6, 0, $00, $00, $07, $00, Script_04f_4790
 	object_event $16,  9, 22, 0, $00, $00, $0b, $01, Script_04f_4794
 	object_event $12, 13, 17, 0, $00, $00, $05, $03, Script_04f_47ba
@@ -203,12 +212,12 @@ ObjectEvents_04f_43fa:
 	object_event $1c,  7, 10, 0, $00, $00, $08, $04, Script_04f_4815
 	objects_end
 
-ObjectEvents_04f_445e:
+FashionStore_ObjectEvents:
 	object_event $25,  8,  8, 0, $00, $00, $00, $00, Script_04f_4819
 	object_event $3e,  6,  4, wEventFlags + 6, $02, $00, $00, $01, Script_04f_4831
 	objects_end
 
-ObjectEvents_04f_4475:
+FashionStore_ObjectEvents2:
 	object_event $25,  8,  8, 0, $00, $00, $00, $00, Script_04f_4819
 	object_event $3e,  6,  4, 0, $00, $00, $00, $01, Script_04f_4831
 	object_event $27,  5,  6, wEventFlags + 5, $02, $00, $00, $02, Script_04f_481d
@@ -270,7 +279,7 @@ Script_04f_44a2:
 	scr_setmap $0f, $00 ; TEMP
 	scr_end
 
-ObjectEvents_04f_453c:
+G3_21_ObjectEvents:
 	object_event $3a, 11,  7, 0, $00, $00, $00, $00, Script_04f_455e
 	object_event $44,  8,  8, 0, $00, $00, $00, $01, Script_04f_4576
 	object_event $42, 11, 11, 0, $00, $00, $00, $02, Script_04f_456a
@@ -285,40 +294,40 @@ Script_04f_456a:
 Script_04f_4576:
 	dr $13c576, $13c582
 
-ObjectEvents_04f_4582::
+G3_21_ObjectEvents2:
 	dr $13c582, $13c5c6
 
 Script_04f_45c6::
 	dr $13c5c6, $13c63f
 
-ObjectEvents_04f_463f::
+G3_22_ObjectEvents:
 	dr $13c63f, $13c656
 
-ObjectEvents_04f_4656::
+G3_23_ObjectEvents:
 	dr $13c656, $13c69c
 
-ObjectEvents_04f_469c::
+GreenForestP4_ObjectEvents:
 	dr $13c69c, $13c6d4
 
-ObjectEvents_04f_46d4::
+GreenForestP5_ObjectEvents:
 	dr $13c6d4, $13c6eb
 
-ObjectEvents_04f_46eb::
+GreenForestP6_ObjectEvents:
 	dr $13c6eb, $13c70d
 
-ObjectEvents_04f_470d::
+G3_17_ObjectEvents:
 	dr $13c70d, $13c724
 
-ObjectEvents_04f_4724::
+G3_19_ObjectEvents:
 	dr $13c724, $13c73b
 
-ObjectEvents_04f_473b::
+G3_1A_ObjectEvents:
 	dr $13c73b, $13c752
 
-ObjectEvents_04f_4752::
+G3_1B_ObjectEvents:
 	dr $13c752, $13c75e
 
-ObjectEvents_04f_475e::
+G3_1C_ObjectEvents:
 	dr $13c75e, $13c775
 
 Script_04f_4775::
@@ -372,13 +381,13 @@ Script_04f_4831::
 Script_04f_48a9::
 	dr $13c8a9, $13cab6
 
-ObjectEvents_04f_4ab6::
+SkyCity_ObjectEvents2:
 	dr $13cab6, $13cac2
 
 Script_04f_4ac2::
 	dr $13cac2, $13cb3f
 
-ObjectEvents_04f_4b3f::
+BanglinCo1f_ObjectEvents3:
 	dr $13cb3f, $13cb77
 
 Script_04f_4b77:
@@ -390,13 +399,13 @@ Script_04f_4b83::
 Script_04f_4bf3::
 	dr $13cbf3, $13cc80
 
-ObjectEvents_04f_4c80::
+GreenForestP13_ObjectEvents:
 	dr $13cc80, $13cccb
 
-ObjectEvents_04f_4ccb::
+G3_20_ObjectEvents:
 	dr $13cccb, $13cd58
 
-ObjectEvents_04f_4d58::
+G3_1F_ObjectEvents2:
 	dr $13cd58, $13cd6f
 
 Script_04f_4d6f::
@@ -405,7 +414,7 @@ Script_04f_4d6f::
 Script_04f_4d94::
 	dr $13cd94, $13cdb2
 
-ObjectEvents_04f_4db2::
+GreenForestP32_ObjectEvents2:
 	dr $13cdb2, $13cdbe
 
 Script_04f_4dbe::

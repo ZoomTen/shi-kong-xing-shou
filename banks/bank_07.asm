@@ -117,29 +117,16 @@ Group00_Maps::
 	warp 1, 0, $4078
 	end_map
 
-BellSchoolNorthClassroom1_Header::
-	; map XXXXX
-	dbaw2 BellSchoolNorthClassroom_MapAttributes
-	; warp 1, 0, $4078, BellSchoolNorthClassroom1_ObjectEvents, BellSchoolNorthClassroom1_MapEvents
-	db 1, 0
-	dw $4078
-	dbaw2 BellSchoolNorthClassroom1_ObjectEvents
-	dw BellSchoolNorthClassroom1_MapEvents
-	; warp 0, 1, $5078, BellObservatory1_ObjectEvents, unk_007_4307
-	db 0, 1
-	dw $5078
-	dbaw2 BellObservatory1_ObjectEvents
-	dw unk_007_4307
+; BellSchoolNorthClassroom1
+	map  BellSchoolNorthClassroom1
+	warp 1, 0, $4078
+	warp 0, 1, $5078, BellObservatory1_ObjectEvents, BellSchoolNorthClassroom1_MapEvents2
+	end_map
 
-
-BlueMoon_Header::
-	; map XXXXX
-	dbaw2 BlueMoon_MapAttributes
-	; warp 0, 5, $20b0, BellObservatory1_ObjectEvents, BlueMoon_MapEvents
-	db 0, 5
-	dw $20b0
-	dbaw2 BellObservatory1_ObjectEvents
-	dw BlueMoon_MapEvents
+; BlueMoon
+	map  BlueMoon
+	warp 0, 5, $20b0, BellObservatory1_ObjectEvents
+	end_map
 
 
 BellVillage1_MapEvents::
@@ -218,7 +205,7 @@ BellSchoolNorthClassroom1_MapEvents::
 	event 7, 6, $01, $03, $c8, $41
 	events_end
 
-unk_007_4307::
+BellSchoolNorthClassroom1_MapEvents2::
 	event 10, ABSOLUTE, $01, $00, $14, $42
 	events_end
 

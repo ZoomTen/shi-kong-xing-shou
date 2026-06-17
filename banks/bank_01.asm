@@ -18,12 +18,15 @@ HayatosHouse2_MapAttributes::
 
 G4_2C_MapAttributes:
 G4_46_MapAttributes:
+G3_18_MapAttributes:
 CarpetWomansHouse2_MapAttributes:
 	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_006_403b
 
+G3_19_MapAttributes:
 FangfangsHouse2_MapAttributes:
 	map_attributes FangfangsHouse1, FANGFANGS_HOUSE_1, 0, Tileset_006_403b
 
+G3_1D_MapAttributes:
 BellHealingCenter2_MapAttributes:
 	map_attributes BellHealingCenter1, BELL_HEALING_CENTER_1, 0, Tileset_006_404a
 
@@ -33,6 +36,7 @@ BellSchool2_MapAttributes:
 BellObservatory2_MapAttributes:
 	map_attributes BellObservatory1, BELL_OBSERVATORY_1, 0, Tileset_006_405a
 
+BellSchoolNorthClassroom1_MapAttributes:
 BellSchoolNorthClassroom_MapAttributes:
 BellSchoolSouthClassroom1_MapAttributes:
 BellSchoolSouthClassroom2_MapAttributes:
@@ -52,6 +56,8 @@ TechCity_MapAttributes:
 
 G4_2F_MapAttributes:
 G4_49_MapAttributes:
+G2_1B_MapAttributes:
+G2_1F_MapAttributes:
 MapAttributes_001_40f0:
 	db 6, 5
 	dw Layout_001_5bb9
@@ -67,6 +73,7 @@ MapAttributes_001_40f0:
 G4_2D_MapAttributes:
 G4_35_MapAttributes:
 G4_47_MapAttributes:
+G2_20_MapAttributes:
 MapAttributes_001_4104:
 	db 6, 5
 	dw Layout_001_5c18
@@ -80,6 +87,8 @@ MapAttributes_001_4104:
 	dw Collision_001_5fd4
 
 G4_34_MapAttributes:
+G2_1D_MapAttributes:
+G3_1A_MapAttributes:
 MapAttributes_001_4118:
 	db 6, 5
 	dw Layout_001_5c7b
@@ -95,6 +104,7 @@ MapAttributes_001_4118:
 G4_2E_MapAttributes:
 G4_37_MapAttributes:
 G4_48_MapAttributes:
+G2_1E_MapAttributes:
 MapAttributes_001_412c:
 	db 6, 5
 	dw Layout_001_5cd2
@@ -109,6 +119,7 @@ MapAttributes_001_412c:
 
 G4_33_MapAttributes:
 G4_4D_MapAttributes:
+G2_1C_MapAttributes:
 MapAttributes_001_4140:
 	db 6, 5
 	dw Layout_001_5d35
@@ -141,6 +152,8 @@ G4_38_MapAttributes:
 G4_41_MapAttributes:
 G4_4C_MapAttributes:
 G4_5D_MapAttributes:
+G2_1A_MapAttributes:
+G2_22_MapAttributes:
 TechShop_MapAttributes:
 	db 6, 5
 	dw Layout_001_5a28
@@ -158,6 +171,8 @@ G4_39_MapAttributes:
 G4_40_MapAttributes:
 G4_4B_MapAttributes:
 G4_5C_MapAttributes:
+G2_19_MapAttributes:
+G2_21_MapAttributes:
 TechHealingCenter_MapAttributes:
 	db 6, 5
 	dw Layout_001_58a7
@@ -194,6 +209,7 @@ MapAttributes_001_41a4:
 	dw 0
 	dw Collision_001_544a
 
+G3_17_MapAttributes:
 MapAttributes_001_41b8:
 	db 6, 5
 	dw Layout_001_50d5
@@ -802,5 +818,5 @@ BellVillage1_Palettes:
 BellVillage1_Collision:
 	dr $78de, $791a
 
-MapAttributes_001_791a:
+G2_23_MapAttributes:
 	dr $791a, $79c8

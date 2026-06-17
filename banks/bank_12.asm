@@ -275,7 +275,24 @@ Script_012_41ba:
 	scr_spriteface $01, $03 ; TEMP
 	scr_end
 
-ObjectEvents_012_41dc:
+CoffeeForestPart1_ObjectEvents:
+CoffeeForestPart2_ObjectEvents:
+CoffeeForestPart3_ObjectEvents2:
+SkyRockPart1_ObjectEvents:
+SkyRockPart2_ObjectEvents:
+ClockTowerOutside_ObjectEvents:
+ClockTower2f_ObjectEvents:
+ClockTower3f_ObjectEvents:
+ClockTower4f_ObjectEvents:
+ClockTower5f_ObjectEvents2:
+G2_0F_ObjectEvents:
+G2_10_ObjectEvents:
+G2_11_ObjectEvents:
+G2_16_ObjectEvents4:
+R03_ObjectEvents:
+R04_ObjectEvents:
+G2_1E_ObjectEvents:
+G2_1F_ObjectEvents:
 	objects_end
 
 ObjectEvents_012_41dd:
@@ -290,7 +307,7 @@ Script_012_41e9:
 
 INCLUDE "data/text/bank12_41f1.asm"
 
-ObjectEvents_012_41fe:
+DuoluCity2_ObjectEvents:
 	object_event $15,  8,  4, 0, $00, $00, $0a, $00, Script_012_4613
 	object_event $21,  3,  8, 0, $00, $00, $0b, $01, Script_012_4617
 	object_event $12,  8, 10, 0, $00, $00, $08, $02, Script_012_461b
@@ -302,35 +319,35 @@ ObjectEvents_012_41fe:
 	object_event $19,  9, 20, 0, $00, $00, $08, $03, Script_012_469e
 	objects_end
 
-ObjectEvents_012_4262:
+G2_1B_ObjectEvents:
 	object_event $16,  4,  6, 0, $00, $00, $09, $00, Script_012_46a2
 	object_event $19,  8,  6, 0, $00, $00, $06, $01, Script_012_46a6
 	objects_end
 
-ObjectEvents_012_4279:
+G2_1C_ObjectEvents:
 	object_event $1b,  5,  4, 0, $00, $00, $06, $00, Script_012_46aa
 	object_event $1a,  9,  6, 0, $00, $00, $07, $01, Script_012_46ae
 	objects_end
 
-ObjectEvents_012_4290:
+G2_1D_ObjectEvents:
 	object_event $1c,  6,  3, 0, $00, $00, $07, $00, Script_012_46b2
 	object_event $1a,  4,  6, 0, $00, $00, $0b, $01, Script_012_46b6
 	object_event $15,  6,  7, 0, $00, $00, $06, $02, Script_012_46ba
 	objects_end
 
-ObjectEvents_012_42b2:
+G2_20_ObjectEvents:
 	object_event $22,  7,  5, 0, $00, $00, $06, $00, Script_012_46be
 	objects_end
 
-ObjectEvents_012_42be:
+G2_0E_ObjectEvents:
 	object_event $2d,  6,  5, wEventFlags + 3, $02, $00, $00, $00, Script_012_46c2
 	objects_end
 
-ObjectEvents_012_42ca:
+ClockTower1f_ObjectEvents:
 	object_event $24,  6, 13, wEventFlags + 4, $06, $00, $00, $00, Script_012_46fb
 	objects_end
 
-ObjectEvents_012_42d6:
+ShandaFarm_ObjectEvents:
 	object_event $17, 15,  6, 0, $00, $00, $09, $00, Script_012_48b7
 	object_event $20,  9,  8, 0, $00, $00, $08, $01, Script_012_48bb
 	object_event $12,  4, 16, 0, $00, $00, $08, $02, Script_012_48c9
@@ -340,27 +357,27 @@ ObjectEvents_012_42d6:
 	object_event $1a, 11, 25, 0, $00, $00, $09, $01, Script_012_48f7
 	objects_end
 
-ObjectEvents_012_4324:
+G2_12_ObjectEvents:
 	object_event $23,  3,  3, 0, $00, $00, $0b, $00, Script_012_4905
 	object_event $25,  5,  5, 0, $00, $00, $06, $01, Script_012_4913
 	objects_end
 
-ObjectEvents_012_433b:
+G2_13_ObjectEvents:
 	object_event $22,  3,  5, 0, $00, $00, $09, $00, Script_012_4917
 	object_event $21,  8,  6, 0, $00, $00, $06, $01, Script_012_491b
 	objects_end
 
-ObjectEvents_012_4352:
+G2_14_ObjectEvents:
 	object_event $1e,  9,  3, 0, $00, $00, $00, $00, Script_012_491f
 	object_event $1f,  5,  3, 0, $00, $00, $06, $01, Script_012_492d
 	object_event $18,  6,  6, 0, $00, $00, $05, $02, Script_012_493b
 	objects_end
 
-ObjectEvents_012_4374:
+G2_15_ObjectEvents:
 	object_event $16,  7,  5, 0, $00, $00, $08, $00, Script_012_495d
 	objects_end
 
-ObjectEvents_012_4380:
+SkyRockPart2_ObjectEvents2:
 	object_event $30,  5,  7, wEventFlags + 4, $07, $00, $00, $00, Script_012_44cc
 	object_event $04,  6,  8, wEventFlags + 4, $07, $00, $00, $02, Script_012_44cc
 	objects_end
@@ -457,12 +474,12 @@ unk_012_4486:
 unk_012_4492:
 	dr $48492, $4849e
 
-ObjectEvents_012_449e:
+G2_16_ObjectEvents3:
 	object_event $30,  7,  3, wEventFlags + 3, $06, $00, $00, $00, Script_012_44cc
 	object_event $04,  8,  4, wEventFlags + 3, $06, $00, $00, $02, Script_012_44cc
 	objects_end
 
-ObjectEvents_012_44b5:
+G2_16_ObjectEvents2:
 	object_event $47,  8,  3, 0, $00, $00, $00, $00, Script_012_44cc
 	object_event $04,  8,  4, 0, $00, $00, $00, $02, Script_012_44cc
 	objects_end
@@ -541,7 +558,7 @@ Script_012_44db:
 	scr_setbit $daa3, $06 ; TEMP
 	scr_end
 
-ObjectEvents_012_4589:
+G2_16_ObjectEvents:
 	object_event $47,  8,  3, 0, $00, $00, $00, $00, Script_012_45ab
 	object_event $05,  8,  4, wEventFlags + 3, $04, $00, $00, $01, Script_012_45af
 	object_event $04,  7,  2, wEventFlags + 3, $04, $00, $00, $02, Script_012_45b3
@@ -757,7 +774,7 @@ Script_012_4719:
 	scr_setmap $0d, $00 ; TEMP
 	scr_69
 
-ObjectEvents_012_471d::
+ClockTower5f_ObjectEvents:
 	object_event $33,  5,  3, wEventFlags + 4, $05, $00, $00, $00, Script_012_4735
 	objects_end
 	
@@ -838,7 +855,7 @@ Script_012_4781:
 	scr_1f $0b ; TEMP
 	scr_end
 
-ObjectEvents_012_47f7:
+G2_0E_ObjectEvents4:
 	object_event $2f,  5,  4, 0, $00, $00, $00, $00, unk_012_4819
 	object_event $30,  4,  4, 0, $00, $00, $00, $01, unk_012_481d
 	object_event $04,  6,  5, wEventFlags + $17, $07, $00, $00, $02, unk_012_4827
@@ -1034,7 +1051,8 @@ unk_012_4967:
 	scr_04 text_12_686f
 	scr_end
 
-ObjectEvents_012_496b:
+G2_19_ObjectEvents:
+G2_21_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, unk_012_4982
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, unk_012_4986
 	objects_end
@@ -1067,7 +1085,8 @@ Script_012_4998::
 unk_012_49a5:
 	scr_end
 
-ObjectEvents_012_49a6::
+G2_1A_ObjectEvents:
+G2_22_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, unk_012_49b2
 	objects_end
 
@@ -1109,7 +1128,7 @@ unk_012_49e9:
 unk_012_49f8:
 	scr_end
 
-ObjectEvents_012_49f9::
+CoffeeForestPart3_ObjectEvents:
 	object_event $32,  6,  5, wEventFlags + 3, $05, $00, $00, $00, unk_012_4a05
 	objects_end
 
@@ -1205,11 +1224,11 @@ unk_012_4b00:
 	object_event $48, 17, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-ObjectEvents_012_4b0c::
+ShandaFarm_ObjectEvents2:
 	object_event $1d, 14, 18, 0, $00, $00, $00, $00, Script_012_4acf
 	objects_end
 
-ObjectEvents_012_4b18::
+G2_0E_ObjectEvents2:
 	object_event $2f,  4,  2, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 	object_event $2d,  6,  3, wEventFlags + 4, $02, $00, $00, $01, Script_012_44cc
 	object_event $30,  5,  2, wEventFlags + 4, $02, $00, $00, $02, Script_012_44cc
@@ -1222,7 +1241,7 @@ unk_012_4b40: ; VF moment
 	dw Script_012_44cc
 	objects_end
 
-ObjectEvents_012_4b45::
+G2_0E_ObjectEvents5:
 	object_event $2f,  5,  3, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 
 unk_012_4b50:
@@ -1327,11 +1346,11 @@ unk_012_4b94:
 	scr_1f $08 ; TEMP
 	scr_end
 
-ObjectEvents_012_4c71::
+G2_11_ObjectEvents2:
 	object_event $04,  6,  6, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
-ObjectEvents_012_4c7d::
+G2_23_ObjectEvents:
 	object_event $11,  5,  2, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
@@ -1401,7 +1420,7 @@ unk_012_4d28:
 	scr_setmap $0e, $06 ; TEMP
 	scr_69
 
-ObjectEvents_012_4d2c::
+G2_0E_ObjectEvents3:
 	object_event $2d,  6,  5, 0, $00, $00, $00, $00, unk_012_4d38
 	objects_end
 
