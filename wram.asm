@@ -189,8 +189,7 @@ wd000:: ds $80
 wd080:: ds 1
 wd081:: ds 1
 wd082:: ds 1
-wd083:: ds 1
-wd084:: ds 1
+wd083:: ds 2
 wTextDelayFrames:: ds 1
 wd086:: ds 1
 wd087:: ds 1
@@ -221,8 +220,7 @@ wMapCollisionsPointer:: ds 2
 wd0b2:: ds 2
 wPaletteFadeDirection:: ds 1
 wPaletteFadeChanged:: ds 1
-wd0b6:: ds 1
-wd0b7:: ds 1
+wBGMapAddr:: ds 2
 wd0b8:: ds 1
 wd0b9:: ds 1
 wd0ba:: ds 1
@@ -297,8 +295,9 @@ wd1b0:: ds $32
 
 wd1e2:: ds 1
 wd1e3:: ds 1
+wd1e4:: ds 1
 
-	ds 13
+	ds 12
 
 wd1f1:: ds 1
 wd1f2:: ds 1
@@ -661,8 +660,7 @@ wdcd0:: ds 1
 wdcd1:: ds 2
 wdcd3:: ds 2
 wdcd5:: ds 1
-wdcd6:: ds 1
-wdcd7:: ds 1
+wdcd6:: ds 2
 
 wTextFaceID:: ds 1
 wdcd9:: ds 1

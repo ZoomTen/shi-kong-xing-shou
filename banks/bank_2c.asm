@@ -179,7 +179,7 @@ Func_2c_53cb:
 	sla c
 	sla c
 	sla c
-	ld hl, $c920
+	hlcoord 0, 0
 	ld e, $18
 
 Func_2c_53df:

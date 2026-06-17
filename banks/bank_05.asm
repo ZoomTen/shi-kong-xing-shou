@@ -16,9 +16,9 @@ Func_005_401d:
 	cp $11
 	ret nz
 	ld a, $98
-	ld [wd0b6 + 1], a
+	ld [wBGMapAddr + 1], a
 	ld a, 0
-	ld [wd0b6], a
+	ld [wBGMapAddr], a
 	ld hl, wTilemap
 	ld de, wMapTileAttrs
 	ld a, 1
@@ -35,24 +35,24 @@ asm_005_403a:
 	ld h, 0
 	add hl, de
 	push de
-	ld a, [wd0b6 + 1]
+	ld a, [wBGMapAddr + 1]
 	ld d, a
-	ld a, [wd0b6]
+	ld a, [wBGMapAddr]
 	ld e, a
 	ld a, [hli]
 	ld [de], a
 	pop de
-	ld hl, wd0b6
+	ld hl, wBGMapAddr
 	inc [hl]
 	pop hl
 	dec c
 	jr nz, asm_005_403a
-	ld a, [wd0b6]
+	ld a, [wBGMapAddr]
 	add $c
-	ld [wd0b6], a
-	ld a, [wd0b6 + 1]
+	ld [wBGMapAddr], a
+	ld a, [wBGMapAddr + 1]
 	adc 0
-	ld [wd0b6 + 1], a
+	ld [wBGMapAddr + 1], a
 	dec b
 	jr nz, asm_005_4038
 	xor a
@@ -1380,7 +1380,7 @@ asm_005_547d:
 	ld a, l
 	ld [wd083], a
 	ld a, h
-	ld [wd084], a
+	ld [wd083 + 1], a
 	ret
 
 unk_005_549d:
@@ -1925,7 +1925,7 @@ Overworld_ProcessJoypadInput:
 	ldh [hFF9E], a
 	ret
 .asm_5879
-	ld hl, $CA60
+	hlcoord 0, 16
 	ld de, wd128
 	call Func_005_5919
 	ld c, $28
@@ -1968,7 +1968,7 @@ Overworld_ProcessJoypadInput:
 	ldh [hFF9E], a
 	ret
 .asm_58d0
-	ld hl, $C932
+	hlcoord 18, 0
 	ld de, wd128
 	call Func_005_5922
 	ld c, $24

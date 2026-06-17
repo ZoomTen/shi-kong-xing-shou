@@ -34,6 +34,27 @@ This usually resolves to:
 This is usually used to access a part of a struct, where bc is the origin point of said struct.
 Setting hl to a low value is usually indicative of such.
 
+## 16-bit pointer stored as two consecutive bytes (lo, hi)
+
+```
+	ld a, l
+	ld [wFoo], a
+	ld a, h
+	ld [wFoo + 1], a   ; NOT a separate wBar label
+```
+
+And the matching load:
+```
+	ld a, [wFoo]
+	ld l, a
+	ld a, [wFoo + 1]
+	ld h, a
+```
+
+`wFoo` should be declared `ds 2` in `wram.asm`. The high byte is always `wFoo + 1` —
+do **not** coin a separate `wBar`/`wFooHi` label unless that byte is also accessed
+independently (i.e. not as part of a paired lo/hi load or store).
+
 ## Call to function in xx:yyyy
 
 ```

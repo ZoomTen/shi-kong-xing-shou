@@ -64,6 +64,38 @@ After disassembling, list the function's `call`/`jp` targets. If any resolves to
 a raw `$XXXX` (no label) or to another `Func_`/`asm_` that is still a `dr`, that
 callee is trapped code — a candidate for the next round.
 
+**Every `call`/`jp`/`jr` operand AND every `ld [addr]`/`ld r, [addr]`/`ld rr, addr`
+operand that touches RAM MUST resolve to an actual label — no bare `$XXXX` left
+behind.** Use `get_nearest_symbol.py <addr> ram` to find the nearest WRAM symbol.
+If the result is `wFoo + N` and `wFoo` is `ds 1` (so `$addr` is outside `wFoo`),
+coin a new label in `wram.asm` and split the `ds` gap (see `wXXXX + N` rule below).
+Exceptions: a 16-bit constant loaded into a pointer register that's immediately used
+for arithmetic (e.g. `ld hl, wTilemap + 200` where 200 is a well-defined offset) is
+fine as `label + offset`; `ld sp, $FFFE` and similar SP-init sequences can stay bare.
+
+**Every `call`/`jp`/`jr` operand MUST resolve to an actual label — no bare
+`$XXXX` left behind.** A raw address assembles and may even byte-match, but it
+hides the control flow. Resolve each one (`get_nearest_symbol.py`, §1): an
+in-bank target lands inside some function as a `.asm_` local or at a known
+global; point the instruction at that symbol. (A `jp $c000`-style jump into
+WRAM is the exception — that's a real RAM entry, leave it.) If the target sits
+inside a `dr`, split the `dr` to expose a label there (§3a).
+
+**If a `call`/`jp`/`jr` resolves to a *local* (`.asm_`) label in a *different*
+global scope, promote that local to a global** (`Func_BB_AAAA`). rgbds locals
+are only visible within their enclosing global label, so a cross-scope reference
+can't see them. A genuinely shared subroutine, loop entry, or jump target that
+several functions reach is really a global.
+* Promoting a label splits its function at that point, which can **orphan**
+  other locals: any label now on the far side of the new boundary that was
+  referenced from the near side (or vice-versa) stops resolving. Promote those
+  too, and iterate to a fixpoint — a tangled dispatch loop may need several
+  promotions in one go.
+* Mechanically: rename `.asm_AAAA` → `Func_BB_AAAA` everywhere (def + refs),
+  add a `:` to the now-global def line, and replace the bare `$AAAA` operands.
+  The bytes don't change (same address, same `jr`/`jp` encoding), so `make
+  compare` stays `OK` if and only if every reference still resolves.
+
 To find where an address lives, use [find closest label/symbol](find-closest-label-or-symbol.md):
 ```sh
 python3 utils/get_nearest_symbol.py <bank:addr>        # ROM
@@ -164,6 +196,18 @@ data shape (e.g. `; TODO: loads a monster's palette into wPaletteBuffer`, or
 label; don't write a paragraph. This applies to the leftover `dr` you leave
 behind too — a named-but-undisassembled `Pointers_BB_AAAA` / `unk_BB_AAAA` block
 should carry the one-line hint so the next pass knows what it's looking at.
+
+## 4a. Graphics data: extract a PNG, not a 2bpp INCBIN
+
+When a `dr` block turns out to be tile graphics, **do not** `INCBIN` a `.2bpp`.
+`make clean` deletes ALL `.2bpp` files (they're build artifacts), so the work
+vanishes. Instead extract the bytes to a PNG with rgbgfx's reverse mode, then let
+the build re-compile the PNG → `.2bpp`:
+```sh
+rgbgfx -r X -o something.2bpp something.png   # X = tiles per row
+```
+Try `X = 16` first, then step down (8, 4, … 1) until the image reads correctly.
+Commit the PNG; the `.2bpp` regenerates on build.
 
 ## 5. Verify
 

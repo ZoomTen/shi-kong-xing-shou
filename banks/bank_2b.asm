@@ -1671,7 +1671,7 @@ BattleEnd_Jump_2:
 	call ClearBGMap0
 	call DelayFrame
 	call LoadMapGFX
-	ld de, $c920
+	decoord 0, 0
 	ld a, [wd0ba]
 	ld l, a
 	ld a, [wd0bb]
@@ -1702,13 +1702,13 @@ BattleEnd_Jump_2:
 	ldh [$48], a
 	ldh [$49], a
 	ld hl, $cb30
-	ld de, $cab0
+	ld de, wPaletteBuffer
 	ld bc, $80
 	call CopyBytes3
 	call DelayFrame
-	ld hl, $cab0
+	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
-	ld hl, $caf0
+	ld hl, wcaf0
 	call CopyObjectPalettes
 	call DelayFrame
 	call PlayMapMusic
@@ -5581,11 +5581,11 @@ BattleIntro_Jump_2:
 	call CopyBytesVRAM
 	call DelayFrame
 	ld hl, Battle_BGPals
-	ld de, $cab0
+	ld de, wPaletteBuffer
 	ld bc, $30
 	call CopyBytes3
 	ld hl, Battle_OBPals
-	ld de, $caf0
+	ld de, wcaf0
 	ld bc, $30
 	call CopyBytes3
 	call DelayFrame

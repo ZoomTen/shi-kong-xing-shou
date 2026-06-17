@@ -44,6 +44,8 @@ Init::
 ; and only then actually starts the game.
 	ld de, DoInitWrites
 	ld hl, $c000
+; this is a little more than how big DoInitWrites actually is
+; it's probably guesswork and then some slack
 	ld bc, $20
 	call CopyBytes
 	jp $c000

@@ -1508,7 +1508,7 @@ Script_2f:
 Script_30:
 	ld a, [wd083]
 	ld [wdcca], a
-	ld a, [wd084]
+	ld a, [wd083 + 1]
 	ld [wdccb], a
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -1526,7 +1526,7 @@ Script_30:
 Script_31:
 	ld a, [wd083]
 	ld e, a
-	ld a, [wd084]
+	ld a, [wd083 + 1]
 	ld d, a
 	call GetScriptByte
 	ld a, [wScriptByte]

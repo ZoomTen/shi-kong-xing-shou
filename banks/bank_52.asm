@@ -2996,6 +2996,7 @@ MapEvents_052_5773:
 	warp_event ABSOLUTE,  9, $64, $01, $00
 	events_end
 
+; TODO: 6 zero bytes after the MapEvents tables, no references — likely padding/unused
 unk_052_577a:
-    dr $14977a, $149780
+	db $00, $00, $00, $00, $00, $00
 

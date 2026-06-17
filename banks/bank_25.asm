@@ -640,7 +640,7 @@ Func_025_43fe:
 Func_025_442f:
 	farcall Func_00c_402b
 	farcall Func_004_4309
-	ld hl, $caf0
+	ld hl, wcaf0
 	ld c, $80
 	ld b, $40
 	call LoadPalettes_OCPD
@@ -651,7 +651,7 @@ Func_025_442f:
 Func_025_444a:
 	farcall unk_00c_4000
 	farcall Func_20_4048
-	ld hl, $caf0
+	ld hl, wcaf0
 	ld c, $80
 	ld b, $40
 	call LoadPalettes_OCPD
@@ -696,9 +696,9 @@ Func_025_4488:
 Func_025_44a0:
 	ld a, $c7
 	ldh [$40], a
-	ld hl, $cab0
+	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
-	ld hl, $caf0
+	ld hl, wcaf0
 	call CopyObjectPalettes
 	call DelayFrame
 	xor a
@@ -779,7 +779,7 @@ Func_025_4525:
 	ld h, a
 	pop af
 	ld l, a
-	ld de, $cab0
+	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	xor a
@@ -795,7 +795,7 @@ Func_025_4543:
 	ld h, a
 	pop af
 	ld l, a
-	ld de, $caf0
+	ld de, wcaf0
 	ld bc, $40
 	call CopyBytes3
 	xor a
@@ -941,7 +941,7 @@ Func_025_4640:
 	ld a, [wd0bf]
 	ldh [hSCYHigh], a
 	call LoadMapGFX
-	ld de, $c920
+	decoord 0, 0
 	ld a, [wd0ba]
 	ld l, a
 	ld a, [wd0bb]
@@ -954,7 +954,7 @@ Func_025_4640:
 	call PlaceTilemap
 	call Func_025_57a0
 	ld hl, $cb30
-	ld de, $cab0
+	ld de, wPaletteBuffer
 	ld bc, $80
 	call CopyBytes3
 	xor a
@@ -972,7 +972,7 @@ Func_025_4684:
 	ret
 
 Func_025_4697:
-	ld hl, $cab0
+	ld hl, wPaletteBuffer
 	ld de, $cb30
 	ld bc, $80
 	call CopyBytes3
@@ -2454,7 +2454,7 @@ Func_025_50ad:
 
 Func_025_50cc:
 	farcall Func_20_407b
-	ld hl, $caf0
+	ld hl, wcaf0
 	ld c, $80
 	ld b, $40
 	call LoadPalettes_OCPD
@@ -2473,7 +2473,7 @@ Func_025_50cc:
 
 Func_025_50ef:
 	farcall Func_01f_40b7
-	ld hl, $cab0
+	ld hl, wPaletteBuffer
 	ld c, $80
 	ld b, $40
 	call LoadPalettes_BCPD
@@ -3532,9 +3532,9 @@ Func_025_57a0:
 	ldh a, [hConsoleType]
 	cp $11
 	ret nz
-	ld hl, $c920
+	hlcoord 0, 0
 	ld a, h
-	ld [wdcd7], a
+	ld [wdcd6 + 1], a
 	ld a, l
 	ld [wdcd6], a
 	call Func_025_581f
@@ -3590,10 +3590,10 @@ Func_025_57a0:
 Func_025_581f:
 	ld hl, $d100
 	ld a, h
-	ld [wd0b7], a
+	ld [wBGMapAddr + 1], a
 	ld a, l
-	ld [wd0b6], a
-	ld a, [wdcd7]
+	ld [wBGMapAddr], a
+	ld a, [wdcd6 + 1]
 	ld h, a
 	ld a, [wdcd6]
 	ld l, a
@@ -3607,9 +3607,9 @@ Func_025_5837:
 	ld h, 0
 	add hl, de
 	push de
-	ld a, [wd0b7]
+	ld a, [wBGMapAddr + 1]
 	ld d, a
-	ld a, [wd0b6]
+	ld a, [wBGMapAddr]
 	ld e, a
 	ld a, [hli]
 	ld [de], a
@@ -3622,7 +3622,7 @@ Func_025_5837:
 	ld a, l
 	ld [wdcd6], a
 	ld a, h
-	ld [wdcd7], a
+	ld [wdcd6 + 1], a
 	ret
 
 Func_025_585a:
@@ -5370,7 +5370,7 @@ Func_025_605f:
 	ret
 
 Func_025_6078:
-	ld hl, $c920
+	hlcoord 0, 0
 	ld de, $d
 	add hl, de
 	ld de, $cb30

@@ -37,7 +37,7 @@ Read these on-demand when the task calls for it:
 
 To determine if the compiled ROM matches the base ROM:
 ```sh
-/home/user/projects/ngbenv/ngbenv exec make compare
+make compare
 ```
 
 This checks the syntax and determines equality with the base ROM in one go.

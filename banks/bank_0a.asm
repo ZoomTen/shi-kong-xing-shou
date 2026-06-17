@@ -41,9 +41,9 @@ Func_00a_4000::
 	call DelayFrame
 	ld hl, unk_00a_42e3
 	ld a, l
-	ld [$dcd6], a
+	ld [wdcd6], a
 	ld a, h
-	ld [$dcd6 + 1], a
+	ld [wdcd6 + 1], a
 	ret
 
 Func_00a_405b:
@@ -56,28 +56,451 @@ Func_00a_405b:
 	ret
 
 Func_00a_4063::
-	dr $28063, $280b3
+	ld a, $01
+	ld [wTextboxPos], a
+	ld hl, wTilemap
+	ld a, [wVisibleObjects]
+	cp $60
+	jr nc, .asm_4079
+	xor a
+	ld [wTextboxPos], a
+	hlcoord 0, 10
+.asm_4079
+	ld a, l
+	ld [wTextboxPointer], a
+	ld a, h
+	ld [wTextboxPointer + 1], a
+	ld de, wcb30
+	ld c, $A0
+.asm_4086
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .asm_4086
+	ld hl, unk_00a_4523
+	ld de, $8A00
+	ld bc, $0070
+	call CopyBytesVRAM
+	call DelayFrame
+	ld hl, unk_00a_4423
+	ld de, $8E00
+	ld bc, Start
+	call CopyBytesVRAM
+	ld hl, unk_00a_4383
+	ld a, l
+	ld [wdcd6], a
+	ld a, h
+	ld [wdcd6 + 1], a
+	ret
 
 Func_00a_40b3::
-	dr $280b3, $280f9
+	ld a, $00
+	ld [wd1e4], a
+.asm_40b8
+	call Func_00a_41fe
+	call Func_00a_423b
+	call Func_00a_4295
+	ld a, [wTextboxPos]
+	and a
+	jr z, .asm_40cc
+	ld hl, $0000
+	jr .asm_40cf
+.asm_40cc
+	ld hl, $000A
+.asm_40cf
+	call GetTextBGMapPointer
+	call CopyTextboxToVRAM
+	ld a, [wd1e4]
+	inc a
+	ld [wd1e4], a
+	cp $02
+	jr c, .asm_40b8
+	ld de, wcbd0
+	ld a, $18
+	ld [de], a
+	inc de
+	ld a, $10
+	ld [de], a
+	inc de
+	ld a, $02
+	ld [de], a
+	ld a, [wTextboxPos]
+	and a
+	ret nz
+	ld a, $68
+	ld [wcbd0], a
+	ret
 
 unk_00a_40f9:
-	dr $280f9, $28145
+	ld a, $13
+	ld [wd1e4], a
+.asm_40fe
+	ld a, [wd1e4]
+	cp $01
+	jr z, .asm_4110
+	call Func_00a_41b7
+	call Func_00a_423b
+	call Func_00a_425b
+	jr .asm_4126
+.asm_4110
+	ld a, [wTextboxPointer]
+	ld l, a
+	ld a, [wTextboxPointer + 1]
+	ld h, a
+	ld de, wcb30
+	ld c, $A0
+.asm_411d
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec c
+	jr nz, .asm_411d
+	call Func_00a_423b
+.asm_4126
+	ld a, [wTextboxPos]
+	and a
+	jr z, .asm_4131
+	ld hl, $0000
+	jr .asm_4134
+.asm_4131
+	ld hl, $000A
+.asm_4134
+	call GetTextBGMapPointer
+	call CopyTextboxToVRAM
+	ld a, [wd1e4]
+	dec a
+	ld [wd1e4], a
+	and a
+	jr nz, .asm_40fe
+	ret
 
 unk_00a_4145:
-	dr $28145, $28178
+	call Func_00a_41a3
+	call Func_00a_423b
+	ld a, [wTextboxPos]
+	and a
+	jr z, .asm_4156
+	ld hl, $0000
+	jr .asm_4159
+.asm_4156
+	ld hl, $000A
+.asm_4159
+	call GetTextBGMapPointer
+	call CopyTextboxToVRAM
+	ld de, wcbd0
+	ld a, $18
+	ld [de], a
+	inc de
+	ld a, $10
+	ld [de], a
+	inc de
+	ld a, $02
+	ld [de], a
+	ld a, [wTextboxPos]
+	and a
+	ret nz
+	ld a, $68
+	ld [wcbd0], a
+	ret
 
 Func_00a_4178::
-	dr $28178, $282db
+	ld a, [wTextboxPointer]
+	ld l, a
+	ld a, [wTextboxPointer + 1]
+	ld h, a
+	ld de, wcb30
+	ld c, $A0
+.asm_4185
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec c
+	jr nz, .asm_4185
+	call Func_00a_423b
+	ld a, [wTextboxPos]
+	and a
+	jr z, .asm_4199
+	ld hl, $0000
+	jr .asm_419c
+.asm_4199
+	ld hl, $000A
+.asm_419c
+	call GetTextBGMapPointer
+	call CopyTextboxToVRAM
+	ret
+
+Func_00a_41a3:
+	ld de, unk_00a_42e3
+	ld a, [wTextboxPointer]
+	ld l, a
+	ld a, [wTextboxPointer + 1]
+	ld h, a
+	ld c, $A0
+.asm_41b0
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec c
+	jr nz, .asm_41b0
+	ret
+
+Func_00a_41b7:
+	ld de, wcb30
+	ld a, [wd1e4]
+	ld l, a
+	ld h, $00
+	push hl
+	add hl, de
+	ld e, l
+	ld d, h
+	ld a, [wTextboxPointer]
+	ld c, a
+	ld a, [wTextboxPointer + 1]
+	ld b, a
+	pop hl
+	add hl, bc
+	ld c, $08
+	call Func_00a_4223
+	ret
+
+.asm_41d4
+	push hl
+	ld de, wd100
+	ld a, $14
+	ld b, a
+	ldh [hVRAMCopyWidth], a
+	ld a, $08
+	ld c, a
+	ldh [hVRAMCopyHeight], a
+	call PlaceAttrmap
+	pop hl
+	ld a, [wTextboxPointer]
+	ld e, a
+	ld a, [wTextboxPointer + 1]
+	ld d, a
+	ld a, $14
+	ld b, a
+	ld [hVRAMCopyWidth], a
+	ld a, $08
+	ld c, a
+	ld [hVRAMCopyHeight], a
+	call PlaceTilemap
+	ret
+
+Func_00a_41fe:
+	ld a, [wdcd6]
+	ld e, a
+	ld a, [wdcd6 + 1]
+	ld d, a
+	ld a, [wd1e4]
+	add a
+	ld b, a
+	add a
+	add a
+	add b
+	ld l, a
+	ld h, $00
+	push hl
+	add hl, de
+	ld e, l
+	ld d, h
+	ld a, [wTextboxPointer]
+	ld c, a
+	ld a, [wTextboxPointer + 1]
+	ld b, a
+	pop hl
+	add hl, bc
+	ld c, $08
+Func_00a_4221:
+	ld b, $0A
+Func_00a_4223:
+	ld a, [de]
+	ld [hli], a
+	inc de
+	dec b
+	jr nz, Func_00a_4223
+	push bc
+	ld bc, $000A
+	add hl, bc
+	ld a, e
+	add $0A
+	ld e, a
+	ld a, d
+	adc $00
+	ld d, a
+	pop bc
+	dec c
+	jr nz, Func_00a_4221
+	ret
+Func_00a_423b:
+	ld a, [wTextboxPointer]
+	ld l, a
+	ld a, [wTextboxPointer + 1]
+	ld h, a
+	ld de, wd100
+	ld c, $A0
+.asm_4248
+	ld a, [hli]
+	push hl
+	ld hl, wMapTileAttrs
+	add l
+	ld l, a
+	ld a, h
+	adc $00
+	ld h, a
+	ld a, [hl]
+	ld [de], a
+	inc de
+	pop hl
+	dec c
+	jr nz, .asm_4248
+	ret
+
+Func_00a_425b:
+	ld a, [wd1e4]
+	dec a
+	ld l, a
+	ld h, $00
+	ld a, [wTextboxPointer]
+	ld c, a
+	ld a, [wTextboxPointer + 1]
+	ld b, a
+	add hl, bc
+	ld de, unk_00a_42db
+	ld c, $08
+.asm_4270
+	push bc
+	ld bc, $0014
+	ld a, [de]
+	inc de
+	ld [hl], a
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .asm_4270
+	ld a, [wd1e4]
+	dec a
+	ld l, a
+	ld h, $00
+	ld bc, wd100
+	add hl, bc
+	ld c, $08
+.asm_4289
+	push bc
+	ld bc, $0014
+	ld [hl], $06
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .asm_4289
+	ret
+
+Func_00a_4295:
+	ld a, [wd1e4]
+	and a
+	ret nz
+	inc a
+	add a
+	ld b, a
+	add a
+	add a
+	add b
+	ld l, a
+	ld h, $00
+	ld a, [wTextboxPointer]
+	ld c, a
+	ld a, [wTextboxPointer + 1]
+	ld b, a
+	add hl, bc
+	ld de, unk_00a_42db
+	ld c, $08
+.asm_42b1
+	push bc
+	ld bc, $0014
+	ld a, [de]
+	inc de
+	ld [hl], a
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .asm_42b1
+	ld a, [wd1e4]
+	inc a
+	add a
+	ld b, a
+	add a
+	add a
+	add b
+	ld l, a
+	ld h, $00
+	ld bc, wd100
+	add hl, bc
+	ld c, $08
+.asm_42cf
+	push bc
+	ld bc, $0014
+	ld [hl], $06
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .asm_42cf
+	ret
 
 unk_00a_42db:
-	dr $282db, $282e3
+	db $a3, $a4, $a4, $a4, $a4, $a4, $a4, $a6
 
+; TODO: screen layout (tilemap/attr) copied to VRAM; sub-tables at unk_00a_4383/4423
 unk_00a_42e3:
-	dr $282e3, $28523
-
+	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2
+	db $a2, $a2, $a2, $a3, $a4, $f0, $f1, $f2, $f3, $e0, $e2, $e4, $e6, $e8, $ea, $ec
+	db $ee, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $f4, $f5, $f6, $f7, $e1, $e3, $e5
+	db $e7, $e9, $eb, $ed, $ef, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $f8, $f9, $fa
+	db $fb, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4
+	db $a4, $fc, $fd, $fe, $ff, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a5, $a2, $a2, $a2
+	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a6
+; TODO: pointer/data target loaded via ld hl (stored to wdcd6)
+unk_00a_4383:
+	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2
+	db $a2, $a2, $a2, $a3, $a4, $e0, $e2, $e4, $e6, $e8, $ea, $ec, $ee, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $e1, $e3, $e5, $e7, $e9, $eb, $ed
+	db $ef, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4
+	db $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0
+	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a5, $a2, $a2, $a2
+	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a6
+; TODO: tilemap copied to VRAM $8E00
+unk_00a_4423:
+	db $11, $11, $11, $11, $1f, $1f, $11, $11, $21, $21, $01, $01, $ff, $ff, $00, $00
+	db $1f, $1f, $10, $10, $10, $10, $10, $10, $1f, $1f, $10, $10, $00, $00, $00, $00
+	db $00, $00, $10, $10, $f8, $f8, $00, $00, $00, $00, $04, $04, $fe, $fe, $10, $10
+	db $f8, $f8, $10, $10, $10, $10, $10, $10, $f0, $f0, $10, $10, $00, $00, $00, $00
+	db $00, $00, $3f, $3f, $00, $00, $00, $00, $00, $00, $ff, $ff, $01, $01, $11, $11
+	db $31, $31, $41, $41, $81, $81, $01, $01, $01, $01, $01, $01, $00, $00, $00, $00
+	db $10, $10, $f8, $f8, $00, $00, $00, $00, $04, $04, $fe, $fe, $00, $00, $20, $20
+	db $10, $10, $0c, $0c, $04, $04, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $10, $10, $11, $11, $11, $11, $fd, $fd, $11, $11, $31, $31, $39, $39, $55, $55
+	db $51, $51, $91, $91, $12, $12, $14, $14, $18, $18, $13, $13, $00, $00, $00, $00
+	db $04, $04, $fe, $fe, $00, $00, $00, $00, $fc, $fc, $04, $04, $84, $84, $48, $48
+	db $48, $48, $50, $50, $20, $20, $50, $50, $8e, $8e, $04, $04, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $01, $01, $03, $03, $01, $01, $00, $00, $00, $00
+	db $01, $01, $03, $03, $01, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $80, $80, $c0, $c0, $80, $80, $00, $00, $00, $00
+	db $80, $80, $c0, $c0, $80, $80, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+; TODO: data/gfx block (zeros + tile-like bytes), exact use TBD
 unk_00a_4523:
-	dr $28523, $28593
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $07, $03, $0d, $04, $1a, $09, $35, $13, $3b, $27, $27, $3f, $26, $3e
+	db $00, $00, $ff, $ff, $00, $ff, $00, $ff, $ff, $ff, $ff, $ff, $00, $00, $00, $00
+	db $00, $00, $f0, $e0, $38, $f0, $dc, $38, $ae, $9c, $d6, $ce, $66, $6e, $36, $2e
+	db $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e
+	db $33, $2f, $35, $33, $3a, $19, $1d, $0c, $0f, $07, $07, $03, $00, $00, $00, $00
+	db $56, $6e, $8e, $de, $9e, $3c, $3c, $f8, $f8, $f0, $f0, $e0, $00, $00, $00, $00
 
 asm_00a_4593::
 	ld bc, $c0
@@ -115,11 +538,11 @@ asm_00a_45c6:
 	ret
 
 Func_00a_45ce:
-	ld a, [$d08e]
+	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_45e1
 
-	ld hl, $dd18
+	ld hl, wdd18
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_45e1
@@ -128,10 +551,10 @@ Func_00a_45ce:
 	jr .asm_45e4
 
 .asm_45e1:
-	ld a, [$d08e]
+	ld a, [wSelectedOption]
 
 .asm_45e4:
-	ld bc, $d86a
+	ld bc, wd86a
 	ld de, NamePointers
 	inc a
 	ld l, a
