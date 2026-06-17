@@ -49,9 +49,13 @@ MapAttributes_050_629d::
 MapAttributes_050_6c34::
 	dr $142c34, $142ebf
 
+G4_42_MapAttributes:
+G4_64_MapAttributes:
 MapAttributes_050_6ebf::
 	dr $142ebf, $143132
 
+G4_43_MapAttributes:
+G4_65_MapAttributes:
 MapAttributes_050_7132::
 	dr $143132, $143391
 

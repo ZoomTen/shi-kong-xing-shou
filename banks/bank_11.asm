@@ -320,6 +320,8 @@ Palettes_011_69ec:
 Collision_011_6a34:
 	dr $46a34, $46a66
 
+G4_3A_MapAttributes:
+G4_56_MapAttributes:
 MapAttributes_011_6a66:: ; $46a66
 	map_attr_data \
 		(6 << 8 | 5), \
@@ -328,6 +330,8 @@ MapAttributes_011_6a66:: ; $46a66
 		0, Tileset_006_41b2, \
 		Collision_011_6e77
 
+G4_3B_MapAttributes:
+G4_57_MapAttributes:
 MapAttributes_011_6a7a:: ; $46a7a
 	map_attr_data \
 		(6 << 8 | 5), \
@@ -336,6 +340,8 @@ MapAttributes_011_6a7a:: ; $46a7a
 		0, Tileset_006_41b2, \
 		Collision_011_6e77
 
+G4_3C_MapAttributes:
+G4_58_MapAttributes:
 MapAttributes_011_6a8e:: ; $46a8e
 	map_attr_data \
 		(6 << 8 | 5), \
@@ -344,6 +350,8 @@ MapAttributes_011_6a8e:: ; $46a8e
 		0, Tileset_006_41b2, \
 		Collision_011_6e77
 
+G4_3D_MapAttributes:
+G4_59_MapAttributes:
 MapAttributes_011_6aa2:: ; $46aa2
 	map_attr_data \
 		(6 << 8 | 5), \
@@ -352,6 +360,8 @@ MapAttributes_011_6aa2:: ; $46aa2
 		0, Tileset_006_41b2, \
 		Collision_011_6e77
 
+G4_3E_MapAttributes:
+G4_5A_MapAttributes:
 MapAttributes_011_6ab6:: ; $46ab6
 	map_attr_data \
 		(6 << 8 | 5), \

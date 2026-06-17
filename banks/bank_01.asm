@@ -11,9 +11,13 @@ BellObservatoryOutside2_MapAttributes:
 BallotsHouse2_MapAttributes:
 	map_attributes BallotsHouse1, BALLOTS_HOUSE_1, 0, Tileset_006_403b
 
-HayatosHouse2_MapAttributes:
+G4_30_MapAttributes:
+G4_4A_MapAttributes:
+HayatosHouse2_MapAttributes::
 	map_attributes HayatosHouse1, HAYATOS_HOUSE_1, 0, Tileset_006_403b
 
+G4_2C_MapAttributes:
+G4_46_MapAttributes:
 CarpetWomansHouse2_MapAttributes:
 	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_006_403b
 
@@ -46,6 +50,8 @@ TechCity_MapAttributes:
 	dw 0
 	dw TechCity_Collision
 
+G4_2F_MapAttributes:
+G4_49_MapAttributes:
 MapAttributes_001_40f0:
 	db 6, 5
 	dw Layout_001_5bb9
@@ -58,6 +64,9 @@ MapAttributes_001_40f0:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_2D_MapAttributes:
+G4_35_MapAttributes:
+G4_47_MapAttributes:
 MapAttributes_001_4104:
 	db 6, 5
 	dw Layout_001_5c18
@@ -70,6 +79,7 @@ MapAttributes_001_4104:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_34_MapAttributes:
 MapAttributes_001_4118:
 	db 6, 5
 	dw Layout_001_5c7b
@@ -82,6 +92,9 @@ MapAttributes_001_4118:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_2E_MapAttributes:
+G4_37_MapAttributes:
+G4_48_MapAttributes:
 MapAttributes_001_412c:
 	db 6, 5
 	dw Layout_001_5cd2
@@ -94,6 +107,8 @@ MapAttributes_001_412c:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_33_MapAttributes:
+G4_4D_MapAttributes:
 MapAttributes_001_4140:
 	db 6, 5
 	dw Layout_001_5d35
@@ -106,6 +121,9 @@ MapAttributes_001_4140:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_36_MapAttributes:
+G4_3F_MapAttributes:
+G4_5B_MapAttributes:
 MapAttributes_001_4154:
 	db 6, 5
 	dw Layout_001_5db4
@@ -118,6 +136,11 @@ MapAttributes_001_4154:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_32_MapAttributes:
+G4_38_MapAttributes:
+G4_41_MapAttributes:
+G4_4C_MapAttributes:
+G4_5D_MapAttributes:
 TechShop_MapAttributes:
 	db 6, 5
 	dw Layout_001_5a28
@@ -130,6 +153,11 @@ TechShop_MapAttributes:
 	dw 0
 	dw Collision_001_5b9d
 
+G4_31_MapAttributes:
+G4_39_MapAttributes:
+G4_40_MapAttributes:
+G4_4B_MapAttributes:
+G4_5C_MapAttributes:
 TechHealingCenter_MapAttributes:
 	db 6, 5
 	dw Layout_001_58a7

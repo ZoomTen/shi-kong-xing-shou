@@ -1,69 +1,73 @@
 unk_058_4000:
 	dr $160000, $160001
 
-ObjectEvents_058_4001:
+G4_38_ObjectEvents:
 	dr $160001, $160023
 
-ObjectEvents_058_4023:
+G4_39_ObjectEvents:
 	dr $160023, $1600ea
 
-ObjectEvents_058_40ea:
+G4_17_ObjectEvents:
+G4_1E_ObjectEvents:
+G4_1F_ObjectEvents:
+G4_4F_ObjectEvents3:
+G4_50_ObjectEvents:
 	dr $1600ea, $160101
 
-ObjectEvents_058_4101:
+G4_20_ObjectEvents:
 	dr $160101, $160139
 
-ObjectEvents_058_4139:
+G4_18_ObjectEvents:
 	dr $160139, $1601ee
 
-ObjectEvents_058_41ee:
+G4_52_ObjectEvents:
 	dr $1601ee, $160210
 
-ObjectEvents_058_4210:
+G4_19_ObjectEvents:
 	dr $160210, $1604e2
 
-ObjectEvents_058_44e2:
+G4_52_ObjectEvents2:
 	dr $1604e2, $16050f
 
-ObjectEvents_058_450f:
+G4_19_ObjectEvents2:
 	dr $16050f, $16053c
 
-ObjectEvents_058_453c:
+G4_14_ObjectEvents:
 	dr $16053c, $1605e9
 
-ObjectEvents_058_45e9:
+G4_34_ObjectEvents:
 	dr $1605e9, $160608
 
-ObjectEvents_058_4608:
+G4_35_ObjectEvents:
 	dr $160608, $160627
 
-ObjectEvents_058_4627:
+G4_37_ObjectEvents:
 	dr $160627, $16065d
 
-ObjectEvents_058_465d:
+G4_36_ObjectEvents2:
 	dr $16065d, $160669
 
-ObjectEvents_058_4669:
+G4_36_ObjectEvents:
 	dr $160669, $160749
 
-ObjectEvents_058_4749:
+G4_16_ObjectEvents:
 	dr $160749, $16082c
 
-ObjectEvents_058_482c:
+G4_15_ObjectEvents:
 	dr $16082c, $160868
 
-ObjectEvents_058_4868:
+G4_4F_ObjectEvents:
 	dr $160868, $16087f
 
-ObjectEvents_058_487f:
+G4_4F_ObjectEvents2:
 	dr $16087f, $1609ce
 
-ObjectEvents_058_49ce:
+G4_24_ObjectEvents3:
 	dr $1609ce, $160a1d
 
-ObjectEvents_058_4a1d:
+G4_1E_ObjectEvents2:
 	dr $160a1d, $160a45
 
-ObjectEvents_058_4a45:
+G4_51_ObjectEvents:
 	dr $160a45, $162810
 

@@ -120,3 +120,72 @@ $1800E	FF	db -1 ; end
 ### Layout
 
 Layouts begin with a single byte loaded into `D0F4` (possibly item-related?), followed by the actual map layout.
+
+## Converting a map group's headers to `map`/`warp` macros
+
+Raw headers (`dbaw2` attr + manually-expanded 12-byte warp structs, each already commented
+with its `warp` line) convert to the macro form in `macros/scripts/maps.asm`. See
+`banks/bank_07.asm` (Group 00) and `banks/bank_52.asm` (Group 04) for completed examples.
+
+**Macro forms** (all byte-identical to the raw bytes — verify with `make compare`):
+* `map G<g>_<nn>` ≡ `dbaw2 <map>_MapAttributes` (`db BANK` + `ds 3` + `dw attr`). It sets
+  `__current_map__`, so following `warp`s default their pointers to the map's names.
+* `warp X, Y, $Z` (3-arg) → ObjectEvents/MapEvents default to `<map>_ObjectEvents` /
+  `<map>_MapEvents`.
+* `warp X, Y, $Z, Obj` (4-arg) → explicit ObjectEvents, MapEvents still defaulted.
+* `warp X, Y, $Z, Obj, Mev` (5-arg) → both explicit.
+* `end_map` purges `__current_map__`.
+
+**Naming.** Map number `<nn>` = the **0-based index** into the group table
+(`GroupNN_Maps`), as **2-digit hex** (matches `constants/map_constants.asm`). Group digit
+is 1-digit (`G4_`). The first header is referenced by the table twice (slots 0 and 1, a
+default/dup) — the canonical map is the **higher** slot (`G4_01`); the lower slot becomes
+an extra stacked `_Header` label (see below). `Group<NN>_Maps` entries become
+`dw G<g>_<nn>_Header` (the `map` macro emits label `\1_Header:`).
+
+**The label-stacking trick** (key enabler). The attribute, ObjectEvents, and MapEvents a
+map points to are *defined in other banks* under physical `bank_offset` names
+(`MapAttributes_053_4000`, `ObjectEvents_055_53f1`, …) and are often **shared** by several
+maps. To let every map use the short form via its own canonical name **without renaming or
+moving anything**, stack alias labels above each definition:
+
+```
+G4_01_ObjectEvents:
+G4_0C_ObjectEvents2:
+G4_42_ObjectEvents:
+ObjectEvents_055_53f1:        ; original kept; e.g. this is just `objects_end`
+	objects_end
+```
+
+Labels cost zero bytes and the build uses rgbasm `-E` (export-all, `ASMFLAGS += -E` in the
+`Makefile`), so all aliases resolve cross-bank and the ROM is unchanged. A shared target
+accumulates one alias per (map, suffix-slot) that uses it; a map with several distinct
+ObjectEvents across its warps gets `..._ObjectEvents`, `...2`, `...3`, … (first-seen
+order; the `_ObjectEventsN` suffix convention predates this — see
+`BallotsHouse1_ObjectEvents2` in bank_07). The duplicate table slot is handled the same
+way: stack `G4_00_Header::` above the `map G4_01` line.
+
+**Procedure** (don't carpet-bomb `sed` — parse and assert):
+1. Parse `Group<NN>_Maps` → slot→header (0-based hex numbers).
+2. For each header, read the `; warp …` comment lines to recover
+   `(X, Y, $Z, ObjectEvents, MapEvents)` and the `dbaw2` attr; **assert** each following
+   6-line block matches `db X,Y / dw $Z / db BANK(obj) / ds 3 / dw obj / dw mev` and that
+   the comment matches the bytes (hard-error on any mismatch).
+3. Pick the first warp's object as the map's primary; emit `map` + 3-arg (primary) / 4-arg
+   (others, via suffixed alias) `warp` + `end_map`. MapEvents is 1:1 per header → always
+   the default (no 5-arg needed for these groups).
+4. Stack the `_MapAttributes` / `_ObjectEvents[N]` / `_MapEvents` aliases above each
+   definition (locate with `get_nearest_symbol.py` / grep). MapEvents defs live in the
+   header's own bank; attrs/objects in others (53/57/55/58/59/5a/5c/01/11/50 for Group 04).
+5. `make compare` must print `…gbc: OK`.
+6. **Remove dead originals.** Once aliased, an original `bank_offset` label
+   (`MapEvents_052_4fb2`, `ObjectEvents_055_…`, `MapAttributes_053_…`) is safe to delete
+   **iff nothing else references it** — i.e. it was used only by this group. Keep any still
+   referenced by another group/bank (e.g. `MapAttributes_001_*` / `_011_*` / `_050_*` are
+   shared with banks 07/10; the already-named `TechShop_MapAttributes` etc. too).
+   CAUTION: references can be **implicit** — the `map <Name>` / `map_attributes <Name>`
+   macros *construct* `<Name>_MapAttributes` (and `warp` builds `<Name>_ObjectEvents`), so
+   a plain grep won't see them. Don't trust a text scan alone; **let `make compare` /
+   the linker be the authority** — it errors `Requested BANK() of symbol "X", which was
+   not found` for any label you removed that's still needed. Re-add it (stacked in the
+   same alias group) and re-run.

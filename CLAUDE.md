@@ -73,7 +73,7 @@ Naming conventions and keywords (`Layout`, `Pointers`, `GFX`, etc.): see [style 
 
 Text `.txt`, map `.tmx`, face `.ora` asset formats: see [extra asset formats](docs/agents/extra-asset-formats.md).
 
-Map headers, warps, object events, metatiles: see [overworld data](docs/agents/overworld-data.md).
+Map headers, warps, object events, metatiles: see [overworld data](docs/agents/overworld-data.md). To convert a map group's raw headers into `map`/`warp` macros — including the label-stacking trick for shared attributes/events and removing the now-dead original labels (let the linker confirm, since macros reference some names implicitly) — see that doc's "Converting a map group's headers" section (`banks/bank_07.asm`, `banks/bank_52.asm` are done examples).
 
 # Ghidra workflow
 
