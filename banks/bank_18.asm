@@ -21,8 +21,25 @@ unk_018_4078::
 
 G3_1E_MapAttributes:
 unk_018_408c::
-	dr $6008c, $600a0
+	map_attr_data \
+		6, 5, \
+		Layout_018_4235, Blocks_018_42c0, Metatiles_018_4254, AttrMap_018_4320, \
+		Palettes_018_4bf8, \
+		0, Tileset_006_407f, \
+		Collision_018_43aa
 
 unk_018_40a0::
-	dr $600a0, $60cc0
+	dr $600a0, $60235
+Layout_018_4235::
+	dr $60235, $60254
+Metatiles_018_4254::
+	dr $60254, $602c0
+Blocks_018_42c0::
+	dr $602c0, $60320
+AttrMap_018_4320::
+	dr $60320, $603aa
+Collision_018_43aa::
+	dr $603aa, $60bf8
+Palettes_018_4bf8::
+	dr $60bf8, $60cc0
 

@@ -124,60 +124,136 @@ Tileset_006_41b2:
 	dr $181b2, $181ba
 
 Tileset_006_41ba:
-	dr $0181ba, $01838c
+	dr $181ba, $181d0
+Tileset_006_41d0::
+	dr $181d0, $181df
+Tileset_006_41df::
+	dr $181df, $181ee
+Tileset_006_41ee::
+	dr $181ee, $1820b
+Tileset_006_420b::
+	dr $1820b, $18221
+Tileset_006_4221::
+	dr $18221, $18229
+Tileset_006_4229::
+	dr $18229, $18238
+Tileset_006_4238::
+	dr $18238, $1824e
+Tileset_006_424e::
+	dr $1824e, $1826b
+Tileset_006_426b::
+	dr $1826b, $18281
+Tileset_006_4281::
+	dr $18281, $1829e
+Tileset_006_429e::
+	dr $1829e, $182cb
+Tileset_006_42cb::
+	dr $182cb, $182e8
+Tileset_006_42e8::
+	dr $182e8, $182f7
+Tileset_006_42f7::
+	dr $182f7, $182ff
+Tileset_006_42ff::
+	dr $182ff, $18315
+Tileset_006_4315::
+	dr $18315, $18324
+Tileset_006_4324::
+	dr $18324, $18333
+Tileset_006_4333::
+	dr $18333, $18342
+Tileset_006_4342::
+	dr $18342, $18358
+Tileset_006_4358::
+	dr $18358, $18367
+Tileset_006_4367::
+	dr $18367, $1837d
+Tileset_006_437d::
+	dr $1837d, $1838c
 Tileset_006_438c::
-	dr $01838c, $0184a7
+	dr $1838c, $1839b
+Tileset_006_439b::
+	dr $1839b, $183b8
+Tileset_006_43b8::
+	dr $183b8, $183ce
+Tileset_006_43ce::
+	dr $183ce, $183d6
+Tileset_006_43d6::
+	dr $183d6, $183de
+Tileset_006_43de::
+	dr $183de, $183e6
+Tileset_006_43e6::
+	dr $183e6, $183fc
+Tileset_006_43fc::
+	dr $183fc, $18404
+Tileset_006_4404::
+	dr $18404, $18413
+Tileset_006_4413::
+	dr $18413, $18430
+Tileset_006_4430::
+	dr $18430, $18446
+Tileset_006_4446::
+	dr $18446, $18463
+Tileset_006_4463::
+	dr $18463, $18472
+Tileset_006_4472::
+	dr $18472, $18488
+Tileset_006_4488::
+	dr $18488, $18490
+Tileset_006_4490::
+	dr $18490, $18498
+Tileset_006_4498::
+	dr $18498, $184a7
 Tileset_006_44a7::
-	dr $0184a7, $0184af
+	dr $184a7, $184af
 Tileset_006_44af::
-	dr $0184af, $0184b7
+	dr $184af, $184b7
 Tileset_006_44b7::
-	dr $0184b7, $0184d4
+	dr $184b7, $184d4
 Tileset_006_44d4::
-	dr $0184d4, $0184dc
+	dr $184d4, $184dc
 Tileset_006_44dc::
-	dr $0184dc, $0184eb
+	dr $184dc, $184eb
 Tileset_006_44eb::
-	dr $0184eb, $0184fa
+	dr $184eb, $184fa
 Tileset_006_44fa::
-	dr $0184fa, $018510
+	dr $184fa, $18510
 Tileset_006_4510::
-	dr $018510, $018526
+	dr $18510, $18526
 Tileset_006_4526::
-	dr $018526, $018535
+	dr $18526, $18535
 Tileset_006_4535::
-	dr $018535, $018544
+	dr $18535, $18544
 Tileset_006_4544::
-	dr $018544, $018553
+	dr $18544, $18553
 Tileset_006_4553::
-	dr $018553, $018577
+	dr $18553, $18577
 Tileset_006_4577::
-	dr $018577, $01858d
+	dr $18577, $1858d
 Tileset_006_458d::
-	dr $01858d, $0185a3
+	dr $1858d, $185a3
 Tileset_006_45a3::
-	dr $0185a3, $0185ab
+	dr $185a3, $185ab
 Tileset_006_45ab::
-	dr $0185ab, $0185c8
+	dr $185ab, $185c8
 Tileset_006_45c8::
-	dr $0185c8, $0185d0
+	dr $185c8, $185d0
 Tileset_006_45d0::
-	dr $0185d0, $0185df
+	dr $185d0, $185df
 Tileset_006_45df::
-	dr $0185df, $0185ee
+	dr $185df, $185ee
 Tileset_006_45ee::
-	dr $0185ee, $0185f6
+	dr $185ee, $185f6
 Tileset_006_45f6::
-	dr $0185f6, $01860c
+	dr $185f6, $1860c
 Tileset_006_460c::
-	dr $01860c, $018622
+	dr $1860c, $18622
 Tileset_006_4622::
-	dr $018622, $018631
+	dr $18622, $18631
 Tileset_006_4631::
-	dr $018631, $018640
+	dr $18631, $18640
 Tileset_006_4640::
-	dr $018640, $018648
+	dr $18640, $18648
 Tileset_006_4648::
-	dr $018648, $018650
+	dr $18648, $18650
 Tileset_006_4650::
-	dr $018650, $018660
+	dr $18650, $18660

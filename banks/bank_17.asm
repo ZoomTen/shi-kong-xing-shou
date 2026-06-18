@@ -23,7 +23,24 @@ unk_017_4a09::
 	dr $5ca09, $5ccae
 
 BlueMoon_MapAttributes::
-	dr $5ccae, $5cf9e
+	map_attr_data \
+		6, 10, \
+		Layout_017_4cc2, Blocks_017_4df7, Metatiles_017_4cff, AttrMap_017_4ebf, \
+		Palettes_017_4f17, \
+		0, Tileset_006_410f, \
+		Collision_017_4f5f
+Layout_017_4cc2::
+	dr $5ccc2, $5ccff
+Metatiles_017_4cff::
+	dr $5ccff, $5cdf7
+Blocks_017_4df7::
+	dr $5cdf7, $5cebf
+AttrMap_017_4ebf::
+	dr $5cebf, $5cf17
+Palettes_017_4f17::
+	dr $5cf17, $5cf5f
+Collision_017_4f5f::
+	dr $5cf5f, $5cf9e
 
 gfx_017_4f9e::
 	dr $5cf9e, $5d11e

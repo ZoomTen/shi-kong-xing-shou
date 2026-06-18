@@ -838,4 +838,23 @@ BellVillage1_Collision:
 	dr $78de, $791a
 
 G2_23_MapAttributes:
-	dr $791a, $79c8
+	map_attr_data \
+		6, 6, \
+		Layout_001_792e, Blocks_001_7957, Metatiles_001_7953, AttrMap_001_795b, \
+		Palettes_001_795e, \
+		Tileset_001_79a8, Tileset_001_79a8, \
+		Collision_001_79a6
+Layout_001_792e::
+	dr $792e, $7953
+Metatiles_001_7953::
+	dr $7953, $7957
+Blocks_001_7957::
+	dr $7957, $795b
+AttrMap_001_795b::
+	dr $795b, $795e
+Palettes_001_795e::
+	dr $795e, $79a6
+Collision_001_79a6::
+	dr $79a6, $79a8
+Tileset_001_79a8::
+	dr $79a8, $79c8
