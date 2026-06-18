@@ -1,19 +1,19 @@
 # Checking for deviations
 
-There are two ways to achieve this.
+Two ways do this.
 
 ## Byte blocks
 
-More effective for finding large shifts.
+Better for finding big shifts.
 
 ```sh
 utils/look_block shi_kong_xing_shou.gbc <start offset> <lines>
 ```
 
-Start offset is the ROM address. Lines is how many 16-byte rows you want to see at a time.
-A good amount might be 5 or 10. Expand as needed.
+Start offset = ROM address. Lines = how many 16-byte rows shown at once.
+5 or 10 good. Expand as needed.
 
-Any deviations will have the bytes under square brackets, like this:
+Deviations show bytes in square brackets, like:
 
 ```
 baserom.gbc
@@ -39,26 +39,25 @@ shi_kong_xing_shou.gbc
 
 ## Individual bytes
 
-This is for smaller changes, but this scans across the whole ROM.
-To look at what bytes have deviated from the base ROM once you've compiled it:
+For smaller changes, but scans whole ROM.
+See what bytes deviated from base ROM after compile:
 ```sh
 utils/check_diff shi_kong_xing_shou.gbc
 ```
 
-They are in the format: `ROM ADDRESS [GAMEBOY ADDRESS] -> ORIGINAL CHANGED`
+Format: `ROM ADDRESS [GAMEBOY ADDRESS] -> ORIGINAL CHANGED`
 ```
      14e [00:014e] -> 11 3a
 ```
 
-You can safely ignore 14e and 14f: Those are Game Boy checksums. Them being different is a consequence of ANY other change later down the output.
+Ignore 14e and 14f safely: Game Boy checksums. Differ as consequence of ANY other change later in output.
 
-Mismatches usually involved shifted output somehow:
-1. If you find the call instruction parameter differs, perhaps it's a good idea to check out the function it's supposed to be pointing to. It might have shifted due to the code around it.
-2. Maybe a ld/ldh switcharoo, as the game sometimes code `ld [hSomething]` (longer bytes) instead of `ldh [hSomething]` (shorter bytes); RGBDS solidly treats the two differently.
+Mismatches usually mean shifted output:
+1. If call instruction parameter differs, check function it points to. Maybe shifted from surrounding code.
+2. Maybe ld/ldh switcharoo — game sometimes code `ld [hSomething]` (longer bytes) instead of `ldh [hSomething]` (shorter bytes); RGBDS treats two differently.
 
-If you would like to inspect `check_diff` itself, the source is `utils/check_diff.c`.
+Inspect `check_diff` itself: source at `utils/check_diff.c`.
 
-Likewise with `look_block`.
+Same with `look_block`.
 
-If either of those tools aren't available, then run `make` inside the `utils/` folder or let the user do them for you.
-
+If either tool missing, run `make` inside `utils/` folder or let user do it.

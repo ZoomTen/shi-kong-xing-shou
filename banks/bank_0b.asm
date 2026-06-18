@@ -66,8 +66,8 @@ Func_00b_417b::
 	jp hl
 	ret ; ?
 
-unk_00b_418e:
-	dr $2c18e, $2c191
+MovementData_00b_418e::
+	db DOWN, RIGHT, $ff
 
 MovementData_OneDown::
 	db DOWN, $ff
@@ -75,8 +75,53 @@ MovementData_OneDown::
 MovementData_OneUp::
 	db UP, $ff
 
+; TODO: decode this sensibly
 unk_00b_4195::
-	dr $2c195, $2c250
+	dw .unk_00b_4199
+	dw Pointers_00b_415d.unk_00b_4179
+.unk_00b_4199
+	db $02, $04
+	db $3e, $3e, $3e, $3e, $3e, $3e, $3e, $3e
+	dw .unk_00b_41a7
+	dw Pointers_00b_415d.unk_00b_4179
+.unk_00b_41a7
+	db $02, $02
+	db $6d, $6a, $6d, $68
+	db $02, $02
+	db $01, $01, $01, $01
+	db $02, $04
+	db $03, $03, $03, $03, $03, $03, $03, $03
+	db $02, $04
+	db $02, $02, $02, $02, $03, $03, $03, $03
+	dw .unk_00b_41cb
+	dw Pointers_00b_415d.unk_00b_4179
+.unk_00b_41cb
+	db $02, $04
+	db $0c, $0e, $0d, $0f, $10, $12, $11, $13
+
+.unk_00b_41d5
+	db $04, $00, $fc, $00, $fc, $00, $04, $00
+	db $04, $00, $fc, $00, $fc, $00, $04, $00
+	db $04, $00, $fc, $00, $fc, $00, $04, $00
+	db $04, $00, $fc, $00, $fc, $00, $04, $00
+	db $04, $00, $fc, $00, $fc, $00, $04, $00
+	db $88
+
+.unk_00b_41fe
+	db $01, $00, $ff, $00, $01, $00, $ff, $00
+	db $01, $00, $ff, $00, $01, $00, $ff, $00
+	db $01, $00, $ff, $00, $01, $00, $ff, $00
+	db $01, $00, $ff, $00, $01, $00, $ff, $00
+	db $01, $00, $ff, $00, $01, $00, $ff, $00
+	db $88
+
+.unk_00b_4227
+	db $02, $00, $fe, $00, $02, $00, $fe, $00
+	db $02, $00, $fe, $00, $02, $00, $fe, $00
+	db $02, $00, $fe, $00, $02, $00, $fe, $00
+	db $02, $00, $fe, $00, $02, $00, $fe, $00
+	db $02, $00, $fe, $00, $02, $00, $fe, $00
+	db $88
 
 ScriptCommandTable:
 ; Entries correspond to script_* constants (see macros/script.asm)
