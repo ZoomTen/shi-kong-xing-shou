@@ -1980,7 +1980,43 @@ Script_4a:
 	dr $2d235, $2d273
 
 Func_00b_5273::
-	dr $2d273, $2d2c1
+	ld hl, $698e
+	ld de, $8540
+	ld bc, $0140
+	call CopyBytesVRAM
+	ld hl, $6ace
+	ld b, $08
+	ld c, $88
+	call LoadPalettes_OCPD
+	ld hl, wcaf0
+	ld bc, $0008
+	add hl, bc
+	push hl
+	pop de
+	ld hl, $6ace
+	call CopyBytes3
+	ld hl, wd1a0
+	ld [hl], $10
+	inc hl
+	ld [hl], $50
+	inc hl
+	ld a, [$dcac]
+	and $0f
+	add $0f
+	ld [hli], a
+	ld [hl], $07
+	ld hl, wd1a8
+	ld [hl], $10
+	inc hl
+	ld [hl], $48
+	inc hl
+	ld a, [$dcac]
+	swap a
+	and $0f
+	add $0f
+	ld [hli], a
+	ld [hl], $07
+	ret
 
 Script_4b:
 	dr $2d2c1, $2d2e1
@@ -2266,13 +2302,172 @@ Func_00b_60dd:
 	ret
 
 Func_00b_610b:
-	dr $2e10b, $2e1a2
+	ld a, [wFollowerObject]
+	sub $10
+	srl a
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ldh a, [$ffab]
+	add e
+	ld [$cd32], a
+	ld a, [wcd21]
+	sub $08
+	srl a
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ldh a, [$ffaa]
+	add e
+	ld [$cd33], a
+	ret
+	ldh a, [$ffdd]
+	and a
+	ret nz
+	ld a, [wMovementPointer]
+	ld l, a
+	ld a, [$dcc9]
+	ld h, a
+	ld a, [hli]
+	cp $ff
+	jr nz, .asm_614c
+	xor a
+	ld [wScriptByte], a
+	ldh [$ffdd], a
+	ret
+.asm_614c
+	ld [wcd23], a
+	inc a
+	ld [hFFDD], a
+	ld a, l
+	ld [wMovementPointer], a
+	ld a, h
+	ld [$dcc9], a
+	ld a, $10
+	ld [hFFDE], a
+	ld a, $01
+	ldh [$ffdb], a
+	ld [wdceb], a
+	ret
+	ldh a, [$ffdd]
+	and a
+	ret z
+	ldh a, [$ffdd]
+	cp $01
+	jr z, .asm_617f
+	cp $02
+	jr z, .asm_6185
+	cp $03
+	jr z, .asm_618b
+	cp $04
+	jr z, .asm_6191
+	ret
+.asm_617f
+	ld hl, wFollowerObject
+	inc [hl]
+	jr .asm_6195
+.asm_6185
+	ld hl, wFollowerObject
+	dec [hl]
+	jr .asm_6195
+.asm_618b
+	ld hl, wcd21
+	dec [hl]
+	jr .asm_6195
+.asm_6191
+	ld hl, wcd21
+	inc [hl]
+.asm_6195
+	ld a, [hFFDE]
+	dec a
+	ld [hFFDE], a
+	and a
+	ret nz
+	xor a
+	ldh [$ffdd], a
+	ret
 
 Func_00b_61a2::
-	dr $2e1a2, $2e1d6
+	ldh a, [$ffa7]
+	and a
+	ret nz
+	ld a, [wMovementPointer]
+	ld l, a
+	ld a, [$dcc9]
+	ld h, a
+	ld a, [hli]
+	cp $ff
+	jr nz, .asm_61ba
+	xor a
+	ld [wScriptByte], a
+	ldh [$ffa7], a
+	ret
+.asm_61ba
+	ld [wPlayerFacing], a
+	inc a
+	ld [hSimulatedJoypadState], a
+	ld a, l
+	ld [wMovementPointer], a
+	ld a, h
+	ld [$dcc9], a
+	ld a, $10
+	ld [hFFA6], a
+	ld a, $01
+	ldh [$ffac], a
+	ld [wdcd0], a
+	ret
 
 Func_00b_61d6:
-	dr $2e1d6, $2e229
+	ldh a, [$ffa7]
+	and a
+	ret z
+	xor a
+	ld [$d3f2], a
+	ld [$d3f3], a
+	ldh a, [$ffa7]
+	cp $01
+	jr z, .asm_61f4
+	cp $02
+	jr z, .asm_61ff
+	cp $03
+	jr z, .asm_620a
+	cp $04
+	jr z, .asm_6214
+	ret
+.asm_61f4
+	ld a, $ff
+	ld [$d3f3], a
+	ld hl, wPlayerObject
+	inc [hl]
+	jr .asm_621c
+.asm_61ff
+	ld a, $01
+	ld [$d3f3], a
+	ld hl, wPlayerObject
+	dec [hl]
+	jr .asm_621c
+.asm_620a
+	xor a
+	ld [$d3f3], a
+	ld hl, wPlayerScreenX
+	dec [hl]
+	jr .asm_621c
+.asm_6214
+	xor a
+	ld [$d3f3], a
+	ld hl, wPlayerScreenX
+	inc [hl]
+.asm_621c
+	ld a, [hFFA6]
+	dec a
+	ld [hFFA6], a
+	and a
+	ret nz
+	xor a
+	ldh [$ffa7], a
+	ret
 
 Func_00b_6229:
 	dr $2e229, $2e25c
@@ -2281,10 +2476,121 @@ Func_00b_625c:
 	dr $2e25c, $2e53d
 
 Func_00b_653d:
-	dr $2e53d, $2e5e7
+	ldh a, [$ffa7]
+	and a
+	ret z
+	xor a
+	ld [$d3f2], a
+	ld [$d3f3], a
+	ldh a, [$ffa7]
+	bit 3, a
+	jr nz, .asm_655b
+	bit 2, a
+	jr nz, .asm_656c
+	bit 1, a
+	jr nz, .asm_657d
+	bit 0, a
+	jr nz, .asm_6592
+	ret
+.asm_655b
+	ld a, $ff
+	ld [$d3f3], a
+	ld hl, hSCY
+	ld a, [hl]
+	add $01
+	ld [hli], a
+	jr nc, .asm_65a7
+	inc [hl]
+	jr .asm_65a7
+.asm_656c
+	ld a, $01
+	ld [$d3f3], a
+	ld hl, hSCY
+	ld a, [hl]
+	sub $01
+	ld [hli], a
+	jr nc, .asm_65a7
+	dec [hl]
+	jr .asm_65a7
+.asm_657d
+	xor a
+	ld [$d3f3], a
+	ld a, $01
+	ld [$d3f2], a
+	ld hl, hSCX
+	ld a, [hl]
+	sub $01
+	ld [hli], a
+	jr nc, .asm_65a7
+	dec [hl]
+	jr .asm_65a7
+.asm_6592
+	xor a
+	ld [$d3f3], a
+	ld a, $ff
+	ld [$d3f2], a
+	ld hl, hSCX
+	ld a, [hl]
+	add $01
+	ld [hli], a
+	jr nc, .asm_65a7
+	inc [hl]
+	jr .asm_65a7
+.asm_65a7
+	ld a, [hFFA6]
+	dec a
+	ld [hFFA6], a
+	and a
+	ret nz
+	xor a
+	ldh [$ffa7], a
+	ret
+	ld hl, wc740
+	ldh a, [$ffa0]
+	and a
+	jr z, .asm_65c0
+	ld bc, $0030
+	add hl, bc
+.asm_65c0
+	ldh a, [$ff9f]
+	and a
+	jr z, .asm_65c7
+	inc hl
+	inc hl
+.asm_65c7
+	call .asm_65ce
+	ret
+	ld hl, wc740
+.asm_65ce
+	ld de, wTilemap
+	ld b, $12
+.asm_65d3
+	ld c, $14
+.asm_65d5
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .asm_65d5
+	ld a, l
+	add $04
+	ld l, a
+	ld a, h
+	adc a, $00
+	ld h, a
+	dec b
+	jr nz, .asm_65d3
+	ret
 
 Func_00b_65e7::
-	dr $2e5e7, $2e5f6
+	ldh a, [$ff91]
+	cp $11
+	ret nz
+	ld a, $01
+	ldh [$ff4f], a
+	jr Func_00b_65f6
+	ld a, $00
+	ldh [$ff4f], a
 
 Func_00b_65f6:
 	dr $2e5f6, $2f1e0

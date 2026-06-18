@@ -1,7 +1,30 @@
 unk_00c_4000:
 	dr $30000, $3002b
 Func_00c_402b:
-	dr $3002b, $30056
+	ld a, [wSelectedOption]
+	cp $03
+	jr nz, .asm_403e
+	ld hl, wdd18
+	ld a, [hl]
+	cp $80
+	jr nz, .asm_403e
+	ld a, $08
+	jr .asm_4041
+.asm_403e
+	ld a, [wSelectedOption]
+.asm_4041
+	ld de, $5f4a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld bc, $0080
+	ld de, $8f60
+	call Func_135a
+	ret
 
 Func_00c_4056::
 	ld de, .SignpostGroups
@@ -235,7 +258,61 @@ unk_00c_6ebe:
 	dr $32ebe, $32ed7
 
 Func_00c_6ed7::
-	dr $32ed7, $32f22
+	ld de, unk_00c_6f22
+	ld a, [hMapGroup]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld a, [wdcb4]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, a
+	ld a, [wPlayerFacing]
+	cp d
+	jr nz, .asm_6f1d
+	push hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	call unk_00c_6ea5
+	and a
+	jr nz, .asm_6f1c
+	pop hl
+	push hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	call unk_00c_6ebe
+	pop hl
+	ld a, [hli]
+	ld a, [hli]
+	ld a, [hli]
+	ld a, [hli]
+	ld [wdcb6], a
+	ld a, [hli]
+	ld [wdcb7], a
+	ret
+.asm_6f1c
+	pop hl
+.asm_6f1d
+	xor a
+	ld [wdcb4], a
+	ret
 
 unk_00c_6f22:
 	dr $32f22, $33230

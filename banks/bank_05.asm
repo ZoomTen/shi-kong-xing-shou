@@ -553,7 +553,66 @@ Overworld_DoBlackFlashing:
 	ret
 
 Func_005_434a:
-	dr $1434a, $14394
+	ld a, [$dcb8]
+	inc a
+	ld [$dcb8], a
+	cp $18
+	ret nz
+	xor a
+	ld [$dcb8], a
+	ld a, $01
+	ld [$dcb9], a
+	ld hl, $4364
+	call PartialCopyBackgroundPalettes
+	ret
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 unk_005_4394:
 	dr $14394, $143e1
@@ -591,7 +650,98 @@ Func_005_440f:
 	dr $1440f, $14662
 
 Func_005_4662:
-	dr $14662, $146da
+	ld hl, wda00
+.asm_4665
+	ldh a, [$ffaa]
+	ld d, a
+	ldh a, [$ffab]
+	ld e, a
+	push hl
+	ld a, [hli]
+	cp $88
+	jr z, .asm_46d8
+	cp $ff
+	jr nz, .asm_46d0
+	inc hl
+	ld a, d
+	cp $02
+	jr c, .asm_467d
+	sub $02
+.asm_467d
+	cp [hl]
+	jr nc, .asm_46d0
+	add $0c
+	cp [hl]
+	jr c, .asm_46d0
+	inc hl
+	ld a, e
+	cp $02
+	jr c, .asm_468d
+	sub $02
+.asm_468d
+	cp [hl]
+	jr nc, .asm_46d0
+	add $0b
+	cp [hl]
+	jr c, .asm_46d0
+	inc hl
+	ld a, [hli]
+	and a
+	jr nz, .asm_469f
+	inc hl
+	inc hl
+	inc hl
+	jr .asm_46ba
+.asm_469f
+	push bc
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	ld a, [hli]
+	ld c, a
+	ld a, [de]
+	ld b, a
+	ld a, c
+	and a
+	jr z, .asm_46b0
+.asm_46ab
+	srl b
+	dec c
+	jr nz, .asm_46ab
+.asm_46b0
+	ld a, b
+	and $01
+	cp [hl]
+	jr z, .asm_46b9
+	pop bc
+	jr .asm_46d0
+.asm_46b9
+	pop bc
+.asm_46ba
+	pop de
+	push de
+	call LoadObjectSprite
+	ld a, c
+	and a
+	jr z, .asm_46cd
+	swap a
+	and $0f
+	srl a
+	pop hl
+	ld [hl], a
+	jr .asm_46d1
+.asm_46cd
+	pop hl
+	jr .asm_46d1
+.asm_46d0
+	pop hl
+.asm_46d1
+	ld bc, $000c
+	add hl, bc
+	jp .asm_4665
+.asm_46d8
+	pop hl
+	ret
 
 Func_005_46da:
 	ldh a, [hSCY]
@@ -800,7 +950,37 @@ Overworld_MovePlayerOneStep:
 	dr $1495f, $14bc1
 
 Func_005_4bc1:
-	dr $14bc1, $14bfa
+	ldh a, [$ffa7]
+	and a
+	ret nz
+	ldh a, [$ffd6]
+	and a
+	ret nz
+	call Func_005_50e5
+	call Func_005_5123
+	ld a, [wd3f4]
+	and a
+	ret nz
+	ld hl, unk_005_5632
+	ld a, [wd0df]
+	and a
+	jr z, Func_005_4bc1.asm_4bfa
+	cp $01
+	jr z, .asm_4beb
+	cp $02
+	jr z, .asm_4bf0
+	cp $03
+	jr z, .asm_4bf5
+	jr Func_005_4bc1.asm_4bfa
+.asm_4beb
+	ld hl, $5650
+	jr Func_005_4bc1.asm_4bfa
+.asm_4bf0
+	ld hl, $566e
+	jr Func_005_4bc1.asm_4bfa
+.asm_4bf5
+	ld hl, $568c
+	jr Func_005_4bc1.asm_4bfa
 
 .asm_4bfa:
 	ld de, 6
@@ -856,10 +1036,382 @@ Func_005_4bc1:
 	dr $14c3a, $14c69
 
 Func_005_4c69:
-	dr $14c69, $14e4e
+	ldh a, [$ff91]
+	cp $11
+	jr z, .asm_4c93
+	ld a, $01
+	ld [wcd0a], a
+	jr .asm_4c9e
+	ld a, [wPlayerSpriteID]
+	cp $09
+	jr nz, $4c52
+	jr .asm_4c9a
+	jr $4c52
+	ldh a, [$ff9a]
+	cp $01
+	jr nz, $4c52
+	ld a, $01
+	ld [$d0ec], a
+	ldh a, [$ffa1]
+	and $0f
+	ld [wItemIndex], a
+.asm_4c93
+	ld a, [wPlayerSpriteID]
+	cp $09
+	jr z, $4c52
+.asm_4c9a
+	xor a
+	ld [wcd0a], a
+.asm_4c9e
+	ldh a, [$ff9e]
+	cp $ff
+	ret z
+	ld a, $01
+	ldh [$ffac], a
+	ldh a, [$ff9e]
+	ld hl, wPlayerFacing
+	cp [hl]
+	jr z, .asm_4cd0
+	ld [hl], a
+	ld [wd0e3], a
+	ld a, [wPlayerSpriteID]
+	and a
+	jr nz, .asm_4cd0
+	ld a, $ff
+	ldh [$ff9e], a
+	xor a
+	ldh [$ffa7], a
+	ld [wPlayerAnimFrame], a
+	ld a, $01
+	ld [wd3f4], a
+	ld a, $01
+	ld [wdcd0], a
+	jr .asm_4cd7
+	ret
+.asm_4cd0
+	call $56e1
+	and a
+	jp nz, $4c4c
+.asm_4cd7
+	ld a, [wdcea]
+	and a
+	ret z
+	ld a, [wPlayerFacing]
+	and a
+	jr z, .asm_4cef
+	cp $01
+	jr z, .asm_4d06
+	cp $02
+	jr z, .asm_4d1e
+	cp $03
+	jr z, .asm_4d36
+	ret
+.asm_4cef
+	ld a, [wPlayerMapX]
+	ld [$cd33], a
+	ld a, [wPlayerMapY]
+	dec a
+	ld [$cd32], a
+	ld a, $08
+	ldh [$ffdd], a
+	xor a
+	ld [$dcee], a
+	jr .asm_4d4e
+.asm_4d06
+	ld a, [wPlayerMapX]
+	ld [$cd33], a
+	ld a, [wPlayerMapY]
+	inc a
+	ld [$cd32], a
+	ld a, $04
+	ldh [$ffdd], a
+	ld a, $01
+	ld [$dcee], a
+	jr .asm_4d4e
+.asm_4d1e
+	ld a, [wPlayerMapY]
+	ld [$cd32], a
+	ld a, [wPlayerMapX]
+	inc a
+	ld [$cd33], a
+	ld a, $02
+	ldh [$ffdd], a
+	ld a, $02
+	ld [$dcee], a
+	jr .asm_4d4e
+.asm_4d36
+	ld a, [wPlayerMapY]
+	ld [$cd32], a
+	ld a, [wPlayerMapX]
+	dec a
+	ld [$cd33], a
+	ld a, $01
+	ldh [$ffdd], a
+	ld a, $03
+	ld [$dcee], a
+	jr .asm_4d4e
+.asm_4d4e
+	ld a, [hFFAB]
+	ld b, a
+	ld a, [$cd32]
+	sub b
+	swap a
+	and $f0
+	add $10
+	ld [$cd3e], a
+	ld a, [hFFAA]
+	ld b, a
+	ld a, [$cd33]
+	sub b
+	swap a
+	and $f0
+	add $08
+	ld [$cd3f], a
+	ld a, $10
+	ld [hFFDE], a
+	ld a, $01
+	ldh [$ffdb], a
+	ld [wdceb], a
+	ret
+	ld a, [wPlayerScreenX]
+	sub $08
+	srl a
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ldh a, [$ffaa]
+	add e
+	ret
+	ld a, [wPlayerObject]
+	sub $10
+	srl a
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ldh a, [$ffab]
+	add e
+	ret
+	ld a, [wdcfa]
+	and a
+	ret nz
+	ld hl, $0005
+	add hl, de
+	ld a, [hl]
+	cp $01
+	jr z, .asm_4db4
+	cp $02
+	jr z, .asm_4db4
+	ret
+.asm_4db4
+	ld a, $40
+	ld [wdcfa], a
+	call .asm_4dbd
+	ret
+.asm_4dbd
+	ld bc, wPartyMon1
+.asm_4dc0
+	ld hl, $0000
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .asm_4dfb
+	ld hl, $0003
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .asm_4dd4
+	jr nz, .asm_4deb
+	jr .asm_4ddd
+.asm_4dd4
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $06
+	jr nc, .asm_4deb
+.asm_4ddd
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $00
+	ld hl, $0002
+	add hl, bc
+	ld [hl], $01
+	jr .asm_4dfb
+.asm_4deb
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	sub $05
+	ld [hl], a
+	ld hl, $0003
+	add hl, bc
+	ld a, [hl]
+	sbc a, $00
+	ld [hl], a
+.asm_4dfb
+	ld hl, $0016
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $80
+	jr c, .asm_4dc0
+	ret
+	ldh a, [$ff9a]
+	cp $01
+	ret nz
+	ldh a, [$ff9b]
+	cp $1e
+	jr z, .asm_4e1f
+	cp $1f
+	jr z, .asm_4e1f
+	cp $20
+	jr z, .asm_4e1f
+	cp $21
+	jr z, .asm_4e1f
+	ret
+.asm_4e1f
+	ldh a, [$ff9e]
+	cp $ff
+	ret z
+	ld a, $01
+	ldh [$ffac], a
+	xor a
+	ld [wcd0a], a
+	ldh a, [$ff9e]
+	ld hl, wPlayerFacing
+	cp [hl]
+	jr z, .asm_4e4a
+	ld [hl], a
+	ld a, $ff
+	ldh [$ff9e], a
+	xor a
+	ldh [$ffa7], a
+	ld [wPlayerAnimFrame], a
+	ld a, $01
+	ld [wd3f4], a
+	ld a, $01
+	ld [wdcd0], a
+	ret
+.asm_4e4a
+	jp .asm_4cd7
+	ret
 
 Func_005_4e4e:
-	dr $14e4e, $14f2e
+	ldh a, [$ff9a]
+	cp $01
+	ret nz
+	ldh a, [$ff9b]
+	cp $1e
+	jr z, .asm_4e67
+	cp $1f
+	jr z, .asm_4ead
+	cp $20
+	jr z, .asm_4ed5
+	cp $21
+	jp z, .asm_4f1b
+	ret
+.asm_4e67
+	call $4d7d
+	cp $02
+	jr z, .asm_4e8f
+	cp $09
+	ret nz
+	call $4d8f
+	cp $06
+	jr z, .asm_4e86
+	cp $04
+	jr z, .asm_4e7d
+	ret
+.asm_4e7d
+	ld de, wcd60
+	call $4da1
+	jp .asm_4f2d
+.asm_4e86
+	ld de, wNPCObjects
+	call $4da1
+	jp .asm_4f2d
+.asm_4e8f
+	call $4d8f
+	cp $03
+	jr z, .asm_4ea4
+	cp $05
+	jr z, .asm_4e9b
+	ret
+.asm_4e9b
+	ld de, $cda0
+	call $4da1
+	jp .asm_4f2d
+.asm_4ea4
+	ld de, $cd80
+	call $4da1
+	jp .asm_4f2d
+.asm_4ead
+	call $4d7d
+	cp $02
+	jr z, .asm_4ec6
+	cp $09
+	ret nz
+	call $4d8f
+	cp $06
+	ret nz
+	ld de, wNPCObjects
+	call $4da1
+	jp .asm_4f2d
+.asm_4ec6
+	call $4d8f
+	cp $03
+	ret nz
+	ld de, wcd60
+	call $4da1
+	jp .asm_4f2d
+.asm_4ed5
+	call $4d7d
+	cp $02
+	jr z, .asm_4efd
+	cp $06
+	ret nz
+	call $4d8f
+	cp $05
+	jr z, .asm_4eeb
+	cp $03
+	jr z, .asm_4ef4
+	ret
+.asm_4eeb
+	ld de, wNPCObjects
+	call $4da1
+	jp .asm_4f2d
+.asm_4ef4
+	ld de, wcd60
+	call $4da1
+	jp .asm_4f2d
+.asm_4efd
+	call $4d8f
+	cp $04
+	jr z, .asm_4f09
+	cp $06
+	jr z, .asm_4f12
+	ret
+.asm_4f09
+	ld de, $cd80
+	call $4da1
+	jp .asm_4f2d
+.asm_4f12
+	ld de, $cda0
+	call $4da1
+	jp .asm_4f2d
+.asm_4f1b
+	call $4d7d
+	cp $07
+	ret nz
+	call $4d8f
+	cp $06
+	ret nz
+	ld de, wNPCObjects
+	call $4da1
+.asm_4f2d
+	ret
 
 Func_005_4f2e:
 ; Init Start Menu

@@ -27,10 +27,491 @@ Func_030_4000::
 	jp hl
 
 Func_030_4027::
-	dr $c0027, $c02ab
+	call .asm_4187
+	and a
+	jp nz, .asm_40ed
+	call Func_030_42ab
+	ld a, [wd9c7]
+	and a
+	jp z, .asm_40ed
+	call AdvanceRNG
+	ld de, $40f8
+	ld a, [wd988]
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	and a
+	jp z, .asm_40f2
+	ld [hFFC7], a
+	ld a, [$d98d]
+	and a
+	jr z, .asm_407d
+	ld de, wd93c
+	ld a, [wd987]
+	add a
+	ld l, a
+	add a
+	add a
+	add l
+	add $02
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	ld [hFFCB], a
+	xor a
+	ld [hFFCC], a
+	ld [hFFCD], a
+	ld hl, $414a
+	ld b, $25
+	rst $30
+	ld de, wd900
+	ld a, [wd983]
+	jr .asm_40a5
+.asm_407d
+	ld de, wd900
+	ld a, [wd983]
+	add a
+	ld l, a
+	add a
+	add a
+	add l
+	add $02
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	ld [hFFCB], a
+	xor a
+	ld [hFFCC], a
+	ld [hFFCD], a
+	ld hl, $414a
+	ld b, $25
+	rst $30
+	ld de, wd93c
+	ld a, [wd987]
+.asm_40a5
+	add a
+	ld l, a
+	add a
+	add a
+	add l
+	add $03
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	ld [hFFC7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	ld a, [hFFCB]
+	ld [wd993], a
+	ld a, [wd991]
+	ld [hFFCB], a
+	xor a
+	ld [hFFCC], a
+	ld [hFFCD], a
+	ld a, $64
+	ld [hFFC7], a
+	ld hl, $414a
+	ld b, $25
+	rst $30
+	ld a, $ff
+	ld [hFFC7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	ld a, [hFFCB]
+	ld b, a
+	ld a, [wd993]
+	cp b
+	jr nc, .asm_40f2
+.asm_40ed
+	xor a
+	ld [wd993], a
+	ret
+.asm_40f2
+	ld a, $01
+	ld [wd993], a
+	ret
+	nop
+	ld c, e
+	ld h, h
+	ld e, a
+	ld h, h
+	ld e, d
+	ld d, l
+	scf
+	ld h, h
+	ld d, l
+	ld h, h
+	nop
+	nop
+	scf
+	ld h, h
+	ld h, h
+	ld h, h
+	nop
+	nop
+	ld h, h
+	ld h, h
+	ld c, e
+	ld h, h
+	ld h, h
+	nop
+	ld e, a
+	ld d, l
+	nop
+	ld h, h
+	scf
+	ld h, h
+	ld h, h
+	ld h, h
+	ld h, h
+	ld e, $3c
+	nop
+	ld d, b
+	nop
+	nop
+	nop
+	nop
+	ld e, d
+	ld h, h
+	ld h, h
+	ld h, h
+	ld e, d
+	add hl, de
+	nop
+	ld e, d
+	ld h, h
+	ld h, h
+	ld h, h
+	ld d, l
+	ld h, h
+	ld d, l
+	ld c, e
+	ld d, b
+	ld h, h
+	ld h, h
+	ld h, h
+	ld h, h
+	ld h, h
+	ld [hld], a
+	ld h, h
+	ld b, [hl]
+	ld h, h
+	ld h, h
+	ld d, b
+	ld h, h
+	ld d, b
+	ld h, h
+	ld h, h
+	ld h, h
+	ld d, l
+	ld e, d
+	ld b, [hl]
+	ld h, h
+	ld d, l
+	ld d, l
+	ld c, e
+	ld b, c
+	ld e, d
+	ld h, h
+	ld h, h
+	ld e, d
+	ld e, $64
+	ld c, e
+	ld h, h
+	ld b, [hl]
+	ld d, l
+	ld h, h
+	ld h, h
+	ld h, h
+	ld h, h
+	ld h, h
+	ld h, h
+	ld e, d
+	ld d, b
+	ld b, [hl]
+	ld c, e
+	ld b, [hl]
+	ld h, h
+	ld e, a
+	ld h, h
+	ld h, h
+	ld d, b
+	ld d, b
+	inc a
+	ld h, h
+	ld d, b
+	inc a
+	ld b, [hl]
+	ld h, h
+	ld d, l
+	ld d, b
+	ld d, b
+	ld e, d
+	nop
+	ld e, d
+	ld d, b
+	nop
+	ld e, d
+	ld e, a
+	ld h, h
+	ld h, h
+	nop
+	scf
+	ld d, l
+	nop
+	ld c, e
+	jr z, .asm_417e
+.asm_417e
+	nop
+	nop
+	nop
+	scf
+	nop
+	nop
+	nop
+	ld h, h
+	ld h, h
+.asm_4187
+	ld de, $4214
+	ld a, [wd988]
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	and a
+	ret z
+	cp $01
+	jr z, .asm_41a1
+	cp $02
+	jr z, .asm_41bd
+	cp $03
+	jr z, .asm_41da
+	ret
+.asm_41a1
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	ld a, $04
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	jr .asm_420f
+.asm_41bd
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	ld a, $04
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	jr .asm_420f
+.asm_41da
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	ld a, $04
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+	ld a, $04
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4211
+.asm_420f
+	xor a
+	ret
+.asm_4211
+	ld a, $01
+	ret
+	nop
+	nop
+	ld bc, $0100
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0300
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0000
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0000
+	ld bc, $0000
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0200
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0000
+	nop
+	nop
+	ld [bc], a
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0000
+	ld bc, $0000
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	ld bc, $0001
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 Func_030_42ab:
-	dr $c02ab, $c02db
+	ld a, $01
+	ld [wd9b2], a
+	xor a
+	ld [wd9af], a
+	call Func_125b
+	ld d, a
+	ld hl, $4284
+	ld b, $1e
+	rst $30
+	ld de, unk_030_42db
+	ld a, [wd8ff]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	ld a, [wFacingTileX]
+	and $0f
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	ld [wd9c7], a
+	ret
 
 unk_030_42db:
 	dr $c02db, $c0335
@@ -145,7 +626,31 @@ Func_030_4385:
 	ret
 
 Func_030_43ee:
-	dr $c03ee, $c0416
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+	ld hl, wdb20
+	ld a, [$dc9c]
+	ld de, $0013
+	and a
+	jr z, .asm_4406
+.asm_4402
+	add hl, de
+	dec a
+	jr nz, .asm_4402
+.asm_4406
+	ld e, $13
+.asm_4408
+	ld a, [bc]
+	ld [hli], a
+	inc bc
+	dec e
+	jr nz, .asm_4408
+	ld a, [$dc9c]
+	inc a
+	ld [$dc9c], a
+	ret
 
 SetCaughtMon:
 	push de
@@ -168,10 +673,67 @@ SetCaughtMon:
 	ret
 
 Func_030_442a:
-	dr $c042a, $c0442
+	ld a, $01
+	ld [wd9b2], a
+	ld [wd9b5], a
+	ld a, $03
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $54
+	ld [wd3ff], a
+	ret
 
 Func_030_4442:
-	dr $c0442, $c04ab
+	ld a, $06
+	ld [wd98b], a
+	ret
+	ld a, $06
+	ld [wd98b], a
+	ret
+	xor a
+	ld [wd9b5], a
+	ld a, $40
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd98b], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4467
+	call Func_12bd
+	jr .asm_446a
+.asm_4467
+	call Func_128e
+.asm_446a
+	ld a, [wd99b]
+	ldh [$ffcc], a
+	ld a, [wd99a]
+	ldh [$ffcb], a
+	xor a
+	ldh [$ffcd], a
+	call Func_123a
+	ld a, $05
+	ldh [$ffc7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	call Func_123a
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	ldh a, [$ffcc]
+	ld [wd9b1], a
+	ret
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $34
+	ld [wd3ff], a
+	ld a, $03
+	ld [wd98b], a
+	ld a, $1e
+	ld [wd9b0], a
+	xor a
+	ld [wd9b1], a
+	ret
 
 MoveEffectPointers:
 	dw Func_030_55a5 ; $00
@@ -364,43 +926,381 @@ Func_030_45fb:
 	ret
 
 Func_030_4605:
-	dr $c0605, $c0619
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $8c
+	call SetStatTile
+	ld a, $34
+	ld [wd3ff], a
+	ret
 
 Func_030_4619:
-	dr $c0619, $c062d
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $8b
+	call SetStatTile
+	ld a, $34
+	ld [wd3ff], a
+	ret
 
 Func_030_462d:
-	dr $c062d, $c0641
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $8a
+	call SetStatTile
+	ld a, $34
+	ld [wd3ff], a
+	ret
 
 Func_030_4641:
-	dr $c0641, $c0689
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4658
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_4660
+.asm_4658
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_4660
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	jp z, Func_030_55ab
+	ld a, [hli]
+	cp $11
+	jp z, Func_030_55ab
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 1, a
+	set 2, a
+	set 3, a
+	set 5, a
+	ld [hl], a
+	ld a, $4e
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4689:
-	dr $c0689, $c06ce
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd9b2], a
+	ld [wd98b], a
+	ld a, $5c
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $88
+	call SetStatTile
+	ld a, $05
+	ld [wd9af], a
+	ld a, $02
+	call SetStatTile
+.asm_46b0
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $82
+	jr nc, .asm_46b0
+	ld a, [wd986]
+	and a
+	jr nz, .asm_46c7
+	ld a, [wd991]
+	ld [wd9e2], a
+	ret
+.asm_46c7
+	ld a, [wd991]
+	ld [wd9e3], a
+	ret
 
 Func_030_46ce:
-	dr $c06ce, $c06ed
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $87
+	call SetStatTile
+	ld a, $34
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ret
 
 Func_030_46ed:
-	dr $c06ed, $c070d
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [hFFD6]
+	and a
+	jp nz, Func_030_55ab
+	ld de, wd9f5
+	ld a, [wd986]
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld [hl], $02
+	ld a, $06
+	ld [wd98b], a
+	ret
 
 Func_030_470d:
-	dr $c070d, $c0793
+	ld a, [wd986]
+	and a
+	jr nz, .asm_474d
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $59
+	ld [wd3ff], a
+	ld a, [wd984]
+	ld l, a
+	ld a, [wd985]
+	ld h, a
+	ld bc, $0007
+	add hl, bc
+	push hl
+	ld de, $dcbc
+	ld b, $0c
+.asm_472f
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .asm_472f
+	ld a, [wActiveMonPtr]
+	ld l, a
+	ld a, [wd982]
+	ld h, a
+	ld bc, $0007
+	add hl, bc
+	push hl
+	pop de
+	pop hl
+	ld b, $0c
+.asm_4746
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec b
+	jr nz, .asm_4746
+	ret
+.asm_474d
+	ld a, [wdb1c]
+	and a
+	jp nz, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $59
+	ld [wd3ff], a
+	ld a, [wActiveMonPtr]
+	ld l, a
+	ld a, [wd982]
+	ld h, a
+	ld bc, $0007
+	add hl, bc
+	push hl
+	ld de, $dcbc
+	ld b, $0c
+.asm_4770
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .asm_4770
+	ld a, [wd984]
+	ld l, a
+	ld a, [wd985]
+	ld h, a
+	ld bc, $0007
+	add hl, bc
+	push hl
+	pop de
+	pop hl
+	ld b, $0c
+.asm_4787
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec b
+	jr nz, .asm_4787
+	ld a, $01
+	ld [wdb1c], a
+	ret
 
 Func_030_4793:
-	dr $c0793, $c07ee
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $58
+	ld [wd3ff], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_47d3
+	ld a, $01
+	ld [wd9f7], a
+	ld hl, $d0d9
+	ld a, [hld]
+	ldh [$ffcb], a
+	ld a, [hld]
+	ldh [$ffcc], a
+	ld a, [hld]
+	ldh [$ffcd], a
+	call Func_123a
+	ld a, $02
+	ldh [$ffc7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	call Func_123a
+	ld hl, $d0d9
+	ldh a, [$ffcb]
+	ld [hld], a
+	ldh a, [$ffcc]
+	ld [hld], a
+	ldh a, [$ffcd]
+	ld [hld], a
+	ret
+.asm_47d3
+	ld de, $db00
+	ld a, [wd987]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, de
+	inc hl
+	inc hl
+	push hl
+	pop de
+	ld hl, $d0d9
+	ld a, [de]
+	add [hl]
+	ld [hld], a
+	inc de
+	ld a, [de]
+	adc a, [hl]
+	ld [hld], a
+	ret
 
 Func_030_47ee:
-	dr $c07ee, $c080b
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4803
+	ld a, $01
+	ld [wd9bb], a
+	jp $4a44
+.asm_4803
+	ld a, $01
+	ld [wd9ba], a
+	jp $4a44
 
 Func_030_480b:
-	dr $c080b, $c085d
+	ld a, $4d
+	ld [wd3ff], a
+	xor a
+	ld [wd9b2], a
+	call .asm_481c
+	ld a, $01
+	ld [wd9b2], a
+.asm_481c
+	xor a
+	ld [wd9af], a
+	ld a, $0a
+	call SetStatTile
+	ld a, $01
+	ld [wd9af], a
+	ld a, $0a
+	call SetStatTile
+	ld a, $02
+	ld [wd9af], a
+	ld a, $0a
+	call SetStatTile
+	ld a, $03
+	ld [wd9af], a
+	ld a, $0a
+	call SetStatTile
+	ld a, $08
+	ld [wd9af], a
+	ld a, $0a
+	call SetStatTile
+	ld a, $09
+	ld [wd9af], a
+	ld a, $0a
+	call SetStatTile
+	ld a, $4d
+	ld [wd3ff], a
+	ret
 
 Func_030_485d:
-	dr $c085d, $c0873
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd9b5], a
+	ld a, $04
+	ld [wd98b], a
+	ld a, $40
+	ld [wd3ff], a
+	ret
 
 Func_030_4873:
-	dr $c0873, $c08bb
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $4c
+	ld [wd3ff], a
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_48a7
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	ld a, $02
+	call SetStatTile
+	ld a, $04
+	ld [wd9af], a
+	ld a, $7d
+	call SetStatTile
+	ret
+.asm_48a7
+	ld a, [wd986]
+	and a
+	jr nz, .asm_48b4
+	ld a, [wd9e3]
+	ld [wd9e2], a
+	ret
+.asm_48b4
+	ld a, [wd9e2]
+	ld [wd9e3], a
+	ret
 
 Func_030_48bb:
 	ld a, [wd993]
@@ -409,40 +1309,302 @@ Func_030_48bb:
 	jp Func_030_4bcb
 
 Func_030_48c5:
-	dr $c08c5, $c0919
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	xor a
+	call SetStatTile
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4901
+	xor a
+	ld [wd9b9], a
+	ld a, [wd9c8]
+	ld [wEnemyMonSpecies], a
+	call LoadEnemyMonPic
+	ld hl, $4d47
+	ld b, $26
+	rst $30
+	xor a
+	ld [wd9c8], a
+	ret
+.asm_4901
+	xor a
+	ld [wd9b8], a
+	ld a, [wd9c9]
+	ld [wd9e5], a
+	call LoadMonPic_vTiles90d0
+	ld hl, $4d1b
+	ld b, $26
+	rst $30
+	xor a
+	ld [wd9c9], a
+	ret
 
 Func_030_4919:
-	dr $c0919, $c0950
+	ld a, $4b
+	ld [wd3ff], a
+	call AdvanceRNG
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	ld a, [wd991]
+	and $03
+	add $02
+	call SetStatTile
+	ld a, $04
+	ld [wd9af], a
+	ld a, $7a
+	call SetStatTile
+	ld a, [wd986]
+	and a
+	jr nz, .asm_494a
+	ld a, $01
+	ld [wd9b9], a
+	ret
+.asm_494a
+	ld a, $01
+	ld [wd9b8], a
+	ret
 
 Func_030_4950:
-	dr $c0950, $c0973
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_496d
+	ld a, $01
+	ld [$d9b7], a
+	ret
+.asm_496d
+	ld a, $01
+	ld [wd9b6], a
+	ret
 
 Func_030_4973:
-	dr $c0973, $c098e
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $4a
+	ld [wd3ff], a
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $77
+	call SetStatTile
+	ret
 
 Func_030_498e:
-	dr $c098e, $c09d2
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	call AdvanceRNG
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	ld a, [wd991]
+	and $03
+	add $02
+	call SetStatTile
+	ld a, $04
+	ld [wd9af], a
+	ld a, $70
+	call SetStatTile
+	ld a, $49
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_49cc
+	ld a, $8e
+	ld [wd9e3], a
+	ret
+.asm_49cc
+	ld a, $8e
+	ld [wd9e2], a
+	ret
 
 Func_030_49d2:
-	dr $c09d2, $c0a03
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	ld a, $01
+	call SetStatTile
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	ld a, [wd986]
+	and a
+	jr z, .asm_49fd
+	ld a, $01
+	ld [wd9b3], a
+	ret
+.asm_49fd
+	ld a, $01
+	ld [wd9b4], a
+	ret
 
 Func_030_4a03:
-	dr $c0a03, $c0a20
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	jp Func_030_505d
 
 Func_030_4a20:
-	dr $c0a20, $c0a3d
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $19
+	ret nc
+	jp $5103
 
 Func_030_4a3d:
-	dr $c0a3d, $c0a89
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4a54
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_4a5c
+.asm_4a54
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_4a5c
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	jp z, Func_030_55ab
+	cp $15
+	jp z, Func_030_55ab
+	ld a, [hli]
+	cp $11
+	jp z, Func_030_55ab
+	cp $15
+	jp z, Func_030_55ab
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 0, a
+	ld [hl], a
+	ld a, $1a
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4a89:
-	dr $c0a89, $c0aa5
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $48
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $63
+	call SetStatTile
+	ret
 
 Func_030_4aa5:
-	dr $c0aa5, $c0aec
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4aca
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $02
+	call SetStatTile
+	ld a, $46
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ret
+.asm_4aca
+	xor a
+	call SetStatTile
+	xor a
+	ld [wd989], a
+	ld [wd98b], a
+	ld de, $57e1
+	ld hl, Func_030_4000
+	ld b, $2e
+	rst $30
+	call DelayFrame
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4aec:
-	dr $c0aec, $c0b1b
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $32
+	ret nc
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $01
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $1f
+	ld [wd3ff], a
+	ret
 
 Func_030_4b1b:
 	call $537B
@@ -458,121 +1620,1136 @@ Func_030_4b2d:
 	jp Func_030_4e93
 
 Func_030_4b30:
-	dr $c0b30, $c0b4d
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	jp Func_030_4e93
 
 Func_030_4b4d:
-	dr $c0b4d, $c0b94
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4b72
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $02
+	call SetStatTile
+	ld a, $47
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ret
+.asm_4b72
+	xor a
+	call SetStatTile
+	xor a
+	ld [wd989], a
+	ld [wd98b], a
+	ld de, $57f4
+	ld hl, Func_030_4000
+	ld b, $2e
+	rst $30
+	call DelayFrame
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4b94:
-	dr $c0b94, $c0bb1
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	jp $4e42
 
 Func_030_4bb1:
-	dr $c0bb1, $c0bcb
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $32
+	ret nc
 
 Func_030_4bcb:
-	dr $c0bcb, $c0be3
+	ld a, $01
+	ld [wd9b2], a
+	ld [wd9b5], a
+	ld a, $08
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $21
+	ld [wd3ff], a
+	ret
 
 Func_030_4be3:
-	dr $c0be3, $c0c12
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $01
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $1f
+	ld [wd3ff], a
+	ret
 
 Func_030_4c12:
-	dr $c0c12, $c0c50
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $34
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4c2e
+	ld a, [wd9e5]
+	ld d, a
+	jr .asm_4c32
+.asm_4c2e
+	ld a, [wEnemyMonSpecies]
+	ld d, a
+.asm_4c32
+	ld hl, $4284
+	ld b, $1e
+	rst $30
+	ld a, [wFacingTileX]
+	cp $07
+	ret nz
+	call $4c8f
+	ld a, $40
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd98b], a
+	xor a
+	ld [wd9b5], a
+	ret
 
 Func_030_4c50:
-	dr $c0c50, $c0cca
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4c63
+	ld a, [wd9e5]
+	ld d, a
+	jr .asm_4c67
+.asm_4c63
+	ld a, [wEnemyMonSpecies]
+	ld d, a
+.asm_4c67
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $08
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $21
+	ld [wd3ff], a
+	ret
+	ld a, [wd9b1]
+	and a
+	jr nz, .asm_4c9f
+	ld a, [wd9b0]
+	ldh [$ffcb], a
+	xor a
+	ldh [$ffcc], a
+	jr .asm_4ca6
+.asm_4c9f
+	ldh [$ffcb], a
+	ld a, [wd9b0]
+	ldh [$ffcc], a
+.asm_4ca6
+	xor a
+	ldh [$ffcd], a
+	ld a, $02
+	ldh [$ffc7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	ldh a, [$ffcc]
+	and a
+	jr nz, .asm_4cc1
+	ld [wd9b1], a
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	ret
+.asm_4cc1
+	ld [wd9b0], a
+	ldh a, [$ffcb]
+	ld [wd9b1], a
+	ret
 
 Func_030_4cca:
-	dr $c0cca, $c0d13
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4cef
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $02
+	call SetStatTile
+	ld a, $46
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ret
+.asm_4cef
+	xor a
+	call SetStatTile
+	xor a
+	ld [wd989], a
+	ld [wd98b], a
+	ld de, $57d1
+	ld hl, Func_030_4000
+	ld b, $2e
+	rst $30
+	call DelayFrame
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	jp $4d24
 
 Func_030_4d13:
-	dr $c0d13, $c0d64
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4d3d
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_4d45
+.asm_4d3d
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_4d45
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	ret z
+	ld a, [hli]
+	cp $11
+	ret z
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 2, a
+	ld [hl], a
+	ld a, $19
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4d64:
-	dr $c0d64, $c0e0b
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4d8c
+	ld a, $01
+	call SetStatTile
+	ld a, $36
+	ld [wd3ff], a
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $3e
+	call SetStatTile
+	ret
+.asm_4d8c
+	dec a
+	jr z, .asm_4da4
+	call SetStatTile
+	ld a, $36
+	ld [wd3ff], a
+	ld a, $03
+	ld [wd98b], a
+	xor a
+	ld [wd9b0], a
+	ld [wd9b1], a
+	ret
+.asm_4da4
+	call SetStatTile
+	ld a, $04
+	ld [wd9af], a
+	call SetStatTile
+	xor a
+	ld [wd9b5], a
+	ld a, $37
+	ld [wd3ff], a
+	ld hl, Func_030_4000
+	ld b, $2d
+	rst $30
+	call $5372
+	xor a
+	ld [wd989], a
+	ld [wd98b], a
+	ld de, $580f
+	ld hl, Func_030_4000
+	ld b, $2e
+	rst $30
+	call DelayFrame
+	ld a, $03
+	ld [wd98b], a
+	xor a
+	ld [wd9b2], a
+	ld a, $06
+	ld [wd9af], a
+	call GetStatTile
+	ld [wd9b0], a
+	ld a, $07
+	ld [wd9af], a
+	call GetStatTile
+	call $537b
+	ld a, $06
+	ld [wd9af], a
+	xor a
+	call SetStatTile
+	ld a, $07
+	ld [wd9af], a
+	xor a
+	call SetStatTile
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4e0b:
-	dr $c0e0b, $c0e28
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $19
+	ret nc
+	jp $4d2d
 
 Func_030_4e28:
-	dr $c0e28, $c0e79
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $19
+	ret nc
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4e52
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_4e5a
+.asm_4e52
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_4e5a
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	ret z
+	ld a, [hli]
+	cp $11
+	ret z
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 3, a
+	ld [hl], a
+	ld a, $18
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4e79:
-	dr $c0e79, $c0e93
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $19
+	ret nc
 
 Func_030_4e93:
-	dr $c0e93, $c0eca
+	ld a, [wd986]
+	and a
+	jr nz, .asm_4ea3
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_4eab
+.asm_4ea3
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_4eab
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	ret z
+	ld a, [hli]
+	cp $11
+	ret z
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 1, a
+	ld [hl], a
+	ld a, $1e
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4eca:
-	dr $c0eca, $c0f10
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [wd9b1]
+	and a
+	jr nz, .asm_4ee1
+	xor a
+	ldh [$ffcc], a
+	ld a, [wd9b0]
+	ldh [$ffcb], a
+	jr .asm_4eeb
+.asm_4ee1
+	ld a, [wd9b1]
+	ldh [$ffcb], a
+	ld a, [wd9b0]
+	ldh [$ffcc], a
+.asm_4eeb
+	xor a
+	ldh [$ffcd], a
+	ld a, $04
+	ldh [$ffc7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	xor a
+	ld [wd9b1], a
+	xor a
+	ld [wd9b5], a
+	ld a, $03
+	ld [wd98b], a
+	ld a, $34
+	ld [wd3ff], a
+	ret
 
 Func_030_4f10:
-	dr $c0f10, $c0f5f
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [wd986]
+	and a
+	jr z, .asm_4f27
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_4f2f
+.asm_4f27
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_4f2f
+	ld hl, $0001
+	add hl, bc
+	ld a, [hl]
+	ldh [$ffcb], a
+	xor a
+	ldh [$ffcc], a
+	ldh [$ffcd], a
+	ld a, $02
+	ld [hFFC7], a
+	ld hl, $414a
+	ld b, $25
+	rst $30
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	xor a
+	ld [wd9b1], a
+	ld a, $34
+	ld [wd3ff], a
+	ld a, $03
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4f5f:
-	dr $c0f5f, $c0f9f
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_4f7d
+	ld a, $02
+	call SetStatTile
+	ld a, $46
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ret
+.asm_4f7d
+	xor a
+	call SetStatTile
+	xor a
+	ld [wd989], a
+	ld [wd98b], a
+	ld de, $580f
+	ld hl, Func_030_4000
+	ld b, $2e
+	rst $30
+	call DelayFrame
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_4f9f:
-	dr $c0f9f, $c0fd4
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, [wd986]
+	and a
+	jr z, .asm_4fb6
+	call Func_12bd
+	jr .asm_4fb9
+.asm_4fb6
+	call Func_128e
+.asm_4fb9
+	ld a, [wd998]
+	sub $05
+	ld [wd9b0], a
+	ld a, [wd999]
+	sbc a, $00
+	ld [wd9b1], a
+	ld a, $03
+	ld [wd98b], a
+	ld a, $14
+	ld [wd3ff], a
+	ret
 
 Func_030_4fd4:
-	dr $c0fd4, $c0fe8
+	xor a
+	ld [wd9b2], a
+	ld a, $02
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $3c
+	ld [wd3ff], a
+	ret
 
 Func_030_4fe8:
-	dr $c0fe8, $c0fef
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
 
 Func_030_4fef:
-	dr $c0fef, $c1003
+	xor a
+	ld [wd9b2], a
+	ld a, $08
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $3a
+	ld [wd3ff], a
+	ret
 
 Func_030_5003:
-	dr $c1003, $c1056
+	ld a, $1c
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd98b], a
+	xor a
+	ld [wd9b5], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_501c
+	call Func_12bd
+	jr .asm_501f
+.asm_501c
+	call Func_128e
+.asm_501f
+	ld a, [wd998]
+	ld c, a
+	ld a, [wd999]
+	ld b, a
+	ld a, [wd99a]
+	sub c
+	ld [wd9b0], a
+	ld a, [wd99b]
+	sbc a, b
+	ld [wd9b1], a
+	ld a, [wd986]
+	and a
+	jr z, .asm_5045
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_504d
+.asm_5045
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_504d
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 4, a
+	ld [hl], a
+	ret
 
 Func_030_5056:
-	dr $c1056, $c105d
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
 
 Func_030_505d:
-	dr $c105d, $c1074
+	ld a, $01
+	ld [wd9b2], a
+	ld [wd9b5], a
+	xor a
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $44
+	ld [wd3ff], a
+	ret
 
 Func_030_5074:
-	dr $c1074, $c10a4
+	ld a, $43
+	ld [wd3ff], a
+	xor a
+	ld [wd9b2], a
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $01
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $02
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $03
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ret
 
 Func_030_50a4:
-	dr $c10a4, $c10cc
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [hFFD6]
+	and a
+	jp nz, Func_030_55ab
+	ld hl, wd9f5
+	ld a, [wd986]
+	and a
+	jr z, .asm_50be
+	ld hl, wd9f6
+.asm_50be
+	ld a, $02
+	ld [hl], a
+	ld a, $42
+	ld [wd3ff], a
+	ld a, $06
+	ld [wd98b], a
+	ret
 
 Func_030_50cc:
-	dr $c10cc, $c10f8
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, [wd986]
+	and a
+	jr z, .asm_50e3
+	call Func_12bd
+	jr .asm_50e6
+.asm_50e3
+	call Func_128e
+.asm_50e6
+	ld a, [wd998]
+	ld [wd9b0], a
+	ld a, [wd999]
+	ld [wd9b1], a
+	ld a, $03
+	ld [wd98b], a
+	ret
 
 Func_030_50f8:
-	dr $c10f8, $c113a
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd98b], a
+	ld a, $1b
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_511d
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_5125
+.asm_511d
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_5125
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	ret z
+	ld a, [hli]
+	cp $11
+	ret z
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 5, a
+	ld [hl], a
+	ret
 
 Func_030_513a:
-	dr $c113a, $c1141
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
 
 Func_030_5141:
-	dr $c1141, $c1155
+	xor a
+	ld [wd9b2], a
+	ld a, $03
+	ld [wd9af], a
+	ld a, $03
+	call AddStatTile
+	ld a, $41
+	ld [wd3ff], a
+	ret
 
 Func_030_5155:
-	dr $c1155, $c1190
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd98b], a
+	call AdvanceRNG
+	ld a, [wd991]
+	cp $4c
+	ret nc
+	ld a, [wd986]
+	and a
+	jr nz, .asm_517f
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_5187
+.asm_517f
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_5187
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 7, a
+	ld [hl], a
+	ret
 
 Func_030_5190:
-	dr $c1190, $c11bb
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd9b5], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_51a6
+	call Func_12bd
+	jr .asm_51a9
+.asm_51a6
+	call Func_128e
+.asm_51a9
+	ld a, [wd998]
+	ld [wd9b0], a
+	ld a, [wd999]
+	ld [wd9b1], a
+	ld a, $03
+	ld [wd98b], a
+	ret
 
 Func_030_51bb:
-	dr $c11bb, $c11c2
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
 
 Func_030_51c2:
-	dr $c11c2, $c11da
+	ld a, $01
+	ld [wd9b2], a
+	ld [wd9b5], a
+	ld a, $01
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $1f
+	ld [wd3ff], a
+	ret
 
 Func_030_51da:
-	dr $c11da, $c1231
+	xor a
+	ld [wd9b5], a
+	ld a, $40
+	ld [wd3ff], a
+	ld a, $04
+	ld [wd98b], a
+	ld a, [wd986]
+	and a
+	jr nz, .asm_51f3
+	call Func_12bd
+	jr .asm_51f6
+.asm_51f3
+	call Func_128e
+.asm_51f6
+	ld a, [wd99b]
+	and a
+	jr nz, .asm_5206
+	ld a, [wd99a]
+	ldh [$ffcb], a
+	xor a
+	ldh [$ffcc], a
+	jr .asm_520d
+.asm_5206
+	ldh [$ffcb], a
+	ld a, [wd99a]
+	ldh [$ffcc], a
+.asm_520d
+	xor a
+	ldh [$ffcd], a
+	ld a, $02
+	ldh [$ffc7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	ldh a, [$ffcc]
+	and a
+	jr nz, .asm_5228
+	ld [wd9b1], a
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	ret
+.asm_5228
+	ld [wd9b0], a
+	ldh a, [$ffcb]
+	ld [wd9b1], a
+	ret
 
 Func_030_5231:
-	dr $c1231, $c1249
+	xor a
+	ld [wd9b2], a
+	ld a, $09
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $45
+	ld [wd3ff], a
+	xor a
+	ld [wd9b5], a
+	ret
 
 Func_030_5249:
-	dr $c1249, $c12c3
+	ld a, $01
+	ld [wd9b5], a
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_527d
+	call AdvanceRNG
+	ld a, [wd991]
+	and $01
+	add $02
+	push af
+	call SetStatTile
+	ld a, $01
+	ld [wd9b2], a
+	pop af
+	call SetStatTile
+	ld a, $02
+	ld [wd98b], a
+	call .asm_52b1
+	ret
+.asm_527d
+	dec a
+	and a
+	jr z, .asm_5292
+	call SetStatTile
+	ld a, $34
+	ld [wd3ff], a
+	ld a, $02
+	ld [wd98b], a
+	call .asm_52b1
+	ret
+.asm_5292
+	call SetStatTile
+	ld a, $01
+	ld [wd9b2], a
+	xor a
+	call SetStatTile
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $34
+	ld [wd3ff], a
+	ld a, $02
+	ld [wd98b], a
+	call .asm_52b1
+	ret
+.asm_52b1
+	ld a, [wd986]
+	and a
+	jr nz, .asm_52bd
+	ld a, $01
+	ld [wd9b3], a
+	ret
+.asm_52bd
+	ld a, $01
+	ld [wd9b4], a
+	ret
 
 Func_030_52c3:
-	dr $c12c3, $c13ba
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_52f3
+	call AdvanceRNG
+	ld a, [wd991]
+	and $01
+	add $02
+	call SetStatTile
+	ld a, $36
+	ld [wd3ff], a
+	xor a
+	ld [wd9b2], a
+	ld a, $04
+	ld [wd9af], a
+	ld a, $0e
+	call SetStatTile
+	ret
+.asm_52f3
+	dec a
+	jr z, .asm_530b
+	call SetStatTile
+	ld a, $36
+	ld [wd3ff], a
+	ld a, $03
+	ld [wd98b], a
+	xor a
+	ld [wd9b0], a
+	ld [wd9b1], a
+	ret
+.asm_530b
+	call SetStatTile
+	ld a, $04
+	ld [wd9af], a
+	call SetStatTile
+	xor a
+	ld [wd9b5], a
+	ld a, $37
+	ld [wd3ff], a
+	ld hl, Func_030_4000
+	ld b, $2d
+	rst $30
+	call .asm_5372
+	xor a
+	ld [wd989], a
+	ld [wd98b], a
+	ld de, $580f
+	ld hl, Func_030_4000
+	ld b, $2e
+	rst $30
+	call DelayFrame
+	ld a, $03
+	ld [wd98b], a
+	xor a
+	ld [wd9b2], a
+	ld a, $06
+	ld [wd9af], a
+	call GetStatTile
+	ld [wd9b0], a
+	ld a, $07
+	ld [wd9af], a
+	call GetStatTile
+	call .asm_537b
+	ld a, $06
+	ld [wd9af], a
+	xor a
+	call SetStatTile
+	ld a, $07
+	ld [wd9af], a
+	xor a
+	call SetStatTile
+	ld a, $01
+	ld [wd9b5], a
+	ret
+.asm_5372
+	ld c, $20
+.asm_5374
+	call DelayFrame
+	dec c
+	jr nz, .asm_5374
+	ret
+.asm_537b
+	ld [wd9b1], a
+	and a
+	jr nz, .asm_538b
+	ld a, [wd9b0]
+	ldh [$ffcb], a
+	xor a
+	ldh [$ffcc], a
+	jr .asm_5393
+.asm_538b
+	xor a
+	ldh [$ffcc], a
+	ld a, [wd9b0]
+	ldh [$ffcb], a
+.asm_5393
+	xor a
+	ldh [$ffcd], a
+	ld a, $02
+	ldh [$ffc7], a
+	ld hl, $414a
+	ld b, $25
+	rst $30
+	ldh a, [$ffcc]
+	and a
+	jr z, .asm_53b0
+	ldh a, [$ffcc]
+	ld [wd9b0], a
+	ldh a, [$ffcb]
+	ld [wd9b1], a
+	ret
+.asm_53b0
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	xor a
+	ld [wd9b1], a
+	ret
 
 Func_030_53ba:
 	ld a, [wd993]
@@ -641,37 +2818,304 @@ Func_030_53ee:
 	ret
 
 Func_030_541a:
-	dr $c141a, $c142e
+	xor a
+	ld [wd9b2], a
+	ld a, $01
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $38
+	ld [wd3ff], a
+	ret
 
 Func_030_542e:
-	dr $c142e, $c1441
+	xor a
+	ld [wd9b2], a
+	xor a
+	ld [wd9af], a
+	ld a, $01
+	call AddStatTile
+	ld a, $3b
+	ld [wd3ff], a
+	ret
 
 Func_030_5441:
-	dr $c1441, $c1448
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
 
 Func_030_5448:
-	dr $c1448, $c1465
+	ld a, $01
+	ld [wd9b2], a
+	ld [wd9b5], a
+	ld a, $02
+	ld [wd9af], a
+	ld a, $ff
+	call AddStatTile
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $20
+	ld [wd3ff], a
+	ret
 
 Func_030_5465:
-	dr $c1465, $c1486
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, $01
+	ld [wd9b2], a
+	ld a, $01
+	ld [wd9af], a
+	ld a, $fe
+	call AddStatTile
+	ld a, $1f
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_5486:
-	dr $c1486, $c14de
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $34
+	ld [wd3ff], a
+	ld a, $03
+	ld [wd98b], a
+	ld a, [wd986]
+	and a
+	jr z, .asm_54a0
+	call Func_12bd
+	jr .asm_54a3
+.asm_54a0
+	call Func_128e
+.asm_54a3
+	ld a, [wd999]
+	and a
+	jr nz, .asm_54b3
+	ld a, [wd998]
+	ldh [$ffcb], a
+	xor a
+	ldh [$ffcc], a
+	jr .asm_54ba
+.asm_54b3
+	ldh [$ffcb], a
+	ld a, [wd998]
+	ldh [$ffcc], a
+.asm_54ba
+	xor a
+	ldh [$ffcd], a
+	ld a, $02
+	ldh [$ffc7], a
+	ld hl, $41b8
+	ld b, $25
+	rst $30
+	ldh a, [$ffcc]
+	and a
+	jr nz, .asm_54d5
+	ld [wd9b1], a
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	ret
+.asm_54d5
+	ld [wd9b0], a
+	ldh a, [$ffcb]
+	ld [wd9b1], a
+	ret
 
 Func_030_54de:
-	dr $c14de, $c155c
+	ld a, [wd9c7]
+	and a
+	jp z, Func_030_55ab
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_551e
+	ld a, $04
+	ld [wd9af], a
+	ld a, $04
+	call AddStatTile
+	xor a
+	ld [wd9af], a
+	ld a, $05
+	call AddStatTile
+	ld a, $01
+	ld [wd9af], a
+	ld a, $fb
+	call AddStatTile
+	ld a, $05
+	ld [wd9af], a
+	ld a, $02
+	push af
+	call SetStatTile
+	jr .asm_5524
+.asm_551e
+	add $02
+	push af
+	call SetStatTile
+.asm_5524
+	ld hl, $5651
+	ld b, $2b
+	rst $30
+	ld a, [wd9b0]
+	ldh [$ffcb], a
+	ld a, [wd9b1]
+	ldh [$ffcc], a
+	xor a
+	ldh [$ffcd], a
+	call Func_123a
+	pop af
+	dec a
+	ldh [$ffc7], a
+	ld hl, $414a
+	ld b, $25
+	rst $30
+	call Func_123a
+	ldh a, [$ffcb]
+	ld [wd9b0], a
+	ldh a, [$ffcc]
+	ld [wd9b1], a
+	ld a, $03
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
 
 Func_030_555c:
-	dr $c155c, $c15a5
+	ld a, [wd993]
+	and a
+	jp z, Func_030_55ab
+	ld a, [$d98d]
+	and a
+	jr nz, .asm_5573
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_557b
+.asm_5573
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_557b
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	ret z
+	cp $10
+	ret z
+	ld a, [hli]
+	cp $11
+	ret z
+	cp $10
+	ret z
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 4, a
+	ld [hl], a
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $1c
+	ld [wd3ff], a
+	ld a, $02
+	ld [wd98b], a
+	ret
 
 Func_030_55a5:
-	dr $c15a5, $c15ab
+	ld a, [wd993]
+	and a
+	jr nz, $55c2
 
 Func_030_55ab:
-	dr $c15ab, $c1603
+	call AdvanceRNG
+	ld a, [wd991]
+	and $03
+	add $0f
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
+	ld a, [$d98d]
+	and a
+	jr nz, .asm_55d2
+	ld a, [wActiveMonPtr]
+	ld c, a
+	ld a, [wd982]
+	ld b, a
+	jr .asm_55da
+.asm_55d2
+	ld a, [wd984]
+	ld c, a
+	ld a, [wd985]
+	ld b, a
+.asm_55da
+	ld hl, $0014
+	add hl, bc
+	ld a, [hli]
+	cp $11
+	ret z
+	cp $10
+	ret z
+	ld a, [hli]
+	cp $11
+	ret z
+	cp $10
+	ret z
+	ld hl, $0013
+	add hl, bc
+	ld a, [hl]
+	set 4, a
+	ld [hl], a
+	ld a, $01
+	ld [wd9b5], a
+	ld a, $1c
+	ld [wd3ff], a
+	xor a
+	ld [wd98b], a
+	ret
 
 Func_030_5603:
-	dr $c1603, $c164a
+	xor a
+	ld [wd9b2], a
+	ld a, $05
+	ld [wd9af], a
+	call GetStatTile
+	and a
+	jr nz, .asm_562a
+	call AdvanceRNG
+	ld a, [wd991]
+	and $01
+	add $02
+	call SetStatTile
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
+.asm_562a
+	dec a
+	and a
+	jr z, .asm_563c
+	call SetStatTile
+	ld a, $02
+	ld [wd98b], a
+	ld a, $01
+	ld [wd9b5], a
+	ret
+.asm_563c
+	call SetStatTile
+	ld a, $34
+	ld [wd3ff], a
+	ld a, $01
+	ld [wd98b], a
+	ret
 
 Func_030_564a:
 	ld a, [wd993]

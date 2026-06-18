@@ -19,27 +19,566 @@ Func_004_4000::
 	ret
 
 Func_004_4024::
-	dr $10024, $10045
+	ld hl, wVirtualOAM
+	ld bc, $0028
+	ld de, $0004
+.asm_402d
+	ld a, $a0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_402d
+	xor a
+	ld [wd1fb], a
+	call Func_004_4088
+	call Func_004_4170
+	call Func_004_41e6
+	call Func_004_40cb
+	ret
 
 Func_004_4045::
-	dr $10045, $10088
+	ld hl, wVirtualOAMSprite32
+	ld bc, $0004
+	ld de, $0004
+.asm_404e
+	ld a, $a0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_404e
+	ld hl, $47ab
+	ld de, wcde0
+	ld a, [de]
+	inc de
+	ld c, a
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	and a
+	ret z
+	inc de
+	add a
+	add l
+	ld l, a
+	ld a, h
+	adc a, $00
+	ld h, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, wVirtualOAMSprite32
+.asm_4072
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_4087
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add b
+	inc hl
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	jr .asm_4072
+.asm_4087
+	ret
 
 Func_004_4088:
-	dr $10088, $100cb
+	ld hl, wd1a0
+.asm_408b
+	push hl
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	and a
+	jp z, .asm_40bf
+	ld de, $47ab
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $c0
+.asm_40a6
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_40bb
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	inc hl
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	jr .asm_40a6
+.asm_40bb
+	ld a, e
+	ld [wd1fb], a
+.asm_40bf
+	pop hl
+	ld bc, $0008
+	add hl, bc
+	ld a, l
+	cp $e0
+	ret nc
+	jp .asm_408b
 
 Func_004_40cb:
-	dr $100cb, $10170
+	ld hl, wNPCObjects
+.asm_40ce
+	push hl
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	and a
+	jp z, .asm_4164
+	push af
+	ldh a, [$ffbc]
+	and a
+	jr z, .asm_40f5
+	ld a, [wTextboxPos]
+	and a
+	jr z, .asm_40ec
+	ld a, c
+	cp $50
+	jr nc, .asm_40f5
+	pop af
+	jr .asm_4164
+.asm_40ec
+	ld a, c
+	cp $60
+	jr c, .asm_40f5
+	pop af
+	jp .asm_4164
+.asm_40f5
+	ld a, [hl]
+	ld [wd9fa], a
+	ld a, l
+	add $03
+	ld l, a
+	ld a, [hli]
+	ld [wd9fd], a
+	ld a, [hli]
+	ld [wd9fe], a
+	inc hl
+	inc hl
+	ld a, [hl]
+	ld [wd9ff], a
+	pop af
+	ld de, $47ab
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $c0
+.asm_411d
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_4160
+	add c
+	ld [de], a
+	inc de
+	ld a, [wd9fa]
+	cp $03
+	jr nz, .asm_4131
+	inc hl
+	ld a, [hli]
+	add b
+	jr .asm_4134
+.asm_4131
+	ld a, [hli]
+	add b
+	inc hl
+.asm_4134
+	ld [de], a
+	inc de
+	ld a, [wd9fd]
+	add [hl]
+	inc hl
+	ld [de], a
+	ld a, [wd9fe]
+	and a
+	jr z, .asm_4146
+	ld a, [de]
+	add $04
+	ld [de], a
+.asm_4146
+	inc de
+	ld a, [hli]
+	ld [de], a
+	push hl
+	ld hl, wd9ff
+	add $03
+	add [hl]
+	ld [de], a
+	pop hl
+	ld a, [wd9fa]
+	cp $03
+	jr nz, .asm_415d
+	ld a, [de]
+	or $20
+	ld [de], a
+.asm_415d
+	inc de
+	jr .asm_411d
+.asm_4160
+	ld a, e
+	ld [wd1fb], a
+.asm_4164
+	pop hl
+	ld bc, $0020
+	add hl, bc
+	ld a, l
+	cp $e0
+	ret nc
+	jp .asm_40ce
 
 Func_004_4170:
-	dr $10170, $101e6
+	ld hl, $47ab
+	ld de, wPlayerObject
+	ld a, [de]
+	inc de
+	ld c, a
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	and a
+	ret z
+	inc de
+	add a
+	add l
+	ld l, a
+	ld a, h
+	adc a, $00
+	ld h, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $c0
+.asm_4190
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_41e1
+	add c
+	ld [de], a
+	inc de
+	ld a, [wPlayerFacing]
+	cp $03
+	jr z, .asm_41a5
+	cp $11
+	jr z, .asm_41a5
+	jr .asm_41aa
+.asm_41a5
+	inc hl
+	ld a, [hli]
+	add b
+	jr .asm_41ad
+.asm_41aa
+	ld a, [hli]
+	add b
+	inc hl
+.asm_41ad
+	ld [de], a
+	inc de
+	ld a, [wcd06]
+	add [hl]
+	inc hl
+	ld [de], a
+	ld a, [wcd07]
+	and a
+	jr z, .asm_41bf
+	ld a, [de]
+	add $04
+	ld [de], a
+.asm_41bf
+	inc de
+	ld a, [hli]
+	ld [de], a
+	ld a, [wPlayerFacing]
+	cp $03
+	jr z, .asm_41cf
+	cp $11
+	jr z, .asm_41cf
+	jr .asm_41d3
+.asm_41cf
+	ld a, [de]
+	or $20
+	ld [de], a
+.asm_41d3
+	ld a, [wcd0a]
+	cp $01
+	jr nz, .asm_41de
+	ld a, [de]
+	or $80
+	ld [de], a
+.asm_41de
+	inc de
+	jr .asm_4190
+.asm_41e1
+	ld a, e
+	ld [wd1fb], a
+	ret
 
 Func_004_41e6:
-	dr $101e6, $1026d
+	ld hl, $47ab
+	ld de, wFollowerObject
+	ld a, [de]
+	inc de
+	ld c, a
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	and a
+	ret z
+	push af
+	ldh a, [$ffbc]
+	and a
+	jr z, .asm_420f
+	ld a, [wTextboxPos]
+	and a
+	jr z, .asm_4208
+	ld a, c
+	cp $50
+	jr nc, .asm_420f
+	pop af
+	ret
+.asm_4208
+	ld a, c
+	cp $60
+	jr c, .asm_420f
+	pop af
+	ret
+.asm_420f
+	pop af
+	inc de
+	add a
+	add l
+	ld l, a
+	ld a, h
+	adc a, $00
+	ld h, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $c0
+.asm_4221
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_4268
+	add c
+	ld [de], a
+	inc de
+	ld a, [wcd23]
+	cp $03
+	jr nz, .asm_4235
+	inc hl
+	ld a, [hli]
+	add b
+	jr .asm_4238
+.asm_4235
+	ld a, [hli]
+	add b
+	inc hl
+.asm_4238
+	ld [de], a
+	inc de
+	ld a, [wcd26]
+	add [hl]
+	inc hl
+	ld [de], a
+	ld a, [wcd27]
+	and a
+	jr z, .asm_424a
+	ld a, [de]
+	add $04
+	ld [de], a
+.asm_424a
+	inc de
+	ld a, [hli]
+	ld a, $02
+	ld [de], a
+	ld a, [wcd23]
+	cp $03
+	jr nz, .asm_425a
+	ld a, [de]
+	or $20
+	ld [de], a
+.asm_425a
+	ld a, [$cd2a]
+	cp $01
+	jr nz, .asm_4265
+	ld a, [de]
+	or $80
+	ld [de], a
+.asm_4265
+	inc de
+	jr .asm_4221
+.asm_4268
+	ld a, e
+	ld [wd1fb], a
+	ret
 
 Func_004_426d:
-	dr $1026d, $10309
+	ldh a, [$ff91]
+	cp $11
+	ret nz
+	ld hl, $47ab
+	ld de, wcbd0
+	ld a, [de]
+	inc de
+	ld c, a
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	and a
+	ret z
+	inc de
+	add a
+	add l
+	ld l, a
+	ld a, h
+	adc a, $00
+	ld h, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $c0
+.asm_4292
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_42a7
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add b
+	inc hl
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	jr .asm_4292
+.asm_42a7
+	ld a, e
+	ld [wd1fb], a
+	ret
+	ld de, unk_004_4337
+	ld a, [wPlayerSpriteID]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, $cb70
+	ld bc, $0008
+	call CopyBytes3
+	pop hl
+	ld de, wcaf0
+	ld bc, $0008
+	call CopyBytes3
+	ld de, unk_004_4337
+	ld a, [wcd24]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, $cb70
+	ld hl, $0010
+	add hl, de
+	push hl
+	pop de
+	pop hl
+	push hl
+	ld bc, $0008
+	call CopyBytes3
+	ld de, wcaf0
+	ld hl, $0010
+	add hl, de
+	push hl
+	pop de
+	pop hl
+	ld bc, $0008
+	call CopyBytes3
+	ld hl, wcaf0
+	ld b, $18
+	ld c, $80
+	call LoadPalettes_OCPD
+	ret
 Func_004_4309:
-	dr $10309, $10337
+	ld a, [wSelectedOption]
+	cp $03
+	jr nz, .asm_431c
+	ld hl, wdd18
+	ld a, [hl]
+	cp $80
+	jr nz, .asm_431c
+	ld a, $1b
+	jr .asm_431f
+.asm_431c
+	ld a, [wSelectedOption]
+.asm_431f
+	ld bc, wcaf0
+	ld de, unk_004_4337
+	add a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push bc
+	pop de
+	ld bc, $0008
+	call CopyBytes3
+	ret
 
 unk_004_4337::
 	dr $10337, $108e7
