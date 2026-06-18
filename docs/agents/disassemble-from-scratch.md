@@ -1,114 +1,56 @@
-# Disassembling a function from scratch
+# Disassembling function from scratch
 
-Use this when you are NOT given a Ghidra text dump (cf. [ghidra usage](ghidra-usage.md))
-and are asked to disassemble a `dr` block, or to chase down what one references.
+Use when NOT given Ghidra dump (cf. [ghidra usage](ghidra-usage.md)), asked to disassemble `dr` block or chase its refs.
 
 ## 0. Triage: which `dr` blocks are low-hanging code
 
-A `dr` block is likely *code* (vs. data) when:
-* It already carries a `Func_`/`asm_` label (prior analysis flagged it as code).
-* Its bytes decode with no illegal opcodes and end on a terminator
-  (`ret`/`reti`/`jp`/`jr`/`rst`).
+`dr` likely *code* when:
+* Carry `Func_`/`asm_` label.
+* Decode no illegal opcodes, end on terminator (`ret`/`reti`/`jp`/`jr`/`rst`).
 
-`utils/slopdis.py` is a repo-aware SM83 disassembler that does both — decode and
-symbol resolution (it shares `utils/lib/gbtool.py` with the other utils). Run it on
-a range, addresses as `bank:addr` (or raw ROM offset + a bank arg):
+`utils/slopdis.py` = repo-aware SM83 disassembler (decode + symbol resolution; shares `utils/lib/gbtool.py`). Addresses as `bank:addr` or raw ROM offset + bank arg:
 ```sh
 python3 utils/slopdis.py <bank:start> <bank:end>     # e.g. 05:576c 05:5900
 python3 utils/slopdis.py <rom_start> <rom_end> <bank> # e.g. 1576c 15900 05
 ```
-It resolves RAM/HRAM operands, in-bank + home call/jump targets, emits `.asm_XXXX`
-local labels for internal jumps, and applies repo style (uppercase hex literals,
-single-operand ALU ops, `[hli]`/`[hld]`, `ld` vs `ldh` strictly by opcode). Local
-(`Parent.local`) symbols already in the `.sym` are ignored when resolving targets,
-so re-running on a partly-done block regenerates `.asm_` labels cleanly.
-Paste its output (stdout) over the `dr` line, then verify with `make compare`.
+* Resolves RAM/HRAM operands, in-bank + home call/jump targets, emits `.asm_XXXX` locals for internal jumps, applies repo style (uppercase hex, single-operand ALU, `[hli]`/`[hld]`, strict `ld`/`ldh` by opcode).
+* Ignores `Parent.local` symbols already in `.sym` → re-run on partial block regenerates `.asm_` clean.
+* Paste stdout over `dr` line, verify `make compare`.
 
-After an unconditional terminator (`ret`/`reti`/`jp`/`jr`/`jp hl`) whose next
-byte nothing jumps to, it emits a speculative `unk_BB_AAAA:` label (or the real
-symbol if one exists) — that byte is unreachable by fall-through, so it's a likely
-boundary between a function and the next function or a data table. (rst is not
-treated as a terminator — most rst vectors, e.g. FarCall, return.) This is how you
-spot the code→data transition inside a single `dr` (e.g. `Func_026_4012`'s code
-ends at a `ret`, then pointer tables follow).
+Boundary detection: after unconditional terminator (`ret`/`reti`/`jp`/`jr`/`jp hl`) whose next byte nothing jumps to, emit speculative `unk_BB_AAAA:` (or real symbol) — byte unreachable by fall-through = likely function→function or function→data boundary. (`rst` not terminator — most vectors e.g. FarCall return.) This spots code→data transition inside one `dr` (e.g. `Func_026_4012` ends at `ret`, pointer tables follow).
 
-It also prints heuristic warnings to **stderr** when a block smells like data
-rather than code. Strong signals (each fires on its own): illegal/undefined
-opcodes, stray stack-pointer ops (`ld sp` / `add sp`), or a long run of `ld r, r`
-(raw bytes in $40-$7f). A weak "doesn't end on a terminator" note is appended only
-when a strong signal already fired — on its own it would false-positive on a code
-function that legitimately falls through into the next. Real code disassembles
-clean. If you see warnings, the `dr` is probably data (a pointer table, text, gfx)
-— don't paste the asm; classify it per steps 2-4 instead. (stderr stays out of
-stdout, so piping to a file still gives a clean paste.)
+Data-smell warnings → **stderr** (stays out of stdout, clean paste survives). Strong signals (each fires alone): illegal/undefined opcodes, stray SP ops (`ld sp`/`add sp`), long run of `ld r, r` ($40-$7f raw bytes). Weak "no terminator" note appended only after strong signal (alone false-positives on fall-through code). Warnings present → `dr` probably data (pointer table/text/gfx); classify per §2-4, don't paste asm.
 
-Pitfalls (all confirmed to break `make compare`):
-* **Little-endian**: `fa d8 d9` is `ld a, [$d9d8]`, NOT `$d8d9`. Verify with
-  [ram address identification](ram-address-identification.md) / `check_sym.py`.
-* **`ld`/`ldh` switcheroo**: `ea a6 ff` is `ld [hFFA6]` (3 bytes), NOT
-  `ldh [hFFA6]` (2 bytes). Render by opcode, never by address.
-* **`rst $30` is `FarCall`** (calls `b:hl`). `ld hl, X` / `ld b, BANK` / `rst $30`
-  collapses to `farcall X` when a label exists at `X`, else `rst FarCall`.
+Pitfalls (all break `make compare`):
+* **Little-endian**: `fa d8 d9` = `ld a, [$d9d8]`, NOT `$d8d9`. Verify [ram address identification](ram-address-identification.md) / `check_sym.py`.
+* **`ld`/`ldh` switcheroo**: `ea a6 ff` = `ld [hFFA6]` (3 bytes), NOT `ldh [hFFA6]` (2 bytes). Render by opcode, never address.
+* **`rst $30` = `FarCall`** (call `b:hl`): `ld hl, X` / `ld b, BANK` / `rst $30` → `farcall X` if label at `X`, else `rst FarCall`.
 
-`wXXXX` vs `wXXXX + N`: when code writes a high byte to `$d9db`, render it as
-`wd9da + 1` if `wd9da` is the named symbol and the access is the second half of a
-16-bit value — the tell is two consecutive writes to `wd9da` then `wd9da + 1`. But
-if you also see `+ 2`/`+ 3` writes, that's a struct being filled field-by-field,
-not one 16-bit value — keep the offsets relative to the struct base (`wd9da`) and
-consider naming the base. Don't coin `wd9db` just because an instruction touches
-that byte.
+`wXXXX` vs `wXXXX + N`: high-byte write to `$d9db` → render `wd9da + 1` if `wd9da` named and it's 2nd half of 16-bit value (tell: consecutive writes `wd9da` then `wd9da + 1`). But `+ 2`/`+ 3` writes = struct filled field-by-field → keep offsets relative to base (`wd9da`), consider naming base. Don't coin `wd9db` just because instruction touches it.
 
-## 1. Follow the calls
+## 1. Follow calls
 
-After disassembling, list the function's `call`/`jp` targets. If any resolves to
-a raw `$XXXX` (no label) or to another `Func_`/`asm_` that is still a `dr`, that
-callee is trapped code — a candidate for the next round.
+List function's `call`/`jp` targets. Any resolving to raw `$XXXX`, or to `Func_`/`asm_` still `dr` = trapped code, next-round candidate.
 
-**Every `call`/`jp`/`jr` operand AND every `ld [addr]`/`ld r, [addr]`/`ld rr, addr`
-operand that touches RAM MUST resolve to an actual label — no bare `$XXXX` left
-behind.** Use `get_nearest_symbol.py <addr> ram` to find the nearest WRAM symbol.
-If the result is `wFoo + N` and `wFoo` is `ds 1` (so `$addr` is outside `wFoo`),
-coin a new label in `wram.asm` and split the `ds` gap (see `wXXXX + N` rule below).
-Exceptions: a 16-bit constant loaded into a pointer register that's immediately used
-for arithmetic (e.g. `ld hl, wTilemap + 200` where 200 is a well-defined offset) is
-fine as `label + offset`; `ld sp, $FFFE` and similar SP-init sequences can stay bare.
+**Every `call`/`jp`/`jr` operand AND every RAM-touching `ld` operand MUST resolve to real label — no bare `$XXXX`.** Raw addresses assemble (may even byte-match) but hide control flow.
+* RAM: `get_nearest_symbol.py <addr> ram`. Result `wFoo + N` where `wFoo` is `ds 1` (so `$addr` outside it) → coin label in `wram.asm`, split `ds` gap (see `wXXXX + N` rule).
+* Code in-bank: target lands inside function as `.asm_` local or known global; point instruction there. If inside `dr`, split to expose label (§3a).
+* Exceptions: 16-bit constant used immediately for arithmetic (`ld hl, wTilemap + 200`) fine as `label + offset`; `ld sp, $FFFE`-style SP-init stays bare; `jp $c000` into WRAM stays bare (real RAM entry).
 
-**Every `call`/`jp`/`jr` operand MUST resolve to an actual label — no bare
-`$XXXX` left behind.** A raw address assembles and may even byte-match, but it
-hides the control flow. Resolve each one (`get_nearest_symbol.py`, §1): an
-in-bank target lands inside some function as a `.asm_` local or at a known
-global; point the instruction at that symbol. (A `jp $c000`-style jump into
-WRAM is the exception — that's a real RAM entry, leave it.) If the target sits
-inside a `dr`, split the `dr` to expose a label there (§3a).
+**Cross-scope local ref → promote.** `call`/`jp`/`jr` to a `.asm_` local in a *different* global scope: rgbds locals only visible in their enclosing global, so promote to global (`Func_BB_AAAA`).
+* Promotion splits function → can **orphan** other locals across new boundary. Promote those too, iterate to fixpoint (tangled dispatch may need several).
+* Mechanically: rename `.asm_AAAA` → `Func_BB_AAAA` (def + refs), add `:` to def, replace bare `$AAAA` operands. Bytes unchanged → `make compare` stays `OK` iff every ref still resolves.
 
-**If a `call`/`jp`/`jr` resolves to a *local* (`.asm_`) label in a *different*
-global scope, promote that local to a global** (`Func_BB_AAAA`). rgbds locals
-are only visible within their enclosing global label, so a cross-scope reference
-can't see them. A genuinely shared subroutine, loop entry, or jump target that
-several functions reach is really a global.
-* Promoting a label splits its function at that point, which can **orphan**
-  other locals: any label now on the far side of the new boundary that was
-  referenced from the near side (or vice-versa) stops resolving. Promote those
-  too, and iterate to a fixpoint — a tangled dispatch loop may need several
-  promotions in one go.
-* Mechanically: rename `.asm_AAAA` → `Func_BB_AAAA` everywhere (def + refs),
-  add a `:` to the now-global def line, and replace the bare `$AAAA` operands.
-  The bytes don't change (same address, same `jr`/`jp` encoding), so `make
-  compare` stays `OK` if and only if every reference still resolves.
-
-To find where an address lives, use [find closest label/symbol](find-closest-label-or-symbol.md):
+Locate address — [find closest label/symbol](find-closest-label-or-symbol.md):
 ```sh
 python3 utils/get_nearest_symbol.py <bank:addr>        # ROM
 python3 utils/get_nearest_symbol.py <bank:addr> ram    # RAM
 ```
-A result like `Func_026_4012 + 200` tells you the address is 200 bytes past the
-nearest label — that's where it sits in the source, but it does NOT say whether
-the region is a `dr` block or already-disassembled code. Open the file at that
-label to see which.
+`Func_026_4012 + 200` = 200 bytes past nearest label; does NOT say `dr` vs disassembled. Open file there to see which.
 
 ## 2. Does it operate on data?
 
-The telltale sign is a load of a `$4000`..`$7fff` address into a pointer register:
+Tell = load of `$4000`..`$7fff` into pointer register:
 ```
 	ld de, $40E2        ; base of an in-bank table
 	ld a, [wSomeIndex]
@@ -121,33 +63,24 @@ The telltale sign is a load of a `$4000`..`$7fff` address into a pointer registe
 	ld l, a             ; hl = pointer read from the table
 	call PrintMenuText
 ```
-`ld bc, $XXXX` + `add hl, bc` to reach a struct field is the same tell (see
-[code patterns](code-patterns.md)).
+`ld bc, $XXXX` + `add hl, bc` to reach struct field = same tell (see [code patterns](code-patterns.md)).
 
-## 3. Inspect how the data is accessed
+## 3. Inspect how data access
 
-Classify the access shape:
-* `base + index*2`, then deref → **pointer table** (`dw` list).
-* deref again after the first → **pointer-to-pointer table**.
-* `base + index*N` with no deref → **fixed-stride struct/record array**.
+Access shape:
+* `base + index*2` then deref → **pointer table** (`dw` list).
+* deref again → **pointer-to-pointer table**.
+* `base + index*N` no deref → **fixed-stride struct/record array**.
 
-Lean on already-legible symbols. The index register often names the table: e.g.
-`wd9d8` is loaded from `wEnemyMonSpecies` elsewhere, and a sibling routine indexes
-`MonNamePointers` by the same value — so a second table indexed by `wd9d8` holds
-per-something text too. Confirm by dumping the targets:
+Lean on legible symbols: index register often names table (e.g. `wd9d8` loaded from `wEnemyMonSpecies`; sibling routine indexes `MonNamePointers` by same value → this table also per-something). Confirm by dumping targets:
 ```sh
 python3 utils/dump_text.py <bank:addr> <count>   # if the pointers reach text
 ```
-If they decode to real strings (e.g. Chinese move names), it's a text pointer
-table. If they decode to nonsense home-bank labels, the "pointers" are really
-packed data — a different table type.
+Real strings (e.g. Chinese move names) → text pointer table. Nonsense home-bank labels → "pointers" are packed data, different table type.
 
-## 3a. Splitting a `dr` to expose a label
+## 3a. Splitting `dr` to expose label
 
-The data you found often sits *inside* a larger `dr`, with no symbol of its own
-(e.g. `$40E2` was `Func_026_4012 + 208`). To give it a label you must split the
-one `dr` into the part before, the labelled region, and the part after. A `dr`
-end is exclusive, so the addresses chain with no gap:
+Found data often sits *inside* larger `dr` with no symbol (e.g. `$40E2` = `Func_026_4012 + 208`). Split into before / labelled region / after. `dr` end exclusive → addresses chain with no gap:
 ```
 Func_026_4012:
 	dr $98012, $980e2     ; everything before the table
@@ -156,61 +89,33 @@ MoveName_Pointers:
 MoveName_Text:
 	dr $98200, $985b9     ; everything after
 ```
-`dr` takes ROM offsets; the label sits at the boundary. Verify with `make compare`
-— a wrong split shifts bytes and fails immediately.
+`dr` takes ROM offsets; label at boundary. Verify `make compare` — wrong split shifts bytes, fails immediately.
 
-**Before coining a label, grep the name you're about to use.** Two checks:
-1. Is the *address* already named? Resolve it (`get_nearest_symbol.py`, §1) — reuse
-   that symbol instead of making a parallel one.
-2. Is the *name* already taken? `grep` your proposed label (e.g. `MoveName_Pointers`)
-   across `banks/`, `wram.asm`, `home/`. If it already exists for a different
-   address, that's a conflict — **stop and prompt the user** before proceeding;
-   don't silently rename or shadow.
+**Before coining label, grep name:**
+1. *Address* already named? Resolve (`get_nearest_symbol.py`, §1) — reuse that symbol.
+2. *Name* already taken? `grep` it across `banks/`, `wram.asm`, `home/`. Exists for different address → **stop and prompt user**; don't rename or shadow.
 
 ## 4. Name it
 
-Per the [style guide](style-guide.md):
-* Purpose now known → **documented** name with the right keyword after an
-  underscore: a `dw` list of move-name pointers → `MoveName_Pointers`; its strings
-  mirror the existing `MonNamePointers` → `text_BB_AAAA` convention.
-* How-it's-used known but purpose unclear → **partially documented**
-  `Keyword_BB_AAAA` (e.g. `Pointers_026_40DA`).
-* Neither known → `unk_BB_AAAA` (data) or `Func_`/`asm_` (code).
+Per [style guide](style-guide.md):
+* Purpose known → **documented** name, keyword after underscore: `dw` move-name list → `MoveName_Pointers`; its strings mirror `MonNamePointers` → `text_BB_AAAA`.
+* Usage known, purpose unclear → **partially documented** `Keyword_BB_AAAA` (e.g. `Pointers_026_40DA`).
+* Neither → `unk_BB_AAAA` (data) or `Func_`/`asm_` (code).
 
-Keywords for tables: `Pointers` (data/unknown pointers), `Jumptable` (pointers to
-code). For the pointed-to data: `Text`/`String` (dialog/immediate line), `GFX`,
-`Palette`, etc.
+Table keywords: `Pointers` (data/unknown), `Jumptable` (to code). Pointed-to data: `Text`/`String`, `GFX`, `Palette`, etc.
 
-If the label name already states its purpose (`PersonalityDesc_Pointers`,
-`MonsterDesc_Text`), add NO descriptive comment — the name is the documentation.
-Only comment to flag remaining work (a `; TODO`) or to record a non-obvious fact
-(an address-keyed `Func_BB_AAAA` / `unk_BB_AAAA` whose name says nothing).
+Name states purpose (`PersonalityDesc_Pointers`) → add NO comment, name is the doc. Comment only for `; TODO` or non-obvious fact (address-keyed `Func_`/`unk_` whose name says nothing).
 
-Whenever you introduce such an address-keyed label — promoting a speculative
-boundary, splitting a `dr`, or naming a still-`dr`'d region — and you know
-*roughly* what it does, leave that purpose as a SHORT single-sentence `; TODO`
-comment above the label.
-Just enough to recall the intent without re-reading the code or re-deriving the
-data shape (e.g. `; TODO: loads a monster's palette into wPaletteBuffer`, or
-`; TODO: monster description pointer table, indexed by wd9d8`). One line per
-label; don't write a paragraph. This applies to the leftover `dr` you leave
-behind too — a named-but-undisassembled `Pointers_BB_AAAA` / `unk_BB_AAAA` block
-should carry the one-line hint so the next pass knows what it's looking at.
+Whenever introducing an address-keyed label (promoted boundary, split `dr`, named still-`dr` region) and you know *roughly* what it does, leave SHORT single-sentence `; TODO` above it — e.g. `; TODO: loads a monster's palette into wPaletteBuffer`. One line per label. Applies to leftover named `dr` too.
 
-## 4a. Graphics data: extract a PNG, not a 2bpp INCBIN
+## 4a. Graphics data: extract PNG, not 2bpp INCBIN
 
-When a `dr` block turns out to be tile graphics, **do not** `INCBIN` a `.2bpp`.
-`make clean` deletes ALL `.2bpp` files (they're build artifacts), so the work
-vanishes. Instead extract the bytes to a PNG with rgbgfx's reverse mode, then let
-the build re-compile the PNG → `.2bpp`:
+`dr` is tile graphics → **do not** `INCBIN` `.2bpp` (`make clean` deletes all `.2bpp` build artifacts, work vanishes). Extract to PNG via rgbgfx reverse mode; build re-compiles PNG → `.2bpp`:
 ```sh
 rgbgfx -r X -o something.2bpp something.png   # X = tiles per row
 ```
-Try `X = 16` first, then step down (8, 4, … 1) until the image reads correctly.
-Commit the PNG; the `.2bpp` regenerates on build.
+Try `X = 16`, step down (8, 4, … 1) until image reads correct. Commit PNG.
 
 ## 5. Verify
 
-`make compare` (see CLAUDE.md) must say `OK`. To localize a mismatch use
-`utils/check_diff` / `utils/look_block` (see [check deviations](check-deviations.md)).
-A wrong `wXXXX` symbol surfaces via `utils/check_sym.py shi_kong_xing_shou.sym`.
+`make compare` (see CLAUDE.md) must say `OK`. Localize mismatch with `utils/check_diff` / `utils/look_block` (see [check deviations](check-deviations.md)). Wrong `wXXXX` symbol surfaces via `utils/check_sym.py shi_kong_xing_shou.sym`.

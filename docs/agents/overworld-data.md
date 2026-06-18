@@ -2,10 +2,10 @@
 
 ## Map Definitions
 
-Divided into several map groups. Map groups defined in `LoadMapData.MapGroupPointers`.
+Split into map groups. Defined in `LoadMapData.MapGroupPointers`.
 
 ### Map Group
-Map groups are a table of map headers. Ex: `Group00_Maps`, defined at address `$1c000 (07:4000)`:
+Map group = table of map headers. Ex: `Group00_Maps`, at `$1c000 (07:4000)`:
 ```
 $1C000	5A 40	dw BellVillage1_Header ; -> 07:405a
 $1C002	5A 40	dw BellVillage1_Header ; -> 07:405a
@@ -16,7 +16,7 @@ $1C00A	4A 41	dw HayatosHouse1_Header ; -> 07:414a
 ```
 
 ### Map Header
-The structure of a map header consists of one map attribute pointer of 6 bytes, and several "warp" structs, 12 bytes each. A "warp" also defines which objects and map events (signposts, warp points, scripts) are to be run when the map is loaded.
+Map header = one map attribute pointer (6 bytes) + several "warp" structs (12 bytes each). Warp also defines which objects and map events (signposts, warp points, scripts) run on map load.
 ```
 $1C1EC	01		db BANK(BellSchoolNorthClassroom_MapAttributes)
 $1C1EE	00 00 00	db 0, 0, 0 ; ?
@@ -40,19 +40,19 @@ $1C1F0	C8 40		dw BellSchoolNorthClassroom_MapAttributes
 ; etc.
 ```
 
-**NOTE:** Map events are read from the SAME BANK as the map header!
+**NOTE:** Map events read from SAME BANK as map header!
 
 ## Map Events
-An array terminated with $FF, each entry 6 bytes long. The first byte is the type of event (defined in `MapEvent_Jumptable`), bytes 2 and 3 are the X and Y positions, respectively, and the rest are map event arguments.
+Array, $FF-terminated, each entry 6 bytes. Byte 1 = event type (defined in `MapEvent_Jumptable`), bytes 2-3 = X and Y positions, rest = map event args.
 
-$EE for bytes 2 or 3 (or both) marks that this event should run regardless of the player's position for that axis. Ex: byte 2 is $EE, while byte 3 is $08 -> event will always run when player steps on Y = 8.
+$EE for byte 2 or 3 (or both) = event runs regardless of player position on that axis. Ex: byte 2 = $EE, byte 3 = $08 -> event always runs when player steps on Y = 8.
 
-For a `script_event`, the bank where the script is located is the **Object event** bank.
+For `script_event`, script bank = **Object event** bank.
 
 ## Object Events
-Object events are an array terminated with $88, each entry 11 bytes long. Interacting with an object event will run a script located in the same bank.
+Array, $88-terminated, each entry 11 bytes. Interacting with object event runs script in same bank.
 
-Rough structure of each entry is as follows:
+Rough entry structure:
 ```
 ; event 0
 $2031D	22	db 22 ; sprite picture ID
@@ -73,10 +73,10 @@ $203330	88	db objects_end
 
 ## Map Attributes
 
-Maps are drawn in the following hierarchy:
-1. **Metatiles** - 16x16px block made out of 2x2 graphics tiles.
-2. **Blocks** - 32x32px units made out of 2x2 metatiles.
-3. **Layout** - The area map drawn using the 32x32 blocks.
+Maps drawn in this hierarchy:
+1. **Metatiles** - 16x16px block of 2x2 graphics tiles.
+2. **Blocks** - 32x32px units of 2x2 metatiles.
+3. **Layout** - area map drawn with 32x32 blocks.
 
 ### Map Attribute Header
 ```
@@ -93,13 +93,13 @@ $40EC	00 00	dw 0 ; ?
 $40EE	33 64	dw TechCity_Collision
 ```
 NOTES:
-* If tileset 1 pointer = 0, then tileset 2 will *always* be loaded from bank 6 as Tileset Header data.
-* If tileset 1 pointer is non-zero, then tilesets 1 and 2 will come from the same bank as the header.
-	* Tileset 1 will be loaded as GFX into $9000
-	* Tileset 2 will be loaded as GFX into $8800
+* If tileset 1 pointer = 0, tileset 2 *always* loaded from bank 6 as Tileset Header data.
+* If tileset 1 pointer non-zero, tilesets 1 and 2 come from same bank as header.
+	* Tileset 1 loaded as GFX into $9000
+	* Tileset 2 loaded as GFX into $8800
 
 ### Tileset Header
-An array of tileset fragments to be loaded into VRAM, $FF-terminated.
+Array of tileset fragments loaded into VRAM, $FF-terminated.
 ```
 ; fragment 0
 	$18000	16	db BANK(gfx_016_4000)
@@ -119,4 +119,4 @@ $1800E	FF	db -1 ; end
 
 ### Layout
 
-Layouts begin with a single byte loaded into `D0F4` (possibly item-related?), followed by the actual map layout.
+Layout starts with single byte loaded into `D0F4` (maybe item-related?), then actual map layout.

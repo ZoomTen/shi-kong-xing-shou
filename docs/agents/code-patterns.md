@@ -10,9 +10,9 @@
 	adc 0
 	ld h, a
 ```
-Adapt accordingly for bc or de.
+Adapt for bc or de.
 
-This usually resolves to:
+Usually resolves to:
 ```
   ld a, <somewhere>
 	add LOW(somewhere else)
@@ -31,8 +31,7 @@ This usually resolves to:
 	add hl, bc
 ```
 
-This is usually used to access a part of a struct, where bc is the origin point of said struct.
-Setting hl to a low value is usually indicative of such.
+Usually access part of struct, bc = struct origin. Low hl value indicates this.
 
 ## 16-bit pointer stored as two consecutive bytes (lo, hi)
 
@@ -43,7 +42,7 @@ Setting hl to a low value is usually indicative of such.
 	ld [wFoo + 1], a   ; NOT a separate wBar label
 ```
 
-And the matching load:
+Matching load:
 ```
 	ld a, [wFoo]
 	ld l, a
@@ -51,9 +50,7 @@ And the matching load:
 	ld h, a
 ```
 
-`wFoo` should be declared `ds 2` in `wram.asm`. The high byte is always `wFoo + 1` —
-do **not** coin a separate `wBar`/`wFooHi` label unless that byte is also accessed
-independently (i.e. not as part of a paired lo/hi load or store).
+`wFoo` declared `ds 2` in `wram.asm`. High byte always `wFoo + 1` — do **not** coin separate `wBar`/`wFooHi` label unless that byte also accessed independently (i.e. not part of paired lo/hi load or store).
 
 ## Call to function in xx:yyyy
 
@@ -63,13 +60,13 @@ independently (i.e. not as part of a paired lo/hi load or store).
 	rst FarCall
 ```
 
-xx is the bank, yyyy is the address.
+xx = bank, yyyy = address.
 
-If a function label is available there, replace this with the macro:
+If function label available there, replace with macro:
 ```
 	farcall SomeFunction
 ```
 
-If no such function is available yet, create a label for it in the form `Func_xx_yyyy`, and a `dr` shim/placeholder in the correct `bank_xx.asm` file, so that it can be marked for further disassembly. Keep in mind, again, that `dr` addresses are actual ROM addresses, and not Game Boy memory addresses.
+No function yet: create label form `Func_xx_yyyy`, plus `dr` shim/placeholder in correct `bank_xx.asm` file, so markable for further disassembly. Note: `dr` addresses = actual ROM addresses, not Game Boy memory addresses.
 
-If the farcall lands in the middle of a function, split the function it's pointing to in two just so the farcall has a valid target.
+If farcall lands mid-function, split target function in two so farcall has valid target.
