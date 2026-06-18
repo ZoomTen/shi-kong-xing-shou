@@ -1,35 +1,44 @@
 ; Map headers
+G7_02_MapAttributes:
 BellVillage2_MapAttributes:
 	map_attributes BellVillage1, BELL_VILLAGE_1, 0, Tileset_006_4000
 
+G5_23_MapAttributes:
 BellSchoolOutside2_MapAttributes:
 	map_attributes BellSchoolOutside1, BELL_SCHOOL_OUTSIDE_1, 0, Tileset_006_400f
 
 BellObservatoryOutside2_MapAttributes:
 	map_attributes BellObservatoryOutside1, BELL_OBSERVATORY_OUTSIDE_1, 0, Tileset_006_4025
 
+G7_08_MapAttributes:
+G5_1D_MapAttributes:
 BallotsHouse2_MapAttributes:
 	map_attributes BallotsHouse1, BALLOTS_HOUSE_1, 0, Tileset_006_403b
 
 G4_30_MapAttributes:
 G4_4A_MapAttributes:
+G5_1E_MapAttributes:
 HayatosHouse2_MapAttributes::
 	map_attributes HayatosHouse1, HAYATOS_HOUSE_1, 0, Tileset_006_403b
 
 G4_2C_MapAttributes:
 G4_46_MapAttributes:
 G3_18_MapAttributes:
+G5_1F_MapAttributes:
 CarpetWomansHouse2_MapAttributes:
 	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_006_403b
 
 G3_19_MapAttributes:
+G5_20_MapAttributes:
 FangfangsHouse2_MapAttributes:
 	map_attributes FangfangsHouse1, FANGFANGS_HOUSE_1, 0, Tileset_006_403b
 
 G3_1D_MapAttributes:
+G5_21_MapAttributes:
 BellHealingCenter2_MapAttributes:
 	map_attributes BellHealingCenter1, BELL_HEALING_CENTER_1, 0, Tileset_006_404a
 
+G5_24_MapAttributes:
 BellSchool2_MapAttributes:
 	map_attributes BellSchool1, BELL_SCHOOL_1, 0, Tileset_006_4052
 
@@ -40,6 +49,8 @@ BellSchoolNorthClassroom1_MapAttributes:
 BellSchoolNorthClassroom_MapAttributes:
 BellSchoolSouthClassroom1_MapAttributes:
 BellSchoolSouthClassroom2_MapAttributes:
+G5_25_MapAttributes:
+G5_26_MapAttributes:
 	map_attributes BellSchoolSouthClassroom, BELL_SCHOOL_SOUTH_CLASSROOM_1, 0, Tileset_006_403b
 
 TechCity_MapAttributes:
@@ -58,6 +69,7 @@ G4_2F_MapAttributes:
 G4_49_MapAttributes:
 G2_1B_MapAttributes:
 G2_1F_MapAttributes:
+G6_22_MapAttributes:
 MapAttributes_001_40f0:
 	db 6, 5
 	dw Layout_001_5bb9
@@ -74,6 +86,8 @@ G4_2D_MapAttributes:
 G4_35_MapAttributes:
 G4_47_MapAttributes:
 G2_20_MapAttributes:
+G6_23_MapAttributes:
+G6_24_MapAttributes:
 MapAttributes_001_4104:
 	db 6, 5
 	dw Layout_001_5c18
@@ -105,6 +119,7 @@ G4_2E_MapAttributes:
 G4_37_MapAttributes:
 G4_48_MapAttributes:
 G2_1E_MapAttributes:
+G6_25_MapAttributes:
 MapAttributes_001_412c:
 	db 6, 5
 	dw Layout_001_5cd2
@@ -135,6 +150,7 @@ MapAttributes_001_4140:
 G4_36_MapAttributes:
 G4_3F_MapAttributes:
 G4_5B_MapAttributes:
+G6_26_MapAttributes:
 MapAttributes_001_4154:
 	db 6, 5
 	dw Layout_001_5db4
@@ -154,6 +170,8 @@ G4_4C_MapAttributes:
 G4_5D_MapAttributes:
 G2_1A_MapAttributes:
 G2_22_MapAttributes:
+G5_22_MapAttributes:
+G6_28_MapAttributes:
 TechShop_MapAttributes:
 	db 6, 5
 	dw Layout_001_5a28
@@ -173,6 +191,7 @@ G4_4B_MapAttributes:
 G4_5C_MapAttributes:
 G2_19_MapAttributes:
 G2_21_MapAttributes:
+G6_29_MapAttributes:
 TechHealingCenter_MapAttributes:
 	db 6, 5
 	dw Layout_001_58a7

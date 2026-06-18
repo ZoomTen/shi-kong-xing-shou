@@ -124,4 +124,60 @@ Tileset_006_41b2:
 	dr $181b2, $181ba
 
 Tileset_006_41ba:
-	dr $181ba, $18660
+	dr $0181ba, $01838c
+Tileset_006_438c::
+	dr $01838c, $0184a7
+Tileset_006_44a7::
+	dr $0184a7, $0184af
+Tileset_006_44af::
+	dr $0184af, $0184b7
+Tileset_006_44b7::
+	dr $0184b7, $0184d4
+Tileset_006_44d4::
+	dr $0184d4, $0184dc
+Tileset_006_44dc::
+	dr $0184dc, $0184eb
+Tileset_006_44eb::
+	dr $0184eb, $0184fa
+Tileset_006_44fa::
+	dr $0184fa, $018510
+Tileset_006_4510::
+	dr $018510, $018526
+Tileset_006_4526::
+	dr $018526, $018535
+Tileset_006_4535::
+	dr $018535, $018544
+Tileset_006_4544::
+	dr $018544, $018553
+Tileset_006_4553::
+	dr $018553, $018577
+Tileset_006_4577::
+	dr $018577, $01858d
+Tileset_006_458d::
+	dr $01858d, $0185a3
+Tileset_006_45a3::
+	dr $0185a3, $0185ab
+Tileset_006_45ab::
+	dr $0185ab, $0185c8
+Tileset_006_45c8::
+	dr $0185c8, $0185d0
+Tileset_006_45d0::
+	dr $0185d0, $0185df
+Tileset_006_45df::
+	dr $0185df, $0185ee
+Tileset_006_45ee::
+	dr $0185ee, $0185f6
+Tileset_006_45f6::
+	dr $0185f6, $01860c
+Tileset_006_460c::
+	dr $01860c, $018622
+Tileset_006_4622::
+	dr $018622, $018631
+Tileset_006_4631::
+	dr $018631, $018640
+Tileset_006_4640::
+	dr $018640, $018648
+Tileset_006_4648::
+	dr $018648, $018650
+Tileset_006_4650::
+	dr $018650, $018660

@@ -25,6 +25,7 @@ G3_20_MapAttributes:
 SkyCity_MapAttributes:
 	dr $141560, $141c16
 
+G7_07_MapAttributes:
 BanglinCo1f_MapAttributes:
 	dr $141c16, $141e78
 

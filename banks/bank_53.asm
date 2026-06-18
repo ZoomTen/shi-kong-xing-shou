@@ -33,6 +33,7 @@ G4_45_MapAttributes:
 	dr $14d315, $14d75b
 
 G4_0C_MapAttributes:
+G7_03_MapAttributes:
 G4_44_MapAttributes:
 	dr $14d75b, $14d973
 

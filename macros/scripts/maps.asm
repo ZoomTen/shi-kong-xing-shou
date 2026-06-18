@@ -58,20 +58,22 @@ MACRO map_attributes
 ENDM
 
 MACRO map_attr_data ; temporary measure
-; \1 = width|height, e.g. $0D12 == $0D $12
-; \2 = layout location
-; \3 = block location
-; \4 = metatile location
-; \5 = attrmap location
-; \6 = palette location
-; \7 = tileset 1
-; \8 = tileset 2
-; \9 = collision location
-	db (\1 >> 8 & $ff), (\1 & $ff)
-	dw \2, \3, \4, \5, \6
-	dw \7, \8
+; \1 = width
+; \2 = height
+; \3 = layout location
+; \4 = block location
+; \5 = metatile location
+; \6 = attrmap location
+; \7 = palette location
+; \8 = tileset 1
+; \9 = tileset 2
+; \<10> = collision location
+	db \1, \2
+	dw \3, \4, \5, \6, \7
+	dw \8, \9
 	dw 0
-	dw \9
+	SHIFT 9
+	dw \1 ; collision
 ENDM
 
 MACRO tileset_fragment

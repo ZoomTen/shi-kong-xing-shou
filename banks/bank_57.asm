@@ -9,6 +9,7 @@ G4_50_MapAttributes:
 	dr $15cc29, $15ce74
 
 G4_18_MapAttributes:
+G7_04_MapAttributes:
 G4_51_MapAttributes:
 	dr $15ce74, $15ce88
 
@@ -32,6 +33,7 @@ G4_1E_MapAttributes:
 	dr $15d9be, $15dbaa
 
 G4_1F_MapAttributes:
+G5_27_MapAttributes:
 	dr $15dbaa, $15dce2
 
 G4_20_MapAttributes:
@@ -63,6 +65,7 @@ G4_27_MapAttributes:
 	dr $15e87a, $15f298
 
 G4_28_MapAttributes:
+G7_05_MapAttributes:
 G4_55_MapAttributes:
 	dr $15f298, $15f2ac
 

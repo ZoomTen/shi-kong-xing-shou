@@ -1,7 +1,17 @@
-MapAttributes_064_4000::
-	dr $190000, $190014
-MapAttributes_064_4014::
-	dr $190014, $190028
+G5_01_MapAttributes:
+	map_attr_data \
+		18, 15, \
+		Layout_064_4028, Blocks_064_4137, Metatiles_064_44d1, AttrMap_064_48ed, \
+		Palettes_064_4946, \
+		0, Tileset_006_44a7, \
+		Collision_064_498e
+G5_02_MapAttributes:
+	map_attr_data \
+		15, 15, \
+		Layout_064_43ef, Blocks_064_4649, Metatiles_064_44d1, AttrMap_064_48ed, \
+		Palettes_064_4946, \
+		0, Tileset_006_44a7, \
+		Collision_064_498e
 Layout_064_4028::
 	dr $190028, $190137
 Blocks_064_4137::
@@ -42,14 +52,34 @@ Palettes_064_4946::
 	dr $190946, $19098e
 Collision_064_498e::
 	dr $19098e, $1909ed
-MapAttributes_064_49ed::
-	dr $1909ed, $190a01
-MapAttributes_064_4a01::
-	dr $190a01, $190a15
-MapAttributes_064_4a15::
-	dr $190a15, $190a29
-MapAttributes_064_4a29::
-	dr $190a29, $190a3d
+G5_03_MapAttributes:
+	map_attr_data \
+		10, 10, \
+		Layout_064_4a3d, Blocks_064_4aa2, Metatiles_064_4f7d, AttrMap_064_51d5, \
+		Palettes_064_5220, \
+		0, Tileset_006_44af, \
+		Collision_064_5268
+G5_04_MapAttributes:
+	map_attr_data \
+		10, 10, \
+		Layout_064_4bda, Blocks_064_4c3f, Metatiles_064_4f7d, AttrMap_064_51d5, \
+		Palettes_064_5220, \
+		0, Tileset_006_44af, \
+		Collision_064_5268
+G5_05_MapAttributes:
+	map_attr_data \
+		10, 10, \
+		Layout_064_4d8b, Blocks_064_4df0, Metatiles_064_4f7d, AttrMap_064_51d5, \
+		Palettes_064_5220, \
+		0, Tileset_006_44af, \
+		Collision_064_5268
+G5_06_MapAttributes:
+	map_attr_data \
+		10, 10, \
+		Layout_064_4f18, Blocks_064_507d, Metatiles_064_4f7d, AttrMap_064_51d5, \
+		Palettes_064_5220, \
+		0, Tileset_006_44af, \
+		Collision_064_5268
 Layout_064_4a3d::
 	dr $190a3d, $190aa2
 Blocks_064_4aa2::
@@ -74,8 +104,13 @@ Palettes_064_5220::
 	dr $191220, $191268
 Collision_064_5268::
 	dr $191268, $1912a9
-MapAttributes_064_52a9::
-	dr $1912a9, $1912bd
+G5_07_MapAttributes:
+	map_attr_data \
+		18, 12, \
+		Layout_064_52bd, Blocks_064_5546, Metatiles_064_5396, AttrMap_064_57ae, \
+		Palettes_064_584f, \
+		0, Tileset_006_44b7, \
+		Collision_064_5897
 Layout_064_52bd::
 	dr $1912bd, $191396
 Metatiles_064_5396::
@@ -88,18 +123,48 @@ Palettes_064_584f::
 	dr $19184f, $191897
 Collision_064_5897::
 	dr $191897, $191904
-MapAttributes_064_5904::
-	dr $191904, $191918
-MapAttributes_064_5918::
-	dr $191918, $19192c
-MapAttributes_064_592c::
-	dr $19192c, $191940
-MapAttributes_064_5940::
-	dr $191940, $191954
-MapAttributes_064_5954::
-	dr $191954, $191968
-MapAttributes_064_5968::
-	dr $191968, $19197c
+G5_08_MapAttributes:
+	map_attr_data \
+		12, 10, \
+		Layout_064_597c, Blocks_064_59f5, Metatiles_064_6166, AttrMap_064_630e, \
+		Palettes_064_6383, \
+		0, Tileset_006_44d4, \
+		Collision_064_63cb
+G5_09_MapAttributes:
+	map_attr_data \
+		6, 12, \
+		Layout_064_5b1d, Blocks_064_5b66, Metatiles_064_6166, AttrMap_064_630e, \
+		Palettes_064_6383, \
+		0, Tileset_006_44d4, \
+		Collision_064_63cb
+G5_0A_MapAttributes:
+	map_attr_data \
+		10, 12, \
+		Layout_064_5c12, Blocks_064_5c8b, Metatiles_064_6166, AttrMap_064_630e, \
+		Palettes_064_6383, \
+		0, Tileset_006_44d4, \
+		Collision_064_63cb
+G5_0B_MapAttributes:
+	map_attr_data \
+		10, 12, \
+		Layout_064_5da7, Blocks_064_5e20, Metatiles_064_6166, AttrMap_064_630e, \
+		Palettes_064_6383, \
+		0, Tileset_006_44d4, \
+		Collision_064_63cb
+G5_0C_MapAttributes:
+	map_attr_data \
+		12, 10, \
+		Layout_064_5f48, Blocks_064_5fc1, Metatiles_064_6166, AttrMap_064_630e, \
+		Palettes_064_6383, \
+		0, Tileset_006_44d4, \
+		Collision_064_63cb
+G5_0D_MapAttributes:
+	map_attr_data \
+		6, 12, \
+		Layout_064_611d, Blocks_064_6242, Metatiles_064_6166, AttrMap_064_630e, \
+		Palettes_064_6383, \
+		0, Tileset_006_44d4, \
+		Collision_064_63cb
 Layout_064_597c::
 	dr $19197c, $1919f5
 Blocks_064_59f5::
@@ -132,8 +197,14 @@ Palettes_064_6383::
 	dr $192383, $1923cb
 Collision_064_63cb::
 	dr $1923cb, $192403
-MapAttributes_064_6403::
-	dr $192403, $192417
+G5_0E_MapAttributes:
+G6_2B_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_6417, Blocks_064_64fa, Metatiles_064_6436, AttrMap_064_655a, \
+		Palettes_064_65c9, \
+		0, Tileset_006_44dc, \
+		Collision_064_6611
 Layout_064_6417::
 	dr $192417, $192436
 Metatiles_064_6436::
@@ -146,10 +217,20 @@ Palettes_064_65c9::
 	dr $1925c9, $192611
 Collision_064_6611::
 	dr $192611, $192643
-MapAttributes_064_6643::
-	dr $192643, $192657
-MapAttributes_064_6657::
-	dr $192657, $19266b
+G5_0F_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_666b, Blocks_064_668a, Metatiles_064_6709, AttrMap_064_6841, \
+		Palettes_064_68b8, \
+		0, Tileset_006_44eb, \
+		Collision_064_6900
+G5_10_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_66ea, Blocks_064_67dd, Metatiles_064_6709, AttrMap_064_6841, \
+		Palettes_064_68b8, \
+		0, Tileset_006_44eb, \
+		Collision_064_6900
 Layout_064_666b::
 	dr $19266b, $19268a
 Blocks_064_668a::
@@ -166,16 +247,41 @@ Palettes_064_68b8::
 	dr $1928b8, $192900
 Collision_064_6900::
 	dr $192900, $192936
-MapAttributes_064_6936::
-	dr $192936, $19294a
-MapAttributes_064_694a::
-	dr $19294a, $19295e
-MapAttributes_064_695e::
-	dr $19295e, $192972
-MapAttributes_064_6972::
-	dr $192972, $192986
-MapAttributes_064_6986::
-	dr $192986, $19299a
+G5_11_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_699a, Blocks_064_69b9, Metatiles_064_6ba5, AttrMap_064_6ce9, \
+		Palettes_064_6d85, \
+		0, Tileset_006_44fa, \
+		Collision_064_6dcd
+G5_12_MapAttributes:
+	map_attr_data \
+		10, 5, \
+		Layout_064_6a15, Blocks_064_6a48, Metatiles_064_6ba5, AttrMap_064_6ce9, \
+		Palettes_064_6d85, \
+		0, Tileset_006_44fa, \
+		Collision_064_6dcd
+G5_13_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_6a90, Blocks_064_6aaf, Metatiles_064_6ba5, AttrMap_064_6ce9, \
+		Palettes_064_6d85, \
+		0, Tileset_006_44fa, \
+		Collision_064_6dcd
+G5_14_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_6b0f, Blocks_064_6b2e, Metatiles_064_6ba5, AttrMap_064_6ce9, \
+		Palettes_064_6d85, \
+		0, Tileset_006_44fa, \
+		Collision_064_6dcd
+G5_15_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_6b86, Blocks_064_6cad, Metatiles_064_6ba5, AttrMap_064_6ce9, \
+		Palettes_064_6d85, \
+		0, Tileset_006_44fa, \
+		Collision_064_6dcd
 Layout_064_699a::
 	dr $19299a, $1929b9
 Blocks_064_69b9::
@@ -204,8 +310,13 @@ Palettes_064_6d85::
 	dr $192d85, $192dcd
 Collision_064_6dcd::
 	dr $192dcd, $192e10
-MapAttributes_064_6e10::
-	dr $192e10, $192e24
+G5_16_MapAttributes:
+	map_attr_data \
+		18, 5, \
+		Layout_064_6e24, Blocks_064_6f4b, Metatiles_064_6e7f, AttrMap_064_6fd7, \
+		Palettes_064_706a, \
+		0, Tileset_006_4510, \
+		Collision_064_70b2
 Layout_064_6e24::
 	dr $192e24, $192e7f
 Metatiles_064_6e7f::
@@ -218,10 +329,20 @@ Palettes_064_706a::
 	dr $19306a, $1930b2
 Collision_064_70b2::
 	dr $1930b2, $1930e6
-MapAttributes_064_70e6::
-	dr $1930e6, $1930fa
-MapAttributes_064_70fa::
-	dr $1930fa, $19310e
+G5_17_MapAttributes:
+	map_attr_data \
+		18, 5, \
+		Layout_064_710e, Blocks_064_7169, Metatiles_064_7278, AttrMap_064_73b0, \
+		Palettes_064_741f, \
+		0, Tileset_006_4526, \
+		Collision_064_7467
+G5_18_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_7259, Blocks_064_734c, Metatiles_064_7278, AttrMap_064_73b0, \
+		Palettes_064_741f, \
+		0, Tileset_006_4526, \
+		Collision_064_7467
 Layout_064_710e::
 	dr $19310e, $193169
 Blocks_064_7169::
@@ -238,8 +359,13 @@ Palettes_064_741f::
 	dr $19341f, $193467
 Collision_064_7467::
 	dr $193467, $19349d
-MapAttributes_064_749d::
-	dr $19349d, $1934b1
+G5_19_MapAttributes:
+	map_attr_data \
+		6, 6, \
+		Layout_064_74b1, Blocks_064_7592, Metatiles_064_74d6, AttrMap_064_7612, \
+		Palettes_064_768e, \
+		0, Tileset_006_4535, \
+		Collision_064_76d6
 Layout_064_74b1::
 	dr $1934b1, $1934d6
 Metatiles_064_74d6::
@@ -252,8 +378,13 @@ Palettes_064_768e::
 	dr $19368e, $1936d6
 Collision_064_76d6::
 	dr $1936d6, $193706
-MapAttributes_064_7706::
-	dr $193706, $19371a
+G5_1A_MapAttributes:
+	map_attr_data \
+		6, 5, \
+		Layout_064_771a, Blocks_064_7801, Metatiles_064_7739, AttrMap_064_7865, \
+		Palettes_064_78c4, \
+		0, Tileset_006_4544, \
+		Collision_064_790c
 Layout_064_771a::
 	dr $19371a, $193739
 Metatiles_064_7739::
@@ -266,10 +397,20 @@ Palettes_064_78c4::
 	dr $1938c4, $19390c
 Collision_064_790c::
 	dr $19390c, $19393f
-MapAttributes_064_793f::
-	dr $19393f, $193953
-MapAttributes_064_7953::
-	dr $193953, $193967
+G5_1B_MapAttributes:
+	map_attr_data \
+		12, 6, \
+		Layout_064_7967, Blocks_064_79b0, Metatiles_064_7a99, AttrMap_064_7bd5, \
+		Palettes_064_7c40, \
+		0, Tileset_006_4553, \
+		Collision_064_7c88
+G5_1C_MapAttributes:
+	map_attr_data \
+		6, 12, \
+		Layout_064_7a50, Blocks_064_7b15, Metatiles_064_7a99, AttrMap_064_7bd5, \
+		Palettes_064_7c40, \
+		0, Tileset_006_4553, \
+		Collision_064_7c88
 Layout_064_7967::
 	dr $193967, $1939b0
 Blocks_064_79b0::

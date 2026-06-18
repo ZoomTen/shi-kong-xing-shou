@@ -1,693 +1,484 @@
 Group05_Maps::
-	dw MapHeader_063_4050
-	dw MapHeader_063_4050
-	dw MapHeader_063_406e
-	dw MapHeader_063_4098
-	dw MapHeader_063_40ce
-	dw MapHeader_063_411c
-	dw MapHeader_063_416a
-	dw MapHeader_063_41f4
-	dw MapHeader_063_42ae
-	dw MapHeader_063_42cc
-	dw MapHeader_063_42f6
-	dw MapHeader_063_4314
-	dw MapHeader_063_4332
-	dw MapHeader_063_4350
-	dw MapHeader_063_4386
-	dw MapHeader_063_43b0
-	dw MapHeader_063_43c2
-	dw MapHeader_063_43d4
-	dw MapHeader_063_43f2
-	dw MapHeader_063_4428
-	dw MapHeader_063_443a
-	dw MapHeader_063_444c
-	dw MapHeader_063_4476
-	dw MapHeader_063_4494
-	dw MapHeader_063_44b2
-	dw MapHeader_063_44c4
-	dw MapHeader_063_44e2
-	dw MapHeader_063_450c
-	dw MapHeader_063_4536
-	dw MapHeader_063_4554
-	dw MapHeader_063_458a
-	dw MapHeader_063_459c
-	dw MapHeader_063_45ba
-	dw MapHeader_063_45cc
-	dw MapHeader_063_45de
-	dw MapHeader_063_45f0
-	dw MapHeader_063_460e
-	dw MapHeader_063_4638
-	dw MapHeader_063_464a
-	dw MapHeader_063_465c
+	dw G5_00_Header
+	dw G5_01_Header
+	dw G5_02_Header
+	dw G5_03_Header
+	dw G5_04_Header
+	dw G5_05_Header
+	dw G5_06_Header
+	dw G5_07_Header
+	dw G5_08_Header
+	dw G5_09_Header
+	dw G5_0A_Header
+	dw G5_0B_Header
+	dw G5_0C_Header
+	dw G5_0D_Header
+	dw G5_0E_Header
+	dw G5_0F_Header
+	dw G5_10_Header
+	dw G5_11_Header
+	dw G5_12_Header
+	dw G5_13_Header
+	dw G5_14_Header
+	dw G5_15_Header
+	dw G5_16_Header
+	dw G5_17_Header
+	dw G5_18_Header
+	dw G5_19_Header
+	dw G5_1A_Header
+	dw G5_1B_Header
+	dw G5_1C_Header
+	dw G5_1D_Header
+	dw G5_1E_Header
+	dw G5_1F_Header
+	dw G5_20_Header
+	dw G5_21_Header
+	dw G5_22_Header
+	dw G5_23_Header
+	dw G5_24_Header
+	dw G5_25_Header
+	dw G5_26_Header
+	dw G5_27_Header
 
-MapHeader_063_4050::
-	dbaw2 MapAttributes_064_4000
-	db $0d, $0a
-	dw $9058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4692
-	db $00, $00
-	dw $3038
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4692
+G5_00_Header::
+	map  G5_01
+	warp 13, 10, $9058
+	warp 0, 0, $3038
+	end_map
 
-MapHeader_063_406e::
-	dbaw2 MapAttributes_064_4014
-	db $05, $05
-	dw $6058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_46a5
-	db $06, $08
-	dw $b0b0
-	dbaw2 ObjectEvents_066_48bb
-	dw MapEvents_063_46a5
-	db $05, $05
-	dw $6058
-	dbaw2 ObjectEvents_066_40c9
-	dw MapEvents_063_46a5
+	map  G5_02
+	warp 5, 5, $6058
+	warp 6, 8, $b0b0, G5_02_ObjectEvents2
+	warp 5, 5, $6058, G5_02_ObjectEvents3
+	end_map
 
-MapHeader_063_4098::
-	dbaw2 MapAttributes_064_49ed
-	db $00, $05
-	dw $6018
-	dbaw2 ObjectEvents_067_6e0a
-	dw MapEvents_063_46ac
-	db $00, $00
-	dw $1038
-	dbaw2 ObjectEvents_067_6e0a
-	dw MapEvents_063_46ac
-	db $05, $03
-	dw $4068
-	dbaw2 ObjectEvents_067_6e0a
-	dw MapEvents_063_46ac
-	db $05, $00
-	dw $2078
-	dbaw2 ObjectEvents_067_6e0a
-	dw MapEvents_063_46ac
+	map  G5_03
+	warp 0, 5, $6018
+	warp 0, 0, $1038
+	warp 5, 3, $4068
+	warp 5, 0, $2078
+	end_map
 
-MapHeader_063_40ce::
-	dbaw2 MapAttributes_064_4a01
-	db $00, $00
-	dw $1028
-	dbaw2 ObjectEvents_067_6e21
-	dw MapEvents_063_46c5
-	db $02, $05
-	dw $6058
-	dbaw2 ObjectEvents_067_6e21
-	dw MapEvents_063_46c5
-	db $00, $05
-	dw $6018
-	dbaw2 ObjectEvents_067_6e21
-	dw MapEvents_063_46c5
-	db $02, $05
-	dw $7028
-	dbaw2 ObjectEvents_067_6e21
-	dw MapEvents_063_46c5
-	db $05, $03
-	dw $6078
-	dbaw2 ObjectEvents_067_6e21
-	dw MapEvents_063_46c5
-	db $05, $05
-	dw $6038
-	dbaw2 ObjectEvents_067_6e21
-	dw MapEvents_063_46c5
+	map  G5_04
+	warp 0, 0, $1028
+	warp 2, 5, $6058
+	warp 0, 5, $6018
+	warp 2, 5, $7028
+	warp 5, 3, $6078
+	warp 5, 5, $6038
+	end_map
 
-MapHeader_063_411c::
-	dbaw2 MapAttributes_064_4a15
-	db $03, $05
-	dw $7058
-	dbaw2 ObjectEvents_067_6e38
-	dw MapEvents_063_46ea
-	db $05, $05
-	dw $7088
-	dbaw2 ObjectEvents_067_6e38
-	dw MapEvents_063_46ea
-	db $02, $03
-	dw $6058
-	dbaw2 ObjectEvents_067_6e38
-	dw MapEvents_063_46ea
-	db $00, $03
-	dw $6018
-	dbaw2 ObjectEvents_067_6e38
-	dw MapEvents_063_46ea
-	db $00, $00
-	dw $1058
-	dbaw2 ObjectEvents_067_6e38
-	dw MapEvents_063_46ea
-	db $00, $00
-	dw $1028
-	dbaw2 ObjectEvents_067_6e38
-	dw MapEvents_063_46ea
+	map  G5_05
+	warp 3, 5, $7058
+	warp 5, 5, $7088
+	warp 2, 3, $6058
+	warp 0, 3, $6018
+	warp 0, 0, $1058
+	warp 0, 0, $1028
+	end_map
 
-MapHeader_063_416a::
-	dbaw2 MapAttributes_064_4a29
-	db $00, $00
-	dw $1018
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $01, $00
-	dw $1068
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $00, $00
-	dw $6018
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $00, $03
-	dw $5028
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $00, $05
-	dw $8038
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $04, $01
-	dw $7058
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $03, $01
-	dw $4048
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $03, $02
-	dw $7048
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $05, $03
-	dw $6088
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $05, $03
-	dw $6048
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
-	db $03, $05
-	dw $7058
-	dbaw2 ObjectEvents_067_6e44
-	dw MapEvents_063_470f
+	map  G5_06
+	warp 0, 0, $1018
+	warp 1, 0, $1068
+	warp 0, 0, $6018
+	warp 0, 3, $5028
+	warp 0, 5, $8038
+	warp 4, 1, $7058
+	warp 3, 1, $4048
+	warp 3, 2, $7048
+	warp 5, 3, $6088
+	warp 5, 3, $6048
+	warp 3, 5, $7058
+	end_map
 
-MapHeader_063_41f4::
-	dbaw2 MapAttributes_064_52a9
-	db $02, $00
-	dw $2058
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $05, $00
-	dw $6048
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $08, $01
-	dw $5058
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $0c, $00
-	dw $6048
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $0d, $00
-	dw $3088
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $0d, $02
-	dw $4088
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $0d, $04
-	dw $7048
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $0d, $07
-	dw $7068
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $09, $07
-	dw $7058
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $06, $07
-	dw $7058
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $03, $07
-	dw $9048
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $03, $04
-	dw $7068
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $00, $07
-	dw $7038
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $00, $03
-	dw $6018
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
-	db $00, $00
-	dw $5038
-	dbaw2 ObjectEvents_066_420f
-	dw MapEvents_063_4752
+	map  G5_07
+	warp 2, 0, $2058
+	warp 5, 0, $6048
+	warp 8, 1, $5058
+	warp 12, 0, $6048
+	warp 13, 0, $3088
+	warp 13, 2, $4088
+	warp 13, 4, $7048
+	warp 13, 7, $7068
+	warp 9, 7, $7058
+	warp 6, 7, $7058
+	warp 3, 7, $9048
+	warp 3, 4, $7068
+	warp 0, 7, $7038
+	warp 0, 3, $6018
+	warp 0, 0, $5038
+	end_map
 
-MapHeader_063_42ae::
-	dbaw2 MapAttributes_064_5904
-	db $00, $05
-	dw $9038
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47d1
-	db $07, $05
-	dw $4078
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47d1
+	map  G5_08
+	warp 0, 5, $9038
+	warp 7, 5, $4078
+	end_map
 
-MapHeader_063_42cc::
-	dbaw2 MapAttributes_064_5918
-	db $01, $07
-	dw $9058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47de
-	db $01, $00
-	dw $3088
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47de
-	db $00, $00
-	dw $3038
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47de
+	map  G5_09
+	warp 1, 7, $9058
+	warp 1, 0, $3088
+	warp 0, 0, $3038
+	end_map
 
-MapHeader_063_42f6::
-	dbaw2 MapAttributes_064_592c
-	db $00, $07
-	dw $9028
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47f1
-	db $03, $03
-	dw $5048
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_47f1
+	map  G5_0A
+	warp 0, 7, $9028
+	warp 3, 3, $5048
+	end_map
 
-MapHeader_063_4314::
-	dbaw2 MapAttributes_064_5940
-	db $05, $07
-	dw $8028
-	dbaw2 ObjectEvents_066_4b24
-	dw MapEvents_063_47fe
-	db $05, $00
-	dw $5048
-	dbaw2 ObjectEvents_066_4b24
-	dw MapEvents_063_47fe
+	map  G5_0B
+	warp 5, 7, $8028
+	warp 5, 0, $5048
+	end_map
 
-MapHeader_063_4332::
-	dbaw2 MapAttributes_064_5954
-	db $07, $05
-	dw $9088
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4805
-	db $00, $00
-	dw $2028
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4805
+	map  G5_0C
+	warp 7, 5, $9088
+	warp 0, 0, $2028
+	end_map
 
-MapHeader_063_4350::
-	dbaw2 MapAttributes_064_5968
-	db $00, $07
-	dw $9048
-	dbaw2 ObjectEvents_066_4c61
-	dw MapEvents_063_4812
-	db $00, $00
-	dw $20b0
-	dbaw2 ObjectEvents_066_4c61
-	dw MapEvents_063_4812
-	db $00, $07
-	dw $9048
-	dbaw2 ObjectEvents_066_4c78
-	dw MapEvents_063_4812
-	db $00, $00
-	dw $3058
-	dbaw2 ObjectEvents_066_4c61
-	dw MapEvents_063_4812
+	map  G5_0D
+	warp 0, 7, $9048
+	warp 0, 0, $20b0
+	warp 0, 7, $9048, G5_0D_ObjectEvents2
+	warp 0, 0, $3058
+	end_map
 
-MapHeader_063_4386::
-	dbaw2 MapAttributes_064_6403
-	db $00, $00
-	dw $9058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4819
-	db $00, $00
-	dw $4058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4819
-	db $00, $00
-	dw $5068
-	dbaw2 ObjectEvents_066_4ad8
-	dw MapEvents_063_4819
+	map  G5_0E
+	warp 0, 0, $9058
+	warp 0, 0, $4058
+	warp 0, 0, $5068, G5_0E_ObjectEvents2
+	end_map
 
-MapHeader_063_43b0::
-	dbaw2 MapAttributes_064_6643
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_456f
-	dw MapEvents_063_482c
+	map  G5_0F
+	warp 0, 0, $8058
+	end_map
 
-MapHeader_063_43c2::
-	dbaw2 MapAttributes_064_6657
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_4520
-	dw MapEvents_063_4845
+	map  G5_10
+	warp 0, 0, $8058
+	end_map
 
-MapHeader_063_43d4::
-	dbaw2 MapAttributes_064_6936
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_45ba
-	dw MapEvents_063_485e
-	db $00, $00
-	dw $3018
-	dbaw2 ObjectEvents_066_45ba
-	dw MapEvents_063_485e
+	map  G5_11
+	warp 0, 0, $8058
+	warp 0, 0, $3018
+	end_map
 
-MapHeader_063_43f2::
-	dbaw2 MapAttributes_064_694a
-	db $05, $00
-	dw $8088
-	dbaw2 ObjectEvents_066_45cd
-	dw MapEvents_063_4877
-	db $05, $00
-	dw $5048
-	dbaw2 ObjectEvents_066_45cd
-	dw MapEvents_063_4877
-	db $02, $00
-	dw $5058
-	dbaw2 ObjectEvents_066_45cd
-	dw MapEvents_063_4877
-	db $00, $00
-	dw $5048
-	dbaw2 ObjectEvents_066_45cd
-	dw MapEvents_063_4877
+	map  G5_12
+	warp 5, 0, $8088
+	warp 5, 0, $5048
+	warp 2, 0, $5058
+	warp 0, 0, $5048
+	end_map
 
-MapHeader_063_4428::
-	dbaw2 MapAttributes_064_695e
-	db $00, $00
-	dw $8038
-	dbaw2 ObjectEvents_066_45fb
-	dw MapEvents_063_4890
+	map  G5_13
+	warp 0, 0, $8038
+	end_map
 
-MapHeader_063_443a::
-	dbaw2 MapAttributes_064_6972
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_4629
-	dw MapEvents_063_489d
+	map  G5_14
+	warp 0, 0, $8058
+	end_map
 
-MapHeader_063_444c::
-	dbaw2 MapAttributes_064_6986
-	db $00, $00
-	dw $8078
-	dbaw2 ObjectEvents_066_48f3
-	dw MapEvents_063_48aa
-	db $00, $00
-	dw $5068
-	dbaw2 ObjectEvents_066_4915
-	dw MapEvents_063_48aa
-	db $00, $00
-	dw $8078
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_48aa
+	map  G5_15
+	warp 0, 0, $8078
+	warp 0, 0, $5068, G5_15_ObjectEvents2
+	warp 0, 0, $8078, G5_15_ObjectEvents3
+	end_map
 
-MapHeader_063_4476::
-	dbaw2 MapAttributes_064_6e10
-	db $00, $00
-	dw $6038
-	dbaw2 ObjectEvents_066_41af
-	dw MapEvents_063_48b7
-	db $0b, $00
-	dw $6068
-	dbaw2 ObjectEvents_066_41af
-	dw MapEvents_063_48b7
+	map  G5_16
+	warp 0, 0, $6038
+	warp 11, 0, $6068
+	end_map
 
-MapHeader_063_4494::
-	dbaw2 MapAttributes_064_70e6
-	db $0d, $00
-	dw $4078
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_48ca
-	db $00, $00
-	dw $5028
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_48ca
+	map  G5_17
+	warp 13, 0, $4078
+	warp 0, 0, $5028
+	end_map
 
-MapHeader_063_44b2::
-	dbaw2 MapAttributes_064_70fa
-	db $00, $00
-	dw $7068
-	dbaw2 ObjectEvents_066_4176
-	dw MapEvents_063_48d7
+	map  G5_18
+	warp 0, 0, $7068
+	end_map
 
-MapHeader_063_44c4::
-	dbaw2 MapAttributes_064_749d
-	db $00, $01
-	dw $9048
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_48de
-	db $00, $00
-	dw $7058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_48de
+	map  G5_19
+	warp 0, 1, $9048
+	warp 0, 0, $7058
+	end_map
 
-MapHeader_063_44e2::
-	dbaw2 MapAttributes_064_7706
-	db $00, $00
-	dw $9058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_48f1
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_47b6
-	dw MapEvents_063_48f1
-	db $00, $00
-	dw $b0b0
-	dbaw2 ObjectEvents_066_47b6
-	dw MapEvents_063_48f1
+	map  G5_1A
+	warp 0, 0, $9058
+	warp 0, 0, $8058, G5_1A_ObjectEvents2
+	warp 0, 0, $b0b0, G5_1A_ObjectEvents2
+	end_map
 
-MapHeader_063_450c::
-	dbaw2 MapAttributes_064_793f
-	db $00, $00
-	dw $5018
-	dbaw2 ObjectEvents_066_41f4
-	dw MapEvents_063_48fe
-	db $00, $00
-	dw $2058
-	dbaw2 ObjectEvents_066_41f4
-	dw MapEvents_063_48fe
-	db $07, $00
-	dw $4088
-	dbaw2 ObjectEvents_066_41f4
-	dw MapEvents_063_48fe
+	map  G5_1B
+	warp 0, 0, $5018
+	warp 0, 0, $2058
+	warp 7, 0, $4088
+	end_map
 
-MapHeader_063_4536::
-	dbaw2 MapAttributes_064_7953
-	db $01, $00
-	dw $3088
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_490b
-	db $01, $07
-	dw $7078
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_490b
+	map  G5_1C
+	warp 1, 0, $3088
+	warp 1, 7, $7078
+	end_map
 
-MapHeader_063_4554::
-	dbaw2 BallotsHouse2_MapAttributes
-	db $00, $00
-	dw $8038
-	dbaw2 ObjectEvents_066_46c0
-	dw MapEvents_063_491e
-	db $00, $00
-	dw $6068
-	dbaw2 ObjectEvents_066_46c0
-	dw MapEvents_063_491e
-	db $00, $00
-	dw $7058
-	dbaw2 ObjectEvents_066_4aa8
-	dw MapEvents_063_491e
-	db $00, $00
-	dw $5058
-	dbaw2 ObjectEvents_066_4c3e
-	dw MapEvents_063_491e
+	map  G5_1D
+	warp 0, 0, $8038
+	warp 0, 0, $6068
+	warp 0, 0, $7058, G5_1D_ObjectEvents2
+	warp 0, 0, $5058, G5_1D_ObjectEvents3
+	end_map
 
-MapHeader_063_458a::
-	dbaw2 HayatosHouse2_MapAttributes
-	db $00, $00
-	dw $8078
-	dbaw2 ObjectEvents_066_4341
-	dw MapEvents_063_4931
+	map  G5_1E
+	warp 0, 0, $8078
+	end_map
 
-MapHeader_063_459c::
-	dbaw2 CarpetWomansHouse2_MapAttributes
-	db $00, $00
-	dw $8038
-	dbaw2 ObjectEvents_066_43ba
-	dw MapEvents_063_493e
-	db $00, $00
-	dw $8038
-	dbaw2 ObjectEvents_066_43a3
-	dw MapEvents_063_493e
+	map  G5_1F
+	warp 0, 0, $8038
+	warp 0, 0, $8038, G5_1F_ObjectEvents2
+	end_map
 
-MapHeader_063_45ba::
-	dbaw2 FangfangsHouse2_MapAttributes
-	db $00, $00
-	dw $8078
-	dbaw2 ObjectEvents_066_4510
-	dw MapEvents_063_494b
+	map  G5_20
+	warp 0, 0, $8078
+	end_map
 
-MapHeader_063_45cc::
-	dbaw2 BellHealingCenter2_MapAttributes
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_4022
-	dw MapEvents_063_4958
+	map  G5_21
+	warp 0, 0, $8058
+	end_map
 
-MapHeader_063_45de::
-	dbaw2 TechShop_MapAttributes
-	db $00, $00
-	dw $8058
-	dbaw2 ObjectEvents_066_4000
-	dw MapEvents_063_496b
+	map  G5_22
+	warp 0, 0, $8058
+	end_map
 
-MapHeader_063_45f0::
-	dbaw2 BellSchoolOutside2_MapAttributes
-	db $00, $05
-	dw $9048
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4978
-	db $00, $00
-	dw $6058
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_4978
+	map  G5_23
+	warp 0, 5, $9048
+	warp 0, 0, $6058
+	end_map
 
-MapHeader_063_460e::
-	dbaw2 BellSchool2_MapAttributes
-	db $00, $05
-	dw $8058
-	dbaw2 ObjectEvents_066_4660
-	dw MapEvents_063_4985
-	db $00, $00
-	dw $6028
-	dbaw2 ObjectEvents_066_4660
-	dw MapEvents_063_4985
-	db $00, $05
-	dw $5028
-	dbaw2 ObjectEvents_066_4660
-	dw MapEvents_063_4985
+	map  G5_24
+	warp 0, 5, $8058
+	warp 0, 0, $6028
+	warp 0, 5, $5028
+	end_map
 
-MapHeader_063_4638::
-	dbaw2 BellSchoolSouthClassroom_MapAttributes
-	db $01, $00
-	dw $4078
-	dbaw2 ObjectEvents_066_4670
-	dw MapEvents_063_49aa
+	map  G5_25
+	warp 1, 0, $4078
+	end_map
 
-MapHeader_063_464a::
-	dbaw2 BellSchoolSouthClassroom_MapAttributes
-	db $01, $00
-	dw $4078
-	dbaw2 ObjectEvents_066_4680
-	dw MapEvents_063_49b7
+	map  G5_26
+	warp 1, 0, $4078
+	end_map
 
-MapHeader_063_465c::
-	dbaw2 MapAttributes_057_5baa
-	db $00, $00
-	dw $2068
-	dbaw2 ObjectEvents_066_41f3
-	dw MapEvents_063_49c4
-	db $00, $00
-	dw $2068
-	dbaw2 ObjectEvents_066_4482
-	dw MapEvents_063_49c4
-	db $01, $00
-	dw $6048
-	dbaw2 ObjectEvents_066_4476
-	dw MapEvents_063_49c4
-	db $01, $00
-	dw $6048
-	dbaw2 ObjectEvents_066_446a
-	dw MapEvents_063_49c4
+	map  G5_27
+	warp 0, 0, $2068
+	warp 0, 0, $2068, G5_27_ObjectEvents2
+	warp 1, 0, $6048, G5_27_ObjectEvents3
+	warp 1, 0, $6048, G5_27_ObjectEvents4
+	end_map
 
-MapEvents_063_4692::
-	dr $18c692, $18c6a5
-MapEvents_063_46a5::
-	dr $18c6a5, $18c6ac
-MapEvents_063_46ac::
-	dr $18c6ac, $18c6c5
-MapEvents_063_46c5::
-	dr $18c6c5, $18c6ea
-MapEvents_063_46ea::
-	dr $18c6ea, $18c70f
-MapEvents_063_470f::
-	dr $18c70f, $18c752
-MapEvents_063_4752::
-	dr $18c752, $18c7d1
-MapEvents_063_47d1::
-	dr $18c7d1, $18c7de
-MapEvents_063_47de::
-	dr $18c7de, $18c7f1
-MapEvents_063_47f1::
-	dr $18c7f1, $18c7fe
-MapEvents_063_47fe::
-	dr $18c7fe, $18c805
-MapEvents_063_4805::
-	dr $18c805, $18c812
-MapEvents_063_4812::
-	dr $18c812, $18c819
-MapEvents_063_4819::
-	dr $18c819, $18c82c
-MapEvents_063_482c::
-	dr $18c82c, $18c845
-MapEvents_063_4845::
-	dr $18c845, $18c85e
-MapEvents_063_485e::
-	dr $18c85e, $18c877
-MapEvents_063_4877::
-	dr $18c877, $18c890
-MapEvents_063_4890::
-	dr $18c890, $18c89d
-MapEvents_063_489d::
-	dr $18c89d, $18c8aa
-MapEvents_063_48aa::
-	dr $18c8aa, $18c8b7
-MapEvents_063_48b7::
-	dr $18c8b7, $18c8ca
-MapEvents_063_48ca::
-	dr $18c8ca, $18c8d7
-MapEvents_063_48d7::
-	dr $18c8d7, $18c8de
-MapEvents_063_48de::
-	dr $18c8de, $18c8f1
-MapEvents_063_48f1::
-	dr $18c8f1, $18c8fe
-MapEvents_063_48fe::
-	dr $18c8fe, $18c90b
-MapEvents_063_490b::
-	dr $18c90b, $18c91e
-MapEvents_063_491e::
-	dr $18c91e, $18c931
-MapEvents_063_4931::
-	dr $18c931, $18c93e
-MapEvents_063_493e::
-	dr $18c93e, $18c94b
-MapEvents_063_494b::
-	dr $18c94b, $18c958
-MapEvents_063_4958::
-	dr $18c958, $18c96b
-MapEvents_063_496b::
-	dr $18c96b, $18c978
-MapEvents_063_4978::
-	dr $18c978, $18c985
-MapEvents_063_4985::
-	dr $18c985, $18c9aa
-MapEvents_063_49aa::
-	dr $18c9aa, $18c9b7
-MapEvents_063_49b7::
-	dr $18c9b7, $18c9c4
-MapEvents_063_49c4::
-	dr $18c9c4, $18c9d0
+G5_01_MapEvents:
+	warp_event ABSOLUTE, 29, $1c, $01
+	script_event 3, 2, $00, Script_066_40bb
+	signpost_event 31, 28, $07
+	events_end
+G5_02_MapEvents:
+	warp_event 15, 15, $01, $01
+	events_end
+G5_03_MapEvents:
+	script_event 1, 15, $00, Script_067_6e01
+	warp_event 3, 0, $03, $02
+	warp_event 16, 9, $03, $01
+	warp_event 17, 1, $04, $00
+	events_end
+G5_04_MapEvents:
+	warp_event 2, 0, $03, $03
+	warp_event 9, 15, $04, $04
+	warp_event 1, 15, $04, $05
+	warp_event 6, 16, $05, $00
+	warp_event 17, 11, $04, $01
+	warp_event 13, 15, $04, $02
+	events_end
+G5_05_MapEvents:
+	warp_event 11, 16, $04, $03
+	warp_event 18, 16, $05, $04
+	warp_event 9, 11, $06, $0a
+	warp_event 1, 11, $05, $05
+	warp_event 5, 0, $05, $01
+	warp_event 2, 0, $05, $03
+	events_end
+G5_06_MapEvents:
+	warp_event 1, 0, $06, $05
+	warp_event 8, 0, $06, $08
+	warp_event 1, 5, $06, $04
+	warp_event 2, 10, $06, $09
+	warp_event 3, 17, $06, $02
+	warp_event 13, 8, $06, $00
+	warp_event 10, 5, $06, $07
+	warp_event 10, 10, $06, $06
+	warp_event 18, 11, $06, $01
+	warp_event 14, 11, $06, $03
+	warp_event 11, 16, $05, $02
+	events_end
+G5_07_MapEvents:
+	warp_event ABSOLUTE, 0, $23, $00
+	script_event 14, 4, $00, Script_066_4292
+	warp_event 21, 5, $21, $00
+	warp_event 28, 4, $0f, $00
+	event_04 34, 2, $00, Script_066_4c8f
+	event_04 33, 3, $00, Script_066_4c8f
+	warp_event 35, ABSOLUTE, $1b, $00
+	warp_event 30, 13, $10, $00
+	warp_event 32, 19, $1e, $00
+	warp_event 23, 19, $20, $00
+	warp_event 17, 19, $22, $00
+	script_event ABSOLUTE, 23, $00, Script_066_448e
+	warp_event 12, 13, $11, $00
+	warp_event 3, 19, $1d, $00
+	warp_event 0, ABSOLUTE, $1c, $00
+	script_event 3, 3, $00, Script_066_4aef
+	signpost_event 34, 6, $01
+	signpost_event 7, 3, $02
+	signpost_event 10, 21, $03
+	signpost_event 1, 11, $04
+	signpost_event 11, 15, $05
+	events_end
+G5_08_MapEvents:
+	warp_event ABSOLUTE, 19, $0e, $01
+	warp_event 21, 13, $09, $00
+	events_end
+G5_09_MapEvents:
+	warp_event 7, 22, $08, $01
+	warp_event 10, 2, $0a, $00
+	warp_event 3, 2, $0c, $00
+	events_end
+G5_0A_MapEvents:
+	warp_event 2, 22, $09, $01
+	warp_event 10, 10, $0b, $00
+	events_end
+G5_0B_MapEvents:
+	warp_event 12, 21, $0a, $01
+	events_end
+G5_0C_MapEvents:
+	warp_event 22, 18, $09, $02
+	script_event 2, 1, $00, Script_066_4bb1
+	events_end
+G5_0D_MapEvents:
+	warp_event 4, 22, $0c, $01
+	events_end
+G5_0E_MapEvents:
+	warp_event ABSOLUTE, 9, $07, $0e
+	warp_event 5, 2, $08, $00
+	event_07 8, 4, $01
+	events_end
+G5_0F_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $03
+	event_04 4, 6, $00, Script_066_458e
+	event_04 2, 4, $00, Script_066_4586
+	event_07 10, 2, $02
+	events_end
+G5_10_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $06
+	event_04 8, 4, $00, Script_066_454d
+	event_04 6, 2, $00, Script_066_4545
+	event_07 1, 2, $03
+	events_end
+G5_11_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $0b
+	warp_event 1, 2, $12, $00
+	event_04 4, 6, $00, Script_066_45c6
+	event_07 6, 2, $04
+	events_end
+G5_12_MapEvents:
+	warp_event 18, 7, $11, $01
+	warp_event 14, 3, $13, $00
+	warp_event 9, 3, $14, $00
+	script_event 4, 3, $00, Script_066_4aca
+	events_end
+G5_13_MapEvents:
+	warp_event ABSOLUTE, 8, $12, $01
+	event_07 4, 3, $05
+	events_end
+G5_14_MapEvents:
+	warp_event ABSOLUTE, 8, $12, $02
+	event_07 2, 3, $06
+	events_end
+G5_15_MapEvents:
+	warp_event ABSOLUTE, 8, $12, $03
+	event_07 3, 3, $07
+	events_end
+G5_16_MapEvents:
+	warp_event 28, 5, $17, $00
+	event_04 16, 5, $00, Script_066_41d1
+	event_04 20, 5, $00, Script_066_41df
+	events_end
+G5_17_MapEvents:
+	warp_event 33, 3, $16, $01
+	warp_event 2, 4, $18, $00
+	events_end
+G5_18_MapEvents:
+	warp_event 7, 6, $17, $01
+	events_end
+G5_19_MapEvents:
+	warp_event ABSOLUTE, 11, $1b, $01
+	script_event 5, 5, $00, Script_066_47cd
+	event_04 3, 8, $00, Script_066_4204
+	events_end
+G5_1A_MapEvents:
+	warp_event ABSOLUTE, 8, $19, $01
+	event_07 10, 2, $0f
+	events_end
+G5_1B_MapEvents:
+	warp_event 0, ABSOLUTE, $07, $05
+	warp_event ABSOLUTE, 0, $19, $00
+	events_end
+G5_1C_MapEvents:
+	warp_event 11, ABSOLUTE, $07, $0d
+	warp_event 9, 19, $01, $00
+	signpost_event 7, 21, $06
+	events_end
+G5_1D_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $0c
+	event_04 5, 3, $00, Script_066_42cf
+	event_07 7, 3, $08
+	events_end
+G5_1E_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $07
+	event_07 8, 3, $09
+	events_end
+G5_1F_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $01
+	event_07 9, 3, $0a
+	events_end
+G5_20_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $08
+	event_07 3, 3, $0b
+	events_end
+G5_21_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $02
+	event_04 4, 4, $00, Script_066_4041
+	event_04 8, 4, $00, Script_066_404f
+	events_end
+G5_22_MapEvents:
+	warp_event ABSOLUTE, 8, $07, $09
+	event_04 4, 3, $00, Script_066_4010
+	events_end
+G5_23_MapEvents:
+	warp_event ABSOLUTE, 19, $07, $00
+	warp_event 5, 4, $24, $00
+	events_end
+G5_24_MapEvents:
+	warp_event ABSOLUTE, 18, $23, $01
+	warp_event 1, 5, $25, $00
+	warp_event 1, 6, $25, $00
+	warp_event 1, 14, $26, $00
+	warp_event 1, 15, $26, $00
+	event_07 7, 2, $0c
+	events_end
+G5_25_MapEvents:
+	warp_event 10, ABSOLUTE, $24, $01
+	event_07 2, 3, $0e
+	events_end
+G5_26_MapEvents:
+	warp_event 10, ABSOLUTE, $24, $02
+	event_07 9, 3, $0d
+	events_end
+G5_27_MapEvents:
+	warp_event ABSOLUTE, 0, $07, $0a
+	events_end
+	db $00, $00, $00, $00, $00
