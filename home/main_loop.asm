@@ -43,7 +43,7 @@ _Start::
 	ld a, l
 	ld [wd9e0], a
 	ld a, h
-	ld [wd9e0 + 1], a
+	ld [wd9e1], a
 	ei
 	ld a, 2
 	ld [wCurrentSoundBank], a
@@ -52,6 +52,7 @@ _Start::
 ; Check SRAM
 	call SRAMTest
 
+StartGame::
 	ld a, $03
 	ldh [hMapNumber], a
 	ld a, 0

@@ -19,7 +19,42 @@ AttrMap_011_4561:
 	dr $44561, $44602
 
 Palettes_011_4602:
-	dr $44602, $4464a
+	RGB 31, 30, 29
+	RGB 20, 25, 27
+	RGB 8, 12, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 17, 26, 6
+	RGB 0, 14, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 18, 28
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 24, 24, 20
+	RGB 13, 13, 9
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_464a:
 	dr $4464a, $446b9
@@ -45,7 +80,42 @@ AttrMap_011_4a66:
 	dr $44a66, $44ae2
 
 Palettes_011_4ae2:
-	dr $44ae2, $44b2a
+	RGB 31, 30, 29
+	RGB 20, 20, 25
+	RGB 10, 10, 15
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 20, 27, 6
+	RGB 6, 14, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 15, 15
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 24, 24, 20
+	RGB 13, 13, 9
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_4b2a:
 	dr $44b2a, $44b5d
@@ -99,7 +169,42 @@ AttrMap_011_5290:
 	dr $45290, $4532f
 
 Palettes_011_532f:
-	dr $4532f, $45377
+	RGB 30, 30, 27
+	RGB 20, 20, 26
+	RGB 10, 10, 17
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 20, 26, 11
+	RGB 6, 14, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 30, 25, 9
+	RGB 16, 13, 5
+	RGB 0, 0, 0
+	RGB 31, 31, 21
+	RGB 20, 26, 11
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 20, 26, 11
+	RGB 12, 12, 12
+	RGB 0, 0, 0
+	RGB 30, 30, 29
+	RGB 21, 25, 16
+	RGB 15, 13, 9
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_5377:
 	dr $45377, $453af
@@ -139,7 +244,42 @@ AttrMap_011_589c:
 	dr $4589c, $4592c
 
 Palettes_011_592c:
-	dr $4592c, $45974
+	RGB 30, 30, 27
+	RGB 28, 22, 0
+	RGB 14, 8, 4
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 20, 26, 11
+	RGB 6, 14, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 0, 20, 31
+	RGB 11, 11, 8
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 0, 20, 31
+	RGB 0, 10, 29
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 28, 23, 28
+	RGB 15, 11, 15
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 22, 22, 18
+	RGB 11, 11, 8
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_5974:
 	dr $45974, $459a2
@@ -165,7 +305,42 @@ AttrMap_011_5c4b:
 	dr $45c4b, $45ce4
 
 Palettes_011_5ce4:
-	dr $45ce4, $45d2c
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 8, 23, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 27, 21, 20
+	RGB 21, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 25, 25, 20
+	RGB 12, 12, 7
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_5d2c:
 	dr $45d2c, $45d81
@@ -247,7 +422,42 @@ AttrMap_011_656c:
 	dr $4656c, $465db
 
 Palettes_011_65db:
-	dr $465db, $46623
+	RGB 31, 31, 29
+	RGB 20, 25, 25
+	RGB 8, 14, 14
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 26, 0
+	RGB 29, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 10, 22, 28
+	RGB 0, 9, 19
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 21, 25, 20
+	RGB 10, 14, 7
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_6623:
 	dr $46623, $4666a
@@ -315,7 +525,42 @@ AttrMap_011_6966:
 	dr $46966, $469ec
 
 Palettes_011_69ec:
-	dr $469ec, $46a34
+	RGB 31, 31, 29
+	RGB 22, 26, 26
+	RGB 11, 15, 15
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 26, 26, 21
+	RGB 12, 12, 8
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_6a34:
 	dr $46a34, $46a66
@@ -410,7 +655,42 @@ AttrMap_011_6dd5:
 	dr $46dd5, $46e2f
 
 Palettes_011_6e2f:
-	dr $46e2f, $46e77
+	RGB 31, 31, 29
+	RGB 26, 20, 20
+	RGB 15, 9, 9
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 26, 26, 21
+	RGB 12, 12, 8
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_6e77:
 	dr $46e77, $46e9f
@@ -450,7 +730,42 @@ AttrMap_011_71b1:
 	dr $471b1, $47205
 
 Palettes_011_7205:
-	dr $47205, $4724d
+	RGB 31, 30, 28
+	RGB 21, 20, 17
+	RGB 11, 10, 8
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 19, 25, 10
+	RGB 7, 12, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 19, 25, 10
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_011_724d:
 	dr $4724d, $47270

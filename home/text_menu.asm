@@ -71,7 +71,7 @@ MenuText_Skip::
 MenuText_e1::
 	ld a, [wd9d0]
 	ld l, a
-	ld a, [wd9d0 + 1]
+	ld a, [wd9d1]
 	ld h, a
 	ld de, wd9ce
 	ld bc, $0204
@@ -171,7 +171,7 @@ MenuText_e7::
 	ld [wd9d6], a
 	ld a, [wd9d4]
 	ld l, a
-	ld a, [wd9d4 + 1]
+	ld a, [wd9d5]
 	ld h, a
 	push hl
 	jp Menu_CheckCharacter

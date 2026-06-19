@@ -132,7 +132,11 @@ wcd42:: ds 1
 wcd43:: ds 1
 wcd44:: ds 1
 
-wcd45:: ds 11
+wcd45:: ds 1
+wcd46:: ds 1
+	ds 5
+wcd4c:: ds 1
+	ds 3
 
 wcd50:: ds 1
 wcd51:: ds 1
@@ -152,11 +156,71 @@ wcd5e:: ds 1
 wcd5f:: ds 1
 
 wcd60:: ds 1
-	ds 4
+wcd61:: ds 1
+wcd62:: ds 1
+wcd63:: ds 1
+wcd64:: ds 1
 wcd65:: ds 1
 wcd66:: ds 1
 wcd67:: ds 1
-	ds $78
+wcd68:: ds 1
+wcd69:: ds 1
+wcd6a:: ds 1
+wcd6b:: ds 1
+wcd6c:: ds 1
+wcd6d:: ds 1
+	ds 2
+wcd70:: ds 1
+wcd71:: ds 1
+wcd72:: ds 1
+wcd73:: ds 1
+	ds 1
+wcd75:: ds 1
+wcd76:: ds 1
+wcd77:: ds 1
+wcd78:: ds 1
+wcd79:: ds 1
+wcd7a:: ds 1
+wcd7b:: ds 1
+wcd7c:: ds 1
+wcd7d:: ds 1
+wcd7e:: ds 1
+wcd7f:: ds 1
+wcd80:: ds 1
+wcd81:: ds 1
+wcd82:: ds 1
+wcd83:: ds 1
+wcd84:: ds 1
+wcd85:: ds 1
+wcd86:: ds 1
+wcd87:: ds 1
+wcd88:: ds 1
+wcd89:: ds 1
+wcd8a:: ds 1
+wcd8b:: ds 1
+wcd8c:: ds 1
+wcd8d:: ds 1
+wcd8e:: ds 1
+wcd8f:: ds 1
+wcd90:: ds 1
+wcd91:: ds 1
+wcd92:: ds 1
+wcd93:: ds 1
+	ds 1
+wcd95:: ds 1
+wcd96:: ds 1
+wcd97:: ds 1
+wcd98:: ds 1
+wcd99:: ds 1
+wcd9a:: ds 1
+wcd9b:: ds 1
+wcd9c:: ds 1
+wcd9d:: ds 1
+wcd9e:: ds 1
+wcd9f:: ds 1
+wcda0:: ds 1
+wcda1:: ds 1
+	ds 62
 NEXTU
 wVisibleObjects::
 wPlayerObject::
@@ -175,7 +239,9 @@ wcde0:: ds 1
 wcde1:: ds 1
 wcde2:: ds 1
 
-wcde3:: ds $1d
+wcde3:: ds $d
+wcdf0:: ds 8
+wcdf8:: ds 8
 
 wMapTileAttrs:: ds $100
 
@@ -291,13 +357,18 @@ wd128:: ds $78
 
 wd1a0:: ds 8
 wd1a8:: ds 8
-wd1b0:: ds $32
+wd1b0:: ds 8
+wd1b8:: ds 1
+	ds 7
+wd1c0:: ds 1
+	ds 33
 
 wd1e2:: ds 1
 wd1e3:: ds 1
 wd1e4:: ds 1
 
-	ds 12
+wTileAnimFrameCounters:: ds 1
+	ds 11
 
 wd1f1:: ds 1
 wd1f2:: ds 1
@@ -331,7 +402,8 @@ wd284:: ds $7c
 wd300:: ds $f0
 wd3f0:: ds 1
 wd3f1:: ds 1
-	ds 2
+wd3f2:: ds 1
+wd3f3:: ds 1
 
 wd3f4:: ds 1
 
@@ -475,7 +547,8 @@ wd988:: ds 1
 wd989:: ds 1
 wd98a:: ds 1
 wd98b:: ds 1
-wd98c:: ds 2
+wd98c:: ds 1
+wd98d:: ds 1
 wd98e:: ds 1
 wd98f:: ds 1
 wd990:: ds 1
@@ -489,7 +562,13 @@ wd998:: ds 1
 wd999:: ds 1
 wd99a:: ds 1
 wd99b:: ds 1
-wd99c:: ds $f
+wd99c:: ds 1
+wd99d:: ds 1
+wd99e:: ds 1
+wd99f:: ds 1
+wd9a0:: ds 1
+	ds 9
+wd9aa:: ds 1
 
 wd9ab:: ds 1
 wd9ac:: ds 1
@@ -585,7 +664,9 @@ wda00:: ds $a0
 ; shop menu is at $daa4
 wEventFlags:: ds 3
 wdaa3:: ds 1
-wdaa4:: ds $15
+wdaa4:: ds 7
+wdaab:: ds 1
+ds 13
 wdab9:: ds 1
 wdaba:: ds 1
 wdabb:: ds 1
@@ -627,11 +708,12 @@ wdc9d:: ds 1
 wdc9e:: ds 1
 wdc9f:: ds 1
 
-	ds 13
+	ds 12
+wdcac:: ds 1
 
 wdcad:: ds 1
 
-	ds 1
+wdcae:: ds 1
 wdcaf:: ds 1
 
 wdcb0:: ds 1
@@ -643,7 +725,8 @@ wdcb5:: ds 1
 wdcb6:: ds 1
 wdcb7:: ds 1
 
-	ds 2
+wdcb8:: ds 1
+wdcb9:: ds 1
 
 wdcba:: ds 1
 wdcbb:: ds $d

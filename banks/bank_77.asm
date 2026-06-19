@@ -500,7 +500,7 @@ TitleScreen_HandleMenuInput:
 	ret nz
 	ld a, 1
 	ld [wd9d2], a
-	farcall unk_03c_4000
+	farcall LoadSaveData
 	xor a
 	ld [wTargetMode], a
 	ret

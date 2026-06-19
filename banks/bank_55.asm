@@ -1,8 +1,359 @@
 AirportCutscene2::
-	dr $154000, $154bad
+	call Func_055_43cb
+	ld a, $70
+	call PlaySound
+	xor a
+	ldh [hFade], a
+	ldh [hSCX], a
+	ldh [hSCXHigh], a
+	ldh [hSCY], a
+	ldh [hSCYHigh], a
+	ld [wdcf3], a
+	ld [wdcf4], a
+	ld [wdcfb], a
+	ld [wdce8], a
+	ld [wdcf5], a
+	ld [wdcf7], a
+	ld [wdcf8], a
+	ld hl, $9800
+	ld de, Tilemap_055_447a
+	ld bc, $2012
+	ld a, $12
+	ldh [hVRAMCopyHeight], a
+	ld a, $20
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld hl, $9800
+	ld de, Attrmap_055_46ba
+	ld bc, $2012
+	ld a, $12
+	ldh [hVRAMCopyHeight], a
+	ld a, $20
+	ldh [hVRAMCopyWidth], a
+	call PlaceAttrmap
+	ld hl, Palette_055_43ea
+	ld de, wPaletteBuffer
+	ld bc, $0040
+	call CopyBytes3
+	ld hl, Palette_055_4432
+	ld de, wcaf0
+	ld bc, $0040
+	call CopyBytes3
+	ld hl, GFX_055_48fa
+	ld de, $9000
+	ld bc, $0570
+	call CopyBytesVRAM
+	ld hl, GFX_055_4e6a
+	ld de, $8000
+	ld bc, $04A0
+	call CopyBytesVRAM
+	call Func_055_43d9
+	ld a, $F0
+	ld [wcd42], a
+	ld a, $B8
+	ld [wcd43], a
+	ld a, $02
+	ld [wcd44], a
+	ld a, $81
+	ld [wcd45], a
+	ld a, $C7
+	ldh [rLCDC], a
+	ld hl, wPaletteBuffer
+	xor a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
+	call FadeInPalette
+.asm_40a6
+	call DelayFrame
+	call Func_055_42c6
+	ldh a, [hFadeFrameCounter]
+	inc a
+	ldh [hFadeFrameCounter], a
+	ldh a, [hFade]
+	and a
+	jr nz, .asm_40c2
+	call Func_055_423b
+	call Func_055_411c
+	call Func_055_40f1
+	jp .asm_40a6
+.asm_40c2
+	xor a
+	ldh [hFade], a
+	ld [wTargetMode], a
+	ld a, $05
+	ld [hFFBA], a
+	jp JumpToModeAndSetMapPredefs
+ScrollXDeltas_055_40d0:
+	dr $1540d0, $1540f1
+Func_055_40f1:
+	ld a, [wdcf3]
+	cp $40
+	jr c, .asm_4111
+	ld a, [wdcf4]
+	cp $20
+	ret nc
+	inc a
+	ld [wdcf4], a
+	ld de, ScrollXDeltas_055_40d0
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	ld c, a
+	ldh a, [hSCX]
+	add c
+	ldh [hSCX], a
+	ret
+.asm_4111
+	inc a
+	ld [wdcf3], a
+	ldh a, [hSCX]
+	add $08
+	ldh [hSCX], a
+	ret
+Func_055_411c:
+	ld a, [wdce8]
+	ld de, ObjectMoveDeltas_055_414c
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hl]
+	cp $88
+	jr z, .asm_4146
+	ld b, a
+	inc hl
+	ld a, [hl]
+	ld c, a
+	ld a, [wcd42]
+	add b
+	ld [wcd42], a
+	ld a, [wcd43]
+	add c
+	ld [wcd43], a
+	ld a, [wdce8]
+	inc a
+	ld [wdce8], a
+	ret
+.asm_4146
+	ld a, $01
+	ld [hFade], a
+	ret
+ObjectMoveDeltas_055_414c:
+	dr $15414c, $15423b
+Func_055_423b:
+	ld a, [wcd45]
+	and a
+	ret z
+	and $80
+	jr nz, .asm_424b
+	ldh a, [hFadeFrameCounter]
+	and $03
+	ret nz
+	jr .asm_4258
+.asm_424b
+	ld a, [wcd45]
+	and $7F
+	ld [wcd45], a
+	ld a, $00
+	ld [wcd46], a
+.asm_4258
+	ld a, [wcd45]
+	ld de, ColorAnimPointers_055_4282
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wcd46]
+	ld e, a
+	ld d, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_4277
+	xor a
+	ld [wcd46], a
+	ret
+.asm_4277
+	ld [wcd44], a
+	ld a, [wcd46]
+	inc a
+	ld [wcd46], a
+	ret
+ColorAnimPointers_055_4282:
+	dr $154282, $154288
+ColorAnimData_055_4288:
+	dr $154288, $1542c6
+Func_055_42c6:
+	ld hl, wc000
+	ld bc, $0028
+	ld de, $0004
+.asm_42cf
+	ld a, $A0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_42cf
+	xor a
+	ld [wd1fb], a
+	call .asm_42de
+	ret
+.asm_42de
+	ld hl, SpriteFramePointers_055_4316
+	ld de, wcd42
+	ld a, [de]
+	ld c, a
+	inc de
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	and a
+	ret z
+	add a
+	add l
+	ld l, a
+	ld a, h
+	adc $00
+	ld h, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $C0
+.asm_42fd
+	ld a, [hli]
+	cp $FF
+	jr z, .asm_4311
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	jr .asm_42fd
+.asm_4311
+	ld a, e
+	ld [wd1fb], a
+	ret
+SpriteFramePointers_055_4316:
+	dr $154316, $15431c
+SpriteFrameData_055_431c:
+	dr $15431c, $1543cb
+Func_055_43cb:
+	ld hl, wVisibleObjects
+	ld bc, $0100
+.asm_43d1
+	xor a
+	ld [hli], a
+	dec bc
+	ld a, c
+	or b
+	jr nz, .asm_43d1
+	ret
+Func_055_43d9:
+	ld hl, wc000
+	ld bc, $0028
+	ld de, $0004
+.asm_43e2
+	ld a, $A0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_43e2
+	ret
+Palette_055_43ea:
+	RGB 31, 31, 31
+	RGB 20, 15, 28
+	RGB 31, 16, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 21, 21, 21
+	RGB 11, 11, 11
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+unk_055_442a:
+	dr $15442a, $154432
+Palette_055_4432:
+	RGB 17, 17, 17
+	RGB 0, 0, 0
+	RGB 31, 18, 18
+	RGB 31, 31, 31
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+unk_055_4472:
+	dr $154472, $15447a
+Tilemap_055_447a:
+	dr $15447a, $1546ba
+Attrmap_055_46ba:
+	dr $1546ba, $1548fa
+GFX_055_48fa:
+	dr $1548fa, $154bad
 
 unk_055_4bad:
-	dr $154bad, $15530a
+	dr $154bad, $154e6a
+GFX_055_4e6a:
+	dr $154e6a, $15530a
 
 G4_32_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_055_5316
@@ -78,7 +429,8 @@ G4_43_ObjectEvents:
 	objects_end
 
 unk_055_53f2:
-	dr $1553f2, $1553f6
+	scr_setmap $44, $00
+	scr_end
 
 G4_0B_ObjectEvents:
 	object_event $19, 15,  6, 0, $00, $00, $08, $00, Script_055_5933

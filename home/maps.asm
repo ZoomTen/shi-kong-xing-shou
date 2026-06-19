@@ -727,7 +727,7 @@ LoadMapAttrs::
 
 ; load map layout?
 	ld a, $98
-	ld [wd0ba + 1], a
+	ld [wd0bb], a
 	ld a, $00
 	ld [wd0ba], a
 	ldh a, [hMapWidth]

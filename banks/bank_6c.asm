@@ -93,7 +93,7 @@ G6_25_ObjectEvents:
 G6_2A_ObjectEvents:
 G6_2B_ObjectEvents2:
 G6_2C_ObjectEvents:
-	dr $1b0707, $1b0708
+	objects_end
 Script_06c_4708::
 	dr $1b0708, $1b0716
 

@@ -9,7 +9,7 @@ FarCopyBytes_vTiles0::
 ; Source address
 	ld a, [wd98f]
 	ld l, a
-	ld a, [wd98f + 1]
+	ld a, [wd990]
 	ld h, a
 ; Size of image
 	ld a, [hli]

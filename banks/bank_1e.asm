@@ -1036,7 +1036,7 @@ Func_01e_4745:
 	ld de, unk_01e_614f
 	ld a, [wd9d4]
 	ld l, a
-	ld a, [wd9d4 + 1]
+	ld a, [wd9d5]
 	ld h, a
 	ld a, [hl]
 	ld l, a
@@ -2400,7 +2400,7 @@ asm_01e_6e89:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wd9cc + 1], a
+	ld [wd9cd], a
 	ld a, [hli]
 	ld [wd9cc], a
 	ld a, [wdcb7]

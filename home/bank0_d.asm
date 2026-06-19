@@ -655,7 +655,7 @@ Func_125b::
 .asm_1270
 	ld a, [wd984]
 	ld l, a
-	ld a, [wd984 + 1]
+	ld a, [wd985]
 	ld h, a
 	jr .asm_1288
 
@@ -667,7 +667,7 @@ Func_125b::
 .asm_1280
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 
 .asm_1288
@@ -681,7 +681,7 @@ Func_125b::
 Func_128e::
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 
 Func_1296::
@@ -703,7 +703,7 @@ Func_1296::
 Func_12bd::
 	ld a, [wd984]
 	ld c, a
-	ld a, [wd984 + 1]
+	ld a, [wd985]
 	ld b, a
 	ld hl, 2
 	add hl, bc
@@ -922,14 +922,14 @@ Func_13b7::
 	rst Bankswitch
 	ld a, [wd088]
 	ld l, a
-	ld a, [wd088 + 1]
+	ld a, [wd089]
 	ld h, a
 	ld a, [hli]
 	ld [wd989], a
 	ld a, l
 	ld [wd088], a
 	ld a, h
-	ld [wd088 + 1], a
+	ld [wd089], a
 	pop af
 	rst Bankswitch
 	ret

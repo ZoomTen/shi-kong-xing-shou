@@ -773,10 +773,10 @@ LoadWildMon:
 	ld a, [$dcab]
 	cp $14
 	ret nc
-	ld a, $a
-	ld [$0000], a
+	ld a, SRAM_ENABLE
+	ld [rRAMG], a
 	ld a, 1
-	ld [$4000], a
+	ld [rRAMB], a
 	ld hl, $b600
 	ld a, [$dcab]
 	ld de, $13
@@ -801,8 +801,8 @@ LoadWildMon:
 	pop bc
 	call Func_02d_51f1
 	xor a
-	ld [$0000], a
-	ld [$4000], a
+	ld [rRAMG], a
+	ld [rRAMB], a
 	ret
 
 unk_02d_4aa9:

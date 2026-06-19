@@ -50,7 +50,42 @@ Blocks_053_47d4::
 AttrMap_053_48cc::
 	dr $14c8cc, $14c950
 Palettes_053_4950::
-	dr $14c950, $14c998
+	RGB 31, 30, 31
+	RGB 25, 25, 25
+	RGB 19, 17, 19
+	RGB 13, 11, 13
+	RGB 31, 27, 22
+	RGB 31, 15, 0
+	RGB 31, 0, 0
+	RGB 0, 0, 0
+	RGB 26, 29, 27
+	RGB 18, 20, 18
+	RGB 10, 12, 11
+	RGB 0, 3, 0
+	RGB 28, 27, 31
+	RGB 20, 17, 26
+	RGB 12, 10, 21
+	RGB 0, 0, 0
+	RGB 28, 29, 31
+	RGB 18, 23, 30
+	RGB 7, 14, 21
+	RGB 0, 0, 0
+	RGB 31, 23, 18
+	RGB 24, 14, 10
+	RGB 13, 6, 2
+	RGB 0, 1, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_4998::
 	dr $14c998, $14c9e8
 
@@ -70,7 +105,42 @@ Blocks_053_4aaf::
 AttrMap_053_4b1f::
 	dr $14cb1f, $14cb9e
 Palettes_053_4b9e::
-	dr $14cb9e, $14cbe6
+	RGB 31, 30, 31
+	RGB 25, 25, 25
+	RGB 19, 17, 19
+	RGB 13, 11, 13
+	RGB 31, 27, 22
+	RGB 31, 15, 0
+	RGB 31, 0, 0
+	RGB 0, 0, 0
+	RGB 26, 29, 27
+	RGB 18, 20, 18
+	RGB 10, 12, 11
+	RGB 0, 3, 0
+	RGB 28, 27, 31
+	RGB 20, 17, 26
+	RGB 12, 10, 21
+	RGB 0, 0, 0
+	RGB 28, 29, 31
+	RGB 18, 23, 30
+	RGB 7, 14, 21
+	RGB 0, 0, 0
+	RGB 31, 23, 18
+	RGB 24, 14, 10
+	RGB 13, 6, 2
+	RGB 0, 1, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_4be6::
 	dr $14cbe6, $14cc0c
 
@@ -138,7 +208,42 @@ Blocks_053_51fb::
 AttrMap_053_5253::
 	dr $14d253, $14d28d
 Palettes_053_528d::
-	dr $14d28d, $14d2d5
+	RGB 31, 31, 31
+	RGB 31, 31, 4
+	RGB 31, 6, 0
+	RGB 0, 0, 0
+	RGB 24, 31, 31
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 23, 12
+	RGB 27, 13, 4
+	RGB 17, 5, 0
+	RGB 0, 0, 0
+	RGB 24, 31, 16
+	RGB 17, 31, 9
+	RGB 10, 22, 6
+	RGB 0, 0, 0
+	RGB 29, 29, 18
+	RGB 25, 25, 9
+	RGB 17, 17, 4
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 24, 25, 19
+	RGB 18, 18, 13
+	RGB 9, 9, 2
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_52d5::
 	dr $14d2d5, $14d315
 
@@ -159,7 +264,42 @@ Blocks_053_54aa::
 AttrMap_053_5656::
 	dr $14d656, $14d6d6
 Palettes_053_56d6::
-	dr $14d6d6, $14d71e
+	RGB 31, 30, 28
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 19, 25, 11
+	RGB 7, 13, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 8, 21, 25
+	RGB 0, 10, 17
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 24, 10
+	RGB 21, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 27, 27, 21
+	RGB 15, 15, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_571e::
 	dr $14d71e, $14d75b
 
@@ -181,7 +321,42 @@ Blocks_053_583c::
 AttrMap_053_58b0::
 	dr $14d8b0, $14d906
 Palettes_053_5906::
-	dr $14d906, $14d94e
+	RGB 31, 30, 28
+	RGB 27, 25, 18
+	RGB 18, 14, 9
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 19, 26, 11
+	RGB 6, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 8, 26, 31
+	RGB 0, 11, 30
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 24, 10
+	RGB 21, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 27, 25, 21
+	RGB 0, 15, 30
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 20, 27, 27
+	RGB 8, 14, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_594e::
 	dr $14d94e, $14d973
 
@@ -201,7 +376,42 @@ Blocks_053_5aa8::
 AttrMap_053_5c10::
 	dr $14dc10, $14dcb1
 Palettes_053_5cb1::
-	dr $14dcb1, $14dcf9
+	RGB 29, 31, 31
+	RGB 28, 23, 14
+	RGB 8, 12, 6
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 17, 25, 10
+	RGB 10, 15, 0
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 22, 25, 26
+	RGB 10, 14, 15
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 31, 24, 10
+	RGB 21, 10, 0
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 0, 22, 31
+	RGB 0, 8, 22
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_5cf9::
 	dr $14dcf9, $14dd29
 
@@ -221,7 +431,42 @@ Blocks_053_5e2a::
 AttrMap_053_5f9a::
 	dr $14df9a, $14e004
 Palettes_053_6004::
-	dr $14e004, $14e04c
+	RGB 29, 31, 31
+	RGB 28, 23, 14
+	RGB 8, 12, 6
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 17, 25, 10
+	RGB 10, 15, 0
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 22, 25, 26
+	RGB 10, 14, 15
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 31, 24, 10
+	RGB 21, 10, 0
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 29, 31, 31
+	RGB 0, 22, 31
+	RGB 0, 8, 22
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_604c::
 	dr $14e04c, $14e06f
 
@@ -241,7 +486,42 @@ Blocks_053_61b6::
 AttrMap_053_6226::
 	dr $14e226, $14e297
 Palettes_053_6297::
-	dr $14e297, $14e2df
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 18, 16, 26
+	RGB 9, 6, 20
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 12, 23, 31
+	RGB 0, 10, 21
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 20, 24, 20
+	RGB 10, 14, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_62df::
 	dr $14e2df, $14e325
 
@@ -285,7 +565,42 @@ Blocks_053_656e::
 AttrMap_053_65b2::
 	dr $14e5b2, $14e64e
 Palettes_053_664e::
-	dr $14e64e, $14e696
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 21, 28
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_6696::
 	dr $14e696, $14e6e0
 
@@ -305,7 +620,42 @@ Blocks_053_67bd::
 AttrMap_053_6809::
 	dr $14e809, $14e83d
 Palettes_053_683d::
-	dr $14e83d, $14e885
+	RGB 31, 30, 28
+	RGB 27, 25, 18
+	RGB 18, 14, 9
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 19, 26, 11
+	RGB 6, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 8, 26, 31
+	RGB 0, 11, 30
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 24, 10
+	RGB 21, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 27, 25, 21
+	RGB 0, 15, 30
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 20, 27, 27
+	RGB 8, 14, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_6885::
 	dr $14e885, $14e8a9
 
@@ -325,7 +675,42 @@ Blocks_053_6a16::
 AttrMap_053_6b5a::
 	dr $14eb5a, $14ebf3
 Palettes_053_6bf3::
-	dr $14ebf3, $14ec3b
+	RGB 31, 30, 29
+	RGB 25, 22, 18
+	RGB 14, 10, 6
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 26
+	RGB 0, 8, 21
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 18, 28
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 19, 22, 19
+	RGB 9, 12, 9
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_6c3b::
 	dr $14ec3b, $14ec74
 
@@ -345,7 +730,42 @@ Blocks_053_6d87::
 AttrMap_053_6dfb::
 	dr $14edfb, $14ee6b
 Palettes_053_6e6b::
-	dr $14ee6b, $14eeb3
+	RGB 31, 31, 31
+	RGB 27, 29, 29
+	RGB 27, 29, 29
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 25, 23, 19
+	RGB 6, 18, 30
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 25, 23, 19
+	RGB 30, 8, 10
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 25, 23, 19
+	RGB 14, 13, 11
+	RGB 0, 0, 0
+	RGB 30, 30, 27
+	RGB 14, 25, 8
+	RGB 5, 12, 0
+	RGB 0, 0, 4
+	RGB 30, 30, 27
+	RGB 24, 18, 0
+	RGB 14, 8, 4
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_6eb3::
 	dr $14eeb3, $14eeec
 
@@ -365,7 +785,42 @@ Blocks_053_6fe5::
 AttrMap_053_7075::
 	dr $14f075, $14f0ef
 Palettes_053_70ef::
-	dr $14f0ef, $14f137
+	RGB 31, 31, 29
+	RGB 21, 21, 15
+	RGB 13, 13, 8
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 0, 24, 31
+	RGB 0, 10, 24
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 20, 20, 18
+	RGB 14, 10, 13
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 22, 22, 22
+	RGB 8, 10, 12
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_053_7137::
 	dr $14f137, $14f160
 

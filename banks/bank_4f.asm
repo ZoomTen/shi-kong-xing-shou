@@ -19,7 +19,12 @@ Script_04f_401c:
 	scr_end
 
 Script_04f_4020::
-	dr $13c020, $13c031
+	scr_face $02
+	scr_spriteface  2, FACE_RIGHT
+	scr_text text_4f_406d
+	scr_checkbit wdaa4, $01, Script_04f_4031
+	scr_35 $03
+	scr_end
 
 Script_04f_4031:
 	scr_end
@@ -334,7 +339,8 @@ Script_04f_4775::
 	dr $13c775, $13c77d
 
 Script_04f_477d::
-	dr $13c77d, $13c782
+	scr_farjump Script_04f_4bf3
+	scr_end
 
 Script_04f_4782::
 	dr $13c782, $13c790
@@ -382,7 +388,8 @@ Script_04f_48a9::
 	dr $13c8a9, $13cab6
 
 SkyCity_ObjectEvents2:
-	dr $13cab6, $13cac2
+	object_event $11, 15,  8, 0, $00, $00, $00, $00, Script_04f_4031
+	objects_end
 
 Script_04f_4ac2::
 	dr $13cac2, $13cb3f
@@ -415,7 +422,8 @@ Script_04f_4d94::
 	dr $13cd94, $13cdb2
 
 GreenForestP32_ObjectEvents2:
-	dr $13cdb2, $13cdbe
+	object_event $36,  5,  3, 0, $00, $00, $00, $00, Script_04f_4dbe
+	objects_end
 
 Script_04f_4dbe::
 	dr $13cdbe, $13cde3

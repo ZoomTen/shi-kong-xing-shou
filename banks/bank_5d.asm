@@ -1,4 +1,1398 @@
 RhythmMinigame::
-	dr $174000, $1779c0
+	ld a, $65
+	call PlaySound
+	xor a
+	ldh [hFade], a
+	ldh [hSCX], a
+	ldh [hSCXHigh], a
+	ldh [hSCY], a
+	ldh [hSCYHigh], a
+	ld [wdcf3], a
+	ld [wdcf4], a
+	ld [wdcfb], a
+	ld [wdce8], a
+	ld [wdcf6], a
+	ld [wdcfc], a
+	ld [wdcf5], a
+	ld [wdcf7], a
+	ld [wdcf8], a
+	ld [wcd40], a
+	ld [wcd41], a
+	ld hl, $9800
+	ld de, RhythmScreen1Tilemap
+	ld bc, $1412
+	ld a, $12
+	ldh [hVRAMCopyHeight], a
+	ld a, $14
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld hl, $9800
+	ld de, RhythmScreen1Attrmap
+	ld bc, $1412
+	ld a, $12
+	ldh [hVRAMCopyHeight], a
+	ld a, $14
+	ldh [hVRAMCopyWidth], a
+	call PlaceAttrmap
+	ld hl, RhythmBGPalette
+	ld de, wPaletteBuffer
+	ld bc, $0040
+	call CopyBytes3
+	ld hl, RhythmOBJPalette
+	ld de, wcaf0
+	ld bc, $0040
+	call CopyBytes3
+	ld hl, RhythmScreen1GFX
+	ld de, $9000
+	ld bc, $0800
+	call CopyBytesVRAM
+	ld hl, RhythmScreen1GFX2
+	ld de, $8800
+	ld bc, $0580
+	call CopyBytesVRAM
+	ld hl, RhythmSharedGFX
+	ld de, $8400
+	ld bc, $0360
+	call CopyBytesVRAM
+	ld hl, RhythmAnimFrames
+	ld de, $8000
+	ld bc, $0200
+	call CopyBytesVRAM
+	call Func_5d_4a6e
+	ld a, $C7
+	ldh [rLCDC], a
+	ld hl, wPaletteBuffer
+	xor a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
+	call FadeInPalette
+.asm_40b3
+	call DelayFrame
+	call Func_5d_4a1a
+	ld a, [wdcf5]
+	cp $01
+	jr z, .asm_40c3
+	jp .asm_40b3
+.asm_40c3
+	ld bc, wPaletteBuffer
+	xor a
+	ldh [hPaletteFadeState], a
+	call FadeOutPalette
+	jp .asm_40cf
+.asm_40cf
+	call Func_5d_4a51
+	ld a, $65
+	call PlaySound
+	xor a
+	ldh [hFade], a
+	ldh [hSCX], a
+	ldh [hSCXHigh], a
+	ldh [hSCY], a
+	ldh [hSCYHigh], a
+	ld [wdcf3], a
+	ld [wdcf4], a
+	ld [wdcfb], a
+	ld [wdce8], a
+	ld [wdcf6], a
+	ld [wdcfc], a
+	ld [wdcf5], a
+	ld [wdcf7], a
+	ld [wdcf8], a
+	ld [wcd40], a
+	ld [wcd41], a
+	ld [$CD47], a
+	ld [$CD48], a
+	ld [$CD49], a
+	ld [$CD4A], a
+	ld [$CD4B], a
+	ld [$CD4F], a
+	ld a, $02
+	ld [wcd4c], a
+	ld a, $00
+	ld [$CD4D], a
+	ld a, $00
+	ld [$CD4E], a
+	ld hl, $9800
+	ld de, RhythmScreen2Tilemap
+	ld bc, $1412
+	ld a, $12
+	ldh [hVRAMCopyHeight], a
+	ld a, $14
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld hl, $9800
+	ld de, RhythmScreen2Attrmap
+	ld bc, $1412
+	ld a, $12
+	ldh [hVRAMCopyHeight], a
+	ld a, $14
+	ldh [hVRAMCopyWidth], a
+	call PlaceAttrmap
+	ld hl, RhythmBGPalette
+	ld de, wPaletteBuffer
+	ld bc, $0040
+	call CopyBytes3
+	ld hl, RhythmOBJPalette
+	ld de, wcaf0
+	ld bc, $0040
+	call CopyBytes3
+	ld hl, RhythmScreen2GFX
+	ld de, $9000
+	ld bc, $0800
+	call CopyBytesVRAM
+	ld hl, RhythmScreen2GFX2
+	ld de, $8800
+	ld bc, $0290
+	call CopyBytesVRAM
+	ld hl, RhythmSharedGFX
+	ld de, $8400
+	ld bc, $0360
+	call CopyBytesVRAM
+	ld hl, RhythmAnimFrames
+	ld de, $8000
+	ld bc, $0200
+	call CopyBytesVRAM
+	call Func_5d_4a5f
+	call Func_5d_4a6e
+	ld a, $50
+	ld [wcd42], a
+	ld a, $48
+	ld [wcd43], a
+	ld a, $01
+	ld [wcd44], a
+	ld a, $81
+	ld [wcd45], a
+	ld a, $C7
+	ldh [rLCDC], a
+	ld hl, wPaletteBuffer
+	xor a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
+	call FadeInPalette
+.asm_41bd
+	call DelayFrame
+	call Func_5d_48a8
+	ldh a, [hFadeFrameCounter]
+	inc a
+	ldh [hFadeFrameCounter], a
+	ldh a, [hFade]
+	and a
+	jr nz, .asm_41f4
+	call Func_5d_44c0
+	call Func_5d_43f5
+	ld a, [wdcf5]
+	cp $02
+	jr z, .asm_4200
+	cp $03
+	jr z, .asm_4226
+	cp $04
+	jr z, .asm_424c
+	call Func_5d_435e
+	call Func_5d_4581
+	call .asm_4266
+	call Func_5d_4800
+	call Func_5d_4754
+	jp .asm_41bd
+.asm_41f4
+	xor a
+	ldh [hFade], a
+	ld [wTargetMode], a
+	jp JumpToGameMode
+	jp .asm_41bd
+.asm_4200
+	ld a, [$DAA7]
+	res 1, a
+	ld [$DAA7], a
+	ld a, $01
+	ld [wcd40], a
+	ld a, $02
+	ld [$CD4A], a
+	ld a, $8A
+	ld [wcd45], a
+	call Func_5d_435e
+	ld a, $04
+	ld [wdcf5], a
+	xor a
+	ld [$CD4F], a
+	jp .asm_41bd
+.asm_4226
+	ld a, [$DAA7]
+	set 1, a
+	ld [$DAA7], a
+	ld a, $00
+	ld [wcd40], a
+	ld a, $03
+	ld [$CD4A], a
+	ld a, $89
+	ld [wcd45], a
+	call Func_5d_435e
+	ld a, $04
+	ld [wdcf5], a
+	xor a
+	ld [$CD4F], a
+	jp .asm_41bd
+.asm_424c
+	ld a, [$CD4F]
+	inc a
+	ld [$CD4F], a
+	cp $80
+	jr z, .asm_425a
+	jp .asm_41bd
+.asm_425a
+	xor a
+	ld [$CD4F], a
+	ld a, $01
+	ld [hFade], a
+	jp .asm_41bd
+.asm_4266
+	ld a, [$CD4F]
+	inc a
+	ld [$CD4F], a
+	cp $07
+	ret nz
+	xor a
+	ld [$CD4F], a
+	ld a, [$CD4E]
+	and a
+	jr z, .asm_4280
+	dec a
+	ld [$CD4E], a
+	jr .asm_42cf
+.asm_4280
+	ld a, [$CD4D]
+	and a
+	jr z, .asm_42a0
+	ld a, $09
+	ld [$CD4E], a
+	ld a, [$CD4D]
+	dec a
+	ld [$CD4D], a
+	jr .asm_42cf
+	ld a, [$CD4D]
+	and a
+	jr z, .asm_42a0
+	dec a
+	ld [$CD4D], a
+	jr .asm_42cf
+.asm_42a0
+	ld a, [wcd4c]
+	and a
+	jr z, .asm_42c5
+	ld a, [wcd4c]
+	dec a
+	ld [wcd4c], a
+	ld a, $05
+	ld [$CD4D], a
+	ld a, $09
+	ld [$CD4E], a
+	jr .asm_42cf
+	ld a, [wcd4c]
+	and a
+	jr z, .asm_42c5
+	dec a
+	ld [wcd4c], a
+	jr .asm_42cf
+.asm_42c5
+	xor a
+	ld [$CD4E], a
+	ld [$CD4D], a
+	ld [wcd4c], a
+.asm_42cf
+	ld a, [$CD4E]
+	ld de, ScoreDigitTiles
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	push hl
+	pop de
+	ld hl, $99EE
+	ld bc, $0102
+	ld a, $02
+	ldh [hVRAMCopyHeight], a
+	ld a, $01
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld a, [$CD4D]
+	ld de, ScoreDigitTiles
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	push hl
+	pop de
+	ld hl, $99ED
+	ld bc, $0102
+	ld a, $02
+	ldh [hVRAMCopyHeight], a
+	ld a, $01
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld a, [wcd4c]
+	ld de, ScoreDigitTiles
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	push hl
+	pop de
+	ld hl, $99EB
+	ld bc, $0102
+	ld a, $02
+	ldh [hVRAMCopyHeight], a
+	ld a, $01
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld a, [$CD4E]
+	ld b, a
+	ld a, [$CD4D]
+	or b
+	ld b, a
+	ld a, [wcd4c]
+	or b
+	ret nz
+	ld a, [$CD4B]
+	cp $03
+	jr c, .asm_4344
+	ld a, $02
+	ld [wdcf5], a
+	ret
+.asm_4344
+	ld a, $03
+	ld [wdcf5], a
+	ret
+ScoreDigitTiles:
+	dr $17434a, $17435e
+Func_5d_435e:
+	ld a, [$CD4A]
+	and a
+	ret z
+	cp $02
+	jr z, .asm_43bc
+	cp $03
+	jr z, .asm_43d5
+	cp $05
+	jr z, .asm_43a3
+	xor a
+	ld [$CD4A], a
+	ld a, [$CD4B]
+	ld de, unk_5d_43F2
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	ld l, a
+	ld h, $99
+	ld de, unk_5d_43EE
+	ld bc, $0202
+	ld a, $02
+	ldh [hVRAMCopyHeight], a
+	ld a, $02
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ld a, [$CD4B]
+	inc a
+	ld [$CD4B], a
+	cp $03
+	jr c, .asm_43a3
+	ld a, $02
+	ld [wdcf5], a
+	ret
+.asm_43a3
+	xor a
+	ld [$CD4A], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $10
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_43bc
+	xor a
+	ld [$CD4A], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $30
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_43d5
+	xor a
+	ld [$CD4A], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+unk_5d_43EE:
+	dr $1743ee, $1743f2
+unk_5d_43F2:
+	dr $1743f2, $1743f5
+Func_5d_43f5:
+	ld a, [$CD47]
+	and a
+	ret z
+	xor a
+	ld [$CD47], a
+	ld de, AnimFrame_Pointers
+	ld a, [wcd44]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [$CD49]
+	and a
+	jr z, .asm_4417
+	ld de, $8000
+	jr .asm_441a
+.asm_4417
+	ld de, $8100
+.asm_441a
+	call .asm_4428
+	ld a, [$CD49]
+	ld c, a
+	ld a, $01
+	sub c
+	ld [$CD49], a
+	ret
+.asm_4428
+	ld bc, $0810
+.asm_442b
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_442b
+.asm_4431
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4431
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_443d
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_443d
+.asm_4443
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4443
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_444f
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_444f
+.asm_4455
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4455
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_4461
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4461
+.asm_4467
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4467
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_4473
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4473
+.asm_4479
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4479
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_4485
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4485
+.asm_448b
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_448b
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_4497
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_4497
+.asm_449d
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_449d
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+.asm_44a9
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_44a9
+.asm_44af
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_44af
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jp nz, .asm_442b
+	ret
+
+Func_5d_44c0:
+	ld a, [wcd45]
+	and a
+	ret z
+	and $80
+	jr nz, .asm_44d0
+	ldh a, [hFadeFrameCounter]
+	and $03
+	ret nz
+	jr .asm_44dd
+.asm_44d0
+	ld a, [wcd45]
+	and $7F
+	ld [wcd45], a
+	ld a, $00
+	ld [wcd46], a
+.asm_44dd
+	ld a, [wcd45]
+	ld de, RhythmPattern_Pointers
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wcd46]
+	ld e, a
+	ld d, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_44fc
+	xor a
+	ld [wcd46], a
+	ret
+.asm_44fc
+	cp $88
+	jr z, .asm_4510
+	ld [wcd44], a
+	ld a, [wcd46]
+	inc a
+	ld [wcd46], a
+	ld a, $01
+	ld [$CD47], a
+	ret
+.asm_4510
+	ld a, $81
+	ld [wcd45], a
+	ld a, $01
+	ld [$CD47], a
+	ld [wcd44], a
+	xor a
+	ld [wcd40], a
+	ld [wcd46], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+RhythmPattern_Pointers:
+	dr $174539, $17454f
+RhythmPatterns:
+	dr $17454f, $174581
+Func_5d_4581:
+	ldh a, [hJoypadPressed]
+	bit 0, a
+	call nz, .asm_46b4
+	ldh a, [hJoypadPressed]
+	bit 1, a
+	call nz, .asm_46ec
+	ldh a, [hJoypadPressed]
+	bit 4, a
+	call nz, .asm_4677
+	ldh a, [hJoypadPressed]
+	bit 5, a
+	call nz, .asm_463a
+	ldh a, [hJoypadPressed]
+	bit 6, a
+	call nz, .asm_45ac
+	ldh a, [hJoypadPressed]
+	bit 7, a
+	call nz, .asm_45fd
+	ret
+.asm_45ac
+	call .asm_4724
+	ld a, [wcd40]
+	and a
+	jp nz, .asm_45e8
+	ld a, $1A
+	call PlaySound
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $01
+	jr nz, .asm_45e8
+	xor a
+	ld [wcd40], a
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $04
+	ld a, $82
+	ld [wcd45], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_45e8
+	ld a, $01
+	ld [wcd40], a
+	ld a, $05
+	ld [$CD4A], a
+	ld a, $88
+	ld [wcd45], a
+	ld a, $19
+	call PlaySound
+	ret
+.asm_45fd
+	call .asm_4724
+	ld a, [wcd40]
+	and a
+	jp nz, .asm_45e8
+	ld a, $1A
+	call PlaySound
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $02
+	jp nz, .asm_45e8
+	xor a
+	ld [wcd40], a
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $04
+	ld a, $83
+	ld [wcd45], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_463a
+	call .asm_4724
+	ld a, [wcd40]
+	and a
+	jp nz, .asm_45e8
+	ld a, $1A
+	call PlaySound
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $03
+	jp nz, .asm_45e8
+	xor a
+	ld [wcd40], a
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $04
+	ld a, $84
+	ld [wcd45], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_4677
+	call .asm_4724
+	ld a, [wcd40]
+	and a
+	jp nz, .asm_45e8
+	ld a, $1A
+	call PlaySound
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $04
+	jp nz, .asm_45e8
+	xor a
+	ld [wcd40], a
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $04
+	ld a, $85
+	ld [wcd45], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_46b4
+	call .asm_4724
+	ld a, [wcd40]
+	and a
+	jp nz, .asm_45e8
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $05
+	jp nz, .asm_45e8
+	xor a
+	ld [wcd40], a
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $04
+	ld a, $86
+	ld [wcd45], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_46ec
+	call .asm_4724
+	ld a, [wcd40]
+	and a
+	jp nz, .asm_45e8
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $06
+	jp nz, .asm_45e8
+	xor a
+	ld [wcd40], a
+	ld hl, $0003
+	add hl, bc
+	ld [hl], $04
+	ld a, $87
+	ld [wcd45], a
+	ld hl, $99D0
+	ld de, RhythmTileChunks + $20
+	ld bc, $0404
+	ld a, $04
+	ldh [hVRAMCopyHeight], a
+	ld a, $04
+	ldh [hVRAMCopyWidth], a
+	call PlaceTilemap_Bank0
+	ret
+.asm_4724
+	ld bc, wdd50
+.asm_4727
+	ld hl, $0000
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr nz, .asm_473c
+.asm_472f
+	ld hl, $0004
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $5F
+	jr c, .asm_4727
+	jr .asm_474e
+.asm_473c
+	ld hl, $0001
+	add hl, bc
+	ld a, [hl]
+	cp $3D
+	jr nc, .asm_472f
+	cp $34
+	jr c, .asm_472f
+	xor a
+	ld [wcd40], a
+	ret
+.asm_474e
+	ld a, $01
+	ld [wcd40], a
+	ret
+
+Func_5d_4754:
+	ld bc, wdd50
+Func_5d_4757:
+	ld hl, $0000
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr nz, Func_5d_476b
+
+Func_5d_475f:
+	ld hl, $0004
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $5F
+	jr c, Func_5d_4757
+	ret
+Func_5d_476b:
+	ld de, RhythmState_Jumptable
+	ld hl, $0003
+	add hl, bc
+	ld a, [hl]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+	ret
+
+Func_5d_477d:
+	ld hl, $0000
+	add hl, bc
+	ld [hl], $00
+	inc hl
+	ld [hl], $00
+	inc hl
+	ld [hl], $00
+	inc hl
+	ld [hl], $00
+	ld a, $01
+	ld [wcd40], a
+	ld [$CD4A], a
+	ld a, $88
+	ld [wcd45], a
+	jp Func_5d_475f
+RhythmState_Jumptable:
+	dr $17479c, $1747a6
+Func_5d_47a6:
+	jp Func_5d_475f
+	ret
+
+Func_5d_47aa:
+	ld hl, $0001
+	add hl, bc
+	dec [hl]
+	ld a, [hl]
+	cp $F0
+	jp nz, Func_5d_475f
+	jp Func_5d_477d
+
+Func_5d_47b8:
+	ld hl, $0001
+	add hl, bc
+	dec [hl]
+	dec [hl]
+	ld a, [hl]
+	cp $F0
+	jp nz, Func_5d_475f
+	jp Func_5d_477d
+
+Func_5d_47c7:
+	ld hl, $0001
+	add hl, bc
+	ld a, [hl]
+	sub $04
+	ld [hl], a
+	cp $F0
+	jp nz, Func_5d_475f
+	jp Func_5d_477d
+
+Func_5d_47d7:
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	cp $07
+	jr c, .asm_47e2
+	jr nc, .asm_47e7
+.asm_47e2
+	ld [hl], $07
+	jp Func_5d_475f
+.asm_47e7
+	inc [hl]
+	ld a, [hl]
+	cp $0A
+	jp c, Func_5d_475f
+	ld hl, $0000
+	add hl, bc
+	ld [hl], $00
+	inc hl
+	ld [hl], $00
+	inc hl
+	ld [hl], $00
+	inc hl
+	ld [hl], $00
+	jp Func_5d_475f
+
+Func_5d_4800:
+	ld a, [wdcf6]
+	and a
+	jr z, .asm_480b
+	dec a
+	ld [wdcf6], a
+	ret
+.asm_480b
+	ld bc, wdd50
+.asm_480e
+	ld hl, $0000
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .asm_4822
+	ld hl, $0004
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $5F
+	jr c, .asm_480e
+	ret
+.asm_4822
+	push hl
+	pop bc
+.asm_4824
+	ld de, NoteSpawnTable
+	ld a, [wdcfc]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr z, .asm_4858
+	push af
+	inc hl
+	ld a, [hl]
+	ld [wdce8], a
+	inc hl
+	inc hl
+	ld a, [hl]
+	ld [wdcf6], a
+	ld a, $18
+	ld [bc], a
+	inc bc
+	ld a, $B8
+	ld [bc], a
+	inc bc
+	pop af
+	ld [bc], a
+	inc bc
+	ld a, [wdce8]
+	ld [bc], a
+	ld a, [wdcfc]
+	inc a
+	ld [wdcfc], a
+	ret
+.asm_4858
+	xor a
+	ld [wdcfc], a
+	jp .asm_4824
+NoteSpawnTable:
+	dr $17485f, $1748a8
+Func_5d_48a8:
+	ld hl, wc000
+	ld bc, $0028
+	ld de, $0004
+.asm_48b1
+	ld a, $A0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_48b1
+	xor a
+	ld [wd1fb], a
+	call Func_5d_4951
+	call .asm_48c3
+	ret
+.asm_48c3
+	ld hl, SpriteAnim_Pointers
+	ld de, wcd42
+	ld a, [de]
+	ld c, a
+	inc de
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	and a
+	ret z
+	add a
+	add l
+	ld l, a
+	ld a, h
+	adc $00
+	ld h, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $C0
+.asm_48e2
+	ld a, [hli]
+	cp $FF
+	jr z, .asm_48f6
+	add c
+	ld [de], a
+	inc de
+	ld a, [hli]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	jr .asm_48e2
+.asm_48f6
+	ld a, e
+	ld [wd1fb], a
+	ret
+SpriteAnim_Pointers:
+	dr $1748fb, $174917
+SpriteFrame_Empty:
+	dr $174917, $174930
+SpriteFrame_Title:
+	dr $174930, $174951
+Func_5d_4951:
+	ld bc, wdd50
+.asm_4954
+	ld hl, $0000
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr nz, .asm_4968
+.asm_495c
+	ld hl, $0004
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $5F
+	jr c, .asm_4954
+	ret
+.asm_4968
+	ld hl, $0000
+	add hl, bc
+	ld a, [hl]
+	ld [wdcf7], a
+	ld hl, $0001
+	add hl, bc
+	ld a, [hl]
+	ld [wdcf8], a
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	ld de, SpriteOAM_Pointers
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wd1fb]
+	ld e, a
+	ld d, $C0
+.asm_498e
+	ld a, [hli]
+	cp $FF
+	jr z, .asm_49ae
+	push bc
+	ld b, a
+	ld a, [wdcf7]
+	add b
+	pop bc
+	ld [de], a
+	inc de
+	ld a, [hli]
+	push bc
+	ld b, a
+	ld a, [wdcf8]
+	add b
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	pop bc
+	jr .asm_498e
+.asm_49ae
+	ld a, e
+	ld [wd1fb], a
+	jp .asm_495c
+SpriteOAM_Pointers:
+	dr $1749b5, $1749c9
+SpriteFrames_49C9:
+	dr $1749c9, $174a1a
+Func_5d_4a1a:
+	ldh a, [hJoypadDown]
+	and a
+	ret z
+	ld a, $01
+	ld [wdcf5], a
+	ret
+
+Func_5d_4a24:
+	ld hl, RhythmBGPalette
+	call CopyBackgroundPalettes
+	ld hl, RhythmBGPalette
+	ld de, wPaletteBuffer
+	ld bc, $0040
+	call CopyBytes3
+	ret
+
+Func_5d_4a37:
+	ld hl, BlackPalette
+	call CopyBackgroundPalettes
+	ld hl, BlackPalette
+	ld de, wPaletteBuffer
+	ld bc, $0040
+	call CopyBytes3
+	ret
+
+Func_5d_4a4a:
+	call DelayFrame
+	dec c
+	jr nz, Func_5d_4a4a
+	ret
+
+Func_5d_4a51:
+	ld hl, wVisibleObjects
+	ld bc, $0100
+.asm_4a57
+	xor a
+	ld [hli], a
+	dec bc
+	ld a, c
+	or b
+	jr nz, .asm_4a57
+	ret
+
+Func_5d_4a5f:
+	ld hl, wdd50
+	ld bc, $0010
+.asm_4a65
+	ld [hl], $00
+	inc hl
+	dec c
+	ld a, c
+	or b
+	jr nz, .asm_4a65
+	ret
+
+Func_5d_4a6e:
+	ld hl, wc000
+	ld bc, $0028
+	ld de, $0004
+.asm_4a77
+	ld a, $A0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_4a77
+	ret
+BlackPalette:
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+RhythmBGPalette:
+	RGB 31, 31, 31
+	RGB 27, 25, 18
+	RGB 18, 15, 10
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 0, 23, 29
+	RGB 0, 9, 26
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 21, 0
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 22, 15
+	RGB 0, 12, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 30, 16, 28
+	RGB 19, 0, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+unk_5d_4AFF_pad:
+	dr $174aff, $174b07
+RhythmOBJPalette:
+	RGB 21, 21, 21
+	RGB 16, 0, 0
+	RGB 31, 25, 0
+	RGB 31, 31, 31
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 30, 29
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 20, 17, 31
+	RGB 30, 30, 30
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+unk_5d_4B47_pad:
+	dr $174b47, $174b4f
+RhythmScreen1Tilemap:
+	dr $174b4f, $174cb7
+RhythmScreen1Attrmap:
+	dr $174cb7, $174e1f
+RhythmScreen2Tilemap:
+	dr $174e1f, $174f87
+RhythmScreen2Attrmap:
+	dr $174f87, $1750ef
+RhythmScreen1GFX:
+	dr $1750ef, $1758ef
+RhythmScreen1GFX2:
+	dr $1758ef, $175e6f
+RhythmScreen2GFX:
+	dr $175e6f, $17666f
+RhythmScreen2GFX2:
+	dr $17666f, $1768ff
+RhythmSharedGFX:
+	dr $1768ff, $176c5f
+AnimFrame_Pointers:
+	dr $176c5f, $176c7b
+RhythmAnimFrames:
+	dr $176c7b, $17797b
+RhythmTileChunks:
+	dr $17797b, $1779bb
+unk_5d_79BB_pad:
+	dr $1779bb, $1779c0
 
 

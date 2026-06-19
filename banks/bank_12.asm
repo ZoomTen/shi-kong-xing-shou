@@ -463,7 +463,8 @@ Script_012_43a1:
 	scr_end
 
 unk_012_446e:
-	dr $4846e, $4847a
+	object_event $30,  1,  8, 0, $00, $00, $00, $00, Script_012_44cc
+	objects_end
 
 unk_012_447a:
 	dr $4847a, $48486
@@ -472,7 +473,8 @@ unk_012_4486:
 	dr $48486, $48492
 
 unk_012_4492:
-	dr $48492, $4849e
+	object_event $48,  5,  1, 0, $00, $00, $00, $03, Script_012_44cc
+	objects_end
 
 G2_16_ObjectEvents3:
 	object_event $30,  7,  3, wEventFlags + 3, $06, $00, $00, $00, Script_012_44cc

@@ -773,14 +773,14 @@ Func_0b46::
 	rst Bankswitch
 	ld a, [wd088]
 	ld l, a
-	ld a, [wd088 + 1]
+	ld a, [wd089]
 	ld h, a
 	ld a, [hli]
 	ld [wd08a], a
 	ld a, l
 	ld [wd088], a
 	ld a, h
-	ld [wd088 + 1], a
+	ld [wd089], a
 	pop af
 	rst Bankswitch
 	ret

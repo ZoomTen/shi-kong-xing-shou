@@ -46,7 +46,7 @@ Func_004_4045::
 	add hl, de
 	dec c
 	jr nz, .asm_404e
-	ld hl, $47ab
+	ld hl, Pointers_004_47ab
 	ld de, wcde0
 	ld a, [de]
 	inc de
@@ -101,7 +101,7 @@ Func_004_4088:
 	ld a, [hli]
 	and a
 	jp z, .asm_40bf
-	ld de, $47ab
+	ld de, Pointers_004_47ab
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -187,7 +187,7 @@ Func_004_40cb:
 	ld a, [hl]
 	ld [wd9ff], a
 	pop af
-	ld de, $47ab
+	ld de, Pointers_004_47ab
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -261,7 +261,7 @@ Func_004_40cb:
 	jp .asm_40ce
 
 Func_004_4170:
-	ld hl, $47ab
+	ld hl, Pointers_004_47ab
 	ld de, wPlayerObject
 	ld a, [de]
 	inc de
@@ -350,7 +350,7 @@ Func_004_4170:
 	ret
 
 Func_004_41e6:
-	ld hl, $47ab
+	ld hl, Pointers_004_47ab
 	ld de, wFollowerObject
 	ld a, [de]
 	inc de
@@ -455,7 +455,7 @@ Func_004_426d:
 	ldh a, [$ff91]
 	cp $11
 	ret nz
-	ld hl, $47ab
+	ld hl, Pointers_004_47ab
 	ld de, wcbd0
 	ld a, [de]
 	inc de
@@ -581,7 +581,9 @@ Func_004_4309:
 	ret
 
 unk_004_4337::
-	dr $10337, $108e7
+	dr $10337, $107ab
+Pointers_004_47ab:
+	dr $107ab, $108e7
 
 Sprites00to13GFXPointers::
 	dw BallotGFX_Pointers

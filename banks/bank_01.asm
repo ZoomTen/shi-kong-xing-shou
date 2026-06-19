@@ -387,7 +387,42 @@ Hideout_AttrMap:
 	dr $45a9, $460a
 
 Hideout_Palettes:
-	dr $460a, $4652
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 0, 24, 31
+	RGB 0, 10, 24
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 11, 20, 22
+	RGB 2, 10, 12
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Hideout_Collision:
 	dr $4652, $4681
@@ -427,7 +462,42 @@ PowerPlant_AttrMap:
 	dr $4955, $49a6
 
 PowerPlant_Palettes:
-	dr $49a6, $49ee
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 0, 24, 31
+	RGB 0, 10, 24
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 PowerPlant_Collision:
 	dr $49ee, $4a26
@@ -446,7 +516,42 @@ PowerPlantOutside_AttrMap:
 	dr $4be7, $4c88
 
 PowerPlantOutside_Palettes:
-	dr $4c88, $4cd0
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 PowerPlantOutside_Collision:
 	dr $4cd0, $4cff
@@ -465,7 +570,42 @@ Junkyard_AttrMap:
 	dr $4e12, $4e83
 
 Junkyard_Palettes:
-	dr $4e83, $4ecb
+	RGB 31, 30, 29
+	RGB 21, 26, 26
+	RGB 9, 13, 13
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 20, 18
+	RGB 20, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 30
+	RGB 19, 23, 20
+	RGB 6, 13, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Junkyard_Collision:
 	dr $4ecb, $4eeb
@@ -483,7 +623,42 @@ AttrMap_001_4fc2:
 	dr $4fc2, $5013
 
 Palettes_001_5013:
-	dr $5013, $505b
+	RGB 31, 31, 31
+	RGB 0, 25, 31
+	RGB 0, 9, 25
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 24, 20, 31
+	RGB 11, 5, 22
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_505b:
 	dr $505b, $5076
@@ -525,7 +700,42 @@ AttrMap_001_5361:
 	dr $5361, $5402
 
 Palettes_001_5402:
-	dr $5402, $544a
+	RGB 31, 31, 31
+	RGB 0, 25, 31
+	RGB 0, 9, 25
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 24, 20, 31
+	RGB 11, 5, 22
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_544a:
 	dr $544a, $5484
@@ -544,7 +754,42 @@ CrystalVillage_AttrMap:
 	dr $5785, $5826
 
 CrystalVillage_Palettes:
-	dr $5826, $586e
+	RGB 31, 30, 30
+	RGB 24, 20, 31
+	RGB 11, 5, 22
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 18, 28
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 17, 22, 22
+	RGB 5, 10, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 CrystalVillage_Collision:
 	dr $586e, $58a7
@@ -562,7 +807,42 @@ AttrMap_001_5976:
 	dr $5976, $59c7
 
 Palettes_001_59c7:
-	dr $59c7, $5a0f
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 19, 23, 25
+	RGB 0, 8, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_5a0f:
 	dr $5a0f, $5a28
@@ -580,7 +860,42 @@ AttrMap_001_5b13:
 	dr $5b13, $5b55
 
 Palettes_001_5b55:
-	dr $5b55, $5b9d
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 19, 23, 25
+	RGB 0, 8, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_5b9d:
 	dr $5b9d, $5bb9
@@ -628,7 +943,42 @@ AttrMap_001_5efb:
 	dr $5efb, $5f8c
 
 Palettes_001_5f8c:
-	dr $5f8c, $5fd4
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 19, 23, 25
+	RGB 0, 8, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_5fd4:
 	dr $5fd4, $600d
@@ -647,7 +997,42 @@ TechCity_AttrMap:
 	dr $636a, $63eb
 
 TechCity_Palettes:
-	dr $63eb, $6433
+	RGB 31, 30, 29
+	RGB 21, 26, 26
+	RGB 9, 13, 13
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 18, 28
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 TechCity_Collision:
 	dr $6433, $6462
@@ -666,7 +1051,42 @@ BellSchoolSouthClassroom_AttrMap:
 	dr $65b7, $6648
 
 BellSchoolSouthClassroom_Palettes:
-	dr $6648, $6690
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellSchoolSouthClassroom_Collision:
 	dr $6690, $66c2
@@ -685,7 +1105,42 @@ BellObservatory1_AttrMap:
 	dr $681f, $68c0
 
 BellObservatory1_Palettes:
-	dr $68c0, $6908
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellObservatory1_Collision:
 	dr $6908, $693c
@@ -704,7 +1159,42 @@ BellSchool1_AttrMap:
 	dr $6a4d, $6a7e
 
 BellSchool1_Palettes:
-	dr $6a7e, $6ac6
+	RGB 31, 30, 28
+	RGB 27, 25, 18
+	RGB 18, 15, 10
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 14, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 20, 24, 27
+	RGB 12, 16, 21
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellSchool1_Collision:
 	dr $6ac6, $6ade
@@ -723,7 +1213,42 @@ BellHealingCenter1_AttrMap:
 	dr $6bb9, $6c0a
 
 BellHealingCenter1_Palettes:
-	dr $6c0a, $6c52
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellHealingCenter1_Collision:
 	dr $6c52, $6c6b
@@ -772,7 +1297,42 @@ BallotsHouse1_Palettes:
 HayatosHouse1_Palettes:
 CarpetWomansHouse1_Palettes:
 FangfangsHouse1_Palettes:
-	dr $6f58, $6fa0
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BallotsHouse1_Collision:
 HayatosHouse1_Collision:
@@ -794,7 +1354,42 @@ BellObservatoryOutside1_AttrMap:
 	dr $715e, $71ff
 
 BellObservatoryOutside1_Palettes:
-	dr $71ff, $7247
+	RGB 31, 30, 26
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellObservatoryOutside1_Collision:
 	dr $7247, $726f
@@ -813,7 +1408,42 @@ BellSchoolOutside1_AttrMap:
 	dr $7444, $74e5
 
 BellSchoolOutside1_Palettes:
-	dr $74e5, $752d
+	RGB 31, 30, 26
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellSchoolOutside1_Collision:
 	dr $752d, $756c
@@ -853,7 +1483,42 @@ Blocks_001_7957::
 AttrMap_001_795b::
 	dr $795b, $795e
 Palettes_001_795e::
-	dr $795e, $79a6
+	RGB 31, 30, 26
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 16, 28, 6
+	RGB 0, 18, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 27, 0
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Collision_001_79a6::
 	dr $79a6, $79a8
 Tileset_001_79a8::

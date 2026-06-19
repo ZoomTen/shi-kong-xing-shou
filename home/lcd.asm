@@ -8,7 +8,7 @@ LCD::
 ; run LCD routine pointer
 	ld a, [wd9e0]
 	ld l, a
-	ld a, [wd9e0 + 1]
+	ld a, [wd9e1]
 	ld h, a
 	or l
 	and a

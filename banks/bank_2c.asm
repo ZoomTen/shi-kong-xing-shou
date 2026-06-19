@@ -67,7 +67,7 @@ AnimateBattleTransition:
 	ld a, [wd0ba]
 	and $1f
 	ld [wdcdd], a
-	ld a, [wd0ba + 1]
+	ld a, [wd0bb]
 	ld b, a
 	ld a, [wd0ba]
 	srl b

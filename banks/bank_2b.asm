@@ -40,7 +40,7 @@ Func_02b_402b:
 	ld [wd8fe], a
 	ld a, [wd981]
 	ld e, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld d, a
 	inc de
 	ld hl, $9908
@@ -48,7 +48,7 @@ Func_02b_402b:
 	call Func_113f
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld de, 3
 	add hl, de
@@ -67,7 +67,7 @@ Func_02b_402b:
 	ld [wd9d7], a
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	call Func_114c
 	ld de, $ffcb
@@ -103,7 +103,7 @@ Func_02b_409e:
 	call Func_02b_5b4f
 	ld a, [wd984]
 	ld c, a
-	ld a, [wd984 + 1]
+	ld a, [wd985]
 	ld b, a
 	ld hl, 2
 	add hl, bc
@@ -142,7 +142,7 @@ Func_02b_409e:
 	jp asm_02b_5aa5
 	ld a, [wd984]
 	ld c, a
-	ld a, [wd984 + 1]
+	ld a, [wd985]
 	ld b, a
 	ld hl, $13
 	add hl, bc
@@ -164,7 +164,7 @@ Func_02b_409e:
 	call Func_02b_5b4f
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	ld hl, 2
 	add hl, bc
@@ -201,7 +201,7 @@ Func_02b_409e:
 	ret
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	ld hl, 2
 	add hl, bc
@@ -238,7 +238,7 @@ Func_02b_419d:
 	call Func_02b_5ca2
 	ld a, [wd984]
 	ld c, a
-	ld a, [wd984 + 1]
+	ld a, [wd985]
 	ld b, a
 	ld hl, 2
 	add hl, bc
@@ -279,7 +279,7 @@ Func_02b_419d:
 	call Func_02b_5ca2
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	ld hl, 2
 	add hl, bc
@@ -379,7 +379,7 @@ Func_02b_4248:
 Func_02b_4296:
 	ld a, [wd984]
 	ld c, a
-	ld a, [wd984 + 1]
+	ld a, [wd985]
 	ld b, a
 	ld hl, 3
 	add hl, bc
@@ -503,7 +503,7 @@ Func_02b_4326:
 Func_02b_4374:
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	ld hl, 3
 	add hl, bc
@@ -777,14 +777,14 @@ AddExpToTotal:
 AddMonExp:
 	ld a, [wActiveMonPtr]
 	ld l, a
-	ld a, [wActiveMonPtr + 1]
+	ld a, [wd982]
 	ld h, a
 	ld bc, 4
 	add hl, bc
 	ld a, [wExpGained]
 	add [hl]
 	ld [hli], a
-	ld a, [wExpGained + 1]
+	ld a, [wd9cb]
 	adc [hl]
 	ld [hli], a
 	ld a, 0
@@ -4590,7 +4590,7 @@ BattleMoves_Init:
 	call PlaceAttrmap
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld bc, 7
 	add hl, bc
@@ -4624,7 +4624,7 @@ BattleMoves_Init:
 	ld [wd8fe], a
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld bc, 8
 	add hl, bc
@@ -4681,7 +4681,7 @@ BattleMoves_LoadList:
 	ld [wMenuTextEndX], a
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	ld hl, 7
 	add hl, bc
@@ -4771,7 +4771,7 @@ BattleMoves_HandleInput:
 	ld [wcde0], a
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld bc, 7
 	add hl, bc
@@ -4848,7 +4848,7 @@ BattleMoves_HandleInput:
 	ld [wBattleIntroJumptableIndex], a
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld bc, 7
 	add hl, bc
@@ -4901,7 +4901,7 @@ BattleMoves_GetMoveID:
 	ld bc, 7
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	add hl, bc
 	ld a, [wSelectedOption]
@@ -5000,7 +5000,7 @@ BattleMenu_Jump_1:
 BattleMenu_Jump_2:
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld bc, $13
 	add hl, bc
@@ -5235,7 +5235,7 @@ BattleMenu_HandleInput:
 .attack:
 	ld a, [wd981]
 	ld c, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld b, a
 	ld hl, $13
 	add hl, bc
@@ -5383,11 +5383,11 @@ BattleMenu_Jump_4:
 	ldh a, [hSCX]
 	ld [wd0bc], a
 	ldh a, [hSCXHigh]
-	ld [wd0bc + 1], a
+	ld [wd0bd], a
 	ldh a, [hSCY]
-	ld [wd0bc + 2], a
+	ld [wd0be], a
 	ldh a, [hSCYHigh]
-	ld [wd0bc + 3], a
+	ld [wd0bf], a
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
@@ -5398,7 +5398,7 @@ BattleMenu_Jump_4:
 	ld [hFFC6], a
 	call ClearBGMap0
 	ld hl, Battle_BGPals
-	ld de, wca88 + $28
+	ld de, wPaletteBuffer
 	ld bc, $30
 	call CopyBytes3
 	ld hl, Battle_OBPals
@@ -5416,11 +5416,11 @@ BattleMenu_Jump_4:
 	call CopyBytesVRAM
 	xor a
 	ld [wBattleIntroJumptableIndex], a
-	ld hl, wca88 + $28
+	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
 	call CopyObjectPalettes
-	ld a, [wdcad + 2]
+	ld a, [wdcaf]
 	and a
 	ret z
 	ld a, 4
@@ -5511,7 +5511,7 @@ BattleIntro_Jump_1:
 	ld [wd9f8], a
 	ld [wd08a], a
 	ld [wd9cc], a
-	ld [wd9cc + 1], a
+	ld [wd9cd], a
 	ld [wd9ca], a
 	ld [wd9cb], a
 	ld [wd9f6], a
@@ -5562,7 +5562,7 @@ BattleIntro_Jump_2:
 	call PlayBattleMusic
 	ld a, [wd981]
 	ld l, a
-	ld a, [wd981 + 1]
+	ld a, [wd982]
 	ld h, a
 	ld a, [hl]
 	ld [wd9e5], a
@@ -5995,7 +5995,7 @@ Func_02b_7506:
 	inc hl
 	ld [hl], 0
 	inc hl
-	ld hl, wcde3 + $d
+	ld hl, wcdf0
 	ld [hl], 0
 	inc hl
 	ld [hl], 0

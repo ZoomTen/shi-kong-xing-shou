@@ -15,7 +15,7 @@ G4_2A_ObjectEvents:
 G4_2B_ObjectEvents:
 G4_53_ObjectEvents:
 G4_54_ObjectEvents:
-	dr $1640ca, $1640cb
+	objects_end
 
 G4_25_ObjectEvents:
 	dr $1640cb, $164119

@@ -1,5 +1,28 @@
 unk_00c_4000:
-	dr $30000, $3002b
+	ld a, [wSelectedOption]
+	cp $03
+	jr nz, .asm_4013
+	ld hl, wdd18
+	ld a, [hl]
+	cp $80
+	jr nz, .asm_4013
+	ld a, $08
+	jr .asm_4016
+.asm_4013
+	ld a, [wSelectedOption]
+.asm_4016
+	ld de, Pointers_00c_63dc
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld bc, $0100
+	ld de, vTiles0
+	call Func_135a
+	ret
 Func_00c_402b:
 	ld a, [wSelectedOption]
 	cp $03
@@ -13,7 +36,7 @@ Func_00c_402b:
 .asm_403e
 	ld a, [wSelectedOption]
 .asm_4041
-	ld de, $5f4a
+	ld de, Pointers_00c_5f4a
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -149,7 +172,11 @@ Group06_Signposts:
 INCLUDE "data/text/signposts_6.asm"
 
 unk_00c_432a::
-	dr $3032a, $32cee
+	dr $3032a, $31f4a
+Pointers_00c_5f4a:
+	dr $31f4a, $323dc
+Pointers_00c_63dc:
+	dr $323dc, $32cee
 
 _SRAMTest::
 ; Write pattern of decreasing bytes into SRAM and verify that they were written correctly
@@ -252,10 +279,52 @@ REPT 8
 ENDR
 
 unk_00c_6ea5:
-	dr $32ea5, $32ebe
+	push bc
+	push hl
+	ld a, [de]
+	ld l, a
+	ld a, b
+	and a
+	jr z, .asm_6eb2
+.asm_6ead
+	rrc l
+	dec a
+	jr nz, .asm_6ead
+.asm_6eb2
+	bit 0, l
+	jr z, .asm_6eba
+	ld a, $01
+	jr .asm_6ebb
+.asm_6eba
+	xor a
+.asm_6ebb
+	pop hl
+	pop bc
+	ret
 
 unk_00c_6ebe:
-	dr $32ebe, $32ed7
+	ld a, [de]
+	ld l, a
+	ld a, b
+	and a
+	jr z, .asm_6ec9
+.asm_6ec4
+	rrc l
+	dec a
+	jr nz, .asm_6ec4
+.asm_6ec9
+	set 0, l
+	ld a, b
+	and a
+	jr z, .asm_6ed4
+.asm_6ecf
+	rlc l
+	dec a
+	jr nz, .asm_6ecf
+.asm_6ed4
+	ld a, l
+	ld [de], a
+	ret
 
 Func_00c_6ed7::
 	ld de, unk_00c_6f22
