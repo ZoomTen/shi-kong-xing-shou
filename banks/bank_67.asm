@@ -520,7 +520,7 @@ Func_67_5371:
 	call .asm_5389
 	ret
 .asm_5389
-	ld hl, $414A
+	ld hl, BeachCutsceneSpriteFrames
 	ld de, wcd42
 	ld a, [de]
 	ld c, a

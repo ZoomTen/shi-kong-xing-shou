@@ -1887,5 +1887,8 @@ BattleTransition_DiagonalCheckerboard:
 	db -1
 
 unk_02d_6d77:
-    dr $b2d77, $b3e8a
+    dr $b2d77, $b2e2c
+; TODO disassemble
+unk_02d_6e2c:
+    dr $b2e2c, $b3e8a
 

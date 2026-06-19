@@ -561,8 +561,8 @@ HandleBattleEnd:
 	dw BattleEnd_Jump_2
 
 BattleEnd_Jump_1:
-	ld de, $55f6
-	farcall unk_02e_4000
+	ld de, unk_023_55f6
+	farcall Func_02e_4000
 	call Func_02b_4b5b
 	call Func_02b_4b7a
 	ld a, [wd9b2]
@@ -577,7 +577,7 @@ Func_02b_43f0:
 	and a
 	jr z, Func_02b_4409
 	ld de, EndBattleTurn
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	ld a, 2
 	ld [hBattleJumptableIndex], a
 	xor a
@@ -2400,7 +2400,7 @@ BattleTurns_Jump_8:
 	ld e, a
 	ld a, [wd089]
 	ld d, a
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	ld a, 4
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -2945,8 +2945,8 @@ Func_02b_5628:
 	xor a
 	ld [wd989], a
 	ld [wd98b], a
-	ld de, $5809
-	farcall unk_02e_4000
+	ld de, unk_023_5809
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, 1
 	ld [wd9b5], a
@@ -4395,8 +4395,8 @@ Func_02b_6040:
 	xor a
 	ld [wd989], a
 	ld [wd98b], a
-	ld de, $57ae
-	farcall unk_02e_4000
+	ld de, unk_023_57ae
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, 1
 	ld [wd9b2], a
@@ -5021,8 +5021,8 @@ BattleMenu_Jump_2:
 	ld [wd988], a
 	ld [wd9f8], a
 	ld [wd9ea], a
-	ld de, $55cc
-	farcall unk_02e_4000
+	ld de, unk_023_55cc
+	farcall Func_02e_4000
 	xor a
 	ld [wd9ea], a
 	ret
@@ -5733,6 +5733,8 @@ BattleIntro_Jump_4:
 	call PlaceTilemap
 	call Func_02b_6ae6
 	ret
+
+Func_02b_6abc:
 	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406

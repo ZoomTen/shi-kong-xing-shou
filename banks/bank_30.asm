@@ -1304,7 +1304,7 @@ Func_030_4aa5:
 	ld [wd989], a
 	ld [wd98b], a
 	ld de, unk_030_565c.image_57ae + 51
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
 	ld [wd98b], a
@@ -1386,7 +1386,7 @@ Func_030_4b4d:
 	ld [wd989], a
 	ld [wd98b], a
 	ld de, unk_030_565c.image_57f0 + 4
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
 	ld [wd98b], a
@@ -1574,7 +1574,7 @@ Func_030_4cca:
 	ld [wd989], a
 	ld [wd98b], a
 	ld de, unk_030_565c.image_57ae + 35
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
 	ld [wd98b], a
@@ -1675,7 +1675,7 @@ Func_030_4d64:
 	ld [wd989], a
 	ld [wd98b], a
 	ld de, unk_030_565c.image_57f0 + 31
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $03
 	ld [wd98b], a
@@ -1905,7 +1905,7 @@ Func_030_4f5f:
 	ld [wd989], a
 	ld [wd98b], a
 	ld de, unk_030_565c.image_57f0 + 31
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
 	ld [wd98b], a
@@ -2391,7 +2391,7 @@ Func_030_52c3:
 	ld [wd989], a
 	ld [wd98b], a
 	ld de, unk_030_565c.image_57f0 + 31
-	farcall unk_02e_4000
+	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $03
 	ld [wd98b], a

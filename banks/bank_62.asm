@@ -284,9 +284,7 @@ Func_062_443e:
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	call DelayFrame
-	ld hl, $57A0
-	ld b, $25
-	rst FarCall
+	farcall Func_025_57a0
 	ld de, wPaletteBuffer
 	ld hl, wcb30
 	ld bc, $0080

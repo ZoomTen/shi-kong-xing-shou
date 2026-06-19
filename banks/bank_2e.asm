@@ -1,5 +1,9 @@
-unk_02e_4000:
-	dr $b8000, $b800a
+Func_02e_4000:
+	ld a, e
+	ld [wd088], a
+	ld a, d
+	ld [wd089], a
+	jr Func_02e_400a.asm_403c
 
 Func_02e_400a:
 	ld a, [wd986]
@@ -8,9 +12,7 @@ Func_02e_400a:
 	ld a, [wd9ea]
 	and a
 	jr z, .asm_401e
-	ld hl, $55FA
-	ld b, $23
-	rst $30 ; FarCall 23:55FA (unresolved)
+	farcall unk_023_55fa
 	jr .asm_403c
 .asm_401e
 	ld de, wd9e2
@@ -23,9 +25,7 @@ Func_02e_400a:
 	ld d, a
 	farcall Func_01e_42e4
 	ld a, [wd988]
-	ld hl, $4000
-	ld b, $23
-	rst $30 ; FarCall 23:4000 (unresolved)
+	farcall unk_023_4000
 .asm_403c
 	call Func_02e_6e42
 	xor a
@@ -40,12 +40,8 @@ Func_02e_400a:
 	and a
 	jr nz, .asm_4068
 	call .asm_406d
-	ld hl, $5BEB
-	ld b, $30
-	rst $30 ; FarCall 30:5BEB (unresolved)
-	ld hl, $5BCC
-	ld b, $30
-	rst $30 ; FarCall 30:5BCC (unresolved)
+	farcall Func_030_5beb
+	farcall Func_030_5bcc
 	jr .asm_4043
 .asm_4068
 	xor a
@@ -69,9 +65,7 @@ Func_02e_411e:
 	ret
 
 Func_02e_4122:
-	ld hl, $4008
-	ld b, $2F
-	rst $30 ; FarCall 2F:4008 (unresolved)
+	farcall unk_02f_4008
 	xor a
 	ld [wd989], a
 	ld [wd98e], a
@@ -2079,9 +2073,7 @@ Func_02e_4f20:
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	farcall Func_02b_402b
-	ld hl, $6ABC
-	ld b, $2B
-	rst $30 ; FarCall 2B:6ABC (unresolved)
+	farcall Func_02b_6abc
 	xor a
 	ld [wd989], a
 	ret
@@ -3393,41 +3385,29 @@ Func_02e_58ea:
 	call Func_02e_411e
 	ld a, [wd989]
 	ld [wd990], a
-	ld hl, $4438
-	ld b, $33
-	rst $30 ; FarCall 33:4438 (unresolved)
+	farcall unk_033_4438
 	xor a
 	ld [wd989], a
 	ret
 
 Func_02e_5907:
-	ld hl, $7194
-	ld b, $30
-	rst $30 ; FarCall 30:7194 (unresolved)
+	farcall Func_030_7194
 	ret
 
 Func_02e_590e:
-	ld hl, $72D7
-	ld b, $30
-	rst $30 ; FarCall 30:72D7 (unresolved)
+	farcall Func_030_72d7
 	ret
 
 Func_02e_5915:
-	ld hl, $75C7
-	ld b, $30
-	rst $30 ; FarCall 30:75C7 (unresolved)
+	farcall Func_030_75c7
 	ret
 
 Func_02e_591c:
-	ld hl, $7610
-	ld b, $30
-	rst $30 ; FarCall 30:7610 (unresolved)
+	farcall Func_030_7610
 	ret
 
 Func_02e_5923:
-	ld hl, $766A
-	ld b, $30
-	rst $30 ; FarCall 30:766A (unresolved)
+	farcall Func_030_766a
 	ret
 
 Func_02e_592a:
@@ -4226,9 +4206,7 @@ Func_02e_5e8b:
 	call Func_02e_411e
 	ld a, [wd989]
 	ld d, a
-	ld hl, $5ED8
-	ld b, $4D
-	rst $30 ; FarCall 4D:5ED8 (unresolved)
+	farcall Func_4d_5ed8
 	xor a
 	ld [wd989], a
 	ret
@@ -4240,16 +4218,12 @@ Func_02e_5ea4:
 	call Func_02e_411e
 	ld a, [wd989]
 	ld [wd990], a
-	ld hl, $4000
-	ld b, $4D
-	rst FarCall
+	farcall Func_04d_4000
 	xor a
 	ld [wd989], a
 	ret
 Func_02e_5ec1:
-	ld hl, $6ACD
-	ld b, $1E
-	rst FarCall
+	farcall unk_01e_6acd
 	ld a, d
 	and a
 	jr z, .asm_5f00
@@ -4267,24 +4241,18 @@ Func_02e_5ec1:
 	cp $14
 	jr nc, .asm_5eef
 .asm_5ee4
-	ld hl, $56DE
-	ld b, $23
-	rst FarCall
+	farcall unk_023_56de
 	xor a
 	ld [wd989], a
 	ret
 .asm_5eef
 	ld a, $5A
 	ld [wd3ff], a
-	ld hl, $4000
-	ld b, $2D
-	rst FarCall
+	farcall Func_02d_4000
 	call .asm_5f0b
 	call .asm_5f0b
 .asm_5f00
-	ld hl, $56F3
-	ld b, $23
-	rst FarCall
+	farcall unk_023_56f3
 	xor a
 	ld [wd989], a
 	ret
@@ -4327,9 +4295,7 @@ Func_02e_5f51:
 	call Func_02e_411e
 	ld a, [wd989]
 	ld [wd988], a
-	ld hl, $4008
-	ld b, $2F
-	rst FarCall
+	farcall unk_02f_4008
 	xor a
 	ld [wd989], a
 	ld [wd98e], a
@@ -4643,9 +4609,7 @@ Func_02e_617f:
 	ld [wd989], a
 	ret
 .asm_6193
-	ld hl, $6E2C
-	ld b, $2C
-	rst FarCall
+	farcall unk_02d_6e2c
 	ret
 Func_02e_619a:
 	ld a, [wd98b]
@@ -4658,9 +4622,7 @@ Func_02e_619a:
 	ld [wd989], a
 	ret
 .asm_61ae
-	ld hl, $6D77
-	ld b, $2C
-	rst FarCall
+	farcall unk_02d_6d77
 	ret
 Func_02e_61b5:
 	ld a, [wd98b]

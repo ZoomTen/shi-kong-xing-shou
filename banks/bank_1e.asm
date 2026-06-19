@@ -2315,7 +2315,10 @@ unk_01e_614f:
 	dr $7a14f, $7a567
 
 Pointers_01e_6567:
-	dr $7a567, $7ade3
+	dr $7a567, $7aacd
+; TODO disassemble
+unk_01e_6acd:
+	dr $7aacd, $7ade3
 
 LoadItemNameByIndex::
 	ld a, l

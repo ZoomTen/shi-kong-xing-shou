@@ -4328,9 +4328,7 @@ Func_024_689a:
 	ld a, $12
 	ldh [$ff93], a
 	call PlaceTilemap
-	ld hl, $57a0
-	ld b, $25
-	rst $30
+	farcall Func_025_57a0
 	ld de, wPaletteBuffer
 	ld hl, wcb30
 	ld bc, $0080
@@ -4496,7 +4494,7 @@ Func_024_69d7:
 Func_024_69f3:
 	ld a, $11
 	call PlaySound
-	ld de, $6a9f
+	ld de, OptionCursorCoords
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, $00

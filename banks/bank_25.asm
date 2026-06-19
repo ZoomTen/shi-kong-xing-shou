@@ -2219,9 +2219,7 @@ Func_025_4efe:
 	ld a, [wd9d8]
 	inc a
 	ld [wd9d9], a
-	ld hl, $4c89
-	ld b, $26
-	rst $30
+	farcall Func_026_4c89
 	xor a
 	ld [wd08a], a
 	ret
@@ -3021,7 +3019,7 @@ Func_025_54d2:
 	add hl, hl
 	ld bc, $9828
 	add hl, bc
-	ld de, $5562
+	ld de, SelectionMarkerRightTiles
 	ld bc, $0102
 	ld a, 1
 	ldh [hVRAMCopyWidth], a
@@ -3048,7 +3046,7 @@ Func_025_552e:
 	add hl, hl
 	ld bc, $9822
 	add hl, bc
-	ld de, $5564
+	ld de, SelectionMarkerLeftTiles
 	ld bc, $0102
 	ld a, 1
 	ldh [hVRAMCopyWidth], a
@@ -3065,8 +3063,10 @@ Func_025_5555:
 	xor a
 	ld [wd08a], a
 	ret
+SelectionMarkerRightTiles:
 	db $2d
 	db $2e
+SelectionMarkerLeftTiles:
 	db $2b
 	db $2c
 

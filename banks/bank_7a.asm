@@ -196,7 +196,7 @@ Func_07a_4188::
 	ld [wcd5f], a
 	ld [wcd60], a
 	ld hl, $9800
-	ld de, $6057
+	ld de, Intro1_Layout
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
@@ -204,26 +204,26 @@ Func_07a_4188::
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
-	ld de, $5eef
+	ld de, Intro1_Attrmap
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
-	ld hl, $61bf
+	ld hl, Intro1_Palette
 	ld de, wPaletteBuffer
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, $61cf
+	ld hl, Intro1_GFX
 	ld de, $9000
 	ld bc, $0460
 	call CopyBytesVRAM
-	ld hl, $662f
+	ld hl, Intro1_OBPalette
 	ld de, wcaf0
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, $663f
+	ld hl, Intro1_OBGFX
 	ld de, $8000
 	ld bc, $08e0
 	call CopyBytesVRAM
@@ -272,7 +272,7 @@ Func_07a_4188::
 	ld [wcd57], a
 	ld [wcd58], a
 	ld hl, $9800
-	ld de, $7087
+	ld de, Intro2_Layout
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
@@ -280,18 +280,18 @@ Func_07a_4188::
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
-	ld de, $6f1f
+	ld de, Intro2_Attrmap
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
-	ld hl, $71ef
+	ld hl, Intro2_Palette
 	ld de, wPaletteBuffer
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, $7207
+	ld hl, Intro2_GFX
 	ld de, $9000
 	ld bc, $0800
 	call CopyBytesVRAM
@@ -742,6 +742,26 @@ unk_07a_565f:
 unk_07a_57c7:
 	dr $1e97c7, $1e97df
 unk_07a_57df:
-	dr $1e97df, $1eba40
+	dr $1e97df, $1e9eef
+Intro1_Attrmap:
+	dr $1e9eef, $1ea057
+Intro1_Layout:
+	dr $1ea057, $1ea1bf
+Intro1_Palette:
+	dr $1ea1bf, $1ea1cf
+Intro1_GFX:
+	dr $1ea1cf, $1ea62f
+Intro1_OBPalette:
+	dr $1ea62f, $1ea63f
+Intro1_OBGFX:
+	dr $1ea63f, $1eaf1f
+Intro2_Attrmap:
+	dr $1eaf1f, $1eb087
+Intro2_Layout:
+	dr $1eb087, $1eb1ef
+Intro2_Palette:
+	dr $1eb1ef, $1eb207
+Intro2_GFX:
+	dr $1eb207, $1eba40
 
 
