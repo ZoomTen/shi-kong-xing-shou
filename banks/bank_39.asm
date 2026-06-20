@@ -16,9 +16,9 @@ asm_039_479f::
 	ld a, [wd9f3]
 	cp $20
 	jr nz, .asm_47b7
-	ld a, [wdaa4 + $0c]
+	ld a, [wEventFlags + $10]
 	set 6, a
-	ld [wdaa4 + $0c], a
+	ld [wEventFlags + $10], a
 	jr .asm_47c6
 .asm_47b7
 	ld a, [wd9f3]
@@ -268,7 +268,7 @@ Func_039_497c:
 	ld [wBattleScriptState], a
 	xor a
 	ld [wBattleScriptByte], a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld [wSelectedOption], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -294,7 +294,7 @@ Func_039_497c:
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -307,7 +307,7 @@ Func_039_497c:
 	ld [wBattleScriptByte], a
 	ret
 .asm_4a52
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	and a
 	jr z, .asm_4aa5
 	ld a, [wd9f2]
@@ -321,7 +321,7 @@ Func_039_497c:
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -334,7 +334,7 @@ Func_039_497c:
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -597,7 +597,7 @@ Func_039_4cda:
 	jr nz, .asm_4d72
 	ld a, $11
 	call PlaySound
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	cp $14
 	jr nc, .asm_4d52
 	call Func_039_4deb
@@ -653,8 +653,8 @@ Func_039_4deb:
 	call Func_039_485c
 	call GetPartyMonPtr
 	push bc
-	ld hl, wdb20
-	ld a, [$DC9C]
+	ld hl, wMonBox
+	ld a, [wMonBoxCount]
 	ld de, $0013
 	and a
 	jr z, .asm_4e06
@@ -676,9 +676,9 @@ Func_039_4deb:
 	inc bc
 	ld a, [bc]
 	call .asm_4e39
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	inc a
-	ld [$DC9C], a
+	ld [wMonBoxCount], a
 	pop hl
 	ld e, $16
 	xor a
@@ -687,12 +687,12 @@ Func_039_4deb:
 	dec e
 	jr nz, .asm_4e23
 	call .asm_4e57
-	ld de, $DCA0
+	ld de, wdca0
 	ld a, [wdc9d]
 	ld l, a
 	ld h, $00
 	add hl, de
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	ld [hl], a
 	ret
 .asm_4e39
@@ -791,18 +791,18 @@ Func_039_4ec0:
 	ld [wSelectedOption], a
 	jp .asm_4f7b
 .asm_4ef4
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	and a
 	ret z
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, [wSelectedOption]
 	call Func_039_5115
 	and a
 	jr nz, .asm_4f43
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	inc a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	jr .asm_4f43
 .asm_4f0f
 	ld a, [wSelectedOption]
@@ -818,18 +818,18 @@ Func_039_4ec0:
 	ld [wSelectedOption], a
 	ret
 .asm_4f28
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	cp $0F
 	ret nc
 	inc a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, [wSelectedOption]
 	call Func_039_5115
 	and a
 	jr nz, .asm_4f43
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ret
 .asm_4f43
 	ld a, $11
@@ -981,8 +981,8 @@ Table_39_5074:
 	dr $e5074, $e5115
 Func_039_5115:
 	push af
-	ld bc, wdb20
-	ld a, [wdc9e]
+	ld bc, wMonBox
+	ld a, [wMonBoxIndex]
 	ld l, a
 	pop af
 	add l
@@ -1023,11 +1023,11 @@ Func_039_5163:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_5198
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	and a
 	ret z
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	jr .asm_51d5
 .asm_5198
 	dec a
@@ -1040,16 +1040,16 @@ Func_039_5163:
 	ld a, [wSelectedOption]
 	cp $04
 	jr nz, .asm_51c3
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	inc a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, [wSelectedOption]
 	call Func_039_5115
 	and a
 	jr nz, .asm_51d5
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ret
 .asm_51c3
 	inc a
@@ -1146,11 +1146,11 @@ Func_039_529f:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_52d4
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	and a
 	ret z
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	jr .asm_5311
 .asm_52d4
 	dec a
@@ -1163,16 +1163,16 @@ Func_039_529f:
 	ld a, [wSelectedOption]
 	cp $04
 	jr nz, .asm_52ff
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	inc a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld a, [wSelectedOption]
 	call Func_039_5115
 	and a
 	jr nz, .asm_5311
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ret
 .asm_52ff
 	inc a
@@ -1381,12 +1381,12 @@ Func_039_5490:
 	dec e
 	jr nz, .asm_54b9
 	call Func_039_54c8
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	dec a
-	ld [$DC9C], a
+	ld [wMonBoxCount], a
 	ret
 Func_039_54c8:
-	ld bc, wdb20
+	ld bc, wMonBox
 .asm_54cb
 	ld hl, $0000
 	add hl, bc
@@ -1454,18 +1454,18 @@ Func_039_5522:
 	ld [wSelectedOption], a
 	jr .asm_5599
 .asm_5555
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	and a
 	ret z
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	jr .asm_556a
 .asm_5560
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	cp $07
 	ret z
 	inc a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 .asm_556a
 	ld a, $11
 	call PlaySound
@@ -1503,7 +1503,7 @@ Func_039_5522:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, Func_039_5016
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	ld b, a
 	ld a, [wSelectedOption]
 	add b
@@ -1625,12 +1625,12 @@ ScreenScript_39_56b5:
 ScreenScript_39_56bd:
 	dr $e56bd, $e56de
 Func_039_56de:
-	ld de, $DCA0
+	ld de, wdca0
 	ld a, [wdc9d]
 	ld l, a
 	ld h, $00
 	add hl, de
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	ld [hl], a
 	ld a, $0A
 	ld [rRAMG], a
@@ -1641,22 +1641,22 @@ Func_039_56de:
 	add $A9
 	ld d, a
 	ld e, $00
-	ld hl, wdb20
+	ld hl, wMonBox
 	ld bc, $017C
 	call CopyBytes3
-	ld de, $DCA0
+	ld de, wdca0
 	ld a, [wd1f4]
 	ld l, a
 	ld h, $00
 	add hl, de
 	ld a, [hl]
-	ld [$DC9C], a
+	ld [wMonBoxCount], a
 	ld a, [wd1f4]
 	sla a
 	add $A9
 	ld h, a
 	ld l, $00
-	ld de, wdb20
+	ld de, wMonBox
 	ld bc, $017C
 	call CopyBytes3
 	ld a, [wd1f4]
@@ -1784,11 +1784,11 @@ Func_039_5826:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_585b
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	and a
 	ret z
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	jr .asm_5898
 .asm_585b
 	dec a
@@ -1801,16 +1801,16 @@ Func_039_5826:
 	ld a, [wSelectedOption]
 	cp $04
 	jr nz, .asm_5886
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	inc a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ld [wSelectedOption], a
 	call Func_039_5115
 	and a
 	jr nz, .asm_5898
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	dec a
-	ld [wdc9e], a
+	ld [wMonBoxIndex], a
 	ret
 .asm_5886
 	inc a
@@ -1876,9 +1876,9 @@ Func_039_5940:
 	dec e
 	jr nz, .asm_594d
 	call Func_039_54c8
-	ld a, [$DC9C]
+	ld a, [wMonBoxCount]
 	dec a
-	ld [$DC9C], a
+	ld [wMonBoxCount], a
 	ret
 Func_039_595d:
 	ld hl, wcde0

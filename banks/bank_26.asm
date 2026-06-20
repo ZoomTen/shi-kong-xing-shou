@@ -406,8 +406,8 @@ BGMap_026_46ab:
 asm_026_46af:
 	xor a
 	ld [wd0c1], a
-	ld bc, wdb20
-	ld a, [wdc9e]
+	ld bc, wMonBox
+	ld a, [wMonBoxIndex]
 	and a
 	jr z, asm_026_46c5
 

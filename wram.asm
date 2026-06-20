@@ -69,7 +69,7 @@ wPaletteBuffer:: ds $40
 
 wcaf0:: ds 8 * 8
 
-wcb30:: ds $a0
+wScreenRowBuffer:: ds 8 * SCREEN_WIDTH
 
 wcbd0:: ds $20
 
@@ -124,7 +124,11 @@ wcd23:: ds 1
 wcd24:: ds 1
 wcd25:: ds 1
 wcd26:: ds 1
-wcd27:: ds $19
+wcd27:: ds 3
+wcd2a:: ds 8
+wcd32:: ds 2
+	ds $a
+wcd3e:: ds 2
 
 wcd40:: ds 1
 wcd41:: ds 1
@@ -133,10 +137,8 @@ wcd43:: ds 1
 wcd44:: ds 1
 
 wcd45:: ds 1
-wcd46:: ds 1
-	ds 5
-wcd4c:: ds 1
-	ds 3
+wcd46:: ds 6
+wcd4c:: ds 4
 
 wcd50:: ds 1
 wcd51:: ds 1
@@ -333,12 +335,13 @@ wGameTimeMinutes:: ds 1
 wd0df:: ds 1
 wd0e0:: ds 3
 wd0e3:: ds 1
-wd0e4:: ds $a
+wd0e4:: ds 8
+wd0ec:: ds 2
 wd0ee:: ds 1
 wd0ef:: ds 1
 wd0f0:: ds 1
 wd0f1:: ds 1
-wd0f2:: ds 2
+wPartyScanType:: ds 2 ; TODO unused?
 wMapType:: ds 1
 wItemIndex:: ds 1
 
@@ -661,11 +664,7 @@ wd9ff:: ds 1
 wda00:: ds $a0
 
 ; shop menu is at $daa4
-wEventFlags:: ds 3
-wdaa3:: ds 1
-wdaa4:: ds 7
-wdaab:: ds 1
-ds 13
+wEventFlags:: ds $19 ; event flags ($daa0-$dab8); scr_checkbit uses 0-8, init/object conds use 0-24
 wdab9:: ds 1
 wdaba:: ds 1
 wdabb:: ds 1
@@ -693,7 +692,8 @@ wdae0:: ds 2
 wdae2:: ds 1
 wdae3:: ds 4
 wdae7:: ds 4
-wdaeb:: ds $2d
+wdaeb:: ds $15
+wdb00:: ds $18
 
 wdb18:: ds 3
 wGameTimeSeconds:: ds 1
@@ -701,13 +701,15 @@ wdb1c:: ds 1
 wdb1d:: ds 1
 wCurrentCharacterByte:: ds 1
 wdb1f:: ds 1
-wdb20:: ds $17d
+wMonBox:: ds NUM_BOX_MONS * BOX_STRUCT_LENGTH ; box_struct records; count in wMonBoxCount, mirrored to SRAM (sa6db)
+wMonBoxCount:: ds 1
 wdc9d:: ds 1
 
-wdc9e:: ds 1
+wMonBoxIndex:: ds 1
 wdc9f:: ds 1
 
-	ds 12
+wdca0:: ds $b
+wMonBox2Count:: ds 1
 wdcac:: ds 1
 
 wdcad:: ds 1
@@ -728,7 +730,8 @@ wdcb8:: ds 1
 wdcb9:: ds 1
 
 wdcba:: ds 1
-wdcbb:: ds $d
+wdcbb:: ds 1
+wdcbc:: ds $c ; 12-byte struct/buffer (per bank_30)
 
 wMovementPointer:: ds 2
 wdcca:: ds 1
@@ -764,7 +767,10 @@ wdce8:: ds 2
 wdcea:: ds 1 ; follower?
 
 wdceb:: ds 1
-wdcec:: ds 7
+wdcec:: ds 2
+wdcee:: ds 3
+wdcf1:: ds 1
+	ds 1
 
 wIntroStepTimer::
 wdcf3:: ds 1

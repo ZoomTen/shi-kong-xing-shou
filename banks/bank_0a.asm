@@ -10,7 +10,7 @@ Func_00a_4000::
 	ld [wTextboxPointer], a
 	ld a, h
 	ld [wTextboxPointer + 1], a
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld c, 8 * SCREEN_WIDTH
 .copy
 	ld a, [hli]
@@ -70,7 +70,7 @@ Func_00a_4063::
 	ld [wTextboxPointer], a
 	ld a, h
 	ld [wTextboxPointer + 1], a
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld c, $A0
 .asm_4086
 	ld a, [hli]
@@ -148,7 +148,7 @@ Func_00a_40f9:
 	ld l, a
 	ld a, [wTextboxPointer + 1]
 	ld h, a
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld c, $A0
 .asm_411d
 	ld a, [de]
@@ -209,7 +209,7 @@ Func_00a_4178::
 	ld l, a
 	ld a, [wTextboxPointer + 1]
 	ld h, a
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld c, $A0
 .asm_4185
 	ld a, [de]
@@ -246,7 +246,7 @@ Func_00a_41a3:
 	ret
 
 Func_00a_41b7:
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld a, [wd1e4]
 	ld l, a
 	ld h, $00

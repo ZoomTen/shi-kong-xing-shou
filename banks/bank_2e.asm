@@ -4227,7 +4227,7 @@ Func_02e_5ec1:
 	ld a, d
 	and a
 	jr z, .asm_5f00
-	ld a, [$dce6]
+	ld a, [wdce5 + 1]
 	and a
 	jr nz, .asm_5ed7
 	ld a, [hFFD6]
@@ -4237,7 +4237,7 @@ Func_02e_5ec1:
 	call Func_132f
 	and a
 	jr z, .asm_5ee4
-	ld a, [$dc9c]
+	ld a, [wMonBoxCount]
 	cp $14
 	jr nc, .asm_5eef
 .asm_5ee4
@@ -4511,11 +4511,11 @@ Func_02e_60f7:
 	ld a, [wd98d]
 	push de
 .asm_6112
-	ld [$dcf1], a
+	ld [wdcf1], a
 	pop de
 	push de
 	call .asm_6174
-	ld a, [$dcf1]
+	ld a, [wdcf1]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4524,11 +4524,11 @@ Func_02e_60f7:
 	ld bc, wd1a0
 	add hl, bc
 	call .asm_613b
-	ld a, [$dcf1]
+	ld a, [wdcf1]
 	cp $00
 	jp z, .asm_6139
 	dec a
-	ld [$dcf1], a
+	ld [wdcf1], a
 	jp .asm_6112
 .asm_6139
 	pop de

@@ -608,30 +608,30 @@ AddStatTile::
 
 Func_123a::
 	push bc
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	and a
 	jr nz, .asm_1259
 	jr z, .asm_124c
 
 ; inaccessible
 	push af
-	ldh a, [hFFCB]
-	ldh [hFFCD], a
+	ldh a, [hMathValue]
+	ldh [hMathValue + 2], a
 	pop af
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	pop bc
 	ret
 
 .asm_124c
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	and a
 	jr z, .asm_1259
 
 	ld b, a
-	ldh a, [hFFCB]
-	ldh [hFFCC], a
+	ldh a, [hMathValue]
+	ldh [hMathValue + 1], a
 	ld a, b
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 
 .asm_1259
 	pop bc
@@ -694,9 +694,9 @@ Func_1296::
 	xor a
 	ld [wd9d7], a
 	homecall ComputeStatValue
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd99a], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd99b], a
 	ret
 
@@ -714,15 +714,15 @@ Func_12bd::
 	xor a
 	ld [wd9d7], a
 	farcall Func_025_4101
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd99a], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd99b], a
 	ret
 
 Func_12e6::
-	ld bc, wdb20
-	ld a, [wdc9e]
+	ld bc, wMonBox
+	ld a, [wMonBoxIndex]
 	ld l, a
 	ld a, [wSelectedOption]
 	add l

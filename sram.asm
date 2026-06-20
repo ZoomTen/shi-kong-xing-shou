@@ -39,3 +39,7 @@ sa858:: ds 5
 
 	ds 3
 sa860:: ds $98 ; -> wd7cb
+
+
+SECTION "SRAM Bank 1", SRAM[$b600], BANK[1]
+sMonBox2:: ds NUM_BOX_MONS * BOX_STRUCT_LENGTH ; second monster box (SRAM bank 1); count in wMonBox2Count

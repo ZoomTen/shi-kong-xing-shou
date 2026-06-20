@@ -22,7 +22,7 @@ Script_04f_4020::
 	scr_face $02
 	scr_spriteface  2, FACE_RIGHT
 	scr_text text_4f_406d
-	scr_checkbit wdaa4, $01, Script_04f_4031
+	scr_checkbit wEventFlags + 4, $01, Script_04f_4031
 	scr_35 $03
 	scr_end
 

@@ -60,7 +60,7 @@ asm_005_403a:
 	ret
 
 Func_005_406b:
-	ld hl, $c740
+	ld hl, wc740
 	ldh a, [hFFA0]
 	and a
 	jr z, asm_005_4077
@@ -553,9 +553,9 @@ Overworld_DoBlackFlashing:
 	ret
 
 Func_005_434a:
-	ld a, [$dcb8]
+	ld a, [wdcb8]
 	inc a
-	ld [$dcb8], a
+	ld [wdcb8], a
 	cp $18
 	ret nz
 	xor a
@@ -954,9 +954,9 @@ Func_005_440f:
 Func_005_4662:
 	ld hl, wda00
 .asm_4665
-	ldh a, [$ffaa]
+	ldh a, [hFFAA]
 	ld d, a
-	ldh a, [$ffab]
+	ldh a, [hFFAB]
 	ld e, a
 	push hl
 	ld a, [hli]
@@ -1769,10 +1769,10 @@ Overworld_MovePlayerOneStep:
 	ret
 
 Func_005_4bc1:
-	ldh a, [$ffa7]
+	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
-	ldh a, [$ffd6]
+	ldh a, [hFFD6]
 	and a
 	ret nz
 	call Func_005_50e5
@@ -1861,7 +1861,7 @@ asm_005_4c52:
 	dr $14c52, $14c69
 
 Func_005_4c69:
-	ldh a, [$ff91]
+	ldh a, [hConsoleType]
 	cp $11
 	jr z, .asm_4c93
 	ld a, $01
@@ -1872,12 +1872,12 @@ Func_005_4c69:
 	jr nz, asm_005_4c52
 	jr .asm_4c9a
 	jr asm_005_4c52
-	ldh a, [$ff9a]
+	ldh a, [hMapGroup]
 	cp $01
 	jr nz, asm_005_4c52
 	ld a, $01
-	ld [$d0ec], a
-	ldh a, [$ffa1]
+	ld [wd0ec], a
+	ldh a, [hFFA1]
 	and $0f
 	ld [wItemIndex], a
 .asm_4c93
@@ -1888,12 +1888,12 @@ Func_005_4c69:
 	xor a
 	ld [wcd0a], a
 .asm_4c9e
-	ldh a, [$ff9e]
+	ldh a, [hFF9E]
 	cp $ff
 	ret z
 	ld a, $01
-	ldh [$ffac], a
-	ldh a, [$ff9e]
+	ldh [hFFAC], a
+	ldh a, [hFF9E]
 	ld hl, wPlayerFacing
 	cp [hl]
 	jr z, .asm_4cd0
@@ -1903,9 +1903,9 @@ Func_005_4c69:
 	and a
 	jr nz, .asm_4cd0
 	ld a, $ff
-	ldh [$ff9e], a
+	ldh [hFF9E], a
 	xor a
-	ldh [$ffa7], a
+	ldh [hSimulatedJoypadState], a
 	ld [wPlayerAnimFrame], a
 	ld a, $01
 	ld [wd3f4], a
@@ -1933,69 +1933,69 @@ Func_005_4cd7:
 	ret
 .asm_4cef
 	ld a, [wPlayerMapX]
-	ld [$cd33], a
+	ld [wcd32 + 1], a
 	ld a, [wPlayerMapY]
 	dec a
-	ld [$cd32], a
+	ld [wcd32], a
 	ld a, $08
-	ldh [$ffdd], a
+	ldh [hFFDD], a
 	xor a
-	ld [$dcee], a
+	ld [wdcee], a
 	jr .asm_4d4e
 .asm_4d06
 	ld a, [wPlayerMapX]
-	ld [$cd33], a
+	ld [wcd32 + 1], a
 	ld a, [wPlayerMapY]
 	inc a
-	ld [$cd32], a
+	ld [wcd32], a
 	ld a, $04
-	ldh [$ffdd], a
+	ldh [hFFDD], a
 	ld a, $01
-	ld [$dcee], a
+	ld [wdcee], a
 	jr .asm_4d4e
 .asm_4d1e
 	ld a, [wPlayerMapY]
-	ld [$cd32], a
+	ld [wcd32], a
 	ld a, [wPlayerMapX]
 	inc a
-	ld [$cd33], a
+	ld [wcd32 + 1], a
 	ld a, $02
-	ldh [$ffdd], a
+	ldh [hFFDD], a
 	ld a, $02
-	ld [$dcee], a
+	ld [wdcee], a
 	jr .asm_4d4e
 .asm_4d36
 	ld a, [wPlayerMapY]
-	ld [$cd32], a
+	ld [wcd32], a
 	ld a, [wPlayerMapX]
 	dec a
-	ld [$cd33], a
+	ld [wcd32 + 1], a
 	ld a, $01
-	ldh [$ffdd], a
+	ldh [hFFDD], a
 	ld a, $03
-	ld [$dcee], a
+	ld [wdcee], a
 	jr .asm_4d4e
 .asm_4d4e
 	ld a, [hFFAB]
 	ld b, a
-	ld a, [$cd32]
+	ld a, [wcd32]
 	sub b
 	swap a
 	and $f0
 	add $10
-	ld [$cd3e], a
+	ld [wcd3e], a
 	ld a, [hFFAA]
 	ld b, a
-	ld a, [$cd33]
+	ld a, [wcd32 + 1]
 	sub b
 	swap a
 	and $f0
 	add $08
-	ld [$cd3f], a
+	ld [wcd3e + 1], a
 	ld a, $10
 	ld [hFFDE], a
 	ld a, $01
-	ldh [$ffdb], a
+	ldh [hFFDB], a
 	ld [wdceb], a
 	ret
 Func_005_4d7d:
@@ -2006,7 +2006,7 @@ Func_005_4d7d:
 	srl a
 	srl a
 	ld e, a
-	ldh a, [$ffaa]
+	ldh a, [hFFAA]
 	add e
 	ret
 Func_005_4d8f:
@@ -2017,7 +2017,7 @@ Func_005_4d8f:
 	srl a
 	srl a
 	ld e, a
-	ldh a, [$ffab]
+	ldh a, [hFFAB]
 	add e
 	ret
 Func_005_4da1:
@@ -2086,10 +2086,10 @@ Func_005_4da1:
 	cp $80
 	jr c, .asm_4dc0
 	ret
-	ldh a, [$ff9a]
+	ldh a, [hMapGroup]
 	cp $01
 	ret nz
-	ldh a, [$ff9b]
+	ldh a, [hMapNumber]
 	cp $1e
 	jr z, .asm_4e1f
 	cp $1f
@@ -2100,22 +2100,22 @@ Func_005_4da1:
 	jr z, .asm_4e1f
 	ret
 .asm_4e1f
-	ldh a, [$ff9e]
+	ldh a, [hFF9E]
 	cp $ff
 	ret z
 	ld a, $01
-	ldh [$ffac], a
+	ldh [hFFAC], a
 	xor a
 	ld [wcd0a], a
-	ldh a, [$ff9e]
+	ldh a, [hFF9E]
 	ld hl, wPlayerFacing
 	cp [hl]
 	jr z, .asm_4e4a
 	ld [hl], a
 	ld a, $ff
-	ldh [$ff9e], a
+	ldh [hFF9E], a
 	xor a
-	ldh [$ffa7], a
+	ldh [hSimulatedJoypadState], a
 	ld [wPlayerAnimFrame], a
 	ld a, $01
 	ld [wd3f4], a
@@ -2127,10 +2127,10 @@ Func_005_4da1:
 	ret
 
 Func_005_4e4e:
-	ldh a, [$ff9a]
+	ldh a, [hMapGroup]
 	cp $01
 	ret nz
-	ldh a, [$ff9b]
+	ldh a, [hMapNumber]
 	cp $1e
 	jr z, .asm_4e67
 	cp $1f
@@ -2168,11 +2168,11 @@ Func_005_4e4e:
 	jr z, .asm_4e9b
 	ret
 .asm_4e9b
-	ld de, $cda0
+	ld de, wcda0
 	call Func_005_4da1
 	jp .asm_4f2d
 .asm_4ea4
-	ld de, $cd80
+	ld de, wcd80
 	call Func_005_4da1
 	jp .asm_4f2d
 .asm_4ead
@@ -2222,11 +2222,11 @@ Func_005_4e4e:
 	jr z, .asm_4f12
 	ret
 .asm_4f09
-	ld de, $cd80
+	ld de, wcd80
 	call Func_005_4da1
 	jp .asm_4f2d
 .asm_4f12
-	ld de, $cda0
+	ld de, wcda0
 	call Func_005_4da1
 	jp .asm_4f2d
 .asm_4f1b

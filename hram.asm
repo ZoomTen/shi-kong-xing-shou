@@ -72,18 +72,9 @@ hTextSourceBank3:: ds 1
 hPaletteFadeState:: ds 1
 hFFC5:: ds 1
 hFFC6:: ds 1
-hFFC7:: ds 1
-hFFC8:: ds 1
-hFFC9:: ds 1
-hFFCA:: ds 1
-hFFCB:: ds 1
-hFFCC:: ds 1
-hFFCD:: ds 1
-hFFCE:: ds 1
-hFFCF:: ds 1
-hFFD0:: ds 1
-hFFD1:: ds 1
-hFFD2:: ds 1
+hMathOperand:: ds 4 ; $ffc7  multiplier/divisor for Multiply32By8 / Divide32By16
+hMathValue:: ds 4   ; $ffcb  multiplicand/dividend, and where the result lands
+hMathAccum:: ds 4   ; $ffcf  product / quotient accumulator
 hBattleJumptableIndex:: ds 1
 hFFD4:: ds 1
 hFFD5:: ds 1

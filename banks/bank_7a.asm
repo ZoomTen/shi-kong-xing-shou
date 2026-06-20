@@ -27,11 +27,11 @@ Func_07a_401f::
 	ld a, $6e
 	call PlaySound
 	xor a
-	ldh [$ffbf], a
-	ldh [$ffae], a
-	ldh [$ffaf], a
-	ldh [$ffb0], a
-	ldh [$ffb1], a
+	ldh [hFade], a
+	ldh [hSCX], a
+	ldh [hSCXHigh], a
+	ldh [hSCY], a
+	ldh [hSCYHigh], a
 	ld [wIntroStepTimer], a
 	ld [wIntroScrollMode], a
 	ld [wdcfb], a
@@ -43,17 +43,17 @@ Func_07a_401f::
 	ld de, BGMap_07a_492f
 	ld bc, $1412
 	ld a, $12
-	ldh [$ff93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [$ff92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
 	ld de, AttrMap_07a_47c7
 	ld bc, $1412
 	ld a, $12
-	ldh [$ff93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [$ff92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 	ld hl, Palette_07a_4a97
 	ld de, wPaletteBuffer
@@ -101,11 +101,11 @@ Func_07a_401f::
 	ld [wcd60], a
 	call Func_07a_4525
 	ld a, $c7
-	ldh [$ff40], a
+	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
 	xor a
-	ldh [$ffc4], a
-	ldh [$ff9d], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 .asm_40f9
 	call DelayFrame
@@ -113,34 +113,34 @@ Func_07a_401f::
 	call Func_07a_43de
 	call Func_07a_442d
 	call Func_07a_44d6
-	ldh a, [$ff9d]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [$ff9d], a
-	ldh a, [$ffbf]
+	ldh [hFadeFrameCounter], a
+	ldh a, [hFade]
 	and a
 	jr nz, .asm_4115
 	jp .asm_40f9
 .asm_4115
 	ld bc, wPaletteBuffer
 	xor a
-	ldh [$ffc4], a
+	ldh [hPaletteFadeState], a
 	call FadeOutPalette
 	call Func_07a_400e
 	ld hl, $9800
 	ld de, BGMap_07a_565f
 	ld bc, $1412
 	ld a, $12
-	ldh [$ff93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [$ff92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
 	ld de, AttrMap_07a_54f7
 	ld bc, $1412
 	ld a, $12
-	ldh [$ff93], a
+	ldh [hVRAMCopyHeight], a
 	ld a, $14
-	ldh [$ff92], a
+	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
 	ld hl, Palette_07a_57c7
 	ld de, wPaletteBuffer
@@ -151,23 +151,23 @@ Func_07a_401f::
 	ld bc, $0710
 	call CopyBytesVRAM
 	xor a
-	ldh [$ffbf], a
+	ldh [hFade], a
 	ld a, $c7
-	ldh [$ff40], a
+	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
 	xor a
-	ldh [$ffc4], a
-	ldh [$ff9d], a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
 	call FadeInPalette
 .asm_4173
 	call Func_07a_43d0
-	ldh a, [$ffbf]
+	ldh a, [hFade]
 	cp $02
 	jr z, .asm_417f
 	jp .asm_4173
 .asm_417f
 	xor a
-	ldh [$ffbf], a
+	ldh [hFade], a
 	ld [wTargetMode], a
 	jp JumpToGameMode
 
@@ -352,6 +352,7 @@ Func_07a_4188::
 	xor a
 	ldh [hFadeFrameCounter], a
 	ret
+; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
 AnimTiles_07a_432c:
 	dr $1e832c, $1e83bc
 Func_07a_43bc:

@@ -53,7 +53,7 @@ Func_00d_4019::
 	ld a, [wBGMapAddr]
 	ld e, a
 .asm_4061
-	ldh a, [$FF41]
+	ldh a, [rSTAT]
 	and $03
 	jr nz, .asm_4061
 	ld a, [hli]
@@ -77,7 +77,7 @@ Func_00d_4019::
 	ret
 .asm_4089
 	hlcoord 0, 6
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld c, $50
 .asm_4091
 	ld a, [hli]
@@ -177,7 +177,7 @@ Func_00d_412c:
 	jr .asm_4154
 .asm_4143
 	hlcoord 0, 6
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld c, $50
 .asm_414b
 	ld a, [de]
@@ -196,7 +196,7 @@ Func_00d_412c:
 	jr nz, .asm_4131
 	ret
 .asm_4165
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld a, [wd1e4]
 	add $05
 	ld l, a
@@ -397,7 +397,7 @@ Func_00d_42a4:
 	push bc
 	ld c, a
 .asm_42d2
-	ldh a, [$FF41]
+	ldh a, [rSTAT]
 	and $03
 	jr nz, .asm_42d2
 	ld a, c

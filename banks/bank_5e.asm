@@ -321,9 +321,9 @@ RacingMinigame::
 	ld [wcd9c], a
 	xor a
 	ldh [hFade], a
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	set 1, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_432f
 .asm_42fb
 	ld a, $2B
@@ -344,9 +344,9 @@ RacingMinigame::
 	ld [wcd9c], a
 	xor a
 	ldh [hFade], a
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	res 1, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 .asm_432f
 	call DelayFrame
 	call Func_05e_4f4b
@@ -495,7 +495,7 @@ Func_05e_43f1:
 	pop af
 .asm_443e
 	ld [wcd73], a
-	ld hl, hFFD0
+	ld hl, hMathAccum + 1
 	add hl, bc
 	push hl
 	pop de

@@ -1,4 +1,4 @@
-MACRO party_struct
+MACRO box_struct
 \1Species:: db
 \1Level::   db
 \1HP::      dw
@@ -16,7 +16,10 @@ MACRO party_struct
 \1Move4ID::    db
 \1Move4PP::    db
 \1Move4MaxPP:: db
+ENDM
 
+MACRO party_struct
+	box_struct \1
 \1Status:: db
 \1Item::   db
 \1unk22::  db

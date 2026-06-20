@@ -2485,7 +2485,7 @@ Intro_ClearStarObjects:
 	ret
 
 Intro_ClearOAMBuffer:
-	ld hl, $c000
+	ld hl, wc000
 	ld bc, $28
 	ld de, 4
 .loop

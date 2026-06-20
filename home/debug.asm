@@ -241,7 +241,7 @@ Debug_GivePartyMon::
 	ret
 
 Debug_FillMonList::
-	ld de, wdb20
+	ld de, wMonBox
 .asm_2e3b
 	ld hl, unk_2f40
 	ld bc, $13

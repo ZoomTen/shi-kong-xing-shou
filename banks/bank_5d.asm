@@ -100,18 +100,18 @@ RhythmMinigame::
 	ld [wdcf8], a
 	ld [wcd40], a
 	ld [wcd41], a
-	ld [$CD47], a
-	ld [$CD48], a
-	ld [$CD49], a
-	ld [$CD4A], a
-	ld [$CD4B], a
-	ld [$CD4F], a
+	ld [wcd46 + 1], a
+	ld [wcd46 + 2], a
+	ld [wcd46 + 3], a
+	ld [wcd46 + 4], a
+	ld [wcd46 + 5], a
+	ld [wcd4c + 3], a
 	ld a, $02
 	ld [wcd4c], a
 	ld a, $00
-	ld [$CD4D], a
+	ld [wcd4c + 1], a
 	ld a, $00
-	ld [$CD4E], a
+	ld [wcd4c + 2], a
 	ld hl, $9800
 	ld de, RhythmScreen2Tilemap
 	ld bc, $1412
@@ -200,79 +200,79 @@ RhythmMinigame::
 	jp JumpToGameMode
 	jp .asm_41bd
 .asm_4200
-	ld a, [$DAA7]
+	ld a, [wEventFlags + 7]
 	res 1, a
-	ld [$DAA7], a
+	ld [wEventFlags + 7], a
 	ld a, $01
 	ld [wcd40], a
 	ld a, $02
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld a, $8A
 	ld [wcd45], a
 	call Func_5d_435e
 	ld a, $04
 	ld [wdcf5], a
 	xor a
-	ld [$CD4F], a
+	ld [wcd4c + 3], a
 	jp .asm_41bd
 .asm_4226
-	ld a, [$DAA7]
+	ld a, [wEventFlags + 7]
 	set 1, a
-	ld [$DAA7], a
+	ld [wEventFlags + 7], a
 	ld a, $00
 	ld [wcd40], a
 	ld a, $03
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld a, $89
 	ld [wcd45], a
 	call Func_5d_435e
 	ld a, $04
 	ld [wdcf5], a
 	xor a
-	ld [$CD4F], a
+	ld [wcd4c + 3], a
 	jp .asm_41bd
 .asm_424c
-	ld a, [$CD4F]
+	ld a, [wcd4c + 3]
 	inc a
-	ld [$CD4F], a
+	ld [wcd4c + 3], a
 	cp $80
 	jr z, .asm_425a
 	jp .asm_41bd
 .asm_425a
 	xor a
-	ld [$CD4F], a
+	ld [wcd4c + 3], a
 	ld a, $01
 	ld [hFade], a
 	jp .asm_41bd
 .asm_4266
-	ld a, [$CD4F]
+	ld a, [wcd4c + 3]
 	inc a
-	ld [$CD4F], a
+	ld [wcd4c + 3], a
 	cp $07
 	ret nz
 	xor a
-	ld [$CD4F], a
-	ld a, [$CD4E]
+	ld [wcd4c + 3], a
+	ld a, [wcd4c + 2]
 	and a
 	jr z, .asm_4280
 	dec a
-	ld [$CD4E], a
+	ld [wcd4c + 2], a
 	jr .asm_42cf
 .asm_4280
-	ld a, [$CD4D]
+	ld a, [wcd4c + 1]
 	and a
 	jr z, .asm_42a0
 	ld a, $09
-	ld [$CD4E], a
-	ld a, [$CD4D]
+	ld [wcd4c + 2], a
+	ld a, [wcd4c + 1]
 	dec a
-	ld [$CD4D], a
+	ld [wcd4c + 1], a
 	jr .asm_42cf
-	ld a, [$CD4D]
+	ld a, [wcd4c + 1]
 	and a
 	jr z, .asm_42a0
 	dec a
-	ld [$CD4D], a
+	ld [wcd4c + 1], a
 	jr .asm_42cf
 .asm_42a0
 	ld a, [wcd4c]
@@ -282,9 +282,9 @@ RhythmMinigame::
 	dec a
 	ld [wcd4c], a
 	ld a, $05
-	ld [$CD4D], a
+	ld [wcd4c + 1], a
 	ld a, $09
-	ld [$CD4E], a
+	ld [wcd4c + 2], a
 	jr .asm_42cf
 	ld a, [wcd4c]
 	and a
@@ -294,11 +294,11 @@ RhythmMinigame::
 	jr .asm_42cf
 .asm_42c5
 	xor a
-	ld [$CD4E], a
-	ld [$CD4D], a
+	ld [wcd4c + 2], a
+	ld [wcd4c + 1], a
 	ld [wcd4c], a
 .asm_42cf
-	ld a, [$CD4E]
+	ld a, [wcd4c + 2]
 	ld de, ScoreDigitTiles
 	ld l, a
 	ld h, $00
@@ -313,7 +313,7 @@ RhythmMinigame::
 	ld a, $01
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
-	ld a, [$CD4D]
+	ld a, [wcd4c + 1]
 	ld de, ScoreDigitTiles
 	ld l, a
 	ld h, $00
@@ -343,15 +343,15 @@ RhythmMinigame::
 	ld a, $01
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
-	ld a, [$CD4E]
+	ld a, [wcd4c + 2]
 	ld b, a
-	ld a, [$CD4D]
+	ld a, [wcd4c + 1]
 	or b
 	ld b, a
 	ld a, [wcd4c]
 	or b
 	ret nz
-	ld a, [$CD4B]
+	ld a, [wcd46 + 5]
 	cp $03
 	jr c, .asm_4344
 	ld a, $02
@@ -364,7 +364,7 @@ RhythmMinigame::
 ScoreDigitTiles:
 	dr $17434a, $17435e
 Func_5d_435e:
-	ld a, [$CD4A]
+	ld a, [wcd46 + 4]
 	and a
 	ret z
 	cp $02
@@ -374,8 +374,8 @@ Func_5d_435e:
 	cp $05
 	jr z, .asm_43a3
 	xor a
-	ld [$CD4A], a
-	ld a, [$CD4B]
+	ld [wcd46 + 4], a
+	ld a, [wcd46 + 5]
 	ld de, unk_5d_43F2
 	ld l, a
 	ld h, $00
@@ -390,9 +390,9 @@ Func_5d_435e:
 	ld a, $02
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
-	ld a, [$CD4B]
+	ld a, [wcd46 + 5]
 	inc a
-	ld [$CD4B], a
+	ld [wcd46 + 5], a
 	cp $03
 	jr c, .asm_43a3
 	ld a, $02
@@ -400,7 +400,7 @@ Func_5d_435e:
 	ret
 .asm_43a3
 	xor a
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld hl, $99D0
 	ld de, RhythmTileChunks + $10
 	ld bc, $0404
@@ -412,7 +412,7 @@ Func_5d_435e:
 	ret
 .asm_43bc
 	xor a
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld hl, $99D0
 	ld de, RhythmTileChunks + $30
 	ld bc, $0404
@@ -424,7 +424,7 @@ Func_5d_435e:
 	ret
 .asm_43d5
 	xor a
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld hl, $99D0
 	ld de, RhythmTileChunks + $20
 	ld bc, $0404
@@ -440,11 +440,11 @@ BGMap_5d_43EE:
 unk_5d_43F2:
 	dr $1743f2, $1743f5
 Func_5d_43f5:
-	ld a, [$CD47]
+	ld a, [wcd46 + 1]
 	and a
 	ret z
 	xor a
-	ld [$CD47], a
+	ld [wcd46 + 1], a
 	ld de, AnimFrame_Pointers
 	ld a, [wcd44]
 	ld l, a
@@ -454,7 +454,7 @@ Func_5d_43f5:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [$CD49]
+	ld a, [wcd46 + 3]
 	and a
 	jr z, .asm_4417
 	ld de, $8000
@@ -463,11 +463,11 @@ Func_5d_43f5:
 	ld de, $8100
 .asm_441a
 	call .asm_4428
-	ld a, [$CD49]
+	ld a, [wcd46 + 3]
 	ld c, a
 	ld a, $01
 	sub c
-	ld [$CD49], a
+	ld [wcd46 + 3], a
 	ret
 .asm_4428
 	ld bc, $0810
@@ -631,13 +631,13 @@ Func_5d_44c0:
 	inc a
 	ld [wcd46], a
 	ld a, $01
-	ld [$CD47], a
+	ld [wcd46 + 1], a
 	ret
 .asm_4510
 	ld a, $81
 	ld [wcd45], a
 	ld a, $01
-	ld [$CD47], a
+	ld [wcd46 + 1], a
 	ld [wcd44], a
 	xor a
 	ld [wcd40], a
@@ -707,7 +707,7 @@ Func_5d_4581:
 	ld a, $01
 	ld [wcd40], a
 	ld a, $05
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld a, $88
 	ld [wcd45], a
 	ld a, $19
@@ -927,7 +927,7 @@ Func_5d_477d:
 	ld [hl], $00
 	ld a, $01
 	ld [wcd40], a
-	ld [$CD4A], a
+	ld [wcd46 + 4], a
 	ld a, $88
 	ld [wcd45], a
 	jp Func_5d_475f
@@ -1393,6 +1393,7 @@ AnimFrame_Pointers:
 	dr $176c5f, $176c7b
 RhythmAnimFrames:
 	dr $176c7b, $17797b
+; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
 RhythmTileChunks:
 	dr $17797b, $1779bb
 ; TODO: padding between palettes, confirm

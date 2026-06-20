@@ -243,11 +243,11 @@ Func_009_40b8:
 	jr .asm_4190
 .asm_4171
 	ld hl, wd0c0
-	ld a, [$CD32]
+	ld a, [wcd32]
 	cp [hl]
 	jr nz, .asm_4183
 	inc hl
-	ld a, [$CD33]
+	ld a, [wcd32 + 1]
 	cp [hl]
 	jr nz, .asm_4183
 	jr .asm_4161

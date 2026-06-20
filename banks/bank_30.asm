@@ -43,8 +43,8 @@ Func_030_4027::
 	ld a, [hl]
 	and a
 	jp z, .asm_40f2
-	ld [hFFC7], a
-	ld a, [$d98d]
+	ld [hMathOperand], a
+	ld a, [wd98d]
 	and a
 	jr z, .asm_407d
 	ld de, wd93c
@@ -59,10 +59,10 @@ Func_030_4027::
 	ld h, $00
 	add hl, de
 	ld a, [hl]
-	ld [hFFCB], a
+	ld [hMathValue], a
 	xor a
-	ld [hFFCC], a
-	ld [hFFCD], a
+	ld [hMathValue + 1], a
+	ld [hMathValue + 2], a
 	farcall Multiply32By8
 	ld de, wd900
 	ld a, [wd983]
@@ -80,10 +80,10 @@ Func_030_4027::
 	ld h, $00
 	add hl, de
 	ld a, [hl]
-	ld [hFFCB], a
+	ld [hMathValue], a
 	xor a
-	ld [hFFCC], a
-	ld [hFFCD], a
+	ld [hMathValue + 1], a
+	ld [hMathValue + 2], a
 	farcall Multiply32By8
 	ld de, wd93c
 	ld a, [wd987]
@@ -98,22 +98,22 @@ Func_030_4027::
 	ld h, $00
 	add hl, de
 	ld a, [hl]
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ld a, [hFFCB]
+	ld a, [hMathValue]
 	ld [wd993], a
 	ld a, [wd991]
-	ld [hFFCB], a
+	ld [hMathValue], a
 	xor a
-	ld [hFFCC], a
-	ld [hFFCD], a
+	ld [hMathValue + 1], a
+	ld [hMathValue + 2], a
 	ld a, $64
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $ff
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ld a, [hFFCB]
+	ld a, [hMathValue]
 	ld b, a
 	ld a, [wd993]
 	cp b
@@ -369,8 +369,8 @@ Func_030_43ee:
 	ld c, a
 	ld a, [wd985]
 	ld b, a
-	ld hl, wdb20
-	ld a, [$dc9c]
+	ld hl, wMonBox
+	ld a, [wMonBoxCount]
 	ld de, $0013
 	and a
 	jr z, .asm_4406
@@ -386,9 +386,9 @@ Func_030_43ee:
 	inc bc
 	dec e
 	jr nz, .asm_4408
-	ld a, [$dc9c]
+	ld a, [wMonBoxCount]
 	inc a
-	ld [$dc9c], a
+	ld [wMonBoxCount], a
 	ret
 
 SetCaughtMon:
@@ -445,19 +445,19 @@ Func_030_4442:
 	call Func_128e
 .asm_446a
 	ld a, [wd99b]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	ld a, [wd99a]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	call Func_123a
 	ld a, $05
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 	call Func_123a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	ret
 	ld a, $01
@@ -816,7 +816,7 @@ Func_030_470d:
 	ld bc, $0007
 	add hl, bc
 	push hl
-	ld de, $dcbc
+	ld de, wdcbc
 	ld b, $0c
 .asm_472f
 	ld a, [hli]
@@ -856,7 +856,7 @@ Func_030_470d:
 	ld bc, $0007
 	add hl, bc
 	push hl
-	ld de, $dcbc
+	ld de, wdcbc
 	ld b, $0c
 .asm_4770
 	ld a, [hli]
@@ -895,28 +895,28 @@ Func_030_4793:
 	jr nz, .asm_47d3
 	ld a, $01
 	ld [wd9f7], a
-	ld hl, $d0d9
+	ld hl, wMoney + 2
 	ld a, [hld]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	ld a, [hld]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	ld a, [hld]
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	call Func_123a
 	ld a, $02
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 	call Func_123a
-	ld hl, $d0d9
-	ldh a, [$ffcb]
+	ld hl, wMoney + 2
+	ldh a, [hMathValue]
 	ld [hld], a
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	ld [hld], a
-	ldh a, [$ffcd]
+	ldh a, [hMathValue + 2]
 	ld [hld], a
 	ret
 .asm_47d3
-	ld de, $db00
+	ld de, wdb00
 	ld a, [wd987]
 	ld l, a
 	ld h, $00
@@ -927,7 +927,7 @@ Func_030_4793:
 	inc hl
 	push hl
 	pop de
-	ld hl, $d0d9
+	ld hl, wMoney + 2
 	ld a, [de]
 	add [hl]
 	ld [hld], a
@@ -1119,7 +1119,7 @@ Func_030_4950:
 	and a
 	jr nz, .asm_496d
 	ld a, $01
-	ld [$d9b7], a
+	ld [wd9b6 + 1], a
 	ret
 .asm_496d
 	ld a, $01
@@ -1524,30 +1524,30 @@ Func_030_4c8f:
 	and a
 	jr nz, .asm_4c9f
 	ld a, [wd9b0]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	jr .asm_4ca6
 .asm_4c9f
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	ld a, [wd9b0]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 .asm_4ca6
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	ld a, $02
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, .asm_4cc1
 	ld [wd9b1], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ret
 .asm_4cc1
 	ld [wd9b0], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b1], a
 	ret
 
@@ -1818,22 +1818,22 @@ Func_030_4eca:
 	and a
 	jr nz, .asm_4ee1
 	xor a
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	ld a, [wd9b0]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	jr .asm_4eeb
 .asm_4ee1
 	ld a, [wd9b1]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	ld a, [wd9b0]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 .asm_4eeb
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	ld a, $04
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
@@ -1866,14 +1866,14 @@ Func_030_4f10:
 	ld hl, $0001
 	add hl, bc
 	ld a, [hl]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$ffcc], a
-	ldh [$ffcd], a
+	ldh [hMathValue + 1], a
+	ldh [hMathValue + 2], a
 	ld a, $02
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Multiply32By8
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
@@ -2243,30 +2243,30 @@ Func_030_51da:
 	and a
 	jr nz, .asm_5206
 	ld a, [wd99a]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	jr .asm_520d
 .asm_5206
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	ld a, [wd99a]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 .asm_520d
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	ld a, $02
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, .asm_5228
 	ld [wd9b1], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ret
 .asm_5228
 	ld [wd9b0], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b1], a
 	ret
 
@@ -2430,31 +2430,31 @@ Func_030_537b:
 	and a
 	jr nz, .asm_538b
 	ld a, [wd9b0]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	jr .asm_5393
 .asm_538b
 	xor a
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	ld a, [wd9b0]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 .asm_5393
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	ld a, $02
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr z, .asm_53b0
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	ld [wd9b0], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b1], a
 	ret
 .asm_53b0
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
@@ -2602,30 +2602,30 @@ Func_030_5486:
 	and a
 	jr nz, .asm_54b3
 	ld a, [wd998]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	jr .asm_54ba
 .asm_54b3
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	ld a, [wd998]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 .asm_54ba
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	ld a, $02
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, .asm_54d5
 	ld [wd9b1], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ret
 .asm_54d5
 	ld [wd9b0], a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b1], a
 	ret
 
@@ -2665,20 +2665,20 @@ Func_030_54de:
 .asm_5524
 	farcall Func_02b_5651
 	ld a, [wd9b0]
-	ldh [$ffcb], a
+	ldh [hMathValue], a
 	ld a, [wd9b1]
-	ldh [$ffcc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$ffcd], a
+	ldh [hMathValue + 2], a
 	call Func_123a
 	pop af
 	dec a
-	ldh [$ffc7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	call Func_123a
-	ldh a, [$ffcb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
-	ldh a, [$ffcc]
+	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	ld a, $03
 	ld [wd98b], a
@@ -2690,7 +2690,7 @@ Func_030_555c:
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
-	ld a, [$d98d]
+	ld a, [wd98d]
 	and a
 	jr nz, .asm_5573
 	ld a, [wActiveMonPtr]
@@ -2746,7 +2746,7 @@ Func_030_55ab:
 	ld [wd9b5], a
 	ret
 Func_030_55c2:
-	ld a, [$d98d]
+	ld a, [wd98d]
 	and a
 	jr nz, .asm_55d2
 	ld a, [wActiveMonPtr]

@@ -626,13 +626,13 @@ Func_01e_43d3:
 Func_01e_4416:
 	call Func_01e_4441
 	ld de, wd1f5
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	ld [de], a
 	inc de
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
 	ld hl, $99ee
 	ld de, wd1f5
@@ -661,19 +661,19 @@ Func_01e_4441:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	ld a, [hli]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	xor a
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	ld a, [wd9d3]
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, [wEventFlags + 4]
 	bit 0, a
 	jr z, .done
 	ld a, 2
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 
 .done

@@ -165,9 +165,9 @@ Func_5b_4180:
 	ld [wPlayerFacing], a
 	xor a
 	ld [wPlayerAnimFrame], a
-	ld a, [wdaab]
+	ld a, [wEventFlags + $b]
 	res 1, a
-	ld [wdaab], a
+	ld [wEventFlags + $b], a
 	ld a, $74
 	call PlaySound
 	ld hl, $99D0
@@ -396,9 +396,9 @@ Func_5b_42af:
 	ld [wPlayerFacing], a
 	xor a
 	ld [wPlayerAnimFrame], a
-	ld a, [wdaab]
+	ld a, [wEventFlags + $b]
 	set 1, a
-	ld [wdaab], a
+	ld [wEventFlags + $b], a
 	ld a, $6B
 	call PlaySound
 	ld hl, $99D0

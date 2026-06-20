@@ -16,7 +16,7 @@ Func_00e_400b:
 	jp JumpToGameMode
 
 Script_00e_4012:
-	scr_checkbit $daa0, $04, Script_00e_4049 ; TEMP
+	scr_checkbit wEventFlags, $04, Script_00e_4049 ; TEMP
 	scr_face $01 ; TEMP
 	scr_text text_0e_4b34 ; TEMP
 	scr_emote $00, $00 ; TEMP
@@ -39,7 +39,7 @@ Script_00e_4049:
 	scr_end
 
 Script_00e_404a:
-	scr_checkbit $daa0, $04, Script_00e_4059 ; TEMP
+	scr_checkbit wEventFlags, $04, Script_00e_4059 ; TEMP
 	scr_text text_0e_4af9 ; TEMP
 	scr_face $01 ; TEMP
 	scr_move $4193 ; TEMP
@@ -79,7 +79,7 @@ Script_00e_408f:
 	scr_end
 
 Script_00e_409f:
-	scr_checkbit $daa0, $05, Script_00e_40b5 ; TEMP
+	scr_checkbit wEventFlags, $05, Script_00e_40b5 ; TEMP
 	scr_text text_0e_7dff ; TEMP
 	scr_face $01 ; TEMP
 	scr_move $4193 ; TEMP
@@ -220,9 +220,9 @@ Script_00e_41b4:
 	scr_end
 
 Script_00e_41b8:
-	scr_checkbit $daa0, $05, .script_00e_41c6
+	scr_checkbit wEventFlags, $05, .script_00e_41c6
 	scr_04 text_0e_5023
-	scr_setbit $daa0, $05
+	scr_setbit wEventFlags, $05
 	scr_end
 
 .script_00e_41c6
@@ -481,7 +481,7 @@ Script_00e_4480:
 	scr_spriteface $03, $03 ; TEMP
 	scr_1a $02, $03, $00, $f0 ; TEMP
 	scr_4e $03, Script_0e_7e69
-	scr_setbit $daa0, $07 ; TEMP
+	scr_setbit wEventFlags, $07 ; TEMP
 	scr_setmap $2d, $0c ; TEMP
 	scr_end
 
@@ -840,7 +840,7 @@ Script_00e_484d:
 	scr_face $01 ; TEMP
 	scr_text text_0e_5e73
 	scr_4d $02, $01
-	scr_setbit $daa0, $06 ; TEMP
+	scr_setbit wEventFlags, $06 ; TEMP
 	scr_end
 
 Script_00e_488f:

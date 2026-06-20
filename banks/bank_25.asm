@@ -8,9 +8,9 @@ Func_025_4000:
 	ld a, [hld]
 	and a
 	jr z, Func_025_4017
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	ld a, [hl]
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	jr Func_025_4020
 
 Func_025_4017:
@@ -18,25 +18,25 @@ Func_025_4017:
 	and a
 	ret z
 	xor a
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	ld a, [hl]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 
 Func_025_4020:
 	xor a
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	ld a, $20
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	call Multiply32By8
 	ld a, 4
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld b, 4
 	call Divide32By16
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	push af
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	push af
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	push af
 	xor a
 	ld [wd9d7], a
@@ -46,23 +46,23 @@ Func_025_4020:
 	ld b, a
 	call ComputeStatValue
 	ld a, 4
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld b, 4
 	call Divide32By16
-	ldh a, [hFFCB]
-	ldh [hFFC7], a
+	ldh a, [hMathValue]
+	ldh [hMathOperand], a
 	pop af
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	pop af
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	pop af
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	ld b, 4
 	call Divide32By16
 	ret
 
-ScanObjectList:
-	ld bc, $d200
+ScanParty:
+	ld bc, wPartyMons
 
 Func_025_406a:
 	ld hl, 0
@@ -71,7 +71,7 @@ Func_025_406a:
 	and a
 	jr z, Func_025_407b
 	call Func_025_4087
-	ld a, [wd0f2]
+	ld a, [wPartyScanType]
 	cp $ff
 	ret z
 
@@ -94,7 +94,7 @@ Func_025_4087:
 	ld a, [hl]
 	and a
 	jr z, Func_025_4099
-	ld a, [wd0f2]
+	ld a, [wPartyScanType]
 	cp [hl]
 	jr z, Func_025_40d3
 
@@ -109,7 +109,7 @@ Func_025_4099:
 	sub $f
 	ld [hFFD7], a
 	ld d, a
-	ld a, [wd0f2]
+	ld a, [wPartyScanType]
 	cp d
 	jr nz, Func_025_40b8
 	call Func_025_47fd
@@ -127,7 +127,7 @@ Func_025_40b8:
 	sub $f
 	ld [hFFD7], a
 	ld d, a
-	ld a, [wd0f2]
+	ld a, [wPartyScanType]
 	cp d
 	ret nz
 	call Func_025_47fd
@@ -136,7 +136,7 @@ Func_025_40b8:
 
 Func_025_40d3:
 	ld a, $ff
-	ld [wd0f2], a
+	ld [wPartyScanType], a
 	ret
 
 Func_025_40d9:
@@ -167,7 +167,7 @@ Func_025_40f6:
 	jp ComputeStatValue
 
 Func_025_4101::
-	ld hl, $d876
+	ld hl, wd876
 	ld a, [wd987]
 	call asm_0fe2
 	jp ComputeStatValue
@@ -193,7 +193,7 @@ ComputeStatValue::
 	ld d, 0
 	add hl, de
 	ld a, [hl]
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	ld de, StatBaseTable
 	ld hl, 1
 	add hl, bc
@@ -201,13 +201,13 @@ ComputeStatValue::
 	ld h, 0
 	add hl, de
 	ld a, [hl]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	xor a
-	ldh [hFFCC], a
-	ldh [hFFCD], a
+	ldh [hMathValue + 1], a
+	ldh [hMathValue + 2], a
 	call Multiply32By8
 	ld a, $64
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld b, 4
 	call Divide32By16
 	ret
@@ -218,67 +218,67 @@ Multiply32By8::
 	ld a, 8
 	ld b, a
 	xor a
-	ldh [hFFCE], a
-	ldh [hFFC8], a
-	ldh [hFFC9], a
-	ldh [hFFCA], a
-	ldh [hFFD2], a
-	ldh [hFFD1], a
-	ldh [hFFD0], a
-	ldh [hFFCF], a
+	ldh [hMathValue + 3], a
+	ldh [hMathOperand + 1], a
+	ldh [hMathOperand + 2], a
+	ldh [hMathOperand + 3], a
+	ldh [hMathAccum + 3], a
+	ldh [hMathAccum + 2], a
+	ldh [hMathAccum + 1], a
+	ldh [hMathAccum], a
 
 Func_025_4160:
-	ldh a, [hFFC7]
+	ldh a, [hMathOperand]
 	srl a
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	jr nc, Func_025_4188
-	ldh a, [hFFCF]
+	ldh a, [hMathAccum]
 	ld c, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	add c
-	ldh [hFFCF], a
-	ldh a, [hFFD0]
+	ldh [hMathAccum], a
+	ldh a, [hMathAccum + 1]
 	ld c, a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	adc c
-	ldh [hFFD0], a
-	ldh a, [hFFD1]
+	ldh [hMathAccum + 1], a
+	ldh a, [hMathAccum + 2]
 	ld c, a
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	adc c
-	ldh [hFFD1], a
-	ldh a, [hFFD2]
+	ldh [hMathAccum + 2], a
+	ldh a, [hMathAccum + 3]
 	ld c, a
-	ldh a, [hFFCE]
+	ldh a, [hMathValue + 3]
 	adc c
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 
 Func_025_4188:
 	dec b
 	jr z, Func_025_41a5
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	sla a
-	ldh [hFFCB], a
-	ldh a, [hFFCC]
+	ldh [hMathValue], a
+	ldh a, [hMathValue + 1]
 	rl a
-	ldh [hFFCC], a
-	ldh a, [hFFCD]
+	ldh [hMathValue + 1], a
+	ldh a, [hMathValue + 2]
 	rl a
-	ldh [hFFCD], a
-	ldh a, [hFFCE]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathValue + 3]
 	rl a
-	ldh [hFFCE], a
+	ldh [hMathValue + 3], a
 	jr Func_025_4160
 
 Func_025_41a5:
-	ldh a, [hFFCF]
-	ldh [hFFCB], a
-	ldh a, [hFFD0]
-	ldh [hFFCC], a
-	ldh a, [hFFD1]
-	ldh [hFFCD], a
-	ldh a, [hFFD2]
-	ldh [hFFCE], a
+	ldh a, [hMathAccum]
+	ldh [hMathValue], a
+	ldh a, [hMathAccum + 1]
+	ldh [hMathValue + 1], a
+	ldh a, [hMathAccum + 2]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathAccum + 3]
+	ldh [hMathValue + 3], a
 	pop bc
 	pop hl
 	ret
@@ -291,66 +291,66 @@ Divide32By16:
 	push bc
 	push de
 	xor a
-	ldh [hFFC8], a
-	ldh [hFFC9], a
-	ldh [hFFCA], a
-	ldh [hFFCE], a
-	ldh [hFFD2], a
-	ldh [hFFD1], a
-	ldh [hFFD0], a
-	ldh [hFFCF], a
+	ldh [hMathOperand + 1], a
+	ldh [hMathOperand + 2], a
+	ldh [hMathOperand + 3], a
+	ldh [hMathValue + 3], a
+	ldh [hMathAccum + 3], a
+	ldh [hMathAccum + 2], a
+	ldh [hMathAccum + 1], a
+	ldh [hMathAccum], a
 	ld a, 9
 	ld e, a
 
 Func_025_41d1:
-	ldh a, [hFFC8]
+	ldh a, [hMathOperand + 1]
 	ld c, a
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	sub c
 	ld d, a
-	ldh a, [hFFC7]
+	ldh a, [hMathOperand]
 	ld c, a
-	ldh a, [hFFCE]
+	ldh a, [hMathValue + 3]
 	sbc c
 	jr c, Func_025_41ec
-	ldh [hFFCE], a
+	ldh [hMathValue + 3], a
 	ld a, d
-	ldh [hFFCD], a
-	ldh a, [hFFCF]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathAccum]
 	inc a
-	ldh [hFFCF], a
+	ldh [hMathAccum], a
 	jr Func_025_41d1
 
 Func_025_41ec:
 	ld a, b
 	cp 1
 	jr z, Func_025_4236
-	ldh a, [hFFCF]
+	ldh a, [hMathAccum]
 	sla a
-	ldh [hFFCF], a
-	ldh a, [hFFD0]
+	ldh [hMathAccum], a
+	ldh a, [hMathAccum + 1]
 	rl a
-	ldh [hFFD0], a
-	ldh a, [hFFD1]
+	ldh [hMathAccum + 1], a
+	ldh a, [hMathAccum + 2]
 	rl a
-	ldh [hFFD1], a
-	ldh a, [hFFD2]
+	ldh [hMathAccum + 2], a
+	ldh a, [hMathAccum + 3]
 	rl a
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 	dec e
 	jr nz, Func_025_4222
 	ld a, 8
 	ld e, a
-	ldh a, [hFFC8]
-	ldh [hFFC7], a
+	ldh a, [hMathOperand + 1]
+	ldh [hMathOperand], a
 	xor a
-	ldh [hFFC8], a
-	ldh a, [hFFCD]
-	ldh [hFFCE], a
-	ldh a, [hFFCC]
-	ldh [hFFCD], a
-	ldh a, [hFFCB]
-	ldh [hFFCC], a
+	ldh [hMathOperand + 1], a
+	ldh a, [hMathValue + 2]
+	ldh [hMathValue + 3], a
+	ldh a, [hMathValue + 1]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathValue]
+	ldh [hMathValue + 1], a
 
 Func_025_4222:
 	ld a, e
@@ -359,25 +359,25 @@ Func_025_4222:
 	dec b
 
 Func_025_4228:
-	ldh a, [hFFC7]
+	ldh a, [hMathOperand]
 	srl a
-	ldh [hFFC7], a
-	ldh a, [hFFC8]
+	ldh [hMathOperand], a
+	ldh a, [hMathOperand + 1]
 	rr a
-	ldh [hFFC8], a
+	ldh [hMathOperand + 1], a
 	jr Func_025_41d1
 
 Func_025_4236:
-	ldh a, [hFFCD]
-	ldh [hFFC7], a
-	ldh a, [hFFCF]
-	ldh [hFFCB], a
-	ldh a, [hFFD0]
-	ldh [hFFCC], a
-	ldh a, [hFFD1]
-	ldh [hFFCD], a
-	ldh a, [hFFD2]
-	ldh [hFFCE], a
+	ldh a, [hMathValue + 2]
+	ldh [hMathOperand], a
+	ldh a, [hMathAccum]
+	ldh [hMathValue], a
+	ldh a, [hMathAccum + 1]
+	ldh [hMathValue + 1], a
+	ldh a, [hMathAccum + 2]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathAccum + 3]
+	ldh [hMathValue + 3], a
 	pop de
 	pop bc
 	pop hl
@@ -396,7 +396,7 @@ Func_025_424e::
 	jp hl
 
 Func_025_425d::
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wd0c3]
 	ld [de], a
 	ld bc, $9831
@@ -418,7 +418,7 @@ Func_025_425d::
 	ret
 
 Func_025_4288::
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wd0c3]
 	ld [de], a
 	ld bc, $9891
@@ -595,7 +595,7 @@ Func_025_43ac:
 	ret
 
 Func_025_43e3:
-	ld bc, $cde0
+	ld bc, wcde0
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [bc], a
@@ -611,7 +611,7 @@ Func_025_43e3:
 	ret
 
 Func_025_43fe:
-	ld bc, $cdf0
+	ld bc, wcdf0
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [bc], a
@@ -622,7 +622,7 @@ Func_025_43fe:
 	inc bc
 	ld a, 4
 	ld [bc], a
-	ld bc, $cdf8
+	ld bc, wcdf8
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [bc], a
@@ -683,7 +683,7 @@ Func_025_447e:
 
 Func_025_4488:
 	ld a, $80
-	ldh [$40], a
+	ldh [rLCDC], a
 	ld hl, $2b38
 	call CopyBackgroundPalettes
 	ld hl, $2b38
@@ -695,7 +695,7 @@ Func_025_4488:
 
 Func_025_44a0:
 	ld a, $c7
-	ldh [$40], a
+	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
@@ -735,13 +735,13 @@ Func_025_44de:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld bc, $cde0
+	ld bc, wcde0
 	ld [bc], a
 	inc bc
 	ld a, [hli]
 	ld [bc], a
 	ld a, [hli]
-	ld bc, $cdf8
+	ld bc, wcdf8
 	ld [bc], a
 	inc bc
 	ld a, [hli]
@@ -836,7 +836,7 @@ Func_025_4582:
 Func_025_459a:
 	xor a
 	ld [wd0c3], a
-	ld bc, $d200
+	ld bc, wPartyMons
 
 Func_025_45a1:
 	ld a, [bc]
@@ -860,7 +860,7 @@ Func_025_45ba:
 	ret
 
 Func_025_45bf:
-	ld hl, $c000
+	ld hl, wc000
 	ld bc, $28
 	ld de, 4
 
@@ -884,7 +884,7 @@ Func_025_45da:
 	inc bc
 	inc bc
 	ld a, [bc]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	inc de
 	dec bc
@@ -904,11 +904,11 @@ Func_025_45da:
 	xor a
 	ld [wd9d7], a
 	call ComputeStatValue
-	ld de, $d1f5
-	ldh a, [hFFCC]
+	ld de, wd1f5
+	ldh a, [hMathValue + 1]
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
 	dec de
 	ld hl, $99aa
@@ -955,7 +955,7 @@ Func_025_4640:
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	call Func_025_57a0
-	ld hl, $cb30
+	ld hl, wScreenRowBuffer
 	ld de, wPaletteBuffer
 	ld bc, $80
 	call CopyBytes3
@@ -975,7 +975,7 @@ Func_025_4684:
 
 Func_025_4697:
 	ld hl, wPaletteBuffer
-	ld de, $cb30
+	ld de, wScreenRowBuffer
 	ld bc, $80
 	call CopyBytes3
 	xor a
@@ -1463,12 +1463,12 @@ Func_025_4947:
 	ld a, 1
 	ld [wd9d7], a
 	call ComputeStatValue
-	ldh a, [hFFCC]
-	ld de, $d1f5
+	ldh a, [hMathValue + 1]
+	ld de, wd1f5
 	push de
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
 	pop de
 	ld hl, $9846
@@ -1485,12 +1485,12 @@ Func_025_4947:
 	ld a, 2
 	ld [wd9d7], a
 	call ComputeStatValue
-	ldh a, [hFFCC]
-	ld de, $d1f5
+	ldh a, [hMathValue + 1]
+	ld de, wd1f5
 	push de
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
 	pop de
 	ld hl, $9886
@@ -1507,12 +1507,12 @@ Func_025_4947:
 	ld a, 3
 	ld [wd9d7], a
 	call ComputeStatValue
-	ldh a, [hFFCC]
-	ld de, $d1f5
+	ldh a, [hMathValue + 1]
+	ld de, wd1f5
 	push de
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
 	pop de
 	ld hl, $9850
@@ -1529,12 +1529,12 @@ Func_025_4947:
 	ld a, 5
 	ld [wd9d7], a
 	call ComputeStatValue
-	ldh a, [hFFCC]
-	ld de, $d1f5
+	ldh a, [hMathValue + 1]
+	ld de, wd1f5
 	push de
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
 	pop de
 	ld hl, $9890
@@ -1548,7 +1548,7 @@ Func_025_4947:
 	call PrintNumber
 	pop bc
 	push bc
-	ld de, $d1f5
+	ld de, wd1f5
 	ld hl, 6
 	add hl, bc
 	ld a, [hld]
@@ -1577,14 +1577,14 @@ Func_025_4947:
 	ret
 
 Func_025_4a32:
-	ld hl, $cde0
+	ld hl, wcde0
 	ld [hl], $a0
-	ld hl, $cdf0
+	ld hl, wcdf0
 	ld [hl], $a0
 	ld a, [wSelectedOption]
 	and a
 	jr z, Func_025_4a65
-	ld hl, $cdf0
+	ld hl, wcdf0
 	ld a, $90
 	ld [hli], a
 	ld a, $4e
@@ -1605,7 +1605,7 @@ Func_025_4a32:
 	jr z, Func_025_4a70
 
 Func_025_4a65:
-	ld hl, $cde0
+	ld hl, wcde0
 	ld a, $90
 	ld [hli], a
 	ld a, $5a
@@ -1649,7 +1649,7 @@ Func_025_4a8d:
 	ld bc, $0302
 	add hl, bc
 	call GetTextBGMapPointer
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wd0c3]
 	ld [de], a
 	ld bc, $0102
@@ -1667,7 +1667,7 @@ Func_025_4a8d:
 	ld bc, $0602
 	add hl, bc
 	call GetTextBGMapPointer
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wPlayerMap2Y]
 	ld [de], a
 	ld bc, $0102
@@ -1744,7 +1744,7 @@ Func_025_4b5d:
 	ret
 
 Func_025_4b7a:
-	ld de, $d1a0
+	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
 	add a
@@ -1755,7 +1755,7 @@ Func_025_4b7a:
 	ld a, [hli]
 	ld [wSelectedOption], a
 	ld a, [hli]
-	ld bc, $cde0
+	ld bc, wcde0
 	ld [bc], a
 	inc bc
 	ld a, [hli]
@@ -1768,8 +1768,8 @@ Func_025_4b7a:
 	ret
 
 Func_025_4b9b:
-	ld hl, $cde0
-	ld de, $cdf0
+	ld hl, wcde0
+	ld de, wcdf0
 	ld a, [hli]
 	ld [de], a
 	inc de
@@ -1791,7 +1791,7 @@ Func_025_4bae:
 	pop af
 	push bc
 	ld [wSelectedOption], a
-	ld hl, $d100
+	ld hl, wd100
 	ld d, $16
 
 Func_025_4bc5:
@@ -1814,7 +1814,7 @@ Func_025_4bd4:
 	dec d
 	jr nz, Func_025_4bd4
 	pop bc
-	ld hl, $d100
+	ld hl, wd100
 	ld d, $16
 
 Func_025_4be0:
@@ -1831,7 +1831,7 @@ Func_025_4be0:
 
 Func_025_4bf1:
 	call AdvanceBattleScript
-	ld de, $d1a0
+	ld de, wd1a0
 	ld a, [wBattleScriptByte]
 	ld l, a
 	add a
@@ -1842,7 +1842,7 @@ Func_025_4bf1:
 	ld a, [hli]
 	ld [wSelectedOption], a
 	ld a, [hli]
-	ld bc, $cde0
+	ld bc, wcde0
 	ld [bc], a
 	inc bc
 	ld a, [hli]
@@ -1957,7 +1957,7 @@ Func_025_4ce6:
 	ld [hl], 0
 
 Func_025_4cee:
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wSelectedPage]
 	inc a
 	ld [de], a
@@ -2020,7 +2020,7 @@ Func_025_4d3d:
 
 Func_025_4d5c:
 	ld a, [wd9d3]
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
@@ -2178,7 +2178,7 @@ Func_025_4ea4:
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
-	ld de, $d1a0
+	ld de, wd1a0
 	ld a, $b
 	ld l, a
 	add a
@@ -2201,7 +2201,7 @@ Func_025_4ea4:
 	ret
 
 Func_025_4edb:
-	ld de, $d7cb
+	ld de, wd7cb
 	ld a, [wd9d8]
 	ld l, a
 	ld h, 0
@@ -2240,7 +2240,7 @@ Func_025_4f10:
 	call ByteFillVRAM
 	call DelayFrame
 	ld a, [wSelectedPage]
-	ld hl, $d7cb
+	ld hl, wd7cb
 	ld de, 8
 	call Func_025_4f7f
 	xor a
@@ -2308,7 +2308,7 @@ Func_025_4f86:
 	ret
 
 Func_025_4f87:
-	ld de, $d0d5
+	ld de, wd0d5
 	ld hl, $99e5
 	ld a, $a
 	ld [wd8fe], a
@@ -2318,7 +2318,7 @@ Func_025_4f87:
 	ld a, 0
 	ld [wd0fd], a
 	call PrintNumber
-	ld de, $d0d6
+	ld de, wd0d6
 	ld hl, $9965
 	ld a, $a
 	ld [wd8fe], a
@@ -2351,7 +2351,7 @@ Func_025_4fd2:
 	ld a, [de]
 	inc a
 	ld b, a
-	ld de, $d1f5
+	ld de, wd1f5
 	ld [de], a
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
@@ -2447,7 +2447,7 @@ Func_025_5087:
 
 Func_025_50ad:
 	farcall Func_01f_4028
-	ld hl, $d86a
+	ld hl, wd86a
 	ld a, $70
 	ld [wMenuTextX], a
 	ld a, $7c
@@ -2465,7 +2465,7 @@ Func_025_50cc:
 	ld c, $80
 	ld b, $40
 	call LoadPalettes_OCPD
-	ld bc, $cdf8
+	ld bc, wcdf8
 	ld a, $18
 	ld [bc], a
 	inc bc
@@ -2486,7 +2486,7 @@ Func_025_50ef:
 	call LoadPalettes_BCPD
 	farcall Func_01f_40ea
 	farcall Func_00a_45ce
-	ld hl, $d86a
+	ld hl, wd86a
 	ld a, $d0
 	ld [wMenuTextX], a
 	ld a, $dc
@@ -2503,7 +2503,7 @@ Func_025_5124:
 	ld [wBattleScriptByte], a
 
 Func_025_5128:
-	ld de, $dd00
+	ld de, wdd00
 	ld a, [wBattleScriptByte]
 	ld l, a
 	ld h, 0
@@ -2691,14 +2691,14 @@ Func_025_527c:
 	ret
 
 Func_025_52a3:
-	ld hl, $cdf0
+	ld hl, wcdf0
 	ld [hl], $a0
-	ld hl, $cdf8
+	ld hl, wcdf8
 	ld [hl], $a0
 	ld a, [wSelectedOption]
 	and a
 	jr z, Func_025_52d6
-	ld hl, $cdf0
+	ld hl, wcdf0
 	ld a, $94
 	ld [hli], a
 	ld a, $4e
@@ -2719,7 +2719,7 @@ Func_025_52a3:
 	jr z, Func_025_52e1
 
 Func_025_52d6:
-	ld hl, $cdf8
+	ld hl, wcdf8
 	ld a, $94
 	ld [hli], a
 	ld a, $5a
@@ -2730,7 +2730,7 @@ Func_025_52e1:
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
-	ld hl, $cde0
+	ld hl, wcde0
 	ld [hl], $30
 	inc hl
 	ld [hl], $30
@@ -2775,7 +2775,7 @@ Func_025_532e:
 	ret
 
 Func_025_533d:
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	bit 0, a
 	jr z, Func_025_534f
 	farcall DrawItemPageWithIcons
@@ -2819,7 +2819,7 @@ Func_025_5377:
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	bit 0, a
 	jr z, Func_025_53a3
 	farcall Func_01e_47af
@@ -2834,7 +2834,7 @@ Func_025_53a3:
 	ret
 
 Func_025_53ae:
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	bit 0, a
 	jp z, Func_025_5410
 	ld a, [wSelectedPage]
@@ -2869,7 +2869,7 @@ Func_025_53e4:
 	ld [hl], 0
 
 Func_025_53ec:
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wSelectedPage]
 	inc a
 	ld [de], a
@@ -2915,7 +2915,7 @@ Func_025_5438:
 	ld [hl], 0
 
 Func_025_5440:
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wSelectedPage]
 	inc a
 	ld [de], a
@@ -2989,9 +2989,9 @@ Func_025_54d0:
 
 Func_025_54d2:
 	push bc
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	add c
-	ld de, $d1f5
+	ld de, wd1f5
 	inc a
 	ld [de], a
 	ld l, c
@@ -3011,9 +3011,9 @@ Func_025_54d2:
 	call PrintNumber
 	pop bc
 	push bc
-	ld de, $dca0
+	ld de, wdca0
 	ld l, c
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	add l
 	ld l, a
 	ld h, 0
@@ -3042,7 +3042,7 @@ Func_025_552a:
 	jr Func_025_5555
 
 Func_025_552e:
-	ld a, [wdc9e]
+	ld a, [wMonBoxIndex]
 	add c
 	ld l, a
 	ld a, [wdc9d]
@@ -3080,7 +3080,7 @@ SelectionMarkerLeftTiles:
 	db $2c
 
 Func_025_5566:
-	ld de, $d1f5
+	ld de, wd1f5
 	ld a, [wdc9d]
 	inc a
 	ld [de], a
@@ -3104,7 +3104,7 @@ Func_025_558b:
 	ret
 
 Func_025_5593:
-	ld hl, $d1a0
+	ld hl, wd1a0
 	ld c, $40
 	xor a
 
@@ -3131,7 +3131,7 @@ Func_025_55b4:
 	xor a
 	ld [wd0d6], a
 	ld [wd0d5], a
-	ld hl, $d7cb
+	ld hl, wd7cb
 	ld bc, $9f
 
 Func_025_55c1:
@@ -3209,16 +3209,16 @@ Func_025_561b:
 	ld a, b
 	ld [wd982], a
 	farcall GetExpToNextLevel
-	ld de, $d1f5
-	ldh a, [hFFCD]
+	ld de, wd1f5
+	ldh a, [hMathValue + 2]
 	ld [de], a
 	inc de
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [de], a
 	inc de
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [de], a
-	ld de, $d1f5
+	ld de, wd1f5
 	ld hl, $98ed
 	ld bc, $0306
 	ld a, $a
@@ -3440,7 +3440,7 @@ unknown:
 	db $ff
 
 Func_025_572f:
-	ld de, $d1a0
+	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
 	add a
@@ -3451,7 +3451,7 @@ Func_025_572f:
 	ld a, [hli]
 	ld [wSelectedOption], a
 	ld a, [hli]
-	ld bc, $cde0
+	ld bc, wcde0
 	ld [bc], a
 	inc bc
 	ld a, [hli]
@@ -3553,7 +3553,7 @@ Func_025_57a0:
 	ld a, l
 	ld [wdcd6], a
 	call Func_025_581f
-	ld de, $d100
+	ld de, wd100
 	ld a, [wd0ba]
 	ld l, a
 	ld a, [wd0bb]
@@ -3575,7 +3575,7 @@ Func_025_57a0:
 	and 3
 	or $98
 	ld h, a
-	ld de, $d100
+	ld de, wd100
 	ld bc, $1406
 	ld a, $14
 	ld [hVRAMCopyWidth], a
@@ -3593,7 +3593,7 @@ Func_025_57a0:
 	and 3
 	or $98
 	ld h, a
-	ld de, $d100
+	ld de, wd100
 	ld bc, $1406
 	ld a, $14
 	ld [hVRAMCopyWidth], a
@@ -3603,7 +3603,7 @@ Func_025_57a0:
 	ret
 
 Func_025_581f:
-	ld hl, $d100
+	ld hl, wd100
 	ld a, h
 	ld [wBGMapAddr + 1], a
 	ld a, l
@@ -3612,7 +3612,7 @@ Func_025_581f:
 	ld h, a
 	ld a, [wdcd6]
 	ld l, a
-	ld de, $ce00
+	ld de, wMapTileAttrs
 	ld c, $78
 
 Func_025_5837:
@@ -3629,7 +3629,7 @@ Func_025_5837:
 	ld a, [hli]
 	ld [de], a
 	pop de
-	ld hl, $d0b6
+	ld hl, wBGMapAddr
 	inc [hl]
 	pop hl
 	dec c
@@ -3736,9 +3736,9 @@ Func_025_58ed:
 	ld a, [hld]
 	and a
 	jr z, Func_025_5904
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	ld a, [hl]
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	jr Func_025_590d
 
 Func_025_5904:
@@ -3746,25 +3746,25 @@ Func_025_5904:
 	and a
 	ret z
 	xor a
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	ld a, [hl]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 
 Func_025_590d:
 	xor a
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	ld a, $20
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	call Multiply32By8
 	ld a, 4
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld b, 4
 	call Divide32By16
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	push af
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	push af
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	push af
 	xor a
 	ld [wd9d7], a
@@ -3774,25 +3774,25 @@ Func_025_590d:
 	ld b, a
 	call ComputeStatValue
 	ld a, 4
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld b, 4
 	call Divide32By16
-	ldh a, [hFFCB]
-	ldh [hFFC7], a
+	ldh a, [hMathValue]
+	ldh [hMathOperand], a
 	pop af
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	pop af
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	pop af
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	ld b, 4
 	call Divide32By16
 	ld d, 0
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	cp $20
 	jr c, Func_025_595f
 	ld a, $20
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 
 Func_025_595f:
 	srl a
@@ -4935,9 +4935,9 @@ Func_025_5dcb:
 PrintNumber::
 	push bc
 	xor a
-	ldh [hFFCE], a
-	ldh [hFFCD], a
-	ldh [hFFCC], a
+	ldh [hMathValue + 3], a
+	ldh [hMathValue + 2], a
+	ldh [hMathValue + 1], a
 	ld a, b
 	and $f
 	cp 1
@@ -4945,26 +4945,26 @@ PrintNumber::
 	cp 2
 	jr z, Func_025_5e15
 	ld a, [de]
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	inc de
 	ld a, [de]
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	inc de
 	ld a, [de]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	jr Func_025_5e21
 
 Func_025_5e15:
 	ld a, [de]
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	inc de
 	ld a, [de]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	jr Func_025_5e21
 
 Func_025_5e1e:
 	ld a, [de]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 
 Func_025_5e21:
 	push de
@@ -4985,57 +4985,57 @@ Func_025_5e21:
 	cp 6
 	jr z, Func_025_5e4e
 	ld a, $f
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld a, $42
-	ldh [hFFC8], a
+	ldh [hMathOperand + 1], a
 	ld a, $40
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 	call Func_025_5f0e
 	call Func_025_5fc1
 
 Func_025_5e4e:
 	ld a, 1
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld a, $86
-	ldh [hFFC8], a
+	ldh [hMathOperand + 1], a
 	ld a, $a0
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 	call Func_025_5f0e
 	call Func_025_5fc1
 
 Func_025_5e60:
 	xor a
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld a, $27
-	ldh [hFFC8], a
+	ldh [hMathOperand + 1], a
 	ld a, $10
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 	call Func_025_5f0e
 	call Func_025_5fc1
 
 Func_025_5e71:
 	xor a
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	ld a, 3
-	ldh [hFFC8], a
+	ldh [hMathOperand + 1], a
 	ld a, $e8
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 	call Func_025_5f0e
 	call Func_025_5fc1
 
 Func_025_5e82:
 	xor a
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	xor a
-	ldh [hFFC8], a
+	ldh [hMathOperand + 1], a
 	ld a, $64
-	ldh [hFFD2], a
+	ldh [hMathAccum + 3], a
 	call Func_025_5f0e
 	call Func_025_5fc1
 
 Func_025_5e92:
 	ld c, 0
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 
 Func_025_5e96:
 	cp $a
@@ -5046,9 +5046,9 @@ Func_025_5e96:
 
 Func_025_5e9f:
 	ld b, a
-	ldh a, [hFFCE]
+	ldh a, [hMathValue + 3]
 	or c
-	ldh [hFFCE], a
+	ldh [hMathValue + 3], a
 	jr nz, Func_025_5eac
 	call Func_025_5f94
 	jr Func_025_5ed9
@@ -5130,67 +5130,67 @@ Func_025_5f0e:
 	ld c, 0
 
 Func_025_5f10:
-	ldh a, [hFFC7]
+	ldh a, [hMathOperand]
 	ld b, a
-	ldh a, [hFFCD]
-	ldh [hFFD1], a
+	ldh a, [hMathValue + 2]
+	ldh [hMathAccum + 2], a
 	cp b
 	jr c, Func_025_5f60
 	sub b
-	ldh [hFFCD], a
-	ldh a, [hFFC8]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathOperand + 1]
 	ld b, a
-	ldh a, [hFFCC]
-	ldh [hFFD0], a
+	ldh a, [hMathValue + 1]
+	ldh [hMathAccum + 1], a
 	cp b
 	jr nc, Func_025_5f32
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	or 0
 	jr z, Func_025_5f5c
 	dec a
-	ldh [hFFCD], a
-	ldh a, [hFFCC]
+	ldh [hMathValue + 2], a
+	ldh a, [hMathValue + 1]
 
 Func_025_5f32:
 	sub b
-	ldh [hFFCC], a
-	ldh a, [hFFD2]
+	ldh [hMathValue + 1], a
+	ldh a, [hMathAccum + 3]
 	ld b, a
-	ldh a, [hFFCB]
-	ldh [hFFCF], a
+	ldh a, [hMathValue]
+	ldh [hMathAccum], a
 	cp b
 	jr nc, Func_025_5f52
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, Func_025_5f4d
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	and a
 	jr z, Func_025_5f58
 	dec a
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	xor a
 
 Func_025_5f4d:
 	dec a
-	ldh [hFFCC], a
-	ldh a, [hFFCB]
+	ldh [hMathValue + 1], a
+	ldh a, [hMathValue]
 
 Func_025_5f52:
 	sub b
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	inc c
 	jr Func_025_5f10
 
 Func_025_5f58:
-	ldh a, [hFFD0]
-	ldh [hFFCC], a
+	ldh a, [hMathAccum + 1]
+	ldh [hMathValue + 1], a
 
 Func_025_5f5c:
-	ldh a, [hFFD1]
-	ldh [hFFCD], a
+	ldh a, [hMathAccum + 2]
+	ldh [hMathValue + 2], a
 
 Func_025_5f60:
-	ldh a, [hFFCE]
+	ldh a, [hMathValue + 3]
 	or c
 	jr z, Func_025_5f94
 	ld a, [wd1fc]
@@ -5202,7 +5202,7 @@ Func_025_5f60:
 	call WaitVRAM_STAT
 	ld a, c
 	ld [hl], a
-	ldh [hFFCE], a
+	ldh [hMathValue + 3], a
 	ret
 
 Func_025_5f78:
@@ -5222,7 +5222,7 @@ Func_025_5f78:
 	ld a, c
 	inc a
 	ld [hl], a
-	ldh [hFFCE], a
+	ldh [hMathValue + 3], a
 	pop hl
 	ret
 
@@ -5261,7 +5261,7 @@ Func_025_5fc1:
 	jr nz, Func_025_5fcd
 	bit 6, d
 	jr z, Func_025_5fcd
-	ldh a, [hFFCE]
+	ldh a, [hMathValue + 3]
 	and a
 	ret z
 
@@ -5339,14 +5339,14 @@ unk_025_6022:
 	dw $120f
 
 Func_025_602a:
-	ld hl, $cb30
-	ld de, $d100
+	ld hl, wScreenRowBuffer
+	ld de, wd100
 	ld c, $54
 
 Func_025_6032:
 	ld a, [hli]
 	push hl
-	ld hl, $ce00
+	ld hl, wMapTileAttrs
 	add l
 	ld l, a
 	ld a, h
@@ -5362,7 +5362,7 @@ Func_025_6032:
 	ld l, a
 	ld a, [wTextBGMapPointer + 1]
 	ld h, a
-	ld de, $d100
+	ld de, wd100
 	ld a, 7
 	ld b, a
 	ld [hVRAMCopyWidth], a
@@ -5381,7 +5381,7 @@ Func_025_605f:
 	ld a, $c
 	ld c, a
 	ld [hVRAMCopyHeight], a
-	ld de, $cb30
+	ld de, wScreenRowBuffer
 	call PlaceTilemap
 	ret
 
@@ -5389,7 +5389,7 @@ Func_025_6078:
 	hlcoord 0, 0
 	ld de, $d
 	add hl, de
-	ld de, $cb30
+	ld de, wScreenRowBuffer
 	ld bc, $070c
 
 Func_025_6085:

@@ -502,7 +502,7 @@ WriteSaveData:
 	ld bc, $0098
 	call CopyBytes3
 	ld de, sa4a6
-	ld hl, wdb20 + $17C
+	ld hl, wMonBoxCount
 	ld bc, $0010
 	call CopyBytes3
 	ld de, sEventFlags
@@ -510,7 +510,7 @@ WriteSaveData:
 	ld bc, $0040
 	call CopyBytes3
 	ld de, sa6db
-	ld hl, wdb20
+	ld hl, wMonBox
 	ld bc, $017C
 	call CopyBytes3
 	ld de, sa858
@@ -2159,9 +2159,9 @@ Func_024_5646:
 	ld l, a
 	ld bc, $001E
 	add hl, bc
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld d, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld e, a
 	ld a, h
 	cp d
@@ -2208,9 +2208,9 @@ Func_024_5646:
 	ld l, a
 	ld bc, $0032
 	add hl, bc
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld d, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld e, a
 	ld a, h
 	cp d
@@ -2253,9 +2253,9 @@ Func_024_5646:
 	ld l, a
 	ld bc, $0064
 	add hl, bc
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld d, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld e, a
 	ld a, h
 	cp d
@@ -2298,9 +2298,9 @@ Func_024_5646:
 	ld l, a
 	ld bc, $00C8
 	add hl, bc
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld d, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld e, a
 	ld a, h
 	cp d
@@ -2334,26 +2334,26 @@ Func_024_5646:
 	xor a
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9d8], a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9d9], a
 	ld a, $14
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $64
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	and a
 	jr z, .asm_57a6
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9da + 1], a
 	jr .asm_57af
 .asm_57a6
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da + 1], a
 	xor a
 	ld [wd9da], a
@@ -2406,26 +2406,26 @@ Func_024_5646:
 	xor a
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9d8], a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9d9], a
 	ld a, $05
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $0A
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	and a
 	jr z, .asm_5829
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9da + 1], a
 	jr .asm_5832
 .asm_5829
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da + 1], a
 	xor a
 	ld [wd9da], a
@@ -2478,9 +2478,9 @@ Func_024_5646:
 	xor a
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9d8], a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9d9], a
 	pop bc
 	ld hl, $0002
@@ -2582,26 +2582,26 @@ Func_024_5646:
 	xor a
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9d8], a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9d9], a
 	ld a, $02
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $0A
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	and a
 	jr z, .asm_596e
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9da + 1], a
 	jr .asm_5977
 .asm_596e
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da + 1], a
 	xor a
 	ld [wd9da], a
@@ -2627,26 +2627,26 @@ Func_024_5646:
 	xor a
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9d8], a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9d9], a
 	ld a, $05
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $0A
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	and a
 	jr z, .asm_59d0
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9da + 1], a
 	jr .asm_59d9
 .asm_59d0
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9da + 1], a
 	xor a
 	ld [wd9da], a
@@ -2672,9 +2672,9 @@ Func_024_5646:
 	xor a
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [wd9d8], a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9d9], a
 	pop bc
 	ld hl, $0002
@@ -4308,20 +4308,20 @@ Func_024_6864::
 	ret
 Func_024_689a:
 	ld a, $80
-	ldh [$ff40], a
+	ldh [rLCDC], a
 	ld hl, $2b38
 	call CopyBackgroundPalettes
 	ld hl, $2b38
 	call CopyObjectPalettes
 	call DelayFrame
 	ld a, [wd0bc]
-	ldh [$ffae], a
+	ldh [hSCX], a
 	ld a, [wd0bd]
-	ldh [$ffaf], a
+	ldh [hSCXHigh], a
 	ld a, [wd0be]
-	ldh [$ffb0], a
+	ldh [hSCY], a
 	ld a, [wd0bf]
-	ldh [$ffb1], a
+	ldh [hSCYHigh], a
 	call LoadMapGFX
 	ld de, wTilemap
 	ld a, [wd0ba]
@@ -4330,13 +4330,13 @@ Func_024_689a:
 	ld h, a
 	ld bc, $1412
 	ld a, $14
-	ldh [$ff92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, $12
-	ldh [$ff93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	farcall Func_025_57a0
 	ld de, wPaletteBuffer
-	ld hl, wcb30
+	ld hl, wScreenRowBuffer
 	ld bc, $0080
 	call CopyBytes3
 	call Func_024_6941
@@ -4344,16 +4344,16 @@ Func_024_689a:
 	ld b, $04
 	rst $30
 	ld a, $c7
-	ldh [$ff40], a
+	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
 	call CopyBackgroundPalettes
 	ld hl, wcaf0
 	call CopyObjectPalettes
 	call DelayFrame
 	ld a, $01
-	ldh [$ffc6], a
+	ldh [hFFC6], a
 	xor a
-	ldh [$ffc5], a
+	ldh [hFFC5], a
 	ld [wBattleScriptState], a
 	ret
 Func_024_6916:
@@ -4397,7 +4397,7 @@ Func_024_6947:
 	ret
 Func_024_694c:
 	ld de, wd1a0
-	ldh a, [$ffc5]
+	ldh a, [hFFC5]
 	ld l, a
 	add a
 	add l
@@ -4423,10 +4423,10 @@ unk_024_6969:
 Func_024_696d:
 	call Func_024_4062
 	call DelayFrame
-	ldh a, [$ff9d]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [$ff9d], a
-	ldh a, [$ffc6]
+	ldh [hFadeFrameCounter], a
+	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_6985
 	call Func_024_6aab
@@ -4434,10 +4434,10 @@ Func_024_696d:
 	jr Func_024_696d
 .asm_6985
 	xor a
-	ldh [$ffc6], a
+	ldh [hFFC6], a
 	ret
 Func_024_6989:
-	ldh a, [$ff94]
+	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, Func_024_69aa
 Func_024_698f:
@@ -4455,7 +4455,7 @@ Func_024_698f:
 	ld [wSelectedOption], a
 	ret
 Func_024_69aa:
-	ldh a, [$ff94]
+	ldh a, [hJoypadPressed]
 	bit 6, a
 	jr z, Func_024_69bd
 Func_024_69b0:
@@ -4466,7 +4466,7 @@ Func_024_69b0:
 	ld [wSelectedOption], a
 	jr Func_024_69f3
 Func_024_69bd:
-	ldh a, [$ff94]
+	ldh a, [hJoypadPressed]
 	bit 5, a
 	jr z, Func_024_69d1
 Func_024_69c3:
@@ -4479,7 +4479,7 @@ Func_024_69c3:
 	ld [wSelectedOption], a
 	jr Func_024_69f3
 Func_024_69d1:
-	ldh a, [$ff94]
+	ldh a, [hJoypadPressed]
 	bit 4, a
 	jr z, Func_024_6a20
 Func_024_69d7:
@@ -4522,15 +4522,15 @@ Func_024_69f3:
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01
-	ldh [$ffc6], a
+	ldh [hFFC6], a
 Func_024_6a20:
-	ldh a, [$ff94]
+	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, Func_024_6a61
 	ld a, $11
 	call PlaySound
 	call Func_024_6ba1
-	ldh a, [$ffd3]
+	ldh a, [hBattleJumptableIndex]
 	and a
 	jr nz, .asm_6a46
 	ld a, $01
@@ -4540,7 +4540,7 @@ Func_024_6a20:
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01
-	ldh [$ffc6], a
+	ldh [hFFC6], a
 	ret
 .asm_6a46
 	ld a, $02
@@ -4550,19 +4550,19 @@ Func_024_6a20:
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01
-	ldh [$ffc6], a
+	ldh [hFFC6], a
 	ld hl, wBattleScriptPos
 	ld [hl], LOW(Script_024_41c1)
 	inc hl
 	ld [hl], HIGH(Script_024_41c1)
 	ret
 Func_024_6a61:
-	ldh a, [$ff94]
+	ldh a, [hJoypadPressed]
 	bit 1, a
 	jr z, Func_024_6a9e
 	ld a, $11
 	call PlaySound
-	ldh a, [$ffd3]
+	ldh a, [hBattleJumptableIndex]
 	and a
 	jr nz, Func_024_6a8c
 Func_024_6a71:
@@ -4575,17 +4575,17 @@ Func_024_6a71:
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01
-	ldh [$ffc6], a
-	ldh [$ffc5], a
+	ldh [hFFC6], a
+	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
 Func_024_6a8c:
 	xor a
 	ld [wBattleScriptByte], a
-	ldh [$ffc5], a
+	ldh [hFFC5], a
 	ld [wBattleScriptState], a
 	ld a, $01
-	ldh [$ffc6], a
+	ldh [hFFC6], a
 	ld a, $03
 	ld [wBattleIntroJumptableIndex], a
 Func_024_6a9e:
@@ -4600,7 +4600,7 @@ OptionCursorCoords:
 	db $38, $78
 
 Func_024_6aab:
-	ldh a, [$ff9d]
+	ldh a, [hFadeFrameCounter]
 	and $07
 Func_024_6aaf:
 	ret nz
@@ -4775,7 +4775,7 @@ unk_024_6b9c:
 
 Func_024_6ba1:
 	ld de, wd1a0
-	ldh a, [$ffc5]
+	ldh a, [hFFC5]
 	ld l, a
 	add a
 	add l

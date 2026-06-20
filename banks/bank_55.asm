@@ -504,7 +504,7 @@ Script_055_54c1:
 	scr_4e $00, Script_055_7e6b
 	scr_1c $00 ; TEMP
 	scr_text text_55_645b
-	scr_setbit $daa7, $03 ; TEMP
+	scr_setbit wEventFlags + 7, $03 ; TEMP
 	scr_1f $14 ; TEMP
 	scr_34 $0b, $12, $01 ; TEMP
 	scr_emote $00, $00 ; TEMP
@@ -900,7 +900,7 @@ Script_055_5957:
 
 Script_055_595f:
 	scr_04 text_55_64f9
-	scr_setbit $daa7, $04 ; TEMP
+	scr_setbit wEventFlags + 7, $04 ; TEMP
 	db $3f ; TEMP
 	scr_end
 
@@ -911,7 +911,7 @@ Script_055_5968:
 
 Script_055_5970:
 	scr_04 text_55_650e
-	scr_setbit $daa7, $05 ; TEMP
+	scr_setbit wEventFlags + 7, $05 ; TEMP
 	db $3f ; TEMP
 	scr_end
 
@@ -922,7 +922,7 @@ Script_055_5979:
 
 Script_055_5981:
 	scr_04 text_55_653d
-	scr_setbit $daa7, $06 ; TEMP
+	scr_setbit wEventFlags + 7, $06 ; TEMP
 	db $3f ; TEMP
 	scr_end
 
@@ -934,7 +934,7 @@ Script_055_598a:
 Script_055_5992:
 	scr_checkbit wEventFlags + 8, $05, Script_055_59a1
 	scr_04 text_55_65c6
-	scr_setbit $daa7, $07 ; TEMP
+	scr_setbit wEventFlags + 7, $07 ; TEMP
 	db $3f ; TEMP
 	scr_end
 
@@ -1105,7 +1105,7 @@ Script_055_5a7d:
 	scr_spritewalk  3, MOVE_DOWN
 	scr_spriteface  3, FACE_RIGHT
 	scr_text text_55_61e2
-	scr_setbit $daa7, $02 ; TEMP
+	scr_setbit wEventFlags + 7, $02 ; TEMP
 	scr_end
 
 Script_055_5aeb:

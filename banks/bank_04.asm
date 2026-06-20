@@ -155,7 +155,7 @@ Func_004_40cb:
 	and a
 	jp z, .asm_4164
 	push af
-	ldh a, [$ffbc]
+	ldh a, [hTextSource]
 	and a
 	jr z, .asm_40f5
 	ld a, [wTextboxPos]
@@ -362,7 +362,7 @@ Func_004_41e6:
 	and a
 	ret z
 	push af
-	ldh a, [$ffbc]
+	ldh a, [hTextSource]
 	and a
 	jr z, .asm_420f
 	ld a, [wTextboxPos]
@@ -437,7 +437,7 @@ Func_004_41e6:
 	or $20
 	ld [de], a
 .asm_425a
-	ld a, [$cd2a]
+	ld a, [wcd2a]
 	cp $01
 	jr nz, .asm_4265
 	ld a, [de]
@@ -452,7 +452,7 @@ Func_004_41e6:
 	ret
 
 Func_004_426d:
-	ldh a, [$ff91]
+	ldh a, [hConsoleType]
 	cp $11
 	ret nz
 	ld hl, Pointers_004_47ab
@@ -512,7 +512,7 @@ Func_004_426d:
 	ld h, [hl]
 	ld l, a
 	push hl
-	ld de, $cb70
+	ld de, wScreenRowBuffer + $40
 	ld bc, $0008
 	call CopyBytes3
 	pop hl
@@ -529,7 +529,7 @@ Func_004_426d:
 	ld h, [hl]
 	ld l, a
 	push hl
-	ld de, $cb70
+	ld de, wScreenRowBuffer + $40
 	ld hl, $0010
 	add hl, de
 	push hl

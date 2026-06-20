@@ -530,7 +530,7 @@ LoadMapAttribute_Group1:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	ld [$d9be], a
+	ld [wBattleMusic], a
 	ret
 
 LoadMapAttribute_Group2:
@@ -540,7 +540,7 @@ LoadMapAttribute_Group2:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	ld [$d9be], a
+	ld [wBattleMusic], a
 	ret
 
 LoadMapAttribute_Group3:
@@ -550,7 +550,7 @@ LoadMapAttribute_Group3:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	ld [$d9be], a
+	ld [wBattleMusic], a
 	ret
 
 LoadMapAttribute_Group4:
@@ -560,7 +560,7 @@ LoadMapAttribute_Group4:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	ld [$d9be], a
+	ld [wBattleMusic], a
 	ret
 
 LoadMapAttribute_Group5:
@@ -570,7 +570,7 @@ LoadMapAttribute_Group5:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	ld [$d9be], a
+	ld [wBattleMusic], a
 	ret
 
 LoadMapAttribute_Group6:
@@ -580,7 +580,7 @@ LoadMapAttribute_Group6:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	ld [$d9be], a
+	ld [wBattleMusic], a
 	ret
 
 MapAttr_Group1:
@@ -730,11 +730,11 @@ LoadWildMon:
 	ret
 
 .case1:
-	ld a, [$dc9c]
+	ld a, [wMonBoxCount]
 	cp $14
 	jr nc, .case2
-	ld hl, wdb20
-	ld a, [$dc9c]
+	ld hl, wMonBox
+	ld a, [wMonBoxCount]
 	ld de, $13
 	and a
 	jr z, .copy
@@ -754,9 +754,9 @@ LoadWildMon:
 	inc de
 	dec c
 	jr nz, .copyLoop
-	ld a, [$dc9c]
+	ld a, [wMonBoxCount]
 	inc a
-	ld [$dc9c], a
+	ld [wMonBoxCount], a
 	xor a
 	ld [wd9d7], a
 	push bc
@@ -770,15 +770,15 @@ LoadWildMon:
 	ret
 
 .case2:
-	ld a, [$dcab]
+	ld a, [wMonBox2Count]
 	cp $14
 	ret nc
 	ld a, SRAM_ENABLE
 	ld [rRAMG], a
 	ld a, 1
 	ld [rRAMB], a
-	ld hl, $b600
-	ld a, [$dcab]
+	ld hl, sMonBox2
+	ld a, [wMonBox2Count]
 	ld de, $13
 	and a
 	jr z, .copy
@@ -787,9 +787,9 @@ LoadWildMon:
 	add hl, de
 	dec a
 	jr nz, .scan2
-	ld a, [$dcab]
+	ld a, [wMonBox2Count]
 	inc a
-	ld [$dcab], a
+	ld [wMonBox2Count], a
 	xor a
 	ld [wd9d7], a
 	push bc
@@ -921,7 +921,7 @@ Func_02d_5086::
 	ld e, a
 	ld a, [hli]
 	ld d, a
-	ld a, [$d9be]
+	ld a, [wBattleMusic]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -960,7 +960,7 @@ Func_02d_50b3:
 	call Func_02d_511b
 	call Func_02d_5147
 	push bc
-	ld bc, $db00
+	ld bc, wdb00
 	ld a, [wd98b]
 	ld l, a
 	ld h, 0
@@ -1166,9 +1166,9 @@ asm_02d_51eb:
 Func_02d_51f1:
 	ld hl, MON_HP
 	add hl, bc
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [hli], a
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	ld [hli], a
 
 	ld hl, MON_MOVE1ID

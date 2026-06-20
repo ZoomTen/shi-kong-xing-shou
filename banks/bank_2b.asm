@@ -70,7 +70,7 @@ Func_02b_402b:
 	ld a, [wd982]
 	ld b, a
 	call Func_114c
-	ld de, $ffcb
+	ld de, hMathValue
 	ld hl, $9945
 	ld bc, $0103
 	call Func_113f
@@ -96,7 +96,7 @@ Func_02b_409e:
 
 .player
 	call Func_02b_4296
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	and a
 	jr z, .player_done
 	ld [wd9bd], a
@@ -111,7 +111,7 @@ Func_02b_409e:
 	inc hl
 	ld [hl], d
 	call Func_02b_4296
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd9bd]
 	sub b
@@ -157,7 +157,7 @@ Func_02b_409e:
 
 .enemy_only
 	call Func_02b_4374
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	and a
 	jp z, asm_02b_5aaf
 	ld [wd9bd], a
@@ -172,7 +172,7 @@ Func_02b_409e:
 	inc hl
 	ld [hl], d
 	call Func_02b_4374
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd9bd]
 	sub b
@@ -233,7 +233,7 @@ Func_02b_419d:
 
 .player
 	call Func_02b_4296
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9bd], a
 	call Func_02b_5ca2
 	ld a, [wd984]
@@ -248,7 +248,7 @@ Func_02b_419d:
 	call Func_02b_4296
 	ld a, [wd9bd]
 	ld b, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	sub b
 	inc a
 	ld [wd9bc], a
@@ -274,7 +274,7 @@ Func_02b_419d:
 
 .enemy_only
 	call Func_02b_4374
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	ld [wd9bd], a
 	call Func_02b_5ca2
 	ld a, [wd981]
@@ -289,7 +289,7 @@ Func_02b_419d:
 	call Func_02b_4374
 	ld a, [wd9bd]
 	ld b, a
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	sub b
 	inc a
 	ld [wd9bc], a
@@ -316,7 +316,7 @@ GetExpToNextLevel:
 
 Func_02b_4243:
 	call Func_02b_4296
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 
 Func_02b_4248:
 	ld d, 0
@@ -390,49 +390,49 @@ Func_02b_4296:
 	xor a
 	ld [wd9d7], a
 	farcall Func_025_4101
-	ld a, [hFFCB]
+	ld a, [hMathValue]
 	ld [wd99a], a
-	ld a, [hFFCC]
+	ld a, [hMathValue + 1]
 	ld [wd99b], a
 	call Func_02b_42c4
 	ret
 
 Func_02b_42c4:
 	ld a, [wd998]
-	ld [hFFCB], a
+	ld [hMathValue], a
 	ld a, [wd999]
-	ld [hFFCC], a
+	ld [hMathValue + 1], a
 	xor a
-	ld [hFFCD], a
+	ld [hMathValue + 2], a
 	ld a, 2
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 	ld a, $30
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 	push af
-	ldh a, [hFFCC]
+	ldh a, [hMathValue + 1]
 	push af
-	ldh a, [hFFCD]
+	ldh a, [hMathValue + 2]
 	push af
 	ld a, [wd99a]
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	ld a, [wd99b]
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	ld a, 2
-	ldh [hFFC7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [hFFCB]
-	ldh [hFFC7], a
+	ldh a, [hMathValue]
+	ldh [hMathOperand], a
 	pop af
-	ldh [hFFCD], a
+	ldh [hMathValue + 2], a
 	pop af
-	ldh [hFFCC], a
+	ldh [hMathValue + 1], a
 	pop af
-	ldh [hFFCB], a
+	ldh [hMathValue], a
 	farcall Divide32By16_4Digit
 	ld d, 0
 	ret
@@ -440,7 +440,7 @@ Func_02b_42c4:
 Func_02b_431e:
 	call Func_02b_4374
 	call DelayFrame
-	ldh a, [hFFCB]
+	ldh a, [hMathValue]
 
 Func_02b_4326:
 	ld d, 0
@@ -516,9 +516,9 @@ Func_02b_4374:
 	ld a, [wd983]
 	ld [wSelectedOption], a
 	farcall asm_025_410d
-	ld a, [hFFCB]
+	ld a, [hMathValue]
 	ld [wd99a], a
-	ld a, [hFFCC]
+	ld a, [hMathValue + 1]
 	ld [wd99b], a
 	call Func_02b_42c4
 	ret
@@ -590,9 +590,9 @@ Func_02b_4409:
 	jr nz, Func_02b_4454
 	ld a, BGM_MONSTER_FAINTED
 	call PlaySound
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	set 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	call Func_02b_4000
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
@@ -605,9 +605,9 @@ Func_02b_4409:
 
 Func_02b_4436:
 	ld a, 1
-	ldh [$bf], a
+	ldh [hFade], a
 	xor a
-	ldh [$d3], a
+	ldh [hBattleJumptableIndex], a
 	ld a, 3
 	ld [wTargetMode], a
 	ld a, $57
@@ -618,9 +618,9 @@ Func_02b_4436:
 	ret
 
 Func_02b_4454:
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	res 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	ld a, BGM_MONSTER_FAINTED
 	call PlaySound
 	ld a, 1
@@ -720,7 +720,7 @@ Func_02b_4519:
 	ld hl, 7
 	add hl, bc
 	ld b, $c
-	ld de, $dcbc
+	ld de, wdcbc
 
 Func_02b_452f:
 	ld a, [de]
@@ -841,11 +841,11 @@ CheckLevelUp:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, [hli]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, [hli]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	jr .compare
 
 .high_level
@@ -857,16 +857,16 @@ CheckLevelUp:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, [hli]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, [hli]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [hli]
 	ld [wdce8], a
 
 .compare
-	ldh a, [$cd]
+	ldh a, [hMathValue + 2]
 	ld d, a
 	ld a, [wd981]
 	ld l, a
@@ -881,7 +881,7 @@ CheckLevelUp:
 	jr nc, .level_up
 
 .compare_mid
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld d, a
 	ld a, [wd981]
 	ld l, a
@@ -896,7 +896,7 @@ CheckLevelUp:
 	jr nc, .level_up
 
 .compare_low
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld d, a
 	ld a, [wd981]
 	ld l, a
@@ -1066,15 +1066,15 @@ DrawLevelUpStats:
 	ld hl, $9808
 	ld bc, $0c0c
 	ld a, $c
-	ldh [$92], a
-	ldh [$93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ld de, AttrMap_02b_49a0
 	ld hl, $9808
 	ld bc, $0c0c
 	ld a, $c
-	ldh [$92], a
-	ldh [$93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ld a, $77
 	ld [wd8fe], a
@@ -1088,11 +1088,11 @@ DrawLevelUpStats:
 	ld a, 1
 	ld [wd9d7], a
 	call Func_114c
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
 	inc de
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [de], a
 	dec de
 	ld hl, $9830
@@ -1105,11 +1105,11 @@ DrawLevelUpStats:
 	ld a, 2
 	ld [wd9d7], a
 	call Func_114c
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
 	inc de
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [de], a
 	dec de
 	ld hl, $9870
@@ -1122,11 +1122,11 @@ DrawLevelUpStats:
 	ld a, 3
 	ld [wd9d7], a
 	call Func_114c
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
 	inc de
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [de], a
 	dec de
 	ld hl, $98b0
@@ -1139,11 +1139,11 @@ DrawLevelUpStats:
 	ld a, 4
 	ld [wd9d7], a
 	call Func_114c
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
 	inc de
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [de], a
 	dec de
 	ld hl, $98f0
@@ -1156,11 +1156,11 @@ DrawLevelUpStats:
 	ld a, 5
 	ld [wd9d7], a
 	call Func_114c
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
 	inc de
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [de], a
 	dec de
 	ld hl, $9930
@@ -1218,11 +1218,11 @@ GetExpTableValue:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, [hli]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, [hli]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	jr .done
 
 .high_level
@@ -1234,22 +1234,22 @@ GetExpTableValue:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, [hli]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, [hli]
-	ldh [$cb], a
+	ldh [hMathValue], a
 
 .done
 	ret
 
 Func_02b_4a8e:
 	xor a
-	ldh [$cd], a
-	ldh [$cc], a
+	ldh [hMathValue + 2], a
+	ldh [hMathValue + 1], a
 	ld a, d
-	ldh [$cb], a
-	ldh [$c7], a
+	ldh [hMathValue], a
+	ldh [hMathOperand], a
 	jp Func_02b_4b41
 
 ; TODO: confirm. No direct ref; header ($11,$45,$54) then mixed byte data.
@@ -1469,7 +1469,7 @@ Func_02b_4b7a:
 	ld a, [wd9b2]
 	and a
 	ret z
-	ld de, $db00
+	ld de, wdb00
 	ld a, [wd987]
 	ld l, a
 	ld h, 0
@@ -1524,7 +1524,7 @@ Func_02b_4bb7:
 	ld hl, 7
 	add hl, bc
 	ld b, $c
-	ld de, $dcbc
+	ld de, wdcbc
 
 .copy_loop
 	ld a, [de]
@@ -1640,12 +1640,12 @@ BattleEnd_Jump_2:
 	call Func_02b_4519
 	call DelayFrame
 	ld a, $80
-	ldh [$40], a
+	ldh [rLCDC], a
 	ld hl, $2b38
 	call CopyBackgroundPalettes
 	ld hl, $2b38
 	call CopyObjectPalettes
-	ld hl, $c000
+	ld hl, wc000
 	ld bc, $28
 	ld de, 4
 
@@ -1657,18 +1657,18 @@ BattleEnd_Jump_2:
 	jr nz, .fill_loop
 	call DelayFrame
 	ld a, [wd9ec]
-	ldh [$ae], a
+	ldh [hSCX], a
 	ld a, [wd9ed]
-	ldh [$af], a
+	ldh [hSCXHigh], a
 	ld a, [wd9ee]
-	ldh [$b0], a
+	ldh [hSCY], a
 	ld a, [wd9ef]
-	ldh [$b1], a
+	ldh [hSCYHigh], a
 	xor a
-	ldh [$bf], a
+	ldh [hFade], a
 	ld [wd0d4], a
 	ld [wBattleScriptByte], a
-	ldh [$d3], a
+	ldh [hBattleJumptableIndex], a
 	call ClearBGMap0
 	call DelayFrame
 	call LoadMapGFX
@@ -1679,9 +1679,9 @@ BattleEnd_Jump_2:
 	ld h, a
 	ld bc, $1412
 	ld a, $14
-	ldh [$92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, $12
-	ldh [$93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	farcall Func_025_57a0
 	call DelayFrame
@@ -1697,12 +1697,12 @@ BattleEnd_Jump_2:
 	call Func_02b_4d55
 	call Func_02b_4000
 	ld a, $c7
-	ldh [$40], a
+	ldh [rLCDC], a
 	ld a, $1c
 	ld [wdce7], a
-	ldh [$48], a
-	ldh [$49], a
-	ld hl, $cb30
+	ldh [rOBP0], a
+	ldh [rOBP1], a
+	ld hl, wScreenRowBuffer
 	ld de, wPaletteBuffer
 	ld bc, $80
 	call CopyBytes3
@@ -1717,7 +1717,7 @@ BattleEnd_Jump_2:
 	ret
 
 Func_02b_4d55:
-	ld bc, $cd20
+	ld bc, wcd20
 
 .loop
 	ld hl, 2
@@ -1843,16 +1843,16 @@ BattleTurns_Jump_1:
 	ld hl, $9980
 	ld bc, $0906
 	ld a, 9
-	ldh [$92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 6
-	ldh [$93], a
+	ldh [hVRAMCopyHeight], a
 	call ClearBGMapBox
 	ld hl, $9909
 	ld bc, $0b0a
 	ld a, $b
-	ldh [$92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, $a
-	ldh [$93], a
+	ldh [hVRAMCopyHeight], a
 	call ClearBGMapBox
 	ld bc, $0480
 	ld hl, $8b60
@@ -1863,40 +1863,40 @@ BattleTurns_Jump_1:
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
-	ldh [$92], a
-	ldh [$93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ld de, Battle_EnemyFace_AttrMap
 	ld hl, $98cc
 	ld bc, $0606
 	ld a, 6
-	ldh [$92], a
-	ldh [$93], a
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ld de, Battle_Panel10x4_BGMap
 	ld hl, $98e0
 	ld bc, $0a04
 	ld a, $a
-	ldh [$92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 4
-	ldh [$93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ld de, Battle_Panel10x4_AttrMap
 	ld hl, $98e0
 	ld bc, $0a04
 	ld a, $a
-	ldh [$92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 4
-	ldh [$93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	call Func_02b_402b
 	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406
 	ld a, $14
-	ldh [$92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 6
-	ldh [$93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
@@ -1935,7 +1935,7 @@ BattleTurns_Jump_2:
 	ld a, 3
 	ld [wd9d7], a
 	farcall asm_025_410d
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd0c1], a
 	ld a, 3
 	ld [wd9d7], a
@@ -1945,7 +1945,7 @@ BattleTurns_Jump_2:
 	ld a, [wd9ea]
 	cp 2
 	jr z, .done
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd0c1]
 	cp b
@@ -2130,14 +2130,14 @@ Func_02b_5044:
 	call Wait32Frames
 	call Wait32Frames
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, $a
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, Func_02b_5069
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	and a
 	jr nz, Func_02b_5069
 	ld a, 1
@@ -2185,17 +2185,17 @@ Func_02b_50a9:
 	ld a, 2
 	ld [wd9af], a
 	call Func_125b
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, 3
 	ld [wd9af], a
 	call Func_125b
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, $f
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	and a
 	jr nz, .got_value
 	ld a, 1
@@ -2213,10 +2213,10 @@ Func_02b_50a9:
 	and a
 	jr z, .play
 	ld a, 2
-	ldh [$c7], a
-	ldh [$cb], a
+	ldh [hMathOperand], a
+	ldh [hMathValue], a
 	farcall Multiply32By8
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 
 .play
@@ -2336,7 +2336,7 @@ BattleTurns_Jump_3:
 	farcall Func_02d_4000
 	call Wait32Frames
 	ld a, 5
-	ldh [$d3], a
+	ldh [hBattleJumptableIndex], a
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -2480,16 +2480,16 @@ BattleAI_Action0:
 BattleAI_Action2:
 	call Func_12bd
 	ld a, [wd99a]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd99b]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, 2
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $a
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld b, a
 	ld a, [wd999]
 	cp b
@@ -2497,7 +2497,7 @@ BattleAI_Action2:
 	jp nc, Func_02b_530e
 
 .check_low
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd998]
 	cp b
@@ -2570,18 +2570,18 @@ BattleAI_Action4:
 BattleAI_Action5:
 	call Func_12bd
 	ld a, [wd99a]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd99b]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, 5
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 
 Func_02b_5389:
 	ld a, $a
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld b, a
 	ld a, [wd999]
 	cp b
@@ -2589,13 +2589,13 @@ Func_02b_5389:
 	jp nc, Func_02b_530e
 
 .check_low
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd998]
 	cp b
 	jp nc, Func_02b_530e
 	call AdvanceRNG
-	ld a, [hFFCB]
+	ld a, [hMathValue]
 	cp $80
 	jp nc, Func_02b_530e
 	ld a, 3
@@ -2604,11 +2604,11 @@ Func_02b_5389:
 BattleAI_Action6:
 	call Func_12bd
 	ld a, [wd99a]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd99b]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, 3
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	jp Func_02b_5389
 
@@ -2632,11 +2632,11 @@ BattleAI_Action8:
 BattleAI_Action9:
 	call Func_12bd
 	ld a, [wd99a]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd99b]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, 3
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	jp Func_02b_5389
 
@@ -2838,11 +2838,11 @@ Func_02b_555f:
 	farcall Func_02d_4000
 	call Wait32Frames
 	call Func_02b_5e0f
-	ldh a, [$d3]
+	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
 	call Func_02b_5cce
-	ldh a, [$d3]
+	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
 
@@ -2926,7 +2926,7 @@ Func_02b_55f7:
 
 .commit
 	ld a, 4
-	ldh [$d3], a
+	ldh [hBattleJumptableIndex], a
 	ld a, 2
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -2939,7 +2939,7 @@ Func_02b_5611:
 	ld a, 1
 	ld [wd9b5], a
 	ld a, 5
-	ldh [$d3], a
+	ldh [hBattleJumptableIndex], a
 	ret
 
 Func_02b_5628:
@@ -2982,53 +2982,53 @@ Func_02b_565f:
 
 .compute
 	call Func_02b_5912
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	ld a, [wd9c4]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd9c5]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	farcall Multiply32By8
 	ld a, $64
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 	call Func_02b_58df
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $64
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Divide32By16_4Digit
 	ld a, [wd9c7]
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $a
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	push af
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	push af
 	call Func_02b_57bf
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	pop af
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	pop af
-	ldh [$cb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	farcall Multiply32By8
 	ld a, $64
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 
 .store
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	and a
 	jr z, .low_byte
 	ld a, $ff
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
@@ -3036,7 +3036,7 @@ Func_02b_565f:
 	ret
 
 .low_byte
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	and a
 	jr nz, .nonzero
@@ -3077,20 +3077,20 @@ Func_02b_5712:
 	call Wait32Frames
 	call Wait32Frames
 	ld a, [wd9b0]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd9b1]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, $f
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $a
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	ld a, $14
 	ld [wd3ff], a
@@ -3152,13 +3152,13 @@ Func_02b_57bf:
 	ld a, [wd9c4]
 	sub c
 	ld l, a
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd9c5]
 	sbc b
 	ld h, a
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld de, StatValueToGrade - 1
 	xor a
 	ld [wd9b2], a
@@ -3169,12 +3169,12 @@ Func_02b_57bf:
 	ld h, 0
 	add hl, de
 	ld a, [hl]
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, .min
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	cp $14
 	jr nc, .min
 	ld de, StatDeltaToValue
@@ -3317,20 +3317,20 @@ StatValueToGrade:
 
 Func_02b_5884:
 	call Func_02b_5912
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	ld a, [wd9c2]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd9c3]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	farcall Multiply32By8
 	ld a, $64
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld c, a
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld b, a
 	ld a, [wd9c2]
 	ld l, a
@@ -3343,17 +3343,17 @@ Func_02b_5884:
 	ld b, a
 	ld a, l
 	sub c
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, h
 	sbc b
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, [wd9c7]
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $a
-	ld [hFFC7], a
+	ld [hMathOperand], a
 	farcall Divide32By16_4Digit
 	ret
 
@@ -3412,18 +3412,18 @@ Func_02b_591e:
 	xor a
 	ld [wd9af], a
 	ld [wd9b2], a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	call GetStatTile
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	call Func_02b_59df
 	call Func_02b_5998
 	farcall Multiply32By8
 	ld a, $a
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9c2], a
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld [wd9c3], a
 	ld a, 2
 	ld [wd9b2], a
@@ -3435,16 +3435,16 @@ Func_02b_591e:
 	ld [wd9af], a
 	ld [wd9b2], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	call GetStatTile
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $a
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9c4], a
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld [wd9c5], a
 	ret
 
@@ -3492,9 +3492,9 @@ Func_02b_5998:
 	ld a, [wd8ff]
 	cp [hl]
 	ret nz
-	ldh a, [$c7]
+	ldh a, [hMathOperand]
 	sub 5
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	ret
 
 Func_02b_59df:
@@ -3544,9 +3544,9 @@ Func_02b_59df:
 	ret nz
 
 .bonus
-	ldh a, [$c7]
+	ldh a, [hMathOperand]
 	add 3
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	ret
 
 ; TODO: confirm. 7-entry index remap.
@@ -3577,7 +3577,7 @@ Func_02b_5a37:
 
 Func_02b_5a4c:
 	call Func_02b_4296
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	and a
 	jr z, asm_02b_5aa5
 	ld [wd98c], a
@@ -3592,7 +3592,7 @@ Func_02b_5a4c:
 	inc hl
 	ld [hl], d
 	call Func_02b_4296
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd98c]
 	sub b
@@ -3654,7 +3654,7 @@ Func_02b_5ab7:
 	ld a, $bf
 	ld [hl], a
 	ld a, 5
-	ldh [$d3], a
+	ldh [hBattleJumptableIndex], a
 	xor a
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -3673,7 +3673,7 @@ Func_02b_5aed:
 
 Func_02b_5af4:
 	call Func_02b_4374
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	and a
 	jr z, asm_02b_5aaf
 	ld [wd98c], a
@@ -3688,7 +3688,7 @@ Func_02b_5af4:
 	inc hl
 	ld [hl], d
 	call Func_02b_4374
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd98c]
 	sub b
@@ -3832,7 +3832,7 @@ Func_02b_5bfb:
 
 .player
 	call Func_02b_4296
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd98c], a
 	call Func_02b_5ca2
 	ld a, [wd984]
@@ -3847,7 +3847,7 @@ Func_02b_5bfb:
 	call Func_02b_4296
 	ld a, [wd98c]
 	ld b, a
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	sub b
 	inc a
 	ld [wd98e], a
@@ -3873,7 +3873,7 @@ Func_02b_5bfb:
 
 .enemy_only
 	call Func_02b_4374
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd98c], a
 	call Func_02b_5ca2
 	ld a, [wd981]
@@ -3888,7 +3888,7 @@ Func_02b_5bfb:
 	call Func_02b_4374
 	ld a, [wd98c]
 	ld b, a
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	sub b
 	inc a
 	ld [wd98e], a
@@ -3998,17 +3998,17 @@ Func_02b_5d28:
 	call Wait32Frames
 	call Func_02b_5d7e
 	ld a, [wd99a]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd99b]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, 5
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	xor a
 	ld [wd9b5], a
@@ -4050,7 +4050,7 @@ Func_02b_5d98:
 	push hl
 	ld [wd9e9], a
 	farcall Func_025_4000
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	cp $10
 	jr nc, Func_02b_5e0c
 	ld a, [wd9e9]
@@ -4196,33 +4196,33 @@ Func_02b_5eb7:
 	and a
 	jr nz, .swap
 	ld a, [wd9b0]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	xor a
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	jr .convert
 
 .swap
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd9b0]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 
 .convert
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, 2
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, .high
 	ld [wd9b1], a
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ret
 
 .high
 	ld [wd9b0], a
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b1], a
 	ret
 
@@ -4301,33 +4301,33 @@ Func_02b_5f79:
 	ld a, [wd9b1]
 	and a
 	jr nz, .swap
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 	ld a, [wd9b0]
-	ldh [$cb], a
+	ldh [hMathValue], a
 	jr .convert
 
 .swap
-	ldh [$cb], a
+	ldh [hMathValue], a
 	ld a, [wd9b0]
-	ldh [$cc], a
+	ldh [hMathValue + 1], a
 
 .convert
 	xor a
-	ldh [$cd], a
+	ldh [hMathValue + 2], a
 	ld a, 2
-	ldh [$c7], a
+	ldh [hMathOperand], a
 	farcall Multiply32By8
-	ldh a, [$cc]
+	ldh a, [hMathValue + 1]
 	and a
 	jr nz, .high
 	ld [wd9b1], a
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ret
 
 .high
 	ld [wd9b0], a
-	ldh a, [$cb]
+	ldh a, [hMathValue]
 	ld [wd9b1], a
 	ret
 
@@ -4345,7 +4345,7 @@ Func_02b_5fc1:
 	xor a
 	ld [wd98b], a
 	call Func_02b_4098
-	ldh a, [$d3]
+	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
 	xor a
@@ -5478,7 +5478,7 @@ BattleIntro_Jump_1:
 	ld a, $80
 	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
-	ld de, wcb30
+	ld de, wScreenRowBuffer
 	ld bc, $80
 	call CopyBytes3
 	ld hl, Palette_White
@@ -5974,6 +5974,7 @@ Battle_HUDStats_GFX::
 	INCBIN "gfx/battle_intro/hud_stats.2bpp"
 
 ; Last $20 bytes alias as GFX copied to vTiles $8700.
+; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
 Battle_OBPals::
 	INCBIN "gfx/battle_intro/ob.pal"
 

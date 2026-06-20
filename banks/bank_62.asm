@@ -286,7 +286,7 @@ Func_062_443e:
 	call DelayFrame
 	farcall Func_025_57a0
 	ld de, wPaletteBuffer
-	ld hl, wcb30
+	ld hl, wScreenRowBuffer
 	ld bc, $0080
 	call CopyBytes3
 	call Func_062_4564

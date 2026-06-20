@@ -24,7 +24,7 @@ LoadSaveData:
 	ld bc, $0098
 	call CopyBytes3
 	ld hl, sa4a6
-	ld de, wdb20 + $17C
+	ld de, wMonBoxCount
 	ld bc, $0010
 	call CopyBytes3
 	ld hl, sEventFlags
@@ -32,7 +32,7 @@ LoadSaveData:
 	ld bc, $0040
 	call CopyBytes3
 	ld hl, sa6db
-	ld de, wdb20
+	ld de, wMonBox
 	ld bc, $017C
 	call CopyBytes3
 	ld hl, sa858

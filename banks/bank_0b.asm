@@ -2314,9 +2314,9 @@ Func_00b_610b:
 	srl a
 	srl a
 	ld e, a
-	ldh a, [$ffab]
+	ldh a, [hFFAB]
 	add e
-	ld [$cd32], a
+	ld [wcd32], a
 	ld a, [wcd21]
 	sub $08
 	srl a
@@ -2324,23 +2324,23 @@ Func_00b_610b:
 	srl a
 	srl a
 	ld e, a
-	ldh a, [$ffaa]
+	ldh a, [hFFAA]
 	add e
-	ld [$cd33], a
+	ld [wcd32 + 1], a
 	ret
-	ldh a, [$ffdd]
+	ldh a, [hFFDD]
 	and a
 	ret nz
 	ld a, [wMovementPointer]
 	ld l, a
-	ld a, [$dcc9]
+	ld a, [wMovementPointer + 1]
 	ld h, a
 	ld a, [hli]
 	cp $ff
 	jr nz, .asm_614c
 	xor a
 	ld [wScriptByte], a
-	ldh [$ffdd], a
+	ldh [hFFDD], a
 	ret
 .asm_614c
 	ld [wcd23], a
@@ -2349,17 +2349,17 @@ Func_00b_610b:
 	ld a, l
 	ld [wMovementPointer], a
 	ld a, h
-	ld [$dcc9], a
+	ld [wMovementPointer + 1], a
 	ld a, $10
 	ld [hFFDE], a
 	ld a, $01
-	ldh [$ffdb], a
+	ldh [hFFDB], a
 	ld [wdceb], a
 	ret
-	ldh a, [$ffdd]
+	ldh a, [hFFDD]
 	and a
 	ret z
-	ldh a, [$ffdd]
+	ldh a, [hFFDD]
 	cp $01
 	jr z, .asm_617f
 	cp $02
@@ -2391,23 +2391,23 @@ Func_00b_610b:
 	and a
 	ret nz
 	xor a
-	ldh [$ffdd], a
+	ldh [hFFDD], a
 	ret
 
 Func_00b_61a2::
-	ldh a, [$ffa7]
+	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
 	ld a, [wMovementPointer]
 	ld l, a
-	ld a, [$dcc9]
+	ld a, [wMovementPointer + 1]
 	ld h, a
 	ld a, [hli]
 	cp $ff
 	jr nz, .asm_61ba
 	xor a
 	ld [wScriptByte], a
-	ldh [$ffa7], a
+	ldh [hSimulatedJoypadState], a
 	ret
 .asm_61ba
 	ld [wPlayerFacing], a
@@ -2416,22 +2416,22 @@ Func_00b_61a2::
 	ld a, l
 	ld [wMovementPointer], a
 	ld a, h
-	ld [$dcc9], a
+	ld [wMovementPointer + 1], a
 	ld a, $10
 	ld [hFFA6], a
 	ld a, $01
-	ldh [$ffac], a
+	ldh [hFFAC], a
 	ld [wdcd0], a
 	ret
 
 Func_00b_61d6:
-	ldh a, [$ffa7]
+	ldh a, [hSimulatedJoypadState]
 	and a
 	ret z
 	xor a
 	ld [wd3f2], a
 	ld [wd3f3], a
-	ldh a, [$ffa7]
+	ldh a, [hSimulatedJoypadState]
 	cp $01
 	jr z, .asm_61f4
 	cp $02
@@ -2471,7 +2471,7 @@ Func_00b_61d6:
 	and a
 	ret nz
 	xor a
-	ldh [$ffa7], a
+	ldh [hSimulatedJoypadState], a
 	ret
 
 Func_00b_6229:
@@ -2958,13 +2958,13 @@ Func_00b_625c:
 	dw wde00, wde16, wde2c, wde42, wde58, wde6e, wde84, wde9a
 
 Func_00b_653d:
-	ldh a, [$ffa7]
+	ldh a, [hSimulatedJoypadState]
 	and a
 	ret z
 	xor a
 	ld [wd3f2], a
 	ld [wd3f3], a
-	ldh a, [$ffa7]
+	ldh a, [hSimulatedJoypadState]
 	bit 3, a
 	jr nz, .asm_655b
 	bit 2, a
@@ -3025,17 +3025,17 @@ Func_00b_653d:
 	and a
 	ret nz
 	xor a
-	ldh [$ffa7], a
+	ldh [hSimulatedJoypadState], a
 	ret
 .asm_65b4
 	ld hl, wc740
-	ldh a, [$ffa0]
+	ldh a, [hFFA0]
 	and a
 	jr z, .asm_65c0
 	ld bc, $0030
 	add hl, bc
 .asm_65c0
-	ldh a, [$ff9f]
+	ldh a, [hFF9F]
 	and a
 	jr z, .asm_65c7
 	inc hl
@@ -3066,14 +3066,14 @@ Func_00b_653d:
 	ret
 
 Func_00b_65e7::
-	ldh a, [$ff91]
+	ldh a, [hConsoleType]
 	cp $11
 	ret nz
 	ld a, $01
-	ldh [$ff4f], a
+	ldh [rVBK], a
 	jr Func_00b_65f6
 	ld a, $00
-	ldh [$ff4f], a
+	ldh [rVBK], a
 
 Func_00b_65f6:
 	push hl
@@ -3082,7 +3082,7 @@ Func_00b_65f6:
 	push bc
 	ld c, a
 .asm_65fa
-	ldh a, [$FF41]
+	ldh a, [rSTAT]
 	and $03
 	jr nz, .asm_65fa
 	ld a, c
@@ -3114,7 +3114,7 @@ Func_00b_65f6:
 	dec c
 	jr nz, Func_00b_65f6
 	ld a, $00
-	ldh [$FF4F], a
+	ldh [rVBK], a
 	ret
 
 ; TODO: structured data (not graphics)

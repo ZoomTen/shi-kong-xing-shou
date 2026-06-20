@@ -491,7 +491,7 @@ Script_008_4463:
 	scr_spriteface 5, FACE_UP
 	scr_spriteface 2, FACE_UP
 	scr_spriteface 4, FACE_UP
-	scr_setbit $daa0, $02
+	scr_setbit wEventFlags, $02
 	scr_1f $03 ; TEMP
 	scr_end
 
