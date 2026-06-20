@@ -48,3 +48,7 @@ data/maps/metatiles/*.bin
 # swap files for vim and gedit
 .*.swp
 *~
+
+# compiled utils
+utils/look_block
+utils/check_diff
