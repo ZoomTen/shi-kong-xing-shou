@@ -29,6 +29,12 @@ Checks syntax + equality with base ROM in one go.
 
 Inspect *which* bytes deviate: try `utils/check_diff` / `utils/look_block` (see [check deviations](docs/agents/check-deviations.md)) FIRST.
 
+# Line endings
+
+Text files (`.asm` etc.) are **CRLF** — enforced by `.gitattributes` (`* text=auto eol=crlf`; repo stores LF, checks out CRLF). Automated edits that write LF (e.g. Python `'\n'.join()`) flip the working tree.
+
+So **after `make compare` returns `OK`, verify line endings**: `git ls-files --eol <edited files>` must show `w/crlf` — re-convert any LF flips back to CRLF before finishing. Never leave a whole-file EOL diff.
+
 # Determining un-disassembled blocks
 
 Marked by `dr` macro (see [macros](macros/data.asm)) in ROM offset form. Some calc may need to get Game Boy address.
