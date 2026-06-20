@@ -2871,7 +2871,47 @@ Pointers_030_565c:
 Pointers_030_58f8:
 	dr $c18f8, $c1906
 GFX_030_5906:
-INCBIN "gfx/misc/gfx_030_5906.bin"
+SubImage_030_5906:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_5906.2bpp"
+.e
+
+SubImage_030_5968:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_5968.2bpp"
+.e
+
+SubImage_030_59ca:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_59ca.2bpp"
+.e
+
+SubImage_030_5a2c:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_5a2c.2bpp"
+.e
+
+SubImage_030_5a8e:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_5a8e.2bpp"
+.e
+
+SubImage_030_5af0:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_5af0.2bpp"
+.e
+
+SubImage_030_5b52:
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/gfx_30_5b52.2bpp"
+.e
 ; TODO: unreferenced data block, classify type
 unk_030_5bb4:
 	dr $c1bb4, $c1bcc
