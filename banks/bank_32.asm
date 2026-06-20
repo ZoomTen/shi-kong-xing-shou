@@ -302,10 +302,166 @@ MapSpriteData_State45_Pointers:
 MapSpriteData_State45:
 	dr $c8269, $c8279
 MapSpriteData_Pointers:
-	dr $c8279, $c82eb
+	dw MapSpriteData_32_42eb
+	dw MapSpriteData_32_42eb
+	dw MapSpriteData_32_4337
+	dw MapSpriteData_32_4395
+	dw MapSpriteData_32_4418
+	dw MapSpriteData_32_4679
+	dw MapSpriteData_32_4792
+	dw MapSpriteData_32_4847
+	dw MapSpriteData_32_4870
+	dw MapSpriteData_32_4b78
+	dw MapSpriteData_32_4ca9
+	dw MapSpriteData_32_4e37
+	dw MapSpriteData_32_5113
+	dw MapSpriteData_32_5374
+	dw MapSpriteData_32_564a
+	dw MapSpriteData_32_5964
+	dw MapSpriteData_32_5a02
+	dw MapSpriteData_32_5ac0
+	dw MapSpriteData_32_5b43
+	dw MapSpriteData_32_5c9d
+	dw MapSpriteData_32_5dca
+	dw MapSpriteData_32_5a02
+	dw MapSpriteData_32_5fba
+	dw MapSpriteData_32_6084
+	dw MapSpriteData_32_6084
+	dw MapSpriteData_32_6140
+	dw MapSpriteData_32_6212
+	dw MapSpriteData_32_6356
+	dw MapSpriteData_32_63ed
+	dw MapSpriteData_32_648e
+	dw MapSpriteData_32_64f3
+	dw MapSpriteData_32_64f3
+	dw MapSpriteData_32_64f3
+	dw MapSpriteData_32_6576
+	dw MapSpriteData_32_65f2
+	dw MapSpriteData_32_66ac
+	dw MapSpriteData_32_674d
+	dw MapSpriteData_32_69a8
+	dw MapSpriteData_32_42eb
+	dw MapSpriteData_32_6a07
+	dw MapSpriteData_32_6c37
+	dw MapSpriteData_32_6ce7
+	dw MapSpriteData_32_6d91
+	dw MapSpriteData_32_6fab
+	dw MapSpriteData_32_6ff4
+	dw MapSpriteData_32_7077
+	dw MapSpriteData_32_7196
+	dw MapSpriteData_32_72eb
+	dw MapSpriteData_32_74d5
+	dw MapSpriteData_32_7534
+	dw MapSpriteData_32_7599
+	dw MapSpriteData_32_764d
+	dw MapSpriteData_32_76f7
+	dw MapSpriteData_32_7794
+	dw MapSpriteData_32_795f
+	dw MapSpriteData_32_7b0f
+	dw MapSpriteData_32_7bcd
 MapSpriteData:
-	dr $c82eb, $cbc19
-MapSpriteData_Padding:
-	dr $cbc19, $cbc20
+MapSpriteData_32_42eb:
+	dr $c82eb, $c8337
+MapSpriteData_32_4337:
+	dr $c8337, $c8395
+MapSpriteData_32_4395:
+	dr $c8395, $c8418
+MapSpriteData_32_4418:
+	dr $c8418, $c8679
+MapSpriteData_32_4679:
+	dr $c8679, $c8792
+MapSpriteData_32_4792:
+	dr $c8792, $c8847
+MapSpriteData_32_4847:
+	dr $c8847, $c8870
+MapSpriteData_32_4870:
+	dr $c8870, $c8b78
+MapSpriteData_32_4b78:
+	dr $c8b78, $c8ca9
+MapSpriteData_32_4ca9:
+	dr $c8ca9, $c8e37
+MapSpriteData_32_4e37:
+	dr $c8e37, $c9113
+MapSpriteData_32_5113:
+	dr $c9113, $c9374
+MapSpriteData_32_5374:
+	dr $c9374, $c964a
+MapSpriteData_32_564a:
+	dr $c964a, $c9964
+MapSpriteData_32_5964:
+	dr $c9964, $c9a02
+MapSpriteData_32_5a02:
+	dr $c9a02, $c9ac0
+MapSpriteData_32_5ac0:
+	dr $c9ac0, $c9b43
+MapSpriteData_32_5b43:
+	dr $c9b43, $c9c9d
+MapSpriteData_32_5c9d:
+	dr $c9c9d, $c9dca
+MapSpriteData_32_5dca:
+	dr $c9dca, $c9fba
+MapSpriteData_32_5fba:
+	dr $c9fba, $ca084
+MapSpriteData_32_6084:
+	dr $ca084, $ca140
+MapSpriteData_32_6140:
+	dr $ca140, $ca212
+MapSpriteData_32_6212:
+	dr $ca212, $ca356
+MapSpriteData_32_6356:
+	dr $ca356, $ca3ed
+MapSpriteData_32_63ed:
+	dr $ca3ed, $ca48e
+MapSpriteData_32_648e:
+	dr $ca48e, $ca4f3
+MapSpriteData_32_64f3:
+	dr $ca4f3, $ca576
+MapSpriteData_32_6576:
+	dr $ca576, $ca5f2
+MapSpriteData_32_65f2:
+	dr $ca5f2, $ca6ac
+MapSpriteData_32_66ac:
+	dr $ca6ac, $ca74d
+MapSpriteData_32_674d:
+	dr $ca74d, $ca9a8
+MapSpriteData_32_69a8:
+	dr $ca9a8, $caa07
+MapSpriteData_32_6a07:
+	dr $caa07, $cac37
+MapSpriteData_32_6c37:
+	dr $cac37, $cace7
+MapSpriteData_32_6ce7:
+	dr $cace7, $cad91
+MapSpriteData_32_6d91:
+	dr $cad91, $cafab
+MapSpriteData_32_6fab:
+	dr $cafab, $caff4
+MapSpriteData_32_6ff4:
+	dr $caff4, $cb077
+MapSpriteData_32_7077:
+	dr $cb077, $cb196
+MapSpriteData_32_7196:
+	dr $cb196, $cb2eb
+MapSpriteData_32_72eb:
+	dr $cb2eb, $cb4d5
+MapSpriteData_32_74d5:
+	dr $cb4d5, $cb534
+MapSpriteData_32_7534:
+	dr $cb534, $cb599
+MapSpriteData_32_7599:
+	dr $cb599, $cb64d
+MapSpriteData_32_764d:
+	dr $cb64d, $cb6f7
+MapSpriteData_32_76f7:
+	dr $cb6f7, $cb794
+MapSpriteData_32_7794:
+	dr $cb794, $cb95f
+MapSpriteData_32_795f:
+	dr $cb95f, $cbb0f
+MapSpriteData_32_7b0f:
+	dr $cbb0f, $cbbcd
+MapSpriteData_32_7bcd:
+	dr $cbbcd, $cbc19
+	ds 7
 
 
