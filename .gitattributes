@@ -1,0 +1,20 @@
+# All text files use CRLF in the working tree (git stores normalized LF in the repo,
+# checks out CRLF). This keeps line endings uniform and git diffs free of EOL noise.
+* text=auto eol=crlf
+
+# Binary assets — never convert or line-diff
+*.png     binary
+*.gbc     binary
+*.gb      binary
+*.sav     binary
+*.rtc     binary
+*.sgm     binary
+*.sn*     binary
+*.sa*     binary
+*.sg1     binary
+*.2bpp    binary
+*.1bpp    binary
+*.gbcpal  binary
+*.bin     binary
+*.ora     binary
+*.tilemap binary
