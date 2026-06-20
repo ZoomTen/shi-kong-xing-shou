@@ -1,5 +1,21 @@
 Func_049_4000:
-	dr $124000, $12401b
+	ld de, Pointers_049_401b
+	ld a, [wBattleAnimID]
+	sub BATTLE_ANIM_BANK_9_START
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld b, a
+	ld de, vTiles0
+	call CopyBytesVRAM
+	ret
 Pointers_049_401b:
 	dw SubImage_049_4031
 	dw SubImage_049_47d3

@@ -1,0 +1,169 @@
+; Battle animation IDs, indexed by wBattleAnimID.
+; Each BATTLE_ANIM_xx equals the raw ID byte. The nine loader-stub GFX
+; banks each cover a contiguous ID range; BATTLE_ANIM_BANK_n_START marks
+; the first ID handled by each bank.
+
+	const_def
+	const BATTLE_ANIM_00
+	const BATTLE_ANIM_01
+	const BATTLE_ANIM_02
+	const BATTLE_ANIM_03
+	const BATTLE_ANIM_04
+	const BATTLE_ANIM_05
+	const BATTLE_ANIM_06
+	const BATTLE_ANIM_07
+	const BATTLE_ANIM_08
+	const BATTLE_ANIM_09
+	const BATTLE_ANIM_0A
+	const BATTLE_ANIM_0B
+	const BATTLE_ANIM_0C
+	const BATTLE_ANIM_0D
+	const BATTLE_ANIM_0E
+	const BATTLE_ANIM_0F
+; ROM bank $31
+DEF BATTLE_ANIM_BANK_1_START EQU const_value
+	const BATTLE_ANIM_10
+	const BATTLE_ANIM_11
+	const BATTLE_ANIM_12
+	const BATTLE_ANIM_13
+	const BATTLE_ANIM_14
+	const BATTLE_ANIM_15
+	const BATTLE_ANIM_16
+	const BATTLE_ANIM_17
+	const BATTLE_ANIM_18
+	const BATTLE_ANIM_19
+	const BATTLE_ANIM_1A
+	const BATTLE_ANIM_1B
+	const BATTLE_ANIM_1C
+	const BATTLE_ANIM_1D
+	const BATTLE_ANIM_1E
+	const BATTLE_ANIM_1F
+	const BATTLE_ANIM_20
+; ROM bank $34
+DEF BATTLE_ANIM_BANK_2_START EQU const_value
+	const BATTLE_ANIM_21
+	const BATTLE_ANIM_22
+	const BATTLE_ANIM_23
+	const BATTLE_ANIM_24
+	const BATTLE_ANIM_25
+	const BATTLE_ANIM_26
+	const BATTLE_ANIM_27
+	const BATTLE_ANIM_28
+	const BATTLE_ANIM_29
+	const BATTLE_ANIM_2A
+	const BATTLE_ANIM_2B
+	const BATTLE_ANIM_2C
+	const BATTLE_ANIM_2D
+	const BATTLE_ANIM_2E
+; ROM bank $35
+DEF BATTLE_ANIM_BANK_3_START EQU const_value
+	const BATTLE_ANIM_2F
+	const BATTLE_ANIM_30
+	const BATTLE_ANIM_31
+	const BATTLE_ANIM_32
+	const BATTLE_ANIM_33
+	const BATTLE_ANIM_34
+	const BATTLE_ANIM_35
+	const BATTLE_ANIM_36
+	const BATTLE_ANIM_37
+	const BATTLE_ANIM_38
+	const BATTLE_ANIM_39
+	const BATTLE_ANIM_3A
+	const BATTLE_ANIM_3B
+	const BATTLE_ANIM_3C
+; ROM bank $36
+DEF BATTLE_ANIM_BANK_4_START EQU const_value
+	const BATTLE_ANIM_3D
+	const BATTLE_ANIM_3E
+	const BATTLE_ANIM_3F
+	const BATTLE_ANIM_40
+	const BATTLE_ANIM_41
+	const BATTLE_ANIM_42
+	const BATTLE_ANIM_43
+	const BATTLE_ANIM_44
+	const BATTLE_ANIM_45
+	const BATTLE_ANIM_46
+	const BATTLE_ANIM_47
+	const BATTLE_ANIM_48
+	const BATTLE_ANIM_49
+	const BATTLE_ANIM_4A
+	const BATTLE_ANIM_4B
+; ROM bank $37
+DEF BATTLE_ANIM_BANK_5_START EQU const_value
+	const BATTLE_ANIM_4C
+	const BATTLE_ANIM_4D
+	const BATTLE_ANIM_4E
+	const BATTLE_ANIM_4F
+	const BATTLE_ANIM_50
+	const BATTLE_ANIM_51
+	const BATTLE_ANIM_52
+	const BATTLE_ANIM_53
+	const BATTLE_ANIM_54
+	const BATTLE_ANIM_55
+	const BATTLE_ANIM_56
+	const BATTLE_ANIM_57
+	const BATTLE_ANIM_58
+	const BATTLE_ANIM_59
+	const BATTLE_ANIM_5A
+	const BATTLE_ANIM_5B
+; ROM bank $3d
+DEF BATTLE_ANIM_BANK_6_START EQU const_value
+	const BATTLE_ANIM_5C
+	const BATTLE_ANIM_5D
+	const BATTLE_ANIM_5E
+	const BATTLE_ANIM_5F
+	const BATTLE_ANIM_60
+	const BATTLE_ANIM_61
+	const BATTLE_ANIM_62
+	const BATTLE_ANIM_63
+	const BATTLE_ANIM_64
+	const BATTLE_ANIM_65
+	const BATTLE_ANIM_66
+	const BATTLE_ANIM_67
+	const BATTLE_ANIM_68
+	const BATTLE_ANIM_69
+; ROM bank $3e
+DEF BATTLE_ANIM_BANK_7_START EQU const_value
+	const BATTLE_ANIM_6A
+	const BATTLE_ANIM_6B
+	const BATTLE_ANIM_6C
+	const BATTLE_ANIM_6D
+	const BATTLE_ANIM_6E
+	const BATTLE_ANIM_6F
+	const BATTLE_ANIM_70
+	const BATTLE_ANIM_71
+	const BATTLE_ANIM_72
+	const BATTLE_ANIM_73
+	const BATTLE_ANIM_74
+	const BATTLE_ANIM_75
+	const BATTLE_ANIM_76
+	const BATTLE_ANIM_77
+	const BATTLE_ANIM_78
+	const BATTLE_ANIM_79
+	const BATTLE_ANIM_7A
+	const BATTLE_ANIM_7B
+	const BATTLE_ANIM_7C
+; ROM bank $48
+DEF BATTLE_ANIM_BANK_8_START EQU const_value
+	const BATTLE_ANIM_7D
+	const BATTLE_ANIM_7E
+	const BATTLE_ANIM_7F
+	const BATTLE_ANIM_80
+	const BATTLE_ANIM_81
+	const BATTLE_ANIM_82
+	const BATTLE_ANIM_83
+	const BATTLE_ANIM_84
+	const BATTLE_ANIM_85
+; ROM bank $49
+DEF BATTLE_ANIM_BANK_9_START EQU const_value
+	const BATTLE_ANIM_86
+	const BATTLE_ANIM_87
+	const BATTLE_ANIM_88
+	const BATTLE_ANIM_89
+	const BATTLE_ANIM_8A
+	const BATTLE_ANIM_8B
+	const BATTLE_ANIM_8C
+	const BATTLE_ANIM_8D
+	const BATTLE_ANIM_8E
+	const BATTLE_ANIM_8F
+	const BATTLE_ANIM_90

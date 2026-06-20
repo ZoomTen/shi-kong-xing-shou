@@ -11,7 +11,7 @@ Func_03f_4000:
 	jp z, .asm_40c8
 	ld [wd0c1], a
 	ld de, MapObjectOam_Pointers
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	sub $63
 	ld l, a
 	ld h, $00
@@ -42,7 +42,7 @@ Func_03f_4000:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4079
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $75
 	jr z, .asm_4079
 	cp $79
@@ -86,7 +86,7 @@ Func_03f_4000:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_40c0
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $75
 	jr z, .asm_40c0
 	cp $79
@@ -129,7 +129,52 @@ Func_03f_4000:
 	ret nc
 	jp .asm_4003
 MapObjectOam_Pointers:
-	dr $fc0d4, $fc130
+	dw MapObjectOamFrames_3f_4130
+	dw MapObjectOamFrames_3f_4284
+	dw MapObjectOamFrames_3f_4284
+	dw MapObjectOamFrames_3f_4284
+	dw MapObjectOamFrames_3f_43b5
+	dw MapObjectOamFrames_3f_4438
+	dw MapObjectOamFrames_3f_453e
+	dw MapObjectOamFrames_3f_4661
+	dw MapObjectOamFrames_3f_47ee
+	dw MapObjectOamFrames_3f_4919
+	dw MapObjectOamFrames_3f_4a27
+	dw MapObjectOamFrames_3f_4a27
+	dw MapObjectOamFrames_3f_4a27
+	dw MapObjectOamFrames_3f_4961
+	dw MapObjectOamFrames_3f_4a27
+	dw MapObjectOamFrames_3f_4a5d
+	dw MapObjectOamFrames_3f_4ad0
+	dw MapObjectOamFrames_3f_4b44
+	dw MapObjectOamFrames_3f_4c3a
+	dw MapObjectOamFrames_3f_4d10
+	dw MapObjectOamFrames_3f_4e9d
+	dw MapObjectOamFrames_3f_506c
+	dw MapObjectOamFrames_3f_50b7
+	dw MapObjectOamFrames_3f_517f
+	dw MapObjectOamFrames_3f_517f
+	dw MapObjectOamFrames_3f_5329
+	dw MapObjectOamFrames_3f_538e
+	dw MapObjectOamFrames_3f_5442
+	dw MapObjectOamFrames_3f_55e3
+	dw MapObjectOamFrames_3f_5767
+	dw MapObjectOamFrames_3f_5896
+	dw MapObjectOamFrames_3f_58f5
+	dw MapObjectOamFrames_3f_5a7a
+	dw MapObjectOamFrames_3f_5b5c
+	dw MapObjectOamFrames_3f_5c33
+	dw MapObjectOamFrames_3f_5d84
+	dw MapObjectOamFrames_3f_5ec6
+	dw MapObjectOamFrames_3f_5ec6
+	dw MapObjectOamFrames_3f_5f75
+	dw MapObjectOamFrames_3f_601d
+	dw MapObjectOamFrames_3f_6092
+	dw MapObjectOamFrames_3f_63e5
+	dw MapObjectOamFrames_3f_6660
+	dw MapObjectOamFrames_3f_6660
+	dw MapObjectOamFrames_3f_66e3
+	dw MapObjectOamFrames_3f_679e
 MapObjectOamFrames_3f_4130:
 	dr $fc130, $fc13e
 MapObjectOam_3f_413e:

@@ -21,10 +21,10 @@ Func_02e_400a:
 	ld h, $00
 	add hl, de
 	ld a, [hl]
-	ld [wd988], a
+	ld [wBattleAnimID], a
 	ld d, a
 	farcall Func_01e_42e4
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	farcall Func_023_4000
 .asm_403c
 	call Func_02e_6e42
@@ -276,14 +276,14 @@ Func_02e_4231:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_42f7
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $0C
 	jr z, .asm_42f7
 	cp $2E
 	jr z, .asm_42f7
 	cp $33
 	jr z, .asm_42f7
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $17
 	jr z, .asm_42f7
 	cp $37
@@ -340,7 +340,7 @@ Func_02e_4231:
 	and a
 	ret nz
 .asm_4311
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $3E
 	jp z, .asm_438e
 	cp $44
@@ -358,7 +358,7 @@ Func_02e_4231:
 	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $08
 	jr z, .asm_4367
 	cp $17
@@ -4294,7 +4294,7 @@ Func_02e_5f14:
 Func_02e_5f51:
 	call Func_02e_411e
 	ld a, [wBattleState]
-	ld [wd988], a
+	ld [wBattleAnimID], a
 	farcall Func_02f_4008
 	xor a
 	ld [wBattleState], a

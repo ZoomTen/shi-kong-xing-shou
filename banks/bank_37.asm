@@ -1,5 +1,21 @@
 Func_037_4000:
-	dr $dc000, $dc01b
+	ld de, Pointers_037_401b
+	ld a, [wBattleAnimID]
+	sub BATTLE_ANIM_BANK_5_START
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld b, a
+	ld de, vTiles0
+	call CopyBytesVRAM
+	ret
 Pointers_037_401b:
 	dw SubImage_037_403b
 	dw SubImage_037_427d

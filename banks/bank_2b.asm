@@ -3049,7 +3049,7 @@ Func_02b_565f:
 	ret
 
 Func_02b_5712:
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp 4
 	ret z
 	call AdvanceRNG
@@ -3396,7 +3396,7 @@ Func_02b_58df:
 
 Func_02b_5912:
 	ld de, unk_02b_7594
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -4339,7 +4339,7 @@ Func_02b_5fc1:
 	ld a, $a
 	ld [wd9c7], a
 	ld a, $63
-	ld [wd988], a
+	ld [wBattleAnimID], a
 	ld a, 1
 	ld [wd9b5], a
 	xor a
@@ -4392,7 +4392,7 @@ Func_02b_5ff2:
 
 Func_02b_6040:
 	ld a, $77
-	ld [wd988], a
+	ld [wBattleAnimID], a
 	xor a
 	ld [wBattleState], a
 	ld [wd98b], a
@@ -5019,7 +5019,7 @@ BattleMenu_Jump_2:
 	and a
 	jr nz, .alt
 	ld a, 1
-	ld [wd988], a
+	ld [wBattleAnimID], a
 	ld [wd9f8], a
 	ld [wd9ea], a
 	ld de, Script_023_55cc

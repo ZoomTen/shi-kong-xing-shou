@@ -23,7 +23,7 @@ Func_032_4000::
 	jr z, .asm_4053
 	cp $45
 	jr z, .asm_4057
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $39
 	jr c, .asm_4048
 	cp $63
@@ -59,7 +59,7 @@ Func_032_4000::
 	jp z, .asm_4111
 	ld [wd0c1], a
 	ld de, MapSpriteData_Pointers
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -89,7 +89,7 @@ Func_032_4000::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_40ca
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $04
 	jr z, .asm_40ca
 	cp $0C
@@ -129,7 +129,7 @@ Func_032_4000::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4109
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $04
 	jr z, .asm_4109
 	cp $0C

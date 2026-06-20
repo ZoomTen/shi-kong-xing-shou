@@ -11,7 +11,7 @@ Func_038_4000:
 	jp z, .asm_40b8
 	ld [wd0c1], a
 	ld de, SpriteComposition_Pointers
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	sub $39
 	ld l, a
 	ld h, $00
@@ -42,7 +42,7 @@ Func_038_4000:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4071
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $48
 	jr z, .asm_4071
 	cp $4A
@@ -82,7 +82,7 @@ Func_038_4000:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_40b0
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $48
 	jr z, .asm_40b0
 	cp $4A
@@ -121,7 +121,48 @@ Func_038_4000:
 	ret nc
 	jp .asm_4003
 SpriteComposition_Pointers:
-	dr $e00c4, $e0118
+	dw SpriteComposition_Map39
+	dw SpriteComposition_Map3A
+	dw SpriteComposition_Map3B
+	dw SpriteComposition_Map3C
+	dw SpriteComposition_Map3D
+	dw SpriteComposition_Map3E
+	dw SpriteComposition_Map3F
+	dw SpriteComposition_Map40
+	dw SpriteComposition_Map41
+	dw SpriteComposition_Map42
+	dw SpriteComposition_Map43
+	dw SpriteComposition_Map44
+	dw SpriteComposition_Map45
+	dw SpriteComposition_Map46
+	dw SpriteComposition_Map47
+	dw SpriteComposition_Map48
+	dw SpriteComposition_Map49
+	dw SpriteComposition_Map4A
+	dw SpriteComposition_Map4B
+	dw SpriteComposition_Map4C
+	dw SpriteComposition_Map4D
+	dw SpriteComposition_Map4E
+	dw SpriteComposition_Map4F
+	dw SpriteComposition_Map50
+	dw SpriteComposition_Map51
+	dw SpriteComposition_Map51
+	dw SpriteComposition_Map53
+	dw SpriteComposition_Map53
+	dw SpriteComposition_Map55
+	dw SpriteComposition_Map56
+	dw SpriteComposition_Map57
+	dw SpriteComposition_Map57
+	dw SpriteComposition_Map59
+	dw SpriteComposition_Map5A
+	dw SpriteComposition_Map5B
+	dw SpriteComposition_Map5C
+	dw SpriteComposition_Map5D
+	dw SpriteComposition_Map5E
+	dw SpriteComposition_Map5F
+	dw SpriteComposition_Map60
+	dw SpriteComposition_Map61
+	dw SpriteComposition_Map62
 SpriteComposition_Map39:
 	dr $e0118, $e03b8
 SpriteComposition_Map3A:

@@ -14,7 +14,7 @@ Func_030_4000::
 
 .asm_4018
 	ld de, MoveEffectPointers
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 
 .asm_401e
 	ld l, a
@@ -36,7 +36,7 @@ Func_030_4027::
 	jp z, .asm_40ed
 	call AdvanceRNG
 	ld de, unk_030_40f8
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -139,7 +139,7 @@ unk_030_40f8:
 	db $37, $55, $00, $4b, $28, $00, $00, $00, $00, $37, $00, $00, $00, $64, $64
 Func_030_4187:
 	ld de, unk_030_4214
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -2894,7 +2894,7 @@ Func_030_5beb:
 	ld a, [wd9ad]
 	and a
 	ret z
-	ld a, [wd988]
+	ld a, [wBattleAnimID]
 	cp $3b
 	jp z, Func_030_6b36
 	cp $3c

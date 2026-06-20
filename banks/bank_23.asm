@@ -1,5 +1,24 @@
 Func_023_4000:
-	dr $8c000, $8d5cc
+	ld de, BattleAnimScript_Pointers
+	ld a, [wBattleAnimID]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wBattleScriptPos], a
+	ld a, [hli]
+	ld [wBattleScriptPos + 1], a
+	ret
+
+; battle-script pointer table, indexed by wBattleAnimID (IDs $00-$8e)
+BattleAnimScript_Pointers:
+	dr $8c014, $8c132
+
+; TODO: battle-script interpreter + script data (read via AdvanceBattleScriptMode)
+unk_023_4132:
+	dr $8c132, $8d5cc
+
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
 Script_023_55cc:
 	dr $8d5cc, $8d5f6

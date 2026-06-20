@@ -545,7 +545,7 @@ wd984:: ds 1
 wd985:: ds 1
 wd986:: ds 1
 wd987:: ds 1
-wd988:: ds 1
+wBattleAnimID:: ds 1
 wBattleState:: ds 1
 wd98a:: ds 1
 wd98b:: ds 1
