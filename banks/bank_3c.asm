@@ -268,7 +268,7 @@ GameOver::
 	ld de, wcaf0
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, GFX_03c_4775
+	ld hl, GameOverGFX
 	ld de, $9000
 	ld bc, $04E0
 	call CopyBytesVRAM
@@ -379,8 +379,8 @@ Palettes_03c_46f7:
 	RGB 0, 0, 0
 Pointers_03c_4737:
 	dr $f0737, $f0775
-GFX_03c_4775:
-INCBIN "gfx/misc/gfx_03c_4775.2bpp"
+GameOverGFX:
+INCBIN "gfx/misc/game_over.2bpp"
 Func_03c_4c55:
 	dr $f0c55, $f0c63
 Func_03c_4c63:

@@ -1,4 +1,4 @@
-Func_03e_4000:
+LoadBattleAnimGFX_03e:
 	ld de, Pointers_03e_401b
 	ld a, [wBattleAnimID]
 	sub BATTLE_ANIM_BANK_7_START
@@ -39,7 +39,7 @@ Pointers_03e_401b:
 SubImage_03e_4041:
 	dw .e - .d
 .d
-	INCBIN "gfx/misc/gfx_3e_4041.2bpp"
+	INCBIN "gfx/misc/gfx_3e_4041.bin"
 .e
 
 SubImage_03e_4843:

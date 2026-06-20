@@ -1,4 +1,4 @@
-Func_034_4000:
+LoadBattleAnimGFX_034:
 	ld de, Pointers_034_401b
 	ld a, [wBattleAnimID]
 	sub BATTLE_ANIM_BANK_2_START
