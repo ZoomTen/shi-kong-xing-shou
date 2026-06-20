@@ -538,6 +538,7 @@ MeteorCutscene2_Attrmap1:
 	dr $184eba, $185022
 MeteorCutscene2_Tilemap1:
 	dr $185022, $18516a
+; TODO: unreferenced data block, classify type
 unk_61_516A:
 	dr $18516a, $18518a
 MeteorCutscene2_AnimAttrmap0:

@@ -1,4 +1,4 @@
-unk_024_4000:
+Func_024_4000:
 	dr $90000, $90053
 
 Func_024_4053:
@@ -116,8 +116,8 @@ Func_024_40e3:
 Func_024_40fd::
 ; Start menu related
 	ld a, [_BANKNUM]
-	ld [wd9f1], a
-	ld a, [wd087]
+	ld [wBattleScriptBank], a
+	ld a, [wBattleScriptState]
 	cp 1
 	jr z, .asm_4111
 	cp 2
@@ -125,28 +125,28 @@ Func_024_40fd::
 	jp Func_024_4804
 
 .asm_4111:
-	ld de, unk_024_4130
+	ld de, Pointers_024_4130
 	ldh a, [hFFC5]
 	ld l, a
 	ld h, 0
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, [hli]
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	ld a, 2
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ret
 
 .asm_4129
 	farcall Func_025_424e
 	ret
 
-unk_024_4130:
-	dw unk_024_4162
-	dw unk_024_4162
-	dw unk_024_4181
+Pointers_024_4130:
+	dw Script_024_4162
+	dw Script_024_4162
+	dw Script_024_4181
 	dw $41b7
 	dw $41cb
 	dw $41e3
@@ -170,74 +170,74 @@ unk_024_4130:
 	dw $453f
 	dw $4304
 
-unk_024_4162:
+Script_024_4162:
 	dr $90162, $90181
 
-unk_024_4181:
+Script_024_4181:
 	dr $90181, $901c1
-unk_024_41c1:
+Script_024_41c1:
 	dr $901c1, $902a5
-unk_024_42a5:
+Script_024_42a5:
 	dr $902a5, $9054c
-unk_024_454c:
+Script_024_454c:
 	dr $9054c, $9054e
-unk_024_454e:
+Script_024_454e:
 	dr $9054e, $90553
-unk_024_4553:
+Script_024_4553:
 	dr $90553, $90564
-unk_024_4564:
+Script_024_4564:
 	dr $90564, $90589
-unk_024_4589:
+Script_024_4589:
 	dr $90589, $905a0
-unk_024_45a0:
+Script_024_45a0:
 	dr $905a0, $905b0
-unk_024_45b0:
+Script_024_45b0:
 	dr $905b0, $905c2
-unk_024_45c2:
+Script_024_45c2:
 	dr $905c2, $905d1
-unk_024_45d1:
+Script_024_45d1:
 	dr $905d1, $905e8
-unk_024_45e8:
+Script_024_45e8:
 	dr $905e8, $90601
-unk_024_4601:
+Script_024_4601:
 	dr $90601, $9060f
-unk_024_460f:
+Script_024_460f:
 	dr $9060f, $9061d
-unk_024_461d:
+Script_024_461d:
 	dr $9061d, $9062b
-unk_024_462b:
+Script_024_462b:
 	dr $9062b, $90642
-unk_024_4642:
+Script_024_4642:
 	dr $90642, $90650
-unk_024_4650:
+Script_024_4650:
 	dr $90650, $90652
-unk_024_4652:
+Script_024_4652:
 	dr $90652, $90664
-unk_024_4664:
+Script_024_4664:
 	dr $90664, $9066d
-unk_024_466d:
+Script_024_466d:
 	dr $9066d, $9067d
-unk_024_467d:
+Script_024_467d:
 	dr $9067d, $906bf
-unk_024_46bf:
+Script_024_46bf:
 	dr $906bf, $906cb
-unk_024_46cb:
+Script_024_46cb:
 	dr $906cb, $906f5
-unk_024_46f5:
+Script_024_46f5:
 	dr $906f5, $9071d
-unk_024_471d:
+Script_024_471d:
 	dr $9071d, $9073b
-unk_024_473b:
+Script_024_473b:
 	dr $9073b, $9075c
-unk_024_475c:
+Script_024_475c:
 	dr $9075c, $90771
-unk_024_4771:
+Script_024_4771:
 	dr $90771, $90775
-unk_024_4775:
+Script_024_4775:
 	dr $90775, $90792
-unk_024_4792:
+Script_024_4792:
 	dr $90792, $907bb
-unk_024_47bb:
+Script_024_47bb:
 	dr $907bb, $90804
 
 Func_024_4804:
@@ -300,13 +300,13 @@ Func_024_4844:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_467d)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_467d)
 	inc hl
-	ld [hl], HIGH(unk_024_467d)
+	ld [hl], HIGH(Script_024_467d)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $09
@@ -323,6 +323,7 @@ Func_024_4844:
 	ld [hli], a
 	ld [hli], a
 	ret
+; TODO: unreferenced data block, classify type
 unk_024_4893:
 	dr $90893, $908bd
 Func_024_48bd:
@@ -383,13 +384,13 @@ Func_024_48bd:
 	jr z, .asm_493b
 .asm_491e
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_47bb)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_47bb)
 	inc hl
-	ld [hl], HIGH(unk_024_47bb)
+	ld [hl], HIGH(Script_024_47bb)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -399,9 +400,9 @@ Func_024_48bd:
 .asm_493b
 	call WriteSaveData
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $16
@@ -589,9 +590,9 @@ Func_024_4a87:
 	and a
 	jp nz, Func_024_6a71
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $16
@@ -688,13 +689,13 @@ Func_024_4b04:
 	ld a, [hli]
 	ld [bc], a
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_454e)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_454e)
 	inc hl
-	ld [hl], HIGH(unk_024_454e)
+	ld [hl], HIGH(Script_024_454e)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -706,15 +707,15 @@ Func_024_4b04:
 	call PlaySound
 	ld a, [wSelectedOption]
 	ld [wd9dd], a
-	call unk_024_4000
+	call Func_024_4000
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4564)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4564)
 	inc hl
-	ld [hl], HIGH(unk_024_4564)
+	ld [hl], HIGH(Script_024_4564)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ldh [hFFC5], a
@@ -726,20 +727,21 @@ Func_024_4b04:
 	ret z
 	ld a, $11
 	call PlaySound
-	call unk_024_4000
+	call Func_024_4000
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4564)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4564)
 	inc hl
-	ld [hl], HIGH(unk_024_4564)
+	ld [hl], HIGH(Script_024_4564)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
+; TODO: indexed data table, classify type
 unk_024_4be8:
 	dr $90be8, $90c08
 Func_024_4c08:
@@ -765,13 +767,13 @@ Func_024_4c08:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4792)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4792)
 	inc hl
-	ld [hl], HIGH(unk_024_4792)
+	ld [hl], HIGH(Script_024_4792)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $12
@@ -816,13 +818,13 @@ Func_024_4c48:
 	ld [wSelectedOption], a
 .asm_4c85
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4d6a)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4d6a)
 	inc hl
-	ld [hl], HIGH(unk_024_4d6a)
+	ld [hl], HIGH(Script_024_4d6a)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, [wSelectedOption]
@@ -869,13 +871,13 @@ Func_024_4c48:
 	ld [wSelectedPage], a
 .asm_4ce8
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4d49)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4d49)
 	inc hl
-	ld [hl], HIGH(unk_024_4d49)
+	ld [hl], HIGH(Script_024_4d49)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, [wSelectedPage]
@@ -908,18 +910,18 @@ Func_024_4c48:
 	ld [wd9da + 1], a
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $13
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
-unk_024_4d49:
+Script_024_4d49:
 	dr $90d49, $90d6a
-unk_024_4d6a:
+Script_024_4d6a:
 	dr $90d6a, $90d77
 Func_024_4d77:
 .asm_4d77
@@ -972,13 +974,13 @@ Func_024_4d77:
 	call PlaySound
 	call Func_024_4e9f
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4e77)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4e77)
 	inc hl
-	ld [hl], HIGH(unk_024_4e77)
+	ld [hl], HIGH(Script_024_4e77)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, [wd9da + 1]
@@ -1019,9 +1021,9 @@ Func_024_4d77:
 	call Func_024_603b
 .asm_4e2a
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $17
@@ -1036,13 +1038,13 @@ Func_024_4d77:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4775)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4775)
 	inc hl
-	ld [hl], HIGH(unk_024_4775)
+	ld [hl], HIGH(Script_024_4775)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0B
@@ -1059,7 +1061,7 @@ Func_024_4d77:
 	ld [hli], a
 	ld [hli], a
 	ret
-unk_024_4e77:
+Script_024_4e77:
 	dr $90e77, $90e9f
 Func_024_4e9f:
 	ld a, [wd9da + 1]
@@ -1122,6 +1124,7 @@ Func_024_4ed9:
 	xor a
 	ldh [hFFC6], a
 	ret
+; TODO: indexed data table, classify type
 unk_024_4ef5:
 	dr $90ef5, $90efd
 Func_024_4efd:
@@ -1245,13 +1248,13 @@ Func_024_4efd:
 	ret z
 	call .asm_5011
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4771)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4771)
 	inc hl
-	ld [hl], HIGH(unk_024_4771)
+	ld [hl], HIGH(Script_024_4771)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $18
@@ -1267,13 +1270,13 @@ Func_024_4efd:
 	bit 1, a
 	ret z
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_475c)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_475c)
 	inc hl
-	ld [hl], HIGH(unk_024_475c)
+	ld [hl], HIGH(Script_024_475c)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0B
@@ -1375,9 +1378,9 @@ Func_024_503e:
 	jr z, .asm_50c0
 	call Func_024_603b
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0B
@@ -1390,8 +1393,8 @@ Func_024_503e:
 	call ClearBGMap0
 	xor a
 	ld [hFFC5], a
-	ld [wd08a], a
-	ld [wd087], a
+	ld [wBattleScriptByte], a
+	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [hFFC6], a
 	call Func_024_5ffb
@@ -1405,13 +1408,13 @@ Func_024_503e:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_473b)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_473b)
 	inc hl
-	ld [hl], HIGH(unk_024_473b)
+	ld [hl], HIGH(Script_024_473b)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0E
@@ -1574,11 +1577,11 @@ Func_024_519d:
 	call PlaySound
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0F
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -1592,13 +1595,13 @@ Func_024_519d:
 	cp $05
 	jr z, .asm_5232
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_471d)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_471d)
 	inc hl
-	ld [hl], HIGH(unk_024_471d)
+	ld [hl], HIGH(Script_024_471d)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0D
@@ -1607,20 +1610,20 @@ Func_024_519d:
 	ret
 .asm_5232
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_524f)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_524f)
 	inc hl
-	ld [hl], HIGH(unk_024_524f)
+	ld [hl], HIGH(Script_024_524f)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0D
 	ldh [hFFC5], a
 	call Func_024_694c
 	ret
-unk_024_524f:
+Script_024_524f:
 	dr $9124f, $91277
 Func_024_5277:
 .asm_5277
@@ -1673,11 +1676,11 @@ Func_024_5277:
 	jr nz, .asm_52f6
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0E
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld de, wd1a0
@@ -1700,13 +1703,13 @@ Func_024_5277:
 	cp $05
 	jr z, .asm_531a
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_46f5)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_46f5)
 	inc hl
-	ld [hl], HIGH(unk_024_46f5)
+	ld [hl], HIGH(Script_024_46f5)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0B
@@ -1717,9 +1720,9 @@ Func_024_5277:
 	ld a, $01
 	ld [hFFC6], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	call Func_024_5ffb
 	call Func_024_503e.asm_50ff
 	ret
@@ -1744,13 +1747,13 @@ Func_024_5330:
 	and $03
 	ret z
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_46bf)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_46bf)
 	inc hl
-	ld [hl], HIGH(unk_024_46bf)
+	ld [hl], HIGH(Script_024_46bf)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0B
@@ -1766,9 +1769,9 @@ Func_024_5330:
 	ld a, $01
 	ld [wd9ea], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $04
@@ -1800,13 +1803,13 @@ Func_024_5398:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_46cb)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_46cb)
 	inc hl
-	ld [hl], HIGH(unk_024_46cb)
+	ld [hl], HIGH(Script_024_46cb)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0B
@@ -1822,9 +1825,9 @@ Func_024_5398:
 	ld a, $01
 	ld [wd9ea], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $04
@@ -1873,11 +1876,11 @@ Func_024_5405:
 	jr z, .asm_546d
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $11
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wPlayerMap2Y], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -1913,7 +1916,7 @@ Func_024_5405:
 	ld [wd981], a
 	ld a, b
 	ld [wd982], a
-	farcall unk_04a_4000
+	farcall Func_04a_4000
 	ret
 .asm_54ab
 	ld a, [wd9f3]
@@ -1940,9 +1943,9 @@ Func_024_5405:
 	call Func_024_5ffb
 .asm_54dd
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -1950,13 +1953,13 @@ Func_024_5405:
 	ld a, $46
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_55f9)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_55f9)
 	inc hl
-	ld [hl], HIGH(unk_024_55f9)
+	ld [hl], HIGH(Script_024_55f9)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $0C
@@ -1993,11 +1996,11 @@ Func_024_5405:
 	dec e
 	jr nz, .asm_5535
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0D
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -2007,9 +2010,9 @@ Func_024_5405:
 	ld [hFFC5], a
 	call Func_024_5ffb
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -2020,13 +2023,13 @@ Func_024_5405:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_467d)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_467d)
 	inc hl
-	ld [hl], HIGH(unk_024_467d)
+	ld [hl], HIGH(Script_024_467d)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $09
@@ -2091,7 +2094,7 @@ Func_024_5405:
 .asm_55d6
 	push hl
 	pop bc
-	ld de, unk_024_6e36
+	ld de, Pointers_024_6e36
 	ld l, [hl]
 	ld h, $00
 	add hl, hl
@@ -2115,7 +2118,7 @@ Func_024_5405:
 .asm_55f7
 	xor a
 	ret
-unk_024_55f9:
+Script_024_55f9:
 	dr $915f9, $91603
 Func_024_5603:
 	call GetPartyMonPtr
@@ -2772,11 +2775,11 @@ Func_024_5a49:
 .asm_5ab3
 	call Func_024_603b
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4652)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4652)
 	inc hl
-	ld [hl], HIGH(unk_024_4652)
+	ld [hl], HIGH(Script_024_4652)
 	jr .asm_5afe
 .asm_5ac5
 	ld a, [wd1f4]
@@ -2803,14 +2806,14 @@ Func_024_5a49:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4664)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4664)
 	inc hl
-	ld [hl], HIGH(unk_024_4664)
+	ld [hl], HIGH(Script_024_4664)
 .asm_5afe
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $09
@@ -2877,11 +2880,11 @@ Func_024_5a49:
 .asm_5b81
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0B
 	ldh [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -2936,9 +2939,9 @@ Func_024_5a49:
 	ld a, $02
 	ld [wd9ea], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $04
@@ -2953,13 +2956,13 @@ Func_024_5a49:
 	ld a, $22
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_5f78)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_5f78)
 	inc hl
-	ld [hl], HIGH(unk_024_5f78)
+	ld [hl], HIGH(Script_024_5f78)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $09
@@ -2974,13 +2977,13 @@ Func_024_5a49:
 	ret
 .asm_5c4d
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_5f67)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_5f67)
 	inc hl
-	ld [hl], HIGH(unk_024_5f67)
+	ld [hl], HIGH(Script_024_5f67)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $09
@@ -2994,7 +2997,7 @@ Func_024_5a49:
 	ld [hl], $00
 	ret
 .asm_5c75
-	ld de, unk_024_5c97
+	ld de, Pointers_024_5c97
 	ldh a, [hMapGroup]
 	ld l, a
 	ld h, $00
@@ -3016,7 +3019,7 @@ Func_024_5a49:
 	ldh [hFade], a
 	call Func_024_689a
 	ret
-unk_024_5c97:
+Pointers_024_5c97:
 	dr $91c97, $91f19
 Func_024_5f19:
 	ld a, [wd9f3]
@@ -3041,13 +3044,13 @@ Func_024_5f19:
 .asm_5f3c
 	call Func_024_603b
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_42a5)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_42a5)
 	inc hl
-	ld [hl], HIGH(unk_024_42a5)
+	ld [hl], HIGH(Script_024_42a5)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $09
@@ -3060,10 +3063,11 @@ Func_024_5f19:
 	inc hl
 	ld [hl], $00
 	ret
-unk_024_5f67:
+Script_024_5f67:
 	dr $91f67, $91f78
-unk_024_5f78:
+Script_024_5f78:
 	dr $91f78, $91f82
+; TODO: indexed data table, classify type
 unk_024_5f82:
 	dr $91f82, $91ffb
 Func_024_5ffb:
@@ -3178,6 +3182,7 @@ Func_024_603b:
 	jr .asm_608c
 .asm_6095
 	ret
+; TODO: indexed data table, classify type
 unk_024_6096:
 	dr $92096, $92099
 Func_024_6099:
@@ -3236,13 +3241,13 @@ Func_024_6099:
 	add $18
 	ld [wcde0], a
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4650)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4650)
 	inc hl
-	ld [hl], HIGH(unk_024_4650)
+	ld [hl], HIGH(Script_024_4650)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -3283,13 +3288,13 @@ Func_024_6099:
 	xor a
 	ld [wSelectedOption], a
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4642)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4642)
 	inc hl
-	ld [hl], HIGH(unk_024_4642)
+	ld [hl], HIGH(Script_024_4642)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, [wd3f9 + 1]
@@ -3357,26 +3362,26 @@ Func_024_6099:
 	ld [wd9f3], a
 	call Func_024_6ba1
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0A
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_466d)
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_466d)
 	inc hl
-	ld [hl], HIGH(unk_024_466d)
+	ld [hl], HIGH(Script_024_466d)
 	ret
 .asm_6208
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0A
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld bc, wcde0
@@ -3457,13 +3462,13 @@ Func_024_6099:
 	and a
 	jp nz, .asm_62b2
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_462b)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_462b)
 	inc hl
-	ld [hl], HIGH(unk_024_462b)
+	ld [hl], HIGH(Script_024_462b)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $07
@@ -3472,9 +3477,9 @@ Func_024_6099:
 	ret
 .asm_62b2
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -3558,6 +3563,7 @@ Func_024_6328:
 	xor a
 	ldh [hFFC6], a
 	ret
+; TODO: indexed data table, classify type
 unk_024_6344:
 	dr $92344, $92347
 Func_024_6347:
@@ -3595,11 +3601,11 @@ Func_024_6347:
 	ld [wd1f4], a
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $09
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	xor a
@@ -3716,15 +3722,15 @@ Func_024_63a4:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_461d)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_461d)
 	inc hl
-	ld [hl], HIGH(unk_024_461d)
+	ld [hl], HIGH(Script_024_461d)
 	ld a, $03
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -3797,13 +3803,13 @@ Func_024_64a9:
 	call PlaySound
 	call Func_024_66da
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_45e8)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_45e8)
 	inc hl
-	ld [hl], HIGH(unk_024_45e8)
+	ld [hl], HIGH(Script_024_45e8)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -3814,13 +3820,13 @@ Func_024_64a9:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_460f)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_460f)
 	inc hl
-	ld [hl], HIGH(unk_024_460f)
+	ld [hl], HIGH(Script_024_460f)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -3833,13 +3839,13 @@ Func_024_64a9:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4601)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4601)
 	inc hl
-	ld [hl], HIGH(unk_024_4601)
+	ld [hl], HIGH(Script_024_4601)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $05
@@ -3893,13 +3899,13 @@ Func_024_655a:
 	call PlaySound
 	call Func_024_66da
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_45d1)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_45d1)
 	inc hl
-	ld [hl], HIGH(unk_024_45d1)
+	ld [hl], HIGH(Script_024_45d1)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -3910,9 +3916,9 @@ Func_024_655a:
 	ld a, $11
 	call PlaySound
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $06
@@ -3925,13 +3931,13 @@ Func_024_655a:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_45c2)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_45c2)
 	inc hl
-	ld [hl], HIGH(unk_024_45c2)
+	ld [hl], HIGH(Script_024_45c2)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $04
@@ -3985,13 +3991,13 @@ Func_024_6603:
 	call PlaySound
 	call Func_024_66da
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_45b0)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_45b0)
 	inc hl
-	ld [hl], HIGH(unk_024_45b0)
+	ld [hl], HIGH(Script_024_45b0)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -4002,9 +4008,9 @@ Func_024_6603:
 	ld a, $11
 	call PlaySound
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $05
@@ -4020,31 +4026,31 @@ Func_024_6603:
 	and a
 	jr nz, .asm_66b1
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	call Func_024_694c
-	ld hl, wd088
-	ld [hl], LOW(unk_024_45a0)
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_45a0)
 	inc hl
-	ld [hl], HIGH(unk_024_45a0)
+	ld [hl], HIGH(Script_024_45a0)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
 .asm_66b1
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	call Func_024_694c
-	ld hl, wd088
-	ld [hl], LOW(unk_024_66ca)
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_66ca)
 	inc hl
-	ld [hl], HIGH(unk_024_66ca)
+	ld [hl], HIGH(Script_024_66ca)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
-unk_024_66ca:
+Script_024_66ca:
 	dr $926ca, $926da
 Func_024_66da:
 	ld a, [wSelectedOption]
@@ -4133,9 +4139,9 @@ Func_024_66f8:
 .asm_6767
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $04
@@ -4152,9 +4158,9 @@ Func_024_66f8:
 	jp nz, .asm_67b8
 	call Func_024_6ba1
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $08
@@ -4209,9 +4215,9 @@ Func_024_66f8:
 	ld a, $01
 	ld [wdcaf], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld [wdb18], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -4257,15 +4263,15 @@ Func_024_66f8:
 	bit 1, a
 	ret z
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ldh [hFFC5], a
 	call Func_024_694c
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4589)
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4589)
 	inc hl
-	ld [hl], HIGH(unk_024_4589)
+	ld [hl], HIGH(Script_024_4589)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -4334,7 +4340,7 @@ Func_024_689a:
 	ld bc, $0080
 	call CopyBytes3
 	call Func_024_6941
-	ld hl, unk_024_4000
+	ld hl, Func_024_4000
 	ld b, $04
 	rst $30
 	ld a, $c7
@@ -4348,7 +4354,7 @@ Func_024_689a:
 	ldh [$ffc6], a
 	xor a
 	ldh [$ffc5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ret
 Func_024_6916:
 	ld hl, wPartyMon1
@@ -4411,6 +4417,7 @@ Func_024_694c:
 	ld [bc], a
 	ret
 
+; TODO: indexed data table, classify type
 unk_024_6969:
 	db $78, $78, $88, $78
 Func_024_696d:
@@ -4507,13 +4514,13 @@ Func_024_69f3:
 	ld a, [hli]
 	ld [bc], a
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4553)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4553)
 	inc hl
-	ld [hl], HIGH(unk_024_4553)
+	ld [hl], HIGH(Script_024_4553)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [$ffc6], a
 Func_024_6a20:
@@ -4527,27 +4534,27 @@ Func_024_6a20:
 	and a
 	jr nz, .asm_6a46
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $03
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [$ffc6], a
 	ret
 .asm_6a46
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $03
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [$ffc6], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_41c1)
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_41c1)
 	inc hl
-	ld [hl], HIGH(unk_024_41c1)
+	ld [hl], HIGH(Script_024_41c1)
 	ret
 Func_024_6a61:
 	ldh a, [$ff94]
@@ -4560,13 +4567,13 @@ Func_024_6a61:
 	jr nz, Func_024_6a8c
 Func_024_6a71:
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_4564)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_4564)
 	inc hl
-	ld [hl], HIGH(unk_024_4564)
+	ld [hl], HIGH(Script_024_4564)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [$ffc6], a
 	ldh [$ffc5], a
@@ -4574,9 +4581,9 @@ Func_024_6a71:
 	ret
 Func_024_6a8c:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [$ffc5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [$ffc6], a
 	ld a, $03
@@ -4724,10 +4731,10 @@ StartMenu_Input:
 	call PlaySound
 	call Func_024_6ba1
 	ld a, 1
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ldh [hFFC6], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 
 	ld de, unk_024_6b9c
 	ld a, [wSelectedOption]
@@ -4749,19 +4756,20 @@ StartMenu_Input:
 
 ; Close menu
 	ld a, 2
-	ld [wd087], a
-	ld hl, wd088
-	ld [hl], LOW(unk_024_454c)
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(Script_024_454c)
 	inc hl
-	ld [hl], HIGH(unk_024_454c)
+	ld [hl], HIGH(Script_024_454c)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, 1
 	ldh [hFFC6], a
 
 .ret
 	ret
 
+; TODO: indexed data table, classify type
 unk_024_6b9c:
 	dr $92b9c, $92ba1
 
@@ -5094,10 +5102,12 @@ SpriteOAMTemplate_Pointers:
 	db $10, $18, $00, $EE, $01
 	db $FF
 
+; TODO: indexed data table, classify type
 unk_024_6d77:
 	dr $92d77, $92e04
+; TODO: indexed data table, classify type
 unk_024_6e04:
 	dr $92e04, $92e36
-unk_024_6e36:
+Pointers_024_6e36:
 	dr $92e36, $93c10
 

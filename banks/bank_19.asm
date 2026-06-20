@@ -10,6 +10,6 @@ INCBIN "gfx/tilesets/image_19_47f0.2bpp"
 gfx_019_4960:
 INCBIN "gfx/tilesets/image_19_4960.2bpp"
 
-unk_019_49e0:
+GFX_019_49e0:
 	dr $649e0, $67a80
 

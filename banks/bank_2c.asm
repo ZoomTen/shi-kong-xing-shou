@@ -1,4 +1,4 @@
-unk_02c_4000:
+Func_02c_4000:
 	dr $b0000, $b12b8
 
 BattleTransition_InsertWhiteTile:
@@ -1886,9 +1886,9 @@ BattleTransition_DiagonalCheckerboard:
 	dw $1100
 	db -1
 
-unk_02d_6d77:
+Func_02d_6d77:
     dr $b2d77, $b2e2c
 ; TODO disassemble
-unk_02d_6e2c:
+Func_02d_6e2c:
     dr $b2e2c, $b3e8a
 

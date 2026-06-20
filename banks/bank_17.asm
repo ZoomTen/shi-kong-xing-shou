@@ -1,25 +1,25 @@
-unk_017_4000:
+MapAttributes_017_4000:
 	dr $5c000, $5c014
 
-unk_017_4014::
+MapAttributes_017_4014::
 	dr $5c014, $5c028
 
-unk_017_4028::
+MapAttributes_017_4028::
 	dr $5c028, $5c03c
 
-unk_017_403c::
+MapAttributes_017_403c::
 	dr $5c03c, $5c050
 
-unk_017_4050::
+MapAttributes_017_4050::
 	dr $5c050, $5c74b
 
-unk_017_474b::
+MapAttributes_017_474b::
 	dr $5c74b, $5c75f
 
-unk_017_475f::
+MapAttributes_017_475f::
 	dr $5c75f, $5ca09
 
-unk_017_4a09::
+MapAttributes_017_4a09::
 	dr $5ca09, $5ccae
 
 BlueMoon_MapAttributes::

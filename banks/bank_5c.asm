@@ -1,3 +1,4 @@
+; TODO: structured data table (not graphics), classify records
 unk_05c_4000:
 	dr $170000, $170019
 
@@ -302,6 +303,7 @@ BGPals_5c:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: unreferenced data block, classify type
 unk_5c_57d1:
 	dr $1717d1, $1717d9
 Attrmap_5c:

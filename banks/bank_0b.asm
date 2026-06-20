@@ -1,3 +1,4 @@
+; TODO: data, not noise (not graphics)
 unk_00b_4000:
 	dr $2c000, $2c13c
 
@@ -721,9 +722,11 @@ Script_emote:
 	jr .asm_4636
 	ret ; ?
 
+; TODO: indexed data table, classify type
 unk_00b_465b:
 	dr $2c65b, $2c66b
 
+; TODO: indexed data table, classify type
 unk_00b_466b:
 	dr $2c66b, $2c683
 
@@ -970,7 +973,7 @@ Script_1f:
 	ret
 
 Script_20:
-	ld de, unk_00b_482d
+	ld de, Jumptable_00b_482d
 	ld a, [wd080]
 	ld l, a
 	ld h, 0
@@ -981,7 +984,7 @@ Script_20:
 	ld l, a
 	jp hl
 
-unk_00b_482d:
+Jumptable_00b_482d:
 	dw asm_00b_4841
 	dw asm_00b_48b6
 	dw asm_00b_48e0
@@ -989,6 +992,7 @@ unk_00b_482d:
 	dw asm_00b_492e
 	dw asm_00b_4955
 
+; TODO: indexed data table, classify type
 unk_00b_4839:
 	db $16
 	db $0
@@ -1970,6 +1974,7 @@ Script_48:
 	ld [wScriptByte], a
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_00b_5192:
 	dw wd300, wddb0, wd284
 
@@ -1980,11 +1985,11 @@ Script_4a:
 	dr $2d235, $2d273
 
 Func_00b_5273::
-	ld hl, unk_00b_698e
+	ld hl, GFX_00b_698e
 	ld de, $8540
 	ld bc, $0140
 	call CopyBytesVRAM
-	ld hl, unk_00b_6ace
+	ld hl, Palette_00b_6ace
 	ld b, $08
 	ld c, $88
 	call LoadPalettes_OCPD
@@ -1993,7 +1998,7 @@ Func_00b_5273::
 	add hl, bc
 	push hl
 	pop de
-	ld hl, unk_00b_6ace
+	ld hl, Palette_00b_6ace
 	call CopyBytes3
 	ld hl, wd1a0
 	ld [hl], $10
@@ -3112,9 +3117,10 @@ Func_00b_65f6:
 	ldh [$FF4F], a
 	ret
 
+; TODO: structured data (not graphics)
 unk_00b_662b:
 	dr $2e62b, $2e98e
-unk_00b_698e:
+GFX_00b_698e:
 	dr $2e98e, $2eace
-unk_00b_6ace:
+Palette_00b_6ace:
 	dr $2eace, $2f1e0

@@ -297,7 +297,7 @@ GameOver::
 	ldh a, [hFadeFrameCounter]
 	and $0F
 	ret nz
-	ld de, unk_03c_4737
+	ld de, Pointers_03c_4737
 	ldh a, [hFFA1]
 	ld l, a
 	ld h, $00
@@ -377,7 +377,7 @@ Palettes_03c_46f7:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-unk_03c_4737:
+Pointers_03c_4737:
 	dr $f0737, $f0775
 GFX_03c_4775:
 	dr $f0775, $f0c55
@@ -591,7 +591,7 @@ Func_03c_4c74::
 	ld [wcd65], a
 .asm_4e5d
 	ld a, [wcd58]
-	ld de, unk_03c_4ec9
+	ld de, Pointers_03c_4ec9
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -631,7 +631,7 @@ Func_03c_4c74::
 	ld [wcd5c], a
 .asm_4e9f
 	ld a, [wcd5c]
-	ld de, unk_03c_4ec9
+	ld de, Pointers_03c_4ec9
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -655,7 +655,7 @@ Func_03c_4c74::
 	inc a
 	ld [wcd66], a
 	ret
-unk_03c_4ec9:
+Pointers_03c_4ec9:
 	dr $f0ec9, $f0f68
 Func_03c_4f68:
 	ld a, [wcd60]
@@ -675,7 +675,7 @@ Func_03c_4f68:
 	ld [wcd67], a
 .asm_4f84
 	ld a, [wcd60]
-	ld de, unk_03c_4ec9
+	ld de, Pointers_03c_4ec9
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -723,7 +723,7 @@ Func_03c_4fb7:
 	call .asm_4fd5
 	ret
 .asm_4fd5
-	ld hl, unk_03c_50bb
+	ld hl, Pointers_03c_50bb
 	ld de, wcd5d
 	ld a, [de]
 	ld c, a
@@ -769,7 +769,7 @@ Func_03c_4fb7:
 	ld [wd1fb], a
 	ret
 .asm_500d
-	ld hl, unk_03c_50bb
+	ld hl, Pointers_03c_50bb
 	ld de, wcd59
 	ld a, [de]
 	ld c, a
@@ -818,7 +818,7 @@ Func_03c_4fb7:
 	ld a, [wcd57]
 	and a
 	ret z
-	ld hl, unk_03c_50bb
+	ld hl, Pointers_03c_50bb
 	ld de, wcd55
 	ld a, [de]
 	ld c, a
@@ -865,7 +865,7 @@ Func_03c_4fb7:
 	ret
 
 Func_03c_5082:
-	ld hl, unk_03c_50bb
+	ld hl, Pointers_03c_50bb
 	ld de, wcd42
 	ld a, [de]
 	ld c, a
@@ -910,7 +910,7 @@ Func_03c_5082:
 	ld a, e
 	ld [wd1fb], a
 	ret
-unk_03c_50bb:
+Pointers_03c_50bb:
 	dr $f10bb, $f11b4
 AttrMap_03c_51b4:
 	dr $f11b4, $f131c

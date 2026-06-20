@@ -383,7 +383,7 @@ Func_5d_435e:
 	ld a, [hl]
 	ld l, a
 	ld h, $99
-	ld de, unk_5d_43EE
+	ld de, BGMap_5d_43EE
 	ld bc, $0202
 	ld a, $02
 	ldh [hVRAMCopyHeight], a
@@ -434,8 +434,9 @@ Func_5d_435e:
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ret
-unk_5d_43EE:
+BGMap_5d_43EE:
 	dr $1743ee, $1743f2
+; TODO: indexed data table, classify type
 unk_5d_43F2:
 	dr $1743f2, $1743f5
 Func_5d_43f5:
@@ -1331,6 +1332,7 @@ RhythmBGPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: padding between palettes, confirm
 unk_5d_4AFF_pad:
 	dr $174aff, $174b07
 RhythmOBJPalette:
@@ -1366,6 +1368,7 @@ RhythmOBJPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: padding between palettes, confirm
 unk_5d_4B47_pad:
 	dr $174b47, $174b4f
 RhythmScreen1Tilemap:
@@ -1392,6 +1395,7 @@ RhythmAnimFrames:
 	dr $176c7b, $17797b
 RhythmTileChunks:
 	dr $17797b, $1779bb
+; TODO: padding between palettes, confirm
 unk_5d_79BB_pad:
 	dr $1779bb, $1779c0
 

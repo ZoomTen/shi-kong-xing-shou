@@ -361,7 +361,7 @@ PaperScrollTiles:
 	INCBIN "gfx/paper_scroll/tiles_4250.2bpp"
 ; TODO: source pointers for the two paper layouts, indexed *2
 Pointers_00d_42a0:
-	dw unk_00d_432a, unk_00d_4352
+	dw BGMap_00d_432a, BGMap_00d_4352
 
 Func_00d_42a4:
 	and $0F
@@ -438,12 +438,12 @@ unk_00d_4302:
 	db $80, $80, $80, $86, $86, $80, $80, $80, $80, $80, $80, $80, $80, $86, $86, $86
 	db $86, $86, $86, $86, $86, $86, $86, $86
 ; TODO: paper layout A (tilemap source for Func_00d_4193)
-unk_00d_432a:
+BGMap_00d_432a:
 	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a1, $a3, $a8, $aa, $ac, $ae, $b0
 	db $b2, $b4, $b6, $a3, $a3, $a9, $ab, $ad, $af, $b1, $b3, $b5, $b7, $a3, $a4, $a2
 	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a4
 ; TODO: paper layout B
-unk_00d_4352:
+BGMap_00d_4352:
 	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a1, $a3, $a8, $aa, $a0, $ac, $ae
 	db $a0, $b0, $b2, $a3, $a3, $a9, $ab, $a0, $ad, $af, $a0, $b1, $b3, $a3, $a4, $a2
 	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a4
@@ -455,7 +455,7 @@ Pointers_00d_437a:
 	dw $446a, $4472, $447a, $4482, $448b, $4494, $449d, $44a5
 	dw $44ae, $44b6, $44be, $44c7
 ; TODO: paper-scroll scripts (F0/ED character command lists)
-unk_00d_43c2:
+Script_00d_43c2:
 	db $f0, $26, $27, $28, $ed, $01, $f0, $29, $00, $00, $2a, $ed, $00, $f0, $2b, $0a
 	db $2c, $ed, $01, $f0, $2d, $00, $00, $2e, $ed, $00, $f0, $2f, $30, $18, $31, $ed
 	db $00, $f0, $19, $32, $33, $ed, $01, $f0, $34, $31, $35, $ed, $01, $f0, $34, $36

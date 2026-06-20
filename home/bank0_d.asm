@@ -915,21 +915,21 @@ Func_1377::
 	ldh [rVBK], a
 	ret
 
-Func_13b7::
+AdvanceBattleScriptMode::
 	ld a, [_BANKNUM]
 	push af
 	ld a, $23
 	rst Bankswitch
-	ld a, [wd088]
+	ld a, [wBattleScriptPos]
 	ld l, a
-	ld a, [wd089]
+	ld a, [wBattleScriptPos + 1]
 	ld h, a
 	ld a, [hli]
-	ld [wd989], a
+	ld [wBattleState], a
 	ld a, l
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, h
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	pop af
 	rst Bankswitch
 	ret
@@ -1612,6 +1612,7 @@ Func_1730::
 	ld [hl], 12
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_18ea::
 	ds $16, 0
 

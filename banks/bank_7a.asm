@@ -1,4 +1,4 @@
-unk_07a_4000:
+Func_07a_4000:
 	ld hl, wVisibleObjects
 	ld bc, $0100
 .asm_4006
@@ -10,7 +10,7 @@ unk_07a_4000:
 	jr nz, .asm_4006
 	ret
 
-unk_07a_400e:
+Func_07a_400e:
 	ld hl, wVirtualOAM
 	ld bc, $0028
 	ld de, $0004
@@ -23,7 +23,7 @@ unk_07a_400e:
 	ret
 
 Func_07a_401f::
-	call unk_07a_4000
+	call Func_07a_4000
 	ld a, $6e
 	call PlaySound
 	xor a
@@ -40,7 +40,7 @@ Func_07a_401f::
 	ld [wdcf7], a
 	ld [wdcf8], a
 	ld hl, $9800
-	ld de, unk_07a_492f
+	ld de, BGMap_07a_492f
 	ld bc, $1412
 	ld a, $12
 	ldh [$ff93], a
@@ -48,33 +48,33 @@ Func_07a_401f::
 	ldh [$ff92], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
-	ld de, unk_07a_47c7
+	ld de, AttrMap_07a_47c7
 	ld bc, $1412
 	ld a, $12
 	ldh [$ff93], a
 	ld a, $14
 	ldh [$ff92], a
 	call PlaceAttrmap
-	ld hl, unk_07a_4a97
+	ld hl, Palette_07a_4a97
 	ld de, wPaletteBuffer
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, unk_07a_530f
+	ld hl, Palette_07a_530f
 	ld de, wcaf0
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, unk_07a_4aaf
+	ld hl, GFX_07a_4aaf
 	ld de, $9000
 	ld bc, $0800
 	call CopyBytesVRAM
 	ld de, $8800
 	ld bc, $0060
 	call CopyBytesVRAM
-	ld hl, unk_07a_5317
+	ld hl, GFX_07a_5317
 	ld de, $8000
 	ld bc, $01e0
 	call CopyBytesVRAM
-	call unk_07a_400e
+	call Func_07a_400e
 	ld a, $50
 	ld [wcd55], a
 	ld a, $28
@@ -125,9 +125,9 @@ Func_07a_401f::
 	xor a
 	ldh [$ffc4], a
 	call FadeOutPalette
-	call unk_07a_400e
+	call Func_07a_400e
 	ld hl, $9800
-	ld de, unk_07a_565f
+	ld de, BGMap_07a_565f
 	ld bc, $1412
 	ld a, $12
 	ldh [$ff93], a
@@ -135,18 +135,18 @@ Func_07a_401f::
 	ldh [$ff92], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
-	ld de, unk_07a_54f7
+	ld de, AttrMap_07a_54f7
 	ld bc, $1412
 	ld a, $12
 	ldh [$ff93], a
 	ld a, $14
 	ldh [$ff92], a
 	call PlaceAttrmap
-	ld hl, unk_07a_57c7
+	ld hl, Palette_07a_57c7
 	ld de, wPaletteBuffer
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, unk_07a_57df
+	ld hl, GFX_07a_57df
 	ld de, $9000
 	ld bc, $0710
 	call CopyBytesVRAM
@@ -172,8 +172,8 @@ Func_07a_401f::
 	jp JumpToGameMode
 
 Func_07a_4188::
-	call unk_07a_4000
-	call unk_07a_400e
+	call Func_07a_4000
+	call Func_07a_400e
 	ld a, $6e
 	call PlaySound
 	xor a
@@ -267,7 +267,7 @@ Func_07a_4188::
 	xor a
 	ldh [hPaletteFadeState], a
 	call FadeOutPalette
-	call unk_07a_400e
+	call Func_07a_400e
 	xor a
 	ld [wcd57], a
 	ld [wcd58], a
@@ -723,25 +723,25 @@ SpriteLayoutPointers_07a_4629:
 	dr $1e8629, $1e8643
 SpriteLayoutData_07a_4643:
 	dr $1e8643, $1e87c7
-unk_07a_47c7:
+AttrMap_07a_47c7:
 	dr $1e87c7, $1e892f
-unk_07a_492f:
+BGMap_07a_492f:
 	dr $1e892f, $1e8a97
-unk_07a_4a97:
+Palette_07a_4a97:
 	dr $1e8a97, $1e8aaf
-unk_07a_4aaf:
+GFX_07a_4aaf:
 	dr $1e8aaf, $1e930f
-unk_07a_530f:
+Palette_07a_530f:
 	dr $1e930f, $1e9317
-unk_07a_5317:
+GFX_07a_5317:
 	dr $1e9317, $1e94f7
-unk_07a_54f7:
+AttrMap_07a_54f7:
 	dr $1e94f7, $1e965f
-unk_07a_565f:
+BGMap_07a_565f:
 	dr $1e965f, $1e97c7
-unk_07a_57c7:
+Palette_07a_57c7:
 	dr $1e97c7, $1e97df
-unk_07a_57df:
+GFX_07a_57df:
 	dr $1e97df, $1e9eef
 Intro1_Attrmap:
 	dr $1e9eef, $1ea057

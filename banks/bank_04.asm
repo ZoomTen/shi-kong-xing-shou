@@ -502,7 +502,7 @@ Func_004_426d:
 	ld a, e
 	ld [wd1fb], a
 	ret
-	ld de, unk_004_4337
+	ld de, Pointers_004_4337
 	ld a, [wPlayerSpriteID]
 	ld l, a
 	ld h, $00
@@ -519,7 +519,7 @@ Func_004_426d:
 	ld de, wcaf0
 	ld bc, $0008
 	call CopyBytes3
-	ld de, unk_004_4337
+	ld de, Pointers_004_4337
 	ld a, [wcd24]
 	ld l, a
 	ld h, $00
@@ -565,7 +565,7 @@ Func_004_4309:
 	ld a, [wSelectedOption]
 .asm_431f
 	ld bc, wcaf0
-	ld de, unk_004_4337
+	ld de, Pointers_004_4337
 	add a
 	ld l, a
 	ld h, $00
@@ -580,7 +580,7 @@ Func_004_4309:
 	call CopyBytes3
 	ret
 
-unk_004_4337::
+Pointers_004_4337::
 	dr $10337, $107ab
 Pointers_004_47ab:
 	dr $107ab, $108e7

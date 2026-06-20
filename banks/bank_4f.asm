@@ -1,4 +1,4 @@
-unk_04f_4000:
+Script_04f_4000:
 	scr_end
 
 Script_04f_4001:
@@ -271,7 +271,7 @@ Script_04f_44a2:
 	scr_spriteface $04, $00 ; TEMP
 	scr_spriteface $05, $00 ; TEMP
 	scr_1a $05, $04, $00, $10 ; TEMP
-	scr_4e $04, unk_4f_7ae1
+	scr_4e $04, Script_4f_7ae1
 	scr_1c $04 ; TEMP
 	scr_1c $05 ; TEMP
 	scr_face $01 ; TEMP
@@ -430,6 +430,6 @@ Script_04f_4dbe::
 
 INCLUDE "data/text/bank4f_misc.asm"
 
-unk_4f_7ae1::
+Script_4f_7ae1::
 	dr $13fae1, $13fcff
 

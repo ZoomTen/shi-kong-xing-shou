@@ -435,7 +435,7 @@ Func_01e_42e4:
 	ld l, d
 	ld a, d
 	ld h, 0
-	ld de, unk_01e_551f
+	ld de, TypeNameIndex_01e_551f
 	add hl, de
 	ld a, [hl]
 	ld [wd8ff], a
@@ -446,7 +446,7 @@ Func_01e_42f1:
 	ld a, d
 	ld [wd9e3], a
 	ld h, 0
-	ld de, unk_01e_551f
+	ld de, TypeNameIndex_01e_551f
 	add hl, de
 	ld a, [hl]
 	ld [wd8ff], a
@@ -499,8 +499,8 @@ Func_01e_431f::
 
 Func_01e_434d:
 	ld de, PointerTable_01e_57ed
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -1033,7 +1033,7 @@ Func_01e_4719:
 	ret
 
 Func_01e_4745:
-	ld de, unk_01e_614f
+	ld de, Pointers_01e_614f
 	ld a, [wd9d4]
 	ld l, a
 	ld a, [wd9d5]
@@ -1742,206 +1742,206 @@ MapLayoutPatches_01e_4d10:
 Pointers_01e_4d29:
 ; appears to be category, index
 	dw MapLayoutPatches_None
-	dw unk_01e_4ead
-	dw unk_01e_4eaf
-	dw unk_01e_4eb3
-	dw unk_01e_4eb5
+	dw ItemNameIndex_01e_4ead
+	dw ItemNameIndex_01e_4eaf
+	dw ItemNameIndex_01e_4eb3
+	dw ItemNameIndex_01e_4eb5
 	dw MapLayoutPatches_None
-	dw unk_01e_4ea1
-	dw unk_01e_4e9f
-	dw unk_01e_4e9d
-	dw unk_01e_4e99
-	dw unk_01e_4e83
-	dw unk_01e_4e8b
-	dw unk_01e_4e8f
-	dw unk_01e_4e97
-	dw unk_01e_4ea3
-	dw unk_01e_4e79
-	dw unk_01e_4e73
-	dw unk_01e_4e6d
-	dw unk_01e_4e5d
-	dw unk_01e_4e57
-	dw unk_01e_4e31
-	dw unk_01e_4e37
-	dw unk_01e_4e45
-	dw unk_01e_4e4b
-	dw unk_01e_4e1b
-	dw unk_01e_4e23
-	dw unk_01e_4e29
-	dw unk_01e_4e2d
-	dw unk_01e_4e15
-	dw unk_01e_4e0f
-	dw unk_01e_4e0b
-	dw unk_01e_4df3
-	dw unk_01e_4df7
-	dw unk_01e_4dfb
-	dw unk_01e_4dfd
-	dw unk_01e_4e03
-	dw unk_01e_4e07
-	dw unk_01e_4de3
-	dw unk_01e_4deb
-	dw unk_01e_4db1
-	dw unk_01e_4db7
-	dw unk_01e_4dbb
-	dw unk_01e_4dbd
-	dw unk_01e_4dc3
-	dw unk_01e_4dc9
-	dw unk_01e_4dd3
-	dw unk_01e_4dd5
-	dw unk_01e_4dd9
-	dw unk_01e_4ddb
-	dw unk_01e_4d99
-	dw unk_01e_4da1
-	dw unk_01e_4da5
-	dw unk_01e_4da7
-	dw unk_01e_4da9
-	dw unk_01e_4dad
-	dw unk_01e_4e65
+	dw ItemNameIndex_01e_4ea1
+	dw ItemNameIndex_01e_4e9f
+	dw ItemNameIndex_01e_4e9d
+	dw ItemNameIndex_01e_4e99
+	dw ItemNameIndex_01e_4e83
+	dw ItemNameIndex_01e_4e8b
+	dw ItemNameIndex_01e_4e8f
+	dw ItemNameIndex_01e_4e97
+	dw ItemNameIndex_01e_4ea3
+	dw ItemNameIndex_01e_4e79
+	dw ItemNameIndex_01e_4e73
+	dw ItemNameIndex_01e_4e6d
+	dw ItemNameIndex_01e_4e5d
+	dw ItemNameIndex_01e_4e57
+	dw ItemNameIndex_01e_4e31
+	dw ItemNameIndex_01e_4e37
+	dw ItemNameIndex_01e_4e45
+	dw ItemNameIndex_01e_4e4b
+	dw ItemNameIndex_01e_4e1b
+	dw ItemNameIndex_01e_4e23
+	dw ItemNameIndex_01e_4e29
+	dw ItemNameIndex_01e_4e2d
+	dw ItemNameIndex_01e_4e15
+	dw ItemNameIndex_01e_4e0f
+	dw ItemNameIndex_01e_4e0b
+	dw ItemNameIndex_01e_4df3
+	dw ItemNameIndex_01e_4df7
+	dw ItemNameIndex_01e_4dfb
+	dw ItemNameIndex_01e_4dfd
+	dw ItemNameIndex_01e_4e03
+	dw ItemNameIndex_01e_4e07
+	dw ItemNameIndex_01e_4de3
+	dw ItemNameIndex_01e_4deb
+	dw ItemNameIndex_01e_4db1
+	dw ItemNameIndex_01e_4db7
+	dw ItemNameIndex_01e_4dbb
+	dw ItemNameIndex_01e_4dbd
+	dw ItemNameIndex_01e_4dc3
+	dw ItemNameIndex_01e_4dc9
+	dw ItemNameIndex_01e_4dd3
+	dw ItemNameIndex_01e_4dd5
+	dw ItemNameIndex_01e_4dd9
+	dw ItemNameIndex_01e_4ddb
+	dw ItemNameIndex_01e_4d99
+	dw ItemNameIndex_01e_4da1
+	dw ItemNameIndex_01e_4da5
+	dw ItemNameIndex_01e_4da7
+	dw ItemNameIndex_01e_4da9
+	dw ItemNameIndex_01e_4dad
+	dw ItemNameIndex_01e_4e65
 
-unk_01e_4d99:
+ItemNameIndex_01e_4d99:
 	db $00, $3a
 	db $00, $42
 	db $00, $35
 	db $00, $17
 
-unk_01e_4da1:
+ItemNameIndex_01e_4da1:
 	db $00, $43
 	db $00, $47
 
-unk_01e_4da5:
+ItemNameIndex_01e_4da5:
 	db $00, $49
 
-unk_01e_4da7:
+ItemNameIndex_01e_4da7:
 	db $00, $4c
 
-unk_01e_4da9:
+ItemNameIndex_01e_4da9:
 	db $00, $4f
 	db $00, $51
 
-unk_01e_4dad:
+ItemNameIndex_01e_4dad:
 	db $01, $09
 	db $00, $53
 
-unk_01e_4db1:
+ItemNameIndex_01e_4db1:
 	db $00, $2c
 	db $01, $0a
 	db $00, $2e
 
-unk_01e_4db7:
+ItemNameIndex_01e_4db7:
 	db $00, $24
 	db $00, $26
 
-unk_01e_4dbb:
+ItemNameIndex_01e_4dbb:
 	db $00, $3e
 
-unk_01e_4dbd:
+ItemNameIndex_01e_4dbd:
 	db $00, $0c
 	db $00, $08
 	db $00, $03
 
-unk_01e_4dc3:
+ItemNameIndex_01e_4dc3:
 	db $00, $3b
 	db $00, $30
 	db $00, $23
 
-unk_01e_4dc9:
+ItemNameIndex_01e_4dc9:
 	db $00, $24
 	db $00, $0b
 	db $00, $22
 	db $00, $54
 	db $00, $27
 
-unk_01e_4dd3:
+ItemNameIndex_01e_4dd3:
 	db $00, $41
 
-unk_01e_4dd5:
+ItemNameIndex_01e_4dd5:
 	db $00, $07
 	db $00, $45
 
-unk_01e_4dd9:
+ItemNameIndex_01e_4dd9:
 	db $00, $1d
 
-unk_01e_4ddb:
+ItemNameIndex_01e_4ddb:
 	db $00, $4d
 	db $02, $20
 	db $00, $24
 	db $00, $3d
 
-unk_01e_4de3:
+ItemNameIndex_01e_4de3:
 	db $01, $14
 	db $00, $25
 	db $01, $0d
 	db $00, $26
 
-unk_01e_4deb:
+ItemNameIndex_01e_4deb:
 	db $00, $08
 	db $00, $0d
 	db $00, $02
 	db $00, $36
 
-unk_01e_4df3:
+ItemNameIndex_01e_4df3:
 	db $00, $11
 	db $00, $28
 
-unk_01e_4df7:
+ItemNameIndex_01e_4df7:
 	db $01, $0f
 	db $00, $4b
 
-unk_01e_4dfb:
+ItemNameIndex_01e_4dfb:
 	db $00, $0c
 
-unk_01e_4dfd:
+ItemNameIndex_01e_4dfd:
 	db $00, $2a
 	db $00, $4a
 	db $00, $38
 
-unk_01e_4e03:
+ItemNameIndex_01e_4e03:
 	db $00, $08
 	db $00, $14
 
-unk_01e_4e07:
+ItemNameIndex_01e_4e07:
 	db $00, $27
 	db $00, $03
 
-unk_01e_4e0b:
+ItemNameIndex_01e_4e0b:
 	db $00, $44
 	db $00, $58
 
-unk_01e_4e0f:
+ItemNameIndex_01e_4e0f:
 	db $00, $27
 	db $00, $1d
 	db $00, $16
 
-unk_01e_4e15:
+ItemNameIndex_01e_4e15:
 	db $00, $1c
 	db $00, $39
 	db $00, $13
 
-unk_01e_4e1b:
+ItemNameIndex_01e_4e1b:
 	db $00, $07
 	db $00, $1b
 	db $00, $36
 	db $00, $32
 
-unk_01e_4e23:
+ItemNameIndex_01e_4e23:
 	db $00, $23
 	db $00, $12
 	db $00, $22
 
-unk_01e_4e29:
+ItemNameIndex_01e_4e29:
 	db $01, $14
 	db $01, $15
 
-unk_01e_4e2d:
+ItemNameIndex_01e_4e2d:
 	db $00, $06
 	db $00, $02
 
-unk_01e_4e31:
+ItemNameIndex_01e_4e31:
 	db $00, $1d
 	db $00, $11
 	db $00, $23
 
-unk_01e_4e37:
+ItemNameIndex_01e_4e37:
 	db $00, $06
 	db $01, $0c
 	db $00, $1b
@@ -1950,12 +1950,12 @@ unk_01e_4e37:
 	db $01, $13
 	db $01, $11
 
-unk_01e_4e45:
+ItemNameIndex_01e_4e45:
 	db $00, $18
 	db $00, $23
 	db $00, $31
 
-unk_01e_4e4b:
+ItemNameIndex_01e_4e4b:
 	db $00, $27
 	db $00, $03
 	db $00, $24
@@ -1963,90 +1963,90 @@ unk_01e_4e4b:
 	db $01, $01
 	db $00, $03
 
-unk_01e_4e57:
+ItemNameIndex_01e_4e57:
 	db $00, $27
 	db $00, $0b
 	db $00, $04
 
-unk_01e_4e5d:
+ItemNameIndex_01e_4e5d:
 	db $00, $0c
 	db $00, $24
 	db $00, $01
 	db $00, $05
 
-unk_01e_4e65:
+ItemNameIndex_01e_4e65:
 	db $00, $0c
 	db $00, $24
 	db $00, $01
 	db $00, $05
 
-unk_01e_4e6d:
+ItemNameIndex_01e_4e6d:
 	db $00, $02
 	db $00, $05
 	db $00, $21
 
-unk_01e_4e73:
+ItemNameIndex_01e_4e73:
 	db $00, $4b
 	db $01, $08
 	db $00, $07
 
-unk_01e_4e79:
+ItemNameIndex_01e_4e79:
 	db $00, $11
 	db $00, $12
 	db $00, $27
 	db $00, $09
 	db $00, $0c
 
-unk_01e_4e83:
+ItemNameIndex_01e_4e83:
 	db $00, $04
 	db $00, $59
 	db $00, $27
 	db $00, $11
 
-unk_01e_4e8b:
+ItemNameIndex_01e_4e8b:
 	db $00, $0a
 	db $00, $06
 
-unk_01e_4e8f:
+ItemNameIndex_01e_4e8f:
 	db $00, $12
 	db $00, $3f
 	db $00, $43
 	db $00, $26
 
-unk_01e_4e97:
+ItemNameIndex_01e_4e97:
 	db $00, $55
 
-unk_01e_4e99:
+ItemNameIndex_01e_4e99:
 	db $00, $27
 	db $00, $29
 
-unk_01e_4e9d:
+ItemNameIndex_01e_4e9d:
 	db $00, $12
 
-unk_01e_4e9f:
+ItemNameIndex_01e_4e9f:
 	db $00, $11
 
-unk_01e_4ea1:
+ItemNameIndex_01e_4ea1:
 	db $00, $06
 
-unk_01e_4ea3:
+ItemNameIndex_01e_4ea3:
 	db $00, $27
 	db $00, $34
 	db $00, $01
 	db $00, $0c
 	db $00, $26
 
-unk_01e_4ead:
+ItemNameIndex_01e_4ead:
 	db $00, $13
 
-unk_01e_4eaf:
+ItemNameIndex_01e_4eaf:
 	db $00, $03
 	db $00, $06
 
-unk_01e_4eb3:
+ItemNameIndex_01e_4eb3:
 	db $00, $0a
 
-unk_01e_4eb5:
+ItemNameIndex_01e_4eb5:
 	db $02, $02
 	db $00, $24
 	db $00, $1e
@@ -2251,7 +2251,7 @@ INCLUDE "data/text/key_item_names.asm"
 
 INCLUDE "data/monsters/menu_icons.asm"
 
-unk_01e_551f:
+TypeNameIndex_01e_551f:
 	dr $7951f, $795ae
 
 TypeNames:
@@ -2311,13 +2311,13 @@ INCLUDE "data/text/bank1e_misc2.asm"
 text_01e_buffer2:
 	dr $79c3f, $7a14f
 
-unk_01e_614f:
+Pointers_01e_614f:
 	dr $7a14f, $7a567
 
 Pointers_01e_6567:
 	dr $7a567, $7aacd
 ; TODO disassemble
-unk_01e_6acd:
+Func_01e_6acd:
 	dr $7aacd, $7ade3
 
 LoadItemNameByIndex::
@@ -2325,7 +2325,7 @@ LoadItemNameByIndex::
 	ld [wdcd3], a
 	ld a, h
 	ld [wdcd3 + 1], a
-	ld de, unk_01e_6e24
+	ld de, ItemNameIndex_01e_6e24
 	ld a, [hFFB8]
 	ld l, a
 	ld h, 0
@@ -2358,7 +2358,7 @@ LoadItemNameByIndex::
 	farcall asm_039_479f
 	ret
 
-unk_01e_6e24:
+ItemNameIndex_01e_6e24:
 	dr $7ae24, $7ae44
 
 INCLUDE "data/text/bank1e_misc4.asm"

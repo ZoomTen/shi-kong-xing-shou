@@ -283,22 +283,22 @@ FloatingIslandCutscene1::
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
-	ld de, unk_67_53c1 + $90
+	ld de, AttrMap_67_5451
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
-	ld hl, unk_67_53c1
+	ld hl, Palette_67_53c1
 	ld de, wPaletteBuffer
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, unk_67_5721
+	ld hl, GFX_67_5721
 	ld de, $9000
 	ld bc, $0800
 	call CopyBytesVRAM
-	ld hl, unk_67_53c1 + $48
+	ld hl, Palette_67_5409
 	ld de, wcaf0
 	ld bc, $0040
 	call CopyBytes3
@@ -565,7 +565,7 @@ Func_67_5371:
 	ld a, e
 	ld [wd1fb], a
 	ret
-unk_67_53c1:
+Palette_67_53c1:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
 	RGB 0, 13, 0
@@ -602,6 +602,7 @@ unk_67_53c1:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+Palette_67_5409:
 	RGB 12, 12, 12
 	RGB 11, 28, 0
 	RGB 23, 18, 11
@@ -638,35 +639,11 @@ unk_67_53c1:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-unk_67_5481:
-	dr $19d481, $19d5b9
+AttrMap_67_5451:
+	INCBIN "data/attrmap_67_5451.bin"
 FloatingIsland1_Tilemap:
 	dr $19d5b9, $19d721
-unk_67_5721:
+GFX_67_5721:
 	dr $19d721, $19def1
 FloatingIsland1_SpriteGFX:
 	dr $19def1, $19e0d1

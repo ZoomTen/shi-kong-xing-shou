@@ -1,4 +1,4 @@
-unk_025_4000:
+Func_025_4000:
 	ld a, [wd3f0]
 	ld c, a
 	ld a, [wd3f1]
@@ -384,8 +384,8 @@ Func_025_4236:
 	ret
 
 Func_025_424e::
-	ld de, unk_025_42b3
-	ld a, [wd08a]
+	ld de, Jumptable_025_42b3
+	ld a, [wBattleScriptByte]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -439,7 +439,7 @@ Func_025_4288::
 	call PrintNumber
 	ret
 
-unk_025_42b3::
+Jumptable_025_42b3::
 	dw Func_025_4373
 	dw Func_025_4377
 	dw Func_025_43a5
@@ -538,21 +538,21 @@ unk_025_42b3::
 	dw Func_025_50cc
 
 Func_025_4373:
-	call Func_0b46
+	call AdvanceBattleScript
 	ret
 
 Func_025_4377:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wMenuTextX], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
@@ -560,7 +560,7 @@ Func_025_4377:
 	pop hl
 	call PrintMenuText
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_43a5:
@@ -568,73 +568,73 @@ Func_025_43a5:
 	ret
 
 Func_025_43ac:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
 	call Func_135a
 	call DelayFrame
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_43e3:
 	ld bc, $cde0
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [bc], a
 	inc bc
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [bc], a
 	inc bc
 	ld a, 1
 	ld [bc], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_43fe:
 	ld bc, $cdf0
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [bc], a
 	inc bc
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [bc], a
 	inc bc
 	ld a, 4
 	ld [bc], a
 	ld bc, $cdf8
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [bc], a
 	inc bc
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [bc], a
 	inc bc
 	ld a, 6
 	ld [bc], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_442f:
@@ -645,24 +645,24 @@ Func_025_442f:
 	ld b, $40
 	call LoadPalettes_OCPD
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_444a:
-	farcall unk_00c_4000
+	farcall Func_00c_4000
 	farcall Func_20_4048
 	ld hl, wcaf0
 	ld c, $80
 	ld b, $40
 	call LoadPalettes_OCPD
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4465:
 	xor a
-	ld [wd087], a
-	ld [wd08a], a
+	ld [wBattleScriptState], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ret
 
@@ -671,14 +671,14 @@ Func_025_4470:
 	call Func_025_605f
 	call Func_025_602a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_447e:
 	xor a
 	ldh [hFFC5], a
-	ld [wd087], a
-	ld [wd08a], a
+	ld [wBattleScriptState], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4488:
@@ -690,7 +690,7 @@ Func_025_4488:
 	call CopyObjectPalettes
 	call DelayFrame
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_44a0:
@@ -702,7 +702,7 @@ Func_025_44a0:
 	call CopyObjectPalettes
 	call DelayFrame
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_44b8:
@@ -720,7 +720,7 @@ Func_025_44b8:
 	ldh [hSCXHigh], a
 	ldh [hSCY], a
 	ldh [hSCYHigh], a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	call ClearBGMap0
 	ret
 
@@ -747,12 +747,14 @@ Func_025_44de:
 	ld a, [hli]
 	ld [bc], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
+; TODO: indexed data table, classify type
 unk_025_4505:
 	dw $1420
 
+; TODO: unreferenced data block, classify type
 unk_025_4507:
 	dw $1818
 	dw $3420
@@ -771,11 +773,11 @@ unk_025_4507:
 	dw $7840
 
 Func_025_4525:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
@@ -783,15 +785,15 @@ Func_025_4525:
 	ld bc, $40
 	call CopyBytes3
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4543:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
@@ -799,7 +801,7 @@ Func_025_4543:
 	ld bc, $40
 	call CopyBytes3
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4561:
@@ -808,7 +810,7 @@ Func_025_4561:
 	ld [wd9d9], a
 	farcall Func_026_4c89
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4573:
@@ -817,7 +819,7 @@ Func_025_4573:
 	ld [wd9d9], a
 	call LoadMonPic
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4582:
@@ -828,7 +830,7 @@ Func_025_4582:
 	call DelayFrame
 	farcall asm_026_464f
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_459a:
@@ -854,7 +856,7 @@ Func_025_45a1:
 
 Func_025_45ba:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_45bf:
@@ -869,7 +871,7 @@ Func_025_45c8:
 	dec c
 	jr nz, Func_025_45c8
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wd1fb], a
 	ret
 
@@ -919,7 +921,7 @@ Func_025_45da:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_462e:
@@ -928,7 +930,7 @@ Func_025_462e:
 	ld [wd9d9], a
 	farcall Func_026_4cb6
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4640:
@@ -958,17 +960,17 @@ Func_025_4640:
 	ld bc, $80
 	call CopyBytes3
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4684:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ldh [hFFC5], a
 	call Func_025_572f
 	xor a
-	ld [wd087], a
-	ld [wd08a], a
+	ld [wBattleScriptState], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4697:
@@ -977,13 +979,13 @@ Func_025_4697:
 	ld bc, $80
 	call CopyBytes3
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_46a8:
 	farcall Func_004_4000
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_46b3:
@@ -1003,7 +1005,7 @@ Func_025_46b3:
 	jr z, Func_025_46d0
 
 Func_025_46d0:
-	ld de, unk_025_4848
+	ld de, Pointers_025_4848
 	ld a, [wd9d8]
 	ld l, a
 	ld h, 0
@@ -1029,7 +1031,7 @@ Func_025_46d0:
 	ld h, a
 	ld [wd0b9], a
 	call PlaceTilemap
-	ld de, unk_025_4850
+	ld de, Pointers_025_4850
 	ld a, [wd9d8]
 	ld l, a
 	ld h, 0
@@ -1054,7 +1056,7 @@ Func_025_46d0:
 	ld h, a
 	call PlaceAttrmap
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_471d:
@@ -1076,6 +1078,7 @@ Func_025_472f:
 	ld [wd9d8], a
 	ret
 
+; TODO: indexed data table, classify type
 unk_025_4737:
 	db $0
 	db $0
@@ -1254,7 +1257,7 @@ Func_025_47fd:
 	pop af
 
 Func_025_480b:
-	ld de, unk_025_482a
+	ld de, Pointers_025_482a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -1286,7 +1289,7 @@ Func_025_4827:
 	pop hl
 	ret
 
-unk_025_482a:
+Pointers_025_482a:
 	dw unk_025_4836
 	dw unk_025_483e
 	dw unk_025_4840
@@ -1294,37 +1297,43 @@ unk_025_482a:
 	dw unk_025_4844
 	dw unk_025_4846
 
+; TODO: pointer-table target, classify record type
 unk_025_4836:
 	db $2, $3, $5, $6, $7, $9, $a, -1
+; TODO: pointer-table target, classify record type
 unk_025_483e:
 	db $d, -1
+; TODO: pointer-table target, classify record type
 unk_025_4840:
 	db $22, -1
+; TODO: pointer-table target, classify record type
 unk_025_4842:
 	db $22, -1
+; TODO: pointer-table target, classify record type
 unk_025_4844:
 	db $30, -1
+; TODO: pointer-table target, classify record type
 unk_025_4846:
 	db $22, -1
 
-unk_025_4848:
+Pointers_025_4848:
 	dw $61c4
 	dw $61c4
 	dw $6220
 	dw $62a8
-unk_025_4850:
+Pointers_025_4850:
 	dw $61f2
 	dw $61f2
 	dw $6264
 	dw $62fc
 
 Func_025_4858:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
 	ld [hVRAMCopyHeight], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
 	ldh [hVRAMCopyWidth], a
 	ld a, [wd0b8]
@@ -1333,16 +1342,16 @@ Func_025_4858:
 	ld h, a
 	call ClearBGMapBox
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_487b:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
 	ld [hVRAMCopyHeight], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
 	ldh [hVRAMCopyWidth], a
 	ld a, [wd0b8]
@@ -1351,36 +1360,36 @@ Func_025_487b:
 	ld h, a
 	call ClearBGMapBox_VRAM1
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_489e:
 	xor a
-	ld [wd08a], a
-	ld [wd087], a
+	ld [wBattleScriptByte], a
+	ld [wBattleScriptState], a
 	ret
 
 Func_025_48a6:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
 	ldh [hVRAMCopyHeight], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
 	ldh [hVRAMCopyWidth], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
 	call ClearBGMapBox
 	call DelayFrame
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_48d3:
@@ -1405,22 +1414,22 @@ Func_025_48d3:
 	jr Func_025_492f
 
 Func_025_4901:
-	ld de, unk_025_4934
+	ld de, BGMap_025_4934
 	ld hl, $0f0c
 	jr Func_025_491f
 
 Func_025_4909:
-	ld de, unk_025_4938
+	ld de, BGMap_025_4938
 	ld hl, $110c
 	jr Func_025_491f
 
 Func_025_4911:
-	ld de, unk_025_493c
+	ld de, BGMap_025_493c
 	ld hl, $0f0e
 	jr Func_025_491f
 
 Func_025_4919:
-	ld de, unk_025_4940
+	ld de, BGMap_025_4940
 	ld hl, $110e
 
 Func_025_491f:
@@ -1434,16 +1443,16 @@ Func_025_491f:
 
 Func_025_492f:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
-unk_025_4934:
+BGMap_025_4934:
 	db $2e, $2f, $36, $37
-unk_025_4938:
+BGMap_025_4938:
 	db $32, $33, $3a, $3b
-unk_025_493c:
+BGMap_025_493c:
 	db $30, $31, $38, $39
-unk_025_4940:
+BGMap_025_4940:
 	db $34, $35, $3c, $3d
 
 Func_025_4944:
@@ -1564,7 +1573,7 @@ Func_025_4947:
 	pop bc
 	call Func_025_561b
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4a32:
@@ -1605,7 +1614,7 @@ Func_025_4a65:
 
 Func_025_4a70:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4a75:
@@ -1678,7 +1687,7 @@ Func_025_4a8d:
 
 Func_025_4b05:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4b0a:
@@ -1703,7 +1712,7 @@ Func_025_4b0a:
 	ld [wCharacterTilePos], a
 	farcall PrintEquipmentName
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4b40:
@@ -1717,7 +1726,7 @@ Func_025_4b40:
 	ld d, a
 	farcall Func_01e_42ba
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4b5d:
@@ -1731,7 +1740,7 @@ Func_025_4b5d:
 	ld d, a
 	farcall Func_01e_42ba
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4b7a:
@@ -1755,7 +1764,7 @@ Func_025_4b7a:
 	ld a, 1
 	ld [bc], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4b9b:
@@ -1770,7 +1779,7 @@ Func_025_4b9b:
 	ld a, [hli]
 	ld [de], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4bae:
@@ -1817,13 +1826,13 @@ Func_025_4be0:
 	ld a, [wd9d9]
 	ld [wSelectedOption], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4bf1:
-	call Func_0b46
+	call AdvanceBattleScript
 	ld de, $d1a0
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	ld l, a
 	add a
 	add l
@@ -1842,7 +1851,7 @@ Func_025_4bf1:
 	ld a, 1
 	ld [bc], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4c16:
@@ -1859,7 +1868,7 @@ Func_025_4c16:
 	ld [wCharacterTilePos], a
 	farcall Func_01e_434d
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4c3c:
@@ -1881,7 +1890,7 @@ Func_025_4c3c:
 	ld [wCharacterTilePos], a
 	farcall Func_01e_434d
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4c6f:
@@ -1898,7 +1907,7 @@ Func_025_4c6f:
 	ld [wCharacterTilePos], a
 	farcall Func_01e_434d
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4c95:
@@ -1914,7 +1923,7 @@ Func_025_4c95:
 	call DelayFrame
 	farcall DrawItemListPage
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4cba:
@@ -1962,7 +1971,7 @@ Func_025_4cee:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4d12:
@@ -1991,7 +2000,7 @@ Func_025_4d25:
 	call DelayFrame
 	farcall Func_01e_47fb
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4d3d:
@@ -2006,18 +2015,18 @@ Func_025_4d3d:
 	call ByteFillVRAM
 	call DelayFrame
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4d5c:
 	ld a, [wd9d3]
 	ld de, $d1f5
 	ld [de], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
@@ -2031,7 +2040,7 @@ Func_025_4d5c:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4d8f:
@@ -2043,7 +2052,7 @@ Func_025_4d8f:
 	farcall Func_026_45f8
 	farcall Func_01e_484f
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4dad:
@@ -2060,7 +2069,7 @@ Func_025_4dad:
 	farcall Func_026_45f8
 	farcall Func_01e_487b
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4dd8:
@@ -2079,7 +2088,7 @@ Func_025_4dd8:
 	ld [wCharacterTilePos], a
 	farcall Func_01e_434d
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4e07:
@@ -2125,12 +2134,12 @@ Func_025_4e1f:
 
 Func_025_4e56:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4e5b:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wd9d8], a
 	swap a
 	ld l, a
@@ -2160,7 +2169,7 @@ Func_025_4e5b:
 	ld [wCharacterTilePos], a
 	farcall PrintEquipmentName
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4ea4:
@@ -2188,7 +2197,7 @@ Func_025_4ea4:
 	ld [wd9d5], a
 	farcall Func_01e_4745
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4edb:
@@ -2212,7 +2221,7 @@ Func_025_4eef:
 Func_025_4ef6:
 	call LoadMonPic
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4efe:
@@ -2221,7 +2230,7 @@ Func_025_4efe:
 	ld [wd9d9], a
 	farcall Func_026_4c89
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4f10:
@@ -2283,7 +2292,7 @@ Func_025_4f68:
 	cp 8
 	jr c, Func_025_4f2d
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4f7f:
@@ -2320,7 +2329,7 @@ Func_025_4f87:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4fc0:
@@ -2329,32 +2338,32 @@ Func_025_4fc0:
 	ld [wd9d9], a
 	farcall Func_026_4cb6
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_4fd2:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
 	ld a, [de]
 	inc a
 	ld b, a
 	ld de, $d1f5
 	ld [de], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
@@ -2367,7 +2376,7 @@ Func_025_4fd2:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_501e:
@@ -2384,7 +2393,7 @@ Func_025_501e:
 	ld [wCharacterTilePos], a
 	farcall Func_026_53ab
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5044:
@@ -2399,7 +2408,7 @@ Func_025_5044:
 	ld d, a
 	farcall Func_01e_4290
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5061:
@@ -2416,7 +2425,7 @@ Func_025_5061:
 	ld [wCharacterTilePos], a
 	farcall Func_026_5711
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5087:
@@ -2433,7 +2442,7 @@ Func_025_5087:
 	ld [wCharacterTilePos], a
 	farcall Func_026_54cc
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_50ad:
@@ -2447,7 +2456,7 @@ Func_025_50ad:
 	ld [wCharacterTilePos], a
 	call PrintMenuText
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_50cc:
@@ -2466,7 +2475,7 @@ Func_025_50cc:
 	ld a, 7
 	ld [bc], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_50ef:
@@ -2486,16 +2495,16 @@ Func_025_50ef:
 	ld [wCharacterTilePos], a
 	call PrintMenuText
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5124:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 
 Func_025_5128:
 	ld de, $dd00
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -2508,36 +2517,36 @@ Func_025_5128:
 	farcall Func_01f_405d
 
 Func_025_513f:
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	inc a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	cp 8
 	jr c, Func_025_5128
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_514f:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wd8fe], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
@@ -2548,30 +2557,30 @@ Func_025_514f:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5199:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wd8fe], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
@@ -2582,14 +2591,14 @@ Func_025_5199:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_51e3:
 	ld a, [wd9d9]
 	and a
 	jr z, Func_025_5221
-	ld hl, unk_025_6112
+	ld hl, String_025_6112
 	ld a, $80
 	ld [wMenuTextX], a
 	ld a, $9c
@@ -2599,7 +2608,7 @@ Func_025_51e3:
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
-	ld de, unk_025_6350
+	ld de, BGMap_025_6350
 	ld a, [de]
 	inc de
 	ld b, a
@@ -2614,11 +2623,11 @@ Func_025_51e3:
 	ld h, a
 	call PlaceTilemap
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5221:
-	ld hl, unk_025_611b
+	ld hl, String_025_611b
 	ld a, $80
 	ld [wMenuTextX], a
 	ld a, $94
@@ -2628,7 +2637,7 @@ Func_025_5221:
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
-	ld de, unk_025_63ca
+	ld de, BGMap_025_63ca
 	ld a, [de]
 	inc de
 	ld b, a
@@ -2644,7 +2653,7 @@ Func_025_5221:
 	call PlaceTilemap
 	call Func_025_525d
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_525d:
@@ -2661,24 +2670,24 @@ Func_025_525d:
 	ret
 
 Func_025_527c:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
 	xor a
 	call ByteFillVRAM
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_52a3:
@@ -2719,7 +2728,7 @@ Func_025_52d6:
 
 Func_025_52e1:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld hl, $cde0
 	ld [hl], $30
@@ -2728,39 +2737,39 @@ Func_025_52e1:
 	ret
 
 Func_025_52f1:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wTempBank], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld c, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld b, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
 	call FarCopyBytesVRAM
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_532e:
 	xor a
 	ldh [hFFC5], a
-	ld [wd087], a
-	ld [wd08a], a
+	ld [wBattleScriptState], a
+	ld [wBattleScriptByte], a
 	ld a, 2
 	ld [hFFC6], a
 	ret
@@ -2771,13 +2780,13 @@ Func_025_533d:
 	jr z, Func_025_534f
 	farcall DrawItemPageWithIcons
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_534f:
 	farcall DrawItemMenuPage
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_535a:
@@ -2796,7 +2805,7 @@ Func_025_536e:
 	xor a
 	call ByteFillVRAM
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5377:
@@ -2815,13 +2824,13 @@ Func_025_5377:
 	jr z, Func_025_53a3
 	farcall Func_01e_47af
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_53a3:
 	farcall Func_01e_475c
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_53ae:
@@ -2874,7 +2883,7 @@ Func_025_53ec:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5410:
@@ -2920,13 +2929,13 @@ Func_025_5440:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5464:
 	farcall Func_01e_4416
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_546f:
@@ -2937,7 +2946,7 @@ Func_025_546f:
 	call DelayFrame
 	farcall asm_026_46af
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5487:
@@ -2955,7 +2964,7 @@ Func_025_5487:
 	call DelayFrame
 	farcall asm_026_464a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_54b1:
@@ -3061,7 +3070,7 @@ Func_025_5555:
 	cp 5
 	jp c, Func_025_54d2
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 SelectionMarkerRightTiles:
 	db $2d
@@ -3085,13 +3094,13 @@ Func_025_5566:
 	ld [wd0fd], a
 	call PrintNumber
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_558b:
 	call Func_025_5593
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_5593:
@@ -3112,10 +3121,10 @@ Func_025_559e:
 	ldh [hSCXHigh], a
 	ldh [hSCY], a
 	ldh [hSCYHigh], a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	call ClearBGMap0
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_55b4:
@@ -3146,17 +3155,17 @@ Func_025_55d7:
 	or b
 	jr nz, Func_025_55c1
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_55e1:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_55e6:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	call GetPartyMonPtr
 	ld hl, $14
 	add hl, bc
@@ -3167,24 +3176,24 @@ Func_025_55e6:
 
 Func_025_55fa:
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 
 Func_025_55ff:
 	push de
 	push hl
-	ld a, [wd088]
+	ld a, [wBattleScriptPos]
 	ld e, a
-	ld a, [wd089]
+	ld a, [wBattleScriptPos + 1]
 	ld d, a
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	ld l, a
 	ld h, 0
 	add hl, de
 	ld a, l
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, h
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	pop hl
 	pop de
 	ret
@@ -3453,7 +3462,7 @@ Func_025_572f:
 	ret
 
 Func_025_574c:
-	ld de, unk_025_5776
+	ld de, Pointers_025_5776
 	dec a
 	ld l, a
 	ld h, 0
@@ -3478,50 +3487,56 @@ Func_025_5772:
 	call PrintMenuText
 	ret
 
-unk_025_5776:
-	dw unk_025_5782
-	dw unk_025_5787
-	dw unk_025_578c
-	dw unk_025_5791
-	dw unk_025_5796
-	dw unk_025_579b
+Pointers_025_5776:
+	dw String_025_5782
+	dw String_025_5787
+	dw String_025_578c
+	dw String_025_5791
+	dw String_025_5796
+	dw String_025_579b
 
-unk_025_5782:
+; TEXT -> 力項
+String_025_5782:
 	db $f0
 	db $19
 	db $f1
 	db $5f
 	db $ed
 
-unk_025_5787:
+; TEXT -> ㏑沉
+String_025_5787:
 	db $f5
 	db $64
 	db $f0
 	db $56
 	db $ed
 
-unk_025_578c:
+; TEXT -> 鐵標
+String_025_578c:
 	db $f0
 	db $5d
 	db $f5
 	db $a0
 	db $ed
 
-unk_025_5791:
+; TEXT -> 航燙
+String_025_5791:
 	db $f8
 	db $d
 	db $f3
 	db $5
 	db $ed
 
-unk_025_5796:
+; TEXT -> 泰項
+String_025_5796:
 	db $f3
 	db $73
 	db $f1
 	db $5f
 	db $ed
 
-unk_025_579b:
+; TEXT -> ㏒天
+String_025_579b:
 	db $f5
 	db $63
 	db $f0
@@ -3649,7 +3664,7 @@ Func_025_585a:
 	ld [hVRAMCopyWidth], a
 	ld a, $04
 	ld [hVRAMCopyHeight], a
-	ld de, unk_025_645c
+	ld de, BGMap_025_645c
 	call PlaceTilemap
 
 ; Place attribute map
@@ -3662,7 +3677,7 @@ Func_025_585a:
 	ld [hVRAMCopyWidth], a
 	ld a, $04
 	ld [hVRAMCopyHeight], a
-	ld de, unk_025_6444
+	ld de, AttrMap_025_6444
 	call PlaceAttrmap
 
 	pop bc
@@ -5316,6 +5331,7 @@ Func_025_5ffb:
 	pop hl
 	ret
 
+; TODO: indexed data table, classify type
 unk_025_6022:
 	dw $100d
 	dw $120d
@@ -5395,7 +5411,8 @@ Func_025_6086:
 	jr nz, Func_025_6085
 	ret
 
-unk_025_6099:
+; TEXT -> 攻擊防禦速度魔防經驗值 / 怪獸道具同伴圖鑑存檔 / 移位詳細 / 交換詳細 / 詳細 / 使用丟棄 / 裝備丟棄 / 辦詳 / 是否 / 主角１ / 特技是吃飽睡﹐睡飽吃⚬        / 確定要存檔嗎﹖ / 是否
+String_025_6099:
 	db $f0, $24, $07, $0a, $0b, $f1, $70, $71, $72, $f0, $0a, $f1, $73, $74, $75, $ed
 	db $f1, $29, $1b, $2c, $2d, $f0, $93, $f1, $36, $37, $38, $39, $3a, $ed, $f1, $3b
 	db $3c, $f1, $3d, $3e, $ed, $f1, $2e, $2f, $3d, $3e, $ed, $f1, $3d, $3e, $ed, $f1
@@ -5404,9 +5421,11 @@ unk_025_6099:
 	db $54, $43, $f0, $48, $f2, $96, $f0, $57, $f1, $33, $f0, $57, $f2, $96, $f0, $48
 	db $f1, $53, $f0, $00, $00, $00, $00, $00, $00, $00, $ed, $f1, $47, $48, $58, $39
 	db $3a, $5c, $5d, $ed, $f1, $43, $f1, $44, $ed
-unk_025_6112:
+; TEXT -> 確定要覆蓋嗎﹖
+String_025_6112:
 	db $f1, $47, $48, $58, $68, $69, $5c, $5d, $ed
-unk_025_611b:
+; TEXT -> 存檔成功﹗ / 存檔失敗﹗
+String_025_611b:
 	db $f1, $39, $3a, $6a, $6b, $35, $ed, $f1, $39, $3a, $6c, $6d, $35, $ed, $ff, $7f
 	db $14, $63, $a5, $35, $00, $00, $ff, $7f, $5f, $03, $1b, $00, $00, $00, $ff, $7f
 	db $a0, $7e, $80, $70, $00, $00, $ff, $7f, $d6, $6e, $6b, $41, $00, $00, $ff, $7f
@@ -5443,7 +5462,7 @@ unk_025_611b:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00
-unk_025_6350:
+BGMap_025_6350:
 	db $14, $06, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
 	db $01, $04, $01, $01, $01, $02, $03, $80, $82, $84, $86, $88, $8a, $8c, $8e, $90
 	db $92, $94, $96, $98, $9a, $03, $00, $68, $6a, $05, $03, $81, $83, $85, $87, $89
@@ -5452,7 +5471,7 @@ unk_025_6350:
 	db $6e, $05, $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $03, $00, $6d, $6f, $05, $06, $07, $07, $07, $07, $07, $07, $07, $07, $07
 	db $07, $07, $07, $07, $07, $06, $07, $07, $07, $08
-unk_025_63ca:
+BGMap_025_63ca:
 	db $14, $06, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
 	db $01, $01, $01, $01, $01, $02, $03, $80, $82, $84, $86, $88, $8a, $8c, $8e, $90
 	db $92, $00, $00, $00, $00, $00, $00, $00, $00, $05, $03, $81, $83, $85, $87, $89
@@ -5461,13 +5480,13 @@ unk_025_63ca:
 	db $00, $05, $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $05, $06, $07, $07, $07, $07, $07, $07, $07, $07, $07
 	db $07, $07, $07, $07, $07, $07, $07, $07, $07, $08
-unk_025_6444:
+AttrMap_025_6444:
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $02, $01, $01, $01, $01, $02 ; HP Bar
 
-unk_025_645c:
+BGMap_025_645c:
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $17, $0a, $0b ; Lv01

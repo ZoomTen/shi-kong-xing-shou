@@ -306,6 +306,7 @@ Palette_055_43ea:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: unreferenced data block, classify type
 unk_055_442a:
 	dr $15442a, $154432
 Palette_055_4432:
@@ -341,6 +342,7 @@ Palette_055_4432:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: unreferenced data block, classify type
 unk_055_4472:
 	dr $154472, $15447a
 Tilemap_055_447a:
@@ -350,7 +352,7 @@ Attrmap_055_46ba:
 GFX_055_48fa:
 	dr $1548fa, $154bad
 
-unk_055_4bad:
+Script_055_4bad:
 	dr $154bad, $154e6a
 GFX_055_4e6a:
 	dr $154e6a, $15530a
@@ -363,7 +365,7 @@ Script_055_5316:
 	scr_04 text_55_53ae
 	scr_end
 
-unk_055_531a:
+Script_055_531a:
 	scr_face $02 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
 	scr_text text_55_53ae
@@ -428,7 +430,7 @@ G4_42_ObjectEvents:
 G4_43_ObjectEvents:
 	objects_end
 
-unk_055_53f2:
+Script_055_53f2:
 	scr_setmap $44, $00
 	scr_end
 
@@ -444,6 +446,7 @@ G4_0B_ObjectEvents:
 	object_event $16, 11, 14, 0, $00, $00, $00, $00, Script_055_5953
 	objects_end
 
+; TODO: unreferenced data block, classify type
 unk_055_545a:
 	dr $15545a, $155479
 
@@ -453,10 +456,10 @@ G4_0C_ObjectEvents:
 	object_event $1e,  6,  7, 0, $00, $00, $00, $02, Script_055_553a
 	objects_end
 
-unk_055_549b:
+Script_055_549b:
 	dr $15549b, $1554a7
 
-unk_055_54a7:
+Script_055_54a7:
 	dr $1554a7, $1554b3
 
 Script_055_54b3:
@@ -474,9 +477,9 @@ Script_055_54c1:
 	scr_emote $02, $04 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_text text_55_63b0
-	scr_16 unk_055_549b ; TEMP
+	scr_16 Script_055_549b ; TEMP
 	scr_delay $03, $10 ; TEMP
-	scr_16 unk_055_54a7 ; TEMP
+	scr_16 Script_055_54a7 ; TEMP
 	scr_1c $04 ; TEMP
 	scr_spriteface  5, FACE_UP
 	scr_spriteface  6, FACE_LEFT
@@ -491,14 +494,14 @@ Script_055_54c1:
 	scr_text text_55_6408
 	scr_move MovementData_OneDown
 	scr_1a $06, $05, $f0, $00 ; TEMP
-	scr_4e $05, unk_055_7c94
+	scr_4e $05, Script_055_7c94
 	scr_1c $05 ; TEMP
 	scr_1c $06 ; TEMP
 	scr_emote $00, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_text text_55_6452
 	scr_face $05 ; TEMP
-	scr_4e $00, unk_055_7e6b
+	scr_4e $00, Script_055_7e6b
 	scr_1c $00 ; TEMP
 	scr_text text_55_645b
 	scr_setbit $daa7, $03 ; TEMP
@@ -575,7 +578,7 @@ Script_055_55bd:
 	scr_text text_55_6a75
 	scr_text text_55_6b37
 	scr_spriteface  2, FACE_DOWN
-	scr_4e $02, unk_055_7c94
+	scr_4e $02, Script_055_7c94
 	scr_1c $02 ; TEMP
 	scr_setbit $daa8, $03 ; TEMP
 	scr_end
@@ -591,6 +594,7 @@ G4_0E_ObjectEvents2:
 	object_event $4a,  2,  3, wEventFlags + 8, $04, $00, $00, $02, Script_055_5666
 	objects_end
 
+; TODO: unreferenced data block, classify type
 unk_055_5658:
 	dr $155658, $155666
 
@@ -613,7 +617,7 @@ Script_055_5666:
 	scr_spritewalk  2, MOVE_UP
 	scr_1c $02 ; TEMP
 	scr_1a $01, $00, $10, $00 ; TEMP
-	scr_4e $00, unk_055_7c53
+	scr_4e $00, Script_055_7c53
 	scr_1b $01 ; TEMP
 	scr_setmap $0f, $02 ; TEMP
 	scr_spriteface  2, FACE_UP
@@ -646,10 +650,10 @@ G4_05_ObjectEvents2:
 	objects_end
 ; $155704
 
-unk_055_5704:
+Script_055_5704:
 	dr $155704, $155710
 
-unk_055_5710:
+Script_055_5710:
 	dr $155710, $15571d
 
 Script_055_571d:
@@ -684,7 +688,7 @@ Script_055_5721:
 	scr_text text_55_6d9e
 	scr_spriteface  4, FACE_UP
 	scr_spriteface  2, FACE_UP
-	scr_4e $02, unk_055_7df6
+	scr_4e $02, Script_055_7df6
 	scr_1c $02 ; TEMP
 	scr_emote $00, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
@@ -696,11 +700,11 @@ Script_055_5721:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_55_6e1f
 	scr_text text_55_6e29
-	scr_3b unk_055_4bad
+	scr_3b Script_055_4bad
 	scr_checkbit wEventFlags + 3, $03, Script_055_5823
 	scr_1c $04 ; TEMP
 	scr_spriteface  3, $05 ; TEMP
-	scr_4e $03, unk_055_7d7f
+	scr_4e $03, Script_055_7d7f
 	scr_spriteface  3, FACE_DOWN
 	scr_spritewalk  3, MOVE_DOWN
 	scr_spriteface  3, FACE_RIGHT
@@ -711,21 +715,21 @@ Script_055_5721:
 	scr_1c $03 ; TEMP
 	scr_face $01 ; TEMP
 	scr_text text_55_6eb9
-	scr_16 unk_055_5704 ; TEMP
-	scr_4e $02, unk_055_7f17
+	scr_16 Script_055_5704 ; TEMP
+	scr_4e $02, Script_055_7f17
 	scr_1c $02 ; TEMP
-	scr_16 unk_055_5704 ; TEMP
-	scr_4e $02, unk_055_7f40
+	scr_16 Script_055_5704 ; TEMP
+	scr_4e $02, Script_055_7f40
 	scr_1c $02 ; TEMP
-	scr_16 unk_055_5704 ; TEMP
-	scr_4e $02, unk_055_7f6d
+	scr_16 Script_055_5704 ; TEMP
+	scr_4e $02, Script_055_7f6d
 	scr_1c $02 ; TEMP
-	scr_16 unk_055_5710 ; TEMP
-	scr_4e $02, unk_055_7c94
+	scr_16 Script_055_5710 ; TEMP
+	scr_4e $02, Script_055_7c94
 	scr_emote $00, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_text text_55_6ed6
-	scr_4e $02, unk_055_7d36
+	scr_4e $02, Script_055_7d36
 	scr_1c $02 ; TEMP
 	scr_text text_55_6f0b
 	scr_48 $02, $0f
@@ -738,7 +742,7 @@ Script_055_5721:
 	scr_text text_55_6f4e
 	scr_text text_55_6fa0
 	scr_spriteface  3, FACE_DOWN
-	scr_4e $03, unk_055_7cd5
+	scr_4e $03, Script_055_7cd5
 	scr_1c $03 ; TEMP
 	scr_face $00 ; TEMP
 	scr_setmap $0f, $01 ; TEMP
@@ -1096,7 +1100,7 @@ Script_055_5a7d:
 	scr_text text_55_61c5
 	scr_text text_55_61ce
 	scr_spriteface  2, FACE_DOWN
-	scr_4e $02, unk_055_7c94
+	scr_4e $02, Script_055_7c94
 	scr_1c $02 ; TEMP
 	scr_spritewalk  3, MOVE_DOWN
 	scr_spriteface  3, FACE_RIGHT
@@ -1110,33 +1114,33 @@ Script_055_5aeb:
 
 INCLUDE "data/text/bank55_misc.asm"
 
-unk_055_7c53:
+Script_055_7c53:
 	dr $157c53, $157c94
 
-unk_055_7c94:
+Script_055_7c94:
 	dr $157c94, $157cd5
 
-unk_055_7cd5:
+Script_055_7cd5:
 	dr $157cd5, $157d36
 
-unk_055_7d36:
+Script_055_7d36:
 	dr $157d36, $157d7f
 
-unk_055_7d7f:
+Script_055_7d7f:
 	dr $157d7f, $157df6
 
-unk_055_7df6:
+Script_055_7df6:
 	dr $157df6, $157e6b
 
-unk_055_7e6b:
+Script_055_7e6b:
 	dr $157e6b, $157f17
 
-unk_055_7f17:
+Script_055_7f17:
 	dr $157f17, $157f40
 
-unk_055_7f40:
+Script_055_7f40:
 	dr $157f40, $157f6d
 
-unk_055_7f6d:
+Script_055_7f6d:
 	dr $157f6d, $157fff
 

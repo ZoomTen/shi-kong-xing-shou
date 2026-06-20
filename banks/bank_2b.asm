@@ -561,7 +561,7 @@ HandleBattleEnd:
 	dw BattleEnd_Jump_2
 
 BattleEnd_Jump_1:
-	ld de, unk_023_55f6
+	ld de, Script_023_55f6
 	farcall Func_02e_4000
 	call Func_02b_4b5b
 	call Func_02b_4b7a
@@ -1175,6 +1175,7 @@ BGMap_02b_4910: INCBIN "gfx/image_2b_4910.tilemap"
 AttrMap_02b_49a0: INCBIN "gfx/image_2b_49a0.gbcattr"
 
 ; 攻擊 防禦 速度 法力 魔防 (Attack Defense Speed Magic Magic-Defense)
+; TEXT -> 攻擊防禦速度法力魔防
 StatNames_Text:
 	db $f0, $24, $07, $0a, $0b
 	db $f1, $70, $71
@@ -1666,7 +1667,7 @@ BattleEnd_Jump_2:
 	xor a
 	ldh [$bf], a
 	ld [wd0d4], a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [$d3], a
 	call ClearBGMap0
 	call DelayFrame
@@ -2396,9 +2397,9 @@ BattleTurns_Jump_3:
 BattleTurns_Jump_8:
 	farcall Func_02d_4000
 	call DelayFrame
-	ld a, [wd088]
+	ld a, [wBattleScriptPos]
 	ld e, a
-	ld a, [wd089]
+	ld a, [wBattleScriptPos + 1]
 	ld d, a
 	farcall Func_02e_4000
 	ld a, 4
@@ -2407,7 +2408,7 @@ BattleTurns_Jump_8:
 
 BattleTurns_Jump_4:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	farcall Func_02e_400a
 	ld a, [hBattleJumptableIndex]
 	cp 5
@@ -2943,9 +2944,9 @@ Func_02b_5611:
 
 Func_02b_5628:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_023_5809
+	ld de, Script_023_5809
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, 1
@@ -4048,7 +4049,7 @@ Func_02b_5d98:
 	push af
 	push hl
 	ld [wd9e9], a
-	farcall unk_025_4000
+	farcall Func_025_4000
 	ldh a, [$cb]
 	cp $10
 	jr nc, Func_02b_5e0c
@@ -4393,9 +4394,9 @@ Func_02b_6040:
 	ld a, $77
 	ld [wd988], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_023_57ae
+	ld de, Script_023_57ae
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, 1
@@ -4414,7 +4415,7 @@ Func_02b_6066:
 	ld a, 1
 	ld [hFFC6], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ld [wd98b], a
@@ -5021,7 +5022,7 @@ BattleMenu_Jump_2:
 	ld [wd988], a
 	ld [wd9f8], a
 	ld [wd9ea], a
-	ld de, unk_023_55cc
+	ld de, Script_023_55cc
 	farcall Func_02e_4000
 	xor a
 	ld [wd9ea], a
@@ -5263,18 +5264,18 @@ BattleMenu_HandleInput:
 
 .selected_1:
 	ld a, 2
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, 9
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, 1
 	ldh [hFFC6], a
 	xor a
 	ld [wSelectedOption], a
 	ld [wSelectedPage], a
 	ld [wd1f4], a
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], $4c
 	inc hl
 	ld [hl], $42
@@ -5283,11 +5284,11 @@ BattleMenu_HandleInput:
 
 .selected_2:
 	ld a, 1
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, 2
 	ld [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, 1
 	ldh [hFFC6], a
 	xor a
@@ -5394,7 +5395,7 @@ BattleMenu_Jump_4:
 	ldh [hSCXHigh], a
 	ldh [hSCY], a
 	ldh [hSCYHigh], a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [hFFC6], a
 	call ClearBGMap0
 	ld hl, Battle_BGPals
@@ -5509,7 +5510,7 @@ BattleIntro_Jump_1:
 	ldh [hSCY], a
 	ldh [hSCYHigh], a
 	ld [wd9f8], a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wd9cc], a
 	ld [wd9cd], a
 	ld [wd9ca], a
@@ -5566,7 +5567,7 @@ BattleIntro_Jump_2:
 	ld h, a
 	ld a, [hl]
 	ld [wd9e5], a
-	farcall unk_02c_4000
+	farcall Func_02c_4000
 	call DelayFrame
 	farcall asm_00a_4593
 	call Func_02b_6ad1
@@ -6114,11 +6115,13 @@ unk_02b_7594:
 	db $00, $00, $00, $50, $00
 
 ; ramp ascending to $c8
+; TODO: indexed data table, classify type
 unk_02b_7619:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $05, $05, $64, $6e, $6e, $78, $78, $82
 	db $82, $8c, $8c, $96, $96, $a0, $a0, $aa, $aa, $b4, $b4, $be, $be, $c8, $c8
 
 ; ramp descending to $00
+; TODO: indexed data table, classify type
 unk_02b_7638:
 	db $64, $5f, $5f, $5a, $5a, $55, $55, $50, $50, $4b, $4b, $46, $46, $41, $41, $3c
 	db $3c, $37, $37, $32, $32, $00, $00, $00

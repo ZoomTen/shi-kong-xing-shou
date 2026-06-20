@@ -1,3 +1,4 @@
+; TODO: structured data table (not graphics), classify records
 unk_059_4000:
 	dr $164000, $164005
 

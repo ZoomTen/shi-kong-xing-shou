@@ -1,4 +1,4 @@
-unk_04a_4000:
+Func_04a_4000:
 	dr $128000, $128098
 
 Func_04a_4098:
@@ -53,7 +53,7 @@ Func_04a_4098:
 	call ClearBGMap0
 	call .asm_412a
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $0D
 	ld [hFFC5], a
 .asm_40f6
@@ -108,20 +108,20 @@ TextLayouts:
 TextFont_GFX:
 	dr $1292b1, $129691
 Func_04a_5691:
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	push af
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld h, a
 	pop af
 	ld l, a
 	call GetTextBGMapPointer
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
 	ld a, [de]
 	inc de
@@ -136,11 +136,11 @@ Func_04a_5691:
 	ld a, [wTextBGMapPointer + 1]
 	ld h, a
 	call PlaceTilemap
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
 	ld a, [de]
 	inc de
@@ -156,7 +156,7 @@ Func_04a_5691:
 	ld h, a
 	call PlaceAttrmap
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 Tilemap_4a_56ef:
 	dr $1296ef, $129745
@@ -176,22 +176,26 @@ Tilemap_4a_5d45:
 	dr $129d45, $129dfb
 Attrmap_4a_5dfb:
 	dr $129dfb, $129eb1
+; TODO: unreferenced data block, classify type
 unk_4a_5eb1:
 	dr $129eb1, $129ec3
 Tilemap_4a_5ec3:
 	dr $129ec3, $129ec7
 Tilemap_4a_5ec7:
 	dr $129ec7, $129ecb
+; TODO: unreferenced data block, classify type
 unk_4a_5ecb:
 	dr $129ecb, $129ed8
 Tilemap_4a_5ed8:
 	dr $129ed8, $129fc0
+; TODO: unreferenced data block, classify type
 unk_4a_5fc0:
 	dr $129fc0, $129fc5
 Tilemap_4a_5fc5:
 	dr $129fc5, $12a017
 Tilemap_4a_6017:
 	dr $12a017, $12a051
+; TODO: unreferenced data block, classify type
 unk_4a_6051:
 	dr $12a051, $12a06d
 Tilemap_4a_606d:
@@ -340,6 +344,7 @@ Tilemap_4a_7f7f:
 	dr $12bf7f, $12bfab
 Attrmap_4a_7fab:
 	dr $12bfab, $12bfd7
+; TODO: unreferenced data block, classify type
 unk_4a_7fd7:
 	dr $12bfd7, $12bfff
 

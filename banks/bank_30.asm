@@ -8,7 +8,7 @@ Func_030_4000::
 
 	xor a
 	ld [wd9ea], a
-	ld de, unk_030_4335
+	ld de, Jumptable_030_4335
 	ld a, [wd9f3]
 	jr .asm_401e
 
@@ -126,6 +126,7 @@ Func_030_4027::
 	ld a, $01
 	ld [wd993], a
 	ret
+; TODO: indexed data table, classify type
 unk_030_40f8:
 	db $00, $4b, $64, $5f, $64, $5a, $55, $37, $64, $55, $64, $00, $00, $37, $64, $64
 	db $64, $00, $00, $64, $64, $4b, $64, $64, $00, $5f, $55, $00, $64, $37, $64, $64
@@ -211,6 +212,7 @@ Func_030_4187:
 .asm_4211
 	ld a, $01
 	ret
+; TODO: indexed data table, classify type
 unk_030_4214:
 	db $00, $00, $01, $00, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $00
 	db $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
@@ -231,7 +233,7 @@ Func_030_42ab:
 	call Func_125b
 	ld d, a
 	farcall Func_01e_4284
-	ld de, unk_030_42db
+	ld de, Pointers_030_42db
 	ld a, [wd8ff]
 	ld l, a
 	ld h, $00
@@ -250,10 +252,10 @@ Func_030_42ab:
 	ld [wd9c7], a
 	ret
 
-unk_030_42db:
+Pointers_030_42db:
 	dr $c02db, $c0335
 
-unk_030_4335:
+Jumptable_030_4335:
 	dw Func_030_4385
 	dw Func_030_4385
 	dw Func_030_4385
@@ -616,7 +618,7 @@ MoveEffectPointers:
 	dw Func_030_564a ; $8e
 
 Func_030_45c9:
-	ld de, unk_030_565c
+	ld de, Pointers_030_565c
 	ld a, [wd98f]
 	ld l, a
 	ld h, 0
@@ -635,7 +637,7 @@ Func_030_45c9:
 	ret
 
 Func_030_45e2:
-	ld de, unk_030_58f8
+	ld de, Pointers_030_58f8
 	ld a, [wd98f]
 	ld l, a
 	ld h, 0
@@ -1301,9 +1303,9 @@ Func_030_4aa5:
 	xor a
 	call SetStatTile
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_030_565c.image_57ae + 51
+	ld de, Script_023_57e1
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
@@ -1383,9 +1385,9 @@ Func_030_4b4d:
 	xor a
 	call SetStatTile
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_030_565c.image_57f0 + 4
+	ld de, Script_023_57f4
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
@@ -1571,9 +1573,9 @@ Func_030_4cca:
 	xor a
 	call SetStatTile
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_030_565c.image_57ae + 35
+	ld de, Script_023_57d1
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
@@ -1672,9 +1674,9 @@ Func_030_4d64:
 	farcall Func_02d_4000
 	call Func_030_5372
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_030_565c.image_57f0 + 31
+	ld de, Script_023_580f
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $03
@@ -1902,9 +1904,9 @@ Func_030_4f5f:
 	xor a
 	call SetStatTile
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_030_565c.image_57f0 + 31
+	ld de, Script_023_580f
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
@@ -2388,9 +2390,9 @@ Func_030_52c3:
 	farcall Func_02d_4000
 	call Func_030_5372
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
-	ld de, unk_030_565c.image_57f0 + 31
+	ld de, Script_023_580f
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $03
@@ -2829,7 +2831,7 @@ Func_030_564a:
 	ld [wd9b5], a
 	ret
 
-unk_030_565c:
+Pointers_030_565c:
 	dw .image_566a
 	dw .image_572c
 	dw .image_57ae
@@ -2866,10 +2868,11 @@ unk_030_565c:
 	dw $0040
 	dr $c18b8, $c18f8
 
-unk_030_58f8:
+Pointers_030_58f8:
 	dr $c18f8, $c1906
-unk_030_5906:
+GFX_030_5906:
 	dr $c1906, $c1bb4
+; TODO: unreferenced data block, classify type
 unk_030_5bb4:
 	dr $c1bb4, $c1bcc
 Func_030_5bcc:
@@ -3024,8 +3027,10 @@ Func_030_5c85:
 	cp $e0
 	jp nz, .asm_5c88
 	ret
+; TODO: indexed data table, classify type
 unk_030_5cf7:
 	dr $c1cf7, $c1cff
+; TODO: indexed data table, classify type
 unk_030_5cff:
 	dr $c1cff, $c1d09
 Func_030_5d09:
@@ -3154,6 +3159,7 @@ Func_30_5dc1:
 	cp $e0
 	jp nz, Func_30_5d59
 	ret
+; TODO: indexed data table, classify type
 unk_030_5dce:
 	dr $c1dce, $c1dd8
 Func_030_5dd8:
@@ -3248,6 +3254,7 @@ Func_030_5dd8:
 	inc hl
 	ld [hl], $02
 	ret
+; TODO: indexed data table, classify type
 unk_030_5e69:
 	dr $c1e69, $c1e79
 Func_030_5e79:
@@ -3362,10 +3369,13 @@ Func_030_5e79:
 	add [hl]
 	ld [bc], a
 	ret
+; TODO: indexed data table, classify type
 unk_030_5f2a:
 	dr $c1f2a, $c1f3e
+; TODO: indexed data table, classify type
 unk_030_5f3e:
 	dr $c1f3e, $c1f8f
+; TODO: indexed data table, classify type
 unk_030_5f8f:
 	dr $c1f8f, $c1fe0
 Func_030_5fe0:
@@ -3466,10 +3476,13 @@ Func_030_5fe0:
 	xor a
 	ld [wd9ae], a
 	ret
+; TODO: indexed data table, classify type
 unk_030_607b:
 	dr $c207b, $c2087
+; TODO: indexed data table, classify type
 unk_030_6087:
 	dr $c2087, $c2093
+; TODO: indexed data table, classify type
 unk_030_6093:
 	dr $c2093, $c209f
 Func_030_609f:
@@ -3817,7 +3830,7 @@ Func_030_6136:
 	ld a, $01
 	ld [hFFC6], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98c], a
 	ld [wd98e], a
@@ -4131,10 +4144,13 @@ Func_030_63a8:
 	inc a
 	ld [wd9ae], a
 	ret
+; TODO: indexed data table, classify type
 unk_030_64c8:
 	dr $c24c8, $c24cc
+; TODO: indexed data table, classify type
 unk_030_64cc:
 	dr $c24cc, $c24d0
+; TODO: indexed data table, classify type
 unk_030_64d0:
 	dr $c24d0, $c2591
 Func_030_6591:
@@ -4331,8 +4347,10 @@ Func_030_6591:
 	cp $c0
 	jp c, .asm_6594
 	ret
+; TODO: indexed data table, classify type
 unk_030_66c9:
 	dr $c26c9, $c26d5
+; TODO: indexed data table, classify type
 unk_030_66d5:
 	dr $c26d5, $c26e1
 Func_030_66e1:
@@ -4522,8 +4540,10 @@ Func_030_671c:
 	cp $b8
 	jp c, .asm_671f
 	ret
+; TODO: indexed data table, classify type
 unk_030_67f2:
 	dr $c27f2, $c2804
+; TODO: indexed data table, classify type
 unk_030_6804:
 	dr $c2804, $c2816
 Func_030_6816:
@@ -4626,6 +4646,7 @@ Func_030_6816:
 	inc hl
 	ld [hl], $00
 	ret
+; TODO: indexed data table, classify type
 unk_030_68b2:
 	dr $c28b2, $c28be
 Func_030_68be:
@@ -4834,8 +4855,10 @@ Func_030_693a:
 	cp $e0
 	jp c, .asm_693d
 	ret
+; TODO: indexed data table, classify type
 unk_030_69f1:
 	dr $c29f1, $c2a09
+; TODO: indexed data table, classify type
 unk_030_6a09:
 	dr $c2a09, $c2a5e
 Func_030_6a5e:
@@ -4915,6 +4938,7 @@ Func_030_6a5e:
 	ld [wd9ae], a
 	call Func_030_7189
 	ret
+; TODO: indexed data table, classify type
 unk_030_6adb:
 	dr $c2adb, $c2b36
 Func_030_6b36:
@@ -5025,6 +5049,7 @@ Func_30_6bcb:
 	ld [hli], a
 	ld [hl], $06
 	ret
+; TODO: indexed data table, classify type
 unk_030_6bee:
 	dr $c2bee, $c2bf2
 Func_030_6bf2:
@@ -5255,6 +5280,7 @@ Func_030_6d38:
 	cp $e0
 	jr c, .asm_6d40
 	ret
+; TODO: indexed data table, classify type
 unk_030_6d6f:
 	dr $c2d6f, $c2d76
 Func_030_6d76:
@@ -5331,6 +5357,7 @@ Func_030_6d76:
 	cp $e0
 	jp c, .asm_6d79
 	ret
+; TODO: indexed data table, classify type
 unk_030_6df1:
 	dr $c2df1, $c2e19
 Func_030_6e19:
@@ -5413,6 +5440,7 @@ Func_030_6e5a:
 	xor a
 	ld [wd9ae], a
 	ret
+; TODO: indexed data table, classify type
 unk_030_6e94:
 	dr $c2e94, $c2ea0
 Func_030_6ea0:
@@ -5535,6 +5563,7 @@ Func_030_6ec2:
 	cp $e0
 	jp c, .asm_6ec5
 	ret
+; TODO: indexed data table, classify type
 unk_030_6f68:
 	dr $c2f68, $c2f88
 Func_030_6f88:
@@ -5900,7 +5929,7 @@ Func_030_7194:
 	ld [wd98b], a
 .asm_71ec
 	ld a, $29
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_71f2
 	ld hl, wd1a0
@@ -6035,7 +6064,7 @@ Func_030_7194:
 	ld hl, wd1a0
 	call Func_030_7181
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -6104,7 +6133,7 @@ Func_030_72d7:
 	ld [wd98b], a
 .asm_7362
 	ld a, $2a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_7368
 	ldh a, [hFadeFrameCounter]
@@ -6464,7 +6493,7 @@ Func_030_72d7:
 	ld hl, wd1a0
 	call Func_030_7181
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -6479,7 +6508,7 @@ Func_030_75c7:
 	cp $e0
 	jr nz, .asm_75e3
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	call Func_030_7181
 	ret
@@ -6496,7 +6525,7 @@ Func_030_75c7:
 	cp $e0
 	jr nz, .asm_75ff
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	call Func_030_7181
 	ret
@@ -6572,7 +6601,7 @@ Func_030_7610:
 	ld [hl], a
 	ld [de], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_7660
 	ld a, [de]
@@ -6677,7 +6706,7 @@ Func_030_766a:
 	cp $01
 	jr c, .asm_772e
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	jr .asm_7719
@@ -6844,7 +6873,7 @@ Func_030_773b:
 	cp $14
 	jr nz, .asm_783f
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	call Func_030_7189
 	ret
@@ -7024,7 +7053,7 @@ Func_030_784c:
 	ld [wd98b], a
 	ld [wd98c], a
 	ld [wd98e], a
-	ld [wd989], a
+	ld [wBattleState], a
 	jp .asm_7974
 .asm_7974
 	ld hl, $0008
@@ -7035,10 +7064,13 @@ Func_030_784c:
 	cp $b8
 	jp c, .asm_784f
 	ret
+; TODO: indexed data table, classify type
 unk_030_7981:
 	dr $c3981, $c398d
+; TODO: indexed data table, classify type
 unk_030_798d:
 	dr $c398d, $c3999
+; TODO: unreferenced data block, classify type
 unk_030_7999:
 	dr $c3999, $c39a0
 

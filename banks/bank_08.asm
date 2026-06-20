@@ -835,6 +835,7 @@ ENDR
 	ld [wdce8], a
 	ret
 
+; TODO: indexed data table, classify type
 unk_008_57e2:
 	dw $30f0, $1004
 	dw $5000, $1004
@@ -1311,6 +1312,7 @@ INCBIN "gfx/cutscenes/meteor/text_gfx_2.2bpp"
 MeteorCutscene_TextGFX_3:
 INCBIN "gfx/cutscenes/meteor/text_gfx_3.2bpp"
 
+; TODO: indexed data table, classify type
 unk_008_6eae:
 INCBIN "data/unk_008_6eae.bin"
 
@@ -1320,6 +1322,7 @@ INCBIN "gfx/cutscenes/meteor/text_2.tilemap"
 MeteorCutscene_Text3_Tilemap:
 INCBIN "gfx/cutscenes/meteor/text_3.tilemap"
 
+; TODO: indexed data table, classify type
 unk_008_6f26:
 INCBIN "data/unk_008_6f26.bin"
 

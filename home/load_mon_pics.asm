@@ -16,11 +16,11 @@ LoadMonPic::
 	ld l, a
 	push hl
 	ld bc, $240
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
 	pop hl
 	call CopyBytesVRAM

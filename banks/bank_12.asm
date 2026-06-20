@@ -247,7 +247,7 @@ Script_012_4193:
 	scr_1a $01, $00, $f0, $00 ; TEMP
 	db $76 ; TEMP
 	db $41 ; TEMP
-	scr_4e $00, unk_012_4d76
+	scr_4e $00, Script_012_4d76
 	scr_1b $01 ; TEMP
 	scr_spriteface $01, $03 ; TEMP
 	scr_spritewalk $01, $04 ; TEMP
@@ -266,7 +266,7 @@ Script_012_41ba:
 	scr_1a $01, $00, $f0, $00 ; TEMP
 	db $76 ; TEMP
 	db $41 ; TEMP
-	scr_4e $00, unk_012_4db7
+	scr_4e $00, Script_012_4db7
 	scr_1b $01 ; TEMP
 	scr_spriteface $01, $02 ; TEMP
 	scr_spritewalk $01, $03 ; TEMP
@@ -301,7 +301,7 @@ ObjectEvents_012_41dd:
 
 Script_012_41e9:
 	scr_04 text_12_41f1
-	scr_3b unk_012_506b
+	scr_3b Script_012_506b
 	db $67 ; TEMP
 	scr_end
 
@@ -406,23 +406,23 @@ Script_012_43a1:
 	scr_text text_12_6ca6
 	scr_text text_12_6cd1
 	scr_spriteface  2, FACE_UP
-	scr_16 unk_012_4486 ; TEMP
-	scr_4e $04, unk_012_50b7
+	scr_16 Script_012_4486 ; TEMP
+	scr_4e $04, Script_012_50b7
 	scr_spriteface  4, FACE_UP
-	scr_16 unk_012_4492 ; TEMP
-	scr_4e $05, unk_012_4f8c
+	scr_16 Script_012_4492 ; TEMP
+	scr_4e $05, Script_012_4f8c
 	scr_1c $05 ; TEMP
-	scr_16 unk_012_4492 ; TEMP
-	scr_4e $05, unk_012_503c
+	scr_16 Script_012_4492 ; TEMP
+	scr_4e $05, Script_012_503c
 	scr_1c $05 ; TEMP
-	scr_16 unk_012_4492 ; TEMP
-	scr_4e $05, unk_012_5065
+	scr_16 Script_012_4492 ; TEMP
+	scr_4e $05, Script_012_5065
 	scr_1c $05 ; TEMP
-	scr_16 unk_012_4492 ; TEMP
-	scr_4e $05, unk_012_508e
+	scr_16 Script_012_4492 ; TEMP
+	scr_4e $05, Script_012_508e
 	scr_1c $05 ; TEMP
 	scr_spriteface  4, FACE_LEFT
-	scr_4e $04, unk_012_50f6
+	scr_4e $04, Script_012_50f6
 	scr_1c $04 ; TEMP
 	scr_spriteface  2, $04 ; TEMP
 	scr_delay $03, $10 ; TEMP
@@ -430,8 +430,8 @@ Script_012_43a1:
 	scr_1c $01 ; TEMP
 	scr_1c $02 ; TEMP
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_446e ; TEMP
-	scr_16 unk_012_447a ; TEMP
+	scr_16 Script_012_446e ; TEMP
+	scr_16 Script_012_447a ; TEMP
 	scr_spriteface  2, $04 ; TEMP
 	scr_34 $08, $07, $01 ; TEMP
 	scr_face $01 ; TEMP
@@ -462,17 +462,17 @@ Script_012_43a1:
 	scr_setbit $daa4, $07 ; TEMP
 	scr_end
 
-unk_012_446e:
+Script_012_446e:
 	object_event $30,  1,  8, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
-unk_012_447a:
+Script_012_447a:
 	dr $4847a, $48486
 
-unk_012_4486:
+Script_012_4486:
 	dr $48486, $48492
 
-unk_012_4492:
+Script_012_4492:
 	object_event $48,  5,  1, 0, $00, $00, $00, $03, Script_012_44cc
 	objects_end
 
@@ -540,7 +540,7 @@ Script_012_44db:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_6aa0
 	scr_spriteface  2, FACE_DOWN
-	scr_4e $02, unk_012_4e4a
+	scr_4e $02, Script_012_4e4a
 	scr_1c $02 ; TEMP
 	scr_emote $00, $00 ; TEMP
 	scr_emote $03, $00 ; TEMP
@@ -580,9 +580,9 @@ Script_012_45b3:
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_61be
 	scr_text text_12_61cb
-	scr_checkbit wEventFlags + 3, $02, .unk_012_45c9
+	scr_checkbit wEventFlags + 3, $02, .Script_012_45c9
 	scr_end
-.unk_012_45c9
+.Script_012_45c9
 	scr_face $03 ; TEMP
 	scr_emote $00, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
@@ -621,78 +621,78 @@ Script_012_4617:
 	scr_end
 
 Script_012_461b:
-	scr_checkbit wEventFlags + 4, $02, unk_012_4625
+	scr_checkbit wEventFlags + 4, $02, Script_012_4625
 	scr_04 text_12_51d9
 	scr_end
 
-unk_012_4625:
+Script_012_4625:
 	scr_04 text_12_723c
 	scr_end
 
 Script_012_4629:
-	scr_checkbit wEventFlags + 4, $02, unk_012_4633
+	scr_checkbit wEventFlags + 4, $02, Script_012_4633
 	scr_04 text_12_5223
 	scr_end
 
-unk_012_4633:
+Script_012_4633:
 	scr_04 text_12_7267
 	scr_end
 
 Script_012_4637:
-	scr_checkbit wEventFlags + 4, $02, unk_012_4641
+	scr_checkbit wEventFlags + 4, $02, Script_012_4641
 	scr_04 text_12_52aa
 	scr_end
 
-unk_012_4641:
-	scr_checkbit wEventFlags + 4, $03, unk_012_464b
+Script_012_4641:
+	scr_checkbit wEventFlags + 4, $03, Script_012_464b
 	scr_04 text_12_72ef
 	scr_end
 
-unk_012_464b:
-	scr_checkbit wEventFlags + 4, $05, unk_012_4659
+Script_012_464b:
+	scr_checkbit wEventFlags + 4, $05, Script_012_4659
 	scr_04 text_12_76dc
 	scr_setbit $daa4, $04 ; TEMP
 	scr_end
 
-unk_012_4659:
+Script_012_4659:
 	scr_04 text_12_7885
 	scr_end
 
 Script_012_465d:
-	scr_checkbit wEventFlags + 4, $02, unk_012_4667
+	scr_checkbit wEventFlags + 4, $02, Script_012_4667
 	scr_04 text_12_530c
 	scr_end
 
-unk_012_4667:
-	scr_checkbit wEventFlags + 4, $03, unk_012_4671
+Script_012_4667:
+	scr_checkbit wEventFlags + 4, $03, Script_012_4671
 	scr_04 text_12_7320
 	scr_end
 
-unk_012_4671:
-	scr_checkbit wEventFlags + 4, $05, unk_012_467b
+Script_012_4671:
+	scr_checkbit wEventFlags + 4, $05, Script_012_467b
 	scr_04 text_12_7746
 	scr_end
 
-unk_012_467b:
+Script_012_467b:
 	scr_04 text_12_735b
 	scr_end
 
 Script_012_467f:
-	scr_checkbit wEventFlags + 4, $02, unk_012_4689
+	scr_checkbit wEventFlags + 4, $02, Script_012_4689
 	scr_04 text_12_5338
 	scr_end
 
-unk_012_4689:
+Script_012_4689:
 	scr_04 text_12_736f
 	scr_end
 
 Script_012_468d:
 	scr_04 text_12_5396
-	scr_checkbit wEventFlags + 3, $03, unk_012_469a
+	scr_checkbit wEventFlags + 3, $03, Script_012_469a
 	scr_text text_12_53b6
 	scr_end
 
-unk_012_469a:
+Script_012_469a:
 	scr_text text_12_53a4
 	scr_end
 
@@ -750,7 +750,7 @@ Script_012_46c2:
 	scr_emote $02, $00 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_599a
-	scr_4e $02, unk_012_4e4a
+	scr_4e $02, Script_012_4e4a
 	scr_1c $02 ; TEMP
 	scr_setbit $daa3, $02 ; TEMP
 	scr_end
@@ -788,23 +788,23 @@ Script_012_4735:
 	scr_04 text_12_77ea
 	scr_text text_12_77ff
 	scr_text text_12_7870
-	scr_3b unk_012_4b50
+	scr_3b Script_012_4b50
 	scr_checkbit wEventFlags + 3, $03, Script_012_4780
 	scr_spriteface  2, FACE_UP
 	scr_16 ObjectEvents_012_4729 ; TEMP
-	scr_4e $03, unk_012_4f8c
+	scr_4e $03, Script_012_4f8c
 	scr_1c $03 ; TEMP
 	scr_16 ObjectEvents_012_4729 ; TEMP
-	scr_4e $03, unk_012_4fb5
+	scr_4e $03, Script_012_4fb5
 	scr_1c $03 ; TEMP
 	scr_16 ObjectEvents_012_4729 ; TEMP
-	scr_4e $03, unk_012_4fe2
+	scr_4e $03, Script_012_4fe2
 	scr_1c $03 ; TEMP
 	scr_16 ObjectEvents_012_4729 ; TEMP
-	scr_4e $03, unk_012_500f
+	scr_4e $03, Script_012_500f
 	scr_1c $03 ; TEMP
 	scr_16 ObjectEvents_012_4729 ; TEMP
-	scr_4e $03, unk_012_503c
+	scr_4e $03, Script_012_503c
 	scr_1c $03 ; TEMP
 	scr_1c $02 ; TEMP
 	scr_setbit $daa4, $05 ; TEMP
@@ -828,7 +828,7 @@ Script_012_4781:
 	scr_text text_12_79cc
 	scr_face $00 ; TEMP
 	scr_spriteface  2, FACE_DOWN
-	scr_4e $02, unk_012_4e4a
+	scr_4e $02, Script_012_4e4a
 	scr_1c $02 ; TEMP
 	scr_face $01 ; TEMP
 	scr_34 $04, $0e, $04 ; TEMP
@@ -858,23 +858,23 @@ Script_012_4781:
 	scr_end
 
 G2_0E_ObjectEvents4:
-	object_event $2f,  5,  4, 0, $00, $00, $00, $00, unk_012_4819
-	object_event $30,  4,  4, 0, $00, $00, $00, $01, unk_012_481d
-	object_event $04,  6,  5, wEventFlags + $17, $07, $00, $00, $02, unk_012_4827
+	object_event $2f,  5,  4, 0, $00, $00, $00, $00, Script_012_4819
+	object_event $30,  4,  4, 0, $00, $00, $00, $01, Script_012_481d
+	object_event $04,  6,  5, wEventFlags + $17, $07, $00, $00, $02, Script_012_4827
 	objects_end
 
-unk_012_4819:
+Script_012_4819:
 	scr_04 text_12_7e2d
 	scr_end
 
-unk_012_481d:
-	scr_checkbit wEventFlags + 4, $06, unk_012_4826
+Script_012_481d:
+	scr_checkbit wEventFlags + 4, $06, Script_012_4826
 	scr_04 text_12_7e6d
 
-unk_012_4826:
+Script_012_4826:
 	scr_end
 
-unk_012_4827:
+Script_012_4827:
 	scr_04 text_12_7cdd
 	scr_end
 
@@ -940,29 +940,29 @@ Script_012_48b7:
 	scr_end
 
 Script_012_48bb:
-	scr_checkbit wEventFlags + 3, $05, unk_012_48c5
+	scr_checkbit wEventFlags + 3, $05, Script_012_48c5
 	scr_04 text_12_5ba7
 	scr_end
 
-unk_012_48c5:
+Script_012_48c5:
 	scr_04 text_12_6550
 	scr_end
 
 Script_012_48c9:
-	scr_checkbit wEventFlags + 3, $05, unk_012_48d3
+	scr_checkbit wEventFlags + 3, $05, Script_012_48d3
 	scr_04 text_12_5bd5
 	scr_end
 
-unk_012_48d3:
+Script_012_48d3:
 	scr_04 text_12_65ab
 	scr_end
 
 Script_012_48d7:
-	scr_checkbit wEventFlags + 3, $05, unk_012_48e1
+	scr_checkbit wEventFlags + 3, $05, Script_012_48e1
 	scr_04 text_12_5c51
 	scr_end
 
-unk_012_48e1:
+Script_012_48e1:
 	scr_04 text_12_6629
 	scr_end
 
@@ -971,29 +971,29 @@ Script_012_48e5:
 	scr_end
 
 Script_012_48e9:
-	scr_checkbit wEventFlags + 3, $05, unk_012_48f3
+	scr_checkbit wEventFlags + 3, $05, Script_012_48f3
 	scr_04 text_12_5d14
 	scr_end
 
-unk_012_48f3:
+Script_012_48f3:
 	scr_04 text_12_6655
 	scr_end
 
 Script_012_48f7:
-	scr_checkbit wEventFlags + 3, $05, unk_012_4901
+	scr_checkbit wEventFlags + 3, $05, Script_012_4901
 	scr_04 text_12_5d7a
 	scr_end
 
-unk_012_4901:
+Script_012_4901:
 	scr_04 text_12_66e4
 	scr_end
 
 Script_012_4905:
-	scr_checkbit wEventFlags + 3, $05, unk_012_490f
+	scr_checkbit wEventFlags + 3, $05, Script_012_490f
 	scr_04 text_12_5dab
 	scr_end
 
-unk_012_490f:
+Script_012_490f:
 	scr_04 text_12_673b
 	scr_end
 
@@ -1019,80 +1019,80 @@ Script_012_4929:
 	scr_end
 
 Script_012_492d:
-	scr_checkbit wEventFlags + 3, $05, unk_012_4937
+	scr_checkbit wEventFlags + 3, $05, Script_012_4937
 	scr_04 text_12_5fc7
 	scr_end
 
-unk_012_4937:
+Script_012_4937:
 	scr_04 text_12_67b8
 	scr_end
 
 Script_012_493b:
-	scr_checkbit wEventFlags + 3, $05, unk_012_4948
+	scr_checkbit wEventFlags + 3, $05, Script_012_4948
 	scr_04 text_12_6032
 	scr_text text_12_6064
 	scr_end
 
-unk_012_4948:
-	scr_checkbit wEventFlags + 3, $07, unk_012_4959
+Script_012_4948:
+	scr_checkbit wEventFlags + 3, $07, Script_012_4959
 	scr_04 text_12_6812
 	scr_text text_12_6864
 	scr_setbit $daa3, $07 ; TEMP
 	scr_end
 
-unk_012_4959:
+Script_012_4959:
 	scr_04 text_12_6812
 	scr_end
 
 Script_012_495d:
-	scr_checkbit wEventFlags + 3, $05, unk_012_4967
+	scr_checkbit wEventFlags + 3, $05, Script_012_4967
 	scr_04 text_12_60b5
 	scr_end
 
-unk_012_4967:
+Script_012_4967:
 	scr_04 text_12_686f
 	scr_end
 
 G2_19_ObjectEvents:
 G2_21_ObjectEvents:
-	object_event $25,  4,  2, 0, $00, $00, $00, $00, unk_012_4982
-	object_event $25,  8,  2, 0, $00, $00, $00, $01, unk_012_4986
+	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_012_4982
+	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_012_4986
 	objects_end
 
-unk_012_4982:
+Script_012_4982:
 	scr_text text_12_7ebe
 	scr_end
 
-unk_012_4986:
+Script_012_4986:
 	scr_text text_12_7ed6
 	scr_end
 
 Script_012_498a::
 	scr_face $01 ; TEMP
 	scr_text text_12_7ebe
-	scr_checkbit wEventFlags + 3, $03, unk_012_4997
+	scr_checkbit wEventFlags + 3, $03, Script_012_4997
 	scr_37
 	scr_end
 
-unk_012_4997:
+Script_012_4997:
 	scr_end
 
 Script_012_4998::
 	scr_face $01 ; TEMP
 	scr_text text_12_7ed6
-	scr_checkbit wEventFlags + 3, $03, unk_012_49a5
+	scr_checkbit wEventFlags + 3, $03, Script_012_49a5
 	scr_36
 	scr_end
 
-unk_012_49a5:
+Script_012_49a5:
 	scr_end
 
 G2_1A_ObjectEvents:
 G2_22_ObjectEvents:
-	object_event $22,  2,  3, 0, $00, $00, $00, $00, unk_012_49b2
+	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_012_49b2
 	objects_end
 
-unk_012_49b2:
+Script_012_49b2:
 	scr_04 text_12_7f05
 	scr_end
 
@@ -1100,80 +1100,80 @@ Script_012_49b6:
 	scr_face $02 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
 	scr_text text_12_7f05
-	scr_checkbit wEventFlags + 4, $01, unk_012_49c7
+	scr_checkbit wEventFlags + 4, $01, Script_012_49c7
 	scr_35 $01 ; TEMP
 	scr_end
 
-unk_012_49c7:
+Script_012_49c7:
 	scr_end
 
 Script_012_49c8:
 	scr_face $02 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
 	scr_text text_12_7f05
-	scr_checkbit wEventFlags + 4, $01, unk_012_49c7
+	scr_checkbit wEventFlags + 4, $01, Script_012_49c7
 	scr_35 $02 ; TEMP
 	scr_end
 
 Script_012_49d9::
-	scr_checkbit wEventFlags + 4, $02, unk_012_49f8
+	scr_checkbit wEventFlags + 4, $02, Script_012_49f8
 	scr_text text_12_5a30
-	scr_checkbit wEventFlags + 3, $02, unk_012_49e9
+	scr_checkbit wEventFlags + 3, $02, Script_012_49e9
 	scr_end
 
-unk_012_49e9:
-	scr_checkbit wEventFlags + 4, $07, unk_012_49f8
+Script_012_49e9:
+	scr_checkbit wEventFlags + 4, $07, Script_012_49f8
 	scr_emote $00, $03 ; TEMP
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_5abd
 	
-unk_012_49f8:
+Script_012_49f8:
 	scr_end
 
 CoffeeForestPart3_ObjectEvents:
-	object_event $32,  6,  5, wEventFlags + 3, $05, $00, $00, $00, unk_012_4a05
+	object_event $32,  6,  5, wEventFlags + 3, $05, $00, $00, $00, Script_012_4a05
 	objects_end
 
-unk_012_4a05:
+Script_012_4a05:
 	scr_04 text_12_6471
 	scr_text text_12_6486
-	scr_3b unk_012_4b40 ; XXX 
+	scr_3b Script_012_4b40 ; XXX 
 	scr_checkbit wEventFlags + 3, $03, Script_012_4780
 	scr_spriteface  2, FACE_UP
 	scr_spriteface  2, FACE_LEFT
 	scr_spriteface  2, FACE_RIGHT
 	scr_1c $02 ; TEMP
-	scr_16 unk_012_4a93 ; TEMP
-	scr_4e $03, unk_012_4f8c
+	scr_16 Script_012_4a93 ; TEMP
+	scr_4e $03, Script_012_4f8c
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4a9f ; TEMP
-	scr_4e $03, unk_012_4fb5
+	scr_16 Script_012_4a9f ; TEMP
+	scr_4e $03, Script_012_4fb5
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4aab ; TEMP
-	scr_4e $03, unk_012_4fe2
+	scr_16 Script_012_4aab ; TEMP
+	scr_4e $03, Script_012_4fe2
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4ab7 ; TEMP
-	scr_4e $03, unk_012_500f
+	scr_16 Script_012_4ab7 ; TEMP
+	scr_4e $03, Script_012_500f
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4ac3 ; TEMP
-	scr_4e $03, unk_012_503c
+	scr_16 Script_012_4ac3 ; TEMP
+	scr_4e $03, Script_012_503c
 	scr_1c $03 ; TEMP
 	scr_setmap $02, $09 ; TEMP
 	scr_spriteface  2, FACE_UP
-	scr_16 unk_012_4ad0 ; TEMP
-	scr_4e $03, unk_012_5167
+	scr_16 Script_012_4ad0 ; TEMP
+	scr_4e $03, Script_012_5167
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4adc ; TEMP
-	scr_4e $03, unk_012_5167
+	scr_16 Script_012_4adc ; TEMP
+	scr_4e $03, Script_012_5167
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4ae8 ; TEMP
-	scr_4e $03, unk_012_5167
+	scr_16 Script_012_4ae8 ; TEMP
+	scr_4e $03, Script_012_5167
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4af4 ; TEMP
-	scr_4e $03, unk_012_5167
+	scr_16 Script_012_4af4 ; TEMP
+	scr_4e $03, Script_012_5167
 	scr_1c $03 ; TEMP
-	scr_16 unk_012_4b00 ; TEMP
-	scr_4e $03, unk_012_5167
+	scr_16 Script_012_4b00 ; TEMP
+	scr_4e $03, Script_012_5167
 	scr_1c $03 ; TEMP
 	scr_text text_12_64ba
 	scr_setmap $05, $01 ; TEMP
@@ -1183,46 +1183,46 @@ unk_012_4a05:
 	scr_setbit $daa3, $05 ; TEMP
 	scr_end
 	
-unk_012_4a93:
+Script_012_4a93:
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4a9f:
+Script_012_4a9f:
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4aab:
+Script_012_4aab:
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4ab7:
+Script_012_4ab7:
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4ac3:
+Script_012_4ac3:
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
 Script_012_4acf:
 	scr_end
 	
-unk_012_4ad0:
+Script_012_4ad0:
 	object_event $48, 13, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4adc:
+Script_012_4adc:
 	object_event $48, 18, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4ae8:
+Script_012_4ae8:
 	object_event $48, 16, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4af4:
+Script_012_4af4:
 	object_event $48, 14, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-unk_012_4b00:
+Script_012_4b00:
 	object_event $48, 17, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
@@ -1238,7 +1238,7 @@ G2_0E_ObjectEvents2:
 	db $04,  4,  4
 	dw wEventFlags + 4
 	db $02, $00
-unk_012_4b40: ; VF moment
+Script_012_4b40: ; VF moment
 	db $00, $03
 	dw Script_012_44cc
 	objects_end
@@ -1246,33 +1246,33 @@ unk_012_4b40: ; VF moment
 G2_0E_ObjectEvents5:
 	object_event $2f,  5,  3, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 
-unk_012_4b50:
+Script_012_4b50:
 	object_event $2d,  6,  3, wEventFlags + 4, $02, $00, $00, $01, Script_012_44cc
 	object_event $30,  5,  2, wEventFlags + 4, $02, $00, $00, $02, Script_012_44cc
 	object_event $04,  4,  4, wEventFlags + 4, $02, $00, $00, $03, Script_012_44cc
 	objects_end
 
 Script_012_4b72::
-	scr_checkbit wEventFlags + 4, $07, unk_012_4b94
+	scr_checkbit wEventFlags + 4, $07, Script_012_4b94
 	scr_setmap $0e, $00 ; TEMP
 	scr_end
 
-unk_012_4b7c:
-	scr_checkbit wEventFlags + 4, $03, unk_012_4b86
+Script_012_4b7c:
+	scr_checkbit wEventFlags + 4, $03, Script_012_4b86
 	scr_setmap $0e, $00 ; TEMP
 	scr_end
 
-unk_012_4b86:
-	scr_checkbit wEventFlags + 4, $06, unk_012_4b90
+Script_012_4b86:
+	scr_checkbit wEventFlags + 4, $06, Script_012_4b90
 	scr_setmap $0e, $05 ; TEMP
 	scr_end
 
-unk_012_4b90:
+Script_012_4b90:
 	scr_setmap $0e, $04 ; TEMP
 	scr_end
 
-unk_012_4b94:
-	scr_checkbit wEventFlags + 4, $02, unk_012_4b7c
+Script_012_4b94:
+	scr_checkbit wEventFlags + 4, $02, Script_012_4b7c
 	scr_65 $00 ; TEMP
 	scr_setmap $0e, $02 ; TEMP
 	scr_spriteface  3, FACE_LEFT
@@ -1333,12 +1333,12 @@ unk_012_4b94:
 	scr_text text_12_7203
 	scr_spriteface  2, FACE_LEFT
 	scr_1a $04, $02, $00, $10 ; TEMP
-	scr_4e $02, unk_012_4e29
+	scr_4e $02, Script_012_4e29
 	scr_1b $04 ; TEMP
 	scr_1c $02 ; TEMP
 	scr_1c $04 ; TEMP
 	scr_spriteface  3, FACE_DOWN
-	scr_4e $03, unk_012_4e4a
+	scr_4e $03, Script_012_4e4a
 	scr_1c $03 ; TEMP
 	scr_spriteface  5, FACE_RIGHT
 	scr_44
@@ -1356,7 +1356,7 @@ G2_23_ObjectEvents:
 	object_event $11,  5,  2, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
-unk_012_4c89:
+Script_012_4c89:
 	object_event $04,  1,  6, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
@@ -1375,7 +1375,7 @@ Script_012_4c95::
 	scr_text text_12_74d8
 	scr_text text_12_74df
 	scr_spriteface  2, FACE_DOWN
-	scr_4e $02, unk_012_4e4a
+	scr_4e $02, Script_012_4e4a
 	scr_1c $02 ; TEMP
 	scr_face $01 ; TEMP
 	scr_5e $00 ; TEMP
@@ -1397,9 +1397,9 @@ Script_012_4c95::
 	scr_delay $03, $20 ; TEMP
 	scr_text text_12_75b7
 	scr_text text_12_75c0
-	scr_16 unk_012_4c89 ; TEMP
+	scr_16 Script_012_4c89 ; TEMP
 	scr_spriteface  2, FACE_RIGHT
-	scr_4e $02, unk_012_4df8
+	scr_4e $02, Script_012_4df8
 	scr_text text_12_75ce
 	scr_44
 	scr_spritewalk  2, MOVE_RIGHT
@@ -1409,25 +1409,25 @@ Script_012_4c95::
 	scr_end
 
 Script_012_4d14::
-	scr_checkbit wEventFlags + 4, $03, unk_012_4d1e
+	scr_checkbit wEventFlags + 4, $03, Script_012_4d1e
 	scr_setmap $0e, $01 ; TEMP
 	scr_69
 
-unk_012_4d1e:
-	scr_checkbit wEventFlags + 4, $06, unk_012_4d28
+Script_012_4d1e:
+	scr_checkbit wEventFlags + 4, $06, Script_012_4d28
 	scr_setmap $0e, $03 ; TEMP
 	scr_69
 
-unk_012_4d28:
+Script_012_4d28:
 	scr_setmap $0e, $06 ; TEMP
 	scr_69
 
 G2_0E_ObjectEvents3:
-	object_event $2d,  6,  5, 0, $00, $00, $00, $00, unk_012_4d38
+	object_event $2d,  6,  5, 0, $00, $00, $00, $00, Script_012_4d38
 	objects_end
 
-unk_012_4d38:
-	scr_checkbit wEventFlags + 4, $05, unk_012_4d6d
+Script_012_4d38:
+	scr_checkbit wEventFlags + 4, $05, Script_012_4d6d
 	scr_24
 	scr_face $01 ; TEMP
 	scr_5f
@@ -1448,7 +1448,7 @@ unk_012_4d38:
 	scr_text text_12_7696
 	scr_end
 
-unk_012_4d6d:
+Script_012_4d6d:
 	scr_04 text_12_78bd
 	scr_end
 
@@ -1459,52 +1459,52 @@ Script_012_4d71:
 	db $4f ; TEMP
 	scr_end
 
-unk_012_4d76::
+Script_012_4d76::
 	dr $48d76, $48db7
 
-unk_012_4db7::
+Script_012_4db7::
 	dr $48db7, $48df8
 
-unk_012_4df8::
+Script_012_4df8::
 	dr $48df8, $48e29
 
-unk_012_4e29::
+Script_012_4e29::
 	dr $48e29, $48e4a
 
-unk_012_4e4a::
+Script_012_4e4a::
 	dr $48e4a, $48f8c
 
-unk_012_4f8c::
+Script_012_4f8c::
 	dr $48f8c, $48fb5
 
-unk_012_4fb5::
+Script_012_4fb5::
 	dr $48fb5, $48fe2
 
-unk_012_4fe2::
+Script_012_4fe2::
 	dr $48fe2, $4900f
 
-unk_012_500f::
+Script_012_500f::
 	dr $4900f, $4903c
 
-unk_012_503c::
+Script_012_503c::
 	dr $4903c, $49065
 
-unk_012_5065::
+Script_012_5065::
 	dr $49065, $4906b
 
-unk_012_506b::
+Script_012_506b::
 	dr $4906b, $4908e
 
-unk_012_508e::
+Script_012_508e::
 	dr $4908e, $490b7
 
-unk_012_50b7::
+Script_012_50b7::
 	dr $490b7, $490f6
 
-unk_012_50f6::
+Script_012_50f6::
 	dr $490f6, $49167
 
-unk_012_5167::
+Script_012_5167::
 	dr $49167, $49194
 
 INCLUDE "data/text/bank12_misc.asm"

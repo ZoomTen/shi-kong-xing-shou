@@ -18,7 +18,7 @@ Func_032_4000::
 	farcall Func_4d_5f3a
 	ret
 .asm_4026
-	ld a, [wd989]
+	ld a, [wBattleState]
 	cp $07
 	jr z, .asm_4053
 	cp $45

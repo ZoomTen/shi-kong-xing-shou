@@ -548,7 +548,7 @@ Overworld_DoBlackFlashing:
 	xor a
 	ld [wdcb8], a
 	ld [wdcb9], a
-	ld hl, unk_005_4394
+	ld hl, Palette_005_4394
 	call PartialCopyBackgroundPalettes
 	ret
 
@@ -592,7 +592,7 @@ Palettes_005_4364:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-unk_005_4394:
+Palette_005_4394:
 	dr $14394, $143e1
 
 Func_005_43e1:
@@ -1245,7 +1245,7 @@ Func_005_47e6:
 	ld [wd3f5], a
 	ret
 
-unk_005_483a:
+Func_005_483a:
 	ldh a, [hFFDD]
 	and a
 	ret z
@@ -1534,7 +1534,7 @@ Overworld_MovePlayerOneStep:
 	ld hl, wPlayerScreenX
 	inc [hl]
 .asm_4a0f
-	call unk_005_483a
+	call Func_005_483a
 	call .asm_4ae5
 	ld a, [hFFA6]
 	dec a
@@ -1637,7 +1637,7 @@ Overworld_MovePlayerOneStep:
 	inc [hl]
 	inc [hl]
 .asm_4ac5
-	call unk_005_483a
+	call Func_005_483a
 	call .asm_4ae5
 	ld a, [hFFA6]
 	dec a
@@ -2245,9 +2245,9 @@ Func_005_4f2e:
 ; Init Start Menu
 	ld a, 1
 	ldh [hFFC5], a
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	call Func_005_4f3d
 	ret
 
@@ -2336,7 +2336,7 @@ asm_005_50fa:
 	jr z, asm_005_511a
 	pop af
 	ld [wd9dd], a
-	farcall unk_024_4000
+	farcall Func_024_4000
 	farcall asm_00a_45b4
 	ret
 
@@ -2499,16 +2499,17 @@ Script_005_524c:
 	scr_spriteface  1, $04 ; TEMP
 	scr_delay $03, $10 ; TEMP
 	scr_spriteface  1, FACE_DOWN
-	scr_4e $01, unk_005_5270
+	scr_4e $01, Script_005_5270
 	scr_77
 	scr_6f
 	scr_5e $52
 	scr_end
 
+; TODO: unreferenced data block, classify type
 unk_005_525e:
 	dr $1525e, $15270
 
-unk_005_5270:
+Script_005_5270:
 	dr $15270, $15295
 
 Func_005_5295:
@@ -2623,7 +2624,7 @@ asm_005_5330:
 	call Func_005_5422
 	ret
 
-unk_005_535b:
+Func_005_535b:
 	ld a, [hMapGroup]
 	cp $04
 	ret nz
@@ -2641,7 +2642,7 @@ unk_005_535b:
 	ld a, [wdcb9]
 	and a
 	ret z
-	ld hl, unk_005_4394
+	ld hl, Palette_005_4394
 	ld de, wPaletteBuffer
 	ld bc, $0008
 	call CopyBytes3
@@ -2679,7 +2680,7 @@ asm_005_53b7:
 Func_005_53bb:
 	ld hl, $0505
 	call Func_005_5571
-	ld de, unk_005_53d1
+	ld de, BGMap_005_53d1
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -2687,7 +2688,7 @@ Func_005_53bb:
 	call Func_005_5a59
 	ret
 
-unk_005_53d1:
+BGMap_005_53d1:
 	db $11
 	db $13
 	db $12
@@ -2725,7 +2726,7 @@ asm_005_5400:
 Func_005_5404:
 	ld hl, $0505
 	call Func_005_5571
-	ld de, unk_005_541a
+	ld de, BGMap_005_541a
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -2733,7 +2734,7 @@ Func_005_5404:
 	call Func_005_5a59
 	ret
 
-unk_005_541a:
+BGMap_005_541a:
 	db $48
 	db $4a
 	db $49
@@ -2753,7 +2754,7 @@ Func_005_5422:
 	ld [wTextboxPos], a
 	ret
 
-unk_005_5432:
+Func_005_5432:
 	and a
 	ret nz
 	ld a, [hl]
@@ -2807,6 +2808,7 @@ asm_005_547d:
 	ld [wd083 + 1], a
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_005_549d:
 	rept 8
 	db $3e
@@ -2830,7 +2832,7 @@ Func_005_54ad:
 	srl a
 	ld h, a
 	call Func_005_55b5
-	ld de, unk_005_5500
+	ld de, BGMap_005_5500
 	jr asm_005_54ef
 
 Func_005_54cf:
@@ -2848,7 +2850,7 @@ Func_005_54cf:
 	srl a
 	ld h, a
 	call Func_005_55b5
-	ld de, unk_005_54fc
+	ld de, BGMap_005_54fc
 
 asm_005_54ef:
 	ld bc, $0202
@@ -2858,13 +2860,13 @@ asm_005_54ef:
 	call Func_005_5a59
 	ret
 
-unk_005_54fc:
+BGMap_005_54fc:
 	db $9
 	db $b
 	db $a
 	db $c
 
-unk_005_5500:
+BGMap_005_5500:
 	db $d
 	db $f
 	db $e
@@ -2885,7 +2887,7 @@ Func_005_5504:
 	srl a
 	ld h, a
 	call Func_005_55b5
-	ld de, unk_005_556d
+	ld de, BGMap_005_556d
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -2916,7 +2918,7 @@ asm_005_5552:
 	ld c, b
 	ld b, 0
 	add hl, bc
-	ld de, unk_005_556d
+	ld de, BGMap_005_556d
 	ld a, [de]
 	inc de
 	ld [hli], a
@@ -2932,21 +2934,25 @@ asm_005_5552:
 	ld [hli], a
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_005_5569:
 	db $0
 	db $2
 	db $1
 	db $3
 
-unk_005_556d:
+BGMap_005_556d:
 	db $1
 
+; TODO: unreferenced data block, classify type
 unk_005_556e:
 	db $3
 
+; TODO: unreferenced data block, classify type
 unk_005_556f:
 	db $2
 
+; TODO: unreferenced data block, classify type
 unk_005_5570:
 	db $4
 
@@ -3086,12 +3092,16 @@ Func_005_5604:
 	call Func_005_5422
 	ret
 
+; TODO: indexed data table, classify type
 unk_005_5632:
 	dr $15632, $15650
+; TODO: indexed data table, classify type
 unk_005_5650:
 	dr $15650, $1566e
+; TODO: indexed data table, classify type
 unk_005_566e:
 	dr $1566e, $1568c
+; TODO: indexed data table, classify type
 unk_005_568c:
 	dr $1568c, $156aa
 
@@ -3198,9 +3208,11 @@ asm_005_574b:
 	xor a
 	ret
 
+; TODO: indexed data table, classify type
 unk_005_5764:
 	db $1
 
+; TODO: unreferenced data block, classify type
 unk_005_5765:
 	db $0
 	db $ff

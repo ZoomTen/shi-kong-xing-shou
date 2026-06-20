@@ -65,7 +65,7 @@ Func_01f_4028:
 	ret
 
 Func_01f_405d:
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	push af
 	cp 3
 	jr nz, .asm_4072
@@ -91,7 +91,7 @@ Func_01f_405d:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	ld b, a
 	ld de, $9000
 	ld a, d
@@ -102,6 +102,7 @@ Func_01f_405d:
 	call CopyBytesVRAM
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_01f_4091:
 	db $90, $91, $92, $93, $94, $95, $96, $97, $93
 

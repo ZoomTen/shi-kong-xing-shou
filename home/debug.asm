@@ -335,6 +335,7 @@ Debug_InitDexAndParty::
 	db $01, $01, $02, $02, $02, $02, $02, $02 ; 19
 	db $02, $02, $01, $01, $01, $01, $01, $01 ; 20?
 
+; TODO: indexed data table, classify type
 unk_2f40::
 ; Partner 1 mon data
 	db MON_081 ; species

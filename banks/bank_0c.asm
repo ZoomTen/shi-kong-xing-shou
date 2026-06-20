@@ -1,4 +1,4 @@
-unk_00c_4000:
+Func_00c_4000:
 	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_4013
@@ -171,7 +171,7 @@ Group06_Signposts:
 
 INCLUDE "data/text/signposts_6.asm"
 
-unk_00c_432a::
+BattleUIGFX::
 	dr $3032a, $31f4a
 Pointers_00c_5f4a:
 	dr $31f4a, $323dc
@@ -278,7 +278,7 @@ REPT 8
 	RGB 0, 0, 0
 ENDR
 
-unk_00c_6ea5:
+Func_00c_6ea5:
 	push bc
 	push hl
 	ld a, [de]
@@ -302,7 +302,7 @@ unk_00c_6ea5:
 	pop bc
 	ret
 
-unk_00c_6ebe:
+Func_00c_6ebe:
 	ld a, [de]
 	ld l, a
 	ld a, b
@@ -327,7 +327,7 @@ unk_00c_6ebe:
 	ret
 
 Func_00c_6ed7::
-	ld de, unk_00c_6f22
+	ld de, Pointers_00c_6f22
 	ld a, [hMapGroup]
 	ld l, a
 	ld h, $00
@@ -355,7 +355,7 @@ Func_00c_6ed7::
 	inc hl
 	ld a, [hli]
 	ld b, a
-	call unk_00c_6ea5
+	call Func_00c_6ea5
 	and a
 	jr nz, .asm_6f1c
 	pop hl
@@ -366,7 +366,7 @@ Func_00c_6ed7::
 	inc hl
 	ld a, [hli]
 	ld b, a
-	call unk_00c_6ebe
+	call Func_00c_6ebe
 	pop hl
 	ld a, [hli]
 	ld a, [hli]
@@ -383,5 +383,5 @@ Func_00c_6ed7::
 	ld [wdcb4], a
 	ret
 
-unk_00c_6f22:
+Pointers_00c_6f22:
 	dr $32f22, $33230

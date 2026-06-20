@@ -68,25 +68,25 @@ Func_026_4012:
 
 ; TODO: tilemap-record pointers for the move box, indexed by wd0c0 (slot 0-3)
 Pointers_026_4072:
-	dw unk_026_407a
-	dw unk_026_4092
-	dw unk_026_40aa
-	dw unk_026_40c2
+	dw BGMap_026_407a
+	dw BGMap_026_4092
+	dw BGMap_026_40aa
+	dw BGMap_026_40c2
 
 ; TODO: 4x4 tile arrangements for the move box (16 tiles + 8-byte trailer each)
-unk_026_407a:
+BGMap_026_407a:
 	db $a0, $a2, $a4, $a6, $a8, $aa, $ac, $ae, $a1, $a3, $a5, $a7, $a9, $ab, $ad, $af
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
-unk_026_4092:
+BGMap_026_4092:
 	db $b0, $b2, $b4, $b6, $b8, $ba, $bc, $be, $b1, $b3, $b5, $b7, $b9, $bb, $bd, $bf
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
-unk_026_40aa:
+BGMap_026_40aa:
 	db $c0, $c2, $c4, $c6, $c8, $ca, $cc, $ce, $c1, $c3, $c5, $c7, $c9, $cb, $cd, $cf
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
-unk_026_40c2:
+BGMap_026_40c2:
 	db $d0, $d2, $d4, $d6, $d8, $da, $dc, $de, $d1, $d3, $d5, $d7, $d9, $db, $dd, $df
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
@@ -357,11 +357,11 @@ asm_026_4652:
 	ld e, a
 	ld a, [hli]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wMenuTextX], a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
@@ -397,7 +397,7 @@ asm_026_4680:
 	call PrintMenuText
 	ret
 
-unk_026_46ab:
+BGMap_026_46ab:
 	db $27
 	db $28
 	db $29
@@ -474,7 +474,7 @@ asm_026_46c5:
 	add hl, hl
 	ld bc, $9822
 	add hl, bc
-	ld de, unk_026_46ab
+	ld de, BGMap_026_46ab
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -670,8 +670,8 @@ Func_026_4c89:
 	ld e, a
 	ld a, [hli]
 	ld d, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	sla a
 	sla a
 	sla a
@@ -699,8 +699,8 @@ Func_026_4cb6:
 	ld a, [hli]
 	ld d, a
 	push de
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	sla a
 	sla a
 	sla a

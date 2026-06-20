@@ -2437,18 +2437,18 @@ Intro_ReloadStartPalette:
 	ret
 
 ; unused?
-	ld hl, unk_077_52f7
+	ld hl, Palette_077_52f7
 	call CopyBackgroundPalettes
-	ld hl, unk_077_52f7
+	ld hl, Palette_077_52f7
 	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
 	ret
 
 ; unused?
-	ld hl, unk_077_52b7
+	ld hl, Palette_077_52b7
 	call CopyBackgroundPalettes
-	ld hl, unk_077_52f7
+	ld hl, Palette_077_52f7
 	ld de, wPaletteBuffer
 	ld bc, $40
 	call CopyBytes3
@@ -2496,7 +2496,7 @@ Intro_ClearOAMBuffer:
 	jr nz, .loop
 	ret
 
-unk_077_52b7:
+Palette_077_52b7:
 	dw $7fff
 	dw $7fff
 	dw $7fff
@@ -2530,7 +2530,7 @@ unk_077_52b7:
 	dw $7fff
 	dw $7fff
 
-unk_077_52f7:
+Palette_077_52f7:
 	dw $0
 	dw $0
 	dw $0

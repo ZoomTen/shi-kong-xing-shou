@@ -258,11 +258,10 @@ wd082:: ds 1
 wd083:: ds 2
 wTextDelayFrames:: ds 1
 wd086:: ds 1
-wd087:: ds 1
+wBattleScriptState:: ds 1
 
-wd088:: ds 1
-wd089:: ds 1
-wd08a:: ds 1
+wBattleScriptPos:: ds 2 ; also used for screen/effect scripts
+wBattleScriptByte:: ds 1
 wMenuTextX:: ds 1
 wMenuTextEndX:: ds 1
 
@@ -544,7 +543,7 @@ wd985:: ds 1
 wd986:: ds 1
 wd987:: ds 1
 wd988:: ds 1
-wd989:: ds 1
+wBattleState:: ds 1
 wd98a:: ds 1
 wd98b:: ds 1
 wd98c:: ds 1
@@ -644,7 +643,7 @@ wd9ee:: ds 1
 wd9ef:: ds 1
 
 wTempBank:: ds 1
-wd9f1:: ds 1
+wBattleScriptBank:: ds 1
 wd9f2:: ds 1
 wd9f3:: ds 1
 wd9f4:: ds 1

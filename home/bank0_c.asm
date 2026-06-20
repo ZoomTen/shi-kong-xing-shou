@@ -603,7 +603,7 @@ LoadBattlePalettes::
 	dec c
 	jr nz, .copy1
 
-	ld de, unk_0a8b
+	ld de, Pointers_0a8b
 	ld a, [wd9dd]
 	ld l, a
 	ld h, 0
@@ -643,7 +643,7 @@ LoadBattlePalettes::
 	jr nz, .copy3
 	ret
 
-unk_0a8b::
+Pointers_0a8b::
 	dw .unk_0a9b
 	dw .unk_0aab
 	dw .unk_0abb
@@ -765,22 +765,22 @@ Func_0b39::
 	homecall Func_024_40fd
 	ret
 
-Func_0b46::
+AdvanceBattleScript::
 	ld a, [_BANKNUM]
 	push af
 
-	ld a, [wd9f1]
+	ld a, [wBattleScriptBank]
 	rst Bankswitch
-	ld a, [wd088]
+	ld a, [wBattleScriptPos]
 	ld l, a
-	ld a, [wd089]
+	ld a, [wBattleScriptPos + 1]
 	ld h, a
 	ld a, [hli]
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, l
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, h
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	pop af
 	rst Bankswitch
 	ret

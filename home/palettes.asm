@@ -4,12 +4,12 @@ LoadSpritePalette::
 	push af
 
 ; Get palette address
-	ld a, BANK(unk_004_4337)
+	ld a, BANK(Pointers_004_4337)
 	rst Bankswitch
 	ld hl, 4
 	add hl, bc
 	ld a, [hl]
-	ld de, unk_004_4337
+	ld de, Pointers_004_4337
 	ld l, a
 	ld h, 0
 	add hl, hl

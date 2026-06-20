@@ -21,7 +21,7 @@ Func_00a_4000::
 
 ; Load textbox border tiles
 	call DelayFrame
-	ld hl, unk_00a_4523
+	ld hl, GFX_00a_4523
 	ld de, $8a00
 	ld bc, $70
 	call CopyBytesVRAM
@@ -39,7 +39,7 @@ Func_00a_4000::
 	call DelayFrame
 	call LoadTextFaceExtraSprites
 	call DelayFrame
-	ld hl, unk_00a_42e3
+	ld hl, BGMap_00a_42e3
 	ld a, l
 	ld [wdcd6], a
 	ld a, h
@@ -78,16 +78,16 @@ Func_00a_4063::
 	inc de
 	dec c
 	jr nz, .asm_4086
-	ld hl, unk_00a_4523
+	ld hl, GFX_00a_4523
 	ld de, $8A00
 	ld bc, $0070
 	call CopyBytesVRAM
 	call DelayFrame
-	ld hl, unk_00a_4423
+	ld hl, GFX_00a_4423
 	ld de, $8E00
 	ld bc, Start
 	call CopyBytesVRAM
-	ld hl, unk_00a_4383
+	ld hl, BGMap_00a_4383
 	ld a, l
 	ld [wdcd6], a
 	ld a, h
@@ -132,7 +132,7 @@ Func_00a_40b3::
 	ld [wcbd0], a
 	ret
 
-unk_00a_40f9:
+Func_00a_40f9:
 	ld a, $13
 	ld [wd1e4], a
 .asm_40fe
@@ -175,7 +175,7 @@ unk_00a_40f9:
 	jr nz, .asm_40fe
 	ret
 
-unk_00a_4145:
+Func_00a_4145:
 	call Func_00a_41a3
 	call Func_00a_423b
 	ld a, [wTextboxPos]
@@ -231,7 +231,7 @@ Func_00a_4178::
 	ret
 
 Func_00a_41a3:
-	ld de, unk_00a_42e3
+	ld de, BGMap_00a_42e3
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
@@ -447,11 +447,12 @@ Func_00a_4295:
 	jr nz, .asm_42cf
 	ret
 
+; TODO: indexed data table, classify type
 unk_00a_42db:
 	db $a3, $a4, $a4, $a4, $a4, $a4, $a4, $a6
 
-; TODO: screen layout (tilemap/attr) copied to VRAM; sub-tables at unk_00a_4383/4423
-unk_00a_42e3:
+; TODO: screen layout (tilemap/attr) copied to VRAM; sub-tables at BGMap_00a_4383/4423
+BGMap_00a_42e3:
 	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2
 	db $a2, $a2, $a2, $a3, $a4, $f0, $f1, $f2, $f3, $e0, $e2, $e4, $e6, $e8, $ea, $ec
 	db $ee, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $f4, $f5, $f6, $f7, $e1, $e3, $e5
@@ -463,7 +464,7 @@ unk_00a_42e3:
 	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a5, $a2, $a2, $a2
 	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a6
 ; TODO: pointer/data target loaded via ld hl (stored to wdcd6)
-unk_00a_4383:
+BGMap_00a_4383:
 	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2
 	db $a2, $a2, $a2, $a3, $a4, $e0, $e2, $e4, $e6, $e8, $ea, $ec, $ee, $a0, $a0, $a0
 	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $e1, $e3, $e5, $e7, $e9, $eb, $ed
@@ -475,7 +476,7 @@ unk_00a_4383:
 	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a5, $a2, $a2, $a2
 	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a6
 ; TODO: tilemap copied to VRAM $8E00
-unk_00a_4423:
+GFX_00a_4423:
 	db $11, $11, $11, $11, $1f, $1f, $11, $11, $21, $21, $01, $01, $ff, $ff, $00, $00
 	db $1f, $1f, $10, $10, $10, $10, $10, $10, $1f, $1f, $10, $10, $00, $00, $00, $00
 	db $00, $00, $10, $10, $f8, $f8, $00, $00, $00, $00, $04, $04, $fe, $fe, $10, $10
@@ -493,7 +494,7 @@ unk_00a_4423:
 	db $00, $00, $00, $00, $00, $00, $80, $80, $c0, $c0, $80, $80, $00, $00, $00, $00
 	db $80, $80, $c0, $c0, $80, $80, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 ; TODO: data/gfx block (zeros + tile-like bytes), exact use TBD
-unk_00a_4523:
+GFX_00a_4523:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $07, $03, $0d, $04, $1a, $09, $35, $13, $3b, $27, $27, $3f, $26, $3e
 	db $00, $00, $ff, $ff, $00, $ff, $00, $ff, $ff, $ff, $ff, $ff, $00, $00, $00, $00

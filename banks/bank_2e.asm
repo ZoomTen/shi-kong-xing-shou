@@ -1,8 +1,8 @@
 Func_02e_4000:
 	ld a, e
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, d
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	jr Func_02e_400a.asm_403c
 
 Func_02e_400a:
@@ -12,7 +12,7 @@ Func_02e_400a:
 	ld a, [wd9ea]
 	and a
 	jr z, .asm_401e
-	farcall unk_023_55fa
+	farcall Func_023_55fa
 	jr .asm_403c
 .asm_401e
 	ld de, wd9e2
@@ -25,7 +25,7 @@ Func_02e_400a:
 	ld d, a
 	farcall Func_01e_42e4
 	ld a, [wd988]
-	farcall unk_023_4000
+	farcall Func_023_4000
 .asm_403c
 	call Func_02e_6e42
 	xor a
@@ -49,7 +49,7 @@ Func_02e_400a:
 	ret
 .asm_406d
 	ld de, Mode_StateJumpTable
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -61,13 +61,13 @@ Func_02e_400a:
 Mode_StateJumpTable:
 	dr $b807c, $b811e
 Func_02e_411e:
-	call Func_13b7
+	call AdvanceBattleScriptMode
 	ret
 
 Func_02e_4122:
-	farcall unk_02f_4008
+	farcall Func_02f_4008
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ld [wd98c], a
@@ -75,16 +75,16 @@ Func_02e_4122:
 
 Func_02e_4136:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld b, a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld c, a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld d, a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld e, a
 	push de
 	ld de, wd1a0
@@ -114,7 +114,7 @@ Func_02e_4136:
 .asm_4172
 	push hl
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	pop hl
 	ld [hl], a
 	jr .asm_418c
@@ -130,14 +130,14 @@ Func_02e_4136:
 	call Func_02e_411e
 .asm_418c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4191:
 	ld a, $01
 	ld [hFFC6], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ld [wd98b], a
@@ -155,7 +155,7 @@ Func_02e_41af:
 	ld a, $01
 	ld [wd98b], a
 	ld a, $04
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_41c3
 	ld a, [wd98d]
@@ -195,24 +195,24 @@ Func_02e_41af:
 	ret
 .asm_41fb
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ret
 Func_02e_4203:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98d], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98e], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98c], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ret
 
@@ -221,23 +221,23 @@ Func_02e_4231:
 	and a
 	jr nz, .asm_426a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98d], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98c], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
 	ld [wd98b], a
 	xor a
 	ld [wd98e], a
 	ld a, $05
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_426a
 	ld a, [wd98d]
@@ -396,7 +396,7 @@ Func_02e_4231:
 	ret
 .asm_4375
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98e], a
 	ret
@@ -443,15 +443,15 @@ Func_02e_43a9:
 	ld a, $2F
 	call PlaySound
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98c], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
 	ld [wd98b], a
 	ld a, $06
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_43d1
 	ldh a, [hFadeFrameCounter]
@@ -498,7 +498,7 @@ Func_02e_43a9:
 	ret
 .asm_441f
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98e], a
 	ld [wd98c], a
@@ -509,10 +509,10 @@ Func_02e_442d:
 	and a
 	jr nz, .asm_4468
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld de, Mode_SoundTbl_4478
 	ld a, [wd98f]
@@ -525,7 +525,7 @@ Func_02e_442d:
 	ld a, $01
 	ld [wd98b], a
 	ld a, $07
-	ld [wd989], a
+	ld [wBattleState], a
 	xor a
 	ld [wd98e], a
 	ret
@@ -595,7 +595,7 @@ Func_02e_4489:
 	ld a, $01
 	ld [wd98e], a
 	ld a, $07
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_44de
 	ldh a, [hFadeFrameCounter]
@@ -640,7 +640,7 @@ Func_02e_4489:
 	xor a
 	ld [wd98e], a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4523:
@@ -712,7 +712,7 @@ Func_02e_4523:
 	xor a
 	ld [wd98e], a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
 	ld [hli], a
@@ -794,7 +794,7 @@ Func_02e_45a0:
 	ld [wd98e], a
 	ld [wd98b], a
 	ld [wd98c], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4621:
@@ -839,7 +839,7 @@ Func_02e_4621:
 	ld a, $01
 	ld [wd98e], a
 	ld a, $07
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_466d
 	ldh a, [hFadeFrameCounter]
@@ -880,7 +880,7 @@ Func_02e_4621:
 	xor a
 	ld [wd98e], a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
 	ld [hli], a
@@ -934,7 +934,7 @@ Func_02e_46b0:
 	ld a, $01
 	ld [wd98e], a
 	ld a, $07
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_4702
 	ldh a, [hFadeFrameCounter]
@@ -994,7 +994,7 @@ Func_02e_46b0:
 	xor a
 	ld [wd98e], a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
 	ld [hli], a
@@ -1010,13 +1010,13 @@ Func_02e_476d:
 	ld a, $3D
 	call PlaySound
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $08
-	ld [wd989], a
+	ld [wBattleState], a
 	ld a, [wd986]
 	and a
 	jr nz, .asm_47be
@@ -1105,7 +1105,7 @@ Func_02e_476d:
 	ret
 .asm_4834
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	di
@@ -1152,7 +1152,7 @@ Func_02e_48c9:
 	ld a, $01
 	ld [wd98b], a
 	ld a, $09
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_48dd
 	ld a, [wd98d]
@@ -1190,7 +1190,7 @@ Func_02e_48c9:
 	ret
 .asm_4914
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98c], a
 	ld [wd98e], a
@@ -1201,7 +1201,7 @@ Func_02e_4922:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_493b
-	ld a, [wd989]
+	ld a, [wBattleState]
 	and a
 	jr z, .asm_4941
 .asm_4931
@@ -1211,7 +1211,7 @@ Func_02e_4922:
 	ld b, a
 	jr .asm_4949
 .asm_493b
-	ld a, [wd989]
+	ld a, [wBattleState]
 	and a
 	jr nz, .asm_4931
 .asm_4941
@@ -1226,26 +1226,26 @@ Func_02e_4922:
 	set 5, a
 	ld [hl], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4956:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99e], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99c], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99d], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $01
 	ld [wd9a0], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4984:
@@ -1297,7 +1297,7 @@ Func_02e_4984:
 	ld [wd98b], a
 .asm_49eb
 	ld a, $0C
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_49f1
 	ld hl, wd1a0
@@ -1439,7 +1439,7 @@ Func_02e_4984:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -1500,7 +1500,7 @@ Func_02e_4af2:
 	ld [wd98b], a
 .asm_4b40
 	ld a, $0D
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_4b46
 	ldh a, [hFadeFrameCounter]
@@ -1613,22 +1613,22 @@ Func_02e_4af2:
 	ld [hl], $05
 	xor a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4bff:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wTempBank], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	call FarCopyBytes_vTiles0
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4c22:
@@ -1639,25 +1639,25 @@ Func_02e_4c22:
 	call Func_02e_411e
 	call Func_02e_4c3d
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_4c37
 	call Func_02e_411e
 	jp Func_02e_4136
 Func_02e_4c3d:
 	push de
-	ld a, [wd088]
+	ld a, [wBattleScriptPos]
 	ld e, a
-	ld a, [wd089]
+	ld a, [wBattleScriptPos + 1]
 	ld d, a
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld l, a
 	ld h, $00
 	add hl, de
 	ld a, l
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, h
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	pop de
 	ret
 
@@ -1704,7 +1704,7 @@ Func_02e_4c57:
 	ld [wd98b], a
 .asm_4caf
 	ld a, $10
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_4cb5
 	ld hl, wd1a0
@@ -1839,22 +1839,22 @@ Func_02e_4c57:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
 
 Func_02e_4d96:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99e], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $02
 	ld [wd9a0], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4db2:
@@ -1862,15 +1862,15 @@ Func_02e_4db2:
 	and a
 	jr nz, .asm_4dd5
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98e], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98c], a
 	ld a, $01
 	ld [wd98b], a
 	ld a, $12
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_4dd5
 	ld a, [wd98e]
@@ -1884,7 +1884,7 @@ Func_02e_4db2:
 	and a
 	ret nz
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98c], a
 	ld [wd98e], a
@@ -1929,7 +1929,7 @@ Func_02e_4df4:
 	ld [wd98b], a
 .asm_4e42
 	ld a, $13
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_4e48
 	ld hl, wd1a0
@@ -2016,7 +2016,7 @@ Func_02e_4df4:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -2024,7 +2024,7 @@ Func_02e_4df4:
 Func_02e_4eda:
 	call Func_02e_4ae7
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ret
@@ -2052,7 +2052,7 @@ Func_02e_4ee8:
 	ldh [hVRAMCopyHeight], a
 	call ClearBGMapBox
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4f20:
@@ -2075,17 +2075,17 @@ Func_02e_4f20:
 	farcall Func_02b_402b
 	farcall Func_02b_6abc
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4f59:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $03
 	ld [wd9a0], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_4f6c:
@@ -2093,13 +2093,13 @@ Func_02e_4f6c:
 	and a
 	jr nz, .asm_4fe1
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $18
-	ld [wd989], a
+	ld [wBattleState], a
 	ld a, [wd986]
 	and a
 	jr z, .asm_4fb8
@@ -2188,7 +2188,7 @@ Func_02e_4f6c:
 	ret
 .asm_502e
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	di
@@ -2229,12 +2229,12 @@ Func_02e_507d:
 	and a
 	jr nz, .asm_5097
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98e], a
 	ld a, $01
 	ld [wd98b], a
 	ld a, $19
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5097
 	ldh a, [hFadeFrameCounter]
@@ -2288,7 +2288,7 @@ Func_02e_507d:
 	ret nz
 	xor a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_50e7:
@@ -2296,10 +2296,10 @@ Func_02e_50e7:
 	and a
 	jr nz, .asm_50fb
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	ld a, $1A
-	ld [wd989], a
+	ld [wBattleState], a
 .asm_50fb
 	ld hl, wd100
 	ld a, [wd98b]
@@ -2378,7 +2378,7 @@ Func_02e_50e7:
 	cp $07
 	ret c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ret
 Mode_Tilemap_5179:
@@ -2387,10 +2387,10 @@ Mode_Tilemap_519d:
 	dr $b919d, $b91c1
 Func_02e_51c1:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98d], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, [wd986]
 	and a
@@ -2410,7 +2410,7 @@ Func_02e_51c1:
 	call LoadEnemyMonPic
 	farcall Func_026_4d47
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5200
 	ld a, [wd990]
@@ -2428,12 +2428,12 @@ Func_02e_51c1:
 	call LoadMonPic_vTiles90d0
 	farcall Func_026_4d1b
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5227:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -2447,39 +2447,39 @@ Func_02e_5227:
 	and a
 	jr nz, .asm_5263
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [de], a
 	inc de
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [de], a
 	inc de
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [de], a
 	ld a, $03
-	ld [wd989], a
+	ld [wBattleState], a
 	call Func_02e_4c3d
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5263
 	ld a, $03
-	ld [wd989], a
+	ld [wBattleState], a
 	call Func_02e_4c3d
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [de], a
 	inc de
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [de], a
 	inc de
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [de], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5287:
@@ -2487,29 +2487,29 @@ Func_02e_5287:
 	and a
 	jr nz, .asm_529b
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $1D
-	ld [wd989], a
+	ld [wBattleState], a
 .asm_529b
-	farcall unk_033_4000
+	farcall Func_033_4000
 	ld a, [wd98b]
 	inc a
 	ld [wd98b], a
 	cp $0A
 	ret c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ret
 
 Func_02e_52b3:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
-	farcall unk_02f_4000
+	farcall Func_02f_4000
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ld [wd98c], a
@@ -2552,7 +2552,7 @@ Func_02e_52d0:
 	ld [wd98b], a
 .asm_5315
 	ld a, $1F
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_531b
 	ld hl, wd1a0
@@ -2624,7 +2624,7 @@ Func_02e_52d0:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -2638,24 +2638,24 @@ Func_02e_5390:
 	and a
 	jr z, .asm_53bc
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
 	ld [wd98b], a
 	ld a, $20
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_53bc
 	ld a, $02
-	ld [wd989], a
+	ld [wBattleState], a
 	call Func_02e_4c3d
 	ld a, $01
 	ld [wd98b], a
 	ld a, $20
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_53cf
 	ld a, [wd98d]
@@ -2695,7 +2695,7 @@ Func_02e_5390:
 	ret
 .asm_5407
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ret
 
@@ -2730,7 +2730,7 @@ Func_02e_540f:
 	ld [wd98b], a
 .asm_5446
 	ld a, $21
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_544c
 	ld a, [wd98e]
@@ -2780,7 +2780,7 @@ Func_02e_540f:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98e], a
 	ret
@@ -2824,7 +2824,7 @@ Func_02e_549f:
 	ld [wd98b], a
 .asm_54ed
 	ld a, $22
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_54f3
 	ldh a, [hFadeFrameCounter]
@@ -2933,7 +2933,7 @@ Func_02e_549f:
 	ld [hl], $00
 	xor a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_55a3:
@@ -2941,13 +2941,13 @@ Func_02e_55a3:
 	and a
 	jr nz, .asm_55ca
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $23
-	ld [wd989], a
+	ld [wBattleState], a
 	xor a
 	ld [wd98e], a
 	ld a, $01
@@ -2967,7 +2967,7 @@ Func_02e_55a3:
 	cp $88
 	jr nz, .asm_55ea
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98e], a
 	ret
@@ -3063,7 +3063,7 @@ Func_02e_5601:
 	cp $20
 	ret c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	di
@@ -3098,7 +3098,7 @@ Func_02e_5601:
 .asm_56f0
 	farcall Func_02b_402b
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld a, [hSCX]
 	ld [wd9ab], a
 	ld [wWX], a
@@ -3146,7 +3146,7 @@ Func_02e_570d:
 	ld [wd98b], a
 .asm_575b
 	ld a, $25
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5761
 	ld hl, wd1a0
@@ -3216,7 +3216,7 @@ Func_02e_570d:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -3260,7 +3260,7 @@ Func_02e_57d8:
 	ld [wd98b], a
 .asm_5826
 	ld a, $26
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_582c
 	ld hl, wd1a0
@@ -3365,7 +3365,7 @@ Func_02e_57d8:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -3374,20 +3374,20 @@ Func_02e_58dd:
 	ld a, $01
 	ld [wd9ad], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd9ae], a
 	ret
 
 Func_02e_58ea:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
-	farcall unk_033_4438
+	farcall Func_033_4438
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5907:
@@ -3439,7 +3439,7 @@ Func_02e_592a:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ret
 
@@ -3478,17 +3478,17 @@ Func_02e_595c:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_598d:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $04
 	ld [wd9a0], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_59a0:
@@ -3586,7 +3586,7 @@ Func_02e_59a0:
 	cp $05
 	jr nz, .asm_5a50
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98c], a
 	call Func_02e_4ae7
@@ -3659,7 +3659,7 @@ Func_02e_5a71:
 	cp $20
 	ret c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98e], a
 	call Func_02e_4ae7
@@ -3671,10 +3671,10 @@ Func_02e_5af2:
 	and a
 	jr nz, .asm_5b08
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	ld a, $33
-	ld [wd989], a
+	ld [wBattleState], a
 	jr .asm_5b0d
 .asm_5b08
 	ldh a, [hFadeFrameCounter]
@@ -3758,7 +3758,7 @@ Func_02e_5af2:
 	cp $07
 	ret c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ret
 
@@ -3791,7 +3791,7 @@ Func_02e_5b8b:
 	ld [wd98b], a
 .asm_5bc0
 	ld a, $34
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5bc6
 	ld hl, wd1a0
@@ -3835,7 +3835,7 @@ Func_02e_5b8b:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -3869,7 +3869,7 @@ Func_02e_5c11:
 	ld [wd98b], a
 .asm_5c46
 	ld a, $35
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5c4c
 	ld hl, wd1a0
@@ -3913,7 +3913,7 @@ Func_02e_5c11:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -3947,7 +3947,7 @@ Func_02e_5c97:
 	ld [wd98b], a
 .asm_5ccc
 	ld a, $36
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5cd2
 	ld hl, wd1a0
@@ -3991,7 +3991,7 @@ Func_02e_5c97:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
@@ -4025,7 +4025,7 @@ Func_02e_5d1d:
 	ld [wd98b], a
 .asm_5d52
 	ld a, $37
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5d58
 	ld hl, wd1a0
@@ -4069,26 +4069,26 @@ Func_02e_5d1d:
 	ld hl, wd1a0
 	call Func_02e_4adf
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
 
 Func_02e_5da3:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $05
 	ld [wd9a0], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5db6:
 	xor a
 	ld [wd9ad], a
 	ld [wd9ae], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5dc1:
@@ -4103,13 +4103,13 @@ Func_02e_5dc1:
 	and a
 	jr nz, .asm_5de2
 	ld a, $03
-	ld [wd989], a
+	ld [wBattleState], a
 	xor a
 	ld [wd98c], a
 	ret
 .asm_5de2
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98c], a
 	ret
 
@@ -4144,7 +4144,7 @@ Func_02e_5dea:
 	ld [wd993], a
 .asm_5e21
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5e26:
@@ -4152,7 +4152,7 @@ Func_02e_5e26:
 	ld [wd9b5], a
 	farcall Func_02b_4098
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ld [wd98c], a
 	ld [wd98e], a
@@ -4178,7 +4178,7 @@ Func_02e_5e26:
 	ld a, $01
 	ld [hFFC6], a
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ld a, $05
@@ -4196,34 +4196,34 @@ Func_02e_5e76:
 	call Func_02e_4c3d
 .asm_5e86
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5e8b:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld e, a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld d, a
 	farcall Func_4d_5ed8
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 
 Func_02e_5ea4:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	farcall Func_04d_4000
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_5ec1:
-	farcall unk_01e_6acd
+	farcall Func_01e_6acd
 	ld a, d
 	and a
 	jr z, .asm_5f00
@@ -4241,9 +4241,9 @@ Func_02e_5ec1:
 	cp $14
 	jr nc, .asm_5eef
 .asm_5ee4
-	farcall unk_023_56de
+	farcall Func_023_56de
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5eef
 	ld a, $5A
@@ -4252,9 +4252,9 @@ Func_02e_5ec1:
 	call .asm_5f0b
 	call .asm_5f0b
 .asm_5f00
-	farcall unk_023_56f3
+	farcall Func_023_56f3
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5f0b
 	ld c, $20
@@ -4265,7 +4265,7 @@ Func_02e_5ec1:
 	ret
 Func_02e_5f14:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, [wd986]
 	and a
@@ -4278,7 +4278,7 @@ Func_02e_5f14:
 	call LoadEnemyMonPic
 	farcall Func_026_4d47
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5f3a
 	ld a, [wd990]
@@ -4289,15 +4289,15 @@ Func_02e_5f14:
 	call LoadMonPic_vTiles90d0
 	farcall Func_026_4d1b
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_5f51:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd988], a
-	farcall unk_02f_4008
+	farcall Func_02f_4008
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	ld [wd98c], a
@@ -4315,7 +4315,7 @@ Func_02e_5f6e:
 	call Func_02e_4c3d
 .asm_5f84
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_5f89:
 	call AdvanceRNG
@@ -4325,7 +4325,7 @@ Func_02e_5f89:
 	call Func_02e_411e
 	call Func_02e_4c3d
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_5f9e
 	call Func_02e_411e
@@ -4335,16 +4335,16 @@ Func_02e_5fa4:
 	and a
 	jr nz, .asm_5fd6
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	farcall Func_030_45e2
 	ld a, $01
 	ld [wd98b], a
 	ld a, $45
-	ld [wd989], a
+	ld [wBattleState], a
 	xor a
 	ld [wd98e], a
 	ld a, $34
@@ -4368,13 +4368,13 @@ Func_02e_5fe6:
 	and a
 	jr nz, .asm_605b
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98f], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $46
-	ld [wd989], a
+	ld [wBattleState], a
 	ld a, [wd986]
 	and a
 	jr z, .asm_6032
@@ -4463,7 +4463,7 @@ Func_02e_5fe6:
 	ret
 .asm_60a8
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wd98b], a
 	di
@@ -4500,13 +4500,13 @@ Func_02e_5fe6:
 	ret
 Func_02e_60f7:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld [wd98d], a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld e, a
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	ld d, a
 	ld a, [wd98d]
 	push de
@@ -4606,10 +4606,10 @@ Func_02e_617f:
 	ld a, $01
 	ld [wd98b], a
 	ld a, $48
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_6193
-	farcall unk_02d_6e2c
+	farcall Func_02d_6e2c
 	ret
 Func_02e_619a:
 	ld a, [wd98b]
@@ -4619,10 +4619,10 @@ Func_02e_619a:
 	ld a, $01
 	ld [wd98b], a
 	ld a, $47
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_61ae
-	farcall unk_02d_6d77
+	farcall Func_02d_6d77
 	ret
 Func_02e_61b5:
 	ld a, [wd98b]
@@ -4631,7 +4631,7 @@ Func_02e_61b5:
 	ld a, [wd9b5]
 	ld [wd98f], a
 	ld a, $49
-	ld [wd989], a
+	ld [wBattleState], a
 .asm_61c6
 	ld hl, wd100
 	ld a, [wd98b]
@@ -4710,39 +4710,39 @@ Func_02e_61b5:
 	cp $07
 	ret c
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld [wd98b], a
 	ret
 Func_02e_6244:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_6249:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_624e:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_6253:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_6258:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_625d:
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Func_02e_6262:
 	call Func_02e_411e
-	ld a, [wd989]
+	ld a, [wBattleState]
 	call PlaySound
 	xor a
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 Jumptable_02e_6270:
 	dr $ba270, $ba27e
@@ -4788,7 +4788,7 @@ Func_02e_627e:
 	ld a, $01
 	ld [wd98e], a
 	ld a, $45
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_62ca
 	ldh a, [hFadeFrameCounter]
@@ -4808,7 +4808,7 @@ Func_02e_627e:
 	xor a
 	ld [wd98e], a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
 	ld [hli], a
@@ -4857,7 +4857,7 @@ Func_02e_62ef:
 	ld a, $01
 	ld [wd98e], a
 	ld a, $45
-	ld [wd989], a
+	ld [wBattleState], a
 	ret
 .asm_633b
 	ldh a, [hFadeFrameCounter]
@@ -4877,7 +4877,7 @@ Func_02e_62ef:
 	xor a
 	ld [wd98e], a
 	ld [wd98b], a
-	ld [wd989], a
+	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
 	ld [hli], a
@@ -4901,6 +4901,7 @@ Func_02e_6e42:
 	dec c
 	jr nz, .asm_6e48
 	ret
+; TODO: unreferenced data block, classify type
 unk_02e_6e4d:
 	dr $bae4d, $bae4d
 

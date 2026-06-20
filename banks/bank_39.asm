@@ -1,5 +1,7 @@
-unk_039_4000:
-	dr $e4000, $e41fb
+GFX_039_4000:
+	dr $e4000, $e40a0
+Func_039_40a0:
+	dr $e40a0, $e41fb
 ; TODO
 asm_039_41fb:
 	dr $e41fb, $e422b
@@ -144,15 +146,15 @@ Func_039_4892::
 	ld [wSelectedOption], a
 	ld [wTextboxPos], a
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, [$7FFF]
-	ld [wd9f1], a
+	ld [wBattleScriptBank], a
 .asm_48af
 	call DelayFrame
 	ld a, [hFFC6]
 	and a
 	jr nz, .asm_48e9
-	ld a, [wd087]
+	ld a, [wBattleScriptState]
 	cp $01
 	jr z, .asm_48c8
 	cp $02
@@ -167,11 +169,11 @@ Func_039_4892::
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wd088], a
+	ld [wBattleScriptPos], a
 	ld a, [hli]
-	ld [wd089], a
+	ld [wBattleScriptPos + 1], a
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	jr .asm_48af
 .asm_48e1
 	farcall Func_025_424e
@@ -263,9 +265,9 @@ Func_039_497c:
 	ret
 .asm_49fb
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wdc9e], a
 	ld [wSelectedOption], a
 	ld a, $01
@@ -276,9 +278,9 @@ Func_039_497c:
 .asm_4a13
 	call Func_039_4879
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -288,21 +290,21 @@ Func_039_497c:
 .asm_4a2b
 	call Func_039_4879
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld [wdc9e], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
 	ldh [hFFC5], a
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4ead)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4ead)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 .asm_4a52
 	ld a, [$DC9C]
@@ -315,9 +317,9 @@ Func_039_497c:
 	jr z, .asm_4a7e
 	call Func_039_4879
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld [wdc9e], a
 	ld a, $01
@@ -328,33 +330,33 @@ Func_039_497c:
 .asm_4a7e
 	call Func_039_4879
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld [wdc9e], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
 	ldh [hFFC5], a
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4e87)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4e87)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ret
 .asm_4aa5
 	ld a, $19
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4ac0)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4ac0)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -451,13 +453,13 @@ Func_039_4afd:
 	ld a, [hli]
 	ld [bc], a
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4ca4)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4ca4)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 .asm_4bb0
@@ -492,23 +494,23 @@ Func_039_4afd:
 	cp $7E
 	jr z, .asm_4bff
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	ld a, $02
 	ldh [hFFC5], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
 .asm_4bff
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4c8b)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4c8b)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -519,13 +521,13 @@ Func_039_4afd:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4c38)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4c38)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	xor a
@@ -599,21 +601,21 @@ Func_039_4cda:
 	cp $14
 	jr nc, .asm_4d52
 	call Func_039_4deb
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4d92)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4d92)
 	jr .asm_4d5a
 .asm_4d52
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4dc1)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4dc1)
 .asm_4d5a
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -627,13 +629,13 @@ Func_039_4cda:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_4de2)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_4de2)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ldh [hFFC5], a
@@ -833,13 +835,13 @@ Func_039_4ec0:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_504a)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_504a)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -883,9 +885,9 @@ Func_039_4ec0:
 .asm_4fa8
 	call Func_039_4879
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $04
 	ldh [hFFC5], a
 	ld a, $01
@@ -903,9 +905,9 @@ Func_039_4ec0:
 	ret z
 	call Func_039_4879
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $06
 	ldh [hFFC5], a
 	ld a, $01
@@ -921,9 +923,9 @@ Func_039_4ec0:
 	and a
 	jr nz, .asm_5000
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $09
 	ldh [hFFC5], a
 	ld a, $01
@@ -931,13 +933,13 @@ Func_039_4ec0:
 	ret
 .asm_5000
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_503b)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_503b)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -948,13 +950,13 @@ Func_039_5016:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_504c)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_504c)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
 	ld a, $01
 	ldh [hFFC6], a
@@ -1063,13 +1065,13 @@ Func_039_5163:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_5241)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_5241)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -1080,9 +1082,9 @@ Func_039_5163:
 	ld a, $11
 	call PlaySound
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $05
 	ldh [hFFC5], a
 	ld a, $01
@@ -1095,13 +1097,13 @@ Func_039_5163:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_524c)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_524c)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $03
 	ldh [hFFC5], a
 	ld a, $01
@@ -1186,13 +1188,13 @@ Func_039_529f:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_536d)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_536d)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -1203,9 +1205,9 @@ Func_039_529f:
 	ld a, $11
 	call PlaySound
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $05
 	ldh [hFFC5], a
 	ld a, $01
@@ -1218,13 +1220,13 @@ Func_039_529f:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_537c)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_537c)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $04
 	ldh [hFFC5], a
 	ld a, $01
@@ -1299,21 +1301,21 @@ Func_039_53ab:
 	and a
 	jr nz, .asm_5427
 	call Func_039_5490
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_5470)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_5470)
 	jr .asm_542f
 .asm_5427
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_5484)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_5484)
 .asm_542f
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -1327,13 +1329,13 @@ Func_039_53ab:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_5468)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_5468)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -1468,13 +1470,13 @@ Func_039_5522:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_55dd)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_55dd)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -1515,9 +1517,9 @@ Func_039_5522:
 	ld [wd1f4], a
 	call Func_039_4879
 	ld a, $01
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $08
@@ -1582,14 +1584,14 @@ Func_039_5604:
 	ld a, $11
 	call PlaySound
 	call Func_039_56de
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_56bd)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_56bd)
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $07
@@ -1605,13 +1607,13 @@ Func_039_5604:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_56b5)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_56b5)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $07
@@ -1719,14 +1721,14 @@ Func_039_574d:
 	ld a, $11
 	call PlaySound
 	call Func_039_5940
-	ld hl, wd088
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_57f5)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_57f5)
 	ld a, $02
-	ld [wd087], a
+	ld [wBattleScriptState], a
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -1740,13 +1742,13 @@ Func_039_574d:
 	ld a, $11
 	call PlaySound
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_5809)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_5809)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ld a, $03
@@ -1822,13 +1824,13 @@ Func_039_5826:
 	ret
 .asm_5898
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_58dd)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_58dd)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
 	ret
@@ -1837,13 +1839,13 @@ Func_039_5826:
 	and $03
 	ret z
 	ld a, $02
-	ld [wd087], a
-	ld hl, wd088
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
 	ld [hl], LOW(ScreenScript_39_58f5)
 	inc hl
 	ld [hl], HIGH(ScreenScript_39_58f5)
 	xor a
-	ld [wd08a], a
+	ld [wBattleScriptByte], a
 	ld a, $03
 	ldh [hFFC5], a
 	ld a, $01

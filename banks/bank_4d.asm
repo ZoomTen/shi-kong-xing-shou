@@ -22,6 +22,7 @@ Func_4d_5ed8:
 	ld b, $10
 	call LoadPalettes_OCPD
 	ret
+; TODO: unreferenced data block, classify type
 unk_4d_5ee2:
 	dr $135ee2, $135f3a
 Func_4d_5f3a:

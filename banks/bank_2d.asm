@@ -96,7 +96,7 @@ BattleTextPointers:
 	dw BattleText_46cf
 
 ; TODO: battle message text; control codes <NAME>/<NUM>/<ITEM>/<choice> are placeholders pending menu-text macros
-	; "辰虎：師兄﹐一較高下吧﹗"
+; TEXT -> 辰虎：師兄﹐一較高下吧﹗
 BattleText_4216:
 	db $f2, $a4, $a5, $a6, $a7, $a8, $f1, $33, $f0, $1a, $f2, $a9, $f1, $9e, $f2, $aa
 	db $ab, $f1, $35, $ed, $f2, $ac, $f1, $06, $f2, $a6, $ad, $f0, $32, $f2, $33, $ae
@@ -104,384 +104,384 @@ BattleText_4216:
 	db $35, $ed, $f2, $ac, $f1, $06, $f2, $a6, $e7, $f2, $56, $4a, $f1, $51, $64, $53
 	db $e2
 
-	; "<NAME9>：<NAME>﹐去吧﹗"
+; TEXT -> <NAME9>：<NAME>﹐去吧﹗
 BattleText_4257:
 	db $e9, $f2, $a6, $e7, $f1, $33, $f2, $bc, $ab, $f1, $35, $e2
 
-	; "<NAME9>：輪到你了﹐<NAME>﹗"
+; TEXT -> <NAME9>：輪到你了﹐<NAME>﹗
 BattleText_4263:
 	db $e9, $f2, $a6, $f2, $b7, $f1, $62, $f2, $4a, $f1, $64, $33, $e7, $f1, $35, $e2
 
-	; "<NAME9>：<NAME>﹐就靠你了﹗"
+; TEXT -> <NAME9>：<NAME>﹐就靠你了﹗
 BattleText_4273:
 	db $e9, $f2, $a6, $e7, $f1, $33, $f2, $d7, $f2, $b8, $4a, $f1, $64, $35, $e2
 
-	; "<NAME9>：加油吧﹐<NAME>﹗"
+; TEXT -> <NAME9>：加油吧﹐<NAME>﹗
 BattleText_4282:
 	db $e9, $f2, $a6, $f2, $2b, $b9, $ab, $f1, $33, $e7, $35, $e2
 
-	; "<NAME9>：看我的厲害⚬<NAME>﹖﹐去吧﹗"
+; TEXT -> <NAME9>：看我的厲害⚬<NAME>﹖﹐去吧﹗
 BattleText_428e:
 	db $e9, $f2, $a6, $f2, $56, $ad, $f1, $51, $f2, $ba, $bb, $f1, $53, $e7, $f1, $5d
 	db $33, $f2, $bc, $ab, $f1, $35, $e2
 
-	; "<NAME9>：做的不錯﹐<NAME>回來吧﹗"
+; TEXT -> <NAME9>：做的不錯﹐<NAME>回來吧﹗
 BattleText_42a5:
 	db $e9, $f2, $a6, $f2, $bd, $f1, $51, $f0, $32, $f2, $be, $f1, $33, $e7, $f1, $19
 	db $f2, $bf, $ab, $f1, $35, $ed
 
-	; "<NAME9>：算了～回來吧﹐<NAME>﹗"
+; TEXT -> <NAME9>：算了～回來吧﹐<NAME>﹗
 BattleText_42bb:
 	db $e9, $f2, $a6, $f2, $c0, $f1, $64, $f2, $1f, $f1, $19, $f2, $bf, $ab, $f1, $33
 	db $e7, $f1, $35, $e2
 
-	; "<NAME9>：危險﹗回來吧﹐<NAME>﹗"
+; TEXT -> <NAME9>：危險﹗回來吧﹐<NAME>﹗
 BattleText_42cf:
 	db $e9, $f2, $a6, $f2, $c1, $c2, $f1, $35, $19, $f2, $bf, $ab, $f1, $33, $e7, $f1
 	db $35, $e2
 
-	; "<NAME>的攻擊～<choice>"
+; TEXT -> <NAME>的攻擊～<choice>
 BattleText_42e1:
 	db $e7, $f1, $51, $f0, $24, $07, $f2, $1f, $e6, $f2, $1f, $f1, $35, $ed
 
-	; "<NAME>出招了～<choice>"
+; TEXT -> <NAME>出招了～<choice>
 BattleText_42ef:
 	db $e7, $f2, $0a, $c3, $f1, $64, $f2, $1f, $e6, $f2, $1f, $f1, $35, $ed
 
-	; "<NAME>使出了密技～<choice>"
+; TEXT -> <NAME>使出了密技～<choice>
 BattleText_42fd:
 	db $e7, $f1, $3f, $f2, $0a, $f1, $64, $f2, $1e, $f1, $54, $f2, $1f, $e6, $f2, $1f
 	db $f1, $35, $ed
 
-	; "<NAME>法力聚集了﹗<choice>"
+; TEXT -> <NAME>法力聚集了﹗<choice>
 BattleText_4310:
 	db $e7, $f0, $bb, $19, $f2, $c4, $f0, $1b, $f1, $64, $35, $e6, $f2, $1f, $f1, $35
 	db $ed
 
-	; "<NAME>全心的攻擊～<choice>"
+; TEXT -> <NAME>全心的攻擊～<choice>
 BattleText_4321:
 	db $e7, $f0, $18, $f2, $c5, $f1, $51, $f0, $24, $07, $f2, $1f, $e6, $f2, $1f, $f1
 	db $35, $ed
 
-	; "<NAME>躲過了⋯"
+; TEXT -> <NAME>躲過了⋯
 BattleText_4333:
 	db $e7, $f2, $c6, $b1, $f1, $64, $f2, $c7, $ed
 
-	; "沒有命中⋯"
+; TEXT -> 沒有命中⋯
 BattleText_433c:
 	db $f2, $c8, $f1, $65, $f0, $4f, $29, $f2, $c7, $ed
 
-	; "<NAME>似乎躲開了﹗"
+; TEXT -> <NAME>似乎躲開了﹗
 BattleText_4346:
 	db $e7, $f2, $25, $c9, $c6, $0b, $f1, $64, $35, $ed
 
-	; "被<NAME>識破了﹗"
+; TEXT -> 被<NAME>識破了﹗
 BattleText_4350:
 	db $f2, $60, $e7, $f2, $ca, $f0, $0c, $f1, $64, $35, $ed
 
-	; "對<NAME>起不了任何作用﹗"
+; TEXT -> 對<NAME>起不了任何作用﹗
 BattleText_435b:
 	db $f2, $07, $e7, $f2, $cb, $f0, $32, $f1, $64, $f2, $3d, $3e, $cc, $f1, $40, $35
 	db $ed
 
-	; "效果非常好﹗"
+; TEXT -> 效果非常好﹗
 BattleText_436c:
 	db $f1, $7f, $7b, $f2, $69, $40, $cd, $f1, $35, $ed
 
-	; "效果很好﹗"
+; TEXT -> 效果很好﹗
 BattleText_4376:
 	db $f1, $7f, $7b, $cc, $f2, $cd, $f1, $35, $ed
 
-	; "效果普通﹗"
+; TEXT -> 效果普通﹗
 BattleText_437f:
 	db $f1, $7f, $7b, $f2, $a3, $f0, $89, $f1, $35, $ed
 
-	; "效果不好﹗"
+; TEXT -> 效果不好﹗
 BattleText_4389:
 	db $f1, $7f, $7b, $f0, $32, $f2, $cd, $f1, $35, $ed
 
-	; "<NAME>被涷傷了﹗"
+; TEXT -> <NAME>被涷傷了﹗
 BattleText_4393:
 	db $e7, $f2, $60, $f1, $de, $f0, $2b, $f1, $64, $35, $ed
 
-	; "<NAME>被灼傷了﹗"
+; TEXT -> <NAME>被灼傷了﹗
 BattleText_439e:
 	db $e7, $f2, $60, $d2, $f0, $2b, $f1, $64, $35, $ed
 
-	; "<NAME>中毒了﹗"
+; TEXT -> <NAME>中毒了﹗
 BattleText_43a8:
 	db $e7, $f0, $29, $97, $f1, $64, $35, $ed
 
-	; "<NAME>混亂了﹗"
+; TEXT -> <NAME>混亂了﹗
 BattleText_43b0:
 	db $e7, $f2, $d3, $f0, $88, $f1, $64, $35, $ed
 
-	; "<NAME>睡著了﹗"
+; TEXT -> <NAME>睡著了﹗
 BattleText_43b9:
 	db $e7, $f0, $57, $f2, $1c, $f1, $64, $35, $ed
 
-	; "<NAME>嚇了一跳﹗"
+; TEXT -> <NAME>嚇了一跳﹗
 BattleText_43c2:
 	db $e7, $f2, $d4, $f1, $64, $f0, $1a, $f2, $d5, $f1, $35, $ed
 
-	; "<NAME>麻痺了﹗"
+; TEXT -> <NAME>麻痺了﹗
 BattleText_43ce:
 	db $e7, $f0, $cd, $ce, $f1, $64, $35, $ed
 
-	; "<NAME>的防禦力下降了﹗"
+; TEXT -> <NAME>的防禦力下降了﹗
 BattleText_43d6:
 	db $e7, $f1, $51, $f0, $0a, $0b, $19, $f2, $aa, $05, $f1, $64, $35, $ed
 
-	; "<NAME>的命中率下降了﹗"
+; TEXT -> <NAME>的命中率下降了﹗
 BattleText_43e4:
 	db $e7, $f1, $51, $f0, $4f, $29, $f1, $cd, $f2, $aa, $05, $f1, $64, $35, $ed
 
-	; "<NAME>的速度下降了﹗"
+; TEXT -> <NAME>的速度下降了﹗
 BattleText_43f3:
 	db $e7, $f1, $51, $70, $71, $f2, $aa, $05, $f1, $64, $35, $ed
 
-	; "<NAME>將攻擊反彈回去了﹗"
+; TEXT -> <NAME>將攻擊反彈回去了﹗
 BattleText_43ff:
 	db $e7, $f2, $8a, $f0, $24, $07, $87, $13, $f1, $19, $f2, $bc, $f1, $64, $35, $ed
 
-	; "<NAME>不知怎麼回事的攻擊了自己﹗"
+; TEXT -> <NAME>不知怎麼回事的攻擊了自己﹗
 BattleText_440f:
 	db $e7, $f0, $32, $f2, $b3, $ce, $cf, $f1, $19, $f2, $d6, $f1, $51, $f0, $24, $07
 	db $f1, $64, $f2, $6b, $6c, $f1, $35, $ed
 
-	; "<NAME>嚇一跳﹐而忘了攻擊﹗"
+; TEXT -> <NAME>嚇一跳﹐而忘了攻擊﹗
 BattleText_4427:
 	db $e7, $f2, $d4, $f0, $1a, $f2, $d5, $f1, $33, $d2, $59, $64, $f0, $24, $07, $f1
 	db $35, $ed
 
-	; "<NAME>還沒有醒來⋯"
+; TEXT -> <NAME>還沒有醒來⋯
 BattleText_4439:
 	db $e7, $f2, $65, $c8, $f1, $65, $f2, $36, $bf, $c7, $ed
 
-	; "<NAME>醒過來了﹗"
+; TEXT -> <NAME>醒過來了﹗
 BattleText_4444:
 	db $e7, $f2, $36, $b1, $bf, $f1, $64, $35, $ed
 
-	; "命中了<NAME>的要害﹗﹗"
+; TEXT -> 命中了<NAME>的要害﹗﹗
 BattleText_444d:
 	db $f0, $4f, $29, $f1, $64, $e7, $f1, $51, $58, $f2, $bb, $f1, $35, $35, $ed
 
-	; "辰虎：師兄﹐這就是你的程度嗎﹖"
+; TEXT -> 辰虎：師兄﹐這就是你的程度嗎﹖
 BattleText_445c:
 	db $f2, $a4, $a5, $a6, $a7, $a8, $f1, $33, $f2, $57, $d7, $f1, $43, $f2, $4a, $f1
 	db $51, $f2, $d8, $f1, $71, $5c, $5d, $ed, $f0, $16, $f4, $23, $f1, $c6, $f2, $a6
 	db $f1, $c8, $f2, $c7, $f1, $c8, $f0, $d8, $f1, $35, $ed
 
-	; "戰鬥勝利了﹗"
+; TEXT -> 戰鬥勝利了﹗
 BattleText_4487:
 	db $f2, $03, $f0, $73, $f2, $d9, $f1, $7a, $64, $35, $ed
 
-	; "辰虎：可惡﹗師兄﹐我會再努力的﹗"
+; TEXT -> 辰虎：可惡﹗師兄﹐我會再努力的﹗
 BattleText_4492:
 	db $f2, $a4, $a5, $a6, $f1, $c8, $f0, $d8, $f1, $35, $f2, $a7, $a8, $f1, $33, $f2
 	db $ad, $33, $da, $db, $f0, $19, $f1, $51, $35, $ed
 
-	; "得到<NUM>點經驗值"
+; TEXT -> 得到<NUM>點經驗值
 BattleText_44ac:
 	db $f2, $dc, $f1, $62, $e1, $f1, $b5, $73, $74, $75, $ed
 
-	; "得到<NUM>元"
+; TEXT -> 得到<NUM>元
 BattleText_44b7:
 	db $f2, $dc, $f1, $62, $e1, $f1, $b4, $ed
 
-	; "<NAME>升級了﹗"
+; TEXT -> <NAME>升級了﹗
 BattleText_44bf:
 	db $e7, $f2, $dd, $17, $f1, $64, $35, $e2
 
-	; "<getchoice>"
+; TEXT -> <getchoice>
 BattleText_44c7:
 	db $e5, $f1, $45, $46, $33, $f0, $4b, $f2, $de, $f1, $7f, $40, $f2, $1f, $ed
 
-	; "<NAME>復活﹐並回復"
+; TEXT -> <NAME>復活﹐並回復
 BattleText_44d6:
 	db $e7, $f1, $1a, $df, $33, $f2, $00, $f1, $19, $1a, $ed, $f1, $ad, $b2, $d6, $51
 	db $ce, $f0, $19, $f1, $53, $ed
 
-	; "使用～<ITEM>"
+; TEXT -> 使用～<ITEM>
 BattleText_44ec:
 	db $f1, $3f, $40, $f2, $1f, $e8, $ed
 
-	; "使用道具"
+; TEXT -> 使用道具
 BattleText_44f3:
 	db $f1, $3f, $40, $2c, $2d, $ed
 
-	; "提升<NAME>點魔禦力"
+; TEXT -> 提升<NAME>點魔禦力
 BattleText_44f9:
 	db $f1, $d4, $f2, $dd, $e7, $f1, $b5, $72, $f0, $0b, $19, $ed
 
-	; "<NAME>學到了新技巧～<choice>"
+; TEXT -> <NAME>學到了新技巧～<choice>
 BattleText_4505:
 	db $e7, $f1, $60, $62, $64, $63, $54, $55, $f2, $1f, $e6, $e2
 
-	; "效果不錯﹗"
+; TEXT -> 效果不錯﹗
 BattleText_4511:
 	db $f1, $7f, $7b, $f0, $32, $f2, $be, $f1, $35, $ed
 
-	; "效果還可以﹗"
+; TEXT -> 效果還可以﹗
 BattleText_451b:
 	db $f1, $7f, $7b, $f2, $65, $f1, $c8, $cb, $35, $ed
 
-	; "<NAME>忍耐中"
+; TEXT -> <NAME>忍耐中
 BattleText_4525:
 	db $e7, $f0, $21, $22, $29, $ed
 
-	; "<NAME>忍無可忍"
+; TEXT -> <NAME>忍無可忍
 BattleText_452b:
 	db $e7, $f0, $21, $76, $f1, $c8, $f0, $21, $ed
 
-	; "<NAME>的防禦力提昇了﹗"
+; TEXT -> <NAME>的防禦力提昇了﹗
 BattleText_4534:
 	db $e7, $f1, $51, $f0, $0a, $0b, $19, $f1, $d4, $f2, $04, $f1, $64, $35, $ed
 
-	; "<NAME>的命中率提昇了﹗"
+; TEXT -> <NAME>的命中率提昇了﹗
 BattleText_4543:
 	db $e7, $f1, $51, $f0, $4f, $29, $f1, $cd, $d4, $f2, $04, $f1, $64, $35, $ed
 
-	; "<NAME>的速度提昇了﹗"
+; TEXT -> <NAME>的速度提昇了﹗
 BattleText_4552:
 	db $e7, $f1, $51, $70, $71, $d4, $f2, $04, $f1, $64, $35, $ed
 
-	; "<NAME>的攻擊力提昇了﹗"
+; TEXT -> <NAME>的攻擊力提昇了﹗
 BattleText_455e:
 	db $e7, $f1, $51, $f0, $24, $07, $19, $f1, $d4, $f2, $04, $f1, $64, $35, $ed
 
-	; "<NAME>的命中率提昇了﹗"
+; TEXT -> <NAME>的命中率提昇了﹗
 BattleText_456d:
 	db $e7, $f1, $51, $f0, $4f, $29, $f1, $cd, $d4, $f2, $04, $f1, $64, $35, $ed
 
-	; "<NAME>獲得先發攻擊﹗"
+; TEXT -> <NAME>獲得先發攻擊﹗
 BattleText_457c:
 	db $e7, $f2, $df, $dc, $f0, $4a, $4b, $24, $07, $f1, $35, $ed
 
-	; "<NAME>被封印了一項技巧"
+; TEXT -> <NAME>被封印了一項技巧
 BattleText_4588:
 	db $e7, $f2, $60, $f0, $1f, $20, $f1, $64, $f0, $1a, $f1, $5f, $54, $55, $ed
 
-	; "<NAME>無法動彈"
+; TEXT -> <NAME>無法動彈
 BattleText_4597:
 	db $e7, $f0, $76, $bb, $f2, $87, $f0, $13, $ed
 
-	; "<NAME>血量回復了"
+; TEXT -> <NAME>血量回復了
 BattleText_45a0:
 	db $e7, $f0, $3a, $f2, $44, $f1, $19, $1a, $64, $ed
 
-	; "<NAME>迴避率提昇了"
+; TEXT -> <NAME>迴避率提昇了
 BattleText_45aa:
 	db $e7, $f1, $9c, $9d, $cd, $d4, $f2, $04, $f1, $64, $ed
 
-	; "<NAME>嚇跑了"
+; TEXT -> <NAME>嚇跑了
 BattleText_45b5:
 	db $e7, $f2, $d4, $f1, $31, $64, $ed
 
-	; "<NAME>提昇所有能力"
+; TEXT -> <NAME>提昇所有能力
 BattleText_45bc:
 	db $e7, $f1, $d4, $f2, $04, $f1, $d3, $65, $8d, $f0, $19, $ed
 
-	; "<NAME>攻擊力下降"
+; TEXT -> <NAME>攻擊力下降
 BattleText_45c8:
 	db $e7, $f0, $24, $07, $19, $f2, $aa, $05, $ed
 
-	; "<NAME>命中要害機率提昇"
+; TEXT -> <NAME>命中要害機率提昇
 BattleText_45d1:
 	db $e7, $f0, $4f, $29, $f1, $58, $f2, $bb, $f1, $90, $cd, $d4, $f2, $04, $ed
 
-	; "<NAME>力量儲存中"
+; TEXT -> <NAME>力量儲存中
 BattleText_45e0:
 	db $e7, $f0, $19, $f2, $44, $f3, $00, $f1, $39, $f0, $29, $ed
 
-	; "<NAME>鑽入地底"
+; TEXT -> <NAME>鑽入地底
 BattleText_45ec:
 	db $e7, $f2, $78, $30, $f0, $7a, $f3, $01, $ed
 
-	; "<NAME>被種植寄魂種子"
+; TEXT -> <NAME>被種植寄魂種子
 BattleText_45f5:
 	db $e7, $f2, $60, $f0, $c8, $f3, $02, $f0, $c6, $c7, $c8, $c9, $ed
 
-	; "<NAME>變成豬了"
+; TEXT -> <NAME>變成豬了
 BattleText_4602:
 	db $e7, $f1, $1d, $6a, $f3, $03, $f1, $64, $ed
 
-	; "<NAME>使用替身"
+; TEXT -> <NAME>使用替身
 BattleText_460b:
 	db $e7, $f1, $3f, $40, $0c, $f0, $38, $ed
 
-	; "<NAME>飛上天空"
+; TEXT -> <NAME>飛上天空
 BattleText_4613:
 	db $e7, $f0, $a9, $f2, $b6, $f0, $80, $f1, $04, $ed
 
-	; "<NAME>模仿對手技巧"
+; TEXT -> <NAME>模仿對手技巧
 BattleText_461d:
 	db $e7, $f1, $13, $14, $f2, $07, $f0, $6f, $f1, $54, $55, $ed
 
-	; "雙方狀態恢復了"
+; TEXT -> 雙方狀態恢復了
 BattleText_4629:
 	db $f0, $77, $f1, $cf, $db, $dc, $f3, $04, $f1, $1a, $64, $ed
 
-	; "<NAME>燙傷‧凍傷‧麻痺‧混亂"
+; TEXT -> <NAME>燙傷‧凍傷‧麻痺‧混亂
 BattleText_4635:
 	db $e7, $f3, $05, $f0, $2b, $f3, $06, $f0, $a4, $2b, $f3, $06, $f0, $cd, $ce, $f3
 	db $06, $f2, $d3, $f0, $88, $ed
 
-	; "逃跑成功"
+; TEXT -> 逃跑成功
 BattleText_464b:
 	db $f1, $30, $31, $6a, $6b, $ed
 
-	; "逃跑失敗"
+; TEXT -> 逃跑失敗
 BattleText_4651:
 	db $f1, $30, $31, $6c, $6d, $ed
 
-	; "<NAME>被收服了"
+; TEXT -> <NAME>被收服了
 BattleText_4657:
 	db $e7, $f2, $60, $f0, $86, $f1, $c9, $64, $ed
 
-	; "收服失敗了"
+; TEXT -> 收服失敗了
 BattleText_4660:
 	db $f0, $86, $f1, $c9, $6c, $6d, $64, $ed
 
-	; "<NAME>已送回託管盒中"
+; TEXT -> <NAME>已送回託管盒中
 BattleText_4668:
 	db $e7, $f1, $56, $f3, $07, $f1, $19, $f3, $08, $09, $0a, $f0, $29, $ed
 
-	; "<NAME>的迴避率下降了﹗"
+; TEXT -> <NAME>的迴避率下降了﹗
 BattleText_4676:
 	db $e7, $f1, $51, $9c, $9d, $cd, $f2, $aa, $05, $f1, $64, $35, $ed
 
-	; "發現了<NAME>"
+; TEXT -> 發現了<NAME>
 BattleText_4683:
 	db $f0, $4b, $f3, $0b, $f1, $64, $e7, $ed
 
-	; "<NAME>出現了"
+; TEXT -> <NAME>出現了
 BattleText_468b:
 	db $e7, $f2, $0a, $f3, $0b, $f1, $64, $ed
 
-	; "戰鬥失敗"
+; TEXT -> 戰鬥失敗
 BattleText_4693:
 	db $f2, $03, $f0, $73, $f1, $6c, $6d, $ed
 
-	; "錢被偷走了"
+; TEXT -> 錢被偷走了
 BattleText_469b:
 	db $f2, $4b, $60, $f0, $47, $ab, $f1, $64, $ed
 
-	; "變成<NAME>了"
+; TEXT -> 變成<NAME>了
 BattleText_46a4:
 	db $f1, $1d, $6a, $e7, $f1, $64, $ed
 
-	; "抱歉﹗你的盒子已滿﹗"
+; TEXT -> 抱歉﹗你的盒子已滿﹗
 BattleText_46ab:
 	db $f2, $59, $5a, $f1, $35, $f2, $4a, $f1, $51, $f3, $0a, $f0, $c9, $f1, $56, $57
 	db $35, $ed
 
-	; "寄魂種子﹐發揮效用～"
+; TEXT -> 寄魂種子﹐發揮效用～
 BattleText_46bd:
 	db $f0, $c6, $c7, $c8, $c9, $f1, $33, $f0, $4b, $f2, $de, $f1, $7f, $40, $f2, $1f
 	db $ed, $ed
 
-	; "謎的力量儲存中～"
+; TEXT -> 謎的力量儲存中～
 BattleText_46cf:
 	db $f1, $20, $f1, $51, $f0, $19, $f2, $44, $f3, $00, $f1, $39, $f0, $29, $f2, $1f
 	db $ed
@@ -805,6 +805,7 @@ LoadWildMon:
 	ld [rRAMB], a
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_02d_4aa9:
 	db $6a, $0d, $00, $00, $00, $13, $2b, $1a, $51, $00, $00, $01, $22, $03, $00, $00
 	db $00, $2c, $27, $00, $00, $00, $00, $0f, $00, $50, $00, $02, $24, $06, $00, $00

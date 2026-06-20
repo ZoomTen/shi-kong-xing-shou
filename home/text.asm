@@ -530,14 +530,14 @@ PrintTwoOptionMenu::
 	push hl
 	jp CheckCharacter
 
-unk_1cc5::
+String_1cc5::
 	text "  ", 0
 	text "是", 1
 	text "  ", 0
 	text "否", 1
 	choice
 
-unk_1cd0::
+String_1cd0::
 	text "  ", 0
 	text "回", 1
 	text "春", 3
