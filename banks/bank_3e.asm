@@ -125,7 +125,6 @@ SubImage_03e_7c9d:
 .d
 	INCBIN "gfx/misc/gfx_3e_7c9d.2bpp"
 .e
-GFXPadding_03e_7edf:
-	dr $fbedf, $fbee0
+	ds 1
 
 

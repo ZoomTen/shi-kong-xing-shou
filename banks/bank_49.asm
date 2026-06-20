@@ -100,7 +100,6 @@ SubImage_049_7b47:
 	INCBIN "gfx/misc/gfx_49_7b47.2bpp"
 .e
 
-GFXPadding_049_7f49:
-	dr $127f49, $127f50
+	ds 7
 
 

@@ -92,7 +92,6 @@ SubImage_048_70a1:
 	INCBIN "gfx/misc/gfx_48_70a1.2bpp"
 .e
 
-GFXPadding_048_78a3:
-	dr $1238a3, $1238b0
+	ds 13
 
 

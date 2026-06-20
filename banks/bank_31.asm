@@ -111,7 +111,6 @@ SubImage_031_7c95:
 .d
 	INCBIN "gfx/misc/gfx_31_7c95.2bpp"
 .e
-GFXPadding_031_7f97:
-	dr $c7f97, $c7fff
+	ds 104
 
 
