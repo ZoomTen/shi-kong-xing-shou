@@ -581,7 +581,703 @@ Func_004_4309:
 	ret
 
 Pointers_004_4337::
-	dr $10337, $107ab
+	dw Ballot_ObjPalette
+	dw Snowy_ObjPalette
+	dw Buck_ObjPalette
+	dw Beattro_ObjPalette
+	dw Nina_ObjPalette
+	dw Electreep_ObjPalette
+	dw Claude_ObjPalette
+	dw Chromanix_ObjPalette
+	dw Helen_ObjPalette
+	dw Merlith_ObjPalette
+	dw Lante_ObjPalette
+	dw Muserode_ObjPalette
+	dw Randt_ObjPalette
+	dw Signaliton_ObjPalette
+	dw Mitt_ObjPalette
+	dw Drawvile_ObjPalette
+	dw Bladeberus_ObjPalette
+	dw Saya_ObjPalette
+	dw Boy_ObjPalette
+	dw Girl_ObjPalette
+	dw ObjPalette_004_44c3
+	dw ObjPalette_004_44cb
+	dw ObjPalette_004_44d3
+	dw ObjPalette_004_44db
+	dw ObjPalette_004_44e3
+	dw ObjPalette_004_44eb
+	dw ObjPalette_004_44f3
+	dw ObjPalette_004_44fb
+	dw ObjPalette_004_4503
+	dw ObjPalette_004_450b
+	dw ObjPalette_004_4513
+	dw ObjPalette_004_451b
+	dw ObjPalette_004_4523
+	dw ObjPalette_004_452b
+	dw ObjPalette_004_4533
+	dw ObjPalette_004_453b
+	dw ObjPalette_004_4543
+	dw ObjPalette_004_454b
+	dw ObjPalette_004_4553
+	dw ObjPalette_004_455b
+	dw ObjPalette_004_4563
+	dw ObjPalette_004_456b
+	dw ObjPalette_004_4573
+	dw ObjPalette_004_457b
+	dw ObjPalette_004_4583
+	dw ObjPalette_004_458b
+	dw ObjPalette_004_4593
+	dw ObjPalette_004_459b
+	dw ObjPalette_004_45a3
+	dw ObjPalette_004_45ab
+	dw ObjPalette_004_45b3
+	dw ObjPalette_004_45bb
+	dw ObjPalette_004_45c3
+	dw ObjPalette_004_45cb
+	dw ObjPalette_004_45d3
+	dw ObjPalette_004_45db
+	dw ObjPalette_004_45e3
+	dw ObjPalette_004_45eb
+	dw ObjPalette_004_45f3
+	dw ObjPalette_004_45fb
+	dw ObjPalette_004_4603
+	dw ObjPalette_004_460b
+	dw ObjPalette_004_4613
+	dw ObjPalette_004_461b
+	dw ObjPalette_004_4623
+	dw ObjPalette_004_462b
+	dw ObjPalette_004_4633
+	dw ObjPalette_004_463b
+	dw ObjPalette_004_4643
+	dw ObjPalette_004_464b
+	dw ObjPalette_004_4653
+	dw ObjPalette_004_45a3
+	dw ObjPalette_004_465b
+	dw ObjPalette_004_4663
+	dw ObjPalette_004_466b
+	dw ObjPalette_004_4673
+	dw ObjPalette_004_467b
+	dw ObjPalette_004_4683
+	dw ObjPalette_004_468b
+	dw ObjPalette_004_4693
+	dw ObjPalette_004_469b
+	dw ObjPalette_004_46a3
+	dw ObjPalette_004_46ab
+	dw ObjPalette_004_46b3
+	dw ObjPalette_004_46bb
+	dw ObjPalette_004_46c3
+	dw ObjPalette_004_46cb
+	dw ObjPalette_004_46d3
+	dw ObjPalette_004_46db
+	dw ObjPalette_004_46e3
+	dw ObjPalette_004_46eb
+	dw ObjPalette_004_46f3
+	dw ObjPalette_004_46fb
+	dw ObjPalette_004_4703
+	dw ObjPalette_004_470b
+	dw ObjPalette_004_4713
+	dw ObjPalette_004_471b
+	dw ObjPalette_004_4723
+	dw ObjPalette_004_472b
+	dw ObjPalette_004_4733
+	dw ObjPalette_004_4673
+	dw Helen_ObjPalette
+	dw ObjPalette_004_473b
+	dw ObjPalette_004_4743
+	dw ObjPalette_004_474b
+	dw ObjPalette_004_4753
+	dw ObjPalette_004_475b
+	dw ObjPalette_004_4763
+	dw ObjPalette_004_476b
+	dw ObjPalette_004_44f3
+	dw ObjPalette_004_4773
+	dw Mitt_ObjPalette
+	dw ObjPalette_004_477b
+	dw ObjPalette_004_4783
+	dw ObjPalette_004_478b
+	dw ObjPalette_004_4793
+	dw ObjPalette_004_479b
+	dw ObjPalette_004_47a3
+
+Ballot_ObjPalette: INCBIN "gfx/sprites/ballot.gbcpal"
+Snowy_ObjPalette: INCBIN "gfx/sprites/snowy.gbcpal"
+Buck_ObjPalette: INCBIN "gfx/sprites/buck.gbcpal"
+Beattro_ObjPalette: INCBIN "gfx/sprites/beattro.gbcpal"
+Nina_ObjPalette: INCBIN "gfx/sprites/nina.gbcpal"
+Electreep_ObjPalette: INCBIN "gfx/sprites/electreep.gbcpal"
+Claude_ObjPalette: INCBIN "gfx/sprites/claude.gbcpal"
+Chromanix_ObjPalette: INCBIN "gfx/sprites/chromanix.gbcpal"
+Helen_ObjPalette: INCBIN "gfx/sprites/helen.gbcpal"
+Merlith_ObjPalette: INCBIN "gfx/sprites/merlith.gbcpal"
+Lante_ObjPalette: INCBIN "gfx/sprites/lante.gbcpal"
+Muserode_ObjPalette: INCBIN "gfx/sprites/muserode.gbcpal"
+Randt_ObjPalette: INCBIN "gfx/sprites/randt.gbcpal"
+Signaliton_ObjPalette: INCBIN "gfx/sprites/signaliton.gbcpal"
+Mitt_ObjPalette: INCBIN "gfx/sprites/mitt.gbcpal"
+Drawvile_ObjPalette: INCBIN "gfx/sprites/drawvile.gbcpal"
+Bladeberus_ObjPalette: INCBIN "gfx/sprites/bladeberus.gbcpal"
+Saya_ObjPalette: INCBIN "gfx/sprites/saya.gbcpal"
+Boy_ObjPalette: INCBIN "gfx/sprites/boy.gbcpal"
+Girl_ObjPalette: INCBIN "gfx/sprites/girl.gbcpal"
+
+ObjPalette_004_44c3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_44cb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 11, 10
+	RGB 31, 30, 28
+
+ObjPalette_004_44d3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_44db:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 25
+	RGB 31, 30, 28
+
+ObjPalette_004_44e3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 24, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_44eb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 17
+	RGB 31, 30, 29
+
+ObjPalette_004_44f3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 10
+	RGB 31, 30, 29
+
+ObjPalette_004_44fb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 0, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_4503:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 18, 8
+	RGB 31, 30, 29
+
+ObjPalette_004_450b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 27, 4, 25
+	RGB 31, 30, 29
+
+ObjPalette_004_4513:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 29, 0, 0
+	RGB 31, 29, 25
+
+ObjPalette_004_451b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 13, 13, 25
+	RGB 30, 30, 30
+
+ObjPalette_004_4523:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_452b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 14, 8, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_4533:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_453b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 11, 10
+	RGB 31, 30, 28
+
+ObjPalette_004_4543:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_454b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 25
+	RGB 31, 30, 28
+
+ObjPalette_004_4553:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 10
+	RGB 31, 30, 29
+
+ObjPalette_004_455b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 17
+	RGB 31, 30, 29
+
+ObjPalette_004_4563:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 20, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_456b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 18, 8
+	RGB 31, 30, 29
+
+ObjPalette_004_4573:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 31, 31
+
+ObjPalette_004_457b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 31, 9, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_4583:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_458b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 20, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_4593:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_459b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 11, 10
+	RGB 31, 30, 28
+
+ObjPalette_004_45a3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_45ab:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 20, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_45b3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 17, 10, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_45bb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_45c3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 29, 0, 0
+	RGB 31, 29, 25
+
+ObjPalette_004_45cb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 17
+	RGB 31, 30, 29
+
+ObjPalette_004_45d3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_45db:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 31, 31
+
+ObjPalette_004_45e3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 31, 31
+
+ObjPalette_004_45eb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 31, 31
+
+ObjPalette_004_45f3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 20, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_45fb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 16, 16
+	RGB 31, 31, 31
+
+ObjPalette_004_4603:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 11, 10
+	RGB 31, 30, 28
+
+ObjPalette_004_460b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 16, 16
+	RGB 31, 31, 31
+
+ObjPalette_004_4613:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 18, 8
+	RGB 31, 30, 29
+
+ObjPalette_004_461b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 13, 13, 25
+	RGB 30, 30, 30
+
+ObjPalette_004_4623:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 17, 10, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_462b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 16, 16
+	RGB 31, 31, 31
+
+ObjPalette_004_4633:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 7, 16, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_463b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 16, 16
+	RGB 31, 31, 31
+
+ObjPalette_004_4643:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 7, 16, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_464b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 13, 13, 25
+	RGB 30, 30, 30
+
+ObjPalette_004_4653:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 31, 9, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_465b:
+	RGB 21, 21, 21
+	RGB 27, 10, 0
+	RGB 30, 22, 0
+	RGB 30, 30, 30
+
+ObjPalette_004_4663:
+	RGB 21, 21, 21
+	RGB 0, 5, 0
+	RGB 0, 17, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_466b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 23, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_4673:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_467b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 16, 26
+	RGB 31, 30, 28
+
+ObjPalette_004_4683:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_468b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 11, 10
+	RGB 31, 30, 28
+
+ObjPalette_004_4693:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 23, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_469b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_46a3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_46ab:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 20, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_46b3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_46bb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 17
+	RGB 31, 30, 29
+
+ObjPalette_004_46c3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 28, 15, 0
+	RGB 31, 30, 28
+
+ObjPalette_004_46cb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 13, 13, 25
+	RGB 30, 30, 30
+
+ObjPalette_004_46d3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_46db:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_46e3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_46eb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_46f3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 23, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_46fb:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 31, 9, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_4703:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 20, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_470b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 13, 13, 25
+	RGB 30, 30, 30
+
+ObjPalette_004_4713:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 29, 0, 0
+	RGB 31, 29, 25
+
+ObjPalette_004_471b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 29, 0, 0
+	RGB 31, 29, 25
+
+ObjPalette_004_4723:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_472b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
+
+ObjPalette_004_4733:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 0, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_473b:
+	RGB 21, 21, 21
+	RGB 22, 0, 0
+	RGB 30, 13, 0
+	RGB 31, 30, 13
+
+ObjPalette_004_4743:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 18, 8
+	RGB 31, 30, 29
+
+ObjPalette_004_474b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 18, 8
+	RGB 31, 30, 29
+
+ObjPalette_004_4753:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 11, 10
+	RGB 31, 30, 28
+
+ObjPalette_004_475b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 14, 8, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_4763:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 17, 0
+	RGB 31, 31, 31
+
+ObjPalette_004_476b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 14, 8, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_4773:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 24, 18, 8
+	RGB 31, 30, 29
+
+ObjPalette_004_477b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 30, 28
+
+ObjPalette_004_4783:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 29, 0, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_478b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 14, 8, 31
+	RGB 31, 30, 29
+
+ObjPalette_004_4793:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 25, 0, 17
+	RGB 31, 30, 29
+
+ObjPalette_004_479b:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 30, 23, 0
+	RGB 31, 30, 29
+
+ObjPalette_004_47a3:
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 16, 21, 30
+	RGB 31, 30, 29
 Pointers_004_47ab:
 	dr $107ab, $108e7
 
@@ -608,1137 +1304,951 @@ Sprites00to13GFXPointers::
 	dw GirlGFX_Pointers
 
 BallotGFX_Pointers:
-	dw BallotGFX_FacingDown_Pointers
-	dw BallotGFX_FacingUp_Pointers
-	dw BallotGFX_FacingSideways_Pointers
-	dw BallotGFX_FacingSideways_Pointers
-	dw BallotGFX_HoldingPDA_Pointers
-	dw BallotGFX_HandsUp_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
+	dw .holding_pda
+	dw .hands_up
 
-BallotGFX_FacingDown_Pointers:
+.facing_down
 	dw BallotWalk_Down1_GFX
 	dw BallotWalk_Down2_GFX
 	dw BallotWalk_Down1_GFX
 	dw BallotWalk_Down3_GFX
 	dw $eeee
 
-BallotGFX_FacingUp_Pointers:
+.facing_up
 	dw BallotWalk_Up1_GFX
 	dw BallotWalk_Up2_GFX
 	dw BallotWalk_Up1_GFX
 	dw BallotWalk_Up3_GFX
 	dw $eeee
 
-BallotGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw BallotWalk_Sideways1_GFX
 	dw BallotWalk_Sideways2_GFX
 	dw BallotWalk_Sideways1_GFX
 	dw BallotWalk_Sideways3_GFX
 	dw $eeee
 
-BallotGFX_HoldingPDA_Pointers:
+.holding_pda
 	dw BallotHoldPDA_GFX
 	dw BallotHoldPDA_GFX
 	dw BallotHoldPDA_GFX
 	dw BallotHoldPDA_GFX
 	dw $ffff
 
-BallotGFX_HandsUp_Pointers:
+.hands_up
 	dw BallotHandsUp_GFX
 	dw BallotHandsUp_GFX
 	dw BallotHandsUp_GFX
 	dw BallotHandsUp_GFX
 	dw $ffff
 
-BallotWalk_Down1_GFX:
-	INCBIN "gfx/sprites/ballot/down1.2bpp"
+BallotWalk_Down1_GFX: INCBIN "gfx/sprites/ballot.2bpp", $0, $40
 
-BallotWalk_Down2_GFX:
-	INCBIN "gfx/sprites/ballot/down2.2bpp"
+BallotWalk_Down2_GFX: INCBIN "gfx/sprites/ballot.2bpp", $40, $40
 
-BallotWalk_Down3_GFX:
-	INCBIN "gfx/sprites/ballot/down3.2bpp"
+BallotWalk_Down3_GFX: INCBIN "gfx/sprites/ballot.2bpp", $80, $40
 
-BallotWalk_Sideways1_GFX:
-	INCBIN "gfx/sprites/ballot/side1.2bpp"
+BallotWalk_Sideways1_GFX: INCBIN "gfx/sprites/ballot.2bpp", $c0, $40
 
-BallotWalk_Sideways2_GFX:
-	INCBIN "gfx/sprites/ballot/side2.2bpp"
+BallotWalk_Sideways2_GFX: INCBIN "gfx/sprites/ballot.2bpp", $100, $40
 
-BallotWalk_Sideways3_GFX:
-	INCBIN "gfx/sprites/ballot/side3.2bpp"
+BallotWalk_Sideways3_GFX: INCBIN "gfx/sprites/ballot.2bpp", $140, $40
 
-BallotWalk_Up1_GFX:
-	INCBIN "gfx/sprites/ballot/up1.2bpp"
+BallotWalk_Up1_GFX: INCBIN "gfx/sprites/ballot.2bpp", $180, $40
 
-BallotWalk_Up2_GFX:
-	INCBIN "gfx/sprites/ballot/up2.2bpp"
+BallotWalk_Up2_GFX: INCBIN "gfx/sprites/ballot.2bpp", $1c0, $40
 
-BallotWalk_Up3_GFX:
-	INCBIN "gfx/sprites/ballot/up3.2bpp"
+BallotWalk_Up3_GFX: INCBIN "gfx/sprites/ballot.2bpp", $200, $40
 
-BallotHoldPDA_GFX:
-	INCBIN "gfx/sprites/ballot/pda.2bpp"
+BallotHoldPDA_GFX: INCBIN "gfx/sprites/ballot.2bpp", $240, $40
 
-BallotHandsUp_GFX:
-	INCBIN "gfx/sprites/ballot/hands_up.2bpp"
+BallotHandsUp_GFX: INCBIN "gfx/sprites/ballot.2bpp", $280, $40
 
 SnowyGFX_Pointers:
-	dw SnowyGFX_FacingDown_Pointers
-	dw SnowyGFX_FacingUp_Pointers
-	dw SnowyGFX_FacingSideways_Pointers
-	dw SnowyGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-SnowyGFX_FacingDown_Pointers:
+.facing_down
 	dw SnowyWalk_Down1_GFX
 	dw SnowyWalk_Down2_GFX
 	dw SnowyWalk_Down1_GFX
 	dw SnowyWalk_Down3_GFX
 	dw $eeee
 
-SnowyGFX_FacingUp_Pointers:
+.facing_up
 	dw SnowyWalk_Up1_GFX
 	dw SnowyWalk_Up2_GFX
 	dw SnowyWalk_Up1_GFX
 	dw SnowyWalk_Up3_GFX
 	dw $eeee
 
-SnowyGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw SnowyWalk_Sideways1_GFX
 	dw SnowyWalk_Sideways2_GFX
 	dw SnowyWalk_Sideways1_GFX
 	dw SnowyWalk_Sideways3_GFX
 	dw $eeee
 
-SnowyWalk_Down1_GFX:
-	INCBIN "gfx/sprites/snowy/down1.2bpp"
+SnowyWalk_Down1_GFX: INCBIN "gfx/sprites/snowy.2bpp", $0, $40
 
-SnowyWalk_Down2_GFX:
-	INCBIN "gfx/sprites/snowy/down2.2bpp"
+SnowyWalk_Down2_GFX: INCBIN "gfx/sprites/snowy.2bpp", $40, $40
 
-SnowyWalk_Down3_GFX:
-	INCBIN "gfx/sprites/snowy/down3.2bpp"
+SnowyWalk_Down3_GFX: INCBIN "gfx/sprites/snowy.2bpp", $80, $40
 
-SnowyWalk_Sideways1_GFX:
-	INCBIN "gfx/sprites/snowy/side1.2bpp"
+SnowyWalk_Sideways1_GFX: INCBIN "gfx/sprites/snowy.2bpp", $c0, $40
 
-SnowyWalk_Sideways2_GFX:
-	INCBIN "gfx/sprites/snowy/side2.2bpp"
+SnowyWalk_Sideways2_GFX: INCBIN "gfx/sprites/snowy.2bpp", $100, $40
 
-SnowyWalk_Sideways3_GFX:
-	INCBIN "gfx/sprites/snowy/side3.2bpp"
+SnowyWalk_Sideways3_GFX: INCBIN "gfx/sprites/snowy.2bpp", $140, $40
 
-SnowyWalk_Up1_GFX:
-	INCBIN "gfx/sprites/snowy/up1.2bpp"
+SnowyWalk_Up1_GFX: INCBIN "gfx/sprites/snowy.2bpp", $180, $40
 
-SnowyWalk_Up2_GFX:
-	INCBIN "gfx/sprites/snowy/up2.2bpp"
+SnowyWalk_Up2_GFX: INCBIN "gfx/sprites/snowy.2bpp", $1c0, $40
 
-SnowyWalk_Up3_GFX:
-	INCBIN "gfx/sprites/snowy/up3.2bpp"
+SnowyWalk_Up3_GFX: INCBIN "gfx/sprites/snowy.2bpp", $200, $40
 
 BuckGFX_Pointers:
-	dw BuckGFX_FacingDown_Pointers
-	dw BuckGFX_FacingUp_Pointers
-	dw BuckGFX_FacingSideways_Pointers
-	dw BuckGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-BuckGFX_FacingDown_Pointers:
+.facing_down
 	dw BuckWalk_Down1_GFX
 	dw BuckWalk_Down2_GFX
 	dw BuckWalk_Down1_GFX
 	dw BuckWalk_Down3_GFX
 	dw $eeee
 
-BuckGFX_FacingUp_Pointers:
+.facing_up
 	dw BuckWalk_Up1_GFX
 	dw BuckWalk_Up2_GFX
 	dw BuckWalk_Up1_GFX
 	dw BuckWalk_Up3_GFX
 	dw $eeee
 
-BuckGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw BuckWalk_Sideways1_GFX
 	dw BuckWalk_Sideways2_GFX
 	dw BuckWalk_Sideways1_GFX
 	dw BuckWalk_Sideways3_GFX
 	dw $eeee
 
-BuckWalk_Down1_GFX:
-	INCBIN "gfx/sprites/buck/down1.2bpp"
+BuckWalk_Down1_GFX: INCBIN "gfx/sprites/buck.2bpp", $0, $40
 
-BuckWalk_Down2_GFX:
-	INCBIN "gfx/sprites/buck/down2.2bpp"
+BuckWalk_Down2_GFX: INCBIN "gfx/sprites/buck.2bpp", $40, $40
 
-BuckWalk_Down3_GFX:
-	INCBIN "gfx/sprites/buck/down3.2bpp"
+BuckWalk_Down3_GFX: INCBIN "gfx/sprites/buck.2bpp", $80, $40
 
-BuckWalk_Sideways1_GFX:
-	INCBIN "gfx/sprites/buck/side1.2bpp"
+BuckWalk_Sideways1_GFX: INCBIN "gfx/sprites/buck.2bpp", $c0, $40
 
-BuckWalk_Sideways2_GFX:
-	INCBIN "gfx/sprites/buck/side2.2bpp"
+BuckWalk_Sideways2_GFX: INCBIN "gfx/sprites/buck.2bpp", $100, $40
 
-BuckWalk_Sideways3_GFX:
-	INCBIN "gfx/sprites/buck/side3.2bpp"
+BuckWalk_Sideways3_GFX: INCBIN "gfx/sprites/buck.2bpp", $140, $40
 
-BuckWalk_Up1_GFX:
-	INCBIN "gfx/sprites/buck/up1.2bpp"
+BuckWalk_Up1_GFX: INCBIN "gfx/sprites/buck.2bpp", $180, $40
 
-BuckWalk_Up2_GFX:
-	INCBIN "gfx/sprites/buck/up2.2bpp"
+BuckWalk_Up2_GFX: INCBIN "gfx/sprites/buck.2bpp", $1c0, $40
 
-BuckWalk_Up3_GFX:
-	INCBIN "gfx/sprites/buck/up3.2bpp"
+BuckWalk_Up3_GFX: INCBIN "gfx/sprites/buck.2bpp", $200, $40
 
 BeattroGFX_Pointers:
-	dw BeattroGFX_FacingDown_Pointers
-	dw BeattroGFX_FacingUp_Pointers
-	dw BeattroGFX_FacingSideways_Pointers
-	dw BeattroGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-BeattroGFX_FacingDown_Pointers:
+.facing_down
 	dw BeattroWalk_Down1_GFX
 	dw BeattroWalk_Down2_GFX
 	dw BeattroWalk_Down1_GFX
 	dw BeattroWalk_Down3_GFX
 	dw $eeee
 
-BeattroGFX_FacingUp_Pointers:
+.facing_up
 	dw BeattroWalk_Up1_GFX
 	dw BeattroWalk_Up2_GFX
 	dw BeattroWalk_Up1_GFX
 	dw BeattroWalk_Up3_GFX
 	dw $eeee
 
-BeattroGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw BeattroWalk_Sideways1_GFX
 	dw BeattroWalk_Sideways2_GFX
 	dw BeattroWalk_Sideways1_GFX
 	dw BeattroWalk_Sideways3_GFX
 	dw $eeee
 
-BeattroWalk_Down1_GFX:
-	INCBIN "gfx/sprites/beattro/down1.2bpp"
+BeattroWalk_Down1_GFX: INCBIN "gfx/sprites/beattro.2bpp", $0, $40
 
-BeattroWalk_Down2_GFX:
-	INCBIN "gfx/sprites/beattro/down2.2bpp"
+BeattroWalk_Down2_GFX: INCBIN "gfx/sprites/beattro.2bpp", $40, $40
 
-BeattroWalk_Down3_GFX:
-	INCBIN "gfx/sprites/beattro/down3.2bpp"
+BeattroWalk_Down3_GFX: INCBIN "gfx/sprites/beattro.2bpp", $80, $40
 
-BeattroWalk_Sideways1_GFX:
-	INCBIN "gfx/sprites/beattro/side1.2bpp"
+BeattroWalk_Sideways1_GFX: INCBIN "gfx/sprites/beattro.2bpp", $c0, $40
 
-BeattroWalk_Sideways2_GFX:
-	INCBIN "gfx/sprites/beattro/side2.2bpp"
+BeattroWalk_Sideways2_GFX: INCBIN "gfx/sprites/beattro.2bpp", $100, $40
 
-BeattroWalk_Sideways3_GFX:
-	INCBIN "gfx/sprites/beattro/side3.2bpp"
+BeattroWalk_Sideways3_GFX: INCBIN "gfx/sprites/beattro.2bpp", $140, $40
 
-BeattroWalk_Up1_GFX:
-	INCBIN "gfx/sprites/beattro/up1.2bpp"
+BeattroWalk_Up1_GFX: INCBIN "gfx/sprites/beattro.2bpp", $180, $40
 
-BeattroWalk_Up2_GFX:
-	INCBIN "gfx/sprites/beattro/up2.2bpp"
+BeattroWalk_Up2_GFX: INCBIN "gfx/sprites/beattro.2bpp", $1c0, $40
 
-BeattroWalk_Up3_GFX:
-	INCBIN "gfx/sprites/beattro/up3.2bpp"
+BeattroWalk_Up3_GFX: INCBIN "gfx/sprites/beattro.2bpp", $200, $40
 
 NinaGFX_Pointers:
-	dw NinaGFX_FacingDown_Pointers
-	dw NinaGFX_FacingUp_Pointers
-	dw NinaGFX_FacingSideway_Pointers
-	dw NinaGFX_FacingSideway_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-NinaGFX_FacingDown_Pointers:
+.facing_down
 	dw NinaWalk_Down1_GFX
 	dw NinaWalk_Down2_GFX
 	dw NinaWalk_Down1_GFX
 	dw NinaWalk_Down3_GFX
 	dw $eeee
 
-NinaGFX_FacingUp_Pointers:
+.facing_up
 	dw NinaWalk_Up1_GFX
 	dw NinaWalk_Up2_GFX
 	dw NinaWalk_Up1_GFX
 	dw NinaWalk_Up3_GFX
 	dw $eeee
 
-NinaGFX_FacingSideway_Pointers:
+.facing_sideways
 	dw NinaWalk_Sideways1_GFX
 	dw NinaWalk_Sideways2_GFX
 	dw NinaWalk_Sideways1_GFX
 	dw NinaWalk_Sideways3_GFX
 	dw $eeee
 
-NinaWalk_Down1_GFX:
-	dr $11365, $113a5
+NinaWalk_Down1_GFX: INCBIN "gfx/sprites/nina.2bpp", $0, $40
 
-NinaWalk_Down2_GFX:
-	dr $113a5, $113e5
+NinaWalk_Down2_GFX: INCBIN "gfx/sprites/nina.2bpp", $40, $40
 
-NinaWalk_Down3_GFX:
-	dr $113e5, $11425
+NinaWalk_Down3_GFX: INCBIN "gfx/sprites/nina.2bpp", $80, $40
 
-NinaWalk_Sideways1_GFX:
-	dr $11425, $11465
+NinaWalk_Sideways1_GFX: INCBIN "gfx/sprites/nina.2bpp", $c0, $40
 
-NinaWalk_Sideways2_GFX:
-	dr $11465, $114a5
+NinaWalk_Sideways2_GFX: INCBIN "gfx/sprites/nina.2bpp", $100, $40
 
-NinaWalk_Sideways3_GFX:
-	dr $114a5, $114e5
+NinaWalk_Sideways3_GFX: INCBIN "gfx/sprites/nina.2bpp", $140, $40
 
-NinaWalk_Up1_GFX:
-	dr $114e5, $11525
+NinaWalk_Up1_GFX: INCBIN "gfx/sprites/nina.2bpp", $180, $40
 
-NinaWalk_Up2_GFX:
-	dr $11525, $11565
+NinaWalk_Up2_GFX: INCBIN "gfx/sprites/nina.2bpp", $1c0, $40
 
-NinaWalk_Up3_GFX:
-	dr $11565, $115a5
+NinaWalk_Up3_GFX: INCBIN "gfx/sprites/nina.2bpp", $200, $40
 
 ElectreepGFX_Pointers:
-	dw ElectreepGFX_FacingDown_Pointers
-	dw ElectreepGFX_FacingUp_Pointers
-	dw ElectreepGFX_FacingSideways_Pointers
-	dw ElectreepGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-ElectreepGFX_FacingDown_Pointers:
+.facing_down
 	dw ElectreepWalk_Down1_GFX
 	dw ElectreepWalk_Down2_GFX
 	dw ElectreepWalk_Down1_GFX
 	dw ElectreepWalk_Down3_GFX
 	dw $eeee
 
-ElectreepGFX_FacingUp_Pointers:
+.facing_up
 	dw ElectreepWalk_Up1_GFX
 	dw ElectreepWalk_Up2_GFX
 	dw ElectreepWalk_Up1_GFX
 	dw ElectreepWalk_Up3_GFX
 	dw $eeee
 
-ElectreepGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw ElectreepWalk_Sideways1_GFX
 	dw ElectreepWalk_Sideways2_GFX
 	dw ElectreepWalk_Sideways1_GFX
 	dw ElectreepWalk_Sideways3_GFX
 	dw $eeee
 
-ElectreepWalk_Down1_GFX:
-	dr $115cb, $1160b
+ElectreepWalk_Down1_GFX: INCBIN "gfx/sprites/electreep.2bpp", $0, $40
 
-ElectreepWalk_Down2_GFX:
-	dr $1160b, $1164b
+ElectreepWalk_Down2_GFX: INCBIN "gfx/sprites/electreep.2bpp", $40, $40
 
-ElectreepWalk_Down3_GFX:
-	dr $1164b, $1168b
+ElectreepWalk_Down3_GFX: INCBIN "gfx/sprites/electreep.2bpp", $80, $40
 
-ElectreepWalk_Sideways1_GFX:
-	dr $1168b, $116cb
+ElectreepWalk_Sideways1_GFX: INCBIN "gfx/sprites/electreep.2bpp", $c0, $40
 
-ElectreepWalk_Sideways2_GFX:
-	dr $116cb, $1170b
+ElectreepWalk_Sideways2_GFX: INCBIN "gfx/sprites/electreep.2bpp", $100, $40
 
-ElectreepWalk_Sideways3_GFX:
-	dr $1170b, $1174b
+ElectreepWalk_Sideways3_GFX: INCBIN "gfx/sprites/electreep.2bpp", $140, $40
 
-ElectreepWalk_Up1_GFX:
-	dr $1174b, $1178b
+ElectreepWalk_Up1_GFX: INCBIN "gfx/sprites/electreep.2bpp", $180, $40
 
-ElectreepWalk_Up2_GFX:
-	dr $1178b, $117cb
+ElectreepWalk_Up2_GFX: INCBIN "gfx/sprites/electreep.2bpp", $1c0, $40
 
-ElectreepWalk_Up3_GFX:
-	dr $117cb, $1180b
+ElectreepWalk_Up3_GFX: INCBIN "gfx/sprites/electreep.2bpp", $200, $40
 
 ClaudeGFX_Pointers:
-	dw ClaudeGFX_FacingDown_Pointers
-	dw ClaudeGFX_FacingUp_Pointers
-	dw ClaudeGFX_FacingSideways_Pointers
-	dw ClaudeGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-ClaudeGFX_FacingDown_Pointers:
+.facing_down
 	dw ClaudeWalking_Down1_GFX
 	dw ClaudeWalking_Down2_GFX
 	dw ClaudeWalking_Down1_GFX
 	dw ClaudeWalking_Down3_GFX
 	dw $eeee
 
-ClaudeGFX_FacingUp_Pointers:
+.facing_up
 	dw ClaudeWalking_Up1_GFX
 	dw ClaudeWalking_Up2_GFX
 	dw ClaudeWalking_Up1_GFX
 	dw ClaudeWalking_Up3_GFX
 	dw $eeee
 
-ClaudeGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw ClaudeWalking_Sideways1_GFX
 	dw ClaudeWalking_Sideways2_GFX
 	dw ClaudeWalking_Sideways1_GFX
 	dw ClaudeWalking_Sideways3_GFX
 	dw $eeee
 
-ClaudeWalking_Down1_GFX:
-	dr $11831, $11871
+ClaudeWalking_Down1_GFX: INCBIN "gfx/sprites/claude.2bpp", $0, $40
 
-ClaudeWalking_Down2_GFX:
-	dr $11871, $118b1
+ClaudeWalking_Down2_GFX: INCBIN "gfx/sprites/claude.2bpp", $40, $40
 
-ClaudeWalking_Down3_GFX:
-	dr $118b1, $118f1
+ClaudeWalking_Down3_GFX: INCBIN "gfx/sprites/claude.2bpp", $80, $40
 
-ClaudeWalking_Sideways1_GFX:
-	dr $118f1, $11931
+ClaudeWalking_Sideways1_GFX: INCBIN "gfx/sprites/claude.2bpp", $c0, $40
 
-ClaudeWalking_Sideways2_GFX:
-	dr $11931, $11971
+ClaudeWalking_Sideways2_GFX: INCBIN "gfx/sprites/claude.2bpp", $100, $40
 
-ClaudeWalking_Sideways3_GFX:
-	dr $11971, $119b1
+ClaudeWalking_Sideways3_GFX: INCBIN "gfx/sprites/claude.2bpp", $140, $40
 
-ClaudeWalking_Up1_GFX:
-	dr $119b1, $119f1
+ClaudeWalking_Up1_GFX: INCBIN "gfx/sprites/claude.2bpp", $180, $40
 
-ClaudeWalking_Up2_GFX:
-	dr $119f1, $11a31
+ClaudeWalking_Up2_GFX: INCBIN "gfx/sprites/claude.2bpp", $1c0, $40
 
-ClaudeWalking_Up3_GFX:
-	dr $11a31, $11a71
+ClaudeWalking_Up3_GFX: INCBIN "gfx/sprites/claude.2bpp", $200, $40
 
 ChromanixGFX_Pointers:
-	dw ChromanixGFX_FacingDown_Pointers
-	dw ChromanixGFX_FacingUp_Pointers
-	dw ChromanixGFX_FacingSideways_Pointers
-	dw ChromanixGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-ChromanixGFX_FacingDown_Pointers:
+.facing_down
 	dw ChromanixWalking_Down1_GFX
 	dw ChromanixWalking_Down2_GFX
 	dw ChromanixWalking_Down1_GFX
 	dw ChromanixWalking_Down3_GFX
 	dw $eeee
 
-ChromanixGFX_FacingUp_Pointers:
+.facing_up
 	dw ChromanixWalking_Up1_GFX
 	dw ChromanixWalking_Up2_GFX
 	dw ChromanixWalking_Up1_GFX
 	dw ChromanixWalking_Up3_GFX
 	dw $eeee
 
-ChromanixGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw ChromanixWalking_Sideways1_GFX
 	dw ChromanixWalking_Sideways2_GFX
 	dw ChromanixWalking_Sideways1_GFX
 	dw ChromanixWalking_Sideways3_GFX
 	dw $eeee
 
-ChromanixWalking_Down1_GFX:
-	dr $11a97, $11ad7
+ChromanixWalking_Down1_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $0, $40
 
-ChromanixWalking_Down2_GFX:
-	dr $11ad7, $11b17
+ChromanixWalking_Down2_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $40, $40
 
-ChromanixWalking_Down3_GFX:
-	dr $11b17, $11b57
+ChromanixWalking_Down3_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $80, $40
 
-ChromanixWalking_Sideways1_GFX:
-	dr $11b57, $11b97
+ChromanixWalking_Sideways1_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $c0, $40
 
-ChromanixWalking_Sideways2_GFX:
-	dr $11b97, $11bd7
+ChromanixWalking_Sideways2_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $100, $40
 
-ChromanixWalking_Sideways3_GFX:
-	dr $11bd7, $11c17
+ChromanixWalking_Sideways3_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $140, $40
 
-ChromanixWalking_Up1_GFX:
-	dr $11c17, $11c57
+ChromanixWalking_Up1_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $180, $40
 
-ChromanixWalking_Up2_GFX:
-	dr $11c57, $11c97
+ChromanixWalking_Up2_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $1c0, $40
 
-ChromanixWalking_Up3_GFX:
-	dr $11c97, $11cd7
+ChromanixWalking_Up3_GFX: INCBIN "gfx/sprites/chromanix.2bpp", $200, $40
 
 HelenGFX_Pointers:
-	dw HelenGFX_FacingDown_Pointers
-	dw HelenGFX_FacingUp_Pointers
-	dw HelenGFX_FacingSideways_Pointers
-	dw HelenGFX_FacingSideways_Pointers
-	dw HelenGFX_EyesClosed_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
+	dw .eyes_closed
 
-HelenGFX_FacingDown_Pointers:
+.facing_down
 	dw HelenWalking_Down1_GFX
 	dw HelenWalking_Down2_GFX
 	dw HelenWalking_Down1_GFX
 	dw HelenWalking_Down3_GFX
 	dw $eeee
 
-HelenGFX_FacingUp_Pointers:
+.facing_up
 	dw HelenWalking_Up1_GFX
 	dw HelenWalking_Up2_GFX
 	dw HelenWalking_Up1_GFX
 	dw HelenWalking_Up3_GFX
 	dw $eeee
 
-HelenGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw HelenWalking_Sideways1_GFX
 	dw HelenWalking_Sideways2_GFX
 	dw HelenWalking_Sideways1_GFX
 	dw HelenWalking_Sideways3_GFX
 	dw $eeee
 
-HelenGFX_EyesClosed_Pointers:
+.eyes_closed
 	dw HelenEyesClosedFacingDown_GFX
 	dw HelenEyesClosedFacingDown_GFX
 	dw $ffff
 
-HelenWalking_Down1_GFX:
-	dr $11d05, $11d45
+HelenWalking_Down1_GFX: INCBIN "gfx/sprites/helen.2bpp", $0, $40
 
-HelenWalking_Down2_GFX:
-	dr $11d45, $11d85
+HelenWalking_Down2_GFX: INCBIN "gfx/sprites/helen.2bpp", $40, $40
 
-HelenWalking_Down3_GFX:
-	dr $11d85, $11dc5
+HelenWalking_Down3_GFX: INCBIN "gfx/sprites/helen.2bpp", $80, $40
 
-HelenWalking_Sideways1_GFX:
-	dr $11dc5, $11e05
+HelenWalking_Sideways1_GFX: INCBIN "gfx/sprites/helen.2bpp", $c0, $40
 
-HelenWalking_Sideways2_GFX:
-	dr $11e05, $11e45
+HelenWalking_Sideways2_GFX: INCBIN "gfx/sprites/helen.2bpp", $100, $40
 
-HelenWalking_Sideways3_GFX:
-	dr $11e45, $11e85
+HelenWalking_Sideways3_GFX: INCBIN "gfx/sprites/helen.2bpp", $140, $40
 
-HelenWalking_Up1_GFX:
-	dr $11e85, $11ec5
+HelenWalking_Up1_GFX: INCBIN "gfx/sprites/helen.2bpp", $180, $40
 
-HelenWalking_Up2_GFX:
-	dr $11ec5, $11f05
+HelenWalking_Up2_GFX: INCBIN "gfx/sprites/helen.2bpp", $1c0, $40
 
-HelenWalking_Up3_GFX:
-	dr $11f05, $11f45
+HelenWalking_Up3_GFX: INCBIN "gfx/sprites/helen.2bpp", $200, $40
 
-HelenEyesClosedFacingDown_GFX:
-	dr $11f45, $11f85
+HelenEyesClosedFacingDown_GFX: INCBIN "gfx/sprites/helen.2bpp", $240, $40
 
 MerlithGFX_Pointers:
-	dw MerlithGFX_FacingDown_Pointers
-	dw MerlithGFX_FacingUp_Pointers
-	dw MerlithGFX_FacingSideways_Pointers
-	dw MerlithGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-MerlithGFX_FacingDown_Pointers:
+.facing_down
 	dw MerlithWalk_Down1_GFX
 	dw MerlithWalk_Down2_GFX
 	dw MerlithWalk_Down1_GFX
 	dw MerlithWalk_Down3_GFX
 	dw $eeee
 
-MerlithGFX_FacingUp_Pointers:
+.facing_up
 	dw MerlithWalk_Up1_GFX
 	dw MerlithWalk_Up2_GFX
 	dw MerlithWalk_Up1_GFX
 	dw MerlithWalk_Up3_GFX
 	dw $eeee
 
-MerlithGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw MerlithWalk_Sideways1_GFX
 	dw MerlithWalk_Sideways2_GFX
 	dw MerlithWalk_Sideways1_GFX
 	dw MerlithWalk_Sideways3_GFX
 	dw $eeee
 
-MerlithWalk_Down1_GFX:
-	dr $11fab, $11feb
+MerlithWalk_Down1_GFX: INCBIN "gfx/sprites/merlith.2bpp", $0, $40
 
-MerlithWalk_Down2_GFX:
-	dr $11feb, $1202b
+MerlithWalk_Down2_GFX: INCBIN "gfx/sprites/merlith.2bpp", $40, $40
 
-MerlithWalk_Down3_GFX:
-	dr $1202b, $1206b
+MerlithWalk_Down3_GFX: INCBIN "gfx/sprites/merlith.2bpp", $80, $40
 
-MerlithWalk_Sideways1_GFX:
-	dr $1206b, $120ab
+MerlithWalk_Sideways1_GFX: INCBIN "gfx/sprites/merlith.2bpp", $c0, $40
 
-MerlithWalk_Sideways2_GFX:
-	dr $120ab, $120eb
+MerlithWalk_Sideways2_GFX: INCBIN "gfx/sprites/merlith.2bpp", $100, $40
 
-MerlithWalk_Sideways3_GFX:
-	dr $120eb, $1212b
+MerlithWalk_Sideways3_GFX: INCBIN "gfx/sprites/merlith.2bpp", $140, $40
 
-MerlithWalk_Up1_GFX:
-	dr $1212b, $1216b
+MerlithWalk_Up1_GFX: INCBIN "gfx/sprites/merlith.2bpp", $180, $40
 
-MerlithWalk_Up2_GFX:
-	dr $1216b, $121ab
+MerlithWalk_Up2_GFX: INCBIN "gfx/sprites/merlith.2bpp", $1c0, $40
 
-MerlithWalk_Up3_GFX:
-	dr $121ab, $121eb
+MerlithWalk_Up3_GFX: INCBIN "gfx/sprites/merlith.2bpp", $200, $40
 
 LanteGFX_Pointers:
-	dw LanteGFX_FacingDown_Pointers
-	dw LanteGFX_FacingUp_Pointers
-	dw LanteGFX_FacingSideways_Pointers
-	dw LanteGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-LanteGFX_FacingDown_Pointers:
+.facing_down
 	dw LanteWalk_Down1_GFX
 	dw LanteWalk_Down2_GFX
 	dw LanteWalk_Down1_GFX
 	dw LanteWalk_Down3_GFX
 	dw $eeee
 
-LanteGFX_FacingUp_Pointers:
+.facing_up
 	dw LanteWalk_Up1_GFX
 	dw LanteWalk_Up2_GFX
 	dw LanteWalk_Up1_GFX
 	dw LanteWalk_Up3_GFX
 	dw $eeee
 
-LanteGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw LanteWalk_Sideways1_GFX
 	dw LanteWalk_Sideways2_GFX
 	dw LanteWalk_Sideways1_GFX
 	dw LanteWalk_Sideways3_GFX
 	dw $eeee
 
-LanteWalk_Down1_GFX:
-	dr $12211, $12251
+LanteWalk_Down1_GFX: INCBIN "gfx/sprites/lante.2bpp", $0, $40
 
-LanteWalk_Down2_GFX:
-	dr $12251, $12291
+LanteWalk_Down2_GFX: INCBIN "gfx/sprites/lante.2bpp", $40, $40
 
-LanteWalk_Down3_GFX:
-	dr $12291, $122d1
+LanteWalk_Down3_GFX: INCBIN "gfx/sprites/lante.2bpp", $80, $40
 
-LanteWalk_Sideways1_GFX:
-	dr $122d1, $12311
+LanteWalk_Sideways1_GFX: INCBIN "gfx/sprites/lante.2bpp", $c0, $40
 
-LanteWalk_Sideways2_GFX:
-	dr $12311, $12351
+LanteWalk_Sideways2_GFX: INCBIN "gfx/sprites/lante.2bpp", $100, $40
 
-LanteWalk_Sideways3_GFX:
-	dr $12351, $12391
+LanteWalk_Sideways3_GFX: INCBIN "gfx/sprites/lante.2bpp", $140, $40
 
-LanteWalk_Up1_GFX:
-	dr $12391, $123d1
+LanteWalk_Up1_GFX: INCBIN "gfx/sprites/lante.2bpp", $180, $40
 
-LanteWalk_Up2_GFX:
-	dr $123d1, $12411
+LanteWalk_Up2_GFX: INCBIN "gfx/sprites/lante.2bpp", $1c0, $40
 
-LanteWalk_Up3_GFX:
-	dr $12411, $12451
+LanteWalk_Up3_GFX: INCBIN "gfx/sprites/lante.2bpp", $200, $40
 
 MuserodeGFX_Pointers:
-	dw MuserodeGFX_FacingDown_Pointers
-	dw MuserodeGFX_FacingUp_Pointers
-	dw MuserodeGFX_FacingSideways_Pointers
-	dw MuserodeGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-MuserodeGFX_FacingDown_Pointers:
+.facing_down
 	dw MuserodeWalk_Down1_GFX
 	dw MuserodeWalk_Down2_GFX
 	dw MuserodeWalk_Down1_GFX
 	dw MuserodeWalk_Down3_GFX
 	dw $eeee
 
-MuserodeGFX_FacingUp_Pointers:
+.facing_up
 	dw MuserodeWalk_Up1_GFX
 	dw MuserodeWalk_Up2_GFX
 	dw MuserodeWalk_Up1_GFX
 	dw MuserodeWalk_Up3_GFX
 	dw $eeee
 
-MuserodeGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw MuserodeWalk_Sideways1_GFX
 	dw MuserodeWalk_Sideways2_GFX
 	dw MuserodeWalk_Sideways1_GFX
 	dw MuserodeWalk_Sideways3_GFX
 	dw $eeee
 
-MuserodeWalk_Down1_GFX:
-	dr $12477, $124b7
+MuserodeWalk_Down1_GFX: INCBIN "gfx/sprites/muserode.2bpp", $0, $40
 
-MuserodeWalk_Down2_GFX:
-	dr $124b7, $124f7
+MuserodeWalk_Down2_GFX: INCBIN "gfx/sprites/muserode.2bpp", $40, $40
 
-MuserodeWalk_Down3_GFX:
-	dr $124f7, $12537
+MuserodeWalk_Down3_GFX: INCBIN "gfx/sprites/muserode.2bpp", $80, $40
 
-MuserodeWalk_Sideways1_GFX:
-	dr $12537, $12577
+MuserodeWalk_Sideways1_GFX: INCBIN "gfx/sprites/muserode.2bpp", $c0, $40
 
-MuserodeWalk_Sideways2_GFX:
-	dr $12577, $125b7
+MuserodeWalk_Sideways2_GFX: INCBIN "gfx/sprites/muserode.2bpp", $100, $40
 
-MuserodeWalk_Sideways3_GFX:
-	dr $125b7, $125f7
+MuserodeWalk_Sideways3_GFX: INCBIN "gfx/sprites/muserode.2bpp", $140, $40
 
-MuserodeWalk_Up1_GFX:
-	dr $125f7, $12637
+MuserodeWalk_Up1_GFX: INCBIN "gfx/sprites/muserode.2bpp", $180, $40
 
-MuserodeWalk_Up2_GFX:
-	dr $12637, $12677
+MuserodeWalk_Up2_GFX: INCBIN "gfx/sprites/muserode.2bpp", $1c0, $40
 
-MuserodeWalk_Up3_GFX:
-	dr $12677, $126b7
+MuserodeWalk_Up3_GFX: INCBIN "gfx/sprites/muserode.2bpp", $200, $40
 
 RandtGFX_Pointers:
-	dw RandtGFX_FacingDown_Pointers
-	dw RandtGFX_FacingUp_Pointers
-	dw RandtGFX_FacingSideways_Pointers
-	dw RandtGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-RandtGFX_FacingDown_Pointers:
+.facing_down
 	dw RandtWalk_Down1_GFX
 	dw RandtWalk_Down2_GFX
 	dw RandtWalk_Down1_GFX
 	dw RandtWalk_Down3_GFX
 	dw $eeee
 
-RandtGFX_FacingUp_Pointers:
+.facing_up
 	dw RandtWalk_Up1_GFX
 	dw RandtWalk_Up2_GFX
 	dw RandtWalk_Up1_GFX
 	dw RandtWalk_Up3_GFX
 	dw $eeee
 
-RandtGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw RandtWalk_Sideways1_GFX
 	dw RandtWalk_Sideways2_GFX
 	dw RandtWalk_Sideways1_GFX
 	dw RandtWalk_Sideways3_GFX
 	dw $eeee
 
-RandtWalk_Down1_GFX:
-	dr $126dd, $1271d
+RandtWalk_Down1_GFX: INCBIN "gfx/sprites/randt.2bpp", $0, $40
 
-RandtWalk_Down2_GFX:
-	dr $1271d, $1275d
+RandtWalk_Down2_GFX: INCBIN "gfx/sprites/randt.2bpp", $40, $40
 
-RandtWalk_Down3_GFX:
-	dr $1275d, $1279d
+RandtWalk_Down3_GFX: INCBIN "gfx/sprites/randt.2bpp", $80, $40
 
-RandtWalk_Sideways1_GFX:
-	dr $1279d, $127dd
+RandtWalk_Sideways1_GFX: INCBIN "gfx/sprites/randt.2bpp", $c0, $40
 
-RandtWalk_Sideways2_GFX:
-	dr $127dd, $1281d
+RandtWalk_Sideways2_GFX: INCBIN "gfx/sprites/randt.2bpp", $100, $40
 
-RandtWalk_Sideways3_GFX:
-	dr $1281d, $1285d
+RandtWalk_Sideways3_GFX: INCBIN "gfx/sprites/randt.2bpp", $140, $40
 
-RandtWalk_Up1_GFX:
-	dr $1285d, $1289d
+RandtWalk_Up1_GFX: INCBIN "gfx/sprites/randt.2bpp", $180, $40
 
-RandtWalk_Up2_GFX:
-	dr $1289d, $128dd
+RandtWalk_Up2_GFX: INCBIN "gfx/sprites/randt.2bpp", $1c0, $40
 
-RandtWalk_Up3_GFX:
-	dr $128dd, $1291d
+RandtWalk_Up3_GFX: INCBIN "gfx/sprites/randt.2bpp", $200, $40
 
 SignalitonGFX_Pointers:
-	dw SignalitonGFX_FacingDown_Pointers
-	dw SignalitonGFX_FacingUp_Pointers
-	dw SignalitonGFX_FacingSideways_Pointers
-	dw SignalitonGFX_FacingSideways_Pointers
-	dw SignalitonGFX_Flashing_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
+	dw .flashing
 
-SignalitonGFX_Flashing_Pointers:
+.flashing
 	dw SignalitonFlash_GFX
 	dw SignalitonWalk_Down1_GFX
 	dw SignalitonFlash_GFX
 	dw SignalitonWalk_Down1_GFX
 	dw $eeee
 
-SignalitonGFX_FacingDown_Pointers:
+.facing_down
 	dw SignalitonWalk_Down1_GFX
 	dw SignalitonWalk_Down2_GFX
 	dw SignalitonWalk_Down1_GFX
 	dw SignalitonWalk_Down3_GFX
 	dw $eeee
 
-SignalitonGFX_FacingUp_Pointers:
+.facing_up
 	dw SignalitonWalk_Up1_GFX
 	dw SignalitonWalk_Up2_GFX
 	dw SignalitonWalk_Up1_GFX
 	dw SignalitonWalk_Up3_GFX
 	dw $eeee
 
-SignalitonGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw SignalitonWalk_Sideways1_GFX
 	dw SignalitonWalk_Sideways2_GFX
 	dw SignalitonWalk_Sideways1_GFX
 	dw SignalitonWalk_Sideways3_GFX
 	dw $eeee
 
-SignalitonWalk_Down1_GFX:
-	dr $1294f, $1298f
+SignalitonWalk_Down1_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $0, $40
 
-SignalitonWalk_Down2_GFX:
-	dr $1298f, $129cf
+SignalitonWalk_Down2_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $40, $40
 
-SignalitonWalk_Down3_GFX:
-	dr $129cf, $12a0f
+SignalitonWalk_Down3_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $80, $40
 
-SignalitonWalk_Sideways1_GFX:
-	dr $12a0f, $12a4f
+SignalitonWalk_Sideways1_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $c0, $40
 
-SignalitonWalk_Sideways2_GFX:
-	dr $12a4f, $12a8f
+SignalitonWalk_Sideways2_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $100, $40
 
-SignalitonWalk_Sideways3_GFX:
-	dr $12a8f, $12acf
+SignalitonWalk_Sideways3_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $140, $40
 
-SignalitonWalk_Up1_GFX:
-	dr $12acf, $12b0f
+SignalitonWalk_Up1_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $180, $40
 
-SignalitonWalk_Up2_GFX:
-	dr $12b0f, $12b4f
+SignalitonWalk_Up2_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $1c0, $40
 
-SignalitonWalk_Up3_GFX:
-	dr $12b4f, $12b8f
+SignalitonWalk_Up3_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $200, $40
 
-SignalitonFlash_GFX:
-	dr $12b8f, $12bcf
+SignalitonFlash_GFX: INCBIN "gfx/sprites/signaliton.2bpp", $240, $40
 
 MittGFX_Pointers:
-	dw MittGFX_FacingDown_Pointers
-	dw MittGFX_FacingUp_Pointers
-	dw MittGFX_FacingSideways_Pointers
-	dw MittGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-MittGFX_FacingDown_Pointers:
+.facing_down
 	dw MittWalk_Down1_GFX
 	dw MittWalk_Down2_GFX
 	dw MittWalk_Down1_GFX
 	dw MittWalk_Down3_GFX
 	dw $eeee
 
-MittGFX_FacingUp_Pointers:
+.facing_up
 	dw MittWalk_Up1_GFX
 	dw MittWalk_Up2_GFX
 	dw MittWalk_Up1_GFX
 	dw MittWalk_Up3_GFX
 	dw $eeee
 
-MittGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw MittWalk_Sideways1_GFX
 	dw MittWalk_Sideways2_GFX
 	dw MittWalk_Sideways1_GFX
 	dw MittWalk_Sideways3_GFX
 	dw $eeee
 
-MittWalk_Down1_GFX:
-	dr $12bf5, $12c35
+MittWalk_Down1_GFX: INCBIN "gfx/sprites/mitt.2bpp", $0, $40
 
-MittWalk_Down2_GFX:
-	dr $12c35, $12c75
+MittWalk_Down2_GFX: INCBIN "gfx/sprites/mitt.2bpp", $40, $40
 
-MittWalk_Down3_GFX:
-	dr $12c75, $12cb5
+MittWalk_Down3_GFX: INCBIN "gfx/sprites/mitt.2bpp", $80, $40
 
-MittWalk_Sideways1_GFX:
-	dr $12cb5, $12cf5
+MittWalk_Sideways1_GFX: INCBIN "gfx/sprites/mitt.2bpp", $c0, $40
 
-MittWalk_Sideways2_GFX:
-	dr $12cf5, $12d35
+MittWalk_Sideways2_GFX: INCBIN "gfx/sprites/mitt.2bpp", $100, $40
 
-MittWalk_Sideways3_GFX:
-	dr $12d35, $12d75
+MittWalk_Sideways3_GFX: INCBIN "gfx/sprites/mitt.2bpp", $140, $40
 
-MittWalk_Up1_GFX:
-	dr $12d75, $12db5
+MittWalk_Up1_GFX: INCBIN "gfx/sprites/mitt.2bpp", $180, $40
 
-MittWalk_Up2_GFX:
-	dr $12db5, $12df5
+MittWalk_Up2_GFX: INCBIN "gfx/sprites/mitt.2bpp", $1c0, $40
 
-MittWalk_Up3_GFX:
-	dr $12df5, $12e35
+MittWalk_Up3_GFX: INCBIN "gfx/sprites/mitt.2bpp", $200, $40
 
 DrawvileGFX_Pointers:
-	dw DrawvileGFX_FacingDown_Pointers
-	dw DrawvileGFX_FacingUp_Pointers
-	dw DrawvileGFX_FacingSideways_Pointers
-	dw DrawvileGFX_FacingSideways_Pointers
-	dw DrawvileGFX_Spinning_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
+	dw .spinning
 
-DrawvileGFX_Spinning_Pointers:
+.spinning
 	dw DrawvileWalk_Down1_GFX
 	dw DrawvileFacing_Left_GFX
 	dw DrawvileWalk_Up1_GFX
 	dw DrawvileFacing_Right_GFX
 	dw $eeee
 
-DrawvileGFX_FacingDown_Pointers:
+.facing_down
 	dw DrawvileWalk_Down1_GFX
 	dw DrawvileWalk_Down2_GFX
 	dw DrawvileWalk_Down1_GFX
 	dw DrawvileWalk_Down3_GFX
 	dw $eeee
 
-DrawvileGFX_FacingUp_Pointers:
+.facing_up
 	dw DrawvileWalk_Up1_GFX
 	dw DrawvileWalk_Up2_GFX
 	dw DrawvileWalk_Up1_GFX
 	dw DrawvileWalk_Up3_GFX
 	dw $eeee
 
-DrawvileGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw DrawvileWalk_Sideways1_GFX
 	dw DrawvileWalk_Sideways2_GFX
 	dw DrawvileWalk_Sideways1_GFX
 	dw DrawvileWalk_Sideways3_GFX
 	dw $eeee
 
-DrawvileWalk_Down1_GFX:
-	dr $12e67, $12ea7
+DrawvileWalk_Down1_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $0, $40
 
-DrawvileWalk_Down2_GFX:
-	dr $12ea7, $12ee7
+DrawvileWalk_Down2_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $40, $40
 
-DrawvileWalk_Down3_GFX:
-	dr $12ee7, $12f27
+DrawvileWalk_Down3_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $80, $40
 
-DrawvileWalk_Sideways1_GFX:
-	dr $12f27, $12f67
+DrawvileWalk_Sideways1_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $c0, $40
 
-DrawvileWalk_Sideways2_GFX:
-	dr $12f67, $12fa7
+DrawvileWalk_Sideways2_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $100, $40
 
-DrawvileWalk_Sideways3_GFX:
-	dr $12fa7, $12fe7
+DrawvileWalk_Sideways3_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $140, $40
 
-DrawvileWalk_Up1_GFX:
-	dr $12fe7, $13027
+DrawvileWalk_Up1_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $180, $40
 
-DrawvileWalk_Up2_GFX:
-	dr $13027, $13067
+DrawvileWalk_Up2_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $1c0, $40
 
-DrawvileWalk_Up3_GFX:
-	dr $13067, $130a7
+DrawvileWalk_Up3_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $200, $40
 
-DrawvileFacing_Left_GFX:
-	dr $130a7, $130e7
+DrawvileFacing_Left_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $240, $40
 
-DrawvileFacing_Right_GFX:
-	dr $130e7, $13127
+DrawvileFacing_Right_GFX: INCBIN "gfx/sprites/drawvile.2bpp", $280, $40
 
 BladeberusGFX_Pointers:
-	dw BladeberusGFX_FacingDown_Pointers
-	dw BladeberusGFX_FacingUp_Pointers
-	dw BladeberusGFX_FacingSideways_Pointers
-	dw BladeberusGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-BladeberusGFX_FacingDown_Pointers:
+.facing_down
 	dw BladeberusWalk_Down1_GFX
 	dw BladeberusWalk_Down2_GFX
 	dw BladeberusWalk_Down1_GFX
 	dw BladeberusWalk_Down3_GFX
 	dw $eeee
 
-BladeberusGFX_FacingUp_Pointers:
+.facing_up
 	dw BladeberusWalk_Up1_GFX
 	dw BladeberusWalk_Up2_GFX
 	dw BladeberusWalk_Up1_GFX
 	dw BladeberusWalk_Up3_GFX
 	dw $eeee
 
-BladeberusGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw BladeberusWalk_Sideways1_GFX
 	dw BladeberusWalk_Sideways2_GFX
 	dw BladeberusWalk_Sideways1_GFX
 	dw BladeberusWalk_Sideways3_GFX
 	dw $eeee
 
-BladeberusWalk_Down1_GFX:
-	INCBIN "gfx/sprites/bladeberus/down1.2bpp"
+BladeberusWalk_Down1_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $0, $40
 
-BladeberusWalk_Down2_GFX:
-	INCBIN "gfx/sprites/bladeberus/down2.2bpp"
+BladeberusWalk_Down2_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $40, $40
 
-BladeberusWalk_Down3_GFX:
-	INCBIN "gfx/sprites/bladeberus/down3.2bpp"
+BladeberusWalk_Down3_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $80, $40
 
-BladeberusWalk_Sideways1_GFX:
-	INCBIN "gfx/sprites/bladeberus/side1.2bpp"
+BladeberusWalk_Sideways1_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $c0, $40
 
-BladeberusWalk_Sideways2_GFX:
-	INCBIN "gfx/sprites/bladeberus/side2.2bpp"
+BladeberusWalk_Sideways2_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $100, $40
 
-BladeberusWalk_Sideways3_GFX:
-	INCBIN "gfx/sprites/bladeberus/side3.2bpp"
+BladeberusWalk_Sideways3_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $140, $40
 
-BladeberusWalk_Up1_GFX:
-	INCBIN "gfx/sprites/bladeberus/up1.2bpp"
+BladeberusWalk_Up1_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $180, $40
 
-BladeberusWalk_Up2_GFX:
-	INCBIN "gfx/sprites/bladeberus/up2.2bpp"
+BladeberusWalk_Up2_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $1c0, $40
 
-BladeberusWalk_Up3_GFX:
-	INCBIN "gfx/sprites/bladeberus/up3.2bpp"
+BladeberusWalk_Up3_GFX: INCBIN "gfx/sprites/bladeberus.2bpp", $200, $40
 
 SayaGFX_Pointers:
-	dw SayaGFX_FacingDown_Pointers
-	dw SayaGFX_FacingUp_Pointers
-	dw SayaGFX_FacingSideways_Pointers
-	dw SayaGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-SayaGFX_FacingDown_Pointers:
+.facing_down
 	dw SayaWalk_Down1_GFX
 	dw SayaWalk_Down2_GFX
 	dw SayaWalk_Down1_GFX
 	dw SayaWalk_Down3_GFX
 	dw $ffff
 
-SayaGFX_FacingUp_Pointers:
+.facing_up
 	dw SayaWalk_Up1_GFX
 	dw SayaWalk_Up2_GFX
 	dw SayaWalk_Up1_GFX
 	dw SayaWalk_Up3_GFX
 	dw $ffff
 
-SayaGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw SayaWalk_Sideways1_GFX
 	dw SayaWalk_Sideways2_GFX
 	dw SayaWalk_Sideways1_GFX
 	dw SayaWalk_Sideways3_GFX
 	dw $ffff
 
-SayaWalk_Down1_GFX:
-	dr $133b3, $133f3
+SayaWalk_Down1_GFX: INCBIN "gfx/sprites/saya.2bpp", $0, $40
 
-SayaWalk_Down2_GFX:
-	dr $133f3, $13433
+SayaWalk_Down2_GFX: INCBIN "gfx/sprites/saya.2bpp", $40, $40
 
-SayaWalk_Down3_GFX:
-	dr $13433, $13473
+SayaWalk_Down3_GFX: INCBIN "gfx/sprites/saya.2bpp", $80, $40
 
-SayaWalk_Sideways1_GFX:
-	dr $13473, $134b3
+SayaWalk_Sideways1_GFX: INCBIN "gfx/sprites/saya.2bpp", $c0, $40
 
-SayaWalk_Sideways2_GFX:
-	dr $134b3, $134f3
+SayaWalk_Sideways2_GFX: INCBIN "gfx/sprites/saya.2bpp", $100, $40
 
-SayaWalk_Sideways3_GFX:
-	dr $134f3, $13533
+SayaWalk_Sideways3_GFX: INCBIN "gfx/sprites/saya.2bpp", $140, $40
 
-SayaWalk_Up1_GFX:
-	dr $13533, $13573
+SayaWalk_Up1_GFX: INCBIN "gfx/sprites/saya.2bpp", $180, $40
 
-SayaWalk_Up2_GFX:
-	dr $13573, $135b3
+SayaWalk_Up2_GFX: INCBIN "gfx/sprites/saya.2bpp", $1c0, $40
 
-SayaWalk_Up3_GFX:
-	dr $135b3, $135f3
+SayaWalk_Up3_GFX: INCBIN "gfx/sprites/saya.2bpp", $200, $40
 
 BoyGFX_Pointers:
-	dw BoyGFX_FacingDown_Pointers
-	dw BoyGFX_FacingUp_Pointers
-	dw BoyGFX_FacingSideways_Pointers
-	dw BoyGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-BoyGFX_FacingDown_Pointers:
+.facing_down
 	dw BoyWalk_Down1_GFX
 	dw BoyWalk_Down2_GFX
 	dw BoyWalk_Down1_GFX
 	dw BoyWalk_Down3_GFX
 	dw $ffff
 
-BoyGFX_FacingUp_Pointers:
+.facing_up
 	dw BoyWalk_Up1_GFX
 	dw BoyWalk_Up2_GFX
 	dw BoyWalk_Up1_GFX
 	dw BoyWalk_Up3_GFX
 	dw $ffff
 
-BoyGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw BoyWalk_Sideways1_GFX
 	dw BoyWalk_Sideways2_GFX
 	dw BoyWalk_Sideways1_GFX
 	dw BoyWalk_Sideways3_GFX
 	dw $ffff
 
-BoyWalk_Down1_GFX:
-	dr $13619, $13659
+BoyWalk_Down1_GFX: INCBIN "gfx/sprites/boy.2bpp", $0, $40
 
-BoyWalk_Down2_GFX:
-	dr $13659, $13699
+BoyWalk_Down2_GFX: INCBIN "gfx/sprites/boy.2bpp", $40, $40
 
-BoyWalk_Down3_GFX:
-	dr $13699, $136d9
+BoyWalk_Down3_GFX: INCBIN "gfx/sprites/boy.2bpp", $80, $40
 
-BoyWalk_Sideways1_GFX:
-	dr $136d9, $13719
+BoyWalk_Sideways1_GFX: INCBIN "gfx/sprites/boy.2bpp", $c0, $40
 
-BoyWalk_Sideways2_GFX:
-	dr $13719, $13759
+BoyWalk_Sideways2_GFX: INCBIN "gfx/sprites/boy.2bpp", $100, $40
 
-BoyWalk_Sideways3_GFX:
-	dr $13759, $13799
+BoyWalk_Sideways3_GFX: INCBIN "gfx/sprites/boy.2bpp", $140, $40
 
-BoyWalk_Up1_GFX:
-	dr $13799, $137d9
+BoyWalk_Up1_GFX: INCBIN "gfx/sprites/boy.2bpp", $180, $40
 
-BoyWalk_Up2_GFX:
-	dr $137d9, $13819
+BoyWalk_Up2_GFX: INCBIN "gfx/sprites/boy.2bpp", $1c0, $40
 
-BoyWalk_Up3_GFX:
-	dr $13819, $13859
+BoyWalk_Up3_GFX: INCBIN "gfx/sprites/boy.2bpp", $200, $40
 
 GirlGFX_Pointers:
-	dw GirlGFX_FacingDown_Pointers
-	dw GirlGFX_FacingUp_Pointers
-	dw GirlGFX_FacingSideways_Pointers
-	dw GirlGFX_FacingSideways_Pointers
+	dw .facing_down
+	dw .facing_up
+	dw .facing_sideways
+	dw .facing_sideways
 
-GirlGFX_FacingDown_Pointers:
+.facing_down
 	dw GirlWalk_Down1_GFX
 	dw GirlWalk_Down2_GFX
 	dw GirlWalk_Down1_GFX
 	dw GirlWalk_Down3_GFX
 	dw $ffff
 
-GirlGFX_FacingUp_Pointers:
+.facing_up
 	dw GirlWalk_Up1_GFX
 	dw GirlWalk_Up2_GFX
 	dw GirlWalk_Up1_GFX
 	dw GirlWalk_Up3_GFX
 	dw $ffff
 
-GirlGFX_FacingSideways_Pointers:
+.facing_sideways
 	dw GirlWalk_Sideways1_GFX
 	dw GirlWalk_Sideways2_GFX
 	dw GirlWalk_Sideways1_GFX
 	dw GirlWalk_Sideways3_GFX
 	dw $ffff
 
-GirlWalk_Down1_GFX:
-	dr $1387f, $138bf
+GirlWalk_Down1_GFX: INCBIN "gfx/sprites/girl.2bpp", $0, $40
 
-GirlWalk_Down2_GFX:
-	dr $138bf, $138ff
+GirlWalk_Down2_GFX: INCBIN "gfx/sprites/girl.2bpp", $40, $40
 
-GirlWalk_Down3_GFX:
-	dr $138ff, $1393f
+GirlWalk_Down3_GFX: INCBIN "gfx/sprites/girl.2bpp", $80, $40
 
-GirlWalk_Sideways1_GFX:
-	dr $1393f, $1397f
+GirlWalk_Sideways1_GFX: INCBIN "gfx/sprites/girl.2bpp", $c0, $40
 
-GirlWalk_Sideways2_GFX:
-	dr $1397f, $139bf
+GirlWalk_Sideways2_GFX: INCBIN "gfx/sprites/girl.2bpp", $100, $40
 
-GirlWalk_Sideways3_GFX:
-	dr $139bf, $139ff
+GirlWalk_Sideways3_GFX: INCBIN "gfx/sprites/girl.2bpp", $140, $40
 
-GirlWalk_Up1_GFX:
-	dr $139ff, $13a3f
+GirlWalk_Up1_GFX: INCBIN "gfx/sprites/girl.2bpp", $180, $40
 
-GirlWalk_Up2_GFX:
-	dr $13a3f, $13a7f
+GirlWalk_Up2_GFX: INCBIN "gfx/sprites/girl.2bpp", $1c0, $40
 
-GirlWalk_Up3_GFX:
-	dr $13a7f, $13abf
+GirlWalk_Up3_GFX: INCBIN "gfx/sprites/girl.2bpp", $200, $40
