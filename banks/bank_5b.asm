@@ -1111,7 +1111,7 @@ MiceMinigame_ObjPalette:
 	RGB 14, 8, 31
 	RGB 31, 31, 31
 MiceMinigame_GFX1:
-	dr $16ca07, $16d167
+INCBIN "gfx/misc/miceminigame_gfx1.2bpp"
 MiceMinigame_BGPalette:
 	RGB 31, 31, 27
 	RGB 27, 25, 18
@@ -1142,17 +1142,17 @@ MiceMinigame_BGPalette:
 	RGB 19, 0, 14
 	RGB 0, 0, 0
 MiceMinigame_Attrmap1:
-	dr $16d19f, $16d307
+INCBIN "gfx/attrmaps/miceminigame_attrmap1.bin"
 MiceMinigame_Tilemap1:
-	dr $16d307, $16d46f
+INCBIN "gfx/tilemaps/miceminigame_tilemap1.tilemap"
 MiceMinigame_GFX2:
-	dr $16d46f, $16dd0f
+INCBIN "gfx/misc/miceminigame_gfx2.2bpp"
 MiceMinigame_Attrmap2:
-	dr $16dd0f, $16de77
+INCBIN "gfx/attrmaps/miceminigame_attrmap2.bin"
 MiceMinigame_Tilemap2:
-	dr $16de77, $16dfdf
+INCBIN "gfx/tilemaps/miceminigame_tilemap2.tilemap"
 MiceMinigame_GFX3:
-	dr $16dfdf, $16e85f
+INCBIN "gfx/misc/miceminigame_gfx3.2bpp"
 MiceMinigame_unk685F:
 	dr $16e85f, $16e8a5
 MiceMinigame_unk68A5:
@@ -1163,14 +1163,14 @@ MiceMinigame_unk68F1:
 	dr $16e8f1, $16e930
 MiceMinigame_FaceTilemaps:
 MiceMinigame_FaceTilemap0:
-	dr $16e930, $16e940
+INCBIN "gfx/tilemaps/miceminigame_facetilemap0.tilemap"
 MiceMinigame_FaceTilemap1:
-	dr $16e940, $16e950
+INCBIN "gfx/tilemaps/miceminigame_facetilemap1.tilemap"
 MiceMinigame_FaceTilemap2:
-	dr $16e950, $16e960
+INCBIN "gfx/tilemaps/miceminigame_facetilemap2.tilemap"
 MiceMinigame_FaceTilemap3:
-	dr $16e960, $16e970
+INCBIN "gfx/tilemaps/miceminigame_facetilemap3.tilemap"
 MiceMinigame_FaceTilemap4:
-	dr $16e970, $16e980
+INCBIN "gfx/tilemaps/miceminigame_facetilemap4.tilemap"
 
 

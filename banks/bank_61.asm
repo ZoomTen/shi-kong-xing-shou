@@ -239,9 +239,9 @@ Func_061_41ab:
 	ld [wdcf5], a
 	ret
 MeteorCutscene2_AnimTilemapPointers:
-	dr $18420b, $184211
+INCBIN "gfx/tilemaps/meteorcutscene2_animtilemappointers.tilemap"
 MeteorCutscene2_AnimAttrmapPointers:
-	dr $184211, $184217
+INCBIN "gfx/attrmaps/meteorcutscene2_animattrmappointers.bin"
 Func_061_4217:
 	ld a, [wdcf6]
 	and a
@@ -529,26 +529,26 @@ MeteorCutscene2_PaletteOBJ:
 MeteorCutscene2_Pad_4402:
 	dr $184402, $18440a
 MeteorCutscene2_GFX1:
-	dr $18440a, $184c0a
+INCBIN "gfx/misc/meteorcutscene2_gfx1.2bpp"
 MeteorCutscene2_GFX2:
-	dr $184c0a, $184e3a
+INCBIN "gfx/misc/meteorcutscene2_gfx2.2bpp"
 MeteorCutscene2_GFX3:
-	dr $184e3a, $184eba
+INCBIN "gfx/misc/meteorcutscene2_gfx3.2bpp"
 MeteorCutscene2_Attrmap1:
-	dr $184eba, $185022
+INCBIN "gfx/attrmaps/meteorcutscene2_attrmap1.bin"
 MeteorCutscene2_Tilemap1:
-	dr $185022, $18516a
+INCBIN "gfx/tilemaps/meteorcutscene2_tilemap1.tilemap"
 ; TODO: unreferenced data block, classify type
 unk_61_516A:
 	dr $18516a, $18518a
 MeteorCutscene2_AnimAttrmap0:
-	dr $18518a, $1852f2
+INCBIN "gfx/attrmaps/meteorcutscene2_animattrmap0.bin"
 MeteorCutscene2_AnimTilemap0:
-	dr $1852f2, $18545a
+INCBIN "gfx/tilemaps/meteorcutscene2_animtilemap0.tilemap"
 MeteorCutscene2_AnimAttrmap1:
-	dr $18545a, $1855c2
+INCBIN "gfx/attrmaps/meteorcutscene2_animattrmap1.bin"
 MeteorCutscene2_AnimTilemap1:
-	dr $1855c2, $18572a
+INCBIN "gfx/tilemaps/meteorcutscene2_animtilemap1.tilemap"
 MeteorCutscene2_Palette2:
 	RGB 31, 30, 28
 	RGB 27, 25, 18
@@ -585,11 +585,11 @@ MeteorCutscene2_Palette2:
 MeteorCutscene2_Pad_576A:
 	dr $18576a, $185772
 MeteorCutscene2_Attrmap2:
-	dr $185772, $1858da
+INCBIN "gfx/attrmaps/meteorcutscene2_attrmap2.bin"
 MeteorCutscene2_Tilemap2:
-	dr $1858da, $185a42
+INCBIN "gfx/tilemaps/meteorcutscene2_tilemap2.tilemap"
 MeteorCutscene2_GFX4:
-	dr $185a42, $185d22
+INCBIN "gfx/misc/meteorcutscene2_gfx4.2bpp"
 
 UnderwaterPictureCutscene::
 	ld a, $59
@@ -821,14 +821,14 @@ UnderwaterPicture_OBJPalette:
 UnderwaterPicture_Pad2:
 	dr $185f80, $185f88
 UnderwaterPicture_Tilemap:
-	dr $185f88, $1860f0
+INCBIN "gfx/tilemaps/underwaterpicture_tilemap.tilemap"
 UnderwaterPicture_Attrmap:
-	dr $1860f0, $186258
+INCBIN "gfx/attrmaps/underwaterpicture_attrmap.bin"
 UnderwaterPicture_GFX:
-	dr $186258, $186a58
+INCBIN "gfx/misc/underwaterpicture_gfx.2bpp"
 UnderwaterPicture_GFX2:
-	dr $186a58, $186aa8
+INCBIN "gfx/misc/underwaterpicture_gfx2.2bpp"
 UnderwaterPicture_SpriteGFX:
-	dr $186aa8, $186ee0
+INCBIN "gfx/misc/underwaterpicture_spritegfx.bin"
 
 

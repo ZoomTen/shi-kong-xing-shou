@@ -317,12 +317,12 @@ CrystalCutscene_PaletteOBJ:
 CrystalCutscene_Pad_4329:
 	dr $17c329, $17c331
 CrystalCutscene_Attrmap:
-	dr $17c331, $17c499
+INCBIN "gfx/attrmaps/crystalcutscene_attrmap.bin"
 CrystalCutscene_Tilemap:
-	dr $17c499, $17c601
+INCBIN "gfx/tilemaps/crystalcutscene_tilemap.tilemap"
 CrystalCutscene_GFX:
-	dr $17c601, $17cd21
+INCBIN "gfx/misc/crystalcutscene_gfx.2bpp"
 CrystalCutscene_SpriteGFX:
-	dr $17cd21, $17d0f0
+INCBIN "gfx/misc/crystalcutscene_spritegfx.bin"
 
 

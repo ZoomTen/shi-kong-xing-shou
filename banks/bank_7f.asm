@@ -1,4 +1,4 @@
 GFX_07f_4000:
-	dr $1fc000, $1fffd0
+INCBIN "gfx/misc/gfx_07f_4000.2bpp"
 
 

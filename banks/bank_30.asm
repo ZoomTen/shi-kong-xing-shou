@@ -2871,7 +2871,7 @@ Pointers_030_565c:
 Pointers_030_58f8:
 	dr $c18f8, $c1906
 GFX_030_5906:
-	dr $c1906, $c1bb4
+INCBIN "gfx/misc/gfx_030_5906.bin"
 ; TODO: unreferenced data block, classify type
 unk_030_5bb4:
 	dr $c1bb4, $c1bcc

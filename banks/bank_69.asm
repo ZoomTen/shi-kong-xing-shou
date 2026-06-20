@@ -546,7 +546,7 @@ Metatiles_069_49ab::
 Blocks_069_4aa3::
 	dr $1a4aa3, $1a4b6b
 AttrMap_069_4b6b::
-	dr $1a4b6b, $1a4bc3
+INCBIN "gfx/attrmaps/attrmap_069_4b6b.bin"
 Palettes_069_4bc3::
 	RGB 31, 31, 31
 	RGB 31, 28, 4

@@ -1,4 +1,4 @@
 GFX_056_4000:
-	dr $158000, $15a650
+INCBIN "gfx/misc/gfx_056_4000.2bpp"
 
 

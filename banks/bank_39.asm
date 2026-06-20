@@ -1,5 +1,5 @@
 GFX_039_4000:
-	dr $e4000, $e40a0
+INCBIN "gfx/misc/gfx_039_4000.2bpp"
 Func_039_40a0:
 	dr $e40a0, $e41fb
 ; TODO

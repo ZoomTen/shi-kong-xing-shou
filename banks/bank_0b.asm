@@ -3121,6 +3121,6 @@ Func_00b_65f6:
 unk_00b_662b:
 	dr $2e62b, $2e98e
 GFX_00b_698e:
-	dr $2e98e, $2eace
+INCBIN "gfx/misc/gfx_00b_698e.2bpp"
 Palette_00b_6ace:
 	dr $2eace, $2f1e0

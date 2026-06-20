@@ -36,7 +36,7 @@ Metatiles_017_4cff::
 Blocks_017_4df7::
 	dr $5cdf7, $5cebf
 AttrMap_017_4ebf::
-	dr $5cebf, $5cf17
+INCBIN "gfx/attrmaps/attrmap_017_4ebf.bin"
 Palettes_017_4f17::
 	RGB 31, 31, 31
 	RGB 8, 21, 31

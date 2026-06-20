@@ -341,9 +341,9 @@ GameOver::
 	ld [wTargetMode], a
 	ret
 AttrMap_03c_4427:
-	dr $f0427, $f058f
+INCBIN "gfx/attrmaps/attrmap_03c_4427.bin"
 Tilemap_03c_458f:
-	dr $f058f, $f06f7
+INCBIN "gfx/tilemaps/tilemap_03c_458f.tilemap"
 Palettes_03c_46f7:
 	RGB 31, 31, 31
 	RGB 20, 20, 20
@@ -380,7 +380,7 @@ Palettes_03c_46f7:
 Pointers_03c_4737:
 	dr $f0737, $f0775
 GFX_03c_4775:
-	dr $f0775, $f0c55
+INCBIN "gfx/misc/gfx_03c_4775.2bpp"
 Func_03c_4c55:
 	dr $f0c55, $f0c63
 Func_03c_4c63:
@@ -913,9 +913,9 @@ Func_03c_5082:
 Pointers_03c_50bb:
 	dr $f10bb, $f11b4
 AttrMap_03c_51b4:
-	dr $f11b4, $f131c
+INCBIN "gfx/attrmaps/attrmap_03c_51b4.bin"
 Tilemap_03c_531c:
-	dr $f131c, $f1484
+INCBIN "gfx/tilemaps/tilemap_03c_531c.tilemap"
 Palettes_03c_5484:
 	RGB 31, 31, 31
 	RGB 18, 31, 0
@@ -930,18 +930,18 @@ Palettes_03c_5484:
 	RGB 0, 12, 25
 	RGB 0, 0, 0
 GFX_03c_549c:
-	dr $f149c, $f1b8c
+INCBIN "gfx/misc/gfx_03c_549c.2bpp"
 Palettes_03c_5b8c:
 	RGB 16, 16, 16
 	RGB 31, 31, 7
 	RGB 31, 17, 0
 	RGB 31, 0, 0
 GFX_03c_5b94:
-	dr $f1b94, $f1ed4
+INCBIN "gfx/misc/gfx_03c_5b94.2bpp"
 AttrMap_03c_5ed4:
-	dr $f1ed4, $f203c
+INCBIN "gfx/attrmaps/attrmap_03c_5ed4.bin"
 Tilemap_03c_603c:
-	dr $f203c, $f21a4
+INCBIN "gfx/tilemaps/tilemap_03c_603c.tilemap"
 Palettes_03c_61a4:
 	RGB 31, 31, 0
 	RGB 25, 25, 8
@@ -960,15 +960,15 @@ Palettes_03c_61a4:
 	RGB 0, 12, 25
 	RGB 0, 0, 0
 GFX_03c_61c4:
-	dr $f21c4, $f29c4
+INCBIN "gfx/misc/gfx_03c_61c4.2bpp"
 GFX_03c_69c4:
-	dr $f29c4, $f29e4
+INCBIN "gfx/misc/gfx_03c_69c4.2bpp"
 Palettes_03c_69e4:
 	RGB 0, 0, 30
 	RGB 31, 31, 31
 	RGB 20, 20, 20
 	RGB 11, 11, 11
 GFX_03c_69ec:
-	dr $f29ec, $f2c70
+INCBIN "gfx/misc/gfx_03c_69ec.bin"
 
 

@@ -435,7 +435,7 @@ Func_5d_435e:
 	call PlaceTilemap_Bank0
 	ret
 BGMap_5d_43EE:
-	dr $1743ee, $1743f2
+INCBIN "gfx/bgmaps/bgmap_5d_43ee.bin"
 ; TODO: indexed data table, classify type
 unk_5d_43F2:
 	dr $1743f2, $1743f5
@@ -1372,23 +1372,23 @@ RhythmOBJPalette:
 unk_5d_4B47_pad:
 	dr $174b47, $174b4f
 RhythmScreen1Tilemap:
-	dr $174b4f, $174cb7
+INCBIN "gfx/tilemaps/rhythmscreen1tilemap.tilemap"
 RhythmScreen1Attrmap:
-	dr $174cb7, $174e1f
+INCBIN "gfx/attrmaps/rhythmscreen1attrmap.bin"
 RhythmScreen2Tilemap:
-	dr $174e1f, $174f87
+INCBIN "gfx/tilemaps/rhythmscreen2tilemap.tilemap"
 RhythmScreen2Attrmap:
-	dr $174f87, $1750ef
+INCBIN "gfx/attrmaps/rhythmscreen2attrmap.bin"
 RhythmScreen1GFX:
-	dr $1750ef, $1758ef
+INCBIN "gfx/misc/rhythmscreen1gfx.2bpp"
 RhythmScreen1GFX2:
-	dr $1758ef, $175e6f
+INCBIN "gfx/misc/rhythmscreen1gfx2.2bpp"
 RhythmScreen2GFX:
-	dr $175e6f, $17666f
+INCBIN "gfx/misc/rhythmscreen2gfx.2bpp"
 RhythmScreen2GFX2:
-	dr $17666f, $1768ff
+INCBIN "gfx/misc/rhythmscreen2gfx2.2bpp"
 RhythmSharedGFX:
-	dr $1768ff, $176c5f
+INCBIN "gfx/misc/rhythmsharedgfx.2bpp"
 AnimFrame_Pointers:
 	dr $176c5f, $176c7b
 RhythmAnimFrames:

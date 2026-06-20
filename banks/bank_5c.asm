@@ -189,7 +189,7 @@ Func_05c_55e7::
 	ld [hFade], a
 	ret
 StripTilemapPointers_5c:
-	dr $1716f5, $171705
+INCBIN "gfx/tilemaps/striptilemappointers_5c.tilemap"
 Func_05c_5705:
 	ld hl, wVisibleObjects
 	ld bc, $0100
@@ -307,11 +307,11 @@ BGPals_5c:
 unk_5c_57d1:
 	dr $1717d1, $1717d9
 Attrmap_5c:
-	dr $1717d9, $171941
+INCBIN "gfx/attrmaps/attrmap_5c.bin"
 Tilemap_5c:
-	dr $171941, $171aa9
+INCBIN "gfx/tilemaps/tilemap_5c.tilemap"
 StripTilemaps_5c:
-	dr $171aa9, $171bc1
+INCBIN "gfx/tilemaps/striptilemaps_5c.tilemap"
 GFX_5c:
-	dr $171bc1, $172310
+INCBIN "gfx/misc/gfx_5c.bin"
 

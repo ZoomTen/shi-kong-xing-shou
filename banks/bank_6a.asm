@@ -24,7 +24,7 @@ Metatiles_06a_4484::
 Blocks_06a_4558::
 	dr $1a8558, $1a8808
 AttrMap_06a_4808::
-	dr $1a8808, $1a88a1
+INCBIN "gfx/attrmaps/attrmap_06a_4808.bin"
 Palettes_06a_48a1::
 	RGB 31, 31, 29
 	RGB 28, 20, 5
@@ -128,7 +128,7 @@ Metatiles_06a_5020::
 Blocks_06a_515c::
 	dr $1a915c, $1a91d0
 AttrMap_06a_51d0::
-	dr $1a91d0, $1a9257
+INCBIN "gfx/attrmaps/attrmap_06a_51d0.bin"
 Palettes_06a_5257::
 	RGB 31, 31, 29
 	RGB 20, 25, 25
@@ -219,7 +219,7 @@ Metatiles_06a_5bd3::
 Blocks_06a_5c6b::
 	dr $1a9c6b, $1a9e87
 AttrMap_06a_5e87::
-	dr $1a9e87, $1a9ec7
+INCBIN "gfx/attrmaps/attrmap_06a_5e87.bin"
 Palettes_06a_5ec7::
 	RGB 31, 31, 31
 	RGB 21, 23, 29
@@ -274,7 +274,7 @@ Metatiles_06a_6059::
 Blocks_06a_615d::
 	dr $1aa15d, $1aa3f1
 AttrMap_06a_63f1::
-	dr $1aa3f1, $1aa479
+INCBIN "gfx/attrmaps/attrmap_06a_63f1.bin"
 Palettes_06a_6479::
 	RGB 31, 30, 29
 	RGB 24, 24, 19
@@ -329,7 +329,7 @@ Metatiles_06a_6536::
 Blocks_06a_65ae::
 	dr $1aa5ae, $1aa606
 AttrMap_06a_6606::
-	dr $1aa606, $1aa639
+INCBIN "gfx/attrmaps/attrmap_06a_6606.bin"
 Palettes_06a_6639::
 	RGB 31, 31, 31
 	RGB 21, 21, 21
@@ -384,7 +384,7 @@ Metatiles_06a_66f1::
 Blocks_06a_6739::
 	dr $1aa739, $1aa7b9
 AttrMap_06a_67b9::
-	dr $1aa7b9, $1aa7fc
+INCBIN "gfx/attrmaps/attrmap_06a_67b9.bin"
 Palettes_06a_67fc::
 	RGB 31, 31, 31
 	RGB 22, 24, 26
@@ -439,7 +439,7 @@ Metatiles_06a_689e::
 Blocks_06a_6962::
 	dr $1aa962, $1aa9b2
 AttrMap_06a_69b2::
-	dr $1aa9b2, $1aaa21
+INCBIN "gfx/attrmaps/attrmap_06a_69b2.bin"
 Palettes_06a_6a21::
 	RGB 31, 31, 29
 	RGB 24, 20, 20
@@ -578,7 +578,7 @@ Metatiles_06a_6eef::
 Blocks_06a_6fb7::
 	dr $1aafb7, $1ab01b
 AttrMap_06a_701b::
-	dr $1ab01b, $1ab07d
+INCBIN "gfx/attrmaps/attrmap_06a_701b.bin"
 Palettes_06a_707d::
 	RGB 31, 31, 29
 	RGB 22, 26, 26
@@ -633,7 +633,7 @@ Metatiles_06a_7171::
 Blocks_06a_71f9::
 	dr $1ab1f9, $1ab301
 AttrMap_06a_7301::
-	dr $1ab301, $1ab38a
+INCBIN "gfx/attrmaps/attrmap_06a_7301.bin"
 Palettes_06a_738a::
 	RGB 31, 30, 29
 	RGB 20, 20, 25
@@ -736,7 +736,7 @@ Metatiles_06a_75fc::
 Blocks_06a_7744::
 	dr $1ab744, $1ab788
 AttrMap_06a_7788::
-	dr $1ab788, $1ab81c
+INCBIN "gfx/attrmaps/attrmap_06a_7788.bin"
 Palettes_06a_781c::
 	RGB 31, 30, 28
 	RGB 21, 23, 14
@@ -803,7 +803,7 @@ Metatiles_06a_7a47::
 Blocks_06a_7a9f::
 	dr $1aba9f, $1abb07
 AttrMap_06a_7b07::
-	dr $1abb07, $1abb57
+INCBIN "gfx/attrmaps/attrmap_06a_7b07.bin"
 Palettes_06a_7b57::
 	RGB 31, 30, 29
 	RGB 20, 20, 25
@@ -858,7 +858,7 @@ Metatiles_06a_7be9::
 Blocks_06a_7c89::
 	dr $1abc89, $1abcf1
 AttrMap_06a_7cf1::
-	dr $1abcf1, $1abd69
+INCBIN "gfx/attrmaps/attrmap_06a_7cf1.bin"
 Palettes_06a_7d69::
 	RGB 25, 29, 31
 	RGB 0, 22, 28
@@ -914,7 +914,7 @@ Metatiles_06a_7e0d::
 Blocks_06a_7eb1::
 	dr $1abeb1, $1abf15
 AttrMap_06a_7f15::
-	dr $1abf15, $1abf76
+INCBIN "gfx/attrmaps/attrmap_06a_7f15.bin"
 Palettes_06a_7f76::
 	RGB 31, 31, 31
 	RGB 0, 22, 30

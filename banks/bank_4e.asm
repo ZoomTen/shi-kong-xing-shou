@@ -648,11 +648,11 @@ AirportCutscene1_ObjPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 AirportCutscene1_Tilemap:
-	dr $13a407, $13a647
+INCBIN "gfx/tilemaps/airportcutscene1_tilemap.tilemap"
 AirportCutscene1_Attrmap:
-	dr $13a647, $13a887
+INCBIN "gfx/attrmaps/airportcutscene1_attrmap.bin"
 AirportCutscene1_GFX:
-	dr $13a887, $13ade7
+INCBIN "gfx/misc/airportcutscene1_gfx.2bpp"
 AirportCutscene1_ObjGFX:
-	dr $13ade7, $13b280
+INCBIN "gfx/misc/airportcutscene1_objgfx.bin"
 

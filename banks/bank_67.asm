@@ -253,13 +253,13 @@ BeachCutsceneBackgroundPalettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 BeachCutsceneAttrmap:
-	dr $19c2ee, $19c456
+INCBIN "gfx/attrmaps/beachcutsceneattrmap.bin"
 BeachCutsceneTilemap:
-	dr $19c456, $19c5be
+INCBIN "gfx/tilemaps/beachcutscenetilemap.tilemap"
 BeachCutsceneGFX1:
-	dr $19c5be, $19c8fe
+INCBIN "gfx/misc/beachcutscenegfx1.2bpp"
 BeachCutsceneGFX2:
-	dr $19c8fe, $19d06e
+INCBIN "gfx/misc/beachcutscenegfx2.2bpp"
 
 FloatingIslandCutscene1::
 	ld a, $69
@@ -642,11 +642,11 @@ Palette_67_5409:
 AttrMap_67_5451:
 	INCBIN "data/attrmap_67_5451.bin"
 FloatingIsland1_Tilemap:
-	dr $19d5b9, $19d721
+INCBIN "gfx/tilemaps/floatingisland1_tilemap.tilemap"
 GFX_67_5721:
-	dr $19d721, $19def1
+INCBIN "gfx/misc/gfx_67_5721.2bpp"
 FloatingIsland1_SpriteGFX:
-	dr $19def1, $19e0d1
+INCBIN "gfx/misc/floatingisland1_spritegfx.2bpp"
 FloatingIslandCutscene2_Palette:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
@@ -722,13 +722,13 @@ FloatingIslandCutscene2_Palette2:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 FloatingIslandCutscene2_Attrmap:
-	dr $19e161, $19e2c9
+INCBIN "gfx/attrmaps/floatingislandcutscene2_attrmap.bin"
 FloatingIslandCutscene2_Tilemap:
-	dr $19e2c9, $19e431
+INCBIN "gfx/tilemaps/floatingislandcutscene2_tilemap.tilemap"
 FloatingIslandCutscene2_GFX:
-	dr $19e431, $19eba1
+INCBIN "gfx/misc/floatingislandcutscene2_gfx.2bpp"
 FloatingIslandCutscene2_GFX2:
-	dr $19eba1, $19ee01
+INCBIN "gfx/misc/floatingislandcutscene2_gfx2.2bpp"
 Script_067_6e01::
 	dr $19ee01, $19ee0a
 

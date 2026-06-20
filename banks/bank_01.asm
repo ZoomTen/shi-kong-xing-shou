@@ -384,7 +384,7 @@ Hideout_Blocks:
 	INCBIN "data/maps/blocks/Hideout.bin"
 
 Hideout_AttrMap:
-	dr $45a9, $460a
+INCBIN "gfx/attrmaps/hideout_attrmap.bin"
 
 Hideout_Palettes:
 	RGB 31, 31, 29
@@ -459,7 +459,7 @@ PowerPlant4F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant4F.bin"
 
 PowerPlant_AttrMap:
-	dr $4955, $49a6
+INCBIN "gfx/attrmaps/powerplant_attrmap.bin"
 
 PowerPlant_Palettes:
 	RGB 31, 31, 29
@@ -513,7 +513,7 @@ PowerPlantOutside_Blocks:
 	INCBIN "data/maps/blocks/PowerPlantOutside.bin"
 
 PowerPlantOutside_AttrMap:
-	dr $4be7, $4c88
+INCBIN "gfx/attrmaps/powerplantoutside_attrmap.bin"
 
 PowerPlantOutside_Palettes:
 	RGB 31, 31, 29
@@ -567,7 +567,7 @@ Junkyard_Blocks:
 	INCBIN "data/maps/blocks/Junkyard.bin"
 
 Junkyard_AttrMap:
-	dr $4e12, $4e83
+INCBIN "gfx/attrmaps/junkyard_attrmap.bin"
 
 Junkyard_Palettes:
 	RGB 31, 30, 29
@@ -620,7 +620,7 @@ Blocks_001_4f76:
 	dr $4f76, $4fc2
 
 AttrMap_001_4fc2:
-	dr $4fc2, $5013
+INCBIN "gfx/attrmaps/attrmap_001_4fc2.bin"
 
 Palettes_001_5013:
 	RGB 31, 31, 31
@@ -697,7 +697,7 @@ Blocks_001_5301:
 	dr $5301, $5361
 
 AttrMap_001_5361:
-	dr $5361, $5402
+INCBIN "gfx/attrmaps/attrmap_001_5361.bin"
 
 Palettes_001_5402:
 	RGB 31, 31, 31
@@ -751,7 +751,7 @@ CrystalVillage_Blocks:
 	INCBIN "data/maps/blocks/CrystalVillage.bin"
 
 CrystalVillage_AttrMap:
-	dr $5785, $5826
+INCBIN "gfx/attrmaps/crystalvillage_attrmap.bin"
 
 CrystalVillage_Palettes:
 	RGB 31, 30, 30
@@ -804,7 +804,7 @@ Blocks_001_592a:
 	dr $592a, $5976
 
 AttrMap_001_5976:
-	dr $5976, $59c7
+INCBIN "gfx/attrmaps/attrmap_001_5976.bin"
 
 Palettes_001_59c7:
 	RGB 31, 30, 28
@@ -857,7 +857,7 @@ Blocks_001_5ab3:
 	dr $5ab3, $5b13
 
 AttrMap_001_5b13:
-	dr $5b13, $5b55
+INCBIN "gfx/attrmaps/attrmap_001_5b13.bin"
 
 Palettes_001_5b55:
 	RGB 31, 30, 28
@@ -940,7 +940,7 @@ Blocks_001_5eb3:
 	dr $5eb3, $5efb
 
 AttrMap_001_5efb:
-	dr $5efb, $5f8c
+INCBIN "gfx/attrmaps/attrmap_001_5efb.bin"
 
 Palettes_001_5f8c:
 	RGB 31, 30, 28
@@ -994,7 +994,7 @@ TechCity_Blocks:
 	INCBIN "data/maps/blocks/TechCity.bin"
 
 TechCity_AttrMap:
-	dr $636a, $63eb
+INCBIN "gfx/attrmaps/techcity_attrmap.bin"
 
 TechCity_Palettes:
 	RGB 31, 30, 29
@@ -1048,7 +1048,7 @@ BellSchoolSouthClassroom_Blocks:
 	INCBIN "data/maps/blocks/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_AttrMap:
-	dr $65b7, $6648
+INCBIN "gfx/attrmaps/bellschoolsouthclassroom_attrmap.bin"
 
 BellSchoolSouthClassroom_Palettes:
 	RGB 31, 30, 28
@@ -1102,7 +1102,7 @@ BellObservatory1_Blocks:
 	INCBIN "data/maps/blocks/BellObservatory1.bin"
 
 BellObservatory1_AttrMap:
-	dr $681f, $68c0
+INCBIN "gfx/attrmaps/bellobservatory1_attrmap.bin"
 
 BellObservatory1_Palettes:
 	RGB 31, 30, 28
@@ -1156,7 +1156,7 @@ BellSchool1_Blocks:
 	INCBIN "data/maps/blocks/BellSchool1.bin"
 
 BellSchool1_AttrMap:
-	dr $6a4d, $6a7e
+INCBIN "gfx/attrmaps/bellschool1_attrmap.bin"
 
 BellSchool1_Palettes:
 	RGB 31, 30, 28
@@ -1210,7 +1210,7 @@ BellHealingCenter1_Blocks:
 	INCBIN "data/maps/blocks/BellHealingCenter1.bin"
 
 BellHealingCenter1_AttrMap:
-	dr $6bb9, $6c0a
+INCBIN "gfx/attrmaps/bellhealingcenter1_attrmap.bin"
 
 BellHealingCenter1_Palettes:
 	RGB 31, 30, 28
@@ -1291,7 +1291,7 @@ BallotsHouse1_AttrMap:
 HayatosHouse1_AttrMap:
 CarpetWomansHouse1_AttrMap:
 FangfangsHouse1_AttrMap:
-	dr $6ec7, $6f58
+INCBIN "gfx/attrmaps/fangfangshouse1_attrmap.bin"
 
 BallotsHouse1_Palettes:
 HayatosHouse1_Palettes:
@@ -1351,7 +1351,7 @@ BellObservatoryOutside1_Blocks:
 	INCBIN "data/maps/blocks/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_AttrMap:
-	dr $715e, $71ff
+INCBIN "gfx/attrmaps/bellobservatoryoutside1_attrmap.bin"
 
 BellObservatoryOutside1_Palettes:
 	RGB 31, 30, 26
@@ -1405,7 +1405,7 @@ BellSchoolOutside1_Blocks:
 	INCBIN "data/maps/blocks/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_AttrMap:
-	dr $7444, $74e5
+INCBIN "gfx/attrmaps/bellschooloutside1_attrmap.bin"
 
 BellSchoolOutside1_Palettes:
 	RGB 31, 30, 26
@@ -1481,7 +1481,7 @@ Metatiles_001_7953::
 Blocks_001_7957::
 	dr $7957, $795b
 AttrMap_001_795b::
-	dr $795b, $795e
+INCBIN "gfx/attrmaps/attrmap_001_795b.bin"
 Palettes_001_795e::
 	RGB 31, 30, 26
 	RGB 28, 23, 14

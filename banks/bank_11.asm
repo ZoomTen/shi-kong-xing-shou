@@ -16,7 +16,7 @@ Blocks_011_42a5:
 	dr $442a5, $44561
 
 AttrMap_011_4561:
-	dr $44561, $44602
+INCBIN "gfx/attrmaps/attrmap_011_4561.bin"
 
 Palettes_011_4602:
 	RGB 31, 30, 29
@@ -77,7 +77,7 @@ Blocks_011_484a:
 	dr $4484a, $44a66
 
 AttrMap_011_4a66:
-	dr $44a66, $44ae2
+INCBIN "gfx/attrmaps/attrmap_011_4a66.bin"
 
 Palettes_011_4ae2:
 	RGB 31, 30, 29
@@ -166,7 +166,7 @@ Blocks_011_51d0:
 	dr $451d0, $45290
 
 AttrMap_011_5290:
-	dr $45290, $4532f
+INCBIN "gfx/attrmaps/attrmap_011_5290.bin"
 
 Palettes_011_532f:
 	RGB 30, 30, 27
@@ -241,7 +241,7 @@ Blocks_011_5844:
 	dr $45844, $4589c
 
 AttrMap_011_589c:
-	dr $4589c, $4592c
+INCBIN "gfx/attrmaps/attrmap_011_589c.bin"
 
 Palettes_011_592c:
 	RGB 30, 30, 27
@@ -302,7 +302,7 @@ Blocks_011_5b4f:
 	dr $45b4f, $45c4b
 
 AttrMap_011_5c4b:
-	dr $45c4b, $45ce4
+INCBIN "gfx/attrmaps/attrmap_011_5c4b.bin"
 
 Palettes_011_5ce4:
 	RGB 31, 31, 29
@@ -419,7 +419,7 @@ Blocks_011_6510:
 	dr $46510, $4656c
 
 AttrMap_011_656c:
-	dr $4656c, $465db
+INCBIN "gfx/attrmaps/attrmap_011_656c.bin"
 
 Palettes_011_65db:
 	RGB 31, 31, 29
@@ -522,7 +522,7 @@ Blocks_011_6922:
 	dr $46922, $46966
 
 AttrMap_011_6966:
-	dr $46966, $469ec
+INCBIN "gfx/attrmaps/attrmap_011_6966.bin"
 
 Palettes_011_69ec:
 	RGB 31, 31, 29
@@ -652,7 +652,7 @@ Blocks_011_6d75:
 	dr $46d75, $46dd5
 
 AttrMap_011_6dd5:
-	dr $46dd5, $46e2f
+INCBIN "gfx/attrmaps/attrmap_011_6dd5.bin"
 
 Palettes_011_6e2f:
 	RGB 31, 31, 29
@@ -727,7 +727,7 @@ Blocks_011_7085:
 	dr $47085, $471b1
 
 AttrMap_011_71b1:
-	dr $471b1, $47205
+INCBIN "gfx/attrmaps/attrmap_011_71b1.bin"
 
 Palettes_011_7205:
 	RGB 31, 30, 28

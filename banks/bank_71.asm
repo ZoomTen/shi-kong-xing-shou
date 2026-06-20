@@ -258,7 +258,7 @@ Func_71_4116:
 CreditsScreenLayouts:
 	dr $1c4207, $1c4287
 CreditsScreenGfx:
-	dr $1c4287, $1c42a7
+INCBIN "gfx/misc/creditsscreengfx.2bpp"
 Func_71_42a7:
 	ld hl, wc000
 	ld bc, $0028
@@ -287,9 +287,9 @@ Func_71_42bf:
 	jr nz, .asm_42c5
 	ret
 CreditsBgTilemap1:
-	dr $1c42cd, $1c4393
+INCBIN "gfx/tilemaps/creditsbgtilemap1.tilemap"
 CreditsBgTilemap2:
-	dr $1c4393, $1c4459
+INCBIN "gfx/tilemaps/creditsbgtilemap2.tilemap"
 CreditsPalette:
 	RGB 31, 31, 31
 	RGB 22, 31, 17
@@ -324,55 +324,55 @@ CreditsPalette:
 	RGB 17, 24, 31
 	RGB 0, 0, 0
 CreditsFontGFX:
-	dr $1c4499, $1c48d9
+INCBIN "gfx/misc/creditsfontgfx.2bpp"
 CreditsScreen1Attrmap:
-	dr $1c48d9, $1c48fd
+INCBIN "gfx/attrmaps/creditsscreen1attrmap.bin"
 CreditsScreen1Tilemap:
-	dr $1c48fd, $1c4921
+INCBIN "gfx/tilemaps/creditsscreen1tilemap.tilemap"
 CreditsScreen1Gfx:
-	dr $1c4921, $1c4a71
+INCBIN "gfx/misc/creditsscreen1gfx.2bpp"
 CreditsScreen2Attrmap:
-	dr $1c4a71, $1c4a95
+INCBIN "gfx/attrmaps/creditsscreen2attrmap.bin"
 CreditsScreen2Tilemap:
-	dr $1c4a95, $1c4ab9
+INCBIN "gfx/tilemaps/creditsscreen2tilemap.tilemap"
 CreditsScreen2Gfx:
-	dr $1c4ab9, $1c4c09
+INCBIN "gfx/misc/creditsscreen2gfx.2bpp"
 CreditsScreen3Attrmap:
-	dr $1c4c09, $1c4c3f
+INCBIN "gfx/attrmaps/creditsscreen3attrmap.bin"
 CreditsScreen3Tilemap:
-	dr $1c4c3f, $1c4c75
+INCBIN "gfx/tilemaps/creditsscreen3tilemap.tilemap"
 CreditsScreen3Gfx:
-	dr $1c4c75, $1c4f85
+INCBIN "gfx/misc/creditsscreen3gfx.2bpp"
 CreditsScreen4Attrmap:
-	dr $1c4f85, $1c4fa3
+INCBIN "gfx/attrmaps/creditsscreen4attrmap.bin"
 CreditsScreen4Tilemap:
-	dr $1c4fa3, $1c4fc1
+INCBIN "gfx/tilemaps/creditsscreen4tilemap.tilemap"
 CreditsScreen4Gfx:
-	dr $1c4fc1, $1c5111
+INCBIN "gfx/misc/creditsscreen4gfx.2bpp"
 CreditsScreen5Attrmap:
-	dr $1c5111, $1c513b
+INCBIN "gfx/attrmaps/creditsscreen5attrmap.bin"
 CreditsScreen5Tilemap:
-	dr $1c513b, $1c5165
+INCBIN "gfx/tilemaps/creditsscreen5tilemap.tilemap"
 CreditsScreen5Gfx:
-	dr $1c5165, $1c5375
+INCBIN "gfx/misc/creditsscreen5gfx.2bpp"
 CreditsScreen6Attrmap:
-	dr $1c5375, $1c5393
+INCBIN "gfx/attrmaps/creditsscreen6attrmap.bin"
 CreditsScreen6Tilemap:
-	dr $1c5393, $1c53b1
+INCBIN "gfx/tilemaps/creditsscreen6tilemap.tilemap"
 CreditsScreen6Gfx:
-	dr $1c53b1, $1c5501
+INCBIN "gfx/misc/creditsscreen6gfx.2bpp"
 CreditsScreen7Attrmap:
-	dr $1c5501, $1c5537
+INCBIN "gfx/attrmaps/creditsscreen7attrmap.bin"
 CreditsScreen7Tilemap:
-	dr $1c5537, $1c556d
+INCBIN "gfx/tilemaps/creditsscreen7tilemap.tilemap"
 CreditsScreen7Gfx:
-	dr $1c556d, $1c587d
+INCBIN "gfx/misc/creditsscreen7gfx.2bpp"
 CreditsScreen8Attrmap:
-	dr $1c587d, $1c589b
+INCBIN "gfx/attrmaps/creditsscreen8attrmap.bin"
 CreditsScreen8Tilemap:
-	dr $1c589b, $1c58b9
+INCBIN "gfx/tilemaps/creditsscreen8tilemap.tilemap"
 CreditsScreen8Gfx:
-	dr $1c58b9, $1c5a49
+INCBIN "gfx/misc/creditsscreen8gfx.2bpp"
 
 TheEnd::
 	xor a
@@ -439,9 +439,9 @@ TheEnd::
 	ld [wTargetMode], a
 	jp JumpToGameMode
 TheEndAttrmap:
-	dr $1c5adc, $1c5c44
+INCBIN "gfx/attrmaps/theendattrmap.bin"
 TheEndTilemap:
-	dr $1c5c44, $1c5dac
+INCBIN "gfx/tilemaps/theendtilemap.tilemap"
 TheEndPalette:
 	RGB 31, 31, 31
 	RGB 22, 31, 17
@@ -479,6 +479,6 @@ TheEndPalette:
 unk_071_5dec:
 	dr $1c5dec, $1c5df4
 TheEndGfx:
-	dr $1c5df4, $1c5f90
+INCBIN "gfx/misc/theendgfx.bin"
 
 

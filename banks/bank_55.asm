@@ -346,16 +346,16 @@ Palette_055_4432:
 unk_055_4472:
 	dr $154472, $15447a
 Tilemap_055_447a:
-	dr $15447a, $1546ba
+INCBIN "gfx/tilemaps/tilemap_055_447a.tilemap"
 Attrmap_055_46ba:
-	dr $1546ba, $1548fa
+INCBIN "gfx/attrmaps/attrmap_055_46ba.bin"
 GFX_055_48fa:
-	dr $1548fa, $154bad
+INCBIN "gfx/misc/gfx_055_48fa.bin"
 
 Script_055_4bad:
 	dr $154bad, $154e6a
 GFX_055_4e6a:
-	dr $154e6a, $15530a
+INCBIN "gfx/misc/gfx_055_4e6a.2bpp"
 
 G4_32_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_055_5316

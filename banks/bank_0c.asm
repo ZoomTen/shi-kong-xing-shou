@@ -172,7 +172,7 @@ Group06_Signposts:
 INCLUDE "data/text/signposts_6.asm"
 
 BattleUIGFX::
-	dr $3032a, $31f4a
+INCBIN "gfx/misc/battleuigfx.2bpp"
 Pointers_00c_5f4a:
 	dr $31f4a, $323dc
 Pointers_00c_63dc:

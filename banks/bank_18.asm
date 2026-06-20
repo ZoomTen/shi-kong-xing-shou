@@ -37,7 +37,7 @@ Metatiles_018_4254::
 Blocks_018_42c0::
 	dr $602c0, $60320
 AttrMap_018_4320::
-	dr $60320, $603aa
+INCBIN "gfx/attrmaps/attrmap_018_4320.bin"
 Collision_018_43aa::
 	dr $603aa, $60bf8
 Palettes_018_4bf8::

@@ -725,44 +725,44 @@ SpriteLayoutPointers_07a_4629:
 SpriteLayoutData_07a_4643:
 	dr $1e8643, $1e87c7
 AttrMap_07a_47c7:
-	dr $1e87c7, $1e892f
+INCBIN "gfx/attrmaps/attrmap_07a_47c7.bin"
 BGMap_07a_492f:
-	dr $1e892f, $1e8a97
+INCBIN "gfx/bgmaps/bgmap_07a_492f.bin"
 Palette_07a_4a97:
 	dr $1e8a97, $1e8aaf
 GFX_07a_4aaf:
-	dr $1e8aaf, $1e930f
+INCBIN "gfx/misc/gfx_07a_4aaf.2bpp"
 Palette_07a_530f:
 	dr $1e930f, $1e9317
 GFX_07a_5317:
-	dr $1e9317, $1e94f7
+INCBIN "gfx/misc/gfx_07a_5317.2bpp"
 AttrMap_07a_54f7:
-	dr $1e94f7, $1e965f
+INCBIN "gfx/attrmaps/attrmap_07a_54f7.bin"
 BGMap_07a_565f:
-	dr $1e965f, $1e97c7
+INCBIN "gfx/bgmaps/bgmap_07a_565f.bin"
 Palette_07a_57c7:
 	dr $1e97c7, $1e97df
 GFX_07a_57df:
-	dr $1e97df, $1e9eef
+INCBIN "gfx/misc/gfx_07a_57df.2bpp"
 Intro1_Attrmap:
-	dr $1e9eef, $1ea057
+INCBIN "gfx/attrmaps/intro1_attrmap.bin"
 Intro1_Layout:
 	dr $1ea057, $1ea1bf
 Intro1_Palette:
 	dr $1ea1bf, $1ea1cf
 Intro1_GFX:
-	dr $1ea1cf, $1ea62f
+INCBIN "gfx/misc/intro1_gfx.2bpp"
 Intro1_OBPalette:
 	dr $1ea62f, $1ea63f
 Intro1_OBGFX:
-	dr $1ea63f, $1eaf1f
+INCBIN "gfx/misc/intro1_obgfx.2bpp"
 Intro2_Attrmap:
-	dr $1eaf1f, $1eb087
+INCBIN "gfx/attrmaps/intro2_attrmap.bin"
 Intro2_Layout:
 	dr $1eb087, $1eb1ef
 Intro2_Palette:
 	dr $1eb1ef, $1eb207
 Intro2_GFX:
-	dr $1eb207, $1eba40
+INCBIN "gfx/misc/intro2_gfx.bin"
 
 

@@ -1141,9 +1141,9 @@ Func_02e_476d:
 	farcall Func_02b_402b
 	ret
 Mode_Tilemap_4883:
-	dr $b8883, $b88a1
+INCBIN "gfx/tilemaps/mode_tilemap_4883.tilemap"
 Mode_Tilemap_48a1:
-	dr $b88a1, $b88c9
+INCBIN "gfx/tilemaps/mode_tilemap_48a1.tilemap"
 Func_02e_48c9:
 	ld a, [wd98b]
 	and a
@@ -2382,9 +2382,9 @@ Func_02e_50e7:
 	ld [wd98b], a
 	ret
 Mode_Tilemap_5179:
-	dr $b9179, $b919d
+INCBIN "gfx/tilemaps/mode_tilemap_5179.tilemap"
 Mode_Tilemap_519d:
-	dr $b919d, $b91c1
+INCBIN "gfx/tilemaps/mode_tilemap_519d.tilemap"
 Func_02e_51c1:
 	call Func_02e_411e
 	ld a, [wBattleState]

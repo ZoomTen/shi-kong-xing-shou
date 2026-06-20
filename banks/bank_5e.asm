@@ -2374,9 +2374,9 @@ Func_05e_5408:
 RacingMinigame_RowPtrs:
 	dr $17943e, $179442
 RacingMinigame_Attrmap0:
-	dr $179442, $1795aa
+INCBIN "gfx/attrmaps/racingminigame_attrmap0.bin"
 RacingMinigame_Tilemap0:
-	dr $1795aa, $179712
+INCBIN "gfx/tilemaps/racingminigame_tilemap0.tilemap"
 RacingMinigame_BannerRowA:
 	dr $179712, $179726
 RacingMinigame_BannerRowB:
@@ -2391,9 +2391,9 @@ RacingMinigame_Pal1:
 	RGB 31, 15, 0
 	RGB 0, 0, 0
 RacingMinigame_GFX1:
-	dr $17974a, $179f4a
+INCBIN "gfx/misc/racingminigame_gfx1.2bpp"
 RacingMinigame_GFX2:
-	dr $179f4a, $179ffa
+INCBIN "gfx/misc/racingminigame_gfx2.2bpp"
 RacingMinigame_Pal2:
 	RGB 15, 15, 15
 	RGB 21, 23, 26
@@ -2416,15 +2416,15 @@ RacingMinigame_Pal2:
 	RGB 0, 4, 28
 	RGB 0, 0, 0
 RacingMinigame_GFX3:
-	dr $17a022, $17a8a2
+INCBIN "gfx/misc/racingminigame_gfx3.2bpp"
 RacingMinigame_Attrmap1:
-	dr $17a8a2, $17ab22
+INCBIN "gfx/attrmaps/racingminigame_attrmap1.bin"
 RacingMinigame_Tilemap1:
-	dr $17ab22, $17ada2
+INCBIN "gfx/tilemaps/racingminigame_tilemap1.tilemap"
 RacingMinigame_Tilemap2:
-	dr $17ada2, $17adf6
+INCBIN "gfx/tilemaps/racingminigame_tilemap2.tilemap"
 RacingMinigame_Tilemap3:
-	dr $17adf6, $17ae4a
+INCBIN "gfx/tilemaps/racingminigame_tilemap3.tilemap"
 RacingMinigame_Pal3:
 	RGB 30, 30, 30
 	RGB 28, 14, 0
@@ -2447,11 +2447,11 @@ RacingMinigame_Pal3:
 	RGB 17, 19, 12
 	RGB 0, 0, 0
 RacingMinigame_GFX4:
-	dr $17ae72, $17b612
+INCBIN "gfx/misc/racingminigame_gfx4.2bpp"
 RacingMinigame_TilemapRowB:
-	dr $17b612, $17b67e
+INCBIN "gfx/tilemaps/racingminigame_tilemaprowb.tilemap"
 RacingMinigame_TilemapRowA:
-	dr $17b67e, $17b6ea
+INCBIN "gfx/tilemaps/racingminigame_tilemaprowa.tilemap"
 RacingMinigame_ScrollTableA:
 	dr $17b6ea, $17b77c
 Func_05e_777c:

@@ -154,19 +154,25 @@ Func_06f_4000::
 	ldh [hMapGroup], a
 	jp JumpToGameMode
 Cutscene06f_TilemapPtrs:
-	dr $1bc134, $1bc13a
+INCBIN "gfx/tilemaps/cutscene06f_tilemapptrs.tilemap"
 Cutscene06f_AttrmapPtrs:
-	dr $1bc13a, $1bc140
+INCBIN "gfx/attrmaps/cutscene06f_attrmapptrs.bin"
 Cutscene06f_BGPalPtrs:
 	dr $1bc140, $1bc146
 Cutscene06f_BGGfxPtrs:
-	dr $1bc146, $1bc14c
+	dw Cutscene06f_BGGfx0
+	dw Cutscene06f_BGGfx1
+	dw Cutscene06f_BGGfx2
 Cutscene06f_BGGfx2Ptrs:
-	dr $1bc14c, $1bc152
+	dw Cutscene06f_BGGfx0
+	dw Cutscene06f_BGGfx1
+	dw Cutscene06f_BGGfx2_8800
 Cutscene06f_ObjPalPtrs:
 	dr $1bc152, $1bc158
 Cutscene06f_ObjGfxPtrs:
-	dr $1bc158, $1bc15e
+	dw Cutscene06f_ObjGfx0
+	dw Cutscene06f_ObjGfx1
+	dw Cutscene06f_ObjGfx2
 Func_06f_415e_helpers:
 Func_6f_415e:
 	ld a, [wdcf4]
@@ -269,9 +275,9 @@ Cutscene06f_ObjectList1:
 Cutscene06f_ObjectList2:
 	dr $1bc2fe, $1bc38b
 Cutscene06f_Attrmap0:
-	dr $1bc38b, $1bc4f3
+INCBIN "gfx/attrmaps/cutscene06f_attrmap0.bin"
 Cutscene06f_Tilemap0:
-	dr $1bc4f3, $1bc65b
+INCBIN "gfx/tilemaps/cutscene06f_tilemap0.tilemap"
 Cutscene06f_BGPal0:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
@@ -310,7 +316,7 @@ Cutscene06f_BGPal0:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 Cutscene06f_BGGfx0:
-	dr $1bc6a3, $1bce93
+INCBIN "gfx/misc/cutscene06f_bggfx0.2bpp"
 Cutscene06f_ObjPal_S0:
 	RGB 21, 21, 21
 	RGB 31, 0, 0
@@ -327,11 +333,11 @@ Cutscene06f_ObjPal_S2:
 	RGB 31, 15, 0
 	RGB 30, 30, 0
 Cutscene06f_ObjGfx0:
-	dr $1bceab, $1bd2eb
+INCBIN "gfx/misc/cutscene06f_objgfx0.2bpp"
 Cutscene06f_Attrmap1:
-	dr $1bd2eb, $1bd453
+INCBIN "gfx/attrmaps/cutscene06f_attrmap1.bin"
 Cutscene06f_Tilemap1:
-	dr $1bd453, $1bd5bb
+INCBIN "gfx/tilemaps/cutscene06f_tilemap1.tilemap"
 Cutscene06f_BGPal1:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
@@ -342,11 +348,11 @@ Cutscene06f_BGPal1:
 	RGB 0, 6, 28
 	RGB 0, 0, 0
 Cutscene06f_BGGfx1:
-	dr $1bd5cb, $1bdd0b
+INCBIN "gfx/misc/cutscene06f_bggfx1.2bpp"
 Cutscene06f_Attrmap2:
-	dr $1bdd0b, $1bde73
+INCBIN "gfx/attrmaps/cutscene06f_attrmap2.bin"
 Cutscene06f_Tilemap2:
-	dr $1bde73, $1bdfdb
+INCBIN "gfx/tilemaps/cutscene06f_tilemap2.tilemap"
 Cutscene06f_BGPal2:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
@@ -357,12 +363,12 @@ Cutscene06f_BGPal2:
 	RGB 0, 6, 28
 	RGB 0, 0, 0
 Cutscene06f_BGGfx2:
-	dr $1bdfeb, $1be7eb
+INCBIN "gfx/misc/cutscene06f_bggfx2.2bpp"
 Cutscene06f_BGGfx2_8800:
-	dr $1be7eb, $1be7fb
+INCBIN "gfx/misc/cutscene06f_bggfx2_8800.2bpp"
 Cutscene06f_ObjGfx1:
-	dr $1be7fb, $1bec5b
+INCBIN "gfx/misc/cutscene06f_objgfx1.2bpp"
 Cutscene06f_ObjGfx2:
-	dr $1bec5b, $1bf0a0
+INCBIN "gfx/misc/cutscene06f_objgfx2.bin"
 
 

@@ -48,7 +48,7 @@ Metatiles_050_4824::
 Blocks_050_48f0::
 	dr $1408f0, $14099c
 AttrMap_050_499c::
-	dr $14099c, $140a39
+INCBIN "gfx/attrmaps/attrmap_050_499c.bin"
 Palettes_050_4a39::
 	RGB 31, 30, 26
 	RGB 31, 0, 0
@@ -139,7 +139,7 @@ Metatiles_050_52d1::
 Blocks_050_539d::
 	dr $14139d, $141449
 AttrMap_050_5449::
-	dr $141449, $1414e4
+INCBIN "gfx/attrmaps/attrmap_050_5449.bin"
 Palettes_050_54e4::
 	RGB 31, 30, 26
 	RGB 31, 0, 0
@@ -194,7 +194,7 @@ Metatiles_050_5656::
 Blocks_050_580e::
 	dr $14180e, $141abe
 AttrMap_050_5abe::
-	dr $141abe, $141b5f
+INCBIN "gfx/attrmaps/attrmap_050_5abe.bin"
 Palettes_050_5b5f::
 	RGB 31, 30, 29
 	RGB 24, 24, 20
@@ -250,7 +250,7 @@ Metatiles_050_5c49::
 Blocks_050_5d11::
 	dr $141d11, $141d6d
 AttrMap_050_5d6d::
-	dr $141d6d, $141dfd
+INCBIN "gfx/attrmaps/attrmap_050_5d6d.bin"
 Palettes_050_5dfd::
 	RGB 31, 31, 29
 	RGB 22, 26, 26
@@ -305,7 +305,7 @@ Metatiles_050_5eab::
 Blocks_050_5f0f::
 	dr $141f0f, $141f63
 AttrMap_050_5f63::
-	dr $141f63, $141f8c
+INCBIN "gfx/attrmaps/attrmap_050_5f63.bin"
 Palettes_050_5f8c::
 	RGB 31, 30, 28
 	RGB 27, 25, 18
@@ -360,7 +360,7 @@ Metatiles_050_6027::
 Blocks_050_610b::
 	dr $14210b, $14217b
 AttrMap_050_617b::
-	dr $14217b, $1421df
+INCBIN "gfx/attrmaps/attrmap_050_617b.bin"
 Palettes_050_61df::
 	RGB 31, 31, 31
 	RGB 27, 25, 18
@@ -451,7 +451,7 @@ Metatiles_050_687d::
 Blocks_050_69e1::
 	dr $1429e1, $142b01
 AttrMap_050_6b01::
-	dr $142b01, $142b92
+INCBIN "gfx/attrmaps/attrmap_050_6b01.bin"
 Palettes_050_6b92::
 	RGB 29, 29, 18
 	RGB 25, 25, 9
@@ -506,7 +506,7 @@ Metatiles_050_6c67::
 Blocks_050_6d3f::
 	dr $142d3f, $142da3
 AttrMap_050_6da3::
-	dr $142da3, $142e40
+INCBIN "gfx/attrmaps/attrmap_050_6da3.bin"
 Palettes_050_6e40::
 	RGB 31, 31, 29
 	RGB 22, 26, 26
@@ -563,7 +563,7 @@ Metatiles_050_6ef2::
 Blocks_050_6fce::
 	dr $142fce, $14303e
 AttrMap_050_703e::
-	dr $14303e, $1430b2
+INCBIN "gfx/attrmaps/attrmap_050_703e.bin"
 Palettes_050_70b2::
 	RGB 31, 31, 29
 	RGB 28, 23, 14
@@ -620,7 +620,7 @@ Metatiles_050_7165::
 Blocks_050_7225::
 	dr $143225, $143281
 AttrMap_050_7281::
-	dr $143281, $143318
+INCBIN "gfx/attrmaps/attrmap_050_7281.bin"
 Palettes_050_7318::
 	RGB 31, 31, 29
 	RGB 22, 26, 26
@@ -702,7 +702,7 @@ Metatiles_050_75c0::
 Blocks_050_767c::
 	dr $14367c, $1436d4
 AttrMap_050_76d4::
-	dr $1436d4, $14374a
+INCBIN "gfx/attrmaps/attrmap_050_76d4.bin"
 Palettes_050_774a::
 	RGB 31, 31, 29
 	RGB 26, 23, 22
@@ -769,7 +769,7 @@ Metatiles_050_78f8::
 Blocks_050_7970::
 	dr $143970, $1439e4
 AttrMap_050_79e4::
-	dr $1439e4, $143a4a
+INCBIN "gfx/attrmaps/attrmap_050_79e4.bin"
 Palettes_050_7a4a::
 	RGB 31, 30, 28
 	RGB 21, 20, 17

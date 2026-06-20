@@ -1,4 +1,4 @@
 _LoadTextFaceGFX2::
-	dr $54000, $57ca0
+INCBIN "gfx/misc/_loadtextfacegfx2.2bpp"
 
 

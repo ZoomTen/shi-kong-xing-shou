@@ -159,15 +159,21 @@ Func_070_4000::
 	ld [wTargetMode], a
 	jp JumpToGameMode
 ScreenTilemapPointers:
-	dr $1c013d, $1c0145
+INCBIN "gfx/tilemaps/screentilemappointers.tilemap"
 ScreenAttrmapPointers:
-	dr $1c0145, $1c014d
+INCBIN "gfx/attrmaps/screenattrmappointers.bin"
 ScreenPalettePointers:
 	dr $1c014d, $1c0155
 ScreenGFX1Pointers:
-	dr $1c0155, $1c015d
+	dw CreditsGFX_0
+	dw CreditsGFX_1
+	dw CreditsGFX_2
+	dw CreditsGFX_3
 ScreenGFX2Pointers:
-	dr $1c015d, $1c0165
+	dw CreditsGFX8800_0
+	dw CreditsGFX8800_1
+	dw CreditsGFX_2
+	dw CreditsGFX_3
 ScreenOBJPalettePointers:
 	dr $1c0165, $1c016d
 ScreenCreditsPointers:
@@ -299,9 +305,9 @@ CreditsOBJPalettes:
 	RGB 31, 15, 0
 	RGB 30, 30, 0
 CreditsAttrmap_0:
-	dr $1c03b9, $1c0521
+INCBIN "gfx/attrmaps/creditsattrmap_0.bin"
 CreditsTilemap_0:
-	dr $1c0521, $1c0689
+INCBIN "gfx/tilemaps/creditstilemap_0.tilemap"
 CreditsPalette_0:
 	RGB 31, 31, 31
 	RGB 31, 23, 0
@@ -340,37 +346,37 @@ CreditsPalette_0:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 CreditsGFX_0:
-	dr $1c06d1, $1c0ed1
+INCBIN "gfx/misc/creditsgfx_0.2bpp"
 CreditsGFX8800_0:
-	dr $1c0ed1, $1c0ee1
+INCBIN "gfx/misc/creditsgfx8800_0.2bpp"
 CreditsAttrmap_1:
-	dr $1c0ee1, $1c1049
+INCBIN "gfx/attrmaps/creditsattrmap_1.bin"
 CreditsTilemap_1:
-	dr $1c1049, $1c11b1
+INCBIN "gfx/tilemaps/creditstilemap_1.tilemap"
 CreditsPalette_1:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
 	RGB 0, 6, 28
 	RGB 0, 0, 0
 CreditsGFX_1:
-	dr $1c11b9, $1c19b9
+INCBIN "gfx/misc/creditsgfx_1.2bpp"
 CreditsGFX8800_1:
-	dr $1c19b9, $1c1a29
+INCBIN "gfx/misc/creditsgfx8800_1.2bpp"
 CreditsAttrmap_2:
-	dr $1c1a29, $1c1b91
+INCBIN "gfx/attrmaps/creditsattrmap_2.bin"
 CreditsTilemap_2:
-	dr $1c1b91, $1c1cf9
+INCBIN "gfx/tilemaps/creditstilemap_2.tilemap"
 CreditsPalette_2:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
 	RGB 0, 6, 28
 	RGB 0, 0, 0
 CreditsGFX_2:
-	dr $1c1d01, $1c2501
+INCBIN "gfx/misc/creditsgfx_2.2bpp"
 CreditsAttrmap_3:
-	dr $1c2501, $1c2669
+INCBIN "gfx/attrmaps/creditsattrmap_3.bin"
 CreditsTilemap_3:
-	dr $1c2669, $1c27d1
+INCBIN "gfx/tilemaps/creditstilemap_3.tilemap"
 CreditsPalette_3:
 	RGB 31, 31, 31
 	RGB 29, 24, 10
@@ -381,14 +387,14 @@ CreditsPalette_3:
 	RGB 0, 6, 28
 	RGB 0, 0, 0
 CreditsGFX_3:
-	dr $1c27e1, $1c2f81
+INCBIN "gfx/misc/creditsgfx_3.2bpp"
 CreditsFontGFX_0:
-	dr $1c2f81, $1c3261
+INCBIN "gfx/misc/creditsfontgfx_0.2bpp"
 CreditsFontGFX_1:
-	dr $1c3261, $1c3541
+INCBIN "gfx/misc/creditsfontgfx_1.2bpp"
 CreditsFontGFX_2:
-	dr $1c3541, $1c37c1
+INCBIN "gfx/misc/creditsfontgfx_2.2bpp"
 CreditsFontGFX_3:
-	dr $1c37c1, $1c3be0
+INCBIN "gfx/misc/creditsfontgfx_3.bin"
 
 

@@ -14,7 +14,7 @@ Func_04d_4000:
 	call CopyBytesVRAM
 	ret
 Bank4d_SpriteGFX:
-	dr $134014, $135ed8
+INCBIN "gfx/misc/bank4d_spritegfx.bin"
 Func_4d_5ed8:
 	ld l, e
 	ld h, d

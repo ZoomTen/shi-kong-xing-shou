@@ -35,7 +35,7 @@ Metatiles_06e_509c::
 Blocks_06e_5120::
 	dr $1b9120, $1b9180
 AttrMap_06e_5180::
-	dr $1b9180, $1b91b4
+INCBIN "gfx/attrmaps/attrmap_06e_5180.bin"
 Palettes_06e_51b4::
 	RGB 31, 30, 28
 	RGB 27, 25, 18

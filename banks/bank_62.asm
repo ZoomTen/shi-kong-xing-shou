@@ -552,7 +552,7 @@ Func_062_469a:
 	call PlaceAttrmap
 	ret
 WorldMapTilemapAttrmapPointers:
-	dr $1886d7, $1886f3
+INCBIN "gfx/attrmaps/worldmaptilemapattrmappointers.bin"
 WorldMapObjectPalettes:
 	RGB 21, 21, 21
 	RGB 0, 0, 0
@@ -624,33 +624,33 @@ WorldMapBackgroundPalettes:
 WorldMapPalettePad2:
 	dr $18877b, $188783
 WorldMapGFX1:
-	dr $188783, $188883
+INCBIN "gfx/misc/worldmapgfx1.2bpp"
 WorldMapGFX2:
-	dr $188883, $188d13
+INCBIN "gfx/misc/worldmapgfx2.2bpp"
 WorldMapAttrmap0:
-	dr $188d13, $188e7b
+INCBIN "gfx/attrmaps/worldmapattrmap0.bin"
 WorldMapTilemap0:
-	dr $188e7b, $188fe3
+INCBIN "gfx/tilemaps/worldmaptilemap0.tilemap"
 WorldMapAttrmap2:
-	dr $188fe3, $18914b
+INCBIN "gfx/attrmaps/worldmapattrmap2.bin"
 WorldMapTilemap2:
-	dr $18914b, $1892b3
+INCBIN "gfx/tilemaps/worldmaptilemap2.tilemap"
 WorldMapAttrmap3:
-	dr $1892b3, $18941b
+INCBIN "gfx/attrmaps/worldmapattrmap3.bin"
 WorldMapTilemap3:
-	dr $18941b, $189583
+INCBIN "gfx/tilemaps/worldmaptilemap3.tilemap"
 WorldMapAttrmap4:
-	dr $189583, $1896eb
+INCBIN "gfx/attrmaps/worldmapattrmap4.bin"
 WorldMapTilemap4:
-	dr $1896eb, $189853
+INCBIN "gfx/tilemaps/worldmaptilemap4.tilemap"
 WorldMapAttrmap5:
-	dr $189853, $1899bb
+INCBIN "gfx/attrmaps/worldmapattrmap5.bin"
 WorldMapTilemap5:
-	dr $1899bb, $189b23
+INCBIN "gfx/tilemaps/worldmaptilemap5.tilemap"
 WorldMapAttrmap6:
-	dr $189b23, $189c8b
+INCBIN "gfx/attrmaps/worldmapattrmap6.bin"
 WorldMapTilemap6:
-	dr $189c8b, $189df3
+INCBIN "gfx/tilemaps/worldmaptilemap6.tilemap"
 
 WorldMap2::
 	xor a
@@ -1017,10 +1017,10 @@ Func_062_6029_Pointers:
 Debug_SoundTest_Palette:
 	dr $18a0f4, $18a13c
 Debug_SoundTest_Tilemap:
-	dr $18a13c, $18a2a4
+INCBIN "gfx/tilemaps/debug_soundtest_tilemap.tilemap"
 Debug_SoundTest_Attrmap:
-	dr $18a2a4, $18a40c
+INCBIN "gfx/attrmaps/debug_soundtest_attrmap.bin"
 Debug_SoundTest_GFX:
-	dr $18a40c, $18a710
+INCBIN "gfx/misc/debug_soundtest_gfx.bin"
 
 

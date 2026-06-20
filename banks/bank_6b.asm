@@ -13,7 +13,7 @@ Metatiles_06b_6543::
 Blocks_06b_65f3::
 	dr $1ae5f3, $1ae633
 AttrMap_06b_6633::
-	dr $1ae633, $1ae699
+INCBIN "gfx/attrmaps/attrmap_06b_6633.bin"
 Palettes_06b_6699::
 	RGB 31, 31, 31
 	RGB 0, 27, 31
@@ -59,7 +59,7 @@ Metatiles_06b_6d81::
 Blocks_06b_6e21::
 	dr $1aee21, $1aee55
 AttrMap_06b_6e55::
-	dr $1aee55, $1aeec5
+INCBIN "gfx/attrmaps/attrmap_06b_6e55.bin"
 Palettes_06b_6ec5::
 	RGB 31, 31, 31
 	RGB 18, 31, 0

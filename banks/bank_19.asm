@@ -11,5 +11,5 @@ gfx_019_4960:
 INCBIN "gfx/tilesets/image_19_4960.2bpp"
 
 GFX_019_49e0:
-	dr $649e0, $67a80
+INCBIN "gfx/misc/gfx_019_49e0.2bpp"
 
