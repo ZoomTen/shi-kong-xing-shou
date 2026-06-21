@@ -1,6 +1,6 @@
 GaleCutscene::
 ; narrating Gale Corp's handover ceremony
-	ld a, $67
+	ld a, BGM_TOWN2
 	call PlaySound
 	xor a
 	ldh [hFade], a

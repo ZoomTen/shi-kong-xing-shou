@@ -1680,7 +1680,7 @@ Script_35:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wd9f2], a
-	ld a, $59
+	ld a, BGM_TOWN1
 	call PlaySound
 	farcall Func_039_40a0
 	xor a

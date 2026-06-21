@@ -297,7 +297,7 @@ Func_024_4844:
 	ldh a, [hJoypadPressed]
 	and $03
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -652,7 +652,7 @@ Func_024_4b04:
 	ldh a, [hJoypadPressed]
 	bit 4, a
 	jr z, .asm_4b4e
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call NextLivePartyMon
 	jr .asm_4b5f
@@ -662,7 +662,7 @@ Func_024_4b04:
 	ldh a, [hJoypadPressed]
 	bit 5, a
 	jr z, .asm_4b91
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call PrevLivePartyMon
 	jr .asm_4b5f
@@ -703,7 +703,7 @@ Func_024_4b04:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_4bc0
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	ld [wd9dd], a
@@ -725,7 +725,7 @@ Func_024_4b04:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_024_4000
 	ld a, $02
@@ -764,7 +764,7 @@ Func_024_4c08:
 	ldh a, [hJoypadPressed]
 	and $03
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -839,7 +839,7 @@ Func_024_4c48:
 	ld a, [wSelectedOption]
 	add e
 	ld [wd9d8], a
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ret
 .asm_4cb8
@@ -888,14 +888,14 @@ Func_024_4c48:
 	ld a, [wSelectedOption]
 	add e
 	ld [wd9d8], a
-	ld a, $28
+	ld a, SFX_28
 	call PlaySound
 	ret
 .asm_4d11
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, Func_024_6a61
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld de, wd7cb
 	ld a, [wd9d8]
@@ -970,7 +970,7 @@ Func_024_4d77:
 	ld [wd9da + 1], a
 	ret
 .asm_4dc8
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_024_4e9f
 	ld a, $02
@@ -990,7 +990,7 @@ Func_024_4d77:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_4e42
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $0B
 	call Func_024_4efd.asm_5032
@@ -1035,7 +1035,7 @@ Func_024_4d77:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1212,7 +1212,7 @@ Func_024_4efd:
 	dec a
 	ld [wSelectedOption], a
 .asm_4f8c
-	ld a, $28
+	ld a, SFX_28
 	call PlaySound
 	ld bc, unk_024_4ef5
 	ld a, [wSelectedOption]
@@ -1356,7 +1356,7 @@ Func_024_503e:
 	dec a
 	ld [wSelectedOption], a
 .asm_5078
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -1367,7 +1367,7 @@ Func_024_503e:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_50d8
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	and a
@@ -1405,7 +1405,7 @@ Func_024_503e:
 	bit 1, a
 	ret z
 .asm_50dd
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1573,7 +1573,7 @@ Func_024_519d:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_5204
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_024_6ba1
 	ld a, $01
@@ -1589,7 +1589,7 @@ Func_024_519d:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [hBattleJumptableIndex]
 	cp $05
@@ -1800,7 +1800,7 @@ Func_024_5398:
 	ldh a, [hJoypadPressed]
 	and $03
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1950,7 +1950,7 @@ Func_024_5405:
 	ldh [hFFC6], a
 	ret
 .asm_54eb
-	ld a, $46
+	ld a, SFX_46
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -2020,7 +2020,7 @@ Func_024_5405:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	jr z, .asm_5593
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -2144,7 +2144,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2193,7 +2193,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2238,7 +2238,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2283,7 +2283,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2328,7 +2328,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2400,7 +2400,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2472,7 +2472,7 @@ Func_024_5646:
 	ld a, [hl]
 	cp $BF
 	jp z, .asm_568b
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	push bc
 	xor a
@@ -2500,7 +2500,7 @@ Func_024_5646:
 	jp z, .asm_58c4
 	res 0, a
 	ld [hl], a
-	ld a, $4C
+	ld a, SFX_4c
 	call PlaySound
 	ret
 .asm_58ad
@@ -2513,7 +2513,7 @@ Func_024_5646:
 	jr z, .asm_58c4
 	res 1, a
 	ld [hl], a
-	ld a, $4C
+	ld a, SFX_4c
 	call PlaySound
 	ret
 .asm_58c4
@@ -2530,7 +2530,7 @@ Func_024_5646:
 	jp z, .asm_58c4
 	res 4, a
 	ld [hl], a
-	ld a, $4C
+	ld a, SFX_4c
 	call PlaySound
 	ret
 .asm_58e2
@@ -2543,7 +2543,7 @@ Func_024_5646:
 	jp z, .asm_58c4
 	res 2, a
 	ld [hl], a
-	ld a, $4C
+	ld a, SFX_4c
 	call PlaySound
 	ret
 .asm_58fa
@@ -2556,7 +2556,7 @@ Func_024_5646:
 	jp z, .asm_58c4
 	res 3, a
 	ld [hl], a
-	ld a, $4C
+	ld a, SFX_4c
 	call PlaySound
 	ret
 .asm_5912
@@ -2568,7 +2568,7 @@ Func_024_5646:
 	and a
 	jp z, .asm_58c4
 	ld [hl], $00
-	ld a, $4C
+	ld a, SFX_4c
 	call PlaySound
 	ret
 .asm_5928
@@ -2613,7 +2613,7 @@ Func_024_5646:
 	ld [hli], a
 	ld a, [wd9da]
 	ld [hl], a
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	ret
 .asm_598a
@@ -2658,7 +2658,7 @@ Func_024_5646:
 	ld [hli], a
 	ld a, [wd9da]
 	ld [hl], a
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	ret
 .asm_59ec
@@ -2683,7 +2683,7 @@ Func_024_5646:
 	ld [hli], a
 	ld a, [wd9d8]
 	ld [hl], a
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	ret
 .asm_5a20
@@ -2710,7 +2710,7 @@ Func_024_5646:
 	add hl, bc
 	dec e
 	jr nz, .asm_5a36
-	ld a, $33
+	ld a, SFX_33
 	call PlaySound
 	ret
 Func_024_5a49:
@@ -2746,7 +2746,7 @@ Func_024_5a49:
 	and a
 	ret z
 .asm_5a7e
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld hl, wSelectedOption
 	ld a, $01
@@ -2761,7 +2761,7 @@ Func_024_5a49:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_5ae7
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	and a
@@ -2803,7 +2803,7 @@ Func_024_5a49:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -2953,7 +2953,7 @@ Func_024_5a49:
 	call DelayFrame
 	ret
 .asm_5c20
-	ld a, $22
+	ld a, SFX_22
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -3231,7 +3231,7 @@ Func_024_6099:
 	dec a
 	ld [wSelectedOption], a
 .asm_60e9
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	sla a
@@ -3283,7 +3283,7 @@ Func_024_6099:
 	ld [wSelectedPage], a
 	ret
 .asm_614c
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	xor a
 	ld [wSelectedOption], a
@@ -3320,7 +3320,7 @@ Func_024_6099:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_627d
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wd1f4]
 	cp $01
@@ -3453,7 +3453,7 @@ Func_024_6099:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	jp z, .asm_62c8
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wd3f9 + 1]
 	and a
@@ -3586,7 +3586,7 @@ Func_024_6347:
 	dec a
 	ld [wSelectedOption], a
 .asm_636a
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -3719,7 +3719,7 @@ Func_024_63a4:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_6485
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -3738,7 +3738,7 @@ Func_024_63a4:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	jr z, .asm_64a8
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld hl, wcdf0
 	ld [hl], $00
@@ -3799,7 +3799,7 @@ Func_024_64a9:
 	ld [wSelectedOption], a
 	ret
 .asm_64f3
-	ld a, $28
+	ld a, SFX_28
 	call PlaySound
 	call Func_024_66da
 	ld a, $02
@@ -3817,7 +3817,7 @@ Func_024_64a9:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_6536
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -3836,7 +3836,7 @@ Func_024_64a9:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -3895,7 +3895,7 @@ Func_024_655a:
 	ld [wSelectedOption], a
 	ret
 .asm_65a4
-	ld a, $28
+	ld a, SFX_28
 	call PlaySound
 	call Func_024_66da
 	ld a, $02
@@ -3913,7 +3913,7 @@ Func_024_655a:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_65df
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -3928,7 +3928,7 @@ Func_024_655a:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -3987,7 +3987,7 @@ Func_024_6603:
 	ld [wSelectedOption], a
 	ret
 .asm_664d
-	ld a, $28
+	ld a, SFX_28
 	call PlaySound
 	call Func_024_66da
 	ld a, $02
@@ -4005,7 +4005,7 @@ Func_024_6603:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_6688
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -4020,7 +4020,7 @@ Func_024_6603:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [hBattleJumptableIndex]
 	and a
@@ -4128,7 +4128,7 @@ Func_024_66f8:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_6844
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	and a
@@ -4499,7 +4499,7 @@ Func_024_69d7:
 	ld [wSelectedOption], a
 	ret
 Func_024_69f3:
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld de, OptionCursorCoords
 	ld a, [wSelectedOption]
@@ -4527,7 +4527,7 @@ Func_024_6a20:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, Func_024_6a61
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_024_6ba1
 	ldh a, [hBattleJumptableIndex]
@@ -4560,7 +4560,7 @@ Func_024_6a61:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	jr z, Func_024_6a9e
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ldh a, [hBattleJumptableIndex]
 	and a

@@ -383,7 +383,7 @@ Func_062_443e:
 	ldh a, [hJoypadPressed]
 	bit 5, a
 	jr z, .asm_44a1
-	ld a, $0D
+	ld a, SFX_0d
 	call PlaySound
 	ld a, [wdce8]
 	and a

@@ -1,5 +1,5 @@
 MiceMinigame::
-	ld a, $5D
+	ld a, BGM_FOREST
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -168,7 +168,7 @@ Func_5b_4180:
 	ld a, [wEventFlags + $b]
 	res 1, a
 	ld [wEventFlags + $b], a
-	ld a, $74
+	ld a, BGM_74
 	call PlaySound
 	ld hl, $99D0
 	ld de, MiceMinigame_FaceTilemap3
@@ -399,7 +399,7 @@ Func_5b_42af:
 	ld a, [wEventFlags + $b]
 	set 1, a
 	ld [wEventFlags + $b], a
-	ld a, $6B
+	ld a, BGM_EXP_JINGLE
 	call PlaySound
 	ld hl, $99D0
 	ld de, MiceMinigame_FaceTilemap4

@@ -1,6 +1,6 @@
 AirportCutscene2::
 	call Func_055_43cb
-	ld a, $70
+	ld a, BGM_AIRPORT
 	call PlaySound
 	xor a
 	ldh [hFade], a

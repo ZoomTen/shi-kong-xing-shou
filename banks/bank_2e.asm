@@ -143,7 +143,7 @@ Func_02e_4191:
 	ld [wd98b], a
 	ld [wd98c], a
 	ld [wd98e], a
-	ld a, $0C
+	ld a, SFX_0c
 	call PlaySound
 	ret
 
@@ -440,7 +440,7 @@ Func_02e_43a9:
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_43d1
-	ld a, $2F
+	ld a, SFX_2f
 	call PlaySound
 	call Func_02e_411e
 	ld a, [wBattleState]
@@ -1007,7 +1007,7 @@ Func_02e_476d:
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_47e7
-	ld a, $3D
+	ld a, SFX_3d
 	call PlaySound
 	call Func_02e_411e
 	ld a, [wBattleState]
@@ -4347,7 +4347,7 @@ Func_02e_5fa4:
 	ld [wBattleState], a
 	xor a
 	ld [wd98e], a
-	ld a, $34
+	ld a, SFX_34
 	call PlaySound
 	ret
 .asm_5fd6

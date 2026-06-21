@@ -1,5 +1,5 @@
 CrystalCutscene::
-	ld a, $6E
+	ld a, BGM_JUNKYARD
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -83,7 +83,7 @@ CrystalCutscene::
 	ld [wTargetMode], a
 	jp JumpToGameMode
 .asm_40ca
-	ld a, $29
+	ld a, SFX_29
 	call PlaySound
 	ld a, $82
 	ld [wcd45], a

@@ -1,5 +1,5 @@
 RhythmMinigame::
-	ld a, $65
+	ld a, BGM_ACADEMY
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -81,7 +81,7 @@ RhythmMinigame::
 	jp .asm_40cf
 .asm_40cf
 	call Func_5d_4a51
-	ld a, $65
+	ld a, BGM_ACADEMY
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -710,7 +710,7 @@ Func_5d_4581:
 	ld a, [wcd40]
 	and a
 	jp nz, .asm_45e8
-	ld a, $1A
+	ld a, SFX_1a
 	call PlaySound
 	ld hl, $0002
 	add hl, bc
@@ -740,7 +740,7 @@ Func_5d_4581:
 	ld [wcd46 + 4], a
 	ld a, $88
 	ld [wcd45], a
-	ld a, $19
+	ld a, SFX_19
 	call PlaySound
 	ret
 .asm_45fd
@@ -748,7 +748,7 @@ Func_5d_4581:
 	ld a, [wcd40]
 	and a
 	jp nz, .asm_45e8
-	ld a, $1A
+	ld a, SFX_1a
 	call PlaySound
 	ld hl, $0002
 	add hl, bc
@@ -776,7 +776,7 @@ Func_5d_4581:
 	ld a, [wcd40]
 	and a
 	jp nz, .asm_45e8
-	ld a, $1A
+	ld a, SFX_1a
 	call PlaySound
 	ld hl, $0002
 	add hl, bc
@@ -804,7 +804,7 @@ Func_5d_4581:
 	ld a, [wcd40]
 	and a
 	jp nz, .asm_45e8
-	ld a, $1A
+	ld a, SFX_1a
 	call PlaySound
 	ld hl, $0002
 	add hl, bc

@@ -266,7 +266,7 @@ Func_039_497c:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, asm_039_41fb
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	ld [wd9f2], a
@@ -367,7 +367,7 @@ Func_039_497c:
 	ld [wBattleScriptByte], a
 	ret
 .asm_4aa5
-	ld a, $19
+	ld a, SFX_19
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -486,7 +486,7 @@ Func_039_4afd:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_4c15
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_039_4879
 	ld hl, wPartyMons
@@ -538,7 +538,7 @@ Func_039_4afd:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -600,7 +600,7 @@ Func_039_4cda:
 	ld a, $01
 	ld [wSelectedOption], a
 .asm_4d1c
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -615,7 +615,7 @@ Func_039_4cda:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_4d72
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wMonBoxCount]
 	cp $14
@@ -646,7 +646,7 @@ Func_039_4cda:
 	bit 1, a
 	ret z
 .asm_4d72
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -852,7 +852,7 @@ Func_039_4ec0:
 	ld [wMonBoxIndex], a
 	ret
 .asm_4f43
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -881,7 +881,7 @@ Func_039_4ec0:
 	inc a
 	ld [wSelectedOption], a
 .asm_4f7b
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -893,7 +893,7 @@ Func_039_4ec0:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, Func_039_5016
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wd9f2]
 	and a
@@ -967,7 +967,7 @@ Func_039_5016:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1082,7 +1082,7 @@ Func_039_5163:
 	ld [wSelectedOption], a
 	ret
 .asm_51d5
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1099,7 +1099,7 @@ Func_039_5163:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_520d
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -1114,7 +1114,7 @@ Func_039_5163:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1205,7 +1205,7 @@ Func_039_529f:
 	ld [wSelectedOption], a
 	ret
 .asm_5311
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1222,7 +1222,7 @@ Func_039_529f:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, .asm_5349
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -1237,7 +1237,7 @@ Func_039_529f:
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1294,7 +1294,7 @@ Func_039_53ab:
 	ld a, $01
 	ld [wSelectedOption], a
 .asm_53ea
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -1309,7 +1309,7 @@ Func_039_53ab:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_5446
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld hl, wcde0
 	xor a
@@ -1346,7 +1346,7 @@ Func_039_53ab:
 	bit 1, a
 	ret z
 .asm_5446
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1487,7 +1487,7 @@ Func_039_5522:
 	inc a
 	ld [wMonBoxIndex], a
 .asm_556a
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1511,7 +1511,7 @@ Func_039_5522:
 	inc a
 	ld [wSelectedOption], a
 .asm_5599
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -1531,7 +1531,7 @@ Func_039_5522:
 	ld a, [wdc9d]
 	cp b
 	ret z
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, b
 	ld [wd1f4], a
@@ -1586,7 +1586,7 @@ Func_039_5604:
 	ld a, $01
 	ld [wSelectedOption], a
 .asm_5646
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -1601,7 +1601,7 @@ Func_039_5604:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_5693
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_039_56de
 	ld hl, wBattleScriptPos
@@ -1624,7 +1624,7 @@ Func_039_5604:
 	bit 1, a
 	ret z
 .asm_5693
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -1723,7 +1723,7 @@ Func_039_574d:
 	ld a, $01
 	ld [wSelectedOption], a
 .asm_578f
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
 	swap a
@@ -1738,7 +1738,7 @@ Func_039_574d:
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_57d3
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	call Func_039_5940
 	ld hl, wBattleScriptPos
@@ -1759,7 +1759,7 @@ Func_039_574d:
 	bit 1, a
 	ret z
 .asm_57d3
-	ld a, $11
+	ld a, SFX_11
 	call PlaySound
 	ld a, $02
 	ld [wBattleScriptState], a

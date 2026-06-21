@@ -388,7 +388,7 @@ Func_03c_4c63:
 
 Func_03c_4c74::
 	call Func_03c_4c55
-	ld a, $6E
+	ld a, BGM_JUNKYARD
 	call PlaySound
 	xor a
 	ldh [hFade], a

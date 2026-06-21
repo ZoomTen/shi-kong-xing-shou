@@ -21,7 +21,7 @@ Func_05e_4011:
 	ret
 
 RacingMinigame::
-	ld a, $68
+	ld a, BGM_RACING
 	call PlaySound
 	xor a
 	ldh [hFade], a

@@ -53,7 +53,7 @@ Airport_ObjectEvents:
 
 AirportCutscene4::
 	call Func_4e_4ce3
-	ld a, $70
+	ld a, BGM_AIRPORT
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -122,7 +122,7 @@ AirportCutscene4::
 
 AirportCutscene3::
 	call Func_4e_4ce3
-	ld a, $70
+	ld a, BGM_AIRPORT
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -303,7 +303,7 @@ AirportCutscene3_PathScript2:
 
 AirportCutscene1::
 	call Func_4e_4ce3
-	ld a, $70
+	ld a, BGM_AIRPORT
 	call PlaySound
 	xor a
 	ldh [hFade], a

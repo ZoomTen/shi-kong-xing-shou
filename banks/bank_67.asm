@@ -1,5 +1,5 @@
 BeachCutscene::
-	ld a, $59
+	ld a, BGM_TOWN1
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -262,7 +262,7 @@ BeachCutsceneGFX2:
 INCBIN "gfx/misc/beachcutscenegfx2.2bpp"
 
 FloatingIslandCutscene1::
-	ld a, $69
+	ld a, BGM_METEOR
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -346,7 +346,7 @@ FloatingIslandCutscene1::
 	ret nz
 	xor a
 	ld [wdcf3], a
-	ld a, $16
+	ld a, SFX_16
 	call PlaySound
 	ld a, [hSCY]
 	ld b, a
@@ -396,7 +396,7 @@ FloatingIslandCutscene1_MovementDeltas:
 	dr $19d18c, $19d1f5
 
 FloatingIslandCutscene2::
-	ld a, $69
+	ld a, BGM_METEOR
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -496,7 +496,7 @@ FloatingIslandCutscene2::
 	ld [wdcf4], a
 	ret
 .asm_52d9
-	ld a, $26
+	ld a, SFX_26
 	call PlaySound
 	xor a
 	ld [wdcf4], a

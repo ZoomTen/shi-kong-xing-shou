@@ -24,7 +24,7 @@ Func_07a_400e:
 
 Func_07a_401f::
 	call Func_07a_4000
-	ld a, $6e
+	ld a, BGM_JUNKYARD
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -174,7 +174,7 @@ Func_07a_401f::
 Func_07a_4188::
 	call Func_07a_4000
 	call Func_07a_400e
-	ld a, $6e
+	ld a, BGM_JUNKYARD
 	call PlaySound
 	xor a
 	ldh [hFade], a

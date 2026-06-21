@@ -1,5 +1,5 @@
 MeteorCutscene2::
-	ld a, $69
+	ld a, BGM_METEOR
 	call PlaySound
 	xor a
 	ldh [hFade], a
@@ -594,7 +594,7 @@ MeteorCutscene2_GFX4:
 INCBIN "gfx/misc/meteorcutscene2_gfx4.2bpp"
 
 UnderwaterPictureCutscene::
-	ld a, $59
+	ld a, BGM_TOWN1
 	call PlaySound
 	xor a
 	ldh [hFade], a
