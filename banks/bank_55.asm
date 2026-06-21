@@ -516,7 +516,7 @@ Script_055_54c1:
 	stext text_55_645b
 	setbit wEventFlags + 7, $03
 	setmappredef MAPPREDEF_14
-	warpmode $0b, $12, $01
+	warpmode GAMEMODE_UNDERWATER_PICTURE_CUTSCENE, $12, $01
 	emote $00, $00
 	delay $03, $20
 	stext text_55_6489
@@ -744,7 +744,7 @@ Script_055_5721:
 	stext text_55_6f0b
 	scr_48 $02, $0f
 	setbit wEventFlags + 8, $05
-	warpmode $09, $24, $01
+	warpmode GAMEMODE_METEOR_CUTSCENE2, $24, $01
 	spriteface  3, FACE_UP
 	stext text_55_6f21
 	emote $02, $04

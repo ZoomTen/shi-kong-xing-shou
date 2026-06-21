@@ -1,0 +1,35 @@
+; Game modes - wTargetMode / hFade target; indexes GameModes (home/main_loop.asm)
+	const_def
+	const GAMEMODE_OVERWORLD                 ; $00 Overworld
+	const GAMEMODE_METEOR_CUTSCENE           ; $01 MeteorCutscene
+	const GAMEMODE_NEW_GAME_CONTINUE_MENU    ; $02 NewGameContinueMenu
+	const GAMEMODE_GAME_OVER                 ; $03 GameOver
+	const GAMEMODE_GALE_CUTSCENE             ; $04 GaleCutscene
+	const GAMEMODE_RHYTHM_MINIGAME           ; $05 RhythmMinigame
+	const GAMEMODE_AIRPORT_CUTSCENE1         ; $06 AirportCutscene1
+	const GAMEMODE_AIRPORT_CUTSCENE2         ; $07 AirportCutscene2
+	const GAMEMODE_LETTER_CUTSCENE           ; $08 LetterCutscene
+	const GAMEMODE_METEOR_CUTSCENE2          ; $09 MeteorCutscene2
+	const GAMEMODE_0A                        ; $0a Func_05c_55e7
+	const GAMEMODE_UNDERWATER_PICTURE_CUTSCENE ; $0b UnderwaterPictureCutscene
+	const GAMEMODE_RACING_MINIGAME           ; $0c RacingMinigame
+	const GAMEMODE_CRYSTAL_CUTSCENE          ; $0d CrystalCutscene
+	const GAMEMODE_MICE_MINIGAME             ; $0e MiceMinigame
+	const GAMEMODE_AIRPORT_CUTSCENE3         ; $0f AirportCutscene3
+	const GAMEMODE_WORLD_MAP                 ; $10 WorldMap
+	const GAMEMODE_AIRPORT_CUTSCENE4         ; $11 AirportCutscene4
+	const GAMEMODE_INTRO_VAST_FAME           ; $12 Intro_VastFame
+	const GAMEMODE_BEACH_CUTSCENE            ; $13 BeachCutscene
+	const GAMEMODE_FLOATING_ISLAND_CUTSCENE1 ; $14 FloatingIslandCutscene1
+	const GAMEMODE_FLOATING_ISLAND_CUTSCENE2 ; $15 FloatingIslandCutscene2
+	const GAMEMODE_WORLD_MAP2                ; $16 WorldMap2
+	const GAMEMODE_17                        ; $17 NewGameContinueMenu
+	const GAMEMODE_18                        ; $18 NewGameContinueMenu
+	const GAMEMODE_DEBUG_SOUND_TEST          ; $19 Debug_SoundTest
+	const GAMEMODE_1A                        ; $1a Func_03c_4c74
+	const GAMEMODE_1B                        ; $1b Func_07a_401f
+	const GAMEMODE_1C                        ; $1c Func_07a_4188
+	const GAMEMODE_1D                        ; $1d Func_06f_4000
+	const GAMEMODE_1E                        ; $1e Func_070_4000
+	const GAMEMODE_CREDITS                   ; $1f Credits
+	const GAMEMODE_THE_END                   ; $20 TheEnd

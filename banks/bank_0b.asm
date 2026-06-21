@@ -2531,7 +2531,7 @@ Script_4b:
 	ret
 
 Script_4c:
-	ld a, $03
+	ld a, GAMEMODE_GAME_OVER
 	ld [wTargetMode], a
 	ld a, $01
 	ld [hFade], a

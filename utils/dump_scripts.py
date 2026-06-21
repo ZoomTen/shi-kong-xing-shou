@@ -40,6 +40,7 @@ FACE = read_block(_SC, 'FACE_DOWN')
 MOVE = read_block(_SC, 'MOVE_DELAY')
 EMOTE = read_block(_SC, 'EMOTE_EXCLAMATION')
 SOUND = read_block('constants/sound_constants.asm', 'SFX_00')
+GAMEMODE = read_block('constants/gamemode_constants.asm', 'GAMEMODE_OVERWORLD')
 
 def movelabel(a):
 	off = addr2offset(0xb, a)
@@ -248,7 +249,7 @@ with open('baserom.gbc', 'rb') as rom:
 				arg1 = int.from_bytes(rom.read(1), "little")
 				arg2 = int.from_bytes(rom.read(1), "little")
 				arg3 = int.from_bytes(rom.read(1), "little")
-				print("\twarpmode $%02x, $%02x, $%02x ; TEMP" % (arg1, arg2, arg3))
+				print("\twarpmode %s, $%02x, $%02x" % (GAMEMODE[arg1] if arg1 in GAMEMODE else "$%02x"%arg1, arg2, arg3))
 
 			elif byte == 0x35:
 				arg = int.from_bytes(rom.read(1), "little")
@@ -423,7 +424,7 @@ with open('baserom.gbc', 'rb') as rom:
 				a2 = int.from_bytes(rom.read(1), "little")
 				a3 = int.from_bytes(rom.read(1), "little")
 				a4 = int.from_bytes(rom.read(1), "little")
-				print("\twarpmode2 $%02x, $%02x, $%02x, $%02x" % (a1, a2, a3, a4))
+				print("\twarpmode2 %s, $%02x, $%02x, $%02x" % (GAMEMODE[a1] if a1 in GAMEMODE else "$%02x"%a1, a2, a3, a4))
 			elif byte == 0x49:
 				print("\tscr_49")
 			elif byte == 0x4b:

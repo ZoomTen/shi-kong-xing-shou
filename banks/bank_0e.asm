@@ -319,7 +319,7 @@ Script_00e_42da:
 	stext text_0e_6b0b
 
 Script_00e_42fc:
-	warpmode $0c, $2d, $0b
+	warpmode GAMEMODE_RACING_MINIGAME, $2d, $0b
 	face FACE_UP
 	spriteface $04, $01
 	spriteface $05, $01

@@ -382,7 +382,7 @@ AirportCutscene1::
 .asm_4a05
 	xor a
 	ldh [hFade], a
-	ld a, $07
+	ld a, GAMEMODE_AIRPORT_CUTSCENE2
 	ld [wTargetMode], a
 	jp JumpToGameMode
 AirportCutscene1_ScrollRamp:

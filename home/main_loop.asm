@@ -63,7 +63,7 @@ StartGame::
 	ld a, 0
 	ld [hMapPredef], a
 	call LoadMapAndScriptPredef
-	ld a, $12
+	ld a, GAMEMODE_INTRO_VAST_FAME
 	ld [wTargetMode], a
 
 JumpToGameMode::

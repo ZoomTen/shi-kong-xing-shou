@@ -430,7 +430,7 @@ Script_012_43a1:
 	loadobjsprite Script_012_446e
 	loadobjsprite ObjSprite_012_447a
 	spriteface  2, $04
-	warpmode $08, $07, $01
+	warpmode GAMEMODE_LETTER_CUTSCENE, $07, $01
 	face FACE_UP
 	spriteface  1, FACE_UP
 	spriteface  3, FACE_UP
@@ -828,7 +828,7 @@ Script_012_4781:
 	objmove $02, MovementData_012_4e4a
 	clearobject $02
 	face FACE_UP
-	warpmode $04, $0e, $04
+	warpmode GAMEMODE_GALE_CUTSCENE, $0e, $04
 	stext text_12_7a96
 	stext text_12_7aac
 	emote $02, $03
@@ -1294,7 +1294,7 @@ Script_012_4b94:
 	stext text_12_7033
 	scr_48 $02, $09
 	incsteps
-	warpmode $0d, $0e, $07
+	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $0e, $07
 	spriteface  3, FACE_LEFT
 	spriteface  5, FACE_UP
 	spriteface  2, FACE_LEFT

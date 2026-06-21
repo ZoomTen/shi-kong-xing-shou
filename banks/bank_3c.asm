@@ -328,7 +328,7 @@ GameOver::
 	ret c
 	ld a, $01
 	ldh [hFade], a
-	ld a, $02
+	ld a, GAMEMODE_NEW_GAME_CONTINUE_MENU
 	ld [wTargetMode], a
 	ret
 .asm_4419
@@ -337,7 +337,7 @@ GameOver::
 	ret z
 	ld a, $01
 	ldh [hFade], a
-	ld a, $02
+	ld a, GAMEMODE_NEW_GAME_CONTINUE_MENU
 	ld [wTargetMode], a
 	ret
 AttrMap_03c_4427:

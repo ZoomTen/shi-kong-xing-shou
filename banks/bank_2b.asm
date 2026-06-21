@@ -608,7 +608,7 @@ Func_02b_4436:
 	ldh [hFade], a
 	xor a
 	ldh [hBattleJumptableIndex], a
-	ld a, 3
+	ld a, GAMEMODE_GAME_OVER
 	ld [wTargetMode], a
 	ld a, $57
 	ld [wd3ff], a

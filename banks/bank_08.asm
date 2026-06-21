@@ -254,7 +254,7 @@ Script_008_4214:
 	delay 3, 32
 	stext text_08_557d
 	stext text_08_558a
-	warpmode $01, $04, $00
+	warpmode GAMEMODE_METEOR_CUTSCENE, $04, $00
 	end
 
 BallotsHouse1_ObjectEvents4:

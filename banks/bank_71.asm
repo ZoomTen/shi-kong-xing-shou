@@ -435,7 +435,7 @@ TheEnd::
 	ld [wdcde + 1], a
 	cp $20
 	jr nz, .asm_5ab4
-	ld a, $10
+	ld a, GAMEMODE_WORLD_MAP
 	ld [wTargetMode], a
 	jp JumpToGameMode
 TheEndAttrmap:
