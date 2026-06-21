@@ -348,13 +348,15 @@ Script_04f_4782::
 	dr $13c782, $13c790
 
 Script_04f_4790::
-	dr $13c790, $13c794
+	textface text_4f_4de3
+	end
 
 Script_04f_4794::
 	dr $13c794, $13c7ba
 
 Script_04f_47ba::
-	dr $13c7ba, $13c7be
+	textface text_4f_4ee0
+	end
 
 Script_04f_47be::
 	dr $13c7be, $13c7d6
@@ -363,22 +365,28 @@ Script_04f_47d6::
 	dr $13c7d6, $13c809
 
 Script_04f_4809::
-	dr $13c809, $13c80d
+	textface text_4f_4f98
+	end
 
 Script_04f_480d::
-	dr $13c80d, $13c811
+	textface text_4f_4fb0
+	end
 
 Script_04f_4811::
-	dr $13c811, $13c815
+	textface text_4f_4fec
+	end
 
 Script_04f_4815::
-	dr $13c815, $13c819
+	textface text_4f_5048
+	end
 
 Script_04f_4819::
-	dr $13c819, $13c81d
+	textface text_4f_5be3
+	end
 
 Script_04f_481d::
-	dr $13c81d, $13c821
+	textface text_4f_5c0f
+	end
 
 Script_04f_4821::
 	dr $13c821, $13c831
@@ -394,7 +402,51 @@ SkyCity_ObjectEvents2:
 	objects_end
 
 Script_04f_4ac2::
-	dr $13cac2, $13cb3f
+	setplayerchar $00
+	setmap $07, $0d
+	spriteface  2, FACE_UP
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4f_5430
+	face FACE_UP
+	move MovementData_OneUp
+	move MovementData_OneUp
+	move MovementData_OneUp
+	setmap $08, $03
+	face FACE_LEFT
+	spriteface  2, FACE_UP
+	stext text_4f_5457
+	stext text_4f_5470
+	spriteface  6, FACE_LEFT
+	spritewalk  6, MOVE_LEFT
+	clearobject $06
+	face FACE_LEFT
+	move MovementData_OneLeft
+	spritewalk  1, MOVE_UP
+	spriteface  1, FACE_LEFT
+	stext text_4f_5477
+	face FACE_DOWN
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4f_54bb
+	stext text_4f_54ce
+	stext text_4f_54e8
+	stext text_4f_54fb
+	face FACE_RIGHT
+	move MovementData_OneRight
+	move MovementData_OneRight
+	spriteface  1, FACE_RIGHT
+	spriteface  2, FACE_UP
+	spritewalk  2, MOVE_UP
+	spriteface  2, FACE_DOWN
+	emote  0, EMOTE_ANGER
+	delay $03, $20
+	stext text_4f_5580
+	setbit wEventFlags + 24, $00
+	setmappredef MAPPREDEF_0d
+	end
 
 BanglinCo1f_ObjectEvents3:
 	dr $13cb3f, $13cb77

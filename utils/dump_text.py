@@ -2,11 +2,28 @@
 import math
 import sys
 import re
-from lib.gbtool import addr2offset, str2addr
+from lib.gbtool import addr2offset, str2addr, get_symbol, is_symbol_defined, read_symbols
 
 chars = {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
 
 file = "baserom.gbc"
+
+rom_sym = read_symbols(open('shi_kong_xing_shou.sym').read())['rom']
+_NAME = {}; _PIC = {}; _v = 0
+for _l in open('constants/text_constants.asm', encoding='utf-8'):
+    _s = _l.split(';')[0].strip()
+    if _s == 'const_def' or _s.startswith('const_def '):
+        _p = _s.split(); _v = int(_p[1][1:], 16) if len(_p) > 1 else 0; continue
+    if _s.startswith('const '):
+        _n = _s.split()[1]
+        if _n.startswith('NAME_'): _NAME[_v] = _n
+        elif _n.startswith('PIC_'): _PIC[_v] = _n
+        _v += 1
+def nm(v): return _NAME.get(v, '$%02x' % v)
+def pic(v): return _PIC[v] if v in _PIC else '$%02x' % v
+def gc(a):
+    _o = addr2offset(0, a)
+    return get_symbol(rom_sym, _o) if is_symbol_defined(rom_sym, _o) else '$%04x' % a
 
 if len(sys.argv) < 3:
 	print(f'{sys.argv[0]} address count')
@@ -107,7 +124,7 @@ def print_text():
             break
         elif byte == 0xe5:
             arg = int.from_bytes(file.read(2), "little")
-            print("\";\n\tgetchoice $%04x; # TEMP" % arg, end="")
+            print("\";\n\tgetchoice %s;" % gc(arg), end="")
             done = 1
             break
         elif byte == 0xe6:
@@ -115,7 +132,11 @@ def print_text():
             done = 1
             break
         elif byte == 0xe7:
-            print("\";\n\tunknownE7;", end="")
+            print("\";\n\tbuysellcancel;", end="")
+            done = 1
+            break
+        elif byte == 0xe8:
+            print("\";\n\tbuysellcancel_menu;", end="")
             done = 1
             break
         elif byte == 0xec:
@@ -163,7 +184,11 @@ while count != 0:
     if byte == 0xe0:
         arg1 = int.from_bytes(file.read(1), "little")
         arg2 = int.from_bytes(file.read(1), "little")
-        print("\tinit $%02x, $%02x; # TEMP" % (arg1, arg2))
+        print("\tinit %s, %s;" % (nm(arg1), pic(arg2)))
+    elif byte == 0xe9:
+        a1 = int.from_bytes(file.read(1), "little")
+        a2 = int.from_bytes(file.read(1), "little")
+        print("\tinit2 %s, %s;" % (nm(a1), pic(a2)))
     if byte_high == 0xf:
         count -= 1
         print("\ttext \"", end="")

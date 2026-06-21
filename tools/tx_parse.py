@@ -17,8 +17,10 @@ tokens = [
 	('itemname2',			'TX_ITEMNAME2'),
 	('itemname',			'TX_ITEMNAME'),
 	('cont',			'TX_CONT'),
+	('init2',			'TX_INIT2'),
 	('init',			'TX_INIT'),
-	('unknownE7',			'TX_E7'),
+	('buysellcancel_menu',		'TX_E8'),
+	('buysellcancel',		'TX_E7'),
 	('getchoice',			'TX_GET_CHOICE'),
 	('db',			'TX_DB'),
 	('signpost',		'TX_SIGN'),
@@ -140,7 +142,17 @@ for l in t:
 				print()
 		
 		elif comm == 'TX_E7':
-			print(f'\tdb $e7')
+			print(f'\tbuysellcancel')
+		
+		elif comm == 'TX_E8':
+			print(f'\tbuysellcancel_menu')
+		
+		elif comm == 'TX_INIT2':
+			ll = []
+			for q in b[1:]:
+				if q[0] in ['IDENTIFIER', 'HEXADECIMAL_NUMBER', 'DECIMAL_NUMBER']:
+					ll.append(q[1].group(1))
+			print(f'\ttext_init2 {", ".join(ll)}')
 		
 		elif comm == 'TX_END':
 			print(f'\tdone')

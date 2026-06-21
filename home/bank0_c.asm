@@ -257,7 +257,7 @@ LoadTextFaceGFX::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wTextFaceID]
-	cp 58
+	cp PIC_GFX_2
 	jr c, .other_bank
 
 ; [wTextFaceID] >= 58
@@ -280,7 +280,7 @@ LoadTextFaceExtraSprites::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wTextFaceID]
-	cp 58
+	cp PIC_GFX_2
 	jr c, .other_bank
 
 ; [wTextFaceID] >= 58
