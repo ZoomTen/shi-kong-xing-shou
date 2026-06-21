@@ -135,54 +135,78 @@ WorldMapNameStringPointers:
 	dw WorldMapNames_41b2
 	dw WorldMapNames_41b9
 	dw WorldMapNames_41c2
+; TEXT -> <f4>頭<f5>幕魅<ed>
 WorldMapNames:
-	dr $18811e, $188124
+	db $f4, $d2, $f5, $12, $dd, $ed
+; TEXT -> <f1>香哀<f4>紅<ed>
 WorldMapNames_4124:
-	dr $188124, $18812a
+	db $f1, $ca, $54, $f4, $9d, $ed
+; TEXT -> <f0>水<f1>砂<f4>咬<ed>
 WorldMapNames_412a:
-	dr $18812a, $188131
+	db $f0, $9f, $f1, $aa, $f4, $05, $ed
+; TEXT -> <f0>水<f1>砂<f5>拍盾<ed>
 WorldMapNames_4131:
-	dr $188131, $188139
+	db $f0, $9f, $f1, $aa, $f5, $44, $6b, $ed
+; TEXT -> <f0>發電<f9>療<ed>
 WorldMapNames_4139:
-	dr $188139, $18813f
+	db $f0, $4b, $34, $f9, $2a, $ed
+; TEXT -> <f4>術<f5>煙<f4>寄<ed>
 WorldMapNames_413f:
-	dr $18813f, $188146
+	db $f4, $10, $f5, $11, $f4, $c6, $ed
+; TEXT -> <f4>術<f5>煙<f4>寄<ed>
 WorldMapNames_4146:
-	dr $188146, $18814d
+	db $f4, $10, $f5, $11, $f4, $c6, $ed
+; TEXT -> <f3>．<f1>黑<f5>侵蝕<ed>
 WorldMapNames_414d:
-	dr $18814d, $188155
+	db $f3, $74, $f1, $a7, $f5, $d9, $da, $ed
+; TEXT -> <f3>天寒<f5>泡<ed>
 WorldMapNames_4155:
-	dr $188155, $18815b
+	db $f3, $80, $81, $f5, $99, $ed
+; TEXT -> <f0>天之<f3>綑<ed>
 WorldMapNames_415b:
-	dr $18815b, $188161
+	db $f0, $80, $02, $f3, $25, $ed
+; TEXT -> <f0>天之<f3>落<ed>
 WorldMapNames_4161:
-	dr $188161, $188167
+	db $f0, $80, $02, $f3, $ac, $ed
+; TEXT -> <f3>裂<f4>不<f0>樹海<ed>
 WorldMapNames_4167:
-	dr $188167, $18816f
+	db $f3, $15, $f4, $32, $f0, $be, $a2, $ed
+; TEXT -> <f1>片<f4>收<f2>硬<f4>傷<f2>防<f5>潛<ed>
 WorldMapNames_416f:
-	dr $18816f, $18817c
+	db $f1, $c2, $f4, $86, $f2, $1d, $f4, $2b, $f2, $0a, $f5, $53, $ed
+; TEXT -> <f4>猛<f7>瘋<f4>寄<ed>
 WorldMapNames_417c:
-	dr $18817c, $188183
+	db $f4, $d0, $f7, $08, $f4, $c6, $ed
+; TEXT -> <f0>地熱<f4>紅<ed>
 WorldMapNames_4183:
-	dr $188183, $188189
+	db $f0, $7a, $39, $f4, $9d, $ed
+; TEXT -> <f0>神<f1>發<f4>咬<ed>
 WorldMapNames_4189:
-	dr $188189, $188190
+	db $f0, $28, $f1, $4b, $f4, $05, $ed
+; TEXT -> <f1>人<f0>之<f7>睡<ed>
 WorldMapNames_4190:
-	dr $188190, $188197
+	db $f1, $23, $f0, $02, $f7, $57, $ed
+; TEXT -> <f0>死之<f7>睡<ed>
 WorldMapNames_4197:
-	dr $188197, $18819d
+	db $f0, $01, $02, $f7, $57, $ed
+; TEXT -> <f0>雷<f1>黑<f5>睡<ed>
 WorldMapNames_419d:
-	dr $18819d, $1881a4
+	db $f0, $b4, $f1, $a7, $f5, $57, $ed
+; TEXT -> <f0>星<f2>刺<f4>紅<ed>
 WorldMapNames_41a4:
-	dr $1881a4, $1881ab
+	db $f0, $ba, $f2, $41, $f4, $9d, $ed
+; TEXT -> <f6>潛<f0>凍<f8>彈<ed>
 WorldMapNames_41ab:
-	dr $1881ab, $1881b2
+	db $f6, $53, $f0, $a4, $f8, $13, $ed
+; TEXT -> <f3>干<f6>紅<f8>催<ed>
 WorldMapNames_41b2:
-	dr $1881b2, $1881b9
+	db $f3, $df, $f6, $9d, $f8, $0e, $ed
+; TEXT -> <f0>巴<f5>幕<f0>之<f3>落<ed>
 WorldMapNames_41b9:
-	dr $1881b9, $1881c2
+	db $f0, $16, $f5, $12, $f0, $02, $f3, $ac, $ed
+; TEXT -> <f3>力<f8>準<f3>．<ed>
 WorldMapNames_41c2:
-	dr $1881c2, $1881c9
+	db $f3, $19, $f8, $60, $f3, $74, $ed
 WorldMapLocationIdPointers:
 	dw WorldMapLocationIds
 	dw WorldMapLocationIds
@@ -193,19 +217,37 @@ WorldMapLocationIdPointers:
 	dw WorldMapLocationIds_42e5
 	dw WorldMapLocationIds_4312
 WorldMapLocationIds:
-	dr $1881d9, $18820f
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $07, $07, $07, $07, $07, $07, $07, $02, $04, $04, $04
+	db $04, $04, $07, $06, $06, $06, $06, $06, $01, $03, $00, $00, $00, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02
 WorldMapLocationIds_420f:
-	dr $18820f, $188233
+	db $00, $00, $02, $05, $05, $05, $04, $04, $00, $00, $00, $00, $00, $00, $00, $02
+	db $02, $00, $02, $02, $02, $02, $02, $01, $03, $02, $02, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00
 WorldMapLocationIds_4233:
-	dr $188233, $188257
+	db $00, $03, $03, $03, $03, $03, $03, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $03, $03, $03, $01, $02, $00, $00, $00, $00, $00, $00, $00, $00, $03
+	db $03, $03, $03, $03
 WorldMapLocationIds_4257:
-	dr $188257, $1882bd
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $01, $00, $00, $00, $02, $05, $06, $08, $08, $08, $04, $04, $04, $04, $09, $02
+	db $08, $03, $03, $03, $03, $04, $04, $04, $04, $04, $07, $03, $00, $00, $00, $00
+	db $00, $00, $00, $00, $02, $02, $02, $02, $02, $02, $04, $04, $04, $04, $04, $04
+	db $04, $04, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $05
+	db $08, $08, $08, $00, $00, $04, $04, $04, $04, $04, $04, $04, $04, $04, $07, $03
+	db $03, $03, $03, $03, $00, $00
 WorldMapLocationIds_42bd:
-	dr $1882bd, $1882e5
+	db $00, $02, $02, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $01, $04, $03, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00
 WorldMapLocationIds_42e5:
-	dr $1882e5, $188312
+	db $00, $01, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $02, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 WorldMapLocationIds_4312:
-	dr $188312, $188327
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00
 WorldMapCursorCoordPointers:
 	dw WorldMapCursorCoords
 	dw WorldMapCursorCoords
@@ -215,17 +257,18 @@ WorldMapCursorCoordPointers:
 	dw WorldMapCursorCoords_436d
 	dw WorldMapCursorCoords_4377
 WorldMapCursorCoords:
-	dr $188335, $188345
+	db $4c, $8c, $64, $7c, $54, $64, $3c, $3c, $5c, $2c, $2c, $14, $1c, $5c, $24, $54
 WorldMapCursorCoords_4345:
-	dr $188345, $188351
+	db $34, $84, $44, $74, $5c, $74, $54, $34, $34, $24, $44, $54
 WorldMapCursorCoords_4351:
-	dr $188351, $188359
+	db $44, $64, $5c, $5c, $4c, $34, $34, $24
 WorldMapCursorCoords_4359:
-	dr $188359, $18836d
+	db $1c, $7c, $5c, $5c, $4c, $54, $5c, $14, $4c, $2c, $34, $1c, $34, $0c, $5c, $24
+	db $5c, $44, $44, $34
 WorldMapCursorCoords_436d:
-	dr $18836d, $188377
+	db $34, $4c, $1c, $74, $5c, $2c, $3c, $1c, $2c, $5c
 WorldMapCursorCoords_4377:
-	dr $188377, $18837d
+	db $4c, $2c, $34, $6c, $44, $4c
 Func_062_437d:
 	ld de, WorldMapLocationIdPointers
 	ld a, [hMapGroup]
@@ -296,7 +339,7 @@ Func_062_437d:
 	ld [wdce8], a
 	ret
 WorldMapLocationCounts:
-	dr $1883f5, $1883fc
+	db $05, $05, $03, $02, $05, $02, $01
 WorldMapMarkerCoordPointers:
 	dw WorldMapMarkerCoords
 	dw WorldMapMarkerCoords
@@ -307,17 +350,17 @@ WorldMapMarkerCoordPointers:
 	dw WorldMapMarkerCoords_4438
 	dw WorldMapMarkerCoords
 WorldMapMarkerCoords:
-	dr $18840c, $188418
+	db $4c, $8c, $54, $64, $24, $5c, $1c, $5c, $5c, $2c, $2c, $14
 WorldMapMarkerCoords_4418:
-	dr $188418, $188420
+	db $34, $84, $5c, $74, $44, $54, $34, $24
 WorldMapMarkerCoords_4420:
-	dr $188420, $188426
+	db $44, $64, $34, $24, $64, $74
 WorldMapMarkerCoords_4426:
-	dr $188426, $188432
+	db $1c, $7c, $4c, $54, $4c, $2c, $34, $1c, $34, $0c, $5c, $14
 WorldMapMarkerCoords_4432:
-	dr $188432, $188438
+	db $34, $4c, $5c, $2c, $1c, $74
 WorldMapMarkerCoords_4438:
-	dr $188438, $18843e
+	db $4c, $2c, $34, $6c, $44, $4c
 Func_062_443e:
 	ldh a, [hJoypadPressed]
 	bit 4, a
@@ -598,15 +641,15 @@ WorldMapSpriteLayoutPointers:
 	dw WorldMapSpriteLayouts_4630
 	dw WorldMapSpriteLayouts_4639
 WorldMapSpriteLayouts:
-	dr $188615, $18861e
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
 WorldMapSpriteLayouts_461e:
-	dr $18861e, $188627
+	db $00, $00, $00, $00, $00, $08, $02, $00, $ff
 WorldMapSpriteLayouts_4627:
-	dr $188627, $188630
+	db $00, $00, $04, $00, $00, $08, $06, $00, $ff
 WorldMapSpriteLayouts_4630:
-	dr $188630, $188639
+	db $01, $00, $08, $01, $01, $08, $0a, $01, $ff
 WorldMapSpriteLayouts_4639:
-	dr $188639, $188642
+	db $01, $00, $0c, $01, $01, $08, $0e, $01, $ff
 Func_062_4642:
 	ld a, [wcd53]
 	and a
@@ -654,11 +697,11 @@ WorldMapAnimFramePointers:
 	dw WorldMapAnimFrames_4690
 	dw WorldMapAnimFrames_4695
 WorldMapAnimFrames:
-	dr $18868f, $188690
+	db $ff
 WorldMapAnimFrames_4690:
-	dr $188690, $188695
+	db $01, $01, $02, $02, $ff
 WorldMapAnimFrames_4695:
-	dr $188695, $18869a
+	db $03, $03, $04, $04, $ff
 Func_062_469a:
 	ld de, WorldMapTilemapAttrmapPointers
 	ld a, [hMapGroup]
@@ -732,7 +775,7 @@ WorldMapObjectPalettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 WorldMapPalettePad1:
-	dr $188733, $18873b
+	ds 8
 WorldMapBackgroundPalettes:
 	RGB 31, 30, 26
 	RGB 28, 23, 14
@@ -767,7 +810,7 @@ WorldMapBackgroundPalettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 WorldMapPalettePad2:
-	dr $18877b, $188783
+	ds 8
 WorldMapGFX1:
 INCBIN "gfx/misc/worldmapgfx1.2bpp"
 WorldMapGFX2:
@@ -909,9 +952,9 @@ WorldMap2_FrameSeqPointers:
 	dw WorldMap2_FrameSeq0
 	dw WorldMap2_FrameSeq1
 WorldMap2_FrameSeq0:
-	dr $189ede, $189edf
+	db $ff
 WorldMap2_FrameSeq1:
-	dr $189edf, $189ee4
+	db $01, $01, $02, $02, $ff
 Func_062_5ee4:
 .asm_5ee4
 	call DelayFrame
@@ -1016,11 +1059,12 @@ WorldMap2_SpriteLayoutPointers:
 	dw WorldMap2_SpriteLayout1
 	dw WorldMap2_SpriteLayout2
 WorldMap2_SpriteLayout0:
-	dr $189f71, $189f8a
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
 WorldMap2_SpriteLayout1:
-	dr $189f8a, $189f93
+	db $01, $00, $08, $01, $01, $08, $0a, $01, $ff
 WorldMap2_SpriteLayout2:
-	dr $189f93, $189f9c
+	db $01, $00, $0c, $01, $01, $08, $0e, $01, $ff
 
 Debug_SoundTest::
 	xor a
@@ -1161,9 +1205,91 @@ Func_062_609c:
 	ret
 
 Func_062_6029_Pointers:
-	dr $18a0b4, $18a0f4
+	dw .data_0
+	dw .data_1
+	dw .data_2
+	dw .data_3
+	dw .data_4
+	dw .data_5
+	dw .data_6
+	dw .data_7
+	dw .data_8
+	dw .data_9
+	dw .data_10
+	dw .data_11
+	dw .data_12
+	dw .data_13
+	dw .data_14
+	dw .data_15
+.data_0
+	db $00, $0e
+.data_1
+	db $01, $0f
+.data_2
+	db $02, $10
+.data_3
+	db $03, $11
+.data_4
+	db $04, $12
+.data_5
+	db $05, $13
+.data_6
+	db $06, $14
+.data_7
+	db $07, $15
+.data_8
+	db $08, $16
+.data_9
+	db $08, $17
+.data_10
+	db $09, $18
+.data_11
+	db $0a, $19
+.data_12
+	db $0b, $1a
+.data_13
+	db $0c, $1b
+.data_14
+	db $0d, $1c
+.data_15
+	db $0d, $1d
 Debug_SoundTest_Palette:
-	dr $18a0f4, $18a13c
+	RGB 31, 31, 31
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 0, 23, 29
+	RGB 0, 9, 26
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 30, 16, 28
+	RGB 19, 0, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Debug_SoundTest_Tilemap:
 INCBIN "gfx/tilemaps/debug_soundtest_tilemap.tilemap"
 Debug_SoundTest_Attrmap:
