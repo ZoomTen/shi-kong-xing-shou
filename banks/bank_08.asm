@@ -1,54 +1,54 @@
 Script_008_4000::
-	scr_face FACE_UP
-	scr_text House_CutsceneText1
-	scr_face FACE_LEFT
-	scr_move MovementData_OneLeft
-	scr_face FACE_UP
-	scr_face FACE_RIGHT
-	scr_move MovementData_OneRight
-	scr_face FACE_UP
-	scr_text House_CutsceneText2
-	scr_emote 0, EMOTE_HEART
-	scr_delay 3, 32
-	scr_face FACE_DOWN
-	scr_text text_08_456d
-	scr_text text_08_458a
-	scr_text text_08_45a5
-	scr_face FACE_LEFT
-	scr_move MovementData_OneLeft
-	scr_move MovementData_OneLeft
-	scr_face FACE_DOWN
-	scr_move MovementData_OneDown
-	scr_text text_08_45cc
-	scr_delay 3, 7
-	scr_emote 0, EMOTE_EXCLAMATION
-	scr_delay 3, 32
-	scr_face FACE_LEFT
-	scr_move MovementData_OneLeft
-	scr_move MovementData_OneLeft
-	scr_move MovementData_OneLeft
-	scr_face FACE_DOWN
-	scr_move MovementData_OneDown
-	scr_text text_08_45db
-	scr_delay 3, 7
-	scr_emote 0, EMOTE_QUESTION
-	scr_delay 3, 32
-	scr_text text_08_45f0
-	scr_move MovementData_OneDown
-	scr_move MovementData_OneDown
-	scr_move MovementData_OneDown
-	scr_move MovementData_OneDown
-	scr_5e $01 ; follower
-	scr_face FACE_LEFT
-	scr_setmap MAP_BELL_VILLAGE_1, $08 ; map switch
+	face FACE_UP
+	stext House_CutsceneText1
+	face FACE_LEFT
+	move MovementData_OneLeft
+	face FACE_UP
+	face FACE_RIGHT
+	move MovementData_OneRight
+	face FACE_UP
+	stext House_CutsceneText2
+	emote 0, EMOTE_HEART
+	delay 3, 32
+	face FACE_DOWN
+	stext text_08_456d
+	stext text_08_458a
+	stext text_08_45a5
+	face FACE_LEFT
+	move MovementData_OneLeft
+	move MovementData_OneLeft
+	face FACE_DOWN
+	move MovementData_OneDown
+	stext text_08_45cc
+	delay 3, 7
+	emote 0, EMOTE_EXCLAMATION
+	delay 3, 32
+	face FACE_LEFT
+	move MovementData_OneLeft
+	move MovementData_OneLeft
+	move MovementData_OneLeft
+	face FACE_DOWN
+	move MovementData_OneDown
+	stext text_08_45db
+	delay 3, 7
+	emote 0, EMOTE_QUESTION
+	delay 3, 32
+	stext text_08_45f0
+	move MovementData_OneDown
+	move MovementData_OneDown
+	move MovementData_OneDown
+	move MovementData_OneDown
+	setfollower $01 ; follower
+	face FACE_LEFT
+	setmap MAP_BELL_VILLAGE_1, $08 ; map switch
 ; outside
-	scr_face FACE_RIGHT
-	scr_text text_08_4651
-	scr_text text_08_465e
-	scr_text text_08_46a4
-	scr_face FACE_LEFT
-	scr_1f $01 ; story flags?
-	scr_end
+	face FACE_RIGHT
+	stext text_08_4651
+	stext text_08_465e
+	stext text_08_46a4
+	face FACE_LEFT
+	setmappredef MAPPREDEF_01
+	end
 
 Func_008_4082:
 	xor a
@@ -56,206 +56,206 @@ Func_008_4082:
 	jp JumpToGameMode
 
 Script_008_4089:
-	scr_end
+	end
 
 Script_008_408a:
-	scr_checkbit wEventFlags, 0, .script_4113 ; check bit 0
-	scr_setmap MAP_BELL_OBSERVATORY_1, $01
-	scr_face FACE_UP
-	scr_spriteface 2, FACE_LEFT
-	scr_move MovementData_OneUp
-	scr_move MovementData_OneUp
-	scr_text text_08_4b8b
-	scr_delay 3, 7
-	scr_move MovementData_OneUp
-	scr_move MovementData_OneUp
-	scr_face FACE_LEFT
-	scr_move MovementData_OneLeft
-	scr_text text_08_4b9f
-	scr_delay 3, 7
-	scr_emote 0, EMOTE_ANGER
-	scr_delay 3, 32
-	scr_move MovementData_OneLeft
-	scr_move MovementData_OneLeft
-	scr_text text_08_4baf
-	scr_emote 2, EMOTE_EXCLAMATION
-	scr_delay 3, 32
-	scr_spriteface 2, FACE_DOWN
-	scr_text text_08_4bbb
-	scr_text text_08_4bd2
-	scr_text text_08_4bdc
-	scr_move MovementData_OneLeft
-	scr_move MovementData_OneLeft
-	scr_face FACE_UP
-	scr_spritewalk 2, $00
-	scr_text text_08_4bf3
-	scr_text text_08_4c1d
-	scr_text text_08_4c2e
-	scr_face FACE_LEFT
+	checkbit wEventFlags, 0, .script_4113 ; check bit 0
+	setmap MAP_BELL_OBSERVATORY_1, $01
+	face FACE_UP
+	spriteface 2, FACE_LEFT
+	move MovementData_OneUp
+	move MovementData_OneUp
+	stext text_08_4b8b
+	delay 3, 7
+	move MovementData_OneUp
+	move MovementData_OneUp
+	face FACE_LEFT
+	move MovementData_OneLeft
+	stext text_08_4b9f
+	delay 3, 7
+	emote 0, EMOTE_ANGER
+	delay 3, 32
+	move MovementData_OneLeft
+	move MovementData_OneLeft
+	stext text_08_4baf
+	emote 2, EMOTE_EXCLAMATION
+	delay 3, 32
+	spriteface 2, FACE_DOWN
+	stext text_08_4bbb
+	stext text_08_4bd2
+	stext text_08_4bdc
+	move MovementData_OneLeft
+	move MovementData_OneLeft
+	face FACE_UP
+	spritewalk 2, MOVE_DELAY
+	stext text_08_4bf3
+	stext text_08_4c1d
+	stext text_08_4c2e
+	face FACE_LEFT
 ; Cutscene
-	scr_spriteface 2, FACE_LEFT
-	scr_setmap MAP_BLUE_MOON_1, $00
-	scr_movemap MovementData_TwelveUp ; apply movement data to map
-	scr_text text_08_4c4c
-	scr_text text_08_4c8c
-	scr_text text_08_4cb5
-	scr_text text_08_4cbd
-	scr_5e $00
-	scr_setmap MAP_BALLOTS_HOUSE_1, $02
-	scr_face FACE_DOWN
-	scr_spriteface 2, FACE_UP
-	scr_text text_08_4cc6
-	scr_setbit wEventFlags, 0 ; set bit 0
-	scr_end
+	spriteface 2, FACE_LEFT
+	setmap MAP_BLUE_MOON_1, $00
+	movemap MovementData_TwelveUp ; apply movement data to map
+	stext text_08_4c4c
+	stext text_08_4c8c
+	stext text_08_4cb5
+	stext text_08_4cbd
+	setfollower $00
+	setmap MAP_BALLOTS_HOUSE_1, $02
+	face FACE_DOWN
+	spriteface 2, FACE_UP
+	stext text_08_4cc6
+	setbit wEventFlags, 0 ; set bit 0
+	end
 
 .script_4113
-	scr_setmap MAP_BELL_OBSERVATORY_1, $00
-	scr_end
+	setmap MAP_BELL_OBSERVATORY_1, $00
+	end
 
 BallotsHouse1_ObjectEvents2:
 	object_event $11,  5,  3, 0, $00, $00, $00, $00, Script_008_4123
 	objects_end
 
 Script_008_4123:
-	scr_04 text_08_4cf4
-	scr_end
+	textface text_08_4cf4
+	end
 
 BallotsHouse1_ObjectEvents3:
 	object_event $11,  5,  3, 0, $00, $00, $00, $00, Script_008_4133
 	objects_end
 
 Script_008_4133:
-	scr_04 text_08_4e04
-	scr_end
+	textface text_08_4e04
+	end
 
 Script_008_4137:
-	scr_checkbit wEventFlags, 0, .script_414d
+	checkbit wEventFlags, 0, .script_414d
 ; No entry
-	scr_text text_08_4b77
-	scr_face FACE_DOWN
-	scr_move MovementData_OneDown
-	scr_44
-	scr_spritewalk 1, $02
-	scr_spriteface 1, FACE_DOWN ; snowy faces down
-	scr_end
+	stext text_08_4b77
+	face FACE_DOWN
+	move MovementData_OneDown
+	clearplayerpos
+	spritewalk 1, MOVE_UP
+	spriteface 1, FACE_DOWN ; snowy faces down
+	end
 
 .script_414d
-	scr_setmap MAP_BELL_SCHOOL_1, $00
-	scr_end
+	setmap MAP_BELL_SCHOOL_1, $00
+	end
 
 Script_008_4151:
-	scr_checkbit wEventFlags, 1, .script_41a3
-	scr_text text_08_4d0b
-	scr_face FACE_UP
-	scr_spriteface 2, FACE_DOWN
-	scr_spritewalk 2, $01 ; TEMP
-	scr_spritewalk 2, $01 ; TEMP
-	scr_move MovementData_OneUp
-	scr_emote 0, EMOTE_QUESTION
-	scr_delay 3, 32
-	scr_text text_08_4d1a
-	scr_text text_08_4d2d
-	scr_text text_08_4d3e
-	scr_emote 2, EMOTE_EXCLAMATION
-	scr_delay 3, 32
-	scr_text text_08_4d56
-	scr_text text_08_4d70
-	scr_delay 3, 7
-	scr_text text_08_4d77
-	scr_emote 0, EMOTE_ANGER
-	scr_delay 3, 32
-	scr_text text_08_4d8f
-	scr_face FACE_DOWN
-	scr_move MovementData_OneDown
-	scr_move MovementData_OneDown
-	scr_move MovementData_OneDown
-	scr_setbit wEventFlags, 1
-	scr_1f $02 ; TEMP
+	checkbit wEventFlags, 1, .script_41a3
+	stext text_08_4d0b
+	face FACE_UP
+	spriteface 2, FACE_DOWN
+	spritewalk 2, MOVE_DOWN
+	spritewalk 2, MOVE_DOWN
+	move MovementData_OneUp
+	emote 0, EMOTE_QUESTION
+	delay 3, 32
+	stext text_08_4d1a
+	stext text_08_4d2d
+	stext text_08_4d3e
+	emote 2, EMOTE_EXCLAMATION
+	delay 3, 32
+	stext text_08_4d56
+	stext text_08_4d70
+	delay 3, 7
+	stext text_08_4d77
+	emote 0, EMOTE_ANGER
+	delay 3, 32
+	stext text_08_4d8f
+	face FACE_DOWN
+	move MovementData_OneDown
+	move MovementData_OneDown
+	move MovementData_OneDown
+	setbit wEventFlags, 1
+	setmappredef MAPPREDEF_02
 
 .script_41a3
-	scr_setmap MAP_BELL_VILLAGE_1, $06
-	scr_end
+	setmap MAP_BELL_VILLAGE_1, $06
+	end
 
 Script_008_41a7:
-	scr_checkbit wEventFlags, 1, .script_41b1
-	scr_setmap MAP_BALLOTS_HOUSE_1, $00
-	scr_end
+	checkbit wEventFlags, 1, .script_41b1
+	setmap MAP_BALLOTS_HOUSE_1, $00
+	end
 
 .script_41b1
-	scr_setmap MAP_BALLOTS_HOUSE_1, $03
-	scr_end
+	setmap MAP_BALLOTS_HOUSE_1, $03
+	end
 
 Script_008_41b5:
-	scr_checkbit wEventFlags, 2, .script_41bf
-	scr_setmap MAP_BELL_SCHOOL_1, $02
-	scr_end
+	checkbit wEventFlags, 2, .script_41bf
+	setmap MAP_BELL_SCHOOL_1, $02
+	end
 
 .script_41bf
-	scr_text text_08_522e
-	scr_face FACE_LEFT
-	scr_move MovementData_OneLeft
-	scr_end
+	stext text_08_522e
+	face FACE_LEFT
+	move MovementData_OneLeft
+	end
 
 Script_008_41c8:
-	scr_face FACE_UP
-	scr_spriteface 6, FACE_RIGHT
-	scr_spritewalk 6, $04 ; TEMP
-	scr_spriteface 6, FACE_DOWN
-	scr_spritewalk 6, $01 ; TEMP
-	scr_spritewalk 6, $01 ; TEMP
-	scr_spriteface 6, FACE_LEFT
-	scr_spritewalk 6, $03 ; TEMP
-	scr_spriteface 6, FACE_DOWN
-	scr_spritewalk 6, $01 ; TEMP
-	scr_text text_08_5306
-	scr_text text_08_5346
-	scr_emote 6, EMOTE_TEAR
-	scr_delay 3, 32
-	scr_text text_08_5387
-	scr_text text_08_53af
-	scr_text text_08_53ef
-	scr_spriteface 6, FACE_UP
-	scr_spritewalk 6, $02 ; TEMP
-	scr_spriteface 6, FACE_DOWN
-	scr_emote 6, EMOTE_HEART
-	scr_delay 3, 32
-	scr_text text_08_5592
-	scr_setmap MAP_BELL_SCHOOL_NORTH_CLASSROOM_1, $01
-	scr_setbit wEventFlags, 3
-	scr_end
+	face FACE_UP
+	spriteface 6, FACE_RIGHT
+	spritewalk 6, MOVE_RIGHT
+	spriteface 6, FACE_DOWN
+	spritewalk 6, MOVE_DOWN
+	spritewalk 6, MOVE_DOWN
+	spriteface 6, FACE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spriteface 6, FACE_DOWN
+	spritewalk 6, MOVE_DOWN
+	stext text_08_5306
+	stext text_08_5346
+	emote 6, EMOTE_TEAR
+	delay 3, 32
+	stext text_08_5387
+	stext text_08_53af
+	stext text_08_53ef
+	spriteface 6, FACE_UP
+	spritewalk 6, MOVE_UP
+	spriteface 6, FACE_DOWN
+	emote 6, EMOTE_HEART
+	delay 3, 32
+	stext text_08_5592
+	setmap MAP_BELL_SCHOOL_NORTH_CLASSROOM_1, $01
+	setbit wEventFlags, 3
+	end
 
 Script_008_4214:
-	scr_setmap MAP_BALLOTS_HOUSE_1, $04
-	scr_face FACE_UP
-	scr_spriteface 2, FACE_RIGHT
-	scr_spriteface 3, FACE_LEFT
-	scr_text text_08_5468
-	scr_text text_08_547e
-	scr_text text_08_54d2
-	scr_emote 3, EMOTE_ANGER
-	scr_delay 3, 32
-	scr_text text_08_54eb
-	scr_spriteface 3, FACE_DOWN
-	scr_spriteface 2, FACE_DOWN
-	scr_spritewalk 3, $01 ; TEMP
-	scr_spritewalk 3, $01 ; TEMP
-	scr_spritewalk 3, $01 ; TEMP
-	scr_spritewalk 3, $01 ; TEMP
-	scr_spritewalk 3, $01 ; TEMP
-	scr_spritewalk 3, $01 ; TEMP
-	scr_1c $03
-	scr_move MovementData_OneUp
-	scr_move MovementData_OneUp
-	scr_emote 0, EMOTE_QUESTION
-	scr_delay 3, 32
-	scr_text text_08_5500
-	scr_text text_08_550e
-	scr_emote 0, EMOTE_QUESTION
-	scr_delay 3, 32
-	scr_text text_08_557d
-	scr_text text_08_558a
-	scr_34 $01, $04, $00 ; TEMP
-	scr_end
+	setmap MAP_BALLOTS_HOUSE_1, $04
+	face FACE_UP
+	spriteface 2, FACE_RIGHT
+	spriteface 3, FACE_LEFT
+	stext text_08_5468
+	stext text_08_547e
+	stext text_08_54d2
+	emote 3, EMOTE_ANGER
+	delay 3, 32
+	stext text_08_54eb
+	spriteface 3, FACE_DOWN
+	spriteface 2, FACE_DOWN
+	spritewalk 3, MOVE_DOWN
+	spritewalk 3, MOVE_DOWN
+	spritewalk 3, MOVE_DOWN
+	spritewalk 3, MOVE_DOWN
+	spritewalk 3, MOVE_DOWN
+	spritewalk 3, MOVE_DOWN
+	clearobject $03
+	move MovementData_OneUp
+	move MovementData_OneUp
+	emote 0, EMOTE_QUESTION
+	delay 3, 32
+	stext text_08_5500
+	stext text_08_550e
+	emote 0, EMOTE_QUESTION
+	delay 3, 32
+	stext text_08_557d
+	stext text_08_558a
+	warpmode $01, $04, $00
+	end
 
 BallotsHouse1_ObjectEvents4:
 	object_event $11,  3,  4, 0, $00, $00, $00, $00, Script_008_4089
@@ -263,19 +263,19 @@ BallotsHouse1_ObjectEvents4:
 	objects_end
 
 Script_008_4285:
-	scr_text text_08_55a7
-	scr_face FACE_UP
-	scr_move MovementData_OneUp
-	scr_44
-	scr_spritewalk 1, $01
-	scr_spriteface 1, FACE_UP
-	scr_end
+	stext text_08_55a7
+	face FACE_UP
+	move MovementData_OneUp
+	clearplayerpos
+	spritewalk 1, MOVE_DOWN
+	spriteface 1, FACE_UP
+	end
 
 Script_008_4295:
-	scr_text text_08_4f82
-	scr_face FACE_UP
-	scr_move MovementData_OneUp
-	scr_end
+	stext text_08_4f82
+	face FACE_UP
+	move MovementData_OneUp
+	end
 
 BallotsHouse1_ObjectEvents:
 BellSchoolOutside1_ObjectEvents:
@@ -294,42 +294,42 @@ BellVillage1_ObjectEvents:
 	objects_end
 
 Script_008_42ed:
-	scr_checkbit wEventFlags, 1, .script_42f7
-	scr_04 text_08_46b1
-	scr_end
+	checkbit wEventFlags, 1, .script_42f7
+	textface text_08_46b1
+	end
 
 .script_42f7
-	scr_04 text_08_4e23
-	scr_end
+	textface text_08_4e23
+	end
 
 Script_008_42fb:
-	scr_checkbit wEventFlags, 1, .script_4305
-	scr_04 text_08_46fe
-	scr_end
+	checkbit wEventFlags, 1, .script_4305
+	textface text_08_46fe
+	end
 
 .script_4305
-	scr_04 text_08_4e55
-	scr_end
+	textface text_08_4e55
+	end
 
 Script_008_4309:
-	scr_04 text_08_4768
-	scr_end
+	textface text_08_4768
+	end
 
 Script_008_430d:
-	scr_04 text_08_47af
-	scr_end
+	textface text_08_47af
+	end
 
 Script_008_4311:
-	scr_04 text_08_47fb
-	scr_end
+	textface text_08_47fb
+	end
 
 Script_008_4315:
-	scr_04 text_08_4837
-	scr_end
+	textface text_08_4837
+	end
 
 Script_008_4319:
-	scr_04 text_08_4e15
-	scr_end
+	textface text_08_4e15
+	end
 
 HayatosHouse1_ObjectEvents:
 	object_event $22,  5,  6, 0, $00, $00, $06, $00, Script_008_4334
@@ -337,17 +337,17 @@ HayatosHouse1_ObjectEvents:
 	objects_end
 
 Script_008_4334:
-	scr_checkbit wEventFlags, 1, .script_433e
-	scr_04 text_08_48d0
-	scr_end
+	checkbit wEventFlags, 1, .script_433e
+	textface text_08_48d0
+	end
 
 .script_433e
-	scr_04 text_08_4eb0
-	scr_end
+	textface text_08_4eb0
+	end
 
 Script_008_4342:
-	scr_04 text_08_4911
-	scr_end
+	textface text_08_4911
+	end
 
 CarpetWomansHouse1_ObjectEvents:
 	object_event $1f,  4,  6, 0, $00, $00, $06, $00, Script_008_435d
@@ -355,23 +355,23 @@ CarpetWomansHouse1_ObjectEvents:
 	objects_end
 
 Script_008_435d:
-	scr_checkbit wEventFlags, 1, .script_436a
-	scr_04 text_08_497a
-	scr_text text_08_49cc
-	scr_end
+	checkbit wEventFlags, 1, .script_436a
+	textface text_08_497a
+	stext text_08_49cc
+	end
 
 .script_436a
-	scr_04 text_08_4ecc
-	scr_end
+	textface text_08_4ecc
+	end
 
 Script_008_436e:
-	scr_checkbit wEventFlags, 1, .script_4378
-	scr_04 text_08_4aac
-	scr_end
+	checkbit wEventFlags, 1, .script_4378
+	textface text_08_4aac
+	end
 
 .script_4378
-	scr_04 text_08_4f1a
-	scr_end
+	textface text_08_4f1a
+	end
 
 FangfangsHouse1_ObjectEvents:
 	object_event $15,  5,  6, 0, $00, $00, $06, $00, Script_008_439e
@@ -380,34 +380,34 @@ FangfangsHouse1_ObjectEvents:
 	objects_end
 
 Script_008_439e:
-	scr_checkbit wEventFlags, 1, .script_43a8
-	scr_04 text_08_49db
-	scr_end
+	checkbit wEventFlags, 1, .script_43a8
+	textface text_08_49db
+	end
 
 .script_43a8
-	scr_04 text_08_4ef4
-	scr_end
+	textface text_08_4ef4
+	end
 
 Script_008_43ac:
-	scr_04 text_08_4a2e
-	scr_end
+	textface text_08_4a2e
+	end
 
 Script_008_43b0:
-	scr_04 text_08_4a87
-	scr_end
+	textface text_08_4a87
+	end
 
 BellHealingCenter1_ObjectEvents:
 	object_event $25,  5,  2, 0, $00, $00, $00, $00, Script_008_43c0
 	objects_end
 
 Script_008_43c0:
-	scr_text text_08_4b14
-	scr_end
+	stext text_08_4b14
+	end
 
 Script_008_43c4:
-	scr_face FACE_UP
-	scr_text text_08_4b14
-	scr_end
+	face FACE_UP
+	stext text_08_4b14
+	end
 
 BellObservatory1_ObjectEvents2:
 	object_event $11,  3,  7, 0, $00, $00, $00, $00, Script_008_4089
@@ -419,12 +419,12 @@ BellSchool1_ObjectEvents:
 	objects_end
 
 Script_008_43ed:
-	scr_04 text_08_4fa8
-	scr_end
+	textface text_08_4fa8
+	end
 
 Script_008_43f1:
-	scr_04 text_08_5001
-	scr_end
+	textface text_08_5001
+	end
 
 BellSchoolSouthClassroom1_ObjectEvents:
 	object_event $1e,  7,  6, 0, $00, $00, $00, $00, Script_008_440c
@@ -432,12 +432,12 @@ BellSchoolSouthClassroom1_ObjectEvents:
 	objects_end
 
 Script_008_440c:
-	scr_04 text_08_5039
-	scr_end
+	textface text_08_5039
+	end
 
 Script_008_4410:
-	scr_04 text_08_506b
-	scr_end
+	textface text_08_506b
+	end
 
 BellSchoolNorthClassroom1_ObjectEvents:
 	object_event $26,  4,  8, 0, $00, $00, $00, $00, Script_008_4463
@@ -450,100 +450,98 @@ BellSchoolNorthClassroom1_ObjectEvents:
 	objects_end
 
 Script_008_4462:
-	scr_end
+	end
 
 Script_008_4463:
-	scr_checkbit wEventFlags, $02, Script_008_44d3
-	db $24 ; TEMP
-	scr_face $01 ; TEMP
-	scr_04 text_08_50a3
-	scr_emote $00, $04 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_08_50e8
-	scr_text text_08_5105
-	scr_text text_08_5188
-	scr_text text_08_5195
+	checkbit wEventFlags, $02, Script_008_44d3
+	walkpath
+	face FACE_UP
+	textface text_08_50a3
+	emote $00, $04
+	delay $03, $20
+	stext text_08_50e8
+	stext text_08_5105
+	stext text_08_5188
+	stext text_08_5195
 ; teacher moves to chair
-	scr_spriteface 6, FACE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spriteface 6, FACE_UP
-	scr_spritewalk 6, MOVE_UP
-	scr_spriteface 6, FACE_LEFT
-	scr_spritewalk 6, MOVE_LEFT
-	scr_spriteface 6, FACE_DOWN
+	spriteface 6, FACE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spriteface 6, FACE_UP
+	spritewalk 6, MOVE_UP
+	spriteface 6, FACE_LEFT
+	spritewalk 6, MOVE_LEFT
+	spriteface 6, FACE_DOWN
 ; female student walks up to player
-	scr_spriteface 5, FACE_UP
-	scr_spritewalk 5, MOVE_UP
-	scr_spriteface 5, FACE_RIGHT
-	scr_text text_08_51e5
+	spriteface 5, FACE_UP
+	spritewalk 5, MOVE_UP
+	spriteface 5, FACE_RIGHT
+	stext text_08_51e5
 ; walking to seat
-	scr_spriteface 5, FACE_UP
-	scr_spritewalk 5, MOVE_UP
-	scr_spritewalk 5, MOVE_UP
-	scr_spritewalk 5, MOVE_UP
-	scr_spriteface 5, FACE_RIGHT
-	scr_spritewalk 5, MOVE_RIGHT
-	scr_spriteface 5, FACE_UP
-	scr_spriteface 2, FACE_UP
-	scr_spriteface 4, FACE_UP
-	scr_setbit wEventFlags, $02
-	scr_1f $03 ; TEMP
-	scr_end
+	spriteface 5, FACE_UP
+	spritewalk 5, MOVE_UP
+	spritewalk 5, MOVE_UP
+	spritewalk 5, MOVE_UP
+	spriteface 5, FACE_RIGHT
+	spritewalk 5, MOVE_RIGHT
+	spriteface 5, FACE_UP
+	spriteface 2, FACE_UP
+	spriteface 4, FACE_UP
+	setbit wEventFlags, $02
+	setmappredef MAPPREDEF_03
+	end
 
 Script_008_44d3:
-	scr_04 text_08_5291
-	scr_spriteface 2, FACE_UP
-	scr_end
+	textface text_08_5291
+	spriteface 2, FACE_UP
+	end
 
 Script_008_44da:
-	scr_04 text_08_52d0
-	scr_spriteface 4, FACE_UP
-	scr_end
+	textface text_08_52d0
+	spriteface 4, FACE_UP
+	end
 
 Script_008_44e1:
-	scr_04 text_08_5267
-	scr_spriteface 5, FACE_UP
-	scr_end
+	textface text_08_5267
+	spriteface 5, FACE_UP
+	end
 
 Script_008_44e8:
-	scr_04 text_08_522e
-	scr_spriteface 6, FACE_DOWN
-	scr_end
+	textface text_08_522e
+	spriteface 6, FACE_DOWN
+	end
 
 Script_008_44ef:
-	scr_04 text_08_4519
-	scr_3b text_08_506b
-	scr_61
-	scr_end
+	textface text_08_4519
+	startbattle BattleData_02d_506b
+	loadscriptedmon $09
 
 Script_008_44f7:
-	scr_04 text_08_4519
-	scr_3b text_08_506b
-	scr_61
-	scr_end
+	textface text_08_4519
+	startbattle BattleData_02d_506b
+	loadscriptedmon $09
 
 Script_008_44ff:
-	scr_04 text_08_452d
-	scr_checkbit wEventFlags + 4, $01, .done
-	scr_35 $01 ; TEMP
-	scr_end
+	textface text_08_452d
+	checkbit wEventFlags + 4, $01, .done
+	scr_35 $01
+	end
 .done
-	scr_end
+	end
 
 Script_008_450c:
-	scr_04 text_08_4537
-	scr_checkbit wEventFlags + 3, 3, .script_4517
+	textface text_08_4537
+	checkbit wEventFlags + 3, 3, .script_4517
 	scr_37
-	scr_end
+	end
 
 .script_4517
-	scr_36
-	scr_end
+	townmusicanim
+	end
 
 INCLUDE "data/text/bank08_misc2.asm"
 INCLUDE "data/text/ballots_house_intro.asm"

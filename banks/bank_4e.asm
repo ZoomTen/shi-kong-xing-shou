@@ -1,6 +1,9 @@
-; TODO: unreferenced data block, classify type
 unk_04e_4000:
-	dr $138000, $138009
+	dr $138000, $138001
+Script_04e_4001:: ; farjump2 target (bank_4f)
+	setmap $08, $06
+	end
+	dr $138005, $138009
 
 BanglinCo1f_ObjectEvents5:
 BanglinCo2f_ObjectEvents:

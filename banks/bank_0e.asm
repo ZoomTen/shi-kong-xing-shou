@@ -1,14 +1,14 @@
 Script_00e_4000:
-	scr_end
+	end
 
 Script_00e_4001:
-	scr_setmap $2d, $01 ; TEMP
-	scr_end
+	setmap $2d, $01
+	end
 
 Script_00e_4005::
-	scr_face FACE_DOWN
-	scr_text text_0e_4abe
-	scr_end
+	face FACE_DOWN
+	stext text_0e_4abe
+	end
 
 Func_00e_400b:
 	xor a
@@ -16,158 +16,154 @@ Func_00e_400b:
 	jp JumpToGameMode
 
 Script_00e_4012:
-	scr_checkbit wEventFlags, $04, Script_00e_4049 ; TEMP
-	scr_face $01 ; TEMP
-	scr_text text_0e_4b34 ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_4b4d ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_4bc0 ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_4bfb ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_4c6a ; TEMP
+	checkbit wEventFlags, $04, Script_00e_4049
+	face FACE_UP
+	stext text_0e_4b34
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_4b4d
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_4bc0
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_4bfb
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_4c6a
 	scr_48 2, 1
-	scr_setbit wEventFlags, 4
-	scr_end
+	setbit wEventFlags, 4
+	end
 
 Script_00e_4049:
-	scr_end
+	end
 
 Script_00e_404a:
-	scr_checkbit wEventFlags, $04, Script_00e_4059 ; TEMP
-	scr_text text_0e_4af9 ; TEMP
-	scr_face $01 ; TEMP
-	scr_move $4193 ; TEMP
-	scr_end
+	checkbit wEventFlags, $04, Script_00e_4059
+	stext text_0e_4af9
+	face FACE_UP
+	move MovementData_OneUp
+	end
 
 Script_00e_4059:
-	scr_5e $02 ; TEMP
-	scr_face $02 ; TEMP
-	scr_setmap $01, $08 ; TEMP
-	scr_face $03 ; TEMP
-	scr_text text_0e_4cdd ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_move $413c ; TEMP
-	scr_text text_0e_4cec ; TEMP
-	scr_spritewalk $01, $03 ; TEMP
-	scr_text text_0e_4cfd ; TEMP
-	scr_emote $00, $03 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_4d10 ; TEMP
-	scr_text text_0e_4d42 ; TEMP
-	scr_text text_0e_4d50 ; TEMP
-	scr_face $02 ; TEMP
-	scr_text text_0e_4d81 ; TEMP
-	db $61
-	scr_cont
-	db $64
-	scr_end
+	setfollower $02
+	face FACE_LEFT
+	setmap $01, $08
+	face FACE_RIGHT
+	stext text_0e_4cdd
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	move MovementData_OneLeft
+	stext text_0e_4cec
+	spritewalk  1, MOVE_LEFT
+	stext text_0e_4cfd
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_0e_4d10
+	stext text_0e_4d42
+	stext text_0e_4d50
+	face FACE_LEFT
+	stext text_0e_4d81
+	loadscriptedmon $00
+	loadbufmon
+	end
 
 Script_00e_408f:
-	scr_text text_0e_5333 ; TEMP
-	scr_face $00 ; TEMP
-	scr_move $4191 ; TEMP
-	scr_44
-	scr_spritewalk $01, $02 ; TEMP
-	scr_spriteface $01, $00 ; TEMP
-	scr_end
+	stext text_0e_5333
+	face FACE_DOWN
+	move MovementData_OneDown
+	clearplayerpos
+	spritewalk $01, $02
+	spriteface $01, $00
+	end
 
 Script_00e_409f:
-	scr_checkbit wEventFlags, $05, Script_00e_40b5 ; TEMP
-	scr_text text_0e_7dff ; TEMP
-	scr_face $01 ; TEMP
-	scr_move $4193 ; TEMP
-	scr_44
-	scr_spritewalk $01, $01 ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_end
+	checkbit wEventFlags, $05, Script_00e_40b5
+	stext text_0e_7dff
+	face FACE_UP
+	move MovementData_OneUp
+	clearplayerpos
+	spritewalk $01, $01
+	spriteface $01, $01
+	end
 
 Script_00e_40b5:
-	scr_setmap $28, $00 ; TEMP
-	scr_end
+	setmap $28, $00
+	end
 
 Script_00e_40b9:
-	scr_setmap $2d, $00 ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_54aa
-	scr_1f $05 ; TEMP
-	scr_end
+	setmap $2d, $00
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_54aa
+	setmappredef MAPPREDEF_05
+	end
 
 Script_00e_40c8:
-	db $66 ; TEMP
-	scr_delay $40, $0f ; TEMP
-	scr_end
+	farjump2 Script_00f_4002
+	end
 
 Script_00e_40cd:
-	db $66 ; TEMP
-	scr_spritewalk $40, $0f ; TEMP
-	scr_end
+	farjump2 Script_00f_4006
+	end
 
 Script_00e_40d2:
-	scr_checkbit wEventFlags, $06, Script_00e_40dc
-	scr_setmap $2d, $08 ; TEMP
-	scr_end
+	checkbit wEventFlags, $06, Script_00e_40dc
+	setmap $2d, $08
+	end
 
 Script_00e_40dc:
-	scr_checkbit wEventFlags, $07, Script_00e_40e6
-	scr_setmap $2d, $0d ; TEMP
-	scr_end
+	checkbit wEventFlags, $07, Script_00e_40e6
+	setmap $2d, $0d
+	end
 
 Script_00e_40e6:
-	scr_checkbit wEventFlags + 1, $04, Script_00e_40f0
-	scr_setmap $2d, $08 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $04, Script_00e_40f0
+	setmap $2d, $08
+	end
 
 Script_00e_40f0:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_40fa
-	scr_setmap $2d, $0e ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_40fa
+	setmap $2d, $0e
+	end
 
 Script_00e_40fa:
-	scr_setmap $2d, $08 ; TEMP
-	scr_end
+	setmap $2d, $08
+	end
 
 Script_00e_40fe:
-	scr_checkbit wEventFlags + 1, $01, Script_00e_4105
-	scr_end
+	checkbit wEventFlags + 1, $01, Script_00e_4105
+	end
 
 Script_00e_4105:
-	scr_face $01 ; TEMP
-	db $5f ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_662c
-	scr_text text_0e_6647
-	db $63 ; TEMP
-	scr_spriteface $1f, $41 ; TEMP
-	scr_text text_0e_665b
-	scr_end
+	face FACE_UP
+	dirmovement
+	spriteface $01, $01
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_662c
+	stext text_0e_6647
+	ifcharindex $01, Script_00e_411f
+	stext text_0e_665b
+	end
 
 Script_00e_411f:
-	scr_text text_0e_66b8
-	scr_text text_0e_66eb
-	scr_setmap $22, $00 ; TEMP
-	scr_end
+	stext text_0e_66b8
+	stext text_0e_66eb
+	setmap $22, $00
+	end
 
 Script_00e_4129:
-	scr_checkbit wEventFlags + 2, $01, Script_00e_4130
+	checkbit wEventFlags + 2, $01, Script_00e_4130
 Script_00e_412f:
-	scr_end
+	end
 
 Script_00e_4130:
-	scr_checkbit wEventFlags + 2, $02, Script_00e_412f
-	scr_text text_0e_71b4
+	checkbit wEventFlags + 2, $02, Script_00e_412f
+	stext text_0e_71b4
 	scr_48 $02, $04
-	scr_setbit $daa2, $02 ; TEMP
-	scr_end
+	setbit wEventFlags + 2, $02
+	end
 
 BellSchoolSouthClassroom2_ObjectEvents::
 BellSchoolNorthClassroom_ObjectEvents::
@@ -187,28 +183,28 @@ BellVillage2_ObjectEvents:
 	objects_end
 
 Script_00e_4185:
-	scr_04 text_0e_4d99
-	scr_end
+	textface text_0e_4d99
+	end
 
 Script_00e_4189:
-	scr_04 text_0e_4e05
-	scr_end
+	textface text_0e_4e05
+	end
 
 Script_00e_418d:
-	scr_04 text_0e_4e82
-	scr_end
+	textface text_0e_4e82
+	end
 
 Script_00e_4191:
-	scr_04 text_0e_4eb4
-	scr_end
+	textface text_0e_4eb4
+	end
 
 Script_00e_4195:
-	scr_04 text_0e_4efa
-	scr_end
+	textface text_0e_4efa
+	end
 
 Script_00e_4199:
-	scr_04 text_0e_4f2f
-	scr_end
+	textface text_0e_4f2f
+	end
 
 HayatosHouse2_ObjectEvents:
 	object_event $22,  5,  6, 0, $00, $00, $06, $00, Script_00e_41b4
@@ -216,18 +212,18 @@ HayatosHouse2_ObjectEvents:
 	objects_end
 
 Script_00e_41b4:
-	scr_04 text_0e_4fa5
-	scr_end
+	textface text_0e_4fa5
+	end
 
 Script_00e_41b8:
-	scr_checkbit wEventFlags, $05, .script_00e_41c6
-	scr_04 text_0e_5023
-	scr_setbit wEventFlags, $05
-	scr_end
+	checkbit wEventFlags, $05, .script_00e_41c6
+	textface text_0e_5023
+	setbit wEventFlags, $05
+	end
 
 .script_00e_41c6
-	scr_04 text_0e_50f6
-	scr_end
+	textface text_0e_50f6
+	end
 
 CarpetWomansHouse2_ObjectEvents:
 	object_event $1f,  4,  6, 0, $00, $00, $06, $00, Script_00e_41e1
@@ -235,14 +231,14 @@ CarpetWomansHouse2_ObjectEvents:
 	objects_end
 
 Script_00e_41e1:
-	scr_04 text_0e_5154
-	scr_text text_0e_519f
-	scr_text text_0e_51b1
-	scr_end
+	textface text_0e_5154
+	stext text_0e_519f
+	stext text_0e_51b1
+	end
 
 Script_00e_41eb:
-	scr_04 text_0e_528c
-	scr_end
+	textface text_0e_528c
+	end
 
 FangfangsHouse2_ObjectEvents:
 	object_event $15,  5,  6, 0, $00, $00, $06, $00, Script_00e_4211
@@ -251,24 +247,24 @@ FangfangsHouse2_ObjectEvents:
 	objects_end
 
 Script_00e_4211:
-	scr_04 text_0e_51dd
-	scr_end
+	textface text_0e_51dd
+	end
 
 Script_00e_4215:
-	scr_04 text_0e_520e
-	scr_end
+	textface text_0e_520e
+	end
 
 Script_00e_4219:
-	scr_04 text_0e_5267
-	scr_end
+	textface text_0e_5267
+	end
 
 BellHealingCenter2_ObjectEvents:
 	object_event $25,  5,  2, 0, $00, $00, $00, $00, Script_00e_4229
 	objects_end
 
 Script_00e_4229:
-	scr_text text_0e_52d0 ; TEMP
-	scr_end
+	stext text_0e_52d0
+	end
 
 ObjectEvents_00e_422d:
 	object_event $12, 14,  6, 0, $00, $00, $09, $00, Script_00e_424f
@@ -277,23 +273,23 @@ ObjectEvents_00e_422d:
 	objects_end
 
 Script_00e_424f:
-	scr_04 text_0e_5347
-	scr_end
+	textface text_0e_5347
+	end
 
 Script_00e_4253:
-	scr_04 text_0e_53c0
-	scr_end
+	textface text_0e_53c0
+	end
 
 Script_00e_4257:
-	scr_04 text_0e_5437
-	scr_3b $4ab4
-	scr_checkbit wEventFlags + 3, $03, .script_00e_4267
-	scr_text text_0e_547a
-	scr_end
+	textface text_0e_5437
+	startbattle BattleData_02d_4ab4
+	checkbit wEventFlags + 3, $03, .script_00e_4267
+	stext text_0e_547a
+	end
 
 .script_00e_4267
-	scr_text text_0e_54a2
-	scr_end
+	stext text_0e_54a2
+	end
 
 ObjectEvents_00e_426b:
 	object_event $1f, 27, 20, 0, $00, $00, $09, $00, Script_00e_442e
@@ -309,56 +305,56 @@ ObjectEvents_00e_426b:
 	objects_end
 
 Script_00e_42da:
-	scr_65 $00 ; TEMP
-	scr_setmap $2d, $0b ; TEMP
-	scr_face $01 ; TEMP
-	scr_spriteface $04, $01 ; TEMP
-	scr_spriteface $05, $01 ; TEMP
-	scr_spriteface $06, $01 ; TEMP
-	scr_text text_0e_6ab3
-	scr_text text_0e_6acf
-	scr_emote $00, $04 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_7e60
-	scr_text text_0e_6b0b
+	setplayerchar $00
+	setmap $2d, $0b
+	face FACE_UP
+	spriteface $04, $01
+	spriteface $05, $01
+	spriteface $06, $01
+	stext text_0e_6ab3
+	stext text_0e_6acf
+	emote $00, $04
+	delay $03, $20
+	stext text_0e_7e60
+	stext text_0e_6b0b
 
 Script_00e_42fc:
-	scr_34 $0c, $2d, $0b ; TEMP
-	scr_face $01 ; TEMP
-	scr_spriteface $04, $01 ; TEMP
-	scr_spriteface $05, $01 ; TEMP
-	scr_spriteface $06, $01 ; TEMP
-	scr_checkbit wEventFlags + 4, $01, Script_00e_431c
-	scr_text text_0e_6b3f
-	scr_text text_0e_6b6f
-	scr_farjump Script_00e_42fc
-	scr_end
+	warpmode $0c, $2d, $0b
+	face FACE_UP
+	spriteface $04, $01
+	spriteface $05, $01
+	spriteface $06, $01
+	checkbit wEventFlags + 4, $01, Script_00e_431c
+	stext text_0e_6b3f
+	stext text_0e_6b6f
+	farjump Script_00e_42fc
+	end
 
 Script_00e_431c:
-	scr_emote $02, $00 ; TEMP
-	scr_emote $03, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6ba5
-	scr_text text_0e_6bbd
-	scr_text text_0e_6c02
-	scr_text text_0e_6c29
-	scr_emote $02, $01 ; TEMP
-	scr_emote $03, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6c51
-	scr_emote $00, $00 ; TEMP
-	scr_emote $04, $00 ; TEMP
-	scr_emote $05, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6c92
-	scr_text text_0e_6cc8
-	scr_spriteface $02, $03 ; TEMP
-	scr_spriteface $03, $03 ; TEMP
-	scr_1a $02, $03, $00, $f0 ; TEMP
-	scr_4e $03, Script_0e_7e69
-	scr_setbit $daa1, $05 ; TEMP
-	scr_setmap $2d, $0c ; TEMP
-	scr_end
+	emote $02, $00
+	emote $03, $00
+	delay $03, $20
+	stext text_0e_6ba5
+	stext text_0e_6bbd
+	stext text_0e_6c02
+	stext text_0e_6c29
+	emote $02, $01
+	emote $03, $01
+	delay $03, $20
+	stext text_0e_6c51
+	emote $00, $00
+	emote $04, $00
+	emote $05, $00
+	delay $03, $20
+	stext text_0e_6c92
+	stext text_0e_6cc8
+	spriteface $02, $03
+	spriteface $03, $03
+	setattach $02, $03, $00, $f0
+	objmove $03, Script_0e_7e69
+	setbit wEventFlags + 1, $05
+	setmap $2d, $0c
+	end
 
 ObjectEvents_00e_4366:
 	object_event $1f, 27, 20, 0, $00, $00, $09, $00, Script_00e_442e
@@ -385,105 +381,105 @@ ObjectEvents_00e_43d5:
 	objects_end
 
 Script_00e_442e:
-	scr_04 text_0e_54ce
-	scr_end
+	textface text_0e_54ce
+	end
 
 Script_00e_4432:
-	scr_checkbit wEventFlags, $07, Script_00e_443c
-	scr_04 text_0e_5518
-	scr_end
+	checkbit wEventFlags, $07, Script_00e_443c
+	textface text_0e_5518
+	end
 
 Script_00e_443c:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_4446
-	scr_04 text_0e_6188
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_4446
+	textface text_0e_6188
+	end
 
 Script_00e_4446:
-	scr_04 text_0e_6dc7
-	scr_end
+	textface text_0e_6dc7
+	end
 
 Script_00e_444a:
-	scr_04 text_0e_5555
-	scr_end
+	textface text_0e_5555
+	end
 
 Script_00e_444e:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_4458
-	scr_04 text_0e_5592
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_4458
+	textface text_0e_5592
+	end
 
 Script_00e_4458:
-	scr_04 text_0e_6d1a
-	scr_end
+	textface text_0e_6d1a
+	end
 
 Script_00e_445c:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_4466
-	scr_04 text_0e_5666
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_4466
+	textface text_0e_5666
+	end
 
 Script_00e_4466:
-	scr_04 text_0e_6d47
-	scr_end
+	textface text_0e_6d47
+	end
 
 Script_00e_446a:
-	scr_04 text_0e_56f4
-	scr_end
+	textface text_0e_56f4
+	end
 
 Script_00e_446e:
-	scr_04 text_0e_5740
-	scr_end
+	textface text_0e_5740
+	end
 
 Script_00e_4472:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_447c
-	scr_04 text_0e_576d
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_447c
+	textface text_0e_576d
+	end
 
 Script_00e_447c:
-	scr_04 text_0e_6d70
-	scr_end
+	textface text_0e_6d70
+	end
 
 Script_00e_4480:
-	scr_setmap $2d, $0b ; TEMP
-	scr_face $01 ; TEMP
-	scr_spriteface $04, $01 ; TEMP
-	scr_spriteface $05, $01 ; TEMP
-	scr_spriteface $06, $01 ; TEMP
-	scr_text text_0e_5ebb
-	scr_spriteface $04, $02 ; TEMP
-	scr_spriteface $05, $03 ; TEMP
-	scr_text text_0e_5ee0
-	scr_emote $02, $00 ; TEMP
-	scr_emote $03, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_5ef5
-	scr_spriteface $04, $01 ; TEMP
-	scr_spriteface $05, $01 ; TEMP
-	scr_emote $02, $02 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_5f1f
-	scr_text text_0e_5f4b
-	scr_text text_0e_5f67
-	scr_text text_0e_5f7e
-	scr_text text_0e_5f99
-	scr_text text_0e_5fa2
-	scr_text text_0e_5fab
-	scr_emote $00, $00 ; TEMP
-	scr_emote $04, $00 ; TEMP
-	scr_emote $05, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_5fc0
-	scr_text text_0e_6015
-	scr_text text_0e_6055
-	scr_text text_0e_6068
-	scr_text text_0e_60a4
-	scr_text text_0e_60d9
-	scr_text text_0e_60f7
-	scr_spriteface $02, $03 ; TEMP
-	scr_spriteface $03, $03 ; TEMP
-	scr_1a $02, $03, $00, $f0 ; TEMP
-	scr_4e $03, Script_0e_7e69
-	scr_setbit wEventFlags, $07 ; TEMP
-	scr_setmap $2d, $0c ; TEMP
-	scr_end
+	setmap $2d, $0b
+	face FACE_UP
+	spriteface $04, $01
+	spriteface $05, $01
+	spriteface $06, $01
+	stext text_0e_5ebb
+	spriteface $04, $02
+	spriteface $05, $03
+	stext text_0e_5ee0
+	emote $02, $00
+	emote $03, $00
+	delay $03, $20
+	stext text_0e_5ef5
+	spriteface $04, $01
+	spriteface $05, $01
+	emote $02, $02
+	delay $03, $20
+	stext text_0e_5f1f
+	stext text_0e_5f4b
+	stext text_0e_5f67
+	stext text_0e_5f7e
+	stext text_0e_5f99
+	stext text_0e_5fa2
+	stext text_0e_5fab
+	emote $00, $00
+	emote $04, $00
+	emote $05, $00
+	delay $03, $20
+	stext text_0e_5fc0
+	stext text_0e_6015
+	stext text_0e_6055
+	stext text_0e_6068
+	stext text_0e_60a4
+	stext text_0e_60d9
+	stext text_0e_60f7
+	spriteface $02, $03
+	spriteface $03, $03
+	setattach $02, $03, $00, $f0
+	objmove $03, Script_0e_7e69
+	setbit wEventFlags, $07
+	setmap $2d, $0c
+	end
 
 ObjectEvents_00e_44ff:
 	object_event $27, 17, 11, 0, $00, $00, $00, $00, Script_00e_4000
@@ -498,29 +494,29 @@ ObjectEvents_00e_4537:
 	objects_end
 
 Script_00e_4543:
-	scr_checkbit wEventFlags + 2, $00, Script_00e_454d
-	scr_04 text_0e_5806
-	scr_end
+	checkbit wEventFlags + 2, $00, Script_00e_454d
+	textface text_0e_5806
+	end
 
 Script_00e_454d:
-	scr_checkbit wEventFlags + 2, $01, Script_00e_456a
-	scr_04 text_0e_70c0
-	scr_emote $00, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_emote $02, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_7136
-	scr_setbit $daa2, $01 ; TEMP
-	scr_end
+	checkbit wEventFlags + 2, $01, Script_00e_456a
+	textface text_0e_70c0
+	emote $00, $01
+	delay $03, $20
+	emote $02, $00
+	delay $03, $20
+	stext text_0e_7136
+	setbit wEventFlags + 2, $01
+	end
 
 Script_00e_456a:
-	scr_checkbit wEventFlags + 2, $02, Script_00e_4574
-	scr_04 text_0e_717b
-	scr_end
+	checkbit wEventFlags + 2, $02, Script_00e_4574
+	textface text_0e_717b
+	end
 
 Script_00e_4574:
-	scr_04 text_0e_765d
-	scr_end
+	textface text_0e_765d
+	end
 
 ObjectEvents_00e_4578:
 	object_event $19,  7,  3, 0, $00, $00, $00, $00, Script_00e_458f
@@ -528,12 +524,12 @@ ObjectEvents_00e_4578:
 	objects_end
 
 Script_00e_458f:
-	scr_04 text_0e_584c
-	scr_end
+	textface text_0e_584c
+	end
 
 Script_00e_4593:
-	scr_04 text_0e_58bd
-	scr_end
+	textface text_0e_58bd
+	end
 
 ObjectEvents_00e_4597:
 	object_event $12,  6,  5, 0, $00, $00, $0b, $00, Script_00e_45ae
@@ -541,17 +537,17 @@ ObjectEvents_00e_4597:
 	objects_end
 
 Script_00e_45ae:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_45b8
-	scr_04 text_0e_592f
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_45b8
+	textface text_0e_592f
+	end
 
 Script_00e_45b8:
-	scr_04 text_0e_6dc7
-	scr_end
+	textface text_0e_6dc7
+	end
 
 Script_00e_45bc:
-	scr_04 text_0e_5992
-	scr_end
+	textface text_0e_5992
+	end
 
 ObjectEvents_00e_45c0:
 	object_event $13,  4,  3, 0, $00, $00, $00, $00, Script_00e_45e2
@@ -560,69 +556,69 @@ ObjectEvents_00e_45c0:
 	objects_end
 
 Script_00e_45e2:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_45ec
-	scr_04 text_0e_59f6
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_45ec
+	textface text_0e_59f6
+	end
 
 Script_00e_45ec:
-	scr_04 text_0e_6dec
-	scr_end
+	textface text_0e_6dec
+	end
 
 Script_00e_45f0:
-	scr_04 text_0e_5a5a
-	scr_end
+	textface text_0e_5a5a
+	end
 
 Script_00e_45f4:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_461c
-	scr_spriteface $04, $03 ; TEMP
-	scr_emote $04, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_spriteface $04, $02 ; TEMP
-	scr_spriteface $02, $03 ; TEMP
-	scr_text text_0e_5ac1
-	scr_text text_0e_5b18
-	scr_spriteface $02, $00 ; TEMP
-	scr_text text_0e_5b22
-	scr_emote $00, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_461c
+	spriteface $04, $03
+	emote $04, $00
+	delay $03, $20
+	spriteface $04, $02
+	spriteface $02, $03
+	stext text_0e_5ac1
+	stext text_0e_5b18
+	spriteface $02, $00
+	stext text_0e_5b22
+	emote $00, $01
+	delay $03, $20
+	end
 
 Script_00e_461c:
-	scr_04 text_0e_6e16
-	scr_spriteface $02, $03 ; TEMP
-	scr_emote $02, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6e80
-	scr_emote $00, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_end
+	textface text_0e_6e16
+	spriteface $02, $03
+	emote $02, $00
+	delay $03, $20
+	stext text_0e_6e80
+	emote $00, $01
+	delay $03, $20
+	end
 
 ObjectEvents_00e_4632:
 	object_event $16,  4,  5, 0, $00, $00, $08, $00, Script_00e_463e
 	objects_end
 
 Script_00e_463e:
-	scr_04 text_0e_5b43
-	scr_end
+	textface text_0e_5b43
+	end
 
 ObjectEvents_00e_4642:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_00e_464e
 	objects_end
 
 Script_00e_464e:
-	scr_text text_0e_5b91
-	scr_end
+	stext text_0e_5b91
+	end
 
 Script_00e_4652:
-	scr_face $02 ; TEMP
-	scr_spriteface $02, $03 ; TEMP
-	scr_text text_0e_5b91
-	scr_checkbit wEventFlags + 4, $01, Script_00e_4663
-	scr_35 $00 ; TEMP
-	scr_end
+	face FACE_LEFT
+	spriteface $02, $03
+	stext text_0e_5b91
+	checkbit wEventFlags + 4, $01, Script_00e_4663
+	scr_35 $00
+	end
 
 Script_00e_4663:
-	scr_end
+	end
 
 ObjectEvents_00e_4664:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_00e_467b
@@ -630,32 +626,32 @@ ObjectEvents_00e_4664:
 	objects_end
 
 Script_00e_467b:
-	scr_text text_0e_5bdd
-	scr_end
+	stext text_0e_5bdd
+	end
 
 Script_00e_467f:
-	scr_text text_0e_5bf5
-	scr_end
+	stext text_0e_5bf5
+	end
 
 Script_00e_4683:
-	scr_face $01 ; TEMP
-	scr_text text_0e_5bdd
-	scr_checkbit wEventFlags + 3, $03, Script_00e_4690
+	face FACE_UP
+	stext text_0e_5bdd
+	checkbit wEventFlags + 3, $03, Script_00e_4690
 	scr_37
-	scr_end
+	end
 
 Script_00e_4690:
-	scr_end
+	end
 
 Script_00e_4691:
-	scr_face $01 ; TEMP
-	scr_text text_0e_5bf5
-	scr_checkbit wEventFlags + 3, $03, Script_00e_469e
-	scr_36
-	scr_end
+	face FACE_UP
+	stext text_0e_5bf5
+	checkbit wEventFlags + 3, $03, Script_00e_469e
+	townmusicanim
+	end
 
 Script_00e_469e:
-	scr_end
+	end
 
 ObjectEvents_00e_469f:
 	object_event $2d,  8,  6, 0, $00, $00, $00, $00, Script_00e_4849
@@ -663,147 +659,147 @@ ObjectEvents_00e_469f:
 	objects_end
 
 Script_00e_46b6:
-	scr_checkbit wEventFlags + 1, $00, Script_00e_46c0
-	scr_setmap $33, $00 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $00, Script_00e_46c0
+	setmap $33, $00
+	end
 
 Script_00e_46c0:
-	scr_setmap $33, $01 ; TEMP
-	scr_end
+	setmap $33, $01
+	end
 
 Script_00e_46c4:
-	scr_checkbit wEventFlags + 1, $03, Script_00e_46ce
-	scr_04 text_0e_7e33
-	scr_end
+	checkbit wEventFlags + 1, $03, Script_00e_46ce
+	textface text_0e_7e33
+	end
 
 Script_00e_46ce:
-	scr_checkbit wEventFlags + 1, $04, Script_00e_472e
-	db $24 ; TEMP
-	scr_face $01 ; TEMP
-	db $5f ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_emote $03, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6967
-	scr_spriteface $03, $02 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spriteface $03, $01 ; TEMP
-	scr_spritewalk $03, $02 ; TEMP
-	scr_spritewalk $03, $02 ; TEMP
-	scr_text text_0e_69a6
-	scr_spriteface $03, $03 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spriteface $03, $01 ; TEMP
-	scr_text text_0e_69ae
-	scr_spriteface $03, $00 ; TEMP
-	scr_spritewalk $03, $01 ; TEMP
-	scr_spritewalk $03, $01 ; TEMP
-	scr_emote $03, $02 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_69b6
-	scr_text text_0e_69ef
-	scr_emote $03, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6a00
-	scr_text text_0e_6a52
-	scr_4d $02, $02
+	checkbit wEventFlags + 1, $04, Script_00e_472e
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface $01, $01
+	emote $03, $00
+	delay $03, $20
+	stext text_0e_6967
+	spriteface $03, $02
+	spritewalk $03, $03
+	spriteface $03, $01
+	spritewalk $03, $02
+	spritewalk $03, $02
+	stext text_0e_69a6
+	spriteface $03, $03
+	spritewalk $03, $04
+	spriteface $03, $01
+	stext text_0e_69ae
+	spriteface $03, $00
+	spritewalk $03, $01
+	spritewalk $03, $01
+	emote $03, $02
+	delay $03, $20
+	stext text_0e_69b6
+	stext text_0e_69ef
+	emote $03, $01
+	delay $03, $20
+	stext text_0e_6a00
+	stext text_0e_6a52
+	listdec $02, $02
 	scr_48 $02, $03
-	scr_setbit $daa1, $04 ; TEMP
-	scr_end
+	setbit wEventFlags + 1, $04
+	end
 
 Script_00e_472e:
-	scr_checkbit wEventFlags + 1, $05, Script_00e_4738
-	scr_04 text_0e_6a61
-	scr_end
+	checkbit wEventFlags + 1, $05, Script_00e_4738
+	textface text_0e_6a61
+	end
 
 Script_00e_4738:
-	scr_checkbit wEventFlags + 1, $07, Script_00e_4746
-	scr_04 text_0e_6e99
-	scr_setbit $daa1, $06 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $07, Script_00e_4746
+	textface text_0e_6e99
+	setbit wEventFlags + 1, $06
+	end
 
 Script_00e_4746:
-	scr_checkbit wEventFlags + 2, $00, Script_00e_47e5
-	db $24 ; TEMP
-	scr_face $01 ; TEMP
-	db $5f ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_emote $03, $03 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6f6b
-	scr_spriteface $03, $02 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spriteface $03, $00 ; TEMP
-	scr_emote $03, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_spriteface $03, $03 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spriteface $03, $00 ; TEMP
-	scr_text text_0e_6f86
-	scr_emote $03, $04 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6fc3
-	scr_spriteface $03, $01 ; TEMP
-	scr_spritewalk $03, $02 ; TEMP
-	scr_spritewalk $03, $02 ; TEMP
-	scr_emote $03, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_spriteface $03, $03 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spriteface $03, $01 ; TEMP
-	scr_emote $03, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_spriteface $03, $02 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spritewalk $03, $03 ; TEMP
-	scr_spriteface $03, $01 ; TEMP
-	scr_emote $03, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_spriteface $03, $00 ; TEMP
-	scr_spritewalk $03, $01 ; TEMP
-	scr_spritewalk $03, $01 ; TEMP
-	scr_spriteface $03, $03 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spritewalk $03, $04 ; TEMP
-	scr_spriteface $03, $00 ; TEMP
-	scr_text text_0e_7026
-	scr_text text_0e_7090
-	scr_setbit $daa2, $00 ; TEMP
-	scr_end
+	checkbit wEventFlags + 2, $00, Script_00e_47e5
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface $01, $01
+	emote $03, $03
+	delay $03, $20
+	stext text_0e_6f6b
+	spriteface $03, $02
+	spritewalk $03, $03
+	spritewalk $03, $03
+	spriteface $03, $00
+	emote $03, $00
+	delay $03, $20
+	spriteface $03, $03
+	spritewalk $03, $04
+	spritewalk $03, $04
+	spriteface $03, $00
+	stext text_0e_6f86
+	emote $03, $04
+	delay $03, $20
+	stext text_0e_6fc3
+	spriteface $03, $01
+	spritewalk $03, $02
+	spritewalk $03, $02
+	emote $03, $01
+	delay $03, $20
+	spriteface $03, $03
+	spritewalk $03, $04
+	spritewalk $03, $04
+	spriteface $03, $01
+	emote $03, $01
+	delay $03, $20
+	spriteface $03, $02
+	spritewalk $03, $03
+	spritewalk $03, $03
+	spritewalk $03, $03
+	spritewalk $03, $03
+	spritewalk $03, $03
+	spriteface $03, $01
+	emote $03, $01
+	delay $03, $20
+	spriteface $03, $00
+	spritewalk $03, $01
+	spritewalk $03, $01
+	spriteface $03, $03
+	spritewalk $03, $04
+	spritewalk $03, $04
+	spritewalk $03, $04
+	spriteface $03, $00
+	stext text_0e_7026
+	stext text_0e_7090
+	setbit wEventFlags + 2, $00
+	end
 
 Script_00e_47e5:
-	scr_checkbit wEventFlags + 2, $02, Script_00e_47ef
-	scr_04 text_0e_709b
-	scr_end
+	checkbit wEventFlags + 2, $02, Script_00e_47ef
+	textface text_0e_709b
+	end
 
 Script_00e_47ef:
-	scr_checkbit wEventFlags + 2, $03, Script_00e_4812
-	db $24 ; TEMP
-	scr_face $01 ; TEMP
-	db $5f ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_text text_0e_71c3
-	db $28 ; TEMP
-	db $29 ; TEMP
-	scr_text text_0e_7217
-	scr_text text_0e_726f
-	scr_4d $02, $04
+	checkbit wEventFlags + 2, $03, Script_00e_4812
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface $01, $01
+	stext text_0e_71c3
+	fadeout
+	fadein
+	stext text_0e_7217
+	stext text_0e_726f
+	listdec $02, $04
 	scr_48 $02, $05
-	scr_setbit $daa2, $03 ; TEMP
-	scr_end
+	setbit wEventFlags + 2, $03
+	end
 
 Script_00e_4812:
-	scr_04 text_0e_7283
-	scr_emote $00, $01 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_end
+	textface text_0e_7283
+	emote $00, $01
+	delay $03, $20
+	end
 
 ObjectEvents_00e_481c:
 	object_event $2d,  8,  6, 0, $00, $00, $00, $00, Script_00e_4849
@@ -813,90 +809,89 @@ ObjectEvents_00e_481c:
 	objects_end
 
 Script_00e_4849:
-	scr_04 text_0e_5c24
-	scr_end
+	textface text_0e_5c24
+	end
 
 Script_00e_484d:
-	scr_checkbit wEventFlags, $06, Script_00e_488f
-	db $24 ; TEMP
-	scr_face $01 ; TEMP
-	db $5f ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_text text_0e_5c9e
-	scr_text text_0e_5ce0
-	db $28 ; TEMP
-	db $29 ; TEMP
-	scr_text text_0e_5d33
-	scr_delay $03, $07 ; TEMP
-	scr_emote $03, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_5dae
-	scr_text text_0e_5e40
-	scr_text text_0e_5e5d
-	scr_face $00 ; TEMP
-	scr_emote $00, $00 ; TEMP
-	scr_emote $03, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_face $01 ; TEMP
-	scr_text text_0e_5e73
-	scr_4d $02, $01
-	scr_setbit wEventFlags, $06 ; TEMP
-	scr_end
+	checkbit wEventFlags, $06, Script_00e_488f
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface $01, $01
+	stext text_0e_5c9e
+	stext text_0e_5ce0
+	fadeout
+	fadein
+	stext text_0e_5d33
+	delay $03, $07
+	emote $03, $00
+	delay $03, $20
+	stext text_0e_5dae
+	stext text_0e_5e40
+	stext text_0e_5e5d
+	face FACE_DOWN
+	emote $00, $00
+	emote $03, $00
+	delay $03, $20
+	face FACE_UP
+	stext text_0e_5e73
+	listdec $02, $01
+	setbit wEventFlags, $06
+	end
 
 Script_00e_488f:
-	scr_checkbit wEventFlags, $07, Script_00e_4899
-	scr_04 text_0e_5e73
-	scr_end
+	checkbit wEventFlags, $07, Script_00e_4899
+	textface text_0e_5e73
+	end
 
 Script_00e_4899:
-	scr_checkbit wEventFlags + 1, $00, Script_00e_48f0
-	db $24 ; TEMP
-	scr_face $01 ; TEMP
-	db $5f ; TEMP
-	scr_spriteface $01, $01 ; TEMP
-	scr_text text_0e_6205
-	scr_spriteface $04, $00 ; TEMP
-	scr_spriteface $05, $00 ; TEMP
-	scr_1a $05, $04, $00, $f0 ; TEMP
-	scr_4e $04, Script_0e_7eca
-	scr_1b $04 ; TEMP
-	scr_spriteface $04, $01 ; TEMP
-	scr_spriteface $05, $03 ; TEMP
-	scr_text text_0e_6292
-	scr_emote $00, $03 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_62aa
-	scr_text text_0e_62c5
-	scr_text text_0e_62ef
-	scr_spriteface $04, $03 ; TEMP
-	scr_text text_0e_6314
-	scr_44
-	scr_spritewalk $04, $04 ; TEMP
-	scr_1c $04 ; TEMP
-	scr_spritewalk $05, $04 ; TEMP
-	scr_spritewalk $05, $04 ; TEMP
-	scr_1c $05 ; TEMP
-	scr_61
-	db $01 ; TEMP
-	scr_62 $01, $01 ; TEMP
-	scr_setbit $daa1, $00 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $00, Script_00e_48f0
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_0e_6205
+	spriteface  4, FACE_DOWN
+	spriteface  5, FACE_DOWN
+	setattach $05, $04, $00, $f0
+	objmove $04, Script_0e_7eca
+	clearattach $04
+	spriteface  4, FACE_UP
+	spriteface  5, FACE_RIGHT
+	stext text_0e_6292
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_0e_62aa
+	stext text_0e_62c5
+	stext text_0e_62ef
+	spriteface  4, FACE_RIGHT
+	stext text_0e_6314
+	clearplayerpos
+	spritewalk  4, MOVE_RIGHT
+	clearobject $04
+	spritewalk  5, MOVE_RIGHT
+	spritewalk  5, MOVE_RIGHT
+	clearobject $05
+	loadscriptedmon $01
+	scr_62 $01, $01
+	setbit wEventFlags + 1, $00
+	end
 
 Script_00e_48f0:
-	scr_04 text_0e_7e33
-	scr_end
+	textface text_0e_7e33
+	end
 
 Script_00e_48f4:
-	scr_checkbit wEventFlags, $07, Script_00e_48fb
-	scr_end
+	checkbit wEventFlags, $07, Script_00e_48fb
+	end
 
 Script_00e_48fb:
-	scr_04 text_0e_61da
-	scr_end
+	textface text_0e_61da
+	end
 
 Script_00e_48ff:
-	scr_04 text_0e_61f6
-	scr_end
+	textface text_0e_61f6
+	end
 
 CrystalVillage_ObjectEvents:
 	object_event $1e, 13, 16, 0, $00, $00, $0b, $01, Script_00e_495c
@@ -910,189 +905,189 @@ CrystalVillage_ObjectEvents:
 	objects_end
 
 Script_00e_495c:
-	scr_04 text_0e_6324
-	scr_end
+	textface text_0e_6324
+	end
 
 Script_00e_4960:
-	scr_checkbit wEventFlags + 1, $03, Script_00e_496a
-	scr_04 text_0e_6336
-	scr_end
+	checkbit wEventFlags + 1, $03, Script_00e_496a
+	textface text_0e_6336
+	end
 
 Script_00e_496a:
-	scr_04 text_0e_6832
-	scr_end
+	textface text_0e_6832
+	end
 
 Script_00e_496e:
-	scr_checkbit wEventFlags + 1, $03, Script_00e_4978
-	scr_04 text_0e_638b
-	scr_end
+	checkbit wEventFlags + 1, $03, Script_00e_4978
+	textface text_0e_638b
+	end
 
 Script_00e_4978:
-	scr_04 text_0e_6882
-	scr_end
+	textface text_0e_6882
+	end
 
 Script_00e_497c:
-	scr_04 text_0e_63de
-	scr_end
+	textface text_0e_63de
+	end
 
 Script_00e_4980:
-	scr_checkbit wEventFlags + 1, $03, Script_00e_498a
-	scr_04 text_0e_6434
-	scr_end
+	checkbit wEventFlags + 1, $03, Script_00e_498a
+	textface text_0e_6434
+	end
 
 Script_00e_498a:
-	scr_04 text_0e_68b3
-	scr_end
+	textface text_0e_68b3
+	end
 
 Script_00e_498e:
-	scr_04 text_0e_6466
-	scr_end
+	textface text_0e_6466
+	end
 
 Script_00e_4992:
-	scr_checkbit wEventFlags + 1, $01, Script_00e_49a3
-	scr_04 text_0e_64ad
-	scr_text text_0e_64f7
-	scr_setbit $daa1, $01 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $01, Script_00e_49a3
+	textface text_0e_64ad
+	stext text_0e_64f7
+	setbit wEventFlags + 1, $01
+	end
 
 Script_00e_49a3:
-	scr_04 text_0e_64f7
-	scr_end
+	textface text_0e_64f7
+	end
 
 Script_00e_49a7:
-	scr_04 text_0e_6607
-	scr_end
+	textface text_0e_6607
+	end
 
 Script_00e_49ab:
-	scr_checkbit wEventFlags + 1, $02, Script_00e_49c1
-	scr_04 text_0e_6607
-	scr_face $00 ; TEMP
-	scr_move $4191 ; TEMP
-	scr_44
-	scr_spritewalk $01, $02 ; TEMP
-	scr_spriteface $01, $00 ; TEMP
-	scr_end
+	checkbit wEventFlags + 1, $02, Script_00e_49c1
+	textface text_0e_6607
+	face FACE_DOWN
+	move MovementData_OneDown
+	clearplayerpos
+	spritewalk $01, $02
+	spriteface $01, $00
+	end
 
 Script_00e_49c1:
-	scr_setmap $23, $00 ; TEMP
-	scr_end
+	setmap $23, $00
+	end
 
 ObjectEvents_00e_49c5:
 	object_event $15,  9,  3, 0, $00, $00, $06, $00, Script_00e_49d1
 	objects_end
 
 Script_00e_49d1:
-	scr_checkbit wEventFlags + 1, $03, Script_00e_49db
-	scr_04 text_0e_6515
-	scr_end
+	checkbit wEventFlags + 1, $03, Script_00e_49db
+	textface text_0e_6515
+	end
 
 Script_00e_49db:
-	scr_04 text_0e_68f4
-	scr_end
+	textface text_0e_68f4
+	end
 
 ObjectEvents_00e_49df:
 	object_event $1b,  5,  4, 0, $00, $00, $00, $00, Script_00e_49eb
 	objects_end
 
 Script_00e_49eb:
-	scr_04 text_0e_6550
-	scr_end
+	textface text_0e_6550
+	end
 
 ObjectEvents_00e_49ef:
 	object_event $1e,  5,  5, 0, $00, $00, $09, $00, Script_00e_49fb
 	objects_end
 
 Script_00e_49fb:
-	scr_checkbit wEventFlags + 1, $03, Script_00e_4a16
-	scr_04 text_0e_65b8
-	scr_63 $01, Script_00e_4a09
-	scr_end
+	checkbit wEventFlags + 1, $03, Script_00e_4a16
+	textface text_0e_65b8
+	ifcharindex $01, Script_00e_4a09
+	end
 
 Script_00e_4a09:
-	scr_emote $00, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_65de
-	scr_text text_0e_65fc
-	scr_end
+	emote $00, $00
+	delay $03, $20
+	stext text_0e_65de
+	stext text_0e_65fc
+	end
 
 Script_00e_4a16:
-	scr_04 text_0e_6923
-	scr_end
+	textface text_0e_6923
+	end
 
 ObjectEvents_00e_4a1a:
 	object_event $2a, 10,  4, wEventFlags + 1, $02, $00, $00, $00, Script_00e_4a26
 	objects_end
 
 Script_00e_4a26:
-	scr_04 text_0e_66fa
-	scr_3b $4ac4
-	scr_checkbit wEventFlags + 3, $03, Script_00e_4a45
-	scr_text text_0e_672d
-	scr_spriteface $02, $03 ; TEMP
-	scr_4e $02, Script_0e_7e69
-	scr_1c $02 ; TEMP
-	scr_setbit $daa1, $02 ; TEMP
-	scr_1f $06 ; TEMP
-	scr_end
+	textface text_0e_66fa
+	startbattle BattleData_02d_4ac4
+	checkbit wEventFlags + 3, $03, Script_00e_4a45
+	stext text_0e_672d
+	spriteface $02, $03
+	objmove $02, Script_0e_7e69
+	clearobject $02
+	setbit wEventFlags + 1, $02
+	setmappredef MAPPREDEF_06
+	end
 
 Script_00e_4a45:
-	scr_end
+	end
 
 Script_00e_4a46:
-	scr_spriteface $02, $00 ; TEMP
-	scr_text text_0e_66fa
-	scr_3b $4ac4
-	scr_checkbit wEventFlags + 3, $03, Script_00e_4a68
-	scr_text text_0e_672d
-	scr_spriteface $02, $03 ; TEMP
-	scr_4e $02, Script_0e_7e69
-	scr_1c $02 ; TEMP
-	scr_setbit $daa1, $02 ; TEMP
-	scr_1f $06 ; TEMP
-	scr_end
+	spriteface $02, $00
+	stext text_0e_66fa
+	startbattle BattleData_02d_4ac4
+	checkbit wEventFlags + 3, $03, Script_00e_4a68
+	stext text_0e_672d
+	spriteface $02, $03
+	objmove $02, Script_0e_7e69
+	clearobject $02
+	setbit wEventFlags + 1, $02
+	setmappredef MAPPREDEF_06
+	end
 
 Script_00e_4a68:
-	scr_face $03 ; TEMP
-	scr_move $413e ; TEMP
-	scr_44
-	scr_spritewalk $01, $03 ; TEMP
-	scr_spriteface $01, $03 ; TEMP
-	scr_end
+	face FACE_RIGHT
+	move MovementData_OneRight
+	clearplayerpos
+	spritewalk $01, $03
+	spriteface $01, $03
+	end
 
 ObjectEvents_00e_4a75:
 	object_event $2a,  2,  2, wEventFlags + $18, $05, $00, $00, $00, Script_00e_4a81
 	objects_end
 
 Script_00e_4a81:
-	scr_emote $02, $00 ; TEMP
-	scr_delay $03, $20 ; TEMP
-	scr_text text_0e_6784
-	scr_3b $4af3
-	scr_checkbit wEventFlags + 3, $03, Script_00e_4a45
-	scr_text text_0e_67ae
-	scr_spriteface $02, $03 ; TEMP
-	scr_4e $02, Script_0e_7e69
-	scr_1c $02 ; TEMP
-	scr_move $4193 ; TEMP
-	scr_44
-	scr_spriteface $01, $01 ; TEMP
-	scr_spritewalk $01, $02 ; TEMP
-	scr_face $03 ; TEMP
-	scr_move $413e ; TEMP
-	scr_face $01 ; TEMP
-	scr_spritewalk $01, $02 ; TEMP
-	scr_spriteface $01, $03 ; TEMP
-	scr_text text_0e_67e0
-	scr_setbit $dab8, $05 ; TEMP
-	scr_end
+	emote $02, $00
+	delay $03, $20
+	stext text_0e_6784
+	startbattle BattleData_02d_4af3
+	checkbit wEventFlags + 3, $03, Script_00e_4a45
+	stext text_0e_67ae
+	spriteface $02, $03
+	objmove $02, Script_0e_7e69
+	clearobject $02
+	move MovementData_OneUp
+	clearplayerpos
+	spriteface $01, $01
+	spritewalk $01, $02
+	face FACE_RIGHT
+	move MovementData_OneRight
+	face FACE_UP
+	spritewalk $01, $02
+	spriteface $01, $03
+	stext text_0e_67e0
+	setbit wEventFlags + 24, $05
+	end
 
 INCLUDE "data/text/bank0e_misc.asm"
 INCLUDE "data/text/bank0e_misc3.asm"
 INCLUDE "data/text/bank0e_misc2.asm"
 
-; Sprite movement paths for scr_4e: signed (x, y) deltas per frame, $88 terminator
+; Sprite movement paths for objmove: signed (x, y) deltas per frame, $88 terminator
 ; TODO: rename Script_0e_7e69/Script_0e_7eca to descriptive path labels
-; TODO: same format covers bank_12 unk_012_* dr blocks (scr_4e targets)
+; TODO: same format covers bank_12 unk_012_* dr blocks (objmove targets)
 Script_0e_7e69:
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02

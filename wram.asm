@@ -635,6 +635,7 @@ wd9d8:: ds 1
 wd9d9:: ds 1
 wd9da:: ds 2
 wd9dc:: ds 1
+wPlayerChar:: ; player character index (wPlayerSpriteID = *2)
 wd9dd:: ds 1 ; character/party-buffer index (-> wPlayerSpriteID = *2; indexes Func_00b_625c party buffers)
 
 wWX:: ds 1

@@ -1,3 +1,10 @@
+MACRO bgcopy_patch
+; BG tilemap patch stamped by Func_00b_606f: \1=width, \2=height, then width*height tile IDs
+	db \1, \2
+	shift 2
+	db \#
+ENDM
+
 ; TODO
 unk_00b_4000:
 INCBIN "data/unk_00b_4000.bin"
@@ -259,7 +266,7 @@ Script_delay:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wcbfd], a
-	ld a, script_03
+	ld a, script_delaywait
 	ld [wScriptByte], a
 	ret
 
@@ -355,7 +362,7 @@ Script_spritewalk:
 	ld hl, $0f
 	add hl, bc
 	ld [hl], $02
-	ld a, script_07
+	ld a, script_spritewalkstep
 	ld [wScriptByte], a
 	ret
 
@@ -516,7 +523,7 @@ Script_movemap:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
-	ld a, script_0e
+	ld a, script_movemapstep
 	ld [wScriptByte], a
 	ret
 
@@ -544,7 +551,7 @@ Script_move:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 ; Next command
-	ld a, script_10
+	ld a, script_movestep
 	ld [wScriptByte], a
 	xor a
 	ldh [hSimulatedJoypadState], a
@@ -564,7 +571,7 @@ Script_11:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 ; move to next script
-	ld a, script_12
+	ld a, script_move2step
 	ld [wScriptByte], a
 	ret
 
@@ -755,7 +762,7 @@ Script_18:
 	ld a, $b
 	ldh [hScriptBank], a
 ; move to next script
-	ld a, script_19
+	ld a, script_objscriptstep
 	ld [wScriptByte], a
 	ret
 
@@ -796,7 +803,7 @@ Script_19:
 	ld [de], a
 
 asm_00b_4734:
-	ld a, script_19
+	ld a, script_objscriptstep
 	ld [wScriptByte], a
 	ret
 
@@ -1243,7 +1250,7 @@ asm_00b_49f0:
 	ld [hl], LOW(MovementData_00b_4143)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4143)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1252,7 +1259,7 @@ asm_00b_49fe:
 	ld [hl], LOW(MovementData_00b_414b)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_414b)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1261,7 +1268,7 @@ asm_00b_4a0c:
 	ld [hl], LOW(MovementData_00b_418e)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_418e)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1582,7 +1589,7 @@ asm_00b_4c30:
 	ld [hl], LOW(MovementData_00b_414e)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_414e)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1591,7 +1598,7 @@ asm_00b_4c3e:
 	ld [hl], LOW(MovementData_00b_4151)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4151)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1600,7 +1607,7 @@ asm_00b_4c4c:
 	ld [hl], LOW(MovementData_00b_4154)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4154)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1626,7 +1633,7 @@ asm_00b_4c74:
 	ld [hl], LOW(MovementData_00b_4158)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4158)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1635,7 +1642,7 @@ asm_00b_4c82:
 	ld [hl], LOW(MovementData_00b_414b)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_414b)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1644,7 +1651,7 @@ asm_00b_4c90:
 	ld [hl], LOW(MovementData_00b_418e)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_418e)
-	ld a, script_25
+	ld a, script_walkpathstep
 	ld [wScriptByte], a
 	ret
 
@@ -1874,7 +1881,7 @@ Script_3a:
 	ld [wMovementPointer + 1], a
 	ret
 
-Script_3b: ; start a battle (scr_startbattle)
+Script_3b: ; start a battle (startbattle)
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -2592,7 +2599,7 @@ Script_4e:
 	ld [wScriptPos + 1], a
 	ldh a, [hScriptBank]
 	ld [wdcad], a
-	ld a, script_19
+	ld a, script_objscriptstep
 	ld [wScriptByte], a
 	ret
 
@@ -3365,7 +3372,7 @@ Script_63:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld d, a
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	sub d
 	jr z, .asm_58f1
 	ld hl, wScriptPos
@@ -3418,7 +3425,7 @@ Script_64:
 Script_65:
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd9dd], a
+	ld [wPlayerChar], a
 	call Func_00b_64b2
 	xor a
 	ld [wScriptByte], a
@@ -3666,7 +3673,7 @@ Script_6b:
 	ld a, $09
 	ld [wd0e4], a
 	ld a, $04
-	ld [wd9dd], a
+	ld [wPlayerChar], a
 	call Func_00b_64b2
 	ld a, $01
 	ld [hFade], a
@@ -3680,7 +3687,7 @@ Script_6c:
 	xor a
 	ld [wd0e4], a
 	ld a, $04
-	ld [wd9dd], a
+	ld [wPlayerChar], a
 	call Func_00b_64b2
 	xor a
 	ld [wScriptByte], a
@@ -5143,7 +5150,7 @@ Func_00b_64b2:
 	or b
 	jr nz, .asm_650a
 	ld de, .PartyMonBufferPointers
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5345,7 +5352,25 @@ unk_00b_662b:
 .record_6668
 	db $05, $05, $1b, $1c, $1d, $1e, $1b, $1f, $20, $09, $21, $22, $23, $09, $09, $09
 	db $24, $25, $26, $09, $27, $28, $1b, $29, $2a, $2b, $2c
-INCBIN "data/record_00b_6668.bin" ; TODO
+INCBIN "data/record_00b_6668.bin"
+; BG-copy patch tables: $ffff-terminated lists of patch pointers (see setbgcopyplayer, Func_00b_606f)
+BGCopyTable_00b_696a::
+	dw BGCopyPatch_00b_696e
+	dw unk_00b_4179
+BGCopyPatch_00b_696e:
+	bgcopy_patch 2, 2, $24, $25, $06, $26
+BGCopyTable_00b_6974::
+	dw BGCopyPatch_00b_6978
+	dw unk_00b_4179
+BGCopyPatch_00b_6978:
+	bgcopy_patch 2, 2, $4f, $21, $50, $22
+BGCopyTable_00b_697e::
+	dw BGCopyPatch_00b_6982
+	dw unk_00b_4179
+BGCopyPatch_00b_6982:
+	bgcopy_patch 2, 2, $33, $35, $34, $36
+BGCopyPatch_00b_6988:
+	bgcopy_patch 2, 2, $01, $01, $01, $01
 
 GFX_00b_698e:
 INCBIN "gfx/misc/gfx_00b_698e.2bpp"

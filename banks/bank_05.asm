@@ -2496,14 +2496,14 @@ asm_005_5224:
 	ret
 
 Script_005_524c:
-	scr_spriteface  1, $04 ; TEMP
-	scr_delay $03, $10 ; TEMP
-	scr_spriteface  1, FACE_DOWN
-	scr_4e $01, Script_005_5270
-	scr_77
-	scr_6f
-	scr_5e $52
-	scr_end
+	spriteface  1, $04
+	delay $03, $10
+	spriteface  1, FACE_DOWN
+	objmove $01, Script_005_5270
+	ifplayerx
+	condtext
+	setfollower $52
+	end
 
 ; TODO: unreferenced data block, classify type
 unk_005_525e:

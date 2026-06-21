@@ -172,32 +172,32 @@ HayatosHouse1_MapEvents::
 	events_end
 
 CarpetWomansHouse1_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $04, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $04, $00
 	events_end
 
 FangfangsHouse1_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $05, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $05, $00
 	events_end
 
 BellHealingCenter1_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $07, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $07, $00
 	event 5, 4, $04, $00, $c4, $43
 	events_end
 
 BellSchool1_MapEvents::
-	warp_event ABSOLUTE, 18, $02, $01, $00 ; TEMP
-	warp_event 1, 14, $0b, $00, $00 ; TEMP
-	warp_event 1, 15, $0b, $00, $00 ; TEMP
-	warp_event 1, 5, $2a, $00, $00 ; TEMP
-	warp_event 1, 6, $2a, $00, $00 ; TEMP
+	warp_event ABSOLUTE, 18, $02, $01, $00
+	warp_event 1, 14, $0b, $00, $00
+	warp_event 1, 15, $0b, $00, $00
+	warp_event 1, 5, $2a, $00, $00
+	warp_event 1, 6, $2a, $00, $00
 	events_end
 
 BellObservatory1_MapEvents::
-	warp_event ABSOLUTE, 10, $03, $01, $00 ; TEMP
+	warp_event ABSOLUTE, 10, $03, $01, $00
 	events_end
 
 BellSchoolSouthClassroom1_MapEvents::
-	warp_event 10, ABSOLUTE, $09, $01, $00 ; TEMP
+	warp_event 10, ABSOLUTE, $09, $01, $00
 	events_end
 
 BellSchoolNorthClassroom1_MapEvents::
@@ -601,32 +601,32 @@ TechHealingCenterBlackout_Header::
 
 BellVillage2_MapEvents::
 	script_event ABSOLUTE, 19, $00, Script_00e_409f
-	warp_event ABSOLUTE, 0, $02, $00, $00 ; TEMP
-	warp_event 23, ABSOLUTE, $2b, $00, $00 ; TEMP
-	warp_event 3, 7, $05, $00, $00 ; TEMP
-	warp_event 19, 5, $06, $00, $00 ; TEMP
-	warp_event 20, 15, $07, $00, $00 ; TEMP
-	warp_event 4, 15, $04, $00, $00 ; TEMP
-	warp_event 12, 11, $08, $00, $00 ; TEMP
+	warp_event ABSOLUTE, 0, $02, $00, $00
+	warp_event 23, ABSOLUTE, $2b, $00, $00
+	warp_event 3, 7, $05, $00, $00
+	warp_event 19, 5, $06, $00, $00
+	warp_event 20, 15, $07, $00, $00
+	warp_event 4, 15, $04, $00, $00
+	warp_event 12, 11, $08, $00, $00
 	signpost_event 8, 3, $01
 	signpost_event 22, 7, $02
 	signpost_event 15, 17, $03
 	events_end
 
 BellSchoolOutside2_MapEvents::
-	warp_event ABSOLUTE, 19, $01, $01, $00 ; TEMP
+	warp_event ABSOLUTE, 19, $01, $01, $00
 	script_event 4, 4, $00, Script_00e_408f
 	script_event 5, 4, $00, Script_00e_408f
 	script_event 6, 4, $00, Script_00e_408f
 	events_end
 
 BellObservatoryOutside2_MapEvents::
-	warp_event 0, ABSOLUTE, $01, $02, $00 ; TEMP
+	warp_event 0, ABSOLUTE, $01, $02, $00
 	signpost_event 8, 8, $04
 	events_end
 
 BallotsHouse2_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $06, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $06, $00
 	event 9, 3, $07, $01, $00, $00
 	events_end
 
@@ -637,31 +637,31 @@ BallotsHouse2_MapEvents2::
 	events_end
 
 HayatosHouse2_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $03, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $03, $00
 	event 9, 3, $07, $02, $00, $00
 	events_end
 
 CarpetWomansHouse2_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $04, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $04, $00
 	event 2, 3, $07, $03, $00, $00
 	events_end
 
 FangfangsHouse2_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $05, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $05, $00
 	event 9, 3, $07, $04, $00, $00
 	events_end
 
 BellHealingCenter2_MapEvents::
-	warp_event ABSOLUTE, 8, $01, $07, $00 ; TEMP
+	warp_event ABSOLUTE, 8, $01, $07, $00
 	event_04 5, 4, $00, Script_00e_4683
 	events_end
 
 BellSchool2_MapEvents::
-	warp_event ABSOLUTE, 18, $02, $01, $00 ; TEMP
-	warp_event 1, 14, $0b, $00, $00 ; TEMP
-	warp_event 1, 15, $0b, $00, $00 ; TEMP
-	warp_event 1, 5, $2a, $00, $00 ; TEMP
-	warp_event 1, 6, $2a, $00, $00 ; TEMP
+	warp_event ABSOLUTE, 18, $02, $01, $00
+	warp_event 1, 14, $0b, $00, $00
+	warp_event 1, 15, $0b, $00, $00
+	warp_event 1, 5, $2a, $00, $00
+	warp_event 1, 6, $2a, $00, $00
 	event 7, 2, $07, $05, $00, $00
 	events_end
 
@@ -670,7 +670,7 @@ BellObservatory2_MapEvents::
 
 BellSchoolNorthClassroom_MapEvents::
 BellSchoolSouthClassroom2_MapEvents::
-	warp_event 10, ABSOLUTE, $09, $01, $00 ; TEMP
+	warp_event 10, ABSOLUTE, $09, $01, $00
 	event 2, 3, $07, $06, $00, $00
 	events_end
 

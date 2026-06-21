@@ -50,7 +50,7 @@ Script_066_41df::
 	dr $1981df, $1981f2
 
 Script_066_41f2::
-	scr_end
+	end
 
 G5_01_ObjectEvents:
 G5_02_ObjectEvents:
@@ -170,9 +170,9 @@ G5_10_ObjectEvents:
 Script_066_4537::
 	dr $198537, $198545
 Script_066_4545::
-	scr_spriteface  2, FACE_LEFT
-	scr_farjump Script_066_454d
-	scr_end
+	spriteface  2, FACE_LEFT
+	farjump Script_066_454d
+	end
 
 Script_066_454d::
 	dr $19854d, $19856f

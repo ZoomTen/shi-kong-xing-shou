@@ -23,7 +23,22 @@ G4_64_ObjectEvents:
 	objects_end
 
 G4_44_ObjectEvents2:
-	dr $17011e, $17015c
+	dr $17011e, $170135
+Script_05c_4135:: ; farjump2 target (bank_55)
+	setmap $44, $03
+	spriteface  3, FACE_UP
+	stext text_5c_458c
+	spriteface  3, FACE_DOWN
+	objmove $03, unk_05c_51fa
+	clearobject $03
+	face FACE_LEFT
+	spriteface  2, FACE_LEFT
+	stext text_5c_45b8
+	objmove $02, unk_05c_5084
+	clearobject $02
+	setmappredef MAPPREDEF_15
+	setbit wEventFlags + 23, $04
+	end
 
 G4_45_ObjectEvents:
 	dr $17015c, $1701a5
@@ -56,7 +71,15 @@ G4_4D_ObjectEvents2:
 	dr $170494, $1704ab
 
 G4_4E_ObjectEvents3:
-	dr $1704ab, $1715e7
+	dr $1704ab, $17058c
+text_5c_458c::
+	dr $17058c, $1705b8
+text_5c_45b8::
+	dr $1705b8, $171084
+unk_05c_5084::
+	dr $171084, $1711fa
+unk_05c_51fa::
+	dr $1711fa, $1715e7
 
 Func_05c_55e7::
 	xor a
