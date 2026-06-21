@@ -1,4 +1,4 @@
-GFX_065_4000:
-INCBIN "gfx/misc/gfx_065_4000.2bpp"
+Tileset_065_4000:
+INCBIN "gfx/tilesets/tileset_065_4000.2bpp"
 
 
