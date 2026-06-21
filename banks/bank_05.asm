@@ -3062,7 +3062,7 @@ Func_005_55e9:
 	ret nz
 	ld a, 2
 	ldh [hTextSource], a
-	ld a, $c
+	ld a, BANK(text_0c_40a7)
 	ldh [hTextSourceBank2], a
 	call Func_0740
 	ret
