@@ -362,7 +362,7 @@ INCBIN "gfx/attrmaps/attrmap_055_46ba.bin"
 GFX_055_48fa:
 INCBIN "gfx/misc/gfx_055_48fa.bin"
 
-Script_055_4bad:
+unk_055_4bad:
 	dr $154bad, $154e6a
 GFX_055_4e6a:
 INCBIN "gfx/misc/gfx_055_4e6a.2bpp"
@@ -714,7 +714,7 @@ Script_055_5721:
 	checkbit wEventFlags + 3, $03, Script_055_5823
 	clearobject $04
 	spriteface  3, $05
-	objmove $03, Script_055_7d7f
+	objmove $03, MovementData_055_7d7f
 	spriteface  3, FACE_DOWN
 	spritewalk  3, MOVE_DOWN
 	spriteface  3, FACE_RIGHT
@@ -732,7 +732,7 @@ Script_055_5721:
 	objmove $02, Script_055_7f40
 	clearobject $02
 	loadobjsprite Script_055_5704
-	objmove $02, Script_055_7f6d
+	objmove $02, MovementData_055_7f6d
 	clearobject $02
 	loadobjsprite Script_055_5710
 	objmove $02, Script_055_7c94
@@ -1134,7 +1134,7 @@ Script_055_7cd5:
 Script_055_7d36:
 	dr $157d36, $157d7f
 
-Script_055_7d7f:
+MovementData_055_7d7f:
 	dr $157d7f, $157df6
 
 Script_055_7df6:
@@ -1149,6 +1149,6 @@ Script_055_7f17:
 Script_055_7f40:
 	dr $157f40, $157f6d
 
-Script_055_7f6d:
+MovementData_055_7f6d:
 	dr $157f6d, $157fff
 

@@ -259,9 +259,46 @@ Script_06c_4f23::
 	dr $1b0f23, $1b0faa
 
 G6_1F_ObjectEvents:
-	dr $1b0faa, $1b1007
+	dr $1b0faa, $1b0ffd
+Script_06c_4ffd::
+	face FACE_DOWN
+	setmap $06, $01
+	end2
+Script_06c_5003::
+	setmap $07, $02
+	end2
 Script_06c_5007::
-	dr $1b1007, $1b1068
+	checkbit wEventFlags + 19, $03, Script_06c_5003
+	face FACE_UP
+	setmap $07, $00
+	spriteface  2, FACE_LEFT
+	stext text_6c_6045
+	spriteface  2, FACE_DOWN
+	setattach $01, $00, $10, $00
+	objmove $00, $79d7
+	clearattach $00
+	stext text_6c_6068
+	setmap $07, $01
+	startbattle BattleData_02d_4f29
+	checkbit wEventFlags + 3, $03, Script_06c_4ffd
+	stext text_6c_60d0
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_6c_60df
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_6c_60f4
+	clearobject $02
+	stext text_6c_610e
+	setbit wEventFlags + 19, $03
+	scr_48 $02, $28
+	incsteps
+	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $07, $01
+	stext text_6c_611d
+	stext text_6c_6173
+	stext text_6c_618f
+	stext text_6c_61c6
+	end
 Script_06c_5068::
 	dr $1b1068, $1b2045
 INCLUDE "data/text/bank6c_6045.asm"

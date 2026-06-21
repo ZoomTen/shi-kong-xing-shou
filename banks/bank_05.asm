@@ -2499,7 +2499,7 @@ Script_005_524c:
 	spriteface  1, $04
 	delay $03, $10
 	spriteface  1, FACE_DOWN
-	objmove $01, Script_005_5270
+	objmove $01, MovementData_005_5270
 	ifplayerx
 	condtext
 	setfollower $52
@@ -2509,7 +2509,7 @@ Script_005_524c:
 unk_005_525e:
 	dr $1525e, $15270
 
-Script_005_5270:
+MovementData_005_5270:
 	dr $15270, $15295
 
 Func_005_5295:

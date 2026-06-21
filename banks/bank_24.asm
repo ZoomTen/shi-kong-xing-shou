@@ -201,7 +201,7 @@ Script_024_45e8:
 	dr $905e8, $90601
 Script_024_4601:
 	dr $90601, $9060f
-Script_024_460f:
+BattleScript_024_460f:
 	dr $9060f, $9061d
 Script_024_461d:
 	dr $9061d, $9062b
@@ -3822,9 +3822,9 @@ Func_024_64a9:
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
-	ld [hl], LOW(Script_024_460f)
+	ld [hl], LOW(BattleScript_024_460f)
 	inc hl
-	ld [hl], HIGH(Script_024_460f)
+	ld [hl], HIGH(BattleScript_024_460f)
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01

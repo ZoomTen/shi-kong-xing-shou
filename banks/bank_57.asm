@@ -10,7 +10,9 @@ Layout_057_4014::
 Metatiles_057_40f6::
 	dr $15c0f6, $15c252
 Blocks_057_4252::
-	dr $15c252, $15c4da
+	dr $15c252, $15c4c0
+Script_057_44c0::
+	dr $15c4c0, $15c4da
 AttrMap_057_44da::
 INCBIN "gfx/attrmaps/attrmap_057_44da.bin"
 Palettes_057_457a::
@@ -913,7 +915,9 @@ Layout_057_7ccf::
 Metatiles_057_7cee::
 	dr $15fcee, $15fdc6
 Blocks_057_7dc6::
-	dr $15fdc6, $15fe1a
+	dr $15fdc6, $15fe00
+Script_057_7e00::
+	dr $15fe00, $15fe1a
 AttrMap_057_7e1a::
 INCBIN "gfx/attrmaps/attrmap_057_7e1a.bin"
 Palettes_057_7e9c::

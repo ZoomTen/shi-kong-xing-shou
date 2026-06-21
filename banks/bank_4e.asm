@@ -25,10 +25,222 @@ BanglinCo2_ObjectEvents2:
 	dr $1380d1, $138119
 
 Script_04e_4119::
-	dr $138119, $13836a
+	face FACE_DOWN
+	spriteface  6, FACE_UP
+	spritewalk  6, MOVE_UP
+	spritewalk  6, MOVE_UP
+	stext text_4e_51fa
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	spriteface  4, FACE_DOWN
+	spriteface  5, FACE_DOWN
+	stext text_4e_5235
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_524c
+	stext text_4e_5263
+	emote  3, EMOTE_HEART
+	delay $03, $20
+	stext text_4e_527a
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_4e_52b3
+	stext text_4e_52c3
+	emote  4, EMOTE_TEAR
+	emote  5, EMOTE_TEAR
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_52e8
+	stext text_4e_5303
+	spriteface  6, FACE_DOWN
+	spritewalk  6, MOVE_DOWN
+	spritewalk  6, MOVE_DOWN
+	clearobject $06
+	stext text_4e_5337
+	setmap $0a, $01
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	spriteface  4, FACE_LEFT
+	spriteface  5, FACE_LEFT
+	stext text_4e_5375
+	loadobjsprite ObjSprite_4e_43c9
+	spriteface  6, FACE_DOWN
+	objmove $06, $6058
+	spriteface  6, FACE_LEFT
+	delay $03, $10
+	spriteface  6, FACE_DOWN
+	delay $03, $10
+	spriteface  6, FACE_RIGHT
+	spritewalk  6, MOVE_RIGHT
+	spriteface  6, FACE_RIGHT
+	delay $03, $10
+	spriteface  6, FACE_DOWN
+	delay $03, $10
+	emote  3, EMOTE_HEART
+	emote  4, EMOTE_HEART
+	delay $03, $20
+	spriteface  6, FACE_UP
+	objmove $06, $617a
+	clearobject $06
+	stext text_4e_541b
+	loadobjsprite ObjSprite_4e_43bd
+	spriteface  6, FACE_DOWN
+	objmove $06, $6058
+	spriteface  6, FACE_DOWN
+	delay $03, $10
+	spriteface  6, $04
+	spriteface  6, $06
+	delay $03, $10
+	spriteface  6, $04
+	delay $03, $10
+	spriteface  6, FACE_DOWN
+	spriteface  6, FACE_RIGHT
+	spritewalk  6, MOVE_RIGHT
+	spriteface  6, $07
+	delay $03, $10
+	spriteface  6, $04
+	delay $03, $10
+	emote  2, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	emote  4, EMOTE_EXCLAMATION
+	emote  5, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_5475
+	spriteface  6, $05
+	objmove $06, $617a
+	clearobject $06
+	stext text_4e_54c0
+	stext text_4e_5530
+	loadobjsprite ObjSprite_4e_43b1
+	spriteface  6, FACE_DOWN
+	delay $03, $20
+	stext text_4e_5587
+	emote  6, EMOTE_TEAR
+	delay $03, $20
+	stext text_4e_5595
+	objmove $06, $6058
+	spriteface  6, FACE_LEFT
+	delay $03, $10
+	spriteface  6, FACE_DOWN
+	delay $03, $10
+	spriteface  6, FACE_RIGHT
+	spritewalk  6, MOVE_RIGHT
+	spriteface  6, FACE_RIGHT
+	delay $03, $10
+	spriteface  6, FACE_DOWN
+	delay $03, $10
+	emote  4, EMOTE_ANGER
+	emote  5, EMOTE_ANGER
+	delay $03, $20
+	stext text_4e_55bf
+	emote  2, EMOTE_HEART
+	delay $03, $20
+	stext text_4e_55cf
+	emote  4, EMOTE_EXCLAMATION
+	emote  5, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_55eb
+	emote  6, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4e_561f
+	spriteface  6, FACE_UP
+	objmove $06, $617a
+	clearobject $06
+	stext text_4e_563d
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	spriteface  4, FACE_DOWN
+	spriteface  5, FACE_DOWN
+	setattach $02, $03, $f0, $00
+	objmove $03, $6119
+	clearobject $03
+	clearobject $02
+	setattach $04, $05, $f0, $00
+	objmove $05, $6119
+	clearobject $05
+	clearobject $04
+	loadobjsprite ObjSprite_4e_43a5
+	spriteface  2, FACE_DOWN
+	spritewalk  2, MOVE_DOWN
+	spritewalk  2, MOVE_DOWN
+	spriteface  2, FACE_RIGHT
+	spritewalk  2, MOVE_RIGHT
+	spriteface  2, FACE_DOWN
+	stext text_4e_5666
+	stext text_4e_568a
+	loadobjsprite ObjSprite_4e_43b1
+	spriteface  3, FACE_DOWN
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_56a5
+	stext text_4e_56b8
+	loadobjsprite ObjSprite_4e_4399
+	spriteface  4, FACE_DOWN
+	spritewalk  4, MOVE_DOWN
+	spritewalk  4, MOVE_DOWN
+	loadobjsprite ObjSprite_4e_4381
+	loadobjsprite ObjSprite_4e_438d
+	spritewalk  5, MOVE_DOWN
+	spriteface  5, FACE_RIGHT
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_UP
+	spriteface  4, FACE_LEFT
+	stext text_4e_5711
+	emote  2, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	emote  4, EMOTE_EXCLAMATION
+	delay $03, $20
+	spritewalk  6, MOVE_DOWN
+	stext text_4e_577d
+	spriteface  5, FACE_UP
+	spriteface  6, FACE_UP
+	setattach $05, $06, $10, $00
+	objmove $06, $617a
+	clearobject $06
+	clearobject $05
+	stext text_4e_579f
+	stext text_4e_57ae
+	stext text_4e_57fb
+	setmappredef MAPPREDEF_12
+	setbit wEventFlags + 6, $04
+	setfollower $02
+	setplayerchar $00
+	face FACE_LEFT
+	setmap $08, $05
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	stext text_4e_5804
+	stext text_4e_5826
+	stext text_4e_5833
+	clearplayerpos
+	spritewalk  2, MOVE_RIGHT
+	clearobject $02
+	spritewalk  3, MOVE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	clearobject $03
+	scr_62 $03, $01
+	setbit wEventFlags + 24, $04
+	end
 
 BanglinCo1f_ObjectEvents4:
-	dr $13836a, $1383d5
+	dr $13836a, $138381
+ObjSprite_4e_4381::
+	dr $138381, $13838d
+ObjSprite_4e_438d::
+	dr $13838d, $138399
+ObjSprite_4e_4399::
+	dr $138399, $1383a5
+ObjSprite_4e_43a5::
+	dr $1383a5, $1383b1
+ObjSprite_4e_43b1::
+	dr $1383b1, $1383bd
+ObjSprite_4e_43bd::
+	dr $1383bd, $1383c9
+ObjSprite_4e_43c9::
+	dr $1383c9, $1383d5
 
 ContestHall_ObjectEvents2:
 	dr $1383d5, $138402

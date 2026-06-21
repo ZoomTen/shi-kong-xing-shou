@@ -66,112 +66,372 @@ INCLUDE "data/text/bank4f_407f.asm"
 INCLUDE "data/text/bank4f_4097.asm"
 
 Script_04f_40c6::
-	dr $13c0c6, $13c0e1
+	face FACE_RIGHT
+	ifcharindex $02, Script_04f_40d0
+	stext text_4f_4356
+	end
+Script_04f_40d0::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $0092, $a7
+	swapfollower
+	end
 
 Script_04f_40e1::
-	dr $13c0e1, $13c0eb
+	face FACE_LEFT
+	ifcharindex $02, Script_04f_40d0
+	stext text_4f_4356
+	end
 
 Script_04f_40eb::
-	dr $13c0eb, $13c0f5
+	face FACE_UP
+	ifcharindex $02, Script_04f_40d0
+	stext text_4f_4356
+	end
 
 Script_04f_40f5::
-	dr $13c0f5, $13c110
+	face FACE_UP
+	ifcharindex $02, Script_04f_40ff
+	stext text_4f_4356
+	end
+Script_04f_40ff::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $0069, $a8
+	swapfollower
+	end
 
 Script_04f_4110::
-	dr $13c110, $13c11a
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_40ff
+	stext text_4f_4356
+	end
 
 Script_04f_411a::
-	dr $13c11a, $13c135
+	face FACE_UP
+	ifcharindex $02, Script_04f_4124
+	stext text_4f_4356
+	end
+Script_04f_4124::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $0025, $a9
+	swapfollower
+	end
 
 Script_04f_4135::
-	dr $13c135, $13c13f
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_4124
+	stext text_4f_4356
+	end
 
 Script_04f_413f::
-	dr $13c13f, $13c15a
+	face FACE_RIGHT
+	ifcharindex $02, Script_04f_4149
+	stext text_4f_4356
+	end
+Script_04f_4149::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $001b, $aa
+	swapfollower
+	end
 
 Script_04f_415a::
-	dr $13c15a, $13c164
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_4149
+	stext text_4f_4356
+	end
 
 Script_04f_4164::
-	dr $13c164, $13c16e
+	face FACE_LEFT
+	ifcharindex $02, Script_04f_4149
+	stext text_4f_4356
+	end
 
 Script_04f_416e::
-	dr $13c16e, $13c189
+	face FACE_UP
+	ifcharindex $02, Script_04f_4178
+	stext text_4f_4356
+	end
+Script_04f_4178::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $0055, $a7
+	swapfollower
+	end
 
 Script_04f_4189::
-	dr $13c189, $13c193
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_4178
+	stext text_4f_4356
+	end
 
 Script_04f_4193::
-	dr $13c193, $13c1ae
+	face FACE_UP
+	ifcharindex $02, Script_04f_419d
+	stext text_4f_4356
+	end
+Script_04f_419d::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $008e, $a8
+	swapfollower
+	end
 
 Script_04f_41ae::
-	dr $13c1ae, $13c1b8
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_419d
+	stext text_4f_4356
+	end
 
 Script_04f_41b8::
-	dr $13c1b8, $13c1d3
+	face FACE_UP
+	ifcharindex $02, Script_04f_41c2
+	stext text_4f_4356
+	end
+Script_04f_41c2::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $002e, $a9
+	swapfollower
+	end
 
 Script_04f_41d3::
-	dr $13c1d3, $13c1dd
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_41c2
+	stext text_4f_4356
+	end
 
 Script_04f_41dd::
-	dr $13c1dd, $13c1f8
+	face FACE_UP
+	ifcharindex $02, Script_04f_41e7
+	stext text_4f_4356
+	end
+Script_04f_41e7::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	delay $01, $03
+	setlayouttile $0027, $aa
+	swapfollower
+	end
 
 Script_04f_41f8::
-	dr $13c1f8, $13c202
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_41e7
+	stext text_4f_4356
+	end
 
 Script_04f_4202::
-	dr $13c202, $13c220
+	face FACE_RIGHT
+	ifcharindex $02, Script_04f_420c
+	stext text_4f_4356
+	end
+Script_04f_420c::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $0092, $a5
+	swapfollower
+	end
 
 Script_04f_4220::
-	dr $13c220, $13c22a
+	face FACE_LEFT
+	ifcharindex $02, Script_04f_420c
+	stext text_4f_4356
+	end
 
 Script_04f_422a::
-	dr $13c22a, $13c234
+	face FACE_UP
+	ifcharindex $02, Script_04f_420c
+	stext text_4f_4356
+	end
 
 Script_04f_4234::
-	dr $13c234, $13c252
+	face FACE_UP
+	ifcharindex $02, Script_04f_423e
+	stext text_4f_4356
+	end
+Script_04f_423e::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $0069, $a6
+	swapfollower
+	end
 
 Script_04f_4252::
-	dr $13c252, $13c25c
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_423e
+	stext text_4f_4356
+	end
 
 Script_04f_425c::
-	dr $13c25c, $13c27a
+	face FACE_UP
+	ifcharindex $02, Script_04f_4266
+	stext text_4f_4356
+	end
+Script_04f_4266::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $0025, $a7
+	swapfollower
+	end
 
 Script_04f_427a::
-	dr $13c27a, $13c284
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_4266
+	stext text_4f_4356
+	end
 
 Script_04f_4284::
-	dr $13c284, $13c2a2
+	face FACE_RIGHT
+	ifcharindex $02, Script_04f_428e
+	stext text_4f_4356
+	end
+Script_04f_428e::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $001b, $a8
+	swapfollower
+	end
 
 Script_04f_42a2::
-	dr $13c2a2, $13c2ac
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_428e
+	stext text_4f_4356
+	end
 
 Script_04f_42ac::
-	dr $13c2ac, $13c2b6
+	face FACE_LEFT
+	ifcharindex $02, Script_04f_428e
+	stext text_4f_4356
+	end
 
 Script_04f_42b6::
-	dr $13c2b6, $13c2d4
+	face FACE_UP
+	ifcharindex $02, Script_04f_42c0
+	stext text_4f_4356
+	end
+Script_04f_42c0::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $0055, $a7
+	swapfollower
+	end
 
 Script_04f_42d4::
-	dr $13c2d4, $13c2de
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_42c0
+	stext text_4f_4356
+	end
 
 Script_04f_42de::
-	dr $13c2de, $13c2fc
+	face FACE_UP
+	ifcharindex $02, Script_04f_42e8
+	stext text_4f_4356
+	end
+Script_04f_42e8::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $008e, $a8
+	swapfollower
+	end
 
 Script_04f_42fc::
-	dr $13c2fc, $13c306
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_42e8
+	stext text_4f_4356
+	end
 
 Script_04f_4306::
-	dr $13c306, $13c324
+	face FACE_UP
+	ifcharindex $02, Script_04f_4310
+	stext text_4f_4356
+	end
+Script_04f_4310::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $002e, $a9
+	swapfollower
+	end
 
 Script_04f_4324::
-	dr $13c324, $13c32e
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_4310
+	stext text_4f_4356
+	end
 
 Script_04f_432e::
-	dr $13c32e, $13c34c
+	face FACE_UP
+	ifcharindex $02, Script_04f_4338
+	stext text_4f_4356
+	end
+Script_04f_4338::
+	swapfollower
+	delay $03, $10
+	scr_49
+	setbgcopyplayer BGCopyTable_00b_697e
+	copytilemapplayer $88, $69
+	delay $01, $03
+	setlayouttile $0027, $aa
+	swapfollower
+	end
 
 Script_04f_434c::
-	dr $13c34c, $13c356
+	face FACE_DOWN
+	ifcharindex $02, Script_04f_4338
+	stext text_4f_4356
+	end
 INCLUDE "data/text/bank4f_4356.asm"
 Script_04f_4384:: ; farjump2 target (bank_12)
 	warp3 $15, $01, $03
@@ -271,7 +531,7 @@ Script_04f_44a2:
 	spriteface $04, $00
 	spriteface $05, $00
 	setattach $05, $04, $00, $10
-	objmove $04, Script_4f_7ae1
+	objmove $04, MovementData_4f_7ae1
 	clearobject $04
 	clearobject $05
 	face FACE_UP
@@ -450,13 +710,72 @@ BanglinCo1f_ObjectEvents3:
 	dr $13cb3f, $13cb77
 
 Script_04f_4b77:
-	dr $13cb77, $13cb83
+	checkbit wEventFlags + 6, $02, Script_04f_4bc6
+	textface text_4f_5a2d
+	sjump Script_04f_4b91
 
 Script_04f_4b83::
-	dr $13cb83, $13cbf3
+	dr $13cb83, $13cb91
+Script_04f_4b91::
+	dr $13cb91, $13cbc6
+Script_04f_4bc6::
+	dr $13cbc6, $13cbcc
+Script_04f_4bcc::
+	dr $13cbcc, $13cbf2
+Script_04f_4bf2::
+	end
 
 Script_04f_4bf3::
-	dr $13cbf3, $13cc80
+	checkbit wEventFlags + 5, $00, Script_04f_4bf2
+	setplayerchar $00
+	face FACE_UP
+	setmap $08, $04
+	spriteface  6, FACE_UP
+	emote  6, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_572e
+	spriteface  4, FACE_LEFT
+	spriteface  6, FACE_RIGHT
+	face FACE_RIGHT
+	stext text_4f_5762
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_57d9
+	stext text_4f_57e7
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4f_5826
+	stext text_4f_583e
+	emote  6, EMOTE_EXCLAMATION
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_588e
+	stext text_4f_589f
+	spriteface  4, FACE_DOWN
+	spritewalk  4, MOVE_DOWN
+	spriteface  4, FACE_RIGHT
+	spritewalk  4, MOVE_RIGHT
+	clearobject $04
+	spriteface  6, FACE_DOWN
+	face FACE_LEFT
+	move MovementData_OneLeft
+	face FACE_DOWN
+	stext text_4f_592a
+	stext text_4f_594e
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	face FACE_RIGHT
+	move MovementData_OneRight
+	face FACE_UP
+	stext text_4f_5955
+	stext text_4f_59ab
+	stext text_4f_59df
+	stext text_4f_5a16
+	clearplayerpos
+	spritewalk  6, MOVE_DOWN
+	clearobject $06
+	setbit wEventFlags + 5, $00
+	end
 
 GreenForestP13_ObjectEvents:
 	dr $13cc80, $13cccb
@@ -496,6 +815,6 @@ Script_04f_4dbe::
 
 INCLUDE "data/text/bank4f_misc.asm"
 
-Script_4f_7ae1::
+MovementData_4f_7ae1::
 	dr $13fae1, $13fcff
 

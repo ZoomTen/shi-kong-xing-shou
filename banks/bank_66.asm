@@ -42,7 +42,21 @@ G5_18_ObjectEvents:
 	dr $198176, $198182
 
 Script_066_4182::
-	dr $198182, $1981af
+	textface text_66_4dd7
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_4dee
+	stext text_66_4e0b
+	startbattle BattleData_02d_4d1f
+	checkbit wEventFlags + 3, $03, Script_066_41f1
+	clearobject $02
+	setbit wEventFlags + 14, $07
+	setplayerchar $00
+	face FACE_RIGHT
+	warpmode GAMEMODE_AIRPORT_CUTSCENE4, $1b, $02
+	spriteface  2, FACE_LEFT
+	stext text_66_4e17
+	end
 
 G5_16_ObjectEvents:
 	object_event $12,  1,  5, 0, $00, $00, $00, $00, Script_066_4172
@@ -52,7 +66,9 @@ G5_16_ObjectEvents:
 Script_066_41d1::
 	dr $1981d1, $1981df
 Script_066_41df::
-	dr $1981df, $1981f2
+	dr $1981df, $1981f1
+Script_066_41f1::
+	end
 
 Script_066_41f2::
 	end
@@ -369,10 +385,45 @@ Script_066_4aef::
 	dr $198aef, $198b24
 
 G5_0B_ObjectEvents:
-	dr $198b24, $198b53
+	dr $198b24, $198b3b
+ObjSprite_66_4b3b::
+	dr $198b3b, $198b47
+ObjSprite_66_4b47::
+	dr $198b47, $198b53
 
 Script_066_4b53::
-	dr $198b53, $198bb1
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_7971
+	startbattle BattleData_02d_4db8
+	checkbit wEventFlags + 3, $03, Script_066_41f1
+	clearobject $02
+	loadobjsprite ObjSprite_66_4b3b
+	objmove $02, $7d15
+	stext text_66_7981
+	setbit wEventFlags + 18, $01
+	setmap $0d, $01
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_UP
+	stext text_66_7990
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_79cc
+	spriteface  2, FACE_RIGHT
+	loadobjsprite ObjSprite_66_4c55
+	spriteface  4, FACE_UP
+	objmove $04, $7d15
+	spriteface  4, FACE_UP
+	spriteface  4, FACE_LEFT
+	spriteface  4, FACE_DOWN
+	stext text_66_79d6
+	setbit wEventFlags + 18, $02
+	face FACE_UP
+	setmap $0b, $01
+	stext text_66_79e1
+	end
 Script_066_4bb1::
 	dr $198bb1, $198bc5
 
@@ -384,7 +435,9 @@ Script_066_4bc9::
 	dr $198bc9, $198c3e
 
 G5_1D_ObjectEvents3:
-	dr $198c3e, $198c61
+	dr $198c3e, $198c55
+ObjSprite_66_4c55::
+	dr $198c55, $198c61
 
 G5_0D_ObjectEvents:
 	object_event $0e,  4,  2, 0, $00, $00, $00, $00, Script_066_4bc5
