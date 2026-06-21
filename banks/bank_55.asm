@@ -81,7 +81,7 @@ AirportCutscene2::
 	ldh [hFade], a
 	ld [wTargetMode], a
 	ld a, $05
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	jp JumpToModeAndSetMapPredefs
 ScrollXDeltas_055_40d0:
 	dr $1540d0, $1540f1

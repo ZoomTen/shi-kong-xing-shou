@@ -238,7 +238,7 @@ MapEvent_Script:
 	ld a, [hl]
 	and a
 	jr z, .no_conditional
-	ldh a, [hFFBA]
+	ldh a, [hMapPredef]
 	cp [hl]
 	jp nz, JumpToNextMapEvent
 
@@ -275,7 +275,7 @@ MapEvent_04:
 	ld a, [hl]
 	and a
 	jr z, .no_conditional
-	ldh a, [hFFBA]
+	ldh a, [hMapPredef]
 	cp [hl]
 	jp nz, JumpToNextMapEvent
 
@@ -314,7 +314,7 @@ MapEvent_06:
 	ld a, [hl]
 	and a
 	jr z, .no_conditional
-	ldh a, [hFFBA]
+	ldh a, [hMapPredef]
 	cp [hl]
 	jp nc, JumpToNextMapEvent
 
@@ -2311,7 +2311,7 @@ Func_005_50e5:
 	ldh a, [hJoypadPressed]
 	bit 2, a
 	ret z
-	ld a, [hFFBA]
+	ld a, [hMapPredef]
 	cp $11
 	ret z
 	ld a, [wPlayerSpriteID]

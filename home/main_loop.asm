@@ -61,7 +61,7 @@ StartGame::
 	ld [wd0df], a
 	ld [wd0ef], a
 	ld a, 0
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	call LoadMapAndScriptPredef
 	ld a, $12
 	ld [wTargetMode], a

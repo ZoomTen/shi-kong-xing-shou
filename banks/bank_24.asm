@@ -4718,7 +4718,7 @@ StartMenu_Input:
 	cp 2
 	jr nz, .asm_6b57
 
-	ld a, [hFFBA]
+	ld a, [hMapPredef]
 	cp $11
 	jr z, .check_exit
 

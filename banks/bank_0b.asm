@@ -932,7 +932,7 @@ Script_1e:
 Script_1f:
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ldh [hFFBA], a
+	ldh [hMapPredef], a
 	xor a
 	ld [wScriptByte], a
 	ret
@@ -1874,7 +1874,7 @@ Script_3a:
 	ld [wMovementPointer + 1], a
 	ret
 
-Script_3b: ; start a battle?
+Script_3b: ; start a battle (scr_startbattle)
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -1891,11 +1891,11 @@ Script_3b: ; start a battle?
 	ld [wd3ff], a
 	xor a
 	ld [wd987], a
-	ld hl, wd876
+	ld hl, wEnemyMon
 	ld a, l
-	ld [wd984], a
+	ld [wEnemyMonPtr], a
 	ld a, h
-	ld [wd985], a
+	ld [wEnemyMonPtr + 1], a
 	ld a, [hl]
 	ld [wEnemyMonSpecies], a
 	ld bc, wPartyMons
@@ -1920,11 +1920,11 @@ Script_3b: ; start a battle?
 
 .asm_4e90
 	ld a, c
-	ld [wd981], a
+	ld [wActiveMonPtr], a
 	ld a, b
-	ld [wd982], a
+	ld [wActiveMonPtr + 1], a
 	ld a, e
-	ld [wd983], a
+	ld [wActiveMonIndex], a
 	call DelayFrame
 	ret
 
@@ -2084,9 +2084,9 @@ Script_40:
 	ret
 
 Script_41:
-	ld bc, wcd20
+	ld bc, wVisibleObjects + OBJECT_LENGTH
 .asm_4fb7
-	ld hl, $0002
+	ld hl, OBJECT_ACTIVE
 	add hl, bc
 	ld a, [hl]
 	and a

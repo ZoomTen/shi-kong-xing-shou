@@ -55,7 +55,7 @@ hScriptBank:: ds 1
 hTextSourceBank4:: ds 1
 hFFB8:: ds 1
 hFFB9:: ds 1
-hFFBA:: ds 1
+hMapPredef:: ds 1 ; map-load script/predef index (indexes .Predefs; map events gate on it)
 hFFBB:: ds 1
 hTextSource:: ds 1
 hFFBD:: ds 1

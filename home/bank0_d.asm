@@ -1138,7 +1138,7 @@ Func_15a8::
 
 LoadMapAndScriptPredef::
 	ld de, .Predefs
-	ld a, [hFFBA]
+	ld a, [hMapPredef]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -1402,7 +1402,7 @@ Func_1730::
 	ld [wEventFlags + $18], a
 
 	ld a, $1a
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	ld a, $0c
 	ldh [hMapNumber], a
 	ld a, 3
@@ -1676,7 +1676,7 @@ Func_1900::
 	ld [wEventFlags + $18], a
 
 	ld a, 0
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	ld a, $01
 	ldh [hMapNumber], a
 	ld a, 0

@@ -512,7 +512,7 @@ TitleScreen_HandleMenuInput:
 	ldh [hFade], a
 	ld [wTargetMode], a
 	ld a, 0
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	jp JumpToModeAndSetMapPredefs
 	ret
 

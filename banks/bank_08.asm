@@ -673,7 +673,7 @@ MeteorCutscene::
 	ldh [hFade], a
 	ld [wTargetMode], a
 	ld a, 4
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	jp JumpToModeAndSetMapPredefs
 
 .Text2_WaitBlack:

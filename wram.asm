@@ -525,6 +525,7 @@ wd873:: ds 1
 wd874:: ds 1
 wd875:: ds 1
 
+wEnemyMon:: ; enemy mon struct (species at +0; set by Script_3b/scr_startbattle)
 wd876:: ds $16
 
 wd88c:: ds $6e
@@ -543,7 +544,9 @@ wd97c:: ds 5
 wActiveMonPtr::
 wd981:: ds 1
 wd982:: ds 1
+wActiveMonIndex:: ; party index of the lead non-fainted mon
 wd983:: ds 1
+wEnemyMonPtr:: ; pointer to wEnemyMon
 wd984:: ds 1
 wd985:: ds 1
 wd986:: ds 1
