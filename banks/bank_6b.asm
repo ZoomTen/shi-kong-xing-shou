@@ -1,4 +1,5 @@
-	dr $1ac000, $1ae510
+GFX_06b_4000:: ; map tileset graphics (593 tiles)
+INCBIN "gfx/tilesets/gfx_06b_4000.2bpp"
 G6_2A_MapAttributes:
 	map_attr_data \
 		6, 5, \
