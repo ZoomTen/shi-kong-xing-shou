@@ -1,6 +1,6 @@
-; TODO: data, not noise (not graphics)
+; TODO
 unk_00b_4000:
-	dr $2c000, $2c13c
+INCBIN "data/unk_00b_4000.bin"
 
 MovementData_OneLeft::
 	db LEFT, $ff
@@ -40,7 +40,7 @@ Pointers_00b_415d:
 	dw .unk_00b_416d
 	dw .unk_00b_4173
 	dw .unk_00b_416d
-	dw .unk_00b_4179
+	dw unk_00b_4179
 
 .unk_00b_416d:
 	db $02, $02
@@ -50,7 +50,7 @@ Pointers_00b_415d:
 	db $02, $02
 	db $2b, $2d, $2c, $2e
 
-.unk_00b_4179:
+unk_00b_4179:
 	db $ff, $ff
 
 Func_00b_417b::
@@ -76,53 +76,8 @@ MovementData_OneDown::
 MovementData_OneUp::
 	db UP, $ff
 
-; TODO: decode this sensibly
 unk_00b_4195::
-	dw .unk_00b_4199
-	dw Pointers_00b_415d.unk_00b_4179
-.unk_00b_4199
-	db $02, $04
-	db $3e, $3e, $3e, $3e, $3e, $3e, $3e, $3e
-	dw .unk_00b_41a7
-	dw Pointers_00b_415d.unk_00b_4179
-.unk_00b_41a7
-	db $02, $02
-	db $6d, $6a, $6d, $68
-	db $02, $02
-	db $01, $01, $01, $01
-	db $02, $04
-	db $03, $03, $03, $03, $03, $03, $03, $03
-	db $02, $04
-	db $02, $02, $02, $02, $03, $03, $03, $03
-	dw .unk_00b_41cb
-	dw Pointers_00b_415d.unk_00b_4179
-.unk_00b_41cb
-	db $02, $04
-	db $0c, $0e, $0d, $0f, $10, $12, $11, $13
-
-.unk_00b_41d5
-	db $04, $00, $fc, $00, $fc, $00, $04, $00
-	db $04, $00, $fc, $00, $fc, $00, $04, $00
-	db $04, $00, $fc, $00, $fc, $00, $04, $00
-	db $04, $00, $fc, $00, $fc, $00, $04, $00
-	db $04, $00, $fc, $00, $fc, $00, $04, $00
-	db $88
-
-.unk_00b_41fe
-	db $01, $00, $ff, $00, $01, $00, $ff, $00
-	db $01, $00, $ff, $00, $01, $00, $ff, $00
-	db $01, $00, $ff, $00, $01, $00, $ff, $00
-	db $01, $00, $ff, $00, $01, $00, $ff, $00
-	db $01, $00, $ff, $00, $01, $00, $ff, $00
-	db $88
-
-.unk_00b_4227
-	db $02, $00, $fe, $00, $02, $00, $fe, $00
-	db $02, $00, $fe, $00, $02, $00, $fe, $00
-	db $02, $00, $fe, $00, $02, $00, $fe, $00
-	db $02, $00, $fe, $00, $02, $00, $fe, $00
-	db $02, $00, $fe, $00, $02, $00, $fe, $00
-	db $88
+INCBIN "data/unk_00b_4195.bin"
 
 ScriptCommandTable:
 ; Entries correspond to script_* constants (see macros/script.asm)
@@ -724,11 +679,21 @@ Script_emote:
 
 ; TODO: indexed data table, classify type
 unk_00b_465b:
-	dr $2c65b, $2c66b
+; direction-indexed {dy, dx, value, 0} offset entries
+	db $00, $00, $00, $00
+	db $f0, $00, $1d, $00
+	db $00, $f8, $1f, $00
+	db $00, $10, $20, $00
 
 ; TODO: indexed data table, classify type
 unk_00b_466b:
-	dr $2c66b, $2c683
+; direction-indexed {dy, dx, value, 0} offset entries
+	db $f8, $08, $05, $00
+	db $f0, $08, $07, $00
+	db $f8, $08, $09, $00
+	db $f8, $08, $0b, $00
+	db $f2, $0a, $0d, $00
+	db $c0, $00, $19, $00
 
 Script_16:
 	call GetScriptByte
@@ -5360,10 +5325,34 @@ Func_00b_65f6:
 	ldh [rVBK], a
 	ret
 
-; TODO: structured data (not graphics)
+; structured data table
 unk_00b_662b:
-	dr $2e62b, $2e98e
+; pointer table: dw record, dw handler
+	dw .record_6645, unk_00b_4179
+	dw .record_664b, unk_00b_4179
+	dw .record_6656, unk_00b_4179
+	dw .record_6668, unk_00b_4179
+	dw .record_663f, unk_00b_4179
+.record_663f
+	db $02, $02, $44, $45, $3f, $3f
+.record_6645
+	db $02, $02, $01, $02, $03, $04
+.record_664b
+	db $03, $03, $05, $06, $07, $08, $09, $0a, $0b, $0c, $0d
+.record_6656
+	db $04, $04, $0e, $0f, $10, $11, $12, $13, $09, $14, $15, $09, $09, $16, $17, $18
+	db $19, $1a
+.record_6668
+	db $05, $05, $1b, $1c, $1d, $1e, $1b, $1f, $20, $09, $21, $22, $23, $09, $09, $09
+	db $24, $25, $26, $09, $27, $28, $1b, $29, $2a, $2b, $2c
+INCBIN "data/record_00b_6668.bin" ; TODO
+
 GFX_00b_698e:
 INCBIN "gfx/misc/gfx_00b_698e.2bpp"
 Palette_00b_6ace:
-	dr $2eace, $2f1e0
+; first 4 colors = OBJ palette (Func_00b_5273); rest is $ff/$fe/$88 data
+	RGB 21, 21, 21
+	RGB 0, 0, 0
+	RGB 0, 0, 25
+	RGB 30, 30, 30
+INCBIN "data/data_00b_6ace.bin" ; $ff/$fe/$88 data (trailing zero pad omitted)
