@@ -1094,9 +1094,94 @@ Func_5b_47ff:
 	ret nc
 	jp .asm_4802
 MiceMinigame_SpriteFramePointers:
-	dr $16c86f, $16c8ab
+	dw MiceMinigame_SpriteFrames
+	dw MiceMinigame_SpriteFrames
+	dw MiceMinigame_SpriteFrames_48b6
+	dw MiceMinigame_SpriteFrames_48c1
+	dw MiceMinigame_SpriteFrames_48cc
+	dw MiceMinigame_SpriteFrames_48d7
+	dw MiceMinigame_SpriteFrames_48e2
+	dw MiceMinigame_SpriteFrames_48ed
+	dw MiceMinigame_SpriteFrames_48f8
+	dw MiceMinigame_SpriteFrames_4903
+	dw MiceMinigame_SpriteFrames_490e
+	dw MiceMinigame_SpriteFrames_4919
+	dw MiceMinigame_SpriteFrames_4924
+	dw MiceMinigame_SpriteFrames_492f
+	dw MiceMinigame_SpriteFrames_493a
+	dw MiceMinigame_SpriteFrames_4945
+	dw MiceMinigame_SpriteFrames_4950
+	dw MiceMinigame_SpriteFrames_495b
+	dw MiceMinigame_SpriteFrames_4966
+	dw MiceMinigame_SpriteFrames_4971
+	dw MiceMinigame_SpriteFrames_497c
+	dw MiceMinigame_SpriteFrames_4987
+	dw MiceMinigame_SpriteFrames_4992
+	dw MiceMinigame_SpriteFrames_499d
+	dw MiceMinigame_SpriteFrames_49a8
+	dw MiceMinigame_SpriteFrames_49b3
+	dw MiceMinigame_SpriteFrames_49be
+	dw MiceMinigame_SpriteFrames_49c9
+	dw MiceMinigame_SpriteFrames_49d4
+	dw MiceMinigame_SpriteFrames_49df
 MiceMinigame_SpriteFrames:
-	dr $16c8ab, $16c9ef
+	dr $16c8ab, $16c8b6
+MiceMinigame_SpriteFrames_48b6:
+	dr $16c8b6, $16c8c1
+MiceMinigame_SpriteFrames_48c1:
+	dr $16c8c1, $16c8cc
+MiceMinigame_SpriteFrames_48cc:
+	dr $16c8cc, $16c8d7
+MiceMinigame_SpriteFrames_48d7:
+	dr $16c8d7, $16c8e2
+MiceMinigame_SpriteFrames_48e2:
+	dr $16c8e2, $16c8ed
+MiceMinigame_SpriteFrames_48ed:
+	dr $16c8ed, $16c8f8
+MiceMinigame_SpriteFrames_48f8:
+	dr $16c8f8, $16c903
+MiceMinigame_SpriteFrames_4903:
+	dr $16c903, $16c90e
+MiceMinigame_SpriteFrames_490e:
+	dr $16c90e, $16c919
+MiceMinigame_SpriteFrames_4919:
+	dr $16c919, $16c924
+MiceMinigame_SpriteFrames_4924:
+	dr $16c924, $16c92f
+MiceMinigame_SpriteFrames_492f:
+	dr $16c92f, $16c93a
+MiceMinigame_SpriteFrames_493a:
+	dr $16c93a, $16c945
+MiceMinigame_SpriteFrames_4945:
+	dr $16c945, $16c950
+MiceMinigame_SpriteFrames_4950:
+	dr $16c950, $16c95b
+MiceMinigame_SpriteFrames_495b:
+	dr $16c95b, $16c966
+MiceMinigame_SpriteFrames_4966:
+	dr $16c966, $16c971
+MiceMinigame_SpriteFrames_4971:
+	dr $16c971, $16c97c
+MiceMinigame_SpriteFrames_497c:
+	dr $16c97c, $16c987
+MiceMinigame_SpriteFrames_4987:
+	dr $16c987, $16c992
+MiceMinigame_SpriteFrames_4992:
+	dr $16c992, $16c99d
+MiceMinigame_SpriteFrames_499d:
+	dr $16c99d, $16c9a8
+MiceMinigame_SpriteFrames_49a8:
+	dr $16c9a8, $16c9b3
+MiceMinigame_SpriteFrames_49b3:
+	dr $16c9b3, $16c9be
+MiceMinigame_SpriteFrames_49be:
+	dr $16c9be, $16c9c9
+MiceMinigame_SpriteFrames_49c9:
+	dr $16c9c9, $16c9d4
+MiceMinigame_SpriteFrames_49d4:
+	dr $16c9d4, $16c9df
+MiceMinigame_SpriteFrames_49df:
+	dr $16c9df, $16c9ef
 MiceMinigame_ObjPalette:
 	RGB 21, 21, 21
 	RGB 0, 0, 0

@@ -103,19 +103,129 @@ Func_062_40a4:
 	call PrintMenuText
 	ret
 WorldMapNamePointers:
-	dr $1880e0, $1880ee
+	dw WorldMapNameStringPointers
+	dw WorldMapNameStringPointers
+	dw WorldMapNameStringPointers + $c
+	dw WorldMapNameStringPointers + $14
+	dw WorldMapNameStringPointers + $1a
+	dw WorldMapNameStringPointers + $26
+	dw WorldMapNameStringPointers + $2c
 WorldMapNameStringPointers:
-	dr $1880ee, $18811e
+	dw WorldMapNames
+	dw WorldMapNames_4124
+	dw WorldMapNames_412a
+	dw WorldMapNames_4131
+	dw WorldMapNames_4139
+	dw WorldMapNames_413f
+	dw WorldMapNames_4146
+	dw WorldMapNames_414d
+	dw WorldMapNames_4155
+	dw WorldMapNames_415b
+	dw WorldMapNames_4161
+	dw WorldMapNames_4167
+	dw WorldMapNames_416f
+	dw WorldMapNames_417c
+	dw WorldMapNames_4183
+	dw WorldMapNames_4189
+	dw WorldMapNames_4190
+	dw WorldMapNames_4197
+	dw WorldMapNames_419d
+	dw WorldMapNames_41a4
+	dw WorldMapNames_41ab
+	dw WorldMapNames_41b2
+	dw WorldMapNames_41b9
+	dw WorldMapNames_41c2
 WorldMapNames:
-	dr $18811e, $1881c9
+	dr $18811e, $188124
+WorldMapNames_4124:
+	dr $188124, $18812a
+WorldMapNames_412a:
+	dr $18812a, $188131
+WorldMapNames_4131:
+	dr $188131, $188139
+WorldMapNames_4139:
+	dr $188139, $18813f
+WorldMapNames_413f:
+	dr $18813f, $188146
+WorldMapNames_4146:
+	dr $188146, $18814d
+WorldMapNames_414d:
+	dr $18814d, $188155
+WorldMapNames_4155:
+	dr $188155, $18815b
+WorldMapNames_415b:
+	dr $18815b, $188161
+WorldMapNames_4161:
+	dr $188161, $188167
+WorldMapNames_4167:
+	dr $188167, $18816f
+WorldMapNames_416f:
+	dr $18816f, $18817c
+WorldMapNames_417c:
+	dr $18817c, $188183
+WorldMapNames_4183:
+	dr $188183, $188189
+WorldMapNames_4189:
+	dr $188189, $188190
+WorldMapNames_4190:
+	dr $188190, $188197
+WorldMapNames_4197:
+	dr $188197, $18819d
+WorldMapNames_419d:
+	dr $18819d, $1881a4
+WorldMapNames_41a4:
+	dr $1881a4, $1881ab
+WorldMapNames_41ab:
+	dr $1881ab, $1881b2
+WorldMapNames_41b2:
+	dr $1881b2, $1881b9
+WorldMapNames_41b9:
+	dr $1881b9, $1881c2
+WorldMapNames_41c2:
+	dr $1881c2, $1881c9
 WorldMapLocationIdPointers:
-	dr $1881c9, $1881d9
+	dw WorldMapLocationIds
+	dw WorldMapLocationIds
+	dw WorldMapLocationIds_420f
+	dw WorldMapLocationIds_4233
+	dw WorldMapLocationIds_4257
+	dw WorldMapLocationIds_42bd
+	dw WorldMapLocationIds_42e5
+	dw WorldMapLocationIds_4312
 WorldMapLocationIds:
-	dr $1881d9, $188327
+	dr $1881d9, $18820f
+WorldMapLocationIds_420f:
+	dr $18820f, $188233
+WorldMapLocationIds_4233:
+	dr $188233, $188257
+WorldMapLocationIds_4257:
+	dr $188257, $1882bd
+WorldMapLocationIds_42bd:
+	dr $1882bd, $1882e5
+WorldMapLocationIds_42e5:
+	dr $1882e5, $188312
+WorldMapLocationIds_4312:
+	dr $188312, $188327
 WorldMapCursorCoordPointers:
-	dr $188327, $188335
+	dw WorldMapCursorCoords
+	dw WorldMapCursorCoords
+	dw WorldMapCursorCoords_4345
+	dw WorldMapCursorCoords_4351
+	dw WorldMapCursorCoords_4359
+	dw WorldMapCursorCoords_436d
+	dw WorldMapCursorCoords_4377
 WorldMapCursorCoords:
-	dr $188335, $18837d
+	dr $188335, $188345
+WorldMapCursorCoords_4345:
+	dr $188345, $188351
+WorldMapCursorCoords_4351:
+	dr $188351, $188359
+WorldMapCursorCoords_4359:
+	dr $188359, $18836d
+WorldMapCursorCoords_436d:
+	dr $18836d, $188377
+WorldMapCursorCoords_4377:
+	dr $188377, $18837d
 Func_062_437d:
 	ld de, WorldMapLocationIdPointers
 	ld a, [hMapGroup]
@@ -188,9 +298,26 @@ Func_062_437d:
 WorldMapLocationCounts:
 	dr $1883f5, $1883fc
 WorldMapMarkerCoordPointers:
-	dr $1883fc, $18840c
+	dw WorldMapMarkerCoords
+	dw WorldMapMarkerCoords
+	dw WorldMapMarkerCoords_4418
+	dw WorldMapMarkerCoords_4420
+	dw WorldMapMarkerCoords_4426
+	dw WorldMapMarkerCoords_4432
+	dw WorldMapMarkerCoords_4438
+	dw WorldMapMarkerCoords
 WorldMapMarkerCoords:
-	dr $18840c, $18843e
+	dr $18840c, $188418
+WorldMapMarkerCoords_4418:
+	dr $188418, $188420
+WorldMapMarkerCoords_4420:
+	dr $188420, $188426
+WorldMapMarkerCoords_4426:
+	dr $188426, $188432
+WorldMapMarkerCoords_4432:
+	dr $188432, $188438
+WorldMapMarkerCoords_4438:
+	dr $188438, $18843e
 Func_062_443e:
 	ldh a, [hJoypadPressed]
 	bit 4, a
@@ -465,9 +592,21 @@ Func_062_4580:
 	ld [wd1fb], a
 	ret
 WorldMapSpriteLayoutPointers:
-	dr $18860b, $188615
+	dw WorldMapSpriteLayouts
+	dw WorldMapSpriteLayouts_461e
+	dw WorldMapSpriteLayouts_4627
+	dw WorldMapSpriteLayouts_4630
+	dw WorldMapSpriteLayouts_4639
 WorldMapSpriteLayouts:
-	dr $188615, $188642
+	dr $188615, $18861e
+WorldMapSpriteLayouts_461e:
+	dr $18861e, $188627
+WorldMapSpriteLayouts_4627:
+	dr $188627, $188630
+WorldMapSpriteLayouts_4630:
+	dr $188630, $188639
+WorldMapSpriteLayouts_4639:
+	dr $188639, $188642
 Func_062_4642:
 	ld a, [wcd53]
 	and a
@@ -511,9 +650,15 @@ Func_062_4642:
 	ld [wcd54], a
 	ret
 WorldMapAnimFramePointers:
-	dr $188689, $18868f
+	dw WorldMapAnimFrames
+	dw WorldMapAnimFrames_4690
+	dw WorldMapAnimFrames_4695
 WorldMapAnimFrames:
-	dr $18868f, $18869a
+	dr $18868f, $188690
+WorldMapAnimFrames_4690:
+	dr $188690, $188695
+WorldMapAnimFrames_4695:
+	dr $188695, $18869a
 Func_062_469a:
 	ld de, WorldMapTilemapAttrmapPointers
 	ld a, [hMapGroup]
@@ -761,7 +906,8 @@ WorldMap2::
 	ld [wcd46], a
 	ret
 WorldMap2_FrameSeqPointers:
-	dr $189eda, $189ede
+	dw WorldMap2_FrameSeq0
+	dw WorldMap2_FrameSeq1
 WorldMap2_FrameSeq0:
 	dr $189ede, $189edf
 WorldMap2_FrameSeq1:
@@ -866,7 +1012,9 @@ Func_062_5f33:
 	ld [wd1fb], a
 	ret
 WorldMap2_SpriteLayoutPointers:
-	dr $189f6b, $189f71
+	dw WorldMap2_SpriteLayout0
+	dw WorldMap2_SpriteLayout1
+	dw WorldMap2_SpriteLayout2
 WorldMap2_SpriteLayout0:
 	dr $189f71, $189f8a
 WorldMap2_SpriteLayout1:

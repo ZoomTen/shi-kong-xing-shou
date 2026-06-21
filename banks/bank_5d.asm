@@ -652,9 +652,39 @@ Func_5d_44c0:
 	call PlaceTilemap_Bank0
 	ret
 RhythmPattern_Pointers:
-	dr $174539, $17454f
+	dw RhythmPatterns
+	dw RhythmPatterns_4550
+	dw RhythmPatterns_4557
+	dw RhythmPatterns_455b
+	dw RhythmPatterns_455f
+	dw RhythmPatterns_4563
+	dw RhythmPatterns_4567
+	dw RhythmPatterns_456b
+	dw RhythmPatterns_456f
+	dw RhythmPatterns_4573
+	dw RhythmPatterns_457a
 RhythmPatterns:
-	dr $17454f, $174581
+	dr $17454f, $174550
+RhythmPatterns_4550:
+	dr $174550, $174557
+RhythmPatterns_4557:
+	dr $174557, $17455b
+RhythmPatterns_455b:
+	dr $17455b, $17455f
+RhythmPatterns_455f:
+	dr $17455f, $174563
+RhythmPatterns_4563:
+	dr $174563, $174567
+RhythmPatterns_4567:
+	dr $174567, $17456b
+RhythmPatterns_456b:
+	dr $17456b, $17456f
+RhythmPatterns_456f:
+	dr $17456f, $174573
+RhythmPatterns_4573:
+	dr $174573, $17457a
+RhythmPatterns_457a:
+	dr $17457a, $174581
 Func_5d_4581:
 	ldh a, [hJoypadPressed]
 	bit 0, a
@@ -1120,7 +1150,20 @@ Func_5d_48a8:
 	ld [wd1fb], a
 	ret
 SpriteAnim_Pointers:
-	dr $1748fb, $174917
+	dw SpriteFrame_Empty
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
+	dw SpriteFrame_Title
 SpriteFrame_Empty:
 	dr $174917, $174930
 SpriteFrame_Title:
@@ -1196,9 +1239,34 @@ Func_5d_4951:
 	ld [wd1fb], a
 	jp .asm_495c
 SpriteOAM_Pointers:
-	dr $1749b5, $1749c9
+	dw SpriteFrames_49C9
+	dw SpriteFrames_49C9
+	dw SpriteFrames_49C9_49d2
+	dw SpriteFrames_49C9_49db
+	dw SpriteFrames_49C9_49e4
+	dw SpriteFrames_49C9_49ed
+	dw SpriteFrames_49C9_49f6
+	dw SpriteFrames_49C9_49ff
+	dw SpriteFrames_49C9_4a08
+	dw SpriteFrames_49C9_4a11
 SpriteFrames_49C9:
-	dr $1749c9, $174a1a
+	dr $1749c9, $1749d2
+SpriteFrames_49C9_49d2:
+	dr $1749d2, $1749db
+SpriteFrames_49C9_49db:
+	dr $1749db, $1749e4
+SpriteFrames_49C9_49e4:
+	dr $1749e4, $1749ed
+SpriteFrames_49C9_49ed:
+	dr $1749ed, $1749f6
+SpriteFrames_49C9_49f6:
+	dr $1749f6, $1749ff
+SpriteFrames_49C9_49ff:
+	dr $1749ff, $174a08
+SpriteFrames_49C9_4a08:
+	dr $174a08, $174a11
+SpriteFrames_49C9_4a11:
+	dr $174a11, $174a1a
 Func_5d_4a1a:
 	ldh a, [hJoypadDown]
 	and a
@@ -1390,9 +1458,46 @@ INCBIN "gfx/misc/rhythmscreen2gfx2.2bpp"
 RhythmSharedGFX:
 INCBIN "gfx/misc/rhythmsharedgfx.2bpp"
 AnimFrame_Pointers:
-	dr $176c5f, $176c7b
+	dw RhythmAnimFrames
+	dw RhythmAnimFrames
+	dw RhythmAnimFrames_6d7b
+	dw RhythmAnimFrames_6e7b
+	dw RhythmAnimFrames_6f7b
+	dw RhythmAnimFrames_707b
+	dw RhythmAnimFrames_717b
+	dw RhythmAnimFrames_727b
+	dw RhythmAnimFrames_737b
+	dw RhythmAnimFrames_747b
+	dw RhythmAnimFrames_757b
+	dw RhythmAnimFrames_767b
+	dw RhythmAnimFrames_777b
+	dw RhythmAnimFrames_787b
 RhythmAnimFrames:
-	dr $176c7b, $17797b
+	dr $176c7b, $176d7b
+RhythmAnimFrames_6d7b:
+	dr $176d7b, $176e7b
+RhythmAnimFrames_6e7b:
+	dr $176e7b, $176f7b
+RhythmAnimFrames_6f7b:
+	dr $176f7b, $17707b
+RhythmAnimFrames_707b:
+	dr $17707b, $17717b
+RhythmAnimFrames_717b:
+	dr $17717b, $17727b
+RhythmAnimFrames_727b:
+	dr $17727b, $17737b
+RhythmAnimFrames_737b:
+	dr $17737b, $17747b
+RhythmAnimFrames_747b:
+	dr $17747b, $17757b
+RhythmAnimFrames_757b:
+	dr $17757b, $17767b
+RhythmAnimFrames_767b:
+	dr $17767b, $17777b
+RhythmAnimFrames_777b:
+	dr $17777b, $17787b
+RhythmAnimFrames_787b:
+	dr $17787b, $17797b
 ; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
 RhythmTileChunks:
 	dr $17797b, $1779bb

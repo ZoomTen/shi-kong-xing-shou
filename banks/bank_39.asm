@@ -183,7 +183,17 @@ Func_039_4892::
 	ld [hFFC6], a
 	ret
 ScreenScript_Pointers:
-	dr $e48ee, $e4904
+	dw ScreenScript_39_4928
+	dw ScreenScript_39_4ac7
+	dw ScreenScript_39_4cc1
+	dw ScreenScript_39_4e9a
+	dw ScreenScript_39_512d
+	dw ScreenScript_39_5296
+	dw ScreenScript_39_5392
+	dw ScreenScript_39_54fd
+	dw ScreenScript_39_55eb
+	dw ScreenScript_39_5734
+	dw ScreenScript_39_5811
 Func_039_4904:
 	ld de, ScreenLoop_Pointers
 	ldh a, [hFFC5]
@@ -196,7 +206,17 @@ Func_039_4904:
 	ld l, a
 	jp hl
 ScreenLoop_Pointers:
-	dr $e4912, $e4928
+	dw Func_039_497c
+	dw Func_039_4afd
+	dw Func_039_4cda
+	dw Func_039_4ec0
+	dw Func_039_5163
+	dw Func_039_529f
+	dw Func_039_53ab
+	dw Func_039_5522
+	dw Func_039_5604
+	dw Func_039_574d
+	dw Func_039_5826
 ScreenScript_39_4928:
 	dr $e4928, $e497c
 Func_039_497c:

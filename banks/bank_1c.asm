@@ -86,7 +86,14 @@ Func_01c_4000::
 	ldh [hFFC2], a
 	ret
 TileAnimGroupPointers:
-	dr $7006d, $7007d
+	dw TileAnimMaps_Group0
+	dw TileAnimMaps_Group0
+	dw TileAnimMaps_Group2
+	dw TileAnimMaps_Group3
+	dw TileAnimMaps_Group4
+	dw TileAnimMaps_Group5
+	dw TileAnimMaps_Group6
+	dw TileAnimMaps_Group7
 TileAnimMaps_Group0:
 	dr $7007d, $700e9
 TileAnimData_Group0:

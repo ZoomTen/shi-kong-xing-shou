@@ -478,9 +478,13 @@ Func_4e_4b53:
 	ld [wcd46], a
 	ret
 AirportCutscene1_AnimPointers:
-	dr $138b9a, $138ba0
+	dw AirportCutscene1_AnimFrames
+	dw AirportCutscene1_AnimFrames_4ba1
+	dw AirportCutscene1_AnimFrames_4ba1
 AirportCutscene1_AnimFrames:
-	dr $138ba0, $138bde
+	dr $138ba0, $138ba1
+AirportCutscene1_AnimFrames_4ba1:
+	dr $138ba1, $138bde
 Func_4e_4bde:
 	ld hl, wc000
 	ld bc, $0028
@@ -542,9 +546,15 @@ Func_4e_4bf6:
 	ld [wd1fb], a
 	ret
 AirportCutscene1_OAMPointers:
-	dr $138c2e, $138c34
+	dw AirportCutscene1_OAMData
+	dw AirportCutscene1_OAMData_4c4d
+	dw AirportCutscene1_OAMData_4c9a
 AirportCutscene1_OAMData:
-	dr $138c34, $138ce3
+	dr $138c34, $138c4d
+AirportCutscene1_OAMData_4c4d:
+	dr $138c4d, $138c9a
+AirportCutscene1_OAMData_4c9a:
+	dr $138c9a, $138ce3
 Func_4e_4ce3:
 	ld hl, wVisibleObjects
 	ld bc, $0100

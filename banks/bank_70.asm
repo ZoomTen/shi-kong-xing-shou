@@ -163,7 +163,10 @@ INCBIN "gfx/tilemaps/screentilemappointers.tilemap"
 ScreenAttrmapPointers:
 INCBIN "gfx/attrmaps/screenattrmappointers.bin"
 ScreenPalettePointers:
-	dr $1c014d, $1c0155
+	dw CreditsPalette_0
+	dw CreditsPalette_1
+	dw CreditsPalette_2
+	dw CreditsPalette_3
 ScreenGFX1Pointers:
 	dw CreditsGFX_0
 	dw CreditsGFX_1
@@ -177,7 +180,10 @@ ScreenGFX2Pointers:
 ScreenOBJPalettePointers:
 	dr $1c0165, $1c016d
 ScreenCreditsPointers:
-	dr $1c016d, $1c0175
+	dw CreditsFontGFX_0
+	dw CreditsFontGFX_1
+	dw CreditsFontGFX_2
+	dw CreditsFontGFX_3
 Func_070_4175:
 	ld a, [wdcf4]
 	inc a
@@ -274,7 +280,11 @@ Func_070_41b6:
 	ld [wd1fb], a
 	ret
 ObjectPlacementPointers:
-	dr $1c01f7, $1c0201
+	dw CreditsSprites_0
+	dw CreditsSprites_0
+	dw CreditsSprites_1
+	dw CreditsSprites_2
+	dw CreditsSprites_3
 CreditsSprites_0:
 	dr $1c0201, $1c025e
 CreditsSprites_1:

@@ -453,7 +453,9 @@ Func_061_42e6:
 	ld [wd1fb], a
 	jp .asm_4309
 MeteorCutscene2_AnimFramePointers:
-	dr $184362, $184368
+	dw MeteorCutscene2_AnimFrame0
+	dw MeteorCutscene2_AnimFrame0
+	dw MeteorCutscene2_AnimFrame1
 MeteorCutscene2_AnimFrame0:
 	dr $184368, $184371
 MeteorCutscene2_AnimFrame1:
@@ -747,9 +749,12 @@ UnderwaterPictureCutscene::
 	ld [wd1fb], a
 	ret
 UnderwaterPicture_SpriteOAMPointers:
-	dr $185e52, $185e56
+	dw UnderwaterPicture_SpriteOAM_Empty
+	dw UnderwaterPicture_SpriteOAM_Empty_5e6f
 UnderwaterPicture_SpriteOAM_Empty:
-	dr $185e56, $185ef8
+	dr $185e56, $185e6f
+UnderwaterPicture_SpriteOAM_Empty_5e6f:
+	dr $185e6f, $185ef8
 UnderwaterPicture_Palette:
 	RGB 31, 31, 31
 	RGB 8, 21, 31

@@ -184,9 +184,13 @@ Func_055_423b:
 	ld [wcd46], a
 	ret
 ColorAnimPointers_055_4282:
-	dr $154282, $154288
+	dw ColorAnimData_055_4288
+	dw ColorAnimData_055_4288_4289
+	dw ColorAnimData_055_4288_4289
 ColorAnimData_055_4288:
-	dr $154288, $1542c6
+	dr $154288, $154289
+ColorAnimData_055_4288_4289:
+	dr $154289, $1542c6
 Func_055_42c6:
 	ld hl, wc000
 	ld bc, $0028
@@ -248,9 +252,15 @@ Func_055_42c6:
 	ld [wd1fb], a
 	ret
 SpriteFramePointers_055_4316:
-	dr $154316, $15431c
+	dw SpriteFrameData_055_431c
+	dw SpriteFrameData_055_431c_4335
+	dw SpriteFrameData_055_431c_4382
 SpriteFrameData_055_431c:
-	dr $15431c, $1543cb
+	dr $15431c, $154335
+SpriteFrameData_055_431c_4335:
+	dr $154335, $154382
+SpriteFrameData_055_431c_4382:
+	dr $154382, $1543cb
 Func_055_43cb:
 	ld hl, wVisibleObjects
 	ld bc, $0100

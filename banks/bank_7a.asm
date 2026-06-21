@@ -466,9 +466,25 @@ Func_07a_442d:
 	ld [wcd66], a
 	ret
 AnimSeqPointers_07a_446f:
-	dr $1e846f, $1e8489
+	dw AnimSeqData_07a_4489
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_448a
+	dw AnimSeqData_07a_4489_44c2
+	dw AnimSeqData_07a_4489_44c2
+	dw AnimSeqData_07a_4489_44c2
+	dw AnimSeqData_07a_4489_44c2
 AnimSeqData_07a_4489:
-	dr $1e8489, $1e84d6
+	dr $1e8489, $1e848a
+AnimSeqData_07a_4489_448a:
+	dr $1e848a, $1e84c2
+AnimSeqData_07a_4489_44c2:
+	dr $1e84c2, $1e84d6
 Func_07a_44d6:
 	ld a, [wcd60]
 	and a
@@ -721,9 +737,45 @@ Func_07a_45f0:
 	ld [wd1fb], a
 	ret
 SpriteLayoutPointers_07a_4629:
-	dr $1e8629, $1e8643
+	dw SpriteLayoutData_07a_4643
+	dw SpriteLayoutData_07a_4643_4664
+	dw SpriteLayoutData_07a_4643_4669
+	dw SpriteLayoutData_07a_4643_4672
+	dw SpriteLayoutData_07a_4643_467b
+	dw SpriteLayoutData_07a_4643_4684
+	dw SpriteLayoutData_07a_4643_468d
+	dw SpriteLayoutData_07a_4643_4696
+	dw SpriteLayoutData_07a_4643_469f
+	dw SpriteLayoutData_07a_4643_46a8
+	dw SpriteLayoutData_07a_4643_46e5
+	dw SpriteLayoutData_07a_4643_4722
+	dw SpriteLayoutData_07a_4643_476e
 SpriteLayoutData_07a_4643:
-	dr $1e8643, $1e87c7
+	dr $1e8643, $1e8664
+SpriteLayoutData_07a_4643_4664:
+	dr $1e8664, $1e8669
+SpriteLayoutData_07a_4643_4669:
+	dr $1e8669, $1e8672
+SpriteLayoutData_07a_4643_4672:
+	dr $1e8672, $1e867b
+SpriteLayoutData_07a_4643_467b:
+	dr $1e867b, $1e8684
+SpriteLayoutData_07a_4643_4684:
+	dr $1e8684, $1e868d
+SpriteLayoutData_07a_4643_468d:
+	dr $1e868d, $1e8696
+SpriteLayoutData_07a_4643_4696:
+	dr $1e8696, $1e869f
+SpriteLayoutData_07a_4643_469f:
+	dr $1e869f, $1e86a8
+SpriteLayoutData_07a_4643_46a8:
+	dr $1e86a8, $1e86e5
+SpriteLayoutData_07a_4643_46e5:
+	dr $1e86e5, $1e8722
+SpriteLayoutData_07a_4643_4722:
+	dr $1e8722, $1e876e
+SpriteLayoutData_07a_4643_476e:
+	dr $1e876e, $1e87c7
 AttrMap_07a_47c7:
 INCBIN "gfx/attrmaps/attrmap_07a_47c7.bin"
 BGMap_07a_492f:
