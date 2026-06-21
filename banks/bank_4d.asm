@@ -1,7 +1,7 @@
 Func_04d_4000:
-	ld a, [wd98f]
+	ld a, [wCopySrc]
 	ld l, a
-	ld a, [wd990]
+	ld a, [wCopySrc + 1]
 	ld h, a
 	ld a, [hli]
 	ld e, a

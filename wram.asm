@@ -552,6 +552,10 @@ wd98b:: ds 1
 wd98c:: ds 1
 wd98d:: ds 1
 wd98e:: ds 1
+; far source pointer (wTempBank:wCopySrc) for gfx/record copy routines
+; (FarCopyBytes_vTiles0, Func_033_4425/4438, Func_04d_4000); also reused as
+; battle scratch via the wd98f/wd990 aliases
+wCopySrc::
 wd98f:: ds 1
 wd990:: ds 1
 wd991:: ds 2

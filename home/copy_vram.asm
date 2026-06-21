@@ -7,9 +7,9 @@ FarCopyBytes_vTiles0::
 	ld a, [wTempBank]
 	rst Bankswitch
 ; Source address
-	ld a, [wd98f]
+	ld a, [wCopySrc]
 	ld l, a
-	ld a, [wd990]
+	ld a, [wCopySrc + 1]
 	ld h, a
 ; Size of image
 	ld a, [hli]
