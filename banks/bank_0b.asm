@@ -304,7 +304,7 @@ Script_delay:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wcbfd], a
-	ld a, 3
+	ld a, script_03
 	ld [wScriptByte], a
 	ret
 
@@ -400,7 +400,7 @@ Script_spritewalk:
 	ld hl, $0f
 	add hl, bc
 	ld [hl], $02
-	ld a, $07
+	ld a, script_07
 	ld [wScriptByte], a
 	ret
 
@@ -561,7 +561,7 @@ Script_movemap:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
-	ld a, $0e
+	ld a, script_0e
 	ld [wScriptByte], a
 	ret
 
@@ -589,7 +589,7 @@ Script_move:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 ; Next command
-	ld a, $10
+	ld a, script_10
 	ld [wScriptByte], a
 	xor a
 	ldh [hSimulatedJoypadState], a
@@ -609,7 +609,7 @@ Script_11:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 ; move to next script
-	ld a, $12
+	ld a, script_12
 	ld [wScriptByte], a
 	ret
 
@@ -778,9 +778,9 @@ Script_18:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 	ld a, [wScriptPos]
-	ld [wdcd3], a
+	ld [wSavedScriptPos], a
 	ld a, [wScriptPos + 1]
-	ld [wdcd3 + 1], a
+	ld [wSavedScriptPos + 1], a
 	ld a, [wMovementPointer]
 	ld [wScriptPos], a
 	ld a, [wMovementPointer + 1]
@@ -790,7 +790,7 @@ Script_18:
 	ld a, $b
 	ldh [hScriptBank], a
 ; move to next script
-	ld a, $19
+	ld a, script_19
 	ld [wScriptByte], a
 	ret
 
@@ -831,14 +831,14 @@ Script_19:
 	ld [de], a
 
 asm_00b_4734:
-	ld a, $19
+	ld a, script_19
 	ld [wScriptByte], a
 	ret
 
 asm_00b_473a:
-	ld a, [wdcd3]
+	ld a, [wSavedScriptPos]
 	ld [wScriptPos], a
-	ld a, [wdcd3 + 1]
+	ld a, [wSavedScriptPos + 1]
 	ld [wScriptPos + 1], a
 	ld a, [wdcad]
 	ldh [hScriptBank], a
@@ -1278,7 +1278,7 @@ asm_00b_49f0:
 	ld [hl], LOW(MovementData_00b_4143)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4143)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1287,7 +1287,7 @@ asm_00b_49fe:
 	ld [hl], LOW(MovementData_00b_414b)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_414b)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1296,7 +1296,7 @@ asm_00b_4a0c:
 	ld [hl], LOW(MovementData_00b_418e)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_418e)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1617,7 +1617,7 @@ asm_00b_4c30:
 	ld [hl], LOW(MovementData_00b_414e)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_414e)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1626,7 +1626,7 @@ asm_00b_4c3e:
 	ld [hl], LOW(MovementData_00b_4151)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4151)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1635,7 +1635,7 @@ asm_00b_4c4c:
 	ld [hl], LOW(MovementData_00b_4154)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4154)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1661,7 +1661,7 @@ asm_00b_4c74:
 	ld [hl], LOW(MovementData_00b_4158)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_4158)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1670,7 +1670,7 @@ asm_00b_4c82:
 	ld [hl], LOW(MovementData_00b_414b)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_414b)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1679,7 +1679,7 @@ asm_00b_4c90:
 	ld [hl], LOW(MovementData_00b_418e)
 	inc hl
 	ld [hl], HIGH(MovementData_00b_418e)
-	ld a, $25
+	ld a, script_25
 	ld [wScriptByte], a
 	ret
 
@@ -1705,7 +1705,15 @@ Script_34:
 	ret
 
 Script_35:
-	dr $2ccc5, $2ccde
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd9f2], a
+	ld a, $59
+	call PlaySound
+	farcall Func_039_40a0
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_36:
 	ld a, BGM_TOWN1
@@ -1856,13 +1864,50 @@ Func_00b_4dc5:
 	ret
 
 Script_38:
-	dr $2cdea, $2cdf5
+	farcall LoadWildMon
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_39:
-	dr $2cdf5, $2ce0d
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wMovementPointer], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wMovementPointer + 1], a
+	ld a, $3A
+	ld [wScriptByte], a
+	ret
 
 Script_3a:
-	dr $2ce0d, $2ce39
+	ldh a, [hFadeFrameCounter]
+	and $01
+	ret nz
+	ld a, [wMovementPointer]
+	ld l, a
+	ld a, [wMovementPointer + 1]
+	ld h, a
+	ld a, [hl]
+	cp $88
+	jr nz, .asm_4e24
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_4e24
+	ldh a, [hSCY]
+	add [hl]
+	ldh [hSCY], a
+	inc hl
+	ldh a, [hSCX]
+	add [hl]
+	ldh [hSCX], a
+	inc hl
+	ld a, l
+	ld [wMovementPointer], a
+	ld a, h
+	ld [wMovementPointer + 1], a
+	ret
 
 Script_3b: ; start a battle?
 	call GetScriptByte
@@ -1919,29 +1964,323 @@ Script_3b: ; start a battle?
 	ret
 
 Script_3c:
-	dr $2cea0, $2cede
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld e, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	ld a, [wMoney]
+	and a
+	jr nz, .asm_4ed1
+	ld a, [wMoney + 1]
+	cp d
+	jr z, .asm_4ebe
+	jr nc, .asm_4ed1
+	jr .asm_4ec4
+.asm_4ebe
+	ld a, [wMoney + 2]
+	cp e
+	jr nc, .asm_4ed1
+.asm_4ec4
+	ld a, [wEventFlags + 3]
+	set 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_4ed1
+	ld a, [wEventFlags + 3]
+	res 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_3d:
-	dr $2cede, $2cf2f
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld e, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	ld a, [wMoney]
+	and a
+	jr nz, .asm_4f06
+	ld a, [wMoney]
+	and a
+	jr nz, .asm_4f06
+	ld a, [wMoney + 1]
+	cp d
+	jr z, .asm_4f00
+	jr c, .asm_4f21
+.asm_4f00
+	ld a, [wMoney + 2]
+	cp e
+	jr c, .asm_4f21
+.asm_4f06
+	ld a, [wMoney + 2]
+	sub e
+	ld [wMoney + 2], a
+	ld a, [wMoney + 1]
+	sbc d
+	ld [wMoney + 1], a
+	ld a, [wMoney]
+	sbc $00
+	ld [wMoney], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_4f21
+	xor a
+	ld [wMoney + 2], a
+	ld [wMoney + 1], a
+	ld [wMoney], a
+	ld [wScriptByte], a
+	ret
 
 Script_3e:
-	dr $2cf2f, $2cf48
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_3f:
-	dr $2cf48, $2cf99
+	ld c, $00
+	ld a, [wEventFlags + 7]
+	bit 4, a
+	jr z, .asm_4f52
+	inc c
+.asm_4f52
+	ld a, [wEventFlags + 7]
+	bit 5, a
+	jr z, .asm_4f5a
+	inc c
+.asm_4f5a
+	ld a, [wEventFlags + 7]
+	bit 6, a
+	jr z, .asm_4f62
+	inc c
+.asm_4f62
+	ld a, [wEventFlags + 7]
+	bit 7, a
+	jr z, .asm_4f6a
+	inc c
+.asm_4f6a
+	ld a, [wEventFlags + 8]
+	bit 0, a
+	jr z, .asm_4f72
+	inc c
+.asm_4f72
+	ld a, [wEventFlags + 8]
+	bit 1, a
+	jr z, .asm_4f7a
+	inc c
+.asm_4f7a
+	ld a, c
+	cp $06
+	jr c, .asm_4f8c
+	ld a, [wEventFlags + 8]
+	set 2, a
+	ld [wEventFlags + 8], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_4f8c
+	ld a, [wEventFlags + 8]
+	res 2, a
+	ld [wEventFlags + 8], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_40:
-	dr $2cf99, $2cfb4
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld hl, wda00
+	ld de, $000C
+.asm_4fa5
+	dec a
+	jr z, .asm_4fab
+	add hl, de
+	jr .asm_4fa5
+.asm_4fab
+	ld a, [hl]
+	ld [wdce5], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_41:
-	dr $2cfb4, $2cfe7
+	ld bc, wcd20
+.asm_4fb7
+	ld hl, $0002
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .asm_4fd4
+	ld hl, $000D
+	add hl, bc
+	ld [hl], $01
+	ld hl, $0005
+	add hl, bc
+	ld [hl], $00
+	xor a
+	ld [wScriptByte], a
+	push bc
+	call Func_06f8
+	pop bc
+.asm_4fd4
+	ld hl, Bankswitch
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $E0
+	jr c, .asm_4fb7
+	xor a
+	ld [wScriptByte], a
+	call DelayFrame
+	ret
 
 Script_42:
-	dr $2cfe7, $2d02c
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld hl, wda00
+	ld de, $000C
+.asm_4ff3
+	dec a
+	jr z, .asm_4ff9
+	add hl, de
+	jr .asm_4ff3
+.asm_4ff9
+	ld a, [hl]
+	swap a
+	sla a
+	ld c, a
+	ld b, HIGH(wcd00)
+	ld a, [bc]
+	sub $10
+	srl a
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ld a, [hFFAB]
+	add e
+	inc hl
+	inc hl
+	inc hl
+	ld [hld], a
+	inc bc
+	ld a, [bc]
+	sub $08
+	srl a
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ld a, [hFFAA]
+	add e
+	ld [hli], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_43:
-	dr $2d02c, $2d0cd
+	call DelayFrame
+	ld bc, wPaletteBuffer
+	xor a
+	ldh [hPaletteFadeState], a
+	ldh [hFadeFrameCounter], a
+	call FadeInPalette2
+	call Func_00b_605c
+	call DelayFrame
+	call Func_00b_603d
+	call ClearBGMap0
+	call DelayFrame
+	call Func_00b_604e
+	ld hl, Palette_00b_508d
+	call CopyBackgroundPalettes
+	ld a, $00
+	ld [wVisibleObjects], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
+Func_00b_505c:
+	di
+	ld a, $01
+	ldh [rVBK], a
+	ld hl, $9800
+	ld bc, $0400
+.asm_5067
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_5067
+	ld a, $01
+	ld [hli], a
+	dec bc
+	ld a, c
+	or b
+	jr nz, .asm_5067
+	xor a
+	ldh [rVBK], a
+	ld hl, $9800
+	ld bc, $0400
+.asm_507e
+	ldh a, [rSTAT]
+	bit 1, a
+	jr nz, .asm_507e
+	xor a
+	ld [hli], a
+	dec bc
+	ld a, c
+	or b
+	jr nz, .asm_507e
+	ei
+	ret
+
+Palette_00b_508d:
+	RGB 31, 31, 31
+	RGB 30, 25, 0
+	RGB 29, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 18, 18
+	RGB 15, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Script_44:
 	xor a
 	ld [wPlayerMapX], a
@@ -1950,13 +2289,73 @@ Script_44:
 	ret
 
 Script_45:
-	dr $2d0d8, $2d118
+	call DelayFrame
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd0f1], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld c, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld e, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld h, a
+	pop af
+	ld l, a
+	call Func_134c
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_46:
-	dr $2d118, $2d141
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld e, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	ld a, [wMoney + 2]
+	add e
+	ld [wMoney + 2], a
+	ld a, [wMoney + 1]
+	adc d
+	ld [wMoney + 1], a
+	ld a, [wMoney]
+	adc $00
+	ld [wMoney], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_47:
-	dr $2d141, $2d16b
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wTargetMode], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ldh [hMapNumber], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ldh [hWarpNumber], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ldh [hFFD5], a
+	ld a, $01
+	ldh [hFade], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_48:
 	ld a, SFX_1a
@@ -1974,15 +2373,131 @@ Script_48:
 	ld [wScriptByte], a
 	ret
 
-; TODO: unreferenced data block, classify type
+; list pointers indexed by wd1f4; each -> a wram (id,count) list searched by Script_4d/Script_59
 unk_00b_5192:
 	dw wd300, wddb0, wd284
 
 Script_49:
-	dr $2d198, $2d235
+	ld a, [wcd20]
+	sub $10
+	ld [wd0f9], a
+	ld a, [wcd21]
+	sub $08
+	ld [wd3f9], a
+	ld a, [wcd23]
+	cp $00
+	jr z, .asm_51d5
+	cp $01
+	jr z, .asm_51cb
+	cp $02
+	jr z, .asm_51c1
+	ld a, [wd3f9]
+	add $10
+	ld [wd3f9], a
+	jr .asm_51dd
+.asm_51c1
+	ld a, [wd3f9]
+	sub $10
+	ld [wd3f9], a
+	jr .asm_51dd
+.asm_51cb
+	ld a, [wd0f9]
+	sub $10
+	ld [wd0f9], a
+	jr .asm_51dd
+.asm_51d5
+	ld a, [wd0f9]
+	add $10
+	ld [wd0f9], a
+.asm_51dd
+	ld a, [wd0f9]
+	srl a
+	srl a
+	srl a
+	ld l, a
+	ld a, [wd3f9]
+	srl a
+	srl a
+	srl a
+	ld h, a
+	call .asm_5201
+	ld a, l
+	ld [wd083], a
+	ld a, h
+	ld [wd083 + 1], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5201
+	ld a, [wd0ba]
+	ld c, a
+	ld a, [wd0bb]
+	ld b, a
+	ld e, h
+	ld a, l
+	add a
+	add a
+	add a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	ld d, $00
+	add hl, bc
+	bit 5, l
+	jr z, .asm_5225
+	add hl, de
+	bit 5, l
+	jr nz, .asm_522e
+	ld a, l
+	sub $20
+	ld l, a
+	jr .asm_522e
+.asm_5225
+	add hl, de
+	bit 5, l
+	jr z, .asm_522e
+	ld a, l
+	sub $20
+	ld l, a
+.asm_522e
+	ld a, h
+	and $03
+	or $98
+	ld h, a
+	ret
 
 Script_4a:
-	dr $2d235, $2d273
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wdcac], a
+	ld a, $01
+	ld [wd0ef], a
+	call Func_00b_5273
+	ld hl, wd1a0
+	ld [hl], $10
+	inc hl
+	ld [hl], $50
+	inc hl
+	ld a, [wdcac]
+	and $0F
+	add $0F
+	ld [hli], a
+	ld [hl], $07
+	ld hl, wd1a8
+	ld [hl], $10
+	inc hl
+	ld [hl], $48
+	inc hl
+	ld a, [wScriptByte]
+	swap a
+	and $0F
+	add $0F
+	ld [hli], a
+	ld [hl], $05
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Func_00b_5273::
 	ld hl, GFX_00b_698e
@@ -2024,61 +2539,563 @@ Func_00b_5273::
 	ret
 
 Script_4b:
-	dr $2d2c1, $2d2e1
+	xor a
+	ld [wd0ef], a
+	ld [wdcac], a
+	ld hl, wd1a0
+	call .asm_52d9
+	ld hl, wd1a8
+	call .asm_52d9
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_52d9
+	ld c, $08
+	xor a
+.asm_52dc
+	ld [hli], a
+	dec c
+	jr nz, .asm_52dc
+	ret
 
 Script_4c:
-	dr $2d2e1, $2d2f0
+	ld a, $03
+	ld [wTargetMode], a
+	ld a, $01
+	ld [hFade], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_4d:
-	dr $2d2f0, $2d332
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd1f4], a
+	ld de, unk_00b_5192
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wd1fe], a
+	ld e, a
+	ld a, [hli]
+	ld [wd1ff], a
+	ld d, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	ld l, e
+	ld h, d
+.asm_5314
+	ld a, [hl]
+	and a
+	jr z, .asm_532d
+	cp b
+	jr z, .asm_531f
+	inc hl
+	inc hl
+	jr .asm_5314
+.asm_531f
+	inc hl
+	dec [hl]
+	ld a, [hld]
+	and a
+	jr nz, .asm_532d
+	ld [hl], $00
+	farcall Func_024_605d
+.asm_532d
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_4e:
-	dr $2d332, $2d36a
+	call GetSpriteIDByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wMovementPointer], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wMovementPointer + 1], a
+	ld a, [wScriptPos]
+	ld [wSavedScriptPos], a
+	ld a, [wScriptPos + 1]
+	ld [wSavedScriptPos + 1], a
+	ld a, [wMovementPointer]
+	ld [wScriptPos], a
+	ld a, [wMovementPointer + 1]
+	ld [wScriptPos + 1], a
+	ldh a, [hScriptBank]
+	ld [wdcad], a
+	ld a, script_19
+	ld [wScriptByte], a
+	ret
 
 Script_4f:
-	dr $2d36a, $2d3ad
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	ld hl, wPartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .asm_538f
+	ld e, $00
+	ld hl, wPartyMons
+.asm_5381
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [hl]
+	cp d
+	jr z, .asm_539c
+	inc e
+	add hl, bc
+	ld a, l
+	cp $80
+	jr c, .asm_5381
+.asm_538f
+	ld a, [wEventFlags + 3]
+	res 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_539c
+	ld a, [wEventFlags + 3]
+	set 3, a
+	ld [wEventFlags + 3], a
+	ld a, e
+	ld [wSelectedOption], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_50:
-	dr $2d3ad, $2d415
+	call GetPartyMonPtr
+	push hl
+	ld hl, MON_ITEM
+	add hl, bc
+	ld a, [hli]
+	and a
+	call nz, .asm_53cf
+	ld a, [hl]
+	and a
+	call nz, .asm_53cf
+	pop hl
+	ld e, PARTYMON_STRUCT_LENGTH
+	xor a
+.asm_53c3
+	ld [hli], a
+	dec e
+	jr nz, .asm_53c3
+	call .asm_53e5
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_53cf
+	push hl
+	ld [wd9f3], a
+	ld a, $01
+	ld [wd1f4], a
+	ld a, $01
+	ld [wd9d3], a
+	farcall asm_039_479f
+	pop hl
+	ret
+.asm_53e5
+	ld bc, wPartyMons
+.asm_53e8
+	ld hl, MON_SPECIES
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr nz, .asm_5409
+	push bc
+	ld hl, $0016
+	add hl, bc
+	ld e, PARTYMON_STRUCT_LENGTH
+.asm_53f7
+	ld a, [hli]
+	ld [bc], a
+	inc bc
+	dec e
+	jr nz, .asm_53f7
+	pop bc
+	ld hl, $0016
+	add hl, bc
+	ld e, PARTYMON_STRUCT_LENGTH
+	xor a
+.asm_5405
+	ld [hli], a
+	dec e
+	jr nz, .asm_5405
+.asm_5409
+	ld hl, $0016
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $60
+	jr c, .asm_53e8
+	ret
 
 Script_51:
-	dr $2d415, $2d45e
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd1f4], a
+	ld de, unk_00b_5192
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wd1fe], a
+	ld e, a
+	ld a, [hli]
+	ld [wd1ff], a
+	ld d, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	ld l, e
+	ld h, d
+.asm_5439
+	ld a, [hl]
+	cp b
+	jr z, .asm_5444
+	and a
+	jr z, .asm_5451
+	inc hl
+	inc hl
+	jr .asm_5439
+.asm_5444
+	ld a, [wEventFlags + 3]
+	set 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5451
+	ld a, [wEventFlags + 3]
+	res 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_52:
-	dr $2d45e, $2d46a
+	ld a, [wd0da]
+	inc a
+	ld [wd0da], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_53:
-	dr $2d46a, $2d48c
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ldh [hMapNumber], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ldh [hWarpNumber], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ldh [hMapGroup], a
+	ld a, $01
+	ld [hFade], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_54:
-	dr $2d48c, $2d4c8
+	call GetSpriteIDByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wMovementPointer], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wMovementPointer + 1], a
+	ld a, [wScriptPos]
+	ld [wSavedScriptPos], a
+	ld a, [wScriptPos + 1]
+	ld [wSavedScriptPos + 1], a
+	ld a, [wMovementPointer]
+	ld [wScriptPos], a
+	ld a, [wMovementPointer + 1]
+	ld [wScriptPos + 1], a
+	ldh a, [hScriptBank]
+	ld [wdcad], a
+	ld a, BANK(Script_55)
+	ldh [hScriptBank], a
+	ld a, $55
+	ld [wScriptByte], a
+	ret
 
 Script_55:
-	dr $2d4c8, $2d506
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wSelectedObjectOffset]
+	ld c, a
+	ld b, HIGH(wcd00)
+	ld hl, $0000
+	add hl, bc
+	pop af
+	cp $88
+	jr z, .asm_54f0
+	add [hl]
+	ld [hli], a
+	ld a, [wScriptByte]
+	ld b, a
+	ld a, [hl]
+	sub b
+	ld [hl], a
+	ld a, $55
+	ld [wScriptByte], a
+	ret
+.asm_54f0
+	ld a, [wSavedScriptPos]
+	ld [wScriptPos], a
+	ld a, [wSavedScriptPos + 1]
+	ld [wScriptPos + 1], a
+	ld a, [wdcad]
+	ldh [hScriptBank], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_56:
-	dr $2d506, $2d52d
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	ld a, [wPlayerSpriteID]
+	cp b
+	jr z, .asm_5520
+	ld a, [wEventFlags + 3]
+	res 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5520
+	ld a, [wEventFlags + 3]
+	set 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_57:
-	dr $2d52d, $2d537
+	ld a, $01
+	ld [wd0f0], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_58:
-	dr $2d537, $2d562
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wPlayerSpriteID], a
+	and a
+	jr z, .asm_554a
+	ld a, $43
+	ld [wd0e4], a
+	jr .asm_554e
+.asm_554a
+	xor a
+	ld [wd0e4], a
+.asm_554e
+	xor a
+	ld [wPlayerAnimFrame], a
+	ld a, $01
+	ld [hFFAC], a
+	ld [wdcd0], a
+	xor a
+	ld [wScriptByte], a
+	call UpdatePlayerAnim_Banked
+	ret
 
 Script_59:
-	dr $2d562, $2d5b7
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd1f4], a
+	ld de, unk_00b_5192
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wd1fe], a
+	ld e, a
+	ld a, [hli]
+	ld [wd1ff], a
+	ld d, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld c, a
+	ld l, e
+	ld h, d
+.asm_558d
+	ld a, [hl]
+	cp b
+	jr z, .asm_5598
+	and a
+	jr z, .asm_55aa
+	inc hl
+	inc hl
+	jr .asm_558d
+.asm_5598
+	inc hl
+	ld a, [hl]
+	cp c
+	jr c, .asm_55aa
+	ld a, [wEventFlags + 3]
+	set 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_55aa
+	ld a, [wEventFlags + 3]
+	res 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_5a:
-	dr $2d5b7, $2d5fe
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd1f4], a
+	ld de, unk_00b_5192
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wd1fe], a
+	ld e, a
+	ld a, [hli]
+	ld [wd1ff], a
+	ld d, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld c, a
+	ld l, e
+	ld h, d
+.asm_55e2
+	ld a, [hl]
+	cp b
+	jr z, .asm_55ea
+	inc hl
+	inc hl
+	jr .asm_55e2
+.asm_55ea
+	inc hl
+	ld a, [hl]
+	sub c
+	ld [hld], a
+	and a
+	jr nz, .asm_55f9
+	ld [hl], $00
+	farcall Func_024_605d
+.asm_55f9
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_5b:
-	dr $2d5fe, $2d630
+	ld a, [wPlayerFacing]
+	cp $03
+	jr z, .asm_5617
+	ld a, [wScriptPos]
+	add $02
+	ld [wScriptPos], a
+	ld a, [wScriptPos + 1]
+	adc $00
+	ld [wScriptPos + 1], a
+	jr .asm_562b
+.asm_5617
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+.asm_562b
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_5c:
-	dr $2d630, $2d66a
+	call Func_00b_4dc5
+	call Func_00b_4dc5
+	ld bc, wPartyMons
+.asm_5639
+	ld hl, MON_SPECIES
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .asm_565a
+	ld hl, MON_HP + 1
+	add hl, bc
+	ld a, [hld]
+	and a
+	jr nz, .asm_564e
+	ld a, [hl]
+	cp $02
+	jr c, .asm_565a
+.asm_564e
+	ld hl, MON_HP
+	add hl, bc
+	ld a, $01
+	ld [hli], a
+	ld a, $00
+	ld [hli], a
+	jr .asm_5665
+.asm_565a
+	ld hl, $0016
+	add hl, bc
+	push hl
+	pop bc
+	ld a, l
+	cp $80
+	jr c, .asm_5639
+.asm_5665
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_5d:
-	dr $2d66a, $2d69a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wPartyScanType], a
+	farcall ScanParty
+	ld a, [wPartyScanType]
+	cp $FF
+	jr z, .asm_568d
+	ld a, [wEventFlags + 3]
+	res 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_568d
+	ld a, [wEventFlags + 3]
+	set 3, a
+	ld [wEventFlags + 3], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_5e:
 ; Follower
@@ -2090,79 +3107,1301 @@ Script_5e:
 	ret
 
 Script_5f:
-	dr $2d6a8, $2d895
+	ld a, [wPlayerScreenX]
+	ld e, a
+	ld a, [wcd21]
+	sub e
+	jp z, .asm_5739
+	cp $10
+	jr z, .asm_56d3
+	cp $20
+	jr z, .asm_56d3
+	ld a, [wcd20]
+	ld d, a
+	ld a, [wVisibleObjects]
+	sub d
+	jp z, .asm_56eb
+	cp $10
+	jp z, .asm_5705
+	cp $20
+	jp z, .asm_571f
+	jp .asm_5837
+.asm_56d3
+	ld a, [wcd20]
+	ld d, a
+	ld a, [wVisibleObjects]
+	sub d
+	jp z, .asm_5794
+	cp $10
+	jp z, .asm_577a
+	cp $20
+	jp z, .asm_5760
+	jp .asm_5837
+.asm_56eb
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_57ae
+	cp $01
+	jp z, .asm_57b2
+	cp $02
+	jp z, .asm_57b6
+	cp $03
+	jp z, .asm_57ba
+	jp .asm_5837
+.asm_5705
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_57be
+	cp $01
+	jp z, .asm_57c2
+	cp $02
+	jp z, .asm_57c6
+	cp $03
+	jp z, .asm_57ca
+	jp .asm_5837
+.asm_571f
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_57ce
+	cp $01
+	jp z, .asm_57d2
+	cp $02
+	jp z, .asm_57d6
+	cp $03
+	jp z, .asm_57da
+	jp .asm_5837
+.asm_5739
+	ld a, [wVisibleObjects]
+	ld d, a
+	ld a, [wcd20]
+	sub d
+	cp $10
+	jp z, .asm_5837
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_57de
+	cp $01
+	jp z, .asm_57e2
+	cp $02
+	jp z, .asm_57e6
+	cp $03
+	jp z, .asm_57ea
+	jp .asm_5837
+.asm_5760
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_57ee
+	cp $01
+	jp z, .asm_57f2
+	cp $02
+	jp z, .asm_57f6
+	cp $03
+	jp z, .asm_57fa
+	jp .asm_5837
+.asm_577a
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_57fe
+	cp $01
+	jp z, .asm_5802
+	cp $02
+	jp z, .asm_5806
+	cp $03
+	jp z, .asm_580a
+	jp .asm_5837
+.asm_5794
+	ld a, [wcd23]
+	cp $00
+	jp z, .asm_580e
+	cp $01
+	jp z, .asm_5812
+	cp $02
+	jp z, .asm_5816
+	cp $03
+	jp z, .asm_581a
+	jp .asm_5837
+.asm_57ae
+	ld a, $00
+	jr .asm_581c
+.asm_57b2
+	ld a, $01
+	jr .asm_581c
+.asm_57b6
+	ld a, $02
+	jr .asm_581c
+.asm_57ba
+	ld a, $03
+	jr .asm_581c
+.asm_57be
+	ld a, $04
+	jr .asm_581c
+.asm_57c2
+	ld a, $05
+	jr .asm_581c
+.asm_57c6
+	ld a, $06
+	jr .asm_581c
+.asm_57ca
+	ld a, $07
+	jr .asm_581c
+.asm_57ce
+	ld a, $08
+	jr .asm_581c
+.asm_57d2
+	ld a, $09
+	jr .asm_581c
+.asm_57d6
+	ld a, $0A
+	jr .asm_581c
+.asm_57da
+	ld a, $0B
+	jr .asm_581c
+.asm_57de
+	ld a, $0C
+	jr .asm_581c
+.asm_57e2
+	ld a, $0D
+	jr .asm_581c
+.asm_57e6
+	ld a, $0E
+	jr .asm_581c
+.asm_57ea
+	ld a, $0F
+	jr .asm_581c
+.asm_57ee
+	ld a, $10
+	jr .asm_581c
+.asm_57f2
+	ld a, $11
+	jr .asm_581c
+.asm_57f6
+	ld a, $12
+	jr .asm_581c
+.asm_57fa
+	ld a, $13
+	jr .asm_581c
+.asm_57fe
+	ld a, $14
+	jr .asm_581c
+.asm_5802
+	ld a, $15
+	jr .asm_581c
+.asm_5806
+	ld a, $16
+	jr .asm_581c
+.asm_580a
+	ld a, $17
+	jr .asm_581c
+.asm_580e
+	ld a, $18
+	jr .asm_581c
+.asm_5812
+	ld a, $19
+	jr .asm_581c
+.asm_5816
+	ld a, $1A
+	jr .asm_581c
+.asm_581a
+	ld a, $1B
+.asm_581c
+	ld de, .Pointers
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld [wMovementPointer], a
+	ld a, h
+	ld [wMovementPointer + 1], a
+	ld a, $60
+	ld [wScriptByte], a
+	xor a
+	ldh [hFFDD], a
+	ret
+.asm_5837
+	xor a
+	ld [wScriptByte], a
+	ret
+
+.Pointers
+	dw .move_5874
+	dw .move_5874
+	dw .move_5874
+	dw .move_5874
+	dw .move_5877
+	dw .move_5877
+	dw .move_5877
+	dw .move_5877
+	dw .move_587c
+	dw .move_587c
+	dw .move_587c
+	dw .move_587c
+	dw .move_5881
+	dw .move_5881
+	dw .move_5881
+	dw .move_5881
+	dw .move_5888
+	dw .move_5888
+	dw .move_5888
+	dw .move_5888
+	dw .move_588d
+	dw .move_588d
+	dw .move_588d
+	dw .move_588d
+	dw .move_5892
+	dw .move_5892
+	dw .move_5892
+	dw .move_5892
+.move_5874
+	db $00, $03, $ff
+.move_5877
+	db $00, $00, $03, $03, $ff
+.move_587c
+	db $00, $00, $00, $03, $ff
+.move_5881
+	db $02, $00, $00, $00, $00, $03, $ff
+.move_5888
+	db $00, $00, $00, $02, $ff
+.move_588d
+	db $00, $00, $02, $02, $ff
+.move_5892
+	db $00, $02, $ff
 
 Script_60:
-	dr $2d895, $2d8a2
+	call Func_00b_6134
+	call Func_00b_6168
+	call UpdatePlayerAnim_Banked
+	call Func_00b_610b
+	ret
 
 Script_61:
-	dr $2d8a2, $2d8ad
+	farcall LoadScriptedPartyMon
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_62:
-	dr $2d8ad, $2d8cd
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wdcf3], a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wdcf4], a
+	call Func_04f2
+	xor a
+	ld [wScriptByte], a
+	ld [wdcf3], a
+	ld [wdcf4], a
+	ret
 
 Script_63:
-	dr $2d8cd, $2d90a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	ld a, [wd9dd]
+	sub d
+	jr z, .asm_58f1
+	ld hl, wScriptPos
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, $0002
+	add hl, de
+	ld a, l
+	ld [wScriptPos], a
+	ld a, h
+	ld [wScriptPos + 1], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_58f1
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_64:
-	dr $2d90a, $2d929
+	call .asm_5917
+	ld a, $01
+	ld [wdcbb], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5917
+	ld de, wPartyMons
+	ld hl, wde00
+	ld bc, PARTYMON_STRUCT_LENGTH
+.asm_5920
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	ld a, c
+	or b
+	jr nz, .asm_5920
+	ret
 
 Script_65:
-	dr $2d929, $2d93a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wd9dd], a
+	call Func_00b_64b2
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_66:
-	dr $2d93a, $2d95e
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld e, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld d, a
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [hScriptBank], a
+	ld a, d
+	ld [wScriptPos + 1], a
+	ld a, e
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_67:
-	dr $2d95e, $2d999
+	push hl
+	push bc
+	push de
+	ld a, [wPlayerScreenX]
+	ld l, a
+	ld a, [wVisibleObjects]
+	ld h, a
+	ld a, [wcd21]
+	ld c, a
+	ld a, [wcd20]
+	ld b, a
+	ld a, l
+	ld [wcd21], a
+	ld a, h
+	ld [wcd20], a
+	ld a, c
+	ld [wPlayerScreenX], a
+	ld a, b
+	ld [wVisibleObjects], a
+	ld a, [wPlayerFacing]
+	ld d, a
+	ld a, [wcd23]
+	ld e, a
+	ld a, e
+	ld [wPlayerFacing], a
+	ld a, d
+	ld [wcd23], a
+	pop de
+	pop bc
+	pop hl
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_68:
-	dr $2d999, $2da09
+	ld bc, wPartyMons
+	ld hl, MON_MOVE1ID
+	add hl, bc
+	ld a, [hl]
+	add $04
+	ld [hl], a
+	cp $89
+	jr z, Func_00b_5a04
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	ld hl, MON_MOVE2ID
+	add hl, bc
+	ld a, [hl]
+	add $04
+	ld [hl], a
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	ld hl, MON_MOVE3ID
+	add hl, bc
+	ld a, [hl]
+	add $04
+	ld [hl], a
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	ld hl, MON_MOVE4ID
+	add hl, bc
+	ld a, [hl]
+	add $04
+	ld [hl], a
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	jr Func_00b_5a04
+
+Func_00b_59da:
+	ld bc, wPartyMons
+	ld hl, MON_MOVE1ID
+	add hl, bc
+	ld [hl], $01
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $02
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $03
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $04
+	inc hl
+	ld [hl], $0C
+	inc hl
+	ld [hl], $0C
+Func_00b_5a04:
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_69:
-	dr $2da09, $2da18
+	xor a
+	ldh [hFFD6], a
+	ldh [hSimulatedJoypadState], a
+	ld [wd0f0], a
+	call Func_080a
+	call Func_19b6
+	ret
 
 Script_6a:
-	dr $2da18, $2dabd
+	ld a, [wEventFlags + 9]
+	res 5, a
+	ld [wEventFlags + 9], a
+	ld a, [wEventFlags + 9]
+	res 6, a
+	ld [wEventFlags + 9], a
+	ld a, [wEventFlags + 9]
+	res 7, a
+	ld [wEventFlags + 9], a
+	ld a, [wEventFlags + $A]
+	res 0, a
+	ld [wEventFlags + $A], a
+	ld a, [wEventFlags + $A]
+	res 1, a
+	ld [wEventFlags + $A], a
+	ld a, [wdcfd]
+	inc a
+	and $0F
+	ld [wdcfd], a
+	ld de, .WarpFlagTable
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	inc hl
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld [wdcfe], a
+	call .asm_5aa4
+	xor a
+	ld [wScriptByte], a
+	ret
+
+.WarpFlagTable:
+	dw wEventFlags + 9
+	db $05, $01
+	dw wEventFlags + 9
+	db $06, $02
+	dw wEventFlags + $A
+	db $01, $05
+	dw wEventFlags + $A
+	db $00, $04
+	dw wEventFlags + 9
+	db $07, $03
+	dw wEventFlags + 9
+	db $05, $01
+	dw wEventFlags + $A
+	db $00, $04
+	dw wEventFlags + $A
+	db $01, $05
+	dw wEventFlags + 9
+	db $06, $02
+	dw wEventFlags + 9
+	db $05, $01
+	dw wEventFlags + $A
+	db $00, $04
+	dw wEventFlags + 9
+	db $07, $03
+	dw wEventFlags + $A
+	db $01, $05
+	dw wEventFlags + 9
+	db $05, $01
+	dw wEventFlags + $A
+	db $00, $04
+	dw wEventFlags + 9
+	db $06, $02
+.asm_5aa4
+	ld a, [de]
+	ld l, a
+	ld a, b
+	and a
+	jr z, .asm_5aaf
+.asm_5aaa
+	rrc l
+	dec a
+	jr nz, .asm_5aaa
+.asm_5aaf
+	set 0, l
+	ld a, b
+	and a
+	jr z, .asm_5aba
+.asm_5ab5
+	rlc l
+	dec a
+	jr nz, .asm_5ab5
+.asm_5aba
+	ld a, l
+	ld [de], a
+	ret
 
 Script_6b:
-	dr $2dabd, $2dae1
+	ld a, MAP_POWER_PLANT_3F
+	ldh [hMapNumber], a
+	ld a, [wdcfe]
+	ldh [hWarpNumber], a
+	xor a
+	ld [wdcea], a
+	ld a, $09
+	ld [wd0e4], a
+	ld a, $04
+	ld [wd9dd], a
+	call Func_00b_64b2
+	ld a, $01
+	ld [hFade], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_6c:
-	dr $2dae1, $2daf7
+	ld a, $02
+	ld [wdcea], a
+	xor a
+	ld [wd0e4], a
+	ld a, $04
+	ld [wd9dd], a
+	call Func_00b_64b2
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_6d:
-	dr $2daf7, $2db76
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld b, a
+	ld c, $00
+	ld a, [wEventFlags + $10]
+	bit 0, a
+	jr z, .asm_5b08
+	inc c
+.asm_5b08
+	ld a, [wEventFlags + $10]
+	bit 1, a
+	jr z, .asm_5b10
+	inc c
+.asm_5b10
+	ld a, [wEventFlags + $10]
+	bit 2, a
+	jr z, .asm_5b18
+	inc c
+.asm_5b18
+	ld a, [wEventFlags + $10]
+	bit 3, a
+	jr z, .asm_5b20
+	inc c
+.asm_5b20
+	ld a, [wEventFlags + $10]
+	bit 4, a
+	jr z, .asm_5b28
+	inc c
+.asm_5b28
+	ld a, [wEventFlags + $10]
+	bit 5, a
+	jr z, .asm_5b30
+	inc c
+.asm_5b30
+	ld a, [wEventFlags + $10]
+	bit 6, a
+	jr z, .asm_5b38
+	inc c
+.asm_5b38
+	ld a, [wEventFlags + $10]
+	bit 7, a
+	jr z, .asm_5b40
+	inc c
+.asm_5b40
+	ld a, c
+	sub b
+	cp $09
+	jr c, .asm_5b5d
+	ld hl, wScriptPos
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, $0002
+	add hl, de
+	ld a, l
+	ld [wScriptPos], a
+	ld a, h
+	ld [wScriptPos + 1], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5b5d
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_6e:
-	dr $2db76, $2ddb7
+	ld c, $00
+	ld a, [wEventFlags + $10]
+	bit 0, a
+	jr z, .asm_5b80
+	inc c
+.asm_5b80
+	ld a, [wEventFlags + $10]
+	bit 1, a
+	jr z, .asm_5b88
+	inc c
+.asm_5b88
+	ld a, [wEventFlags + $10]
+	bit 2, a
+	jr z, .asm_5b90
+	inc c
+.asm_5b90
+	ld a, [wEventFlags + $10]
+	bit 3, a
+	jr z, .asm_5b98
+	inc c
+.asm_5b98
+	ld a, [wEventFlags + $10]
+	bit 4, a
+	jr z, .asm_5ba0
+	inc c
+.asm_5ba0
+	ld a, [wEventFlags + $10]
+	bit 5, a
+	jr z, .asm_5ba8
+	inc c
+.asm_5ba8
+	ld a, [wEventFlags + $10]
+	bit 6, a
+	jr z, .asm_5bb0
+	inc c
+.asm_5bb0
+	ld a, [wEventFlags + $10]
+	bit 7, a
+	jr z, .asm_5bb8
+	inc c
+.asm_5bb8
+	ld a, c
+	and a
+	jp z, .asm_5be6
+	cp $01
+	jp z, .asm_5bff
+	cp $02
+	jp z, .asm_5c1e
+	cp $03
+	jp z, .asm_5c43
+	cp $04
+	jp z, .asm_5c6e
+	cp $05
+	jp z, .asm_5c9f
+	cp $06
+	jp z, .asm_5cd6
+	cp $07
+	jp z, .asm_5d1b
+	cp $08
+	jp z, .asm_5d66
+	ret
+.asm_5be6
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5bff
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5c1e
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5c43
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5c6e
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5c9f
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5cd6
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ld a, [wEventFlags + $F]
+	res 7, a
+	ld [wEventFlags + $F], a
+	ret
+.asm_5d1b
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ld a, [wEventFlags + $F]
+	res 7, a
+	ld [wEventFlags + $F], a
+	ret
+.asm_5d66
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ld a, [wEventFlags + $F]
+	set 7, a
+	ld [wEventFlags + $F], a
+	ret
 
 Script_6f:
-	dr $2ddb7, $2de8d
+	ld a, [wdce8]
+	and a
+	jr z, .asm_5dd6
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5dd6
+	xor a
+	ld [wScriptByte], a
+	ld [hFFD6], a
+	ld a, [wdcba]
+	ld [hScriptBank], a
+	ld a, $04
+	ldh [hTextSource], a
+	ld a, BANK(Text_01e_6ddb)
+	ldh [hTextSourceBank4], a
+	ld hl, Text_01e_6ddb
+	ld a, l
+	ld [wTextStart], a
+	ld a, h
+	ld [wTextStart + 1], a
+	call AdjustTextboxYPosition
+	ret
+
+	ld a, [wPlayerFacing]
+	and a
+	jr z, .asm_5e0e
+	cp $01
+	jr z, .asm_5e24
+	cp $02
+	jr z, .asm_5e40
+	cp $03
+	jr z, .asm_5e62
+	jr .asm_5e88
+.asm_5e0e
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	jr .asm_5e88
+.asm_5e24
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	jr .asm_5e88
+.asm_5e40
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	jr .asm_5e88
+.asm_5e62
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+.asm_5e88
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_70:
-	dr $2de8d, $2de9b
+	ld a, [wdcba]
+	ld [hScriptBank], a
+	xor a
+	ld [wScriptByte], a
+	ld [hFFD6], a
+	ret
 
 Script_71:
-	dr $2de9b, $2dea9
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [hMapGroup], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_72:
-	dr $2dea9, $2dee7
+	ld a, [wPlayerFacing]
+	and a
+	jr z, .asm_5ece
+	cp $01
+	jr z, .asm_5ec8
+	cp $02
+	jr z, .asm_5ec2
+	cp $03
+	jr z, .asm_5ebc
+	ret
+.asm_5ebc
+	call GetScriptByte
+	call GetScriptByte
+.asm_5ec2
+	call GetScriptByte
+	call GetScriptByte
+.asm_5ec8
+	call GetScriptByte
+	call GetScriptByte
+.asm_5ece
+	call GetScriptByte
+	ld a, [wScriptByte]
+	push af
+	call GetScriptByte
+	ld a, [wScriptByte]
+	ld [wScriptPos + 1], a
+	pop af
+	ld [wScriptPos], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_73:
-	dr $2dee7, $2df5e
+	ld a, [wPlayerFacing]
+	and a
+	jr z, .asm_5efa
+	cp $01
+	jr z, .asm_5f13
+	cp $02
+	jr z, .asm_5f2c
+	cp $03
+	jr z, .asm_5f45
+	ret
+.asm_5efa
+	ld a, [wVisibleObjects]
+	sub $10
+	ld [wcd20], a
+	ld a, [wPlayerScreenX]
+	ld [wcd21], a
+	ld a, [wPlayerFacing]
+	ld [wcd23], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5f13
+	ld a, [wVisibleObjects]
+	add $10
+	ld [wcd20], a
+	ld a, [wPlayerScreenX]
+	ld [wcd21], a
+	ld a, [wPlayerFacing]
+	ld [wcd23], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5f2c
+	ld a, [wPlayerScreenX]
+	add $10
+	ld [wcd21], a
+	ld a, [wVisibleObjects]
+	ld [wcd20], a
+	ld a, [wPlayerFacing]
+	ld [wcd23], a
+	xor a
+	ld [wScriptByte], a
+	ret
+.asm_5f45
+	ld a, [wPlayerScreenX]
+	sub $10
+	ld [wcd21], a
+	ld a, [wVisibleObjects]
+	ld [wcd20], a
+	ld a, [wPlayerFacing]
+	ld [wcd23], a
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_74:
-	dr $2df5e, $2df69
+	farcall WorldMap
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_75:
-	dr $2df69, $2dff6
+	xor a
+	ldh [hFFD6], a
+	ldh [hSimulatedJoypadState], a
+	ld [wd0f0], a
+	ld a, [wdcad]
+	ld [hScriptBank], a
+	call Func_13d5
+	call .asm_5f7e
+	ret
+.asm_5f7e
+	ld hl, wda00
+.asm_5f81
+	ldh a, [hFFAA]
+	ld d, a
+	ldh a, [hFFAB]
+	ld e, a
+	push hl
+	ld a, [hli]
+	cp $88
+	jr z, .asm_5ff4
+	cp $FF
+	jr nz, .asm_5fec
+	inc hl
+	ld a, d
+	cp $02
+	jr c, .asm_5f99
+	sub $02
+.asm_5f99
+	cp [hl]
+	jr nc, .asm_5fec
+	add $0C
+	cp [hl]
+	jr c, .asm_5fec
+	inc hl
+	ld a, e
+	cp $02
+	jr c, .asm_5fa9
+	sub $02
+.asm_5fa9
+	cp [hl]
+	jr nc, .asm_5fec
+	add $0B
+	cp [hl]
+	jr c, .asm_5fec
+	inc hl
+	ld a, [hli]
+	and a
+	jr nz, .asm_5fbb
+	inc hl
+	inc hl
+	inc hl
+	jr .asm_5fd6
+.asm_5fbb
+	push bc
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	ld a, [hli]
+	ld c, a
+	ld a, [de]
+	ld b, a
+	ld a, c
+	and a
+	jr z, .asm_5fcc
+.asm_5fc7
+	srl b
+	dec c
+	jr nz, .asm_5fc7
+.asm_5fcc
+	ld a, b
+	and $01
+	cp [hl]
+	jr z, .asm_5fd5
+	pop bc
+	jr .asm_5fec
+.asm_5fd5
+	pop bc
+.asm_5fd6
+	pop de
+	push de
+	call LoadObjectSprite
+	ld a, c
+	and a
+	jr z, .asm_5fe9
+	swap a
+	and $0F
+	srl a
+	pop hl
+	ld [hl], a
+	jr .asm_5fed
+.asm_5fe9
+	pop hl
+	jr .asm_5fed
+.asm_5fec
+	pop hl
+.asm_5fed
+	ld bc, $000C
+	add hl, bc
+	jp .asm_5f81
+.asm_5ff4
+	pop hl
+	ret
 
 Script_76:
-	dr $2dff6, $2e004
+	call GetScriptByte
+	ld a, [wScriptByte]
+	call PlaySound
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Script_77:
-	dr $2e004, $2e03d
+	ld a, [wPlayerScreenX]
+	ld e, a
+	ld a, [wcd21]
+	sub e
+	jr z, .asm_6020
+	cp $10
+	jr z, .asm_6019
+	ld a, $03
+	ld [wcd23], a
+	jr .asm_6038
+.asm_6019
+	ld a, $02
+	ld [wcd23], a
+	jr .asm_6038
+.asm_6020
+	ld a, [wVisibleObjects]
+	ld d, a
+	ld a, [wcd20]
+	sub d
+	cp $10
+	jr z, .asm_6033
+	ld a, $00
+	ld [wcd23], a
+	jr .asm_6038
+.asm_6033
+	ld a, $01
+	ld [wcd23], a
+.asm_6038
+	xor a
+	ld [wScriptByte], a
+	ret
 
 Func_00b_603d::
 	ld hl, wVirtualOAM
@@ -2328,6 +4567,8 @@ Func_00b_610b:
 	add e
 	ld [wcd32 + 1], a
 	ret
+
+Func_00b_6134:
 	ldh a, [hFFDD]
 	and a
 	ret nz
@@ -2356,6 +4597,8 @@ Func_00b_610b:
 	ldh [hFFDB], a
 	ld [wdceb], a
 	ret
+
+Func_00b_6168:
 	ldh a, [hFFDD]
 	and a
 	ret z
@@ -2874,27 +5117,27 @@ Func_00b_625c:
 	ret nc
 	inc [hl]
 	ret
-.asm_64b2
+Func_00b_64b2:
 	ld hl, wPartyMons
 .asm_64b5
 	ld a, [hl]
-	cp $51
+	cp MON_081
 	jr z, .asm_64e0
-	cp $75
+	cp MON_117
 	jr z, .asm_64e5
-	cp $6C
+	cp MON_108
 	jr z, .asm_64ea
-	cp $5B
+	cp MON_091
 	jr z, .asm_64ef
-	cp $63
+	cp MON_099
 	jr z, .asm_64f4
-	cp $91
+	cp MON_145
 	jr z, .asm_64f9
-	cp $90
+	cp MON_144
 	jr z, .asm_64fe
-	cp $7E
+	cp MON_126
 	jr z, .asm_6503
-	ld bc, $0016
+	ld bc, PARTYMON_STRUCT_LENGTH
 	add hl, bc
 	ld a, l
 	cp $80
@@ -2925,7 +5168,7 @@ Func_00b_625c:
 	ld de, wde9a
 .asm_6506
 	push hl
-	ld bc, $0016
+	ld bc, PARTYMON_STRUCT_LENGTH
 .asm_650a
 	ld a, [hli]
 	ld [de], a
@@ -2944,7 +5187,7 @@ Func_00b_625c:
 	ld h, [hl]
 	ld l, a
 	pop de
-	ld bc, $0016
+	ld bc, PARTYMON_STRUCT_LENGTH
 .asm_6524
 	ld a, [hli]
 	ld [de], a

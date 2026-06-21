@@ -2327,7 +2327,9 @@ Pointers_01e_6567:
 	dr $7a567, $7aacd
 ; TODO disassemble
 Func_01e_6acd:
-	dr $7aacd, $7ade3
+	dr $7aacd, $7addb
+Text_01e_6ddb:: ; TODO: data loaded as a pointer into wTextStart by Script_6f (bank_0b)
+	dr $7addb, $7ade3
 
 LoadItemNameByIndex::
 	ld a, l

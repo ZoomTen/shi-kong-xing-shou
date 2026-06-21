@@ -99,6 +99,7 @@ wOBPals2:: ds 8 palettes
 UNION
 ; This isn't actually the position of the player relative to the map,
 ; but rather the player's sprite position on the screen.
+wcd00:: ; object/player data page base ($cd00); indexed by sprite/object offset (Script_55)
 wPlayerScreenY:: ds 1
 wPlayerScreenX:: ds 1
 
@@ -117,6 +118,7 @@ wPlayerMapY:: ds 1
 wPlayerMapX:: ds 1
 wcd14:: ds $c
 
+; saved {wVisibleObjects[0], wPlayerScreenX} position pair, swapped in/out by Script_67
 wcd20:: ds 1
 wcd21:: ds 1
 wcd22:: ds 1
@@ -335,7 +337,7 @@ wGameTimeMinutes:: ds 1
 wd0df:: ds 1
 wd0e0:: ds 3
 wd0e3:: ds 1
-wd0e4:: ds 8
+wd0e4:: ds 8 ; [0]: player sprite ID override (if nonzero -> wPlayerSpriteID)
 wd0ec:: ds 2
 wd0ee:: ds 1
 wd0ef:: ds 1
@@ -387,6 +389,7 @@ wd1fa:: ds 1
 wd1fb:: ds 1
 wd1fc:: ds 1
 wd1fd:: ds 1
+; copy of the unk_00b_5192[wd1f4] list pointer (set/used by Script_4d/Script_59)
 wd1fe:: ds 1
 wd1ff:: ds 1
 
@@ -629,7 +632,7 @@ wd9d8:: ds 1
 wd9d9:: ds 1
 wd9da:: ds 2
 wd9dc:: ds 1
-wd9dd:: ds 1
+wd9dd:: ds 1 ; character/party-buffer index (-> wPlayerSpriteID = *2; indexes Func_00b_625c party buffers)
 
 wWX:: ds 1
 wWY:: ds 1
@@ -665,6 +668,9 @@ wd9fc:: ds 1
 wd9fd:: ds 1
 wd9fe:: ds 1
 wd9ff:: ds 1
+; loaded map's object array (LoadMapObjects); 12-byte slots:
+; db status($ff) ; then the object_event: db sprite,x,y / dw ramflag / db u1,u2,u3,u4 / dw script
+wMapObjects::
 wda00:: ds $a0
 
 ; shop menu is at $daa4
@@ -747,6 +753,7 @@ wdccf:: ds 1
 
 wdcd0:: ds 1
 wdcd1:: ds 2
+wSavedScriptPos:: ; saved wScriptPos during scr_move/scr_54 movement scripts
 wdcd3:: ds 2
 wdcd5:: ds 1
 wdcd6:: ds 2
@@ -764,6 +771,7 @@ wdce2:: ds 1
 wTextboxPos:: ds 1
 
 wdce4:: ds 1
+; object byte fetched by Script_40 (status byte of wMapObjects[N]); ->wSelectedObjectOffset
 wdce5:: ds 2
 wdce7:: ds 1
 wdce8:: ds 2

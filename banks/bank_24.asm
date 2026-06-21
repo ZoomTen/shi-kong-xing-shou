@@ -1009,7 +1009,7 @@ Func_024_4d77:
 	pop hl
 	ld a, [wd9f3]
 	ld [hl], a
-	call Func_024_603b.asm_605d
+	call Func_024_605d
 	ld a, [wd9f3]
 	and a
 	jr z, .asm_4e2a
@@ -3135,7 +3135,7 @@ Func_024_603b:
 	ld [wd9d3], a
 	xor a
 	ld [wd0c0], a
-.asm_605d
+Func_024_605d:
 	ld de, unk_024_6096
 	ld a, [wd1f4]
 	ld l, a
