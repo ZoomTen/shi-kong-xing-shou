@@ -290,9 +290,41 @@ spr_36_5084: INCBIN "gfx/sprites/spr_36.2bpp", $180, $40
 spr_36_50c4: INCBIN "gfx/sprites/spr_36.2bpp", $1c0, $40
 spr_36_5104: INCBIN "gfx/sprites/spr_36.2bpp", $200, $40
 spr_37:
-	dr $51144, $51172
-spr_37_GFX:
-INCBIN "gfx/sprites/spr_37.2bpp"
+	dw .facing0
+	dw .facing1
+	dw .facing2
+	dw .facing2
+	dw spr_38.facing0
+	dw spr_38.facing1
+	dw spr_38.facing2
+	dw spr_38.facing2
+.facing0
+	dw spr_37_5172
+	dw spr_37_51b2
+	dw spr_37_5172
+	dw spr_37_51f2
+	dw $ffff
+.facing1
+	dw spr_37_52f2
+	dw spr_37_5332
+	dw spr_37_52f2
+	dw spr_37_5372
+	dw $ffff
+.facing2
+	dw spr_37_5232
+	dw spr_37_5272
+	dw spr_37_5232
+	dw spr_37_52b2
+	dw $ffff
+spr_37_5172: INCBIN "gfx/sprites/spr_37.2bpp", $0, $40
+spr_37_51b2: INCBIN "gfx/sprites/spr_37.2bpp", $40, $40
+spr_37_51f2: INCBIN "gfx/sprites/spr_37.2bpp", $80, $40
+spr_37_5232: INCBIN "gfx/sprites/spr_37.2bpp", $c0, $40
+spr_37_5272: INCBIN "gfx/sprites/spr_37.2bpp", $100, $40
+spr_37_52b2: INCBIN "gfx/sprites/spr_37.2bpp", $140, $40
+spr_37_52f2: INCBIN "gfx/sprites/spr_37.2bpp", $180, $40
+spr_37_5332: INCBIN "gfx/sprites/spr_37.2bpp", $1c0, $40
+spr_37_5372: INCBIN "gfx/sprites/spr_37.2bpp", $200, $40
 spr_38:
 	dw .facing0
 	dw .facing1

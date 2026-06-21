@@ -1279,7 +1279,139 @@ ObjPalette_004_47a3:
 	RGB 16, 21, 30
 	RGB 31, 30, 29
 Pointers_004_47ab:
-	dr $107ab, $108e7
+	dw .frame_47e5
+	dw .frame_47e5
+	dw .frame_47f0
+	dw .frame_4819
+	dw .frame_4824
+	dw .frame_482f
+	dw .frame_483a
+	dw .frame_483b
+	dw .frame_4846
+	dw .frame_4847
+	dw .frame_4852
+	dw .frame_4853
+	dw .frame_485e
+	dw .frame_485f
+	dw .frame_486a
+	dw .frame_486b
+	dw .frame_4871
+	dw .frame_4877
+	dw .frame_487d
+	dw .frame_4883
+	dw .frame_4889
+	dw .frame_488f
+	dw .frame_4895
+	dw .frame_489b
+	dw .frame_48a1
+	dw .frame_48a7
+	dw .frame_48bc
+	dw .frame_48d1
+	dw .frame_48dc
+
+; each frame: OAM entries (db y, x, unused, tile, attr), $ff-terminated
+.frame_47e5
+	db $fc, $00, $08, $00, $00
+	db $fc, $08, $00, $02, $00
+	db $ff
+.frame_47f0
+	db $00, $00, $18, $70, $01
+	db $00, $08, $10, $72, $01
+	db $00, $10, $08, $74, $01
+	db $00, $18, $00, $76, $01
+	db $10, $00, $18, $78, $01
+	db $10, $08, $10, $7a, $01
+	db $10, $10, $08, $7c, $01
+	db $10, $18, $00, $7e, $01
+	db $ff
+.frame_4819
+	db $00, $00, $00, $68, $00
+	db $00, $08, $00, $6a, $00
+	db $ff
+.frame_4824
+	db $00, $00, $00, $6c, $00
+	db $00, $08, $00, $6e, $00
+	db $ff
+.frame_482f
+	db $00, $00, $00, $54, $00
+	db $00, $08, $00, $56, $00
+	db $ff
+.frame_483a
+	db $ff
+.frame_483b
+	db $00, $00, $00, $58, $00
+	db $00, $08, $00, $5a, $00
+	db $ff
+.frame_4846
+	db $ff
+.frame_4847
+	db $00, $00, $00, $5c, $00
+	db $00, $08, $00, $5e, $00
+	db $ff
+.frame_4852
+	db $ff
+.frame_4853
+	db $00, $00, $00, $60, $00
+	db $00, $08, $00, $62, $00
+	db $ff
+.frame_485e
+	db $ff
+.frame_485f
+	db $00, $00, $00, $64, $00
+	db $00, $08, $00, $66, $00
+	db $ff
+.frame_486a
+	db $ff
+.frame_486b
+	db $00, $00, $00, $54, $01
+	db $ff
+.frame_4871
+	db $00, $00, $00, $56, $01
+	db $ff
+.frame_4877
+	db $00, $00, $00, $58, $01
+	db $ff
+.frame_487d
+	db $00, $00, $00, $5a, $01
+	db $ff
+.frame_4883
+	db $00, $00, $00, $5c, $01
+	db $ff
+.frame_4889
+	db $00, $00, $00, $5e, $01
+	db $ff
+.frame_488f
+	db $00, $00, $00, $60, $01
+	db $ff
+.frame_4895
+	db $00, $00, $00, $62, $01
+	db $ff
+.frame_489b
+	db $00, $00, $00, $64, $01
+	db $ff
+.frame_48a1
+	db $00, $00, $00, $66, $01
+	db $ff
+.frame_48a7
+	db $00, $00, $00, $18, $00
+	db $00, $08, $08, $1a, $00
+	db $10, $00, $00, $1c, $00
+	db $10, $08, $08, $1e, $00
+	db $ff
+.frame_48bc
+	db $00, $00, $00, $20, $00
+	db $00, $08, $08, $22, $00
+	db $10, $00, $00, $24, $00
+	db $10, $08, $08, $26, $00
+	db $ff
+.frame_48d1
+	db $00, $00, $00, $28, $00
+	db $00, $08, $08, $2a, $00
+	db $ff
+.frame_48dc
+	db $00, $00, $00, $2c, $00
+	db $00, $08, $08, $2e, $00
+	db $ff
 
 Sprites00to13GFXPointers::
 	dw BallotGFX_Pointers
