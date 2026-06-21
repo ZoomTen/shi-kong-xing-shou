@@ -72,10 +72,8 @@ G4_4D_ObjectEvents2:
 
 G4_4E_ObjectEvents3:
 	dr $1704ab, $17058c
-text_5c_458c::
-	dr $17058c, $1705b8
-text_5c_45b8::
-	dr $1705b8, $171084
+INCLUDE "data/text/bank5c_458c.asm"
+	dr $171053, $171084
 unk_05c_5084::
 	dr $171084, $1711fa
 unk_05c_51fa::

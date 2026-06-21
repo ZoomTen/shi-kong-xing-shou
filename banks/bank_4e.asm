@@ -582,7 +582,8 @@ Func_4e_4cf1:
 	ret
 ; TODO: noise / likely compressed (not graphics)
 unk_4e_4d02:
-	dr $138d02, $139ff6
+	dr $138d02, $1391fa
+INCLUDE "data/text/bank4e_51fa.asm"
 ; TODO: data, not noise (not graphics)
 unk_4e_5ff6:
 	dr $139ff6, $13a377

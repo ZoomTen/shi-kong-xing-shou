@@ -70,6 +70,17 @@ def is_duplicate(charset, byte):
     `text "<glyph>"` (a non-canonical or commented byte). Must be emitted as db."""
     return byte in chars[charset] and canonical[charset].get(byte) is None
 
+glyph_max_cs = {}
+for _cs in range(10):
+    for _g in _glyph_last_live[_cs]:
+        glyph_max_cs[_g] = _cs
+
+def needs_db(charset, byte):
+    if is_duplicate(charset, byte):
+        return True
+    g = chars[charset].get(byte)
+    return g in glyph_max_cs and glyph_max_cs[g] != charset
+
 file = open(file, "rb")
 
 s = sys.argv[1]
@@ -81,6 +92,7 @@ else:
 
 file.seek(start)
 count = int(sys.argv[2])
+stop = (addr2offset(*str2addr(sys.argv[3])) if re.match('([0-9a-fA-F]+):([0-9a-fA-F]{4})$', sys.argv[3]) else int(sys.argv[3], 16)) if len(sys.argv) > 3 else None
 
 def emit_db(parts, glyph):
     """Break the current text "…" run and emit a raw db for an ambiguous byte,
@@ -104,13 +116,12 @@ def print_text():
         byte_high, new_charset = divmod(byte, 0x10)
         if byte_high == 0xf:
             glyph_byte = int.from_bytes(file.read(1), "little")
-            if is_duplicate(new_charset, glyph_byte):
-                # ambiguous: emit the switch + byte raw so it round-trips exactly
-                emit_db(["$%02x" % byte, "$%02x" % glyph_byte],
-                        chars[new_charset][glyph_byte])
+            _g = chars[new_charset].get(glyph_byte)
+            if _g is None or new_charset == backup_charset or needs_db(new_charset, glyph_byte):
+                emit_db(["$%02x" % byte, "$%02x" % glyph_byte], _g if _g is not None else "?")
             else:
                 backup_charset = new_charset
-                print(chars[new_charset][glyph_byte], end="")
+                print(_g, end="")
         elif byte == 0xe1:
             print("\";\n\tsignpost;")
             break
@@ -132,13 +143,9 @@ def print_text():
             done = 1
             break
         elif byte == 0xe7:
-            print("\";\n\tbuysellcancel;", end="")
-            done = 1
-            break
+            print("\";\n\tbuysellcancel;\n\ttext \"", end="")
         elif byte == 0xe8:
-            print("\";\n\tbuysellcancel_menu;", end="")
-            done = 1
-            break
+            print("\";\n\tbuysellcancel_menu;\n\ttext \"", end="")
         elif byte == 0xec:
             print("\";\n\tpara \"", end="")
         elif byte == 0xed:
@@ -146,15 +153,11 @@ def print_text():
         elif byte == 0xee:
             print("\";\n\tcont \"", end="")
         else:
-            if is_duplicate(backup_charset, byte):
-                # bare ambiguous byte in the current charset: emit raw db
-                emit_db(["$%02x" % byte], chars[backup_charset][byte])
+            _g = chars[backup_charset].get(byte) if backup_charset >= 0 else None
+            if _g is None or needs_db(backup_charset, byte):
+                emit_db(["$%02x" % byte], _g if _g is not None else "?")
             else:
-                try:
-                    char = chars[backup_charset][byte]
-                except KeyError:
-                    char = 'UNKNOWN'
-                print(char, end="")
+                print(_g, end="")
 
     return done
 
@@ -168,16 +171,20 @@ def get_bank_address(offset):
     return bank, address
 
 while count != 0:
+    if stop is not None and file.tell() >= stop: break
     bank, address = get_bank_address(file.tell())
 
     byte = int.from_bytes(file.read(1), "little")
     # print("{:02x}".format(byte))
     if not byte:
-            print("# not byte")
+            print("# not byte at $%04x" % address)
             break
 
     # get nybbles from byte
     byte_high, charset = divmod(byte, 0x10)
+    if byte_high < 0xe:
+        print("# not byte at $%04x" % address)
+        break
     backup_charset = charset
 	
     print("@org $%02x, $%04x:" % (bank, address))
@@ -189,6 +196,8 @@ while count != 0:
         a1 = int.from_bytes(file.read(1), "little")
         a2 = int.from_bytes(file.read(1), "little")
         print("\tinit2 %s, %s;" % (nm(a1), pic(a2)))
+    elif byte == 0xe1:
+        print("\tsignpost;")
     if byte_high == 0xf:
         count -= 1
         print("\ttext \"", end="")

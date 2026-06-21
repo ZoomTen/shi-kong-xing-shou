@@ -39,7 +39,52 @@ G6_20_ObjectEvents:
 G6_21_ObjectEvents:
 	dr $1b03ec, $1b041a
 Script_06c_441a::
-	dr $1b041a, $1b049b
+	warp6c
+	setplayerchar $00
+	face FACE_UP
+	setmap $20, $00
+	spriteface  3, FACE_UP
+	spriteface  4, FACE_UP
+	stext text_6c_702f
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_6c_703b
+	stext text_6c_7045
+	stext text_6c_705c
+	stext text_6c_706d
+	stext text_6c_712a
+	stext text_6c_7134
+	stext text_6c_717e
+	stext text_6c_7197
+	stext text_6c_7204
+	emote  0, EMOTE_TEAR
+	emote  3, EMOTE_TEAR
+	emote  4, EMOTE_TEAR
+	delay $03, $20
+	playsound SFX_2c
+	runmovement $41d5
+	stext text_6c_7210
+	spriteface  2, FACE_UP
+	spritewalk  2, MOVE_UP
+	spritewalk  2, MOVE_UP
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	spriteface  4, FACE_UP
+	spritewalk  4, MOVE_UP
+	spritewalk  4, MOVE_UP
+	spritewalk  4, MOVE_UP
+	spritewalk  4, MOVE_UP
+	clearobject $04
+	spriteface  3, FACE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spriteface  3, FACE_UP
+	spritewalk  3, MOVE_UP
+	spritewalk  3, MOVE_UP
+	spritewalk  3, MOVE_UP
+	spritewalk  3, MOVE_UP
+	clearobject $03
+	setbit wEventFlags + 24, $03
+	end
 
 G6_08_ObjectEvents:
 	dr $1b049b, $1b04c8
@@ -59,7 +104,30 @@ Script_06c_4627::
 Script_06c_4640::
 	dr $1b0640, $1b0671
 Script_06c_4671::
-	dr $1b0671, $1b06b7
+	setplayerchar $00
+	face FACE_LEFT
+	warpmode GAMEMODE_1B, $21, $00
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_LEFT
+	spriteface  4, FACE_LEFT
+	stext text_6c_7251
+	stext text_6c_7267
+	warpmode GAMEMODE_1C, $21, $00
+	spriteface  2, FACE_RIGHT
+	stext text_6c_72b9
+	spriteface  3, FACE_RIGHT
+	stext text_6c_72da
+	stext text_6c_72ee
+	spriteface  3, FACE_LEFT
+	stext text_6c_7318
+	stext text_6c_7335
+	stext text_6c_734b
+	stext text_6c_7385
+	stext text_6c_73b0
+	stext text_6c_73c9
+	spriteface  2, FACE_LEFT
+	spriteface  4, FACE_LEFT
+	end
 
 G6_1C_ObjectEvents:
 	dr $1b06b7, $1b06d6
@@ -195,4 +263,6 @@ G6_1F_ObjectEvents:
 Script_06c_5007::
 	dr $1b1007, $1b1068
 Script_06c_5068::
-	dr $1b1068, $1b3a80
+	dr $1b1068, $1b2045
+INCLUDE "data/text/bank6c_6045.asm"
+	dr $1b3913, $1b3a80

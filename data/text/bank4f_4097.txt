@@ -1,0 +1,11 @@
+@org $4f, $4097:
+	init NAME_1A, PIC_25;
+@org $4f, $409a:
+	text "這裡是星獸膠囊";
+	line "";
+	db $f1, $39; #"存"
+	text "放銀行⚬";
+	para "需要艾娜的服務";
+	line "嗎﹖";
+	line "";
+	getchoice String_1cc5;

@@ -59,14 +59,11 @@ Script_04f_405f:
 .skip
 	end
 
-text_4f_406d::
-	dr $13c06d, $13c07f
+INCLUDE "data/text/bank4f_406d.asm"
 
-text_4f_407f::
-	dr $13c07f, $13c097
+INCLUDE "data/text/bank4f_407f.asm"
 
-text_4f_4097::
-	dr $13c097, $13c0c6
+INCLUDE "data/text/bank4f_4097.asm"
 
 Script_04f_40c6::
 	dr $13c0c6, $13c0e1
@@ -174,7 +171,8 @@ Script_04f_432e::
 	dr $13c32e, $13c34c
 
 Script_04f_434c::
-	dr $13c34c, $13c384
+	dr $13c34c, $13c356
+INCLUDE "data/text/bank4f_4356.asm"
 Script_04f_4384:: ; farjump2 target (bank_12)
 	warp3 $15, $01, $03
 	end
@@ -480,7 +478,21 @@ GreenForestP32_ObjectEvents2:
 	objects_end
 
 Script_04f_4dbe::
-	dr $13cdbe, $13cde3
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_4f_61fa
+	stext text_4f_621a
+	setbit wEventFlags + 5, $06
+	spriteface  2, FACE_LEFT
+	spritewalk  2, MOVE_LEFT
+	clearobject $02
+	move MovementData_OneUp
+	face FACE_LEFT
+	move MovementData_OneLeft
+	setmap $12, $00
+	end2
 
 INCLUDE "data/text/bank4f_misc.asm"
 

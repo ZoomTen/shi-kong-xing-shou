@@ -3,7 +3,8 @@ G5_22_ObjectEvents:
 	objects_end
 
 Script_066_400c::
-	dr $19800c, $198010
+	textface text_66_40a4
+	end
 Script_066_4010::
 	dr $198010, $198022
 
@@ -13,14 +14,17 @@ G5_21_ObjectEvents:
 	objects_end
 
 Script_066_4039::
-	dr $198039, $19803d
+	stext text_66_405d
+	end
 
 Script_066_403d::
-	dr $19803d, $198041
+	stext text_66_4075
+	end
 Script_066_4041::
 	dr $198041, $19804f
 Script_066_404f::
-	dr $19804f, $1980bb
+	dr $19804f, $19805d
+INCLUDE "data/text/bank66_405d.asm"
 Script_066_40bb::
 	dr $1980bb, $1980c9
 
@@ -31,7 +35,8 @@ Script_066_40d5::
 	dr $1980d5, $198172
 
 Script_066_4172::
-	dr $198172, $198176
+	textface text_66_4d45
+	end
 
 G5_18_ObjectEvents:
 	dr $198176, $198182
@@ -73,7 +78,8 @@ G5_1B_ObjectEvents:
 	objects_end
 
 Script_066_4200::
-	dr $198200, $198204
+	textface text_66_4e55
+	end
 Script_066_4204::
 	dr $198204, $19820f
 
@@ -84,10 +90,12 @@ Script_066_427e::
 	dr $19827e, $19828a
 
 Script_066_428a::
-	dr $19828a, $19828e
+	textface text_66_4ef4
+	end
 
 Script_066_428e::
-	dr $19828e, $198292
+	textface text_66_4f51
+	end
 Script_066_4292::
 	dr $198292, $1982a0
 
@@ -103,16 +111,20 @@ Script_066_4323::
 	dr $198323, $198331
 
 Script_066_4331::
-	dr $198331, $198335
+	textface text_66_513e
+	end
 
 Script_066_4335::
-	dr $198335, $198339
+	textface text_66_51bc
+	end
 
 Script_066_4339::
-	dr $198339, $19833d
+	textface text_66_523a
+	end
 
 Script_066_433d::
-	dr $19833d, $198341
+	textface text_66_5287
+	end
 
 G5_1E_ObjectEvents:
 	object_event $1d,  5,  3, 0, $00, $00, $00, $00, Script_066_436b
@@ -120,7 +132,13 @@ G5_1E_ObjectEvents:
 	objects_end
 
 Script_066_4358::
-	dr $198358, $19836b
+	textface text_66_537a
+	spriteface  2, FACE_DOWN
+	emote  2, EMOTE_ANGER
+	delay $03, $20
+	stext text_66_53b1
+	stext text_66_53c8
+	end
 
 Script_066_436b::
 	dr $19836b, $1983a3
@@ -137,10 +155,25 @@ Script_066_43dd::
 	dr $1983dd, $198440
 
 Script_066_4440::
-	dr $198440, $198444
+	textface text_66_6b09
+	end
 
 Script_066_4444::
-	dr $198444, $19846a
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_5447
+	spriteface  2, FACE_DOWN
+	stext text_66_546d
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_LEFT
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_549d
+	emote  2, EMOTE_TEAR
+	delay $03, $20
+	end
 
 G5_27_ObjectEvents4:
 	dr $19846a, $198476
@@ -160,7 +193,8 @@ G5_20_ObjectEvents:
 	objects_end
 
 Script_066_451c::
-	dr $19851c, $198520
+	textface text_66_54d3
+	end
 
 G5_10_ObjectEvents:
 	object_event $23,  8,  2, 0, $00, $00, $00, $00, Script_066_454d
@@ -188,26 +222,32 @@ Script_066_458e::
 	dr $19858e, $1985b6
 
 Script_066_45b6::
-	dr $1985b6, $1985ba
+	textface text_66_55ff
+	end
 
 G5_11_ObjectEvents:
 	object_event $13,  2,  6, 0, $00, $00, $00, $00, Script_066_45c6
 	objects_end
 
 Script_066_45c6::
-	dr $1985c6, $1985cd
+	spriteface  2, FACE_RIGHT
+	stext text_66_5739
+	end
 
 G5_12_ObjectEvents:
 	dr $1985cd, $1985ef
 
 Script_066_45ef::
-	dr $1985ef, $1985f3
+	textface text_66_576f
+	end
 
 Script_066_45f3::
-	dr $1985f3, $1985f7
+	textface text_66_579b
+	end
 
 Script_066_45f7::
-	dr $1985f7, $1985fb
+	textface text_66_5ce9
+	end
 
 G5_13_ObjectEvents:
 	object_event $12,  2,  3, 0, $00, $00, $00, $00, Script_066_461d
@@ -216,13 +256,16 @@ G5_13_ObjectEvents:
 	objects_end
 
 Script_066_461d::
-	dr $19861d, $198621
+	textface text_66_57d0
+	end
 
 Script_066_4621::
-	dr $198621, $198625
+	textface text_66_57fa
+	end
 
 Script_066_4625::
-	dr $198625, $198629
+	textface text_66_5821
+	end
 
 G5_14_ObjectEvents:
 	object_event $16,  4,  5, 0, $00, $00, $00, $00, Script_066_4640
@@ -230,24 +273,36 @@ G5_14_ObjectEvents:
 	objects_end
 
 Script_066_4640::
-	dr $198640, $19865c
+	textface text_66_585c
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_DOWN
+	stext text_66_58b8
+	stext text_66_58db
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_58f8
+	stext text_66_5903
+	end
 
 Script_066_465c::
-	dr $19865c, $198660
+	textface text_66_5903
+	end
 
 G5_24_ObjectEvents:
 	object_event $22,  6, 10, 0, $00, $00, $00, $00, Script_066_466c
 	objects_end
 
 Script_066_466c::
-	dr $19866c, $198670
+	textface text_66_564a
+	end
 
 G5_25_ObjectEvents:
 	object_event $1e,  5,  5, 0, $00, $00, $00, $00, Script_066_467c
 	objects_end
 
 Script_066_467c::
-	dr $19867c, $198680
+	textface text_66_5696
+	end
 
 G5_26_ObjectEvents:
 	object_event $24,  6,  3, 0, $00, $00, $00, $00, Script_066_468c
@@ -264,7 +319,8 @@ Script_066_46cc::
 	dr $1986cc, $1987b2
 
 Script_066_47b2::
-	dr $1987b2, $1987b6
+	textface text_66_74f2
+	end
 
 G5_1A_ObjectEvents2:
 	object_event $27,  5,  5, 0, $00, $00, $00, $00, Script_066_4869
@@ -321,7 +377,8 @@ Script_066_4bb1::
 	dr $198bb1, $198bc5
 
 Script_066_4bc5::
-	dr $198bc5, $198bc9
+	stext text_66_792e
+	end
 
 Script_066_4bc9::
 	dr $198bc9, $198c3e
@@ -339,4 +396,6 @@ G5_0D_ObjectEvents2:
 	object_event $0f,  4,  3, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
 Script_066_4c8f::
-	dr $198c8f, $19be50
+	dr $198c8f, $198d45
+INCLUDE "data/text/bank66_4d45.asm"
+	dr $19bcc7, $19be50
