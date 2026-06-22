@@ -1,0 +1,1538 @@
+@org $58, $4a88:
+	init NAME_BALLOT, PIC_2D;
+@org $58, $4a8b:
+	text "哇～";
+	line "";
+	db $f2, $cd; #"好"
+	text "大的地震﹗";
+	done;
+
+@org $58, $4a9c:
+	init NAME_BLANK, PIC_23;
+@org $58, $4a9f:
+	text "啊﹗怎麼會這樣";
+	line "昨天晚上在生之";
+	cont "谷的火山能源站";
+	line "值班⚬";
+	para "誰知道早上一回";
+	line "來﹐城裡的所有";
+	para "人都不見了﹗";
+	line "這是怎麼回事﹖";
+	done;
+
+@org $58, $4b04:
+	init NAME_BLANK, PIC_24;
+@org $58, $4b07:
+	text "不見了﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $51; #"的"
+	text "不見了嗎﹖";
+	para "啊～﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $51; #"的"
+	text "不見了﹗";
+	cont "這是夢～";
+	line "";
+	db $f2, $57; #"這"
+	text "是夢～";
+	cont "回家睡覺吧⋯⋯";
+	done;
+
+@org $58, $4b4a:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4b4d:
+	text "ｚＺｚｚＺ～";
+	line "ＺｚｚＺ～";
+	done;
+
+@org $58, $4b5e:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4b61:
+	text "啊﹗早上了﹗";
+	line "";
+	db $f1, $8f; #"救"
+	text "命啊～";
+	cont "救命啊﹗";
+	done;
+
+@org $58, $4b7f:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4b82:
+	text "快⋯快救我⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $c7; #"⋯"
+	text "卡住了﹗";
+	done;
+
+@org $58, $4b99:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4b9c:
+	text "真是謝謝你﹗";
+	line "剛才有一瞬間﹐";
+	cont "我還真以為會在";
+	line "這床底下過一輩";
+	line "子呢﹗";
+	done;
+
+@org $58, $4bd6:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $4bd9:
+	text "這是怎麼回事﹖";
+	done;
+
+@org $58, $4be7:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4bea:
+	text "真是恐怖﹗";
+	line "昨天晚上﹐我一";
+	cont "陣奇怪的笛聲﹐";
+	line "聽了之後﹐就會";
+	line "";
+	db $f2, $19; #"迷"
+	text "";
+	db $19; #"迷"
+	text "糊糊的﹗";
+	para "於是我就躲在床";
+	line "底下⚬";
+	para "";
+	db $f1, $5a; #"記"
+	text "得在迷迷糊糊";
+	line "之中～";
+	cont "";
+	db $f2, $d7; #"就"
+	text "";
+	db $56; #"看"
+	text "見所有的人";
+	line "﹐都沿著笛聲的";
+	cont "";
+	db $f1, $cf; #"方"
+	text "向走出去了﹗";
+	para "幸好我卡在床底";
+	line "下﹐不然也不見";
+	cont "了﹗";
+	done;
+
+@org $58, $4c97:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $4c9a:
+	text "笛聲﹖";
+	line "城裡的人﹐往哪";
+	cont "個方向去了﹖";
+	done;
+
+@org $58, $4cbc:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4cbf:
+	text "好像往死之谷的";
+	line "";
+	db $f1, $cf; #"方"
+	text "向去了⋯⋯";
+	para "聽了笛聲後﹐就";
+	line "整個人迷迷糊糊";
+	para "的～";
+	line "所以記得不太清";
+	line "楚⋯⋯";
+	done;
+
+@org $58, $4d0c:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4d0f:
+	text "城裡的人﹐好像";
+	line "往死之谷的方向";
+	para "去了⋯⋯";
+	line "聽了笛聲後﹐就";
+	cont "整個人迷迷糊糊";
+	line "的～";
+	para "所以記得不太清";
+	line "楚⋯⋯";
+	cont "真是可怕﹗";
+	para "為了防止這種事";
+	line "情再發生﹐我還";
+	cont "是睡在床底下吧";
+	done;
+
+@org $58, $4d98:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4d9b:
+	text "地熱城旁有座雙";
+	line "";
+	db $f0, $c9; #"子"
+	text "山﹐一邊是生";
+	para "之谷﹐另一邊則";
+	line "是死之谷⚬";
+	para "";
+	db $f1, $23; #"生"
+	text "之谷還有著穩";
+	line "定的火山活動﹐";
+	para "";
+	db $f1, $43; #"是"
+	text "一個很重要的";
+	line "地熱能源點⚬";
+	para "";
+	db $f1, $d2; #"而"
+	text "另一邊的死之";
+	line "谷﹐那裡的火亡";
+	para "已經死亡⚬";
+	line "景色也比較荒涼";
+	cont "喲﹗";
+	done;
+
+@org $58, $4e39:
+	init NAME_BLANK, PIC_1A;
+@org $58, $4e3c:
+	text "最近的地震多了";
+	line "";
+	db $f1, $b5; #"點"
+	text "";
+	db $35; #"﹗"
+	text "";
+	para "而前天有一位老";
+	line "伯居然警告大家";
+	cont "說什麼火山要爆";
+	line "";
+	db $f0, $4b; #"發"
+	text "了﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "好笑～";
+	para "在地熱城﹐地震";
+	line "是很正常的事呢";
+	para "不過最近地震真";
+	line "";
+	db $f1, $51; #"的"
+	text "";
+	db $43; #"是"
+	text "多了點⋯";
+	done;
+
+@org $58, $4ebc:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $4ebf:
+	text "笛聲⋯⋯";
+	line "突然有種濃濃的";
+	cont "睡意⋯";
+	done;
+
+@org $58, $4edb:
+	init NAME_BALLOT, PIC_2D;
+@org $58, $4ede:
+	text "真是危險～";
+	line "";
+	db $f2, $da; #"再"
+	text "";
+	db $57; #"這"
+	text "";
+	db $cf; #"麼"
+	text "";
+	db $aa; #"下"
+	text "";
+	db $bc; #"去"
+	text "﹐一";
+	cont "定會失去意識的";
+	line "⋯⋯";
+	line "先退出去";
+	cont "";
+	db $f2, $da; #"再"
+	text "說吧﹗";
+	done;
+
+@org $58, $4f15:
+	init NAME_BLANK, PIC_23;
+@org $58, $4f18:
+	text "什麼﹖";
+	line "城裡的人都在死";
+	line "";
+	db $f0, $02; #"之"
+	text "谷﹖";
+	para "我這就把他們找";
+	line "";
+	db $f1, $19; #"回"
+	text "來⚬";
+	cont "什麼﹖";
+	line "你說什麼﹖";
+	para "死之谷裡有詭異";
+	line "的笛聲﹖";
+	done;
+
+@org $58, $4f70:
+	init NAME_BLANK, PIC_23;
+@org $58, $4f73:
+	text "真是氣死人了﹗";
+	line "該怎麼辦﹖";
+	done;
+
+@org $58, $4f88:
+	init NAME_BLANK, PIC_23;
+@org $58, $4f8b:
+	text "對了﹗這附近的";
+	line "海域常出現一艘";
+	cont "";
+	db $f6, $b2; #"旅"
+	text "行船⚬";
+	para "裡頭住了一個地";
+	line "理科學家⚬";
+	para "聽說他們的小孩";
+	line "很喜歡音樂﹗";
+	cont "或許會有辦法﹗";
+	done;
+
+@org $58, $4ff1:
+	init NAME_BLANK, PIC_23;
+@org $58, $4ff4:
+	text "這附近的海域常";
+	line "";
+	db $f2, $0a; #"出"
+	text "現一艘旅行船";
+	para "裡頭住了一個地";
+	line "理科學家⚬";
+	para "聽說他們的小孩";
+	line "很喜歡音樂﹗";
+	cont "或許會有辦法﹗";
+	done;
+
+@org $58, $5052:
+	init NAME_43, PIC_50;
+@org $58, $5055:
+	text "哎呀～";
+	line "";
+	db $f2, $8f; #"老"
+	text "公他們昨晚出";
+	cont "";
+	db $f2, $bc; #"去"
+	text "";
+	db $21; #"後"
+	text "﹐就沒再回";
+	line "來了～";
+	para "今晚回來一定會";
+	line "大叫的說";
+	cont "『唉～累翻了』";
+	para "我來準備一餐～";
+	line "超．級．大．餐";
+	done;
+
+@org $58, $50bb:
+	init NAME_44, PIC_4D;
+@org $58, $50be:
+	text "吱吱～吱﹗";
+	done;
+
+@org $58, $50c8:
+	init NAME_43, PIC_50;
+@org $58, $50cb:
+	text "哇～啊啊啊啊﹗";
+	line "";
+	db $f1, $8f; #"救"
+	text "命啊～";
+	cont "救命啊～";
+	done;
+
+@org $58, $50e9:
+	init NAME_43, PIC_50;
+@org $58, $50ec:
+	text "救救救救命啊﹗";
+	line "老老老老老鼠﹗";
+	para "怎麼辦～";
+	line "";
+	db $f2, $ce; #"怎"
+	text "";
+	db $cf; #"麼"
+	text "辦～";
+	cont "";
+	db $f2, $8f; #"老"
+	text "公他們要回來";
+	line "了﹐我的大餐還";
+	line "";
+	db $f2, $c8; #"沒"
+	text "有做好﹗";
+	done;
+
+@org $58, $5138:
+	init NAME_43, PIC_50;
+@org $58, $513b:
+	text "你說什麼﹖";
+	line "詭異的笛聲﹖";
+	para "那種東西﹐才不";
+	line "可怕呢﹗";
+	para "我兒子的音樂也";
+	line "很厲害﹐聽了手";
+	cont "腳都會無法控制";
+	line "但是﹐只要戴上";
+	cont "了我的絕緣耳機";
+	line "";
+	db $f1, $33; #"﹐"
+	text "就什麼都聽不";
+	line "到了⚬";
+	done;
+
+@org $58, $51c4:
+	init NAME_43, PIC_50;
+@org $58, $51c7:
+	text "真是糟糕～";
+	line "";
+	db $f2, $da; #"再"
+	text "不做飯的話﹐";
+	cont "就來不及了⚬";
+	para "我那地理科學家";
+	line "的老公就要回來";
+	cont "了﹗";
+	line "我們談談好嗎﹖";
+	para "你幫我到甲板下";
+	line "捉老鼠﹐我安心";
+	cont "的做飯⚬";
+	line "我老公及小孩就";
+	line "";
+	cont "可以幸福的回來";
+	line "吃飯⚬";
+	para "這樣是不是很完";
+	line "美呢﹖";
+	para "就用絕緣耳機當";
+	line "";
+	db $f2, $bd; #"做"
+	text "交換的條件﹗";
+	cont "就這麼說定了﹗";
+	done;
+
+@org $58, $5294:
+	init NAME_43, PIC_50;
+@org $58, $5297:
+	text "真是糟糕～";
+	line "";
+	db $f2, $da; #"再"
+	text "不做飯的話﹐";
+	cont "就來不及了⚬";
+	para "我那地理科學家";
+	line "老公就要回來了";
+	cont "我們談談好嗎﹖";
+	para "你幫我到甲板下";
+	line "捉老鼠﹐我安心";
+	cont "的做飯⚬";
+	line "我老公及小孩就";
+	cont "可以幸福的回來";
+	line "吃飯⚬";
+	para "這樣是不是很完";
+	line "美呢﹖";
+	para "就用絕緣耳機當";
+	line "";
+	db $f2, $bd; #"做"
+	text "交換的條件﹗";
+	cont "就這麼說定了﹗";
+	done;
+
+@org $58, $535f:
+	init NAME_44, PIC_4D;
+@org $58, $5362:
+	text "吱吱吱吱﹗";
+	done;
+
+@org $58, $536a:
+	init NAME_44, PIC_4D;
+@org $58, $536d:
+	text "吱～吱吱﹗";
+	done;
+
+@org $58, $5377:
+	init NAME_44, PIC_4D;
+@org $58, $537a:
+	text "吱﹗吱﹗吱﹗吱";
+	line "﹗";
+	done;
+
+@org $58, $538c:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $538f:
+	text "克勞德﹐牠們在";
+	line "說什麼﹖";
+	done;
+
+@org $58, $53a5:
+	init NAME_CLAUDE, PIC_3A;
+@org $58, $53a8:
+	text "牠們說⋯⋯";
+	line "笨蛋人類又來了";
+	done;
+
+@org $58, $53c0:
+	init NAME_BALLOT, PIC_2C;
+@org $58, $53c3:
+	text "真是可惡﹗";
+	line "看我的厲害﹗";
+	done;
+
+@org $58, $53d7:
+	init NAME_BALLOT, PIC_2C;
+@org $58, $53da:
+	text "不要跑﹗";
+	done;
+
+@org $58, $53e1:
+	init NAME_44, PIC_4D;
+@org $58, $53e4:
+	text "吱～吱吱～";
+	done;
+
+@org $58, $53ee:
+	init NAME_44, PIC_4D;
+@org $58, $53f1:
+	text "吱﹗﹗﹗吱吱﹗";
+	done;
+
+@org $58, $53fd:
+	init NAME_44, PIC_4D;
+@org $58, $5400:
+	text "吱吱吱吱吱吱～";
+	done;
+
+@org $58, $540a:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $540d:
+	text "克勞德﹐牠們又";
+	line "";
+	db $f3, $9a; #"在"
+	text "說什麼﹖";
+	done;
+
+@org $58, $5425:
+	init NAME_CLAUDE, PIC_3A;
+@org $58, $5428:
+	text "牠們說⋯⋯";
+	line "人類才不是笨蛋";
+	cont "是⋯⋯⋯白痴⋯";
+	done;
+
+@org $58, $544c:
+	init NAME_BALLOT, PIC_2C;
+@org $58, $544f:
+	text "真是可惡﹗";
+	line "看我的厲害﹗";
+	done;
+
+@org $58, $5463:
+	init NAME_BALLOT, PIC_2C;
+@org $58, $5466:
+	text "不要跑﹗";
+	done;
+
+@org $58, $546d:
+	init NAME_44, PIC_4D;
+@org $58, $5470:
+	text "吱吱﹗﹗";
+	done;
+
+@org $58, $5477:
+	init NAME_44, PIC_4D;
+@org $58, $547a:
+	text "吱吱～吱吱～";
+	done;
+
+@org $58, $5485:
+	init NAME_44, PIC_4D;
+@org $58, $5488:
+	text "吱⋯⋯";
+	done;
+
+@org $58, $548e:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $5491:
+	text "克勞德﹐牠們又";
+	line "說什麼﹖";
+	done;
+
+@org $58, $54a7:
+	init NAME_CLAUDE, PIC_03;
+@org $58, $54aa:
+	text "他們說『算你們";
+	line "狠﹐我要離家出";
+	cont "走了』﹗";
+	done;
+
+@org $58, $54cf:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $54d2:
+	text "真是驕傲的老鼠";
+	line "不過希望牠們不";
+	cont "會再回來了⚬";
+	done;
+
+@org $58, $54f9:
+	init NAME_43, PIC_50;
+@org $58, $54fc:
+	text "啊～真是可怕﹗";
+	line "那些從船裡游出";
+	cont "";
+	db $f2, $bc; #"去"
+	text "的老鼠﹐在比";
+	line "底斯海域形成一";
+	line "條噁心的線⋯⋯";
+	para "不過還是要感謝";
+	line "你﹗拿去～";
+	cont "";
+	db $f2, $57; #"這"
+	text "是我們約定的";
+	line "東西⚬";
+	done;
+
+@org $58, $556e:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $5571:
+	text "得到絕緣耳機﹗";
+	done;
+
+@org $58, $557e:
+	init NAME_43, PIC_50;
+@org $58, $5581:
+	text "不行了～";
+	line "真的快來不及了";
+	cont "";
+	db $f1, $58; #"要"
+	text "在他們回來之";
+	line "前﹐煮好晚餐才";
+	line "行⚬";
+	para "他們一定又會說";
+	line "『蒂朵是全世界";
+	para "最好的廚師』﹗";
+	line "嘻嘻嘻～";
+	done;
+
+@org $58, $55ea:
+	init NAME_43, PIC_50;
+@org $58, $55ed:
+	text "不行了～";
+	line "真的快來不及了";
+	cont "";
+	db $f1, $58; #"要"
+	text "在他們回來之";
+	line "前﹐煮好晚餐才";
+	line "行⚬";
+	para "他們一定又會說";
+	line "『蒂朵是全世界";
+	para "最好的廚師』﹗";
+	line "嘻嘻嘻～";
+	done;
+
+@org $58, $5656:
+	init NAME_BALLOT, PIC_2D;
+@org $58, $5659:
+	text "詭異的笛聲又來";
+	line "了⋯⋯";
+	cont "意識又⋯開始模";
+	line "糊了⋯⋯";
+	para "";
+	db $f2, $dc; #"得"
+	text "趕快將耳機戴";
+	line "起來﹗";
+	done;
+
+@org $58, $5697:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $569a:
+	text "戴起耳機後﹐果";
+	line "然就聽不見任何";
+	cont "聲音了﹗";
+	done;
+
+@org $58, $56be:
+	init NAME_LANTE, PIC_05;
+@org $58, $56c1:
+	text "＃＄＠※⋯﹗";
+	done;
+
+@org $58, $56cc:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $56cf:
+	text "他似乎正在說話";
+	line "的樣子⋯";
+	cont "戴上耳機﹐什麼";
+	line "";
+	db $f2, $24; #"也"
+	text "聽不到﹗";
+	done;
+
+@org $58, $56fe:
+	init NAME_LANTE, PIC_05;
+@org $58, $5701:
+	text "％＄✰＠＄＃﹗";
+	line "";
+	db $f1, $d6; #"％"
+	text "◇√＃﹗﹗﹗";
+	done;
+
+@org $58, $5719:
+	init NAME_LANTE, PIC_42;
+@org $58, $571c:
+	text "你們怎麼會有媽";
+	line "";
+	db $f3, $a1; #"媽"
+	text "的絕緣耳機﹖";
+	done;
+
+@org $58, $5736:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $5739:
+	text "你就是蒂朵阿姨";
+	line "的兒子﹖";
+	cont "這是怎麼回事﹖";
+	done;
+
+@org $58, $575e:
+	init NAME_LANTE, PIC_05;
+@org $58, $5761:
+	text "我叫做藍特⚬";
+	done;
+
+@org $58, $576d:
+	init NAME_LANTE, PIC_05;
+@org $58, $5770:
+	text "爸爸是一個地理";
+	line "科學家﹐在前天";
+	cont "探測到﹐生之谷";
+	line "有不正常的火山";
+	line "活動⚬";
+	para "";
+	db $f1, $d1; #"隨"
+	text "時有火山爆發";
+	line "的危險⚬";
+	para "於是爸爸叫我疏";
+	line "散村人﹐自己潛";
+	para "到生之谷觀察情";
+	line "況了⚬";
+	para "但是村人都不理";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	cont "我只好在半夜﹐";
+	line "";
+	db $f1, $40; #"用"
+	text "笛聲將他們全";
+	cont "都催眠﹐引到死";
+	line "";
+	db $f0, $02; #"之"
+	text "谷來⚬";
+	done;
+
+@org $58, $583a:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $583d:
+	text "原來如此⚬";
+	done;
+
+@org $58, $5847:
+	init NAME_LANTE, PIC_05;
+@org $58, $584a:
+	text "你就是巴洛特嗎";
+	line "我聽爸爸提過你";
+	cont "";
+	db $f2, $4a; #"你"
+	text "們正在尋找動";
+	line "力晶片嗎﹖";
+	para "爸爸也有一片唷";
+	line "﹗";
+	done;
+
+@org $58, $588d:
+	init NAME_BALLOT, PIC_2A;
+@org $58, $5890:
+	text "這真是太好了﹗";
+	done;
+
+@org $58, $589d:
+	init NAME_LANTE, PIC_05;
+@org $58, $58a0:
+	text "就是這個﹗";
+	line "這是爸爸給我的";
+	cont "爸爸曾經說過﹐";
+	line "如果遇到巴洛特";
+	cont "";
+	db $f1, $51; #"的"
+	text "話﹐就把晶片";
+	line "給他﹗";
+	done;
+
+@org $58, $58e8:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $58eb:
+	text "得到了晶片５﹗";
+	done;
+
+@org $58, $58f7:
+	init NAME_LANTE, PIC_42;
+@org $58, $58fa:
+	text "啊﹗﹗又地震了";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "擔心爸爸的";
+	cont "安全﹗";
+	done;
+
+@org $58, $591b:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $591e:
+	text "我們到生之谷﹐";
+	line "";
+	db $f1, $34; #"找"
+	text "出你爸爸吧﹗";
+	done;
+
+@org $58, $5939:
+	init NAME_LANTE, PIC_05;
+@org $58, $593c:
+	text "嗯﹗等到火山的";
+	line "危機解除後﹐我";
+	para "";
+	db $f2, $da; #"再"
+	text "放出那些村人";
+	line "⚬";
+	done;
+
+@org $58, $5967:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $596a:
+	text "藍特＆音樂靈加";
+	line "";
+	db $f2, $30; #"入"
+	text "";
+	db $5c; #"隊"
+	text "";
+	db $5d; #"伍"
+	text "﹗";
+	done;
+
+@org $58, $5980:
+	init NAME_18, PIC_2F;
+@org $58, $5983:
+	text "如將藍特置於排";
+	line "頭﹐如遇阻擋之";
+	para "";
+	db $f0, $23; #"人"
+	text "類﹐便可吹奏";
+	line "出催眠的音樂﹐";
+	cont "";
+	db $f1, $d2; #"而"
+	text "通過阻礙⚬";
+	done;
+
+@org $58, $59c6:
+	init NAME_BLANK, PIC_22;
+@org $58, $59c9:
+	text "放我們出去﹗";
+	line "你這個死小孩﹗";
+	cont "";
+	db $f1, $da; #"說"
+	text "什麼生之谷就";
+	line "快要火山爆發﹗";
+	para "騙人的死小孩﹗";
+	done;
+
+@org $58, $5a0c:
+	init NAME_BLANK, PIC_20;
+@org $58, $5a0f:
+	text "小朋友～";
+	line "能源站現在很不";
+	cont "安全﹗";
+	para "裡面的岩漿快要";
+	line "溢出來了﹗";
+	cont "你們快點回去﹗";
+	done;
+
+@org $58, $5a50:
+	init NAME_BLANK, PIC_20;
+@org $58, $5a53:
+	text "小朋友～";
+	line "裡面很⋯很⋯";
+	cont "";
+	db $f2, $c1; #"危"
+	text "";
+	db $c2; #"險"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	para "真是⋯奇⋯奇怪";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	done;
+
+@org $58, $5a7d:
+	init NAME_BLANK, PIC_20;
+@org $58, $5a80:
+	text "眼⋯眼皮⋯好重";
+	line "ｚＺｚ～ＺｚＺ";
+	done;
+
+@org $58, $5a99:
+	init NAME_45, PIC_6D;
+@org $58, $5a9c:
+	text "嘿嘿嘿嘿～";
+	line "嘿轟轟～";
+	done;
+
+@org $58, $5aac:
+	init NAME_46, PIC_6E;
+@org $58, $5aaf:
+	text "藍特﹗";
+	line "";
+	db $f1, $8f; #"救"
+	text "⋯救命哪﹗";
+	done;
+
+@org $58, $5ac1:
+	init NAME_LANTE, PIC_41;
+@org $58, $5ac4:
+	text "爸爸﹗";
+	line "";
+	db $f1, $c8; #"可"
+	text "惡的星獸﹗";
+	done;
+
+@org $58, $5ad6:
+	init NAME_45, PIC_6D;
+@org $58, $5ad9:
+	text "嘿嘿嘿嘿～";
+	line "嘿轟轟～";
+	done;
+
+@org $58, $5ae9:
+	init NAME_46, PIC_6E;
+@org $58, $5aec:
+	text "真是危險﹗";
+	line "這個星獸在生之";
+	cont "谷裡﹐裝設了能";
+	line "";
+	db $f1, $96; #"源"
+	text "抽取器⚬";
+	para "把所抽取的大地";
+	line "能源送到南邊的";
+	cont "衛星雷達站裡⚬";
+	para "不曉得正進行著";
+	line "什麼樣的計劃﹗";
+	para "";
+	db $f1, $03; #"真"
+	text "叫人感到不解";
+	line "⋯⋯";
+	done;
+
+@org $58, $5b70:
+	init NAME_LANTE, PIC_05;
+@org $58, $5b73:
+	text "老爹﹗";
+	line "你知道他是誰嗎";
+	cont "他就是巴洛特唷";
+	line "﹗";
+	done;
+
+@org $58, $5b9a:
+	init NAME_46, PIC_6E;
+@org $58, $5b9d:
+	text "哦﹗是巴洛特呀";
+	line "你爸爸前陣子還";
+	cont "";
+	db $f2, $bf; #"來"
+	text "找過我呢﹗";
+	line "拿到動力晶片了";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"﹖"
+	text "";
+	done;
+
+@org $58, $5bd5:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $5bd8:
+	text "拿到了﹗";
+	line "謝謝您～";
+	done;
+
+@org $58, $5be6:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $5be9:
+	text "爸爸曾經找過您";
+	line "是為了什麼事呢";
+	done;
+
+@org $58, $5c02:
+	init NAME_46, PIC_6E;
+@org $58, $5c05:
+	text "他正在尋找﹐古";
+	line "";
+	db $f4, $dd; #"代"
+	text "科學與星獸間";
+	cont "的祕密～";
+	line "真不愧是父子﹐";
+	cont "個性都一模一樣";
+	done;
+
+@org $58, $5c45:
+	init NAME_LANTE, PIC_05;
+@org $58, $5c48:
+	text "老爹﹗";
+	line "我也要跟巴洛特";
+	cont "一起旅行⚬";
+	done;
+
+@org $58, $5c68:
+	init NAME_46, PIC_6E;
+@org $58, $5c6b:
+	text "藍藍藍特﹗";
+	line "這太⋯危險了﹗";
+	done;
+
+@org $58, $5c7f:
+	init NAME_LANTE, PIC_05;
+@org $58, $5c82:
+	text "老爹不同意嗎﹖";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "叫人感到傷";
+	cont "心⋯⋯";
+	line "真是叫人傷心的";
+	cont "想要吹笛子啊～";
+	done;
+
+@org $58, $5cbb:
+	init NAME_46, PIC_6E;
+@org $58, $5cbe:
+	text "慢⋯慢著﹗";
+	line "你這是在威脅我";
+	cont "嗎﹖﹖";
+	line "我⋯我知道了﹗";
+	done;
+
+@org $58, $5ce6:
+	init NAME_LANTE, PIC_3F;
+@org $58, $5ce9:
+	text "萬歲﹗";
+	done;
+
+@org $58, $5cf0:
+	init NAME_46, PIC_6E;
+@org $58, $5cf3:
+	text "真是⋯⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "一定會被你老";
+	cont "媽給罵死的⋯⋯";
+	done;
+
+@org $58, $5d14:
+	init NAME_LANTE, PIC_42;
+@org $58, $5d17:
+	text "糟了﹗";
+	line "我忘了地熱城的";
+	cont "人﹐還被我關在";
+	line "死之谷⋯";
+	para "";
+	db $f2, $d7; #"就"
+	text "用我的笛聲～";
+	line "讓他們回去﹗";
+	para "巴洛特﹐";
+	line "把耳機戴好喔﹗";
+	done;
+
+@org $58, $5d71:
+	init NAME_40, PIC_69;
+@org $58, $5d74:
+	text "什⋯什麼﹖";
+	line "連大地能源都被";
+	cont "切斷了﹖";
+	para "";
+	db $f1, $43; #"是"
+	text "那個叫做巴洛";
+	line "特的少年嗎﹖";
+	done;
+
+@org $58, $5dac:
+	init NAME_40, PIC_69;
+@org $58, $5daf:
+	text "給我殺殺殺﹗﹗";
+	done;
+
+@org $58, $5dba:
+	init NAME_41, PIC_6A;
+@org $58, $5dbd:
+	text "嘰～嘰嘰﹗";
+	done;
+
+@org $58, $5dc7:
+	init NAME_40, PIC_69;
+@org $58, $5dca:
+	text "你⋯你是﹖";
+	done;
+
+@org $58, $5dd2:
+	init NAME_40, PIC_69;
+@org $58, $5dd5:
+	text "你⋯你﹗﹗﹗";
+	line "";
+	db $f1, $43; #"是"
+	text "您～";
+	cont "恭⋯恭⋯恭喜您";
+	line "";
+	db $f5, $1a; #"您"
+	text "終於⋯能離開";
+	cont "『那個地方』了";
+	done;
+
+@org $58, $5e0f:
+	init NAME_3F, PIC_75;
+@org $58, $5e12:
+	text "我是該感謝您呢";
+	line "";
+	db $f2, $65; #"還"
+	text "是該怪你辦事";
+	cont "不力呢﹖";
+	line "";
+	db $f1, $43; #"是"
+	text "該獎賞你呢﹖";
+	para "還是該懲罰你呢";
+	line "";
+	db $f2, $4a; #"你"
+	text "說﹖";
+	done;
+
+@org $58, $5e56:
+	init NAME_40, PIC_69;
+@org $58, $5e59:
+	text "殿⋯殿下⋯⋯";
+	line "請⋯請饒命呀﹗";
+	done;
+
+@org $58, $5e73:
+	init NAME_3F, PIC_75;
+@org $58, $5e76:
+	text "⋯⋯⋯⋯";
+	done;
+
+@org $58, $5e7c:
+	init NAME_BLANK, PIC_20;
+@org $58, $5e7f:
+	text "啊﹗﹗";
+	line "怎麼回事﹖";
+	cont "怎麼打起盹來了";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "該死啊﹗";
+	done;
+
+@org $58, $5ea9:
+	init NAME_BLANK, PIC_23;
+@org $58, $5eac:
+	text "巴洛特呀～";
+	line "真是感謝你﹗";
+	para "";
+	db $f1, $58; #"要"
+	text "不是你的話﹐";
+	line "他們就回不來了";
+	cont "這個就給你了﹐";
+	line "千萬不要推辭喲";
+	done;
+
+@org $58, $5ef8:
+	init NAME_BALLOT, PIC_2A;
+@org $58, $5efb:
+	text "得到了";
+	line "";
+	db $f1, $99; #"營"
+	text "";
+	db $9a; #"養"
+	text "大餐";
+	done;
+
+@org $58, $5f09:
+	init NAME_BLANK, PIC_23;
+@org $58, $5f0c:
+	text "巴洛特呀～";
+	line "真是感謝你﹗";
+	cont "";
+	db $f1, $58; #"要"
+	text "不是你的話﹐";
+	line "他們就回不來了";
+	done;
+
+@org $58, $5f40:
+	init NAME_BLANK, PIC_24;
+@org $58, $5f43:
+	text "生之谷的火山﹐";
+	line "好像又回復平靜";
+	cont "了⚬";
+	para "又可以安心的工";
+	line "作了⚬";
+	done;
+
+@org $58, $5f77:
+	init NAME_BLANK, PIC_14;
+@org $58, $5f7a:
+	text "藍特之前還因為";
+	line "火山的事情﹐跑";
+	cont "來警告我們⚬";
+	para "我還罵他是騙人";
+	line "的壞小孩⋯";
+	cont "真是對不起⋯⋯";
+	done;
+
+@org $58, $5fc7:
+	init NAME_BLANK, PIC_13;
+@org $58, $5fca:
+	text "哼﹗雖然藍特把";
+	line "我們關起來﹐是";
+	cont "出於好意﹗";
+	line "但我還是很生氣";
+	line "哼哼哼﹗";
+	done;
+
+@org $58, $6003:
+	init NAME_BLANK, PIC_1A;
+@org $58, $6006:
+	text "藍特哥哥好棒唷";
+	line "他的笛聲會讓人";
+	cont "跳舞唷﹗";
+	done;
+
+@org $58, $602b:
+	init NAME_BLANK, PIC_16;
+@org $58, $602e:
+	text "真是可怕⋯⋯";
+	line "剛才看見一大群";
+	cont "老鼠﹐一起游向";
+	line "了那艘旅行船⚬";
+	para "遠遠的看﹐就像";
+	line "在底比斯海上拖";
+	cont "著一條黑色的線";
+	done;
+
+@org $58, $608c:
+	init NAME_BLANK, PIC_14;
+@org $58, $608f:
+	text "唉呀～";
+	line "";
+	db $f2, $60; #"被"
+	text "關了好多天﹐";
+	cont "會不會被老闆認";
+	line "為是無故曠工啊";
+	cont "要是被扣薪水的";
+	line "話﹐就不妙了⋯";
+	done;
+
+@org $58, $60db:
+	init NAME_BLANK, PIC_17;
+@org $58, $60de:
+	text "這幾天被關在死";
+	line "";
+	db $f0, $02; #"之"
+	text "谷﹐才發現那";
+	para "裡還不錯唷﹗";
+	line "趁現在那裡地價";
+	cont "低⋯⋯";
+	para "";
+	db $f2, $cd; #"好"
+	text "";
+	db $cd; #"好"
+	text "的將地皮炒";
+	line "一炒的話⋯";
+	para "嘿嘿～";
+	line "";
+	db $f2, $d7; #"就"
+	text "．發．了﹗";
+	done;
+
+@org $58, $6144:
+	init NAME_BLANK, PIC_1F;
+@org $58, $6147:
+	text "聽姐夫說﹐神木";
+	line "村那裡﹐好像漸";
+	cont "";
+	db $f2, $29; #"漸"
+	text "的沙漠化了⋯";
+	para "真是個奇怪的現";
+	line "象﹗";
+	done;
+
+@org $58, $6182:
+	init NAME_BLANK, PIC_19;
+@org $58, $6185:
+	text "剛剛在城外發現";
+	line "一些可怕的星獸";
+	cont "鬼鬼崇崇東張西";
+	line "";
+	db $f4, $5b; #"望"
+	text "⋯";
+	line "真叫人不安⋯";
+	done;
+
+@org $58, $61bc:
+	init NAME_BLANK, PIC_1A;
+@org $58, $61bf:
+	text "哈哈哈～";
+	line "村人終於回來了";
+	cont "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "一件喜事﹗";
+	line "但是又發生了另";
+	line "一件事情～";
+	para "";
+	db $f2, $88; #"其"
+	text "實也不算是什";
+	line "麼大事啦～";
+	para "";
+	db $f2, $ad; #"我"
+	text "一直在考慮一";
+	line "個人生的大問題";
+	para "我要怎麼從床底";
+	line "下出來呢﹖";
+	done;
+
+@org $58, $6246:
+	init NAME_BLANK, PIC_15;
+@org $58, $6249:
+	text "我們家琳琳﹐一";
+	line "";
+	db $f0, $80; #"天"
+	text "到晚迷那個做";
+	para "喇叭英雄的﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "不像個女生﹗";
+	done;
+
+@org $58, $6277:
+	init NAME_BLANK, PIC_1A;
+@org $58, $627a:
+	text "是叭拉叭拉超人";
+	line "啦﹗";
+	para "發現大屁屁老妖";
+	line "怪﹗";
+	para "叭拉．必殺．光";
+	line "";
+	db $f0, $b9; #"波"
+	text "﹗﹗";
+	para "嗶嗶嗶～嗶～";
+	line "";
+	db $f2, $6e; #"碰"
+	text "﹗";
+	done;
+
+@org $58, $62c1:
+	init NAME_BLANK, PIC_1A;
+@org $58, $62c4:
+	text "人家要寄這個模";
+	line "型給東漁市的表";
+	para "哥﹐要怎麼寄呢";
+	line "";
+	db $f2, $4a; #"你"
+	text "能幫我把這個";
+	cont "交給表哥嗎﹖";
+	line "謝謝你﹗";
+	done;
+
+@org $58, $6310:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $6313:
+	text "得到超人模型﹗";
+	done;
+
+@org $58, $6321:
+	init NAME_BLANK, PIC_1A;
+@org $58, $6324:
+	text "要把模型交給東";
+	line "漁市的表哥唷﹗";
+	para "這個是最流行的";
+	line "叭拉叭拉超人唷";
+	para "叭拉．必殺．光";
+	line "";
+	db $f0, $b9; #"波"
+	text "﹗﹗﹗";
+	cont "嗶嗶嗶～嗶～";
+	line "";
+	db $f2, $6e; #"碰"
+	text "﹗";
+	done;
+
+@org $58, $6381:
+	init NAME_LANTE, PIC_05;
+@org $58, $6384:
+	text "巴洛特﹐你來了";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"﹖"
+	text "";
+	cont "所有村人都已經";
+	line "被放回來了⚬";
+	para "一起尋找剩下的";
+	line "";
+	db $f1, $aa; #"晶"
+	text "片吧﹗";
+	done;
+
+@org $58, $63c6:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $63c9:
+	text "藍特＆音樂靈加";
+	line "";
+	db $f2, $30; #"入"
+	text "";
+	db $5c; #"隊"
+	text "";
+	db $5d; #"伍"
+	text "⚬";
+	done;
+
+@org $58, $63df:
+	init NAME_41, PIC_6A;
+@org $58, $63e2:
+	text "嘰嘰～阻礙計劃";
+	line "者⋯嘰嘰⋯殺﹗";
+	done;
+
+@org $58, $63fd:
+	init NAME_BALLOT, PIC_2E;
+@org $58, $6400:
+	text "阻礙計劃者﹖";
+	line "這是什麼意思﹖";
+	cont "星獸有什麼計劃";
+	line "嗎﹖";
+	para "這種不安的感覺";
+	line "到底是什麼呢﹖";
+	done;
+
+@org $58, $644a:
+	init NAME_46, PIC_6E;
+@org $58, $644d:
+	text "藍特～";
+	line "";
+	db $f2, $4a; #"你"
+	text "回來啦﹗";
+	cont "出去旅行要特別";
+	line "小心唷﹗";
+	done;
+
+@org $58, $6475:
+	init NAME_43, PIC_50;
+@org $58, $6478:
+	text "藍特﹗";
+	line "居然敢離家出走";
+	cont "也好﹗";
+	para "不可以變成不良";
+	line "少年唷﹗";
+	done;
+
+@org $58, $64a8:
+	init NAME_43, PIC_50;
+@org $58, $64ab:
+	text "那是什麼聲音﹖";
+	line "";
+	db $f1, $be; #"甲"
+	text "板下好像又有";
+	cont "老鼠了﹗";
+	para "巴洛特﹐就算幫";
+	line "我的忙好了﹗";
+	cont "幫我趕跑那些老";
+	line "鼠好嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $58, $6503:
+	init NAME_43, PIC_50;
+@org $58, $6506:
+	text "啊﹗藍特怎麼可";
+	line "";
+	db $f1, $cb; #"以"
+	text "跟那種自私的";
+	para "朋友一起旅行呢";
+	line "﹖";
+	done;
+
+@org $58, $6534:
+	init NAME_43, PIC_50;
+@org $58, $6537:
+	text "那就謝謝你了﹗";
+	done;
+
+@org $58, $6543:
+	init NAME_43, PIC_50;
+@org $58, $6546:
+	text "甲板下好像又有";
+	line "老鼠的聲音﹗";
+	para "巴洛特﹐幫我";
+	line "把牠們趕跑啦﹗";
+	done;
+
+@org $58, $657b:
+	init NAME_43, PIC_50;
+@org $58, $657e:
+	text "真是感謝﹗";
+	line "這個就給你了﹗";
+	cont "不曉得為什麼﹐";
+	line "這裡的老鼠還真";
+	line "多呀﹗";
+	done;
+
+@org $58, $65b7:
+	init NAME_BALLOT, PIC_2A;
+@org $58, $65ba:
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $58, $65c6:
+	init NAME_43, PIC_50;
+@org $58, $65c9:
+	text "真是感謝﹗";
+	line "這個就給你了﹗";
+	cont "老鼠的聲音聽來";
+	line "少多了⋯⋯";
+	done;
+
+@org $58, $65f5:
+	init NAME_BALLOT, PIC_2A;
+@org $58, $65f8:
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $58, $6604:
+	init NAME_43, PIC_50;
+@org $58, $6607:
+	text "太感謝了﹗";
+	line "這個就給你了﹗";
+	cont "";
+	db $f1, $be; #"甲"
+	text "板下﹐應該已";
+	line "";
+	db $f1, $73; #"經"
+	text "沒有老鼠了吧";
+	done;
+
+@org $58, $6639:
+	init NAME_BALLOT, PIC_2A;
+@org $58, $663c:
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $58, $6648:
+	init NAME_43, PIC_50;
+@org $58, $664b:
+	text "我最討厭老鼠了";
+	line "";
+	db $f1, $35; #"﹗"
+	text "";
+	done;
+

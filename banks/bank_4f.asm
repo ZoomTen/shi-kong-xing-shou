@@ -1347,9 +1347,56 @@ ObjSprite_4f_4cbf::
 	object_event $48,  5,  3, 0, $00, $00, $00, $01, Script_04f_4031
 	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G3_20_ObjectEvents:
-	dr $13cccb, $13cd58
+	object_event $46,  5,  3, wEventFlags + 6, $01, $00, $00, $00, Script_04f_4cd7
+	objects_end
+
+Script_04f_4cd7:
+	stext text_4f_6746
+	startbattle BattleData_02d_4b60
+	checkbit wEventFlags + 3, $03, Script_04f_4000
+	spriteface  2, FACE_UP
+	spriteface  2, FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	clearobject $02
+	loadobjsprite ObjSprite_4f_4cbf
+	objmove $03, MovementData_04f_7c26
+	clearobject $03
+	loadobjsprite ObjSprite_4f_4cbf
+	objmove $03, MovementData_04f_7c4f
+	clearobject $03
+	loadobjsprite ObjSprite_4f_4cbf
+	objmove $03, MovementData_04f_7c7c
+	clearobject $03
+	loadobjsprite ObjSprite_4f_4cbf
+	objmove $03, MovementData_04f_7ca9
+	clearobject $03
+	loadobjsprite ObjSprite_4f_4cbf
+	objmove $03, MovementData_04f_7cd6
+	clearobject $03
+	setmappredef MAPPREDEF_10
+	setplayerchar $00
+	setmap $1f, $01
+	face FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	emote  2, EMOTE_TEAR
+	delay $03, $20
+	stext text_4f_6787
+	emote  0, EMOTE_EXCLAMATION
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_6799
+	clearplayerpos
+	spritewalk  2, MOVE_RIGHT
+	clearobject $02
+	spriteface  3, FACE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	clearobject $03
+	scr_62 $03, $01
+	setbit wEventFlags + 6, $01
+	end
 
 G3_1F_ObjectEvents2:
 	object_event $06,  4,  4, wEventFlags + 6, $01, $00, $00, $00, Script_04f_4031
@@ -1437,18 +1484,25 @@ MovementData_04f_7bf5:
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
-	db $88, $ff, $ff, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
+	db $88
+MovementData_04f_7c26::
+	db $ff, $ff, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
 	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
-	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $88, $ff, $00, $fc, $fe, $fc, $fe
-	db $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe
-	db $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe
-	db $fc, $fd, $fc, $fe, $fc, $fe, $88, $ff, $00, $fc, $00, $fc, $00, $fc, $00, $fc
-	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
-	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
-	db $00, $fc, $00, $88, $ff, $01, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03
-	db $fc, $02, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03
-	db $fc, $03, $fc, $03, $fc, $03, $fc, $02, $fc, $03, $fc, $03, $fc, $03, $fc, $03
-	db $88, $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc
-	db $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd
-	db $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $88
+	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $88
+MovementData_04f_7c4f::
+	db $ff, $00, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe
+	db $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe
+	db $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $88
+MovementData_04f_7c7c::
+	db $ff, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88
+MovementData_04f_7ca9::
+	db $ff, $01, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $02, $fc, $03
+	db $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03
+	db $fc, $03, $fc, $02, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $88
+MovementData_04f_7cd6::
+	db $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04
+	db $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04
+	db $fc, $04, $fc, $04, $fd, $04, $fc, $04, $88
 
