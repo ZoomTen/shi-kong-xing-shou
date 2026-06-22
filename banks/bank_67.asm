@@ -177,7 +177,32 @@ BeachCutscene::
 	ld [wd1fb], a
 	ret
 BeachCutsceneSpriteFrames:
-	dr $19c14a, $19c25e
+	dw BeachCutsceneSpriteFrames_4152
+	dw BeachCutsceneSpriteFrames_416b
+	dw BeachCutsceneSpriteFrames_41d4
+	dw BeachCutsceneSpriteFrames_4211
+BeachCutsceneSpriteFrames_4152:
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
+BeachCutsceneSpriteFrames_416b:
+	db $08, $38, $00, $00, $18, $28, $02, $00, $18, $30, $04, $00, $18, $38, $06, $00
+	db $18, $40, $08, $00, $18, $48, $0a, $00, $18, $50, $0c, $00, $28, $28, $0e, $00
+	db $28, $30, $10, $00, $28, $38, $12, $00, $28, $40, $14, $00, $28, $48, $16, $00
+	db $38, $18, $18, $00, $38, $20, $1a, $00, $38, $28, $1c, $00, $38, $30, $1e, $00
+	db $38, $38, $20, $00, $38, $40, $22, $00, $40, $10, $24, $00, $48, $18, $26, $00
+	db $48, $20, $28, $00, $48, $38, $2a, $00, $48, $40, $2c, $00, $48, $48, $2e, $00
+	db $50, $50, $30, $00, $50, $58, $32, $00, $ff
+BeachCutsceneSpriteFrames_41d4:
+	db $20, $10, $00, $00, $20, $18, $02, $00, $20, $20, $04, $00, $20, $28, $06, $00
+	db $20, $30, $08, $00, $28, $38, $0a, $00, $28, $40, $0c, $00, $30, $10, $0e, $00
+	db $30, $18, $10, $00, $30, $20, $12, $00, $30, $28, $14, $00, $30, $30, $16, $00
+	db $38, $38, $18, $00, $38, $40, $1a, $00, $40, $28, $1c, $00, $ff
+BeachCutsceneSpriteFrames_4211:
+	db $00, $00, $00, $00, $00, $08, $02, $00, $00, $10, $04, $00, $00, $18, $06, $00
+	db $00, $20, $08, $00, $00, $28, $0a, $00, $08, $30, $0c, $00, $10, $00, $0e, $00
+	db $10, $08, $10, $00, $10, $10, $12, $00, $10, $18, $14, $00, $10, $20, $16, $00
+	db $10, $28, $18, $00, $18, $30, $1a, $00, $20, $08, $1c, $00, $20, $10, $1e, $00
+	db $20, $18, $20, $00, $20, $20, $22, $00, $20, $28, $24, $00, $ff
 BeachCutsceneObjectPalettes:
 	RGB 21, 21, 21
 	RGB 31, 17, 0
@@ -555,6 +580,7 @@ FloatingIslandCutscene2::
 	ld a, $01
 	ld [hFade], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 FloatingIslandCutscene2_MoveDeltas:
 	dr $19d2e8, $19d371
 Func_67_5371:
@@ -930,4 +956,5 @@ Script_067_6f4a:
 	end
 
 INCLUDE "data/text/bank67_6f4b.asm"
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $19f084, $19f090

@@ -177,6 +177,7 @@ ScreenGFX2Pointers:
 	dw CreditsGFX8800_1
 	dw CreditsGFX_2
 	dw CreditsGFX_3
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 ScreenOBJPalettePointers:
 	dr $1c0165, $1c016d
 ScreenCreditsPointers:
@@ -285,12 +286,16 @@ ObjectPlacementPointers:
 	dw CreditsSprites_1
 	dw CreditsSprites_2
 	dw CreditsSprites_3
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CreditsSprites_0:
 	dr $1c0201, $1c025e
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CreditsSprites_1:
 	dr $1c025e, $1c02bb
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CreditsSprites_2:
 	dr $1c02bb, $1c030c
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CreditsSprites_3:
 	dr $1c030c, $1c0391
 CreditsOBJPalettes:

@@ -1,3 +1,4 @@
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $1b8000, $1b8001
 G7_0A_ObjectEvents:
 	objects_end
@@ -40,6 +41,7 @@ G7_01_ObjectEvents:
 	object_event $11,  3,  4, 0, $00, $00, $00, $01, $0000
 	object_event $59,  3,  6, 0, $00, $00, $00, $02, $0000
 	objects_end
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G7_02_ObjectEvents:
 	dr $1b80f2, $1b9069
 G7_09_MapAttributes:
@@ -49,10 +51,13 @@ G7_09_MapAttributes:
 		Palettes_06e_51b4, \
 		0, Tileset_006_438c, \
 		Collision_06e_51fc
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06e_507d::
 	dr $1b907d, $1b909c
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_06e_509c::
 	dr $1b909c, $1b9120
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_06e_5120::
 	dr $1b9120, $1b9180
 AttrMap_06e_5180::
@@ -94,5 +99,6 @@ Palettes_06e_51b4::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: collision binary - INCBIN .bin
 Collision_06e_51fc::
 	dr $1b91fc, $1b9220

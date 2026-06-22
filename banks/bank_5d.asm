@@ -361,6 +361,7 @@ RhythmMinigame::
 	ld a, $03
 	ld [wdcf5], a
 	ret
+; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 ScoreDigitTiles:
 	dr $17434a, $17435e
 Func_5d_435e:
@@ -1090,6 +1091,7 @@ Func_5d_4800:
 	xor a
 	ld [wdcfc], a
 	jp .asm_4824
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 NoteSpawnTable:
 	dr $17485f, $1748a8
 Func_5d_48a8:
@@ -1168,8 +1170,10 @@ SpriteAnim_Pointers:
 	dw SpriteFrame_Title
 	dw SpriteFrame_Title
 	dw SpriteFrame_Title
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteFrame_Empty:
 	dr $174917, $174930
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteFrame_Title:
 	dr $174930, $174951
 Func_5d_4951:
@@ -1476,30 +1480,43 @@ AnimFrame_Pointers:
 	dw RhythmAnimFrames_767b
 	dw RhythmAnimFrames_777b
 	dw RhythmAnimFrames_787b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames:
 	dr $176c7b, $176d7b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_6d7b:
 	dr $176d7b, $176e7b
+; TODO: high-entropy - likely graphics, extract to PNG
 RhythmAnimFrames_6e7b:
 	dr $176e7b, $176f7b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_6f7b:
 	dr $176f7b, $17707b
+; TODO: high-entropy - likely graphics, extract to PNG
 RhythmAnimFrames_707b:
 	dr $17707b, $17717b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_717b:
 	dr $17717b, $17727b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_727b:
 	dr $17727b, $17737b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_737b:
 	dr $17737b, $17747b
+; TODO: high-entropy - likely graphics, extract to PNG
 RhythmAnimFrames_747b:
 	dr $17747b, $17757b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_757b:
 	dr $17757b, $17767b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_767b:
 	dr $17767b, $17777b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_777b:
 	dr $17777b, $17787b
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames_787b:
 	dr $17787b, $17797b
 ; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels

@@ -592,6 +592,7 @@ Palettes_005_4364:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: palette - convert to RGB macros
 Palette_005_4394:
 	dr $14394, $143e1
 
@@ -1852,6 +1853,7 @@ Func_005_4bc1:
 	ret
 
 .asm_4c3a:
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $14c3a, $14c4c
 ; TODO
 asm_005_4c4c:
@@ -3784,5 +3786,6 @@ Func_005_5a8e:
 	jr nz, .clear
 	ret
 
+; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_005_5a9c:
 	dr $15a9c, $15cf0

@@ -94,30 +94,43 @@ TileAnimGroupPointers:
 	dw TileAnimMaps_Group5
 	dw TileAnimMaps_Group6
 	dw TileAnimMaps_Group7
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group0:
 	dr $7007d, $700e9
+; TODO: high-entropy - likely graphics, extract to PNG
 TileAnimData_Group0:
 	dr $700e9, $70781
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group2:
 	dr $70781, $707c9
+; TODO: high-entropy - likely graphics, extract to PNG
 TileAnimData_Group2:
 	dr $707c9, $70f53
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group3:
 	dr $70f53, $70f9b
+; TODO: high-entropy - likely graphics, extract to PNG
 TileAnimData_Group3:
 	dr $70f9b, $712a2
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group4:
 	dr $712a2, $7136e
+; TODO: high-entropy - likely graphics, extract to PNG
 TileAnimData_Group4:
 	dr $7136e, $71ceb
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group5:
 	dr $71ceb, $71d3b
+; TODO: high-entropy - likely graphics, extract to PNG
 TileAnimData_Group5:
 	dr $71d3b, $71fde
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group6:
 	dr $71fde, $72038
+; TODO: high-entropy - likely graphics, extract to PNG
 TileAnimData_Group6:
 	dr $72038, $72248
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TileAnimMaps_Group7:
 	dr $72248, $72260
 

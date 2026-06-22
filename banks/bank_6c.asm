@@ -48,6 +48,7 @@ Script_06c_405c:
 
 INCLUDE "data/text/bank6c_405d.asm"
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_18_ObjectEvents:
 	dr $1b00bb, $1b018c
 
@@ -148,9 +149,11 @@ ObjSprite_6c_4266::
 	object_event $59,  5,  8, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_1A_ObjectEvents:
 	dr $1b0272, $1b02db
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_1B_ObjectEvents:
 	dr $1b02db, $1b0310
 Script_06c_4310::
@@ -311,15 +314,19 @@ Script_06c_441a::
 	setbit wEventFlags + 24, $03
 	end
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_08_ObjectEvents:
 	dr $1b049b, $1b04c8
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_09_ObjectEvents:
 	dr $1b04c8, $1b04f5
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_0A_ObjectEvents:
 	dr $1b04f5, $1b0522
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_0B_ObjectEvents:
 	dr $1b0522, $1b060e
 Script_06c_460e::
@@ -366,6 +373,7 @@ Script_06c_4659:
 	dirmovement
 	end
 
+; TODO: unclassified data table - identify via consumer
 unk_06c_465b::
 	dr $1b065b, $1b0671
 Script_06c_4671::
@@ -470,15 +478,19 @@ Script_06c_4712:
 	setmap $02, $00
 	end2
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_02_ObjectEvents:
 	dr $1b0716, $1b073b
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_0D_ObjectEvents2:
 	dr $1b073b, $1b0798
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_07_ObjectEvents:
 	dr $1b0798, $1b07af
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_07_ObjectEvents2:
 	dr $1b07af, $1b07c6
 
@@ -989,6 +1001,7 @@ Script_06c_4cf9:
 	setbit wEventFlags + 18, $06
 	end
 
+; TODO: unclassified data table - identify via consumer
 unk_06c_4d4f::
 	dr $1b0d4f, $1b0d66
 
@@ -996,6 +1009,7 @@ G6_26_ObjectEvents:
 	object_event $58,  4,  4, wEventFlags + 18, $04, $00, $00, $00, Script_06c_4ea3
 	objects_end
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_26_ObjectEvents2:
 	dr $1b0d72, $1b0daa
 Script_06c_4daa:
@@ -1116,6 +1130,7 @@ Script_06c_4ea3:
 	textface text_6c_5755
 	setbit wEventFlags + 23, $06
 	end
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $1b0eae, $1b0eba
 Script_06c_4eba::
 	checkbit wEventFlags + 19, $01, Script_06c_4ed0
@@ -1215,6 +1230,7 @@ unk_06c_4f9e::
 	object_event $59,  3,  9, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_1F_ObjectEvents:
 	dr $1b0faa, $1b0ffd
 Script_06c_4ffd::

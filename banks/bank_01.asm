@@ -424,6 +424,7 @@ Hideout_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Hideout_Collision:
 	dr $4652, $4681
 
@@ -499,6 +500,7 @@ PowerPlant_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 PowerPlant_Collision:
 	dr $49ee, $4a26
 
@@ -553,6 +555,7 @@ PowerPlantOutside_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 PowerPlantOutside_Collision:
 	dr $4cd0, $4cff
 
@@ -607,15 +610,19 @@ Junkyard_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Junkyard_Collision:
 	dr $4ecb, $4eeb
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_4eeb:
 	dr $4eeb, $4f0a
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_001_4f0a:
 	dr $4f0a, $4f76
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_4f76:
 	dr $4f76, $4fc2
 
@@ -660,39 +667,51 @@ Palettes_001_5013:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_001_505b:
 	dr $505b, $5076
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5076:
 	dr $5076, $5095
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5095:
 	dr $5095, $50d5
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_50d5:
 	dr $50d5, $50f4
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_50f4:
 	dr $50f4, $5138
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5138:
 	dr $5138, $5157
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5157:
 	dr $5157, $5197
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5197:
 	dr $5197, $51b6
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_51b6:
 	dr $51b6, $51fa
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_51fa:
 	dr $51fa, $5219
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_001_5219:
 	dr $5219, $5301
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5301:
 	dr $5301, $5361
 
@@ -737,6 +756,7 @@ Palettes_001_5402:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_001_544a:
 	dr $544a, $5484
 
@@ -791,15 +811,19 @@ CrystalVillage_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CrystalVillage_Collision:
 	dr $586e, $58a7
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_58a7:
 	dr $58a7, $58c6
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_001_58c6:
 	dr $58c6, $592a
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_592a:
 	dr $592a, $5976
 
@@ -844,15 +868,19 @@ Palettes_001_59c7:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_001_5a0f:
 	dr $5a0f, $5a28
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5a28:
 	dr $5a28, $5a47
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_001_5a47:
 	dr $5a47, $5ab3
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5ab3:
 	dr $5ab3, $5b13
 
@@ -897,45 +925,59 @@ Palettes_001_5b55:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_001_5b9d:
 	dr $5b9d, $5bb9
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5bb9:
 	dr $5bb9, $5bd8
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5bd8:
 	dr $5bd8, $5c18
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5c18:
 	dr $5c18, $5c37
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5c37:
 	dr $5c37, $5c7b
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5c7b:
 	dr $5c7b, $5c9a
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5c9a:
 	dr $5c9a, $5cd2
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5cd2:
 	dr $5cd2, $5cf1
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5cf1:
 	dr $5cf1, $5d35
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5d35:
 	dr $5d35, $5d54
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5d54:
 	dr $5d54, $5db4
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5db4:
 	dr $5db4, $5dd3
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_001_5dd3:
 	dr $5dd3, $5eb3
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_5eb3:
 	dr $5eb3, $5efb
 
@@ -980,6 +1022,7 @@ Palettes_001_5f8c:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_001_5fd4:
 	dr $5fd4, $600d
 
@@ -1034,6 +1077,7 @@ TechCity_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TechCity_Collision:
 	dr $6433, $6462
 
@@ -1088,6 +1132,7 @@ BellSchoolSouthClassroom_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellSchoolSouthClassroom_Collision:
 	dr $6690, $66c2
 
@@ -1142,6 +1187,7 @@ BellObservatory1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellObservatory1_Collision:
 	dr $6908, $693c
 
@@ -1196,6 +1242,7 @@ BellSchool1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellSchool1_Collision:
 	dr $6ac6, $6ade
 
@@ -1250,6 +1297,7 @@ BellHealingCenter1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellHealingCenter1_Collision:
 	dr $6c52, $6c6b
 
@@ -1334,6 +1382,7 @@ FangfangsHouse1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BallotsHouse1_Collision:
 HayatosHouse1_Collision:
 CarpetWomansHouse1_Collision:
@@ -1391,6 +1440,7 @@ BellObservatoryOutside1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellObservatoryOutside1_Collision:
 	dr $7247, $726f
 
@@ -1445,6 +1495,7 @@ BellSchoolOutside1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellSchoolOutside1_Collision:
 	dr $752d, $756c
 
@@ -1464,6 +1515,7 @@ BellVillage1_AttrMap:
 BellVillage1_Palettes:
 	INCBIN "data/maps/palettes/BellVillage1.bin"
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellVillage1_Collision:
 	dr $78de, $791a
 
@@ -1474,10 +1526,13 @@ G2_23_MapAttributes:
 		Palettes_001_795e, \
 		Tileset_001_79a8, Tileset_001_79a8, \
 		Collision_001_79a6
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_792e::
 	dr $792e, $7953
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_001_7953::
 	dr $7953, $7957
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_001_7957::
 	dr $7957, $795b
 AttrMap_001_795b::
@@ -1519,7 +1574,9 @@ Palettes_001_795e::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: collision binary - INCBIN .bin
 Collision_001_79a6::
 	dr $79a6, $79a8
+; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 Tileset_001_79a8::
 	dr $79a8, $79c8

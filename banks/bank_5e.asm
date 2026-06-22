@@ -982,7 +982,33 @@ Func_05e_4747:
 	call Func_1373
 	ret
 RacingMinigame_TilePtrs0:
-	dr $1787ad, $178807
+	dw RacingMinigame_TilePtrs0_47bf
+	dw RacingMinigame_TilePtrs0_47c7
+	dw RacingMinigame_TilePtrs0_47cf
+	dw RacingMinigame_TilePtrs0_47d7
+	dw RacingMinigame_TilePtrs0_47df
+	dw RacingMinigame_TilePtrs0_47e7
+	dw RacingMinigame_TilePtrs0_47ef
+	dw RacingMinigame_TilePtrs0_47f7
+	dw RacingMinigame_TilePtrs0_47ff
+RacingMinigame_TilePtrs0_47bf:
+	db $78, $79, $78, $79, $78, $79, $78, $79
+RacingMinigame_TilePtrs0_47c7:
+	db $78, $79, $78, $79, $78, $79, $76, $77
+RacingMinigame_TilePtrs0_47cf:
+	db $78, $79, $78, $79, $78, $79, $57, $58
+RacingMinigame_TilePtrs0_47d7:
+	db $78, $79, $78, $79, $76, $77, $57, $58
+RacingMinigame_TilePtrs0_47df:
+	db $78, $79, $78, $79, $57, $58, $57, $58
+RacingMinigame_TilePtrs0_47e7:
+	db $78, $79, $76, $77, $57, $58, $57, $58
+RacingMinigame_TilePtrs0_47ef:
+	db $78, $79, $57, $58, $57, $58, $57, $58
+RacingMinigame_TilePtrs0_47f7:
+	db $76, $77, $57, $58, $57, $58, $57, $58
+RacingMinigame_TilePtrs0_47ff:
+	db $57, $58, $57, $58, $57, $58, $57, $58
 Func_05e_4807:
 	ld a, [wcd7d]
 	and a
@@ -1103,8 +1129,10 @@ Func_5e_4849:
 	ld a, $B0
 	ld [wcd82], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_CoordTableA:
 	dr $1788cc, $17894d
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_CoordTableB:
 	dr $17894d, $1789ce
 Func_05e_49ce:
@@ -1393,7 +1421,21 @@ Func_05e_4b9d:
 	jr nz, .asm_4bc0
 	ret
 RacingMinigame_TilePtrs1:
-	dr $178bdc, $178bfa
+	dw RacingMinigame_TilePtrs1_4be6
+	dw RacingMinigame_TilePtrs1_4bea
+	dw RacingMinigame_TilePtrs1_4bee
+	dw RacingMinigame_TilePtrs1_4bf2
+	dw RacingMinigame_TilePtrs1_4bf6
+RacingMinigame_TilePtrs1_4be6:
+	db $59, $59, $59, $59
+RacingMinigame_TilePtrs1_4bea:
+	db $59, $59, $59, $75
+RacingMinigame_TilePtrs1_4bee:
+	db $59, $59, $75, $75
+RacingMinigame_TilePtrs1_4bf2:
+	db $59, $75, $75, $75
+RacingMinigame_TilePtrs1_4bf6:
+	db $75, $75, $75, $75
 Func_05e_4bfa:
 	ld a, [wcd6b]
 	and a
@@ -1699,7 +1741,45 @@ Func_05e_4dc0:
 	ld [wcd9d], a
 	ret
 RacingMinigame_AnimPtrs:
-	dr $178e0a, $178eac
+	dw RacingMinigame_AnimPtrs_4e2a
+	dw RacingMinigame_AnimPtrs_4e2b
+	dw RacingMinigame_AnimPtrs_4e2b
+	dw RacingMinigame_AnimPtrs_4e2e
+	dw RacingMinigame_AnimPtrs_4e2e
+	dw RacingMinigame_AnimPtrs_4e31
+	dw RacingMinigame_AnimPtrs_4e33
+	dw RacingMinigame_AnimPtrs_4e2a
+	dw RacingMinigame_AnimPtrs_4e2a
+	dw RacingMinigame_AnimPtrs_4e2a
+	dw RacingMinigame_AnimPtrs_4e2a
+	dw RacingMinigame_AnimPtrs_4e35
+	dw RacingMinigame_AnimPtrs_4e37
+	dw RacingMinigame_AnimPtrs_4e39
+	dw RacingMinigame_AnimPtrs_4e39
+	dw RacingMinigame_AnimPtrs_4e39
+RacingMinigame_AnimPtrs_4e2a:
+	db $ff
+RacingMinigame_AnimPtrs_4e2b:
+	db $01, $02, $ff
+RacingMinigame_AnimPtrs_4e2e:
+	db $03, $04, $ff
+RacingMinigame_AnimPtrs_4e31:
+	db $05, $ff
+RacingMinigame_AnimPtrs_4e33:
+	db $06, $ff
+RacingMinigame_AnimPtrs_4e35:
+	db $0b, $ff
+RacingMinigame_AnimPtrs_4e37:
+	db $0c, $ff
+RacingMinigame_AnimPtrs_4e39:
+	db $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d
+	db $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0d, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e
+	db $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e, $0e
+	db $10, $10, $10, $10, $10, $10, $10, $10, $10, $10, $10, $10, $10, $10, $10, $10
+	db $10, $10, $10, $10, $10, $10, $10, $10, $11, $11, $11, $11, $11, $11, $11, $11
+	db $11, $11, $11, $11, $11, $11, $11, $11, $11, $11, $11, $11, $11, $11, $11, $11
+	db $11, $11, $11, $11, $11, $11, $0f, $0f, $0f, $0f, $0f, $0f, $0f, $0f, $0f, $0f
+	db $0f, $0f, $ff
 Func_05e_4eac:
 	ld a, [wcd58]
 	and a
@@ -2175,7 +2255,73 @@ Func_05e_50f4:
 	ld [wd1fb], a
 	ret
 RacingMinigame_SpritePtrs:
-	dr $17912d, $1792b3
+	dw RacingMinigame_SpritePtrs_5151
+	dw RacingMinigame_SpritePtrs_5172
+	dw RacingMinigame_SpritePtrs_518b
+	dw RacingMinigame_SpritePtrs_51a4
+	dw RacingMinigame_SpritePtrs_51bd
+	dw RacingMinigame_SpritePtrs_51d6
+	dw RacingMinigame_SpritePtrs_51db
+	dw RacingMinigame_SpritePtrs_51e0
+	dw RacingMinigame_SpritePtrs_51e9
+	dw RacingMinigame_SpritePtrs_51f2
+	dw RacingMinigame_SpritePtrs_51fb
+	dw RacingMinigame_SpritePtrs_5204
+	dw RacingMinigame_SpritePtrs_5235
+	dw RacingMinigame_SpritePtrs_526e
+	dw RacingMinigame_SpritePtrs_527b
+	dw RacingMinigame_SpritePtrs_5288
+	dw RacingMinigame_SpritePtrs_5299
+	dw RacingMinigame_SpritePtrs_52a6
+RacingMinigame_SpritePtrs_5151:
+	db $00, $00, $00, $00, $00, $08, $00, $00, $00, $10, $00, $00, $00, $18, $00, $00
+	db $10, $00, $00, $00, $10, $08, $00, $00, $10, $10, $00, $00, $10, $18, $00, $00
+	db $ff
+RacingMinigame_SpritePtrs_5172:
+	db $00, $00, $00, $01, $00, $08, $02, $01, $00, $10, $04, $01, $10, $00, $06, $01
+	db $10, $08, $08, $01, $10, $10, $0a, $01, $ff
+RacingMinigame_SpritePtrs_518b:
+	db $00, $00, $0c, $01, $00, $08, $0e, $01, $00, $10, $10, $01, $10, $00, $12, $01
+	db $10, $08, $14, $01, $10, $10, $16, $01, $ff
+RacingMinigame_SpritePtrs_51a4:
+	db $00, $00, $18, $02, $00, $08, $1a, $02, $00, $10, $1c, $02, $10, $00, $1e, $02
+	db $10, $08, $20, $02, $10, $10, $22, $02, $ff
+RacingMinigame_SpritePtrs_51bd:
+	db $00, $00, $24, $02, $00, $08, $26, $02, $00, $10, $28, $02, $10, $00, $2a, $02
+	db $10, $08, $2c, $02, $10, $10, $2e, $02, $ff
+RacingMinigame_SpritePtrs_51d6:
+	db $00, $00, $30, $01, $ff
+RacingMinigame_SpritePtrs_51db:
+	db $00, $00, $32, $02, $ff
+RacingMinigame_SpritePtrs_51e0:
+	db $00, $00, $34, $00, $00, $08, $36, $00, $ff
+RacingMinigame_SpritePtrs_51e9:
+	db $00, $00, $38, $00, $00, $08, $3a, $00, $ff
+RacingMinigame_SpritePtrs_51f2:
+	db $00, $00, $3c, $00, $00, $08, $3e, $00, $ff
+RacingMinigame_SpritePtrs_51fb:
+	db $00, $00, $40, $00, $00, $08, $42, $00, $ff
+RacingMinigame_SpritePtrs_5204:
+	db $00, $00, $44, $03, $00, $08, $46, $03, $00, $10, $48, $03, $00, $18, $4a, $03
+	db $00, $20, $4c, $03, $00, $28, $4e, $03, $10, $00, $50, $03, $10, $08, $52, $03
+	db $10, $10, $54, $03, $10, $18, $56, $03, $10, $20, $58, $03, $10, $28, $5a, $03
+	db $ff
+RacingMinigame_SpritePtrs_5235:
+	db $00, $00, $5c, $04, $00, $08, $5e, $04, $00, $10, $60, $04, $00, $18, $62, $04
+	db $00, $20, $64, $04, $00, $28, $66, $04, $00, $30, $68, $04, $10, $00, $6a, $04
+	db $10, $08, $6c, $04, $10, $10, $6e, $04, $10, $18, $70, $04, $10, $20, $72, $04
+	db $10, $28, $74, $04, $10, $30, $76, $04, $ff
+RacingMinigame_SpritePtrs_526e:
+	db $00, $04, $78, $04, $00, $0c, $7a, $04, $00, $14, $7c, $04, $ff
+RacingMinigame_SpritePtrs_527b:
+	db $00, $04, $7e, $03, $00, $0c, $7a, $04, $00, $14, $7c, $04, $ff
+RacingMinigame_SpritePtrs_5288:
+	db $04, $00, $80, $03, $04, $08, $82, $03, $04, $10, $84, $03, $04, $18, $86, $03
+	db $ff
+RacingMinigame_SpritePtrs_5299:
+	db $00, $04, $7e, $03, $00, $0c, $7e, $03, $00, $14, $7c, $04, $ff
+RacingMinigame_SpritePtrs_52a6:
+	db $00, $04, $7e, $03, $00, $0c, $7e, $03, $00, $14, $7e, $03, $ff
 Func_05e_52b3:
 	ld a, [wcd6b]
 	and a
@@ -2378,8 +2524,10 @@ RacingMinigame_Attrmap0:
 INCBIN "gfx/attrmaps/racingminigame_attrmap0.bin"
 RacingMinigame_Tilemap0:
 INCBIN "gfx/tilemaps/racingminigame_tilemap0.tilemap"
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_BannerRowA:
 	dr $179712, $179726
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_BannerRowB:
 	dr $179726, $17973a
 RacingMinigame_Pal1:
@@ -2453,6 +2601,7 @@ RacingMinigame_TilemapRowB:
 INCBIN "gfx/tilemaps/racingminigame_tilemaprowb.tilemap"
 RacingMinigame_TilemapRowA:
 INCBIN "gfx/tilemaps/racingminigame_tilemaprowa.tilemap"
+; TODO: high-entropy - likely graphics, extract to PNG
 RacingMinigame_ScrollTableA:
 	dr $17b6ea, $17b77c
 Func_05e_777c:
@@ -2591,5 +2740,6 @@ Func_05e_783c:
 	inc a
 	ld [wcda0], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_ScrollTableB:
 	dr $17b869, $17b900

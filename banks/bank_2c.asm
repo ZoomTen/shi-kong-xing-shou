@@ -1,3 +1,4 @@
+; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_02c_4000:
 	dr $b0000, $b12b8
 
@@ -1886,6 +1887,7 @@ BattleTransition_DiagonalCheckerboard:
 	dw $1100
 	db -1
 
+; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_02d_6d77:
     dr $b2d77, $b2e2c
 ; TODO disassemble

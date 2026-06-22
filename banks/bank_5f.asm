@@ -156,7 +156,16 @@ CrystalCutscene::
 	ld [wcd46], a
 	ret
 CrystalCutscene_ColorCyclePointers:
-	dr $17c14d, $17c17a
+	dw CrystalCutscene_ColorCyclePointers_4153
+	dw CrystalCutscene_ColorCyclePointers_4154
+	dw CrystalCutscene_ColorCyclePointers_415b
+CrystalCutscene_ColorCyclePointers_4153:
+	db $ff
+CrystalCutscene_ColorCyclePointers_4154:
+	db $01, $01, $02, $02, $03, $03, $ff
+CrystalCutscene_ColorCyclePointers_415b:
+	db $04, $04, $05, $05, $06, $06, $07, $07, $08, $08, $09, $09, $0a, $0a, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $ff
 Func_5f_417A:
 	ld hl, wc000
 	ld bc, $0028
@@ -218,7 +227,40 @@ Func_5f_417A:
 	ld [wd1fb], a
 	ret
 CrystalCutscene_ObjectOAMPointers:
-	dr $17c1ca, $17c27b
+	dw CrystalCutscene_ObjectOAMPointers_41e0
+	dw CrystalCutscene_ObjectOAMPointers_41f9
+	dw CrystalCutscene_ObjectOAMPointers_4206
+	dw CrystalCutscene_ObjectOAMPointers_4213
+	dw CrystalCutscene_ObjectOAMPointers_4220
+	dw CrystalCutscene_ObjectOAMPointers_422d
+	dw CrystalCutscene_ObjectOAMPointers_423a
+	dw CrystalCutscene_ObjectOAMPointers_4247
+	dw CrystalCutscene_ObjectOAMPointers_4254
+	dw CrystalCutscene_ObjectOAMPointers_4261
+	dw CrystalCutscene_ObjectOAMPointers_426e
+CrystalCutscene_ObjectOAMPointers_41e0:
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
+CrystalCutscene_ObjectOAMPointers_41f9:
+	db $00, $00, $00, $00, $00, $08, $02, $00, $00, $10, $04, $00, $ff
+CrystalCutscene_ObjectOAMPointers_4206:
+	db $00, $00, $06, $00, $00, $08, $08, $00, $00, $10, $0a, $00, $ff
+CrystalCutscene_ObjectOAMPointers_4213:
+	db $00, $00, $0c, $00, $00, $08, $0e, $00, $00, $10, $10, $00, $ff
+CrystalCutscene_ObjectOAMPointers_4220:
+	db $00, $00, $12, $00, $00, $08, $14, $00, $00, $10, $16, $00, $ff
+CrystalCutscene_ObjectOAMPointers_422d:
+	db $00, $00, $18, $00, $00, $08, $1a, $00, $00, $10, $1c, $00, $ff
+CrystalCutscene_ObjectOAMPointers_423a:
+	db $00, $00, $1e, $00, $00, $08, $20, $00, $00, $10, $22, $00, $ff
+CrystalCutscene_ObjectOAMPointers_4247:
+	db $00, $00, $24, $00, $00, $08, $26, $00, $00, $10, $28, $00, $ff
+CrystalCutscene_ObjectOAMPointers_4254:
+	db $00, $00, $2a, $00, $00, $08, $2c, $00, $00, $10, $2e, $00, $ff
+CrystalCutscene_ObjectOAMPointers_4261:
+	db $00, $00, $30, $00, $00, $08, $32, $00, $00, $10, $34, $00, $ff
+CrystalCutscene_ObjectOAMPointers_426e:
+	db $00, $00, $36, $00, $00, $08, $38, $00, $00, $10, $3a, $00, $ff
 Func_5f_427B:
 	call DelayFrame
 	dec c
@@ -279,6 +321,7 @@ CrystalCutscene_PaletteBG:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CrystalCutscene_Pad_42E1:
 	dr $17c2e1, $17c2e9
 CrystalCutscene_PaletteOBJ:
@@ -314,6 +357,7 @@ CrystalCutscene_PaletteOBJ:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CrystalCutscene_Pad_4329:
 	dr $17c329, $17c331
 CrystalCutscene_Attrmap:

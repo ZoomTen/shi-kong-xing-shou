@@ -1318,9 +1318,11 @@ Script_04f_4bf3::
 	setbit wEventFlags + 5, $00
 	end
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 GreenForestP13_ObjectEvents:
 	dr $13cc80, $13cccb
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 G3_20_ObjectEvents:
 	dr $13cccb, $13cd58
 

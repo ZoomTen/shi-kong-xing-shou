@@ -37,15 +37,19 @@ Func_023_56f3:
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
 Script_023_57ae:
 	dr $8d7ae, $8d7d1
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_57d1:
 	dr $8d7d1, $8d7e1
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_57e1:
 	dr $8d7e1, $8d7f4
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_57f4:
 	dr $8d7f4, $8d809
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
 Script_023_5809:
 	dr $8d809, $8d80f
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_580f:
 	dr $8d80f, $8d840
 

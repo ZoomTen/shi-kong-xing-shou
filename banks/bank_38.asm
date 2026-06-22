@@ -365,6 +365,7 @@ SpriteComposition_Map3D_47dd:
 	db $18, $30, $04, $10, $10, $10, $32, $04, $10, $18, $08, $34, $04, $10, $20, $00
 	db $36, $04, $20, $00, $20, $38, $04, $20, $08, $18, $3a, $04, $20, $10, $10, $3c
 	db $04, $20, $18, $08, $3e, $04, $20, $20, $00, $40, $04, $ff
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteComposition_Map3E:
 	dr $e0829, $e0944
 SpriteComposition_Map3F:
@@ -582,6 +583,7 @@ SpriteComposition_Map46_4f59:
 	db $00, $20, $08, $18, $04, $00, $28, $00, $1a, $04, $ff
 SpriteComposition_Map46_4f64:
 	db $00, $28, $00, $1c, $04, $ff
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteComposition_Map47:
 	dr $e0f6a, $e0f7f
 SpriteComposition_Map48:
@@ -1169,6 +1171,7 @@ SpriteComposition_Map60_62ad:
 SpriteComposition_Map60_62c7:
 	db $00, $00, $10, $26, $05, $00, $08, $08, $28, $05, $10, $08, $08, $2a, $05, $10
 	db $10, $00, $2c, $05, $ff
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteComposition_Map61:
 	dr $e22dc, $e23fb
 SpriteComposition_Map62:

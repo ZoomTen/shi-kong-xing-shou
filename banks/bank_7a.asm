@@ -844,6 +844,7 @@ GFX_07a_57df:
 INCBIN "gfx/misc/gfx_07a_57df.2bpp"
 Intro1_Attrmap:
 INCBIN "gfx/attrmaps/intro1_attrmap.bin"
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Intro1_Layout:
 	dr $1ea057, $1ea1bf
 Intro1_Palette:
@@ -870,6 +871,7 @@ Intro1_OBGFX:
 INCBIN "gfx/misc/intro1_obgfx.2bpp"
 Intro2_Attrmap:
 INCBIN "gfx/attrmaps/intro2_attrmap.bin"
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Intro2_Layout:
 	dr $1eb087, $1eb1ef
 Intro2_Palette:

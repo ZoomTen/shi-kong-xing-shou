@@ -253,7 +253,31 @@ Func_030_42ab:
 	ret
 
 Pointers_030_42db:
-	dr $c02db, $c0335
+	dw Pointers_030_42db_42ed
+	dw Pointers_030_42db_42ed
+	dw Pointers_030_42db_42f6
+	dw Pointers_030_42db_42ff
+	dw Pointers_030_42db_4308
+	dw Pointers_030_42db_4311
+	dw Pointers_030_42db_431a
+	dw Pointers_030_42db_4323
+	dw Pointers_030_42db_432c
+Pointers_030_42db_42ed:
+	db $0a, $08, $05, $0a, $0a, $0a, $0a, $0d, $0a
+Pointers_030_42db_42f6:
+	db $0a, $0d, $08, $05, $0a, $0a, $0a, $0a, $0a
+Pointers_030_42db_42ff:
+	db $0a, $0a, $0d, $08, $0a, $0a, $0a, $05, $0a
+Pointers_030_42db_4308:
+	db $0a, $0a, $0a, $0a, $08, $05, $0a, $0a, $0d
+Pointers_030_42db_4311:
+	db $0a, $0a, $0a, $0a, $0d, $08, $05, $0a, $0a
+Pointers_030_42db_431a:
+	db $0a, $0a, $0a, $0a, $0a, $0d, $08, $0a, $05
+Pointers_030_42db_4323:
+	db $0a, $05, $0a, $0d, $0a, $0a, $0a, $08, $0a
+Pointers_030_42db_432c:
+	db $0a, $0a, $0a, $0a, $05, $0a, $0d, $0a, $08
 
 Jumptable_030_4335:
 	dw Func_030_4385
@@ -2850,22 +2874,27 @@ Pointers_030_565c:
 
 .image_57ae
 	dw $0040
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $c17b0, $c17f0
 
 .image_57f0
 	dw $0040
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $c17f2, $c1832
 
 .image_5832
 	dw $0040
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $c1834, $c1874
 
 .image_5874
 	dw $0040
+; TODO: high-entropy - likely graphics, extract to PNG
 	dr $c1876, $c18b6
 
 .image_58b6
 	dw $0040
+; TODO: high-entropy - likely graphics, extract to PNG
 	dr $c18b8, $c18f8
 
 Pointers_030_58f8:

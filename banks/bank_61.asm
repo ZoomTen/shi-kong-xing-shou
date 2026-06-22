@@ -294,6 +294,7 @@ Func_061_4217:
 	xor a
 	ld [wdce8], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_ObjectInitTable:
 	dr $184264, $184280
 Func_61_4280:
@@ -456,8 +457,10 @@ MeteorCutscene2_AnimFramePointers:
 	dw MeteorCutscene2_AnimFrame0
 	dw MeteorCutscene2_AnimFrame0
 	dw MeteorCutscene2_AnimFrame1
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_AnimFrame0:
 	dr $184368, $184371
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_AnimFrame1:
 	dr $184371, $18437a
 MeteorCutscene2_Palette1:
@@ -493,6 +496,7 @@ MeteorCutscene2_Palette1:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_Pad_43BA:
 	dr $1843ba, $1843c2
 MeteorCutscene2_PaletteOBJ:
@@ -528,6 +532,7 @@ MeteorCutscene2_PaletteOBJ:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_Pad_4402:
 	dr $184402, $18440a
 MeteorCutscene2_GFX1:
@@ -584,6 +589,7 @@ MeteorCutscene2_Palette2:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_Pad_576A:
 	dr $18576a, $185772
 MeteorCutscene2_Attrmap2:
@@ -751,8 +757,10 @@ UnderwaterPictureCutscene::
 UnderwaterPicture_SpriteOAMPointers:
 	dw UnderwaterPicture_SpriteOAM_Empty
 	dw UnderwaterPicture_SpriteOAM_Empty_5e6f
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 UnderwaterPicture_SpriteOAM_Empty:
 	dr $185e56, $185e6f
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 UnderwaterPicture_SpriteOAM_Empty_5e6f:
 	dr $185e6f, $185ef8
 UnderwaterPicture_Palette:
@@ -788,6 +796,7 @@ UnderwaterPicture_Palette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 UnderwaterPicture_Pad1:
 	dr $185f38, $185f40
 UnderwaterPicture_OBJPalette:
@@ -823,6 +832,7 @@ UnderwaterPicture_OBJPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 UnderwaterPicture_Pad2:
 	dr $185f80, $185f88
 UnderwaterPicture_Tilemap:

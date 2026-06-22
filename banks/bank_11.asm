@@ -6,12 +6,15 @@ DuoluCity2_MapAttributes:
 		0, Tileset_006_412d, \
 		Collision_011_464a
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_4014:
 	dr $44014, $440ed
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_40ed:
 	dr $440ed, $442a5
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_42a5:
 	dr $442a5, $44561
 
@@ -56,6 +59,7 @@ Palettes_011_4602:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_464a:
 	dr $4464a, $446b9
 
@@ -67,12 +71,15 @@ ShandaFarm_MapAttributes:
 		0, Tileset_006_414a, \
 		Collision_011_4b2a
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_46cd:
 	dr $446cd, $44782
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_4782:
 	dr $44782, $4484a
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_484a:
 	dr $4484a, $44a66
 
@@ -117,6 +124,7 @@ Palettes_011_4ae2:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_4b2a:
 	dr $44b2a, $44b5d
 
@@ -144,24 +152,31 @@ CoffeeForestPart3_MapAttributes:
 		0, Tileset_006_4159, \
 		Collision_011_5377
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_4b99:
 	dr $44b99, $44c4e
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_4c4e:
 	dr $44c4e, $44e42
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_4e42:
 	dr $44e42, $44ef7
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_4ef7:
 	dr $44ef7, $450c3
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_50c3:
 	dr $450c3, $450f4
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_50f4:
 	dr $450f4, $451d0
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_51d0:
 	dr $451d0, $45290
 
@@ -206,6 +221,7 @@ Palettes_011_532f:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_5377:
 	dr $45377, $453af
 
@@ -225,18 +241,23 @@ SkyRockPart2_MapAttributes:
 		0, Tileset_006_416f, \
 		Collision_011_5974
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_53d7:
 	dr $453d7, $454b9
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_54b9:
 	dr $454b9, $45771
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_5771:
 	dr $45771, $45790
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_5790:
 	dr $45790, $45844
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_5844:
 	dr $45844, $4589c
 
@@ -281,6 +302,7 @@ Palettes_011_592c:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_5974:
 	dr $45974, $459a2
 
@@ -292,12 +314,15 @@ ClockTowerOutside_MapAttributes:
 		0, Tileset_006_417e, \
 		Collision_011_5d2c
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_59b6:
 	dr $459b6, $459ff
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_59ff:
 	dr $459ff, $45b4f
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_5b4f:
 	dr $45b4f, $45c4b
 
@@ -342,6 +367,7 @@ Palettes_011_5ce4:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_5d2c:
 	dr $45d2c, $45d81
 
@@ -385,36 +411,47 @@ ClockTower5f_MapAttributes:
 		0, Tileset_006_4194, \
 		Collision_011_6623
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_5de5:
 	dr $45de5, $45e76
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_5e76:
 	dr $45e76, $45f92
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_5f92:
 	dr $45f92, $46023
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6023:
 	dr $46023, $46153
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6153:
 	dr $46153, $461b8
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_61b8:
 	dr $461b8, $462bc
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_62bc:
 	dr $462bc, $46321
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6321:
 	dr $46321, $463d9
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_63d9:
 	dr $463d9, $463f8
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_63f8:
 	dr $463f8, $46510
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6510:
 	dr $46510, $4656c
 
@@ -459,6 +496,7 @@ Palettes_011_65db:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_6623:
 	dr $46623, $4666a
 
@@ -494,30 +532,39 @@ G2_11_MapAttributes:
 		0, Tileset_006_41a3, \
 		Collision_011_6a34
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_66ba:
 	dr $466ba, $466d9
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_66d9:
 	dr $466d9, $46735
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6735:
 	dr $46735, $46754
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6754:
 	dr $46754, $467bc
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_67bc:
 	dr $467bc, $467db
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_67db:
 	dr $467db, $4683f
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_683f:
 	dr $4683f, $4685e
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_685e:
 	dr $4685e, $46922
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6922:
 	dr $46922, $46966
 
@@ -562,6 +609,7 @@ Palettes_011_69ec:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_6a34:
 	dr $46a34, $46a66
 
@@ -618,36 +666,47 @@ G2_16_MapAttributes:
 		0, Tileset_006_41b2, \
 		Collision_011_6e77
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6aca:
 	dr $46aca, $46ae9
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6ae9:
 	dr $46ae9, $46b41
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6b41:
 	dr $46b41, $46b60
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6b60:
 	dr $46b60, $46bbc
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6bbc:
 	dr $46bbc, $46bdb
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6bdb:
 	dr $46bdb, $46c3b
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6c3b:
 	dr $46c3b, $46c5a
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6c5a:
 	dr $46c5a, $46cba
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6cba:
 	dr $46cba, $46cd9
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_6cd9:
 	dr $46cd9, $46d75
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6d75:
 	dr $46d75, $46dd5
 
@@ -692,6 +751,7 @@ Palettes_011_6e2f:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_6e77:
 	dr $46e77, $46e9f
 
@@ -711,18 +771,23 @@ R04_MapAttributes:
 		0, Tileset_006_41ba, \
 		Collision_011_724d
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6ec7:
 	dr $46ec7, $46f10
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_6f10:
 	dr $46f10, $46fb4
 
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_011_6fb4:
 	dr $46fb4, $4702d
 
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_011_702d:
 	dr $4702d, $47085
 
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_011_7085:
 	dr $47085, $471b1
 
@@ -767,6 +832,7 @@ Palettes_011_7205:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
+; TODO: collision binary - INCBIN .bin
 Collision_011_724d:
 	dr $4724d, $47270
 

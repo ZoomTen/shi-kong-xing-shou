@@ -100,6 +100,7 @@ Credits::
 	xor a
 	ld [wdcfb], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CreditsMonPicList:
 	dr $1c40e8, $1c40fb
 Func_71_40fb:
@@ -255,6 +256,7 @@ Func_71_4116:
 	ld h, a
 	call PlaceAttrmap
 	ret
+; TODO: credits screen layout data - classify
 CreditsScreenLayouts:
 	dr $1c4207, $1c4287
 CreditsScreenGfx:

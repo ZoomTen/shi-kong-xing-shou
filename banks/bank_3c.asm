@@ -207,10 +207,13 @@ NewGameContinueMenu::
 	ret
 
 .MenuText:
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $f01eb, $f01f7
 .Tilemap:
+; TODO: data table - classify (verify consumer)
 	dr $f01f7, $f0239
 .Attrmap:
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $f0239, $f027b
 .Palette:
 	RGB 31, 31, 31
@@ -227,8 +230,10 @@ NewGameContinueMenu::
 	RGB 0, 15, 29
 	RGB 31, 27, 23
 .GFX:
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $f0293, $f0323
 .GFX2:
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $f0323, $f0343
 
 GameOver::
@@ -377,6 +382,7 @@ Palettes_03c_46f7:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
+; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_03c_4737:
 	dr $f0737, $f0775
 GameOverGFX:
@@ -674,7 +680,30 @@ Func_03c_4c74::
 	ld [wcd66], a
 	ret
 Pointers_03c_4ec9:
-	dr $f0ec9, $f0f68
+	dw Pointers_03c_4ec9_4edf
+	dw Pointers_03c_4ec9_4ee0
+	dw Pointers_03c_4ec9_4ee0
+	dw Pointers_03c_4ec9_4ee0
+	dw Pointers_03c_4ec9_4ee0
+	dw Pointers_03c_4ec9_4f1e
+	dw Pointers_03c_4ec9_4f1e
+	dw Pointers_03c_4ec9_4f1e
+	dw Pointers_03c_4ec9_4f1e
+	dw Pointers_03c_4ec9_4f1e
+	dw Pointers_03c_4ec9_4f1e
+Pointers_03c_4ec9_4edf:
+	db $ff
+Pointers_03c_4ec9_4ee0:
+	db $00, $00, $01, $01, $00, $00, $01, $01, $00, $00, $02, $02, $02, $00, $00, $02
+	db $02, $00, $00, $03, $03, $02, $03, $02, $03, $03, $04, $04, $03, $04, $04, $01
+	db $01, $00, $00, $01, $01, $00, $00, $02, $02, $02, $00, $00, $02, $02, $00, $00
+	db $03, $03, $02, $03, $02, $03, $03, $04, $04, $03, $04, $04, $88, $ff
+Pointers_03c_4ec9_4f1e:
+	db $05, $05, $06, $06, $07, $07, $08, $08, $09, $09, $0a, $0a, $05, $05, $06, $06
+	db $07, $07, $08, $08, $09, $09, $0a, $0a, $05, $05, $06, $06, $07, $07, $08, $08
+	db $09, $09, $0a, $0a, $05, $05, $06, $06, $07, $07, $08, $08, $09, $09, $0a, $0a
+	db $05, $05, $06, $06, $07, $07, $08, $08, $09, $09, $0a, $0a, $05, $05, $06, $06
+	db $07, $07, $08, $08, $09, $09, $0a, $0a, $88, $ff
 Func_03c_4f68:
 	ld a, [wcd60]
 	and a
@@ -929,7 +958,51 @@ Func_03c_5082:
 	ld [wd1fb], a
 	ret
 Pointers_03c_50bb:
-	dr $f10bb, $f11b4
+	dw Pointers_03c_50bb_50d1
+	dw Pointers_03c_50bb_50f2
+	dw Pointers_03c_50bb_50fb
+	dw Pointers_03c_50bb_511c
+	dw Pointers_03c_50bb_513d
+	dw Pointers_03c_50bb_515e
+	dw Pointers_03c_50bb_5167
+	dw Pointers_03c_50bb_5178
+	dw Pointers_03c_50bb_5189
+	dw Pointers_03c_50bb_519a
+	dw Pointers_03c_50bb_51ab
+Pointers_03c_50bb_50d1:
+	db $00, $00, $00, $00, $00, $08, $00, $00, $00, $10, $00, $00, $00, $18, $00, $00
+	db $10, $00, $00, $00, $10, $08, $00, $00, $10, $10, $00, $00, $10, $18, $00, $00
+	db $ff
+Pointers_03c_50bb_50f2:
+	db $08, $08, $00, $00, $08, $10, $02, $00, $ff
+Pointers_03c_50bb_50fb:
+	db $00, $00, $04, $00, $00, $08, $06, $00, $00, $10, $08, $00, $00, $18, $0a, $00
+	db $10, $00, $0c, $00, $10, $08, $0e, $00, $10, $10, $10, $00, $10, $18, $12, $00
+	db $ff
+Pointers_03c_50bb_511c:
+	db $00, $00, $14, $00, $00, $08, $16, $00, $00, $10, $18, $00, $00, $18, $1a, $00
+	db $10, $00, $1c, $00, $10, $08, $1e, $00, $10, $10, $20, $00, $10, $18, $22, $00
+	db $ff
+Pointers_03c_50bb_513d:
+	db $00, $00, $24, $00, $00, $08, $26, $00, $00, $10, $28, $00, $00, $18, $2a, $00
+	db $10, $00, $2c, $00, $10, $08, $2e, $00, $10, $10, $30, $00, $10, $18, $32, $00
+	db $ff
+Pointers_03c_50bb_515e:
+	db $10, $00, $00, $00, $10, $08, $02, $00, $ff
+Pointers_03c_50bb_5167:
+	db $00, $00, $04, $00, $00, $08, $06, $00, $10, $00, $08, $00, $10, $08, $0a, $00
+	db $ff
+Pointers_03c_50bb_5178:
+	db $00, $00, $0c, $00, $00, $08, $0e, $00, $10, $00, $10, $00, $10, $08, $12, $00
+	db $ff
+Pointers_03c_50bb_5189:
+	db $00, $00, $14, $00, $00, $08, $16, $00, $10, $00, $18, $00, $10, $08, $1a, $00
+	db $ff
+Pointers_03c_50bb_519a:
+	db $00, $00, $1c, $00, $00, $08, $1e, $00, $10, $00, $20, $00, $10, $08, $22, $00
+	db $ff
+Pointers_03c_50bb_51ab:
+	db $10, $00, $24, $00, $10, $08, $26, $00, $ff
 AttrMap_03c_51b4:
 INCBIN "gfx/attrmaps/attrmap_03c_51b4.bin"
 Tilemap_03c_531c:

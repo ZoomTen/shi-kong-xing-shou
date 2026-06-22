@@ -3,7 +3,9 @@ unk_04e_4000:
 Script_04e_4001:: ; farjump2 target (bank_4f)
 	setmap $08, $06
 	end
-	dr $138005, $138009
+Script_04e_4005:
+	setmap $09, $00
+	end
 
 BanglinCo1f_ObjectEvents5:
 BanglinCo2f_ObjectEvents:
@@ -478,6 +480,7 @@ Airport_ObjectEvents2:
 	object_event $04,  7,  6, wEventFlags + 6, $06, $01, $00, $02, Script_04e_400a
 	objects_end
 
+; TODO: object_event array + interleaved scripts/text - per-bank carve
 Airport_ObjectEvents:
 	dr $1385ac, $138637
 
@@ -697,6 +700,7 @@ Func_4e_478e:
 	ld a, $01
 	ldh [hFade], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene3_PathScript1:
 	dr $138824, $13887d
 Func_4e_487d:
@@ -728,6 +732,7 @@ Func_4e_487d:
 	ld a, $01
 	ld [hFade], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene3_PathScript2:
 	dr $1388b0, $138943
 
@@ -815,6 +820,7 @@ AirportCutscene1::
 	ld a, GAMEMODE_AIRPORT_CUTSCENE2
 	ld [wTargetMode], a
 	jp JumpToGameMode
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_ScrollRamp:
 	dr $138a10, $138a31
 Func_4e_4a31:
@@ -866,6 +872,7 @@ Func_4e_4a52:
 	ld a, $01
 	ld [hFade], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_SpritePath:
 	dr $138a82, $138b53
 Func_4e_4b53:
@@ -914,8 +921,10 @@ AirportCutscene1_AnimPointers:
 	dw AirportCutscene1_AnimFrames
 	dw AirportCutscene1_AnimFrames_4ba1
 	dw AirportCutscene1_AnimFrames_4ba1
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_AnimFrames:
 	dr $138ba0, $138ba1
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_AnimFrames_4ba1:
 	dr $138ba1, $138bde
 Func_4e_4bde:
@@ -982,10 +991,13 @@ AirportCutscene1_OAMPointers:
 	dw AirportCutscene1_OAMData
 	dw AirportCutscene1_OAMData_4c4d
 	dw AirportCutscene1_OAMData_4c9a
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_OAMData:
 	dr $138c34, $138c4d
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_OAMData_4c4d:
 	dr $138c4d, $138c9a
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_OAMData_4c9a:
 	dr $138c9a, $138ce3
 Func_4e_4ce3:
@@ -1014,15 +1026,70 @@ INCLUDE "data/text/bank4e_4d02.asm"
 INCLUDE "data/text/bank4e_51fa.asm"
 ; TODO: data, not noise (not graphics)
 unk_4e_5ff6:
-	dr $139ff6, $13a058
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $88, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $88
 MovementData_04e_6058:
-	dr $13a058, $13a119
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $88
 MovementData_04e_6119:
-	dr $13a119, $13a17a
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $88
 MovementData_04e_617a:
-	dr $13a17a, $13a1db
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $88
 MovementData_04e_61db:
-	dr $13a1db, $13a377
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $88, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $88, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $88, $ff, $ff, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
+	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
+	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $88, $ff, $00, $fc, $fe
+	db $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe
+	db $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe
+	db $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $88, $ff, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $88, $ff, $01, $fc, $03, $fc, $03, $fc, $03, $fc, $03
+	db $fc, $03, $fc, $02, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03
+	db $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $02, $fc, $03, $fc, $03, $fc, $03
+	db $fc, $03, $88, $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc
+	db $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc
+	db $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $88
 AirportCutscene1_Palette:
 	RGB 31, 31, 31
 	RGB 22, 27, 31

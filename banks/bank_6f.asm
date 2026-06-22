@@ -271,10 +271,13 @@ Cutscene06f_ObjectListPtrs:
 	dw Cutscene06f_ObjectList0
 	dw Cutscene06f_ObjectList1
 	dw Cutscene06f_ObjectList2
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Cutscene06f_ObjectList0:
 	dr $1bc1e8, $1bc271
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Cutscene06f_ObjectList1:
 	dr $1bc271, $1bc2fe
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Cutscene06f_ObjectList2:
 	dr $1bc2fe, $1bc38b
 Cutscene06f_Attrmap0:

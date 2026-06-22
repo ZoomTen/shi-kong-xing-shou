@@ -94,6 +94,7 @@ Script_066_40d5::
 ObjSprite_66_4128::
 	object_event $71, 26, 25, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
+; TODO: object_event spawn record + trailing sprite-frame/pointer data - carve
 ObjSprite_66_4134::
 	dr $198134, $198172
 

@@ -1,5 +1,6 @@
 GFX_039_4000:
 INCBIN "gfx/misc/gfx_039_4000.2bpp"
+; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_039_40a0:
 	dr $e40a0, $e41fb
 ; TODO
@@ -26,6 +27,7 @@ asm_039_41fb:
 	ret
 unk_039_4224:
 	db $08, $14, $4c, $11, $17, $09, $40
+; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_039_422b:
 	dr $e422b, $e479f
 
@@ -237,6 +239,7 @@ ScreenLoop_Pointers:
 	dw Func_039_5604
 	dw Func_039_574d
 	dw Func_039_5826
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4928:
 	dr $e4928, $e497c
 Func_039_497c:
@@ -400,8 +403,10 @@ Func_039_497c:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4ac0:
 	dr $e4ac0, $e4ac7
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4ac7:
 	dr $e4ac7, $e4afd
 Func_039_4afd:
@@ -573,14 +578,19 @@ Func_039_4afd:
 	xor a
 	ldh [hFFC5], a
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4c38:
 	dr $e4c38, $e4c8b
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4c8b:
 	dr $e4c8b, $e4ca4
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4ca4:
 	dr $e4ca4, $e4cb5
+; TODO: pointer table - resolve dw targets (cross-bank/wram or mid-block)
 PartyCursor_Pointers:
 	dr $e4cb5, $e4cc1
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4cc1:
 	dr $e4cc1, $e4cda
 Func_039_4cda:
@@ -681,10 +691,13 @@ Func_039_4cda:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4d92:
 	dr $e4d92, $e4dc1
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4dc1:
 	dr $e4dc1, $e4de2
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4de2:
 	dr $e4de2, $e4deb
 Func_039_4deb:
@@ -797,10 +810,13 @@ Func_039_4deb:
 	cp $60
 	jr c, .asm_4e5a
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4e87:
 	dr $e4e87, $e4e9a
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4e9a:
 	dr $e4e9a, $e4ead
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_4ead:
 	dr $e4ead, $e4ec0
 Func_039_4ec0:
@@ -1002,10 +1018,13 @@ Func_039_5016:
 	ldh [hFFC6], a
 	call Func_039_485c
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_503b:
 	dr $e503b, $e504a
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_504a:
 	dr $e504a, $e504c
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_504c:
 	dr $e504c, $e5067
 Func_039_5067:
@@ -1017,6 +1036,7 @@ Func_039_5067:
 	add hl, de
 	ld a, [hl]
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Table_39_5074:
 	dr $e5074, $e5115
 Func_039_5115:
@@ -1038,6 +1058,7 @@ Func_039_5115:
 .asm_512b
 	ld a, [bc]
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_512d:
 	dr $e512d, $e5163
 Func_039_5163:
@@ -1157,10 +1178,13 @@ Func_039_5163:
 	inc hl
 	ld [hl], $01
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5241:
 	dr $e5241, $e524c
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_524c:
 	dr $e524c, $e5296
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5296:
 	dr $e5296, $e529f
 Func_039_529f:
@@ -1272,10 +1296,13 @@ Func_039_529f:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_536d:
 	dr $e536d, $e537c
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_537c:
 	dr $e537c, $e5392
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5392:
 	dr $e5392, $e53ab
 Func_039_53ab:
@@ -1382,10 +1409,13 @@ Func_039_53ab:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5468:
 	dr $e5468, $e5470
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5470:
 	dr $e5470, $e5484
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5484:
 	dr $e5484, $e5490
 Func_039_5490:
@@ -1464,6 +1494,7 @@ Func_039_54c8:
 	cp $80
 	jr c, .asm_54cb
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_54fd:
 	dr $e54fd, $e5522
 Func_039_5522:
@@ -1565,8 +1596,10 @@ Func_039_5522:
 	ld a, $08
 	ldh [hFFC5], a
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_55dd:
 	dr $e55dd, $e55eb
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_55eb:
 	dr $e55eb, $e5604
 Func_039_5604:
@@ -1660,8 +1693,10 @@ Func_039_5604:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_56b5:
 	dr $e56b5, $e56bd
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_56bd:
 	dr $e56bd, $e56de
 Func_039_56de:
@@ -1704,6 +1739,7 @@ Func_039_56de:
 	xor a
 	ld [rRAMG], a
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5734:
 	dr $e5734, $e574d
 Func_039_574d:
@@ -1795,10 +1831,13 @@ Func_039_574d:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_57f5:
 	dr $e57f5, $e5809
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5809:
 	dr $e5809, $e5811
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_5811:
 	dr $e5811, $e5826
 Func_039_5826:
@@ -1899,8 +1938,10 @@ Func_039_5826:
 	inc hl
 	ld [hl], $01
 	ret
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_58dd:
 	dr $e58dd, $e58f5
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 ScreenScript_39_58f5:
 	dr $e58f5, $e5940
 Func_039_5940:

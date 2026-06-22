@@ -2312,23 +2312,28 @@ PointerTable_01e_57ed:
 
 INCLUDE "data/text/bank1e_misc.asm"
 
+; TODO: pointer table - resolve dw targets (cross-bank/wram or mid-block)
 PointerTable_01e_59cc:
 	dr $799cc, $79aa0
 
 INCLUDE "data/text/bank1e_misc2.asm"
 
+; TODO: text data (Chinese glyphs) - decode via dump_text
 text_01e_buffer2:
 	dr $79c3f, $7a14f
 
+; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_01e_614f:
 	dr $7a14f, $7a567
 
+; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_01e_6567:
 	dr $7a567, $7aacd
 ; TODO disassemble
 Func_01e_6acd:
 	dr $7aacd, $7addb
 Text_01e_6ddb:: ; TODO: data loaded as a pointer into wTextStart by Script_6f (bank_0b)
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $7addb, $7ade3
 
 LoadItemNameByIndex::
@@ -2369,6 +2374,7 @@ LoadItemNameByIndex::
 	farcall asm_039_479f
 	ret
 
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 ItemNameIndex_01e_6e24:
 	dr $7ae24, $7ae44
 

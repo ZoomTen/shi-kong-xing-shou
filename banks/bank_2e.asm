@@ -59,7 +59,87 @@ Func_02e_400a:
 	ld l, a
 	jp hl
 Mode_StateJumpTable:
-	dr $b807c, $b811e
+	dw Func_02e_411e
+	dw Func_02e_4122
+	dw Func_02e_4136
+	dw Func_02e_4191
+	dw Func_02e_41af
+	dw Func_02e_4231
+	dw Func_02e_43a9
+	dw Func_02e_442d
+	dw Func_02e_476d
+	dw Func_02e_48c9
+	dw Func_02e_4922
+	dw Func_02e_4956
+	dw Func_02e_4984
+	dw Func_02e_4af2
+	dw Func_02e_4bff
+	dw Func_02e_4c22
+	dw Func_02e_4c57
+	dw Func_02e_4d96
+	dw Func_02e_4db2
+	dw Func_02e_4df4
+	dw Func_02e_4eda
+	dw Func_02e_4ee8
+	dw Func_02e_4f20
+	dw Func_02e_4f59
+	dw Func_02e_4f6c
+	dw Func_02e_507d
+	dw Func_02e_50e7
+	dw Func_02e_51c1
+	dw Func_02e_5227
+	dw Func_02e_5287
+	dw Func_02e_52b3
+	dw Func_02e_52d0
+	dw Func_02e_5390
+	dw Func_02e_540f
+	dw Func_02e_549f
+	dw Func_02e_55a3
+	dw Func_02e_5601
+	dw Func_02e_570d
+	dw Func_02e_57d8
+	dw Func_02e_58dd
+	dw Func_02e_58ea
+	dw Func_02e_5907
+	dw Func_02e_590e
+	dw Func_02e_5915
+	dw Func_02e_591c
+	dw Func_02e_5923
+	dw Func_02e_592a
+	dw Func_02e_595c
+	dw Func_02e_598d
+	dw Func_02e_59a0
+	dw Func_02e_5a71
+	dw Func_02e_5af2
+	dw Func_02e_5b8b
+	dw Func_02e_5c11
+	dw Func_02e_5c97
+	dw Func_02e_5d1d
+	dw Func_02e_5da3
+	dw Func_02e_5db6
+	dw Func_02e_5dc1
+	dw Func_02e_5dea
+	dw Func_02e_5e26
+	dw Func_02e_5e76
+	dw Func_02e_5e8b
+	dw Func_02e_5ea4
+	dw Func_02e_5ec1
+	dw Func_02e_5f14
+	dw Func_02e_5f51
+	dw Func_02e_5f6e
+	dw Func_02e_5f89
+	dw Func_02e_5fa4
+	dw Func_02e_5fe6
+	dw Func_02e_619a
+	dw Func_02e_617f
+	dw Func_02e_61b5
+	dw Func_02e_6244
+	dw Func_02e_6249
+	dw Func_02e_624e
+	dw Func_02e_6253
+	dw Func_02e_6258
+	dw Func_02e_625d
+	dw Func_02e_6262
 Func_02e_411e:
 	call AdvanceBattleScriptMode
 	ret
@@ -543,6 +623,7 @@ Func_02e_442d:
 
 .asm_4477
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Mode_SoundTbl_4478:
 	dr $b8478, $b847b
 Mode_StatePtrs_447b:
@@ -1007,6 +1088,7 @@ Func_02e_46b0:
 	ld [hli], a
 	ld [hli], a
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Mode_DeltaTbl_4763:
 	dr $b8763, $b876d
 Func_02e_476d:
@@ -3606,6 +3688,7 @@ Func_02e_59a0:
 	cp $E0
 	jp c, .asm_59a3
 	ret
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Mode_CoordTbl_5a5d:
 	dr $b9a5d, $b9a71
 Func_02e_5a71:
@@ -3671,7 +3754,12 @@ Func_02e_5a71:
 	call Func_02e_4ae7
 	ret
 Mode_PtrTbl_5ad6:
-	dr $b9ad6, $b9af2
+	dw Mode_PtrTbl_5ad6_5ada
+	dw Mode_PtrTbl_5ad6_5ae6
+Mode_PtrTbl_5ad6_5ada:
+	db $60, $78, $02, $60, $78, $02, $60, $78, $02, $60, $78, $02
+Mode_PtrTbl_5ad6_5ae6:
+	db $30, $28, $02, $30, $28, $02, $30, $28, $02, $30, $28, $02
 Func_02e_5af2:
 	ld a, [wd98b]
 	and a
@@ -5017,6 +5105,7 @@ MovementDeltas_02e_6360:
 	db $01, $02, $02, $03, $03, $00, $ff
 	db $01, $02, $03, $01, $02, $03, $01, $02, $03, $01, $02, $03, $00, $ff
 	db $03, $03
+; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 ScrollDeltas_02e_67ce:
 	dr $ba7ce, $ba94e
 MovementDeltas_02e_694e:
@@ -5026,6 +5115,7 @@ MovementDeltas_02e_694e:
 	db $06, $07, $08, $08, $00, $ff
 	db $04, $05, $06, $00, $ff
 	db $02, $03, $ff
+; TODO: object/sprite anim data - classify (verify consumer)
 ObjectAnimData_02e_6970:
 	dr $ba970, $bae42
 Func_02e_6e42:

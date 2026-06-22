@@ -1,21 +1,28 @@
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_4000:
 	dr $60000, $60014
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_4014::
 	dr $60014, $60028
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_4028::
 	dr $60028, $6003c
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_403c::
 	dr $6003c, $60050
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_4050::
 	dr $60050, $60064
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_4064::
 	dr $60064, $60078
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_4078::
 	dr $60078, $6008c
 
@@ -28,16 +35,21 @@ MapAttributes_018_408c::
 		0, Tileset_006_407f, \
 		Collision_018_43aa
 
+; TODO: map_attr_data record - exposes Layout/Blocks/etc. labels in binary (TMX cascade)
 MapAttributes_018_40a0::
 	dr $600a0, $60235
+; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_018_4235::
 	dr $60235, $60254
+; TODO: metatile defs binary - decode_tileset.py / INCBIN
 Metatiles_018_4254::
 	dr $60254, $602c0
+; TODO: map blockset binary - INCBIN .bin / TMX decode
 Blocks_018_42c0::
 	dr $602c0, $60320
 AttrMap_018_4320::
 INCBIN "gfx/attrmaps/attrmap_018_4320.bin"
+; TODO: collision binary - INCBIN .bin
 Collision_018_43aa::
 	dr $603aa, $60bf8
 Palettes_018_4bf8::

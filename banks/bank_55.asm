@@ -390,6 +390,7 @@ INCBIN "gfx/attrmaps/attrmap_055_46ba.bin"
 GFX_055_48fa:
 INCBIN "gfx/misc/gfx_055_48fa.bin"
 
+; TODO: unclassified data table - identify via consumer
 unk_055_4bad:
 	dr $154bad, $154e6a
 GFX_055_4e6a:
@@ -548,14 +549,14 @@ Script_055_54c1:
 	stext text_55_6408
 	move MovementData_OneDown
 	setattach $06, $05, $f0, $00
-	objmove $05, Script_055_7c94
+	objmove $05, MovementData_055_7c94
 	clearobject $05
 	clearobject $06
 	emote $00, $00
 	delay $03, $20
 	stext text_55_6452
 	face $05
-	objmove $00, Script_055_7e6b
+	objmove $00, MovementData_055_7e6b
 	clearobject $00
 	stext text_55_645b
 	setbit wEventFlags + 7, $03
@@ -632,7 +633,7 @@ Script_055_55bd:
 	stext text_55_6a75
 	stext text_55_6b37
 	spriteface  2, FACE_DOWN
-	objmove $02, Script_055_7c94
+	objmove $02, MovementData_055_7c94
 	clearobject $02
 	setbit wEventFlags + 8, $03
 	end
@@ -675,7 +676,7 @@ Script_055_5666:
 	spritewalk  2, MOVE_UP
 	clearobject $02
 	setattach $01, $00, $10, $00
-	objmove $00, Script_055_7c53
+	objmove $00, MovementData_055_7c53
 	clearattach $01
 	setmap $0f, $02
 	spriteface  2, FACE_UP
@@ -750,7 +751,7 @@ Script_055_5721:
 	stext text_55_6d9e
 	spriteface  4, FACE_UP
 	spriteface  2, FACE_UP
-	objmove $02, Script_055_7df6
+	objmove $02, MovementData_055_7df6
 	clearobject $02
 	emote $00, $00
 	delay $03, $20
@@ -778,20 +779,20 @@ Script_055_5721:
 	face FACE_UP
 	stext text_55_6eb9
 	loadobjsprite ObjSprite_055_5704
-	objmove $02, Script_055_7f17
+	objmove $02, MovementData_055_7f17
 	clearobject $02
 	loadobjsprite ObjSprite_055_5704
-	objmove $02, Script_055_7f40
+	objmove $02, MovementData_055_7f40
 	clearobject $02
 	loadobjsprite ObjSprite_055_5704
 	objmove $02, MovementData_055_7f6d
 	clearobject $02
 	loadobjsprite ObjSprite_055_5710
-	objmove $02, Script_055_7c94
+	objmove $02, MovementData_055_7c94
 	emote $00, $00
 	delay $03, $20
 	stext text_55_6ed6
-	objmove $02, Script_055_7d36
+	objmove $02, MovementData_055_7d36
 	clearobject $02
 	stext text_55_6f0b
 	scr_48 $02, $0f
@@ -804,7 +805,7 @@ Script_055_5721:
 	stext text_55_6f4e
 	stext text_55_6fa0
 	spriteface  3, FACE_DOWN
-	objmove $03, Script_055_7cd5
+	objmove $03, MovementData_055_7cd5
 	clearobject $03
 	face FACE_DOWN
 	setmap $0f, $01
@@ -1160,7 +1161,7 @@ Script_055_5a7d:
 	stext text_55_61c5
 	stext text_55_61ce
 	spriteface  2, FACE_DOWN
-	objmove $02, Script_055_7c94
+	objmove $02, MovementData_055_7c94
 	clearobject $02
 	spritewalk  3, MOVE_DOWN
 	spriteface  3, FACE_RIGHT
@@ -1174,17 +1175,165 @@ Script_055_5aeb:
 
 INCLUDE "data/text/bank55_misc.asm"
 
-Script_055_7c53:
-	dr $157c53, $157c94
+MovementData_055_7c53:
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $88
 
-Script_055_7c94:
-	dr $157c94, $157cd5
+MovementData_055_7c94:
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $88
 
-Script_055_7cd5:
-	dr $157cd5, $157d36
+MovementData_055_7cd5:
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $88
 
-Script_055_7d36:
-	dr $157d36, $157d7f
+MovementData_055_7d36:
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $02, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $88
 
 MovementData_055_7d7f:
 	db $ff, $00, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00
@@ -1196,17 +1345,202 @@ MovementData_055_7d7f:
 	db $04, $00, $04, $00, $04, $00, $04, $ff, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $88
 
-Script_055_7df6:
-	dr $157df6, $157e6b
+MovementData_055_7df6:
+	db $ff, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $01
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $01
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $01
+	db $fe, $00
+	db $fe, $00
+	db $fe, $00
+	db $fe, $01
+	db $fe, $00
+	db $fe, $00
+	db $fe, $01
+	db $ff, $00
+	db $ff, $00
+	db $ff, $01
+	db $ff, $00
+	db $ff, $00
+	db $ff, $00
+	db $ff, $01
+	db $ff, $00
+	db $ff, $01
+	db $ff, $00
+	db $ff, $01
+	db $ff, $00
+	db $ff, $01
+	db $00, $01
+	db $00, $01
+	db $01, $01
+	db $01, $01
+	db $01, $01
+	db $01, $01
+	db $03, $01
+	db $03, $01
+	db $03, $01
+	db $04, $01
+	db $04, $01
+	db $04, $01
+	db $88
 
-Script_055_7e6b:
-	dr $157e6b, $157f17
+MovementData_055_7e6b:
+	db $ff, $ff
+	db $fe, $ff
+	db $fe, $ff
+	db $fe, $00
+	db $fe, $ff
+	db $fe, $ff
+	db $fe, $ff
+	db $fe, $ff
+	db $ff, $ff
+	db $ff, $ff
+	db $ff, $ff
+	db $ff, $ff
+	db $00, $ff
+	db $00, $ff
+	db $00, $ff
+	db $01, $ff
+	db $01, $ff
+	db $01, $ff
+	db $01, $00
+	db $01, $ff
+	db $02, $00
+	db $02, $ff
+	db $02, $00
+	db $02, $ff
+	db $02, $00
+	db $02, $ff
+	db $02, $00
+	db $02, $00
+	db $04, $ff
+	db $04, $00
+	db $04, $ff
+	db $04, $00
+	db $04, $00
+	db $04, $00
+	db $88, $ff
+	db $00, $fe
+	db $00, $fe
+	db $00, $fe
+	db $00, $fe
+	db $00, $fe
+	db $00, $fe
+	db $01, $fe
+	db $00, $fe
+	db $00, $fe
+	db $00, $fe
+	db $01, $fe
+	db $00, $fe
+	db $00, $fe
+	db $01, $fe
+	db $00, $fe
+	db $01, $fe
+	db $00, $fe
+	db $00, $fe
+	db $01, $fe
+	db $01, $fe
+	db $00, $fe
+	db $01, $fe
+	db $00, $fe
+	db $01, $fe
+	db $01, $fe
+	db $01, $fe
+	db $01, $fe
+	db $02, $ff
+	db $01, $ff
+	db $00, $ff
+	db $01, $ff
+	db $01, $ff
+	db $01, $00
+	db $01, $ff
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $00
+	db $01, $01
+	db $01, $00
+	db $01, $00
+	db $01, $01
+	db $01, $01
+	db $01, $01
+	db $01, $00
+	db $01, $03
+	db $03, $03
+	db $02, $03
+	db $02, $03
+	db $03, $03
+	db $01, $88
 
-Script_055_7f17:
-	dr $157f17, $157f40
+MovementData_055_7f17:
+	db $ff, $ff
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $fc, $fc
+	db $88
 
-Script_055_7f40:
-	dr $157f40, $157f6d
+MovementData_055_7f40:
+	db $ff, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $fc, $00
+	db $88
 
 MovementData_055_7f6d:
 	db $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04
