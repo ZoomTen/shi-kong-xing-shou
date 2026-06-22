@@ -730,7 +730,12 @@ INCBIN "gfx/misc/floatingislandcutscene2_gfx.2bpp"
 FloatingIslandCutscene2_GFX2:
 INCBIN "gfx/misc/floatingislandcutscene2_gfx2.2bpp"
 Script_067_6e01::
-	dr $19ee01, $19ee0a
+	farjump2 Script_066_4c9e
+	end
+
+Script_067_6e06:
+	setmap $03, $00
+	end2
 
 G5_03_ObjectEvents:
 	dr $19ee0a, $19ee21

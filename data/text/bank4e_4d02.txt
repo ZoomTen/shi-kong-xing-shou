@@ -1,0 +1,276 @@
+@org $4e, $4d02:
+	init NAME_BLANK, PIC_14;
+@org $4e, $4d05:
+	text "少爺總算是回來";
+	line "了﹗";
+	para "這次的選秀會﹐";
+	line "少爺可是主要的";
+	cont "評審⚬";
+	para "幸好他準時回來";
+	line "了⚬";
+	done;
+
+@org $4e, $4d48:
+	init NAME_BLANK, PIC_1F;
+@org $4e, $4d4b:
+	text "您不是妮娜小姐";
+	line "嗎﹖";
+	para "";
+	db $f1, $4f; #"選"
+	text "秀會就要快開";
+	line "";
+	db $f2, $9e; #"始"
+	text "了﹐您準備好";
+	cont "了嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $4e, $4d82:
+	init NAME_BLANK, PIC_1F;
+@org $4e, $4d85:
+	text "是這樣子的嗎﹖";
+	line "那您動作就要快";
+	cont "一些了⚬";
+	para "";
+	db $f1, $4f; #"選"
+	text "秀會就要舉行";
+	line "了⚬";
+	done;
+
+@org $4e, $4db9:
+	init NAME_BLANK, PIC_1F;
+@org $4e, $4dbc:
+	text "好的⚬";
+	para "我這就帶您到會";
+	line "場⚬";
+	done;
+
+@org $4e, $4dd3:
+	init NAME_35, PIC_5E;
+@org $4e, $4dd6:
+	text "哈哈哈哈～";
+	line "瞧你們那副窮酸";
+	cont "";
+	db $f4, $2f; #"樣"
+	text "～";
+	para "真是叫人笑到肚";
+	line "子疼～";
+	done;
+
+@org $4e, $4e05:
+	init NAME_BLANK, PIC_13;
+@org $4e, $4e08:
+	text "好⋯好緊張⋯";
+	line "";
+	db $f2, $31; #"深"
+	text "";
+	db $81; #"?"
+	text "吸～";
+	cont "";
+	db $f2, $31; #"深"
+	text "";
+	db $81; #"?"
+	text "吸～";
+	done;
+
+@org $4e, $4e23:
+	init NAME_BLANK, PIC_1D;
+@org $4e, $4e26:
+	text "可惡的麗子～";
+	line "都是她﹐害我們";
+	cont "沒有新衣服⋯⋯";
+	done;
+
+@org $4e, $4e4c:
+	init NAME_BLANK, PIC_25;
+@org $4e, $4e4f:
+	text "不公平～";
+	line "";
+	db $f2, $57; #"這"
+	text "次選秀會﹐根";
+	cont "本就不公平～";
+	line "人家沒有衣服穿";
+	done;
+
+@org $4e, $4e80:
+	init NAME_BLANK, PIC_1F;
+@org $4e, $4e83:
+	text "圖釘呢﹖";
+	line "在哪裡﹖";
+	cont "喔﹗在這裡﹗";
+	line "呵呵呵呵～";
+	para "";
+	db $f2, $57; #"這"
+	text "．樣．一．來";
+	line "";
+	db $f2, $d7; #"就"
+	text "﹗﹗﹗";
+	cont "呵呵呵呵～";
+	done;
+
+@org $4e, $4ec6:
+	init NAME_1E, PIC_27;
+@org $4e, $4ec9:
+	text "哦～呵呵呵﹗";
+	line "那個笨蛋麗子﹐";
+	cont "得意不了多久的";
+	line "本女王會讓她見";
+	cont "識到﹐什麼叫做";
+	line "高貴的風範﹗";
+	para "";
+	db $f1, $d2; #"而"
+	text "那條項鍊﹐就";
+	line "是我們的了﹗";
+	para "哦～呵呵呵～";
+	line "";
+	db $f2, $57; #"這"
+	text "樣一來﹐就沒";
+	cont "有問題了﹗";
+	line "哦哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+
+@org $4e, $4f64:
+	init NAME_BLANK, PIC_13;
+@org $4e, $4f67:
+	text "第５９３２號﹐";
+	line "妮娜小姐⚬";
+	para "第一次選秀評分";
+	line "請準備上台⚬";
+	done;
+
+@org $4e, $4f99:
+	init NAME_NINA, PIC_02;
+@org $4e, $4f9c:
+	text "哦⋯﹗";
+	line "好的﹐謝謝您⚬";
+	done;
+
+@org $4e, $4faf:
+	init NAME_36, PIC_50;
+@org $4e, $4fb2:
+	text "第一循環淘汰賽";
+	line "比的是反應及機";
+	cont "智⚬";
+	para "美麗的外表下﹐";
+	line "";
+	db $f1, $7e; #"包"
+	text "涵了機敏的頭";
+	cont "";
+	db $f0, $43; #"腦"
+	text "⚬";
+	para "才是邦林企業的";
+	line "需求⚬";
+	para "準備好了嗎﹖";
+	line "妮娜小姐～";
+	cont "";
+	db $f2, $0f; #"測"
+	text "驗開始～";
+	line "";
+	db $f2, $21; #"後"
+	text "台人員";
+	cont "請準備﹗";
+	done;
+
+@org $4e, $5035:
+	init NAME_36, PIC_50;
+@org $4e, $5038:
+	text "沒有關係﹐這只";
+	line "是熱身的測試⚬";
+	para "誰沒有失敗的經";
+	line "";
+	db $f1, $74; #"驗"
+	text "呢﹖";
+	para "你說是吧～";
+	line "美麗的小姐⚬";
+	para "再試一下吧﹗";
+	done;
+
+@org $4e, $5086:
+	init NAME_36, PIC_50;
+@org $4e, $5089:
+	text "嗯～感覺不錯～";
+	cont "您可以回休息室";
+	line "了⚬";
+	para "結果我們會通知";
+	line "各位⚬";
+	cont "辛苦了⚬";
+	done;
+
+@org $4e, $50c4:
+	init NAME_NINA, PIC_02;
+@org $4e, $50c7:
+	text "謝謝你們⚬";
+	done;
+
+@org $4e, $50d1:
+	init NAME_35, PIC_5E;
+@org $4e, $50d4:
+	text "哈哈哈哈～";
+	line "妳也比完了嗎﹖";
+	para "呵呵～";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $4f; #"?"
+	text "反應測試～";
+	para "";
+	db $f2, $ad; #"我"
+	text "一定可以通過";
+	line "的⚬";
+	done;
+
+@org $4e, $5109:
+	init NAME_BLANK, PIC_13;
+@org $4e, $510c:
+	text "嗚哇～";
+	line "人家剛在台上﹐";
+	cont "手腳僵硬⋯";
+	line "根本就沒有辦法";
+	cont "動﹗";
+	line "完蛋了啦﹗";
+	done;
+
+@org $4e, $5146:
+	init NAME_BLANK, PIC_1D;
+@org $4e, $5149:
+	text "我用我最深的詛";
+	line "";
+	db $f1, $02; #"咒"
+	text "";
+	db $35; #"?"
+	text "";
+	para "詛咒麗子落選吧";
+	line "詛咒～詛咒﹗";
+	done;
+
+@org $4e, $5172:
+	init NAME_BLANK, PIC_25;
+@org $4e, $5175:
+	text "好緊張～";
+	line "";
+	db $f2, $cd; #"好"
+	text "緊張～";
+	done;
+
+@org $4e, $5187:
+	init NAME_BLANK, PIC_1F;
+@org $4e, $518a:
+	text "咭咭咭咭～";
+	cont "";
+	db $f2, $ad; #"我"
+	text "的圖釘戰術～";
+	line "是無敵的﹗";
+	done;
+
+@org $4e, $51aa:
+	init NAME_1E, PIC_27;
+@org $4e, $51ad:
+	text "哦～呵呵呵呵﹗";
+	line "什麼反應測試～";
+	para "在我拉琪看來﹐";
+	line "不過是小孩子的";
+	cont "遊戲罷了⚬";
+	para "哦哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+

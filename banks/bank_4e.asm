@@ -16,7 +16,36 @@ BanglinCo2_ObjectEvents:
 	dr $13800b, $138053
 
 Script_04e_4053::
-	dr $138053, $1380a4
+	face FACE_DOWN
+	spriteface  6, FACE_UP
+	spritewalk  6, MOVE_UP
+	spritewalk  6, MOVE_UP
+	stext text_4e_4f64
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_4f99
+	setmap $0a, $00
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	spriteface  4, FACE_LEFT
+	spriteface  5, FACE_LEFT
+	stext text_4e_4faf
+Script_04e_407c:
+	warpmode GAMEMODE_RHYTHM_MINIGAME, $0a, $00
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	spriteface  4, FACE_LEFT
+	spriteface  5, FACE_LEFT
+	checkbit wEventFlags + 7, $01, Script_04e_409a
+	stext text_4e_5035
+	farjump Script_04e_407c
+	end
+
+Script_04e_409a:
+	stext text_4e_5086
+	stext text_4e_50c4
+	setmap $09, $01
+	end
 
 ContestHall_ObjectEvents:
 	dr $1380a4, $1380d1
@@ -65,7 +94,7 @@ Script_04e_4119::
 	stext text_4e_5375
 	loadobjsprite ObjSprite_4e_43c9
 	spriteface  6, FACE_DOWN
-	objmove $06, $6058
+	objmove $06, MovementData_04e_6058
 	spriteface  6, FACE_LEFT
 	delay $03, $10
 	spriteface  6, FACE_DOWN
@@ -80,12 +109,12 @@ Script_04e_4119::
 	emote  4, EMOTE_HEART
 	delay $03, $20
 	spriteface  6, FACE_UP
-	objmove $06, $617a
+	objmove $06, MovementData_04e_617a
 	clearobject $06
 	stext text_4e_541b
 	loadobjsprite ObjSprite_4e_43bd
 	spriteface  6, FACE_DOWN
-	objmove $06, $6058
+	objmove $06, MovementData_04e_6058
 	spriteface  6, FACE_DOWN
 	delay $03, $10
 	spriteface  6, $04
@@ -107,7 +136,7 @@ Script_04e_4119::
 	delay $03, $20
 	stext text_4e_5475
 	spriteface  6, $05
-	objmove $06, $617a
+	objmove $06, MovementData_04e_617a
 	clearobject $06
 	stext text_4e_54c0
 	stext text_4e_5530
@@ -118,7 +147,7 @@ Script_04e_4119::
 	emote  6, EMOTE_TEAR
 	delay $03, $20
 	stext text_4e_5595
-	objmove $06, $6058
+	objmove $06, MovementData_04e_6058
 	spriteface  6, FACE_LEFT
 	delay $03, $10
 	spriteface  6, FACE_DOWN
@@ -144,7 +173,7 @@ Script_04e_4119::
 	delay $03, $20
 	stext text_4e_561f
 	spriteface  6, FACE_UP
-	objmove $06, $617a
+	objmove $06, MovementData_04e_617a
 	clearobject $06
 	stext text_4e_563d
 	spriteface  2, FACE_DOWN
@@ -152,11 +181,11 @@ Script_04e_4119::
 	spriteface  4, FACE_DOWN
 	spriteface  5, FACE_DOWN
 	setattach $02, $03, $f0, $00
-	objmove $03, $6119
+	objmove $03, MovementData_04e_6119
 	clearobject $03
 	clearobject $02
 	setattach $04, $05, $f0, $00
-	objmove $05, $6119
+	objmove $05, MovementData_04e_6119
 	clearobject $05
 	clearobject $04
 	loadobjsprite ObjSprite_4e_43a5
@@ -198,7 +227,7 @@ Script_04e_4119::
 	spriteface  5, FACE_UP
 	spriteface  6, FACE_UP
 	setattach $05, $06, $10, $00
-	objmove $06, $617a
+	objmove $06, MovementData_04e_617a
 	clearobject $06
 	clearobject $05
 	stext text_4e_579f
@@ -249,13 +278,133 @@ BanglinCo5f_ObjectEvents2:
 	dr $138402, $138419
 
 Script_04e_4419::
-	dr $138419, $1384b0
+	face FACE_LEFT
+	setmap $0e, $02
+	face FACE_UP
+	spriteface  1, FACE_UP
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_RIGHT
+	stext text_4e_5861
+	stext text_4e_5886
+	stext text_4e_58bc
+	stext text_4e_58f5
+	stext text_4e_591e
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	emote  2, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	setattach $01, $00, $00, $10
+	objmove $00, unk_4e_5ff6
+	clearattach $01
+	face FACE_LEFT
+	spriteface  1, FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	spritewalk  3, MOVE_DOWN
+	spriteface  3, FACE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	stext text_4e_594e
+	stext text_4e_597a
+	startbattle BattleData_02d_4b70
+	checkbit wEventFlags + 3, $03, Script_04e_44aa
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_59b0
+	stext text_4e_59c1
+	scr_48 $02, $0c
+	stext text_4e_59d4
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	setattach $02, $03, $f0, $00
+	objmove $03, MovementData_04e_6119
+	clearobject $03
+	clearobject $02
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	setbit wEventFlags + 6, $05
+	setmappredef MAPPREDEF_13
+	end
+
+Script_04e_44aa:
+	face FACE_DOWN
+	setmap $0e, $03
+	end
 
 BanglinCo1f_ObjectEvents6:
 	dr $1384b0, $1384d2
 
 Script_04e_44d2::
-	dr $1384d2, $13858a
+	checkbit wEventFlags + 6, $05, Script_04e_44dc
+	setmap $08, $07
+	end
+
+Script_04e_44dc:
+	checkbit wEventFlags + 6, $06, Script_04e_4586
+	setplayerchar $00
+	face FACE_RIGHT
+	setmap $08, $08
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_UP
+	spriteface  4, FACE_UP
+	stext text_4e_5a18
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4e_5a66
+	stext text_4e_5a7c
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4e_5abb
+	spriteface  2, FACE_UP
+	face FACE_UP
+	move MovementData_OneUp
+	face $04
+	stext text_4e_5acc
+	face FACE_UP
+	stext text_4e_5b80
+	stext text_4e_5b8a
+	face FACE_DOWN
+	move MovementData_OneDown
+	spriteface  2, FACE_LEFT
+	stext text_4e_5bfb
+	face FACE_RIGHT
+	spriteface  4, FACE_RIGHT
+	spriteface  3, FACE_UP
+	spriteface  2, FACE_DOWN
+	stext text_4e_5c07
+	emote  2, EMOTE_TEAR
+	delay $03, $20
+	stext text_4e_5c62
+	spriteface  3, FACE_LEFT
+	spriteface  2, FACE_LEFT
+	stext text_4e_5c6f
+	stext text_4e_5cad
+	scr_48 $02, $0d
+	incsteps
+	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $08, $08
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_LEFT
+	spriteface  4, FACE_UP
+	stext text_4e_5cba
+	spriteface  2, FACE_RIGHT
+	objmove $02, MovementData_04e_61db
+	clearobject $02
+	clearplayerpos
+	spriteface  4, FACE_UP
+	spritewalk  4, MOVE_UP
+	clearobject $04
+	spriteface  3, FACE_LEFT
+	spritewalk  3, MOVE_LEFT
+	spriteface  3, FACE_UP
+	spritewalk  3, MOVE_UP
+	clearobject $03
+	setbit wEventFlags + 6, $06
+	end
+
+Script_04e_4586:
+	setmap $08, $07
+	end
 
 Airport_ObjectEvents2:
 	dr $13858a, $1385ac
@@ -792,13 +941,19 @@ Func_4e_4cf1:
 	dec c
 	jr nz, .asm_4cfa
 	ret
-; TODO: noise / likely compressed (not graphics)
-unk_4e_4d02:
-	dr $138d02, $1391fa
+INCLUDE "data/text/bank4e_4d02.asm"
 INCLUDE "data/text/bank4e_51fa.asm"
 ; TODO: data, not noise (not graphics)
 unk_4e_5ff6:
-	dr $139ff6, $13a377
+	dr $139ff6, $13a058
+MovementData_04e_6058:
+	dr $13a058, $13a119
+MovementData_04e_6119:
+	dr $13a119, $13a17a
+MovementData_04e_617a:
+	dr $13a17a, $13a1db
+MovementData_04e_61db:
+	dr $13a1db, $13a377
 AirportCutscene1_Palette:
 	RGB 31, 31, 31
 	RGB 22, 27, 31

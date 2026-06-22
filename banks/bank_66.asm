@@ -6,7 +6,15 @@ Script_066_400c::
 	textface text_66_40a4
 	end
 Script_066_4010::
-	dr $198010, $198022
+	face FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	stext text_66_40a4
+	checkbit wEventFlags + 4, $01, Script_066_4021
+	scr_35 $0a
+	end
+
+Script_066_4021:
+	end
 
 G5_21_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_066_4039
@@ -21,18 +29,71 @@ Script_066_403d::
 	stext text_66_4075
 	end
 Script_066_4041::
-	dr $198041, $19804f
+	face FACE_UP
+	stext text_66_405d
+	checkbit wEventFlags + 3, $03, Script_066_404e
+	scr_37
+	end
+
+Script_066_404e:
+	end
 Script_066_404f::
-	dr $19804f, $19805d
+	face FACE_UP
+	stext text_66_4075
+	checkbit wEventFlags + 3, $03, Script_066_405c
+	townmusicanim
+	end
+
+Script_066_405c:
+	end
 INCLUDE "data/text/bank66_405d.asm"
 Script_066_40bb::
-	dr $1980bb, $1980c9
+	checkbit wEventFlags + 15, $01, Script_066_40c5
+	setmap $02, $00
+	end2
+
+Script_066_40c5:
+	setmap $02, $02
+	end2
 
 G5_02_ObjectEvents3:
 	dr $1980c9, $1980d5
 
 Script_066_40d5::
-	dr $1980d5, $198172
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_5f05
+	startbattle BattleData_02d_4d4d
+	checkbit wEventFlags + 3, $03, Script_066_41f1
+	spriteface  2, FACE_UP
+	loadobjsprite ObjSprite_66_4128
+	objmove $03, MovementData_066_7d47
+	loadobjsprite ObjSprite_66_4134
+	objmove $04, MovementData_066_7d7e
+	spriteface  2, FACE_UP
+	clearobject $02
+	face FACE_LEFT
+	stext text_66_5f11
+	scr_48 $02, $19
+	clearobject $03
+	setbit wEventFlags + 15, $02
+	face FACE_RIGHT
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_5f21
+	stext text_66_5f5b
+	scr_48 $02, $1a
+	clearobject $04
+	setbit wEventFlags + 16, $02
+	setbit wEventFlags + 17, $00
+	end
+
+ObjSprite_66_4128::
+	dr $198128, $198134
+ObjSprite_66_4134::
+	dr $198134, $198172
 
 Script_066_4172::
 	textface text_66_4d45
@@ -64,9 +125,24 @@ G5_16_ObjectEvents:
 	object_event $22, 20,  3, 0, $00, $00, $00, $02, Script_066_41f2
 	objects_end
 Script_066_41d1::
-	dr $1981d1, $1981df
+	face FACE_UP
+	stext text_66_4d8e
+	checkbit wEventFlags + 3, $03, Script_066_41de
+	scr_37
+	end
+
+Script_066_41de:
+	end
 Script_066_41df::
-	dr $1981df, $1981f1
+	face FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	stext text_66_40a4
+	checkbit wEventFlags + 4, $01, Script_066_41f0
+	scr_35 $09
+	end
+
+Script_066_41f0:
+	end
 Script_066_41f1::
 	end
 
@@ -97,13 +173,24 @@ Script_066_4200::
 	textface text_66_4e55
 	end
 Script_066_4204::
-	dr $198204, $19820f
+	checkbit wEventFlags + 17, $05, Script_066_420e
+	stext text_66_4eab
+	end
+
+Script_066_420e:
+	end
 
 G5_07_ObjectEvents:
 	dr $19820f, $19827e
 
 Script_066_427e::
-	dr $19827e, $19828a
+	ifcharindex $05, Script_066_4286
+	textface text_66_7b6c
+	end
+
+Script_066_4286:
+	textface text_66_7b99
+	end
 
 Script_066_428a::
 	textface text_66_4ef4
@@ -113,18 +200,86 @@ Script_066_428e::
 	textface text_66_4f51
 	end
 Script_066_4292::
-	dr $198292, $1982a0
+	checkbit wEventFlags + 17, $05, Script_066_429c
+	setmap $1f, $00
+	end2
+
+Script_066_429c:
+	setmap $1f, $01
+	end2
 
 Script_066_42a0::
-	dr $1982a0, $1982cf
+	checkbit wEventFlags + 17, $06, Script_066_42aa
+	textface text_66_500c
+	end
+
+Script_066_42aa:
+	checkbit wEventFlags + 15, $05, Script_066_42c1
+	textface text_66_6de6
+	stext text_66_6e8b
+	scr_48 $02, $1f
+	stext text_66_6e9a
+	setbit wEventFlags + 15, $05
+	end
+
+Script_066_42c1:
+	checkbit wEventFlags + 15, $04, Script_066_42cb
+	textface text_66_6e9a
+	end
+
+Script_066_42cb:
+	textface text_66_776e
+	end
 Script_066_42cf::
-	dr $1982cf, $1982ee
+	checkbit wEventFlags + 15, $01, Script_066_42d6
+Script_066_42d5:
+	end
+
+Script_066_42d6:
+	checkbit wEventFlags + 16, $01, Script_066_42d5
+	countflags10 $07, $e1, $42
+	end
+
+Script_066_42e1:
+	face FACE_UP
+	stext text_66_6f2c
+	scr_48 $02, $21
+	setbit wEventFlags + 16, $01
+	end
 
 Script_066_42ee::
-	dr $1982ee, $198323
+	checkbit wEventFlags + 15, $01, Script_066_42f8
+	textface text_66_5083
+	end
+
+Script_066_42f8:
+	checkbit wEventFlags + 15, $03, Script_066_4302
+	textface text_66_709b
+	end
+
+Script_066_4302:
+	checkbit wEventFlags + 16, $03, Script_066_431f
+	textface text_66_71a4
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_7213
+	scr_48 $02, $24
+	listdec $02, $23
+	setbit wEventFlags + 16, $03
+	end
+
+Script_066_431f:
+	textface text_66_7225
+	end
 
 Script_066_4323::
-	dr $198323, $198331
+	checkbit wEventFlags + 15, $04, Script_066_432d
+	textface text_66_50b5
+	end
+
+Script_066_432d:
+	textface text_66_7796
+	end
 
 Script_066_4331::
 	textface text_66_513e
@@ -157,7 +312,32 @@ Script_066_4358::
 	end
 
 Script_066_436b::
-	dr $19836b, $1983a3
+	checkbit wEventFlags + 15, $01, Script_066_4375
+	textface text_66_5313
+	end
+
+Script_066_4375:
+	checkbit wEventFlags + 17, $07, Script_066_4383
+	textface text_66_6f3e
+	setbit wEventFlags + 17, $07
+	end
+
+Script_066_4383:
+	countflags10 $06, $8b, $43
+	textface text_66_6fa2
+	end
+
+Script_066_438b:
+	checkbit wEventFlags + 16, $07, Script_066_439f
+	textface text_66_6ffe
+	stext text_66_7044
+	scr_48 $02, $22
+	setbit wEventFlags + 16, $07
+	end
+
+Script_066_439f:
+	textface text_66_7055
+	end
 
 G5_1F_ObjectEvents2:
 	object_event $20,  4,  3, 0, $00, $00, $00, $00, Script_066_43dd
@@ -165,10 +345,53 @@ G5_1F_ObjectEvents2:
 	objects_end
 
 G5_1F_ObjectEvents:
-	dr $1983ba, $1983dd
+	dr $1983ba, $1983d1
+ObjSprite_66_43d1::
+	dr $1983d1, $1983dd
 
 Script_066_43dd::
-	dr $1983dd, $198440
+	checkbit wEventFlags + 17, $02, Script_066_43e7
+	textface text_66_5407
+	end
+
+Script_066_43e7:
+	checkbit wEventFlags + 17, $04, Script_066_43f5
+	textface text_66_66f2
+	setbit wEventFlags + 17, $03
+	end
+
+Script_066_43f5:
+	checkbit wEventFlags + 17, $05, Script_066_442c
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	clearplayerpos
+	loadobjsprite ObjSprite_66_43d1
+	spriteface  3, FACE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spriteface  3, FACE_UP
+	stext text_66_69ae
+	stext text_66_69c7
+	emote  0, EMOTE_TEAR
+	emote  2, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_6a18
+	stext text_66_6a9c
+	scr_48 $02, $1d
+	setbit wEventFlags + 17, $05
+	end
+
+Script_066_442c:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_6aab
+	stext text_66_6ade
+	stext text_66_6b01
+	stext text_66_6b09
+	end
 
 Script_066_4440::
 	textface text_66_6b09
@@ -202,7 +425,52 @@ G5_27_ObjectEvents2:
 	object_event $73,  4,  8, 0, $00, $00, $00, $00, Script_066_41f2
 	objects_end
 Script_066_448e::
-	dr $19848e, $198510
+	checkbit wEventFlags + 17, $03, Script_066_4498
+Script_066_4494:
+	setmap $27, $00
+	end
+
+Script_066_4498:
+	checkbit wEventFlags + 17, $04, Script_066_4494
+	setplayerchar $00
+	setmap $27, $01
+	setattach $01, $00, $f0, $00
+	objmove $00, MovementData_066_7de0
+	clearattach $00
+	move MovementData_OneDown
+	stext text_66_67b0
+	face $05
+	objmove $00, MovementData_066_7e09
+	face FACE_DOWN
+	setmap $27, $02
+	spriteface  2, FACE_UP
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_67c3
+	stext text_66_67f8
+	warpmode GAMEMODE_BEACH_CUTSCENE, $27, $03
+	spriteface  2, FACE_LEFT
+	delay $03, $10
+	spriteface  2, FACE_RIGHT
+	delay $03, $10
+	spriteface  2, FACE_UP
+	stext text_66_68c0
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_68e9
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_6924
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_693d
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	clearplayerpos
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	setbit wEventFlags + 17, $04
+	end
 
 G5_20_ObjectEvents:
 	object_event $16,  7,  6, 0, $00, $00, $08, $00, Script_066_451c
@@ -218,24 +486,63 @@ G5_10_ObjectEvents:
 	objects_end
 
 Script_066_4537::
-	dr $198537, $198545
+	checkbit wEventFlags + 15, $01, Script_066_4541
+	textface text_66_551e
+	end
+
+Script_066_4541:
+	textface text_66_5f6c
+	end
 Script_066_4545::
 	spriteface  2, FACE_LEFT
 	farjump Script_066_454d
 	end
 
 Script_066_454d::
-	dr $19854d, $19856f
+	checkbit wEventFlags + 15, $01, Script_066_4557
+	stext text_66_5571
+	end
+
+Script_066_4557:
+	checkbit wEventFlags + 16, $00, Script_066_456b
+	stext text_66_5f95
+	stext text_66_5fde
+	scr_48 $02, $1b
+	setbit wEventFlags + 16, $00
+	end
+
+Script_066_456b:
+	stext text_66_5fef
+	end
 
 G5_0F_ObjectEvents:
 	object_event $1b,  2,  6, 0, $00, $00, $00, $00, Script_066_458e
 	object_event $21,  8,  4, 0, $00, $00, $06, $01, Script_066_45b6
 	objects_end
 Script_066_4586::
-	dr $198586, $19858e
+	spriteface  2, FACE_UP
+	farjump Script_066_4591
+	end
 
 Script_066_458e::
-	dr $19858e, $1985b6
+	spriteface  2, FACE_RIGHT
+Script_066_4591:
+	checkbit wEventFlags + 15, $02, Script_066_459b
+	stext text_66_55a9
+	end
+
+Script_066_459b:
+	checkbit wEventFlags + 15, $03, Script_066_45b2
+	stext text_66_70db
+	stext text_66_715f
+	scr_48 $02, $23
+	listdec $02, $19
+	setbit wEventFlags + 15, $03
+	end
+
+Script_066_45b2:
+	stext text_66_716f
+	end
 
 Script_066_45b6::
 	textface text_66_55ff
@@ -325,14 +632,123 @@ G5_26_ObjectEvents:
 	objects_end
 
 Script_066_468c::
-	dr $19868c, $1986c0
+	checkbit wEventFlags + 15, $01, Script_066_46a4
+	textface text_66_56c0
+	end
+
+Script_066_4696:
+	checkbit wEventFlags + 15, $04, Script_066_46a0
+	textface text_66_60dd
+	end
+
+Script_066_46a0:
+	textface text_66_77d4
+	end
+
+Script_066_46a4:
+	checkbit wEventFlags + 16, $04, Script_066_4696
+	textface text_66_6027
+	countflags10 $05, $b2, $46
+	end
+
+Script_066_46b2:
+	stext text_66_6063
+	stext text_66_60cd
+	scr_48 $02, $1c
+	setbit wEventFlags + 16, $04
+	end
 
 G5_1D_ObjectEvents:
 	object_event $18,  6,  4, 0, $00, $00, $00, $00, Script_066_46cc
 	objects_end
 
 Script_066_46cc::
-	dr $1986cc, $1987b2
+	checkbit wEventFlags + 15, $00, Script_066_476b
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_5936
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_596b
+	stext text_66_5986
+	setmap $02, $01
+	spriteface  3, FACE_LEFT
+	spriteface  4, FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	spriteface  5, FACE_RIGHT
+	stext text_66_59e0
+	stext text_66_5a33
+	stext text_66_5a89
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	spritewalk  3, MOVE_LEFT
+	spriteface  4, FACE_RIGHT
+	spriteface  2, FACE_RIGHT
+	stext text_66_5b30
+	stext text_66_5b52
+	objmove $06, MovementData_066_7d15
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_UP
+	spriteface  4, FACE_UP
+	emote  4, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	spritewalk  4, MOVE_UP
+	stext text_66_5b66
+	spritewalk  3, MOVE_LEFT
+	spriteface  3, FACE_UP
+	stext text_66_5b9f
+	emote  6, EMOTE_ANGER
+	delay $03, $20
+	objmove $06, MovementData_066_7cc7
+	clearobject $04
+	emote  3, EMOTE_EXCLAMATION
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_5bba
+	stext text_66_5bc9
+	emote  6, EMOTE_ANGER
+	delay $03, $20
+	face FACE_UP
+	setmap $1d, $01
+	stext text_66_5bd2
+	setbit wEventFlags + 15, $00
+	end
+
+Script_066_476b:
+	countflags10 $03, $73, $47
+	textface text_66_5c77
+	end
+
+Script_066_4773:
+	checkbit wEventFlags + 17, $01, Script_066_479a
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_610e
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_66_618d
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_619b
+	setbit wEventFlags + 17, $01
+	end
+
+Script_066_479a:
+	checkbit wEventFlags + 16, $05, Script_066_47a4
+	textface text_66_61c1
+	end
+
+Script_066_47a4:
+	checkbit wEventFlags + 15, $06, Script_066_47b2
+	textface text_66_6d46
+	setbit wEventFlags + 17, $06
+	end
 
 Script_066_47b2::
 	textface text_66_74f2
@@ -343,10 +759,100 @@ G5_1A_ObjectEvents2:
 	object_event $28,  4,  5, 0, $00, $00, $00, $01, Script_066_4869
 	objects_end
 Script_066_47cd::
-	dr $1987cd, $198869
+	checkbit wEventFlags + 17, $01, Script_066_47dd
+	setmap $1a, $00
+Script_066_47d6:
+	end2
+
+Script_066_47d7:
+	face FACE_DOWN
+	setmap $19, $01
+	end
+
+Script_066_47dd:
+	setmap $1a, $01
+	checkbit wEventFlags + 17, $02, Script_066_47d6
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_RIGHT
+	stext text_66_6240
+	stext text_66_626c
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	move MovementData_OneUp
+	spriteface  1, FACE_UP
+	spritewalk  1, MOVE_UP
+	stext text_66_62aa
+	emote  2, EMOTE_QUESTION
+	delay $03, $20
+	stext text_66_62df
+	stext text_66_630f
+	stext text_66_632b
+	stext text_66_6343
+	stext text_66_635e
+	stext text_66_6367
+	stext text_66_6370
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_6384
+	startbattle BattleData_02d_4d7b
+	checkbit wEventFlags + 3, $03, Script_066_47d7
+	stext text_66_63e7
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	stext text_66_641f
+	stext text_66_6440
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_66_648d
+	stext text_66_649e
+	stext text_66_64cf
+	stext text_66_6534
+	stext text_66_659f
+	emote  2, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_65b5
+	stext text_66_6634
+	setbit wEventFlags + 17, $02
+	end
 
 Script_066_4869::
-	dr $198869, $1988bb
+	checkbit wEventFlags + 17, $05, Script_066_487d
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_6655
+	stext text_66_66d4
+	end
+
+Script_066_487d:
+	checkbit wEventFlags + 16, $05, Script_066_48a7
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_6b54
+	stext text_66_6b63
+	stext text_66_6bc8
+	stext text_66_6c21
+	stext text_66_6c6a
+	stext text_66_6c79
+	scr_48 $02, $1e
+	listdec $02, $1d
+	setbit wEventFlags + 16, $05
+	end
+
+Script_066_48a7:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_6c93
+	stext text_66_6cdd
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	end
 
 G5_02_ObjectEvents2:
 	object_event $0e, 15, 23, 0, $00, $00, $00, $00, Script_066_41f2
@@ -369,20 +875,195 @@ G5_15_ObjectEvents2:
 	objects_end
 
 Script_066_4937::
-	dr $198937, $19895f
+	checkbit wEventFlags + 15, $01, Script_066_495b
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_66_5d40
+	stext text_66_5d8c
+	stext text_66_5da8
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_66_5e2c
+	setbit wEventFlags + 15, $01
+	end
+
+Script_066_495b:
+	textface text_66_5e62
+	end
 
 Script_066_495f::
-	dr $19895f, $198aa8
+	scr_6e Script_066_4973, Script_066_497a, Script_066_4981, Script_066_4988, Script_066_498f, Script_066_4996, Script_066_499d, Script_066_49ab, Script_066_49b9
+	end
+
+Script_066_4973:
+	stext text_66_725f
+	stext text_66_7bca
+	end
+
+Script_066_497a:
+	stext text_66_725f
+	stext text_66_7be0
+	end
+
+Script_066_4981:
+	stext text_66_725f
+	stext text_66_7bf7
+	end
+
+Script_066_4988:
+	stext text_66_7267
+	stext text_66_7c0e
+	end
+
+Script_066_498f:
+	stext text_66_7267
+	stext text_66_7c25
+	end
+
+Script_066_4996:
+	stext text_66_727b
+	stext text_66_7c3c
+	end
+
+Script_066_499d:
+	stext text_66_727b
+	stext text_66_72bb
+	stext text_66_7c53
+	farjump Script_066_49ca
+	end
+
+Script_066_49ab:
+	stext text_66_7297
+	stext text_66_72c9
+	stext text_66_7c6a
+	farjump Script_066_49ca
+	end
+
+Script_066_49b9:
+	stext text_66_72d7
+	stext text_66_72ef
+	stext text_66_730d
+	stext text_66_7c81
+	farjump Script_066_49ca
+	end
+
+Script_066_49ca:
+	stext text_66_7336
+	checkbit wEventFlags + 3, $03, Script_066_4a98
+	stext text_66_73c3
+	stext text_66_7408
+	setplayerchar $00
+	face FACE_UP
+	setmap $15, $01
+	spriteface  3, FACE_LEFT
+	emote  0, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_742c
+	spriteface  2, FACE_RIGHT
+	stext text_66_744b
+	stext text_66_74a2
+	spriteface  2, FACE_DOWN
+	stext text_66_74dc
+	setbit wEventFlags + 15, $06
+	face FACE_UP
+	setmap $1d, $02
+	spriteface  3, FACE_RIGHT
+	spriteface  2, FACE_LEFT
+	stext text_66_74f2
+	stext text_66_7509
+	spriteface  3, FACE_DOWN
+	stext text_66_751c
+	stext text_66_7580
+	scr_48 $02, $25
+	incsteps
+	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $1d, $02
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	loadobjsprite ObjSprite_66_4a9c
+	spriteface  5, FACE_UP
+	objmove $05, MovementData_066_7db7
+	spriteface  5, FACE_RIGHT
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_LEFT
+	face FACE_LEFT
+	stext text_66_758f
+	emote  3, EMOTE_EXCLAMATION
+	emote  2, EMOTE_EXCLAMATION
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	face FACE_UP
+	stext text_66_760f
+	stext text_66_7668
+	stext text_66_7691
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_LEFT
+	face FACE_LEFT
+	stext text_66_76e3
+	spriteface  5, FACE_DOWN
+	objmove $05, MovementData_066_7de0
+	clearobject $05
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_DOWN
+	face FACE_UP
+	clearplayerpos
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	spritewalk  4, MOVE_DOWN
+	spritewalk  4, MOVE_DOWN
+	clearobject $04
+	loadscriptedmon $07
+	scr_62 $07, $01
+	stext text_66_7700
+	stext text_66_7718
+	setbit wEventFlags + 15, $04
+	end
+
+Script_066_4a98:
+	stext text_66_734c
+	end
+
+ObjSprite_66_4a9c::
+	dr $198a9c, $198aa8
 
 G5_1D_ObjectEvents2:
 	dr $198aa8, $198aca
 Script_066_4aca::
-	dr $198aca, $198ad8
+	checkbit wEventFlags + 15, $06, Script_066_4ad4
+	setmap $15, $00
+	end2
+
+Script_066_4ad4:
+	setmap $15, $02
+	end2
 
 G5_0E_ObjectEvents2:
 	dr $198ad8, $198aef
 Script_066_4aef::
-	dr $198aef, $198b24
+	checkbit wEventFlags + 18, $00, Script_066_4b20
+	setplayerchar $00
+	face FACE_LEFT
+	setmap $0e, $02
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_UP
+	stext text_66_7806
+	stext text_66_7920
+	spriteface  2, FACE_UP
+	setattach $03, $02, $10, $00
+	objmove $02, MovementData_066_7d36
+	clearobject $02
+	clearobject $03
+	scr_62 $07, $00
+	setbit wEventFlags + 18, $00
+	end
+
+Script_066_4b20:
+	setmap $0e, $00
+	end2
 
 G5_0B_ObjectEvents:
 	dr $198b24, $198b3b
@@ -401,7 +1082,7 @@ Script_066_4b53::
 	checkbit wEventFlags + 3, $03, Script_066_41f1
 	clearobject $02
 	loadobjsprite ObjSprite_66_4b3b
-	objmove $02, $7d15
+	objmove $02, MovementData_066_7d15
 	stext text_66_7981
 	setbit wEventFlags + 18, $01
 	setmap $0d, $01
@@ -414,7 +1095,7 @@ Script_066_4b53::
 	spriteface  2, FACE_RIGHT
 	loadobjsprite ObjSprite_66_4c55
 	spriteface  4, FACE_UP
-	objmove $04, $7d15
+	objmove $04, MovementData_066_7d15
 	spriteface  4, FACE_UP
 	spriteface  4, FACE_LEFT
 	spriteface  4, FACE_DOWN
@@ -425,14 +1106,62 @@ Script_066_4b53::
 	stext text_66_79e1
 	end
 Script_066_4bb1::
-	dr $198bb1, $198bc5
+	checkbit wEventFlags + 18, $01, Script_066_4bc1
+	setmap $0d, $00
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_UP
+	end2
+
+Script_066_4bc1:
+	setmap $0d, $02
+	end2
 
 Script_066_4bc5::
 	stext text_66_792e
 	end
 
 Script_066_4bc9::
-	dr $198bc9, $198c3e
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_7a0c
+	face FACE_LEFT
+	setmap $0d, $03
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_UP
+	stext text_66_7a20
+	loadobjsprite ObjSprite_66_4b47
+	objmove $04, MovementData_066_7d04
+	setbit wEventFlags + 18, $03
+	scr_62 $07, $01
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	warpmode GAMEMODE_FLOATING_ISLAND_CUTSCENE1, $1a, $02
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	emote  2, EMOTE_EXCLAMATION
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	spriteface  2, FACE_LEFT
+	spriteface  3, FACE_RIGHT
+	stext text_66_7a50
+	stext text_66_7a6d
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	stext text_66_7a7e
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	setplayerchar $00
+	face FACE_LEFT
+	setmap $1d, $03
+	spriteface  2, FACE_RIGHT
+	spriteface  3, FACE_RIGHT
+	stext text_66_7a94
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_66_7af9
+	setmapgroup $06
+	farjump2 $4752, $6c
+	end
 
 G5_1D_ObjectEvents3:
 	dr $198c3e, $198c55
@@ -449,6 +1178,35 @@ G5_0D_ObjectEvents2:
 	object_event $0f,  4,  3, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
 Script_066_4c8f::
-	dr $198c8f, $198d45
+	checkbit wEventFlags + 15, $05, Script_066_4c96
+	end
+
+Script_066_4c96:
+	stext text_66_7bbc
+	farjump2 Script_067_6e06
+	end
+
+Script_066_4c9e:: ; farjump2 target (bank_67)
+	setmap $07, $04
+	end
+
+INCLUDE "data/text/bank66_4ca2.asm"
 INCLUDE "data/text/bank66_4d45.asm"
-	dr $19bcc7, $19be50
+MovementData_066_7cc7:
+	dr $19bcc7, $19bd04
+MovementData_066_7d04:
+	dr $19bd04, $19bd15
+MovementData_066_7d15:
+	dr $19bd15, $19bd36
+MovementData_066_7d36:
+	dr $19bd36, $19bd47
+MovementData_066_7d47:
+	dr $19bd47, $19bd7e
+MovementData_066_7d7e:
+	dr $19bd7e, $19bdb7
+MovementData_066_7db7:
+	dr $19bdb7, $19bde0
+MovementData_066_7de0:
+	dr $19bde0, $19be09
+MovementData_066_7e09:
+	dr $19be09, $19be50

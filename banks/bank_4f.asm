@@ -551,19 +551,81 @@ G3_21_ObjectEvents:
 	objects_end
 
 Script_04f_455e:
-	dr $13c55e, $13c56a
+	ifcharindex $03, Script_04f_4566
+	textface text_4f_6801
+	end
+
+Script_04f_4566:
+	textface text_4f_680f
+	end
 
 Script_04f_456a:
-	dr $13c56a, $13c576
+	ifcharindex $03, Script_04f_4572
+	textface text_4f_67d7
+	end
+
+Script_04f_4572:
+	textface text_4f_6843
+	end
 
 Script_04f_4576:
-	dr $13c576, $13c582
+	ifcharindex $03, Script_04f_457e
+	textface text_4f_67d7
+	end
+
+Script_04f_457e:
+	textface text_4f_67cc
+	end
 
 G3_21_ObjectEvents2:
-	dr $13c582, $13c5c6
+	dr $13c582, $13c5ba
+ObjSprite_4f_45ba::
+	dr $13c5ba, $13c5c6
 
 Script_04f_45c6::
-	dr $13c5c6, $13c63f
+	checkbit wEventFlags + 6, $02, Script_04f_463b
+	setplayerchar $02
+	face FACE_LEFT
+	setmap $21, $03
+	scr_62 $03, $00
+	spriteface  5, FACE_UP
+	spriteface  6, FACE_RIGHT
+	stext text_4f_69c8
+	spriteface  3, FACE_LEFT
+	spritewalk  3, MOVE_LEFT
+	spritewalk  3, MOVE_LEFT
+	spritewalk  3, MOVE_LEFT
+	clearobject $03
+	loadobjsprite ObjSprite_4f_45ba
+	spriteface  3, FACE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spriteface  3, FACE_DOWN
+	emote  5, EMOTE_EXCLAMATION
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_6a43
+	stext text_4f_6aa8
+	scr_48 $02, $0b
+	emote  5, EMOTE_EXCLAMATION
+	delay $03, $20
+	spriteface  5, FACE_RIGHT
+	stext text_4f_6ab8
+	stext text_4f_6ae3
+	stext text_4f_6afa
+	spriteface  5, FACE_RIGHT
+	spriteface  6, FACE_RIGHT
+	setattach $05, $06, $00, $10
+	objmove $06, MovementData_04f_7bd4
+	clearobject $05
+	clearobject $06
+	setbit wEventFlags + 6, $02
+	end
+
+Script_04f_463b:
+	setmap $21, $00
+	end2
 
 G3_22_ObjectEvents:
 	dr $13c63f, $13c656
@@ -596,31 +658,95 @@ G3_1C_ObjectEvents:
 	dr $13c75e, $13c775
 
 Script_04f_4775::
-	dr $13c775, $13c77d
+	textface text_4f_55bf
+	end
+
+Script_04f_4779:
+	textface text_4f_5619
+	end
 
 Script_04f_477d::
 	farjump Script_04f_4bf3
 	end
 
 Script_04f_4782::
-	dr $13c782, $13c790
+	checkbit wEventFlags + 6, $02, Script_04f_478c
+	textface text_4f_56fa
+	end
+
+Script_04f_478c:
+	textface text_4f_6c8c
+	end
 
 Script_04f_4790::
 	textface text_4f_4de3
 	end
 
 Script_04f_4794::
-	dr $13c794, $13c7ba
+	checkbit wEventFlags + 6, $04, Script_04f_479e
+	textface text_4f_4e1c
+	end
+
+Script_04f_479e:
+	textface text_4f_4e8b
+	end
+
+Script_04f_47a2:
+	checkbit wEventFlags + 6, $02, Script_04f_47ac
+	textface text_4f_4e9b
+	end
+
+Script_04f_47ac:
+	checkbit wEventFlags + 6, $04, Script_04f_47b6
+	textface text_4f_6c8c
+	end
+
+Script_04f_47b6:
+	textface text_4f_6cd2
+	end
 
 Script_04f_47ba::
 	textface text_4f_4ee0
 	end
 
 Script_04f_47be::
-	dr $13c7be, $13c7d6
+	checkbit wEventFlags + 6, $02, Script_04f_47c8
+	textface text_4f_4f38
+	end
+
+Script_04f_47c8:
+	checkbit wEventFlags + 6, $04, Script_04f_47d2
+	textface text_4f_6b41
+	end
+
+Script_04f_47d2:
+	textface text_4f_6b67
+	end
 
 Script_04f_47d6::
-	dr $13c7d6, $13c809
+	ifcharindex $03, Script_04f_47de
+	textface text_4f_4f81
+	end
+
+Script_04f_47de:
+	checkbit wEventFlags + 6, $07, Script_04f_4805
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_4f_798c
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4f_79aa
+	stext text_4f_79b7
+	stext text_4f_79ef
+	scr_48 $02, $0e
+	setbit wEventFlags + 6, $07
+	end
+
+Script_04f_4805:
+	textface text_4f_7a00
+	end
 
 Script_04f_4809::
 	textface text_4f_4f98
@@ -647,13 +773,322 @@ Script_04f_481d::
 	end
 
 Script_04f_4821::
-	dr $13c821, $13c831
+	textface text_4f_5c7d
+	end
+ObjSprite_4f_4825::
+	dr $13c825, $13c831
 
 Script_04f_4831::
-	dr $13c831, $13c8a9
+	checkbit wEventFlags + 5, $03, Script_04f_4881
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	ifcharindex $02, Script_04f_4871
+	clearplayerpos
+	loadobjsprite ObjSprite_4f_4825
+	spriteface  4, FACE_LEFT
+	spritewalk  4, MOVE_LEFT
+	spriteface  4, FACE_UP
+	spriteface  3, FACE_LEFT
+	spritewalk  3, MOVE_LEFT
+	spriteface  3, FACE_DOWN
+	stext text_4f_5e85
+	stext text_4f_5ea5
+	stext text_4f_5f09
+	clearplayerpos
+	spriteface  4, FACE_RIGHT
+	spritewalk  4, MOVE_RIGHT
+	clearobject $04
+	setbit wEventFlags + 5, $03
+	setmappredef MAPPREDEF_0e
+	end
+
+Script_04f_4871:
+	stext text_4f_5e85
+	stext text_4f_5ea5
+	stext text_4f_5f09
+	setbit wEventFlags + 5, $03
+	setmappredef MAPPREDEF_0e
+	end
+
+Script_04f_4881:
+	textface text_4f_5f1f
+	end
+ObjSprite_4f_4885::
+	dr $13c885, $13c891
+ObjSprite_4f_4891::
+	dr $13c891, $13c89d
+ObjSprite_4f_489d::
+	dr $13c89d, $13c8a9
 
 Script_04f_48a9::
-	dr $13c8a9, $13cab6
+	setplayerchar $00
+	setmap $07, $0e
+	loadobjsprite ObjSprite_4f_4885
+	loadobjsprite ObjSprite_4f_4891
+	loadobjsprite ObjSprite_4f_489d
+	face FACE_DOWN
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_LEFT
+	spriteface  4, FACE_LEFT
+	stext text_4f_5f5b
+	stext text_4f_5fa7
+	setattach $04, $03, $00, $10
+	objmove $03, MovementData_04f_7bd4
+	clearattach $04
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_5feb
+	spriteface  2, FACE_DOWN
+	spriteface  3, FACE_UP
+	stext text_4f_5ff5
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_5fff
+	spriteface  3, FACE_LEFT
+	spritewalk  3, MOVE_LEFT
+	emote  3, EMOTE_HEART
+	delay $03, $20
+	stext text_4f_600b
+	spriteface  3, FACE_RIGHT
+	spritewalk  3, MOVE_RIGHT
+	spriteface  3, FACE_UP
+	stext text_4f_6051
+	stext text_4f_6077
+	spriteface  3, FACE_LEFT
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_609f
+	stext text_4f_60c0
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	spriteface  3, FACE_UP
+	stext text_4f_60cd
+	spriteface  3, FACE_LEFT
+	setattach $04, $03, $00, $10
+	objmove $03, MovementData_04f_7bf5
+	clearobject $03
+	clearobject $04
+	spriteface  2, FACE_UP
+	stext text_4f_6146
+	stext text_4f_6154
+	stext text_4f_616c
+	clearplayerpos
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	setbit wEventFlags + 5, $04
+	setmappredef MAPPREDEF_0f
+	end
+
+Script_04f_4950:
+	ifcharindex $03, Script_04f_4958
+	textface text_4f_6225
+	end
+
+Script_04f_4958:
+	textface text_4f_64bf
+	end
+
+Script_04f_495c:
+	ifcharindex $03, Script_04f_4964
+	textface text_4f_6233
+	end
+
+Script_04f_4964:
+	textface text_4f_6527
+	end
+
+Script_04f_4968:
+	ifcharindex $03, Script_04f_4970
+	stext text_4f_623b
+	end
+
+Script_04f_4970:
+	stext text_4f_658c
+	end
+
+Script_04f_4974:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	ifcharindex $02, Script_04f_4983
+	stext text_4f_6288
+	end
+
+Script_04f_4983:
+	stext text_4f_62a1
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4f_62b9
+	stext text_4f_62c2
+	stext text_4f_62c9
+	stext text_4f_634a
+	stext text_4f_6356
+	stext text_4f_63c8
+	emote  4, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_63db
+	stext text_4f_6422
+	stext text_4f_6438
+	clearplayerpos
+	spritewalk  4, MOVE_DOWN
+	clearobject $04
+	spritewalk  5, MOVE_DOWN
+	spritewalk  5, MOVE_DOWN
+	clearobject $05
+	loadscriptedmon $03
+	scr_62 $03, $80
+	stext text_4f_646c
+	stext text_4f_6483
+	setbit wEventFlags + 5, $07
+	end
+
+Script_04f_49cb:
+	ifcharindex $03, Script_04f_49d3
+	textface text_4f_6243
+	end
+
+Script_04f_49d3:
+	textface text_4f_6594
+	checkbit wEventFlags + 4, $01, Script_04f_49df
+	scr_35 $04
+	end
+
+Script_04f_49df:
+	end
+
+Script_04f_49e0:
+	ifcharindex $03, Script_04f_49e8
+	textface text_4f_6254
+	end
+
+Script_04f_49e8:
+	textface text_4f_65f8
+	checkbit wEventFlags + 3, $03, Script_04f_49f3
+	scr_37
+	end
+
+Script_04f_49f3:
+	end
+
+Script_04f_49f4:
+	ifcharindex $03, Script_04f_49fc
+	textface text_4f_6267
+	end
+
+Script_04f_49fc:
+	textface text_4f_663f
+	end
+
+Script_04f_4a00:
+	ifcharindex $03, Script_04f_4a08
+	textface text_4f_6274
+	end
+
+Script_04f_4a08:
+	textface text_4f_666c
+	end
+
+Script_04f_4a0c:
+	ifcharindex $03, Script_04f_4a14
+	textface text_4f_6281
+	end
+
+Script_04f_4a14:
+	textface text_4f_66c4
+	end
+
+Script_04f_4a18:
+	checkbit wEventFlags + 5, $02, Script_04f_4a22
+	textface text_4f_5093
+	end
+
+Script_04f_4a22:
+	checkbit wEventFlags + 6, $04, Script_04f_4a2c
+	textface text_4f_5107
+	end
+
+Script_04f_4a2c:
+	textface text_4f_5127
+	end
+
+Script_04f_4a30:
+	textface text_4f_5161
+	end
+
+Script_04f_4a34:
+	checkbit wEventFlags + 6, $04, Script_04f_4a3e
+	textface text_4f_51ca
+	end
+
+Script_04f_4a3e:
+	textface text_4f_5208
+	end
+
+Script_04f_4a42:
+	checkbit wEventFlags + 6, $04, Script_04f_4a4c
+	textface text_4f_522b
+	end
+
+Script_04f_4a4c:
+	textface text_4f_5284
+	end
+
+Script_04f_4a50:
+	checkbit wEventFlags + 6, $02, Script_04f_4a5a
+	textface text_4f_52bc
+	end
+
+Script_04f_4a5a:
+	textface text_4f_6bf9
+	end
+
+Script_04f_4a5e:
+	checkbit wEventFlags + 6, $02, Script_04f_4a68
+	textface text_4f_531d
+	end
+
+Script_04f_4a68:
+	textface text_4f_6c29
+	end
+
+Script_04f_4a6c:
+	textface text_4f_5372
+	end
+
+Script_04f_4a70:
+	checkbit wEventFlags + 6, $07, Script_04f_4a7a
+	textface text_4f_53d3
+	end
+
+Script_04f_4a7a:
+	checkbit wEventFlags + 6, $04, Script_04f_4a97
+	checkbit wEventFlags + 7, $00, Script_04f_4aae
+	stext text_4f_7a15
+	stext text_4f_7a54
+	listdec $02, $0e
+	scr_48 $00, $14
+	setbit wEventFlags + 7, $00
+	end
+
+Script_04f_4a97:
+	checkbit wEventFlags + 7, $00, Script_04f_4aae
+	stext text_4f_7a70
+	stext text_4f_7ac3
+	listdec $02, $0e
+	scr_48 $00, $05
+	setbit wEventFlags + 7, $00
+	end
+
+Script_04f_4aae:
+	textface text_4f_7ad3
+	end
+
+Script_04f_4ab2:
+	textface text_4f_540f
+	end
 
 SkyCity_ObjectEvents2:
 	object_event $11, 15,  8, 0, $00, $00, $00, $00, Script_04f_4031
@@ -715,13 +1150,58 @@ Script_04f_4b77:
 	sjump Script_04f_4b91
 
 Script_04f_4b83::
-	dr $13cb83, $13cb91
+	checkbit wEventFlags + 6, $02, Script_04f_4bcc
+	face FACE_LEFT
+	spriteface  3, FACE_RIGHT
+	stext text_4f_5a2d
 Script_04f_4b91::
-	dr $13cb91, $13cbc6
+	checkbit wEventFlags + 3, $03, Script_04f_4ba1
+	checkbit wEventFlags + 5, $00, Script_04f_4ba2
+	stext text_4f_5a78
+	end
+
+Script_04f_4ba1:
+	end
+
+Script_04f_4ba2:
+	checkbit wEventFlags + 5, $01, Script_04f_4bc2
+	stext text_4f_5a69
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_4f_5a8e
+	stext text_4f_5ae7
+	stext text_4f_5af1
+	stext text_4f_5b4f
+	setbit wEventFlags + 5, $01
+	end
+
+Script_04f_4bc2:
+	stext text_4f_5acf
+	end
 Script_04f_4bc6::
-	dr $13cbc6, $13cbcc
+	textface text_4f_6ce6
+	sjump Script_04f_4bd4
 Script_04f_4bcc::
-	dr $13cbcc, $13cbf2
+	face FACE_LEFT
+	spriteface  3, FACE_RIGHT
+	stext text_4f_6ce6
+Script_04f_4bd4:
+	checkbit wEventFlags + 3, $03, Script_04f_4be9
+	stext text_4f_6d57
+	setmappredef MAPPREDEF_11
+	setfollower $00
+	setplayerchar $02
+	face FACE_DOWN
+	sjump Script_04f_4bed
+	end
+
+Script_04f_4be9:
+	stext text_4f_6d20
+	end
+
+Script_04f_4bed:
+	farjump2 $4005, $4e
+	end
 Script_04f_4bf2::
 	end
 
@@ -787,10 +1267,37 @@ G3_1F_ObjectEvents2:
 	dr $13cd58, $13cd6f
 
 Script_04f_4d6f::
-	dr $13cd6f, $13cd94
+	checkbit wEventFlags + 5, $05, Script_04f_4d86
+	setmap $04, $00
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_4f_61aa
+	setbit wEventFlags + 5, $05
+	end
+
+Script_04f_4d86:
+	checkbit wEventFlags + 6, $01, Script_04f_4d90
+	setmap $04, $00
+	end
+
+Script_04f_4d90:
+	setmap $01, $00
+	end
 
 Script_04f_4d94::
-	dr $13cd94, $13cdb2
+	checkbit wEventFlags + 5, $04, Script_04f_4da4
+	checkbit wEventFlags + 5, $06, Script_04f_4dae
+	setmap $06, $03
+	end
+
+Script_04f_4da4:
+	checkbit wEventFlags + 5, $06, Script_04f_4dae
+	setmap $06, $02
+	end
+
+Script_04f_4dae:
+	setmap $06, $00
+	end
 
 GreenForestP32_ObjectEvents2:
 	object_event $36,  5,  3, 0, $00, $00, $00, $00, Script_04f_4dbe
@@ -816,5 +1323,9 @@ Script_04f_4dbe::
 INCLUDE "data/text/bank4f_misc.asm"
 
 MovementData_4f_7ae1::
-	dr $13fae1, $13fcff
+	dr $13fae1, $13fbd4
+MovementData_04f_7bd4:
+	dr $13fbd4, $13fbf5
+MovementData_04f_7bf5:
+	dr $13fbf5, $13fcff
 
