@@ -93,7 +93,13 @@ Tileset_006_40f9:
 	end_tileset
 
 Tileset_006_410f:
-	dr $1810f, $1812d
+	tileset_fragment gfx_017_6e2e, $9000, $570
+	end_tileset
+Tileset_006_4117::
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_739e, $9360, $4a0
+	tileset_fragment gfx_017_783e, $8800, $120
+	end_tileset
 
 Tileset_006_412d:
 	tileset_fragment gfx_019_4000, $9000, $670
@@ -103,157 +109,335 @@ Tileset_006_412d:
 	end_tileset
 
 Tileset_006_414a:
-	dr $1814a, $18159
+	tileset_fragment GFX_019_49e0, $9000, $5e0
+	tileset_fragment gfx_019_4fc0, $95f0, $1c0
+	end_tileset
 
 Tileset_006_4159:
-	dr $18159, $1816f
+	tileset_fragment gfx_019_5180, $9000, $690
+	tileset_fragment gfx_019_5810, $96a0, $160
+	tileset_fragment gfx_019_5970, $8800, $1e0
+	end_tileset
 
 Tileset_006_416f:
-	dr $1816f, $1817e
+	tileset_fragment gfx_019_5b50, $9000, $800
+	tileset_fragment gfx_019_6350, $8800, $f0
+	end_tileset
 
 Tileset_006_417e:
-	dr $1817e, $18194
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_019_6440, $9360, $4a0
+	tileset_fragment gfx_019_68e0, $8800, $180
+	end_tileset
 
 Tileset_006_4194:
-	dr $18194, $181a3
+	tileset_fragment gfx_017_5c1e, $9000, $510
+	tileset_fragment gfx_019_6a60, $9520, $1c0
+	end_tileset
 
 Tileset_006_41a3:
-	dr $181a3, $181b2
+	tileset_fragment gfx_019_6c20, $9000, $800
+	tileset_fragment gfx_019_7420, $8800, $50
+	end_tileset
 
 Tileset_006_41b2:
-	dr $181b2, $181ba
+	tileset_fragment gfx_019_7470, $9000, $590
+	end_tileset
 
 Tileset_006_41ba:
-	dr $181ba, $181d0
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_66ce, $9360, $140
+	tileset_fragment gfx_019_7a00, $94b0, $80
+	end_tileset
 Tileset_006_41d0::
-	dr $181d0, $181df
+	tileset_fragment gfx_051_4000, $9000, $800
+	tileset_fragment gfx_051_4800, $8800, $1c0
+	end_tileset
 Tileset_006_41df::
-	dr $181df, $181ee
+	tileset_fragment gfx_051_49c0, $9000, $800
+	tileset_fragment gfx_051_51c0, $8800, $1a0
+	end_tileset
 Tileset_006_41ee::
-	dr $181ee, $1820b
+	tileset_fragment gfx_019_4000, $9000, $670
+	tileset_fragment gfx_019_4670, $9680, $180
+	tileset_fragment gfx_019_47f0, $8800, $170
+	tileset_fragment gfx_051_5360, $8980, $80
+	end_tileset
 Tileset_006_420b::
-	dr $1820b, $18221
+	tileset_fragment gfx_019_6c20, $9000, $800
+	tileset_fragment gfx_019_7420, $8800, $50
+	tileset_fragment gfx_051_53e0, $8860, $90
+	end_tileset
 Tileset_006_4221::
-	dr $18221, $18229
+	tileset_fragment gfx_016_6260, $9000, $280
+	end_tileset
 Tileset_006_4229::
-	dr $18229, $18238
+	tileset_fragment gfx_051_5470, $9000, $3a0
+	tileset_fragment gfx_051_5810, $93b0, $280
+	end_tileset
 Tileset_006_4238::
-	dr $18238, $1824e
+	tileset_fragment gfx_051_5a90, $9000, $3e0
+	tileset_fragment gfx_051_5e70, $93f0, $410
+	tileset_fragment gfx_051_6280, $8800, $100
+	end_tileset
 Tileset_006_424e::
-	dr $1824e, $1826b
+	tileset_fragment gfx_019_6c20, $9000, $800
+	tileset_fragment gfx_019_7420, $8800, $50
+	tileset_fragment gfx_051_53e0, $8860, $90
+	tileset_fragment gfx_051_6380, $8900, $c0
+	end_tileset
 Tileset_006_426b::
-	dr $1826b, $18281
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_66ce, $9360, $140
+	tileset_fragment gfx_051_6440, $94b0, $280
+	end_tileset
 Tileset_006_4281::
-	dr $18281, $1829e
+	tileset_fragment gfx_019_6c20, $9000, $800
+	tileset_fragment gfx_019_7420, $8800, $50
+	tileset_fragment gfx_051_53e0, $8860, $90
+	tileset_fragment gfx_051_66c0, $8900, $60
+	end_tileset
 Tileset_006_429e::
-	dr $1829e, $182cb
+	tileset_fragment gfx_017_612e, $9000, $5a0
+	tileset_fragment gfx_051_6720, $95b0, $1a0
+	end_tileset
+Tileset_006_42ad::
+	tileset_fragment gfx_017_612e, $9000, $5a0
+	tileset_fragment gfx_051_6720, $95b0, $160
+	end_tileset
+Tileset_006_42bc::
+	tileset_fragment gfx_017_612e, $9000, $5a0
+	tileset_fragment gfx_051_6720, $95b0, $160
+	end_tileset
 Tileset_006_42cb::
-	dr $182cb, $182e8
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_66ce, $9360, $140
+	tileset_fragment gfx_019_7a00, $94b0, $80
+	tileset_fragment gfx_051_68c0, $9540, $120
+	end_tileset
 Tileset_006_42e8::
-	dr $182e8, $182f7
+	tileset_fragment gfx_054_4000, $9000, $800
+	tileset_fragment gfx_054_4800, $8800, $30
+	end_tileset
 Tileset_006_42f7::
-	dr $182f7, $182ff
+	tileset_fragment gfx_054_4830, $9000, $7e0
+	end_tileset
 Tileset_006_42ff::
-	dr $182ff, $18315
+	tileset_fragment gfx_054_5010, $9000, $390
+	tileset_fragment gfx_051_5e70, $93f0, $410
+	tileset_fragment gfx_051_6280, $8800, $100
+	end_tileset
 Tileset_006_4315::
-	dr $18315, $18324
+	tileset_fragment gfx_017_612e, $9000, $5a0
+	tileset_fragment gfx_054_7bf0, $95b0, $1c0
+	end_tileset
 Tileset_006_4324::
-	dr $18324, $18333
+	tileset_fragment gfx_016_4000, $9000, $560
+	tileset_fragment gfx_016_4560, $9570, $280
+	end_tileset
 Tileset_006_4333::
-	dr $18333, $18342
+	tileset_fragment gfx_054_53a0, $9000, $220
+	tileset_fragment gfx_054_55c0, $9230, $320
+	end_tileset
 Tileset_006_4342::
-	dr $18342, $18358
+	tileset_fragment gfx_054_58e0, $9000, $4f0
+	tileset_fragment gfx_054_5dd0, $9500, $800
+	tileset_fragment gfx_054_60d0, $8800, $210
+	end_tileset
 Tileset_006_4358::
-	dr $18358, $18367
+	tileset_fragment gfx_054_58e0, $9000, $4f0
+	tileset_fragment gfx_056_4a30, $9500, $190
+	end_tileset
 Tileset_006_4367::
-	dr $18367, $1837d
+	tileset_fragment gfx_016_5550, $9000, $800
+	tileset_fragment gfx_016_5d50, $8800, $60
+	tileset_fragment gfx_054_62d0, $8870, $140
+	end_tileset
 Tileset_006_437d::
-	dr $1837d, $1838c
+	tileset_fragment gfx_017_578e, $9000, $490
+	tileset_fragment gfx_054_6410, $94a0, $260
+	end_tileset
 Tileset_006_438c::
-	dr $1838c, $1839b
+	tileset_fragment gfx_054_53a0, $9000, $220
+	tileset_fragment gfx_054_6670, $9230, $100
+	end_tileset
 Tileset_006_439b::
-	dr $1839b, $183b8
+	tileset_fragment gfx_016_65b0, $9000, $550
+	tileset_fragment gfx_016_6b00, $9560, $1f0
+	tileset_fragment gfx_054_6770, $9760, $800
+	tileset_fragment gfx_054_6810, $8800, $180
+	end_tileset
 Tileset_006_43b8::
-	dr $183b8, $183ce
+	tileset_fragment gfx_019_5b50, $9000, $800
+	tileset_fragment gfx_019_6350, $8800, $f0
+	tileset_fragment gfx_056_4bc0, $8900, $f0
+	end_tileset
 Tileset_006_43ce::
-	dr $183ce, $183d6
+	tileset_fragment gfx_054_6990, $9000, $430
+	end_tileset
 Tileset_006_43d6::
-	dr $183d6, $183de
+	tileset_fragment gfx_054_6dc0, $9000, $5c0
+	end_tileset
 Tileset_006_43de::
-	dr $183de, $183e6
+	tileset_fragment gfx_054_7380, $9000, $500
+	end_tileset
 Tileset_006_43e6::
-	dr $183e6, $183fc
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_66ce, $9360, $140
+	tileset_fragment gfx_019_7a00, $94b0, $80
+	end_tileset
 Tileset_006_43fc::
-	dr $183fc, $18404
+	tileset_fragment gfx_054_53a0, $9000, $220
+	end_tileset
 Tileset_006_4404::
-	dr $18404, $18413
+	tileset_fragment gfx_054_53a0, $9000, $220
+	tileset_fragment gfx_054_6670, $9230, $100
+	end_tileset
 Tileset_006_4413::
-	dr $18413, $18430
+	tileset_fragment gfx_017_5c1e, $9000, $510
+	tileset_fragment gfx_054_7880, $9520, $6e0
+	tileset_fragment gfx_054_7a40, $96f0, $800
+	tileset_fragment gfx_054_7b50, $8800, $a0
+	end_tileset
 Tileset_006_4430::
-	dr $18430, $18446
+	tileset_fragment gfx_056_4000, $9000, $540
+	tileset_fragment gfx_056_4540, $9550, $800
+	tileset_fragment gfx_056_47f0, $8800, $150
+	end_tileset
 Tileset_006_4446::
-	dr $18446, $18463
+	tileset_fragment GFX_019_49e0, $9000, $5e0
+	tileset_fragment gfx_019_4fc0, $95f0, $1c0
+	tileset_fragment gfx_056_4940, $97c0, $40
+	tileset_fragment gfx_056_4980, $8800, $b0
+	end_tileset
 Tileset_006_4463::
-	dr $18463, $18472
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_66ce, $9360, $140
+	end_tileset
 Tileset_006_4472::
-	dr $18472, $18488
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_056_4cb0, $9360, $800
+	tileset_fragment gfx_056_5150, $8800, $120
+	end_tileset
 Tileset_006_4488::
-	dr $18488, $18490
+	tileset_fragment gfx_056_5270, $9000, $6f0
+	end_tileset
 Tileset_006_4490::
-	dr $18490, $18498
+	tileset_fragment gfx_056_5960, $9000, $4e0
+	end_tileset
 Tileset_006_4498::
-	dr $18498, $184a7
+	tileset_fragment gfx_056_5e40, $9000, $800
+	tileset_fragment gfx_056_6640, $8800, $10
+	end_tileset
 Tileset_006_44a7::
-	dr $184a7, $184af
+	tileset_fragment gfx_065_4000, $9000, $580
+	end_tileset
 Tileset_006_44af::
-	dr $184af, $184b7
+	tileset_fragment gfx_065_4580, $9000, $4a0
+	end_tileset
 Tileset_006_44b7::
-	dr $184b7, $184d4
+	tileset_fragment gfx_019_4000, $9000, $670
+	tileset_fragment gfx_019_4670, $9680, $180
+	tileset_fragment gfx_019_47f0, $8800, $170
+	tileset_fragment gfx_065_4a20, $8980, $80
+	end_tileset
 Tileset_006_44d4::
-	dr $184d4, $184dc
+	tileset_fragment gfx_065_4aa0, $9000, $740
+	end_tileset
 Tileset_006_44dc::
-	dr $184dc, $184eb
+	tileset_fragment gfx_017_5c1e, $9000, $510
+	tileset_fragment gfx_019_6a60, $9520, $1c0
+	end_tileset
 Tileset_006_44eb::
-	dr $184eb, $184fa
+	tileset_fragment gfx_019_7470, $9000, $590
+	tileset_fragment gfx_065_51e0, $95a0, $1c0
+	end_tileset
 Tileset_006_44fa::
-	dr $184fa, $18510
+	tileset_fragment gfx_019_6c20, $9000, $800
+	tileset_fragment gfx_019_7420, $8800, $50
+	tileset_fragment gfx_065_53a0, $8860, $150
+	end_tileset
 Tileset_006_4510::
-	dr $18510, $18526
+	tileset_fragment gfx_019_6c20, $9000, $800
+	tileset_fragment gfx_019_7420, $8800, $50
+	tileset_fragment gfx_065_54f0, $8860, $c0
+	end_tileset
 Tileset_006_4526::
-	dr $18526, $18535
+	tileset_fragment gfx_017_5c1e, $9000, $510
+	tileset_fragment gfx_019_6a60, $9520, $1c0
+	end_tileset
 Tileset_006_4535::
-	dr $18535, $18544
+	tileset_fragment GFX_019_49e0, $9000, $5e0
+	tileset_fragment gfx_019_4fc0, $95f0, $1c0
+	end_tileset
 Tileset_006_4544::
-	dr $18544, $18553
+	tileset_fragment gfx_019_7470, $9000, $590
+	tileset_fragment gfx_065_55b0, $95a0, $40
+	end_tileset
 Tileset_006_4553::
-	dr $18553, $18577
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_017_66ce, $9360, $140
+	tileset_fragment gfx_019_7a00, $94b0, $80
+	tileset_fragment gfx_051_68c0, $9540, $120
+	tileset_fragment gfx_065_55f0, $9660, $40
+	end_tileset
 Tileset_006_4577::
-	dr $18577, $1858d
+	tileset_fragment gfx_019_5b50, $9000, $800
+	tileset_fragment gfx_019_6350, $8800, $f0
+	tileset_fragment GFX_06b_4000, $8900, $80
+	end_tileset
 Tileset_006_458d::
-	dr $1858d, $185a3
+	tileset_fragment gfx_017_5c1e, $9000, $510
+	tileset_fragment gfx_06b_4080, $9520, $800
+	tileset_fragment gfx_06b_4360, $8800, $60
+	end_tileset
 Tileset_006_45a3::
-	dr $185a3, $185ab
+	tileset_fragment gfx_06b_43c0, $9000, $3f0
+	end_tileset
 Tileset_006_45ab::
-	dr $185ab, $185c8
+	tileset_fragment gfx_016_65b0, $9000, $550
+	tileset_fragment gfx_016_6b00, $9560, $1f0
+	tileset_fragment gfx_06b_47b0, $9760, $800
+	tileset_fragment gfx_06b_4850, $8800, $70
+	end_tileset
 Tileset_006_45c8::
-	dr $185c8, $185d0
+	tileset_fragment gfx_06b_48c0, $9000, $320
+	end_tileset
 Tileset_006_45d0::
-	dr $185d0, $185df
+	tileset_fragment gfx_016_4c50, $9000, $350
+	tileset_fragment gfx_06b_4be0, $9360, $c0
+	end_tileset
 Tileset_006_45df::
-	dr $185df, $185ee
+	tileset_fragment gfx_017_5c1e, $9000, $510
+	tileset_fragment gfx_019_6a60, $9520, $1c0
+	end_tileset
 Tileset_006_45ee::
-	dr $185ee, $185f6
+	tileset_fragment gfx_06b_4ca0, $9000, $610
+	end_tileset
 Tileset_006_45f6::
-	dr $185f6, $1860c
+	tileset_fragment gfx_06b_52b0, $9000, $310
+	tileset_fragment gfx_06b_55c0, $9320, $800
+	tileset_fragment gfx_06b_5aa0, $8800, $80
+	end_tileset
 Tileset_006_460c::
-	dr $1860c, $18622
+	tileset_fragment gfx_016_5550, $9000, $800
+	tileset_fragment gfx_016_5d50, $8800, $60
+	tileset_fragment gfx_06b_5b20, $8870, $c0
+	end_tileset
 Tileset_006_4622::
-	dr $18622, $18631
+	tileset_fragment gfx_06b_52b0, $9000, $310
+	tileset_fragment gfx_06b_5be0, $9320, $1d0
+	end_tileset
 Tileset_006_4631::
-	dr $18631, $18640
+	tileset_fragment gfx_06b_5db0, $9000, $430
+	tileset_fragment gfx_06b_61e0, $9440, $330
+	end_tileset
 Tileset_006_4640::
-	dr $18640, $18648
+	tileset_fragment gfx_06b_7635, $9000, $600
+	end_tileset
 Tileset_006_4648::
-	dr $18648, $18650
+	tileset_fragment gfx_06b_66fe, $9000, $650
+	end_tileset
 Tileset_006_4650::
-	dr $18650, $18660
+	tileset_fragment gfx_06b_6f35, $9000, $710
+	end_tileset

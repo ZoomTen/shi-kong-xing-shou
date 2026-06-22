@@ -106,17 +106,21 @@ INCBIN "gfx/tilesets/image_17_578e.2bpp"
 gfx_017_5c1e::
 INCBIN "gfx/tilesets/image_17_5c1e.2bpp"
 
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 gfx_017_612e::
-	dr $5e12e, $5e6ce
+	INCBIN "gfx/tilesets/gfx_017_612e.2bpp"
 
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 gfx_017_66ce::
-	dr $5e6ce, $5e80e
+	INCBIN "gfx/tilesets/gfx_017_66ce.2bpp"
 
 gfx_017_680e::
 INCBIN "gfx/tilesets/image_17_680e.2bpp"
 
 gfx_017_6cae::
-INCBIN "gfx/tilesets/image_17_6cae.2bpp"
+	INCBIN "gfx/tilesets/gfx_017_6cae.2bpp"
+gfx_017_6e2e::
+	INCBIN "gfx/tilesets/gfx_017_6e2e.2bpp"
+gfx_017_739e::
+	INCBIN "gfx/tilesets/gfx_017_739e.2bpp"
+gfx_017_783e::
+	INCBIN "gfx/tilesets/gfx_017_783e.2bpp"
 

@@ -1,5 +1,35 @@
-GFX_06b_4000:: ; map tileset graphics (593 tiles)
-INCBIN "gfx/tilesets/gfx_06b_4000.2bpp"
+GFX_06b_4000:: ; map tileset graphics
+	INCBIN "gfx/tilesets/gfx_06b_4000.2bpp"
+gfx_06b_4080::
+	INCBIN "gfx/tilesets/gfx_06b_4080.2bpp"
+gfx_06b_4360::
+	INCBIN "gfx/tilesets/gfx_06b_4360.2bpp"
+gfx_06b_43c0::
+	INCBIN "gfx/tilesets/gfx_06b_43c0.2bpp"
+gfx_06b_47b0::
+	INCBIN "gfx/tilesets/gfx_06b_47b0.2bpp"
+gfx_06b_4850::
+	INCBIN "gfx/tilesets/gfx_06b_4850.2bpp"
+gfx_06b_48c0::
+	INCBIN "gfx/tilesets/gfx_06b_48c0.2bpp"
+gfx_06b_4be0::
+	INCBIN "gfx/tilesets/gfx_06b_4be0.2bpp"
+gfx_06b_4ca0::
+	INCBIN "gfx/tilesets/gfx_06b_4ca0.2bpp"
+gfx_06b_52b0::
+	INCBIN "gfx/tilesets/gfx_06b_52b0.2bpp"
+gfx_06b_55c0::
+	INCBIN "gfx/tilesets/gfx_06b_55c0.2bpp"
+gfx_06b_5aa0::
+	INCBIN "gfx/tilesets/gfx_06b_5aa0.2bpp"
+gfx_06b_5b20::
+	INCBIN "gfx/tilesets/gfx_06b_5b20.2bpp"
+gfx_06b_5be0::
+	INCBIN "gfx/tilesets/gfx_06b_5be0.2bpp"
+gfx_06b_5db0::
+	INCBIN "gfx/tilesets/gfx_06b_5db0.2bpp"
+gfx_06b_61e0::
+	INCBIN "gfx/tilesets/gfx_06b_61e0.2bpp"
 G6_2A_MapAttributes:
 	map_attr_data \
 		6, 5, \
@@ -49,7 +79,9 @@ Palettes_06b_6699::
 	RGB 0, 0, 0
 ; TODO: collision binary - INCBIN .bin
 Collision_06b_66d1::
-	dr $1ae6d1, $1aed4e
+	dr $1ae6d1, $1ae6fe
+gfx_06b_66fe::
+	INCBIN "gfx/tilesets/gfx_06b_66fe.2bpp"
 G6_2C_MapAttributes:
 	map_attr_data \
 		6, 5, \
@@ -107,4 +139,9 @@ Palettes_06b_6ec5::
 	RGB 0, 0, 0
 ; TODO: collision binary - INCBIN .bin
 Collision_06b_6f0d::
-	dr $1aef0d, $1afc40
+	dr $1aef0d, $1aef35
+gfx_06b_6f35::
+	INCBIN "gfx/tilesets/gfx_06b_6f35.2bpp"
+gfx_06b_7635::
+	INCBIN "gfx/tilesets/gfx_06b_7635.2bpp"
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
