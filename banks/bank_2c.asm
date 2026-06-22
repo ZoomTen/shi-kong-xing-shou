@@ -1,6 +1,60 @@
-; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_02c_4000:
-	dr $b0000, $b12b8
+	ld de, unk_02c_40a8
+	ld a, [wd9dd]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, $90D0
+	ld bc, $0240
+	call CopyBytesVRAM
+	call DelayFrame
+	ld de, unk_02c_4058
+	pop hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, wPaletteBuffer
+	ld hl, FarCall
+	add hl, de
+	ld e, l
+	ld d, h
+	pop hl
+	ld bc, _hl_
+	call CopyBytes3
+	call LoadEnemyMonPic
+	farcall Func_026_4d47
+	ret
+Func_02c_403e:
+	push de
+	ld de, unk_02c_40a8
+	ld a, $00
+	ld l, a
+	ld h, $00
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop de
+	ld bc, $0606
+	ld a, $06
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
+	ret
+unk_02c_4058:
+	dr $B0058, $B00A8
+unk_02c_40a8:
+	dr $B00A8, $B0D47
+unk_02c_4d47:
+	dr $B0D47, $B12B8
 
 BattleTransition_InsertWhiteTile:
 	ld hl, .WhiteTile
@@ -2003,9 +2057,135 @@ Func_02d_6d77:
 	jp nc, .asm_6e12
 	inc bc
 	jp .asm_6dee
-; TODO disassemble
 Func_02d_6e2c:
-    dr $b2e2c, $b2ece
+	ld a, [wd98d]
+.asm_6e2f
+	ld [wdcf1], a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, wd1a0
+	add hl, de
+	ld c, l
+	ld b, h
+	ld de, $0005
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	or e
+	jp z, .asm_6ebc
+	ld a, [hl]
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $FF
+	jp z, .asm_6ea3
+	ld [wd98e], a
+	ld a, [wd98e]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hl]
+	cp $77
+	jr nz, .asm_6e6b
+	jr .asm_6e73
+.asm_6e6b
+	cp $88
+	jr nz, .asm_6e88
+	inc bc
+	inc bc
+	xor a
+	ld [bc], a
+.asm_6e73
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld [hl], $FF
+	ld a, [wdcf1]
+	cp $00
+	jp nz, .asm_6ea3
+	jp .asm_6eb4
+.asm_6e88
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+	inc bc
+	inc hl
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+.asm_6e90
+	call Func_02d_6ece
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld a, [wd98e]
+	inc a
+	ld [wd98e], a
+	ld [hl], a
+.asm_6ea3
+	ld a, [wdcf1]
+	cp $00
+	jr nz, .asm_6eb0
+	ld a, $48
+	ld [wBattleState], a
+	ret
+.asm_6eb0
+	dec a
+	jp .asm_6e2f
+.asm_6eb4
+	xor a
+	ld [wBattleState], a
+	ld [wd98b], a
+	ret
+.asm_6ebc
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $40
+	jp nc, .asm_6eb4
+	inc bc
+	jp .asm_6e90
 Func_02d_6ece:
-    dr $b2ece, $b3e8a
+	ld a, [$DCF2]
+	inc a
+	ld [$DCF2], a
+	cp $07
+	ret nz
+	xor a
+	ld [$DCF2], a
+	inc bc
+	push bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	ld l, a
+	pop bc
+	ld a, [bc]
+	inc a
+	cp l
+	jr z, .asm_6eea
+	jr nc, .asm_6eec
+.asm_6eea
+	ld [bc], a
+	ret
+.asm_6eec
+	inc bc
+	ld a, [bc]
+	dec bc
+	ld [bc], a
+	ret
+unk_02c_6ef1:
+	dr $B2EF1, $B3E8A
 

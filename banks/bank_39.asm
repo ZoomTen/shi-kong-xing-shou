@@ -1,8 +1,64 @@
 GFX_039_4000:
 INCBIN "gfx/misc/gfx_039_4000.2bpp"
-; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_039_40a0:
-	dr $e40a0, $e41fb
+	xor a
+	ld [hFFC6], a
+	ldh [hFFC5], a
+	ld [wd1f4], a
+	ld [wSelectedPage], a
+	ld [wSelectedOption], a
+	ld a, $01
+	ld [wBattleScriptState], a
+	ld a, [$7FFF]
+	ld [wBattleScriptBank], a
+.asm_40ba
+	call DelayFrame
+	ld a, [hFFC6]
+	and a
+	jr nz, .asm_40f4
+	ld a, [wBattleScriptState]
+	cp $01
+	jr z, .asm_40d3
+	cp $02
+	jr z, .asm_40ec
+	call .asm_4103
+	jr .asm_40ba
+.asm_40d3
+	ld de, .data_40f9
+	ldh a, [hFFC5]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wBattleScriptPos], a
+	ld a, [hli]
+	ld [$D089], a
+	ld a, $02
+	ld [wBattleScriptState], a
+	jr .asm_40ba
+.asm_40ec
+	farcall Func_025_424e
+	jr .asm_40ba
+.asm_40f4
+	xor a
+	ld [hFFC6], a
+	ret
+.data_40f9:
+	dr $E40F9, $E4103
+.asm_4103
+	ld de, unk_039_4111
+	ldh a, [hFFC5]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+unk_039_4111:
+	dr $E4111, $E41FB
 ; TODO
 asm_039_41fb:
 	ldh a, [hJoypadPressed]
@@ -27,9 +83,31 @@ asm_039_41fb:
 	ret
 unk_039_4224:
 	db $08, $14, $4c, $11, $17, $09, $40
-; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_039_422b:
-	dr $e422b, $e479f
+	ldh a, [hFadeFrameCounter]
+	and $07
+	ret nz
+	ld bc, wcde0
+	ld hl, $0004
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr nz, .asm_4240
+	ld a, [bc]
+	dec a
+	ld [bc], a
+	jr .asm_4243
+.asm_4240
+	ld a, [bc]
+	inc a
+	ld [bc], a
+.asm_4243
+	ld a, $01
+	sub [hl]
+	ld [hl], a
+	ret
+unk_039_4248:
+	dr $E4248, $E479F
 
 asm_039_479f::
 	ld a, [wd1f4]

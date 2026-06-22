@@ -2329,9 +2329,225 @@ Pointers_01e_614f:
 ; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_01e_6567:
 	dr $7a567, $7aacd
-; TODO disassemble
 Func_01e_6acd:
-	dr $7aacd, $7addb
+	ld a, [$DCE6]
+	and a
+	jr nz, .asm_6ad9
+	ldh a, [hFFD6]
+	and a
+	jp nz, .asm_6c6b
+.asm_6ad9
+	ld de, unk_01e_6d3b
+	ld a, [wEnemyMonSpecies]
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld b, [hl]
+	and a
+	jp z, .asm_6c6b
+	ld a, [wd9f3]
+	cp $01
+	jr z, .asm_6afc
+	cp $02
+	jp z, .asm_6bec
+	cp $03
+	jp z, .asm_6c1f
+	ld d, $01
+	ret
+.asm_6afc
+	ld a, b
+	cp $01
+	jp z, .asm_6b0a
+	cp $02
+	jp z, .asm_6bab
+	jp .asm_6c6b
+.asm_6b0a
+	ld a, [wd984]
+	ld [wd3f0], a
+	ld a, [wd985]
+	ld [wd3f1], a
+	farcall Func_025_4000
+	ldh a, [hMathValue]
+	cp $16
+	jp nc, .asm_6b2a
+	cp $0A
+	jp nc, .asm_6b6a
+	jr .asm_6b4a
+.asm_6b2a
+	ld de, unk_01e_6c6e
+	ld a, [$D0EA]
+	inc a
+	ld [$D0EA], a
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_6b43
+	xor a
+	ld [$D0EA], a
+	jr .asm_6b2a
+.asm_6b43
+	and a
+	jp nz, .asm_6c6b
+	ld d, $01
+	ret
+.asm_6b4a
+	ld de, unk_01e_6c97
+	ld a, [$D0E6]
+	inc a
+	ld [$D0E6], a
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_6b63
+	xor a
+	ld [$D0E6], a
+	jr .asm_6b4a
+.asm_6b63
+	and a
+	jp nz, .asm_6c6b
+	ld d, $01
+	ret
+.asm_6b6a
+	ld de, unk_01e_6cc0
+	ld a, [$D0E7]
+	inc a
+	ld [$D0E7], a
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_6b83
+	xor a
+	ld [$D0E7], a
+	jr .asm_6b6a
+.asm_6b83
+	and a
+	jp nz, .asm_6c6b
+	ld d, $01
+	ret
+.asm_6b8a
+	ld de, unk_01e_6d12
+	ld a, [$D0E9]
+	inc a
+	ld [$D0E9], a
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_6ba4
+	xor a
+	ld [$D0E9], a
+	jp .asm_6b8a
+.asm_6ba4
+	and a
+	jp nz, .asm_6c6b
+	ld d, $01
+	ret
+.asm_6bab
+	ld a, [wd984]
+	ld [wd3f0], a
+	ld a, [wd985]
+	ld [wd3f1], a
+	farcall Func_025_4000
+	ldh a, [hMathValue]
+	cp $16
+	jp nc, .asm_6c6b
+	cp $0A
+	jp nc, .asm_6b8a
+	jp .asm_6b6a
+.asm_6bcc
+	ld de, unk_01e_6ce9
+	ld a, [$D0E8]
+	inc a
+	ld [$D0E8], a
+	ld l, a
+	ld h, $00
+	add hl, de
+	ld a, [hl]
+	cp $FF
+	jr nz, .asm_6be5
+	xor a
+	ld [$D0E8], a
+	jr .asm_6bcc
+.asm_6be5
+	and a
+	jp nz, .asm_6c6b
+	ld d, $01
+	ret
+.asm_6bec
+	ld a, b
+	cp $01
+	jr z, .asm_6bfe
+	cp $02
+	jp z, .asm_6b0a
+	cp $03
+	jp z, .asm_6bab
+	jp .asm_6c6b
+.asm_6bfe
+	ld a, [wd984]
+	ld [wd3f0], a
+	ld a, [wd985]
+	ld [wd3f1], a
+	farcall Func_025_4000
+	ldh a, [hMathValue]
+	cp $20
+	jp nc, .asm_6b6a
+	cp $10
+	jp nc, .asm_6b4a
+	ld d, $01
+	ret
+.asm_6c1f
+	ld a, b
+	cp $01
+	jr z, .asm_6c36
+	cp $02
+	jp z, .asm_6bfe
+	cp $03
+	jp z, .asm_6b0a
+	cp $04
+	jp z, .asm_6bab
+	jp .asm_6c6b
+.asm_6c36
+	ld a, [wd984]
+	ld [wd3f0], a
+	ld a, [wd985]
+	ld [wd3f1], a
+	farcall Func_025_4000
+	ldh a, [hMathValue]
+	cp $18
+	jp nc, .asm_6b4a
+	ld d, $01
+	ret
+.asm_6c52
+	ld a, [wd984]
+	ld [wd3f0], a
+	ld a, [wd985]
+	ld [wd3f1], a
+	farcall Func_025_4000
+	ldh a, [hMathValue]
+	cp $0F
+	jp c, .asm_6b8a
+.asm_6c6b
+	ld d, $00
+	ret
+unk_01e_6c6e:
+	dr $7AC6E, $7AC97
+unk_01e_6c97:
+	dr $7AC97, $7ACC0
+unk_01e_6cc0:
+	dr $7ACC0, $7ACE9
+unk_01e_6ce9:
+	dr $7ACE9, $7AD12
+unk_01e_6d12:
+	dr $7AD12, $7AD3B
+unk_01e_6d3b:
+	dr $7AD3B, $7ADDB
 Text_01e_6ddb:: ; TODO: data loaded as a pointer into wTextStart by Script_6f (bank_0b)
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $7addb, $7ade3
