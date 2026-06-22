@@ -95,9 +95,8 @@ Palettes_050_4a39::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_4a81::
-	dr $140a81, $140ab5
+	INCBIN "data/maps/collision/Collision_050_4a81.bin"
 
 GreenForestP13_MapAttributes:
 	map_attr_data \
@@ -196,9 +195,8 @@ Palettes_050_54e4::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_552c::
-	dr $14152c, $141560
+	INCBIN "data/maps/collision/Collision_050_552c.bin"
 
 SkyCity_MapAttributes:
 	map_attr_data \
@@ -255,9 +253,8 @@ Palettes_050_5b5f::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_5ba7::
-	dr $141ba7, $141c16
+	INCBIN "data/maps/collision/Collision_050_5ba7.bin"
 
 G7_07_MapAttributes:
 BanglinCo1f_MapAttributes:
@@ -315,9 +312,8 @@ Palettes_050_5dfd::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_5e45::
-	dr $141e45, $141e78
+	INCBIN "data/maps/collision/Collision_050_5e45.bin"
 
 BanglinCo2_MapAttributes:
 	map_attr_data \
@@ -374,9 +370,8 @@ Palettes_050_5f8c::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_5fd4::
-	dr $141fd4, $141fee
+	INCBIN "data/maps/collision/Collision_050_5fd4.bin"
 
 ContestHall_MapAttributes:
 	map_attr_data \
@@ -433,9 +428,8 @@ Palettes_050_61df::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_6227::
-	dr $142227, $142261
+	INCBIN "data/maps/collision/Collision_050_6227.bin"
 
 BanglinCo2f_MapAttributes:
 	map_attr_data \
@@ -534,9 +528,8 @@ Palettes_050_6b92::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_6bda::
-	dr $142bda, $142c34
+	INCBIN "data/maps/collision/Collision_050_6bda.bin"
 
 FashionStore_MapAttributes:
 	map_attr_data \
@@ -593,9 +586,8 @@ Palettes_050_6e40::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_6e88::
-	dr $142e88, $142ebf
+	INCBIN "data/maps/collision/Collision_050_6e88.bin"
 
 G4_42_MapAttributes:
 G4_64_MapAttributes:
@@ -654,9 +646,8 @@ Palettes_050_70b2::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_70fa::
-	dr $1430fa, $143132
+	INCBIN "data/maps/collision/Collision_050_70fa.bin"
 
 G4_43_MapAttributes:
 G4_65_MapAttributes:
@@ -715,9 +706,8 @@ Palettes_050_7318::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_7360::
-	dr $143360, $143391
+	INCBIN "data/maps/collision/Collision_050_7360.bin"
 
 GreenForestP4_MapAttributes:
 G3_21_MapAttributes:
@@ -805,9 +795,8 @@ Palettes_050_774a::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_7792::
-	dr $143792, $1437c2
+	INCBIN "data/maps/collision/Collision_050_7792.bin"
 
 G3_15_MapAttributes:
 	map_attr_data \
@@ -878,7 +867,6 @@ Palettes_050_7a4a::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_050_7a92::
-	dr $143a92, $143ac0
+	INCBIN "data/maps/collision/Collision_050_7a92.bin"
 

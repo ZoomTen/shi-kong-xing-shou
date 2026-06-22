@@ -103,6 +103,5 @@ Palettes_06e_51b4::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_06e_51fc::
-	dr $1b91fc, $1b9220
+	INCBIN "data/maps/collision/Collision_06e_51fc.bin"

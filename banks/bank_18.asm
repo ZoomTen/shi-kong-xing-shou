@@ -49,9 +49,8 @@ Blocks_018_42c0::
 	dr $602c0, $60320
 AttrMap_018_4320::
 INCBIN "gfx/attrmaps/attrmap_018_4320.bin"
-; TODO: collision binary - INCBIN .bin
 Collision_018_43aa::
-	dr $603aa, $60bf8
+	INCBIN "data/maps/collision/Collision_018_43aa.bin"
 Palettes_018_4bf8::
 	RGB 24, 24, 22
 	RGB 17, 18, 11

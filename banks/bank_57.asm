@@ -53,9 +53,8 @@ Palettes_057_457a::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_45c2::
-	dr $15c5c2, $15c61a
+	INCBIN "data/maps/collision/Collision_057_45c2.bin"
 
 G4_16_MapAttributes:
 	map_attr_data \
@@ -112,9 +111,8 @@ Palettes_057_4b8b::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_4bd3::
-	dr $15cbd3, $15cc29
+	INCBIN "data/maps/collision/Collision_057_4bd3.bin"
 
 G4_17_MapAttributes:
 G4_50_MapAttributes:
@@ -172,9 +170,8 @@ Palettes_057_4e00::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_4e48::
-	dr $15ce48, $15ce74
+	INCBIN "data/maps/collision/Collision_057_4e48.bin"
 
 G4_18_MapAttributes:
 G7_04_MapAttributes:
@@ -248,9 +245,8 @@ Palettes_057_5187::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_51cf::
-	dr $15d1cf, $15d208
+	INCBIN "data/maps/collision/Collision_057_51cf.bin"
 
 G4_1A_MapAttributes:
 	map_attr_data \
@@ -349,9 +345,8 @@ Palettes_057_5931::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_5979::
-	dr $15d979, $15d9be
+	INCBIN "data/maps/collision/Collision_057_5979.bin"
 
 G4_1E_MapAttributes:
 	map_attr_data \
@@ -408,9 +403,8 @@ Palettes_057_5b4b::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_5b93::
-	dr $15db93, $15dbaa
+	INCBIN "data/maps/collision/Collision_057_5b93.bin"
 
 G4_1F_MapAttributes:
 G5_27_MapAttributes:
@@ -468,9 +462,8 @@ Palettes_057_5c88::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_5cd0::
-	dr $15dcd0, $15dce2
+	INCBIN "data/maps/collision/Collision_057_5cd0.bin"
 
 G4_20_MapAttributes:
 	map_attr_data \
@@ -527,9 +520,8 @@ Palettes_057_5e9f::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_5ee7::
-	dr $15dee7, $15df06
+	INCBIN "data/maps/collision/Collision_057_5ee7.bin"
 
 G4_21_MapAttributes:
 G4_60_MapAttributes:
@@ -632,9 +624,8 @@ Palettes_057_67bd::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_6805::
-	dr $15e805, $15e852
+	INCBIN "data/maps/collision/Collision_057_6805.bin"
 
 G4_25_MapAttributes:
 	map_attr_data \
@@ -719,9 +710,8 @@ Palettes_057_7201::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_7249::
-	dr $15f249, $15f298
+	INCBIN "data/maps/collision/Collision_057_7249.bin"
 
 G4_28_MapAttributes:
 G7_05_MapAttributes:
@@ -794,9 +784,8 @@ Palettes_057_75bc::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_7604::
-	dr $15f604, $15f648
+	INCBIN "data/maps/collision/Collision_057_7604.bin"
 
 G4_2A_MapAttributes:
 G4_5E_MapAttributes:
@@ -854,9 +843,8 @@ Palettes_057_7868::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_78b0::
-	dr $15f8b0, $15f8c6
+	INCBIN "data/maps/collision/Collision_057_78b0.bin"
 
 G4_2B_MapAttributes:
 G4_5F_MapAttributes:
@@ -914,9 +902,8 @@ Palettes_057_7abe::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_7b06::
-	dr $15fb06, $15fb2f
+	INCBIN "data/maps/collision/Collision_057_7b06.bin"
 
 G4_53_MapAttributes:
 	map_attr_data \
@@ -973,9 +960,8 @@ Palettes_057_7c55::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_7c9d::
-	dr $15fc9d, $15fcbb
+	INCBIN "data/maps/collision/Collision_057_7c9d.bin"
 
 G4_54_MapAttributes:
 	map_attr_data \
@@ -1032,7 +1018,6 @@ Palettes_057_7e9c::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_057_7ee4::
-	dr $15fee4, $15ff20
+	INCBIN "data/maps/collision/Collision_057_7ee4.bin"
 

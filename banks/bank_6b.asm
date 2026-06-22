@@ -77,9 +77,8 @@ Palettes_06b_6699::
 	RGB 16, 13, 23
 	RGB 7, 4, 14
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_06b_66d1::
-	dr $1ae6d1, $1ae6fe
+	INCBIN "data/maps/collision/Collision_06b_66d1.bin"
 gfx_06b_66fe::
 	INCBIN "gfx/tilesets/gfx_06b_66fe.2bpp"
 G6_2C_MapAttributes:
@@ -137,9 +136,8 @@ Palettes_06b_6ec5::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_06b_6f0d::
-	dr $1aef0d, $1aef35
+	INCBIN "data/maps/collision/Collision_06b_6f0d.bin"
 gfx_06b_6f35::
 	INCBIN "gfx/tilesets/gfx_06b_6f35.2bpp"
 gfx_06b_7635::

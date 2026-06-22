@@ -587,9 +587,8 @@ Palettes_069_4bc3::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_069_4c0b::
-	dr $1a4c0b, $1a4c50
+	INCBIN "data/maps/collision/Collision_069_4c0b.bin"
 
 
 

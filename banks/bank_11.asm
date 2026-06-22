@@ -59,9 +59,8 @@ Palettes_011_4602:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_464a:
-	dr $4464a, $446b9
+	INCBIN "data/maps/collision/Collision_011_464a.bin"
 
 ShandaFarm_MapAttributes:
 	map_attr_data \
@@ -124,9 +123,8 @@ Palettes_011_4ae2:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_4b2a:
-	dr $44b2a, $44b5d
+	INCBIN "data/maps/collision/Collision_011_4b2a.bin"
 
 CoffeeForestPart1_MapAttributes:
 	map_attr_data \
@@ -221,9 +219,8 @@ Palettes_011_532f:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_5377:
-	dr $45377, $453af
+	INCBIN "data/maps/collision/Collision_011_5377.bin"
 
 SkyRockPart1_MapAttributes:
 	map_attr_data \
@@ -302,9 +299,8 @@ Palettes_011_592c:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_5974:
-	dr $45974, $459a2
+	INCBIN "data/maps/collision/Collision_011_5974.bin"
 
 ClockTowerOutside_MapAttributes:
 	map_attr_data \
@@ -367,9 +363,8 @@ Palettes_011_5ce4:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_5d2c:
-	dr $45d2c, $45d81
+	INCBIN "data/maps/collision/Collision_011_5d2c.bin"
 
 ClockTower1f_MapAttributes:
 	map_attr_data \
@@ -496,9 +491,8 @@ Palettes_011_65db:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_6623:
-	dr $46623, $4666a
+	INCBIN "data/maps/collision/Collision_011_6623.bin"
 
 G2_0E_MapAttributes:
 	map_attr_data \
@@ -609,9 +603,8 @@ Palettes_011_69ec:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_6a34:
-	dr $46a34, $46a66
+	INCBIN "data/maps/collision/Collision_011_6a34.bin"
 
 G4_3A_MapAttributes:
 G4_56_MapAttributes:
@@ -751,9 +744,8 @@ Palettes_011_6e2f:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_6e77:
-	dr $46e77, $46e9f
+	INCBIN "data/maps/collision/Collision_011_6e77.bin"
 
 R03_MapAttributes:
 	map_attr_data \
@@ -832,7 +824,6 @@ Palettes_011_7205:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_011_724d:
-	dr $4724d, $47270
+	INCBIN "data/maps/collision/Collision_011_724d.bin"
 

@@ -424,9 +424,8 @@ Hideout_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Hideout_Collision:
-	dr $4652, $4681
+	INCBIN "data/maps/collision/Hideout_Collision.bin"
 
 PowerPlant1F_Layout:
 	db 6
@@ -500,9 +499,8 @@ PowerPlant_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 PowerPlant_Collision:
-	dr $49ee, $4a26
+	INCBIN "data/maps/collision/PowerPlant_Collision.bin"
 
 PowerPlantOutside_Layout:
 	db 0
@@ -555,9 +553,8 @@ PowerPlantOutside_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 PowerPlantOutside_Collision:
-	dr $4cd0, $4cff
+	INCBIN "data/maps/collision/PowerPlantOutside_Collision.bin"
 
 Junkyard_Layout:
 	db 0
@@ -610,9 +607,8 @@ Junkyard_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Junkyard_Collision:
-	dr $4ecb, $4eeb
+	INCBIN "data/maps/collision/Junkyard_Collision.bin"
 
 ; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_4eeb:
@@ -667,9 +663,8 @@ Palettes_001_5013:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_001_505b:
-	dr $505b, $5076
+	INCBIN "data/maps/collision/Collision_001_505b.bin"
 
 ; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5076:
@@ -756,9 +751,8 @@ Palettes_001_5402:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_001_544a:
-	dr $544a, $5484
+	INCBIN "data/maps/collision/Collision_001_544a.bin"
 
 CrystalVillage_Layout:
 	db 0
@@ -811,9 +805,8 @@ CrystalVillage_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CrystalVillage_Collision:
-	dr $586e, $58a7
+	INCBIN "data/maps/collision/CrystalVillage_Collision.bin"
 
 ; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_58a7:
@@ -868,9 +861,8 @@ Palettes_001_59c7:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_001_5a0f:
-	dr $5a0f, $5a28
+	INCBIN "data/maps/collision/Collision_001_5a0f.bin"
 
 ; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5a28:
@@ -925,9 +917,8 @@ Palettes_001_5b55:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_001_5b9d:
-	dr $5b9d, $5bb9
+	INCBIN "data/maps/collision/Collision_001_5b9d.bin"
 
 ; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_001_5bb9:
@@ -1022,9 +1013,8 @@ Palettes_001_5f8c:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: collision binary - INCBIN .bin
 Collision_001_5fd4:
-	dr $5fd4, $600d
+	INCBIN "data/maps/collision/Collision_001_5fd4.bin"
 
 TechCity_Layout:
 	db 0
@@ -1077,9 +1067,8 @@ TechCity_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 TechCity_Collision:
-	dr $6433, $6462
+	INCBIN "data/maps/collision/TechCity_Collision.bin"
 
 BellSchoolSouthClassroom_Layout:
 	db 0
@@ -1132,9 +1121,8 @@ BellSchoolSouthClassroom_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellSchoolSouthClassroom_Collision:
-	dr $6690, $66c2
+	INCBIN "data/maps/collision/BellSchoolSouthClassroom_Collision.bin"
 
 BellObservatory1_Layout:
 	db 0
@@ -1187,9 +1175,8 @@ BellObservatory1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellObservatory1_Collision:
-	dr $6908, $693c
+	INCBIN "data/maps/collision/BellObservatory1_Collision.bin"
 
 BellSchool1_Layout:
 	db 0
@@ -1242,9 +1229,8 @@ BellSchool1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellSchool1_Collision:
-	dr $6ac6, $6ade
+	INCBIN "data/maps/collision/BellSchool1_Collision.bin"
 
 BellHealingCenter1_Layout:
 	db 0
@@ -1297,9 +1283,8 @@ BellHealingCenter1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellHealingCenter1_Collision:
-	dr $6c52, $6c6b
+	INCBIN "data/maps/collision/BellHealingCenter1_Collision.bin"
 
 BallotsHouse1_Layout:
 	db 0
@@ -1382,12 +1367,11 @@ FangfangsHouse1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BallotsHouse1_Collision:
 HayatosHouse1_Collision:
 CarpetWomansHouse1_Collision:
 FangfangsHouse1_Collision:
-	dr $6fa0, $6fd1
+	INCBIN "data/maps/collision/BallotsHouse1_Collision.bin"
 
 BellObservatoryOutside1_Layout:
 	db 0
@@ -1440,9 +1424,8 @@ BellObservatoryOutside1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellObservatoryOutside1_Collision:
-	dr $7247, $726f
+	INCBIN "data/maps/collision/BellObservatoryOutside1_Collision.bin"
 
 BellSchoolOutside1_Layout:
 	db 0
@@ -1495,9 +1478,8 @@ BellSchoolOutside1_Palettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellSchoolOutside1_Collision:
-	dr $752d, $756c
+	INCBIN "data/maps/collision/BellSchoolOutside1_Collision.bin"
 
 BellVillage1_Layout:
 	db 0	; unknown
@@ -1515,9 +1497,8 @@ BellVillage1_AttrMap:
 BellVillage1_Palettes:
 	INCBIN "data/maps/palettes/BellVillage1.bin"
 
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 BellVillage1_Collision:
-	dr $78de, $791a
+	INCBIN "data/maps/collision/BellVillage1_Collision.bin"
 
 G2_23_MapAttributes:
 	map_attr_data \
@@ -1574,9 +1555,8 @@ Palettes_001_795e::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_001_79a6::
-	dr $79a6, $79a8
+	INCBIN "data/maps/collision/Collision_001_79a6.bin"
 ; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 Tileset_001_79a8::
 	dr $79a8, $79c8

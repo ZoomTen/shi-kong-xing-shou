@@ -85,9 +85,8 @@ Palettes_017_4f17::
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: collision binary - INCBIN .bin
 Collision_017_4f5f::
-	dr $5cf5f, $5cf9e
+	INCBIN "data/maps/collision/Collision_017_4f5f.bin"
 
 ; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 gfx_017_4f9e::
