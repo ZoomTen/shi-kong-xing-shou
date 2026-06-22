@@ -5127,8 +5127,5 @@ Func_02e_6e42:
 	dec c
 	jr nz, .asm_6e48
 	ret
-; TODO: unreferenced data block, classify type
-unk_02e_6e4d:
-	dr $bae4d, $bae4d
 
 

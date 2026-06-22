@@ -784,7 +784,8 @@ wdcea:: ds 1 ; follower?
 
 wdceb:: ds 1
 wdcec:: ds 2
-wdcee:: ds 3
+wdcee:: ds 1
+wdcef:: ds 2 ; 16-bit ptr (Func_02d_6d77)
 wdcf1:: ds 1
 	ds 1
 

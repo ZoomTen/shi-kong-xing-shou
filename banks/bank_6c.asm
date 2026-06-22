@@ -391,9 +391,12 @@ Script_06c_4659:
 	dirmovement
 	end
 
-; TODO: unclassified data table - identify via consumer
-unk_06c_465b::
-	dr $1b065b, $1b0671
+; TODO: 10-byte fragment, classify (ends $88, contains ptr $4706)
+unk_06c_465b:
+	db $11, $00, $00, $00, $00, $00, $00, $06, $47, $88
+ObjSprite_6c_4665::
+	object_event $5e,  9, 17, 0, $00, $00, $00, $00, Script_06c_4706
+	objects_end
 Script_06c_4671::
 	setplayerchar $00
 	face FACE_LEFT
@@ -1019,9 +1022,10 @@ Script_06c_4cf9:
 	setbit wEventFlags + 18, $06
 	end
 
-; TODO: unclassified data table - identify via consumer
 unk_06c_4d4f::
-	dr $1b0d4f, $1b0d66
+	object_event $5a,  5,  4, 0, $00, $00, $00, $00, Script_06c_4e2f
+	object_event $58,  6,  4, wEventFlags + 18, $04, $01, $00, $00, Script_06c_4e3d
+	objects_end
 
 G6_26_ObjectEvents:
 	object_event $58,  4,  4, wEventFlags + 18, $04, $00, $00, $00, Script_06c_4ea3

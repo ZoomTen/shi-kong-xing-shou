@@ -1887,10 +1887,125 @@ BattleTransition_DiagonalCheckerboard:
 	dw $1100
 	db -1
 
-; TODO: mixed code+data - disassemble (slopdis), separate data tables
 Func_02d_6d77:
-    dr $b2d77, $b2e2c
+	ld a, [wd98d]
+.asm_6d7a
+	ld [wdcf1], a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, wd1a0
+	add hl, de
+	ld c, l
+	ld b, h
+	ld de, $0005
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	or e
+	jp z, .asm_6e1a
+	ld a, [hl]
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $FF
+	jp z, .asm_6e01
+	ld [wd98e], a
+	ld a, [wd98e]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hl]
+	cp $77
+	jr nz, .asm_6db6
+	jr .asm_6dbe
+.asm_6db6
+	cp $88
+	jr nz, .asm_6dd3
+	inc bc
+	inc bc
+	xor a
+	ld [bc], a
+.asm_6dbe
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld [hl], $FF
+	ld a, [wdcf1]
+	cp $00
+	jp nz, .asm_6e01
+	jp .asm_6e12
+.asm_6dd3
+	ld a, [wd986]
+	and a
+	jr nz, .asm_6de6
+	ld a, [hli]
+	ld d, a
+	ld a, [bc]
+	sub d
+	ld [bc], a
+	inc bc
+	ld a, [hli]
+	ld d, a
+	ld a, [bc]
+	sub d
+	ld [bc], a
+	jr .asm_6dee
+.asm_6de6
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+	inc bc
+	inc hl
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+.asm_6dee
+	call Func_02d_6ece
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld a, [wd98e]
+	inc a
+	ld [wd98e], a
+	ld [hl], a
+.asm_6e01
+	ld a, [wdcf1]
+	cp $00
+	jr nz, .asm_6e0e
+	ld a, $47
+	ld [wBattleState], a
+	ret
+.asm_6e0e
+	dec a
+	jp .asm_6d7a
+.asm_6e12
+	xor a
+	ld [wBattleState], a
+	ld [wd98b], a
+	ret
+.asm_6e1a
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $40
+	jp nc, .asm_6e12
+	inc bc
+	jp .asm_6dee
 ; TODO disassemble
 Func_02d_6e2c:
-    dr $b2e2c, $b3e8a
+    dr $b2e2c, $b2ece
+Func_02d_6ece:
+    dr $b2ece, $b3e8a
 
