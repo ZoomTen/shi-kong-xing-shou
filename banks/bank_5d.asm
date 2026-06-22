@@ -363,7 +363,8 @@ RhythmMinigame::
 	ret
 ; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 ScoreDigitTiles:
-	dr $17434a, $17435e
+	db $00, $0a, $01, $0b, $02, $0c, $03, $0d, $04, $0e, $05, $0f, $06, $10, $07, $11
+	db $08, $12, $08, $13
 Func_5d_435e:
 	ld a, [wcd46 + 4]
 	and a
@@ -1093,7 +1094,11 @@ Func_5d_4800:
 	jp .asm_4824
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 NoteSpawnTable:
-	dr $17485f, $1748a8
+	db $01, $01, $00, $60, $02, $01, $00, $60, $03, $01, $00, $40, $04, $01, $00, $40
+	db $01, $01, $00, $20, $01, $01, $00, $20, $02, $01, $00, $40, $02, $01, $00, $40
+	db $05, $01, $00, $20, $05, $01, $00, $20, $06, $01, $00, $20, $06, $01, $00, $10
+	db $03, $01, $00, $20, $04, $01, $00, $20, $01, $01, $00, $10, $02, $01, $00, $40
+	db $05, $01, $00, $40, $06, $01, $00, $10, $ff
 Func_5d_48a8:
 	ld hl, wc000
 	ld bc, $0028
@@ -1172,10 +1177,13 @@ SpriteAnim_Pointers:
 	dw SpriteFrame_Title
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteFrame_Empty:
-	dr $174917, $174930
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteFrame_Title:
-	dr $174930, $174951
+	db $00, $00, $00, $01, $00, $08, $02, $01, $00, $10, $04, $01, $00, $18, $06, $01
+	db $10, $00, $08, $01, $10, $08, $0a, $01, $10, $10, $0c, $01, $10, $18, $0e, $01
+	db $ff
 Func_5d_4951:
 	ld bc, wdd50
 .asm_4954

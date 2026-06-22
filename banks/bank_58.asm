@@ -56,7 +56,31 @@ Script_058_405d::
 
 INCLUDE "data/text/bank58_405e.asm"
 Script_058_40bc::
-	dr $1600bc, $1600e9
+	setmap $14, $08 ; TEMP
+	checkbit wEventFlags + 9, $04, Script_058_40da
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20 ; TEMP
+	stext text_58_4a88
+	setbit wEventFlags + 9, $04
+	setmappredef $16
+	end
+
+Script_058_40da:
+	end
+
+Script_058_40db::
+	setmap $1e, $01 ; TEMP
+	end
+
+Script_058_40df::
+	farjump2 Script_05c_4058
+	end
+
+Script_058_40e4::
+	farjump2 Script_059_40c5
+	end
 Script_058_40e9::
 	end
 

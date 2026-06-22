@@ -411,7 +411,7 @@ Func_5b_42af:
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_DirStateTable:
-	dr $16c330, $16c33c
+	db $03, $00, $01, $02, $03, $00, $01, $02, $03, $00, $01, $02
 MiceMinigame_StateJumptable:
 	dw Func_5b_41e1
 	dw Func_5b_4217
@@ -1025,7 +1025,11 @@ Func_5b_4781:
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_ObjectInitData:
-	dr $16c782, $16c7c9
+	db $40, $98, $01, $00, $00, $00, $00, $20, $28, $14, $00, $00, $00, $01, $20, $58
+	db $14, $00, $00, $00, $01, $20, $68, $14, $00, $00, $00, $05, $30, $18, $16, $02
+	db $00, $00, $03, $50, $18, $16, $02, $00, $00, $07, $60, $38, $18, $03, $00, $00
+	db $00, $60, $48, $18, $03, $00, $00, $04, $60, $78, $18, $03, $00, $00, $00, $50
+	db $88, $16, $01, $00, $00, $02, $ff
 Func_5b_47c9:
 	ld hl, wVisibleObjects
 	ld bc, $0100
@@ -1172,91 +1176,91 @@ MiceMinigame_SpriteFramePointers:
 	dw MiceMinigame_SpriteFrames_49df
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames:
-	dr $16c8ab, $16c8b6
+	db $00, $00, $08, $00, $00, $00, $08, $00, $02, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48b6:
-	dr $16c8b6, $16c8c1
+	db $00, $00, $08, $04, $00, $00, $08, $00, $06, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48c1:
-	dr $16c8c1, $16c8cc
+	db $00, $00, $08, $08, $00, $00, $08, $00, $0a, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48cc:
-	dr $16c8cc, $16c8d7
+	db $00, $00, $08, $0c, $00, $00, $08, $00, $0e, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48d7:
-	dr $16c8d7, $16c8e2
+	db $00, $00, $08, $10, $00, $00, $08, $00, $12, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48e2:
-	dr $16c8e2, $16c8ed
+	db $00, $00, $08, $14, $00, $00, $08, $00, $16, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48ed:
-	dr $16c8ed, $16c8f8
+	db $00, $00, $08, $18, $00, $00, $08, $00, $1a, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_48f8:
-	dr $16c8f8, $16c903
+	db $00, $00, $08, $1c, $00, $00, $08, $00, $1e, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4903:
-	dr $16c903, $16c90e
+	db $00, $00, $08, $20, $00, $00, $08, $00, $22, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_490e:
-	dr $16c90e, $16c919
+	db $00, $00, $08, $24, $00, $00, $08, $00, $26, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4919:
-	dr $16c919, $16c924
+	db $00, $00, $08, $28, $00, $00, $08, $00, $2a, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4924:
-	dr $16c924, $16c92f
+	db $00, $00, $08, $2c, $00, $00, $08, $00, $2e, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_492f:
-	dr $16c92f, $16c93a
+	db $00, $00, $08, $30, $00, $00, $08, $00, $32, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_493a:
-	dr $16c93a, $16c945
+	db $00, $00, $08, $34, $00, $00, $08, $00, $36, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4945:
-	dr $16c945, $16c950
+	db $00, $00, $08, $38, $00, $00, $08, $00, $3a, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4950:
-	dr $16c950, $16c95b
+	db $00, $00, $08, $3c, $00, $00, $08, $00, $3e, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_495b:
-	dr $16c95b, $16c966
+	db $00, $00, $08, $40, $00, $00, $08, $00, $42, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4966:
-	dr $16c966, $16c971
+	db $00, $00, $08, $44, $00, $00, $08, $00, $46, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4971:
-	dr $16c971, $16c97c
+	db $00, $00, $08, $48, $00, $00, $08, $00, $4a, $00, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_497c:
-	dr $16c97c, $16c987
+	db $00, $00, $08, $4c, $01, $00, $08, $00, $4e, $01, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4987:
-	dr $16c987, $16c992
+	db $00, $00, $08, $50, $01, $00, $08, $00, $52, $01, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_4992:
-	dr $16c992, $16c99d
+	db $00, $00, $08, $54, $01, $00, $08, $00, $56, $01, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_499d:
-	dr $16c99d, $16c9a8
+	db $00, $00, $08, $58, $01, $00, $08, $00, $5a, $01, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_49a8:
-	dr $16c9a8, $16c9b3
+	db $00, $00, $08, $5c, $01, $00, $08, $00, $5e, $01, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_49b3:
-	dr $16c9b3, $16c9be
+	db $00, $00, $08, $60, $01, $00, $08, $00, $62, $01, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_49be:
-	dr $16c9be, $16c9c9
+	db $00, $00, $08, $64, $02, $00, $08, $00, $66, $02, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_49c9:
-	dr $16c9c9, $16c9d4
+	db $00, $00, $08, $68, $02, $00, $08, $00, $6a, $02, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_49d4:
-	dr $16c9d4, $16c9df
+	db $00, $00, $08, $6c, $02, $00, $08, $00, $6e, $02, $ff
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_SpriteFrames_49df:
-	dr $16c9df, $16c9ef
+	db $00, $00, $10, $70, $02, $00, $08, $08, $72, $02, $00, $10, $00, $74, $02, $ff
 MiceMinigame_ObjPalette:
 	RGB 21, 21, 21
 	RGB 0, 0, 0
@@ -1315,16 +1319,27 @@ MiceMinigame_GFX3:
 INCBIN "gfx/misc/miceminigame_gfx3.2bpp"
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_unk685F:
-	dr $16e85f, $16e8a5
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $00, $00, $00, $00, $00
+	db $00, $00, $01, $01, $01, $00, $00, $00, $01, $00, $00, $00, $00, $01, $01, $01
+	db $00, $00, $00, $00, $00, $00, $00, $00, $01, $00, $00, $00, $00, $00, $00, $00
+	db $00, $01, $01, $00, $00, $00, $00, $01, $00, $00, $00, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $01
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_unk68A5:
-	dr $16e8a5, $16e8c8
+	db $ff, $fe, $fe, $ff, $ff, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $00, $00
+	db $00, $00, $88
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_unk68C8:
-	dr $16e8c8, $16e8f1
+	db $ff, $ff, $ff, $ff, $00, $00, $00, $00, $00, $00, $01, $02, $02, $02, $02, $02
+	db $02, $02, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $00, $00, $00, $00, $00, $00, $88
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MiceMinigame_unk68F1:
-	dr $16e8f1, $16e930
+	db $ff, $00, $fe, $ff, $ff, $ff, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $01, $fe, $02, $fe, $01, $fe, $01, $ff, $01, $ff, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $00, $ff, $00, $ff, $00, $ff, $00, $00, $00, $00, $00, $00, $00, $00, $88
 MiceMinigame_FaceTilemaps:
 MiceMinigame_FaceTilemap0:
 INCBIN "gfx/tilemaps/miceminigame_facetilemap0.tilemap"

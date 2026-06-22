@@ -185,28 +185,28 @@ Pointers_024_4130:
 	dw Script_024_4162
 	dw Script_024_4162
 	dw Script_024_4181
-	dw $41b7
-	dw $41cb
-	dw $41e3
-	dw $41ec
-	dw $420a
-	dw $4208
-	dw $42a5
-	dw $42bb
-	dw $42cb
-	dw $42fa
-	dw $430e
-	dw $432e
-	dw $4343
-	dw $4355
-	dw $438b
-	dw $43af
-	dw $4404
-	dw $4421
-	dw $449d
-	dw $4509
-	dw $453f
-	dw $4304
+	dw Script_024_41b7
+	dw Script_024_41cb
+	dw Script_024_41e3
+	dw Script_024_41ec
+	dw Script_024_420a
+	dw Script_024_4208
+	dw Script_024_42a5
+	dw Script_024_42bb
+	dw Script_024_42cb
+	dw Script_024_42fa
+	dw Script_024_430e
+	dw Script_024_432e
+	dw Script_024_4343
+	dw Script_024_4355
+	dw Script_024_438b
+	dw Script_024_43af
+	dw Script_024_4404
+	dw Script_024_4421
+	dw Script_024_449d
+	dw Script_024_4509
+	dw Script_024_453f
+	dw Script_024_4304
 
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_4162:
@@ -214,13 +214,76 @@ Script_024_4162:
 
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_4181:
-	dr $90181, $901c1
+	dr $90181, $901b7
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_41b7:
+	dr $901b7, $901c1
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_41c1:
-	dr $901c1, $902a5
+	dr $901c1, $901cb
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_41cb:
+	dr $901cb, $901e3
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_41e3:
+	dr $901e3, $901ec
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_41ec:
+	dr $901ec, $90208
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4208:
+	dr $90208, $9020a
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_420a:
+	dr $9020a, $902a5
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_42a5:
-	dr $902a5, $9054c
+	dr $902a5, $902bb
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_42bb:
+	dr $902bb, $902cb
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_42cb:
+	dr $902cb, $902fa
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_42fa:
+	dr $902fa, $90304
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4304:
+	dr $90304, $9030e
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_430e:
+	dr $9030e, $9032e
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_432e:
+	dr $9032e, $90343
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4343:
+	dr $90343, $90355
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4355:
+	dr $90355, $9038b
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_438b:
+	dr $9038b, $903af
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_43af:
+	dr $903af, $90404
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4404:
+	dr $90404, $90421
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4421:
+	dr $90421, $9049d
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_449d:
+	dr $9049d, $90509
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_4509:
+	dr $90509, $9053f
+; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+Script_024_453f:
+	dr $9053f, $9054c
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_454c:
 	dr $9054c, $9054e

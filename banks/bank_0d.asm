@@ -449,30 +449,82 @@ BGMap_00d_4352:
 	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a4
 ; TODO: paper-scroll script pointer table, indexed by hScrollNumber *2
 Pointers_00d_437a:
-	dw $43c2, $43c2, $43c8, $43cf, $43d5, $43dc, $43e3, $43e9
-	dw $43ef, $43f6, $43fd, $4404, $440b, $4412, $4418, $441e
-	dw $4426, $442e, $4434, $443c, $4445, $444e, $4457, $4460
-	dw $446a, $4472, $447a, $4482, $448b, $4494, $449d, $44a5
-	dw $44ae, $44b6, $44be, $44c7
+	dw Script_00d_43c2, Script_00d_43c2, Script_00d_43c8, Script_00d_43cf, Script_00d_43d5, Script_00d_43dc, Script_00d_43e3, Script_00d_43e9
+	dw Script_00d_43ef, Script_00d_43f6, Script_00d_43fd, Script_00d_4404, Script_00d_440b, Script_00d_4412, Script_00d_4418, Script_00d_441e
+	dw Script_00d_4426, Script_00d_442e, Script_00d_4434, Script_00d_443c, Script_00d_4445, Script_00d_444e, Script_00d_4457, Script_00d_4460
+	dw Script_00d_446a, Script_00d_4472, Script_00d_447a, Script_00d_4482, Script_00d_448b, Script_00d_4494, Script_00d_449d, Script_00d_44a5
+	dw Script_00d_44ae, Script_00d_44b6, Script_00d_44be, Script_00d_44c7
 ; TODO: paper-scroll scripts (F0/ED character command lists)
 Script_00d_43c2:
-	db $f0, $26, $27, $28, $ed, $01, $f0, $29, $00, $00, $2a, $ed, $00, $f0, $2b, $0a
-	db $2c, $ed, $01, $f0, $2d, $00, $00, $2e, $ed, $00, $f0, $2f, $30, $18, $31, $ed
-	db $00, $f0, $19, $32, $33, $ed, $01, $f0, $34, $31, $35, $ed, $01, $f0, $34, $36
-	db $18, $31, $ed, $00, $f0, $37, $38, $39, $3a, $ed, $00, $f0, $3b, $3c, $18, $31
-	db $ed, $00, $f0, $37, $38, $39, $3d, $ed, $00, $f0, $3e, $3f, $18, $31, $ed, $00
-	db $f0, $40, $41, $42, $ed, $01, $f0, $43, $44, $45, $ed, $01, $f3, $68, $f0, $57
-	db $f6, $2e, $ed, $01, $f4, $24, $f3, $d3, $f2, $1c, $ed, $01, $f0, $26, $54, $39
-	db $ed, $01, $f4, $b4, $f1, $1b, $f4, $cf, $ed, $01, $f0, $4a, $f4, $8d, $f0, $18
-	db $31, $ed, $00, $f3, $c2, $f0, $00, $00, $f3, $d9, $ed, $00, $f0, $60, $f3, $c2
-	db $f0, $3d, $31, $ed, $00, $f6, $89, $4f, $f0, $37, $f4, $be, $ed, $00, $f2, $c5
-	db $f1, $2e, $f0, $2a, $f2, $a8, $ed, $00, $f1, $dc, $f3, $48, $f2, $1c, $ed, $01
-	db $f2, $c4, $f0, $39, $f2, $c5, $ed, $01, $f0, $26, $00, $00, $f4, $bb, $ed, $00
-	db $f4, $08, $f0, $00, $00, $f4, $bb, $ed, $00, $f1, $1f, $f0, $00, $00, $f4, $c9
-	db $ed, $00, $f6, $a8, $f0, $00, $00, $f4, $4f, $ed, $00, $f7, $2c, $f5, $9d, $f6
-	db $31, $ed, $01, $f4, $4d, $f0, $00, $00, $f7, $49, $ed, $00, $f6, $b5, $f7, $34
-	db $f6, $50, $ed, $01, $f2, $39, $f3, $3a, $f0, $31, $ed, $01, $f4, $08, $f3, $d9
-	db $f0, $68, $31, $ed, $00, $f7, $40, $f1, $90, $f0, $31, $ed, $01
+	db $f0, $26, $27, $28, $ed, $01
+Script_00d_43c8:
+	db $f0, $29, $00, $00, $2a, $ed, $00
+Script_00d_43cf:
+	db $f0, $2b, $0a, $2c, $ed, $01
+Script_00d_43d5:
+	db $f0, $2d, $00, $00, $2e, $ed, $00
+Script_00d_43dc:
+	db $f0, $2f, $30, $18, $31, $ed, $00
+Script_00d_43e3:
+	db $f0, $19, $32, $33, $ed, $01
+Script_00d_43e9:
+	db $f0, $34, $31, $35, $ed, $01
+Script_00d_43ef:
+	db $f0, $34, $36, $18, $31, $ed, $00
+Script_00d_43f6:
+	db $f0, $37, $38, $39, $3a, $ed, $00
+Script_00d_43fd:
+	db $f0, $3b, $3c, $18, $31, $ed, $00
+Script_00d_4404:
+	db $f0, $37, $38, $39, $3d, $ed, $00
+Script_00d_440b:
+	db $f0, $3e, $3f, $18, $31, $ed, $00
+Script_00d_4412:
+	db $f0, $40, $41, $42, $ed, $01
+Script_00d_4418:
+	db $f0, $43, $44, $45, $ed, $01
+Script_00d_441e:
+	db $f3, $68, $f0, $57, $f6, $2e, $ed, $01
+Script_00d_4426:
+	db $f4, $24, $f3, $d3, $f2, $1c, $ed, $01
+Script_00d_442e:
+	db $f0, $26, $54, $39, $ed, $01
+Script_00d_4434:
+	db $f4, $b4, $f1, $1b, $f4, $cf, $ed, $01
+Script_00d_443c:
+	db $f0, $4a, $f4, $8d, $f0, $18, $31, $ed, $00
+Script_00d_4445:
+	db $f3, $c2, $f0, $00, $00, $f3, $d9, $ed, $00
+Script_00d_444e:
+	db $f0, $60, $f3, $c2, $f0, $3d, $31, $ed, $00
+Script_00d_4457:
+	db $f6, $89, $4f, $f0, $37, $f4, $be, $ed, $00
+Script_00d_4460:
+	db $f2, $c5, $f1, $2e, $f0, $2a, $f2, $a8, $ed, $00
+Script_00d_446a:
+	db $f1, $dc, $f3, $48, $f2, $1c, $ed, $01
+Script_00d_4472:
+	db $f2, $c4, $f0, $39, $f2, $c5, $ed, $01
+Script_00d_447a:
+	db $f0, $26, $00, $00, $f4, $bb, $ed, $00
+Script_00d_4482:
+	db $f4, $08, $f0, $00, $00, $f4, $bb, $ed, $00
+Script_00d_448b:
+	db $f1, $1f, $f0, $00, $00, $f4, $c9, $ed, $00
+Script_00d_4494:
+	db $f6, $a8, $f0, $00, $00, $f4, $4f, $ed, $00
+Script_00d_449d:
+	db $f7, $2c, $f5, $9d, $f6, $31, $ed, $01
+Script_00d_44a5:
+	db $f4, $4d, $f0, $00, $00, $f7, $49, $ed, $00
+Script_00d_44ae:
+	db $f6, $b5, $f7, $34, $f6, $50, $ed, $01
+Script_00d_44b6:
+	db $f2, $39, $f3, $3a, $f0, $31, $ed, $01
+Script_00d_44be:
+	db $f4, $08, $f3, $d9, $f0, $68, $31, $ed, $00
+Script_00d_44c7:
+	db $f7, $40, $f1, $90, $f0, $31, $ed, $01
 ; TODO: paper tiles copied to VRAM $8540
 PaperEmotesTiles:
 	INCBIN "gfx/paper_scroll/tiles_44cf.2bpp"

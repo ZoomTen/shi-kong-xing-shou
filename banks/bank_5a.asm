@@ -55,7 +55,8 @@ Script_05a_405d:
 	end
 
 INCLUDE "data/text/bank5a_405e.asm"
-	db $09
+Script_05a_40bc:
+	end
 
 G4_53_ObjectEvents2:
 G4_5A_ObjectEvents:
@@ -83,7 +84,7 @@ Script_05a_40d0:
 	checkbit wEventFlags + 13, $00, Script_05a_40ec
 	emote $00, EMOTE_QUESTION
 	delay $03, $20
-	stext $5623
+	stext text_5a_5623
 	face FACE_UP
 	move MovementData_OneUp
 	clearplayerpos
@@ -172,7 +173,7 @@ Script_05a_4161:
 	spriteface $01, FACE_LEFT
 	setattach $01, $00, $f0, $00
 	playsound SFX_41
-	objmove $00, $76e8
+	objmove $00, MovementData_05a_76e8
 	clearattach $01
 	spriteface $01, FACE_RIGHT
 	spritewalk $01, MOVE_RIGHT
@@ -190,7 +191,7 @@ Script_05a_4188:
 	spriteface $01, FACE_RIGHT
 	setattach $01, $00, $f0, $00
 	playsound SFX_41
-	objmove $00, $7729
+	objmove $00, MovementData_05a_7729
 	clearattach $01
 	spriteface $01, FACE_LEFT
 	spritewalk $01, MOVE_LEFT
@@ -206,7 +207,7 @@ Script_05a_41aa:
 	setmap $5b, $01
 	emote $00, EMOTE_QUESTION
 	delay $03, $20
-	stext $5608
+	stext text_5a_5608
 	end
 
 G4_5B_ObjectEvents:
@@ -215,39 +216,39 @@ G4_5B_ObjectEvents:
 
 Script_05a_41c9:
 	checkbit wEventFlags + 13, $00, Script_05a_41e0
-	textface $563f
-	stext $56c3
-	stext $56e8
-	stext $570a
+	textface text_5a_563f
+	stext text_5a_56c3
+	stext text_5a_56e8
+	stext text_5a_570a
 	setbit wEventFlags + 13, $00
 	end
 
 Script_05a_41e0:
 	checkbit wEventFlags + 13, $02, Script_05a_41ea
-	textface $5806
+	textface text_5a_5806
 	end
 
 Script_05a_41ea:
 	checkbit wEventFlags + 13, $06, Script_05a_421c
-	textface $637c
+	textface text_5a_637c
 	emote 0, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $63ee
+	stext text_5a_63ee
 	emote 0, EMOTE_TEAR
 	delay $03, $20
-	stext $645e
-	stext $646e
-	stext $6502
-	stext $6520
+	stext text_5a_645e
+	stext text_5a_646e
+	stext text_5a_6502
+	stext text_5a_6520
 	emote 0, EMOTE_TEAR
 	delay $03, $20
-	stext $65a6
+	stext text_5a_65a6
 	setbit wEventFlags + 13, $06
 	end
 
 Script_05a_421c:
 	checkbit wEventFlags + 13, $07, Script_05a_4226
-	textface $65dd
+	textface text_5a_65dd
 	end
 
 Script_05a_4226:
@@ -257,15 +258,15 @@ Script_05a_4226:
 	spriteface 1, FACE_UP
 	emote 2, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $67bc
+	stext text_5a_67bc
 	face FACE_LEFT
 	spriteface 2, FACE_LEFT
 	spritewalk 2, MOVE_LEFT
 	spritewalk 2, MOVE_LEFT
 	spriteface 2, FACE_RIGHT
-	stext $6829
+	stext text_5a_6829
 	spriteface 2, FACE_DOWN
-	objmove $02, $77ab
+	objmove $02, MovementData_05a_77ab
 	clearobject $02
 	setbit wEventFlags + 14, $00
 	end
@@ -282,41 +283,41 @@ G4_27_ObjectEvents:
 	objects_end
 
 Script_05a_42a3:
-	textface $58a8
+	textface text_5a_58a8
 	end
 
 Script_05a_42a7:
-	textface $58ba
+	textface text_5a_58ba
 	end
 
 Script_05a_42ab:
 	checkbit wEventFlags + 13, $02, Script_05a_42b5
-	textface $5923
+	textface text_5a_5923
 	end
 
 Script_05a_42b5:
-	textface $6087
+	textface text_5a_6087
 	end
 
 Script_05a_42b9:
-	textface $595a
+	textface text_5a_595a
 	end
 
 Script_05a_42bd:
 	checkbit wEventFlags + 13, $02, Script_05a_42c7
-	textface $59ee
+	textface text_5a_59ee
 	end
 
 Script_05a_42c7:
-	textface $60d2
+	textface text_5a_60d2
 	end
 
 Script_05a_42cb:
-	textface $5a2f
+	textface text_5a_5a2f
 	end
 
 Script_05a_42cf:
-	textface $5a6b
+	textface text_5a_5a6b
 	end
 
 G4_56_ObjectEvents:
@@ -325,18 +326,18 @@ G4_56_ObjectEvents:
 
 Script_05a_42df:
 	checkbit wEventFlags + 13, $04, Script_05a_42e9
-	textface $5ac1
+	textface text_5a_5ac1
 	end
 
 Script_05a_42e9:
 	checkbit wEventFlags + 13, $05, Script_05a_42fa
-	textface $634a
+	textface text_5a_634a
 	listdec $02, $16
 	setbit wEventFlags + 13, $05
 	end
 
 Script_05a_42fa:
-	textface $634a
+	textface text_5a_634a
 	end
 
 G4_57_ObjectEvents:
@@ -345,25 +346,25 @@ G4_57_ObjectEvents:
 
 Script_05a_430a::
 	checkbit wEventFlags + 13, $03, Script_05a_4314
-	textface $5b68
+	textface text_5a_5b68
 	end
 
 Script_05a_4314::
 	checkbit wEventFlags + 13, $04, Script_05a_433d
-	textface $6273
+	textface text_5a_6273
 	emote  2, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $62a5
+	stext text_5a_62a5
 	startbattle BattleData_02d_4cc3
 	checkbit wEventFlags + 3, $03, unk_05a_4000
-	stext $62e8
-	stext $6311
+	stext text_5a_62e8
+	stext text_5a_6311
 	scr_48 $02, $16
 	setbit wEventFlags + 13, $04
 	end
 
 Script_05a_433d::
-	textface $6321
+	textface text_5a_6321
 	end
 
 G4_58_ObjectEvents:
@@ -371,13 +372,13 @@ G4_58_ObjectEvents:
 	object_event $21,  3,  3, 0, $00, $00, $0b, $01, Script_05a_435c
 	objects_end
 Script_05a_4358:
-	textface $5bb6
+	textface text_5a_5bb6
 	end
 Script_05a_435c:
-	textface $5c0c
+	textface text_5a_5c0c
 	emote  3, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $5c61
+	stext text_5a_5c61
 	end
 
 G4_59_ObjectEvents:
@@ -386,53 +387,53 @@ G4_59_ObjectEvents:
 
 Script_05a_4375:
 	checkbit wEventFlags + 13, $02, Script_05a_437f
-	textface $5cb0
+	textface text_5a_5cb0
 	end
 
 Script_05a_437f:
 	checkbit wEventFlags + 13, $04, Script_05a_438d
-	textface $611e
+	textface text_5a_611e
 	setbit wEventFlags + 13, $03
 	end
 
 Script_05a_438d:
 	checkbit wEventFlags + 13, $05, Script_05a_4397
-	textface $61fa
+	textface text_5a_61fa
 	end
 
 Script_05a_4397:
-	textface $6241
+	textface text_5a_6241
 	end
 
 G4_28_ObjectEvents:
 	object_event $0c,  7,  5, 0, $00, $00, $00, $00, Script_05a_43bd
-	object_event $0d,  7,  4, 0, $00, $00, $00, $01, $40bc
-	object_event $6a,  6,  4, 0, $00, $00, $00, $02, $40bc
+	object_event $0d,  7,  4, 0, $00, $00, $00, $01, Script_05a_40bc
+	object_event $6a,  6,  4, 0, $00, $00, $00, $02, Script_05a_40bc
 	objects_end
 
 Script_05a_43bd:
 	checkbit wEventFlags + 13, $01, Script_05a_43f2
-	textface $5d6f
+	textface text_5a_5d6f
 	emote 0, EMOTE_TEAR
 	delay $03, $20
-	stext $5dcc
-	stext $5de0
+	stext text_5a_5dcc
+	stext text_5a_5de0
 	emote 0, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $5e65
-	stext $5eb7
-	stext $5f03
+	stext text_5a_5e65
+	stext text_5a_5eb7
+	stext text_5a_5f03
 	spriteface 2, FACE_RIGHT
 	emote 2, EMOTE_ANGER
 	delay $03, $20
-	stext $5f39
+	stext text_5a_5f39
 	setbit wEventFlags + 13, $01
 	end
 
 Script_05a_43f2:
 	checkbit wEventFlags + 14, $00, Script_05a_43ff
-	textface $5fb9
-	stext $6039
+	textface text_5a_5fb9
+	stext text_5a_6039
 	end
 
 Script_05a_43ff:
@@ -440,16 +441,16 @@ Script_05a_43ff:
 	face FACE_UP
 	dirmovement
 	spriteface 1, FACE_UP
-	stext $68fd
+	stext text_5a_68fd
 	emote 0, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $693f
+	stext text_5a_693f
 	emote 0, EMOTE_EXCLAMATION
 	delay $03, $20
 	spriteface 2, FACE_LEFT
 	spritewalk 2, MOVE_LEFT
 	spriteface 2, FACE_DOWN
-	stext $6966
+	stext text_5a_6966
 	spriteface 2, FACE_UP
 	spritewalk 2, MOVE_UP
 	clearobject $02
@@ -462,7 +463,7 @@ Script_05a_43ff:
 	spriteface 1, FACE_LEFT
 	spritewalk 1, MOVE_LEFT
 	spriteface 1, FACE_UP
-	stext $69ca
+	stext text_5a_69ca
 	emote 0, EMOTE_TEAR
 	delay $03, $20
 	move MovementData_OneUp
@@ -471,13 +472,13 @@ Script_05a_43ff:
 	clearobject $00
 	spritewalk 1, MOVE_UP
 	clearobject $01
-	stext $69e4
+	stext text_5a_69e4
 	spriteface 4, FACE_UP
 	delay $03, $10
-	objmove $04, $77d4
+	objmove $04, MovementData_05a_77d4
 	clearobject $04
 	setmap $53, $01
-	stext $69fa
+	stext text_5a_69fa
 	playsound SFX_2c
 	runmovement MovementData_00b_4227
 	runmovement MovementData_00b_4227
@@ -486,7 +487,7 @@ Script_05a_43ff:
 	runmovement MovementData_00b_41fe
 	playsound SFX_2c
 	runmovement MovementData_00b_41d5
-	farjump2 $4785, $59
+	farjump2 Script_059_4785
 	end
 
 Script_05a_448c:
@@ -495,7 +496,7 @@ Script_05a_448c:
 	face FACE_UP
 	farjump Script_05a_4498
 Script_05a_4498:
-	stext $604f
+	stext text_5a_604f
 	scr_48 $02, $15
 	checkbit wEventFlags + 13, $01, Script_05a_44a5
 	end
@@ -506,7 +507,7 @@ Script_05a_44a5:
 	runmovement MovementData_00b_41d5
 	emote 0, EMOTE_EXCLAMATION
 	delay $03, $20
-	stext $605f
+	stext text_5a_605f
 	setbit wEventFlags + 13, $02
 	end
 
@@ -523,10 +524,65 @@ Script_05a_44c9:
 	end
 
 ObjectEvents_05a_44cd:
-	object_event $6b,  5,  0, 0, $00, $00, $00, $00, $40bc
+	object_event $6b,  5,  0, 0, $00, $00, $00, $00, Script_05a_40bc
 	objects_end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_63_ObjectEvents:
-	dr $1684d9, $16b820
+	object_event $50,  5,  3, wEventFlags + 13, $07, $00, $00, $00, Script_05a_44e5
+	objects_end
 
+Script_05a_44e5:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_5a_6663
+	startbattle BattleData_02d_4cf1
+	checkbit wEventFlags + 3, $03, unk_05a_4000
+	stext text_5a_66f0
+	spriteface  2, FACE_UP
+	objmove $02, MovementData_05a_77d4
+	clearobject $02 ; TEMP
+	loadobjsprite ObjectEvents_05a_44cd
+	objmove $02, MovementData_05a_776a
+	clearobject $02 ; TEMP
+	stext text_5a_673a
+	scr_48 $02, $17
+	emote  0, EMOTE_QUESTION
+	delay $03, $20 ; TEMP
+	stext text_5a_674d
+	setbit wEventFlags + 13, $07
+	end
+
+INCLUDE "data/text/bank5a_4521.asm"
+INCLUDE "data/text/bank5a_5608.asm"
+; movement data ($88 terminator)
+MovementData_05a_76e8:
+	db $ff, $00, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $fe, $ff, $fe, $ff, $ff, $00, $ff, $ff, $ff, $00, $ff, $00, $ff
+	db $00, $ff, $01, $ff, $00, $ff, $00, $ff, $01, $ff, $02, $ff, $01, $ff, $01, $fe
+	db $02, $ff, $02, $ff, $02, $ff, $02, $ff, $02, $ff, $02, $ff, $02, $00, $02, $ff
+	db $88
+MovementData_05a_7729:
+	db $ff, $00, $fe, $00, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01
+	db $fe, $01, $fe, $02, $ff, $02, $ff, $01, $00, $01, $ff, $01, $00, $01, $00, $01
+	db $00, $01, $01, $01, $00, $01, $00, $01, $01, $01, $02, $01, $01, $01, $01, $02
+	db $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $00, $02, $01
+	db $88
+MovementData_05a_776a:
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $88
+MovementData_05a_77ab:
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $88
+MovementData_05a_77d4:
+	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fd, $00, $fd, $00, $fd, $00, $fd, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $88
