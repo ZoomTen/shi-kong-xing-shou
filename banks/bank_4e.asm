@@ -1,5 +1,5 @@
 unk_04e_4000:
-	dr $138000, $138001
+	end
 Script_04e_4001:: ; farjump2 target (bank_4f)
 	setmap $08, $06
 	end
@@ -10,10 +10,33 @@ BanglinCo2f_ObjectEvents:
 BanglinCo3f_ObjectEvents:
 BanglinCo4f_ObjectEvents:
 BanglinCo5f_ObjectEvents:
-	dr $138009, $13800b
+	objects_end
+Script_04e_400a::
+	end
 
 BanglinCo2_ObjectEvents:
-	dr $13800b, $138053
+	object_event $3e,  2,  2, 0, $00, $00, $00, $00, Script_04e_4043
+	object_event $27,  9,  5, 0, $00, $00, $00, $01, Script_04e_4047
+	object_event $1d,  9,  2, 0, $00, $00, $00, $02, Script_04e_404b
+	object_event $25,  4,  4, 0, $00, $00, $00, $03, Script_04e_404f
+	object_event $13,  5, 10, 0, $00, $00, $00, $04, Script_04e_400a
+	objects_end
+
+Script_04e_4043:
+	textface text_4e_4dd3
+	end
+
+Script_04e_4047:
+	textface text_4e_4ec6
+	end
+
+Script_04e_404b:
+	textface text_4e_4e23
+	end
+
+Script_04e_404f:
+	textface text_4e_4e4c
+	end
 
 Script_04e_4053::
 	face FACE_DOWN
@@ -48,10 +71,35 @@ Script_04e_409a:
 	end
 
 ContestHall_ObjectEvents:
-	dr $1380a4, $1380d1
+	object_event $06,  3,  5, 0, $00, $00, $00, $00, Script_04e_400a
+	object_event $45,  3,  7, 0, $00, $00, $00, $01, Script_04e_400a
+	object_event $45,  8,  5, 0, $00, $00, $00, $02, Script_04e_400a
+	object_event $45,  8,  7, 0, $00, $00, $00, $03, Script_04e_400a
+	objects_end
 
 BanglinCo2_ObjectEvents2:
-	dr $1380d1, $138119
+	object_event $3e,  2,  2, 0, $00, $00, $00, $00, Script_04e_4109
+	object_event $27,  9,  5, 0, $00, $00, $00, $01, Script_04e_410d
+	object_event $1d,  9,  2, 0, $00, $00, $00, $02, Script_04e_4111
+	object_event $25,  4,  4, 0, $00, $00, $00, $03, Script_04e_4115
+	object_event $13,  5, 10, 0, $00, $00, $00, $04, Script_04e_400a
+	objects_end
+
+Script_04e_4109:
+	textface text_4e_50d1
+	end
+
+Script_04e_410d:
+	textface text_4e_51aa
+	end
+
+Script_04e_4111:
+	textface text_4e_5146
+	end
+
+Script_04e_4115:
+	textface text_4e_5172
+	end
 
 Script_04e_4119::
 	face FACE_DOWN
@@ -255,27 +303,42 @@ Script_04e_4119::
 	end
 
 BanglinCo1f_ObjectEvents4:
-	dr $13836a, $138381
+	object_event $06,  4,  5, wEventFlags + 24, $04, $00, $00, $00, Script_04e_400a
+	object_event $07,  3,  5, wEventFlags + 24, $04, $00, $00, $01, Script_04e_400a
+	objects_end
 ObjSprite_4e_4381::
-	dr $138381, $13838d
+	object_event $38,  5,  1, 0, $00, $00, $00, $03, Script_04e_400a
+	objects_end
 ObjSprite_4e_438d::
-	dr $13838d, $138399
+	object_event $28,  5,  0, 0, $00, $00, $00, $04, Script_04e_400a
+	objects_end
 ObjSprite_4e_4399::
-	dr $138399, $1383a5
+	object_event $35,  6,  0, 0, $00, $00, $00, $02, Script_04e_400a
+	objects_end
 ObjSprite_4e_43a5::
-	dr $1383a5, $1383b1
+	object_event $31,  6,  0, 0, $00, $00, $00, $00, Script_04e_400a
+	objects_end
 ObjSprite_4e_43b1::
-	dr $1383b1, $1383bd
+	object_event $39,  5,  0, 0, $00, $00, $00, $01, Script_04e_400a
+	objects_end
 ObjSprite_4e_43bd::
-	dr $1383bd, $1383c9
+	object_event $37,  5,  0, 0, $00, $00, $00, $04, Script_04e_400a
+	objects_end
 ObjSprite_4e_43c9::
-	dr $1383c9, $1383d5
+	object_event $3f,  5,  0, 0, $00, $00, $00, $04, Script_04e_400a
+	objects_end
 
 ContestHall_ObjectEvents2:
-	dr $1383d5, $138402
+	object_event $06,  3,  5, 0, $00, $00, $00, $00, Script_04e_400a
+	object_event $45,  3,  7, 0, $00, $00, $00, $01, Script_04e_400a
+	object_event $45,  8,  5, 0, $00, $00, $00, $02, Script_04e_400a
+	object_event $45,  8,  7, 0, $00, $00, $00, $03, Script_04e_400a
+	objects_end
 
 BanglinCo5f_ObjectEvents2:
-	dr $138402, $138419
+	object_event $27, 11,  6, wEventFlags + 6, $05, $00, $00, $00, Script_04e_400a
+	object_event $28, 10,  6, wEventFlags + 6, $05, $00, $00, $01, Script_04e_400a
+	objects_end
 
 Script_04e_4419::
 	face FACE_LEFT
@@ -333,7 +396,10 @@ Script_04e_44aa:
 	end
 
 BanglinCo1f_ObjectEvents6:
-	dr $1384b0, $1384d2
+	object_event $35,  6,  5, wEventFlags + 6, $06, $00, $00, $00, Script_04e_400a
+	object_event $06,  6,  6, wEventFlags + 6, $06, $00, $00, $01, Script_04e_400a
+	object_event $04,  5,  6, wEventFlags + 6, $06, $00, $00, $02, Script_04e_400a
+	objects_end
 
 Script_04e_44d2::
 	checkbit wEventFlags + 6, $05, Script_04e_44dc
@@ -407,7 +473,10 @@ Script_04e_4586:
 	end
 
 Airport_ObjectEvents2:
-	dr $13858a, $1385ac
+	object_event $35,  6,  5, wEventFlags + 6, $06, $01, $00, $00, Script_04e_400a
+	object_event $06,  7,  5, wEventFlags + 6, $06, $01, $00, $01, Script_04e_400a
+	object_event $04,  7,  6, wEventFlags + 6, $06, $01, $00, $02, Script_04e_400a
+	objects_end
 
 Airport_ObjectEvents:
 	dr $1385ac, $138637

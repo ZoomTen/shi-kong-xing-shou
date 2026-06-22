@@ -502,6 +502,8 @@ Func_004_426d:
 	ld a, e
 	ld [wd1fb], a
 	ret
+
+Func_004_42ac:
 	ld de, Pointers_004_4337
 	ld a, [wPlayerSpriteID]
 	ld l, a

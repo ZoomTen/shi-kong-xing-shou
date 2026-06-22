@@ -1855,10 +1855,21 @@ Func_005_4bc1:
 	dr $14c3a, $14c4c
 ; TODO
 asm_005_4c4c:
-	dr $14c4c, $14c52
-; TODO
+	and $F0
+	cp $20
+	jr z, Func_005_4c69.asm_4c7f
 asm_005_4c52:
-	dr $14c52, $14c69
+	ldh a, [hFF9E]
+	ld [wPlayerFacing], a
+	ld a, $FF
+	ldh [hFF9E], a
+	xor a
+	ldh [hSimulatedJoypadState], a
+	ld [wcd0a], a
+	ld a, $01
+	ldh [hFFAC], a
+	ld [wdcd0], a
+	ret
 
 Func_005_4c69:
 	ldh a, [hConsoleType]
@@ -1871,6 +1882,7 @@ Func_005_4c69:
 	cp $09
 	jr nz, asm_005_4c52
 	jr .asm_4c9a
+.asm_4c7f
 	jr asm_005_4c52
 	ldh a, [hMapGroup]
 	cp $01
@@ -2510,7 +2522,9 @@ unk_005_525e:
 	dr $1525e, $15270
 
 MovementData_005_5270:
-	dr $15270, $15295
+	db $f8, $00, $fa, $00, $fc, $00, $fc, $00, $fc, $00, $fd, $00, $fe, $00, $ff, $00
+	db $00, $00, $00, $00, $08, $00, $06, $00, $04, $00, $04, $00, $04, $00, $03, $00
+	db $02, $00, $01, $00, $88
 
 Func_005_5295:
 	ld a, [wd0ee]
@@ -3094,16 +3108,20 @@ Func_005_5604:
 
 ; TODO: indexed data table, classify type
 unk_005_5632:
-	dr $15632, $15650
+	db $ff, $00, $00, $00, $a1, $ff, $03, $01, $01, $00, $f8, $d3, $02, $02, $01, $00
+	db $f7, $d3, $01, $04, $01, $ff, $f6, $d3, $00, $08, $01, $01, $f5, $d3
 ; TODO: indexed data table, classify type
 unk_005_5650:
-	dr $15650, $1566e
+	db $ff, $00, $00, $00, $a1, $ff, $02, $02, $01, $00, $f7, $d3, $03, $01, $01, $00
+	db $f8, $d3, $01, $04, $01, $ff, $f6, $d3, $00, $08, $01, $01, $f5, $d3
 ; TODO: indexed data table, classify type
 unk_005_566e:
-	dr $1566e, $1568c
+	db $ff, $00, $00, $00, $a1, $ff, $03, $01, $01, $00, $f8, $d3, $02, $02, $01, $00
+	db $f7, $d3, $00, $08, $01, $01, $f5, $d3, $01, $04, $01, $ff, $f6, $d3
 ; TODO: indexed data table, classify type
 unk_005_568c:
-	dr $1568c, $156aa
+	db $ff, $00, $00, $00, $a1, $ff, $02, $02, $01, $00, $f7, $d3, $03, $01, $01, $00
+	db $f8, $d3, $00, $08, $01, $01, $f5, $d3, $01, $04, $01, $ff, $f6, $d3
 
 Func_005_56aa:
 	ld de, unk_005_5764

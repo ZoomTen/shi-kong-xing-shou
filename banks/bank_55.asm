@@ -84,7 +84,9 @@ AirportCutscene2::
 	ld [hMapPredef], a
 	jp JumpToModeAndSetMapPredefs
 ScrollXDeltas_055_40d0:
-	dr $1540d0, $1540f1
+	db $07, $07, $07, $07, $07, $07, $07, $07, $06, $06, $06, $06, $06, $06, $05, $05
+	db $05, $05, $05, $04, $04, $04, $04, $03, $03, $03, $02, $02, $02, $01, $01, $00
+	db $00
 Func_055_40f1:
 	ld a, [wdcf3]
 	cp $40
@@ -140,7 +142,21 @@ Func_055_411c:
 	ld [hFade], a
 	ret
 ObjectMoveDeltas_055_414c:
-	dr $15414c, $15423b
+	db $01, $00, $04, $03, $04, $04, $04, $03, $04, $04, $04, $03, $04, $04, $04, $04
+	db $04, $04, $04, $04, $03, $03, $03, $03, $03, $03, $02, $03, $03, $03, $01, $02
+	db $03, $03, $02, $03, $03, $03, $02, $03, $02, $03, $02, $03, $03, $03, $02, $03
+	db $02, $03, $02, $03, $02, $03, $02, $03, $02, $03, $01, $02, $01, $02, $01, $02
+	db $01, $02, $02, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02
+	db $01, $02, $01, $02, $01, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $88
 Func_055_423b:
 	ld a, [wcd45]
 	and a
@@ -188,9 +204,12 @@ ColorAnimPointers_055_4282:
 	dw ColorAnimData_055_4288_4289
 	dw ColorAnimData_055_4288_4289
 ColorAnimData_055_4288:
-	dr $154288, $154289
+	db $ff
 ColorAnimData_055_4288_4289:
-	dr $154289, $1542c6
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $ff
 Func_055_42c6:
 	ld hl, wc000
 	ld bc, $0028
@@ -256,11 +275,20 @@ SpriteFramePointers_055_4316:
 	dw SpriteFrameData_055_431c_4335
 	dw SpriteFrameData_055_431c_4382
 SpriteFrameData_055_431c:
-	dr $15431c, $154335
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
 SpriteFrameData_055_431c_4335:
-	dr $154335, $154382
+	db $00, $30, $00, $00, $00, $38, $02, $00, $10, $00, $04, $00, $10, $08, $06, $00
+	db $10, $10, $08, $00, $10, $18, $0a, $00, $10, $20, $0c, $00, $10, $28, $0e, $00
+	db $10, $30, $10, $00, $10, $38, $12, $00, $10, $40, $14, $00, $20, $08, $16, $00
+	db $20, $10, $18, $00, $20, $18, $1a, $00, $20, $20, $1c, $00, $20, $28, $1e, $00
+	db $20, $30, $20, $00, $20, $38, $22, $00, $20, $40, $24, $00, $ff
 SpriteFrameData_055_431c_4382:
-	dr $154382, $1543cb
+	db $00, $20, $26, $00, $00, $28, $28, $00, $00, $30, $2a, $00, $00, $38, $2c, $00
+	db $00, $40, $2e, $00, $10, $00, $30, $00, $10, $08, $32, $00, $10, $10, $34, $00
+	db $10, $18, $36, $00, $10, $20, $38, $00, $10, $28, $3a, $00, $10, $30, $3c, $00
+	db $10, $38, $3e, $00, $10, $40, $40, $00, $20, $10, $42, $00, $20, $18, $44, $00
+	db $20, $20, $46, $00, $20, $28, $48, $00, $ff
 Func_055_43cb:
 	ld hl, wVisibleObjects
 	ld bc, $0100
@@ -318,7 +346,7 @@ Palette_055_43ea:
 	RGB 0, 0, 0
 ; TODO: unreferenced data block, classify type
 unk_055_442a:
-	dr $15442a, $154432
+	ds 8
 Palette_055_4432:
 	RGB 17, 17, 17
 	RGB 0, 0, 0
@@ -354,7 +382,7 @@ Palette_055_4432:
 	RGB 0, 0, 0
 ; TODO: unreferenced data block, classify type
 unk_055_4472:
-	dr $154472, $15447a
+	ds 8
 Tilemap_055_447a:
 INCBIN "gfx/tilemaps/tilemap_055_447a.tilemap"
 Attrmap_055_46ba:
@@ -458,19 +486,35 @@ G4_0B_ObjectEvents:
 
 ; TODO: unreferenced data block, classify type
 unk_055_545a:
-	dr $15545a, $155479
-
+	checkbit wEventFlags + 7, $03, Script_055_5464
+	setmap $0c, $00
+	end2
+Script_055_5464:
+	setmap $0c, $03
+	end2
+Script_055_5468:
+	face FACE_DOWN
+	move MovementData_OneDown
+	clearplayerpos
+	spritewalk  1, MOVE_UP
+	spriteface  1, FACE_DOWN
+	end
+Script_055_5475:
+	setmap $0c, $02
+	end2
 G4_0C_ObjectEvents:
 	object_event $08,  8,  5, wEventFlags + 7, $02, $01, $00, $00, Script_055_54b3
 	object_event $1f,  6,  5, 0, $00, $00, $00, $01, Script_055_5536
 	object_event $1e,  6,  7, 0, $00, $00, $00, $02, Script_055_553a
 	objects_end
 
-Script_055_549b:
-	dr $15549b, $1554a7
+ObjSprite_055_549b:
+	object_event $60,  6,  8, 0, $00, $00, $00, $03, Script_055_53f0
+	objects_end
 
-Script_055_54a7:
-	dr $1554a7, $1554b3
+ObjSprite_055_54a7:
+	object_event $60,  6,  7, 0, $00, $00, $00, $04, Script_055_53f0
+	objects_end
 
 Script_055_54b3:
 	ifcharindex $00, Script_055_54c1
@@ -487,9 +531,9 @@ Script_055_54c1:
 	emote $02, $04
 	delay $03, $20
 	stext text_55_63b0
-	loadobjsprite Script_055_549b
+	loadobjsprite ObjSprite_055_549b
 	delay $03, $10
-	loadobjsprite Script_055_54a7
+	loadobjsprite ObjSprite_055_54a7
 	clearobject $04
 	spriteface  5, FACE_UP
 	spriteface  6, FACE_LEFT
@@ -606,8 +650,12 @@ G4_0E_ObjectEvents2:
 
 ; TODO: unreferenced data block, classify type
 unk_055_5658:
-	dr $155658, $155666
-
+	checkbit wEventFlags + 8, $03, Script_055_5662
+	setmap $0e, $01
+	end
+Script_055_5662:
+	setmap $0e, $03
+	end
 Script_055_5666:
 	spriteface  2, FACE_RIGHT
 	stext text_55_6b4c
@@ -660,11 +708,15 @@ G4_05_ObjectEvents2:
 	objects_end
 ; $155704
 
-Script_055_5704:
-	dr $155704, $155710
+ObjSprite_055_5704:
+	object_event $48,  6,  3, 0, $00, $00, $00, $00, Script_055_53f0
+	objects_end
 
-Script_055_5710:
-	dr $155710, $15571d
+ObjSprite_055_5710:
+	object_event $56,  6,  0, 0, $00, $00, $00, $00, Script_055_53f0
+	objects_end
+Script_055_571c:
+	end
 
 Script_055_571d:
 	setmap $05, $00
@@ -725,16 +777,16 @@ Script_055_5721:
 	clearobject $03
 	face FACE_UP
 	stext text_55_6eb9
-	loadobjsprite Script_055_5704
+	loadobjsprite ObjSprite_055_5704
 	objmove $02, Script_055_7f17
 	clearobject $02
-	loadobjsprite Script_055_5704
+	loadobjsprite ObjSprite_055_5704
 	objmove $02, Script_055_7f40
 	clearobject $02
-	loadobjsprite Script_055_5704
+	loadobjsprite ObjSprite_055_5704
 	objmove $02, MovementData_055_7f6d
 	clearobject $02
-	loadobjsprite Script_055_5710
+	loadobjsprite ObjSprite_055_5710
 	objmove $02, Script_055_7c94
 	emote $00, $00
 	delay $03, $20
@@ -1135,7 +1187,14 @@ Script_055_7d36:
 	dr $157d36, $157d7f
 
 MovementData_055_7d7f:
-	dr $157d7f, $157df6
+	db $ff, $00, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00
+	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $ff, $ff, $ff, $00, $ff, $00, $ff, $ff
+	db $ff, $00, $ff, $ff, $ff, $00, $ff, $ff, $ff, $00, $ff, $ff, $ff, $ff, $00, $ff
+	db $00, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $00, $01, $ff, $01, $00, $01, $00
+	db $01, $ff, $01, $00, $01, $00, $01, $00, $01, $00, $01, $ff, $02, $00, $02, $00
+	db $02, $ff, $02, $00, $02, $00, $02, $00, $02, $ff, $02, $00, $04, $00, $04, $ff
+	db $04, $00, $04, $00, $04, $00, $04, $ff, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $88
 
 Script_055_7df6:
 	dr $157df6, $157e6b
@@ -1150,5 +1209,14 @@ Script_055_7f40:
 	dr $157f40, $157f6d
 
 MovementData_055_7f6d:
-	dr $157f6d, $157fff
+	db $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04
+	db $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04
+	db $fc, $04, $fc, $04, $fd, $04, $fc, $04, $88, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00
 

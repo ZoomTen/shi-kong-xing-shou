@@ -1,5 +1,43 @@
 Func_024_4000:
-	dr $90000, $90053
+	ld a, [wdcbb]
+	and a
+	jr nz, .asm_4011
+	xor a
+	ld [wPlayerSpriteID], a
+	ld a, $01
+	ld [wcd24], a
+	jr .asm_4037
+.asm_4011
+	ld a, [wd9dd]
+	cp $03
+	jr nz, .asm_4024
+	ld hl, wdd18
+	ld a, [hl]
+	cp $80
+	jr nz, .asm_4024
+	ld a, $08
+	jr .asm_4027
+.asm_4024
+	ld a, [wd9dd]
+.asm_4027
+	ld de, unk_024_4041
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld [wPlayerSpriteID], a
+	ld a, [hli]
+	ld [wcd24], a
+.asm_4037
+	call InitPlayerAnim
+	farcall Func_004_42ac
+	ret
+
+unk_024_4041:
+	db $00, $10, $02, $03, $04, $05, $06, $07
+	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f
+	db $36, $07
 
 Func_024_4053:
 	ld de, unk_024_6d77
@@ -743,7 +781,8 @@ Func_024_4b04:
 	ret
 ; TODO: indexed data table, classify type
 unk_024_4be8:
-	dr $90be8, $90c08
+	db $20, $14, $18, $18, $20, $34, $18, $38, $20, $54, $18, $58, $20, $74, $18, $78
+	db $48, $14, $40, $18, $48, $34, $40, $38, $48, $54, $40, $58, $48, $74, $40, $78
 Func_024_4c08:
 .asm_4c08
 	call Func_024_40b8
@@ -1126,7 +1165,7 @@ Func_024_4ed9:
 	ret
 ; TODO: indexed data table, classify type
 unk_024_4ef5:
-	dr $90ef5, $90efd
+	db $18, $10, $18, $58, $38, $10, $38, $58
 Func_024_4efd:
 	ldh a, [hJoypadPressed]
 	bit 7, a
@@ -2135,15 +2174,38 @@ Func_024_5603:
 .asm_5615
 	ret
 Jumptable_024_5616:
-	dr $91616, $91646
+	dw Func_024_5646
+	dw Func_024_5646
+	dw Func_024_5646
+	dw Func_024_5646
+	dw Func_024_5646
+	dw Func_024_5647
+	dw Func_024_5691
+	dw Func_024_56d5
+	dw Func_024_5719
+	dw Func_024_575d
+	dw Func_024_57e0
+	dw Func_024_5863
+	dw Func_024_5895
+	dw Func_024_58ad
+	dw Func_024_58ca
+	dw Func_024_58e2
+	dw Func_024_58fa
+	dw Func_024_5912
+	dw Func_024_5928
+	dw Func_024_598a
+	dw Func_024_59ec
+	dw Func_024_5646
+	dw Func_024_5646
+	dw Func_024_5a20
 Func_024_5646:
 	ret
-.asm_5647
+Func_024_5647:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2183,16 +2245,16 @@ Func_024_5646:
 	inc hl
 	ld [hl], d
 	ret
-.asm_568b
+Func_024_568b:
 	ld a, $01
 	ld [wd3f9 + 4], a
 	ret
-.asm_5691
+Func_024_5691:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2232,12 +2294,12 @@ Func_024_5646:
 	inc hl
 	ld [hl], d
 	ret
-.asm_56d5
+Func_024_56d5:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2277,12 +2339,12 @@ Func_024_5646:
 	inc hl
 	ld [hl], d
 	ret
-.asm_5719
+Func_024_5719:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2322,12 +2384,12 @@ Func_024_5646:
 	inc hl
 	ld [hl], d
 	ret
-.asm_575d
+Func_024_575d:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2394,12 +2456,12 @@ Func_024_5646:
 	inc hl
 	ld [hl], d
 	ret
-.asm_57e0
+Func_024_57e0:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2466,12 +2528,12 @@ Func_024_5646:
 	inc hl
 	ld [hl], d
 	ret
-.asm_5863
+Func_024_5863:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2490,93 +2552,93 @@ Func_024_5646:
 	ld a, [wd9d8]
 	ld [hl], a
 	ret
-.asm_5895
+Func_024_5895:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	bit 0, a
-	jp z, .asm_58c4
+	jp z, Func_024_58c4
 	res 0, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-.asm_58ad
+Func_024_58ad:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	bit 1, a
-	jr z, .asm_58c4
+	jr z, Func_024_58c4
 	res 1, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-.asm_58c4
+Func_024_58c4:
 	ld a, $01
 	ld [wd3f9 + 4], a
 	ret
-.asm_58ca
+Func_024_58ca:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	bit 4, a
-	jp z, .asm_58c4
+	jp z, Func_024_58c4
 	res 4, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-.asm_58e2
+Func_024_58e2:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	bit 2, a
-	jp z, .asm_58c4
+	jp z, Func_024_58c4
 	res 2, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-.asm_58fa
+Func_024_58fa:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	bit 3, a
-	jp z, .asm_58c4
+	jp z, Func_024_58c4
 	res 3, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-.asm_5912
+Func_024_5912:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	and a
-	jp z, .asm_58c4
+	jp z, Func_024_58c4
 	ld [hl], $00
 	ld a, SFX_4c
 	call PlaySound
 	ret
-.asm_5928
+Func_024_5928:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp nz, .asm_568b
+	jp nz, Func_024_568b
 	ld [hl], $00
 	push bc
 	xor a
@@ -2616,12 +2678,12 @@ Func_024_5646:
 	ld a, SFX_33
 	call PlaySound
 	ret
-.asm_598a
+Func_024_598a:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp nz, .asm_568b
+	jp nz, Func_024_568b
 	ld [hl], $00
 	push bc
 	xor a
@@ -2661,12 +2723,12 @@ Func_024_5646:
 	ld a, SFX_33
 	call PlaySound
 	ret
-.asm_59ec
+Func_024_59ec:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp nz, .asm_568b
+	jp nz, Func_024_568b
 	ld [hl], $00
 	push bc
 	xor a
@@ -2686,12 +2748,12 @@ Func_024_5646:
 	ld a, SFX_33
 	call PlaySound
 	ret
-.asm_5a20
+Func_024_5a20:
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, .asm_568b
+	jp z, Func_024_568b
 	call GetPartyMonPtr
 	ld hl, $0007
 	add hl, bc
@@ -3069,7 +3131,14 @@ Script_024_5f78:
 	dr $91f78, $91f82
 ; TODO: indexed data table, classify type
 unk_024_5f82:
-	dr $91f82, $91ffb
+	db $00, $04, $04, $04, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $03, $03, $03, $04, $04, $04, $04, $04, $04, $04, $04
+	db $04, $04, $04, $05, $05, $05, $0a, $09, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02
 Func_024_5ffb:
 	ld hl, wcde0
 	ld [hl], $00
@@ -3184,7 +3253,7 @@ Func_024_605d:
 	ret
 ; TODO: indexed data table, classify type
 unk_024_6096:
-	dr $92096, $92099
+	db $78, $28, $2d
 Func_024_6099:
 .asm_6099
 	call Func_024_40b8
@@ -3565,7 +3634,7 @@ Func_024_6328:
 	ret
 ; TODO: indexed data table, classify type
 unk_024_6344:
-	dr $92344, $92347
+	db $17, $07, $08
 Func_024_6347:
 	ldh a, [hJoypadPressed]
 	bit 7, a
@@ -4771,7 +4840,7 @@ StartMenu_Input:
 
 ; TODO: indexed data table, classify type
 unk_024_6b9c:
-	dr $92b9c, $92ba1
+	db $02, $07, $14, $12, $15
 
 Func_024_6ba1:
 	ld de, wd1a0
@@ -5104,10 +5173,21 @@ SpriteOAMTemplate_Pointers:
 
 ; TODO: indexed data table, classify type
 unk_024_6d77:
-	dr $92d77, $92e04
+	db $00, $0a, $14, $1e, $14, $0a, $28, $0f, $14, $0a, $0f, $1e, $1e, $14, $0a, $19
+	db $23, $1e, $14, $1e, $05, $14, $0f, $0f, $1e, $23, $14, $14, $23, $14, $23, $1e
+	db $14, $19, $05, $19, $0f, $1e, $14, $1e, $19, $14, $0a, $1e, $23, $14, $05, $05
+	db $28, $14, $19, $14, $0a, $0a, $14, $0a, $14, $19, $05, $0f, $0f, $0f, $14, $14
+	db $1e, $0a, $0f, $0f, $0a, $05, $05, $1e, $23, $0f, $0f, $0a, $0a, $14, $0a, $05
+	db $0f, $0f, $0a, $0a, $0a, $05, $05, $1e, $0f, $0f, $0a, $05, $14, $14, $0a, $1e
+	db $0f, $0a, $05, $0f, $0f, $1e, $19, $1e, $19, $14, $0a, $05, $0f, $14, $0a, $0f
+	db $0f, $0f, $1e, $0f, $0a, $0f, $05, $0a, $14, $0a, $0f, $0f, $28, $14, $0f, $1e
+	db $28, $0a, $0a, $0a, $14, $1e, $14, $0a, $0a, $05, $0a, $0a, $0a
 ; TODO: indexed data table, classify type
 unk_024_6e04:
-	dr $92e04, $92e36
+	db $89, $35, $4d, $6b, $2e, $05, $45, $16, $73, $23, $4c, $22, $07, $78, $19, $40
+	db $81, $77, $5d, $06, $1e, $4f, $75, $0a, $2a, $61, $3b, $32, $68, $85, $88, $5a
+	db $3c, $8c, $48, $66, $44, $54, $26, $50, $8b, $8a, $39, $7b, $3d, $31, $20, $5b
+	db $84, $7d
 Pointers_024_6e36:
 	dr $92e36, $93c10
 

@@ -1,6 +1,6 @@
 ; TODO: structured data table (not graphics), classify records
 unk_05a_4000:
-	dr $168000, $168001
+	end
 
 G4_5D_ObjectEvents:
 	dr $168001, $168023

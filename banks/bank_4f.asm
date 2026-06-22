@@ -578,9 +578,15 @@ Script_04f_457e:
 	end
 
 G3_21_ObjectEvents2:
-	dr $13c582, $13c5ba
+	object_event $3a, 11,  7, 0, $00, $00, $00, $00, Script_04f_455e
+	object_event $42,  8,  8, 0, $00, $00, $00, $01, Script_04f_4576
+	object_event $42, 11, 11, 0, $00, $00, $00, $02, Script_04f_456a
+	object_event $06,  8,  9, wEventFlags + 6, $02, $00, $00, $03, Script_04f_4031
+	object_event $07,  7,  9, wEventFlags + 6, $02, $00, $00, $04, Script_04f_4031
+	objects_end
 ObjSprite_4f_45ba::
-	dr $13c5ba, $13c5c6
+	object_event $44,  5,  8, 0, $00, $00, $00, $01, Script_04f_4576
+	objects_end
 
 Script_04f_45c6::
 	checkbit wEventFlags + 6, $02, Script_04f_463b
@@ -628,34 +634,80 @@ Script_04f_463b:
 	end2
 
 G3_22_ObjectEvents:
-	dr $13c63f, $13c656
+	object_event $40,  4,  5, 0, $00, $00, $00, $00, Script_04f_49cb
+	object_event $3a,  7,  6, 0, $00, $00, $00, $01, Script_04f_49e0
+	objects_end
 
 G3_23_ObjectEvents:
-	dr $13c656, $13c69c
+	object_event $3c,  2,  7, 0, $00, $00, $00, $00, Script_04f_4678
+	object_event $3c,  5,  5, 0, $00, $00, $00, $01, Script_04f_4684
+	object_event $3c,  7,  6, 0, $00, $00, $00, $02, Script_04f_4690
+	objects_end
+
+Script_04f_4678:
+	ifcharindex $03, Script_04f_4680
+	textface text_4f_6267
+	end
+Script_04f_4680:
+	textface text_4f_6922
+	end
+Script_04f_4684:
+	ifcharindex $03, Script_04f_468c
+	textface text_4f_6274
+	end
+Script_04f_468c:
+	textface text_4f_6950
+	end
+Script_04f_4690:
+	ifcharindex $03, Script_04f_4698
+	textface text_4f_6267
+	end
+Script_04f_4698:
+	textface text_4f_69af
+	end
 
 GreenForestP4_ObjectEvents:
-	dr $13c69c, $13c6d4
+	object_event $3a, 11,  7, 0, $00, $00, $00, $00, Script_04f_4950
+	object_event $42,  8,  8, 0, $00, $00, $00, $01, Script_04f_495c
+	object_event $43, 11, 11, 0, $00, $00, $00, $02, Script_04f_4968
+	object_event $36,  9,  8, wEventFlags + 5, $07, $00, $00, $03, Script_04f_4974
+	object_event $07,  9,  7, wEventFlags + 5, $07, $00, $00, $04, Script_04f_4031
+	objects_end
 
 GreenForestP5_ObjectEvents:
-	dr $13c6d4, $13c6eb
+	object_event $40,  4,  5, 0, $00, $00, $00, $00, Script_04f_49cb
+	object_event $3a,  7,  6, 0, $00, $00, $00, $01, Script_04f_49e0
+	objects_end
 
 GreenForestP6_ObjectEvents:
-	dr $13c6eb, $13c70d
+	object_event $3c,  2,  7, 0, $00, $00, $00, $00, Script_04f_49f4
+	object_event $3c,  5,  5, 0, $00, $00, $00, $01, Script_04f_4a00
+	object_event $3d,  7,  6, 0, $00, $00, $00, $02, Script_04f_4a0c
+	objects_end
 
 G3_17_ObjectEvents:
-	dr $13c70d, $13c724
+	object_event $17,  2,  5, 0, $00, $00, $00, $00, Script_04f_4a18
+	object_event $3e,  5,  3, wEventFlags + 5, $02, $00, $06, $01, Script_04f_4a30
+	objects_end
 
 G3_19_ObjectEvents:
-	dr $13c724, $13c73b
+	object_event $13,  6,  6, 0, $00, $00, $06, $00, Script_04f_4a34
+	object_event $25,  8,  4, 0, $00, $00, $00, $01, Script_04f_4a42
+	objects_end
 
 G3_1A_ObjectEvents:
-	dr $13c73b, $13c752
+	object_event $16,  4,  4, 0, $00, $00, $06, $00, Script_04f_4a50
+	object_event $13,  6,  6, 0, $00, $00, $06, $01, Script_04f_4a5e
+	objects_end
 
 G3_1B_ObjectEvents:
-	dr $13c752, $13c75e
+	object_event $18,  8,  4, 0, $00, $00, $07, $00, Script_04f_4a6c
+	objects_end
 
 G3_1C_ObjectEvents:
-	dr $13c75e, $13c775
+	object_event $15,  7,  4, 0, $00, $00, $00, $00, Script_04f_4a70
+	object_event $1b,  4,  4, 0, $00, $00, $06, $01, Script_04f_4ab2
+	objects_end
 
 Script_04f_4775::
 	textface text_4f_55bf
@@ -776,7 +828,8 @@ Script_04f_4821::
 	textface text_4f_5c7d
 	end
 ObjSprite_4f_4825::
-	dr $13c825, $13c831
+	object_event $04,  6,  5, 0, $00, $00, $00, $02, Script_04f_4031
+	objects_end
 
 Script_04f_4831::
 	checkbit wEventFlags + 5, $03, Script_04f_4881
@@ -816,11 +869,14 @@ Script_04f_4881:
 	textface text_4f_5f1f
 	end
 ObjSprite_4f_4885::
-	dr $13c885, $13c891
+	object_event $04,  8, 14, 0, $00, $00, $00, $00, Script_04f_4031
+	objects_end
 ObjSprite_4f_4891::
-	dr $13c891, $13c89d
+	object_event $36, 12, 15, 0, $00, $00, $00, $01, Script_04f_4031
+	objects_end
 ObjSprite_4f_489d::
-	dr $13c89d, $13c8a9
+	object_event $07, 13, 15, 0, $00, $00, $00, $02, Script_04f_4031
+	objects_end
 
 Script_04f_48a9::
 	setplayerchar $00
@@ -1142,7 +1198,12 @@ Script_04f_4ac2::
 	end
 
 BanglinCo1f_ObjectEvents3:
-	dr $13cb3f, $13cb77
+	object_event $45,  2,  2, 0, $00, $00, $00, $00, Script_04f_4775
+	object_event $1f,  1,  6, 0, $00, $00, $00, $01, Script_04f_4b77
+	object_event $25, 10,  4, wEventFlags + 5, $00, $00, $00, $02, Script_04f_477d
+	object_event $14,  9,  8, 0, $00, $00, $09, $03, Script_04f_4782
+	object_event $04,  9,  4, wEventFlags + 5, $00, $00, $09, $03, Script_04f_4031
+	objects_end
 
 Script_04f_4b77:
 	checkbit wEventFlags + 6, $02, Script_04f_4bc6
@@ -1264,7 +1325,9 @@ G3_20_ObjectEvents:
 	dr $13cccb, $13cd58
 
 G3_1F_ObjectEvents2:
-	dr $13cd58, $13cd6f
+	object_event $06,  4,  4, wEventFlags + 6, $01, $00, $00, $00, Script_04f_4031
+	object_event $07,  3,  4, wEventFlags + 6, $01, $00, $00, $01, Script_04f_4031
+	objects_end
 
 Script_04f_4d6f::
 	checkbit wEventFlags + 5, $05, Script_04f_4d86
@@ -1323,9 +1386,42 @@ Script_04f_4dbe::
 INCLUDE "data/text/bank4f_misc.asm"
 
 MovementData_4f_7ae1::
-	dr $13fae1, $13fbd4
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $88, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $88, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $88
 MovementData_04f_7bd4:
-	dr $13fbd4, $13fbf5
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $88
 MovementData_04f_7bf5:
-	dr $13fbf5, $13fcff
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $88, $ff, $ff, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
+	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc
+	db $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $fc, $88, $ff, $00, $fc, $fe, $fc, $fe
+	db $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe
+	db $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fe, $fc, $fe
+	db $fc, $fd, $fc, $fe, $fc, $fe, $88, $ff, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $88, $ff, $01, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03
+	db $fc, $02, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03, $fc, $03
+	db $fc, $03, $fc, $03, $fc, $03, $fc, $02, $fc, $03, $fc, $03, $fc, $03, $fc, $03
+	db $88, $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc
+	db $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd
+	db $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $88
 

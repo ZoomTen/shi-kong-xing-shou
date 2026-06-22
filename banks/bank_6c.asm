@@ -1,5 +1,10 @@
 G6_28_ObjectEvents:
-	dr $1b0000, $1b0010
+	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_06c_400c
+	objects_end
+
+Script_06c_400c:
+	textface text_6c_40a4
+	end
 Script_06c_4010::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
@@ -12,7 +17,16 @@ Script_06c_4021:
 	end
 
 G6_29_ObjectEvents:
-	dr $1b0022, $1b0041
+	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_06c_4039
+	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_06c_403d
+	objects_end
+
+Script_06c_4039:
+	stext text_6c_405d
+	end
+Script_06c_403d:
+	stext text_6c_4075
+	end
 Script_06c_4041::
 	face FACE_UP
 	stext text_6c_405d
@@ -38,7 +52,8 @@ G6_18_ObjectEvents:
 	dr $1b00bb, $1b018c
 
 G6_19_ObjectEvents:
-	dr $1b018c, $1b0198
+	object_event $29,  5,  4, wEventFlags + 21, $06, $00, $00, $00, Script_06c_41a6
+	objects_end
 Script_06c_4198::
 	checkbit wEventFlags + 22, $05, Script_06c_41a2
 	setmap $1b, $00
@@ -130,7 +145,8 @@ Script_06c_41f6:
 	end
 
 ObjSprite_6c_4266::
-	dr $1b0266, $1b0272
+	object_event $59,  5,  8, 0, $00, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_1A_ObjectEvents:
 	dr $1b0272, $1b02db
@@ -203,7 +219,12 @@ Script_06c_439a:
 	end
 
 G6_1D_ObjectEvents:
-	dr $1b039e, $1b03ae
+	object_event $22,  8,  4, 0, $00, $00, $00, $00, Script_06c_43aa
+	objects_end
+
+Script_06c_43aa:
+	textface text_6c_40a4
+	end
 Script_06c_43ae::
 	face FACE_UP
 	spriteface  2, FACE_DOWN
@@ -222,10 +243,26 @@ Script_06c_43c9:
 	end
 
 G6_20_ObjectEvents:
-	dr $1b03ca, $1b03ec
+	object_event $11,  5,  4, wEventFlags + 24, $03, $00, $00, $00, Script_06c_43aa
+	object_event $59,  4,  5, wEventFlags + 24, $03, $00, $00, $01, Script_06c_43aa
+	object_event $29,  5,  5, wEventFlags + 24, $03, $00, $00, $02, Script_06c_43aa
+	objects_end
 
 G6_21_ObjectEvents:
-	dr $1b03ec, $1b041a
+	object_event $11,  3,  4, 0, $00, $00, $00, $00, Script_06c_440e
+	object_event $59,  3,  6, 0, $00, $00, $00, $01, Script_06c_4412
+	object_event $29,  7,  3, 0, $00, $00, $00, $02, Script_06c_4416
+	objects_end
+
+Script_06c_440e:
+	stext text_6c_743e
+	end
+Script_06c_4412:
+	stext text_6c_741a
+	end
+Script_06c_4416:
+	stext text_6c_7476
+	end
 Script_06c_441a::
 	warp6c
 	setplayerchar $00
@@ -358,7 +395,16 @@ Script_06c_4671::
 	end
 
 G6_1C_ObjectEvents:
-	dr $1b06b7, $1b06d6
+	object_event $25,  3,  4, 0, $00, $00, $00, $00, Script_06c_46ce
+	object_event $25,  8,  4, 0, $00, $00, $00, $01, Script_06c_46d2
+	objects_end
+
+Script_06c_46ce:
+	stext text_6c_405d
+	end
+Script_06c_46d2:
+	stext text_6c_4075
+	end
 Script_06c_46d6::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
@@ -437,43 +483,219 @@ G6_07_ObjectEvents2:
 	dr $1b07af, $1b07c6
 
 G6_07_ObjectEvents4:
-	dr $1b07c6, $1b07dd
+	object_event $59,  6,  6, 0, $00, $00, $00, $00, Script_06c_4706
+	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_07_ObjectEvents3:
-	dr $1b07dd, $1b07ff
+	object_event $58,  5,  6, 0, $00, $00, $00, $00, Script_06c_47e9
+	objects_end
+
+Script_06c_47e9:
+	checkbit wEventFlags + 19, $03, Script_06c_47f0
+	end
+Script_06c_47f0:
+	ifcharindex $01, Script_06c_47fb
+	stext text_6c_5bde
+	stext text_6c_5c09
+	end
+Script_06c_47fb:
+	stext text_6c_61cf
+	end
 
 G6_0C_ObjectEvents:
-	dr $1b07ff, $1b0858
+	object_event $19,  6,  9, 0, $00, $00, $09, $00, Script_06c_4890
+	object_event $16,  8, 27, 0, $00, $00, $0b, $01, Script_06c_4894
+	object_event $14, 11,  6, 0, $00, $00, $06, $02, Script_06c_48a2
+	object_event $17, 18, 18, 0, $00, $00, $08, $03, Script_06c_48a6
+	object_event $13,  9, 17, 0, $00, $00, $0a, $04, Script_06c_48aa
+	object_event $1c, 28, 19, 0, $00, $00, $08, $00, Script_06c_48ae
+	object_event $15, 28,  5, 0, $00, $00, $0a, $01, Script_06c_48b2
+	object_event $22, 23, 12, 0, $00, $00, $09, $02, Script_06c_48c0
+	objects_end
 
 G6_0C_ObjectEvents2:
-	dr $1b0858, $1b08ce
+	object_event $0e, 18,  5, 0, $00, $00, $00, $00, Script_06c_4706
+	object_event $12, 15,  5, 0, $00, $00, $00, $01, Script_06c_4706
+	object_event $1b, 20,  5, 0, $00, $00, $00, $02, Script_06c_4706
+	object_event $19, 16,  7, 0, $00, $00, $00, $03, Script_06c_4706
+	object_event $15, 18,  7, 0, $00, $00, $00, $04, Script_06c_4706
+	objects_end
+
+Script_06c_4890:
+	textface text_6c_517a
+	end
+Script_06c_4894:
+	checkbit wEventFlags + 18, $04, Script_06c_489e
+	textface text_6c_5197
+	end
+Script_06c_489e:
+	textface text_6c_5996
+	end
+Script_06c_48a2:
+	textface text_6c_51ff
+	end
+Script_06c_48a6:
+	textface text_6c_5265
+	end
+Script_06c_48aa:
+	textface text_6c_52bf
+	end
+Script_06c_48ae:
+	textface text_6c_5317
+	end
+Script_06c_48b2:
+	checkbit wEventFlags + 18, $04, Script_06c_48bc
+	textface text_6c_5368
+	end
+Script_06c_48bc:
+	textface text_6c_59cb
+	end
+Script_06c_48c0:
+	checkbit wEventFlags + 18, $04, Script_06c_48ca
+	textface text_6c_53e5
+	end
+Script_06c_48ca:
+	textface text_6c_5a48
+	end
 
 G6_0D_ObjectEvents:
-	dr $1b08ce, $1b08e5
+	object_event $70,  6,  2, wEventFlags + 19, $03, $01, $00, $00, Script_06c_4706
+	object_event $16,  6,  4, wEventFlags + 19, $03, $01, $00, $01, Script_06c_4f14
+	objects_end
 
 G6_0D_ObjectEvents3:
-	dr $1b08e5, $1b08f1
+	object_event $70,  6,  2, wEventFlags + 19, $03, $01, $00, $00, Script_06c_4706
+	objects_end
 
 G6_10_ObjectEvents2:
-	dr $1b08f1, $1b0901
+	object_event $29,  3,  5, 0, $00, $00, $00, $00, Script_06c_48fd
+	objects_end
+
+Script_06c_48fd:
+	textface text_6c_64f3
+	end
 
 G6_14_ObjectEvents:
-	dr $1b0901, $1b0918
+	object_event $02,  3,  5, wEventFlags + 19, $04, $00, $00, $00, Script_06c_498b
+	object_event $03,  3,  4, wEventFlags + 19, $04, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_11_ObjectEvents:
-	dr $1b0918, $1b092f
+	object_event $04,  3,  4, wEventFlags + 19, $05, $00, $00, $00, Script_06c_49ab
+	object_event $05,  3,  3, wEventFlags + 19, $05, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_15_ObjectEvents:
-	dr $1b092f, $1b0946
+	object_event $06,  3,  5, wEventFlags + 19, $06, $00, $00, $00, Script_06c_49cb
+	object_event $07,  3,  4, wEventFlags + 19, $06, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_12_ObjectEvents:
-	dr $1b0946, $1b095d
+	object_event $08,  3,  4, wEventFlags + 19, $07, $00, $00, $00, Script_06c_49eb
+	object_event $09,  3,  3, wEventFlags + 19, $07, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_16_ObjectEvents:
-	dr $1b095d, $1b0974
+	object_event $0a,  3,  5, wEventFlags + 21, $00, $00, $00, $00, Script_06c_4a0b
+	object_event $0b,  3,  4, wEventFlags + 21, $00, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_17_ObjectEvents:
-	dr $1b0974, $1b0a4b
+	object_event $0c,  7,  4, wEventFlags + 21, $01, $00, $00, $00, Script_06c_4a2b
+	object_event $0d,  7,  3, wEventFlags + 21, $01, $00, $00, $01, Script_06c_4706
+	objects_end
+
+Script_06c_498b:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_652a
+	clearplayerpos
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	scr_62 $01, $01
+	setbit wEventFlags + 19, $04
+	end
+Script_06c_49ab:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_6542
+	clearplayerpos
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	scr_62 $02, $01
+	setbit wEventFlags + 19, $05
+	end
+Script_06c_49cb:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_6566
+	clearplayerpos
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	scr_62 $03, $01
+	setbit wEventFlags + 19, $06
+	end
+Script_06c_49eb:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_659b
+	clearplayerpos
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	scr_62 $04, $01
+	setbit wEventFlags + 19, $07
+	end
+Script_06c_4a0b:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_65bf
+	clearplayerpos
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	scr_62 $05, $01
+	setbit wEventFlags + 21, $00
+	end
+Script_06c_4a2b:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_661f
+	clearplayerpos
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	scr_62 $06, $01
+	setbit wEventFlags + 21, $01
+	end
 Script_06c_4a4b::
 	checkbit wEventFlags + 19, $04, Script_06c_4a64
 	clearplayerpos
@@ -644,30 +866,43 @@ Script_06c_4b9c:
 	end
 
 G6_13_ObjectEvents:
-	dr $1b0bff, $1b0c0b
+	object_event $0e,  8,  3, 0, $00, $00, $00, $00, Script_06c_4706
+	objects_end
 ObjSprite_6c_4c0b::
-	dr $1b0c0b, $1b0c17
+	object_event $50,  9,  3, 0, $00, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_22_ObjectEvents:
-	dr $1b0c17, $1b0c2e
+	object_event $19,  3,  6, 0, $00, $00, $08, $00, Script_06c_4daa
+	object_event $16,  9,  5, 0, $00, $00, $00, $01, Script_06c_4db8
+	objects_end
 
 G6_23_ObjectEvents:
-	dr $1b0c2e, $1b0c45
+	object_event $20,  4,  4, 0, $00, $00, $07, $00, Script_06c_4dc6
+	object_event $1f,  6,  4, 0, $00, $00, $00, $01, Script_06c_4dca
+	objects_end
 
 G6_24_ObjectEvents:
-	dr $1b0c45, $1b0c5c
+	object_event $1b,  9,  6, 0, $00, $00, $00, $00, Script_06c_4dce
+	object_event $1a,  4,  6, 0, $00, $00, $09, $01, Script_06c_4dd2
+	objects_end
 
 G6_27_ObjectEvents:
-	dr $1b0c5c, $1b0c68
+	object_event $24,  4,  5, 0, $00, $00, $00, $00, Script_06c_4dd6
+	objects_end
 
 G6_2B_ObjectEvents4:
-	dr $1b0c68, $1b0c74
+	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4cc1
+	objects_end
 
 G6_2B_ObjectEvents:
-	dr $1b0c74, $1b0c80
+	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4cc1
+	objects_end
 
 G6_2B_ObjectEvents3:
-	dr $1b0c80, $1b0c97
+	object_event $5a,  5,  4, 0, $00, $00, $00, $00, Script_06c_4cc1
+	object_event $58,  6,  4, 0, $00, $00, $00, $00, Script_06c_4ceb
+	objects_end
 Script_06c_4c97::
 	checkbit wEventFlags + 18, $04, Script_06c_4ca1
 	setmap $2b, $00
@@ -758,10 +993,130 @@ unk_06c_4d4f::
 	dr $1b0d4f, $1b0d66
 
 G6_26_ObjectEvents:
-	dr $1b0d66, $1b0d72
+	object_event $58,  4,  4, wEventFlags + 18, $04, $00, $00, $00, Script_06c_4ea3
+	objects_end
 
 G6_26_ObjectEvents2:
-	dr $1b0d72, $1b0eba
+	dr $1b0d72, $1b0daa
+Script_06c_4daa:
+	checkbit wEventFlags + 18, $04, Script_06c_4db4
+	textface text_6c_542b
+	end
+Script_06c_4db4:
+	textface text_6c_5a95
+	end
+Script_06c_4db8:
+	checkbit wEventFlags + 18, $04, Script_06c_4dc2
+	textface text_6c_547d
+	end
+Script_06c_4dc2:
+	textface text_6c_5b0a
+	end
+Script_06c_4dc6:
+	textface text_6c_54d1
+	end
+Script_06c_4dca:
+	textface text_6c_553e
+	end
+Script_06c_4dce:
+	textface text_6c_559c
+	end
+Script_06c_4dd2:
+	textface text_6c_55f6
+	end
+Script_06c_4dd6:
+	checkbit wEventFlags + 18, $06, Script_06c_4de0
+	textface text_6c_5634
+	end
+
+Script_06c_4de0:
+	checkbit wEventFlags + 18, $07, Script_06c_4dea
+	textface text_6c_5ee0
+	end
+
+Script_06c_4dea:
+	checkbit wEventFlags + 19, $00, Script_06c_4e2b
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	stext text_6c_5f30
+	spriteface  2, FACE_UP
+	spritewalk  2, MOVE_UP
+	spritewalk  2, MOVE_UP
+	spriteface  2, FACE_RIGHT
+	objmove $02, MovementData_06c_7944
+	spriteface  2, FACE_DOWN
+	spriteface  2, FACE_LEFT
+	objmove $02, MovementData_06c_7913
+	spriteface  2, FACE_DOWN
+	spritewalk  2, MOVE_DOWN
+	spritewalk  2, MOVE_DOWN
+	stext text_6c_5f4d
+	scr_48 $02, $27
+	listdec $02, $26
+	setbit wEventFlags + 19, $00
+	end
+
+Script_06c_4e2b:
+	textface text_6c_5634
+	end
+
+Script_06c_4e2f:
+	checkbit wEventFlags + 18, $04, Script_06c_4e39
+	textface text_6c_5682
+	end
+
+Script_06c_4e39:
+	textface text_6c_5b7e
+	end
+
+Script_06c_4e3d:
+	ifcharindex $01, Script_06c_4e4b
+	stext text_6c_5bde
+	stext text_6c_5be7
+	stext text_6c_5c09
+	end
+
+Script_06c_4e4b:
+	checkbit wEventFlags + 18, $05, Script_06c_4e9f
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	textface text_6c_5c1f
+	stext text_6c_5c59
+	stext text_6c_5c77
+	stext text_6c_5cdc
+	stext text_6c_5d1f
+	emote  2, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_6c_5d34
+	stext text_6c_5d9e
+	stext text_6c_5da7
+	spriteface  2, FACE_UP
+	spritewalk  2, MOVE_UP
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	stext text_6c_5db2
+	spriteface  3, FACE_LEFT
+	spritewalk  3, MOVE_LEFT
+	spriteface  3, FACE_UP
+	spritewalk  3, MOVE_UP
+	spritewalk  3, MOVE_UP
+	clearobject $03
+	setmap $2b, $02
+	setbit wEventFlags + 18, $06
+	stext text_6c_5dd0
+	end
+
+Script_06c_4e9f:
+	stext text_6c_5e58
+	end
+Script_06c_4ea3:
+	textface text_6c_56d4
+	textface text_6c_5755
+	setbit wEventFlags + 23, $06
+	end
+	dr $1b0eae, $1b0eba
 Script_06c_4eba::
 	checkbit wEventFlags + 19, $01, Script_06c_4ed0
 	face FACE_DOWN
@@ -857,7 +1212,8 @@ Script_06c_4f39:
 	end
 
 unk_06c_4f9e::
-	dr $1b0f9e, $1b0faa
+	object_event $59,  3,  9, 0, $00, $00, $00, $01, Script_06c_4706
+	objects_end
 
 G6_1F_ObjectEvents:
 	dr $1b0faa, $1b0ffd
@@ -963,16 +1319,36 @@ INCLUDE "data/text/bank6c_5682.asm"
 INCLUDE "data/text/bank6c_5fef.asm"
 INCLUDE "data/text/bank6c_6045.asm"
 MovementData_06c_7913:
-	dr $1b3913, $1b3944
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $88
 MovementData_06c_7944:
-	dr $1b3944, $1b3964
+	db $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04
+	db $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04
 MovementData_06c_7964:
-	dr $1b3964, $1b3975
+	db $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04
+	db $88
 MovementData_06c_7975:
-	dr $1b3975, $1b3995
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 MovementData_06c_7995:
-	dr $1b3995, $1b39a6
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $88
 MovementData_06c_79a6:
-	dr $1b39a6, $1b39d7
+	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00
+	db $ff, $00, $ff, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fd, $00, $fd, $00, $fd, $00, $fd, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $88
 MovementData_06c_79d7:
-	dr $1b39d7, $1b3a80
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $88, $04, $a4, $40, $0a, $a4, $da
+	db $01, $5d, $7a, $35, $0d, $09, $09, $04, $5d, $40, $0a, $a3, $da, $03, $69, $7a
+	db $37, $09, $09, $04, $75, $40, $0a, $a3, $da, $03, $75, $7a, $36, $09, $09, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00

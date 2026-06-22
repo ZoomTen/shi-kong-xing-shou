@@ -477,7 +477,7 @@ TheEndPalette:
 	RGB 0, 0, 0
 ; TODO: unreferenced data block, classify type
 unk_071_5dec:
-	dr $1c5dec, $1c5df4
+	ds 8
 TheEndGfx:
 INCBIN "gfx/misc/theendgfx.bin"
 

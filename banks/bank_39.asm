@@ -4,8 +4,28 @@ Func_039_40a0:
 	dr $e40a0, $e41fb
 ; TODO
 asm_039_41fb:
-	dr $e41fb, $e422b
-; TODO
+	ldh a, [hJoypadPressed]
+	bit 1, a
+	ret z
+	ld a, SFX_11
+	call PlaySound
+	ld a, [_BANKNUM]
+	ld [wBattleScriptBank], a
+	ld a, $02
+	ld [wBattleScriptState], a
+	ld hl, wBattleScriptPos
+	ld [hl], LOW(unk_039_4224)
+	inc hl
+	ld [hl], HIGH(unk_039_4224)
+	xor a
+	ld [wBattleScriptByte], a
+	ld a, $01
+	ldh [hFFC6], a
+	xor a
+	ldh [hFFC5], a
+	ret
+unk_039_4224:
+	db $08, $14, $4c, $11, $17, $09, $40
 Func_039_422b:
 	dr $e422b, $e479f
 
@@ -147,7 +167,7 @@ Func_039_4892::
 	ld [wTextboxPos], a
 	ld a, $01
 	ld [wBattleScriptState], a
-	ld a, [$7FFF]
+	ld a, [_BANKNUM]
 	ld [wBattleScriptBank], a
 .asm_48af
 	call DelayFrame

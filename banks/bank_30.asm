@@ -2869,7 +2869,13 @@ Pointers_030_565c:
 	dr $c18b8, $c18f8
 
 Pointers_030_58f8:
-	dr $c18f8, $c1906
+	dw SubImage_030_5906
+	dw SubImage_030_5968
+	dw SubImage_030_59ca
+	dw SubImage_030_5a2c
+	dw SubImage_030_5a8e
+	dw SubImage_030_5af0
+	dw SubImage_030_5b52
 GFX_030_5906:
 SubImage_030_5906:
 	dw .e - .d
@@ -3069,10 +3075,10 @@ Func_030_5c85:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_5cf7:
-	dr $c1cf7, $c1cff
+	db $03, $04, $05, $00, $05, $00, $05, $ff
 ; TODO: indexed data table, classify type
 unk_030_5cff:
-	dr $c1cff, $c1d09
+	db $d0, $08, $d0, $18, $d0, $00, $d0, $20, $d0, $10
 Func_030_5d09:
 	ld bc, wd1a8
 .asm_5d0c
@@ -3201,7 +3207,7 @@ Func_30_5dc1:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_5dce:
-	dr $c1dce, $c1dd8
+	db $f8, $00, $00, $10, $04, $20, $fc, $08, $04, $18
 Func_030_5dd8:
 	ld bc, wd1a8
 	ld hl, $0004
@@ -3296,7 +3302,7 @@ Func_030_5dd8:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_5e69:
-	dr $c1e69, $c1e79
+	db $04, $fc, $fc, $04, $04, $04, $fc, $fc, $00, $04, $00, $fc, $fc, $04, $04, $04
 Func_030_5e79:
 	ld a, [wd9ae]
 	and a
@@ -3411,13 +3417,24 @@ Func_030_5e79:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_5f2a:
-	dr $c1f2a, $c1f3e
+	db $40, $60, $10, $10, $50, $70, $20, $20, $38, $80, $08, $30, $58, $68, $28, $18
+	db $58, $80, $28, $30
 ; TODO: indexed data table, classify type
 unk_030_5f3e:
-	dr $c1f3e, $c1f8f
+	db $ff, $ff, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe
+	db $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe
+	db $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe
+	db $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe
+	db $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe
+	db $88
 ; TODO: indexed data table, classify type
 unk_030_5f8f:
-	dr $c1f8f, $c1fe0
+	db $00, $01, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02
+	db $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02
+	db $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02
+	db $01, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02
+	db $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02
+	db $88
 Func_030_5fe0:
 	ld a, [wd9ae]
 	and a
@@ -3518,13 +3535,13 @@ Func_030_5fe0:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_607b:
-	dr $c207b, $c2087
+	db $10, $18, $40, $68, $20, $40, $50, $90, $30, $28, $60, $78
 ; TODO: indexed data table, classify type
 unk_030_6087:
-	dr $c2087, $c2093
+	db $10, $28, $40, $78, $30, $18, $60, $68, $20, $40, $50, $90
 ; TODO: indexed data table, classify type
 unk_030_6093:
-	dr $c2093, $c209f
+	db $20, $28, $50, $68, $30, $38, $60, $78, $10, $40, $40, $90
 Func_030_609f:
 	ld a, [wd9ae]
 	and a
@@ -4186,13 +4203,25 @@ Func_030_63a8:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_64c8:
-	dr $c24c8, $c24cc
+	db $20, $28, $50, $78
 ; TODO: indexed data table, classify type
 unk_030_64cc:
-	dr $c24cc, $c24d0
+	db $40, $a0, $10, $50
 ; TODO: indexed data table, classify type
 unk_030_64d0:
-	dr $c24d0, $c2591
+	db $ff, $00, $fd, $ff, $fd, $fe, $fd, $fd, $fd, $fd, $fe, $fd, $fe, $fd, $fe, $fd
+	db $ff, $fd, $ff, $fd, $ff, $fd, $00, $fd, $ff, $fd, $00, $fd, $00, $fd, $00, $fd
+	db $01, $fd, $00, $fd, $01, $fd, $02, $fd, $01, $fd, $02, $fd, $01, $fd, $03, $fd
+	db $03, $fd, $03, $fe, $03, $fe, $03, $fe, $03, $ff, $03, $00, $03, $ff, $03, $00
+	db $03, $00, $03, $01, $03, $01, $03, $01, $03, $02, $03, $02, $03, $03, $03, $03
+	db $02, $04, $03, $04, $01, $04, $02, $04, $00, $04, $01, $04, $00, $04, $00, $04
+	db $ff, $04, $ff, $04, $fc, $04, $fc, $03, $fc, $03, $fc, $02, $fc, $01, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $fe, $fc, $fe, $fc, $ff, $fc, $fc, $fc, $fc, $fe, $fc
+	db $ff, $fc, $ff, $fc, $00, $fc, $01, $fc, $02, $fc, $03, $fc, $04, $fc, $04, $fd
+	db $04, $ff, $04, $ff, $04, $00, $05, $01, $05, $02, $05, $05, $04, $05, $02, $05
+	db $01, $05, $fe, $05, $fc, $05, $fb, $04, $fb, $01, $fb, $00, $fb, $fe, $fb, $fc
+	db $fd, $fb, $00, $fb, $03, $fb, $04, $fc, $05, $ff, $04, $04, $00, $05, $fb, $03
+	db $88
 Func_030_6591:
 	ld bc, wd1a8
 .asm_6594
@@ -4389,10 +4418,10 @@ Func_030_6591:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_66c9:
-	dr $c26c9, $c26d5
+	db $30, $28, $70, $78, $30, $18, $70, $68, $30, $38, $70, $88
 ; TODO: indexed data table, classify type
 unk_030_66d5:
-	dr $c26d5, $c26e1
+	db $80, $a0, $50, $d0, $80, $90, $50, $e0, $80, $b0, $50, $f0
 Func_030_66e1:
 	ld a, [wd9ae]
 	and a
@@ -4582,10 +4611,12 @@ Func_030_671c:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_67f2:
-	dr $c27f2, $c2804
+	db $20, $30, $01, $50, $60, $01, $10, $30, $02, $40, $60, $02, $30, $30, $02, $60
+	db $60, $02
 ; TODO: indexed data table, classify type
 unk_030_6804:
-	dr $c2804, $c2816
+	db $50, $30, $01, $20, $60, $01, $40, $30, $02, $10, $60, $02, $60, $30, $02, $30
+	db $60, $02
 Func_030_6816:
 	ld a, [wd9ae]
 	and a
@@ -4688,7 +4719,7 @@ Func_030_6816:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_68b2:
-	dr $c28b2, $c28be
+	db $54, $68, $24, $18, $4c, $78, $1c, $28, $4c, $88, $30, $38
 Func_030_68be:
 	ldh a, [hFadeFrameCounter]
 	and $03
@@ -4897,10 +4928,16 @@ Func_030_693a:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_69f1:
-	dr $c29f1, $c2a09
+	db $30, $78, $00, $20, $30, $88, $00, $30, $30, $70, $00, $18, $30, $80, $00, $28
+	db $30, $68, $00, $10, $30, $90, $00, $38
 ; TODO: indexed data table, classify type
 unk_030_6a09:
-	dr $c2a09, $c2a5e
+	db $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $ff, $00, $fd, $01, $fd, $01, $fd, $01, $fd, $02, $fd, $02, $fe, $03, $fe, $03
+	db $02, $02, $01, $02, $02, $01, $02, $02, $02, $01, $02, $01, $02, $01, $02, $01
+	db $02, $00, $00, $02, $fe, $02, $fe, $02, $fe, $02, $ff, $02, $00, $02, $ff, $02
+	db $03, $03, $03, $02, $88
 Func_030_6a5e:
 	ld a, [wd9ae]
 	and a
@@ -4980,7 +5017,12 @@ Func_030_6a5e:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_6adb:
-	dr $c2adb, $c2b36
+	db $ff, $00, $fd, $00, $fd, $00, $fd, $00, $fd, $01, $fd, $00, $fd, $01, $fd, $02
+	db $fd, $02, $ff, $02, $ff, $02, $01, $02, $01, $02, $02, $02, $02, $01, $02, $01
+	db $02, $00, $02, $01, $02, $00, $02, $01, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $00, $02, $fd, $00, $fd, $00, $fd, $01, $fd, $03, $ff, $03, $01, $02
+	db $01, $02, $02, $02, $02, $01, $02, $01, $02, $00, $02, $01, $00, $02, $fe, $01
+	db $fe, $02, $ff, $03, $01, $03, $02, $02, $02, $01, $88
 Func_030_6b36:
 	ld a, [wd9ae]
 	cp $01
@@ -5091,7 +5133,7 @@ Func_30_6bcb:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_6bee:
-	dr $c2bee, $c2bf2
+	db $40, $60, $10, $10
 Func_030_6bf2:
 	ld a, [wd9ae]
 	cp $01
@@ -5322,7 +5364,7 @@ Func_030_6d38:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_6d6f:
-	dr $c2d6f, $c2d76
+	db $01, $02, $03, $03, $02, $01, $ff
 Func_030_6d76:
 	ld bc, wd1a0
 .asm_6d79
@@ -5399,7 +5441,9 @@ Func_030_6d76:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_6df1:
-	dr $c2df1, $c2e19
+	db $40, $60, $10, $10, $50, $70, $20, $20, $60, $58, $30, $08, $48, $88, $18, $38
+	db $48, $68, $18, $20, $60, $80, $30, $30, $40, $68, $10, $18, $50, $70, $20, $20
+	db $60, $80, $30, $30, $48, $88, $18, $38
 Func_030_6e19:
 	ldh a, [hFadeFrameCounter]
 	and $07
@@ -5482,7 +5526,7 @@ Func_030_6e5a:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_6e94:
-	dr $c2e94, $c2ea0
+	db $40, $78, $10, $28, $40, $68, $10, $18, $40, $88, $10, $38
 Func_030_6ea0:
 	ld a, [wd9ae]
 	inc a
@@ -5605,7 +5649,8 @@ Func_030_6ec2:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_6f68:
-	dr $c2f68, $c2f88
+	db $30, $80, $00, $18, $30, $88, $00, $20, $30, $90, $00, $28, $30, $98, $00, $30
+	db $30, $a0, $00, $38, $30, $a8, $00, $40, $30, $b0, $00, $48, $30, $b8, $00, $50
 Func_030_6f88:
 	ld a, [hFadeFrameCounter]
 	and $07
@@ -7106,12 +7151,12 @@ Func_030_784c:
 	ret
 ; TODO: indexed data table, classify type
 unk_030_7981:
-	dr $c3981, $c398d
+	db $30, $28, $50, $78, $30, $18, $50, $68, $30, $38, $50, $88
 ; TODO: indexed data table, classify type
 unk_030_798d:
-	dr $c398d, $c3999
+	db $f0, $70, $f0, $20, $f0, $60, $f0, $10, $f0, $80, $f0, $30
 ; TODO: unreferenced data block, classify type
 unk_030_7999:
-	dr $c3999, $c39a0
+	ds 7
 
 

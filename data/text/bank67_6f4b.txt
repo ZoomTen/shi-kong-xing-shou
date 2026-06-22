@@ -1,0 +1,120 @@
+@org $67, $6f4b:
+	init NAME_2F, PIC_58;
+@org $67, $6f4e:
+	text "⋯⋯⋯";
+	line "";
+	done;
+
+@org $67, $6f54:
+	init NAME_2E, PIC_57;
+@org $67, $6f57:
+	text "⋯⋯⋯";
+	line "";
+	done;
+
+@org $67, $6f5d:
+	init NAME_2D, PIC_56;
+@org $67, $6f60:
+	text "⋯⋯⋯";
+	done;
+
+@org $67, $6f65:
+	init NAME_31, PIC_5A;
+@org $67, $6f68:
+	text "⋯⋯⋯";
+	done;
+
+@org $67, $6f6d:
+	init NAME_2D, PIC_56;
+@org $67, $6f70:
+	text "啊﹗是你啊﹗";
+	line "這個送你⚬";
+	done;
+
+@org $67, $6f86:
+	init NAME_BALLOT, PIC_2E;
+@org $67, $6f89:
+	text "得到干擾電波⚬";
+	done;
+
+@org $67, $6f97:
+	init NAME_2D, PIC_56;
+@org $67, $6f9a:
+	text "路上小心﹗";
+	done;
+
+@org $67, $6fa5:
+	init NAME_2E, PIC_57;
+@org $67, $6fa8:
+	text "需要治療嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $67, $6fb7:
+	init NAME_2F, PIC_58;
+@org $67, $6fba:
+	text "需要治療嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $67, $6fc9:
+	init NAME_31, PIC_5A;
+@org $67, $6fcc:
+	text "需要治療嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $67, $6fdb:
+	init NAME_2E, PIC_57;
+@org $67, $6fde:
+	text "這裡是怪獸膠囊";
+	line "";
+	db $f1, $39; #"存"
+	text "放銀行⚬";
+	line "需要服務嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $67, $7002:
+	init NAME_31, PIC_5A;
+@org $67, $7005:
+	text "遇上你真好⚬";
+	line "這就當做是";
+	line "見面禮好了⚬";
+	line "";
+	done;
+
+@org $67, $7025:
+	init NAME_BALLOT, PIC_2E;
+@org $67, $7028:
+	text "得到祕技";
+	db $f1, $2a; #"１"
+	text "";
+	db $b1; #"?"
+	db $f1, $53; #"⚬"
+	done;
+
+@org $67, $7036:
+	init NAME_31, PIC_5A;
+@org $67, $7039:
+	text "遇上你真好⚬";
+	done;
+
+@org $67, $7044:
+	init NAME_2F, PIC_58;
+@org $67, $7047:
+	text "終於有人聽懂我";
+	line "的話了⚬";
+	line "這個送你⚬";
+	line "";
+	done;
+
+@org $67, $7069:
+	init NAME_BALLOT, PIC_2E;
+@org $67, $706c:
+	text "得到神奇果實";
+	db $f1, $53; #"⚬"
+	text "";
+	done;
+
+@org $67, $7079:
+	init NAME_2F, PIC_58;
+@org $67, $707c:
+	text "謝謝你﹗";
+	done;

@@ -1,12 +1,14 @@
 ; TODO: structured data table (not graphics), classify records
 unk_058_4000:
-	dr $160000, $160001
+	end
 
 G4_38_ObjectEvents:
 	dr $160001, $160023
 
 G4_39_ObjectEvents:
-	dr $160023, $1600ea
+	dr $160023, $1600e9
+Script_058_40e9::
+	end
 
 G4_17_ObjectEvents:
 G4_1E_ObjectEvents:
@@ -28,10 +30,18 @@ G4_19_ObjectEvents:
 	dr $160210, $1604e2
 
 G4_52_ObjectEvents2:
-	dr $1604e2, $16050f
+	object_event $06,  8,  6, 0, $00, $00, $00, $00, Script_058_40e9
+	object_event $69,  6,  6, 0, $00, $00, $00, $01, Script_058_40e9
+	object_event $69,  6,  7, 0, $00, $00, $00, $02, Script_058_40e9
+	object_event $69,  6,  8, 0, $00, $00, $00, $03, Script_058_40e9
+	objects_end
 
 G4_19_ObjectEvents2:
-	dr $16050f, $16053c
+	object_event $06,  8,  6, wEventFlags + 24, $01, $00, $00, $00, Script_058_40e9
+	object_event $69,  6,  6, wEventFlags + 24, $01, $00, $00, $01, Script_058_40e9
+	object_event $69,  6,  7, wEventFlags + 24, $01, $00, $00, $02, Script_058_40e9
+	object_event $69,  6,  8, wEventFlags + 24, $01, $00, $00, $03, Script_058_40e9
+	objects_end
 
 G4_14_ObjectEvents:
 	dr $16053c, $1605e9

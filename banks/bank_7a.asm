@@ -480,11 +480,15 @@ AnimSeqPointers_07a_446f:
 	dw AnimSeqData_07a_4489_44c2
 	dw AnimSeqData_07a_4489_44c2
 AnimSeqData_07a_4489:
-	dr $1e8489, $1e848a
+	db $ff
 AnimSeqData_07a_4489_448a:
-	dr $1e848a, $1e84c2
+	db $00, $00, $01, $01, $02, $02, $03, $03, $04, $04, $05, $05, $06, $06, $07, $07
+	db $08, $08, $00, $00, $01, $01, $02, $02, $03, $03, $04, $04, $05, $05, $06, $06
+	db $07, $07, $08, $08, $00, $00, $01, $01, $02, $02, $03, $03, $04, $04, $05, $05
+	db $06, $06, $07, $07, $08, $08, $88, $ff
 AnimSeqData_07a_4489_44c2:
-	dr $1e84c2, $1e84d6
+	db $09, $09, $0a, $0a, $09, $09, $0a, $0a, $09, $09, $0b, $0b, $0a, $0b, $0b, $0b
+	db $0b, $0c, $99, $ff
 Func_07a_44d6:
 	ld a, [wcd60]
 	and a
@@ -751,41 +755,72 @@ SpriteLayoutPointers_07a_4629:
 	dw SpriteLayoutData_07a_4643_4722
 	dw SpriteLayoutData_07a_4643_476e
 SpriteLayoutData_07a_4643:
-	dr $1e8643, $1e8664
+	db $00, $00, $00, $00, $00, $08, $00, $00, $00, $10, $00, $00, $00, $18, $00, $00
+	db $10, $00, $00, $00, $10, $08, $00, $00, $10, $10, $00, $00, $10, $18, $00, $00
+	db $ff
 SpriteLayoutData_07a_4643_4664:
-	dr $1e8664, $1e8669
+	db $00, $08, $00, $00, $ff
 SpriteLayoutData_07a_4643_4669:
-	dr $1e8669, $1e8672
+	db $00, $00, $02, $00, $00, $08, $04, $00, $ff
 SpriteLayoutData_07a_4643_4672:
-	dr $1e8672, $1e867b
+	db $00, $00, $06, $00, $00, $08, $08, $00, $ff
 SpriteLayoutData_07a_4643_467b:
-	dr $1e867b, $1e8684
+	db $00, $00, $0a, $00, $00, $08, $0c, $00, $ff
 SpriteLayoutData_07a_4643_4684:
-	dr $1e8684, $1e868d
+	db $00, $00, $0e, $00, $00, $08, $10, $00, $ff
 SpriteLayoutData_07a_4643_468d:
-	dr $1e868d, $1e8696
+	db $00, $00, $12, $00, $00, $08, $14, $00, $ff
 SpriteLayoutData_07a_4643_4696:
-	dr $1e8696, $1e869f
+	db $00, $00, $16, $00, $00, $08, $18, $00, $ff
 SpriteLayoutData_07a_4643_469f:
-	dr $1e869f, $1e86a8
+	db $00, $00, $1a, $00, $00, $08, $1c, $00, $ff
 SpriteLayoutData_07a_4643_46a8:
-	dr $1e86a8, $1e86e5
+	db $00, $10, $00, $00, $00, $18, $02, $01, $00, $20, $04, $01, $08, $08, $06, $01
+	db $08, $28, $08, $00, $10, $10, $0a, $01, $10, $18, $0c, $01, $10, $20, $0e, $01
+	db $18, $00, $10, $01, $18, $08, $12, $01, $18, $28, $14, $01, $18, $30, $16, $00
+	db $20, $10, $18, $01, $20, $18, $1a, $01, $20, $20, $1c, $01, $ff
 SpriteLayoutData_07a_4643_46e5:
-	dr $1e86e5, $1e8722
+	db $00, $10, $1e, $00, $00, $18, $20, $01, $00, $20, $22, $01, $08, $08, $24, $01
+	db $08, $28, $26, $00, $10, $10, $28, $01, $10, $18, $2a, $01, $10, $20, $2c, $01
+	db $18, $00, $2e, $01, $18, $08, $30, $01, $18, $28, $32, $01, $18, $30, $34, $00
+	db $20, $10, $36, $01, $20, $18, $38, $01, $20, $20, $3a, $01, $ff
 SpriteLayoutData_07a_4643_4722:
-	dr $1e8722, $1e876e
+	db $00, $08, $3c, $00, $00, $10, $3e, $00, $00, $18, $40, $00, $00, $20, $42, $00
+	db $00, $28, $44, $00, $10, $00, $46, $00, $10, $08, $48, $00, $10, $10, $4a, $00
+	db $10, $18, $4c, $00, $10, $20, $4e, $00, $10, $28, $50, $00, $10, $30, $52, $00
+	db $20, $00, $54, $00, $20, $08, $56, $00, $20, $10, $58, $00, $20, $18, $5a, $00
+	db $20, $20, $5c, $00, $20, $28, $5e, $00, $20, $30, $60, $00
 SpriteLayoutData_07a_4643_476e:
-	dr $1e876e, $1e87c7
+	db $00, $10, $62, $00, $00, $18, $64, $00, $00, $20, $66, $00, $08, $08, $68, $00
+	db $08, $28, $6a, $00, $10, $00, $6c, $00, $10, $10, $6e, $00, $10, $18, $70, $00
+	db $10, $20, $72, $00, $10, $30, $74, $00, $18, $08, $76, $00, $18, $28, $78, $00
+	db $20, $00, $7a, $00, $20, $10, $7c, $00, $20, $18, $7e, $00, $20, $20, $80, $00
+	db $20, $30, $82, $00, $28, $08, $84, $00, $28, $28, $86, $00, $30, $10, $88, $00
+	db $30, $18, $8a, $00, $30, $20, $8c, $00, $ff
 AttrMap_07a_47c7:
 INCBIN "gfx/attrmaps/attrmap_07a_47c7.bin"
 BGMap_07a_492f:
 INCBIN "gfx/bgmaps/bgmap_07a_492f.bin"
 Palette_07a_4a97:
-	dr $1e8a97, $1e8aaf
+	RGB 31, 31, 31
+	RGB 13, 28, 23
+	RGB 0, 16, 12
+	RGB 0, 0, 3
+	RGB 25, 25, 25
+	RGB 31, 31, 31
+	RGB 0, 27, 31
+	RGB 0, 12, 31
+	RGB 31, 31, 31
+	RGB 0, 22, 31
+	RGB 0, 12, 25
+	RGB 0, 0, 0
 GFX_07a_4aaf:
 INCBIN "gfx/misc/gfx_07a_4aaf.2bpp"
 Palette_07a_530f:
-	dr $1e930f, $1e9317
+	RGB 25, 25, 25
+	RGB 31, 31, 31
+	RGB 0, 27, 31
+	RGB 0, 12, 31
 GFX_07a_5317:
 INCBIN "gfx/misc/gfx_07a_5317.2bpp"
 AttrMap_07a_54f7:
@@ -793,7 +828,18 @@ INCBIN "gfx/attrmaps/attrmap_07a_54f7.bin"
 BGMap_07a_565f:
 INCBIN "gfx/bgmaps/bgmap_07a_565f.bin"
 Palette_07a_57c7:
-	dr $1e97c7, $1e97df
+	RGB 31, 31, 31
+	RGB 31, 16, 0
+	RGB 31, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 31, 0
+	RGB 22, 22, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 0, 22, 31
+	RGB 0, 12, 25
+	RGB 0, 0, 0
 GFX_07a_57df:
 INCBIN "gfx/misc/gfx_07a_57df.2bpp"
 Intro1_Attrmap:
@@ -801,11 +847,25 @@ INCBIN "gfx/attrmaps/intro1_attrmap.bin"
 Intro1_Layout:
 	dr $1ea057, $1ea1bf
 Intro1_Palette:
-	dr $1ea1bf, $1ea1cf
+	RGB 31, 31, 31
+	RGB 0, 27, 31
+	RGB 0, 12, 31
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 25, 20, 25
+	RGB 14, 8, 14
+	RGB 0, 0, 0
 Intro1_GFX:
 INCBIN "gfx/misc/intro1_gfx.2bpp"
 Intro1_OBPalette:
-	dr $1ea62f, $1ea63f
+	RGB 16, 16, 16
+	RGB 31, 31, 7
+	RGB 31, 17, 0
+	RGB 31, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 31, 0
+	RGB 22, 22, 0
+	RGB 0, 0, 0
 Intro1_OBGFX:
 INCBIN "gfx/misc/intro1_obgfx.2bpp"
 Intro2_Attrmap:
@@ -813,7 +873,18 @@ INCBIN "gfx/attrmaps/intro2_attrmap.bin"
 Intro2_Layout:
 	dr $1eb087, $1eb1ef
 Intro2_Palette:
-	dr $1eb1ef, $1eb207
+	RGB 31, 31, 31
+	RGB 0, 27, 31
+	RGB 0, 12, 31
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 31, 0
+	RGB 22, 22, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 16, 0
+	RGB 31, 0, 0
+	RGB 0, 0, 0
 Intro2_GFX:
 INCBIN "gfx/misc/intro2_gfx.bin"
 

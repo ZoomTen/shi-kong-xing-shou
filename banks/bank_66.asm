@@ -57,7 +57,8 @@ Script_066_40c5:
 	end2
 
 G5_02_ObjectEvents3:
-	dr $1980c9, $1980d5
+	object_event $57, 26, 25, wEventFlags + 17, $00, $00, $00, $00, Script_066_40d5
+	objects_end
 
 Script_066_40d5::
 	walkpath
@@ -91,7 +92,8 @@ Script_066_40d5::
 	end
 
 ObjSprite_66_4128::
-	dr $198128, $198134
+	object_event $71, 26, 25, 0, $00, $00, $00, $01, Script_066_41f2
+	objects_end
 ObjSprite_66_4134::
 	dr $198134, $198172
 
@@ -100,7 +102,8 @@ Script_066_4172::
 	end
 
 G5_18_ObjectEvents:
-	dr $198176, $198182
+	object_event $62,  7,  3, wEventFlags + 14, $07, $00, $00, $00, Script_066_4182
+	objects_end
 
 Script_066_4182::
 	textface text_66_4dd7
@@ -181,7 +184,17 @@ Script_066_420e:
 	end
 
 G5_07_ObjectEvents:
-	dr $19820f, $19827e
+	object_event $14, 33,  8, 0, $00, $00, $00, $00, Script_066_428a
+	object_event $17, 26,  7, 0, $00, $00, $00, $01, Script_066_428e
+	object_event $1c, 21, 10, 0, $00, $00, $00, $02, Script_066_42a0
+	object_event $1a, 27,  5, 0, $00, $00, $00, $03, Script_066_42ee
+	object_event $16, 26, 16, 0, $00, $00, $00, $04, Script_066_4323
+	object_event $13,  5,  7, 0, $00, $00, $00, $00, Script_066_4331
+	object_event $15,  8, 17, 0, $00, $00, $00, $01, Script_066_4335
+	object_event $19,  3, 13, 0, $00, $00, $00, $02, Script_066_4339
+	object_event $16,  7,  3, 0, $00, $00, $0b, $03, Script_066_433d
+	object_event $23,  3,  4, wEventFlags + 15, $04, $00, $00, $01, Script_066_427e
+	objects_end
 
 Script_066_427e::
 	ifcharindex $05, Script_066_4286
@@ -345,9 +358,12 @@ G5_1F_ObjectEvents2:
 	objects_end
 
 G5_1F_ObjectEvents:
-	dr $1983ba, $1983d1
+	object_event $20,  4,  3, 0, $00, $00, $00, $00, Script_066_43dd
+	object_event $19,  5,  5, wEventFlags + 17, $02, $00, $00, $01, Script_066_4444
+	objects_end
 ObjSprite_66_43d1::
-	dr $1983d1, $1983dd
+	object_event $19,  4,  4, 0, $00, $00, $00, $01, Script_066_4440
+	objects_end
 
 Script_066_43dd::
 	checkbit wEventFlags + 17, $02, Script_066_43e7
@@ -415,7 +431,8 @@ Script_066_4444::
 	end
 
 G5_27_ObjectEvents4:
-	dr $19846a, $198476
+	object_event $19,  6,  6, wEventFlags + 17, $04, $00, $00, $00, Script_066_41f2
+	objects_end
 
 G5_27_ObjectEvents3:
 	object_event $73,  6,  6, 0, $00, $00, $00, $00, Script_066_41f2
@@ -558,7 +575,10 @@ Script_066_45c6::
 	end
 
 G5_12_ObjectEvents:
-	dr $1985cd, $1985ef
+	object_event $15, 10,  6, 0, $00, $00, $06, $00, Script_066_45ef
+	object_event $1d,  4,  4, wEventFlags + 15, $00, $00, $00, $01, Script_066_45f3
+	object_event $1d,  3,  4, wEventFlags + 15, $00, $01, $00, $01, Script_066_45f7
+	objects_end
 
 Script_066_45ef::
 	textface text_66_576f
@@ -1028,10 +1048,14 @@ Script_066_4a98:
 	end
 
 ObjSprite_66_4a9c::
-	dr $198a9c, $198aa8
+	object_event $23,  4, 10, 0, $00, $00, $00, $03, Script_066_41f2
+	objects_end
 
 G5_1D_ObjectEvents2:
-	dr $198aa8, $198aca
+	object_event $18,  6,  5, 0, $00, $00, $00, $00, Script_066_47b2
+	object_event $0e,  5,  5, wEventFlags + 15, $04, $00, $00, $01, Script_066_41f2
+	object_event $0f,  5,  4, wEventFlags + 15, $04, $00, $00, $02, Script_066_41f2
+	objects_end
 Script_066_4aca::
 	checkbit wEventFlags + 15, $06, Script_066_4ad4
 	setmap $15, $00
@@ -1042,7 +1066,9 @@ Script_066_4ad4:
 	end2
 
 G5_0E_ObjectEvents2:
-	dr $198ad8, $198aef
+	object_event $0e,  5,  4, wEventFlags + 18, $00, $00, $00, $00, Script_066_41f2
+	object_event $0f,  5,  5, wEventFlags + 18, $00, $00, $00, $01, Script_066_41f2
+	objects_end
 Script_066_4aef::
 	checkbit wEventFlags + 18, $00, Script_066_4b20
 	setplayerchar $00
@@ -1066,11 +1092,15 @@ Script_066_4b20:
 	end2
 
 G5_0B_ObjectEvents:
-	dr $198b24, $198b3b
+	object_event $62, 14,  3, wEventFlags + 18, $01, $00, $00, $00, Script_066_4b53
+	object_event $74, 14,  2, wEventFlags + 18, $01, $01, $00, $01, Script_066_41f2
+	objects_end
 ObjSprite_66_4b3b::
-	dr $198b3b, $198b47
+	object_event $74, 14,  0, 0, $00, $00, $00, $00, Script_066_41f2
+	objects_end
 ObjSprite_66_4b47::
-	dr $198b47, $198b53
+	object_event $75,  4,  0, 0, $00, $00, $00, $02, Script_066_41f2
+	objects_end
 
 Script_066_4b53::
 	walkpath
@@ -1164,9 +1194,12 @@ Script_066_4bc9::
 	end
 
 G5_1D_ObjectEvents3:
-	dr $198c3e, $198c55
+	object_event $0e,  4,  4, 0, $00, $00, $00, $00, Script_066_41f2
+	object_event $0f,  3,  4, 0, $00, $00, $00, $01, Script_066_41f2
+	objects_end
 ObjSprite_66_4c55::
-	dr $198c55, $198c61
+	object_event $50,  5,  0, 0, $00, $00, $00, $02, Script_066_41f2
+	objects_end
 
 G5_0D_ObjectEvents:
 	object_event $0e,  4,  2, 0, $00, $00, $00, $00, Script_066_4bc5
@@ -1193,20 +1226,41 @@ Script_066_4c9e:: ; farjump2 target (bank_67)
 INCLUDE "data/text/bank66_4ca2.asm"
 INCLUDE "data/text/bank66_4d45.asm"
 MovementData_066_7cc7:
-	dr $19bcc7, $19bd04
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $03, $00, $03, $00, $03, $00, $03, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $05, $00, $05, $00, $06, $00
+	db $00, $00, $00, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88
 MovementData_066_7d04:
-	dr $19bd04, $19bd15
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $88
 MovementData_066_7d15:
-	dr $19bd15, $19bd36
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $88
 MovementData_066_7d36:
-	dr $19bd36, $19bd47
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $88
 MovementData_066_7d47:
-	dr $19bd47, $19bd7e
+	db $ff, $00, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $ff, $ff, $ff, $00
+	db $ff, $ff, $ff, $00, $ff, $ff, $00, $ff, $00, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $00, $01, $ff, $02, $00, $02, $ff, $02, $00, $02, $ff, $04, $00
+	db $04, $ff, $04, $ff, $06, $00, $88
 MovementData_066_7d7e:
-	dr $19bd7e, $19bdb7
+	db $ff, $00, $fe, $00, $fe, $01, $fe, $00, $fe, $01, $fe, $00, $ff, $01, $ff, $00
+	db $ff, $01, $ff, $00, $ff, $01, $00, $01, $00, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $00, $01, $01, $02, $00, $02, $01, $02, $00, $02, $01, $02, $00
+	db $02, $00, $04, $01, $04, $01, $06, $00, $88
 MovementData_066_7db7:
-	dr $19bdb7, $19bde0
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88
 MovementData_066_7de0:
-	dr $19bde0, $19be09
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
+	db $04, $00, $04, $00, $04, $00, $04, $00, $88
 MovementData_066_7e09:
-	dr $19be09, $19be50
+	db $ff, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $00, $ff, $00, $ff, $00, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $00, $01, $ff, $02, $00, $02, $ff, $02, $00, $02, $ff
+	db $02, $00, $02, $ff, $02, $00, $02, $00, $04, $ff, $04, $00, $04, $ff, $88, $00
+	db $00, $00, $00, $00, $00, $00, $00

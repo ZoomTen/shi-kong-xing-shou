@@ -9,7 +9,9 @@ G4_4C_ObjectEvents:
 	dr $170061, $170083
 
 G4_4B_ObjectEvents:
-	dr $170083, $17011d
+	dr $170083, $17011c
+Script_05c_411c::
+	end
 
 G4_06_ObjectEvents:
 G4_07_ObjectEvents:
@@ -23,7 +25,9 @@ G4_64_ObjectEvents:
 	objects_end
 
 G4_44_ObjectEvents2:
-	dr $17011e, $170135
+	object_event $1e, 11,  6, wEventFlags + 23, $04, $00, $00, $00, Script_05c_411c
+	object_event $53, 12,  7, wEventFlags + 23, $04, $00, $00, $01, Script_05c_411c
+	objects_end
 Script_05c_4135:: ; farjump2 target (bank_55)
 	setmap $44, $03
 	spriteface  3, FACE_UP
@@ -44,7 +48,8 @@ G4_45_ObjectEvents:
 	dr $17015c, $1701a5
 
 G4_4E_ObjectEvents2:
-	dr $1701a5, $1701b1
+	object_event $65,  5,  3, 0, $00, $00, $00, $00, Script_05c_411c
+	objects_end
 
 G4_4E_ObjectEvents:
 	dr $1701b1, $170254
@@ -59,7 +64,12 @@ G4_48_ObjectEvents:
 	dr $1702de, $1702fd
 
 G4_49_ObjectEvents:
-	dr $1702fd, $17030d
+	object_event $1b,  4,  5, 0, $00, $00, $06, $00, Script_05c_4309
+	objects_end
+
+Script_05c_4309:
+	textface text_5c_5035
+	end
 
 G4_4D_ObjectEvents:
 	dr $17030d, $17035f
@@ -68,7 +78,9 @@ G4_0A_ObjectEvents2:
 	dr $17035f, $170494
 
 G4_4D_ObjectEvents2:
-	dr $170494, $1704ab
+	object_event $08,  9,  6, wEventFlags + 9, $03, $00, $00, $00, Script_05c_411c
+	object_event $09, 10,  6, wEventFlags + 9, $03, $00, $00, $01, Script_05c_411c
+	objects_end
 
 G4_4E_ObjectEvents3:
 	dr $1704ab, $17058c
@@ -326,7 +338,7 @@ BGPals_5c:
 	RGB 0, 0, 0
 ; TODO: unreferenced data block, classify type
 unk_5c_57d1:
-	dr $1717d1, $1717d9
+	ds 8
 Attrmap_5c:
 INCBIN "gfx/attrmaps/attrmap_5c.bin"
 Tilemap_5c:

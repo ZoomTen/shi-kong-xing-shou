@@ -2,23 +2,44 @@
 G7_0A_ObjectEvents:
 	objects_end
 G7_09_ObjectEvents:
-	dr $1b8002, $1b8019
+	object_event $27,  5,  4, 0, $00, $00, $00, $00, $0000
+	object_event $28,  6,  4, 0, $00, $00, $00, $01, $0000
+	objects_end
 G7_03_ObjectEvents2:
-	dr $1b8019, $1b8030
+	object_event $00, 14,  4, 0, $00, $00, $00, $00, $0000
+	object_event $11, 15,  4, 0, $00, $00, $00, $01, $0000
+	objects_end
 G7_08_ObjectEvents:
-	dr $1b8030, $1b8047
+	object_event $0e,  3,  4, 0, $00, $00, $00, $00, $0000
+	object_event $18,  5,  4, 0, $00, $00, $00, $01, $0000
+	objects_end
 G7_07_ObjectEvents:
-	dr $1b8047, $1b8069
+	object_event $35,  4,  4, 0, $00, $00, $00, $00, $0000
+	object_event $06,  5,  3, 0, $00, $00, $00, $01, $0000
+	object_event $04,  6,  4, 0, $00, $00, $00, $02, $0000
+	objects_end
 G7_06_ObjectEvents:
-	dr $1b8069, $1b808b
+	object_event $59,  6,  6, 0, $00, $00, $00, $00, $0000
+	object_event $58,  5,  6, 0, $00, $00, $00, $01, $0000
+	object_event $02,  5,  4, 0, $00, $00, $00, $02, $0000
+	objects_end
 G7_05_ObjectEvents:
-	dr $1b808b, $1b80ad
+	object_event $0c,  9,  3, 0, $00, $00, $00, $00, $0000
+	object_event $1e,  8,  4, 0, $00, $00, $00, $01, $0000
+	object_event $1a, 10,  4, 0, $00, $00, $00, $02, $0000
+	objects_end
 G7_04_ObjectEvents:
-	dr $1b80ad, $1b80c4
+	object_event $31, 10,  3, 0, $00, $00, $00, $00, $0000
+	object_event $69,  9,  4, 0, $00, $00, $00, $01, $0000
+	objects_end
 G7_03_ObjectEvents:
-	dr $1b80c4, $1b80d0
+	object_event $08,  6,  3, 0, $00, $00, $00, $00, $0000
+	objects_end
 G7_01_ObjectEvents:
-	dr $1b80d0, $1b80f2
+	object_event $5a,  7,  3, 0, $00, $00, $00, $00, $0000
+	object_event $11,  3,  4, 0, $00, $00, $00, $01, $0000
+	object_event $59,  3,  6, 0, $00, $00, $00, $02, $0000
+	objects_end
 G7_02_ObjectEvents:
 	dr $1b80f2, $1b9069
 G7_09_MapAttributes:

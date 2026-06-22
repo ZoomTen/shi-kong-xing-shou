@@ -2372,7 +2372,8 @@ Func_05e_5408:
 	call PlaceTilemap_Bank0
 	ret
 RacingMinigame_RowPtrs:
-	dr $17943e, $179442
+	dw RacingMinigame_BannerRowA
+	dw RacingMinigame_BannerRowB
 RacingMinigame_Attrmap0:
 INCBIN "gfx/attrmaps/racingminigame_attrmap0.bin"
 RacingMinigame_Tilemap0:

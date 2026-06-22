@@ -1,12 +1,16 @@
 ; TODO: structured data table (not graphics), classify records
 unk_059_4000:
-	dr $164000, $164005
-
+	setmap $2a, $00
+	end
+Script_059_4004:
+	end
 G4_41_ObjectEvents:
 	dr $164005, $164027
 
 G4_40_ObjectEvents:
-	dr $164027, $1640ca
+	dr $164027, $1640c9
+Script_059_40c9::
+	end
 
 G4_1A_ObjectEvents:
 G4_1B_ObjectEvents:
@@ -50,7 +54,10 @@ G4_1D_ObjectEvents:
 	dr $164504, $1645b2
 
 G4_24_ObjectEvents4:
-	dr $1645b2, $1645d4
+	object_event $4d,  6,  3, 0, $00, $00, $00, $00, Script_059_40c9
+	object_event $62,  6,  4, 0, $00, $00, $00, $01, Script_059_40c9
+	object_event $62,  7,  4, 0, $00, $00, $00, $02, Script_059_40c9
+	objects_end
 
 G4_24_ObjectEvents:
 	dr $1645d4, $164686

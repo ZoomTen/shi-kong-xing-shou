@@ -1045,7 +1045,7 @@ ShowLevelUp:
 	ld a, $2d
 	ld [wd3ff], a
 	farcall Func_02d_4000
-	farcall Func_04a_4098
+	farcall LearnLevelUpMove
 	ret
 
 DrawLevelUpStats:

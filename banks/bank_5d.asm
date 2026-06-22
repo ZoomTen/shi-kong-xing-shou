@@ -438,7 +438,7 @@ BGMap_5d_43EE:
 INCBIN "gfx/bgmaps/bgmap_5d_43ee.bin"
 ; TODO: indexed data table, classify type
 unk_5d_43F2:
-	dr $1743f2, $1743f5
+	db $e1, $e3, $e5
 Func_5d_43f5:
 	ld a, [wcd46 + 1]
 	and a
@@ -664,27 +664,27 @@ RhythmPattern_Pointers:
 	dw RhythmPatterns_4573
 	dw RhythmPatterns_457a
 RhythmPatterns:
-	dr $17454f, $174550
+	db $ff
 RhythmPatterns_4550:
-	dr $174550, $174557
+	db $01, $01, $01, $02, $02, $02, $ff
 RhythmPatterns_4557:
-	dr $174557, $17455b
+	db $03, $03, $03, $88
 RhythmPatterns_455b:
-	dr $17455b, $17455f
+	db $04, $04, $04, $88
 RhythmPatterns_455f:
-	dr $17455f, $174563
+	db $05, $05, $05, $88
 RhythmPatterns_4563:
-	dr $174563, $174567
+	db $06, $06, $06, $88
 RhythmPatterns_4567:
-	dr $174567, $17456b
+	db $07, $07, $07, $88
 RhythmPatterns_456b:
-	dr $17456b, $17456f
+	db $08, $08, $08, $88
 RhythmPatterns_456f:
-	dr $17456f, $174573
+	db $09, $09, $09, $88
 RhythmPatterns_4573:
-	dr $174573, $17457a
+	db $0a, $0a, $0a, $0b, $0b, $0b, $ff
 RhythmPatterns_457a:
-	dr $17457a, $174581
+	db $0c, $0c, $0c, $0d, $0d, $0d, $ff
 Func_5d_4581:
 	ldh a, [hJoypadPressed]
 	bit 0, a
@@ -962,7 +962,11 @@ Func_5d_477d:
 	ld [wcd45], a
 	jp Func_5d_475f
 RhythmState_Jumptable:
-	dr $17479c, $1747a6
+	dw Func_5d_47a6
+	dw Func_5d_47aa
+	dw Func_5d_47b8
+	dw Func_5d_47c7
+	dw Func_5d_47d7
 Func_5d_47a6:
 	jp Func_5d_475f
 	ret
@@ -1250,23 +1254,23 @@ SpriteOAM_Pointers:
 	dw SpriteFrames_49C9_4a08
 	dw SpriteFrames_49C9_4a11
 SpriteFrames_49C9:
-	dr $1749c9, $1749d2
+	db $00, $00, $40, $00, $00, $08, $42, $00, $ff
 SpriteFrames_49C9_49d2:
-	dr $1749d2, $1749db
+	db $00, $00, $44, $00, $00, $08, $46, $00, $ff
 SpriteFrames_49C9_49db:
-	dr $1749db, $1749e4
+	db $00, $00, $48, $00, $00, $08, $4a, $00, $ff
 SpriteFrames_49C9_49e4:
-	dr $1749e4, $1749ed
+	db $00, $00, $4c, $00, $00, $08, $4e, $00, $ff
 SpriteFrames_49C9_49ed:
-	dr $1749ed, $1749f6
+	db $00, $00, $50, $00, $00, $08, $52, $00, $ff
 SpriteFrames_49C9_49f6:
-	dr $1749f6, $1749ff
+	db $00, $00, $54, $00, $00, $08, $56, $00, $ff
 SpriteFrames_49C9_49ff:
-	dr $1749ff, $174a08
+	db $00, $00, $58, $00, $00, $08, $5a, $00, $ff
 SpriteFrames_49C9_4a08:
-	dr $174a08, $174a11
+	db $00, $00, $5c, $00, $00, $08, $5e, $00, $ff
 SpriteFrames_49C9_4a11:
-	dr $174a11, $174a1a
+	db $00, $00, $60, $00, $00, $08, $62, $00, $ff
 Func_5d_4a1a:
 	ldh a, [hJoypadDown]
 	and a
@@ -1402,7 +1406,7 @@ RhythmBGPalette:
 	RGB 0, 0, 0
 ; TODO: padding between palettes, confirm
 unk_5d_4AFF_pad:
-	dr $174aff, $174b07
+	ds 8
 RhythmOBJPalette:
 	RGB 21, 21, 21
 	RGB 16, 0, 0
@@ -1438,7 +1442,7 @@ RhythmOBJPalette:
 	RGB 0, 0, 0
 ; TODO: padding between palettes, confirm
 unk_5d_4B47_pad:
-	dr $174b47, $174b4f
+	ds 8
 RhythmScreen1Tilemap:
 INCBIN "gfx/tilemaps/rhythmscreen1tilemap.tilemap"
 RhythmScreen1Attrmap:
@@ -1503,6 +1507,6 @@ RhythmTileChunks:
 	dr $17797b, $1779bb
 ; TODO: padding between palettes, confirm
 unk_5d_79BB_pad:
-	dr $1779bb, $1779c0
+	ds 5
 
 

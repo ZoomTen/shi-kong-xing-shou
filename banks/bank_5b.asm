@@ -412,7 +412,15 @@ Func_5b_42af:
 MiceMinigame_DirStateTable:
 	dr $16c330, $16c33c
 MiceMinigame_StateJumptable:
-	dr $16c33c, $16c34e
+	dw Func_5b_41e1
+	dw Func_5b_4217
+	dw Func_5b_422b
+	dw Func_5b_423f
+	dw Func_5b_4253
+	dw Func_5b_426a
+	dw Func_5b_4281
+	dw Func_5b_4298
+	dw Func_5b_42af
 Func_5b_434e:
 	ld a, [wPlayerFacing]
 	cp $04

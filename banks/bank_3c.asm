@@ -382,9 +382,27 @@ Pointers_03c_4737:
 GameOverGFX:
 INCBIN "gfx/misc/game_over.2bpp"
 Func_03c_4c55:
-	dr $f0c55, $f0c63
+	ld hl, wcd00
+	ld bc, $0100
+.asm_4c5b
+	xor a
+	ld [hli], a
+	dec bc
+	ld a, c
+	or b
+	jr nz, .asm_4c5b
+	ret
 Func_03c_4c63:
-	dr $f0c63, $f0c74
+	ld hl, wc000
+	ld bc, $0028
+	ld de, $0004
+.asm_4c6c
+	ld a, $A0
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .asm_4c6c
+	ret
 
 Func_03c_4c74::
 	call Func_03c_4c55

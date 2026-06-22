@@ -158,7 +158,7 @@ INCBIN "gfx/tilemaps/cutscene06f_tilemapptrs.tilemap"
 Cutscene06f_AttrmapPtrs:
 INCBIN "gfx/attrmaps/cutscene06f_attrmapptrs.bin"
 Cutscene06f_BGPalPtrs:
-	dr $1bc140, $1bc146
+	dw Cutscene06f_BGPal0, Cutscene06f_BGPal1, Cutscene06f_BGPal2
 Cutscene06f_BGGfxPtrs:
 	dw Cutscene06f_BGGfx0
 	dw Cutscene06f_BGGfx1
@@ -168,7 +168,7 @@ Cutscene06f_BGGfx2Ptrs:
 	dw Cutscene06f_BGGfx1
 	dw Cutscene06f_BGGfx2_8800
 Cutscene06f_ObjPalPtrs:
-	dr $1bc152, $1bc158
+	dw Cutscene06f_ObjPal_S0, Cutscene06f_ObjPal_S1, Cutscene06f_ObjPal_S2
 Cutscene06f_ObjGfxPtrs:
 	dw Cutscene06f_ObjGfx0
 	dw Cutscene06f_ObjGfx1
@@ -267,7 +267,10 @@ Func_6f_419f:
 	ld [wd1fb], a
 	ret
 Cutscene06f_ObjectListPtrs:
-	dr $1bc1e0, $1bc1e8
+	dw Cutscene06f_ObjectList0
+	dw Cutscene06f_ObjectList0
+	dw Cutscene06f_ObjectList1
+	dw Cutscene06f_ObjectList2
 Cutscene06f_ObjectList0:
 	dr $1bc1e8, $1bc271
 Cutscene06f_ObjectList1:
