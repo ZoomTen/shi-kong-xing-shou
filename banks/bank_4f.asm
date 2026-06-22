@@ -1261,7 +1261,7 @@ Script_04f_4be9:
 	end
 
 Script_04f_4bed:
-	farjump2 $4005, $4e
+	farjump2 Script_04e_4005
 	end
 Script_04f_4bf2::
 	end

@@ -48,9 +48,91 @@ Script_06c_405c:
 
 INCLUDE "data/text/bank6c_405d.asm"
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_18_ObjectEvents:
-	dr $1b00bb, $1b018c
+	object_event $04,  6, 11, wEventFlags + 21, $07, $00, $00, $00, Script_06c_40e8
+	object_event $06, 10,  6, wEventFlags + 22, $00, $00, $00, $01, Script_06c_4111
+	object_event $02, 10, 15, wEventFlags + 22, $01, $00, $00, $02, Script_06c_413a
+	object_event $0c, 15,  8, wEventFlags + 22, $02, $00, $00, $03, Script_06c_4163
+	objects_end
+Script_06c_40e8:
+	checkbit wEventFlags + 21, $06, Script_06c_40f6
+	textface text_6c_6aa6
+	setbit wEventFlags + 20, $06
+	end
+
+Script_06c_40f6:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6e62
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $02, $01
+	setbit wEventFlags + 21, $07
+	end
+
+Script_06c_4111:
+	checkbit wEventFlags + 21, $06, Script_06c_411f
+	stext text_6c_6ad5
+	setbit wEventFlags + 20, $07
+	end
+
+Script_06c_411f:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6e97
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $03, $01
+	setbit wEventFlags + 22, $00
+	end
+
+Script_06c_413a:
+	checkbit wEventFlags + 21, $06, Script_06c_4148
+	stext text_6c_6b13
+	setbit wEventFlags + 21, $02
+	end
+
+Script_06c_4148:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6ebb
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $01, $01
+	setbit wEventFlags + 22, $01
+	end
+
+Script_06c_4163:
+	checkbit wEventFlags + 21, $06, Script_06c_4171
+	stext text_6c_6b44
+	setbit wEventFlags + 21, $03
+	end
+
+Script_06c_4171:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6ed1
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $06, $01
+	setbit wEventFlags + 22, $02
+	end
 
 G6_19_ObjectEvents:
 	object_event $29,  5,  4, wEventFlags + 21, $06, $00, $00, $00, Script_06c_41a6
@@ -149,9 +231,49 @@ ObjSprite_6c_4266::
 	object_event $59,  5,  8, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_1A_ObjectEvents:
-	dr $1b0272, $1b02db
+	object_event $08,  4,  4, wEventFlags + 22, $03, $00, $00, $00, Script_06c_4289
+	object_event $0a,  7,  4, wEventFlags + 22, $04, $00, $00, $01, Script_06c_42b2
+	objects_end
+Script_06c_4289:
+	checkbit wEventFlags + 21, $06, Script_06c_4297
+	stext text_6c_6bad
+	setbit wEventFlags + 21, $04
+	end
+
+Script_06c_4297:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6f1c
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $04, $01
+	setbit wEventFlags + 22, $03
+	end
+
+Script_06c_42b2:
+	checkbit wEventFlags + 21, $06, Script_06c_42c0
+	stext text_6c_6bf2
+	setbit wEventFlags + 21, $05
+	end
+
+Script_06c_42c0:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6f41
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $05, $01
+	setbit wEventFlags + 22, $04
+	end
 
 G6_1B_ObjectEvents:
 	object_event $0e,  5,  4, wEventFlags + 20, $03, $00, $00, $00, Script_06c_42e7
@@ -332,21 +454,103 @@ Script_06c_441a::
 	setbit wEventFlags + 24, $03
 	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_08_ObjectEvents:
-	dr $1b049b, $1b04c8
+	object_event $5d, 16,  4, wEventFlags + 22, $07, $00, $00, $00, Script_06c_455a
+	object_event $22, 15, 17, 0, $00, $00, $00, $01, Script_06c_7a51
+	object_event $25,  3,  1, 0, $00, $00, $00, $02, Script_06c_7a5e
+	object_event $25,  1, 12, 0, $00, $00, $00, $03, Script_06c_7a6a
+	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_09_ObjectEvents:
-	dr $1b04c8, $1b04f5
+	object_event $5c, 14, 25, wEventFlags + 23, $00, $00, $00, $00, Script_06c_456d
+	object_event $22, 14,  4, 0, $00, $00, $00, $01, Script_06c_7a51
+	object_event $25,  3, 28, 0, $00, $00, $00, $02, Script_06c_7a5e
+	object_event $25,  2, 23, 0, $00, $00, $00, $03, Script_06c_7a6a
+	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_0A_ObjectEvents:
-	dr $1b04f5, $1b0522
+	object_event $50,  4,  3, wEventFlags + 23, $01, $00, $00, $00, Script_06c_4580
+	object_event $22, 16, 25, 0, $00, $00, $00, $01, Script_06c_7a51
+	object_event $25,  4, 13, 0, $00, $00, $00, $02, Script_06c_7a5e
+	object_event $25,  7, 28, 0, $00, $00, $00, $03, Script_06c_7a6a
+	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_0B_ObjectEvents:
-	dr $1b0522, $1b060e
+	object_event $5e,  9, 17, wEventFlags + 23, $02, $00, $00, $00, Script_06c_4596
+	object_event $5f,  9, 17, wEventFlags + 23, $02, $01, $00, $00, Script_06c_4596
+	object_event $22,  1, 16, 0, $00, $00, $00, $01, Script_06c_7a51
+	object_event $25, 10, 28, 0, $00, $00, $00, $02, Script_06c_7a5e
+	object_event $25,  8,  2, 0, $00, $00, $00, $03, Script_06c_7a6a
+	objects_end
+Script_06c_455a:
+	textface text_6c_748f
+	startbattle BattleData_02d_4f85
+	checkbit wEventFlags + 3, $03, Script_06c_473a
+	clearobject $88
+	setbit wEventFlags + 22, $07
+	end
+
+Script_06c_456d:
+	textface text_6c_74d2
+	startbattle BattleData_02d_4fb3
+	checkbit wEventFlags + 3, $03, Script_06c_473a
+	clearobject $88
+	setbit wEventFlags + 23, $00
+	end
+
+Script_06c_4580:
+	textface text_6c_757d
+	startbattle BattleData_02d_4fe1
+	checkbit wEventFlags + 3, $03, Script_06c_473a
+	stext text_6c_7643
+	clearobject $88
+	setbit wEventFlags + 23, $01
+	end
+
+Script_06c_4596:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	checkbit wEventFlags + 23, $02, Script_06c_45c8
+	stext text_6c_765d
+	stext text_6c_76a8
+	startbattle BattleData_02d_500f
+	checkbit wEventFlags + 3, $03, Script_06c_473a
+	stext text_6c_76db
+	clearobject $88
+	loadobjsprite Script_06c_4659
+	clearobject $88
+	loadobjsprite ObjSprite_6c_4665
+	clearobject $88
+	loadobjsprite Script_06c_4659
+	setbit wEventFlags + 23, $02
+Script_06c_45c8::
+	stext text_6c_7725
+	startbattle BattleData_02d_503d
+	checkbit wEventFlags + 3, $03, Script_06c_473a
+	stext text_6c_77f4
+	spriteface 136, FACE_UP
+	spritewalk 136, MOVE_UP
+	stext text_6c_7835
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	stext text_6c_788f
+	move MovementData_OneUp
+	move MovementData_OneDown
+	stext text_6c_78ab
+	stext text_6c_78b6
+	stext text_6c_78ed
+	stext text_6c_78f5
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	stext text_6c_7906
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	setmapgroup $07
+	farjump2 Script_06e_4109
+	end
+
 Script_06c_460e::
 	checkbit wEventFlags + 22, $07, Script_06c_4621
 	clearplayerpos
@@ -501,19 +705,63 @@ Script_06c_4712:
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_02_ObjectEvents:
-	dr $1b0716, $1b073b
+	object_event $62,  8,  3, wEventFlags + 18, $07, $00, $00, $00, Script_06c_4722
+	objects_end
+Script_06c_4722:
+	textface text_6c_5f63
+	startbattle BattleData_02d_4efb
+	checkbit wEventFlags + 3, $03, Script_06c_473a
+	clearobject $02
+	setbit wEventFlags + 18, $07
+	stext text_6c_5f78
+	scr_48 $02, $26
+Script_06c_473a::
+	end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_0D_ObjectEvents2:
-	dr $1b073b, $1b0798
+	object_event $0e,  6,  5, wEventFlags + 24, $02, $00, $00, $00, Script_06c_4706
+	object_event $0f,  6,  6, wEventFlags + 24, $02, $00, $00, $01, Script_06c_4706
+	objects_end
+Script_06c_4752:
+	setplayerchar $00
+	face FACE_DOWN
+	warpmode GAMEMODE_FLOATING_ISLAND_CUTSCENE2, $0d, $01
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_UP
+	stext text_6c_50fe
+	playsound SFX_4d
+	delay $03, $08
+	playsound SFX_4d
+	delay $03, $08
+	playsound SFX_4d
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_6c_5137
+	warpmode GAMEMODE_WORLD_MAP2, $0d, $01
+	spriteface  2, FACE_UP
+	spriteface  3, FACE_UP
+	stext text_6c_5151
+	clearplayerpos
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	spritewalk  3, MOVE_UP
+	spritewalk  3, MOVE_UP
+	clearobject $03
+	setbit wEventFlags + 24, $02
+	end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_07_ObjectEvents:
-	dr $1b0798, $1b07af
+	object_event $5a,  6,  6, wEventFlags + 19, $03, $00, $00, $00, Script_06c_502c
+	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_47e9
+	objects_end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_07_ObjectEvents2:
-	dr $1b07af, $1b07c6
+	object_event $5b,  6,  6, wEventFlags + 19, $03, $00, $00, $00, Script_06c_502c
+	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_47e9
+	objects_end
 
 G6_07_ObjectEvents4:
 	object_event $59,  6,  6, 0, $00, $00, $00, $00, Script_06c_4706
@@ -1317,6 +1565,7 @@ Script_06c_5007::
 	clearattach $00
 	stext text_6c_6068
 	setmap $07, $01
+Script_06c_502c::
 	startbattle BattleData_02d_4f29
 	checkbit wEventFlags + 3, $03, Script_06c_4ffd
 	stext text_6c_60d0
@@ -1429,7 +1678,30 @@ MovementData_06c_79d7:
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
-	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $88, $04, $a4, $40, $0a, $a4, $da
-	db $01, $5d, $7a, $35, $0d, $09, $09, $04, $5d, $40, $0a, $a3, $da, $03, $69, $7a
-	db $37, $09, $09, $04, $75, $40, $0a, $a3, $da, $03, $75, $7a, $36, $09, $09, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $88
+Script_06c_7a51:
+	textface text_6c_40a4
+	checkbit wEventFlags + 4, $01, Script_06c_7a5d
+	scr_35 $0d
+	end
+
+Script_06c_7a5d:
+	end
+
+Script_06c_7a5e:
+	textface text_6c_405d
+	checkbit wEventFlags + 3, $03, Script_06c_7a69
+	scr_37
+	end
+
+Script_06c_7a69:
+	end
+
+Script_06c_7a6a:
+	textface text_6c_4075
+	checkbit wEventFlags + 3, $03, Script_06c_7a75
+	townmusicanim
+	end
+
+Script_06c_7a75:
+	end

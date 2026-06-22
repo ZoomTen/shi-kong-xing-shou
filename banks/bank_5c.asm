@@ -12,17 +12,64 @@ Script_05c_4015:
 	setmap $44, $02
 	end2
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_65_ObjectEvents:
-	dr $170019, $170061
+	object_event $45, 10,  5, wEventFlags + 14, $05, $01, $00, $00, Script_05c_4025
+	objects_end
+Script_05c_4025:
+	textface text_5c_402d
+	farjump2 Script_066_4140
+	end
+INCLUDE "data/text/bank5c_402d.asm"
+Script_05c_4058:
+	setmap $10, $01
+	end
+Script_05c_405c:
+	farjump2 Script_058_40bc
+	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_4C_ObjectEvents:
-	dr $170061, $170083
+	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_05c_406d
+	objects_end
+Script_05c_406d:
+	textface text_5c_4105
+	end
+Script_05c_4071:
+	face FACE_LEFT
+	spriteface  2, FACE_RIGHT
+	stext text_5c_4105
+	checkbit wEventFlags + 4, $01, Script_05c_4082
+	scr_35 $05
+	end
+Script_05c_4082:
+	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_4B_ObjectEvents:
-	dr $170083, $17011c
+	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_05c_409a
+	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_05c_409e
+	objects_end
+Script_05c_409a:
+	stext text_5c_40be
+	end
+Script_05c_409e:
+	stext text_5c_40d6
+	end
+Script_05c_40a2:
+	face FACE_UP
+	stext text_5c_40be
+	checkbit wEventFlags + 3, $03, Script_05c_40af
+	scr_37
+	end
+Script_05c_40af:
+	end
+Script_05c_40b0:
+	face FACE_UP
+	stext text_5c_40d6
+	checkbit wEventFlags + 3, $03, Script_05c_40bd
+	townmusicanim
+	end
+Script_05c_40bd:
+	end
+INCLUDE "data/text/bank5c_40be.asm"
 Script_05c_411c::
 	end
 
@@ -57,9 +104,18 @@ Script_05c_4135:: ; farjump2 target (bank_55)
 	setbit wEventFlags + 23, $04
 	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_45_ObjectEvents:
-	dr $17015c, $1701a5
+	object_event $1c, 15,  6, wEventFlags + 8, $07, $01, $07, $00, Script_05c_4250
+	object_event $14,  4,  7, wEventFlags + 8, $07, $01, $09, $01, Script_05c_4241
+	object_event $13,  5, 14, wEventFlags + 8, $07, $01, $00, $02, Script_05c_4235
+	object_event $15, 21, 13, wEventFlags + 8, $07, $01, $06, $03, Script_05c_4215
+	object_event $17,  9, 20, wEventFlags + 8, $07, $01, $09, $04, Script_05c_4211
+	object_event $16, 12, 13, wEventFlags + 8, $07, $00, $00, $00, Script_05c_419f
+	objects_end
+Script_05c_419f:
+	setplayerchar $00
+	setmap $4e, $00
+	end
 
 G4_4E_ObjectEvents2:
 	object_event $65,  5,  3, 0, $00, $00, $00, $00, Script_05c_411c
@@ -151,13 +207,49 @@ Script_05c_427f:
 	stext text_5c_4ea2
 	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_47_ObjectEvents:
-	dr $170289, $1702de
+	object_event $1f,  3,  3, 0, $00, $00, $00, $00, Script_05c_42a0
+	object_event $1e,  5,  5, 0, $00, $00, $06, $01, Script_05c_42a4
+	objects_end
+Script_05c_42a0:
+	textface text_5c_4eb8
+	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
+Script_05c_42a4:
+	checkbit wEventFlags + 11, $07, Script_05c_42c3
+	textface text_5c_4ef8
+	spriteface  2, FACE_DOWN
+	stext text_5c_4f3e
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_5c_4f5e
+	emote  0, EMOTE_TEAR
+	delay $03, $20
+	end
+
+Script_05c_42c3:
+	checkbit wEventFlags + 12, $00, Script_05c_42da
+	textface text_5c_4f73
+	stext text_5c_4fd9
+	listdec $02, $13
+	scr_48 $00, $27
+	setbit wEventFlags + 12, $00
+	end
+
+Script_05c_42da:
+	textface text_5c_4fe9
+	end
+
 G4_48_ObjectEvents:
-	dr $1702de, $1702fd
+	object_event $16,  3,  4, 0, $00, $00, $00, $00, Script_05c_42f5
+	object_event $19,  8,  3, 0, $00, $00, $06, $01, Script_05c_42f9
+	objects_end
+Script_05c_42f5:
+	textface text_5c_4538
+	end
+Script_05c_42f9:
+	textface text_5c_5025
+	end
 
 G4_49_ObjectEvents:
 	object_event $1b,  4,  5, 0, $00, $00, $06, $00, Script_05c_4309
@@ -167,9 +259,40 @@ Script_05c_4309:
 	textface text_5c_5035
 	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_4D_ObjectEvents:
-	dr $17030d, $17035f
+	object_event $64,  4,  4, wEventFlags + 8, $06, $00, $00, $00, Script_05c_4319
+	objects_end
+Script_05c_4319:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	emote  0, EMOTE_QUESTION
+	delay $03, $20
+	stext text_5c_465e
+	stext text_5c_4678
+	stext text_5c_46dc
+	stext text_5c_46f0
+	stext text_5c_4729
+	stext text_5c_476c
+	spriteface  2, FACE_UP
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	clearobject $02
+	stext text_5c_47b6
+	setbit wEventFlags + 8, $06
+	end
+
+Script_05c_434b:
+	checkbit wEventFlags + 9, $01, Script_05c_4355
+Script_05c_4351::
+	setmap $0a, $00
+	end2
+
+Script_05c_4355:
+	checkbit wEventFlags + 9, $02, Script_05c_4351
+	setmap $0a, $01
+	end2
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_0A_ObjectEvents2:
@@ -180,9 +303,30 @@ G4_4D_ObjectEvents2:
 	object_event $09, 10,  6, wEventFlags + 9, $03, $00, $00, $01, Script_05c_411c
 	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_4E_ObjectEvents3:
-	dr $1704ab, $17058c
+	object_event $08,  5,  4, 0, $00, $00, $00, $00, Script_05c_411c
+	object_event $09,  6,  4, 0, $00, $00, $00, $01, Script_05c_411c
+	object_event $1e,  5, 10, 0, $00, $00, $00, $02, Script_05c_411c
+	object_event $15,  9,  6, 0, $00, $00, $00, $03, Script_05c_411c
+	objects_end
+	object_event $48,  4,  0, 0, $00, $00, $00, $04, Script_05c_411c
+	objects_end
+ObjectEvents_05c_44e4:
+	object_event $48,  5,  0, 0, $00, $00, $00, $01, Script_05c_411c
+	objects_end
+	object_event $48,  6,  0, 0, $00, $00, $00, $01, Script_05c_411c
+	objects_end
+	object_event $63,  1,  4, 0, $00, $00, $00, $01, Script_05c_411c
+	objects_end
+	object_event $63,  6,  7, 0, $00, $00, $00, $02, Script_05c_411c
+	objects_end
+	object_event $63, 10,  5, 0, $00, $00, $00, $03, Script_05c_411c
+	objects_end
+	object_event $56,  6,  6, 0, $00, $00, $00, $00, Script_05c_411c
+	objects_end
+	object_event $56,  5,  0, 0, $00, $00, $00, $01, Script_05c_411c
+	objects_end
+INCLUDE "data/text/bank5c_4538.asm"
 INCLUDE "data/text/bank5c_458c.asm"
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $171053, $171084

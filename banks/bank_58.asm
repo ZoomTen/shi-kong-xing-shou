@@ -8,7 +8,9 @@ G4_38_ObjectEvents:
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_39_ObjectEvents:
-	dr $160023, $1600e9
+	dr $160023, $1600bc
+Script_058_40bc::
+	dr $1600bc, $1600e9
 Script_058_40e9::
 	end
 

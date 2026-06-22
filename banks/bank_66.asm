@@ -96,7 +96,9 @@ ObjSprite_66_4128::
 	objects_end
 ; TODO: object_event spawn record + trailing sprite-frame/pointer data - carve
 ObjSprite_66_4134::
-	dr $198134, $198172
+	dr $198134, $198140
+Script_066_4140::
+	dr $198140, $198172
 
 Script_066_4172::
 	textface text_66_4d45
@@ -1191,7 +1193,7 @@ Script_066_4bc9::
 	delay $03, $20
 	stext text_66_7af9
 	setmapgroup $06
-	farjump2 $4752, $6c
+	farjump2 Script_06c_4752
 	end
 
 G5_1D_ObjectEvents3:

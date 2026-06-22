@@ -79,7 +79,7 @@
 	para "";
 	db $f1, $62; #"到"
 	text "";
-	db $5e; #"?"
+	db $5e; #"哪"
 	text "裡好像都是";
 	line "一樣的⋯⋯";
 	done;
@@ -104,7 +104,7 @@
 	line "";
 	db $f8, $5f; #"渣"
 	text "";
-	db $5f; #"?"
+	db $5f; #"渣"
 	text "的男人﹐跑";
 	cont "來找席菈姐姐﹐";
 	line "然後他們就一起";
@@ -124,9 +124,9 @@
 	line "";
 	db $f0, $23; #"人"
 	text "";
-	db $76; #"?"
+	db $76; #"無"
 	text "";
-	db $bb; #"?"
+	db $bb; #"法"
 	text "加工呢⚬";
 	para "如果是鐵鋪的鑄";
 	line "造師的話﹐或許";
@@ -150,7 +150,7 @@
 	line "";
 	db $f3, $bb; #"月"
 	text "";
-	db $0b; #"?"
+	db $0b; #"現"
 	text "象後﹐我嚇";
 	para "";
 	db $f2, $dc; #"得"
@@ -178,9 +178,9 @@
 	line "";
 	db $f2, $65; #"還"
 	text "";
-	db $63; #"?"
+	db $63; #"比"
 	text "";
-	db $a9; #"?"
+	db $a9; #"較"
 	text "清爽～";
 	done;
 
@@ -195,7 +195,7 @@
 	line "";
 	db $f1, $03; #"真"
 	text "";
-	db $43; #"?"
+	db $43; #"是"
 	text "好險啊～";
 	para "最近各地都發生";
 	line "";
@@ -204,7 +204,7 @@
 	cont "";
 	db $f1, $03; #"真"
 	text "";
-	db $43; #"?"
+	db $43; #"是"
 	text "不吉利﹗";
 	done;
 
@@ -231,13 +231,13 @@
 	para "";
 	db $f1, $d3; #"所"
 	text "";
-	db $cb; #"?"
+	db $cb; #"以"
 	text "月亮發出了";
 	line "詭異的藍光⚬";
 	para "";
 	db $f1, $ca; #"科"
 	text "";
-	db $60; #"?"
+	db $60; #"學"
 	text "家稱之為～";
 	line "藍月現象⚬";
 	done;

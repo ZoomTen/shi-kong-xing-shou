@@ -43,7 +43,9 @@ G7_01_ObjectEvents:
 	objects_end
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G7_02_ObjectEvents:
-	dr $1b80f2, $1b9069
+	dr $1b80f2, $1b8109
+Script_06e_4109::
+	dr $1b8109, $1b9069
 G7_09_MapAttributes:
 	map_attr_data \
 		6, 5, \

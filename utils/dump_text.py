@@ -104,7 +104,8 @@ def emit_db(parts, glyph):
     backup_charset = -1
 
 def print_text():
-    global backup_charset
+    global backup_charset, rom_page
+    rom_page = backup_charset  # real ROM font page; persists across db (sticky)
     done = 0
     while True:
         byte = int.from_bytes(file.read(1), "little")
@@ -115,6 +116,7 @@ def print_text():
 
         byte_high, new_charset = divmod(byte, 0x10)
         if byte_high == 0xf:
+            rom_page = new_charset
             glyph_byte = int.from_bytes(file.read(1), "little")
             _g = chars[new_charset].get(glyph_byte)
             if _g is None or new_charset == backup_charset or needs_db(new_charset, glyph_byte):
@@ -153,8 +155,8 @@ def print_text():
         elif byte == 0xee:
             print("\";\n\tcont \"", end="")
         else:
-            _g = chars[backup_charset].get(byte) if backup_charset >= 0 else None
-            if _g is None or needs_db(backup_charset, byte):
+            _g = chars[rom_page].get(byte) if rom_page >= 0 else None
+            if _g is None or backup_charset < 0 or needs_db(rom_page, byte):
                 emit_db(["$%02x" % byte], _g if _g is not None else "?")
             else:
                 print(_g, end="")
