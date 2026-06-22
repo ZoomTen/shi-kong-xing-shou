@@ -27,10 +27,20 @@ Script_023_55f6:
 	dr $8d5f6, $8d5fa
 ; TODO disassemble
 Func_023_55fa:
-	dr $8d5fa, $8d6de
-; TODO disassemble
+	dr $8d5fa, $8d6a2
+BattleScript_023_56a2:
+	dr $8d6a2, $8d6de
 Func_023_56de:
-	dr $8d6de, $8d6f3
+	ld hl, BattleScript_023_56a2
+	ld a, l
+	ld [wBattleScriptPos], a
+	ld a, h
+	ld [wBattleScriptPos + 1], a
+	ld a, $01
+	ld [wd993], a
+	xor a
+	ld [wBattleState], a
+	ret
 ; TODO disassemble
 Func_023_56f3:
 	dr $8d6f3, $8d7ae

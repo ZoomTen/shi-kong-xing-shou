@@ -153,9 +153,27 @@ ObjSprite_6c_4266::
 G6_1A_ObjectEvents:
 	dr $1b0272, $1b02db
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_1B_ObjectEvents:
-	dr $1b02db, $1b0310
+	object_event $0e,  5,  4, wEventFlags + 20, $03, $00, $00, $00, Script_06c_42e7
+	objects_end
+Script_06c_42e7:
+	checkbit wEventFlags + 21, $06, Script_06c_42f5
+	stext text_6c_6c25
+	setbit wEventFlags + 20, $04
+	end
+Script_06c_42f5:
+	walkpath
+	face FACE_UP
+	dirmovement
+	spriteface  1, FACE_UP
+	spriteface 136, FACE_DOWN
+	stext text_6c_6f77
+	clearplayerpos
+	spritewalk 136, MOVE_DOWN
+	clearobject $88
+	scr_62 $07, $01
+	setbit wEventFlags + 22, $05
+	end
 Script_06c_4310::
 	checkbit wEventFlags + 21, $07, Script_06c_4326
 	clearplayerpos
@@ -1009,9 +1027,26 @@ G6_26_ObjectEvents:
 	object_event $58,  4,  4, wEventFlags + 18, $04, $00, $00, $00, Script_06c_4ea3
 	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_26_ObjectEvents2:
-	dr $1b0d72, $1b0daa
+	object_event $58,  4,  4, 0, $00, $00, $00, $00, Script_06c_4706
+	objects_end
+; TODO: map array reached via binary map header (source map unknown)
+ObjectEvents_06c_4d7e:
+	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4d8a
+	objects_end
+Script_06c_4d8a:
+	checkbit wEventFlags + 19, $00, Script_06c_4d94
+	textface text_6c_5dd0
+	end
+Script_06c_4d94:
+	textface text_6c_5f88
+	spriteface  2, FACE_UP
+	spritewalk  2, MOVE_UP
+	clearobject $02
+	stext text_6c_5fc7
+	listdec $02, $27
+	setbit wEventFlags + 19, $02
+	end
 Script_06c_4daa:
 	checkbit wEventFlags + 18, $04, Script_06c_4db4
 	textface text_6c_542b
@@ -1230,9 +1265,35 @@ unk_06c_4f9e::
 	object_event $59,  3,  9, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G6_1F_ObjectEvents:
-	dr $1b0faa, $1b0ffd
+	object_event $59,  5,  4, wEventFlags + 22, $06, $00, $00, $01, Script_06c_4fc1
+	object_event $29,  5,  5, wEventFlags + 22, $06, $00, $00, $00, Script_06c_4fc1
+	objects_end
+Script_06c_4fc1:
+	textface text_6c_6fc8
+	stext text_6c_6fea
+	stext text_6c_7019
+	spriteface  2, FACE_DOWN
+	spritewalk  3, MOVE_DOWN
+	spritewalk  3, MOVE_DOWN
+	clearobject $03
+	spritewalk  2, MOVE_DOWN
+	stext text_6c_7023
+	spritewalk  2, MOVE_DOWN
+	clearobject $02
+	setbit wEventFlags + 22, $06
+	end
+Script_06c_4fe5:
+	checkbit wEventFlags + 18, $06, Script_06c_4fef
+	setmap $2b, $00
+	end2
+Script_06c_4fef:
+	checkbit wEventFlags + 19, $02, Script_06c_4ff9
+	setmap $2b, $04
+	end2
+Script_06c_4ff9:
+	setmap $2b, $06
+	end2
 Script_06c_4ffd::
 	face FACE_DOWN
 	setmap $06, $01

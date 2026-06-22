@@ -51,7 +51,7 @@ Script_05c_4135:: ; farjump2 target (bank_55)
 	face FACE_LEFT
 	spriteface  2, FACE_LEFT
 	stext text_5c_45b8
-	objmove $02, unk_05c_5084
+	objmove $02, MovementData_05c_5084
 	clearobject $02
 	setmappredef MAPPREDEF_15
 	setbit wEventFlags + 23, $04
@@ -65,13 +65,91 @@ G4_4E_ObjectEvents2:
 	object_event $65,  5,  3, 0, $00, $00, $00, $00, Script_05c_411c
 	objects_end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_4E_ObjectEvents:
-	dr $1701b1, $170254
+	object_event $65,  5,  3, 0, $00, $00, $00, $00, Script_05c_411c
+	object_event $16,  5,  6, 0, $00, $00, $00, $01, Script_05c_41c8
+	objects_end
+Script_05c_41c8:
+	textface text_5c_47fc
+	checkbit wEventFlags + 8, $06, Script_05c_41d2
+	end
+Script_05c_41d2:
+	spriteface  3, FACE_UP
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_5c_485a
+	stext text_5c_486f
+	loadobjsprite ObjSprite_5c_4205
+	objmove $04, MovementData_05c_5106
+	spriteface  4, FACE_UP
+	stext text_5c_4889
+	stext text_5c_48a2
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_5c_48c2
+	objmove $04, MovementData_05c_51a8
+	clearobject $04
+	setbit wEventFlags + 9, $01
+	end
+ObjSprite_5c_4205::
+	object_event $56,  5,  8, 0, $00, $00, $00, $02, Script_05c_411c
+	objects_end
+Script_05c_4211:
+	textface text_5c_4ddb
+	end
+Script_05c_4215:
+	ifcharindex $00, Script_05c_421d
+	textface text_5c_4dcc
+	end
+Script_05c_421d:
+	checkbit wEventFlags + 9, $00, Script_05c_4231
+	textface text_5c_4d57
+	stext text_5c_4d90
+	scr_48 $00, $11
+	setbit wEventFlags + 9, $00
+	end
+Script_05c_4231:
+	textface text_5c_4da1
+	end
+Script_05c_4235:
+	textface text_5c_4ce1
+	ifcharindex $04, Script_05c_423d
+	end
+Script_05c_423d:
+	stext text_5c_4d27
+	end
+Script_05c_4241:
+	textface text_5c_4c5e
+	ifcharindex $04, Script_05c_4249
+	end
+Script_05c_4249:
+	stext text_5c_4ca6
+	stext text_5c_4cd1
+	end
+Script_05c_4250:
+	textface text_5c_4c42
+	end
 
-; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_46_ObjectEvents:
-	dr $170254, $170289
+	object_event $18,  5,  5, 0, $00, $00, $00, $00, Script_05c_426b
+	object_event $1d,  8,  5, 0, $00, $00, $00, $01, Script_05c_4277
+	objects_end
+Script_05c_426b:
+	textface text_5c_4e2b
+	ifcharindex $04, Script_05c_4273
+	end
+Script_05c_4273:
+	stext text_5c_4e60
+	end
+Script_05c_4277:
+	textface text_5c_4e68
+	ifcharindex $04, Script_05c_427f
+	end
+Script_05c_427f:
+	emote  3, EMOTE_EXCLAMATION
+	delay $03, $20
+	stext text_5c_4ea2
+	end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
 G4_47_ObjectEvents:
@@ -108,7 +186,7 @@ G4_4E_ObjectEvents3:
 INCLUDE "data/text/bank5c_458c.asm"
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	dr $171053, $171084
-unk_05c_5084::
+MovementData_05c_5084::
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
@@ -117,22 +195,26 @@ unk_05c_5084::
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
-	db $00, $88, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00
+	db $00, $88
+MovementData_05c_5106::
 	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00
-	db $ff, $00, $88, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00
+	db $88, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
 	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
 	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
-	db $00, $ff, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
-	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $00, $00, $00, $00, $00
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
-	db $00, $fc, $00, $88, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
-	db $02, $00, $02, $00, $88, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $88
+MovementData_05c_51a8::
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $88, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
 	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
 	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
 	db $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01
-	db $00, $01, $00, $01, $00, $88
+	db $00, $88
 unk_05c_51fa::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
