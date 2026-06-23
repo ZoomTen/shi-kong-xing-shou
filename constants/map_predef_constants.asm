@@ -1,4 +1,4 @@
-; Map-entry predefs: hMapPredef indexes .Predefs (home/bank0_d.asm).
+; Map-entry predefs: hMapPredef indexes .Predefs (home/map_init.asm).
 ; Also gates map events (an event fires only if its condition byte == hMapPredef).
 	const_def
 	const MAPPREDEF_00 ; MapPredef_BallotsHouseIntro

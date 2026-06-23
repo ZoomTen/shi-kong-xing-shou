@@ -99,3 +99,9 @@ LoadPalettes_BCPD::
 	dec b
 	jr nz, .load_palette
 	ret
+WaitVRAM_STAT::
+	ldh a, [rSTAT]
+	bit 1, a ; STATF_BUSY
+	ret z
+	jr WaitVRAM_STAT
+
