@@ -1,10 +1,5 @@
 INCLUDE "constants.asm"
 
-MACRO endbank
-SECTION "banknum\1", ROMX[$7fff], BANK[\1]
-	db BANK(@)
-ENDM
-
 SECTION "bank01", ROMX, BANK[$01]
 INCLUDE "banks/bank_01.asm"
 
@@ -356,27 +351,3 @@ INCLUDE "banks/bank_7e.asm"
 
 SECTION "bank7f", ROMX, BANK[$7f]
 INCLUDE "banks/bank_7f.asm"
-
-; Bank numbers placed at the end of each bank.
-DEF i = 1
-REPT $40
-	endbank {i} ; $01 - $40
-	DEF i += 1
-ENDR
-
-SECTION "banknum41", ROMX[$7fff], BANK[$41]
-	db $42 ; VF moment
-
-DEF i = $42
-REPT $32
-	endbank {i} ; $42 - $73
-	DEF i += 1
-ENDR
-
-; banks $74 and $75 are missing bank number indicators
-
-DEF i = $76
-REPT $0a
-	endbank {i} ; $76 - $7f
-	DEF i += 1
-ENDR
