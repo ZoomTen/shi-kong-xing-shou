@@ -46,7 +46,7 @@ Palette_20_4040:
 	RGB 18, 24,  0
 
 Func_20_4048:
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	cp 3
 	jr nz, Func_020_405b
 	ld hl, wdd18
@@ -63,7 +63,7 @@ Func_020_405b:
 	ld c, l
 	ld b, h
 	ld de, FacePaletteExtrasPointers
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
 	add hl, hl

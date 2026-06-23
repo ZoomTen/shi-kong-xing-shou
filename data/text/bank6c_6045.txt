@@ -1,0 +1,1413 @@
+@org $6c, $6045:
+	init NAME_4E, PIC_72;
+@org $6c, $6048:
+	text "咭咭咭～";
+	line "";
+	db $f2, $87; #"動"
+	text "力晶片～";
+	cont "只要我毀了的話";
+	done;
+
+@org $6c, $6068:
+	init NAME_4E, PIC_72;
+@org $6c, $606b:
+	text "你們發現了嗎﹖";
+	para "咭咭咭～";
+	line "";
+	db $f2, $48; #"那"
+	text "．又．如．何";
+	done;
+
+@org $6c, $608e:
+	init NAME_41, PIC_74;
+@org $6c, $6091:
+	text "咭咭～";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $58; #"?"
+	text "笨機器然笨";
+	cont "到相信﹐可以變";
+	line "";
+	db $f1, $6a; #"成"
+	text "";
+	db $03; #"?"
+	text "正的人類﹗";
+	para "咭咭咭～";
+	line "真是太好笑了﹗";
+	done;
+
+@org $6c, $60d0:
+	init NAME_41, PIC_74;
+@org $6c, $60d3:
+	text "咭⋯⋯嗚啊﹗";
+	done;
+
+@org $6c, $60df:
+	init NAME_41, PIC_74;
+@org $6c, $60e2:
+	text "你⋯你不是⋯";
+	line "龍魔⋯⋯";
+	done;
+
+@org $6c, $60f4:
+	init NAME_MITT, PIC_49;
+@org $6c, $60f7:
+	text "可惡的星獸﹗";
+	done;
+
+@org $6c, $6103:
+	init NAME_BUCK, PIC_01;
+@org $6c, $6106:
+	text "貝爾⋯⋯";
+	done;
+
+@org $6c, $610e:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $6111:
+	text "得到了晶片８﹗";
+	done;
+
+@org $6c, $611d:
+	init NAME_1C, PIC_29;
+@org $6c, $6120:
+	text "喂喂～";
+	line "巴洛特嗎﹖";
+	para "終於找齊晶片了";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"?"
+	text "";
+	para "等了好～久";
+	line "好久太空船已經";
+	cont "造好了﹗";
+	para "你們現在在哪裡";
+	line "呢﹖";
+	done;
+
+@org $6c, $6173:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $6176:
+	text "巴爾之都⚬";
+	line "太空船造好了﹖";
+	done;
+
+@org $6c, $618f:
+	init NAME_1C, PIC_29;
+@org $6c, $6192:
+	text "現在沒有時間解";
+	line "釋這麼多了⚬";
+	para "我這就過去⚬";
+	line "在空中港口等我";
+	cont "";
+	db $f2, $ab; #"吧"
+	text "﹗";
+	done;
+
+@org $6c, $61c6:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $61c9:
+	text "好的﹗";
+	done;
+
+@org $6c, $61cf:
+	init NAME_BUCK, PIC_01;
+@org $6c, $61d2:
+	text "貝爾．巴克．一";
+	line "定會．回來﹗";
+	done;
+
+@org $6c, $61ec:
+	init NAME_1C, PIC_29;
+@org $6c, $61ef:
+	text "你們終於來了﹗";
+	line "趕快上來吧⚬";
+	para "路上再跟你們慢";
+	line "";
+	db $f5, $72; #"慢"
+	text "解釋﹗";
+	done;
+
+@org $6c, $621e:
+	init NAME_4F, PIC_73;
+@org $6c, $6221:
+	text "怎麼會這樣﹖";
+	line "";
+	db $f1, $aa; #"晶"
+	text "片被拿走了嗎";
+	para "";
+	db $f1, $c8; #"可"
+	text "惡﹗﹗";
+	line "大事不妙了﹗";
+	done;
+
+@org $6c, $624d:
+	init NAME_1C, PIC_29;
+@org $6c, $6250:
+	text "哈哈哈～";
+	line "很棒吧﹗";
+	para "這可是我一生中";
+	line "最偉大的成就﹗";
+	done;
+
+@org $6c, $627c:
+	init NAME_1C, PIC_29;
+@org $6c, $627f:
+	text "一百二十年前﹐";
+	line "八大科家就是用";
+	para "";
+	db $f1, $a6; #"設"
+	text "計圖上的太空";
+	line "船﹐修補了星系";
+	para "的裂縫﹐解除了";
+	line "藍月現象⚬";
+	cont "";
+	db $f1, $d2; #"而"
+	text "現在﹐就換我";
+	line "們來拯救地球了";
+	line "";
+	db $f1, $15; #"霧"
+	text "";
+	done;
+
+@org $6c, $62eb:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $62ee:
+	text "所以當時的八大";
+	line "科學家﹐就留下";
+	para "了那張設計圖﹖";
+	done;
+
+@org $6c, $6317:
+	init NAME_1C, PIC_29;
+@org $6c, $631a:
+	text "是的⚬他們應該";
+	line "是預測到﹐在不";
+	para "久的將來﹐一定";
+	line "會再度發生同樣";
+	cont "的事情吧⚬";
+	done;
+
+@org $6c, $635b:
+	init NAME_1C, PIC_29;
+@org $6c, $635e:
+	text "好了﹐";
+	line "時間不多了⚬";
+	para "這就啟動時空跳";
+	line "躍系統﹐飛往弗";
+	cont "烈茲星系吧﹗";
+	para "在那之前﹐你們";
+	line "八個人都要負責";
+	cont "好每個人的操作";
+	line "";
+	db $f2, $68; #"部"
+	text "份⚬";
+	done;
+
+@org $6c, $63ca:
+	init NAME_1C, PIC_29;
+@org $6c, $63cd:
+	text "啟動時光跳躍系";
+	line "統⚬";
+	para "地點～";
+	line "弗烈茲星系⚬";
+	done;
+
+@org $6c, $63f4:
+	init NAME_20, PIC_30;
+@org $6c, $63f7:
+	text "時空跳躍⋯⋯";
+	line "檢查終了﹗";
+	cont "弗烈茲星系⋯";
+	line "地點確定⚬";
+	para "距地球⋯";
+	line "１９３２光年";
+	cont "啟動準備⋯⋯";
+	done;
+
+@org $6c, $6440:
+	init NAME_20, PIC_30;
+@org $6c, $6443:
+	text "警告～警告﹗";
+	line "";
+	db $f1, $90; #"機"
+	text "身受損～";
+	para "機身受損～";
+	line "系統過載⋯⋯";
+	done;
+
+@org $6c, $6470:
+	init NAME_1C, PIC_29;
+@org $6c, $6473:
+	text "怎麼回事﹖";
+	para "啊﹗";
+	line "";
+	db $f1, $90; #"機"
+	text "身偏離航道了";
+	para "系統切換到人工";
+	line "操作﹗";
+	done;
+
+@org $6c, $64a5:
+	init NAME_20, PIC_30;
+@org $6c, $64a8:
+	text "人工操作⋯";
+	line "切換完成⚬";
+	done;
+
+@org $6c, $64bc:
+	init NAME_1C, PIC_29;
+@org $6c, $64bf:
+	text "巴洛特﹐趕快找";
+	line "出發生故障的原";
+	cont "因⚬";
+	para "我設法穩住機身";
+	line "快﹗";
+	done;
+
+@org $6c, $64f3:
+	init NAME_1C, PIC_29;
+@org $6c, $64f6:
+	text "巴洛特﹐趕快找";
+	line "出發生故障的原";
+	cont "因⚬";
+	para "我設法穩住機身";
+	line "快﹗";
+	done;
+
+@org $6c, $652a:
+	init NAME_BUCK, PIC_01;
+@org $6c, $652d:
+	text "巴克．一起去．";
+	line "找問題﹗";
+	done;
+
+@org $6c, $6542:
+	init NAME_NINA, PIC_36;
+@org $6c, $6545:
+	text "怎麼會這樣﹖";
+	line "妮娜也跟巴洛特";
+	cont "一起去﹗";
+	done;
+
+@org $6c, $6566:
+	init NAME_CLAUDE, PIC_3A;
+@org $6c, $6569:
+	text "在這種緊急時刻";
+	line "還發生這種事⚬";
+	para "雷歐博士真是不";
+	line "可信任⚬";
+	done;
+
+@org $6c, $659b:
+	init NAME_HELEN, PIC_04;
+@org $6c, $659e:
+	text "原來如此⚬";
+	line "一起找出問題的";
+	cont "根源吧⚬";
+	done;
+
+@org $6c, $65bf:
+	init NAME_LANTE, PIC_42;
+@org $6c, $65c2:
+	text "怎麼辦～";
+	line "";
+	db $f2, $ce; #"怎"
+	text "";
+	db $cf; #"?"
+	text "辦～";
+	para "太空船會不會就";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $cf; #"?"
+	text "墜毀了﹖";
+	para "我這裡都很正常";
+	line "呀﹗";
+	para "";
+	db $f1, $65; #"有"
+	text "什麼我可以幫";
+	line "";
+	db $f5, $9b; #"忙"
+	text "的﹐就儘管開";
+	cont "口吧⚬";
+	done;
+
+@org $6c, $661f:
+	init NAME_LANTE, PIC_43;
+@org $6c, $6622:
+	text "少了我的幫助﹐";
+	line "巴洛特會覺得沒";
+	cont "有安全感嗎﹖";
+	para "呵呵呵～";
+	line "";
+	db $f2, $48; #"那"
+	text "真是不好意思";
+	cont "呀﹗";
+	done;
+
+@org $6c, $6665:
+	init NAME_BALLOT, PIC_2C;
+@org $6c, $6668:
+	text "可惡⋯打不開﹗";
+	done;
+
+@org $6c, $6676:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $6679:
+	text "米特﹖";
+	line "這是怎麼回事﹖";
+	done;
+
+@org $6c, $668d:
+	init NAME_MITT, PIC_49;
+@org $6c, $6690:
+	text "哈哈哈哈～";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $aa; #"?"
+	text "﹐就連唯一";
+	line "的阻礙都消除了";
+	para "死心吧人類～";
+	line "放棄你們的掙扎";
+	cont "吧﹗";
+	done;
+
+@org $6c, $66d2:
+	init NAME_BALLOT, PIC_2C;
+@org $6c, $66d5:
+	text "米特﹗";
+	line "你在說什麼﹖";
+	done;
+
+@org $6c, $66e8:
+	init NAME_MITT, PIC_49;
+@org $6c, $66eb:
+	text "裂縫的程度﹐就";
+	line "快要讓懲罰者通";
+	cont "過了⚬";
+	para "抱著榮幸的心情";
+	line "接受紅蓮的洗淨";
+	cont "吧﹗";
+	para "然後地球將會是";
+	line "我們的了﹗";
+	done;
+
+@org $6c, $6745:
+	init NAME_3F, PIC_75;
+@org $6c, $6748:
+	text "我乃星獸三魔人";
+	line "";
+	db $f0, $02; #"之"
+	text "～龍魔人⚬";
+	para "這個宿主﹐對我";
+	line "";
+	db $f2, $bf; #"來"
+	text "說﹐再也沒有";
+	cont "";
+	db $f1, $40; #"用"
+	text "處了⚬";
+	done;
+
+@org $6c, $6781:
+	init NAME_50, PIC_75;
+@org $6c, $6784:
+	text "哈哈哈～";
+	line "一百二十年前﹐";
+	cont "你破壞了我的計";
+	line "劃⚬";
+	para "";
+	db $f1, $d2; #"而"
+	text "現在﹐你就要";
+	line "嚐到可怕的後果";
+	cont "";
+	db $f1, $64; #"了"
+	text "";
+	db $53; #"?"
+	text "";
+	line "哈哈哈哈～";
+	done;
+
+@org $6c, $67d2:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $67d5:
+	text "米特﹗﹗";
+	line "支持住﹗";
+	done;
+
+@org $6c, $67e5:
+	init NAME_MITT, PIC_07;
+@org $6c, $67e8:
+	text "巴⋯巴⋯";
+	line "巴洛特⋯";
+	done;
+
+@org $6c, $67fa:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $67fd:
+	text "米特﹗";
+	line "不要放手啊﹗";
+	done;
+
+@org $6c, $680f:
+	init NAME_MITT, PIC_48;
+@org $6c, $6812:
+	text "巴洛特⋯";
+	line "";
+	db $f2, $07; #"對"
+	text "不起⋯";
+	cont "都是我的錯⋯";
+	done;
+
+@org $6c, $682f:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $6832:
+	text "不要再說這種話";
+	line "了﹗";
+	para "";
+	db $f1, $40; #"用"
+	text "";
+	db $b5; #"?"
+	text "力﹐就快要";
+	line "上來了﹗";
+	done;
+
+@org $6c, $685a:
+	init NAME_MITT, PIC_48;
+@org $6c, $685d:
+	text "巴洛特⋯";
+	line "謝謝你⋯⋯";
+	cont "";
+	db $f2, $cd; #"好"
+	text "累⋯⋯";
+	line "巴洛特⋯";
+	para "";
+	db $f2, $4a; #"你"
+	text "";
+	db $56; #"?"
+	text "到了嗎﹖";
+	line "爸爸和媽媽就在";
+	cont "那邊﹐很高興向";
+	line "我招著手⋯⋯";
+	done;
+
+@org $6c, $68a9:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $68ac:
+	text "米特﹗﹗﹗";
+	done;
+
+@org $6c, $68b4:
+	init NAME_MITT, PIC_07;
+@org $6c, $68b7:
+	text "巴洛特⋯";
+	line "謝謝你⋯⋯";
+	para "";
+	db $f2, $ad; #"我"
+	text "";
+	db $33; #"?"
+	text "永遠記住你";
+	line "的⋯⋯";
+	done;
+
+@org $6c, $68dc:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $68df:
+	text "米～特﹗﹗﹗﹗";
+	done;
+
+@org $6c, $68ea:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $68ed:
+	text "米特﹗﹗";
+	line "支持住﹗";
+	done;
+
+@org $6c, $68fd:
+	init NAME_MITT, PIC_07;
+@org $6c, $6900:
+	text "巴⋯巴⋯";
+	line "巴洛特⋯";
+	done;
+
+@org $6c, $6912:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $6915:
+	text "米特﹗";
+	line "不要放手啊﹗";
+	done;
+
+@org $6c, $6927:
+	init NAME_MITT, PIC_48;
+@org $6c, $692a:
+	text "巴洛特⋯";
+	line "";
+	db $f2, $07; #"對"
+	text "不起⋯";
+	cont "都是我的錯⋯";
+	done;
+
+@org $6c, $6947:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $694a:
+	text "不要再說這種話";
+	line "了﹗";
+	para "";
+	db $f1, $40; #"用"
+	text "";
+	db $b5; #"?"
+	text "力﹐就快要";
+	line "上來了﹗";
+	done;
+
+@org $6c, $6972:
+	init NAME_MITT, PIC_07;
+@org $6c, $6975:
+	text "巴洛特⋯";
+	line "謝謝你⋯⋯";
+	done;
+
+@org $6c, $6986:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $6989:
+	text "米特～";
+	line "千萬不可以放棄";
+	para "你不是答應過我";
+	line "要做個超越父親";
+	cont "的星空彩繪家嗎";
+	done;
+
+@org $6c, $69c5:
+	init NAME_MITT, PIC_07;
+@org $6c, $69c8:
+	text "爸爸⋯⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $c7; #"?"
+	text "";
+	db $ad; #"?"
+	text "一定要活";
+	cont "下去才行⋯⋯";
+	done;
+
+@org $6c, $69e4:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $69e7:
+	text "對了⋯⋯";
+	line "";
+	db $f2, $d7; #"就"
+	text "是這樣⋯";
+	cont "";
+	db $f2, $da; #"再"
+	text "用點力⋯";
+	done;
+
+@org $6c, $6a04:
+	init NAME_BALLOT, PIC_2A;
+@org $6c, $6a07:
+	text "呼～呼呼～";
+	line "太好了～米特⋯";
+	done;
+
+@org $6c, $6a1d:
+	init NAME_MITT, PIC_48;
+@org $6c, $6a20:
+	text "巴洛特⋯";
+	line "";
+	db $f2, $07; #"對"
+	text "不起⋯⋯";
+	done;
+
+@org $6c, $6a32:
+	init NAME_1C, PIC_29;
+@org $6c, $6a35:
+	text "唉～～";
+	line "";
+	db $f2, $c8; #"沒"
+	text "有用了⋯";
+	para "一切都沒有用了";
+	line "好好的太空船⋯";
+	para "現在只剩下八個";
+	line "晶片所組成的";
+	cont "『核』了⋯";
+	para "巴洛特啊～";
+	line "";
+	db $f2, $bd; #"做"
+	text "";
+	db $cd; #"?"
+	text "接受世界末";
+	cont "日的心理準備吧";
+	done;
+
+@org $6c, $6aa6:
+	init NAME_NINA, PIC_02;
+@org $6c, $6aa9:
+	text "巴洛特⋯⋯";
+	line "千萬不可以灰心";
+	cont "哦﹗";
+	line "一定還有希望的";
+	done;
+
+@org $6c, $6ad5:
+	init NAME_CLAUDE, PIC_03;
+@org $6c, $6ad8:
+	text "妮娜⋯⋯";
+	line "發生了什事都不";
+	para "要緊﹐只要妮娜";
+	line "和我在一起﹐那";
+	cont "";
+	db $f2, $d7; #"就"
+	text "";
+	db $cd; #"?"
+	text "了⚬";
+	done;
+
+@org $6c, $6b13:
+	init NAME_BUCK, PIC_01;
+@org $6c, $6b16:
+	text "巴克．要．死了";
+	line "．嗎﹖";
+	para "巴克．下輩子．";
+	line "要變成．人類⋯";
+	done;
+
+@org $6c, $6b44:
+	init NAME_RANDT, PIC_44;
+@org $6c, $6b47:
+	text "唉⋯⋯⋯";
+	line "";
+	db $f2, $65; #"還"
+	text "有什辦法可以";
+	cont "想嗎﹖";
+	para "都是巴洛特的錯";
+	line "要是巴洛特有著";
+	cont "像我一樣的精明";
+	line "頭腦的話﹐就不";
+	cont "會發生這種事情";
+	line "了﹗";
+	done;
+
+@org $6c, $6bad:
+	init NAME_HELEN, PIC_3C;
+@org $6c, $6bb0:
+	text "絕望⋯";
+	cont "";
+	db $f2, $d7; #"就"
+	text "是如此的心情";
+	line "嗎﹖";
+	para "安東⋯";
+	line "如果我也死了的";
+	cont "話﹐就能在一起";
+	line "了嗎﹖";
+	done;
+
+@org $6c, $6bf2:
+	init NAME_LANTE, PIC_41;
+@org $6c, $6bf5:
+	text "不要碰我﹗";
+	line "我什麼都不想聽";
+	cont "";
+	db $f4, $68; #"讓"
+	text "我一個人靜一";
+	line "靜好嗎﹖";
+	done;
+
+@org $6c, $6c25:
+	init NAME_MITT, PIC_48;
+@org $6c, $6c28:
+	text "巴洛特⋯";
+	line "";
+	db $f2, $07; #"對"
+	text "不起⋯⋯";
+	cont "要是我沒有被";
+	line "附身的話﹐就好";
+	line "了⋯";
+	done;
+
+@org $6c, $6c58:
+	init NAME_1C, PIC_29;
+@org $6c, $6c5b:
+	text "唉～難道地球就";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $cf; #"?"
+	text "的完了嗎﹖";
+	done;
+
+@org $6c, $6c75:
+	init NAME_4F, PIC_73;
+@org $6c, $6c78:
+	text "終於找到你們了";
+	line "又是你這個敗事";
+	para "有餘的雷歐老頭";
+	line "把晶片交給貝爾";
+	para "機器人保管﹐自";
+	line "然有我的目的⚬";
+	done;
+
+@org $6c, $6ccd:
+	init NAME_1C, PIC_29;
+@org $6c, $6cd0:
+	text "可惡﹗";
+	line "雖然很不服氣﹐";
+	cont "但卻沒有辦法反";
+	line "馭⋯⋯";
+	done;
+
+@org $6c, $6cf9:
+	init NAME_4F, PIC_73;
+@org $6c, $6cfc:
+	text "你們為什麼不等";
+	line "";
+	db $f2, $ad; #"我"
+	text "回來﹐就私自";
+	cont "行動﹗";
+	para "";
+	db $f1, $65; #"有"
+	text "人找到了古代";
+	line "的飛空兵器﹐緊";
+	cont "急委託我前往修";
+	line "復⚬";
+	para "才會暫時離開巴";
+	line "爾之都﹐並把動";
+	cont "力晶片封住⚬";
+	para "沒想到會發生這";
+	line "種事⚬";
+	done;
+
+@org $6c, $6d89:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $6d8c:
+	text "古代飛空兵器﹖";
+	done;
+
+@org $6c, $6d99:
+	init NAME_4F, PIC_73;
+@org $6c, $6d9c:
+	text "是的⚬";
+	line "沒有時間解釋了";
+	cont "再拖下去的話﹐";
+	line "就快要來不及了";
+	para "";
+	db $f1, $65; #"有"
+	text "一股極大的能";
+	line "量正要從裂縫竄";
+	cont "出⚬";
+	para "";
+	db $f1, $aa; #"晶"
+	text "片組成的『核";
+	line "』沒有受損吧﹖";
+	done;
+
+@org $6c, $6e0c:
+	init NAME_1C, PIC_29;
+@org $6c, $6e0f:
+	text "沒有⚬";
+	done;
+
+@org $6c, $6e15:
+	init NAME_4F, PIC_73;
+@org $6c, $6e18:
+	text "這真是太好了⚬";
+	line "那你就跟我走吧";
+	para "巴洛特﹐把同伴";
+	line "";
+	db $f1, $34; #"找"
+	text "齊後﹐我們在";
+	cont "";
+	db $f3, $15; #"綠"
+	text "州的地方會合";
+	line "吧⚬";
+	done;
+
+@org $6c, $6e62:
+	init NAME_NINA, PIC_33;
+@org $6c, $6e65:
+	text "事情一定還有轉";
+	line "機的⚬";
+	para "不管如何﹐妮娜";
+	line "一定支持巴洛特";
+	done;
+
+@org $6c, $6e97:
+	init NAME_CLAUDE, PIC_38;
+@org $6c, $6e9a:
+	text "古代飛空兵器﹖";
+	line "這怎麼可以少得";
+	cont "了我呢﹖";
+	done;
+
+@org $6c, $6ebb:
+	init NAME_BUCK, PIC_01;
+@org $6c, $6ebe:
+	text "巴克．幫忙．巴";
+	line "洛特﹗";
+	done;
+
+@org $6c, $6ed1:
+	init NAME_RANDT, PIC_43;
+@org $6c, $6ed4:
+	text "因為需要我的幫";
+	line "助﹐才能讓事情";
+	para "有轉機的餘地嗎";
+	line "哈哈哈～";
+	para "";
+	db $f2, $ad; #"我"
+	text "的才能真是無";
+	line "";
+	db $f0, $bb; #"法"
+	text "掩藏⚬";
+	done;
+
+@org $6c, $6f1c:
+	init NAME_HELEN, PIC_04;
+@org $6c, $6f1f:
+	text "安東⋯";
+	line "現在還不是我們";
+	cont "見面的時候⚬";
+	done;
+
+@org $6c, $6f41:
+	init NAME_LANTE, PIC_05;
+@org $6c, $6f44:
+	text "剛才的任性﹐真";
+	line "";
+	db $f1, $43; #"是"
+	text "對不起⋯⋯";
+	para "巴洛特﹐我的性";
+	line "命就交給你了﹗";
+	done;
+
+@org $6c, $6f77:
+	init NAME_MITT, PIC_07;
+@org $6c, $6f7a:
+	text "為了彌補我的錯";
+	line "誤﹐巴洛特～";
+	para "無論如何都要讓";
+	line "我盡一己之力﹗";
+	done;
+
+@org $6c, $6fb1:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $6fb4:
+	text "不行～";
+	line "同伴還沒有找齊";
+	done;
+
+@org $6c, $6fc8:
+	init NAME_4F, PIC_73;
+@org $6c, $6fcb:
+	text "都到了嗎﹖";
+	line "古代飛空兵器就";
+	cont "在水底﹗";
+	done;
+
+@org $6c, $6fea:
+	init NAME_1C, PIC_29;
+@org $6c, $6fed:
+	text "要⋯要跳下去嗎";
+	line "不⋯不⋯";
+	para "不要﹗﹗﹗";
+	line "我不會游泳⋯⋯";
+	done;
+
+@org $6c, $7019:
+	init NAME_4F, PIC_73;
+@org $6c, $701c:
+	text "囉唆﹗";
+	done;
+
+@org $6c, $7023:
+	init NAME_4F, PIC_73;
+@org $6c, $7026:
+	text "跟我來吧﹗";
+	done;
+
+@org $6c, $702f:
+	init NAME_11, PIC_11;
+@org $6c, $7032:
+	text "都來了嗎﹖";
+	done;
+
+@org $6c, $703b:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $703e:
+	text "爸爸﹗﹗";
+	done;
+
+@org $6c, $7045:
+	init NAME_11, PIC_11;
+@org $6c, $7048:
+	text "巴洛特﹐好久不";
+	line "見了﹗";
+	done;
+
+@org $6c, $705c:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $705f:
+	text "這是怎麼回事﹖";
+	done;
+
+@org $6c, $706d:
+	init NAME_11, PIC_11;
+@org $6c, $7070:
+	text "巴洛特﹐在一百";
+	line "";
+	db $f0, $69; #"二"
+	text "十年前﹐地球";
+	para "";
+	db $f2, $24; #"也"
+	text "";
+	db $0a; #"?"
+	text "現過同樣的";
+	line "問題⚬";
+	para "當時我們的祖先";
+	line "就是八大科學家";
+	cont "的召集人⚬";
+	para "他們修補星系裂";
+	line "縫所用的兵器﹐";
+	para "就是這台白鳥號";
+	line "藍月現象開始時";
+	cont "";
+	db $f2, $ad; #"我"
+	text "便一直尋找白";
+	line "鳥號的蹤跡⚬";
+	para "匆匆的離開﹐爸";
+	line "";
+	db $f3, $a5; #"爸"
+	text "真是對不起你";
+	done;
+
+@org $6c, $712a:
+	init NAME_BALLOT, PIC_2B;
+@org $6c, $712d:
+	text "爸爸⋯⋯";
+	done;
+
+@org $6c, $7134:
+	init NAME_11, PIC_11;
+@org $6c, $7137:
+	text "白鳥號當時墜於";
+	line "這片沙漠之中﹐";
+	para "形成巨大凹洞⚬";
+	line "在經過長年的演";
+	para "變﹐變成了一片";
+	line "綠州⚬";
+	done;
+
+@org $6c, $717e:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $7181:
+	text "爸⋯那麼設計圖";
+	line "";
+	db $f1, $51; #"的"
+	text "作用是﹖";
+	done;
+
+@org $6c, $7197:
+	init NAME_11, PIC_11;
+@org $6c, $719a:
+	text "當時白鳥號的結";
+	line "構被描繪出來﹐";
+	para "畫成這份設計圖";
+	line "但這其中還是存";
+	cont "在著無法理解的";
+	line "";
+	db $f1, $20; #"謎"
+	text "";
+	db $53; #"?"
+	text "";
+	para "所以我才放棄設";
+	line "計圖﹐尋找真正";
+	cont "的白鳥號⚬";
+	done;
+
+@org $6c, $7204:
+	init NAME_1C, PIC_29;
+@org $6c, $7207:
+	text "嗯嗯嗯⋯⋯⋯";
+	done;
+
+@org $6c, $7210:
+	init NAME_11, PIC_11;
+@org $6c, $7213:
+	text "時間不多了﹐大";
+	line "家進入白鳥號⚬";
+	para "";
+	db $f1, $86; #"解"
+	text "";
+	db $8a; #"?"
+	text "地球危機﹐";
+	line "修補弗烈茲星系";
+	cont "裂縫吧﹗";
+	done;
+
+@org $6c, $7251:
+	init NAME_4F, PIC_73;
+@org $6c, $7254:
+	text "啟動時空跳躍系";
+	line "統﹗";
+	done;
+
+@org $6c, $7267:
+	init NAME_20, PIC_30;
+@org $6c, $726a:
+	text "時空跳躍系統⋯";
+	line "準備完成⚬";
+	para "目標地⋯";
+	line "弗烈茲星系⋯";
+	cont "距離⋯";
+	line "１９３２光年⋯";
+	line "";
+	db $f2, $d5; #"跳"
+	text "躍⋯啟動﹗﹗";
+	done;
+
+@org $6c, $72b9:
+	init NAME_11, PIC_11;
+@org $6c, $72bc:
+	text "糟糕⋯";
+	line "懲罰者已經從裂";
+	cont "縫中鑽出了﹗";
+	done;
+
+@org $6c, $72da:
+	init NAME_4F, PIC_73;
+@org $6c, $72dd:
+	text "啟動";
+	line "超．能源砲﹗";
+	done;
+
+@org $6c, $72ee:
+	init NAME_20, PIC_30;
+@org $6c, $72f1:
+	text "超．能源砲能源";
+	line "填充⋯１５％⋯";
+	cont "能源填充中⋯⋯";
+	done;
+
+@org $6c, $7318:
+	init NAME_4F, PIC_73;
+@org $6c, $731b:
+	text "可惡﹗";
+	line "臭電腦⋯";
+	cont "快一點啦﹗";
+	done;
+
+@org $6c, $7335:
+	init NAME_11, PIC_11;
+@org $6c, $7338:
+	text "可惡⋯⋯";
+	line "";
+	db $f2, $bf; #"來"
+	text "不及了嗎﹖";
+	done;
+
+@org $6c, $734b:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $734e:
+	text "爸﹐我去拖延懲";
+	line "";
+	db $f3, $98; #"罰"
+	text "者的行動﹐爭";
+	para "取超．能源砲的";
+	line "填充時間吧﹗";
+	done;
+
+@org $6c, $7385:
+	init NAME_11, PIC_11;
+@org $6c, $7388:
+	text "巴洛特﹐不行﹗";
+	para "我不能讓你做這";
+	line "";
+	db $f2, $cf; #"麼"
+	text "";
+	db $c1; #"?"
+	text "";
+	db $c2; #"?"
+	text "的事情﹗";
+	done;
+
+@org $6c, $73b0:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $73b3:
+	text "那爸爸還有更好";
+	line "的方法嗎﹖";
+	done;
+
+@org $6c, $73c9:
+	init NAME_11, PIC_11;
+@org $6c, $73cc:
+	text "巴洛特成長了不";
+	line "少⚬";
+	para "好吧﹐在能源填";
+	line "充完前﹐一定要";
+	cont "趕回來才行﹗";
+	para "巴洛特﹐一切要";
+	line "小心﹗";
+	done;
+
+@org $6c, $741a:
+	init NAME_4F, PIC_73;
+@org $6c, $741d:
+	text "可惡⋯";
+	line "臭電腦﹗";
+	para "給我快一點﹗";
+	line "";
+	db $f1, $c8; #"可"
+	text "惡﹗";
+	done;
+
+@org $6c, $743e:
+	init NAME_11, PIC_11;
+@org $6c, $7441:
+	text "在能源填充完前";
+	line "一定要趕回來";
+	cont "";
+	db $f2, $b2; #"才"
+	text "行﹗";
+	para "巴洛特﹐";
+	line "一切要小心﹗";
+	done;
+
+@org $6c, $7476:
+	init NAME_1C, PIC_29;
+@org $6c, $7479:
+	text "巴洛特﹐";
+	line "一切要小心呀﹗";
+	done;
+
+@org $6c, $748f:
+	init NAME_51, $76;
+@org $6c, $7492:
+	text "想要阻止懲罰者";
+	line "嗎﹖";
+	para "別不自量力了⚬";
+	line "讓你見識三魔人";
+	cont "";
+	db $f0, $02; #"之"
+	text "～水魔人";
+	line "的厲害﹗";
+	done;
+
+@org $6c, $74d2:
+	init NAME_52, $77;
+@org $6c, $74d5:
+	text "懲罰者已經從那";
+	line "該死的裂縫中出";
+	cont "現了⚬";
+	para "哈哈～";
+	line "";
+	db $f2, $16; #"等"
+	text "主人呤唱完終";
+	cont "極的淨化咒文後";
+	line "月球就會化為巨";
+	cont "";
+	db $f0, $b0; #"大"
+	text "的隕石⚬";
+	para "";
+	db $f1, $62; #"到"
+	text "時候﹐地球就";
+	line "";
+	db $f2, $33; #"會"
+	text "像地獄般的灼";
+	cont "熱﹗";
+	line "哈哈哈哈～";
+	para "用炙烈的火焰﹐";
+	line "淨化所有不潔的";
+	cont "人類吧﹗";
+	done;
+
+@org $6c, $757d:
+	init NAME_50, PIC_75;
+@org $6c, $7580:
+	text "你們還能夠來到";
+	line "這裡﹐不由得讓";
+	para "我打從心裡偑服";
+	line "懲罰者正在呤唱";
+	cont "";
+	db $f8, $72; #"淨"
+	text "化人類的咒文";
+	line "可不能讓你們阻";
+	line "止⚬";
+	para "地球這種地方﹐";
+	line "讓你們人類居住";
+	para "實在太浪費了現";
+	line "";
+	db $f3, $9a; #"在"
+	text "的我﹐力量應";
+	cont "該完全的回復了";
+	line "吧﹗";
+	para "既然如此﹐那就";
+	line "提早進入死靈國";
+	cont "";
+	db $f1, $71; #"度"
+	text "吧﹗";
+	done;
+
+@org $6c, $7643:
+	init NAME_50, PIC_75;
+@org $6c, $7646:
+	text "不⋯不可能⋯⋯";
+	line "不⋯甘心⋯";
+	done;
+
+@org $6c, $765d:
+	init NAME_53, $78;
+@org $6c, $7660:
+	text "奉吾之名、奉吾";
+	line "之力～";
+	para "";
+	db $f2, $63; #"比"
+	text "太陽更灼熱～";
+	line "";
+	db $f2, $63; #"比"
+	text "血液更炙紅～";
+	para "召喚紅蓮之星﹐";
+	line "化為焚風～";
+	done;
+
+@org $6c, $76a8:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $76ab:
+	text "糟了﹗";
+	line "這就是終極的淨";
+	cont "化咒文嗎﹖";
+	line "絕對不能讓他唱";
+	line "完﹗";
+	done;
+
+@org $6c, $76db:
+	init NAME_53, $78;
+@org $6c, $76de:
+	text "嗚⋯⋯呃⋯⋯";
+	line "阻礙者⋯⋯⋯";
+	para "奉吾之名﹐奉吾";
+	line "之力～";
+	para "";
+	db $f2, $63; #"比"
+	text "黑夜更潻黑的";
+	line "力量～";
+	cont "回歸吾身﹗";
+	done;
+
+@org $6c, $7725:
+	init NAME_53, PIC_60;
+@org $6c, $7728:
+	text "低等的人類⚬";
+	para "吾囚於空間裂縫";
+	line "中之苦﹐汝能體";
+	cont "會﹖";
+	para "月亮既將成為火";
+	line "蓮～";
+	para "既將對你們伸出";
+	line "炙熱的舌頭﹐吞";
+	cont "";
+	db $f7, $d0; #"噬"
+	text "一切⚬";
+	para "";
+	db $f1, $40; #"用"
+	text "它吹出的風蒸";
+	line "發你們的血液～";
+	para "用它憤怒的火灰";
+	line "化你們的骨頭～";
+	para "";
+	db $f2, $3e; #"何"
+	text "";
+	db $14; #"?"
+	text "";
+	db $50; #"?"
+	text "﹖";
+	para "接受淨化不是很";
+	line "好嗎﹖";
+	para "在吾之面前﹐體";
+	line "會恐懼吧﹗";
+	done;
+
+@org $6c, $77f4:
+	init NAME_53, PIC_60;
+@org $6c, $77f7:
+	text "呃⋯吾之力量尚";
+	line "";
+	db $f7, $20; #"未"
+	text "回復⋯⋯";
+	para "執意要做最後的";
+	line "掙扎嗎﹖";
+	para "一切似乎都太遲";
+	line "";
+	db $f1, $64; #"了"
+	text "";
+	db $35; #"?"
+	text "";
+	done;
+
+@org $6c, $7835:
+	init NAME_53, PIC_60;
+@org $6c, $7838:
+	text "奉吾之名、奉吾";
+	line "之力～";
+	para "";
+	db $f2, $63; #"比"
+	text "太陽更灼熱～";
+	line "";
+	db $f2, $63; #"比"
+	text "血液更炙紅～";
+	para "召喚紅蓮之星﹐";
+	line "化為焚風～綻開";
+	cont "千萬度火舌～";
+	done;
+
+@org $6c, $788f:
+	init NAME_BALLOT, PIC_2C;
+@org $6c, $7892:
+	text "可惡﹗";
+	line "我不會讓你得懲";
+	cont "的﹗";
+	done;
+
+@org $6c, $78ab:
+	init NAME_BALLOT, PIC_2C;
+@org $6c, $78ae:
+	text "可惡﹗﹗";
+	done;
+
+@org $6c, $78b6:
+	init NAME_11, PIC_11;
+@org $6c, $78b9:
+	text "巴洛特﹗";
+	line "";
+	db $f1, $81; #"超"
+	text "．能源砲能源";
+	cont "";
+	db $f1, $56; #"已"
+	text "";
+	db $57; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	para "趕快回到白鳥號";
+	line "上﹗";
+	cont "動作快﹗﹗";
+	done;
+
+@org $6c, $78ed:
+	init NAME_BALLOT, PIC_2E;
+@org $6c, $78f0:
+	text "是的﹗";
+	done;
+
+@org $6c, $78f5:
+	init NAME_53, PIC_60;
+@org $6c, $78f8:
+	text "沒有這麼容易～";
+	done;
+
+@org $6c, $7906:
+	init NAME_BALLOT, PIC_2D;
+@org $6c, $7909:
+	text "啊啊啊﹗﹗﹗﹗";
+	done;

@@ -32,16 +32,27 @@ MACRO sound_init
 
     db sound_init_cmd + (\1)
 
-IF _NARG == 9
-    assert 0<=(\2) && (\2)<=3, "sound_init: duty_cycle 1st argument between 0 - 3"
-    assert 0<=(\3) && (\3)<=3, "sound_init: duty_cycle 2nd argument between 0 - 3"
+; pulse channels (1, 2): duty, volume, vibrato, envelope mode, [+ params].
+; envelope mode pulls two parameter bytes when its high bit is set.
+IF _NARG == 9 || _NARG == 7
     dn (\2), (\3) ; duty cycle
-
-    db (\4)
+    db (\4) ; volume envelope
     dn (\5), (\6) ; vibrato
-    db (\7), (\8), (\9) ; unknown
+IF _NARG == 9
+    db (\7), (\8), (\9) ; envelope mode, params
+ELSE
+    db (\7) ; envelope mode
+endc
+
+; wave channel (3): waveform, envelope mode, [+ params].
+ELIF _NARG == 5
+    db (\2), (\3), (\4), (\5) ; waveform, envelope mode, params
 ELIF _NARG == 4
-    db (\2), (\3), (\4)
+    db (\2), (\3), (\4) ; waveform, envelope mode
+ELIF _NARG == 3
+    db (\2), (\3) ; waveform, envelope mode
+
+; noise channel (4): speed only.
 endc
 ENDM
 
@@ -58,14 +69,17 @@ MACRO duty_cycle
     dn (\1), (\2)
 ENDM
 
-    const unknown_music_e9_cmd ; $e9
-MACRO unknown_music_e9
-    db unknown_music_e9_cmd, (\1)
+; x = starting volume
+; y = target volume
+    const volume_envelope_cmd ; $e9 xy
+MACRO volume_envelope
+    db volume_envelope_cmd, (\1)
 ENDM
 
-    const unknown_music_ea_cmd ; $ea
-MACRO unknown_music_ea
-    db unknown_music_ea_cmd, (\1)
+; xx : raw NR10 value (channel 1 frequency sweep: time, direction, shift)
+    const sweep_cmd ; $ea
+MACRO sweep
+    db sweep_cmd, (\1)
 ENDM
 
     const vibrato_cmd ; $eb
@@ -79,14 +93,18 @@ MACRO transpose
     db transpose_cmd, (\1)
 ENDM
 
-    const unknown_music_ed_cmd ; $ed
-MACRO unknown_music_ed
-    db unknown_music_ed_cmd, (\1)
+    const waveform_cmd ; $ed
+MACRO waveform
+    db waveform_cmd, (\1)
 ENDM
 
-    const unknown_volume_cmd ; $ee
-MACRO unknown_volume
-    db unknown_volume_cmd, (\1)
+; if xx <= $7f: xx is a preset instrument index
+;    xx  > $7f: yyyy is required as an instrument pointer
+;               xx itself configures the envelope generator
+;               (still not sure what tho)
+    const envelope_setting_cmd ; $ee xx yyyy
+MACRO envelope_setting
+    db envelope_setting_cmd, (\1)
 if (\1) > $7f
     db (\2), (\3)
 endc
@@ -97,29 +115,31 @@ MACRO fine_pitch
     db fine_pitch_cmd, (\1)
 ENDM
 
-    const unknown_music_f0_cmd ; $f0 xx volume only?
-MACRO unknown_music_f0
-    db unknown_music_f0_cmd, (\1)
+    const envelope_mode_cmd ; $f0 xx volume only?
+MACRO envelope_mode
+    db envelope_mode_cmd, (\1)
 ENDM
 
-    const unknown_music_f1_cmd ; $f1 xx vol param 1?
-MACRO unknown_music_f1
-    db unknown_music_f1_cmd, (\1)
+    const envelope_param1_cmd ; $f1 xx vol param 1?
+MACRO envelope_param1
+    db envelope_param1_cmd, (\1)
 ENDM
     
-    const unknown_music_f2_cmd ; $f2 xx vol param 2?
-MACRO unknown_music_f2
-    db unknown_music_f2_cmd, (\1)
+    const envelope_param2_cmd ; $f2 xx vol param 2?
+MACRO envelope_param2
+    db envelope_param2_cmd, (\1)
 ENDM
     
     const stereo_panning_cmd   ; $f3 xx
 MACRO stereo_panning
     db stereo_panning_cmd, (\1)
 ENDM
-        
-    const unknown_music_f4_cmd ; $f4 xx yy ?
-MACRO unknown_music_f4
-    db unknown_music_f4_cmd, (\1), (\2)
+
+; add yy to the channel byte at offset xx
+; if == $11 reset instrument pointer
+    const retrigger_cmd ; $f4 xx yy ?
+MACRO retrigger
+    db retrigger_cmd, (\1), (\2)
 ENDM
         
     const sound_nop_cmd        ; $f5

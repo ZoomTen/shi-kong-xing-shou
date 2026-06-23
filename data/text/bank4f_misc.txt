@@ -1,5 +1,5 @@
 @org $4f, $4de3:
-	init $00, $16; # TEMP
+	init NAME_BLANK, PIC_16;
 	text "這裡是天之都⚬";
 	line "那棟最高的建築";
 	cont "物﹐就是有名的";
@@ -7,7 +7,7 @@
 	done;
 
 @org $4f, $4e1c:
-	init $00, $16; # TEMP
+	init NAME_BLANK, PIC_16;
 	text "邦林科技要甄選";
 	line "『復古風項鍊』";
 	cont "的女性代言人⚬";
@@ -20,12 +20,12 @@
 	done;
 
 @org $4f, $4e8b:
-	init $00, $16; # TEMP
+	init NAME_BLANK, PIC_16;
 	text "鼻血止不住⋯";
 	done;
 
 @org $4f, $4e9b:
-	init $00, $14; # TEMP
+	init NAME_BLANK, PIC_14;
 	text "真是糟糕﹗";
 	line "少爺又偷偷從課";
 	cont "堂中溜走了﹗";
@@ -36,7 +36,7 @@
 	done;
 
 @org $4f, $4ee0:
-	init $00, $12; # TEMP
+	init NAME_BLANK, PIC_12;
 	text "邦林企業總裁的";
 	line "爺爺﹐也是拯救";
 	cont "地球的八大科學";
@@ -47,7 +47,7 @@
 	done;
 
 @org $4f, $4f38:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "哎呀～";
 	line "不要丟髒我的新";
 	cont "衣服唷﹗";
@@ -58,19 +58,19 @@
 	done;
 
 @org $4f, $4f81:
-	init $21, $31; # TEMP
+	init NAME_21, PIC_31;
 	text "噁～噁～喵～";
 	line "噁～﹗";
 	done;
 
 @org $4f, $4f98:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "怎麼辦⋯";
 	line "人家買不到衣服";
 	done;
 
 @org $4f, $4fb0:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "好慢哦～";
 	line "前面的怎麼這麼";
 	cont "慢啦﹗";
@@ -80,7 +80,7 @@
 	done;
 
 @org $4f, $4fec:
-	init $00, $1a; # TEMP
+	init NAME_BLANK, PIC_1A;
 	text "邦林科技選秀會";
 	line "的獎品﹐很漂亮";
 	cont "喲﹗";
@@ -92,7 +92,7 @@
 	done;
 
 @org $4f, $5048:
-	init $00, $1c; # TEMP
+	init NAME_BLANK, PIC_1C;
 	text "爸爸說﹐在邦林";
 	line "企業裡工作﹐才";
 	cont "能算是真正的男";
@@ -104,7 +104,7 @@
 	done;
 
 @org $4f, $5093:
-	init $00, $17; # TEMP
+	init NAME_BLANK, PIC_17;
 	text "我老婆就是世界";
 	line "知名的糢特兒～";
 	cont "花露露⚬";
@@ -118,14 +118,14 @@
 	done;
 
 @org $4f, $5107:
-	init $00, $17; # TEMP
+	init NAME_BLANK, PIC_17;
 	text "我老婆就是世界";
 	line "知名的糢特兒～";
 	cont "";
 	done;
 
 @org $4f, $5127:
-	init $00, $17; # TEMP
+	init NAME_BLANK, PIC_17;
 	text "自從敗";
 	forcemap 1, "選";
 	text "後﹐";
@@ -138,7 +138,7 @@
 	done;
 
 @org $4f, $5161:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "嗯～嗯～嗯～﹖";
 	line "你是來要簽名的";
 	cont "嗎﹖";
@@ -151,7 +151,7 @@
 	done;
 
 @org $4f, $51ca:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "沒有問題的﹗";
 	line "以我女兒的姿色";
 	cont "要奪下選秀會的";
@@ -160,7 +160,7 @@
 	done;
 
 @org $4f, $5208:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "抱歉";
 	forcemap 2, "～";
 	line "今日掛號已";
@@ -172,7 +172,7 @@
 	done;
 
 @org $4f, $522b:
-	init $00, $25; # TEMP
+	init NAME_BLANK, PIC_25;
 	text "真是緊張﹐選秀";
 	line "會就要到了﹗";
 	para "要是人家真的選";
@@ -183,7 +183,7 @@
 	done;
 
 @org $4f, $5284:
-	init $00, $25; # TEMP
+	init NAME_BLANK, PIC_25;
 	text "要世界級明星的";
 	line "我的簽名﹐";
 	para "是";
@@ -193,7 +193,7 @@
 	done;
 
 @org $4f, $52bc:
-	init $00, $16; # TEMP
+	init NAME_BLANK, PIC_16;
 	text "在天之都的附近";
 	line "有一座森林﹐名";
 	cont "叫綠色樹海⚬";
@@ -207,7 +207,7 @@
 	done;
 
 @org $4f, $531d:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "綠色樹海裡有很";
 	line "多的小動物⋯";
 	cont "可是突然減少了";
@@ -219,7 +219,7 @@
 	done;
 
 @org $4f, $5372:
-	init $00, $18; # TEMP
+	init NAME_BLANK, PIC_18;
 	text "邦林企業總裁的";
 	line "兒子～";
 	cont "克勞德﹐是個頑";
@@ -231,7 +231,7 @@
 	done;
 
 @org $4f, $53d3:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "呀﹗我要參加選";
 	line "秀會用的珍珠項";
 	cont "鍊不見了⋯";
@@ -240,14 +240,14 @@
 	done;
 
 @org $4f, $540f:
-	init $00, $1b; # TEMP
+	init NAME_BLANK, PIC_1B;
 	text "剛才有隻貓來偷";
 	line "吃魚﹗";
 	cont "真是可惡⋯";
 	done;
 
 @org $4f, $5430:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "爸爸﹖";
 	line "那不是爸爸嗎﹖";
 	para "我終於找到他了";
@@ -255,18 +255,18 @@
 	done;
 
 @org $4f, $5457:
-	init $2a, $53; # TEMP
+	init NAME_2A, PIC_53;
 	text "先生您好⚬";
 	line "大侯光臨～";
 	done;
 
 @org $4f, $5470:
-	init $11, $11; # TEMP
+	init NAME_11, PIC_11;
 	text "⋯⋯";
 	done;
 
 @org $4f, $5477:
-	init $2a, $53; # TEMP
+	init NAME_2A, PIC_53;
 	text "先生～抱歉﹗";
 	cont "裡面就是邦林企";
 	line "業的內部辦公室";
@@ -275,25 +275,25 @@
 	done;
 
 @org $4f, $54bb:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "剛才那位先生是";
 	line "﹖";
 	done;
 
 @org $4f, $54ce:
-	init $2a, $53; # TEMP
+	init NAME_2A, PIC_53;
 	text "那位先生是總裁";
 	line "的貴賓⚬";
 	done;
 
 @org $4f, $54e8:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "可是他是我爸爸";
 	line "﹗";
 	done;
 
 @org $4f, $54fb:
-	init $2a, $53; # TEMP
+	init NAME_2A, PIC_53;
 	text "先生～";
 	line "請原諒我如此的";
 	line "無禮⚬";
@@ -308,7 +308,7 @@
 	done;
 
 @org $4f, $5580:
-	init $01, $2c; # TEMP
+	init NAME_BALLOT, PIC_2C;
 	text "可惡⋯⋯";
 	line "好不容易找到了";
 	cont "爸爸⚬";
@@ -318,7 +318,7 @@
 	done;
 
 @org $4f, $55bf:
-	init $2a, $53; # TEMP
+	init NAME_2A, PIC_53;
 	text "您好～先生⚬";
 	para "裡面是邦林企業";
 	line "內部辦公室⚬";
@@ -329,7 +329,7 @@
 	done;
 
 @org $4f, $5619:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "您好～這裡是邦";
 	line "林企業的服務檯";
 	para "在您眼前的商品";
@@ -342,7 +342,7 @@
 	done;
 
 @org $4f, $568f:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "您好～這裡是復";
 	line "古風項鍊代言人";
 	cont "選秀會報名處⚬";
@@ -350,7 +350,7 @@
 	done;
 
 @org $4f, $56c8:
-	init $2b, $25; # TEMP
+	init NAME_2B, PIC_25;
 	text "您好～";
 	line "我是產品解說員";
 	cont "～貝貝⚬";
@@ -359,7 +359,7 @@
 	done;
 
 @org $4f, $56fa:
-	init $00, $14; # TEMP
+	init NAME_BLANK, PIC_14;
 	text "糟了～";
 	line "少爺又溜掉了﹗";
 	para "一定又會被總裁";
@@ -368,7 +368,7 @@
 	done;
 
 @org $4f, $572e:
-	init $03, $36; # TEMP
+	init NAME_NINA, PIC_36;
 	text "這⋯這項鍊﹖";
 	cont "這項鍊裡鑲上的";
 	line "東西﹐不就是動";
@@ -376,7 +376,7 @@
 	done;
 
 @org $4f, $5762:
-	init $2b, $25; # TEMP
+	init NAME_2B, PIC_25;
 	text "您好﹗";
 	line "這就是邦林企業";
 	cont "最新的產品～";
@@ -390,12 +390,12 @@
 	done;
 
 @org $4f, $57d9:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "動力晶片﹖";
 	done;
 
 @org $4f, $57e7:
-	init $2b, $25; # TEMP
+	init NAME_2B, PIC_25;
 	text "是的⚬";
 	line "整體的設計都是";
 	cont "由總裁親自設計";
@@ -404,13 +404,13 @@
 	done;
 
 @org $4f, $5826:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "這要如何才能得";
 	line "到呢﹖";
 	done;
 
 @org $4f, $583e:
-	init $2b, $25; # TEMP
+	init NAME_2B, PIC_25;
 	text "本產品還在樣品";
 	line "階段⚬";
 	para "待在全球打響知";
@@ -423,7 +423,7 @@
 	done;
 
 @org $4f, $588e:
-	init $01, $2d; # TEMP
+	init NAME_BALLOT, PIC_2D;
 	text "４⋯";
 	line "４５００";
 	forcemap 1, "萬";
@@ -431,7 +431,7 @@
 	done;
 
 @org $4f, $589f:
-	init $2b, $25; # TEMP
+	init NAME_2B, PIC_25;
 	text "是的⚬";
 	line "另外﹐本公司為";
 	cont "打響此商品知名";
@@ -447,7 +447,7 @@
 	done;
 
 @org $4f, $592a:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "要如何籌到";
 	line "４５００";
 	forcemap 1, "萬";
@@ -456,12 +456,12 @@
 	done;
 
 @org $4f, $594e:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "⋯⋯";
 	done;
 
 @org $4f, $5955:
-	init $01, $2a; # TEMP
+	init NAME_BALLOT, PIC_2A;
 	text "選秀會﹗妮娜﹗";
 	line "只要妮娜參加的";
 	cont "話﹐一定就可以";
@@ -472,7 +472,7 @@
 	done;
 
 @org $4f, $59ab:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "我⋯不行啦⋯⋯";
 	line "妮娜沒有漂亮的";
 	cont "衣服⋯不能參加";
@@ -480,7 +480,7 @@
 	done;
 
 @org $4f, $59df:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "衣服的事情﹐我";
 	line "們再另外想辦法";
 	cont "以妮娜的條件﹐";
@@ -488,27 +488,27 @@
 	done;
 
 @org $4f, $5a16:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "妮娜⋯妮娜⋯⋯";
 	line "試試看⋯";
 	done;
 
 @org $4f, $5a2d:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "您好～這裡是復";
 	line "古風項鍊代言人";
 	cont "選秀會報名處⚬";
 	line "您要報名嗎﹖";
 	line "";
-	getchoice $1cc5; # TEMP
+	getchoice String_1cc5;
 
 @org $4f, $5a69:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "是⋯⋯是的⋯⋯";
 	done;
 
 @org $4f, $5a78:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "我⋯⋯";
 	line "我";
 	forcemap 2, "還";
@@ -516,7 +516,7 @@
 	done;
 
 @org $4f, $5a8e:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "好的⚬";
 	line "這就";
 	forcemap 2, "給";
@@ -528,18 +528,18 @@
 	done;
 
 @org $4f, $5acf:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "您的編號是";
 	line "第５９３２號";
 	done;
 
 @org $4f, $5ae7:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "謝謝您⚬";
 	done;
 
 @org $4f, $5af1:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "不客氣⚬";
 	line "請原諒我的多嘴";
 	para "這位美麗的小姐";
@@ -550,13 +550,13 @@
 	done;
 
 @org $4f, $5b4f:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "嗯嗯⋯⋯";
 	line "謝謝⋯";
 	done;
 
 @org $4f, $5b5f:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "怎麼辦﹖";
 	cont "服飾店的衣服﹐";
 	line "都被麗子給買下";
@@ -566,7 +566,7 @@
 	done;
 
 @org $4f, $5ba1:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "麗子真是可惡﹗";
 	line "人家買不到新的";
 	cont "衣服﹐要怎麼上";
@@ -576,7 +576,7 @@
 	done;
 
 @org $4f, $5be3:
-	init $00, $25; # TEMP
+	init NAME_BLANK, PIC_25;
 	text "抱歉～";
 	line "本店的服飾全被";
 	cont "麗子給買下來了";
@@ -584,7 +584,7 @@
 	done;
 
 @org $4f, $5c0f:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "你這個可惡的女";
 	line "人﹗";
 	para "竟然搞這種可惡";
@@ -598,7 +598,7 @@
 	done;
 
 @org $4f, $5c7d:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "和在下想的﹐一";
 	line "點都沒有錯⚬";
 	para "在下認為﹐你真";
@@ -606,61 +606,61 @@
 	done;
 
 @org $4f, $5cb4:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "什麼﹗﹗";
 	line "竟敢說我不可愛";
 	cont "你們又是誰啊﹖";
 	done;
 
 @org $4f, $5cdc:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "你在問我們是誰";
 	line "嗎﹖";
 	done;
 
 @org $4f, $5cf2:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "既然你們問起了";
 	line "﹐那我就仁慈的";
 	cont "告訴你們吧﹗";
 	done;
 
 @org $4f, $5d1c:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "來自銀河系裡的";
 	line "正義使者﹗";
 	done;
 
 @org $4f, $5d38:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "穿梭於黑夜的浪";
 	line "漫勇士﹗";
 	done;
 
 @org $4f, $5d50:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "貫徹愛．正義．";
 	line "勇氣的真理﹗";
 	done;
 
 @org $4f, $5d6b:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "拉琪﹗";
 	done;
 
 @org $4f, $5d74:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "庫魯﹗";
 	done;
 
 @org $4f, $5d7d:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "閃．電．隊～～";
 	line "誕生﹗﹗";
 	done;
 
 @org $4f, $5d91:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "一群神經病﹗";
 	line "我就是不賣～";
 	para "你們就穿那些破";
@@ -670,14 +670,14 @@
 	done;
 
 @org $4f, $5ddb:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "你真是在下見過";
 	line "最壞心眼的醜八";
 	line "怪﹗";
 	done;
 
 @org $4f, $5dfe:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哼﹗";
 	line "沒什麼了不起的";
 	para "我會讓你這個不";
@@ -690,7 +690,7 @@
 	done;
 
 @org $4f, $5e5b:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "哼﹗";
 	line "沒有人敢說麗子";
 	line "不可愛﹗";
@@ -698,7 +698,7 @@
 	done;
 
 @org $4f, $5e85:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "什麼﹖";
 	line "妳也想要參加";
 	line "";
@@ -706,7 +706,7 @@
 	done;
 
 @org $4f, $5ea5:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "哈哈哈哈～";
 	line "不要笑死人了～";
 	para "瞧妳那副寒酸樣";
@@ -719,13 +719,13 @@
 	done;
 
 @org $4f, $5f09:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "是⋯是的⋯";
 	line "對不起⋯⋯";
 	done;
 
 @org $4f, $5f1f:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "真是傷腦筋～";
 	line "衣服這麼多～";
 	para "把剩下來的衣服";
@@ -734,7 +734,7 @@
 	done;
 
 @org $4f, $5f5b:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "巴洛特⋯妮娜⋯";
 	line "不能比賽了⋯⋯";
 	para "妮娜⋯";
@@ -744,7 +744,7 @@
 	done;
 
 @org $4f, $5fa7:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "沒有那回事的﹗";
 	cont "妮娜一定是最漂";
 	line "亮的女孩⚬";
@@ -753,22 +753,22 @@
 	done;
 
 @org $4f, $5feb:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "咦⋯﹖";
 	done;
 
 @org $4f, $5ff5:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "啊⋯﹖";
 	done;
 
 @org $4f, $5fff:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "妳⋯妳⋯";
 	done;
 
 @org $4f, $600b:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "這⋯這種心蹦蹦";
 	cont "跳的感覺是什麼";
 	line "﹖";
@@ -778,21 +778,21 @@
 	done;
 
 @org $4f, $6051:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "這⋯這位小姐⋯";
 	line "妳也是要參加選";
 	cont "秀會嗎﹖";
 	done;
 
 @org $4f, $6077:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "妮娜不適合⋯⋯";
 	line "妮娜只有這套破";
 	cont "舊的衣服⋯";
 	done;
 
 @org $4f, $609f:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "臉好燙⋯⋯";
 	line "我今天是怎麼回";
 	line "";
@@ -800,12 +800,12 @@
 	done;
 
 @org $4f, $60c0:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "面具先生﹖";
 	done;
 
 @org $4f, $60cd:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "哦﹗﹗﹗";
 	line "這件事就包在我";
 	cont "身上﹐我幫你解";
@@ -819,18 +819,18 @@
 	done;
 
 @org $4f, $6146:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "真是奇怪的人⋯";
 	done;
 
 @org $4f, $6154:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "巴洛特﹐現在要";
 	line "怎麼辦﹖";
 	done;
 
 @org $4f, $616c:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "沒有辦法了～";
 	cont "城裡已經買不到";
 	line "衣服⋯";
@@ -839,7 +839,7 @@
 	done;
 
 @org $4f, $61aa:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "這裡是綠色樹海";
 	line "嗎﹖";
 	cont "怎麼到處都是石";
@@ -849,88 +849,88 @@
 	done;
 
 @org $4f, $61ed:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "拱拱～拱～";
 	done;
 
 @org $4f, $61fa:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "啊﹖";
 	line "你們來了啊﹗";
 	line "就在這裡～";
 	done;
 
 @org $4f, $621a:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "跟我來﹗";
 	done;
 
 @org $4f, $6225:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "咕咕咕～咕～";
 	done;
 
 @org $4f, $6233:
-	init $2f, $58; # TEMP
+	init NAME_2F, PIC_58;
 	text "⋯⋯⋯";
 	done;
 
 @org $4f, $623b:
-	init $30, $58; # TEMP
+	init NAME_30, PIC_58;
 	text "⋯⋯⋯";
 	done;
 
 @org $4f, $6243:
-	init $31, $5a; # TEMP
+	init NAME_31, PIC_5A;
 	text "喵喵～咪噢嗚～";
 	done;
 
 @org $4f, $6254:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "咕咕～咕咕～";
 	line "咕～";
 	done;
 
 @org $4f, $6267:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "拱拱～拱～";
 	done;
 
 @org $4f, $6274:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "拱拱～拱～";
 	done;
 
 @org $4f, $6281:
-	init $32, $56; # TEMP
+	init NAME_32, PIC_56;
 	text "⋯⋯";
 	done;
 
 @org $4f, $6288:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "咦﹖";
 	cont "妮娜怎麼還沒有";
 	line "來﹖";
 	done;
 
 @org $4f, $62a1:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "這裡就是我朋友";
 	line "的家⚬";
 	done;
 
 @org $4f, $62b9:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "朋友﹖";
 	done;
 
 @org $4f, $62c2:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "嗯⚬";
 	done;
 
 @org $4f, $62c9:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "那位兔先生﹐就";
 	cont "是動物界裡最有";
 	line "名的裁師哦﹗";
@@ -944,12 +944,12 @@
 	done;
 
 @org $4f, $634a:
-	init $03, $34; # TEMP
+	init NAME_NINA, PIC_34;
 	text "真是可憐⚬";
 	done;
 
 @org $4f, $6356:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "森林的動物﹐有";
 	line "些閃避不及﹐都";
 	cont "變成了石頭⚬";
@@ -962,13 +962,13 @@
 	done;
 
 @org $4f, $63c8:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "兔先生真是深情";
 	line "⋯";
 	done;
 
 @org $4f, $63db:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "我們只要打倒了";
 	line "森林裡的火山怪";
 	cont "﹐應該就可以解";
@@ -977,13 +977,13 @@
 	done;
 
 @org $4f, $6422:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "好的﹐妮娜會努";
 	line "力的⚬";
 	done;
 
 @org $4f, $6438:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "只有妳一個人去";
 	line "的話⋯";
 	para "我⋯我不能放心";
@@ -991,13 +991,13 @@
 	done;
 
 @org $4f, $646c:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "面具男鸚鵡怪";
 	line "加入隊伍﹗";
 	done;
 
 @org $4f, $6483:
-	init $18, $2f; # TEMP
+	init NAME_18, PIC_2F;
 	text "如果將面具男置";
 	cont "於排頭﹐鸚鵡怪";
 	line "便會發揮溝通力";
@@ -1006,7 +1006,7 @@
 	done;
 
 @org $4f, $64bf:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "真是可怕咕～";
 	cont "火山怪把森林變";
 	line "成石頭了咕⚬";
@@ -1019,7 +1019,7 @@
 	done;
 
 @org $4f, $6527:
-	init $2f, $58; # TEMP
+	init NAME_2F, PIC_58;
 	text "傷心呀～";
 	line "我的性感女神～";
 	cont "兔小姐啊～";
@@ -1032,12 +1032,12 @@
 	done;
 
 @org $4f, $658c:
-	init $30, $58; # TEMP
+	init NAME_30, PIC_58;
 	text "⋯⋯⋯";
 	done;
 
 @org $4f, $6594:
-	init $31, $5a; # TEMP
+	init NAME_31, PIC_5A;
 	text "我是旅行的人～";
 	line "偶爾來到這裡﹐";
 	cont "沒想到居然碰到";
@@ -1050,7 +1050,7 @@
 	db $e7, $e2;
 
 @org $4f, $65f8:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "咕咕～";
 	line "我是名醫～咕咕";
 	para "除了變成石頭之";
@@ -1061,10 +1061,10 @@
 	text "務嗎";
 	forcemap 1, "﹖";
 	line "";
-	getchoice $1cc5; # TEMP
+	getchoice String_1cc5;
 
 @org $4f, $663f:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "老婆～拱嗚～";
 	line "拱嗚～";
 	cont "我們的小孩⋯";
@@ -1072,7 +1072,7 @@
 	done;
 
 @org $4f, $666c:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "老公～嗚嗚～";
 	line "拱拱～";
 	cont "如果我們的小孩";
@@ -1084,12 +1084,12 @@
 	done;
 
 @org $4f, $66c4:
-	init $32, $56; # TEMP
+	init NAME_32, PIC_56;
 	text "⋯⋯";
 	done;
 
 @org $4f, $66cb:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "是你呀﹗";
 	line "為了你好﹐還是";
 	cont "不要過去好了⚬";
@@ -1098,19 +1098,19 @@
 	done;
 
 @org $4f, $6707:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "既使這樣﹐你都";
 	line "還是要過去嗎﹖";
 	cont "唉～祝福你了⋯";
 	done;
 
 @org $4f, $6734:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "唉～祝福你了⋯";
 	done;
 
 @org $4f, $6746:
-	init $33, $5c; # TEMP
+	init NAME_33, PIC_5C;
 	text "轟隆～轟隆～";
 	cont "還有醜陋的活人";
 	line "嗎﹖";
@@ -1120,13 +1120,13 @@
 	done;
 
 @org $4f, $6787:
-	init $2c, $55; # TEMP
+	init NAME_2C, PIC_55;
 	text "啊﹗";
 	line "我的面具﹗";
 	done;
 
 @org $4f, $6799:
-	init $04, $03; # TEMP
+	init NAME_CLAUDE, PIC_03;
 	text "我⋯我叫克勞德";
 	line "我們⋯我們⋯";
 	cont "我們快回去找兔";
@@ -1134,37 +1134,37 @@
 	done;
 
 @org $4f, $67cc:
-	init $2f, $58; # TEMP
+	init NAME_2F, PIC_58;
 	text "謝謝你﹗";
 	done;
 
 @org $4f, $67d7:
-	init $2f, $58; # TEMP
+	init NAME_2F, PIC_58;
 	text "⋯⋯";
 	done;
 
 @org $4f, $67de:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "謝謝你﹗";
 	done;
 
 @org $4f, $67e9:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "拱拱～拱～";
 	done;
 
 @org $4f, $67f6:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "謝謝你﹗";
 	done;
 
 @org $4f, $6801:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "咕咕～咕咕～";
 	done;
 
 @org $4f, $680f:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "咕～太棒咕～";
 	line "火山怪消失了⚬";
 	cont "咕～～";
@@ -1173,7 +1173,7 @@
 	done;
 
 @org $4f, $6843:
-	init $34, $5d; # TEMP
+	init NAME_34, PIC_5D;
 	text "啊﹖兔先生為了";
 	line "我﹐傷心的吃不";
 	cont "下紅蘿蔔﹖";
@@ -1181,7 +1181,7 @@
 	done;
 
 @org $4f, $6878:
-	init $31, $31; # TEMP
+	init NAME_31, PIC_31;
 	text "我是旅行的人～";
 	line "偶爾來到這裡﹐";
 	cont "沒想到居然碰到";
@@ -1193,7 +1193,7 @@
 	done;
 
 @org $4f, $68db:
-	init $2e, $57; # TEMP
+	init NAME_2E, PIC_57;
 	text "咕咕～";
 	line "我是名醫～咕咕⚬";
 	para "除了變成石頭之";
@@ -1203,7 +1203,7 @@
 	done;
 
 @org $4f, $6922:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "老婆～拱嗚～";
 	line "拱嗚～";
 	cont "我們的小孩⋯";
@@ -1211,7 +1211,7 @@
 	done;
 
 @org $4f, $6950:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "老公～嗚嗚～";
 	line "拱拱～";
 	cont "我們的小孩又正";
@@ -1224,13 +1224,13 @@
 	done;
 
 @org $4f, $69af:
-	init $2d, $56; # TEMP
+	init NAME_2D, PIC_56;
 	text "拱～嗚啊～";
 	line "睡得好飽啊～";
 	done;
 
 @org $4f, $69c8:
-	init $2f, $58; # TEMP
+	init NAME_2F, PIC_58;
 	text "感謝你們﹗";
 	line "我又可以和性感";
 	cont "美麗的兔小姐﹐";
@@ -1245,7 +1245,7 @@
 	done;
 
 @org $4f, $6a43:
-	init $2f, $58; # TEMP
+	init NAME_2F, PIC_58;
 	text "完成了﹗";
 	line "我用了全身的毛";
 	cont "做了一件媲美兔";
@@ -1258,12 +1258,12 @@
 	done;
 
 @org $4f, $6aa8:
-	init $04, $03; # TEMP
+	init NAME_CLAUDE, PIC_03;
 	text "得到性感禮服⚬";
 	done;
 
 @org $4f, $6ab8:
-	init $04, $37; # TEMP
+	init NAME_CLAUDE, PIC_37;
 	text "糟了～";
 	line "時間快來不及了";
 	para "我要先趕回去了";
@@ -1271,13 +1271,13 @@
 	done;
 
 @org $4f, $6ae3:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "克勞德先生﹐謝";
 	line "謝你⚬";
 	done;
 
 @org $4f, $6afa:
-	init $04, $03; # TEMP
+	init NAME_CLAUDE, PIC_03;
 	text "不⋯不客氣⋯";
 	line "妮娜～";
 	cont "選秀會就快要開";
@@ -1288,7 +1288,7 @@
 	done;
 
 @org $4f, $6b41:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "哎呀～";
 	line "選秀會就要開始";
 	cont "了～";
@@ -1296,19 +1296,19 @@
 	done;
 
 @org $4f, $6b67:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "恭喜你～";
 	line "妮娜小姐～";
 	done;
 
 @org $4f, $6b7c:
-	init $21, $31; # TEMP
+	init NAME_21, PIC_31;
 	text "噁～噁～喵～";
 	line "噁～﹗";
 	done;
 
 @org $4f, $6b93:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "怎麼辦⋯";
 	line "選秀會就要舉行";
 	cont "了﹐人家還沒有";
@@ -1317,14 +1317,14 @@
 	done;
 
 @org $4f, $6bcf:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "嗚～可惡的麗子～";
 	cont "都是她﹐害我買";
 	line "不到新衣服﹗";
 	done;
 
 @org $4f, $6bf9:
-	init $00, $16; # TEMP
+	init NAME_BLANK, PIC_16;
 	text "綠色樹海又變成";
 	line "一片綠油油了⚬";
 	para "真是搞不懂怎麼";
@@ -1332,7 +1332,7 @@
 	done;
 
 @org $4f, $6c29:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "好噁心喔﹗";
 	line "在綠色樹海看到";
 	cont "一隻沒有毛的小";
@@ -1344,7 +1344,7 @@
 	done;
 
 @org $4f, $6c8c:
-	init $00, $14; # TEMP
+	init NAME_BLANK, PIC_14;
 	text "少爺總算是回來";
 	line "了﹗";
 	para "這次的選秀會﹐";
@@ -1355,7 +1355,7 @@
 	done;
 
 @org $4f, $6cd2:
-	init $00, $14; # TEMP
+	init NAME_BLANK, PIC_14;
 	text "少爺⋯";
 	line "早點";
 	forcemap 1, "回";
@@ -1363,16 +1363,16 @@
 	done;
 
 @org $4f, $6ce6:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "您不是妮娜小姐";
 	line "嗎﹖";
 	para "選秀會就要快開";
 	line "始了﹐您準備好";
 	cont "了嗎﹖";
 	line "";
-	getchoice $1cc5; # TEMP
+	getchoice String_1cc5;
 @org $4f, $6d20:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "是這樣子的嗎﹖";
 	line "那您動作就要快";
 	cont "一些了⚬";
@@ -1381,14 +1381,14 @@
 	done;
 
 @org $4f, $6d57:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "好的⚬";
 	para "我這就帶您到會";
 	line "場⚬";
 	done;
 
 @org $4f, $6d71:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "哈哈哈哈～";
 	line "瞧你們那副窮酸";
 	cont "樣～";
@@ -1397,21 +1397,21 @@
 	done;
 
 @org $4f, $6da3:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "好⋯好緊張⋯";
 	line "深呼吸～";
 	cont "深呼吸～";
 	done;
 
 @org $4f, $6dc1:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "可惡的麗子～";
 	line "都是她﹐害我們";
 	cont "沒有新衣服⋯⋯";
 	done;
 
 @org $4f, $6dea:
-	init $00, $25; # TEMP
+	init NAME_BLANK, PIC_25;
 	text "不公平～";
 	line "這次選秀會﹐根";
 	cont "本就不公平～";
@@ -1419,7 +1419,7 @@
 	done;
 
 @org $4f, $6e1e:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "圖釘呢﹖";
 	line "在哪裡﹖";
 	cont "喔﹗在這裡﹗";
@@ -1430,7 +1430,7 @@
 	done;
 
 @org $4f, $6e64:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哦～呵呵呵﹗";
 	line "那個笨蛋麗子﹐";
 	cont "得意不了多久的";
@@ -1447,7 +1447,7 @@
 	done;
 
 @org $4f, $6f02:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "編號第號﹐";
 	line "妮娜小姐⚬";
 	para "第一次選秀評分";
@@ -1455,13 +1455,13 @@
 	done;
 
 @org $4f, $6f36:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "哦⋯﹗";
 	line "好的﹐謝謝您⚬";
 	done;
 
 @org $4f, $6f4c:
-	init $36, $50; # TEMP
+	init NAME_36, PIC_50;
 	text "第一循環淘汰賽";
 	line "比的是反應及機";
 	cont "智⚬";
@@ -1478,7 +1478,7 @@
 	done;
 
 @org $4f, $6fd2:
-	init $36, $50; # TEMP
+	init NAME_36, PIC_50;
 	text "沒有關係﹐這只";
 	line "是熱身的測試⚬";
 	para "誰沒有失敗的經";
@@ -1489,7 +1489,7 @@
 	done;
 
 @org $4f, $7023:
-	init $36, $50; # TEMP
+	init NAME_36, PIC_50;
 	text "嗯～感覺不錯～";
 	cont "您可以回休息室";
 	line "了⚬";
@@ -1499,12 +1499,12 @@
 	done;
 
 @org $4f, $7061:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "謝謝你們⚬";
 	done;
 
 @org $4f, $706e:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "哈哈哈哈～";
 	line "妳也比完了嗎﹖";
 	para "呵呵～";
@@ -1514,7 +1514,7 @@
 	done;
 
 @org $4f, $70a6:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "嗚哇～";
 	line "人家剛在台上﹐";
 	cont "手腳僵硬⋯";
@@ -1524,7 +1524,7 @@
 	done;
 
 @org $4f, $70e3:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "我用我最深的詛";
 	line "咒﹗";
 	para "詛咒麗子落選吧";
@@ -1532,20 +1532,20 @@
 	done;
 
 @org $4f, $710f:
-	init $00, $25; # TEMP
+	init NAME_BLANK, PIC_25;
 	text "好緊張～";
 	line "好緊張～";
 	done;
 
 @org $4f, $7124:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "咭咭咭咭～";
 	cont "我的圖釘戰術～";
 	line "是無敵的﹗";
 	done;
 
 @org $4f, $7147:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哦～呵呵呵呵﹗";
 	line "什麼反應測試～";
 	para "在我拉琪看來﹐";
@@ -1556,13 +1556,13 @@
 	done;
 
 @org $4f, $7197:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "宣佈休息室";
 	line "初賽入選名單⚬";
 	done;
 
 @org $4f, $71b2:
-	init $00, $1d; # TEMP
+	init NAME_BLANK, PIC_1D;
 	text "啊﹗";
 	line "我入選了﹗";
 	line "";
@@ -1570,61 +1570,61 @@
 	done;
 
 @org $4f, $71ca:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "號～";
 	line "麗子小姐⚬";
 	done;
 
 @org $4f, $71dc:
-	init $35, $5e; # TEMP
+	init NAME_35, PIC_5E;
 	text "呵呵呵～～";
 	line "理所當然的⚬";
 	done;
 
 @org $4f, $71f3:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "號～";
 	line "拉琪小姐⚬";
 	done;
 
 @org $4f, $7205:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哦哦哦哦～";
 	line "呵呵呵呵﹗";
 	done;
 
 @org $4f, $7218:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "號～";
 	line "薇薇小姐⚬";
 	done;
 
 @org $4f, $722a:
-	init $00, $1f; # TEMP
+	init NAME_BLANK, PIC_1F;
 	text "我⋯我入選了﹖";
 	line "好高興﹗";
 	done;
 
 @org $4f, $723e:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "沒有希望了嗎﹖";
 	done;
 
 @org $4f, $724e:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "最後一位～";
 	line "第號～";
 	cont "妮娜小姐⚬";
 	done;
 
 @org $4f, $726e:
-	init $03, $33; # TEMP
+	init NAME_NINA, PIC_33;
 	text "妮娜⋯入選了﹖";
 	line "謝謝⋯謝謝您﹗";
 	done;
 
 @org $4f, $7289:
-	init $00, $13; # TEMP
+	init NAME_BLANK, PIC_13;
 	text "以上﹐通過初選";
 	line "的請到展示台上";
 	para "做最後的自選服";
@@ -1632,13 +1632,13 @@
 	done;
 
 @org $4f, $72bd:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "要趕快換上兔先";
 	line "生特製的禮服⚬";
 	done;
 
 @org $4f, $72db:
-	init $03, $36; # TEMP
+	init NAME_NINA, PIC_36;
 	text "啊⋯⋯這是什麼";
 	line "﹖";
 	para "怎⋯怎麼會這樣";
@@ -1646,7 +1646,7 @@
 	done;
 
 @org $4f, $72fb:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "各位先生～";
 	line "各位女士～";
 	cont "讓大家久等了﹗";
@@ -1664,7 +1664,7 @@
 	done;
 
 @org $4f, $739e:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "麗子小姐的服裝";
 	line "真是令人賞心悅";
 	cont "目啊﹗";
@@ -1676,7 +1676,7 @@
 	done;
 
 @org $4f, $73f5:
-	init $36, $50; # TEMP
+	init NAME_36, PIC_50;
 	text "這⋯這是⋯";
 	line "傳說中的⋯⋯";
 	cont "夏娃的羽衣嗎﹖";
@@ -1685,13 +1685,13 @@
 	done;
 
 @org $4f, $742a:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "太棒了﹗";
 	line "拉琪太棒了﹗";
 	done;
 
 @org $4f, $7440:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "這⋯這真是太勁";
 	line "暴了﹗";
 	para "沒想到拉琪小姐";
@@ -1705,7 +1705,7 @@
 	done;
 
 @org $4f, $74b0:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "接下來﹐選秀會";
 	line "的最後一位美少";
 	cont "女⚬";
@@ -1715,40 +1715,40 @@
 	done;
 
 @org $4f, $74f5:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "妮娜～加油～﹗";
 	done;
 
 @org $4f, $7504:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "妮娜小姐﹖";
 	done;
 
 @org $4f, $7512:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "是⋯是的⋯⋯";
 	done;
 
 @org $4f, $7520:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "這就是⋯超性感";
 	line "華麗的禮服﹖";
 	done;
 
 @org $4f, $753c:
-	init $36, $53; # TEMP
+	init NAME_36, PIC_53;
 	text "這⋯這簡直是⋯";
 	done;
 
 @org $4f, $754c:
-	init $04, $38; # TEMP
+	init NAME_CLAUDE, PIC_38;
 	text "好呀﹗";
 	para "好有創意的衣服";
 	line "啊﹗";
 	done;
 
 @org $4f, $7568:
-	init $36, $53; # TEMP
+	init NAME_36, PIC_53;
 	text "少⋯少爺﹖";
 	line "少爺這麼認為﹖";
 	para "這是多麼有創意";
@@ -1756,14 +1756,14 @@
 	done;
 
 @org $4f, $759c:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "克勞德﹖";
 	line "他怎麼會在評審";
 	cont "席呢﹖";
 	done;
 
 @org $4f, $75ba:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "好的⚬";
 	line "所有的美少女都";
 	cont "已經展示過她們";
@@ -1771,26 +1771,26 @@
 	done;
 
 @org $4f, $75e3:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "哦哦哦哦﹗";
 	line "結果出來了﹗";
 	cont "最後優勝者是⋯";
 	done;
 
 @org $4f, $7607:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "第號的妮娜";
 	line "小姐﹗﹗";
 	done;
 
 @org $4f, $761d:
-	init $03, $33; # TEMP
+	init NAME_NINA, PIC_33;
 	text "謝謝⋯";
 	line "謝謝你們～";
 	done;
 
 @org $4f, $7630:
-	init $37, $50; # TEMP
+	init NAME_37, PIC_50;
 	text "我們這就請～";
 	line "邦林科技的總裁";
 	cont "哈瑪斯先生⚬";
@@ -1802,7 +1802,7 @@
 	done;
 
 @org $4f, $7689:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "你們這些沒有眼";
 	line "睛的人﹗";
 	para "我閃電隊的高貴";
@@ -1815,19 +1815,19 @@
 	done;
 
 @org $4f, $76f5:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "沒錯﹗";
 	para "這條項鍊﹐我們";
 	line "就拿走了﹗";
 	done;
 
 @org $4f, $7717:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哦哦～呵呵呵﹗";
 	done;
 
 @org $4f, $7726:
-	init $38, $61; # TEMP
+	init NAME_38, PIC_61;
 	text "糟糕﹗";
 	line "項鍊被搶走了﹗";
 	para "得儘快要回來才";
@@ -1835,31 +1835,31 @@
 	done;
 
 @org $4f, $774f:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "妮娜﹗";
 	para "我們得起快搶回";
 	line "項鍊才行啊﹗";
 	done;
 
 @org $4f, $7773:
-	init $03, $02; # TEMP
+	init NAME_NINA, PIC_02;
 	text "好的⚬";
 	done;
 
 @org $4f, $777c:
-	init $04, $03; # TEMP
+	init NAME_CLAUDE, PIC_03;
 	text "妮娜﹗";
 	para "閃電隊往大樓內";
 	line "部逃去了﹗";
 	done;
 
 @org $4f, $779e:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "我們快追﹗";
 	done;
 
 @org $4f, $77ab:
-	init $04, $03; # TEMP
+	init NAME_CLAUDE, PIC_03;
 	text "不行﹗";
 	line "妮娜一個人的話";
 	cont "我不放心﹗";
@@ -1867,14 +1867,14 @@
 	done;
 
 @org $4f, $77d9:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哦～呵呵呵﹗";
 	line "復古項鍊﹗";
 	cont "終於到手了﹗";
 	done;
 
 @org $4f, $77fe:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "在下真是非常的";
 	line "感動～";
 	para "在下和拉琪的夢";
@@ -1883,7 +1883,7 @@
 	done;
 
 @org $4f, $7834:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "不過還是很生氣";
 	line "我絞盡腦汁想出";
 	cont "的樹裝﹐真的比";
@@ -1892,7 +1892,7 @@
 	done;
 
 @org $4f, $786c:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "不～﹗";
 	line "在下認為﹐拉琪";
 	cont "的樹葉裝是最棒";
@@ -1900,7 +1900,7 @@
 	done;
 
 @org $4f, $7895:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "不過話說回來⚬";
 	line "我們拿到了項鍊";
 	cont "現在要怎麼離開";
@@ -1908,7 +1908,7 @@
 	done;
 
 @org $4f, $78c5:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "又是你們﹗";
 	line "看來在下要稍";
 	cont "微拿出一點實力";
@@ -1916,7 +1916,7 @@
 	done;
 
 @org $4f, $78f1:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哦～呵呵呵﹗";
 	line "我要讓那隻笨白";
 	cont "兔了解﹐才是真";
@@ -1924,19 +1924,19 @@
 	done;
 
 @org $4f, $7924:
-	init $1e, $27; # TEMP
+	init NAME_1E, PIC_27;
 	text "哼﹗";
 	line "還你就還你﹗";
 	done;
 
 @org $4f, $7935:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "得到了復古項鍊";
 	line "﹗";
 	done;
 
 @org $4f, $7948:
-	init $1f, $28; # TEMP
+	init NAME_1F, PIC_28;
 	text "知道我們的厲害";
 	line "了吧﹖";
 	para "這次在下就饒了";
@@ -1946,18 +1946,18 @@
 	done;
 
 @org $4f, $798c:
-	init $21, $31; # TEMP
+	init NAME_21, PIC_31;
 	text "嘔～呃～喵～呃";
 	line "哽⋯哽住了﹗";
 	done;
 
 @org $4f, $79aa:
-	init $04, $37; # TEMP
+	init NAME_CLAUDE, PIC_37;
 	text "怎麼回事﹖";
 	done;
 
 @org $4f, $79b7:
-	init $21, $31; # TEMP
+	init NAME_21, PIC_31;
 	text "喵～啊﹗";
 	line "終於吐出來了﹗";
 	para "就是這個石頭﹐";
@@ -1966,18 +1966,18 @@
 	done;
 
 @org $4f, $79ef:
-	init $04, $03; # TEMP
+	init NAME_CLAUDE, PIC_03;
 	text "得到珍珠項鍊⚬";
 	done;
 
 @org $4f, $7a00:
-	init $21, $31; # TEMP
+	init NAME_21, PIC_31;
 	text "喵﹗﹗";
 	line "真是舒服喵～";
 	done;
 
 @org $4f, $7a15:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "這不是我的珍珠";
 	line "項鍊嗎﹖";
 	cont "真是太好了﹗";
@@ -1986,7 +1986,7 @@
 	done;
 
 @org $4f, $7a54:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "得到";
 	forcemap 1, "甦";
 	text "生儀";
@@ -1994,12 +1994,12 @@
 	done;
 
 @org $4f, $7a62:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "真是謝謝你⚬";
 	done;
 
 @org $4f, $7a70:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "這不是我的珍項";
 	line "鍊嗎﹖";
 	para "我就是因為少了";
@@ -2011,13 +2011,13 @@
 	done;
 
 @org $4f, $7ac3:
-	init $01, $2e; # TEMP
+	init NAME_BALLOT, PIC_2E;
 	text "得到巴利果實";
 	forcemap 1, "﹗";
 	done;
 
 @org $4f, $7ad3:
-	init $00, $15; # TEMP
+	init NAME_BLANK, PIC_15;
 	text "真是謝謝你⚬";
 	done;
 

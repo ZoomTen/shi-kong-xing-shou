@@ -1,37 +1,56 @@
 ; Map headers
+G7_02_MapAttributes:
 BellVillage2_MapAttributes:
 	map_attributes BellVillage1, BELL_VILLAGE_1, 0, Tileset_006_4000
 
+G5_23_MapAttributes:
 BellSchoolOutside2_MapAttributes:
 	map_attributes BellSchoolOutside1, BELL_SCHOOL_OUTSIDE_1, 0, Tileset_006_400f
 
 BellObservatoryOutside2_MapAttributes:
 	map_attributes BellObservatoryOutside1, BELL_OBSERVATORY_OUTSIDE_1, 0, Tileset_006_4025
 
+G7_08_MapAttributes:
+G5_1D_MapAttributes:
 BallotsHouse2_MapAttributes:
 	map_attributes BallotsHouse1, BALLOTS_HOUSE_1, 0, Tileset_006_403b
 
-HayatosHouse2_MapAttributes:
+G4_30_MapAttributes:
+G4_4A_MapAttributes:
+G5_1E_MapAttributes:
+HayatosHouse2_MapAttributes::
 	map_attributes HayatosHouse1, HAYATOS_HOUSE_1, 0, Tileset_006_403b
 
+G4_2C_MapAttributes:
+G4_46_MapAttributes:
+G3_18_MapAttributes:
+G5_1F_MapAttributes:
 CarpetWomansHouse2_MapAttributes:
 	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_006_403b
 
+G3_19_MapAttributes:
+G5_20_MapAttributes:
 FangfangsHouse2_MapAttributes:
 	map_attributes FangfangsHouse1, FANGFANGS_HOUSE_1, 0, Tileset_006_403b
 
+G3_1D_MapAttributes:
+G5_21_MapAttributes:
 BellHealingCenter2_MapAttributes:
 	map_attributes BellHealingCenter1, BELL_HEALING_CENTER_1, 0, Tileset_006_404a
 
+G5_24_MapAttributes:
 BellSchool2_MapAttributes:
 	map_attributes BellSchool1, BELL_SCHOOL_1, 0, Tileset_006_4052
 
 BellObservatory2_MapAttributes:
 	map_attributes BellObservatory1, BELL_OBSERVATORY_1, 0, Tileset_006_405a
 
+BellSchoolNorthClassroom1_MapAttributes:
 BellSchoolNorthClassroom_MapAttributes:
 BellSchoolSouthClassroom1_MapAttributes:
 BellSchoolSouthClassroom2_MapAttributes:
+G5_25_MapAttributes:
+G5_26_MapAttributes:
 	map_attributes BellSchoolSouthClassroom, BELL_SCHOOL_SOUTH_CLASSROOM_1, 0, Tileset_006_403b
 
 TechCity_MapAttributes:
@@ -46,6 +65,11 @@ TechCity_MapAttributes:
 	dw 0
 	dw TechCity_Collision
 
+G4_2F_MapAttributes:
+G4_49_MapAttributes:
+G2_1B_MapAttributes:
+G2_1F_MapAttributes:
+G6_22_MapAttributes:
 MapAttributes_001_40f0:
 	db 6, 5
 	dw Layout_001_5bb9
@@ -58,6 +82,12 @@ MapAttributes_001_40f0:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_2D_MapAttributes:
+G4_35_MapAttributes:
+G4_47_MapAttributes:
+G2_20_MapAttributes:
+G6_23_MapAttributes:
+G6_24_MapAttributes:
 MapAttributes_001_4104:
 	db 6, 5
 	dw Layout_001_5c18
@@ -70,6 +100,9 @@ MapAttributes_001_4104:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_34_MapAttributes:
+G2_1D_MapAttributes:
+G3_1A_MapAttributes:
 MapAttributes_001_4118:
 	db 6, 5
 	dw Layout_001_5c7b
@@ -82,6 +115,11 @@ MapAttributes_001_4118:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_2E_MapAttributes:
+G4_37_MapAttributes:
+G4_48_MapAttributes:
+G2_1E_MapAttributes:
+G6_25_MapAttributes:
 MapAttributes_001_412c:
 	db 6, 5
 	dw Layout_001_5cd2
@@ -94,6 +132,9 @@ MapAttributes_001_412c:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_33_MapAttributes:
+G4_4D_MapAttributes:
+G2_1C_MapAttributes:
 MapAttributes_001_4140:
 	db 6, 5
 	dw Layout_001_5d35
@@ -106,6 +147,10 @@ MapAttributes_001_4140:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_36_MapAttributes:
+G4_3F_MapAttributes:
+G4_5B_MapAttributes:
+G6_26_MapAttributes:
 MapAttributes_001_4154:
 	db 6, 5
 	dw Layout_001_5db4
@@ -118,6 +163,15 @@ MapAttributes_001_4154:
 	dw 0
 	dw Collision_001_5fd4
 
+G4_32_MapAttributes:
+G4_38_MapAttributes:
+G4_41_MapAttributes:
+G4_4C_MapAttributes:
+G4_5D_MapAttributes:
+G2_1A_MapAttributes:
+G2_22_MapAttributes:
+G5_22_MapAttributes:
+G6_28_MapAttributes:
 TechShop_MapAttributes:
 	db 6, 5
 	dw Layout_001_5a28
@@ -130,6 +184,14 @@ TechShop_MapAttributes:
 	dw 0
 	dw Collision_001_5b9d
 
+G4_31_MapAttributes:
+G4_39_MapAttributes:
+G4_40_MapAttributes:
+G4_4B_MapAttributes:
+G4_5C_MapAttributes:
+G2_19_MapAttributes:
+G2_21_MapAttributes:
+G6_29_MapAttributes:
 TechHealingCenter_MapAttributes:
 	db 6, 5
 	dw Layout_001_58a7
@@ -166,6 +228,7 @@ MapAttributes_001_41a4:
 	dw 0
 	dw Collision_001_544a
 
+G3_17_MapAttributes:
 MapAttributes_001_41b8:
 	db 6, 5
 	dw Layout_001_50d5
@@ -311,7 +374,7 @@ Hideout_MapAttributes:
 	dw Hideout_Collision
 
 Hideout_Layout:
-	db 14
+	db MAPTYPE_HIDEOUT
 	INCBIN "data/maps/layouts/Hideout.bin"
 
 Hideout_Metatiles:
@@ -321,37 +384,72 @@ Hideout_Blocks:
 	INCBIN "data/maps/blocks/Hideout.bin"
 
 Hideout_AttrMap:
-	dr $45a9, $460a
+INCBIN "gfx/attrmaps/hideout_attrmap.bin"
 
 Hideout_Palettes:
-	dr $460a, $4652
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 0, 24, 31
+	RGB 0, 10, 24
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 11, 20, 22
+	RGB 2, 10, 12
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Hideout_Collision:
-	dr $4652, $4681
+	INCBIN "data/maps/collision/Hideout_Collision.bin"
 
 PowerPlant1F_Layout:
-	db 6
+	db MAPTYPE_POWER_PLANT_1F
 	INCBIN "data/maps/layouts/PowerPlant1F.bin"
 
 PowerPlant1F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant1F.bin"
 
 PowerPlant2F_Layout:
-	db 7
+	db MAPTYPE_POWER_PLANT_2F
 	INCBIN "data/maps/layouts/PowerPlant2F.bin"
 
 PowerPlant2F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant2F.bin"
 
 PowerPlant3F_Layout:
-	db 8
+	db MAPTYPE_POWER_PLANT_3F
 	INCBIN "data/maps/layouts/PowerPlant3F.bin"
 
 PowerPlant3F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant3F.bin"
 
 PowerPlant4F_Layout:
-	db 9
+	db MAPTYPE_POWER_PLANT_4F
 	INCBIN "data/maps/layouts/PowerPlant4F.bin"
 
 PowerPlant_Metatiles:
@@ -361,16 +459,51 @@ PowerPlant4F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant4F.bin"
 
 PowerPlant_AttrMap:
-	dr $4955, $49a6
+INCBIN "gfx/attrmaps/powerplant_attrmap.bin"
 
 PowerPlant_Palettes:
-	dr $49a6, $49ee
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 0, 24, 31
+	RGB 0, 10, 24
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 PowerPlant_Collision:
-	dr $49ee, $4a26
+	INCBIN "data/maps/collision/PowerPlant_Collision.bin"
 
 PowerPlantOutside_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/PowerPlantOutside.bin"
 
 PowerPlantOutside_Metatiles:
@@ -380,16 +513,51 @@ PowerPlantOutside_Blocks:
 	INCBIN "data/maps/blocks/PowerPlantOutside.bin"
 
 PowerPlantOutside_AttrMap:
-	dr $4be7, $4c88
+INCBIN "gfx/attrmaps/powerplantoutside_attrmap.bin"
 
 PowerPlantOutside_Palettes:
-	dr $4c88, $4cd0
+	RGB 31, 31, 29
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 PowerPlantOutside_Collision:
-	dr $4cd0, $4cff
+	INCBIN "data/maps/collision/PowerPlantOutside_Collision.bin"
 
 Junkyard_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Junkyard.bin"
 
 Junkyard_Metatiles:
@@ -399,76 +567,187 @@ Junkyard_Blocks:
 	INCBIN "data/maps/blocks/Junkyard.bin"
 
 Junkyard_AttrMap:
-	dr $4e12, $4e83
+INCBIN "gfx/attrmaps/junkyard_attrmap.bin"
 
 Junkyard_Palettes:
-	dr $4e83, $4ecb
+	RGB 31, 30, 29
+	RGB 21, 26, 26
+	RGB 9, 13, 13
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 20, 18
+	RGB 20, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 30
+	RGB 19, 23, 20
+	RGB 6, 13, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Junkyard_Collision:
-	dr $4ecb, $4eeb
+	INCBIN "data/maps/collision/Junkyard_Collision.bin"
 
 Layout_001_4eeb:
-	dr $4eeb, $4f0a
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_4eeb.bin"
 
 Metatiles_001_4f0a:
-	dr $4f0a, $4f76
+	INCBIN "data/maps/metatiles/Metatiles_001_4f0a.bin"
 
 Blocks_001_4f76:
-	dr $4f76, $4fc2
+	INCBIN "data/maps/blocks/Blocks_001_4f76.bin"
 
 AttrMap_001_4fc2:
-	dr $4fc2, $5013
+INCBIN "gfx/attrmaps/attrmap_001_4fc2.bin"
 
 Palettes_001_5013:
-	dr $5013, $505b
+	RGB 31, 31, 31
+	RGB 0, 25, 31
+	RGB 0, 9, 25
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 24, 20, 31
+	RGB 11, 5, 22
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_505b:
-	dr $505b, $5076
+	INCBIN "data/maps/collision/Collision_001_505b.bin"
 
 Layout_001_5076:
-	dr $5076, $5095
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5076.bin"
 
 Blocks_001_5095:
-	dr $5095, $50d5
+	INCBIN "data/maps/blocks/Blocks_001_5095.bin"
 
 Layout_001_50d5:
-	dr $50d5, $50f4
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_50d5.bin"
 
 Blocks_001_50f4:
-	dr $50f4, $5138
+	INCBIN "data/maps/blocks/Blocks_001_50f4.bin"
 
 Layout_001_5138:
-	dr $5138, $5157
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5138.bin"
 
 Blocks_001_5157:
-	dr $5157, $5197
+	INCBIN "data/maps/blocks/Blocks_001_5157.bin"
 
 Layout_001_5197:
-	dr $5197, $51b6
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5197.bin"
 
 Blocks_001_51b6:
-	dr $51b6, $51fa
+	INCBIN "data/maps/blocks/Blocks_001_51b6.bin"
 
 Layout_001_51fa:
-	dr $51fa, $5219
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_51fa.bin"
 
 Metatiles_001_5219:
-	dr $5219, $5301
+	INCBIN "data/maps/metatiles/Metatiles_001_5219.bin"
 
 Blocks_001_5301:
-	dr $5301, $5361
+	INCBIN "data/maps/blocks/Blocks_001_5301.bin"
 
 AttrMap_001_5361:
-	dr $5361, $5402
+INCBIN "gfx/attrmaps/attrmap_001_5361.bin"
 
 Palettes_001_5402:
-	dr $5402, $544a
+	RGB 31, 31, 31
+	RGB 0, 25, 31
+	RGB 0, 9, 25
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 24, 20, 31
+	RGB 11, 5, 22
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_544a:
-	dr $544a, $5484
+	INCBIN "data/maps/collision/Collision_001_544a.bin"
 
 CrystalVillage_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/CrystalVillage.bin"
 
 CrystalVillage_Metatiles:
@@ -478,100 +757,248 @@ CrystalVillage_Blocks:
 	INCBIN "data/maps/blocks/CrystalVillage.bin"
 
 CrystalVillage_AttrMap:
-	dr $5785, $5826
+INCBIN "gfx/attrmaps/crystalvillage_attrmap.bin"
 
 CrystalVillage_Palettes:
-	dr $5826, $586e
+	RGB 31, 30, 30
+	RGB 24, 20, 31
+	RGB 11, 5, 22
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 18, 28
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 17, 22, 22
+	RGB 5, 10, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 CrystalVillage_Collision:
-	dr $586e, $58a7
+	INCBIN "data/maps/collision/CrystalVillage_Collision.bin"
 
 Layout_001_58a7:
-	dr $58a7, $58c6
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_58a7.bin"
 
 Metatiles_001_58c6:
-	dr $58c6, $592a
+	INCBIN "data/maps/metatiles/Metatiles_001_58c6.bin"
 
 Blocks_001_592a:
-	dr $592a, $5976
+	INCBIN "data/maps/blocks/Blocks_001_592a.bin"
 
 AttrMap_001_5976:
-	dr $5976, $59c7
+INCBIN "gfx/attrmaps/attrmap_001_5976.bin"
 
 Palettes_001_59c7:
-	dr $59c7, $5a0f
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 19, 23, 25
+	RGB 0, 8, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_5a0f:
-	dr $5a0f, $5a28
+	INCBIN "data/maps/collision/Collision_001_5a0f.bin"
 
 Layout_001_5a28:
-	dr $5a28, $5a47
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5a28.bin"
 
 Metatiles_001_5a47:
-	dr $5a47, $5ab3
+	INCBIN "data/maps/metatiles/Metatiles_001_5a47.bin"
 
 Blocks_001_5ab3:
-	dr $5ab3, $5b13
+	INCBIN "data/maps/blocks/Blocks_001_5ab3.bin"
 
 AttrMap_001_5b13:
-	dr $5b13, $5b55
+INCBIN "gfx/attrmaps/attrmap_001_5b13.bin"
 
 Palettes_001_5b55:
-	dr $5b55, $5b9d
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 19, 23, 25
+	RGB 0, 8, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_5b9d:
-	dr $5b9d, $5bb9
+	INCBIN "data/maps/collision/Collision_001_5b9d.bin"
 
 Layout_001_5bb9:
-	dr $5bb9, $5bd8
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5bb9.bin"
 
 Blocks_001_5bd8:
-	dr $5bd8, $5c18
+	INCBIN "data/maps/blocks/Blocks_001_5bd8.bin"
 
 Layout_001_5c18:
-	dr $5c18, $5c37
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5c18.bin"
 
 Blocks_001_5c37:
-	dr $5c37, $5c7b
+	INCBIN "data/maps/blocks/Blocks_001_5c37.bin"
 
 Layout_001_5c7b:
-	dr $5c7b, $5c9a
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5c7b.bin"
 
 Blocks_001_5c9a:
-	dr $5c9a, $5cd2
+	INCBIN "data/maps/blocks/Blocks_001_5c9a.bin"
 
 Layout_001_5cd2:
-	dr $5cd2, $5cf1
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5cd2.bin"
 
 Blocks_001_5cf1:
-	dr $5cf1, $5d35
+	INCBIN "data/maps/blocks/Blocks_001_5cf1.bin"
 
 Layout_001_5d35:
-	dr $5d35, $5d54
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5d35.bin"
 
 Blocks_001_5d54:
-	dr $5d54, $5db4
+	INCBIN "data/maps/blocks/Blocks_001_5d54.bin"
 
 Layout_001_5db4:
-	dr $5db4, $5dd3
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_5db4.bin"
 
 Metatiles_001_5dd3:
-	dr $5dd3, $5eb3
+	INCBIN "data/maps/metatiles/Metatiles_001_5dd3.bin"
 
 Blocks_001_5eb3:
-	dr $5eb3, $5efb
+	INCBIN "data/maps/blocks/Blocks_001_5eb3.bin"
 
 AttrMap_001_5efb:
-	dr $5efb, $5f8c
+INCBIN "gfx/attrmaps/attrmap_001_5efb.bin"
 
 Palettes_001_5f8c:
-	dr $5f8c, $5fd4
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 19, 23, 25
+	RGB 0, 8, 14
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 28, 24, 9
+	RGB 15, 10, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 15, 17
+	RGB 25, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 22, 22, 26
+	RGB 11, 11, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 Collision_001_5fd4:
-	dr $5fd4, $600d
+	INCBIN "data/maps/collision/Collision_001_5fd4.bin"
 
 TechCity_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/TechCity.bin"
 
 TechCity_Metatiles:
@@ -581,16 +1008,51 @@ TechCity_Blocks:
 	INCBIN "data/maps/blocks/TechCity.bin"
 
 TechCity_AttrMap:
-	dr $636a, $63eb
+INCBIN "gfx/attrmaps/techcity_attrmap.bin"
 
 TechCity_Palettes:
-	dr $63eb, $6433
+	RGB 31, 30, 29
+	RGB 21, 26, 26
+	RGB 9, 13, 13
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 31, 18, 28
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 29
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 TechCity_Collision:
-	dr $6433, $6462
+	INCBIN "data/maps/collision/TechCity_Collision.bin"
 
 BellSchoolSouthClassroom_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_Metatiles:
@@ -600,16 +1062,51 @@ BellSchoolSouthClassroom_Blocks:
 	INCBIN "data/maps/blocks/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_AttrMap:
-	dr $65b7, $6648
+INCBIN "gfx/attrmaps/bellschoolsouthclassroom_attrmap.bin"
 
 BellSchoolSouthClassroom_Palettes:
-	dr $6648, $6690
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellSchoolSouthClassroom_Collision:
-	dr $6690, $66c2
+	INCBIN "data/maps/collision/BellSchoolSouthClassroom_Collision.bin"
 
 BellObservatory1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellObservatory1.bin"
 
 BellObservatory1_Metatiles:
@@ -619,16 +1116,51 @@ BellObservatory1_Blocks:
 	INCBIN "data/maps/blocks/BellObservatory1.bin"
 
 BellObservatory1_AttrMap:
-	dr $681f, $68c0
+INCBIN "gfx/attrmaps/bellobservatory1_attrmap.bin"
 
 BellObservatory1_Palettes:
-	dr $68c0, $6908
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellObservatory1_Collision:
-	dr $6908, $693c
+	INCBIN "data/maps/collision/BellObservatory1_Collision.bin"
 
 BellSchool1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchool1.bin"
 
 BellSchool1_Metatiles:
@@ -638,16 +1170,51 @@ BellSchool1_Blocks:
 	INCBIN "data/maps/blocks/BellSchool1.bin"
 
 BellSchool1_AttrMap:
-	dr $6a4d, $6a7e
+INCBIN "gfx/attrmaps/bellschool1_attrmap.bin"
 
 BellSchool1_Palettes:
-	dr $6a7e, $6ac6
+	RGB 31, 30, 28
+	RGB 27, 25, 18
+	RGB 18, 15, 10
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 14, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 20, 24, 27
+	RGB 12, 16, 21
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellSchool1_Collision:
-	dr $6ac6, $6ade
+	INCBIN "data/maps/collision/BellSchool1_Collision.bin"
 
 BellHealingCenter1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellHealingCenter1.bin"
 
 BellHealingCenter1_Metatiles:
@@ -657,37 +1224,72 @@ BellHealingCenter1_Blocks:
 	INCBIN "data/maps/blocks/BellHealingCenter1.bin"
 
 BellHealingCenter1_AttrMap:
-	dr $6bb9, $6c0a
+INCBIN "gfx/attrmaps/bellhealingcenter1_attrmap.bin"
 
 BellHealingCenter1_Palettes:
-	dr $6c0a, $6c52
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellHealingCenter1_Collision:
-	dr $6c52, $6c6b
+	INCBIN "data/maps/collision/BellHealingCenter1_Collision.bin"
 
 BallotsHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BallotsHouse1.bin"
 
 BallotsHouse1_Blocks:
 	INCBIN "data/maps/blocks/BallotsHouse1.bin"
 
 HayatosHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/HayatosHouse1.bin"
 
 HayatosHouse1_Blocks:
 	INCBIN "data/maps/blocks/HayatosHouse1.bin"
 
 CarpetWomansHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/CarpetWomansHouse1.bin"
 
 CarpetWomansHouse1_Blocks:
 	INCBIN "data/maps/blocks/CarpetWomansHouse1.bin"
 
 FangfangsHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/FangfangsHouse1.bin"
 
 BallotsHouse1_Metatiles:
@@ -703,22 +1305,57 @@ BallotsHouse1_AttrMap:
 HayatosHouse1_AttrMap:
 CarpetWomansHouse1_AttrMap:
 FangfangsHouse1_AttrMap:
-	dr $6ec7, $6f58
+INCBIN "gfx/attrmaps/fangfangshouse1_attrmap.bin"
 
 BallotsHouse1_Palettes:
 HayatosHouse1_Palettes:
 CarpetWomansHouse1_Palettes:
 FangfangsHouse1_Palettes:
-	dr $6f58, $6fa0
+	RGB 31, 30, 28
+	RGB 21, 23, 14
+	RGB 13, 16, 7
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 14, 23, 29
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 31, 23, 23
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 28
+	RGB 23, 25, 27
+	RGB 10, 12, 14
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BallotsHouse1_Collision:
 HayatosHouse1_Collision:
 CarpetWomansHouse1_Collision:
 FangfangsHouse1_Collision:
-	dr $6fa0, $6fd1
+	INCBIN "data/maps/collision/BallotsHouse1_Collision.bin"
 
 BellObservatoryOutside1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_Metatiles:
@@ -728,16 +1365,51 @@ BellObservatoryOutside1_Blocks:
 	INCBIN "data/maps/blocks/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_AttrMap:
-	dr $715e, $71ff
+INCBIN "gfx/attrmaps/bellobservatoryoutside1_attrmap.bin"
 
 BellObservatoryOutside1_Palettes:
-	dr $71ff, $7247
+	RGB 31, 30, 26
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellObservatoryOutside1_Collision:
-	dr $7247, $726f
+	INCBIN "data/maps/collision/BellObservatoryOutside1_Collision.bin"
 
 BellSchoolOutside1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_Metatiles:
@@ -747,16 +1419,51 @@ BellSchoolOutside1_Blocks:
 	INCBIN "data/maps/blocks/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_AttrMap:
-	dr $7444, $74e5
+INCBIN "gfx/attrmaps/bellschooloutside1_attrmap.bin"
 
 BellSchoolOutside1_Palettes:
-	dr $74e5, $752d
+	RGB 31, 30, 26
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 16, 25, 6
+	RGB 0, 13, 0
+	RGB 0, 0, 0
+	RGB 30, 30, 30
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 31, 17, 31
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 29
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 
 BellSchoolOutside1_Collision:
-	dr $752d, $756c
+	INCBIN "data/maps/collision/BellSchoolOutside1_Collision.bin"
 
 BellVillage1_Layout:
-	db 0	; unknown
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellVillage1.bin"
 
 BellVillage1_Metatiles:
@@ -772,7 +1479,62 @@ BellVillage1_Palettes:
 	INCBIN "data/maps/palettes/BellVillage1.bin"
 
 BellVillage1_Collision:
-	dr $78de, $791a
+	INCBIN "data/maps/collision/BellVillage1_Collision.bin"
 
-MapAttributes_001_791a:
-	dr $791a, $79c8
+G2_23_MapAttributes:
+	map_attr_data \
+		6, 6, \
+		Layout_001_792e, Blocks_001_7957, Metatiles_001_7953, AttrMap_001_795b, \
+		Palettes_001_795e, \
+		Tileset_001_79a8, Tileset_001_79a8, \
+		Collision_001_79a6
+Layout_001_792e::
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_001_792e.bin"
+Metatiles_001_7953::
+	INCBIN "data/maps/metatiles/Metatiles_001_7953.bin"
+Blocks_001_7957::
+	INCBIN "data/maps/blocks/Blocks_001_7957.bin"
+AttrMap_001_795b::
+INCBIN "gfx/attrmaps/attrmap_001_795b.bin"
+Palettes_001_795e::
+	RGB 31, 30, 26
+	RGB 28, 23, 14
+	RGB 14, 11, 6
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 16, 28, 6
+	RGB 0, 18, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 8, 21, 31
+	RGB 0, 4, 28
+	RGB 0, 0, 0
+	RGB 31, 30, 26
+	RGB 29, 22, 0
+	RGB 18, 9, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 31, 27, 0
+	RGB 27, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 23, 25, 27
+	RGB 13, 15, 18
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+Collision_001_79a6::
+	INCBIN "data/maps/collision/Collision_001_79a6.bin"
+Tileset_001_79a8::
+	INCBIN "gfx/tilesets/gfx_001_79a8.2bpp"

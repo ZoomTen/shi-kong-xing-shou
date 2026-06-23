@@ -1,4 +1,4 @@
-Func_2ca4::
+Debug_InitDex::
 	ld de, wd284
 	ld hl, .unk_2cb8
 .asm_2caa
@@ -56,7 +56,7 @@ ENDR
 	db $27, $01
 	db $28, $01
 
-Func_2d08::
+Debug_InitParty::
 	ld de, wddb0
 	ld hl, .unk_2d16
 .copy
@@ -198,7 +198,7 @@ Debug_GiveItems::
 	db TM50, 12
 	db $ff, $ff
 
-Func_2e04::
+Debug_InitMonFlags::
 	ld hl, wdd00
 .asm_2e07
 	ld [hl], $01
@@ -211,9 +211,9 @@ Func_2e04::
 	add hl, de
 	jr .asm_2e07
 
-Func_2e13::
+Debug_GivePartyMon::
 	ld de, wde00
-	ld hl, unk_2f40
+	ld hl, DebugPartyMonData
 .copy1
 	ld a, [hli]
 	ld [de], a
@@ -240,10 +240,10 @@ Func_2e13::
 	ld [wdcea], a
 	ret
 
-Func_2e38::
-	ld de, wdb20
+Debug_FillMonList::
+	ld de, wMonBox
 .asm_2e3b
-	ld hl, unk_2f40
+	ld hl, DebugPartyMonData
 	ld bc, $13
 .copy
 	ld a, [hli]
@@ -263,7 +263,7 @@ Func_2e38::
 	ret nc
 	jr .asm_2e3b
 
-Func_2e56::
+Debug_InitDexAndParty::
 	ld de, wd7cb
 	ld hl, .unk_2ea0
 	ld bc, $9e
@@ -293,7 +293,7 @@ Func_2e56::
 	jr c, .asm_2e6a
 
 	ld de, wde00
-	ld hl, unk_2f40
+	ld hl, DebugPartyMonData
 	ld bc, $b0
 .copy2
 	ld a, [hli]
@@ -335,7 +335,7 @@ Func_2e56::
 	db $01, $01, $02, $02, $02, $02, $02, $02 ; 19
 	db $02, $02, $01, $01, $01, $01, $01, $01 ; 20?
 
-unk_2f40::
+DebugPartyMonData::
 ; Partner 1 mon data
 	db MON_081 ; species
 	db 90 ; level

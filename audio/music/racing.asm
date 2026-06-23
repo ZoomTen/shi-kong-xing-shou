@@ -1,7 +1,7 @@
 Music_Racing_Ch1:
 	sound_init 6, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $c1, \ ; unknown 1
+	           $c1, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	fine_pitch $2
@@ -150,12 +150,12 @@ Music_Racing_Ch1:
 Music_Racing_Ch2:
 	sound_init 6, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           2, 4, \ ; vibrato
 	           $8b, $35, $c7 ; unknown 2
 	speed 6
 	fine_pitch $2
-	unknown_music_e9 $a1
+	volume_envelope $a1
 	duty_cycle DUTY_50, DUTY_50
 	mark_loop ;------
 	transpose -10

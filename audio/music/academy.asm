@@ -1,7 +1,7 @@
 Music_Academy_Ch1:
 	sound_init 6, \ ; speed
 	            DUTY_50, DUTY_50, \ ; duty cycle 
-	            $c1, \ ; unknown 1
+	            $c1, \ ; volume envelope
 	            5, 2, \ ; vibrato
 	            $8b, $26, $b5 ; unknown 2
 	fine_pitch $2
@@ -9,10 +9,10 @@ Music_Academy_Ch1:
 	speed 6
 	mark_loop ;------
 	duty_cycle DUTY_12, DUTY_12
-	unknown_music_e9 $22
+	volume_envelope $22
 	stereo_panning $3
-	unknown_volume $10
-	unknown_music_e9 $91
+	envelope_setting $10
+	volume_envelope $91
 	transpose -12
 	octave 4
 	note C#, 3
@@ -82,16 +82,16 @@ Music_Academy_Ch1:
 Music_Academy_Ch2:
 	sound_init 6, \ ; speed
 	            DUTY_50, DUTY_50, \ ; duty cycle
-	            $c1, \ ; unknown 1
+	            $c1, \ ; volume envelope
 	            5, 2, \ ; vibrato
 	            $8b, $26, $c5 ; unknown 2
 	speed 6
 	mark_loop ;------
 	stereo_panning $4
-	unknown_volume $13
+	envelope_setting $13
 	fine_pitch $2
 	transpose 0
-	unknown_music_e9 $11
+	volume_envelope $11
 	duty_cycle DUTY_75, DUTY_50
 	octave 3
 	note F_, 8

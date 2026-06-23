@@ -14,12 +14,12 @@
 	init 0, $1a;
 	text "嗯嗯嗯";
 	line;
-	unknownE7;
+	buysellcancel;
 	done;
 
 @org $08, $4537:
 	init 0, $1a;
 	text "嗯嗯嗯";
 	line;
-	getchoice $1cd0;
+	getchoice String_1cd0;
 

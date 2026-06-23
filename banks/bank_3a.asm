@@ -1,4 +1,4 @@
-unk_03a_4000:
-	dr $e8000, $ebeb0
+GFX_03a_4000:
+INCBIN "gfx/misc/gfx_03a_4000.2bpp"
 
 

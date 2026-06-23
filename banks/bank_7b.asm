@@ -1,4 +1,4 @@
-unk_07b_4000:
-	dr $1ec000, $1efd70
+GFX_07b_4000:
+INCBIN "gfx/misc/gfx_07b_4000.2bpp"
 
 

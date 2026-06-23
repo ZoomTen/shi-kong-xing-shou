@@ -1,0 +1,803 @@
+@org $6e, $4401:
+	init NAME_53, PIC_60;
+@org $6e, $4404:
+	text "嗚哇～";
+	line "不～～﹗";
+	cont "不可能﹗﹗﹗";
+	done;
+
+@org $6e, $441b:
+	init NAME_11, PIC_11;
+@org $6e, $441e:
+	text "不行﹗";
+	line "弗烈茲星系就快";
+	cont "要爆炸了﹗";
+	line "啟動空間跳躍系";
+	line "統﹗";
+	done;
+
+@org $6e, $4451:
+	init NAME_20, PIC_30;
+@org $6e, $4454:
+	text "時空跳躍系統⋯";
+	line "準備完成⚬";
+	para "目標地⋯地球⋯";
+	line "距離⋯";
+	cont "１９３２光年";
+	line "跳躍⋯";
+	line "啟動﹗﹗";
+	done;
+
+@org $6e, $449a:
+	init NAME_4F, PIC_73;
+@org $6e, $449d:
+	text "逃不了爆炸震波";
+	line "的範圍嗎﹖";
+	done;
+
+@org $6e, $44b3:
+	init NAME_4F, PIC_73;
+@org $6e, $44b6:
+	text "全速跳脫";
+	line "震爆波﹗";
+	done;
+
+@org $6e, $44c5:
+	init NAME_20, PIC_30;
+@org $6e, $44c8:
+	text "警告～警告～";
+	line "";
+	db $f2, $80; #"核"
+	text "子動力一爐";
+	cont "過載﹗";
+	line "過載警告﹗";
+	done;
+
+@org $6e, $44f1:
+	init NAME_11, PIC_11;
+@org $6e, $44f4:
+	text "所有引擎動力全";
+	line "開﹗";
+	cont "全速脫離﹗";
+	done;
+
+@org $6e, $4510:
+	init NAME_4F, PIC_73;
+@org $6e, $4513:
+	text "啊啊啊啊﹗﹗﹗";
+	done;
+
+@org $6e, $451d:
+	init NAME_12, PIC_26;
+@org $6e, $4520:
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	line "";
+	para "";
+	db $f2, $4a; #"你"
+	text "們看﹐天空的";
+	line "裂縫不見了﹗";
+	done;
+
+@org $6e, $454b:
+	init NAME_13, PIC_1A;
+@org $6e, $454e:
+	text "真的耶﹗";
+	line "";
+	db $f1, $58; #"要"
+	text "";
+	db $43; #"是"
+	text "巴洛特在就";
+	cont "";
+	db $f2, $cd; #"好"
+	text "了⋯";
+	done;
+
+@org $6e, $456b:
+	init NAME_12, PIC_26;
+@org $6e, $456e:
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	line "";
+	para "巴洛特一定活著";
+	line "的⚬";
+	done;
+
+@org $6e, $4591:
+	init NAME_13, PIC_1A;
+@org $6e, $4594:
+	text "巴洛特一定會回";
+	line "來的⋯⋯";
+	cont "一定的⋯⋯⋯";
+	done;
+
+@org $6e, $45b5:
+	init NAME_HELEN, PIC_04;
+@org $6e, $45b8:
+	text "安東～";
+	line "";
+	db $f2, $4a; #"你"
+	text "";
+	db $65; #"還"
+	text "在我的身邊";
+	cont "嗎﹖";
+	para "我知道﹐你一直";
+	line "都在～";
+	done;
+
+@org $6e, $45e4:
+	init NAME_BLANK, PIC_14;
+@org $6e, $45e7:
+	text "啊啊﹗海藍～";
+	line "妳在這裡啊﹗";
+	para "和我們一起過生";
+	line "";
+	db $f1, $df; #"活"
+	text "吧⚬";
+	para "村子為了妳﹐舉";
+	line "辦了一場慶祝會";
+	cont "";
+	db $f2, $50; #"呢"
+	text "⚬";
+	done;
+
+@org $6e, $4635:
+	init NAME_HELEN, PIC_04;
+@org $6e, $4638:
+	text "不必了⋯⋯";
+	line "先謝謝你們的好";
+	cont "意⚬";
+	para "我不討厭你們﹐";
+	line "但也不喜歡你們";
+	para "回到海底﹐一直";
+	line "是我妹妹的期望";
+	cont "我們不會再見面";
+	line "了⚬";
+	cont "保重吧⚬";
+	done;
+
+@org $6e, $46a6:
+	init NAME_BLANK, PIC_14;
+@org $6e, $46a9:
+	text "海藍﹗";
+	line "糟了～";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $aa; #"下"
+	text "子要怎麼跟";
+	line "大家交待⋯⋯";
+	para "海藍﹐你還是為";
+	line "了那件事生氣嗎";
+	cont "海藍⋯⋯";
+	done;
+
+@org $6e, $46f5:
+	init NAME_43, PIC_50;
+@org $6e, $46f8:
+	text "啊啊啊啊﹗﹗";
+	line "老⋯老鼠﹗﹗﹗";
+	done;
+
+@org $6e, $470c:
+	init NAME_44, PIC_4D;
+@org $6e, $470f:
+	text "吱吱吱吱～﹗";
+	done;
+
+@org $6e, $4719:
+	init NAME_43, PIC_50;
+@org $6e, $471c:
+	text "啊啊啊啊啊﹗﹗";
+	line "";
+	db $f1, $8f; #"救"
+	text "命啊﹗";
+	done;
+
+@org $6e, $472f:
+	init NAME_LANTE, PIC_3F;
+@org $6e, $4732:
+	text "怎麼了﹖啊﹗";
+	line "好可愛的老鼠﹗";
+	done;
+
+@org $6e, $474c:
+	init NAME_44, PIC_4D;
+@org $6e, $474f:
+	text "吱吱﹗";
+	done;
+
+@org $6e, $4755:
+	init NAME_43, PIC_50;
+@org $6e, $4758:
+	text "可愛﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "不敢相信﹐你";
+	cont "";
+	db $f2, $33; #"會"
+	text "說出『可愛』";
+	line "這種形容詞﹗";
+	done;
+
+@org $6e, $4788:
+	init NAME_46, PIC_6E;
+@org $6e, $478b:
+	text "只是隻老鼠嘛～";
+	line "大驚小怪的⋯";
+	done;
+
+@org $6e, $47a5:
+	init NAME_43, PIC_50;
+@org $6e, $47a8:
+	text "只是隻老鼠﹖";
+	line "";
+	db $f1, $03; #"真"
+	text "不敢相信你會";
+	para "說出這種話﹗";
+	line "你知道一隻老鼠";
+	para "身上有幾億隻細";
+	line "菌嗎﹖";
+	done;
+
+@org $6e, $47f0:
+	init NAME_43, PIC_50;
+@org $6e, $47f3:
+	text "都是你﹗";
+	line "買了這一艘老鼠";
+	cont "船﹗";
+	para "全世界的老鼠都";
+	line "";
+	db $f3, $9a; #"在"
+	text "這裡了啦﹗";
+	done;
+
+@org $6e, $482a:
+	init NAME_LANTE, PIC_41;
+@org $6e, $482d:
+	text "老媽⋯⋯⋯";
+	done;
+
+@org $6e, $4836:
+	init NAME_BLANK, PIC_1E;
+@org $6e, $4839:
+	text "後來呢﹖";
+	line "後來呢﹖";
+	done;
+
+@org $6e, $4847:
+	init NAME_RANDT, PIC_06;
+@org $6e, $484a:
+	text "後來啊～";
+	line "";
+	db $f2, $48; #"那"
+	text "";
+	db $4f; #"個"
+	text "懲罰者雙手";
+	cont "高舉﹐在頭上形";
+	line "成了一個很大的";
+	line "火球⚬";
+	para "就這樣咻～";
+	line "的一下﹐往我丟";
+	cont "來﹗";
+	done;
+
+@org $6e, $48a0:
+	init NAME_BLANK, PIC_1A;
+@org $6e, $48a3:
+	text "有多大﹖";
+	line "";
+	db $f1, $65; #"有"
+	text "多大﹖";
+	done;
+
+@org $6e, $48b5:
+	init NAME_RANDT, PIC_46;
+@org $6e, $48b8:
+	text "嗯～大概有我們";
+	line "村子的三倍⋯";
+	cont "不﹐五倍大﹗";
+	done;
+
+@org $6e, $48e0:
+	init NAME_BLANK, PIC_1A;
+@org $6e, $48e3:
+	text "哇哇哇﹗";
+	done;
+
+@org $6e, $48ea:
+	init NAME_RANDT, PIC_06;
+@org $6e, $48ed:
+	text "不過並沒有嚇到";
+	line "我⚬";
+	para "只見我雙手一擋";
+	line "將火球硬生生的";
+	cont "彈了回去﹗";
+	line "那懲罰者就";
+	cont "『轟』的一聲﹐";
+	line "被自己的火球";
+	cont "燒死了～";
+	done;
+
+@org $6e, $494e:
+	init NAME_BLANK, PIC_1E;
+@org $6e, $4951:
+	text "哇哇哇哇﹗";
+	line "好厲害﹗";
+	done;
+
+@org $6e, $4960:
+	init NAME_RANDT, PIC_06;
+@org $6e, $4963:
+	text "呵呵呵～";
+	line "不要露出這麼驚";
+	cont "訝的表情喲～";
+	para "";
+	db $f2, $57; #"這"
+	text "種小事﹐對我";
+	line "的能力而言﹐一";
+	cont "點都不困難喲⚬";
+	done;
+
+@org $6e, $49ad:
+	init NAME_BLANK, PIC_1A;
+@org $6e, $49b0:
+	text "雷德好棒喲﹗﹗";
+	para "我長大也要跟雷";
+	line "德一樣﹗";
+	done;
+
+@org $6e, $49d6:
+	init NAME_RANDT, PIC_06;
+@org $6e, $49d9:
+	text "哈哈哈哈哈～～";
+	done;
+
+@org $6e, $49e3:
+	init NAME_4F, PIC_73;
+@org $6e, $49e6:
+	text "真是麻煩⋯";
+	line "";
+	db $f2, $57; #"這"
+	text "樣⋯那樣⋯";
+	done;
+
+@org $6e, $49fc:
+	init NAME_4F, PIC_73;
+@org $6e, $49ff:
+	text "哦﹗﹗好痛﹗";
+	line "巴克﹐不要怕～";
+	cont "";
+	db $f2, $ad; #"我"
+	text "";
+	db $33; #"會"
+	text "修好她的⚬";
+	done;
+
+@org $6e, $4a27:
+	init NAME_BUCK, PIC_01;
+@org $6e, $4a2a:
+	text "貝爾．醒．";
+	line "過來了﹖";
+	done;
+
+@org $6e, $4a3c:
+	init NAME_4D, PIC_6C;
+@org $6e, $4a3f:
+	text "啊﹗﹖";
+	line "";
+	db $f1, $43; #"是"
+	text "";
+	db $28; #"主"
+	text "人救了我嗎";
+	para "對於主人的命令";
+	line "貝爾違背了⋯⋯";
+	done;
+
+@org $6e, $4a6e:
+	init NAME_4F, PIC_73;
+@org $6e, $4a71:
+	text "算了﹐又不全是";
+	line "你的錯⚬";
+	para "還是想要變成人";
+	line "嗎﹖";
+	done;
+
+@org $6e, $4a98:
+	init NAME_BUCK, PIC_01;
+@org $6e, $4a9b:
+	text "貝爾⋯變成人﹖";
+	done;
+
+@org $6e, $4aa9:
+	init NAME_4D, PIC_6C;
+@org $6e, $4aac:
+	text "不要了⋯⋯";
+	line "巴克說過﹐當我";
+	cont "們會生氣﹐會感";
+	line "傷﹐就已經有了";
+	cont "人類的心⚬";
+	para "";
+	db $f1, $1d; #"變"
+	text "不變成人﹐已";
+	line "";
+	db $f1, $73; #"經"
+	text "不重要了⚬";
+	done;
+
+@org $6e, $4afe:
+	init NAME_BUCK, PIC_01;
+@org $6e, $4b01:
+	text "貝爾小姐⋯⋯";
+	done;
+
+@org $6e, $4b0d:
+	init NAME_4D, PIC_6C;
+@org $6e, $4b10:
+	text "巴克﹐謝謝你⋯";
+	done;
+
+@org $6e, $4b1d:
+	init NAME_4F, PIC_73;
+@org $6e, $4b20:
+	text "哈哈哈哈～";
+	line "頭一次看見會談";
+	cont "戀愛的機器人﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "好笑～";
+	cont "不過真叫人嫉妒";
+	done;
+
+@org $6e, $4b59:
+	init NAME_38, PIC_61;
+@org $6e, $4b5c:
+	text "喂～喂～";
+	line "兒子呀～";
+	para "";
+	db $f2, $4a; #"你"
+	text "";
+	db $57; #"這"
+	text "些日子來都";
+	line "";
+	db $f3, $9a; #"在"
+	text "做什麼﹖";
+	para "";
+	db $f1, $65; #"有"
+	text "沒有什麼進展";
+	line "啊﹖";
+	done;
+
+@org $6e, $4b9b:
+	init NAME_CLAUDE, PIC_03;
+@org $6e, $4b9e:
+	text "進展﹖";
+	line "你是指懲罰者的";
+	cont "事﹖";
+	done;
+
+@org $6e, $4bb8:
+	init NAME_38, PIC_61;
+@org $6e, $4bbb:
+	text "如果只是這種無";
+	line "聊的事的話﹐那";
+	para "";
+	db $f2, $ad; #"我"
+	text "";
+	db $d7; #"就"
+	text "不會讓你出";
+	line "";
+	db $f2, $bc; #"去"
+	text "了⚬";
+	para "我指的事﹐當然";
+	line "是⋯⋯";
+	cont "呵呵～";
+	done;
+
+@org $6e, $4c06:
+	init NAME_NINA, PIC_02;
+@org $6e, $4c09:
+	text "伯父為什麼一直";
+	line "看著我﹖";
+	done;
+
+@org $6e, $4c1e:
+	init NAME_CLAUDE, PIC_39;
+@org $6e, $4c21:
+	text "做什麼﹗";
+	line "老色鬼﹐";
+	para "不看看自己多大";
+	line "的年紀了﹗";
+	done;
+
+@org $6e, $4c49:
+	init NAME_38, PIC_61;
+@org $6e, $4c4c:
+	text "克勞德﹐你還不";
+	line "明瞭爸爸的用心";
+	cont "嗎﹖";
+	done;
+
+@org $6e, $4c6a:
+	init NAME_NINA, PIC_02;
+@org $6e, $4c6d:
+	text "⋯⋯⋯";
+	done;
+
+@org $6e, $4c72:
+	init NAME_CLAUDE, PIC_38;
+@org $6e, $4c75:
+	text "這．還．用．你";
+	line "．說﹗";
+	para "偷偷跟你說﹐妮";
+	line "娜已經要跟我";
+	cont "『那個』了﹗";
+	done;
+
+@org $6e, $4cad:
+	init NAME_38, PIC_61;
+@org $6e, $4cb0:
+	text "哦哦﹗﹗";
+	line "『那個』﹗﹗";
+	done;
+
+@org $6e, $4cc2:
+	init NAME_NINA, PIC_35;
+@org $6e, $4cc5:
+	text "亂說⋯⋯";
+	line "妮娜只是⋯⋯";
+	para "只是說⋯";
+	line "可以做個好朋友";
+	done;
+
+@org $6e, $4cec:
+	init NAME_CLAUDE, PIC_38;
+@org $6e, $4cef:
+	text "聽到了吧～";
+	line "妮娜說要～";
+	para "";
+	db $f2, $bd; #"做"
+	text "";
+	db $ad; #"我"
+	text "的";
+	line "女．朋．友﹗";
+	done;
+
+@org $6e, $4d15:
+	init NAME_38, PIC_61;
+@org $6e, $4d18:
+	text "哈哈哈哈哈～";
+	done;
+
+@org $6e, $4d21:
+	init NAME_5A, PIC_18;
+@org $6e, $4d24:
+	text "少爺～";
+	line "";
+	db $f2, $4a; #"你"
+	text "回來了﹗";
+	para "嗚嗚嗚嗚～嗚～";
+	line "先生跟夫人要是";
+	cont "知道的話﹐一定";
+	line "會很高與的⚬";
+	done;
+
+@org $6e, $4d68:
+	init NAME_MITT, PIC_48;
+@org $6e, $4d6b:
+	text "對不起﹐讓你擔";
+	line "心了⋯⋯";
+	cont "";
+	db $f2, $ad; #"我"
+	text "一定會努力的";
+	done;
+
+@org $6e, $4d90:
+	init NAME_5A, PIC_18;
+@org $6e, $4d93:
+	text "嗚嗚～少爺～";
+	para "";
+	db $f2, $ad; #"我"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	db $ad; #"我"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	line "太感動了⋯⋯";
+	done;
+
+@org $6e, $4db0:
+	init NAME_MITT, PIC_47;
+@org $6e, $4db3:
+	text "嘻嘻嘻～";
+	line "剛回來就有好多";
+	cont "事要忙﹗";
+	para "先別急著感動唷";
+	line "星夢城的月亮軌";
+	cont "跡要重繪了⚬";
+	para "我一定要成為﹐";
+	line "比爸爸還傑出的";
+	cont "星空彩繪家﹗";
+	done;
+
+@org $6e, $4e1d:
+	init NAME_5A, PIC_18;
+@org $6e, $4e20:
+	text "嗚～嗚～嗚～";
+	line "少爺⋯⋯⋯";
+	done;
+
+@org $6e, $4e36:
+	init NAME_MITT, PIC_07;
+@org $6e, $4e39:
+	text "對不起⋯⋯⋯";
+	done;
+
+@org $6e, $4e43:
+	init NAME_BALLOT, PIC_2E;
+@org $6e, $4e46:
+	text "終於⋯";
+	line "落幕了嗎﹖";
+	done;
+
+@org $6e, $4e55:
+	init NAME_11, PIC_11;
+@org $6e, $4e58:
+	text "巴洛特⋯";
+	line "";
+	db $f2, $07; #"對"
+	text "不起⋯";
+	done;
+
+@org $6e, $4e69:
+	init NAME_BALLOT, PIC_2E;
+@org $6e, $4e6c:
+	text "爸⋯為什麼不說";
+	line "什麼就離開了﹖";
+	done;
+
+@org $6e, $4e86:
+	init NAME_11, PIC_11;
+@org $6e, $4e89:
+	text "這是個危險的任";
+	line "";
+	db $f2, $52; #"務"
+	text "﹐爸爸本來就";
+	cont "";
+	db $f2, $c8; #"沒"
+	text "有抱著活下去";
+	line "的把握⋯⋯";
+	para "爸爸一直認為﹐";
+	line "不要再給不快樂";
+	para "的巴洛特﹐多餘";
+	line "的牽掛⋯⋯";
+	done;
+
+@org $6e, $4eec:
+	init NAME_BALLOT, PIC_2C;
+@org $6e, $4eef:
+	text "哼﹗";
+	line "爸爸大笨蛋﹗";
+	done;
+
+@org $6e, $4eff:
+	init NAME_11, PIC_11;
+@org $6e, $4f02:
+	text "哈哈哈～";
+	line "記得很久前﹐巴";
+	cont "洛特也這麼罵過";
+	line "";
+	db $f2, $ad; #"我"
+	text "⚬";
+	done;
+
+@org $6e, $4f2a:
+	init NAME_BALLOT, PIC_2A;
+@org $6e, $4f2d:
+	text "爸⋯⋯⋯";
+	line "";
+	db $f2, $4a; #"你"
+	text "";
+	db $56; #"看"
+	text "";
+	db $1f; #"～"
+	text "";
+	cont "黃澄澄的月亮﹐";
+	line "看起來多麼無瑕";
+	done;
+
+@org $6e, $4f52:
+	init NAME_11, PIC_11;
+@org $6e, $4f55:
+	text "嗯⋯⋯⋯";
+	done;
+
+@org $6e, $4f5c:
+	init NAME_1E, PIC_27;
+@org $6e, $4f5f:
+	text "哦～呵呵呵呵～";
+	done;
+
+@org $6e, $4f6b:
+	init NAME_1F, PIC_28;
+@org $6e, $4f6e:
+	text "我們在哪裡﹖";
+	done;
+
+@org $6e, $4f7a:
+	init NAME_1E, PIC_27;
+@org $6e, $4f7d:
+	text "你是指我們是誰";
+	line "嗎﹖";
+	para "既然你們問起了";
+	line "那我就仁慈的";
+	cont "告訴你們吧﹗";
+	done;
+
+@org $6e, $4fb5:
+	init NAME_1F, PIC_28;
+@org $6e, $4fb8:
+	text "來自銀河系裡的";
+	line "正義使者﹗";
+	done;
+
+@org $6e, $4fd1:
+	init NAME_1E, PIC_27;
+@org $6e, $4fd4:
+	text "穿梭於黑夜的浪";
+	line "";
+	db $f5, $2c; #"漫"
+	text "";
+	db $2d; #"勇"
+	text "士﹗";
+	done;
+
+@org $6e, $4fe9:
+	init NAME_1F, PIC_28;
+@org $6e, $4fec:
+	text "貫徹愛．正義．";
+	line "勇氣的真理﹗";
+	done;
+
+@org $6e, $5004:
+	init NAME_1E, PIC_27;
+@org $6e, $5007:
+	text "拉琪﹗";
+	done;
+
+@org $6e, $500d:
+	init NAME_1F, PIC_28;
+@org $6e, $5010:
+	text "庫魯﹗";
+	done;
+
+@org $6e, $5016:
+	init NAME_1E, PIC_27;
+@org $6e, $5019:
+	text "閃．電．隊～～";
+	line "誕生﹗﹗";
+	done;
+
+@org $6e, $502a:
+	init NAME_1E, PIC_27;
+@org $6e, $502d:
+	text "好冷⋯⋯";
+	done;
+
+@org $6e, $5033:
+	init NAME_1F, PIC_28;
+@org $6e, $5036:
+	text "在下覺得我們好";
+	line "像被遺忘了⋯";
+	done;
+
+@org $6e, $5050:
+	init NAME_1E, PIC_27;
+@org $6e, $5053:
+	text "哇哇哇哇﹗";
+	line "誰來救救我呀﹗";
+	done;

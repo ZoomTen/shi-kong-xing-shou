@@ -12,8 +12,8 @@ hVBlank:: ds 1
 
 hConsoleType:: ds 1
 
-hFF92:: ds 1
-hFF93:: ds 1
+hVRAMCopyWidth:: ds 1
+hVRAMCopyHeight:: ds 1
 
 hJoypadPressed:: ds 1
 hJoypadDown:: ds 1
@@ -28,7 +28,7 @@ hMapGroup:: ds 1
 hMapNumber:: ds 1
 hWarpNumber:: ds 1
 
-hFF9D:: ds 1
+hFadeFrameCounter:: ds 1
 hFF9E:: ds 1
 hFF9F:: ds 1
 hFFA0:: ds 1
@@ -46,42 +46,35 @@ hFFAC:: ds 1 ; walking animations?
 hFFAD:: ds 1
 
 hSCX:: ds 1
-hFFAF:: ds 1
+hSCXHigh:: ds 1
 hSCY:: ds 1
-hFFB1:: ds 1
+hSCYHigh:: ds 1
 
 hMapAttrBank:: ds 4
 hScriptBank:: ds 1
-hFFB7:: ds 1
+hTextSourceBank4:: ds 1
 hFFB8:: ds 1
 hFFB9:: ds 1
-hFFBA:: ds 1
+hMapPredef:: ds 1 ; map-load script/predef index (indexes .Predefs; map events gate on it)
 hFFBB:: ds 1
-hFFBC:: ds 1
+hTextSource:: ds 1
 hFFBD:: ds 1
 
 hTargetBank:: ds 1
 
-hFade:: ds 1 ; load map
-hFFC0:: ds 1
+; in the overworld, this triggers a game mode change to wTargetMode
+hFade:: ds 1
+
+hTextSourceBank2:: ds 1
 hScrollNumber:: ds 1
 hFFC2:: ds 1
-hFFC3:: ds 1
-hFFC4:: ds 1
+hTextSourceBank3:: ds 1
+hPaletteFadeState:: ds 1
 hFFC5:: ds 1
 hFFC6:: ds 1
-hFFC7:: ds 1
-hFFC8:: ds 1
-hFFC9:: ds 1
-hFFCA:: ds 1
-hFFCB:: ds 1
-hFFCC:: ds 1
-hFFCD:: ds 1
-hFFCE:: ds 1
-hFFCF:: ds 1
-hFFD0:: ds 1
-hFFD1:: ds 1
-hFFD2:: ds 1
+hMathOperand:: ds 4 ; $ffc7  multiplier/divisor for Multiply32By8 / Divide32By16
+hMathValue:: ds 4   ; $ffcb  multiplicand/dividend, and where the result lands
+hMathAccum:: ds 4   ; $ffcf  product / quotient accumulator
 hBattleJumptableIndex:: ds 1
 hFFD4:: ds 1
 hFFD5:: ds 1

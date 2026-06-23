@@ -1,14 +1,14 @@
-Func_19ca::
-	ldh a, [hFFBC] ; text type?
-	cp 1
+_PrintText::
+	ldh a, [hTextSource]
+	cp TEXTSRC_SCRIPT
 	jr z, .type1
-	cp 2
+	cp TEXTSRC_SIGNPOST
 	jr z, .type2
-	cp 3
+	cp TEXTSRC_ITEM_OBTAINED
 	jr z, .type3
-	cp 4
+	cp TEXTSRC_SCRIPT_MSG
 	jr z, .type4
-	cp 5
+	cp TEXTSRC_ITEM_FOUND
 	jr z, .type5
 	ret
 
@@ -17,19 +17,19 @@ Func_19ca::
 	jr .select_bank
 
 .type2
-	ldh a, [hFFC0]
+	ldh a, [hTextSourceBank2]
 	jr .select_bank
 
 .type3
-	ldh a, [hFFC3]
+	ldh a, [hTextSourceBank3]
 	jr .select_bank
 
 .type4
-	ldh a, [hFFB7]
+	ldh a, [hTextSourceBank4]
 	jr .select_bank
 
 .type5
-	ld a, [wdcb5]
+	ld a, [wFoundItemTextBank]
 	jr .select_bank
 
 .select_bank
@@ -279,21 +279,21 @@ CheckCharacter_Commands::
 
 .commands
 	dw Text_Init ; $e0
-	dw Func_1c2c ; $e1 sign?
+	dw Text_e1 ; $e1 sign?
 	dw Text_End  ; $e2
 	dw Text_ItemName ; $e3
-	dw Func_1ca9 ; $e4
+	dw Text_e4 ; $e4
 	dw PrintTwoOptionMenu     ; $e5
 	dw InterpretTwoOptionMenu ; $e6
-	dw Func_1d41      ; $e7
-	dw Func_1d67      ; $e8
+	dw Text_e7      ; $e7
+	dw Text_e8      ; $e8
 	dw Text_Init      ; $e9
 	dw Text_ItemName2 ; $ea
-	dw Func_1e1a      ; $eb
+	dw Text_eb      ; $eb
 	dw Text_Paragraph ; $ec
 	dw Text_NextLine  ; $ed
 	dw Text_Cont      ; $ee
-	dw Func_1fe9      ; $ef
+	dw Text_ef      ; $ef
 
 Text_Init::
 ; Save name and face of person
@@ -310,9 +310,9 @@ Text_Init::
 	rst Bankswitch
 	call Func_00a_4000 ; load face picture
 	call DelayFrame
-	call Func_1ba0
+	call LoadTextName
 	call Func_00a_40b3
-	call Func_0419
+	call BuildVirtualOAM
 	call DelayFrame
 	pop af
 	rst Bankswitch
@@ -338,7 +338,7 @@ Text_Init::
 	ld [wCharacterTilePos], a
 	jp CheckCharacter
 
-Func_1ba0::
+LoadTextName::
 ; Clear old name buffer
 	ld bc, $10 tiles
 	ld hl, $8e00
@@ -428,7 +428,7 @@ ENDR
 	rst Bankswitch
 	ret
 
-Func_1c2c::
+Text_e1::
 ; Save current bank
 	ld a, [_BANKNUM]
 	push af
@@ -469,26 +469,26 @@ Func_1c2c::
 	jp CheckCharacter
 
 Text_End::
-	call Func_1fb9
+	call WaitTextboxInput
 
 Text_EndCont::
 	ld a, [_BANKNUM]
 	push af
 	ld a, BANK(Func_00a_4178)
 	rst Bankswitch
-	call Func_1c8b
-	call Func_0419
+	call ClearExtraSprites
+	call BuildVirtualOAM
 	call Func_00a_4178
 	call DelayFrame
 	pop af
 	rst Bankswitch
 
 	xor a
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	pop hl
 	ret
 
-Func_1c8b::
+ClearExtraSprites::
 	ld hl, wcbd0
 	ld c, $20
 	xor a
@@ -499,9 +499,9 @@ Func_1c8b::
 	ret
 
 Text_ItemName::
-	call Func_0817
+	call ParseMapEventsAtPlayer
 	pop hl
-	call Func_01e_421a ; bank 1e set by Func_0827
+	call LoadItemNameByMapType ; bank 1e set by SetMapLayoutPatchForItem
 ; got item name
 	ld a, [wTextStart]
 	ld l, a
@@ -510,7 +510,7 @@ Text_ItemName::
 	push hl
 	jp CheckCharacter
 
-Func_1ca9::
+Text_e4::
 	pop hl
 	ld a, [wdcd3]
 	ld l, a
@@ -530,14 +530,14 @@ PrintTwoOptionMenu::
 	push hl
 	jp CheckCharacter
 
-unk_1cc5::
+String_1cc5::
 	text "  ", 0
 	text "是", 1
 	text "  ", 0
 	text "否", 1
 	choice
 
-unk_1cd0::
+String_1cd0::
 	text "  ", 0
 	text "回", 1
 	text "春", 3
@@ -551,10 +551,10 @@ InterpretTwoOptionMenu::
 	jp Text_EndCont
 
 .Main:
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	res 3, a
-	ld [wdaa3], a
-	call Func_1f70
+	ld [wEventFlags + 3], a
+	call InitMenuCursor
 	ld hl, wcde0
 	inc hl
 	ld [hl], $40
@@ -564,8 +564,8 @@ InterpretTwoOptionMenu::
 
 .input_loop:
 ; Flash gameboy icon
-	call Func_1f97
-	call Func_1f8a
+	call AnimateMenuCursor
+	call UpdateMenuCursorOAM
 
 ; Check left
 	call DelayFrame
@@ -602,9 +602,9 @@ InterpretTwoOptionMenu::
 	cp $40
 	jr z, .choose_option
 
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	set 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	jr .choose_option
 
 ; ???
@@ -612,11 +612,11 @@ InterpretTwoOptionMenu::
 	jr .input_loop
 
 .choose_option
-	call Func_1fb1
-	call Func_1f8a
+	call ResetMenuCursorTimer
+	call UpdateMenuCursorOAM
 	ret
 
-Func_1d41::
+Text_e7::
 	pop hl
 	ld a, l
 	ld [wdcd3], a
@@ -639,20 +639,20 @@ Func_1d41::
 	db $f1, $49, $4a
 	db $e8
 
-Func_1d67::
+Text_e8::
 ; Buy sell cancel menu
-	call Func_1d6d
+	call _Text_e8
 	jp Text_EndCont
 
-Func_1d6d::
+_Text_e8::
 ; Buy sell cancel menu for real
 
 ; Init position
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	res 0, a
 	res 1, a
-	ld [wdaa4], a
-	call Func_1f70
+	ld [wEventFlags + 4], a
+	call InitMenuCursor
 	ld hl, wcde0
 	inc hl
 	ld [hl], $30
@@ -661,8 +661,8 @@ Func_1d6d::
 	ldh [hJoypadPressed], a
 
 .CheckJoypad:
-	call Func_1f97
-	call Func_1f8a
+	call AnimateMenuCursor
+	call UpdateMenuCursorOAM
 	call DelayFrame
 ; check left
 	ldh a, [hJoypadPressed]
@@ -670,7 +670,7 @@ Func_1d6d::
 	jr z, .check_right
 
 ; skip if already on option 0
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	and %11
 	jr z, .check_a
 ; check if on option 1 or 2
@@ -678,16 +678,16 @@ Func_1d6d::
 	jr z, .left_option1
 
 ; on option 2
-	ld a, [wdaa4] ; waste
+	ld a, [wEventFlags + 4] ; waste
 	set 0, a
 	res 1, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_1dd4
 
 .left_option1
-	ld a, [wdaa4] ; waste
+	ld a, [wEventFlags + 4] ; waste
 	res 0, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_1dd4
 
 .check_right
@@ -696,7 +696,7 @@ Func_1d6d::
 	jr z, .check_a
 
 ; skip if already on option 2
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	bit 1, a
 	jr nz, .check_a
 ; check if on option 0 or 1
@@ -705,16 +705,16 @@ Func_1d6d::
 
 ; option 0
 	set 0, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 	jr .asm_1dd4
 
 .right_option1
 	set 1, a
 	res 0, a
-	ld [wdaa4], a
+	ld [wEventFlags + 4], a
 
 .asm_1dd4:
-	ld a, [wdaa4]
+	ld a, [wEventFlags + 4]
 	and %11
 ; a = a * $20
 REPT 5
@@ -737,25 +737,25 @@ ENDR
 	cp $40
 	jr z, .exit
 
-	ld a, [wdaa3]
+	ld a, [wEventFlags + 3]
 	set 3, a
-	ld [wdaa3], a
+	ld [wEventFlags + 3], a
 	jr .exit
 
 .loop
 	jr .CheckJoypad ; waste
 
 .exit
-	call Func_1fb1
-	call Func_1f8a
+	call ResetMenuCursorTimer
+	call UpdateMenuCursorOAM
 	ret
 
-Func_1e07::
+Text_e9_Stub::
 	jp CheckCharacter
 
 Text_ItemName2::
 	pop hl
-	call Func_01e_6e4d
+	call LoadShopItemName
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]
@@ -763,9 +763,9 @@ Text_ItemName2::
 	push hl
 	jp CheckCharacter
 
-Func_1e1a::
+Text_eb::
 	pop hl
-	call Func_01e_6de3
+	call LoadItemNameByIndex
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]
@@ -774,16 +774,16 @@ Func_1e1a::
 	jp CheckCharacter
 
 Text_Paragraph::
-	call Func_1fb9
-	call Func_1e40
-	call Func_1e7b
+	call WaitTextboxInput
+	call ClearTextboxTilemap
+	call UpdateTextBGMap
 	xor a
 	ld [wCharacterTilemapPos], a
 	ld [wTextLine], a
 	ld [wCharacterTilePos], a
 	jp CheckCharacter
 
-Func_1e40::
+ClearTextboxTilemap::
 ; Clear tilemap textbox
 	ld a, [wd0d1]
 	ld l, a
@@ -808,20 +808,20 @@ Text_NextLine::
 
 	ld a, [wTextLine]
 	and a
-	jp nz, Func_1e6e
+	jp nz, Text_ScrollLine
 
 	ld a, 1
 	ld [wTextLine], a
 	jp CheckCharacter
 
-Func_1e6e::
+Text_ScrollLine::
 	xor a
 	ld [wCharacterTilemapPos], a
-	call Func_1f24
-	call Func_1e7b
+	call ScrollTextboxUp
+	call UpdateTextBGMap
 	jp CheckCharacter
 
-Func_1e7b::
+UpdateTextBGMap::
 	ld hl, $050d
 	ld a, [wTextboxPos]
 	and a
@@ -834,12 +834,12 @@ Func_1e7b::
 	ld d, h
 	ld hl, wBGMapBufferPointers
 	ld bc, $020e
-	call Func_1efe
+	call StoreBGMapPointers
 	ld a, [wd0d1]
 	ld l, a
 	ld a, [wd0d1 + 1]
 	ld h, a
-	call Func_1ee4
+	call CopyTextRowToBuffer
 	ld a, $1c
 	ld [hFFA5], a
 	ld a, $01
@@ -857,14 +857,14 @@ Func_1e7b::
 	ld d, h
 	ld hl, wBGMapBufferPointers
 	ld bc, $020e
-	call Func_1efe
+	call StoreBGMapPointers
 	ld a, [wd0d1]
 	ld l, a
 	ld a, [wd0d1 + 1]
 	ld h, a
 	ld de, $0028
 	add hl, de
-	call Func_1ee4
+	call CopyTextRowToBuffer
 	ld a, $1c
 	ld [hFFA5], a
 	ld a, $01
@@ -872,7 +872,7 @@ Func_1e7b::
 	call DelayFrame
 	ret
 
-Func_1ee4::
+CopyTextRowToBuffer::
 	ld de, wd128
 	lb bc, 2, 14
 .copy
@@ -892,7 +892,7 @@ Func_1ee4::
 	jr nz, .copy
 	ret
 
-Func_1efe::
+StoreBGMapPointers::
 	push bc
 	push de
 .asm_1f00:
@@ -925,10 +925,10 @@ Func_1efe::
 .asm_1f1f
 	pop bc
 	dec b
-	jr nz, Func_1efe
+	jr nz, StoreBGMapPointers
 	ret
 
-Func_1f24::
+ScrollTextboxUp::
 	ld a, [wd0d1]
 	ld l, a
 	ld a, [wd0d1 + 1]
@@ -981,10 +981,10 @@ Func_1f24::
 	ret
 
 Text_Cont::
-	call Func_1fb9
+	call WaitTextboxInput
 	jp Text_NextLine
 
-Func_1f70::
+InitMenuCursor::
 	ld hl, wcde0
 	ld [hl], $3f
 	ld a, [hBattleJumptableIndex]
@@ -1005,11 +1005,11 @@ Func_1f70::
 	ld [hl], $03
 	ret
 
-Func_1f8a::
+UpdateMenuCursorOAM::
 	homecall Func_004_4045
 	ret
 
-Func_1f97::
+AnimateMenuCursor::
 ; Timer between flash
 	ld bc, wcde0
 	ld hl, 3
@@ -1032,7 +1032,7 @@ Func_1f97::
 	ld [hl], 4
 	ret
 
-Func_1fb1::
+ResetMenuCursorTimer::
 ; Inefficient
 	ld hl, wcde0
 	inc hl
@@ -1040,13 +1040,13 @@ Func_1fb1::
 	ld [hl], 0
 	ret
 
-Func_1fb9::
+WaitTextboxInput::
 ; Flashing gameboy icon on textbox stuff
-	call Func_1f70
+	call InitMenuCursor
 	xor a
 	ldh [hVBlank], a
 	ldh [hJoypadPressed], a
-	call Func_1f8a
+	call UpdateMenuCursorOAM
 .joypad_loop
 	ldh a, [hJoypadDown]
 	and D_PAD | BUTTONS
@@ -1058,8 +1058,8 @@ Func_1fb9::
 
 	xor a
 	ldh [hVBlank], a
-	call Func_1f97
-	call Func_1f8a
+	call AnimateMenuCursor
+	call UpdateMenuCursorOAM
 	jr .joypad_loop
 
 .asm_1fda
@@ -1067,12 +1067,12 @@ Func_1fb9::
 	call PlaySound
 	xor a
 	ldh [hVBlank], a
-	call Func_1fb1
-	call Func_1f8a
+	call ResetMenuCursorTimer
+	call UpdateMenuCursorOAM
 	ret
 
-Func_1fe9::
+Text_ef::
 	xor a
-	ldh [hFFBC], a
+	ldh [hTextSource], a
 	pop hl
 	ret

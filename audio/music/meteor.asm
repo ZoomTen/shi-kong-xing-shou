@@ -2,12 +2,12 @@
 Music_Meteor_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           2, 4, \ ; vibrato
 	           $8b, $35, $c7 ; unknown 2
 	speed 6
 	fine_pitch $2
-	unknown_music_e9 $a1
+	volume_envelope $a1
 	duty_cycle DUTY_50, DUTY_50
 	mark_loop ;------
 	transpose 1
@@ -150,12 +150,12 @@ Music_Meteor_Ch1:
 Music_Meteor_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           2, 4, \ ; vibrato
 	           $8b, $35, $c7 ; unknown 2
 	speed 6
 	fine_pitch $2
-	unknown_music_e9 $51
+	volume_envelope $51
 	duty_cycle DUTY_50, DUTY_50
 	mark_loop ;------
 	transpose -11

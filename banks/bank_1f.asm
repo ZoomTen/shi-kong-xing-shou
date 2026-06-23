@@ -43,7 +43,7 @@ Func_01f_4028:
 	call CopyBytesVRAM
 
 ; BG palette
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld hl, 7
 	add hl, hl
 	add hl, hl
@@ -51,7 +51,7 @@ Func_01f_4028:
 	add hl, bc
 	ld c, l
 	ld b, h
-	; ld bc, wcab0 + $38
+	; ld bc, wPaletteBuffer + $38
 	ld de, FacePalettePointers
 	pop hl
 	add hl, de
@@ -65,7 +65,7 @@ Func_01f_4028:
 	ret
 
 Func_01f_405d:
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	push af
 	cp 3
 	jr nz, .asm_4072
@@ -91,7 +91,7 @@ Func_01f_405d:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd08a]
+	ld a, [wBattleScriptByte]
 	ld b, a
 	ld de, $9000
 	ld a, d
@@ -102,11 +102,12 @@ Func_01f_405d:
 	call CopyBytesVRAM
 	ret
 
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_01f_4091:
 	db $90, $91, $92, $93, $94, $95, $96, $97, $93
 
 Func_01f_409a:
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld hl, $38
 	add hl, bc
 	ld c, l
@@ -122,7 +123,7 @@ Func_01f_409a:
 	db $ff, $7f, $dc, $01, $0f, $15, $00, $00
 
 Func_01f_40b7:
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	cp 3
 	jr nz, .asm_40ca
 
@@ -135,13 +136,13 @@ Func_01f_40b7:
 	ret
 
 .asm_40ca
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	ld hl, $38
 	add hl, bc
 	ld c, l
 	ld b, h
 	ld de, FacePalettePointers
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -159,13 +160,13 @@ Func_01f_40ea:
 	ld hl, $9822
 	ld a, 16
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 9
 	ld c, a
-	ldh [hFF93], a
-	call Func_1022
+	ldh [hVRAMCopyHeight], a
+	call ClearBGMapBox_VRAM1
 	ld de, .unk_4119
-	ld a, [wd08e]
+	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -176,10 +177,10 @@ Func_01f_40ea:
 	ld de, .unk_4129
 	ld a, 4
 	ld b, a
-	ldh [hFF92], a
+	ldh [hVRAMCopyWidth], a
 	ld a, 4
 	ld c, a
-	ldh [hFF93], a
+	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ret
 

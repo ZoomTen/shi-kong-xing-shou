@@ -22,19 +22,19 @@ VBlank::
 	ld a, [wWY]
 	ldh [rWY], a
 
-	call Func_297a
+	call FlushBGMapBuffer
 	call hTransferVirtualOAM
 	call Joypad
 
 	call LoadCharacter
 	call PrintCharacter
-	call Func_28d6
+	call UpdateTextLineBGMap
 
 	ld a, [_BANKNUM]
 	push af
-	ld a, [wd091]
+	ld a, [wCurrentSoundBank]
 	rst Bankswitch
-	call $4000
+	call SOUND_PLAY
 	pop af
 	rst Bankswitch
 

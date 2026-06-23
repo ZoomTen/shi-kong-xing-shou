@@ -4,7 +4,8 @@ CC := gcc
 CFLAGS := -O3 -std=c99 -Wall -Wextra -Wno-missing-field-initializers
 
 tools := \
-	check_diff
+	check_diff \
+	look_block
 
 all: $(tools)
 	@:

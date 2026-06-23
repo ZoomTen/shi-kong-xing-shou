@@ -1,12 +1,12 @@
 	const_def
 
-	const script_continue ; $00
-MACRO scr_cont
-	db script_continue
+	const script_scont ; $00
+MACRO scont
+	db script_scont
 ENDM
 
 	const script_spriteface ; $01
-MACRO scr_spriteface
+MACRO spriteface
 ; sprite ID 0 is player
 ; sprite ID 1 is follower
 ; sprite ID 2+ is everything else
@@ -16,31 +16,31 @@ MACRO scr_spriteface
 ENDM
 
 	const script_delay ; $02
-MACRO scr_delay
+MACRO delay
 	db script_delay
 	db \1 ; mask
 	db \2 ; delay
 ENDM
 
-	const script_03 ; $03
-MACRO scr_03
-	db script_03
+	const script_delaywait ; $03
+MACRO delaywait
+	db script_delaywait
 ENDM
 
-	const script_04 ; $04
-MACRO scr_04
-	db script_04
+	const script_textface ; $04
+MACRO textface
+	db script_textface
 	dw \1
 ENDM
 
 	const script_face ; $05
-MACRO scr_face
+MACRO face
 	db script_face
 	db \1 ; facing
 ENDM
 
 	const script_spritewalk ; $06
-MACRO scr_spritewalk
+MACRO spritewalk
 ; move a sprite in the direction
 ; specified by MOVE_* in \2
 ; this does NOT automatically make
@@ -51,24 +51,24 @@ MACRO scr_spritewalk
 	db \2
 ENDM
 
-	const script_07 ; $07
-MACRO scr_07
-	db script_07
+	const script_spritewalkstep ; $07
+MACRO spritewalkstep
+	db script_spritewalkstep
 ENDM
 
-	const script_08 ; $08
-MACRO scr_08
-	db script_08
+	const script_setwalktarget ; $08
+MACRO setwalktarget
+	db script_setwalktarget
 	db \1
 ENDM
 
 	const script_end ; $09
-MACRO scr_end
+MACRO end
 	db script_end
 ENDM
 
 	const script_checkbit ; $0a
-MACRO scr_checkbit
+MACRO checkbit
 	db script_checkbit
 	dw \1
 	db \2
@@ -76,23 +76,23 @@ MACRO scr_checkbit
 ENDM
 
 	const script_setbit ; $0b
-MACRO scr_setbit
+MACRO setbit
 	db script_setbit
 	dw \1
 	db \2
 ENDM
 
 	const script_setmap ; $0c
-MACRO scr_setmap
+MACRO setmap
 ; This warps to a map in the same group
 ; as the map the script is in.
 	db script_setmap
-	db \1 ; map
-	db \2 ; entrance?
+	db \1 ; map number
+	db \2 ; warp number
 ENDM
 
 	const script_movemap ; $0d
-MACRO scr_movemap
+MACRO movemap
 ; Applies movement data to the loaded map.
 ; It should be used with maps that have
 ; no associated object events.
@@ -100,177 +100,248 @@ MACRO scr_movemap
 	dw \1 ; movement data (same as sprite)
 ENDM
 
-	const script_0e ; $0e
-MACRO scr_0e
-	db script_0e
+	const script_movemapstep ; $0e
+MACRO movemapstep
+	db script_movemapstep
 ENDM
 
 	const script_move ; $0f
-MACRO scr_move
+MACRO move
 	db script_move
 	dw \1 ; movement data
 ENDM
 
-	const script_10 ; $10
-MACRO scr_10
-	db script_10
+	const script_movestep ; $10
+MACRO movestep
+	db script_movestep
 ENDM
 
-	const script_11 ; $11
-MACRO scr_11
-	db script_11
+	const script_move2 ; $11
+MACRO move2
+	db script_move2
 	dw \1
 ENDM
 
-	const script_12 ; $12
-MACRO scr_12
-	db script_12
+	const script_move2step ; $12
+MACRO move2step
+	db script_move2step
 ENDM
 
-	const script_13 ; $13
-MACRO scr_13
-	db script_13
+	const script_setbgcopy ; $13
+MACRO setbgcopy
+; \1 = BG dest (VRAM); \2 = BG-copy table, dereferenced in bank $0b (Func_00b_606f)
+	db script_setbgcopy
 	dw \1, \2
 ENDM
 
-	const script_text ; $14
-MACRO scr_text
-	db script_text
+	const script_stext ; $14
+MACRO stext
+	db script_stext
 	dw \1 ; text
 ENDM
 
 	const script_emote ; $15
-MACRO scr_emote
+MACRO emote
 	db script_emote
 	db \1 ; sprite?
 	db \2 ; emote
 ENDM
 
-	const script_16 ; $16 load sprite definitions?
-MACRO scr_16
-	db script_16
+	const script_loadobjsprite ; $16
+MACRO loadobjsprite
+	db script_loadobjsprite
 	dw \1
 ENDM
 
-	const script_17 ; $17
-MACRO scr_17
-	db script_17
+	const script_offsetobject ; $17
+MACRO offsetobject
+	db script_offsetobject
 	db \1, \2, \3
 ENDM
 
-	const script_18 ; $18
-MACRO scr_18
-	db script_18
-	db \1
-	dw \1
-	db \2, \3 ; XXX variable?
+	const script_objscript ; $18
+MACRO objscript
+	db script_objscript
+	db \1 ; sprite ID
+	dw \2 ; movement script
 ENDM
 
-	const script_19 ; $19
-MACRO scr_19
-	db script_19
+	const script_objscriptstep ; $19
+MACRO objscriptstep
+	db script_objscriptstep
 	db \1, \2 ; XXX variable?
 ENDM
 
-	const script_1a ; $1a
-MACRO scr_1a
-	db script_1a
-	db \1, \2, \3, \4
+	const script_setattach ; $1a
+MACRO setattach
+	db script_setattach
+	db \1 ; attached sprite ID
+	db \2 ; target sprite ID
+	db \3, \4 ; offset
 ENDM
 
-	const script_1b ; $1b
-MACRO scr_1b
-	db script_1b
+	const script_clearattach ; $1b
+MACRO clearattach
+	db script_clearattach
 	db \1
 ENDM
 
-	const script_1c ; $1c
-MACRO scr_1c
-	db script_1c
+	const script_clearobject ; $1c
+MACRO clearobject
+	db script_clearobject
 	db \1
 ENDM
 
-	const script_1d ; $1d
-MACRO scr_1d
-	db script_1d
+	const script_objmapcoords ; $1d
+MACRO objmapcoords
+	db script_objmapcoords
 	db \1
 ENDM
 
-	const script_1e ; $1e
-MACRO scr_1e
-	db script_1e
+	const script_setmapobjbyte ; $1e
+MACRO setmapobjbyte
+	db script_setmapobjbyte
 	db \1, \2
 ENDM
 
-	const script_1f ; $1f
-MACRO scr_1f
-	db script_1f
+	const script_setmappredef ; $1f
+MACRO setmappredef
+	db script_setmappredef
 	db \1
 ENDM
 
-	const script_20 ; $20
-MACRO scr_20
-	db script_20
+	const script_spawnanim ; $20
+MACRO spawnanim
+	db script_spawnanim
 ENDM
 
-	const_def $24
-
-	const script_24 ; $24
-MACRO scr_24
-	db script_24
+	const script_copyobjfield ; $21
+MACRO copyobjfield
+	db script_copyobjfield
+	db \1, \2
 ENDM
 
-	const script_25 ; $25
-MACRO scr_25
-	db script_25
+	const script_copyobjy ; $22
+MACRO copyobjy
+	db script_copyobjy
+	db \1, \2
 ENDM
 
-	const_def $2a
+	const script_loadspriteat ; $23
+MACRO loadspriteat
+	db script_loadspriteat
+	db \1, \2, \3
+ENDM
+
+	const script_walkpath ; $24
+MACRO walkpath
+	db script_walkpath
+ENDM
+
+	const script_walkpathstep ; $25
+MACRO walkpathstep
+	db script_walkpathstep
+ENDM
+
+	const script_removeobj ; $26
+MACRO removeobj
+	db script_removeobj
+	db \1
+ENDM
+
+	const script_clearbit ; $27
+MACRO clearbit
+	db script_clearbit
+	dw \1
+	db \2
+ENDM
+
+	const script_fadeout ; $28
+MACRO fadeout
+	db script_fadeout
+ENDM
+
+	const script_fadein ; $29
+MACRO fadein
+	db script_fadein
+ENDM
 
 	const script_farjump ; $2a
-MACRO scr_farjump
+MACRO farjump
 	db script_farjump
 	dba \1
 ENDM
 
-	const_def $2e
-
-	const script_2e ; $2e
-MACRO scr_2e
-	db script_2e
-	db \1, \2, \3
+	const script_jumpifnotdown ; $2b
+MACRO jumpifnotdown
+	db script_jumpifnotdown
+	dw \1
 ENDM
 
-	const_def $30
-
-	const script_30 ; $30
-MACRO scr_30
-	db script_30
-	db \1, \2 ; pointer?
+	const script_reloadscreen ; $2c
+MACRO reloadscreen
+	db script_reloadscreen
 ENDM
 
-	const_def $33
+	const script_copytilemap ; $2d
+MACRO copytilemap
+	db script_copytilemap
+	db \1, \2, \3, \4
+ENDM
 
-	const script_33 ; $33
-MACRO scr_33
-	db script_33
+	const script_setlayouttile ; $2e
+MACRO setlayouttile
+	db script_setlayouttile
+	dw \1 ; map layout offset
+	db \2 ; tile
+ENDM
+
+	const script_copygfx ; $2f
+MACRO copygfx
+	db script_copygfx
+	db \1, \2, \3, \4
+ENDM
+
+	const script_setbgcopyplayer ; $30
+MACRO setbgcopyplayer
+; \1 = BG-copy pointer table (dw -> {w,h,tiles}); dereferenced in bank $0b (Func_00b_606f)
+	db script_setbgcopyplayer
+	dw \1
+ENDM
+
+	const script_copytilemapplayer ; $31
+MACRO copytilemapplayer
+	db script_copytilemapplayer
+	db \1, \2
+ENDM
+
+	const script_facemove1 ; $32
+MACRO facemove1
+	db script_facemove1
+ENDM
+
+	const script_facemove2 ; $33
+MACRO facemove2
+	db script_facemove2
 	db \1
 ENDM
 
-	const script_34 ; $34
-MACRO scr_34
-	db script_34
+	const script_warpmode ; $34
+MACRO warpmode
+	db script_warpmode
 	db \1 ; cutscene
 	db \2 ; map number
 	db \3 ; warp number
 ENDM
+
 	const script_35 ; $35
 MACRO scr_35
 	db script_35, \1
 ENDM
-	const script_36 ; $36
-MACRO scr_36
-	db script_36
+
+	const script_townmusicanim ; $36
+MACRO townmusicanim
+	db script_townmusicanim
 ENDM
 
 	const script_37 ; $37
@@ -278,30 +349,96 @@ MACRO scr_37
 	db script_37
 ENDM
 
-	const_def $3b
+	const script_38 ; $38
+MACRO scr_38
+	db script_38
+ENDM
 
-	const script_3b ; $3b
-MACRO scr_3b
-	db script_3b
+	const script_runmovement ; $39
+MACRO runmovement
+	db script_runmovement
 	dw \1
 ENDM
 
-	const_def $3e
+	const script_runmovementstep ; $3a
+MACRO runmovementstep
+	db script_runmovementstep
+ENDM
 
-	const script_jump ; $3e
-MACRO scr_jump
-	db script_jump
+	const script_startbattle ; $3b
+MACRO startbattle
+; \1 = enemy battle-data pointer; dereferenced in bank $2d (see Func_02d_50b3)
+	db script_startbattle
 	dw \1
 ENDM
 
-	const_def $44
-
-	const script_44 ; $44
-MACRO scr_44
-	db script_44
+	const script_ifmoney ; $3c
+MACRO ifmoney
+	db script_ifmoney
+	dw \1
 ENDM
 
-	const_def $48
+	const script_ifmoney2 ; $3d
+MACRO ifmoney2
+	db script_ifmoney2
+	dw \1
+ENDM
+
+	const script_sjump ; $3e
+MACRO sjump
+	db script_sjump
+	dw \1
+ENDM
+
+	const script_countflags7 ; $3f
+MACRO countflags7
+	db script_countflags7
+ENDM
+
+	const script_getobjstatus ; $40
+MACRO getobjstatus
+	db script_getobjstatus
+	db \1
+ENDM
+
+	const script_refreshobjects ; $41
+MACRO refreshobjects
+	db script_refreshobjects
+ENDM
+
+	const script_getmapobjbyte ; $42
+MACRO getmapobjbyte
+	db script_getmapobjbyte
+	db \1
+ENDM
+
+	const script_clearbgfade ; $43
+MACRO clearbgfade
+	db script_clearbgfade
+ENDM
+
+	const script_clearplayerpos ; $44
+MACRO clearplayerpos
+	db script_clearplayerpos
+ENDM
+
+	const script_setup45 ; $45
+MACRO setup45
+	db script_setup45
+	db \1, \2, \3, \4, \5, \6, \7
+ENDM
+
+	const script_addmoney ; $46
+MACRO addmoney
+	db script_addmoney
+	db \1, \2
+ENDM
+
+	const script_warpmode2 ; $47
+MACRO warpmode2
+	db script_warpmode2
+	db \1, \2, \3, \4
+ENDM
 
 	const script_48 ; $48
 MACRO scr_48
@@ -310,57 +447,148 @@ MACRO scr_48
 	db \2
 ENDM
 
-	const_def $4a
+	const script_49 ; $49
+MACRO scr_49
+	db script_49
+ENDM
 
-	const script_4a ; $4a
-MACRO scr_4a
-	db script_4a
+	const script_startsub ; $4a
+MACRO startsub
+	db script_startsub
 	db \1
 ENDM
 
-	const_def $4d
+	const script_stopsub ; $4b
+MACRO stopsub
+	db script_stopsub
+ENDM
 
-	const script_4d ; $4d
-MACRO scr_4d
-	db script_4d
+	const script_returnmap ; $4c
+MACRO returnmap
+	db script_returnmap
+ENDM
+
+	const script_listdec ; $4d
+MACRO listdec
+	db script_listdec
 	db \1, \2
 ENDM
 
-	const script_4e ; $4e
-MACRO scr_4e
-	db script_4e
+	const script_objmove ; $4e
+MACRO objmove
+	db script_objmove
 	db \1
 	dw \2
 ENDM
 
-	const_def $52
-
-	const script_52 ; $52
-MACRO scr_52
-	db script_52
+	const script_ifspecies ; $4f
+MACRO ifspecies
+	db script_ifspecies
+	db \1
 ENDM
 
-	const_def $5e
+	const script_clearmon ; $50
+MACRO clearmon
+	db script_clearmon
+ENDM
 
-	const script_5e ; $5e
-MACRO scr_5e
-	db script_5e
+	const script_51 ; $51
+MACRO scr_51
+	db script_51
+	db \1, \2
+ENDM
+
+	const script_incsteps ; $52
+MACRO incsteps
+	db script_incsteps
+ENDM
+
+	const script_warp3 ; $53
+MACRO warp3
+	db script_warp3
+	db \1, \2, \3
+ENDM
+
+	const script_objmoveb ; $54
+MACRO objmoveb
+	db script_objmoveb
+	db \1
+	dw \2
+ENDM
+
+	const script_objaccum ; $55
+MACRO objaccum
+	db script_objaccum
+	db \1, \2
+ENDM
+
+	const script_ifplayersprite ; $56
+MACRO ifplayersprite
+	db script_ifplayersprite
+	db \1
+ENDM
+
+	const script_57 ; $57
+MACRO scr_57
+	db script_57
+ENDM
+
+	const script_setplayersprite ; $58
+MACRO setplayersprite
+	db script_setplayersprite
+	db \1
+ENDM
+
+	const script_listop59 ; $59
+MACRO listop59
+	db script_listop59
+	db \1, \2, \3
+ENDM
+
+	const script_listop5a ; $5a
+MACRO listop5a
+	db script_listop5a
+	db \1, \2, \3
+ENDM
+
+	const script_jumpifnotright ; $5b
+MACRO jumpifnotright
+	db script_jumpifnotright
+	dw \1
+ENDM
+
+	const script_reviveparty ; $5c
+MACRO reviveparty
+	db script_reviveparty
+ENDM
+
+	const script_scanparty ; $5d
+MACRO scanparty
+	db script_scanparty
+	db \1
+ENDM
+
+	const script_setfollower ; $5e
+MACRO setfollower
+	db script_setfollower
 	db \1 ; follower
 ENDM
 
-	const script_5f ; $5f
-MACRO scr_5f
-	db script_5f
+	const script_dirmovement ; $5f
+MACRO dirmovement
+	db script_dirmovement
 ENDM
 
-	const_def $61
-
-	const script_61 ; $61
-MACRO scr_61
-	db script_61
+	const script_dirmovementstep ; $60
+MACRO dirmovementstep
+	db script_dirmovementstep
 ENDM
 
-	const_def $62
+	const script_loadscriptedmon ; $61
+MACRO loadscriptedmon
+	db script_loadscriptedmon
+	db \1 ; scripted-mon index
+ENDM
 
 	const script_62 ; $62
 MACRO scr_62
@@ -368,36 +596,122 @@ MACRO scr_62
 	db \1, \2
 ENDM
 
-	const script_63 ; $63
-MACRO scr_63
-	db script_63
+	const script_ifcharindex ; $63
+MACRO ifcharindex
+	db script_ifcharindex
 	db \1
 	dw \2
 ENDM
 
-	const_def $65
+	const script_loadbufmon ; $64
+MACRO loadbufmon
+	db script_loadbufmon
+ENDM
 
-	const script_65 ; $65
-MACRO scr_65
-	db script_65
+	const script_setplayerchar ; $65
+MACRO setplayerchar
+	db script_setplayerchar
 	db \1
 ENDM
 
-	const_def $69
-
-	const script_69 ; $69
-MACRO scr_69
-	db script_69
+	const script_farjump2 ; $66
+MACRO farjump2
+	db script_farjump2
+if _NARG == 1
+	dw \1
+	db BANK(\1)
+else
+	dw \1 ; address
+	db \2 ; bank (target unresolved)
+endc
 ENDM
 
-	const_def $6f
-	const script_6f
-MACRO scr_6f
-	db script_6f
+	const script_swapfollower ; $67
+MACRO swapfollower
+	db script_swapfollower
 ENDM
 
-	const_def $77
-	const script_77
-MACRO scr_77
-	db script_77
+	const script_upgrademoves ; $68
+MACRO upgrademoves
+	db script_upgrademoves
+ENDM
+
+	const script_end2 ; $69
+MACRO end2
+	db script_end2
+ENDM
+
+	const script_randomwarp ; $6a
+MACRO randomwarp
+	db script_randomwarp
+ENDM
+
+	const script_warppowerplant ; $6b
+MACRO warppowerplant
+	db script_warppowerplant
+ENDM
+
+	const script_warp6c ; $6c
+MACRO warp6c
+	db script_warp6c
+ENDM
+
+	const script_countflags10 ; $6d
+MACRO countflags10
+	db script_countflags10
+	db \1, \2, \3
+ENDM
+
+	const script_6e ; $6e
+MACRO scr_6e
+	db script_6e
+	dw \1, \2, \3, \4, \5, \6, \7, \8, \9
+ENDM
+
+	const script_condtext ; $6f
+MACRO condtext
+	db script_condtext
+ENDM
+
+	const script_restorebank ; $70
+MACRO restorebank
+	db script_restorebank
+ENDM
+
+	const script_setmapgroup ; $71
+MACRO setmapgroup
+	db script_setmapgroup
+	db \1
+ENDM
+
+	const script_facemove3 ; $72
+MACRO facemove3
+	db script_facemove3
+	dw \1, \2, \3, \4
+ENDM
+
+	const script_facemove4 ; $73
+MACRO facemove4
+	db script_facemove4
+ENDM
+
+	const script_worldmap ; $74
+MACRO worldmap
+	db script_worldmap
+ENDM
+
+	const script_endrestore ; $75
+MACRO endrestore
+	db script_endrestore
+ENDM
+
+	const script_playsound ; $76
+MACRO playsound
+	db script_playsound
+	db \1
+ENDM
+
+	const script_ifplayerx ; $77
+MACRO ifplayerx
+	db script_ifplayerx
 ENDM

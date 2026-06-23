@@ -1,13 +1,13 @@
-Func_003_4000:
+_SoundEngine2_Play:
 	jp SoundEngine2_Play
 
-Func_003_4003:
+_SoundEngine2_Load:
 	jp SoundEngine2_Load
 
-Func_003_4006:
+_SoundEngine2_Init:
 	jp SoundEngine2_Init
 
-Func_003_4009:
+_SoundEngine2_Unknown:
 	jp SoundEngine2_Unknown
 
 SoundEngine2_Unknown:
@@ -19,7 +19,22 @@ INCLUDE "audio/headers/headers_2.asm"
 
 INCLUDE "audio/engine/engine_2.asm"
 
+SoundEngine2_NoteFrequencies:
+INCLUDE "audio/notes.asm"
+
 INCLUDE "audio/sfx/sfx_2.asm"
+
+SoundEngine2_InstrumentPointers:
+INCLUDE "audio/instruments.asm"
+
+SoundEngine2_VibratoTables:
+INCLUDE "audio/vibrato_tables.asm"
+
+SoundEngine2_Waveforms:
+INCLUDE "audio/wave_instruments.asm"
+
+INCLUDE "audio/sfx/sfx_2b.asm"
+
 INCLUDE "audio/music/academy.asm"
 INCLUDE "audio/music/unsettling_place.asm"
 INCLUDE "audio/music/town_2.asm"

@@ -2,12 +2,12 @@
 Music_Trouble_Ch1:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           2, 4, \ ; vibrato
 	           $8b, $35, $c7 ; unknown 2
 	speed 7
 	fine_pitch $2
-	unknown_music_e9 $a3
+	volume_envelope $a3
 	duty_cycle DUTY_75, DUTY_50
 	mark_loop ;------
 	transpose 13
@@ -218,12 +218,12 @@ Music_Trouble_Ch1:
 Music_Trouble_Ch2:
 	sound_init 7, \ ; speed
 	           DUTY_50, DUTY_75, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           2, 4, \ ; vibrato
 	           $8b, $35, $c7 ; unknown 2
 	speed 7
 	fine_pitch $2
-	unknown_music_e9 $51
+	volume_envelope $51
 	duty_cycle DUTY_50, DUTY_50
 	mark_loop ;------
 	transpose -11

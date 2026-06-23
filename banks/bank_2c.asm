@@ -1,5 +1,132 @@
-unk_02c_4000:
-	dr $b0000, $b12b8
+Func_02c_4000:
+	ld de, CharBacksprites
+	ld a, [wd9dd]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, $90D0
+	ld bc, $0240
+	call CopyBytesVRAM
+	call DelayFrame
+	ld de, CharBackspritePals
+	pop hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	push hl
+	ld de, wPaletteBuffer
+	ld hl, FarCall
+	add hl, de
+	ld e, l
+	ld d, h
+	pop hl
+	ld bc, _hl_
+	call CopyBytes3
+	call LoadEnemyMonPic
+	farcall Func_026_4d47
+	ret
+Func_02c_403e:
+	push de
+	ld de, CharBacksprites
+	ld a, $00
+	ld l, a
+	ld h, $00
+	add hl, hl
+	push hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop de
+	ld bc, $0606
+	ld a, $06
+	ldh [hVRAMCopyWidth], a
+	ldh [hVRAMCopyHeight], a
+	ret
+; Character battle backsprites, indexed by wd9dd (party/character index, see Func_02c_4000).
+; Per-character 4-color palette; pointer table -> palette records.
+CharBackspritePals:
+	dw CharBackspritePal_0
+	dw CharBackspritePal_1
+	dw CharBackspritePal_2
+	dw CharBackspritePal_3
+	dw CharBackspritePal_4
+	dw CharBackspritePal_5
+	dw CharBackspritePal_6
+	dw CharBackspritePal_7
+CharBackspritePal_0:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 29, 0, 0
+	RGB 0, 0, 0
+CharBackspritePal_1:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 14, 8, 31
+	RGB 0, 0, 0
+CharBackspritePal_2:
+	RGB 31, 31, 31
+	RGB 31, 22, 12
+	RGB 0, 14, 0
+	RGB 0, 0, 0
+CharBackspritePal_3:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 17, 13, 5
+	RGB 0, 0, 0
+CharBackspritePal_4:
+	RGB 31, 31, 31
+	RGB 31, 22, 12
+	RGB 0, 17, 29
+	RGB 0, 0, 0
+CharBackspritePal_5:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 29, 0, 13
+	RGB 0, 0, 0
+CharBackspritePal_6:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 12, 15, 28
+	RGB 0, 0, 0
+CharBackspritePal_7:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 31, 27, 0
+	RGB 0, 0, 0
+
+; Per-character backsprite GFX (6x6 tiles -> VRAM $90D0); pointer table -> GFX blocks.
+CharBacksprites:
+	dw CharBacksprite_0
+	dw CharBacksprite_1
+	dw CharBacksprite_2
+	dw CharBacksprite_3
+	dw CharBacksprite_4
+	dw CharBacksprite_5
+	dw CharBacksprite_6
+	dw CharBacksprite_7
+CharBacksprite_0::
+	INCBIN "gfx/backsprites/backsprite_0.2bpp"
+CharBacksprite_1::
+	INCBIN "gfx/backsprites/backsprite_1.2bpp"
+CharBacksprite_2::
+	INCBIN "gfx/backsprites/backsprite_2.2bpp"
+CharBacksprite_3::
+	INCBIN "gfx/backsprites/backsprite_3.2bpp"
+CharBacksprite_4::
+	INCBIN "gfx/backsprites/backsprite_4.2bpp"
+CharBacksprite_5::
+	INCBIN "gfx/backsprites/backsprite_5.2bpp"
+CharBacksprite_6::
+	INCBIN "gfx/backsprites/backsprite_6.2bpp"
+CharBacksprite_7::
+	INCBIN "gfx/backsprites/backsprite_7.2bpp"
 
 BattleTransition_InsertWhiteTile:
 	ld hl, .WhiteTile
@@ -67,7 +194,7 @@ AnimateBattleTransition:
 	ld a, [wd0ba]
 	and $1f
 	ld [wdcdd], a
-	ld a, [wd0ba + 1]
+	ld a, [wd0bb]
 	ld b, a
 	ld a, [wd0ba]
 	srl b
@@ -179,7 +306,7 @@ Func_2c_53cb:
 	sla c
 	sla c
 	sla c
-	ld hl, $c920
+	hlcoord 0, 0
 	ld e, $18
 
 Func_2c_53df:
@@ -1886,6 +2013,877 @@ BattleTransition_DiagonalCheckerboard:
 	dw $1100
 	db -1
 
-unk_02d_6d77:
-    dr $b2d77, $b3e8a
+Func_02d_6d77:
+	ld a, [wd98d]
+.asm_6d7a
+	ld [wdcf1], a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, wd1a0
+	add hl, de
+	ld c, l
+	ld b, h
+	ld de, $0005
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	or e
+	jp z, .asm_6e1a
+	ld a, [hl]
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $FF
+	jp z, .asm_6e01
+	ld [wd98e], a
+	ld a, [wd98e]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hl]
+	cp $77
+	jr nz, .asm_6db6
+	jr .asm_6dbe
+.asm_6db6
+	cp $88
+	jr nz, .asm_6dd3
+	inc bc
+	inc bc
+	xor a
+	ld [bc], a
+.asm_6dbe
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld [hl], $FF
+	ld a, [wdcf1]
+	cp $00
+	jp nz, .asm_6e01
+	jp .asm_6e12
+.asm_6dd3
+	ld a, [wd986]
+	and a
+	jr nz, .asm_6de6
+	ld a, [hli]
+	ld d, a
+	ld a, [bc]
+	sub d
+	ld [bc], a
+	inc bc
+	ld a, [hli]
+	ld d, a
+	ld a, [bc]
+	sub d
+	ld [bc], a
+	jr .asm_6dee
+.asm_6de6
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+	inc bc
+	inc hl
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+.asm_6dee
+	call Func_02d_6ece
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld a, [wd98e]
+	inc a
+	ld [wd98e], a
+	ld [hl], a
+.asm_6e01
+	ld a, [wdcf1]
+	cp $00
+	jr nz, .asm_6e0e
+	ld a, $47
+	ld [wBattleState], a
+	ret
+.asm_6e0e
+	dec a
+	jp .asm_6d7a
+.asm_6e12
+	xor a
+	ld [wBattleState], a
+	ld [wd98b], a
+	ret
+.asm_6e1a
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $40
+	jp nc, .asm_6e12
+	inc bc
+	jp .asm_6dee
+Func_02d_6e2c:
+	ld a, [wd98d]
+.asm_6e2f
+	ld [wdcf1], a
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, wd1a0
+	add hl, de
+	ld c, l
+	ld b, h
+	ld de, $0005
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	or e
+	jp z, .asm_6ebc
+	ld a, [hl]
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $FF
+	jp z, .asm_6ea3
+	ld [wd98e], a
+	ld a, [wd98e]
+	ld l, a
+	ld h, $00
+	add hl, hl
+	add hl, de
+	ld a, [hl]
+	cp $77
+	jr nz, .asm_6e6b
+	jr .asm_6e73
+.asm_6e6b
+	cp $88
+	jr nz, .asm_6e88
+	inc bc
+	inc bc
+	xor a
+	ld [bc], a
+.asm_6e73
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld [hl], $FF
+	ld a, [wdcf1]
+	cp $00
+	jp nz, .asm_6ea3
+	jp .asm_6eb4
+.asm_6e88
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+	inc bc
+	inc hl
+	ld a, [bc]
+	add [hl]
+	ld [bc], a
+.asm_6e90
+	call Func_02d_6ece
+	ld a, [wdcef]
+	ld l, a
+	ld a, [wdcef + 1]
+	ld h, a
+	ld a, [wd98e]
+	inc a
+	ld [wd98e], a
+	ld [hl], a
+.asm_6ea3
+	ld a, [wdcf1]
+	cp $00
+	jr nz, .asm_6eb0
+	ld a, $48
+	ld [wBattleState], a
+	ret
+.asm_6eb0
+	dec a
+	jp .asm_6e2f
+.asm_6eb4
+	xor a
+	ld [wBattleState], a
+	ld [wd98b], a
+	ret
+.asm_6ebc
+	ld a, l
+	ld [wdcef], a
+	ld a, h
+	ld [wdcef + 1], a
+	ld a, [hl]
+	cp $40
+	jp nc, .asm_6eb4
+	inc bc
+	jp .asm_6e90
+Func_02d_6ece:
+	ld a, [$DCF2]
+	inc a
+	ld [$DCF2], a
+	cp $07
+	ret nz
+	xor a
+	ld [$DCF2], a
+	inc bc
+	push bc
+	inc bc
+	inc bc
+	ld a, [bc]
+	ld l, a
+	pop bc
+	ld a, [bc]
+	inc a
+	cp l
+	jr z, .asm_6eea
+	jr nc, .asm_6eec
+.asm_6eea
+	ld [bc], a
+	ret
+.asm_6eec
+	inc bc
+	ld a, [bc]
+	dec bc
+	ld [bc], a
+	ret
+; Object motion paths: per-frame signed (dx,dy) added to (Func_02d_6e2c) / subtracted from
+; (Func_02d_6d77) an object's X,Y (wd1a0[0..1]); direction via wd986, step cursor wd1a0[7].
+; Path pointer in wd1a0[5..6], selected by wd98d. dx = -1 ($ff) ends a path; $88/$77 dx = control frames.
+Battle_ObjectMotionPaths:
+	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $88, $ff, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fc
+	db -1
+
+	db $fd, $00, $fe, $ff, $fd, $ff, $fc, $fe, $fd, $fe
+	db -1
+
+	db $fe, $fd, $fd, $00, $fe, $01, $fe, $00, $fe, $00, $fd, $01, $fe, $01, $fd, $01
+	db $fe, $01, $fd, $01, $fe, $01, $fd, $01, $fe, $00, $fe, $01, $fe, $01, $fd, $00
+	db $fe, $01, $fe, $fc, $fe, $00, $fd, $00, $fe, $fd, $fd, $fc, $fe, $fd, $fe, $fd
+	db -1
+
+	db $fd, $fd, $fc, $00, $fc, $00, $fd, $00, $fd, $00, $88, $ff
+	db -1
+
+	db $fe, $fd, $fd, $fd, $fe, $fd
+	db -1
+
+	db $fd, $ff, $fd, $fe, $fd, $00, $fd, $ff, $fd, $ff, $fd, $00, $fd, $00, $fd, $00
+	db $fd, $00, $fd, $01, $fd, $01, $fd, $00, $fd, $02, $fd, $01, $fd, $02, $fd, $02
+	db $fd, $03, $fd, $03, $fe, $03
+	db -1
+
+	db $03, $fe, $03, $00, $03, $ff, $03, $00, $03, $00, $03, $00, $03, $01, $03, $00
+	db $03, $01, $03, $00, $03, $02, $03, $01, $03, $02, $03, $03, $03, $03, $03, $03
+	db $02, $03, $01, $03, $01, $03, $00, $03, $01, $03
+	db -1
+
+	db $03, $00, $03, $00, $03, $ff, $03, $ff, $03, $fe, $03, $fe, $03, $fe, $03, $fd
+	db $02, $fd, $01, $fd, $00, $fd, $01, $fd
+	db -1
+
+	db $fd, $00, $fd, $ff, $fd, $fe, $fd, $fe, $fd, $fe, $fd, $fd, $fe, $fd, $fe, $fd
+	db -1
+
+	db $fd, $00, $fd, $00, $fd, $00, $fd, $01, $fd, $02, $fd, $03, $fe, $03, $fe, $03
+	db -1
+
+	db $03, $00, $03, $00, $03, $01, $03, $02, $02, $03, $01, $03, $01, $03
+	db -1
+
+	db $03, $00, $03, $fe, $03, $88, $01, $ff, $03, $fe, $03, $fd, $03, $fe, $03, $ff
+	db $03, $ff, $03, $fe, $03, $00, $03, $ff, $03, $ff, $03, $00, $03, $00, $03, $00
+	db $03, $00, $03, $01, $03, $01, $03, $00, $03, $02, $03, $01, $03, $02, $03, $02
+	db $03, $03, $02, $03, $01, $03, $02, $03, $00, $03, $01, $03, $00, $03, $00, $03
+	db $00, $03
+	db -1
+
+	db $03, $00, $03, $ff, $03, $00, $03, $fe, $03, $ff, $03, $fe, $03, $fd, $03, $fd
+	db $03, $fd, $03, $fd, $02, $fd, $01, $fd, $01, $fd, $00, $fd, $01, $fd
+	db -1
+
+	db $fd, $00, $fd, $00, $fd, $ff, $fd, $ff, $fd, $fe, $fd, $fe, $fd, $fe, $fe, $fd
+	db -1
+
+	db $fd, $00, $fd, $ff, $fd, $01, $fd, $00, $fd, $01, $fd, $02, $fd, $02, $fd, $02
+	db $fd, $03, $fd, $03, $fe, $03, $fe, $03
+	db -1
+
+	db $03, $00, $03, $00, $03, $00, $03, $01, $03, $02, $02, $03, $02, $03, $01, $03
+	db $00, $03, $00, $03
+	db -1
+
+	db $03, $fe, $03, $fd, $02, $fd, $01, $fd, $01, $fd
+	db -1
+
+	db $fd, $00, $fe, $ff, $fd, $fd, $fe, $fd, $00, $fd, $01, $fd, $03, $fd, $03, $ff
+	db $03, $00, $03, $02, $02, $03
+	db -1
+
+	db $03, $fd, $02, $fd, $fe, $88
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db -1
+
+	db $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $88
+	db -1
+
+	db -1
+
+	db -1
+
+	db $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $fe
+	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $fe, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $88, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $88, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $88
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $88, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02
+	db $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $fe, $02
+	db $fe, $88, $00, $ff, $00, $fe
+	db -1
+
+	db $fe, $ff, $fe, $ff, $fe, $fe
+	db -1
+
+	db $fe, $ff, $fe, $ff, $fe, $00, $fe, $01, $fe, $01, $fe, $01
+	db -1
+
+	db $02, $ff, $02, $ff, $02, $00, $02, $00, $02, $01, $02, $00, $02, $01, $02, $01
+	db $02, $02, $02, $02, $02, $02, $02, $02, $01, $02, $01, $02, $00, $02, $01, $02
+	db $00, $02
+	db -1
+
+	db $02, $00, $02, $ff, $02, $ff, $02, $fe, $02, $fe, $02, $fe, $01, $fe, $01, $fe
+	db $00, $fe, $01, $fe, $00, $fe, $01, $fe, $00, $fe, $00, $fe
+	db -1
+
+	db $fe, $00, $fe, $ff, $fe, $00, $fe, $fe, $fe, $00, $fe, $ff, $fe, $fe, $fe, $ff
+	db $fe, $fe
+	db -1
+
+	db $fe, $fe, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $00
+	db $fe, $ff, $fe, $00, $fe, $00, $fe, $01, $fe, $00, $fe, $00, $fe, $01, $fe, $01
+	db $fe, $01, $fe, $01, $fe, $02, $fe, $02, $fe, $01
+	db -1
+
+	db $02, $fe, $02, $ff, $02, $00, $02, $fe, $02, $00, $02, $ff, $02, $00, $02, $ff
+	db $02, $00, $02, $00, $02, $ff, $02, $00, $02, $00, $02, $00, $02, $00, $02, $01
+	db $02, $00, $02, $01, $02, $00, $02, $01, $02, $01, $02, $00, $02, $01, $02, $01
+	db $02, $01, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $02, $02, $02
+	db $01, $02, $02, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $00, $02
+	db $00, $02, $01, $02, $00, $02, $00, $02, $00, $02
+	db -1
+
+	db $02, $00, $02, $00, $02, $ff, $02, $ff, $02, $ff, $02, $ff, $02, $ff, $02, $fe
+	db $02, $ff, $02, $fe, $02, $fe, $01, $fe, $02, $fe, $02, $fe, $01, $fe, $88, $00
+	db $fe, $00, $02, $00, $02, $00, $fe, $00, $fc, $00, $04, $00, $04, $00, $fc, $00
+	db $f8, $00, $08, $00, $08, $00, $f8, $00, $f0, $00, $10, $00, $10, $00, $f0, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $88
+	db $00, $02, $00, $fe, $00, $fe, $00, $02, $00, $04, $00, $fc, $00, $fc, $00, $04
+	db $00, $08, $00, $f8, $00, $f8, $00, $08, $00, $10, $00, $f0, $00, $f0, $00, $10
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $88, $02, $00, $fe, $00, $fe, $00, $02, $00, $04, $00, $fc, $00, $fc, $00, $04
+	db $00, $08, $00, $f8, $00, $f8, $00, $08, $00, $10, $00, $f0, $00, $f0, $00, $10
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $88, $fe, $00, $02, $00, $02, $00, $fe, $00, $fc, $00, $04, $00, $04, $00
+	db $fc, $00, $f8, $00, $08, $00, $08, $00, $f8, $00, $f0, $00, $10, $00, $10, $00
+	db $f0, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $88, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $88, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $88, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $88, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $88, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $01, $88
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db $88, $01
+	db -1
+
+	db $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $88, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff
+	db $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $ff, $01, $88
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db $88, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $88, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $88, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
+	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $88
+	db -1
+
+	db $01, $fe, $01, $fe, $01, $fe, $01, $fe, $00, $fe, $01, $fe, $00, $fe, $00, $fe
+	db -1
+
+	db $fe, $00, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $fe, $fe, $fe, $fe, $fe
+	db $fe, $fe
+	db -1
+
+	db $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff
+	db $fe, $00, $fe, $fe, $fc, $ff, $fc, $ff, $fc, $ff, $fc, $ff, $fc, $ff, $fc, $00
+	db $fc, $ff, $fc, $ff, $fc, $00, $fc, $ff, $fc, $00, $fc, $ff, $fc, $00, $fc, $ff
+	db $fc, $00, $fc, $00
+	db -1
+
+	db $00, $ff
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db -1
+
+	db $fe, $fe, $fe, $fe
+	db -1
+
+	db $fe, $fe, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fc, $03, $fc, $03, $fc, $04, $fd, $04, $fe, $04
+	db -1
+
+	db $04, $ff, $04, $ff, $04, $00, $88, $ff, $01, $fe, $02, $ff, $02, $fe, $02, $ff
+	db $02, $ff, $02, $ff, $02, $ff, $02, $00, $02, $ff, $02, $00, $02, $00, $02, $ff
+	db $02, $00, $02, $00, $02, $01, $02, $00, $02, $00, $02, $00, $02, $01, $02, $00
+	db $02, $01, $02, $01, $02, $00, $02, $01, $02, $01, $02, $01, $02, $01, $02, $02
+	db $02, $01, $02, $01, $02, $02, $02, $01, $02, $02, $02, $04, $04, $04, $04, $04
+	db $04, $04, $04, $04, $03, $04, $03, $04, $02, $04, $03, $02, $03, $ff, $01, $fe
+	db $02, $fe, $02, $fe, $02, $ff, $02, $fe, $02, $ff, $02, $ff, $02, $ff, $02, $ff
+	db $02, $ff, $02, $00, $02, $ff, $02, $00, $02, $00, $02, $00, $04, $01, $04, $02
+	db $04, $03, $04, $03, $04, $04, $04, $04, $02, $04, $02, $04, $01, $04, $02, $04
+	db $01, $04, $01, $88, $01, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $01, $00, $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff, $00, $ff
+	db -1
+
+	db -1
+
+	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $01, $fe
+	db $01, $fe, $01, $fe, $01, $fe, $02, $fe, $02, $fe, $02, $ff, $02, $ff, $02, $00
+	db $02, $ff, $02, $00, $02, $ff, $02, $00, $02, $00, $02, $00, $88, $01, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $01, $00, $00
+	db $01, $00, $01, $ff, $01, $00, $01, $00, $01, $ff, $01, $00, $01, $00, $01, $00
+	db $01, $ff, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
+	db $01, $01, $02, $01, $02, $01, $02, $01, $02, $02, $02, $02, $02, $02, $01, $02
+	db $01, $02, $00, $02, $01, $02, $00, $02, $01, $02, $00, $02, $00, $02, $00, $88
+	db -1
+
+	db $01, $fc, $04, $fc, $04, $fc, $04, $fc, $04, $fc, $04, $fc, $04, $fc, $03, $fc
+	db $02, $fc, $01, $fc
+	db -1
+
+	db $fd, $fc
+	db -1
+
+	db $fc, $00, $fc, $00, $fc, $01, $fc, $01, $fc, $00, $fc, $01, $fc, $02, $fc, $88
+	db $00, $ff, $00, $fe
+	db -1
+
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $fe
+	db -1
+
+	db $fe, $fe, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $01, $fe, $00, $fe, $01, $fe, $01, $fe, $02, $fe, $01, $fe, $02
+	db -1
+
+	db $02, $ff, $02, $ff, $02, $ff, $02, $ff, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $02, $02, $02, $01, $02
+	db $02, $02, $01, $02, $01, $02, $00, $02, $01, $02, $00, $02, $00, $02, $00, $02
+	db -1
+
+	db $02, $00, $02, $ff, $02, $ff, $02, $fe, $02, $ff, $02, $fe, $01, $fe, $01, $fe
+	db $01, $fe, $01, $fe, $01, $fe, $00, $fe, $88, $01, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $00
+	db -1
+
+	db $fd, $fc, $fd, $fc, $00, $fc, $02, $fc, $04, $fd, $03, $ff, $03, $ff, $01, $ff
+	db $fd, $fd
+	db -1
+
+	db $fd, $02, $fd, $03, $fe, $03, $00, $03
+	db -1
+
+	db $02, $00, $02, $00, $88, $01, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $00, $01, $fd, $04, $fd, $04, $00, $04, $02, $04, $04
+	db $03, $03, $01, $03, $01, $01, $01, $fd, $03, $ff, $03, $02, $03, $03, $02, $03
+	db $00, $03, $01, $02, $00, $02, $00, $88
+	db -1
+
+	db -1
+
+	db $fc, $fd, $fc, $fe, $fc, $fd, $fc, $fd, $fc, $fd, $fc, $fd, $fc, $fd, $fc, $fc
+	db $fe, $fe, $fe, $fe, $fe, $fe
+	db -1
+
+	db $fe, $ff, $fe, $fe, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $01, $fe, $01, $fe, $02, $fe, $02, $fe, $02, $fe, $01, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $ff, $fe, $00, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff
+	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fc, $fe, $fc, $fe
+	db $fc, $fe, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fe, $fc, $fd, $fc, $88, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $00
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $00, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $00, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $00, $88, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $00, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $00, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $00, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $00, $88
+	db $00, $01
+	db -1
+
+	db $04, $ff, $04, $00, $04, $ff, $04, $00, $04, $01, $04, $01, $04, $04, $04, $04
+	db $00, $04
+	db -1
+
+	db $04, $fe, $04, $fe, $04, $fc, $04, $fe, $04, $fe, $04, $00, $04, $02, $03, $04
+	db $01, $04, $00, $04
+	db -1
+
+	db $04, $00, $04, $ff, $04, $88, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $88, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe
+	db $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe
+	db $01, $fe, $01, $fe, $01, $fe, $01, $88, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $88, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $88, $01, $ff, $02, $fe, $01, $fe
+	db $02, $fe, $01, $fe, $02, $fe, $01, $fe, $02, $fe, $01, $fe, $02, $fe, $01, $fe
+	db $02, $fe, $01, $fe, $02, $fe, $01, $fe, $02, $fe, $01, $fe, $02, $fe, $01, $fe
+	db $02, $fe, $01, $fe, $02, $fe, $01, $fe, $02, $fe, $01, $fe, $02, $fe, $01, $fe
+	db $02, $fe, $01, $fe, $02, $fe, $02, $fd, $02, $fd, $02, $fd, $03, $fd, $02, $fd
+	db $02, $fd, $02, $fd, $03, $fd, $02, $fd, $02, $fd, $02, $fd, $03, $fd, $88, $ff
+	db -1
+
+	db -1
+
+	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $88, $00, $01
+	db $01, $02, $01, $02, $00, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02
+	db $00, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $00, $02, $01, $02
+	db $01, $02, $01, $02, $01, $02, $01, $02, $00, $02, $01, $02, $01, $02, $01, $02
+	db $01, $02, $01, $02, $00, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02
+	db $00, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $00, $02, $01, $02
+	db $01, $02, $01, $02, $01, $02, $01, $02, $00, $02, $01, $02, $01, $02, $88, $ff
+	db -1
+
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe
+	db $fe, $ff, $fe, $fe, $fe, $ff, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe
+	db -1
+
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fc, $00, $fc, $01, $fc, $03, $fc, $03
+	db $fe, $04, $fc, $02, $fc, $00, $fc, $ff, $fc, $ff, $fc, $00, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff
+	db $fe, $ff, $fe, $fe, $fe, $88
+	db -1
+
+	db -1
+
+	db $fe, $fe, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe
+	db $fe, $fe
+	db -1
+
+	db $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff
+	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff
+	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $88
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+	db $02, $00, $02, $00, $02, $00, $02, $00, $77, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $88, $01, $00, $02, $00, $02, $00, $02, $00, $01, $00, $01, $00, $01, $00
+	db $01, $00, $00, $02, $fe, $01, $fe, $00, $fe, $01, $fe, $00, $fe, $01, $fe, $01
+	db $fe, $01, $fe, $01, $fe, $02
+	db -1
+
+	db $02, $ff, $01, $00, $01, $00, $01, $01, $01, $00, $01, $01, $01, $01, $01, $01
+	db $01, $01, $01, $02, $01, $02, $01, $02, $00, $02, $01, $02, $01, $02, $00, $02
+	db $01, $02, $00, $ff, $02, $fe, $01, $fe, $01, $fe, $02, $ff, $02, $ff, $02, $00
+	db $01, $01, $01, $00, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $00, $01
+	db $01, $01, $00, $01, $01, $88
 

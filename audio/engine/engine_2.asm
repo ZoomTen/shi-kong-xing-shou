@@ -24,19 +24,19 @@ SoundEngine2_Load:
 	ld a, [hli]
 	ld [wSoundNumChannels], a
 	ld a, [hli]
-	ld [wd406], a
+	ld [wSoundPriority], a
 	ld b, h
 	ld c, l
 	xor a
-	ld [wd402], a
-	ld de, wChannels
+	ld [wSoundChannelIndex], a
+	ld de, wSound1Channels
 .loop
 	ld hl, wSoundNumChannels
 	srl [hl]
 	jr c, .skip
 	jr z, .done
 .loop2
-	ld hl, wd402
+	ld hl, wSoundChannelIndex
 	inc [hl]
 	ld hl, CHANNEL_STRUCT_LENGTH
 	add hl, de
@@ -54,7 +54,7 @@ SoundEngine2_Load:
 	ld a, [hli]
 	or a
 	jr z, .load_channel_pointers
-	ld a, [wd406]
+	ld a, [wSoundPriority]
 	cp [hl]
 	jr nc, .load_channel_pointers
 	inc bc
@@ -89,22 +89,22 @@ SoundEngine2_Load:
 	ld a, HIGH(SoundEngine2_VibratoTables.vibrato1)
 	ld [hl], a
 	pop bc
-	ld a, [wd402]
+	ld a, [wSoundChannelIndex]
 	push af
-	add LOW(unk_003_4a49)
+	add LOW(SoundEngine2_ChannelMaskTable2)
 	ld l, a
-	ld a, HIGH(unk_003_4a49)
+	ld a, HIGH(SoundEngine2_ChannelMaskTable2)
 	adc 0
 	ld h, a
 	pop af
-	ld a, [wd607]
+	ld a, [wSound2ChannelMask]
 	or [hl]
-	ld [wd607], a
+	ld [wSound2ChannelMask], a
 	ld h, d
 	ld l, e
 	ld a, [wCurrentSongID]
 	ld [hli], a
-	ld a, [wd406]
+	ld a, [wSoundPriority]
 	ld [hli], a
 	ld a, 8
 	ld [hli], a
@@ -118,7 +118,9 @@ SoundEngine2_Load:
 	ld [hl], a
 	jr .loop2
 
-.asm_003_43e1
+; Alternate entry point: play the sound effect whose ID is in a, loading its
+; channels onto the noise/SFX slots (channel 5 onward) instead of channels 1-4.
+SoundEngine2_LoadSfx:
 	push bc
 	push de
 	ld [wCurrentSongID], a
@@ -138,13 +140,13 @@ SoundEngine2_Load:
 	swap a
 	ld [wSoundNumChannels], a
 	ld a, [hli]
-	ld [wd406], a
+	ld [wSoundPriority], a
 	ld b, h
 	ld c, l
-	ld a, 4
-	ld [wd402], a
-	ld de, wd6be
-	jp .loop
+	ld a, CHAN5
+	ld [wSoundChannelIndex], a
+	ld de, wSound2Channel5
+	jp SoundEngine2_Load.loop
 
 SoundEngine2_Fade:
 	ld a, 7
@@ -175,7 +177,7 @@ SoundEngine2_Play:
 .ProcessAudio
 	xor a
 	ld [wSoundCurChannel], a
-	ld de, wChannels
+	ld de, wSound1Channels
 .loop1
 	ld hl, CHANNEL_SONG_ID
 	add hl, de
@@ -194,7 +196,7 @@ SoundEngine2_Play:
 	ld a, 8
 	cp [hl]
 	jr nz, .loop1
-	ld hl, wChannels
+	ld hl, wSound1Channels
 	ld de, CHANNEL_STRUCT_LENGTH
 	ld a, [hl]
 	add hl, de
@@ -203,7 +205,7 @@ SoundEngine2_Play:
 	or [hl]
 	add hl, de
 	or [hl]
-	ld [wd60d], a
+	ld [wSound2ChannelsActive], a
 	ret
 
 SoundEngine2_UpdateChannels:
@@ -221,27 +223,27 @@ SoundEngine2_UpdateChannels:
 	ld a, [hl]
 	or a
 	ret z
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld a, [hl]
 	add a
-	jp nc, asm_003_45fa
+	jp nc, .fade_handler
 	ld a, [wSoundCurChannel]
 	and 3
 	cp CHAN3
-	jp z, asm_003_459c
+	jp z, .retrig_noise
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG
 	add hl, de
 	dec [hl]
-	jp nz, asm_003_4635
+	jp nz, Func_003_4635
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	ld a, [hl]
 	push af
 	add a
-	add LOW(Pointer_03_44af)
+	add LOW(.envelope_jumptable)
 	ld l, a
-	ld a, HIGH(Pointer_03_44af)
+	ld a, HIGH(.envelope_jumptable)
 	adc 0
 	ld h, a
 	pop af
@@ -250,22 +252,22 @@ SoundEngine2_UpdateChannels:
 	ld l, a
 	jp hl
 
-Pointer_03_44af:
-	dw asm_003_44bf
-	dw asm_003_44ee
-	dw asm_003_4524
-	dw asm_003_454b
-	dw asm_003_4584
-	dw asm_003_4635
-	dw asm_003_4635
-	dw asm_003_4635
+.envelope_jumptable:
+	dw .envelope_case_0
+	dw .envelope_case_2
+	dw .envelope_case_4
+	dw .envelope_case_6
+	dw .envelope_case_8
+	dw Func_003_4635
+	dw Func_003_4635
+	dw Func_003_4635
 
-asm_003_44bf:
+.envelope_case_0:
 	push bc
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -277,32 +279,32 @@ asm_003_44bf:
 	ld [hl], a
 	and 7
 	ld c, a
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	swap a
 	and $f
 	sub b
-	jr c, asm_003_44ef
+	jr c, .envelope_case_2_entry
 	call Func_003_47d7
 	or a
-	jr z, asm_003_44ef
+	jr z, .envelope_case_2_entry
 	pop bc
-	jp asm_003_4630
+	jp .envelope_case_a
 
-asm_003_44ee:
+.envelope_case_2:
 	push bc
 
-asm_003_44ef:
+.envelope_case_2_entry:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	and $f0
 	ld b, a
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -312,7 +314,7 @@ asm_003_44ef:
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -320,21 +322,21 @@ asm_003_44ef:
 	ld l, a
 	ld a, b
 	sub l
-	jr c, asm_003_4525
+	jr c, .envelope_case_4_entry
 	call Func_003_47d7
 	or a
-	jr z, asm_003_4525
+	jr z, .envelope_case_4_entry
 	pop bc
-	jp asm_003_4630
+	jp .envelope_case_a
 
-asm_003_4524:
+.envelope_case_4:
 	push bc
 
-asm_003_4525:
+.envelope_case_4_entry:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -349,25 +351,25 @@ asm_003_4525:
 	add hl, de
 	ld b, [hl]
 	sub b
-	jr c, asm_003_454c
-	jr z, asm_003_454c
+	jr c, .envelope_case_6_entry
+	jr z, .envelope_case_6_entry
 	pop bc
-	jp asm_003_4630
+	jp .envelope_case_a
 
-asm_003_454b:
+.envelope_case_6:
 	push bc
 
-asm_003_454c:
+.envelope_case_6_entry:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD12
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	ld a, [hl]
 	and $f
 	swap a
 	ld b, a
-	ld hl, CHANNEL_FIELD13
+	ld hl, CHANNEL_ENV_PARAM_2
 	add hl, de
 	ld a, [hl]
 	and 7
@@ -379,25 +381,25 @@ asm_003_454c:
 	ld a, b
 	swap a
 	push af
-	ld hl, CHANNEL_FIELD0D
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	and $f
 	ld b, a
 	pop af
 	sub b
-	jr c, asm_003_4583
+	jr c, .envelope_case_8_entry
 	call Func_003_47d7
 	or a
-	jr z, asm_003_4583
+	jr z, .envelope_case_8_entry
 	pop bc
-	jp asm_003_4630
+	jp .envelope_case_a
 
-asm_003_4583:
+.envelope_case_8_entry:
 	pop bc
 
-asm_003_4584:
-	ld hl, CHANNEL_FIELD0D
+.envelope_case_8:
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld a, [hl]
 	and $f
@@ -409,9 +411,9 @@ asm_003_4584:
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	jp asm_003_4630
+	jp .envelope_case_a
 
-asm_003_459c:
+.retrig_noise:
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG
 	add hl, de
 	dec [hl]
@@ -420,16 +422,16 @@ asm_003_459c:
 	add hl, de
 	ld a, [hl]
 	cp 1
-	jr c, asm_003_45b8
+	jr c, .retrig_case_0
 	cp 2
-	jr c, asm_003_45d0
+	jr c, .retrig_case_1
 	cp 3
-	jr c, asm_003_45e9
+	jr c, .retrig_case_2
 	cp 4
-	jr c, asm_003_45ed
+	jr c, .retrig_case_3
 	ret
 
-asm_003_45b8:
+.retrig_case_0:
 	ld a, $f0
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
@@ -446,17 +448,17 @@ asm_003_45b8:
 	ld [hl], a
 	ret
 
-asm_003_45d0:
+.retrig_case_1:
 	ld a, $50
 
-asm_003_45d2:
+.retrig_shared:
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_FIELD18
 	add hl, de
 	inc [hl]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld a, [hl]
 	and $7f
@@ -465,11 +467,11 @@ asm_003_45d2:
 	ld [hl], a
 	ret
 
-asm_003_45e9:
+.retrig_case_2:
 	ld a, $10
-	jr asm_003_45d2
+	jr .retrig_shared
 
-asm_003_45ed:
+.retrig_case_3:
 	ld a, 0
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
@@ -479,11 +481,11 @@ asm_003_45ed:
 	inc [hl]
 	ret
 
-asm_003_45fa:
+.fade_handler:
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG
 	add hl, de
 	dec [hl]
-	jr nz, asm_003_4635
+	jr nz, Func_003_4635
 	ld hl, CHANNEL_INSTRUMENT_VOLUME_OFFSET
 	add hl, de
 	inc [hl]
@@ -501,16 +503,16 @@ asm_003_45fa:
 	pop bc
 	cp $ff
 ; apply envelope on retriggered note
-	jr nz, asm_003_4625
+	jr nz, .fade_set_envelope
 	ld hl, CHANNEL_INSTRUMENT_VOLUME_OFFSET
 	add hl, de
 	dec [hl]
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG
 	add hl, de
 	ld [hl], a
-	jr asm_003_4635
+	jr Func_003_4635
 
-asm_003_4625:
+.fade_set_envelope:
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	push af
@@ -519,25 +521,25 @@ asm_003_4625:
 	pop af
 	and $f
 
-asm_003_4630:
+.envelope_case_a:
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN2_RETRIG
 	add hl, de
 	ld [hl], a
 
-asm_003_4635:
+Func_003_4635:
 	ld a, [wSoundCurChannel]
 	and 2
-	jr nz, asm_003_467c
+	jr nz, .done
 	ld hl, CHANNEL_INSTRUMENT_UNKNOWN_OFFSET
 	add hl, de
 	dec [hl]
-	jp nz, asm_003_467c
+	jp nz, .done
 	ld hl, CHANNEL_INSTRUMENT_PITCH_OFFSET
 	add hl, de
 	inc [hl]
 	ld a, [hl]
 
-asm_003_464a:
+.vibrato_loop:
 	ld hl, CHANNEL_VIBRATO_TABLE_POINTER
 	add hl, de
 	push bc
@@ -550,22 +552,22 @@ asm_003_464a:
 	ld a, [bc]
 	pop bc
 	cp $ff
-	jr nz, asm_003_4664
+	jr nz, .vibrato_set
 	ld hl, CHANNEL_INSTRUMENT_PITCH_OFFSET
 	add hl, de
 	xor a
 	ld [hl], a
-	jr asm_003_464a
+	jr .vibrato_loop
 
-asm_003_4664:
+.vibrato_set:
 	push af
 	swap a
 	and $f
 	cp 8
-	jr c, asm_003_466f
+	jr c, .vibrato_no_sign_ext
 	or $f0
 
-asm_003_466f:
+.vibrato_no_sign_ext:
 	ld hl, CHANNEL_PITCH_OFFSET
 	add hl, de
 	ld [hl], a
@@ -575,7 +577,7 @@ asm_003_466f:
 	add hl, de
 	ld [hl], a
 
-asm_003_467c:
+.done:
 	ret
 
 SoundEngine2_LoadNote:
@@ -643,7 +645,7 @@ SoundEngine2_ReadMusic:
 	ld a, [bc]
 	ld [hl], a
 	pop bc
-	jr .asm_003_46f3
+	jr .note_commit
 
 .sfxchannel4
 	pop af
@@ -662,7 +664,7 @@ SoundEngine2_ReadMusic:
 	xor a
 	ld [hl], a
 
-.asm_003_46f3
+.note_commit
 	ld hl, CHANNEL_FIELD08
 	add hl, de
 	xor a
@@ -674,14 +676,14 @@ SoundEngine2_ReadMusic:
 	add hl, de
 	ld [hl], a
 	call SoundEngine2_WriteToPlayhead
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	bit 7, [hl]
-	jr z, .asm_003_4735
+	jr z, .skip_vibrato_init
 	push af
 	and $f
 	ld c, a
-	ld hl, CHANNEL_FIELD13
+	ld hl, CHANNEL_ENV_PARAM_2
 	add hl, de
 	ld a, [hl]
 	swap a
@@ -702,19 +704,19 @@ SoundEngine2_ReadMusic:
 	add [hl]
 	ld [hl], a
 
-.asm_003_4735
+.skip_vibrato_init
 	ld hl, CHANNEL_GLOBAL_STEREO_PANNING
 	add hl, de
 	ld a, [hli]
 	or a
-	jr nz, .asm_003_4746
+	jr nz, .has_stereo_panning
 	ld a, [hl]
 	cp 3
-	jr nz, .asm_003_4744
+	jr nz, .check_stereo_panning
 	ld a, 1
-.asm_003_4744
+.check_stereo_panning
 	xor 3
-.asm_003_4746
+.has_stereo_panning
 	and 3
 	ld [hl], a
 	ld hl, CHANNEL_INSTRUMENT_PITCH_OFFSET
@@ -738,30 +740,34 @@ SoundEngine2_ReadMusic:
 	ld [hl], a
 	ret
 
+; Channel 4 "notes" are actually sound effect calls
 .channel4
-	ld a, [wChannel7]
+; Don't restart channel 7 if a drum of ID 6-11 is already sounding there.
+	ld a, [wSound1Channel7]
 	cp 6
-	jr c, .asm_003_478e
+	jr c, .noise_skip_retrig
 	cp $c
-	jr nc, .asm_003_478e
+	jr nc, .noise_skip_retrig
+; Point channel 7 at the drum sound-effect table and mark it active.
 	ld a, LOW(unk_003_4e6a)
-	ld [wChannel7Playhead], a
+	ld [wSound1Channel7Playhead], a
 	ld a, HIGH(unk_003_4e6a)
-	ld [wChannel7Playhead + 1], a
-	ld a, [wd607]
-	or $40
-	ld [wd607], a
+	ld [wSound1Channel7Playhead + 1], a
+	ld a, [wSound2ChannelMask]
+	or 1 << CHAN7
+	ld [wSound2ChannelMask], a
 	ld a, 1
-	ld [wChannel7LengthCounter], a
-	ld [wChannel7], a
+	ld [wSound1Channel7LengthCounter], a
+	ld [wSound1Channel7], a
 	xor a
-	ld [wChannel7Field01], a
-.asm_003_478e
+	ld [wSound1Channel7Field01], a
+.noise_skip_retrig
+; Trigger the sound effect selected by the note's high nibble (skip if rest).
 	ld a, [bc]
 	swap a
-	and $f
-	cp $c
-	call nz, SoundEngine2_Load.asm_003_43e1
+	and %1111
+	cp __
+	call nz, SoundEngine2_LoadSfx
 
 .set_length
 	ld a, [bc]
@@ -832,22 +838,22 @@ Func_003_47d7:
 	or c
 	ret z
 	cp b
-	jr nc, asm_003_47e6
+	jr nc, .interp_a_geq_b
 	xor a
 
-asm_003_47e1:
+.interp_b_times_c:
 	add b
 	dec c
-	jr nz, asm_003_47e1
+	jr nz, .interp_b_times_c
 	ret
 
-asm_003_47e6:
+.interp_a_geq_b:
 	xor a
 
-asm_003_47e7:
+.interp_c_times_b:
 	add c
 	dec b
-	jr nz, asm_003_47e7
+	jr nz, .interp_c_times_b
 	ret
 
 SoundEngine2_CommandProcessor:
@@ -855,9 +861,9 @@ SoundEngine2_CommandProcessor:
 	jr c, .is_dx_command
 	push af
 	add a
-	add LOW(SoundEngine2_Commands)
+	add LOW(.cmd_jumptable)
 	ld l, a
-	ld a, HIGH(SoundEngine2_Commands)
+	ld a, HIGH(.cmd_jumptable)
 	adc 0
 	ld h, a
 	pop af
@@ -877,10 +883,10 @@ SoundEngine2_CommandProcessor:
 	cp CHAN4
 	ret z
 	cp CHAN8
-	jr z, .asm_03_4826
+	jr z, .cmd_e0_ch7
 	and 3
-	cp 2
-	jr z, .asm_03_4833
+	cp CHAN3
+	jr z, .cmd_e0_ch2
 	ld a, [bc]
 	and $33
 	add a
@@ -889,31 +895,31 @@ SoundEngine2_CommandProcessor:
 	inc bc
 	ld a, [bc]
 	ld [hl], a
-	call SoundEngine2_CommandEB
-	jp asm_003_490e
+	call .cmd_eb
+	jp .cmd_ee_entry
 
-.asm_03_4826:
+.cmd_e0_ch7:
 	ld a, [bc]
 	or a
-	jr z, .asm_03_482c
+	jr z, .cmd_e0_ch7_zero
 	ld a, 8
 
-.asm_03_482c:
+.cmd_e0_ch7_zero:
 	ld [hli], a
 	inc bc
 	ld a, [bc]
 	ld [hl], a
-	jp SoundEngine2_CommandEE
+	jp .cmd_ee
 
-.asm_03_4833:
+.cmd_e0_ch2:
 	dec bc
-	call SoundEngine2_CommandED
+	call .cmd_ed
 	ld a, [bc]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld [hli], a
 	add a
-	jp nc, asm_003_4917
+	jp nc, .cmd_ee_no_flag
 	inc bc
 	inc hl
 	ld a, [bc]
@@ -921,88 +927,88 @@ SoundEngine2_CommandProcessor:
 	inc bc
 	ret
 
-SoundEngine2_Commands:
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE0toE7
-	dw SoundEngine2_CommandE8
-	dw SoundEngine2_CommandE9
-	dw SoundEngine2_CommandEA
-	dw SoundEngine2_CommandEB
-	dw SoundEngine2_CommandEC
-	dw SoundEngine2_CommandED
-	dw SoundEngine2_CommandEE
-	dw SoundEngine2_CommandEF
-	dw SoundEngine2_CommandF0
-	dw SoundEngine2_CommandF1
-	dw SoundEngine2_CommandF2
-	dw SoundEngine2_CommandF3
+.cmd_jumptable
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e0toE7
+	dw .cmd_e8
+	dw .cmd_e9
+	dw .cmd_ea
+	dw .cmd_eb
+	dw .cmd_ec
+	dw .cmd_ed
+	dw .cmd_ee
+	dw .cmd_ef
+	dw .cmd_f0
+	dw .cmd_f1
+	dw .cmd_f2
+	dw .cmd_f3
 	dw SoundEngine2_CommandF4
-	dw SoundEngine2_CommandSkip
-	dw SoundEngine2_CommandF6
-	dw SoundEngine2_CommandF7
-	dw SoundEngine2_CommandF8
-	dw SoundEngine2_CommandF9
-	dw SoundEngine2_CommandFA
-	dw SoundEngine2_CommandFB
-	dw SoundEngine2_CommandFC
-	dw SoundEngine2_CommandFD
-	dw SoundEngine2_CommandFE
-	dw SoundEngine2_CommandFF
+	dw .cmd_f5
+	dw .cmd_f6
+	dw .cmd_f7
+	dw .cmd_f8
+	dw .cmd_f9
+	dw .cmd_fa
+	dw .cmd_fb
+	dw .cmd_fc
+	dw .cmd_fd
+	dw .cmd_fe
+	dw .cmd_ff
 
 ; Ex (0-7) : set the current octave
-SoundEngine2_CommandE0toE7:
+.cmd_e0toE7
 	ld a, [bc]
 	and 7
 	ld hl, CHANNEL_CUR_OCTAVE
 	add hl, de
-	jr SoundEngine2_SetVariable
+	jr .cmd_set_var
 
 ; E8 xy : Set instrument duty cycle pattern
-SoundEngine2_CommandE8:
+.cmd_e8
 	inc bc
 	ld a, [wSoundCurChannel]
 	cp CHAN8
-	jr z, .noise
+	jr z, .cmd_e8_noise
 	ld a, [bc]
 	and $33
 	add a
 	add a
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
-	jr SoundEngine2_SetVariable
-.noise
+	jr .cmd_set_var
+.cmd_e8_noise
 ; always set the duty pattern to $08 if on noise channel
 	ld a, [bc]
 	or a
-	jr z, .no_params
+	jr z, .cmd_e8_no_params
 	ld a, 8
-.no_params
+.cmd_e8_no_params
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
-	jr SoundEngine2_SetVariable
+	jr .cmd_set_var
 
-SoundEngine2_CommandE9:
-	ld hl, CHANNEL_FIELD0D
+.cmd_e9
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	inc bc
 	ld a, [bc]
 
-SoundEngine2_SetVariable:
+.cmd_set_var
 	ld [hl], a
 
 ; F5 : does nothing, essentially the sound engine's "nop" instruction
-SoundEngine2_CommandSkip:
+.cmd_f5
 	inc bc
 	ret
 
-SoundEngine2_CommandEA:
-	ld hl, CHANNEL_FIELD02
+.cmd_ea
+	ld hl, CHANNEL_SWEEP
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1011,7 +1017,7 @@ SoundEngine2_CommandEA:
 	ret
 
 ; EB xy : Set vibrato delay and type
-SoundEngine2_CommandEB:
+.cmd_eb
 	inc bc
 ; set delay in note length (x)
 	ld a, [bc]
@@ -1037,7 +1043,7 @@ SoundEngine2_CommandEB:
 	ld b, a
 	pop af
 
-SoundEngine2_SetWord:
+.cmd_set_word
 	ld a, [bc]
 	ld [hli], a
 	inc bc
@@ -1048,7 +1054,7 @@ SoundEngine2_SetWord:
 	ret
 
 ; EC xx : set channel transpose
-SoundEngine2_CommandEC:
+.cmd_ec
 	ld hl, CHANNEL_GLOBAL_TRANSPOSE
 	add hl, de
 	inc bc
@@ -1057,42 +1063,42 @@ SoundEngine2_CommandEC:
 	inc bc
 	ret
 
-SoundEngine2_CommandED:
+.cmd_ed
 	ld a, [wSoundCurChannel]
 	cp CHAN3
-	jr z, .asm_003_4906
+	jr z, .cmd_ed_ch3
 	cp CHAN7
-	jr nz, SoundEngine2_CommandSkip
+	jr nz, .cmd_f5
 	inc bc
 	ld a, [bc]
-	ld [wCh7TargetWaveform], a
+	ld [wSound2Ch7TargetWaveform], a
 	inc bc
 	ret
 
-.asm_003_4906
+.cmd_ed_ch3
 	inc bc
 	ld a, [bc]
-	ld [wCh3TargetWaveform], a
+	ld [wSound2Ch3TargetWaveform], a
 	inc bc
 	ret
 
 ; EE xx (yy zz) : volume related stuff?
 ; (yy zz set only if xx > $7f)
-SoundEngine2_CommandEE:
+.cmd_ee
 	inc bc
 
-asm_003_490e:
+.cmd_ee_entry
 	ld a, [bc]
-	ld hl, CHANNEL_FIELD11
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	ld [hli], a
 	add a
-	jr c, SoundEngine2_InstrumentSetParams
+	jr c, .cmd_ee_flag
 
-asm_003_4917:
+.cmd_ee_no_flag
 	ld a, [bc]
 
-SoundEngine2_UseInstrument:
+.cmd_ee_ptr_setup
 	push bc
 	push af
 	add a
@@ -1104,9 +1110,9 @@ SoundEngine2_UseInstrument:
 	pop af
 	ld hl, CHANNEL_INSTRUMENT_POINTER
 	add hl, de
-	jr SoundEngine2_SetWord
+	jr .cmd_set_word
 
-SoundEngine2_InstrumentSetParams:
+.cmd_ee_flag
 	inc bc
 	ld a, [bc]
 	ld [hli], a
@@ -1117,7 +1123,7 @@ SoundEngine2_InstrumentSetParams:
 	ret
 
 ; EF xx : set channel fine pitch
-SoundEngine2_CommandEF:
+.cmd_ef
 	ld hl, CHANNEL_GLOBAL_FINE_PITCH
 	add hl, de
 	inc bc
@@ -1126,8 +1132,8 @@ SoundEngine2_CommandEF:
 	inc bc
 	ret
 
-SoundEngine2_CommandF0:
-	ld hl, CHANNEL_FIELD11
+.cmd_f0
+	ld hl, CHANNEL_ENV_MODE
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1135,8 +1141,8 @@ SoundEngine2_CommandF0:
 	inc bc
 	ret
 
-SoundEngine2_CommandF1:
-	ld hl, CHANNEL_FIELD12
+.cmd_f1
+	ld hl, CHANNEL_ENV_PARAM_1
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1144,8 +1150,8 @@ SoundEngine2_CommandF1:
 	inc bc
 	ret
 
-SoundEngine2_CommandF2:
-	ld hl, CHANNEL_FIELD13
+.cmd_f2
+	ld hl, CHANNEL_ENV_PARAM_2
 	add hl, de
 	inc bc
 	ld a, [bc]
@@ -1154,7 +1160,7 @@ SoundEngine2_CommandF2:
 	ret
 
 ; F3 xx : set stereo panning
-SoundEngine2_CommandF3:
+.cmd_f3
 	ld hl, CHANNEL_GLOBAL_STEREO_PANNING
 	add hl, de
 	inc bc
@@ -1164,7 +1170,7 @@ SoundEngine2_CommandF3:
 	ret
 
 ; F6 xx : set speed only
-SoundEngine2_CommandF6:
+.cmd_f6
 	ld hl, CHANNEL_SPEED
 	add hl, de
 	inc bc
@@ -1174,7 +1180,7 @@ SoundEngine2_CommandF6:
 	ret
 
 ; F7 xx yy : call a subpart
-SoundEngine2_CommandF7:
+.cmd_f7
 	inc bc
 	ld a, [bc]
 	ld l, a
@@ -1193,7 +1199,7 @@ SoundEngine2_CommandF7:
 	ret
 
 ; F8 xx yy : same as above but uses a different variable
-SoundEngine2_CommandF8:
+.cmd_f8
 	inc bc
 	ld a, [bc]
 	ld l, a
@@ -1211,7 +1217,7 @@ SoundEngine2_CommandF8:
 	ret
 
 ; F9 : return from F7 xx yy call
-SoundEngine2_CommandF9:
+.cmd_f9
 	ld hl, CHANNEL_RETURN_POINT_1
 	add hl, de
 	ld a, [hli]
@@ -1220,7 +1226,7 @@ SoundEngine2_CommandF9:
 	ret
 
 ; FA : return from F8 xx yy call
-SoundEngine2_CommandFA:
+.cmd_fa
 	ld hl, CHANNEL_RETURN_POINT_2
 	add hl, de
 	ld a, [hli]
@@ -1229,7 +1235,7 @@ SoundEngine2_CommandFA:
 	ret
 
 ; FB : begin a repeating phrase
-SoundEngine2_CommandFB:
+.cmd_fb
 	inc bc
 	ld hl, CHANNEL_LOOP_POINT_1
 	add hl, de
@@ -1242,7 +1248,7 @@ SoundEngine2_CommandFB:
 	ret
 
 ; FC : begin a repeating phrase
-SoundEngine2_CommandFC:
+.cmd_fc
 	inc bc
 	ld hl, CHANNEL_LOOP_POINT_2
 	add hl, de
@@ -1256,20 +1262,20 @@ SoundEngine2_CommandFC:
 
 ; FD xx : end repeating phrase after xx repetitions
 ;         if xx is 0, then loop forever
-SoundEngine2_CommandFD:
+.cmd_fd
 	inc bc
 	ld a, [bc]
 	or a
-	jr z, .goto_loop
+	jr z, .cmd_fd_loop
 	ld hl, CHANNEL_LOOP_COUNTER_1
 	add hl, de
 	push hl
 	ld h, [hl]
 	cp h
 	pop hl
-	jr z, SoundEngine2_DoneRepeating
+	jr z, .cmd_fd_done
 	inc [hl]
-.goto_loop
+.cmd_fd_loop
 	ld hl, CHANNEL_LOOP_POINT_1
 	add hl, de
 	ld a, [hli]
@@ -1277,25 +1283,25 @@ SoundEngine2_CommandFD:
 	ld b, [hl]
 	ret
 
-SoundEngine2_DoneRepeating:
+.cmd_fd_done
 	ld [hl], 0
-	jp SoundEngine2_CommandSkip
+	jp .cmd_f5
 
 ; FE xx : same as above but uses a different variable
-SoundEngine2_CommandFE:
+.cmd_fe
 	inc bc
 	ld a, [bc]
 	or a
-	jr z, .goto_loop
+	jr z, .cmd_fe_loop
 	ld hl, CHANNEL_LOOP_COUNTER_2
 	add hl, de
 	push hl
 	ld h, [hl]
 	cp h
 	pop hl
-	jr z, SoundEngine2_DoneRepeating
+	jr z, .cmd_fd_done
 	inc [hl]
-.goto_loop
+.cmd_fe_loop
 	ld hl, CHANNEL_LOOP_POINT_2
 	add hl, de
 	ld a, [hli]
@@ -1303,34 +1309,34 @@ SoundEngine2_CommandFE:
 	ld b, [hl]
 	ret
 
-SoundEngine2_CommandFF:
+.cmd_ff
 	ld a, [wSoundCurChannel]
 	push af
-	add LOW(unk_003_4a41)
+	add LOW(SoundEngine2_ChannelMaskTable1)
 	ld c, a
-	ld a, HIGH(unk_003_4a41)
+	ld a, HIGH(SoundEngine2_ChannelMaskTable1)
 	adc 0
 	ld b, a
 	pop af
 	ld a, [bc]
-	ld hl, wd607
+	ld hl, wSound2ChannelMask
 	and [hl]
 	ld [hl], a
 	ld a, [wSoundCurChannel]
 	cp CHAN5
-	jr z, .asm_003_4a38
+	jr z, .cmd_ff_ch4
 	and 3
-	jr z, .asm_003_4a0f
+	jr z, .cmd_ff_ch_03
 	cp CHAN4
-	jr nz, .asm_003_4a13
-.asm_003_4a0f
+	jr nz, .cmd_ff_ch_other
+.cmd_ff_ch_03
 	ld a, 8
-	jr .asm_003_4a14
+	jr .cmd_ff_set
 
-.asm_003_4a13
+.cmd_ff_ch_other
 	xor a
-.asm_003_4a14
-	ld hl, CHANNEL_FIELD0D
+.cmd_ff_set
+	ld hl, CHANNEL_ENVELOPE
 	add hl, de
 	ld [hl], a
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
@@ -1356,13 +1362,13 @@ SoundEngine2_CommandFF:
 	pop hl
 	ret
 
-.asm_003_4a38
+.cmd_ff_ch4
 	ld a, 8
 	ldh [rNR10], a
 	ld [wCh1DataCurrentSweep], a
-	jr .asm_003_4a0f
+	jr .cmd_ff_ch_03
 
-unk_003_4a41:
+SoundEngine2_ChannelMaskTable1:
 	db $fe  ; ch1
 	db $fd  ; ch2
 	db $fb  ; ch3
@@ -1373,7 +1379,7 @@ unk_003_4a41:
 	db $bf  ; ch7
 	db $7f  ; ch8
 
-unk_003_4a49:
+SoundEngine2_ChannelMaskTable2:
 	db $01  ; ch1
 	db $02  ; ch2
 	db $04  ; ch3
@@ -1388,9 +1394,9 @@ Func_003_4a51:
 	ld a, [wSoundCurChannel]
 	push af
 	add a
-	add LOW(Pointer_03_4a63)
+	add LOW(.output_jumptable)
 	ld l, a
-	ld a, HIGH(Pointer_03_4a63)
+	ld a, HIGH(.output_jumptable)
 	adc 0
 	ld h, a
 	pop af
@@ -1399,7 +1405,7 @@ Func_003_4a51:
 	ld l, a
 	jp hl
 
-Pointer_03_4a63:
+.output_jumptable:
 ; music channels
 	dw .Ch1
 	dw .Ch2
@@ -1412,7 +1418,7 @@ Pointer_03_4a63:
 	dw .Ch8
 
 .Ch1:
-	ld hl, wd6be
+	ld hl, wSound2Channel5
 	ld a, [hl]
 	or a
 	ret nz
@@ -1423,9 +1429,9 @@ Pointer_03_4a63:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bb7)
+	add LOW(.ch1_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bb7)
+	ld a, HIGH(.ch1_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1435,7 +1441,7 @@ Pointer_03_4a63:
 	or [hl]
 	ld [bc], a
 	ld bc, wCh1DataCurrentSweep
-	ld hl, CHANNEL_FIELD02
+	ld hl, CHANNEL_SWEEP
 	add hl, de
 	ld a, [hl]
 	ld [bc], a
@@ -1445,21 +1451,21 @@ Pointer_03_4a63:
 	ld a, [hl]
 	ld [wCh1NoteCounter], a
 
-.asm_003_4aa4
+.output_ch1_common:
 	or a
-	jr z, .asm_003_4ab0
+	jr z, .output_ch1_freq0
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
 	ld a, [hl]
 	swap a
-	jr .asm_003_4ab5
+	jr .output_ch1_duty
 
-.asm_003_4ab0
+.output_ch1_freq0:
 	ld hl, CHANNEL_FIELD0C
 	add hl, de
 	ld a, [hl]
 
-.asm_003_4ab5
+.output_ch1_duty:
 	and $c0
 	ld [bc], a
 	inc bc
@@ -1467,20 +1473,20 @@ Pointer_03_4a63:
 	add hl, de
 	ld a, [hl]
 	or a
-	jr nz, .asm_003_4ac5
+	jr nz, .output_ch1_envelope
 	ld a, 8
-	jr .asm_003_4aca
+	jr .output_ch1_env_done
 
-.asm_003_4ac5
+.output_ch1_envelope:
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld a, [hl]
 
-.asm_003_4aca
+.output_ch1_env_done:
 	ld [bc], a
 	inc bc
 
-.asm_003_4acc
+.output_freq_common:
 	ld hl, CHANNEL_GLOBAL_FINE_PITCH
 	add hl, de
 	ld a, [hl]
@@ -1489,14 +1495,14 @@ Pointer_03_4a63:
 	add [hl]
 	inc hl
 	bit 7, a
-	jr nz, .asm_003_4ae6
+	jr nz, .output_freq_negative
 	add [hl]
 	inc hl
 	ld [bc], a
 	ld a, [hl]
 	adc 0
 
-.asm_003_4ae1
+.output_freq_hi:
 	inc bc
 	and 7
 	ld [bc], a
@@ -1504,7 +1510,7 @@ Pointer_03_4a63:
 .Ch4:
 	ret
 
-.asm_003_4ae6
+.output_freq_negative:
 	add [hl]
 	push af
 	inc hl
@@ -1512,10 +1518,10 @@ Pointer_03_4a63:
 	pop af
 	ld a, [hl]
 	adc $ff
-	jr .asm_003_4ae1
+	jr .output_freq_hi
 
 .Ch2:
-	ld hl, wd6ea
+	ld hl, wSound2Channel6
 	ld a, [hl]
 	or a
 	ret nz
@@ -1526,9 +1532,9 @@ Pointer_03_4a63:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bbb)
+	add LOW(.ch2_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bbb)
+	ld a, HIGH(.ch2_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1542,10 +1548,10 @@ Pointer_03_4a63:
 	add hl, de
 	ld a, [hl]
 	ld [wCh2NoteCounter], a
-	jr .asm_003_4aa4
+	jr .output_ch1_common
 
 .Ch3:
-	ld hl, wChannel7
+	ld hl, wSound1Channel7
 	ld a, [hl]
 	or a
 	ret nz
@@ -1556,9 +1562,9 @@ Pointer_03_4a63:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bbf)
+	add LOW(.ch3_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bbf)
+	ld a, HIGH(.ch3_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1576,7 +1582,7 @@ Pointer_03_4a63:
 	add hl, de
 	ld a, [hl]
 	or a
-	jr z, .asm_003_4b61
+	jr z, .output_ch3_vol0
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld a, [hl]
@@ -1584,19 +1590,19 @@ Pointer_03_4a63:
 	and $f
 	push bc
 	push af
-	add LOW(unk_003_4ba7)
+	add LOW(.ch3_vol_table)
 	ld c, a
-	ld a, HIGH(unk_003_4ba7)
+	ld a, HIGH(.ch3_vol_table)
 	adc 0
 	ld b, a
 	pop af
 	ld a, [bc]
 	pop bc
 
-.asm_003_4b61
+.output_ch3_vol0:
 	ld [bc], a
 	inc bc
-	jp .asm_003_4acc
+	jp .output_freq_common
 
 .Ch8:
 	ld hl, CHANNEL_CURRENT_STEREO
@@ -1604,9 +1610,9 @@ Pointer_03_4a63:
 	ld a, [hl]
 	and 3
 	push af
-	add LOW(unk_003_4bc3)
+	add LOW(.ch4_stereo_table)
 	ld l, a
-	ld a, HIGH(unk_003_4bc3)
+	ld a, HIGH(.ch4_stereo_table)
 	adc 0
 	ld h, a
 	pop af
@@ -1624,16 +1630,16 @@ Pointer_03_4a63:
 	add hl, de
 	xor a
 	or [hl]
-	jr nz, .asm_003_4b96
+	jr nz, .output_ch4_envelope
 	ld a, 8
-	jr .asm_003_4b9b
+	jr .output_ch4_env_done
 
-.asm_003_4b96
+.output_ch4_envelope:
 	ld hl, CHANNEL_ENVELOPE_MODIFIER
 	add hl, de
 	ld a, [hl]
 
-.asm_003_4b9b
+.output_ch4_env_done:
 	ld [bc], a
 	inc bc
 	ld hl, CHANNEL_NOTE_FREQ
@@ -1645,47 +1651,22 @@ Pointer_03_4a63:
 	ld [bc], a
 	ret
 
-unk_003_4ba7:
-	db 0
-	db $60
-	db $40
-	db $40
-	db $40
-	db $40
-	db $40
-	db $40
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
-	db $20
+.ch3_vol_table:
+	db 0, $60
+	db $40, $40, $40, $40, $40, $40
+	db $20, $20, $20, $20, $20, $20, $20, $20
 
-unk_003_4bb7:
-	db $11
-	db $01
-	db $10
-	db $11
+.ch1_stereo_table:
+	db $11, 1, $10, $11
 
-unk_003_4bbb:
-	db $22
-	db $02
-	db $20
-	db $22
+.ch2_stereo_table:
+	db $22, 2, $20, $22
 
-unk_003_4bbf:
-	db $44
-	db $04
-	db $40
-	db $44
+.ch3_stereo_table:
+	db $44, 4, $40, $44
 
-unk_003_4bc3:
-	db $88
-	db $08
-	db $80
-	db $88
+.ch4_stereo_table:
+	db $88, 8, $80, $88
 
 SoundEngine2_ApplyAudio:
 	ld hl, wCh1DataCurrentSweep
@@ -1777,14 +1758,14 @@ SoundEngine2_ApplyAudio:
 	ld [hli], a
 
 ; any sfx?
-	ld a, [wChannel7]
+	ld a, [wSound1Channel7]
 	or a
 	jr nz, .use_other_waveform
-	ld a, [wCh3TargetWaveform]
+	ld a, [wSound2Ch3TargetWaveform]
 	jr .UpdateWaveform
 
 .use_other_waveform
-	ld a, [wCh7TargetWaveform]
+	ld a, [wSound2Ch7TargetWaveform]
 
 .UpdateWaveform:
 ; don't need to update if it's the same as the last one
@@ -1826,12 +1807,12 @@ endr
 
 SoundEngine2_DoUpdateEnvelopes:
 	or a
-	jr z, SoundEngine2_UpdateEnvelopes
+	jr z, .write_reg
 	ld a, [de]
 	cp [hl]
 	jr z, SoundEngine2_SkipUpdatingLastData
 
-SoundEngine2_UpdateEnvelopes:
+.write_reg:
 	ld a, [hli]
 	ld [de], a
 	ldh [c], a
@@ -1865,11 +1846,11 @@ SoundEngine2_SkipUpdatingLastData:
 SoundEngine2_DoUpdateFrequency:
 	ld a, [de]
 	bit 7, a
-	jr nz, asm_003_4cb3
+	jr nz, .write_reg
 	cp [hl]
 	jr z, SoundEngine2_SkipUpdatingLastData
 
-asm_003_4cb3:
+.write_reg:
 	ld a, [hl]
 	ldh [c], a
 	and 7
@@ -1899,7 +1880,7 @@ SoundEngine2_Init:
 	ld [wSoundGlobalStereo], a
 
 SoundEngine2_ResetEngineVariables:
-	ld hl, wChannels
+	ld hl, wSound1Channels
 	ld de, CHANNEL_STRUCT_LENGTH
 	ld a, 0
 	ld [hl], a
@@ -1917,7 +1898,7 @@ SoundEngine2_ResetEngineVariables:
 	ld [hl], a
 	add hl, de
 	ld [hl], a
-	ld hl, wd616
+	ld hl, wSound2Channel1Field08
 	ld a, 1
 	ld [hl], a
 	add hl, de
@@ -1935,7 +1916,7 @@ SoundEngine2_ResetEngineVariables:
 	add hl, de
 	ld [hl], a
 	ld a, 0
-	ld [wd607], a
+	ld [wSound2ChannelMask], a
 	ld [wSound2FadeEnabled], a
 	ld [wSound2FadeTimer], a
 	ld a, $ff
@@ -2036,193 +2017,9 @@ SoundEngine2_CommandF4:
 	ld [hl], a
 	pop af
 	cp $11
-	jr z, asm_003_4da8
-	jp SoundEngine2_CommandSkip
+	jr z, .ptr_setup
+	jp SoundEngine2_CommandProcessor.cmd_f5
 
-asm_003_4da8:
+.ptr_setup:
 	ld a, [hl]
-	jp SoundEngine2_UseInstrument
-
-SoundEngine2_NoteFrequencies:
-INCLUDE "audio/notes.asm"
-
-unk_003_4e6a: db $ff
-unk_003_4e6b: dr $ce6b, $ce74
-unk_003_4e74: dr $ce74, $ce7d
-unk_003_4e7d: dr $ce7d, $ce86
-unk_003_4e86: dr $ce86, $ce95
-unk_003_4e95: dr $ce95, $cea2
-unk_003_4ea2: dr $cea2, $cebf
-unk_003_4ebf: dr $cebf, $ceda
-unk_003_4eda: dr $ceda, $cef2
-unk_003_4ef2: dr $cef2, $cf17
-
-SoundEngine2_InstrumentPointers:
-	dw .instrument1
-	dw .instrument2
-	dw .instrument3
-	dw .instrument4
-	dw .instrument5
-	dw .instrument6
-	dw .instrument7
-	dw .instrument8
-	dw .instrument9
-	dw .instrument10
-	dw .instrument11
-	dw .instrument12
-	dw .instrument13
-	dw .instrument14
-	dw .instrument15
-	dw .instrument16
-	dw .instrument17
-	dw .instrument18
-	dw .instrument19
-	dw .instrument20
-
-.instrument1:
-	db $8f
-	db -1
-
-.instrument2:
-	db $1f
-	db -1
-
-.instrument3:
-	db $2f
-	db -1
-
-.instrument4:
-	db $3f
-	db -1
-
-.instrument5:
-	db $4f
-	db -1
-
-.instrument6:
-	db $5f
-	db -1
-
-.instrument7:
-	db $6f
-	db -1
-
-.instrument8:
-	db $7f
-	db -1
-
-.instrument9:
-	db $8f
-	db -1
-
-.instrument10:
-	db $9f
-	db -1
-
-.instrument11:
-	db $af
-	db -1
-
-.instrument12:
-	db $bf
-	db -1
-
-.instrument13:
-	db $cf
-	db -1
-
-.instrument14:
-	db $df
-	db -1
-
-.instrument15:
-	db $ef
-	db -1
-
-.instrument16:
-	db $fe
-	db -1
-
-.instrument17:
-	db $b2, $52, $92, $42, $72, $32, $52, $22
-	db -1
-
-.instrument18:
-	db $92, $42, $72, $32, $52, $22, $32, $12
-	db -1
-
-.instrument19:
-	db $b3, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43, $63, $43
-	db -1
-
-.instrument20:
-	db $83, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23, $43, $23
-	db -1
-
-
-SoundEngine2_VibratoTables:
-	dw .vibrato1
-	dw .vibrato2
-	dw .vibrato3
-	dw .vibrato4
-	dw .vibrato5
-	dw .vibrato6
-	dw .vibrato7
-	dw .vibrato8
-	dw .vibrato9
-	dw .vibrato10
-	dw .vibrato11
-	dw .vibrato11
-	dw .vibrato11
-	dw .vibrato11
-	dw .vibrato11
-	dw .vibrato11
-
-.vibrato1
-	db $0f
-	db -1
-
-.vibrato2
-	db $14, $03, $f4, $03
-	db -1
-
-.vibrato3
-	db $11, $22, $11, $02, $f1, $e2, $f1, $02
-	db -1
-
-.vibrato4
-	db $21, $32, $21, $02, $e1, $d2, $e1, $02
-	db -1
-
-.vibrato5
-	db $21, $42, $21, $02, $e1, $c2, $e1, $02
-	db -1
-
-.vibrato6
-	db $31, $52, $31, $02, $d1, $b2, $d1, $02
-	db -1
-
-.vibrato7
-	db $31, $62, $31, $02, $d1, $a2, $d1, $02
-	db -1
-
-.vibrato8
-	db $32, $72, $32, $02, $d2, $92, $d2, $02
-	db -1
-
-.vibrato9
-	db $81, $91, $a1, $b1, $c1, $d1, $e1, $f1
-	db $0f, $0f, $0f, $0f, $0f, $0f
-	db -1
-
-.vibrato10
-	db $31, $21, $11, $0f, $0f, $0f, $0f, $0f, $0f
-	db -1
-
-.vibrato11
-	db $03, $13, $23, $13
-	db -1
-
-
-SoundEngine2_Waveforms:
-INCLUDE "audio/wave_instruments.asm"
+	jp SoundEngine2_CommandProcessor.cmd_ee_ptr_setup

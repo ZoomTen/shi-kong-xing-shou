@@ -4,12 +4,12 @@ LoadSpritePalette::
 	push af
 
 ; Get palette address
-	ld a, BANK(unk_004_4337)
+	ld a, BANK(Pointers_004_4337)
 	rst Bankswitch
 	ld hl, 4
 	add hl, bc
 	ld a, [hl]
-	ld de, unk_004_4337
+	ld de, Pointers_004_4337
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -99,3 +99,9 @@ LoadPalettes_BCPD::
 	dec b
 	jr nz, .load_palette
 	ret
+WaitVRAM_STAT::
+	ldh a, [rSTAT]
+	bit 1, a ; STATF_BUSY
+	ret z
+	jr WaitVRAM_STAT
+

@@ -1,4 +1,4 @@
-MACRO party_struct
+MACRO box_struct
 \1Species:: db
 \1Level::   db
 \1HP::      dw
@@ -16,7 +16,10 @@ MACRO party_struct
 \1Move4ID::    db
 \1Move4PP::    db
 \1Move4MaxPP:: db
+ENDM
 
+MACRO party_struct
+	box_struct \1
 \1Status:: db
 \1Item::   db
 \1unk22::  db
@@ -38,7 +41,7 @@ ENDM
 MACRO channel_struct
 \1SongID::                   db ; 00
 \1Field01::                  db ; 01
-\1Field02::                  db ; 02
+\1Sweep::                    db ; 02
 \1GlobalTranspose::          db ; 03
 \1GlobalFinePitch::          db ; 04
 \1GlobalStereoPanning::      db ; 05
@@ -49,12 +52,12 @@ MACRO channel_struct
 \1Field0A::                  db ; 0a
 \1Speed::                    db ; 0b
 \1Field0C::                  db ; 0c
-\1Field0D::                  db ; 0d
+\1VolumeEnvelope::           db ; 0d
 \1VibratoDelay::             db ; 0e
 \1VibratoTablePointer::      dw ; 0f
-\1Field11::                  db ; 11
-\1Field12::                  db ; 12
-\1Field13::                  db ; 13
+\1EnvelopeMode::             db ; 11
+\1EnvelopeParam1::           db ; 12
+\1EnvelopeParam2::           db ; 13
 \1InstrumentPointer::        dw ; 14
 \1InstrumentPitchOffset::    db ; 16
 \1InstrumentVolumeOffset::   db ; 17

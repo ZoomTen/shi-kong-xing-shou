@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<map height="44" orientation="orthogonal" renderorder="right-down" tileheight="8" tilewidth="8" width="2">
+	<!--Add tilesets as much as needed-->
+	<tileset firstgid="1" tileheight="8" tilewidth="8">
+		<image source="../../../gfx/tilesets/gfx_06b_52b0.2bpp"/>
+	</tileset>
+	<layer height="44" id="1" name="metatiles" width="2">
+		<data encoding="csv">
+2, 4,
+3, 5,
+6, 8,
+7, 9,
+10, 12,
+11, 13,
+14, 16,
+15, 17,
+18, 20,
+19, 21,
+22, 24,
+23, 25,
+26, 28,
+27, 29,
+30, 32,
+31, 33,
+34, 36,
+35, 37,
+38, 40,
+39, 41,
+42, 44,
+43, 45,
+46, 48,
+47, 49,
+51, 53,
+52, 54,
+55, 53,
+56, 57,
+58, 60,
+59, 61,
+52, 62,
+52, 62,
+63, 65,
+64, 66,
+67, 61,
+67, 61,
+68, 70,
+69, 71,
+72, 74,
+73, 75,
+76, 78,
+77, 79,
+63, 63,
+64, 64</data>
+	</layer>
+</map>

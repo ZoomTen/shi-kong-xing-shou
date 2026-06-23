@@ -3,6 +3,15 @@
 	const TEXTBOX_BOTTOM ; $00
 	const TEXTBOX_TOP    ; $01
 
+; hTextSource: which source/bank _PrintText reads the active textbox from
+	const_def
+	const TEXTSRC_NONE          ; $00  idle / cleared
+	const TEXTSRC_SCRIPT        ; $01  inline script dialogue (hScriptBank)
+	const TEXTSRC_SIGNPOST      ; $02  signpost / bg event (hTextSourceBank2)
+	const TEXTSRC_ITEM_OBTAINED ; $03  press-A tile item (hTextSourceBank3)
+	const TEXTSRC_SCRIPT_MSG    ; $04  script cmd $6f canned msg (hTextSourceBank4)
+	const TEXTSRC_ITEM_FOUND    ; $05  map-event item (wFoundItemTextBank)
+
 ; Names
 	const_def
 	const NAME_BLANK  ; $00
@@ -100,3 +109,121 @@
 ; Faces
 	const_def
 	const PIC_BALLOT_0 ; $00
+	const PIC_01     ; $01
+	const PIC_02     ; $02
+	const PIC_03     ; $03
+	const PIC_04     ; $04
+	const PIC_05     ; $05
+	const PIC_06     ; $06
+	const PIC_07     ; $07
+	const PIC_08     ; $08
+	const PIC_09     ; $09
+	const PIC_0A     ; $0a
+	const PIC_0B     ; $0b
+	const PIC_0C     ; $0c
+	const PIC_0D     ; $0d
+	const PIC_0E     ; $0e
+	const PIC_0F     ; $0f
+	const PIC_10     ; $10
+	const PIC_11     ; $11
+	const PIC_12     ; $12
+	const PIC_13     ; $13
+	const PIC_14     ; $14
+	const PIC_15     ; $15
+	const PIC_16     ; $16
+	const PIC_17     ; $17
+	const PIC_18     ; $18
+	const PIC_19     ; $19
+	const PIC_1A     ; $1a
+	const PIC_1B     ; $1b
+	const PIC_1C     ; $1c
+	const PIC_1D     ; $1d
+	const PIC_1E     ; $1e
+	const PIC_1F     ; $1f
+	const PIC_20     ; $20
+	const PIC_21     ; $21
+	const PIC_22     ; $22
+	const PIC_23     ; $23
+	const PIC_24     ; $24
+	const PIC_25     ; $25
+	const PIC_26     ; $26
+	const PIC_27     ; $27
+	const PIC_28     ; $28
+	const PIC_29     ; $29
+	const PIC_2A     ; $2a
+	const PIC_2B     ; $2b
+	const PIC_2C     ; $2c
+	const PIC_2D     ; $2d
+	const PIC_2E     ; $2e
+	const PIC_2F     ; $2f
+	const PIC_30     ; $30
+	const PIC_31     ; $31
+	const PIC_32     ; $32
+	const PIC_33     ; $33
+	const PIC_34     ; $34
+	const PIC_35     ; $35
+	const PIC_36     ; $36
+	const PIC_37     ; $37
+	const PIC_38     ; $38
+	const PIC_39     ; $39
+DEF PIC_GFX_2 EQU const_value ; first face ID loaded via _LoadTextFaceGFX2 (second table)
+	const PIC_3A     ; $3a
+	const PIC_3B     ; $3b
+	const PIC_3C     ; $3c
+	const PIC_3D     ; $3d
+	const PIC_3E     ; $3e
+	const PIC_3F     ; $3f
+	const PIC_40     ; $40
+	const PIC_41     ; $41
+	const PIC_42     ; $42
+	const PIC_43     ; $43
+	const PIC_44     ; $44
+	const PIC_45     ; $45
+	const PIC_46     ; $46
+	const PIC_47     ; $47
+	const PIC_48     ; $48
+	const PIC_49     ; $49
+	const PIC_4A     ; $4a
+	const PIC_4B     ; $4b
+	const PIC_4C     ; $4c
+	const PIC_4D     ; $4d
+	const PIC_4E     ; $4e
+	const PIC_4F     ; $4f
+	const PIC_50     ; $50
+	const PIC_51     ; $51
+	const PIC_52     ; $52
+	const PIC_53     ; $53
+	const PIC_54     ; $54
+	const PIC_55     ; $55
+	const PIC_56     ; $56
+	const PIC_57     ; $57
+	const PIC_58     ; $58
+	const PIC_59     ; $59
+	const PIC_5A     ; $5a
+	const PIC_5B     ; $5b
+	const PIC_5C     ; $5c
+	const PIC_5D     ; $5d
+	const PIC_5E     ; $5e
+	const PIC_5F     ; $5f
+	const PIC_60     ; $60
+	const PIC_61     ; $61
+	const PIC_62     ; $62
+	const PIC_63     ; $63
+	const PIC_64     ; $64
+	const PIC_65     ; $65
+	const PIC_66     ; $66
+	const PIC_67     ; $67
+	const PIC_68     ; $68
+	const PIC_69     ; $69
+	const PIC_6A     ; $6a
+	const PIC_6B     ; $6b
+	const PIC_6C     ; $6c
+	const PIC_6D     ; $6d
+	const PIC_6E     ; $6e
+	const PIC_6F     ; $6f
+	const PIC_70     ; $70
+	const PIC_71     ; $71
+	const PIC_72     ; $72
+	const PIC_73     ; $73
+	const PIC_74     ; $74
+	const PIC_75     ; $75

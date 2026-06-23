@@ -1,5 +1,5 @@
 ; Load objects in map
-Func_1fee::
+LoadMapObjects::
 	ldh a, [hScriptBank]
 	rst Bankswitch
 	ld a, [wObjectEventPointer]
@@ -157,7 +157,7 @@ ENDR
 	dba Group07_Maps
 	dba Group02_Maps
 
-Func_20b9::
+_GetBlockCollision::
 	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	push de
@@ -221,7 +221,7 @@ Func_20b9::
 	ld [wd0c8], a
 	ret
 
-Func_2108::
+_UpdatePlayerAnim::
 	ldh a, [hFFAC]
 	and a
 	jr z, .asm_211f
@@ -237,13 +237,13 @@ Func_2108::
 	jr c, .asm_211f
 
 .asm_211c
-	call Func_2123
+	call AnimatePlayerSprite
 
 .asm_211f
-	call Func_21bb
+	call AnimateObjectSprite
 	ret
 
-Func_2123::
+AnimatePlayerSprite::
 	xor a
 	ldh [hFFAD], a
 	ld [wdcd0], a
@@ -253,9 +253,9 @@ Func_2123::
 	ld [hl], a
 
 .asm_2130:
-	ld a, [wcd04]
+	ld a, [wPlayerSpriteID]
 	ld [wdb1f], a
-	call Func_2363
+	call GetSpriteGFXPointers
 	ld a, [wdb1f]
 	ld l, a
 	ld h, 0
@@ -264,7 +264,7 @@ Func_2123::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wcd03]
+	ld a, [wPlayerFacing]
 	add a
 	ld e, a
 	ld d, 0
@@ -272,7 +272,7 @@ Func_2123::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wcd05]
+	ld a, [wPlayerAnimFrame]
 	add a
 	ld e, a
 	add hl, de
@@ -286,7 +286,7 @@ Func_2123::
 	jr nz, .asm_216d
 
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
 	ldh [hFFAC], a
@@ -301,7 +301,7 @@ Func_2123::
 	jr nz, .asm_2182
 
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
 	jr .asm_2130
@@ -321,7 +321,7 @@ Func_2123::
 	ld d, $80
 	ld bc, $40
 	call CopyBytesVRAM
-	ld hl, wcd05
+	ld hl, wPlayerAnimFrame
 	inc [hl]
 	ld a, [hl]
 	cp 1
@@ -338,19 +338,19 @@ Func_2123::
 	ret z
 
 	xor a
-	ld [wcd05], a
+	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
 	ldh [hFFAC], a
 	ret
 
-Func_21bb::
+AnimateObjectSprite::
 	ld a, [wdcea]
 	and a
-	jp z, Func_224e
+	jp z, UpdateSpriteAnimQueue
 	ldh a, [hFFDB]
 	and a
-	jp z, Func_224e
+	jp z, UpdateSpriteAnimQueue
 
 	ld a, [wdceb]
 	and a
@@ -360,7 +360,7 @@ Func_21bb::
 	inc a
 	ldh [hFFDC], a
 	cp 5
-	jp c, Func_224e
+	jp c, UpdateSpriteAnimQueue
 
 .asm_21d8
 	xor a
@@ -374,7 +374,7 @@ Func_21bb::
 .asm_21e5
 	ld a, [wcd24]
 	ld [wdb1f], a
-	call Func_2363
+	call GetSpriteGFXPointers
 	ld a, [wdb1f]
 	ld l, a
 	ld h, 0
@@ -443,7 +443,7 @@ Func_21bb::
 	inc [hl]
 	ret
 
-Func_224e::
+UpdateSpriteAnimQueue::
 	ld bc, wcd40
 .asm_2251:
 	ld hl, $0d
@@ -479,7 +479,7 @@ Func_224e::
 	add hl, bc
 	ld [hl], $14
 	push bc
-	call Func_22f6
+	call AnimateQueuedSprite
 	pop bc
 	ld hl, 3
 	ld de, wd9fa
@@ -505,10 +505,10 @@ Func_224e::
 	jr .asm_2251
 
 .asm_22a0
-	call Func_23a6
+	call UpdateTileAnimation
 	ret
 
-Func_22a4::
+UpdateSpriteAnimQueueFast::
 	ld bc, wcd40
 .asm_22a7:
 	ld hl, $0d
@@ -537,7 +537,7 @@ ENDR
 	add hl, bc
 	ld [hl], $0a
 	push bc
-	call Func_22f6
+	call AnimateQueuedSprite
 	pop bc
 	push bc
 	ld hl, 3
@@ -563,10 +563,10 @@ ENDR
 	ld c, l
 	jr .asm_22a7
 
-Func_22f6::
+AnimateQueuedSprite::
 	ld a, [wd9fb]
 	ld [wdb1f], a
-	call Func_2363
+	call GetSpriteGFXPointers
 	ld a, [wdb1f]
 	ld l, a
 	ld h, 0
@@ -639,7 +639,7 @@ Func_22f6::
 	inc [hl]
 	ret
 
-Func_2363::
+GetSpriteGFXPointers::
 	ld a, [wdb1f]
 	cp $14
 	jr c, .sprites1
@@ -680,7 +680,7 @@ Func_2363::
 	ld de, Sprites00to13GFXPointers
 	ret
 
-Func_23a6::
+UpdateTileAnimation::
 	ldh a, [hFade]
 	and a
 	ret nz
@@ -695,6 +695,7 @@ Func_23a6::
 	homecall Func_01c_4000
 	ret
 
+; TODO: unreferenced data block, classify type
 unk_23c5::
 	db $05, $00, $00, $00, $00, $00, $00, $0a, $0a, $0a, $14, $14, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $0a, $0a, $0a, $0a, $0a, $00, $00, $08, $08, $08, $08, $00, $00, $00, $00, $0a, $0a, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 
@@ -727,7 +728,7 @@ LoadMapAttrs::
 
 ; load map layout?
 	ld a, $98
-	ld [wd0ba + 1], a
+	ld [wd0bb], a
 	ld a, $00
 	ld [wd0ba], a
 	ldh a, [hMapWidth]
@@ -786,62 +787,62 @@ ENDR
 	ld [wd0c4 + 1], a
 	ret
 
-Func_24be::
-	call Func_257c
-	call Func_24d1
-	call Func_24e6
-	call Func_2529
-	call Func_26e1
-	call Func_254a
+_LoadMap::
+	call LoadMapLayout
+	call SetupMapLayoutFlagPatches
+	call SetupCrystalMines
+	call GetMapLayoutPointer
+	call _BuildBlockmap
+	call LoadMapTileAttrs
 	ret
 
-Func_24d1::
-	ld a, [wd0f4]
+SetupMapLayoutFlagPatches::
+	ld a, [wMapType]
 	and a
 	ret z
-	cp 5
+	cp MAPTYPE_CRYSTAL_MINES_P1
 	ret z
 
-	homecall Func_01e_41bf
+	homecall ApplyMapLayoutFlagPatchesInit
 	ret
 
-Func_24e6::
+SetupCrystalMines::
 	ld a, [hMapGroup]
-	cp 1
+	cp MAPGROUP_GROUP_01
 	ret nz
 
 	ld a, [hMapNumber]
-	cp $23
-	jr z, .asm_2504
-	cp $24
-	jr z, .asm_2504
-	cp $25
-	jr z, .asm_2504
-	cp $26
-	jr z, .asm_2504
-	cp $27
-	jr z, .asm_2504
+	cp MAP_CRYSTAL_MINES_P1
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P2
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P3
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P4
+	jr z, .crystal_mines
+	cp MAP_CRYSTAL_MINES_P5
+	jr z, .crystal_mines
 	ret
 
-.asm_2504
-	ld a, [wd0f4]
-	cp 1
-	jr z, .asm_251c
-	cp 2
-	jr z, .asm_251c
-	cp 3
-	jr z, .asm_251c
-	cp 4
-	jr z, .asm_251c
-	cp 5
-	jr z, .asm_251c
+.crystal_mines
+	ld a, [wMapType]
+	cp MAPTYPE_CRYSTAL_MINES_P2
+	jr z, .do_special
+	cp MAPTYPE_CRYSTAL_MINES_P3
+	jr z, .do_special
+	cp MAPTYPE_CRYSTAL_MINES_P4
+	jr z, .do_special
+	cp MAPTYPE_CRYSTAL_MINES_P5
+	jr z, .do_special
+	cp MAPTYPE_CRYSTAL_MINES_P1
+	jr z, .do_special
 	ret
 
-.asm_251c
-	homecall Func_01e_4194
+.do_special
+	homecall _ApplyMapLayoutFlagPatches
 	ret
 
-Func_2529::
+GetMapLayoutPointer::
 	ld hl, wMapLayout
 	ldh a, [hMapOffsetY]
 	ld b, a
@@ -867,70 +868,70 @@ Func_2529::
 	ld [wMapLayoutPointer + 1], a
 	ret
 
-Func_254a::
+LoadMapTileAttrs::
 	ld a, [wMapGBCAttrPointer]
 	ld l, a
 	ld a, [wMapGBCAttrPointer + 1]
 	ld h, a
-	ld de, wce00
-.asm_2555
+	ld de, wMapTileAttrs
+.loop
 	ld a, [hli]
-	cp $ff
-	jr z, .asm_255e
+	cp -1
+	jr z, .load_defaults
 	ld [de], a
 	inc de
-	jr .asm_2555
+	jr .loop
 
-.asm_255e
-	call Func_2c03
+.load_defaults
+	call LoadDefaultTileAttrs
 	ld a, [wMapCollisionsPointer]
 	ld l, a
 	ld a, [wMapCollisionsPointer + 1]
 	ld h, a
-	ld de, wcf00
+	ld de, wMapCollision
 	ld a, e
 	ld [wMapCollisionsPointer], a
 	ld a, d
 	ld [wMapCollisionsPointer + 1], a
-.asm_2574
+.loop2
 	ld a, [hli]
-	cp $ff
+	cp -1
 	ret z
 	ld [de], a
 	inc de
-	jr .asm_2574
+	jr .loop2
 
-Func_257c::
+LoadMapLayout::
 	ld a, [wMapLayoutPointer]
 	ld l, a
 	ld a, [wMapLayoutPointer + 1]
 	ld h, a
 	ld a, [hli]
-	ld [wd0f4], a
+	ld [wMapType], a
 	ld de, wMapLayout
 	ldh a, [hMapHeight]
 	ld b, a
-.asm_258e
+.row
 	ldh a, [hMapWidth]
 	ld c, a
-.asm_2591
+.col
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec c
-	jr nz, .asm_2591
+	jr nz, .col
 	dec b
-	jr nz, .asm_258e
+	jr nz, .row
 	ret
 
-Func_259b::
-	call Func_0a0a
-	call Func_0b1b
+LoadMapPalettes2::
+	call LoadMapBGPalettes
+	call LoadExtraPalettes
 	ret
 
-Func_25a2::
-	call Func_0a0a
-	call Func_0a46
+LoadMapPalettes1::
+	call LoadMapBGPalettes
+	call LoadBattlePalettes
 	ret
 
 LoadTilesetHeader::
@@ -976,154 +977,3 @@ LoadTilesetHeader::
 	rst Bankswitch
 	jp .load_tileset ; jr
 
-Func_25d6::
-	ld a, [wLoadedROMBank]
-	push af
-	ld hl, wdae3
-	ld e, [hl]
-	inc hl
-.asm_25df
-	ld a, l
-	cp e
-	jr nc, .asm_25ed
-
-	ld a, [hli]
-	push hl
-	push de
-	call Func_263e
-	pop de
-	pop hl
-	jr .asm_25df
-
-.asm_25ed
-	pop af
-	rst Bankswitch
-
-.asm_25ef
-	ld a, $e4
-	ld [wdae3], a
-	ret
-
-Func_25f5::
-	xor a
-	ld [wdae2], a
-	jr Func_25d6.asm_25ef
-
-Func_25fb::
-	cp $7f
-	ret nc
-	or a
-	jr nz, Func_2612
-
-; SoundID == 0
-	call Func_25f5
-	xor a
-	call Func_2612
-	push hl
-	push de
-	push bc
-	call Func_25d6
-	pop bc
-	pop de
-	pop hl
-	ret
-
-Func_2612::
-	push hl
-	ld hl, wdae2
-	bit 0, [hl]
-	jr z, .asm_261e
-	cp $53
-	jr c, .exit
-
-.asm_261e
-	ld hl, wdae3
-	ld l, [hl]
-	ld [hl], a
-	ld l, LOW(wdae3)
-	ld a, [hl]
-	cp LOW(wdaeb)
-	jr nc, .exit
-	inc [hl]
-
-.exit
-	pop hl
-	ret
-
-Func_262d::
-	call Func_25f5
-	ld a, [wLoadedROMBank]
-	push af
-	ld a, [wd091]
-	rst Bankswitch
-	call $4006
-	pop af
-	rst Bankswitch
-	ret
-
-Func_263e::
-; Load sound bank?
-	ld e, a
-	cp $53
-	jr c, .asm_2677
-	cp $65
-	jr c, .asm_2657
-	cp $6d
-	jr c, .asm_265b
-	cp $76
-	jr c, .asm_2653
-
-	ld a, $1d
-	jr .asm_265d
-
-.asm_2653
-	ld a, $1d
-	jr .asm_265d
-
-.asm_2657
-	ld a, $02
-	jr c, .asm_265d ; jr
-
-.asm_265b
-	ld a, $03
-
-.asm_265d
-	ld hl, wd091
-	cp [hl]
-	jr z, .asm_2672
-
-	ld d, a
-	push de
-	ld e, 0
-	ld a, [wd091]
-	call .asm_2672
-	pop de
-	ld a, d
-	ld [wd091], a
-
-.asm_2672
-	rst Bankswitch
-	ld a, e
-	jp $4003
-
-.asm_2677
-	ld a, [wd091]
-	jr .asm_2672
-
-Func_267c::
-	ldh a, [rLCDC]
-	bit 7, a ; LCDCF_ON
-	ret z
-	call Func_25d6
-	ei
-	xor a
-	ld [hVBlank], a
-.asm_2689
-	halt
-	ld a, [hVBlank]
-	or a
-	jr z, .asm_2689
-	ret
-
-unk_2691::
-	ds $40, 0

@@ -2,13 +2,13 @@
 Music_Routes1_Ch1:
 	sound_init 8, \ ; speed
 	           DUTY_25, DUTY_12, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           0, 0, \ ; vibrato
 	           $86, $12, $85 ; unknown 2
 	speed 7
 	stereo_panning $4
 	fine_pitch $2
-	unknown_music_e9 $a1
+	volume_envelope $a1
 	transpose -11
 	mark_loop ;------
 	duty_cycle DUTY_50, DUTY_75
@@ -149,13 +149,13 @@ Music_Routes1_Ch1:
 Music_Routes1_Ch2:
 	sound_init 8, \ ; speed
 	           DUTY_25, DUTY_25, \ ; duty cycle
-	           $b1, \ ; unknown 1
+	           $b1, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 7
 	stereo_panning $4
 	fine_pitch $2
-	unknown_music_e9 $91
+	volume_envelope $91
 	mark_loop ;------
 	transpose -23
 	duty_cycle DUTY_12, DUTY_12

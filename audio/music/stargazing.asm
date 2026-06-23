@@ -2,15 +2,15 @@
 Music_Stargazing_Ch1:
 	sound_init 8, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 7
-	unknown_volume $5
+	envelope_setting $5
 	duty_cycle DUTY_50, DUTY_50
 	transpose -10
 	stereo_panning STEREO_LEFT
-	unknown_music_e9 $98
+	volume_envelope $98
 	mark_loop ;------
 	octave 3
 	note B_, 2
@@ -181,13 +181,13 @@ Music_Stargazing_Ch1:
 Music_Stargazing_Ch2:
 	sound_init 8, \ ; speed
 	           DUTY_50, DUTY_50, \ ; duty cycle
-	           $61, \ ; unknown 1
+	           $61, \ ; volume envelope
 	           5, 2, \ ; vibrato
 	           $8b, $26, $b5 ; unknown 2
 	speed 7
 	stereo_panning $4
 	transpose -10
-	unknown_music_e9 $81
+	volume_envelope $81
 	duty_cycle DUTY_25, DUTY_50
 	mark_loop ;------
 	octave 4

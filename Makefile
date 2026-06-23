@@ -17,7 +17,8 @@ SOURCES := \
 	home.asm \
 	main.asm \
 	wram.asm \
-	hram.asm
+	hram.asm \
+	sram.asm
 
 OBJS := $(SOURCES:%.asm=%.o)
 

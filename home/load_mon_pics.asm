@@ -1,4 +1,4 @@
-Func_0cfa::
+LoadMonPic::
 	ld a, [_BANKNUM]
 	push af
 	ld a, $27
@@ -16,11 +16,11 @@ Func_0cfa::
 	ld l, a
 	push hl
 	ld bc, $240
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld e, a
-	call Func_0b46
-	ld a, [wd08a]
+	call AdvanceBattleScript
+	ld a, [wBattleScriptByte]
 	ld d, a
 	pop hl
 	call CopyBytesVRAM
@@ -28,7 +28,7 @@ Func_0cfa::
 	rst Bankswitch
 	ret
 
-Func_0d2e::
+LoadMonPic_vTiles9440::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wd9e5]
@@ -49,7 +49,7 @@ Func_0d2e::
 	rst Bankswitch
 	ret
 
-Func_0d52::
+LoadMonPic_vTiles90d0::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wd9e5]
@@ -112,7 +112,7 @@ LoadMonPicBank::
 	rst Bankswitch
 	ret
 
-Func_0da2::
+LoadEnemyMonPic::
 	ld a, [_BANKNUM]
 	push af
 

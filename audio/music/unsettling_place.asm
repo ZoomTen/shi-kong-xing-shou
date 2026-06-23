@@ -1,12 +1,12 @@
 Music_UnsettlingPlace_Ch1:
 	sound_init 6, \ ; speed
 			   DUTY_50, DUTY_50, \ ; duty cycle
-			   $c1, \ ; unknown 1
+			   $c1, \ ; volume envelope
 			   5, 2, \ ; vibrato
 			   $8b, $26, $b5 ; unknown 2       
 	stereo_panning $4
-	unknown_volume $5
-	unknown_music_e9 $a1
+	envelope_setting $5
+	volume_envelope $a1
 	speed 7
 	fine_pitch $1
 	duty_cycle DUTY_50, DUTY_50
@@ -113,12 +113,12 @@ Music_UnsettlingPlace_Ch1:
 Music_UnsettlingPlace_Ch2:
 	sound_init 6, \ ; speed
 			   DUTY_50, DUTY_50, \ ; duty cycle
-			   $c1, \ ; unknown 1
+			   $c1, \ ; volume envelope
 			   5, 2, \ ; vibrato
 			   $8b, $26, $b5 ; unknown 2
 	speed 7
 	fine_pitch $2
-	unknown_music_e9 $11
+	volume_envelope $11
 	mark_loop2 ;------
 	transpose -24
 	duty_cycle DUTY_25, DUTY_25

@@ -1,0 +1,670 @@
+@org $5c, $458c:
+	init NAME_3A, PIC_63;
+@org $5c, $458f:
+	text "再見了～我要進";
+	line "行我的第二個深";
+	cont "奧的沈思了⋯";
+	done;
+
+@org $5c, $45b8:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $45bb:
+	text "我⋯我回來了﹗";
+	line "嗚嗚嗚～媽媽﹗";
+	done;
+
+@org $5c, $45d3:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $45d6:
+	text "怎麼回事﹖";
+	line "怎麼都沒有人﹖";
+	para "發生了什麼事﹖";
+	done;
+
+@org $5c, $45fb:
+	init NAME_BLANK, PIC_16;
+@org $5c, $45fe:
+	text "哼﹗我就知道﹗";
+	line "原來海青是人魚";
+	para "";
+	db $f1, $1d; #"變"
+	text "";
+	db $51; #"?"
+	text "";
+	db $35; #"?"
+	text "她和人魚";
+	line "";
+	db $f1, $51; #"的"
+	text "對話﹐全都被";
+	para "";
+	db $f2, $ad; #"我"
+	text "聽見了﹗";
+	line "哼﹗";
+	cont "";
+	db $f1, $dd; #"燒"
+	text "死她﹐為死去";
+	line "的小孩報仇﹗";
+	done;
+
+@org $5c, $465e:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $4661:
+	text "安東﹖﹖﹗";
+	line "這是怎麼回事﹖";
+	done;
+
+@org $5c, $4678:
+	init NAME_39, PIC_62;
+@org $5c, $467b:
+	text "海⋯海藍⋯";
+	line "是人魚的事⋯";
+	cont "";
+	db $f2, $60; #"被"
+	text "發現了⋯";
+	line "呃⋯⋯";
+	para "他們紅著眼睛⋯";
+	line "失去了理智⋯";
+	cont "強行⋯⋯";
+	line "捉走了海藍⋯";
+	line "呃⋯呃⋯⋯";
+	done;
+
+@org $5c, $46dc:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $46df:
+	text "振作一點﹐安東";
+	line "﹗";
+	done;
+
+@org $5c, $46f0:
+	init NAME_39, PIC_62;
+@org $5c, $46f3:
+	text "我⋯我⋯";
+	line "";
+	db $f2, $c8; #"沒"
+	text "有辦法⋯";
+	cont "保護海藍⋯";
+	para "請⋯請你們⋯";
+	line "一定要⋯救她⋯";
+	done;
+
+@org $5c, $4729:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $472c:
+	text "好的﹗";
+	line "我一定會的﹗";
+	cont "安東﹐不要再說";
+	line "話了﹗";
+	line "振作些﹗";
+	para "我這就去救回海";
+	line "藍﹗";
+	done;
+
+@org $5c, $476c:
+	init NAME_39, PIC_62;
+@org $5c, $476f:
+	text "謝⋯謝⋯⋯";
+	line "海⋯海藍⋯";
+	para "雖然妳騙了我⋯";
+	line "但是⋯我⋯";
+	cont "";
+	db $f2, $ad; #"我"
+	text "";
+	db $65; #"?"
+	text "是⋯⋯";
+	line "愛⋯⋯";
+	cont "";
+	db $f2, $1c; #"著"
+	text "";
+	db $c7; #"?"
+	text "";
+	db $c7; #"?"
+	text "";
+	db $c7; #"?"
+	text "";
+	line "妳⋯⋯⋯";
+	done;
+
+@org $5c, $47b6:
+	init NAME_BALLOT, PIC_2C;
+@org $5c, $47b9:
+	text "安東﹗﹗﹗﹗";
+	line "";
+	db $f1, $c8; #"可"
+	text "惡﹗";
+	para "為什麼會這樣﹖";
+	line "安東﹗﹗";
+	para "你放心﹐我一定";
+	line "會救出海藍的﹗";
+	done;
+
+@org $5c, $47fc:
+	init NAME_BLANK, PIC_16;
+@org $5c, $47ff:
+	text "哼﹗我就知道﹗";
+	para "原來海青是人魚";
+	line "";
+	db $f1, $1d; #"變"
+	text "";
+	db $51; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	cont "她和人魚的對話";
+	line "﹐全都被我聽見";
+	line "了﹗";
+	para "哼﹗燒死她﹐為";
+	line "死去的小孩報仇";
+	done;
+
+@org $5c, $485a:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $485d:
+	text "糟糕～";
+	line "";
+	db $f2, $57; #"這"
+	text "要怎麼辦﹖";
+	done;
+
+@org $5c, $486f:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $4872:
+	text "魚之魂傳來了一";
+	line "陣聲音～";
+	done;
+
+@org $5c, $4889:
+	init NAME_42, PIC_6B;
+@org $5c, $488c:
+	text "到最高處～";
+	line "最高的地方～";
+	done;
+
+@org $5c, $48a2:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $48a5:
+	text "最高的地方﹖";
+	para "東漁市最高的地";
+	line "方﹖";
+	done;
+
+@org $5c, $48c2:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $48c5:
+	text "燈塔﹗﹗﹗";
+	line "";
+	db $f1, $b7; #"魚"
+	text "之魂的聲音﹐";
+	cont "";
+	db $f1, $43; #"是"
+	text "指燈塔嗎﹖";
+	line "儘快到達吧﹗";
+	done;
+
+@org $5c, $48f2:
+	init NAME_3F, PIC_6A;
+@org $5c, $48f5:
+	text "喀囉～喀喀喀～";
+	done;
+
+@org $5c, $4902:
+	init NAME_42, PIC_6B;
+@org $5c, $4905:
+	text "丟下吧～";
+	line "丟下我吧～";
+	done;
+
+@org $5c, $4914:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $4917:
+	text "將魚之魂丟下嗎";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	done;
+
+@org $5c, $4928:
+	init NAME_BLANK, PIC_1F;
+@org $5c, $492b:
+	text "你這個妖女﹐殺";
+	line "害我兒子的兇手";
+	cont "我要妳償命﹗";
+	done;
+
+@org $5c, $4953:
+	init NAME_HELEN, PIC_3C;
+@org $5c, $4956:
+	text "安東⋯放開我﹗";
+	para "安東受了重傷﹐";
+	line "我要去救他﹗";
+	done;
+
+@org $5c, $497e:
+	init NAME_BLANK, PIC_20;
+@org $5c, $4981:
+	text "安東那傢伙﹐一";
+	line "定和妳串通好了";
+	para "頂著偉大科學";
+	line "家後代的名號﹐";
+	para "卻做這種見不得";
+	line "人的勾當﹗";
+	done;
+
+@org $5c, $49d1:
+	init NAME_HELEN, PIC_04;
+@org $5c, $49d4:
+	text "你胡說﹗";
+	line "他沒有﹗";
+	para "他不曉得這件事";
+	line "放開我～";
+	cont "";
+	db $f2, $ad; #"我"
+	text "要去救安東﹗";
+	done;
+
+@org $5c, $4a08:
+	init NAME_BLANK, PIC_20;
+@org $5c, $4a0b:
+	text "你們就一起到地";
+	line "";
+	db $f0, $7b; #"獄"
+	text "相見吧﹗";
+	done;
+
+@org $5c, $4a25:
+	init NAME_HELEN, PIC_04;
+@org $5c, $4a28:
+	text "不～不要﹗";
+	line "放開我﹗";
+	done;
+
+@org $5c, $4a3a:
+	init NAME_HELEN, PIC_3E;
+@org $5c, $4a3d:
+	text "這是⋯⋯海青﹗";
+	line "海青﹗";
+	cont "妳⋯⋯﹗";
+	done;
+
+@org $5c, $4a5a:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $4a5d:
+	text "媽媽﹗";
+	line "人家好怕啊﹗";
+	done;
+
+@org $5c, $4a70:
+	init NAME_BLANK, PIC_15;
+@org $5c, $4a73:
+	text "瓜⋯瓜瓜﹗";
+	line "我的瓜瓜﹗﹗﹗";
+	done;
+
+@org $5c, $4a89:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $4a8c:
+	text "是人魚姐姐救了";
+	line "我的⚬";
+	para "我看見了哦﹗";
+	line "";
+	db $f1, $65; #"有"
+	text "一隻好大～";
+	cont "";
+	db $f2, $cd; #"好"
+	text "大的章魚～";
+	line "殺了很多小朋友";
+	line "哦﹗";
+	done;
+
+@org $5c, $4ad6:
+	init NAME_BLANK, PIC_20;
+@org $5c, $4ad9:
+	text "這是怎麼回事⋯";
+	done;
+
+@org $5c, $4ae6:
+	signpost;
+@org $5c, $4ae7:
+	text "終於～";
+	line "";
+	db $f2, $b3; #"知"
+	text "道了嗎﹖";
+	cont "那又如何⋯⋯";
+	para "海青～原諒我的";
+	line "自私好嗎﹖";
+	para "安東～我⋯我⋯";
+	line "";
+	db $f2, $47; #"原"
+	text "諒我⋯⋯";
+	done;
+
+@org $5c, $4b2d:
+	init NAME_HELEN, PIC_3D;
+@org $5c, $4b30:
+	text "這就是安東的動";
+	line "力晶片⚬";
+	para "安東一直說著﹐";
+	line "";
+	db $f1, $58; #"要"
+	text "和你們一起探";
+	cont "險～";
+	para "眼神是多麼的興";
+	line "";
+	db $f1, $89; #"奮"
+	text "啊⋯⋯";
+	cont "";
+	db $f2, $64; #"安"
+	text "東⋯⋯";
+	done;
+
+@org $5c, $4b87:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $4b8a:
+	text "得到了晶片４﹗";
+	done;
+
+@org $5c, $4b96:
+	init NAME_HELEN, PIC_04;
+@org $5c, $4b99:
+	text "巴洛特﹐我會堅";
+	line "強的話下去的⚬";
+	para "為了海青～";
+	line "";
+	db $f2, $24; #"也"
+	text "為了安東⋯";
+	cont "讓我也加入你好";
+	line "嗎﹖";
+	cont "安東不能做的﹐";
+	line "就由我來完成吧";
+	line "﹗";
+	done;
+
+@org $5c, $4bf7:
+	init NAME_BALLOT, PIC_2E;
+@org $5c, $4bfa:
+	text "海藍＆水精靈加";
+	line "";
+	db $f2, $30; #"入"
+	text "";
+	db $5c; #"?"
+	text "";
+	db $5d; #"?"
+	text "⚬";
+	done;
+
+@org $5c, $4c0e:
+	init NAME_18, PIC_2F;
+@org $5c, $4c11:
+	text "如將海藍置於排";
+	line "頭﹐將可化為人";
+	para "魚﹐通過大海或";
+	line "湖泊⚬";
+	done;
+
+@org $5c, $4c42:
+	init NAME_BLANK, PIC_1C;
+@org $5c, $4c45:
+	text "萬歲～";
+	line "又可以到海邊玩";
+	cont "耍了﹗";
+	done;
+
+@org $5c, $4c5e:
+	init NAME_BLANK, PIC_14;
+@org $5c, $4c61:
+	text "安東⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "們錯怪他了⋯";
+	para "真不曉得要怎麼";
+	line "向海藍交待⋯";
+	cont "海藍⋯";
+	line "請原諒我們⋯";
+	done;
+
+@org $5c, $4ca6:
+	init NAME_HELEN, PIC_04;
+@org $5c, $4ca9:
+	text "我不恨你們﹐但";
+	line "也不喜歡你們⚬";
+	cont "離我遠一些﹗";
+	done;
+
+@org $5c, $4cd1:
+	init NAME_BLANK, PIC_14;
+@org $5c, $4cd4:
+	text "呃⋯是⋯是的⚬";
+	done;
+
+@org $5c, $4ce1:
+	init NAME_BLANK, PIC_13;
+@org $5c, $4ce4:
+	text "海藍⋯";
+	line "請原諒我們⋯⋯";
+	para "在那種情形下﹐";
+	line "大家都被仇恨沖";
+	cont "昏了頭⋯";
+	line "真是遺憾⋯";
+	done;
+
+@org $5c, $4d27:
+	init NAME_HELEN, PIC_04;
+@org $5c, $4d2a:
+	text "原諒與否﹐有什";
+	line "麼差別嗎﹖";
+	para "安東不會因此而";
+	line "";
+	db $f1, $df; #"活"
+	text "過來⋯";
+	done;
+
+@org $5c, $4d57:
+	init NAME_BLANK, PIC_15;
+@org $5c, $4d5a:
+	text "瓜瓜這次能平安";
+	line "回來﹐真是多虧";
+	cont "了你⋯";
+	para "該怎麼感謝你呢";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $4f; #"?"
+	text "";
+	db $d7; #"?"
+	text "";
+	db $af; #"?"
+	text "";
+	db $4a; #"?"
+	text "了﹗";
+	done;
+
+@org $5c, $4d90:
+	init NAME_BALLOT, PIC_2A;
+@org $5c, $4d93:
+	text "得到了";
+	line "";
+	db $f1, $8c; #"萬"
+	text "";
+	db $8d; #"?"
+	text "血清";
+	done;
+
+@org $5c, $4da1:
+	init NAME_BLANK, PIC_15;
+@org $5c, $4da4:
+	text "瓜瓜這次能平安";
+	line "回來﹐真是多虧";
+	cont "了你⋯";
+	line "謝謝你⚬";
+	done;
+
+@org $5c, $4dcc:
+	init NAME_BLANK, PIC_15;
+@org $5c, $4dcf:
+	text "瓜瓜回來了⋯";
+	done;
+
+@org $5c, $4ddb:
+	init NAME_BLANK, PIC_17;
+@org $5c, $4dde:
+	text "安東的死亡⋯";
+	line "都是我的錯⋯";
+	para "";
+	db $f2, $ad; #"我"
+	text "要是沒有嫉妒";
+	line "的話⋯";
+	cont "";
+	db $f2, $d7; #"就"
+	text "不會發生這種";
+	line "事了﹗";
+	cont "都是我不好⋯";
+	done;
+
+@org $5c, $4e2b:
+	init NAME_BLANK, PIC_18;
+@org $5c, $4e2e:
+	text "海藍⋯⋯";
+	line "真是抱歉～";
+	para "";
+	db $f2, $22; #"即"
+	text "使安東走了﹐";
+	line "也要好好的活下";
+	cont "";
+	db $f2, $bc; #"去"
+	text "哦﹗";
+	done;
+
+@org $5c, $4e60:
+	init NAME_HELEN, PIC_04;
+@org $5c, $4e63:
+	text "⋯⋯⋯";
+	done;
+
+@org $5c, $4e68:
+	init NAME_BLANK, PIC_1D;
+@org $5c, $4e6b:
+	text "喂～老公～";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $d7; #"?"
+	text "說嘛﹗";
+	para "那海藍果然怪怪";
+	line "";
+	db $f1, $51; #"的"
+	text "";
+	db $35; #"?"
+	text "";
+	cont "原來真的是人魚";
+	line "";
+	db $f1, $1d; #"變"
+	text "";
+	db $51; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	done;
+
+@org $5c, $4ea2:
+	init NAME_BLANK, PIC_1D;
+@org $5c, $4ea5:
+	text "啊﹗海藍～";
+	line "是妳啊﹗";
+	done;
+
+@org $5c, $4eb8:
+	init NAME_BLANK, PIC_1F;
+@org $5c, $4ebb:
+	text "南方的海島上﹐";
+	line "";
+	db $f1, $65; #"有"
+	text "座地熱城⚬";
+	para "那裡是一個將地";
+	line "";
+	db $f0, $39; #"熱"
+	text "轉換成電力的";
+	cont "";
+	db $f1, $8d; #"能"
+	text "";
+	db $96; #"?"
+	text "站⚬";
+	done;
+
+@org $5c, $4ef8:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $4efb:
+	text "媽媽～琳琳表妹";
+	line "說要寄布拉布拉";
+	para "超人模型給我﹗";
+	line "怎麼還沒有來﹖";
+	cont "我．要．啦﹗﹗";
+	done;
+
+@org $5c, $4f3e:
+	init NAME_BLANK, PIC_1F;
+@org $5c, $4f41:
+	text "不要吵﹗";
+	line "再吵小心被章魚";
+	cont "吃掉﹗";
+	done;
+
+@org $5c, $4f5e:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $4f61:
+	text "章魚﹗﹗嗚～～";
+	line "嗚嗚～";
+	done;
+
+@org $5c, $4f73:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $4f76:
+	text "這是⋯⋯布拉布";
+	line "拉超人﹖﹖﹗﹗";
+	cont "太．棒．了﹗";
+	para "這是琳琳表妹要";
+	line "給我的嗎﹖";
+	para "太．高．興．了";
+	line "謝謝你～";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $4f; #"?"
+	text "";
+	db $d7; #"?"
+	text "送給你了";
+	line "好高興﹗";
+	done;
+
+@org $5c, $4fd9:
+	init NAME_BALLOT, PIC_2A;
+@org $5c, $4fdc:
+	text "得到了";
+	line "縮地射線";
+	done;
+
+@org $5c, $4fe9:
+	init NAME_BLANK, PIC_1E;
+@org $5c, $4fec:
+	text "哇～哇～布拉布";
+	line "拉超人耶﹗";
+	cont "哈哈哈哈～";
+	line "";
+	db $f2, $ad; #"我"
+	text "要帶去學校給";
+	cont "大家看﹗";
+	done;
+
+@org $5c, $5025:
+	init NAME_BLANK, PIC_19;
+@org $5c, $5028:
+	text "安東～嗚嗚嗚～";
+	done;
+
+@org $5c, $5035:
+	init NAME_BLANK, PIC_1B;
+@org $5c, $5038:
+	text "我曾看過人魚喲";
+	line "";
+	db $f3, $1e; #"長"
+	text "得還真是漂亮";
+	done;

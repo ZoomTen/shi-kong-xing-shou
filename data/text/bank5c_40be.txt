@@ -1,0 +1,32 @@
+@org $5c, $40be:
+	init NAME_14, PIC_25;
+@org $5c, $40c1:
+	text "需要妮可治療嗎";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	line "";
+	getchoice String_1cc5;
+@org $5c, $40d6:
+	init NAME_1A, PIC_25;
+@org $5c, $40d9:
+	text "這裡是星獸膠囊";
+	line "";
+	db $f1, $39; #"存"
+	text "放銀行⚬";
+	para "需要艾娜的服務";
+	line "嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $5c, $4105:
+	init NAME_19, PIC_22;
+@org $5c, $4108:
+	text "需要什麼服務嗎";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	line "";
+	buysellcancel;
+	text "";
+	done;
+

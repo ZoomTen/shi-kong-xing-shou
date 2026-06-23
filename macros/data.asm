@@ -25,6 +25,13 @@ MACRO dbw
 	dw \2
 ENDM
 
+MACRO found_item_event ; facing, flag ptr, flag bit, item name category, item name index
+	db \1
+	dw \2
+	db \3, \4, \5
+	db 0, 0
+ENDM
+
 MACRO dbbw
 	db \1, \2
 	dw \3
@@ -33,6 +40,13 @@ ENDM
 MACRO dbww
 	db \1
 	dw \2, \3
+ENDM
+
+MACRO tileanim ; bytes per frame, frame count, VRAM dest, frame-pointer table
+	dw \1
+	db \2
+	dw \3
+	dw \4
 ENDM
 
 MACRO dbwww
@@ -120,6 +134,16 @@ MACRO dbaw
 ; odd way of defining a pointer where the second byte
 ; is skipped
 	dw BANK(\1), \1
+ENDM
+
+MACRO layout_patch
+; \1 flag byte address
+; \2 bit to test in that flag byte
+; \3 column in wMapLayout
+; \4 row in wMapLayout
+; \5 block value to write
+	dw \1
+	db \2, \3, \4, \5
 ENDM
 
 MACRO dbaw2

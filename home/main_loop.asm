@@ -39,19 +39,20 @@ _Start::
 	call ClearMemory
 	call WriteOAMDMACodeToHRAM
 
-	ld hl, Func_106f
+	ld hl, LCDSplit_Idle
 	ld a, l
 	ld [wd9e0], a
 	ld a, h
-	ld [wd9e0 + 1], a
+	ld [wd9e1], a
 	ei
 	ld a, 2
-	ld [wd091], a
-	call Func_262d
+	ld [wCurrentSoundBank], a
+	call InitSound
 
 ; Check SRAM
 	call SRAMTest
 
+StartGame::
 	ld a, $03
 	ldh [hMapNumber], a
 	ld a, 0
@@ -60,15 +61,15 @@ _Start::
 	ld [wd0df], a
 	ld [wd0ef], a
 	ld a, 0
-	ld [hFFBA], a
+	ld [hMapPredef], a
 	call LoadMapAndScriptPredef
-	ld a, $12
+	ld a, GAMEMODE_INTRO_VAST_FAME
 	ld [wTargetMode], a
 
 JumpToGameMode::
-	ld bc, wcab0
+	ld bc, wPaletteBuffer
 	xor a
-	ldh [hFFC4], a
+	ldh [hPaletteFadeState], a
 	call FadeOutPalette
 	ld de, GameModes
 	ld a, [wTargetMode]

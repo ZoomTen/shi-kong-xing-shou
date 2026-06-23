@@ -53,7 +53,24 @@ MACRO choice
 	db TX_CHOICE
 ENDM
 
-	const_next $ea
+	const TX_BUYSELLCANCEL ; $e7
+MACRO buysellcancel
+; render the buy/sell/cancel option text (Text_e7)
+	db TX_BUYSELLCANCEL
+ENDM
+
+	const TX_BUYSELLCANCEL_MENU ; $e8
+MACRO buysellcancel_menu
+; buy/sell/cancel menu interaction (Text_e8)
+	db TX_BUYSELLCANCEL_MENU
+ENDM
+
+	const TX_INIT2 ; $e9
+MACRO text_init2
+; name, face (alias of text_init -> Text_Init)
+	db TX_INIT2, \1, \2
+ENDM
+
 	const TX_ITEMNAME2 ; $ea
 MACRO itemname2
 	db TX_ITEMNAME2

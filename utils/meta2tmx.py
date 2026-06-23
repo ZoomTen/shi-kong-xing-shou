@@ -13,17 +13,15 @@ with open(sys.argv[1], 'rb') as meta:
 	
 	row = meta.read(2)
 	while row:
-		rows.append((row[0]+1, row[1]+1))
+		rows.append(tuple(b + 1 for b in row))  # handle odd trailing byte
 		row = meta.read(2)
-	
+
 	meta_height = len(rows)
-	
+
 	csv = ''
 	for i in range(len(rows)):
-		if i == len(rows)-1:
-			csv += '\n%d, %d' % rows[i]
-		else:
-			csv += '\n%d, %d,' % rows[i]
+		sep = '' if i == len(rows)-1 else ','
+		csv += '\n' + ', '.join(str(x) for x in rows[i]) + sep
 	
 	map_ = root.createElement('map')
 	map_.setAttribute('orientation', 'orthogonal')

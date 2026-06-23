@@ -1,4 +1,4 @@
-Func_0b65::
+PrintMenuText::
 	call DelayFrame
 	push hl
 
@@ -49,18 +49,18 @@ Menu_CheckCharacter_Commands::
 
 .commands
 	dw MenuText_Skip ; $e0
-	dw Func_0bc7     ; $e1
-	dw Func_0bec     ; $e2
+	dw MenuText_e1     ; $e1
+	dw MenuText_e2     ; $e2
 	dw MenuText_Skip ; $e3
 	dw MenuText_Done ; $e4
-	dw Func_0c33     ; $e5
-	dw Func_0c17     ; $e6
-	dw Func_0c6a     ; $e7
-	dw Func_0c42     ; $e8
-	dw Func_0c51     ; $e9
+	dw MenuText_e5     ; $e5
+	dw MenuText_e6     ; $e6
+	dw MenuText_e7     ; $e7
+	dw MenuText_e8     ; $e8
+	dw MenuText_e9     ; $e9
 	dw MenuText_Skip ; $ea
 	dw MenuText_Skip ; $eb
-	dw Func_0bfe     ; $ec
+	dw MenuText_ec     ; $ec
 	dw MenuText_Done ; $ed
 	dw MenuText_Skip ; $ee
 	dw MenuText_Skip ; $ef
@@ -68,10 +68,10 @@ Menu_CheckCharacter_Commands::
 MenuText_Skip::
 	jp Menu_CheckCharacter
 
-Func_0bc7::
+MenuText_e1::
 	ld a, [wd9d0]
 	ld l, a
-	ld a, [wd9d0 + 1]
+	ld a, [wd9d1]
 	ld h, a
 	ld de, wd9ce
 	ld bc, $0204
@@ -81,25 +81,25 @@ Func_0bc7::
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop hl
 	push hl
 	jp Menu_CheckCharacter
 
-Func_0bec::
+MenuText_e2::
 	pop hl
-	call Func_1fb9
+	call WaitTextboxInput
 	ret
 
-Func_0bf1::
+MenuText_ClearBox::
 	ld bc, $480
 	ld hl, $8b60
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
 
-Func_0bfe::
-	call Func_1fb9
+MenuText_ec::
+	call WaitTextboxInput
 	ld bc, $480
 	ld hl, $8b60
 	xor a
@@ -111,7 +111,7 @@ Func_0bfe::
 	push hl
 	jp Menu_CheckCharacter
 
-Func_0c17::
+MenuText_e6::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_0c22
@@ -128,36 +128,36 @@ Func_0c17::
 	push hl
 	jp Menu_CheckCharacter
 
-Func_0c33::
+MenuText_e5::
 	ld a, [wd9e9]
 	ld d, a
-	farcall Func_01e_4266
+	farcall PrintEquipmentName
 	pop hl
 	push hl
 	jp Menu_CheckCharacter
 
-Func_0c42::
+MenuText_e8::
 	ld a, [wd9f3]
 	ld d, a
-	farcall Func_01e_4275
+	farcall PrintItemName
 	pop hl
 	push hl
 	jp Menu_CheckCharacter
 
-Func_0c51::
+MenuText_e9::
 	ld hl, wd86a
 	ld a, $b6
-	ld [wd08b], a
+	ld [wMenuTextX], a
 	ld a, $c2
-	ld [wd08c], a
+	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
-	call Func_0b65
+	call PrintMenuText
 	pop hl
 	push hl
 	jp Menu_CheckCharacter
 
-Func_0c6a::
+MenuText_e7::
 	pop hl
 	ld a, l
 	ld [wdcd3], a
@@ -171,7 +171,7 @@ Func_0c6a::
 	ld [wd9d6], a
 	ld a, [wd9d4]
 	ld l, a
-	ld a, [wd9d4 + 1]
+	ld a, [wd9d5]
 	ld h, a
 	push hl
 	jp Menu_CheckCharacter
@@ -184,7 +184,7 @@ Menu_CheckCharacter_Continue::
 	ld [wCurrentCharacterByte], a
 	ld a, [wCharacterTilePos]
 	ld c, a
-	ld a, [wd08b]
+	ld a, [wMenuTextX]
 	add c
 	ld c, a
 	ld [wcbf3], a
@@ -224,7 +224,7 @@ ENDR
 	ld a, 1
 	ld [wCharacterTileTransferStatus], a
 	call DelayFrame
-	ld a, [wd08c]
+	ld a, [wMenuTextEndX]
 	ld c, a
 	ld a, [wCharacterTilePos]
 	add 4

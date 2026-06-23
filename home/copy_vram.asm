@@ -7,9 +7,9 @@ FarCopyBytes_vTiles0::
 	ld a, [wTempBank]
 	rst Bankswitch
 ; Source address
-	ld a, [wd98f]
+	ld a, [wCopySrc]
 	ld l, a
-	ld a, [wd98f + 1]
+	ld a, [wCopySrc + 1]
 	ld h, a
 ; Size of image
 	ld a, [hli]
@@ -173,7 +173,7 @@ PlaceTilemap::
 
 .next_row
 	pop bc
-	ldh a, [hFF92]
+	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
 	jr nz, PlaceTilemap
@@ -199,14 +199,14 @@ FadeInPalette::
 	ret nz
 
 ; CGB only from here
-	ldh a, [hFF9D]
+	ldh a, [hFadeFrameCounter]
 	inc a
-	ldh [hFF9D], a
-	ld bc, unk_2b38
+	ldh [hFadeFrameCounter], a
+	ld bc, Palette_White
 	ld a, 1
-	ld [wd0b4], a
-	call Func_29c8
-	ldh a, [hFFC4]
+	ld [wPaletteFadeDirection], a
+	call UpdatePaletteFade
+	ldh a, [hPaletteFadeState]
 	and a
 	ret z
 

@@ -1,6 +1,6 @@
 MACRO newgroup
 ;\1: group id
-DEF MAPGROUP_\1 EQU const_value
+DEF MAPGROUP_\1 EQU const_value + 1
 DEF CURRENT_NUM_MAPGROUP_MAPS EQUS "NUM_\1_MAPS"
 DEF __map_value__ = 1
 	const_skip
