@@ -625,7 +625,7 @@ Func_02e_442d:
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Mode_SoundTbl_4478:
-	dr $b8478, $b847b
+	db SFX_10, SFX_27, SFX_17
 Mode_StatePtrs_447b:
 	dw Func_02e_4489
 	dw Func_02e_4523
@@ -1090,7 +1090,11 @@ Func_02e_46b0:
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Mode_DeltaTbl_4763:
-	dr $b8763, $b876d
+	db $00, $00
+	db $00, $30
+	db $28, $00
+	db $00, $d0
+	db $ff, $ff
 Func_02e_476d:
 	ld a, [wd98b]
 	and a
@@ -3690,7 +3694,11 @@ Func_02e_59a0:
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Mode_CoordTbl_5a5d:
-	dr $b9a5d, $b9a71
+	db $50, $78, $20, $28
+	db $50, $68, $20, $18
+	db $50, $88, $20, $38
+	db $50, $70, $20, $20
+	db $50, $80, $20, $30
 Func_02e_5a71:
 	ld a, [wd98b]
 	and a
@@ -5105,9 +5113,31 @@ MovementDeltas_02e_6360:
 	db $01, $02, $02, $03, $03, $00, $ff
 	db $01, $02, $03, $01, $02, $03, $01, $02, $03, $01, $02, $03, $00, $ff
 	db $03, $03
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 ScrollDeltas_02e_67ce:
-	dr $ba7ce, $ba94e
+	db $03, $03, $fd, $fd, $fd, $fd, $fd, $fd, $fd, $fd, $03, $03, $03, $03, $02, $02
+	db $02, $02, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $02, $02, $02, $02, $88, $04
+	db $04, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $fc, $fc, $88
+	db $fc, $fc, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $04, $04
+	db $88, $04, $04, $00, $00, $00, $00, $00, $fc, $fc, $00, $00, $00, $00, $00, $fc
+	db $fc, $00, $00, $00, $00, $00, $04, $04, $00, $00, $00, $00, $00, $04, $04, $00
+	db $00, $00, $00, $00, $fc, $fc, $00, $00, $00, $00, $00, $88, $02, $fe, $02, $fe
+	db $02, $fe, $02, $fe, $88, $02, $02, $02, $02, $02, $02, $02, $02, $88, $fe, $fe
+	db $fe, $fe, $fe, $fe, $fe, $fe, $88, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $88
+	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $88, $fc, $00, $fc, $00, $fc, $00, $fc
+	db $00, $88, $04, $00, $04, $00, $04, $00, $04, $00, $88, $02, $00, $02, $00, $02
+	db $00, $02, $00, $88, $fc, $00, $fc, $00, $04, $00, $04, $00, $88, $fc, $00, $fc
+	db $00, $fc, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $04, $00, $04
+	db $00, $04, $00, $00, $00, $fc, $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04
+	db $00, $00, $00, $00, $00, $fc, $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04
+	db $00, $00, $00, $00, $00, $88, $00, $fc, $00, $fc, $00, $fc, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $04, $00, $04, $00, $04, $00, $00, $00, $fc
+	db $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04, $00, $00, $00, $00, $00, $fc
+	db $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04, $00, $00, $00, $00, $88, $ff
+	db $ff, $ff, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
+	db $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $fe
+	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $fe
+	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $88
 MovementDeltas_02e_694e:
 	db $02, $03, $04, $ff
 	db $06, $07, $08, $00, $ff
@@ -5115,9 +5145,421 @@ MovementDeltas_02e_694e:
 	db $06, $07, $08, $08, $00, $ff
 	db $04, $05, $06, $00, $ff
 	db $02, $03, $ff
-; TODO: object/sprite anim data - classify (verify consumer)
-ObjectAnimData_02e_6970:
-	dr $ba970, $bae42
+; Object OAM animations, runtime-reached via wd1a0. Each = a frame-pointer table (dw -> frame)
+; immediately followed by its 9-byte OAM frames; some frames are shared across animations.
+ObjectAnim_02e_6970:
+	dw ObjectAnimFrame_02e_6972
+ObjectAnimFrame_02e_6972:
+	db $6c, $7c, $6c, $7c, $01, $04, $f1, $6e, $00
+ObjectAnim_02e_697b:
+	dw ObjectAnimFrame_02e_697d
+ObjectAnimFrame_02e_697d:
+	db $18, $18, $40, $68, $01, $02, $32, $71, $00
+ObjectAnim_02e_6986:
+	dw ObjectAnimFrame_02e_698a
+	dw ObjectAnimFrame_02e_6993
+ObjectAnimFrame_02e_698a:
+	db $48, $70, $18, $20, $01, $02, $96, $7d, $00
+ObjectAnimFrame_02e_6993:
+	db $50, $78, $20, $18, $03, $04, $96, $7d, $00
+ObjectAnim_02e_699c:
+	dw ObjectAnimFrame_02e_69a4
+	dw ObjectAnimFrame_02e_69ad
+	dw ObjectAnimFrame_02e_69b6
+	dw ObjectAnimFrame_02e_69bf
+ObjectAnimFrame_02e_69a4:
+	db $18, $40, $48, $90, $01, $01, $18, $73, $00
+ObjectAnimFrame_02e_69ad:
+	db $18, $10, $48, $60, $01, $01, $49, $73, $00
+ObjectAnimFrame_02e_69b6:
+	db $08, $28, $38, $78, $01, $01, $7a, $73, $00
+ObjectAnimFrame_02e_69bf:
+	db $28, $28, $58, $78, $01, $01, $ab, $73, $00
+ObjectAnim_02e_69c8:
+	dw ObjectAnimFrame_02e_69ce
+	dw ObjectAnimFrame_02e_69d7
+	dw ObjectAnimFrame_02e_69e0
+ObjectAnimFrame_02e_69ce:
+	db $20, $68, $f0, $18, $02, $03, $4d, $7d, $00
+ObjectAnimFrame_02e_69d7:
+	db $1c, $68, $ec, $18, $02, $03, $4d, $7d, $00
+ObjectAnimFrame_02e_69e0:
+	db $18, $68, $e8, $18, $02, $03, $4d, $7d, $00
+ObjectAnim_02e_69e9:
+	dw ObjectAnimFrame_02e_69ed
+	dw ObjectAnimFrame_02e_69f6
+ObjectAnimFrame_02e_69ed:
+	db $28, $18, $50, $68, $01, $03, $00, $00, $00
+ObjectAnimFrame_02e_69f6:
+	db $20, $28, $58, $78, $01, $03, $00, $00, $00
+ObjectAnim_02e_69ff:
+	dw ObjectAnimFrame_02e_6a03
+	dw ObjectAnimFrame_02e_6a0c
+ObjectAnimFrame_02e_6a03:
+	db $28, $18, $50, $68, $04, $05, $83, $71, $00
+ObjectAnimFrame_02e_6a0c:
+	db $20, $28, $58, $78, $04, $05, $83, $71, $00
+ObjectAnim_02e_6a15:
+	dw ObjectAnimFrame_02e_6a1b
+	dw ObjectAnimFrame_02e_6a24
+	dw ObjectAnimFrame_02e_6a2d
+ObjectAnimFrame_02e_6a1b:
+	db $10, $18, $40, $68, $00, $01, $00, $00, $00
+ObjectAnimFrame_02e_6a24:
+	db $10, $48, $38, $50, $02, $03, $00, $00, $00
+ObjectAnimFrame_02e_6a2d:
+	db $10, $48, $38, $50, $02, $03, $00, $00, $00
+ObjectAnim_02e_6a36:
+	dw ObjectAnimFrame_02e_6a3a
+	dw ObjectAnimFrame_02e_6a43
+ObjectAnimFrame_02e_6a3a:
+	db $10, $0c, $40, $60, $01, $01, $dc, $73, $00
+ObjectAnimFrame_02e_6a43:
+	db $10, $3c, $40, $90, $01, $01, $ed, $73, $00
+ObjectAnim_02e_6a4c:
+	dw ObjectAnimFrame_02e_6a56
+	dw ObjectAnimFrame_02e_6a5f
+	dw ObjectAnimFrame_02e_6a68
+	dw ObjectAnimFrame_02e_6a71
+	dw ObjectAnimFrame_02e_6a7a
+ObjectAnimFrame_02e_6a56:
+	db $40, $68, $10, $18, $01, $01, $00, $00, $00
+ObjectAnimFrame_02e_6a5f:
+	db $38, $67, $08, $17, $03, $03, $fe, $73, $00
+ObjectAnimFrame_02e_6a68:
+	db $38, $90, $08, $40, $04, $04, $1f, $74, $00
+ObjectAnimFrame_02e_6a71:
+	db $62, $66, $32, $16, $05, $05, $40, $74, $00
+ObjectAnimFrame_02e_6a7a:
+	db $61, $90, $31, $40, $06, $06, $61, $74, $00
+ObjectAnim_02e_6a83:
+	dw ObjectAnimFrame_02e_6a8d
+	dw ObjectAnimFrame_02e_6a96
+	dw ObjectAnimFrame_02e_6a9f
+	dw ObjectAnimFrame_02e_6aa8
+	dw ObjectAnimFrame_02e_6ab1
+ObjectAnimFrame_02e_6a8d:
+	db $1c, $20, $50, $70, $01, $03, $00, $00, $00
+ObjectAnimFrame_02e_6a96:
+	db $38, $10, $78, $60, $04, $05, $40, $74, $00
+ObjectAnimFrame_02e_6a9f:
+	db $08, $40, $38, $90, $05, $04, $1f, $74, $00
+ObjectAnimFrame_02e_6aa8:
+	db $08, $10, $38, $60, $04, $05, $fe, $73, $00
+ObjectAnimFrame_02e_6ab1:
+	db $38, $40, $78, $90, $05, $04, $61, $74, $00
+ObjectAnim_02e_6aba:
+	dw ObjectAnimFrame_02e_6a8d
+	dw ObjectAnimFrame_02e_6ac4
+	dw ObjectAnimFrame_02e_6acd
+	dw ObjectAnimFrame_02e_6ad6
+	dw ObjectAnimFrame_02e_6adf
+ObjectAnimFrame_02e_6ac4:
+	db $2c, $20, $60, $70, $04, $05, $82, $74, $00
+ObjectAnimFrame_02e_6acd:
+	db $1c, $30, $50, $80, $05, $04, $a3, $74, $00
+ObjectAnimFrame_02e_6ad6:
+	db $1c, $20, $50, $70, $04, $05, $c4, $74, $00
+ObjectAnimFrame_02e_6adf:
+	db $2c, $30, $60, $80, $05, $04, $e5, $74, $00
+ObjectAnim_02e_6ae8:
+	dw ObjectAnimFrame_02e_6aec
+	dw ObjectAnimFrame_02e_6af5
+ObjectAnimFrame_02e_6aec:
+	db $40, $68, $10, $18, $04, $06, $96, $7d, $00
+ObjectAnimFrame_02e_6af5:
+	db $58, $70, $28, $28, $07, $09, $96, $7d, $00
+ObjectAnim_02e_6afe:
+	dw ObjectAnimFrame_02e_6b02
+	dw ObjectAnimFrame_02e_6b0b
+ObjectAnimFrame_02e_6b02:
+	db $48, $68, $18, $18, $01, $03, $00, $00, $00
+ObjectAnimFrame_02e_6b0b:
+	db $48, $68, $20, $20, $04, $06, $00, $00, $00
+ObjectAnim_02e_6b14:
+	dw ObjectAnimFrame_02e_6b18
+	dw ObjectAnimFrame_02e_6b21
+ObjectAnimFrame_02e_6b18:
+	db $10, $18, $40, $68, $05, $08, $06, $75, $00
+ObjectAnimFrame_02e_6b21:
+	db $30, $f8, $60, $88, $09, $0a, $06, $75, $00
+ObjectAnim_02e_6b2a:
+	dw ObjectAnimFrame_02e_6b2e
+	dw ObjectAnimFrame_02e_6b37
+ObjectAnimFrame_02e_6b2e:
+	db $40, $d0, $10, $a0, $05, $08, $5f, $75, $00
+ObjectAnimFrame_02e_6b37:
+	db $60, $b0, $30, $d0, $09, $0a, $5f, $75, $00
+ObjectAnim_02e_6b40:
+	dw ObjectAnimFrame_02e_6b42
+ObjectAnimFrame_02e_6b42:
+	db $28, $68, $f0, $18, $01, $04, $a4, $71, $00
+ObjectAnim_02e_6b4b:
+	dw ObjectAnimFrame_02e_6b4d
+ObjectAnimFrame_02e_6b4d:
+	db $40, $88, $08, $38, $01, $04, $a4, $71, $00
+ObjectAnim_02e_6b56:
+	dw ObjectAnimFrame_02e_6b58
+ObjectAnimFrame_02e_6b58:
+	db $38, $78, $00, $28, $01, $04, $a4, $71, $00
+ObjectAnim_02e_6b61:
+	dw ObjectAnimFrame_02e_6b65
+	dw ObjectAnimFrame_02e_6b6e
+ObjectAnimFrame_02e_6b65:
+	db $20, $18, $50, $68, $01, $04, $06, $75, $00
+ObjectAnimFrame_02e_6b6e:
+	db $30, $f8, $60, $88, $05, $06, $06, $75, $00
+ObjectAnim_02e_6b77:
+	dw ObjectAnimFrame_02e_6b7b
+	dw ObjectAnimFrame_02e_6b84
+ObjectAnimFrame_02e_6b7b:
+	db $50, $d0, $20, $a0, $01, $04, $5f, $75, $00
+ObjectAnimFrame_02e_6b84:
+	db $60, $b0, $30, $d0, $05, $06, $5f, $75, $00
+ObjectAnim_02e_6b8d:
+	dw ObjectAnimFrame_02e_6b8f
+ObjectAnimFrame_02e_6b8f:
+	db $10, $18, $40, $68, $01, $02, $32, $71, $00
+ObjectAnim_02e_6b98:
+	dw ObjectAnimFrame_02e_6b9a
+ObjectAnimFrame_02e_6b9a:
+	db $20, $28, $50, $68, $04, $00, $fa, $6e, $00
+ObjectAnim_02e_6ba3:
+	dw ObjectAnimFrame_02e_6ba5
+ObjectAnimFrame_02e_6ba5:
+	db $38, $6c, $10, $24, $01, $03, $1f, $74, $00
+ObjectAnim_02e_6bae:
+	dw ObjectAnimFrame_02e_6bb0
+ObjectAnimFrame_02e_6bb0:
+	db $48, $70, $18, $20, $01, $03, $00, $00, $00
+ObjectAnim_02e_6bb9:
+	dw ObjectAnimFrame_02e_6bbb
+ObjectAnimFrame_02e_6bbb:
+	db $28, $74, $f8, $24, $01, $01, $a4, $71, $00
+ObjectAnim_02e_6bc4:
+	dw ObjectAnimFrame_02e_6bc6
+ObjectAnimFrame_02e_6bc6:
+	db $28, $48, $f8, $f8, $01, $01, $c5, $71, $00
+ObjectAnim_02e_6bcf:
+	dw ObjectAnimFrame_02e_6bd1
+ObjectAnimFrame_02e_6bd1:
+	db $28, $a4, $f8, $54, $01, $01, $e6, $71, $00
+ObjectAnim_02e_6bda:
+	dw ObjectAnimFrame_02e_6bdc
+ObjectAnimFrame_02e_6bdc:
+	db $18, $20, $48, $70, $01, $04, $32, $71, $00
+ObjectAnim_02e_6be5:
+	dw ObjectAnimFrame_02e_6be7
+ObjectAnimFrame_02e_6be7:
+	db $28, $68, $00, $18, $01, $04, $fc, $76, $00
+ObjectAnim_02e_6bf0:
+	dw ObjectAnimFrame_02e_6bf2
+ObjectAnimFrame_02e_6bf2:
+	db $20, $78, $f8, $28, $01, $04, $5f, $77, $00
+ObjectAnim_02e_6bfb:
+	dw ObjectAnimFrame_02e_6bff
+	dw ObjectAnimFrame_02e_6c08
+ObjectAnimFrame_02e_6bff:
+	db $38, $68, $08, $10, $01, $03, $e6, $71, $00
+ObjectAnimFrame_02e_6c08:
+	db $38, $68, $08, $10, $04, $06, $c5, $71, $00
+ObjectAnim_02e_6c11:
+	dw ObjectAnimFrame_02e_6c13
+ObjectAnimFrame_02e_6c13:
+	db $20, $78, $f0, $28, $01, $02, $a4, $71, $00
+ObjectAnim_02e_6c1c:
+	dw ObjectAnimFrame_02e_6c1e
+ObjectAnimFrame_02e_6c1e:
+	db $20, $60, $f0, $10, $01, $02, $a4, $71, $00
+ObjectAnim_02e_6c27:
+	dw ObjectAnimFrame_02e_6c29
+ObjectAnimFrame_02e_6c29:
+	db $18, $70, $e8, $30, $01, $02, $a4, $71, $00
+ObjectAnim_02e_6c32:
+	dw ObjectAnimFrame_02e_6c34
+ObjectAnimFrame_02e_6c34:
+	db $28, $80, $f8, $30, $01, $02, $a4, $71, $00
+ObjectAnim_02e_6c3d:
+	dw ObjectAnimFrame_02e_6c3f
+ObjectAnimFrame_02e_6c3f:
+	db $18, $20, $48, $70, $01, $06, $32, $71, $00
+ObjectAnim_02e_6c48:
+	dw ObjectAnimFrame_02e_6c4a
+ObjectAnimFrame_02e_6c4a:
+	db $68, $68, $38, $18, $01, $04, $c2, $77, $00
+ObjectAnim_02e_6c53:
+	dw ObjectAnimFrame_02e_6c55
+ObjectAnimFrame_02e_6c55:
+	db $18, $20, $48, $70, $01, $04, $32, $71, $00
+ObjectAnim_02e_6c5e:
+	dw ObjectAnimFrame_02e_6c60
+ObjectAnimFrame_02e_6c60:
+	db $40, $74, $30, $24, $01, $07, $eb, $77, $00
+ObjectAnim_02e_6c69:
+	dw ObjectAnimFrame_02e_6c6b
+ObjectAnimFrame_02e_6c6b:
+	db $58, $6c, $30, $24, $01, $03, $eb, $77, $00
+ObjectAnim_02e_6c74:
+	dw ObjectAnimFrame_02e_6c80
+	dw ObjectAnimFrame_02e_6c89
+	dw ObjectAnimFrame_02e_6c92
+	dw ObjectAnimFrame_02e_6c9b
+	dw ObjectAnimFrame_02e_6ca4
+	dw ObjectAnimFrame_02e_6cad
+ObjectAnimFrame_02e_6c80:
+	db $28, $88, $f8, $38, $01, $02, $e6, $71, $00
+ObjectAnimFrame_02e_6c89:
+	db $38, $90, $08, $40, $02, $03, $e6, $71, $00
+ObjectAnimFrame_02e_6c92:
+	db $40, $88, $10, $38, $01, $03, $e6, $71, $00
+ObjectAnimFrame_02e_6c9b:
+	db $50, $90, $20, $40, $02, $03, $e6, $71, $00
+ObjectAnimFrame_02e_6ca4:
+	db $30, $88, $00, $38, $01, $03, $e6, $71, $00
+ObjectAnimFrame_02e_6cad:
+	db $38, $a8, $08, $58, $02, $03, $e6, $71, $00
+ObjectAnim_02e_6cb6:
+	dw ObjectAnimFrame_02e_6cb8
+ObjectAnimFrame_02e_6cb8:
+	db $18, $20, $48, $70, $01, $01, $32, $71, $00
+ObjectAnim_02e_6cc1:
+	dw ObjectAnimFrame_02e_6cc3
+ObjectAnimFrame_02e_6cc3:
+	db $50, $68, $20, $18, $01, $04, $83, $71, $00
+ObjectAnim_02e_6ccc:
+	dw ObjectAnimFrame_02e_6cce
+ObjectAnimFrame_02e_6cce:
+	db $40, $78, $10, $28, $01, $04, $83, $71, $00
+ObjectAnim_02e_6cd7:
+	dw ObjectAnimFrame_02e_6cd9
+ObjectAnimFrame_02e_6cd9:
+	db $48, $88, $18, $38, $01, $04, $83, $71, $00
+ObjectAnim_02e_6ce2:
+	dw ObjectAnimFrame_02e_6ce4
+ObjectAnimFrame_02e_6ce4:
+	db $20, $68, $00, $18, $01, $04, $66, $78, $00
+ObjectAnim_02e_6ced:
+	dw ObjectAnimFrame_02e_6cef
+ObjectAnimFrame_02e_6cef:
+	db $20, $88, $10, $38, $01, $04, $a9, $78, $00
+ObjectAnim_02e_6cf8:
+	dw ObjectAnimFrame_02e_6cfa
+ObjectAnimFrame_02e_6cfa:
+	db $28, $70, $08, $20, $01, $04, $66, $78, $00
+ObjectAnim_02e_6d03:
+	dw ObjectAnimFrame_02e_6d05
+ObjectAnimFrame_02e_6d05:
+	db $30, $80, $00, $30, $01, $04, $a9, $78, $00
+ObjectAnim_02e_6d0e:
+	dw ObjectAnimFrame_02e_6d10
+ObjectAnimFrame_02e_6d10:
+	db $10, $10, $48, $70, $01, $04, $ec, $78, $00
+ObjectAnim_02e_6d19:
+	dw ObjectAnimFrame_02e_6d1f
+	dw ObjectAnimFrame_02e_6d28
+	dw ObjectAnimFrame_02e_6d31
+ObjectAnimFrame_02e_6d1f:
+	db $40, $68, $10, $18, $01, $02, $53, $79, $00
+ObjectAnimFrame_02e_6d28:
+	db $50, $88, $20, $38, $01, $04, $1c, $7a, $00
+ObjectAnimFrame_02e_6d31:
+	db $60, $68, $30, $18, $03, $04, $53, $79, $00
+ObjectAnim_02e_6d3a:
+	dw ObjectAnimFrame_02e_6d3c
+ObjectAnimFrame_02e_6d3c:
+	db $38, $60, $08, $10, $01, $03, $c5, $71, $00
+ObjectAnim_02e_6d45:
+	dw ObjectAnimFrame_02e_6d47
+ObjectAnimFrame_02e_6d47:
+	db $10, $18, $40, $68, $01, $03, $32, $71, $00
+ObjectAnim_02e_6d50:
+	dw ObjectAnimFrame_02e_6d52
+ObjectAnimFrame_02e_6d52:
+	db $30, $50, $f0, $00, $01, $03, $e5, $7a, $00
+ObjectAnim_02e_6d5b:
+	dw ObjectAnimFrame_02e_6d5d
+ObjectAnimFrame_02e_6d5d:
+	db $30, $18, $58, $68, $01, $03, $83, $71, $00
+ObjectAnim_02e_6d66:
+	dw ObjectAnimFrame_02e_6d68
+ObjectAnimFrame_02e_6d68:
+	db $30, $18, $58, $68, $01, $03, $16, $7b, $00
+ObjectAnim_02e_6d71:
+	dw ObjectAnimFrame_02e_6d73
+ObjectAnimFrame_02e_6d73:
+	db $30, $18, $58, $68, $01, $03, $37, $7b, $00
+ObjectAnim_02e_6d7c:
+	dw ObjectAnimFrame_02e_6d7e
+ObjectAnimFrame_02e_6d7e:
+	db $20, $68, $f0, $20, $04, $07, $a4, $71, $00
+ObjectAnim_02e_6d87:
+	dw ObjectAnimFrame_02e_6d89
+ObjectAnimFrame_02e_6d89:
+	db $60, $68, $30, $20, $04, $07, $83, $71, $00
+ObjectAnim_02e_6d92:
+	dw ObjectAnimFrame_02e_6d94
+ObjectAnimFrame_02e_6d94:
+	db $38, $40, $10, $00, $04, $07, $58, $7b, $00
+ObjectAnim_02e_6d9d:
+	dw ObjectAnimFrame_02e_6d9f
+ObjectAnimFrame_02e_6d9f:
+	db $38, $60, $08, $10, $08, $0a, $c5, $71, $00
+ObjectAnim_02e_6da8:
+	dw ObjectAnimFrame_02e_6daa
+ObjectAnimFrame_02e_6daa:
+	db $08, $b0, $d8, $68, $01, $03, $9a, $7b, $00
+ObjectAnim_02e_6db3:
+	dw ObjectAnimFrame_02e_6db5
+ObjectAnimFrame_02e_6db5:
+	db $08, $d8, $d8, $90, $01, $03, $9a, $7b, $00
+ObjectAnim_02e_6dbe:
+	dw ObjectAnimFrame_02e_6dc0
+ObjectAnimFrame_02e_6dc0:
+	db $08, $c8, $d8, $80, $01, $03, $9a, $7b, $00
+ObjectAnim_02e_6dc9:
+	dw ObjectAnimFrame_02e_6dcb
+ObjectAnimFrame_02e_6dcb:
+	db $10, $08, $40, $58, $01, $00, $83, $71, $00
+ObjectAnim_02e_6dd4:
+	dw ObjectAnimFrame_02e_6dd6
+ObjectAnimFrame_02e_6dd6:
+	db $60, $58, $30, $08, $01, $03, $53, $79, $00
+ObjectAnim_02e_6ddf:
+	dw ObjectAnimFrame_02e_6de1
+ObjectAnimFrame_02e_6de1:
+	db $10, $10, $48, $70, $07, $0a, $b1, $7c, $00
+ObjectAnim_02e_6dea:
+	dw ObjectAnimFrame_02e_6dec
+ObjectAnimFrame_02e_6dec:
+	db $50, $58, $20, $08, $01, $03, $53, $79, $00
+ObjectAnim_02e_6df5:
+	dw ObjectAnimFrame_02e_6df7
+ObjectAnimFrame_02e_6df7:
+	db $20, $20, $50, $70, $01, $03, $08, $7d, $00
+ObjectAnim_02e_6e00:
+	dw ObjectAnimFrame_02e_6e02
+ObjectAnimFrame_02e_6e02:
+	db $28, $20, $58, $70, $04, $05, $83, $71, $00
+ObjectAnim_02e_6e0b:
+	dw ObjectAnimFrame_02e_6e0d
+ObjectAnimFrame_02e_6e0d:
+	db $48, $68, $18, $18, $01, $03, $00, $00, $00
+ObjectAnim_02e_6e16:
+	dw ObjectAnimFrame_02e_6e18
+ObjectAnimFrame_02e_6e18:
+	db $48, $70, $18, $20, $04, $06, $00, $00, $00
+ObjectAnim_02e_6e21:
+	dw ObjectAnimFrame_02e_6e23
+ObjectAnimFrame_02e_6e23:
+	db $50, $64, $20, $14, $01, $02, $83, $71, $00
+ObjectAnim_02e_6e2c:
+	dw ObjectAnimFrame_02e_6e2e
+ObjectAnimFrame_02e_6e2e:
+	db $40, $68, $10, $18, $03, $08, $00, $00, $00
+ObjectAnim_02e_6e37:
+	dw ObjectAnimFrame_02e_6e39
+ObjectAnimFrame_02e_6e39:
+	db $38, $60, $08, $10, $01, $04, $c5, $71, $00
 Func_02e_6e42:
 	ld hl, wd1a0
 	ld c, $40
