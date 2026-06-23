@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<map height="34" orientation="orthogonal" renderorder="right-down" tileheight="16" tilewidth="16" width="2">
+	<!--Add tilesets as much as needed-->
+	<tileset firstgid="1" tileheight="16" tilewidth="16">
+		<image source="../metatiles/Metatiles_053_644a.tmx"/>
+	</tileset>
+	<layer height="34" id="1" name="blocks" width="2">
+		<data encoding="csv">
+42, 42,
+42, 42,
+50, 50,
+57, 56,
+49, 48,
+66, 1,
+48, 48,
+2, 1,
+49, 48,
+67, 51,
+64, 63,
+43, 43,
+44, 46,
+43, 43,
+43, 43,
+43, 43,
+68, 58,
+43, 65,
+24, 43,
+46, 43,
+45, 26,
+45, 34,
+27, 45,
+35, 45,
+43, 43,
+43, 47,
+44, 43,
+42, 44,
+43, 44,
+24, 42,
+42, 37,
+42, 42,
+38, 42,
+42, 42</data>
+	</layer>
+</map>

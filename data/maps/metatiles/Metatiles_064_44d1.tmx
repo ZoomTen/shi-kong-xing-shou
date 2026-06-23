@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<map height="2" orientation="orthogonal" renderorder="right-down" tileheight="8" tilewidth="8" width="2">
+	<!--Add tilesets as much as needed-->
+	<tileset firstgid="1" tileheight="8" tilewidth="8">
+		<image source="../../../gfx/tilesets/gfx_065_4000.2bpp"/>
+	</tileset>
+	<layer height="2" id="1" name="metatiles" width="2">
+		<data encoding="csv">
+2, 4,
+3</data>
+	</layer>
+</map>

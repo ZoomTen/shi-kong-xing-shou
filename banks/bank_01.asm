@@ -374,7 +374,7 @@ Hideout_MapAttributes:
 	dw Hideout_Collision
 
 Hideout_Layout:
-	db 14 ; wMapType / index into Pointers_01e_4d29
+	db MAPTYPE_HIDEOUT
 	INCBIN "data/maps/layouts/Hideout.bin"
 
 Hideout_Metatiles:
@@ -428,28 +428,28 @@ Hideout_Collision:
 	INCBIN "data/maps/collision/Hideout_Collision.bin"
 
 PowerPlant1F_Layout:
-	db 6
+	db MAPTYPE_POWER_PLANT_1F
 	INCBIN "data/maps/layouts/PowerPlant1F.bin"
 
 PowerPlant1F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant1F.bin"
 
 PowerPlant2F_Layout:
-	db 7
+	db MAPTYPE_POWER_PLANT_2F
 	INCBIN "data/maps/layouts/PowerPlant2F.bin"
 
 PowerPlant2F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant2F.bin"
 
 PowerPlant3F_Layout:
-	db 8
+	db MAPTYPE_POWER_PLANT_3F
 	INCBIN "data/maps/layouts/PowerPlant3F.bin"
 
 PowerPlant3F_Blocks:
 	INCBIN "data/maps/blocks/PowerPlant3F.bin"
 
 PowerPlant4F_Layout:
-	db 9
+	db MAPTYPE_POWER_PLANT_4F
 	INCBIN "data/maps/layouts/PowerPlant4F.bin"
 
 PowerPlant_Metatiles:
@@ -503,7 +503,7 @@ PowerPlant_Collision:
 	INCBIN "data/maps/collision/PowerPlant_Collision.bin"
 
 PowerPlantOutside_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/PowerPlantOutside.bin"
 
 PowerPlantOutside_Metatiles:
@@ -557,7 +557,7 @@ PowerPlantOutside_Collision:
 	INCBIN "data/maps/collision/PowerPlantOutside_Collision.bin"
 
 Junkyard_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Junkyard.bin"
 
 Junkyard_Metatiles:
@@ -755,7 +755,7 @@ Collision_001_544a:
 	INCBIN "data/maps/collision/Collision_001_544a.bin"
 
 CrystalVillage_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/CrystalVillage.bin"
 
 CrystalVillage_Metatiles:
@@ -1017,7 +1017,7 @@ Collision_001_5fd4:
 	INCBIN "data/maps/collision/Collision_001_5fd4.bin"
 
 TechCity_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/TechCity.bin"
 
 TechCity_Metatiles:
@@ -1071,7 +1071,7 @@ TechCity_Collision:
 	INCBIN "data/maps/collision/TechCity_Collision.bin"
 
 BellSchoolSouthClassroom_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchoolSouthClassroom.bin"
 
 BellSchoolSouthClassroom_Metatiles:
@@ -1125,7 +1125,7 @@ BellSchoolSouthClassroom_Collision:
 	INCBIN "data/maps/collision/BellSchoolSouthClassroom_Collision.bin"
 
 BellObservatory1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellObservatory1.bin"
 
 BellObservatory1_Metatiles:
@@ -1179,7 +1179,7 @@ BellObservatory1_Collision:
 	INCBIN "data/maps/collision/BellObservatory1_Collision.bin"
 
 BellSchool1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchool1.bin"
 
 BellSchool1_Metatiles:
@@ -1233,7 +1233,7 @@ BellSchool1_Collision:
 	INCBIN "data/maps/collision/BellSchool1_Collision.bin"
 
 BellHealingCenter1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellHealingCenter1.bin"
 
 BellHealingCenter1_Metatiles:
@@ -1287,28 +1287,28 @@ BellHealingCenter1_Collision:
 	INCBIN "data/maps/collision/BellHealingCenter1_Collision.bin"
 
 BallotsHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BallotsHouse1.bin"
 
 BallotsHouse1_Blocks:
 	INCBIN "data/maps/blocks/BallotsHouse1.bin"
 
 HayatosHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/HayatosHouse1.bin"
 
 HayatosHouse1_Blocks:
 	INCBIN "data/maps/blocks/HayatosHouse1.bin"
 
 CarpetWomansHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/CarpetWomansHouse1.bin"
 
 CarpetWomansHouse1_Blocks:
 	INCBIN "data/maps/blocks/CarpetWomansHouse1.bin"
 
 FangfangsHouse1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/FangfangsHouse1.bin"
 
 BallotsHouse1_Metatiles:
@@ -1374,7 +1374,7 @@ FangfangsHouse1_Collision:
 	INCBIN "data/maps/collision/BallotsHouse1_Collision.bin"
 
 BellObservatoryOutside1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellObservatoryOutside1.bin"
 
 BellObservatoryOutside1_Metatiles:
@@ -1428,7 +1428,7 @@ BellObservatoryOutside1_Collision:
 	INCBIN "data/maps/collision/BellObservatoryOutside1_Collision.bin"
 
 BellSchoolOutside1_Layout:
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchoolOutside1.bin"
 
 BellSchoolOutside1_Metatiles:
@@ -1482,7 +1482,7 @@ BellSchoolOutside1_Collision:
 	INCBIN "data/maps/collision/BellSchoolOutside1_Collision.bin"
 
 BellVillage1_Layout:
-	db 0	; unknown
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellVillage1.bin"
 
 BellVillage1_Metatiles:

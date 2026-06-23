@@ -800,7 +800,7 @@ SetupMapLayoutFlagPatches::
 	ld a, [wMapType]
 	and a
 	ret z
-	cp 5
+	cp MAPTYPE_CRYSTAL_MINES_P1
 	ret z
 
 	homecall ApplyMapLayoutFlagPatchesInit
@@ -826,15 +826,15 @@ SetupCrystalMines::
 
 .crystal_mines
 	ld a, [wMapType]
-	cp 1
+	cp MAPTYPE_CRYSTAL_MINES_P2
 	jr z, .do_special
-	cp 2
+	cp MAPTYPE_CRYSTAL_MINES_P3
 	jr z, .do_special
-	cp 3
+	cp MAPTYPE_CRYSTAL_MINES_P4
 	jr z, .do_special
-	cp 4
+	cp MAPTYPE_CRYSTAL_MINES_P5
 	jr z, .do_special
-	cp 5
+	cp MAPTYPE_CRYSTAL_MINES_P1
 	jr z, .do_special
 	ret
 

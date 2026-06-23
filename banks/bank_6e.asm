@@ -55,15 +55,13 @@ G7_09_MapAttributes:
 		Palettes_06e_51b4, \
 		0, Tileset_006_438c, \
 		Collision_06e_51fc
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06e_507d::
-	dr $1b907d, $1b909c
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db MAPTYPE_NONE
+	INCBIN "data/maps/layouts/Layout_06e_507d.bin"
 Metatiles_06e_509c::
-	dr $1b909c, $1b9120
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06e_509c.bin"
 Blocks_06e_5120::
-	dr $1b9120, $1b9180
+	INCBIN "data/maps/blocks/Blocks_06e_5120.bin"
 AttrMap_06e_5180::
 INCBIN "gfx/attrmaps/attrmap_06e_5180.bin"
 Palettes_06e_51b4::

@@ -14,12 +14,12 @@ G6_02_MapAttributes:
 		0, Tileset_006_4577, \
 		Collision_06a_48e9
 Layout_06a_4028::
-	db 49 ; wMapType / index into Pointers_01e_4d29
+	db MAPTYPE_G6_01
 	INCBIN "data/maps/layouts/Layout_06a_4028.bin"
 Blocks_06a_410a::
 	INCBIN "data/maps/blocks/Blocks_06a_410a.bin"
 Layout_06a_43a2::
-	db 50
+	db MAPTYPE_G6_02
 	INCBIN "data/maps/layouts/Layout_06a_43a2.bin"
 Metatiles_06a_4484::
 	INCBIN "data/maps/metatiles/Metatiles_06a_4484.bin"
@@ -108,27 +108,27 @@ G7_06_MapAttributes:
 		0, Tileset_006_458d, \
 		Collision_06a_529f
 Layout_06a_4983::
-	db 51
+	db MAPTYPE_G6_03
 	INCBIN "data/maps/layouts/Layout_06a_4983.bin"
 Blocks_06a_49e8::
 	INCBIN "data/maps/blocks/Blocks_06a_49e8.bin"
 Layout_06a_4b00::
-	db 52
+	db MAPTYPE_G6_04
 	INCBIN "data/maps/layouts/Layout_06a_4b00.bin"
 Blocks_06a_4b65::
 	INCBIN "data/maps/blocks/Blocks_06a_4b65.bin"
 Layout_06a_4cad::
-	db 53
+	db MAPTYPE_G6_05
 	INCBIN "data/maps/layouts/Layout_06a_4cad.bin"
 Blocks_06a_4d12::
 	INCBIN "data/maps/blocks/Blocks_06a_4d12.bin"
 Layout_06a_4e5e::
-	db 54
+	db MAPTYPE_G6_06
 	INCBIN "data/maps/layouts/Layout_06a_4e5e.bin"
 Blocks_06a_4ec3::
 	INCBIN "data/maps/blocks/Blocks_06a_4ec3.bin"
 Layout_06a_4ffb::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_4ffb.bin"
 Metatiles_06a_5020::
 	INCBIN "data/maps/metatiles/Metatiles_06a_5020.bin"
@@ -208,22 +208,22 @@ G6_0B_MapAttributes:
 		0, Tileset_006_45a3, \
 		Collision_06a_5f0f
 Layout_06a_533f::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_533f.bin"
 Blocks_06a_53d6::
 	INCBIN "data/maps/blocks/Blocks_06a_53d6.bin"
 Layout_06a_55e2::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_55e2.bin"
 Blocks_06a_5679::
 	INCBIN "data/maps/blocks/Blocks_06a_5679.bin"
 Layout_06a_58a1::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_58a1.bin"
 Blocks_06a_5938::
 	INCBIN "data/maps/blocks/Blocks_06a_5938.bin"
 Layout_06a_5b3c::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_5b3c.bin"
 Metatiles_06a_5bd3::
 	INCBIN "data/maps/metatiles/Metatiles_06a_5bd3.bin"
@@ -279,7 +279,7 @@ G6_0C_MapAttributes:
 		0, Tileset_006_45ab, \
 		Collision_06a_64c1
 Layout_06a_5f4a::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_5f4a.bin"
 Metatiles_06a_6059::
 	INCBIN "data/maps/metatiles/Metatiles_06a_6059.bin"
@@ -335,7 +335,7 @@ G6_0D_MapAttributes:
 		0, Tileset_006_45c8, \
 		Collision_06a_6681
 Layout_06a_6517::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6517.bin"
 Metatiles_06a_6536::
 	INCBIN "data/maps/metatiles/Metatiles_06a_6536.bin"
@@ -391,7 +391,7 @@ G6_0E_MapAttributes:
 		0, Tileset_006_45d0, \
 		Collision_06a_6844
 Layout_06a_66b4::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_66b4.bin"
 Metatiles_06a_66f1::
 	INCBIN "data/maps/metatiles/Metatiles_06a_66f1.bin"
@@ -447,7 +447,7 @@ G6_0F_MapAttributes:
 		0, Tileset_006_45df, \
 		Collision_06a_6a69
 Layout_06a_686b::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_686b.bin"
 Metatiles_06a_689e::
 	INCBIN "data/maps/metatiles/Metatiles_06a_689e.bin"
@@ -559,42 +559,42 @@ G6_17_MapAttributes:
 		0, Tileset_006_45ee, \
 		Collision_06a_70c5
 Layout_06a_6b3b::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6b3b.bin"
 Blocks_06a_6b5a::
 	INCBIN "data/maps/blocks/Blocks_06a_6b5a.bin"
 Layout_06a_6bbe::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6bbe.bin"
 Blocks_06a_6bdd::
 	INCBIN "data/maps/blocks/Blocks_06a_6bdd.bin"
 Layout_06a_6c3d::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6c3d.bin"
 Blocks_06a_6c5c::
 	INCBIN "data/maps/blocks/Blocks_06a_6c5c.bin"
 Layout_06a_6cbc::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6cbc.bin"
 Blocks_06a_6cdb::
 	INCBIN "data/maps/blocks/Blocks_06a_6cdb.bin"
 Layout_06a_6d3f::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6d3f.bin"
 Blocks_06a_6d5e::
 	INCBIN "data/maps/blocks/Blocks_06a_6d5e.bin"
 Layout_06a_6dca::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6dca.bin"
 Blocks_06a_6de9::
 	INCBIN "data/maps/blocks/Blocks_06a_6de9.bin"
 Layout_06a_6e4d::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6e4d.bin"
 Blocks_06a_6e6c::
 	INCBIN "data/maps/blocks/Blocks_06a_6e6c.bin"
 Layout_06a_6ed0::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_6ed0.bin"
 Metatiles_06a_6eef::
 	INCBIN "data/maps/metatiles/Metatiles_06a_6eef.bin"
@@ -650,7 +650,7 @@ G6_18_MapAttributes:
 		0, Tileset_006_45f6, \
 		Collision_06a_73d2
 Layout_06a_710c::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_710c.bin"
 Metatiles_06a_7171::
 	INCBIN "data/maps/metatiles/Metatiles_06a_7171.bin"
@@ -738,27 +738,27 @@ G6_1D_MapAttributes:
 		0, Tileset_006_460c, \
 		Collision_06a_7864
 Layout_06a_7459::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_7459.bin"
 Blocks_06a_7478::
 	INCBIN "data/maps/blocks/Blocks_06a_7478.bin"
 Layout_06a_74bc::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_74bc.bin"
 Blocks_06a_74db::
 	INCBIN "data/maps/blocks/Blocks_06a_74db.bin"
 Layout_06a_7517::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_7517.bin"
 Blocks_06a_7536::
 	INCBIN "data/maps/blocks/Blocks_06a_7536.bin"
 Layout_06a_7576::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_7576.bin"
 Blocks_06a_7595::
 	INCBIN "data/maps/blocks/Blocks_06a_7595.bin"
 Layout_06a_75dd::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_75dd.bin"
 Metatiles_06a_75fc::
 	INCBIN "data/maps/metatiles/Metatiles_06a_75fc.bin"
@@ -822,12 +822,12 @@ G6_1F_MapAttributes:
 		0, Tileset_006_4622, \
 		Collision_06a_7b9f
 Layout_06a_78df::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_78df.bin"
 Blocks_06a_793a::
 	INCBIN "data/maps/blocks/Blocks_06a_793a.bin"
 Layout_06a_7a22::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_7a22.bin"
 Metatiles_06a_7a47::
 	INCBIN "data/maps/metatiles/Metatiles_06a_7a47.bin"
@@ -883,7 +883,7 @@ G6_20_MapAttributes:
 		0, Tileset_006_4631, \
 		Collision_06a_7db1
 Layout_06a_7bca::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_7bca.bin"
 Metatiles_06a_7be9::
 	INCBIN "data/maps/metatiles/Metatiles_06a_7be9.bin"
@@ -940,7 +940,7 @@ G7_01_MapAttributes:
 		0, Tileset_006_4640, \
 		Collision_06a_7fbe
 Layout_06a_7dee::
-	db 0
+	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06a_7dee.bin"
 Metatiles_06a_7e0d::
 	INCBIN "data/maps/metatiles/Metatiles_06a_7e0d.bin"

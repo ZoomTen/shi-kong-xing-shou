@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<map height="12" orientation="orthogonal" renderorder="right-down" tileheight="32" tilewidth="32" width="6">
+	<tileset firstgid="1" tileheight="32" tilewidth="32">
+		<image source="../blocks/Blocks_057_665a.tmx"/>
+	</tileset>
+	<layer height="12" id="1" name="layout" width="6">
+		<data encoding="csv">
+1,2,3,4,5,6,
+7,8,9,10,11,12,
+7,13,14,14,15,12,
+16,17,18,14,19,20,
+21,16,17,18,22,23,
+24,25,26,27,28,29,
+30,31,32,33,34,35,
+36,14,14,29,7,37,
+36,38,39,40,41,37,
+36,42,43,44,45,46,
+47,48,14,49,50,51,
+21,47,52,53,52,54</data>
+	</layer>
+</map>
