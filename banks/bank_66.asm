@@ -94,11 +94,28 @@ Script_066_40d5::
 ObjSprite_66_4128::
 	object_event $71, 26, 25, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
-; TODO: object_event spawn record + trailing sprite-frame/pointer data - carve
 ObjSprite_66_4134::
-	dr $198134, $198140
+	object_event $72, 26, 25, 0, $00, $00, $00, $02, Script_066_41f2
+	objects_end
 Script_066_4140::
-	dr $198140, $198172
+	setplayerchar $00 ; TEMP
+	face FACE_LEFT
+	warpmode GAMEMODE_AIRPORT_CUTSCENE3, $16, $00
+	spriteface  2, FACE_LEFT
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	emote  0, EMOTE_EXCLAMATION
+	delay $03, $20 ; TEMP
+	stext text_66_4ca2
+	stext text_66_4caf
+	playsound SFX_2c
+	runmovement MovementData_00b_41d5
+	spriteface  2, FACE_RIGHT
+	stext text_66_4ce9
+	stext text_66_4d09
+	stext text_66_4d2c
+	setbit wEventFlags + 14, $06
+	end
 
 Script_066_4172::
 	textface text_66_4d45

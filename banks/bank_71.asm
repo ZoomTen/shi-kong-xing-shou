@@ -256,9 +256,23 @@ Func_71_4116:
 	ld h, a
 	call PlaceAttrmap
 	ret
-; TODO: credits screen layout data - classify
 CreditsScreenLayouts:
-	dr $1c4207, $1c4287
+	credits_screen_layout 6, 6, $9a82, CreditsScreen1Tilemap, CreditsScreen1Attrmap
+	credits_screen_layout 6, 6, $9a22, CreditsScreen2Tilemap, CreditsScreen2Attrmap
+	credits_screen_layout 9, 6, $99c2, CreditsScreen3Tilemap, CreditsScreen3Attrmap
+	credits_screen_layout 5, 6, $9962, CreditsScreen4Tilemap, CreditsScreen4Attrmap
+	credits_screen_layout 7, 6, $9902, CreditsScreen5Tilemap, CreditsScreen5Attrmap
+	credits_screen_layout 5, 6, $98a2, CreditsScreen6Tilemap, CreditsScreen6Attrmap
+	credits_screen_layout 9, 6, $9842, CreditsScreen7Tilemap, CreditsScreen7Attrmap
+	credits_screen_layout 5, 6, $9be2, CreditsScreen8Tilemap, CreditsScreen8Attrmap
+	credits_screen_layout 6, 6, $9a80, CreditsScreen1Tilemap, CreditsScreen1Attrmap
+	credits_screen_layout 6, 6, $9900, CreditsScreen2Tilemap, CreditsScreen2Attrmap
+	credits_screen_layout 9, 6, $9b80, CreditsScreen3Tilemap, CreditsScreen3Attrmap
+	credits_screen_layout 5, 6, $9a00, CreditsScreen4Tilemap, CreditsScreen4Attrmap
+	credits_screen_layout 7, 6, $9880, CreditsScreen5Tilemap, CreditsScreen5Attrmap
+	credits_screen_layout 5, 6, $9b00, CreditsScreen6Tilemap, CreditsScreen6Attrmap
+	credits_screen_layout 9, 6, $9980, CreditsScreen7Tilemap, CreditsScreen7Attrmap
+	credits_screen_layout 5, 6, $9800, CreditsScreen8Tilemap, CreditsScreen8Attrmap
 CreditsScreenGfx:
 INCBIN "gfx/misc/creditsscreengfx.2bpp"
 Func_71_42a7:

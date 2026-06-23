@@ -22,9 +22,51 @@ Func_4d_5ed8:
 	ld b, $10
 	call LoadPalettes_OCPD
 	ret
-; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_4d_5ee2:
-	dr $135ee2, $135f3a
+Palettes_04d_5ee2: ; 11 palettes (after LoadPalettes_OCPD)
+	RGB 0, 19, 19
+	RGB 31, 31, 31
+	RGB 0, 20, 31
+	RGB 0, 0, 19
+	RGB 0, 19, 19
+	RGB 31, 31, 0
+	RGB 31, 0, 0
+	RGB 15, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 31, 0
+	RGB 31, 0, 0
+	RGB 15, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 31, 31
+	RGB 0, 20, 31
+	RGB 0, 0, 19
+	RGB 0, 19, 19
+	RGB 31, 31, 0
+	RGB 31, 0, 0
+	RGB 15, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 31, 31
+	RGB 0, 20, 31
+	RGB 0, 0, 19
+	RGB 0, 19, 19
+	RGB 24, 31, 31
+	RGB 0, 14, 30
+	RGB 0, 0, 15
+	RGB 0, 19, 19
+	RGB 31, 31, 0
+	RGB 31, 0, 0
+	RGB 15, 0, 0
+	RGB 0, 19, 19
+	RGB 31, 31, 31
+	RGB 0, 20, 31
+	RGB 0, 0, 19
+	RGB 0, 19, 19
+	RGB 27, 24, 16
+	RGB 18, 12, 5
+	RGB 7, 3, 0
+	RGB 0, 19, 19
+	RGB 31, 31, 31
+	RGB 0, 20, 31
+	RGB 0, 0, 19
 Func_4d_5f3a:
 	ld hl, wd1a0
 .asm_5f3d

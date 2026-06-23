@@ -2898,8 +2898,9 @@ Tilemap_4a_7f7f:
 INCBIN "gfx/tilemaps/tilemap_4a_7f7f.tilemap"
 Attrmap_4a_7fab:
 INCBIN "gfx/attrmaps/attrmap_4a_7fab.bin"
-; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
+; orphan (no reference): 3 data bytes + zero-padding to bank end
 unk_4a_7fd7:
-	dr $12bfd7, $12bfff
+	db $28, $74, $75
+	ds 37
 
 

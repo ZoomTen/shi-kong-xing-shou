@@ -92,7 +92,7 @@ NewGameContinueMenu::
 	ld [wcd0a], a
 	call ClearBGMap0
 	ld hl, $9800
-	ld de, .Tilemap
+	ld de, NewGameContinueMenu_Tilemap
 	ld bc, $0B06
 	ld a, $06
 	ldh [hVRAMCopyHeight], a
@@ -100,26 +100,26 @@ NewGameContinueMenu::
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ld hl, $9800
-	ld de, .Attrmap
+	ld de, NewGameContinueMenu_Attrmap
 	ld bc, $0B06
 	ld a, $06
 	ldh [hVRAMCopyHeight], a
 	ld a, $0B
 	ldh [hVRAMCopyWidth], a
 	call PlaceAttrmap
-	ld hl, .Palette
+	ld hl, NewGameContinueMenu_Palette
 	ld de, wPaletteBuffer
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, .Palette2
+	ld hl, NewGameContinueMenu_Palette2
 	ld de, wcaf0
 	ld bc, $0040
 	call CopyBytes3
-	ld hl, .GFX
+	ld hl, NewGameContinueMenu_GFX
 	ld de, $9000
 	ld bc, $0090
 	call CopyBytesVRAM
-	ld hl, .GFX2
+	ld hl, NewGameContinueMenu_GFX2
 	ld de, $8FE0
 	ld bc, $0020
 	call CopyBytesVRAM
@@ -196,7 +196,7 @@ NewGameContinueMenu::
 	call LoadSaveData
 	ret
 .asm_41d6
-	ld hl, .MenuText
+	ld hl, text_3c_41eb
 	ld a, $10
 	ld [wMenuTextX], a
 	ld a, $30
@@ -206,15 +206,12 @@ NewGameContinueMenu::
 	call PrintMenuText
 	ret
 
-.MenuText:
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $f01eb, $f01f7
-.Tilemap:
-; TODO: data table - classify (verify consumer)
-	dr $f01f7, $f0239
-.Attrmap:
+INCLUDE "data/text/bank3c_41eb.asm"
+NewGameContinueMenu_Tilemap:
+	INCBIN "gfx/tilemaps/tilemap_03c_41f7.tilemap"
+NewGameContinueMenu_Attrmap:
 	ds 66
-.Palette:
+NewGameContinueMenu_Palette:
 	RGB 31, 31, 31
 	RGB 11, 27, 31
 	RGB 10, 10, 31
@@ -223,17 +220,15 @@ NewGameContinueMenu::
 	RGB 31, 25, 0
 	RGB 24, 0, 0
 	RGB 0, 0, 0
-.Palette2:
+NewGameContinueMenu_Palette2:
 	RGB 21, 21, 21
 	RGB 0, 0, 0
 	RGB 0, 15, 29
 	RGB 31, 27, 23
-.GFX:
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $f0293, $f0323
-.GFX2:
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $f0323, $f0343
+NewGameContinueMenu_GFX:
+	INCBIN "gfx/misc/gfx_3c_4293.2bpp"
+NewGameContinueMenu_GFX2:
+	INCBIN "gfx/misc/gfx_3c_4323.2bpp"
 
 GameOver::
 	xor a
@@ -381,9 +376,22 @@ Palettes_03c_46f7:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_03c_4737:
-	dr $f0737, $f0775
+	dw Tilemap_03c_4745
+	dw Tilemap_03c_4745
+	dw Tilemap_03c_4751
+	dw Tilemap_03c_475d
+	dw Tilemap_03c_4769
+	dw Tilemap_03c_475d
+	dw Tilemap_03c_4769
+Tilemap_03c_4745:
+	db $11, $12, $13, $14, $17, $18, $19, $1a, $1e, $1f, $20, $21
+Tilemap_03c_4751:
+	db $36, $37, $38, $39, $3a, $3b, $3c, $3d, $1e, $3e, $3f, $40
+Tilemap_03c_475d:
+	db $36, $37, $38, $39, $41, $42, $43, $44, $1e, $45, $46, $47
+Tilemap_03c_4769:
+	db $36, $37, $38, $39, $48, $49, $4a, $4b, $1e, $4c, $4d, $40
 GameOverGFX:
 INCBIN "gfx/misc/game_over.2bpp"
 Func_03c_4c55:

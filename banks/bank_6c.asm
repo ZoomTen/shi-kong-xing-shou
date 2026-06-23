@@ -1417,8 +1417,9 @@ Script_06c_4ea3:
 	textface text_6c_5755
 	setbit wEventFlags + 23, $06
 	end
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $1b0eae, $1b0eba
+ObjectEvents_06c_4eae:
+	object_event $5a, 11, 13, 0, $00, $00, $00, $00, Script_06c_4706
+	objects_end
 Script_06c_4eba::
 	checkbit wEventFlags + 19, $01, Script_06c_4ed0
 	face FACE_DOWN

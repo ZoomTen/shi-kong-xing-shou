@@ -179,7 +179,10 @@ ScreenGFX2Pointers:
 	dw CreditsGFX_3
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 ScreenOBJPalettePointers:
-	dr $1c0165, $1c016d
+	dw CreditsOBJPalettes
+	dw CreditsOBJPalettes_4399
+	dw CreditsOBJPalettes_43a1
+	dw CreditsOBJPalettes_43a9
 ScreenCreditsPointers:
 	dw CreditsFontGFX_0
 	dw CreditsFontGFX_1
@@ -322,14 +325,17 @@ CreditsOBJPalettes:
 	RGB 0, 0, 29
 	RGB 0, 21, 31
 	RGB 31, 29, 0
+CreditsOBJPalettes_4399:
 	RGB 21, 21, 21
 	RGB 31, 0, 0
 	RGB 31, 15, 0
 	RGB 30, 30, 0
+CreditsOBJPalettes_43a1:
 	RGB 21, 21, 21
 	RGB 28, 0, 0
 	RGB 31, 15, 0
 	RGB 30, 30, 0
+CreditsOBJPalettes_43a9:
 	RGB 21, 21, 21
 	RGB 0, 16, 0
 	RGB 17, 28, 0

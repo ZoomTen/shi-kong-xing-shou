@@ -88,3 +88,13 @@ ENDM
 MACRO end_tileset
 	db -1
 ENDM
+
+MACRO credits_screen_layout
+; \1 = height
+; \2 = width
+; \3 = VRAM destination
+; \4 = tilemap source
+; \5 = attrmap source
+	db \1, \2
+	dw \3, \4, \5
+ENDM
