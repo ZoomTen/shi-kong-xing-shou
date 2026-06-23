@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<map height="2" orientation="orthogonal" renderorder="right-down" tileheight="16" tilewidth="16" width="2">
+	<!--Add tilesets as much as needed-->
+	<tileset firstgid="1" tileheight="16" tilewidth="16">
+		<image source="../metatiles/Metatiles_001_7953.tmx"/>
+	</tileset>
+	<layer height="2" id="1" name="blocks" width="2">
+		<data encoding="csv">
+1, 1,
+1, 1</data>
+	</layer>
+</map>
