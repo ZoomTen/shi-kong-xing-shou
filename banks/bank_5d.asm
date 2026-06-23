@@ -1488,35 +1488,26 @@ AnimFrame_Pointers:
 	dw RhythmAnimFrames_767b
 	dw RhythmAnimFrames_777b
 	dw RhythmAnimFrames_787b
-RhythmAnimFrames:
-	INCBIN "gfx/misc/rhythmanimframes.2bpp"
-RhythmAnimFrames_6d7b:
-	INCBIN "gfx/misc/rhythmanimframes_6d7b.2bpp"
-RhythmAnimFrames_6e7b:
-	INCBIN "gfx/misc/rhythmanimframes_6e7b.2bpp"
-RhythmAnimFrames_6f7b:
-	INCBIN "gfx/misc/rhythmanimframes_6f7b.2bpp"
-RhythmAnimFrames_707b:
-	INCBIN "gfx/misc/rhythmanimframes_707b.2bpp"
-RhythmAnimFrames_717b:
-	INCBIN "gfx/misc/rhythmanimframes_717b.2bpp"
-RhythmAnimFrames_727b:
-	INCBIN "gfx/misc/rhythmanimframes_727b.2bpp"
-RhythmAnimFrames_737b:
-	INCBIN "gfx/misc/rhythmanimframes_737b.2bpp"
-RhythmAnimFrames_747b:
-	INCBIN "gfx/misc/rhythmanimframes_747b.2bpp"
-RhythmAnimFrames_757b:
-	INCBIN "gfx/misc/rhythmanimframes_757b.2bpp"
-RhythmAnimFrames_767b:
-	INCBIN "gfx/misc/rhythmanimframes_767b.2bpp"
-RhythmAnimFrames_777b:
-	INCBIN "gfx/misc/rhythmanimframes_777b.2bpp"
-RhythmAnimFrames_787b:
-	INCBIN "gfx/misc/rhythmanimframes_787b.2bpp"
+RhythmAnimFrames: INCBIN "gfx/sprites/rhythmanim.2bpp", $0, $100
+RhythmAnimFrames_6d7b: INCBIN "gfx/sprites/rhythmanim.2bpp", $100, $100
+RhythmAnimFrames_6e7b: INCBIN "gfx/sprites/rhythmanim.2bpp", $200, $100
+RhythmAnimFrames_6f7b: INCBIN "gfx/sprites/rhythmanim.2bpp", $300, $100
+RhythmAnimFrames_707b: INCBIN "gfx/sprites/rhythmanim.2bpp", $400, $100
+RhythmAnimFrames_717b: INCBIN "gfx/sprites/rhythmanim.2bpp", $500, $100
+RhythmAnimFrames_727b: INCBIN "gfx/sprites/rhythmanim.2bpp", $600, $100
+RhythmAnimFrames_737b: INCBIN "gfx/sprites/rhythmanim.2bpp", $700, $100
+RhythmAnimFrames_747b: INCBIN "gfx/sprites/rhythmanim.2bpp", $800, $100
+RhythmAnimFrames_757b: INCBIN "gfx/sprites/rhythmanim.2bpp", $900, $100
+RhythmAnimFrames_767b: INCBIN "gfx/sprites/rhythmanim.2bpp", $a00, $100
+RhythmAnimFrames_777b: INCBIN "gfx/sprites/rhythmanim.2bpp", $b00, $100
+RhythmAnimFrames_787b: INCBIN "gfx/sprites/rhythmanim.2bpp", $c00, $100
 ; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
+; 4 tilemap chunks (4x4 tile indices each) copied to the BG map
 RhythmTileChunks:
-	INCBIN "gfx/misc/rhythmtilechunks.2bpp"
+	db $1d, $1e, $1f, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $2a, $2b, $2c
+	db $1d, $1e, $2d, $2e, $2f, $30, $31, $32, $33, $34, $35, $28, $29, $2a, $2b, $2c
+	db $1d, $1e, $1f, $20, $36, $37, $38, $24, $39, $3a, $3b, $28, $29, $2a, $2b, $2c
+	db $1d, $1e, $1f, $20, $3c, $3d, $3e, $24, $3f, $40, $41, $28, $29, $2a, $2b, $2c
 ; TODO: padding between palettes, confirm
 unk_5d_79BB_pad:
 	ds 5
