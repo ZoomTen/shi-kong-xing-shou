@@ -727,7 +727,7 @@ Func_025_44b8:
 Func_025_44de:
 	ld a, [wd9dd]
 	ld [wSelectedOption], a
-	ld de, unk_025_4505
+	ld de, MenuOptionTable_025_4505
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
@@ -750,11 +750,10 @@ Func_025_44de:
 	ld [wBattleScriptByte], a
 	ret
 
-; TODO: indexed data table, classify type
-unk_025_4505:
+MenuOptionTable_025_4505:
 	dw $1420
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_025_4507:
 	dw $1818
 	dw $3420
@@ -1078,7 +1077,7 @@ Func_025_472f:
 	ld [wd9d8], a
 	ret
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - lookup table indexed by bc
 unk_025_4737:
 	db $0
 	db $0
@@ -1297,22 +1296,22 @@ Pointers_025_482a:
 	dw unk_025_4844
 	dw unk_025_4846
 
-; TODO: pointer-table target, classify record type
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_025_4836:
 	db $2, $3, $5, $6, $7, $9, $a, -1
-; TODO: pointer-table target, classify record type
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_025_483e:
 	db $d, -1
-; TODO: pointer-table target, classify record type
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_025_4840:
 	db $22, -1
-; TODO: pointer-table target, classify record type
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_025_4842:
 	db $22, -1
-; TODO: pointer-table target, classify record type
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_025_4844:
 	db $30, -1
-; TODO: pointer-table target, classify record type
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_025_4846:
 	db $22, -1
 
@@ -1414,22 +1413,22 @@ Func_025_48d3:
 	jr Func_025_492f
 
 Func_025_4901:
-	ld de, BGMap_025_4934
+	ld de, Tilemap_025_4934
 	ld hl, $0f0c
 	jr Func_025_491f
 
 Func_025_4909:
-	ld de, BGMap_025_4938
+	ld de, Tilemap_025_4938
 	ld hl, $110c
 	jr Func_025_491f
 
 Func_025_4911:
-	ld de, BGMap_025_493c
+	ld de, Tilemap_025_493c
 	ld hl, $0f0e
 	jr Func_025_491f
 
 Func_025_4919:
-	ld de, BGMap_025_4940
+	ld de, Tilemap_025_4940
 	ld hl, $110e
 
 Func_025_491f:
@@ -1446,13 +1445,13 @@ Func_025_492f:
 	ld [wBattleScriptByte], a
 	ret
 
-BGMap_025_4934:
+Tilemap_025_4934:
 	db $2e, $2f, $36, $37
-BGMap_025_4938:
+Tilemap_025_4938:
 	db $32, $33, $3a, $3b
-BGMap_025_493c:
+Tilemap_025_493c:
 	db $30, $31, $38, $39
-BGMap_025_4940:
+Tilemap_025_4940:
 	db $34, $35, $3c, $3d
 
 Func_025_4944:
@@ -2608,7 +2607,7 @@ Func_025_51e3:
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
-	ld de, BGMap_025_6350
+	ld de, Tilemap_025_6350
 	ld a, [de]
 	inc de
 	ld b, a
@@ -2637,7 +2636,7 @@ Func_025_5221:
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
-	ld de, BGMap_025_63ca
+	ld de, Tilemap_025_63ca
 	ld a, [de]
 	inc de
 	ld b, a
@@ -3664,7 +3663,7 @@ Func_025_585a:
 	ld [hVRAMCopyWidth], a
 	ld a, $04
 	ld [hVRAMCopyHeight], a
-	ld de, BGMap_025_645c
+	ld de, Tilemap_025_645c
 	call PlaceTilemap
 
 ; Place attribute map
@@ -5331,7 +5330,7 @@ Func_025_5ffb:
 	pop hl
 	ret
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - indexed table (index hli)
 unk_025_6022:
 	dw $100d
 	dw $120d
@@ -5438,64 +5437,28 @@ String_025_611b:
 	db $f1, $49, $2f, $f3, $0a, $f0, $c9, $33, $f1, $23, $ed, $f2, $53, $f3, $9c, $f1
 	db $3c, $f2, $10, $ed, $f3, $0a, $f0, $c9, $ed
 Tilemap_025_61c4:
-	db $07, $06, $8d, $99, $04, $01, $01, $01, $01, $01, $02, $03, $00, $a0, $a2, $a4
-	db $a6, $05, $03, $00, $a1, $a3, $a5, $a7, $05, $03, $00, $a8, $aa, $ac, $ae, $05
-	db $03, $00, $a9, $ab, $ad, $af, $05, $06, $07, $07, $07, $07, $07, $08
+	INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
 Tilemap_025_61f2:
-	db $07, $06, $8d, $99, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	INCBIN "gfx/tilemaps/tilemap_025_61f2.tilemap"
 Tilemap_025_6220:
-	db $08, $08, $40, $99, $04, $01, $01, $01, $01, $01, $01, $02, $03, $00, $90, $92
-	db $94, $96, $00, $05, $03, $00, $91, $93, $95, $97, $00, $05, $03, $00, $80, $82
-	db $84, $86, $00, $05, $03, $00, $81, $83, $85, $87, $00, $05, $03, $00, $88, $8a
-	db $8c, $8e, $00, $05, $03, $00, $89, $8b, $8d, $8f, $00, $05, $06, $07, $07, $07
-	db $07, $07, $07, $08
+	INCBIN "gfx/tilemaps/tilemap_025_6220.tilemap"
 Tilemap_025_6264:
-	db $08, $08, $40, $99, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00
+	INCBIN "gfx/tilemaps/tilemap_025_6264.tilemap"
 Tilemap_025_62a8:
-	db $08, $0a, $00, $99, $04, $01, $01, $01, $01, $01, $01, $02, $03, $00, $98, $9a
-	db $9c, $9e, $00, $05, $03, $00, $99, $9b, $9d, $9f, $00, $05, $03, $00, $90, $92
-	db $94, $96, $00, $05, $03, $00, $91, $93, $95, $97, $00, $05, $03, $00, $80, $82
-	db $84, $86, $00, $05, $03, $00, $81, $83, $85, $87, $00, $05, $03, $00, $88, $8a
-	db $8c, $8e, $00, $05, $03, $00, $89, $8b, $8d, $8f, $00, $05, $06, $07, $07, $07
-	db $07, $07, $07, $08
+	INCBIN "gfx/tilemaps/tilemap_025_62a8.tilemap"
 Tilemap_025_62fc:
-	db $08, $0a, $00, $99, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00
-BGMap_025_6350:
-	db $14, $06, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
-	db $01, $04, $01, $01, $01, $02, $03, $80, $82, $84, $86, $88, $8a, $8c, $8e, $90
-	db $92, $94, $96, $98, $9a, $03, $00, $68, $6a, $05, $03, $81, $83, $85, $87, $89
-	db $8b, $8d, $8f, $91, $93, $95, $97, $99, $9b, $03, $00, $69, $6b, $05, $03, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $03, $00, $6c
-	db $6e, $05, $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $03, $00, $6d, $6f, $05, $06, $07, $07, $07, $07, $07, $07, $07, $07, $07
-	db $07, $07, $07, $07, $07, $06, $07, $07, $07, $08
-BGMap_025_63ca:
-	db $14, $06, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
-	db $01, $01, $01, $01, $01, $02, $03, $80, $82, $84, $86, $88, $8a, $8c, $8e, $90
-	db $92, $00, $00, $00, $00, $00, $00, $00, $00, $05, $03, $81, $83, $85, $87, $89
-	db $8b, $8d, $8f, $91, $93, $00, $00, $00, $00, $00, $00, $00, $00, $05, $03, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $05, $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $05, $06, $07, $07, $07, $07, $07, $07, $07, $07, $07
-	db $07, $07, $07, $07, $07, $07, $07, $07, $07, $08
+	INCBIN "gfx/tilemaps/tilemap_025_62fc.tilemap"
+Tilemap_025_6350:
+	INCBIN "gfx/tilemaps/tilemap_025_6350.tilemap"
+Tilemap_025_63ca:
+	INCBIN "gfx/tilemaps/tilemap_025_63ca.tilemap"
 AttrMap_025_6444:
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $02, $01, $01, $01, $01, $02 ; HP Bar
 
-BGMap_025_645c:
+Tilemap_025_645c:
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $17, $0a, $0b ; Lv01

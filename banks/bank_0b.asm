@@ -57,6 +57,7 @@ Pointers_00b_415d:
 	db $02, $02
 	db $2b, $2d, $2c, $2e
 
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_00b_4179:
 	db $ff, $ff
 
@@ -83,19 +84,25 @@ MovementData_OneDown::
 MovementData_OneUp::
 	db UP, $ff
 
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_00b_4195::
 	dw unk_00b_4199, unk_00b_4179
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_00b_4199:
 	db $02, $04, $3e, $3e, $3e, $3e, $3e, $3e, $3e, $3e
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_00b_41a3:
 	dw unk_00b_41a7, unk_00b_4179
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_00b_41a7:
 	db $02, $02, $6d, $6a, $6d, $68
 	db $02, $02, $01, $01, $01, $01
 	db $02, $04, $03, $03, $03, $03, $03, $03, $03, $03
 	db $02, $04, $02, $02, $02, $02, $03, $03, $03, $03
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_00b_41c7:
 	dw unk_00b_41cb, unk_00b_4179
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_00b_41cb:
 	db $02, $04, $0c, $0e, $0d, $0f, $10, $12, $11, $13
 MovementData_00b_41d5::
@@ -983,7 +990,7 @@ Jumptable_00b_482d:
 	dw asm_00b_492e
 	dw asm_00b_4955
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld de, unk_00b_4839`
 unk_00b_4839:
 	db $16
 	db $0
@@ -2365,6 +2372,7 @@ Script_48:
 	ret
 
 ; list pointers indexed by wd1f4; each -> a wram (id,count) list searched by Script_4d/Script_59
+; TODO: unk_ - indexed table (index hli)
 unk_00b_5192:
 	dw wd300, wddb0, wd284
 

@@ -281,13 +281,11 @@ Palettes_017_4f17::
 Collision_017_4f5f::
 	INCBIN "data/maps/collision/Collision_017_4f5f.bin"
 
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 gfx_017_4f9e::
-	dr $5cf9e, $5d11e
+	INCBIN "gfx/tilesets/gfx_017_4f9e.2bpp"
 
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
 gfx_017_511e::
-	dr $5d11e, $5d12e
+	INCBIN "gfx/tilesets/gfx_017_511e.2bpp"
 
 gfx_017_512e::
 INCBIN "gfx/tilesets/image_17_512e.2bpp"

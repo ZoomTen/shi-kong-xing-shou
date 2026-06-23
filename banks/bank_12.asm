@@ -1525,6 +1525,7 @@ MovementData_012_503c::
 MovementData_012_5065::
 	db $01, $ff, $04, $fc, $04, $fc
 
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_012_506b::
 	db $03, $fc, $04, $fc, $03, $fc, $04, $fc, $04, $fc, $03, $fc, $04, $fc, $03, $fc
 	db $04, $fc, $04, $fc, $03, $fc, $04, $fc, $03, $fc, $04, $fc, $04, $fc, $03, $fc

@@ -34,6 +34,7 @@ Func_024_4000:
 	farcall Func_004_42ac
 	ret
 
+; TODO: unk_ - indexed table (index hli)
 unk_024_4041:
 	db $00, $10, $02, $03, $04, $05, $06, $07
 	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f
@@ -458,7 +459,7 @@ Func_024_4844:
 	ld [hli], a
 	ld [hli], a
 	ret
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_024_4893:
 	dr $90893, $908bd
 Func_024_48bd:
@@ -804,7 +805,7 @@ Func_024_4b04:
 .asm_4b5e
 	ret
 .asm_4b5f
-	ld de, unk_024_4be8
+	ld de, MenuOptionCoords_024_4be8
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, $00
@@ -876,8 +877,7 @@ Func_024_4b04:
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
-; TODO: indexed data table, classify type
-unk_024_4be8:
+MenuOptionCoords_024_4be8:
 	db $20, $14, $18, $18, $20, $34, $18, $38, $20, $54, $18, $58, $20, $74, $18, $78
 	db $48, $14, $40, $18, $48, $34, $40, $38, $48, $54, $40, $58, $48, $74, $40, $78
 Func_024_4c08:
@@ -1263,8 +1263,7 @@ Func_024_4ed9:
 	xor a
 	ldh [hFFC6], a
 	ret
-; TODO: indexed data table, classify type
-unk_024_4ef5:
+MenuOptionTable_024_4ef5:
 	db $18, $10, $18, $58, $38, $10, $38, $58
 Func_024_4efd:
 	ldh a, [hJoypadPressed]
@@ -1353,7 +1352,7 @@ Func_024_4efd:
 .asm_4f8c
 	ld a, SFX_28
 	call PlaySound
-	ld bc, unk_024_4ef5
+	ld bc, MenuOptionTable_024_4ef5
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, $00
@@ -3287,7 +3286,7 @@ Script_024_5f67:
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_5f78:
 	dr $91f78, $91f82
-; TODO: indexed data table, classify type
+; TODO: unk_ - lookup table indexed by wd9f3
 unk_024_5f82:
 	db $00, $04, $04, $04, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
 	db $01, $01, $01, $01, $01, $03, $03, $03, $04, $04, $04, $04, $04, $04, $04, $04
@@ -3409,7 +3408,7 @@ Func_024_605d:
 	jr .asm_608c
 .asm_6095
 	ret
-; TODO: indexed data table, classify type
+; TODO: unk_ - lookup table indexed by wd1f4
 unk_024_6096:
 	db $78, $28, $2d
 Func_024_6099:
@@ -3790,7 +3789,7 @@ Func_024_6328:
 	xor a
 	ldh [hFFC6], a
 	ret
-; TODO: indexed data table, classify type
+; TODO: unk_ - lookup table indexed by wd1f4
 unk_024_6344:
 	db $17, $07, $08
 Func_024_6347:
@@ -4339,7 +4338,7 @@ Func_024_66f8:
 	dec a
 	ld [wSelectedOption], a
 .asm_673c
-	ld de, unk_024_6969
+	ld de, MenuOptionTable_024_6969
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, $00
@@ -4645,8 +4644,7 @@ Func_024_694c:
 	ld [bc], a
 	ret
 
-; TODO: indexed data table, classify type
-unk_024_6969:
+MenuOptionTable_024_6969:
 	db $78, $78, $88, $78
 Func_024_696d:
 	call Func_024_4062
@@ -4964,7 +4962,7 @@ StartMenu_Input:
 	xor a
 	ld [wBattleScriptByte], a
 
-	ld de, unk_024_6b9c
+	ld de, MenuOptionStateTable_024_6b9c
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
@@ -4997,8 +4995,7 @@ StartMenu_Input:
 .ret
 	ret
 
-; TODO: indexed data table, classify type
-unk_024_6b9c:
+MenuOptionStateTable_024_6b9c:
 	db $02, $07, $14, $12, $15
 
 Func_024_6ba1:
@@ -5330,7 +5327,7 @@ SpriteOAMTemplate_Pointers:
 	db $10, $18, $00, $EE, $01
 	db $FF
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - lookup table indexed by wd9bf
 unk_024_6d77:
 	db $00, $0a, $14, $1e, $14, $0a, $28, $0f, $14, $0a, $0f, $1e, $1e, $14, $0a, $19
 	db $23, $1e, $14, $1e, $05, $14, $0f, $0f, $1e, $23, $14, $14, $23, $14, $23, $1e
@@ -5341,7 +5338,7 @@ unk_024_6d77:
 	db $0f, $0a, $05, $0f, $0f, $1e, $19, $1e, $19, $14, $0a, $05, $0f, $14, $0a, $0f
 	db $0f, $0f, $1e, $0f, $0a, $0f, $05, $0a, $14, $0a, $0f, $0f, $28, $14, $0f, $1e
 	db $28, $0a, $0a, $0a, $14, $1e, $14, $0a, $0a, $05, $0a, $0a, $0a
-; TODO: indexed data table, classify type
+; TODO: unk_ - indexed table (index wd9f3)
 unk_024_6e04:
 	db $89, $35, $4d, $6b, $2e, $05, $45, $16, $73, $23, $4c, $22, $07, $78, $19, $40
 	db $81, $77, $5d, $06, $1e, $4f, $75, $0a, $2a, $61, $3b, $32, $68, $85, $88, $5a

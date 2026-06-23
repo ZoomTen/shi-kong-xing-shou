@@ -213,8 +213,7 @@ NewGameContinueMenu::
 ; TODO: data table - classify (verify consumer)
 	dr $f01f7, $f0239
 .Attrmap:
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $f0239, $f027b
+	ds 66
 .Palette:
 	RGB 31, 31, 31
 	RGB 11, 27, 31

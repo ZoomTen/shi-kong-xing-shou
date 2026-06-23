@@ -100,9 +100,9 @@ Credits::
 	xor a
 	ld [wdcfb], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 CreditsMonPicList:
-	dr $1c40e8, $1c40fb
+	db MON_117, MON_108, MON_091, MON_099, MON_145, MON_144, MON_126, MON_027, MON_041, MON_012, MON_006, MON_073, MON_095, MON_054, MON_114, MON_104
+	db MON_133, MON_141, MON_081
 Func_71_40fb:
 	ld a, [wdcf4]
 	inc a
@@ -477,7 +477,7 @@ TheEndPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_071_5dec:
 	ds 8
 TheEndGfx:

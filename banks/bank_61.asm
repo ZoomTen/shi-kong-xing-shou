@@ -294,9 +294,9 @@ Func_061_4217:
 	xor a
 	ld [wdce8], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_ObjectInitTable:
-	dr $184264, $184280
+	db $f0, $30, $04, $10, $00, $50, $04, $10, $f0, $70, $04, $10, $00, $90, $04, $10
+	db $f0, $40, $04, $10, $00, $60, $04, $10, $f0, $80, $04, $10
 Func_61_4280:
 	ld bc, wdd50
 .asm_4283
@@ -457,12 +457,10 @@ MeteorCutscene2_AnimFramePointers:
 	dw MeteorCutscene2_AnimFrame0
 	dw MeteorCutscene2_AnimFrame0
 	dw MeteorCutscene2_AnimFrame1
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MeteorCutscene2_AnimFrame0:
-	dr $184368, $184371
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $00, $00, $00, $00, $00, $08, $02, $00, $ff
 MeteorCutscene2_AnimFrame1:
-	dr $184371, $18437a
+	db $00, $00, $04, $00, $00, $08, $06, $00, $ff
 MeteorCutscene2_Palette1:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
@@ -497,8 +495,7 @@ MeteorCutscene2_Palette1:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-MeteorCutscene2_Pad_43BA:
-	dr $1843ba, $1843c2
+	ds 8
 MeteorCutscene2_PaletteOBJ:
 	RGB 21, 21, 21
 	RGB 9, 0, 0
@@ -533,8 +530,7 @@ MeteorCutscene2_PaletteOBJ:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-MeteorCutscene2_Pad_4402:
-	dr $184402, $18440a
+	ds 8
 MeteorCutscene2_GFX1:
 INCBIN "gfx/misc/meteorcutscene2_gfx1.2bpp"
 MeteorCutscene2_GFX2:
@@ -545,9 +541,10 @@ MeteorCutscene2_Attrmap1:
 INCBIN "gfx/attrmaps/meteorcutscene2_attrmap1.bin"
 MeteorCutscene2_Tilemap1:
 INCBIN "gfx/tilemaps/meteorcutscene2_tilemap1.tilemap"
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_61_516A:
-	dr $18516a, $18518a
+	db $00, $00, $00, $00, $38, $39, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $3a, $3b, $00, $00, $00, $00, $00, $00
 MeteorCutscene2_AnimAttrmap0:
 INCBIN "gfx/attrmaps/meteorcutscene2_animattrmap0.bin"
 MeteorCutscene2_AnimTilemap0:
@@ -590,8 +587,7 @@ MeteorCutscene2_Palette2:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-MeteorCutscene2_Pad_576A:
-	dr $18576a, $185772
+	ds 8
 MeteorCutscene2_Attrmap2:
 INCBIN "gfx/attrmaps/meteorcutscene2_attrmap2.bin"
 MeteorCutscene2_Tilemap2:
@@ -757,12 +753,19 @@ UnderwaterPictureCutscene::
 UnderwaterPicture_SpriteOAMPointers:
 	dw UnderwaterPicture_SpriteOAM_Empty
 	dw UnderwaterPicture_SpriteOAM_Empty_5e6f
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 UnderwaterPicture_SpriteOAM_Empty:
-	dr $185e56, $185e6f
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
 UnderwaterPicture_SpriteOAM_Empty_5e6f:
-	dr $185e6f, $185ef8
+	db $00, $10, $00, $00, $08, $00, $02, $00, $08, $08, $04, $00, $08, $20, $06, $00
+	db $08, $28, $08, $00, $08, $30, $0a, $00, $10, $10, $0c, $00, $10, $18, $0e, $00
+	db $18, $08, $10, $00, $18, $30, $12, $00, $20, $10, $14, $00, $20, $50, $16, $00
+	db $20, $58, $18, $00, $28, $38, $1a, $00, $30, $10, $1c, $00, $30, $18, $1e, $00
+	db $30, $20, $20, $00, $30, $40, $22, $00, $30, $50, $24, $00, $30, $58, $26, $00
+	db $38, $38, $28, $00, $40, $28, $2a, $00, $40, $30, $2c, $00, $40, $40, $2e, $00
+	db $40, $48, $30, $00, $40, $50, $32, $00, $40, $58, $34, $00, $50, $20, $36, $00
+	db $50, $28, $38, $00, $50, $30, $3a, $00, $50, $40, $3c, $00, $50, $48, $3e, $00
+	db $50, $50, $40, $00, $50, $58, $42, $00, $ff
 UnderwaterPicture_Palette:
 	RGB 31, 31, 31
 	RGB 8, 21, 31
@@ -797,8 +800,7 @@ UnderwaterPicture_Palette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-UnderwaterPicture_Pad1:
-	dr $185f38, $185f40
+	ds 8
 UnderwaterPicture_OBJPalette:
 	RGB 21, 21, 21
 	RGB 31, 14, 0
@@ -833,8 +835,7 @@ UnderwaterPicture_OBJPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-UnderwaterPicture_Pad2:
-	dr $185f80, $185f88
+	ds 8
 UnderwaterPicture_Tilemap:
 INCBIN "gfx/tilemaps/underwaterpicture_tilemap.tilemap"
 UnderwaterPicture_Attrmap:

@@ -57,6 +57,7 @@ Func_039_40a0:
 	ld h, [hl]
 	ld l, a
 	jp hl
+; TODO: unk_ - indexed table (index hli)
 unk_039_4111:
 	dr $E4111, $E41FB
 ; TODO
@@ -81,6 +82,7 @@ asm_039_41fb:
 	xor a
 	ldh [hFFC5], a
 	ret
+; TODO: unk_ - data, referenced via `ld [hl], LOW(unk_039_4224)`
 unk_039_4224:
 	db $08, $14, $4c, $11, $17, $09, $40
 Func_039_422b:
@@ -106,6 +108,7 @@ Func_039_422b:
 	sub [hl]
 	ld [hl], a
 	ret
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_039_4248:
 	dr $E4248, $E479F
 

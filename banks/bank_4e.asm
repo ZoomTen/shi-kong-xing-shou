@@ -360,7 +360,7 @@ Script_04e_4419::
 	emote  3, EMOTE_EXCLAMATION
 	delay $03, $20
 	setattach $01, $00, $00, $10
-	objmove $00, unk_4e_5ff6
+	objmove $00, MovementData_4e_5ff6
 	clearattach $01
 	face FACE_LEFT
 	spriteface  1, FACE_LEFT
@@ -746,9 +746,13 @@ Func_4e_478e:
 	ld a, $01
 	ldh [hFade], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene3_PathScript1:
-	dr $138824, $13887d
+	db $ff, $00, $01, $00, $01, $00, $ff, $00, $fe, $ff, $02, $01, $02, $01, $fe, $ff
+	db $fc, $fe, $04, $02, $04, $02, $fc, $fe, $fe, $00, $02, $00, $02, $00, $fe, $00
+	db $fe, $fd, $02, $03, $02, $03, $fe, $fd, $00, $fe, $00, $02, $00, $02, $00, $fe
+	db $ff, $fe, $01, $02, $01, $02, $ff, $fe, $ff, $00, $01, $00, $01, $00, $ff, $00
+	db $fc, $fe, $04, $02, $04, $02, $fc, $fe, $00, $ff, $00, $01, $00, $01, $00, $ff
+	db $fe, $ff, $02, $01, $02, $01, $fe, $ff, $88
 Func_4e_487d:
 	ld a, [wcd42]
 	ld b, a
@@ -778,9 +782,17 @@ Func_4e_487d:
 	ld a, $01
 	ld [hFade], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene3_PathScript2:
-	dr $1388b0, $138943
+	db $ff, $00, $01, $00, $01, $00, $ff, $00, $fe, $ff, $02, $01, $02, $01, $fe, $ff
+	db $fc, $fe, $04, $02, $04, $02, $fc, $fe, $fe, $00, $02, $00, $02, $00, $fe, $00
+	db $00, $ff, $00, $ff, $01, $ff, $01, $00, $01, $ff, $ff, $ff, $ff, $ff, $00, $ff
+	db $01, $ff, $01, $00, $01, $00, $00, $ff, $00, $ff, $ff, $ff, $00, $ff, $01, $ff
+	db $01, $00, $01, $00, $01, $00, $00, $ff, $00, $ff, $ff, $ff, $ff, $ff, $00, $ff
+	db $01, $ff, $01, $00, $01, $00, $01, $00, $01, $00, $ff, $ff, $ff, $ff, $00, $ff
+	db $ff, $ff, $01, $fe, $02, $ff, $02, $00, $00, $fe, $ff, $fe, $00, $fe, $02, $00
+	db $02, $00, $ff, $fe, $00, $ff, $00, $fe, $02, $00, $ff, $fe, $fe, $fe, $02, $ff
+	db $02, $00, $ff, $fe, $00, $fe, $04, $fe, $fd, $fc, $01, $fd, $03, $ff, $03, $ff
+	db $fe, $fd, $88
 
 AirportCutscene1::
 	call Func_4e_4ce3
@@ -866,9 +878,10 @@ AirportCutscene1::
 	ld a, GAMEMODE_AIRPORT_CUTSCENE2
 	ld [wTargetMode], a
 	jp JumpToGameMode
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_ScrollRamp:
-	dr $138a10, $138a31
+	db $00, $00, $00, $00, $00, $00, $00, $00, $01, $01, $01, $01, $01, $01, $02, $02
+	db $02, $02, $02, $03, $03, $03, $03, $04, $04, $04, $05, $05, $05, $06, $06, $07
+	db $08
 Func_4e_4a31:
 	ld a, [wdcf3]
 	cp $20
@@ -918,9 +931,21 @@ Func_4e_4a52:
 	ld a, $01
 	ld [hFade], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_SpritePath:
-	dr $138a82, $138b53
+	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe
+	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fd, $00, $fd, $00, $fd, $ff, $fd
+	db $ff, $fd, $00, $fd, $ff, $fd, $ff, $fd, $ff, $fd, $ff, $fd, $ff, $fd, $ff, $fd
+	db $ff, $fd, $ff, $fd, $ff, $fd, $fe, $fd, $ff, $fd, $ff, $fd, $fe, $fd, $ff, $fd
+	db $ff, $fd, $fe, $fd, $ff, $fd, $fe, $fd, $fe, $fd, $ff, $fd, $fe, $fd, $fe, $fd
+	db $ff, $fd, $fd, $fc, $fe, $fc, $fd, $fc, $fe, $fc, $fd, $fc, $fd, $fc, $fd, $fc
+	db $fd, $fc, $fe, $fc, $fd, $fc, $fc, $fc, $fd, $fc, $fd, $fc, $fc, $fc, $fc, $fc
+	db $88
 Func_4e_4b53:
 	ld a, [wcd45]
 	and a
@@ -967,12 +992,13 @@ AirportCutscene1_AnimPointers:
 	dw AirportCutscene1_AnimFrames
 	dw AirportCutscene1_AnimFrames_4ba1
 	dw AirportCutscene1_AnimFrames_4ba1
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_AnimFrames:
-	dr $138ba0, $138ba1
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $ff
 AirportCutscene1_AnimFrames_4ba1:
-	dr $138ba1, $138bde
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
+	db $01, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
+	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $ff
 Func_4e_4bde:
 	ld hl, wc000
 	ld bc, $0028
@@ -1037,15 +1063,21 @@ AirportCutscene1_OAMPointers:
 	dw AirportCutscene1_OAMData
 	dw AirportCutscene1_OAMData_4c4d
 	dw AirportCutscene1_OAMData_4c9a
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 AirportCutscene1_OAMData:
-	dr $138c34, $138c4d
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00, $00, $00, $ff
 AirportCutscene1_OAMData_4c4d:
-	dr $138c4d, $138c9a
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $00, $08, $00, $00, $00, $10, $02, $00, $10, $00, $04, $00, $10, $08, $06, $00
+	db $10, $10, $08, $00, $10, $18, $0a, $00, $10, $20, $0c, $00, $10, $28, $0e, $00
+	db $10, $30, $10, $00, $10, $38, $12, $00, $10, $40, $14, $00, $20, $00, $16, $00
+	db $20, $08, $18, $00, $20, $10, $1a, $00, $20, $18, $1c, $00, $20, $20, $1e, $00
+	db $20, $28, $20, $00, $20, $30, $22, $00, $20, $38, $24, $00, $ff
 AirportCutscene1_OAMData_4c9a:
-	dr $138c9a, $138ce3
+	db $00, $00, $26, $00, $00, $08, $28, $00, $00, $10, $2a, $00, $00, $18, $2c, $00
+	db $00, $20, $2e, $00, $10, $00, $30, $00, $10, $08, $32, $00, $10, $10, $34, $00
+	db $10, $18, $36, $00, $10, $20, $38, $00, $10, $28, $3a, $00, $10, $30, $3c, $00
+	db $10, $38, $3e, $00, $10, $40, $40, $00, $20, $18, $42, $00, $20, $20, $44, $00
+	db $20, $28, $46, $00, $20, $30, $48, $00, $ff
 Func_4e_4ce3:
 	ld hl, wVisibleObjects
 	ld bc, $0100
@@ -1070,8 +1102,7 @@ Func_4e_4cf1:
 	ret
 INCLUDE "data/text/bank4e_4d02.asm"
 INCLUDE "data/text/bank4e_51fa.asm"
-; TODO: data, not noise (not graphics)
-unk_4e_5ff6:
+MovementData_4e_5ff6:
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00

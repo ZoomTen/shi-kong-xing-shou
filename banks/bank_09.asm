@@ -265,43 +265,55 @@ Func_009_40b8:
 	pop hl
 	ret
 
-; TODO: facing (x, y) delta table, indexed by direction (1-4), *2
+; TODO: unk_ - indexed table (index wPlayerMap2Y)
 unk_009_4193:
 	db $01, $00, $ff, $00, $00, $ff, $00, $01
 ; TODO: pointer table into unk_009_41b5 records, indexed by object field $0008, *2
 Pointers_009_419b:
 	dw unk_009_41b5, unk_009_41b6, unk_009_41ba, unk_009_41be, unk_009_41c2, unk_009_41c6, unk_009_41d3
 	dw unk_009_41e0, unk_009_41f9, unk_009_4212, unk_009_4225, unk_009_4238, unk_009_424b
-; TODO: 3-byte records, $ff-terminated lists; stepped by object field $000e, *3
+; TODO: unk_ - data, referenced via `; TODO: pointer table into unk_009_41b5 records, indexed by object field $0008, *2`
 unk_009_41b5:
 	db $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41b6:
 	db $01, $01, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41ba:
 	db $01, $02, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41be:
 	db $01, $03, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41c2:
 	db $01, $04, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41c6:
 	db $3f, $02, $10, $7f, $02, $10, $3f, $01, $10, $3f, $01, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41d3:
 	db $3f, $03, $10, $3f, $03, $10, $3f, $04, $10, $7f, $04, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41e0:
 	db $1f, $03, $10, $1f, $03, $10, $1f, $01, $10, $1f, $04, $10, $1f, $04, $10, $1f
 	db $04, $10, $1f, $02, $10, $6f, $03, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_41f9:
 	db $1f, $04, $10, $1f, $04, $10, $1f, $02, $10, $1f, $02, $10, $1f, $03, $10, $1f
 	db $03, $10, $1f, $01, $10, $1f, $01, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_4212:
 	db $3f, $02, $10, $3f, $02, $10, $1f, $03, $10, $1f, $01, $10, $2f, $01, $10, $6f
 	db $04, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_4225:
 	db $1f, $01, $10, $2f, $01, $10, $3f, $01, $10, $3f, $02, $10, $4f, $02, $10, $5f
 	db $02, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_4238:
 	db $4f, $04, $10, $3f, $04, $10, $2f, $04, $10, $1f, $03, $10, $2f, $03, $10, $3f
 	db $03, $10, $ff
+; TODO: unk_ - record pointed to by a dw pointer-table
 unk_009_424b:
 	db $3f, $03, $10, $3f, $04, $10, $ff
 ; TODO: action handlers indexed by object field $000f, *2; jumped via jp hl

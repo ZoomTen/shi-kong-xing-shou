@@ -580,9 +580,16 @@ FloatingIslandCutscene2::
 	ld a, $01
 	ld [hFade], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 FloatingIslandCutscene2_MoveDeltas:
-	dr $19d2e8, $19d371
+	db $00, $01, $ff, $02, $ff, $02, $00, $02, $ff, $02, $00, $02, $ff, $02, $00, $02
+	db $ff, $02, $00, $02, $ff, $02, $00, $02, $00, $02, $ff, $02, $00, $02, $00, $02
+	db $ff, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $ff, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $01, $02, $00, $02
+	db $00, $02, $00, $02, $00, $02, $00, $02, $01, $02, $00, $02, $00, $02, $01, $02
+	db $00, $02, $01, $02, $00, $02, $00, $02, $01, $02, $01, $02, $00, $02, $01, $02
+	db $00, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02, $01, $02
+	db $01, $02, $01, $02, $01, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02
+	db $01, $02, $02, $02, $01, $02, $02, $02, $88
 Func_67_5371:
 	ld hl, wc000
 	ld bc, $0028
@@ -956,5 +963,3 @@ Script_067_6f4a:
 	end
 
 INCLUDE "data/text/bank67_6f4b.asm"
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $19f084, $19f090

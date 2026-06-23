@@ -385,7 +385,7 @@ Func_5d_435e:
 	ld a, [hl]
 	ld l, a
 	ld h, $99
-	ld de, BGMap_5d_43EE
+	ld de, Tilemap_5d_43EE
 	ld bc, $0202
 	ld a, $02
 	ldh [hVRAMCopyHeight], a
@@ -436,9 +436,9 @@ Func_5d_435e:
 	ldh [hVRAMCopyWidth], a
 	call PlaceTilemap_Bank0
 	ret
-BGMap_5d_43EE:
-INCBIN "gfx/bgmaps/bgmap_5d_43ee.bin"
-; TODO: indexed data table, classify type
+Tilemap_5d_43EE:
+INCBIN "gfx/tilemaps/tilemap_5d_43ee.tilemap"
+; TODO: unk_ - lookup table indexed by hl
 unk_5d_43F2:
 	db $e1, $e3, $e5
 Func_5d_43f5:
@@ -1417,7 +1417,6 @@ RhythmBGPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: padding between palettes, confirm
-unk_5d_4AFF_pad:
 	ds 8
 RhythmOBJPalette:
 	RGB 21, 21, 21
@@ -1453,7 +1452,6 @@ RhythmOBJPalette:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 ; TODO: padding between palettes, confirm
-unk_5d_4B47_pad:
 	ds 8
 RhythmScreen1Tilemap:
 INCBIN "gfx/tilemaps/rhythmscreen1tilemap.tilemap"
@@ -1509,7 +1507,6 @@ RhythmTileChunks:
 	db $1d, $1e, $1f, $20, $36, $37, $38, $24, $39, $3a, $3b, $28, $29, $2a, $2b, $2c
 	db $1d, $1e, $1f, $20, $3c, $3d, $3e, $24, $3f, $40, $41, $28, $29, $2a, $2b, $2c
 ; TODO: padding between palettes, confirm
-unk_5d_79BB_pad:
 	ds 5
 
 

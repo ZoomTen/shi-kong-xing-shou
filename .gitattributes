@@ -18,3 +18,7 @@
 *.bin     binary
 *.ora     binary
 *.tilemap binary
+*.gbcattr binary
+*.attr    binary
+*.pal     binary
+*.zlib    binary

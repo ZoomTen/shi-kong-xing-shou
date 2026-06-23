@@ -93,7 +93,7 @@ Script_05c_4135:: ; farjump2 target (bank_55)
 	spriteface  3, FACE_UP
 	stext text_5c_458c
 	spriteface  3, FACE_DOWN
-	objmove $03, unk_05c_51fa
+	objmove $03, MovementData_05c_51fa
 	clearobject $03
 	face FACE_LEFT
 	spriteface  2, FACE_LEFT
@@ -337,17 +337,17 @@ Script_05c_436c:
 	stext text_5c_4a25
 	delay $03, $20
 	loadobjsprite ObjSprite_5c_44d8
-	objmove $06, unk_05c_51fa
+	objmove $06, MovementData_05c_51fa
 	clearobject $03
 	clearobject $06
 	delay $03, $10
 	loadobjsprite ObjSprite_5c_44e4
-	objmove $03, unk_05c_51fa
+	objmove $03, MovementData_05c_51fa
 	clearobject $04
 	clearobject $03
 	delay $03, $10
 	loadobjsprite ObjSprite_5c_44f0
-	objmove $03, unk_05c_51fa
+	objmove $03, MovementData_05c_51fa
 	clearobject $05
 	clearobject $03
 	delay $03, $10
@@ -482,7 +482,7 @@ MovementData_05c_51b9::
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
 	db $88
-unk_05c_51fa::
+MovementData_05c_51fa::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
@@ -797,7 +797,7 @@ BGPals_5c:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_5c_57d1:
 	ds 8
 Attrmap_5c:

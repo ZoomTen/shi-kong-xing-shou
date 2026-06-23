@@ -39,7 +39,7 @@ Func_00a_4000::
 	call DelayFrame
 	call LoadTextFaceExtraSprites
 	call DelayFrame
-	ld hl, BGMap_00a_42e3
+	ld hl, Tilemap_00a_42e3
 	ld a, l
 	ld [wdcd6], a
 	ld a, h
@@ -87,7 +87,7 @@ Func_00a_4063::
 	ld de, $8E00
 	ld bc, Start
 	call CopyBytesVRAM
-	ld hl, BGMap_00a_4383
+	ld hl, Tilemap_00a_4383
 	ld a, l
 	ld [wdcd6], a
 	ld a, h
@@ -231,7 +231,7 @@ Func_00a_4178::
 	ret
 
 Func_00a_41a3:
-	ld de, BGMap_00a_42e3
+	ld de, Tilemap_00a_42e3
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
@@ -447,34 +447,14 @@ Func_00a_4295:
 	jr nz, .asm_42cf
 	ret
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld de, unk_00a_42db`
 unk_00a_42db:
 	db $a3, $a4, $a4, $a4, $a4, $a4, $a4, $a6
 
-; TODO: screen layout (tilemap/attr) copied to VRAM; sub-tables at BGMap_00a_4383/4423
-BGMap_00a_42e3:
-	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2
-	db $a2, $a2, $a2, $a3, $a4, $f0, $f1, $f2, $f3, $e0, $e2, $e4, $e6, $e8, $ea, $ec
-	db $ee, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $f4, $f5, $f6, $f7, $e1, $e3, $e5
-	db $e7, $e9, $eb, $ed, $ef, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $f8, $f9, $fa
-	db $fb, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4
-	db $a4, $fc, $fd, $fe, $ff, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a5, $a2, $a2, $a2
-	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a6
-; TODO: pointer/data target loaded via ld hl (stored to wdcd6)
-BGMap_00a_4383:
-	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2
-	db $a2, $a2, $a2, $a3, $a4, $e0, $e2, $e4, $e6, $e8, $ea, $ec, $ee, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $e1, $e3, $e5, $e7, $e9, $eb, $ed
-	db $ef, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4
-	db $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a4, $a0, $a0, $a0, $a0, $a0, $a0, $a0
-	db $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a0, $a4, $a5, $a2, $a2, $a2
-	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a6
+Tilemap_00a_42e3:
+	INCBIN "gfx/tilemaps/tilemap_00a_42e3.tilemap"
+Tilemap_00a_4383:
+	INCBIN "gfx/tilemaps/tilemap_00a_4383.tilemap"
 ; TODO: tilemap copied to VRAM $8E00
 GFX_00a_4423:
 	db $11, $11, $11, $11, $1f, $1f, $11, $11, $21, $21, $01, $01, $ff, $ff, $00, $00

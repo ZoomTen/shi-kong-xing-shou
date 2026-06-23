@@ -2730,26 +2730,26 @@ Tilemap_4a_5d45:
 INCBIN "gfx/tilemaps/tilemap_4a_5d45.tilemap"
 Attrmap_4a_5dfb:
 INCBIN "gfx/attrmaps/attrmap_4a_5dfb.bin"
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_5eb1:
 	ds 18
 Tilemap_4a_5ec3:
 INCBIN "gfx/tilemaps/tilemap_4a_5ec3.tilemap"
 Tilemap_4a_5ec7:
 INCBIN "gfx/tilemaps/tilemap_4a_5ec7.tilemap"
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_5ecb:
 	ds 13
 Tilemap_4a_5ed8:
 INCBIN "gfx/tilemaps/tilemap_4a_5ed8.tilemap"
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_5fc0:
 	ds 5
 Tilemap_4a_5fc5:
 INCBIN "gfx/tilemaps/tilemap_4a_5fc5.tilemap"
 Tilemap_4a_6017:
 INCBIN "gfx/tilemaps/tilemap_4a_6017.tilemap"
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_6051:
 	ds 28
 Tilemap_4a_606d:
@@ -2898,7 +2898,7 @@ Tilemap_4a_7f7f:
 INCBIN "gfx/tilemaps/tilemap_4a_7f7f.tilemap"
 Attrmap_4a_7fab:
 INCBIN "gfx/attrmaps/attrmap_4a_7fab.bin"
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_7fd7:
 	dr $12bfd7, $12bfff
 

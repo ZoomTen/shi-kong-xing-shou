@@ -2519,7 +2519,7 @@ Script_005_524c:
 	setfollower $52
 	end
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_525e:
 	dr $1525e, $15270
 
@@ -2696,7 +2696,7 @@ asm_005_53b7:
 Func_005_53bb:
 	ld hl, $0505
 	call Func_005_5571
-	ld de, BGMap_005_53d1
+	ld de, Tilemap_005_53d1
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -2704,7 +2704,7 @@ Func_005_53bb:
 	call Func_005_5a59
 	ret
 
-BGMap_005_53d1:
+Tilemap_005_53d1:
 	db $11
 	db $13
 	db $12
@@ -2742,7 +2742,7 @@ asm_005_5400:
 Func_005_5404:
 	ld hl, $0505
 	call Func_005_5571
-	ld de, BGMap_005_541a
+	ld de, Tilemap_005_541a
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -2750,7 +2750,7 @@ Func_005_5404:
 	call Func_005_5a59
 	ret
 
-BGMap_005_541a:
+Tilemap_005_541a:
 	db $48
 	db $4a
 	db $49
@@ -2848,7 +2848,7 @@ Func_005_54ad:
 	srl a
 	ld h, a
 	call Func_005_55b5
-	ld de, BGMap_005_5500
+	ld de, Tilemap_005_5500
 	jr asm_005_54ef
 
 Func_005_54cf:
@@ -2866,7 +2866,7 @@ Func_005_54cf:
 	srl a
 	ld h, a
 	call Func_005_55b5
-	ld de, BGMap_005_54fc
+	ld de, Tilemap_005_54fc
 
 asm_005_54ef:
 	ld bc, $0202
@@ -2876,13 +2876,13 @@ asm_005_54ef:
 	call Func_005_5a59
 	ret
 
-BGMap_005_54fc:
+Tilemap_005_54fc:
 	db $9
 	db $b
 	db $a
 	db $c
 
-BGMap_005_5500:
+Tilemap_005_5500:
 	db $d
 	db $f
 	db $e
@@ -2903,7 +2903,7 @@ RedrawTileAfterObtain:
 	srl a
 	ld h, a
 	call Func_005_55b5
-	ld de, BGMap_005_556d
+	ld de, Tilemap_005_556d
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
@@ -2934,7 +2934,7 @@ asm_005_5552:
 	ld c, b
 	ld b, 0
 	add hl, bc
-	ld de, BGMap_005_556d
+	ld de, Tilemap_005_556d
 	ld a, [de]
 	inc de
 	ld [hli], a
@@ -2950,25 +2950,25 @@ asm_005_5552:
 	ld [hli], a
 	ret
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_5569:
 	db $0
 	db $2
 	db $1
 	db $3
 
-BGMap_005_556d:
+Tilemap_005_556d:
 	db $1
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_556e:
 	db $3
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_556f:
 	db $2
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_5570:
 	db $4
 
@@ -3108,19 +3108,19 @@ TryShowFoundItem:
 	call SetTextboxYPosition
 	ret
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld hl, unk_005_5632`
 unk_005_5632:
 	db $ff, $00, $00, $00, $a1, $ff, $03, $01, $01, $00, $f8, $d3, $02, $02, $01, $00
 	db $f7, $d3, $01, $04, $01, $ff, $f6, $d3, $00, $08, $01, $01, $f5, $d3
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld hl, unk_005_5650`
 unk_005_5650:
 	db $ff, $00, $00, $00, $a1, $ff, $02, $02, $01, $00, $f7, $d3, $03, $01, $01, $00
 	db $f8, $d3, $01, $04, $01, $ff, $f6, $d3, $00, $08, $01, $01, $f5, $d3
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld hl, unk_005_566e`
 unk_005_566e:
 	db $ff, $00, $00, $00, $a1, $ff, $03, $01, $01, $00, $f8, $d3, $02, $02, $01, $00
 	db $f7, $d3, $00, $08, $01, $01, $f5, $d3, $01, $04, $01, $ff, $f6, $d3
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld hl, unk_005_568c`
 unk_005_568c:
 	db $ff, $00, $00, $00, $a1, $ff, $02, $02, $01, $00, $f7, $d3, $03, $01, $01, $00
 	db $f8, $d3, $00, $08, $01, $01, $f5, $d3, $01, $04, $01, $ff, $f6, $d3
@@ -3228,11 +3228,11 @@ asm_005_574b:
 	xor a
 	ret
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld de, unk_005_5764`
 unk_005_5764:
 	db $1
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_5765:
 	db $0
 	db $ff
@@ -3832,6 +3832,7 @@ Func_005_5a9c:
 .asm_5ade
 	ld c, $02
 	jr .asm_5ace
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_5ae2:
 	db $e0, $d0, $01, $01, $e0, $d0, $02, $02, $e0, $d0, $04, $04, $e0, $d0, $08, $08
 	db $e0, $d0, $10, $10, $e0, $d0, $20, $20, $e0, $d0, $40, $40, $e0, $d0, $80, $80

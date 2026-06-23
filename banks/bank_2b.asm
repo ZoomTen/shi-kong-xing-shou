@@ -1062,7 +1062,7 @@ DrawLevelUpStats:
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText
-	ld de, BGMap_02b_4910
+	ld de, Tilemap_02b_4910
 	ld hl, $9808
 	ld bc, $0c0c
 	ld a, $c
@@ -1171,7 +1171,7 @@ DrawLevelUpStats:
 	pop bc
 	ret
 
-BGMap_02b_4910: INCBIN "gfx/image_2b_4910.tilemap"
+Tilemap_02b_4910: INCBIN "gfx/image_2b_4910.tilemap"
 AttrMap_02b_49a0: INCBIN "gfx/image_2b_49a0.gbcattr"
 
 ; 攻擊 防禦 速度 法力 魔防 (Attack Defense Speed Magic Magic-Defense)
@@ -1252,7 +1252,7 @@ Func_02b_4a8e:
 	ldh [hMathOperand], a
 	jp Func_02b_4b41
 
-; TODO: confirm. No direct ref; header ($11,$45,$54) then mixed byte data.
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_02b_4a9b:
 	db $11
 	db $0
@@ -3395,7 +3395,7 @@ Func_02b_58df:
 	ret
 
 Func_02b_5912:
-	ld de, unk_02b_7594
+	ld de, BattleAnimTable_02b_7594
 	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, 0
@@ -6103,8 +6103,7 @@ OAMList_758e:
 	db -1
 
 
-; TODO: this gets drawn by Multiply32By8
-unk_02b_7594:
+BattleAnimTable_02b_7594:
 	db $00, $0f, $23, $23, $14, $00, $00, $00, $00, $0f, $37, $00, $00, $00, $00, $28
 	db $0f, $00, $00, $00, $5a, $14, $2a, $00, $00, $1e, $0f, $00, $14, $00, $19, $14
 	db $2d, $28, $00, $00, $00, $00, $00, $00, $00, $00, $37, $14, $14, $23, $44, $00
@@ -6116,13 +6115,13 @@ unk_02b_7594:
 	db $00, $00, $00, $50, $00
 
 ; ramp ascending to $c8
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld de, unk_02b_7619 + $a`
 unk_02b_7619:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $05, $05, $64, $6e, $6e, $78, $78, $82
 	db $82, $8c, $8c, $96, $96, $a0, $a0, $aa, $aa, $b4, $b4, $be, $be, $c8, $c8
 
 ; ramp descending to $00
-; TODO: indexed data table, classify type
+; TODO: unk_ - data, referenced via `ld de, unk_02b_7638`
 unk_02b_7638:
 	db $64, $5f, $5f, $5a, $5a, $55, $55, $50, $50, $4b, $4b, $46, $46, $41, $41, $3c
 	db $3c, $37, $37, $32, $32, $00, $00, $00

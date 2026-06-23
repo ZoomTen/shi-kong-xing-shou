@@ -1129,12 +1129,26 @@ Func_5e_4849:
 	ld a, $B0
 	ld [wcd82], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_CoordTableA:
-	dr $1788cc, $17894d
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $01, $ff, $00, $ff, $00, $ff, $00
+	db $ff, $00, $ff, $01, $ff, $00, $ff, $00, $ff, $00, $ff, $01, $ff, $00, $ff, $00
+	db $ff, $00, $ff, $01, $ff, $00, $ff, $00, $ff, $01, $ff, $00, $ff, $00, $ff, $01
+	db $ff, $00, $fe, $01, $fe, $02, $ff, $02, $00, $02, $02, $02, $02, $02, $02, $01
+	db $02, $00, $02, $01, $02, $01, $02, $00, $02, $01, $03, $00, $03, $01, $03, $00
+	db $03, $00, $ff, $02, $fd, $00, $fd, $01, $fd, $01, $fd, $01, $fd, $02, $fd, $03
+	db $ff, $03, $01, $03, $04, $03, $04, $02, $04, $02, $04, $01, $04, $00, $fe, $02
+	db $fc, $01, $fc, $02, $fd, $04, $04, $06, $06, $02, $00, $04, $fd, $05, $04, $06
+	db $88
 RacingMinigame_CoordTableB:
-	dr $17894d, $1789ce
+	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $ff, $00, $ff, $00, $ff, $00
+	db $ff, $00, $ff, $ff, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $ff, $00, $ff, $00
+	db $ff, $00, $ff, $ff, $ff, $00, $ff, $00, $ff, $ff, $ff, $00, $ff, $00, $ff, $ff
+	db $ff, $00, $fe, $ff, $fe, $fe, $ff, $fe, $00, $fe, $02, $fe, $02, $fe, $02, $ff
+	db $02, $00, $02, $ff, $02, $ff, $02, $00, $02, $ff, $03, $00, $03, $ff, $03, $00
+	db $03, $00, $ff, $fe, $fd, $00, $fd, $ff, $fd, $ff, $fd, $ff, $fd, $fe, $fd, $fd
+	db $ff, $fd, $01, $fd, $04, $fd, $04, $fe, $04, $fe, $04, $ff, $04, $00, $fe, $fe
+	db $fc, $ff, $fc, $fe, $fd, $fc, $04, $fa, $06, $fe, $00, $fc, $fd, $fb, $04, $fa
+	db $88
 Func_05e_49ce:
 	ld a, [wcd55]
 	add $02
@@ -2526,10 +2540,10 @@ RacingMinigame_Tilemap0:
 INCBIN "gfx/tilemaps/racingminigame_tilemap0.tilemap"
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_BannerRowA:
-	dr $179712, $179726
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	db $11, $12, $75, $76, $77, $78, $79, $7a, $7b, $7c, $7d, $7e, $7f, $90, $91, $92, $93, $94, $95, $11
 RacingMinigame_BannerRowB:
-	dr $179726, $17973a
+	db $11, $12, $15, $15, $15, $15, $15, $15, $15, $15, $15, $15, $15, $15, $15, $15
+	db $15, $15, $95, $11
 RacingMinigame_Pal1:
 	RGB 26, 29, 31
 	RGB 8, 26, 31
@@ -2601,9 +2615,17 @@ RacingMinigame_TilemapRowB:
 INCBIN "gfx/tilemaps/racingminigame_tilemaprowb.tilemap"
 RacingMinigame_TilemapRowA:
 INCBIN "gfx/tilemaps/racingminigame_tilemaprowa.tilemap"
-; TODO: high-entropy - likely graphics, extract to PNG
 RacingMinigame_ScrollTableA:
-	dr $17b6ea, $17b77c
+	db $30, $00, $18, $07, $40, $01, $38, $09, $e0, $02, $28, $0a, $20, $02, $10, $08
+	db $50, $03, $28, $0a, $40, $04, $30, $08, $30, $05, $40, $0a, $20, $06, $48, $08
+	db $20, $07, $20, $0a, $40, $08, $60, $08, $90, $09, $50, $0a, $20, $09, $38, $07
+	db $50, $0a, $40, $09, $40, $0b, $28, $07, $30, $0c, $18, $09, $20, $0d, $18, $07
+	db $20, $0e, $10, $09, $40, $0f, $38, $07, $90, $10, $48, $09, $b0, $11, $58, $07
+	db $c0, $12, $38, $09, $40, $12, $10, $0a, $30, $13, $28, $08, $20, $14, $48, $0a
+	db $90, $15, $30, $07, $90, $16, $50, $09, $e0, $17, $20, $07, $20, $17, $28, $09
+	db $50, $18, $38, $07, $40, $19, $40, $09, $30, $1a, $28, $07, $20, $1b, $40, $09
+	db $20, $1c, $10, $07, $40, $1d, $58, $09, $90, $1e, $10, $07, $b0, $1f, $28, $09
+	db $ff, $ff
 Func_05e_777c:
 	ld a, [wcd76]
 	and a
@@ -2740,6 +2762,14 @@ Func_05e_783c:
 	inc a
 	ld [wcda0], a
 	ret
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RacingMinigame_ScrollTableB:
-	dr $17b869, $17b900
+	db $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff
+	db $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff
+	db $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18
+	db $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff
+	db $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff
+	db $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18
+	db $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff
+	db $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff
+	db $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18, $30, $ff, $18, $ff, $01, $18
+	db $30, $ff, $18, $ff, $01, $18, $00

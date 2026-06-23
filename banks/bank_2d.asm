@@ -805,6 +805,7 @@ LoadWildMon:
 	ld [rRAMB], a
 	ret
 
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_02d_4aa9:
 	db $6a, $0d, $00, $00, $00, $13, $2b, $1a, $51, $00, $00
 BattleData_02d_4ab4::

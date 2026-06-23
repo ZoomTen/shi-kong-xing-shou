@@ -774,7 +774,6 @@ WorldMapObjectPalettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-WorldMapPalettePad1:
 	ds 8
 WorldMapBackgroundPalettes:
 	RGB 31, 30, 26
@@ -809,7 +808,6 @@ WorldMapBackgroundPalettes:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-WorldMapPalettePad2:
 	ds 8
 WorldMapGFX1:
 INCBIN "gfx/misc/worldmapgfx1.2bpp"

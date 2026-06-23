@@ -102,7 +102,7 @@ Func_01f_405d:
 	call CopyBytesVRAM
 	ret
 
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_01f_4091:
 	db $90, $91, $92, $93, $94, $95, $96, $97, $93
 

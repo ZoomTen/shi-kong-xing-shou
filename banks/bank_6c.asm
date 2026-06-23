@@ -595,7 +595,7 @@ Script_06c_4659:
 	dirmovement
 	end
 
-; TODO: 10-byte fragment, classify (ends $88, contains ptr $4706)
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_06c_465b:
 	db $11, $00, $00, $00, $00, $00, $00, $06, $47, $88
 ObjSprite_6c_4665::

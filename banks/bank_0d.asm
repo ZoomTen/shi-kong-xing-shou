@@ -353,7 +353,7 @@ Func_00d_4212:
 	jr nz, .asm_4240
 	ret
 
-; TODO: 4-byte row-fill tile IDs, read column-by-column (Func_00d_41db/Func_00d_4212)
+; TODO: unk_ - data, referenced via `ld de, unk_00d_424c`
 unk_00d_424c:
 	db $a1, $a3, $a3, $a4
 ; TODO: font/character tiles copied to VRAM $8A00
@@ -361,7 +361,7 @@ PaperScrollTiles:
 	INCBIN "gfx/paper_scroll/tiles_4250.2bpp"
 ; TODO: source pointers for the two paper layouts, indexed *2
 Pointers_00d_42a0:
-	dw BGMap_00d_432a, BGMap_00d_4352
+	dw Tilemap_00d_432a, Tilemap_00d_4352
 
 Func_00d_42a4:
 	and $0F
@@ -432,21 +432,15 @@ Func_00d_42a4:
 	ldh [rVBK], a
 	ret
 
-; TODO: attribute map for the paper area
+; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_00d_4302:
 	db $86, $86, $86, $86, $86, $86, $86, $86, $86, $86, $86, $80, $80, $80, $80, $80
 	db $80, $80, $80, $86, $86, $80, $80, $80, $80, $80, $80, $80, $80, $86, $86, $86
 	db $86, $86, $86, $86, $86, $86, $86, $86
-; TODO: paper layout A (tilemap source for Func_00d_4193)
-BGMap_00d_432a:
-	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a1, $a3, $a8, $aa, $ac, $ae, $b0
-	db $b2, $b4, $b6, $a3, $a3, $a9, $ab, $ad, $af, $b1, $b3, $b5, $b7, $a3, $a4, $a2
-	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a4
-; TODO: paper layout B
-BGMap_00d_4352:
-	db $a1, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a1, $a3, $a8, $aa, $a0, $ac, $ae
-	db $a0, $b0, $b2, $a3, $a3, $a9, $ab, $a0, $ad, $af, $a0, $b1, $b3, $a3, $a4, $a2
-	db $a2, $a2, $a2, $a2, $a2, $a2, $a2, $a4
+Tilemap_00d_432a:
+	INCBIN "gfx/tilemaps/tilemap_00d_432a.tilemap"
+Tilemap_00d_4352:
+	INCBIN "gfx/tilemaps/tilemap_00d_4352.tilemap"
 ; TODO: paper-scroll script pointer table, indexed by hScrollNumber *2
 Pointers_00d_437a:
 	dw Script_00d_43c2, Script_00d_43c2, Script_00d_43c8, Script_00d_43cf, Script_00d_43d5, Script_00d_43dc, Script_00d_43e3, Script_00d_43e9

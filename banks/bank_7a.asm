@@ -40,7 +40,7 @@ Func_07a_401f::
 	ld [wdcf7], a
 	ld [wdcf8], a
 	ld hl, $9800
-	ld de, BGMap_07a_492f
+	ld de, Tilemap_07a_492f
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
@@ -127,7 +127,7 @@ Func_07a_401f::
 	call FadeOutPalette
 	call Func_07a_400e
 	ld hl, $9800
-	ld de, BGMap_07a_565f
+	ld de, Tilemap_07a_565f
 	ld bc, $1412
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
@@ -352,9 +352,16 @@ Func_07a_4188::
 	xor a
 	ldh [hFadeFrameCounter], a
 	ret
-; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
 AnimTiles_07a_432c:
-	dr $1e832c, $1e83bc
+	db $ff, $ff, $f7, $ff, $ff, $f7, $d5, $e3, $ff, $f7, $f7, $ff, $ff, $ff, $ff, $ff
+	db $f7, $ff, $ff, $f7, $e3, $f7, $a2, $c1, $e3, $f7, $ff, $f7, $f7, $ff, $ff, $ff
+	db $ff, $ff, $ff, $ff, $f7, $e7, $ef, $f7, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+	db $ff, $ff, $ff, $ff, $f7, $e7, $ef, $f7, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+	db $ff, $ff, $f7, $ff, $ff, $f7, $d5, $e3, $ff, $f7, $f7, $ff, $ff, $ff, $ff, $ff
+	db $f7, $ff, $ff, $f7, $e3, $f7, $a2, $c1, $e3, $f7, $ff, $f7, $f7, $ff, $ff, $ff
+	db $f7, $ff, $ff, $f7, $e3, $f7, $a2, $c1, $e3, $f7, $ff, $f7, $f7, $ff, $ff, $ff
+	db $ff, $ff, $ff, $ff, $f7, $e7, $ef, $f7, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+	db $ff, $ff, $f7, $ff, $ff, $f7, $d5, $e3, $ff, $f7, $f7, $ff, $ff, $ff, $ff, $ff
 Func_07a_43bc:
 	ldh a, [hFade]
 	and a
@@ -799,8 +806,8 @@ SpriteLayoutData_07a_4643_476e:
 	db $30, $18, $8a, $00, $30, $20, $8c, $00, $ff
 AttrMap_07a_47c7:
 INCBIN "gfx/attrmaps/attrmap_07a_47c7.bin"
-BGMap_07a_492f:
-INCBIN "gfx/bgmaps/bgmap_07a_492f.bin"
+Tilemap_07a_492f:
+INCBIN "gfx/tilemaps/tilemap_07a_492f.tilemap"
 Palette_07a_4a97:
 	RGB 31, 31, 31
 	RGB 13, 28, 23
@@ -825,8 +832,8 @@ GFX_07a_5317:
 INCBIN "gfx/misc/gfx_07a_5317.2bpp"
 AttrMap_07a_54f7:
 INCBIN "gfx/attrmaps/attrmap_07a_54f7.bin"
-BGMap_07a_565f:
-INCBIN "gfx/bgmaps/bgmap_07a_565f.bin"
+Tilemap_07a_565f:
+INCBIN "gfx/tilemaps/tilemap_07a_565f.tilemap"
 Palette_07a_57c7:
 	RGB 31, 31, 31
 	RGB 31, 16, 0
@@ -844,9 +851,8 @@ GFX_07a_57df:
 INCBIN "gfx/misc/gfx_07a_57df.2bpp"
 Intro1_Attrmap:
 INCBIN "gfx/attrmaps/intro1_attrmap.bin"
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Intro1_Layout:
-	dr $1ea057, $1ea1bf
+	INCBIN "gfx/tilemaps/intro1_layout.tilemap"
 Intro1_Palette:
 	RGB 31, 31, 31
 	RGB 0, 27, 31
@@ -871,9 +877,8 @@ Intro1_OBGFX:
 INCBIN "gfx/misc/intro1_obgfx.2bpp"
 Intro2_Attrmap:
 INCBIN "gfx/attrmaps/intro2_attrmap.bin"
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 Intro2_Layout:
-	dr $1eb087, $1eb1ef
+	INCBIN "gfx/tilemaps/intro2_layout.tilemap"
 Intro2_Palette:
 	RGB 31, 31, 31
 	RGB 0, 27, 31

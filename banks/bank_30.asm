@@ -35,7 +35,7 @@ Func_030_4027::
 	and a
 	jp z, .asm_40ed
 	call AdvanceRNG
-	ld de, unk_030_40f8
+	ld de, BattleAnimMoveParam_030_40f8
 	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
@@ -126,8 +126,8 @@ Func_030_4027::
 	ld a, $01
 	ld [wd993], a
 	ret
-; TODO: indexed data table, classify type
-unk_030_40f8:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimID
+BattleAnimMoveParam_030_40f8:
 	db $00, $4b, $64, $5f, $64, $5a, $55, $37, $64, $55, $64, $00, $00, $37, $64, $64
 	db $64, $00, $00, $64, $64, $4b, $64, $64, $00, $5f, $55, $00, $64, $37, $64, $64
 	db $64, $64, $1e, $3c, $00, $50, $00, $00, $00, $00, $5a, $64, $64, $64, $5a, $19
@@ -138,7 +138,7 @@ unk_030_40f8:
 	db $3c, $46, $64, $55, $50, $50, $5a, $00, $5a, $50, $00, $5a, $5f, $64, $64, $00
 	db $37, $55, $00, $4b, $28, $00, $00, $00, $00, $37, $00, $00, $00, $64, $64
 Func_030_4187:
-	ld de, unk_030_4214
+	ld de, BattleAnimMoveParam_030_4214
 	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
@@ -212,8 +212,8 @@ Func_030_4187:
 .asm_4211
 	ld a, $01
 	ret
-; TODO: indexed data table, classify type
-unk_030_4214:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimID
+BattleAnimMoveParam_030_4214:
 	db $00, $00, $01, $00, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $00
 	db $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
@@ -2947,7 +2947,7 @@ SubImage_030_5b52:
 .d
 	INCBIN "gfx/misc/gfx_30_5b52.2bpp"
 .e
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); orphan (no direct reference; computed pointer or dead)
 unk_030_5bb4:
 	dr $c1bb4, $c1bcc
 Func_030_5bcc:
@@ -3041,7 +3041,7 @@ Func_030_5c85:
 	and $3f
 	jr nz, .asm_5cea
 	ld [hl], $01
-	ld de, unk_030_5cff
+	ld de, BattleAnimStepTable_030_5cff
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -3075,7 +3075,7 @@ Func_030_5c85:
 	ldh a, [hFadeFrameCounter]
 	and $07
 	jr nz, .asm_5cea
-	ld de, unk_030_5cf7
+	ld de, BattleAnimData_030_5cf7
 	ld hl, $0005
 	add hl, bc
 	inc [hl]
@@ -3102,11 +3102,11 @@ Func_030_5c85:
 	cp $e0
 	jp nz, .asm_5c88
 	ret
-; TODO: indexed data table, classify type
-unk_030_5cf7:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_5cf7`
+BattleAnimData_030_5cf7:
 	db $03, $04, $05, $00, $05, $00, $05, $ff
-; TODO: indexed data table, classify type
-unk_030_5cff:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wd9ae] 2B coord-delta added to sprite pos at wd1a0
+BattleAnimStepTable_030_5cff:
 	db $d0, $08, $d0, $18, $d0, $00, $d0, $20, $d0, $10
 Func_030_5d09:
 	ld bc, wd1a8
@@ -3169,7 +3169,7 @@ Func_30_5d61:
 	and $07
 	jr nz, Func_30_5dc1
 	ld [hl], $01
-	ld de, unk_030_5dce
+	ld de, BattleAnimStepTable_030_5dce
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -3234,8 +3234,8 @@ Func_30_5dc1:
 	cp $e0
 	jp nz, Func_30_5d59
 	ret
-; TODO: indexed data table, classify type
-unk_030_5dce:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
+BattleAnimStepTable_030_5dce:
 	db $f8, $00, $00, $10, $04, $20, $fc, $08, $04, $18
 Func_030_5dd8:
 	ld bc, wd1a8
@@ -3245,7 +3245,7 @@ Func_030_5dd8:
 	and a
 	jr nz, .asm_5e24
 	ld [hl], $01
-	ld de, unk_030_5e69
+	ld de, BattleAnimStepTable_030_5e69
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -3329,8 +3329,8 @@ Func_030_5dd8:
 	inc hl
 	ld [hl], $02
 	ret
-; TODO: indexed data table, classify type
-unk_030_5e69:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
+BattleAnimStepTable_030_5e69:
 	db $04, $fc, $fc, $04, $04, $04, $fc, $fc, $00, $04, $00, $fc, $fc, $04, $04, $04
 Func_030_5e79:
 	ld a, [wd9ae]
@@ -3363,7 +3363,7 @@ Func_030_5e79:
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	jr nz, .asm_5ee5
-	ld de, unk_030_5f2a
+	ld de, BattleAnimStepTable_030_5f2a
 	ld a, [wd9ae]
 	sub $01
 	ld l, a
@@ -3411,10 +3411,10 @@ Func_030_5e79:
 	ld a, [wd986]
 	and a
 	jr z, .asm_5efc
-	ld de, unk_030_5f3e
+	ld de, BattleAnimData_030_5f3e
 	jr .asm_5eff
 .asm_5efc
-	ld de, unk_030_5f8f
+	ld de, BattleAnimData_030_5f8f
 .asm_5eff
 	ld bc, wd1a0
 	ld hl, $0003
@@ -3444,20 +3444,20 @@ Func_030_5e79:
 	add [hl]
 	ld [bc], a
 	ret
-; TODO: indexed data table, classify type
-unk_030_5f2a:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): 2D table [wd9ae-1]x[wd986], sprite/coord record
+BattleAnimStepTable_030_5f2a:
 	db $40, $60, $10, $10, $50, $70, $20, $20, $38, $80, $08, $30, $58, $68, $28, $18
 	db $58, $80, $28, $30
-; TODO: indexed data table, classify type
-unk_030_5f3e:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_5f3e`
+BattleAnimData_030_5f3e:
 	db $ff, $ff, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe
 	db $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe
 	db $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe
 	db $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe
 	db $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe
 	db $88
-; TODO: indexed data table, classify type
-unk_030_5f8f:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_5f8f`
+BattleAnimData_030_5f8f:
 	db $00, $01, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02
 	db $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02
 	db $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02
@@ -3482,7 +3482,7 @@ Func_030_5fe0:
 	jr z, .asm_6076
 	ret
 .asm_5fff
-	ld de, unk_030_607b
+	ld de, BattleAnimData_030_607b
 .asm_6002
 	ld a, [wd986]
 	ld l, a
@@ -3553,23 +3553,23 @@ Func_030_5fe0:
 	ld [hl], $06
 	ret
 .asm_606c
-	ld de, unk_030_6087
+	ld de, BattleAnimData_030_6087
 	jr .asm_6002
 .asm_6071
-	ld de, unk_030_6093
+	ld de, BattleAnimData_030_6093
 	jr .asm_6002
 .asm_6076
 	xor a
 	ld [wd9ae], a
 	ret
-; TODO: indexed data table, classify type
-unk_030_607b:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wd986] sprite-position setup (copied to wd1a0)
+BattleAnimData_030_607b:
 	db $10, $18, $40, $68, $20, $40, $50, $90, $30, $28, $60, $78
-; TODO: indexed data table, classify type
-unk_030_6087:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6087`
+BattleAnimData_030_6087:
 	db $10, $28, $40, $78, $30, $18, $60, $68, $20, $40, $50, $90
-; TODO: indexed data table, classify type
-unk_030_6093:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6093`
+BattleAnimData_030_6093:
 	db $20, $28, $50, $68, $30, $38, $60, $78, $10, $40, $40, $90
 Func_030_609f:
 	ld a, [wd9ae]
@@ -4062,7 +4062,7 @@ Func_030_63a8:
 	jr z, .asm_63c6
 .asm_63c6
 	ld bc, wd1a0
-	ld de, unk_030_64d0
+	ld de, BattleAnimSeq_030_64d0
 	ld hl, $0004
 	add hl, bc
 	inc [hl]
@@ -4092,7 +4092,7 @@ Func_030_63a8:
 	add e
 	ld [hli], a
 	ld bc, wd1a8
-	ld de, unk_030_64d0
+	ld de, BattleAnimSeq_030_64d0
 	ld hl, $0004
 	add hl, bc
 	inc [hl]
@@ -4116,7 +4116,7 @@ Func_030_63a8:
 	ld [hli], a
 	ret
 .asm_6416
-	ld de, unk_030_64cc
+	ld de, BattleAnimData_030_64cc
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -4197,7 +4197,7 @@ Func_030_63a8:
 	call Func_030_7189
 	ret
 .asm_6495
-	ld de, unk_030_64c8
+	ld de, BattleAnimData_030_64c8
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -4230,14 +4230,14 @@ Func_030_63a8:
 	inc a
 	ld [wd9ae], a
 	ret
-; TODO: indexed data table, classify type
-unk_030_64c8:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+BattleAnimData_030_64c8:
 	db $20, $28, $50, $78
-; TODO: indexed data table, classify type
-unk_030_64cc:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+BattleAnimData_030_64cc:
 	db $40, $a0, $10, $50
-; TODO: indexed data table, classify type
-unk_030_64d0:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): $88-terminated anim/movement sequence (auto-stepped via [bc+4])
+BattleAnimSeq_030_64d0:
 	db $ff, $00, $fd, $ff, $fd, $fe, $fd, $fd, $fd, $fd, $fe, $fd, $fe, $fd, $fe, $fd
 	db $ff, $fd, $ff, $fd, $ff, $fd, $00, $fd, $ff, $fd, $00, $fd, $00, $fd, $00, $fd
 	db $01, $fd, $00, $fd, $01, $fd, $02, $fd, $01, $fd, $02, $fd, $01, $fd, $03, $fd
@@ -4274,7 +4274,7 @@ Func_030_6591:
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	jp nz, .asm_66bc
-	ld de, unk_030_66c9
+	ld de, BattleAnimStepTable_030_66c9
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -4387,7 +4387,7 @@ Func_030_6591:
 	inc [hl]
 	jr .asm_66bc
 .asm_666a
-	ld de, unk_030_66d5
+	ld de, BattleAnimStepTable_030_66d5
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -4445,11 +4445,11 @@ Func_030_6591:
 	cp $c0
 	jp c, .asm_6594
 	ret
-; TODO: indexed data table, classify type
-unk_030_66c9:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
+BattleAnimStepTable_030_66c9:
 	db $30, $28, $70, $78, $30, $18, $70, $68, $30, $38, $70, $88
-; TODO: indexed data table, classify type
-unk_030_66d5:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
+BattleAnimStepTable_030_66d5:
 	db $80, $a0, $50, $d0, $80, $90, $50, $e0, $80, $b0, $50, $f0
 Func_030_66e1:
 	ld a, [wd9ae]
@@ -4522,7 +4522,7 @@ Func_030_671c:
 	ldh a, [hFadeFrameCounter]
 	and $03
 	jp nz, .asm_67e5
-	ld de, unk_030_67f2
+	ld de, BattleAnimData_030_67f2
 	ld a, [wd9ae]
 	add a
 	ld l, a
@@ -4592,7 +4592,7 @@ Func_030_671c:
 	ld [hl], a
 	jr .asm_67e5
 .asm_67ab
-	ld de, unk_030_6804
+	ld de, BattleAnimData_030_6804
 	ld a, [wd9ae]
 	add a
 	ld l, a
@@ -4638,12 +4638,12 @@ Func_030_671c:
 	cp $b8
 	jp c, .asm_671f
 	ret
-; TODO: indexed data table, classify type
-unk_030_67f2:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_67f2`
+BattleAnimData_030_67f2:
 	db $20, $30, $01, $50, $60, $01, $10, $30, $02, $40, $60, $02, $30, $30, $02, $60
 	db $60, $02
-; TODO: indexed data table, classify type
-unk_030_6804:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6804`
+BattleAnimData_030_6804:
 	db $50, $30, $01, $20, $60, $01, $40, $30, $02, $10, $60, $02, $60, $30, $02, $30
 	db $60, $02
 Func_030_6816:
@@ -4656,7 +4656,7 @@ Func_030_6816:
 	jr z, .asm_6882
 	ret
 .asm_6825
-	ld de, unk_030_68b2
+	ld de, BattleAnimData_030_68b2
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -4746,8 +4746,8 @@ Func_030_6816:
 	inc hl
 	ld [hl], $00
 	ret
-; TODO: indexed data table, classify type
-unk_030_68b2:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+BattleAnimData_030_68b2:
 	db $54, $68, $24, $18, $4c, $78, $1c, $28, $4c, $88, $30, $38
 Func_030_68be:
 	ldh a, [hFadeFrameCounter]
@@ -4853,7 +4853,7 @@ Func_030_693a:
 	ldh a, [hFadeFrameCounter]
 	and $07
 	jp nz, .asm_69e4
-	ld de, unk_030_69f1
+	ld de, BattleAnimStepTable_030_69f1
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -4893,7 +4893,7 @@ Func_030_693a:
 	ld [wd9ae], a
 	ret
 .asm_6999
-	ld de, unk_030_6a09
+	ld de, BattleAnimSeq_030_6a09
 	ld hl, $0005
 	add hl, bc
 	inc [hl]
@@ -4918,7 +4918,7 @@ Func_030_693a:
 	ld [hli], a
 	jr .asm_69e4
 .asm_69bb
-	ld de, unk_030_6a09
+	ld de, BattleAnimSeq_030_6a09
 	ld hl, $0005
 	add hl, bc
 	inc [hl]
@@ -4955,12 +4955,12 @@ Func_030_693a:
 	cp $e0
 	jp c, .asm_693d
 	ret
-; TODO: indexed data table, classify type
-unk_030_69f1:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
+BattleAnimStepTable_030_69f1:
 	db $30, $78, $00, $20, $30, $88, $00, $30, $30, $70, $00, $18, $30, $80, $00, $28
 	db $30, $68, $00, $10, $30, $90, $00, $38
-; TODO: indexed data table, classify type
-unk_030_6a09:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by hl
+BattleAnimSeq_030_6a09:
 	db $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $ff, $00, $fd, $01, $fd, $01, $fd, $01, $fd, $02, $fd, $02, $fe, $03, $fe, $03
@@ -5007,7 +5007,7 @@ Func_030_6a5e:
 	ret
 .asm_6aa1
 	ld bc, wd1a0
-	ld de, unk_030_6adb
+	ld de, BattleAnimData_030_6adb
 	ld a, [wd98e]
 	inc a
 	ld [wd98e], a
@@ -5044,8 +5044,8 @@ Func_030_6a5e:
 	ld [wd9ae], a
 	call Func_030_7189
 	ret
-; TODO: indexed data table, classify type
-unk_030_6adb:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); indexed table (index wd98e)
+BattleAnimData_030_6adb:
 	db $ff, $00, $fd, $00, $fd, $00, $fd, $00, $fd, $01, $fd, $00, $fd, $01, $fd, $02
 	db $fd, $02, $ff, $02, $ff, $02, $01, $02, $01, $02, $02, $02, $02, $01, $02, $01
 	db $02, $00, $02, $01, $02, $00, $02, $01, $02, $00, $02, $00, $02, $00, $02, $00
@@ -5070,7 +5070,7 @@ Func_030_6b36:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5120,7 +5120,7 @@ Func_30_6ba6:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5144,7 +5144,7 @@ Func_30_6bcb:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5160,8 +5160,8 @@ Func_30_6bcb:
 	ld [hli], a
 	ld [hl], $06
 	ret
-; TODO: indexed data table, classify type
-unk_030_6bee:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+BattleAnimData_030_6bee:
 	db $40, $60, $10, $10
 Func_030_6bf2:
 	ld a, [wd9ae]
@@ -5181,7 +5181,7 @@ Func_030_6bf2:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5205,7 +5205,7 @@ Func_30_6c33:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5229,7 +5229,7 @@ Func_30_6c58:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5265,7 +5265,7 @@ Func_030_6c7f:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5312,7 +5312,7 @@ Func_030_6c7f:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5335,7 +5335,7 @@ Func_030_6c7f:
 	ld hl, $0008
 	add hl, de
 	push hl
-	ld de, unk_030_6bee
+	ld de, BattleAnimData_030_6bee
 	ld a, [wd986]
 	ld l, a
 	ld h, $00
@@ -5367,7 +5367,7 @@ Func_030_6d38:
 	inc hl
 	inc [hl]
 	ld a, [hl]
-	ld de, unk_030_6d6f
+	ld de, BattleAnimSeq_030_6d6f
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -5391,8 +5391,8 @@ Func_030_6d38:
 	cp $e0
 	jr c, .asm_6d40
 	ret
-; TODO: indexed data table, classify type
-unk_030_6d6f:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); indexed table (index hl)
+BattleAnimSeq_030_6d6f:
 	db $01, $02, $03, $03, $02, $01, $ff
 Func_030_6d76:
 	ld bc, wd1a0
@@ -5405,7 +5405,7 @@ Func_030_6d76:
 	ldh a, [hFadeFrameCounter]
 	and $07
 	jr nz, .asm_6de4
-	ld de, unk_030_6df1
+	ld de, BattleAnimData_030_6df1
 	ld a, [wd9ae]
 	cp $0a
 	jr c, .asm_6d9e
@@ -5468,8 +5468,8 @@ Func_030_6d76:
 	cp $e0
 	jp c, .asm_6d79
 	ret
-; TODO: indexed data table, classify type
-unk_030_6df1:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6df1`
+BattleAnimData_030_6df1:
 	db $40, $60, $10, $10, $50, $70, $20, $20, $60, $58, $30, $08, $48, $88, $18, $38
 	db $48, $68, $18, $20, $60, $80, $30, $30, $40, $68, $10, $18, $50, $70, $20, $20
 	db $60, $80, $30, $30, $48, $88, $18, $38
@@ -5520,7 +5520,7 @@ Func_030_6e5a:
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	ret nz
-	ld de, unk_030_6e94
+	ld de, BattleAnimStepTable_030_6e94
 	ld a, [wd9ae]
 	ld l, a
 	ld h, $00
@@ -5553,8 +5553,8 @@ Func_030_6e5a:
 	xor a
 	ld [wd9ae], a
 	ret
-; TODO: indexed data table, classify type
-unk_030_6e94:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
+BattleAnimStepTable_030_6e94:
 	db $40, $78, $10, $28, $40, $68, $10, $18, $40, $88, $10, $38
 Func_030_6ea0:
 	ld a, [wd9ae]
@@ -5593,7 +5593,7 @@ Func_030_6ec2:
 	ldh a, [hFadeFrameCounter]
 	and $07
 	jp nz, .asm_6f5b
-	ld de, unk_030_6f68
+	ld de, BattleAnimRngTable_030_6f68
 	call AdvanceRNG
 	ld a, [wd991]
 	and $07
@@ -5676,8 +5676,8 @@ Func_030_6ec2:
 	cp $e0
 	jp c, .asm_6ec5
 	ret
-; TODO: indexed data table, classify type
-unk_030_6f68:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): RNG-selected ([wd991]&7) 4B record
+BattleAnimRngTable_030_6f68:
 	db $30, $80, $00, $18, $30, $88, $00, $20, $30, $90, $00, $28, $30, $98, $00, $30
 	db $30, $a0, $00, $38, $30, $a8, $00, $40, $30, $b0, $00, $48, $30, $b8, $00, $50
 Func_030_6f88:
@@ -6863,7 +6863,7 @@ Func_030_773b:
 	ldh a, [hFadeFrameCounter]
 	and $03
 	jp nz, .asm_783f
-	ld de, unk_030_6f68
+	ld de, BattleAnimRngTable_030_6f68
 	call AdvanceRNG
 	ld a, [wd991]
 	and $07
@@ -7025,7 +7025,7 @@ Func_030_784c:
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
-	ld de, unk_030_7981
+	ld de, BattleAnimData_030_7981
 	ld a, [wd98b]
 	ld l, a
 	ld h, $00
@@ -7083,7 +7083,7 @@ Func_030_784c:
 	ld [hl], $03
 	jp .asm_7974
 .asm_78db
-	ld de, unk_030_798d
+	ld de, BattleAnimData_030_798d
 	ld a, [wd98e]
 	ld l, a
 	ld h, $00
@@ -7178,13 +7178,13 @@ Func_030_784c:
 	cp $b8
 	jp c, .asm_784f
 	ret
-; TODO: indexed data table, classify type
-unk_030_7981:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd98b
+BattleAnimData_030_7981:
 	db $30, $28, $50, $78, $30, $18, $50, $68, $30, $38, $50, $88
-; TODO: indexed data table, classify type
-unk_030_798d:
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd98e
+BattleAnimData_030_798d:
 	db $f0, $70, $f0, $20, $f0, $60, $f0, $10, $f0, $80, $f0, $30
-; TODO: unreferenced data block, classify type
+; TODO: unk_ - battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); orphan (no direct reference; computed pointer or dead)
 unk_030_7999:
 	ds 7
 

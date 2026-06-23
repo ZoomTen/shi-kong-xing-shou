@@ -833,7 +833,7 @@ ENDR
 	ld [wdce8], a
 	ret
 
-; TODO: indexed data table, classify type
+; TODO: unk_ - lookup table indexed by wdce8
 unk_008_57e2:
 	dw $30f0, $1004
 	dw $5000, $1004
