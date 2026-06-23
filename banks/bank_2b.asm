@@ -1641,9 +1641,9 @@ BattleEnd_Jump_2:
 	call DelayFrame
 	ld a, $80
 	ldh [rLCDC], a
-	ld hl, $2b38
+	ld hl, Palette_White
 	call CopyBackgroundPalettes
-	ld hl, $2b38
+	ld hl, Palette_White
 	call CopyObjectPalettes
 	ld hl, wc000
 	ld bc, $28
@@ -5377,9 +5377,9 @@ BattleMenu_AnimCursor:
 	ret
 
 BattleMenu_Jump_4:
-	ld hl, $2b38
+	ld hl, Palette_White
 	call CopyBackgroundPalettes
-	ld hl, $2b38
+	ld hl, Palette_White
 	call CopyObjectPalettes
 	ldh a, [hSCX]
 	ld [wd0bc], a

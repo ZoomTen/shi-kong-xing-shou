@@ -1507,6 +1507,3 @@ RhythmTileChunks:
 	db $1d, $1e, $1f, $20, $36, $37, $38, $24, $39, $3a, $3b, $28, $29, $2a, $2b, $2c
 	db $1d, $1e, $1f, $20, $3c, $3d, $3e, $24, $3f, $40, $41, $28, $29, $2a, $2b, $2c
 ; TODO: padding between palettes, confirm
-	ds 5
-
-

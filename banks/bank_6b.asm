@@ -138,4 +138,3 @@ gfx_06b_6f35::
 	INCBIN "gfx/tilesets/gfx_06b_6f35.2bpp"
 gfx_06b_7635::
 	INCBIN "gfx/tilesets/gfx_06b_7635.2bpp"
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00

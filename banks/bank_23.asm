@@ -159,299 +159,1946 @@ BattleAnimScript_Pointers:
 
 ; battle-anim scripts, indexed via BattleAnimScript_Pointers (VM via AdvanceBattleScriptMode; opcode table unreversed)
 BattleAnimScript_023_4132::
-	dr $8c132, $8c157
+	anim_58
+	anim_01
+	anim_02 $50, $70, $20, $20, $01
+	anim_80 SFX_1c
+	anim_04 $00, $07, $08, $01, $02
+	anim_04 $00, $03, $0b, $02, $03
+	anim_80 SFX_26
+	anim_04 $00, $03, $13, $03, $00
+	anim_06 $06, $01
+	anim_07 $00, $01
+	anim_03
 BattleAnimScript_023_4157::
-	dr $8c157, $8c174
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_4c
+	anim_71 $00, ObjectAnim_02e_697b
+	anim_20
+	anim_80 SFX_3b
+	anim_72 $01, ObjectAnim_02e_6986
+	anim_20
+	anim_18 $03, $04
+	anim_07 $01, $01
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4174::
-	dr $8c174, $8c18b
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_16
+	anim_02 $50, $70, $20, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_674f
+	anim_06 $06, $01
+	anim_03
 BattleAnimScript_023_418b::
-	dr $8c18b, $8c1b3
+	anim_58
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_80 SFX_35
+	anim_09 $00, $07, $00, MovementDeltas_02e_6740
+	anim_14 $33, SubImage_033_444c
+	anim_09 $00, $07, $00, MovementDeltas_02e_6747
+	anim_14 $33, SubImage_033_4b0e
+	anim_09 $00, $07, $00, MovementDeltas_02e_674c
+	anim_06 $06, $00
+	anim_03
 BattleAnimScript_023_41b3::
-	dr $8c1b3, $8c1d0
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_02 $40, $68, $10, $18, $01
+	anim_80 SFX_3d
+	anim_09 $00, $03, $00, MovementDeltas_02e_671a
+	anim_17 $01, $04
+	anim_18 $07, $04
+	anim_06 $06, $01
+	anim_03
 BattleAnimScript_023_41d0::
-	dr $8c1d0, $8c1ed
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_670c
+	anim_80 SFX_2b
+	anim_17 $01, $04
+	anim_18 $07, $04
+	anim_69 $00, $01
+	anim_03
 BattleAnimScript_023_41ed::
-	dr $8c1ed, $8c23f
+	anim_58
+	anim_01
+	anim_80 SFX_33
+	anim_02 $40, $80, $30, $28, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_33
+	anim_02 $50, $68, $10, $30, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_33
+	anim_02 $50, $78, $20, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_33
+	anim_02 $60, $80, $30, $38, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_33
+	anim_02 $48, $70, $20, $30, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_17 $01, $04
+	anim_18 $07, $04
+	anim_07 $00, $01
+	anim_03
 BattleAnimScript_023_423f::
-	dr $8c23f, $8c276
+	anim_58
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_80 SFX_27
+	anim_09 $00, $07, $00, MovementDeltas_02e_66da
+	anim_05 $00, $01, ScrollDeltas_02e_68fd
+	anim_09 $00, $07, $00, MovementDeltas_02e_66e7
+	anim_14 $33, SubImage_033_4c90
+	anim_80 SFX_1f
+	anim_09 $00, $07, $00, MovementDeltas_02e_66ed
+	anim_14 $33, SubImage_033_5352
+	anim_80 SFX_42
+	anim_09 $00, $07, $00, MovementDeltas_02e_66f4
+	anim_70 $cc, $67
+	anim_03
 BattleAnimScript_023_4276::
-	dr $8c276, $8c2ac
+	anim_58
+	anim_01
+	anim_80 SFX_13
+	anim_13
+	anim_09 $00, $07, $00, MovementDeltas_02e_66bf
+	anim_17 $01, $04
+	anim_18 $07, $04
+	db $44, $10, $50, $13, $0d, $09, $00, $07, $00, $bf, $66, $11, $01, $04, $12, $07, $04, $3c
+	db $44, $10, $50, $13, $0d, $09, $00, $07, $00, $bf, $66, $11, $01, $04, $12, $07, $04, $3c
+	anim_03
 BattleAnimScript_023_42ac::
-	dr $8c2ac, $8c2d2
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2b
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_66b3
+	anim_14 $33, SubImage_033_5834
+	anim_80 SFX_2b
+	anim_09 $00, $07, $00, MovementDeltas_02e_66a9
+	anim_20
+	anim_23 $04
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_42d2::
-	dr $8c2d2, $8c2ff
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_80 SFX_51
+	anim_09 $00, $07, $00, MovementDeltas_02e_66a1
+	anim_14 $33, SubImage_033_5ed6
+	anim_09 $00, $07, $00, MovementDeltas_02e_669b
+	anim_14 $33, SubImage_033_66d8
+	anim_09 $00, $07, $00, MovementDeltas_02e_6696
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_69 $03, $00
+	anim_03
 BattleAnimScript_023_42ff::
-	dr $8c2ff, $8c32a
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_80 SFX_32
+	anim_09 $00, $07, $00, MovementDeltas_02e_6684
+	anim_14 $33, SubImage_033_6cda
+	anim_80 SFX_0c
+	anim_80 SFX_33
+	anim_09 $00, $07, $00, MovementDeltas_02e_668c
+	anim_14 $33, SubImage_033_739c
+	anim_09 $00, $07, $00, MovementDeltas_02e_6691
+	anim_69 $01, $00
+	anim_03
 BattleAnimScript_023_432a::
-	dr $8c32a, $8c352
+	anim_58
+	anim_01
+	anim_02 $38, $60, $08, $10, $01
+	anim_80 SFX_29
+	anim_09 $00, $07, $00, MovementDeltas_02e_666c
+	anim_14 $3a, GFX_03a_4000
+	anim_09 $00, $07, $00, MovementDeltas_02e_6675
+	anim_14 $3a, (GFX_03a_4000 + 2050)
+	anim_09 $00, $07, $00, MovementDeltas_02e_667d
+	anim_06 $02, $01
+	anim_03
 BattleAnimScript_023_4352::
-	dr $8c352, $8c37f
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_80 SFX_21
+	anim_09 $00, $07, $00, MovementDeltas_02e_664d
+	anim_14 $3a, (GFX_03a_4000 + 3332)
+	anim_09 $00, $07, $00, MovementDeltas_02e_6655
+	anim_14 $3a, (GFX_03a_4000 + 5062)
+	anim_80 SFX_1f
+	anim_09 $00, $07, $00, MovementDeltas_02e_665a
+	anim_14 $3a, (GFX_03a_4000 + 6600)
+	anim_06 $04, $00
+	anim_03
 BattleAnimScript_023_437f::
-	dr $8c37f, $8c393
+	anim_58
+	anim_01
+	anim_80 SFX_36
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6645
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4393::
-	dr $8c393, $8c3ad
+	anim_58
+	anim_01
+	anim_80 SFX_18
+	anim_72 $03, ObjectAnim_02e_699c
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_51
+	anim_72 $02, ObjectAnim_02e_69c8
+	anim_20
+	anim_06 $04, $01
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_43ad::
-	dr $8c3ad, $8c3c7
+	anim_58
+	anim_01
+	anim_80 SFX_18
+	anim_72 $03, ObjectAnim_02e_699c
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_51
+	anim_72 $02, ObjectAnim_02e_69c8
+	anim_20
+	anim_06 $04, $01
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_43c7::
-	dr $8c3c7, $8c415
+	anim_01
+	anim_02 $10, $08, $38, $70, $01
+	anim_80 SFX_4c
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_4c
+	anim_02 $28, $28, $60, $78, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_4c
+	anim_02 $30, $10, $50, $58, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_4c
+	anim_02 $10, $20, $38, $58, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_80 SFX_4c
+	anim_02 $20, $18, $48, $68, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6640
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_4415::
-	dr $8c415, $8c456
+	anim_01
+	anim_80 SFX_12
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_662b
+	anim_80 SFX_12
+	anim_02 $10, $10, $40, $60, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_662b
+	anim_80 SFX_12
+	anim_02 $10, $20, $40, $70, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_662b
+	anim_20
+	anim_18 $03, $04
+	anim_80 SFX_12
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6632
+	anim_06 $06, $00
+	anim_03
 BattleAnimScript_023_4456::
-	dr $8c456, $8c47e
+	anim_58
+	anim_01
+	anim_80 SFX_16
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6623
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_80 SFX_16
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6623
+	anim_69 $00, $01
+	anim_03
 BattleAnimScript_023_447e::
-	dr $8c47e, $8c4b1
+	anim_58
+	anim_01
+	anim_80 SFX_17
+	anim_02 $10, $18, $40, $68, $01
+	anim_06 $01, $00
+	anim_09 $00, $07, $00, MovementDeltas_02e_6606
+	anim_14 $3a, (GFX_03a_4000 + 7690)
+	anim_09 $00, $03, $00, MovementDeltas_02e_660e
+	anim_06 $06, $00
+	anim_80 SFX_35
+	anim_02 $40, $68, $10, $18, $00
+	anim_09 $00, $07, $00, MovementDeltas_02e_6614
+	anim_06 $04, $01
+	anim_60
+	anim_03
 BattleAnimScript_023_44b1::
-	dr $8c4b1, $8c4c8
+	anim_58
+	anim_01
+	anim_80 BGM_57
+	anim_02 $18, $18, $48, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6598
+	anim_80 SFX_4c
+	anim_19
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_44c8::
-	dr $8c4c8, $8c4fb
+	anim_58
+	anim_01
+	anim_80 SFX_4c
+	anim_02 $40, $68, $10, $18, $01
+	anim_06 $01, $01
+	anim_06 $02, $01
+	anim_06 $01, $01
+	anim_06 $02, $01
+	anim_20
+	anim_18 $03, $01
+	anim_80 SFX_4c
+	anim_02 $40, $68, $10, $18, $02
+	anim_06 $01, $01
+	anim_06 $02, $01
+	anim_06 $01, $01
+	anim_20
+	anim_18 $03, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_44fb::
-	dr $8c4fb, $8c50a
+	anim_01
+	anim_80 SFX_26
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_80 SFX_10
+	anim_69 $03, $00
+	anim_03
 BattleAnimScript_023_450a::
-	dr $8c50a, $8c526
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2b
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_657d
+	anim_11 $01, $bc, $5b, $06
+	anim_18 $0f, $07
+	anim_03
 BattleAnimScript_023_4526::
-	dr $8c526, $8c55b
+	anim_58
+	anim_01
+	anim_80 SFX_2c
+	anim_02 $50, $58, $20, $08, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6577
+	anim_60
+	anim_80 SFX_2c
+	anim_02 $38, $70, $08, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6577
+	anim_60
+	db $44, $0f, $50, $2c, $02, $50, $58, $20, $08, $01, $09, $00, $03, $00, $77, $65, $3c
+	anim_06 $02, $01
+	anim_03
 BattleAnimScript_023_455b::
-	dr $8c55b, $8c56c
+	anim_01
+	anim_06 $07, $00
+	anim_33
+	anim_18 $07, $04
+	anim_06 $04, $00
+	anim_80 SFX_26
+	anim_69 $05, $00
+	anim_03
 BattleAnimScript_023_456c::
-	dr $8c56c, $8c584
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67fe
+	anim_80 SFX_25
+	anim_19
+	anim_02 $48, $70, $18, $20, $02
+	anim_09 $00, $03, $00, MovementDeltas_02e_656a
+	anim_24 ScrollDeltas_02e_67fe
+	anim_03
 BattleAnimScript_023_4584::
-	dr $8c584, $8c59b
+	anim_58
+	anim_01
+	anim_80 SFX_17
+	anim_02 $50, $68, $20, $18, $02
+	anim_09 $00, $03, $00, MovementDeltas_02e_6562
+	anim_07 $01, $01
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_459b::
-	dr $8c59b, $8c5ea
+	anim_58
+	anim_01
+	anim_80 SFX_3d
+	anim_02 $38, $70, $10, $08, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_655d
+	anim_80 SFX_3d
+	anim_02 $60, $78, $28, $28, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_655d
+	anim_80 SFX_3d
+	anim_02 $50, $58, $30, $10, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_655d
+	anim_80 SFX_3d
+	anim_02 $38, $58, $10, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_655d
+	anim_80 SFX_3d
+	anim_02 $48, $68, $20, $18, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_655d
+	anim_17 $01, $04
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_45ea::
-	dr $8c5ea, $8c60a
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_3d
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_655d
+	anim_24 ScrollDeltas_02e_67fe
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_460a::
-	dr $8c60a, $8c62f
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_80 SFX_3f
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_655d
+	anim_24 ScrollDeltas_02e_67fe
+	anim_80 SFX_3d
+	anim_09 $00, $07, $00, MovementDeltas_02e_655d
+	anim_24 ScrollDeltas_02e_67fe
+	anim_03
 BattleAnimScript_023_462f::
-	dr $8c62f, $8c672
+	anim_58
+	anim_01
+	anim_72 $01, ObjectAnim_02e_69e9
+	anim_20
+	anim_18 $07, $02
+	anim_72 $01, ObjectAnim_02e_69ff
+	anim_20
+	anim_18 $07, $04
+	anim_80 SFX_0f
+	anim_02 $58, $70, $20, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6557
+	anim_80 SFX_0f
+	anim_02 $48, $80, $28, $18, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6557
+	anim_80 SFX_0f
+	anim_02 $40, $70, $18, $28, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6557
+	anim_06 $04, $01
+	anim_24 ScrollDeltas_02e_67fe
+	anim_03
 BattleAnimScript_023_4672::
-	dr $8c672, $8c68b
+	anim_58
+	anim_01
+	anim_80 SFX_32
+	anim_19
+	anim_80 SFX_0c
+	anim_80 SFX_0f
+	anim_02 $48, $70, $18, $20, $02
+	anim_09 $00, $03, $00, MovementDeltas_02e_656a
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_468b::
-	dr $8c68b, $8c69f
+	anim_58
+	db $43, $0e, $01, $50, $21, $48, $01, $15, $6a, $14, $12, $03, $02, $1d, $01, $12
+	anim_07 $08, $03
 BattleAnimScript_023_469f::
-	dr $8c69f, $8c6c8
+	anim_01
+	anim_80 SFX_17
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6546
+	anim_14 $3a, (GFX_03a_4000 + 8428)
+	anim_80 SFX_16
+	anim_09 $00, $07, $00, MovementDeltas_02e_654b
+	anim_14 $3a, (GFX_03a_4000 + 10158)
+	anim_09 $00, $07, $00, MovementDeltas_02e_6550
+	anim_06 $04, $00
+	anim_03
 BattleAnimScript_023_46c8::
-	dr $8c6c8, $8c6de
+	anim_58
+	anim_01
+	anim_80 SFX_50
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_653e
+	anim_80 SFX_42
+	anim_69 $02, $01
+	anim_03
 BattleAnimScript_023_46de::
-	dr $8c6de, $8c6ee
+	anim_01
+	anim_80 SFX_48
+	anim_07 $00, $00
+	anim_18 $07, $02
+	anim_07 $00, $00
+	anim_06 $04, $00
+	anim_03
 BattleAnimScript_023_46ee::
-	dr $8c6ee, $8c713
+	anim_58
+	anim_01
+	anim_80 SFX_3d
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6546
+	anim_14 $3a, (GFX_03a_4000 + 10416)
+	anim_80 SFX_35
+	anim_09 $00, $07, $00, MovementDeltas_02e_654b
+	anim_06 $04, $00
+	anim_80 SFX_31
+	anim_69 $04, $00
+	anim_03
 BattleAnimScript_023_4713::
-	dr $8c713, $8c72e
+	anim_01
+	anim_80 SFX_31
+	anim_72 $01, ObjectAnim_02e_6a36
+	anim_20
+	anim_18 $03, $02
+	anim_02 $10, $1c, $40, $6c, $03
+	anim_09 $00, $07, $00, MovementDeltas_02e_6536
+	anim_69 $01, $00
+	anim_03
 BattleAnimScript_023_472e::
-	dr $8c72e, $8c756
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_51
+	anim_72 $04, ObjectAnim_02e_6a4c
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_51
+	anim_72 $04, ObjectAnim_02e_6a4c
+	anim_20
+	anim_18 $03, $02
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6529
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4756::
-	dr $8c756, $8c787
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_02 $10, $08, $20, $48, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_650f
+	anim_14 $3a, (GFX_03a_4000 + 12146)
+	anim_20
+	anim_18 $03, $02
+	anim_02 $40, $68, $10, $18, $05
+	anim_09 $00, $07, $00, MovementDeltas_02e_6519
+	anim_18 $03, $02
+	anim_09 $00, $07, $00, MovementDeltas_02e_651f
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4787::
-	dr $8c787, $8c79e
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_26
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6508
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_479e::
-	dr $8c79e, $8c7b5
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_1f
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64fc
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_47b5::
-	dr $8c7b5, $8c7e1
+	anim_58
+	anim_01
+	anim_80 SFX_20
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64ed
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_0f
+	anim_02 $40, $68, $10, $18, $05
+	anim_09 $00, $07, $00, MovementDeltas_02e_64f4
+	anim_06 $04, $01
+	anim_80 SFX_1f
+	anim_36
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_47e1::
-	dr $8c7e1, $8c7ee
+	anim_58
+	anim_01
+	anim_80 SFX_4c
+	anim_34
+	anim_80 SFX_2b
+	anim_23 $04
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_47ee::
-	dr $8c7ee, $8c842
+	anim_58
+	anim_01
+	anim_80 SFX_45
+	anim_02 $18, $18, $48, $68, $01
+	anim_18 $07, $03
+	anim_04 $00, $07, $08, $01, $00
+	anim_80 SFX_45
+	anim_02 $18, $38, $48, $48, $02
+	anim_09 $00, $07, $00, MovementDeltas_02e_64d1
+	anim_52
+	anim_53
+	anim_14 $3a, (GFX_03a_4000 + 13876)
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_45
+	anim_02 $10, $18, $40, $68, $09
+	anim_18 $07, $03
+	anim_04 $00, $07, $08, $09, $00
+	anim_02 $18, $38, $48, $48, $0a
+	anim_09 $00, $07, $00, MovementDeltas_02e_64d7
+	anim_80 SFX_45
+	anim_54
+	anim_55
+	anim_36
+	anim_18 $07, $04
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4842::
-	dr $8c842, $8c858
+	anim_01
+	anim_80 SFX_27
+	anim_02 $18, $18, $48, $68, $01
+	anim_04 $00, $07, $08, $00, $01
+	anim_06 $04, $00
+	anim_69 $01, $00
+	anim_03
 BattleAnimScript_023_4858::
-	dr $8c858, $8c872
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_35 ScrollDeltas_02e_68c4
+	anim_80 SFX_36
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64dd
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4872::
-	dr $8c872, $8c897
+	anim_58
+	anim_01
+	anim_80 SFX_2e
+	anim_02 $18, $28, $48, $70, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64b4
+	anim_18 $07, $03
+	anim_80 SFX_2f
+	anim_02 $40, $78, $10, $28, $04
+	anim_09 $00, $07, $00, MovementDeltas_02e_64cc
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4897::
-	dr $8c897, $8c8b4
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_36
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64a6
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_48b4::
-	dr $8c8b4, $8c8c1
+	anim_58
+	anim_01
+	anim_80 SFX_21
+	anim_72 $04, ObjectAnim_02e_6a83
+	anim_20
+	anim_18 $07, $02
+	anim_03
 BattleAnimScript_023_48c1::
-	dr $8c8c1, $8c8e7
+	anim_58
+	anim_01
+	anim_80 SFX_4c
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6498
+	anim_14 $3b, GFX_03b_4000
+	anim_20
+	anim_18 $07, $02
+	anim_80 SFX_42
+	anim_72 $01, ObjectAnim_02e_6ae8
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_48e7::
-	dr $8c8e7, $8c97b
+	anim_58
+	anim_01
+	anim_80 SFX_0d
+	anim_02 $40, $6c, $10, $1c, $01
+	anim_04 $00, $07, $02, $01, $02
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $40, $84, $10, $34, $03
+	anim_04 $00, $07, $02, $03, $04
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $40, $8c, $10, $3c, $05
+	anim_04 $00, $07, $02, $05, $06
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $58, $7c, $28, $2c, $07
+	anim_04 $00, $07, $02, $07, $08
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $68, $6c, $38, $1c, $01
+	anim_04 $00, $07, $02, $01, $02
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $58, $64, $28, $14, $03
+	anim_04 $00, $07, $02, $03, $04
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $40, $6c, $10, $1c, $05
+	anim_04 $00, $07, $02, $05, $06
+	anim_20
+	anim_80 SFX_0d
+	anim_02 $40, $64, $10, $14, $07
+	anim_04 $00, $07, $02, $07, $08
+	anim_20
+	anim_14 $3b, (GFX_03b_4000 + 1442)
+	anim_80 SFX_25
+	anim_02 $38, $64, $08, $14, $09
+	anim_04 $00, $07, $04, $09, $0a
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_497b::
-	dr $8c97b, $8c9a4
+	anim_58
+	anim_01
+	anim_80 SFX_31
+	anim_02 $18, $1c, $48, $64, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_670c
+	anim_20
+	anim_18 $07, $02
+	anim_80 SFX_0c
+	anim_80 SFX_25
+	anim_72 $01, ObjectAnim_02e_6afe
+	anim_20
+	anim_18 $07, $02
+	anim_29 $01
+	anim_18 $07, $04
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_49a4::
-	dr $8c9a4, $8c9bf
+	anim_58
+	anim_01
+	anim_80 SFX_27
+	anim_02 $48, $68, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6640
+	anim_20
+	anim_18 $07, $02
+	anim_35 ScrollDeltas_02e_68c4
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_49bf::
-	dr $8c9bf, $8c9f0
+	anim_58
+	anim_01
+	anim_80 SFX_26
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_648a
+	anim_14 $3b, (GFX_03b_4000 + 2788)
+	anim_09 $00, $07, $00, MovementDeltas_02e_6480
+	anim_80 SFX_13
+	anim_71 $01, ObjectAnim_02e_6b14
+	anim_20
+	anim_18 $07, $02
+	anim_71 $01, ObjectAnim_02e_6b2a
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_60
+	anim_03
 BattleAnimScript_023_49f0::
-	dr $8c9f0, $8ca1e
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_16
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_14 $3b, (GFX_03b_4000 + 4838)
+	anim_02 $40, $68, $10, $18, $06
+	anim_09 $00, $07, $00, MovementDeltas_02e_6479
+	anim_60
+	anim_35 ScrollDeltas_02e_68c4
+	anim_06 $04, $01
+	anim_06 $02, $00
+	anim_03
 BattleAnimScript_023_4a1e::
-	dr $8ca1e, $8ca54
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_4c
+	anim_72 $00, ObjectAnim_02e_6b40
+	anim_20
+	anim_18 $03, $02
+	anim_72 $00, ObjectAnim_02e_6b4b
+	anim_20
+	anim_18 $03, $02
+	anim_72 $00, ObjectAnim_02e_6b56
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_42
+	anim_23 $04
+	anim_18 $07, $08
+	anim_02 $40, $68, $10, $18, $05
+	anim_04 $00, $07, $04, $05, $00
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4a54::
-	dr $8ca54, $8ca80
+	anim_58
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_644e
+	anim_80 SFX_51
+	anim_37
+	anim_80 SFX_2c
+	anim_02 $40, $68, $10, $10, $03
+	anim_09 $00, $07, $00, MovementDeltas_02e_6447
+	anim_20
+	anim_18 $07, $02
+	anim_23 $04
+	anim_18 $07, $08
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4a80::
-	dr $8ca80, $8cacf
+	anim_58
+	anim_01
+	anim_80 SFX_2b
+	anim_02 $38, $70, $10, $08, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6441
+	anim_80 SFX_2b
+	anim_02 $60, $78, $28, $28, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6441
+	anim_80 SFX_2b
+	anim_02 $50, $58, $30, $10, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6441
+	anim_80 SFX_2b
+	anim_02 $38, $58, $10, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6441
+	anim_80 SFX_2b
+	anim_02 $48, $68, $20, $18, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6441
+	anim_17 $01, $04
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_4acf::
-	dr $8cacf, $8cae7
+	anim_58
+	anim_01
+	anim_80 SFX_10
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_4ae7::
-	dr $8cae7, $8cb70
+	anim_58
+	anim_01
+	anim_80 SFX_2e
+	anim_02 $38, $70, $10, $08, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6546
+	anim_60
+	anim_80 SFX_2e
+	anim_02 $60, $78, $28, $28, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6546
+	anim_60
+	anim_80 SFX_2e
+	anim_02 $50, $58, $30, $10, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6546
+	anim_60
+	anim_80 SFX_2e
+	anim_02 $38, $58, $10, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6546
+	db $44, $0f, $02, $48, $68, $20, $18, $01, $50, $2e, $09, $00, $03, $00, $46, $65, $3c
+	db $44, $0f, $02, $38, $88, $10, $38, $01, $50, $2e, $09, $00, $03, $00, $46, $65, $3c
+	db $44, $0f, $02, $48, $80, $18, $40, $01, $50, $2e, $09, $00, $03, $00, $46, $65, $3c
+	db $44, $0e, $02, $48, $68, $20, $18, $01, $50, $2e, $09, $00, $03, $00, $46, $65
+	anim_06 $04, $01
+	anim_23 $04
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_4b70::
-	dr $8cb70, $8cb8a
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_16
+	anim_02 $48, $68, $18, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6431
+	anim_70 $cc, $67
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4b8a::
-	dr $8cb8a, $8cbb6
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_23 $06
+	anim_52
+	anim_53
+	anim_70 $cc, $67
+	anim_06 $04, $01
+	anim_80 SFX_51
+	db $44, $0b, $17, $06, $34, $35, $46, $cc, $67, $06, $04, $01, $3c
+	db $44, $0c, $17, $06, $50, $41, $34, $35, $46, $cc, $67, $06, $04, $01
+	anim_03
 BattleAnimScript_023_4bb6::
-	dr $8cbb6, $8cbd3
+	anim_58
+	anim_01
+	anim_17 $00, $06
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_35
+	anim_71 $01, ObjectAnim_02e_6b61
+	anim_20
+	anim_18 $07, $02
+	anim_71 $01, ObjectAnim_02e_6b77
+	anim_70 $cc, $67
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4bd3::
-	dr $8cbd3, $8cbf0
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2b
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_641d
+	anim_17 $01, $06
+	anim_70 $cc, $67
+	anim_18 $07, $02
+	anim_03
 BattleAnimScript_023_4bf0::
-	dr $8cbf0, $8cc29
+	anim_58
+	anim_01
+	anim_80 SFX_3d
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_640b
+	anim_20
+	anim_80 SFX_3d
+	anim_02 $48, $68, $18, $18, $05
+	anim_09 $00, $07, $00, MovementDeltas_02e_6411
+	anim_20
+	anim_14 $3b, (GFX_03b_4000 + 6248)
+	anim_80 SFX_3d
+	anim_02 $60, $68, $30, $18, $09
+	anim_09 $00, $07, $00, MovementDeltas_02e_6417
+	anim_20
+	anim_23 $04
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_4c29::
-	dr $8cc29, $8cc4f
+	anim_58
+	anim_01
+	anim_80 SFX_31
+	anim_02 $18, $18, $48, $68, $01
+	anim_04 $00, $07, $06, $01, $00
+	anim_06 $03, $00
+	anim_80 SFX_0c
+	anim_80 SFX_51
+	anim_71 $00, ObjectAnim_02e_6b8d
+	anim_20
+	anim_23 $04
+	anim_18 $07, $08
+	anim_06 $02, $00
+	anim_60
+	anim_03
 BattleAnimScript_023_4c4f::
-	dr $8cc4f, $8cca8
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_51
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_51
+	anim_02 $50, $68, $20, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_51
+	anim_02 $60, $68, $30, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_51
+	anim_02 $48, $68, $18, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_51
+	anim_02 $58, $68, $28, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_23 $04
+	anim_70 $cc, $67
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_4ca8::
-	dr $8cca8, $8ccd1
+	anim_58
+	anim_01
+	anim_80 SFX_1c
+	anim_71 $00, ObjectAnim_02e_6b98
+	anim_20
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_14 $3a, (GFX_03a_4000 + 15286)
+	anim_08 ScrollDeltas_02e_67ed
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64fc
+	anim_06 $04, $01
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_4cd1::
-	dr $8ccd1, $8cce1
+	anim_58
+	anim_01
+	anim_80 SFX_0f
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4ce1::
-	dr $8cce1, $8ccfa
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2f
+	anim_16
+	anim_20
+	anim_18 $07, $02
+	anim_80 SFX_26
+	anim_29 $01
+	anim_18 $07, $04
+	anim_51 $01
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4cfa::
-	dr $8ccfa, $8cd12
+	anim_58
+	anim_01
+	anim_80 SFX_25
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_23 $04
+	anim_18 $07, $08
+	anim_06 $04, $01
+	anim_60
+	anim_03
 BattleAnimScript_023_4d12::
-	dr $8cd12, $8cd41
+	anim_58
+	anim_01
+	anim_80 SFX_26
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6640
+	anim_14 $3b, (GFX_03b_4000 + 6954)
+	anim_80 SFX_31
+	anim_02 $50, $58, $20, $18, $04
+	anim_09 $00, $07, $00, MovementDeltas_02e_65f8
+	anim_29 $01
+	anim_18 $07, $04
+	anim_51 $01
+	anim_80 SFX_0c
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4d41::
-	dr $8cd41, $8cd96
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_60
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	db $44, $1b, $50, $51, $48, $00, $a3, $6b, $14, $12, $07, $02, $06, $04, $01, $50, $51, $48, $00, $a3, $6b, $14, $12, $07, $02, $06, $04, $01, $3c
+	db $44, $1a, $50, $51, $48, $00, $a3, $6b, $14, $12, $07, $02, $06, $04, $01, $50, $51, $48, $00, $a3, $6b, $14, $12, $07, $02, $06, $04, $01
+	anim_03
 BattleAnimScript_023_4d96::
-	dr $8cd96, $8cdb6
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_12
+	anim_18 $07, $04
+	anim_06 $01, $01
+	anim_80 SFX_44
+	anim_02 $40, $68, $10, $18, $0b
+	anim_04 $00, $07, $06, $0b, $00
+	anim_06 $06, $01
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_4db6::
-	dr $8cdb6, $8cddf
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_23 $06
+	anim_80 SFX_42
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $04, $02
+	anim_80 SFX_42
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $04, $02
+	anim_80 SFX_42
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $07, $04
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4ddf::
-	dr $8cddf, $8ce2e
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_08 MovementDeltas_02e_67cc
+	anim_80 SFX_2b
+	anim_23 $10
+	anim_72 $00, ObjectAnim_02e_6bb9
+	anim_20
+	anim_18 $03, $02
+	anim_72 $00, ObjectAnim_02e_6bae
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6bc4
+	anim_20
+	anim_18 $03, $02
+	anim_72 $00, ObjectAnim_02e_6bae
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6bcf
+	anim_20
+	anim_18 $03, $02
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6bae
+	anim_20
+	anim_18 $03, $02
+	anim_70 $cc, $67
+	anim_18 $07, $04
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4e2e::
-	dr $8ce2e, $8ce6a
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_27
+	anim_72 $00, ObjectAnim_02e_6ba3
+	anim_20
+	anim_18 $07, $02
+	anim_70 $cc, $67
+	db $44, $11, $08, $ed, $67, $50, $27, $48, $00, $a3, $6b, $14, $12, $07, $02, $46, $cc, $67, $3c
+	db $44, $11, $08, $ed, $67, $50, $27, $48, $00, $a3, $6b, $14, $12, $07, $02, $46, $cc, $67, $3c
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4e6a::
-	dr $8ce6a, $8ce7d
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2a
+	anim_71 $00, ObjectAnim_02e_6bda
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4e7d::
-	dr $8ce7d, $8ce97
+	anim_58
+	anim_01
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6be5
+	anim_20
+	anim_18 $07, $02
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6bf0
+	anim_20
+	anim_18 $07, $02
+	anim_70 $cc, $67
+	anim_03
 BattleAnimScript_023_4e97::
-	dr $8ce97, $8ceb4
+	anim_58
+	anim_01
+	anim_80 SFX_42
+	anim_26 $00
+	anim_06 $01, $00
+	anim_03
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6606
+	anim_70 $cc, $67
+	anim_06 $02, $00
+	anim_03
 BattleAnimScript_023_4eb4::
-	dr $8ceb4, $8cecd
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_42
+	anim_23 $08
+	anim_35 ScrollDeltas_02e_68c4
+	anim_35 ScrollDeltas_02e_688b
+	anim_18 $07, $08
+	anim_70 $cc, $67
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4ecd::
-	dr $8cecd, $8cedc
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2b
+	anim_52
+	anim_80 SFX_2a
+	anim_53
+	anim_70 $cc, $67
+	anim_03
 BattleAnimScript_023_4edc::
-	dr $8cedc, $8ceee
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_42
+	anim_72 $01, ObjectAnim_02e_6bfb
+	anim_35 ScrollDeltas_02e_68c4
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4eee::
-	dr $8ceee, $8cf0e
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6c11
+	anim_20
+	anim_02 $60, $70, $30, $20, $06
+	anim_09 $00, $07, $00, MovementDeltas_02e_63f5
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4f0e::
-	dr $8cf0e, $8cf61
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2b
+	anim_72 $00, ObjectAnim_02e_6c27
+	anim_20
+	anim_02 $58, $68, $28, $28, $06
+	anim_09 $00, $07, $00, MovementDeltas_02e_63f5
+	anim_20
+	db $44, $18, $08, $ed, $67, $50, $2b, $48, $00, $1c, $6c, $14, $02, $60, $58, $30, $08, $06, $09, $00, $07, $00, $f5, $63, $14, $3c
+	db $44, $16, $08, $ed, $67, $50, $2b, $48, $00, $32, $6c, $14, $02, $68, $78, $38, $28, $06, $09, $00, $07, $00, $f5, $63
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4f61::
-	dr $8cf61, $8cf7a
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_51
+	anim_71 $00, ObjectAnim_02e_6c3d
+	anim_09 $00, $07, $00, MovementDeltas_02e_63fd
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4f7a::
-	dr $8cf7a, $8cf8e
+	anim_58
+	anim_01
+	anim_80 SFX_42
+	anim_02 $48, $60, $18, $10, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_648a
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4f8e::
-	dr $8cf8e, $8cfb2
+	anim_58
+	anim_01
+	anim_80 SFX_26
+	anim_02 $30, $68, $00, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64ed
+	anim_14 $3b, (GFX_03b_4000 + 8524)
+	anim_02 $30, $68, $00, $18, $03
+	anim_09 $00, $07, $00, MovementDeltas_02e_64e5
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4fb2::
-	dr $8cfb2, $8cfcc
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_42
+	anim_02 $44, $64, $14, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6498
+	anim_06 $04, $01
+	anim_07 $03, $01
+	anim_03
 BattleAnimScript_023_4fcc::
-	dr $8cfcc, $8cfd9
+	anim_58
+	anim_01
+	anim_80 SFX_21
+	anim_31
+	anim_70 $cc, $67
+	anim_06 $04, $01
+	anim_60
+	anim_03
 BattleAnimScript_023_4fd9::
-	dr $8cfd9, $8cfe9
+	anim_58
+	anim_01
+	anim_80 SFX_0f
+	anim_72 $00, ObjectAnim_02e_6c48
+	anim_20
+	anim_18 $03, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4fe9::
-	dr $8cfe9, $8cffc
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_20
+	anim_71 $00, ObjectAnim_02e_6c53
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_4ffc::
-	dr $8cffc, $8d01e
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_36
+	anim_71 $00, ObjectAnim_02e_6c5e
+	anim_20
+	anim_18 $07, $02
+	anim_80 SFX_2e
+	anim_02 $50, $74, $20, $24, $08
+	anim_04 $00, $07, $06, $08, $09
+	anim_20
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_501e::
-	dr $8d01e, $8d036
+	anim_58
+	anim_01
+	anim_80 SFX_32
+	anim_02 $10, $18, $40, $68, $04
+	anim_09 $00, $07, $00, MovementDeltas_02e_65fe
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_03
+	anim_03
 BattleAnimScript_023_5036::
-	dr $8d036, $8d056
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_72 $01, ObjectAnim_02e_6c74
+	anim_20
+	anim_80 SFX_51
+	anim_72 $01, ObjectAnim_02e_6c78
+	anim_20
+	anim_80 SFX_51
+	anim_72 $01, ObjectAnim_02e_6c7c
+	anim_20
+	anim_23 $04
+	anim_06 $06, $01
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_5056::
-	dr $8d056, $8d075
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_3b
+	anim_71 $00, ObjectAnim_02e_6cb6
+	anim_20
+	anim_02 $40, $68, $10, $18, $02
+	anim_09 $00, $07, $00, MovementDeltas_02e_64c0
+	anim_70 $cc, $67
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_5075::
-	dr $8d075, $8d090
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_36
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_63e2
+	anim_20
+	anim_06 $04, $01
+	anim_07 $00, $01
+	anim_03
 BattleAnimScript_023_5090::
-	dr $8d090, $8d0ab
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_26
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_63e2
+	anim_20
+	anim_06 $04, $01
+	anim_07 $03, $01
+	anim_03
 BattleAnimScript_023_50ab::
-	dr $8d0ab, $8d0c6
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_22
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_63e2
+	anim_20
+	anim_06 $04, $01
+	anim_07 $02, $01
+	anim_03
 BattleAnimScript_023_50c6::
-	dr $8d0c6, $8d0de
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_1f
+	anim_02 $48, $70, $18, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_6498
+	anim_20
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_50de::
-	dr $8d0de, $8d0f6
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_39
+	anim_02 $30, $70, $08, $20, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_6472
+	anim_20
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_50f6::
-	dr $8d0f6, $8d105
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_80 SFX_51
+	anim_38
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_5105::
-	dr $8d105, $8d11a
+	anim_58
+	anim_01
+	anim_80 SFX_35
+	anim_02 $40, $60, $10, $10, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_6468
+	anim_20
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_511a::
-	dr $8d11a, $8d131
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_31
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_65d3
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_5131::
-	dr $8d131, $8d151
+	anim_58
+	anim_01
+	anim_23 $08
+	anim_80 SFX_39
+	anim_72 $00, ObjectAnim_02e_6cc1
+	anim_20
+	anim_80 SFX_39
+	anim_72 $00, ObjectAnim_02e_6ccc
+	anim_20
+	anim_80 SFX_39
+	anim_72 $00, ObjectAnim_02e_6cd7
+	anim_20
+	anim_06 $04, $01
+	anim_18 $07, $06
+	anim_03
 BattleAnimScript_023_5151::
-	dr $8d151, $8d179
+	anim_58
+	anim_01
+	anim_35 ScrollDeltas_02e_6882
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6ce2
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6ced
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6cf8
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6d03
+	anim_20
+	anim_06 $04, $01
+	anim_07 $00, $01
+	anim_03
 BattleAnimScript_023_5179::
-	dr $8d179, $8d1a3
+	anim_58
+	anim_01
+	anim_23 $0a
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6ce2
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6ced
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6cf8
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6d03
+	anim_20
+	anim_06 $04, $01
+	anim_18 $07, $04
+	anim_07 $01, $01
+	anim_03
 BattleAnimScript_023_51a3::
-	dr $8d1a3, $8d1c4
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6ce2
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6ced
+	anim_20
+	anim_80 SFX_2d
+	anim_72 $00, ObjectAnim_02e_6cf8
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6d03
+	anim_20
+	anim_06 $06, $01
+	anim_03
 BattleAnimScript_023_51c4::
-	dr $8d1c4, $8d1ef
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_80 SFX_2d
+	anim_71 $00, ObjectAnim_02e_6d0e
+	anim_20
+	anim_18 $07, $02
+	anim_72 $02, ObjectAnim_02e_6d19
+	anim_20
+	anim_18 $07, $02
+	anim_06 $06, $01
+	anim_02 $40, $68, $10, $18, $05
+	anim_09 $00, $07, $02, MovementDeltas_02e_66a9
+	anim_20
+	anim_27 $99, $01
+	anim_03
 BattleAnimScript_023_51ef::
-	dr $8d1ef, $8d20d
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_10
+	anim_71 $00, ObjectAnim_02e_6d0e
+	anim_20
+	anim_18 $07, $02
+	anim_72 $02, ObjectAnim_02e_6d19
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_07 $04, $01
+	anim_03
 BattleAnimScript_023_520d::
-	dr $8d20d, $8d219
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_26
+	anim_38
+	anim_24 ScrollDeltas_02e_67fe
+	anim_03
 BattleAnimScript_023_5219::
-	dr $8d219, $8d22c
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_0f
+	anim_72 $00, ObjectAnim_02e_6d3a
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_522c::
-	dr $8d22c, $8d240
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_35
+	anim_71 $00, ObjectAnim_02e_6d45
+	anim_72 $00, ObjectAnim_02e_6d50
+	anim_20
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_5240::
-	dr $8d240, $8d292
+	anim_58
+	anim_01
+	anim_17 $00, $04
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_31
+	anim_02 $50, $64, $20, $14, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_65bf
+	db $0f, $0c, $50, $64, $20, $14, $01, $09, $00, $07, $02, $bf, $65, $3c
+	db $0f, $0c, $50, $64, $20, $14, $01, $09, $00, $07, $02, $bf, $65, $3c
+	db $0f, $0c, $50, $64, $20, $14, $01, $09, $00, $07, $02, $bf, $65, $3c
+	db $0f, $0c, $50, $64, $20, $14, $01, $09, $00, $07, $02, $bf, $65, $3c
+	anim_06 $06, $01
+	anim_03
 BattleAnimScript_023_5292::
-	dr $8d292, $8d2cf
+	anim_58
+	anim_01
+	anim_80 SFX_31
+	anim_72 $00, ObjectAnim_02e_6d5b
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6d66
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6d71
+	anim_20
+	anim_18 $07, $02
+	anim_35 ScrollDeltas_02e_6882
+	anim_72 $00, ObjectAnim_02e_6d7c
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6d87
+	anim_20
+	anim_72 $00, ObjectAnim_02e_6d92
+	anim_20
+	anim_18 $07, $04
+	anim_80 SFX_4c
+	anim_14 $3b, (GFX_03b_4000 + 9966)
+	anim_72 $00, ObjectAnim_02e_6d9d
+	anim_20
+	anim_18 $07, $02
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_52cf::
-	dr $8d2cf, $8d2fc
+	anim_01
+	anim_06 $04, $00
+	anim_03
+	anim_80 SFX_30
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_65a2
+	anim_80 SFX_30
+	anim_14 $3b, (GFX_03b_4000 + 10480)
+	anim_02 $10, $18, $40, $68, $05
+	anim_80 SFX_30
+	anim_09 $00, $07, $02, MovementDeltas_02e_65ab
+	anim_06 $06, $00
+	anim_03
+	anim_03
+	anim_03
 BattleAnimScript_023_52fc::
-	dr $8d2fc, $8d308
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_30
+	anim_38
+	anim_24 ScrollDeltas_02e_67fe
+	anim_03
 BattleAnimScript_023_5308::
-	dr $8d308, $8d340
+	anim_58
+	anim_01
+	anim_23 $10
+	anim_08 MovementDeltas_02e_67cc
+	anim_80 SFX_2c
+	anim_72 $00, ObjectAnim_02e_6da8
+	anim_09 $00, $07, $02, MovementDeltas_02e_6655
+	anim_18 $04, $01
+	anim_80 SFX_2c
+	anim_72 $00, ObjectAnim_02e_6db3
+	anim_09 $00, $07, $02, MovementDeltas_02e_6655
+	anim_18 $04, $01
+	anim_80 SFX_2c
+	anim_72 $00, ObjectAnim_02e_6dbe
+	anim_09 $00, $07, $02, MovementDeltas_02e_6655
+	anim_18 $07, $02
+	anim_06 $06, $01
+	anim_03
 BattleAnimScript_023_5340::
-	dr $8d340, $8d35a
+	anim_01
+	anim_06 $01, $00
+	anim_80 SFX_32
+	anim_02 $10, $08, $40, $58, $01
+	anim_04 $00, $07, $06, $00, $01
+	anim_72 $00, ObjectAnim_02e_6dc9
+	anim_27 $00, $00
+	anim_03
 BattleAnimScript_023_535a::
-	dr $8d35a, $8d36c
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_41
+	anim_14 $49, SubImage_049_7041
+	anim_72 $00, ObjectAnim_02e_6e2c
+	anim_20
+	anim_06 $06, $01
+	anim_03
 BattleAnimScript_023_536c::
-	dr $8d36c, $8d37f
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_34
+	anim_72 $00, ObjectAnim_02e_6dd4
+	anim_20
+	anim_06 $06, $01
+	anim_69 $06, $01
+	anim_03
 BattleAnimScript_023_537f::
-	dr $8d37f, $8d38b
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_20
+	anim_42
+	anim_06 $04, $00
+	anim_03
 BattleAnimScript_023_538b::
-	dr $8d38b, $8d3b6
+	anim_58
+	anim_01
+	anim_02 $10, $18, $40, $68, $01
+	anim_80 SFX_26
+	anim_09 $00, $07, $02, MovementDeltas_02e_6764
+	anim_06 $01, $00
+	anim_14 $3b, (GFX_03b_4000 + 12114)
+	anim_80 SFX_27
+	anim_71 $00, ObjectAnim_02e_6ddf
+	anim_09 $00, $07, $02, MovementDeltas_02e_6756
+	anim_24 ScrollDeltas_02e_67fe
+	anim_06 $04, $00
+	anim_60
+	anim_03
 BattleAnimScript_023_53b6::
-	dr $8d3b6, $8d3f5
+	anim_01
+	anim_80 SFX_4c
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_63d7
+	anim_14 $48, SubImage_048_4cb3
+	anim_09 $00, $07, $02, MovementDeltas_02e_63cc
+	anim_06 $04, $00
+	anim_18 $07, $04
+	anim_80 SFX_4c
+	anim_14 $48, SubImage_048_4b71
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_63d7
+	anim_14 $48, SubImage_048_4cb3
+	anim_09 $00, $07, $02, MovementDeltas_02e_63cc
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_53f5::
-	dr $8d3f5, $8d40d
+	anim_58
+	anim_01
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_20
+	anim_72 $00, ObjectAnim_02e_6dea
+	anim_09 $00, $07, $02, MovementDeltas_02e_65f8
+	anim_06 $04, $01
+	anim_07 $02, $01
+	anim_03
 BattleAnimScript_023_540d::
-	dr $8d40d, $8d42c
+	anim_58
+	anim_01
+	anim_80 SFX_45
+	anim_71 $00, ObjectAnim_02e_6df5
+	anim_20
+	anim_18 $04, $02
+	anim_02 $48, $58, $20, $30, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_65f1
+	anim_06 $04, $01
+	anim_07 $02, $01
+	anim_03
 BattleAnimScript_023_542c::
-	dr $8d42c, $8d476
+	anim_01
+	anim_80 SFX_32
+	anim_02 $28, $20, $58, $70, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_6733
+	anim_18 $04, $02
+	anim_72 $00, ObjectAnim_02e_6e00
+	anim_20
+	anim_18 $07, $04
+	anim_14 $48, SubImage_048_627b
+	anim_03
+	anim_02 $10, $18, $40, $68, $06
+	anim_09 $00, $03, $00, MovementDeltas_02e_672d
+	anim_02 $10, $10, $40, $60, $06
+	anim_09 $00, $03, $00, MovementDeltas_02e_672d
+	anim_02 $10, $20, $40, $70, $06
+	anim_09 $00, $03, $00, MovementDeltas_02e_672d
+	anim_17 $00, $04
+	anim_18 $07, $04
+	anim_03
 BattleAnimScript_023_5476::
-	dr $8d476, $8d492
+	anim_58
+	anim_01
+	anim_80 SFX_51
+	anim_37
+	anim_35 ScrollDeltas_02e_6882
+	anim_23 $06
+	anim_80 SFX_42
+	anim_02 $40, $68, $10, $18, $02
+	anim_09 $00, $03, $00, MovementDeltas_02e_63c5
+	anim_18 $07, $06
+	anim_03
 BattleAnimScript_023_5492::
-	dr $8d492, $8d4a7
+	anim_58
+	anim_01
+	anim_80 SFX_41
+	anim_72 $00, ObjectAnim_02e_6e0b
+	anim_20
+	anim_18 $04, $02
+	anim_71 $00, ObjectAnim_02e_6e16
+	anim_20
+	anim_06 $04, $01
+	anim_03
 BattleAnimScript_023_54a7::
-	dr $8d4a7, $8d4c0
+	anim_01
+	anim_06 $07, $00
+	anim_80 SFX_36
+	anim_02 $10, $18, $40, $68, $02
+	anim_09 $00, $03, $00, MovementDeltas_02e_63ba
+	anim_27 $88, $00
+	anim_06 $04, $00
+	anim_03
 BattleAnimScript_023_54c0::
-	dr $8d4c0, $8d4d2
+	anim_01
+	anim_80 SFX_1f
+	anim_02 $10, $18, $40, $68, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_66cc
+	anim_29 $00
+	anim_03
 BattleAnimScript_023_54d2::
-	dr $8d4d2, $8d4e2
+	anim_01
+	anim_80 SFX_12
+	anim_02 $18, $20, $48, $70, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_639a
+	anim_03
 BattleAnimScript_023_54e2::
-	dr $8d4e2, $8d4f3
+	anim_58
+	anim_01
+	anim_80 SFX_12
+	anim_02 $18, $20, $48, $70, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_63ab
+	anim_03
 BattleAnimScript_023_54f3::
-	dr $8d4f3, $8d514
+	anim_58
+	anim_01
+	anim_23 $02
+	anim_08 ScrollDeltas_02e_67ed
+	anim_80 SFX_14
+	anim_72 $00, ObjectAnim_02e_6e21
+	anim_20
+	anim_18 $07, $04
+	anim_06 $04, $01
+	anim_07 $05, $01
+	anim_07 $06, $01
+	anim_07 $03, $01
+	anim_07 $01, $01
+	anim_03
 BattleAnimScript_023_5514::
-	dr $8d514, $8d567
+	anim_01
+	anim_80 SFX_26
+	anim_02 $30, $10, $60, $60, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_26
+	anim_02 $28, $10, $58, $60, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_26
+	anim_02 $20, $10, $50, $60, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_26
+	anim_02 $18, $10, $48, $60, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_80 SFX_26
+	anim_02 $10, $10, $40, $60, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6472
+	anim_20
+	anim_17 $00, $06
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_5567::
-	dr $8d567, $8d591
+	anim_01
+	anim_80 SFX_35
+	anim_02 $10, $10, $40, $60, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_638e
+	anim_14 $49, SubImage_049_609d
+	anim_02 $10, $18, $40, $68, $0b
+	anim_09 $00, $07, $00, MovementDeltas_02e_637e
+	anim_20
+	anim_18 $07, $04
+	anim_17 $00, $06
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_5591::
-	dr $8d591, $8d5b5
+	anim_01
+	anim_80 SFX_32
+	anim_02 $10, $14, $40, $64, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6375
+	anim_14 $49, SubImage_049_685f
+	anim_09 $00, $07, $00, MovementDeltas_02e_6360
+	anim_20
+	anim_18 $07, $04
+	anim_17 $00, $06
+	anim_18 $07, $08
+	anim_03
 BattleAnimScript_023_55b5::
-	dr $8d5b5, $8d5cc
+	anim_01
+	anim_80 SFX_14
+	anim_02 $18, $20, $48, $70, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_64fc
+	anim_03
+	anim_80 SFX_47
+	anim_65 $01
+	anim_51 $01
+	anim_03
 
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
 Script_023_55cc:
-	dr $8d5cc, $8d5f6
+	anim_80 SFX_29
+	anim_62 $e2, $5e
+	anim_63 $14, $40
+	anim_02 $00, $7c, $00, $7c, $01
+	anim_05 $00, $06, ScrollDeltas_02e_6870
+	anim_20
+	anim_63 $18, $41
+	anim_02 $40, $60, $40, $60, $05
+	anim_09 $00, $07, $00, MovementDeltas_02e_677e
+	anim_06 $02, $00
+	anim_63 $ac, $5b
+	anim_03
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
 Script_023_55f6:
-	dr $8d5f6, $8d5fa
+	anim_80 SFX_39
+	anim_73
+	anim_03
 ; TODO disassemble
 Func_023_55fa:
-	dr $8d5fa, $8d6a2
+	db $11, $0e, $56, $fa, $f3, $d9, $6f, $26, $00, $29, $19, $2a, $ea, $88, $d0, $2a
+	db $ea, $89, $d0, $c9, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56
+	db $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56
+	db $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56
+	db $5e, $56, $5e, $56, $07, $57, $17, $57, $27, $57, $37, $57, $47, $57, $57, $57
+	db $67, $57, $77, $57, $87, $57, $97, $57, $a7, $57, $5e, $56, $5e, $56, $5e, $56
+	db $5e, $56, $5e, $56, $3e, $e2, $5e, $3f, $14, $40, $02, $6c, $7c, $6c, $7c, $01
+	db $05, $00, $0a, $4c, $68, $14, $3f, $18, $41, $02, $08, $10, $08, $10, $05, $09
+	db $00, $03, $00, $7e, $67, $3f, $1c, $47, $02, $08, $10, $08, $10, $09, $06, $01
+	db $01, $09, $00, $03, $00, $86, $67, $3f, $20, $4e, $02, $08, $10, $08, $10, $0b
+	db $09, $00, $03, $00, $8c, $67, $40, $03
 BattleScript_023_56a2:
-	dr $8d6a2, $8d6de
+	anim_20
+	anim_63 $24, $53
+	anim_02 $08, $10, $08, $10, $0d
+	anim_09 $00, $03, $00, MovementDeltas_02e_6793
+	anim_20
+	anim_02 $38, $28, $38, $28, $01
+	anim_05 $00, $04, ScrollDeltas_02e_6867
+	anim_20
+	anim_27 $00, $01
+	anim_63 $ac, $5b
+	anim_03
+	anim_20
+	anim_63 $08, $56
+	anim_02 $08, $10, $08, $10, $0f
+	anim_06 $02, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6799
+	anim_20
+	anim_63 $ac, $5b
+	anim_03
 Func_023_56de:
 	ld hl, BattleScript_023_56a2
 	ld a, l
@@ -465,24 +2112,77 @@ Func_023_56de:
 	ret
 ; TODO disassemble
 Func_023_56f3:
-	dr $8d6f3, $8d7ae
-; TODO disassemble (script data, read via AdvanceBattleScriptMode)
+	db $21, $c6, $56, $7d, $ea, $88, $d0, $7c, $ea, $89, $d0, $af, $ea, $93, $d9, $af
+	db $ea, $89, $d9, $c9, $3e, $ea, $5e, $3f, $30, $5c, $02, $30, $28, $60, $78, $01
+	db $50, $45, $2e, $03, $3e, $f2, $5e, $3f, $74, $5c, $02, $30, $28, $60, $78, $01
+	db $50, $45, $2e, $03, $3e, $fa, $5e, $3f, $b8, $5c, $02, $30, $28, $60, $78, $01
+	db $50, $45, $2e, $03, $3e, $02, $5f, $3f, $fc, $5c, $02, $30, $28, $60, $78, $01
+	db $50, $45, $2e, $03, $3e, $0a, $5f, $3f, $40, $5d, $02, $30, $28, $60, $78, $01
+	db $50, $45, $2e, $03, $3e, $12, $5f, $3f, $84, $5d, $02, $40, $78, $10, $28, $01
+	db $50, $45, $2f, $03, $3e, $1a, $5f, $3f, $c8, $5d, $02, $40, $78, $10, $28, $01
+	db $50, $45, $2f, $03, $3e, $22, $5f, $3f, $0c, $5e, $02, $40, $78, $10, $28, $01
+	db $50, $45, $2f, $03, $3e, $2a, $5f, $3f, $50, $5e, $02, $40, $78, $10, $28, $01
+	db $50, $45, $2f, $03, $3e, $32, $5f, $3f, $94, $5e, $02, $40, $78, $10, $28, $01
+	db $50, $45, $2f, $03, $50, $27, $43, $02, $1d, $00, $03
 Script_023_57ae:
-	dr $8d7ae, $8d7d1
+	anim_01
+	anim_80 SFX_36
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $02, MovementDeltas_02e_65a2
+	anim_14 $3b, (GFX_03b_4000 + 10480)
+	anim_80 SFX_2f
+	anim_02 $40, $68, $10, $18, $05
+	anim_09 $00, $07, $02, MovementDeltas_02e_65b8
+	anim_20
+	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_57d1:
-	dr $8d7d1, $8d7e1
+	anim_66 $90
+	anim_80 SFX_42
+	anim_72 $00, ObjectAnim_02e_6e37
+	anim_20
+	anim_18 $03, $02
+	anim_06 $06, $01
+	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_57e1:
-	dr $8d7e1, $8d7f4
+	anim_14 $3a, (GFX_03a_4000 + 15286)
+	anim_08 ScrollDeltas_02e_67ed
+	anim_72 $00, ObjectAnim_02e_6c69
+	anim_20
+	anim_06 $04, $01
+	anim_18 $07, $04
+	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_57f4:
-	dr $8d7f4, $8d809
+	anim_66 $53
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $07, $00, MovementDeltas_02e_6606
+	anim_70 $cc, $67
+	anim_06 $02, $00
+	anim_03
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
 Script_023_5809:
-	dr $8d809, $8d80f
+	anim_07 $01, $00
+	anim_10 $00
+	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_023_580f:
-	dr $8d80f, $8d840
+	anim_66 $8f
+	anim_02 $40, $68, $10, $18, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6771
+	anim_02 $48, $70, $18, $20, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6771
+	anim_02 $50, $78, $20, $28, $01
+	anim_09 $00, $03, $00, MovementDeltas_02e_6771
+	anim_06 $06, $01
+	anim_03
+	anim_00
+	anim_00
+	anim_00
+	anim_00
+	anim_00
+	anim_00
+	anim_00
 
 

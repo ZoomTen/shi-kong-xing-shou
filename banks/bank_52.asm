@@ -1400,8 +1400,3 @@ G4_64_MapEvents:
 G4_65_MapEvents:
 	warp_event ABSOLUTE,  9, $64, $01, $00
 	events_end
-
-; TODO: 6 zero bytes after the MapEvents tables, no references — likely padding/unused
-unk_052_577a:
-	db $00, $00, $00, $00, $00, $00
-

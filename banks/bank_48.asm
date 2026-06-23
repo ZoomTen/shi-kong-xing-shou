@@ -91,7 +91,3 @@ SubImage_048_70a1:
 .d
 	INCBIN "gfx/misc/gfx_48_70a1.2bpp"
 .e
-
-	ds 13
-
-

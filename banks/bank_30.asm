@@ -7205,6 +7205,3 @@ BattleAnimData_030_798d:
 	db $f0, $70, $f0, $20, $f0, $60, $f0, $10, $f0, $80, $f0, $30
 ; TODO: unk_ - battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); orphan (no direct reference; computed pointer or dead)
 unk_030_7999:
-	ds 7
-
-

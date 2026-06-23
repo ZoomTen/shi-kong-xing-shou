@@ -481,4 +481,3 @@ G5_26_MapEvents:
 G5_27_MapEvents:
 	warp_event ABSOLUTE, 0, $07, $0a
 	events_end
-	db $00, $00, $00, $00, $00

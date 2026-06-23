@@ -873,4 +873,3 @@ spr_2d_7e28: INCBIN "gfx/sprites/spr_2d.2bpp", $140, $40
 spr_2d_7e68: INCBIN "gfx/sprites/spr_2d.2bpp", $180, $40
 spr_2d_7ea8: INCBIN "gfx/sprites/spr_2d.2bpp", $1c0, $40
 spr_2d_7ee8: INCBIN "gfx/sprites/spr_2d.2bpp", $200, $40
-	ds 8

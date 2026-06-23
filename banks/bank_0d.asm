@@ -528,5 +528,3 @@ LightbulbEmoteTiles:
 ; TODO: paper tiles copied to VRAM $8680
 ContinueBlinkerTiles:
 	INCBIN "gfx/paper_scroll/tiles_464f.2bpp"
-	db $00
-

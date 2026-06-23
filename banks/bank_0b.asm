@@ -5407,4 +5407,6 @@ Palette_00b_6ace:
 	RGB 0, 0, 0
 	RGB 0, 0, 25
 	RGB 30, 30, 30
-INCBIN "data/data_00b_6ace.bin" ; $ff/$fe/$88 data (trailing zero pad omitted)
+INCBIN "data/data_00b_6ace.bin" ; $ff/$fe/$88 data
+MovementData_00b_71b0::
+	db $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $88

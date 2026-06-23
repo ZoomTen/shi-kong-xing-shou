@@ -111,6 +111,3 @@ SubImage_031_7c95:
 .d
 	INCBIN "gfx/misc/gfx_31_7c95.2bpp"
 .e
-	ds 104
-
-

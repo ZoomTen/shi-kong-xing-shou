@@ -2025,6 +2025,3 @@ BattleAnimSpriteData_32_7bcd_7bef:
 BattleAnimSpriteData_32_7bcd_7c04:
 	db $00, $18, $10, $12, $04, $00, $20, $08, $14, $04, $00, $28, $00, $16, $04, $10
 	db $28, $00, $18, $04, $ff
-	ds 7
-
-

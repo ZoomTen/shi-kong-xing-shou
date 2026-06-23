@@ -988,4 +988,3 @@ spr_52_7cb8: INCBIN "gfx/sprites/spr_52.2bpp", $140, $40
 spr_52_7cf8: INCBIN "gfx/sprites/spr_52.2bpp", $180, $40
 spr_52_7d38: INCBIN "gfx/sprites/spr_52.2bpp", $1c0, $40
 spr_52_7d78: INCBIN "gfx/sprites/spr_52.2bpp", $200, $40
-	ds 8

@@ -125,6 +125,3 @@ SubImage_03e_7c9d:
 .d
 	INCBIN "gfx/misc/gfx_3e_7c9d.2bpp"
 .e
-	ds 1
-
-

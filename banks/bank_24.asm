@@ -209,172 +209,562 @@ Pointers_024_4130:
 	dw Script_024_453f
 	dw Script_024_4304
 
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_4162:
-	dr $90162, $90181
+	bs_print_text_xy String_025_60a9, $a9, $fd
+	bs_vram_copy3 $0090, $8a00, BattleUIGFX_476a
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_place_tile_attr $0d00, Attrmap_4a_5745, Tilemap_4a_56ef
+	bs_set_sprite_pos $18, $76
+	bs_save_palbuf
+	bs_end_script
 
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_4181:
-	dr $90181, $901b7
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_clr
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_load_mon_bgpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_clear_oam
+	bs_set_sprite_pos $18, $08
+	bs_lcd_on_loadpal
+	bs_end_script
 Script_024_41b7:
-	dr $901b7, $901c1
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_print_text_xy String_025_60b7, $a0, $fd
+	bs_draw_status_icons
+	bs_set_sprite_pos $78, $78
+	bs_end_script
 Script_024_41c1:
-	dr $901c1, $901cb
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_print_text_xy String_025_60be, $a0, $fd
+	bs_draw_status_icons
+	bs_set_sprite_pos $78, $78
+	bs_end_script
 Script_024_41cb:
-	dr $901cb, $901e3
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0d0c, Tilemap_4a_7f7f, Attrmap_4a_7fab
+	bs_print_text_xy String_025_6099, $a0, $fd
+	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
+	bs_print_hp
+	bs_print_all_stats
+	bs_draw_status_2
+	bs_set_cursor
+	bs_end_script3
 Script_024_41e3:
-	dr $901e3, $901ec
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0000, Tilemap_4a_5d45, Attrmap_4a_5dfb
+	bs_draw_equip_list
+	bs_end_script3
 Script_024_41ec:
-	dr $901ec, $90208
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $09, $14, $9800
+	bs_vram_copy3 $0080, $8980, BattleUIGFX_527a
+	bs_vram_copy3 $0100, $8a00, BattleUIGFX_52fa
+	bs_place_tile_attr $0401, Tilemap_4a_606d, Attrmap_4a_60b7
+	bs_print_equip_name
+	bs_end_script3
 Script_024_4208:
-	dr $90208, $9020a
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_copy_sprite_pos
+	bs_end_script3
 Script_024_420a:
-	dr $9020a, $902a5
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_clr
+	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
+	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
+	bs_print_menu_pg_a $01
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_num_full_2 $0a, wMoney, $0305, $010a
+	bs_clear_oam
+	bs_set_sprite_pos $18, $10
+	bs_lcd_on_loadpal
+	bs_end_script
+	bs_lcd_off_loadpal
+	bs_reset_scroll_clr
+	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
+	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
+	bs_clear_vram_2
+	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
+	bs_draw_item_list
+	bs_clear_oam
+	bs_set_sprite_pos $18, $40
+	bs_draw_x_47fb
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_draw_page_arrows
+	bs_print_num_full_2 $0a, wMoney, $0305, $010a
+	bs_lcd_on_loadpal
+	bs_end_script
 Script_024_42a5:
-	dr $902a5, $902bb
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
+	bs_clear_vram_2
+	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
+	bs_draw_item_list
+	bs_set_sprite_pos $18, $40
+	bs_draw_x_47fb
+	bs_draw_page_arrows
+	bs_end_script
 Script_024_42bb:
-	dr $902bb, $902cb
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_print_text_xy String_025_60c8, $90, $a0
+	bs_place_tile_attr $0d0c, Tilemap_4a_64ab, Attrmap_4a_64d7
+	bs_set_sprite_pos $78, $78
+	bs_end_script
 Script_024_42cb:
-	dr $902cb, $902fa
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_2
+	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_load_mon_bgpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_clear_oam
+	bs_set_sprite_pos $18, $08
+	bs_lcd_on_loadpal
+	bs_end_script
 Script_024_42fa:
-	dr $902fa, $90304
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_draw_y
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_draw_party_list
+	bs_end_script3
 Script_024_4304:
-	dr $90304, $9030e
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_skip_if_empty $02
+	bs_load_bgpal_buf $b100  ; SRAM (monster-box bytes reused as palette)
+	db $65, $27, $62, $53, $1a  ; trailing/branch data
 Script_024_430e:
-	dr $9030e, $9032e
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_menu_pg_a $04
+	bs_print_text_xy String_025_60db, $98, $a0
+	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
+	bs_set_sprite_pos $48, $88
+	bs_end_script
 Script_024_432e:
-	dr $9032e, $90343
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0902, Tilemap_4a_666b, Attrmap_4a_66db
+	bs_draw_party_4
+	bs_place_tile_attr $000c, Tilemap_4a_62a1, Attrmap_4a_6227
+	bs_print_menu_pg_b $05
+	bs_set_sprite_pos $28, $58
+	bs_end_script
 Script_024_4343:
-	dr $90343, $90355
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_print_menu_pg_b $06
+	bs_print_text_xy String_025_60db, $18, $20
+	bs_place_tile_attr $0f0c, Tilemap_4a_674b, Attrmap_4a_676b
+	bs_set_sprite_pos $78, $88
+	bs_end_script
 Script_024_4355:
-	dr $90355, $9038b
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_2
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_load_mon_bgpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_place_tile_attr $0000, Tilemap_4a_5d45, Attrmap_4a_5dfb
+	bs_draw_equip_list
+	bs_clear_oam
+	bs_set_sprite_pos $18, $10
+	bs_lcd_on_loadpal
+	bs_end_script
 Script_024_438b:
-	dr $9038b, $903af
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $09, $14, $9800
+	bs_vram_copy3 $0080, $96e0, BattleUIGFX_527a
+	bs_print_equip_n $80
+	bs_place_tile_attr $0401, Tilemap_4a_678b, Attrmap_4a_67d5
+	bs_skip_if_empty $08
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_draw_w_4745
+	bs_set_cursor_2
+	bs_set_sprite_pos $30, $30
+	bs_end_script
 Script_024_43af:
-	dr $903af, $90404
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_clr
+	bs_count_dex
+	bs_vram_copy3 $0140, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0020, $9380, BattleUIGFX_4e0a
+	bs_vram_copy3 $0020, $93a0, BattleUIGFX_4e6a
+	bs_vram_copy3 $0320, $9400, BattleUIGFX_571a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_load_mon_bgpal_2 $06
+	bs_load_mon_pic_cond $9140
+	bs_place_tile_attr $0100, Tilemap_4a_681f, Attrmap_4a_6861
+	bs_print_num_indir wd9d8, $0103, $0507
+	bs_place_tile_attr $0109, Tilemap_4a_68a3, Attrmap_4a_68dd
+	bs_print_two_nums
+	bs_place_tile_attr $0a00, Tilemap_4a_6917, Attrmap_4a_69cd
+	bs_draw_8_items
+	bs_print_num_indir wSelectedPage, $0102, $1111
+	bs_clear_oam
+	bs_set_sprite_pos $18, $60
+	bs_lcd_on_loadpal
+	bs_end_script
 Script_024_4404:
-	dr $90404, $90421
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $12, $0a, $980a
+	bs_clear_bgbox_at $07, $08, $9921
+	bs_place_tile_attr $0a01, Tilemap_4a_6a83, Attrmap_4a_6aa8
+	bs_draw_text_53ab
+	bs_draw_dex_pic
+	bs_place_tile_attr $0008, Tilemap_4a_6acd, Attrmap_4a_6b97
+	bs_draw_text_5711
+	bs_clear_oam
+	bs_end_script
 Script_024_4421:
-	dr $90421, $9049d
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_clr
+	bs_clear_bgbox_at $12, $14, $9800
+	bs_vram_copy3 $0080, $8f60, OptionGFX_00c_5f5c
+	bs_vram_copy3 $0100, $8000, Pointers_00c_63dc_63ee
+	bs_print_text_xy String_025_60e0, $d0, $dc
+	bs_print_text_xy String_025_60e7, $80, $c8
+	bs_vram_copy3 $00a0, $8e00, BattleUIGFX_4e9a
+	bs_vram_copy3 $0100, $9000, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9100, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9200, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9300, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9400, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9500, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9600, BattleUIGFX_5e4a
+	bs_vram_copy3 $0100, $9700, BattleUIGFX_5e4a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_6c61, Attrmap_4a_6dcb
+	bs_draw_8_party
+	bs_clear_oam
+	bs_set_sprite_pos $20, $14
+	bs_set_two_sprites $68, $10, $18, $18
+	bs_lcd_on_loadpal
+	bs_load_menu_option
+	bs_load_pals_b
+	bs_draw_v_40b7
+	bs_draw_u_54cc
+	bs_load_pals_a
+	bs_end_script3
 Script_024_449d:
-	dr $9049d, $90509
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_clr
+	bs_count_dex
+	bs_vram_copy3 $0140, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0140, $9140, BattleUIGFX_55da
+	bs_vram_copy3 $0400, $9280, BattleUIGFX_5a3a
+	bs_vram_copy3 $0010, $97c0, BattleUIGFX_5e3a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_draw_text_50ad
+	bs_print_text_xy String_025_6104, $80, $9c
+	bs_print_text_xy String_025_610d, $68, $70
+	bs_place_tile_attr $0000, Tilemap_4a_6f35, Attrmap_4a_6fc7
+	bs_place_tile_attr $0c00, Tilemap_4a_7059, Attrmap_4a_70bb
+	bs_place_tile_attr $000c, Tilemap_4a_711d, Attrmap_4a_7197
+	bs_print_num_full_2 $0a, wMoney, $0305, $0e0a
+	bs_print_num_full $14, wd0da, $0102, $0808
+	bs_print_num_full_2 $0a, wd0d5, $0103, $1006
+	bs_print_num_full_2 $0a, wd0d6, $0103, $1002
+	bs_clear_oam
+	bs_set_sprite_pos $78, $88
+	bs_draw_ac_407b
+	bs_lcd_on_loadpal
+	bs_end_script
 Script_024_4509:
-	dr $90509, $9053f
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $0c, $14, $9800
+	bs_place_tile_attr $0101, Tilemap_4a_7211, Attrmap_4a_72b5
+	bs_draw_clock
+	bs_print_num_full_2 $0a, wd871, $0103, $0608
+	bs_print_num_full_2 $0a, wd872, $0103, $0604
+	bs_print_num_full $14, wd873, $0102, $1002
+	bs_print_num_full_2 $0a, wd874, $0102, $0c08
+	bs_print_num_full_2 $0a, wd875, $0102, $0f08
+	bs_end_script
 Script_024_453f:
-	dr $9053f, $9054c
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_print_equip_n $80
+	bs_clear_oam
+	bs_print_menu_pg_a $07
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_end_script
 Script_024_454c:
-	dr $9054c, $9054e
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_init_menu_a
+	bs_end_menu
 Script_024_454e:
-	dr $9054e, $90553
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_draw_v_40b7
+	bs_load_pals_b
+	bs_draw_u_54cc
+	bs_load_pals_a
+	bs_end_script3
 Script_024_4553:
-	dr $90553, $90564
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_load_mon_objpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_clear_bgbox_at $04, $04, $998f
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_end_script3
 Script_024_4564:
-	dr $90564, $90589
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_load_map_bg
+	bs_vram_copy3 $0090, $8a00, BattleUIGFX_476a
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_place_tile_attr $0d00, Attrmap_4a_5745, Tilemap_4a_56ef
+	bs_set_sprite_pos $18, $76
+	bs_print_text_xy String_025_60a9, $a9, $fd
+	bs_load_menu_entry_n $01
+	bs_clear_menu_table
+	bs_init_bank4
+	bs_lcd_on_loadpal
+	bs_end_script3
 Script_024_4589:
-	dr $90589, $905a0
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox $07, $06
+	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_print_hp
+	bs_select_menu $02
+	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_print_hp
+	bs_select_menu $02
 Script_024_45a0:
-	dr $905a0, $905b0
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_print_text_xy String_025_60b7, $a0, $fd
+	bs_draw_status_icons
+	bs_select_menu $03
 Script_024_45b0:
-	dr $905b0, $905c2
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_load_mon_objpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_print_hp
+	bs_print_all_stats
+	bs_clear_bgbox_at $04, $04, $998f
+	bs_draw_status_2
+	bs_set_cursor
+	bs_end_script3
 Script_024_45c2:
-	dr $905c2, $905d1
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
+	bs_print_text_xy String_025_6099, $a0, $fd
+	bs_print_hp
+	bs_print_all_stats
+	bs_end_script3
 Script_024_45d1:
-	dr $905d1, $905e8
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_load_mon_objpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_print_hp
+	bs_clear_bgbox_at $04, $04, $998f
+	bs_draw_status_2
+	bs_clear_bgbox_at $07, $11, $9822
+	bs_draw_equip_list
+	bs_set_cursor
+	bs_end_script3
 Script_024_45e8:
-	dr $905e8, $90601
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_load_mon_objpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_print_hp
+	bs_place_tile_attr $0401, Tilemap_4a_606d, Attrmap_4a_60b7
+	bs_clear_bgbox_at $04, $04, $998f
+	bs_draw_status_2
+	bs_print_equip_name
+	bs_set_cursor
+	bs_end_script3
 Script_024_4601:
-	dr $90601, $9060f
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $09, $14, $9800
+	bs_place_tile_attr $0000, Tilemap_4a_5d45, Attrmap_4a_5dfb
+	bs_draw_equip_list
+	bs_end_script3
 BattleScript_024_460f:
-	dr $9060f, $9061d
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $09, $14, $9800
+	bs_print_text_xy String_025_60b7, $a0, $fd
+	bs_draw_status_icons
+	bs_draw_party_list
+	bs_load_menu_entry
+	bs_end_script3
 Script_024_461d:
-	dr $9061d, $9062b
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_swap_mon_data
+	bs_draw_party_list
+	bs_load_mon_objpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_print_hp
+	bs_load_menu_entry_n $03
+	bs_end_script3
 Script_024_462b:
-	dr $9062b, $90642
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $0c, $0e, $9806
+	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
+	bs_print_num_full_2 $0a, wMoney, $0305, $010a
+	bs_print_menu_pg_a $01
+	bs_end_script3
 Script_024_4642:
-	dr $90642, $90650
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
+	bs_draw_item_list
+	bs_draw_page_arrows
+	bs_draw_x_47fb
+	bs_set_sprite_pos $18, $40
+	bs_end_script3
 Script_024_4650:
-	dr $90650, $90652
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_draw_x_47fb
+	bs_end_script3
 Script_024_4652:
-	dr $90652, $90664
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
+	bs_draw_item_list
+	bs_draw_x_47fb
+	bs_draw_page_arrows
+	bs_end_script3
 Script_024_4664:
-	dr $90664, $9066d
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_draw_x_47fb
+	bs_end_script3
 Script_024_466d:
-	dr $9066d, $9067d
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_print_text_xy String_025_60cf, $90, $a0
+	bs_place_tile_attr $0d0c, Tilemap_4a_64ab, Attrmap_4a_64d7
+	bs_set_sprite_pos $78, $78
+	bs_end_script
 Script_024_467d:
-	dr $9067d, $906bf
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_reset_scroll_2
+	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
+	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
+	bs_print_num_full_2 $0a, wMoney, $0305, $010a
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_menu_pg_a $01
+	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
+	bs_draw_item_list
+	bs_draw_page_arrows
+	bs_draw_x_47fb
+	bs_lcd_on_loadpal
+	bs_end_script3
 Script_024_46bf:
-	dr $906bf, $906cb
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_print_hp
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_end_script3
 Script_024_46cb:
-	dr $906cb, $906f5
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_load_mon_bgpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_lcd_on_loadpal
+	bs_end_script3
 Script_024_46f5:
-	dr $906f5, $9071d
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_load_bgpal_buf String_025_6129
+	bs_load_objpal_buf String_025_6169
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_load_mon_bgpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_print_hp
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_end_script3
 Script_024_471d:
-	dr $9071d, $9073b
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_menu_pg_a $04
+	bs_print_text_xy String_025_60db, $98, $a0
+	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
+	bs_end_script3
 Script_024_473b:
-	dr $9073b, $9075c
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
+	bs_print_menu_pg_b $05
+	bs_place_tile_attr $000c, Tilemap_4a_62a1, Attrmap_4a_6227
+	bs_end_script3
+	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_end_script3
 Script_024_475c:
-	dr $9075c, $90771
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_lcd_off_loadpal
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_lcd_on_loadpal
+	bs_end_script3
 Script_024_4771:
-	dr $90771, $90775
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_draw_equip_list
+	bs_end_script3
+	bs_draw_w_4745
+	bs_end_script3
 Script_024_4775:
-	dr $90775, $90792
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_clear_bgbox_at $06, $0c, $9824
+	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
+	bs_draw_party_list
+	bs_clear_bgbox_at $04, $04, $998f
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_end_script3
 Script_024_4792:
-	dr $90792, $907bb
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $05, $07, $982a
+	bs_clear_bgbox_at $0a, $14, $9900
+	bs_vram_copy3 $0040, $9400, BattleUIGFX_571a
+	bs_place_tile_attr $0109, Tilemap_4a_68a3, Attrmap_4a_68dd
+	bs_print_two_nums
+	bs_place_tile_attr $0a00, Tilemap_4a_6917, Attrmap_4a_69cd
+	bs_draw_8_items
+	bs_print_num_indir wSelectedPage, $0102, $1111
+	bs_end_script3
 Script_024_47bb:
-	dr $907bb, $90804
+	bs_clear_bgbox_at $0c, $14, $9800
+	bs_draw_text_50ad
+	bs_print_text_xy String_025_6104, $80, $9c
+	bs_print_text_xy String_025_610d, $68, $70
+	bs_place_tile_attr $0000, Tilemap_4a_6f35, Attrmap_4a_6fc7
+	bs_place_tile_attr $0c00, Tilemap_4a_7059, Attrmap_4a_70bb
+	bs_place_tile_attr $000c, Tilemap_4a_711d, Attrmap_4a_7197
+	bs_print_num_full_2 $0a, wMoney, $0305, $0e0a
+	bs_print_num_full $14, wd0da, $0102, $0808
+	bs_print_num_full_2 $0a, wd0d5, $0103, $1006
+	bs_print_num_full_2 $0a, wd0d6, $0103, $1002
+	bs_set_sprite_pos $78, $88
+	bs_end_script
 
 Func_024_4804:
 	ld de, MenuStateJumptable
@@ -1057,12 +1447,20 @@ Func_024_4c48:
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_4d49:
-	dr $90d49, $90d6a
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_clear_bgbox_at $12, $0a, $980a
+	bs_load_mon_pic_cond $9140
+	bs_load_mon_objpal_2 $06
+	bs_place_tile_attr $0a00, Tilemap_4a_6917, Attrmap_4a_69cd
+	bs_print_num_indir wSelectedPage, $0102, $1111
+	bs_draw_8_items
+	bs_print_num_indir wd9d8, $0103, $0507
+	bs_end_script3
 Script_024_4d6a:
-	dr $90d6a, $90d77
+	bs_load_mon_objpal_2 $06
+	bs_load_mon_pic_cond $9140
+	bs_print_num_indir wd9d8, $0103, $0507
+	bs_end_script3
 Func_024_4d77:
 .asm_4d77
 	call Func_024_408a
@@ -1201,9 +1599,22 @@ Func_024_4d77:
 	ld [hli], a
 	ld [hli], a
 	ret
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_4e77:
-	dr $90e77, $90e9f
+	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_load_mon_objpal $06
+	bs_load_mon_pic $93e0
+	bs_print_mon_name $62, $6e
+	bs_print_equip_n $80
+	bs_clear_bgbox_at $04, $04, $998f
+	bs_draw_status_2
+	bs_draw_s_42ba
+	bs_print_hp
+	bs_skip_if_empty $08
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_draw_w_4745
+	bs_set_cursor_2
+	bs_set_sprite_pos $30, $30
+	bs_end_script3
 Func_024_4e9f:
 	ld a, [wd9da + 1]
 	ld de, OptionCursorCoords
@@ -1763,9 +2174,16 @@ Func_024_519d:
 	ldh [hFFC5], a
 	call Func_024_694c
 	ret
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_524f:
-	dr $9124f, $91277
+	bs_clear_bgbox_at $12, $0c, $9808
+	bs_clear_bgbox_at $06, $14, $9980
+	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_menu_pg_a $04
+	bs_print_text_xy String_025_60db, $98, $a0
+	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
+	bs_end_script3
+	db $c9  ; trailing/branch data
 Func_024_5277:
 .asm_5277
 	call Func_024_40b8
@@ -2259,9 +2677,10 @@ Func_024_5405:
 .asm_55f7
 	xor a
 	ret
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_55f9:
-	dr $915f9, $91603
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_menu_pg_a $03
+	bs_end_script3
 Func_024_5603:
 	call GetPartyMonPtr
 	ld de, Jumptable_024_5616
@@ -3282,12 +3701,16 @@ Func_024_5f19:
 	inc hl
 	ld [hl], $00
 	ret
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_5f67:
-	dr $91f67, $91f78
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
+	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
+	bs_draw_item_list
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_draw_x_47fb
+	bs_end_script3
 Script_024_5f78:
-	dr $91f78, $91f82
+	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
+	bs_print_menu_pg_a $02
+	bs_end_script3
 ; TODO: unk_ - lookup table indexed by wd9f3
 unk_024_5f82:
 	db $00, $04, $04, $04, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
@@ -3577,12 +4000,12 @@ Func_024_6099:
 	ld [wScriptByte], a
 	ld a, [hScriptBank]
 	ld [wdcad], a
-	ld a, $4A
+	ld a, BANK(Script_4a_7fd7)
 	ld [hScriptBank], a
 	ld hl, wScriptPos
-	ld [hl], $d7
+	ld [hl], LOW(Script_4a_7fd7)
 	inc hl
-	ld [hl], $7f
+	ld [hl], HIGH(Script_4a_7fd7)
 	call Func_024_689a
 	ret
 .asm_61e4
@@ -4278,9 +4701,12 @@ Func_024_6603:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
-; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
 Script_024_66ca:
-	dr $926ca, $926da
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_draw_party_list
+	bs_print_text_xy String_025_60be, $a0, $fd
+	bs_draw_status_icons
+	bs_select_menu $03
 Func_024_66da:
 	ld a, [wSelectedOption]
 	ld de, OptionCursorCoords
@@ -4538,9 +4964,9 @@ Func_024_6864::
 Func_024_689a:
 	ld a, $80
 	ldh [rLCDC], a
-	ld hl, $2b38
+	ld hl, Palette_White
 	call CopyBackgroundPalettes
-	ld hl, $2b38
+	ld hl, Palette_White
 	call CopyObjectPalettes
 	call DelayFrame
 	ld a, [wd0bc]

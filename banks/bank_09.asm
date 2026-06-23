@@ -452,5 +452,3 @@ Func_009_42fd:
 	add hl, bc
 	ld [hl], $01
 	jp Func_009_404e
-	db $00, $00, $00
-

@@ -722,4 +722,3 @@ spr_75:
 	dw $eeee
 spr_75_641a: INCBIN "gfx/sprites/spr_75.2bpp", $0, $40
 spr_75_645a: INCBIN "gfx/sprites/spr_75.2bpp", $40, $40
-	ds 6

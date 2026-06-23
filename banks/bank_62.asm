@@ -105,11 +105,11 @@ Func_062_40a4:
 WorldMapNamePointers:
 	dw WorldMapNameStringPointers
 	dw WorldMapNameStringPointers
-	dw WorldMapNameStringPointers + $c
-	dw WorldMapNameStringPointers + $14
-	dw WorldMapNameStringPointers + $1a
-	dw WorldMapNameStringPointers + $26
-	dw WorldMapNameStringPointers + $2c
+	dw WorldMapNameStringPointers_40fa
+	dw WorldMapNameStringPointers_4102
+	dw WorldMapNameStringPointers_4108
+	dw WorldMapNameStringPointers_4114
+	dw WorldMapNameStringPointers_411a
 WorldMapNameStringPointers:
 	dw WorldMapNames
 	dw WorldMapNames_4124
@@ -117,22 +117,27 @@ WorldMapNameStringPointers:
 	dw WorldMapNames_4131
 	dw WorldMapNames_4139
 	dw WorldMapNames_413f
+WorldMapNameStringPointers_40fa:
 	dw WorldMapNames_4146
 	dw WorldMapNames_414d
 	dw WorldMapNames_4155
 	dw WorldMapNames_415b
+WorldMapNameStringPointers_4102:
 	dw WorldMapNames_4161
 	dw WorldMapNames_4167
 	dw WorldMapNames_416f
+WorldMapNameStringPointers_4108:
 	dw WorldMapNames_417c
 	dw WorldMapNames_4183
 	dw WorldMapNames_4189
 	dw WorldMapNames_4190
 	dw WorldMapNames_4197
 	dw WorldMapNames_419d
+WorldMapNameStringPointers_4114:
 	dw WorldMapNames_41a4
 	dw WorldMapNames_41ab
 	dw WorldMapNames_41b2
+WorldMapNameStringPointers_411a:
 	dw WorldMapNames_41b9
 	dw WorldMapNames_41c2
 ; TEXT -> <f4>頭<f5>幕魅<ed>

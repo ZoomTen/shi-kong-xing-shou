@@ -172,7 +172,37 @@ Group06_Signposts:
 INCLUDE "data/text/signposts_6.asm"
 
 BattleUIGFX::
-INCBIN "gfx/misc/battleuigfx.2bpp"
+	INCBIN "gfx/misc/battleuigfx.2bpp"
+BattleUIGFX_476a::
+	INCBIN "gfx/misc/battleuigfx_476a.2bpp"
+BattleUIGFX_483a::
+	INCBIN "gfx/misc/battleuigfx_483a.2bpp"
+BattleUIGFX_491a::
+	INCBIN "gfx/misc/battleuigfx_491a.2bpp"
+BattleUIGFX_4b8a::
+	INCBIN "gfx/misc/battleuigfx_4b8a.2bpp"
+BattleUIGFX_4e0a::
+	INCBIN "gfx/misc/battleuigfx_4e0a.2bpp"
+BattleUIGFX_4e6a::
+	INCBIN "gfx/misc/battleuigfx_4e6a.2bpp"
+BattleUIGFX_4e9a::
+	INCBIN "gfx/misc/battleuigfx_4e9a.2bpp"
+BattleUIGFX_527a::
+	INCBIN "gfx/misc/battleuigfx_527a.2bpp"
+BattleUIGFX_52fa::
+	INCBIN "gfx/misc/battleuigfx_52fa.2bpp"
+BattleUIGFX_53fa::
+	INCBIN "gfx/misc/battleuigfx_53fa.2bpp"
+BattleUIGFX_55da::
+	INCBIN "gfx/misc/battleuigfx_55da.2bpp"
+BattleUIGFX_571a::
+	INCBIN "gfx/misc/battleuigfx_571a.2bpp"
+BattleUIGFX_5a3a::
+	INCBIN "gfx/misc/battleuigfx_5a3a.2bpp"
+BattleUIGFX_5e3a::
+	INCBIN "gfx/misc/battleuigfx_5e3a.2bpp"
+BattleUIGFX_5e4a::
+	INCBIN "gfx/misc/battleuigfx_5e4a.2bpp"
 Pointers_00c_5f4a:
 	dw OptionGFX_00c_5f5c
 	dw OptionGFX_00c_5fdc

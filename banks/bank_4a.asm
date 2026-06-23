@@ -2712,23 +2712,23 @@ Func_04a_5691:
 	xor a
 	ld [wBattleScriptByte], a
 	ret
-Tilemap_4a_56ef:
+Tilemap_4a_56ef::
 INCBIN "gfx/tilemaps/tilemap_4a_56ef.tilemap"
-Attrmap_4a_5745:
+Attrmap_4a_5745::
 INCBIN "gfx/attrmaps/attrmap_4a_5745.bin"
-Tilemap_4a_579b:
+Tilemap_4a_579b::
 INCBIN "gfx/tilemaps/tilemap_4a_579b.tilemap"
-Attrmap_4a_5905:
+Attrmap_4a_5905::
 INCBIN "gfx/attrmaps/attrmap_4a_5905.bin"
-Tilemap_4a_5a6f:
+Tilemap_4a_5a6f::
 INCBIN "gfx/tilemaps/tilemap_4a_5a6f.tilemap"
-Tilemap_4a_5bd9:
+Tilemap_4a_5bd9::
 INCBIN "gfx/tilemaps/tilemap_4a_5bd9.tilemap"
-Attrmap_4a_5c8f:
+Attrmap_4a_5c8f::
 INCBIN "gfx/attrmaps/attrmap_4a_5c8f.bin"
-Tilemap_4a_5d45:
+Tilemap_4a_5d45::
 INCBIN "gfx/tilemaps/tilemap_4a_5d45.tilemap"
-Attrmap_4a_5dfb:
+Attrmap_4a_5dfb::
 INCBIN "gfx/attrmaps/attrmap_4a_5dfb.bin"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_5eb1:
@@ -2752,95 +2752,95 @@ INCBIN "gfx/tilemaps/tilemap_4a_6017.tilemap"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_4a_6051:
 	ds 28
-Tilemap_4a_606d:
+Tilemap_4a_606d::
 INCBIN "gfx/tilemaps/tilemap_4a_606d.tilemap"
-Attrmap_4a_60b7:
+Attrmap_4a_60b7::
 INCBIN "gfx/attrmaps/attrmap_4a_60b7.bin"
-Tilemap_4a_6101:
+Tilemap_4a_6101::
 INCBIN "gfx/tilemaps/tilemap_4a_6101.tilemap"
-Attrmap_4a_6157:
+Attrmap_4a_6157::
 INCBIN "gfx/attrmaps/attrmap_4a_6157.bin"
-Tilemap_4a_61ad:
+Tilemap_4a_61ad::
 INCBIN "gfx/tilemaps/tilemap_4a_61ad.tilemap"
-Attrmap_4a_6227:
+Attrmap_4a_6227::
 INCBIN "gfx/attrmaps/attrmap_4a_6227.bin"
-Tilemap_4a_62a1:
+Tilemap_4a_62a1::
 INCBIN "gfx/tilemaps/tilemap_4a_62a1.tilemap"
 Tilemap_4a_631b:
 INCBIN "gfx/tilemaps/tilemap_4a_631b.tilemap"
 Attrmap_4a_6339:
 INCBIN "gfx/attrmaps/attrmap_4a_6339.bin"
-Tilemap_4a_6357:
+Tilemap_4a_6357::
 INCBIN "gfx/tilemaps/tilemap_4a_6357.tilemap"
-Attrmap_4a_6401:
+Attrmap_4a_6401::
 INCBIN "gfx/attrmaps/attrmap_4a_6401.bin"
-Tilemap_4a_64ab:
+Tilemap_4a_64ab::
 INCBIN "gfx/tilemaps/tilemap_4a_64ab.tilemap"
-Attrmap_4a_64d7:
+Attrmap_4a_64d7::
 INCBIN "gfx/attrmaps/attrmap_4a_64d7.bin"
 Tilemap_4a_6503:
 INCBIN "gfx/tilemaps/tilemap_4a_6503.tilemap"
 Attrmap_4a_651d:
 INCBIN "gfx/attrmaps/attrmap_4a_651d.bin"
-Tilemap_4a_6537:
+Tilemap_4a_6537::
 INCBIN "gfx/tilemaps/tilemap_4a_6537.tilemap"
 Attrmap_4a_65b1:
 INCBIN "gfx/attrmaps/attrmap_4a_65b1.bin"
-Tilemap_4a_662b:
+Tilemap_4a_662b::
 INCBIN "gfx/tilemaps/tilemap_4a_662b.tilemap"
-Attrmap_4a_664b:
+Attrmap_4a_664b::
 INCBIN "gfx/attrmaps/attrmap_4a_664b.bin"
-Tilemap_4a_666b:
+Tilemap_4a_666b::
 INCBIN "gfx/tilemaps/tilemap_4a_666b.tilemap"
-Attrmap_4a_66db:
+Attrmap_4a_66db::
 INCBIN "gfx/attrmaps/attrmap_4a_66db.bin"
-Tilemap_4a_674b:
+Tilemap_4a_674b::
 INCBIN "gfx/tilemaps/tilemap_4a_674b.tilemap"
-Attrmap_4a_676b:
+Attrmap_4a_676b::
 INCBIN "gfx/attrmaps/attrmap_4a_676b.bin"
-Tilemap_4a_678b:
+Tilemap_4a_678b::
 INCBIN "gfx/tilemaps/tilemap_4a_678b.tilemap"
-Attrmap_4a_67d5:
+Attrmap_4a_67d5::
 INCBIN "gfx/attrmaps/attrmap_4a_67d5.bin"
-Tilemap_4a_681f:
+Tilemap_4a_681f::
 INCBIN "gfx/tilemaps/tilemap_4a_681f.tilemap"
-Attrmap_4a_6861:
+Attrmap_4a_6861::
 INCBIN "gfx/attrmaps/attrmap_4a_6861.bin"
-Tilemap_4a_68a3:
+Tilemap_4a_68a3::
 INCBIN "gfx/tilemaps/tilemap_4a_68a3.tilemap"
-Attrmap_4a_68dd:
+Attrmap_4a_68dd::
 INCBIN "gfx/attrmaps/attrmap_4a_68dd.bin"
-Tilemap_4a_6917:
+Tilemap_4a_6917::
 INCBIN "gfx/tilemaps/tilemap_4a_6917.tilemap"
-Attrmap_4a_69cd:
+Attrmap_4a_69cd::
 INCBIN "gfx/attrmaps/attrmap_4a_69cd.bin"
-Tilemap_4a_6a83:
+Tilemap_4a_6a83::
 INCBIN "gfx/tilemaps/tilemap_4a_6a83.tilemap"
-Attrmap_4a_6aa8:
+Attrmap_4a_6aa8::
 INCBIN "gfx/attrmaps/attrmap_4a_6aa8.bin"
-Tilemap_4a_6acd:
+Tilemap_4a_6acd::
 INCBIN "gfx/tilemaps/tilemap_4a_6acd.tilemap"
-Attrmap_4a_6b97:
+Attrmap_4a_6b97::
 INCBIN "gfx/attrmaps/attrmap_4a_6b97.bin"
-Tilemap_4a_6c61:
+Tilemap_4a_6c61::
 INCBIN "gfx/tilemaps/tilemap_4a_6c61.tilemap"
-Attrmap_4a_6dcb:
+Attrmap_4a_6dcb::
 INCBIN "gfx/attrmaps/attrmap_4a_6dcb.bin"
-Tilemap_4a_6f35:
+Tilemap_4a_6f35::
 INCBIN "gfx/tilemaps/tilemap_4a_6f35.tilemap"
-Attrmap_4a_6fc7:
+Attrmap_4a_6fc7::
 INCBIN "gfx/attrmaps/attrmap_4a_6fc7.bin"
-Tilemap_4a_7059:
+Tilemap_4a_7059::
 INCBIN "gfx/tilemaps/tilemap_4a_7059.tilemap"
-Attrmap_4a_70bb:
+Attrmap_4a_70bb::
 INCBIN "gfx/attrmaps/attrmap_4a_70bb.bin"
-Tilemap_4a_711d:
+Tilemap_4a_711d::
 INCBIN "gfx/tilemaps/tilemap_4a_711d.tilemap"
-Attrmap_4a_7197:
+Attrmap_4a_7197::
 INCBIN "gfx/attrmaps/attrmap_4a_7197.bin"
-Tilemap_4a_7211:
+Tilemap_4a_7211::
 INCBIN "gfx/tilemaps/tilemap_4a_7211.tilemap"
-Attrmap_4a_72b5:
+Attrmap_4a_72b5::
 INCBIN "gfx/attrmaps/attrmap_4a_72b5.bin"
 Tilemap_4a_7359:
 INCBIN "gfx/tilemaps/tilemap_4a_7359.tilemap"
@@ -2848,13 +2848,13 @@ Tilemap_4a_73d3:
 INCBIN "gfx/tilemaps/tilemap_4a_73d3.tilemap"
 Tilemap_4a_7425:
 INCBIN "gfx/tilemaps/tilemap_4a_7425.tilemap"
-Tilemap_4a_74c7:
+Tilemap_4a_74c7::
 INCBIN "gfx/tilemaps/tilemap_4a_74c7.tilemap"
 Tilemap_4a_7541:
 INCBIN "gfx/tilemaps/tilemap_4a_7541.tilemap"
 Tilemap_4a_7593:
 INCBIN "gfx/tilemaps/tilemap_4a_7593.tilemap"
-Tilemap_4a_7635:
+Tilemap_4a_7635::
 INCBIN "gfx/tilemaps/tilemap_4a_7635.tilemap"
 Tilemap_4a_76af:
 INCBIN "gfx/tilemaps/tilemap_4a_76af.tilemap"
@@ -2864,23 +2864,23 @@ Tilemap_4a_770b:
 INCBIN "gfx/tilemaps/tilemap_4a_770b.tilemap"
 Attrmap_4a_772b:
 INCBIN "gfx/attrmaps/attrmap_4a_772b.bin"
-Tilemap_4a_774b:
+Tilemap_4a_774b::
 INCBIN "gfx/tilemaps/tilemap_4a_774b.tilemap"
-Attrmap_4a_77b9:
+Attrmap_4a_77b9::
 INCBIN "gfx/attrmaps/attrmap_4a_77b9.bin"
-Tilemap_4a_7827:
+Tilemap_4a_7827::
 INCBIN "gfx/tilemaps/tilemap_4a_7827.tilemap"
-Attrmap_4a_78c5:
+Attrmap_4a_78c5::
 INCBIN "gfx/attrmaps/attrmap_4a_78c5.bin"
-Tilemap_4a_7963:
+Tilemap_4a_7963::
 INCBIN "gfx/tilemaps/tilemap_4a_7963.tilemap"
-Attrmap_4a_79a1:
+Attrmap_4a_79a1::
 INCBIN "gfx/attrmaps/attrmap_4a_79a1.bin"
-Tilemap_4a_79df:
+Tilemap_4a_79df::
 INCBIN "gfx/tilemaps/tilemap_4a_79df.tilemap"
-Attrmap_4a_7a59:
+Attrmap_4a_7a59::
 INCBIN "gfx/attrmaps/attrmap_4a_7a59.bin"
-Tilemap_4a_7ad3:
+Tilemap_4a_7ad3::
 INCBIN "gfx/tilemaps/tilemap_4a_7ad3.tilemap"
 Tilemap_4a_7af3:
 INCBIN "gfx/tilemaps/tilemap_4a_7af3.tilemap"
@@ -2894,13 +2894,14 @@ Tilemap_4a_7e13:
 INCBIN "gfx/tilemaps/tilemap_4a_7e13.tilemap"
 Attrmap_4a_7ec9:
 INCBIN "gfx/attrmaps/attrmap_4a_7ec9.bin"
-Tilemap_4a_7f7f:
+Tilemap_4a_7f7f::
 INCBIN "gfx/tilemaps/tilemap_4a_7f7f.tilemap"
-Attrmap_4a_7fab:
+Attrmap_4a_7fab::
 INCBIN "gfx/attrmaps/attrmap_4a_7fab.bin"
-; orphan (no reference): 3 data bytes + zero-padding to bank end
-unk_4a_7fd7:
-	db $28, $74, $75
-	ds 37
+; overworld script (launched from bank 24 via wScriptPos/hScriptBank), then zero-padding to bank end
+Script_4a_7fd7::
+	fadeout
+	worldmap
+	endrestore
 
 

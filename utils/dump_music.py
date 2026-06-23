@@ -90,7 +90,7 @@ with open('baserom.gbc', 'rb') as rom:
 				}
 				if channel < 3:
 					args["speed"] = command & 0xf,
-					args["duty"] = [KNOWN_DUTY_VALUES[int(digit, 16)] for digit in hex(get_number(rom, 1))[2:].zfill(2)],
+					args["duty"] = [(KNOWN_DUTY_VALUES[int(digit, 16)] if int(digit, 16) < len(KNOWN_DUTY_VALUES) else '$%02x' % int(digit, 16)) for digit in hex(get_number(rom, 1))[2:].zfill(2)],
 					args["unknown1"] = get_number(rom, 1),
 					args["vibrato"] = [int(digit, 16) for digit in hex(get_number(rom, 1))[2:].zfill(2)],
 					args["unknown2"] = [
@@ -135,7 +135,7 @@ with open('baserom.gbc', 'rb') as rom:
 				print("\toctave %d" % args["octave"],end="")
 			elif command == 0xe8:
 				args = {
-					"duty": [(KNOWN_DUTY_VALUES[int(digit, 16)] if int(digit, 16) < len(KNOWN_DUTY_VALUES) else int(digit, 16)) for digit in hex(get_number(rom, 1))[2:].zfill(2)]
+					"duty": [(KNOWN_DUTY_VALUES[int(digit, 16)] if int(digit, 16) < len(KNOWN_DUTY_VALUES) else '$%02x' % int(digit, 16)) for digit in hex(get_number(rom, 1))[2:].zfill(2)]
 				}
 				print("\tduty_cycle %s, %s" % tuple(args["duty"]),end="")
 			elif command == 0xe9:

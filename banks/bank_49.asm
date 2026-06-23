@@ -99,7 +99,3 @@ SubImage_049_7b47:
 .d
 	INCBIN "gfx/misc/gfx_49_7b47.2bpp"
 .e
-
-	ds 7
-
-
