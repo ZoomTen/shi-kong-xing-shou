@@ -81,7 +81,7 @@ MenuText_e1::
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop hl
 	push hl
 	jp Menu_CheckCharacter

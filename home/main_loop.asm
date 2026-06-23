@@ -39,7 +39,7 @@ _Start::
 	call ClearMemory
 	call WriteOAMDMACodeToHRAM
 
-	ld hl, Func_106f
+	ld hl, LCDSplit_Idle
 	ld a, l
 	ld [wd9e0], a
 	ld a, h
@@ -47,7 +47,7 @@ _Start::
 	ei
 	ld a, 2
 	ld [wCurrentSoundBank], a
-	call Func_262d
+	call InitSound
 
 ; Check SRAM
 	call SRAMTest

@@ -152,7 +152,7 @@ Func_024_40e3:
 	call Func_024_6cb4
 	ret
 
-Func_024_40fd::
+_ExecuteBattleScript::
 ; Start menu related
 	ld a, [_BANKNUM]
 	ld [wBattleScriptBank], a
@@ -1499,7 +1499,7 @@ Func_024_4d77:
 	ret z
 	inc a
 	ld [wd9da + 1], a
-	call asm_0fdf
+	call GetPartyMonPtrByIndex
 	ld a, [bc]
 	and a
 	jr nz, .asm_4dc8
@@ -1532,7 +1532,7 @@ Func_024_4d77:
 	call PlaySound
 	ld a, $0B
 	call Func_024_4efd.asm_5032
-	call asm_0fdf
+	call GetPartyMonPtrByIndex
 	ld hl, $0014
 	ld a, [wSelectedOption]
 	ld e, a
@@ -1692,7 +1692,7 @@ Func_024_4efd:
 	ld [wSelectedOption], a
 	ld a, $0B
 	call .asm_5032
-	call asm_0fdf
+	call GetPartyMonPtrByIndex
 	ld a, [wSelectedOption]
 	ld l, a
 	add a
@@ -1722,7 +1722,7 @@ Func_024_4efd:
 	ld [wSelectedOption], a
 	ld a, $0B
 	call .asm_5032
-	call asm_0fdf
+	call GetPartyMonPtrByIndex
 	ld a, [wSelectedOption]
 	ld l, a
 	add a
@@ -1785,7 +1785,7 @@ Func_024_4efd:
 	jp z, .asm_4fef
 	ld a, $0B
 	call .asm_5032
-	call asm_0fdf
+	call GetPartyMonPtrByIndex
 	ld a, [wSelectedOption]
 	ld l, a
 	add a

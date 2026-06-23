@@ -1,4 +1,4 @@
-PrintText::
+_PrintText::
 	ldh a, [hTextSource]
 	cp TEXTSRC_SCRIPT
 	jr z, .type1
@@ -312,7 +312,7 @@ Text_Init::
 	call DelayFrame
 	call LoadTextName
 	call Func_00a_40b3
-	call Func_0419
+	call BuildVirtualOAM
 	call DelayFrame
 	pop af
 	rst Bankswitch
@@ -476,8 +476,8 @@ Text_EndCont::
 	push af
 	ld a, BANK(Func_00a_4178)
 	rst Bankswitch
-	call Func_1c8b
-	call Func_0419
+	call ClearExtraSprites
+	call BuildVirtualOAM
 	call Func_00a_4178
 	call DelayFrame
 	pop af
@@ -488,7 +488,7 @@ Text_EndCont::
 	pop hl
 	ret
 
-Func_1c8b::
+ClearExtraSprites::
 	ld hl, wcbd0
 	ld c, $20
 	xor a
@@ -499,9 +499,9 @@ Func_1c8b::
 	ret
 
 Text_ItemName::
-	call Func_0817
+	call ParseMapEventsAtPlayer
 	pop hl
-	call LoadItemNameByMapType ; bank 1e set by SetMapLayoutPatchForItem_Banked
+	call LoadItemNameByMapType ; bank 1e set by SetMapLayoutPatchForItem
 ; got item name
 	ld a, [wTextStart]
 	ld l, a

@@ -157,7 +157,7 @@ ENDR
 	dba Group07_Maps
 	dba Group02_Maps
 
-GetBlockCollision::
+_GetBlockCollision::
 	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	push de
@@ -221,7 +221,7 @@ GetBlockCollision::
 	ld [wd0c8], a
 	ret
 
-UpdatePlayerAnim::
+_UpdatePlayerAnim::
 	ldh a, [hFFAC]
 	and a
 	jr z, .asm_211f
@@ -347,10 +347,10 @@ AnimatePlayerSprite::
 AnimateObjectSprite::
 	ld a, [wdcea]
 	and a
-	jp z, Func_224e
+	jp z, UpdateSpriteAnimQueue
 	ldh a, [hFFDB]
 	and a
-	jp z, Func_224e
+	jp z, UpdateSpriteAnimQueue
 
 	ld a, [wdceb]
 	and a
@@ -360,7 +360,7 @@ AnimateObjectSprite::
 	inc a
 	ldh [hFFDC], a
 	cp 5
-	jp c, Func_224e
+	jp c, UpdateSpriteAnimQueue
 
 .asm_21d8
 	xor a
@@ -443,7 +443,7 @@ AnimateObjectSprite::
 	inc [hl]
 	ret
 
-Func_224e::
+UpdateSpriteAnimQueue::
 	ld bc, wcd40
 .asm_2251:
 	ld hl, $0d
@@ -505,10 +505,10 @@ Func_224e::
 	jr .asm_2251
 
 .asm_22a0
-	call Func_23a6
+	call UpdateTileAnimation
 	ret
 
-Func_22a4::
+UpdateSpriteAnimQueueFast::
 	ld bc, wcd40
 .asm_22a7:
 	ld hl, $0d
@@ -680,7 +680,7 @@ GetSpriteGFXPointers::
 	ld de, Sprites00to13GFXPointers
 	ret
 
-Func_23a6::
+UpdateTileAnimation::
 	ldh a, [hFade]
 	and a
 	ret nz
@@ -787,12 +787,12 @@ ENDR
 	ld [wd0c4 + 1], a
 	ret
 
-LoadMap::
+_LoadMap::
 	call LoadMapLayout
 	call SetupMapLayoutFlagPatches
 	call SetupCrystalMines
 	call GetMapLayoutPointer
-	call BuildBlockmap
+	call _BuildBlockmap
 	call LoadMapTileAttrs
 	ret
 
@@ -839,7 +839,7 @@ SetupCrystalMines::
 	ret
 
 .do_special
-	homecall ApplyMapLayoutFlagPatches
+	homecall _ApplyMapLayoutFlagPatches
 	ret
 
 GetMapLayoutPointer::
@@ -1051,7 +1051,7 @@ _QueueSound::
 	pop hl
 	ret
 
-Func_262d::
+InitSound::
 	call ResetSoundQueue
 	ld a, [wLoadedROMBank]
 	push af

@@ -158,9 +158,9 @@ PrevLivePartyMon::
 
 GetPartyMonPtr::
 	ld a, [wSelectedOption]
-asm_0fdf::
+GetPartyMonPtrByIndex::
 	ld hl, wPartyMons
-asm_0fe2::
+GetMonStructPtr::
 	ld de, $16
 	and a
 	jr z, .asm_0fec
@@ -305,17 +305,17 @@ ByteFillVRAM::
 	jr nz, .loop
 	ret
 
-Func_106f::
+LCDSplit_Idle::
 	jp Finish_LCD
 
-Func_1072::
+LCDSplit_SetScroll::
 	ld a, [wWX]
 	ldh [rSCX], a
 	ld a, [wWY]
 	ldh [rSCY], a
 	jp Finish_LCD
 
-Func_107f::
+LCDSplit_A_Window::
 	ld a, [wWX]
 	ldh [rSCX], a
 	ld a, [wWY]
@@ -330,7 +330,7 @@ Func_107f::
 	ld [hl], $10
 	jp Finish_LCD
 
-Func_109a::
+LCDSplit_A_HW::
 	ld a, [hSCX]
 	ldh [rSCX], a
 	ld a, [hSCY]
@@ -345,7 +345,7 @@ Func_109a::
 	ld [hl], $10
 	jp Finish_LCD
 
-Func_10b5::
+LCDSplit_B_Window::
 	ld a, [wWX]
 	ldh [rSCX], a
 	ld a, [wWY]
@@ -360,7 +360,7 @@ Func_10b5::
 	ld [hl], $10
 	jp Finish_LCD
 
-Func_10d0::
+LCDSplit_B_HW::
 	ld a, [hSCX]
 	ldh [rSCX], a
 	ld a, [hSCY]
@@ -375,7 +375,7 @@ Func_10d0::
 	ld [hl], $10
 	jp Finish_LCD
 
-Func_10eb::
+LCDSplit_C_Window::
 	ld a, [wWX]
 	ldh [rSCX], a
 	ld a, [wWY]
@@ -390,7 +390,7 @@ Func_10eb::
 	ld [hl], $11
 	jp Finish_LCD
 
-Func_1107::
+LCDSplit_C_Custom::
 	ld a, [wd9ab]
 	ldh [rSCX], a
 	ld a, [wd9ac]
@@ -405,7 +405,7 @@ Func_1107::
 	ld [hl], $11
 	jp Finish_LCD
 
-Func_1123::
+LCDSplit_C_HW::
 	ld a, [hSCX]
 	ldh [rSCX], a
 	ld a, [hSCY]
@@ -420,12 +420,12 @@ Func_1123::
 	ld [hl], $10
 	jp Finish_LCD
 
-Func_113f::
-	homecall PrintNumber
+PrintNumber::
+	homecall _PrintNumber
 	ret
 
-Func_114c::
-	homecall ComputeStatValue
+ComputeStatValue::
+	homecall _ComputeStatValue
 	ret
 
 AdvanceRNG::
@@ -606,7 +606,7 @@ AddStatTile::
 	pop hl
 	ret
 
-Func_123a::
+SwapMathValueBytes::
 	push bc
 	ldh a, [hMathValue + 2]
 	and a
@@ -637,7 +637,7 @@ Func_123a::
 	pop bc
 	ret
 
-Func_125b::
+GetStatByte::
 	push hl
 	push de
 	push bc
@@ -678,13 +678,13 @@ Func_125b::
 	pop hl
 	ret
 
-Func_128e::
+ComputeActiveMonStat::
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
 	ld b, a
 
-Func_1296::
+ComputeStatAtBC::
 	ld hl, 2
 	add hl, bc
 	ld a, [hli]
@@ -693,14 +693,14 @@ Func_1296::
 	ld [wd999], a
 	xor a
 	ld [wd9d7], a
-	homecall ComputeStatValue
+	homecall _ComputeStatValue
 	ldh a, [hMathValue]
 	ld [wd99a], a
 	ldh a, [hMathValue + 1]
 	ld [wd99b], a
 	ret
 
-Func_12bd::
+ComputeEnemyMonStat::
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -720,7 +720,7 @@ Func_12bd::
 	ld [wd99b], a
 	ret
 
-Func_12e6::
+GetBoxMonPtr::
 	ld bc, wMonBox
 	ld a, [wMonBoxIndex]
 	ld l, a
@@ -783,11 +783,11 @@ SRAMTest_Fast::
 	ld a, 1
 	ret
 
-Func_132b::
-	call LoadMap_Banked
+LoadMap2::
+	call LoadMap
 	ret
 
-Func_132f::
+GetFirstEmptyPartySlot::
 	push hl
 	push de
 	ld hl, wPartyMons
@@ -815,7 +815,7 @@ Func_132f::
 	pop hl
 	ret
 
-Func_134c::
+CopyBytesVRAM_BankD0F1::
 	ld a, [_BANKNUM]
 	push af
 	ld a, [wd0f1]
@@ -825,7 +825,7 @@ Func_134c::
 	rst Bankswitch
 	ret
 
-Func_135a::
+CopyBytesVRAM_Bank0C::
 	ld a, [_BANKNUM]
 	push af
 	ld a, $0c
@@ -835,20 +835,20 @@ Func_135a::
 	rst Bankswitch
 	ret
 
-Func_1367::
+CopyBGMapAttrs::
 	ldh a, [hConsoleType]
 	cp BOOTUP_A_CGB
 	ret nz
 
 	ld a, 1
 	ldh [rVBK], a
-	jp Func_1377
+	jp CopyBGMapData
 
-Func_1373::
+CopyBGMapTiles::
 	ld a, 0
 	ldh [rVBK], a
 
-Func_1377::
+CopyBGMapData::
 	push hl
 
 .copy
@@ -909,7 +909,7 @@ Func_1377::
 	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
-	jr nz, Func_1377
+	jr nz, CopyBGMapData
 
 	ld a, 0
 	ldh [rVBK], a
@@ -934,7 +934,7 @@ AdvanceBattleScriptMode::
 	rst Bankswitch
 	ret
 
-Func_13d5::
+ReloadMapObjects::
 	ld a, [_BANKNUM]
 	push af
 	ldh a, [hScriptBank]
@@ -1068,7 +1068,7 @@ PlayMapMusic::
 	db SFX_00, BGM_BATTLE2, BGM_TOWN1, BGM_JUNKYARD, BGM_SHIP, BGM_INTRO, BGM_ROUTES1, BGM_TOWN2
 	db BGM_TOWN1, BGM_TOWN4, BGM_TOWN3, BGM_TOWN3, BGM_TOWN3
 
-Func_15a8::
+FillBoxVRAM::
 	push hl
 
 .copy:
@@ -1130,7 +1130,7 @@ Func_15a8::
 	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
-	jr nz, Func_15a8
+	jr nz, FillBoxVRAM
 
 	ld a, 0
 	ldh [rVBK], a
@@ -1150,26 +1150,26 @@ LoadMapAndScriptPredef::
 
 .Predefs
 	dw MapPredef_BallotsHouseIntro ; $00
-	dw Func_1730 ; $01
-	dw Func_1730 ; $02
-	dw Func_1900 ; $03
+	dw Debug_NewGameFull ; $01
+	dw Debug_NewGameFull ; $02
+	dw Debug_NewGameMinimal ; $03
 	dw MapPredef_AfterMeteorShower ; $04
-	dw Func_1712 ; $05
-	dw Func_1730 ; $06
-	dw Func_1730 ; $07
-	dw Func_1730 ; $08
-	dw Func_1730 ; $09
-	dw Func_1730 ; $0a
-	dw Func_1730 ; $0b
-	dw Func_1730 ; $0c
-	dw Func_1730 ; $0d
-	dw Func_1730 ; $0e
-	dw Func_1730 ; $0f
-	dw Func_1730 ; $10
-	dw Func_1730 ; $11
-	dw Func_1730 ; $12
-	dw Func_1730 ; $13
-	dw Func_1730 ; $14
+	dw MapPredef_05 ; $05
+	dw Debug_NewGameFull ; $06
+	dw Debug_NewGameFull ; $07
+	dw Debug_NewGameFull ; $08
+	dw Debug_NewGameFull ; $09
+	dw Debug_NewGameFull ; $0a
+	dw Debug_NewGameFull ; $0b
+	dw Debug_NewGameFull ; $0c
+	dw Debug_NewGameFull ; $0d
+	dw Debug_NewGameFull ; $0e
+	dw Debug_NewGameFull ; $0f
+	dw Debug_NewGameFull ; $10
+	dw Debug_NewGameFull ; $11
+	dw Debug_NewGameFull ; $12
+	dw Debug_NewGameFull ; $13
+	dw Debug_NewGameFull ; $14
 
 MapPredef_BallotsHouseIntro::
 	ld hl, wdd00
@@ -1187,26 +1187,26 @@ MapPredef_BallotsHouseIntro::
 	ld [hl], LOW(Script_008_4000)
 	inc hl
 	ld [hl], HIGH(Script_008_4000)
-	call Func_1642
+	call InitStartingInventory
 	ret
 
-Func_1642::
+InitStartingInventory::
 	ld a, [wdcb0]
 	and a
-	jr z, Func_1661
+	jr z, StartingInventory_Combo0
 
 	cp 1
-	jp z, Func_1674
+	jp z, StartingInventory_Combo1
 	cp 2
-	jp z, Func_168c
+	jp z, StartingInventory_Combo2
 	cp 3
-	jp z, Func_16b6
+	jp z, StartingInventory_Combo3
 	cp 4
-	jp z, Func_16c0
+	jp z, StartingInventory_Combo4
 	cp 5
-	jp z, Func_16ea
+	jp z, StartingInventory_Combo5
 
-Func_1661::
+StartingInventory_Combo0::
 ; 1000 money
 	ld a, $03
 	ld [wMoney + 1], a
@@ -1220,7 +1220,7 @@ Func_1661::
 	ld [hl], 2
 	ret
 
-Func_1674::
+StartingInventory_Combo1::
 ; 99999 money
 	ld a, $01
 	ld [wMoney], a
@@ -1236,42 +1236,7 @@ Func_1674::
 	ld [hl], 2
 	ret
 
-Func_168c::
-; 99999 money
-	ld a, $01
-	ld [wMoney], a
-	ld a, $86
-	ld [wMoney + 1], a
-	ld a, $9f
-	ld [wMoney + 2], a
-
-; Init items
-	ld hl, wd300
-	ld [hl], $05
-	inc hl
-	ld [hl], 2
-	inc hl
-	ld [hl], $26
-	inc hl
-	ld [hl], 99
-	inc hl
-	ld [hl], $26
-	inc hl
-	ld [hl], 99
-	inc hl
-	ld [hl], $27
-	inc hl
-	ld [hl], 99
-	ret
-
-Func_16b6::
-; @bug: SRAM is not enabled
-	call ClearSRAM
-	xor a
-	ld [rRAMG], a
-	jp Func_1661
-
-Func_16c0::
+StartingInventory_Combo2::
 ; 99999 money
 	ld a, $01
 	ld [wMoney], a
@@ -1299,12 +1264,47 @@ Func_16c0::
 	ld [hl], 99
 	ret
 
-Func_16ea::
+StartingInventory_Combo3::
 ; @bug: SRAM is not enabled
 	call ClearSRAM
 	xor a
 	ld [rRAMG], a
-	jp Func_1661
+	jp StartingInventory_Combo0
+
+StartingInventory_Combo4::
+; 99999 money
+	ld a, $01
+	ld [wMoney], a
+	ld a, $86
+	ld [wMoney + 1], a
+	ld a, $9f
+	ld [wMoney + 2], a
+
+; Init items
+	ld hl, wd300
+	ld [hl], $05
+	inc hl
+	ld [hl], 2
+	inc hl
+	ld [hl], $26
+	inc hl
+	ld [hl], 99
+	inc hl
+	ld [hl], $26
+	inc hl
+	ld [hl], 99
+	inc hl
+	ld [hl], $27
+	inc hl
+	ld [hl], 99
+	ret
+
+StartingInventory_Combo5::
+; @bug: SRAM is not enabled
+	call ClearSRAM
+	xor a
+	ld [rRAMG], a
+	jp StartingInventory_Combo0
 
 MapPredef_AfterMeteorShower::
 	ld a, GROUP_BALLOTS_HOUSE_2
@@ -1324,7 +1324,7 @@ MapPredef_AfterMeteorShower::
 	ld [hl], HIGH(Script_00e_4005)
 	ret
 
-Func_1712::
+MapPredef_05::
 	ld a, 4
 	ldh [hMapGroup], a
 	ld a, $43
@@ -1342,7 +1342,7 @@ Func_1712::
 	ld [hl], HIGH(Script_055_53ef)
 	ret
 
-Func_1730::
+Debug_NewGameFull::
 ; Debug code
 	ld bc, 7 * $16
 	call Debug_GivePartyMon
@@ -1612,11 +1612,10 @@ Func_1730::
 	ld [hl], 12
 	ret
 
-; TODO: unreferenced data block, classify type
-unk_18ea::
+BlankPartyMon::
 	ds $16, 0
 
-Func_1900::
+Debug_NewGameMinimal::
 ; Debug code
 	ld bc, 1 * $16
 	call Debug_GivePartyMon
@@ -1698,7 +1697,7 @@ Func_1900::
 	ld [wMoney + 2], a
 	ret
 
-Func_19b6::
+RunMapLoadHook::
 	ld a, [wd0ef]
 	and a
 	jr z, .asm_19c3

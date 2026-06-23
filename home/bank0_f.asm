@@ -130,7 +130,7 @@ ENDR
 	rst Bankswitch
 	ret
 
-Func_297a::
+FlushBGMapBuffer::
 	ldh a, [hFFA4]
 	and a
 	ret z

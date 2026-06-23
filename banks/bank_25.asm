@@ -44,7 +44,7 @@ Func_025_4020:
 	ld c, a
 	ld a, [wd3f1]
 	ld b, a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ld a, 4
 	ldh [hMathOperand], a
 	ld b, 4
@@ -152,7 +152,7 @@ Func_025_40e5:
 	ld c, a
 	ld a, [wd985]
 	ld b, a
-	jp ComputeStatValue
+	jp _ComputeStatValue
 
 Func_025_40f0:
 	ld a, [wd9b2]
@@ -164,18 +164,18 @@ Func_025_40f6:
 	ld c, a
 	ld a, [wd982]
 	ld b, a
-	jp ComputeStatValue
+	jp _ComputeStatValue
 
 Func_025_4101::
 	ld hl, wd876
 	ld a, [wd987]
-	call asm_0fe2
-	jp ComputeStatValue
+	call GetMonStructPtr
+	jp _ComputeStatValue
 
 asm_025_410d::
 	call GetPartyMonPtr
 
-ComputeStatValue::
+_ComputeStatValue::
 	ld de, StatFactorTable
 	push de
 	ld a, [bc]
@@ -414,7 +414,7 @@ Func_025_425d::
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	ret
 
 Func_025_4288::
@@ -436,7 +436,7 @@ Func_025_4288::
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	ret
 
 Jumptable_025_42b3::
@@ -588,7 +588,7 @@ Func_025_43ac:
 	ld h, a
 	pop af
 	ld l, a
-	call Func_135a
+	call CopyBytesVRAM_Bank0C
 	call DelayFrame
 	xor a
 	ld [wBattleScriptByte], a
@@ -898,11 +898,11 @@ Func_025_45da:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	xor a
 	ld [wd9d7], a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ld de, wd1f5
 	ldh a, [hMathValue + 1]
 	ld [de], a
@@ -918,7 +918,7 @@ Func_025_45da:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -982,7 +982,7 @@ Func_025_4697:
 	ret
 
 Func_025_46a8:
-	farcall Func_004_4000
+	farcall _BuildVirtualOAM
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -1461,7 +1461,7 @@ Func_025_4947:
 	push bc
 	ld a, 1
 	ld [wd9d7], a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	push de
@@ -1478,12 +1478,12 @@ Func_025_4947:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	push bc
 	ld a, 2
 	ld [wd9d7], a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	push de
@@ -1500,12 +1500,12 @@ Func_025_4947:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	push bc
 	ld a, 3
 	ld [wd9d7], a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	push de
@@ -1522,12 +1522,12 @@ Func_025_4947:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	push bc
 	ld a, 5
 	ld [wd9d7], a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	push de
@@ -1544,7 +1544,7 @@ Func_025_4947:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	push bc
 	ld de, wd1f5
@@ -1568,7 +1568,7 @@ Func_025_4947:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	call Func_025_561b
 	xor a
@@ -1658,7 +1658,7 @@ Func_025_4a8d:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	ld a, [wd1f2]
 	ld l, a
 	ld a, [wd1f3]
@@ -1676,7 +1676,7 @@ Func_025_4a8d:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop hl
 	ld a, [wd0c0]
 	inc a
@@ -1734,7 +1734,7 @@ Func_025_4b5d:
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
-	call Func_12e6
+	call GetBoxMonPtr
 	ld a, [bc]
 	ld d, a
 	farcall Func_01e_42ba
@@ -1968,7 +1968,7 @@ Func_025_4cee:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2037,7 +2037,7 @@ Func_025_4d5c:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2186,7 +2186,7 @@ Func_025_4ea4:
 	ld h, 0
 	add hl, de
 	ld a, [hli]
-	call asm_0fdf
+	call GetPartyMonPtrByIndex
 	ld hl, $14
 	add hl, bc
 	ld a, [wPlayerMap2Y]
@@ -2316,7 +2316,7 @@ Func_025_4f87:
 	ld bc, $0103
 	ld a, 0
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	ld de, wd0d6
 	ld hl, $9965
 	ld a, $a
@@ -2326,7 +2326,7 @@ Func_025_4f87:
 	ld bc, $0103
 	ld a, 0
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2373,7 +2373,7 @@ Func_025_4fd2:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2554,7 +2554,7 @@ Func_025_514f:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2588,7 +2588,7 @@ Func_025_5199:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2880,7 +2880,7 @@ Func_025_53ec:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2926,7 +2926,7 @@ Func_025_5440:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2949,7 +2949,7 @@ Func_025_546f:
 	ret
 
 Func_025_5487:
-	call Func_12e6
+	call GetBoxMonPtr
 	push bc
 	ld a, [bc]
 	ld [wd9d9], a
@@ -2967,11 +2967,11 @@ Func_025_5487:
 	ret
 
 Func_025_54b1:
-	call Func_12e6
+	call GetBoxMonPtr
 	jp Func_025_45da
 
 Func_025_54b7:
-	call Func_12e6
+	call GetBoxMonPtr
 	jp Func_025_4947
 
 Func_025_54bd:
@@ -2980,7 +2980,7 @@ Func_025_54bd:
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
-	call Func_12e6
+	call GetBoxMonPtr
 	jp Func_025_4a85
 
 Func_025_54d0:
@@ -3007,7 +3007,7 @@ Func_025_54d2:
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop bc
 	push bc
 	ld de, wdca0
@@ -3091,7 +3091,7 @@ Func_025_5566:
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -3226,7 +3226,7 @@ Func_025_561b:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	pop hl
 	ld a, l
 	ld [wd981], a
@@ -3771,7 +3771,7 @@ Func_025_590d:
 	ld c, a
 	ld a, [wd3f1]
 	ld b, a
-	call ComputeStatValue
+	call _ComputeStatValue
 	ld a, 4
 	ldh [hMathOperand], a
 	ld b, 4
@@ -4928,10 +4928,10 @@ Func_025_5dcb:
 	ld [wd1fc], a
 	ld a, 1
 	ld [wd0fd], a
-	call PrintNumber
+	call _PrintNumber
 	ret
 
-PrintNumber::
+_PrintNumber::
 	push bc
 	xor a
 	ldh [hMathValue + 3], a

@@ -151,7 +151,7 @@ LearnLevelUpMove:
 	ld a, [hFFC5]
 	and a
 	jr z, .asm_4107
-	farcall Func_024_40fd
+	farcall _ExecuteBattleScript
 	jr .asm_40f6
 .asm_4107
 	ret

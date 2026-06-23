@@ -158,7 +158,7 @@ Func_5b_4151:
 	ld a, $01
 	ld [wd1fc], a
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	ret
 Func_5b_4180:
 	ld a, $09
@@ -387,7 +387,7 @@ Func_5b_42af:
 	ld [wd1fc], a
 	xor a
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	ld a, [wdcfc]
 	cp $09

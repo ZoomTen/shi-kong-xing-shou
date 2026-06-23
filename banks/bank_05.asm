@@ -1,4 +1,4 @@
-Func_005_4000::
+_UpdatePlayerMapCoords::
 	ld a, [wPlayerObject]
 	sub $10
 	ld [wd0f9], a
@@ -377,7 +377,7 @@ Overworld::
 
 	call Func_005_4408
 	call Func_005_5a9c
-	call LoadMap_Banked
+	call LoadMap
 	call Func_005_5a32
 	ld hl, $9800
 	ld de, wTilemap
@@ -391,11 +391,11 @@ Overworld::
 	call Func_005_4662
 	call Func_005_401d
 	call SpawnPlayerSprite
-	call Func_005_4000
+	call _UpdatePlayerMapCoords
 	xor a
 	ldh [hSimulatedJoypadState], a
 	ldh [hFFA4], a
-	call Func_0419
+	call BuildVirtualOAM
 	ld a, $C7
 	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
@@ -432,7 +432,7 @@ OverworldLoop:
 
 	call Func_005_43e1
 ; update OAM?
-	call Func_0419
+	call BuildVirtualOAM
 
 ; check if we should briefly display
 ; a short text scroll now
@@ -478,17 +478,17 @@ OverworldLoop:
 	call Overworld_ProcessJoypadInput
 
 ; object events?
-	call Func_062c
-	call UpdatePlayerAnim_Banked
+	call UpdateVisibleObjects
+	call UpdatePlayerAnim
 	call Func_005_440f
 	jp OverworldLoop
 
 Overworld_GotoProcessScript:
 	xor a
 	ld [wd082], a
-	call Func_06d0
+	call DispatchScriptCommand
 	call Func_005_440f
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	jp OverworldLoop
 
 Overworld_GotoProcessTextbox:
@@ -496,15 +496,15 @@ Overworld_GotoProcessTextbox:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call PrintText_Banked
+	call PrintText
 	jp OverworldLoop
 
 Overworld_GotoProcessScroll:
-	call Func_074d
+	call AnimatePaperScroll
 	jp OverworldLoop
 
 Overworld_GotoProcessStartMenu:
-	call Func_0b39
+	call ExecuteBattleScript
 	jp OverworldLoop
 
 Overworld_GotoBattleJumptable:
@@ -1127,7 +1127,7 @@ Func_005_46da:
 	rr l
 	rl d
 	ld e, l
-	call GetBlockCollision_Banked
+	call GetBlockCollision
 	ld a, [wd0c8]
 	ld [wEastFacingTile], a
 	ret
@@ -1180,7 +1180,7 @@ asm_005_4766:
 	rr l
 	rl d
 	ld e, l
-	call GetBlockCollision_Banked
+	call GetBlockCollision
 	ld a, [wd0c8]
 	ld [wWestFacingTile], a
 	ret
@@ -1233,7 +1233,7 @@ asm_005_479e:
 	rr l
 	rl d
 	ld e, l
-	call GetBlockCollision_Banked
+	call GetBlockCollision
 	ld a, [wd0c8]
 	ld [wNorthFacingTile], a
 	ret
@@ -1280,7 +1280,7 @@ Func_005_47e6:
 	rr l
 	rl d
 	ld e, l
-	call GetBlockCollision_Banked
+	call GetBlockCollision
 	ld a, [wd0c8]
 	ld [wSouthFacingTile], a
 	ret
@@ -2614,7 +2614,7 @@ asm_005_5148:
 	ld [wPlayerSpriteID], a
 	farcall Func_024_6864
 	call Func_005_51b1
-	call Func_005_4000
+	call _UpdatePlayerMapCoords
 	call ParseCurrentMapEvents
 	ret
 
@@ -2640,7 +2640,7 @@ Func_005_5179:
 	ld [hFFAC], a
 	ld [wdcd0], a
 	call Func_005_51db
-	call Func_005_4000
+	call _UpdatePlayerMapCoords
 	call ParseCurrentMapEvents
 	ret
 
@@ -2843,7 +2843,7 @@ ObtainTileItem:
 	and $f
 	ld [wItemIndex], a
 	call RedrawTileAfterObtain
-	call SetMapLayoutPatchForItem_Banked
+	call SetMapLayoutPatchForItem
 	ld a, BANK(text_1e_4212)
 	ldh [hTextSourceBank3], a
 	ld a, TEXTSRC_ITEM_OBTAINED
@@ -2892,7 +2892,7 @@ InteractSetMapPatch:
 	and $f
 	ld [wMapPatchIndex], a
 	call Func_005_54cf
-	call SetMapLayoutPatch_Banked
+	call SetMapLayoutPatch
 	ld a, [wMapPatchIndex]
 	cp 2
 	jr z, asm_005_53b4
@@ -2906,7 +2906,7 @@ asm_005_53b4:
 	call Func_005_53bb
 
 asm_005_53b7:
-	call ApplyMapLayoutFlagPatches_Banked
+	call ApplyMapLayoutFlagPatches
 	ret
 
 Func_005_53bb:
@@ -2938,7 +2938,7 @@ InteractClearMapPatch:
 	and $f
 	ld [wMapPatchIndex], a
 	call Func_005_54ad
-	call ClearMapLayoutPatch_Banked
+	call ClearMapLayoutPatch
 	ld a, [wMapPatchIndex]
 	cp 2
 	jr z, asm_005_53fd
@@ -2952,7 +2952,7 @@ asm_005_53fd:
 	call Func_005_5404
 
 asm_005_5400:
-	call ApplyMapLayoutPatchIfClear_Banked
+	call ApplyMapLayoutPatchIfClear
 	ret
 
 Func_005_5404:
@@ -3496,7 +3496,7 @@ Overworld_ProcessJoypadInput:
 	ret
 .asm_57ad
 	call Func_005_5978
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_005_406b
 	call .asm_5879
 	ret
@@ -3524,7 +3524,7 @@ Overworld_ProcessJoypadInput:
 	ret
 .asm_57df
 	call Func_005_59a9
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_005_406b
 	call .asm_5853
 	ret
@@ -3552,7 +3552,7 @@ Overworld_ProcessJoypadInput:
 	ret
 .asm_5811
 	call Func_005_59dc
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_005_406b
 	call .asm_58aa
 	ret
@@ -3581,7 +3581,7 @@ Overworld_ProcessJoypadInput:
 	ret
 .asm_5846
 	call Func_005_5a07
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_005_406b
 	call .asm_58d0
 	ret

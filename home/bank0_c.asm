@@ -4,18 +4,18 @@ WaitVRAM_STAT::
 	ret z
 	jr WaitVRAM_STAT
 
-PrintText_Banked::
+PrintText::
 	ld a, [_BANKNUM]
 	push af
-	call PrintText
+	call _PrintText
 	pop af
 	rst Bankswitch
 	ret
 
-Func_06d0::
-	ld a, BANK(Func_00b_417b)
+DispatchScriptCommand::
+	ld a, BANK(_DispatchScriptCommand)
 	rst Bankswitch
-	call Func_00b_417b
+	call _DispatchScriptCommand
 	ld a, $05
 	rst Bankswitch
 	ret
@@ -46,7 +46,7 @@ GetScriptByte::
 	rst Bankswitch
 	ret
 
-Func_06f8::
+UpdateQueuedSpriteSlot::
 	ld a, [_BANKNUM]
 	push af
 
@@ -93,8 +93,8 @@ GetSignpostText::
 	homecall LoadSignpostText
 	ret
 
-Func_074d::
-	homecall Func_00d_4019
+AnimatePaperScroll::
+	homecall _AnimatePaperScroll
 	ret
 
 RequestLoadCharacter_PaperScroll::
@@ -217,39 +217,39 @@ CopyTextboxToVRAM::
 	call PlaceTilemap
 	ret
 
-Func_080a::
-	homecall Func_005_4000
+UpdatePlayerMapCoords::
+	homecall _UpdatePlayerMapCoords
 	ret
 
-Func_0817::
+ParseMapEventsAtPlayer::
 	ld a, [_BANKNUM]
 	push af
-	ld a, BANK(Func_005_4000)
+	ld a, BANK(_UpdatePlayerMapCoords)
 	rst Bankswitch
-	call Func_005_4000
+	call _UpdatePlayerMapCoords
 	call ParseCurrentMapEvents
 	pop af
 	rst Bankswitch
 	ret
 
-SetMapLayoutPatchForItem_Banked::
-	homecall SetMapLayoutPatchForItem
+SetMapLayoutPatchForItem::
+	homecall _SetMapLayoutPatchForItem
 	ret
 
-SetMapLayoutPatch_Banked::
-	homecall SetMapLayoutPatch
+SetMapLayoutPatch::
+	homecall _SetMapLayoutPatch
 	ret
 
-ApplyMapLayoutFlagPatches_Banked::
-	homecall ApplyMapLayoutFlagPatches
+ApplyMapLayoutFlagPatches::
+	homecall _ApplyMapLayoutFlagPatches
 	ret
 
-ApplyMapLayoutPatchIfClear_Banked::
-	homecall ApplyMapLayoutPatchIfClear
+ApplyMapLayoutPatchIfClear::
+	homecall _ApplyMapLayoutPatchIfClear
 	ret
 
-ClearMapLayoutPatch_Banked::
-	homecall ClearMapLayoutPatch
+ClearMapLayoutPatch::
+	homecall _ClearMapLayoutPatch
 	ret
 
 LoadTextFaceGFX::
@@ -761,8 +761,8 @@ CopyBytes3::
 	jr nz, .loop
 	ret
 
-Func_0b39::
-	homecall Func_024_40fd
+ExecuteBattleScript::
+	homecall _ExecuteBattleScript
 	ret
 
 AdvanceBattleScript::

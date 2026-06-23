@@ -1,10 +1,10 @@
-Func_009_4000::
+_UpdateSelectedObject::
 	ld a, [wSelectedObjectOffset]
 	ld c, a
 	ld b, HIGH(wVisibleObjects)
 	jr Func_009_4010
 
-Func_009_4008::
+_UpdateVisibleObjects::
 ; Only run on every other tick
 	ldh a, [hFadeFrameCounter]
 	and 1

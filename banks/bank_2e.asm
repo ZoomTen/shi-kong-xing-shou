@@ -4336,7 +4336,7 @@ Func_02e_5ec1:
 	and a
 	jr nz, .asm_5f00
 .asm_5ed7
-	call Func_132f
+	call GetFirstEmptyPartySlot
 	and a
 	jr z, .asm_5ee4
 	ld a, [wMonBoxCount]

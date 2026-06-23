@@ -9,7 +9,7 @@ Func_00d_4000::
 	call CopyBytesVRAM
 	ret
 
-Func_00d_4019::
+_AnimatePaperScroll::
 	call .asm_4089
 	call .asm_4020
 	ret

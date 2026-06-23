@@ -1,4 +1,4 @@
-Func_004_4000::
+_BuildVirtualOAM::
 	ld hl, wVirtualOAM
 	ld bc, 40
 	ld de, 4

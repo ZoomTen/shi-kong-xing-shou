@@ -45,7 +45,7 @@ Func_02b_402b:
 	inc de
 	ld hl, $9908
 	ld bc, $0102
-	call Func_113f
+	call PrintNumber
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -61,7 +61,7 @@ Func_02b_402b:
 	dec de
 	ld hl, $9941
 	ld bc, $0203
-	call Func_113f
+	call PrintNumber
 	call Func_02b_431e
 	xor a
 	ld [wd9d7], a
@@ -69,16 +69,16 @@ Func_02b_402b:
 	ld c, a
 	ld a, [wd982]
 	ld b, a
-	call Func_114c
+	call ComputeStatValue
 	ld de, hMathValue
 	ld hl, $9945
 	ld bc, $0103
-	call Func_113f
+	call PrintNumber
 	ld de, wd876
 	inc de
 	ld hl, $984b
 	ld bc, $0102
-	call Func_113f
+	call PrintNumber
 	call Func_02b_4243
 	ret
 
@@ -1087,7 +1087,7 @@ DrawLevelUpStats:
 	push bc
 	ld a, 1
 	ld [wd9d7], a
-	call Func_114c
+	call ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
@@ -1099,12 +1099,12 @@ DrawLevelUpStats:
 	ld bc, $0203
 	ld a, 0
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	push bc
 	ld a, 2
 	ld [wd9d7], a
-	call Func_114c
+	call ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
@@ -1116,12 +1116,12 @@ DrawLevelUpStats:
 	ld bc, $0203
 	ld a, 0
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	push bc
 	ld a, 3
 	ld [wd9d7], a
-	call Func_114c
+	call ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
@@ -1133,12 +1133,12 @@ DrawLevelUpStats:
 	ld bc, $0203
 	ld a, 0
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	push bc
 	ld a, 4
 	ld [wd9d7], a
-	call Func_114c
+	call ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
@@ -1150,12 +1150,12 @@ DrawLevelUpStats:
 	ld bc, $0203
 	ld a, 0
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	push bc
 	ld a, 5
 	ld [wd9d7], a
-	call Func_114c
+	call ComputeStatValue
 	ldh a, [hMathValue + 1]
 	ld de, wd1f5
 	ld [de], a
@@ -1167,7 +1167,7 @@ DrawLevelUpStats:
 	ld bc, $0203
 	ld a, 0
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	ret
 
@@ -1692,7 +1692,7 @@ BattleEnd_Jump_2:
 	ld [wdcd0], a
 	xor a
 	ld [wPlayerAnimFrame], a
-	call Func_05f2
+	call UpdatePlayerAndObjectAnims
 	call DelayFrame
 	call Func_02b_4d55
 	call Func_02b_4000
@@ -1713,7 +1713,7 @@ BattleEnd_Jump_2:
 	call CopyObjectPalettes
 	call DelayFrame
 	call PlayMapMusic
-	call Func_19b6
+	call RunMapLoadHook
 	ret
 
 Func_02b_4d55:
@@ -1734,7 +1734,7 @@ Func_02b_4d55:
 	xor a
 	ld [wScriptByte], a
 	push bc
-	call Func_06f8
+	call UpdateQueuedSpriteSlot
 	pop bc
 
 .next
@@ -2184,11 +2184,11 @@ Func_02b_50a9:
 	ld [wd9b5], a
 	ld a, 2
 	ld [wd9af], a
-	call Func_125b
+	call GetStatByte
 	ldh [hMathValue], a
 	ld a, 3
 	ld [wd9af], a
-	call Func_125b
+	call GetStatByte
 	ldh [hMathValue + 1], a
 	xor a
 	ldh [hMathValue + 2], a
@@ -2478,7 +2478,7 @@ BattleAI_Action0:
 	ret
 
 BattleAI_Action2:
-	call Func_12bd
+	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
 	ld a, [wd99b]
@@ -2568,7 +2568,7 @@ BattleAI_Action4:
 	jp Func_02b_532f
 
 BattleAI_Action5:
-	call Func_12bd
+	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
 	ld a, [wd99b]
@@ -2602,7 +2602,7 @@ Func_02b_5389:
 	jp Func_02b_532f
 
 BattleAI_Action6:
-	call Func_12bd
+	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
 	ld a, [wd99b]
@@ -2630,7 +2630,7 @@ BattleAI_Action8:
 	jp Func_02b_532f
 
 BattleAI_Action9:
-	call Func_12bd
+	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
 	ld a, [wd99b]
@@ -3164,7 +3164,7 @@ Func_02b_57bf:
 	ld [wd9b2], a
 	ld a, 1
 	ld [wd9af], a
-	call Func_125b
+	call GetStatByte
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -3361,13 +3361,13 @@ Func_02b_58df:
 	ld a, 1
 	ld [wd9b2], a
 	ld [wd9af], a
-	call Func_125b
+	call GetStatByte
 	ld c, a
 	xor a
 	ld [wd9b2], a
 	ld a, 1
 	ld [wd9af], a
-	call Func_125b
+	call GetStatByte
 	cp c
 	jr c, .descending
 	sub c
@@ -4033,7 +4033,7 @@ Func_02b_5d7e:
 	jr nz, .alt
 
 .player
-	call Func_12bd
+	call ComputeEnemyMonStat
 	ret
 
 .enemy
@@ -4042,7 +4042,7 @@ Func_02b_5d7e:
 	jr nz, .player
 
 .alt
-	call Func_12bd
+	call ComputeEnemyMonStat
 	ret
 
 Func_02b_5d98:
@@ -4649,14 +4649,14 @@ BattleMoves_Init:
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop de
 	inc de
 	ld hl, $99a4
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	ld hl, wcde0
 	ld [hl], $58
 	ld a, [wdb18]
@@ -4802,7 +4802,7 @@ BattleMoves_HandleInput:
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop de
 	inc de
 	ld a, 1
@@ -4811,7 +4811,7 @@ BattleMoves_HandleInput:
 	ld bc, $0102
 	ld a, 1
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	ret
 
 .not_up:

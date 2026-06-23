@@ -471,7 +471,7 @@ Func_062_443e:
 	ld [wdcd0], a
 	xor a
 	ld [wPlayerAnimFrame], a
-	call Func_05f2
+	call UpdatePlayerAndObjectAnims
 	call DelayFrame
 	ld hl, WorldMap
 	ld b, $04
@@ -501,7 +501,7 @@ Func_062_4538:
 	xor a
 	ld [wScriptByte], a
 	push bc
-	call Func_06f8
+	call UpdateQueuedSpriteSlot
 	pop bc
 .asm_4558
 	ld hl, $0020

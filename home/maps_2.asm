@@ -1,4 +1,4 @@
-BuildBlockmap::
+_BuildBlockmap::
 	ldh a, [hMapAttrBank]
 	rst Bankswitch
 	ld hl, wc740

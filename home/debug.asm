@@ -213,7 +213,7 @@ Debug_InitMonFlags::
 
 Debug_GivePartyMon::
 	ld de, wde00
-	ld hl, unk_2f40
+	ld hl, DebugPartyMonData
 .copy1
 	ld a, [hli]
 	ld [de], a
@@ -243,7 +243,7 @@ Debug_GivePartyMon::
 Debug_FillMonList::
 	ld de, wMonBox
 .asm_2e3b
-	ld hl, unk_2f40
+	ld hl, DebugPartyMonData
 	ld bc, $13
 .copy
 	ld a, [hli]
@@ -293,7 +293,7 @@ Debug_InitDexAndParty::
 	jr c, .asm_2e6a
 
 	ld de, wde00
-	ld hl, unk_2f40
+	ld hl, DebugPartyMonData
 	ld bc, $b0
 .copy2
 	ld a, [hli]
@@ -335,8 +335,7 @@ Debug_InitDexAndParty::
 	db $01, $01, $02, $02, $02, $02, $02, $02 ; 19
 	db $02, $02, $01, $01, $01, $01, $01, $01 ; 20?
 
-; TODO: indexed data table, classify type
-unk_2f40::
+DebugPartyMonData::
 ; Partner 1 mon data
 	db MON_081 ; species
 	db 90 ; level

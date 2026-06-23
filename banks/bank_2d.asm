@@ -711,7 +711,7 @@ LoadWildMon:
 	ld d, a
 	pop af
 	ld e, a
-	call Func_132f
+	call GetFirstEmptyPartySlot
 	and a
 	jr nz, .case1
 	push bc

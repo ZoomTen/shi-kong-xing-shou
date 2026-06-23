@@ -130,7 +130,7 @@ RacingMinigame::
 	ldh [hVRAMCopyHeight], a
 	ld a, $06
 	ldh [hVRAMCopyWidth], a
-	call Func_1373
+	call CopyBGMapTiles
 	ld hl, $9C00
 	ld de, RacingMinigame_TilemapRowB
 	ld bc, $0612
@@ -138,7 +138,7 @@ RacingMinigame::
 	ldh [hVRAMCopyHeight], a
 	ld a, $06
 	ldh [hVRAMCopyWidth], a
-	call Func_1367
+	call CopyBGMapAttrs
 	ld hl, RacingMinigame_Pal3
 	ld de, wPaletteBuffer
 	ld bc, $0040
@@ -979,7 +979,7 @@ Func_05e_4747:
 	ldh [hVRAMCopyHeight], a
 	ld a, $02
 	ldh [hVRAMCopyWidth], a
-	call Func_1373
+	call CopyBGMapTiles
 	ret
 RacingMinigame_TilePtrs0:
 	dw RacingMinigame_TilePtrs0_47bf
@@ -1411,7 +1411,7 @@ Func_05e_4b9d:
 	ldh [hVRAMCopyHeight], a
 	ld a, $01
 	ldh [hVRAMCopyWidth], a
-	call Func_1373
+	call CopyBGMapTiles
 	ret
 .asm_4bc0
 	push bc

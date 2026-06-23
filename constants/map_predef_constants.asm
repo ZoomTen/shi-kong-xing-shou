@@ -4,9 +4,9 @@
 	const MAPPREDEF_00 ; MapPredef_BallotsHouseIntro
 	const MAPPREDEF_01
 	const MAPPREDEF_02
-	const MAPPREDEF_03 ; Func_1900
+	const MAPPREDEF_03 ; Debug_NewGameMinimal
 	const MAPPREDEF_04 ; MapPredef_AfterMeteorShower
-	const MAPPREDEF_05 ; Func_1712
+	const MAPPREDEF_05 ; MapPredef_05
 	const MAPPREDEF_06
 	const MAPPREDEF_07
 	const MAPPREDEF_08

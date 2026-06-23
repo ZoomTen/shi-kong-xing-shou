@@ -230,7 +230,7 @@ Func_030_42ab:
 	ld [wd9b2], a
 	xor a
 	ld [wd9af], a
-	call Func_125b
+	call GetStatByte
 	ld d, a
 	farcall Func_01e_4284
 	ld de, Pointers_030_42db
@@ -463,10 +463,10 @@ Func_030_4442:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4467
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_446a
 .asm_4467
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_446a
 	ld a, [wd99b]
 	ldh [hMathValue + 1], a
@@ -474,11 +474,11 @@ Func_030_4442:
 	ldh [hMathValue], a
 	xor a
 	ldh [hMathValue + 2], a
-	call Func_123a
+	call SwapMathValueBytes
 	ld a, $05
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	call Func_123a
+	call SwapMathValueBytes
 	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ldh a, [hMathValue + 1]
@@ -926,11 +926,11 @@ Func_030_4793:
 	ldh [hMathValue + 1], a
 	ld a, [hld]
 	ldh [hMathValue + 2], a
-	call Func_123a
+	call SwapMathValueBytes
 	ld a, $02
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	call Func_123a
+	call SwapMathValueBytes
 	ld hl, wMoney + 2
 	ldh a, [hMathValue]
 	ld [hld], a
@@ -1948,10 +1948,10 @@ Func_030_4f9f:
 	ld a, [wd986]
 	and a
 	jr z, .asm_4fb6
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_4fb9
 .asm_4fb6
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_4fb9
 	ld a, [wd998]
 	sub $05
@@ -2002,10 +2002,10 @@ Func_030_5003:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_501c
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_501f
 .asm_501c
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_501f
 	ld a, [wd998]
 	ld c, a
@@ -2107,10 +2107,10 @@ Func_030_50cc:
 	ld a, [wd986]
 	and a
 	jr z, .asm_50e3
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_50e6
 .asm_50e3
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_50e6
 	ld a, [wd998]
 	ld [wd9b0], a
@@ -2218,10 +2218,10 @@ Func_030_5190:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_51a6
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_51a9
 .asm_51a6
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_51a9
 	ld a, [wd998]
 	ld [wd9b0], a
@@ -2258,10 +2258,10 @@ Func_030_51da:
 	ld a, [wd986]
 	and a
 	jr nz, .asm_51f3
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_51f6
 .asm_51f3
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_51f6
 	ld a, [wd99b]
 	and a
@@ -2617,10 +2617,10 @@ Func_030_5486:
 	ld a, [wd986]
 	and a
 	jr z, .asm_54a0
-	call Func_12bd
+	call ComputeEnemyMonStat
 	jr .asm_54a3
 .asm_54a0
-	call Func_128e
+	call ComputeActiveMonStat
 .asm_54a3
 	ld a, [wd999]
 	and a
@@ -2694,12 +2694,12 @@ Func_030_54de:
 	ldh [hMathValue + 1], a
 	xor a
 	ldh [hMathValue + 2], a
-	call Func_123a
+	call SwapMathValueBytes
 	pop af
 	dec a
 	ldh [hMathOperand], a
 	farcall Multiply32By8
-	call Func_123a
+	call SwapMathValueBytes
 	ldh a, [hMathValue]
 	ld [wd9b0], a
 	ldh a, [hMathValue + 1]

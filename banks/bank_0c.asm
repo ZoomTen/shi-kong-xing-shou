@@ -21,7 +21,7 @@ Func_00c_4000:
 	ld l, a
 	ld bc, $0100
 	ld de, vTiles0
-	call Func_135a
+	call CopyBytesVRAM_Bank0C
 	ret
 Func_00c_402b:
 	ld a, [wSelectedOption]
@@ -46,7 +46,7 @@ Func_00c_402b:
 	ld l, a
 	ld bc, $0080
 	ld de, $8f60
-	call Func_135a
+	call CopyBytesVRAM_Bank0C
 	ret
 
 LoadSignpostText::

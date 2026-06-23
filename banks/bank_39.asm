@@ -595,7 +595,7 @@ Func_039_4469:
 	ld [wd0fd], a
 	ld [wd1fc], a
 	ld bc, $0102
-	call Func_113f
+	call PrintNumber
 	farcall Func_01e_4416
 	ret
 .asm_4558
@@ -1947,7 +1947,7 @@ Func_039_4ec0:
 	ld [hli], a
 	ret
 .asm_4fc4
-	call Func_12e6
+	call GetBoxMonPtr
 	ld a, [bc]
 	and a
 	ret z
@@ -1962,7 +1962,7 @@ Func_039_4ec0:
 	ldh [hFFC6], a
 	ret
 .asm_4fdf
-	call Func_12e6
+	call GetBoxMonPtr
 	ld a, [bc]
 	and a
 	ret z
@@ -2028,7 +2028,7 @@ ScreenScript_39_504c:
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_end_script3
 Func_039_5067:
-	call Func_12e6
+	call GetBoxMonPtr
 	ld a, [bc]
 	ld de, Table_39_5074
 	ld l, a
@@ -2500,7 +2500,7 @@ Func_039_5490:
 	ld a, $03
 	ldh [hFFC5], a
 	call Func_039_485c
-	call Func_12e6
+	call GetBoxMonPtr
 	pop hl
 	push bc
 	ld e, $13
@@ -3075,7 +3075,7 @@ Func_039_5940:
 	ld a, $03
 	ldh [hFFC5], a
 	call Func_039_485c
-	call Func_12e6
+	call GetBoxMonPtr
 	ld e, $13
 	xor a
 .asm_594d

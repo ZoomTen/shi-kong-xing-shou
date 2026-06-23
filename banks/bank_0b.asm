@@ -61,7 +61,7 @@ Pointers_00b_415d:
 unk_00b_4179:
 	db $ff, $ff
 
-Func_00b_417b::
+_DispatchScriptCommand::
 	call Func_00b_606f
 	ld de, ScriptCommandTable
 	ld a, [wScriptByte]
@@ -256,7 +256,7 @@ Script_spriteface:
 	ld [hl], 1
 	xor a
 	ld [wScriptByte], a
-	call Func_06f8
+	call UpdateQueuedSpriteSlot
 	ret
 
 GetSpriteIDByte:
@@ -340,7 +340,7 @@ Script_04:
 	and $0e
 	add e
 	ld [hl], a
-	call Func_06f8
+	call UpdateQueuedSpriteSlot
 	ret
 
 AdjustTextboxYPosition:
@@ -369,7 +369,7 @@ Script_face:
 	ld [hFFAD], a
 	xor a
 	ld [wScriptByte], a
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	ret
 
 Script_spritewalk:
@@ -393,9 +393,9 @@ Script_spritewalk:
 	ret
 
 Script_07:
-	call Func_0639
+	call UpdateSelectedObject
 	call Func_00b_445e
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	ret
 
 Func_00b_445e:
@@ -449,8 +449,8 @@ Script_end:
 	ldh [hFFD6], a
 	ldh [hSimulatedJoypadState], a
 	ld [wd0f0], a
-	call Func_0817
-	call Func_19b6
+	call ParseMapEventsAtPlayer
+	call RunMapLoadHook
 	ret
 
 Script_checkbit:
@@ -586,7 +586,7 @@ Script_move:
 Script_10:
 	call Func_00b_60dd
 	call Func_00b_61d6
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	ret
 
 Script_11:
@@ -603,7 +603,7 @@ Script_11:
 
 Script_12:
 	call Func_00b_60b2
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	ret
 
 Script_13:
@@ -1329,7 +1329,7 @@ Func_00b_4a1f:
 Script_25:
 	call Func_00b_61a2
 	call Func_00b_61d6
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	call Func_00b_4a1f
 	ret
 
@@ -1756,7 +1756,7 @@ asm_00b_4d13:
 
 asm_00b_4d20:
 	push bc
-	call Func_1296
+	call ComputeStatAtBC
 	pop bc
 	ld hl, 2
 	add hl, bc
@@ -1780,7 +1780,7 @@ asm_00b_4d3f:
 	and a
 	ret z
 	push bc
-	call Func_1296
+	call ComputeStatAtBC
 	pop bc
 	ld hl, 2
 	add hl, bc
@@ -2133,7 +2133,7 @@ Script_41:
 	xor a
 	ld [wScriptByte], a
 	push bc
-	call Func_06f8
+	call UpdateQueuedSpriteSlot
 	pop bc
 .asm_4fd4
 	ld hl, Bankswitch
@@ -2311,7 +2311,7 @@ Script_45:
 	ld h, a
 	pop af
 	ld l, a
-	call Func_134c
+	call CopyBytesVRAM_BankD0F1
 	xor a
 	ld [wScriptByte], a
 	ret
@@ -2912,7 +2912,7 @@ Script_58:
 	ld [wdcd0], a
 	xor a
 	ld [wScriptByte], a
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	ret
 
 Script_59:
@@ -3371,7 +3371,7 @@ Script_5f:
 Script_60:
 	call Func_00b_6134
 	call Func_00b_6168
-	call UpdatePlayerAnim_Banked
+	call UpdatePlayerAnim
 	call Func_00b_610b
 	ret
 
@@ -3388,7 +3388,7 @@ Script_62:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wdcf4], a
-	call Func_04f2
+	call SetPartySlotStatus
 	xor a
 	ld [wScriptByte], a
 	ld [wdcf3], a
@@ -3590,8 +3590,8 @@ Script_69:
 	ldh [hFFD6], a
 	ldh [hSimulatedJoypadState], a
 	ld [wd0f0], a
-	call Func_080a
-	call Func_19b6
+	call UpdatePlayerMapCoords
+	call RunMapLoadHook
 	ret
 
 Script_6a:
@@ -4264,7 +4264,7 @@ Script_75:
 	ld [wd0f0], a
 	ld a, [wdcad]
 	ld [hScriptBank], a
-	call Func_13d5
+	call ReloadMapObjects
 	call .asm_5f7e
 	ret
 .asm_5f7e
@@ -4772,7 +4772,7 @@ Func_00b_625c:
 	ret
 .asm_6281
 	call .asm_63f8
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_00b_653d.asm_65b4
 	call .asm_62f9
 	ret
@@ -4785,7 +4785,7 @@ Func_00b_625c:
 	ret
 .asm_6297
 	call .asm_6429
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_00b_653d.asm_65b4
 	call .asm_62d3
 	ret
@@ -4798,7 +4798,7 @@ Func_00b_625c:
 	ret
 .asm_62ad
 	call .asm_645c
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_00b_653d.asm_65b4
 	call .asm_632a
 	ret
@@ -4812,7 +4812,7 @@ Func_00b_625c:
 	ret
 .asm_62c6
 	call .asm_6487
-	call BuildBlockmap_Banked
+	call BuildBlockmap
 	call Func_00b_653d.asm_65b4
 	call .asm_6350
 	ret

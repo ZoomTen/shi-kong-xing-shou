@@ -336,7 +336,7 @@ asm_026_4616::
 	ret
 
 asm_026_464a:
-	call Func_12e6
+	call GetBoxMonPtr
 	jr asm_026_4652
 
 asm_026_464f:
@@ -441,7 +441,7 @@ asm_026_46c5:
 	ld a, 1
 	ld [wd1fc], a
 	ld [wd0fd], a
-	call Func_113f
+	call PrintNumber
 	pop bc
 	push bc
 	ld a, [bc]

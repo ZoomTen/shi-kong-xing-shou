@@ -3,7 +3,7 @@
 	const TEXTBOX_BOTTOM ; $00
 	const TEXTBOX_TOP    ; $01
 
-; hTextSource: which source/bank PrintText reads the active textbox from
+; hTextSource: which source/bank _PrintText reads the active textbox from
 	const_def
 	const TEXTSRC_NONE          ; $00  idle / cleared
 	const TEXTSRC_SCRIPT        ; $01  inline script dialogue (hScriptBank)

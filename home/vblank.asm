@@ -22,7 +22,7 @@ VBlank::
 	ld a, [wWY]
 	ldh [rWY], a
 
-	call Func_297a
+	call FlushBGMapBuffer
 	call hTransferVirtualOAM
 	call Joypad
 

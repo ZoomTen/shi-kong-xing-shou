@@ -19,7 +19,7 @@ Credits::
 	ldh [hVRAMCopyHeight], a
 	ld a, $0B
 	ldh [hVRAMCopyWidth], a
-	call Func_1373
+	call CopyBGMapTiles
 	ld de, CreditsBgTilemap1
 	ld hl, $9C00
 	ld bc, $0B12
@@ -27,7 +27,7 @@ Credits::
 	ldh [hVRAMCopyHeight], a
 	ld a, $0B
 	ldh [hVRAMCopyWidth], a
-	call Func_1367
+	call CopyBGMapAttrs
 	ld hl, CreditsPalette
 	ld de, wPaletteBuffer
 	ld bc, $0040
@@ -180,7 +180,7 @@ Func_71_4116:
 	ld a, [wd083]
 	ld l, a
 	ld e, $00
-	call Func_15a8
+	call FillBoxVRAM
 	ld a, [hVRAMCopyWidth]
 	ld b, a
 	ld a, [hVRAMCopyHeight]
@@ -192,7 +192,7 @@ Func_71_4116:
 	ld a, $01
 	ldh [rVBK], a
 	xor e
-	call Func_15a8
+	call FillBoxVRAM
 	ret
 .asm_41a5
 	ld de, CreditsScreenGfx

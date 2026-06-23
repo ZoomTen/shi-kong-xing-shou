@@ -1,4 +1,4 @@
-ClearMapLayoutPatch::
+_ClearMapLayoutPatch::
 	ld de, LayoutPatches_01e_402a
 	ld a, [wMapType]
 	ld l, a
@@ -65,7 +65,7 @@ LayoutPatches_01e_402a:
 	db 1
 	layout_patch wdaba, 5, 3, 1, $04
 
-SetMapLayoutPatch::
+_SetMapLayoutPatch::
 	ld de, LayoutPatches_01e_40ad
 	ld a, [wMapType]
 	ld l, a
@@ -140,7 +140,7 @@ LayoutPatches_01e_40ad:
 	db 1
 	layout_patch wdaba, 5, 3, 1, $2e
 
-ApplyMapLayoutPatchIfClear::
+_ApplyMapLayoutPatchIfClear::
 	ld de, LayoutPatches_01e_414f
 	ld a, [wMapType]
 	ld l, a
@@ -200,7 +200,7 @@ LayoutPatches_01e_414f:
 
 ; For the current wMapType, walk its patch record list and apply every
 ; patch whose flag bit is set, editing wMapLayout in place.
-ApplyMapLayoutFlagPatches::
+_ApplyMapLayoutFlagPatches::
 	ld de, LayoutPatches_01e_40ad
 	ld a, [wMapType]
 	ld l, a
@@ -234,7 +234,7 @@ ApplyMapLayoutFlagPatches::
 	jr nz, .loop
 	ret
 
-; Same as ApplyMapLayoutFlagPatches but using the secondary record table
+; Same as _ApplyMapLayoutFlagPatches but using the secondary record table
 ; (LayoutPatches_01e_4910); used when the map is first set up.
 ApplyMapLayoutFlagPatchesInit::
 	ld de, LayoutPatches_01e_4910
@@ -268,7 +268,7 @@ ApplyMapLayoutFlagPatchesInit::
 	jr nz, .loop
 	ret
 
-SetMapLayoutPatchForItem::
+_SetMapLayoutPatchForItem::
 	ld de, LayoutPatches_01e_4910
 	ld a, [wMapType]
 	ld l, a
@@ -620,7 +620,7 @@ Func_01e_43d3:
 	ld a, 0
 	ld [wd0fd], a
 	ld bc, $0205
-	call Func_113f
+	call PrintNumber
 	ret
 
 Func_01e_4416:
@@ -642,7 +642,7 @@ Func_01e_4416:
 	ld [wd1fc], a
 	ld [wd0fd], a
 	ld bc, $0305
-	call Func_113f
+	call PrintNumber
 	ret
 
 Func_01e_4441:

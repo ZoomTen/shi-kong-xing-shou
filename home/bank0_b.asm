@@ -1,11 +1,11 @@
-Func_0419::
-	homecall Func_004_4000
+BuildVirtualOAM::
+	homecall _BuildVirtualOAM
 	ret
 
-UpdatePlayerAnim_Banked::
+UpdatePlayerAnim::
 	ld a, [_BANKNUM]
 	push af
-	call UpdatePlayerAnim
+	call _UpdatePlayerAnim
 	pop af
 	rst Bankswitch
 	ret
@@ -23,13 +23,13 @@ InitPlayerAnim::
 	ld [wdceb], a
 	ld a, $0a
 	ldh [hFFDC], a
-	call Func_0453
-	call UpdatePlayerAnim
+	call InitPartyAnimBuffers
+	call _UpdatePlayerAnim
 	pop af
 	rst Bankswitch
 	ret
 
-Func_0453::
+InitPartyAnimBuffers::
 	ld hl, wPartyMons
 .asm_0456:
 	ld a, [hl]
@@ -143,7 +143,7 @@ Func_0453::
 	dw wde9a
 	dw wde00
 
-Func_04f2::
+SetPartySlotStatus::
 	ld a, [wdcf3]
 	ld de, wdd00
 	ld l, a
@@ -158,7 +158,7 @@ Func_04f2::
 	ret nz
 	ret
 
-Func_0506::
+ClearPartyAnimBuffer::
 	ld a, [wdcf3]
 	ld de, .unk_0521
 	ld l, a
@@ -297,54 +297,54 @@ SpawnPlayerSprite::
 	ld [wcd26], a
 
 .asm_05e9
-	call UpdatePlayerAnim
-	call Func_22a4
+	call _UpdatePlayerAnim
+	call UpdateSpriteAnimQueueFast
 	pop af
 	rst Bankswitch
 	ret
 
-Func_05f2::
+UpdatePlayerAndObjectAnims::
 	ld a, [_BANKNUM]
 	push af
-	call UpdatePlayerAnim
-	call Func_22a4
+	call _UpdatePlayerAnim
+	call UpdateSpriteAnimQueueFast
 	pop af
 	rst Bankswitch
 	ret
 
-LoadMap_Banked::
+LoadMap::
 	ld a, [_BANKNUM]
 	push af
 	call LoadMapData
 	call LoadMapAttrs
 	call LoadMapGFX
-	call LoadMap
+	call _LoadMap
 	call LoadMapObjects
-	call Func_19b6
+	call RunMapLoadHook
 	pop af
 	rst Bankswitch
 	ret
 
-BuildBlockmap_Banked::
+BuildBlockmap::
 	ld a, [_BANKNUM]
 	push af
-	call BuildBlockmap
+	call _BuildBlockmap
 	pop af
 	rst Bankswitch
 	ret
 
-GetBlockCollision_Banked::
+GetBlockCollision::
 	ld a, [_BANKNUM]
 	push af
-	call GetBlockCollision
+	call _GetBlockCollision
 	pop af
 	rst Bankswitch
 	ret
 
-Func_062c::
-	homecall Func_009_4008
+UpdateVisibleObjects::
+	homecall _UpdateVisibleObjects
 	ret
 
-Func_0639::
-	homecall Func_009_4000
+UpdateSelectedObject::
+	homecall _UpdateSelectedObject
 	ret

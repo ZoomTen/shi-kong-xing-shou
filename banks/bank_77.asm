@@ -1466,7 +1466,7 @@ Intro_SetupNewScreen:
 	ldh [hVRAMCopyHeight], a
 	ld a, $a
 	ldh [hVRAMCopyWidth], a
-	call Func_1373
+	call CopyBGMapTiles
 
 ; set bg attributes
 	ld a, [wdce8]
@@ -1510,7 +1510,7 @@ Intro_SetupNewScreen:
 	ldh [hVRAMCopyHeight], a
 	ld a, $a
 	ldh [hVRAMCopyWidth], a
-	call Func_1367
+	call CopyBGMapAttrs
 
 ; set BG palettes
 	ld a, [wdce8]
