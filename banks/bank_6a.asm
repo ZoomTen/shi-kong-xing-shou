@@ -13,21 +13,18 @@ G6_02_MapAttributes:
 		Palettes_06a_48a1, \
 		0, Tileset_006_4577, \
 		Collision_06a_48e9
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_4028::
-	dr $1a8028, $1a810a
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 49 ; wMapType / index into Pointers_01e_4d29
+	INCBIN "data/maps/layouts/Layout_06a_4028.bin"
 Blocks_06a_410a::
-	dr $1a810a, $1a83a2
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_410a.bin"
 Layout_06a_43a2::
-	dr $1a83a2, $1a8484
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 50
+	INCBIN "data/maps/layouts/Layout_06a_43a2.bin"
 Metatiles_06a_4484::
-	dr $1a8484, $1a8558
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_4484.bin"
 Blocks_06a_4558::
-	dr $1a8558, $1a8808
+	INCBIN "data/maps/blocks/Blocks_06a_4558.bin"
 AttrMap_06a_4808::
 INCBIN "gfx/attrmaps/attrmap_06a_4808.bin"
 Palettes_06a_48a1::
@@ -110,39 +107,33 @@ G7_06_MapAttributes:
 		Palettes_06a_5257, \
 		0, Tileset_006_458d, \
 		Collision_06a_529f
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_4983::
-	dr $1a8983, $1a89e8
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 51
+	INCBIN "data/maps/layouts/Layout_06a_4983.bin"
 Blocks_06a_49e8::
-	dr $1a89e8, $1a8b00
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_49e8.bin"
 Layout_06a_4b00::
-	dr $1a8b00, $1a8b65
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 52
+	INCBIN "data/maps/layouts/Layout_06a_4b00.bin"
 Blocks_06a_4b65::
-	dr $1a8b65, $1a8cad
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_4b65.bin"
 Layout_06a_4cad::
-	dr $1a8cad, $1a8d12
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 53
+	INCBIN "data/maps/layouts/Layout_06a_4cad.bin"
 Blocks_06a_4d12::
-	dr $1a8d12, $1a8e5e
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_4d12.bin"
 Layout_06a_4e5e::
-	dr $1a8e5e, $1a8ec3
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 54
+	INCBIN "data/maps/layouts/Layout_06a_4e5e.bin"
 Blocks_06a_4ec3::
-	dr $1a8ec3, $1a8ffb
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_4ec3.bin"
 Layout_06a_4ffb::
-	dr $1a8ffb, $1a9020
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_4ffb.bin"
 Metatiles_06a_5020::
-	dr $1a9020, $1a915c
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_5020.bin"
 Blocks_06a_515c::
-	dr $1a915c, $1a91d0
+	INCBIN "data/maps/blocks/Blocks_06a_515c.bin"
 AttrMap_06a_51d0::
 INCBIN "gfx/attrmaps/attrmap_06a_51d0.bin"
 Palettes_06a_5257::
@@ -216,33 +207,28 @@ G6_0B_MapAttributes:
 		Palettes_06a_5ec7, \
 		0, Tileset_006_45a3, \
 		Collision_06a_5f0f
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_533f::
-	dr $1a933f, $1a93d6
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_533f.bin"
 Blocks_06a_53d6::
-	dr $1a93d6, $1a95e2
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_53d6.bin"
 Layout_06a_55e2::
-	dr $1a95e2, $1a9679
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_55e2.bin"
 Blocks_06a_5679::
-	dr $1a9679, $1a98a1
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_5679.bin"
 Layout_06a_58a1::
-	dr $1a98a1, $1a9938
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_58a1.bin"
 Blocks_06a_5938::
-	dr $1a9938, $1a9b3c
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_5938.bin"
 Layout_06a_5b3c::
-	dr $1a9b3c, $1a9bd3
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_5b3c.bin"
 Metatiles_06a_5bd3::
-	dr $1a9bd3, $1a9c6b
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_5bd3.bin"
 Blocks_06a_5c6b::
-	dr $1a9c6b, $1a9e87
+	INCBIN "data/maps/blocks/Blocks_06a_5c6b.bin"
 AttrMap_06a_5e87::
 INCBIN "gfx/attrmaps/attrmap_06a_5e87.bin"
 Palettes_06a_5ec7::
@@ -292,15 +278,13 @@ G6_0C_MapAttributes:
 		Palettes_06a_6479, \
 		0, Tileset_006_45ab, \
 		Collision_06a_64c1
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_5f4a::
-	dr $1a9f4a, $1aa059
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_5f4a.bin"
 Metatiles_06a_6059::
-	dr $1aa059, $1aa15d
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_6059.bin"
 Blocks_06a_615d::
-	dr $1aa15d, $1aa3f1
+	INCBIN "data/maps/blocks/Blocks_06a_615d.bin"
 AttrMap_06a_63f1::
 INCBIN "gfx/attrmaps/attrmap_06a_63f1.bin"
 Palettes_06a_6479::
@@ -350,15 +334,13 @@ G6_0D_MapAttributes:
 		Palettes_06a_6639, \
 		0, Tileset_006_45c8, \
 		Collision_06a_6681
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_6517::
-	dr $1aa517, $1aa536
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6517.bin"
 Metatiles_06a_6536::
-	dr $1aa536, $1aa5ae
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_6536.bin"
 Blocks_06a_65ae::
-	dr $1aa5ae, $1aa606
+	INCBIN "data/maps/blocks/Blocks_06a_65ae.bin"
 AttrMap_06a_6606::
 INCBIN "gfx/attrmaps/attrmap_06a_6606.bin"
 Palettes_06a_6639::
@@ -408,15 +390,13 @@ G6_0E_MapAttributes:
 		Palettes_06a_67fc, \
 		0, Tileset_006_45d0, \
 		Collision_06a_6844
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_66b4::
-	dr $1aa6b4, $1aa6f1
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_66b4.bin"
 Metatiles_06a_66f1::
-	dr $1aa6f1, $1aa739
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_66f1.bin"
 Blocks_06a_6739::
-	dr $1aa739, $1aa7b9
+	INCBIN "data/maps/blocks/Blocks_06a_6739.bin"
 AttrMap_06a_67b9::
 INCBIN "gfx/attrmaps/attrmap_06a_67b9.bin"
 Palettes_06a_67fc::
@@ -466,15 +446,13 @@ G6_0F_MapAttributes:
 		Palettes_06a_6a21, \
 		0, Tileset_006_45df, \
 		Collision_06a_6a69
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_686b::
-	dr $1aa86b, $1aa89e
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_686b.bin"
 Metatiles_06a_689e::
-	dr $1aa89e, $1aa962
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_689e.bin"
 Blocks_06a_6962::
-	dr $1aa962, $1aa9b2
+	INCBIN "data/maps/blocks/Blocks_06a_6962.bin"
 AttrMap_06a_69b2::
 INCBIN "gfx/attrmaps/attrmap_06a_69b2.bin"
 Palettes_06a_6a21::
@@ -580,57 +558,48 @@ G6_17_MapAttributes:
 		Palettes_06a_707d, \
 		0, Tileset_006_45ee, \
 		Collision_06a_70c5
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_6b3b::
-	dr $1aab3b, $1aab5a
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6b3b.bin"
 Blocks_06a_6b5a::
-	dr $1aab5a, $1aabbe
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6b5a.bin"
 Layout_06a_6bbe::
-	dr $1aabbe, $1aabdd
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6bbe.bin"
 Blocks_06a_6bdd::
-	dr $1aabdd, $1aac3d
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6bdd.bin"
 Layout_06a_6c3d::
-	dr $1aac3d, $1aac5c
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6c3d.bin"
 Blocks_06a_6c5c::
-	dr $1aac5c, $1aacbc
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6c5c.bin"
 Layout_06a_6cbc::
-	dr $1aacbc, $1aacdb
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6cbc.bin"
 Blocks_06a_6cdb::
-	dr $1aacdb, $1aad3f
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6cdb.bin"
 Layout_06a_6d3f::
-	dr $1aad3f, $1aad5e
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6d3f.bin"
 Blocks_06a_6d5e::
-	dr $1aad5e, $1aadca
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6d5e.bin"
 Layout_06a_6dca::
-	dr $1aadca, $1aade9
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6dca.bin"
 Blocks_06a_6de9::
-	dr $1aade9, $1aae4d
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6de9.bin"
 Layout_06a_6e4d::
-	dr $1aae4d, $1aae6c
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6e4d.bin"
 Blocks_06a_6e6c::
-	dr $1aae6c, $1aaed0
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_6e6c.bin"
 Layout_06a_6ed0::
-	dr $1aaed0, $1aaeef
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_6ed0.bin"
 Metatiles_06a_6eef::
-	dr $1aaeef, $1aafb7
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_6eef.bin"
 Blocks_06a_6fb7::
-	dr $1aafb7, $1ab01b
+	INCBIN "data/maps/blocks/Blocks_06a_6fb7.bin"
 AttrMap_06a_701b::
 INCBIN "gfx/attrmaps/attrmap_06a_701b.bin"
 Palettes_06a_707d::
@@ -680,15 +649,13 @@ G6_18_MapAttributes:
 		Palettes_06a_738a, \
 		0, Tileset_006_45f6, \
 		Collision_06a_73d2
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_710c::
-	dr $1ab10c, $1ab171
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_710c.bin"
 Metatiles_06a_7171::
-	dr $1ab171, $1ab1f9
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_7171.bin"
 Blocks_06a_71f9::
-	dr $1ab1f9, $1ab301
+	INCBIN "data/maps/blocks/Blocks_06a_71f9.bin"
 AttrMap_06a_7301::
 INCBIN "gfx/attrmaps/attrmap_06a_7301.bin"
 Palettes_06a_738a::
@@ -770,39 +737,33 @@ G6_1D_MapAttributes:
 		Palettes_06a_781c, \
 		0, Tileset_006_460c, \
 		Collision_06a_7864
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_7459::
-	dr $1ab459, $1ab478
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_7459.bin"
 Blocks_06a_7478::
-	dr $1ab478, $1ab4bc
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_7478.bin"
 Layout_06a_74bc::
-	dr $1ab4bc, $1ab4db
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_74bc.bin"
 Blocks_06a_74db::
-	dr $1ab4db, $1ab517
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_74db.bin"
 Layout_06a_7517::
-	dr $1ab517, $1ab536
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_7517.bin"
 Blocks_06a_7536::
-	dr $1ab536, $1ab576
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_7536.bin"
 Layout_06a_7576::
-	dr $1ab576, $1ab595
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_7576.bin"
 Blocks_06a_7595::
-	dr $1ab595, $1ab5dd
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_7595.bin"
 Layout_06a_75dd::
-	dr $1ab5dd, $1ab5fc
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_75dd.bin"
 Metatiles_06a_75fc::
-	dr $1ab5fc, $1ab744
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_75fc.bin"
 Blocks_06a_7744::
-	dr $1ab744, $1ab788
+	INCBIN "data/maps/blocks/Blocks_06a_7744.bin"
 AttrMap_06a_7788::
 INCBIN "gfx/attrmaps/attrmap_06a_7788.bin"
 Palettes_06a_781c::
@@ -860,21 +821,18 @@ G6_1F_MapAttributes:
 		Palettes_06a_7b57, \
 		0, Tileset_006_4622, \
 		Collision_06a_7b9f
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_78df::
-	dr $1ab8df, $1ab93a
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_78df.bin"
 Blocks_06a_793a::
-	dr $1ab93a, $1aba22
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
+	INCBIN "data/maps/blocks/Blocks_06a_793a.bin"
 Layout_06a_7a22::
-	dr $1aba22, $1aba47
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_7a22.bin"
 Metatiles_06a_7a47::
-	dr $1aba47, $1aba9f
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_7a47.bin"
 Blocks_06a_7a9f::
-	dr $1aba9f, $1abb07
+	INCBIN "data/maps/blocks/Blocks_06a_7a9f.bin"
 AttrMap_06a_7b07::
 INCBIN "gfx/attrmaps/attrmap_06a_7b07.bin"
 Palettes_06a_7b57::
@@ -924,15 +882,13 @@ G6_20_MapAttributes:
 		Palettes_06a_7d69, \
 		0, Tileset_006_4631, \
 		Collision_06a_7db1
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_7bca::
-	dr $1abbca, $1abbe9
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_7bca.bin"
 Metatiles_06a_7be9::
-	dr $1abbe9, $1abc89
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_7be9.bin"
 Blocks_06a_7c89::
-	dr $1abc89, $1abcf1
+	INCBIN "data/maps/blocks/Blocks_06a_7c89.bin"
 AttrMap_06a_7cf1::
 INCBIN "gfx/attrmaps/attrmap_06a_7cf1.bin"
 Palettes_06a_7d69::
@@ -983,15 +939,13 @@ G7_01_MapAttributes:
 		Palettes_06a_7f76, \
 		0, Tileset_006_4640, \
 		Collision_06a_7fbe
-; TODO: map layout binary - INCBIN .bin / TMX decode (overworld-data.md)
 Layout_06a_7dee::
-	dr $1abdee, $1abe0d
-; TODO: metatile defs binary - decode_tileset.py / INCBIN
+	db 0
+	INCBIN "data/maps/layouts/Layout_06a_7dee.bin"
 Metatiles_06a_7e0d::
-	dr $1abe0d, $1abeb1
-; TODO: map blockset binary - INCBIN .bin / TMX decode
+	INCBIN "data/maps/metatiles/Metatiles_06a_7e0d.bin"
 Blocks_06a_7eb1::
-	dr $1abeb1, $1abf15
+	INCBIN "data/maps/blocks/Blocks_06a_7eb1.bin"
 AttrMap_06a_7f15::
 INCBIN "gfx/attrmaps/attrmap_06a_7f15.bin"
 Palettes_06a_7f76::
