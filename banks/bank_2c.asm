@@ -1,5 +1,5 @@
 Func_02c_4000:
-	ld de, unk_02c_40a8
+	ld de, CharBacksprites
 	ld a, [wd9dd]
 	ld l, a
 	ld h, $00
@@ -13,7 +13,7 @@ Func_02c_4000:
 	ld bc, $0240
 	call CopyBytesVRAM
 	call DelayFrame
-	ld de, unk_02c_4058
+	ld de, CharBackspritePals
 	pop hl
 	add hl, de
 	ld a, [hli]
@@ -33,7 +33,7 @@ Func_02c_4000:
 	ret
 Func_02c_403e:
 	push de
-	ld de, unk_02c_40a8
+	ld de, CharBacksprites
 	ld a, $00
 	ld l, a
 	ld h, $00
@@ -49,12 +49,84 @@ Func_02c_403e:
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	ret
-unk_02c_4058:
-	dr $B0058, $B00A8
-unk_02c_40a8:
-	dr $B00A8, $B0D47
-unk_02c_4d47:
-	dr $B0D47, $B12B8
+; Character battle backsprites, indexed by wd9dd (party/character index, see Func_02c_4000).
+; Per-character 4-color palette; pointer table -> palette records.
+CharBackspritePals:
+	dw CharBackspritePal_0
+	dw CharBackspritePal_1
+	dw CharBackspritePal_2
+	dw CharBackspritePal_3
+	dw CharBackspritePal_4
+	dw CharBackspritePal_5
+	dw CharBackspritePal_6
+	dw CharBackspritePal_7
+CharBackspritePal_0:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 29, 0, 0
+	RGB 0, 0, 0
+CharBackspritePal_1:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 14, 8, 31
+	RGB 0, 0, 0
+CharBackspritePal_2:
+	RGB 31, 31, 31
+	RGB 31, 22, 12
+	RGB 0, 14, 0
+	RGB 0, 0, 0
+CharBackspritePal_3:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 17, 13, 5
+	RGB 0, 0, 0
+CharBackspritePal_4:
+	RGB 31, 31, 31
+	RGB 31, 22, 12
+	RGB 0, 17, 29
+	RGB 0, 0, 0
+CharBackspritePal_5:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 29, 0, 13
+	RGB 0, 0, 0
+CharBackspritePal_6:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 12, 15, 28
+	RGB 0, 0, 0
+CharBackspritePal_7:
+	RGB 31, 31, 31
+	RGB 31, 19, 0
+	RGB 31, 27, 0
+	RGB 0, 0, 0
+
+; Per-character backsprite GFX (6x6 tiles -> VRAM $90D0); pointer table -> GFX blocks.
+CharBacksprites:
+	dw CharBacksprite_0
+	dw CharBacksprite_1
+	dw CharBacksprite_2
+	dw CharBacksprite_3
+	dw CharBacksprite_4
+	dw CharBacksprite_5
+	dw CharBacksprite_6
+	dw CharBacksprite_7
+CharBacksprite_0::
+	INCBIN "gfx/backsprites/backsprite_0.2bpp"
+CharBacksprite_1::
+	INCBIN "gfx/backsprites/backsprite_1.2bpp"
+CharBacksprite_2::
+	INCBIN "gfx/backsprites/backsprite_2.2bpp"
+CharBacksprite_3::
+	INCBIN "gfx/backsprites/backsprite_3.2bpp"
+CharBacksprite_4::
+	INCBIN "gfx/backsprites/backsprite_4.2bpp"
+CharBacksprite_5::
+	INCBIN "gfx/backsprites/backsprite_5.2bpp"
+CharBacksprite_6::
+	INCBIN "gfx/backsprites/backsprite_6.2bpp"
+CharBacksprite_7::
+	INCBIN "gfx/backsprites/backsprite_7.2bpp"
 
 BattleTransition_InsertWhiteTile:
 	ld hl, .WhiteTile
