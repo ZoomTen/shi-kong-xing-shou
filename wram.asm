@@ -413,7 +413,12 @@ wd3f3:: ds 1
 wd3f4:: ds 1
 
 ; collision related
-wAdjacentBlocks:: ds 4 ; per-facing block-collision (indexed by wPlayerFacing)
+; block-collision in front per direction, base indexed by wPlayerFacing
+wAdjacentBlocks::
+wSouthFacingTile:: ds 1 ; FACE_DOWN
+wNorthFacingTile:: ds 1 ; FACE_UP
+wWestFacingTile::  ds 1 ; FACE_LEFT
+wEastFacingTile::  ds 1 ; FACE_RIGHT
 
 wd3f9:: ds 5
 wBattleIntroJumptableIndex:: ds 1

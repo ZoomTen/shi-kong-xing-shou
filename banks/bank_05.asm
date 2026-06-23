@@ -1090,7 +1090,7 @@ Func_005_46da:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wAdjacentBlocks + 3], a
+	ld [wEastFacingTile], a
 	ret
 
 Func_005_472e:
@@ -1143,7 +1143,7 @@ asm_005_4766:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wAdjacentBlocks + 2], a
+	ld [wWestFacingTile], a
 	ret
 
 Func_005_478a:
@@ -1196,7 +1196,7 @@ asm_005_479e:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wAdjacentBlocks + 1], a
+	ld [wNorthFacingTile], a
 	ret
 
 Func_005_47e6:
@@ -1243,7 +1243,7 @@ Func_005_47e6:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wAdjacentBlocks], a
+	ld [wSouthFacingTile], a
 	ret
 
 Func_005_483a:
@@ -2565,13 +2565,13 @@ CheckTileInteractInFront:
 	sub 8
 	ld [wd3f9], a
 	ld a, [wPlayerFacing]
-	cp 0
+	cp FACE_DOWN
 	jr z, asm_005_52e7
-	cp 1
+	cp FACE_UP
 	jr z, asm_005_52f4
-	cp 2
+	cp FACE_LEFT
 	jr z, asm_005_5301
-	cp 3
+	cp FACE_RIGHT
 	jr z, asm_005_530e
 	ret
 
@@ -2579,28 +2579,28 @@ asm_005_52e7:
 	ld a, [wd0f9]
 	add $10
 	ld [wd0f9], a
-	ld hl, wAdjacentBlocks
+	ld hl, wSouthFacingTile
 	jr asm_005_5319
 
 asm_005_52f4:
 	ld a, [wd0f9]
 	sub $10
 	ld [wd0f9], a
-	ld hl, wAdjacentBlocks + 1
+	ld hl, wNorthFacingTile
 	jr asm_005_5319
 
 asm_005_5301:
 	ld a, [wd3f9]
 	sub $10
 	ld [wd3f9], a
-	ld hl, wAdjacentBlocks + 2
+	ld hl, wWestFacingTile
 	jr asm_005_5319
 
 asm_005_530e:
 	ld a, [wd3f9]
 	add $10
 	ld [wd3f9], a
-	ld hl, wAdjacentBlocks + 3
+	ld hl, wEastFacingTile
 
 asm_005_5319:
 	ld a, [hl]
