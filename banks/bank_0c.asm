@@ -49,7 +49,7 @@ Func_00c_402b:
 	call Func_135a
 	ret
 
-Func_00c_4056::
+LoadSignpostText::
 	ld de, .SignpostGroups
 
 ; map group
@@ -63,7 +63,7 @@ Func_00c_4056::
 	ld e, a
 
 ; signpost number
-	ld a, [wd1e3]
+	ld a, [wSignpostNumber]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -504,7 +504,7 @@ Func_00c_6ebe:
 	ld [de], a
 	ret
 
-Func_00c_6ed7::
+CheckFoundItemEvent::
 	ld de, Pointers_00c_6f22
 	ld a, [hMapGroup]
 	ld l, a
@@ -514,7 +514,7 @@ Func_00c_6ed7::
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	ld a, [wdcb4]
+	ld a, [wFoundItem]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -558,7 +558,7 @@ Func_00c_6ed7::
 	pop hl
 .asm_6f1d
 	xor a
-	ld [wdcb4], a
+	ld [wFoundItem], a
 	ret
 
 Pointers_00c_6f22:

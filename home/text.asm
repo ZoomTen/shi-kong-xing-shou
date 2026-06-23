@@ -1,14 +1,14 @@
 PrintText::
 	ldh a, [hTextSource]
-	cp 1
+	cp TEXTSRC_SCRIPT
 	jr z, .type1
-	cp 2
+	cp TEXTSRC_SIGNPOST
 	jr z, .type2
-	cp 3
+	cp TEXTSRC_ITEM_OBTAINED
 	jr z, .type3
-	cp 4
+	cp TEXTSRC_SCRIPT_MSG
 	jr z, .type4
-	cp 5
+	cp TEXTSRC_ITEM_FOUND
 	jr z, .type5
 	ret
 
@@ -29,7 +29,7 @@ PrintText::
 	jr .select_bank
 
 .type5
-	ld a, [wdcb5]
+	ld a, [wFoundItemTextBank]
 	jr .select_bank
 
 .select_bank

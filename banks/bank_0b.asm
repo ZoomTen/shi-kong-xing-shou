@@ -311,7 +311,7 @@ Script_04:
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wTextStart + 1], a
-	ld a, 1
+	ld a, TEXTSRC_SCRIPT
 	ldh [hTextSource], a
 	call AdjustTextboxYPosition
 	xor a
@@ -631,7 +631,7 @@ Script_text:
 	call AdjustTextboxYPosition
 
 ; Display text
-	ld a, 1
+	ld a, TEXTSRC_SCRIPT
 	ldh [hTextSource], a
 	xor a
 	ld [wScriptByte], a
@@ -4039,7 +4039,7 @@ Script_6e:
 	ld [wEventFlags + $F], a
 	ret
 
-Script_6f:
+Script_6f: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (Text_01e_6ddb)
 	ld a, [wdce8]
 	and a
 	jr z, .asm_5dd6
@@ -4058,9 +4058,9 @@ Script_6f:
 	xor a
 	ld [wScriptByte], a
 	ld [hFFD6], a
-	ld a, [wdcba]
+	ld a, [wSavedScriptBank]
 	ld [hScriptBank], a
-	ld a, $04
+	ld a, TEXTSRC_SCRIPT_MSG
 	ldh [hTextSource], a
 	ld a, BANK(Text_01e_6ddb)
 	ldh [hTextSourceBank4], a
@@ -4139,7 +4139,7 @@ Script_6f:
 	ret
 
 Script_70:
-	ld a, [wdcba]
+	ld a, [wSavedScriptBank]
 	ld [hScriptBank], a
 	xor a
 	ld [wScriptByte], a

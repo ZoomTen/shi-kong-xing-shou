@@ -182,8 +182,8 @@ MapEventLoop:
 .exit
 	pop hl
 	xor a
-	ld [wd1e3], a
-	ld [wdcb4], a
+	ld [wSignpostNumber], a
+	ld [wFoundItem], a
 	ld [wd0f8], a
 	ld [wd0ee], a
 	ret
@@ -252,21 +252,21 @@ MapEvent_Script:
 	ldh [hFFD6], a
 	xor a
 	ld [wScriptByte], a
-	ld [wd1e3], a
+	ld [wSignpostNumber], a
 	ld [wd0f8], a
 	ld [wd0ee], a
-	ld [wdcb4], a
+	ld [wFoundItem], a
 	pop hl
 	ret
 
 MapEvent_Signpost:
 	pop hl
 	ld a, [hli]
-	ld [wd1e3], a
+	ld [wSignpostNumber], a
 	xor a
 	ld [wd0f8], a
 	ld [wd0ee], a
-	ld [wdcb4], a
+	ld [wFoundItem], a
 	pop hl
 	ret
 
@@ -288,9 +288,9 @@ MapEvent_04:
 	ld a, 1
 	ld [wd0f8], a
 	xor a
-	ld [wd1e3], a
+	ld [wSignpostNumber], a
 	ld [wd0ee], a
-	ld [wdcb4], a
+	ld [wFoundItem], a
 	pop hl
 	ret
 
@@ -303,9 +303,9 @@ MapEvent_05:
 	ld a, [hli]
 	ld [wScriptPos + 1], a
 	xor a
-	ld [wd1e3], a
+	ld [wSignpostNumber], a
 	ld [wd0f8], a
-	ld [wdcb4], a
+	ld [wFoundItem], a
 	pop hl
 	ret
 
@@ -334,11 +334,11 @@ MapEvent_06:
 MapEvent_07:
 	pop hl
 	ld a, [hli]
-	ld [wdcb4], a
+	ld [wFoundItem], a
 	xor a
 	ld [wd0f8], a
 	ld [wd0ee], a
-	ld [wd1e3], a
+	ld [wSignpostNumber], a
 	pop hl
 	ret
 
@@ -367,7 +367,7 @@ Overworld::
 	ld a, $FF
 	ldh [hFF9E], a
 
-	ld hl, wd1e3 + 2
+	ld hl, wTileAnimFrameCounters
 	ld c, $0C
 	xor a
 .fill
@@ -1090,7 +1090,7 @@ Func_005_46da:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wd3f8], a
+	ld [wAdjacentBlocks + 3], a
 	ret
 
 Func_005_472e:
@@ -1143,7 +1143,7 @@ asm_005_4766:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wd3f7], a
+	ld [wAdjacentBlocks + 2], a
 	ret
 
 Func_005_478a:
@@ -1196,7 +1196,7 @@ asm_005_479e:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wd3f6], a
+	ld [wAdjacentBlocks + 1], a
 	ret
 
 Func_005_47e6:
@@ -1243,7 +1243,7 @@ Func_005_47e6:
 	ld e, l
 	call GetBlockCollision_Banked
 	ld a, [wd0c8]
-	ld [wd3f5], a
+	ld [wAdjacentBlocks], a
 	ret
 
 Func_005_483a:
@@ -1777,7 +1777,7 @@ Func_005_4bc1:
 	and a
 	ret nz
 	call Func_005_50e5
-	call Func_005_5123
+	call OverworldInteract
 	ld a, [wd3f4]
 	and a
 	ret nz
@@ -2362,25 +2362,25 @@ asm_005_511a:
 	jr asm_005_50fa
 	ret
 
-Func_005_5123:
+OverworldInteract:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	ret z
 	call Func_005_52a6
 	call Func_005_56aa
-	call Func_005_52ba
+	call CheckTileInteractInFront
 	call Func_005_5295
 	call Func_005_51ed
 	ld a, [wPlayerSpriteID]
 	cp 9
 	jr z, asm_005_5148
 	call Func_005_5179
-	call Func_005_55e9
-	call Func_005_5604
+	call TryInteractSignpost
+	call TryShowFoundItem
 	ret
 
 asm_005_5148:
-	ld de, wd3f5
+	ld de, wAdjacentBlocks
 	ld a, [wPlayerFacing]
 	ld l, a
 	ld h, 0
@@ -2403,7 +2403,7 @@ asm_005_5148:
 	ret
 
 Func_005_5179:
-	ld de, wd3f5
+	ld de, wAdjacentBlocks
 	ld a, [wPlayerFacing]
 	ld l, a
 	ld h, 0
@@ -2499,12 +2499,12 @@ asm_005_5224:
 	ldh [hFFD6], a
 	xor a
 	ld [wScriptByte], a
-	ld [wdcb4], a
-	ld [wd1e3], a
+	ld [wFoundItem], a
+	ld [wSignpostNumber], a
 	ld [wd0f8], a
 	ld [wd0ee], a
 	ld a, [hScriptBank]
-	ld [wdcba], a
+	ld [wSavedScriptBank], a
 	ld a, BANK(Script_005_524c)
 	ld [hScriptBank], a
 	ret
@@ -2551,7 +2551,7 @@ Func_005_52a6:
 	ldh [hFFD6], a
 	ret
 
-Func_005_52ba:
+CheckTileInteractInFront:
 	ldh a, [hFFD6]
 	and a
 	ret nz
@@ -2579,28 +2579,28 @@ asm_005_52e7:
 	ld a, [wd0f9]
 	add $10
 	ld [wd0f9], a
-	ld hl, wd3f5
+	ld hl, wAdjacentBlocks
 	jr asm_005_5319
 
 asm_005_52f4:
 	ld a, [wd0f9]
 	sub $10
 	ld [wd0f9], a
-	ld hl, wd3f6
+	ld hl, wAdjacentBlocks + 1
 	jr asm_005_5319
 
 asm_005_5301:
 	ld a, [wd3f9]
 	sub $10
 	ld [wd3f9], a
-	ld hl, wd3f7
+	ld hl, wAdjacentBlocks + 2
 	jr asm_005_5319
 
 asm_005_530e:
 	ld a, [wd3f9]
 	add $10
 	ld [wd3f9], a
-	ld hl, wd3f8
+	ld hl, wAdjacentBlocks + 3
 
 asm_005_5319:
 	ld a, [hl]
@@ -2608,36 +2608,36 @@ asm_005_5319:
 	and $f
 	ret z
 	cp 1
-	jr z, asm_005_5330
+	jr z, ObtainTileItem
 	cp 2
-	jr z, asm_005_5390
+	jr z, InteractSetMapPatch
 	cp 3
 	jr z, asm_005_532c
 	ret
 
 asm_005_532c:
-	call Func_005_53d9
+	call InteractClearMapPatch
 	ret
 
-asm_005_5330:
-	ld [wd086], a
+ObtainTileItem:
+	ld [wTileInteractType], a
 	ld a, SFX_1a
 	call PlaySound
 	ld a, [hl]
 	and $f
 	ld [wItemIndex], a
-	call Func_005_5504
+	call RedrawTileAfterObtain
 	call SetMapLayoutPatchForItem_Banked
 	ld a, BANK(text_1e_4212)
 	ldh [hTextSourceBank3], a
-	ld a, 3
+	ld a, TEXTSRC_ITEM_OBTAINED
 	ldh [hTextSource], a
 	ld hl, text_1e_4212
 	ld a, l
 	ld [wTextStart], a
 	ld a, h
 	ld [wTextStart + 1], a
-	call Func_005_5422
+	call SetTextboxYPosition
 	ret
 
 Func_005_535b:
@@ -2668,8 +2668,8 @@ Func_005_535b:
 	call LoadPalettes_BCPD
 	ret
 
-asm_005_5390:
-	ld [wd086], a
+InteractSetMapPatch:
+	ld [wTileInteractType], a
 	ld a, SFX_1e
 	call PlaySound
 	ld a, [hl]
@@ -2714,8 +2714,8 @@ BGMap_005_53d1:
 	db $5
 	db $5
 
-Func_005_53d9:
-	ld [wd086], a
+InteractClearMapPatch:
+	ld [wTileInteractType], a
 	ld a, SFX_1e
 	call PlaySound
 	ld a, [hl]
@@ -2760,7 +2760,7 @@ BGMap_005_541a:
 	db $0
 	db $0
 
-Func_005_5422:
+SetTextboxYPosition:
 	ld a, 1
 	ld [wTextboxPos], a
 	ld a, [wPlayerObject]
@@ -2834,7 +2834,7 @@ unk_005_549d:
 	endr
 
 Func_005_54ad:
-	ld a, [wd086]
+	ld a, [wTileInteractType]
 	cp 3
 	ret nz
 	ld a, [wd0f9]
@@ -2852,7 +2852,7 @@ Func_005_54ad:
 	jr asm_005_54ef
 
 Func_005_54cf:
-	ld a, [wd086]
+	ld a, [wTileInteractType]
 	cp 2
 	ret nz
 	ld a, [wd0f9]
@@ -2888,8 +2888,8 @@ BGMap_005_5500:
 	db $e
 	db $10
 
-Func_005_5504:
-	ld a, [wd086]
+RedrawTileAfterObtain:
+	ld a, [wTileInteractType]
 	cp 1
 	ret nz
 	ld a, [wd0f9]
@@ -3066,46 +3066,46 @@ asm_005_55e2:
 	ld h, a
 	ret
 
-Func_005_55e9:
+TryInteractSignpost:
 	ldh a, [hFFD6]
 	and a
 	ret nz
-	ld a, [wd1e3]
+	ld a, [wSignpostNumber]
 	and a
 	ret z
 	ld a, [wPlayerFacing]
 	cp 1
 	ret nz
-	ld a, 2
+	ld a, TEXTSRC_SIGNPOST
 	ldh [hTextSource], a
 	ld a, BANK(text_0c_40a7)
 	ldh [hTextSourceBank2], a
-	call Func_0740
+	call GetSignpostText
 	ret
 
-Func_005_5604:
+TryShowFoundItem:
 	ldh a, [hFFD6]
 	and a
 	ret nz
-	ld a, [wdcb4]
+	ld a, [wFoundItem]
 	and a
 	ret z
-	call Func_0733
-	ld a, [wdcb4]
+	call CheckFoundItem
+	ld a, [wFoundItem]
 	and a
 	ret z
 	ld a, SFX_12
 	call PlaySound
-	ld a, 5
+	ld a, TEXTSRC_ITEM_FOUND
 	ldh [hTextSource], a
 	ld a, BANK(text_1e_6e44)
-	ld [wdcb5], a
+	ld [wFoundItemTextBank], a
 	ld hl, text_1e_6e44
 	ld a, l
 	ld [wTextStart], a
 	ld a, h
 	ld [wTextStart + 1], a
-	call Func_005_5422
+	call SetTextboxYPosition
 	ret
 
 ; TODO: indexed data table, classify type

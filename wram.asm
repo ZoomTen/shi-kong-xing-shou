@@ -261,7 +261,7 @@ wd081:: ds 1
 wd082:: ds 1
 wd083:: ds 2
 wTextDelayFrames:: ds 1
-wd086:: ds 1
+wTileInteractType:: ds 1
 wBattleScriptState:: ds 1
 
 wBattleScriptPos:: ds 2 ; also used for screen/effect scripts
@@ -368,7 +368,7 @@ wd1c0:: ds 1
 	ds 33
 
 wd1e2:: ds 1
-wd1e3:: ds 1
+wSignpostNumber:: ds 1
 wd1e4:: ds 1
 
 wTileAnimFrameCounters:: ds 1
@@ -413,10 +413,7 @@ wd3f3:: ds 1
 wd3f4:: ds 1
 
 ; collision related
-wd3f5:: ds 1
-wd3f6:: ds 1
-wd3f7:: ds 1
-wd3f8:: ds 1
+wAdjacentBlocks:: ds 4 ; per-facing block-collision (indexed by wPlayerFacing)
 
 wd3f9:: ds 5
 wBattleIntroJumptableIndex:: ds 1
@@ -735,15 +732,15 @@ wdcb0:: ds 1
 wdcb1:: ds 1
 wdcb2:: ds 1
 wdcb3:: ds 1
-wdcb4:: ds 1
-wdcb5:: ds 1
+wFoundItem:: ds 1
+wFoundItemTextBank:: ds 1
 wdcb6:: ds 1
 wdcb7:: ds 1
 
 wdcb8:: ds 1
 wdcb9:: ds 1
 
-wdcba:: ds 1
+wSavedScriptBank:: ds 1
 wdcbb:: ds 1
 wdcbc:: ds $c ; 12-byte struct/buffer (per bank_30)
 

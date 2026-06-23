@@ -85,12 +85,12 @@ ENDR
 	rst Bankswitch
 	ret
 
-Func_0733::
-	homecall Func_00c_6ed7
+CheckFoundItem::
+	homecall CheckFoundItemEvent
 	ret
 
-Func_0740::
-	homecall Func_00c_4056
+GetSignpostText::
+	homecall LoadSignpostText
 	ret
 
 Func_074d::

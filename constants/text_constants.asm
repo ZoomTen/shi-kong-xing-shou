@@ -3,6 +3,15 @@
 	const TEXTBOX_BOTTOM ; $00
 	const TEXTBOX_TOP    ; $01
 
+; hTextSource: which source/bank PrintText reads the active textbox from
+	const_def
+	const TEXTSRC_NONE          ; $00  idle / cleared
+	const TEXTSRC_SCRIPT        ; $01  inline script dialogue (hScriptBank)
+	const TEXTSRC_SIGNPOST      ; $02  signpost / bg event (hTextSourceBank2)
+	const TEXTSRC_ITEM_OBTAINED ; $03  press-A tile item (hTextSourceBank3)
+	const TEXTSRC_SCRIPT_MSG    ; $04  script cmd $6f canned msg (hTextSourceBank4)
+	const TEXTSRC_ITEM_FOUND    ; $05  map-event item (wFoundItemTextBank)
+
 ; Names
 	const_def
 	const NAME_BLANK  ; $00
