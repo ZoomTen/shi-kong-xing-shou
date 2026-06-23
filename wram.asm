@@ -703,7 +703,7 @@ wdacb:: ds 1
 	ds 2
 
 wTextBGMapPointer:: ds 2
-wdad0:: ds $10
+wFoundItemFlags:: ds $10
 wdae0:: ds 2
 wdae2:: ds 1
 wdae3:: ds 4
@@ -739,8 +739,8 @@ wdcb2:: ds 1
 wdcb3:: ds 1
 wFoundItem:: ds 1
 wFoundItemTextBank:: ds 1
-wdcb6:: ds 1
-wdcb7:: ds 1
+wItemNameCategory:: ds 1
+wItemNameIndex:: ds 1
 
 wdcb8:: ds 1
 wdcb9:: ds 1

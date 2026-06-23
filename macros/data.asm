@@ -25,6 +25,13 @@ MACRO dbw
 	dw \2
 ENDM
 
+MACRO found_item_event ; facing, flag ptr, flag bit, item name category, item name index
+	db \1
+	dw \2
+	db \3, \4, \5
+	db 0, 0
+ENDM
+
 MACRO dbbw
 	db \1, \2
 	dw \3

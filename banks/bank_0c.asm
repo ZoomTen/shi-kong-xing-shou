@@ -456,7 +456,7 @@ REPT 8
 	RGB 0, 0, 0
 ENDR
 
-Func_00c_6ea5:
+TestFoundItemFlag:
 	push bc
 	push hl
 	ld a, [de]
@@ -480,7 +480,7 @@ Func_00c_6ea5:
 	pop bc
 	ret
 
-Func_00c_6ebe:
+SetFoundItemFlag:
 	ld a, [de]
 	ld l, a
 	ld a, b
@@ -505,7 +505,7 @@ Func_00c_6ebe:
 	ret
 
 CheckFoundItemEvent::
-	ld de, Pointers_00c_6f22
+	ld de, FoundItemEventGroups
 	ld a, [hMapGroup]
 	ld l, a
 	ld h, $00
@@ -533,7 +533,7 @@ CheckFoundItemEvent::
 	inc hl
 	ld a, [hli]
 	ld b, a
-	call Func_00c_6ea5
+	call TestFoundItemFlag
 	and a
 	jr nz, .asm_6f1c
 	pop hl
@@ -544,15 +544,15 @@ CheckFoundItemEvent::
 	inc hl
 	ld a, [hli]
 	ld b, a
-	call Func_00c_6ebe
+	call SetFoundItemFlag
 	pop hl
 	ld a, [hli]
 	ld a, [hli]
 	ld a, [hli]
 	ld a, [hli]
-	ld [wdcb6], a
+	ld [wItemNameCategory], a
 	ld a, [hli]
-	ld [wdcb7], a
+	ld [wItemNameIndex], a
 	ret
 .asm_6f1c
 	pop hl
@@ -561,67 +561,113 @@ CheckFoundItemEvent::
 	ld [wFoundItem], a
 	ret
 
-Pointers_00c_6f22:
-	dw Pointers_00c_6f22_6f32
-	dw Pointers_00c_6f22_6f32
-	dw Pointers_00c_6f22_6fc2
-	dw Pointers_00c_6f22_703a
-	dw Pointers_00c_6f22_708a
-	dw Pointers_00c_6f22_7152
-	dw Pointers_00c_6f22_71d2
-	dw Pointers_00c_6f22_6f32
-Pointers_00c_6f22_6f32:
-	db $00, $d0, $da, $00, $00, $00, $00, $00, $01, $d0, $da, $00, $00, $15, $00, $00
-	db $01, $d0, $da, $01, $00, $3c, $00, $00, $01, $d0, $da, $02, $00, $1d, $00, $00
-	db $01, $d0, $da, $03, $00, $12, $00, $00, $01, $d0, $da, $04, $00, $01, $00, $00
-	db $01, $d0, $da, $05, $00, $27, $00, $00, $01, $d0, $da, $06, $07, $01, $00, $00
-	db $01, $d0, $da, $07, $00, $17, $00, $00, $01, $d1, $da, $00, $00, $19, $00, $00
-	db $01, $d1, $da, $01, $00, $1a, $00, $00, $01, $d1, $da, $02, $00, $0c, $00, $00
-	db $01, $d1, $da, $03, $00, $56, $00, $00, $01, $d1, $da, $04, $00, $1c, $00, $00
-	db $01, $d1, $da, $05, $00, $1d, $00, $00, $01, $d1, $da, $06, $00, $02, $00, $00
-	db $01, $d1, $da, $07, $01, $15, $00, $00, $01, $d2, $da, $00, $00, $23, $00, $00
-Pointers_00c_6f22_6fc2:
-	db $00, $d2, $da, $01, $00, $00, $00, $00, $01, $d2, $da, $01, $00, $08, $00, $00
-	db $01, $d2, $da, $02, $00, $16, $00, $00, $01, $d2, $da, $03, $00, $1f, $00, $00
-	db $01, $d2, $da, $04, $00, $22, $00, $00, $01, $d2, $da, $05, $00, $0b, $00, $00
-	db $01, $d2, $da, $06, $00, $12, $00, $00, $01, $d2, $da, $07, $00, $25, $00, $00
-	db $01, $d3, $da, $00, $00, $20, $00, $00, $01, $d3, $da, $01, $00, $0e, $00, $00
-	db $01, $d3, $da, $02, $01, $01, $00, $00, $01, $d3, $da, $03, $00, $0b, $00, $00
-	db $01, $d3, $da, $04, $00, $26, $00, $00, $01, $d3, $da, $05, $07, $02, $00, $00
-	db $01, $d3, $da, $06, $00, $17, $00, $00
-Pointers_00c_6f22_703a:
-	db $00, $d3, $da, $07, $00, $00, $00, $00, $01, $d3, $da, $07, $00, $14, $00, $00
-	db $01, $d4, $da, $00, $01, $12, $00, $00, $01, $d4, $da, $01, $00, $4e, $00, $00
-	db $01, $d4, $da, $02, $00, $22, $00, $00, $01, $d4, $da, $03, $00, $0b, $00, $00
-	db $01, $d4, $da, $04, $00, $13, $00, $00, $01, $d4, $da, $05, $01, $05, $00, $00
-	db $01, $d4, $da, $06, $07, $01, $00, $00, $01, $d4, $da, $07, $01, $12, $00, $00
-Pointers_00c_6f22_708a:
-	db $00, $d5, $da, $00, $00, $00, $00, $00, $01, $d5, $da, $00, $00, $18, $00, $00
-	db $01, $d5, $da, $01, $00, $19, $00, $00, $01, $d5, $da, $02, $00, $15, $00, $00
-	db $01, $d5, $da, $03, $00, $17, $00, $00, $01, $d5, $da, $04, $00, $07, $00, $00
-	db $01, $d5, $da, $05, $07, $05, $00, $00, $01, $d5, $da, $06, $01, $0b, $00, $00
-	db $01, $d5, $da, $07, $00, $2d, $00, $00, $01, $d6, $da, $00, $00, $48, $00, $00
-	db $01, $d6, $da, $01, $00, $04, $00, $00, $01, $d6, $da, $02, $07, $02, $00, $00
-	db $01, $d6, $da, $03, $00, $21, $00, $00, $01, $d6, $da, $04, $00, $16, $00, $00
-	db $01, $d6, $da, $05, $00, $23, $00, $00, $01, $d6, $da, $06, $00, $1c, $00, $00
-	db $01, $d6, $da, $07, $00, $19, $00, $00, $01, $d7, $da, $00, $00, $08, $00, $00
-	db $01, $d7, $da, $01, $00, $13, $00, $00, $01, $d7, $da, $02, $07, $01, $00, $00
-	db $00, $d7, $da, $03, $00, $50, $00, $00, $03, $d7, $da, $04, $00, $23, $00, $00
-	db $03, $d7, $da, $05, $00, $1e, $00, $00, $02, $d7, $da, $06, $07, $02, $00, $00
-	db $02, $d7, $da, $07, $00, $46, $00, $00
-Pointers_00c_6f22_7152:
-	db $00, $d8, $da, $00, $00, $00, $00, $00, $01, $d8, $da, $00, $00, $2b, $00, $00
-	db $01, $d8, $da, $01, $00, $57, $00, $00, $01, $d8, $da, $02, $00, $03, $00, $00
-	db $01, $d8, $da, $03, $00, $0d, $00, $00, $01, $d8, $da, $04, $00, $13, $00, $00
-	db $01, $d8, $da, $05, $00, $11, $00, $00, $01, $d8, $da, $06, $00, $0a, $00, $00
-	db $01, $d8, $da, $07, $00, $26, $00, $00, $01, $d9, $da, $00, $00, $15, $00, $00
-	db $01, $d9, $da, $01, $07, $02, $00, $00, $01, $d9, $da, $02, $00, $1e, $00, $00
-	db $01, $d9, $da, $03, $00, $08, $00, $00, $01, $d9, $da, $04, $00, $52, $00, $00
-	db $01, $d9, $da, $05, $00, $07, $00, $00, $01, $d9, $da, $06, $00, $09, $00, $00
-Pointers_00c_6f22_71d2:
-	db $00, $d9, $da, $07, $00, $00, $00, $00, $01, $d9, $da, $07, $00, $0d, $00, $00
-	db $01, $da, $da, $00, $00, $16, $00, $00, $01, $da, $da, $01, $00, $20, $00, $00
-	db $01, $da, $da, $02, $00, $1d, $00, $00, $01, $da, $da, $03, $00, $40, $00, $00
-	db $01, $da, $da, $04, $00, $11, $00, $00, $01, $da, $da, $05, $00, $08, $00, $00
-	db $01, $da, $da, $06, $07, $04, $00, $00, $01, $da, $da, $07, $07, $05, $00, $00
-	db $01, $db, $da, $00, $00, $37, $00, $00, $00, $00, $00, $00, $00, $00
+FoundItemEventGroups:
+	dw Group00_FoundItems
+	dw Group00_FoundItems
+	dw Group02_FoundItems
+	dw Group03_FoundItems
+	dw Group04_FoundItems
+	dw Group05_FoundItems
+	dw Group06_FoundItems
+	dw Group00_FoundItems
+Group00_FoundItems:
+	found_item_event FACE_DOWN, wFoundItemFlags, 0, 0, $00
+	found_item_event FACE_UP, wFoundItemFlags, 0, 0, $15
+	found_item_event FACE_UP, wFoundItemFlags, 1, 0, $3c
+	found_item_event FACE_UP, wFoundItemFlags, 2, 0, $1d
+	found_item_event FACE_UP, wFoundItemFlags, 3, 0, $12
+	found_item_event FACE_UP, wFoundItemFlags, 4, 0, $01
+	found_item_event FACE_UP, wFoundItemFlags, 5, 0, $27
+	found_item_event FACE_UP, wFoundItemFlags, 6, 7, $01
+	found_item_event FACE_UP, wFoundItemFlags, 7, 0, $17
+	found_item_event FACE_UP, wFoundItemFlags + 1, 0, 0, $19
+	found_item_event FACE_UP, wFoundItemFlags + 1, 1, 0, $1a
+	found_item_event FACE_UP, wFoundItemFlags + 1, 2, 0, $0c
+	found_item_event FACE_UP, wFoundItemFlags + 1, 3, 0, $56
+	found_item_event FACE_UP, wFoundItemFlags + 1, 4, 0, $1c
+	found_item_event FACE_UP, wFoundItemFlags + 1, 5, 0, $1d
+	found_item_event FACE_UP, wFoundItemFlags + 1, 6, 0, $02
+	found_item_event FACE_UP, wFoundItemFlags + 1, 7, 1, $15
+	found_item_event FACE_UP, wFoundItemFlags + 2, 0, 0, $23
+Group02_FoundItems:
+	found_item_event FACE_DOWN, wFoundItemFlags + 2, 1, 0, $00
+	found_item_event FACE_UP, wFoundItemFlags + 2, 1, 0, $08
+	found_item_event FACE_UP, wFoundItemFlags + 2, 2, 0, $16
+	found_item_event FACE_UP, wFoundItemFlags + 2, 3, 0, $1f
+	found_item_event FACE_UP, wFoundItemFlags + 2, 4, 0, $22
+	found_item_event FACE_UP, wFoundItemFlags + 2, 5, 0, $0b
+	found_item_event FACE_UP, wFoundItemFlags + 2, 6, 0, $12
+	found_item_event FACE_UP, wFoundItemFlags + 2, 7, 0, $25
+	found_item_event FACE_UP, wFoundItemFlags + 3, 0, 0, $20
+	found_item_event FACE_UP, wFoundItemFlags + 3, 1, 0, $0e
+	found_item_event FACE_UP, wFoundItemFlags + 3, 2, 1, $01
+	found_item_event FACE_UP, wFoundItemFlags + 3, 3, 0, $0b
+	found_item_event FACE_UP, wFoundItemFlags + 3, 4, 0, $26
+	found_item_event FACE_UP, wFoundItemFlags + 3, 5, 7, $02
+	found_item_event FACE_UP, wFoundItemFlags + 3, 6, 0, $17
+Group03_FoundItems:
+	found_item_event FACE_DOWN, wFoundItemFlags + 3, 7, 0, $00
+	found_item_event FACE_UP, wFoundItemFlags + 3, 7, 0, $14
+	found_item_event FACE_UP, wFoundItemFlags + 4, 0, 1, $12
+	found_item_event FACE_UP, wFoundItemFlags + 4, 1, 0, $4e
+	found_item_event FACE_UP, wFoundItemFlags + 4, 2, 0, $22
+	found_item_event FACE_UP, wFoundItemFlags + 4, 3, 0, $0b
+	found_item_event FACE_UP, wFoundItemFlags + 4, 4, 0, $13
+	found_item_event FACE_UP, wFoundItemFlags + 4, 5, 1, $05
+	found_item_event FACE_UP, wFoundItemFlags + 4, 6, 7, $01
+	found_item_event FACE_UP, wFoundItemFlags + 4, 7, 1, $12
+Group04_FoundItems:
+	found_item_event FACE_DOWN, wFoundItemFlags + 5, 0, 0, $00
+	found_item_event FACE_UP, wFoundItemFlags + 5, 0, 0, $18
+	found_item_event FACE_UP, wFoundItemFlags + 5, 1, 0, $19
+	found_item_event FACE_UP, wFoundItemFlags + 5, 2, 0, $15
+	found_item_event FACE_UP, wFoundItemFlags + 5, 3, 0, $17
+	found_item_event FACE_UP, wFoundItemFlags + 5, 4, 0, $07
+	found_item_event FACE_UP, wFoundItemFlags + 5, 5, 7, $05
+	found_item_event FACE_UP, wFoundItemFlags + 5, 6, 1, $0b
+	found_item_event FACE_UP, wFoundItemFlags + 5, 7, 0, $2d
+	found_item_event FACE_UP, wFoundItemFlags + 6, 0, 0, $48
+	found_item_event FACE_UP, wFoundItemFlags + 6, 1, 0, $04
+	found_item_event FACE_UP, wFoundItemFlags + 6, 2, 7, $02
+	found_item_event FACE_UP, wFoundItemFlags + 6, 3, 0, $21
+	found_item_event FACE_UP, wFoundItemFlags + 6, 4, 0, $16
+	found_item_event FACE_UP, wFoundItemFlags + 6, 5, 0, $23
+	found_item_event FACE_UP, wFoundItemFlags + 6, 6, 0, $1c
+	found_item_event FACE_UP, wFoundItemFlags + 6, 7, 0, $19
+	found_item_event FACE_UP, wFoundItemFlags + 7, 0, 0, $08
+	found_item_event FACE_UP, wFoundItemFlags + 7, 1, 0, $13
+	found_item_event FACE_UP, wFoundItemFlags + 7, 2, 7, $01
+	found_item_event FACE_DOWN, wFoundItemFlags + 7, 3, 0, $50
+	found_item_event FACE_RIGHT, wFoundItemFlags + 7, 4, 0, $23
+	found_item_event FACE_RIGHT, wFoundItemFlags + 7, 5, 0, $1e
+	found_item_event FACE_LEFT, wFoundItemFlags + 7, 6, 7, $02
+	found_item_event FACE_LEFT, wFoundItemFlags + 7, 7, 0, $46
+Group05_FoundItems:
+	found_item_event FACE_DOWN, wFoundItemFlags + 8, 0, 0, $00
+	found_item_event FACE_UP, wFoundItemFlags + 8, 0, 0, $2b
+	found_item_event FACE_UP, wFoundItemFlags + 8, 1, 0, $57
+	found_item_event FACE_UP, wFoundItemFlags + 8, 2, 0, $03
+	found_item_event FACE_UP, wFoundItemFlags + 8, 3, 0, $0d
+	found_item_event FACE_UP, wFoundItemFlags + 8, 4, 0, $13
+	found_item_event FACE_UP, wFoundItemFlags + 8, 5, 0, $11
+	found_item_event FACE_UP, wFoundItemFlags + 8, 6, 0, $0a
+	found_item_event FACE_UP, wFoundItemFlags + 8, 7, 0, $26
+	found_item_event FACE_UP, wFoundItemFlags + 9, 0, 0, $15
+	found_item_event FACE_UP, wFoundItemFlags + 9, 1, 7, $02
+	found_item_event FACE_UP, wFoundItemFlags + 9, 2, 0, $1e
+	found_item_event FACE_UP, wFoundItemFlags + 9, 3, 0, $08
+	found_item_event FACE_UP, wFoundItemFlags + 9, 4, 0, $52
+	found_item_event FACE_UP, wFoundItemFlags + 9, 5, 0, $07
+	found_item_event FACE_UP, wFoundItemFlags + 9, 6, 0, $09
+Group06_FoundItems:
+	found_item_event FACE_DOWN, wFoundItemFlags + 9, 7, 0, $00
+	found_item_event FACE_UP, wFoundItemFlags + 9, 7, 0, $0d
+	found_item_event FACE_UP, wFoundItemFlags + 10, 0, 0, $16
+	found_item_event FACE_UP, wFoundItemFlags + 10, 1, 0, $20
+	found_item_event FACE_UP, wFoundItemFlags + 10, 2, 0, $1d
+	found_item_event FACE_UP, wFoundItemFlags + 10, 3, 0, $40
+	found_item_event FACE_UP, wFoundItemFlags + 10, 4, 0, $11
+	found_item_event FACE_UP, wFoundItemFlags + 10, 5, 0, $08
+	found_item_event FACE_UP, wFoundItemFlags + 10, 6, 7, $04
+	found_item_event FACE_UP, wFoundItemFlags + 10, 7, 7, $05
+	found_item_event FACE_UP, wFoundItemFlags + 11, 0, 0, $37
