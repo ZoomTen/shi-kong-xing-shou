@@ -35,6 +35,13 @@ MACRO dbww
 	dw \2, \3
 ENDM
 
+MACRO tileanim ; bytes per frame, frame count, VRAM dest, frame-pointer table
+	dw \1
+	db \2
+	dw \3
+	dw \4
+ENDM
+
 MACRO dbwww
 	db \1
 	dw \2, \3, \4

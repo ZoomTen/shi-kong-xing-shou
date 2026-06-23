@@ -152,10 +152,7 @@ TileAnimMaps_Group0:
 TileAnimList_01c_40e9:
 	db -1
 TileAnimList_01c_40ea:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9190 ; VRAM dest
-	dw TileAnimFrames_01c_40f2
+	tileanim $40, 2, $9190, TileAnimFrames_01c_40f2
 	db -1
 TileAnimFrames_01c_40f2:
 	dw TileAnimGFX_01c_40f6
@@ -163,10 +160,7 @@ TileAnimFrames_01c_40f2:
 TileAnimGFX_01c_40f6::
 	INCBIN "gfx/tileanim/tileanim_01c_40f6.2bpp"
 TileAnimList_01c_4176:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_417e
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_417e
 	db -1
 TileAnimFrames_01c_417e:
 	dw TileAnimGFX_01c_4182
@@ -174,14 +168,8 @@ TileAnimFrames_01c_417e:
 TileAnimGFX_01c_4182::
 	INCBIN "gfx/tileanim/tileanim_01c_4182.2bpp"
 TileAnimList_01c_4202:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_417e
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $93e0 ; VRAM dest
-	dw TileAnimFrames_01c_4211
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_417e
+	tileanim $40, 2, $93e0, TileAnimFrames_01c_4211
 	db -1
 TileAnimFrames_01c_4211:
 	dw TileAnimGFX_01c_4215
@@ -189,14 +177,8 @@ TileAnimFrames_01c_4211:
 TileAnimGFX_01c_4215::
 	INCBIN "gfx/tileanim/tileanim_01c_4215.2bpp"
 TileAnimList_01c_4295:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $92f0 ; VRAM dest
-	dw TileAnimFrames_01c_42a4
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $93b0 ; VRAM dest
-	dw TileAnimFrames_01c_4328
+	tileanim $40, 2, $92f0, TileAnimFrames_01c_42a4
+	tileanim $40, 2, $93b0, TileAnimFrames_01c_4328
 	db -1
 TileAnimFrames_01c_42a4:
 	dw TileAnimGFX_01c_42a8
@@ -209,16 +191,10 @@ TileAnimFrames_01c_4328:
 TileAnimGFX_01c_432c::
 	INCBIN "gfx/tileanim/tileanim_01c_432c.2bpp"
 TileAnimList_01c_43ac:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $92f0 ; VRAM dest
-	dw TileAnimFrames_01c_42a4
+	tileanim $40, 2, $92f0, TileAnimFrames_01c_42a4
 	db -1
 TileAnimList_01c_43b4:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $91c0 ; VRAM dest
-	dw TileAnimFrames_01c_43bc
+	tileanim $40, 2, $91c0, TileAnimFrames_01c_43bc
 	db -1
 TileAnimFrames_01c_43bc:
 	dw TileAnimGFX_01c_43c0
@@ -226,10 +202,7 @@ TileAnimFrames_01c_43bc:
 TileAnimGFX_01c_43c0::
 	INCBIN "gfx/tileanim/tileanim_01c_43c0.2bpp"
 TileAnimList_01c_4440:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9380 ; VRAM dest
-	dw TileAnimFrames_01c_4448
+	tileanim $40, 2, $9380, TileAnimFrames_01c_4448
 	db -1
 TileAnimFrames_01c_4448:
 	dw TileAnimGFX_01c_444c
@@ -237,22 +210,10 @@ TileAnimFrames_01c_4448:
 TileAnimGFX_01c_444c::
 	INCBIN "gfx/tileanim/tileanim_01c_444c.2bpp"
 TileAnimList_01c_44cc:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_417e
-	dw $0060 ; bytes/frame
-	db 2 ; frames
-	dw $9360 ; VRAM dest
-	dw TileAnimFrames_01c_44e9
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $93c0 ; VRAM dest
-	dw TileAnimFrames_01c_44ed
-	dw $0060 ; bytes/frame
-	db 2 ; frames
-	dw $9400 ; VRAM dest
-	dw TileAnimFrames_01c_44f1
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_417e
+	tileanim $60, 2, $9360, TileAnimFrames_01c_44e9
+	tileanim $40, 2, $93c0, TileAnimFrames_01c_44ed
+	tileanim $60, 2, $9400, TileAnimFrames_01c_44f1
 	db -1
 TileAnimFrames_01c_44e9:
 	dw TileAnimGFX_01c_44f5
@@ -266,10 +227,7 @@ TileAnimFrames_01c_44f1:
 TileAnimGFX_01c_44f5::
 	INCBIN "gfx/tileanim/tileanim_01c_44f5.2bpp"
 TileAnimList_01c_46f5:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9210 ; VRAM dest
-	dw TileAnimFrames_01c_46fd
+	tileanim $40, 2, $9210, TileAnimFrames_01c_46fd
 	db -1
 TileAnimFrames_01c_46fd:
 	dw TileAnimGFX_01c_4701
@@ -314,18 +272,9 @@ TileAnimMaps_Group2:
 	dw TileAnimList_01c_40e9
 	dw TileAnimList_01c_40e9
 TileAnimList_01c_47c9:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9210 ; VRAM dest
-	dw TileAnimFrames_01c_47df
-	dw $0080 ; bytes/frame
-	db 2 ; frames
-	dw $9520 ; VRAM dest
-	dw TileAnimFrames_01c_47e3
-	dw $0080 ; bytes/frame
-	db 2 ; frames
-	dw $95a0 ; VRAM dest
-	dw TileAnimFrames_01c_47e7
+	tileanim $40, 2, $9210, TileAnimFrames_01c_47df
+	tileanim $80, 2, $9520, TileAnimFrames_01c_47e3
+	tileanim $80, 2, $95a0, TileAnimFrames_01c_47e7
 	db -1
 TileAnimFrames_01c_47df:
 	dw TileAnimGFX_01c_47eb
@@ -339,10 +288,7 @@ TileAnimFrames_01c_47e7:
 TileAnimGFX_01c_47eb::
 	INCBIN "gfx/tileanim/tileanim_01c_47eb.2bpp"
 TileAnimList_01c_4a6b:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90b0 ; VRAM dest
-	dw TileAnimFrames_01c_4a73
+	tileanim $40, 2, $90b0, TileAnimFrames_01c_4a73
 	db -1
 TileAnimFrames_01c_4a73:
 	dw TileAnimGFX_01c_4a77
@@ -350,10 +296,7 @@ TileAnimFrames_01c_4a73:
 TileAnimGFX_01c_4a77::
 	INCBIN "gfx/tileanim/tileanim_01c_4a77.2bpp"
 TileAnimList_01c_4af7:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $91b0 ; VRAM dest
-	dw TileAnimFrames_01c_4aff
+	tileanim $40, 2, $91b0, TileAnimFrames_01c_4aff
 	db -1
 TileAnimFrames_01c_4aff:
 	dw TileAnimGFX_01c_4b03
@@ -361,18 +304,9 @@ TileAnimFrames_01c_4aff:
 TileAnimGFX_01c_4b03::
 	INCBIN "gfx/tileanim/tileanim_01c_4b03.2bpp"
 TileAnimList_01c_4b83:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_4b99
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $94f0 ; VRAM dest
-	dw TileAnimFrames_01c_4b9d
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $93e0 ; VRAM dest
-	dw TileAnimFrames_01c_4ba1
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_4b99
+	tileanim $40, 2, $94f0, TileAnimFrames_01c_4b9d
+	tileanim $40, 2, $93e0, TileAnimFrames_01c_4ba1
 	db -1
 TileAnimFrames_01c_4b99:
 	dw TileAnimGFX_01c_4ba5
@@ -386,14 +320,8 @@ TileAnimFrames_01c_4ba1:
 TileAnimGFX_01c_4ba5::
 	INCBIN "gfx/tileanim/tileanim_01c_4ba5.2bpp"
 TileAnimList_01c_4d25:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_4d34
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9170 ; VRAM dest
-	dw TileAnimFrames_01c_4d38
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_4d34
+	tileanim $40, 2, $9170, TileAnimFrames_01c_4d38
 	db -1
 TileAnimFrames_01c_4d34:
 	dw TileAnimGFX_01c_4d3c
@@ -404,14 +332,8 @@ TileAnimFrames_01c_4d38:
 TileAnimGFX_01c_4d3c::
 	INCBIN "gfx/tileanim/tileanim_01c_4d3c.2bpp"
 TileAnimList_01c_4e3c:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9340 ; VRAM dest
-	dw TileAnimFrames_01c_4e4b
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9110 ; VRAM dest
-	dw TileAnimFrames_01c_4e4f
+	tileanim $40, 2, $9340, TileAnimFrames_01c_4e4b
+	tileanim $40, 2, $9110, TileAnimFrames_01c_4e4f
 	db -1
 TileAnimFrames_01c_4e4b:
 	dw TileAnimGFX_01c_4e53
@@ -459,10 +381,7 @@ TileAnimMaps_Group3:
 	dw TileAnimList_01c_5216
 	dw TileAnimList_01c_5216
 TileAnimList_01c_4f9b:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $8940 ; VRAM dest
-	dw TileAnimFrames_01c_4fa3
+	tileanim $40, 2, $8940, TileAnimFrames_01c_4fa3
 	db -1
 TileAnimFrames_01c_4fa3:
 	dw TileAnimGFX_01c_4fa7
@@ -470,10 +389,7 @@ TileAnimFrames_01c_4fa3:
 TileAnimGFX_01c_4fa7::
 	INCBIN "gfx/tileanim/tileanim_01c_4fa7.2bpp"
 TileAnimList_01c_5027:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $8920 ; VRAM dest
-	dw TileAnimFrames_01c_502f
+	tileanim $40, 2, $8920, TileAnimFrames_01c_502f
 	db -1
 TileAnimFrames_01c_502f:
 	dw TileAnimGFX_01c_5033
@@ -481,10 +397,7 @@ TileAnimFrames_01c_502f:
 TileAnimGFX_01c_5033::
 	INCBIN "gfx/tileanim/tileanim_01c_5033.2bpp"
 TileAnimList_01c_50b3:
-	dw $0020 ; bytes/frame
-	db 2 ; frames
-	dw $9220 ; VRAM dest
-	dw TileAnimFrames_01c_50bb
+	tileanim $20, 2, $9220, TileAnimFrames_01c_50bb
 	db -1
 TileAnimFrames_01c_50bb:
 	dw TileAnimGFX_01c_50bf
@@ -492,14 +405,8 @@ TileAnimFrames_01c_50bb:
 TileAnimGFX_01c_50bf::
 	INCBIN "gfx/tileanim/tileanim_01c_50bf.2bpp"
 TileAnimList_01c_50ff:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_510e
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $93e0 ; VRAM dest
-	dw TileAnimFrames_01c_5112
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_510e
+	tileanim $40, 2, $93e0, TileAnimFrames_01c_5112
 	db -1
 TileAnimFrames_01c_510e:
 	dw TileAnimGFX_01c_5116
@@ -510,10 +417,7 @@ TileAnimFrames_01c_5112:
 TileAnimGFX_01c_5116::
 	INCBIN "gfx/tileanim/tileanim_01c_5116.2bpp"
 TileAnimList_01c_5216:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9630 ; VRAM dest
-	dw TileAnimFrames_01c_521e
+	tileanim $40, 2, $9630, TileAnimFrames_01c_521e
 	db -1
 TileAnimFrames_01c_521e:
 	dw TileAnimGFX_01c_5222
@@ -624,18 +528,9 @@ TileAnimMaps_Group4:
 	dw TileAnimList_01c_50ff
 	dw TileAnimList_01c_40e9
 TileAnimList_01c_536e:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $91d0 ; VRAM dest
-	dw TileAnimFrames_01c_5384
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9390 ; VRAM dest
-	dw TileAnimFrames_01c_5388
-	dw $0020 ; bytes/frame
-	db 2 ; frames
-	dw $94a0 ; VRAM dest
-	dw TileAnimFrames_01c_538c
+	tileanim $40, 2, $91d0, TileAnimFrames_01c_5384
+	tileanim $40, 2, $9390, TileAnimFrames_01c_5388
+	tileanim $20, 2, $94a0, TileAnimFrames_01c_538c
 	db -1
 TileAnimFrames_01c_5384:
 	dw TileAnimGFX_01c_5390
@@ -649,14 +544,8 @@ TileAnimFrames_01c_538c:
 TileAnimGFX_01c_5390::
 	INCBIN "gfx/tileanim/tileanim_01c_5390.2bpp"
 TileAnimList_01c_54d0:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9290 ; VRAM dest
-	dw TileAnimFrames_01c_54df
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $92d0 ; VRAM dest
-	dw TileAnimFrames_01c_54e3
+	tileanim $40, 2, $9290, TileAnimFrames_01c_54df
+	tileanim $40, 2, $92d0, TileAnimFrames_01c_54e3
 	db -1
 TileAnimFrames_01c_54df:
 	dw TileAnimGFX_01c_54e7
@@ -667,10 +556,7 @@ TileAnimFrames_01c_54e3:
 TileAnimGFX_01c_54e7::
 	INCBIN "gfx/tileanim/tileanim_01c_54e7.2bpp"
 TileAnimList_01c_55e7:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $93c0 ; VRAM dest
-	dw TileAnimFrames_01c_55ef
+	tileanim $40, 2, $93c0, TileAnimFrames_01c_55ef
 	db -1
 TileAnimFrames_01c_55ef:
 	dw TileAnimGFX_01c_55f3
@@ -678,10 +564,7 @@ TileAnimFrames_01c_55ef:
 TileAnimGFX_01c_55f3::
 	INCBIN "gfx/tileanim/tileanim_01c_55f3.2bpp"
 TileAnimList_01c_5673:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9220 ; VRAM dest
-	dw TileAnimFrames_01c_567b
+	tileanim $40, 2, $9220, TileAnimFrames_01c_567b
 	db -1
 TileAnimFrames_01c_567b:
 	dw TileAnimGFX_01c_567f
@@ -689,10 +572,7 @@ TileAnimFrames_01c_567b:
 TileAnimGFX_01c_567f::
 	INCBIN "gfx/tileanim/tileanim_01c_567f.2bpp"
 TileAnimList_01c_56ff:
-	dw $0040 ; bytes/frame
-	db 6 ; frames
-	dw $91e0 ; VRAM dest
-	dw TileAnimFrames_01c_5707
+	tileanim $40, 6, $91e0, TileAnimFrames_01c_5707
 	db -1
 TileAnimFrames_01c_5707:
 	dw TileAnimGFX_01c_5713
@@ -704,14 +584,8 @@ TileAnimFrames_01c_5707:
 TileAnimGFX_01c_5713::
 	INCBIN "gfx/tileanim/tileanim_01c_5713.2bpp"
 TileAnimList_01c_5893:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $91b0 ; VRAM dest
-	dw TileAnimFrames_01c_58a2
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $92f0 ; VRAM dest
-	dw TileAnimFrames_01c_58a6
+	tileanim $40, 2, $91b0, TileAnimFrames_01c_58a2
+	tileanim $40, 2, $92f0, TileAnimFrames_01c_58a6
 	db -1
 TileAnimFrames_01c_58a2:
 	dw TileAnimGFX_01c_58aa
@@ -722,22 +596,10 @@ TileAnimFrames_01c_58a6:
 TileAnimGFX_01c_58aa::
 	INCBIN "gfx/tileanim/tileanim_01c_58aa.2bpp"
 TileAnimList_01c_59aa:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $91b0 ; VRAM dest
-	dw TileAnimFrames_01c_58a2
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $92f0 ; VRAM dest
-	dw TileAnimFrames_01c_58a6
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9540 ; VRAM dest
-	dw TileAnimFrames_01c_59c7
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $95f0 ; VRAM dest
-	dw TileAnimFrames_01c_59cb
+	tileanim $40, 2, $91b0, TileAnimFrames_01c_58a2
+	tileanim $40, 2, $92f0, TileAnimFrames_01c_58a6
+	tileanim $40, 2, $9540, TileAnimFrames_01c_59c7
+	tileanim $40, 2, $95f0, TileAnimFrames_01c_59cb
 	db -1
 TileAnimFrames_01c_59c7:
 	dw TileAnimGFX_01c_59cf
@@ -748,10 +610,7 @@ TileAnimFrames_01c_59cb:
 TileAnimGFX_01c_59cf::
 	INCBIN "gfx/tileanim/tileanim_01c_59cf.2bpp"
 TileAnimList_01c_5acf:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9370 ; VRAM dest
-	dw TileAnimFrames_01c_5ad7
+	tileanim $40, 2, $9370, TileAnimFrames_01c_5ad7
 	db -1
 TileAnimFrames_01c_5ad7:
 	dw TileAnimGFX_01c_5adb
@@ -759,18 +618,9 @@ TileAnimFrames_01c_5ad7:
 TileAnimGFX_01c_5adb::
 	INCBIN "gfx/tileanim/tileanim_01c_5adb.2bpp"
 TileAnimList_01c_5b5b:
-	dw $0040 ; bytes/frame
-	db 6 ; frames
-	dw $91e0 ; VRAM dest
-	dw TileAnimFrames_01c_5707
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9230 ; VRAM dest
-	dw TileAnimFrames_01c_5b71
-	dw $0020 ; bytes/frame
-	db 2 ; frames
-	dw $9290 ; VRAM dest
-	dw TileAnimFrames_01c_5b75
+	tileanim $40, 6, $91e0, TileAnimFrames_01c_5707
+	tileanim $40, 2, $9230, TileAnimFrames_01c_5b71
+	tileanim $20, 2, $9290, TileAnimFrames_01c_5b75
 	db -1
 TileAnimFrames_01c_5b71:
 	dw TileAnimGFX_01c_5b79
@@ -781,10 +631,7 @@ TileAnimFrames_01c_5b75:
 TileAnimGFX_01c_5b79::
 	INCBIN "gfx/tileanim/tileanim_01c_5b79.2bpp"
 TileAnimList_01c_5c39:
-	dw $0020 ; bytes/frame
-	db 5 ; frames
-	dw $9110 ; VRAM dest
-	dw TileAnimFrames_01c_5c41
+	tileanim $20, 5, $9110, TileAnimFrames_01c_5c41
 	db -1
 TileAnimFrames_01c_5c41:
 	dw TileAnimGFX_01c_5c4b
@@ -836,10 +683,7 @@ TileAnimMaps_Group5:
 	dw TileAnimList_01c_40e9
 	dw TileAnimList_01c_56ff
 TileAnimList_01c_5d3b:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_5d43
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_5d43
 	db -1
 TileAnimFrames_01c_5d43:
 	dw TileAnimGFX_01c_5d47
@@ -847,14 +691,8 @@ TileAnimFrames_01c_5d43:
 TileAnimGFX_01c_5d47::
 	INCBIN "gfx/tileanim/tileanim_01c_5d47.2bpp"
 TileAnimList_01c_5dc7:
-	dw $0080 ; bytes/frame
-	db 2 ; frames
-	dw $9540 ; VRAM dest
-	dw TileAnimFrames_01c_5dd6
-	dw $0080 ; bytes/frame
-	db 2 ; frames
-	dw $95c0 ; VRAM dest
-	dw TileAnimFrames_01c_5dda
+	tileanim $80, 2, $9540, TileAnimFrames_01c_5dd6
+	tileanim $80, 2, $95c0, TileAnimFrames_01c_5dda
 	db -1
 TileAnimFrames_01c_5dd6:
 	dw TileAnimGFX_01c_5dde
@@ -911,10 +749,7 @@ TileAnimMaps_Group6:
 	dw TileAnimList_01c_47c9
 	dw TileAnimList_01c_40e9
 TileAnimList_01c_6038:
-	dw $0030 ; bytes/frame
-	db 2 ; frames
-	dw $9060 ; VRAM dest
-	dw TileAnimFrames_01c_6040
+	tileanim $30, 2, $9060, TileAnimFrames_01c_6040
 	db -1
 TileAnimFrames_01c_6040:
 	dw TileAnimGFX_01c_6044
@@ -922,10 +757,7 @@ TileAnimFrames_01c_6040:
 TileAnimGFX_01c_6044::
 	INCBIN "gfx/tileanim/tileanim_01c_6044.2bpp"
 TileAnimList_01c_60a4:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $91d0 ; VRAM dest
-	dw TileAnimFrames_01c_60ac
+	tileanim $40, 2, $91d0, TileAnimFrames_01c_60ac
 	db -1
 TileAnimFrames_01c_60ac:
 	dw TileAnimGFX_01c_60b0
@@ -933,10 +765,7 @@ TileAnimFrames_01c_60ac:
 TileAnimGFX_01c_60b0::
 	INCBIN "gfx/tileanim/tileanim_01c_60b0.2bpp"
 TileAnimList_01c_6130:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $9240 ; VRAM dest
-	dw TileAnimFrames_01c_6138
+	tileanim $40, 2, $9240, TileAnimFrames_01c_6138
 	db -1
 TileAnimFrames_01c_6138:
 	dw TileAnimGFX_01c_613c
@@ -944,10 +773,7 @@ TileAnimFrames_01c_6138:
 TileAnimGFX_01c_613c::
 	INCBIN "gfx/tileanim/tileanim_01c_613c.2bpp"
 TileAnimList_01c_61bc:
-	dw $0040 ; bytes/frame
-	db 2 ; frames
-	dw $90d0 ; VRAM dest
-	dw TileAnimFrames_01c_61c4
+	tileanim $40, 2, $90d0, TileAnimFrames_01c_61c4
 	db -1
 TileAnimFrames_01c_61c4:
 	dw TileAnimGFX_01c_61c8
