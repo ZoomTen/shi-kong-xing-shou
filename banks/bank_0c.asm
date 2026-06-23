@@ -173,9 +173,25 @@ INCLUDE "data/text/signposts_6.asm"
 
 BattleUIGFX::
 INCBIN "gfx/misc/battleuigfx.2bpp"
-; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_00c_5f4a:
-	dr $31f4a, $323dc
+	dw OptionGFX_00c_5f5c
+	dw OptionGFX_00c_5fdc
+	dw OptionGFX_00c_605c
+	dw OptionGFX_00c_60dc
+	dw OptionGFX_00c_615c
+	dw OptionGFX_00c_61dc
+	dw OptionGFX_00c_625c
+	dw OptionGFX_00c_62dc
+	dw OptionGFX_00c_635c
+OptionGFX_00c_5f5c: INCBIN "gfx/sprites/optiongfx.2bpp", $0, $80
+OptionGFX_00c_5fdc: INCBIN "gfx/sprites/optiongfx.2bpp", $80, $80
+OptionGFX_00c_605c: INCBIN "gfx/sprites/optiongfx.2bpp", $100, $80
+OptionGFX_00c_60dc: INCBIN "gfx/sprites/optiongfx.2bpp", $180, $80
+OptionGFX_00c_615c: INCBIN "gfx/sprites/optiongfx.2bpp", $200, $80
+OptionGFX_00c_61dc: INCBIN "gfx/sprites/optiongfx.2bpp", $280, $80
+OptionGFX_00c_625c: INCBIN "gfx/sprites/optiongfx.2bpp", $300, $80
+OptionGFX_00c_62dc: INCBIN "gfx/sprites/optiongfx.2bpp", $380, $80
+OptionGFX_00c_635c: INCBIN "gfx/sprites/optiongfx.2bpp", $400, $80
 Pointers_00c_63dc:
 	dw Pointers_00c_63dc_63ee
 	dw Pointers_00c_63dc_64ee
