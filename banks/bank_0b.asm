@@ -4039,7 +4039,7 @@ Script_6e:
 	ld [wEventFlags + $F], a
 	ret
 
-Script_6f: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (Text_01e_6ddb)
+Script_6f: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (text_1e_6ddb)
 	ld a, [wdce8]
 	and a
 	jr z, .asm_5dd6
@@ -4062,9 +4062,9 @@ Script_6f: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (Text_01e_6ddb)
 	ld [hScriptBank], a
 	ld a, TEXTSRC_SCRIPT_MSG
 	ldh [hTextSource], a
-	ld a, BANK(Text_01e_6ddb)
+	ld a, BANK(text_1e_6ddb)
 	ldh [hTextSourceBank4], a
-	ld hl, Text_01e_6ddb
+	ld hl, text_1e_6ddb
 	ld a, l
 	ld [wTextStart], a
 	ld a, h

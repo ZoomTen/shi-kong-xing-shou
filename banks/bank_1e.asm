@@ -2312,23 +2312,306 @@ PointerTable_01e_57ed:
 
 INCLUDE "data/text/bank1e_misc.asm"
 
-; TODO: pointer table - resolve dw targets (cross-bank/wram or mid-block)
 PointerTable_01e_59cc:
-	dr $799cc, $79aa0
+	dw Pointers_01e_59d2
+	dw Pointers_01e_614f
+	dw Pointers_01e_63e5
+Pointers_01e_59d2:
+	dw text_1e_5aa0
+	dw text_1e_5aa1
+	dw text_1e_5ab2
+	dw text_1e_5ac6
+	dw text_1e_5ad7
+	dw text_1e_5aec
+	dw text_1e_5b04
+	dw text_1e_5b1b
+	dw text_1e_5b34
+	dw text_1e_5b4d
+	dw text_1e_5b66
+	dw text_1e_5b7e
+	dw text_1e_5b97
+	dw text_1e_5ba2
+	dw text_1e_5bad
+	dw text_1e_5bb8
+	dw text_1e_5bc3
+	dw text_1e_5bce
+	dw text_1e_5bd7
+	dw text_1e_5bee
+	dw text_1e_5c05
+	dw text_1e_5c1a
+	dw text_1e_5c2c
+	dw text_1e_5c3f
+	dw text_1e_5c4d
+	dw text_1e_5c65
+	dw text_1e_5c7d
+	dw text_1e_5c95
+	dw text_1e_5cad
+	dw text_1e_5cc2
+	dw text_1e_5cdc
+	dw text_1e_5cf6
+	dw text_1e_5d10
+	dw text_1e_5d2a
+	dw text_1e_5d41
+	dw text_1e_5d5c
+	dw text_1e_5d7a
+	dw text_1e_5d95
+	dw text_1e_5db1
+	dw text_1e_5dcc
+	dw text_1e_5de6
+	dw text_1e_5df6
+	dw text_1e_5e08
+	dw text_1e_5e1a
+	dw text_1e_5e2c
+	dw text_1e_5e3c
+	dw text_1e_5e4c
+	dw text_1e_5e5e
+	dw text_1e_5e70
+	dw text_1e_5e83
+	dw text_1e_5e93
+	dw text_1e_5ea4
+	dw text_1e_5eb6
+	dw text_1e_5ec7
+	dw text_1e_5eda
+	dw text_1e_5eea
+	dw text_1e_5efb
+	dw text_1e_5f0c
+	dw text_1e_5f1d
+	dw text_1e_5f2f
+	dw text_1e_5f41
+	dw text_1e_5f53
+	dw text_1e_5f65
+	dw text_1e_5f78
+	dw text_1e_5f8a
+	dw text_1e_5f9a
+	dw text_1e_5fac
+	dw text_1e_5fbd
+	dw text_1e_5fcd
+	dw text_1e_5fdd
+	dw text_1e_5fee
+	dw text_1e_5ffd
+	dw text_1e_600d
+	dw text_1e_601e
+	dw text_1e_6032
+	dw text_1e_6043
+	dw text_1e_6055
+	dw text_1e_6067
+	dw text_1e_6078
+	dw text_1e_6089
+	dw text_1e_609b
+	dw text_1e_60ae
+	dw text_1e_60c2
+	dw text_1e_60d3
+	dw text_1e_60e7
+	dw text_1e_60f8
+	dw text_1e_610a
+	dw text_1e_611c
+	dw text_1e_612e
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
+	dw text_1e_613f
 
 INCLUDE "data/text/bank1e_misc2.asm"
 
-; TODO: text data (Chinese glyphs) - decode via dump_text
-text_01e_buffer2:
-	dr $79c3f, $7a14f
+INCLUDE "data/text/bank1e_5c3f.asm"
 
-; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_01e_614f:
-	dr $7a14f, $7a567
+	dw text_1e_6197 
+	dw text_1e_6198 
+	dw text_1e_61b7 
+	dw text_1e_61d1 
+	dw text_1e_61e8 
+	dw text_1e_61ff 
+	dw text_1e_6216 
+	dw text_1e_622d 
+	dw text_1e_6244 
+	dw text_1e_625b 
+	dw text_1e_6271 
+	dw text_1e_6291 
+	dw text_1e_62b1 
+	dw text_1e_62d1 
+	dw text_1e_62f1 
+	dw text_1e_6311 
+	dw text_1e_6331 
+	dw text_1e_6350 
+	dw text_1e_636e 
+	dw text_1e_638b 
+	dw text_1e_63a8 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5 
+	dw text_1e_63c5
+	INCLUDE "data/text/bank1e_6197.asm"
+Pointers_01e_63e5:
+	dw text_1e_6437 
+	dw text_1e_6438 
+	dw text_1e_6442 
+	dw text_1e_644b 
+	dw text_1e_6458 
+	dw text_1e_645d 
+	dw text_1e_6466 
+	dw text_1e_646c 
+	dw text_1e_6471 
+	dw text_1e_6479 
+	dw text_1e_6480 
+	dw text_1e_6486 
+	dw text_1e_648e 
+	dw text_1e_6497 
+	dw text_1e_649e 
+	dw text_1e_64a6 
+	dw text_1e_64ac 
+	dw text_1e_64b3 
+	dw text_1e_64bb 
+	dw text_1e_64c2 
+	dw text_1e_64cf 
+	dw text_1e_64d4 
+	dw text_1e_64dc 
+	dw text_1e_64e4 
+	dw text_1e_64ec 
+	dw text_1e_64f3 
+	dw text_1e_64fa 
+	dw text_1e_6502 
+	dw text_1e_6509 
+	dw text_1e_650f 
+	dw text_1e_6514 
+	dw text_1e_651a 
+	dw text_1e_651f 
+	dw text_1e_6528 
+	dw text_1e_6531 
+	dw text_1e_6539 
+	dw text_1e_6540 
+	dw text_1e_6549 
+	dw text_1e_6550 
+	dw text_1e_6557 
+	dw text_1e_6560
+	INCLUDE "data/text/bank1e_6437.asm"
 
-; TODO: pointer table -> high-entropy/graphics target data (extract to PNG)
 Pointers_01e_6567:
-	dr $7a567, $7aacd
+	dw text_1e_6635
+	dw text_1e_6636
+	dw text_1e_6646
+	dw text_1e_6659
+	dw text_1e_6669
+	dw text_1e_667e
+	dw text_1e_6689
+	dw text_1e_6694
+	dw text_1e_66a0
+	dw text_1e_66ac
+	dw text_1e_66b8
+	dw text_1e_66c4
+	dw text_1e_66d1
+	dw text_1e_66db
+	dw text_1e_66e5
+	dw text_1e_66ef
+	dw text_1e_66f9
+	dw text_1e_6703
+	dw text_1e_670f
+	dw text_1e_6721
+	dw text_1e_6733
+	dw text_1e_6741
+	dw text_1e_674e
+	dw text_1e_675c
+	dw text_1e_676c
+	dw text_1e_6775
+	dw text_1e_677e
+	dw text_1e_6788
+	dw text_1e_6792
+	dw text_1e_679a
+	dw text_1e_67a4
+	dw text_1e_67ae
+	dw text_1e_67b9
+	dw text_1e_67c4
+	dw text_1e_67ce
+	dw text_1e_67e4
+	dw text_1e_67ff
+	dw text_1e_681a
+	dw text_1e_682f
+	dw text_1e_6837
+	dw text_1e_683d
+	dw text_1e_6847
+	dw text_1e_6855
+	dw text_1e_6863
+	dw text_1e_6871
+	dw text_1e_687d
+	dw text_1e_6889
+	dw text_1e_6897
+	dw text_1e_68a5
+	dw text_1e_68b3
+	dw text_1e_68bf
+	dw text_1e_68cc
+	dw text_1e_68da
+	dw text_1e_68e7
+	dw text_1e_68f5
+	dw text_1e_6901
+	dw text_1e_690e
+	dw text_1e_691a
+	dw text_1e_6925
+	dw text_1e_6933
+	dw text_1e_6941
+	dw text_1e_694f
+	dw text_1e_695d
+	dw text_1e_696b
+	dw text_1e_6979
+	dw text_1e_6985
+	dw text_1e_6993
+	dw text_1e_69a0
+	dw text_1e_69ac
+	dw text_1e_69b8
+	dw text_1e_69c4
+	dw text_1e_69cd
+	dw text_1e_69d9
+	dw text_1e_69e6
+	dw text_1e_69f6
+	dw text_1e_6a03
+	dw text_1e_6a11
+	dw text_1e_6a1f
+	dw text_1e_6a2c
+	dw text_1e_6a39
+	dw text_1e_6a47
+	dw text_1e_6a55
+	dw text_1e_6a63
+	dw text_1e_6a70
+	dw text_1e_6a80
+	dw text_1e_6a8d
+	dw text_1e_6a9b
+	dw text_1e_6aa9
+	dw text_1e_6ab7
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	dw text_1e_6ac3
+	INCLUDE "data/text/bank1e_6635.asm"
 Func_01e_6acd:
 	ld a, [$DCE6]
 	and a
@@ -2537,20 +2820,37 @@ Func_01e_6acd:
 	ld d, $00
 	ret
 unk_01e_6c6e:
-	dr $7AC6E, $7AC97
+	db $01, $01, $01, $01, $01, $01, $00, $01, $01, $01, $01, $01, $01, $01, $00, $01
+	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $00, $01, $01, $01, $01, $01
+	db $01, $01, $00, $01, $01, $01, $01, $01, $ff
 unk_01e_6c97:
-	dr $7AC97, $7ACC0
+	db $00, $00, $01, $00, $00, $01, $00, $00, $00, $01, $00, $00, $01, $00, $01, $00
+	db $00, $01, $00, $00, $00, $00, $00, $00, $01, $00, $00, $01, $00, $00, $00, $00
+	db $01, $00, $00, $00, $00, $00, $00, $00, $ff
 unk_01e_6cc0:
-	dr $7ACC0, $7ACE9
+	db $00, $01, $01, $00, $01, $00, $00, $00, $01, $00, $01, $00, $00, $01, $00, $01
+	db $00, $01, $00, $00, $00, $01, $01, $00, $01, $00, $01, $01, $00, $01, $00, $01
+	db $00, $00, $00, $01, $00, $00, $01, $00, $ff
 unk_01e_6ce9:
-	dr $7ACE9, $7AD12
+	db $00, $01, $01, $00, $00, $01, $01, $00, $01, $00, $01, $00, $01, $01, $01, $00
+	db $01, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $00
+	db $00, $01, $00, $01, $00, $01, $00, $00, $ff
 unk_01e_6d12:
-	dr $7AD12, $7AD3B
+	db $01, $01, $01, $00, $01, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $00
+	db $01, $01, $00, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $01, $00, $01
+	db $00, $01, $00, $01, $01, $00, $01, $00, $ff
 unk_01e_6d3b:
-	dr $7AD3B, $7ADDB
-Text_01e_6ddb:: ; TODO: data loaded as a pointer into wTextStart by Script_6f (bank_0b)
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $7addb, $7ade3
+	db $00, $02, $02, $03, $01, $02, $03, $02, $01, $01, $02, $01, $03, $01, $02, $01
+	db $01, $03, $01, $02, $03, $02, $03, $03, $02, $01, $03, $02, $02, $02, $02, $03
+	db $03, $02, $01, $02, $01, $03, $03, $02, $02, $01, $02, $02, $03, $03, $03, $03
+	db $02, $03, $01, $02, $02, $03, $03, $02, $02, $03, $02, $03, $02, $03, $03, $02
+	db $03, $02, $01, $03, $02, $03, $03, $02, $02, $03, $02, $02, $02, $03, $03, $02
+	db $02, $03, $03, $03, $02, $03, $03, $03, $02, $03, $02, $03, $02, $02, $03, $03
+	db $02, $03, $02, $03, $03, $02, $02, $03, $03, $03, $01, $03, $02, $03, $02, $03
+	db $03, $02, $03, $02, $03, $01, $01, $03, $03, $03, $02, $03, $02, $03, $03, $02
+	db $02, $02, $03, $02, $02, $03, $02, $01, $02, $02, $03, $01, $03, $02, $02, $03
+	db $02, $02, $03, $02, $02, $02, $03, $01, $03, $00, $05, $05, $05, $05, $05, $06
+INCLUDE "data/text/bank1e_6ddb.asm"
 
 LoadItemNameByIndex::
 	ld a, l
@@ -2591,8 +2891,24 @@ LoadItemNameByIndex::
 	ret
 
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+; 16 (category, index) records, consumed by LoadItemNameByIndex / LoadItemNameByMapType
 ItemNameIndex_01e_6e24:
-	dr $7ae24, $7ae44
+	db $00, $01
+	db $00, $06
+	db $01, $02
+	db $00, $0d
+	db $00, $23
+	db $00, $02
+	db $00, $24
+	db $01, $10
+	db $00, $57
+	db $00, $05
+	db $00, $0b
+	db $00, $4b
+	db $00, $21
+	db $00, $0a
+	db $01, $11
+	db $00, $10
 
 INCLUDE "data/text/bank1e_misc4.asm"
 
@@ -2601,7 +2917,7 @@ LoadShopItemName::
 	ld [wdcd3], a
 	ld a, h
 	ld [wdcd3 + 1], a
-	ld a, [wdcb6]
+	ld a, [wItemNameCategory]
 	cp 7
 	jr z, asm_01e_6e89
 	ld [wd1f4], a
@@ -2613,7 +2929,7 @@ LoadShopItemName::
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	ld a, [wdcb7]
+	ld a, [wItemNameIndex]
 	ld [wd9f3], a
 	ld l, a
 	ld h, 0
@@ -2629,7 +2945,7 @@ LoadShopItemName::
 	ret
 
 asm_01e_6e89:
-	ld a, [wdcb7]
+	ld a, [wItemNameIndex]
 	ld de, PriceOptions
 	ld l, a
 	ld h, 0
@@ -2639,7 +2955,7 @@ asm_01e_6e89:
 	ld [wd9cd], a
 	ld a, [hli]
 	ld [wd9cc], a
-	ld a, [wdcb7]
+	ld a, [wItemNameIndex]
 	ld de, PriceTexts
 	ld l, a
 	ld h, 0
