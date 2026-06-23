@@ -1488,48 +1488,35 @@ AnimFrame_Pointers:
 	dw RhythmAnimFrames_767b
 	dw RhythmAnimFrames_777b
 	dw RhythmAnimFrames_787b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 RhythmAnimFrames:
-	dr $176c7b, $176d7b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes.2bpp"
 RhythmAnimFrames_6d7b:
-	dr $176d7b, $176e7b
-; TODO: high-entropy - likely graphics, extract to PNG
+	INCBIN "gfx/misc/rhythmanimframes_6d7b.2bpp"
 RhythmAnimFrames_6e7b:
-	dr $176e7b, $176f7b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_6e7b.2bpp"
 RhythmAnimFrames_6f7b:
-	dr $176f7b, $17707b
-; TODO: high-entropy - likely graphics, extract to PNG
+	INCBIN "gfx/misc/rhythmanimframes_6f7b.2bpp"
 RhythmAnimFrames_707b:
-	dr $17707b, $17717b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_707b.2bpp"
 RhythmAnimFrames_717b:
-	dr $17717b, $17727b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_717b.2bpp"
 RhythmAnimFrames_727b:
-	dr $17727b, $17737b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_727b.2bpp"
 RhythmAnimFrames_737b:
-	dr $17737b, $17747b
-; TODO: high-entropy - likely graphics, extract to PNG
+	INCBIN "gfx/misc/rhythmanimframes_737b.2bpp"
 RhythmAnimFrames_747b:
-	dr $17747b, $17757b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_747b.2bpp"
 RhythmAnimFrames_757b:
-	dr $17757b, $17767b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_757b.2bpp"
 RhythmAnimFrames_767b:
-	dr $17767b, $17777b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_767b.2bpp"
 RhythmAnimFrames_777b:
-	dr $17777b, $17787b
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
+	INCBIN "gfx/misc/rhythmanimframes_777b.2bpp"
 RhythmAnimFrames_787b:
-	dr $17787b, $17797b
+	INCBIN "gfx/misc/rhythmanimframes_787b.2bpp"
 ; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
 RhythmTileChunks:
-	dr $17797b, $1779bb
+	INCBIN "gfx/misc/rhythmtilechunks.2bpp"
 ; TODO: padding between palettes, confirm
 unk_5d_79BB_pad:
 	ds 5
