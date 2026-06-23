@@ -389,10 +389,6 @@ Attrmap_055_46ba:
 INCBIN "gfx/attrmaps/attrmap_055_46ba.bin"
 GFX_055_48fa:
 INCBIN "gfx/misc/gfx_055_48fa.bin"
-
-; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_055_4bad:
-	dr $154bad, $154e6a
 GFX_055_4e6a:
 INCBIN "gfx/misc/gfx_055_4e6a.2bpp"
 

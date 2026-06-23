@@ -459,9 +459,11 @@ Func_024_4844:
 	ld [hli], a
 	ld [hli], a
 	ret
-; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
+; Orphan dead data (unreferenced; not code/text/palette).
 unk_024_4893:
-	dr $90893, $908bd
+	db $08, $03, $e0, $03, $00, $90, $9a, $4e, $03, $b0, $00, $e0, $96, $1a, $49, $0b
+	db $29, $61, $0c, $69, $61, $02, $00, $00, $6f, $5a, $9b, $57, $10, $0d, $06, $0e
+	db $e0, $93, $0f, $62, $6e, $1c, $50, $12, $09, $1a
 Func_024_48bd:
 .asm_48bd
 	call Func_024_40b8

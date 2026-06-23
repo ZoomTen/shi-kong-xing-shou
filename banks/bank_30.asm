@@ -2865,37 +2865,46 @@ Pointers_030_565c:
 	dw .image_58b6
 
 .image_566a
-	dw $00c0
+	dw .image_566a_e - .image_566a_d
+.image_566a_d
 	INCBIN "gfx/battle/image_30_566c.interleave.w16.2bpp"
+.image_566a_e
 
 .image_572c
-	dw $0080
+	dw .image_572c_e - .image_572c_d
+.image_572c_d
 	INCBIN "gfx/battle/image_30_572e.interleave.w16.2bpp"
+.image_572c_e
 
 .image_57ae
-	dw $0040
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $c17b0, $c17f0
+	dw .image_57ae_e - .image_57ae_d
+.image_57ae_d
+	INCBIN "gfx/misc/gfx_30_57b0.2bpp"
+.image_57ae_e
 
 .image_57f0
-	dw $0040
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $c17f2, $c1832
+	dw .image_57f0_e - .image_57f0_d
+.image_57f0_d
+	INCBIN "gfx/misc/gfx_30_57f2.2bpp"
+.image_57f0_e
 
 .image_5832
-	dw $0040
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-	dr $c1834, $c1874
+	dw .image_5832_e - .image_5832_d
+.image_5832_d
+	INCBIN "gfx/misc/gfx_30_5834.2bpp"
+.image_5832_e
 
 .image_5874
-	dw $0040
-; TODO: high-entropy - likely graphics, extract to PNG
-	dr $c1876, $c18b6
+	dw .image_5874_e - .image_5874_d
+.image_5874_d
+	INCBIN "gfx/misc/gfx_30_5876.2bpp"
+.image_5874_e
 
 .image_58b6
-	dw $0040
-; TODO: high-entropy - likely graphics, extract to PNG
-	dr $c18b8, $c18f8
+	dw .image_58b6_e - .image_58b6_d
+.image_58b6_d
+	INCBIN "gfx/misc/gfx_30_58b8.2bpp"
+.image_58b6_e
 
 Pointers_030_58f8:
 	dw SubImage_030_5906
@@ -2947,9 +2956,19 @@ SubImage_030_5b52:
 .d
 	INCBIN "gfx/misc/gfx_30_5b52.2bpp"
 .e
-; TODO: unk_ - battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); orphan (no direct reference; computed pointer or dead)
-unk_030_5bb4:
-	dr $c1bb4, $c1bcc
+Palettes_030_5bb4: ; 3 palettes (orphan)
+	RGB 28, 7, 28
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 31, 31, 31
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
 Func_030_5bcc:
 	ld a, [wd9a0]
 	and a

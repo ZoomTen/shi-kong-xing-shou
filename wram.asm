@@ -321,7 +321,7 @@ wObjectEventPointer:: ds 2
 wTextboxPointer:: ds 2
 wd0d1:: ds 2
 wd0d3:: ds 1
-wd0d4:: ds 1 ; step counter
+wBattleCounter:: ds 1 ; step counter
 wd0d5:: ds 1
 wd0d6:: ds 1
 

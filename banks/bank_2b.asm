@@ -1666,7 +1666,7 @@ BattleEnd_Jump_2:
 	ldh [hSCYHigh], a
 	xor a
 	ldh [hFade], a
-	ld [wd0d4], a
+	ld [wBattleCounter], a
 	ld [wBattleScriptByte], a
 	ldh [hBattleJumptableIndex], a
 	call ClearBGMap0

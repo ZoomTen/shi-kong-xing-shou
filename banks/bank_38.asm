@@ -365,9 +365,39 @@ SpriteComposition_Map3D_47dd:
 	db $18, $30, $04, $10, $10, $10, $32, $04, $10, $18, $08, $34, $04, $10, $20, $00
 	db $36, $04, $20, $00, $20, $38, $04, $20, $08, $18, $3a, $04, $20, $10, $10, $3c
 	db $04, $20, $18, $08, $3e, $04, $20, $20, $00, $40, $04, $ff
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteComposition_Map3E:
-	dr $e0829, $e0944
+	dw SpriteComposition_Map3E_483b
+	dw SpriteComposition_Map3E_483b
+	dw SpriteComposition_Map3E_4864
+	dw SpriteComposition_Map3E_489c
+	dw SpriteComposition_Map3E_48bb
+	dw SpriteComposition_Map3E_48e9
+	dw SpriteComposition_Map3F_494c
+	dw SpriteComposition_Map3F_4975
+	dw SpriteComposition_Map3F_499e
+SpriteComposition_Map3E_483b:
+	db $08, $08, $20, $00, $04, $08, $10, $18, $02, $04, $08, $18, $10, $04, $04, $08
+	db $20, $08, $06, $04, $18, $08, $20, $08, $04, $18, $10, $18, $0a, $04, $18, $18
+	db $10, $0c, $04, $18, $20, $08, $0e, $04, $ff
+SpriteComposition_Map3E_4864:
+	db $00, $08, $20, $10, $04, $00, $10, $18, $12, $04, $00, $18, $10, $14, $04, $00
+	db $20, $08, $16, $04, $10, $08, $20, $18, $04, $10, $10, $18, $1a, $04, $10, $18
+	db $10, $1c, $04, $10, $20, $08, $1e, $04, $20, $08, $20, $20, $04, $20, $10, $18
+	db $22, $04, $20, $18, $10, $24, $04, $ff
+SpriteComposition_Map3E_489c:
+	db $00, $10, $18, $26, $04, $00, $18, $10, $28, $04, $10, $10, $18, $2a, $04, $10
+	db $18, $10, $2c, $04, $20, $10, $18, $2e, $04, $20, $18, $10, $30, $04, $ff
+SpriteComposition_Map3E_48bb:
+	db $00, $10, $18, $32, $04, $00, $18, $10, $34, $04, $00, $20, $08, $36, $04, $10
+	db $10, $18, $38, $04, $10, $18, $10, $3a, $04, $10, $20, $08, $3c, $04, $20, $10
+	db $18, $3e, $04, $20, $18, $10, $40, $04, $20, $20, $08, $42, $04, $ff
+SpriteComposition_Map3E_48e9:
+	db $00, $00, $28, $44, $04, $00, $08, $20, $46, $04, $00, $10, $18, $48, $04, $00
+	db $18, $10, $4a, $04, $00, $20, $08, $4c, $04, $00, $28, $00, $4e, $04, $10, $00
+	db $28, $50, $04, $10, $08, $20, $52, $04, $10, $10, $18, $54, $04, $10, $18, $10
+	db $56, $04, $10, $20, $08, $58, $04, $10, $28, $00, $5a, $04, $20, $00, $28, $5c
+	db $04, $20, $08, $20, $5e, $04, $20, $10, $18, $60, $04, $20, $18, $10, $62, $04
+	db $20, $20, $08, $64, $04, $20, $28, $00, $66, $04, $ff
 SpriteComposition_Map3F:
 	dw SpriteComposition_Map3F_494c
 	dw SpriteComposition_Map3F_494c
@@ -583,9 +613,14 @@ SpriteComposition_Map46_4f59:
 	db $00, $20, $08, $18, $04, $00, $28, $00, $1a, $04, $ff
 SpriteComposition_Map46_4f64:
 	db $00, $28, $00, $1c, $04, $ff
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteComposition_Map47:
-	dr $e0f6a, $e0f7f
+	dw SpriteComposition_Map47_4f74
+	dw SpriteComposition_Map3F_494c
+	dw SpriteComposition_Map3F_4975
+	dw SpriteComposition_Map3F_499e
+	dw SpriteComposition_Map47_4f74
+SpriteComposition_Map47_4f74:
+	db $00, $00, $08, $00, $04, $00, $08, $00, $02, $04, $ff
 SpriteComposition_Map48:
 	dw SpriteComposition_Map48_4f87
 	dw SpriteComposition_Map48_4f87
@@ -1171,9 +1206,35 @@ SpriteComposition_Map60_62ad:
 SpriteComposition_Map60_62c7:
 	db $00, $00, $10, $26, $05, $00, $08, $08, $28, $05, $10, $08, $08, $2a, $05, $10
 	db $10, $00, $2c, $05, $ff
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 SpriteComposition_Map61:
-	dr $e22dc, $e23fb
+	dw SpriteComposition_Map61_62ea
+	dw SpriteComposition_Map3F_494c
+	dw SpriteComposition_Map3F_4975
+	dw SpriteComposition_Map3F_499e
+	dw SpriteComposition_Map61_62ea
+	dw SpriteComposition_Map61_6345
+	dw SpriteComposition_Map61_63a0
+SpriteComposition_Map61_62ea:
+	db $00, $00, $28, $00, $04, $00, $08, $20, $02, $04, $00, $10, $18, $04, $04, $00
+	db $18, $10, $06, $04, $00, $20, $08, $08, $04, $00, $28, $00, $0a, $04, $10, $00
+	db $28, $0c, $04, $10, $08, $20, $0e, $04, $10, $10, $18, $10, $04, $10, $18, $10
+	db $12, $04, $10, $20, $08, $14, $04, $10, $28, $00, $16, $04, $20, $00, $28, $18
+	db $04, $20, $08, $20, $1a, $04, $20, $10, $18, $1c, $04, $20, $18, $10, $1e, $04
+	db $20, $20, $08, $20, $04, $20, $28, $00, $22, $04, $ff
+SpriteComposition_Map61_6345:
+	db $00, $00, $28, $24, $04, $00, $08, $20, $26, $04, $00, $10, $18, $28, $04, $00
+	db $18, $10, $2a, $04, $00, $20, $08, $2c, $04, $00, $28, $00, $2e, $04, $10, $00
+	db $28, $30, $04, $10, $08, $20, $32, $04, $10, $10, $18, $34, $04, $10, $18, $10
+	db $36, $04, $10, $20, $08, $38, $04, $10, $28, $00, $3a, $04, $20, $00, $28, $3c
+	db $04, $20, $08, $20, $3e, $04, $20, $10, $18, $40, $04, $20, $18, $10, $42, $04
+	db $20, $20, $08, $44, $04, $20, $28, $00, $46, $04, $ff
+SpriteComposition_Map61_63a0:
+	db $00, $00, $28, $48, $04, $00, $08, $20, $4a, $04, $00, $10, $18, $4c, $04, $00
+	db $18, $10, $4e, $04, $00, $20, $08, $50, $04, $00, $28, $00, $52, $04, $10, $00
+	db $28, $54, $04, $10, $08, $20, $56, $04, $10, $10, $18, $58, $04, $10, $18, $10
+	db $5a, $04, $10, $20, $08, $5c, $04, $10, $28, $00, $5e, $04, $20, $00, $28, $60
+	db $04, $20, $08, $20, $62, $04, $20, $10, $18, $64, $04, $20, $18, $10, $66, $04
+	db $20, $20, $08, $68, $04, $20, $28, $00, $6a, $04, $ff
 SpriteComposition_Map62:
 	dw SpriteComposition_Map62_6403
 	dw SpriteComposition_Map62_6403

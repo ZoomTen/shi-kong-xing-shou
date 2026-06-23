@@ -20,44 +20,62 @@ Blocks_064_4137::
 Layout_064_43ef::
 	db MAPTYPE_G5_02
 	INCBIN "data/maps/layouts/Layout_064_43ef.bin"
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44a7::
-	dr $1904a7, $1904af
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44af::
-	dr $1904af, $1904b7
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44b7::
-	dr $1904b7, $1904d1
+; tile-index data (NOT 2bpp gfx: 8-byte non-tile-aligned); unreferenced
+TileIndex_064_44a7::
+	db $78, $47, $85, $86, $87, $88, $89, $98
+; tile-index data (NOT 2bpp gfx: 8-byte non-tile-aligned); unreferenced
+TileIndex_064_44af::
+	db $99, $9a, $9b, $9c, $0f, $79, $08, $7a
+; tile-index data (NOT 2bpp gfx: 26-byte non-tile-aligned); unreferenced
+TileIndex_064_44b7::
+	db $7b, $8a, $8b, $15, $43, $8c, $1f, $9d, $9e, $9f, $a0, $7c, $7d, $20, $7e, $20
+	db $8d, $8e, $15, $15, $8f, $24, $a1, $a2, $20, $a3
 Metatiles_064_44d1::
 	INCBIN "data/maps/metatiles/Metatiles_064_44d1.bin"
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44d4::
-	dr $1904d4, $1904dc
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44dc::
-	dr $1904dc, $1904eb
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44eb::
-	dr $1904eb, $1904fa
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_44fa::
-	dr $1904fa, $190510
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_4510::
-	dr $190510, $190526
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_4526::
-	dr $190526, $190535
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_4535::
-	dr $190535, $190544
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_4544::
-	dr $190544, $190553
-; TODO: 2bpp graphics - extract to PNG (rgbgfx)
-Tileset_064_4553::
-	dr $190553, $190649
+; tile-index data (NOT 2bpp gfx: 8-byte non-tile-aligned); unreferenced
+TileIndex_064_44d4::
+	db $04, $05, $07, $06, $08, $09, $0b, $0a
+; tile-index data (NOT 2bpp gfx: 15-byte non-tile-aligned); unreferenced
+TileIndex_064_44dc::
+	db $0c, $0d, $0f, $0e, $10, $11, $13, $12, $14, $11, $16, $15, $17, $18, $1a
+; tile-index data (NOT 2bpp gfx: 15-byte non-tile-aligned); unreferenced
+TileIndex_064_44eb::
+	db $19, $1b, $1c, $1a, $1d, $1b, $1c, $1e, $1d, $1f, $18, $1e, $19, $1f, $20
+; tile-index data (NOT 2bpp gfx: 22-byte non-tile-aligned); unreferenced
+TileIndex_064_44fa::
+	db $21, $15, $22, $23, $13, $24, $22, $23, $16, $25, $25, $25, $25, $24, $17, $20
+	db $25, $12, $25, $25, $21, $25
+; tile-index data (NOT 2bpp gfx: 22-byte non-tile-aligned); unreferenced
+TileIndex_064_4510::
+	db $14, $26, $28, $27, $29, $2a, $2c, $2b, $2d, $25, $25, $25, $2e, $25, $25, $2f
+	db $25, $11, $16, $12, $25, $23
+; tile-index data (NOT 2bpp gfx: 15-byte non-tile-aligned); unreferenced
+TileIndex_064_4526::
+	db $13, $25, $14, $30, $32, $31, $33, $34, $36, $35, $37, $25, $15, $25, $25
+; tile-index data (NOT 2bpp gfx: 15-byte non-tile-aligned); unreferenced
+TileIndex_064_4535::
+	db $22, $25, $25, $25, $20, $25, $15, $17, $25, $21, $24, $22, $38, $3a, $39
+; tile-index data (NOT 2bpp gfx: 15-byte non-tile-aligned); unreferenced
+TileIndex_064_4544::
+	db $3b, $3c, $3e, $3d, $3f, $30, $41, $40, $42, $43, $41, $44, $42, $43, $41
+; tile-index data (NOT 2bpp gfx: 246-byte non-tile-aligned); unreferenced
+TileIndex_064_4553::
+	db $45, $42, $25, $25, $25, $25, $3c, $47, $46, $48, $49, $4b, $4a, $4a, $4c, $4e
+	db $4d, $4f, $50, $52, $51, $53, $54, $56, $55, $57, $25, $25, $16, $17, $25, $12
+	db $25, $14, $30, $41, $44, $42, $34, $36, $49, $4b, $30, $41, $49, $4b, $3c, $47
+	db $4a, $48, $25, $15, $24, $17, $23, $16, $2f, $25, $34, $36, $44, $37, $30, $3c
+	db $40, $46, $47, $41, $48, $42, $30, $32, $4a, $33, $43, $3a, $44, $3b, $30, $3a
+	db $44, $3b, $3c, $3e, $4a, $3f, $23, $16, $24, $17, $3c, $3e, $49, $4b, $34, $36
+	db $4a, $37, $3c, $47, $49, $4b, $43, $47, $44, $48, $38, $3a, $44, $3b, $23, $16
+	db $25, $2e, $30, $41, $30, $32, $30, $30, $40, $31, $32, $41, $33, $42, $43, $30
+	db $44, $31, $32, $3c, $33, $46, $47, $30, $48, $31, $36, $41, $4a, $42, $3c, $47
+	db $44, $48, $43, $36, $45, $37, $38, $3a, $4a, $3b, $30, $41, $4a, $42, $43, $36
+	db $44, $37, $30, $32, $44, $33, $43, $3e, $44, $3f, $11, $16, $12, $2e, $22, $25
+	db $24, $17, $22, $21, $25, $14, $22, $25, $2f, $25, $25, $15, $25, $2e, $43, $3e
+	db $45, $3f, $43, $32, $44, $33, $43, $3a, $45, $3b, $25, $25, $2f, $2e, $43, $32
+	db $45, $33, $20, $21, $12, $14, $22, $21, $24, $22, $05, $07, $06, $08, $05, $07
+	db $06, $08, $05, $07, $06, $08, $05, $07, $06, $08, $05, $07, $06, $08, $05, $07
+	db $06, $08, $05, $07, $06, $08
 Blocks_064_4649::
 	INCBIN "data/maps/blocks/Blocks_064_4649.bin"
 AttrMap_064_48ed::
