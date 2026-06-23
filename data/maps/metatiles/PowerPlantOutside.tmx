@@ -8,7 +8,7 @@
 		<image source="../../../gfx/tilesets/image_17_680e.png"/>
 	</tileset>
 	<tileset firstgid="129" tilewidth="8" tileheight="8">
-		<image source="../../../gfx/tilesets/image_17_6cae.png"/>
+		<image source="../../../gfx/tilesets/gfx_017_6cae.png"/>
 	</tileset>
 	<layer id="1" name="metatiles" width="2" height="96">
 		<data encoding="csv">
