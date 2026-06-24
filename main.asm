@@ -275,6 +275,8 @@ SECTION "bank66", ROMX
 INCLUDE "banks/bank_66.asm"
 
 SECTION "bank67", ROMX
+INCLUDE "engine/movie/beach.asm"
+INCLUDE "engine/movie/floating_island.asm"
 INCLUDE "banks/bank_67.asm"
 
 SECTION "bank69", ROMX
@@ -299,7 +301,8 @@ SECTION "bank70", ROMX
 INCLUDE "banks/bank_70.asm"
 
 SECTION "bank71", ROMX
-INCLUDE "banks/bank_71.asm"
+INCLUDE "engine/movie/credits.asm"
+INCLUDE "engine/movie/the_end.asm"
 
 SECTION "bank74", ROMX
 INCLUDE "banks/bank_74.asm"

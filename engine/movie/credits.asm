@@ -101,8 +101,25 @@ Credits::
 	ld [wdcfb], a
 	ret
 CreditsMonPicList:
-	db MON_117, MON_108, MON_091, MON_099, MON_145, MON_144, MON_126, MON_027, MON_041, MON_012, MON_006, MON_073, MON_095, MON_054, MON_114, MON_104
-	db MON_133, MON_141, MON_081
+	db MON_117
+	db MON_108
+	db MON_091
+	db MON_099
+	db MON_145
+	db MON_144
+	db MON_126
+	db MON_027
+	db MON_041
+	db MON_012
+	db MON_006
+	db MON_073
+	db MON_095
+	db MON_054
+	db MON_114
+	db MON_104
+	db MON_133
+	db MON_141
+	db MON_081
 Func_71_40fb:
 	ld a, [wdcf4]
 	inc a
@@ -273,8 +290,7 @@ CreditsScreenLayouts:
 	credits_screen_layout 5, 6, $9b00, CreditsScreen6Tilemap, CreditsScreen6Attrmap
 	credits_screen_layout 9, 6, $9980, CreditsScreen7Tilemap, CreditsScreen7Attrmap
 	credits_screen_layout 5, 6, $9800, CreditsScreen8Tilemap, CreditsScreen8Attrmap
-CreditsScreenGfx:
-INCBIN "gfx/misc/creditsscreengfx.2bpp"
+CreditsScreenGfx: INCBIN "gfx/misc/creditsscreengfx.2bpp"
 Func_71_42a7:
 	ld hl, wc000
 	ld bc, $0028
@@ -302,10 +318,8 @@ Func_71_42bf:
 	or b
 	jr nz, .asm_42c5
 	ret
-CreditsBgTilemap1:
-INCBIN "gfx/tilemaps/creditsbgtilemap1.tilemap"
-CreditsBgTilemap2:
-INCBIN "gfx/tilemaps/creditsbgtilemap2.tilemap"
+CreditsBgTilemap1: INCBIN "gfx/tilemaps/creditsbgtilemap1.tilemap"
+CreditsBgTilemap2: INCBIN "gfx/tilemaps/creditsbgtilemap2.tilemap"
 CreditsPalette:
 	RGB 31, 31, 31
 	RGB 22, 31, 17
@@ -339,162 +353,28 @@ CreditsPalette:
 	RGB 31, 20, 0
 	RGB 17, 24, 31
 	RGB 0, 0, 0
-CreditsFontGFX:
-INCBIN "gfx/misc/creditsfontgfx.2bpp"
-CreditsScreen1Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen1attrmap.bin"
-CreditsScreen1Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen1tilemap.tilemap"
-CreditsScreen1Gfx:
-INCBIN "gfx/misc/creditsscreen1gfx.2bpp"
-CreditsScreen2Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen2attrmap.bin"
-CreditsScreen2Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen2tilemap.tilemap"
-CreditsScreen2Gfx:
-INCBIN "gfx/misc/creditsscreen2gfx.2bpp"
-CreditsScreen3Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen3attrmap.bin"
-CreditsScreen3Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen3tilemap.tilemap"
-CreditsScreen3Gfx:
-INCBIN "gfx/misc/creditsscreen3gfx.2bpp"
-CreditsScreen4Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen4attrmap.bin"
-CreditsScreen4Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen4tilemap.tilemap"
-CreditsScreen4Gfx:
-INCBIN "gfx/misc/creditsscreen4gfx.2bpp"
-CreditsScreen5Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen5attrmap.bin"
-CreditsScreen5Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen5tilemap.tilemap"
-CreditsScreen5Gfx:
-INCBIN "gfx/misc/creditsscreen5gfx.2bpp"
-CreditsScreen6Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen6attrmap.bin"
-CreditsScreen6Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen6tilemap.tilemap"
-CreditsScreen6Gfx:
-INCBIN "gfx/misc/creditsscreen6gfx.2bpp"
-CreditsScreen7Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen7attrmap.bin"
-CreditsScreen7Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen7tilemap.tilemap"
-CreditsScreen7Gfx:
-INCBIN "gfx/misc/creditsscreen7gfx.2bpp"
-CreditsScreen8Attrmap:
-INCBIN "gfx/attrmaps/creditsscreen8attrmap.bin"
-CreditsScreen8Tilemap:
-INCBIN "gfx/tilemaps/creditsscreen8tilemap.tilemap"
-CreditsScreen8Gfx:
-INCBIN "gfx/misc/creditsscreen8gfx.2bpp"
-
-TheEnd::
-	xor a
-	ldh [hFade], a
-	ldh [hSCX], a
-	ldh [hSCXHigh], a
-	ldh [hSCY], a
-	ldh [hSCYHigh], a
-	ldh [rSCY], a
-	ldh [rSCX], a
-	ldh [rWY], a
-	ldh [rWX], a
-	ld [wdcde + 1], a
-	ld hl, $9800
-	ld de, TheEndTilemap
-	ld bc, $1412
-	ld a, $12
-	ldh [hVRAMCopyHeight], a
-	ld a, $14
-	ldh [hVRAMCopyWidth], a
-	call PlaceTilemap_Bank0
-	ld hl, $9800
-	ld de, TheEndAttrmap
-	ld bc, $1412
-	ld a, $12
-	ldh [hVRAMCopyHeight], a
-	ld a, $14
-	ldh [hVRAMCopyWidth], a
-	call PlaceAttrmap
-	ld hl, TheEndPalette
-	ld de, wPaletteBuffer
-	ld bc, $0040
-	call CopyBytes3
-	ld hl, TheEndGfx
-	ld de, $9000
-	ld bc, $0400
-	call CopyBytesVRAM
-	call Func_71_42bf
-	call Func_71_42a7
-	ld a, $C7
-	ldh [rLCDC], a
-	ld hl, wPaletteBuffer
-	xor a
-	ldh [hPaletteFadeState], a
-	ldh [hFadeFrameCounter], a
-	call FadeInPalette
-.asm_5ab4
-	call DelayFrame
-	ldh a, [hFadeFrameCounter]
-	inc a
-	ldh [hFadeFrameCounter], a
-	ld a, [wTargetMode]
-	cp $16
-	jr nz, .asm_5ab4
-	ldh a, [hFadeFrameCounter]
-	and $07
-	jr nz, .asm_5ab4
-	ld a, [wdcde + 1]
-	inc a
-	ld [wdcde + 1], a
-	cp $20
-	jr nz, .asm_5ab4
-	ld a, GAMEMODE_WORLD_MAP
-	ld [wTargetMode], a
-	jp JumpToGameMode
-TheEndAttrmap:
-INCBIN "gfx/attrmaps/theendattrmap.bin"
-TheEndTilemap:
-INCBIN "gfx/tilemaps/theendtilemap.tilemap"
-TheEndPalette:
-	RGB 31, 31, 31
-	RGB 22, 31, 17
-	RGB 10, 0, 20
-	RGB 0, 0, 0
-	RGB 30, 30, 30
-	RGB 31, 29, 0
-	RGB 25, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 0, 23, 31
-	RGB 0, 0, 31
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_071_5dec:
-	ds 8
-TheEndGfx:
-INCBIN "gfx/misc/theendgfx.bin"
-
-
+CreditsFontGFX: INCBIN "gfx/misc/creditsfontgfx.2bpp"
+CreditsScreen1Attrmap: INCBIN "gfx/attrmaps/creditsscreen1attrmap.bin"
+CreditsScreen1Tilemap: INCBIN "gfx/tilemaps/creditsscreen1tilemap.tilemap"
+CreditsScreen1Gfx: INCBIN "gfx/misc/creditsscreen1gfx.2bpp"
+CreditsScreen2Attrmap: INCBIN "gfx/attrmaps/creditsscreen2attrmap.bin"
+CreditsScreen2Tilemap: INCBIN "gfx/tilemaps/creditsscreen2tilemap.tilemap"
+CreditsScreen2Gfx: INCBIN "gfx/misc/creditsscreen2gfx.2bpp"
+CreditsScreen3Attrmap: INCBIN "gfx/attrmaps/creditsscreen3attrmap.bin"
+CreditsScreen3Tilemap: INCBIN "gfx/tilemaps/creditsscreen3tilemap.tilemap"
+CreditsScreen3Gfx: INCBIN "gfx/misc/creditsscreen3gfx.2bpp"
+CreditsScreen4Attrmap: INCBIN "gfx/attrmaps/creditsscreen4attrmap.bin"
+CreditsScreen4Tilemap: INCBIN "gfx/tilemaps/creditsscreen4tilemap.tilemap"
+CreditsScreen4Gfx: INCBIN "gfx/misc/creditsscreen4gfx.2bpp"
+CreditsScreen5Attrmap: INCBIN "gfx/attrmaps/creditsscreen5attrmap.bin"
+CreditsScreen5Tilemap: INCBIN "gfx/tilemaps/creditsscreen5tilemap.tilemap"
+CreditsScreen5Gfx: INCBIN "gfx/misc/creditsscreen5gfx.2bpp"
+CreditsScreen6Attrmap: INCBIN "gfx/attrmaps/creditsscreen6attrmap.bin"
+CreditsScreen6Tilemap: INCBIN "gfx/tilemaps/creditsscreen6tilemap.tilemap"
+CreditsScreen6Gfx: INCBIN "gfx/misc/creditsscreen6gfx.2bpp"
+CreditsScreen7Attrmap: INCBIN "gfx/attrmaps/creditsscreen7attrmap.bin"
+CreditsScreen7Tilemap: INCBIN "gfx/tilemaps/creditsscreen7tilemap.tilemap"
+CreditsScreen7Gfx: INCBIN "gfx/misc/creditsscreen7gfx.2bpp"
+CreditsScreen8Attrmap: INCBIN "gfx/attrmaps/creditsscreen8attrmap.bin"
+CreditsScreen8Tilemap: INCBIN "gfx/tilemaps/creditsscreen8tilemap.tilemap"
+CreditsScreen8Gfx: INCBIN "gfx/misc/creditsscreen8gfx.2bpp"
