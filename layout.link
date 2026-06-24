@@ -73,6 +73,7 @@ ROMX $1a
 	"bank1a"
 ROMX $1b
 	"bank1b"
+	"Gale Cutscene GFX"
 ROMX $1c
 	"bank1c"
 ROMX $1d
@@ -184,6 +185,7 @@ ROMX $4d
 	"bank4d"
 ROMX $4e
 	"bank4e"
+	"Airport Cutscene GFX"
 ROMX $4f
 	"bank4f"
 ROMX $50

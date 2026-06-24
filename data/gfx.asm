@@ -81,6 +81,7 @@ Intro_Text7_GFX:: INCBIN "gfx/intro/text7.2bpp"
 Intro_Text8_GFX:: INCBIN "gfx/intro/text8.2bpp"
 
 SECTION "Meteor Cutscene GFX", ROMX
+
 MeteorCutscene_BlackPalette:: INCBIN "gfx/meteor/cutscene_black.pal"
 MeteorCutscene_TextPalette:: INCBIN "gfx/meteor/cutscene_text.pal"
 MeteorCutscene_Text1_Tilemap:: INCBIN "gfx/meteor/text_1.tilemap"
@@ -106,6 +107,102 @@ MeteorCutscene_StormGFX:: INCBIN "gfx/meteor/storm.2bpp"
 MeteorCutscene_MeteorGFX:: INCBIN "gfx/meteor/meteor.2bpp"
 MeteorCutscene_StormTilemap_2:: INCBIN "gfx/meteor/storm_bg_2.tilemap"
 MeteorCutscene_StormTilemap_3:: INCBIN "gfx/meteor/storm_bg_3.tilemap"
+
+SECTION "Gale Cutscene GFX", ROMX
+
+GaleCutscene_Attrmap::
+	ds $168 ; all palette 0
+	ds $118 ; padding
+GaleCutscene_Tilemap0:: INCBIN "gfx/gale/galecutscene_tilemap0.tilemap"
+GaleCutscene_Tilemap1:: INCBIN "gfx/gale/galecutscene_tilemap1.tilemap"
+GaleCutscene_Tilemap2:: INCBIN "gfx/gale/galecutscene_tilemap2.tilemap"
+GaleCutscene_Tilemap3:: INCBIN "gfx/gale/galecutscene_tilemap3.tilemap"
+GaleCutscene_BlackPalette:: INCLUDE "gfx/gale/black.pal"
+GaleCutscene_Palette:: INCLUDE "gfx/gale/palette.pal"
+GaleCutscene_GFX:: INCBIN "gfx/gale/galecutscene_gfx.2bpp"
+
+SECTION "Airport Cutscene GFX", ROMX
+
+AirportCutscene1_Palette::
+	RGB 31, 31, 31
+	RGB 22, 27, 31
+	RGB 8, 17, 31
+	RGB 0, 0, 25
+	RGB 31, 31, 31
+	RGB 25, 25, 25
+	RGB 16, 16, 16
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+AirportCutscene1_ObjPalette::
+	RGB 25, 25, 25
+	RGB 0, 0, 1
+	RGB 31, 18, 18
+	RGB 31, 31, 31
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+AirportCutscene1_Tilemap:: INCBIN "gfx/tilemaps/airportcutscene1_tilemap.tilemap"
+AirportCutscene1_Attrmap:: INCBIN "gfx/attrmaps/airportcutscene1_attrmap.bin"
+AirportCutscene1_GFX:: INCBIN "gfx/misc/airportcutscene1_gfx.2bpp"
+AirportCutscene1_ObjGFX:: INCBIN "gfx/misc/airportcutscene1_objgfx.bin"
+
+
 
 ; character sets
 

@@ -83,7 +83,7 @@ SECTION "bank1a", ROMX
 INCLUDE "banks/bank_1a.asm"
 
 SECTION "bank1b", ROMX
-INCLUDE "banks/bank_1b.asm"
+INCLUDE "engine/movie/gale.asm"
 
 SECTION "bank1c", ROMX
 INCLUDE "banks/bank_1c.asm"
@@ -242,7 +242,7 @@ SECTION "bank5c", ROMX
 INCLUDE "banks/bank_5c.asm"
 
 SECTION "bank5d", ROMX
-INCLUDE "banks/bank_5d.asm"
+INCLUDE "engine/game/rhythm.asm"
 
 SECTION "bank5e", ROMX
 INCLUDE "banks/bank_5e.asm"
