@@ -254,7 +254,8 @@ SECTION "bank60", ROMX
 INCLUDE "banks/bank_60.asm"
 
 SECTION "bank61", ROMX
-INCLUDE "banks/bank_61.asm"
+INCLUDE "engine/movie/meteor_2.asm"
+INCLUDE "engine/movie/underwater.asm"
 
 SECTION "bank62", ROMX
 INCLUDE "banks/bank_62.asm"
