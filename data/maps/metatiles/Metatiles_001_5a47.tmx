@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <map height="54" orientation="orthogonal" renderorder="right-down" tileheight="8" tilewidth="8" width="2">
 	<!--Add tilesets as much as needed-->
-	<tileset firstgid="1" tileheight="8" tilewidth="8">
+	<tileset firstgid="1" tilewidth="8" tileheight="8">
 		<image source="../../../gfx/tilesets/image_16_6cf0.png"/>
 	</tileset>
 	<layer height="54" id="1" name="metatiles" width="2">

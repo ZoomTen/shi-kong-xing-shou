@@ -1,8 +1,17 @@
 <?xml version="1.0" ?>
 <map height="152" orientation="orthogonal" renderorder="right-down" tileheight="8" tilewidth="8" width="2">
 	<!--Add tilesets as much as needed-->
-	<tileset firstgid="1" tileheight="8" tilewidth="8">
+	<tileset firstgid="1" tilewidth="8" tileheight="8">
 		<image source="../../../gfx/tilesets/image_17_5c1e.png"/>
+	</tileset>
+	<tileset firstgid="83" tilewidth="8" tileheight="8">
+		<image source="../../../gfx/tilesets/gfx_054_7880.png"/>
+	</tileset>
+	<tileset firstgid="112" tilewidth="8" tileheight="8">
+		<image source="../../../gfx/tilesets/gfx_054_7a40.png"/>
+	</tileset>
+	<tileset firstgid="129" tilewidth="8" tileheight="8">
+		<image source="../../../gfx/tilesets/gfx_054_7b50.png"/>
 	</tileset>
 	<layer height="152" id="1" name="metatiles" width="2">
 		<data encoding="csv">
