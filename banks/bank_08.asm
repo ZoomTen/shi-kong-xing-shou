@@ -543,9 +543,6 @@ Script_008_450c:
 	townmusicanim
 	end
 
-INCLUDE "data/text/bank08_misc2.asm"
-INCLUDE "data/text/ballots_house_intro.asm"
-INCLUDE "data/text/bank08_misc.asm"
 
 MeteorCutscene_ApplyTextPals:
 	ld hl, MeteorCutscene_TextPalette
