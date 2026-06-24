@@ -776,9 +776,9 @@ Script_18:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 	ld a, [wScriptPos]
-	ld [wSavedScriptPos], a
+	ld [wSavedTextPos], a
 	ld a, [wScriptPos + 1]
-	ld [wSavedScriptPos + 1], a
+	ld [wSavedTextPos + 1], a
 	ld a, [wMovementPointer]
 	ld [wScriptPos], a
 	ld a, [wMovementPointer + 1]
@@ -834,9 +834,9 @@ asm_00b_4734:
 	ret
 
 asm_00b_473a:
-	ld a, [wSavedScriptPos]
+	ld a, [wSavedTextPos]
 	ld [wScriptPos], a
-	ld a, [wSavedScriptPos + 1]
+	ld a, [wSavedTextPos + 1]
 	ld [wScriptPos + 1], a
 	ld a, [wdcad]
 	ldh [hScriptBank], a
@@ -2617,9 +2617,9 @@ Script_4e:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 	ld a, [wScriptPos]
-	ld [wSavedScriptPos], a
+	ld [wSavedTextPos], a
 	ld a, [wScriptPos + 1]
-	ld [wSavedScriptPos + 1], a
+	ld [wSavedTextPos + 1], a
 	ld a, [wMovementPointer]
 	ld [wScriptPos], a
 	ld a, [wMovementPointer + 1]
@@ -2815,9 +2815,9 @@ Script_54:
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
 	ld a, [wScriptPos]
-	ld [wSavedScriptPos], a
+	ld [wSavedTextPos], a
 	ld a, [wScriptPos + 1]
-	ld [wSavedScriptPos + 1], a
+	ld [wSavedTextPos + 1], a
 	ld a, [wMovementPointer]
 	ld [wScriptPos], a
 	ld a, [wMovementPointer + 1]
@@ -2854,9 +2854,9 @@ Script_55:
 	ld [wScriptByte], a
 	ret
 .asm_54f0
-	ld a, [wSavedScriptPos]
+	ld a, [wSavedTextPos]
 	ld [wScriptPos], a
-	ld a, [wSavedScriptPos + 1]
+	ld a, [wSavedTextPos + 1]
 	ld [wScriptPos + 1], a
 	ld a, [wdcad]
 	ldh [hScriptBank], a

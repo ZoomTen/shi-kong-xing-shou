@@ -71,7 +71,7 @@ wcaf0:: ds 8 * 8
 
 wScreenRowBuffer:: ds 8 * SCREEN_WIDTH
 
-wcbd0:: ds $20
+wExtraSprites:: ds $20
 
 wCharacterTilemapPos:: ds 1
 wTextLine:: ds 1
@@ -369,7 +369,7 @@ wd1c0:: ds 1
 
 wd1e2:: ds 1
 wSignpostNumber:: ds 1
-wd1e4:: ds 1
+wAnimFrameCounter:: ds 1
 
 wTileAnimFrameCounters:: ds 1
 	ds 11
@@ -520,7 +520,7 @@ wd76e:: ds $5d
 
 wd7cb:: ds $9f ; mon dex
 
-wd86a:: ds 7
+wMenuTextBuffer:: ds 7
 wd871:: ds 1
 wd872:: ds 1
 wd873:: ds 1
@@ -637,8 +637,7 @@ wd9d8:: ds 1
 wd9d9:: ds 1
 wd9da:: ds 2
 wd9dc:: ds 1
-wPlayerChar:: ; player character index (wPlayerSpriteID = *2)
-wd9dd:: ds 1 ; character/party-buffer index (-> wPlayerSpriteID = *2; indexes Func_00b_625c party buffers)
+wPlayerChar:: ds 1
 
 wWX:: ds 1
 wWY:: ds 1
@@ -759,10 +758,9 @@ wdccf:: ds 1
 
 wdcd0:: ds 1
 wCharacterTileSource:: ds 2
-wSavedScriptPos:: ; saved wScriptPos during scr_move/scr_54 movement scripts
-wdcd3:: ds 2
+wSavedTextPos:: ds 2 ; can be from script as well
 wdcd5:: ds 1
-wdcd6:: ds 2
+wAnimFramePtr:: ds 2
 
 wTextFaceID:: ds 1
 wdcd9:: ds 1
@@ -812,7 +810,7 @@ wdcfe:: ds 1
 wdcff:: ds 1
 
 wdd00:: ds $18
-wdd18:: ds $38
+wCharVariantFlags:: ds $38
 
 wdd50:: ds 1
 	ds $5f

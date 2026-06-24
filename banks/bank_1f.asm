@@ -29,7 +29,7 @@ _LoadTextFaceGFX::
 Func_01f_4028:
 ; 2bpp
 	ld de, unk_01f_4335
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -70,7 +70,7 @@ Func_01f_405d:
 	cp 3
 	jr nz, .asm_4072
 
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_4072
@@ -127,7 +127,7 @@ Func_01f_40b7:
 	cp 3
 	jr nz, .asm_40ca
 
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_40ca

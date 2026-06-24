@@ -49,7 +49,7 @@ Func_20_4048:
 	ld a, [wSelectedOption]
 	cp 3
 	jr nz, Func_020_405b
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, Func_020_405b
@@ -79,7 +79,7 @@ Func_020_405b:
 
 Func_20_407b:
 	ld de, FacePicExtrasPointers
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -97,7 +97,7 @@ Func_20_407b:
 	ld c, l
 	ld b, h
 	ld de, FacePaletteExtrasPointers
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld l, a
 	ld h, 0
 	add hl, hl

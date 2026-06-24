@@ -22,9 +22,9 @@ MenuText_Done::
 	xor a
 	ld [wd9d6], a
 	pop hl
-	ld a, [wdcd3]
+	ld a, [wSavedTextPos]
 	ld l, a
-	ld a, [wdcd3 + 1]
+	ld a, [wSavedTextPos + 1]
 	ld h, a
 	ldh a, [hFFD4]
 	rst Bankswitch
@@ -145,7 +145,7 @@ MenuText_e8::
 	jp Menu_CheckCharacter
 
 MenuText_e9::
-	ld hl, wd86a
+	ld hl, wMenuTextBuffer
 	ld a, $b6
 	ld [wMenuTextX], a
 	ld a, $c2
@@ -160,9 +160,9 @@ MenuText_e9::
 MenuText_e7::
 	pop hl
 	ld a, l
-	ld [wdcd3], a
+	ld [wSavedTextPos], a
 	ld a, h
-	ld [wdcd3 + 1], a
+	ld [wSavedTextPos + 1], a
 	ld a, [_BANKNUM]
 	ld [hFFD4], a
 	ld a, BANK(MonNamePointers)

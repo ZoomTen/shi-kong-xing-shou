@@ -8,17 +8,17 @@ Func_024_4000:
 	ld [wcd24], a
 	jr .asm_4037
 .asm_4011
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	cp $03
 	jr nz, .asm_4024
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_4024
 	ld a, $08
 	jr .asm_4027
 .asm_4024
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 .asm_4027
 	ld de, unk_024_4041
 	ld l, a
@@ -31,7 +31,7 @@ Func_024_4000:
 	ld [wcd24], a
 .asm_4037
 	call InitPlayerAnim
-	farcall Func_004_42ac
+	farcall LoadPlayerPartnerObjPals
 	ret
 
 ; TODO: unk_ - indexed table (index hli)
@@ -1118,7 +1118,7 @@ Func_024_4b04:
 	ld a, SFX_11
 	call PlaySound
 	ld a, [wSelectedOption]
-	ld [wd9dd], a
+	ld [wPlayerChar], a
 	call Func_024_4000
 	ld a, $02
 	ld [wBattleScriptState], a

@@ -2,23 +2,23 @@ _BuildVirtualOAM::
 	ld hl, wVirtualOAM
 	ld bc, 40
 	ld de, 4
-.asm_4009
+.fill
 	ld a, $a0
 	ld [hl], a
 	add hl, de
 	dec c
-	jr nz, .asm_4009
+	jr nz, .fill
 
 	xor a
 	ld [wd1fb], a
-	call Func_004_4088
-	call Func_004_4170
-	call Func_004_41e6
-	call Func_004_40cb
-	call Func_004_426d
+	call BuildEffectSpriteOAM
+	call BuildPlayerOAM
+	call BuildFollowerOAM
+	call BuildNPCOAM
+	call BuildExtraSpritesOAM
 	ret
 
-Func_004_4024::
+_BuildVirtualOAMNoExtra::
 	ld hl, wVirtualOAM
 	ld bc, $0028
 	ld de, $0004
@@ -30,13 +30,13 @@ Func_004_4024::
 	jr nz, .asm_402d
 	xor a
 	ld [wd1fb], a
-	call Func_004_4088
-	call Func_004_4170
-	call Func_004_41e6
-	call Func_004_40cb
+	call BuildEffectSpriteOAM
+	call BuildPlayerOAM
+	call BuildFollowerOAM
+	call BuildNPCOAM
 	ret
 
-_UpdateMenuCursorOAM::
+_UpdateTextboxCursorOAM::
 	ld hl, wVirtualOAMSprite32
 	ld bc, $0004
 	ld de, $0004
@@ -90,7 +90,7 @@ _UpdateMenuCursorOAM::
 .asm_4087
 	ret
 
-Func_004_4088:
+BuildEffectSpriteOAM:
 	ld hl, wd1a0
 .asm_408b
 	push hl
@@ -143,7 +143,7 @@ Func_004_4088:
 	ret nc
 	jp .asm_408b
 
-Func_004_40cb:
+BuildNPCOAM:
 	ld hl, wNPCObjects
 .asm_40ce
 	push hl
@@ -260,7 +260,7 @@ Func_004_40cb:
 	ret nc
 	jp .asm_40ce
 
-Func_004_4170:
+BuildPlayerOAM:
 	ld hl, Pointers_004_47ab
 	ld de, wPlayerObject
 	ld a, [de]
@@ -349,7 +349,7 @@ Func_004_4170:
 	ld [wd1fb], a
 	ret
 
-Func_004_41e6:
+BuildFollowerOAM:
 	ld hl, Pointers_004_47ab
 	ld de, wFollowerObject
 	ld a, [de]
@@ -451,12 +451,12 @@ Func_004_41e6:
 	ld [wd1fb], a
 	ret
 
-Func_004_426d:
+BuildExtraSpritesOAM:
 	ldh a, [hConsoleType]
 	cp $11
 	ret nz
 	ld hl, Pointers_004_47ab
-	ld de, wcbd0
+	ld de, wExtraSprites
 	ld a, [de]
 	inc de
 	ld c, a
@@ -503,7 +503,7 @@ Func_004_426d:
 	ld [wd1fb], a
 	ret
 
-Func_004_42ac:
+LoadPlayerPartnerObjPals:
 	ld de, Pointers_004_4337
 	ld a, [wPlayerSpriteID]
 	ld l, a
@@ -553,11 +553,11 @@ Func_004_42ac:
 	ld c, $80
 	call LoadPalettes_OCPD
 	ret
-Func_004_4309:
+StageSelectedCharObjPal:
 	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_431c
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_431c
@@ -1471,14 +1471,14 @@ BallotGFX_Pointers:
 	dw BallotHoldPDA_GFX
 	dw BallotHoldPDA_GFX
 	dw BallotHoldPDA_GFX
-	dw $ffff
+	dw -1
 
 .hands_up
 	dw BallotHandsUp_GFX
 	dw BallotHandsUp_GFX
 	dw BallotHandsUp_GFX
 	dw BallotHandsUp_GFX
-	dw $ffff
+	dw -1
 
 BallotWalk_Down1_GFX: INCBIN "gfx/sprites/ballot.2bpp", $0, $40
 
@@ -1848,7 +1848,7 @@ HelenGFX_Pointers:
 .eyes_closed
 	dw HelenEyesClosedFacingDown_GFX
 	dw HelenEyesClosedFacingDown_GFX
-	dw $ffff
+	dw -1
 
 HelenWalking_Down1_GFX: INCBIN "gfx/sprites/helen.2bpp", $0, $40
 
@@ -2263,21 +2263,21 @@ SayaGFX_Pointers:
 	dw SayaWalk_Down2_GFX
 	dw SayaWalk_Down1_GFX
 	dw SayaWalk_Down3_GFX
-	dw $ffff
+	dw -1
 
 .facing_up
 	dw SayaWalk_Up1_GFX
 	dw SayaWalk_Up2_GFX
 	dw SayaWalk_Up1_GFX
 	dw SayaWalk_Up3_GFX
-	dw $ffff
+	dw -1
 
 .facing_sideways
 	dw SayaWalk_Sideways1_GFX
 	dw SayaWalk_Sideways2_GFX
 	dw SayaWalk_Sideways1_GFX
 	dw SayaWalk_Sideways3_GFX
-	dw $ffff
+	dw -1
 
 SayaWalk_Down1_GFX: INCBIN "gfx/sprites/saya.2bpp", $0, $40
 
@@ -2308,21 +2308,21 @@ BoyGFX_Pointers:
 	dw BoyWalk_Down2_GFX
 	dw BoyWalk_Down1_GFX
 	dw BoyWalk_Down3_GFX
-	dw $ffff
+	dw -1
 
 .facing_up
 	dw BoyWalk_Up1_GFX
 	dw BoyWalk_Up2_GFX
 	dw BoyWalk_Up1_GFX
 	dw BoyWalk_Up3_GFX
-	dw $ffff
+	dw -1
 
 .facing_sideways
 	dw BoyWalk_Sideways1_GFX
 	dw BoyWalk_Sideways2_GFX
 	dw BoyWalk_Sideways1_GFX
 	dw BoyWalk_Sideways3_GFX
-	dw $ffff
+	dw -1
 
 BoyWalk_Down1_GFX: INCBIN "gfx/sprites/boy.2bpp", $0, $40
 
@@ -2353,21 +2353,21 @@ GirlGFX_Pointers:
 	dw GirlWalk_Down2_GFX
 	dw GirlWalk_Down1_GFX
 	dw GirlWalk_Down3_GFX
-	dw $ffff
+	dw -1
 
 .facing_up
 	dw GirlWalk_Up1_GFX
 	dw GirlWalk_Up2_GFX
 	dw GirlWalk_Up1_GFX
 	dw GirlWalk_Up3_GFX
-	dw $ffff
+	dw -1
 
 .facing_sideways
 	dw GirlWalk_Sideways1_GFX
 	dw GirlWalk_Sideways2_GFX
 	dw GirlWalk_Sideways1_GFX
 	dw GirlWalk_Sideways3_GFX
-	dw $ffff
+	dw -1
 
 GirlWalk_Down1_GFX: INCBIN "gfx/sprites/girl.2bpp", $0, $40
 

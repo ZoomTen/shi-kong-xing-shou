@@ -304,9 +304,9 @@ INCLUDE "data/text/bank1e_misc3.asm"
 
 LoadItemNameByMapType::
 	ld a, l
-	ld [wdcd3], a
+	ld [wSavedTextPos], a
 	ld a, h
-	ld [wdcd3 + 1], a
+	ld [wSavedTextPos + 1], a
 	ld de, Pointers_01e_4d29
 	ld a, [wMapType]
 	ld l, a
@@ -2859,9 +2859,9 @@ INCLUDE "data/text/bank1e_6ddb.asm"
 
 LoadItemNameByIndex::
 	ld a, l
-	ld [wdcd3], a
+	ld [wSavedTextPos], a
 	ld a, h
-	ld [wdcd3 + 1], a
+	ld [wSavedTextPos + 1], a
 	ld de, ItemNameIndex_01e_6e24
 	ld a, [hFFB8]
 	ld l, a
@@ -2919,9 +2919,9 @@ INCLUDE "data/text/bank1e_misc4.asm"
 
 LoadShopItemName::
 	ld a, l
-	ld [wdcd3], a
+	ld [wSavedTextPos], a
 	ld a, h
-	ld [wdcd3 + 1], a
+	ld [wSavedTextPos + 1], a
 	ld a, [wItemNameCategory]
 	cp 7
 	jr z, asm_01e_6e89

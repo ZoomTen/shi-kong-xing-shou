@@ -66,7 +66,7 @@ LoadSaveData:
 	ld hl, sa651
 	ld bc, $0001
 	call CopyBytes3
-	ld de, wd9dd
+	ld de, wPlayerChar
 	ld hl, sa652
 	ld bc, $0001
 	call CopyBytes3

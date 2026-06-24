@@ -2,7 +2,7 @@ Func_00c_4000:
 	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_4013
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_4013
@@ -27,7 +27,7 @@ Func_00c_402b:
 	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_403e
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_403e

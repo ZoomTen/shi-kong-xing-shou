@@ -1,6 +1,6 @@
 Func_02c_4000:
 	ld de, CharBacksprites
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -49,7 +49,7 @@ Func_02c_403e:
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	ret
-; Character battle backsprites, indexed by wd9dd (party/character index, see Func_02c_4000).
+; Character battle backsprites, indexed by wPlayerChar (party/character index, see Func_02c_4000).
 ; Per-character 4-color palette; pointer table -> palette records.
 CharBackspritePals:
 	dw CharBackspritePal_0

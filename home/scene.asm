@@ -202,7 +202,7 @@ LoadBattlePalettes::
 	jr nz, .copy1
 
 	ld de, Pointers_0a8b
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld l, a
 	ld h, 0
 	add hl, hl

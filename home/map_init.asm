@@ -568,5 +568,5 @@ RunMapLoadHook::
 	ret
 
 .asm_19c3
-	farcall Func_00d_4000
+	farcall LoadEmotesAndPromptGFX
 	ret

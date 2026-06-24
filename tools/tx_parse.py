@@ -25,6 +25,7 @@ tokens = [
 	('db',			'TX_DB'),
 	('signpost',		'TX_SIGN'),
 	('done',			'TX_END'),
+	('choice',			'TX_CHOICE'),
 	('return',			'TX_RETURN'),
 	('\d+',			 'DECIMAL_NUMBER'),
 	('\$[0-9a-fA-F]+',  'HEXADECIMAL_NUMBER'),
@@ -156,6 +157,9 @@ for l in t:
 		
 		elif comm == 'TX_END':
 			print(f'\tdone')
+		
+		elif comm == 'TX_CHOICE':
+			print(f'\tchoice')
 		
 		elif comm == 'TX_ITEMNAME':
 			print(f'\titemname')

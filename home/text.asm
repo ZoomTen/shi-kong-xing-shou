@@ -1,37 +1,31 @@
 _PrintText::
 	ldh a, [hTextSource]
 	cp TEXTSRC_SCRIPT
-	jr z, .type1
+	jr z, .script
 	cp TEXTSRC_SIGNPOST
-	jr z, .type2
+	jr z, .signpost
 	cp TEXTSRC_ITEM_OBTAINED
-	jr z, .type3
+	jr z, .item1
 	cp TEXTSRC_SCRIPT_MSG
-	jr z, .type4
+	jr z, .msg
 	cp TEXTSRC_ITEM_FOUND
-	jr z, .type5
+	jr z, .item2
 	ret
-
-.type1
+.script
 	ldh a, [hScriptBank]
 	jr .select_bank
-
-.type2
+.signpost
 	ldh a, [hTextSourceBank2]
 	jr .select_bank
-
-.type3
+.item1
 	ldh a, [hTextSourceBank3]
 	jr .select_bank
-
-.type4
+.msg
 	ldh a, [hTextSourceBank4]
 	jr .select_bank
-
-.type5
+.item2
 	ld a, [wFoundItemTextBank]
 	jr .select_bank
-
 .select_bank
 	rst Bankswitch
 	push hl
@@ -40,7 +34,6 @@ CheckCharacter::
 	pop hl
 	ld a, [hli]
 	push hl
-
 	cp $f0
 	jp nc, .SwitchCharacterSet
 	cp $e0
@@ -51,9 +44,9 @@ CheckCharacter::
 	call GetCharacterSetBase
 	jp CheckCharacter
 
-GetCharacterSetBase::
 ; Determine which bank and address to get the character set from
 ; $f0 = 40:4000, $f1 = $40:6000, $f2 = $41:4000, etc.
+GetCharacterSetBase::
 	and $0f
 	push af
 	srl a
@@ -61,15 +54,13 @@ GetCharacterSetBase::
 	ld [hTargetBank], a
 	pop af
 	bit 0, a
-	jr nz, .upper_characterset
-; lower character set
+	jr nz, .upper_charset
+; lower charset
 	ld a, HIGH(GFX_040_4000)
-	jr .store_address
-
-.upper_characterset
+	jr .store
+.upper_charset
 	ld a, HIGH(GFX_040_6000)
-
-.store_address
+.store
 	ld [wCharacterTileSource + 1], a
 	xor a
 	ld [wCharacterTileSource], a
@@ -306,12 +297,12 @@ Text_Init::
 	push hl
 	ld a, [_BANKNUM]
 	push af
-	ld a, BANK(Func_00a_4000)
+	ld a, BANK(OpenDialogTextbox)
 	rst Bankswitch
-	call Func_00a_4000 ; load face picture
+	call OpenDialogTextbox ; load face picture
 	call DelayFrame
 	call LoadTextName
-	call Func_00a_40b3
+	call AnimateTextboxOpen
 	call BuildVirtualOAM
 	call DelayFrame
 	pop af
@@ -433,15 +424,15 @@ Text_e1::
 	ld a, [_BANKNUM]
 	push af
 ; Switch
-	ld a, BANK(Func_00a_4063)
+	ld a, BANK(OpenPlaceNameTextbox)
 	rst Bankswitch
-	call Func_00a_4063 ; load place name
+	call OpenPlaceNameTextbox ; load place name
 	call DelayFrame
-	call Func_00a_40b3
+	call AnimateTextboxOpen
 ; Switch
-	ld a, BANK(Func_004_4024)
+	ld a, BANK(_BuildVirtualOAMNoExtra)
 	rst Bankswitch
-	call Func_004_4024
+	call _BuildVirtualOAMNoExtra
 ; Restore old bank
 	pop af
 	rst Bankswitch
@@ -474,11 +465,11 @@ Text_End::
 Text_EndCont::
 	ld a, [_BANKNUM]
 	push af
-	ld a, BANK(Func_00a_4178)
+	ld a, BANK(CloseTextbox)
 	rst Bankswitch
 	call ClearExtraSprites
 	call BuildVirtualOAM
-	call Func_00a_4178
+	call CloseTextbox
 	call DelayFrame
 	pop af
 	rst Bankswitch
@@ -489,20 +480,21 @@ Text_EndCont::
 	ret
 
 ClearExtraSprites::
-	ld hl, wcbd0
+	ld hl, wExtraSprites
 	ld c, $20
 	xor a
-.asm_1c91
+.clear
 	ld [hli], a
 	dec c
-	jr nz, .asm_1c91
+	jr nz, .clear
 	ret
 
 Text_ItemName::
 	call ParseMapEventsAtPlayer
 	pop hl
-	call LoadItemNameByMapType ; bank 1e set by SetMapLayoutPatchForItem
+; bank 1e set by SetMapLayoutPatchForItem
 ; got item name
+	call LoadItemNameByMapType
 	ld a, [wTextStart]
 	ld l, a
 	ld a, [wTextStart + 1]
@@ -512,9 +504,9 @@ Text_ItemName::
 
 Text_e4::
 	pop hl
-	ld a, [wdcd3]
+	ld a, [wSavedTextPos]
 	ld l, a
-	ld a, [wdcd3 + 1]
+	ld a, [wSavedTextPos + 1]
 	ld h, a
 	push hl
 	jp CheckCharacter
@@ -530,21 +522,7 @@ PrintTwoOptionMenu::
 	push hl
 	jp CheckCharacter
 
-String_1cc5::
-	text "  ", 0
-	text "是", 1
-	text "  ", 0
-	text "否", 1
-	choice
-
-String_1cd0::
-	text "  ", 0
-	text "回", 1
-	text "春", 3
-	text " ", 0
-	text "靈", 0
-	text "動", 2
-	choice
+INCLUDE "data/text/std_menu_options.asm"
 
 InterpretTwoOptionMenu::
 	call .Main
@@ -554,7 +532,7 @@ InterpretTwoOptionMenu::
 	ld a, [wEventFlags + 3]
 	res 3, a
 	ld [wEventFlags + 3], a
-	call InitMenuCursor
+	call InitTextboxCursor
 	ld hl, wcde0
 	inc hl
 	ld [hl], $40
@@ -564,8 +542,8 @@ InterpretTwoOptionMenu::
 
 .input_loop:
 ; Flash gameboy icon
-	call AnimateMenuCursor
-	call UpdateMenuCursorOAM
+	call AnimateTextboxCursor
+	call UpdateTextboxCursorOAM
 
 ; Check left
 	call DelayFrame
@@ -612,17 +590,17 @@ InterpretTwoOptionMenu::
 	jr .input_loop
 
 .choose_option
-	call ResetMenuCursorTimer
-	call UpdateMenuCursorOAM
+	call ResetTextboxCursorTimer
+	call UpdateTextboxCursorOAM
 	ret
 
 Text_e7::
 	pop hl
 	ld a, l
-	ld [wdcd3], a
+	ld [wSavedTextPos], a
 	ld a, h
-	ld [wdcd3 + 1], a
-	ld hl, .unk_1d59
+	ld [wSavedTextPos + 1], a
+	ld hl, Std_BuySellCancel_String
 	ld a, l
 	ld [wTextStart], a
 	ld a, h
@@ -630,14 +608,7 @@ Text_e7::
 	push hl
 	jp CheckCharacter
 
-.unk_1d59:
-	db $f0, $00
-	db $f2, $4d
-	db $f0, $00
-	db $f2, $51
-	db $f0, $00
-	db $f1, $49, $4a
-	db $e8
+INCLUDE "data/text/std_buy_sell_cancel.asm"
 
 Text_e8::
 ; Buy sell cancel menu
@@ -652,7 +623,7 @@ _Text_e8::
 	res 0, a
 	res 1, a
 	ld [wEventFlags + 4], a
-	call InitMenuCursor
+	call InitTextboxCursor
 	ld hl, wcde0
 	inc hl
 	ld [hl], $30
@@ -661,8 +632,8 @@ _Text_e8::
 	ldh [hJoypadPressed], a
 
 .CheckJoypad:
-	call AnimateMenuCursor
-	call UpdateMenuCursorOAM
+	call AnimateTextboxCursor
+	call UpdateTextboxCursorOAM
 	call DelayFrame
 ; check left
 	ldh a, [hJoypadPressed]
@@ -746,8 +717,8 @@ ENDR
 	jr .CheckJoypad ; waste
 
 .exit
-	call ResetMenuCursorTimer
-	call UpdateMenuCursorOAM
+	call ResetTextboxCursorTimer
+	call UpdateTextboxCursorOAM
 	ret
 
 Text_e9_Stub::
@@ -984,7 +955,7 @@ Text_Cont::
 	call WaitTextboxInput
 	jp Text_NextLine
 
-InitMenuCursor::
+InitTextboxCursor::
 	ld hl, wcde0
 	ld [hl], $3f
 	ld a, [hBattleJumptableIndex]
@@ -1005,11 +976,11 @@ InitMenuCursor::
 	ld [hl], $03
 	ret
 
-UpdateMenuCursorOAM::
-	homecall _UpdateMenuCursorOAM
+UpdateTextboxCursorOAM::
+	homecall _UpdateTextboxCursorOAM
 	ret
 
-AnimateMenuCursor::
+AnimateTextboxCursor::
 ; Timer between flash
 	ld bc, wcde0
 	ld hl, 3
@@ -1032,7 +1003,7 @@ AnimateMenuCursor::
 	ld [hl], 4
 	ret
 
-ResetMenuCursorTimer::
+ResetTextboxCursorTimer::
 ; Inefficient
 	ld hl, wcde0
 	inc hl
@@ -1040,17 +1011,17 @@ ResetMenuCursorTimer::
 	ld [hl], 0
 	ret
 
-WaitTextboxInput::
 ; Flashing gameboy icon on textbox stuff
-	call InitMenuCursor
+WaitTextboxInput::
+	call InitTextboxCursor
 	xor a
 	ldh [hVBlank], a
 	ldh [hJoypadPressed], a
-	call UpdateMenuCursorOAM
+	call UpdateTextboxCursorOAM
 .joypad_loop
 	ldh a, [hJoypadDown]
 	and D_PAD | BUTTONS
-	jr nz, .asm_1fda
+	jr nz, .pressed
 
 	ldh a, [hVBlank]
 	and a
@@ -1058,17 +1029,17 @@ WaitTextboxInput::
 
 	xor a
 	ldh [hVBlank], a
-	call AnimateMenuCursor
-	call UpdateMenuCursorOAM
+	call AnimateTextboxCursor
+	call UpdateTextboxCursorOAM
 	jr .joypad_loop
 
-.asm_1fda
+.pressed
 	ld a, SFX_17
 	call PlaySound
 	xor a
 	ldh [hVBlank], a
-	call ResetMenuCursorTimer
-	call UpdateMenuCursorOAM
+	call ResetTextboxCursorTimer
+	call UpdateTextboxCursorOAM
 	ret
 
 Text_ef::

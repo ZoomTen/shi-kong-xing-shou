@@ -1,9 +1,8 @@
-Func_00a_4000::
+OpenDialogTextbox::
 	hlcoord 0, 0
 	ld a, [wTextboxPos]
 	and a
 	jr nz, .backup_tilemap
-
 	hlcoord 0, 10
 .backup_tilemap
 	ld a, l
@@ -18,35 +17,30 @@ Func_00a_4000::
 	inc de
 	dec c
 	jr nz, .copy
-
 ; Load textbox border tiles
 	call DelayFrame
-	ld hl, GFX_00a_4523
+	ld hl, TextboxBorderGFX
 	ld de, $8a00
 	ld bc, $70
 	call CopyBytesVRAM
-
 	call DelayFrame
-	farcall Func_00d_4000
-
+	farcall LoadEmotesAndPromptGFX
 ; Inefficient
 	ld hl, wd1a0
-	call Func_00a_405b
+	call .clear_8
 	ld hl, wd1a8
-	call Func_00a_405b
-
+	call .clear_8
 	call LoadTextFaceGFX
 	call DelayFrame
 	call LoadTextFaceExtraSprites
 	call DelayFrame
-	ld hl, Tilemap_00a_42e3
+	ld hl, DialogTextboxTilemap
 	ld a, l
-	ld [wdcd6], a
+	ld [wAnimFramePtr], a
 	ld a, h
-	ld [wdcd6 + 1], a
+	ld [wAnimFramePtr + 1], a
 	ret
-
-Func_00a_405b:
+.clear_8
 	ld c, 8
 	xor a
 .clear
@@ -55,12 +49,12 @@ Func_00a_405b:
 	jr nz, .clear
 	ret
 
-Func_00a_4063::
+OpenPlaceNameTextbox::
 	ld a, $01
 	ld [wTextboxPos], a
 	ld hl, wTilemap
 	ld a, [wVisibleObjects]
-	cp $60
+	cp 96
 	jr nc, .asm_4079
 	xor a
 	ld [wTextboxPos], a
@@ -78,29 +72,29 @@ Func_00a_4063::
 	inc de
 	dec c
 	jr nz, .asm_4086
-	ld hl, GFX_00a_4523
+	ld hl, TextboxBorderGFX
 	ld de, $8A00
 	ld bc, $0070
 	call CopyBytesVRAM
 	call DelayFrame
-	ld hl, GFX_00a_4423
+	ld hl, PlaceNameTextboxGFX
 	ld de, $8E00
 	ld bc, Start
 	call CopyBytesVRAM
-	ld hl, Tilemap_00a_4383
+	ld hl, PlaceNameTextboxTilemap
 	ld a, l
-	ld [wdcd6], a
+	ld [wAnimFramePtr], a
 	ld a, h
-	ld [wdcd6 + 1], a
+	ld [wAnimFramePtr + 1], a
 	ret
 
-Func_00a_40b3::
+AnimateTextboxOpen::
 	ld a, $00
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 .asm_40b8
-	call Func_00a_41fe
-	call Func_00a_423b
-	call Func_00a_4295
+	call CopyTextboxSlice
+	call BuildTextboxAttrmap
+	call DrawTextboxBorderColumnOpen
 	ld a, [wTextboxPos]
 	and a
 	jr z, .asm_40cc
@@ -111,12 +105,12 @@ Func_00a_40b3::
 .asm_40cf
 	call GetTextBGMapPointer
 	call CopyTextboxToVRAM
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	inc a
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 	cp $02
 	jr c, .asm_40b8
-	ld de, wcbd0
+	ld de, wExtraSprites
 	ld a, $18
 	ld [de], a
 	inc de
@@ -129,19 +123,19 @@ Func_00a_40b3::
 	and a
 	ret nz
 	ld a, $68
-	ld [wcbd0], a
+	ld [wExtraSprites], a
 	ret
 
-Func_00a_40f9:
+AnimateTextboxClose: ; unreferenced
 	ld a, $13
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 .asm_40fe
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	cp $01
 	jr z, .asm_4110
-	call Func_00a_41b7
-	call Func_00a_423b
-	call Func_00a_425b
+	call RestoreTextboxRow
+	call BuildTextboxAttrmap
+	call DrawTextboxBorderColumnClose
 	jr .asm_4126
 .asm_4110
 	ld a, [wTextboxPointer]
@@ -156,7 +150,7 @@ Func_00a_40f9:
 	inc de
 	dec c
 	jr nz, .asm_411d
-	call Func_00a_423b
+	call BuildTextboxAttrmap
 .asm_4126
 	ld a, [wTextboxPos]
 	and a
@@ -168,16 +162,16 @@ Func_00a_40f9:
 .asm_4134
 	call GetTextBGMapPointer
 	call CopyTextboxToVRAM
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	dec a
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 	and a
 	jr nz, .asm_40fe
 	ret
 
-Func_00a_4145:
-	call Func_00a_41a3
-	call Func_00a_423b
+DrawTextboxInstant: ; unreferenced
+	call CopyTextboxTilemap
+	call BuildTextboxAttrmap
 	ld a, [wTextboxPos]
 	and a
 	jr z, .asm_4156
@@ -188,7 +182,7 @@ Func_00a_4145:
 .asm_4159
 	call GetTextBGMapPointer
 	call CopyTextboxToVRAM
-	ld de, wcbd0
+	ld de, wExtraSprites
 	ld a, $18
 	ld [de], a
 	inc de
@@ -201,10 +195,10 @@ Func_00a_4145:
 	and a
 	ret nz
 	ld a, $68
-	ld [wcbd0], a
+	ld [wExtraSprites], a
 	ret
 
-Func_00a_4178::
+CloseTextbox::
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
@@ -217,7 +211,7 @@ Func_00a_4178::
 	inc de
 	dec c
 	jr nz, .asm_4185
-	call Func_00a_423b
+	call BuildTextboxAttrmap
 	ld a, [wTextboxPos]
 	and a
 	jr z, .asm_4199
@@ -230,8 +224,8 @@ Func_00a_4178::
 	call CopyTextboxToVRAM
 	ret
 
-Func_00a_41a3:
-	ld de, Tilemap_00a_42e3
+CopyTextboxTilemap:
+	ld de, DialogTextboxTilemap
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
@@ -245,9 +239,9 @@ Func_00a_41a3:
 	jr nz, .asm_41b0
 	ret
 
-Func_00a_41b7:
+RestoreTextboxRow:
 	ld de, wScreenRowBuffer
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	ld l, a
 	ld h, $00
 	push hl
@@ -261,7 +255,7 @@ Func_00a_41b7:
 	pop hl
 	add hl, bc
 	ld c, $08
-	call Func_00a_4223
+	call CopyTextboxBlockRow
 	ret
 
 .asm_41d4
@@ -288,12 +282,12 @@ Func_00a_41b7:
 	call PlaceTilemap
 	ret
 
-Func_00a_41fe:
-	ld a, [wdcd6]
+CopyTextboxSlice:
+	ld a, [wAnimFramePtr]
 	ld e, a
-	ld a, [wdcd6 + 1]
+	ld a, [wAnimFramePtr + 1]
 	ld d, a
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	add a
 	ld b, a
 	add a
@@ -311,29 +305,30 @@ Func_00a_41fe:
 	ld b, a
 	pop hl
 	add hl, bc
-	ld c, $08
-Func_00a_4221:
-	ld b, $0A
-Func_00a_4223:
+	ld c, 8
+CopyTextboxBlock:
+	ld b, 10
+CopyTextboxBlockRow:
 	ld a, [de]
 	ld [hli], a
 	inc de
 	dec b
-	jr nz, Func_00a_4223
+	jr nz, CopyTextboxBlockRow
 	push bc
-	ld bc, $000A
+	ld bc, 10
 	add hl, bc
 	ld a, e
-	add $0A
+	add 10
 	ld e, a
 	ld a, d
-	adc $00
+	adc 0
 	ld d, a
 	pop bc
 	dec c
-	jr nz, Func_00a_4221
+	jr nz, CopyTextboxBlock
 	ret
-Func_00a_423b:
+
+BuildTextboxAttrmap:
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
@@ -347,7 +342,7 @@ Func_00a_423b:
 	add l
 	ld l, a
 	ld a, h
-	adc $00
+	adc 0
 	ld h, a
 	ld a, [hl]
 	ld [de], a
@@ -357,8 +352,8 @@ Func_00a_423b:
 	jr nz, .asm_4248
 	ret
 
-Func_00a_425b:
-	ld a, [wd1e4]
+DrawTextboxBorderColumnClose:
+	ld a, [wAnimFrameCounter]
 	dec a
 	ld l, a
 	ld h, $00
@@ -367,37 +362,37 @@ Func_00a_425b:
 	ld a, [wTextboxPointer + 1]
 	ld b, a
 	add hl, bc
-	ld de, unk_00a_42db
-	ld c, $08
-.asm_4270
+	ld de, TextboxBorderColumn
+	ld c, 8
+.draw1
 	push bc
-	ld bc, $0014
+	ld bc, SCREEN_WIDTH
 	ld a, [de]
 	inc de
 	ld [hl], a
 	add hl, bc
 	pop bc
 	dec c
-	jr nz, .asm_4270
-	ld a, [wd1e4]
+	jr nz, .draw1
+	ld a, [wAnimFrameCounter]
 	dec a
 	ld l, a
-	ld h, $00
+	ld h, 0
 	ld bc, wd100
 	add hl, bc
-	ld c, $08
-.asm_4289
+	ld c, 8
+.draw2
 	push bc
-	ld bc, $0014
+	ld bc, SCREEN_WIDTH
 	ld [hl], $06
 	add hl, bc
 	pop bc
 	dec c
-	jr nz, .asm_4289
+	jr nz, .draw2
 	ret
 
-Func_00a_4295:
-	ld a, [wd1e4]
+DrawTextboxBorderColumnOpen:
+	ld a, [wAnimFrameCounter]
 	and a
 	ret nz
 	inc a
@@ -407,25 +402,25 @@ Func_00a_4295:
 	add a
 	add b
 	ld l, a
-	ld h, $00
+	ld h, 0
 	ld a, [wTextboxPointer]
 	ld c, a
 	ld a, [wTextboxPointer + 1]
 	ld b, a
 	add hl, bc
-	ld de, unk_00a_42db
-	ld c, $08
-.asm_42b1
+	ld de, TextboxBorderColumn
+	ld c, 8
+.draw1
 	push bc
-	ld bc, $0014
+	ld bc, SCREEN_WIDTH
 	ld a, [de]
 	inc de
 	ld [hl], a
 	add hl, bc
 	pop bc
 	dec c
-	jr nz, .asm_42b1
-	ld a, [wd1e4]
+	jr nz, .draw1
+	ld a, [wAnimFrameCounter]
 	inc a
 	add a
 	ld b, a
@@ -433,57 +428,27 @@ Func_00a_4295:
 	add a
 	add b
 	ld l, a
-	ld h, $00
+	ld h, 0
 	ld bc, wd100
 	add hl, bc
-	ld c, $08
-.asm_42cf
+	ld c, 8
+.draw2
 	push bc
-	ld bc, $0014
+	ld bc, SCREEN_WIDTH
 	ld [hl], $06
 	add hl, bc
 	pop bc
 	dec c
-	jr nz, .asm_42cf
+	jr nz, .draw2
 	ret
 
-; TODO: unk_ - data, referenced via `ld de, unk_00a_42db`
-unk_00a_42db:
-	db $a3, $a4, $a4, $a4, $a4, $a4, $a4, $a6
+TextboxBorderColumn: db $a3, $a4, $a4, $a4, $a4, $a4, $a4, $a6
+DialogTextboxTilemap: INCBIN "gfx/tilemaps/tilemap_00a_42e3.tilemap"
+PlaceNameTextboxTilemap: INCBIN "gfx/tilemaps/tilemap_00a_4383.tilemap"
+PlaceNameTextboxGFX: INCBIN "gfx/textbox/place_name.2bpp"
+TextboxBorderGFX: INCBIN "gfx/textbox/border.2bpp"
 
-Tilemap_00a_42e3:
-	INCBIN "gfx/tilemaps/tilemap_00a_42e3.tilemap"
-Tilemap_00a_4383:
-	INCBIN "gfx/tilemaps/tilemap_00a_4383.tilemap"
-; TODO: tilemap copied to VRAM $8E00
-GFX_00a_4423:
-	db $11, $11, $11, $11, $1f, $1f, $11, $11, $21, $21, $01, $01, $ff, $ff, $00, $00
-	db $1f, $1f, $10, $10, $10, $10, $10, $10, $1f, $1f, $10, $10, $00, $00, $00, $00
-	db $00, $00, $10, $10, $f8, $f8, $00, $00, $00, $00, $04, $04, $fe, $fe, $10, $10
-	db $f8, $f8, $10, $10, $10, $10, $10, $10, $f0, $f0, $10, $10, $00, $00, $00, $00
-	db $00, $00, $3f, $3f, $00, $00, $00, $00, $00, $00, $ff, $ff, $01, $01, $11, $11
-	db $31, $31, $41, $41, $81, $81, $01, $01, $01, $01, $01, $01, $00, $00, $00, $00
-	db $10, $10, $f8, $f8, $00, $00, $00, $00, $04, $04, $fe, $fe, $00, $00, $20, $20
-	db $10, $10, $0c, $0c, $04, $04, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $10, $10, $11, $11, $11, $11, $fd, $fd, $11, $11, $31, $31, $39, $39, $55, $55
-	db $51, $51, $91, $91, $12, $12, $14, $14, $18, $18, $13, $13, $00, $00, $00, $00
-	db $04, $04, $fe, $fe, $00, $00, $00, $00, $fc, $fc, $04, $04, $84, $84, $48, $48
-	db $48, $48, $50, $50, $20, $20, $50, $50, $8e, $8e, $04, $04, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $01, $01, $03, $03, $01, $01, $00, $00, $00, $00
-	db $01, $01, $03, $03, $01, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $80, $80, $c0, $c0, $80, $80, $00, $00, $00, $00
-	db $80, $80, $c0, $c0, $80, $80, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-; TODO: data/gfx block (zeros + tile-like bytes), exact use TBD
-GFX_00a_4523:
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $07, $03, $0d, $04, $1a, $09, $35, $13, $3b, $27, $27, $3f, $26, $3e
-	db $00, $00, $ff, $ff, $00, $ff, $00, $ff, $ff, $ff, $ff, $ff, $00, $00, $00, $00
-	db $00, $00, $f0, $e0, $38, $f0, $dc, $38, $ae, $9c, $d6, $ce, $66, $6e, $36, $2e
-	db $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e, $26, $3e
-	db $33, $2f, $35, $33, $3a, $19, $1d, $0c, $0f, $07, $07, $03, $00, $00, $00, $00
-	db $56, $6e, $8e, $de, $9e, $3c, $3c, $f8, $f8, $f0, $f0, $e0, $00, $00, $00, $00
-
-asm_00a_4593::
+SetupEnemyNameWindow::
 	ld bc, $c0
 	ld hl, $9610
 	xor a
@@ -497,10 +462,10 @@ asm_00a_4593::
 	farcall asm_026_4616
 	ret
 
-asm_00a_45b4:
-	ld bc, wd86a
+CopyNameByIndex:
+	ld bc, wMenuTextBuffer
 	ld de, NamePointers
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	inc a
 	ld l, a
 	ld h, 0
@@ -510,32 +475,28 @@ asm_00a_45b4:
 	ld h, [hl]
 	ld l, a
 
-asm_00a_45c6:
+CopyNameString:
 	ld a, [hli]
 	ld [bc], a
 	inc bc
 	cp $ed
-	jr nz, asm_00a_45c6
+	jr nz, CopyNameString
 	ret
 
-Func_00a_45ce:
+CopySelectedOptionName:
 	ld a, [wSelectedOption]
-	cp $03
+	cp 3
 	jr nz, .asm_45e1
-
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_45e1
-
 	ld a, $2b
 	jr .asm_45e4
-
 .asm_45e1:
 	ld a, [wSelectedOption]
-
 .asm_45e4:
-	ld bc, wd86a
+	ld bc, wMenuTextBuffer
 	ld de, NamePointers
 	inc a
 	ld l, a
@@ -554,4 +515,5 @@ Func_00a_45ce:
 	ret
 
 NamePointers:: INCLUDE "data/name_pointers.asm"
+
 INCLUDE "data/text/names.asm"

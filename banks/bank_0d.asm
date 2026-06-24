@@ -1,4 +1,4 @@
-Func_00d_4000::
+LoadEmotesAndPromptGFX::
 	ld hl, PaperEmotesTiles
 	ld de, $8540
 	ld bc, $0140
@@ -121,24 +121,24 @@ Func_00d_40b8:
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wdcd6], a
+	ld [wAnimFramePtr], a
 	ld e, a
 	ld a, [hli]
-	ld [wdcd6 + 1], a
+	ld [wAnimFramePtr + 1], a
 	ld d, a
 	call .asm_40e3
 	ret
 .asm_40e3
 	xor a
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 .asm_40e7
 	call Func_00d_4193
 	call Func_00d_41c0
 	call Func_00d_4212
 	call Func_00d_40ff
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	inc a
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 	cp $0A
 	jr c, .asm_40e7
 	ret
@@ -166,9 +166,9 @@ Func_00d_40ff:
 	ret
 Func_00d_412c:
 	ld a, $09
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 .asm_4131
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	cp $01
 	jr z, .asm_4143
 	call .asm_4165
@@ -189,15 +189,15 @@ Func_00d_412c:
 .asm_4154
 	call Func_00d_40ff
 	call DelayFrame
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	dec a
-	ld [wd1e4], a
+	ld [wAnimFrameCounter], a
 	and a
 	jr nz, .asm_4131
 	ret
 .asm_4165
 	ld de, wScreenRowBuffer
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	add $05
 	ld l, a
 	ld h, $00
@@ -205,7 +205,7 @@ Func_00d_412c:
 	ld e, l
 	ld d, h
 	bccoord 5, 6
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	ld l, a
 	ld h, $00
 	add hl, bc
@@ -227,11 +227,11 @@ Func_00d_412c:
 	jr nz, .asm_417f
 	ret
 Func_00d_4193:
-	ld a, [wdcd6]
+	ld a, [wAnimFramePtr]
 	ld e, a
-	ld a, [wdcd6 + 1]
+	ld a, [wAnimFramePtr + 1]
 	ld d, a
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	ld l, a
 	ld h, $00
 	push hl
@@ -279,7 +279,7 @@ Func_00d_41c0:
 	jr nz, .asm_41c8
 	ret
 Func_00d_41db:
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	dec a
 	ld l, a
 	ld h, $00
@@ -297,7 +297,7 @@ Func_00d_41db:
 	pop bc
 	dec c
 	jr nz, .asm_41eb
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	dec a
 	add $05
 	ld l, a
@@ -315,7 +315,7 @@ Func_00d_41db:
 	jr nz, .asm_4206
 	ret
 Func_00d_4212:
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	cp $09
 	ret z
 	inc a
@@ -335,7 +335,7 @@ Func_00d_4212:
 	pop bc
 	dec c
 	jr nz, .asm_4225
-	ld a, [wd1e4]
+	ld a, [wAnimFrameCounter]
 	inc a
 	add $05
 	ld l, a
@@ -519,12 +519,9 @@ Script_00d_44be:
 	db $f4, $08, $f3, $d9, $f0, $68, $31, $ed, $00
 Script_00d_44c7:
 	db $f7, $40, $f1, $90, $f0, $31, $ed, $01
-; TODO: paper tiles copied to VRAM $8540
 PaperEmotesTiles:
 	INCBIN "gfx/paper_scroll/tiles_44cf.2bpp"
-; TODO: extra tiles, not copied by Func_00d_4000 (referenced elsewhere?)
 LightbulbEmoteTiles:
 	INCBIN "gfx/paper_scroll/tiles_460f.2bpp"
-; TODO: paper tiles copied to VRAM $8680
 ContinueBlinkerTiles:
 	INCBIN "gfx/paper_scroll/tiles_464f.2bpp"

@@ -239,10 +239,10 @@ SpawnPlayerSprite::
 	jp .asm_05e9 ; jr
 
 .asm_058a
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	cp 3
 	jr nz, .asm_05a0
-	ld hl, wdd18
+	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
 	jr nz, .asm_05a0
@@ -252,7 +252,7 @@ SpawnPlayerSprite::
 	jr .asm_05a7
 
 .asm_05a0
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	add a
 	ld [wPlayerSpriteID], a
 
@@ -269,7 +269,7 @@ SpawnPlayerSprite::
 	jr .asm_05ca
 
 .asm_05b8
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	and a
 	jr z, .asm_05c5
 

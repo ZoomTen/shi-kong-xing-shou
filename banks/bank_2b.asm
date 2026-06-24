@@ -5569,7 +5569,7 @@ BattleIntro_Jump_2:
 	ld [wd9e5], a
 	farcall Func_02c_4000
 	call DelayFrame
-	farcall asm_00a_4593
+	farcall SetupEnemyNameWindow
 	call Func_02b_6ad1
 	call DelayFrame
 	ld hl, Battle_UI_GFX
@@ -5747,7 +5747,7 @@ Func_02b_6abc:
 	ret
 
 Func_02b_6ad1:
-	ld hl, wd86a
+	ld hl, wMenuTextBuffer
 	ld a, $55
 	ld [wMenuTextX], a
 	ld a, $61

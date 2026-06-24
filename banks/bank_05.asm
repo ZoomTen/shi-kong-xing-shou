@@ -661,7 +661,7 @@ Func_005_43e1:
 	ret
 
 Func_005_4408:
-	farcall asm_00a_45b4
+	farcall CopyNameByIndex
 	ret
 
 Func_005_440f::
@@ -2548,7 +2548,7 @@ Func_005_50e5:
 	ld a, [wPlayerSpriteID]
 	cp 9
 	ret z
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 
 asm_005_50f9:
 	inc a
@@ -2566,9 +2566,9 @@ asm_005_50fa:
 	and a
 	jr z, asm_005_511a
 	pop af
-	ld [wd9dd], a
+	ld [wPlayerChar], a
 	farcall Func_024_4000
-	farcall asm_00a_45b4
+	farcall CopyNameByIndex
 	ret
 
 asm_005_511a:
@@ -2628,7 +2628,7 @@ Func_005_5179:
 	ld a, [hl]
 	cp 3
 	ret nz
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	cp 4
 	ret nz
 	farcall Func_024_6864
@@ -2686,7 +2686,7 @@ Func_005_51ed:
 	ld a, [hTextSource]
 	and a
 	ret nz
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	cp 7
 	ret nz
 	ld a, [hFFB9]

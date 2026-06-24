@@ -48,7 +48,7 @@ WriteSaveData:
 	ld bc, $0001
 	call CopyBytes3
 	ld de, sa652
-	ld hl, wd9dd
+	ld hl, wPlayerChar
 	ld bc, $0001
 	call CopyBytes3
 	ld de, sMapOffsetX

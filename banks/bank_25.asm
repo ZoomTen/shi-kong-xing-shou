@@ -639,7 +639,7 @@ Func_025_43fe:
 
 Func_025_442f:
 	farcall Func_00c_402b
-	farcall Func_004_4309
+	farcall StageSelectedCharObjPal
 	ld hl, wcaf0
 	ld c, $80
 	ld b, $40
@@ -725,7 +725,7 @@ Func_025_44b8:
 	ret
 
 Func_025_44de:
-	ld a, [wd9dd]
+	ld a, [wPlayerChar]
 	ld [wSelectedOption], a
 	ld de, MenuOptionTable_025_4505
 	ld a, [wSelectedOption]
@@ -2446,7 +2446,7 @@ Func_025_5087:
 
 Func_025_50ad:
 	farcall Func_01f_4028
-	ld hl, wd86a
+	ld hl, wMenuTextBuffer
 	ld a, $70
 	ld [wMenuTextX], a
 	ld a, $7c
@@ -2484,8 +2484,8 @@ Func_025_50ef:
 	ld b, $40
 	call LoadPalettes_BCPD
 	farcall Func_01f_40ea
-	farcall Func_00a_45ce
-	ld hl, wd86a
+	farcall CopySelectedOptionName
+	ld hl, wMenuTextBuffer
 	ld a, $d0
 	ld [wMenuTextX], a
 	ld a, $dc
@@ -3548,9 +3548,9 @@ Func_025_57a0:
 	ret nz
 	hlcoord 0, 0
 	ld a, h
-	ld [wdcd6 + 1], a
+	ld [wAnimFramePtr + 1], a
 	ld a, l
-	ld [wdcd6], a
+	ld [wAnimFramePtr], a
 	call Func_025_581f
 	ld de, wd100
 	ld a, [wd0ba]
@@ -3607,9 +3607,9 @@ Func_025_581f:
 	ld [wBGMapAddr + 1], a
 	ld a, l
 	ld [wBGMapAddr], a
-	ld a, [wdcd6 + 1]
+	ld a, [wAnimFramePtr + 1]
 	ld h, a
-	ld a, [wdcd6]
+	ld a, [wAnimFramePtr]
 	ld l, a
 	ld de, wMapTileAttrs
 	ld c, $78
@@ -3634,9 +3634,9 @@ Func_025_5837:
 	dec c
 	jr nz, Func_025_5837
 	ld a, l
-	ld [wdcd6], a
+	ld [wAnimFramePtr], a
 	ld a, h
-	ld [wdcd6 + 1], a
+	ld [wAnimFramePtr + 1], a
 	ret
 
 Func_025_585a:
