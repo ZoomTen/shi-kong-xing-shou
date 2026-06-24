@@ -1877,7 +1877,7 @@ Func_05e_4f4b:
 	dec c
 	jr nz, .asm_4f54
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call Func_5e_50b7
 	call Func_5e_507f
 	call Func_5e_5047
@@ -1906,7 +1906,7 @@ Func_05e_4f4b:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_4f91
@@ -1929,7 +1929,7 @@ Func_05e_4f4b:
 	jr .asm_4f91
 .asm_4fa5
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 .asm_4faa
 	ld hl, wcd76
@@ -2034,7 +2034,7 @@ Func_5e_500f:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_502e
@@ -2057,7 +2057,7 @@ Func_5e_500f:
 	jr .asm_502e
 .asm_5042
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Func_5e_5047:
 	ld hl, RacingMinigame_SpritePtrs
@@ -2080,7 +2080,7 @@ Func_5e_5047:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_5066
@@ -2103,7 +2103,7 @@ Func_5e_5047:
 	jr .asm_5066
 .asm_507a
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Func_5e_507f:
 	ld hl, RacingMinigame_SpritePtrs
@@ -2126,7 +2126,7 @@ Func_5e_507f:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_509e
@@ -2149,7 +2149,7 @@ Func_5e_507f:
 	jr .asm_509e
 .asm_50b2
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Func_5e_50b7:
 	ld a, [wcd57]
@@ -2175,7 +2175,7 @@ Func_5e_50b7:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_50db
@@ -2198,7 +2198,7 @@ Func_5e_50b7:
 	jr .asm_50db
 .asm_50ef
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Func_05e_50f4:
 	ld hl, RacingMinigame_SpritePtrs
@@ -2221,7 +2221,7 @@ Func_05e_50f4:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_5114
@@ -2244,7 +2244,7 @@ Func_05e_50f4:
 	jr .asm_5114
 .asm_5128
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 RacingMinigame_SpritePtrs:
 	dw RacingMinigame_SpritePtrs_5151

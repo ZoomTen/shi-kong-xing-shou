@@ -88,7 +88,7 @@ Func_4d_5f3a:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_5f5e
@@ -112,7 +112,7 @@ Func_4d_5f3a:
 	jp .asm_5f5e
 .asm_5f75
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_5f79
 	pop hl
 	ld bc, $0008

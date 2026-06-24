@@ -221,7 +221,7 @@ Func_055_42c6:
 	dec c
 	jr nz, .asm_42cf
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_42de
 	ret
 .asm_42de
@@ -245,7 +245,7 @@ Func_055_42c6:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_42fd
@@ -268,7 +268,7 @@ Func_055_42c6:
 	jr .asm_42fd
 .asm_4311
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 SpriteFramePointers_055_4316:
 	dw SpriteFrameData_055_431c

@@ -6035,13 +6035,13 @@ Func_02b_7536:
 	dec c
 	jr nz, .loop
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call BuildOAMList
 	ret
 
 
 ; Builds OAM entries from the list selected by wcde2.
-; wcde0/wcde1 = base y/x offset, wd1fb = write cursor into wVirtualOAM.
+; wcde0/wcde1 = base y/x offset, wVirtualOAMPtr = write cursor into wVirtualOAM.
 BuildOAMList:
 	ld hl, OAMList_Pointers
 	ld de, wcde0
@@ -6064,7 +6064,7 @@ BuildOAMList:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, HIGH(wVirtualOAM)
 .loop
@@ -6088,7 +6088,7 @@ BuildOAMList:
 	jr .loop
 .done
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 

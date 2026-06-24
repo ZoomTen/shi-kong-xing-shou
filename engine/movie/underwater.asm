@@ -104,7 +104,7 @@ UnderwaterPictureCutscene::
 	dec c
 	jr nz, .asm_5e0b
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_5e1a
 	ret
 .asm_5e1a
@@ -128,7 +128,7 @@ UnderwaterPictureCutscene::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_5e39
@@ -151,7 +151,7 @@ UnderwaterPictureCutscene::
 	jr .asm_5e39
 .asm_5e4d
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 UnderwaterPicture_SpriteOAMPointers:
 	dw UnderwaterPicture_SpriteOAM_Empty

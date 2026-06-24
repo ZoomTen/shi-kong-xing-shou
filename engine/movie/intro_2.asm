@@ -732,7 +732,7 @@ Intro_ClearSprites:
 	dec c
 	jr nz, .clear
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call Func_077_4d1e
 	ret
 
@@ -776,7 +776,7 @@ Func_077_4d1e:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 
@@ -809,7 +809,7 @@ Func_077_4d1e:
 
 .done
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	jp .next_star
 
 Intro_StarSprites:
@@ -874,7 +874,7 @@ Intro_LoadNewTextSprites:
 	dec c
 	jr nz, .clear
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .LoadSprites
 	ret
 
@@ -899,7 +899,7 @@ Intro_LoadNewTextSprites:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .load_sprite
@@ -922,7 +922,7 @@ Intro_LoadNewTextSprites:
 	jr .load_sprite
 .done
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Intro_TextSprites:

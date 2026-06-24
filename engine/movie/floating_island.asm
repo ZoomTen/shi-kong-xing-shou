@@ -313,7 +313,7 @@ Func_67_5371:
 	dec c
 	jr nz, .asm_537a
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_5389
 	ret
 .asm_5389
@@ -337,7 +337,7 @@ Func_67_5371:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_53a8
@@ -360,7 +360,7 @@ Func_67_5371:
 	jr .asm_53a8
 .asm_53bc
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Palette_67_53c1:
 	RGB 31, 31, 31

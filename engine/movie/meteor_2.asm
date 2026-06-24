@@ -380,7 +380,7 @@ Func_061_42e6:
 	dec c
 	jr nz, .asm_42ef
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_42fe
 	ret
 .asm_42fe
@@ -420,7 +420,7 @@ Func_061_42e6:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_433b
@@ -451,7 +451,7 @@ Func_061_42e6:
 	jr .asm_433b
 .asm_435b
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	jp .asm_4309
 MeteorCutscene2_AnimFramePointers:
 	dw MeteorCutscene2_AnimFrame0

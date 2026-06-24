@@ -4,7 +4,7 @@ SECTION "bank01", ROMX
 INCLUDE "banks/bank_01.asm"
 
 SECTION "bank04", ROMX
-INCLUDE "banks/bank_04.asm"
+INCLUDE "engine/gfx/oam.asm"
 
 SECTION "bank05", ROMX
 INCLUDE "banks/bank_05.asm"
@@ -26,7 +26,8 @@ SECTION "bank09", ROMX
 INCLUDE "banks/bank_09.asm"
 
 SECTION "bank0a", ROMX
-INCLUDE "banks/bank_0a.asm"
+INCLUDE "engine/gfx/textbox.asm"
+INCLUDE "engine/copy_names.asm"
 
 SECTION "bank0b", ROMX
 INCLUDE "banks/bank_0b.asm"

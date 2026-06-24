@@ -543,7 +543,7 @@ Func_062_4580:
 	dec c
 	jr nz, .asm_4589
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_459b
 	call .asm_45d3
 	ret
@@ -568,7 +568,7 @@ Func_062_4580:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_45ba
@@ -591,7 +591,7 @@ Func_062_4580:
 	jr .asm_45ba
 .asm_45ce
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 .asm_45d3
 	ld hl, WorldMapSpriteLayoutPointers
@@ -614,7 +614,7 @@ Func_062_4580:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_45f2
@@ -637,7 +637,7 @@ Func_062_4580:
 	jr .asm_45f2
 .asm_4606
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 WorldMapSpriteLayoutPointers:
 	dw WorldMapSpriteLayouts
@@ -1008,7 +1008,7 @@ Func_062_5f1b:
 	dec c
 	jr nz, .asm_5f24
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call Func_062_5f33
 	ret
 Func_062_5f33:
@@ -1032,7 +1032,7 @@ Func_062_5f33:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_5f52
@@ -1055,7 +1055,7 @@ Func_062_5f33:
 	jr .asm_5f52
 .asm_5f66
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 WorldMap2_SpriteLayoutPointers:
 	dw WorldMap2_SpriteLayout0

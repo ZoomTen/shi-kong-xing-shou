@@ -662,7 +662,7 @@ TitleScreen_UpdateSprites:
 	dec c
 	jr nz, .init_sprites
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .UpdateTitleSprites
 	call .UpdatePressStartSprites
 	call .UpdateMenuSprites
@@ -694,7 +694,7 @@ TitleScreen_UpdateSprites:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb] ; where to put the sprite
+	ld a, [wVirtualOAMPtr] ; where to put the sprite
 	ld e, a
 	ld d, HIGH(wVirtualOAM)
 .copy_sprite_1
@@ -718,7 +718,7 @@ TitleScreen_UpdateSprites:
 	jr .copy_sprite_1
 .finished_copying_1
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 .UpdateCursorSprites:
@@ -743,7 +743,7 @@ TitleScreen_UpdateSprites:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, HIGH(wVirtualOAM)
 .copy_sprite_2
@@ -766,7 +766,7 @@ TitleScreen_UpdateSprites:
 	jr .copy_sprite_2
 .finished_copying_2
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 .UpdateMenuSprites:
@@ -790,7 +790,7 @@ TitleScreen_UpdateSprites:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, HIGH(wVirtualOAM)
 .copy_sprite_3
@@ -813,7 +813,7 @@ TitleScreen_UpdateSprites:
 	jr .copy_sprite_3
 .finished_copying_3
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 .UpdatePressStartSprites:
@@ -837,7 +837,7 @@ TitleScreen_UpdateSprites:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, HIGH(wVirtualOAM)
 .copy_sprite_4
@@ -860,7 +860,7 @@ TitleScreen_UpdateSprites:
 	jr .copy_sprite_4
 .finished_copying_4
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 TitleScreen_Sprites:

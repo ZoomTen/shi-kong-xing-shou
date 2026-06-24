@@ -1062,7 +1062,7 @@ Func_5b_47e8:
 	dec c
 	jr nz, .asm_47f1
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call Func_5b_47ff
 	ret
 Func_5b_47ff:
@@ -1088,7 +1088,7 @@ Func_5b_47ff:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_4827
@@ -1134,7 +1134,7 @@ Func_5b_47ff:
 	jp .asm_4827
 .asm_485f
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_4863
 	pop hl
 	ld bc, $0008

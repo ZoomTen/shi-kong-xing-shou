@@ -177,7 +177,7 @@ Func_5f_417A:
 	dec c
 	jr nz, .asm_4183
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_4192
 	ret
 .asm_4192
@@ -201,7 +201,7 @@ Func_5f_417A:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_41b1
@@ -224,7 +224,7 @@ Func_5f_417A:
 	jr .asm_41b1
 .asm_41c5
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 CrystalCutscene_ObjectOAMPointers:
 	dw CrystalCutscene_ObjectOAMPointers_41e0

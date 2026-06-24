@@ -8,7 +8,7 @@ Func_032_4000::
 	dec c
 	jr nz, .asm_4009
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ld a, [wd986]
 	and a
 	jr z, .asm_4026
@@ -76,7 +76,7 @@ Func_032_4000::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_408b
@@ -158,7 +158,7 @@ Func_032_4000::
 	jp .asm_408b
 .asm_410d
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_4111
 	pop hl
 	ld bc, $0008
@@ -197,7 +197,7 @@ Func_032_4000::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_414d
@@ -221,7 +221,7 @@ Func_032_4000::
 	jr .asm_414d
 .asm_4162
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_4166
 	pop hl
 	ld bc, $0008
@@ -272,7 +272,7 @@ Func_032_4202:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_4232
@@ -296,7 +296,7 @@ Func_032_4202:
 	jr .asm_4232
 .asm_4247
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_424b
 	pop hl
 	ld bc, $0008

@@ -220,7 +220,7 @@ Func_6f_419f:
 	cp $11
 	ret nz
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ld hl, Cutscene1d_ObjectListPtrs
 	ld de, wcd42
 	ld a, [de]
@@ -241,7 +241,7 @@ Func_6f_419f:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_41c7
@@ -264,7 +264,7 @@ Func_6f_419f:
 	jr .asm_41c7
 .asm_41db
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Cutscene1d_ObjectListPtrs:
 	dw Cutscene1d_ObjectList0

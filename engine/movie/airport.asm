@@ -478,7 +478,7 @@ Func_4e_4bde:
 	dec c
 	jr nz, .asm_4be7
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call Func_4e_4bf6
 	ret
 Func_4e_4bf6:
@@ -502,7 +502,7 @@ Func_4e_4bf6:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_4c15
@@ -525,7 +525,7 @@ Func_4e_4bf6:
 	jr .asm_4c15
 .asm_4c29
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 AirportCutscene1_OAMPointers:
 	dw AirportCutscene1_OAMData

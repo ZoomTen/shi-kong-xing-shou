@@ -1110,7 +1110,7 @@ Func_5d_48a8:
 	dec c
 	jr nz, .asm_48b1
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call Func_5d_4951
 	call .asm_48c3
 	ret
@@ -1135,7 +1135,7 @@ Func_5d_48a8:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_48e2
@@ -1158,7 +1158,7 @@ Func_5d_48a8:
 	jr .asm_48e2
 .asm_48f6
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 SpriteAnim_Pointers:
 	dw SpriteFrame_Empty
@@ -1221,7 +1221,7 @@ Func_5d_4951:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_498e
@@ -1252,7 +1252,7 @@ Func_5d_4951:
 	jr .asm_498e
 .asm_49ae
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	jp .asm_495c
 SpriteOAM_Pointers:
 	dw SpriteFrames_49C9

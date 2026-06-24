@@ -237,7 +237,7 @@ Func_070_41b6:
 	cp $11
 	ret nz
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ld hl, ObjectPlacementPointers
 	ld de, wcd42
 	ld a, [de]
@@ -258,7 +258,7 @@ Func_070_41b6:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_41de
@@ -281,7 +281,7 @@ Func_070_41b6:
 	jr .asm_41de
 .asm_41f2
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 ObjectPlacementPointers:
 	dw CreditsSprites_0

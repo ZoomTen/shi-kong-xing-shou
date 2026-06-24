@@ -127,7 +127,7 @@ BeachCutscene::
 	dec c
 	jr nz, .asm_4103
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_4112
 	ret
 .asm_4112
@@ -151,7 +151,7 @@ BeachCutscene::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_4131
@@ -174,7 +174,7 @@ BeachCutscene::
 	jr .asm_4131
 .asm_4145
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 BeachCutsceneSpriteFrames:
 	dw BeachCutsceneSpriteFrames_4152

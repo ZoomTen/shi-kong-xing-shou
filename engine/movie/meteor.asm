@@ -383,7 +383,7 @@ MeteorCutscene_InitMeteor:
 	dec c
 	jr nz, .loop
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call MeteorCutscene_InitMeteor2
 	ret
 
@@ -437,7 +437,7 @@ MeteorCutscene_InitMeteor2:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_58ca
@@ -469,7 +469,7 @@ MeteorCutscene_InitMeteor2:
 
 .asm_58ea
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	jp .asm_5898
 
 .Frames:

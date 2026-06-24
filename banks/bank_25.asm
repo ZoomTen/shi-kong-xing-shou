@@ -871,7 +871,7 @@ Func_025_45c8:
 	jr nz, Func_025_45c8
 	xor a
 	ld [wBattleScriptByte], a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Func_025_45d7:

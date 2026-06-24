@@ -29,7 +29,7 @@ Func_038_4000:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_4032
@@ -111,7 +111,7 @@ Func_038_4000:
 	jp .asm_4032
 .asm_40b4
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_40b8
 	pop hl
 	ld bc, $0008

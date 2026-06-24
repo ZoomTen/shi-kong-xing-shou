@@ -5396,7 +5396,7 @@ Func_024_6bd0:
 	jr .asm_6bef
 .asm_6c04
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Func_024_6c09:
@@ -5445,7 +5445,7 @@ Func_024_6c09:
 	jr .asm_6c28
 .asm_6c3d
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Func_024_6c42:
@@ -5494,7 +5494,7 @@ Func_024_6c42:
 	jr .asm_6c61
 .asm_6c76
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Func_024_6c7b:
@@ -5543,7 +5543,7 @@ Func_024_6c7b:
 	jr .asm_6c9a
 .asm_6caf
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Func_024_6cb4:
@@ -5592,7 +5592,7 @@ Func_024_6cb4:
 	jr .asm_6cd3
 .asm_6ce8
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 SpriteOAMTemplate_Pointers:

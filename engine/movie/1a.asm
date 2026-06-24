@@ -375,7 +375,7 @@ Func_03c_4fb7:
 	dec c
 	jr nz, .asm_4fc0
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_5045
 	call .asm_500d
 	call .asm_4fd5
@@ -401,7 +401,7 @@ Func_03c_4fb7:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_4ff4
@@ -424,7 +424,7 @@ Func_03c_4fb7:
 	jr .asm_4ff4
 .asm_5008
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 .asm_500d
 	ld hl, Pointers_03c_50bb
@@ -447,7 +447,7 @@ Func_03c_4fb7:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_502c
@@ -470,7 +470,7 @@ Func_03c_4fb7:
 	jr .asm_502c
 .asm_5040
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 .asm_5045
 	ld a, [wcd57]
@@ -496,7 +496,7 @@ Func_03c_4fb7:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_5069
@@ -519,7 +519,7 @@ Func_03c_4fb7:
 	jr .asm_5069
 .asm_507d
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 
 Func_03c_5082:
@@ -543,7 +543,7 @@ Func_03c_5082:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $C0
 .asm_50a2
@@ -566,7 +566,7 @@ Func_03c_5082:
 	jr .asm_50a2
 .asm_50b6
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Pointers_03c_50bb:
 	dw Pointers_03c_50bb_50d1

@@ -555,7 +555,7 @@ Func_07a_4525:
 	dec c
 	jr nz, .asm_452e
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call .asm_45b3
 	call .asm_457b
 	call .asm_4543
@@ -581,7 +581,7 @@ Func_07a_4525:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_4562
@@ -604,7 +604,7 @@ Func_07a_4525:
 	jr .asm_4562
 .asm_4576
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 .asm_457b
 	ld hl, SpriteLayoutPointers_07a_4629
@@ -627,7 +627,7 @@ Func_07a_4525:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_459a
@@ -650,7 +650,7 @@ Func_07a_4525:
 	jr .asm_459a
 .asm_45ae
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 .asm_45b3
 	ld a, [wcd57]
@@ -676,7 +676,7 @@ Func_07a_4525:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_45d7
@@ -699,7 +699,7 @@ Func_07a_4525:
 	jr .asm_45d7
 .asm_45eb
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 Func_07a_45f0:
 	ld hl, SpriteLayoutPointers_07a_4629
@@ -722,7 +722,7 @@ Func_07a_45f0:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_4610
@@ -745,7 +745,7 @@ Func_07a_45f0:
 	jr .asm_4610
 .asm_4624
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 SpriteLayoutPointers_07a_4629:
 	dw SpriteLayoutData_07a_4643
