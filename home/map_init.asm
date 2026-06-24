@@ -43,12 +43,12 @@ MapPredef_BallotsHouseIntro::
 	ld a, 1
 	ldh [hFFD6], a
 
-	ld a, BANK(Script_008_4000)
+	ld a, BANK(BallotsHouse_StartScript)
 	ld [hScriptBank], a
 	ld hl, wScriptPos
-	ld [hl], LOW(Script_008_4000)
+	ld [hl], LOW(BallotsHouse_StartScript)
 	inc hl
-	ld [hl], HIGH(Script_008_4000)
+	ld [hl], HIGH(BallotsHouse_StartScript)
 	call InitStartingInventory
 	ret
 

@@ -1,4 +1,4 @@
-Script_008_4000::
+BallotsHouse_StartScript::
 	face FACE_UP
 	stext House_CutsceneText1
 	face FACE_LEFT
@@ -50,12 +50,12 @@ Script_008_4000::
 	setmappredef MAPPREDEF_01
 	end
 
-Func_008_4082:
-	xor a
+GotoOverworld: ; unreferenced?
+	xor a ; GAMEMODE_OVERWORLD
 	ld [wTargetMode], a
 	jp JumpToGameMode
 
-Script_008_4089:
+EmptyScript_008:
 	end
 
 Script_008_408a:
@@ -258,8 +258,8 @@ Script_008_4214:
 	end
 
 BallotsHouse1_ObjectEvents4:
-	object_event $11,  3,  4, 0, $00, $00, $00, $00, Script_008_4089
-	object_event $24,  4,  4, 0, $00, $00, $00, $01, Script_008_4089
+	object_event $11,  3,  4, 0, $00, $00, $00, $00, EmptyScript_008
+	object_event $24,  4,  4, 0, $00, $00, $00, $01, EmptyScript_008
 	objects_end
 
 Script_008_4285:
@@ -410,7 +410,7 @@ Script_008_43c4:
 	end
 
 BellObservatory1_ObjectEvents2:
-	object_event $11,  3,  7, 0, $00, $00, $00, $00, Script_008_4089
+	object_event $11,  3,  7, 0, $00, $00, $00, $00, EmptyScript_008
 	objects_end
 
 BellSchool1_ObjectEvents:
