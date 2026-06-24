@@ -170,6 +170,9 @@ SECTION "bank3b", ROMX
 INCLUDE "banks/bank_3b.asm"
 
 SECTION "bank3c", ROMX
+INCLUDE "engine/save/load_game.asm"
+INCLUDE "engine/menu/new_game_continue.asm"
+INCLUDE "engine/movie/game_over.asm"
 INCLUDE "banks/bank_3c.asm"
 
 SECTION "bank3d", ROMX
