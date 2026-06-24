@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y bison python3-pil
+          sudo apt-get install -y libpng-dev bison python3-pil
       
       - name: Install rgbds
         working-directory: rgbds
