@@ -80,7 +80,7 @@ SECTION "bank19", ROMX
 INCLUDE "banks/bank_19.asm"
 
 SECTION "bank1a", ROMX
-INCLUDE "banks/bank_1a.asm"
+INCLUDE "engine/movie/letter.asm"
 
 SECTION "bank1b", ROMX
 INCLUDE "engine/movie/gale.asm"

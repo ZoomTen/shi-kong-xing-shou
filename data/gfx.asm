@@ -121,6 +121,57 @@ GaleCutscene_BlackPalette:: INCLUDE "gfx/gale/black.pal"
 GaleCutscene_Palette:: INCLUDE "gfx/gale/palette.pal"
 GaleCutscene_GFX:: INCBIN "gfx/gale/galecutscene_gfx.2bpp"
 
+SECTION "Letter Cutscene GFX", ROMX
+
+LetterCutscene_BlackPalette::
+	ds $40 ; all RGB 0, 0, 0 (fade to black)
+
+LetterCutscene_Palette::
+	RGB 31, 31, 31
+	RGB 8, 21, 31
+	RGB 0, 0, 23
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	RGB 0, 0, 0
+	ds 8 ; padding
+
+LetterCutscene_Attrmap:: ds $168 ; all palette 0
+
+LetterCutscene_InitialTilemap:: INCBIN "gfx/tilemaps/lettercutscene_tilemap_initial.tilemap"
+LetterCutscene_Tilemap0:: INCBIN "gfx/tilemaps/lettercutscene_tilemap0.tilemap"
+LetterCutscene_Tilemap1:: INCBIN "gfx/tilemaps/lettercutscene_tilemap1.tilemap"
+LetterCutscene_Tilemap2:: INCBIN "gfx/tilemaps/lettercutscene_tilemap2.tilemap"
+LetterCutscene_Tilemap3:: INCBIN "gfx/tilemaps/lettercutscene_tilemap3.tilemap"
+
+LetterCutscene_GFX:: INCBIN "gfx/misc/lettercutscene_gfx.2bpp"
+
+
 SECTION "Airport Cutscene GFX", ROMX
 
 AirportCutscene1_Palette::

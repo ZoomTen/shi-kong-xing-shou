@@ -71,6 +71,7 @@ ROMX $19
 	"bank19"
 ROMX $1a
 	"bank1a"
+	"Letter Cutscene GFX"
 ROMX $1b
 	"bank1b"
 	"Gale Cutscene GFX"
