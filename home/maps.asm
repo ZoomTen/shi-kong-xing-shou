@@ -254,9 +254,9 @@ AnimatePlayerSprite::
 
 .asm_2130:
 	ld a, [wPlayerSpriteID]
-	ld [wdb1f], a
+	ld [wMapSpriteID], a
 	call GetSpriteGFXPointers
-	ld a, [wdb1f]
+	ld a, [wMapSpriteID]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -373,9 +373,9 @@ AnimateObjectSprite::
 
 .asm_21e5
 	ld a, [wcd24]
-	ld [wdb1f], a
+	ld [wMapSpriteID], a
 	call GetSpriteGFXPointers
-	ld a, [wdb1f]
+	ld a, [wMapSpriteID]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -565,9 +565,9 @@ ENDR
 
 AnimateQueuedSprite::
 	ld a, [wd9fb]
-	ld [wdb1f], a
+	ld [wMapSpriteID], a
 	call GetSpriteGFXPointers
-	ld a, [wdb1f]
+	ld a, [wMapSpriteID]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -640,40 +640,37 @@ AnimateQueuedSprite::
 	ret
 
 GetSpriteGFXPointers::
-	ld a, [wdb1f]
-	cp $14
+	ld a, [wMapSpriteID]
+	cp SPRITE_14
 	jr c, .sprites1
-	cp $2e
+	cp SPRITE_2E
 	jr c, .sprites2
-	cp $53
+	cp SPRITE_53
 	jr c, .sprites3
 ; 53 onwards
 	ld a, BANK(Sprites53to75GFXPointers)
 	rst Bankswitch
 	ld de, Sprites53to75GFXPointers
-	ld a, [wdb1f]
-	sub $53
-	ld [wdb1f], a
+	ld a, [wMapSpriteID]
+	sub SPRITE_53
+	ld [wMapSpriteID], a
 	ret
-
 .sprites3
 	ld a, BANK(Sprites2Eto52GFXPointers)
 	rst Bankswitch
 	ld de, Sprites2Eto52GFXPointers
-	ld a, [wdb1f]
-	sub $2e
-	ld [wdb1f], a
+	ld a, [wMapSpriteID]
+	sub SPRITE_2E
+	ld [wMapSpriteID], a
 	ret
-
 .sprites2
 	ld a, BANK(Sprites14to2DGFXPointers)
 	rst Bankswitch
 	ld de, Sprites14to2DGFXPointers
-	ld a, [wdb1f]
-	sub $14
-	ld [wdb1f], a
+	ld a, [wMapSpriteID]
+	sub SPRITE_14
+	ld [wMapSpriteID], a
 	ret
-
 .sprites1
 	ld a, BANK(Sprites00to13GFXPointers)
 	rst Bankswitch

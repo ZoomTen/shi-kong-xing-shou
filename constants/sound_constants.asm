@@ -124,4 +124,5 @@ DEF BGM_START EQU const_value
 	const BGM_BATTLE_TRANSITION ; $73
 	const BGM_74 ; $74
 	const BGM_75 ; $75 - duplicate of $74
+	const BGM_76
 

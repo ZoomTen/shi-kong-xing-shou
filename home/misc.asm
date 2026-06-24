@@ -103,10 +103,10 @@ CopyBytesVRAM_BankD0F1::
 	rst Bankswitch
 	ret
 
-CopyBytesVRAM_Bank0C::
+CopyBytesVRAM_Bank0C:: ; option and battle stuff?
 	ld a, [_BANKNUM]
 	push af
-	ld a, $0c
+	ld a, BANK("bank0c Misc GFX")
 	rst Bankswitch
 	call CopyBytesVRAM
 	pop af
@@ -196,7 +196,7 @@ CopyBGMapData::
 AdvanceBattleScriptMode::
 	ld a, [_BANKNUM]
 	push af
-	ld a, $23
+	ld a, BANK(BattleAnimScript_Pointers)
 	rst Bankswitch
 	ld a, [wBattleScriptPos]
 	ld l, a

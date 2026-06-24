@@ -716,7 +716,7 @@ wGameTimeSeconds:: ds 1
 wdb1c:: ds 1
 wdb1d:: ds 1
 wCurrentCharacterByte:: ds 1
-wdb1f:: ds 1
+wMapSpriteID:: ds 1
 wMonBox:: ds NUM_BOX_MONS * BOX_STRUCT_LENGTH ; box_struct records; count in wMonBoxCount, mirrored to SRAM (sa6db)
 wMonBoxCount:: ds 1
 wdc9d:: ds 1
@@ -758,7 +758,7 @@ wdcce:: ds 1
 wdccf:: ds 1
 
 wdcd0:: ds 1
-wdcd1:: ds 2
+wCharacterTileSource:: ds 2
 wSavedScriptPos:: ; saved wScriptPos during scr_move/scr_54 movement scripts
 wdcd3:: ds 2
 wdcd5:: ds 1

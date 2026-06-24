@@ -10,7 +10,7 @@ DispatchScriptCommand::
 	ld a, BANK(_DispatchScriptCommand)
 	rst Bankswitch
 	call _DispatchScriptCommand
-	ld a, $05
+	ld a, BANK(Func_005_440f)
 	rst Bankswitch
 	ret
 

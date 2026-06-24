@@ -21,7 +21,8 @@ SOURCES := \
 	sram.asm \
 	bank_nums.asm \
 	data/monsters/pics.asm \
-	data/gfx.asm
+	data/gfx.asm \
+	audio.asm
 
 OBJS := $(SOURCES:%.asm=%.o)
 

@@ -1,7 +1,7 @@
 LoadMonPic::
 	ld a, [_BANKNUM]
 	push af
-	ld a, $27
+	ld a, BANK("Pics 1")
 	rst Bankswitch
 	ld a, [wd9d9]
 	call LoadMonPicBank
@@ -71,42 +71,36 @@ LoadMonPic_vTiles90d0::
 	ret
 
 LoadMonPicBank::
-	cp 28
+	cp MON_028
 	jr c, .pics1
-	cp 56
+	cp MON_056
 	jr c, .pics2
-	cp 84
+	cp MON_084
 	jr c, .pics3
-	cp 112
+	cp MON_112
 	jr c, .pics4
-	cp 140
+	cp MON_140
 	jr c, .pics5
-
-; mon >= 140
+; mon >= MON_140
 	ld a, BANK("Pics 6")
 	rst Bankswitch
 	ret
-
 .pics1
 	ld a, BANK("Pics 1")
 	rst Bankswitch
 	ret
-
 .pics2
 	ld a, BANK("Pics 2")
 	rst Bankswitch
 	ret
-
 .pics3
 	ld a, BANK("Pics 3")
 	rst Bankswitch
 	ret
-
 .pics4
 	ld a, BANK("Pics 4")
 	rst Bankswitch
 	ret
-
 .pics5
 	ld a, BANK("Pics 5")
 	rst Bankswitch

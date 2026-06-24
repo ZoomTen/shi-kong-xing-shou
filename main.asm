@@ -3,12 +3,6 @@ INCLUDE "constants.asm"
 SECTION "bank01", ROMX
 INCLUDE "banks/bank_01.asm"
 
-SECTION "bank02", ROMX
-INCLUDE "banks/bank_02.asm"
-
-SECTION "bank03", ROMX
-INCLUDE "banks/bank_03.asm"
-
 SECTION "bank04", ROMX
 INCLUDE "banks/bank_04.asm"
 
@@ -39,6 +33,13 @@ INCLUDE "banks/bank_0b.asm"
 
 SECTION "bank0c", ROMX
 INCLUDE "banks/bank_0c.asm"
+INCLUDE "engine/overworld/signposts.asm"
+
+SECTION "SRAM Test", ROMX
+INCLUDE "engine/save/sram_test.asm"
+
+SECTION "Overworld Map Items", ROMX
+INCLUDE "engine/overworld/map_items.asm"
 
 SECTION "bank0d", ROMX
 INCLUDE "banks/bank_0d.asm"
@@ -87,9 +88,6 @@ INCLUDE "engine/movie/gale.asm"
 
 SECTION "bank1c", ROMX
 INCLUDE "banks/bank_1c.asm"
-
-SECTION "bank1d", ROMX
-INCLUDE "banks/bank_1d.asm"
 
 SECTION "bank1e", ROMX
 INCLUDE "banks/bank_1e.asm"

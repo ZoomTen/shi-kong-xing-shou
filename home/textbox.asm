@@ -25,9 +25,9 @@ RequestLoadCharacter_PaperScroll::
 	ld [wCharacterTileDest], a
 
 ; Get character tile source
-	ld a, [wdcd1]
+	ld a, [wCharacterTileSource]
 	ld e, a
-	ld a, [wdcd1 + 1]
+	ld a, [wCharacterTileSource + 1]
 	ld d, a
 ; hl = a * (4*8) (4 tiles, 8 bytes)
 	ld a, [wCurrentCharacterByte]

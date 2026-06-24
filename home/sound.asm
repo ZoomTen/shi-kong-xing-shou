@@ -86,28 +86,28 @@ InitSound::
 PlayQueuedSound::
 ; Load sound bank?
 	ld e, a
-	cp $53
+	cp BGM_53
 	jr c, .asm_2677
-	cp $65
+	cp BGM_ACADEMY
 	jr c, .asm_2657
-	cp $6d
+	cp BGM_INTRO
 	jr c, .asm_265b
-	cp $76
+	cp BGM_76
 	jr c, .asm_2653
 
-	ld a, $1d
+	ld a, BANK("Audio 3")
 	jr .asm_265d
 
 .asm_2653
-	ld a, $1d
+	ld a, BANK("Audio 3")
 	jr .asm_265d
 
 .asm_2657
-	ld a, $02
+	ld a, BANK("Audio 1")
 	jr c, .asm_265d ; jr
 
 .asm_265b
-	ld a, $03
+	ld a, BANK("Audio 2")
 
 .asm_265d
 	ld hl, wCurrentSoundBank
@@ -146,7 +146,3 @@ WaitSoundFlush::
 	or a
 	jr z, .asm_2689
 	ret
-
-; TODO: unreferenced data block, classify type
-unk_2691::
-	ds $40, 0

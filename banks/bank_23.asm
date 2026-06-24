@@ -12,7 +12,7 @@ Func_023_4000:
 	ret
 
 ; battle-script pointer table, indexed by wBattleAnimID (IDs $00-$8e)
-BattleAnimScript_Pointers:
+BattleAnimScript_Pointers::
 	dw BattleAnimScript_023_4132
 	dw BattleAnimScript_023_4132
 	dw BattleAnimScript_023_4157

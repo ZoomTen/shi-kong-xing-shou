@@ -495,7 +495,7 @@ asm_026_4734:
 	jp c, asm_026_46c5
 	ret
 
-MonNamePointers:
+MonNamePointers::
 	dw text_26_4888
 	dw text_26_488d
 	dw text_26_4893

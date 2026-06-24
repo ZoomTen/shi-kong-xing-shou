@@ -16,14 +16,14 @@ ROM0
 	"GB header"
 	org $150
 	"Home"
-	org $2ca4
-	"Debug"
 ROMX $01
 	"bank01"
 ROMX $02
-	"bank02"
+	"Audio 1"
+	"Music 1"
 ROMX $03
-	"bank03"
+	"Audio 2"
+	"Music 2"
 ROMX $04
 	"bank04"
 ROMX $05
@@ -43,6 +43,10 @@ ROMX $0b
 	"bank0b"
 ROMX $0c
 	"bank0c"
+	"Battle UI GFX"
+	"bank0c Misc GFX"
+	"SRAM Test"
+	"Overworld Map Items"
 ROMX $0d
 	"bank0d"
 ROMX $0e
@@ -78,7 +82,8 @@ ROMX $1b
 ROMX $1c
 	"bank1c"
 ROMX $1d
-	"bank1d"
+	"Audio 3"
+	"Music 3"
 ROMX $1e
 	"bank1e"
 ROMX $1f

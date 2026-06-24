@@ -29,6 +29,7 @@ INCLUDE "home/map_init.asm"
 INCLUDE "home/text.asm"
 INCLUDE "home/maps.asm"
 INCLUDE "home/sound.asm"
+	ds $40
 INCLUDE "home/copy_bytes.asm"
 INCLUDE "home/maps_2.asm"
 INCLUDE "home/joypad.asm"
@@ -43,6 +44,5 @@ INCLUDE "home/sram.asm"
 INCLUDE "home/play_sound.asm"
 INCLUDE "home/tile_attrs.asm"
 INCLUDE "home/palette_data.asm"
-
-SECTION "Debug", ROM0
+	ds $40
 INCLUDE "home/debug.asm"

@@ -165,7 +165,7 @@ MenuText_e7::
 	ld [wdcd3 + 1], a
 	ld a, [_BANKNUM]
 	ld [hFFD4], a
-	ld a, $26
+	ld a, BANK(MonNamePointers)
 	rst Bankswitch
 	ld a, 1
 	ld [wd9d6], a
@@ -204,9 +204,9 @@ Menu_CheckCharacter_Continue::
 	ld a, b
 	and $f0
 	ld [wCharacterTileDest], a
-	ld a, [wdcd1]
+	ld a, [wCharacterTileSource]
 	ld e, a
-	ld a, [wdcd1 + 1]
+	ld a, [wCharacterTileSource + 1]
 	ld d, a
 	ld a, [wCurrentCharacterByte]
 	ld l, a

@@ -377,9 +377,9 @@ Func_00d_42a4:
 .asm_42b7
 	ld a, $60
 .asm_42b9
-	ld [wdcd1 + 1], a
+	ld [wCharacterTileSource + 1], a
 	xor a
-	ld [wdcd1], a
+	ld [wCharacterTileSource], a
 	jp Func_00d_40b8
 
 .asm_42c3

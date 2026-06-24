@@ -57,22 +57,22 @@ GetCharacterSetBase::
 	and $0f
 	push af
 	srl a
-	add $40
+	add BANK(GFX_040_4000)
 	ld [hTargetBank], a
 	pop af
 	bit 0, a
 	jr nz, .upper_characterset
 ; lower character set
-	ld a, $40
+	ld a, HIGH(GFX_040_4000)
 	jr .store_address
 
 .upper_characterset
-	ld a, $60
+	ld a, HIGH(GFX_040_6000)
 
 .store_address
-	ld [wdcd1 + 1], a
+	ld [wCharacterTileSource + 1], a
 	xor a
-	ld [wdcd1], a
+	ld [wCharacterTileSource], a
 	ret
 
 CheckCharacter_Continue::
@@ -232,9 +232,9 @@ RequestLoadCharacter_wTilemap::
 	ld [hl], c
 
 ; Get character tile source
-	ld a, [wdcd1]
+	ld a, [wCharacterTileSource]
 	ld e, a
-	ld a, [wdcd1 + 1]
+	ld a, [wCharacterTileSource + 1]
 	ld d, a
 ; hl = a * (4*8) (4 tiles, 8 bytes)
 	ld a, [wCurrentCharacterByte]
@@ -363,7 +363,7 @@ LoadTextName::
 
 RequestLoadCharacter_Name::
 ; Used for names on textboxes
-	ld a, $0a
+	ld a, BANK(NamePointers)
 	rst Bankswitch
 	ld a, [hli]
 	push hl
@@ -389,9 +389,9 @@ RequestLoadCharacter_Name::
 	ld [wCharacterTileDest], a
 
 ; Get character tile source
-	ld a, [wdcd1]
+	ld a, [wCharacterTileSource]
 	ld e, a
-	ld a, [wdcd1 + 1]
+	ld a, [wCharacterTileSource + 1]
 	ld d, a
 ; hl = a * (4*8) (4 tiles, 8 bytes)
 	ld a, [wCurrentCharacterByte]
@@ -424,7 +424,7 @@ ENDR
 
 .end_of_name
 	pop hl
-	ld a, $0a
+	ld a, BANK(NamePointers)
 	rst Bankswitch
 	ret
 
@@ -1006,7 +1006,7 @@ InitMenuCursor::
 	ret
 
 UpdateMenuCursorOAM::
-	homecall Func_004_4045
+	homecall _UpdateMenuCursorOAM
 	ret
 
 AnimateMenuCursor::

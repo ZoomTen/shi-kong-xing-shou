@@ -36,7 +36,7 @@ Func_004_4024::
 	call Func_004_40cb
 	ret
 
-Func_004_4045::
+_UpdateMenuCursorOAM::
 	ld hl, wVirtualOAMSprite32
 	ld bc, $0004
 	ld de, $0004

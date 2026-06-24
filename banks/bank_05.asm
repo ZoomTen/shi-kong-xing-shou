@@ -664,7 +664,7 @@ Func_005_4408:
 	farcall asm_00a_45b4
 	ret
 
-Func_005_440f:
+Func_005_440f::
 	ld bc, wd1a0
 .asm_4412
 	ld hl, $0002
@@ -2323,10 +2323,11 @@ Func_005_4f3d:
 	ret
 
 StartBattle:
-; on battle start
+; battles only enabled after a certain scene?
 	ldh a, [hMapPredef]
 	cp MAPPREDEF_04
 	ret c
+; don't do battle while a scene transition is happening
 	ldh a, [hFade]
 	and a
 	ret nz

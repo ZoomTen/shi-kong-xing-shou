@@ -1,4 +1,3 @@
-NamePointers::
 	dw BlankName    ; $00
 	dw BallotName   ; $01
 	dw BuckName     ; $02
