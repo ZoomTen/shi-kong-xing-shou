@@ -20,7 +20,8 @@ SOURCES := \
 	hram.asm \
 	sram.asm \
 	bank_nums.asm \
-	data/monsters/pics.asm
+	data/monsters/pics.asm \
+	data/gfx.asm
 
 OBJS := $(SOURCES:%.asm=%.o)
 
@@ -60,7 +61,7 @@ clean:
 	$(if $(shell find -iname '*.gbcpal'),\
 		$(RM) -fv $(shell find -iname '*.gbcpal') \
 	)
-	$(MAKE) clean -C tools/
+	# $(MAKE) clean -C tools/
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
@@ -103,7 +104,8 @@ data/maps/layouts/%.bin: data/maps/layouts/%.tmx
 gfx/character_set/%.1bpp: tools/gfx += --interleave --png=$<
 gfx/battle/%.2bpp: tools/gfx += --interleave --png=$<
 gfx/sprites/%.2bpp: tools/gfx += --interleave --png=$<
-gfx/intro/sprites/%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
+gfx/intro/text%.2bpp: tools/gfx += --interleave --remove-whitespace --png=$<
+gfx/intro/stars.2bpp: tools/gfx += --interleave --png=$<
 
 ### Dialog faces
 

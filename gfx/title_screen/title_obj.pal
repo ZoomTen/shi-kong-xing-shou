@@ -1,0 +1,22 @@
+	RGB 21, 21, 21
+	RGB 22, 00, 00
+	RGB 29, 14, 00
+	RGB 31, 24, 00
+
+	RGB 21, 21, 21
+	RGB 00, 07, 00
+	RGB 06, 18, 00
+	RGB 22, 29, 00
+
+	RGB 21, 21, 21
+	RGB 10, 10, 10
+	RGB 31, 00, 00
+	RGB 30, 30, 30
+
+; fill remaining slots
+rept 6
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+endr

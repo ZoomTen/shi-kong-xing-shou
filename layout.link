@@ -257,10 +257,13 @@ ROMX $76
 	"bank76"
 ROMX $77
 	"bank77"
+	"Intro GFX 1"
+	"Title Screen GFX"
+	"Vast Fame Logo GFX"
 ROMX $78
-	"bank78"
+	"Intro GFX 2"
 ROMX $79
-	"bank79"
+	"Intro GFX 3"
 ROMX $7a
 	"bank7a"
 ROMX $7b

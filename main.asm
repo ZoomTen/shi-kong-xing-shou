@@ -177,48 +177,6 @@ INCLUDE "banks/bank_3e.asm"
 SECTION "bank3f", ROMX
 INCLUDE "banks/bank_3f.asm"
 
-; character sets
-
-SECTION "charset0_low", ROMX
-GFX_040_4000:
-	INCBIN "gfx/character_set/image_40_4000.1bpp"
-
-SECTION "charset0_high", ROMX
-GFX_040_6000:
-	INCBIN "gfx/character_set/image_40_6000.1bpp"
-
-SECTION "charset1_low", ROMX
-GFX_041_4000:
-	INCBIN "gfx/character_set/image_41_4000.1bpp"
-
-SECTION "charset1_high", ROMX
-GFX_041_6000:
-	INCBIN "gfx/character_set/image_41_6000.1bpp"
-
-SECTION "charset2_low", ROMX
-GFX_042_4000:
-	INCBIN "gfx/character_set/image_42_4000.1bpp"
-
-SECTION "charset2_high", ROMX
-GFX_042_6000:
-	INCBIN "gfx/character_set/image_42_6000.1bpp"
-
-SECTION "charset3_low", ROMX
-GFX_043_4000:
-	INCBIN "gfx/character_set/image_43_4000.1bpp"
-
-SECTION "charset3_high", ROMX
-GFX_043_6000:
-	INCBIN "gfx/character_set/image_43_6000.1bpp"
-
-SECTION "charset4_low", ROMX
-GFX_044_4000:
-	INCBIN "gfx/character_set/image_44_4000.1bpp"
-
-SECTION "charset4_high", ROMX
-GFX_044_6000:
-	INCBIN "gfx/character_set/image_44_6000.1bpp"
-
 SECTION "bank48", ROMX
 INCLUDE "banks/bank_48.asm"
 
@@ -343,13 +301,9 @@ SECTION "bank76", ROMX
 INCLUDE "banks/bank_76.asm"
 
 SECTION "bank77", ROMX
-INCLUDE "banks/bank_77.asm"
-
-SECTION "bank78", ROMX
-INCLUDE "banks/bank_78.asm"
-
-SECTION "bank79", ROMX
-INCLUDE "banks/bank_79.asm"
+INCLUDE "engine/movie/intro_vastfame.asm"
+INCLUDE "engine/movie/title_screen.asm"
+INCLUDE "engine/movie/intro_2.asm"
 
 SECTION "bank7a", ROMX
 INCLUDE "banks/bank_7a.asm"
