@@ -26,10 +26,10 @@
 	const GAMEMODE_17                        ; $17 NewGameContinueMenu
 	const GAMEMODE_18                        ; $18 NewGameContinueMenu
 	const GAMEMODE_DEBUG_SOUND_TEST          ; $19 Debug_SoundTest
-	const GAMEMODE_1A                        ; $1a Func_03c_4c74
-	const GAMEMODE_1B                        ; $1b Func_07a_401f
-	const GAMEMODE_1C                        ; $1c Func_07a_4188
-	const GAMEMODE_1D                        ; $1d Func_06f_4000
-	const GAMEMODE_1E                        ; $1e Func_070_4000
+	const GAMEMODE_1A                        ; $1a Cutscene1a
+	const GAMEMODE_1B                        ; $1b Cutscene1b
+	const GAMEMODE_1C                        ; $1c Cutscene1c
+	const GAMEMODE_1D                        ; $1d Cutscene1d
+	const GAMEMODE_1E                        ; $1e Cutscene1e
 	const GAMEMODE_CREDITS                   ; $1f Credits
 	const GAMEMODE_THE_END                   ; $20 TheEnd

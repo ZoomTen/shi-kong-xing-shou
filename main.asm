@@ -171,7 +171,7 @@ SECTION "bank3c", ROMX
 INCLUDE "engine/save/load_game.asm"
 INCLUDE "engine/menu/new_game_continue.asm"
 INCLUDE "engine/movie/game_over.asm"
-INCLUDE "banks/bank_3c.asm"
+INCLUDE "engine/movie/1a.asm"
 
 SECTION "bank3d", ROMX
 INCLUDE "banks/bank_3d.asm"
@@ -295,10 +295,10 @@ SECTION "bank6e", ROMX
 INCLUDE "banks/bank_6e.asm"
 
 SECTION "bank6f", ROMX
-INCLUDE "banks/bank_6f.asm"
+INCLUDE "engine/movie/1d.asm"
 
 SECTION "bank70", ROMX
-INCLUDE "banks/bank_70.asm"
+INCLUDE "engine/movie/1e.asm"
 
 SECTION "bank71", ROMX
 INCLUDE "engine/movie/credits.asm"
@@ -319,7 +319,7 @@ INCLUDE "engine/movie/title_screen.asm"
 INCLUDE "engine/movie/intro_2.asm"
 
 SECTION "bank7a", ROMX
-INCLUDE "banks/bank_7a.asm"
+INCLUDE "engine/movie/1b_1c.asm"
 
 SECTION "bank7b", ROMX
 INCLUDE "banks/bank_7b.asm"

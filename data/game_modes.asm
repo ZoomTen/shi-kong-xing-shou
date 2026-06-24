@@ -24,10 +24,10 @@
 	dba NewGameContinueMenu   ; $17
 	dba NewGameContinueMenu   ; $18
 	dba Debug_SoundTest ; $19
-	dba Func_03c_4c74   ; $1a
-	dba Func_07a_401f   ; $1b
-	dba Func_07a_4188   ; $1c
-	dba Func_06f_4000   ; $1d
-	dba Func_070_4000   ; $1e
+	dba Cutscene1a   ; $1a
+	dba Cutscene1b   ; $1b
+	dba Cutscene1c   ; $1c
+	dba Cutscene1d   ; $1d
+	dba Cutscene1e   ; $1e
 	dba Credits   ; $1f
 	dba TheEnd   ; $20

@@ -1,4 +1,4 @@
-Func_070_4000::
+Cutscene1e::
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a

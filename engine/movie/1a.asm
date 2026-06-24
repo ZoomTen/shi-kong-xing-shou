@@ -21,7 +21,7 @@ Func_03c_4c63:
 	jr nz, .asm_4c6c
 	ret
 
-Func_03c_4c74::
+Cutscene1a::
 	call Func_03c_4c55
 	ld a, BGM_JUNKYARD
 	call PlaySound
