@@ -84,19 +84,13 @@ INCLUDE "audio/headers/headers_1.asm"
 
 INCLUDE "audio/engine/engine_1.asm"
 
-SoundEngine1_NoteFrequencies:
-INCLUDE "audio/notes.asm"
+SoundEngine1_NoteFrequencies: INCLUDE "audio/notes.asm"
 
 INCLUDE "audio/sfx/sfx_1.asm"
 
-SoundEngine1_InstrumentPointers:
-INCLUDE "audio/instruments.asm"
-
-SoundEngine1_VibratoTables:
-INCLUDE "audio/vibrato_tables.asm"
-
-SoundEngine1_Waveforms:
-INCLUDE "audio/wave_instruments.asm"
+SoundEngine1_InstrumentPointers: INCLUDE "audio/instruments.asm"
+SoundEngine1_VibratoTables: INCLUDE "audio/vibrato_tables.asm"
+SoundEngine1_Waveforms: INCLUDE "audio/wave_instruments.asm"
 
 INCLUDE "audio/sfx/sfx_1b.asm"
 
@@ -138,19 +132,13 @@ INCLUDE "audio/headers/headers_2.asm"
 
 INCLUDE "audio/engine/engine_2.asm"
 
-SoundEngine2_NoteFrequencies:
-INCLUDE "audio/notes.asm"
+SoundEngine2_NoteFrequencies: INCLUDE "audio/notes.asm"
 
 INCLUDE "audio/sfx/sfx_2.asm"
 
-SoundEngine2_InstrumentPointers:
-INCLUDE "audio/instruments.asm"
-
-SoundEngine2_VibratoTables:
-INCLUDE "audio/vibrato_tables.asm"
-
-SoundEngine2_Waveforms:
-INCLUDE "audio/wave_instruments.asm"
+SoundEngine2_InstrumentPointers: INCLUDE "audio/instruments.asm"
+SoundEngine2_VibratoTables: INCLUDE "audio/vibrato_tables.asm"
+SoundEngine2_Waveforms: INCLUDE "audio/wave_instruments.asm"
 
 INCLUDE "audio/sfx/sfx_2b.asm"
 
@@ -188,19 +176,13 @@ INCLUDE "audio/headers/headers_3.asm"
 
 INCLUDE "audio/engine/engine_3.asm"
 
-SoundEngine3_NoteFrequencies:
-INCLUDE "audio/notes.asm"
+SoundEngine3_NoteFrequencies: INCLUDE "audio/notes.asm"
 
 INCLUDE "audio/sfx/sfx_3.asm"
 
-SoundEngine3_InstrumentPointers:
-INCLUDE "audio/instruments.asm"
-
-SoundEngine3_VibratoTables:
-INCLUDE "audio/vibrato_tables.asm"
-
-SoundEngine3_Waveforms:
-INCLUDE "audio/wave_instruments.asm"
+SoundEngine3_InstrumentPointers: INCLUDE "audio/instruments.asm"
+SoundEngine3_VibratoTables: INCLUDE "audio/vibrato_tables.asm"
+SoundEngine3_Waveforms: INCLUDE "audio/wave_instruments.asm"
 
 INCLUDE "audio/sfx/sfx_3b.asm"
 
