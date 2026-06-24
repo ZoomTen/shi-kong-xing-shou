@@ -26,6 +26,7 @@ INCLUDE "banks/bank_08.asm"
 INCLUDE "data/text/bank08_misc2.asm"
 INCLUDE "data/text/ballots_house_intro.asm"
 INCLUDE "data/text/bank08_misc.asm"
+INCLUDE "engine/movie/meteor.asm"
 
 SECTION "bank09", ROMX
 INCLUDE "banks/bank_09.asm"

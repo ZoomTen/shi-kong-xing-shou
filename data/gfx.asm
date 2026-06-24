@@ -80,6 +80,33 @@ Intro_Text6_GFX:: INCBIN "gfx/intro/text6.2bpp"
 Intro_Text7_GFX:: INCBIN "gfx/intro/text7.2bpp"
 Intro_Text8_GFX:: INCBIN "gfx/intro/text8.2bpp"
 
+SECTION "Meteor Cutscene GFX", ROMX
+MeteorCutscene_BlackPalette:: INCBIN "gfx/meteor/cutscene_black.pal"
+MeteorCutscene_TextPalette:: INCBIN "gfx/meteor/cutscene_text.pal"
+MeteorCutscene_Text1_Tilemap:: INCBIN "gfx/meteor/text_1.tilemap"
+MeteorCutscene_Text4_Tilemap:: INCBIN "gfx/meteor/text_4.tilemap"
+MeteorCutscene_TextAttr:: INCBIN "gfx/meteor/cutscene_text.attr"
+MeteorCutscene_TextGFX_1:: INCBIN "gfx/meteor/text_gfx_1.2bpp"
+MeteorCutscene_TextGFX_2:: INCBIN "gfx/meteor/text_gfx_2.2bpp"
+MeteorCutscene_TextGFX_3:: INCBIN "gfx/meteor/text_gfx_3.2bpp"
+unk_008_6eae:: INCBIN "data/unk_008_6eae.bin" ; ??
+MeteorCutscene_Text2_Tilemap:: INCBIN "gfx/meteor/text_2.tilemap"
+MeteorCutscene_Text3_Tilemap:: INCBIN "gfx/meteor/text_3.tilemap"
+unk_008_6f26:: INCBIN "data/unk_008_6f26.bin" ; ??
+MeteorCutscene_Text5_Tilemap:: INCBIN "gfx/meteor/text_5.tilemap"
+MeteorCutscene_Text6_Tilemap:: INCBIN "gfx/meteor/text_6.tilemap"
+MeteorCutscene_Text7_Tilemap:: INCBIN "gfx/meteor/text_7.tilemap"
+MeteorCutscene_Text8_Tilemap:: INCBIN "gfx/meteor/text_8.tilemap"
+MeteorCutscene_Text9_Tilemap:: INCBIN "gfx/meteor/text_9.tilemap"
+MeteorCutscene_StormTilemap_1:: INCBIN "gfx/meteor/storm_bg_1.tilemap"
+MeteorCutscene_StormAttr:: INCBIN "gfx/meteor/storm.gbcattr"
+MeteorCutscene_MeteorPalette:: INCBIN "gfx/meteor/meteor_bg.pal"
+MeteorCutscene_OBJPalette:: INCBIN "gfx/meteor/meteor_obj.pal"
+MeteorCutscene_StormGFX:: INCBIN "gfx/meteor/storm.2bpp"
+MeteorCutscene_MeteorGFX:: INCBIN "gfx/meteor/meteor.2bpp"
+MeteorCutscene_StormTilemap_2:: INCBIN "gfx/meteor/storm_bg_2.tilemap"
+MeteorCutscene_StormTilemap_3:: INCBIN "gfx/meteor/storm_bg_3.tilemap"
+
 ; character sets
 
 SECTION "charset0_low", ROMX

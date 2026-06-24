@@ -34,6 +34,7 @@ ROMX $07
 	"bank07"
 ROMX $08
 	"bank08"
+	"Meteor Cutscene GFX"
 ROMX $09
 	"bank09"
 ROMX $0a
