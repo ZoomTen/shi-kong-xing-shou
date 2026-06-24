@@ -1,4 +1,6 @@
-SECTION "Pics 1", ROMX, BANK[$27]
+INCLUDE "constants.asm"
+
+SECTION "Pics 1", ROMX
 
 image_27_4000:: INCBIN "gfx/monsters/000/mon_000.2bpp"
 image_27_4240:: INCBIN "gfx/monsters/001/mon_001.2bpp"
@@ -29,7 +31,7 @@ image_27_7840:: INCBIN "gfx/monsters/025/mon_025.2bpp"
 image_27_7a80:: INCBIN "gfx/monsters/026/mon_026.2bpp"
 image_27_7cc0:: INCBIN "gfx/monsters/027/mon_027.2bpp"
 
-SECTION "Pics 2", ROMX, BANK[$28]
+SECTION "Pics 2", ROMX
 
 image_28_4000:: INCBIN "gfx/monsters/028/mon_028.2bpp"
 image_28_4240:: INCBIN "gfx/monsters/029/mon_029.2bpp"
@@ -61,7 +63,7 @@ image_28_7a80:: INCBIN "gfx/monsters/054/mon_054.2bpp"
 image_28_7cc0:: INCBIN "gfx/monsters/055/mon_055.2bpp"
 
 
-SECTION "Pics 3", ROMX, BANK[$29]
+SECTION "Pics 3", ROMX
 
 image_29_4000:: INCBIN "gfx/monsters/056/mon_056.2bpp"
 image_29_4240:: INCBIN "gfx/monsters/057/mon_057.2bpp"
@@ -92,7 +94,7 @@ image_29_7840:: INCBIN "gfx/monsters/081/mon_081.2bpp"
 image_29_7a80:: INCBIN "gfx/monsters/082/mon_082.2bpp"
 image_29_7cc0:: INCBIN "gfx/monsters/083/mon_083.2bpp"
 
-SECTION "Pics 4", ROMX, BANK[$2a]
+SECTION "Pics 4", ROMX
 
 image_2a_4000:: INCBIN "gfx/monsters/084/mon_084.2bpp"
 image_2a_4240:: INCBIN "gfx/monsters/085/mon_085.2bpp"
@@ -123,7 +125,7 @@ image_2a_7840:: INCBIN "gfx/monsters/109/mon_109.2bpp"
 image_2a_7a80:: INCBIN "gfx/monsters/110/mon_110.2bpp"
 image_2a_7cc0:: INCBIN "gfx/monsters/111/mon_111.2bpp"
 
-SECTION "Pics 5", ROMX, BANK[$4b]
+SECTION "Pics 5", ROMX
 
 image_4b_4000:: INCBIN "gfx/monsters/112/mon_112.2bpp"
 image_4b_4240:: INCBIN "gfx/monsters/113/mon_113.2bpp"
@@ -154,7 +156,7 @@ image_4b_7840:: INCBIN "gfx/monsters/137/mon_137.2bpp"
 image_4b_7a80:: INCBIN "gfx/monsters/138/mon_138.2bpp"
 image_4b_7cc0:: INCBIN "gfx/monsters/139/mon_139.2bpp"
 
-SECTION "Pics 6", ROMX, BANK[$4c]
+SECTION "Pics 6", ROMX
 
 image_4c_4000:: INCBIN "gfx/monsters/140/mon_140.2bpp"
 image_4c_4240:: INCBIN "gfx/monsters/141/mon_141.2bpp"

@@ -1,353 +1,370 @@
 INCLUDE "constants.asm"
 
-SECTION "bank01", ROMX, BANK[$01]
+SECTION "bank01", ROMX
 INCLUDE "banks/bank_01.asm"
 
-SECTION "bank02", ROMX, BANK[$02]
+SECTION "bank02", ROMX
 INCLUDE "banks/bank_02.asm"
 
-SECTION "bank03", ROMX, BANK[$03]
+SECTION "bank03", ROMX
 INCLUDE "banks/bank_03.asm"
 
-SECTION "bank04", ROMX, BANK[$04]
+SECTION "bank04", ROMX
 INCLUDE "banks/bank_04.asm"
 
-SECTION "bank05", ROMX, BANK[$05]
+SECTION "bank05", ROMX
 INCLUDE "banks/bank_05.asm"
 
-SECTION "bank06", ROMX, BANK[$06]
+SECTION "bank06", ROMX
 INCLUDE "banks/bank_06.asm"
 
-SECTION "bank07", ROMX, BANK[$07]
+SECTION "bank07", ROMX
 INCLUDE "banks/bank_07.asm"
 
-SECTION "bank08", ROMX, BANK[$08]
+SECTION "bank08", ROMX
 INCLUDE "banks/bank_08.asm"
 
-SECTION "bank09", ROMX, BANK[$09]
+SECTION "bank09", ROMX
 INCLUDE "banks/bank_09.asm"
 
-SECTION "bank0a", ROMX, BANK[$0a]
+SECTION "bank0a", ROMX
 INCLUDE "banks/bank_0a.asm"
 
-SECTION "bank0b", ROMX, BANK[$0b]
+SECTION "bank0b", ROMX
 INCLUDE "banks/bank_0b.asm"
 
-SECTION "bank0c", ROMX, BANK[$0c]
+SECTION "bank0c", ROMX
 INCLUDE "banks/bank_0c.asm"
 
-SECTION "bank0d", ROMX, BANK[$0d]
+SECTION "bank0d", ROMX
 INCLUDE "banks/bank_0d.asm"
 
-SECTION "bank0e", ROMX, BANK[$0e]
+SECTION "bank0e", ROMX
 INCLUDE "banks/bank_0e.asm"
 
-SECTION "bank0f", ROMX, BANK[$0f]
+SECTION "bank0f", ROMX
 INCLUDE "banks/bank_0f.asm"
 
-SECTION "bank10", ROMX, BANK[$10]
+SECTION "bank10", ROMX
 INCLUDE "banks/bank_10.asm"
 
-SECTION "bank11", ROMX, BANK[$11]
+SECTION "bank11", ROMX
 INCLUDE "banks/bank_11.asm"
 
-SECTION "bank12", ROMX, BANK[$12]
+SECTION "bank12", ROMX
 INCLUDE "banks/bank_12.asm"
 
-SECTION "bank13", ROMX, BANK[$13]
+SECTION "bank13", ROMX
 INCLUDE "banks/bank_13.asm"
 
-SECTION "bank14", ROMX, BANK[$14]
+SECTION "bank14", ROMX
 INCLUDE "banks/bank_14.asm"
 
-SECTION "bank15", ROMX, BANK[$15]
+SECTION "bank15", ROMX
 INCLUDE "banks/bank_15.asm"
 
-SECTION "bank16", ROMX, BANK[$16]
+SECTION "bank16", ROMX
 INCLUDE "banks/bank_16.asm"
 
-SECTION "bank17", ROMX, BANK[$17]
+SECTION "bank17", ROMX
 INCLUDE "banks/bank_17.asm"
 
-SECTION "bank18", ROMX, BANK[$18]
+SECTION "bank18", ROMX
 INCLUDE "banks/bank_18.asm"
 
-SECTION "bank19", ROMX, BANK[$19]
+SECTION "bank19", ROMX
 INCLUDE "banks/bank_19.asm"
 
-SECTION "bank1a", ROMX, BANK[$1a]
+SECTION "bank1a", ROMX
 INCLUDE "banks/bank_1a.asm"
 
-SECTION "bank1b", ROMX, BANK[$1b]
+SECTION "bank1b", ROMX
 INCLUDE "banks/bank_1b.asm"
 
-SECTION "bank1c", ROMX, BANK[$1c]
+SECTION "bank1c", ROMX
 INCLUDE "banks/bank_1c.asm"
 
-SECTION "bank1d", ROMX, BANK[$1d]
+SECTION "bank1d", ROMX
 INCLUDE "banks/bank_1d.asm"
 
-SECTION "bank1e", ROMX, BANK[$1e]
+SECTION "bank1e", ROMX
 INCLUDE "banks/bank_1e.asm"
 
-SECTION "bank1f", ROMX, BANK[$1f]
+SECTION "bank1f", ROMX
 INCLUDE "banks/bank_1f.asm"
 
-SECTION "bank20", ROMX, BANK[$20]
+SECTION "bank20", ROMX
 INCLUDE "banks/bank_20.asm"
 
-SECTION "bank21", ROMX, BANK[$21]
+SECTION "bank21", ROMX
 INCLUDE "banks/bank_21.asm"
 
-SECTION "bank22", ROMX, BANK[$22]
+SECTION "bank22", ROMX
 INCLUDE "banks/bank_22.asm"
 
-SECTION "bank23", ROMX, BANK[$23]
+SECTION "bank23", ROMX
 INCLUDE "banks/bank_23.asm"
 
-SECTION "bank24", ROMX, BANK[$24]
+SECTION "bank24", ROMX
 INCLUDE "banks/bank_24.asm"
 
-SECTION "bank25", ROMX, BANK[$25]
+SECTION "bank25", ROMX
 INCLUDE "banks/bank_25.asm"
 
-SECTION "bank26", ROMX, BANK[$26]
+SECTION "bank26", ROMX
 INCLUDE "banks/bank_26.asm"
 
-INCLUDE "data/monsters/pics.asm"
-
-SECTION "bank2b", ROMX, BANK[$2b]
+SECTION "bank2b", ROMX
 INCLUDE "banks/bank_2b.asm"
 
-SECTION "bank2c", ROMX, BANK[$2c]
+SECTION "bank2c", ROMX
 INCLUDE "banks/bank_2c.asm"
 
-SECTION "bank2d", ROMX, BANK[$2d]
+SECTION "bank2d", ROMX
 INCLUDE "banks/bank_2d.asm"
 
-SECTION "bank2e", ROMX, BANK[$2e]
+SECTION "bank2e", ROMX
 INCLUDE "banks/bank_2e.asm"
 
-SECTION "bank2f", ROMX, BANK[$2f]
+SECTION "bank2f", ROMX
 INCLUDE "banks/bank_2f.asm"
 
-SECTION "bank30", ROMX, BANK[$30]
+SECTION "bank30", ROMX
 INCLUDE "banks/bank_30.asm"
 
-SECTION "bank31", ROMX, BANK[$31]
+SECTION "bank31", ROMX
 INCLUDE "banks/bank_31.asm"
 
-SECTION "bank32", ROMX, BANK[$32]
+SECTION "bank32", ROMX
 INCLUDE "banks/bank_32.asm"
 
-SECTION "bank33", ROMX, BANK[$33]
+SECTION "bank33", ROMX
 INCLUDE "banks/bank_33.asm"
 
-SECTION "bank34", ROMX, BANK[$34]
+SECTION "bank34", ROMX
 INCLUDE "banks/bank_34.asm"
 
-SECTION "bank35", ROMX, BANK[$35]
+SECTION "bank35", ROMX
 INCLUDE "banks/bank_35.asm"
 
-SECTION "bank36", ROMX, BANK[$36]
+SECTION "bank36", ROMX
 INCLUDE "banks/bank_36.asm"
 
-SECTION "bank37", ROMX, BANK[$37]
+SECTION "bank37", ROMX
 INCLUDE "banks/bank_37.asm"
 
-SECTION "bank38", ROMX, BANK[$38]
+SECTION "bank38", ROMX
 INCLUDE "banks/bank_38.asm"
 
-SECTION "bank39", ROMX, BANK[$39]
+SECTION "bank39", ROMX
 INCLUDE "banks/bank_39.asm"
 
-SECTION "bank3a", ROMX, BANK[$3a]
+SECTION "bank3a", ROMX
 INCLUDE "banks/bank_3a.asm"
 
-SECTION "bank3b", ROMX, BANK[$3b]
+SECTION "bank3b", ROMX
 INCLUDE "banks/bank_3b.asm"
 
-SECTION "bank3c", ROMX, BANK[$3c]
+SECTION "bank3c", ROMX
 INCLUDE "banks/bank_3c.asm"
 
-SECTION "bank3d", ROMX, BANK[$3d]
+SECTION "bank3d", ROMX
 INCLUDE "banks/bank_3d.asm"
 
-SECTION "bank3e", ROMX, BANK[$3e]
+SECTION "bank3e", ROMX
 INCLUDE "banks/bank_3e.asm"
 
-SECTION "bank3f", ROMX, BANK[$3f]
+SECTION "bank3f", ROMX
 INCLUDE "banks/bank_3f.asm"
 
-SECTION "bank40", ROMX, BANK[$40]
-INCLUDE "banks/bank_40.asm"
+; character sets
 
-SECTION "bank41", ROMX, BANK[$41]
-INCLUDE "banks/bank_41.asm"
+SECTION "charset0_low", ROMX
+GFX_040_4000:
+	INCBIN "gfx/character_set/image_40_4000.1bpp"
 
-SECTION "bank42", ROMX, BANK[$42]
-INCLUDE "banks/bank_42.asm"
+SECTION "charset0_high", ROMX
+GFX_040_6000:
+	INCBIN "gfx/character_set/image_40_6000.1bpp"
 
-SECTION "bank43", ROMX, BANK[$43]
-INCLUDE "banks/bank_43.asm"
+SECTION "charset1_low", ROMX
+GFX_041_4000:
+	INCBIN "gfx/character_set/image_41_4000.1bpp"
 
-SECTION "bank44", ROMX, BANK[$44]
-INCLUDE "banks/bank_44.asm"
+SECTION "charset1_high", ROMX
+GFX_041_6000:
+	INCBIN "gfx/character_set/image_41_6000.1bpp"
 
-; banks $45 - $47 are empty
+SECTION "charset2_low", ROMX
+GFX_042_4000:
+	INCBIN "gfx/character_set/image_42_4000.1bpp"
 
-SECTION "bank48", ROMX, BANK[$48]
+SECTION "charset2_high", ROMX
+GFX_042_6000:
+	INCBIN "gfx/character_set/image_42_6000.1bpp"
+
+SECTION "charset3_low", ROMX
+GFX_043_4000:
+	INCBIN "gfx/character_set/image_43_4000.1bpp"
+
+SECTION "charset3_high", ROMX
+GFX_043_6000:
+	INCBIN "gfx/character_set/image_43_6000.1bpp"
+
+SECTION "charset4_low", ROMX
+GFX_044_4000:
+	INCBIN "gfx/character_set/image_44_4000.1bpp"
+
+SECTION "charset4_high", ROMX
+GFX_044_6000:
+	INCBIN "gfx/character_set/image_44_6000.1bpp"
+
+SECTION "bank48", ROMX
 INCLUDE "banks/bank_48.asm"
 
-SECTION "bank49", ROMX, BANK[$49]
+SECTION "bank49", ROMX
 INCLUDE "banks/bank_49.asm"
 
-SECTION "bank4a", ROMX, BANK[$4a]
+SECTION "bank4a", ROMX
 INCLUDE "banks/bank_4a.asm"
 
-SECTION "bank4d", ROMX, BANK[$4d]
+SECTION "bank4d", ROMX
 INCLUDE "banks/bank_4d.asm"
 
-SECTION "bank4e", ROMX, BANK[$4e]
+SECTION "bank4e", ROMX
 INCLUDE "banks/bank_4e.asm"
 
-SECTION "bank4f", ROMX, BANK[$4f]
+SECTION "bank4f", ROMX
 INCLUDE "banks/bank_4f.asm"
 
-SECTION "bank50", ROMX, BANK[$50]
+SECTION "bank50", ROMX
 INCLUDE "banks/bank_50.asm"
 
-SECTION "bank51", ROMX, BANK[$51]
+SECTION "bank51", ROMX
 INCLUDE "banks/bank_51.asm"
 
-SECTION "bank52", ROMX, BANK[$52]
+SECTION "bank52", ROMX
 INCLUDE "banks/bank_52.asm"
 
-SECTION "bank53", ROMX, BANK[$53]
+SECTION "bank53", ROMX
 INCLUDE "banks/bank_53.asm"
 
-SECTION "bank54", ROMX, BANK[$54]
+SECTION "bank54", ROMX
 INCLUDE "banks/bank_54.asm"
 
-SECTION "bank55", ROMX, BANK[$55]
+SECTION "bank55", ROMX
 INCLUDE "banks/bank_55.asm"
 
-SECTION "bank56", ROMX, BANK[$56]
+SECTION "bank56", ROMX
 INCLUDE "banks/bank_56.asm"
 
-SECTION "bank57", ROMX, BANK[$57]
+SECTION "bank57", ROMX
 INCLUDE "banks/bank_57.asm"
 
-SECTION "bank58", ROMX, BANK[$58]
+SECTION "bank58", ROMX
 INCLUDE "banks/bank_58.asm"
 
-SECTION "bank59", ROMX, BANK[$59]
+SECTION "bank59", ROMX
 INCLUDE "banks/bank_59.asm"
 
-SECTION "bank5a", ROMX, BANK[$5a]
+SECTION "bank5a", ROMX
 INCLUDE "banks/bank_5a.asm"
 
-SECTION "bank5b", ROMX, BANK[$5b]
+SECTION "bank5b", ROMX
 INCLUDE "banks/bank_5b.asm"
 
-SECTION "bank5c", ROMX, BANK[$5c]
+SECTION "bank5c", ROMX
 INCLUDE "banks/bank_5c.asm"
 
-SECTION "bank5d", ROMX, BANK[$5d]
+SECTION "bank5d", ROMX
 INCLUDE "banks/bank_5d.asm"
 
-SECTION "bank5e", ROMX, BANK[$5e]
+SECTION "bank5e", ROMX
 INCLUDE "banks/bank_5e.asm"
 
-SECTION "bank5f", ROMX, BANK[$5f]
+SECTION "bank5f", ROMX
 INCLUDE "banks/bank_5f.asm"
 
-SECTION "bank60", ROMX, BANK[$60]
+SECTION "bank60", ROMX
 INCLUDE "banks/bank_60.asm"
 
-SECTION "bank61", ROMX, BANK[$61]
+SECTION "bank61", ROMX
 INCLUDE "banks/bank_61.asm"
 
-SECTION "bank62", ROMX, BANK[$62]
+SECTION "bank62", ROMX
 INCLUDE "banks/bank_62.asm"
 
-SECTION "bank63", ROMX, BANK[$63]
+SECTION "bank63", ROMX
 INCLUDE "banks/bank_63.asm"
 
-SECTION "bank64", ROMX, BANK[$64]
+SECTION "bank64", ROMX
 INCLUDE "banks/bank_64.asm"
 
-SECTION "bank65", ROMX, BANK[$65]
+SECTION "bank65", ROMX
 INCLUDE "banks/bank_65.asm"
 
-SECTION "bank66", ROMX, BANK[$66]
+SECTION "bank66", ROMX
 INCLUDE "banks/bank_66.asm"
 
-SECTION "bank67", ROMX, BANK[$67]
+SECTION "bank67", ROMX
 INCLUDE "banks/bank_67.asm"
 
-; bank $68 is empty
-
-SECTION "bank69", ROMX, BANK[$69]
+SECTION "bank69", ROMX
 INCLUDE "banks/bank_69.asm"
 
-SECTION "bank6a", ROMX, BANK[$6a]
+SECTION "bank6a", ROMX
 INCLUDE "banks/bank_6a.asm"
 
-SECTION "bank6b", ROMX, BANK[$6b]
+SECTION "bank6b", ROMX
 INCLUDE "banks/bank_6b.asm"
 
-SECTION "bank6c", ROMX, BANK[$6c]
+SECTION "bank6c", ROMX
 INCLUDE "banks/bank_6c.asm"
 
-; bank $6d is empty
-
-SECTION "bank6e", ROMX, BANK[$6e]
+SECTION "bank6e", ROMX
 INCLUDE "banks/bank_6e.asm"
 
-SECTION "bank6f", ROMX, BANK[$6f]
+SECTION "bank6f", ROMX
 INCLUDE "banks/bank_6f.asm"
 
-SECTION "bank70", ROMX, BANK[$70]
+SECTION "bank70", ROMX
 INCLUDE "banks/bank_70.asm"
 
-SECTION "bank71", ROMX, BANK[$71]
+SECTION "bank71", ROMX
 INCLUDE "banks/bank_71.asm"
 
-; banks $72 and $73 are empty
-
-SECTION "bank74", ROMX, BANK[$74]
+SECTION "bank74", ROMX
 INCLUDE "banks/bank_74.asm"
 
-SECTION "bank75", ROMX, BANK[$75]
+SECTION "bank75", ROMX
 INCLUDE "banks/bank_75.asm"
 
-SECTION "bank76", ROMX, BANK[$76]
+SECTION "bank76", ROMX
 INCLUDE "banks/bank_76.asm"
 
-SECTION "bank77", ROMX, BANK[$77]
+SECTION "bank77", ROMX
 INCLUDE "banks/bank_77.asm"
 
-SECTION "bank78", ROMX, BANK[$78]
+SECTION "bank78", ROMX
 INCLUDE "banks/bank_78.asm"
 
-SECTION "bank79", ROMX, BANK[$79]
+SECTION "bank79", ROMX
 INCLUDE "banks/bank_79.asm"
 
-SECTION "bank7a", ROMX, BANK[$7a]
+SECTION "bank7a", ROMX
 INCLUDE "banks/bank_7a.asm"
 
-SECTION "bank7b", ROMX, BANK[$7b]
+SECTION "bank7b", ROMX
 INCLUDE "banks/bank_7b.asm"
 
-SECTION "bank7c", ROMX, BANK[$7c]
+SECTION "bank7c", ROMX
 INCLUDE "banks/bank_7c.asm"
 
-SECTION "bank7d", ROMX, BANK[$7d]
+SECTION "bank7d", ROMX
 INCLUDE "banks/bank_7d.asm"
 
-SECTION "bank7e", ROMX, BANK[$7e]
+SECTION "bank7e", ROMX
 INCLUDE "banks/bank_7e.asm"
 
-SECTION "bank7f", ROMX, BANK[$7f]
+SECTION "bank7f", ROMX
 INCLUDE "banks/bank_7f.asm"

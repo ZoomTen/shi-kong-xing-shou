@@ -3,7 +3,6 @@ INCLUDE "constants.asm"
 INCLUDE "home/header.asm"
 
 SECTION "Home", ROM0
-
 INCLUDE "home/main_loop.asm"
 INCLUDE "home/delay_frame.asm"
 INCLUDE "home/copy_vram.asm"
@@ -45,7 +44,5 @@ INCLUDE "home/play_sound.asm"
 INCLUDE "home/tile_attrs.asm"
 INCLUDE "home/palette_data.asm"
 
-
-SECTION "Debug", ROM0[$2ca4]
-
+SECTION "Debug", ROM0
 INCLUDE "home/debug.asm"

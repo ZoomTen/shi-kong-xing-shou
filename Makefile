@@ -19,7 +19,8 @@ SOURCES := \
 	wram.asm \
 	hram.asm \
 	sram.asm \
-	bank_nums.asm
+	bank_nums.asm \
+	data/monsters/pics.asm
 
 OBJS := $(SOURCES:%.asm=%.o)
 
@@ -28,6 +29,8 @@ MAP := $(ROM:%.gbc=%.map)
 SYM := $(ROM:%.gbc=%.sym)
 
 ROM_TITLE := "TIMER MONSTER  "
+
+LAYOUT := layout.link
 
 .PHONY: all tools clean compare
 .SECONDEXPANSION:
@@ -76,8 +79,8 @@ $(foreach obj, $(OBJS), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 
 endif
 
-$(ROM): $(OBJS)
-	$(LINK) -n $(SYM) -m $(MAP) -p 0 -o $@ $(OBJS)
+$(ROM): $(OBJS) $(LAYOUT)
+	$(LINK) -n $(SYM) -m $(MAP) -l $(LAYOUT) -p 0 -o $@ $(OBJS)
 	$(FIX) -cv -t $(ROM_TITLE) -l 0x33 -k A7 -m 0x1b -r 2 -p 0 $@
 	$(PYTHON) tools/sort_symbols.py $(SYM)
 
