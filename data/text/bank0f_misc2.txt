@@ -13,7 +13,7 @@
 	done;
 
 @org $0f, $493b:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "沒有錯﹗";
 	para "這就是我想要的";
 	line "發條⋯";
@@ -25,7 +25,7 @@
 	done;
 
 @org $0f, $498f:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "這就是發條老鼠";
 	line "⚬";
 	done;
@@ -45,7 +45,7 @@
 	done;
 
 @org $0f, $49fb:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "有了發條老鼠﹐";
 	cont "應該就可以引開";
 	line "發電塔的貓怪了";
@@ -104,27 +104,27 @@
 	done;
 
 @org $0f, $4b28:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 	text "哦～呵呵呵﹗";
 	para "有了三千萬﹐";
 	line "我們的夢想就⋯";
 	done;
 
 @org $0f, $4b4c:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 	text "跟在下想的﹐";
 	line "一點都沒錯⚬";
 	para "這樣一來⋯⋯";
 	done;
 
 @org $0f, $4b71:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 	text "你你⋯你⋯你";
 	line "⋯你怎麼來的﹖";
 	done;
 
 @org $0f, $4b86:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 	text "可惡﹗";
 	para "你是來破壞在下";
 	line "的夢想的嗎﹖";
@@ -133,7 +133,7 @@
 	done;
 
 @org $0f, $4bc3:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 	text "可可⋯可";
 	line "⋯可惡﹗";
 	para "你⋯你你⋯們給";
@@ -141,7 +141,7 @@
 	done;
 
 @org $0f, $4bf0:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 	text "這次在下就放了";
 	line "你﹗";
 	cont "要記住在下的恩";
@@ -302,7 +302,7 @@
 	done;
 
 @org $0f, $4f94:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "啊啊啊啊啊﹗﹗";
 	para "巴洛特啊﹗";
 	line "你來的剛剛好﹗";
@@ -316,7 +316,7 @@
 	done;
 
 @org $0f, $4fdc:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "我看了你的設計";
 	line "圖﹐";
 	cont "這可是不得了的";
@@ -341,7 +341,7 @@
 	done;
 
 @org $0f, $5097:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "是這樣啊﹗";
 	para "⋯⋯⋯⋯這是什";
 	line "麼﹖";
@@ -354,7 +354,7 @@
 	done;
 
 @org $0f, $50ed:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "就是這個﹗";
 	line "『動力晶片』﹗";
 	cont "這是核";
@@ -408,7 +408,7 @@
 	done;
 
 @org $0f, $5299:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "你不是想找到你";
 	line "爸爸嗎﹖";
 	cont "我們就來做個分";
@@ -421,14 +421,14 @@
 	done;
 
 @org $0f, $52fb:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "巴洛特～";
 	line "慢著慢著﹗";
 	para "先不要急著走⚬";
 	done;
 
 @org $0f, $531f:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "這個給你﹗";
 	para "這是晶片追蹤器";
 	line "及傳送ＰＤＡ⚬";
@@ -453,7 +453,7 @@
 	done;
 
 @org $0f, $53ad:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "巴克～";
 	para "你也跟著巴洛特";
 	line "吧﹗";
@@ -468,7 +468,7 @@
 	done;
 
 @org $0f, $53f6:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "我知道你在想什";
 	line "麼﹗";
 	para "等你回來～";
@@ -483,7 +483,7 @@
 	done;
 
 @org $0f, $5446:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "就這樣改一改⋯";
 	para "就是這裡⋯";
 	para "⋯⋯⋯";
@@ -515,7 +515,7 @@
 	done;
 
 @org $0f, $5521:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "去吧～";
 	para "到加爾企業﹐";
 	cont "尋找剩下的七個";
@@ -523,7 +523,7 @@
 	done;
 
 @org $0f, $554f:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "去吧～";
 	para "到加爾企業﹐";
 	cont "尋找剩下的七個";

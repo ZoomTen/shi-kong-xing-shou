@@ -1285,7 +1285,7 @@
 	done;
 
 @org $12, $751b:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "巴洛特﹐是時候";
 	line "了﹗再不行動的";
 	cont "話﹐等『那個』";
@@ -1300,7 +1300,7 @@
 	done;
 
 @org $12, $756e:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯⋯";
 	done;
 

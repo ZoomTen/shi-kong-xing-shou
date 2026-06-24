@@ -108,7 +108,7 @@
 	done;
 
 @org $4e, $4ec6:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $4ec9:
 	text "哦～呵呵呵﹗";
 	line "那個笨蛋麗子﹐";
@@ -263,7 +263,7 @@
 	done;
 
 @org $4e, $51aa:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $51ad:
 	text "哦～呵呵呵呵﹗";
 	line "什麼反應測試～";

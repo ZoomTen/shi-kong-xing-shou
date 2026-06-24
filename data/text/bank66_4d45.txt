@@ -1032,7 +1032,7 @@
 	done;
 
 @org $66, $6240:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6243:
 	text "哦～呵呵呵呵﹗";
 	line "這個音樂盒﹐";
@@ -1041,7 +1041,7 @@
 	done;
 
 @org $66, $626c:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $626f:
 	text "是的⚬";
 	line "雖然不無小補﹐";
@@ -1067,7 +1067,7 @@
 	done;
 
 @org $66, $62df:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $62e2:
 	text "我們﹖";
 	line "既然你們問起了";
@@ -1078,14 +1078,14 @@
 	done;
 
 @org $66, $630f:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6312:
 	text "來自銀河系裡的";
 	line "正義使者﹗";
 	done;
 
 @org $66, $632b:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $632e:
 	text "穿梭於黑夜的浪";
 	line "";
@@ -1096,33 +1096,33 @@
 	done;
 
 @org $66, $6343:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6346:
 	text "貫徹愛．正義．";
 	line "勇氣的真理﹗";
 	done;
 
 @org $66, $635e:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6361:
 	text "拉琪﹗";
 	done;
 
 @org $66, $6367:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $636a:
 	text "庫魯﹗";
 	done;
 
 @org $66, $6370:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6373:
 	text "閃．電．隊～～";
 	line "誕生﹗﹗";
 	done;
 
 @org $66, $6384:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6387:
 	text "在下為了能實現";
 	line "夢想﹐什麼事都";
@@ -1137,7 +1137,7 @@
 	done;
 
 @org $66, $63e7:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $63ea:
 	text "哼﹗知道在下的";
 	line "厲害了吧﹗";
@@ -1154,7 +1154,7 @@
 	done;
 
 @org $66, $6440:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6443:
 	text "慢⋯慢⋯";
 	line "慢慢著﹗";
@@ -1201,7 +1201,7 @@
 	done;
 
 @org $66, $649e:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $64a1:
 	text "是的﹗眼前這棟";
 	line "豪華的別宅﹐正";
@@ -1210,7 +1210,7 @@
 	done;
 
 @org $66, $64cf:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $64d2:
 	text "哦～呵呵呵呵﹗";
 	line "沒．有．錯﹗";
@@ -1227,7 +1227,7 @@
 	done;
 
 @org $66, $6534:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6537:
 	text "是的⚬";
 	para "";
@@ -1255,7 +1255,7 @@
 	done;
 
 @org $66, $65b5:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $65b8:
 	text "哦～呵呵呵呵﹗";
 	line "閃電隊一向是個";
@@ -1272,7 +1272,7 @@
 	done;
 
 @org $66, $6634:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6637:
 	text "嗯﹐和在下想的";
 	line "";
@@ -1282,7 +1282,7 @@
 	done;
 
 @org $66, $6655:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6658:
 	text "哦～呵呵呵呵﹗";
 	line "閃電隊一向是個";
@@ -1299,7 +1299,7 @@
 	done;
 
 @org $66, $66d4:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $66d7:
 	text "嗯﹐和在下想的";
 	line "一點都沒有錯﹗";
@@ -1539,14 +1539,14 @@
 	done;
 
 @org $66, $6b54:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6b57:
 	text "這⋯⋯這不是﹗";
 	line "";
 	done;
 
 @org $66, $6b63:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6b66:
 	text "這這這這這這這";
 	line "";
@@ -1567,7 +1567,7 @@
 	done;
 
 @org $66, $6bc8:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6bcb:
 	text "哦哦哦～";
 	line "呵呵呵呵﹗";
@@ -1580,7 +1580,7 @@
 	done;
 
 @org $66, $6c21:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6c24:
 	text "總算你也能了解";
 	line "閃電隊的可怕⚬";
@@ -1597,14 +1597,14 @@
 	done;
 
 @org $66, $6c79:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6c7c:
 	text "哦～呵呵呵呵﹗";
 	line "我的皇宮﹗";
 	done;
 
 @org $66, $6c93:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $6c96:
 	text "這⋯⋯這真是美";
 	line "倫美煥呀﹗";
@@ -1617,7 +1617,7 @@
 	done;
 
 @org $66, $6cdd:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $6ce0:
 	text "嗚～嗚～在下真";
 	line "";
@@ -2400,7 +2400,7 @@
 	done;
 
 @org $66, $7a50:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $7a53:
 	text "哦～呵呵呵呵～";
 	line "";
@@ -2409,13 +2409,13 @@
 	done;
 
 @org $66, $7a6d:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $66, $7a70:
 	text "在下也不清楚⋯";
 	done;
 
 @org $66, $7a7e:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $66, $7a81:
 	text "誰⋯";
 	line "誰來救救我呀﹗";

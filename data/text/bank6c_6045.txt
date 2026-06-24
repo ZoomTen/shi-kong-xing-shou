@@ -69,7 +69,7 @@
 	done;
 
 @org $6c, $611d:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6120:
 	text "喂喂～";
 	line "巴洛特嗎﹖";
@@ -94,7 +94,7 @@
 	done;
 
 @org $6c, $618f:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6192:
 	text "現在沒有時間解";
 	line "釋這麼多了⚬";
@@ -119,7 +119,7 @@
 	done;
 
 @org $6c, $61ec:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $61ef:
 	text "你們終於來了﹗";
 	line "趕快上來吧⚬";
@@ -143,7 +143,7 @@
 	done;
 
 @org $6c, $624d:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6250:
 	text "哈哈哈～";
 	line "很棒吧﹗";
@@ -152,7 +152,7 @@
 	done;
 
 @org $6c, $627c:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $627f:
 	text "一百二十年前﹐";
 	line "八大科家就是用";
@@ -180,7 +180,7 @@
 	done;
 
 @org $6c, $6317:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $631a:
 	text "是的⚬他們應該";
 	line "是預測到﹐在不";
@@ -190,7 +190,7 @@
 	done;
 
 @org $6c, $635b:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $635e:
 	text "好了﹐";
 	line "時間不多了⚬";
@@ -206,7 +206,7 @@
 	done;
 
 @org $6c, $63ca:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $63cd:
 	text "啟動時光跳躍系";
 	line "統⚬";
@@ -238,7 +238,7 @@
 	done;
 
 @org $6c, $6470:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6473:
 	text "怎麼回事﹖";
 	para "啊﹗";
@@ -257,7 +257,7 @@
 	done;
 
 @org $6c, $64bc:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $64bf:
 	text "巴洛特﹐趕快找";
 	line "出發生故障的原";
@@ -267,7 +267,7 @@
 	done;
 
 @org $6c, $64f3:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $64f6:
 	text "巴洛特﹐趕快找";
 	line "出發生故障的原";
@@ -622,7 +622,7 @@
 	done;
 
 @org $6c, $6a32:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6a35:
 	text "唉～～";
 	line "";
@@ -728,7 +728,7 @@
 	done;
 
 @org $6c, $6c58:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6c5b:
 	text "唉～難道地球就";
 	line "";
@@ -750,7 +750,7 @@
 	done;
 
 @org $6c, $6ccd:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6cd0:
 	text "可惡﹗";
 	line "雖然很不服氣﹐";
@@ -804,7 +804,7 @@
 	done;
 
 @org $6c, $6e0c:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6e0f:
 	text "沒有⚬";
 	done;
@@ -907,7 +907,7 @@
 	done;
 
 @org $6c, $6fea:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $6fed:
 	text "要⋯要跳下去嗎";
 	line "不⋯不⋯";
@@ -928,7 +928,7 @@
 	done;
 
 @org $6c, $702f:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7032:
 	text "都來了嗎﹖";
 	done;
@@ -940,7 +940,7 @@
 	done;
 
 @org $6c, $7045:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7048:
 	text "巴洛特﹐好久不";
 	line "見了﹗";
@@ -953,7 +953,7 @@
 	done;
 
 @org $6c, $706d:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7070:
 	text "巴洛特﹐在一百";
 	line "";
@@ -989,7 +989,7 @@
 	done;
 
 @org $6c, $7134:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7137:
 	text "白鳥號當時墜於";
 	line "這片沙漠之中﹐";
@@ -1009,7 +1009,7 @@
 	done;
 
 @org $6c, $7197:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $719a:
 	text "當時白鳥號的結";
 	line "構被描繪出來﹐";
@@ -1027,13 +1027,13 @@
 	done;
 
 @org $6c, $7204:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $7207:
 	text "嗯嗯嗯⋯⋯⋯";
 	done;
 
 @org $6c, $7210:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7213:
 	text "時間不多了﹐大";
 	line "家進入白鳥號⚬";
@@ -1068,7 +1068,7 @@
 	done;
 
 @org $6c, $72b9:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $72bc:
 	text "糟糕⋯";
 	line "懲罰者已經從裂";
@@ -1099,7 +1099,7 @@
 	done;
 
 @org $6c, $7335:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7338:
 	text "可惡⋯⋯";
 	line "";
@@ -1119,7 +1119,7 @@
 	done;
 
 @org $6c, $7385:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7388:
 	text "巴洛特﹐不行﹗";
 	para "我不能讓你做這";
@@ -1140,7 +1140,7 @@
 	done;
 
 @org $6c, $73c9:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $73cc:
 	text "巴洛特成長了不";
 	line "少⚬";
@@ -1163,7 +1163,7 @@
 	done;
 
 @org $6c, $743e:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $7441:
 	text "在能源填充完前";
 	line "一定要趕回來";
@@ -1175,7 +1175,7 @@
 	done;
 
 @org $6c, $7476:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 @org $6c, $7479:
 	text "巴洛特﹐";
 	line "一切要小心呀﹗";
@@ -1376,7 +1376,7 @@
 	done;
 
 @org $6c, $78b6:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 @org $6c, $78b9:
 	text "巴洛特﹗";
 	line "";

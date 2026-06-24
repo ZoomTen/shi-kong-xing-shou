@@ -15,21 +15,21 @@
 	dw text_0a_470e ; $0e
 	dw text_0a_4715 ; $0f
 	dw text_0a_471b ; $10
-	dw text_0a_4720 ; $11
+	dw SayaName ; $11
 	dw text_0a_4727 ; $12
 	dw text_0a_472e ; $13
 	dw text_0a_4735 ; $14
 	dw text_0a_473c ; $15
 	dw text_0a_4742 ; $16
 	dw text_0a_4749 ; $17
-	dw text_0a_4750 ; $18
+	dw SystemName ; $18
 	dw text_0a_4757 ; $19
 	dw text_0a_475e ; $1a
 	dw text_0a_4765 ; $1b
-	dw text_0a_476c ; $1c
+	dw DrLeoName    ; $1c
 	dw text_0a_4773 ; $1d
-	dw text_0a_477a ; $1e
-	dw text_0a_4781 ; $1f
+	dw LakiName     ; $1e
+	dw KuluName     ; $1f
 	dw text_0a_4788 ; $20
 	dw text_0a_478e ; $21
 	dw text_0a_4795 ; $22

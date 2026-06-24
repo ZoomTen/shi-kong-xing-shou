@@ -14,13 +14,13 @@
 	done;
 
 @org $0f, $46e3:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "什麼﹖貓怪﹖";
 	para "該怎麼辦才好⋯";
 	done;
 
 @org $0f, $46fe:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "有了﹗";
 	para "使用老鼠來吸引";
 	line "牠的注意力﹗";
@@ -29,7 +29,7 @@
 	done;
 
 @org $0f, $473b:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "真叫人生氣﹗";
 	para "在不得已的情況";
 	line "下﹐";
@@ -42,7 +42,7 @@
 	done;
 
 @org $0f, $479e:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "糟糕～";
 	para "我一直認為﹐";
 	cont "製做發條的機械";
@@ -62,7 +62,7 @@
 	done;
 
 @org $0f, $4813:
-	init NAME_1C, PIC_29;
+	init NAME_DR_LEO, PIC_29;
 	text "要做成機械老鼠";
 	line "﹐";
 	cont "得找到發條才行";

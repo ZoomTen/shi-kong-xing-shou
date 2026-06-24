@@ -219,7 +219,7 @@
 	done;
 
 @org $08, $4bbb:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "是巴洛特呀﹗";
 	para "⋯⋯⋯⋯⋯";
 	done;
@@ -230,14 +230,14 @@
 	done;
 
 @org $08, $4bdc:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "噓～";
 	para "不要說話～";
 	para "過來～";
 	done;
 
 @org $08, $4bf3:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "自從你媽媽病逝";
 	line "後﹐";
 	cont "就沒有像這樣仔";
@@ -251,7 +251,7 @@
 	done;
 
 @org $08, $4c2e:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "不要多話⚬";
 	para "看看今夜的星空";
 	line "⚬";
@@ -268,7 +268,7 @@
 	done;
 
 @org $08, $4c8c:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯⋯";
 	para "終於來了嗎﹖";
 	para "時機似乎太早了";
@@ -281,7 +281,7 @@
 	done;
 
 @org $08, $4cbd:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯⋯⋯";
 	done;
 
@@ -294,7 +294,7 @@
 	done;
 
 @org $08, $4cf4:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "起床了嗎﹖";
 	line;
 	para "該上學了⚬";
@@ -302,7 +302,7 @@
 	done;
 
 @org $08, $4d0b:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "等等～巴洛特﹗";
 	done;
 
@@ -313,7 +313,7 @@
 	done;
 
 @org $08, $4d2d:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "先吃完早餐吧⚬";
 	done;
 
@@ -325,7 +325,7 @@
 	done;
 
 @org $08, $4d56:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯";
 	para "巴洛特～";
 	para "關於那個⋯⋯";
@@ -337,7 +337,7 @@
 	done;
 
 @org $08, $4d77:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯沒什麼⚬";
 	para "上學去吧⚬";
 	done;
@@ -358,7 +358,7 @@
 	done;
 
 @org $08, $4e04:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯";
 	para "上學去吧⚬";
 	done;
@@ -622,7 +622,7 @@
 	done;
 
 @org $08, $5468:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "不行～﹗";
 	para "絕對不行⚬";
 	done;
@@ -640,7 +640,7 @@
 	done;
 
 @org $08, $54d2:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "不行～";
 	para "就是今晚不行﹗";
 	done;
@@ -657,7 +657,7 @@
 	done;
 
 @org $08, $550e:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "巴洛特﹗﹗";
 	line "你千萬要記住﹗";
 	para "今天晚上﹗";
@@ -677,7 +677,7 @@
 	done;
 
 @org $08, $558a:
-	init NAME_11, PIC_11;
+	init NAME_SAYA, PIC_11;
 	text "⋯⋯⋯";
 	done;
 

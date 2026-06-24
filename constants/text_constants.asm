@@ -31,7 +31,7 @@
 	const NAME_0E     ; $0e
 	const NAME_0F     ; $0f
 	const NAME_10     ; $10
-	const NAME_11     ; $11
+	const NAME_SAYA   ; $11
 	const NAME_12     ; $12
 	const NAME_13     ; $13
 	const NAME_14     ; $14
@@ -42,10 +42,10 @@
 	const NAME_19     ; $19
 	const NAME_1A     ; $1a
 	const NAME_1B     ; $1b
-	const NAME_1C     ; $1c
+	const NAME_DR_LEO ; $1c
 	const NAME_1D     ; $1d
-	const NAME_1E     ; $1e
-	const NAME_1F     ; $1f
+	const NAME_LAKI   ; $1e
+	const NAME_KULU   ; $1f
 	const NAME_20     ; $20
 	const NAME_21     ; $21
 	const NAME_22     ; $22

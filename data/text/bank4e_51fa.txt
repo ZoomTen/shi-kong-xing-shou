@@ -41,7 +41,7 @@
 	done;
 
 @org $4e, $527a:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $527d:
 	text "哦哦哦哦～";
 	line "呵呵呵呵﹗";
@@ -172,7 +172,7 @@
 	done;
 
 @org $4e, $54aa:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $4e, $54ad:
 	text "太棒了﹗";
 	line "拉琪太棒了﹗";
@@ -323,7 +323,7 @@
 	done;
 
 @org $4e, $5711:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $5714:
 	text "你們這些沒有眼";
 	line "睛的人﹗";
@@ -339,7 +339,7 @@
 	done;
 
 @org $4e, $577d:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $4e, $5780:
 	text "沒錯﹗";
 	para "這條項鍊﹐我們";
@@ -347,7 +347,7 @@
 	done;
 
 @org $4e, $579f:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $57a2:
 	text "哦哦～呵呵呵﹗";
 	done;
@@ -403,7 +403,7 @@
 	done;
 
 @org $4e, $5861:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $5864:
 	text "哦～呵呵呵﹗";
 	line "";
@@ -413,7 +413,7 @@
 	done;
 
 @org $4e, $5886:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $4e, $5889:
 	text "在下真是非常的";
 	line "感動～";
@@ -425,7 +425,7 @@
 	done;
 
 @org $4e, $58bc:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $58bf:
 	text "不過還是很生氣";
 	line "我絞盡腦汁想出";
@@ -435,7 +435,7 @@
 	done;
 
 @org $4e, $58f5:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $4e, $58f8:
 	text "不～﹗";
 	line "在下認為﹐拉琪";
@@ -444,7 +444,7 @@
 	done;
 
 @org $4e, $591e:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $5921:
 	text "不過話說回來⚬";
 	line "我們拿到了項鍊";
@@ -459,7 +459,7 @@
 	done;
 
 @org $4e, $594e:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $4e, $5951:
 	text "又是你們﹗";
 	line "看來在下要稍";
@@ -470,7 +470,7 @@
 	done;
 
 @org $4e, $597a:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $597d:
 	text "哦～呵呵呵﹗";
 	line "我要讓那隻笨白";
@@ -481,7 +481,7 @@
 	done;
 
 @org $4e, $59b0:
-	init NAME_1E, PIC_27;
+	init NAME_LAKI, PIC_27;
 @org $4e, $59b3:
 	text "哼﹗";
 	line "還你就還你﹗";
@@ -495,7 +495,7 @@
 	done;
 
 @org $4e, $59d4:
-	init NAME_1F, PIC_28;
+	init NAME_KULU, PIC_28;
 @org $4e, $59d7:
 	text "知道我們的厲害";
 	line "了吧﹖";
