@@ -218,6 +218,7 @@ SECTION "bank54", ROMX
 INCLUDE "banks/bank_54.asm"
 
 SECTION "bank55", ROMX
+INCLUDE "engine/movie/airport2.asm"
 INCLUDE "banks/bank_55.asm"
 
 SECTION "bank56", ROMX
@@ -236,19 +237,21 @@ SECTION "bank5a", ROMX
 INCLUDE "banks/bank_5a.asm"
 
 SECTION "bank5b", ROMX
-INCLUDE "banks/bank_5b.asm"
+INCLUDE "engine/minigame/mice.asm"
 
 SECTION "bank5c", ROMX
 INCLUDE "banks/bank_5c.asm"
+INCLUDE "engine/movie/helen.asm"
 
 SECTION "bank5d", ROMX
-INCLUDE "engine/game/rhythm.asm"
+INCLUDE "engine/minigame/rhythm.asm"
 
 SECTION "bank5e", ROMX
 INCLUDE "banks/bank_5e.asm"
+INCLUDE "engine/minigame/racing.asm"
 
 SECTION "bank5f", ROMX
-INCLUDE "banks/bank_5f.asm"
+INCLUDE "engine/movie/crystal.asm"
 
 SECTION "bank60", ROMX
 INCLUDE "banks/bank_60.asm"
@@ -258,7 +261,8 @@ INCLUDE "engine/movie/meteor_2.asm"
 INCLUDE "engine/movie/underwater.asm"
 
 SECTION "bank62", ROMX
-INCLUDE "banks/bank_62.asm"
+INCLUDE "engine/movie/world_map.asm"
+INCLUDE "engine/debug/sound_test.asm"
 
 SECTION "bank63", ROMX
 INCLUDE "banks/bank_63.asm"

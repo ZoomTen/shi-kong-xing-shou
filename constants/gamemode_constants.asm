@@ -10,7 +10,7 @@
 	const GAMEMODE_AIRPORT_CUTSCENE2         ; $07 AirportCutscene2
 	const GAMEMODE_LETTER_CUTSCENE           ; $08 LetterCutscene
 	const GAMEMODE_METEOR_CUTSCENE2          ; $09 MeteorCutscene2
-	const GAMEMODE_0A                        ; $0a Func_05c_55e7
+	const GAMEMODE_HELEN_CUTSCENE                        ; $0a HelenCutscene
 	const GAMEMODE_UNDERWATER_PICTURE_CUTSCENE ; $0b UnderwaterPictureCutscene
 	const GAMEMODE_RACING_MINIGAME           ; $0c RacingMinigame
 	const GAMEMODE_CRYSTAL_CUTSCENE          ; $0d CrystalCutscene

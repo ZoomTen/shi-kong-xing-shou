@@ -321,7 +321,6 @@ CrystalCutscene_PaletteBG:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	ds 8
 CrystalCutscene_PaletteOBJ:
 	RGB 31, 31, 31
@@ -356,7 +355,6 @@ CrystalCutscene_PaletteOBJ:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 	ds 8
 CrystalCutscene_Attrmap:
 INCBIN "gfx/attrmaps/crystalcutscene_attrmap.bin"
@@ -366,5 +364,3 @@ CrystalCutscene_GFX:
 INCBIN "gfx/misc/crystalcutscene_gfx.2bpp"
 CrystalCutscene_SpriteGFX:
 INCBIN "gfx/misc/crystalcutscene_spritegfx.bin"
-
-

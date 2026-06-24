@@ -8,7 +8,7 @@
 	dba AirportCutscene2   ; $07
 	dba LetterCutscene   ; $08
 	dba MeteorCutscene2   ; $09
-	dba Func_05c_55e7   ; $0a
+	dba HelenCutscene   ; $0a
 	dba UnderwaterPictureCutscene   ; $0b
 	dba RacingMinigame   ; $0c
 	dba CrystalCutscene   ; $0d
