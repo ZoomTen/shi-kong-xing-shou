@@ -5309,7 +5309,7 @@ Func_00b_653d:
 
 Func_00b_65e7::
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	ld a, $01
 	ldh [rVBK], a

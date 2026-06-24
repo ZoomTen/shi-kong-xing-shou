@@ -92,7 +92,7 @@ UnderwaterPictureCutscene::
 	ret
 .asm_5dfd
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	ld hl, wc000
 	ld bc, $0028

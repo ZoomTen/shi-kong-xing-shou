@@ -3544,7 +3544,7 @@ String_025_579b:
 
 Func_025_57a0:
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	hlcoord 0, 0
 	ld a, h

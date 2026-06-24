@@ -386,7 +386,7 @@ wd1f7:: ds 1
 
 wd1f9:: ds 1
 wd1fa:: ds 1
-wd1fb:: ds 1
+wVirtualOAMPtr:: ds 1
 wd1fc:: ds 1
 wd1fd:: ds 1
 ; copy of the unk_00b_5192[wd1f4] list pointer (set/used by Script_4d/Script_59)

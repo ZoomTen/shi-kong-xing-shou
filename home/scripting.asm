@@ -10,7 +10,7 @@ DispatchScriptCommand::
 	ld a, BANK(_DispatchScriptCommand)
 	rst Bankswitch
 	call _DispatchScriptCommand
-	ld a, BANK(Func_005_440f)
+	ld a, BANK(UpdateObjectAnimations)
 	rst Bankswitch
 	ret
 

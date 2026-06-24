@@ -226,7 +226,7 @@ AnimateBattleTransition:
 	ld [de], a
 	ei
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	jr nz, .run
 	di
 .gbc_wait_vblank

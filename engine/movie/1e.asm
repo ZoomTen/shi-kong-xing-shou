@@ -234,7 +234,7 @@ Func_070_41a8:
 
 Func_070_41b6:
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	xor a
 	ld [wVirtualOAMPtr], a

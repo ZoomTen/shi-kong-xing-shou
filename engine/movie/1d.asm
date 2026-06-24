@@ -217,7 +217,7 @@ Func_6f_4191:
 	ret
 Func_6f_419f:
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	xor a
 	ld [wVirtualOAMPtr], a

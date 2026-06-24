@@ -115,7 +115,7 @@ BeachCutscene::
 	ret
 .asm_40f5
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	ld hl, wc000
 	ld bc, $0028

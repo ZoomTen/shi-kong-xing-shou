@@ -9,7 +9,7 @@ _BuildVirtualOAM::
 	dec c
 	jr nz, .fill
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call BuildEffectSpriteOAM
 	call BuildPlayerOAM
 	call BuildFollowerOAM
@@ -27,7 +27,7 @@ _BuildVirtualOAMNoExtra::
 	dec c
 	jr nz, .asm_402d
 	xor a
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	call BuildEffectSpriteOAM
 	call BuildPlayerOAM
 	call BuildFollowerOAM
@@ -105,7 +105,7 @@ BuildEffectSpriteOAM:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_40a6
@@ -129,7 +129,7 @@ BuildEffectSpriteOAM:
 	jr .asm_40a6
 .asm_40bb
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_40bf
 	pop hl
 	ld bc, $0008
@@ -190,7 +190,7 @@ BuildNPCOAM:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_411d
@@ -245,7 +245,7 @@ BuildNPCOAM:
 	jr .asm_411d
 .asm_4160
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 .asm_4164
 	pop hl
 	ld bc, $0020
@@ -276,7 +276,7 @@ BuildPlayerOAM:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_4190
@@ -340,7 +340,7 @@ BuildPlayerOAM:
 	jr .asm_4190
 .asm_41e1
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 BuildFollowerOAM:
 	ld hl, Pointers_004_47ab
@@ -384,7 +384,7 @@ BuildFollowerOAM:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_4221
@@ -441,11 +441,13 @@ BuildFollowerOAM:
 	jr .asm_4221
 .asm_4268
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
+
+; presumably for the sprites overlaid on top of face images to give them more colors
 BuildExtraSpritesOAM:
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	ld hl, Pointers_004_47ab
 	ld de, wExtraSprites
@@ -468,7 +470,7 @@ BuildExtraSpritesOAM:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd1fb]
+	ld a, [wVirtualOAMPtr]
 	ld e, a
 	ld d, $c0
 .asm_4292
@@ -492,7 +494,7 @@ BuildExtraSpritesOAM:
 	jr .asm_4292
 .asm_42a7
 	ld a, e
-	ld [wd1fb], a
+	ld [wVirtualOAMPtr], a
 	ret
 LoadPlayerPartnerObjPals:
 	ld de, Pointers_004_4337

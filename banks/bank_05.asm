@@ -5,15 +5,15 @@ _UpdatePlayerMapCoords::
 	ld a, [wPlayerScreenX]
 	sub 8
 	ld [wd3f9], a
-	call Func_005_47e6
-	call Func_005_478a
-	call Func_005_472e
-	call Func_005_46da
+	call GetSouthFacingTile
+	call GetNorthFacingTile
+	call GetWestFacingTile
+	call GetEastFacingTile
 	ret
 
-Func_005_401d:
+CopyBGMapAttributes:
 	ldh a, [hConsoleType]
-	cp $11
+	cp BOOTUP_A_CGB
 	ret nz
 	ld a, $98
 	ld [wBGMapAddr + 1], a
@@ -24,11 +24,9 @@ Func_005_401d:
 	ld a, 1
 	ldh [rVBK], a
 	ld b, $12
-
-asm_005_4038:
+.row
 	ld c, $14
-
-asm_005_403a:
+.col
 	ld a, [hli]
 	push hl
 	ld l, a
@@ -46,7 +44,7 @@ asm_005_403a:
 	inc [hl]
 	pop hl
 	dec c
-	jr nz, asm_005_403a
+	jr nz, .col
 	ld a, [wBGMapAddr]
 	add $c
 	ld [wBGMapAddr], a
@@ -54,38 +52,36 @@ asm_005_403a:
 	adc 0
 	ld [wBGMapAddr + 1], a
 	dec b
-	jr nz, asm_005_4038
+	jr nz, .row
 	xor a
 	ldh [rVBK], a
 	ret
 
-Func_005_406b:
+CopyVisibleTilemapWindow:
 	ld hl, wc740
 	ldh a, [hFFA0]
 	and a
-	jr z, asm_005_4077
+	jr z, .check_col_offset
 	ld bc, $30
 	add hl, bc
-
-asm_005_4077:
+.check_col_offset
 	ldh a, [hFF9F]
 	and a
-	jr z, asm_005_407e
+	jr z, .copy_win
 	inc hl
 	inc hl
-
-asm_005_407e:
-	call Func_005_5a35
+.copy_win
+	call CopyMapWindowToTilemap
 	ret
 
-asm_005_4082:
+CopyTextboxAttrs:: ; unreferenced?
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
 	ld h, a
 	ld de, wd100
 	ld c, $a0
-	call Func_005_5906
+	call LookupTileAttrs
 	ret
 
 ParseCurrentMapEvents::
@@ -375,10 +371,10 @@ Overworld::
 	dec c
 	jr nz, .fill
 
-	call Func_005_4408
-	call Func_005_5a9c
+	call CopyPlayerCharName
+	call SetMapZoneFlags
 	call LoadMap
-	call Func_005_5a32
+	call CopyMapBufferToTilemap
 	ld hl, $9800
 	ld de, wTilemap
 	ld bc, $1412
@@ -386,10 +382,10 @@ Overworld::
 	ld [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
-	call Func_005_5a59
-	call Func_005_5a8e
-	call Func_005_4662
-	call Func_005_401d
+	call CopyBlockToVRAM
+	call ClearObjectData
+	call LoadVisibleMapObjects
+	call CopyBGMapAttributes
 	call SpawnPlayerSprite
 	call _UpdatePlayerMapCoords
 	xor a
@@ -430,7 +426,7 @@ OverworldLoop:
 
 ; not in battle
 
-	call Func_005_43e1
+	call UpdateWalkAnimTimer
 ; update OAM?
 	call BuildVirtualOAM
 
@@ -474,20 +470,20 @@ OverworldLoop:
 
 ; specific events in the overworld
 	call Overworld_DoBlackFlashing
-	call Func_005_4bc1
+	call HandleOverworldInput
 	call Overworld_ProcessJoypadInput
 
 ; object events?
 	call UpdateVisibleObjects
 	call UpdatePlayerAnim
-	call Func_005_440f
+	call UpdateObjectAnimations
 	jp OverworldLoop
 
 Overworld_GotoProcessScript:
 	xor a
 	ld [wd082], a
 	call DispatchScriptCommand
-	call Func_005_440f
+	call UpdateObjectAnimations
 	call UpdatePlayerAnim
 	jp OverworldLoop
 
@@ -539,7 +535,7 @@ Overworld_DoBlackFlashing:
 .DoFlash:
 	ld a, [wdcb9]
 	and a
-	jr z, Func_005_434a
+	jr z, FlashToBlack
 	ld a, [wdcb8]
 	inc a
 	ld [wdcb8], a
@@ -552,7 +548,7 @@ Overworld_DoBlackFlashing:
 	call PartialCopyBackgroundPalettes
 	ret
 
-Func_005_434a:
+FlashToBlack:
 	ld a, [wdcb8]
 	inc a
 	ld [wdcb8], a
@@ -620,7 +616,7 @@ Palette_005_4394:
 
 ; Unreferenced (dead) tilemap-place routine. Final call target $57a0 is stale: it lands
 ; mid-instruction inside Overworld_ProcessJoypadInput, so it stays a bare address.
-Func_005_43c4:
+DrawFullScreenTilemap:
 	ld de, wTilemap
 	ld a, [wd0ba]
 	ld l, a
@@ -635,7 +631,7 @@ Func_005_43c4:
 	call $57a0
 	ret
 
-Func_005_43e1:
+UpdateWalkAnimTimer:
 	ld a, [wdcfa]
 	and a
 	ret z
@@ -660,18 +656,18 @@ Func_005_43e1:
 	ldh [hFFAD], a
 	ret
 
-Func_005_4408:
+CopyPlayerCharName:
 	farcall CopyNameByIndex
 	ret
 
-Func_005_440f::
+UpdateObjectAnimations::
 	ld bc, wd1a0
-.asm_4412
+.objectLoop
 	ld hl, $0002
 	add hl, bc
 	ld a, [hli]
 	and a
-	jr z, .asm_442a
+	jr z, .nextObject
 	ld hl, $0003
 	add hl, bc
 	ld de, .Jumptable
@@ -683,7 +679,7 @@ Func_005_440f::
 	ld h, [hl]
 	ld l, a
 	jp hl
-.asm_442a
+.nextObject
 	ld hl, $0008
 	add hl, bc
 	ld a, l
@@ -691,27 +687,27 @@ Func_005_440f::
 	ret nc
 	ld c, l
 	ld b, h
-	jr .asm_4412
+	jr .objectLoop
 .Jumptable:
-	dw .asm_44a6
-	dw .asm_44f5
-	dw .asm_4549
-	dw .asm_4597
-	dw .asm_45e6
-	dw .asm_4447
-	dw .asm_44a3
-	dw .asm_4446
-.asm_4446
+	dw .state0
+	dw .state1
+	dw .state2
+	dw .state3
+	dw .state4
+	dw .state5
+	dw .state6
+	dw .state7Done
+.state7Done
 	ret
-.asm_4447
+.state5
 	ld hl, $0005
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .asm_4453
+	jr z, .s5Phase0
 	cp $01
-	jr z, .asm_4473
-.asm_4453
+	jr z, .s5Phase1
+.s5Phase0
 	ld hl, $0000
 	add hl, bc
 	ld a, [hl]
@@ -722,97 +718,97 @@ Func_005_440f::
 	inc [hl]
 	ld a, [hl]
 	cp $10
-	jp c, .asm_442a
+	jp c, .nextObject
 	xor a
 	ld [hld], a
 	ld [hl], $01
 	ld hl, $0002
 	add hl, bc
 	ld [hl], $1B
-	jp .asm_442a
-.asm_4473
+	jp .nextObject
+.s5Phase1
 	ldh a, [hFadeFrameCounter]
 	and $03
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	ld hl, $0006
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	cp $07
-	jr nc, .asm_4497
+	jr nc, .s5Reset
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $1B
-	jr z, .asm_4492
+	jr z, .s5SetFrame1C
 	ld [hl], $1B
-	jp .asm_442a
-.asm_4492
+	jp .nextObject
+.s5SetFrame1C
 	ld [hl], $1C
-	jp .asm_442a
-.asm_4497
-	call .asm_461b
-	jp .asm_442a
-	jp .asm_442a
-	jp .asm_442a
-.asm_44a3
-	jp .asm_442a
-.asm_44a6
+	jp .nextObject
+.s5Reset
+	call .clearObjectState
+	jp .nextObject
+	jp .nextObject
+	jp .nextObject
+.state6
+	jp .nextObject
+.state0
 	ld hl, $0005
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, .asm_44c1
+	jr nz, .s0Phase1
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $08
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	xor a
 	ld [hld], a
 	ld [hl], $01
 	ld a, [bc]
 	sub $08
 	ld [bc], a
-	jp .asm_442a
-.asm_44c1
+	jp .nextObject
+.s0Phase1
 	ld a, [hl]
 	cp $01
-	jr nz, .asm_44f2
+	jr nz, .s0Default
 	ldh a, [hFadeFrameCounter]
 	and $03
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $15
-	jr nc, .asm_44ec
+	jr nc, .s0Reset
 	cp $0A
-	jp c, .asm_442a
+	jp c, .nextObject
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $05
-	jr nz, .asm_44e7
+	jr nz, .s0SetFrame05
 	ld [hl], $06
-	jp .asm_442a
-.asm_44e7
+	jp .nextObject
+.s0SetFrame05
 	ld [hl], $05
-	jp .asm_442a
-.asm_44ec
-	call .asm_461b
-	jp .asm_442a
-.asm_44f2
-	jp .asm_442a
-.asm_44f5
+	jp .nextObject
+.s0Reset
+	call .clearObjectState
+	jp .nextObject
+.s0Default
+	jp .nextObject
+.state1
 	ld hl, $0005
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, .asm_4516
+	jr nz, .s1Phase1
 	ldh a, [hFadeFrameCounter]
 	and $01
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	ld a, [bc]
 	inc a
 	ld [bc], a
@@ -820,180 +816,180 @@ Func_005_440f::
 	inc [hl]
 	ld a, [hl]
 	cp $0A
-	jp c, .asm_442a
+	jp c, .nextObject
 	xor a
 	ld [hld], a
 	ld [hl], $01
-	jp .asm_442a
-.asm_4516
+	jp .nextObject
+.s1Phase1
 	cp $01
-	jr nz, .asm_4546
+	jr nz, .s1Default
 	ldh a, [hFadeFrameCounter]
 	and $03
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $15
-	jr nc, .asm_4540
+	jr nc, .s1Reset
 	cp $0A
-	jp c, .asm_442a
+	jp c, .nextObject
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $07
-	jr nz, .asm_453b
+	jr nz, .s1SetFrame07
 	ld [hl], $06
-	jp .asm_442a
-.asm_453b
+	jp .nextObject
+.s1SetFrame07
 	ld [hl], $07
-	jp .asm_442a
-.asm_4540
-	call .asm_461b
-	jp .asm_442a
-.asm_4546
-	jp .asm_442a
-.asm_4549
+	jp .nextObject
+.s1Reset
+	call .clearObjectState
+	jp .nextObject
+.s1Default
+	jp .nextObject
+.state2
 	ld hl, $0005
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, .asm_4564
+	jr nz, .s2Phase1
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $08
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	xor a
 	ld [hld], a
 	ld [hl], $01
 	ld a, [bc]
 	sub $08
 	ld [bc], a
-	jp .asm_442a
-.asm_4564
+	jp .nextObject
+.s2Phase1
 	cp $01
-	jr nz, .asm_4594
+	jr nz, .s2Default
 	ldh a, [hFadeFrameCounter]
 	and $07
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $0E
-	jr nc, .asm_458e
+	jr nc, .s2Reset
 	cp $06
-	jp c, .asm_442a
+	jp c, .nextObject
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $09
-	jr nz, .asm_4589
+	jr nz, .s2SetFrame09
 	ld [hl], $06
-	jp .asm_442a
-.asm_4589
+	jp .nextObject
+.s2SetFrame09
 	ld [hl], $09
-	jp .asm_442a
-.asm_458e
-	call .asm_461b
-	jp .asm_442a
-.asm_4594
-	jp .asm_442a
-.asm_4597
+	jp .nextObject
+.s2Reset
+	call .clearObjectState
+	jp .nextObject
+.s2Default
+	jp .nextObject
+.state3
 	ld hl, $0005
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, .asm_45b2
+	jr nz, .s3Phase1
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $08
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	xor a
 	ld [hld], a
 	ld [hl], $01
 	ld a, [bc]
 	sub $08
 	ld [bc], a
-	jp .asm_442a
-.asm_45b2
+	jp .nextObject
+.s3Phase1
 	ld a, [hl]
 	cp $01
-	jr nz, .asm_45e3
+	jr nz, .s3Default
 	ldh a, [hFadeFrameCounter]
 	and $03
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	inc hl
 	inc [hl]
 	ld a, [hl]
 	cp $15
-	jr nc, .asm_45dd
+	jr nc, .s3Reset
 	cp $0A
-	jp c, .asm_442a
+	jp c, .nextObject
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $0B
-	jr nz, .asm_45d8
+	jr nz, .s3SetFrame0B
 	ld [hl], $06
-	jp .asm_442a
-.asm_45d8
+	jp .nextObject
+.s3SetFrame0B
 	ld [hl], $0B
-	jp .asm_442a
-.asm_45dd
-	call .asm_461b
-	jp .asm_442a
-.asm_45e3
-	jp .asm_442a
-.asm_45e6
+	jp .nextObject
+.s3Reset
+	call .clearObjectState
+	jp .nextObject
+.s3Default
+	jp .nextObject
+.state4
 	ldh a, [hFadeFrameCounter]
 	and $0F
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $0D
-	jr nz, .asm_45fb
+	jr nz, .s4SetFrame0D
 	ld a, $06
 	ld [hl], a
-	jr .asm_45fe
-.asm_45fb
+	jr .s4Phase2
+.s4SetFrame0D
 	ld a, $0D
 	ld [hl], a
-.asm_45fe
+.s4Phase2
 	ldh a, [hFadeFrameCounter]
 	and $1F
-	jp nz, .asm_442a
+	jp nz, .nextObject
 	ld hl, $0006
 	add hl, bc
 	inc [hl]
 	ld a, [hl]
 	cp $04
-	jr nc, .asm_4612
-	jp .asm_442a
-.asm_4612
-	call .asm_461b
-	jp .asm_442a
-	jp .asm_442a
-.asm_461b
+	jr nc, .s4Reset
+	jp .nextObject
+.s4Reset
+	call .clearObjectState
+	jp .nextObject
+	jp .nextObject
+.clearObjectState
 	push bc
 	pop hl
 	ld d, $08
 	xor a
-.asm_4620
+.clearLoop
 	ld [hli], a
 	dec d
-	jr nz, .asm_4620
+	jr nz, .clearLoop
 	ret
 	db $E0, $00, $00, $F0, $01, $02, $03, $04, $05, $06, $07, $ED, $F0, $03, $08, $09
 	db $0A, $0B, $0C, $0D, $EC, $F0, $0E, $0F, $10, $0D, $EE, $F0, $11, $12, $10, $0D
 	db $EE, $F0, $13, $14, $10, $15, $16, $17, $18, $ED, $F0, $19, $1A, $1B, $1C, $1A
 	db $1D, $1E, $ED, $F0, $18, $1F, $20, $21, $22, $0C, $0D, $E2, $EF
 
-Func_005_4662:
+LoadVisibleMapObjects:
 	ld hl, wda00
-.asm_4665
+.loop
 	ldh a, [hFFAA]
 	ld d, a
 	ldh a, [hFFAB]
@@ -1001,40 +997,40 @@ Func_005_4662:
 	push hl
 	ld a, [hli]
 	cp $88
-	jr z, .asm_46d8
+	jr z, .endList
 	cp $ff
-	jr nz, .asm_46d0
+	jr nz, .skipObject
 	inc hl
 	ld a, d
 	cp $02
-	jr c, .asm_467d
+	jr c, .checkY
 	sub $02
-.asm_467d
+.checkY
 	cp [hl]
-	jr nc, .asm_46d0
+	jr nc, .skipObject
 	add $0c
 	cp [hl]
-	jr c, .asm_46d0
+	jr c, .skipObject
 	inc hl
 	ld a, e
 	cp $02
-	jr c, .asm_468d
+	jr c, .checkX
 	sub $02
-.asm_468d
+.checkX
 	cp [hl]
-	jr nc, .asm_46d0
+	jr nc, .skipObject
 	add $0b
 	cp [hl]
-	jr c, .asm_46d0
+	jr c, .skipObject
 	inc hl
 	ld a, [hli]
 	and a
-	jr nz, .asm_469f
+	jr nz, .checkFlag
 	inc hl
 	inc hl
 	inc hl
-	jr .asm_46ba
-.asm_469f
+	jr .loadSprite
+.checkFlag
 	push bc
 	ld e, a
 	ld a, [hli]
@@ -1045,47 +1041,47 @@ Func_005_4662:
 	ld b, a
 	ld a, c
 	and a
-	jr z, .asm_46b0
-.asm_46ab
+	jr z, .testFlagBit
+.shiftLoop
 	srl b
 	dec c
-	jr nz, .asm_46ab
-.asm_46b0
+	jr nz, .shiftLoop
+.testFlagBit
 	ld a, b
 	and $01
 	cp [hl]
-	jr z, .asm_46b9
+	jr z, .flagMatch
 	pop bc
-	jr .asm_46d0
-.asm_46b9
+	jr .skipObject
+.flagMatch
 	pop bc
-.asm_46ba
+.loadSprite
 	pop de
 	push de
 	call LoadObjectSprite
 	ld a, c
 	and a
-	jr z, .asm_46cd
+	jr z, .noFacing
 	swap a
 	and $0f
 	srl a
 	pop hl
 	ld [hl], a
-	jr .asm_46d1
-.asm_46cd
+	jr .nextObject
+.noFacing
 	pop hl
-	jr .asm_46d1
-.asm_46d0
+	jr .nextObject
+.skipObject
 	pop hl
-.asm_46d1
+.nextObject
 	ld bc, $000c
 	add hl, bc
-	jp .asm_4665
-.asm_46d8
+	jp .loop
+.endList
 	pop hl
 	ret
 
-Func_005_46da:
+GetEastFacingTile:
 	ldh a, [hSCY]
 	ld l, a
 	ldh a, [hSCYHigh]
@@ -1132,7 +1128,7 @@ Func_005_46da:
 	ld [wEastFacingTile], a
 	ret
 
-Func_005_472e:
+GetWestFacingTile:
 	ldh a, [hSCY]
 	ld l, a
 	ldh a, [hSCYHigh]
@@ -1162,10 +1158,10 @@ Func_005_472e:
 	ld e, a
 	ld d, 0
 	cp $e0
-	jr c, asm_005_4766
+	jr c, .addXOffset
 	ld d, $ff
 
-asm_005_4766:
+.addXOffset:
 	add hl, de
 	ld d, 0
 	srl h
@@ -1185,7 +1181,7 @@ asm_005_4766:
 	ld [wWestFacingTile], a
 	ret
 
-Func_005_478a:
+GetNorthFacingTile:
 	ldh a, [hSCY]
 	ld l, a
 	ldh a, [hSCYHigh]
@@ -1195,10 +1191,10 @@ Func_005_478a:
 	ld c, a
 	ld b, 0
 	cp $e0
-	jr c, asm_005_479e
+	jr c, .addScrollY
 	ld b, $ff
 
-asm_005_479e:
+.addScrollY:
 	add hl, bc
 	ld b, 0
 	srl h
@@ -1238,7 +1234,7 @@ asm_005_479e:
 	ld [wNorthFacingTile], a
 	ret
 
-Func_005_47e6:
+GetSouthFacingTile:
 	ldh a, [hSCY]
 	ld l, a
 	ldh a, [hSCYHigh]
@@ -1285,64 +1281,64 @@ Func_005_47e6:
 	ld [wSouthFacingTile], a
 	ret
 
-Func_005_483a:
+StepFollowerMovement:
 	ldh a, [hFFDD]
 	and a
 	ret z
 	ldh a, [hFFDD]
 	bit 3, a
-	jr z, .asm_4848
-	call .asm_4865
+	jr z, .checkBit2
+	call .handleBit3
 	ret
-.asm_4848
+.checkBit2
 	ldh a, [hFFDD]
 	bit 2, a
-	jr z, .asm_4852
-	call .asm_48a2
+	jr z, .checkBit1
+	call .handleBit2
 	ret
-.asm_4852
+.checkBit1
 	ldh a, [hFFDD]
 	bit 1, a
-	jr z, .asm_485c
-	call .asm_48e1
+	jr z, .checkBit0
+	call .handleBit1
 	ret
-.asm_485c
+.checkBit0
 	ldh a, [hFFDD]
 	bit 0, a
 	ret z
-	call .asm_4920
+	call .handleBit0
 	ret
-.asm_4865
+.handleBit3
 	ld a, [wcd23]
 	and a
-	jr z, .asm_488d
+	jr z, .b3State0
 	cp $01
-	jr z, .asm_4878
+	jr z, .b3State1
 	cp $02
-	jr z, .asm_4886
+	jr z, .b3State2
 	cp $03
-	jr z, .asm_487f
+	jr z, .b3State3
 	ret
-.asm_4878
+.b3State1
 	ld hl, wcd20
 	dec [hl]
 	dec [hl]
-	jr .asm_4892
-.asm_487f
+	jr .b3Finish
+.b3State3
 	ld hl, wcd21
 	inc [hl]
 	inc [hl]
-	jr .asm_4892
-.asm_4886
+	jr .b3Finish
+.b3State2
 	ld hl, wcd21
 	dec [hl]
 	dec [hl]
-	jr .asm_4892
-.asm_488d
+	jr .b3Finish
+.b3State0
 	ld hl, wcd20
 	inc [hl]
 	inc [hl]
-.asm_4892
+.b3Finish
 	ld a, [hFFDE]
 	dec a
 	dec a
@@ -1352,37 +1348,37 @@ Func_005_483a:
 	ldh [hFFDD], a
 	ld [wcd23], a
 	ret
-.asm_48a2
+.handleBit2
 	ld a, [wcd23]
 	and a
-	jr z, .asm_48ca
+	jr z, .b2State0
 	cp $01
-	jr z, .asm_48b5
+	jr z, .b2State1
 	cp $02
-	jr z, .asm_48c3
+	jr z, .b2State2
 	cp $03
-	jr z, .asm_48bc
+	jr z, .b2State3
 	ret
-.asm_48b5
+.b2State1
 	ld hl, wcd20
 	dec [hl]
 	dec [hl]
-	jr .asm_48cf
-.asm_48bc
+	jr .b2Finish
+.b2State3
 	ld hl, wcd21
 	inc [hl]
 	inc [hl]
-	jr .asm_48cf
-.asm_48c3
+	jr .b2Finish
+.b2State2
 	ld hl, wcd21
 	dec [hl]
 	dec [hl]
-	jr .asm_48cf
-.asm_48ca
+	jr .b2Finish
+.b2State0
 	ld hl, wcd20
 	inc [hl]
 	inc [hl]
-.asm_48cf
+.b2Finish
 	ld a, [hFFDE]
 	dec a
 	dec a
@@ -1393,37 +1389,37 @@ Func_005_483a:
 	ld a, $01
 	ld [wcd23], a
 	ret
-.asm_48e1
+.handleBit1
 	ld a, [wcd23]
 	and a
-	jr z, .asm_4909
+	jr z, .b1State0
 	cp $01
-	jr z, .asm_48f4
+	jr z, .b1State1
 	cp $02
-	jr z, .asm_4902
+	jr z, .b1State2
 	cp $03
-	jr z, .asm_48fb
+	jr z, .b1State3
 	ret
-.asm_48f4
+.b1State1
 	ld hl, wcd20
 	dec [hl]
 	dec [hl]
-	jr .asm_490e
-.asm_48fb
+	jr .b1Finish
+.b1State3
 	ld hl, wcd21
 	inc [hl]
 	inc [hl]
-	jr .asm_490e
-.asm_4902
+	jr .b1Finish
+.b1State2
 	ld hl, wcd21
 	dec [hl]
 	dec [hl]
-	jr .asm_490e
-.asm_4909
+	jr .b1Finish
+.b1State0
 	ld hl, wcd20
 	inc [hl]
 	inc [hl]
-.asm_490e
+.b1Finish
 	ld a, [hFFDE]
 	dec a
 	dec a
@@ -1434,37 +1430,37 @@ Func_005_483a:
 	ld a, $02
 	ld [wcd23], a
 	ret
-.asm_4920
+.handleBit0
 	ld a, [wcd23]
 	and a
-	jr z, .asm_4948
+	jr z, .b0State0
 	cp $01
-	jr z, .asm_4933
+	jr z, .b0State1
 	cp $02
-	jr z, .asm_4941
+	jr z, .b0State2
 	cp $03
-	jr z, .asm_493a
+	jr z, .b0State3
 	ret
-.asm_4933
+.b0State1
 	ld hl, wcd20
 	dec [hl]
 	dec [hl]
-	jr .asm_494d
-.asm_493a
+	jr .b0Finish
+.b0State3
 	ld hl, wcd21
 	inc [hl]
 	inc [hl]
-	jr .asm_494d
-.asm_4941
+	jr .b0Finish
+.b0State2
 	ld hl, wcd21
 	dec [hl]
 	dec [hl]
-	jr .asm_494d
-.asm_4948
+	jr .b0Finish
+.b0State0
 	ld hl, wcd20
 	inc [hl]
 	inc [hl]
-.asm_494d
+.b0Finish
 	ld a, [hFFDE]
 	dec a
 	dec a
@@ -1574,7 +1570,7 @@ Overworld_MovePlayerOneStep:
 	ld hl, wPlayerScreenX
 	inc [hl]
 .asm_4a0f
-	call Func_005_483a
+	call StepFollowerMovement
 	call .asm_4ae5
 	ld a, [hFFA6]
 	dec a
@@ -1584,7 +1580,7 @@ Overworld_MovePlayerOneStep:
 	xor a
 	ldh [hSimulatedJoypadState], a
 	call ParseCurrentMapEvents
-	call Func_005_4662
+	call LoadVisibleMapObjects
 	ret
 .asm_4a28
 	ldh a, [hSimulatedJoypadState]
@@ -1677,7 +1673,7 @@ Overworld_MovePlayerOneStep:
 	inc [hl]
 	inc [hl]
 .asm_4ac5
-	call Func_005_483a
+	call StepFollowerMovement
 	call .asm_4ae5
 	ld a, [hFFA6]
 	dec a
@@ -1687,9 +1683,9 @@ Overworld_MovePlayerOneStep:
 	ret nz
 	xor a
 	ldh [hSimulatedJoypadState], a
-	call Func_005_4e4e
+	call CheckMapPositionTrigger
 	call ParseCurrentMapEvents
-	call Func_005_4662
+	call LoadVisibleMapObjects
 	call StartBattle
 	ret
 .asm_4ae5
@@ -1757,10 +1753,10 @@ Overworld_MovePlayerOneStep:
 	ld a, [wPlayerScreenX]
 	sub $08
 	ld [wd3f9], a
-	call Func_005_47e6
-	call Func_005_478a
-	call Func_005_472e
-	call Func_005_46da
+	call GetSouthFacingTile
+	call GetNorthFacingTile
+	call GetWestFacingTile
+	call GetEastFacingTile
 	ret
 .asm_4b58
 	ld a, [hFFA6]
@@ -1772,10 +1768,10 @@ Overworld_MovePlayerOneStep:
 	ld a, [wPlayerScreenX]
 	sub $08
 	ld [wd3f9], a
-	call Func_005_47e6
-	call Func_005_478a
-	call Func_005_472e
-	call Func_005_46da
+	call GetSouthFacingTile
+	call GetNorthFacingTile
+	call GetWestFacingTile
+	call GetEastFacingTile
 	ret
 .asm_4b7b
 	ld a, [hFFA6]
@@ -1787,10 +1783,10 @@ Overworld_MovePlayerOneStep:
 	ld a, [wPlayerScreenX]
 	sub $18
 	ld [wd3f9], a
-	call Func_005_47e6
-	call Func_005_478a
-	call Func_005_472e
-	call Func_005_46da
+	call GetSouthFacingTile
+	call GetNorthFacingTile
+	call GetWestFacingTile
+	call GetEastFacingTile
 	ret
 .asm_4b9e
 	ld a, [hFFA6]
@@ -1802,20 +1798,20 @@ Overworld_MovePlayerOneStep:
 	ld a, [wPlayerScreenX]
 	add $08
 	ld [wd3f9], a
-	call Func_005_47e6
-	call Func_005_478a
-	call Func_005_472e
-	call Func_005_46da
+	call GetSouthFacingTile
+	call GetNorthFacingTile
+	call GetWestFacingTile
+	call GetEastFacingTile
 	ret
 
-Func_005_4bc1:
+HandleOverworldInput:
 	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
 	ldh a, [hFFD6]
 	and a
 	ret nz
-	call Func_005_50e5
+	call CyclePlayerCharacter
 	call OverworldInteract
 	ld a, [wd3f4]
 	and a
@@ -1823,29 +1819,29 @@ Func_005_4bc1:
 	ld hl, unk_005_5632
 	ld a, [wd0df]
 	and a
-	jr z, asm_005_4bfa
+	jr z, .readDirInput
 	cp $01
-	jr z, .asm_4beb
+	jr z, .state1Table
 	cp $02
-	jr z, .asm_4bf0
+	jr z, .state2Table
 	cp $03
-	jr z, .asm_4bf5
-	jr asm_005_4bfa
-.asm_4beb
+	jr z, .state3Table
+	jr .readDirInput
+.state1Table
 	ld hl, unk_005_5650
-	jr asm_005_4bfa
-.asm_4bf0
+	jr .readDirInput
+.state2Table
 	ld hl, unk_005_566e
-	jr asm_005_4bfa
-.asm_4bf5
+	jr .readDirInput
+.state3Table
 	ld hl, unk_005_568c
-	jr asm_005_4bfa
+	jr .readDirInput
 
-asm_005_4bfa:
+.readDirInput:
 	ld de, 6
 	ldh a, [hJoypadPressed]
 	bit START_F, a
-	jp nz, Func_005_4f2e
+	jp nz, InitStartMenu
 
 	ldh a, [hJoypadDown]
 	bit D_DOWN_F, a
@@ -1857,7 +1853,7 @@ asm_005_4bfa:
 	bit D_RIGHT_F, a
 	jr nz, .right
 
-	jr .asm_4c1c
+	jr .loadInputEntry
 
 .down:
 	add hl, de
@@ -1871,7 +1867,7 @@ asm_005_4bfa:
 .right:
 	add hl, de
 
-.asm_4c1c:
+.loadInputEntry:
 	ld a, [hli]
 	ldh [hFF9E], a
 	ld a, [hli]
@@ -1887,25 +1883,25 @@ asm_005_4bfa:
 	ldh [hFFA1], a
 	ldh a, [hFF9E]
 	cp $ff
-	jr nz, .asm_4c3a
-	call Func_005_4e4e
+	jr nz, .handleTileAction
+	call CheckMapPositionTrigger
 	ret
 
-.asm_4c3a:
+.handleTileAction:
 	xor a
 	ld [wd0ec], a
 	ldh a, [hFFA1]
 	and a
-	jr z, asm_005_4c93
+	jr z, CheckSpriteThenClearFlag
 	cp $04
-	jp z, asm_005_4e07
+	jp z, CheckFollowerMapTrigger
 	cp $03
-	jr z, asm_005_4c76
-asm_005_4c4c:
+	jr z, CheckFollowerSprite
+CheckTileHighNibble:
 	and $F0
 	cp $20
-	jr z, asm_005_4c7f
-asm_005_4c52:
+	jr z, CheckMapGroupForItem
+CommitPlayerFacing:
 	ldh a, [hFF9E]
 	ld [wPlayerFacing], a
 	ld a, $FF
@@ -1918,36 +1914,36 @@ asm_005_4c52:
 	ld [wdcd0], a
 	ret
 
-Func_005_4c69:
+ApplyPlayerFacingTurn:
 	ldh a, [hConsoleType]
-	cp $11
-	jr z, asm_005_4c93
+	cp BOOTUP_A_CGB
+	jr z, CheckSpriteThenClearFlag
 	ld a, $01
 	ld [wcd0a], a
-	jr asm_005_4c9e
-asm_005_4c76:
+	jr ApplyFacing
+CheckFollowerSprite:
 	ld a, [wPlayerSpriteID]
 	cp $09
-	jr nz, asm_005_4c52
-	jr asm_005_4c9a
-asm_005_4c7f:
-	jr asm_005_4c52
+	jr nz, CommitPlayerFacing
+	jr ClearTurnFlag
+CheckMapGroupForItem:
+	jr CommitPlayerFacing
 	ldh a, [hMapGroup]
 	cp $01
-	jr nz, asm_005_4c52
+	jr nz, CommitPlayerFacing
 	ld a, $01
 	ld [wd0ec], a
 	ldh a, [hFFA1]
 	and $0f
 	ld [wItemIndex], a
-asm_005_4c93:
+CheckSpriteThenClearFlag:
 	ld a, [wPlayerSpriteID]
 	cp $09
-	jr z, asm_005_4c52
-asm_005_4c9a:
+	jr z, CommitPlayerFacing
+ClearTurnFlag:
 	xor a
 	ld [wcd0a], a
-asm_005_4c9e:
+ApplyFacing:
 	ldh a, [hFF9E]
 	cp $ff
 	ret z
@@ -1956,12 +1952,12 @@ asm_005_4c9e:
 	ldh a, [hFF9E]
 	ld hl, wPlayerFacing
 	cp [hl]
-	jr z, .asm_4cd0
+	jr z, .facingUnchanged
 	ld [hl], a
 	ld [wd0e3], a
 	ld a, [wPlayerSpriteID]
 	and a
-	jr nz, .asm_4cd0
+	jr nz, .facingUnchanged
 	ld a, $ff
 	ldh [hFF9E], a
 	xor a
@@ -1971,27 +1967,27 @@ asm_005_4c9e:
 	ld [wd3f4], a
 	ld a, $01
 	ld [wdcd0], a
-	jr Func_005_4cd7
+	jr PositionFollowerInFront
 	ret
-.asm_4cd0
-	call Func_005_56e1
+.facingUnchanged
+	call CheckObjectInFront
 	and a
-	jp nz, asm_005_4c4c
-Func_005_4cd7:
+	jp nz, CheckTileHighNibble
+PositionFollowerInFront:
 	ld a, [wdcea]
 	and a
 	ret z
 	ld a, [wPlayerFacing]
 	and a
-	jr z, .asm_4cef
+	jr z, .facingUp
 	cp $01
-	jr z, .asm_4d06
+	jr z, .facingDown
 	cp $02
-	jr z, .asm_4d1e
+	jr z, .facingRight
 	cp $03
-	jr z, .asm_4d36
+	jr z, .facingLeft
 	ret
-.asm_4cef
+.facingUp
 	ld a, [wPlayerMapX]
 	ld [wcd32 + 1], a
 	ld a, [wPlayerMapY]
@@ -2001,8 +1997,8 @@ Func_005_4cd7:
 	ldh [hFFDD], a
 	xor a
 	ld [wdcee], a
-	jr .asm_4d4e
-.asm_4d06
+	jr .applyPosition
+.facingDown
 	ld a, [wPlayerMapX]
 	ld [wcd32 + 1], a
 	ld a, [wPlayerMapY]
@@ -2012,8 +2008,8 @@ Func_005_4cd7:
 	ldh [hFFDD], a
 	ld a, $01
 	ld [wdcee], a
-	jr .asm_4d4e
-.asm_4d1e
+	jr .applyPosition
+.facingRight
 	ld a, [wPlayerMapY]
 	ld [wcd32], a
 	ld a, [wPlayerMapX]
@@ -2023,8 +2019,8 @@ Func_005_4cd7:
 	ldh [hFFDD], a
 	ld a, $02
 	ld [wdcee], a
-	jr .asm_4d4e
-.asm_4d36
+	jr .applyPosition
+.facingLeft
 	ld a, [wPlayerMapY]
 	ld [wcd32], a
 	ld a, [wPlayerMapX]
@@ -2034,8 +2030,8 @@ Func_005_4cd7:
 	ldh [hFFDD], a
 	ld a, $03
 	ld [wdcee], a
-	jr .asm_4d4e
-.asm_4d4e
+	jr .applyPosition
+.applyPosition
 	ld a, [hFFAB]
 	ld b, a
 	ld a, [wcd32]
@@ -2058,7 +2054,7 @@ Func_005_4cd7:
 	ldh [hFFDB], a
 	ld [wdceb], a
 	ret
-Func_005_4d7d:
+GetPlayerMapTileX:
 	ld a, [wPlayerScreenX]
 	sub $08
 	srl a
@@ -2069,7 +2065,7 @@ Func_005_4d7d:
 	ldh a, [hFFAA]
 	add e
 	ret
-Func_005_4d8f:
+GetPlayerMapTileY:
 	ld a, [wPlayerObject]
 	sub $10
 	srl a
@@ -2080,7 +2076,7 @@ Func_005_4d8f:
 	ldh a, [hFFAB]
 	add e
 	ret
-Func_005_4da1:
+DrainPartyHPOnField:
 	ld a, [wdcfa]
 	and a
 	ret nz
@@ -2088,45 +2084,45 @@ Func_005_4da1:
 	add hl, de
 	ld a, [hl]
 	cp $01
-	jr z, .asm_4db4
+	jr z, .startDrain
 	cp $02
-	jr z, .asm_4db4
+	jr z, .startDrain
 	ret
-.asm_4db4
+.startDrain
 	ld a, $40
 	ld [wdcfa], a
-	call .asm_4dbd
+	call .drainParty
 	ret
-.asm_4dbd
+.drainParty
 	ld bc, wPartyMon1
-.asm_4dc0
+.monLoop
 	ld hl, $0000
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .asm_4dfb
+	jr z, .nextMon
 	ld hl, $0003
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .asm_4dd4
-	jr nz, .asm_4deb
-	jr .asm_4ddd
-.asm_4dd4
+	jr z, .checkHpLow
+	jr nz, .subtractHp
+	jr .setMinHp
+.checkHpLow
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $06
-	jr nc, .asm_4deb
-.asm_4ddd
+	jr nc, .subtractHp
+.setMinHp
 	ld hl, $0003
 	add hl, bc
 	ld [hl], $00
 	ld hl, $0002
 	add hl, bc
 	ld [hl], $01
-	jr .asm_4dfb
-.asm_4deb
+	jr .nextMon
+.subtractHp
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
@@ -2137,30 +2133,30 @@ Func_005_4da1:
 	ld a, [hl]
 	sbc a, $00
 	ld [hl], a
-.asm_4dfb
+.nextMon
 	ld hl, $0016
 	add hl, bc
 	push hl
 	pop bc
 	ld a, l
 	cp $80
-	jr c, .asm_4dc0
+	jr c, .monLoop
 	ret
-asm_005_4e07:
+CheckFollowerMapTrigger:
 	ldh a, [hMapGroup]
 	cp $01
 	ret nz
 	ldh a, [hMapNumber]
 	cp $1e
-	jr z, .asm_4e1f
+	jr z, .onTriggerMap
 	cp $1f
-	jr z, .asm_4e1f
+	jr z, .onTriggerMap
 	cp $20
-	jr z, .asm_4e1f
+	jr z, .onTriggerMap
 	cp $21
-	jr z, .asm_4e1f
+	jr z, .onTriggerMap
 	ret
-.asm_4e1f
+.onTriggerMap
 	ldh a, [hFF9E]
 	cp $ff
 	ret z
@@ -2171,7 +2167,7 @@ asm_005_4e07:
 	ldh a, [hFF9E]
 	ld hl, wPlayerFacing
 	cp [hl]
-	jr z, .asm_4e4a
+	jr z, .facingMatches
 	ld [hl], a
 	ld a, $ff
 	ldh [hFF9E], a
@@ -2183,136 +2179,136 @@ asm_005_4e07:
 	ld a, $01
 	ld [wdcd0], a
 	ret
-.asm_4e4a
-	jp Func_005_4cd7
+.facingMatches
+	jp PositionFollowerInFront
 	ret
 
-Func_005_4e4e:
+CheckMapPositionTrigger:
 	ldh a, [hMapGroup]
 	cp $01
 	ret nz
 	ldh a, [hMapNumber]
 	cp $1e
-	jr z, .asm_4e67
+	jr z, .map1e
 	cp $1f
-	jr z, .asm_4ead
+	jr z, .map1f
 	cp $20
-	jr z, .asm_4ed5
+	jr z, .map20
 	cp $21
-	jp z, .asm_4f1b
+	jp z, .map21
 	ret
-.asm_4e67
-	call Func_005_4d7d
+.map1e
+	call GetPlayerMapTileX
 	cp $02
-	jr z, .asm_4e8f
+	jr z, .map1eColLeft
 	cp $09
 	ret nz
-	call Func_005_4d8f
+	call GetPlayerMapTileY
 	cp $06
-	jr z, .asm_4e86
+	jr z, .map1eColXTriggerB
 	cp $04
-	jr z, .asm_4e7d
+	jr z, .map1eColXTriggerA
 	ret
-.asm_4e7d
+.map1eColXTriggerA
 	ld de, wcd60
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4e86
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map1eColXTriggerB
 	ld de, wNPCObjects
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4e8f
-	call Func_005_4d8f
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map1eColLeft
+	call GetPlayerMapTileY
 	cp $03
-	jr z, .asm_4ea4
+	jr z, .map1eColLeftTriggerB
 	cp $05
-	jr z, .asm_4e9b
+	jr z, .map1eColLeftTriggerA
 	ret
-.asm_4e9b
+.map1eColLeftTriggerA
 	ld de, wcda0
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4ea4
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map1eColLeftTriggerB
 	ld de, wcd80
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4ead
-	call Func_005_4d7d
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map1f
+	call GetPlayerMapTileX
 	cp $02
-	jr z, .asm_4ec6
+	jr z, .map1fColLeft
 	cp $09
 	ret nz
-	call Func_005_4d8f
+	call GetPlayerMapTileY
 	cp $06
 	ret nz
 	ld de, wNPCObjects
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4ec6
-	call Func_005_4d8f
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map1fColLeft
+	call GetPlayerMapTileY
 	cp $03
 	ret nz
 	ld de, wcd60
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4ed5
-	call Func_005_4d7d
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map20
+	call GetPlayerMapTileX
 	cp $02
-	jr z, .asm_4efd
+	jr z, .map20ColLeft
 	cp $06
 	ret nz
-	call Func_005_4d8f
+	call GetPlayerMapTileY
 	cp $05
-	jr z, .asm_4eeb
+	jr z, .map20TriggerA
 	cp $03
-	jr z, .asm_4ef4
+	jr z, .map20TriggerB
 	ret
-.asm_4eeb
+.map20TriggerA
 	ld de, wNPCObjects
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4ef4
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map20TriggerB
 	ld de, wcd60
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4efd
-	call Func_005_4d8f
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map20ColLeft
+	call GetPlayerMapTileY
 	cp $04
-	jr z, .asm_4f09
+	jr z, .map20ColLeftTriggerA
 	cp $06
-	jr z, .asm_4f12
+	jr z, .map20ColLeftTriggerB
 	ret
-.asm_4f09
+.map20ColLeftTriggerA
 	ld de, wcd80
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4f12
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map20ColLeftTriggerB
 	ld de, wcda0
-	call Func_005_4da1
-	jp .asm_4f2d
-.asm_4f1b
-	call Func_005_4d7d
+	call DrainPartyHPOnField
+	jp .triggerDone
+.map21
+	call GetPlayerMapTileX
 	cp $07
 	ret nz
-	call Func_005_4d8f
+	call GetPlayerMapTileY
 	cp $06
 	ret nz
 	ld de, wNPCObjects
-	call Func_005_4da1
-.asm_4f2d
+	call DrainPartyHPOnField
+.triggerDone
 	ret
 
-Func_005_4f2e:
+InitStartMenu:
 ; Init Start Menu
 	ld a, 1
 	ldh [hFFC5], a
 	ld [wBattleScriptState], a
 	xor a
 	ld [wBattleScriptByte], a
-	call Func_005_4f3d
+	call ClearStartMenuBuffer
 	ret
 
-Func_005_4f3d:
+ClearStartMenuBuffer:
 	ld hl, wcde0
 	ld c, $20
 	xor a
@@ -2344,7 +2340,7 @@ StartBattle:
 	ld [wd9bf], a
 	ld a, $01
 	ldh [hBattleJumptableIndex], a
-	call Func_005_50a5
+	call InitBattleParticipants
 	xor a
 	ld [wBattleIntroJumptableIndex], a
 	ldh [hFF9E], a
@@ -2470,18 +2466,18 @@ StartBattle:
 	pop de
 	ret
 
-Func_005_5084:
+CheckPartyAllFainted:
 	ld bc, wPartyMons
-.asm_5087
+.loop
 	ld a, [bc]
 	and a
-	jr z, .asm_5094
+	jr z, .nextMon
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $bf
-	jr nz, .asm_50a3
-.asm_5094
+	jr nz, .notFainted
+.nextMon
 	ld hl, $0016
 	add hl, bc
 	push hl
@@ -2489,14 +2485,14 @@ Func_005_5084:
 	inc e
 	ld a, l
 	cp $80
-	jr c, .asm_5087
+	jr c, .loop
 	ld a, $01
 	ret
-.asm_50a3
+.notFainted
 	xor a
 	ret
 
-Func_005_50a5:
+InitBattleParticipants:
 	farcall Func_02d_5086
 	xor a
 	ld [wd987], a
@@ -2510,12 +2506,12 @@ Func_005_50a5:
 
 	ld bc, wPartyMons
 	ld e, 0
-.asm_50c3:
+.loop:
 	ld hl, 2
 	add hl, bc
 	ld a, [hli]
 	or [hl]
-	jr nz, .asm_50d8
+	jr nz, .foundSlot
 
 	ld hl, PARTYMON_STRUCT_LENGTH
 	add hl, bc
@@ -2526,9 +2522,9 @@ Func_005_50a5:
 
 	ld c, l
 	ld b, h
-	jr .asm_50c3
+	jr .loop
 
-.asm_50d8:
+.foundSlot:
 	ld a, e
 	ld [wd983], a
 	ld a, c
@@ -2538,7 +2534,7 @@ Func_005_50a5:
 	ret
 
 
-Func_005_50e5:
+CyclePlayerCharacter:
 	ldh a, [hJoypadPressed]
 	bit 2, a
 	ret z
@@ -2550,10 +2546,10 @@ Func_005_50e5:
 	ret z
 	ld a, [wPlayerChar]
 
-asm_005_50f9:
+.nextChar:
 	inc a
 
-asm_005_50fa:
+.checkSlot:
 	push af
 	ld de, wdd00
 	ld l, a
@@ -2564,34 +2560,34 @@ asm_005_50fa:
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, asm_005_511a
+	jr z, .slotEmpty
 	pop af
 	ld [wPlayerChar], a
 	farcall Func_024_4000
 	farcall CopyNameByIndex
 	ret
 
-asm_005_511a:
+.slotEmpty:
 	pop af
 	cp 8
-	jr c, asm_005_50f9
+	jr c, .nextChar
 	xor a
-	jr asm_005_50fa
+	jr .checkSlot
 	ret
 
 OverworldInteract:
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	ret z
-	call Func_005_52a6
-	call Func_005_56aa
+	call CheckPendingTileInteract
+	call TriggerFacingObjectScript
 	call CheckTileInteractInFront
-	call Func_005_5295
-	call Func_005_51ed
+	call TriggerPendingScriptFlag
+	call MaybeStartCharScript
 	ld a, [wPlayerSpriteID]
 	cp 9
 	jr z, asm_005_5148
-	call Func_005_5179
+	call TryBoardFacingBlock
 	call TryInteractSignpost
 	call TryShowFoundItem
 	ret
@@ -2614,12 +2610,12 @@ asm_005_5148:
 	ld a, 8
 	ld [wPlayerSpriteID], a
 	farcall Func_024_6864
-	call Func_005_51b1
+	call InitFollowerState
 	call _UpdatePlayerMapCoords
 	call ParseCurrentMapEvents
 	ret
 
-Func_005_5179:
+TryBoardFacingBlock:
 	ld de, wAdjacentBlocks
 	ld a, [wPlayerFacing]
 	ld l, a
@@ -2640,12 +2636,12 @@ Func_005_5179:
 	ld a, 1
 	ld [hFFAC], a
 	ld [wdcd0], a
-	call Func_005_51db
+	call ClearFollowerState
 	call _UpdatePlayerMapCoords
 	call ParseCurrentMapEvents
 	ret
 
-Func_005_51b1:
+InitFollowerState:
 	ld a, 2
 	ld [wdcea], a
 	ld a, 1
@@ -2664,22 +2660,22 @@ Func_005_51b1:
 	call GetPlayerFacingOffset
 	ret
 
-Func_005_51db:
+ClearFollowerState:
 	xor a
 	ld [wdcea], a
 	ld hl, wcd20
 	ld bc, 3
 ; ???
 	xor a
-.asm_51e6
+.clearLoop
 	ld [hli], a
 	dec c
 	ld a, c
 	or b
-	jr nz, .asm_51e6
+	jr nz, .clearLoop
 	ret
 
-Func_005_51ed:
+MaybeStartCharScript:
 	ldh a, [hFFD6]
 	and a
 	ret nz
@@ -2703,11 +2699,11 @@ Func_005_51ed:
 	ld [wdce8], a
 	ld a, [hFadeFrameCounter]
 	and 8
-	jr z, asm_005_5224
+	jr z, .startScript
 	ld a, 1
 	ld [wdce8], a
 
-asm_005_5224:
+.startScript:
 	ld hl, wScriptPos
 	ld [hl], LOW(Script_005_524c)
 	inc hl
@@ -2745,7 +2741,7 @@ MovementData_005_5270:
 	db $00, $00, $00, $00, $08, $00, $06, $00, $04, $00, $04, $00, $04, $00, $03, $00
 	db $02, $00, $01, $00, $88
 
-Func_005_5295:
+TriggerPendingScriptFlag:
 	ld a, [wd0ee]
 	and a
 	ret z
@@ -2756,11 +2752,11 @@ Func_005_5295:
 	ldh [hFFD6], a
 	ret
 
-Func_005_52a6:
+CheckPendingTileInteract:
 	ld a, [wd0f8]
 	and a
 	ret z
-	call Func_005_545e
+	call GetFacingTileMapAddr
 	xor a
 	ld [wd0f8], a
 	ld [wScriptByte], a
@@ -2857,21 +2853,21 @@ ObtainTileItem:
 	call SetTextboxYPosition
 	ret
 
-Func_005_535b:
+ApplyMapSpecialPalette:
 	ld a, [hMapGroup]
 	cp $04
 	ret nz
 	ldh a, [hMapNumber]
 	cp $06
-	jr z, .asm_5374
+	jr z, .applyPalette
 	cp $07
-	jr z, .asm_5374
+	jr z, .applyPalette
 	cp $08
-	jr z, .asm_5374
+	jr z, .applyPalette
 	cp $09
-	jr z, .asm_5374
+	jr z, .applyPalette
 	ret
-.asm_5374
+.applyPalette
 	ld a, [wdcb9]
 	and a
 	ret z
@@ -2892,7 +2888,7 @@ InteractSetMapPatch:
 	ld a, [hl]
 	and $f
 	ld [wMapPatchIndex], a
-	call Func_005_54cf
+	call DrawSetInteractTile
 	call SetMapLayoutPatch
 	ld a, [wMapPatchIndex]
 	cp 2
@@ -2904,21 +2900,21 @@ InteractSetMapPatch:
 	ret
 
 asm_005_53b4:
-	call Func_005_53bb
+	call DrawFixedSetPatch
 
 asm_005_53b7:
 	call ApplyMapLayoutFlagPatches
 	ret
 
-Func_005_53bb:
+DrawFixedSetPatch:
 	ld hl, $0505
-	call Func_005_5571
+	call GetScrolledTileVRAMAddr
 	ld de, Tilemap_005_53d1
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
-	call Func_005_5a59
+	call CopyBlockToVRAM
 	ret
 
 Tilemap_005_53d1:
@@ -2938,7 +2934,7 @@ InteractClearMapPatch:
 	ld a, [hl]
 	and $f
 	ld [wMapPatchIndex], a
-	call Func_005_54ad
+	call DrawClearInteractTile
 	call ClearMapLayoutPatch
 	ld a, [wMapPatchIndex]
 	cp 2
@@ -2950,21 +2946,21 @@ InteractClearMapPatch:
 	ret
 
 asm_005_53fd:
-	call Func_005_5404
+	call DrawFixedClearPatch
 
 asm_005_5400:
 	call ApplyMapLayoutPatchIfClear
 	ret
 
-Func_005_5404:
+DrawFixedClearPatch:
 	ld hl, $0505
-	call Func_005_5571
+	call GetScrolledTileVRAMAddr
 	ld de, Tilemap_005_541a
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
-	call Func_005_5a59
+	call CopyBlockToVRAM
 	ret
 
 Tilemap_005_541a:
@@ -2987,15 +2983,15 @@ SetTextboxYPosition:
 	ld [wTextboxPos], a
 	ret
 
-Func_005_5432:
+GetItemPickupTileAddr:
 	and a
 	ret nz
 	ld a, [hl]
 	and $0F
 	ld [wItemIndex], a
-	call .asm_543e
+	call .computeAddr
 	ret
-.asm_543e
+.computeAddr
 	ld a, [wVisibleObjects]
 	ld [wd0f9], a
 	ld a, [wPlayerScreenX]
@@ -3003,13 +2999,13 @@ Func_005_5432:
 	ld [wd3f9], a
 	ld a, [wPlayerFacing]
 	cp $00
-	jr z, asm_005_547d
+	jr z, ComputeTileMapAddr
 	ld a, [wd0f9]
 	sub $30
 	ld [wd0f9], a
-	jp asm_005_547d
+	jp ComputeTileMapAddr
 
-Func_005_545e:
+GetFacingTileMapAddr:
 	ld a, [wPlayerObject]
 	sub $10
 	ld [wd0f9], a
@@ -3018,12 +3014,12 @@ Func_005_545e:
 	ld [wd3f9], a
 	ld a, [wPlayerFacing]
 	cp 0
-	jr z, asm_005_547d
+	jr z, ComputeTileMapAddr
 	ld a, [wd0f9]
 	sub $10
 	ld [wd0f9], a
 
-asm_005_547d:
+ComputeTileMapAddr:
 	ld a, [wd0f9]
 	srl a
 	srl a
@@ -3034,7 +3030,7 @@ asm_005_547d:
 	srl a
 	srl a
 	ld h, a
-	call Func_005_55b5
+	call GetTileVRAMAddress
 	ld a, l
 	ld [wd083], a
 	ld a, h
@@ -3050,7 +3046,7 @@ unk_005_549d:
 	db $03
 	endr
 
-Func_005_54ad:
+DrawClearInteractTile:
 	ld a, [wTileInteractType]
 	cp 3
 	ret nz
@@ -3064,11 +3060,11 @@ Func_005_54ad:
 	srl a
 	srl a
 	ld h, a
-	call Func_005_55b5
+	call GetTileVRAMAddress
 	ld de, Tilemap_005_5500
-	jr asm_005_54ef
+	jr Copy2x2BlockToVRAM
 
-Func_005_54cf:
+DrawSetInteractTile:
 	ld a, [wTileInteractType]
 	cp 2
 	ret nz
@@ -3082,15 +3078,15 @@ Func_005_54cf:
 	srl a
 	srl a
 	ld h, a
-	call Func_005_55b5
+	call GetTileVRAMAddress
 	ld de, Tilemap_005_54fc
 
-asm_005_54ef:
+Copy2x2BlockToVRAM:
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
-	call Func_005_5a59
+	call CopyBlockToVRAM
 	ret
 
 Tilemap_005_54fc:
@@ -3119,13 +3115,13 @@ RedrawTileAfterObtain:
 	srl a
 	srl a
 	ld h, a
-	call Func_005_55b5
+	call GetTileVRAMAddress
 	ld de, Tilemap_005_556d
 	ld bc, $0202
 	ld a, 2
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
-	call Func_005_5a59
+	call CopyBlockToVRAM
 	ld a, [wd0f9]
 	srl a
 	srl a
@@ -3189,7 +3185,7 @@ unk_005_556f:
 unk_005_5570:
 	db $4
 
-Func_005_5571:
+GetScrolledTileVRAMAddr:
 	ld a, [hFFAA]
 	ld b, a
 	ld a, [hFFAB]
@@ -3218,31 +3214,31 @@ Func_005_5571:
 	ld d, 0
 	add hl, bc
 	bit 5, l
-	jr z, asm_005_55a5
+	jr z, .addRowOffset
 	add hl, de
 	bit 5, l
-	jr nz, asm_005_55ae
+	jr nz, .composeAddr
 	ld a, l
 	sub $20
 	ld l, a
-	jr asm_005_55ae
+	jr .composeAddr
 
-asm_005_55a5:
+.addRowOffset:
 	add hl, de
 	bit 5, l
-	jr z, asm_005_55ae
+	jr z, .composeAddr
 	ld a, l
 	sub $20
 	ld l, a
 
-asm_005_55ae:
+.composeAddr:
 	ld a, h
 	and 3
 	or $98
 	ld h, a
 	ret
 
-Func_005_55b5:
+GetTileVRAMAddress:
 	ld a, [wd0ba]
 	ld c, a
 	ld a, [wd0bb]
@@ -3259,24 +3255,24 @@ Func_005_55b5:
 	ld d, 0
 	add hl, bc
 	bit 5, l
-	jr z, asm_005_55d9
+	jr z, .addRow
 	add hl, de
 	bit 5, l
-	jr nz, asm_005_55e2
+	jr nz, .finalize
 	ld a, l
 	sub $20
 	ld l, a
-	jr asm_005_55e2
+	jr .finalize
 
-asm_005_55d9:
+.addRow:
 	add hl, de
 	bit 5, l
-	jr z, asm_005_55e2
+	jr z, .finalize
 	ld a, l
 	sub $20
 	ld l, a
 
-asm_005_55e2:
+.finalize:
 	ld a, h
 	and 3
 	or $98
@@ -3342,19 +3338,19 @@ unk_005_568c:
 	db $ff, $00, $00, $00, $a1, $ff, $02, $02, $01, $00, $f7, $d3, $03, $01, $01, $00
 	db $f8, $d3, $00, $08, $01, $01, $f5, $d3, $01, $04, $01, $ff, $f6, $d3
 
-Func_005_56aa:
+TriggerFacingObjectScript:
 	ld de, unk_005_5764
 	ld a, [wPlayerFacing]
-	call Func_005_56e6
+	call FindObjectAtFacingTile
 	and a
-	jr nz, asm_005_56c3
+	jr nz, .foundObject
 	ld a, [wPlayerMap2Y]
 	ld [wPlayerMapY], a
 	ld a, [wPlayerMap2X]
 	ld [wPlayerMapX], a
 	ret
 
-asm_005_56c3:
+.foundObject:
 	ld a, [wSelectedObjectOffset]
 	ld c, a
 	ld [wcd0b], a
@@ -3370,11 +3366,11 @@ asm_005_56c3:
 	ld a, 1
 	ldh [hFFD6], a
 	ret
-Func_005_56e1:
+CheckObjectInFront:
 	ld de, unk_005_5764
 	ldh a, [hFF9E]
 
-Func_005_56e6:
+FindObjectAtFacingTile:
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -3406,21 +3402,21 @@ Func_005_56e6:
 	ld [wFacingTileX], a
 	ld bc, wNPCObjects
 
-asm_005_571f:
+.loop:
 	ld hl, 2
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, asm_005_574b
+	jr z, .nextObject
 	ld hl, $12
 	add hl, bc
 	ld a, [wFacingTileY]
 	cp [hl]
-	jr nz, asm_005_574b
+	jr nz, .nextObject
 	inc hl
 	ld a, [wFacingTileX]
 	cp [hl]
-	jr nz, asm_005_574b
+	jr nz, .nextObject
 	ld a, [wPlayerMap2Y]
 	ld [wPlayerMapY], a
 	ld a, [wPlayerMap2X]
@@ -3430,14 +3426,14 @@ asm_005_571f:
 	ld a, 1
 	ret
 
-asm_005_574b:
+.nextObject:
 	ld hl, $20
 	add hl, bc
 	ld c, l
 	ld b, h
 	ld a, l
 	cp $e0
-	jr c, asm_005_571f
+	jr c, .loop
 	ld a, [wFacingTileY]
 	ld [wPlayerMapY], a
 	ld a, [wFacingTileX]
@@ -3496,9 +3492,9 @@ Overworld_ProcessJoypadInput:
 	ldh [hSimulatedJoypadState], a
 	ret
 .asm_57ad
-	call Func_005_5978
+	call ScrollMapDown
 	call BuildBlockmap
-	call Func_005_406b
+	call CopyVisibleTilemapWindow
 	call .asm_5879
 	ret
 .asm_57ba
@@ -3524,9 +3520,9 @@ Overworld_ProcessJoypadInput:
 	ldh [hSimulatedJoypadState], a
 	ret
 .asm_57df
-	call Func_005_59a9
+	call ScrollMapUp
 	call BuildBlockmap
-	call Func_005_406b
+	call CopyVisibleTilemapWindow
 	call .asm_5853
 	ret
 .asm_57ec
@@ -3552,9 +3548,9 @@ Overworld_ProcessJoypadInput:
 	ldh [hSimulatedJoypadState], a
 	ret
 .asm_5811
-	call Func_005_59dc
+	call ScrollMapLeft
 	call BuildBlockmap
-	call Func_005_406b
+	call CopyVisibleTilemapWindow
 	call .asm_58aa
 	ret
 .asm_581e
@@ -3581,22 +3577,22 @@ Overworld_ProcessJoypadInput:
 	ldh [hSimulatedJoypadState], a
 	ret
 .asm_5846
-	call Func_005_5a07
+	call ScrollMapRight
 	call BuildBlockmap
-	call Func_005_406b
+	call CopyVisibleTilemapWindow
 	call .asm_58d0
 	ret
 .asm_5853
 	ld hl, wTilemap
 	ld de, wd128
-	call Func_005_5919
+	call CopyTilemapRowToBuffer
 	ld c, $28
-	call Func_005_5900
+	call BuildEdgeAttrBuffer
 	ld a, [wd0ba]
 	ld e, a
 	ld a, [wd0bb]
 	ld d, a
-	call Func_005_5953
+	call BuildBGMapRowPointers
 	ld a, $01
 	ldh [hFFA4], a
 	ld a, $10
@@ -3607,9 +3603,9 @@ Overworld_ProcessJoypadInput:
 .asm_5879
 	hlcoord 0, 16
 	ld de, wd128
-	call Func_005_5919
+	call CopyTilemapRowToBuffer
 	ld c, $28
-	call Func_005_5900
+	call BuildEdgeAttrBuffer
 	ld a, [wd0ba]
 	ld l, a
 	ld a, [wd0bb]
@@ -3621,7 +3617,7 @@ Overworld_ProcessJoypadInput:
 	or $98
 	ld e, l
 	ld d, a
-	call Func_005_5953
+	call BuildBGMapRowPointers
 	ld a, $01
 	ldh [hFFA4], a
 	ld a, $10
@@ -3632,14 +3628,14 @@ Overworld_ProcessJoypadInput:
 .asm_58aa
 	ld hl, wTilemap
 	ld de, wd128
-	call Func_005_5922
+	call CopyTilemapColumnToBuffer
 	ld c, $24
-	call Func_005_5900
+	call BuildEdgeAttrBuffer
 	ld a, [wd0ba]
 	ld e, a
 	ld a, [wd0bb]
 	ld d, a
-	call Func_005_5935
+	call BuildBGMapColumnPointers
 	ld a, $01
 	ldh [hFFA4], a
 	ld a, $10
@@ -3650,9 +3646,9 @@ Overworld_ProcessJoypadInput:
 .asm_58d0
 	hlcoord 18, 0
 	ld de, wd128
-	call Func_005_5922
+	call CopyTilemapColumnToBuffer
 	ld c, $24
-	call Func_005_5900
+	call BuildEdgeAttrBuffer
 	ld a, [wd0ba]
 	ld e, a
 	and $E0
@@ -3664,7 +3660,7 @@ Overworld_ProcessJoypadInput:
 	ld e, a
 	ld a, [wd0bb]
 	ld d, a
-	call Func_005_5935
+	call BuildBGMapColumnPointers
 	ld a, $01
 	ldh [hFFA4], a
 	ld a, $10
@@ -3673,11 +3669,11 @@ Overworld_ProcessJoypadInput:
 	ldh [hFF9E], a
 	ret
 
-Func_005_5900:
+BuildEdgeAttrBuffer:
 	ld hl, wd128
 	ld de, wd100
 
-Func_005_5906:
+LookupTileAttrs:
 	ld a, [hli]
 	push hl
 	ld hl, wMapTileAttrs
@@ -3691,25 +3687,25 @@ Func_005_5906:
 	inc de
 	pop hl
 	dec c
-	jr nz, Func_005_5906
+	jr nz, LookupTileAttrs
 	ret
 
 
-Func_005_5919:
+CopyTilemapRowToBuffer:
 	ld c, $28
 
-asm_005_591b:
+.loop:
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec c
-	jr nz, asm_005_591b
+	jr nz, .loop
 	ret
 
-Func_005_5922:
+CopyTilemapColumnToBuffer:
 	ld c, $12
 
-asm_005_5924:
+.loop:
 	ld a, [hli]
 	ld [de], a
 	inc de
@@ -3719,19 +3715,19 @@ asm_005_5924:
 	ld a, $13
 	add l
 	ld l, a
-	jr nc, asm_005_5931
+	jr nc, .nextRow
 	inc h
 
-asm_005_5931:
+.nextRow:
 	dec c
-	jr nz, asm_005_5924
+	jr nz, .loop
 	ret
 
-Func_005_5935:
+BuildBGMapColumnPointers:
 	ld hl, wBGMapBufferPointers
 	ld c, $12
 
-asm_005_593a:
+.loop:
 	ld a, e
 	ld [hli], a
 	ld a, d
@@ -3739,33 +3735,33 @@ asm_005_593a:
 	ld a, $20
 	add e
 	ld e, a
-	jr nc, asm_005_594b
+	jr nc, .nextSlot
 	inc d
 	ld a, d
 	and 3
 	or $98
 	ld d, a
 
-asm_005_594b:
+.nextSlot:
 	dec c
-	jr nz, asm_005_593a
+	jr nz, .loop
 	ld a, $12
 	ldh [hFFA5], a
 	ret
 
-Func_005_5953:
+BuildBGMapRowPointers:
 	ld hl, wBGMapBufferPointers
 	push de
-	call Func_005_595f
+	call StoreBGMapRowPointers
 	pop de
 	ld a, $20
 	add e
 	ld e, a
 
-Func_005_595f:
+StoreBGMapRowPointers:
 	ld c, $a
 
-asm_005_5961:
+.storeRow:
 	ld a, e
 	ld [hli], a
 	ld a, d
@@ -3780,35 +3776,35 @@ asm_005_5961:
 	or b
 	ld e, a
 	dec c
-	jr nz, asm_005_5961
+	jr nz, .storeRow
 	ld a, $14
 	ldh [hFFA5], a
 	ret
 
-Func_005_5978:
+ScrollMapDown:
 	ld hl, hFFAB
 	inc [hl]
 	ld a, [wd0ba]
 	add $40
 	ld [wd0ba], a
-	jr nc, asm_005_5991
+	jr nc, .noCarry
 	ld a, [wd0bb]
 	inc a
 	and 3
 	or $98
 	ld [wd0bb], a
 
-asm_005_5991:
+.noCarry:
 	ld hl, hFFA0
 	ld a, 1
 	sub [hl]
 	ld [hl], a
 	and a
 	ret nz
-	call Func_005_599e
+	call MoveMapAttrPtrDown
 	ret
 
-Func_005_599e:
+MoveMapAttrPtrDown:
 	ld hl, wMapAttributes
 	ld a, [hMapWidth]
 	add [hl]
@@ -3817,30 +3813,30 @@ Func_005_599e:
 	inc [hl]
 	ret
 
-Func_005_59a9:
+ScrollMapUp:
 	ld hl, hFFAB
 	dec [hl]
 	ld a, [wd0ba]
 	sub $40
 	ld [wd0ba], a
-	jr nc, asm_005_59c2
+	jr nc, .noWrap
 	ld a, [wd0bb]
 	dec a
 	and 3
 	or $98
 	ld [wd0bb], a
 
-asm_005_59c2:
+.noWrap:
 	ld hl, hFFA0
 	ld a, 1
 	sub [hl]
 	ld [hl], a
 	and a
 	ret z
-	call Func_005_59cf
+	call MoveMapAttrPtrUp
 	ret
 
-Func_005_59cf:
+MoveMapAttrPtrUp:
 	ld hl, wMapAttributes
 	ld a, [hMapWidth]
 	ld b, a
@@ -3851,7 +3847,7 @@ Func_005_59cf:
 	dec [hl]
 	ret
 
-Func_005_59dc:
+ScrollMapLeft:
 	ld hl, hFFAA
 	dec [hl]
 	ld a, [wd0ba]
@@ -3869,10 +3865,10 @@ Func_005_59dc:
 	ld [hl], a
 	and a
 	ret z
-	call Func_005_59fd
+	call MoveMapAttrPtrLeft
 	ret
 
-Func_005_59fd:
+MoveMapAttrPtrLeft:
 	ld hl, wMapAttributes
 	ld a, [hl]
 	sub 1
@@ -3881,7 +3877,7 @@ Func_005_59fd:
 	dec [hl]
 	ret
 
-Func_005_5a07:
+ScrollMapRight:
 	ld hl, hFFAA
 	inc [hl]
 	ld a, [wd0ba]
@@ -3899,10 +3895,10 @@ Func_005_5a07:
 	ld [hl], a
 	and a
 	ret nz
-	call Func_005_5a28
+	call MoveMapAttrPtrRight
 	ret
 
-Func_005_5a28:
+MoveMapAttrPtrRight:
 	ld hl, wMapAttributes
 	ld a, [hl]
 	add 1
@@ -3911,22 +3907,22 @@ Func_005_5a28:
 	inc [hl]
 	ret
 
-Func_005_5a32:
+CopyMapBufferToTilemap:
 	ld hl, wc740
 
-Func_005_5a35:
+CopyMapWindowToTilemap:
 	ld de, wTilemap
 	ld b, $12
 
-asm_005_5a3a:
+.nextRow:
 	ld c, $14
 
-asm_005_5a3c:
+.copyTile:
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec c
-	jr nz, asm_005_5a3c
+	jr nz, .copyTile
 	ld a, l
 	add 4
 	ld l, a
@@ -3934,30 +3930,30 @@ asm_005_5a3c:
 	adc 0
 	ld h, a
 	dec b
-	jr nz, asm_005_5a3a
+	jr nz, .nextRow
 	ret
 
-Func_005_5a4e:
+CopyBlockToVRAMAttr:
 	ld a, 1
 	ldh [rVBK], a
-	jp Func_005_5a59
+	jp CopyBlockToVRAM
 
-Func_005_5a55:
+CopyBlockToVRAMTiles:
 	ld a, 0
 	ldh [rVBK], a
 
-Func_005_5a59:
+CopyBlockToVRAM:
 	push hl
 
-asm_005_5a5a:
+.rowLoop:
 	ld a, [de]
 	push bc
 	ld c, a
 
-asm_005_5a5d:
+.waitVRAM:
 	ldh a, [rSTAT]
 	and 3
-	jr nz, asm_005_5a5d
+	jr nz, .waitVRAM
 	ld a, c
 	ld [hl], a
 	inc l
@@ -3966,18 +3962,18 @@ asm_005_5a5d:
 	ld c, a
 	ld a, l
 	and $f
-	jr nz, asm_005_5a77
+	jr nz, .nextByte
 	ld a, l
 	bit 4, a
-	jr nz, asm_005_5a77
+	jr nz, .nextByte
 	sub $20
 	ld l, a
 
-asm_005_5a77:
+.nextByte:
 	inc de
 	pop bc
 	dec b
-	jr nz, asm_005_5a5a
+	jr nz, .rowLoop
 	pop hl
 	push bc
 	ld bc, $20
@@ -3986,12 +3982,12 @@ asm_005_5a77:
 	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
-	jr nz, Func_005_5a59
+	jr nz, CopyBlockToVRAM
 	ld a, 0
 	ldh [rVBK], a
 	ret
 
-Func_005_5a8e:
+ClearObjectData:
 	ld hl, wPlayerScreenY
 	ld bc, $100
 .clear
@@ -4003,7 +3999,7 @@ Func_005_5a8e:
 	jr nz, .clear
 	ret
 
-Func_005_5a9c:
+SetMapZoneFlags:
 	ld de, Pointers_005_5b12
 	ldh a, [hMapGroup]
 	ld l, a
@@ -4035,20 +4031,20 @@ Func_005_5a9c:
 	ld c, $01
 	ldh a, [hMapNumber]
 	ld b, a
-.asm_5ace
+.loop
 	ld a, [hli]
 	cp $FF
 	ret z
 	cp $EE
-	jr z, .asm_5ade
+	jr z, .marker
 	cp b
-	jr nz, .asm_5ace
+	jr nz, .loop
 	ld a, c
 	ld [wd0d3], a
 	ret
-.asm_5ade
+.marker
 	ld c, $02
-	jr .asm_5ace
+	jr .loop
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_005_5ae2:
 	db $e0, $d0, $01, $01, $e0, $d0, $02, $02, $e0, $d0, $04, $04, $e0, $d0, $08, $08
