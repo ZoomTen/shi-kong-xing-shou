@@ -207,7 +207,7 @@
 	done;
 
 @org $12, $57fa:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "發生了什麼事嗎";
 	line "﹖";
 	done;
@@ -234,7 +234,7 @@
 	done;
 
 @org $12, $58ef:
-	init NAME_BALLOT, PIC_2B;
+	init NAME_BALLOT, PIC_BALLOT_2;
 	text "這真是遺憾⋯";
 	done;
 
@@ -287,7 +287,7 @@
 	done;
 
 @org $12, $5abd:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "這就是基多所說";
 	line "的線索﹖";
 	cont "月型項鍊﹖";
@@ -515,7 +515,7 @@
 	done;
 
 @org $12, $6171:
-	init NAME_NINA, PIC_34;
+	init NAME_NINA, PIC_NINA_2;
 	text "哥～哥～怎麼辦";
 	cont "連爸爸留下來的";
 	line "那個﹐都賣掉了";
@@ -525,12 +525,12 @@
 	done;
 
 @org $12, $61be:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "怎麼回事﹖";
 	done;
 
 @org $12, $61cb:
-	init NAME_NINA, PIC_34;
+	init NAME_NINA, PIC_NINA_2;
 	text "嗚～嗚～哥哥在";
 	line "放羊的時候﹐羊";
 	para "突然聞到了咖啡";
@@ -545,7 +545,7 @@
 	done;
 
 @org $12, $6253:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "這弦月型的項鍊";
 	line "好別緻﹗";
 	cont "項鍊﹖月琉璃﹖";
@@ -555,7 +555,7 @@
 	done;
 
 @org $12, $629b:
-	init NAME_NINA, PIC_34;
+	init NAME_NINA, PIC_NINA_2;
 	text "哥哥的項鍊﹐我";
 	line "也是在他受傷時";
 	cont "﹐才發現的⚬但";
@@ -566,12 +566,12 @@
 	done;
 
 @org $12, $62f3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "天使之葉﹖";
 	done;
 
 @org $12, $6300:
-	init NAME_NINA, PIC_35;
+	init NAME_NINA, PIC_NINA_3;
 	text "咖啡林的最深處";
 	line "﹐有顆天使樹⚬";
 	para "它的葉子具有強";
@@ -583,14 +583,14 @@
 	done;
 
 @org $12, $636e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "咖啡林﹖";
 	cont "我一定會將天使";
 	line "之葉採回來的﹗";
 	done;
 
 @org $12, $6394:
-	init NAME_NINA, PIC_33;
+	init NAME_NINA, PIC_NINA_1;
 	text "真的﹖謝謝你～";
 	line "謝謝你﹗妮娜和";
 	cont "你一起去﹗";
@@ -602,13 +602,13 @@
 	done;
 
 @org $12, $63f5:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "妮娜＆小綿羊加";
 	line "入隊伍﹗";
 	done;
 
 @org $12, $640c:
-	init NAME_18, PIC_2F;
+	init NAME_18, PIC_VAST_FAME;
 	text "如果將妮娜置於";
 	line "隊伍前頭﹐小線";
 	para "羊可以清除阻擋";
@@ -616,7 +616,7 @@
 	done;
 
 @org $12, $6443:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 	text "嗚～好痛﹗";
 	cont "被這種草刺到﹐";
 	line "就像被針刺到一";
@@ -630,7 +630,7 @@
 	done;
 
 @org $12, $6486:
-	init NAME_NINA, PIC_36;
+	init NAME_NINA, PIC_NINA_4;
 	text "糟了﹗牠要吐出";
 	line "令人興奮的氣息";
 	cont "了﹗得趕快打倒";
@@ -647,7 +647,7 @@
 	done;
 
 @org $12, $64fb:
-	init NAME_NINA, PIC_33;
+	init NAME_NINA, PIC_NINA_1;
 	text "這就是天使樹了";
 	line "﹗只要有天使之";
 	cont "葉的話﹐哥哥的";
@@ -656,7 +656,7 @@
 	done;
 
 @org $12, $653d:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "得到了天使之葉";
 	line "﹗";
 	done;
@@ -804,7 +804,7 @@
 	done;
 
 @org $12, $68f5:
-	init NAME_NINA, PIC_36;
+	init NAME_NINA, PIC_NINA_4;
 	text "哥～你胸前的月";
 	line "型項鍊﹐真的就";
 	cont "是月琉璃嗎﹖";
@@ -823,7 +823,7 @@
 	done;
 
 @org $12, $6953:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 	text "加業企業的董事";
 	line "長﹐為了尋找他";
 	cont "失散的孫子﹐己";
@@ -856,7 +856,7 @@
 	done;
 
 @org $12, $6a58:
-	init NAME_NINA, PIC_34;
+	init NAME_NINA, PIC_NINA_2;
 	text "哥⋯";
 	cont "我記得哥哥曾對";
 	line "我說﹐要包容別";
@@ -875,7 +875,7 @@
 	done;
 
 @org $12, $6adb:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 	text "糟糕﹗";
 	cont "馬克的身體才復";
 	line "原﹐禁不起這樣";
@@ -890,7 +890,7 @@
 	done;
 
 @org $12, $6b30:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "如果是這樣的話";
 	line "﹐就糟了﹗妮娜";
 	cont "﹐你知道馬克可";
@@ -905,7 +905,7 @@
 	done;
 
 @org $12, $6b93:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "天之岩嗎﹖得儘";
 	line "快找到馬克才行";
 	cont "﹗";
@@ -1088,7 +1088,7 @@
 	done;
 
 @org $12, $7033:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 	text "得到了晶片２﹗";
 	done;
 
@@ -1154,7 +1154,7 @@
 	done;
 
 @org $12, $71f8:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "謝謝您⚬";
 	line "";
 	done;
@@ -1229,7 +1229,7 @@
 	done;
 
 @org $12, $73c5:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "是的⚬我一直相";
 	para "信﹐只要我朝這";
 	line "個方向著手的話";
@@ -1253,7 +1253,7 @@
 	done;
 
 @org $12, $748c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "妮娜⋯⋯";
 	done;
 
@@ -1267,18 +1267,18 @@
 	done;
 
 @org $12, $74d8:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "嗯﹗";
 	done;
 
 @org $12, $74df:
-	init NAME_NINA, PIC_33;
+	init NAME_NINA, PIC_NINA_1;
 	text "喲好了唷﹗";
 	line "明天見了～";
 	done;
 
 @org $12, $74f8:
-	init NAME_BALLOT, PIC_2B;
+	init NAME_BALLOT, PIC_BALLOT_2;
 	text "爸～你不要走﹗";
 	cont "不要丟下我一個";
 	line "人﹗";
@@ -1294,7 +1294,7 @@
 	done;
 
 @org $12, $755b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "爸～不要丟下我";
 	line "﹗";
 	done;
@@ -1305,7 +1305,7 @@
 	done;
 
 @org $12, $7576:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "爸～﹗﹗﹗";
 	line "為什麼﹖為什麼";
 	cont "為什麼為什麼為";
@@ -1314,12 +1314,12 @@
 	done;
 
 @org $12, $75b7:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "爸﹗﹗";
 	done;
 
 @org $12, $75c0:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "⋯原來是個夢⋯";
 	done;
 
@@ -1332,7 +1332,7 @@
 	done;
 
 @org $12, $75f9:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "奇怪﹖典禮不是";
 	line "今天舉行嗎﹖";
 	para "怎麼一點都沒有";
@@ -1353,7 +1353,7 @@
 	done;
 
 @org $12, $7696:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "這是怎麼回事﹖";
 	line "明明睡了一覺﹐";
 	cont "現在不是『明天";
@@ -1404,7 +1404,7 @@
 	done;
 
 @org $12, $77ff:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "原來是星獸搞的";
 	line "鬼﹗牠讓鐘塔的";
 	cont "時間停止了﹐所";
@@ -1454,7 +1454,7 @@
 	done;
 
 @org $12, $7970:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "嗯⚬";
 	done;
 
@@ -1466,7 +1466,7 @@
 	done;
 
 @org $12, $799d:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "是的⚬";
 	line "為了尋找爸爸及";
 	cont "動力晶片﹐我必";
@@ -1507,7 +1507,7 @@
 	done;
 
 @org $12, $7aac:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "是的⚬";
 	cont "必須要動身﹐尋";
 	line "找其他的動力晶";
@@ -1532,7 +1532,7 @@
 	done;
 
 @org $12, $7b78:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "邦林企業﹖";
 	done;
 
@@ -1549,7 +1549,7 @@
 	done;
 
 @org $12, $7bbb:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "但是多魯市﹐並";
 	line "沒有對外連結的";
 	cont "道路啊﹗";
@@ -1569,7 +1569,7 @@
 	done;
 
 @org $12, $7c4b:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 	text "得到金鑰匙﹗";
 	done;
 
@@ -1584,7 +1584,7 @@
 	done;
 
 @org $12, $7ca6:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "謝謝你～董事長";
 	line "﹗";
 	done;
@@ -1609,7 +1609,7 @@
 	done;
 
 @org $12, $7d04:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "妮娜﹖";
 	done;
 
@@ -1655,7 +1655,7 @@
 	done;
 
 @org $12, $7e02:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "這⋯⋯好﹗";
 	line "大家出發吧﹗";
 	done;

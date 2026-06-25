@@ -11,14 +11,14 @@
 	done;
 
 @org $08, $456d:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 	text "成功了﹗";
 	para "這就是媽媽料理";
 	line "的味道﹗";
 	done;
 
 @org $08, $458a:
-	init NAME_BALLOT, PIC_2B;
+	init NAME_BALLOT, PIC_BALLOT_2;
 	text "媽媽⋯⋯⋯";
 	line "我好想妳⋯⋯";
 	para "⋯⋯⋯⋯";

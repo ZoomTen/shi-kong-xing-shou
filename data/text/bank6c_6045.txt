@@ -57,19 +57,19 @@
 	done;
 
 @org $6c, $6103:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $6106:
 	text "貝爾⋯⋯";
 	done;
 
 @org $6c, $610e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $6111:
 	text "得到了晶片８﹗";
 	done;
 
 @org $6c, $611d:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6120:
 	text "喂喂～";
 	line "巴洛特嗎﹖";
@@ -87,14 +87,14 @@
 	done;
 
 @org $6c, $6173:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $6176:
 	text "巴爾之都⚬";
 	line "太空船造好了﹖";
 	done;
 
 @org $6c, $618f:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6192:
 	text "現在沒有時間解";
 	line "釋這麼多了⚬";
@@ -106,20 +106,20 @@
 	done;
 
 @org $6c, $61c6:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $61c9:
 	text "好的﹗";
 	done;
 
 @org $6c, $61cf:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $61d2:
 	text "貝爾．巴克．一";
 	line "定會．回來﹗";
 	done;
 
 @org $6c, $61ec:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $61ef:
 	text "你們終於來了﹗";
 	line "趕快上來吧⚬";
@@ -143,7 +143,7 @@
 	done;
 
 @org $6c, $624d:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6250:
 	text "哈哈哈～";
 	line "很棒吧﹗";
@@ -152,7 +152,7 @@
 	done;
 
 @org $6c, $627c:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $627f:
 	text "一百二十年前﹐";
 	line "八大科家就是用";
@@ -172,7 +172,7 @@
 	done;
 
 @org $6c, $62eb:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $62ee:
 	text "所以當時的八大";
 	line "科學家﹐就留下";
@@ -180,7 +180,7 @@
 	done;
 
 @org $6c, $6317:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $631a:
 	text "是的⚬他們應該";
 	line "是預測到﹐在不";
@@ -190,7 +190,7 @@
 	done;
 
 @org $6c, $635b:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $635e:
 	text "好了﹐";
 	line "時間不多了⚬";
@@ -206,7 +206,7 @@
 	done;
 
 @org $6c, $63ca:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $63cd:
 	text "啟動時光跳躍系";
 	line "統⚬";
@@ -238,7 +238,7 @@
 	done;
 
 @org $6c, $6470:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6473:
 	text "怎麼回事﹖";
 	para "啊﹗";
@@ -257,7 +257,7 @@
 	done;
 
 @org $6c, $64bc:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $64bf:
 	text "巴洛特﹐趕快找";
 	line "出發生故障的原";
@@ -267,7 +267,7 @@
 	done;
 
 @org $6c, $64f3:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $64f6:
 	text "巴洛特﹐趕快找";
 	line "出發生故障的原";
@@ -277,14 +277,14 @@
 	done;
 
 @org $6c, $652a:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $652d:
 	text "巴克．一起去．";
 	line "找問題﹗";
 	done;
 
 @org $6c, $6542:
-	init NAME_NINA, PIC_36;
+	init NAME_NINA, PIC_NINA_4;
 @org $6c, $6545:
 	text "怎麼會這樣﹖";
 	line "妮娜也跟巴洛特";
@@ -292,7 +292,7 @@
 	done;
 
 @org $6c, $6566:
-	init NAME_CLAUDE, PIC_3A;
+	init NAME_CLAUDE, PIC_CLAUDE_4;
 @org $6c, $6569:
 	text "在這種緊急時刻";
 	line "還發生這種事⚬";
@@ -301,7 +301,7 @@
 	done;
 
 @org $6c, $659b:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 @org $6c, $659e:
 	text "原來如此⚬";
 	line "一起找出問題的";
@@ -348,13 +348,13 @@
 	done;
 
 @org $6c, $6665:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6c, $6668:
 	text "可惡⋯打不開﹗";
 	done;
 
 @org $6c, $6676:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $6679:
 	text "米特﹖";
 	line "這是怎麼回事﹖";
@@ -376,7 +376,7 @@
 	done;
 
 @org $6c, $66d2:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6c, $66d5:
 	text "米特﹗";
 	line "你在說什麼﹖";
@@ -431,7 +431,7 @@
 	done;
 
 @org $6c, $67d2:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $67d5:
 	text "米特﹗﹗";
 	line "支持住﹗";
@@ -445,7 +445,7 @@
 	done;
 
 @org $6c, $67fa:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $67fd:
 	text "米特﹗";
 	line "不要放手啊﹗";
@@ -462,7 +462,7 @@
 	done;
 
 @org $6c, $682f:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $6832:
 	text "不要再說這種話";
 	line "了﹗";
@@ -494,7 +494,7 @@
 	done;
 
 @org $6c, $68a9:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $68ac:
 	text "米特﹗﹗﹗";
 	done;
@@ -513,13 +513,13 @@
 	done;
 
 @org $6c, $68dc:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $68df:
 	text "米～特﹗﹗﹗﹗";
 	done;
 
 @org $6c, $68ea:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $68ed:
 	text "米特﹗﹗";
 	line "支持住﹗";
@@ -533,7 +533,7 @@
 	done;
 
 @org $6c, $6912:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $6915:
 	text "米特﹗";
 	line "不要放手啊﹗";
@@ -550,7 +550,7 @@
 	done;
 
 @org $6c, $6947:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $694a:
 	text "不要再說這種話";
 	line "了﹗";
@@ -570,7 +570,7 @@
 	done;
 
 @org $6c, $6986:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $6989:
 	text "米特～";
 	line "千萬不可以放棄";
@@ -594,7 +594,7 @@
 	done;
 
 @org $6c, $69e4:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $69e7:
 	text "對了⋯⋯";
 	line "";
@@ -606,7 +606,7 @@
 	done;
 
 @org $6c, $6a04:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $6c, $6a07:
 	text "呼～呼呼～";
 	line "太好了～米特⋯";
@@ -622,7 +622,7 @@
 	done;
 
 @org $6c, $6a32:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6a35:
 	text "唉～～";
 	line "";
@@ -652,7 +652,7 @@
 	done;
 
 @org $6c, $6ad5:
-	init NAME_CLAUDE, PIC_03;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
 @org $6c, $6ad8:
 	text "妮娜⋯⋯";
 	line "發生了什事都不";
@@ -666,7 +666,7 @@
 	done;
 
 @org $6c, $6b13:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $6b16:
 	text "巴克．要．死了";
 	line "．嗎﹖";
@@ -691,7 +691,7 @@
 	done;
 
 @org $6c, $6bad:
-	init NAME_HELEN, PIC_3C;
+	init NAME_HELEN, PIC_HELEN_1;
 @org $6c, $6bb0:
 	text "絕望⋯";
 	cont "";
@@ -728,7 +728,7 @@
 	done;
 
 @org $6c, $6c58:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6c5b:
 	text "唉～難道地球就";
 	line "";
@@ -750,7 +750,7 @@
 	done;
 
 @org $6c, $6ccd:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6cd0:
 	text "可惡﹗";
 	line "雖然很不服氣﹐";
@@ -780,7 +780,7 @@
 	done;
 
 @org $6c, $6d89:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $6d8c:
 	text "古代飛空兵器﹖";
 	done;
@@ -804,7 +804,7 @@
 	done;
 
 @org $6c, $6e0c:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6e0f:
 	text "沒有⚬";
 	done;
@@ -825,7 +825,7 @@
 	done;
 
 @org $6c, $6e62:
-	init NAME_NINA, PIC_33;
+	init NAME_NINA, PIC_NINA_1;
 @org $6c, $6e65:
 	text "事情一定還有轉";
 	line "機的⚬";
@@ -834,7 +834,7 @@
 	done;
 
 @org $6c, $6e97:
-	init NAME_CLAUDE, PIC_38;
+	init NAME_CLAUDE, PIC_CLAUDE_2;
 @org $6c, $6e9a:
 	text "古代飛空兵器﹖";
 	line "這怎麼可以少得";
@@ -842,7 +842,7 @@
 	done;
 
 @org $6c, $6ebb:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $6ebe:
 	text "巴克．幫忙．巴";
 	line "洛特﹗";
@@ -864,7 +864,7 @@
 	done;
 
 @org $6c, $6f1c:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 @org $6c, $6f1f:
 	text "安東⋯";
 	line "現在還不是我們";
@@ -872,7 +872,7 @@
 	done;
 
 @org $6c, $6f41:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $6c, $6f44:
 	text "剛才的任性﹐真";
 	line "";
@@ -892,7 +892,7 @@
 	done;
 
 @org $6c, $6fb1:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $6fb4:
 	text "不行～";
 	line "同伴還沒有找齊";
@@ -907,7 +907,7 @@
 	done;
 
 @org $6c, $6fea:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $6fed:
 	text "要⋯要跳下去嗎";
 	line "不⋯不⋯";
@@ -934,7 +934,7 @@
 	done;
 
 @org $6c, $703b:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $703e:
 	text "爸爸﹗﹗";
 	done;
@@ -947,7 +947,7 @@
 	done;
 
 @org $6c, $705c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $705f:
 	text "這是怎麼回事﹖";
 	done;
@@ -983,7 +983,7 @@
 	done;
 
 @org $6c, $712a:
-	init NAME_BALLOT, PIC_2B;
+	init NAME_BALLOT, PIC_BALLOT_2;
 @org $6c, $712d:
 	text "爸爸⋯⋯";
 	done;
@@ -1000,7 +1000,7 @@
 	done;
 
 @org $6c, $717e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $7181:
 	text "爸⋯那麼設計圖";
 	line "";
@@ -1027,7 +1027,7 @@
 	done;
 
 @org $6c, $7204:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $7207:
 	text "嗯嗯嗯⋯⋯⋯";
 	done;
@@ -1108,7 +1108,7 @@
 	done;
 
 @org $6c, $734b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $734e:
 	text "爸﹐我去拖延懲";
 	line "";
@@ -1133,7 +1133,7 @@
 	done;
 
 @org $6c, $73b0:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $73b3:
 	text "那爸爸還有更好";
 	line "的方法嗎﹖";
@@ -1175,7 +1175,7 @@
 	done;
 
 @org $6c, $7476:
-	init NAME_DR_LEO, PIC_29;
+	init NAME_DR_LEO, PIC_DR_LEO;
 @org $6c, $7479:
 	text "巴洛特﹐";
 	line "一切要小心呀﹗";
@@ -1272,7 +1272,7 @@
 	done;
 
 @org $6c, $76a8:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $76ab:
 	text "糟了﹗";
 	line "這就是終極的淨";
@@ -1362,7 +1362,7 @@
 	done;
 
 @org $6c, $788f:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6c, $7892:
 	text "可惡﹗";
 	line "我不會讓你得懲";
@@ -1370,7 +1370,7 @@
 	done;
 
 @org $6c, $78ab:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6c, $78ae:
 	text "可惡﹗﹗";
 	done;
@@ -1395,7 +1395,7 @@
 	done;
 
 @org $6c, $78ed:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $78f0:
 	text "是的﹗";
 	done;
@@ -1407,7 +1407,7 @@
 	done;
 
 @org $6c, $7906:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $7909:
 	text "啊啊啊﹗﹗﹗﹗";
 	done;

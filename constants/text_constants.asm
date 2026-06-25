@@ -109,14 +109,14 @@
 ; Faces
 	const_def
 	const PIC_BALLOT_0 ; $00
-	const PIC_01     ; $01
+	const PIC_BUCK     ; $01
 	const PIC_02     ; $02
-	const PIC_03     ; $03
-	const PIC_04     ; $04
-	const PIC_05     ; $05
+	const PIC_CLAUDE_0     ; $03
+	const PIC_HELEN_0     ; $04
+	const PIC_LANTE_0     ; $05
 	const PIC_06     ; $06
 	const PIC_07     ; $07
-	const PIC_08     ; $08
+	const PIC_SNOWY     ; $08
 	const PIC_09     ; $09
 	const PIC_0A     ; $0a
 	const PIC_0B     ; $0b
@@ -146,33 +146,33 @@
 	const PIC_23     ; $23
 	const PIC_24     ; $24
 	const PIC_25     ; $25
-	const PIC_26     ; $26
-	const PIC_27     ; $27
-	const PIC_28     ; $28
-	const PIC_29     ; $29
-	const PIC_2A     ; $2a
-	const PIC_2B     ; $2b
-	const PIC_2C     ; $2c
-	const PIC_2D     ; $2d
-	const PIC_2E     ; $2e
-	const PIC_2F     ; $2f
+	const PIC_HAYATO     ; $26
+	const PIC_LAKI     ; $27
+	const PIC_KULU     ; $28
+	const PIC_DR_LEO     ; $29
+	const PIC_BALLOT_1     ; $2a
+	const PIC_BALLOT_2     ; $2b
+	const PIC_BALLOT_3     ; $2c
+	const PIC_BALLOT_4     ; $2d
+	const PIC_BALLOT_5     ; $2e
+	const PIC_VAST_FAME     ; $2f
 	const PIC_30     ; $30
 	const PIC_31     ; $31
 	const PIC_32     ; $32
-	const PIC_33     ; $33
-	const PIC_34     ; $34
-	const PIC_35     ; $35
-	const PIC_36     ; $36
-	const PIC_37     ; $37
-	const PIC_38     ; $38
-	const PIC_39     ; $39
+	const PIC_NINA_1     ; $33
+	const PIC_NINA_2     ; $34
+	const PIC_NINA_3     ; $35
+	const PIC_NINA_4     ; $36
+	const PIC_CLAUDE_1     ; $37
+	const PIC_CLAUDE_2     ; $38
+	const PIC_CLAUDE_3     ; $39
 DEF PIC_GFX_2 EQU const_value ; first face ID loaded via _LoadTextFaceGFX2 (second table)
-	const PIC_3A     ; $3a
+	const PIC_CLAUDE_4     ; $3a
 	const PIC_3B     ; $3b
-	const PIC_3C     ; $3c
-	const PIC_3D     ; $3d
-	const PIC_3E     ; $3e
-	const PIC_3F     ; $3f
+	const PIC_HELEN_1     ; $3c
+	const PIC_HELEN_2     ; $3d
+	const PIC_HELEN_3     ; $3e
+	const PIC_LANTE_1     ; $3f
 	const PIC_40     ; $40
 	const PIC_41     ; $41
 	const PIC_42     ; $42

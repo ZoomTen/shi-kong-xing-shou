@@ -19,7 +19,7 @@
 	done;
 
 @org $0e, $4b34:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "在抽屜裡～";
 	line "發現了日記﹗";
 	done;
@@ -41,7 +41,7 @@
 	done;
 
 @org $0e, $4bc0:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "日記裡夾著一張";
 	line "泛黃的設計圖⚬";
 	para "圖裡畫著密密麻";
@@ -63,7 +63,7 @@
 	done;
 
 @org $0e, $4c6a:
-	init NAME_BALLOT, PIC_2B;
+	init NAME_BALLOT, PIC_BALLOT_2;
 	text "伊隼人曾經提到";
 	line "過他的朋友﹐";
 	cont "是位天才的機械";
@@ -81,7 +81,7 @@
 	done;
 
 @org $0e, $4cec:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "不⋯不要過來﹗";
 	done;
 
@@ -92,7 +92,7 @@
 	done;
 
 @org $0e, $4d10:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "小白﹖";
 	para "是小白沒有錯";
 	line "﹗";
@@ -115,7 +115,7 @@
 	done;
 
 @org $0e, $4d81:
-	init NAME_18, PIC_2F;
+	init NAME_18, PIC_VAST_FAME;
 	text "星獸～小白加入";
 	line "了隊伍⚬";
 	done;
@@ -212,7 +212,7 @@
 	done;
 
 @org $0e, $5023:
-	init NAME_HAYATO, PIC_26;
+	init NAME_HAYATO, PIC_HAYATO;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	line;
@@ -240,7 +240,7 @@
 	done;
 
 @org $0e, $50f6:
-	init NAME_HAYATO, PIC_26;
+	init NAME_HAYATO, PIC_HAYATO;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	line;
@@ -389,7 +389,7 @@
 	done;
 
 @org $0e, $54aa:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 	text "奇怪﹖";
 	para "這裡怎麼會這麼";
 	line "昏暗﹖";

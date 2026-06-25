@@ -32,7 +32,7 @@
 	done;
 
 @org $66, $4dee:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $66, $4df1:
 	text "沒想到星獸居然";
 	line "追到了這裡﹗";
@@ -570,7 +570,7 @@
 	done;
 
 @org $66, $596b:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $66, $596e:
 	text "怎麼會這樣﹖";
 	line "";
@@ -776,7 +776,7 @@
 	done;
 
 @org $66, $5d8c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $5d8f:
 	text "要怎麼樣才能喚";
 	line "";
@@ -810,7 +810,7 @@
 	done;
 
 @org $66, $5e2c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $5e2f:
 	text "尋找米特的回憶";
 	line "所有能勾起他回";
@@ -871,13 +871,13 @@
 	done;
 
 @org $66, $5f11:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $5f14:
 	text "得到雪熊爪﹗";
 	done;
 
 @org $66, $5f21:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $66, $5f24:
 	text "這帽子⋯";
 	line "";
@@ -889,7 +889,7 @@
 	done;
 
 @org $66, $5f5b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $5f5e:
 	text "得到父親之帽⚬";
 	done;
@@ -917,7 +917,7 @@
 	done;
 
 @org $66, $5fde:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $5fe1:
 	text "得到了紫羅蘭﹗";
 	done;
@@ -961,7 +961,7 @@
 	done;
 
 @org $66, $60cd:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $60d0:
 	text "得到了彩繪筆﹗";
 	done;
@@ -998,13 +998,13 @@
 	done;
 
 @org $66, $618d:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6190:
 	text "一男一女﹖";
 	done;
 
 @org $66, $619b:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $66, $619e:
 	text "有種不好的預感";
 	line "難道會是～";
@@ -1032,7 +1032,7 @@
 	done;
 
 @org $66, $6240:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6243:
 	text "哦～呵呵呵呵﹗";
 	line "這個音樂盒﹐";
@@ -1041,7 +1041,7 @@
 	done;
 
 @org $66, $626c:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $626f:
 	text "是的⚬";
 	line "雖然不無小補﹐";
@@ -1051,7 +1051,7 @@
 	done;
 
 @org $66, $62aa:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $62ad:
 	text "啊﹗";
 	line "";
@@ -1067,7 +1067,7 @@
 	done;
 
 @org $66, $62df:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $62e2:
 	text "我們﹖";
 	line "既然你們問起了";
@@ -1078,14 +1078,14 @@
 	done;
 
 @org $66, $630f:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6312:
 	text "來自銀河系裡的";
 	line "正義使者﹗";
 	done;
 
 @org $66, $632b:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $632e:
 	text "穿梭於黑夜的浪";
 	line "";
@@ -1096,33 +1096,33 @@
 	done;
 
 @org $66, $6343:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6346:
 	text "貫徹愛．正義．";
 	line "勇氣的真理﹗";
 	done;
 
 @org $66, $635e:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6361:
 	text "拉琪﹗";
 	done;
 
 @org $66, $6367:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $636a:
 	text "庫魯﹗";
 	done;
 
 @org $66, $6370:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6373:
 	text "閃．電．隊～～";
 	line "誕生﹗﹗";
 	done;
 
 @org $66, $6384:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6387:
 	text "在下為了能實現";
 	line "夢想﹐什麼事都";
@@ -1137,7 +1137,7 @@
 	done;
 
 @org $66, $63e7:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $63ea:
 	text "哼﹗知道在下的";
 	line "厲害了吧﹗";
@@ -1146,7 +1146,7 @@
 	done;
 
 @org $66, $641f:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6422:
 	text "是嗎﹖";
 	line "那就拿出你全部";
@@ -1154,7 +1154,7 @@
 	done;
 
 @org $66, $6440:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6443:
 	text "慢⋯慢⋯";
 	line "慢慢著﹗";
@@ -1182,7 +1182,7 @@
 	done;
 
 @org $66, $648d:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6490:
 	text "夢想﹖";
 	line "";
@@ -1201,7 +1201,7 @@
 	done;
 
 @org $66, $649e:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $64a1:
 	text "是的﹗眼前這棟";
 	line "豪華的別宅﹐正";
@@ -1210,7 +1210,7 @@
 	done;
 
 @org $66, $64cf:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $64d2:
 	text "哦～呵呵呵呵﹗";
 	line "沒．有．錯﹗";
@@ -1227,7 +1227,7 @@
 	done;
 
 @org $66, $6534:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6537:
 	text "是的⚬";
 	para "";
@@ -1246,7 +1246,7 @@
 	done;
 
 @org $66, $659f:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $66, $65a2:
 	text "看來你們還沒有";
 	line "";
@@ -1255,7 +1255,7 @@
 	done;
 
 @org $66, $65b5:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $65b8:
 	text "哦～呵呵呵呵﹗";
 	line "閃電隊一向是個";
@@ -1272,7 +1272,7 @@
 	done;
 
 @org $66, $6634:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6637:
 	text "嗯﹐和在下想的";
 	line "";
@@ -1282,7 +1282,7 @@
 	done;
 
 @org $66, $6655:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6658:
 	text "哦～呵呵呵呵﹗";
 	line "閃電隊一向是個";
@@ -1299,7 +1299,7 @@
 	done;
 
 @org $66, $66d4:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $66d7:
 	text "嗯﹐和在下想的";
 	line "一點都沒有錯﹗";
@@ -1337,7 +1337,7 @@
 	done;
 
 @org $66, $67b0:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $66, $67b3:
 	text "糟糕﹗";
 	line "";
@@ -1346,7 +1346,7 @@
 	done;
 
 @org $66, $67c3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $67c6:
 	text "這名婆婆還有一";
 	line "點心跳﹐";
@@ -1356,7 +1356,7 @@
 	done;
 
 @org $66, $67f8:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $67fb:
 	text "爸爸曾經教過我";
 	line "緊急狀況的心肺";
@@ -1377,7 +1377,7 @@
 	done;
 
 @org $66, $6866:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6869:
 	text "呀～嘔嘔﹗﹗";
 	line "整個嘴巴上都是";
@@ -1421,7 +1421,7 @@
 	done;
 
 @org $66, $6924:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6927:
 	text "老婆婆～";
 	line "";
@@ -1494,7 +1494,7 @@
 	done;
 
 @org $66, $6a9c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6a9f:
 	text "得到了地契﹗";
 	done;
@@ -1539,14 +1539,14 @@
 	done;
 
 @org $66, $6b54:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6b57:
 	text "這⋯⋯這不是﹗";
 	line "";
 	done;
 
 @org $66, $6b63:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6b66:
 	text "這這這這這這這";
 	line "";
@@ -1567,7 +1567,7 @@
 	done;
 
 @org $66, $6bc8:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6bcb:
 	text "哦哦哦～";
 	line "呵呵呵呵﹗";
@@ -1580,7 +1580,7 @@
 	done;
 
 @org $66, $6c21:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6c24:
 	text "總算你也能了解";
 	line "閃電隊的可怕⚬";
@@ -1591,20 +1591,20 @@
 	done;
 
 @org $66, $6c6a:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6c6d:
 	text "得到音樂盒﹗";
 	done;
 
 @org $66, $6c79:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6c7c:
 	text "哦～呵呵呵呵﹗";
 	line "我的皇宮﹗";
 	done;
 
 @org $66, $6c93:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $6c96:
 	text "這⋯⋯這真是美";
 	line "倫美煥呀﹗";
@@ -1617,7 +1617,7 @@
 	done;
 
 @org $66, $6cdd:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $6ce0:
 	text "嗚～嗚～在下真";
 	line "";
@@ -1690,7 +1690,7 @@
 	done;
 
 @org $66, $6e8b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6e8e:
 	text "得到了星槌﹗";
 	done;
@@ -1718,13 +1718,13 @@
 	done;
 
 @org $66, $6f1b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6f1e:
 	text "得到米特日記﹗";
 	done;
 
 @org $66, $6f2c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $6f2f:
 	text "得到全家福照﹗";
 	done;
@@ -1773,7 +1773,7 @@
 	done;
 
 @org $66, $7044:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7047:
 	text "得到清燉兔肉﹗";
 	done;
@@ -1828,7 +1828,7 @@
 	done;
 
 @org $66, $715f:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7162:
 	text "得到妮妮娃娃﹗";
 	done;
@@ -1877,7 +1877,7 @@
 	done;
 
 @org $66, $7213:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7216:
 	text "得到布蘭特熊﹗";
 	done;
@@ -1964,7 +1964,7 @@
 	done;
 
 @org $66, $7336:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7339:
 	text "要試著喚醒米特";
 	line "";
@@ -1975,14 +1975,14 @@
 	line "";
 	getchoice String_1cc5;
 @org $66, $734c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $734f:
 	text "先讓米特多休息";
 	line "一會吧⚬";
 	done;
 
 @org $66, $7366:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7369:
 	text "米特～醒醒呀﹗";
 	line "不要絕望﹐許多";
@@ -2007,13 +2007,13 @@
 	done;
 
 @org $66, $73b4:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $73b7:
 	text "還是不行嗎﹖";
 	done;
 
 @org $66, $73c3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $73c6:
 	text "米特～醒醒呀﹗";
 	line "不要絕望﹐許多";
@@ -2118,7 +2118,7 @@
 	done;
 
 @org $66, $7580:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7583:
 	text "得到了晶片７﹗";
 	done;
@@ -2159,7 +2159,7 @@
 	done;
 
 @org $66, $7668:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $766b:
 	text "只要我能幫得上";
 	line "忙的話﹐一定全";
@@ -2187,7 +2187,7 @@
 	done;
 
 @org $66, $7700:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7703:
 	text "米特＆彩繪精加";
 	line "";
@@ -2200,7 +2200,7 @@
 	done;
 
 @org $66, $7718:
-	init NAME_18, PIC_2F;
+	init NAME_18, PIC_VAST_FAME;
 @org $66, $771b:
 	text "如果將米特置於";
 	line "隊伍前﹐";
@@ -2297,7 +2297,7 @@
 	done;
 
 @org $66, $7920:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7923:
 	text "嗯﹗我知道了⚬";
 	done;
@@ -2336,7 +2336,7 @@
 	done;
 
 @org $66, $7981:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7984:
 	text "太陽之石";
 	db $f0, $94; #"歸"
@@ -2376,7 +2376,7 @@
 	done;
 
 @org $66, $79e1:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $79e4:
 	text "不曉得米特那裡";
 	line "的情況如何了﹗";
@@ -2384,7 +2384,7 @@
 	done;
 
 @org $66, $7a0c:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $66, $7a0f:
 	text "怎麼回事﹖";
 	line "米特﹗﹗";
@@ -2400,7 +2400,7 @@
 	done;
 
 @org $66, $7a50:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $7a53:
 	text "哦～呵呵呵呵～";
 	line "";
@@ -2409,13 +2409,13 @@
 	done;
 
 @org $66, $7a6d:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $66, $7a70:
 	text "在下也不清楚⋯";
 	done;
 
 @org $66, $7a7e:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $66, $7a81:
 	text "誰⋯";
 	line "誰來救救我呀﹗";
@@ -2478,7 +2478,7 @@
 	done;
 
 @org $66, $7bbc:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $66, $7bbf:
 	text "槌．槌．槌";
 	done;

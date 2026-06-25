@@ -20,7 +20,7 @@
 	done;
 
 @org $6c, $6036:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $6c, $6039:
 	text "發生了什事﹖";
 	done;

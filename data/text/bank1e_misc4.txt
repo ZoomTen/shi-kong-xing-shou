@@ -1,5 +1,5 @@
 @org $1e, $6e44:
-	init NAME_BALLOT, PIC_2A; # XXX TEMP
+	init NAME_BALLOT, PIC_BALLOT_1; # XXX TEMP
 	text "發現";
 	itemname2;
 	done;

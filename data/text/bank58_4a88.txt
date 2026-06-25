@@ -1,5 +1,5 @@
 @org $58, $4a88:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $58, $4a8b:
 	text "哇～";
 	line "";
@@ -81,7 +81,7 @@
 	done;
 
 @org $58, $4bd6:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $4bd9:
 	text "這是怎麼回事﹖";
 	done;
@@ -119,7 +119,7 @@
 	done;
 
 @org $58, $4c97:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $4c9a:
 	text "笛聲﹖";
 	line "城裡的人﹐往哪";
@@ -214,7 +214,7 @@
 	done;
 
 @org $58, $4ebc:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $4ebf:
 	text "笛聲⋯⋯";
 	line "突然有種濃濃的";
@@ -222,7 +222,7 @@
 	done;
 
 @org $58, $4edb:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $58, $4ede:
 	text "真是危險～";
 	line "";
@@ -446,28 +446,28 @@
 	done;
 
 @org $58, $538c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $538f:
 	text "克勞德﹐牠們在";
 	line "說什麼﹖";
 	done;
 
 @org $58, $53a5:
-	init NAME_CLAUDE, PIC_3A;
+	init NAME_CLAUDE, PIC_CLAUDE_4;
 @org $58, $53a8:
 	text "牠們說⋯⋯";
 	line "笨蛋人類又來了";
 	done;
 
 @org $58, $53c0:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $58, $53c3:
 	text "真是可惡﹗";
 	line "看我的厲害﹗";
 	done;
 
 @org $58, $53d7:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $58, $53da:
 	text "不要跑﹗";
 	done;
@@ -491,7 +491,7 @@
 	done;
 
 @org $58, $540a:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $540d:
 	text "克勞德﹐牠們又";
 	line "";
@@ -500,7 +500,7 @@
 	done;
 
 @org $58, $5425:
-	init NAME_CLAUDE, PIC_3A;
+	init NAME_CLAUDE, PIC_CLAUDE_4;
 @org $58, $5428:
 	text "牠們說⋯⋯";
 	line "人類才不是笨蛋";
@@ -508,14 +508,14 @@
 	done;
 
 @org $58, $544c:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $58, $544f:
 	text "真是可惡﹗";
 	line "看我的厲害﹗";
 	done;
 
 @org $58, $5463:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $58, $5466:
 	text "不要跑﹗";
 	done;
@@ -539,14 +539,14 @@
 	done;
 
 @org $58, $548e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $5491:
 	text "克勞德﹐牠們又";
 	line "說什麼﹖";
 	done;
 
 @org $58, $54a7:
-	init NAME_CLAUDE, PIC_03;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
 @org $58, $54aa:
 	text "他們說『算你們";
 	line "狠﹐我要離家出";
@@ -554,7 +554,7 @@
 	done;
 
 @org $58, $54cf:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $54d2:
 	text "真是驕傲的老鼠";
 	line "不過希望牠們不";
@@ -580,7 +580,7 @@
 	done;
 
 @org $58, $556e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $5571:
 	text "得到絕緣耳機﹗";
 	done;
@@ -618,7 +618,7 @@
 	done;
 
 @org $58, $5656:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $58, $5659:
 	text "詭異的笛聲又來";
 	line "了⋯⋯";
@@ -631,7 +631,7 @@
 	done;
 
 @org $58, $5697:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $569a:
 	text "戴起耳機後﹐果";
 	line "然就聽不見任何";
@@ -639,13 +639,13 @@
 	done;
 
 @org $58, $56be:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $56c1:
 	text "＃＄＠※⋯﹗";
 	done;
 
 @org $58, $56cc:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $56cf:
 	text "他似乎正在說話";
 	line "的樣子⋯";
@@ -656,7 +656,7 @@
 	done;
 
 @org $58, $56fe:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $5701:
 	text "％＄✰＠＄＃﹗";
 	line "";
@@ -674,7 +674,7 @@
 	done;
 
 @org $58, $5736:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $5739:
 	text "你就是蒂朵阿姨";
 	line "的兒子﹖";
@@ -682,13 +682,13 @@
 	done;
 
 @org $58, $575e:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $5761:
 	text "我叫做藍特⚬";
 	done;
 
 @org $58, $576d:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $5770:
 	text "爸爸是一個地理";
 	line "科學家﹐在前天";
@@ -722,13 +722,13 @@
 	done;
 
 @org $58, $583a:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $583d:
 	text "原來如此⚬";
 	done;
 
 @org $58, $5847:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $584a:
 	text "你就是巴洛特嗎";
 	line "我聽爸爸提過你";
@@ -741,13 +741,13 @@
 	done;
 
 @org $58, $588d:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $58, $5890:
 	text "這真是太好了﹗";
 	done;
 
 @org $58, $589d:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $58a0:
 	text "就是這個﹗";
 	line "這是爸爸給我的";
@@ -760,7 +760,7 @@
 	done;
 
 @org $58, $58e8:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $58eb:
 	text "得到了晶片５﹗";
 	done;
@@ -778,7 +778,7 @@
 	done;
 
 @org $58, $591b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $591e:
 	text "我們到生之谷﹐";
 	line "";
@@ -787,7 +787,7 @@
 	done;
 
 @org $58, $5939:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $593c:
 	text "嗯﹗等到火山的";
 	line "危機解除後﹐我";
@@ -798,7 +798,7 @@
 	done;
 
 @org $58, $5967:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $596a:
 	text "藍特＆音樂靈加";
 	line "";
@@ -811,7 +811,7 @@
 	done;
 
 @org $58, $5980:
-	init NAME_18, PIC_2F;
+	init NAME_18, PIC_VAST_FAME;
 @org $58, $5983:
 	text "如將藍特置於排";
 	line "頭﹐如遇阻擋之";
@@ -927,7 +927,7 @@
 	done;
 
 @org $58, $5b70:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $5b73:
 	text "老爹﹗";
 	line "你知道他是誰嗎";
@@ -952,14 +952,14 @@
 	done;
 
 @org $58, $5bd5:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $5bd8:
 	text "拿到了﹗";
 	line "謝謝您～";
 	done;
 
 @org $58, $5be6:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $5be9:
 	text "爸爸曾經找過您";
 	line "是為了什麼事呢";
@@ -978,7 +978,7 @@
 	done;
 
 @org $58, $5c45:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $5c48:
 	text "老爹﹗";
 	line "我也要跟巴洛特";
@@ -993,7 +993,7 @@
 	done;
 
 @org $58, $5c7f:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $5c82:
 	text "老爹不同意嗎﹖";
 	line "";
@@ -1016,7 +1016,7 @@
 	done;
 
 @org $58, $5ce6:
-	init NAME_LANTE, PIC_3F;
+	init NAME_LANTE, PIC_LANTE_1;
 @org $58, $5ce9:
 	text "萬歲﹗";
 	done;
@@ -1147,7 +1147,7 @@
 	done;
 
 @org $58, $5ef8:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $58, $5efb:
 	text "得到了";
 	line "";
@@ -1346,7 +1346,7 @@
 	done;
 
 @org $58, $6310:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $6313:
 	text "得到超人模型﹗";
 	done;
@@ -1369,7 +1369,7 @@
 	done;
 
 @org $58, $6381:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $58, $6384:
 	text "巴洛特﹐你來了";
 	line "";
@@ -1386,7 +1386,7 @@
 	done;
 
 @org $58, $63c6:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $63c9:
 	text "藍特＆音樂靈加";
 	line "";
@@ -1406,7 +1406,7 @@
 	done;
 
 @org $58, $63fd:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $58, $6400:
 	text "阻礙計劃者﹖";
 	line "這是什麼意思﹖";
@@ -1488,7 +1488,7 @@
 	done;
 
 @org $58, $65b7:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $58, $65ba:
 	text "得到了ｘｘｘ﹗";
 	done;
@@ -1503,7 +1503,7 @@
 	done;
 
 @org $58, $65f5:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $58, $65f8:
 	text "得到了ｘｘｘ﹗";
 	done;
@@ -1522,7 +1522,7 @@
 	done;
 
 @org $58, $6639:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $58, $663c:
 	text "得到了ｘｘｘ﹗";
 	done;

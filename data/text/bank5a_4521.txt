@@ -428,7 +428,7 @@
 	done;
 
 @org $5a, $4cdc:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $4cdf:
 	text "了不起的發明﹖";
 	done;
@@ -567,7 +567,7 @@
 	done;
 
 @org $5a, $4fc3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $4fc6:
 	text "神木裡面﹖";
 	line "莫非她到過神木";
@@ -621,7 +621,7 @@
 	done;
 
 @org $5a, $510a:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $510d:
 	text "神木裡面﹖";
 	line "神木外表平滑﹐";
@@ -650,7 +650,7 @@
 	done;
 
 @org $5a, $51a8:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $51ab:
 	text "得到了繩勾﹗";
 	done;
@@ -673,7 +673,7 @@
 	done;
 
 @org $5a, $5208:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $520b:
 	text "看樣子﹐星獸正";
 	line "在抽取神木的能";
@@ -744,7 +744,7 @@
 	done;
 
 @org $5a, $5350:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $5353:
 	text "這就是能產生泉";
 	line "水的機器嗎﹖";
@@ -786,7 +786,7 @@
 	done;
 
 @org $5a, $5447:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $544a:
 	text "啊﹗";
 	line "";
@@ -848,7 +848,7 @@
 	done;
 
 @org $5a, $5506:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $5a, $5509:
 	text "⋯⋯⋯";
 	done;
@@ -917,7 +917,7 @@
 	done;
 
 @org $5a, $55da:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $5a, $55dd:
 	text "現在⋯";
 	line "不是說這種話的";

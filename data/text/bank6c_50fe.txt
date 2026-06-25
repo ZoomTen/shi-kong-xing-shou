@@ -8,14 +8,14 @@
 	done;
 
 @org $6c, $5137:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $513a:
 	text "晶片追蹤器發出";
 	line "了聲音﹗";
 	done;
 
 @org $6c, $5151:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $5154:
 	text "看來這最後的一";
 	line "";

@@ -428,7 +428,7 @@
 	done;
 
 @org $59, $50a5:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $50a8:
 	text "了不起的發明﹖";
 	done;
@@ -567,7 +567,7 @@
 	done;
 
 @org $59, $538c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $538f:
 	text "神木裡面﹖";
 	line "莫非她到過神木";
@@ -621,7 +621,7 @@
 	done;
 
 @org $59, $54d3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $54d6:
 	text "神木裡面﹖";
 	line "神木外表平滑﹐";
@@ -650,7 +650,7 @@
 	done;
 
 @org $59, $5571:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $5574:
 	text "得到了繩勾﹗";
 	done;
@@ -673,7 +673,7 @@
 	done;
 
 @org $59, $55d1:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $55d4:
 	text "看樣子﹐星獸正";
 	line "在抽取神木的能";
@@ -744,7 +744,7 @@
 	done;
 
 @org $59, $5719:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $571c:
 	text "這就是能產生泉";
 	line "水的機器嗎﹖";
@@ -786,7 +786,7 @@
 	done;
 
 @org $59, $5810:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $5813:
 	text "啊﹗";
 	line "";
@@ -848,7 +848,7 @@
 	done;
 
 @org $59, $58cf:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $58d2:
 	text "⋯⋯⋯";
 	done;
@@ -917,7 +917,7 @@
 	done;
 
 @org $59, $59a3:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $59, $59a6:
 	text "現在⋯";
 	line "不是說這種話的";
@@ -926,14 +926,14 @@
 	done;
 
 @org $59, $59d1:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $59d4:
 	text "這裡是哪裡﹖";
 	line "平安降落了嗎﹖";
 	done;
 
 @org $59, $59ec:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $59ef:
 	text "這裡是哪裡﹖";
 	line "得詳細的問清楚";
@@ -957,7 +957,7 @@
 	done;
 
 @org $59, $5a8c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $5a8f:
 	text "真是謝謝你⚬";
 	line "這種語氣聽來真";
@@ -1228,7 +1228,7 @@
 	done;
 
 @org $59, $60e0:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $60e3:
 	text "這裡到底是哪裡";
 	line "到底是哪裡的時";
@@ -1262,7 +1262,7 @@
 	done;
 
 @org $59, $6195:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6198:
 	text "這裡到底是哪裡";
 	line "﹗";
@@ -1298,7 +1298,7 @@
 	done;
 
 @org $59, $622e:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $59, $6231:
 	text "真⋯真是驚人﹗";
 	para "但為什麼年";
@@ -1327,7 +1327,7 @@
 	done;
 
 @org $59, $62c9:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $59, $62cc:
 	text "這麼說來﹐爸爸";
 	line "一直尋找的﹐也";
@@ -1387,14 +1387,14 @@
 	done;
 
 @org $59, $6415:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6418:
 	text "得到奇蹟之水﹗";
 	line "";
 	done;
 
 @org $59, $6425:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $59, $6428:
 	text "爆炸聲是從神木";
 	line "村傳來的﹗";
@@ -1516,7 +1516,7 @@
 	done;
 
 @org $59, $66d7:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $66da:
 	text "得到傳家懷錶﹗";
 	done;
@@ -1576,7 +1576,7 @@
 	done;
 
 @org $59, $6824:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6827:
 	text "就可以怎麼樣﹖";
 	done;
@@ -1602,7 +1602,7 @@
 	done;
 
 @org $59, $68c8:
-	init NAME_BALLOT, PIC_2D;
+	init NAME_BALLOT, PIC_BALLOT_4;
 @org $59, $68cb:
 	text "這就糟了﹐得拿";
 	line "回方程式才行﹗";
@@ -1626,7 +1626,7 @@
 	done;
 
 @org $59, $696c:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $696f:
 	text "這個個性﹐跟某";
 	line "個人還真像⋯⋯";
@@ -1684,14 +1684,14 @@
 	done;
 
 @org $59, $6b00:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6b03:
 	text "得到了";
 	line "程式磁片⚬";
 	done;
 
 @org $59, $6b13:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6b16:
 	text "灼熱的紅蓮⋯⋯";
 	para "星獸似乎正期待";
@@ -1845,7 +1845,7 @@
 	done;
 
 @org $59, $6e54:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6e57:
 	text "得到晶片６";
 	db $f1, $35; #"﹗"
@@ -1873,7 +1873,7 @@
 	done;
 
 @org $59, $6eed:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6ef0:
 	text "雷德＆時空怪加";
 	line "";
@@ -1886,7 +1886,7 @@
 	done;
 
 @org $59, $6f05:
-	init NAME_18, PIC_2F;
+	init NAME_18, PIC_VAST_FAME;
 @org $59, $6f08:
 	text "將雷德置於隊伍";
 	line "排頭﹐如遇到擋";
@@ -1919,7 +1919,7 @@
 	done;
 
 @org $59, $6f9e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $6fa1:
 	text "看來星獸的狙擊";
 	line "目標是我﹗";
@@ -1946,7 +1946,7 @@
 	done;
 
 @org $59, $700f:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $7012:
 	text "星獸們抽取能源";
 	line "";
@@ -1979,7 +1979,7 @@
 	done;
 
 @org $59, $70c9:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $70cc:
 	text "南方的衛星雷達";
 	line "站﹖";
@@ -2219,7 +2219,7 @@
 	done;
 
 @org $59, $7593:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $59, $7596:
 	text "得到了～";
 	line "神奇果實";
@@ -2276,7 +2276,7 @@
 	done;
 
 @org $59, $7685:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $7688:
 	text "糟糕～";
 	line "要怎麼突破門口";
@@ -2284,7 +2284,7 @@
 	done;
 
 @org $59, $76a3:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $59, $76a6:
 	text "擋路的傢伙";
 	line "真是麻煩～";
@@ -2302,7 +2302,7 @@
 	done;
 
 @org $59, $76d1:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $76d4:
 	text "有道力場擋住了";
 	line "";
@@ -2365,7 +2365,7 @@
 	done;
 
 @org $59, $7818:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $59, $781b:
 	text "星獸們處心積慮";
 	line "的想擴大星系的";
@@ -2376,7 +2376,7 @@
 	done;
 
 @org $59, $785d:
-	init NAME_LANTE, PIC_05;
+	init NAME_LANTE, PIC_LANTE_0;
 @org $59, $7860:
 	text "對了﹗巴洛特﹗";
 	para "他們的旅行船曾";
@@ -2394,7 +2394,7 @@
 	done;
 
 @org $59, $78da:
-	init NAME_CLAUDE, PIC_03;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
 @org $59, $78dd:
 	text "星夢城﹖";
 	para "哇～";
@@ -2411,7 +2411,7 @@
 	done;
 
 @org $59, $792c:
-	init NAME_CLAUDE, PIC_03;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
 @org $59, $792f:
 	text "喂～邦林企業﹖";
 	line "";
@@ -2445,7 +2445,7 @@
 	done;
 
 @org $59, $7a01:
-	init NAME_CLAUDE, PIC_03;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
 @org $59, $7a04:
 	text "搞定﹗";
 	line "我們就到東漁市";

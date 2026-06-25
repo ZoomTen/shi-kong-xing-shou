@@ -31,7 +31,7 @@
 	done;
 
 @org $6c, $5755:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6c, $5758:
 	text "真是糟糕﹗";
 	para "這下該怎麼辦";
@@ -108,7 +108,7 @@
 	done;
 
 @org $6c, $58e3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $58e6:
 	text "８４０個小時﹖";
 	done;
@@ -137,7 +137,7 @@
 	done;
 
 @org $6c, $595f:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $5962:
 	text "嗯﹗時間急迫﹐";
 	line "得趕緊向貝爾機";
@@ -289,7 +289,7 @@
 	done;
 
 @org $6c, $5be7:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6c, $5bea:
 	text "不行呀～";
 	line "貝爾機器人根本";
@@ -299,7 +299,7 @@
 	done;
 
 @org $6c, $5c09:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $5c0c:
 	text "貝爾⋯⋯巴克⋯";
 	line "";
@@ -324,7 +324,7 @@
 	done;
 
 @org $6c, $5c59:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $5c5c:
 	text "一點．也不﹗";
 	line "巴克．有．同伴";
@@ -351,7 +351,7 @@
 	done;
 
 @org $6c, $5cdc:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $5cdf:
 	text "巴克．知道⚬";
 	line "但是．雷歐博士";
@@ -407,7 +407,7 @@
 	done;
 
 @org $6c, $5da7:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6c, $5daa:
 	text "貝爾⋯⋯";
 	done;
@@ -503,7 +503,7 @@
 	done;
 
 @org $6c, $5f78:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $5f7b:
 	text "得到金鋼鑽⚬";
 	done;
@@ -524,7 +524,7 @@
 	done;
 
 @org $6c, $5fc7:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6c, $5fca:
 	text "有一種不對勁的";
 	line "感覺⋯";

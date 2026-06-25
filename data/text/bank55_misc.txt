@@ -195,7 +195,7 @@
 	done;
 
 @org $55, $5fe4:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "前幾天安東收到";
 	line "一封電子郵件後";
 	para "﹐就開始打包行";
@@ -238,7 +238,7 @@
 	done;
 
 @org $55, $6144:
-	init NAME_HELEN, PIC_3C;
+	init NAME_HELEN, PIC_HELEN_1;
 	text "不～安東﹗";
 	para "我不要你離開我";
 	line "﹗";
@@ -254,7 +254,7 @@
 	done;
 
 @org $55, $6193:
-	init NAME_HELEN, PIC_3C;
+	init NAME_HELEN, PIC_HELEN_1;
 	text "你⋯你知道嗎﹖";
 	line "為了能和你在一";
 	para "起﹐我做了多大";
@@ -267,7 +267,7 @@
 	done;
 
 @org $55, $61ce:
-	init NAME_HELEN, PIC_3D;
+	init NAME_HELEN, PIC_HELEN_2;
 	text "⋯⋯⋯安東大笨";
 	line "蛋﹗";
 	done;
@@ -315,7 +315,7 @@
 	done;
 
 @org $55, $6326:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "你們來做什麼﹖";
 	line "你們是來帶走安";
 	cont "東的嗎﹖";
@@ -324,7 +324,7 @@
 	done;
 
 @org $55, $6364:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "雖然我不懂愛情";
 	line "但是媽媽以前曾";
 	para "說過﹐愛一個人";
@@ -334,7 +334,7 @@
 	done;
 
 @org $55, $63b0:
-	init NAME_HELEN, PIC_3D;
+	init NAME_HELEN, PIC_HELEN_2;
 	text "住口﹗";
 	cont "你們⋯你們什麼";
 	line "都不懂﹗";
@@ -359,12 +359,12 @@
 	done;
 
 @org $55, $6452:
-	init NAME_BLANK, PIC_2D;
+	init NAME_BLANK, PIC_BALLOT_4;
 	text "糟糕﹗";
 	done;
 
 @org $55, $645b:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "⋯⋯⋯";
 	done;
 
@@ -377,7 +377,7 @@
 	done;
 
 @org $55, $6489:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "這裡是哪裡﹖";
 	cont "我為什麼在這裡";
 	line "﹖";
@@ -572,7 +572,7 @@
 	done;
 
 @org $55, $68d1:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "那小孩的失蹤﹐";
 	line "真的只是意外的";
 	cont "落水嗎﹖";
@@ -588,7 +588,7 @@
 	done;
 
 @org $55, $6931:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "海巫師﹖";
 	done;
 
@@ -608,7 +608,7 @@
 	done;
 
 @org $55, $6997:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "嗯～見過⚬";
 	done;
 
@@ -623,7 +623,7 @@
 	done;
 
 @org $55, $69eb:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "怎麼會這樣子呢";
 	line "﹖";
 	cont "有什麼解決的辦";
@@ -638,7 +638,7 @@
 	done;
 
 @org $55, $6a3e:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "我知道了⚬";
 	cont "真的非常感謝你";
 	line "的救命之恩⋯";
@@ -668,7 +668,7 @@
 	done;
 
 @org $55, $6b37:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "海巫之殿嗎﹖";
 	line "好的⚬";
 	done;
@@ -725,7 +725,7 @@
 	done;
 
 @org $55, $6c84:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 	text "可惡﹗";
 	line "放了那小孩﹗";
 	done;
@@ -788,7 +788,7 @@
 	done;
 
 @org $55, $6e1f:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 	text "可惡﹗";
 	done;
 
@@ -814,14 +814,14 @@
 	done;
 
 @org $55, $6eb9:
-	init NAME_BALLOT, PIC_2B;
+	init NAME_BALLOT, PIC_BALLOT_2;
 	text "海青⋯⋯";
 	line "妳真是個大傻瓜";
 	cont "⋯⋯";
 	done;
 
 @org $55, $6ed6:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "這⋯這就是海青";
 	line "的魚之魂嗎﹖";
 	para "海青⋯";
@@ -830,7 +830,7 @@
 	done;
 
 @org $55, $6f0b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "得到魚之魂⚬";
 	done;
 
@@ -897,7 +897,7 @@
 	done;
 
 @org $55, $70ad:
-	init NAME_CLAUDE, PIC_3A;
+	init NAME_CLAUDE, PIC_CLAUDE_4;
 	text "糟了⋯";
 	line "時間快來不及了";
 	para "不管是先有烏龜";
@@ -939,7 +939,7 @@
 	done;
 
 @org $55, $71d4:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "怎麼回事﹖";
 	line "怎麼都沒有人﹖";
 	para "發生了什麼事﹖";
@@ -958,7 +958,7 @@
 	done;
 
 @org $55, $725f:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "安東﹖﹖﹗";
 	line "這是怎麼回事﹖";
 	done;
@@ -977,7 +977,7 @@
 	done;
 
 @org $55, $72dd:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "振作一點﹐安東";
 	line "﹗";
 	done;
@@ -992,7 +992,7 @@
 	done;
 
 @org $55, $732a:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "好的﹗";
 	line "我一定會的﹗";
 	cont "安東﹐不要再說";
@@ -1015,7 +1015,7 @@
 	done;
 
 @org $55, $73b7:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 	text "安東﹗﹗﹗﹗";
 	line "可惡﹗";
 	para "為什麼會這樣﹖";
@@ -1037,13 +1037,13 @@
 	done;
 
 @org $55, $745b:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "糟糕～";
 	line "這要怎麼辦﹖";
 	done;
 
 @org $55, $7470:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "魚之魂傳來了一";
 	line "陣聲音～";
 	done;
@@ -1055,14 +1055,14 @@
 	done;
 
 @org $55, $74a3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "最高的地方﹖";
 	para "東漁市最高的地";
 	line "方﹖";
 	done;
 
 @org $55, $74c3:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "燈塔﹗﹗﹗";
 	line "魚之魂的聲音﹐";
 	cont "是指燈塔嗎﹖";
@@ -1081,7 +1081,7 @@
 	done;
 
 @org $55, $7515:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "將魚之魂丟下嗎";
 	line "﹖";
 	done;
@@ -1094,7 +1094,7 @@
 	done;
 
 @org $55, $7554:
-	init NAME_HELEN, PIC_3C;
+	init NAME_HELEN, PIC_HELEN_1;
 	text "安東⋯放開我﹗";
 	para "安東受了重傷﹐";
 	line "我要去救他﹗";
@@ -1111,7 +1111,7 @@
 	done;
 
 @org $55, $75d2:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "你胡說﹗";
 	line "他沒有﹗";
 	para "他不曉得這件事";
@@ -1126,13 +1126,13 @@
 	done;
 
 @org $55, $7626:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "不～不要﹗";
 	line "放開我﹗";
 	done;
 
 @org $55, $763b:
-	init NAME_HELEN, PIC_3E;
+	init NAME_HELEN, PIC_HELEN_3;
 	text "這是⋯⋯海青﹗";
 	line "海青﹗";
 	cont "妳⋯⋯﹗";
@@ -1178,7 +1178,7 @@
 	done;
 
 @org $55, $772e:
-	init NAME_HELEN, PIC_3D;
+	init NAME_HELEN, PIC_HELEN_2;
 	text "這就是安東的動";
 	line "力晶片⚬";
 	para "安東一直說著﹐";
@@ -1190,12 +1190,12 @@
 	done;
 
 @org $55, $7788:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "得到了晶片４﹗";
 	done;
 
 @org $55, $7797:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "巴洛特﹐我會堅";
 	line "強的";
 	forcemap 1, "活";
@@ -1210,13 +1210,13 @@
 	done;
 
 @org $55, $77f8:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 	text "海藍＆水精靈加";
 	line "入隊伍⚬";
 	done;
 
 @org $55, $780f:
-	init NAME_18, PIC_2F;
+	init NAME_18, PIC_VAST_FAME;
 	text "如將海藍置於排";
 	line "頭﹐將可化為人";
 	para "魚﹐通過大海或";
@@ -1241,7 +1241,7 @@
 	done;
 
 @org $55, $78a7:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "我不恨你們﹐但";
 	line "也不喜歡你們⚬";
 	cont "離我遠一些﹗";
@@ -1263,7 +1263,7 @@
 	done;
 
 @org $55, $7928:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "原諒與否﹐有什";
 	line "麼差別嗎﹖";
 	para "安東不會因此而";
@@ -1280,7 +1280,7 @@
 	done;
 
 @org $55, $7991:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 	text "得到了";
 	line "萬能血清";
 	done;
@@ -1319,7 +1319,7 @@
 	done;
 
 @org $55, $7a61:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 	text "⋯⋯⋯";
 	done;
 
@@ -1384,7 +1384,7 @@
 	done;
 
 @org $55, $7bda:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 	text "得到了ｘｘｘ﹗";
 	done;
 

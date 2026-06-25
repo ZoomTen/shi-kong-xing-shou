@@ -68,7 +68,7 @@
 	done;
 
 @org $6e, $451d:
-	init NAME_HAYATO, PIC_26;
+	init NAME_HAYATO, PIC_HAYATO;
 @org $6e, $4520:
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
@@ -94,7 +94,7 @@
 	done;
 
 @org $6e, $456b:
-	init NAME_HAYATO, PIC_26;
+	init NAME_HAYATO, PIC_HAYATO;
 @org $6e, $456e:
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
@@ -112,7 +112,7 @@
 	done;
 
 @org $6e, $45b5:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 @org $6e, $45b8:
 	text "安東～";
 	line "";
@@ -142,7 +142,7 @@
 	done;
 
 @org $6e, $4635:
-	init NAME_HELEN, PIC_04;
+	init NAME_HELEN, PIC_HELEN_0;
 @org $6e, $4638:
 	text "不必了⋯⋯";
 	line "先謝謝你們的好";
@@ -195,7 +195,7 @@
 	done;
 
 @org $6e, $472f:
-	init NAME_LANTE, PIC_3F;
+	init NAME_LANTE, PIC_LANTE_1;
 @org $6e, $4732:
 	text "怎麼了﹖啊﹗";
 	line "好可愛的老鼠﹗";
@@ -375,7 +375,7 @@
 	done;
 
 @org $6e, $4a27:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6e, $4a2a:
 	text "貝爾．醒．";
 	line "過來了﹖";
@@ -404,7 +404,7 @@
 	done;
 
 @org $6e, $4a98:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6e, $4a9b:
 	text "貝爾⋯變成人﹖";
 	done;
@@ -426,7 +426,7 @@
 	done;
 
 @org $6e, $4afe:
-	init NAME_BUCK, PIC_01;
+	init NAME_BUCK, PIC_BUCK;
 @org $6e, $4b01:
 	text "貝爾小姐⋯⋯";
 	done;
@@ -471,7 +471,7 @@
 	done;
 
 @org $6e, $4b9b:
-	init NAME_CLAUDE, PIC_03;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
 @org $6e, $4b9e:
 	text "進展﹖";
 	line "你是指懲罰者的";
@@ -504,7 +504,7 @@
 	done;
 
 @org $6e, $4c1e:
-	init NAME_CLAUDE, PIC_39;
+	init NAME_CLAUDE, PIC_CLAUDE_3;
 @org $6e, $4c21:
 	text "做什麼﹗";
 	line "老色鬼﹐";
@@ -527,7 +527,7 @@
 	done;
 
 @org $6e, $4c72:
-	init NAME_CLAUDE, PIC_38;
+	init NAME_CLAUDE, PIC_CLAUDE_2;
 @org $6e, $4c75:
 	text "這．還．用．你";
 	line "．說﹗";
@@ -544,7 +544,7 @@
 	done;
 
 @org $6e, $4cc2:
-	init NAME_NINA, PIC_35;
+	init NAME_NINA, PIC_NINA_3;
 @org $6e, $4cc5:
 	text "亂說⋯⋯";
 	line "妮娜只是⋯⋯";
@@ -553,7 +553,7 @@
 	done;
 
 @org $6e, $4cec:
-	init NAME_CLAUDE, PIC_38;
+	init NAME_CLAUDE, PIC_CLAUDE_2;
 @org $6e, $4cef:
 	text "聽到了吧～";
 	line "妮娜說要～";
@@ -638,7 +638,7 @@
 	done;
 
 @org $6e, $4e43:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6e, $4e46:
 	text "終於⋯";
 	line "落幕了嗎﹖";
@@ -654,7 +654,7 @@
 	done;
 
 @org $6e, $4e69:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $6e, $4e6c:
 	text "爸⋯為什麼不說";
 	line "什麼就離開了﹖";
@@ -678,7 +678,7 @@
 	done;
 
 @org $6e, $4eec:
-	init NAME_BALLOT, PIC_2C;
+	init NAME_BALLOT, PIC_BALLOT_3;
 @org $6e, $4eef:
 	text "哼﹗";
 	line "爸爸大笨蛋﹗";
@@ -696,7 +696,7 @@
 	done;
 
 @org $6e, $4f2a:
-	init NAME_BALLOT, PIC_2A;
+	init NAME_BALLOT, PIC_BALLOT_1;
 @org $6e, $4f2d:
 	text "爸⋯⋯⋯";
 	line "";
@@ -717,19 +717,19 @@
 	done;
 
 @org $6e, $4f5c:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $4f5f:
 	text "哦～呵呵呵呵～";
 	done;
 
 @org $6e, $4f6b:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $6e, $4f6e:
 	text "我們在哪裡﹖";
 	done;
 
 @org $6e, $4f7a:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $4f7d:
 	text "你是指我們是誰";
 	line "嗎﹖";
@@ -739,14 +739,14 @@
 	done;
 
 @org $6e, $4fb5:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $6e, $4fb8:
 	text "來自銀河系裡的";
 	line "正義使者﹗";
 	done;
 
 @org $6e, $4fd1:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $4fd4:
 	text "穿梭於黑夜的浪";
 	line "";
@@ -757,46 +757,46 @@
 	done;
 
 @org $6e, $4fe9:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $6e, $4fec:
 	text "貫徹愛．正義．";
 	line "勇氣的真理﹗";
 	done;
 
 @org $6e, $5004:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $5007:
 	text "拉琪﹗";
 	done;
 
 @org $6e, $500d:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $6e, $5010:
 	text "庫魯﹗";
 	done;
 
 @org $6e, $5016:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $5019:
 	text "閃．電．隊～～";
 	line "誕生﹗﹗";
 	done;
 
 @org $6e, $502a:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $502d:
 	text "好冷⋯⋯";
 	done;
 
 @org $6e, $5033:
-	init NAME_KULU, PIC_28;
+	init NAME_KULU, PIC_KULU;
 @org $6e, $5036:
 	text "在下覺得我們好";
 	line "像被遺忘了⋯";
 	done;
 
 @org $6e, $5050:
-	init NAME_LAKI, PIC_27;
+	init NAME_LAKI, PIC_LAKI;
 @org $6e, $5053:
 	text "哇哇哇哇﹗";
 	line "誰來救救我呀﹗";

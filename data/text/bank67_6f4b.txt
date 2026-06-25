@@ -32,7 +32,7 @@
 	done;
 
 @org $67, $6f86:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $67, $6f89:
 	text "得到干擾電波⚬";
 	done;
@@ -81,7 +81,7 @@
 	done;
 
 @org $67, $7025:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $67, $7028:
 	text "得到祕技";
 	db $f1, $2a; #"１"
@@ -106,7 +106,7 @@
 	done;
 
 @org $67, $7069:
-	init NAME_BALLOT, PIC_2E;
+	init NAME_BALLOT, PIC_BALLOT_5;
 @org $67, $706c:
 	text "得到神奇果實";
 	db $f1, $53; #"⚬"
