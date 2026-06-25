@@ -32,11 +32,11 @@
 	const NAME_0F     ; $0f
 	const NAME_10     ; $10
 	const NAME_SAYA   ; $11
-	const NAME_12     ; $12
-	const NAME_13     ; $13
+	const NAME_HAYATO     ; $12
+	const NAME_FANGFANG     ; $13
 	const NAME_14     ; $14
-	const NAME_15     ; $15
-	const NAME_16     ; $16
+	const NAME_MR_MO     ; $15
+	const NAME_PRINCIPAL     ; $16
 	const NAME_17     ; $17
 	const NAME_18     ; $18
 	const NAME_19     ; $19
@@ -68,18 +68,18 @@
 	const NAME_33     ; $33
 	const NAME_34     ; $34
 	const NAME_35     ; $35
-	const NAME_36     ; $36
-	const NAME_37     ; $37
+	const NAME_JUDGE     ; $36
+	const NAME_HOST     ; $37
 	const NAME_38     ; $38
-	const NAME_39     ; $39
+	const NAME_ANTON     ; $39
 	const NAME_3A     ; $3a
 	const NAME_3B     ; $3b
 	const NAME_3C     ; $3c
-	const NAME_3D     ; $3d
+	const NAME_HAIQING     ; $3d
 	const NAME_3E     ; $3e
 	const NAME_3F     ; $3f
 	const NAME_40     ; $40
-	const NAME_41     ; $41
+	const NAME_STAR_BEAST     ; $41
 	const NAME_42     ; $42
 	const NAME_43     ; $43
 	const NAME_44     ; $44

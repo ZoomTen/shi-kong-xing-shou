@@ -1065,7 +1065,7 @@
 	done;
 
 @org $58, $5dba:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $58, $5dbd:
 	text "嘰～嘰嘰﹗";
 	done;
@@ -1399,7 +1399,7 @@
 	done;
 
 @org $58, $63df:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $58, $63e2:
 	text "嘰嘰～阻礙計劃";
 	line "者⋯嘰嘰⋯殺﹗";

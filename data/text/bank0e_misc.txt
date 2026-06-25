@@ -212,7 +212,7 @@
 	done;
 
 @org $0e, $5023:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	line;
@@ -240,7 +240,7 @@
 	done;
 
 @org $0e, $50f6:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	line;
@@ -301,7 +301,7 @@
 	done;
 
 @org $0e, $5267:
-	init NAME_13, PIC_1A;
+	init NAME_FANGFANG, PIC_1A;
 	text "你是來找我一起";
 	line "玩的嗎﹖";
 	para "好～高～興～";

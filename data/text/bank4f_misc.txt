@@ -1461,7 +1461,7 @@
 	done;
 
 @org $4f, $6f4c:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 	text "第一循環淘汰賽";
 	line "比的是反應及機";
 	cont "智⚬";
@@ -1478,7 +1478,7 @@
 	done;
 
 @org $4f, $6fd2:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 	text "沒有關係﹐這只";
 	line "是熱身的測試⚬";
 	para "誰沒有失敗的經";
@@ -1489,7 +1489,7 @@
 	done;
 
 @org $4f, $7023:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 	text "嗯～感覺不錯～";
 	cont "您可以回休息室";
 	line "了⚬";
@@ -1646,7 +1646,7 @@
 	done;
 
 @org $4f, $72fb:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "各位先生～";
 	line "各位女士～";
 	cont "讓大家久等了﹗";
@@ -1664,7 +1664,7 @@
 	done;
 
 @org $4f, $739e:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "麗子小姐的服裝";
 	line "真是令人賞心悅";
 	cont "目啊﹗";
@@ -1676,7 +1676,7 @@
 	done;
 
 @org $4f, $73f5:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 	text "這⋯這是⋯";
 	line "傳說中的⋯⋯";
 	cont "夏娃的羽衣嗎﹖";
@@ -1691,7 +1691,7 @@
 	done;
 
 @org $4f, $7440:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "這⋯這真是太勁";
 	line "暴了﹗";
 	para "沒想到拉琪小姐";
@@ -1705,7 +1705,7 @@
 	done;
 
 @org $4f, $74b0:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "接下來﹐選秀會";
 	line "的最後一位美少";
 	cont "女⚬";
@@ -1720,7 +1720,7 @@
 	done;
 
 @org $4f, $7504:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "妮娜小姐﹖";
 	done;
 
@@ -1736,7 +1736,7 @@
 	done;
 
 @org $4f, $753c:
-	init NAME_36, PIC_53;
+	init NAME_JUDGE, PIC_53;
 	text "這⋯這簡直是⋯";
 	done;
 
@@ -1748,7 +1748,7 @@
 	done;
 
 @org $4f, $7568:
-	init NAME_36, PIC_53;
+	init NAME_JUDGE, PIC_53;
 	text "少⋯少爺﹖";
 	line "少爺這麼認為﹖";
 	para "這是多麼有創意";
@@ -1763,7 +1763,7 @@
 	done;
 
 @org $4f, $75ba:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "好的⚬";
 	line "所有的美少女都";
 	cont "已經展示過她們";
@@ -1771,14 +1771,14 @@
 	done;
 
 @org $4f, $75e3:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "哦哦哦哦﹗";
 	line "結果出來了﹗";
 	cont "最後優勝者是⋯";
 	done;
 
 @org $4f, $7607:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "第號的妮娜";
 	line "小姐﹗﹗";
 	done;
@@ -1790,7 +1790,7 @@
 	done;
 
 @org $4f, $7630:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 	text "我們這就請～";
 	line "邦林科技的總裁";
 	cont "哈瑪斯先生⚬";

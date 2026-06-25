@@ -78,11 +78,11 @@
 	text "賽 亞";
 	line;
 
-@org $0a, $4727:
+@org $0a, $4727 (HayatoName):
 	text "伊隼人";
 	line;
 
-@org $0a, $472e:
+@org $0a, $472e (FangfangName):
 	text "芳 芳";
 	line;
 
@@ -90,11 +90,11 @@
 	text "妮 可";
 	line;
 
-@org $0a, $473c:
+@org $0a, $473c (MrMoName):
 	text "莫老師";
 	line;
 
-@org $0a, $4742:
+@org $0a, $4742 (PrincipalName):
 	text "校 長";
 	line;
 
@@ -230,11 +230,11 @@
 	text "子";
 	line;
 
-@org $0a, $481f:
+@org $0a, $481f (JudgeName):
 	text "評 審";
 	line;
 
-@org $0a, $4826:
+@org $0a, $4826 (HostName):
 	text "主持人";
 	line;
 
@@ -242,7 +242,7 @@
 	text "哈瑪斯";
 	line;
 
-@org $0a, $4834:
+@org $0a, $4834 (AntonName):
 	text "安 東";
 	line;
 
@@ -260,7 +260,7 @@
 	text "子";
 	line;
 
-@org $0a, $4850:
+@org $0a, $4850 (HaiqingName):
 	text "海";
 	forcemap " ", 0;
 	textmap "青", 3; # fixme
@@ -278,7 +278,7 @@
 	text "狼人怪";
 	line;
 
-@org $0a, $486b:
+@org $0a, $486b (StarBeastName):
 	text "星";
 	forcemap " ", 0;
 	text "獸";

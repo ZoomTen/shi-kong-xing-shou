@@ -25,7 +25,7 @@
 	line "";
 	getchoice String_1cc5;
 @org $66, $4dd7:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $66, $4dda:
 	text "巴⋯巴洛特⋯⋯";
 	line "殺﹗﹗";
@@ -39,7 +39,7 @@
 	done;
 
 @org $66, $4e0b:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $66, $4e0e:
 	text "殺⋯殺﹗";
 	done;
@@ -1711,7 +1711,7 @@
 	done;
 
 @org $66, $6f06:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $66, $6f09:
 	text "嗚哇～嗚哇～哇";
 	line "吼﹗";
@@ -2323,7 +2323,7 @@
 	done;
 
 @org $66, $7971:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $66, $7974:
 	text "吼～吼～";
 	line "";

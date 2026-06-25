@@ -984,7 +984,7 @@
 	done;
 
 @org $5a, $6bb3:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $5a, $6bb6:
 	text "喀～喀～";
 	line "阻礙者⋯⋯殺﹗";

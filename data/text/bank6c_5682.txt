@@ -496,7 +496,7 @@
 	done;
 
 @org $6c, $5f63:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $6c, $5f66:
 	text "呼嚕～呼嚕～";
 	line "嚕嚕﹗";

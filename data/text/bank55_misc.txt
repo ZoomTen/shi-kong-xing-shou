@@ -211,7 +211,7 @@
 	done;
 
 @org $55, $6073:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "你就是巴洛特嗎";
 	line "﹖";
 	para "我已經收到哈瑪";
@@ -231,7 +231,7 @@
 	done;
 
 @org $55, $6122:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "動力晶片⋯﹗";
 	cont "我的動力晶片呢";
 	line "﹖";
@@ -246,7 +246,7 @@
 	done;
 
 @org $55, $6168:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "海藍～";
 	line "只是個旅行～";
 	cont "將動力晶片給我";
@@ -262,7 +262,7 @@
 	done;
 
 @org $55, $61c5:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "犧牲﹖";
 	done;
 
@@ -273,7 +273,7 @@
 	done;
 
 @org $55, $61e2:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "抱歉～海藍對我";
 	line "要旅行的這件事";
 	cont "﹐一直不諒解⋯";
@@ -290,7 +290,7 @@
 	done;
 
 @org $55, $6288:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "巴洛特﹐你可以";
 	line "幫我找回海藍嗎";
 	cont "﹖拿回動力晶片";
@@ -558,7 +558,7 @@
 	done;
 
 @org $55, $6894:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "啊﹗你醒了﹖";
 	line "很是抱歉～潮流";
 	para "異常的大﹐我只";
@@ -566,7 +566,7 @@
 	done;
 
 @org $55, $68c8:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "啊﹖";
 	line "";
 	done;
@@ -579,7 +579,7 @@
 	done;
 
 @org $55, $68f6:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "我也不清楚⋯⋯";
 	line "不過我看到了延";
 	cont "伸的章魚腳⋯⋯";
@@ -593,7 +593,7 @@
 	done;
 
 @org $55, $693d:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "是的⋯⋯";
 	cont "姐姐也用了她的";
 	line "魚之魂﹐向海巫";
@@ -602,7 +602,7 @@
 	done;
 
 @org $55, $697d:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "你見過我的姐姐";
 	line "～海藍嗎﹖";
 	done;
@@ -613,7 +613,7 @@
 	done;
 
 @org $55, $69a5:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "那她有說要回來";
 	line "嗎﹖三個月的時";
 	cont "間快到了﹐再不";
@@ -631,7 +631,7 @@
 	done;
 
 @org $55, $6a12:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "只好向海巫師懇";
 	line "求﹐請他還回姐";
 	cont "姐的魚之魂了⚬";
@@ -647,7 +647,7 @@
 	done;
 
 @org $55, $6a75:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "謝謝您～好心的";
 	line "人類⚬";
 	para "但是今天就滿三";
@@ -674,7 +674,7 @@
 	done;
 
 @org $55, $6b4c:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "這是海巫師設的";
 	line "屏障氣泡～";
 	para "我們人魚身上的";
@@ -683,28 +683,28 @@
 	done;
 
 @org $55, $6b89:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "三個月的時間﹐";
 	line "就要到了﹗";
 	cont "姐姐﹗";
 	done;
 
 @org $55, $6ba9:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "海巫師呢﹖";
 	line "海巫大人﹖";
 	cont "到哪裡去了呢﹖";
 	done;
 
 @org $55, $6bce:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "這個海洞﹖";
 	line "莫非⋯﹖";
 	cont "海巫大人﹗";
 	done;
 
 @org $55, $6bec:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "海巫大人⋯";
 	line "那名小孩⋯";
 	cont "你⋯⋯";
@@ -739,7 +739,7 @@
 	done;
 
 @org $55, $6ccc:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "姐⋯姐姐﹗";
 	line "求求您﹐海巫大";
 	cont "人﹐把姐姐的魚";
@@ -758,7 +758,7 @@
 	done;
 
 @org $55, $6d54:
-	init NAME_3D, PIC_66;
+	init NAME_HAIQING, PIC_66;
 	text "只要能救姐姐和";
 	line "小孩的話﹐我無";
 	cont "所謂⚬";
@@ -859,7 +859,7 @@
 	done;
 
 @org $55, $6fa0:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 	text "恰可﹗可﹗";
 	done;
 
@@ -964,7 +964,7 @@
 	done;
 
 @org $55, $7279:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "海⋯海藍⋯";
 	line "是人魚的事⋯";
 	cont "被發現了⋯";
@@ -983,7 +983,7 @@
 	done;
 
 @org $55, $72f1:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "我⋯我⋯";
 	line "沒有辦法⋯";
 	cont "保護海藍⋯";
@@ -1003,7 +1003,7 @@
 	done;
 
 @org $55, $736d:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 	text "謝⋯謝⋯⋯";
 	line "海⋯海藍⋯";
 	para "雖然妳騙了我⋯";

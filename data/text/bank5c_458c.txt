@@ -54,7 +54,7 @@
 	done;
 
 @org $5c, $4678:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 @org $5c, $467b:
 	text "海⋯海藍⋯";
 	line "是人魚的事⋯";
@@ -77,7 +77,7 @@
 	done;
 
 @org $5c, $46f0:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 @org $5c, $46f3:
 	text "我⋯我⋯";
 	line "";
@@ -101,7 +101,7 @@
 	done;
 
 @org $5c, $476c:
-	init NAME_39, PIC_62;
+	init NAME_ANTON, PIC_62;
 @org $5c, $476f:
 	text "謝⋯謝⋯⋯";
 	line "海⋯海藍⋯";

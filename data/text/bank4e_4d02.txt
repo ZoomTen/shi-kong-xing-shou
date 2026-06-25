@@ -146,7 +146,7 @@
 	done;
 
 @org $4e, $4faf:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 @org $4e, $4fb2:
 	text "第一循環淘汰賽";
 	line "比的是反應及機";
@@ -172,7 +172,7 @@
 	done;
 
 @org $4e, $5035:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 @org $4e, $5038:
 	text "沒有關係﹐這只";
 	line "是熱身的測試⚬";
@@ -186,7 +186,7 @@
 	done;
 
 @org $4e, $5086:
-	init NAME_36, PIC_50;
+	init NAME_JUDGE, PIC_50;
 @org $4e, $5089:
 	text "嗯～感覺不錯～";
 	cont "您可以回休息室";

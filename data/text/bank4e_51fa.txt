@@ -118,7 +118,7 @@
 	done;
 
 @org $4e, $5375:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $5378:
 	text "各位先生～";
 	line "各位女士～";
@@ -145,7 +145,7 @@
 	done;
 
 @org $4e, $541b:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $541e:
 	text "麗子小姐的服裝";
 	line "";
@@ -162,7 +162,7 @@
 	done;
 
 @org $4e, $5475:
-	init NAME_36, PIC_53;
+	init NAME_JUDGE, PIC_53;
 @org $4e, $5478:
 	text "這⋯這是⋯";
 	line "傳說中的⋯⋯";
@@ -179,7 +179,7 @@
 	done;
 
 @org $4e, $54c0:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $54c3:
 	text "這⋯這真是太勁";
 	line "暴了﹗";
@@ -198,7 +198,7 @@
 	done;
 
 @org $4e, $5530:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $5533:
 	text "接下來﹐選秀會";
 	line "的最後一位美少";
@@ -215,7 +215,7 @@
 	done;
 
 @org $4e, $5587:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $558a:
 	text "妮娜小姐﹖";
 	done;
@@ -234,7 +234,7 @@
 	done;
 
 @org $4e, $55bf:
-	init NAME_36, PIC_53;
+	init NAME_JUDGE, PIC_53;
 @org $4e, $55c2:
 	text "這⋯這簡直是⋯";
 	done;
@@ -248,7 +248,7 @@
 	done;
 
 @org $4e, $55eb:
-	init NAME_36, PIC_53;
+	init NAME_JUDGE, PIC_53;
 @org $4e, $55ee:
 	text "少⋯少爺﹖";
 	line "少爺這麼認為﹖";
@@ -267,7 +267,7 @@
 	done;
 
 @org $4e, $563d:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $5640:
 	text "好的⚬";
 	line "";
@@ -282,7 +282,7 @@
 	done;
 
 @org $4e, $5666:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $5669:
 	text "哦哦哦哦﹗";
 	line "結果出來了﹗";
@@ -290,7 +290,7 @@
 	done;
 
 @org $4e, $568a:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $568d:
 	text "第５９３２號的";
 	line "妮娜小姐﹗﹗";
@@ -304,7 +304,7 @@
 	done;
 
 @org $4e, $56b8:
-	init NAME_37, PIC_50;
+	init NAME_HOST, PIC_50;
 @org $4e, $56bb:
 	text "我們這就請～";
 	line "邦林科技的總裁";

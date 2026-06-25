@@ -107,7 +107,7 @@
 	done;
 
 @org $08, $4911:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	para "我今天到朋友家";
@@ -162,7 +162,7 @@
 	done;
 
 @org $08, $4a87:
-	init NAME_13, PIC_1A;
+	init NAME_FANGFANG, PIC_1A;
 	text "你是來找我一起";
 	line "玩的嗎﹖";
 	para "好～高～興～";
@@ -433,7 +433,7 @@
 	done;
 
 @org $08, $4fa8:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "早啊～巴洛特⚬";
 	para "快點進教室﹐";
 	line "就要上課了⚬";
@@ -445,7 +445,7 @@
 	done;
 
 @org $08, $5001:
-	init NAME_16, PIC_16;
+	init NAME_PRINCIPAL, PIC_16;
 	text "巴洛特﹐早安⚬";
 	para "怎麼一大早﹐";
 	cont "就露出這種心情";
@@ -471,7 +471,7 @@
 	done;
 
 @org $08, $50a3:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	para "巴洛特～";
@@ -488,7 +488,7 @@
 	done;
 
 @org $08, $5105:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～ＮＯ～";
 	para "巴洛特不要說出";
 	line "﹐";
@@ -511,7 +511,7 @@
 	done;
 
 @org $08, $5195:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	para "難得巴洛特這麼";
@@ -523,7 +523,7 @@
 	done;
 
 @org $08, $51e5:
-	init NAME_13, PIC_1A;
+	init NAME_FANGFANG, PIC_1A;
 	text "巴洛特﹗";
 	para "莫老師來了⚬";
 	para "快回位置坐好⚬";
@@ -534,7 +534,7 @@
 	done;
 
 @org $08, $522e:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "巴洛特﹗";
 	para "老師都已經來了";
 	line "﹐";
@@ -544,14 +544,14 @@
 	done;
 
 @org $08, $5267:
-	init NAME_13, PIC_1A;
+	init NAME_FANGFANG, PIC_1A;
 	text "快回位置坐好⚬";
 	para "你的位置就在最";
 	line "右上方的座位⚬";
 	done;
 
 @org $08, $5291:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	para "上課了﹐";
@@ -571,7 +571,7 @@
 	done;
 
 @org $08, $5306:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "大家都知道吧﹖";
 	para "晚上會有一場很";
 	line "壯觀的流星雨⚬";
@@ -580,7 +580,7 @@
 	done;
 
 @org $08, $5346:
-	init NAME_12, PIC_26;
+	init NAME_HAYATO, PIC_26;
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	para "爸爸還特地買了";
@@ -590,7 +590,7 @@
 	done;
 
 @org $08, $5387:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "很⋯很好⋯⋯";
 	para "誰知道這個流星";
 	line "雨的詳細資料﹖";
@@ -607,7 +607,7 @@
 	done;
 
 @org $08, $53ef:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "完全正確﹗﹗";
 	para "為了獎勵大家﹐";
 	cont "今天就提早下課";
@@ -628,7 +628,7 @@
 	done;
 
 @org $08, $547e:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "我不曉得什麼事";
 	line "﹐";
 	cont "讓先生這麼生氣";
@@ -646,7 +646,7 @@
 	done;
 
 @org $08, $54eb:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "⋯⋯";
 	para "真是不可理諭﹗";
 	done;
@@ -682,7 +682,7 @@
 	done;
 
 @org $08, $5592:
-	init NAME_15, PIC_24;
+	init NAME_MR_MO, PIC_24;
 	text "各位同學﹐";
 	line "下課了﹗";
 	done;

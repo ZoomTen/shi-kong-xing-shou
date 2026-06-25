@@ -19,7 +19,7 @@
 	done;
 
 @org $6c, $608e:
-	init NAME_41, PIC_74;
+	init NAME_STAR_BEAST, PIC_74;
 @org $6c, $6091:
 	text "咭咭～";
 	line "";
@@ -38,13 +38,13 @@
 	done;
 
 @org $6c, $60d0:
-	init NAME_41, PIC_74;
+	init NAME_STAR_BEAST, PIC_74;
 @org $6c, $60d3:
 	text "咭⋯⋯嗚啊﹗";
 	done;
 
 @org $6c, $60df:
-	init NAME_41, PIC_74;
+	init NAME_STAR_BEAST, PIC_74;
 @org $6c, $60e2:
 	text "你⋯你不是⋯";
 	line "龍魔⋯⋯";

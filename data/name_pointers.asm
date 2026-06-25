@@ -16,11 +16,11 @@
 	dw text_0a_4715 ; $0f
 	dw text_0a_471b ; $10
 	dw SayaName ; $11
-	dw text_0a_4727 ; $12
-	dw text_0a_472e ; $13
+	dw HayatoName ; $12
+	dw FangfangName ; $13
 	dw text_0a_4735 ; $14
-	dw text_0a_473c ; $15
-	dw text_0a_4742 ; $16
+	dw MrMoName ; $15
+	dw PrincipalName ; $16
 	dw text_0a_4749 ; $17
 	dw SystemName ; $18
 	dw text_0a_4757 ; $19
@@ -52,18 +52,18 @@
 	dw text_0a_480a ; $33
 	dw text_0a_4811 ; $34
 	dw text_0a_4818 ; $35
-	dw text_0a_481f ; $36
-	dw text_0a_4826 ; $37
+	dw JudgeName ; $36
+	dw HostName ; $37
 	dw text_0a_482d ; $38
-	dw text_0a_4834 ; $39
+	dw AntonName ; $39
 	dw text_0a_483b ; $3a
 	dw text_0a_4842 ; $3b
 	dw text_0a_4849 ; $3c
-	dw text_0a_4850 ; $3d
+	dw HaiqingName ; $3d
 	dw text_0a_4857 ; $3e
 	dw text_0a_485e ; $3f
 	dw text_0a_4865 ; $40
-	dw text_0a_486b ; $41
+	dw StarBeastName ; $41
 	dw text_0a_4872 ; $42
 	dw text_0a_4878 ; $43
 	dw text_0a_487f ; $44

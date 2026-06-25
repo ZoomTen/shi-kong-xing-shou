@@ -1911,7 +1911,7 @@
 	done;
 
 @org $59, $6f79:
-	init NAME_41, PIC_6A;
+	init NAME_STAR_BEAST, PIC_6A;
 @org $59, $6f7c:
 	text "喀～喀～";
 	para "能源⋯計劃⋯";
