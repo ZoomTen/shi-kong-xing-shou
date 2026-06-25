@@ -4600,9 +4600,7 @@ BattleMoves_Init:
 .got_move:
 	ld d, [hl]
 	call DelayFrame
-	ld hl, Func_01e_42f1
-	ld b, $1e
-	rst FarCall
+	farcall Func_01e_42f1
 	ld de, Battle_Panel9x6_BGMap
 	ld hl, $9980
 	ld bc, $0906
@@ -4698,9 +4696,7 @@ BattleMoves_LoadList:
 	xor a
 	ld [wCharacterTilePos], a
 	push hl
-	ld hl, Func_026_4000
-	ld b, $26
-	rst FarCall
+	farcall Func_026_4000
 	pop hl
 	ld a, [wd0c0]
 	inc a
@@ -4777,9 +4773,7 @@ BattleMoves_HandleInput:
 	add hl, bc
 	push hl
 	ld d, [hl]
-	ld hl, Func_01e_42f1
-	ld b, $1e
-	rst FarCall
+	farcall Func_01e_42f1
 	ld a, 1
 	ld [wd1fc], a
 	ld [wd0fd], a

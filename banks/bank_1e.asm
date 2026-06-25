@@ -903,9 +903,7 @@ DrawItemPageWithIcons:
 	ld a, [hli]
 	ld [wd0c3], a
 	push hl
-	ld hl, Func_025_4288
-	ld b, $25
-	rst FarCall
+	farcall Func_025_4288
 	pop hl
 	pop de
 	ld a, [wd0c1]
@@ -979,9 +977,7 @@ DrawItemListPage:
 	jr z, .skip
 	ld [wd0c3], a
 	push hl
-	ld hl, Func_025_425d
-	ld b, $25
-	rst FarCall
+	farcall Func_025_425d
 	pop hl
 
 .skip

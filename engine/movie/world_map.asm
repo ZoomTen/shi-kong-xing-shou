@@ -63,9 +63,7 @@ WorldMap::
 .asm_409a
 	xor a
 	ldh [hFade], a
-	ld hl, WorldMap
-	ld b, $0D
-	rst FarCall
+	farcall LoadEmotesAndPromptGFX
 	ret
 Func_062_40a4:
 	ld de, WorldMapNamePointers
@@ -140,7 +138,6 @@ WorldMapNameStringPointers_4114:
 WorldMapNameStringPointers_411a:
 	dw WorldMapNames_41b9
 	dw WorldMapNames_41c2
-; TEXT -> <f4>頭<f5>幕魅<ed>
 INCLUDE "data/text/worldmap_names.asm"
 WorldMapLocationIdPointers:
 	dw WorldMapLocationIds
@@ -403,9 +400,7 @@ Func_062_443e:
 	ld [wPlayerAnimFrame], a
 	call UpdatePlayerAndObjectAnims
 	call DelayFrame
-	ld hl, WorldMap
-	ld b, $04
-	rst FarCall
+	farcall _BuildVirtualOAM
 	ld a, $C7
 	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
