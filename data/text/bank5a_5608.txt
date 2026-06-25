@@ -959,7 +959,7 @@
 	done;
 
 @org $5a, $6b3f:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 @org $5a, $6b42:
 	text "將雷德置於隊伍";
 	line "排頭﹐如遇到擋";

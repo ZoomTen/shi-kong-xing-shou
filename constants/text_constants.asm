@@ -38,7 +38,7 @@
 	const NAME_MR_MO     ; $15
 	const NAME_PRINCIPAL     ; $16
 	const NAME_17     ; $17
-	const NAME_18     ; $18
+	const NAME_SYSTEM     ; $18
 	const NAME_19     ; $19
 	const NAME_1A     ; $1a
 	const NAME_1B     ; $1b

@@ -503,7 +503,7 @@
 	done;
 
 @org $0f, $54c5:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 	text "星獸．機械鳥加";
 	line "入隊伍⚬";
 	para "如果將巴克置於";

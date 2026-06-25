@@ -1216,7 +1216,7 @@
 	done;
 
 @org $55, $780f:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 	text "如將海藍置於排";
 	line "頭﹐將可化為人";
 	para "魚﹐通過大海或";

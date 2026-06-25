@@ -2200,7 +2200,7 @@
 	done;
 
 @org $66, $7718:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 @org $66, $771b:
 	text "如果將米特置於";
 	line "隊伍前﹐";

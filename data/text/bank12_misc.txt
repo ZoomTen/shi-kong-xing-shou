@@ -608,7 +608,7 @@
 	done;
 
 @org $12, $640c:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 	text "如果將妮娜置於";
 	line "隊伍前頭﹐小線";
 	para "羊可以清除阻擋";

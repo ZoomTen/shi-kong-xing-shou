@@ -997,7 +997,7 @@
 	done;
 
 @org $4f, $6483:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 	text "如果將面具男置";
 	cont "於排頭﹐鸚鵡怪";
 	line "便會發揮溝通力";

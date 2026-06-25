@@ -811,7 +811,7 @@
 	done;
 
 @org $58, $5980:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 @org $58, $5983:
 	text "如將藍特置於排";
 	line "頭﹐如遇阻擋之";

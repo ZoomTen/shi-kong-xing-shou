@@ -115,7 +115,7 @@
 	done;
 
 @org $0e, $4d81:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 	text "星獸～小白加入";
 	line "了隊伍⚬";
 	done;

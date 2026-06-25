@@ -393,7 +393,7 @@
 	done;
 
 @org $5c, $4c0e:
-	init NAME_18, PIC_VAST_FAME;
+	init NAME_SYSTEM, PIC_VAST_FAME;
 @org $5c, $4c11:
 	text "如將海藍置於排";
 	line "頭﹐將可化為人";
