@@ -1,6 +1,12 @@
 INCLUDE "constants.asm"
 
-SECTION "Title Screen GFX", ROMX
+SECTION "Title Screen GFX 1", ROMX
+
+TitleScreenGFX:: INCBIN "gfx/title_screen/title_screen.2bpp"
+TitleScreenGFX_Sprites:: INCBIN "gfx/title_screen/title_screen_sprites.2bpp"
+TitleScreen_MenuGFX:: INCBIN "gfx/title_screen/characters.2bpp"
+
+SECTION "Title Screen GFX 2", ROMX
 
 TitleScreen_BGPalette:: INCLUDE "gfx/title_screen/title_bg.pal"
 TitleScreen_ObjPalette:: INCLUDE "gfx/title_screen/title_obj.pal"

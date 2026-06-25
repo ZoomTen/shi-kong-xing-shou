@@ -33,6 +33,8 @@ INCLUDE "banks/bank_08.asm"
 INCLUDE "data/text/bank08_misc2.asm"
 INCLUDE "data/text/ballots_house_intro.asm"
 INCLUDE "data/text/bank08_misc.asm"
+
+SECTION "Meteor Cutscene", ROMX
 INCLUDE "engine/movie/meteor.asm"
 
 SECTION "bank09", ROMX
@@ -88,10 +90,10 @@ INCLUDE "banks/bank_17.asm"
 SECTION "bank18", ROMX
 INCLUDE "banks/bank_18.asm"
 
-SECTION "bank1a", ROMX
+SECTION "Letter Cutscene", ROMX
 INCLUDE "engine/movie/letter.asm"
 
-SECTION "bank1b", ROMX
+SECTION "Gale Cutscene", ROMX
 INCLUDE "engine/movie/gale.asm"
 
 SECTION "bank1c", ROMX
@@ -178,7 +180,11 @@ INCLUDE "banks/bank_3b.asm"
 SECTION "bank3c", ROMX
 INCLUDE "engine/save/load_game.asm"
 INCLUDE "engine/menu/new_game_continue.asm"
+
+SECTION "Game Over", ROMX
 INCLUDE "engine/movie/game_over.asm"
+
+SECTION "Cutscene 1a", ROMX
 INCLUDE "engine/movie/1a.asm"
 
 SECTION "bank3d", ROMX
@@ -217,8 +223,10 @@ INCLUDE "banks/bank_52.asm"
 SECTION "bank53", ROMX
 INCLUDE "banks/bank_53.asm"
 
-SECTION "bank55", ROMX
+SECTION "Airport 2 Cutscene", ROMX
 INCLUDE "engine/movie/airport2.asm"
+
+SECTION "bank55", ROMX
 INCLUDE "banks/bank_55.asm"
 
 SECTION "bank57", ROMX
@@ -233,32 +241,40 @@ INCLUDE "banks/bank_59.asm"
 SECTION "bank5a", ROMX
 INCLUDE "banks/bank_5a.asm"
 
-SECTION "bank5b", ROMX
+SECTION "Mice Minigame", ROMX
 INCLUDE "engine/minigame/mice.asm"
 
 SECTION "bank5c", ROMX
 INCLUDE "banks/bank_5c.asm"
+
+SECTION "Helen Cutscene", ROMX
 INCLUDE "engine/movie/helen.asm"
 
-SECTION "bank5d", ROMX
+SECTION "Rhythm Minigame", ROMX
 INCLUDE "engine/minigame/rhythm.asm"
 
 SECTION "bank5e", ROMX
 INCLUDE "banks/bank_5e.asm"
+
+SECTION "Racing Minigame", ROMX
 INCLUDE "engine/minigame/racing.asm"
 
-SECTION "bank5f", ROMX
+SECTION "Crystal Cutscene", ROMX
 INCLUDE "engine/movie/crystal.asm"
 
 SECTION "bank60", ROMX
 INCLUDE "banks/bank_60.asm"
 
-SECTION "bank61", ROMX
+SECTION "Meteor 2 Cutscene", ROMX
 INCLUDE "engine/movie/meteor_2.asm"
+
+SECTION "Underwater Cutscene", ROMX
 INCLUDE "engine/movie/underwater.asm"
 
-SECTION "bank62", ROMX
+SECTION "World Map Cutscene", ROMX
 INCLUDE "engine/movie/world_map.asm"
+
+SECTION "Sound Test", ROMX
 INCLUDE "engine/debug/sound_test.asm"
 
 SECTION "bank63", ROMX
@@ -270,9 +286,13 @@ INCLUDE "banks/bank_64.asm"
 SECTION "bank66", ROMX
 INCLUDE "banks/bank_66.asm"
 
-SECTION "bank67", ROMX
+SECTION "Beach", ROMX
 INCLUDE "engine/movie/beach.asm"
+
+SECTION "Floating Island", ROMX
 INCLUDE "engine/movie/floating_island.asm"
+
+SECTION "bank67", ROMX
 INCLUDE "banks/bank_67.asm"
 
 SECTION "bank69", ROMX
@@ -293,20 +313,19 @@ INCLUDE "banks/bank_6c.asm"
 SECTION "bank6e", ROMX
 INCLUDE "banks/bank_6e.asm"
 
-SECTION "bank6f", ROMX
+SECTION "Cutscene 1d", ROMX
 INCLUDE "engine/movie/1d.asm"
 
-SECTION "bank70", ROMX
+SECTION "Cutscene 1e", ROMX
 INCLUDE "engine/movie/1e.asm"
 
-SECTION "bank71", ROMX
+SECTION "Credits", ROMX
 INCLUDE "engine/movie/credits.asm"
+
+SECTION "The End", ROMX
 INCLUDE "engine/movie/the_end.asm"
 
-SECTION "bank76", ROMX
-INCLUDE "banks/bank_76.asm"
-
-SECTION "bank77", ROMX
+SECTION "Intro & Title", ROMX
 INCLUDE "engine/movie/intro_vastfame.asm"
 INCLUDE "engine/movie/title_screen.asm"
 INCLUDE "engine/movie/intro_2.asm"

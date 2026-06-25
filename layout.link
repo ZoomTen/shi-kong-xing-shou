@@ -34,6 +34,7 @@ ROMX $07
 	"bank07"
 ROMX $08
 	"bank08"
+	"Meteor Cutscene"
 	"Meteor Cutscene GFX"
 ROMX $09
 	"bank09"
@@ -75,10 +76,10 @@ ROMX $18
 ROMX $19
 	"Tilesets 3"
 ROMX $1a
-	"bank1a"
+	"Letter Cutscene"
 	"Letter Cutscene GFX"
 ROMX $1b
-	"bank1b"
+	"Gale Cutscene"
 	"Gale Cutscene GFX"
 ROMX $1c
 	"bank1c"
@@ -147,6 +148,8 @@ ROMX $3b
 	"bank3b"
 ROMX $3c
 	"bank3c"
+	"Game Over"
+	"Cutscene 1a"
 ROMX $3d
 	"bank3d"
 ROMX $3e
@@ -206,6 +209,7 @@ ROMX $53
 ROMX $54
 	"Tilesets 5"
 ROMX $55
+	"Airport 2 Cutscene"
 	"bank55"
 ROMX $56
 	"Tilesets 6"
@@ -218,21 +222,25 @@ ROMX $59
 ROMX $5a
 	"bank5a"
 ROMX $5b
-	"bank5b"
+	"Mice Minigame"
 ROMX $5c
 	"bank5c"
+	"Helen Cutscene"
 ROMX $5d
-	"bank5d"
+	"Rhythm Minigame"
 ROMX $5e
 	"bank5e"
+	"Racing Minigame"
 ROMX $5f
-	"bank5f"
+	"Crystal Cutscene"
 ROMX $60
 	"bank60"
 ROMX $61
-	"bank61"
+	"Meteor 2 Cutscene"
+	"Underwater Cutscene"
 ROMX $62
-	"bank62"
+	"World Map Cutscene"
+	"Sound Test"
 ROMX $63
 	"bank63"
 ROMX $64
@@ -242,6 +250,8 @@ ROMX $65
 ROMX $66
 	"bank66"
 ROMX $67
+	"Beach"
+	"Floating Island"
 	"bank67"
 ROMX $69
 	"bank69"
@@ -258,21 +268,22 @@ ROMX $6c
 ROMX $6e
 	"bank6e"
 ROMX $6f
-	"bank6f"
+	"Cutscene 1d"
 ROMX $70
-	"bank70"
+	"Cutscene 1e"
 ROMX $71
-	"bank71"
+	"Credits"
+	"The End"
 ROMX $74
 	"Multicart Home"
 ROMX $75
 	"Multicart bank01"
 ROMX $76
-	"bank76"
+	"Title Screen GFX 1"
 ROMX $77
-	"bank77"
+	"Intro & Title"
 	"Intro GFX 1"
-	"Title Screen GFX"
+	"Title Screen GFX 2"
 	"Vast Fame Logo GFX"
 ROMX $78
 	"Intro GFX 2"
