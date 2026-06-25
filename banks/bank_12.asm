@@ -272,24 +272,7 @@ Script_012_41ba:
 	spriteface  1, FACE_RIGHT
 	end
 
-CoffeeForestPart1_ObjectEvents:
-CoffeeForestPart2_ObjectEvents:
-CoffeeForestPart3_ObjectEvents2:
-SkyRockPart1_ObjectEvents:
-SkyRockPart2_ObjectEvents:
-ClockTowerOutside_ObjectEvents:
-ClockTower2f_ObjectEvents:
-ClockTower3f_ObjectEvents:
-ClockTower4f_ObjectEvents:
-ClockTower5f_ObjectEvents2:
-G2_0F_ObjectEvents:
-G2_10_ObjectEvents:
-G2_11_ObjectEvents:
-MarkNinaIntro_ObjectEvents4:
-R03_ObjectEvents:
-R04_ObjectEvents:
-G2_1E_ObjectEvents:
-G2_1F_ObjectEvents:
+Bank12_EmptyObjectEvent::
 	objects_end
 
 ObjectEvents_012_41dd:

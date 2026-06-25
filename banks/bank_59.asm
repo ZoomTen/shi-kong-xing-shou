@@ -69,14 +69,7 @@ Script_059_40c5:
 Script_059_40c9::
 	end
 
-G4_1A_ObjectEvents:
-G4_1B_ObjectEvents:
-G4_1C_ObjectEvents:
-SacredtreeTimeTravel_ObjectEvents2:
-G4_2A_ObjectEvents:
-G4_2B_ObjectEvents:
-G4_53_ObjectEvents:
-G4_54_ObjectEvents:
+Bank59_EmptyObjectEvent::
 	objects_end
 
 SacredtreeVillage_25_ObjectEvents:

@@ -74,15 +74,7 @@ INCLUDE "data/text/script_east_fishmarket_shop.asm"
 Script_05c_411c::
 	end
 
-G4_06_ObjectEvents:
-G4_07_ObjectEvents:
-G4_08_ObjectEvents:
-G4_09_ObjectEvents:
-EastFishmarketMermaidCutscene_ObjectEvents:
-G4_10_ObjectEvents:
-G4_44_ObjectEvents:
-G4_4A_ObjectEvents:
-G4_64_ObjectEvents:
+Bank5c_EmptyObjectEvent::
 	objects_end
 
 G4_44_ObjectEvents2:

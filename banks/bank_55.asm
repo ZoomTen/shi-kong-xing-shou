@@ -60,17 +60,7 @@ Script_055_53ef::
 Script_055_53f0:
 	end
 
-G4_01_ObjectEvents:
-G4_02_ObjectEvents:
-G4_03_ObjectEvents:
-G4_04_ObjectEvents:
-G4_05_ObjectEvents:
-EastFishmarket_0c_ObjectEvents2:
-G4_0F_ObjectEvents:
-EastFishmarketUndersea_12_ObjectEvents2:
-G4_30_ObjectEvents:
-G4_42_ObjectEvents:
-G4_43_ObjectEvents:
+Bank55_EmptyObjectEvent::
 	objects_end
 
 Script_055_53f2:

@@ -47,33 +47,33 @@ Group06_Maps::
 
 G6_00_Header::
 	map  G6_01
-	warp 0, 0, $8018
-	warp 5, 10, $9058
+	warp 0, 0, $8018, Bank6c_EmptyObjectEvent
+	warp 5, 10, $9058, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  KingkongMountain
 	warp 10, 0, $4088
-	warp 10, 0, $4088, KingkongMountain_ObjectEvents2
+	warp 10, 0, $4088, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_03
-	warp 0, 0, $3028
-	warp 5, 5, $9058
+	warp 0, 0, $3028, Bank6c_EmptyObjectEvent
+	warp 5, 5, $9058, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_04
-	warp 0, 5, $9018
-	warp 2, 0, $5068
+	warp 0, 5, $9018, Bank6c_EmptyObjectEvent
+	warp 2, 0, $5068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_05
-	warp 0, 5, $7038
-	warp 5, 0, $2038
+	warp 0, 5, $7038, Bank6c_EmptyObjectEvent
+	warp 5, 0, $2038, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_06
-	warp 1, 0, $2068
-	warp 3, 5, $5058
+	warp 1, 0, $2068, Bank6c_EmptyObjectEvent
+	warp 3, 5, $5058, Bank6c_EmptyObjectEvent
 	end_map
 
 	map BaalCapitalProfessor_07, G7_06_MapAttributes
@@ -126,34 +126,34 @@ G6_00_Header::
 	end_map
 
 	map  G6_0E
-	warp 0, 0, $6018
-	warp 7, 0, $2068
+	warp 0, 0, $6018, Bank6c_EmptyObjectEvent
+	warp 7, 0, $2068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_0F
-	warp 0, 0, $6018
-	warp 0, 0, $4048
-	warp 3, 0, $4048
-	warp 5, 0, $4068
-	warp 5, 0, $6088
-	warp 0, 0, $8048
-	warp 3, 0, $8048
-	warp 5, 0, $8068
+	warp 0, 0, $6018, Bank6c_EmptyObjectEvent
+	warp 0, 0, $4048, Bank6c_EmptyObjectEvent
+	warp 3, 0, $4048, Bank6c_EmptyObjectEvent
+	warp 5, 0, $4068, Bank6c_EmptyObjectEvent
+	warp 5, 0, $6088, Bank6c_EmptyObjectEvent
+	warp 0, 0, $8048, Bank6c_EmptyObjectEvent
+	warp 3, 0, $8048, Bank6c_EmptyObjectEvent
+	warp 5, 0, $8068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_10
-	warp 1, 0, $6088
+	warp 1, 0, $6088, Bank6c_EmptyObjectEvent
 	warp 0, 0, $6048, G6_10_ObjectEvents2
 	end_map
 
 	map  G6_11
 	warp 0, 0, $7068
-	warp 0, 0, $7068, G6_11_ObjectEvents2
+	warp 0, 0, $7068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_12
 	warp 0, 0, $7068
-	warp 0, 0, $7068, G6_12_ObjectEvents2
+	warp 0, 0, $7068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_13
@@ -162,22 +162,22 @@ G6_00_Header::
 
 	map  G6_14
 	warp 0, 0, $4068
-	warp 0, 0, $4068, G6_14_ObjectEvents2
+	warp 0, 0, $4068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_15
 	warp 0, 0, $4068
-	warp 0, 0, $4068, G6_15_ObjectEvents2
+	warp 0, 0, $4068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_16
 	warp 0, 0, $4068
-	warp 0, 0, $4068, G6_16_ObjectEvents2
+	warp 0, 0, $4068, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_17
 	warp 0, 0, $5038
-	warp 0, 0, $5038, G6_17_ObjectEvents2
+	warp 0, 0, $5038, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_18
@@ -199,7 +199,7 @@ G6_00_Header::
 
 	map  G6_1B
 	warp 0, 0, $8058
-	warp 0, 0, $8058, G6_1B_ObjectEvents2
+	warp 0, 0, $8058, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_1C
@@ -211,8 +211,8 @@ G6_00_Header::
 	end_map
 
 	map  G6_1E
-	warp 0, 0, $8018
-	warp 13, 0, $4088
+	warp 0, 0, $8018, Bank6c_EmptyObjectEvent
+	warp 13, 0, $4088, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  G6_1F
@@ -240,7 +240,7 @@ G6_00_Header::
 	end_map
 
 	map G6_25, MapAttributes_001_412c
-	warp 0, 0, $8038
+	warp 0, 0, $8038, Bank6c_EmptyObjectEvent
 	end_map
 
 	map BaalCapital_26, MapAttributes_001_4154
@@ -261,19 +261,19 @@ G6_00_Header::
 	end_map
 
 	map  G6_2A
-	warp 0, 0, $20b0
+	warp 0, 0, $20b0, Bank6c_EmptyObjectEvent
 	end_map
 
 	map  BaalCapitalProfessor_2b
 	warp 0, 0, $8058
-	warp 0, 0, $4058, BaalCapitalProfessor_2b_ObjectEvents2
+	warp 0, 0, $4058, Bank6c_EmptyObjectEvent
 	warp 0, 0, $8058, BaalCapitalProfessor_2b_ObjectEvents3
-	warp 0, 0, $8058, BaalCapitalProfessor_2b_ObjectEvents2
+	warp 0, 0, $8058, Bank6c_EmptyObjectEvent
 	warp 0, 0, $5058, BaalCapitalProfessor_2b_ObjectEvents4
 	end_map
 
 	map  G6_2C
-	warp 0, 0, $b0b0
+	warp 0, 0, $b0b0, Bank6c_EmptyObjectEvent
 	end_map
 
 G6_01_MapEvents:
@@ -518,7 +518,7 @@ G7_00_Header::
 	end_map
 
 	map  G7_0A
-	warp 0, 5, $20c0
+	warp 0, 5, $20c0, Bank6e_EmptyObjectEvent
 	end_map
 
 G7_01_MapEvents:

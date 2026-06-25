@@ -173,20 +173,7 @@ Script_066_41f1::
 Script_066_41f2::
 	end
 
-G5_01_ObjectEvents:
-PermafrostGarden_ObjectEvents:
-G5_08_ObjectEvents:
-G5_09_ObjectEvents:
-G5_0A_ObjectEvents:
-G5_0C_ObjectEvents:
-G5_0E_ObjectEvents:
-StardreamHospital_15_ObjectEvents3:
-G5_17_ObjectEvents:
-G5_19_ObjectEvents:
-PresaleHouse_1a_ObjectEvents:
-G5_1C_ObjectEvents:
-G5_23_ObjectEvents:
-G5_27_ObjectEvents:
+Bank66_EmptyObjectEvent::
 	objects_end
 
 PresaleHouseOutside_ObjectEvents:

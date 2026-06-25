@@ -7,11 +7,7 @@ Script_04e_4005:
 	setmap MAP_BANGLIN_CO_2, $00
 	end
 
-BanglinCo1f_ObjectEvents5:
-BanglinCo2f_ObjectEvents:
-BanglinCo3f_ObjectEvents:
-BanglinCo4f_ObjectEvents:
-BanglinCo5f_ObjectEvents:
+Bank4e_EmptyObjectEvent::
 	objects_end
 Script_04e_400a::
 	end

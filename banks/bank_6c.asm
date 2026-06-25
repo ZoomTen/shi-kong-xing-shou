@@ -672,27 +672,7 @@ Script_06c_4705:
 Script_06c_4706:
 	end
 
-G6_01_ObjectEvents:
-KingkongMountain_ObjectEvents2:
-G6_03_ObjectEvents:
-G6_04_ObjectEvents:
-G6_05_ObjectEvents:
-G6_06_ObjectEvents:
-G6_0E_ObjectEvents:
-G6_0F_ObjectEvents:
-G6_10_ObjectEvents:
-G6_11_ObjectEvents2:
-G6_12_ObjectEvents2:
-G6_14_ObjectEvents2:
-G6_15_ObjectEvents2:
-G6_16_ObjectEvents2:
-G6_17_ObjectEvents2:
-G6_1B_ObjectEvents2:
-G6_1E_ObjectEvents:
-G6_25_ObjectEvents:
-G6_2A_ObjectEvents:
-BaalCapitalProfessor_2b_ObjectEvents2:
-G6_2C_ObjectEvents:
+Bank6c_EmptyObjectEvent::
 	objects_end
 Script_06c_4708::
 	checkbit wEventFlags + 18, $06, Script_06c_4712

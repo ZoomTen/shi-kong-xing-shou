@@ -85,11 +85,7 @@ Script_058_40e4::
 Script_058_40e9::
 	end
 
-G4_17_ObjectEvents:
-G4_1E_ObjectEvents:
-G4_1F_ObjectEvents:
-LifeValleyRescue_ObjectEvents3:
-G4_50_ObjectEvents:
+Bank58_EmptyObjectEvent::
 	objects_end
 
 Script_058_40eb::

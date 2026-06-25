@@ -42,12 +42,12 @@ Group05_Maps::
 
 G5_00_Header::
 	map  G5_01
-	warp 13, 10, $9058
-	warp 0, 0, $3038
+	warp 13, 10, $9058, Bank66_EmptyObjectEvent
+	warp 0, 0, $3038, Bank66_EmptyObjectEvent
 	end_map
 
 	map  PermafrostGarden
-	warp 5, 5, $6058
+	warp 5, 5, $6058, Bank66_EmptyObjectEvent
 	warp 6, 8, $b0b0, PermafrostGarden_ObjectEvents2
 	warp 5, 5, $6058, PermafrostGarden_ObjectEvents3
 	end_map
@@ -110,19 +110,19 @@ G5_00_Header::
 	end_map
 
 	map  G5_08
-	warp 0, 5, $9038
-	warp 7, 5, $4078
+	warp 0, 5, $9038, Bank66_EmptyObjectEvent
+	warp 7, 5, $4078, Bank66_EmptyObjectEvent
 	end_map
 
 	map  G5_09
-	warp 1, 7, $9058
-	warp 1, 0, $3088
-	warp 0, 0, $3038
+	warp 1, 7, $9058, Bank66_EmptyObjectEvent
+	warp 1, 0, $3088, Bank66_EmptyObjectEvent
+	warp 0, 0, $3038, Bank66_EmptyObjectEvent
 	end_map
 
 	map  G5_0A
-	warp 0, 7, $9028
-	warp 3, 3, $5048
+	warp 0, 7, $9028, Bank66_EmptyObjectEvent
+	warp 3, 3, $5048, Bank66_EmptyObjectEvent
 	end_map
 
 	map  StardreamMachineRoom_0b
@@ -131,8 +131,8 @@ G5_00_Header::
 	end_map
 
 	map  G5_0C
-	warp 7, 5, $9088
-	warp 0, 0, $2028
+	warp 7, 5, $9088, Bank66_EmptyObjectEvent
+	warp 0, 0, $2028, Bank66_EmptyObjectEvent
 	end_map
 
 	map  StardreamMachineRoom_0d
@@ -143,8 +143,8 @@ G5_00_Header::
 	end_map
 
 	map G5_0E, BaalCapitalProfessor_2b_MapAttributes
-	warp 0, 0, $9058
-	warp 0, 0, $4058
+	warp 0, 0, $9058, Bank66_EmptyObjectEvent
+	warp 0, 0, $4058, Bank66_EmptyObjectEvent
 	warp 0, 0, $5068, G5_0E_ObjectEvents2
 	end_map
 
@@ -179,7 +179,7 @@ G5_00_Header::
 	map  StardreamHospital_15
 	warp 0, 0, $8078
 	warp 0, 0, $5068, StardreamHospital_15_ObjectEvents2
-	warp 0, 0, $8078, StardreamHospital_15_ObjectEvents3
+	warp 0, 0, $8078, Bank66_EmptyObjectEvent
 	end_map
 
 	map  StardreamAirship_16
@@ -188,8 +188,8 @@ G5_00_Header::
 	end_map
 
 	map  G5_17
-	warp 13, 0, $4078
-	warp 0, 0, $5028
+	warp 13, 0, $4078, Bank66_EmptyObjectEvent
+	warp 0, 0, $5028, Bank66_EmptyObjectEvent
 	end_map
 
 	map  StardreamAirship_18
@@ -197,12 +197,12 @@ G5_00_Header::
 	end_map
 
 	map  G5_19
-	warp 0, 1, $9048
-	warp 0, 0, $7058
+	warp 0, 1, $9048, Bank66_EmptyObjectEvent
+	warp 0, 0, $7058, Bank66_EmptyObjectEvent
 	end_map
 
 	map  PresaleHouse_1a
-	warp 0, 0, $9058
+	warp 0, 0, $9058, Bank66_EmptyObjectEvent
 	warp 0, 0, $8058, PresaleHouse_1a_ObjectEvents2
 	warp 0, 0, $b0b0, PresaleHouse_1a_ObjectEvents2
 	end_map
@@ -214,8 +214,8 @@ G5_00_Header::
 	end_map
 
 	map  G5_1C
-	warp 1, 0, $3088
-	warp 1, 7, $7078
+	warp 1, 0, $3088, Bank66_EmptyObjectEvent
+	warp 1, 7, $7078, Bank66_EmptyObjectEvent
 	end_map
 
 	map CardillaHouse, BallotsHouse1_MapAttributes
@@ -247,8 +247,8 @@ G5_00_Header::
 	end_map
 
 	map G5_23, BellSchoolOutside1_MapAttributes
-	warp 0, 5, $9048
-	warp 0, 0, $6058
+	warp 0, 5, $9048, Bank66_EmptyObjectEvent
+	warp 0, 0, $6058, Bank66_EmptyObjectEvent
 	end_map
 
 	map StardreamSchool_24, BellSchool1_MapAttributes
@@ -266,7 +266,7 @@ G5_00_Header::
 	end_map
 
 	map  G5_27
-	warp 0, 0, $2068
+	warp 0, 0, $2068, Bank66_EmptyObjectEvent
 	warp 0, 0, $2068, G5_27_ObjectEvents2
 	warp 1, 0, $6048, G5_27_ObjectEvents3
 	warp 1, 0, $6048, G5_27_ObjectEvents4

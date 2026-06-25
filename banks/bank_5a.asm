@@ -59,13 +59,7 @@ INCLUDE "data/text/script_sacredtree_shop_5d.asm"
 Script_05a_40bc:
 	end
 
-G4_53_ObjectEvents2:
-G4_5A_ObjectEvents:
-G4_5E_ObjectEvents:
-G4_5F_ObjectEvents:
-G4_60_ObjectEvents:
-G4_61_ObjectEvents:
-G4_62_ObjectEvents:
+Bank5a_EmptyObjectEvent::
 	objects_end
 
 Script_05a_40be:

@@ -58,18 +58,18 @@ Group00_Maps::
 	end_map
 
 	map  BellSchoolOutside1
-	warp 0, 5, $9058    ; 0
-	warp 0, 0, $6058    ; 1
+	warp 0, 5, $9058, Bank08_EmptyObjectEvent
+	warp 0, 0, $6058, Bank08_EmptyObjectEvent
 	end_map
 
 	map  BellObservatoryOutside1
-	warp 0, 1, $8018
-	warp 5, 0, $7058
+	warp 0, 1, $8018, Bank08_EmptyObjectEvent
+	warp 5, 0, $7058, Bank08_EmptyObjectEvent
 	end_map
 
 	map  BallotsHouse1
-	warp 0, 0, $8038
-	warp 1, 0, $4078
+	warp 0, 0, $8038, Bank08_EmptyObjectEvent
+	warp 1, 0, $4078, Bank08_EmptyObjectEvent
 	warp 0, 0, $4038, BallotsHouse1_ObjectEvents2, BallotsHouse1_MapEvents2
 	warp 0, 0, $8038, BallotsHouse1_ObjectEvents3
 	warp 0, 0, $8038, BallotsHouse1_ObjectEvents4
@@ -98,7 +98,7 @@ Group00_Maps::
 	end_map
 
 	map  BellObservatory1
-	warp 1, 1, $8068
+	warp 1, 1, $8068, Bank08_EmptyObjectEvent
 	warp 0, 1, $b088, BellObservatory1_ObjectEvents2
 	end_map
 
@@ -108,11 +108,11 @@ Group00_Maps::
 
 	map BellSchoolNorthClassroom1, BellSchoolClassroom_MapAttributes
 	warp 1, 0, $4078
-	warp 0, 1, $5078, BellObservatory1_ObjectEvents, BellSchoolNorthClassroom1_MapEvents2
+	warp 0, 1, $5078, Bank08_EmptyObjectEvent, BellSchoolNorthClassroom1_MapEvents2
 	end_map
 
 	map  BlueMoon
-	warp 0, 5, $20b0, BellObservatory1_ObjectEvents
+	warp 0, 5, $20b0, Bank08_EmptyObjectEvent
 	end_map
 
 
@@ -268,18 +268,18 @@ Group01_Maps::
 	end_map
 
 	map BellSchoolOutside2, BellSchoolOutside1_MapAttributes
-	warp 0, 5, $9058
-	warp 0, 0, $6058
+	warp 0, 5, $9058, Bank0e_EmptyObjectEvent
+	warp 0, 0, $6058, Bank0e_EmptyObjectEvent
 	end_map
 
 	map BellObservatoryOutside2, BellObservatoryOutside1_MapAttributes
-	warp 0, 1, $8018, BellSchoolOutside2_ObjectEvents, BellObservatoryOutside2_MapEvents
-	warp 5, 0, $7058, BellSchoolOutside2_ObjectEvents, BellObservatoryOutside2_MapEvents
+	warp 0, 1, $8018, Bank0e_EmptyObjectEvent, BellObservatoryOutside2_MapEvents
+	warp 5, 0, $7058, Bank0e_EmptyObjectEvent, BellObservatoryOutside2_MapEvents
 	end_map
 
 	map BallotsHouse2, BallotsHouse1_MapAttributes
-	warp 0, 0, $8038
-	warp 0, 0, $5078, BallotsHouse2_ObjectEvents, BallotsHouse2_MapEvents2
+	warp 0, 0, $8038, Bank0e_EmptyObjectEvent
+	warp 0, 0, $5078, Bank0e_EmptyObjectEvent, BallotsHouse2_MapEvents2
 	end_map
 
 	map HayatosHouse2, HayatosHouse1_MapAttributes
@@ -299,21 +299,21 @@ Group01_Maps::
 	end_map
 
 	map BellSchool2, BellSchool1_MapAttributes
-	warp 0, 5, $8068
-	warp 0, 5, $6028
-	warp 0, 0, $7028
+	warp 0, 5, $8068, Bank0e_EmptyObjectEvent
+	warp 0, 5, $6028, Bank0e_EmptyObjectEvent
+	warp 0, 0, $7028, Bank0e_EmptyObjectEvent
 	end_map
 
 	map BellObservatory2, BellObservatory1_MapAttributes
-	warp 1, 1, $8068
+	warp 1, 1, $8068, Bank0e_EmptyObjectEvent
 	end_map
 
 	map BellSchoolSouthClassroom2, BellSchoolClassroom_MapAttributes
-	warp 1, 0, $4078
+	warp 1, 0, $4078, Bank0e_EmptyObjectEvent
 	end_map
 
 	map BellSchoolNorthClassroom2, BellSchoolClassroom_MapAttributes
-	warp 1, 0, $4078, BellSchoolOutside2_ObjectEvents
+	warp 1, 0, $4078, Bank0e_EmptyObjectEvent
 	end_map
 
 	map TechCity
@@ -339,7 +339,7 @@ Group01_Maps::
 	end_map
 
 	map Map_007_459d, MapAttributes_001_4118
-	warp  0, 0, $8058, ObjectEvents_00f_4000, MapEvents_007_4bbf
+	warp  0, 0, $8058, Bank0f_EmptyObjectEvent, MapEvents_007_4bbf
 	end_map
 
 	map Map_007_45af, MapAttributes_001_412c
@@ -376,7 +376,7 @@ Group01_Maps::
 	end_map
 
 	map Map_007_4687, MapAttributes_001_41a4
-	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4c63
+	warp  0, 0, $8058, Bank0e_EmptyObjectEvent, MapEvents_007_4c63
 	end_map
 
 	map Map_007_4699, MapAttributes_001_41b8
@@ -392,8 +392,8 @@ Group01_Maps::
 	end_map
 
 	map Map_007_46cf, MapAttributes_001_41f4
-	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4c97
-	warp  1, 0, $4088, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4c97
+	warp  0, 0, $8058, Bank0e_EmptyObjectEvent, MapEvents_007_4c97
+	warp  1, 0, $4088, Bank0e_EmptyObjectEvent, MapEvents_007_4c97
 	end_map
 
 	map CrystalHealingCenter
@@ -435,30 +435,30 @@ Group01_Maps::
 	end_map
 
 	map CrystalMinesP1, MapAttributes_017_4000
-	warp 0, 3, $9038, BellSchoolNorthClassroom_ObjectEvents
-	warp 0, 0, $5048, BellSchoolNorthClassroom_ObjectEvents
-	warp 5, 0, $3088, BellSchoolNorthClassroom_ObjectEvents
-	warp 5, 3, $7088, BellSchoolNorthClassroom_ObjectEvents
+	warp 0, 3, $9038, Bank0e_EmptyObjectEvent
+	warp 0, 0, $5048, Bank0e_EmptyObjectEvent
+	warp 5, 0, $3088, Bank0e_EmptyObjectEvent
+	warp 5, 3, $7088, Bank0e_EmptyObjectEvent
 	end_map
 
 	map CrystalMinesP2, MapAttributes_017_4014
-	warp 0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents
+	warp 0, 0, $9058, Bank0e_EmptyObjectEvent
 	end_map
 
 	map CrystalMinesP3, MapAttributes_017_4028
-	warp 5, 3, $5038, BellSchoolNorthClassroom_ObjectEvents
-	warp 0, 0, $3018, BellSchoolNorthClassroom_ObjectEvents
-	warp 0, 3, $7018, BellSchoolNorthClassroom_ObjectEvents
-	warp 4, 0, $2038, BellSchoolNorthClassroom_ObjectEvents
-	warp 5, 0, $2078, BellSchoolNorthClassroom_ObjectEvents
+	warp 5, 3, $5038, Bank0e_EmptyObjectEvent
+	warp 0, 0, $3018, Bank0e_EmptyObjectEvent
+	warp 0, 3, $7018, Bank0e_EmptyObjectEvent
+	warp 4, 0, $2038, Bank0e_EmptyObjectEvent
+	warp 5, 0, $2078, Bank0e_EmptyObjectEvent
 	end_map
 
 	map CrystalMinesP4, MapAttributes_017_403c
-	warp 0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents
+	warp 0, 0, $9058, Bank0e_EmptyObjectEvent
 	end_map
 
 	map CrystalMinesP5, MapAttributes_017_4050
-	warp 5, 5, $9058, BellSchoolNorthClassroom_ObjectEvents
+	warp 5, 5, $9058, Bank0e_EmptyObjectEvent
 	warp 7, 5, $9078, ObjectEvents_00e_4a75
 	end_map
 
@@ -468,18 +468,18 @@ Group01_Maps::
 	end_map
 
 	map R02, MapAttributes_017_475f
-	warp 5, 3, $9068, ObjectEvents_00f_4000
-	warp 0, 3, $9058, ObjectEvents_00f_4000
-	warp 5, 0, $2068, ObjectEvents_00f_4000
-	warp 0, 0, $4028, ObjectEvents_00f_4000
+	warp 5, 3, $9068, Bank0f_EmptyObjectEvent
+	warp 0, 3, $9058, Bank0f_EmptyObjectEvent
+	warp 5, 0, $2068, Bank0f_EmptyObjectEvent
+	warp 0, 0, $4028, Bank0f_EmptyObjectEvent
 	end_map
 
 	map BellObservatoryDestroyed, MapAttributes_017_4a09
-	warp 0, 1, $8018, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4e21
+	warp 0, 1, $8018, Bank0e_EmptyObjectEvent, MapEvents_007_4e21
 	end_map
 
 	map BlueMoon2, BlueMoon_MapAttributes
-	warp 0, 5, $20b0, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4e2e
+	warp 0, 5, $20b0, Bank0e_EmptyObjectEvent, MapEvents_007_4e2e
 	end_map
 
 	map TechCityBlackout, MapAttributes_018_4000
@@ -509,7 +509,7 @@ Group01_Maps::
 	end_map
 
 	map Map_007_49d5, MapAttributes_018_403c
-	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4eab
+	warp  0, 0, $8058, Bank0e_EmptyObjectEvent, MapEvents_007_4eab
 	end_map
 
 	map Map_007_49e7, MapAttributes_018_4050

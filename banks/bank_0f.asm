@@ -1,4 +1,4 @@
-ObjectEvents_00f_4000:
+Bank0f_EmptyObjectEvent::
 	objects_end
 
 Script_00f_4001:

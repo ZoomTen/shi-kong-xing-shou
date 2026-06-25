@@ -437,16 +437,7 @@ Script_04f_4384:: ; farjump2 target (bank_12)
 	warp3 $15, $01, $03
 	end
 
-GreenForestP12_ObjectEvents:
-GreenForestP21_ObjectEvents:
-GreenForestP31_ObjectEvents:
-GreenForestP22_ObjectEvents:
-GreenForestP32_ObjectEvents:
-AirportOutside_ObjectEvents:
-G3_15_ObjectEvents:
-G3_16_ObjectEvents:
-G3_18_ObjectEvents:
-G3_1F_ObjectEvents:
+Bank4f_EmptyObjectEvent::
 	objects_end
 
 BanglinCo1f_ObjectEvents:

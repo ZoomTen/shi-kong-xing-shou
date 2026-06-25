@@ -277,10 +277,7 @@ Script_008_4295:
 	move MovementData_OneUp
 	end
 
-BallotsHouse1_ObjectEvents:
-BellSchoolOutside1_ObjectEvents:
-BellObservatory1_ObjectEvents:
-BellObservatoryOutside1_ObjectEvents:
+Bank08_EmptyObjectEvent::
 	objects_end
 
 BellVillage1_ObjectEvents:

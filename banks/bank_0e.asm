@@ -165,12 +165,7 @@ Script_00e_4130:
 	setbit wEventFlags + 2, $02
 	end
 
-BellSchoolSouthClassroom2_ObjectEvents::
-BellSchoolNorthClassroom_ObjectEvents::
-BellObservatory2_ObjectEvents::
-BellSchool2_ObjectEvents::
-BallotsHouse2_ObjectEvents::
-BellSchoolOutside2_ObjectEvents::
+Bank0e_EmptyObjectEvent::
 	objects_end
 
 BellVillage2_ObjectEvents:

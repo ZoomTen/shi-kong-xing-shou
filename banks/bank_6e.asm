@@ -1,5 +1,5 @@
 	end ; trailing script terminator
-G7_0A_ObjectEvents:
+Bank6e_EmptyObjectEvent::
 	objects_end
 G7_09_ObjectEvents:
 	object_event $27,  5,  4, 0, $00, $00, $00, $00, $0000

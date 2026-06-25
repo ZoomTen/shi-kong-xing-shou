@@ -66,33 +66,33 @@ Group02_Maps::
 	end_map
 
 	map  CoffeeForestPart1
-	warp 10, 7, $9068
-	warp 10, 0, $2068
+	warp 10, 7, $9068, Bank12_EmptyObjectEvent
+	warp 10, 0, $2068, Bank12_EmptyObjectEvent
 	end_map
 
 	map  CoffeeForestPart2
-	warp 1, 10, $9048
-	warp 5, 0, $2048
+	warp 1, 10, $9048, Bank12_EmptyObjectEvent
+	warp 5, 0, $2048, Bank12_EmptyObjectEvent
 	end_map
 
 	map  CoffeeForestPart3
 	warp 0, 3, $9058
-	warp 1, 0, $6048, CoffeeForestPart3_ObjectEvents2
+	warp 1, 0, $6048, Bank12_EmptyObjectEvent
 	end_map
 
 	map  SkyRockPart1
-	warp 10, 10, $9068
-	warp 6, 0, $2048
+	warp 10, 10, $9068, Bank12_EmptyObjectEvent
+	warp 6, 0, $2048, Bank12_EmptyObjectEvent
 	end_map
 
 	map  SkyRockPart2
-	warp 0, 0, $9078
+	warp 0, 0, $9078, Bank12_EmptyObjectEvent
 	warp 0, 0, $9078, SkyRockPart2_ObjectEvents2
 	end_map
 
 	map  ClockTowerOutside
-	warp 1, 7, $5088
-	warp 0, 2, $8058
+	warp 1, 7, $5088, Bank12_EmptyObjectEvent
+	warp 0, 2, $8058, Bank12_EmptyObjectEvent
 	end_map
 
 	map  ClockTower1f
@@ -102,25 +102,25 @@ Group02_Maps::
 	end_map
 
 	map  ClockTower2f
-	warp 0, 0, $7038
-	warp 7, 6, $4048
-	warp 2, 5, $6038
+	warp 0, 0, $7038, Bank12_EmptyObjectEvent
+	warp 7, 6, $4048, Bank12_EmptyObjectEvent
+	warp 2, 5, $6038, Bank12_EmptyObjectEvent
 	end_map
 
 	map  ClockTower3f
-	warp 5, 4, $5058
-	warp 0, 3, $6058
-	warp 5, 0, $3078
+	warp 5, 4, $5058, Bank12_EmptyObjectEvent
+	warp 0, 3, $6058, Bank12_EmptyObjectEvent
+	warp 5, 0, $3078, Bank12_EmptyObjectEvent
 	end_map
 
 	map  ClockTower4f
-	warp 5, 0, $3048
-	warp 5, 5, $5048
+	warp 5, 0, $3048, Bank12_EmptyObjectEvent
+	warp 5, 5, $5048, Bank12_EmptyObjectEvent
 	end_map
 
 	map  ClockTower5f
 	warp 1, 0, $9078
-	warp 1, 0, $9078, ClockTower5f_ObjectEvents2
+	warp 1, 0, $9078, Bank12_EmptyObjectEvent
 	end_map
 
 	map  GallEnterprise
@@ -135,19 +135,19 @@ Group02_Maps::
 	end_map
 
 	map  G2_0F
-	warp 0, 0, $3018
-	warp 0, 0, $9018
+	warp 0, 0, $3018, Bank12_EmptyObjectEvent
+	warp 0, 0, $9018, Bank12_EmptyObjectEvent
 	end_map
 
 	map  G2_10
-	warp 0, 0, $9018
-	warp 0, 0, $3018
+	warp 0, 0, $9018, Bank12_EmptyObjectEvent
+	warp 0, 0, $3018, Bank12_EmptyObjectEvent
 	end_map
 
 	map  G2_11
-	warp 0, 0, $3028
+	warp 0, 0, $3028, Bank12_EmptyObjectEvent
 	warp 1, 0, $7058, G2_11_ObjectEvents2
-	warp 1, 0, $7068
+	warp 1, 0, $7068, Bank12_EmptyObjectEvent
 	end_map
 
 	map  ShandaFarm_12
@@ -170,18 +170,18 @@ Group02_Maps::
 	warp 0, 0, $8048
 	warp 1, 0, $4078, MarkNinaIntro_ObjectEvents2
 	warp 1, 0, $6068, MarkNinaIntro_ObjectEvents3
-	warp 0, 0, $8048, MarkNinaIntro_ObjectEvents4
+	warp 0, 0, $8048, Bank12_EmptyObjectEvent
 	end_map
 
 	map  R03
-	warp 1, 0, $2068
-	warp 1, 7, $9078
+	warp 1, 0, $2068, Bank12_EmptyObjectEvent
+	warp 1, 7, $9078, Bank12_EmptyObjectEvent
 	end_map
 
 	map  R04
-	warp 7, 5, $7088
-	warp 7, 0, $2068
-	warp 0, 0, $2028
+	warp 7, 5, $7088, Bank12_EmptyObjectEvent
+	warp 7, 0, $2068, Bank12_EmptyObjectEvent
+	warp 0, 0, $2028, Bank12_EmptyObjectEvent
 	end_map
 
 	map G2_1A, EastFishmarket_32_MapAttributes
@@ -205,11 +205,11 @@ Group02_Maps::
 	end_map
 
 	map G2_1E, MapAttributes_001_412c
-	warp 0, 0, $8038
+	warp 0, 0, $8038, Bank12_EmptyObjectEvent
 	end_map
 
 	map G2_1F, MapAttributes_001_40f0
-	warp 0, 0, $8048
+	warp 0, 0, $8048, Bank12_EmptyObjectEvent
 	end_map
 
 	map DuoluCity_20, MapAttributes_001_4104
@@ -509,19 +509,19 @@ Group03_Maps::
 	dw GreenForest_23_Header
 
 	map GreenForestP12
-	warp 10, 7, $9068
-	warp 10, 0, $2068
-	warp 8, 0, $2048
+	warp 10, 7, $9068, Bank4f_EmptyObjectEvent
+	warp 10, 0, $2068, Bank4f_EmptyObjectEvent
+	warp 8, 0, $2048, Bank4f_EmptyObjectEvent
 	end_map
 
 	map  GreenForestP21
-	warp 0, 10, $9068
-	warp 4, 0, $2068
+	warp 0, 10, $9068, Bank4f_EmptyObjectEvent
+	warp 4, 0, $2068, Bank4f_EmptyObjectEvent
 	end_map
 
 	map  GreenForestP31
-	warp 0, 3, $9068
-	warp 0, 0, $4058
+	warp 0, 3, $9068, Bank4f_EmptyObjectEvent
+	warp 0, 0, $4058, Bank4f_EmptyObjectEvent
 	end_map
 
 	map  GreenForestP13
@@ -531,15 +531,15 @@ Group03_Maps::
 	end_map
 
 	map  GreenForestP22
-	warp 0, 10, $9068
-	warp 4, 0, $2068
+	warp 0, 10, $9068, Bank4f_EmptyObjectEvent
+	warp 4, 0, $2068, Bank4f_EmptyObjectEvent
 	end_map
 
 	map  GreenForestP32
-	warp 0, 3, $9068
-	warp 0, 0, $4048
+	warp 0, 3, $9068, Bank4f_EmptyObjectEvent
+	warp 0, 0, $4048, Bank4f_EmptyObjectEvent
 	warp 0, 3, $9068, GreenForestP32_ObjectEvents2, GreenForestP32_MapEvents2
-	warp 0, 3, $9068, GreenForestP32_ObjectEvents, GreenForestP32_MapEvents3
+	warp 0, 3, $9068, Bank4f_EmptyObjectEvent, GreenForestP32_MapEvents3
 	end_map
 
 	map  SkyCity
@@ -567,8 +567,8 @@ Group03_Maps::
 	warp 0, 0, $3038, BanglinCo1f_ObjectEvents2
 	warp 1, 0, $6078, BanglinCo1f_ObjectEvents3
 	warp 0, 0, $6058, BanglinCo1f_ObjectEvents4, BanglinCo1f_MapEvents2
-	warp 0, 0, $9058, BanglinCo1f_ObjectEvents5, BanglinCo1f_MapEvents3
-	warp 0, 0, $3028, BanglinCo1f_ObjectEvents5, BanglinCo1f_MapEvents4
+	warp 0, 0, $9058, Bank4e_EmptyObjectEvent, BanglinCo1f_MapEvents3
+	warp 0, 0, $3028, Bank4e_EmptyObjectEvent, BanglinCo1f_MapEvents4
 	warp 0, 0, $6058, BanglinCo1f_ObjectEvents6, BanglinCo1f_MapEvents5
 	end_map
 
@@ -583,32 +583,32 @@ Group03_Maps::
 	end_map
 
 	map  BanglinCo2f
-	warp 0, 0, $3018
-	warp 7, 0, $7088
-	warp 7, 7, $8078
+	warp 0, 0, $3018, Bank4e_EmptyObjectEvent
+	warp 7, 0, $7088, Bank4e_EmptyObjectEvent
+	warp 7, 7, $8078, Bank4e_EmptyObjectEvent
 	end_map
 
 	map  BanglinCo3f
-	warp 7, 0, $7078
-	warp 7, 7, $8078
-	warp 4, 2, $5058
-	warp 0, 2, $6058
-	warp 0, 0, $4058
+	warp 7, 0, $7078, Bank4e_EmptyObjectEvent
+	warp 7, 7, $8078, Bank4e_EmptyObjectEvent
+	warp 4, 2, $5058, Bank4e_EmptyObjectEvent
+	warp 0, 2, $6058, Bank4e_EmptyObjectEvent
+	warp 0, 0, $4058, Bank4e_EmptyObjectEvent
 	end_map
 
 	map  BanglinCo4f
-	warp 5, 1, $6038
-	warp 0, 2, $5058
-	warp 0, 0, $4058
-	warp 0, 7, $5038
-	warp 7, 6, $5078
+	warp 5, 1, $6038, Bank4e_EmptyObjectEvent
+	warp 0, 2, $5058, Bank4e_EmptyObjectEvent
+	warp 0, 0, $4058, Bank4e_EmptyObjectEvent
+	warp 0, 7, $5038, Bank4e_EmptyObjectEvent
+	warp 7, 6, $5078, Bank4e_EmptyObjectEvent
 	end_map
 
 	map  BanglinCo5f
-	warp 0, 6, $7028
-	warp 7, 6, $5078
+	warp 0, 6, $7028, Bank4e_EmptyObjectEvent
+	warp 7, 6, $5078, Bank4e_EmptyObjectEvent
 	warp 3, 0, $a068, BanglinCo5f_ObjectEvents2
-	warp 4, 5, $5048
+	warp 4, 5, $5048, Bank4e_EmptyObjectEvent
 	end_map
 
 	map  FashionStore
@@ -617,8 +617,8 @@ Group03_Maps::
 	end_map
 
 	map  AirportOutside
-	warp 0, 0, $9058
-	warp 0, 0, $5058
+	warp 0, 0, $9058, Bank4f_EmptyObjectEvent
+	warp 0, 0, $5058, Bank4f_EmptyObjectEvent
 	end_map
 
 	map  Airport
@@ -641,13 +641,13 @@ Group03_Maps::
 	end_map
 
 	map  G3_15
-	warp 0, 0, $2068
-	warp 1, 5, $7078
+	warp 0, 0, $2068, Bank4f_EmptyObjectEvent
+	warp 1, 5, $7078, Bank4f_EmptyObjectEvent
 	end_map
 
 	map  G3_16
-	warp 7, 0, $7088
-	warp 0, 0, $2038
+	warp 7, 0, $7088, Bank4f_EmptyObjectEvent
+	warp 0, 0, $2038, Bank4f_EmptyObjectEvent
 	end_map
 
 	map G3_17, MapAttributes_001_41b8
@@ -655,7 +655,7 @@ Group03_Maps::
 	end_map
 
 	map G3_18, CarpetWomansHouse1_MapAttributes
-	warp 0, 0, $8038
+	warp 0, 0, $8038, Bank4f_EmptyObjectEvent
 	end_map
 
 	map G3_19, FangfangsHouse1_MapAttributes
@@ -683,7 +683,7 @@ Group03_Maps::
 	end_map
 
 	map  G3_1F
-	warp 0, 3, $9068
+	warp 0, 3, $9068, Bank4f_EmptyObjectEvent
 	warp 0, 0, $5058, G3_1F_ObjectEvents2
 	end_map
 

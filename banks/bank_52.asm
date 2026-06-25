@@ -105,64 +105,64 @@ Group04_Maps::
 ; G4_01
 G4_00_Header::
 	map  G4_01
-	warp 0, 7, $7038
-	warp 0, 4, $5018
-	warp 1, 0, $6078
-	warp 2, 3, $6038
-	warp 6, 3, $6048
-	warp 7, 7, $3058
+	warp 0, 7, $7038, Bank55_EmptyObjectEvent
+	warp 0, 4, $5018, Bank55_EmptyObjectEvent
+	warp 1, 0, $6078, Bank55_EmptyObjectEvent
+	warp 2, 3, $6038, Bank55_EmptyObjectEvent
+	warp 6, 3, $6048, Bank55_EmptyObjectEvent
+	warp 7, 7, $3058, Bank55_EmptyObjectEvent
 	end_map
 
 	map  G4_02
-	warp 2, 0, $6058
-	warp 2, 3, $6058
-	warp 0, 3, $7028
-	warp 0, 7, $9028
-	warp 7, 3, $5088
-	warp 6, 3, $6048
-	warp 7, 6, $5058
-	warp 7, 7, $8078
+	warp 2, 0, $6058, Bank55_EmptyObjectEvent
+	warp 2, 3, $6058, Bank55_EmptyObjectEvent
+	warp 0, 3, $7028, Bank55_EmptyObjectEvent
+	warp 0, 7, $9028, Bank55_EmptyObjectEvent
+	warp 7, 3, $5088, Bank55_EmptyObjectEvent
+	warp 6, 3, $6048, Bank55_EmptyObjectEvent
+	warp 7, 6, $5058, Bank55_EmptyObjectEvent
+	warp 7, 7, $8078, Bank55_EmptyObjectEvent
 	end_map
 
 	map  G4_03
-	warp 3, 0, $2058
-	warp 0, 5, $9028
-	warp 5, 3, $5078
-	warp 5, 5, $7078
+	warp 3, 0, $2058, Bank55_EmptyObjectEvent
+	warp 0, 5, $9028, Bank55_EmptyObjectEvent
+	warp 5, 3, $5078, Bank55_EmptyObjectEvent
+	warp 5, 5, $7078, Bank55_EmptyObjectEvent
 	end_map
 
 	map  G4_04
-	warp 0, 0, $2058
-	warp 3, 0, $2058
+	warp 0, 0, $2058, Bank55_EmptyObjectEvent
+	warp 3, 0, $2058, Bank55_EmptyObjectEvent
 	end_map
 
 	map  G4_05
-	warp 0, 0, $9058
+	warp 0, 0, $9058, Bank55_EmptyObjectEvent
 	warp 0, 0, $9068, G4_05_ObjectEvents2
 	end_map
 
 	map  G4_06
-	warp 2, 5, $9048
-	warp 4, 2, $7068
+	warp 2, 5, $9048, Bank5c_EmptyObjectEvent
+	warp 4, 2, $7068, Bank5c_EmptyObjectEvent
 	end_map
 
 	map  G4_07
-	warp 5, 3, $5048
-	warp 5, 0, $3088
+	warp 5, 3, $5048, Bank5c_EmptyObjectEvent
+	warp 5, 0, $3088, Bank5c_EmptyObjectEvent
 	end_map
 
 	map  G4_08
-	warp 5, 0, $3088
-	warp 5, 3, $5048
+	warp 5, 0, $3088, Bank5c_EmptyObjectEvent
+	warp 5, 3, $5048, Bank5c_EmptyObjectEvent
 	end_map
 
 	map  G4_09
-	warp 5, 3, $5048
-	warp 1, 2, $7068
+	warp 5, 3, $5048, Bank5c_EmptyObjectEvent
+	warp 1, 2, $7068, Bank5c_EmptyObjectEvent
 	end_map
 
 	map  EastFishmarketMermaidCutscene
-	warp 0, 0, $9068
+	warp 0, 0, $9068, Bank5c_EmptyObjectEvent
 	warp 0, 0, $9068, EastFishmarketMermaidCutscene_ObjectEvents2
 	end_map
 
@@ -183,7 +183,7 @@ G4_00_Header::
 	warp 1, 0, $2048
 	warp 1, 0, $9048
 	warp 7, 0, $6048
-	warp 1, 0, $2048, EastFishmarket_0c_ObjectEvents2
+	warp 1, 0, $2048, Bank55_EmptyObjectEvent
 	end_map
 
 	map  EastFishmarketUndersea_0d
@@ -201,14 +201,14 @@ G4_00_Header::
 	end_map
 
 	map  G4_0F
-	warp 0, 0, $9058
-	warp 0, 0, $4098
+	warp 0, 0, $9058, Bank55_EmptyObjectEvent
+	warp 0, 0, $4098, Bank55_EmptyObjectEvent
 	warp 1, 0, $5038, G4_0F_ObjectEvents2
 	end_map
 
 	map  G4_10
-	warp 0, 0, $2058
-	warp 0, 5, $5018
+	warp 0, 0, $2058, Bank5c_EmptyObjectEvent
+	warp 0, 5, $5018, Bank5c_EmptyObjectEvent
 	end_map
 
 	map  EastFishmarketUndersea_11
@@ -217,7 +217,7 @@ G4_00_Header::
 
 	map  EastFishmarketUndersea_12
 	warp 0, 0, $9058
-	warp 1, 0, $4068, EastFishmarketUndersea_12_ObjectEvents2
+	warp 1, 0, $4068, Bank55_EmptyObjectEvent
 	end_map
 
 	map  EastFishmarketUndersea_13
@@ -248,8 +248,8 @@ G4_00_Header::
 	end_map
 
 	map G4_17, G4_50_MapAttributes
-	warp 2, 0, $9068
-	warp 0, 0, $5038
+	warp 2, 0, $9068, Bank58_EmptyObjectEvent
+	warp 0, 0, $5038, Bank58_EmptyObjectEvent
 	end_map
 
 	map TravelingShip_18, TravelingShip_51_MapAttributes
@@ -263,35 +263,35 @@ G4_00_Header::
 	end_map
 
 	map  G4_1A
-	warp 0, 5, $9048
-	warp 5, 5, $9068
+	warp 0, 5, $9048, Bank59_EmptyObjectEvent
+	warp 5, 5, $9068, Bank59_EmptyObjectEvent
 	end_map
 
 	map  G4_1B
-	warp 0, 0, $2028
-	warp 5, 5, $7088
+	warp 0, 0, $2028, Bank59_EmptyObjectEvent
+	warp 5, 5, $7088, Bank59_EmptyObjectEvent
 	end_map
 
 	map  G4_1C
-	warp 0, 0, $7018
-	warp 0, 5, $9038
+	warp 0, 0, $7018, Bank59_EmptyObjectEvent
+	warp 0, 5, $9038, Bank59_EmptyObjectEvent
 	end_map
 
 	map  SacredtreeTimeTravel
 	warp 0, 0, $2068
-	warp 0, 5, $7038, SacredtreeTimeTravel_ObjectEvents2
+	warp 0, 5, $7038, Bank59_EmptyObjectEvent
 	end_map
 
 	map  G4_1E
-	warp 0, 0, $2028
-	warp 0, 1, $9058
-	warp 7, 1, $6088
+	warp 0, 0, $2028, Bank58_EmptyObjectEvent
+	warp 0, 1, $9058, Bank58_EmptyObjectEvent
+	warp 7, 1, $6088, Bank58_EmptyObjectEvent
 	warp 0, 0, $2028, G4_1E_ObjectEvents2
 	end_map
 
 	map G4_1F, G5_27_MapAttributes
-	warp 0, 0, $2068
-	warp 0, 0, $9058
+	warp 0, 0, $2068, Bank58_EmptyObjectEvent
+	warp 0, 0, $9058, Bank58_EmptyObjectEvent
 	end_map
 
 	map  G4_20
@@ -382,13 +382,13 @@ G4_00_Header::
 	end_map
 
 	map G4_2A, G4_5E_MapAttributes
-	warp 0, 0, $2068
-	warp 0, 19, $8018
+	warp 0, 0, $2068, Bank59_EmptyObjectEvent
+	warp 0, 19, $8018, Bank59_EmptyObjectEvent
 	end_map
 
 	map G4_2B, G4_5F_MapAttributes
-	warp 3, 1, $6088
-	warp 0, 0, $6048
+	warp 3, 1, $6088, Bank59_EmptyObjectEvent
+	warp 0, 0, $6048, Bank59_EmptyObjectEvent
 	end_map
 
 	map EastFishmarket_2c, CarpetWomansHouse1_MapAttributes
@@ -408,7 +408,7 @@ G4_00_Header::
 	end_map
 
 	map G4_30, HayatosHouse1_MapAttributes
-	warp 0, 0, $8078
+	warp 0, 0, $8078, Bank55_EmptyObjectEvent
 	end_map
 
 	map  EastFishmarket_31
@@ -483,19 +483,19 @@ G4_00_Header::
 	end_map
 
 	map G4_42, AirportOutside_MapAttributes
-	warp 0, 0, $9058
-	warp 0, 0, $5058
+	warp 0, 0, $9058, Bank55_EmptyObjectEvent
+	warp 0, 0, $5058, Bank55_EmptyObjectEvent
 	end_map
 
 	map G4_43, Airport_MapAttributes
-	warp 0, 0, $9048
-	warp 1, 0, $6098
+	warp 0, 0, $9048, Bank55_EmptyObjectEvent
+	warp 1, 0, $6098, Bank55_EmptyObjectEvent
 	end_map
 
 	map  G4_44
-	warp 1, 0, $2048
-	warp 1, 0, $9048
-	warp 7, 0, $6048
+	warp 1, 0, $2048, Bank5c_EmptyObjectEvent
+	warp 1, 0, $9048, Bank5c_EmptyObjectEvent
+	warp 7, 0, $6048, Bank5c_EmptyObjectEvent
 	warp 4, 0, $7048, G4_44_ObjectEvents2
 	end_map
 
@@ -530,7 +530,7 @@ G4_00_Header::
 	end_map
 
 	map G4_4A, HayatosHouse1_MapAttributes
-	warp 0, 0, $8078
+	warp 0, 0, $8078, Bank5c_EmptyObjectEvent
 	end_map
 
 	map EastFishmarketHealingCenter, EastFishmarket_31_MapAttributes
@@ -555,12 +555,12 @@ G4_00_Header::
 	map  LifeValleyRescue
 	warp 0, 7, $9048
 	warp 1, 0, $7038, LifeValleyRescue_ObjectEvents2
-	warp 1, 0, $7038, LifeValleyRescue_ObjectEvents3
+	warp 1, 0, $7038, Bank58_EmptyObjectEvent
 	end_map
 
 	map  G4_50
-	warp 2, 0, $9068
-	warp 0, 0, $5038
+	warp 2, 0, $9068, Bank58_EmptyObjectEvent
+	warp 0, 0, $5038, Bank58_EmptyObjectEvent
 	end_map
 
 	map  TravelingShip_51
@@ -574,12 +574,12 @@ G4_00_Header::
 	end_map
 
 	map  G4_53
-	warp 0, 0, $20b0
-	warp 0, 0, $20b0, G4_53_ObjectEvents2
+	warp 0, 0, $20b0, Bank59_EmptyObjectEvent
+	warp 0, 0, $20b0, Bank5a_EmptyObjectEvent
 	end_map
 
 	map  G4_54
-	warp 0, 0, $6068
+	warp 0, 0, $6068, Bank59_EmptyObjectEvent
 	end_map
 
 	map  SacredtreeVillage_55
@@ -605,7 +605,7 @@ G4_00_Header::
 	end_map
 
 	map G4_5A, MarkNinaIntro_MapAttributes
-	warp 0, 0, $8038
+	warp 0, 0, $8038, Bank5a_EmptyObjectEvent
 	end_map
 
 	map SacredtreeVillagePast, MapAttributes_001_4154
@@ -622,32 +622,32 @@ G4_00_Header::
 	end_map
 
 	map  G4_5E
-	warp 0, 0, $2068
-	warp 0, 19, $8018
+	warp 0, 0, $2068, Bank5a_EmptyObjectEvent
+	warp 0, 19, $8018, Bank5a_EmptyObjectEvent
 	end_map
 
 	map  G4_5F
-	warp 3, 1, $6088
-	warp 0, 0, $6048
+	warp 3, 1, $6088, Bank5a_EmptyObjectEvent
+	warp 0, 0, $6048, Bank5a_EmptyObjectEvent
 	end_map
 
 	map  G4_60
-	warp 0, 7, $9058
-	warp 0, 0, $8028
-	warp 7, 0, $4078
-	warp 0, 3, $6038
+	warp 0, 7, $9058, Bank5a_EmptyObjectEvent
+	warp 0, 0, $8028, Bank5a_EmptyObjectEvent
+	warp 7, 0, $4078, Bank5a_EmptyObjectEvent
+	warp 0, 3, $6038, Bank5a_EmptyObjectEvent
 	end_map
 
 	map  G4_61
-	warp 0, 0, $3028
-	warp 6, 7, $8048
+	warp 0, 0, $3028, Bank5a_EmptyObjectEvent
+	warp 6, 7, $8048, Bank5a_EmptyObjectEvent
 	end_map
 
 	map  G4_62
-	warp 0, 2, $6068
-	warp 0, 7, $9078
-	warp 5, 7, $9048
-	warp 4, 4, $5048
+	warp 0, 2, $6068, Bank5a_EmptyObjectEvent
+	warp 0, 7, $9078, Bank5a_EmptyObjectEvent
+	warp 5, 7, $9048, Bank5a_EmptyObjectEvent
+	warp 4, 4, $5048, Bank5a_EmptyObjectEvent
 	end_map
 
 	map  RadarStation
@@ -655,8 +655,8 @@ G4_00_Header::
 	end_map
 
 	map G4_64, AirportOutside_MapAttributes
-	warp 0, 0, $9058
-	warp 0, 0, $5058
+	warp 0, 0, $9058, Bank5c_EmptyObjectEvent
+	warp 0, 0, $5058, Bank5c_EmptyObjectEvent
 	end_map
 
 	map Airport_g465, Airport_MapAttributes
