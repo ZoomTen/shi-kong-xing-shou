@@ -3,35 +3,35 @@ MapAttributes_017_4000::
 		10, 8, \
 		Layout_017_4064, Blocks_017_40b5, Metatiles_017_4441, AttrMap_017_4671, \
 		Palettes_017_46d2, \
-		0, Tileset_006_40e2, \
+		0, Tileset_17, \
 		Collision_017_471a
 MapAttributes_017_4014::
 	map_attr_data \
 		6, 5, \
 		Layout_017_4171, Blocks_017_4190, Metatiles_017_4441, AttrMap_017_4671, \
 		Palettes_017_46d2, \
-		0, Tileset_006_40e2, \
+		0, Tileset_17, \
 		Collision_017_471a
 MapAttributes_017_4028::
 	map_attr_data \
 		10, 8, \
 		Layout_017_41f4, Blocks_017_4245, Metatiles_017_4441, AttrMap_017_4671, \
 		Palettes_017_46d2, \
-		0, Tileset_006_40e2, \
+		0, Tileset_17, \
 		Collision_017_471a
 MapAttributes_017_403c::
 	map_attr_data \
 		6, 5, \
 		Layout_017_434d, Blocks_017_436c, Metatiles_017_4441, AttrMap_017_4671, \
 		Palettes_017_46d2, \
-		0, Tileset_006_40e2, \
+		0, Tileset_17, \
 		Collision_017_471a
 MapAttributes_017_4050::
 	map_attr_data \
 		12, 10, \
 		Layout_017_43c8, Blocks_017_4501, Metatiles_017_4441, AttrMap_017_4671, \
 		Palettes_017_46d2, \
-		0, Tileset_006_40e2, \
+		0, Tileset_17, \
 		Collision_017_471a
 Layout_017_4064::
 	db MAPTYPE_CRYSTAL_MINES_P1
@@ -106,14 +106,14 @@ MapAttributes_017_474b::
 		8, 5, \
 		Layout_017_4773, Blocks_017_479c, Metatiles_017_4849, AttrMap_017_4961, \
 		Palettes_017_49ac, \
-		0, Tileset_006_40ea, \
+		0, Tileset_18, \
 		Collision_017_49f4
 MapAttributes_017_475f::
 	map_attr_data \
 		10, 8, \
 		Layout_017_47f8, Blocks_017_4899, Metatiles_017_4849, AttrMap_017_4961, \
 		Palettes_017_49ac, \
-		0, Tileset_006_40ea, \
+		0, Tileset_18, \
 		Collision_017_49f4
 Layout_017_4773::
 	db MAPTYPE_NONE
@@ -173,7 +173,7 @@ MapAttributes_017_4a09::
 		10, 6, \
 		Layout_017_4a1d, Blocks_017_4afa, Metatiles_017_4a5a, AttrMap_017_4baa, \
 		Palettes_017_4c3d, \
-		0, Tileset_006_4117, \
+		0, Tileset_21, \
 		Collision_017_4c85
 Layout_017_4a1d::
 	db MAPTYPE_NONE
@@ -230,7 +230,7 @@ BlueMoon_MapAttributes::
 		6, 10, \
 		Layout_017_4cc2, Blocks_017_4df7, Metatiles_017_4cff, AttrMap_017_4ebf, \
 		Palettes_017_4f17, \
-		0, Tileset_006_410f, \
+		0, Tileset_20, \
 		Collision_017_4f5f
 Layout_017_4cc2::
 	db MAPTYPE_NONE
@@ -281,36 +281,4 @@ Palettes_017_4f17::
 Collision_017_4f5f::
 	INCBIN "data/maps/collision/Collision_017_4f5f.bin"
 
-gfx_017_4f9e::
-	INCBIN "gfx/tilesets/gfx_017_4f9e.2bpp"
-
-gfx_017_511e::
-	INCBIN "gfx/tilesets/gfx_017_511e.2bpp"
-
-gfx_017_512e::
-INCBIN "gfx/tilesets/image_17_512e.2bpp"
-
-gfx_017_578e::
-INCBIN "gfx/tilesets/image_17_578e.2bpp"
-
-gfx_017_5c1e::
-INCBIN "gfx/tilesets/image_17_5c1e.2bpp"
-
-gfx_017_612e::
-	INCBIN "gfx/tilesets/gfx_017_612e.2bpp"
-
-gfx_017_66ce::
-	INCBIN "gfx/tilesets/gfx_017_66ce.2bpp"
-
-gfx_017_680e::
-INCBIN "gfx/tilesets/image_17_680e.2bpp"
-
-gfx_017_6cae::
-	INCBIN "gfx/tilesets/gfx_017_6cae.2bpp"
-gfx_017_6e2e::
-	INCBIN "gfx/tilesets/gfx_017_6e2e.2bpp"
-gfx_017_739e::
-	INCBIN "gfx/tilesets/gfx_017_739e.2bpp"
-gfx_017_783e::
-	INCBIN "gfx/tilesets/gfx_017_783e.2bpp"
 

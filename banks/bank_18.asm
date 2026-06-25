@@ -3,49 +3,49 @@ MapAttributes_018_4000::
 		18, 12, \
 		Layout_018_481a, Blocks_018_49af, Metatiles_018_48f3, AttrMap_018_4b77, \
 		Palettes_018_4c40, \
-		0, Tileset_006_4070, \
+		0, Tileset_8, \
 		Collision_018_4c88
 MapAttributes_018_4014::
 	map_attr_data \
 		6, 5, \
 		Layout_018_43c6, Blocks_018_43e5, Metatiles_018_45e0, AttrMap_018_4708, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_403b, \
+		0, Tileset_4, \
 		Collision_018_47e1
 MapAttributes_018_4028::
 	map_attr_data \
 		6, 5, \
 		Layout_018_4425, Blocks_018_4444, Metatiles_018_45e0, AttrMap_018_4708, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_403b, \
+		0, Tileset_4, \
 		Collision_018_47e1
 MapAttributes_018_403c::
 	map_attr_data \
 		6, 5, \
 		Layout_018_4488, Blocks_018_44a7, Metatiles_018_45e0, AttrMap_018_4708, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_403b, \
+		0, Tileset_4, \
 		Collision_018_47e1
 MapAttributes_018_4050::
 	map_attr_data \
 		6, 5, \
 		Layout_018_44df, Blocks_018_44fe, Metatiles_018_45e0, AttrMap_018_4708, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_403b, \
+		0, Tileset_4, \
 		Collision_018_47e1
 MapAttributes_018_4064::
 	map_attr_data \
 		6, 5, \
 		Layout_018_4542, Blocks_018_4561, Metatiles_018_45e0, AttrMap_018_4708, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_403b, \
+		0, Tileset_4, \
 		Collision_018_47e1
 MapAttributes_018_4078::
 	map_attr_data \
 		6, 5, \
 		Layout_018_45c1, Blocks_018_46c0, Metatiles_018_45e0, AttrMap_018_4708, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_403b, \
+		0, Tileset_4, \
 		Collision_018_47e1
 G3_1E_MapAttributes:
 MapAttributes_018_408c::
@@ -53,14 +53,14 @@ MapAttributes_018_408c::
 		6, 5, \
 		Layout_018_4235, Blocks_018_42c0, Metatiles_018_4254, AttrMap_018_4320, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_407f, \
+		0, Tileset_9, \
 		Collision_018_43aa
 MapAttributes_018_40a0::
 	map_attr_data \
 		6, 5, \
 		Layout_018_40b4, Blocks_018_4137, Metatiles_018_40d3, AttrMap_018_4183, \
 		Palettes_018_4bf8, \
-		0, Tileset_006_4087, \
+		0, Tileset_10, \
 		Collision_018_421c
 Layout_018_40b4::
 	db MAPTYPE_NONE

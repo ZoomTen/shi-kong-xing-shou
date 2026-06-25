@@ -933,7 +933,7 @@ LoadMapPalettes1::
 
 LoadTilesetHeader::
 ; always from bank 06
-	ld a, BANK(Tilesets)
+	ld a, BANK("Tilesets")
 	rst Bankswitch
 
 	ld a, [wMapTileset2Pointer]
@@ -970,7 +970,7 @@ LoadTilesetHeader::
 	pop hl
 	inc hl
 ; bankswitch back
-	ld a, BANK(Tilesets)
+	ld a, BANK("Tilesets")
 	rst Bankswitch
 	jp .load_tileset ; jr
 

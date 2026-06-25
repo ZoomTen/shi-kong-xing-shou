@@ -3,7 +3,7 @@ DuoluCity2_MapAttributes:
 		18, 12, \
 		Layout_011_4014, Blocks_011_42a5, Metatiles_011_40ed, AttrMap_011_4561, \
 		Palettes_011_4602, \
-		0, Tileset_006_412d, \
+		0, Tileset_22, \
 		Collision_011_464a
 
 Layout_011_4014:
@@ -65,7 +65,7 @@ ShandaFarm_MapAttributes:
 		12, 15, \
 		Layout_011_46cd, Blocks_011_484a, Metatiles_011_4782, AttrMap_011_4a66, \
 		Palettes_011_4ae2, \
-		0, Tileset_006_414a, \
+		0, Tileset_23, \
 		Collision_011_4b2a
 
 Layout_011_46cd:
@@ -127,7 +127,7 @@ CoffeeForestPart1_MapAttributes:
 		15, 12, \
 		Layout_011_4b99, Blocks_011_4c4e, Metatiles_011_50f4, AttrMap_011_5290, \
 		Palettes_011_532f, \
-		0, Tileset_006_4159, \
+		0, Tileset_24, \
 		Collision_011_5377
 
 CoffeeForestPart2_MapAttributes:
@@ -135,7 +135,7 @@ CoffeeForestPart2_MapAttributes:
 		12, 15, \
 		Layout_011_4e42, Blocks_011_4ef7, Metatiles_011_50f4, AttrMap_011_5290, \
 		Palettes_011_532f, \
-		0, Tileset_006_4159, \
+		0, Tileset_24, \
 		Collision_011_5377
 
 CoffeeForestPart3_MapAttributes:
@@ -143,7 +143,7 @@ CoffeeForestPart3_MapAttributes:
 		6, 8, \
 		Layout_011_50c3, Blocks_011_51d0, Metatiles_011_50f4, AttrMap_011_5290, \
 		Palettes_011_532f, \
-		0, Tileset_006_4159, \
+		0, Tileset_24, \
 		Collision_011_5377
 
 Layout_011_4b99:
@@ -219,7 +219,7 @@ SkyRockPart1_MapAttributes:
 		15, 15, \
 		Layout_011_53d7, Blocks_011_54b9, Metatiles_011_5790, AttrMap_011_589c, \
 		Palettes_011_592c, \
-		0, Tileset_006_416f, \
+		0, Tileset_25, \
 		Collision_011_5974
 
 SkyRockPart2_MapAttributes:
@@ -227,7 +227,7 @@ SkyRockPart2_MapAttributes:
 		6, 5, \
 		Layout_011_5771, Blocks_011_5844, Metatiles_011_5790, AttrMap_011_589c, \
 		Palettes_011_592c, \
-		0, Tileset_006_416f, \
+		0, Tileset_25, \
 		Collision_011_5974
 
 Layout_011_53d7:
@@ -296,7 +296,7 @@ ClockTowerOutside_MapAttributes:
 		6, 12, \
 		Layout_011_59b6, Blocks_011_5b4f, Metatiles_011_59ff, AttrMap_011_5c4b, \
 		Palettes_011_5ce4, \
-		0, Tileset_006_417e, \
+		0, Tileset_26, \
 		Collision_011_5d2c
 
 Layout_011_59b6:
@@ -358,7 +358,7 @@ ClockTower1f_MapAttributes:
 		12, 12, \
 		Layout_011_5de5, Blocks_011_5e76, Metatiles_011_63f8, AttrMap_011_656c, \
 		Palettes_011_65db, \
-		0, Tileset_006_4194, \
+		0, Tileset_27, \
 		Collision_011_6623
 
 ClockTower2f_MapAttributes:
@@ -366,7 +366,7 @@ ClockTower2f_MapAttributes:
 		12, 12, \
 		Layout_011_5f92, Blocks_011_6023, Metatiles_011_63f8, AttrMap_011_656c, \
 		Palettes_011_65db, \
-		0, Tileset_006_4194, \
+		0, Tileset_27, \
 		Collision_011_6623
 
 ClockTower3f_MapAttributes:
@@ -374,7 +374,7 @@ ClockTower3f_MapAttributes:
 		10, 10, \
 		Layout_011_6153, Blocks_011_61b8, Metatiles_011_63f8, AttrMap_011_656c, \
 		Palettes_011_65db, \
-		0, Tileset_006_4194, \
+		0, Tileset_27, \
 		Collision_011_6623
 
 ClockTower4f_MapAttributes:
@@ -382,7 +382,7 @@ ClockTower4f_MapAttributes:
 		10, 10, \
 		Layout_011_62bc, Blocks_011_6321, Metatiles_011_63f8, AttrMap_011_656c, \
 		Palettes_011_65db, \
-		0, Tileset_006_4194, \
+		0, Tileset_27, \
 		Collision_011_6623
 
 ClockTower5f_MapAttributes:
@@ -390,7 +390,7 @@ ClockTower5f_MapAttributes:
 		6, 5, \
 		Layout_011_63d9, Blocks_011_6510, Metatiles_011_63f8, AttrMap_011_656c, \
 		Palettes_011_65db, \
-		0, Tileset_006_4194, \
+		0, Tileset_27, \
 		Collision_011_6623
 
 Layout_011_5de5:
@@ -480,7 +480,7 @@ G2_0E_MapAttributes:
 		6, 5, \
 		Layout_011_66ba, Blocks_011_66d9, Metatiles_011_685e, AttrMap_011_6966, \
 		Palettes_011_69ec, \
-		0, Tileset_006_41a3, \
+		0, Tileset_28, \
 		Collision_011_6a34
 
 G2_0F_MapAttributes:
@@ -488,7 +488,7 @@ G2_0F_MapAttributes:
 		6, 5, \
 		Layout_011_6735, Blocks_011_6754, Metatiles_011_685e, AttrMap_011_6966, \
 		Palettes_011_69ec, \
-		0, Tileset_006_41a3, \
+		0, Tileset_28, \
 		Collision_011_6a34
 
 G2_10_MapAttributes:
@@ -496,7 +496,7 @@ G2_10_MapAttributes:
 		6, 5, \
 		Layout_011_67bc, Blocks_011_67db, Metatiles_011_685e, AttrMap_011_6966, \
 		Palettes_011_69ec, \
-		0, Tileset_006_41a3, \
+		0, Tileset_28, \
 		Collision_011_6a34
 
 G2_11_MapAttributes:
@@ -504,7 +504,7 @@ G2_11_MapAttributes:
 		6, 5, \
 		Layout_011_683f, Blocks_011_6922, Metatiles_011_685e, AttrMap_011_6966, \
 		Palettes_011_69ec, \
-		0, Tileset_006_41a3, \
+		0, Tileset_28, \
 		Collision_011_6a34
 
 Layout_011_66ba:
@@ -589,7 +589,7 @@ G2_12_MapAttributes:
 		6, 5, \
 		Layout_011_6aca, Blocks_011_6ae9, Metatiles_011_6cd9, AttrMap_011_6dd5, \
 		Palettes_011_6e2f, \
-		0, Tileset_006_41b2, \
+		0, Tileset_29, \
 		Collision_011_6e77
 
 G4_3B_MapAttributes:
@@ -601,7 +601,7 @@ G3_1C_MapAttributes:
 		6, 5, \
 		Layout_011_6b41, Blocks_011_6b60, Metatiles_011_6cd9, AttrMap_011_6dd5, \
 		Palettes_011_6e2f, \
-		0, Tileset_006_41b2, \
+		0, Tileset_29, \
 		Collision_011_6e77
 
 G4_3C_MapAttributes:
@@ -611,7 +611,7 @@ G2_14_MapAttributes:
 		6, 5, \
 		Layout_011_6bbc, Blocks_011_6bdb, Metatiles_011_6cd9, AttrMap_011_6dd5, \
 		Palettes_011_6e2f, \
-		0, Tileset_006_41b2, \
+		0, Tileset_29, \
 		Collision_011_6e77
 
 G4_3D_MapAttributes:
@@ -622,7 +622,7 @@ G3_1B_MapAttributes:
 		6, 5, \
 		Layout_011_6c3b, Blocks_011_6c5a, Metatiles_011_6cd9, AttrMap_011_6dd5, \
 		Palettes_011_6e2f, \
-		0, Tileset_006_41b2, \
+		0, Tileset_29, \
 		Collision_011_6e77
 
 G4_3E_MapAttributes:
@@ -632,7 +632,7 @@ G2_16_MapAttributes:
 		6, 5, \
 		Layout_011_6cba, Blocks_011_6d75, Metatiles_011_6cd9, AttrMap_011_6dd5, \
 		Palettes_011_6e2f, \
-		0, Tileset_006_41b2, \
+		0, Tileset_29, \
 		Collision_011_6e77
 
 Layout_011_6aca:
@@ -722,7 +722,7 @@ R03_MapAttributes:
 		6, 12, \
 		Layout_011_6ec7, Blocks_011_6f10, Metatiles_011_702d, AttrMap_011_71b1, \
 		Palettes_011_7205, \
-		0, Tileset_006_41ba, \
+		0, Tileset_30, \
 		Collision_011_724d
 
 R04_MapAttributes:
@@ -730,7 +730,7 @@ R04_MapAttributes:
 		12, 10, \
 		Layout_011_6fb4, Blocks_011_7085, Metatiles_011_702d, AttrMap_011_71b1, \
 		Palettes_011_7205, \
-		0, Tileset_006_41ba, \
+		0, Tileset_30, \
 		Collision_011_724d
 
 Layout_011_6ec7:

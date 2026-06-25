@@ -3,7 +3,7 @@ G6_01_MapAttributes:
 		15, 15, \
 		Layout_06a_4028, Blocks_06a_410a, Metatiles_06a_4484, AttrMap_06a_4808, \
 		Palettes_06a_48a1, \
-		0, Tileset_006_4577, \
+		0, Tileset_84, \
 		Collision_06a_48e9
 
 G6_02_MapAttributes:
@@ -11,7 +11,7 @@ G6_02_MapAttributes:
 		15, 15, \
 		Layout_06a_43a2, Blocks_06a_4558, Metatiles_06a_4484, AttrMap_06a_4808, \
 		Palettes_06a_48a1, \
-		0, Tileset_006_4577, \
+		0, Tileset_84, \
 		Collision_06a_48e9
 Layout_06a_4028::
 	db MAPTYPE_G6_01
@@ -72,7 +72,7 @@ G6_03_MapAttributes:
 		10, 10, \
 		Layout_06a_4983, Blocks_06a_49e8, Metatiles_06a_5020, AttrMap_06a_51d0, \
 		Palettes_06a_5257, \
-		0, Tileset_006_458d, \
+		0, Tileset_85, \
 		Collision_06a_529f
 
 G6_04_MapAttributes:
@@ -80,7 +80,7 @@ G6_04_MapAttributes:
 		10, 10, \
 		Layout_06a_4b00, Blocks_06a_4b65, Metatiles_06a_5020, AttrMap_06a_51d0, \
 		Palettes_06a_5257, \
-		0, Tileset_006_458d, \
+		0, Tileset_85, \
 		Collision_06a_529f
 
 G6_05_MapAttributes:
@@ -88,7 +88,7 @@ G6_05_MapAttributes:
 		10, 10, \
 		Layout_06a_4cad, Blocks_06a_4d12, Metatiles_06a_5020, AttrMap_06a_51d0, \
 		Palettes_06a_5257, \
-		0, Tileset_006_458d, \
+		0, Tileset_85, \
 		Collision_06a_529f
 
 G6_06_MapAttributes:
@@ -96,7 +96,7 @@ G6_06_MapAttributes:
 		10, 10, \
 		Layout_06a_4e5e, Blocks_06a_4ec3, Metatiles_06a_5020, AttrMap_06a_51d0, \
 		Palettes_06a_5257, \
-		0, Tileset_006_458d, \
+		0, Tileset_85, \
 		Collision_06a_529f
 
 G6_07_MapAttributes:
@@ -105,7 +105,7 @@ G7_06_MapAttributes:
 		6, 6, \
 		Layout_06a_4ffb, Blocks_06a_515c, Metatiles_06a_5020, AttrMap_06a_51d0, \
 		Palettes_06a_5257, \
-		0, Tileset_006_458d, \
+		0, Tileset_85, \
 		Collision_06a_529f
 Layout_06a_4983::
 	db MAPTYPE_G6_03
@@ -181,7 +181,7 @@ G6_08_MapAttributes:
 		10, 15, \
 		Layout_06a_533f, Blocks_06a_53d6, Metatiles_06a_5bd3, AttrMap_06a_5e87, \
 		Palettes_06a_5ec7, \
-		0, Tileset_006_45a3, \
+		0, Tileset_86, \
 		Collision_06a_5f0f
 
 G6_09_MapAttributes:
@@ -189,7 +189,7 @@ G6_09_MapAttributes:
 		10, 15, \
 		Layout_06a_55e2, Blocks_06a_5679, Metatiles_06a_5bd3, AttrMap_06a_5e87, \
 		Palettes_06a_5ec7, \
-		0, Tileset_006_45a3, \
+		0, Tileset_86, \
 		Collision_06a_5f0f
 
 G6_0A_MapAttributes:
@@ -197,7 +197,7 @@ G6_0A_MapAttributes:
 		10, 15, \
 		Layout_06a_58a1, Blocks_06a_5938, Metatiles_06a_5bd3, AttrMap_06a_5e87, \
 		Palettes_06a_5ec7, \
-		0, Tileset_006_45a3, \
+		0, Tileset_86, \
 		Collision_06a_5f0f
 
 G6_0B_MapAttributes:
@@ -205,7 +205,7 @@ G6_0B_MapAttributes:
 		10, 15, \
 		Layout_06a_5b3c, Blocks_06a_5c6b, Metatiles_06a_5bd3, AttrMap_06a_5e87, \
 		Palettes_06a_5ec7, \
-		0, Tileset_006_45a3, \
+		0, Tileset_86, \
 		Collision_06a_5f0f
 Layout_06a_533f::
 	db MAPTYPE_NONE
@@ -276,7 +276,7 @@ G6_0C_MapAttributes:
 		18, 15, \
 		Layout_06a_5f4a, Blocks_06a_615d, Metatiles_06a_6059, AttrMap_06a_63f1, \
 		Palettes_06a_6479, \
-		0, Tileset_006_45ab, \
+		0, Tileset_87, \
 		Collision_06a_64c1
 Layout_06a_5f4a::
 	db MAPTYPE_NONE
@@ -332,7 +332,7 @@ G6_0D_MapAttributes:
 		6, 5, \
 		Layout_06a_6517, Blocks_06a_65ae, Metatiles_06a_6536, AttrMap_06a_6606, \
 		Palettes_06a_6639, \
-		0, Tileset_006_45c8, \
+		0, Tileset_88, \
 		Collision_06a_6681
 Layout_06a_6517::
 	db MAPTYPE_NONE
@@ -388,7 +388,7 @@ G6_0E_MapAttributes:
 		12, 5, \
 		Layout_06a_66b4, Blocks_06a_6739, Metatiles_06a_66f1, AttrMap_06a_67b9, \
 		Palettes_06a_67fc, \
-		0, Tileset_006_45d0, \
+		0, Tileset_89, \
 		Collision_06a_6844
 Layout_06a_66b4::
 	db MAPTYPE_NONE
@@ -444,7 +444,7 @@ G6_0F_MapAttributes:
 		10, 5, \
 		Layout_06a_686b, Blocks_06a_6962, Metatiles_06a_689e, AttrMap_06a_69b2, \
 		Palettes_06a_6a21, \
-		0, Tileset_006_45df, \
+		0, Tileset_90, \
 		Collision_06a_6a69
 Layout_06a_686b::
 	db MAPTYPE_NONE
@@ -500,7 +500,7 @@ G6_10_MapAttributes:
 		6, 5, \
 		Layout_06a_6b3b, Blocks_06a_6b5a, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_11_MapAttributes:
@@ -508,7 +508,7 @@ G6_11_MapAttributes:
 		6, 5, \
 		Layout_06a_6bbe, Blocks_06a_6bdd, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_12_MapAttributes:
@@ -516,7 +516,7 @@ G6_12_MapAttributes:
 		6, 5, \
 		Layout_06a_6c3d, Blocks_06a_6c5c, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_13_MapAttributes:
@@ -524,7 +524,7 @@ G6_13_MapAttributes:
 		6, 5, \
 		Layout_06a_6cbc, Blocks_06a_6cdb, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_14_MapAttributes:
@@ -532,7 +532,7 @@ G6_14_MapAttributes:
 		6, 5, \
 		Layout_06a_6d3f, Blocks_06a_6d5e, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_15_MapAttributes:
@@ -540,7 +540,7 @@ G6_15_MapAttributes:
 		6, 5, \
 		Layout_06a_6dca, Blocks_06a_6de9, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_16_MapAttributes:
@@ -548,7 +548,7 @@ G6_16_MapAttributes:
 		6, 5, \
 		Layout_06a_6e4d, Blocks_06a_6e6c, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 
 G6_17_MapAttributes:
@@ -556,7 +556,7 @@ G6_17_MapAttributes:
 		6, 5, \
 		Layout_06a_6ed0, Blocks_06a_6fb7, Metatiles_06a_6eef, AttrMap_06a_701b, \
 		Palettes_06a_707d, \
-		0, Tileset_006_45ee, \
+		0, Tileset_91, \
 		Collision_06a_70c5
 Layout_06a_6b3b::
 	db MAPTYPE_NONE
@@ -647,7 +647,7 @@ G6_18_MapAttributes:
 		10, 10, \
 		Layout_06a_710c, Blocks_06a_71f9, Metatiles_06a_7171, AttrMap_06a_7301, \
 		Palettes_06a_738a, \
-		0, Tileset_006_45f6, \
+		0, Tileset_92, \
 		Collision_06a_73d2
 Layout_06a_710c::
 	db MAPTYPE_NONE
@@ -703,7 +703,7 @@ G6_19_MapAttributes:
 		6, 5, \
 		Layout_06a_7459, Blocks_06a_7478, Metatiles_06a_75fc, AttrMap_06a_7788, \
 		Palettes_06a_781c, \
-		0, Tileset_006_460c, \
+		0, Tileset_93, \
 		Collision_06a_7864
 
 G6_1A_MapAttributes:
@@ -711,7 +711,7 @@ G6_1A_MapAttributes:
 		6, 5, \
 		Layout_06a_74bc, Blocks_06a_74db, Metatiles_06a_75fc, AttrMap_06a_7788, \
 		Palettes_06a_781c, \
-		0, Tileset_006_460c, \
+		0, Tileset_93, \
 		Collision_06a_7864
 
 G6_1B_MapAttributes:
@@ -719,7 +719,7 @@ G6_1B_MapAttributes:
 		6, 5, \
 		Layout_06a_7517, Blocks_06a_7536, Metatiles_06a_75fc, AttrMap_06a_7788, \
 		Palettes_06a_781c, \
-		0, Tileset_006_460c, \
+		0, Tileset_93, \
 		Collision_06a_7864
 
 G6_1C_MapAttributes:
@@ -727,7 +727,7 @@ G6_1C_MapAttributes:
 		6, 5, \
 		Layout_06a_7576, Blocks_06a_7595, Metatiles_06a_75fc, AttrMap_06a_7788, \
 		Palettes_06a_781c, \
-		0, Tileset_006_460c, \
+		0, Tileset_93, \
 		Collision_06a_7864
 
 G6_1D_MapAttributes:
@@ -735,7 +735,7 @@ G6_1D_MapAttributes:
 		6, 5, \
 		Layout_06a_75dd, Blocks_06a_7744, Metatiles_06a_75fc, AttrMap_06a_7788, \
 		Palettes_06a_781c, \
-		0, Tileset_006_460c, \
+		0, Tileset_93, \
 		Collision_06a_7864
 Layout_06a_7459::
 	db MAPTYPE_NONE
@@ -811,7 +811,7 @@ G6_1E_MapAttributes:
 		18, 5, \
 		Layout_06a_78df, Blocks_06a_793a, Metatiles_06a_7a47, AttrMap_06a_7b07, \
 		Palettes_06a_7b57, \
-		0, Tileset_006_4622, \
+		0, Tileset_94, \
 		Collision_06a_7b9f
 
 G6_1F_MapAttributes:
@@ -819,7 +819,7 @@ G6_1F_MapAttributes:
 		6, 6, \
 		Layout_06a_7a22, Blocks_06a_7a9f, Metatiles_06a_7a47, AttrMap_06a_7b07, \
 		Palettes_06a_7b57, \
-		0, Tileset_006_4622, \
+		0, Tileset_94, \
 		Collision_06a_7b9f
 Layout_06a_78df::
 	db MAPTYPE_NONE
@@ -880,7 +880,7 @@ G6_20_MapAttributes:
 		6, 5, \
 		Layout_06a_7bca, Blocks_06a_7c89, Metatiles_06a_7be9, AttrMap_06a_7cf1, \
 		Palettes_06a_7d69, \
-		0, Tileset_006_4631, \
+		0, Tileset_95, \
 		Collision_06a_7db1
 Layout_06a_7bca::
 	db MAPTYPE_NONE
@@ -937,7 +937,7 @@ G7_01_MapAttributes:
 		6, 5, \
 		Layout_06a_7dee, Blocks_06a_7eb1, Metatiles_06a_7e0d, AttrMap_06a_7f15, \
 		Palettes_06a_7f76, \
-		0, Tileset_006_4640, \
+		0, Tileset_96, \
 		Collision_06a_7fbe
 Layout_06a_7dee::
 	db MAPTYPE_NONE

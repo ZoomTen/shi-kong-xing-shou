@@ -299,7 +299,7 @@ G7_09_MapAttributes:
 		6, 5, \
 		Layout_06e_507d, Blocks_06e_5120, Metatiles_06e_509c, AttrMap_06e_5180, \
 		Palettes_06e_51b4, \
-		0, Tileset_006_438c, \
+		0, Tileset_55, \
 		Collision_06e_51fc
 Layout_06e_507d::
 	db MAPTYPE_NONE

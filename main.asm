@@ -7,10 +7,23 @@ SECTION "bank04", ROMX
 INCLUDE "engine/gfx/oam.asm"
 
 SECTION "bank05", ROMX
-INCLUDE "banks/bank_05.asm"
+INCLUDE "engine/overworld/update_map_coords.asm"
+INCLUDE "engine/overworld/object_events.asm"
+INCLUDE "engine/overworld/overworld_loop.asm"
+INCLUDE "engine/gfx/update_object_anims.asm"
+INCLUDE "engine/overworld/load_map_objects.asm"
+INCLUDE "engine/overworld/get_facing_tiles.asm"
+INCLUDE "engine/overworld/handle_steps.asm"
+INCLUDE "engine/overworld/events.asm"
+INCLUDE "engine/menu/start_menu_init.asm"
+INCLUDE "engine/battle/start_battle.asm"
+INCLUDE "engine/overworld/switch_chara.asm"
+INCLUDE "engine/overworld/interaction.asm"
+INCLUDE "engine/overworld/process_input.asm"
+INCLUDE "engine/overworld/zones.asm"
 
-SECTION "bank06", ROMX
-INCLUDE "banks/bank_06.asm"
+SECTION "Tilesets", ROMX
+INCLUDE "data/maps/tilesets.asm"
 
 SECTION "bank07", ROMX
 INCLUDE "banks/bank_07.asm"
@@ -69,17 +82,11 @@ INCLUDE "banks/bank_14.asm"
 SECTION "bank15", ROMX
 INCLUDE "banks/bank_15.asm"
 
-SECTION "bank16", ROMX
-INCLUDE "banks/bank_16.asm"
-
 SECTION "bank17", ROMX
 INCLUDE "banks/bank_17.asm"
 
 SECTION "bank18", ROMX
 INCLUDE "banks/bank_18.asm"
-
-SECTION "bank19", ROMX
-INCLUDE "banks/bank_19.asm"
 
 SECTION "bank1a", ROMX
 INCLUDE "engine/movie/letter.asm"
@@ -204,24 +211,15 @@ INCLUDE "banks/bank_4f.asm"
 SECTION "bank50", ROMX
 INCLUDE "banks/bank_50.asm"
 
-SECTION "bank51", ROMX
-INCLUDE "banks/bank_51.asm"
-
 SECTION "bank52", ROMX
 INCLUDE "banks/bank_52.asm"
 
 SECTION "bank53", ROMX
 INCLUDE "banks/bank_53.asm"
 
-SECTION "bank54", ROMX
-INCLUDE "banks/bank_54.asm"
-
 SECTION "bank55", ROMX
 INCLUDE "engine/movie/airport2.asm"
 INCLUDE "banks/bank_55.asm"
-
-SECTION "bank56", ROMX
-INCLUDE "banks/bank_56.asm"
 
 SECTION "bank57", ROMX
 INCLUDE "banks/bank_57.asm"
@@ -269,9 +267,6 @@ INCLUDE "banks/bank_63.asm"
 SECTION "bank64", ROMX
 INCLUDE "banks/bank_64.asm"
 
-SECTION "bank65", ROMX
-INCLUDE "banks/bank_65.asm"
-
 SECTION "bank66", ROMX
 INCLUDE "banks/bank_66.asm"
 
@@ -288,6 +283,9 @@ INCLUDE "banks/bank_6a.asm"
 
 SECTION "bank6b", ROMX
 INCLUDE "banks/bank_6b.asm"
+
+SECTION "bank6b #2", ROMX
+INCLUDE "banks/bank_6b_2.asm"
 
 SECTION "bank6c", ROMX
 INCLUDE "banks/bank_6c.asm"

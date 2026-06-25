@@ -29,7 +29,7 @@ ROMX $04
 ROMX $05
 	"bank05"
 ROMX $06
-	"bank06"
+	"Tilesets"
 ROMX $07
 	"bank07"
 ROMX $08
@@ -66,13 +66,14 @@ ROMX $14
 ROMX $15
 	"bank15"
 ROMX $16
-	"bank16"
+	"Tilesets 1"
 ROMX $17
 	"bank17"
+	"Tilesets 2"
 ROMX $18
 	"bank18"
 ROMX $19
-	"bank19"
+	"Tilesets 3"
 ROMX $1a
 	"bank1a"
 	"Letter Cutscene GFX"
@@ -197,17 +198,17 @@ ROMX $4f
 ROMX $50
 	"bank50"
 ROMX $51
-	"bank51"
+	"Tilesets 4"
 ROMX $52
 	"bank52"
 ROMX $53
 	"bank53"
 ROMX $54
-	"bank54"
+	"Tilesets 5"
 ROMX $55
 	"bank55"
 ROMX $56
-	"bank56"
+	"Tilesets 6"
 ROMX $57
 	"bank57"
 ROMX $58
@@ -237,7 +238,7 @@ ROMX $63
 ROMX $64
 	"bank64"
 ROMX $65
-	"bank65"
+	"Tilesets 7"
 ROMX $66
 	"bank66"
 ROMX $67
@@ -247,7 +248,11 @@ ROMX $69
 ROMX $6a
 	"bank6a"
 ROMX $6b
+	"Tilesets 8"
 	"bank6b"
+	"Tilesets 9"
+	"bank6b #2"
+	"Tilesets 10"
 ROMX $6c
 	"bank6c"
 ROMX $6e

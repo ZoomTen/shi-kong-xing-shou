@@ -3,7 +3,7 @@ GreenForestP12_MapAttributes:
 		15, 12, \
 		Layout_050_4050, Blocks_050_4105, Metatiles_050_4824, AttrMap_050_499c, \
 		Palettes_050_4a39, \
-		0, Tileset_006_41d0, \
+		0, Tileset_31, \
 		Collision_050_4a81
 
 GreenForestP21_MapAttributes:
@@ -11,7 +11,7 @@ GreenForestP21_MapAttributes:
 		12, 15, \
 		Layout_050_43b1, Blocks_050_4466, Metatiles_050_4824, AttrMap_050_499c, \
 		Palettes_050_4a39, \
-		0, Tileset_006_41d0, \
+		0, Tileset_31, \
 		Collision_050_4a81
 
 GreenForestP31_MapAttributes:
@@ -19,7 +19,7 @@ GreenForestP31_MapAttributes:
 		6, 8, \
 		Layout_050_4712, Blocks_050_4743, Metatiles_050_4824, AttrMap_050_499c, \
 		Palettes_050_4a39, \
-		0, Tileset_006_41d0, \
+		0, Tileset_31, \
 		Collision_050_4a81
 
 G3_1F_MapAttributes:
@@ -27,7 +27,7 @@ G3_1F_MapAttributes:
 		6, 8, \
 		Layout_050_47f3, Blocks_050_48f0, Metatiles_050_4824, AttrMap_050_499c, \
 		Palettes_050_4a39, \
-		0, Tileset_006_41d0, \
+		0, Tileset_31, \
 		Collision_050_4a81
 Layout_050_4050::
 	db MAPTYPE_GREEN_FOREST_P12
@@ -98,7 +98,7 @@ GreenForestP13_MapAttributes:
 		15, 12, \
 		Layout_050_4b05, Blocks_050_4bba, Metatiles_050_52d1, AttrMap_050_5449, \
 		Palettes_050_54e4, \
-		0, Tileset_006_41df, \
+		0, Tileset_32, \
 		Collision_050_552c
 
 GreenForestP22_MapAttributes:
@@ -106,7 +106,7 @@ GreenForestP22_MapAttributes:
 		12, 15, \
 		Layout_050_4e5e, Blocks_050_4f13, Metatiles_050_52d1, AttrMap_050_5449, \
 		Palettes_050_54e4, \
-		0, Tileset_006_41df, \
+		0, Tileset_32, \
 		Collision_050_552c
 
 GreenForestP32_MapAttributes:
@@ -114,7 +114,7 @@ GreenForestP32_MapAttributes:
 		6, 8, \
 		Layout_050_51bf, Blocks_050_51f0, Metatiles_050_52d1, AttrMap_050_5449, \
 		Palettes_050_54e4, \
-		0, Tileset_006_41df, \
+		0, Tileset_32, \
 		Collision_050_552c
 
 G3_20_MapAttributes:
@@ -122,7 +122,7 @@ G3_20_MapAttributes:
 		6, 8, \
 		Layout_050_52a0, Blocks_050_539d, Metatiles_050_52d1, AttrMap_050_5449, \
 		Palettes_050_54e4, \
-		0, Tileset_006_41df, \
+		0, Tileset_32, \
 		Collision_050_552c
 Layout_050_4b05::
 	db MAPTYPE_GREEN_FOREST_P13
@@ -193,7 +193,7 @@ SkyCity_MapAttributes:
 		15, 15, \
 		Layout_050_5574, Blocks_050_580e, Metatiles_050_5656, AttrMap_050_5abe, \
 		Palettes_050_5b5f, \
-		0, Tileset_006_41ee, \
+		0, Tileset_33, \
 		Collision_050_5ba7
 Layout_050_5574::
 	db MAPTYPE_NONE
@@ -250,7 +250,7 @@ BanglinCo1f_MapAttributes:
 		6, 5, \
 		Layout_050_5c2a, Blocks_050_5d11, Metatiles_050_5c49, AttrMap_050_5d6d, \
 		Palettes_050_5dfd, \
-		0, Tileset_006_420b, \
+		0, Tileset_34, \
 		Collision_050_5e45
 Layout_050_5c2a::
 	db MAPTYPE_NONE
@@ -306,7 +306,7 @@ BanglinCo2_MapAttributes:
 		6, 5, \
 		Layout_050_5e8c, Blocks_050_5f0f, Metatiles_050_5eab, AttrMap_050_5f63, \
 		Palettes_050_5f8c, \
-		0, Tileset_006_4221, \
+		0, Tileset_35, \
 		Collision_050_5fd4
 Layout_050_5e8c::
 	db MAPTYPE_NONE
@@ -362,7 +362,7 @@ ContestHall_MapAttributes:
 		6, 6, \
 		Layout_050_6002, Blocks_050_610b, Metatiles_050_6027, AttrMap_050_617b, \
 		Palettes_050_61df, \
-		0, Tileset_006_4229, \
+		0, Tileset_36, \
 		Collision_050_6227
 Layout_050_6002::
 	db MAPTYPE_NONE
@@ -418,7 +418,7 @@ BanglinCo2f_MapAttributes:
 		12, 12, \
 		Layout_050_62b1, Blocks_050_6342, Metatiles_050_687d, AttrMap_050_6b01, \
 		Palettes_050_6b92, \
-		0, Tileset_006_4238, \
+		0, Tileset_37, \
 		Collision_050_6bda
 
 BanglinCo3f_MapAttributes:
@@ -426,7 +426,7 @@ BanglinCo3f_MapAttributes:
 		12, 12, \
 		Layout_050_643e, Blocks_050_64cf, Metatiles_050_687d, AttrMap_050_6b01, \
 		Palettes_050_6b92, \
-		0, Tileset_006_4238, \
+		0, Tileset_37, \
 		Collision_050_6bda
 
 BanglinCo4f_MapAttributes:
@@ -434,7 +434,7 @@ BanglinCo4f_MapAttributes:
 		12, 12, \
 		Layout_050_662b, Blocks_050_66bc, Metatiles_050_687d, AttrMap_050_6b01, \
 		Palettes_050_6b92, \
-		0, Tileset_006_4238, \
+		0, Tileset_37, \
 		Collision_050_6bda
 
 BanglinCo5f_MapAttributes:
@@ -442,7 +442,7 @@ BanglinCo5f_MapAttributes:
 		12, 12, \
 		Layout_050_67ec, Blocks_050_69e1, Metatiles_050_687d, AttrMap_050_6b01, \
 		Palettes_050_6b92, \
-		0, Tileset_006_4238, \
+		0, Tileset_37, \
 		Collision_050_6bda
 Layout_050_62b1::
 	db MAPTYPE_BANGLIN_CO_2F
@@ -513,7 +513,7 @@ FashionStore_MapAttributes:
 		6, 5, \
 		Layout_050_6c48, Blocks_050_6d3f, Metatiles_050_6c67, AttrMap_050_6da3, \
 		Palettes_050_6e40, \
-		0, Tileset_006_424e, \
+		0, Tileset_38, \
 		Collision_050_6e88
 Layout_050_6c48::
 	db MAPTYPE_NONE
@@ -571,7 +571,7 @@ AirportOutside_MapAttributes:
 		6, 5, \
 		Layout_050_6ed3, Blocks_050_6fce, Metatiles_050_6ef2, AttrMap_050_703e, \
 		Palettes_050_70b2, \
-		0, Tileset_006_426b, \
+		0, Tileset_39, \
 		Collision_050_70fa
 Layout_050_6ed3::
 	db MAPTYPE_NONE
@@ -629,7 +629,7 @@ Airport_MapAttributes:
 		6, 5, \
 		Layout_050_7146, Blocks_050_7225, Metatiles_050_7165, AttrMap_050_7281, \
 		Palettes_050_7318, \
-		0, Tileset_006_4281, \
+		0, Tileset_40, \
 		Collision_050_7360
 Layout_050_7146::
 	db MAPTYPE_NONE
@@ -686,7 +686,7 @@ G3_21_MapAttributes:
 		10, 10, \
 		Layout_050_73cd, Blocks_050_7432, Metatiles_050_75c0, AttrMap_050_76d4, \
 		Palettes_050_774a, \
-		0, Tileset_006_429e, \
+		0, Tileset_41, \
 		Collision_050_7792
 
 GreenForestP5_MapAttributes:
@@ -695,7 +695,7 @@ G3_22_MapAttributes:
 		6, 5, \
 		Layout_050_752a, Blocks_050_7549, Metatiles_050_75c0, AttrMap_050_76d4, \
 		Palettes_050_774a, \
-		0, Tileset_006_429e, \
+		0, Tileset_41, \
 		Collision_050_7792
 
 GreenForestP6_MapAttributes:
@@ -704,7 +704,7 @@ G3_23_MapAttributes:
 		6, 5, \
 		Layout_050_75a1, Blocks_050_767c, Metatiles_050_75c0, AttrMap_050_76d4, \
 		Palettes_050_774a, \
-		0, Tileset_006_429e, \
+		0, Tileset_41, \
 		Collision_050_7792
 Layout_050_73cd::
 	db MAPTYPE_NONE
@@ -770,7 +770,7 @@ G3_15_MapAttributes:
 		6, 10, \
 		Layout_050_77ea, Blocks_050_7827, Metatiles_050_78f8, AttrMap_050_79e4, \
 		Palettes_050_7a4a, \
-		0, Tileset_006_42cb, \
+		0, Tileset_44, \
 		Collision_050_7a92
 
 G3_16_MapAttributes:
@@ -778,7 +778,7 @@ G3_16_MapAttributes:
 		12, 6, \
 		Layout_050_78af, Blocks_050_7970, Metatiles_050_78f8, AttrMap_050_79e4, \
 		Palettes_050_7a4a, \
-		0, Tileset_006_42cb, \
+		0, Tileset_44, \
 		Collision_050_7a92
 Layout_050_77ea::
 	db MAPTYPE_NONE

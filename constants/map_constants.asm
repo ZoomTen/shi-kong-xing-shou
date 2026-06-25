@@ -183,6 +183,14 @@ ENDM
 
 	newgroup    GROUP_04                            ; 04
 	map_const	G4_01,                        0,  0 ; 01 TODO
+	map_const	G4_02,                        0,  0 ; 02 TODO
+	map_const	G4_03,                        0,  0 ; 03 TODO
+	map_const	G4_04,                        0,  0 ; 04 TODO
+	map_const	G4_05,                        0,  0 ; 05 TODO
+	map_const	G4_06,                        0,  0 ; 06 TODO
+	map_const	G4_07,                        0,  0 ; 07 TODO
+	map_const	G4_08,                        0,  0 ; 08 TODO
+	map_const	G4_09,                        0,  0 ; 09 TODO
 	; TODO
 	endgroup
 

@@ -487,3 +487,162 @@ GFX_044_4000: INCBIN "gfx/character_set/image_44_4000.1bpp"
 
 SECTION "charset4_high", ROMX
 GFX_044_6000: INCBIN "gfx/character_set/image_44_6000.1bpp"
+
+; tile set gfx
+
+SECTION "Tilesets 1", ROMX
+
+TilesetFrag_1:: INCBIN "gfx/tilesets/image_16_4000.2bpp"
+TilesetFrag_2:: INCBIN "gfx/tilesets/image_16_4560.2bpp"
+TilesetFrag_3:: INCBIN "gfx/tilesets/image_16_47e0.2bpp"
+TilesetFrag_4:: INCBIN "gfx/tilesets/image_16_4a70.2bpp"
+TilesetFrag_5:: INCBIN "gfx/tilesets/image_16_4c50.2bpp"
+TilesetFrag_6:: INCBIN "gfx/tilesets/image_16_4fa0.2bpp"
+TilesetFrag_7:: INCBIN "gfx/tilesets/image_16_5440.2bpp"
+TilesetFrag_8:: INCBIN "gfx/tilesets/image_16_5550.2bpp"
+TilesetFrag_9:: INCBIN "gfx/tilesets/image_16_5d50.2bpp"
+TilesetFrag_10:: INCBIN "gfx/tilesets/image_16_5db0.2bpp"
+TilesetFrag_11:: INCBIN "gfx/tilesets/image_16_6260.2bpp"
+TilesetFrag_12:: INCBIN "gfx/tilesets/image_16_64e0.2bpp"
+TilesetFrag_13:: INCBIN "gfx/tilesets/image_16_65b0.2bpp"
+TilesetFrag_14:: INCBIN "gfx/tilesets/image_16_6b00.2bpp"
+TilesetFrag_15:: INCBIN "gfx/tilesets/image_16_6cf0.2bpp"
+TilesetFrag_16:: INCBIN "gfx/tilesets/image_16_7100.2bpp"
+TilesetFrag_17:: INCBIN "gfx/tilesets/image_16_75b0.2bpp"
+TilesetFrag_18:: INCBIN "gfx/tilesets/image_16_7aa0.2bpp"
+TilesetFrag_19:: INCBIN "gfx/tilesets/image_16_7da0.2bpp"
+
+SECTION "Tilesets 2", ROMX
+
+TilesetFrag_20:: INCBIN "gfx/tilesets/gfx_017_4f9e.2bpp"
+TilesetFrag_21:: INCBIN "gfx/tilesets/gfx_017_511e.2bpp"
+TilesetFrag_22:: INCBIN "gfx/tilesets/image_17_512e.2bpp"
+TilesetFrag_23:: INCBIN "gfx/tilesets/image_17_578e.2bpp"
+TilesetFrag_24:: INCBIN "gfx/tilesets/image_17_5c1e.2bpp"
+TilesetFrag_25:: INCBIN "gfx/tilesets/gfx_017_612e.2bpp"
+TilesetFrag_26:: INCBIN "gfx/tilesets/gfx_017_66ce.2bpp"
+TilesetFrag_27:: INCBIN "gfx/tilesets/image_17_680e.2bpp"
+TilesetFrag_28:: INCBIN "gfx/tilesets/gfx_017_6cae.2bpp"
+TilesetFrag_29:: INCBIN "gfx/tilesets/gfx_017_6e2e.2bpp"
+TilesetFrag_30:: INCBIN "gfx/tilesets/gfx_017_739e.2bpp"
+TilesetFrag_31:: INCBIN "gfx/tilesets/gfx_017_783e.2bpp"
+
+SECTION "Tilesets 3", ROMX
+
+TilesetFrag_32:: INCBIN "gfx/tilesets/image_19_4000.2bpp"
+TilesetFrag_33:: INCBIN "gfx/tilesets/image_19_4670.2bpp"
+TilesetFrag_34:: INCBIN "gfx/tilesets/image_19_47f0.2bpp"
+TilesetFrag_35:: INCBIN "gfx/tilesets/image_19_4960.2bpp"
+TilesetFrag_36:: INCBIN "gfx/tilesets/gfx_019_49e0.2bpp"
+TilesetFrag_37:: INCBIN "gfx/tilesets/gfx_019_4fc0.2bpp"
+TilesetFrag_38:: INCBIN "gfx/tilesets/gfx_019_5180.2bpp"
+TilesetFrag_39:: INCBIN "gfx/tilesets/gfx_019_5810.2bpp"
+TilesetFrag_40:: INCBIN "gfx/tilesets/gfx_019_5970.2bpp"
+TilesetFrag_41:: INCBIN "gfx/tilesets/gfx_019_5b50.2bpp"
+TilesetFrag_42:: INCBIN "gfx/tilesets/gfx_019_6350.2bpp"
+TilesetFrag_43:: INCBIN "gfx/tilesets/gfx_019_6440.2bpp"
+TilesetFrag_44:: INCBIN "gfx/tilesets/gfx_019_68e0.2bpp"
+TilesetFrag_45:: INCBIN "gfx/tilesets/gfx_019_6a60.2bpp"
+TilesetFrag_46:: INCBIN "gfx/tilesets/gfx_019_6c20.2bpp"
+TilesetFrag_47:: INCBIN "gfx/tilesets/gfx_019_7420.2bpp"
+TilesetFrag_48:: INCBIN "gfx/tilesets/gfx_019_7470.2bpp"
+TilesetFrag_49:: INCBIN "gfx/tilesets/gfx_019_7a00.2bpp"
+
+SECTION "Tilesets 4", ROMX
+
+TilesetFrag_50:: INCBIN "gfx/tilesets/gfx_051_4000.2bpp"
+TilesetFrag_51:: INCBIN "gfx/tilesets/gfx_051_4800.2bpp"
+TilesetFrag_52:: INCBIN "gfx/tilesets/gfx_051_49c0.2bpp"
+TilesetFrag_53:: INCBIN "gfx/tilesets/gfx_051_51c0.2bpp"
+TilesetFrag_54:: INCBIN "gfx/tilesets/gfx_051_5360.2bpp"
+TilesetFrag_55:: INCBIN "gfx/tilesets/gfx_051_53e0.2bpp"
+TilesetFrag_56:: INCBIN "gfx/tilesets/gfx_051_5470.2bpp"
+TilesetFrag_57:: INCBIN "gfx/tilesets/gfx_051_5810.2bpp"
+TilesetFrag_58:: INCBIN "gfx/tilesets/gfx_051_5a90.2bpp"
+TilesetFrag_59:: INCBIN "gfx/tilesets/gfx_051_5e70.2bpp"
+TilesetFrag_60:: INCBIN "gfx/tilesets/gfx_051_6280.2bpp"
+TilesetFrag_61:: INCBIN "gfx/tilesets/gfx_051_6380.2bpp"
+TilesetFrag_62:: INCBIN "gfx/tilesets/gfx_051_6440.2bpp"
+TilesetFrag_63:: INCBIN "gfx/tilesets/gfx_051_66c0.2bpp"
+TilesetFrag_64:: INCBIN "gfx/tilesets/gfx_051_6720.2bpp"
+TilesetFrag_65:: INCBIN "gfx/tilesets/gfx_051_68c0.2bpp"
+
+SECTION "Tilesets 5", ROMX
+
+TilesetFrag_66:: INCBIN "gfx/tilesets/gfx_054_4000.2bpp"
+TilesetFrag_67:: INCBIN "gfx/tilesets/gfx_054_4800.2bpp"
+TilesetFrag_68:: INCBIN "gfx/tilesets/gfx_054_4830.2bpp"
+TilesetFrag_69:: INCBIN "gfx/tilesets/gfx_054_5010.2bpp"
+TilesetFrag_71:: INCBIN "gfx/tilesets/gfx_054_53a0.2bpp"
+TilesetFrag_72:: INCBIN "gfx/tilesets/gfx_054_55c0.2bpp"
+TilesetFrag_73:: INCBIN "gfx/tilesets/gfx_054_58e0.2bpp"
+TilesetFrag_74:: INCBIN "gfx/tilesets/gfx_054_5dd0.2bpp"
+TilesetFrag_75:: INCBIN "gfx/tilesets/gfx_054_60d0.2bpp"
+TilesetFrag_77:: INCBIN "gfx/tilesets/gfx_054_62d0.2bpp"
+TilesetFrag_78:: INCBIN "gfx/tilesets/gfx_054_6410.2bpp"
+TilesetFrag_79:: INCBIN "gfx/tilesets/gfx_054_6670.2bpp"
+TilesetFrag_80:: INCBIN "gfx/tilesets/gfx_054_6770.2bpp"
+TilesetFrag_81:: INCBIN "gfx/tilesets/gfx_054_6810.2bpp"
+TilesetFrag_83:: INCBIN "gfx/tilesets/gfx_054_6990.2bpp"
+TilesetFrag_84:: INCBIN "gfx/tilesets/gfx_054_6dc0.2bpp"
+TilesetFrag_85:: INCBIN "gfx/tilesets/gfx_054_7380.2bpp"
+TilesetFrag_86:: INCBIN "gfx/tilesets/gfx_054_7880.2bpp"
+TilesetFrag_87:: INCBIN "gfx/tilesets/gfx_054_7a40.2bpp"
+TilesetFrag_88:: INCBIN "gfx/tilesets/gfx_054_7b50.2bpp"
+TilesetFrag_70:: INCBIN "gfx/tilesets/gfx_054_7bf0.2bpp"
+
+SECTION "Tilesets 6", ROMX
+
+TilesetFrag_89:: INCBIN "gfx/tilesets/gfx_056_4000.2bpp"
+TilesetFrag_90:: INCBIN "gfx/tilesets/gfx_056_4540.2bpp"
+TilesetFrag_91:: INCBIN "gfx/tilesets/gfx_056_47f0.2bpp"
+TilesetFrag_92:: INCBIN "gfx/tilesets/gfx_056_4940.2bpp"
+TilesetFrag_93:: INCBIN "gfx/tilesets/gfx_056_4980.2bpp"
+TilesetFrag_76:: INCBIN "gfx/tilesets/gfx_056_4a30.2bpp"
+TilesetFrag_82:: INCBIN "gfx/tilesets/gfx_056_4bc0.2bpp"
+TilesetFrag_94:: INCBIN "gfx/tilesets/gfx_056_4cb0.2bpp"
+TilesetFrag_95:: INCBIN "gfx/tilesets/gfx_056_5150.2bpp"
+TilesetFrag_96:: INCBIN "gfx/tilesets/gfx_056_5270.2bpp"
+TilesetFrag_97:: INCBIN "gfx/tilesets/gfx_056_5960.2bpp"
+TilesetFrag_98:: INCBIN "gfx/tilesets/gfx_056_5e40.2bpp"
+TilesetFrag_99:: INCBIN "gfx/tilesets/gfx_056_6640.2bpp"
+
+SECTION "Tilesets 7", ROMX
+
+TilesetFrag_100:: INCBIN "gfx/tilesets/gfx_065_4000.2bpp"
+TilesetFrag_101:: INCBIN "gfx/tilesets/gfx_065_4580.2bpp"
+TilesetFrag_102:: INCBIN "gfx/tilesets/gfx_065_4a20.2bpp"
+TilesetFrag_103:: INCBIN "gfx/tilesets/gfx_065_4aa0.2bpp"
+TilesetFrag_104:: INCBIN "gfx/tilesets/gfx_065_51e0.2bpp"
+TilesetFrag_105:: INCBIN "gfx/tilesets/gfx_065_53a0.2bpp"
+TilesetFrag_106:: INCBIN "gfx/tilesets/gfx_065_54f0.2bpp"
+TilesetFrag_107:: INCBIN "gfx/tilesets/gfx_065_55b0.2bpp"
+TilesetFrag_108:: INCBIN "gfx/tilesets/gfx_065_55f0.2bpp"
+
+SECTION "Tilesets 8", ROMX
+
+TilesetFrag_109:: INCBIN "gfx/tilesets/gfx_06b_4000.2bpp"
+TilesetFrag_110:: INCBIN "gfx/tilesets/gfx_06b_4080.2bpp"
+TilesetFrag_111:: INCBIN "gfx/tilesets/gfx_06b_4360.2bpp"
+TilesetFrag_112:: INCBIN "gfx/tilesets/gfx_06b_43c0.2bpp"
+TilesetFrag_113:: INCBIN "gfx/tilesets/gfx_06b_47b0.2bpp"
+TilesetFrag_114:: INCBIN "gfx/tilesets/gfx_06b_4850.2bpp"
+TilesetFrag_115:: INCBIN "gfx/tilesets/gfx_06b_48c0.2bpp"
+TilesetFrag_116:: INCBIN "gfx/tilesets/gfx_06b_4be0.2bpp"
+TilesetFrag_117:: INCBIN "gfx/tilesets/gfx_06b_4ca0.2bpp"
+TilesetFrag_118:: INCBIN "gfx/tilesets/gfx_06b_52b0.2bpp"
+TilesetFrag_119:: INCBIN "gfx/tilesets/gfx_06b_55c0.2bpp"
+TilesetFrag_120:: INCBIN "gfx/tilesets/gfx_06b_5aa0.2bpp"
+TilesetFrag_121:: INCBIN "gfx/tilesets/gfx_06b_5b20.2bpp"
+TilesetFrag_122:: INCBIN "gfx/tilesets/gfx_06b_5be0.2bpp"
+TilesetFrag_123:: INCBIN "gfx/tilesets/gfx_06b_5db0.2bpp"
+TilesetFrag_124:: INCBIN "gfx/tilesets/gfx_06b_61e0.2bpp"
+
+SECTION "Tilesets 9", ROMX
+
+TilesetFrag_126:: INCBIN "gfx/tilesets/gfx_06b_66fe.2bpp"
+
+SECTION "Tilesets 10", ROMX
+
+TilesetFrag_127:: INCBIN "gfx/tilesets/gfx_06b_6f35.2bpp"
+TilesetFrag_125:: INCBIN "gfx/tilesets/gfx_06b_7635.2bpp"

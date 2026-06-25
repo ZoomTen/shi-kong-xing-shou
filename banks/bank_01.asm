@@ -1,49 +1,49 @@
 ; Map headers
 G7_02_MapAttributes:
 BellVillage2_MapAttributes:
-	map_attributes BellVillage1, BELL_VILLAGE_1, 0, Tileset_006_4000
+	map_attributes BellVillage1, BELL_VILLAGE_1, 0, Tileset_1
 
 G5_23_MapAttributes:
 BellSchoolOutside2_MapAttributes:
-	map_attributes BellSchoolOutside1, BELL_SCHOOL_OUTSIDE_1, 0, Tileset_006_400f
+	map_attributes BellSchoolOutside1, BELL_SCHOOL_OUTSIDE_1, 0, Tileset_2
 
 BellObservatoryOutside2_MapAttributes:
-	map_attributes BellObservatoryOutside1, BELL_OBSERVATORY_OUTSIDE_1, 0, Tileset_006_4025
+	map_attributes BellObservatoryOutside1, BELL_OBSERVATORY_OUTSIDE_1, 0, Tileset_3
 
 G7_08_MapAttributes:
 G5_1D_MapAttributes:
 BallotsHouse2_MapAttributes:
-	map_attributes BallotsHouse1, BALLOTS_HOUSE_1, 0, Tileset_006_403b
+	map_attributes BallotsHouse1, BALLOTS_HOUSE_1, 0, Tileset_4
 
 G4_30_MapAttributes:
 G4_4A_MapAttributes:
 G5_1E_MapAttributes:
 HayatosHouse2_MapAttributes::
-	map_attributes HayatosHouse1, HAYATOS_HOUSE_1, 0, Tileset_006_403b
+	map_attributes HayatosHouse1, HAYATOS_HOUSE_1, 0, Tileset_4
 
 G4_2C_MapAttributes:
 G4_46_MapAttributes:
 G3_18_MapAttributes:
 G5_1F_MapAttributes:
 CarpetWomansHouse2_MapAttributes:
-	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_006_403b
+	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_4
 
 G3_19_MapAttributes:
 G5_20_MapAttributes:
 FangfangsHouse2_MapAttributes:
-	map_attributes FangfangsHouse1, FANGFANGS_HOUSE_1, 0, Tileset_006_403b
+	map_attributes FangfangsHouse1, FANGFANGS_HOUSE_1, 0, Tileset_4
 
 G3_1D_MapAttributes:
 G5_21_MapAttributes:
 BellHealingCenter2_MapAttributes:
-	map_attributes BellHealingCenter1, BELL_HEALING_CENTER_1, 0, Tileset_006_404a
+	map_attributes BellHealingCenter1, BELL_HEALING_CENTER_1, 0, Tileset_5
 
 G5_24_MapAttributes:
 BellSchool2_MapAttributes:
-	map_attributes BellSchool1, BELL_SCHOOL_1, 0, Tileset_006_4052
+	map_attributes BellSchool1, BELL_SCHOOL_1, 0, Tileset_6
 
 BellObservatory2_MapAttributes:
-	map_attributes BellObservatory1, BELL_OBSERVATORY_1, 0, Tileset_006_405a
+	map_attributes BellObservatory1, BELL_OBSERVATORY_1, 0, Tileset_7
 
 BellSchoolNorthClassroom1_MapAttributes:
 BellSchoolNorthClassroom_MapAttributes:
@@ -51,7 +51,7 @@ BellSchoolSouthClassroom1_MapAttributes:
 BellSchoolSouthClassroom2_MapAttributes:
 G5_25_MapAttributes:
 G5_26_MapAttributes:
-	map_attributes BellSchoolSouthClassroom, BELL_SCHOOL_SOUTH_CLASSROOM_1, 0, Tileset_006_403b
+	map_attributes BellSchoolSouthClassroom, BELL_SCHOOL_SOUTH_CLASSROOM_1, 0, Tileset_4
 
 TechCity_MapAttributes:
 	db 18, 12
@@ -61,7 +61,7 @@ TechCity_MapAttributes:
 	dw TechCity_AttrMap
 	dw TechCity_Palettes
 	dw 0
-	dw Tileset_006_4070
+	dw Tileset_8
 	dw 0
 	dw TechCity_Collision
 
@@ -78,7 +78,7 @@ MapAttributes_001_40f0:
 	dw AttrMap_001_5efb
 	dw Palettes_001_5f8c
 	dw 0
-	dw Tileset_006_403b
+	dw Tileset_4
 	dw 0
 	dw Collision_001_5fd4
 
@@ -96,7 +96,7 @@ MapAttributes_001_4104:
 	dw AttrMap_001_5efb
 	dw Palettes_001_5f8c
 	dw 0
-	dw Tileset_006_403b
+	dw Tileset_4
 	dw 0
 	dw Collision_001_5fd4
 
@@ -111,7 +111,7 @@ MapAttributes_001_4118:
 	dw AttrMap_001_5efb
 	dw Palettes_001_5f8c
 	dw 0
-	dw Tileset_006_403b
+	dw Tileset_4
 	dw 0
 	dw Collision_001_5fd4
 
@@ -128,7 +128,7 @@ MapAttributes_001_412c:
 	dw AttrMap_001_5efb
 	dw Palettes_001_5f8c
 	dw 0
-	dw Tileset_006_403b
+	dw Tileset_4
 	dw 0
 	dw Collision_001_5fd4
 
@@ -143,7 +143,7 @@ MapAttributes_001_4140:
 	dw AttrMap_001_5efb
 	dw Palettes_001_5f8c
 	dw 0
-	dw Tileset_006_403b
+	dw Tileset_4
 	dw 0
 	dw Collision_001_5fd4
 
@@ -159,7 +159,7 @@ MapAttributes_001_4154:
 	dw AttrMap_001_5efb
 	dw Palettes_001_5f8c
 	dw 0
-	dw Tileset_006_403b
+	dw Tileset_4
 	dw 0
 	dw Collision_001_5fd4
 
@@ -180,7 +180,7 @@ TechShop_MapAttributes:
 	dw AttrMap_001_5b13
 	dw Palettes_001_5b55
 	dw 0
-	dw Tileset_006_407f
+	dw Tileset_9
 	dw 0
 	dw Collision_001_5b9d
 
@@ -200,7 +200,7 @@ TechHealingCenter_MapAttributes:
 	dw AttrMap_001_5976
 	dw Palettes_001_59c7
 	dw 0
-	dw Tileset_006_4087
+	dw Tileset_10
 	dw 0
 	dw Collision_001_5a0f
 
@@ -212,7 +212,7 @@ CrystalVillage_MapAttributes:
 	dw CrystalVillage_AttrMap
 	dw CrystalVillage_Palettes
 	dw 0
-	dw Tileset_006_408f
+	dw Tileset_11
 	dw 0
 	dw CrystalVillage_Collision
 
@@ -224,7 +224,7 @@ MapAttributes_001_41a4:
 	dw AttrMap_001_5361
 	dw Palettes_001_5402
 	dw 0
-	dw Tileset_006_40a5
+	dw Tileset_12
 	dw 0
 	dw Collision_001_544a
 
@@ -237,7 +237,7 @@ MapAttributes_001_41b8:
 	dw AttrMap_001_5361
 	dw Palettes_001_5402
 	dw 0
-	dw Tileset_006_40a5
+	dw Tileset_12
 	dw 0
 	dw Collision_001_544a
 
@@ -249,7 +249,7 @@ MapAttributes_001_41cc:
 	dw AttrMap_001_5361
 	dw Palettes_001_5402
 	dw 0
-	dw Tileset_006_40a5
+	dw Tileset_12
 	dw 0
 	dw Collision_001_544a
 
@@ -261,7 +261,7 @@ MapAttributes_001_41e0:
 	dw AttrMap_001_5361
 	dw Palettes_001_5402
 	dw 0
-	dw Tileset_006_40a5
+	dw Tileset_12
 	dw 0
 	dw Collision_001_544a
 
@@ -273,7 +273,7 @@ MapAttributes_001_41f4:
 	dw AttrMap_001_5361
 	dw Palettes_001_5402
 	dw 0
-	dw Tileset_006_40a5
+	dw Tileset_12
 	dw 0
 	dw Collision_001_544a
 
@@ -285,7 +285,7 @@ CrystalHealingCenter_MapAttributes:
 	dw AttrMap_001_4fc2
 	dw Palettes_001_5013
 	dw 0
-	dw Tileset_006_40bb
+	dw Tileset_13
 	dw 0
 	dw Collision_001_505b
 
@@ -297,7 +297,7 @@ Junkyard_MapAttributes:
 	dw Junkyard_AttrMap
 	dw Junkyard_Palettes
 	dw 0
-	dw Tileset_006_40ca
+	dw Tileset_14
 	dw 0
 	dw Junkyard_Collision
 
@@ -309,7 +309,7 @@ PowerPlantOutside_MapAttributes:
 	dw PowerPlantOutside_AttrMap
 	dw PowerPlantOutside_Palettes
 	dw 0
-	dw Tileset_006_40f9
+	dw Tileset_19
 	dw 0
 	dw PowerPlantOutside_Collision
 
@@ -321,7 +321,7 @@ PowerPlant1F_MapAttributes:
 	dw PowerPlant_AttrMap
 	dw PowerPlant_Palettes
 	dw 0
-	dw Tileset_006_40d2
+	dw Tileset_15
 	dw 0
 	dw PowerPlant_Collision
 
@@ -333,7 +333,7 @@ PowerPlant2F_MapAttributes:
 	dw PowerPlant_AttrMap
 	dw PowerPlant_Palettes
 	dw 0
-	dw Tileset_006_40d2
+	dw Tileset_15
 	dw 0
 	dw PowerPlant_Collision
 
@@ -345,7 +345,7 @@ PowerPlant3F_MapAttributes:
 	dw PowerPlant_AttrMap
 	dw PowerPlant_Palettes
 	dw 0
-	dw Tileset_006_40d2
+	dw Tileset_15
 	dw 0
 	dw PowerPlant_Collision
 
@@ -357,7 +357,7 @@ PowerPlant4F_MapAttributes:
 	dw PowerPlant_AttrMap
 	dw PowerPlant_Palettes
 	dw 0
-	dw Tileset_006_40d2
+	dw Tileset_15
 	dw 0
 	dw PowerPlant_Collision
 
@@ -369,7 +369,7 @@ Hideout_MapAttributes:
 	dw Hideout_AttrMap
 	dw Hideout_Palettes
 	dw 0
-	dw Tileset_006_40da
+	dw Tileset_16
 	dw 0
 	dw Hideout_Collision
 
