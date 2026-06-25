@@ -1,0 +1,96 @@
+@org $62, $411e (WorldMapNames):
+	text "貝爾鎮";
+	line;
+
+@org $62, $4124 (WorldMapNames_4124):
+	text "科技城";
+	line;
+
+@org $62, $412a (WorldMapNames_412a):
+	text "水晶村";
+	line;
+
+@org $62, $4131 (WorldMapNames_4131):
+	text "水晶礦坑";
+	line;
+
+@org $62, $4139 (WorldMapNames_4139):
+	text "發電廠";
+	line;
+
+@org $62, $413f (WorldMapNames_413f):
+	text "多魯市";
+	line;
+
+@org $62, $4146 (WorldMapNames_4146):
+	text "多魯市";
+	line;
+
+@org $62, $414d (WorldMapNames_414d):
+	text "山達農莊";
+	line;
+
+@org $62, $4155 (WorldMapNames_4155):
+	text "咖啡林";
+	line;
+
+@org $62, $415b (WorldMapNames_415b):
+	text "天之岩";
+	line;
+
+@org $62, $4161 (WorldMapNames_4161):
+	text "天之都";
+	line;
+
+@org $62, $4167 (WorldMapNames_4167):
+	text "綠色樹海";
+	line;
+
+@org $62, $416f (WorldMapNames_416f):
+	text "鐘塔祕門出口";
+	line;
+
+@org $62, $417c (WorldMapNames_417c):
+	text "東漁市";
+	line;
+
+@org $62, $4183 (WorldMapNames_4183):
+	text "地熱城";
+	line;
+
+@org $62, $4189 (WorldMapNames_4189):
+	text "神木村";
+	line;
+
+@org $62, $4190 (WorldMapNames_4190):
+	text "生之谷";
+	line;
+
+@org $62, $4197 (WorldMapNames_4197):
+	text "死之谷";
+	line;
+
+@org $62, $419d (WorldMapNames_419d):
+	text "雷達站";
+	line;
+
+@org $62, $41a4 (WorldMapNames_41a4):
+	text "星夢城";
+	line;
+
+@org $62, $41ab (WorldMapNames_41ab):
+	text "永凍園";
+	line;
+
+@org $62, $41b2 (WorldMapNames_41b2):
+	text "預售屋";
+	line;
+
+@org $62, $41b9 (WorldMapNames_41b9):
+	text "巴爾之都";
+	line;
+
+@org $62, $41c2 (WorldMapNames_41c2):
+	text "金鋼山";
+	line;
+

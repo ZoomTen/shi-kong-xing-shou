@@ -1,0 +1,175 @@
+@org $0d, $43c2 (Script_00d_43c2):
+	text "綁精神";
+	line;
+	db $01; #"死"
+
+@org $0d, $43c8 (Script_00d_43c8):
+	text "中  療";
+	line;
+	db $00; #" "
+
+@org $0d, $43cf (Script_00d_43cf):
+	text "傷防尖";
+	line;
+	db $01; #"死"
+
+@org $0d, $43d5 (Script_00d_43d5):
+	text "叫  犧";
+	line;
+	db $00; #" "
+
+@org $0d, $43dc (Script_00d_43dc):
+	text "牲勒全緊";
+	line;
+	db $00; #" "
+
+@org $0d, $43e3 (Script_00d_43e3):
+	text "力不放";
+	line;
+	db $01; #"死"
+
+@org $0d, $43e9 (Script_00d_43e9):
+	text "電緊光";
+	line;
+	db $01; #"死"
+
+@org $0d, $43ef (Script_00d_43ef):
+	text "電閃全緊";
+	line;
+	db $00; #" "
+
+@org $0d, $43f6 (Script_00d_43f6):
+	text "分身熱血";
+	line;
+	db $00; #" "
+
+@org $0d, $43fd (Script_00d_43fd):
+	text "正拳全緊";
+	line;
+	db $00; #" "
+
+@org $0d, $4404 (Script_00d_4404):
+	text "分身熱石";
+	line;
+	db $00; #" "
+
+@org $0d, $440b (Script_00d_440b):
+	text "縮小全緊";
+	line;
+	db $00; #" "
+
+@org $0d, $4412 (Script_00d_4412):
+	text "槍刺洗";
+	line;
+	db $01; #"死"
+
+@org $0d, $4418 (Script_00d_4418):
+	text "腦拍翅";
+	line;
+	db $01; #"死"
+
+@org $0d, $441e (Script_00d_441e):
+	text "章睡決";
+	line;
+	db $01; #"寂"
+
+@org $0d, $4426 (Script_00d_4426):
+	text "受呀著";
+	line;
+	db $01; #"單"
+
+@org $0d, $442e (Script_00d_442e):
+	text "綁哀熱";
+	line;
+	db $01; #"死"
+
+@org $0d, $4434 (Script_00d_4434):
+	text "久獸爛";
+	line;
+	db $01; #"誤"
+
+@org $0d, $443c (Script_00d_443c):
+	text "先追全緊";
+	line;
+	db $00; #" "
+
+@org $0d, $4445 (Script_00d_4445):
+	text "順  導";
+	line;
+	db $00; #"儲"
+
+@org $0d, $444e (Script_00d_444e):
+	text "準順石緊";
+	line;
+	db $00; #" "
+
+@org $0d, $4457 (Script_00d_4457):
+	text "德諒分辱";
+	line;
+	db $00; #"但"
+
+@org $0d, $4460 (Script_00d_4460):
+	text "心交療兄";
+	line;
+	db $00; #"並"
+
+@org $0d, $446a (Script_00d_446a):
+	text "態塵著";
+	line;
+	db $01; #"單"
+
+@org $0d, $4472 (Script_00d_4472):
+	text "聚熱心";
+	line;
+	db $01; #"單"
+
+@org $0d, $447a (Script_00d_447a):
+	text "綁  賭";
+	line;
+	db $00; #"但"
+
+@org $0d, $4482 (Script_00d_4482):
+	text "隼  賭";
+	line;
+	db $00; #"但"
+
+@org $0d, $448b (Script_00d_448b):
+	text "鏡  祖";
+	line;
+	db $00; #"但"
+
+@org $0d, $4494 (Script_00d_4494):
+	text "醜  借";
+	line;
+	db $00; #"但"
+
+@org $0d, $449d (Script_00d_449d):
+	text "Ｅ越累";
+	line;
+	db $01; #"寂"
+
+@org $0d, $44a5 (Script_00d_44a5):
+	text "萄  兇";
+	line;
+	db $00; #"稍"
+
+@org $0d, $44ae (Script_00d_44ae):
+	text "轟咧希";
+	line;
+	db $01; #"寂"
+
+@org $0d, $44b6 (Script_00d_44b6):
+	text "帶蘑緊";
+	line;
+	db $01; #"死"
+
+@org $0d, $44be (Script_00d_44be):
+	text "隼導靈緊";
+	line;
+	db $00; #" "
+
+@org $0d, $44c7 (Script_00d_44c7):
+	text "屏機緊";
+	line;
+	db $01; #"死"
+

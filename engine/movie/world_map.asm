@@ -141,77 +141,7 @@ WorldMapNameStringPointers_411a:
 	dw WorldMapNames_41b9
 	dw WorldMapNames_41c2
 ; TEXT -> <f4>頭<f5>幕魅<ed>
-WorldMapNames:
-	db $f4, $d2, $f5, $12, $dd, $ed
-; TEXT -> <f1>香哀<f4>紅<ed>
-WorldMapNames_4124:
-	db $f1, $ca, $54, $f4, $9d, $ed
-; TEXT -> <f0>水<f1>砂<f4>咬<ed>
-WorldMapNames_412a:
-	db $f0, $9f, $f1, $aa, $f4, $05, $ed
-; TEXT -> <f0>水<f1>砂<f5>拍盾<ed>
-WorldMapNames_4131:
-	db $f0, $9f, $f1, $aa, $f5, $44, $6b, $ed
-; TEXT -> <f0>發電<f9>療<ed>
-WorldMapNames_4139:
-	db $f0, $4b, $34, $f9, $2a, $ed
-; TEXT -> <f4>術<f5>煙<f4>寄<ed>
-WorldMapNames_413f:
-	db $f4, $10, $f5, $11, $f4, $c6, $ed
-; TEXT -> <f4>術<f5>煙<f4>寄<ed>
-WorldMapNames_4146:
-	db $f4, $10, $f5, $11, $f4, $c6, $ed
-; TEXT -> <f3>．<f1>黑<f5>侵蝕<ed>
-WorldMapNames_414d:
-	db $f3, $74, $f1, $a7, $f5, $d9, $da, $ed
-; TEXT -> <f3>天寒<f5>泡<ed>
-WorldMapNames_4155:
-	db $f3, $80, $81, $f5, $99, $ed
-; TEXT -> <f0>天之<f3>綑<ed>
-WorldMapNames_415b:
-	db $f0, $80, $02, $f3, $25, $ed
-; TEXT -> <f0>天之<f3>落<ed>
-WorldMapNames_4161:
-	db $f0, $80, $02, $f3, $ac, $ed
-; TEXT -> <f3>裂<f4>不<f0>樹海<ed>
-WorldMapNames_4167:
-	db $f3, $15, $f4, $32, $f0, $be, $a2, $ed
-; TEXT -> <f1>片<f4>收<f2>硬<f4>傷<f2>防<f5>潛<ed>
-WorldMapNames_416f:
-	db $f1, $c2, $f4, $86, $f2, $1d, $f4, $2b, $f2, $0a, $f5, $53, $ed
-; TEXT -> <f4>猛<f7>瘋<f4>寄<ed>
-WorldMapNames_417c:
-	db $f4, $d0, $f7, $08, $f4, $c6, $ed
-; TEXT -> <f0>地熱<f4>紅<ed>
-WorldMapNames_4183:
-	db $f0, $7a, $39, $f4, $9d, $ed
-; TEXT -> <f0>神<f1>發<f4>咬<ed>
-WorldMapNames_4189:
-	db $f0, $28, $f1, $4b, $f4, $05, $ed
-; TEXT -> <f1>人<f0>之<f7>睡<ed>
-WorldMapNames_4190:
-	db $f1, $23, $f0, $02, $f7, $57, $ed
-; TEXT -> <f0>死之<f7>睡<ed>
-WorldMapNames_4197:
-	db $f0, $01, $02, $f7, $57, $ed
-; TEXT -> <f0>雷<f1>黑<f5>睡<ed>
-WorldMapNames_419d:
-	db $f0, $b4, $f1, $a7, $f5, $57, $ed
-; TEXT -> <f0>星<f2>刺<f4>紅<ed>
-WorldMapNames_41a4:
-	db $f0, $ba, $f2, $41, $f4, $9d, $ed
-; TEXT -> <f6>潛<f0>凍<f8>彈<ed>
-WorldMapNames_41ab:
-	db $f6, $53, $f0, $a4, $f8, $13, $ed
-; TEXT -> <f3>干<f6>紅<f8>催<ed>
-WorldMapNames_41b2:
-	db $f3, $df, $f6, $9d, $f8, $0e, $ed
-; TEXT -> <f0>巴<f5>幕<f0>之<f3>落<ed>
-WorldMapNames_41b9:
-	db $f0, $16, $f5, $12, $f0, $02, $f3, $ac, $ed
-; TEXT -> <f3>力<f8>準<f3>．<ed>
-WorldMapNames_41c2:
-	db $f3, $19, $f8, $60, $f3, $74, $ed
+INCLUDE "data/text/worldmap_names.asm"
 WorldMapLocationIdPointers:
 	dw WorldMapLocationIds
 	dw WorldMapLocationIds

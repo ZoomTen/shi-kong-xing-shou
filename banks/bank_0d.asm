@@ -449,45 +449,7 @@ Pointers_00d_437a:
 	dw Script_00d_446a, Script_00d_4472, Script_00d_447a, Script_00d_4482, Script_00d_448b, Script_00d_4494, Script_00d_449d, Script_00d_44a5
 	dw Script_00d_44ae, Script_00d_44b6, Script_00d_44be, Script_00d_44c7
 ; TODO: paper-scroll scripts (F0/ED character command lists)
-Script_00d_43c2:
-	db $f0, $26, $27, $28, $ed, $01
-INCLUDE "data/text/bank0d_43c8.asm"
-Script_00d_43cf:
-	db $f0, $2b, $0a, $2c, $ed, $01
-INCLUDE "data/text/bank0d_43d5.asm"
-Script_00d_43e3:
-	db $f0, $19, $32, $33, $ed, $01
-Script_00d_43e9:
-	db $f0, $34, $31, $35, $ed, $01
-INCLUDE "data/text/bank0d_43ef.asm"
-Script_00d_4412:
-	db $f0, $40, $41, $42, $ed, $01
-Script_00d_4418:
-	db $f0, $43, $44, $45, $ed, $01
-Script_00d_441e:
-	db $f3, $68, $f0, $57, $f6, $2e, $ed, $01
-Script_00d_4426:
-	db $f4, $24, $f3, $d3, $f2, $1c, $ed, $01
-Script_00d_442e:
-	db $f0, $26, $54, $39, $ed, $01
-Script_00d_4434:
-	db $f4, $b4, $f1, $1b, $f4, $cf, $ed, $01
-INCLUDE "data/text/bank0d_443c.asm"
-Script_00d_446a:
-	db $f1, $dc, $f3, $48, $f2, $1c, $ed, $01
-Script_00d_4472:
-	db $f2, $c4, $f0, $39, $f2, $c5, $ed, $01
-INCLUDE "data/text/bank0d_447a.asm"
-Script_00d_449d:
-	db $f7, $2c, $f5, $9d, $f6, $31, $ed, $01
-INCLUDE "data/text/bank0d_44a5.asm"
-Script_00d_44ae:
-	db $f6, $b5, $f7, $34, $f6, $50, $ed, $01
-Script_00d_44b6:
-	db $f2, $39, $f3, $3a, $f0, $31, $ed, $01
-INCLUDE "data/text/bank0d_44be.asm"
-Script_00d_44c7:
-	db $f7, $40, $f1, $90, $f0, $31, $ed, $01
+INCLUDE "data/text/bank0d_paperscroll.asm"
 PaperEmotesTiles:
 	INCBIN "gfx/paper_scroll/tiles_44cf.2bpp"
 LightbulbEmoteTiles:

@@ -1,5 +1,0 @@
-@org $0d, $44a5 (Script_00d_44a5):
-	text "萄  兇";
-	line;
-	db $00; #"稍"
-
