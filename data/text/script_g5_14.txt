@@ -1,0 +1,47 @@
+@org $66, $585c:
+	init NAME_BLANK, PIC_16;
+@org $66, $585f:
+	text "嗯⋯⋯是的⋯";
+	line "嘻嘻～哪有呀～";
+	para "嗯～我知道～";
+	line "很好呀～是的～";
+	para "他也很好呀﹗";
+	line "女兒呀﹐你媽叫";
+	cont "我問侯你呢﹗";
+	done;
+
+@org $66, $58b8:
+	init NAME_BLANK, PIC_1F;
+@org $66, $58bb:
+	text "爸～";
+	line "";
+	db $f2, $48; #"那"
+	text "是你的幻覺⚬";
+	para "媽媽早就死了⚬";
+	done;
+
+@org $66, $58db:
+	init NAME_BLANK, PIC_16;
+@org $66, $58de:
+	text "哪有﹖";
+	line "你媽明明就在妳";
+	cont "旁邊啊﹗";
+	done;
+
+@org $66, $58f8:
+	init NAME_BLANK, PIC_1F;
+@org $66, $58fb:
+	text "哇哇哇哇﹗";
+	done;
+
+@org $66, $5903:
+	init NAME_BLANK, PIC_1F;
+@org $66, $5906:
+	text "爸爸最近老是和";
+	line "";
+	db $f3, $b9; #"他"
+	text "的幻覺說話⚬";
+	para "被他嚇到神經衰";
+	line "弱了⋯";
+	done;
+

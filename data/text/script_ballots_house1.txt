@@ -1,0 +1,70 @@
+@org $08, $4cf4:
+	init NAME_SAYA, PIC_11;
+	text "起床了嗎﹖";
+	line;
+	para "該上學了⚬";
+	line;
+	done;
+
+@org $08, $4d0b:
+	init NAME_SAYA, PIC_11;
+	text "等等～巴洛特﹗";
+	done;
+
+@org $08, $4d1a:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "⋯﹖";
+	para "爸﹐有事嗎﹖";
+	done;
+
+@org $08, $4d2d:
+	init NAME_SAYA, PIC_11;
+	text "先吃完早餐吧⚬";
+	done;
+
+@org $08, $4d3e:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "不了⚬";
+	para "上學快要遲到了";
+	line "⚬";
+	done;
+
+@org $08, $4d56:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯";
+	para "巴洛特～";
+	para "關於那個⋯⋯";
+	done;
+
+@org $08, $4d70:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "嗯﹖";
+	done;
+
+@org $08, $4d77:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯沒什麼⚬";
+	para "上學去吧⚬";
+	done;
+
+@org $08, $4d8f:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "又是這樣﹗";
+	para "自從媽媽過逝後";
+	line "﹐";
+	cont "爸爸就總是不能";
+	line "老實的﹐";
+	cont "說出想說的話﹗";
+	para "巴洛特已經";
+	line "１２歲了﹗";
+	para "不是小孩子了﹗";
+	para "爸⋯爸爸⋯⋯";
+	cont "大笨蛋﹗﹗﹗";
+	done;
+
+@org $08, $4e04:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯";
+	para "上學去吧⚬";
+	done;
+

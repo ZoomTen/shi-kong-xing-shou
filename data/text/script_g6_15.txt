@@ -1,0 +1,9 @@
+@org $6c, $6566:
+	init NAME_CLAUDE, PIC_CLAUDE_4;
+@org $6c, $6569:
+	text "在這種緊急時刻";
+	line "還發生這種事⚬";
+	para "雷歐博士真是不";
+	line "可信任⚬";
+	done;
+

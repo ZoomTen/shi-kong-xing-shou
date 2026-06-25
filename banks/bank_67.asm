@@ -146,4 +146,11 @@ Script_067_6f3f:
 Script_067_6f4a:
 	end
 
-INCLUDE "data/text/bank67_6f4b.asm"
+INCLUDE "data/text/script_g5_05_1.asm"
+INCLUDE "data/text/script_g5_03_1.asm"
+INCLUDE "data/text/script_g5_04_1.asm"
+INCLUDE "data/text/script_g5_03_2.asm"
+INCLUDE "data/text/script_g5_05_2.asm"
+INCLUDE "data/text/script_g5_06_1.asm"
+INCLUDE "data/text/script_g5_04_2.asm"
+INCLUDE "data/text/script_g5_06_2.asm"

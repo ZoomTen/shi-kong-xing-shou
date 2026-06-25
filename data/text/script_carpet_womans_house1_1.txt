@@ -1,0 +1,17 @@
+@org $08, $497a:
+	init NAME_BLANK, PIC_1F;
+	text "啊啊﹗﹗﹗";
+	para "怎麼把狗帶到別";
+	line "人家裡來⚬";
+	para "我才剛換了新地";
+	line "毯﹐";
+	cont "這下又弄髒了﹗";
+	para "真是沒教養的小";
+	line "孩⚬";
+	done;
+
+@org $08, $49cc:
+	init NAME_SNOWY, PIC_SNOWY;
+	text "嗚～～汪汪汪﹗";
+	done;
+

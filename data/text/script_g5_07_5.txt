@@ -1,0 +1,31 @@
+@org $66, $7b6c:
+	init NAME_BLANK, PIC_23;
+@org $66, $7b6f:
+	text "快走開";
+	db $f2, $1f; #"～"
+	text "";
+	para "這機械室⚬";
+	cont "不是讓你們玩的";
+	cont "地方";
+	db $f1, $35; #"﹗"
+	text "";
+	done;
+
+@org $66, $7b99:
+	init NAME_BLANK, PIC_23;
+@org $66, $7b9c:
+	text "我最討厭";
+	db $f7, $5a; #"笛"
+	text "聲了";
+	cont "走開";
+	db $f2, $1f; #"～"
+	text "";
+	cont "我不想聽～";
+	done;
+
+@org $66, $7bbc:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $7bbf:
+	text "槌．槌．槌";
+	done;
+

@@ -1,0 +1,304 @@
+@org $0e, $5c24:
+	init NAME_1B, PIC_4C;
+	text "怎麼辦～";
+	para "怎麼辦～";
+	para "流星雨打斷了回";
+	line "多魯市的道路﹗";
+	para "身為加爾企業採";
+	line "購部經理的我﹐";
+	cont "必需要趕回去開";
+	line "個重要會議﹗";
+	para "雷歐博士～";
+	cont "你要想想辦法啊";
+	line "﹗";
+	done;
+
+@org $0e, $5c9e:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "唉～";
+	line "都是我的錯～";
+	para "讓科技城輸了三";
+	line "千萬﹐";
+	cont "還賠上了高速賽";
+	line "車之都的名譽⋯";
+	done;
+
+@org $0e, $5ce0:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "雷歐博士﹐";
+	cont "你就是伊隼人所";
+	line "說的﹐";
+	cont "天才機械發明家";
+	line "～雷歐博士嗎﹖";
+	para "可不可以請您看";
+	line "看這張設計圖﹗";
+	done;
+
+@org $0e, $5d33:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "設計圖⋯";
+	line "放著吧～";
+	para "我代表著科技城";
+	line "﹐";
+	cont "和閃電隊比賽迷";
+	line "你賽車﹗";
+	para "居然輸了⋯";
+	para "我不甘心⋯";
+	para "我的黃金鳳凰號";
+	line "竟然⋯";
+	para "我還有什麼面子";
+	line "待在這裡⋯⋯";
+	done;
+
+@org $0e, $5dae:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "你是指設計圖嗎";
+	line "﹖";
+	para "我不是說過﹐";
+	line;
+	cont "就這樣放著嗎﹖";
+	para "唉～";
+	cont "我不是機械天才";
+	line "⋯⋯";
+	para "而這樣的亮度﹐";
+	cont "無法看到圖裡畫";
+	line "的究竟是什麼⋯";
+	para "唉～";
+	line "之所以會輸﹐";
+	cont "也不完全是我的";
+	line "錯⋯⋯";
+	done;
+
+@org $0e, $5e40:
+	init NAME_BLANK, PIC_LAKI;
+	text "哦～呵呵呵﹗";
+	para "哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+
+@org $0e, $5e5d:
+	init NAME_BLANK, PIC_KULU;
+	text "怎麼樣﹖";
+	line "賴帳的傢伙﹖";
+	done;
+
+@org $0e, $5e73:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "他們又來了﹗";
+	para "我沒有面子再見";
+	line "其他村人了﹗";
+	para "你幫我";
+	forcemap "去", 2;
+	text "外面的";
+	line "『廣場』看看";
+	para "好嗎﹖";
+	done;
+
+@org $0e, $5ebb:
+	init NAME_BLANK, PIC_KULU;
+	text "比賽的承諾～";
+	line "三千萬﹗";
+	para "在下這就來取了";
+	line "﹗";
+	done;
+
+@org $0e, $5ee0:
+	init NAME_1D, PIC_1A;
+	text "爸爸﹖";
+	line "他們是誰啊﹖";
+	done;
+
+@org $0e, $5ef5:
+	init NAME_BLANK, PIC_LAKI;
+	text "哦～呵呵呵～";
+	para "我聽到了﹗";
+	para "你在問我們是誰";
+	line "嗎﹖";
+	done;
+
+@org $0e, $5f1f:
+	init NAME_BLANK, PIC_LAKI;
+	text "既然你們問起了";
+	line "～";
+	cont "那我就仁慈的告";
+	line "訴你們吧﹗";
+	done;
+
+@org $0e, $5f4b:
+	init NAME_BLANK, PIC_KULU;
+	text "來自銀河系裡的";
+	line "正義使者﹗";
+	done;
+
+@org $0e, $5f67:
+	init NAME_BLANK, PIC_LAKI;
+	text "穿梭於黑夜的";
+	line "浪漫勇士﹗";
+	done;
+
+@org $0e, $5f7e:
+	init NAME_BLANK, PIC_KULU;
+	text "貫徹愛．正義．";
+	line "勇氣的真理﹗";
+	done;
+
+@org $0e, $5f99:
+	init NAME_LAKI, PIC_LAKI;
+	text "拉琪﹗";
+	done;
+
+@org $0e, $5fa2:
+	init NAME_KULU, PIC_KULU;
+	text "庫魯﹗";
+	done;
+
+@org $0e, $5fab:
+	init NAME_LAKI, PIC_LAKI;
+	text "閃．電．隊～";
+	line "～誕生﹗﹗";
+	done;
+
+@org $0e, $5fc0:
+	init NAME_KULU, PIC_KULU;
+	text "還不打算交出三";
+	line "千萬嗎﹖";
+	para "現在只是停一下";
+	line "小電作為懲戒﹗";
+	para "再不交出來﹐";
+	cont "在下只好將發電";
+	line "塔爆破﹗";
+	done;
+
+@org $0e, $6015:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵～";
+	para "就是這個鈕﹗";
+	cont "只要輕輕按一下";
+	line "唷～";
+	cont "發電塔就會～";
+	line "『磅』唷﹗";
+	done;
+
+@org $0e, $6055:
+	init NAME_BLANK, PIC_1B;
+	text "千萬不要這麼做";
+	line "﹗";
+	done;
+
+@org $0e, $6068:
+	init NAME_BUCK, PIC_BUCK;
+	text "你們．贏．才怪";
+	line "﹗";
+	para "雷歐博士．出了";
+	line "．問題﹗";
+	para "你們．才怪．贏";
+	line "﹗";
+	done;
+
+@org $0e, $60a4:
+	init NAME_KULU, PIC_KULU;
+	text "在下認得你﹗";
+	para "你不就是那個手";
+	line "下敗將～";
+	cont "雷歐的機器人嗎";
+	line "﹖";
+	done;
+
+@org $0e, $60d9:
+	init NAME_BUCK, PIC_BUCK;
+	text "胡說﹗";
+	para "再比．雷歐博士";
+	line "．一定贏﹗";
+	done;
+
+@org $0e, $60f7:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦哦～呵呵呵﹗";
+	para "沒有那個的話﹐";
+	cont "再比幾次都是一";
+	line "樣的﹗";
+	para "算了～";
+	para "再給你一次機會";
+	line "好了﹗";
+	para "三天後再比賽一";
+	line "場⚬";
+	para "如果輸的話﹐";
+	cont "就要乾脆的交出";
+	line "三千萬⚬";
+	para "哦哦哦哦哦～";
+	line "～呵呵呵呵﹗";
+	done;
+
+@org $0e, $6188:
+	init NAME_BLANK, PIC_1B;
+	text "雷歐又要和閃電";
+	line "隊比賽一次了﹗";
+	para "唉～";
+	cont "看上次那種慘狀";
+	line "﹗";
+	para "我們還是想辦法";
+	line "籌出三千萬好了";
+	done;
+
+@org $0e, $61da:
+	init NAME_BUCK, PIC_BUCK;
+	text "再比賽．雷歐博";
+	line "士．贏．一定﹗";
+	done;
+
+@org $0e, $61f6:
+	init NAME_0A, PIC_0A;
+	text "恰比～恰比比～";
+	done;
+
+@org $0e, $6205:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "再比賽一次嗎﹖";
+	cont "實在沒有太大的";
+	line "把握⋯";
+	para "因為在不久前﹐";
+	cont "高速賽車零件中";
+	line "﹐";
+	cont "最高級的彩虹水";
+	line "晶﹐";
+	cont "莫名奇妙的停產";
+	line "了﹗";
+	done;
+
+	text "沒有那使用那個";
+	line "當作核心的話﹐";
+	cont "是贏不了的⚬";
+	done;
+
+@org $0e, $6292:
+	init NAME_BUCK, PIC_BUCK;
+	text "巴克．拿．";
+	line "彩虹水晶﹗";
+	done;
+
+@org $0e, $62aa:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "為什麼彩虹水晶";
+	line "會停產﹖";
+	done;
+
+@org $0e, $62c5:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "我也不清楚⋯";
+	para "水晶村就這樣莫";
+	line "名停產彩虹水晶";
+	done;
+
+@org $0e, $62ef:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "這其中一定有問";
+	line "題﹗";
+	para "我一定要弄清楚";
+	line "﹗";
+	done;
+
+@org $0e, $6314:
+	init NAME_BUCK, PIC_BUCK;
+	text "巴克．一起去﹗";
+	done;
+

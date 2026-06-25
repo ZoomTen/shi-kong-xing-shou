@@ -1,0 +1,83 @@
+@org $55, $64f9:
+	init NAME_3A, PIC_63;
+	text "這裡是人魚之家";
+	line "⚬";
+	done;
+
+@org $55, $650e:
+	init NAME_3B, PIC_64;
+	text "你們就是海青救";
+	line "起的人類嗎﹖";
+	cont "海青真是個好人";
+	line "魚⋯";
+	done;
+
+@org $55, $653d:
+	init NAME_3A, PIC_63;
+	text "海青的姐姐～";
+	line "海藍～";
+	cont "喜歡上了";
+	line "一個人⚬";
+	para "於是便用她的魚";
+	line "之魂﹐向海巫師";
+	para "換取三個月當人";
+	line "的時間⚬";
+	para "三個月後如果沒";
+	line "有回來她就會化";
+	cont "為泡沫⋯";
+	line "真是個傻人魚⋯";
+	done;
+
+@org $55, $65c6:
+	init NAME_3C, PIC_65;
+	text "往那邊一直游﹐";
+	line "就可是海巫師的";
+	cont "地方了⚬";
+	para "那海巫師很可怕";
+	line "⋯";
+	cont "只要近接那個地";
+	line "方";
+	forcemap 1, "﹐";
+	text "嗚哦～";
+	cont "身體就不知不覺";
+	line "的捲起來了⚬";
+	done;
+
+@org $55, $6630:
+	init NAME_3B, PIC_64;
+	text "上面的人類老是";
+	line "說海青吃掉他們";
+	cont "的小孩﹗";
+	para "才沒有這種事咧";
+	line "﹗";
+	cont "海青常常救起溺";
+	line "水的小孩呢﹗";
+	done;
+
+@org $55, $6684:
+	init NAME_3A, PIC_63;
+	text "你是住在上面的";
+	line "人類嗎﹖";
+	para "想要回去上面﹖";
+	line "很抱歉～";
+	cont "現在不行～";
+	para "我正在思考著﹐";
+	line "到底是先有烏龜";
+	para "呢﹐還是先有蛋";
+	line "﹗等我想出來後";
+	para "﹐就載你回陸地";
+	line "上⚬";
+	done;
+
+@org $55, $6704:
+	init NAME_3C, PIC_65;
+	text "海青現在到陸地";
+	line "上找海藍了﹗";
+	cont "現在不在﹗";
+	done;
+
+@org $55, $672a:
+	init NAME_3C, PIC_65;
+	text "人類最討厭了﹗";
+	done;
+

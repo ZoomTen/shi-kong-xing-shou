@@ -1,0 +1,198 @@
+@org $58, $56be:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $56c1:
+	text "＃＄＠※⋯﹗";
+	done;
+
+@org $58, $56cc:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $56cf:
+	text "他似乎正在說話";
+	line "的樣子⋯";
+	cont "戴上耳機﹐什麼";
+	line "";
+	db $f2, $24; #"也"
+	text "聽不到﹗";
+	done;
+
+@org $58, $56fe:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $5701:
+	text "％＄✰＠＄＃﹗";
+	line "";
+	db $f1, $d6; #"％"
+	text "◇√＃﹗﹗﹗";
+	done;
+
+@org $58, $5719:
+	init NAME_LANTE, PIC_42;
+@org $58, $571c:
+	text "你們怎麼會有媽";
+	line "";
+	db $f3, $a1; #"媽"
+	text "的絕緣耳機﹖";
+	done;
+
+@org $58, $5736:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $5739:
+	text "你就是蒂朵阿姨";
+	line "的兒子﹖";
+	cont "這是怎麼回事﹖";
+	done;
+
+@org $58, $575e:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $5761:
+	text "我叫做藍特⚬";
+	done;
+
+@org $58, $576d:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $5770:
+	text "爸爸是一個地理";
+	line "科學家﹐在前天";
+	cont "探測到﹐生之谷";
+	line "有不正常的火山";
+	line "活動⚬";
+	para "";
+	db $f1, $d1; #"隨"
+	text "時有火山爆發";
+	line "的危險⚬";
+	para "於是爸爸叫我疏";
+	line "散村人﹐自己潛";
+	para "到生之谷觀察情";
+	line "況了⚬";
+	para "但是村人都不理";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	cont "我只好在半夜﹐";
+	line "";
+	db $f1, $40; #"用"
+	text "笛聲將他們全";
+	cont "都催眠﹐引到死";
+	line "";
+	db $f0, $02; #"之"
+	text "谷來⚬";
+	done;
+
+@org $58, $583a:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $583d:
+	text "原來如此⚬";
+	done;
+
+@org $58, $5847:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $584a:
+	text "你就是巴洛特嗎";
+	line "我聽爸爸提過你";
+	cont "";
+	db $f2, $4a; #"你"
+	text "們正在尋找動";
+	line "力晶片嗎﹖";
+	para "爸爸也有一片唷";
+	line "﹗";
+	done;
+
+@org $58, $588d:
+	init NAME_BALLOT, PIC_BALLOT_1;
+@org $58, $5890:
+	text "這真是太好了﹗";
+	done;
+
+@org $58, $589d:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $58a0:
+	text "就是這個﹗";
+	line "這是爸爸給我的";
+	cont "爸爸曾經說過﹐";
+	line "如果遇到巴洛特";
+	cont "";
+	db $f1, $51; #"的"
+	text "話﹐就把晶片";
+	line "給他﹗";
+	done;
+
+@org $58, $58e8:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $58eb:
+	text "得到了晶片５﹗";
+	done;
+
+@org $58, $58f7:
+	init NAME_LANTE, PIC_42;
+@org $58, $58fa:
+	text "啊﹗﹗又地震了";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "擔心爸爸的";
+	cont "安全﹗";
+	done;
+
+@org $58, $591b:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $591e:
+	text "我們到生之谷﹐";
+	line "";
+	db $f1, $34; #"找"
+	text "出你爸爸吧﹗";
+	done;
+
+@org $58, $5939:
+	init NAME_LANTE, PIC_LANTE_0;
+@org $58, $593c:
+	text "嗯﹗等到火山的";
+	line "危機解除後﹐我";
+	para "";
+	db $f2, $da; #"再"
+	text "放出那些村人";
+	line "⚬";
+	done;
+
+@org $58, $5967:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $596a:
+	text "藍特＆音樂靈加";
+	line "";
+	db $f2, $30; #"入"
+	text "";
+	db $5c; #"隊"
+	text "";
+	db $5d; #"伍"
+	text "﹗";
+	done;
+
+@org $58, $5980:
+	init NAME_SYSTEM, PIC_VAST_FAME;
+@org $58, $5983:
+	text "如將藍特置於排";
+	line "頭﹐如遇阻擋之";
+	para "";
+	db $f0, $23; #"人"
+	text "類﹐便可吹奏";
+	line "出催眠的音樂﹐";
+	cont "";
+	db $f1, $d2; #"而"
+	text "通過阻礙⚬";
+	done;
+
+@org $58, $59c6:
+	init NAME_BLANK, PIC_22;
+@org $58, $59c9:
+	text "放我們出去﹗";
+	line "你這個死小孩﹗";
+	cont "";
+	db $f1, $da; #"說"
+	text "什麼生之谷就";
+	line "快要火山爆發﹗";
+	para "騙人的死小孩﹗";
+	done;
+

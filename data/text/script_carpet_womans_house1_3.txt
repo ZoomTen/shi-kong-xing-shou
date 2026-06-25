@@ -1,0 +1,8 @@
+@org $08, $4ecc:
+	init NAME_BLANK, PIC_1F;
+	text "真是可惡～";
+	para "才剛換了新地毯";
+	line "﹐";
+	cont "這下又弄髒了﹗";
+	done;
+

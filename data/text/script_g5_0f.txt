@@ -1,0 +1,11 @@
+@org $66, $55ff:
+	init NAME_BLANK, PIC_21;
+@org $66, $5602:
+	text "媞雅最近常來店";
+	line "門口看妮妮娃娃";
+	para "往往可以呆呆的";
+	line "看上一整天～";
+	para "嘻嘻嘻～小女孩";
+	line "都是這樣的⚬";
+	done;
+

@@ -1,0 +1,200 @@
+@org $6c, $5b7e:
+	init NAME_4E, PIC_72;
+@org $6c, $5b81:
+	text "咭咭咭～";
+	line "終於來了嗎﹖";
+	cont "啊⋯﹗";
+	para "貝爾終於下了決";
+	line "心﹐要做個小小";
+	para "的手術﹐變成真";
+	line "正的人類⚬";
+	para "咭咭咭～";
+	line "";
+	db $f2, $48; #"那"
+	text "";
+	db $cf; #"麼"
+	text "不就可以⋯";
+	done;
+
+@org $6c, $5bde:
+	init NAME_4D, PIC_6C;
+@org $6c, $5be1:
+	text "⋯⋯⋯⋯";
+	done;
+
+@org $6c, $5be7:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $6c, $5bea:
+	text "不行呀～";
+	line "貝爾機器人根本";
+	cont "";
+	db $f2, $d7; #"就"
+	text "不理我⋯";
+	done;
+
+@org $6c, $5c09:
+	init NAME_BUCK, PIC_BUCK;
+@org $6c, $5c0c:
+	text "貝爾⋯⋯巴克⋯";
+	line "";
+	db $f2, $b0; #"試"
+	text "";
+	db $b0; #"試"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	done;
+
+@org $6c, $5c1f:
+	init NAME_4D, PIC_6C;
+@org $6c, $5c22:
+	text "居然⋯";
+	line "";
+	db $f2, $65; #"還"
+	text "有個跟我一樣";
+	cont "的機器人﹗";
+	para "當個機器人﹐是";
+	line "件悲哀的事⋯";
+	done;
+
+@org $6c, $5c59:
+	init NAME_BUCK, PIC_BUCK;
+@org $6c, $5c5c:
+	text "一點．也不﹗";
+	line "巴克．有．同伴";
+	done;
+
+@org $6c, $5c77:
+	init NAME_4D, PIC_6C;
+@org $6c, $5c7a:
+	text "是嗎﹖";
+	line "當人類歡笑時﹐";
+	cont "我們卻笑不出來";
+	line "";
+	para "";
+	db $f2, $13; #"當"
+	text "主人悲傷時﹐";
+	line "我們卻無法陪著";
+	cont "她流";
+	db $f1, $bc; #"淚"
+	text "⋯";
+	line "";
+	db $f2, $57; #"這"
+	text "種滋味﹐你應";
+	line "該能體會吧﹖";
+	done;
+
+@org $6c, $5cdc:
+	init NAME_BUCK, PIC_BUCK;
+@org $6c, $5cdf:
+	text "巴克．知道⚬";
+	line "但是．雷歐博士";
+	cont "說．心．最可貴";
+	line "";
+	db $f4, $20; #"難"
+	text "過．生氣．";
+	line "表示．有心⚬";
+	done;
+
+@org $6c, $5d1f:
+	init NAME_4D, PIC_6C;
+@org $6c, $5d22:
+	text "心嗎﹖";
+	line "或許真的是如此";
+	done;
+
+@org $6c, $5d34:
+	init NAME_4E, PIC_72;
+@org $6c, $5d37:
+	text "貝爾不想變成人";
+	line "了嗎﹖";
+	para "人類的感情可是";
+	line "多彩多姿的唷～";
+	cont "";
+	db $f2, $bf; #"來"
+	text "";
+	db $ab; #"吧"
+	text "";
+	db $1f; #"～"
+	text "";
+	db $bf; #"來"
+	text "";
+	db $ab; #"吧"
+	text "";
+	db $1f; #"～"
+	text "";
+	line "";
+	para "隨時都為你準備";
+	line "好了唷﹗";
+	para "只要動個小手術";
+	line "";
+	db $f0, $3f; #"小"
+	text "";
+	db $3f; #"小"
+	text "的手術⚬";
+	done;
+
+@org $6c, $5d9e:
+	init NAME_4D, PIC_6C;
+@org $6c, $5da1:
+	text "好的⚬";
+	done;
+
+@org $6c, $5da7:
+	init NAME_BUCK, PIC_BUCK;
+@org $6c, $5daa:
+	text "貝爾⋯⋯";
+	done;
+
+@org $6c, $5db2:
+	init NAME_4D, PIC_6C;
+@org $6c, $5db5:
+	text "很可惜﹐我們相";
+	line "見的太晚了⚬";
+	cont "";
+	done;
+
+@org $6c, $5dd0:
+	init NAME_4E, PIC_72;
+@org $6c, $5dd3:
+	text "不行哪﹗";
+	line "這機器人的裝甲";
+	cont "太特殊了﹗";
+	line "無法切割⋯";
+	cont "哦～不行﹗";
+	line "無法順利的進行";
+	line "手術⚬";
+	para "你能幫我取得一";
+	line "隻金剛鑽頭嗎﹖";
+	para "";
+	db $f1, $65; #"有"
+	text "";
+	db $64; #"了"
+	text "那個的話﹐";
+	line "就一定沒有問題";
+	cont "的⚬";
+	line "咭咭咭～";
+	done;
+
+@org $6c, $5e58:
+	init NAME_4E, PIC_72;
+@org $6c, $5e5b:
+	text "不行哪﹗";
+	line "這機器人的裝甲";
+	cont "太特殊了﹗";
+	line "無法切割⋯";
+	cont "哦～不行﹗";
+	line "無法順利的進行";
+	line "手術⚬";
+	para "你能幫我取得一";
+	line "隻金剛鑽頭嗎﹖";
+	para "";
+	db $f1, $65; #"有"
+	text "";
+	db $64; #"了"
+	text "那個的話﹐";
+	line "就一定沒有問題";
+	cont "的⚬";
+	line "咭咭咭～";
+	done;
+

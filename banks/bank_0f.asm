@@ -582,9 +582,14 @@ Script_00f_45d4:
 	db $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff
 	db $88
 
-INCLUDE "data/text/bank0f_misc.asm"
+INCLUDE "data/text/script_power_plant_outside_1.asm"
 
-INCLUDE "data/text/bank0f_misc2.asm"
+INCLUDE "data/text/script_power_plant_outside_2.asm"
+INCLUDE "data/text/script_power_plant2_f.asm"
+INCLUDE "data/text/script_tech_city_1.asm"
+INCLUDE "data/text/script_tech_shop.asm"
+INCLUDE "data/text/script_tech_healing_center.asm"
+INCLUDE "data/text/script_tech_city_2.asm"
 
 Script_00f_594f::
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe

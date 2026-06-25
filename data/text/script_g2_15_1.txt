@@ -1,0 +1,16 @@
+@org $12, $60b5:
+	init NAME_BLANK, PIC_16;
+	text "山達農莊原來是";
+	line "盛產咖啡豆及天";
+	para "使之葉的小鎮⚬";
+	line "天使之葉﹖";
+	para "呵呵～不論是多";
+	line "重的傷﹐只要有";
+	cont "天使之葉的話﹐";
+	line "都不是問題唷﹗";
+	para "但自從咖啡林被";
+	line "咖啡怪佔據後﹐";
+	cont "這些全部都沒有";
+	line "人敢去採收了⋯";
+	done;
+

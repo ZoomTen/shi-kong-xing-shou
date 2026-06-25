@@ -1,0 +1,37 @@
+@org $59, $740f:
+	init NAME_BLANK, PIC_1A;
+@org $59, $7412:
+	text "神木裡的螞蟻不";
+	line "見了﹖";
+	para "太好了～";
+	line "嘻嘻～";
+	cont "";
+	db $f2, $da; #"再"
+	text "約畢羅到那裡";
+	line "去冒險吧﹗";
+	done;
+
+@org $59, $744e:
+	init NAME_BLANK, PIC_21;
+@org $59, $7451:
+	text "公公拿了奇蹟之";
+	line "";
+	db $f0, $9f; #"水"
+	text "給普兒喝了之";
+	para "後﹐普兒就完全";
+	line "好了﹗";
+	cont "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "老天爺的保";
+	line "佑﹗";
+	done;
+
+@org $59, $7491:
+	init NAME_BLANK, PIC_16;
+@org $59, $7494:
+	text "真是謝謝你們﹐";
+	line "年輕人～";
+	done;
+

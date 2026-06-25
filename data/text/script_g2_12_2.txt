@@ -1,0 +1,11 @@
+@org $12, $673b:
+	init NAME_BLANK, PIC_23;
+	text "其實⋯從很早以";
+	line "前﹐我就發現～";
+	para "妮娜是個大美女";
+	line "哦﹗";
+	cont "只要她再花點心";
+	line "打扮一下的話﹐";
+	line "就不得了﹗";
+	done;
+

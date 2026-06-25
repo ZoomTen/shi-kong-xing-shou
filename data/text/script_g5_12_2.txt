@@ -1,0 +1,14 @@
+@org $66, $5ce9:
+	init NAME_BLANK, PIC_1D;
+@org $66, $5cec:
+	text "米特為了逃避悲";
+	line "傷的情緒﹐把自";
+	cont "";
+	db $f2, $6c; #"己"
+	text "封閉了起來⚬";
+	para "對任何事都沒有";
+	line "反應⚬";
+	para "唉～真是個可憐";
+	line "的孩子⚬";
+	done;
+

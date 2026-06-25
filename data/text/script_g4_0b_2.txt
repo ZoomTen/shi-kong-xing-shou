@@ -1,0 +1,6 @@
+@org $55, $5fc7:
+	init NAME_BLANK, PIC_16;
+	text "這裡是東漁市的";
+	line "集會廣場⚬";
+	done;
+

@@ -1,0 +1,20 @@
+@org $66, $576f:
+	init NAME_BLANK, PIC_15;
+@org $66, $5772:
+	text "真忙真忙～";
+	line "每天有忙不完的";
+	cont "事情～";
+	line "忙死了﹗";
+	done;
+
+@org $66, $579b:
+	init NAME_BLANK, PIC_1D;
+@org $66, $579e:
+	text "米特正在接受全";
+	line "";
+	db $f0, $38; #"身"
+	text "檢查⚬";
+	para "如果要會客的話";
+	line "待會兒再來⚬";
+	done;
+

@@ -1,0 +1,74 @@
+@org $12, $5b82:
+	init NAME_BLANK, PIC_17;
+	text "這裡是牧羊的農";
+	line "莊小鎮～";
+	cont "山達農莊⚬";
+	done;
+
+@org $12, $5ba7:
+	init NAME_BLANK, PIC_20;
+	text "興奮～哈哈哈～";
+	line "興奮～哈哈哈～";
+	para "天氣真好～";
+	line "興～興奮～";
+	done;
+
+@org $12, $5bd5:
+	init NAME_BLANK, PIC_12;
+	text "真是可怕⋯前陣";
+	line "子的流星雨﹐擊";
+	cont "中西邊的咖啡林";
+	line "裡的咖啡樹⚬";
+	para "因此變成了咖啡";
+	line "星怪﹗咖啡怪有";
+	cont "時會飄來一陣咖";
+	line "啡的香氣～";
+	para "聞到的人都會變";
+	line "得異常的興奮⚬";
+	done;
+
+@org $12, $5c51:
+	init NAME_BLANK, PIC_1D;
+	text "聽說加爾企業啊";
+	line "哈哈⋯就是那個";
+	cont "哈哈哈⋯嗚～";
+	line "一想到就～嗚～";
+	line "好．興．奮﹗";
+	done;
+
+@org $12, $5c92:
+	init NAME_BLANK, PIC_21;
+	text "每次只要一聞到";
+	line "咖啡的味道﹐我";
+	cont "就會趕把鼻子捏";
+	line "起來﹐有一次還";
+	cont "差點就殺死自己";
+	line "了⋯";
+	cont "加爾企業的董事";
+	line "長重金尋找他失";
+	line "散的孫子⚬";
+	para "我一定要找到";
+	line "才行﹗";
+	done;
+
+@org $12, $5d14:
+	init NAME_BLANK, PIC_19;
+	text "嗚哦哦哦﹗";
+	line "這⋯這是什麼﹖";
+	para "一股力量從我這";
+	line "八十歲的腳底﹐";
+	para "蔓延到我這八十";
+	line "歲的身體﹗﹗";
+	cont "嗚哦哦哦哦哦﹗";
+	line "我是～女超人嗎";
+	line "﹖";
+	done;
+
+@org $12, $5d7a:
+	init NAME_BLANK, PIC_1A;
+	text "嗚～嗚～大家都";
+	line "變得好奇怪哦﹗";
+	para "嗚嗚～人家不要";
+	line "啦﹗";
+	done;
+

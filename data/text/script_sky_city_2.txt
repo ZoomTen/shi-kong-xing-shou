@@ -1,0 +1,36 @@
+@org $4f, $6b41:
+	init NAME_BLANK, PIC_13;
+	text "哎呀～";
+	line "選秀會就要開始";
+	cont "了～";
+	line "真是緊張﹗";
+	done;
+
+@org $4f, $6b67:
+	init NAME_BLANK, PIC_13;
+	text "恭喜你～";
+	line "妮娜小姐～";
+	done;
+
+@org $4f, $6b7c:
+	init NAME_21, PIC_31;
+	text "噁～噁～喵～";
+	line "噁～﹗";
+	done;
+
+@org $4f, $6b93:
+	init NAME_BLANK, PIC_15;
+	text "怎麼辦⋯";
+	line "選秀會就要舉行";
+	cont "了﹐人家還沒有";
+	line "新衣服～";
+	cont "人家不比了啦﹗";
+	done;
+
+@org $4f, $6bcf:
+	init NAME_BLANK, PIC_1D;
+	text "嗚～可惡的麗子～";
+	cont "都是她﹐害我買";
+	line "不到新衣服﹗";
+	done;
+

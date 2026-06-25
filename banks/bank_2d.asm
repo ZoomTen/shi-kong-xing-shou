@@ -95,7 +95,7 @@ BattleTextPointers:
 	dw BattleText_469b, BattleText_46a4, BattleText_46ab, BattleText_46bd
 	dw BattleText_46cf
 
-INCLUDE "data/text/bank2d_4216.asm"
+INCLUDE "data/text/battle_messages.asm"
 
 GetPlayerWorldCoords:
 	ld a, [wPlayerObject]

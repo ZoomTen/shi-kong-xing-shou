@@ -1,0 +1,7 @@
+@org $6c, $652a:
+	init NAME_BUCK, PIC_BUCK;
+@org $6c, $652d:
+	text "巴克．一起去．";
+	line "找問題﹗";
+	done;
+

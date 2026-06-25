@@ -1,0 +1,198 @@
+@org $0e, $4abe:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸爸一定是到了";
+	line "某個地方了⚬";
+	para "在房子裡找的話";
+	line "﹐";
+	cont "一定會有線索的";
+	line "﹗";
+	done;
+
+@org $0e, $4af9:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸爸一定是到了";
+	line "某個地方了⚬";
+	para "在房子裡找的話";
+	line "﹐";
+	cont "一定會有線索的";
+	line "﹗";
+	done;
+
+@org $0e, $4b34:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "在抽屜裡～";
+	line "發現了日記﹗";
+	done;
+
+@org $0e, $4b4d:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "日記的內容這麼";
+	line "寫道：";
+	para "～～～";
+	line "～～～";
+	cont "４月２０日";
+	cont "月亮有藍化的跡";
+	line "像⋯";
+	para "為了預防那一天";
+	line "的來臨﹐";
+	cont "再不快解開圖中";
+	line "的祕密﹐";
+	cont "恐怕就⋯⋯";
+	done;
+
+@org $0e, $4bc0:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "日記裡夾著一張";
+	line "泛黃的設計圖⚬";
+	para "圖裡畫著密密麻";
+	line "麻的機械構造圖";
+	para "⋯⋯";
+	done;
+
+@org $0e, $4bfb:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸爸一定想解開";
+	line "設計圖中的祕密";
+	para "我如果能解開圖";
+	line "中的祕密的話﹐";
+	cont "就可以知道爸爸";
+	line "的下落了⚬";
+	para "可是這圖⋯⋯";
+	cont "再怎麼樣也無法";
+	line "理解⋯";
+	done;
+
+@org $0e, $4c6a:
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "伊隼人曾經提到";
+	line "過他的朋友﹐";
+	cont "是位天才的機械";
+	line "發明家⚬";
+	para "他一定可以知道";
+	line "圖中的祕密吧﹗";
+	para "雖然很不願意﹐";
+	cont "但還是必需找一";
+	line "趟伊隼人⚬";
+	done;
+
+@org $0e, $4cdd:
+	init NAME_17, PIC_09;
+	text "嗚～～汪嗚﹗";
+	done;
+
+@org $0e, $4cec:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "不⋯不要過來﹗";
+	done;
+
+@org $0e, $4cfd:
+	init NAME_17, PIC_09;
+	text "嗚～嗚～";
+	line "嗚汪～";
+	done;
+
+@org $0e, $4d10:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "小白﹖";
+	para "是小白沒有錯";
+	line "﹗";
+	para "你是怎麼了﹖";
+	para "這是怎麼回事﹖";
+	done;
+
+@org $0e, $4d42:
+	init NAME_SNOWY, PIC_09;
+	text "嗚汪～汪～";
+	done;
+
+@org $0e, $4d50:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "看來發生了大事";
+	line "情了﹗";
+	para "小白﹗";
+	cont "我們去找伊隼人";
+	line "吧﹗";
+	done;
+
+@org $0e, $4d81:
+	init NAME_SYSTEM, PIC_VAST_FAME;
+	text "星獸～小白加入";
+	line "了隊伍⚬";
+	done;
+
+@org $0e, $4d99:
+	init NAME_BLANK, PIC_1B;
+	text "亞斯塔的天文台";
+	line "毀了⚬";
+	para "但從天文台裡﹐";
+	cont "並沒有發現任何";
+	line "屍體⚬";
+	para "巴洛特啊﹗";
+	cont "你父親一定沒有";
+	line "死的⚬";
+	para "自己一個人也要";
+	line "加油哦﹗";
+	done;
+
+@org $0e, $4e05:
+	init NAME_BLANK, PIC_13;
+	text "新聞報導說道：";
+	para "昨天的流星雨﹐";
+	cont "某些擊中了動物";
+	line "⚬";
+	para "被擊中的動物﹐";
+	cont "瞬間就變成了怪";
+	line "獸﹗";
+	para "科學家稱之為～";
+	line "～星獸⚬";
+	para "啊﹗";
+	line "巴洛特～";
+	cont "小心你的後面啊";
+	line "﹗﹗﹗";
+	done;
+
+@org $0e, $4e82:
+	init NAME_BLANK, PIC_20;
+	text "萬歲﹗";
+	para "因為流星雨的關";
+	line "係﹐";
+	cont "今天不用上課唷";
+	line "﹗";
+	para "萬歲﹗";
+	done;
+
+@org $0e, $4eb4:
+	init NAME_BLANK, PIC_1D;
+	text "巴．洛．特～";
+	para "人家的餅乾做好";
+	line "了唷﹗";
+	para "超．好．吃﹗";
+	para "嗚哇﹗巴洛特被";
+	line "怪獸追了﹗";
+	done;
+
+@org $0e, $4efa:
+	init NAME_BLANK, PIC_16;
+	text "唉呀～";
+	cont "怎麼天空上有一";
+	line "道裂縫呢﹖";
+	para "一定是我眼睛又";
+	line "花了⚬";
+	done;
+
+@org $0e, $4f2f:
+	init NAME_BLANK, PIC_19;
+	text "我看到了﹗";
+	line "看到了﹗";
+	para "昨晚一群隕石﹐";
+	line "碰的一聲﹐";
+	cont "就砸到天文台了";
+	line "﹗";
+	para "還有我家的小白";
+	line "兔﹐";
+	cont "也被流星打到﹐";
+	line "變成怪獸﹗";
+	para "我嚇得把牠們都";
+	line "丟掉了﹗";
+	done;
+

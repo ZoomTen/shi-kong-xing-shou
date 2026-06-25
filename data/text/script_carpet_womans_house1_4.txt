@@ -1,0 +1,22 @@
+@org $08, $4f1a:
+	init NAME_BLANK, PIC_15;
+	text "今天晚上會有大";
+	line "規模的流星雨⚬";
+	para "這種難見的奇景";
+	line "﹐";
+	cont "我一定不能錯過";
+	line "﹗";
+	para "對了～";
+	para "今天晚上﹐";
+	cont "我們去你爸的天";
+	line "文台看流星雨⚬";
+	done;
+
+@org $08, $4f82:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "上學快要遲到了";
+	line "﹐";
+	cont "不是到處溜噠的";
+	line "時間⚬";
+	done;
+

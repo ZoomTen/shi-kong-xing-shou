@@ -1,0 +1,8 @@
+@org $08, $4ef4:
+	init NAME_BLANK, PIC_15;
+	text "你是來找芳芳的";
+	line "嗎﹖";
+	cont "芳芳上學去了唷";
+	line "～";
+	done;
+

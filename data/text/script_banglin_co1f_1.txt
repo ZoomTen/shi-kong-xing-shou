@@ -1,0 +1,258 @@
+@org $4f, $55bf:
+	init NAME_2A, PIC_53;
+	text "您好～先生⚬";
+	para "裡面是邦林企業";
+	line "內部辦公室⚬";
+	para "並沒有開放參觀";
+	cont "您可以任意的參";
+	line "觀大廳內的展示";
+	cont "祝您愉快⚬";
+	done;
+
+@org $4f, $5619:
+	init NAME_BLANK, PIC_1D;
+	text "您好～這裡是邦";
+	line "林企業的服務檯";
+	para "在您眼前的商品";
+	line "﹐都是本企業的";
+	cont "代表作品⚬";
+	para "尤其是前方的復";
+	line "古風項鍊﹗";
+	para "預估能掀起全球";
+	line "一陣復古風⚬";
+	done;
+
+@org $4f, $568f:
+	init NAME_BLANK, PIC_1F;
+	text "您好～這裡是復";
+	line "古風項鍊代言人";
+	cont "選秀會報名處⚬";
+	line "您要報名嗎﹖";
+	done;
+
+@org $4f, $56c8:
+	init NAME_2B, PIC_25;
+	text "您好～";
+	line "我是產品解說員";
+	cont "～貝貝⚬";
+	para "需要我服務的地";
+	line "方嗎﹖";
+	done;
+
+@org $4f, $56fa:
+	init NAME_BLANK, PIC_14;
+	text "糟了～";
+	line "少爺又溜掉了﹗";
+	para "一定又會被總裁";
+	line "罵死的﹗";
+	cont "怎麼辦﹖";
+	done;
+
+@org $4f, $572e:
+	init NAME_NINA, PIC_NINA_4;
+	text "這⋯這項鍊﹖";
+	cont "這項鍊裡鑲上的";
+	line "東西﹐不就是動";
+	cont "力晶片嗎﹖";
+	done;
+
+@org $4f, $5762:
+	init NAME_2B, PIC_25;
+	text "您好﹗";
+	line "這就是邦林企業";
+	cont "最新的產品～";
+	line "復古風項鍊⚬";
+	para "裡頭崁鑲著古代";
+	line "科技動力晶片⚬";
+	para "在高科技的流線";
+	line "體造型下﹐更襯";
+	cont "托出整體的復古";
+	line "典雅⚬";
+	done;
+
+@org $4f, $57d9:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "動力晶片﹖";
+	done;
+
+@org $4f, $57e7:
+	init NAME_2B, PIC_25;
+	text "是的⚬";
+	line "整體的設計都是";
+	cont "由總裁親自設計";
+	para "動力晶片也是由";
+	line "總裁所提供⚬";
+	done;
+
+@org $4f, $5826:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這要如何才能得";
+	line "到呢﹖";
+	done;
+
+@org $4f, $583e:
+	init NAME_2B, PIC_25;
+	text "本產品還在樣品";
+	line "階段⚬";
+	para "待在全球打響知";
+	line "名度後﹐便進行";
+	cont "量產⚬";
+	para "預訂售價是：";
+	line "４５００";
+	forcemap 1, "萬";
+	text "⚬";
+	done;
+
+@org $4f, $588e:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "４⋯";
+	line "４５００";
+	forcemap 1, "萬";
+	text "﹖";
+	done;
+
+@org $4f, $589f:
+	init NAME_2B, PIC_25;
+	text "是的⚬";
+	line "另外﹐本公司為";
+	cont "打響此商品知名";
+	line "度⚬";
+	para "特舉辦了一場盛";
+	line "大的代言選秀會";
+	para "中選者將可獲得";
+	line "本商品⚬";
+	para "這位小姐看來相";
+	line "當的標緻﹐可考";
+	cont "慮到服務檯報名";
+	line "唷﹗";
+	done;
+
+@org $4f, $592a:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "要如何籌到";
+	line "４５００";
+	forcemap 1, "萬";
+	text "呢﹖";
+	para "該怎麼辦﹖";
+	done;
+
+@org $4f, $594e:
+	init NAME_NINA, PIC_02;
+	text "⋯⋯";
+	done;
+
+@org $4f, $5955:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "選秀會﹗妮娜﹗";
+	line "只要妮娜參加的";
+	cont "話﹐一定就可以";
+	line "中選﹗";
+	para "這樣一來﹐就可";
+	line "以得到動力晶片";
+	cont "了﹗";
+	done;
+
+@org $4f, $59ab:
+	init NAME_NINA, PIC_02;
+	text "我⋯不行啦⋯⋯";
+	line "妮娜沒有漂亮的";
+	cont "衣服⋯不能參加";
+	line "選不上⋯";
+	done;
+
+@org $4f, $59df:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "衣服的事情﹐我";
+	line "們再另外想辦法";
+	cont "以妮娜的條件﹐";
+	line "一定可以的⚬";
+	done;
+
+@org $4f, $5a16:
+	init NAME_NINA, PIC_02;
+	text "妮娜⋯妮娜⋯⋯";
+	line "試試看⋯";
+	done;
+
+@org $4f, $5a2d:
+	init NAME_BLANK, PIC_1F;
+	text "您好～這裡是復";
+	line "古風項鍊代言人";
+	cont "選秀會報名處⚬";
+	line "您要報名嗎﹖";
+	line "";
+	getchoice String_1cc5;
+
+@org $4f, $5a69:
+	init NAME_NINA, PIC_02;
+	text "是⋯⋯是的⋯⋯";
+	done;
+
+@org $4f, $5a78:
+	init NAME_NINA, PIC_02;
+	text "我⋯⋯";
+	line "我";
+	forcemap 2, "還";
+	text "是不行⋯⋯";
+	done;
+
+@org $4f, $5a8e:
+	init NAME_BLANK, PIC_1F;
+	text "好的⚬";
+	line "這就";
+	forcemap 2, "給";
+	text "您報名⚬";
+	para "好的～";
+	line "完成了報名手續";
+	para "您的編號是";
+	line "第５９３２號";
+	done;
+
+@org $4f, $5acf:
+	init NAME_BLANK, PIC_1F;
+	text "您的編號是";
+	line "第５９３２號";
+	done;
+
+@org $4f, $5ae7:
+	init NAME_NINA, PIC_02;
+	text "謝謝您⚬";
+	done;
+
+@org $4f, $5af1:
+	init NAME_BLANK, PIC_1F;
+	text "不客氣⚬";
+	line "請原諒我的多嘴";
+	para "這位美麗的小姐";
+	line "建議您可以選購";
+	cont "一套適合的服裝";
+	para "這樣一來﹐一定";
+	line "可以脫穎而出的";
+	done;
+
+@org $4f, $5b4f:
+	init NAME_NINA, PIC_02;
+	text "嗯嗯⋯⋯";
+	line "謝謝⋯";
+	done;
+
+@org $4f, $5b5f:
+	init NAME_BLANK, PIC_15;
+	text "怎麼辦﹖";
+	cont "服飾店的衣服﹐";
+	line "都被麗子給買下";
+	cont "來了⚬";
+	para "人家選秀會沒有";
+	line "新衣服可以穿﹗";
+	done;
+
+@org $4f, $5ba1:
+	init NAME_BLANK, PIC_1D;
+	text "麗子真是可惡﹗";
+	line "人家買不到新的";
+	cont "衣服﹐要怎麼上";
+	line "台嘛﹗";
+	para "人家不要﹗";
+	line "嗚～嗚嗚～";
+	done;
+

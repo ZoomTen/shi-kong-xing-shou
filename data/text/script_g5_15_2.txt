@@ -1,0 +1,320 @@
+@org $66, $725f:
+	init NAME_MITT, PIC_07;
+@org $66, $7262:
+	text "⋯⋯⋯";
+	done;
+
+@org $66, $7267:
+	init NAME_MITT, PIC_48;
+@org $66, $726a:
+	text "呃⋯嗚嗚⋯";
+	line "不要⋯";
+	done;
+
+@org $66, $727b:
+	init NAME_MITT, PIC_07;
+@org $66, $727e:
+	text "逃⋯快逃⋯我⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $c7; #"?"
+	text "快逃⋯﹗";
+	done;
+
+@org $66, $7297:
+	init NAME_MITT, PIC_48;
+@org $66, $729a:
+	text "爸爸⋯媽媽⋯⋯";
+	line "不要丟下⋯";
+	cont "";
+	db $f2, $ad; #"我"
+	text "一個人⋯⋯";
+	done;
+
+@org $66, $72bb:
+	init NAME_MITT, PIC_07;
+@org $66, $72be:
+	text "呃⋯⋯花⋯⋯";
+	done;
+
+@org $66, $72c9:
+	init NAME_MITT, PIC_07;
+@org $66, $72cc:
+	text "老⋯師⋯筆⋯⋯";
+	done;
+
+@org $66, $72d7:
+	init NAME_MITT, PIC_07;
+@org $66, $72da:
+	text "呀⋯⋯音樂⋯⋯";
+	line "禮物⋯﹖";
+	done;
+
+@org $66, $72ef:
+	init NAME_MITT, PIC_07;
+@org $66, $72f2:
+	text "媽媽⋯⋯";
+	line "媽媽⋯的味道⋯";
+	cont "媽⋯⋯";
+	done;
+
+@org $66, $730d:
+	init NAME_MITT, PIC_49;
+@org $66, $7310:
+	text "啊⋯﹗﹗﹗";
+	line "兇⋯兇手⋯⋯";
+	cont "不要⋯⋯";
+	line "不要過來⋯";
+	done;
+
+@org $66, $7336:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $7339:
+	text "要試著喚醒米特";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"?"
+	text "";
+	line "";
+	getchoice String_1cc5;
+@org $66, $734c:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $734f:
+	text "先讓米特多休息";
+	line "一會吧⚬";
+	done;
+
+@org $66, $7366:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $7369:
+	text "米特～醒醒呀﹗";
+	line "不要絕望﹐許多";
+	cont "人都是這麼的支";
+	line "持米特⚬";
+	para "加油呀～";
+	line "";
+	db $f2, $36; #"醒"
+	text "";
+	db $b1; #"?"
+	text "";
+	db $bf; #"?"
+	text "";
+	db $ab; #"?"
+	text "﹗";
+	done;
+
+@org $66, $73ab:
+	init NAME_MITT, PIC_07;
+@org $66, $73ae:
+	text "⋯⋯⋯⋯";
+	done;
+
+@org $66, $73b4:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $73b7:
+	text "還是不行嗎﹖";
+	done;
+
+@org $66, $73c3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $73c6:
+	text "米特～醒醒呀﹗";
+	line "不要絕望﹐許多";
+	cont "人都是這麼的支";
+	line "持米特⚬";
+	para "加油呀～";
+	line "";
+	db $f2, $36; #"醒"
+	text "";
+	db $b1; #"?"
+	text "";
+	db $bf; #"?"
+	text "";
+	db $ab; #"?"
+	text "﹗";
+	done;
+
+@org $66, $7408:
+	init NAME_MITT, PIC_07;
+@org $66, $740b:
+	text "呃⋯⋯爸⋯媽⋯";
+	line "逃⋯快逃⋯";
+	cont "";
+	db $f2, $c1; #"危"
+	text "";
+	db $c2; #"?"
+	text "﹗﹗﹗";
+	done;
+
+@org $66, $742c:
+	init NAME_BLANK, PIC_13;
+@org $66, $742f:
+	text "啊﹗";
+	line "米特醒過來了﹗";
+	cont "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "太好了﹗";
+	done;
+
+@org $66, $744b:
+	init NAME_MITT, PIC_07;
+@org $66, $744e:
+	text "我好像做了一個";
+	line "很悲傷的夢⚬";
+	para "夢中的爸爸媽媽";
+	line "叫我要勇敢的活";
+	cont "下去⚬";
+	para "當個不輸給爸爸";
+	line "的星空彩繪家⋯";
+	done;
+
+@org $66, $74a2:
+	init NAME_BLANK, PIC_13;
+@org $66, $74a5:
+	text "米特﹐這位少年";
+	line "叫做巴洛特﹐你";
+	para "";
+	db $f2, $57; #"這"
+	text "次能夠醒過來";
+	line "都該感謝他唷﹗";
+	done;
+
+@org $66, $74dc:
+	init NAME_MITT, PIC_07;
+@org $66, $74df:
+	text "真是謝謝你﹗";
+	line "巴洛特⚬";
+	done;
+
+@org $66, $74f2:
+	init NAME_5A, PIC_18;
+@org $66, $74f5:
+	text "少爺⋯";
+	line "";
+	db $f2, $57; #"這"
+	text "真是太好了﹗";
+	done;
+
+@org $66, $7509:
+	init NAME_MITT, PIC_07;
+@org $66, $750c:
+	text "是的⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "回來了⚬";
+	done;
+
+@org $66, $751c:
+	init NAME_MITT, PIC_07;
+@org $66, $751f:
+	text "巴洛特﹐你剛才";
+	line "指的是動力晶片";
+	cont "嗎﹖";
+	para "聽爸爸說過﹐這";
+	line "是古代太空船的";
+	cont "核⚬";
+	para "這動力晶片﹐希";
+	line "望能對你有所幫";
+	cont "助⚬";
+	done;
+
+@org $66, $7580:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $7583:
+	text "得到了晶片７﹗";
+	done;
+
+@org $66, $758f:
+	init NAME_BLANK, PIC_23;
+@org $66, $7592:
+	text "不好了～";
+	line "米特﹗";
+	cont "冰山島就要崩解";
+	line "";
+	db $f1, $64; #"了"
+	text "";
+	db $35; #"?"
+	text "";
+	para "如果不趕快啟";
+	line "動飛空引擎的話";
+	cont "星夢城就要隨著";
+	line "冰山島沉到海底";
+	cont "了﹗";
+	line "卡拉迪已經不在";
+	cont "了﹐就只能靠你";
+	line "了﹗";
+	done;
+
+@org $66, $760f:
+	init NAME_MITT, PIC_4A;
+@org $66, $7612:
+	text "冰山島要崩解﹖";
+	line "這下糟了﹗";
+	para "但是飛空引擎內";
+	line "";
+	db $f1, $51; #"的"
+	text "星球軌跡﹐是";
+	cont "爸爸所描繪的⚬";
+	para "只有我一個人的";
+	line "話⋯⋯";
+	done;
+
+@org $66, $7668:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $766b:
+	text "只要我能幫得上";
+	line "忙的話﹐一定全";
+	cont "";
+	db $f0, $19; #"力"
+	text "以赴⚬";
+	done;
+
+@org $66, $7691:
+	init NAME_RANDT, PIC_07;
+@org $66, $7694:
+	text "謝謝你﹐巴洛特";
+	line "飛空引擎必須二";
+	cont "個人﹐才能啟動";
+	line "引擎的運轉⚬";
+	para "我們趕緊前往機";
+	line "械室吧﹗";
+	done;
+
+@org $66, $76e3:
+	init NAME_BLANK, PIC_23;
+@org $66, $76e6:
+	text "米特﹐最後的希";
+	line "望全看你的了﹗";
+	done;
+
+@org $66, $7700:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $7703:
+	text "米特＆彩繪精加";
+	line "";
+	db $f2, $30; #"入"
+	text "";
+	db $5c; #"?"
+	text "";
+	db $5d; #"?"
+	text "﹗";
+	done;
+
+@org $66, $7718:
+	init NAME_SYSTEM, PIC_VAST_FAME;
+@org $66, $771b:
+	text "如果將米特置於";
+	line "隊伍前﹐";
+	cont "按Ａ鍵";
+	para "";
+	db $f8, $17; #"米"
+	text "特將隨機繪畫";
+	para "而造成某種效果";
+	line "但每次休息只能";
+	cont "繪製５次⚬";
+	done;
+

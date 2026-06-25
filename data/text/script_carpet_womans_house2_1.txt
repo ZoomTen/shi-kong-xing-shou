@@ -1,0 +1,25 @@
+@org $0e, $5154:
+	init NAME_BLANK, PIC_1F;
+	text "是巴洛特啊～";
+	para "啊啊啊﹗﹗﹗";
+	para "快把那隻星獸帶";
+	line "出去﹗";
+	para "我才剛洗好了地";
+	line "毯﹐";
+	cont "又被你弄髒了﹗";
+	done;
+
+@org $0e, $519f:
+	init NAME_SNOWY, PIC_09;
+	text "嗚～～";
+	line "嗚汪汪汪﹗";
+	done;
+
+@org $0e, $51b1:
+	init NAME_BLANK, PIC_1F;
+	text "啊啊啊啊啊啊﹗";
+	para "不⋯⋯";
+	line "不要咬我⋯⋯﹗";
+	para "快⋯快出去﹗";
+	done;
+

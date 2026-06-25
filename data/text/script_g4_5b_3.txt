@@ -1,0 +1,47 @@
+@org $5a, $67bc:
+	init NAME_48, PIC_70;
+@org $5a, $67bf:
+	text "沒錯﹗這就是我";
+	line "的方程式﹗";
+	para "巴洛特﹐真是非";
+	line "";
+	db $f2, $40; #"常"
+	text "的感謝你﹗";
+	para "還有不曉得為什";
+	line "麼﹐只要一見到";
+	cont "雷德﹐就有一種";
+	line "很熟悉的感覺﹗";
+	done;
+
+@org $5a, $6829:
+	init NAME_48, PIC_70;
+@org $5a, $682c:
+	text "唉～裂縫的持續";
+	line "擴大﹐使得更強";
+	para "";
+	db $f0, $19; #"力"
+	text "的星獸能從裂";
+	line "縫鑽出⚬";
+	para "不能再這麼下去";
+	line "了⚬";
+	para "另外的七位伙伴";
+	line "一定久等了吧﹗";
+	para "總部的『那個』";
+	line "應該完工了吧﹗";
+	para "";
+	db $f1, $58; #"要"
+	text "趕緊和他們會";
+	line "合才行﹗";
+	para "巴洛特﹐我一定";
+	line "不會忘";
+	db $f1, $5a; #"記"
+	text "你的﹗";
+	para "我會想辦法﹐讓";
+	line "所有的人都不要";
+	cont "";
+	db $f1, $59; #"忘"
+	text "";
+	db $5a; #"記"
+	text "你的﹗";
+	done;
+

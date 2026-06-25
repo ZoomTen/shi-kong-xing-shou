@@ -1,0 +1,87 @@
+@org $4f, $53d3:
+	init NAME_BLANK, PIC_15;
+	text "呀﹗我要參加選";
+	line "秀會用的珍珠項";
+	cont "鍊不見了⋯";
+	para "嗚～～";
+	line "要怎麼辦啦﹗";
+	done;
+
+@org $4f, $540f:
+	init NAME_BLANK, PIC_1B;
+	text "剛才有隻貓來偷";
+	line "吃魚﹗";
+	cont "真是可惡⋯";
+	done;
+
+@org $4f, $5430:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "爸爸﹖";
+	line "那不是爸爸嗎﹖";
+	para "我終於找到他了";
+	line "﹗";
+	done;
+
+@org $4f, $5457:
+	init NAME_2A, PIC_53;
+	text "先生您好⚬";
+	line "大侯光臨～";
+	done;
+
+@org $4f, $5470:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯";
+	done;
+
+@org $4f, $5477:
+	init NAME_2A, PIC_53;
+	text "先生～抱歉﹗";
+	cont "裡面就是邦林企";
+	line "業的內部辦公室";
+	para "目前並沒有開放";
+	line "參觀﹐請您留步";
+	done;
+
+@org $4f, $54bb:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "剛才那位先生是";
+	line "﹖";
+	done;
+
+@org $4f, $54ce:
+	init NAME_2A, PIC_53;
+	text "那位先生是總裁";
+	line "的貴賓⚬";
+	done;
+
+@org $4f, $54e8:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "可是他是我爸爸";
+	line "﹗";
+	done;
+
+@org $4f, $54fb:
+	init NAME_2A, PIC_53;
+	text "先生～";
+	line "請原諒我如此的";
+	line "無禮⚬";
+	para "專業的訓練﹐告";
+	line "訴我們不可相信";
+	cont "這種謊言⚬";
+	para "邦林企業感謝您";
+	line "的關心﹐您可以";
+	cont "任意的參觀大廳";
+	line "內的展示⚬";
+	para "祝您愉快⚬";
+	done;
+
+@org $4f, $5580:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "可惡⋯⋯";
+	line "好不容易找到了";
+	cont "爸爸⚬";
+	line "卻⋯⋯";
+	para "不過至少知道爸";
+	line "爸的行蹤了⚬";
+	done;
+

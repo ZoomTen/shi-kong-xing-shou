@@ -1,0 +1,32 @@
+@org $12, $563e:
+	init NAME_BLANK, PIC_1C;
+	text "點心﹗點心﹗";
+	line "媽媽～點心時間";
+	cont "到了啦﹗哥哥沒";
+	line "有回來﹐人家要";
+	para "吃～雙倍喲﹗";
+	done;
+
+@org $12, $5682:
+	init NAME_BLANK, PIC_1A;
+	text "人家才沒有偷吃";
+	line "櫃子裡的蛋糕唷";
+	cont "﹗⋯嗚～";
+	para "被你知道了﹗人";
+	line "家不是故意的嘛";
+	para "﹗不可以跟哥哥";
+	line "說唷﹗";
+	para "這是我們的小密";
+	line "祕唷﹗";
+	done;
+
+@org $12, $56ec:
+	init NAME_BLANK, PIC_15;
+	text "我的老公是鐘塔";
+	line "的管理人員⚬";
+	para "每天都要忙到晚";
+	line "才能回來⚬";
+	para "真是叫人寂寞啊";
+	line "⋯⋯";
+	done;
+

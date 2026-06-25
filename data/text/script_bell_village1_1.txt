@@ -1,0 +1,98 @@
+@org $08, $4651:
+	init NAME_SNOWY, PIC_SNOWY;
+	text "汪汪～汪～";
+	done;
+
+@org $08, $465e:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "小白～";
+	line "乖～乖～";
+	para "肚子餓了嗎﹖";
+	para "我們一起去天文";
+	line "台﹐";
+	cont "找爸爸回來吃晚";
+	line "餐好嗎﹖";
+	done;
+
+@org $08, $46a4:
+	init NAME_SNOWY, PIC_SNOWY;
+	text "汪～汪汪～";
+	done;
+
+@org $08, $46b1:
+	init NAME_BLANK, PIC_1B;
+	text "賽亞﹖";
+	para "我剛剛才和他聊";
+	line "過天而已⚬";
+	para "不過他一看到月";
+	line "亮之後﹐";
+	cont "就緊張兮兮往天";
+	line "文台跑去了⚬";
+	done;
+
+@org $08, $46fe:
+	init NAME_BLANK, PIC_13;
+	text "⋯啊﹖";
+	cont "要找你爸爸回家";
+	line "吃晚餐啊⚬";
+	para "真是孝順的小孩";
+	line "⚬";
+	para "媽媽病逝後﹐";
+	line "要更堅強喲﹗";
+	para "啊啊啊﹗﹗";
+	cont "又提到這件事～";
+	line "真是對不起⚬";
+	done;
+
+@org $08, $4768:
+	init NAME_BLANK, PIC_20;
+	text "是你啊﹗";
+	para "哈哈哈～";
+	cont "昨天考試﹐你又";
+	line "考輸我了﹗";
+	para "嘻嘻～";
+	cont "每．次．都．輸";
+	line "．我﹗";
+	done;
+
+@org $08, $47af:
+	init NAME_BLANK, PIC_1D;
+	text "老師要教人家做";
+	line "小餅乾⚬";
+	cont "這次要吃光光哦";
+	line "⚬";
+	para "人家這次不會再";
+	line "做那種奇怪的餅";
+	line "乾了啦﹗";
+	done;
+
+@org $08, $47fb:
+	init NAME_BLANK, PIC_16;
+	text "唉呀～";
+	cont "最近的月亮怎麼";
+	line "看起來﹐";
+	cont "有點藍藍的呢﹖";
+	para "一定是我眼睛又";
+	line "花了⚬";
+	done;
+
+@org $08, $4837:
+	init NAME_BLANK, PIC_19;
+	text "新聞報導說﹐";
+	cont "明天晚上會有大";
+	line "規模的流星雨⚬";
+	para "記得我年輕的時";
+	line "候﹐";
+	cont "也曾預測過一次";
+	line "⚬";
+	para "但那次的預測錯";
+	line "誤⚬";
+	para "告訴你哦﹗";
+	cont "婆婆年輕的時候";
+	line "～";
+	cont "是村子裡有名的";
+	line "⋯⋯";
+	cont "大．美．女．哦";
+	line "﹗";
+	done;
+

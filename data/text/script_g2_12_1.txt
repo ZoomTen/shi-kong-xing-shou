@@ -1,0 +1,24 @@
+@org $12, $5dab:
+	init NAME_BLANK, PIC_23;
+	text "咖啡林的咖啡怪";
+	line "真是可怕﹗一聞";
+	cont "到牠的氣味﹐人";
+	line "都會變得非常的";
+	cont "興奮﹗我得要將";
+	line "門窗關緊才行﹗";
+	done;
+
+@org $12, $5dff:
+	init NAME_BLANK, PIC_25;
+	text "聽說馬克被瘋狂";
+	line "的羊群撞成重傷";
+	cont "﹐而他的妹妹～";
+	line "妮娜為了照顧他";
+	cont "﹐把所有值錢的";
+	line "東西都賣了﹗";
+	para "他們的老闆還因";
+	line "為不要照顧病人";
+	cont "﹐而把他們解雇";
+	line "了﹗真是可憐⋯";
+	done;
+

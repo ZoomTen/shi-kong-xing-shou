@@ -1,0 +1,18 @@
+@org $58, $63df:
+	init NAME_STAR_BEAST, PIC_6A;
+@org $58, $63e2:
+	text "嘰嘰～阻礙計劃";
+	line "者⋯嘰嘰⋯殺﹗";
+	done;
+
+@org $58, $63fd:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $6400:
+	text "阻礙計劃者﹖";
+	line "這是什麼意思﹖";
+	cont "星獸有什麼計劃";
+	line "嗎﹖";
+	para "這種不安的感覺";
+	line "到底是什麼呢﹖";
+	done;
+

@@ -1,0 +1,12 @@
+@org $12, $5b24:
+	init NAME_BLANK, PIC_24;
+	text "這個鐘塔是加爾";
+	line "企業的所有物⚬";
+	para "不可以再進去了";
+	line "喲⚬尤其是旁邊";
+	cont "那個門﹗";
+	line "那可以⋯⋯";
+	para "總之不能靠近";
+	line "就是了﹗";
+	done;
+

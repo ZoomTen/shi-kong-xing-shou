@@ -1,0 +1,23 @@
+@org $12, $76dc:
+	init NAME_BLANK, PIC_18;
+	text "真是奇怪﹗真是";
+	line "奇怪呀﹗";
+	para "我終於發現奇怪";
+	line "在哪裡了﹗";
+	para "鐘塔上的時間﹐";
+	line "似乎動都不動﹗";
+	cont "是鐘塔出了問題";
+	line "嗎﹖";
+	para "會是我的錯覺嗎";
+	line "﹖";
+	done;
+
+@org $12, $7746:
+	init NAME_BLANK, PIC_1C;
+	text "好⋯奇⋯怪﹗";
+	cont "我才剛吃完點心";
+	line "﹐怎麼還是３點";
+	line "呢﹖人家好飽⋯";
+	para "不要吃了啦﹗";
+	done;
+

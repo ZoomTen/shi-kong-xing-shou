@@ -1,0 +1,31 @@
+@org $55, $5e56:
+	init NAME_BLANK, PIC_1F;
+	text "南方的海島上﹐";
+	line "有座地熱城⚬";
+	para "那裡是一個將地";
+	line "熱轉換成電力的";
+	cont "能源站⚬";
+	done;
+
+@org $55, $5e96:
+	init NAME_BLANK, PIC_1E;
+	text "媽媽～琳琳表妹";
+	line "說要寄布拉布拉";
+	para "超人模型給我﹗";
+	line "怎麼還沒有來﹖";
+	cont "我．要．啦﹗﹗";
+	done;
+
+@org $55, $5edc:
+	init NAME_BLANK, PIC_1F;
+	text "不要吵﹗";
+	cont "再吵小心被人魚";
+	line "吃掉﹗";
+	done;
+
+@org $55, $5efc:
+	init NAME_BLANK, PIC_1E;
+	text "人魚﹗﹗嗚～～";
+	line "嗚嗚～";
+	done;
+

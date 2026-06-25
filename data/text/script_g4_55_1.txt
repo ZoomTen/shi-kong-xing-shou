@@ -1,0 +1,36 @@
+@org $59, $5279:
+	init NAME_BLANK, PIC_16;
+@org $59, $527c:
+	text "怎麼辦﹖";
+	line "普兒被不知名的";
+	cont "";
+	db $f1, $29; #"怪"
+	text "物咬傷﹐中毒";
+	line "了﹗";
+	para "但是奇蹟之泉卻";
+	line "乾涸了﹗";
+	cont "";
+	db $f1, $58; #"要"
+	text "怎麼辦﹖";
+	done;
+
+@org $59, $52c3:
+	init NAME_BLANK, PIC_16;
+@org $59, $52c6:
+	text "怎麼辦﹖";
+	line "普兒被不知名的";
+	cont "";
+	db $f1, $29; #"怪"
+	text "物咬傷﹐中毒";
+	line "了﹗";
+	para "但是奇蹟之泉卻";
+	line "乾涸了﹗";
+	para "";
+	db $f1, $58; #"要"
+	text "怎麼辦﹖";
+	line "她一直唸著⋯";
+	cont "大樹裡面⋯";
+	line "大樹裡面⋯";
+	line "到底什麼意思﹖";
+	done;
+

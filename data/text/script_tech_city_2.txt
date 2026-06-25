@@ -1,0 +1,134 @@
+@org $0f, $55c3:
+	init NAME_BLANK, PIC_1D;
+	text "哼﹗";
+	para "小毛用他的長腳";
+	line "龜一號欺負人家";
+	para "人家才不要﹗﹗";
+	para "爸爸～";
+	cont "好不好啦～";
+	line "爸爸～";
+	para "幫人家改裝這台";
+	line "粉紅豬三號啦﹗";
+	done;
+
+@org $0f, $5627:
+	init NAME_BLANK, PIC_1C;
+	text "衝呀﹗";
+	para "我的高速賽車～";
+	line "長腳龜一號﹗";
+	para "只要那些壞人再";
+	line "來的話﹐";
+	cont "我就用這個打敗";
+	line "他";
+	forcemap 3 "們";
+	text "﹗";
+	done;
+
+@org $0f, $5673:
+	init NAME_BLANK, PIC_1F;
+	text "很久很久之前﹐";
+	cont "雷歐的曾祖父和";
+	line "其他七名科學家";
+	cont "曾經拯救過地球";
+	line "⚬";
+	para "所以城裡的人都";
+	line "尊敬他⚬";
+	done;
+
+@org $0f, $56ca:
+	init NAME_BLANK, PIC_19;
+	text "雷歐博士已經上";
+	line "了年紀﹐";
+	cont "又沒有小孩子⚬";
+	para "所以製造了一隻";
+	line "叫巴克的機器人";
+	para "是我的錯覺嗎﹖";
+	para "每次一看到巴克";
+	line "﹐";
+	cont "就覺得他很憂鬱";
+	line "⋯⋯";
+	done;
+
+@org $0f, $573b:
+	init NAME_BLANK, PIC_16;
+	text "科技城是座室內";
+	line "都市﹐";
+	cont "照明的設備都需";
+	line "要電力來驅動⚬";
+	para "可是﹐";
+	cont "為了要防止類似";
+	line "這種形情發生﹐";
+	cont "電力塔內設有特";
+	line "殊防範措施啊﹗";
+	para "真是奇怪⋯";
+	done;
+
+@org $0f, $57ad:
+	init NAME_BLANK, PIC_13;
+	text "要大家湊這三千";
+	line "萬﹐";
+	cont "真是開玩笑﹗";
+	para "把這個藏起來～";
+	para "荳荳﹗";
+	line "那個也是﹗";
+	para "呀﹗﹗";
+	cont "你看到了什麼嗎";
+	line "﹖";
+	para "我什麼都沒有做";
+	line "唷﹗";
+	done;
+
+@org $0f, $5811:
+	init NAME_BLANK, PIC_1B;
+	text "終於來電了﹗";
+	done;
+
+@org $0f, $5820:
+	init NAME_1D, PIC_1A;
+	text "媽媽﹖";
+	para "荳荳這台光速美";
+	line "少女初號機﹐";
+	cont "要不要藏起來﹖";
+	para "荳荳的光速美少";
+	line "女初號機﹐";
+	cont "價值９４５６億";
+	line "喲﹗";
+	done;
+
+@org $0f, $5877:
+	init NAME_BLANK, PIC_13;
+	text "不．用﹗";
+	done;
+
+@org $0f, $5881:
+	init NAME_1D, PIC_1A;
+	text "荳．荳．要．藏";
+	line "．起．來．啦﹗";
+	done;
+
+@org $0f, $58a2:
+	init NAME_BLANK, PIC_13;
+	text "糟糕⋯";
+	para "我的水藍鑽石項";
+	line "鍊﹐";
+	cont "藏到哪裡去了﹖";
+	done;
+
+@org $0f, $58cc:
+	init NAME_1D, PIC_1A;
+	text "荳荳這台光速美";
+	line "少女初號機﹐";
+	cont "找到一個藍色石";
+	line "頭⚬";
+	para "光速美少女初號";
+	line "機～～";
+	cont "使用價值９４５";
+	line "６億的粉碎鑽頭";
+	para "粉碎藍色石頭﹗";
+	done;
+
+@org $0f, $5936:
+	init NAME_BLANK, PIC_13;
+	text "慢⋯慢．著﹗";
+	cont "哇﹗﹗﹗﹗﹗";
+	done;

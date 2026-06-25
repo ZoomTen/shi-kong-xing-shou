@@ -1,0 +1,84 @@
+@org $0f, $48f3 (unkText_00f_48f3):
+	init NAME_BLANK, PIC_16;
+	text "發條﹖";
+	para "我忘了放哪裡了";
+	line "⋯⋯";
+	para "就在這些寶貝堆";
+	line "裡﹐自已找吧﹗";
+	done;
+
+@org $0f, $492c:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了發條﹗";
+	done;
+
+@org $0f, $493b:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "沒有錯﹗";
+	para "這就是我想要的";
+	line "發條⋯";
+	para "實在是很丟臉⋯";
+	para "唉～";
+	cont "蒙著臉做就不會";
+	line "這麼覺得吧﹗";
+	para "等我一下下～";
+	done;
+
+@org $0f, $498f:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "這就是發條老鼠";
+	line "⚬";
+	done;
+
+	text "沒想到蒙著臉﹐";
+	cont "還是覺得一樣的";
+	line "丟臉～";
+	para "喂～巴洛特﹗";
+	cont "千萬不可以說出";
+	line "去唷⚬";
+	done;
+
+@org $0f, $49e7:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了發條老鼠";
+	line "﹗";
+	done;
+
+@org $0f, $49fb:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "有了發條老鼠﹐";
+	cont "應該就可以引開";
+	line "發電塔的貓怪了";
+	line "吧⚬";
+	para "哎呀～";
+	para "想到就覺得丟臉";
+	line "⋯⋯";
+	done;
+
+@org $0f, $4a46:
+	init NAME_21, PIC_31;
+	text "喵嗚～喵～";
+	para "嗚嗚～";
+	done;
+
+@org $0f, $4a5a:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "乖貓咪～";
+	para "快點走開唷～";
+	done;
+
+@org $0f, $4a72:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "啊﹗";
+	para "發條的動力用完";
+	line "了⋯";
+	done;
+
+@org $0f, $4a8e:
+	init NAME_21, PIC_31;
+	text "嗚～喵吼喵吼吼";
+	line "﹗";
+	para "（可惡﹗）";
+	line "（上當了）";
+	done;
+

@@ -1,0 +1,46 @@
+@org $55, $5d57:
+	init NAME_BLANK, PIC_18;
+	text "約三個月前﹐村";
+	line "子裡來了一位大";
+	para "美女﹐名叫海藍";
+	line "可是﹐居然被";
+	forcemap 2, "安";
+	para "東給追走了﹗";
+	line "真是可惜啊～";
+	done;
+
+@org $55, $5da9:
+	init NAME_BLANK, PIC_1D;
+	text "追走就追走﹐有";
+	line "什麼好可惜的﹗";
+	done;
+
+@org $55, $5dc7:
+	init NAME_BLANK, PIC_18;
+	text "啊⋯是⋯是的⚬";
+	done;
+
+@org $55, $5dd7:
+	init NAME_BLANK, PIC_1D;
+	text "喂～老公～";
+	para "我覺得那個海藍";
+	line "怪怪的﹐又說不";
+	cont "出哪裡奇怪⋯";
+	done;
+
+@org $55, $5e09:
+	init NAME_BLANK, PIC_18;
+	text "村子裡﹐每個長";
+	line "得比你漂亮的女";
+	para "孩﹐妳哪個不覺";
+	line "得奇怪﹗";
+	done;
+
+@org $55, $5e3e:
+	init NAME_BLANK, PIC_1D;
+	text "老⋯老公﹗";
+	line "你皮";
+	forcemap 3, "長";
+	text "厚了﹗";
+	done;
+

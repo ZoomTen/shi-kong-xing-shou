@@ -1,0 +1,273 @@
+@org $4f, $5be3:
+	init NAME_BLANK, PIC_25;
+	text "抱歉～";
+	line "本店的服飾全被";
+	cont "麗子給買下來了";
+	line "真是抱歉⋯‥";
+	done;
+
+@org $4f, $5c0f:
+	init NAME_LAKI, PIC_LAKI;
+	text "你這個可惡的女";
+	line "人﹗";
+	para "竟然搞這種可惡";
+	line "的勾當﹗";
+	para "把所有的衣服全";
+	line "收購一空﹐真是";
+	cont "卑鄙﹗";
+	para "你這種女人﹐一";
+	line "．點．都．不．";
+	cont "可．愛﹗";
+	done;
+
+@org $4f, $5c7d:
+	init NAME_KULU, PIC_KULU;
+	text "和在下想的﹐一";
+	line "點都沒有錯⚬";
+	para "在下認為﹐你真";
+	line "是個醜八怪﹗";
+	done;
+
+@org $4f, $5cb4:
+	init NAME_35, PIC_5E;
+	text "什麼﹗﹗";
+	line "竟敢說我不可愛";
+	cont "你們又是誰啊﹖";
+	done;
+
+@org $4f, $5cdc:
+	init NAME_LAKI, PIC_LAKI;
+	text "你在問我們是誰";
+	line "嗎﹖";
+	done;
+
+@org $4f, $5cf2:
+	init NAME_LAKI, PIC_LAKI;
+	text "既然你們問起了";
+	line "﹐那我就仁慈的";
+	cont "告訴你們吧﹗";
+	done;
+
+@org $4f, $5d1c:
+	init NAME_KULU, PIC_KULU;
+	text "來自銀河系裡的";
+	line "正義使者﹗";
+	done;
+
+@org $4f, $5d38:
+	init NAME_LAKI, PIC_LAKI;
+	text "穿梭於黑夜的浪";
+	line "漫勇士﹗";
+	done;
+
+@org $4f, $5d50:
+	init NAME_KULU, PIC_KULU;
+	text "貫徹愛．正義．";
+	line "勇氣的真理﹗";
+	done;
+
+@org $4f, $5d6b:
+	init NAME_LAKI, PIC_LAKI;
+	text "拉琪﹗";
+	done;
+
+@org $4f, $5d74:
+	init NAME_KULU, PIC_KULU;
+	text "庫魯﹗";
+	done;
+
+@org $4f, $5d7d:
+	init NAME_LAKI, PIC_LAKI;
+	text "閃．電．隊～～";
+	line "誕生﹗﹗";
+	done;
+
+@org $4f, $5d91:
+	init NAME_35, PIC_5E;
+	text "一群神經病﹗";
+	line "我就是不賣～";
+	para "你們就穿那些破";
+	line "舊的衣服﹐上台";
+	cont "讓人笑個夠吧﹗";
+	line "哈哈哈哈～";
+	done;
+
+@org $4f, $5ddb:
+	init NAME_KULU, PIC_KULU;
+	text "你真是在下見過";
+	line "最壞心眼的醜八";
+	line "怪﹗";
+	done;
+
+@org $4f, $5dfe:
+	init NAME_LAKI, PIC_LAKI;
+	text "哼﹗";
+	line "沒什麼了不起的";
+	para "我會讓你這個不";
+	line "可愛的傢伙﹐見";
+	cont "識到～";
+	line "什麼叫做女王的";
+	line "風範﹗";
+	para "哦哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+
+@org $4f, $5e5b:
+	init NAME_35, PIC_5E;
+	text "哼﹗";
+	line "沒有人敢說麗子";
+	line "不可愛﹗";
+	cont "氣死我了﹗﹗";
+	done;
+
+@org $4f, $5e85:
+	init NAME_35, PIC_5E;
+	text "什麼﹖";
+	line "妳也想要參加";
+	line "";
+	cont "選秀會﹖";
+	done;
+
+@org $4f, $5ea5:
+	init NAME_35, PIC_5E;
+	text "哈哈哈哈～";
+	line "不要笑死人了～";
+	para "瞧妳那副寒酸樣";
+	line "連衣服穿在妳身";
+	cont "上﹐都變得很可";
+	line "憐⚬";
+	line "哈哈哈～";
+	para "妳還是放棄吧﹗";
+	line "哈哈哈～";
+	done;
+
+@org $4f, $5f09:
+	init NAME_NINA, PIC_02;
+	text "是⋯是的⋯";
+	line "對不起⋯⋯";
+	done;
+
+@org $4f, $5f1f:
+	init NAME_35, PIC_5E;
+	text "真是傷腦筋～";
+	line "衣服這麼多～";
+	para "把剩下來的衣服";
+	line "全都燒掉吧﹗";
+	cont "真是麻煩⋯";
+	done;
+
+@org $4f, $5f5b:
+	init NAME_NINA, PIC_02;
+	text "巴洛特⋯妮娜⋯";
+	line "不能比賽了⋯⋯";
+	para "妮娜⋯";
+	line "沒有衣服～";
+	cont "麗子小姐說﹐妮";
+	line "娜不適合比賽⋯";
+	done;
+
+@org $4f, $5fa7:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "沒有那回事的﹗";
+	cont "妮娜一定是最漂";
+	line "亮的女孩⚬";
+	para "只要我們解決了";
+	line "衣服的問題的話";
+	done;
+
+@org $4f, $5feb:
+	init NAME_2C, PIC_55;
+	text "咦⋯﹖";
+	done;
+
+@org $4f, $5ff5:
+	init NAME_2C, PIC_55;
+	text "啊⋯﹖";
+	done;
+
+@org $4f, $5fff:
+	init NAME_2C, PIC_55;
+	text "妳⋯妳⋯";
+	done;
+
+@org $4f, $600b:
+	init NAME_2C, PIC_55;
+	text "這⋯這種心蹦蹦";
+	cont "跳的感覺是什麼";
+	line "﹖";
+	para "心臟好像被一百";
+	line "隻大象踩過一樣";
+	cont "真是奇怪⋯⋯";
+	done;
+
+@org $4f, $6051:
+	init NAME_2C, PIC_55;
+	text "這⋯這位小姐⋯";
+	line "妳也是要參加選";
+	cont "秀會嗎﹖";
+	done;
+
+@org $4f, $6077:
+	init NAME_NINA, PIC_02;
+	text "妮娜不適合⋯⋯";
+	line "妮娜只有這套破";
+	cont "舊的衣服⋯";
+	done;
+
+@org $4f, $609f:
+	init NAME_2C, PIC_55;
+	text "臉好燙⋯⋯";
+	line "我今天是怎麼回";
+	line "";
+	cont "事⋯⋯";
+	done;
+
+@org $4f, $60c0:
+	init NAME_NINA, PIC_02;
+	text "面具先生﹖";
+	done;
+
+@org $4f, $60cd:
+	init NAME_2C, PIC_55;
+	text "哦﹗﹗﹗";
+	line "這件事就包在我";
+	cont "身上﹐我幫你解";
+	line "決衣服的問題⚬";
+	para "我有個知名的裁";
+	line "縫師朋友⚬";
+	para "我們就在綠色樹";
+	line "海碰面吧﹗";
+	para "再見了～";
+	line "一定要來喲﹗";
+	done;
+
+@org $4f, $6146:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "真是奇怪的人⋯";
+	done;
+
+@org $4f, $6154:
+	init NAME_NINA, PIC_02;
+	text "巴洛特﹐現在要";
+	line "怎麼辦﹖";
+	done;
+
+@org $4f, $616c:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "沒有辦法了～";
+	cont "城裡已經買不到";
+	line "衣服⋯";
+	para "只好到綠色樹海";
+	line "與他碰面了⚬";
+	done;
+
+@org $4f, $61aa:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這裡是綠色樹海";
+	line "嗎﹖";
+	cont "怎麼到處都是石";
+	line "頭做的樹﹖";
+	para "石頭做的小動物";
+	line "真是奇怪～";
+	done;
+

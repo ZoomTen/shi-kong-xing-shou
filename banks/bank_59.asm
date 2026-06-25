@@ -56,7 +56,8 @@ Script_059_4054:
 Script_059_4061:
 	end
 
-INCLUDE "data/text/bank59_4062.asm"
+INCLUDE "data/text/script_g4_40.asm"
+INCLUDE "data/text/script_g4_41.asm"
 
 Script_059_40c0:
 	farjump2 Script_058_40db
@@ -880,7 +881,26 @@ Script_059_48e4:
 	face FACE_LEFT
 	setmap $55, $02 ; TEMP
 	end
-INCLUDE "data/text/bank59_48ea.asm"
+INCLUDE "data/text/script_g4_25_1.asm"
+INCLUDE "data/text/script_g4_3a_1.asm"
+INCLUDE "data/text/script_g4_3b_1.asm"
+INCLUDE "data/text/script_g4_3c_1.asm"
+INCLUDE "data/text/script_g4_3d_1.asm"
+INCLUDE "data/text/script_g4_3f.asm"
+INCLUDE "data/text/script_g4_55_1.asm"
+INCLUDE "data/text/script_g4_3c_2.asm"
+INCLUDE "data/text/script_g4_25_2.asm"
+INCLUDE "data/text/script_g4_1d.asm"
+INCLUDE "data/text/script_g4_28_1.asm"
+INCLUDE "data/text/script_g4_55_2.asm"
+INCLUDE "data/text/script_g4_25_3.asm"
+INCLUDE "data/text/script_g4_3a_2.asm"
+INCLUDE "data/text/script_g4_3b_2.asm"
+INCLUDE "data/text/script_g4_3c_3.asm"
+INCLUDE "data/text/script_g4_3d_2.asm"
+INCLUDE "data/text/script_g4_3e.asm"
+INCLUDE "data/text/script_g4_21.asm"
+INCLUDE "data/text/script_g4_24.asm"
 ; movement data pool ($88-terminated)
 MovementData_059_7ac9:
 	db $ff, $00, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff

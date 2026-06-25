@@ -1,0 +1,131 @@
+@org $66, $6b54:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6b57:
+	text "這⋯⋯這不是﹗";
+	line "";
+	done;
+
+@org $66, $6b63:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6b66:
+	text "這這這這這這這";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $57; #"?"
+	text "";
+	db $57; #"?"
+	text "﹗﹗";
+	para "巴洛特先生﹐";
+	line "原來你⋯⋯";
+	para "在下真是錯怪你";
+	line "了﹗";
+	para "原來你也能了解";
+	line "在下這男子漢的";
+	cont "夢想是多麼的偉";
+	line "大啊﹗";
+	done;
+
+@org $66, $6bc8:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6bcb:
+	text "哦哦哦～";
+	line "呵呵呵呵﹗";
+	para "這真是太棒了﹗";
+	line "我終於擁有自己";
+	cont "的房子了﹗";
+	para "它就像皇宮一樣";
+	line "漂亮﹗";
+	cont "哦～呵呵呵呵﹗";
+	done;
+
+@org $66, $6c21:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6c24:
+	text "總算你也能了解";
+	line "閃電隊的可怕⚬";
+	para "在下就原諒你以";
+	line "前的冒失行為⚬";
+	para "這個是我們的約";
+	line "定⚬";
+	done;
+
+@org $66, $6c6a:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6c6d:
+	text "得到音樂盒﹗";
+	done;
+
+@org $66, $6c79:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6c7c:
+	text "哦～呵呵呵呵﹗";
+	line "我的皇宮﹗";
+	done;
+
+@org $66, $6c93:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6c96:
+	text "這⋯⋯這真是美";
+	line "倫美煥呀﹗";
+	para "我就好像是住在";
+	line "";
+	db $f3, $34; #"王"
+	text "宮中的白雪公";
+	cont "主一樣﹗";
+	line "哦～呵呵呵呵﹗";
+	done;
+
+@org $66, $6cdd:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6ce0:
+	text "嗚～嗚～在下真";
+	line "";
+	db $f1, $43; #"是"
+	text "感動⚬";
+	para "你聽聽～";
+	line "腳一踏在地板上";
+	cont "";
+	db $f2, $65; #"還"
+	text "";
+	db $33; #"?"
+	text "";
+	db $6b; #"?"
+	text "";
+	db $87; #"?"
+	text "發出如";
+	line "天籟般的聲響﹗";
+	para "在下真是⋯";
+	line "";
+	db $f2, $69; #"非"
+	text "．常．的．感";
+	cont "";
+	db $f2, $87; #"動"
+	text "﹗";
+	done;
+
+@org $66, $6d46:
+	init NAME_5A, PIC_18;
+@org $66, $6d49:
+	text "我曾經聽米特少";
+	line "爺說過﹐他有個";
+	cont "";
+	db $f2, $1d; #"祕"
+	text "";
+	db $1e; #"?"
+	text "的基地⚬";
+	para "他曾和他的好朋";
+	line "";
+	db $f4, $0f; #"友"
+	text "～諾克一起到";
+	para "祕密基地去冒險";
+	line "但是少爺說﹐他";
+	cont "";
+	db $f3, $b5; #"們"
+	text "的祕密不能讓";
+	line "大人知道⋯⋯";
+	para "唉～少爺是多麼";
+	line "的活潑呀﹐但是";
+	cont "現在⋯⋯";
+	done;
+

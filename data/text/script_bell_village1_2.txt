@@ -1,0 +1,25 @@
+@org $08, $4e15:
+	init NAME_SNOWY, PIC_SNOWY;
+	text "汪汪～汪汪﹗";
+	done;
+
+@org $08, $4e23:
+	init NAME_BLANK, PIC_1B;
+	text "新聞報導說﹐";
+	cont "今天晚上會有大";
+	line "規模的流星雨⚬";
+	para "真是期待呢﹗";
+	done;
+
+@org $08, $4e55:
+	init NAME_BLANK, PIC_13;
+	text "不曉得為什麼﹐";
+	cont "只要一提到流星";
+	line "雨的事﹐";
+	cont "賽亞就會露出不";
+	line "安的臉色⋯";
+	para "巴洛特呀﹐";
+	cont "你知道為什麼嗎";
+	line "﹖";
+	done;
+

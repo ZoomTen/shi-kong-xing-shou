@@ -1,0 +1,58 @@
+@org $0e, $4fa5:
+	init NAME_BLANK, PIC_22;
+	text "糟糕了﹗";
+	para "聽說被流星擊中";
+	line "的動物都變成了";
+	line "星獸⚬";
+	para "某些星獸還在當";
+	line "地造成破壞⚬";
+	para "這可怎麼辦⋯⋯";
+	para "為了隼人的安全";
+	line "著想﹐";
+	cont "我還是買下一個";
+	line "防衛軍團好了﹗";
+	done;
+
+@org $0e, $5023:
+	init NAME_HAYATO, PIC_HAYATO;
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	line;
+	para "巴洛特有什麼事";
+	line "情呢﹖";
+	para "咦﹖";
+	cont "天才機械發明家";
+	line "﹖";
+	para "他叫雷歐博士﹐";
+	cont "住在隔壁的";
+	line "科技城啊﹗";
+	para "巴洛特想和我一";
+	line "起去嗎﹖";
+	para "什麼﹖";
+	cont "你說不用麻煩了";
+	line "﹖";
+	para "ＯＨ～";
+	line "ＢＡＢＹ～";
+	line;
+	para "你還是這麼害羞";
+	line "⚬";
+	para "我雖然高貴﹐";
+	cont "但很樂意照顧像";
+	line "你這種孤兒唷﹗";
+	done;
+
+@org $0e, $50f6:
+	init NAME_HAYATO, PIC_HAYATO;
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	line;
+	para "巴洛特有什麼事";
+	line "情呢﹖";
+	para "咦﹖";
+	cont "天才機械發明家";
+	line "﹖";
+	para "他叫雷歐博士﹐";
+	cont "住在隔壁的科技";
+	line "城啊﹗";
+	done;
+

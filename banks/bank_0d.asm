@@ -449,7 +449,7 @@ Pointers_00d_437a:
 	dw Script_00d_446a, Script_00d_4472, Script_00d_447a, Script_00d_4482, Script_00d_448b, Script_00d_4494, Script_00d_449d, Script_00d_44a5
 	dw Script_00d_44ae, Script_00d_44b6, Script_00d_44be, Script_00d_44c7
 ; TODO: paper-scroll scripts (F0/ED character command lists)
-INCLUDE "data/text/bank0d_paperscroll.asm"
+INCLUDE "data/text/paperscroll_move_names.asm"
 PaperEmotesTiles:
 	INCBIN "gfx/paper_scroll/tiles_44cf.2bpp"
 LightbulbEmoteTiles:

@@ -1,0 +1,130 @@
+@org $4f, $6288:
+	init NAME_2C, PIC_55;
+	text "咦﹖";
+	cont "妮娜怎麼還沒有";
+	line "來﹖";
+	done;
+
+@org $4f, $62a1:
+	init NAME_2C, PIC_55;
+	text "這裡就是我朋友";
+	line "的家⚬";
+	done;
+
+@org $4f, $62b9:
+	init NAME_NINA, PIC_02;
+	text "朋友﹖";
+	done;
+
+@org $4f, $62c2:
+	init NAME_2C, PIC_55;
+	text "嗯⚬";
+	done;
+
+@org $4f, $62c9:
+	init NAME_2C, PIC_55;
+	text "那位兔先生﹐就";
+	cont "是動物界裡最有";
+	line "名的裁師哦﹗";
+	para "但是流星雨事件";
+	line "中﹐擊中了綠色";
+	cont "樹海的火山岩⚬";
+	para "火山岩變成了火";
+	line "山怪﹐並把森林";
+	cont "裡的所有東西變";
+	line "成石頭⚬";
+	done;
+
+@org $4f, $634a:
+	init NAME_NINA, PIC_NINA_2;
+	text "真是可憐⚬";
+	done;
+
+@org $4f, $6356:
+	init NAME_2C, PIC_55;
+	text "森林的動物﹐有";
+	line "些閃避不及﹐都";
+	cont "變成了石頭⚬";
+	para "連兔先生最鐘愛";
+	line "的兔小姐﹐也被";
+	cont "變成了石頭⋯";
+	para "所以牠很傷心﹐";
+	line "沒有心情做衣服";
+	cont "了⋯⋯";
+	done;
+
+@org $4f, $63c8:
+	init NAME_NINA, PIC_02;
+	text "兔先生真是深情";
+	line "⋯";
+	done;
+
+@org $4f, $63db:
+	init NAME_2C, PIC_55;
+	text "我們只要打倒了";
+	line "森林裡的火山怪";
+	cont "﹐應該就可以解";
+	line "救森林裡被石化";
+	cont "的動物們了⚬";
+	done;
+
+@org $4f, $6422:
+	init NAME_NINA, PIC_02;
+	text "好的﹐妮娜會努";
+	line "力的⚬";
+	done;
+
+@org $4f, $6438:
+	init NAME_2C, PIC_55;
+	text "只有妳一個人去";
+	line "的話⋯";
+	para "我⋯我不能放心";
+	line "我也要跟妳去﹗";
+	done;
+
+@org $4f, $646c:
+	init NAME_NINA, PIC_02;
+	text "面具男鸚鵡怪";
+	line "加入隊伍﹗";
+	done;
+
+@org $4f, $6483:
+	init NAME_SYSTEM, PIC_VAST_FAME;
+	text "如果將面具男置";
+	cont "於排頭﹐鸚鵡怪";
+	line "便會發揮溝通力";
+	para "了解動物的語言";
+	line "⚬";
+	done;
+
+@org $4f, $64bf:
+	init NAME_2E, PIC_57;
+	text "真是可怕咕～";
+	cont "火山怪把森林變";
+	line "成石頭了咕⚬";
+	para "連裁縫大師兔先";
+	line "生的偶像～兔小";
+	cont "姐都變成石頭了";
+	line "咕⚬";
+	para "誰來救救我們咕";
+	line "﹖";
+	done;
+
+@org $4f, $6527:
+	init NAME_2F, PIC_58;
+	text "傷心呀～";
+	line "我的性感女神～";
+	cont "兔小姐啊～";
+	para "妳是為了救我而";
+	line "變成石頭的嗎﹖";
+	cont "傷心呀～";
+	cont "什麼衣服的﹐現";
+	line "在都沒有心情做";
+	line "了⋯";
+	done;
+
+@org $4f, $658c:
+	init NAME_30, PIC_58;
+	text "⋯⋯⋯";
+	done;
+

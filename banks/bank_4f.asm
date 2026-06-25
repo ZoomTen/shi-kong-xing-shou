@@ -59,11 +59,11 @@ Script_04f_405f:
 .skip
 	end
 
-INCLUDE "data/text/bank4f_406d.asm"
+INCLUDE "data/text/script_g3_1e.asm"
 
-INCLUDE "data/text/bank4f_407f.asm"
+INCLUDE "data/text/script_g3_1d_1.asm"
 
-INCLUDE "data/text/bank4f_4097.asm"
+INCLUDE "data/text/script_g3_1d_2.asm"
 
 Script_04f_40c6::
 	face FACE_RIGHT
@@ -1457,7 +1457,32 @@ Script_04f_4dbe::
 	setmap $12, $00
 	end2
 
-INCLUDE "data/text/bank4f_misc.asm"
+INCLUDE "data/text/script_sky_city_1.asm"
+INCLUDE "data/text/script_g3_17.asm"
+INCLUDE "data/text/script_g3_19.asm"
+INCLUDE "data/text/script_g3_1a_1.asm"
+INCLUDE "data/text/script_g3_1b.asm"
+INCLUDE "data/text/script_g3_1c_1.asm"
+INCLUDE "data/text/script_banglin_co1f_1.asm"
+INCLUDE "data/text/script_fashion_store.asm"
+INCLUDE "data/text/script_green_forest_p13_1.asm"
+INCLUDE "data/text/script_green_forest_p32.asm"
+INCLUDE "data/text/script_green_forest_p4_1.asm"
+INCLUDE "data/text/script_g3_22_1.asm"
+INCLUDE "data/text/script_g3_23_1.asm"
+INCLUDE "data/text/script_green_forest_p6_1.asm"
+INCLUDE "data/text/script_green_forest_p4_2.asm"
+INCLUDE "data/text/script_g3_22_2.asm"
+INCLUDE "data/text/script_green_forest_p6_2.asm"
+INCLUDE "data/text/script_green_forest_p13_2.asm"
+INCLUDE "data/text/script_g3_20.asm"
+INCLUDE "data/text/script_g3_21.asm"
+INCLUDE "data/text/script_g3_23_2.asm"
+INCLUDE "data/text/script_sky_city_2.asm"
+INCLUDE "data/text/script_g3_1a_2.asm"
+INCLUDE "data/text/script_banglin_co1f_2.asm"
+INCLUDE "data/text/script_sky_city_3.asm"
+INCLUDE "data/text/script_g3_1c_2.asm"
 
 MovementData_4f_7ae1::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00

@@ -1,0 +1,104 @@
+@org $12, $579d:
+	init NAME_1B, PIC_4C;
+	text "巴洛特﹐是你呀";
+	line "⚬上次提到的動";
+	cont "力晶片﹐果然董";
+	line "事長身上也有⚬";
+	para "本來應該要為你";
+	line "引見的﹐但現在";
+	cont "恐怕不行了⋯";
+	done;
+
+@org $12, $57fa:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "發生了什麼事嗎";
+	line "﹖";
+	done;
+
+@org $12, $580d:
+	init NAME_1B, PIC_4C;
+	text "是這樣的⚬十六";
+	line "年前﹐董事長千";
+	cont "金與一名牧羊人";
+	line "發生戀情﹐並有";
+	line "了一名小孩⚬";
+	para "董事長相當憤怒";
+	line "﹐拆散了二人﹐";
+	cont "並且把小孩子托";
+	line "管家送走⚬";
+	para "但董事長年紀大";
+	line "了﹐後繼無人﹐";
+	cont "便想找回失散的";
+	line "小孫子⚬";
+	para "但當年送走小孩";
+	line "子的管家已經去";
+	cont "逝﹐沒有人知道";
+	line "他的下落了⋯";
+	done;
+
+@org $12, $58ef:
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "這真是遺憾⋯";
+	done;
+
+@org $12, $58fd:
+	init NAME_1B, PIC_4C;
+	text "董事長的身體為";
+	line "了這件事情﹐而";
+	cont "操勞過度﹗";
+	para "現正休養中﹐不";
+	line "方便接見客人⚬";
+	para "關於動力晶片的";
+	line "事情～如果巴洛";
+	para "特可以找到失散";
+	line "的小孫子的話﹐";
+	para "或許可以向董事";
+	line "長要求動力晶片";
+	cont "吧⚬";
+	done;
+
+@org $12, $599a:
+	init NAME_1B, PIC_4C;
+	text "糟糕～都這麼晚";
+	line "了呀﹗";
+	para "身為加爾企業採";
+	line "購部經理的我﹐";
+	cont "必須要趕上這場";
+	line "重要的會議才行";
+	line "﹗巴洛特﹐詳細";
+	cont "的細節﹐你可以";
+	line "看看加爾企業前";
+	line "的告示版⚬";
+	para "上頭有著尋人";
+	line "的線索⚬";
+	cont "加油了﹗";
+	done;
+
+@org $12, $5a30:
+	init NAME_BLANK, PIC_BALLOT_0;
+	text "加爾企業公告：";
+	cont "加爾企業尋人啟";
+	line "示";
+	para "尋找哈爾遜董事";
+	line "長十六年前失散";
+	cont "的小孫子身上佩";
+	line "戴著一條弦月型";
+	cont "、發出幽光的項";
+	line "鍊名為月琉璃⚬";
+	para "如尋獲者﹐加爾";
+	line "企業將重金禮謝";
+	done;
+
+@org $12, $5abd:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這就是基多所說";
+	line "的線索﹖";
+	cont "月型項鍊﹖";
+	para "月琉璃這就是基";
+	line "多所說的線索﹖";
+	para "只要找到月琉璃";
+	line "的主人﹐就可以";
+	cont "得到動力晶片了";
+	line "﹗";
+	done;
+

@@ -1,0 +1,27 @@
+@org $4f, $6594:
+	init NAME_31, PIC_5A;
+	text "我是旅行的人～";
+	line "偶爾來到這裡﹐";
+	cont "沒想到居然碰到";
+	line "這種事⚬";
+	para "雖覺得很恐怖﹐";
+	line "但還是要做買賣";
+	para "想要買些什麼";
+	line "﹖";
+	line "";
+	db $e7, $e2;
+
+@org $4f, $65f8:
+	init NAME_2E, PIC_57;
+	text "咕咕～";
+	line "我是名醫～咕咕";
+	para "除了變成石頭之";
+	line "外﹐其他的我都";
+	cont "能治⚬";
+	para "需要";
+	forcemap 1, "服";
+	text "務嗎";
+	forcemap 1, "﹖";
+	line "";
+	getchoice String_1cc5;
+

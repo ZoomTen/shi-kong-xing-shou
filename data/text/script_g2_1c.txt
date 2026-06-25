@@ -1,0 +1,23 @@
+@org $12, $5589:
+	init NAME_BLANK, PIC_1B;
+	text "十六年前﹐哈爾";
+	line "遜董事長的女兒";
+	cont "﹐愛上了一名男";
+	line "人﹗那名牧羊人";
+	cont "﹐就是山達農莊";
+	line "的牧羊人⚬";
+	cont "事後那名牧羊人";
+	line "被趕出這裡﹐再";
+	cont "也沒有人看過他";
+	line "了⋯⋯";
+	done;
+
+@org $12, $560d:
+	init NAME_BLANK, PIC_1A;
+	text "你⋯你後面那隻";
+	line "⋯怪獸⋯";
+	cont "就是爸爸說的星";
+	line "獸嗎﹖";
+	para "真可怕﹗﹗";
+	done;
+

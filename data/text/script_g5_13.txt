@@ -1,0 +1,32 @@
+@org $66, $57d0:
+	init NAME_BLANK, PIC_12;
+@org $66, $57d3:
+	text "痛⋯痛死了⋯⋯";
+	line "護士小姐～";
+	cont "";
+	db $f2, $ad; #"我"
+	text "的腳痛死了﹗";
+	done;
+
+@org $66, $57fa:
+	init NAME_BLANK, PIC_14;
+@org $66, $57fd:
+	text "怎麼都沒有人﹖";
+	line "痛死了﹗";
+	cont "我的手痛死了﹗";
+	done;
+
+@org $66, $5821:
+	init NAME_BLANK, PIC_17;
+@org $66, $5824:
+	text "剛才做了一個夢";
+	line "";
+	db $f2, $41; #"夢"
+	text "到死去的爺爺";
+	cont "站在橋的那一端";
+	line "";
+	db $f6, $0c; #"接"
+	text "著我就醒過來";
+	line "了﹗";
+	done;
+

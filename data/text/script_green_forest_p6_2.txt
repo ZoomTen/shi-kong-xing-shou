@@ -1,0 +1,25 @@
+@org $4f, $663f:
+	init NAME_2D, PIC_56;
+	text "老婆～拱嗚～";
+	line "拱嗚～";
+	cont "我們的小孩⋯";
+	line "變成石頭了﹗";
+	done;
+
+@org $4f, $666c:
+	init NAME_2D, PIC_56;
+	text "老公～嗚嗚～";
+	line "拱拱～";
+	cont "如果我們的小孩";
+	line "永遠變成這樣﹐";
+	cont "那我也不要活了";
+	line "⋯⋯";
+	para "用你那性感的獠";
+	line "牙撞死我吧﹗";
+	done;
+
+@org $4f, $66c4:
+	init NAME_32, PIC_56;
+	text "⋯⋯";
+	done;
+

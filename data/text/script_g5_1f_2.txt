@@ -1,0 +1,233 @@
+@org $66, $66f2:
+	init $5b, PIC_20;
+@org $66, $66f5:
+	text "你們要問預售屋";
+	line "的事﹖";
+	para "";
+	db $f1, $cc; #"很"
+	text "抱歉﹐我現在";
+	line "沒有這個心情⚬";
+	para "我老媽剛才趁我";
+	line "不注意的時候﹐";
+	cont "";
+	db $f1, $31; #"跑"
+	text "";
+	db $64; #"?"
+	text "出去⚬";
+	para "她得了老年痴呆";
+	line "";
+	db $f1, $33; #"﹐"
+	text "什麼事都記不";
+	cont "住﹗";
+	line "怎麼回得來﹖";
+	para "年輕人呀﹐求求";
+	line "你幫忙尋找我老";
+	cont "媽好嗎﹖";
+	para "事後我一定重重";
+	line "";
+	db $f1, $51; #"的"
+	text "禮謝你們﹗";
+	done;
+
+@org $66, $67b0:
+	init NAME_BALLOT, PIC_BALLOT_4;
+@org $66, $67b3:
+	text "糟糕﹗";
+	line "";
+	db $f1, $65; #"有"
+	text "人落水了﹗";
+	done;
+
+@org $66, $67c3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $67c6:
+	text "這名婆婆還有一";
+	line "點心跳﹐";
+	cont "但是沒呼吸了﹗";
+	line "得快點急救才行";
+	line "﹗";
+	done;
+
+@org $66, $67f8:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $67fb:
+	text "爸爸曾經教過我";
+	line "緊急狀況的心肺";
+	cont "復甦術⋯⋯";
+	para "但是一到對方是";
+	line "個滿臉皺紋的老";
+	cont "奶奶⋯⋯";
+	line "";
+	db $f2, $d7; #"就"
+	text "不免猶豫了";
+	line "起";
+	db $f2, $bf; #"來"
+	text "";
+	db $c7; #"?"
+	text "";
+	para "不管了～";
+	line "救人第一﹗";
+	done;
+
+@org $66, $6866:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6869:
+	text "呀～嘔嘔﹗﹗";
+	line "整個嘴巴上都是";
+	cont "老婆婆假牙的味";
+	line "道⋯⋯";
+	para "不行～";
+	line "";
+	db $f2, $8f; #"老"
+	text "婆婆的心跳快";
+	cont "要停止了﹗";
+	line "";
+	db $f1, $8f; #"救"
+	text "人第一﹗";
+	done;
+
+@org $66, $68c0:
+	init NAME_BLANK, PIC_19;
+@org $66, $68c3:
+	text "這裡是哪裡﹖";
+	line "你是誰﹖";
+	para "";
+	db $f1, $43; #"是"
+	text "來綁架我的嗎";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	done;
+
+@org $66, $68e9:
+	init NAME_BLANK, PIC_19;
+@org $66, $68ec:
+	text "好可怕呀﹗⋯";
+	line "";
+	db $f2, $ce; #"怎"
+	text "";
+	db $cf; #"?"
+	text "辦⋯";
+	para "雖然想要逃走﹐";
+	line "但腳卻像海棉一";
+	cont "樣軟⋯";
+	done;
+
+@org $66, $6924:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6927:
+	text "老婆婆～";
+	line "";
+	db $f2, $ad; #"我"
+	text "送你回去吧﹗";
+	done;
+
+@org $66, $693d:
+	init NAME_BLANK, PIC_19;
+@org $66, $6940:
+	text "啊啊啊﹗";
+	line "你要假裝乖小孩";
+	para "然後綁架我嗎﹖";
+	line "沒辦法了～";
+	para "請你告訴我的老";
+	line "伴﹐說我被你這";
+	cont "";
+	db $f2, $4f; #"個"
+	text "乖小孩綁架了";
+	line "我老伴就在那邊";
+	line "的海底喲﹗";
+	done;
+
+@org $66, $69ae:
+	init $5b, PIC_20;
+@org $66, $69b1:
+	text "老⋯老媽﹗﹗﹗";
+	line "你沒有事吧﹗";
+	done;
+
+@org $66, $69c7:
+	init NAME_BLANK, PIC_19;
+@org $66, $69ca:
+	text "你⋯你又是誰﹖";
+	line "你是那位乖小孩";
+	para "綁架集團的人嗎";
+	line "你們呀都是壞東";
+	cont "";
+	db $f4, $d1; #"西"
+	text "﹐我要去找我";
+	line "的老伴﹗";
+	done;
+
+@org $66, $6a18:
+	init $5b, PIC_20;
+@org $66, $6a1b:
+	text "年輕人﹐";
+	line "不要介意⚬";
+	para "我老媽一向都是";
+	line "這樣的⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "不曉得要怎麼";
+	line "";
+	db $f2, $71; #"感"
+	text "謝你﹗";
+	para "就這樣好了﹐城";
+	line "";
+	db $f4, $c7; #"外"
+	text "那間預售屋就";
+	cont "";
+	db $f2, $af; #"給"
+	text "";
+	db $4a; #"?"
+	text "們使用吧﹗";
+	para "這是地契﹐非常";
+	line "";
+	db $f2, $71; #"感"
+	text "謝你們﹗";
+	done;
+
+@org $66, $6a9c:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6a9f:
+	text "得到了地契﹗";
+	done;
+
+@org $66, $6aab:
+	init $5b, PIC_20;
+@org $66, $6aae:
+	text "非常感謝你們﹗";
+	line "老媽﹐你不要再";
+	cont "亂跑了﹗";
+	line "我會擔心死的⚬";
+	done;
+
+@org $66, $6ade:
+	init NAME_BLANK, PIC_19;
+@org $66, $6ae1:
+	text "你這個綁架我的";
+	line "人﹐怎麼叫我老";
+	cont "媽了﹖";
+	done;
+
+@org $66, $6b01:
+	init $5b, PIC_20;
+@org $66, $6b04:
+	text "⋯⋯⋯";
+	done;
+
+@org $66, $6b09:
+	init NAME_BLANK, PIC_19;
+@org $66, $6b0c:
+	text "嘻嘻～";
+	line "他們想要綁架我";
+	cont "";
+	db $f2, $16; #"等"
+	text "";
+	db $ad; #"?"
+	text "腳不像蛋糕";
+	line "一樣軟的時候﹐";
+	cont "我就跑去找我老";
+	line "伴﹗";
+	line "嘻嘻嘻﹗";
+	done;
+

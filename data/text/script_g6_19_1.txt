@@ -1,0 +1,21 @@
+@org $6c, $6a32:
+	init NAME_DR_LEO, PIC_DR_LEO;
+@org $6c, $6a35:
+	text "唉～～";
+	line "";
+	db $f2, $c8; #"沒"
+	text "有用了⋯";
+	para "一切都沒有用了";
+	line "好好的太空船⋯";
+	para "現在只剩下八個";
+	line "晶片所組成的";
+	cont "『核』了⋯";
+	para "巴洛特啊～";
+	line "";
+	db $f2, $bd; #"做"
+	text "";
+	db $cd; #"?"
+	text "接受世界末";
+	cont "日的心理準備吧";
+	done;
+

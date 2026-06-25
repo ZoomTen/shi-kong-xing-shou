@@ -1,0 +1,19 @@
+@org $55, $5f11:
+	init NAME_BLANK, PIC_16;
+	text "南方海島上﹐有";
+	line "座衛星雷達站⚬";
+	para "可以直接從衛星";
+	line "接收或發送各種";
+	cont "訊號⚬";
+	para "科技真是方便的";
+	line "東西呀⚬";
+	done;
+
+@org $55, $5f65:
+	init NAME_BLANK, PIC_19;
+	text "人魚真是可惡﹗";
+	line "要是捉到了﹐";
+	para "一定要活活將牠";
+	line "燒死﹗";
+	done;
+

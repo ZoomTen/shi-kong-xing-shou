@@ -1,0 +1,106 @@
+@org $5a, $5608:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $5a, $560b:
+	text "這裡是哪裡﹖";
+	line "平安降落了嗎﹖";
+	done;
+
+@org $5a, $5623:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $5a, $5626:
+	text "這裡是哪裡﹖";
+	line "得詳細的問清楚";
+	done;
+
+@org $5a, $563f:
+	init NAME_BLANK, PIC_70;
+@org $5a, $5642:
+	text "哎呀﹗醒了嗎﹖";
+	para "";
+	db $f1, $32; #"嗯"
+	text "～在神木前發";
+	line "現了你們二個人";
+	para "另外那個人叫做";
+	line "雷德嗎﹖";
+	cont "雖然比起我的發";
+	line "明﹐還略為那麼";
+	cont "遜色了一點⚬";
+	para "但還是個很了不";
+	line "起的發明喲﹗";
+	done;
+
+@org $5a, $56c3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $5a, $56c6:
+	text "真是謝謝你⚬";
+	line "這種語氣聽來真";
+	cont "";
+	db $f1, $43; #"是"
+	text "熟悉⋯";
+	done;
+
+@org $5a, $56e8:
+	init NAME_BLANK, PIC_70;
+@org $5a, $56eb:
+	text "不用客氣⚬";
+	line "我是時空科學家";
+	cont "卡爾⚬";
+	done;
+
+@org $5a, $570a:
+	init NAME_48, PIC_70;
+@org $5a, $570d:
+	text "星系產生了破洞";
+	line "﹐地球就要出現";
+	para "危機⚬";
+	line "我們八名頂尖的";
+	cont "";
+	db $f1, $ca; #"科"
+	text "";
+	db $60; #"學"
+	text "家為了挽救";
+	line "這個危機﹐齊聚";
+	line "在一起⋯";
+	para "唉～所有的步驟";
+	line "都完成了﹐就只";
+	para "剩我的修補時空";
+	line "";
+	db $f1, $cf; #"方"
+	text "程式尚未解出";
+	para "不過從雷德的時";
+	line "光機裡﹐給了我";
+	cont "一個靈感喲﹗";
+	para "你的朋友正在神";
+	line "木那裡⚬";
+	para "不要再吵我了﹐";
+	line "這種源源不斷的";
+	para "靈感﹐我要好好";
+	line "的把握﹗";
+	done;
+
+@org $5a, $5806:
+	init NAME_48, PIC_70;
+@org $5a, $5809:
+	text "先是這樣⋯";
+	line "";
+	db $f2, $da; #"再"
+	text "切入點時混入";
+	cont "";
+	db $f2, $48; #"那"
+	text "";
+	db $4f; #"個"
+	text "";
+	db $c7; #"⋯"
+	text "哎呀﹗";
+	line "吵死人了﹗";
+	para "你的朋友正在神";
+	line "木那裡⚬";
+	para "不要再吵我了﹐";
+	line "這種源源不斷的";
+	para "靈感﹐我要好好";
+	line "的把握﹗";
+	para "為了修補星系的";
+	line "裂縫﹐得儘快完";
+	cont "成方程式才行⚬";
+	done;
+

@@ -1,0 +1,11 @@
+@org $4f, $6243:
+	init NAME_31, PIC_5A;
+	text "喵喵～咪噢嗚～";
+	done;
+
+@org $4f, $6254:
+	init NAME_2E, PIC_57;
+	text "咕咕～咕咕～";
+	line "咕～";
+	done;
+

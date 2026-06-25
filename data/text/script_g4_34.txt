@@ -1,0 +1,35 @@
+@org $58, $608c:
+	init NAME_BLANK, PIC_14;
+@org $58, $608f:
+	text "唉呀～";
+	line "";
+	db $f2, $60; #"被"
+	text "關了好多天﹐";
+	cont "會不會被老闆認";
+	line "為是無故曠工啊";
+	cont "要是被扣薪水的";
+	line "話﹐就不妙了⋯";
+	done;
+
+@org $58, $60db:
+	init NAME_BLANK, PIC_17;
+@org $58, $60de:
+	text "這幾天被關在死";
+	line "";
+	db $f0, $02; #"之"
+	text "谷﹐才發現那";
+	para "裡還不錯唷﹗";
+	line "趁現在那裡地價";
+	cont "低⋯⋯";
+	para "";
+	db $f2, $cd; #"好"
+	text "";
+	db $cd; #"好"
+	text "的將地皮炒";
+	line "一炒的話⋯";
+	para "嘿嘿～";
+	line "";
+	db $f2, $d7; #"就"
+	text "．發．了﹗";
+	done;
+

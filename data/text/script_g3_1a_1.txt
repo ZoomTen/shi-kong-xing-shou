@@ -1,0 +1,26 @@
+@org $4f, $52bc:
+	init NAME_BLANK, PIC_16;
+	text "在天之都的附近";
+	line "有一座森林﹐名";
+	cont "叫綠色樹海⚬";
+	para "但不曉得為什麼";
+	line "突然間～";
+	cont "所";
+	forcemap 1, "有";
+	text "的樹都";
+	line "變成了石頭⚬";
+	cont "真是奇怪啊⋯";
+	done;
+
+@org $4f, $531d:
+	init NAME_BLANK, PIC_13;
+	text "綠色樹海裡有很";
+	line "多的小動物⋯";
+	cont "可是突然減少了";
+	line "很多～";
+	cont "還有些被變成了";
+	line "石頭⚬";
+	para "到底是怎麼回事";
+	line "呢﹖";
+	done;
+

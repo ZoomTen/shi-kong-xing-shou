@@ -1,0 +1,190 @@
+@org $55, $6b4c:
+	init NAME_HAIQING, PIC_66;
+	text "這是海巫師設的";
+	line "屏障氣泡～";
+	para "我們人魚身上的";
+	line "黏液﹐可以消除";
+	cont "這道屏障⚬";
+	done;
+
+@org $55, $6b89:
+	init NAME_HAIQING, PIC_66;
+	text "三個月的時間﹐";
+	line "就要到了﹗";
+	cont "姐姐﹗";
+	done;
+
+@org $55, $6ba9:
+	init NAME_HAIQING, PIC_66;
+	text "海巫師呢﹖";
+	line "海巫大人﹖";
+	cont "到哪裡去了呢﹖";
+	done;
+
+@org $55, $6bce:
+	init NAME_HAIQING, PIC_66;
+	text "這個海洞﹖";
+	line "莫非⋯﹖";
+	cont "海巫大人﹗";
+	done;
+
+@org $55, $6bec:
+	init NAME_HAIQING, PIC_66;
+	text "海巫大人⋯";
+	line "那名小孩⋯";
+	cont "你⋯⋯";
+	done;
+
+@org $55, $6c08:
+	init NAME_3E, PIC_67;
+	text "既然被發現了﹗";
+	line "就沒有什麼好隱";
+	cont "瞞的⚬";
+	para "沒錯﹐為了我們";
+	line "的計劃﹐我正在";
+	cont "抽取著這可愛小";
+	line "孩的生命能量⚬";
+	para "再沒多久﹐偉大";
+	line "的神靈就要誕生";
+	cont "了﹗";
+	done;
+
+@org $55, $6c84:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "可惡﹗";
+	line "放了那小孩﹗";
+	done;
+
+@org $55, $6c9b:
+	init NAME_3E, PIC_67;
+	text "不要輕舉妄動﹐";
+	line "你們不要那條笨";
+	para "人魚的魚之魂了";
+	line "嗎﹖";
+	done;
+
+@org $55, $6ccc:
+	init NAME_HAIQING, PIC_66;
+	text "姐⋯姐姐﹗";
+	line "求求您﹐海巫大";
+	cont "人﹐把姐姐的魚";
+	line "之魂還給我﹐好";
+	line "嗎﹖";
+	done;
+
+@org $55, $6d04:
+	init NAME_3E, PIC_67;
+	text "要怎麼做﹐相信";
+	line "妳很清楚⚬";
+	para "妳如果『那麼』";
+	line "做的話﹐我甚至";
+	para "還可以把這小孩";
+	line "還給你們唷﹗";
+	done;
+
+@org $55, $6d54:
+	init NAME_HAIQING, PIC_66;
+	text "只要能救姐姐和";
+	line "小孩的話﹐我無";
+	cont "所謂⚬";
+	para "海巫大人﹐我答";
+	line "應你﹗";
+	para "但你要";
+	cont "遵守諾言⚬";
+	done;
+
+@org $55, $6d9e:
+	init NAME_3E, PIC_67;
+	text "一定﹗";
+	done;
+
+@org $55, $6da7:
+	init NAME_3E, PIC_67;
+	text "哦哦哦哦﹗";
+	line "真是充沛的生命";
+	cont "魚之魂的生命力";
+	line "﹐可扺得上一百";
+	line "個小孩啊﹗";
+	para "哈哈哈哈～";
+	line "又是一條笨人魚";
+	para "海藍的那個魚之";
+	line "魂﹐早就被吸收";
+	cont "了﹗笨～蛋﹗";
+	done;
+
+@org $55, $6e1f:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "可惡﹗";
+	done;
+
+@org $55, $6e29:
+	init NAME_3E, PIC_67;
+	text "還有一個笨蛋嗎";
+	line "⚬";
+	cont "也一起跳進生命";
+	line "爐裡吧﹗";
+	done;
+
+@org $55, $6e53:
+	init NAME_BLANK, PIC_1E;
+	text "嘔～呃⋯⋯";
+	line "管子裡的水﹐味";
+	cont "道真噁心⋯⋯";
+	para "大哥哥﹐謝謝你";
+	line "﹗";
+	para "我有看到哦﹗";
+	line "很多小朋友﹐都";
+	cont "死在那個生命爐";
+	line "裡呦﹗";
+	done;
+
+@org $55, $6eb9:
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "海青⋯⋯";
+	line "妳真是個大傻瓜";
+	cont "⋯⋯";
+	done;
+
+@org $55, $6ed6:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這⋯這就是海青";
+	line "的魚之魂嗎﹖";
+	para "海青⋯";
+	line "我不會讓妳白白";
+	cont "犧牲的﹗";
+	done;
+
+@org $55, $6f0b:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到魚之魂⚬";
+	done;
+
+@org $55, $6f19:
+	init NAME_3F, PIC_75;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $6f21:
+	init NAME_40, PIC_69;
+	text "什⋯什麼﹗";
+	line "海巫師失敗了﹖";
+	para "生命能源停止發";
+	line "送﹖";
+	done;
+
+@org $55, $6f4e:
+	init NAME_40, PIC_69;
+	text "混帳東西﹗";
+	line "快去給我查出﹐";
+	cont "到底是怎麼回事";
+	line "﹗";
+	para "為了歡迎偉大的";
+	line "『牠』來臨﹐千";
+	cont "萬不可以出錯﹗";
+	done;
+
+@org $55, $6fa0:
+	init NAME_STAR_BEAST, PIC_6A;
+	text "恰可﹗可﹗";
+	done;
+

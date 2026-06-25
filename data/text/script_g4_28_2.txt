@@ -1,0 +1,161 @@
+@org $5a, $5d6f:
+	init NAME_LANTE, PIC_06;
+@org $5a, $5d72:
+	text "巴洛特﹐你醒了";
+	line "呀﹗";
+	para "哈哈哈～";
+	line "在那種危機下﹐";
+	para "我們還能平安的";
+	line "";
+	db $f1, $df; #"活"
+	text "下來⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "";
+	db $58; #"要"
+	text "感謝我那";
+	line "體貼的安全設計";
+	done;
+
+@org $5a, $5dcc:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $5a, $5dcf:
+	text "這裡到底是哪裡";
+	line "﹗";
+	done;
+
+@org $5a, $5de0:
+	init NAME_LANTE, PIC_06;
+@org $5a, $5de3:
+	text "這才是了不起的";
+	line "地方﹗";
+	para "你知道嗎﹖";
+	line "我們居然來到了";
+	cont "";
+	db $f1, $2a; #"１"
+	text "";
+	db $2b; #"２"
+	text "";
+	db $b2; #"０"
+	text "年前的神";
+	line "木村﹗";
+	para "";
+	db $f1, $d2; #"而"
+	text "且更了不起的";
+	line "";
+	db $f1, $43; #"是"
+	text "";
+	db $33; #"﹐"
+	text "就我在腦中";
+	cont "搜尋的結果﹐發";
+	line "現到～";
+	para "卡爾就是我的曾";
+	line "祖父喲﹗";
+	done;
+
+@org $5a, $5e65:
+	init NAME_BALLOT, PIC_BALLOT_4;
+@org $5a, $5e68:
+	text "真⋯真是驚人﹗";
+	para "為什麼１２０年";
+	line "";
+	db $f3, $9c; #"前"
+	text "﹐星系也同樣";
+	cont "的出現裂縫呢﹖";
+	para "世界也同樣的出";
+	line "現星獸﹖";
+	done;
+
+@org $5a, $5eb7:
+	init NAME_LANTE, PIC_06;
+@org $5a, $5eba:
+	text "嗯～我也是這麼";
+	line "";
+	db $f2, $d1; #"想"
+	text "的⚬";
+	para "";
+	db $f1, $5a; #"記"
+	text "得八大科學家";
+	line "拯救地球的事情";
+	cont "嗎﹖";
+	para "或許﹐想的就是";
+	line "這件事﹗";
+	done;
+
+@org $5a, $5f03:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $5a, $5f06:
+	text "這麼說來﹐爸爸";
+	line "一直尋找的﹐也";
+	para "";
+	db $f2, $d7; #"就"
+	text "是修補星系裂";
+	line "縫的方法了﹖";
+	done;
+
+@org $5a, $5f39:
+	init NAME_LANTE, PIC_06;
+@org $5a, $5f3c:
+	text "真是糟糕﹗";
+	line "我的時光．實驗";
+	cont "一號﹐變得亂七";
+	line "";
+	db $f2, $9b; #"八"
+	text "糟了﹗";
+	para "";
+	db $f1, $a8; #"奇"
+	text "";
+	db $b3; #"蹟"
+	text "之水就在那";
+	line "邊﹐真是如我所";
+	cont "料﹐這裡的神木";
+	line "還是正常的﹗";
+	para "等我一修好﹐我";
+	line "們就馬上回去⚬";
+	done;
+
+@org $5a, $5fb9:
+	init NAME_LANTE, PIC_06;
+@org $5a, $5fbc:
+	text "真是糟糕﹗";
+	line "我的時光．實驗";
+	cont "一號﹐變得亂七";
+	line "";
+	db $f2, $9b; #"八"
+	text "糟了﹗";
+	para "";
+	db $f1, $a8; #"奇"
+	text "";
+	db $b3; #"蹟"
+	text "之水就在那";
+	line "邊﹐真是如我所";
+	cont "料﹐這裡的神木";
+	line "還是正常的﹗";
+	para "等我一修好﹐我";
+	line "們就馬上回去⚬";
+	done;
+
+@org $5a, $6039:
+	init NAME_0F, PIC_0F;
+@org $5a, $603c:
+	text "嗶達嗶～達達～";
+	line "嗶～";
+	done;
+
+@org $5a, $604f:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $5a, $6052:
+	text "得到奇蹟之水﹗";
+	line "";
+	done;
+
+@org $5a, $605f:
+	init NAME_BALLOT, PIC_BALLOT_4;
+@org $5a, $6062:
+	text "爆炸聲是從神木";
+	line "村傳來的﹗";
+	para "發生了什麼事﹖";
+	done;
+

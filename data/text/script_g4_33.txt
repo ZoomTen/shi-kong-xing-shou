@@ -1,0 +1,104 @@
+@org $55, $5fe4:
+	init NAME_HELEN, PIC_HELEN_0;
+	text "前幾天安東收到";
+	line "一封電子郵件後";
+	para "﹐就開始打包行";
+	line "李﹐直說著﹐要";
+	cont "做趟長途的旅行";
+	para "我好不容易⋯";
+	line "才可以和東在一";
+	cont "起⋯⋯";
+	para "要是那個時間到";
+	line "的話⋯⋯";
+	para "不～我不要安東";
+	line "離開我﹗";
+	done;
+
+@org $55, $6073:
+	init NAME_ANTON, PIC_62;
+	text "你就是巴洛特嗎";
+	line "﹖";
+	para "我已經收到哈瑪";
+	line "斯總裁的Ｅ～";
+	cont "ＭＡＩＬ了⚬";
+	para "你們要發掘古代";
+	line "科技～";
+	cont "太空船的祕密嗎";
+	line "﹖";
+	cont "這真是太好了⚬";
+	para "父親留給了我這";
+	line "個動力晶片﹐我";
+	cont "一直想了解其中";
+	line "的祕密那我們就";
+	cont "可以一起行動了";
+	line "﹗";
+	done;
+
+@org $55, $6122:
+	init NAME_ANTON, PIC_62;
+	text "動力晶片⋯﹗";
+	cont "我的動力晶片呢";
+	line "﹖";
+	done;
+
+@org $55, $6144:
+	init NAME_HELEN, PIC_HELEN_1;
+	text "不～安東﹗";
+	para "我不要你離開我";
+	line "﹗";
+	cont "我不要﹗";
+	done;
+
+@org $55, $6168:
+	init NAME_ANTON, PIC_62;
+	text "海藍～";
+	line "只是個旅行～";
+	cont "將動力晶片給我";
+	line "～好嗎﹖";
+	done;
+
+@org $55, $6193:
+	init NAME_HELEN, PIC_HELEN_1;
+	text "你⋯你知道嗎﹖";
+	line "為了能和你在一";
+	para "起﹐我做了多大";
+	line "的犧牲嗎﹖";
+	done;
+
+@org $55, $61c5:
+	init NAME_ANTON, PIC_62;
+	text "犧牲﹖";
+	done;
+
+@org $55, $61ce:
+	init NAME_HELEN, PIC_HELEN_2;
+	text "⋯⋯⋯安東大笨";
+	line "蛋﹗";
+	done;
+
+@org $55, $61e2:
+	init NAME_ANTON, PIC_62;
+	text "抱歉～海藍對我";
+	line "要旅行的這件事";
+	cont "﹐一直不諒解⋯";
+	line "不過相信一定會";
+	line "沒事的⚬";
+	para "父親的海洋科學";
+	line "筆記真是繁雜～";
+	cont "還來不及整理⚬";
+	para "巴洛特﹐你可以";
+	line "幫我找回海藍嗎";
+	cont "﹖拿回動力晶片";
+	line "後﹐我們就出發";
+	line "吧﹗";
+	done;
+
+@org $55, $6288:
+	init NAME_ANTON, PIC_62;
+	text "巴洛特﹐你可以";
+	line "幫我找回海藍嗎";
+	cont "﹖拿回動力晶片";
+	line "後﹐我們就出發";
+	line "吧﹗";
+	done;
+

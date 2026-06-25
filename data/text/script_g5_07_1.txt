@@ -1,0 +1,165 @@
+@org $66, $4ef4:
+	init NAME_BLANK, PIC_14;
+@org $66, $4ef7:
+	text "這裡是星夢城⚬";
+	line "";
+	db $f1, $cc; #"很"
+	text "久以前﹐星夢";
+	para "城是個飛行的都";
+	line "市⚬";
+	para "但降落在這塊冰";
+	line "山島後﹐就沒有";
+	cont "再起飛過了⚬";
+	done;
+
+@org $66, $4f51:
+	init NAME_BLANK, PIC_17;
+@org $66, $4f54:
+	text "卡迪拉是個知名";
+	line "的星空彩繪家⚬";
+	cont "對於星象的了解";
+	line "";
+	db $f1, $33; #"﹐"
+	text "沒有人比他更";
+	line "";
+	db $f2, $ba; #"厲"
+	text "";
+	db $bb; #"?"
+	text "了⚬";
+	para "但上個月的一個";
+	line "";
+	db $f2, $85; #"夜"
+	text "";
+	db $86; #"?"
+	text "﹐他們全家";
+	para "";
+	db $f3, $9a; #"在"
+	text "永涷園描繪星";
+	line "時﹐卻不幸遇上";
+	para "了兇猛的星獸⋯";
+	line "夫妻倆個都死了";
+	para "";
+	db $f1, $33; #"﹐"
+	text "只有小孩幸運";
+	line "的逃過一劫⋯";
+	cont "真是不幸啊～";
+	done;
+
+@org $66, $500c:
+	init NAME_57, PIC_1C;
+@org $66, $500f:
+	text "米特的爸爸媽媽";
+	line "被星獸殺死了⚬";
+	para "米特從此就變得";
+	line "像個活死人一樣";
+	para "好幾次跟他說話";
+	cont "他都沒有反應⋯";
+	cont "什麼時候﹐我們";
+	line "才可以向以前一";
+	line "樣的玩耍﹖";
+	done;
+
+@org $66, $5083:
+	init NAME_58, PIC_1A;
+@org $66, $5086:
+	text "這隻布蘭特熊娃";
+	line "";
+	db $f6, $d5; #"娃"
+	text "是米特給我的";
+	para "唷﹗";
+	line "";
+	db $f1, $43; #"是"
+	text "我的寶貝唷﹗";
+	done;
+
+@org $66, $50b5:
+	init NAME_BLANK, PIC_16;
+@org $66, $50b8:
+	text "米特是個好小孩";
+	line "";
+	db $f2, $6b; #"自"
+	text "";
+	db $08; #"?"
+	text "他爸媽死了";
+	cont "之後﹐就變成像";
+	line "植物人一樣⚬";
+	para "對事情完全沒有";
+	line "反應⚬";
+	para "現在還在星夢醫";
+	line "院接受觀察治療";
+	para "唉～好好的一個";
+	line "小孩﹐怎麼會變";
+	cont "";
+	db $f1, $6a; #"成"
+	text "這樣⋯";
+	done;
+
+@org $66, $513e:
+	init NAME_BLANK, PIC_13;
+@org $66, $5141:
+	text "你們有沒有看到";
+	line "晚上的月亮﹐又";
+	cont "變得更藍了﹗";
+	line "";
+	db $f1, $63; #"新"
+	text "聞報導說﹐那";
+	para "是星系裂縫的引";
+	line "力﹐造成月亮軌";
+	para "道偏移的結果⚬";
+	line "因為如此﹐潮汐";
+	para "都變得不正常了";
+	line "";
+	db $f1, $35; #"﹗"
+	text "";
+	done;
+
+@org $66, $51bc:
+	init NAME_BLANK, PIC_15;
+@org $66, $51bf:
+	text "城外有間預售屋";
+	line "破破爛爛的﹐";
+	para "居然還要";
+	line "賣３０００萬";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "個破壞行情";
+	cont "的價錢⚬";
+	para "不過最近老是看";
+	line "到一男一女在那";
+	cont "裡活動⚬";
+	para "一付鬼鬼崇崇的";
+	line "樣子⚬";
+	done;
+
+@org $66, $523a:
+	init NAME_BLANK, PIC_19;
+@org $66, $523d:
+	text "冰山島這幾個月";
+	line "以來﹐漸漸的在";
+	cont "崩解⚬";
+	para "如果再不想出辦";
+	line "法的話﹐星夢城";
+	cont "就要沈掉了﹗";
+	done;
+
+@org $66, $5287:
+	init NAME_BLANK, PIC_16;
+@org $66, $528a:
+	text "唉呀﹗";
+	line "天象異變﹐";
+	line "連潮汐都變得";
+	cont "不正常了﹗";
+	para "因為潮汐異常﹐";
+	line "";
+	db $f1, $3f; #"使"
+	text "得星夢城下的";
+	para "冰山島漸漸的";
+	line "崩解了﹗";
+	para "再這麼下去的話";
+	line "﹐星夢城會與冰";
+	para "山島一起沈到冰";
+	line "冷的海裡的⚬";
+	done;
+

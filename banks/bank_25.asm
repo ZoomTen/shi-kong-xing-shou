@@ -3494,7 +3494,7 @@ Pointers_025_5776:
 	dw String_025_5796
 	dw String_025_579b
 
-INCLUDE "data/text/bank25_5782.asm"
+INCLUDE "data/text/menu_25_5782.asm"
 
 Func_025_57a0:
 	ldh a, [hConsoleType]
@@ -5364,7 +5364,7 @@ Func_025_6086:
 	jr nz, Func_025_6085
 	ret
 
-INCLUDE "data/text/bank25_6099.asm"
+INCLUDE "data/text/menu_25_6099.asm"
 
 Palette_025_6129::
 	db $ff, $7f, $14, $63, $a5, $35, $00, $00, $ff, $7f, $5f, $03, $1b, $00, $00, $00
@@ -5377,7 +5377,7 @@ Palette_025_6169::
 	db $b5, $56, $00, $00, $d6, $6e, $de, $7b, $b5, $56, $00, $00, $1d, $00, $bf, $67
 	db $ff, $7f, $6b, $7f, $4a, $7d, $00, $00, $ff, $7f, $3f, $03, $18, $00, $00, $00
 
-INCLUDE "data/text/bank25_6199.asm"
+INCLUDE "data/text/menu_25_6199.asm"
 
 Tilemap_025_61c4: INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
 Tilemap_025_61f2: INCBIN "gfx/tilemaps/tilemap_025_61f2.tilemap"

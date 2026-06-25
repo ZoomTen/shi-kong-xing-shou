@@ -1,0 +1,12 @@
+@org $4f, $5372:
+	init NAME_BLANK, PIC_18;
+	text "邦林企業總裁的";
+	line "兒子～";
+	cont "克勞德﹐是個頑";
+	line "皮的小孩⚬";
+	para "不過他卻非常的";
+	line "喜歡小動物⚬";
+	para "常看見他對著小";
+	line "動物自言自語⋯";
+	done;
+

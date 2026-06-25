@@ -1,0 +1,119 @@
+@org $12, $6159:
+	init NAME_25, PIC_4F;
+	text "⋯呃⋯⋯";
+	done;
+
+@org $12, $6164:
+	init NAME_26, PIC_0B;
+	text "咩～咩咩～";
+	done;
+
+@org $12, $6171:
+	init NAME_NINA, PIC_NINA_2;
+	text "哥～哥～怎麼辦";
+	cont "連爸爸留下來的";
+	line "那個﹐都賣掉了";
+	para "⋯已經沒有買藥";
+	line "的錢了⋯⋯";
+	cont "要怎麼辦﹖";
+	done;
+
+@org $12, $61be:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "怎麼回事﹖";
+	done;
+
+@org $12, $61cb:
+	init NAME_NINA, PIC_NINA_2;
+	text "嗚～嗚～哥哥在";
+	line "放羊的時候﹐羊";
+	para "突然聞到了咖啡";
+	line "怪的味道⚬";
+	para "全都變得非常的";
+	line "瘋狂﹐哥哥也受";
+	para "了重傷﹗我試過";
+	line "很多的藥﹐但哥";
+	cont "哥的傷還是愈來";
+	line "愈嚴重⋯";
+	line "怎麼辦﹖";
+	done;
+
+@org $12, $6253:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "這弦月型的項鍊";
+	line "好別緻﹗";
+	cont "項鍊﹖月琉璃﹖";
+	para "這不就是月琉璃";
+	line "嗎﹖難道他就是";
+	cont "⋯⋯";
+	done;
+
+@org $12, $629b:
+	init NAME_NINA, PIC_NINA_2;
+	text "哥哥的項鍊﹐我";
+	line "也是在他受傷時";
+	cont "﹐才發現的⚬但";
+	line "是哥哥的狀況﹐";
+	cont "如果沒有天使之";
+	line "葉的話⋯嗚嗚嗚";
+	line "～";
+	done;
+
+@org $12, $62f3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "天使之葉﹖";
+	done;
+
+@org $12, $6300:
+	init NAME_NINA, PIC_NINA_3;
+	text "咖啡林的最深處";
+	line "﹐有顆天使樹⚬";
+	para "它的葉子具有強";
+	line "烈的治傷療效⚬";
+	para "但是咖啡林被咖";
+	line "啡怪佔據了﹐沒";
+	para "有人敢到裡面採";
+	line "取天使之葉⚬";
+	done;
+
+@org $12, $636e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "咖啡林﹖";
+	cont "我一定會將天使";
+	line "之葉採回來的﹗";
+	done;
+
+@org $12, $6394:
+	init NAME_NINA, PIC_NINA_1;
+	text "真的﹖謝謝你～";
+	line "謝謝你﹗妮娜和";
+	cont "你一起去﹗";
+	para "咖啡林裡有許多";
+	line "阻擋的刺刺草﹗";
+	para "如果沒有小綿羊";
+	line "的話﹐會很麻煩";
+	cont "的﹗";
+	done;
+
+@org $12, $63f5:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "妮娜＆小綿羊加";
+	line "入隊伍﹗";
+	done;
+
+@org $12, $640c:
+	init NAME_SYSTEM, PIC_VAST_FAME;
+	text "如果將妮娜置於";
+	line "隊伍前頭﹐小線";
+	para "羊可以清除阻擋";
+	line "道路之刺刺草⚬";
+	done;
+
+@org $12, $6443:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "嗚～好痛﹗";
+	cont "被這種草刺到﹐";
+	line "就像被針刺到一";
+	line "樣﹗";
+	done;
+

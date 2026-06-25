@@ -1,0 +1,135 @@
+@org $6c, $56d4:
+	init NAME_4D, PIC_6C;
+@org $6c, $56d7:
+	text "席菈博士﹖";
+	cont "席菈博士有了突";
+	line "然的任務⚬";
+	para "偉大的任務～";
+	line "博士說的⚬";
+	cont "動力晶片﹖";
+	para "席菈博士把晶片";
+	line "";
+	db $f0, $33; #"放"
+	text "在貝爾體內⚬";
+	para "保護晶片﹐是貝";
+	line "爾的任務⚬";
+	cont "不能給任何人﹗";
+	done;
+
+@org $6c, $5755:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $6c, $5758:
+	text "真是糟糕﹗";
+	para "這下該怎麼辦";
+	line "才好﹗";
+	para "先四處打探消息";
+	line "吧⚬";
+	done;
+
+@org $6c, $5785:
+	init NAME_BLANK, PIC_25;
+@org $6c, $5788:
+	text "您好﹐歡迎收看";
+	line "藍月現象後續報";
+	cont "";
+	db $f3, $d9; #"導"
+	text "⚬";
+	done;
+
+@org $6c, $57a7:
+	init NAME_BLANK, PIC_23;
+@org $6c, $57aa:
+	text "是的⚬";
+	line "繼發表藍月現象";
+	cont "的科學家﹐接著";
+	line "又發表了另一項";
+	cont "驚人的研究報告";
+	done;
+
+@org $6c, $57e6:
+	init NAME_BLANK, PIC_25;
+@org $6c, $57e9:
+	text "是⋯⋯是的⚬";
+	para "在８４０小時";
+	db $f2, $21; #"後"
+	text "";
+	line "藍月現象將宣告";
+	cont "結束⚬";
+	line "屆時⋯⋯屆時⋯";
+	line "月球將⋯";
+	para "月球將脫離引力";
+	line "直襲地球﹗﹗";
+	done;
+
+@org $6c, $583f:
+	init NAME_BLANK, PIC_23;
+@org $6c, $5842:
+	text "是的⚬地球將面";
+	line "臨有始以來最大";
+	cont "的浩劫⚬";
+	para "目前各國正積極";
+	line "研究解決之法⚬";
+	para "後續狀況﹐我們";
+	line "隨時為您插播⚬";
+	done;
+
+@org $6c, $589e:
+	init NAME_BLANK, PIC_12;
+@org $6c, $58a1:
+	text "啊⋯﹗﹗﹗";
+	line "怎麼會這樣﹗";
+	cont "";
+	db $f1, $8f; #"救"
+	text "⋯救命啊﹗";
+	done;
+
+@org $6c, $58c1:
+	init NAME_BLANK, PIC_1B;
+@org $6c, $58c4:
+	text "我不要死﹗";
+	line "嗚～嗚～";
+	cont "";
+	db $f2, $ad; #"我"
+	text "不要死﹗";
+	done;
+
+@org $6c, $58e3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $6c, $58e6:
+	text "８４０個小時﹖";
+	done;
+
+@org $6c, $58f3:
+	init NAME_MITT, PIC_4A;
+@org $6c, $58f6:
+	text "呵呵呵～";
+	line "８４０個小時～";
+	done;
+
+@org $6c, $5909:
+	init NAME_MITT, PIC_07;
+@org $6c, $590c:
+	text "動作再不快一點";
+	line "";
+	db $f1, $51; #"的"
+	text "話﹐就要來不";
+	cont "及了⚬";
+	para "古代的科學家曾";
+	line "使用晶片解決當";
+	cont "";
+	db $f2, $32; #"時"
+	text "的危機﹐相信";
+	line "現在也可以的⚬";
+	done;
+
+@org $6c, $595f:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $6c, $5962:
+	text "嗯﹗時間急迫﹐";
+	line "得趕緊向貝爾機";
+	para "";
+	db $f1, $91; #"器"
+	text "人要到動力晶";
+	line "片才行﹗";
+	done;
+

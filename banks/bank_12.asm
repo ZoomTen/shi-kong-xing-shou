@@ -302,7 +302,7 @@ Script_012_41e9:
 	swapfollower
 	end
 
-INCLUDE "data/text/bank12_41f1.asm"
+INCLUDE "data/text/script_g2_1f.asm"
 
 DuoluCity2_ObjectEvents:
 	object_event $15,  8,  4, 0, $00, $00, $0a, $00, Script_012_4613
@@ -1557,5 +1557,31 @@ MovementData_012_5167::
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $88
 
-INCLUDE "data/text/bank12_misc.asm"
+INCLUDE "data/text/script_duolu_city2_1.asm"
+INCLUDE "data/text/script_g2_1b.asm"
+INCLUDE "data/text/script_g2_1c.asm"
+INCLUDE "data/text/script_g2_1d.asm"
+INCLUDE "data/text/script_g2_20.asm"
+INCLUDE "data/text/script_g2_0e_1.asm"
+INCLUDE "data/text/script_clock_tower1f_1.asm"
+INCLUDE "data/text/script_shanda_farm_1.asm"
+INCLUDE "data/text/script_g2_12_1.asm"
+INCLUDE "data/text/script_g2_13.asm"
+INCLUDE "data/text/script_g2_14_1.asm"
+INCLUDE "data/text/script_g2_15_1.asm"
+INCLUDE "data/text/script_g2_16.asm"
+INCLUDE "data/text/script_coffee_forest_part3.asm"
+INCLUDE "data/text/script_shanda_farm_2.asm"
+INCLUDE "data/text/script_g2_12_2.asm"
+INCLUDE "data/text/script_g2_14_2.asm"
+INCLUDE "data/text/script_g2_15_2.asm"
+INCLUDE "data/text/script_duolu_city2_2.asm"
+INCLUDE "data/text/script_g2_0e_2.asm"
+INCLUDE "data/text/script_duolu_city2_3.asm"
+INCLUDE "data/text/script_clock_tower1f_2.asm"
+INCLUDE "data/text/script_clock_tower5f.asm"
+INCLUDE "data/text/script_duolu_city2_4.asm"
+INCLUDE "data/text/script_g2_0e_3.asm"
+INCLUDE "data/text/script_g2_21.asm"
+INCLUDE "data/text/script_g2_22.asm"
 

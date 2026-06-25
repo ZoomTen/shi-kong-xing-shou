@@ -1,0 +1,16 @@
+@org $6c, $6f77:
+	init NAME_MITT, PIC_07;
+@org $6c, $6f7a:
+	text "為了彌補我的錯";
+	line "誤﹐巴洛特～";
+	para "無論如何都要讓";
+	line "我盡一己之力﹗";
+	done;
+
+@org $6c, $6fb1:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $6c, $6fb4:
+	text "不行～";
+	line "同伴還沒有找齊";
+	done;
+

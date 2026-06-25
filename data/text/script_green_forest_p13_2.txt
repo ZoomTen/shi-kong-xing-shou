@@ -1,0 +1,21 @@
+@org $4f, $66cb:
+	init NAME_2D, PIC_56;
+	text "是你呀﹗";
+	line "為了你好﹐還是";
+	cont "不要過去好了⚬";
+	para "前面就是可怕的";
+	line "火山怪了⚬";
+	done;
+
+@org $4f, $6707:
+	init NAME_2D, PIC_56;
+	text "既使這樣﹐你都";
+	line "還是要過去嗎﹖";
+	cont "唉～祝福你了⋯";
+	done;
+
+@org $4f, $6734:
+	init NAME_2D, PIC_56;
+	text "唉～祝福你了⋯";
+	done;
+

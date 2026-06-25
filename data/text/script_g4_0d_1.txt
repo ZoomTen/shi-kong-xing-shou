@@ -1,0 +1,35 @@
+@org $55, $64aa:
+	init NAME_3A, PIC_63;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64b2:
+	init NAME_3B, PIC_64;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64ba:
+	init NAME_3B, PIC_63;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64c2:
+	init NAME_3C, PIC_65;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64ca:
+	init NAME_3B, PIC_64;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64d2:
+	init NAME_3C, PIC_65;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $64da:
+	init NAME_3A, PIC_63;
+	text "⋯⋯";
+	done;
+

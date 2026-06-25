@@ -54,7 +54,8 @@ Script_05a_4050:
 Script_05a_405d:
 	end
 
-INCLUDE "data/text/bank5a_405e.asm"
+INCLUDE "data/text/script_g4_5c.asm"
+INCLUDE "data/text/script_g4_5d.asm"
 Script_05a_40bc:
 	end
 
@@ -556,7 +557,21 @@ Script_05a_44e5:
 	end
 
 INCLUDE "data/text/bank5a_4521.asm"
-INCLUDE "data/text/bank5a_5608.asm"
+INCLUDE "data/text/script_g4_5b_1.asm"
+INCLUDE "data/text/script_g4_27_1.asm"
+INCLUDE "data/text/script_g4_56_1.asm"
+INCLUDE "data/text/script_g4_57_1.asm"
+INCLUDE "data/text/script_g4_58.asm"
+INCLUDE "data/text/script_g4_59_1.asm"
+INCLUDE "data/text/script_g4_28_2.asm"
+INCLUDE "data/text/script_g4_27_2.asm"
+INCLUDE "data/text/script_g4_59_2.asm"
+INCLUDE "data/text/script_g4_57_2.asm"
+INCLUDE "data/text/script_g4_56_2.asm"
+INCLUDE "data/text/script_g4_5b_2.asm"
+INCLUDE "data/text/script_g4_63.asm"
+INCLUDE "data/text/script_g4_5b_3.asm"
+INCLUDE "data/text/script_g4_28_3.asm"
 ; movement data ($88 terminator)
 MovementData_05a_76e8:
 	db $ff, $00, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff

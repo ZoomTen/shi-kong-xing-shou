@@ -1,0 +1,350 @@
+@org $66, $6027:
+	init NAME_BLANK, PIC_24;
+@org $66, $602a:
+	text "米特是我最得意";
+	line "的學生⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "希望能做點什";
+	line "麼對他有幫助的";
+	cont "事情⋯⋯";
+	done;
+
+@org $66, $6063:
+	init NAME_BLANK, PIC_24;
+@org $66, $6066:
+	text "這是米特最喜歡";
+	line "的彩繪筆﹗";
+	para "他一直向我要﹐";
+	line "但是我都不給⋯";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $58; #"?"
+	text "彩繪筆跟了";
+	line "我３０年了﹐";
+	cont "希望能對米特的";
+	line "病情有所幫助⚬";
+	done;
+
+@org $66, $60cd:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $60d0:
+	text "得到了彩繪筆﹗";
+	done;
+
+@org $66, $60dd:
+	init NAME_BLANK, PIC_24;
+@org $66, $60e0:
+	text "米特是我最得意";
+	line "的學生⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "希望他的病能";
+	line "快點好起來⚬";
+	done;
+
+@org $66, $610e:
+	init NAME_5A, PIC_18;
+@org $66, $6111:
+	text "不好了～";
+	line "不好了﹗";
+	cont "米特少爺最喜歡";
+	line "的水晶音樂盒被";
+	line "人給偷走了﹗";
+	para "就在剛才﹐有一";
+	line "男一女侵入了少";
+	para "爺的房間﹐把水";
+	line "晶音樂盒給偷走";
+	cont "了﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "糟糕﹗";
+	done;
+
+@org $66, $618d:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6190:
+	text "一男一女﹖";
+	done;
+
+@org $66, $619b:
+	init NAME_BALLOT, PIC_BALLOT_4;
+@org $66, $619e:
+	text "有種不好的預感";
+	line "難道會是～";
+	cont "『他們』﹖";
+	done;
+
+@org $66, $61c1:
+	init NAME_5A, PIC_18;
+@org $66, $61c4:
+	text "不好了～";
+	line "不好了﹗";
+	cont "米特少爺最喜歡";
+	line "的水晶音樂盒被";
+	line "人給偷走了﹗";
+	para "就在剛才﹐有一";
+	line "男一女侵入了少";
+	para "爺的房間﹐把水";
+	line "晶音樂盒給偷走";
+	cont "了﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "糟糕﹗";
+	done;
+
+@org $66, $6240:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6243:
+	text "哦～呵呵呵呵﹗";
+	line "這個音樂盒﹐";
+	cont "一定可以賣不少";
+	line "錢﹗";
+	done;
+
+@org $66, $626c:
+	init NAME_KULU, PIC_KULU;
+@org $66, $626f:
+	text "是的⚬";
+	line "雖然不無小補﹐";
+	cont "但在下認為﹐還";
+	line "是朝我們的夢想";
+	line "前進了一大步⚬";
+	done;
+
+@org $66, $62aa:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $62ad:
+	text "啊﹗";
+	line "";
+	db $f1, $7b; #"果"
+	text "然又是你們﹗";
+	cont "搶走了音樂盒﹐";
+	line "";
+	db $f1, $62; #"到"
+	text "底有什麼目的";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	done;
+
+@org $66, $62df:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $62e2:
+	text "我們﹖";
+	line "既然你們問起了";
+	cont "那我就仁慈的告";
+	line "";
+	db $f4, $03; #"訴"
+	text "你們吧﹗";
+	done;
+
+@org $66, $630f:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6312:
+	text "來自銀河系裡的";
+	line "正義使者﹗";
+	done;
+
+@org $66, $632b:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $632e:
+	text "穿梭於黑夜的浪";
+	line "";
+	db $f5, $2c; #"漫"
+	text "";
+	db $2d; #"?"
+	text "士﹗";
+	done;
+
+@org $66, $6343:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6346:
+	text "貫徹愛．正義．";
+	line "勇氣的真理﹗";
+	done;
+
+@org $66, $635e:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6361:
+	text "拉琪﹗";
+	done;
+
+@org $66, $6367:
+	init NAME_KULU, PIC_KULU;
+@org $66, $636a:
+	text "庫魯﹗";
+	done;
+
+@org $66, $6370:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6373:
+	text "閃．電．隊～～";
+	line "誕生﹗﹗";
+	done;
+
+@org $66, $6384:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6387:
+	text "在下為了能實現";
+	line "夢想﹐什麼事都";
+	cont "做得出來﹗";
+	line "想要從在下的手";
+	cont "";
+	db $f0, $29; #"中"
+	text "搶走音樂盒﹖";
+	line "看來前幾次的教";
+	cont "訓﹐對你來說還";
+	line "不夠﹗";
+	done;
+
+@org $66, $63e7:
+	init NAME_KULU, PIC_KULU;
+@org $66, $63ea:
+	text "哼﹗知道在下的";
+	line "厲害了吧﹗";
+	para "這只是在下千萬";
+	line "分之一的力量﹗";
+	done;
+
+@org $66, $641f:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6422:
+	text "是嗎﹖";
+	line "那就拿出你全部";
+	cont "的力量再戰吧﹗";
+	done;
+
+@org $66, $6440:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $6443:
+	text "慢⋯慢⋯";
+	line "慢慢著﹗";
+	para "不⋯不要再打了";
+	line "嗚～～";
+	para "";
+	db $f2, $ad; #"我"
+	text "們為了實現夢";
+	line "";
+	db $f2, $d1; #"想"
+	text "﹐一定要籌到";
+	cont "";
+	db $f1, $ab; #"３"
+	text "";
+	db $b2; #"?"
+	text "";
+	db $b2; #"?"
+	text "";
+	db $b2; #"?"
+	text "";
+	db $8c; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	done;
+
+@org $66, $648d:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $6490:
+	text "夢想﹖";
+	line "";
+	db $f1, $ab; #"３"
+	text "";
+	db $b2; #"?"
+	text "";
+	db $b2; #"?"
+	text "";
+	db $b2; #"?"
+	text "";
+	db $8c; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	done;
+
+@org $66, $649e:
+	init NAME_KULU, PIC_KULU;
+@org $66, $64a1:
+	text "是的﹗眼前這棟";
+	line "豪華的別宅﹐正";
+	para "是在下和拉琪的";
+	line "夢想﹗";
+	done;
+
+@org $66, $64cf:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $64d2:
+	text "哦～呵呵呵呵﹗";
+	line "沒．有．錯﹗";
+	para "瞧瞧它獨樹一格";
+	line "";
+	db $f1, $51; #"的"
+	text "";
+	db $1a; #"?"
+	text "古風﹐幽靜";
+	cont "的佇立在海島的";
+	line "一隅⚬";
+	para "不覺得這是很棒";
+	line "的一個夢想嗎﹖";
+	done;
+
+@org $66, $6534:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6537:
+	text "是的⚬";
+	para "";
+	db $f1, $d3; #"所"
+	text "";
+	db $cb; #"?"
+	text "在下要籌出";
+	line "３０００萬";
+	line "買下這";
+	cont "棟夢幻之屋﹗";
+	line "這個音樂盒﹐只";
+	cont "是計劃的一部份";
+	line "怎麼﹖";
+	para "你要破壞在下男";
+	line "子漢的夢想﹖";
+	done;
+
+@org $66, $659f:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $66, $65a2:
+	text "看來你們還沒有";
+	line "";
+	db $f1, $60; #"學"
+	text "乖﹗";
+	done;
+
+@org $66, $65b5:
+	init NAME_LAKI, PIC_LAKI;
+@org $66, $65b8:
+	text "哦～呵呵呵呵﹗";
+	line "閃電隊一向是個";
+	cont "愛好和平的正義";
+	line "使者⚬";
+	para "才不會做出打架";
+	line "這種粗魯的事﹗";
+	para "如果想要回音樂";
+	line "";
+	db $f3, $0a; #"盒"
+	text "﹐除非幫我們";
+	cont "買下這棟夢幻之";
+	line "屋吧﹗";
+	done;
+
+@org $66, $6634:
+	init NAME_KULU, PIC_KULU;
+@org $66, $6637:
+	text "嗯﹐和在下想的";
+	line "";
+	db $f1, $33; #"﹐"
+	text "一點都沒有錯";
+	cont "﹗";
+	done;
+

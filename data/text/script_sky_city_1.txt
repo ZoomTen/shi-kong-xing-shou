@@ -1,0 +1,105 @@
+@org $4f, $4de3:
+	init NAME_BLANK, PIC_16;
+	text "這裡是天之都⚬";
+	line "那棟最高的建築";
+	cont "物﹐就是有名的";
+	line "邦林科技大樓⚬";
+	done;
+
+@org $4f, $4e1c:
+	init NAME_BLANK, PIC_16;
+	text "邦林科技要甄選";
+	line "『復古風項鍊』";
+	cont "的女性代言人⚬";
+	para "所以舉辦了一場";
+	line "選秀會⚬";
+	para "每個女孩為了要";
+	line "選購華麗的衣服";
+	cont "都拚得你死我活";
+	line "呢⚬";
+	done;
+
+@org $4f, $4e8b:
+	init NAME_BLANK, PIC_16;
+	text "鼻血止不住⋯";
+	done;
+
+@org $4f, $4e9b:
+	init NAME_BLANK, PIC_14;
+	text "真是糟糕﹗";
+	line "少爺又偷偷從課";
+	cont "堂中溜走了﹗";
+	para "要到哪裡找呢﹖";
+	line "";
+	para "真是個調皮的傢";
+	line "伙﹗";
+	done;
+
+@org $4f, $4ee0:
+	init NAME_BLANK, PIC_12;
+	text "邦林企業總裁的";
+	line "爺爺﹐也是拯救";
+	cont "地球的八大科學";
+	line "家之一喲⚬";
+	para "把科技的精神企";
+	line "業化﹐是邦林企";
+	cont "業的口號⚬";
+	done;
+
+@org $4f, $4f38:
+	init NAME_BLANK, PIC_13;
+	text "哎呀～";
+	line "不要丟髒我的新";
+	cont "衣服唷﹗";
+	para "你看～漂亮嗎﹖";
+	line "這可是我要參加";
+	cont "選秀會的衣服唷";
+	line "﹗";
+	done;
+
+@org $4f, $4f81:
+	init NAME_21, PIC_31;
+	text "噁～噁～喵～";
+	line "噁～﹗";
+	done;
+
+@org $4f, $4f98:
+	init NAME_BLANK, PIC_15;
+	text "怎麼辦⋯";
+	line "人家買不到衣服";
+	done;
+
+@org $4f, $4fb0:
+	init NAME_BLANK, PIC_1D;
+	text "好慢哦～";
+	line "前面的怎麼這麼";
+	cont "慢啦﹗";
+	para "再慢一點的話﹐";
+	line "就買不到新衣服";
+	cont "了⋯";
+	done;
+
+@org $4f, $4fec:
+	init NAME_BLANK, PIC_1A;
+	text "邦林科技選秀會";
+	line "的獎品﹐很漂亮";
+	cont "喲﹗";
+	para "復古風造型的項";
+	line "鍊⚬";
+	para "尤其是鑲在裡面";
+	line "的古代晶片﹐更";
+	cont "是價值連城唷﹗";
+	done;
+
+@org $4f, $5048:
+	init NAME_BLANK, PIC_1C;
+	text "爸爸說﹐在邦林";
+	line "企業裡工作﹐才";
+	cont "能算是真正的男";
+	line "人⚬";
+	para "我以後長大也要";
+	line "在";
+	forcemap 3, "裡";
+	text "面工作⚬";
+	done;
+

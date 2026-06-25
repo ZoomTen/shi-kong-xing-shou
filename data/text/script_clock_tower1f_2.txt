@@ -1,0 +1,12 @@
+@org $12, $7787:
+	init NAME_BLANK, PIC_24;
+	text "好⋯好恐佈﹗";
+	line "鐘塔的擺動停了";
+	cont "﹐在修理的途中";
+	line "﹐聽到了怪聲音";
+	para "⋯原來是⋯恐怖";
+	line "的東西⋯";
+	cont "怎⋯怎麼辦⋯";
+	line "我不敢進去⋯";
+	done;
+

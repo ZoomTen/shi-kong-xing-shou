@@ -1,0 +1,116 @@
+@org $55, $6894:
+	init NAME_HAIQING, PIC_66;
+	text "啊﹗你醒了﹖";
+	line "很是抱歉～潮流";
+	para "異常的大﹐我只";
+	line "能夠救到你⋯⋯";
+	done;
+
+@org $55, $68c8:
+	init NAME_HAIQING, PIC_66;
+	text "啊﹖";
+	line "";
+	done;
+
+@org $55, $68d1:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "那小孩的失蹤﹐";
+	line "真的只是意外的";
+	cont "落水嗎﹖";
+	done;
+
+@org $55, $68f6:
+	init NAME_HAIQING, PIC_66;
+	text "我也不清楚⋯⋯";
+	line "不過我看到了延";
+	cont "伸的章魚腳⋯⋯";
+	line "可能是⋯⋯";
+	cont "海巫師⋯⋯";
+	done;
+
+@org $55, $6931:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "海巫師﹖";
+	done;
+
+@org $55, $693d:
+	init NAME_HAIQING, PIC_66;
+	text "是的⋯⋯";
+	cont "姐姐也用了她的";
+	line "魚之魂﹐向海巫";
+	cont "師換來三個月當";
+	line "人類的時間⚬";
+	done;
+
+@org $55, $697d:
+	init NAME_HAIQING, PIC_66;
+	text "你見過我的姐姐";
+	line "～海藍嗎﹖";
+	done;
+
+@org $55, $6997:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "嗯～見過⚬";
+	done;
+
+@org $55, $69a5:
+	init NAME_HAIQING, PIC_66;
+	text "那她有說要回來";
+	line "嗎﹖三個月的時";
+	cont "間快到了﹐再不";
+	line "回來的話～";
+	para "姐姐就會變成泡";
+	line "沫了﹗";
+	done;
+
+@org $55, $69eb:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "怎麼會這樣子呢";
+	line "﹖";
+	cont "有什麼解決的辦";
+	line "法嗎﹖";
+	done;
+
+@org $55, $6a12:
+	init NAME_HAIQING, PIC_66;
+	text "只好向海巫師懇";
+	line "求﹐請他還回姐";
+	cont "姐的魚之魂了⚬";
+	done;
+
+@org $55, $6a3e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "我知道了⚬";
+	cont "真的非常感謝你";
+	line "的救命之恩⋯";
+	para "我就幫你取回魚";
+	line "之魂好了⚬";
+	done;
+
+@org $55, $6a75:
+	init NAME_HAIQING, PIC_66;
+	text "謝謝您～好心的";
+	line "人類⚬";
+	para "但是今天就滿三";
+	line "個月了⋯";
+	para "但是姐姐卻說﹐";
+	line "既使如此﹐也要";
+	cont "在安東的懷裡化";
+	line "為泡沫⚬";
+	para "我不能看著姐姐";
+	line "變成泡沫﹗";
+	para "姐姐要是沒有魚";
+	line "之魂的話⋯⋯";
+	cont "實在很著急⋯";
+	para "我還是跟你去好";
+	line "了﹗";
+	para "我們就在海巫之";
+	line "殿會合吧⚬";
+	done;
+
+@org $55, $6b37:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "海巫之殿嗎﹖";
+	line "好的⚬";
+	done;
+

@@ -1,0 +1,102 @@
+@org $0f, $4c56:
+	init NAME_BLANK, PIC_1F;
+	text "啊﹗";
+	line "電力又回復了﹖";
+	para "第一次覺得﹐";
+	cont "光明是這麼的幸";
+	line "福⚬";
+	done;
+
+@org $0f, $4c89:
+	init NAME_BLANK, PIC_1B;
+	text "原來電力塔早就";
+	line "被閃電隊佔領了";
+	para "這次能回復電力";
+	line "﹐";
+	cont "真是感謝你及雷";
+	line "歐⚬";
+	done;
+
+@org $0f, $4cc8:
+	init NAME_BLANK, PIC_16;
+	text "好⋯好刺眼⋯⋯";
+	para "眼晴好不容易習";
+	line "慣了黑暗﹐";
+	cont "對於這麼亮的燈";
+	line "光﹐";
+	cont "真有點吃不消⋯";
+	done;
+
+@org $0f, $4d0f:
+	init NAME_BLANK, PIC_19;
+	text "果然需要雷歐出";
+	line "馬﹐";
+	cont "才能打敗閃電隊";
+	line "⚬";
+	para "雷歐博士是最棒";
+	line "的機械發明家⚬";
+	done;
+
+@org $0f, $4d50:
+	init NAME_BLANK, PIC_17;
+	text "你聽過加爾企業";
+	line "嗎﹖";
+	para "那可是二大知名";
+	line "企業之一啊﹗";
+	para "加爾企業及邦林";
+	line "企業﹐";
+	cont "都是數一數二的";
+	line "大企業喲⚬";
+	done;
+
+@org $0f, $4da4:
+	init NAME_BLANK, PIC_21;
+	text "嗚～嗚～";
+	para "電燈又亮了﹐";
+	cont "人家又要上學了";
+	line "﹗";
+	para "嗚～～嗚～";
+	done;
+
+@org $0f, $4dd5:
+	init NAME_BLANK, PIC_16;
+	text "這裡是科技城的";
+	line "廢鐵集中場⚬";
+	para "別看這些破破爛";
+	line "爛的東西﹐";
+	cont "這些全是我的寶";
+	line "貝﹗";
+	done;
+
+@org $0f, $4e1b:
+	init NAME_BLANK, PIC_12;
+	text "前陣子的流星雨";
+	line "﹐";
+	cont "打壞了通往多魯";
+	line "市的道路⚬";
+	para "這該怎麼辦呢﹖";
+	done;
+
+@org $0f, $4e54:
+	init NAME_BLANK, PIC_16;
+	text "就是你救了博特";
+	line "嗎﹖";
+	para "實在是非常的感";
+	line "謝﹗";
+	para "這個就送給你了";
+	line "﹐";
+	cont "真是相當的感謝";
+	line "⚬";
+	done;
+
+@org $0f, $4e9b:
+	init NAME_BLANK, PIC_16;
+	text "真是相當的感謝";
+	line "⚬";
+	done;
+
+@org $0f, $4eae:
+	init NAME_23, PIC_17;
+	text "非常的感謝您⚬";
+	done;
+

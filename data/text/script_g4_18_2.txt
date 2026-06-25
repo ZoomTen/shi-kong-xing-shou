@@ -1,0 +1,77 @@
+@org $58, $54f9:
+	init NAME_43, PIC_50;
+@org $58, $54fc:
+	text "啊～真是可怕﹗";
+	line "那些從船裡游出";
+	cont "";
+	db $f2, $bc; #"去"
+	text "的老鼠﹐在比";
+	line "底斯海域形成一";
+	line "條噁心的線⋯⋯";
+	para "不過還是要感謝";
+	line "你﹗拿去～";
+	cont "";
+	db $f2, $57; #"這"
+	text "是我們約定的";
+	line "東西⚬";
+	done;
+
+@org $58, $556e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $5571:
+	text "得到絕緣耳機﹗";
+	done;
+
+@org $58, $557e:
+	init NAME_43, PIC_50;
+@org $58, $5581:
+	text "不行了～";
+	line "真的快來不及了";
+	cont "";
+	db $f1, $58; #"要"
+	text "在他們回來之";
+	line "前﹐煮好晚餐才";
+	line "行⚬";
+	para "他們一定又會說";
+	line "『蒂朵是全世界";
+	para "最好的廚師』﹗";
+	line "嘻嘻嘻～";
+	done;
+
+@org $58, $55ea:
+	init NAME_43, PIC_50;
+@org $58, $55ed:
+	text "不行了～";
+	line "真的快來不及了";
+	cont "";
+	db $f1, $58; #"要"
+	text "在他們回來之";
+	line "前﹐煮好晚餐才";
+	line "行⚬";
+	para "他們一定又會說";
+	line "『蒂朵是全世界";
+	para "最好的廚師』﹗";
+	line "嘻嘻嘻～";
+	done;
+
+@org $58, $5656:
+	init NAME_BALLOT, PIC_BALLOT_4;
+@org $58, $5659:
+	text "詭異的笛聲又來";
+	line "了⋯⋯";
+	cont "意識又⋯開始模";
+	line "糊了⋯⋯";
+	para "";
+	db $f2, $dc; #"得"
+	text "趕快將耳機戴";
+	line "起來﹗";
+	done;
+
+@org $58, $5697:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $569a:
+	text "戴起耳機後﹐果";
+	line "然就聽不見任何";
+	cont "聲音了﹗";
+	done;
+

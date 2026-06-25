@@ -1,0 +1,12 @@
+@org $12, $5733:
+	init NAME_BLANK, PIC_22;
+	text "唉～有機會的話";
+	line "﹐真想到鄰國做";
+	cont "生意⚬但是本國";
+	line "和鄰國的關係﹐";
+	line "一直不是很好⚬";
+	para "就連來往的通道";
+	line "都被填平了⋯";
+	cont "唉～～";
+	done;
+

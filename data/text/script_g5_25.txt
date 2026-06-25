@@ -1,0 +1,11 @@
+@org $66, $5696:
+	init NAME_BLANK, PIC_1E;
+@org $66, $5699:
+	text "奇怪﹖";
+	line "";
+	db $f1, $60; #"學"
+	text "校怎麼都沒有";
+	cont "人呢﹖";
+	line "大家都翹課了﹗";
+	done;
+

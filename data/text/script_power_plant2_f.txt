@@ -1,0 +1,79 @@
+@org $0f, $4ab7:
+	init NAME_23, PIC_17;
+	text "嗚哦嗚～嗚～";
+	done;
+
+@org $0f, $4ac7:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "大叔﹖怎麼了﹖";
+	done;
+
+@org $0f, $4ad7:
+	init NAME_23, PIC_17;
+	text "真是感謝⚬";
+	para "科技城停電後﹐";
+	cont "我就趕來詢視情";
+	line "況⚬";
+	para "沒想到被閃電隊";
+	line "給綁了起來﹗";
+	para "真是感謝你﹗";
+	done;
+
+@org $0f, $4b28:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵﹗";
+	para "有了三千萬﹐";
+	line "我們的夢想就⋯";
+	done;
+
+@org $0f, $4b4c:
+	init NAME_KULU, PIC_KULU;
+	text "跟在下想的﹐";
+	line "一點都沒錯⚬";
+	para "這樣一來⋯⋯";
+	done;
+
+@org $0f, $4b71:
+	init NAME_LAKI, PIC_LAKI;
+	text "你你⋯你⋯你";
+	line "⋯你怎麼來的﹖";
+	done;
+
+@org $0f, $4b86:
+	init NAME_KULU, PIC_KULU;
+	text "可惡﹗";
+	para "你是來破壞在下";
+	line "的夢想的嗎﹖";
+	para "就讓你們來點愛";
+	line "的教育吧﹗";
+	done;
+
+@org $0f, $4bc3:
+	init NAME_LAKI, PIC_LAKI;
+	text "可可⋯可";
+	line "⋯可惡﹗";
+	para "你⋯你你⋯們給";
+	line "我⋯記⋯記住﹗";
+	done;
+
+@org $0f, $4bf0:
+	init NAME_KULU, PIC_KULU;
+	text "這次在下就放了";
+	line "你﹗";
+	cont "要記住在下的恩";
+	line "惠﹗";
+	para "在下是代表了～";
+	cont "愛、正義、勇氣";
+	line "的閃電隊﹗";
+	done;
+
+@org $0f, $4c3c:
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "真是⋯⋯⋯";
+	done;
+
+@org $0f, $4c47:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "這個開關是⋯⋯";
+	done;
+

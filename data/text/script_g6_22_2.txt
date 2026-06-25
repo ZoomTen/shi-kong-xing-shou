@@ -1,0 +1,57 @@
+@org $6c, $5a95:
+	init NAME_BLANK, PIC_19;
+@org $6c, $5a98:
+	text "嗚～嗚～";
+	line "一切都完了嗎﹖";
+	para "外面的人都說世";
+	line "";
+	db $f4, $1b; #"界"
+	text "末日到了⚬";
+	para "我真的就要死了";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"﹖"
+	text "";
+	para "我要是死了﹐誰";
+	line "來幫我照顧花園";
+	cont "裡的花﹖";
+	line "嗚～嗚～嗚～";
+	done;
+
+@org $6c, $5b0a:
+	init NAME_BLANK, PIC_16;
+@org $6c, $5b0d:
+	text "哎唷～";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $8f; #"老"
+	text "伴真是神經";
+	cont "質﹗";
+	para "只不過是月亮撞";
+	line "";
+	db $f0, $07; #"擊"
+	text "";
+	db $7a; #"地"
+	text "球嘛﹗";
+	para "你看看﹐月亮看";
+	line "";
+	db $f2, $cb; #"起"
+	text "";
+	db $bf; #"來"
+	text "";
+	db $65; #"還"
+	text "不到拳頭";
+	cont "的大小～";
+	line "";
+	db $f2, $d7; #"就"
+	text "";
+	db $c0; #"算"
+	text "撞擊地球﹐";
+	cont "也不會有什麼關";
+	line "";
+	db $f4, $8b; #"係"
+	text "啦﹗";
+	done;
+

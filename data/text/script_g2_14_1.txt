@@ -1,0 +1,38 @@
+@org $12, $5fa8:
+	init NAME_BLANK, PIC_1E;
+	text "鳴哇～嗚～媽媽";
+	line "變得好可怕啊﹗";
+	done;
+
+@org $12, $5fc7:
+	init NAME_BLANK, PIC_1F;
+	text "呵呵呵～啊﹗﹗";
+	line "這個切菜聲⋯⋯";
+	para "怎麼會叫人這麼";
+	line "興奮﹗興奮興奮";
+	cont "興奮興奮﹗切骨";
+	line "聲﹖要是聽到切";
+	cont "骨聲的話﹐會更";
+	line "興奮吧﹖";
+	para "老公～切骨聲﹗";
+	done;
+
+@org $12, $6032:
+	init NAME_BLANK, PIC_18;
+	text "老⋯老⋯老婆﹖";
+	line "妳拿著菜刀做什";
+	cont "麼﹖不⋯不要過";
+	line "來﹗﹗";
+	done;
+
+@org $12, $6064:
+	init NAME_BLANK, PIC_18;
+	text "老婆從街上回來";
+	line "後﹐彷彿就變了";
+	cont "一個人﹗";
+	para "一定是聞到了咖";
+	line "啡怪的氣味⚬";
+	para "這該怎麼辦才好";
+	line "﹖";
+	done;
+

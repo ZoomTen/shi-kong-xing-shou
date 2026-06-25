@@ -1,0 +1,27 @@
+@org $55, $67b7:
+	init NAME_3B, PIC_64;
+	text "我是全比底斯海";
+	line "醫術最高明的螃";
+	cont "蟹⚬";
+	line "受傷了嗎﹖";
+	para "雖然我沒有醫過";
+	line "人類﹐但螃蟹是";
+	para "最有靈性的動物";
+	line "⚬把這個應用到";
+	para "人類身上﹐應該";
+	line "還是行得通吧﹗";
+	line "";
+	getchoice String_1cc5;
+
+@org $55, $683c:
+	init NAME_3C, PIC_65;
+	text "哎呀﹗真是有緣";
+	line "啊～今兒個巡迴";
+	para "來到比底斯海域";
+	line "﹐來到貴寶地～";
+	para "就做大優惠吧～";
+	line "東西便宜賣喲﹗";
+	line "";
+	buysellcancel;
+	done;
+

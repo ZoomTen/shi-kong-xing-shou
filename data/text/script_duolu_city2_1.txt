@@ -1,0 +1,106 @@
+@org $12, $5194:
+	init NAME_BLANK, PIC_15;
+	text "這裡是多魯市⚬";
+	done;
+
+@org $12, $51a6:
+	init NAME_BLANK, PIC_21;
+	text "看到那棟最高的";
+	line "建築了嗎﹖";
+	cont "那就是鼎鼎大名";
+	line "的加爾企業唷﹗";
+	done;
+
+@org $12, $51d9:
+	init NAME_BLANK, PIC_12;
+	text "看過告示版了嗎";
+	line "﹖真是可憐啊～";
+	cont "加爾企業的董事";
+	line "長正在尋找十六";
+	para "年前失散的孫子";
+	line "呢⚬";
+	done;
+
+@org $12, $5223:
+	init NAME_BLANK, PIC_23;
+	text "往西邊走的話﹐";
+	line "就是鐘塔了⚬";
+	cont "那是加爾企業董";
+	line "事長為了紀念去";
+	line "逝的女兒而建的";
+	para "那鐘塔已經成為";
+	line "多魯市的地標了";
+	para "呢⚬我們都是依";
+	line "照鐘塔上的時間";
+	cont "作息的⚬";
+	done;
+
+@org $12, $52aa:
+	init NAME_BLANK, PIC_18;
+	text "加爾企業董事長";
+	line "失散的孫子﹐身";
+	para "上掛著一條會發";
+	line "光的月型項鍊﹐";
+	cont "名叫月琉璃⚬要";
+	line "是被我找到的話";
+	line "﹐我就發財了⚬";
+	done;
+
+@org $12, $530c:
+	init NAME_BLANK, PIC_1C;
+	text "哦～鐘塔的時間";
+	line "已經３點了﹗";
+	para "嘻嘻～點心時間";
+	line "到了﹗";
+	done;
+
+@org $12, $5338:
+	init NAME_BLANK, PIC_1F;
+	text "唉呀～真是不得";
+	line "了﹗";
+	para "只要能找到加爾";
+	line "企業董事長的孫";
+	para "子﹐就能獲得一";
+	line "～大筆錢﹗";
+	para "我一定要搶在別";
+	line "人前面找到﹗";
+	done;
+
+@org $12, $5396:
+	init NAME_BLANK, PIC_16;
+	text "想知道嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $12, $53a4:
+	init NAME_BLANK, PIC_16;
+	text "是這樣子的啊～";
+	done;
+
+@org $12, $53b6:
+	init NAME_BLANK, PIC_16;
+	text "十六年前﹐加爾";
+	line "企業董事長～";
+	cont "哈爾遜的女兒﹐";
+	line "與一名牧羊人發";
+	line "生了戀情⚬";
+	para "董事長非常的憤";
+	line "怒﹐覺得牧羊人";
+	cont "高攀不上他的女";
+	line "兒⚬";
+	para "於是拆散了二人";
+	line "﹐並把剛出世的";
+	cont "小嬰兒送走⚬";
+	para "之後﹐董事長的";
+	line "女兒便鬱鬱而終";
+	done;
+
+@org $12, $546f:
+	init NAME_BLANK, PIC_19;
+	text "往南邊走﹐就會";
+	line "到達山達農莊⚬";
+	para "那裡是個純樸的";
+	line "小鎮﹐主要出產";
+	para "咖啡跟天使之葉";
+	line "⚬";
+	done;
+

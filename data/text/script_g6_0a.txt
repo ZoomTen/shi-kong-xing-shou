@@ -1,0 +1,34 @@
+@org $6c, $757d:
+	init NAME_50, PIC_75;
+@org $6c, $7580:
+	text "你們還能夠來到";
+	line "這裡﹐不由得讓";
+	para "我打從心裡偑服";
+	line "懲罰者正在呤唱";
+	cont "";
+	db $f8, $72; #"淨"
+	text "化人類的咒文";
+	line "可不能讓你們阻";
+	line "止⚬";
+	para "地球這種地方﹐";
+	line "讓你們人類居住";
+	para "實在太浪費了現";
+	line "";
+	db $f3, $9a; #"在"
+	text "的我﹐力量應";
+	cont "該完全的回復了";
+	line "吧﹗";
+	para "既然如此﹐那就";
+	line "提早進入死靈國";
+	cont "";
+	db $f1, $71; #"度"
+	text "吧﹗";
+	done;
+
+@org $6c, $7643:
+	init NAME_50, PIC_75;
+@org $6c, $7646:
+	text "不⋯不可能⋯⋯";
+	line "不⋯甘心⋯";
+	done;
+

@@ -972,12 +972,12 @@ PersonalityDesc_Pointers:
 
 INCLUDE "data/text/personality_desc.asm"
 
-; TODO: prints a monster's move list, indexed by wd9da+1
+; seems to print a monster's move list, unreferenced
 Func_026_55b8:
 	ld a, [wd9da + 1]
 	ld l, a
 	ld h, $00
-	ld de, MonsterMoveList_Pointers
+	ld de, .Pointers
 	add hl, hl
 	add hl, de
 	ld a, [hli]
@@ -986,121 +986,135 @@ Func_026_55b8:
 	call PrintMenuText
 	ret
 
-MonsterMoveList_Pointers:
-	dw text_26_56a8
-	dw text_26_56bd
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
-	dw text_26_56ee
+.Pointers:
+	dw Unk_026_56a8
+	dw Unk_026_56bd
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
+	dw Unk_026_56ee
 
-; TODO: monster move-list text (sequences of move-name glyphs), via MonsterMoveList_Pointers
-INCLUDE "data/text/monster_movelist.asm"
+; appears to be text, but no interpretation matches
+Unk_026_56a8:
+	db $f0, $a7, $f3, $b1, $f0, $20, $62, $f2, $2c, $05, $f1, $7c, $f0, $18, $f1, $5f
+	db $f6, $57, $f0, $58, $ed
+
+Unk_026_56bd:
+	db $f1, $59, $d5, $f3, $b1, $f0, $20, $62, $15, $f6, $58, $f3, $0c, $f0, $39, $f2
+	db $2c, $f0, $ac, $f2, $05, $f1, $7c, $f0, $18, $f1, $5f, $f6, $57, $f0, $06, $f1
+	db $92, $f0, $a0, $97, $19, $f2, $93, $f0, $18, $f2, $6d, $f6, $57, $f0, $0c, $58
+	db $ed
+
+Unk_026_56ee:
+	db $f1, $59, $d5, $f0, $bf, $26, $27, $28, $cd, $34, $31, $35, $f3, $0d, $f1, $1f
+	db $c5, $f0, $20, $b5, $f1, $11, $f0, $18, $f5, $df, $f0, $04, $06, $f1, $0c, $f0
+	db $1c, $58, $ed
+
 ; TODO: prints a monster's description text indexed by wd9d8
 Func_026_5711:
 	ld de, MonsterDesc_Pointers
@@ -1278,6 +1292,6 @@ MonsterDesc_Pointers:
 	dw text_26_5864
 	dw text_26_5864
 
-INCLUDE "data/text/monster_desc.asm"
+INCLUDE "data/text/mon_descriptions.asm"
 
 

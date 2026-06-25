@@ -1,0 +1,41 @@
+@org $12, $5e82:
+	init NAME_24, PIC_22;
+	text "開什麼玩笑﹗馬";
+	line "克被瘋狂的羊撞";
+	cont "傷了﹐才不是我";
+	line "的錯﹗只能怪他";
+	cont "不小心﹗妮娜還";
+	line "因為這樣﹐一直";
+	line "都沒來工作﹗";
+	para "我對他們實在是";
+	line "太好了﹗他們才";
+	cont "會這麼放肆﹗從";
+	line "現在開始﹐他們";
+	cont "二個都不用來工";
+	line "作了﹗";
+	done;
+
+@org $12, $5f2e:
+	init NAME_BLANK, PIC_21;
+	text "真是麻煩⋯";
+	line "看樣子﹐馬克";
+	cont "傷得非";
+	forcemap 2, "常";
+	text "的重﹗";
+	para "要是沒有";
+	line "天使之葉的話﹐";
+	cont "恐怕是";
+	line "救不活";
+	forcemap 1, "了";
+	text "﹗";
+	para "為了";
+	forcemap 4, "減";
+	forcemap 4, "少";
+	text "不必要";
+	cont "的麻煩﹐";
+	cont "解雇他們是非常";
+	cont "正確";
+	forcemap 1, "的";
+	text "選擇⚬";
+	done;
+

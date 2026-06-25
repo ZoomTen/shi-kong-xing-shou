@@ -1,0 +1,69 @@
+@org $4f, $67cc:
+	init NAME_2F, PIC_58;
+	text "謝謝你﹗";
+	done;
+
+@org $4f, $67d7:
+	init NAME_2F, PIC_58;
+	text "⋯⋯";
+	done;
+
+@org $4f, $67de:
+	init NAME_2D, PIC_56;
+	text "謝謝你﹗";
+	done;
+
+@org $4f, $67e9:
+	init NAME_2D, PIC_56;
+	text "拱拱～拱～";
+	done;
+
+@org $4f, $67f6:
+	init NAME_2E, PIC_57;
+	text "謝謝你﹗";
+	done;
+
+@org $4f, $6801:
+	init NAME_2E, PIC_57;
+	text "咕咕～咕咕～";
+	done;
+
+@org $4f, $680f:
+	init NAME_2E, PIC_57;
+	text "咕～太棒咕～";
+	line "火山怪消失了⚬";
+	cont "咕～～";
+	line "大家都正常了⚬";
+	line "咕～～";
+	done;
+
+@org $4f, $6843:
+	init NAME_34, PIC_5D;
+	text "啊﹖兔先生為了";
+	line "我﹐傷心的吃不";
+	cont "下紅蘿蔔﹖";
+	line "真是感動啊⋯";
+	done;
+
+@org $4f, $6878:
+	init NAME_31, PIC_31;
+	text "我是旅行的人～";
+	line "偶爾來到這裡﹐";
+	cont "沒想到居然碰到";
+	line "這種事⚬";
+	para "雖覺得很恐怖﹐";
+	line "但還是要做買賣";
+	para "想要買些什麼呢";
+	line "﹖";
+	done;
+
+@org $4f, $68db:
+	init NAME_2E, PIC_57;
+	text "咕咕～";
+	line "我是名醫～咕咕⚬";
+	para "除了變成石頭之";
+	line "外﹐其他的我都";
+	cont "能治⚬";
+	line "需要我的服務嗎";
+	done;
+

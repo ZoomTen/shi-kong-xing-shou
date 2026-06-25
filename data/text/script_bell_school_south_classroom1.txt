@@ -1,0 +1,18 @@
+@org $08, $5039:
+	init NAME_BLANK, PIC_1E;
+	text "今天要上的是植";
+	line "物課⚬";
+	para "所以我帶了白老";
+	line "鼠～吉吉來唷﹗";
+	done;
+
+@org $08, $506b:
+	init NAME_BLANK, PIC_21;
+	text "人家今天的便當";
+	line "﹐";
+	cont "很好～很好吃哦";
+	line "⚬";
+	para "才．不．給．你";
+	line "．吃﹗";
+	done;
+

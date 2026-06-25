@@ -1,0 +1,135 @@
+@org $58, $535f:
+	init NAME_44, PIC_4D;
+@org $58, $5362:
+	text "吱吱吱吱﹗";
+	done;
+
+@org $58, $536a:
+	init NAME_44, PIC_4D;
+@org $58, $536d:
+	text "吱～吱吱﹗";
+	done;
+
+@org $58, $5377:
+	init NAME_44, PIC_4D;
+@org $58, $537a:
+	text "吱﹗吱﹗吱﹗吱";
+	line "﹗";
+	done;
+
+@org $58, $538c:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $538f:
+	text "克勞德﹐牠們在";
+	line "說什麼﹖";
+	done;
+
+@org $58, $53a5:
+	init NAME_CLAUDE, PIC_CLAUDE_4;
+@org $58, $53a8:
+	text "牠們說⋯⋯";
+	line "笨蛋人類又來了";
+	done;
+
+@org $58, $53c0:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $58, $53c3:
+	text "真是可惡﹗";
+	line "看我的厲害﹗";
+	done;
+
+@org $58, $53d7:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $58, $53da:
+	text "不要跑﹗";
+	done;
+
+@org $58, $53e1:
+	init NAME_44, PIC_4D;
+@org $58, $53e4:
+	text "吱～吱吱～";
+	done;
+
+@org $58, $53ee:
+	init NAME_44, PIC_4D;
+@org $58, $53f1:
+	text "吱﹗﹗﹗吱吱﹗";
+	done;
+
+@org $58, $53fd:
+	init NAME_44, PIC_4D;
+@org $58, $5400:
+	text "吱吱吱吱吱吱～";
+	done;
+
+@org $58, $540a:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $540d:
+	text "克勞德﹐牠們又";
+	line "";
+	db $f3, $9a; #"在"
+	text "說什麼﹖";
+	done;
+
+@org $58, $5425:
+	init NAME_CLAUDE, PIC_CLAUDE_4;
+@org $58, $5428:
+	text "牠們說⋯⋯";
+	line "人類才不是笨蛋";
+	cont "是⋯⋯⋯白痴⋯";
+	done;
+
+@org $58, $544c:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $58, $544f:
+	text "真是可惡﹗";
+	line "看我的厲害﹗";
+	done;
+
+@org $58, $5463:
+	init NAME_BALLOT, PIC_BALLOT_3;
+@org $58, $5466:
+	text "不要跑﹗";
+	done;
+
+@org $58, $546d:
+	init NAME_44, PIC_4D;
+@org $58, $5470:
+	text "吱吱﹗﹗";
+	done;
+
+@org $58, $5477:
+	init NAME_44, PIC_4D;
+@org $58, $547a:
+	text "吱吱～吱吱～";
+	done;
+
+@org $58, $5485:
+	init NAME_44, PIC_4D;
+@org $58, $5488:
+	text "吱⋯⋯";
+	done;
+
+@org $58, $548e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $5491:
+	text "克勞德﹐牠們又";
+	line "說什麼﹖";
+	done;
+
+@org $58, $54a7:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+@org $58, $54aa:
+	text "他們說『算你們";
+	line "狠﹐我要離家出";
+	cont "走了』﹗";
+	done;
+
+@org $58, $54cf:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $58, $54d2:
+	text "真是驕傲的老鼠";
+	line "不過希望牠們不";
+	cont "會再回來了⚬";
+	done;
+

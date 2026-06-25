@@ -1,0 +1,111 @@
+@org $08, $4b14:
+	init NAME_14, PIC_25;
+	text "受傷了嗎";
+	forcemap "﹖", 1;
+	para "如果受傷的話﹐";
+	cont "只要進去這個α";
+	line "射線放射器裡﹐";
+	cont "一下下～";
+	line "就會復原喲﹗";
+	para "要是受傷了﹐";
+	line "就來找妮可吧﹗";
+	done;
+
+@org $08, $4b77:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "學校的門關起來";
+	line "了﹗";
+	done;
+
+@org $08, $4b8b:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸～";
+	line "回家吃飯了﹗";
+	done;
+
+@org $08, $4b9f:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸～";
+	line "吃飯了⚬";
+	done;
+
+@org $08, $4baf:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "爸～﹗﹗﹗";
+	done;
+
+@org $08, $4bbb:
+	init NAME_SAYA, PIC_11;
+	text "是巴洛特呀﹗";
+	para "⋯⋯⋯⋯⋯";
+	done;
+
+@org $08, $4bd2:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸⋯⋯⋯";
+	done;
+
+@org $08, $4bdc:
+	init NAME_SAYA, PIC_11;
+	text "噓～";
+	para "不要說話～";
+	para "過來～";
+	done;
+
+@org $08, $4bf3:
+	init NAME_SAYA, PIC_11;
+	text "自從你媽媽病逝";
+	line "後﹐";
+	cont "就沒有像這樣仔";
+	line "細的看過你了⚬";
+	done;
+
+@org $08, $4c1d:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸爸⋯";
+	para "你怎麼了﹖";
+	done;
+
+@org $08, $4c2e:
+	init NAME_SAYA, PIC_11;
+	text "不要多話⚬";
+	para "看看今夜的星空";
+	line "⚬";
+	done;
+
+@org $08, $4c4c:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸～";
+	para "月光的顏色﹐";
+	cont "不是暖澄澄的黃";
+	line "色嗎﹖";
+	para "今晚的月光﹐";
+	line "藍的有點可怕⋯";
+	done;
+
+@org $08, $4c8c:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯⋯";
+	para "終於來了嗎﹖";
+	para "時機似乎太早了";
+	line "一點⋯⋯";
+	done;
+
+@org $08, $4cb5:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸⋯";
+	done;
+
+@org $08, $4cbd:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯⋯⋯";
+	done;
+
+@org $08, $4cc6:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "糟了﹗";
+	para "再不趕快出發到";
+	line "學校的話﹐";
+	cont "一定會遲到的⚬";
+	done;
+

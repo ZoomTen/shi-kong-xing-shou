@@ -1,0 +1,35 @@
+@org $12, $6796:
+	init NAME_BLANK, PIC_1E;
+	text "媽媽又變成原來";
+	line "的媽媽了﹗";
+	cont "真是太好了⚬";
+	done;
+
+@org $12, $67b8:
+	init NAME_BLANK, PIC_1F;
+	text "發生了什麼事情";
+	line "嗎﹖";
+	para "為什麼老公跟小";
+	line "孩都那麼看我﹖";
+	para "真是奇怪﹗";
+	cont "啊﹗為什麼到處";
+	line "都有被刀剁過的";
+	line "痕跡﹗";
+	done;
+
+@org $12, $6812:
+	init NAME_BLANK, PIC_18;
+	text "就是你打敗了咖";
+	line "啡怪的嗎﹖";
+	para "真是非常的感謝";
+	line "你﹗";
+	cont "不然的話﹐我可";
+	line "能就慘死在菜刀";
+	line "底下了⋯⋯";
+	done;
+
+@org $12, $6864:
+	init NAME_BLANK, PIC_18;
+	text "謝謝你﹗";
+	done;
+

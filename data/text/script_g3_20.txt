@@ -1,0 +1,24 @@
+@org $4f, $6746:
+	init NAME_33, PIC_5C;
+	text "轟隆～轟隆～";
+	cont "還有醜陋的活人";
+	line "嗎﹖";
+	para "變成優美的石像";
+	line "不是件很幸福的";
+	cont "事嗎﹖";
+	done;
+
+@org $4f, $6787:
+	init NAME_2C, PIC_55;
+	text "啊﹗";
+	line "我的面具﹗";
+	done;
+
+@org $4f, $6799:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "我⋯我叫克勞德";
+	line "我們⋯我們⋯";
+	cont "我們快回去找兔";
+	line "先生吧﹗";
+	done;
+

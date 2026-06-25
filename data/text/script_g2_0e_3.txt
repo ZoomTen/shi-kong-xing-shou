@@ -1,0 +1,261 @@
+@org $12, $78bd:
+	init NAME_1B, PIC_4C;
+	text "真是累人呀～";
+	cont "還是白天﹐為什";
+	line "麼我覺得這麼累";
+	line "呢﹖";
+	cont "是我的錯覺嗎﹖";
+	line "總覺得今天特別";
+	line "的漫長⚬";
+	para "巴洛特﹐快去房";
+	line "間休息吧﹗";
+	cont "明天要準時參加";
+	line "交接典禮唷﹗";
+	done;
+
+@org $12, $7945:
+	init NAME_NINA, PIC_02;
+	text "巴洛特﹐明天也";
+	line "要一起參加哥哥";
+	cont "的交接典禮唷﹗";
+	done;
+
+@org $12, $7970:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "嗯⚬";
+	done;
+
+@org $12, $7977:
+	init NAME_NINA, PIC_02;
+	text "巴洛特參加完交";
+	line "接典禮後﹐就要";
+	cont "離開了嗎﹖";
+	done;
+
+@org $12, $799d:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "是的⚬";
+	line "為了尋找爸爸及";
+	cont "動力晶片﹐我必";
+	line "須要走了⚬";
+	done;
+
+@org $12, $79cc:
+	init NAME_NINA, PIC_02;
+	text "⋯⋯⋯";
+	cont "那麼⋯我們就⋯";
+	line "明天見囉﹗";
+	done;
+
+@org $12, $79ea:
+	signpost; # ???
+	text "昱日";
+	cont "加爾企業舉行了";
+	line "盛大的董可交接";
+	line "儀式⚬";
+	para "妮娜為此﹐還頻";
+	line "頻的在會場中落";
+	cont;
+	db $f1, $bc, $53; # "淚。"
+	para "儀式很順利的舉";
+	line "行完畢了⚬";
+	para "加爾企業﹐由新";
+	line "一代的董事～";
+	cont "馬克接任⚬";
+	para "新聞、報紙上滿";
+	line "滿的都是馬克就";
+	cont "職的消息⚬";
+	done;
+
+@org $12, $7a96:
+	init NAME_25, PIC_4F;
+	text "巴洛特﹐你要走";
+	line "了嗎﹖";
+	done;
+
+@org $12, $7aac:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "是的⚬";
+	cont "必須要動身﹐尋";
+	line "找其他的動力晶";
+	line "片⚬";
+	done;
+
+@org $12, $7ad7:
+	init NAME_28, PIC_4E;
+	text "動力晶片﹖";
+	cont "唉～實在是不想";
+	line "要說出來⋯";
+	para "但巴洛特算是我";
+	line "的大恩人⋯⋯";
+	para "加爾企業的對手";
+	line "～邦林企業";
+	cont "﹐它的總裁手中";
+	line "握中其中之一的";
+	line "晶片⚬";
+	para "因為他的祖先﹐";
+	line "也曾是偉大的八";
+	cont "大科學家之一⚬";
+	done;
+
+@org $12, $7b78:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "邦林企業﹖";
+	done;
+
+@org $12, $7b83:
+	init NAME_28, PIC_4E;
+	text "是的⚬";
+	cont "位於";
+	forcemap 0, "天";
+	forcemap 0, "之";
+	text "都裡";
+	line "的邦林企業⚬";
+	para "是本公司最大的";
+	line "商業對手⚬";
+	done;
+
+@org $12, $7bbb:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "但是多魯市﹐並";
+	line "沒有對外連結的";
+	cont "道路啊﹗";
+	done;
+
+@org $12, $7be4:
+	init NAME_28, PIC_4E;
+	text "呵呵呵～";
+	cont "這個一點都不是";
+	line "個難題⚬";
+	para "加爾企業是個世";
+	line "界聞名的跨國企";
+	cont "業⚬";
+	para "對於這種小事﹐";
+	line "是必須要克服的";
+	cont "⚬這個給你﹗";
+	done;
+
+@org $12, $7c4b:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到金鑰匙﹗";
+	done;
+
+@org $12, $7c5a:
+	init NAME_28, PIC_4E;
+	text "鐘塔內有扇密閉";
+	line "的鐵門﹐就是通";
+	cont "往達瑪之都";
+	line "的通道⚬";
+	para "這就是加爾企業";
+	line "對外流通的祕密";
+	done;
+
+@org $12, $7ca6:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "謝謝你～董事長";
+	line "﹗";
+	done;
+
+@org $12, $7cb9:
+	init NAME_28, PIC_4E;
+	text "我也要感謝你～";
+	line "巴洛特﹗";
+	cont "祝你任務順利﹗";
+	done;
+
+@org $12, $7cdd:
+	init NAME_NINA, PIC_02;
+	text "巴洛特⋯⋯⋯";
+	line "⋯⋯⋯";
+	done;
+
+@org $12, $7cf0:
+	init NAME_BUCK, PIC_02;
+	text "巴洛特～等一等";
+	line "﹗";
+	done;
+
+@org $12, $7d04:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "妮娜﹖";
+	done;
+
+@org $12, $7d0e:
+	init NAME_NINA, PIC_02;
+	text "我⋯我想了很久";
+	line "⋯⋯";
+	cont "哥哥已經成為加";
+	line "爾企業的董事了";
+	cont "⋯妮娜也可以放";
+	line "心了⋯妮娜⋯";
+	cont "要和巴洛特一起";
+	line "解開古代太空船";
+	line "的祕密﹗";
+	done;
+
+@org $12, $7d79:
+	init NAME_28, PIC_4E;
+	text "妮⋯妮娜﹗";
+	line "那怎麼可以﹗";
+	done;
+
+@org $12, $7d90:
+	init NAME_25, PIC_4F;
+	text "妮娜～從很久";
+	line "之前﹐妳就對";
+	cont "爸爸留下來的";
+	line "研究﹐充滿了";
+	line "興趣⚬";
+	para "尋找妳的興趣";
+	line "吧﹐哥哥也贊";
+	cont "成妳去﹗";
+	done;
+
+@org $12, $7de7:
+	init NAME_28, PIC_4E;
+	text "馬⋯馬克﹗";
+	done;
+
+@org $12, $7df5:
+	init NAME_NINA, PIC_02;
+	text "巴洛特⋯⋯";
+	done;
+
+@org $12, $7e02:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這⋯⋯好﹗";
+	line "大家出發吧﹗";
+	done;
+
+@org $12, $7e1a:
+	init NAME_NINA, PIC_02;
+	text "巴洛特﹐謝謝";
+	line "你﹗";
+	done;
+
+@org $12, $7e2d:
+	init NAME_28, PIC_4E;
+	text "用金鑰匙打開鐘";
+	line "塔關閉的鐵門⚬";
+	para "就可以通到達瑪";
+	line "之都了⚬";
+	para "祝你任務順利⚬";
+	done;
+
+@org $12, $7e6d:
+	init NAME_25, PIC_4F;
+	text "巴洛特﹗";
+	cont "要好好的照顧妮";
+	line "娜⚬";
+	para "要是你欺負她的";
+	line "話﹐我可是不會";
+	cont "放過你﹗";
+	done;
+
+@org $12, $7eac:
+	text "嗨ＯＨＢＡＢＹ";
+	line;
+	line "嗨ＮＯ";
+	line;
+	line;
+

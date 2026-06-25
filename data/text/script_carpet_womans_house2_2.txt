@@ -1,0 +1,10 @@
+@org $0e, $528c:
+	init NAME_BLANK, PIC_15;
+	text "流星雨過後﹐";
+	cont "賽亞就神祕的失";
+	line "蹤了⚬";
+	para "天文台也毀了⋯";
+	para "巴洛特啊～";
+	line "要振作唷﹗";
+	done;
+

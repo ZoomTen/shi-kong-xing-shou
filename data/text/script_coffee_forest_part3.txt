@@ -1,0 +1,38 @@
+@org $12, $6471:
+	init NAME_27, PIC_51;
+	text "咕嚕～咕嚕～咕";
+	line "嚕～";
+	done;
+
+@org $12, $6486:
+	init NAME_NINA, PIC_NINA_4;
+	text "糟了﹗牠要吐出";
+	line "令人興奮的氣息";
+	cont "了﹗得趕快打倒";
+	line "牠才行﹗";
+	done;
+
+@org $12, $64ba:
+	init NAME_BLANK, PIC_1D;
+	text "呀﹗怎麼回事﹗";
+	line "我做了什麼事嗎";
+	cont "﹖感覺上﹐好像";
+	line "做了一場很興奮";
+	line "的夢⋯⋯";
+	done;
+
+@org $12, $64fb:
+	init NAME_NINA, PIC_NINA_1;
+	text "這就是天使樹了";
+	line "﹗只要有天使之";
+	cont "葉的話﹐哥哥的";
+	line "傷﹐就一定可以";
+	line "治好的﹗";
+	done;
+
+@org $12, $653d:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到了天使之葉";
+	line "﹗";
+	done;
+

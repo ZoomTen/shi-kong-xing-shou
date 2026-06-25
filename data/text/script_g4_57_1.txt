@@ -1,0 +1,12 @@
+@org $5a, $5b68:
+	init NAME_54, PIC_20;
+@org $5a, $5b6b:
+	text "咭咭咭咭～";
+	line "到手了﹗";
+	para "終於到手了﹗";
+	line "你鬼鬼崇崇的看";
+	cont "什麼東西﹖";
+	line "這些都是我珍貴";
+	line "的收藏﹗";
+	done;
+

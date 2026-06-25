@@ -1,0 +1,24 @@
+@org $08, $48d0:
+	init NAME_BLANK, PIC_22;
+	text "啊﹗﹖";
+	cont "隼人說突然想打";
+	line "網球嗎﹖";
+	para "沒～有問題﹗";
+	para "爸爸馬上去買一";
+	line "個網球場﹗";
+	done;
+
+@org $08, $4911:
+	init NAME_HAYATO, PIC_HAYATO;
+	text "ＯＨ～";
+	line "ＢＡＢＹ～";
+	para "我今天到朋友家";
+	line "﹐";
+	cont "看到了很多的發";
+	line "明品喲﹗";
+	para "他可是個天才的";
+	line "機械科學家⚬";
+	para "比你爸爸還厲害";
+	line "的科學家喲﹗";
+	done;
+

@@ -1,0 +1,31 @@
+@org $4f, $798c:
+	init NAME_21, PIC_31;
+	text "嘔～呃～喵～呃";
+	line "哽⋯哽住了﹗";
+	done;
+
+@org $4f, $79aa:
+	init NAME_CLAUDE, PIC_CLAUDE_1;
+	text "怎麼回事﹖";
+	done;
+
+@org $4f, $79b7:
+	init NAME_21, PIC_31;
+	text "喵～啊﹗";
+	line "終於吐出來了﹗";
+	para "就是這個石頭﹐";
+	line "卡在喉嚨裡好久";
+	cont "了﹗";
+	done;
+
+@org $4f, $79ef:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "得到珍珠項鍊⚬";
+	done;
+
+@org $4f, $7a00:
+	init NAME_21, PIC_31;
+	text "喵﹗﹗";
+	line "真是舒服喵～";
+	done;
+

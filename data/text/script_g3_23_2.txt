@@ -1,0 +1,85 @@
+@org $4f, $6922:
+	init NAME_2D, PIC_56;
+	text "老婆～拱嗚～";
+	line "拱嗚～";
+	cont "我們的小孩⋯";
+	line "終於正常了﹗";
+	done;
+
+@org $4f, $6950:
+	init NAME_2D, PIC_56;
+	text "老公～嗚嗚～";
+	line "拱拱～";
+	cont "我們的小孩又正";
+	line "常了﹗";
+	cont "我真是太高與了";
+	line "⋯⋯";
+	para "用你那性感的獠";
+	line "牙撞一撞我﹐表";
+	cont "示慶祝吧﹗";
+	done;
+
+@org $4f, $69af:
+	init NAME_2D, PIC_56;
+	text "拱～嗚啊～";
+	line "睡得好飽啊～";
+	done;
+
+@org $4f, $69c8:
+	init NAME_2F, PIC_58;
+	text "感謝你們﹗";
+	line "我又可以和性感";
+	cont "美麗的兔小姐﹐";
+	line "一起看森林的日";
+	line "出⚬";
+	para "為了感謝你們﹐";
+	line "我就做出一件超";
+	cont "性感華麗的禮服";
+	line "吧﹗";
+	para "你們等我一下下";
+	line "⚬";
+	done;
+
+@org $4f, $6a43:
+	init NAME_2F, PIC_58;
+	text "完成了﹗";
+	line "我用了全身的毛";
+	cont "做了一件媲美兔";
+	line "小姐的超超性感";
+	line "禮服⚬";
+	para "你們穿上後﹐一";
+	line "定會超～性感的";
+	para "就跟兔小姐一樣";
+	line "⚬";
+	done;
+
+@org $4f, $6aa8:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "得到性感禮服⚬";
+	done;
+
+@org $4f, $6ab8:
+	init NAME_CLAUDE, PIC_CLAUDE_1;
+	text "糟了～";
+	line "時間快來不及了";
+	para "我要先趕回去了";
+	line "﹗";
+	done;
+
+@org $4f, $6ae3:
+	init NAME_NINA, PIC_02;
+	text "克勞德先生﹐謝";
+	line "謝你⚬";
+	done;
+
+@org $4f, $6afa:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "不⋯不客氣⋯";
+	line "妮娜～";
+	cont "選秀會就快要開";
+	line "始了⚬";
+	para "不要遲到了喲～";
+	line "我會等你的⚬";
+	cont "再見～";
+	done;
+

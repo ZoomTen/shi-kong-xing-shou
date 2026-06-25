@@ -1,0 +1,13 @@
+@org $6c, $748f:
+	init NAME_51, $76;
+@org $6c, $7492:
+	text "想要阻止懲罰者";
+	line "嗎﹖";
+	para "別不自量力了⚬";
+	line "讓你見識三魔人";
+	cont "";
+	db $f0, $02; #"之"
+	text "～水魔人";
+	line "的厲害﹗";
+	done;
+

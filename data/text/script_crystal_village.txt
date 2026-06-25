@@ -1,0 +1,275 @@
+@org $0e, $6324:
+	init NAME_BLANK, PIC_1E;
+	text "這裡是水晶村⚬";
+	done;
+
+@org $0e, $6336:
+	init NAME_BLANK, PIC_12;
+	text "唉～就這樣莫名";
+	line "奇妙的失業了⋯";
+	para "水晶礦區莫名奇";
+	line "妙的﹐";
+	cont "被閃電集團的人";
+	line "霸佔了﹗";
+	para "所有的礦工都失";
+	line "業了﹗";
+	done;
+
+@org $0e, $638b:
+	init NAME_BLANK, PIC_14;
+	text "閃電集團將礦區";
+	line "給封閉了起來⚬";
+	cont "並把所有的礦工";
+	line "都解雇了﹗";
+	para "糟糕～";
+	para "不做礦工﹐";
+	cont "那我要做什麼呢";
+	line "﹖";
+	done;
+
+@org $0e, $63de:
+	init NAME_BLANK, PIC_1D;
+	text "偷偷告訴你唷﹗";
+	para "那個閃電集團﹐";
+	cont "好像有個祕密的";
+	line "基地﹗";
+	para "這是我偷聽到的";
+	line "﹗";
+	para "裡面應該有很大";
+	line "的祕密﹗";
+	done;
+
+@org $0e, $6434:
+	init NAME_BLANK, PIC_19;
+	text "村裡的男人都失";
+	line "業了﹗";
+	cont "都是那個可惡的";
+	line "閃電集團搞的﹗";
+	done;
+
+@org $0e, $6466:
+	init NAME_BLANK, PIC_1C;
+	text "如果使用彩虹水";
+	line "晶﹐";
+	cont "當成高速賽車的";
+	line "核心的話﹐";
+	cont "那一定就是最高";
+	line "級的高速賽車﹗";
+	done;
+
+@org $0e, $64ad:
+	init NAME_BLANK, PIC_20;
+	text "這次不能忘記⋯";
+	cont "不然頭目就⋯";
+	para "趁沒有人看的時";
+	line "候⋯";
+	cont "寫在手心裡⋯";
+	para "壁⋯櫥⋯裡⋯⋯";
+	done;
+
+@org $0e, $64f7:
+	init NAME_BLANK, PIC_20;
+	text "呀﹗﹗﹗";
+	para "你怎麼在這裡﹗";
+	line "走開﹗";
+	done;
+
+@org $0e, $6515:
+	init NAME_BLANK, PIC_15;
+	text "哎～";
+	para "老公都失業了⋯";
+	cont "像這種豐盛的午";
+	line "餐﹐";
+	cont "不曉得還能煮幾";
+	line "回﹖";
+	done;
+
+@org $0e, $6550:
+	init NAME_BLANK, PIC_1B;
+	text "聽說科技城的";
+	line "雷歐﹐";
+	cont "和閃電隊賽車輸";
+	line "了三千萬﹗";
+	para "這種結果是一定";
+	line "的⚬";
+	cont "因為彩虹水晶停";
+	line "產了﹐";
+	cont "一定做不出好的";
+	line "賽車的⚬";
+	done;
+
+@org $0e, $65b8:
+	init NAME_BLANK, PIC_1E;
+	text "爸爸的口袋裡﹐";
+	cont "有一顆七彩的水";
+	line "晶耶﹗";
+	done;
+
+@org $0e, $65de:
+	init NAME_BUCK, PIC_BUCK;
+	text "水晶﹖";
+	para "給巴克．雷歐博";
+	line "士．要﹗";
+	done;
+
+@org $0e, $65fc:
+	init NAME_BLANK, PIC_1E;
+	text "不～要﹗";
+	done;
+
+@org $0e, $6607:
+	init NAME_BLANK, PIC_20;
+	text "站住﹗";
+	para "這裡是閃電隊的";
+	line "地盤﹐快走﹗";
+	done;
+
+@org $0e, $662c:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "壁櫥裡有個洞﹗";
+	para "打開了﹗﹗";
+	done;
+
+@org $0e, $6647:
+	init NAME_20, PIC_30;
+	text "輸、入、密、碼";
+	line "﹖";
+	done;
+
+@org $0e, $665b:
+	init NAME_BUCK, PIC_BUCK;
+	text "巴洛特．巴克．";
+	line "試試⚬";
+	para "巴克．要．隊伍";
+	line "．前頭⚬";
+	done;
+
+@org $0e, $6689:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "壁櫥裡有個洞﹗";
+	para "打開了﹗﹗";
+	done;
+
+@org $0e, $66a4:
+	init NAME_20, PIC_30;
+	text "輸、入、密、碼";
+	line "﹖";
+	done;
+
+@org $0e, $66b8:
+	init NAME_BUCK, PIC_BUCK;
+	text "巴克．解碼⚬";
+	para "￠２＃⨉⸳￡";
+	line "ＭＫＣ㏒㏑３";
+	para "密碼：";
+	cont "９７．３５";
+	done;
+
+@org $0e, $66eb:
+	init NAME_20, PIC_30;
+	text "正確～正確⚬";
+	done;
+
+@org $0e, $66fa:
+	init NAME_22, PIC_32;
+	text "你們是誰﹖";
+	para "侵入祕密基地的";
+	line "傢伙﹐";
+	cont "要給你們一點教";
+	line "訓﹗";
+	done;
+
+@org $0e, $672d:
+	init NAME_22, PIC_32;
+	text "可惡﹗";
+	line "這裡失守了嗎﹖";
+	para "雖然對不起頭目";
+	line "及大姐頭﹐";
+	cont "但還是徹退吧﹗";
+	done;
+
+@org $0e, $676a:
+	init NAME_22, PIC_32;
+	text "不行～";
+	cont "得趕快徹退才行";
+	line "﹗";
+	done;
+
+@org $0e, $6784:
+	init NAME_22, PIC_32;
+	text "你們是誰﹖";
+	para "讓開﹗";
+	cont "不要擋住我徹退";
+	line "的路﹗";
+	done;
+
+@org $0e, $67ae:
+	init NAME_22, PIC_32;
+	text "可惡﹗";
+	para "雖然被打敗了﹐";
+	cont "但你還是阻止不";
+	line "了我的徹退的﹗";
+	done;
+
+@org $0e, $67e0:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "這一定就是彩虹";
+	line "水晶了﹗";
+	para "雷歐博士有了這";
+	line "個﹐";
+	cont "一定就可以打敗";
+	line "閃電隊了﹗";
+	done;
+
+@org $0e, $6821:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到彩虹水晶⚬";
+	done;
+
+@org $0e, $6832:
+	init NAME_BLANK, PIC_12;
+	text "閃電集團莫名奇";
+	line "妙的跑光了﹗";
+	para "又可以恢復工作";
+	line "了⚬";
+	para "從來不曉得﹐";
+	cont "有工作的感覺是";
+	line "這麼美妙﹗";
+	done;
+
+@org $0e, $6882:
+	init NAME_BLANK, PIC_14;
+	text "霸佔水晶礦坑的";
+	line "閃電集團消失了";
+	para "這真是個天大的";
+	line "好消息⚬";
+	done;
+
+@org $0e, $68b3:
+	init NAME_BLANK, PIC_19;
+	text "前幾天經過科技";
+	line "城的發電塔﹐";
+	cont "結果發現了一隻";
+	line "好大的貓怪﹗";
+	para "真是可怕﹗";
+	done;
+
+@org $0e, $68f4:
+	init NAME_BLANK, PIC_15;
+	text "哈哈哈～";
+	para "老公又有工作了";
+	line "﹗";
+	para "煮頓超豪華料理";
+	line "吧﹗";
+	done;
+
+@org $0e, $6923:
+	init NAME_BLANK, PIC_1E;
+	text "爸爸的口袋裡﹐";
+	cont "有一顆七彩的水";
+	line "晶耶﹗";
+	para "這是我的寶藏﹐";
+	cont "才不要給任何人";
+	line "﹗";
+	done;
+

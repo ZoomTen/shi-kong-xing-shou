@@ -1,0 +1,12 @@
+@org $0f, $4ebe:
+	init NAME_19, PIC_22;
+	text "電力又回復了﹐";
+	cont "一大堆帳要補登";
+	line "記⋯";
+	para "忙死了⋯⋯";
+	para "需要什麼服務嗎";
+	line "﹖";
+	line;
+	buysellcancel;
+	done;
+

@@ -1,4 +1,0 @@
-@org $2b, $4a30 (StatNames_Text):
-	text "攻擊防禦速度法力魔防";
-	line;
-

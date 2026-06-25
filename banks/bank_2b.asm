@@ -1174,7 +1174,7 @@ DrawLevelUpStats:
 Tilemap_02b_4910: INCBIN "gfx/image_2b_4910.tilemap"
 AttrMap_02b_49a0: INCBIN "gfx/image_2b_49a0.gbcattr"
 
-INCLUDE "data/text/bank2b_4a30.asm"
+INCLUDE "data/text/stat_names.asm"
 
 GetMonNextLevel:
 	ld a, [wd981]

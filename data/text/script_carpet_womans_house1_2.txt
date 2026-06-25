@@ -1,0 +1,14 @@
+@org $08, $4aac:
+	init NAME_BLANK, PIC_15;
+	text "明天晚上會有大";
+	line "規模的流星雨⚬";
+	para "這種難見的奇景";
+	line "﹐";
+	cont "我一定不能錯過";
+	line "﹗";
+	para "對了～";
+	para "明天晚上﹐";
+	cont "我們去你爸的天";
+	line "文台看流星雨⚬";
+	done;
+

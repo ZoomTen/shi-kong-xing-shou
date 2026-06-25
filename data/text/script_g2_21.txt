@@ -1,0 +1,16 @@
+@org $12, $7ebe:
+	init NAME_14, PIC_25;
+	text "需要妮可治療嗎";
+	line "﹖";
+	line "";
+	getchoice String_1cc5;
+
+@org $12, $7ed6:
+	init NAME_1A, PIC_25;
+	text "這裡是星獸膠囊";
+	line "存放銀行⚬";
+	para "需要艾娜的服務";
+	line "嗎﹖";
+	line "";
+	getchoice String_1cc5;
+

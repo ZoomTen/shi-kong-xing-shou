@@ -1,0 +1,86 @@
+@org $55, $5aef:
+	init NAME_BLANK, PIC_12;
+	text "少爺～這裡就是";
+	line "東漁市了⚬";
+	para "祝少爺旅程平安";
+	line "順利⚬";
+	done;
+
+@org $55, $5b1f:
+	init NAME_BLANK, PIC_19;
+	text "這裡是漁港路都";
+	line "市～東漁市⚬";
+	para "四周就是比底斯";
+	line "海了⚬";
+	done;
+
+@org $55, $5b52:
+	init NAME_BLANK, PIC_1C;
+	text "聽說小孩子如果";
+	line "在海邊玩耍的話";
+	para "就會被人魚吃掉";
+	line "哦﹗";
+	para "媽媽說小龜就是";
+	line "被人魚吃掉的﹗";
+	done;
+
+@org $55, $5ba0:
+	init NAME_BLANK, PIC_1A;
+	text "在另外的那一邊";
+	line "有一個神木村喲";
+	para "那裡有一棵～";
+	line "好大～";
+	cont "好大的大樹喲﹗";
+	done;
+
+@org $55, $5be3:
+	init NAME_BLANK, PIC_14;
+	text "安東的世代都是";
+	line "海洋科學家⚬";
+	para "他的祖先﹐也是";
+	line "八名偉大科學家";
+	cont "的後代喲﹗";
+	done;
+
+@org $55, $5c28:
+	init NAME_BLANK, PIC_13;
+	text "嗚～小龜～";
+	line "我的兒子啊～";
+	cont "嗚嗚～";
+	para "小龜被人魚吃掉";
+	line "了﹗";
+	cont "嗚嗚嗚～";
+	line "可惡的人魚﹗";
+	done;
+
+@org $55, $5c6f:
+	init NAME_BLANK, PIC_15;
+	text "最近海邊出現了";
+	line "人魚﹐而且靠近";
+	para "海邊的小孩子都";
+	line "莫名的失蹤了﹗";
+	para "一定是被人魚吃";
+	line "掉了﹗";
+	done;
+
+@org $55, $5cbb:
+	init NAME_BLANK, PIC_17;
+	text "前陣子看到安東";
+	line "的未婚妻～海藍";
+	para "﹐在海邊與人魚";
+	line "講話⚬";
+	para "是我看錯了嗎﹖";
+	line "我一定要弄清楚";
+	line "﹗";
+	done;
+
+@org $55, $5d0a:
+	init NAME_BLANK, PIC_16;
+	text "唉～自從流星雨";
+	line "過後﹐天空就出";
+	cont "現了裂縫⚬";
+	para "咦～那條裂縫好";
+	line "像愈來愈大了﹗";
+	cont "真叫人不安⚬";
+	done;
+

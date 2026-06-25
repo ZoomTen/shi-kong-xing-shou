@@ -1,0 +1,94 @@
+@org $59, $6f51:
+	init NAME_BLANK, PIC_16;
+@org $59, $6f54:
+	text "啊﹗泉水又滿了";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "謝謝你們﹗";
+	cont "普兒有救了﹗";
+	done;
+
+@org $59, $6f79:
+	init NAME_STAR_BEAST, PIC_6A;
+@org $59, $6f7c:
+	text "喀～喀～";
+	para "能源⋯計劃⋯";
+	para "阻礙者⋯⋯殺﹗";
+	done;
+
+@org $59, $6f9e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $59, $6fa1:
+	text "看來星獸的狙擊";
+	line "目標是我﹗";
+	done;
+
+@org $59, $6fb9:
+	init NAME_LANTE, PIC_06;
+@org $59, $6fbc:
+	text "可能是因為﹐你";
+	line "破壞了他們抽取";
+	cont "";
+	db $f1, $8d; #"能"
+	text "";
+	db $96; #"源"
+	text "";
+	db $51; #"的"
+	text "計劃⚬";
+	para "為了怕你再有其";
+	line "他的破壞行動﹐";
+	para "";
+	db $f1, $d2; #"而"
+	text "痛下殺手的吧";
+	line "﹗";
+	done;
+
+@org $59, $700f:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $59, $7012:
+	text "星獸們抽取能源";
+	line "";
+	db $f1, $33; #"﹐"
+	text "";
+	db $62; #"到"
+	text "底是什麼目";
+	cont "的﹖";
+	done;
+
+@org $59, $7030:
+	init NAME_LANTE, PIC_06;
+@org $59, $7033:
+	text "這我就不清楚了";
+	line "不過﹐據我的追";
+	cont "";
+	db $f4, $a3; #"蹤"
+	text "﹐發現原本有";
+	line "";
+	db $f1, $25; #"三"
+	text "股強大的能源";
+	cont "正籍由南方的衛";
+	line "星雷達站﹐被發";
+	line "送到太空⚬";
+	para "我想這也就是星";
+	line "獸的目的了⚬";
+	para "巴洛特一定認為";
+	line "﹐我也有個清晰";
+	cont "的頭腦吧﹗";
+	done;
+
+@org $59, $70c9:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $59, $70cc:
+	text "南方的衛星雷達";
+	line "站﹖";
+	para "星獸所謂『計劃";
+	line "』﹐到底是什麼";
+	para "為了消除心中的";
+	line "不安﹐我一定要";
+	cont "";
+	db $f1, $86; #"解"
+	text "開這個謎﹗";
+	done;
+

@@ -1,0 +1,6 @@
+@org $08, $4eb0:
+	init NAME_BLANK, PIC_22;
+	text "是巴洛特呀﹗";
+	line "隼人去上學了⚬";
+	done;
+

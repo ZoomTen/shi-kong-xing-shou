@@ -1,0 +1,602 @@
+@org $4f, $6c8c:
+	init NAME_BLANK, PIC_14;
+	text "少爺總算是回來";
+	line "了﹗";
+	para "這次的選秀會﹐";
+	line "少爺可是主要的";
+	cont "評審⚬";
+	para "幸好他準時回來";
+	line "了⚬";
+	done;
+
+@org $4f, $6cd2:
+	init NAME_BLANK, PIC_14;
+	text "少爺⋯";
+	line "早點";
+	forcemap 1, "回";
+	text "來⋯";
+	done;
+
+@org $4f, $6ce6:
+	init NAME_BLANK, PIC_1F;
+	text "您不是妮娜小姐";
+	line "嗎﹖";
+	para "選秀會就要快開";
+	line "始了﹐您準備好";
+	cont "了嗎﹖";
+	line "";
+	getchoice String_1cc5;
+@org $4f, $6d20:
+	init NAME_BLANK, PIC_1F;
+	text "是這樣子的嗎﹖";
+	line "那您動作就要快";
+	cont "一些了⚬";
+	para "選秀會就要舉行";
+	line "了⚬";
+	done;
+
+@org $4f, $6d57:
+	init NAME_BLANK, PIC_1F;
+	text "好的⚬";
+	para "我這就帶您到會";
+	line "場⚬";
+	done;
+
+@org $4f, $6d71:
+	init NAME_35, PIC_5E;
+	text "哈哈哈哈～";
+	line "瞧你們那副窮酸";
+	cont "樣～";
+	para "真是叫人笑到肚";
+	line "子疼～";
+	done;
+
+@org $4f, $6da3:
+	init NAME_BLANK, PIC_13;
+	text "好⋯好緊張⋯";
+	line "深呼吸～";
+	cont "深呼吸～";
+	done;
+
+@org $4f, $6dc1:
+	init NAME_BLANK, PIC_1D;
+	text "可惡的麗子～";
+	line "都是她﹐害我們";
+	cont "沒有新衣服⋯⋯";
+	done;
+
+@org $4f, $6dea:
+	init NAME_BLANK, PIC_25;
+	text "不公平～";
+	line "這次選秀會﹐根";
+	cont "本就不公平～";
+	line "人家沒有衣服穿";
+	done;
+
+@org $4f, $6e1e:
+	init NAME_BLANK, PIC_1F;
+	text "圖釘呢﹖";
+	line "在哪裡﹖";
+	cont "喔﹗在這裡﹗";
+	line "呵呵呵呵～";
+	para "這．樣．一．來";
+	line "就﹗﹗﹗";
+	cont "呵呵呵呵～";
+	done;
+
+@org $4f, $6e64:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵﹗";
+	line "那個笨蛋麗子﹐";
+	cont "得意不了多久的";
+	line "本女王會讓她見";
+	cont "識到﹐什麼叫做";
+	line "高貴的風範﹗";
+	para "而那條項鍊﹐就";
+	line "是我們的了﹗";
+	para "哦～呵呵呵～";
+	line "這樣一來﹐就沒";
+	cont "有問題了﹗";
+	line "哦哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+
+@org $4f, $6f02:
+	init NAME_BLANK, PIC_13;
+	text "編號第號﹐";
+	line "妮娜小姐⚬";
+	para "第一次選秀評分";
+	line "請準備上台⚬";
+	done;
+
+@org $4f, $6f36:
+	init NAME_NINA, PIC_02;
+	text "哦⋯﹗";
+	line "好的﹐謝謝您⚬";
+	done;
+
+@org $4f, $6f4c:
+	init NAME_JUDGE, PIC_50;
+	text "第一循環淘汰賽";
+	line "比的是反應及機";
+	cont "智⚬";
+	para "美麗的外表下﹐";
+	line "包涵了機敏的頭";
+	cont "腦⚬";
+	para "才是邦林企業的";
+	line "需求⚬";
+	para "準備好了嗎﹖";
+	line "妮娜小姐～";
+	cont "測驗開始～";
+	line "後台人員";
+	cont "請準備﹗";
+	done;
+
+@org $4f, $6fd2:
+	init NAME_JUDGE, PIC_50;
+	text "沒有關係﹐這只";
+	line "是熱身的測試⚬";
+	para "誰沒有失敗的經";
+	line "驗呢﹖";
+	para "你說是吧～";
+	line "美麗的小姐⚬";
+	para "再試一下吧﹗";
+	done;
+
+@org $4f, $7023:
+	init NAME_JUDGE, PIC_50;
+	text "嗯～感覺不錯～";
+	cont "您可以回休息室";
+	line "了⚬";
+	para "結果我們會通知";
+	line "各位⚬";
+	cont "辛苦了⚬";
+	done;
+
+@org $4f, $7061:
+	init NAME_NINA, PIC_02;
+	text "謝謝你們⚬";
+	done;
+
+@org $4f, $706e:
+	init NAME_35, PIC_5E;
+	text "哈哈哈哈～";
+	line "妳也比完了嗎﹖";
+	para "呵呵～";
+	line "這個反應測試～";
+	para "我一定可以通過";
+	line "的⚬";
+	done;
+
+@org $4f, $70a6:
+	init NAME_BLANK, PIC_13;
+	text "嗚哇～";
+	line "人家剛在台上﹐";
+	cont "手腳僵硬⋯";
+	line "根本就沒有辦法";
+	cont "動﹗";
+	line "完蛋了啦﹗";
+	done;
+
+@org $4f, $70e3:
+	init NAME_BLANK, PIC_1D;
+	text "我用我最深的詛";
+	line "咒﹗";
+	para "詛咒麗子落選吧";
+	line "詛咒～詛咒﹗";
+	done;
+
+@org $4f, $710f:
+	init NAME_BLANK, PIC_25;
+	text "好緊張～";
+	line "好緊張～";
+	done;
+
+@org $4f, $7124:
+	init NAME_BLANK, PIC_1F;
+	text "咭咭咭咭～";
+	cont "我的圖釘戰術～";
+	line "是無敵的﹗";
+	done;
+
+@org $4f, $7147:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵呵﹗";
+	line "什麼反應測試～";
+	para "在我拉琪看來﹐";
+	line "不過是小孩子的";
+	cont "遊戲罷了⚬";
+	para "哦哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+
+@org $4f, $7197:
+	init NAME_BLANK, PIC_13;
+	text "宣佈休息室";
+	line "初賽入選名單⚬";
+	done;
+
+@org $4f, $71b2:
+	init NAME_BLANK, PIC_1D;
+	text "啊﹗";
+	line "我入選了﹗";
+	line "";
+	cont "萬歲﹗";
+	done;
+
+@org $4f, $71ca:
+	init NAME_BLANK, PIC_13;
+	text "號～";
+	line "麗子小姐⚬";
+	done;
+
+@org $4f, $71dc:
+	init NAME_35, PIC_5E;
+	text "呵呵呵～～";
+	line "理所當然的⚬";
+	done;
+
+@org $4f, $71f3:
+	init NAME_BLANK, PIC_13;
+	text "號～";
+	line "拉琪小姐⚬";
+	done;
+
+@org $4f, $7205:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦哦哦哦～";
+	line "呵呵呵呵﹗";
+	done;
+
+@org $4f, $7218:
+	init NAME_BLANK, PIC_13;
+	text "號～";
+	line "薇薇小姐⚬";
+	done;
+
+@org $4f, $722a:
+	init NAME_BLANK, PIC_1F;
+	text "我⋯我入選了﹖";
+	line "好高興﹗";
+	done;
+
+@org $4f, $723e:
+	init NAME_NINA, PIC_02;
+	text "沒有希望了嗎﹖";
+	done;
+
+@org $4f, $724e:
+	init NAME_BLANK, PIC_13;
+	text "最後一位～";
+	line "第號～";
+	cont "妮娜小姐⚬";
+	done;
+
+@org $4f, $726e:
+	init NAME_NINA, PIC_NINA_1;
+	text "妮娜⋯入選了﹖";
+	line "謝謝⋯謝謝您﹗";
+	done;
+
+@org $4f, $7289:
+	init NAME_BLANK, PIC_13;
+	text "以上﹐通過初選";
+	line "的請到展示台上";
+	para "做最後的自選服";
+	line "裝展示⚬";
+	done;
+
+@org $4f, $72bd:
+	init NAME_NINA, PIC_02;
+	text "要趕快換上兔先";
+	line "生特製的禮服⚬";
+	done;
+
+@org $4f, $72db:
+	init NAME_NINA, PIC_NINA_4;
+	text "啊⋯⋯這是什麼";
+	line "﹖";
+	para "怎⋯怎麼會這樣";
+	line "﹖";
+	done;
+
+@org $4f, $72fb:
+	init NAME_HOST, PIC_50;
+	text "各位先生～";
+	line "各位女士～";
+	cont "讓大家久等了﹗";
+	para "邦林企業這次的";
+	line "產品代言人選秀";
+	cont "會﹐即將到達最";
+	line "高潮⚬";
+	para "就是美少女自選";
+	line "服裝美儀評鑑⚬";
+	para "讓我們歡迎～";
+	line "第號的～";
+	cont "也就是世界名模";
+	line "千金的～";
+	line "麗子小姐﹗";
+	done;
+
+@org $4f, $739e:
+	init NAME_HOST, PIC_50;
+	text "麗子小姐的服裝";
+	line "真是令人賞心悅";
+	cont "目啊﹗";
+	line "比賽進行到了這";
+	line "裡～";
+	para "讓我們觀迎～";
+	line "第號的～";
+	cont "拉琪小姐～";
+	done;
+
+@org $4f, $73f5:
+	init NAME_JUDGE, PIC_50;
+	text "這⋯這是⋯";
+	line "傳說中的⋯⋯";
+	cont "夏娃的羽衣嗎﹖";
+	line "鼻⋯鼻血止不住";
+	line "﹗﹗﹗";
+	done;
+
+@org $4f, $742a:
+	init NAME_KULU, PIC_KULU;
+	text "太棒了﹗";
+	line "拉琪太棒了﹗";
+	done;
+
+@org $4f, $7440:
+	init NAME_HOST, PIC_50;
+	text "這⋯這真是太勁";
+	line "暴了﹗";
+	para "沒想到拉琪小姐";
+	line "竟然選擇這種大";
+	cont "膽的作風⚬";
+	para "由評審員不停流";
+	line "出的鼻血看來～";
+	cont "拉琪小姐似乎獲";
+	line "得了很高的評價";
+	line "﹗";
+	done;
+
+@org $4f, $74b0:
+	init NAME_HOST, PIC_50;
+	text "接下來﹐選秀會";
+	line "的最後一位美少";
+	cont "女⚬";
+	para "我們一起歡迎﹐";
+	line "第號的～";
+	cont "妮娜小姐﹗";
+	done;
+
+@org $4f, $74f5:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "妮娜～加油～﹗";
+	done;
+
+@org $4f, $7504:
+	init NAME_HOST, PIC_50;
+	text "妮娜小姐﹖";
+	done;
+
+@org $4f, $7512:
+	init NAME_NINA, PIC_02;
+	text "是⋯是的⋯⋯";
+	done;
+
+@org $4f, $7520:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這就是⋯超性感";
+	line "華麗的禮服﹖";
+	done;
+
+@org $4f, $753c:
+	init NAME_JUDGE, PIC_53;
+	text "這⋯這簡直是⋯";
+	done;
+
+@org $4f, $754c:
+	init NAME_CLAUDE, PIC_CLAUDE_2;
+	text "好呀﹗";
+	para "好有創意的衣服";
+	line "啊﹗";
+	done;
+
+@org $4f, $7568:
+	init NAME_JUDGE, PIC_53;
+	text "少⋯少爺﹖";
+	line "少爺這麼認為﹖";
+	para "這是多麼有創意";
+	line "的服裝啊﹗";
+	done;
+
+@org $4f, $759c:
+	init NAME_NINA, PIC_02;
+	text "克勞德﹖";
+	line "他怎麼會在評審";
+	cont "席呢﹖";
+	done;
+
+@org $4f, $75ba:
+	init NAME_HOST, PIC_50;
+	text "好的⚬";
+	line "所有的美少女都";
+	cont "已經展示過她們";
+	line "的服裝了⚬";
+	done;
+
+@org $4f, $75e3:
+	init NAME_HOST, PIC_50;
+	text "哦哦哦哦﹗";
+	line "結果出來了﹗";
+	cont "最後優勝者是⋯";
+	done;
+
+@org $4f, $7607:
+	init NAME_HOST, PIC_50;
+	text "第號的妮娜";
+	line "小姐﹗﹗";
+	done;
+
+@org $4f, $761d:
+	init NAME_NINA, PIC_NINA_1;
+	text "謝謝⋯";
+	line "謝謝你們～";
+	done;
+
+@org $4f, $7630:
+	init NAME_HOST, PIC_50;
+	text "我們這就請～";
+	line "邦林科技的總裁";
+	cont "哈瑪斯先生⚬";
+	cont "來為妮娜小姐﹐";
+	line "頒發這條價值";
+	cont "萬的復古項";
+	line "鍊﹗";
+	line "恭喜妮娜﹗";
+	done;
+
+@org $4f, $7689:
+	init NAME_LAKI, PIC_LAKI;
+	text "你們這些沒有眼";
+	line "睛的人﹗";
+	para "我閃電隊的高貴";
+	line "女王～拉琪～";
+	para "給了各位特別的";
+	line "恩惠﹐展示了我";
+	cont "傲人的胴體﹐你";
+	line "們居然不會欣賞";
+	line "";
+	done;
+
+@org $4f, $76f5:
+	init NAME_KULU, PIC_KULU;
+	text "沒錯﹗";
+	para "這條項鍊﹐我們";
+	line "就拿走了﹗";
+	done;
+
+@org $4f, $7717:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦哦～呵呵呵﹗";
+	done;
+
+@org $4f, $7726:
+	init NAME_38, PIC_61;
+	text "糟糕﹗";
+	line "項鍊被搶走了﹗";
+	para "得儘快要回來才";
+	line "行﹗";
+	done;
+
+@org $4f, $774f:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "妮娜﹗";
+	para "我們得起快搶回";
+	line "項鍊才行啊﹗";
+	done;
+
+@org $4f, $7773:
+	init NAME_NINA, PIC_02;
+	text "好的⚬";
+	done;
+
+@org $4f, $777c:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "妮娜﹗";
+	para "閃電隊往大樓內";
+	line "部逃去了﹗";
+	done;
+
+@org $4f, $779e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "我們快追﹗";
+	done;
+
+@org $4f, $77ab:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "不行﹗";
+	line "妮娜一個人的話";
+	cont "我不放心﹗";
+	line "我也一起去﹗";
+	done;
+
+@org $4f, $77d9:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵﹗";
+	line "復古項鍊﹗";
+	cont "終於到手了﹗";
+	done;
+
+@org $4f, $77fe:
+	init NAME_KULU, PIC_KULU;
+	text "在下真是非常的";
+	line "感動～";
+	para "在下和拉琪的夢";
+	line "想﹐終於可以實";
+	cont "現了﹗";
+	done;
+
+@org $4f, $7834:
+	init NAME_LAKI, PIC_LAKI;
+	text "不過還是很生氣";
+	line "我絞盡腦汁想出";
+	cont "的樹裝﹐真的比";
+	line "不上那隻笨白兔";
+	line "嗎﹖";
+	done;
+
+@org $4f, $786c:
+	init NAME_KULU, PIC_KULU;
+	text "不～﹗";
+	line "在下認為﹐拉琪";
+	cont "的樹葉裝是最棒";
+	line "的﹗";
+	done;
+
+@org $4f, $7895:
+	init NAME_LAKI, PIC_LAKI;
+	text "不過話說回來⚬";
+	line "我們拿到了項鍊";
+	cont "現在要怎麼離開";
+	line "這裡﹖";
+	done;
+
+@org $4f, $78c5:
+	init NAME_KULU, PIC_KULU;
+	text "又是你們﹗";
+	line "看來在下要稍";
+	cont "微拿出一點實力";
+	line "了⚬";
+	done;
+
+@org $4f, $78f1:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵﹗";
+	line "我要讓那隻笨白";
+	cont "兔了解﹐才是真";
+	line "正的女王﹗";
+	done;
+
+@org $4f, $7924:
+	init NAME_LAKI, PIC_LAKI;
+	text "哼﹗";
+	line "還你就還你﹗";
+	done;
+
+@org $4f, $7935:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到了復古項鍊";
+	line "﹗";
+	done;
+
+@org $4f, $7948:
+	init NAME_KULU, PIC_KULU;
+	text "知道我們的厲害";
+	line "了吧﹖";
+	para "這次在下就饒了";
+	line "你們﹗";
+	para "下次見面時﹐就";
+	line "不留情了﹗";
+	done;
+

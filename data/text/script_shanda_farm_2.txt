@@ -1,0 +1,66 @@
+@org $12, $6550:
+	init NAME_BLANK, PIC_20;
+	text "咖啡林的咖啡怪";
+	line "消失了﹖";
+	para "這真是個好消息";
+	line "﹗";
+	cont "為了表示慶祝﹐";
+	line "我決定煮一杯超";
+	line "濃的咖啡～";
+	para "好好的興奮個夠";
+	line "﹗";
+	done;
+
+@org $12, $65ab:
+	init NAME_BLANK, PIC_12;
+	text "真是可怕⋯";
+	cont "前陣子的流星雨";
+	line "﹐擊中西邊的咖";
+	para "啡林裡的咖啡樹";
+	line "⚬";
+	para "因此變成了咖啡";
+	line "星怪﹗";
+	cont "咖啡怪有時會飄";
+	line "來一陣咖啡的香";
+	line "氣～";
+	para "聞到的人都會變";
+	line "得異常的興奮⚬";
+	done;
+
+@org $12, $6629:
+	init NAME_BLANK, PIC_1D;
+	text "好像做了一個興";
+	line "奮的夢～";
+	cont "可是又好像是真";
+	line "的⋯⋯";
+	done;
+
+@org $12, $6655:
+	init NAME_BLANK, PIC_19;
+	text "剛剛做了一個夢";
+	line "～";
+	para "夢到我這八十歲";
+	line "的老人﹐竟然是";
+	cont "個～女．超．人";
+	line "．唷﹗";
+	para "真是令人不好意";
+	line "思⋯⋯";
+	para "不過這真是個累";
+	line "人的夢⚬";
+	cont "這八十歲的身體";
+	line "﹐累得像要散了";
+	line "一樣﹗";
+	done;
+
+@org $12, $66e4:
+	init NAME_BLANK, PIC_1A;
+	text "馬克哥哥平常都";
+	cont "會說故事給我們";
+	line "聽唷﹗";
+	para "他是全世界最棒";
+	line "的人﹗";
+	cont "媽媽都說他有一";
+	line "種很特殊的氣質";
+	line "唷﹗";
+	done;
+

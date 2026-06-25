@@ -1,0 +1,31 @@
+@org $08, $49db:
+	init NAME_BLANK, PIC_15;
+	text "你是來找芳芳的";
+	line "嗎﹖";
+	para "芳～芳～﹗";
+	para "妳的朋友來找你";
+	line "唷～";
+	para "都這麼晚了﹐";
+	cont "留下來一起吃晚";
+	line "餐好嗎﹖";
+	done;
+
+@org $08, $4a2e:
+	init NAME_BLANK, PIC_18;
+	text "賽亞是一個很棒";
+	line "的天文科學家⚬";
+	para "在我們天文科學";
+	line "界﹐";
+	cont "他算是個天才吧";
+	line "﹗";
+	para "只是脾氣古怪了";
+	line "一點⋯⋯";
+	done;
+
+@org $08, $4a87:
+	init NAME_FANGFANG, PIC_1A;
+	text "你是來找我一起";
+	line "玩的嗎﹖";
+	para "好～高～興～";
+	done;
+

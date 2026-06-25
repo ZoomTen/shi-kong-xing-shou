@@ -1,0 +1,12 @@
+@org $4f, $61fa:
+	init NAME_2C, PIC_55;
+	text "啊﹖";
+	line "你們來了啊﹗";
+	line "就在這裡～";
+	done;
+
+@org $4f, $621a:
+	init NAME_2C, PIC_55;
+	text "跟我來﹗";
+	done;
+

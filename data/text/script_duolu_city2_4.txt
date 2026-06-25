@@ -1,0 +1,10 @@
+@org $12, $7885:
+	init NAME_BLANK, PIC_18;
+	text "真是奇怪﹗真是";
+	line "奇怪呀﹗";
+	cont "鐘塔的時間又動";
+	line "了﹗";
+	para "看來是我的錯覺";
+	line "⚬";
+	done;
+

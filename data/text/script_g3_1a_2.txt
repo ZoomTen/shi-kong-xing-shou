@@ -1,0 +1,20 @@
+@org $4f, $6bf9:
+	init NAME_BLANK, PIC_16;
+	text "綠色樹海又變成";
+	line "一片綠油油了⚬";
+	para "真是搞不懂怎麼";
+	line "回事⚬";
+	done;
+
+@org $4f, $6c29:
+	init NAME_BLANK, PIC_1F;
+	text "好噁心喔﹗";
+	line "在綠色樹海看到";
+	cont "一隻沒有毛的小";
+	line "白兔⋯";
+	para "小白兔沒有毛﹐";
+	line "變得好像是長耳";
+	cont "朵的老鼠﹗";
+	line "好噁心喔﹗";
+	done;
+

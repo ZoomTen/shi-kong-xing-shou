@@ -46,7 +46,7 @@ Script_06c_404f::
 Script_06c_405c:
 	end
 
-INCLUDE "data/text/bank6c_405d.asm"
+INCLUDE "data/text/script_g6_08_1.asm"
 
 G6_18_ObjectEvents:
 	object_event $04,  6, 11, wEventFlags + 21, $07, $00, $00, $00, Script_06c_40e8
@@ -1645,10 +1645,44 @@ Script_06c_506f:
 Script_06c_50fd:
 	end
 
-INCLUDE "data/text/bank6c_50fe.asm"
-INCLUDE "data/text/bank6c_5682.asm"
+INCLUDE "data/text/script_g5_0d_3.asm"
+INCLUDE "data/text/script_g6_0c_1.asm"
+INCLUDE "data/text/script_g6_22_1.asm"
+INCLUDE "data/text/script_g6_23.asm"
+INCLUDE "data/text/script_g6_24.asm"
+INCLUDE "data/text/script_g6_27_1.asm"
+INCLUDE "data/text/script_g6_2b_1.asm"
+INCLUDE "data/text/script_g6_26_1.asm"
+INCLUDE "data/text/script_g6_0c_2.asm"
+INCLUDE "data/text/script_g6_22_2.asm"
+INCLUDE "data/text/script_g6_2b_2.asm"
+INCLUDE "data/text/script_g6_27_2.asm"
+INCLUDE "data/text/script_g6_02.asm"
+INCLUDE "data/text/script_g6_26_2.asm"
 INCLUDE "data/text/bank6c_5fef.asm"
-INCLUDE "data/text/bank6c_6045.asm"
+INCLUDE "data/text/script_g6_07.asm"
+INCLUDE "data/text/script_g6_0d.asm"
+INCLUDE "data/text/script_g6_10.asm"
+INCLUDE "data/text/script_g6_14.asm"
+INCLUDE "data/text/script_g6_11.asm"
+INCLUDE "data/text/script_g6_15.asm"
+INCLUDE "data/text/script_g6_12.asm"
+INCLUDE "data/text/script_g6_16.asm"
+INCLUDE "data/text/script_g6_17.asm"
+INCLUDE "data/text/script_g6_19_1.asm"
+INCLUDE "data/text/script_g6_18_1.asm"
+INCLUDE "data/text/script_g6_1a_1.asm"
+INCLUDE "data/text/script_g6_1b_1.asm"
+INCLUDE "data/text/script_g6_19_2.asm"
+INCLUDE "data/text/script_g6_18_2.asm"
+INCLUDE "data/text/script_g6_1a_2.asm"
+INCLUDE "data/text/script_g6_1b_2.asm"
+INCLUDE "data/text/script_g6_1f.asm"
+INCLUDE "data/text/script_g6_21.asm"
+INCLUDE "data/text/script_g6_08_2.asm"
+INCLUDE "data/text/script_g6_09.asm"
+INCLUDE "data/text/script_g6_0a.asm"
+INCLUDE "data/text/script_g6_0b_1.asm"
 MovementData_06c_7913:
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc

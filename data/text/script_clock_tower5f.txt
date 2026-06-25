@@ -1,0 +1,24 @@
+@org $12, $77ea:
+	init NAME_29, PIC_52;
+	text "嘀嘀～答答～滴";
+	line "答～";
+	done;
+
+@org $12, $77ff:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "原來是星獸搞的";
+	line "鬼﹗牠讓鐘塔的";
+	cont "時間停止了﹐所";
+	line "以永遠是白天﹗";
+	para "如果沒有打倒牠";
+	line "的話﹐馬克的";
+	cont "交接典禮﹐就永";
+	line "遠無法舉行了﹗";
+	done;
+
+@org $12, $7870:
+	init NAME_29, PIC_52;
+	text "嘀嘀～答答～滴";
+	line "答～";
+	done;
+

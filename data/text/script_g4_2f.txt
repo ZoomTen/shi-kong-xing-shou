@@ -1,0 +1,8 @@
+@org $55, $5f91:
+	init NAME_BLANK, PIC_1B;
+	text "我曾看過人魚喲";
+	line "長得真是漂亮";
+	cont "可是她們會吃小";
+	line "孩﹐真是可怕⋯";
+	done;
+

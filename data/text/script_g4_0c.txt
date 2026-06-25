@@ -1,0 +1,85 @@
+@org $55, $62c8:
+	init NAME_BLANK, PIC_1E;
+	text "貝殼～挖貝殼～";
+	line "小小的身體～";
+	para "小小的家～";
+	line "啦啦啦啦～";
+	cont "挖挖挖～";
+	done;
+
+@org $55, $62ff:
+	init NAME_BLANK, PIC_1F;
+	text "瓜瓜～快回家﹗";
+	line "海邊很危險﹗";
+	cont "趕快回家﹗";
+	done;
+
+@org $55, $6326:
+	init NAME_HELEN, PIC_HELEN_0;
+	text "你們來做什麼﹖";
+	line "你們是來帶走安";
+	cont "東的嗎﹖";
+	para "我永遠都不會原";
+	line "諒你們的﹗";
+	done;
+
+@org $55, $6364:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "雖然我不懂愛情";
+	line "但是媽媽以前曾";
+	para "說過﹐愛一個人";
+	line "﹐就要給他自由";
+	cont "的空間⚬";
+	line "不是嗎﹖";
+	done;
+
+@org $55, $63b0:
+	init NAME_HELEN, PIC_HELEN_2;
+	text "住口﹗";
+	cont "你們⋯你們什麼";
+	line "都不懂﹗";
+	para "再過不久～";
+	line "那個時候到了⋯";
+	cont "我就會⋯";
+	line "我就會⋯⋯";
+	para "我決不讓安東離";
+	line "開我﹗";
+	done;
+
+@org $55, $6408:
+	init NAME_BLANK, PIC_1F;
+	text "瓜瓜﹗";
+	line "瓜～瓜瓜﹗";
+	cont "怎麼辦﹗";
+	line "怎麼辦﹗";
+	para "瓜瓜被人魚捉走";
+	line "了﹗";
+	para "誰來救救他﹗";
+	line "救命啊﹗";
+	done;
+
+@org $55, $6452:
+	init NAME_BLANK, PIC_BALLOT_4;
+	text "糟糕﹗";
+	done;
+
+@org $55, $645b:
+	init NAME_HELEN, PIC_HELEN_0;
+	text "⋯⋯⋯";
+	done;
+
+@org $55, $6463:
+	signpost;
+	text "好⋯好難過⋯⋯";
+	line "這種感覺⋯⋯";
+	cont "我死了嗎﹖";
+	line "也好⋯";
+	done;
+
+@org $55, $6489:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這裡是哪裡﹖";
+	cont "我為什麼在這裡";
+	line "﹖";
+	done;
+

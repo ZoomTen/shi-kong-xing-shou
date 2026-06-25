@@ -1,0 +1,24 @@
+@org $12, $54b8:
+	init NAME_BLANK, PIC_16;
+	text "唉～其實加爾企";
+	line "業董事長的心情";
+	para "﹐我真的可以體";
+	line "會⋯⋯";
+	para "年老時才發現﹐";
+	line "沒有人可以繼承";
+	para "他那龐大的事業";
+	line "﹐那是相當令人";
+	cont "不甘心的⚬";
+	done;
+
+@org $12, $5528:
+	init NAME_BLANK, PIC_19;
+	text "哼﹗那個加爾企";
+	line "業的董事長﹐一";
+	cont "點都不可憐呢﹗";
+	para "當初他要是沒有";
+	line "拆散那對戀人的";
+	para "話﹐就不會有這";
+	line "種結果了﹗";
+	done;
+

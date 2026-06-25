@@ -1,0 +1,5 @@
+@org $12, $7f05:
+	init NAME_19, PIC_22;
+	text "需要什麼服務嗎";
+	line "﹖";
+	line; buysellcancel; done;

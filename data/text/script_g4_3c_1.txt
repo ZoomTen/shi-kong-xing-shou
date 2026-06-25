@@ -1,0 +1,36 @@
+@org $59, $4d80:
+	init NAME_BLANK, PIC_1A;
+@org $59, $4d83:
+	text "嗚～嗚～";
+	line "";
+	db $f2, $cd; #"好"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	db $cd; #"好"
+	text "熱⋯好痛";
+	cont "";
+	db $f4, $16; #"嗚"
+	text "";
+	db $16; #"嗚"
+	text "～嗚～";
+	line "";
+	db $f2, $cd; #"好"
+	text "可怕⋯";
+	done;
+
+@org $59, $4dab:
+	init NAME_BLANK, PIC_21;
+@org $59, $4dae:
+	text "普兒昨天不曉得";
+	line "到哪兒玩了⋯";
+	cont "一回來後﹐整個";
+	line "人就";
+	db $f2, $c7; #"⋯"
+	text "";
+	db $c7; #"⋯"
+	text "";
+	para "醫生說是中毒了";
+	line "怎麼會這樣﹖";
+	done;
+

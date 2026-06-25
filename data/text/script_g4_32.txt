@@ -1,0 +1,8 @@
+@org $55, $53ae:
+	init NAME_19, PIC_22;
+	text "需要什麼服務嗎";
+	line "﹖";
+	line "";
+	buysellcancel;
+	done;
+

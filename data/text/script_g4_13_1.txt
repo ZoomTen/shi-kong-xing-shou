@@ -1,0 +1,9 @@
+@org $55, $53c5:
+	init NAME_3A, PIC_63;
+	text "這裡是星獸膠囊";
+	line "存放銀行⚬";
+	para "需要";
+	forcemap 1, "服";
+	text "務嗎﹖";
+	line "";
+	getchoice String_1cc5;

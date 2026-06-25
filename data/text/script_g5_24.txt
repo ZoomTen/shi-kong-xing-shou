@@ -1,0 +1,11 @@
+@org $66, $564a:
+	init NAME_BLANK, PIC_22;
+@org $66, $564d:
+	text "冰山島漸漸的在";
+	line "崩解﹐為了避免";
+	para "危險﹐所以停課";
+	line "一陣子⚬";
+	para "沒有小朋友的學";
+	line "校真冷清呀⚬";
+	done;
+

@@ -1,0 +1,24 @@
+@org $58, $61bc:
+	init NAME_BLANK, PIC_1A;
+@org $58, $61bf:
+	text "哈哈哈～";
+	line "村人終於回來了";
+	cont "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "一件喜事﹗";
+	line "但是又發生了另";
+	line "一件事情～";
+	para "";
+	db $f2, $88; #"其"
+	text "實也不算是什";
+	line "麼大事啦～";
+	para "";
+	db $f2, $ad; #"我"
+	text "一直在考慮一";
+	line "個人生的大問題";
+	para "我要怎麼從床底";
+	line "下出來呢﹖";
+	done;
+

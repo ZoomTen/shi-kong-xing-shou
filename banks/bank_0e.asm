@@ -1081,9 +1081,16 @@ Script_00e_4a81:
 	setbit wEventFlags + 24, $05
 	end
 
-INCLUDE "data/text/bank0e_misc.asm"
-INCLUDE "data/text/bank0e_misc3.asm"
-INCLUDE "data/text/bank0e_misc2.asm"
+INCLUDE "data/text/script_bell_village2.asm"
+INCLUDE "data/text/script_hayatos_house2.asm"
+INCLUDE "data/text/script_carpet_womans_house2_1.asm"
+INCLUDE "data/text/script_fangfangs_house2.asm"
+INCLUDE "data/text/script_carpet_womans_house2_2.asm"
+INCLUDE "data/text/script_bell_healing_center2_1.asm"
+INCLUDE "data/text/script_bell_healing_center2_2.asm"
+INCLUDE "data/text/script_bell_healing_center2_3.asm"
+INCLUDE "data/text/script_crystal_village.asm"
+INCLUDE "data/text/script_bell_healing_center2_4.asm"
 
 ; Sprite movement paths for objmove: signed (x, y) deltas per frame, $88 terminator
 ; TODO: rename Script_0e_7e69/Script_0e_7eca to descriptive path labels

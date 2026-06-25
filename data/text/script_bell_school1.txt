@@ -1,0 +1,20 @@
+@org $08, $4fa8:
+	init NAME_MR_MO, PIC_24;
+	text "早啊～巴洛特⚬";
+	para "快點進教室﹐";
+	line "就要上課了⚬";
+	para "⋯⋯啊﹖﹗";
+	para "巴洛特真是健忘";
+	line "⚬";
+	cont "教室就是上面的";
+	line "那間啊﹗";
+	done;
+
+@org $08, $5001:
+	init NAME_PRINCIPAL, PIC_16;
+	text "巴洛特﹐早安⚬";
+	para "怎麼一大早﹐";
+	cont "就露出這種心情";
+	line "不好的表情呢﹖";
+	done;
+

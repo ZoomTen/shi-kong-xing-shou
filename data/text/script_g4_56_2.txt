@@ -1,0 +1,9 @@
+@org $5a, $634a:
+	init NAME_55, PIC_18;
+@org $5a, $634d:
+	text "我終於找到我的";
+	line "懷錶了﹗";
+	cont "爸爸～媽媽﹗";
+	line "我一定會振作的";
+	done;
+

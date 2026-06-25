@@ -1,0 +1,128 @@
+@org $58, $5052:
+	init NAME_43, PIC_50;
+@org $58, $5055:
+	text "哎呀～";
+	line "";
+	db $f2, $8f; #"老"
+	text "公他們昨晚出";
+	cont "";
+	db $f2, $bc; #"去"
+	text "";
+	db $21; #"後"
+	text "﹐就沒再回";
+	line "來了～";
+	para "今晚回來一定會";
+	line "大叫的說";
+	cont "『唉～累翻了』";
+	para "我來準備一餐～";
+	line "超．級．大．餐";
+	done;
+
+@org $58, $50bb:
+	init NAME_44, PIC_4D;
+@org $58, $50be:
+	text "吱吱～吱﹗";
+	done;
+
+@org $58, $50c8:
+	init NAME_43, PIC_50;
+@org $58, $50cb:
+	text "哇～啊啊啊啊﹗";
+	line "";
+	db $f1, $8f; #"救"
+	text "命啊～";
+	cont "救命啊～";
+	done;
+
+@org $58, $50e9:
+	init NAME_43, PIC_50;
+@org $58, $50ec:
+	text "救救救救命啊﹗";
+	line "老老老老老鼠﹗";
+	para "怎麼辦～";
+	line "";
+	db $f2, $ce; #"怎"
+	text "";
+	db $cf; #"麼"
+	text "辦～";
+	cont "";
+	db $f2, $8f; #"老"
+	text "公他們要回來";
+	line "了﹐我的大餐還";
+	line "";
+	db $f2, $c8; #"沒"
+	text "有做好﹗";
+	done;
+
+@org $58, $5138:
+	init NAME_43, PIC_50;
+@org $58, $513b:
+	text "你說什麼﹖";
+	line "詭異的笛聲﹖";
+	para "那種東西﹐才不";
+	line "可怕呢﹗";
+	para "我兒子的音樂也";
+	line "很厲害﹐聽了手";
+	cont "腳都會無法控制";
+	line "但是﹐只要戴上";
+	cont "了我的絕緣耳機";
+	line "";
+	db $f1, $33; #"﹐"
+	text "就什麼都聽不";
+	line "到了⚬";
+	done;
+
+@org $58, $51c4:
+	init NAME_43, PIC_50;
+@org $58, $51c7:
+	text "真是糟糕～";
+	line "";
+	db $f2, $da; #"再"
+	text "不做飯的話﹐";
+	cont "就來不及了⚬";
+	para "我那地理科學家";
+	line "的老公就要回來";
+	cont "了﹗";
+	line "我們談談好嗎﹖";
+	para "你幫我到甲板下";
+	line "捉老鼠﹐我安心";
+	cont "的做飯⚬";
+	line "我老公及小孩就";
+	line "";
+	cont "可以幸福的回來";
+	line "吃飯⚬";
+	para "這樣是不是很完";
+	line "美呢﹖";
+	para "就用絕緣耳機當";
+	line "";
+	db $f2, $bd; #"做"
+	text "交換的條件﹗";
+	cont "就這麼說定了﹗";
+	done;
+
+@org $58, $5294:
+	init NAME_43, PIC_50;
+@org $58, $5297:
+	text "真是糟糕～";
+	line "";
+	db $f2, $da; #"再"
+	text "不做飯的話﹐";
+	cont "就來不及了⚬";
+	para "我那地理科學家";
+	line "老公就要回來了";
+	cont "我們談談好嗎﹖";
+	para "你幫我到甲板下";
+	line "捉老鼠﹐我安心";
+	cont "的做飯⚬";
+	line "我老公及小孩就";
+	cont "可以幸福的回來";
+	line "吃飯⚬";
+	para "這樣是不是很完";
+	line "美呢﹖";
+	para "就用絕緣耳機當";
+	line "";
+	db $f2, $bd; #"做"
+	text "交換的條件﹗";
+	cont "就這麼說定了﹗";
+	done;
+

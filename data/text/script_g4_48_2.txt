@@ -1,0 +1,6 @@
+@org $5c, $5025:
+	init NAME_BLANK, PIC_19;
+@org $5c, $5028:
+	text "安東～嗚嗚嗚～";
+	done;
+

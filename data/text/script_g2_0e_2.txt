@@ -1,0 +1,31 @@
+@org $12, $75f9:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "奇怪﹖典禮不是";
+	line "今天舉行嗎﹖";
+	para "怎麼一點都沒有";
+	line "舉行的跡像﹖";
+	cont "這是怎麼回事﹖";
+	done;
+
+@org $12, $763c:
+	init NAME_1B, PIC_4C;
+	text "是巴洛特啊﹗";
+	line "什麼﹖";
+	cont "交接典禮﹖";
+	line "還早啊﹗你看看";
+	line "時間﹐天都還沒";
+	cont "暗呢﹗呵呵呵～";
+	para "巴洛特真是熱心";
+	line "啊⚬";
+	done;
+
+@org $12, $7696:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這是怎麼回事﹖";
+	line "明明睡了一覺﹐";
+	cont "現在不是『明天";
+	line "』嗎﹖";
+	para "這到底是怎麼回";
+	line "事﹖";
+	done;
+

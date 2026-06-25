@@ -1,0 +1,42 @@
+@org $4f, $51ca:
+	init NAME_BLANK, PIC_13;
+	text "沒有問題的﹗";
+	line "以我女兒的姿色";
+	cont "要奪下選秀會的";
+	line "冠軍﹐絕對沒有";
+	cont "問題的⚬";
+	done;
+
+@org $4f, $5208:
+	init NAME_BLANK, PIC_13;
+	text "抱歉";
+	forcemap 2, "～";
+	line "今日掛號已";
+	forcemap 1, "滿";
+	forcemap 1, "﹗";
+	line "明";
+	forcemap 3, "日";
+	text "請早﹗";
+	done;
+
+@org $4f, $522b:
+	init NAME_BLANK, PIC_25;
+	text "真是緊張﹐選秀";
+	line "會就要到了﹗";
+	para "要是人家真的選";
+	line "上了﹐該怎麼辦";
+	cont "一想到人家就要";
+	line "成為世界明星﹐";
+	line "就好緊張喲﹗";
+	done;
+
+@org $4f, $5284:
+	init NAME_BLANK, PIC_25;
+	text "要世界級明星的";
+	line "我的簽名﹐";
+	para "是";
+	forcemap 1, "要";
+	text "預約的喲～";
+	para "媽﹗掛號了～";
+	done;
+

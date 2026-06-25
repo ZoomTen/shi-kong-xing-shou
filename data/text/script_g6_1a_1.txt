@@ -1,0 +1,25 @@
+@org $6c, $6bad:
+	init NAME_HELEN, PIC_HELEN_1;
+@org $6c, $6bb0:
+	text "絕望⋯";
+	cont "";
+	db $f2, $d7; #"就"
+	text "是如此的心情";
+	line "嗎﹖";
+	para "安東⋯";
+	line "如果我也死了的";
+	cont "話﹐就能在一起";
+	line "了嗎﹖";
+	done;
+
+@org $6c, $6bf2:
+	init NAME_LANTE, PIC_41;
+@org $6c, $6bf5:
+	text "不要碰我﹗";
+	line "我什麼都不想聽";
+	cont "";
+	db $f4, $68; #"讓"
+	text "我一個人靜一";
+	line "靜好嗎﹖";
+	done;
+

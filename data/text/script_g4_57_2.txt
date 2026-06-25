@@ -1,0 +1,42 @@
+@org $5a, $6273:
+	init NAME_54, PIC_20;
+@org $5a, $6276:
+	text "什麼﹖那傢伙想";
+	line "拿回懷錶﹖";
+	cont "做夢﹗";
+	line "這可是我的收藏";
+	line "﹗";
+	done;
+
+@org $5a, $62a5:
+	init NAME_54, PIC_20;
+@org $5a, $62a8:
+	text "無論如何﹐都想";
+	line "拿回懷錶嗎﹖";
+	para "哼﹗看來那傢伙";
+	line "沒有告訴你﹐惹";
+	cont "火我的下場﹗";
+	done;
+
+@org $5a, $62e8:
+	init NAME_54, PIC_20;
+@org $5a, $62eb:
+	text "可⋯可惡﹗";
+	line "不⋯不要再打了";
+	cont "我知道錯了⋯";
+	done;
+
+@org $5a, $6311:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $5a, $6314:
+	text "得到傳家懷錶﹗";
+	done;
+
+@org $5a, $6321:
+	init NAME_54, PIC_20;
+@org $5a, $6324:
+	text "可⋯可惡﹗";
+	line "不⋯不要再打了";
+	cont "我知道錯了⋯";
+	done;
+

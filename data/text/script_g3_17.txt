@@ -1,0 +1,47 @@
+@org $4f, $5093:
+	init NAME_BLANK, PIC_17;
+	text "我老婆就是世界";
+	line "知名的糢特兒～";
+	cont "花露露⚬";
+	para "我們家麗子就不";
+	line "得了了﹗";
+	para "她一定能在選秀";
+	line "會上﹐大放明星";
+	cont "光彩的﹗";
+	para "你說是嗎﹖";
+	line "我的親親小蜜糖";
+	done;
+
+@org $4f, $5107:
+	init NAME_BLANK, PIC_17;
+	text "我老婆就是世界";
+	line "知名的糢特兒～";
+	cont "";
+	done;
+
+@org $4f, $5127:
+	init NAME_BLANK, PIC_17;
+	text "自從敗";
+	forcemap 1, "選";
+	text "後﹐";
+	para "我老婆";
+	forcemap 2, "～";
+	para "就⋯不知跑到";
+	line "哪裡去了";
+	forcemap 2, "～";
+	para "老婆啊～嗚～";
+	done;
+
+@org $4f, $5161:
+	init NAME_35, PIC_5E;
+	text "嗯～嗯～嗯～﹖";
+	line "你是來要簽名的";
+	cont "嗎﹖";
+	para "嗯～又是一個被";
+	line "我所迷惑的小羔";
+	cont "羊⚬";
+	para "女人的身體﹐是";
+	line "最大的～武～器";
+	cont "嗯～～";
+	done;
+

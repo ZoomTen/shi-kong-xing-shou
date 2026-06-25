@@ -1,0 +1,45 @@
+@org $4f, $7a15:
+	init NAME_BLANK, PIC_15;
+	text "這不是我的珍珠";
+	line "項鍊嗎﹖";
+	cont "真是太好了﹗";
+	para "為了感謝你﹐這";
+	line "個就送給你了﹗";
+	done;
+
+@org $4f, $7a54:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到";
+	forcemap 1, "甦";
+	text "生儀";
+	forcemap 1, "﹗";
+	done;
+
+@org $4f, $7a62:
+	init NAME_BLANK, PIC_15;
+	text "真是謝謝你⚬";
+	done;
+
+@org $4f, $7a70:
+	init NAME_BLANK, PIC_15;
+	text "這不是我的珍項";
+	line "鍊嗎﹖";
+	para "我就是因為少了";
+	line "這項鍊﹐才落選";
+	cont "的⋯";
+	para "不過還是要謝謝";
+	line "你⚬";
+	para "這個就給你了﹗";
+	done;
+
+@org $4f, $7ac3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到巴利果實";
+	forcemap 1, "﹗";
+	done;
+
+@org $4f, $7ad3:
+	init NAME_BLANK, PIC_15;
+	text "真是謝謝你⚬";
+	done;
+

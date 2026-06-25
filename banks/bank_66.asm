@@ -46,7 +46,8 @@ Script_066_404f::
 
 Script_066_405c:
 	end
-INCLUDE "data/text/bank66_405d.asm"
+INCLUDE "data/text/script_g5_21.asm"
+INCLUDE "data/text/script_g5_22.asm"
 Script_066_40bb::
 	checkbit wEventFlags + 15, $01, Script_066_40c5
 	setmap $02, $00
@@ -1243,8 +1244,43 @@ Script_066_4c9e:: ; farjump2 target (bank_67)
 	setmap $07, $04
 	end
 
-INCLUDE "data/text/bank66_4ca2.asm"
-INCLUDE "data/text/bank66_4d45.asm"
+INCLUDE "data/text/script_g4_65_2.asm"
+INCLUDE "data/text/script_g5_16.asm"
+INCLUDE "data/text/script_g5_18.asm"
+INCLUDE "data/text/script_g5_1b.asm"
+INCLUDE "data/text/script_g5_07_1.asm"
+INCLUDE "data/text/script_g5_1e_1.asm"
+INCLUDE "data/text/script_g5_1f_1.asm"
+INCLUDE "data/text/script_g5_20.asm"
+INCLUDE "data/text/script_g5_10_1.asm"
+INCLUDE "data/text/script_g5_0f.asm"
+INCLUDE "data/text/script_g5_24.asm"
+INCLUDE "data/text/script_g5_25.asm"
+INCLUDE "data/text/script_g5_26_1.asm"
+INCLUDE "data/text/script_g5_11.asm"
+INCLUDE "data/text/script_g5_12_1.asm"
+INCLUDE "data/text/script_g5_13.asm"
+INCLUDE "data/text/script_g5_14.asm"
+INCLUDE "data/text/script_g5_1d.asm"
+INCLUDE "data/text/script_g5_12_2.asm"
+INCLUDE "data/text/script_g5_15_1.asm"
+INCLUDE "data/text/script_g5_02.asm"
+INCLUDE "data/text/script_g5_10_2.asm"
+INCLUDE "data/text/script_g5_26_2.asm"
+INCLUDE "data/text/script_g5_1a_1.asm"
+INCLUDE "data/text/script_g5_1f_2.asm"
+INCLUDE "data/text/script_g5_1a_2.asm"
+INCLUDE "data/text/script_g5_07_2.asm"
+INCLUDE "data/text/script_g5_1e_2.asm"
+INCLUDE "data/text/script_g5_07_3.asm"
+INCLUDE "data/text/script_g5_15_2.asm"
+INCLUDE "data/text/script_g5_07_4.asm"
+INCLUDE "data/text/script_g5_26_3.asm"
+INCLUDE "data/text/script_g5_0d_1.asm"
+INCLUDE "data/text/script_g5_0b.asm"
+INCLUDE "data/text/script_g5_0d_2.asm"
+INCLUDE "data/text/script_g5_07_5.asm"
+INCLUDE "data/text/script_g5_15_3.asm"
 MovementData_066_7cc7:
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $03, $00, $03, $00, $03, $00, $03, $00, $04, $00, $04, $00, $04, $00, $04, $00
