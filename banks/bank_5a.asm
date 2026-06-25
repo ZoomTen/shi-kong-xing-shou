@@ -54,8 +54,8 @@ Script_05a_4050:
 Script_05a_405d:
 	end
 
-INCLUDE "data/text/script_g4_5c.asm"
-INCLUDE "data/text/script_g4_5d.asm"
+INCLUDE "data/text/script_sacredtree_healing_center_5c.asm"
+INCLUDE "data/text/script_sacredtree_shop_5d.asm"
 Script_05a_40bc:
 	end
 
@@ -556,22 +556,23 @@ Script_05a_44e5:
 	setbit wEventFlags + 13, $07
 	end
 
-INCLUDE "data/text/bank5a_4521.asm"
-INCLUDE "data/text/script_g4_5b_1.asm"
-INCLUDE "data/text/script_g4_27_1.asm"
-INCLUDE "data/text/script_g4_56_1.asm"
-INCLUDE "data/text/script_g4_57_1.asm"
-INCLUDE "data/text/script_g4_58.asm"
-INCLUDE "data/text/script_g4_59_1.asm"
-INCLUDE "data/text/script_g4_28_2.asm"
-INCLUDE "data/text/script_g4_27_2.asm"
-INCLUDE "data/text/script_g4_59_2.asm"
-INCLUDE "data/text/script_g4_57_2.asm"
-INCLUDE "data/text/script_g4_56_2.asm"
-INCLUDE "data/text/script_g4_5b_2.asm"
-INCLUDE "data/text/script_g4_63.asm"
-INCLUDE "data/text/script_g4_5b_3.asm"
-INCLUDE "data/text/script_g4_28_3.asm"
+INCLUDE "data/text/script_sacredtree_village_4521.asm"
+INCLUDE "data/text/script_sacredtree_village_past_5b_1.asm"
+INCLUDE "data/text/script_sacredtree_village_27_1.asm"
+INCLUDE "data/text/script_sacredtree_village_56_1.asm"
+INCLUDE "data/text/script_sacredtree_village_57_1.asm"
+INCLUDE "data/text/script_sacredtree_village_58.asm"
+INCLUDE "data/text/script_sacredtree_village_59_1.asm"
+INCLUDE "data/text/script_sacredtree_village_past_28_2.asm"
+INCLUDE "data/text/script_sacredtree_village_27_2.asm"
+INCLUDE "data/text/script_sacredtree_village_59_2.asm"
+INCLUDE "data/text/script_sacredtree_village_57_2.asm"
+INCLUDE "data/text/script_sacredtree_village_56_2.asm"
+INCLUDE "data/text/script_sacredtree_village_past_5b_2.asm"
+INCLUDE "data/text/script_radar_station_63.asm"
+INCLUDE "data/text/script_sacredtree_village_past_5b_3.asm"
+INCLUDE "data/text/script_sacredtree_village_28_3.asm"
+INCLUDE "data/text/script_radar_station_28_3_72b0.asm"
 ; movement data ($88 terminator)
 MovementData_05a_76e8:
 	db $ff, $00, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff

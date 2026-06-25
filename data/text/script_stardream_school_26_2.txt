@@ -1,0 +1,46 @@
+@org $66, $6027:
+	init NAME_BLANK, PIC_24;
+@org $66, $602a:
+	text "米特是我最得意";
+	line "的學生⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "希望能做點什";
+	line "麼對他有幫助的";
+	cont "事情⋯⋯";
+	done;
+
+@org $66, $6063:
+	init NAME_BLANK, PIC_24;
+@org $66, $6066:
+	text "這是米特最喜歡";
+	line "的彩繪筆﹗";
+	para "他一直向我要﹐";
+	line "但是我都不給⋯";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $58; #"?"
+	text "彩繪筆跟了";
+	line "我３０年了﹐";
+	cont "希望能對米特的";
+	line "病情有所幫助⚬";
+	done;
+
+@org $66, $60cd:
+	init NAME_BALLOT, PIC_BALLOT_5;
+@org $66, $60d0:
+	text "得到了彩繪筆﹗";
+	done;
+
+@org $66, $60dd:
+	init NAME_BLANK, PIC_24;
+@org $66, $60e0:
+	text "米特是我最得意";
+	line "的學生⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "希望他的病能";
+	line "快點好起來⚬";
+	done;
+

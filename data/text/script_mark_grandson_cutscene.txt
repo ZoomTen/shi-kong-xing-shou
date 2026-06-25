@@ -1,10 +1,3 @@
-@org $12, $686f:
-	init NAME_BLANK, PIC_16;
-	text "現在是咖啡的盛";
-	line "產季節﹐得趕緊";
-	para "採收才行﹗";
-	done;
-
 @org $12, $6898:
 	init NAME_NINA, PIC_02;
 	text "哥～這是天使之";

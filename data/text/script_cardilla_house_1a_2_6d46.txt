@@ -1,0 +1,25 @@
+@org $66, $6d46:
+	init NAME_5A, PIC_18;
+@org $66, $6d49:
+	text "我曾經聽米特少";
+	line "爺說過﹐他有個";
+	cont "";
+	db $f2, $1d; #"祕"
+	text "";
+	db $1e; #"?"
+	text "的基地⚬";
+	para "他曾和他的好朋";
+	line "";
+	db $f4, $0f; #"友"
+	text "～諾克一起到";
+	para "祕密基地去冒險";
+	line "但是少爺說﹐他";
+	cont "";
+	db $f3, $b5; #"們"
+	text "的祕密不能讓";
+	line "大人知道⋯⋯";
+	para "唉～少爺是多麼";
+	line "的活潑呀﹐但是";
+	cont "現在⋯⋯";
+	done;
+

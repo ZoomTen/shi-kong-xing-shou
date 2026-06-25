@@ -1086,11 +1086,12 @@ INCLUDE "data/text/script_hayatos_house2.asm"
 INCLUDE "data/text/script_carpet_womans_house2_1.asm"
 INCLUDE "data/text/script_fangfangs_house2.asm"
 INCLUDE "data/text/script_carpet_womans_house2_2.asm"
-INCLUDE "data/text/script_bell_healing_center2_1.asm"
-INCLUDE "data/text/script_bell_healing_center2_2.asm"
-INCLUDE "data/text/script_bell_healing_center2_3.asm"
+INCLUDE "data/text/script_bell_healing_center2.asm"
+INCLUDE "data/text/script_tech_city2_blackout_54aa.asm"
+INCLUDE "data/text/script_tech_city2_blackout_5b91.asm"
+INCLUDE "data/text/script_tech_city2_drleo_5c24.asm"
 INCLUDE "data/text/script_crystal_village.asm"
-INCLUDE "data/text/script_bell_healing_center2_4.asm"
+INCLUDE "data/text/script_tech_city2_drleo_6967.asm"
 
 ; Sprite movement paths for objmove: signed (x, y) deltas per frame, $88 terminator
 ; TODO: rename Script_0e_7e69/Script_0e_7eca to descriptive path labels

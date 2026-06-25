@@ -293,7 +293,8 @@ ObjSprite_6e_43eb:
 	db $14, $07, $00, $00, $00, $00, $00, $00, $01, $00, $00
 ObjSprite_6e_43f6:
 	db $09, $06, $06, $00, $00, $00, $00, $00, $00, $00, $00
-INCLUDE "data/text/script_g6_0b_2.asm"
+INCLUDE "data/text/script_ending_epilogue.asm"
+INCLUDE "data/text/script_ending_finale.asm"
 G7_09_MapAttributes:
 	map_attr_data \
 		6, 5, \

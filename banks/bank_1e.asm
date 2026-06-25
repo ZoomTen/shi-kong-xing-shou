@@ -300,7 +300,7 @@ _SetMapLayoutPatchForItem::
 	call ApplyMapLayoutPatch
 	ret
 
-INCLUDE "data/text/bank1e_misc3.asm"
+INCLUDE "data/text/script_item_get_4212.asm"
 
 LoadItemNameByMapType::
 	ld a, l
@@ -2306,7 +2306,7 @@ PointerTable_01e_57ed:
 	dw text_1e_59b7
 	dw text_1e_59c4
 
-INCLUDE "data/text/bank1e_misc.asm"
+INCLUDE "data/text/script_menu_system.asm"
 
 PointerTable_01e_59cc:
 	dw Pointers_01e_59d2
@@ -2417,9 +2417,9 @@ Pointers_01e_59d2:
 	dw text_1e_613f
 	dw text_1e_613f
 
-INCLUDE "data/text/bank1e_misc2.asm"
+INCLUDE "data/text/script_item_descriptions_0.asm"
 
-INCLUDE "data/text/bank1e_5c3f.asm"
+INCLUDE "data/text/script_item_descriptions_5c3f.asm"
 
 Pointers_01e_614f:
 	dw text_1e_6197 
@@ -2458,7 +2458,7 @@ Pointers_01e_614f:
 	dw text_1e_63c5 
 	dw text_1e_63c5 
 	dw text_1e_63c5
-	INCLUDE "data/text/bank1e_6197.asm"
+	INCLUDE "data/text/script_equipment_descriptions.asm"
 Pointers_01e_63e5:
 	dw text_1e_6437 
 	dw text_1e_6438 
@@ -2501,7 +2501,7 @@ Pointers_01e_63e5:
 	dw text_1e_6550 
 	dw text_1e_6557 
 	dw text_1e_6560
-	INCLUDE "data/text/bank1e_6437.asm"
+	INCLUDE "data/text/script_item_names.asm"
 
 Pointers_01e_6567:
 	dw text_1e_6635
@@ -2607,7 +2607,7 @@ Pointers_01e_6567:
 	dw text_1e_6ac3
 	dw text_1e_6ac3
 	dw text_1e_6ac3
-	INCLUDE "data/text/bank1e_6635.asm"
+	INCLUDE "data/text/script_item_effects.asm"
 Func_01e_6acd:
 	ld a, [$DCE6]
 	and a
@@ -2851,7 +2851,7 @@ MonSpeciesTable_01e_6d3b:
 	db $03, $02, $03, $02, $03, $01, $01, $03, $03, $03, $02, $03, $02, $03, $03, $02
 	db $02, $02, $03, $02, $02, $03, $02, $01, $02, $02, $03, $01, $03, $02, $02, $03
 	db $02, $02, $03, $02, $02, $02, $03, $01, $03, $00, $05, $05, $05, $05, $05, $06
-INCLUDE "data/text/bank1e_6ddb.asm"
+INCLUDE "data/text/script_item_get_6ddb.asm"
 
 LoadItemNameByIndex::
 	ld a, l
@@ -2911,7 +2911,7 @@ ItemNameIndex_01e_6e24:
 	db $01, $11
 	db $00, $10
 
-INCLUDE "data/text/bank1e_misc4.asm"
+INCLUDE "data/text/script_item_found.asm"
 
 LoadShopItemName::
 	ld a, l

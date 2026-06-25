@@ -589,6 +589,7 @@ INCLUDE "data/text/script_power_plant2_f.asm"
 INCLUDE "data/text/script_tech_city_1.asm"
 INCLUDE "data/text/script_tech_shop.asm"
 INCLUDE "data/text/script_tech_healing_center.asm"
+INCLUDE "data/text/script_drleo_spaceship_cutscene.asm"
 INCLUDE "data/text/script_tech_city_2.asm"
 
 Script_00f_594f::

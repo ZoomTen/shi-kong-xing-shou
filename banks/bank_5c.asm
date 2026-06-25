@@ -19,7 +19,7 @@ Script_05c_4025:
 	textface text_5c_402d
 	farjump2 Script_066_4140
 	end
-INCLUDE "data/text/script_g4_65_1.asm"
+INCLUDE "data/text/script_airport_65_1.asm"
 Script_05c_4058:
 	setmap $10, $01
 	end
@@ -69,8 +69,8 @@ Script_05c_40b0:
 	end
 Script_05c_40bd:
 	end
-INCLUDE "data/text/script_g4_4b.asm"
-INCLUDE "data/text/script_g4_4c.asm"
+INCLUDE "data/text/script_east_fishmarket_healing_center.asm"
+INCLUDE "data/text/script_east_fishmarket_shop.asm"
 Script_05c_411c::
 	end
 
@@ -440,16 +440,16 @@ ObjSprite_5c_4520::
 ObjSprite_5c_452c::
 	object_event $56,  5,  0, 0, $00, $00, $00, $01, Script_05c_411c
 	objects_end
-INCLUDE "data/text/script_g4_48_1.asm"
-INCLUDE "data/text/script_g4_0d_4.asm"
-INCLUDE "data/text/script_g4_4d.asm"
-INCLUDE "data/text/script_g4_4e.asm"
-INCLUDE "data/text/script_g4_0a.asm"
-INCLUDE "data/text/script_g4_45.asm"
-INCLUDE "data/text/script_g4_46.asm"
-INCLUDE "data/text/script_g4_47.asm"
-INCLUDE "data/text/script_g4_48_2.asm"
-INCLUDE "data/text/script_g4_49.asm"
+INCLUDE "data/text/script_east_fishmarket_48_1.asm"
+INCLUDE "data/text/script_east_fishmarket_0d_4.asm"
+INCLUDE "data/text/script_east_fishmarket_anton_cutscene.asm"
+INCLUDE "data/text/script_east_fishmarket_4e.asm"
+INCLUDE "data/text/script_east_fishmarket_mermaid_cutscene.asm"
+INCLUDE "data/text/script_east_fishmarket_45.asm"
+INCLUDE "data/text/script_east_fishmarket_46.asm"
+INCLUDE "data/text/script_east_fishmarket_47.asm"
+INCLUDE "data/text/script_east_fishmarket_48_2.asm"
+INCLUDE "data/text/script_east_fishmarket_49.asm"
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 MovementData_05c_5053::
 	db $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe

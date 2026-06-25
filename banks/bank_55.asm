@@ -50,9 +50,9 @@ Script_055_5359:
 Script_055_5366:
 	end
 
-INCLUDE "data/text/script_g4_31.asm"
-INCLUDE "data/text/script_g4_32.asm"
-INCLUDE "data/text/script_g4_13_1.asm"
+INCLUDE "data/text/script_east_fishmarket_31.asm"
+INCLUDE "data/text/script_east_fishmarket_32.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_13_1.asm"
 
 Script_055_53ef::
 	end
@@ -777,23 +777,23 @@ Script_055_5aeb:
 	textface text_55_6288
 	end
 
-INCLUDE "data/text/script_g4_0b_1.asm"
-INCLUDE "data/text/script_g4_2c.asm"
-INCLUDE "data/text/script_g4_2d.asm"
-INCLUDE "data/text/script_g4_2e.asm"
-INCLUDE "data/text/script_g4_2f.asm"
-INCLUDE "data/text/script_g4_0b_2.asm"
-INCLUDE "data/text/script_g4_33.asm"
-INCLUDE "data/text/script_g4_0c.asm"
-INCLUDE "data/text/script_g4_0d_1.asm"
-INCLUDE "data/text/script_g4_12_1.asm"
-INCLUDE "data/text/script_g4_13_2.asm"
-INCLUDE "data/text/script_g4_0d_2.asm"
-INCLUDE "data/text/script_g4_12_2.asm"
-INCLUDE "data/text/script_g4_13_3.asm"
-INCLUDE "data/text/script_g4_11.asm"
-INCLUDE "data/text/script_g4_0e.asm"
-INCLUDE "data/text/script_g4_0d_3.asm"
+INCLUDE "data/text/script_east_fishmarket_0b_1.asm"
+INCLUDE "data/text/script_east_fishmarket_2c.asm"
+INCLUDE "data/text/script_east_fishmarket_2d.asm"
+INCLUDE "data/text/script_east_fishmarket_2e.asm"
+INCLUDE "data/text/script_east_fishmarket_2f.asm"
+INCLUDE "data/text/script_east_fishmarket_0b_2.asm"
+INCLUDE "data/text/script_east_fishmarket_33.asm"
+INCLUDE "data/text/script_east_fishmarket_0c.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_0d_1.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_12_1.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_13_2.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_0d_2.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_12_2.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_13_3.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_11.asm"
+INCLUDE "data/text/script_east_fishmarket_undersea_0e.asm"
+INCLUDE "data/text/script_east_fishmarket_0d_3.asm"
 
 MovementData_055_7c53:
 	db $fe, $00

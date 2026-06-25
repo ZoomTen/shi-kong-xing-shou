@@ -532,7 +532,8 @@ Script_04e_45b8:
 
 INCLUDE "engine/movie/airport.asm"
 INCLUDE "data/text/script_banglin_co2.asm"
-INCLUDE "data/text/script_airport.asm"
+INCLUDE "data/text/script_banglin_co_contest.asm"
+INCLUDE "data/text/script_airport_5d75.asm"
 MovementData_4e_5ff6:
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00

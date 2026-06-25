@@ -54,8 +54,8 @@ Script_058_4050::
 Script_058_405d::
 	end
 
-INCLUDE "data/text/script_g4_39.asm"
-INCLUDE "data/text/script_g4_38.asm"
+INCLUDE "data/text/script_geothermal_healing_center.asm"
+INCLUDE "data/text/script_geothermal_shop.asm"
 Script_058_40bc::
 	setmap $14, $08 ; TEMP
 	checkbit wEventFlags + 9, $04, Script_058_40da
@@ -950,22 +950,23 @@ Script_058_4a80::
 Script_058_4a84::
 	stext text_58_6503
 	end
-INCLUDE "data/text/script_g4_14_1.asm"
-INCLUDE "data/text/script_g4_36_1.asm"
-INCLUDE "data/text/script_g4_14_2.asm"
-INCLUDE "data/text/script_g4_18_1.asm"
-INCLUDE "data/text/script_g4_19.asm"
-INCLUDE "data/text/script_g4_18_2.asm"
-INCLUDE "data/text/script_g4_16.asm"
-INCLUDE "data/text/script_g4_15.asm"
-INCLUDE "data/text/script_g4_4f.asm"
-INCLUDE "data/text/script_g4_14_3.asm"
-INCLUDE "data/text/script_g4_34.asm"
-INCLUDE "data/text/script_g4_35.asm"
-INCLUDE "data/text/script_g4_36_2.asm"
-INCLUDE "data/text/script_g4_37.asm"
+INCLUDE "data/text/script_geothermal_city_14_1.asm"
+INCLUDE "data/text/script_geothermal_city_36_1.asm"
+INCLUDE "data/text/script_geothermal_city_14_2.asm"
+INCLUDE "data/text/script_traveling_ship_18_1.asm"
+INCLUDE "data/text/script_traveling_ship_19.asm"
+INCLUDE "data/text/script_traveling_ship_18_2.asm"
+INCLUDE "data/text/script_death_valley.asm"
+INCLUDE "data/text/script_life_valley.asm"
+INCLUDE "data/text/script_life_valley_rescue.asm"
+INCLUDE "data/text/script_radar_station_4f_5d71.asm"
+INCLUDE "data/text/script_geothermal_city_14_3.asm"
+INCLUDE "data/text/script_geothermal_city_34.asm"
+INCLUDE "data/text/script_geothermal_city_35.asm"
+INCLUDE "data/text/script_geothermal_city_36_2.asm"
+INCLUDE "data/text/script_geothermal_city_37.asm"
 INCLUDE "data/text/script_g4_1e.asm"
-INCLUDE "data/text/script_g4_51.asm"
+INCLUDE "data/text/script_traveling_ship_51.asm"
 	MovementData_058_665c::
 	db $ff, $ff, $fe, $fe, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $fe
 	db $fe, $ff, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $ff, $fe

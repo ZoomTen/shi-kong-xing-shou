@@ -1,0 +1,13 @@
+@org $08, $4b14:
+	init NAME_14, PIC_25;
+	text "受傷了嗎";
+	forcemap "﹖", 1;
+	para "如果受傷的話﹐";
+	cont "只要進去這個α";
+	line "射線放射器裡﹐";
+	cont "一下下～";
+	line "就會復原喲﹗";
+	para "要是受傷了﹐";
+	line "就來找妮可吧﹗";
+	done;
+

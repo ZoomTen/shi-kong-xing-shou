@@ -1,0 +1,73 @@
+@org $08, $5468:
+	init NAME_SAYA, PIC_11;
+	text "不行～﹗";
+	para "絕對不行⚬";
+	done;
+
+@org $08, $547e:
+	init NAME_MR_MO, PIC_24;
+	text "我不曉得什麼事";
+	line "﹐";
+	cont "讓先生這麼生氣";
+	line "﹗";
+	para "但出借天文館﹐";
+	cont "讓小朋友觀賞流";
+	line "星雨﹐";
+	cont "不是件壞事吧﹗";
+	done;
+
+@org $08, $54d2:
+	init NAME_SAYA, PIC_11;
+	text "不行～";
+	para "就是今晚不行﹗";
+	done;
+
+@org $08, $54eb:
+	init NAME_MR_MO, PIC_24;
+	text "⋯⋯";
+	para "真是不可理諭﹗";
+	done;
+
+@org $08, $5500:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "爸⋯你怎麼了﹗";
+	done;
+
+@org $08, $550e:
+	init NAME_SAYA, PIC_11;
+	text "巴洛特﹗﹗";
+	line "你千萬要記住﹗";
+	para "今天晚上﹗";
+	line "就是今天晚上﹗";
+	para "無論如何～";
+	cont "你都要待在家裡";
+	line "⚬";
+	para "無論聽到什麼聲";
+	line "音﹐";
+	cont "都不要出來⚬";
+	para "知道嗎﹖";
+	done;
+
+@org $08, $557d:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "怎麼回事﹖";
+	done;
+
+@org $08, $558a:
+	init NAME_SAYA, PIC_11;
+	text "⋯⋯⋯";
+	done;
+
+@org $08, $5592:
+	init NAME_MR_MO, PIC_24;
+	text "各位同學﹐";
+	line "下課了﹗";
+	done;
+
+@org $08, $55a7:
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "不行～";
+	line "要趕快去天文台";
+	para "找爸爸回家";
+	line "吃晚飯﹗";
+	done;
