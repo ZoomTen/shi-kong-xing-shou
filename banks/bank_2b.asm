@@ -1174,15 +1174,7 @@ DrawLevelUpStats:
 Tilemap_02b_4910: INCBIN "gfx/image_2b_4910.tilemap"
 AttrMap_02b_49a0: INCBIN "gfx/image_2b_49a0.gbcattr"
 
-; 攻擊 防禦 速度 法力 魔防 (Attack Defense Speed Magic Magic-Defense)
-; TEXT -> 攻擊防禦速度法力魔防
-StatNames_Text:
-	db $f0, $24, $07, $0a, $0b
-	db $f1, $70, $71
-	db $f0, $bb, $19
-	db $f1, $72
-	db $f0, $0a
-	db $ed
+INCLUDE "data/text/bank2b_4a30.asm"
 
 GetMonNextLevel:
 	ld a, [wd981]

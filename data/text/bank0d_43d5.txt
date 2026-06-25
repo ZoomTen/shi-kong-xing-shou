@@ -1,0 +1,10 @@
+@org $0d, $43d5 (Script_00d_43d5):
+	text "叫  犧";
+	line;
+	db $00; #" "
+
+@org $0d, $43dc (Script_00d_43dc):
+	text "牲勒全緊";
+	line;
+	db $00; #" "
+

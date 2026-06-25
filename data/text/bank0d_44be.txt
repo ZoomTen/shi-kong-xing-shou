@@ -1,0 +1,5 @@
+@org $0d, $44be (Script_00d_44be):
+	text "隼導靈緊";
+	line;
+	db $00; #" "
+

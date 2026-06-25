@@ -1,0 +1,25 @@
+@org $0d, $443c (Script_00d_443c):
+	text "先追全緊";
+	line;
+	db $00; #" "
+
+@org $0d, $4445 (Script_00d_4445):
+	text "順  導";
+	line;
+	db $00; #"儲"
+
+@org $0d, $444e (Script_00d_444e):
+	text "準順石緊";
+	line;
+	db $00; #" "
+
+@org $0d, $4457 (Script_00d_4457):
+	text "德諒分辱";
+	line;
+	db $00; #"但"
+
+@org $0d, $4460 (Script_00d_4460):
+	text "心交療兄";
+	line;
+	db $00; #"並"
+

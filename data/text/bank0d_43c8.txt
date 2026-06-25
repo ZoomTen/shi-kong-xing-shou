@@ -1,0 +1,5 @@
+@org $0d, $43c8 (Script_00d_43c8):
+	text "中  療";
+	line;
+	db $00; #" "
+

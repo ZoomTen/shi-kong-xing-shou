@@ -81,9 +81,9 @@ ScreenScript_39_411b:
 	bs_farcopy_vram $39, $0020, $9270, GFX_039_4000
 	bs_print_text_xy String_025_6199, $29, $3d
 	bs_draw_aa_434d $01
-	bs_load_bgpal_buf String_025_6129
+	bs_load_bgpal_buf Palette_025_6129
 	bs_fill_vram $0400, $8a80
-	bs_load_objpal_buf String_025_6169
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_7541, Tilemap_4a_73d3
 	bs_place_tile_attr $0004, Tilemap_4a_7593, Tilemap_4a_7425
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
@@ -1137,9 +1137,9 @@ ScreenScript_39_4928:
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
 	bs_print_text_xy String_025_61a3, $2f, $5b
 	bs_draw_aa_434d $0b
-	bs_load_bgpal_buf String_025_6129
+	bs_load_bgpal_buf Palette_025_6129
 	bs_fill_vram $0400, $8a80
-	bs_load_objpal_buf String_025_6169
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0b00, Tilemap_4a_774b, Attrmap_4a_77b9
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_clear_oam
@@ -1318,8 +1318,8 @@ ScreenScript_39_4ac7:
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
@@ -1512,9 +1512,9 @@ ScreenScript_39_4c38:
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
 	bs_print_text_xy String_025_61a3, $2f, $5b
 	bs_draw_aa_434d $0b
-	bs_load_bgpal_buf String_025_6129
+	bs_load_bgpal_buf Palette_025_6129
 	bs_fill_vram $0400, $8a80
-	bs_load_objpal_buf String_025_6169
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0b00, Tilemap_4a_774b, Attrmap_4a_77b9
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_clear_oam
@@ -2073,8 +2073,8 @@ ScreenScript_39_512d:
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_draw_mon_full $06, $93e0, $62, $6e
 	bs_print_hp_2
 	bs_clear_oam
@@ -2218,8 +2218,8 @@ ScreenScript_39_524c:
 	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
 	bs_vram_copy3 $0020, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_draw_r_46af
@@ -3061,8 +3061,8 @@ ScreenScript_39_58f5:
 	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
 	bs_vram_copy3 $0020, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_draw_r_46af

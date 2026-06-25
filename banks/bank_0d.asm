@@ -451,28 +451,15 @@ Pointers_00d_437a:
 ; TODO: paper-scroll scripts (F0/ED character command lists)
 Script_00d_43c2:
 	db $f0, $26, $27, $28, $ed, $01
-Script_00d_43c8:
-	db $f0, $29, $00, $00, $2a, $ed, $00
+INCLUDE "data/text/bank0d_43c8.asm"
 Script_00d_43cf:
 	db $f0, $2b, $0a, $2c, $ed, $01
-Script_00d_43d5:
-	db $f0, $2d, $00, $00, $2e, $ed, $00
-Script_00d_43dc:
-	db $f0, $2f, $30, $18, $31, $ed, $00
+INCLUDE "data/text/bank0d_43d5.asm"
 Script_00d_43e3:
 	db $f0, $19, $32, $33, $ed, $01
 Script_00d_43e9:
 	db $f0, $34, $31, $35, $ed, $01
-Script_00d_43ef:
-	db $f0, $34, $36, $18, $31, $ed, $00
-Script_00d_43f6:
-	db $f0, $37, $38, $39, $3a, $ed, $00
-Script_00d_43fd:
-	db $f0, $3b, $3c, $18, $31, $ed, $00
-Script_00d_4404:
-	db $f0, $37, $38, $39, $3d, $ed, $00
-Script_00d_440b:
-	db $f0, $3e, $3f, $18, $31, $ed, $00
+INCLUDE "data/text/bank0d_43ef.asm"
 Script_00d_4412:
 	db $f0, $40, $41, $42, $ed, $01
 Script_00d_4418:
@@ -485,38 +472,20 @@ Script_00d_442e:
 	db $f0, $26, $54, $39, $ed, $01
 Script_00d_4434:
 	db $f4, $b4, $f1, $1b, $f4, $cf, $ed, $01
-Script_00d_443c:
-	db $f0, $4a, $f4, $8d, $f0, $18, $31, $ed, $00
-Script_00d_4445:
-	db $f3, $c2, $f0, $00, $00, $f3, $d9, $ed, $00
-Script_00d_444e:
-	db $f0, $60, $f3, $c2, $f0, $3d, $31, $ed, $00
-Script_00d_4457:
-	db $f6, $89, $4f, $f0, $37, $f4, $be, $ed, $00
-Script_00d_4460:
-	db $f2, $c5, $f1, $2e, $f0, $2a, $f2, $a8, $ed, $00
+INCLUDE "data/text/bank0d_443c.asm"
 Script_00d_446a:
 	db $f1, $dc, $f3, $48, $f2, $1c, $ed, $01
 Script_00d_4472:
 	db $f2, $c4, $f0, $39, $f2, $c5, $ed, $01
-Script_00d_447a:
-	db $f0, $26, $00, $00, $f4, $bb, $ed, $00
-Script_00d_4482:
-	db $f4, $08, $f0, $00, $00, $f4, $bb, $ed, $00
-Script_00d_448b:
-	db $f1, $1f, $f0, $00, $00, $f4, $c9, $ed, $00
-Script_00d_4494:
-	db $f6, $a8, $f0, $00, $00, $f4, $4f, $ed, $00
+INCLUDE "data/text/bank0d_447a.asm"
 Script_00d_449d:
 	db $f7, $2c, $f5, $9d, $f6, $31, $ed, $01
-Script_00d_44a5:
-	db $f4, $4d, $f0, $00, $00, $f7, $49, $ed, $00
+INCLUDE "data/text/bank0d_44a5.asm"
 Script_00d_44ae:
 	db $f6, $b5, $f7, $34, $f6, $50, $ed, $01
 Script_00d_44b6:
 	db $f2, $39, $f3, $3a, $f0, $31, $ed, $01
-Script_00d_44be:
-	db $f4, $08, $f3, $d9, $f0, $68, $31, $ed, $00
+INCLUDE "data/text/bank0d_44be.asm"
 Script_00d_44c7:
 	db $f7, $40, $f1, $90, $f0, $31, $ed, $01
 PaperEmotesTiles:

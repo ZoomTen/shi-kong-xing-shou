@@ -1,0 +1,66 @@
+@org $25, $6099 (String_025_6099):
+	text "攻擊防禦速度魔防經驗值";
+	line;
+
+@org $25, $60a9 (String_025_60a9):
+	text "怪獸道具同伴圖鑑存檔";
+	line;
+
+@org $25, $60b7 (String_025_60b7):
+	text "移位";
+	db $f1, $3d; #"詳"
+	text "細";
+	line;
+
+@org $25, $60be (String_025_60be):
+	text "交換詳細";
+	line;
+	text "詳細";
+	line;
+
+@org $25, $60c8 (String_025_60c8):
+	text "使用";
+	db $f1, $41; #"丟"
+	text "棄";
+	line;
+
+@org $25, $60cf (String_025_60cf):
+	text "裝備";
+	db $f1, $41; #"丟"
+	text "棄";
+	line;
+	text "辦詳";
+	line;
+
+@org $25, $60db (String_025_60db):
+	text "是";
+	db $f1, $44; #"否"
+	line;
+
+@org $25, $60e0 (String_025_60e0):
+	text "主角１";
+	line;
+
+@org $25, $60e7 (String_025_60e7):
+	text "特技是吃飽睡﹐睡飽吃⚬       ";
+	line;
+
+@org $25, $6104 (String_025_6104):
+	text "確定要存檔嗎﹖";
+	line;
+
+@org $25, $610d (String_025_610d):
+	text "是";
+	db $f1, $44; #"否"
+	line;
+
+@org $25, $6112 (String_025_6112):
+	text "確定要覆蓋嗎﹖";
+	line;
+
+@org $25, $611b (String_025_611b):
+	text "存檔成功﹗";
+	line;
+	text "存檔失敗﹗";
+	line;
+

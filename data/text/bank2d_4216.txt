@@ -1,0 +1,513 @@
+@org $2d, $4216 (BattleText_4216):
+	text "辰虎：師兄﹐一較高下吧﹗";
+	line;
+	text "嚴龍：我不會輸給你的⚬";
+	line;
+	text "辰虎：試過才知道﹗";
+	line;
+	text "嚴龍：";
+	db $e7; #⟨name⟩
+	db $f2, $56; #"看"
+	text "你的了⚬";
+	done;
+
+@org $2d, $4257 (BattleText_4257):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $e7; #⟨name⟩
+	text "﹐去吧﹗";
+	done;
+
+@org $2d, $4263 (BattleText_4263):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $f2, $b7; #"輪"
+	text "到你了﹐";
+	db $e7; #⟨name⟩
+	db $f1, $35; #"﹗"
+	done;
+
+@org $2d, $4273 (BattleText_4273):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $e7; #⟨name⟩
+	text "﹐就";
+	db $f2, $b8; #"靠"
+	text "你了﹗";
+	done;
+
+@org $2d, $4282 (BattleText_4282):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $f2, $2b; #"加"
+	text "油吧﹐";
+	db $e7; #⟨name⟩
+	text "﹗";
+	done;
+
+@org $2d, $428e (BattleText_428e):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $f2, $56; #"看"
+	text "我的厲害⚬";
+	db $e7; #⟨name⟩
+	db $f1, $5d; #"﹖"
+	text "﹐去吧﹗";
+	done;
+
+@org $2d, $42a5 (BattleText_42a5):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $f2, $bd; #"做"
+	text "的不錯﹐";
+	db $e7; #⟨name⟩
+	db $f1, $19; #"回"
+	text "來吧﹗";
+	line;
+
+@org $2d, $42bb (BattleText_42bb):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $f2, $c0; #"算"
+	text "了～回來吧﹐";
+	db $e7; #⟨name⟩
+	db $f1, $35; #"﹗"
+	done;
+
+@org $2d, $42cf (BattleText_42cf):
+	db $e9; #⟨trainer⟩
+	text "：";
+	db $f2, $c1; #"危"
+	text "險﹗回來吧﹐";
+	db $e7; #⟨name⟩
+	db $f1, $35; #"﹗"
+	done;
+
+@org $2d, $42e1 (BattleText_42e1):
+	db $e7; #⟨name⟩
+	text "的攻擊～";
+	db $e6; #⟨e6⟩
+	db $f2, $1f; #"～"
+	text "﹗";
+	line;
+
+@org $2d, $42ef (BattleText_42ef):
+	db $e7; #⟨name⟩
+	text "出招了～";
+	db $e6; #⟨e6⟩
+	db $f2, $1f; #"～"
+	text "﹗";
+	line;
+
+@org $2d, $42fd (BattleText_42fd):
+	db $e7; #⟨name⟩
+	text "使出了密技～";
+	db $e6; #⟨e6⟩
+	db $f2, $1f; #"～"
+	text "﹗";
+	line;
+
+@org $2d, $4310 (BattleText_4310):
+	db $e7; #⟨name⟩
+	text "法力聚集了﹗";
+	db $e6; #⟨e6⟩
+	text "～﹗";
+	line;
+
+@org $2d, $4321 (BattleText_4321):
+	db $e7; #⟨name⟩
+	text "全心的攻擊～";
+	db $e6; #⟨e6⟩
+	db $f2, $1f; #"～"
+	text "﹗";
+	line;
+
+@org $2d, $4333 (BattleText_4333):
+	db $e7; #⟨name⟩
+	text "躲過了⋯";
+	line;
+
+@org $2d, $433c (BattleText_433c):
+	text "沒有命中⋯";
+	line;
+
+@org $2d, $4346 (BattleText_4346):
+	db $e7; #⟨name⟩
+	text "似乎躲開了﹗";
+	line;
+
+@org $2d, $4350 (BattleText_4350):
+	text "被";
+	db $e7; #⟨name⟩
+	db $f2, $ca; #"識"
+	text "破了﹗";
+	line;
+
+@org $2d, $435b (BattleText_435b):
+	text "對";
+	db $e7; #⟨name⟩
+	db $f2, $cb; #"起"
+	text "不了任何作用﹗";
+	line;
+
+@org $2d, $436c (BattleText_436c):
+	text "效果非常好﹗";
+	line;
+
+@org $2d, $4376 (BattleText_4376):
+	text "效果很好﹗";
+	line;
+
+@org $2d, $437f (BattleText_437f):
+	text "效果普通﹗";
+	line;
+
+@org $2d, $4389 (BattleText_4389):
+	text "效果不好﹗";
+	line;
+
+@org $2d, $4393 (BattleText_4393):
+	db $e7; #⟨name⟩
+	text "被涷傷了﹗";
+	line;
+
+@org $2d, $439e (BattleText_439e):
+	db $e7; #⟨name⟩
+	text "被灼傷了﹗";
+	line;
+
+@org $2d, $43a8 (BattleText_43a8):
+	db $e7; #⟨name⟩
+	text "中毒了﹗";
+	line;
+
+@org $2d, $43b0 (BattleText_43b0):
+	db $e7; #⟨name⟩
+	text "混亂了﹗";
+	line;
+
+@org $2d, $43b9 (BattleText_43b9):
+	db $e7; #⟨name⟩
+	text "睡著了﹗";
+	line;
+
+@org $2d, $43c2 (BattleText_43c2):
+	db $e7; #⟨name⟩
+	text "嚇了一跳﹗";
+	line;
+
+@org $2d, $43ce (BattleText_43ce):
+	db $e7; #⟨name⟩
+	text "麻痺了﹗";
+	line;
+
+@org $2d, $43d6 (BattleText_43d6):
+	db $e7; #⟨name⟩
+	text "的防禦力下降了﹗";
+	line;
+
+@org $2d, $43e4 (BattleText_43e4):
+	db $e7; #⟨name⟩
+	text "的命中率下降了﹗";
+	line;
+
+@org $2d, $43f3 (BattleText_43f3):
+	db $e7; #⟨name⟩
+	text "的速度下降了﹗";
+	line;
+
+@org $2d, $43ff (BattleText_43ff):
+	db $e7; #⟨name⟩
+	text "將攻擊反彈回去了﹗";
+	line;
+
+@org $2d, $440f (BattleText_440f):
+	db $e7; #⟨name⟩
+	text "不知怎麼回事的攻擊了自己﹗";
+	line;
+
+@org $2d, $4427 (BattleText_4427):
+	db $e7; #⟨name⟩
+	text "嚇一跳﹐而忘了攻擊﹗";
+	line;
+
+@org $2d, $4439 (BattleText_4439):
+	db $e7; #⟨name⟩
+	text "還沒有醒來⋯";
+	line;
+
+@org $2d, $4444 (BattleText_4444):
+	db $e7; #⟨name⟩
+	text "醒過來了﹗";
+	line;
+
+@org $2d, $444d (BattleText_444d):
+	text "命中了";
+	db $e7; #⟨name⟩
+	db $f1, $51; #"的"
+	text "要害﹗﹗";
+	line;
+
+@org $2d, $445c (BattleText_445c):
+	text "辰虎：師兄﹐這就是你的程度嗎﹖";
+	line;
+	text "巴洛特：可⋯可惡﹗";
+	line;
+
+@org $2d, $4487 (BattleText_4487):
+	text "戰鬥勝利了﹗";
+	line;
+
+@org $2d, $4492 (BattleText_4492):
+	text "辰虎：可惡﹗師兄﹐我會再努力的﹗";
+	line;
+
+@org $2d, $44ac (BattleText_44ac):
+	text "得到";
+	db $e1; #⟨num⟩
+	db $f1, $b5; #"點"
+	text "經驗值";
+	line;
+
+@org $2d, $44b7 (BattleText_44b7):
+	text "得到";
+	db $e1; #⟨num⟩
+	db $f1, $b4; #"元"
+	line;
+
+@org $2d, $44bf (BattleText_44bf):
+	db $e7; #⟨name⟩
+	text "升級了﹗";
+	done;
+
+@org $2d, $44c7 (BattleText_44c7):
+	db $e5; #⟨e5⟩
+	text "裝備﹐發揮效用～";
+	line;
+
+@org $2d, $44d6 (BattleText_44d6):
+	db $e7; #⟨name⟩
+	text "復活﹐並回復";
+	line;
+	text "５０％的體力⚬";
+	line;
+
+@org $2d, $44ec (BattleText_44ec):
+	text "使用～";
+	db $e8; #⟨name2⟩
+	line;
+
+@org $2d, $44f3 (BattleText_44f3):
+	text "使用道具";
+	line;
+
+@org $2d, $44f9 (BattleText_44f9):
+	text "提升";
+	db $e7; #⟨name⟩
+	text "點魔禦力";
+	line;
+
+@org $2d, $4505 (BattleText_4505):
+	db $e7; #⟨name⟩
+	text "學到了新技巧～";
+	db $e6; #⟨e6⟩
+	done;
+
+@org $2d, $4511 (BattleText_4511):
+	text "效果不錯﹗";
+	line;
+
+@org $2d, $451b (BattleText_451b):
+	text "效果還可以﹗";
+	line;
+
+@org $2d, $4525 (BattleText_4525):
+	db $e7; #⟨name⟩
+	text "忍耐中";
+	line;
+
+@org $2d, $452b (BattleText_452b):
+	db $e7; #⟨name⟩
+	text "忍無可忍";
+	line;
+
+@org $2d, $4534 (BattleText_4534):
+	db $e7; #⟨name⟩
+	text "的防禦力提昇了﹗";
+	line;
+
+@org $2d, $4543 (BattleText_4543):
+	db $e7; #⟨name⟩
+	text "的命中率提昇了﹗";
+	line;
+
+@org $2d, $4552 (BattleText_4552):
+	db $e7; #⟨name⟩
+	text "的速度提昇了﹗";
+	line;
+
+@org $2d, $455e (BattleText_455e):
+	db $e7; #⟨name⟩
+	text "的攻擊力提昇了﹗";
+	line;
+
+@org $2d, $456d (BattleText_456d):
+	db $e7; #⟨name⟩
+	text "的命中率提昇了﹗";
+	line;
+
+@org $2d, $457c (BattleText_457c):
+	db $e7; #⟨name⟩
+	text "獲得先發攻擊﹗";
+	line;
+
+@org $2d, $4588 (BattleText_4588):
+	db $e7; #⟨name⟩
+	text "被封印了一項技巧";
+	line;
+
+@org $2d, $4597 (BattleText_4597):
+	db $e7; #⟨name⟩
+	text "無法動彈";
+	line;
+
+@org $2d, $45a0 (BattleText_45a0):
+	db $e7; #⟨name⟩
+	text "血量回復了";
+	line;
+
+@org $2d, $45aa (BattleText_45aa):
+	db $e7; #⟨name⟩
+	text "迴避率提昇了";
+	line;
+
+@org $2d, $45b5 (BattleText_45b5):
+	db $e7; #⟨name⟩
+	text "嚇跑了";
+	line;
+
+@org $2d, $45bc (BattleText_45bc):
+	db $e7; #⟨name⟩
+	text "提昇所有能力";
+	line;
+
+@org $2d, $45c8 (BattleText_45c8):
+	db $e7; #⟨name⟩
+	text "攻擊力下降";
+	line;
+
+@org $2d, $45d1 (BattleText_45d1):
+	db $e7; #⟨name⟩
+	text "命中要害機率提昇";
+	line;
+
+@org $2d, $45e0 (BattleText_45e0):
+	db $e7; #⟨name⟩
+	text "力量儲存中";
+	line;
+
+@org $2d, $45ec (BattleText_45ec):
+	db $e7; #⟨name⟩
+	text "鑽入地底";
+	line;
+
+@org $2d, $45f5 (BattleText_45f5):
+	db $e7; #⟨name⟩
+	text "被種植寄魂種子";
+	line;
+
+@org $2d, $4602 (BattleText_4602):
+	db $e7; #⟨name⟩
+	text "變成豬了";
+	line;
+
+@org $2d, $460b (BattleText_460b):
+	db $e7; #⟨name⟩
+	text "使用替身";
+	line;
+
+@org $2d, $4613 (BattleText_4613):
+	db $e7; #⟨name⟩
+	text "飛上天空";
+	line;
+
+@org $2d, $461d (BattleText_461d):
+	db $e7; #⟨name⟩
+	text "模仿對手技巧";
+	line;
+
+@org $2d, $4629 (BattleText_4629):
+	text "雙方狀態恢復了";
+	line;
+
+@org $2d, $4635 (BattleText_4635):
+	db $e7; #⟨name⟩
+	text "燙傷‧凍傷‧麻痺‧混亂";
+	line;
+
+@org $2d, $464b (BattleText_464b):
+	text "逃跑成功";
+	line;
+
+@org $2d, $4651 (BattleText_4651):
+	text "逃跑失敗";
+	line;
+
+@org $2d, $4657 (BattleText_4657):
+	db $e7; #⟨name⟩
+	text "被收服了";
+	line;
+
+@org $2d, $4660 (BattleText_4660):
+	text "收服失敗了";
+	line;
+
+@org $2d, $4668 (BattleText_4668):
+	db $e7; #⟨name⟩
+	text "已送回託管盒中";
+	line;
+
+@org $2d, $4676 (BattleText_4676):
+	db $e7; #⟨name⟩
+	text "的迴避率下降了﹗";
+	line;
+
+@org $2d, $4683 (BattleText_4683):
+	text "發現了";
+	db $e7; #⟨name⟩
+	line;
+
+@org $2d, $468b (BattleText_468b):
+	db $e7; #⟨name⟩
+	text "出現了";
+	line;
+
+@org $2d, $4693 (BattleText_4693):
+	text "戰鬥失敗";
+	line;
+
+@org $2d, $469b (BattleText_469b):
+	text "錢被偷走了";
+	line;
+
+@org $2d, $46a4 (BattleText_46a4):
+	text "變成";
+	db $e7; #⟨name⟩
+	db $f1, $64; #"了"
+	line;
+
+@org $2d, $46ab (BattleText_46ab):
+	text "抱歉﹗你的盒子已滿﹗";
+	line;
+
+@org $2d, $46bd (BattleText_46bd):
+	text "寄魂種子﹐發揮效用～";
+	line;
+	line;
+
+@org $2d, $46cf (BattleText_46cf):
+	text "謎";
+	db $f1, $51; #"的"
+	text "力量儲存中～";
+	line;
+

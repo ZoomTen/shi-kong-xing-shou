@@ -224,8 +224,8 @@ Script_024_4181:
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
@@ -278,8 +278,8 @@ Script_024_420a:
 	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
 	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
 	bs_print_menu_pg_a $01
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
@@ -296,8 +296,8 @@ Script_024_420a:
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
 	bs_clear_vram_2
 	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
@@ -329,8 +329,8 @@ Script_024_42cb:
 	bs_reset_scroll_2
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
@@ -378,8 +378,8 @@ Script_024_4355:
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_load_mon_bgpal $06
 	bs_load_mon_pic $93e0
@@ -412,8 +412,8 @@ Script_024_43af:
 	bs_vram_copy3 $0020, $9380, BattleUIGFX_4e0a
 	bs_vram_copy3 $0020, $93a0, BattleUIGFX_4e6a
 	bs_vram_copy3 $0320, $9400, BattleUIGFX_571a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_load_mon_bgpal_2 $06
 	bs_load_mon_pic_cond $9140
 	bs_place_tile_attr $0100, Tilemap_4a_681f, Attrmap_4a_6861
@@ -454,8 +454,8 @@ Script_024_4421:
 	bs_vram_copy3 $0100, $9500, BattleUIGFX_5e4a
 	bs_vram_copy3 $0100, $9600, BattleUIGFX_5e4a
 	bs_vram_copy3 $0100, $9700, BattleUIGFX_5e4a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_6c61, Attrmap_4a_6dcb
 	bs_draw_8_party
 	bs_clear_oam
@@ -476,8 +476,8 @@ Script_024_449d:
 	bs_vram_copy3 $0140, $9140, BattleUIGFX_55da
 	bs_vram_copy3 $0400, $9280, BattleUIGFX_5a3a
 	bs_vram_copy3 $0010, $97c0, BattleUIGFX_5e3a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_draw_text_50ad
 	bs_print_text_xy String_025_6104, $80, $9c
 	bs_print_text_xy String_025_610d, $68, $70
@@ -673,8 +673,8 @@ Script_024_46cb:
 	bs_lcd_off_loadpal
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
@@ -688,8 +688,8 @@ Script_024_46cb:
 Script_024_46f5:
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_load_bgpal_buf String_025_6129
-	bs_load_objpal_buf String_025_6169
+	bs_load_bgpal_buf Palette_025_6129
+	bs_load_objpal_buf Palette_025_6169
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
