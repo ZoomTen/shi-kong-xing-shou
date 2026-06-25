@@ -303,12 +303,6 @@ SECTION "bank71", ROMX
 INCLUDE "engine/movie/credits.asm"
 INCLUDE "engine/movie/the_end.asm"
 
-SECTION "bank74", ROMX
-INCLUDE "banks/bank_74.asm"
-
-SECTION "bank75", ROMX
-INCLUDE "banks/bank_75.asm"
-
 SECTION "bank76", ROMX
 INCLUDE "banks/bank_76.asm"
 

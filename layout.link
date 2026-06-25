@@ -264,9 +264,9 @@ ROMX $70
 ROMX $71
 	"bank71"
 ROMX $74
-	"bank74"
+	"Multicart Home"
 ROMX $75
-	"bank75"
+	"Multicart bank01"
 ROMX $76
 	"bank76"
 ROMX $77

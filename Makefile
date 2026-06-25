@@ -22,6 +22,7 @@ SOURCES := \
 	bank_nums.asm \
 	data/monsters/pics.asm \
 	data/gfx.asm \
+	multicart.asm \
 	audio.asm
 
 OBJS := $(SOURCES:%.asm=%.o)
