@@ -5,11 +5,11 @@ Script_00f_4001:
 	end
 
 Script_00f_4002:
-	setmap $0c, $00
+	setmap MAP_TECH_CITY, $00
 	end
 
 Script_00f_4006:
-	setmap $0c, $02
+	setmap MAP_TECH_CITY, $02
 	end
 
 Script_00f_400a:
@@ -21,7 +21,7 @@ Script_00f_4015:
 	end
 
 Script_00f_4016:
-	setmap $0c, $01
+	setmap MAP_TECH_CITY, $01
 	end
 
 ObjectEvents_00f_401a:
@@ -108,7 +108,7 @@ Script_00f_40ef:
 	stext text_0f_4a46
 	stext text_0f_4a5a
 	face FACE_LEFT
-	setmap $1d, $02
+	setmap MAP_POWER_PLANT_OUTSIDE, $02
 	spriteface $03, $02
 	spriteface $02, $03
 	spritewalk $03, $03
@@ -143,7 +143,7 @@ Script_00f_40ef:
 	end
 
 Script_00f_415c:
-	setmap $1d, $03
+	setmap MAP_POWER_PLANT_OUTSIDE, $03
 	end
 
 PowerPlant1F_ObjectEvents:
@@ -230,7 +230,7 @@ Script_00f_421c:
 	setbit wEventFlags + 2, $06
 	setmappredef MAPPREDEF_07
 	face FACE_DOWN
-	setmap $0c, $01
+	setmap MAP_TECH_CITY, $01
 	end
 
 Script_00f_42a3:
@@ -397,7 +397,7 @@ Script_00f_4427:
 	face FACE_UP
 	setplayerchar $00
 	scr_62 $01, $00
-	setmap $12, $01
+	setmap MAP_G0_12, $01
 	emote $02, $00
 	delay $02, $20
 	stext text_0f_4f94
@@ -528,7 +528,7 @@ Script_00f_4507:
 	end
 
 Script_00f_458e:
-	setmap $0c, $08
+	setmap MAP_TECH_CITY, $08
 	end
 
 Script_00f_4592:
@@ -545,11 +545,11 @@ Script_00f_4592:
 
 Script_00f_45af:
 	checkbit wEventFlags + 3, $01, Script_00f_45b9
-	setmap $12, $00
+	setmap MAP_G0_12, $00
 	end
 
 Script_00f_45b9:
-	setmap $12, $02
+	setmap MAP_G0_12, $02
 	end
 
 Script_00f_45bd:

@@ -2,7 +2,7 @@ Script_00e_4000:
 	end
 
 Script_00e_4001:
-	setmap $2d, $01
+	setmap MAP_TECH_CITY_BLACKOUT, $01
 	end
 
 Script_00e_4005::
@@ -48,7 +48,7 @@ Script_00e_404a:
 Script_00e_4059:
 	setfollower $02
 	face FACE_LEFT
-	setmap $01, $08
+	setmap MAP_BELL_VILLAGE_2, $08
 	face FACE_RIGHT
 	stext text_0e_4cdd
 	emote  0, EMOTE_EXCLAMATION
@@ -88,11 +88,11 @@ Script_00e_409f:
 	end
 
 Script_00e_40b5:
-	setmap $28, $00
+	setmap MAP_R01_2, $00
 	end
 
 Script_00e_40b9:
-	setmap $2d, $00
+	setmap MAP_TECH_CITY_BLACKOUT, $00
 	emote $00, $00
 	delay $03, $20
 	stext text_0e_54aa
@@ -109,26 +109,26 @@ Script_00e_40cd:
 
 Script_00e_40d2:
 	checkbit wEventFlags, $06, Script_00e_40dc
-	setmap $2d, $08
+	setmap MAP_TECH_CITY_BLACKOUT, $08
 	end
 
 Script_00e_40dc:
 	checkbit wEventFlags, $07, Script_00e_40e6
-	setmap $2d, $0d
+	setmap MAP_TECH_CITY_BLACKOUT, $0d
 	end
 
 Script_00e_40e6:
 	checkbit wEventFlags + 1, $04, Script_00e_40f0
-	setmap $2d, $08
+	setmap MAP_TECH_CITY_BLACKOUT, $08
 	end
 
 Script_00e_40f0:
 	checkbit wEventFlags + 1, $05, Script_00e_40fa
-	setmap $2d, $0e
+	setmap MAP_TECH_CITY_BLACKOUT, $0e
 	end
 
 Script_00e_40fa:
-	setmap $2d, $08
+	setmap MAP_TECH_CITY_BLACKOUT, $08
 	end
 
 Script_00e_40fe:
@@ -150,7 +150,7 @@ Script_00e_4105:
 Script_00e_411f:
 	stext text_0e_66b8
 	stext text_0e_66eb
-	setmap $22, $00
+	setmap MAP_HIDEOUT_2, $00
 	end
 
 Script_00e_4129:
@@ -306,7 +306,7 @@ ObjectEvents_00e_426b:
 
 Script_00e_42da:
 	setplayerchar $00
-	setmap $2d, $0b
+	setmap MAP_TECH_CITY_BLACKOUT, $0b
 	face FACE_UP
 	spriteface $04, $01
 	spriteface $05, $01
@@ -353,7 +353,7 @@ Script_00e_431c:
 	setattach $02, $03, $00, $f0
 	objmove $03, Script_0e_7e69
 	setbit wEventFlags + 1, $05
-	setmap $2d, $0c
+	setmap MAP_TECH_CITY_BLACKOUT, $0c
 	end
 
 ObjectEvents_00e_4366:
@@ -438,7 +438,7 @@ Script_00e_447c:
 	end
 
 Script_00e_4480:
-	setmap $2d, $0b
+	setmap MAP_TECH_CITY_BLACKOUT, $0b
 	face FACE_UP
 	spriteface $04, $01
 	spriteface $05, $01
@@ -478,7 +478,7 @@ Script_00e_4480:
 	setattach $02, $03, $00, $f0
 	objmove $03, Script_0e_7e69
 	setbit wEventFlags, $07
-	setmap $2d, $0c
+	setmap MAP_TECH_CITY_BLACKOUT, $0c
 	end
 
 ObjectEvents_00e_44ff:
@@ -660,11 +660,11 @@ ObjectEvents_00e_469f:
 
 Script_00e_46b6:
 	checkbit wEventFlags + 1, $00, Script_00e_46c0
-	setmap $33, $00
+	setmap MAP_G1_33, $00
 	end
 
 Script_00e_46c0:
-	setmap $33, $01
+	setmap MAP_G1_33, $01
 	end
 
 Script_00e_46c4:
@@ -969,7 +969,7 @@ Script_00e_49ab:
 	end
 
 Script_00e_49c1:
-	setmap $23, $00
+	setmap MAP_CRYSTAL_MINES_P1_2, $00
 	end
 
 ObjectEvents_00e_49c5:

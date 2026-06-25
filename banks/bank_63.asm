@@ -1,43 +1,43 @@
 Group05_Maps::
 	dw G5_00_Header
 	dw G5_01_Header
-	dw G5_02_Header
+	dw PermafrostGarden_Header
 	dw G5_03_Header
 	dw G5_04_Header
 	dw G5_05_Header
 	dw G5_06_Header
-	dw G5_07_Header
+	dw StardreamCity_07_Header
 	dw G5_08_Header
 	dw G5_09_Header
 	dw G5_0A_Header
-	dw G5_0B_Header
+	dw StardreamMachineRoom_0b_Header
 	dw G5_0C_Header
-	dw G5_0D_Header
+	dw StardreamMachineRoom_0d_Header
 	dw G5_0E_Header
-	dw G5_0F_Header
-	dw G5_10_Header
-	dw G5_11_Header
-	dw G5_12_Header
-	dw G5_13_Header
-	dw G5_14_Header
-	dw G5_15_Header
-	dw G5_16_Header
+	dw StardreamCity_0f_Header
+	dw StardreamFlorist_Header
+	dw StardreamHospital_11_Header
+	dw StardreamHospital_12_Header
+	dw StardreamHospital_13_Header
+	dw StardreamHospital_14_Header
+	dw StardreamHospital_15_Header
+	dw StardreamAirship_16_Header
 	dw G5_17_Header
-	dw G5_18_Header
+	dw StardreamAirship_18_Header
 	dw G5_19_Header
-	dw G5_1A_Header
-	dw G5_1B_Header
+	dw PresaleHouse_1a_Header
+	dw PresaleHouseOutside_Header
 	dw G5_1C_Header
-	dw G5_1D_Header
-	dw G5_1E_Header
-	dw G5_1F_Header
-	dw G5_20_Header
-	dw G5_21_Header
-	dw G5_22_Header
+	dw CardillaHouse_Header
+	dw StardreamCity_1e_Header
+	dw PresaleHouse_1f_Header
+	dw StardreamCity_20_Header
+	dw StardreamHealingCenter_Header
+	dw StardreamShop_Header
 	dw G5_23_Header
-	dw G5_24_Header
-	dw G5_25_Header
-	dw G5_26_Header
+	dw StardreamSchool_24_Header
+	dw StardreamSchool_25_Header
+	dw StardreamSchool_26_Header
 	dw G5_27_Header
 
 G5_00_Header::
@@ -46,10 +46,10 @@ G5_00_Header::
 	warp 0, 0, $3038
 	end_map
 
-	map  G5_02
+	map  PermafrostGarden
 	warp 5, 5, $6058
-	warp 6, 8, $b0b0, G5_02_ObjectEvents2
-	warp 5, 5, $6058, G5_02_ObjectEvents3
+	warp 6, 8, $b0b0, PermafrostGarden_ObjectEvents2
+	warp 5, 5, $6058, PermafrostGarden_ObjectEvents3
 	end_map
 
 	map  G5_03
@@ -91,7 +91,7 @@ G5_00_Header::
 	warp 3, 5, $7058
 	end_map
 
-	map  G5_07
+	map  StardreamCity_07
 	warp 2, 0, $2058
 	warp 5, 0, $6048
 	warp 8, 1, $5058
@@ -125,7 +125,7 @@ G5_00_Header::
 	warp 3, 3, $5048
 	end_map
 
-	map  G5_0B
+	map  StardreamMachineRoom_0b
 	warp 5, 7, $8028
 	warp 5, 0, $5048
 	end_map
@@ -135,54 +135,54 @@ G5_00_Header::
 	warp 0, 0, $2028
 	end_map
 
-	map  G5_0D
+	map  StardreamMachineRoom_0d
 	warp 0, 7, $9048
 	warp 0, 0, $20b0
-	warp 0, 7, $9048, G5_0D_ObjectEvents2
+	warp 0, 7, $9048, StardreamMachineRoom_0d_ObjectEvents2
 	warp 0, 0, $3058
 	end_map
 
-	map  G5_0E
+	map G5_0E, BaalCapitalProfessor_2b_MapAttributes
 	warp 0, 0, $9058
 	warp 0, 0, $4058
 	warp 0, 0, $5068, G5_0E_ObjectEvents2
 	end_map
 
-	map  G5_0F
+	map  StardreamCity_0f
 	warp 0, 0, $8058
 	end_map
 
-	map  G5_10
+	map  StardreamFlorist
 	warp 0, 0, $8058
 	end_map
 
-	map  G5_11
+	map  StardreamHospital_11
 	warp 0, 0, $8058
 	warp 0, 0, $3018
 	end_map
 
-	map  G5_12
+	map  StardreamHospital_12
 	warp 5, 0, $8088
 	warp 5, 0, $5048
 	warp 2, 0, $5058
 	warp 0, 0, $5048
 	end_map
 
-	map  G5_13
+	map  StardreamHospital_13
 	warp 0, 0, $8038
 	end_map
 
-	map  G5_14
+	map  StardreamHospital_14
 	warp 0, 0, $8058
 	end_map
 
-	map  G5_15
+	map  StardreamHospital_15
 	warp 0, 0, $8078
-	warp 0, 0, $5068, G5_15_ObjectEvents2
-	warp 0, 0, $8078, G5_15_ObjectEvents3
+	warp 0, 0, $5068, StardreamHospital_15_ObjectEvents2
+	warp 0, 0, $8078, StardreamHospital_15_ObjectEvents3
 	end_map
 
-	map  G5_16
+	map  StardreamAirship_16
 	warp 0, 0, $6038
 	warp 11, 0, $6068
 	end_map
@@ -192,7 +192,7 @@ G5_00_Header::
 	warp 0, 0, $5028
 	end_map
 
-	map  G5_18
+	map  StardreamAirship_18
 	warp 0, 0, $7068
 	end_map
 
@@ -201,13 +201,13 @@ G5_00_Header::
 	warp 0, 0, $7058
 	end_map
 
-	map  G5_1A
+	map  PresaleHouse_1a
 	warp 0, 0, $9058
-	warp 0, 0, $8058, G5_1A_ObjectEvents2
-	warp 0, 0, $b0b0, G5_1A_ObjectEvents2
+	warp 0, 0, $8058, PresaleHouse_1a_ObjectEvents2
+	warp 0, 0, $b0b0, PresaleHouse_1a_ObjectEvents2
 	end_map
 
-	map  G5_1B
+	map  PresaleHouseOutside
 	warp 0, 0, $5018
 	warp 0, 0, $2058
 	warp 7, 0, $4088
@@ -218,50 +218,50 @@ G5_00_Header::
 	warp 1, 7, $7078
 	end_map
 
-	map  G5_1D
+	map CardillaHouse, BallotsHouse1_MapAttributes
 	warp 0, 0, $8038
 	warp 0, 0, $6068
-	warp 0, 0, $7058, G5_1D_ObjectEvents2
-	warp 0, 0, $5058, G5_1D_ObjectEvents3
+	warp 0, 0, $7058, CardillaHouse_ObjectEvents2
+	warp 0, 0, $5058, CardillaHouse_ObjectEvents3
 	end_map
 
-	map  G5_1E
+	map StardreamCity_1e, HayatosHouse1_MapAttributes
 	warp 0, 0, $8078
 	end_map
 
-	map  G5_1F
+	map PresaleHouse_1f, CarpetWomansHouse1_MapAttributes
 	warp 0, 0, $8038
-	warp 0, 0, $8038, G5_1F_ObjectEvents2
+	warp 0, 0, $8038, PresaleHouse_1f_ObjectEvents2
 	end_map
 
-	map  G5_20
+	map StardreamCity_20, FangfangsHouse1_MapAttributes
 	warp 0, 0, $8078
 	end_map
 
-	map  G5_21
+	map StardreamHealingCenter, BellHealingCenter1_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
-	map  G5_22
+	map StardreamShop, EastFishmarket_32_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
-	map  G5_23
+	map G5_23, BellSchoolOutside1_MapAttributes
 	warp 0, 5, $9048
 	warp 0, 0, $6058
 	end_map
 
-	map  G5_24
+	map StardreamSchool_24, BellSchool1_MapAttributes
 	warp 0, 5, $8058
 	warp 0, 0, $6028
 	warp 0, 5, $5028
 	end_map
 
-	map  G5_25
+	map StardreamSchool_25, BellSchoolClassroom_MapAttributes
 	warp 1, 0, $4078
 	end_map
 
-	map  G5_26
+	map StardreamSchool_26, BellSchoolClassroom_MapAttributes
 	warp 1, 0, $4078
 	end_map
 
@@ -277,7 +277,7 @@ G5_01_MapEvents:
 	script_event 3, 2, $00, Script_066_40bb
 	signpost_event 31, 28, $07
 	events_end
-G5_02_MapEvents:
+PermafrostGarden_MapEvents:
 	warp_event 15, 15, $01, $01
 	events_end
 G5_03_MapEvents:
@@ -315,7 +315,7 @@ G5_06_MapEvents:
 	warp_event 14, 11, $06, $03
 	warp_event 11, 16, $05, $02
 	events_end
-G5_07_MapEvents:
+StardreamCity_07_MapEvents:
 	warp_event ABSOLUTE, 0, $23, $00
 	script_event 14, 4, $00, Script_066_4292
 	warp_event 21, 5, $21, $00
@@ -351,14 +351,14 @@ G5_0A_MapEvents:
 	warp_event 2, 22, $09, $01
 	warp_event 10, 10, $0b, $00
 	events_end
-G5_0B_MapEvents:
+StardreamMachineRoom_0b_MapEvents:
 	warp_event 12, 21, $0a, $01
 	events_end
 G5_0C_MapEvents:
 	warp_event 22, 18, $09, $02
 	script_event 2, 1, $00, Script_066_4bb1
 	events_end
-G5_0D_MapEvents:
+StardreamMachineRoom_0d_MapEvents:
 	warp_event 4, 22, $0c, $01
 	events_end
 G5_0E_MapEvents:
@@ -366,43 +366,43 @@ G5_0E_MapEvents:
 	warp_event 5, 2, $08, $00
 	event_07 8, 4, $01
 	events_end
-G5_0F_MapEvents:
+StardreamCity_0f_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $03
 	event_04 4, 6, $00, Script_066_458e
 	event_04 2, 4, $00, Script_066_4586
 	event_07 10, 2, $02
 	events_end
-G5_10_MapEvents:
+StardreamFlorist_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $06
 	event_04 8, 4, $00, Script_066_454d
 	event_04 6, 2, $00, Script_066_4545
 	event_07 1, 2, $03
 	events_end
-G5_11_MapEvents:
+StardreamHospital_11_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $0b
 	warp_event 1, 2, $12, $00
 	event_04 4, 6, $00, Script_066_45c6
 	event_07 6, 2, $04
 	events_end
-G5_12_MapEvents:
+StardreamHospital_12_MapEvents:
 	warp_event 18, 7, $11, $01
 	warp_event 14, 3, $13, $00
 	warp_event 9, 3, $14, $00
 	script_event 4, 3, $00, Script_066_4aca
 	events_end
-G5_13_MapEvents:
+StardreamHospital_13_MapEvents:
 	warp_event ABSOLUTE, 8, $12, $01
 	event_07 4, 3, $05
 	events_end
-G5_14_MapEvents:
+StardreamHospital_14_MapEvents:
 	warp_event ABSOLUTE, 8, $12, $02
 	event_07 2, 3, $06
 	events_end
-G5_15_MapEvents:
+StardreamHospital_15_MapEvents:
 	warp_event ABSOLUTE, 8, $12, $03
 	event_07 3, 3, $07
 	events_end
-G5_16_MapEvents:
+StardreamAirship_16_MapEvents:
 	warp_event 28, 5, $17, $00
 	event_04 16, 5, $00, Script_066_41d1
 	event_04 20, 5, $00, Script_066_41df
@@ -411,7 +411,7 @@ G5_17_MapEvents:
 	warp_event 33, 3, $16, $01
 	warp_event 2, 4, $18, $00
 	events_end
-G5_18_MapEvents:
+StardreamAirship_18_MapEvents:
 	warp_event 7, 6, $17, $01
 	events_end
 G5_19_MapEvents:
@@ -419,11 +419,11 @@ G5_19_MapEvents:
 	script_event 5, 5, $00, Script_066_47cd
 	event_04 3, 8, $00, Script_066_4204
 	events_end
-G5_1A_MapEvents:
+PresaleHouse_1a_MapEvents:
 	warp_event ABSOLUTE, 8, $19, $01
 	event_07 10, 2, $0f
 	events_end
-G5_1B_MapEvents:
+PresaleHouseOutside_MapEvents:
 	warp_event 0, ABSOLUTE, $07, $05
 	warp_event ABSOLUTE, 0, $19, $00
 	events_end
@@ -432,29 +432,29 @@ G5_1C_MapEvents:
 	warp_event 9, 19, $01, $00
 	signpost_event 7, 21, $06
 	events_end
-G5_1D_MapEvents:
+CardillaHouse_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $0c
 	event_04 5, 3, $00, Script_066_42cf
 	event_07 7, 3, $08
 	events_end
-G5_1E_MapEvents:
+StardreamCity_1e_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $07
 	event_07 8, 3, $09
 	events_end
-G5_1F_MapEvents:
+PresaleHouse_1f_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $01
 	event_07 9, 3, $0a
 	events_end
-G5_20_MapEvents:
+StardreamCity_20_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $08
 	event_07 3, 3, $0b
 	events_end
-G5_21_MapEvents:
+StardreamHealingCenter_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $02
 	event_04 4, 4, $00, Script_066_4041
 	event_04 8, 4, $00, Script_066_404f
 	events_end
-G5_22_MapEvents:
+StardreamShop_MapEvents:
 	warp_event ABSOLUTE, 8, $07, $09
 	event_04 4, 3, $00, Script_066_4010
 	events_end
@@ -462,7 +462,7 @@ G5_23_MapEvents:
 	warp_event ABSOLUTE, 19, $07, $00
 	warp_event 5, 4, $24, $00
 	events_end
-G5_24_MapEvents:
+StardreamSchool_24_MapEvents:
 	warp_event ABSOLUTE, 18, $23, $01
 	warp_event 1, 5, $25, $00
 	warp_event 1, 6, $25, $00
@@ -470,11 +470,11 @@ G5_24_MapEvents:
 	warp_event 1, 15, $26, $00
 	event_07 7, 2, $0c
 	events_end
-G5_25_MapEvents:
+StardreamSchool_25_MapEvents:
 	warp_event 10, ABSOLUTE, $24, $01
 	event_07 2, 3, $0e
 	events_end
-G5_26_MapEvents:
+StardreamSchool_26_MapEvents:
 	warp_event 10, ABSOLUTE, $24, $02
 	event_07 9, 3, $0d
 	events_end

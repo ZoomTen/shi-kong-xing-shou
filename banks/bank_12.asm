@@ -285,7 +285,7 @@ ClockTower5f_ObjectEvents2:
 G2_0F_ObjectEvents:
 G2_10_ObjectEvents:
 G2_11_ObjectEvents:
-G2_16_ObjectEvents4:
+MarkNinaIntro_ObjectEvents4:
 R03_ObjectEvents:
 R04_ObjectEvents:
 G2_1E_ObjectEvents:
@@ -316,27 +316,27 @@ DuoluCity2_ObjectEvents:
 	object_event $19,  9, 20, 0, $00, $00, $08, $03, Script_012_469e
 	objects_end
 
-G2_1B_ObjectEvents:
+DuoluCity_1b_ObjectEvents:
 	object_event $16,  4,  6, 0, $00, $00, $09, $00, Script_012_46a2
 	object_event $19,  8,  6, 0, $00, $00, $06, $01, Script_012_46a6
 	objects_end
 
-G2_1C_ObjectEvents:
+DuoluCity_1c_ObjectEvents:
 	object_event $1b,  5,  4, 0, $00, $00, $06, $00, Script_012_46aa
 	object_event $1a,  9,  6, 0, $00, $00, $07, $01, Script_012_46ae
 	objects_end
 
-G2_1D_ObjectEvents:
+DuoluCity_1d_ObjectEvents:
 	object_event $1c,  6,  3, 0, $00, $00, $07, $00, Script_012_46b2
 	object_event $1a,  4,  6, 0, $00, $00, $0b, $01, Script_012_46b6
 	object_event $15,  6,  7, 0, $00, $00, $06, $02, Script_012_46ba
 	objects_end
 
-G2_20_ObjectEvents:
+DuoluCity_20_ObjectEvents:
 	object_event $22,  7,  5, 0, $00, $00, $06, $00, Script_012_46be
 	objects_end
 
-G2_0E_ObjectEvents:
+GallEnterprise_ObjectEvents:
 	object_event $2d,  6,  5, wEventFlags + 3, $02, $00, $00, $00, Script_012_46c2
 	objects_end
 
@@ -354,23 +354,23 @@ ShandaFarm_ObjectEvents:
 	object_event $1a, 11, 25, 0, $00, $00, $09, $01, Script_012_48f7
 	objects_end
 
-G2_12_ObjectEvents:
+ShandaFarm_12_ObjectEvents:
 	object_event $23,  3,  3, 0, $00, $00, $0b, $00, Script_012_4905
 	object_event $25,  5,  5, 0, $00, $00, $06, $01, Script_012_4913
 	objects_end
 
-G2_13_ObjectEvents:
+ShandaFarm_13_ObjectEvents:
 	object_event $22,  3,  5, 0, $00, $00, $09, $00, Script_012_4917
 	object_event $21,  8,  6, 0, $00, $00, $06, $01, Script_012_491b
 	objects_end
 
-G2_14_ObjectEvents:
+ShandaFarm_14_ObjectEvents:
 	object_event $1e,  9,  3, 0, $00, $00, $00, $00, Script_012_491f
 	object_event $1f,  5,  3, 0, $00, $00, $06, $01, Script_012_492d
 	object_event $18,  6,  6, 0, $00, $00, $05, $02, Script_012_493b
 	objects_end
 
-G2_15_ObjectEvents:
+ShandaFarm_15_ObjectEvents:
 	object_event $16,  7,  5, 0, $00, $00, $08, $00, Script_012_495d
 	objects_end
 
@@ -383,13 +383,13 @@ Script_012_4397:
 	checkbit wEventFlags + 3, $06, Script_012_43a1
 
 Script_012_439d:
-	setmap $07, $00
+	setmap MAP_SKY_ROCK_PART_2, $00
 	end
 
 Script_012_43a1:
 	checkbit wEventFlags + 4, $07, Script_012_439d
 	setplayerchar $00
-	setmap $07, $01
+	setmap MAP_SKY_ROCK_PART_2, $01
 	spriteface  3, FACE_UP
 	emote $02, $03
 	delay $03, $20
@@ -475,12 +475,12 @@ Script_012_4492:
 	object_event $48,  5,  1, 0, $00, $00, $00, $03, Script_012_44cc
 	objects_end
 
-G2_16_ObjectEvents3:
+MarkNinaIntro_ObjectEvents3:
 	object_event $30,  7,  3, wEventFlags + 3, $06, $00, $00, $00, Script_012_44cc
 	object_event $04,  8,  4, wEventFlags + 3, $06, $00, $00, $02, Script_012_44cc
 	objects_end
 
-G2_16_ObjectEvents2:
+MarkNinaIntro_ObjectEvents2:
 	object_event $47,  8,  3, 0, $00, $00, $00, $00, Script_012_44cc
 	object_event $04,  8,  4, 0, $00, $00, $00, $02, Script_012_44cc
 	objects_end
@@ -490,17 +490,17 @@ Script_012_44cc:
 
 Script_012_44cd:
 	checkbit wEventFlags + 3, $05, Script_012_44db
-	setmap $16, $00
+	setmap MAP_MARK_NINA_INTRO, $00
 	end
 
 Script_012_44d7:
-	setmap $16, $03
+	setmap MAP_MARK_NINA_INTRO, $03
 	end
 
 Script_012_44db:
 	checkbit wEventFlags + 3, $06, Script_012_44d7
 	setplayerchar $00
-	setmap $16, $01
+	setmap MAP_MARK_NINA_INTRO, $01
 	spriteface  3, FACE_UP
 	face FACE_UP
 	stext text_12_6898
@@ -508,7 +508,7 @@ Script_012_44db:
 	spriteface  2, FACE_LEFT
 	spriteface  2, FACE_LEFT
 	spriteface  2, FACE_LEFT
-	setmap $16, $02
+	setmap MAP_MARK_NINA_INTRO, $02
 	spriteface  3, FACE_UP
 	face FACE_UP
 	emote $02, $00
@@ -559,7 +559,7 @@ Script_012_44db:
 	setbit wEventFlags + 3, $06
 	end
 
-G2_16_ObjectEvents:
+MarkNinaIntro_ObjectEvents:
 	object_event $47,  8,  3, 0, $00, $00, $00, $00, Script_012_45ab
 	object_event $05,  8,  4, wEventFlags + 3, $04, $00, $00, $01, Script_012_45af
 	object_event $04,  7,  2, wEventFlags + 3, $04, $00, $00, $02, Script_012_45b3
@@ -768,11 +768,11 @@ Script_012_4705:
 
 Script_012_470f::
 	checkbit wEventFlags + 4, $04, Script_012_4719
-	setmap $0d, $01
+	setmap MAP_CLOCK_TOWER_5F, $01
 	end2
 
 Script_012_4719:
-	setmap $0d, $00
+	setmap MAP_CLOCK_TOWER_5F, $00
 	end2
 
 ClockTower5f_ObjectEvents:
@@ -815,7 +815,7 @@ Script_012_4780:
 
 Script_012_4781:
 	setplayerchar $00
-	setmap $11, $01
+	setmap MAP_G2_11, $01
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_12_7945
@@ -856,7 +856,7 @@ Script_012_4781:
 	setmappredef MAPPREDEF_0b
 	end
 
-G2_0E_ObjectEvents4:
+GallEnterprise_ObjectEvents4:
 	object_event $2f,  5,  4, 0, $00, $00, $00, $00, Script_012_4819
 	object_event $30,  4,  4, 0, $00, $00, $00, $01, Script_012_481d
 	object_event $04,  6,  5, wEventFlags + $17, $07, $00, $00, $02, Script_012_4827
@@ -1053,7 +1053,7 @@ Script_012_4967:
 	end
 
 G2_19_ObjectEvents:
-G2_21_ObjectEvents:
+HealingCenter_g221_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_012_4982
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_012_4986
 	objects_end
@@ -1087,7 +1087,7 @@ Script_012_49a5:
 	end
 
 G2_1A_ObjectEvents:
-G2_22_ObjectEvents:
+Shop_g222_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_012_49b2
 	objects_end
 
@@ -1157,7 +1157,7 @@ Script_012_4a05:
 	loadobjsprite Script_012_4ac3
 	objmove $03, MovementData_012_503c
 	clearobject $03
-	setmap $02, $09
+	setmap MAP_SHANDA_FARM, $09
 	spriteface  2, FACE_UP
 	loadobjsprite Script_012_4ad0
 	objmove $03, MovementData_012_5167
@@ -1175,7 +1175,7 @@ Script_012_4a05:
 	objmove $03, MovementData_012_5167
 	clearobject $03
 	stext text_12_64ba
-	setmap $05, $01
+	setmap MAP_COFFEE_FOREST_PART_3, $01
 	stext text_12_64fb
 	stext text_12_653d
 	scr_48 $02, $08
@@ -1229,7 +1229,7 @@ ShandaFarm_ObjectEvents2:
 	object_event $1d, 14, 18, 0, $00, $00, $00, $00, Script_012_4acf
 	objects_end
 
-G2_0E_ObjectEvents2:
+GallEnterprise_ObjectEvents2:
 	object_event $2f,  4,  2, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 	object_event $2d,  6,  3, wEventFlags + 4, $02, $00, $00, $01, Script_012_44cc
 	object_event $30,  5,  2, wEventFlags + 4, $02, $00, $00, $02, Script_012_44cc
@@ -1237,7 +1237,7 @@ G2_0E_ObjectEvents2:
 	object_event $04,  4,  4, wEventFlags + 4, $02, $00, $00, $03, Script_012_44cc
 	objects_end
 
-G2_0E_ObjectEvents5:
+GallEnterprise_ObjectEvents5:
 	object_event $2f,  5,  3, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 
 	object_event $2d,  6,  3, wEventFlags + 4, $02, $00, $00, $01, Script_012_44cc
@@ -1247,27 +1247,27 @@ G2_0E_ObjectEvents5:
 
 Script_012_4b72::
 	checkbit wEventFlags + 4, $07, Script_012_4b94
-	setmap $0e, $00
+	setmap MAP_GALL_ENTERPRISE, $00
 	end
 
 Script_012_4b7c:
 	checkbit wEventFlags + 4, $03, Script_012_4b86
-	setmap $0e, $00
+	setmap MAP_GALL_ENTERPRISE, $00
 	end
 
 Script_012_4b86:
 	checkbit wEventFlags + 4, $06, Script_012_4b90
-	setmap $0e, $05
+	setmap MAP_GALL_ENTERPRISE, $05
 	end
 
 Script_012_4b90:
-	setmap $0e, $04
+	setmap MAP_GALL_ENTERPRISE, $04
 	end
 
 Script_012_4b94:
 	checkbit wEventFlags + 4, $02, Script_012_4b7c
 	setplayerchar $00
-	setmap $0e, $02
+	setmap MAP_GALL_ENTERPRISE, $02
 	spriteface  3, FACE_LEFT
 	spriteface  5, FACE_UP
 	spriteface  4, FACE_LEFT
@@ -1355,7 +1355,7 @@ Script_012_4c89:
 
 Script_012_4c95::
 	setplayerchar $00
-	setmap $11, $01
+	setmap MAP_G2_11, $01
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_12_739a
@@ -1372,7 +1372,7 @@ Script_012_4c95::
 	clearobject $02
 	face FACE_UP
 	setfollower $00
-	setmap $23, $00
+	setmap MAP_G2_23, $00
 	stext text_12_74f8
 	stext text_12_751b
 	stext text_12_755b
@@ -1385,7 +1385,7 @@ Script_012_4c95::
 	stext text_12_7576
 	face FACE_DOWN
 	setfollower $02
-	setmap $11, $02
+	setmap MAP_G2_11, $02
 	emote $00, $00
 	delay $03, $20
 	stext text_12_75b7
@@ -1403,19 +1403,19 @@ Script_012_4c95::
 
 Script_012_4d14::
 	checkbit wEventFlags + 4, $03, Script_012_4d1e
-	setmap $0e, $01
+	setmap MAP_GALL_ENTERPRISE, $01
 	end2
 
 Script_012_4d1e:
 	checkbit wEventFlags + 4, $06, Script_012_4d28
-	setmap $0e, $03
+	setmap MAP_GALL_ENTERPRISE, $03
 	end2
 
 Script_012_4d28:
-	setmap $0e, $06
+	setmap MAP_GALL_ENTERPRISE, $06
 	end2
 
-G2_0E_ObjectEvents3:
+GallEnterprise_ObjectEvents3:
 	object_event $2d,  6,  5, 0, $00, $00, $00, $00, Script_012_4d38
 	objects_end
 

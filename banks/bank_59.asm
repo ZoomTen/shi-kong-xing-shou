@@ -1,10 +1,10 @@
 ; TODO: structured data table (not graphics), classify records
 unk_059_4000:
-	setmap $2a, $00
+	setmap MAP_G4_2A, $00
 	end
 Script_059_4004:
 	end
-G4_41_ObjectEvents:
+SacredtreeShop_41_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_059_4011
 	objects_end
 
@@ -23,7 +23,7 @@ Script_059_4015:
 Script_059_4026:
 	end
 
-G4_40_ObjectEvents:
+SacredtreeHealingCenter_40_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_059_403e
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_059_4042
 	objects_end
@@ -64,7 +64,7 @@ Script_059_40c0:
 	end
 
 Script_059_40c5:
-	setmap $25, $00 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_25, $00
 	end
 Script_059_40c9::
 	end
@@ -72,14 +72,14 @@ Script_059_40c9::
 G4_1A_ObjectEvents:
 G4_1B_ObjectEvents:
 G4_1C_ObjectEvents:
-G4_1D_ObjectEvents2:
+SacredtreeTimeTravel_ObjectEvents2:
 G4_2A_ObjectEvents:
 G4_2B_ObjectEvents:
 G4_53_ObjectEvents:
 G4_54_ObjectEvents:
 	objects_end
 
-G4_25_ObjectEvents:
+SacredtreeVillage_25_ObjectEvents:
 	object_event $13,  4,  6, 0, $00, $00, $0b, $00, Script_059_42e0
 	object_event $15, 16,  6, 0, $00, $00, $06, $01, Script_059_42ee
 	object_event $14, 19, 11, 0, $00, $00, $07, $02, Script_059_42fc
@@ -89,26 +89,26 @@ G4_25_ObjectEvents:
 	object_event $1c, 17, 17, 0, $00, $00, $00, $01, Script_059_4334
 	objects_end
 
-G4_3A_ObjectEvents:
+SacredtreeVillage_3a_ObjectEvents:
 	object_event $18,  5,  4, 0, $00, $00, $07, $00, Script_059_436c
 	objects_end
 
-G4_3B_ObjectEvents:
+SacredtreeVillage_3b_ObjectEvents:
 	object_event $1f,  7,  6, 0, $00, $00, $06, $00, Script_059_437a
 	object_event $24,  4,  4, 0, $00, $00, $00, $01, Script_059_43a6
 	objects_end
 
-G4_3C_ObjectEvents:
+SacredtreeVillage_3c_ObjectEvents:
 	object_event $1a,  9,  6, 0, $00, $00, $00, $00, Script_059_43b4
 	object_event $21,  4,  4, 0, $00, $00, $0b, $01, Script_059_43e3
 	objects_end
 
-G4_3D_ObjectEvents:
+SacredtreeVillage_3d_ObjectEvents:
 	object_event $16,  6,  4, 0, $00, $00, $0b, $00, Script_059_43ff
 	object_event $19,  3,  5, 0, $00, $00, $00, $01, Script_059_43f1
 	objects_end
 
-G4_3F_ObjectEvents:
+SacredtreeVillage_3f_ObjectEvents:
 	object_event $0c,  5,  3, wEventFlags + 14, $01, $00, $00, $00, Script_059_4181
 	object_event $0d,  4,  3, wEventFlags + 14, $01, $00, $00, $01, Script_059_40c9
 	objects_end
@@ -160,17 +160,17 @@ Script_059_41e2:
 
 Script_059_41e6:
 	checkbit wEventFlags + 12, $07, Script_059_41f4
-	setmap $3f, $00 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_3F, $00
 	end
 
 Script_059_41f0:
-	setmap $3f, $00 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_3F, $00
 	end
 
 Script_059_41f4:
 	checkbit wEventFlags + 14, $01, Script_059_41f0
 	face FACE_RIGHT
-	setmap $3f, $01 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_3F, $01
 	face FACE_UP
 	stext text_59_5675
 	emote  2, EMOTE_EXCLAMATION
@@ -208,7 +208,7 @@ Script_059_41f4:
 	delay $03, $10 ; TEMP
 	objmove $04, MovementData_059_7bd6
 	clearobject $04 ; TEMP
-	setmap $53, $00 ; TEMP
+	setmap MAP_G4_53, $00
 	playsound SFX_2c
 	runmovement MovementData_00b_4227
 	stext text_59_584c
@@ -241,7 +241,7 @@ Script_059_41f4:
 	farjump2 Script_05a_41aa
 	end
 
-G4_3F_ObjectEvents2:
+SacredtreeVillage_3f_ObjectEvents2:
 	object_event $0c,  5,  3, 0, $00, $00, $00, $00, Script_059_40c9
 	object_event $0d,  7,  3, 0, $00, $00, $00, $01, Script_059_40c9
 	object_event $6a,  6,  4, 0, $00, $00, $00, $02, Script_059_40c9
@@ -428,7 +428,7 @@ Script_059_442a:
 	textface text_59_75a5
 	end
 
-G4_3E_ObjectEvents:
+SacredtreeVillage_3e_ObjectEvents:
 	object_event $23,  7,  4, 0, $00, $00, $05, $00, Script_059_443a
 	objects_end
 
@@ -437,7 +437,7 @@ Script_059_443a:
 	end
 
 G4_29_ObjectEvents:
-G4_55_ObjectEvents:
+SacredtreeVillage_55_ObjectEvents:
 	object_event $16, 13,  4, 0, $00, $00, $00, $00, Script_059_444a
 	objects_end
 
@@ -518,10 +518,10 @@ Script_059_44eb:
 	loadobjsprite ObjSprite_59_44cc
 	loadobjsprite ObjSprite_59_44d8
 	move MovementData_OneUp
-	setmap $1a, $00 ; TEMP
+	setmap MAP_G4_1A, $00
 	end
 
-G4_1D_ObjectEvents:
+SacredtreeTimeTravel_ObjectEvents:
 	object_event $4e,  3, 15, wEventFlags + 12, $07, $00, $00, $00, Script_059_4534
 	objects_end
 
@@ -568,7 +568,7 @@ Script_059_4534:
 	clearobject $02 ; TEMP
 	delay $03, $08 ; TEMP
 	setbit wEventFlags + 12, $07
-	setmap $24, $03 ; TEMP
+	setmap MAP_SACREDTREE_STARDREAM_DEPARTURE, $03
 	spriteface  3, FACE_UP
 	spriteface  4, FACE_UP
 	stext text_59_5625
@@ -581,16 +581,16 @@ Script_059_4534:
 	objmove $03, MovementData_059_7bad
 	clearobject $03 ; TEMP
 	clearobject $04 ; TEMP
-	setmap $1d, $01 ; TEMP
+	setmap MAP_SACREDTREE_TIME_TRAVEL, $01
 	end
 
-G4_24_ObjectEvents4:
+SacredtreeStardreamDeparture_ObjectEvents4:
 	object_event $4d,  6,  3, 0, $00, $00, $00, $00, Script_059_40c9
 	object_event $62,  6,  4, 0, $00, $00, $00, $01, Script_059_40c9
 	object_event $62,  7,  4, 0, $00, $00, $00, $02, Script_059_40c9
 	objects_end
 
-G4_24_ObjectEvents:
+SacredtreeStardreamDeparture_ObjectEvents:
 	object_event $4d,  6,  4, wEventFlags + 14, $05, $00, $00, $00, Script_059_45eb
 	object_event $6c, 10, 13, 0, $00, $00, $00, $01, Script_059_469d
 	objects_end
@@ -607,7 +607,7 @@ Script_059_45eb:
 	setbit wEventFlags + 14, $05
 	setplayerchar $00 ; TEMP
 	face FACE_DOWN
-	setmap $24, $04 ; TEMP
+	setmap MAP_SACREDTREE_STARDREAM_DEPARTURE, $04
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_UP
@@ -645,14 +645,14 @@ Script_059_45eb:
 	spriteface  2, FACE_UP
 	objmove $02, MovementData_059_7b7c
 	clearobject $02 ; TEMP
-	setmap $2b, $01 ; TEMP
+	setmap MAP_G4_2B, $01
 	end
 
 ObjSprite_59_467a:
 	object_event $50,  6,  0, 0, $00, $00, $00, $00, Script_059_40c9
 	objects_end
 
-G4_24_ObjectEvents5:
+SacredtreeStardreamDeparture_ObjectEvents5:
 	object_event $06,  6,  6, 0, $00, $00, $00, $00, Script_059_40c9
 	object_event $0a,  7,  7, 0, $00, $00, $00, $01, Script_059_40c9
 	objects_end
@@ -722,7 +722,7 @@ Script_059_4703:
 	swapfollower
 	end
 
-G4_21_ObjectEvents:
+SacredtreeVillage_21_ObjectEvents:
 	object_event $6c, 18, 21, 0, $00, $00, $00, $00, Script_059_469d
 	object_event $6c,  9,  7, 0, $00, $00, $00, $01, Script_059_469d
 	objects_end
@@ -743,7 +743,7 @@ Script_059_4785:
 	setmappredef $18
 	setplayerchar $00 ; TEMP
 	face FACE_UP
-	setmap $3f, $02 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_3F, $02
 	stext text_59_6de8
 	spriteface  2, FACE_RIGHT
 	spritewalk  2, MOVE_RIGHT
@@ -790,11 +790,11 @@ ObjSprite_59_4805:
 
 Script_059_4811:
 	checkbit wEventFlags + 14, $02, Script_059_481b
-	setmap $29, $00 ; TEMP
+	setmap MAP_G4_29, $00
 	end
 
 Script_059_481b:
-	setmap $55, $00 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_55, $00
 	end
 
 Script_059_481f:
@@ -822,7 +822,7 @@ unk_059_4839:
 	loadobjsprite ObjSprite_59_4805
 	objmove $03, MovementData_059_7c17
 	clearobject $03 ; TEMP
-	setmap $55, $02 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_55, $02
 	setbit wEventFlags + 14, $02
 	setmappredef $19
 	end
@@ -879,7 +879,7 @@ unk_059_48b4:
 
 Script_059_48e4:
 	face FACE_LEFT
-	setmap $55, $02 ; TEMP
+	setmap MAP_SACREDTREE_VILLAGE_55, $02
 	end
 INCLUDE "data/text/script_sacredtree_village_25_1.asm"
 INCLUDE "data/text/script_sacredtree_village_3a_1.asm"

@@ -1,10 +1,12 @@
 DuoluCity2_MapAttributes:
-	map_attr_data \
-		18, 12, \
-		Layout_011_4014, Blocks_011_42a5, Metatiles_011_40ed, AttrMap_011_4561, \
-		Palettes_011_4602, \
-		0, Tileset_22, \
-		Collision_011_464a
+	map_attr DUOLU_CITY_2, \
+	   Layout_011_4014, \
+	   Blocks_011_42a5, \
+	   Metatiles_011_40ed, \
+	   AttrMap_011_4561, \
+	   Palettes_011_4602, \
+	   0, Tileset_22, \
+	   Collision_011_464a
 
 Layout_011_4014:
 	db MAPTYPE_NONE
@@ -19,54 +21,21 @@ Blocks_011_42a5:
 AttrMap_011_4561:
 INCBIN "gfx/attrmaps/attrmap_011_4561.bin"
 
-Palettes_011_4602:
-	RGB 31, 30, 29
-	RGB 20, 25, 27
-	RGB 8, 12, 14
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 17, 26, 6
-	RGB 0, 14, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 31, 18, 28
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 30, 30, 30
-	RGB 24, 24, 20
-	RGB 13, 13, 9
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_4602::
+	INCLUDE "data/maps/palettes/Palettes_011_4602.pal"
 
 Collision_011_464a:
 	INCBIN "data/maps/collision/Collision_011_464a.bin"
 
 ShandaFarm_MapAttributes:
-	map_attr_data \
-		12, 15, \
-		Layout_011_46cd, Blocks_011_484a, Metatiles_011_4782, AttrMap_011_4a66, \
-		Palettes_011_4ae2, \
-		0, Tileset_23, \
-		Collision_011_4b2a
+	map_attr SHANDA_FARM, \
+	   Layout_011_46cd, \
+	   Blocks_011_484a, \
+	   Metatiles_011_4782, \
+	   AttrMap_011_4a66, \
+	   Palettes_011_4ae2, \
+	   0, Tileset_23, \
+	   Collision_011_4b2a
 
 Layout_011_46cd:
 	db MAPTYPE_NONE
@@ -81,70 +50,41 @@ Blocks_011_484a:
 AttrMap_011_4a66:
 INCBIN "gfx/attrmaps/attrmap_011_4a66.bin"
 
-Palettes_011_4ae2:
-	RGB 31, 30, 29
-	RGB 20, 20, 25
-	RGB 10, 10, 15
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 20, 27, 6
-	RGB 6, 14, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 31, 15, 15
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 30, 30, 30
-	RGB 24, 24, 20
-	RGB 13, 13, 9
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_4ae2::
+	INCLUDE "data/maps/palettes/Palettes_011_4ae2.pal"
 
 Collision_011_4b2a:
 	INCBIN "data/maps/collision/Collision_011_4b2a.bin"
 
 CoffeeForestPart1_MapAttributes:
-	map_attr_data \
-		15, 12, \
-		Layout_011_4b99, Blocks_011_4c4e, Metatiles_011_50f4, AttrMap_011_5290, \
-		Palettes_011_532f, \
-		0, Tileset_24, \
-		Collision_011_5377
+	map_attr COFFEE_FOREST_PART_1, \
+	   Layout_011_4b99, \
+	   Blocks_011_4c4e, \
+	   Metatiles_011_50f4, \
+	   AttrMap_011_5290, \
+	   Palettes_011_532f, \
+	   0, Tileset_24, \
+	   Collision_011_5377
 
 CoffeeForestPart2_MapAttributes:
-	map_attr_data \
-		12, 15, \
-		Layout_011_4e42, Blocks_011_4ef7, Metatiles_011_50f4, AttrMap_011_5290, \
-		Palettes_011_532f, \
-		0, Tileset_24, \
-		Collision_011_5377
+	map_attr COFFEE_FOREST_PART_2, \
+	   Layout_011_4e42, \
+	   Blocks_011_4ef7, \
+	   Metatiles_011_50f4, \
+	   AttrMap_011_5290, \
+	   Palettes_011_532f, \
+	   0, Tileset_24, \
+	   Collision_011_5377
 
 CoffeeForestPart3_MapAttributes:
-	map_attr_data \
-		6, 8, \
-		Layout_011_50c3, Blocks_011_51d0, Metatiles_011_50f4, AttrMap_011_5290, \
-		Palettes_011_532f, \
-		0, Tileset_24, \
-		Collision_011_5377
+	map_attr COFFEE_FOREST_PART_3, \
+	   Layout_011_50c3, \
+	   Blocks_011_51d0, \
+	   Metatiles_011_50f4, \
+	   AttrMap_011_5290, \
+	   Palettes_011_532f, \
+	   0, Tileset_24, \
+	   Collision_011_5377
 
 Layout_011_4b99:
 	db MAPTYPE_COFFEE_FOREST_P1
@@ -173,62 +113,31 @@ Blocks_011_51d0:
 AttrMap_011_5290:
 INCBIN "gfx/attrmaps/attrmap_011_5290.bin"
 
-Palettes_011_532f:
-	RGB 30, 30, 27
-	RGB 20, 20, 26
-	RGB 10, 10, 17
-	RGB 0, 0, 0
-	RGB 30, 30, 27
-	RGB 20, 26, 11
-	RGB 6, 14, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 30, 25, 9
-	RGB 16, 13, 5
-	RGB 0, 0, 0
-	RGB 31, 31, 21
-	RGB 20, 26, 11
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 20, 26, 11
-	RGB 12, 12, 12
-	RGB 0, 0, 0
-	RGB 30, 30, 29
-	RGB 21, 25, 16
-	RGB 15, 13, 9
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_532f::
+	INCLUDE "data/maps/palettes/Palettes_011_532f.pal"
 
 Collision_011_5377:
 	INCBIN "data/maps/collision/Collision_011_5377.bin"
 
 SkyRockPart1_MapAttributes:
-	map_attr_data \
-		15, 15, \
-		Layout_011_53d7, Blocks_011_54b9, Metatiles_011_5790, AttrMap_011_589c, \
-		Palettes_011_592c, \
-		0, Tileset_25, \
-		Collision_011_5974
+	map_attr SKY_ROCK_PART_1, \
+	   Layout_011_53d7, \
+	   Blocks_011_54b9, \
+	   Metatiles_011_5790, \
+	   AttrMap_011_589c, \
+	   Palettes_011_592c, \
+	   0, Tileset_25, \
+	   Collision_011_5974
 
 SkyRockPart2_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_5771, Blocks_011_5844, Metatiles_011_5790, AttrMap_011_589c, \
-		Palettes_011_592c, \
-		0, Tileset_25, \
-		Collision_011_5974
+	map_attr SKY_ROCK_PART_2, \
+	   Layout_011_5771, \
+	   Blocks_011_5844, \
+	   Metatiles_011_5790, \
+	   AttrMap_011_589c, \
+	   Palettes_011_592c, \
+	   0, Tileset_25, \
+	   Collision_011_5974
 
 Layout_011_53d7:
 	db MAPTYPE_SKY_ROCK_P1
@@ -250,54 +159,21 @@ Blocks_011_5844:
 AttrMap_011_589c:
 INCBIN "gfx/attrmaps/attrmap_011_589c.bin"
 
-Palettes_011_592c:
-	RGB 30, 30, 27
-	RGB 28, 22, 0
-	RGB 14, 8, 4
-	RGB 0, 0, 0
-	RGB 30, 30, 27
-	RGB 20, 26, 11
-	RGB 6, 14, 0
-	RGB 0, 0, 0
-	RGB 30, 30, 27
-	RGB 0, 20, 31
-	RGB 11, 11, 8
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 0, 20, 31
-	RGB 0, 10, 29
-	RGB 0, 0, 0
-	RGB 30, 30, 27
-	RGB 28, 23, 28
-	RGB 15, 11, 15
-	RGB 0, 0, 0
-	RGB 30, 30, 27
-	RGB 22, 22, 18
-	RGB 11, 11, 8
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_592c::
+	INCLUDE "data/maps/palettes/Palettes_011_592c.pal"
 
 Collision_011_5974:
 	INCBIN "data/maps/collision/Collision_011_5974.bin"
 
 ClockTowerOutside_MapAttributes:
-	map_attr_data \
-		6, 12, \
-		Layout_011_59b6, Blocks_011_5b4f, Metatiles_011_59ff, AttrMap_011_5c4b, \
-		Palettes_011_5ce4, \
-		0, Tileset_26, \
-		Collision_011_5d2c
+	map_attr CLOCK_TOWER_OUTSIDE, \
+	   Layout_011_59b6, \
+	   Blocks_011_5b4f, \
+	   Metatiles_011_59ff, \
+	   AttrMap_011_5c4b, \
+	   Palettes_011_5ce4, \
+	   0, Tileset_26, \
+	   Collision_011_5d2c
 
 Layout_011_59b6:
 	db MAPTYPE_NONE
@@ -312,86 +188,61 @@ Blocks_011_5b4f:
 AttrMap_011_5c4b:
 INCBIN "gfx/attrmaps/attrmap_011_5c4b.bin"
 
-Palettes_011_5ce4:
-	RGB 31, 31, 29
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 8, 23, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 27, 21, 20
-	RGB 21, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 25, 25, 20
-	RGB 12, 12, 7
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_5ce4::
+	INCLUDE "data/maps/palettes/Palettes_011_5ce4.pal"
 
 Collision_011_5d2c:
 	INCBIN "data/maps/collision/Collision_011_5d2c.bin"
 
 ClockTower1f_MapAttributes:
-	map_attr_data \
-		12, 12, \
-		Layout_011_5de5, Blocks_011_5e76, Metatiles_011_63f8, AttrMap_011_656c, \
-		Palettes_011_65db, \
-		0, Tileset_27, \
-		Collision_011_6623
+	map_attr CLOCK_TOWER_1F, \
+	   Layout_011_5de5, \
+	   Blocks_011_5e76, \
+	   Metatiles_011_63f8, \
+	   AttrMap_011_656c, \
+	   Palettes_011_65db, \
+	   0, Tileset_27, \
+	   Collision_011_6623
 
 ClockTower2f_MapAttributes:
-	map_attr_data \
-		12, 12, \
-		Layout_011_5f92, Blocks_011_6023, Metatiles_011_63f8, AttrMap_011_656c, \
-		Palettes_011_65db, \
-		0, Tileset_27, \
-		Collision_011_6623
+	map_attr CLOCK_TOWER_2F, \
+	   Layout_011_5f92, \
+	   Blocks_011_6023, \
+	   Metatiles_011_63f8, \
+	   AttrMap_011_656c, \
+	   Palettes_011_65db, \
+	   0, Tileset_27, \
+	   Collision_011_6623
 
 ClockTower3f_MapAttributes:
-	map_attr_data \
-		10, 10, \
-		Layout_011_6153, Blocks_011_61b8, Metatiles_011_63f8, AttrMap_011_656c, \
-		Palettes_011_65db, \
-		0, Tileset_27, \
-		Collision_011_6623
+	map_attr CLOCK_TOWER_3F, \
+	   Layout_011_6153, \
+	   Blocks_011_61b8, \
+	   Metatiles_011_63f8, \
+	   AttrMap_011_656c, \
+	   Palettes_011_65db, \
+	   0, Tileset_27, \
+	   Collision_011_6623
 
 ClockTower4f_MapAttributes:
-	map_attr_data \
-		10, 10, \
-		Layout_011_62bc, Blocks_011_6321, Metatiles_011_63f8, AttrMap_011_656c, \
-		Palettes_011_65db, \
-		0, Tileset_27, \
-		Collision_011_6623
+	map_attr CLOCK_TOWER_4F, \
+	   Layout_011_62bc, \
+	   Blocks_011_6321, \
+	   Metatiles_011_63f8, \
+	   AttrMap_011_656c, \
+	   Palettes_011_65db, \
+	   0, Tileset_27, \
+	   Collision_011_6623
 
 ClockTower5f_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_63d9, Blocks_011_6510, Metatiles_011_63f8, AttrMap_011_656c, \
-		Palettes_011_65db, \
-		0, Tileset_27, \
-		Collision_011_6623
+	map_attr CLOCK_TOWER_5F, \
+	   Layout_011_63d9, \
+	   Blocks_011_6510, \
+	   Metatiles_011_63f8, \
+	   AttrMap_011_656c, \
+	   Palettes_011_65db, \
+	   0, Tileset_27, \
+	   Collision_011_6623
 
 Layout_011_5de5:
 	db MAPTYPE_CLOCK_TOWER_1F
@@ -434,78 +285,51 @@ Blocks_011_6510:
 AttrMap_011_656c:
 INCBIN "gfx/attrmaps/attrmap_011_656c.bin"
 
-Palettes_011_65db:
-	RGB 31, 31, 29
-	RGB 20, 25, 25
-	RGB 8, 14, 14
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 17, 31
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 26, 0
-	RGB 29, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 10, 22, 28
-	RGB 0, 9, 19
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 21, 25, 20
-	RGB 10, 14, 7
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_65db::
+	INCLUDE "data/maps/palettes/Palettes_011_65db.pal"
 
 Collision_011_6623:
 	INCBIN "data/maps/collision/Collision_011_6623.bin"
 
-G2_0E_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_66ba, Blocks_011_66d9, Metatiles_011_685e, AttrMap_011_6966, \
-		Palettes_011_69ec, \
-		0, Tileset_28, \
-		Collision_011_6a34
+GallEnterprise_MapAttributes:
+	map_attr GALL_ENTERPRISE, \
+	   Layout_011_66ba, \
+	   Blocks_011_66d9, \
+	   Metatiles_011_685e, \
+	   AttrMap_011_6966, \
+	   Palettes_011_69ec, \
+	   0, Tileset_28, \
+	   Collision_011_6a34
 
 G2_0F_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_6735, Blocks_011_6754, Metatiles_011_685e, AttrMap_011_6966, \
-		Palettes_011_69ec, \
-		0, Tileset_28, \
-		Collision_011_6a34
+	map_attr G2_0F, \
+	   Layout_011_6735, \
+	   Blocks_011_6754, \
+	   Metatiles_011_685e, \
+	   AttrMap_011_6966, \
+	   Palettes_011_69ec, \
+	   0, Tileset_28, \
+	   Collision_011_6a34
 
 G2_10_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_67bc, Blocks_011_67db, Metatiles_011_685e, AttrMap_011_6966, \
-		Palettes_011_69ec, \
-		0, Tileset_28, \
-		Collision_011_6a34
+	map_attr G2_10, \
+	   Layout_011_67bc, \
+	   Blocks_011_67db, \
+	   Metatiles_011_685e, \
+	   AttrMap_011_6966, \
+	   Palettes_011_69ec, \
+	   0, Tileset_28, \
+	   Collision_011_6a34
 
 G2_11_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_683f, Blocks_011_6922, Metatiles_011_685e, AttrMap_011_6966, \
-		Palettes_011_69ec, \
-		0, Tileset_28, \
-		Collision_011_6a34
+	map_attr G2_11, \
+	   Layout_011_683f, \
+	   Blocks_011_6922, \
+	   Metatiles_011_685e, \
+	   AttrMap_011_6966, \
+	   Palettes_011_69ec, \
+	   0, Tileset_28, \
+	   Collision_011_6a34
 
 Layout_011_66ba:
 	db MAPTYPE_NONE
@@ -541,99 +365,61 @@ Blocks_011_6922:
 AttrMap_011_6966:
 INCBIN "gfx/attrmaps/attrmap_011_6966.bin"
 
-Palettes_011_69ec:
-	RGB 31, 31, 29
-	RGB 22, 26, 26
-	RGB 11, 15, 15
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 14, 23, 29
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 26, 26, 21
-	RGB 12, 12, 8
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_69ec::
+	INCLUDE "data/maps/palettes/Palettes_011_69ec.pal"
 
 Collision_011_6a34:
 	INCBIN "data/maps/collision/Collision_011_6a34.bin"
 
-G4_3A_MapAttributes:
-G4_56_MapAttributes:
-G2_12_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_6aca, Blocks_011_6ae9, Metatiles_011_6cd9, AttrMap_011_6dd5, \
-		Palettes_011_6e2f, \
-		0, Tileset_29, \
-		Collision_011_6e77
+ShandaFarm_12_MapAttributes:
+	map_attr SHANDA_FARM_12, \
+	   Layout_011_6aca, \
+	   Blocks_011_6ae9, \
+	   Metatiles_011_6cd9, \
+	   AttrMap_011_6dd5, \
+	   Palettes_011_6e2f, \
+	   0, Tileset_29, \
+	   Collision_011_6e77
 
-G4_3B_MapAttributes:
-G6_27_MapAttributes:
-G4_57_MapAttributes:
-G2_13_MapAttributes:
-G3_1C_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_6b41, Blocks_011_6b60, Metatiles_011_6cd9, AttrMap_011_6dd5, \
-		Palettes_011_6e2f, \
-		0, Tileset_29, \
-		Collision_011_6e77
+BanglinCo_MapAttributes:
+	map_attr BANGLIN_CO, \
+	   Layout_011_6b41, \
+	   Blocks_011_6b60, \
+	   Metatiles_011_6cd9, \
+	   AttrMap_011_6dd5, \
+	   Palettes_011_6e2f, \
+	   0, Tileset_29, \
+	   Collision_011_6e77
 
-G4_3C_MapAttributes:
-G4_58_MapAttributes:
-G2_14_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_6bbc, Blocks_011_6bdb, Metatiles_011_6cd9, AttrMap_011_6dd5, \
-		Palettes_011_6e2f, \
-		0, Tileset_29, \
-		Collision_011_6e77
+ShandaFarm_14_MapAttributes:
+	map_attr SHANDA_FARM_14, \
+	   Layout_011_6bbc, \
+	   Blocks_011_6bdb, \
+	   Metatiles_011_6cd9, \
+	   AttrMap_011_6dd5, \
+	   Palettes_011_6e2f, \
+	   0, Tileset_29, \
+	   Collision_011_6e77
 
-G4_3D_MapAttributes:
-G4_59_MapAttributes:
-G2_15_MapAttributes:
 G3_1B_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_6c3b, Blocks_011_6c5a, Metatiles_011_6cd9, AttrMap_011_6dd5, \
-		Palettes_011_6e2f, \
-		0, Tileset_29, \
-		Collision_011_6e77
+	map_attr G3_1B, \
+	   Layout_011_6c3b, \
+	   Blocks_011_6c5a, \
+	   Metatiles_011_6cd9, \
+	   AttrMap_011_6dd5, \
+	   Palettes_011_6e2f, \
+	   0, Tileset_29, \
+	   Collision_011_6e77
 
-G4_3E_MapAttributes:
-G4_5A_MapAttributes:
-G2_16_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_011_6cba, Blocks_011_6d75, Metatiles_011_6cd9, AttrMap_011_6dd5, \
-		Palettes_011_6e2f, \
-		0, Tileset_29, \
-		Collision_011_6e77
+MarkNinaIntro_MapAttributes:
+	map_attr MARK_NINA_INTRO, \
+	   Layout_011_6cba, \
+	   Blocks_011_6d75, \
+	   Metatiles_011_6cd9, \
+	   AttrMap_011_6dd5, \
+	   Palettes_011_6e2f, \
+	   0, Tileset_29, \
+	   Collision_011_6e77
 
 Layout_011_6aca:
 	db MAPTYPE_NONE
@@ -676,62 +462,31 @@ Blocks_011_6d75:
 AttrMap_011_6dd5:
 INCBIN "gfx/attrmaps/attrmap_011_6dd5.bin"
 
-Palettes_011_6e2f:
-	RGB 31, 31, 29
-	RGB 26, 20, 20
-	RGB 15, 9, 9
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 14, 23, 29
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 26, 26, 21
-	RGB 12, 12, 8
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_6e2f::
+	INCLUDE "data/maps/palettes/Palettes_011_6e2f.pal"
 
 Collision_011_6e77:
 	INCBIN "data/maps/collision/Collision_011_6e77.bin"
 
 R03_MapAttributes:
-	map_attr_data \
-		6, 12, \
-		Layout_011_6ec7, Blocks_011_6f10, Metatiles_011_702d, AttrMap_011_71b1, \
-		Palettes_011_7205, \
-		0, Tileset_30, \
-		Collision_011_724d
+	map_attr R_03, \
+	   Layout_011_6ec7, \
+	   Blocks_011_6f10, \
+	   Metatiles_011_702d, \
+	   AttrMap_011_71b1, \
+	   Palettes_011_7205, \
+	   0, Tileset_30, \
+	   Collision_011_724d
 
 R04_MapAttributes:
-	map_attr_data \
-		12, 10, \
-		Layout_011_6fb4, Blocks_011_7085, Metatiles_011_702d, AttrMap_011_71b1, \
-		Palettes_011_7205, \
-		0, Tileset_30, \
-		Collision_011_724d
+	map_attr R_04, \
+	   Layout_011_6fb4, \
+	   Blocks_011_7085, \
+	   Metatiles_011_702d, \
+	   AttrMap_011_71b1, \
+	   Palettes_011_7205, \
+	   0, Tileset_30, \
+	   Collision_011_724d
 
 Layout_011_6ec7:
 	db MAPTYPE_NONE
@@ -753,43 +508,8 @@ Blocks_011_7085:
 AttrMap_011_71b1:
 INCBIN "gfx/attrmaps/attrmap_011_71b1.bin"
 
-Palettes_011_7205:
-	RGB 31, 30, 28
-	RGB 21, 20, 17
-	RGB 11, 10, 8
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 19, 25, 10
-	RGB 7, 12, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 19, 25, 10
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 23, 25, 27
-	RGB 13, 15, 18
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_011_7205::
+	INCLUDE "data/maps/palettes/Palettes_011_7205.pal"
 
 Collision_011_724d:
 	INCBIN "data/maps/collision/Collision_011_724d.bin"

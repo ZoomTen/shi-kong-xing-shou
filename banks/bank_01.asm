@@ -1,377 +1,342 @@
-; Map headers
-G7_02_MapAttributes:
-BellVillage2_MapAttributes:
-	map_attributes BellVillage1, BELL_VILLAGE_1, 0, Tileset_1
+BellVillage1_MapAttributes::
+	map_attr BELL_VILLAGE_1, \
+	   BellVillage1_Layout, \
+	   BellVillage1_Blocks, \
+	   BellVillage1_Metatiles, \
+	   BellVillage1_AttrMap, \
+	   BellVillage1_Palettes, \
+	   0, Tileset_1, \
+	   BellVillage1_Collision
 
-G5_23_MapAttributes:
-BellSchoolOutside2_MapAttributes:
-	map_attributes BellSchoolOutside1, BELL_SCHOOL_OUTSIDE_1, 0, Tileset_2
+BellSchoolOutside1_MapAttributes::
+	map_attr BELL_SCHOOL_OUTSIDE_1, \
+	   BellSchoolOutside1_Layout, \
+	   BellSchoolOutside1_Blocks, \
+	   BellSchoolOutside1_Metatiles, \
+	   BellSchoolOutside1_AttrMap, \
+	   BellSchoolOutside1_Palettes, \
+	   0, Tileset_2, \
+	   BellSchoolOutside1_Collision
 
-BellObservatoryOutside2_MapAttributes:
-	map_attributes BellObservatoryOutside1, BELL_OBSERVATORY_OUTSIDE_1, 0, Tileset_3
+BellObservatoryOutside1_MapAttributes::
+	map_attr BELL_OBSERVATORY_OUTSIDE_1, \
+	   BellObservatoryOutside1_Layout, \
+	   BellObservatoryOutside1_Blocks, \
+	   BellObservatoryOutside1_Metatiles, \
+	   BellObservatoryOutside1_AttrMap, \
+	   BellObservatoryOutside1_Palettes, \
+	   0, Tileset_3, \
+	   BellObservatoryOutside1_Collision
 
-G7_08_MapAttributes:
-G5_1D_MapAttributes:
-BallotsHouse2_MapAttributes:
-	map_attributes BallotsHouse1, BALLOTS_HOUSE_1, 0, Tileset_4
+BallotsHouse1_MapAttributes::
+	map_attr BALLOTS_HOUSE_1, \
+	   BallotsHouse1_Layout, \
+	   BallotsHouse1_Blocks, \
+	   Houses1_Metatiles, \
+	   Houses1_AttrMap, \
+	   Houses1_Palettes, \
+	   0, Tileset_4, \
+	   Houses1_Collision
 
-G4_30_MapAttributes:
-G4_4A_MapAttributes:
-G5_1E_MapAttributes:
-HayatosHouse2_MapAttributes::
-	map_attributes HayatosHouse1, HAYATOS_HOUSE_1, 0, Tileset_4
+HayatosHouse1_MapAttributes::
+	map_attr HAYATOS_HOUSE_1, \
+	   HayatosHouse1_Layout, \
+	   HayatosHouse1_Blocks, \
+	   Houses1_Metatiles, \
+	   Houses1_AttrMap, \
+	   Houses1_Palettes, \
+	   0, Tileset_4, \
+	   Houses1_Collision
 
-G4_2C_MapAttributes:
-G4_46_MapAttributes:
-G3_18_MapAttributes:
-G5_1F_MapAttributes:
-CarpetWomansHouse2_MapAttributes:
-	map_attributes CarpetWomansHouse1, CARPET_WOMANS_HOUSE_1, 0, Tileset_4
+CarpetWomansHouse1_MapAttributes::
+	map_attr CARPET_WOMANS_HOUSE_1, \
+	   CarpetWomansHouse1_Layout, \
+	   CarpetWomansHouse1_Blocks, \
+	   Houses1_Metatiles, \
+	   Houses1_AttrMap, \
+	   Houses1_Palettes, \
+	   0, Tileset_4, \
+	   Houses1_Collision
 
-G3_19_MapAttributes:
-G5_20_MapAttributes:
-FangfangsHouse2_MapAttributes:
-	map_attributes FangfangsHouse1, FANGFANGS_HOUSE_1, 0, Tileset_4
+FangfangsHouse1_MapAttributes::
+	map_attr FANGFANGS_HOUSE_1, \
+	   FangfangsHouse1_Layout, \
+	   FangfangsHouse1_Blocks, \
+	   Houses1_Metatiles, \
+	   Houses1_AttrMap, \
+	   Houses1_Palettes, \
+	   0, Tileset_4, \
+	   Houses1_Collision
 
-G3_1D_MapAttributes:
-G5_21_MapAttributes:
-BellHealingCenter2_MapAttributes:
-	map_attributes BellHealingCenter1, BELL_HEALING_CENTER_1, 0, Tileset_5
+BellHealingCenter1_MapAttributes::
+	map_attr BELL_HEALING_CENTER_1, \
+	   BellHealingCenter1_Layout, \
+	   BellHealingCenter1_Blocks, \
+	   BellHealingCenter1_Metatiles, \
+	   BellHealingCenter1_AttrMap, \
+	   BellHealingCenter1_Palettes, \
+	   0, Tileset_5, \
+	   BellHealingCenter1_Collision
 
-G5_24_MapAttributes:
-BellSchool2_MapAttributes:
-	map_attributes BellSchool1, BELL_SCHOOL_1, 0, Tileset_6
+BellSchool1_MapAttributes::
+	map_attr BELL_SCHOOL_1, \
+	   BellSchool1_Layout, \
+	   BellSchool1_Blocks, \
+	   BellSchool1_Metatiles, \
+	   BellSchool1_AttrMap, \
+	   BellSchool1_Palettes, \
+	   0, Tileset_6, \
+	   BellSchool1_Collision
 
-BellObservatory2_MapAttributes:
-	map_attributes BellObservatory1, BELL_OBSERVATORY_1, 0, Tileset_7
+BellObservatory1_MapAttributes::
+	map_attr BELL_OBSERVATORY_1, \
+	   BellObservatory1_Layout, \
+	   BellObservatory1_Blocks, \
+	   BellObservatory1_Metatiles, \
+	   BellObservatory1_AttrMap, \
+	   BellObservatory1_Palettes, \
+	   0, Tileset_7, \
+	   BellObservatory1_Collision
 
-BellSchoolNorthClassroom1_MapAttributes:
-BellSchoolNorthClassroom_MapAttributes:
-BellSchoolSouthClassroom1_MapAttributes:
-BellSchoolSouthClassroom2_MapAttributes:
-G5_25_MapAttributes:
-G5_26_MapAttributes:
-	map_attributes BellSchoolSouthClassroom, BELL_SCHOOL_SOUTH_CLASSROOM_1, 0, Tileset_4
+BellSchoolClassroom_MapAttributes:
+	map_attr BELL_SCHOOL_SOUTH_CLASSROOM_1, \
+	   BellSchoolSouthClassroom_Layout, \
+	   BellSchoolSouthClassroom_Blocks, \
+	   BellSchoolSouthClassroom_Metatiles, \
+	   BellSchoolSouthClassroom_AttrMap, \
+	   BellSchoolSouthClassroom_Palettes, \
+	   0, Tileset_4, \
+	   BellSchoolSouthClassroom_Collision
 
-TechCity_MapAttributes:
-	db 18, 12
-	dw TechCity_Layout
-	dw TechCity_Blocks
-	dw TechCity_Metatiles
-	dw TechCity_AttrMap
-	dw TechCity_Palettes
-	dw 0
-	dw Tileset_8
-	dw 0
-	dw TechCity_Collision
+TechCity_MapAttributes::
+	map_attr TECH_CITY_2, \
+	   TechCity_Layout, \
+	   TechCity_Blocks, \
+	   TechCity_Metatiles, \
+	   TechCity_AttrMap, \
+	   TechCity_Palettes, \
+	   0, Tileset_8, \
+	   TechCity_Collision
 
-G4_2F_MapAttributes:
-G4_49_MapAttributes:
-G2_1B_MapAttributes:
-G2_1F_MapAttributes:
-G6_22_MapAttributes:
-MapAttributes_001_40f0:
-	db 6, 5
-	dw Layout_001_5bb9
-	dw Blocks_001_5bd8
-	dw Metatiles_001_5dd3
-	dw AttrMap_001_5efb
-	dw Palettes_001_5f8c
-	dw 0
-	dw Tileset_4
-	dw 0
-	dw Collision_001_5fd4
+MapAttributes_001_40f0::
+	map_attr EAST_FISHMARKET_2F, \
+	   Layout_001_5bb9, \
+	   Blocks_001_5bd8, \
+	   Metatiles_001_5dd3, \
+	   AttrMap_001_5efb, \
+	   Palettes_001_5f8c, \
+	   0, Tileset_4, \
+	   Collision_001_5fd4
 
-G4_2D_MapAttributes:
-G4_35_MapAttributes:
-G4_47_MapAttributes:
-G2_20_MapAttributes:
-G6_23_MapAttributes:
-G6_24_MapAttributes:
-MapAttributes_001_4104:
-	db 6, 5
-	dw Layout_001_5c18
-	dw Blocks_001_5c37
-	dw Metatiles_001_5dd3
-	dw AttrMap_001_5efb
-	dw Palettes_001_5f8c
-	dw 0
-	dw Tileset_4
-	dw 0
-	dw Collision_001_5fd4
+MapAttributes_001_4104::
+	map_attr EAST_FISHMARKET_2D, \
+	   Layout_001_5c18, \
+	   Blocks_001_5c37, \
+	   Metatiles_001_5dd3, \
+	   AttrMap_001_5efb, \
+	   Palettes_001_5f8c, \
+	   0, Tileset_4, \
+	   Collision_001_5fd4
 
-G4_34_MapAttributes:
-G2_1D_MapAttributes:
-G3_1A_MapAttributes:
-MapAttributes_001_4118:
-	db 6, 5
-	dw Layout_001_5c7b
-	dw Blocks_001_5c9a
-	dw Metatiles_001_5dd3
-	dw AttrMap_001_5efb
-	dw Palettes_001_5f8c
-	dw 0
-	dw Tileset_4
-	dw 0
-	dw Collision_001_5fd4
+MapAttributes_001_4118::
+	map_attr GEOTHERMAL_CITY_34, \
+	   Layout_001_5c7b, \
+	   Blocks_001_5c9a, \
+	   Metatiles_001_5dd3, \
+	   AttrMap_001_5efb, \
+	   Palettes_001_5f8c, \
+	   0, Tileset_4, \
+	   Collision_001_5fd4
 
-G4_2E_MapAttributes:
-G4_37_MapAttributes:
-G4_48_MapAttributes:
-G2_1E_MapAttributes:
-G6_25_MapAttributes:
-MapAttributes_001_412c:
-	db 6, 5
-	dw Layout_001_5cd2
-	dw Blocks_001_5cf1
-	dw Metatiles_001_5dd3
-	dw AttrMap_001_5efb
-	dw Palettes_001_5f8c
-	dw 0
-	dw Tileset_4
-	dw 0
-	dw Collision_001_5fd4
+MapAttributes_001_412c::
+	map_attr EAST_FISHMARKET_2E, \
+	   Layout_001_5cd2, \
+	   Blocks_001_5cf1, \
+	   Metatiles_001_5dd3, \
+	   AttrMap_001_5efb, \
+	   Palettes_001_5f8c, \
+	   0, Tileset_4, \
+	   Collision_001_5fd4
 
-G4_33_MapAttributes:
-G4_4D_MapAttributes:
-G2_1C_MapAttributes:
-MapAttributes_001_4140:
-	db 6, 5
-	dw Layout_001_5d35
-	dw Blocks_001_5d54
-	dw Metatiles_001_5dd3
-	dw AttrMap_001_5efb
-	dw Palettes_001_5f8c
-	dw 0
-	dw Tileset_4
-	dw 0
-	dw Collision_001_5fd4
+MapAttributes_001_4140::
+	map_attr EAST_FISHMARKET_33, \
+	   Layout_001_5d35, \
+	   Blocks_001_5d54, \
+	   Metatiles_001_5dd3, \
+	   AttrMap_001_5efb, \
+	   Palettes_001_5f8c, \
+	   0, Tileset_4, \
+	   Collision_001_5fd4
 
-G4_36_MapAttributes:
-G4_3F_MapAttributes:
-G4_5B_MapAttributes:
-G6_26_MapAttributes:
-MapAttributes_001_4154:
-	db 6, 5
-	dw Layout_001_5db4
-	dw Blocks_001_5eb3
-	dw Metatiles_001_5dd3
-	dw AttrMap_001_5efb
-	dw Palettes_001_5f8c
-	dw 0
-	dw Tileset_4
-	dw 0
-	dw Collision_001_5fd4
+MapAttributes_001_4154::
+	map_attr GEOTHERMAL_CITY_36, \
+	   Layout_001_5db4, \
+	   Blocks_001_5eb3, \
+	   Metatiles_001_5dd3, \
+	   AttrMap_001_5efb, \
+	   Palettes_001_5f8c, \
+	   0, Tileset_4, \
+	   Collision_001_5fd4
 
-G4_32_MapAttributes:
-G4_38_MapAttributes:
-G4_41_MapAttributes:
-G4_4C_MapAttributes:
-G4_5D_MapAttributes:
-G2_1A_MapAttributes:
-G2_22_MapAttributes:
-G5_22_MapAttributes:
-G6_28_MapAttributes:
-TechShop_MapAttributes:
-	db 6, 5
-	dw Layout_001_5a28
-	dw Blocks_001_5ab3
-	dw Metatiles_001_5a47
-	dw AttrMap_001_5b13
-	dw Palettes_001_5b55
-	dw 0
-	dw Tileset_9
-	dw 0
-	dw Collision_001_5b9d
+EastFishmarket_32_MapAttributes::
+	map_attr EAST_FISHMARKET_32, \
+	   Layout_001_5a28, \
+	   Blocks_001_5ab3, \
+	   Metatiles_001_5a47, \
+	   AttrMap_001_5b13, \
+	   Palettes_001_5b55, \
+	   0, Tileset_9, \
+	   Collision_001_5b9d
 
-G4_31_MapAttributes:
-G4_39_MapAttributes:
-G4_40_MapAttributes:
-G4_4B_MapAttributes:
-G4_5C_MapAttributes:
-G2_19_MapAttributes:
-G2_21_MapAttributes:
-G6_29_MapAttributes:
-TechHealingCenter_MapAttributes:
-	db 6, 5
-	dw Layout_001_58a7
-	dw Blocks_001_592a
-	dw Metatiles_001_58c6
-	dw AttrMap_001_5976
-	dw Palettes_001_59c7
-	dw 0
-	dw Tileset_10
-	dw 0
-	dw Collision_001_5a0f
+EastFishmarket_31_MapAttributes::
+	map_attr EAST_FISHMARKET_31, \
+	   Layout_001_58a7, \
+	   Blocks_001_592a, \
+	   Metatiles_001_58c6, \
+	   AttrMap_001_5976, \
+	   Palettes_001_59c7, \
+	   0, Tileset_10, \
+	   Collision_001_5a0f
 
-CrystalVillage_MapAttributes:
-	db 12, 10
-	dw CrystalVillage_Layout
-	dw CrystalVillage_Blocks
-	dw CrystalVillage_Metatiles
-	dw CrystalVillage_AttrMap
-	dw CrystalVillage_Palettes
-	dw 0
-	dw Tileset_11
-	dw 0
-	dw CrystalVillage_Collision
+CrystalVillage_MapAttributes::
+	map_attr CRYSTAL_VILLAGE_2, \
+	   CrystalVillage_Layout, \
+	   CrystalVillage_Blocks, \
+	   CrystalVillage_Metatiles, \
+	   CrystalVillage_AttrMap, \
+	   CrystalVillage_Palettes, \
+	   0, Tileset_11, \
+	   CrystalVillage_Collision
 
-MapAttributes_001_41a4:
-	db 6, 5
-	dw Layout_001_5076
-	dw Blocks_001_5095
-	dw Metatiles_001_5219
-	dw AttrMap_001_5361
-	dw Palettes_001_5402
-	dw 0
-	dw Tileset_12
-	dw 0
-	dw Collision_001_544a
+MapAttributes_001_41a4::
+	map_attr G1_16, \
+	   Layout_001_5076, \
+	   Blocks_001_5095, \
+	   Metatiles_001_5219, \
+	   AttrMap_001_5361, \
+	   Palettes_001_5402, \
+	   0, Tileset_12, \
+	   Collision_001_544a
 
-G3_17_MapAttributes:
-MapAttributes_001_41b8:
-	db 6, 5
-	dw Layout_001_50d5
-	dw Blocks_001_50f4
-	dw Metatiles_001_5219
-	dw AttrMap_001_5361
-	dw Palettes_001_5402
-	dw 0
-	dw Tileset_12
-	dw 0
-	dw Collision_001_544a
+MapAttributes_001_41b8::
+	map_attr G3_17, \
+	   Layout_001_50d5, \
+	   Blocks_001_50f4, \
+	   Metatiles_001_5219, \
+	   AttrMap_001_5361, \
+	   Palettes_001_5402, \
+	   0, Tileset_12, \
+	   Collision_001_544a
 
-MapAttributes_001_41cc:
-	db 6, 5
-	dw Layout_001_5138
-	dw Blocks_001_5157
-	dw Metatiles_001_5219
-	dw AttrMap_001_5361
-	dw Palettes_001_5402
-	dw 0
-	dw Tileset_12
-	dw 0
-	dw Collision_001_544a
+MapAttributes_001_41cc::
+	map_attr G1_18, \
+	   Layout_001_5138, \
+	   Blocks_001_5157, \
+	   Metatiles_001_5219, \
+	   AttrMap_001_5361, \
+	   Palettes_001_5402, \
+	   0, Tileset_12, \
+	   Collision_001_544a
 
-MapAttributes_001_41e0:
-	db 6, 5
-	dw Layout_001_5197
-	dw Blocks_001_51b6
-	dw Metatiles_001_5219
-	dw AttrMap_001_5361
-	dw Palettes_001_5402
-	dw 0
-	dw Tileset_12
-	dw 0
-	dw Collision_001_544a
+MapAttributes_001_41e0::
+	map_attr G1_19, \
+	   Layout_001_5197, \
+	   Blocks_001_51b6, \
+	   Metatiles_001_5219, \
+	   AttrMap_001_5361, \
+	   Palettes_001_5402, \
+	   0, Tileset_12, \
+	   Collision_001_544a
 
-MapAttributes_001_41f4:
-	db 6, 5
-	dw Layout_001_51fa
-	dw Blocks_001_5301
-	dw Metatiles_001_5219
-	dw AttrMap_001_5361
-	dw Palettes_001_5402
-	dw 0
-	dw Tileset_12
-	dw 0
-	dw Collision_001_544a
+MapAttributes_001_41f4::
+	map_attr G1_1A, \
+	   Layout_001_51fa, \
+	   Blocks_001_5301, \
+	   Metatiles_001_5219, \
+	   AttrMap_001_5361, \
+	   Palettes_001_5402, \
+	   0, Tileset_12, \
+	   Collision_001_544a
 
-CrystalHealingCenter_MapAttributes:
-	db 6, 5
-	dw Layout_001_4eeb
-	dw Blocks_001_4f76
-	dw Metatiles_001_4f0a
-	dw AttrMap_001_4fc2
-	dw Palettes_001_5013
-	dw 0
-	dw Tileset_13
-	dw 0
-	dw Collision_001_505b
+CrystalHealingCenter_MapAttributes::
+	map_attr CRYSTAL_HEALING_CENTER_2, \
+	   Layout_001_4eeb, \
+	   Blocks_001_4f76, \
+	   Metatiles_001_4f0a, \
+	   AttrMap_001_4fc2, \
+	   Palettes_001_5013, \
+	   0, Tileset_13, \
+	   Collision_001_505b
 
-Junkyard_MapAttributes:
-	db 6, 5
-	dw Junkyard_Layout
-	dw Junkyard_Blocks
-	dw Junkyard_Metatiles
-	dw Junkyard_AttrMap
-	dw Junkyard_Palettes
-	dw 0
-	dw Tileset_14
-	dw 0
-	dw Junkyard_Collision
+Junkyard_MapAttributes::
+	map_attr JUNKYARD_2, \
+	   Junkyard_Layout, \
+	   Junkyard_Blocks, \
+	   Junkyard_Metatiles, \
+	   Junkyard_AttrMap, \
+	   Junkyard_Palettes, \
+	   0, Tileset_14, \
+	   Junkyard_Collision
 
-PowerPlantOutside_MapAttributes:
-	db 12, 5
-	dw PowerPlantOutside_Layout
-	dw PowerPlantOutside_Blocks
-	dw PowerPlantOutside_Metatiles
-	dw PowerPlantOutside_AttrMap
-	dw PowerPlantOutside_Palettes
-	dw 0
-	dw Tileset_19
-	dw 0
-	dw PowerPlantOutside_Collision
+PowerPlantOutside_MapAttributes::
+	map_attr POWER_PLANT_OUTSIDE_2, \
+	   PowerPlantOutside_Layout, \
+	   PowerPlantOutside_Blocks, \
+	   PowerPlantOutside_Metatiles, \
+	   PowerPlantOutside_AttrMap, \
+	   PowerPlantOutside_Palettes, \
+	   0, Tileset_19, \
+	   PowerPlantOutside_Collision
 
-PowerPlant1F_MapAttributes:
-	db 6, 5
-	dw PowerPlant1F_Layout
-	dw PowerPlant1F_Blocks
-	dw PowerPlant_Metatiles
-	dw PowerPlant_AttrMap
-	dw PowerPlant_Palettes
-	dw 0
-	dw Tileset_15
-	dw 0
-	dw PowerPlant_Collision
+PowerPlant1F_MapAttributes::
+	map_attr POWER_PLANT_1F_2, \
+	   PowerPlant1F_Layout, \
+	   PowerPlant1F_Blocks, \
+	   PowerPlant_Metatiles, \
+	   PowerPlant_AttrMap, \
+	   PowerPlant_Palettes, \
+	   0, Tileset_15, \
+	   PowerPlant_Collision
 
-PowerPlant2F_MapAttributes:
-	db 6, 5
-	dw PowerPlant2F_Layout
-	dw PowerPlant2F_Blocks
-	dw PowerPlant_Metatiles
-	dw PowerPlant_AttrMap
-	dw PowerPlant_Palettes
-	dw 0
-	dw Tileset_15
-	dw 0
-	dw PowerPlant_Collision
+PowerPlant2F_MapAttributes::
+	map_attr POWER_PLANT_2F_2, \
+	   PowerPlant2F_Layout, \
+	   PowerPlant2F_Blocks, \
+	   PowerPlant_Metatiles, \
+	   PowerPlant_AttrMap, \
+	   PowerPlant_Palettes, \
+	   0, Tileset_15, \
+	   PowerPlant_Collision
 
-PowerPlant3F_MapAttributes:
-	db 6, 5
-	dw PowerPlant3F_Layout
-	dw PowerPlant3F_Blocks
-	dw PowerPlant_Metatiles
-	dw PowerPlant_AttrMap
-	dw PowerPlant_Palettes
-	dw 0
-	dw Tileset_15
-	dw 0
-	dw PowerPlant_Collision
+PowerPlant3F_MapAttributes::
+	map_attr POWER_PLANT_3F_2, \
+	   PowerPlant3F_Layout, \
+	   PowerPlant3F_Blocks, \
+	   PowerPlant_Metatiles, \
+	   PowerPlant_AttrMap, \
+	   PowerPlant_Palettes, \
+	   0, Tileset_15, \
+	   PowerPlant_Collision
 
-PowerPlant4F_MapAttributes:
-	db 6, 5
-	dw PowerPlant4F_Layout
-	dw PowerPlant4F_Blocks
-	dw PowerPlant_Metatiles
-	dw PowerPlant_AttrMap
-	dw PowerPlant_Palettes
-	dw 0
-	dw Tileset_15
-	dw 0
-	dw PowerPlant_Collision
+PowerPlant4F_MapAttributes::
+	map_attr POWER_PLANT_4F_2, \
+	   PowerPlant4F_Layout, \
+	   PowerPlant4F_Blocks, \
+	   PowerPlant_Metatiles, \
+	   PowerPlant_AttrMap, \
+	   PowerPlant_Palettes, \
+	   0, Tileset_15, \
+	   PowerPlant_Collision
 
-Hideout_MapAttributes:
-	db 18, 12
-	dw Hideout_Layout
-	dw Hideout_Blocks
-	dw Hideout_Metatiles
-	dw Hideout_AttrMap
-	dw Hideout_Palettes
-	dw 0
-	dw Tileset_16
-	dw 0
-	dw Hideout_Collision
+Hideout_MapAttributes::
+	map_attr HIDEOUT_2, \
+	   Hideout_Layout, \
+	   Hideout_Blocks, \
+	   Hideout_Metatiles, \
+	   Hideout_AttrMap, \
+	   Hideout_Palettes, \
+	   0, Tileset_16, \
+	   Hideout_Collision
 
 Hideout_Layout:
 	db MAPTYPE_HIDEOUT
@@ -386,43 +351,8 @@ Hideout_Blocks:
 Hideout_AttrMap:
 INCBIN "gfx/attrmaps/hideout_attrmap.bin"
 
-Hideout_Palettes:
-	RGB 31, 31, 29
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 0, 24, 31
-	RGB 0, 10, 24
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 17, 31
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 11, 20, 22
-	RGB 2, 10, 12
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Hideout_Palettes::
+	INCLUDE "data/maps/palettes/Hideout.pal"
 
 Hideout_Collision:
 	INCBIN "data/maps/collision/Hideout_Collision.bin"
@@ -461,43 +391,8 @@ PowerPlant4F_Blocks:
 PowerPlant_AttrMap:
 INCBIN "gfx/attrmaps/powerplant_attrmap.bin"
 
-PowerPlant_Palettes:
-	RGB 31, 31, 29
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 0, 24, 31
-	RGB 0, 10, 24
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 17, 31
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 23, 25, 27
-	RGB 13, 15, 18
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+PowerPlant_Palettes::
+	INCLUDE "data/maps/palettes/PowerPlant.pal"
 
 PowerPlant_Collision:
 	INCBIN "data/maps/collision/PowerPlant_Collision.bin"
@@ -515,43 +410,8 @@ PowerPlantOutside_Blocks:
 PowerPlantOutside_AttrMap:
 INCBIN "gfx/attrmaps/powerplantoutside_attrmap.bin"
 
-PowerPlantOutside_Palettes:
-	RGB 31, 31, 29
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 31, 17, 31
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 23, 25, 27
-	RGB 13, 15, 18
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+PowerPlantOutside_Palettes::
+	INCLUDE "data/maps/palettes/PowerPlantOutside.pal"
 
 PowerPlantOutside_Collision:
 	INCBIN "data/maps/collision/PowerPlantOutside_Collision.bin"
@@ -569,43 +429,8 @@ Junkyard_Blocks:
 Junkyard_AttrMap:
 INCBIN "gfx/attrmaps/junkyard_attrmap.bin"
 
-Junkyard_Palettes:
-	RGB 31, 30, 29
-	RGB 21, 26, 26
-	RGB 9, 13, 13
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 31, 20, 18
-	RGB 20, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 30
-	RGB 19, 23, 20
-	RGB 6, 13, 10
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Junkyard_Palettes::
+	INCLUDE "data/maps/palettes/Junkyard.pal"
 
 Junkyard_Collision:
 	INCBIN "data/maps/collision/Junkyard_Collision.bin"
@@ -623,43 +448,8 @@ Blocks_001_4f76:
 AttrMap_001_4fc2:
 INCBIN "gfx/attrmaps/attrmap_001_4fc2.bin"
 
-Palettes_001_5013:
-	RGB 31, 31, 31
-	RGB 0, 25, 31
-	RGB 0, 9, 25
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 24, 20, 31
-	RGB 11, 5, 22
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 28, 24, 9
-	RGB 15, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 15, 17
-	RGB 25, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 22, 22, 26
-	RGB 11, 11, 16
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_001_5013::
+	INCLUDE "data/maps/palettes/Palettes_001_5013.pal"
 
 Collision_001_505b:
 	INCBIN "data/maps/collision/Collision_001_505b.bin"
@@ -705,43 +495,8 @@ Blocks_001_5301:
 AttrMap_001_5361:
 INCBIN "gfx/attrmaps/attrmap_001_5361.bin"
 
-Palettes_001_5402:
-	RGB 31, 31, 31
-	RGB 0, 25, 31
-	RGB 0, 9, 25
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 24, 20, 31
-	RGB 11, 5, 22
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 28, 24, 9
-	RGB 15, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 15, 17
-	RGB 25, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 22, 22, 26
-	RGB 11, 11, 16
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_001_5402::
+	INCLUDE "data/maps/palettes/Palettes_001_5402.pal"
 
 Collision_001_544a:
 	INCBIN "data/maps/collision/Collision_001_544a.bin"
@@ -757,45 +512,10 @@ CrystalVillage_Blocks:
 	INCBIN "data/maps/blocks/CrystalVillage.bin"
 
 CrystalVillage_AttrMap:
-INCBIN "gfx/attrmaps/crystalvillage_attrmap.bin"
+	INCBIN "gfx/attrmaps/crystalvillage_attrmap.bin"
 
-CrystalVillage_Palettes:
-	RGB 31, 30, 30
-	RGB 24, 20, 31
-	RGB 11, 5, 22
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 31, 18, 28
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 17, 22, 22
-	RGB 5, 10, 10
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+CrystalVillage_Palettes::
+	INCLUDE "data/maps/palettes/CrystalVillage.pal"
 
 CrystalVillage_Collision:
 	INCBIN "data/maps/collision/CrystalVillage_Collision.bin"
@@ -813,43 +533,8 @@ Blocks_001_592a:
 AttrMap_001_5976:
 INCBIN "gfx/attrmaps/attrmap_001_5976.bin"
 
-Palettes_001_59c7:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 19, 23, 25
-	RGB 0, 8, 14
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 28, 24, 9
-	RGB 15, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 15, 17
-	RGB 25, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 22, 22, 26
-	RGB 11, 11, 16
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_001_59c7::
+	INCLUDE "data/maps/palettes/Palettes_001_59c7.pal"
 
 Collision_001_5a0f:
 	INCBIN "data/maps/collision/Collision_001_5a0f.bin"
@@ -867,43 +552,8 @@ Blocks_001_5ab3:
 AttrMap_001_5b13:
 INCBIN "gfx/attrmaps/attrmap_001_5b13.bin"
 
-Palettes_001_5b55:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 19, 23, 25
-	RGB 0, 8, 14
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 28, 24, 9
-	RGB 15, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 15, 17
-	RGB 25, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 22, 22, 26
-	RGB 11, 11, 16
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_001_5b55::
+	INCLUDE "data/maps/palettes/Palettes_001_5b55.pal"
 
 Collision_001_5b9d:
 	INCBIN "data/maps/collision/Collision_001_5b9d.bin"
@@ -956,43 +606,8 @@ Blocks_001_5eb3:
 AttrMap_001_5efb:
 INCBIN "gfx/attrmaps/attrmap_001_5efb.bin"
 
-Palettes_001_5f8c:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 19, 23, 25
-	RGB 0, 8, 14
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 28, 24, 9
-	RGB 15, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 15, 17
-	RGB 25, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 22, 22, 26
-	RGB 11, 11, 16
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Palettes_001_5f8c::
+	INCLUDE "data/maps/palettes/Palettes_001_5f8c.pal"
 
 Collision_001_5fd4:
 	INCBIN "data/maps/collision/Collision_001_5fd4.bin"
@@ -1010,43 +625,8 @@ TechCity_Blocks:
 TechCity_AttrMap:
 INCBIN "gfx/attrmaps/techcity_attrmap.bin"
 
-TechCity_Palettes:
-	RGB 31, 30, 29
-	RGB 21, 26, 26
-	RGB 9, 13, 13
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 31, 18, 28
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 29
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+TechCity_Palettes::
+	INCLUDE "data/maps/palettes/TechCity.pal"
 
 TechCity_Collision:
 	INCBIN "data/maps/collision/TechCity_Collision.bin"
@@ -1064,43 +644,8 @@ BellSchoolSouthClassroom_Blocks:
 BellSchoolSouthClassroom_AttrMap:
 INCBIN "gfx/attrmaps/bellschoolsouthclassroom_attrmap.bin"
 
-BellSchoolSouthClassroom_Palettes:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 14, 23, 29
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 23, 25, 27
-	RGB 10, 12, 14
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+BellSchoolSouthClassroom_Palettes::
+	INCLUDE "data/maps/palettes/BellSchoolSouthClassroom.pal"
 
 BellSchoolSouthClassroom_Collision:
 	INCBIN "data/maps/collision/BellSchoolSouthClassroom_Collision.bin"
@@ -1118,43 +663,8 @@ BellObservatory1_Blocks:
 BellObservatory1_AttrMap:
 INCBIN "gfx/attrmaps/bellobservatory1_attrmap.bin"
 
-BellObservatory1_Palettes:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 14, 23, 29
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 23, 25, 27
-	RGB 10, 12, 14
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+BellObservatory1_Palettes::
+	INCLUDE "data/maps/palettes/BellObservatory1.pal"
 
 BellObservatory1_Collision:
 	INCBIN "data/maps/collision/BellObservatory1_Collision.bin"
@@ -1172,43 +682,8 @@ BellSchool1_Blocks:
 BellSchool1_AttrMap:
 INCBIN "gfx/attrmaps/bellschool1_attrmap.bin"
 
-BellSchool1_Palettes:
-	RGB 31, 30, 28
-	RGB 27, 25, 18
-	RGB 18, 15, 10
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 14, 23, 29
-	RGB 0, 14, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 20, 24, 27
-	RGB 12, 16, 21
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+BellSchool1_Palettes::
+	INCLUDE "data/maps/palettes/BellSchool1.pal"
 
 BellSchool1_Collision:
 	INCBIN "data/maps/collision/BellSchool1_Collision.bin"
@@ -1226,43 +701,8 @@ BellHealingCenter1_Blocks:
 BellHealingCenter1_AttrMap:
 INCBIN "gfx/attrmaps/bellhealingcenter1_attrmap.bin"
 
-BellHealingCenter1_Palettes:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 14, 23, 29
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 23, 25, 27
-	RGB 10, 12, 14
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+BellHealingCenter1_Palettes::
+	INCLUDE "data/maps/palettes/BellHealingCenter1.pal"
 
 BellHealingCenter1_Collision:
 	INCBIN "data/maps/collision/BellHealingCenter1_Collision.bin"
@@ -1292,67 +732,20 @@ FangfangsHouse1_Layout:
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/FangfangsHouse1.bin"
 
-BallotsHouse1_Metatiles:
-HayatosHouse1_Metatiles:
-CarpetWomansHouse1_Metatiles:
-FangfangsHouse1_Metatiles:
+Houses1_Metatiles::
 	INCBIN "data/maps/metatiles/Houses1.bin"
 
 FangfangsHouse1_Blocks:
 	INCBIN "data/maps/blocks/FangfangsHouse1.bin"
 
-BallotsHouse1_AttrMap:
-HayatosHouse1_AttrMap:
-CarpetWomansHouse1_AttrMap:
-FangfangsHouse1_AttrMap:
+Houses1_AttrMap::
 INCBIN "gfx/attrmaps/fangfangshouse1_attrmap.bin"
 
-BallotsHouse1_Palettes:
-HayatosHouse1_Palettes:
-CarpetWomansHouse1_Palettes:
-FangfangsHouse1_Palettes:
-	RGB 31, 30, 28
-	RGB 21, 23, 14
-	RGB 13, 16, 7
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 14, 23, 29
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 23, 23
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 23, 25, 27
-	RGB 10, 12, 14
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+Houses1_Palettes::
+	INCLUDE "data/maps/palettes/Houses1.pal"
 
-BallotsHouse1_Collision:
-HayatosHouse1_Collision:
-CarpetWomansHouse1_Collision:
-FangfangsHouse1_Collision:
-	INCBIN "data/maps/collision/BallotsHouse1_Collision.bin"
+Houses1_Collision::
+	INCBIN "data/maps/collision/Houses1_Collision.bin"
 
 BellObservatoryOutside1_Layout:
 	db MAPTYPE_NONE
@@ -1367,43 +760,8 @@ BellObservatoryOutside1_Blocks:
 BellObservatoryOutside1_AttrMap:
 INCBIN "gfx/attrmaps/bellobservatoryoutside1_attrmap.bin"
 
-BellObservatoryOutside1_Palettes:
-	RGB 31, 30, 26
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 30, 30, 30
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 31, 17, 31
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 23, 25, 27
-	RGB 13, 15, 18
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+BellObservatoryOutside1_Palettes::
+	INCLUDE "data/maps/palettes/BellObservatoryOutside1.pal"
 
 BellObservatoryOutside1_Collision:
 	INCBIN "data/maps/collision/BellObservatoryOutside1_Collision.bin"
@@ -1421,43 +779,8 @@ BellSchoolOutside1_Blocks:
 BellSchoolOutside1_AttrMap:
 INCBIN "gfx/attrmaps/bellschooloutside1_attrmap.bin"
 
-BellSchoolOutside1_Palettes:
-	RGB 31, 30, 26
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 16, 25, 6
-	RGB 0, 13, 0
-	RGB 0, 0, 0
-	RGB 30, 30, 30
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 31, 17, 31
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 29
-	RGB 23, 25, 27
-	RGB 13, 15, 18
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+BellSchoolOutside1_Palettes::
+	INCLUDE "data/maps/palettes/BellSchoolOutside1.pal"
 
 BellSchoolOutside1_Collision:
 	INCBIN "data/maps/collision/BellSchoolOutside1_Collision.bin"
@@ -1475,19 +798,21 @@ BellVillage1_Blocks:
 BellVillage1_AttrMap:
 	INCBIN "data/maps/attributes/BellVillage1.bin"
 
-BellVillage1_Palettes:
-	INCBIN "data/maps/palettes/BellVillage1.bin"
+BellVillage1_Palettes::
+	INCLUDE "data/maps/palettes/BellVillage1.pal"
 
 BellVillage1_Collision:
 	INCBIN "data/maps/collision/BellVillage1_Collision.bin"
 
 G2_23_MapAttributes:
-	map_attr_data \
-		6, 6, \
-		Layout_001_792e, Blocks_001_7957, Metatiles_001_7953, AttrMap_001_795b, \
-		Palettes_001_795e, \
-		Tileset_001_79a8, Tileset_001_79a8, \
-		Collision_001_79a6
+	map_attr G2_23, \
+	   Layout_001_792e, \
+	   Blocks_001_7957, \
+	   Metatiles_001_7953, \
+	   AttrMap_001_795b, \
+	   Palettes_001_795e, \
+	   Tileset_001_79a8, Tileset_001_79a8, \
+	   Collision_001_79a6
 Layout_001_792e::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_792e.bin"
@@ -1498,42 +823,7 @@ Blocks_001_7957::
 AttrMap_001_795b::
 INCBIN "gfx/attrmaps/attrmap_001_795b.bin"
 Palettes_001_795e::
-	RGB 31, 30, 26
-	RGB 28, 23, 14
-	RGB 14, 11, 6
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 16, 28, 6
-	RGB 0, 18, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 8, 21, 31
-	RGB 0, 4, 28
-	RGB 0, 0, 0
-	RGB 31, 30, 26
-	RGB 29, 22, 0
-	RGB 18, 9, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 31, 27, 0
-	RGB 27, 0, 0
-	RGB 0, 0, 0
-	RGB 31, 31, 31
-	RGB 23, 25, 27
-	RGB 13, 15, 18
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+	INCLUDE "data/maps/palettes/Palettes_001_795e.pal"
 Collision_001_79a6::
 	INCBIN "data/maps/collision/Collision_001_79a6.bin"
 Tileset_001_79a8::

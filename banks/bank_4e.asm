@@ -1,10 +1,10 @@
 unk_04e_4000:
 	end
 Script_04e_4001:: ; farjump2 target (bank_4f)
-	setmap $08, $06
+	setmap MAP_BANGLIN_CO_1F, $06
 	end
 Script_04e_4005:
-	setmap $09, $00
+	setmap MAP_BANGLIN_CO_2, $00
 	end
 
 BanglinCo1f_ObjectEvents5:
@@ -49,7 +49,7 @@ Script_04e_4053::
 	emote  0, EMOTE_EXCLAMATION
 	delay $03, $20
 	stext text_4e_4f99
-	setmap $0a, $00
+	setmap MAP_CONTEST_HALL, $00
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_RIGHT
 	spriteface  4, FACE_LEFT
@@ -69,7 +69,7 @@ Script_04e_407c:
 Script_04e_409a:
 	stext text_4e_5086
 	stext text_4e_50c4
-	setmap $09, $01
+	setmap MAP_BANGLIN_CO_2, $01
 	end
 
 ContestHall_ObjectEvents:
@@ -136,7 +136,7 @@ Script_04e_4119::
 	spritewalk  6, MOVE_DOWN
 	clearobject $06
 	stext text_4e_5337
-	setmap $0a, $01
+	setmap MAP_CONTEST_HALL, $01
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_RIGHT
 	spriteface  4, FACE_LEFT
@@ -288,7 +288,7 @@ Script_04e_4119::
 	setfollower $02
 	setplayerchar $00
 	face FACE_LEFT
-	setmap $08, $05
+	setmap MAP_BANGLIN_CO_1F, $05
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_RIGHT
 	stext text_4e_5804
@@ -344,7 +344,7 @@ BanglinCo5f_ObjectEvents2:
 
 Script_04e_4419::
 	face FACE_LEFT
-	setmap $0e, $02
+	setmap MAP_BANGLIN_CO_5F, $02
 	face FACE_UP
 	spriteface  1, FACE_UP
 	spriteface  2, FACE_LEFT
@@ -394,7 +394,7 @@ Script_04e_4419::
 
 Script_04e_44aa:
 	face FACE_DOWN
-	setmap $0e, $03
+	setmap MAP_BANGLIN_CO_5F, $03
 	end
 
 BanglinCo1f_ObjectEvents6:
@@ -405,14 +405,14 @@ BanglinCo1f_ObjectEvents6:
 
 Script_04e_44d2::
 	checkbit wEventFlags + 6, $05, Script_04e_44dc
-	setmap $08, $07
+	setmap MAP_BANGLIN_CO_1F, $07
 	end
 
 Script_04e_44dc:
 	checkbit wEventFlags + 6, $06, Script_04e_4586
 	setplayerchar $00
 	face FACE_RIGHT
-	setmap $08, $08
+	setmap MAP_BANGLIN_CO_1F, $08
 	spriteface  2, FACE_LEFT
 	spriteface  3, FACE_UP
 	spriteface  4, FACE_UP
@@ -471,7 +471,7 @@ Script_04e_44dc:
 	end
 
 Script_04e_4586:
-	setmap $08, $07
+	setmap MAP_BANGLIN_CO_1F, $07
 	end
 
 Airport_ObjectEvents2:
@@ -488,7 +488,7 @@ Script_04e_45b8:
 	walkpath
 	setplayerchar $00
 	face FACE_UP
-	setmap $11, $01
+	setmap MAP_AIRPORT, $01
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_LEFT
 	spriteface  4, FACE_LEFT

@@ -1,67 +1,84 @@
 MapAttributes_018_4000::
-	map_attr_data \
-		18, 12, \
-		Layout_018_481a, Blocks_018_49af, Metatiles_018_48f3, AttrMap_018_4b77, \
-		Palettes_018_4c40, \
-		0, Tileset_8, \
-		Collision_018_4c88
+	map_attr TECH_CITY_BLACKOUT, \
+	   Layout_018_481a, \
+	   Blocks_018_49af, \
+	   Metatiles_018_48f3, \
+	   AttrMap_018_4b77, \
+	   Palettes_018_4c40, \
+	   0, Tileset_8, \
+	   Collision_018_4c88
 MapAttributes_018_4014::
-	map_attr_data \
-		6, 5, \
-		Layout_018_43c6, Blocks_018_43e5, Metatiles_018_45e0, AttrMap_018_4708, \
-		Palettes_018_4bf8, \
-		0, Tileset_4, \
-		Collision_018_47e1
+	map_attr G1_2E, \
+	   Layout_018_43c6, \
+	   Blocks_018_43e5, \
+	   Metatiles_018_45e0, \
+	   AttrMap_018_4708, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_4, \
+	   Collision_018_47e1
 MapAttributes_018_4028::
-	map_attr_data \
-		6, 5, \
-		Layout_018_4425, Blocks_018_4444, Metatiles_018_45e0, AttrMap_018_4708, \
-		Palettes_018_4bf8, \
-		0, Tileset_4, \
-		Collision_018_47e1
+	map_attr G1_2F, \
+	   Layout_018_4425, \
+	   Blocks_018_4444, \
+	   Metatiles_018_45e0, \
+	   AttrMap_018_4708, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_4, \
+	   Collision_018_47e1
 MapAttributes_018_403c::
-	map_attr_data \
-		6, 5, \
-		Layout_018_4488, Blocks_018_44a7, Metatiles_018_45e0, AttrMap_018_4708, \
-		Palettes_018_4bf8, \
-		0, Tileset_4, \
-		Collision_018_47e1
+	map_attr G1_30, \
+	   Layout_018_4488, \
+	   Blocks_018_44a7, \
+	   Metatiles_018_45e0, \
+	   AttrMap_018_4708, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_4, \
+	   Collision_018_47e1
 MapAttributes_018_4050::
-	map_attr_data \
-		6, 5, \
-		Layout_018_44df, Blocks_018_44fe, Metatiles_018_45e0, AttrMap_018_4708, \
-		Palettes_018_4bf8, \
-		0, Tileset_4, \
-		Collision_018_47e1
+	map_attr G1_31, \
+	   Layout_018_44df, \
+	   Blocks_018_44fe, \
+	   Metatiles_018_45e0, \
+	   AttrMap_018_4708, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_4, \
+	   Collision_018_47e1
 MapAttributes_018_4064::
-	map_attr_data \
-		6, 5, \
-		Layout_018_4542, Blocks_018_4561, Metatiles_018_45e0, AttrMap_018_4708, \
-		Palettes_018_4bf8, \
-		0, Tileset_4, \
-		Collision_018_47e1
+	map_attr G1_32, \
+	   Layout_018_4542, \
+	   Blocks_018_4561, \
+	   Metatiles_018_45e0, \
+	   AttrMap_018_4708, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_4, \
+	   Collision_018_47e1
 MapAttributes_018_4078::
-	map_attr_data \
-		6, 5, \
-		Layout_018_45c1, Blocks_018_46c0, Metatiles_018_45e0, AttrMap_018_4708, \
-		Palettes_018_4bf8, \
-		0, Tileset_4, \
-		Collision_018_47e1
-G3_1E_MapAttributes:
+	map_attr G1_33, \
+	   Layout_018_45c1, \
+	   Blocks_018_46c0, \
+	   Metatiles_018_45e0, \
+	   AttrMap_018_4708, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_4, \
+	   Collision_018_47e1
 MapAttributes_018_408c::
-	map_attr_data \
-		6, 5, \
-		Layout_018_4235, Blocks_018_42c0, Metatiles_018_4254, AttrMap_018_4320, \
-		Palettes_018_4bf8, \
-		0, Tileset_9, \
-		Collision_018_43aa
+	map_attr TECH_SHOP_BLACKOUT, \
+	   Layout_018_4235, \
+	   Blocks_018_42c0, \
+	   Metatiles_018_4254, \
+	   AttrMap_018_4320, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_9, \
+	   Collision_018_43aa
 MapAttributes_018_40a0::
-	map_attr_data \
-		6, 5, \
-		Layout_018_40b4, Blocks_018_4137, Metatiles_018_40d3, AttrMap_018_4183, \
-		Palettes_018_4bf8, \
-		0, Tileset_10, \
-		Collision_018_421c
+	map_attr TECH_HEALING_CENTER_BLACKOUT, \
+	   Layout_018_40b4, \
+	   Blocks_018_4137, \
+	   Metatiles_018_40d3, \
+	   AttrMap_018_4183, \
+	   Palettes_018_4bf8, \
+	   0, Tileset_10, \
+	   Collision_018_421c
 Layout_018_40b4::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_40b4.bin"
@@ -130,78 +147,8 @@ Blocks_018_49af::
 AttrMap_018_4b77::
 INCBIN "gfx/attrmaps/attrmap_018_4b77.bin"
 Palettes_018_4bf8::
-	RGB 24, 24, 22
-	RGB 17, 18, 11
-	RGB 7, 9, 4
-	RGB 0, 0, 0
-	RGB 24, 24, 22
-	RGB 12, 20, 4
-	RGB 0, 6, 0
-	RGB 0, 0, 0
-	RGB 24, 24, 22
-	RGB 15, 18, 20
-	RGB 0, 3, 5
-	RGB 0, 0, 0
-	RGB 24, 24, 22
-	RGB 23, 19, 7
-	RGB 9, 6, 0
-	RGB 0, 0, 0
-	RGB 24, 24, 22
-	RGB 24, 12, 13
-	RGB 11, 0, 0
-	RGB 0, 0, 0
-	RGB 24, 24, 22
-	RGB 18, 18, 21
-	RGB 7, 7, 10
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+	INCLUDE "data/maps/palettes/Palettes_018_4bf8.pal"
 Palettes_018_4c40::
-	RGB 23, 23, 22
-	RGB 14, 18, 18
-	RGB 3, 5, 5
-	RGB 0, 0, 0
-	RGB 23, 23, 22
-	RGB 10, 16, 3
-	RGB 0, 4, 0
-	RGB 0, 0, 0
-	RGB 23, 23, 22
-	RGB 4, 12, 19
-	RGB 0, 0, 5
-	RGB 0, 0, 0
-	RGB 23, 23, 22
-	RGB 19, 14, 0
-	RGB 10, 5, 0
-	RGB 0, 0, 0
-	RGB 23, 23, 22
-	RGB 21, 12, 19
-	RGB 13, 0, 0
-	RGB 0, 0, 0
-	RGB 23, 23, 22
-	RGB 13, 13, 13
-	RGB 5, 5, 5
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+	INCLUDE "data/maps/palettes/Palettes_018_4c40.pal"
 Collision_018_4c88::
 	INCBIN "data/maps/collision/Collision_018_4c88.bin"

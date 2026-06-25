@@ -1,9 +1,16 @@
 MACRO map
 ; \1 = map name
+; \2 = (optional) MapAttributes to use
 \1_Header:
+IF _NARG > 1
+	db BANK(\2)
+	ds 3
+	dw \2
+ELSE
 	db BANK(\1_MapAttributes)
 	ds 3
 	dw \1_MapAttributes
+ENDC
 DEF __current_map__ equs "\1"
 ENDM
 
@@ -40,40 +47,27 @@ MACRO end_map
 PURGE __current_map__
 ENDM
 
-MACRO map_attributes
-; \1 = map name
-; \2 = map ID
-; \3 = tileset 1
-; \4 = tileset 2
-\1_MapAttributes::
-	db \2_WIDTH, \2_HEIGHT
-	dw \1_Layout
-	dw \1_Blocks
-	dw \1_Metatiles
-	dw \1_AttrMap
-	dw \1_Palettes
-	dw \3, \4
-	dw 0 ; ??
-	dw \1_Collision
-ENDM
-
-MACRO map_attr_data ; temporary measure
-; \1 = width
-; \2 = height
-; \3 = layout location
-; \4 = block location
-; \5 = metatile location
-; \6 = attrmap location
-; \7 = palette location
-; \8 = tileset 1
-; \9 = tileset 2
-; \<10> = collision location
-	db \1, \2
-	dw \3, \4, \5, \6, \7
-	dw \8, \9
-	dw 0
-	SHIFT 9
-	dw \1 ; collision
+; usage:
+;	map_attr BELL_VILLAGE_1, \
+;	   XX_Layout, \
+;	   XX_Blocks, \
+;	   XX_Metatiles, \
+;	   XX_Attrmap, \
+;	   XX_Palette, \
+;	   Tileset_X, Tileset_Y, \
+;	   X_Collision
+MACRO map_attr
+; \1 = map ID
+; \2 = layout
+; \3 = block
+; \4 = metatile
+; \5 = attrmap
+; \6 = palette
+; \7 = tileset 1
+; \8 = tileset 2
+; \9 = collision
+	db \1_WIDTH, \1_HEIGHT
+	dw \2, \3, \4, \5, \6, \7, \8, 0, \9
 ENDM
 
 MACRO tileset_fragment

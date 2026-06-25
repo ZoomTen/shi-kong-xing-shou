@@ -2,7 +2,7 @@
 unk_05a_4000:
 	end
 
-G4_5D_ObjectEvents:
+SacredtreeShop_5d_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_05a_400d
 	objects_end
 
@@ -21,7 +21,7 @@ Script_05a_4011::
 Script_05a_4022::
 	end
 
-G4_5C_ObjectEvents:
+SacredtreeHealingCenter_5c_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_05a_403a
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_05a_403e
 	objects_end
@@ -70,15 +70,15 @@ G4_62_ObjectEvents:
 
 Script_05a_40be:
 	checkbit wEventFlags + 13, $02, Script_05a_40c8
-	setmap $26, $02
+	setmap MAP_G4_26, $02
 	end
 
 Script_05a_40c8:
-	setmap $27, $02
+	setmap MAP_SACREDTREE_VILLAGE_27, $02
 	end
 
 Script_05a_40cc:
-	setmap $26, $02
+	setmap MAP_G4_26, $02
 	end
 
 Script_05a_40d0:
@@ -95,74 +95,74 @@ Script_05a_40d0:
 
 Script_05a_40ec:
 	checkbit wEventFlags + 13, $02, Script_05a_40f6
-	setmap $26, $06
+	setmap MAP_G4_26, $06
 	end
 
 Script_05a_40f6:
-	setmap $27, $06
+	setmap MAP_SACREDTREE_VILLAGE_27, $06
 	end
 
 Script_05a_40fa:
 	checkbit wEventFlags + 13, $02, Script_05a_4104
-	setmap $26, $05
+	setmap MAP_G4_26, $05
 	end
 
 Script_05a_4104:
-	setmap $27, $05
+	setmap MAP_SACREDTREE_VILLAGE_27, $05
 	end
 
 Script_05a_4108:
 	checkbit wEventFlags + 13, $02, Script_05a_4112
-	setmap $26, $04
+	setmap MAP_G4_26, $04
 	end
 
 Script_05a_4112:
-	setmap $27, $04
+	setmap MAP_SACREDTREE_VILLAGE_27, $04
 	end
 
 Script_05a_4116:
 	checkbit wEventFlags + 13, $02, Script_05a_4120
-	setmap $26, $0a
+	setmap MAP_G4_26, $0a
 	end
 
 Script_05a_4120:
-	setmap $27, $0a
+	setmap MAP_SACREDTREE_VILLAGE_27, $0a
 	end
 
 Script_05a_4124:
 	checkbit wEventFlags + 13, $02, Script_05a_412e
-	setmap $26, $08
+	setmap MAP_G4_26, $08
 	end
 
 Script_05a_412e:
-	setmap $27, $08
+	setmap MAP_SACREDTREE_VILLAGE_27, $08
 	end
 
 Script_05a_4132:
 	checkbit wEventFlags + 13, $02, Script_05a_413c
-	setmap $26, $09
+	setmap MAP_G4_26, $09
 	end
 
 Script_05a_413c:
-	setmap $27, $09
+	setmap MAP_SACREDTREE_VILLAGE_27, $09
 	end
 
 Script_05a_4140:
 	checkbit wEventFlags + 13, $02, Script_05a_414a
-	setmap $26, $03
+	setmap MAP_G4_26, $03
 	end
 
 Script_05a_414a:
-	setmap $27, $03
+	setmap MAP_SACREDTREE_VILLAGE_27, $03
 	end
 
 Script_05a_414e:
 	checkbit wEventFlags + 13, $02, Script_05a_4158
-	setmap $26, $07
+	setmap MAP_G4_26, $07
 	end
 
 Script_05a_4158:
-	setmap $27, $07
+	setmap MAP_SACREDTREE_VILLAGE_27, $07
 	end
 
 Script_05a_415c:
@@ -205,13 +205,13 @@ Script_05a_41aa:
 	setmappredef $17
 	setplayerchar $00
 	face FACE_DOWN
-	setmap $5b, $01
+	setmap MAP_SACREDTREE_VILLAGE_PAST, $01
 	emote $00, EMOTE_QUESTION
 	delay $03, $20
 	stext text_5a_5608
 	end
 
-G4_5B_ObjectEvents:
+SacredtreeVillagePast_ObjectEvents:
 	object_event $52, 6, 3, wEventFlags + 14, $00, $00, $00, $00, Script_05a_41c9
 	objects_end
 
@@ -273,7 +273,7 @@ Script_05a_4226:
 	end
 
 G4_26_ObjectEvents:
-G4_27_ObjectEvents:
+SacredtreeVillage_27_ObjectEvents:
 	object_event $13, 19, 4, 0, $00, $00, $06, $00, Script_05a_42a3
 	object_event $15, 5, 6, 0, $00, $00, $07, $01, Script_05a_42a7
 	object_event $14, 13, 8, 0, $00, $00, $08, $02, Script_05a_42ab
@@ -321,7 +321,7 @@ Script_05a_42cf:
 	textface text_5a_5a6b
 	end
 
-G4_56_ObjectEvents:
+SacredtreeVillage_56_ObjectEvents:
 	object_event $18,  5,  4, 0, $00, $00, $07, $00, Script_05a_42df
 	objects_end
 
@@ -341,7 +341,7 @@ Script_05a_42fa:
 	textface text_5a_634a
 	end
 
-G4_57_ObjectEvents:
+SacredtreeVillage_57_ObjectEvents:
 	object_event $20,  7,  6, 0, $00, $00, $0b, $00, Script_05a_430a
 	objects_end
 
@@ -368,7 +368,7 @@ Script_05a_433d::
 	textface text_5a_6321
 	end
 
-G4_58_ObjectEvents:
+SacredtreeVillage_58_ObjectEvents:
 	object_event $1e,  8,  4, 0, $00, $00, $00, $00, Script_05a_4358
 	object_event $21,  3,  3, 0, $00, $00, $0b, $01, Script_05a_435c
 	objects_end
@@ -382,7 +382,7 @@ Script_05a_435c:
 	stext text_5a_5c61
 	end
 
-G4_59_ObjectEvents:
+SacredtreeVillage_59_ObjectEvents:
 	object_event $1b, 6, 4, 0, $00, $00, $0b, $00, Script_05a_4375
 	objects_end
 
@@ -406,7 +406,7 @@ Script_05a_4397:
 	textface text_5a_6241
 	end
 
-G4_28_ObjectEvents:
+SacredtreeVillage_28_ObjectEvents:
 	object_event $0c,  7,  5, 0, $00, $00, $00, $00, Script_05a_43bd
 	object_event $0d,  7,  4, 0, $00, $00, $00, $01, Script_05a_40bc
 	object_event $6a,  6,  4, 0, $00, $00, $00, $02, Script_05a_40bc
@@ -478,7 +478,7 @@ Script_05a_43ff:
 	delay $03, $10
 	objmove $04, MovementData_05a_77d4
 	clearobject $04
-	setmap $53, $01
+	setmap MAP_G4_53, $01
 	stext text_5a_69fa
 	playsound SFX_2c
 	runmovement MovementData_00b_4227
@@ -517,11 +517,11 @@ Script_05a_44be:
 
 Script_05a_44bf:
 	checkbit wEventFlags + 13, $02, Script_05a_44c9
-	setmap $26, $01
+	setmap MAP_G4_26, $01
 	end
 
 Script_05a_44c9:
-	setmap $27, $01
+	setmap MAP_SACREDTREE_VILLAGE_27, $01
 	end
 
 ObjectEvents_05a_44cd:
@@ -529,7 +529,7 @@ ObjectEvents_05a_44cd:
 	objects_end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-G4_63_ObjectEvents:
+RadarStation_ObjectEvents:
 	object_event $50,  5,  3, wEventFlags + 13, $07, $00, $00, $00, Script_05a_44e5
 	objects_end
 

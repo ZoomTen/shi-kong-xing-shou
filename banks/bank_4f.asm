@@ -3,7 +3,7 @@ Script_04f_4000:
 
 Script_04f_4001:
 	checkbit wEventFlags + 6, $04, .skip
-	setmap $08, $00
+	setmap MAP_BANGLIN_CO_1F, $00
 	end
 .skip
 	farjump2 Script_04e_4001
@@ -491,7 +491,7 @@ FashionStore_ObjectEvents2:
 
 Script_04f_44a2:
 	checkbit wEventFlags + 5, $02, .skip
-	setmap $0f, $01
+	setmap MAP_FASHION_STORE, $01
 	face FACE_LEFT
 	spriteface $02, $02
 	spriteface $04, $01
@@ -541,10 +541,10 @@ Script_04f_44a2:
 	setbit wEventFlags + 5, $02
 	end
 .skip
-	setmap $0f, $00
+	setmap MAP_FASHION_STORE, $00
 	end
 
-G3_21_ObjectEvents:
+GreenForest_21_ObjectEvents:
 	object_event $3a, 11,  7, 0, $00, $00, $00, $00, Script_04f_455e
 	object_event $44,  8,  8, 0, $00, $00, $00, $01, Script_04f_4576
 	object_event $42, 11, 11, 0, $00, $00, $00, $02, Script_04f_456a
@@ -577,7 +577,7 @@ Script_04f_457e:
 	textface text_4f_67cc
 	end
 
-G3_21_ObjectEvents2:
+GreenForest_21_ObjectEvents2:
 	object_event $3a, 11,  7, 0, $00, $00, $00, $00, Script_04f_455e
 	object_event $42,  8,  8, 0, $00, $00, $00, $01, Script_04f_4576
 	object_event $42, 11, 11, 0, $00, $00, $00, $02, Script_04f_456a
@@ -592,7 +592,7 @@ Script_04f_45c6::
 	checkbit wEventFlags + 6, $02, Script_04f_463b
 	setplayerchar $02
 	face FACE_LEFT
-	setmap $21, $03
+	setmap MAP_GREEN_FOREST_21, $03
 	scr_62 $03, $00
 	spriteface  5, FACE_UP
 	spriteface  6, FACE_RIGHT
@@ -630,15 +630,15 @@ Script_04f_45c6::
 	end
 
 Script_04f_463b:
-	setmap $21, $00
+	setmap MAP_GREEN_FOREST_21, $00
 	end2
 
-G3_22_ObjectEvents:
+GreenForest_22_ObjectEvents:
 	object_event $40,  4,  5, 0, $00, $00, $00, $00, Script_04f_49cb
 	object_event $3a,  7,  6, 0, $00, $00, $00, $01, Script_04f_49e0
 	objects_end
 
-G3_23_ObjectEvents:
+GreenForest_23_ObjectEvents:
 	object_event $3c,  2,  7, 0, $00, $00, $00, $00, Script_04f_4678
 	object_event $3c,  5,  5, 0, $00, $00, $00, $01, Script_04f_4684
 	object_event $3c,  7,  6, 0, $00, $00, $00, $02, Script_04f_4690
@@ -704,7 +704,7 @@ G3_1B_ObjectEvents:
 	object_event $18,  8,  4, 0, $00, $00, $07, $00, Script_04f_4a6c
 	objects_end
 
-G3_1C_ObjectEvents:
+BanglinCo_ObjectEvents:
 	object_event $15,  7,  4, 0, $00, $00, $00, $00, Script_04f_4a70
 	object_event $1b,  4,  4, 0, $00, $00, $06, $01, Script_04f_4ab2
 	objects_end
@@ -880,7 +880,7 @@ ObjSprite_4f_489d::
 
 Script_04f_48a9::
 	setplayerchar $00
-	setmap $07, $0e
+	setmap MAP_SKY_CITY, $0e
 	loadobjsprite ObjSprite_4f_4885
 	loadobjsprite ObjSprite_4f_4891
 	loadobjsprite ObjSprite_4f_489d
@@ -1152,7 +1152,7 @@ SkyCity_ObjectEvents2:
 
 Script_04f_4ac2::
 	setplayerchar $00
-	setmap $07, $0d
+	setmap MAP_SKY_CITY, $0d
 	spriteface  2, FACE_UP
 	spritewalk  2, MOVE_UP
 	clearobject $02
@@ -1163,7 +1163,7 @@ Script_04f_4ac2::
 	move MovementData_OneUp
 	move MovementData_OneUp
 	move MovementData_OneUp
-	setmap $08, $03
+	setmap MAP_BANGLIN_CO_1F, $03
 	face FACE_LEFT
 	spriteface  2, FACE_UP
 	stext text_4f_5457
@@ -1270,7 +1270,7 @@ Script_04f_4bf3::
 	checkbit wEventFlags + 5, $00, Script_04f_4bf2
 	setplayerchar $00
 	face FACE_UP
-	setmap $08, $04
+	setmap MAP_BANGLIN_CO_1F, $04
 	spriteface  6, FACE_UP
 	emote  6, EMOTE_EXCLAMATION
 	delay $03, $20
@@ -1347,7 +1347,7 @@ ObjSprite_4f_4cbf::
 	object_event $48,  5,  3, 0, $00, $00, $00, $01, Script_04f_4031
 	objects_end
 
-G3_20_ObjectEvents:
+GreenForest_20_ObjectEvents:
 	object_event $46,  5,  3, wEventFlags + 6, $01, $00, $00, $00, Script_04f_4cd7
 	objects_end
 
@@ -1376,7 +1376,7 @@ Script_04f_4cd7:
 	clearobject $03
 	setmappredef MAPPREDEF_10
 	setplayerchar $00
-	setmap $1f, $01
+	setmap MAP_G3_1F, $01
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_RIGHT
@@ -1405,7 +1405,7 @@ G3_1F_ObjectEvents2:
 
 Script_04f_4d6f::
 	checkbit wEventFlags + 5, $05, Script_04f_4d86
-	setmap $04, $00
+	setmap MAP_GREEN_FOREST_P_13, $00
 	emote  0, EMOTE_QUESTION
 	delay $03, $20
 	stext text_4f_61aa
@@ -1414,26 +1414,26 @@ Script_04f_4d6f::
 
 Script_04f_4d86:
 	checkbit wEventFlags + 6, $01, Script_04f_4d90
-	setmap $04, $00
+	setmap MAP_GREEN_FOREST_P_13, $00
 	end
 
 Script_04f_4d90:
-	setmap $01, $00
+	setmap MAP_GREEN_FOREST_P_12, $00
 	end
 
 Script_04f_4d94::
 	checkbit wEventFlags + 5, $04, Script_04f_4da4
 	checkbit wEventFlags + 5, $06, Script_04f_4dae
-	setmap $06, $03
+	setmap MAP_GREEN_FOREST_P_32, $03
 	end
 
 Script_04f_4da4:
 	checkbit wEventFlags + 5, $06, Script_04f_4dae
-	setmap $06, $02
+	setmap MAP_GREEN_FOREST_P_32, $02
 	end
 
 Script_04f_4dae:
-	setmap $06, $00
+	setmap MAP_GREEN_FOREST_P_32, $00
 	end
 
 GreenForestP32_ObjectEvents2:
@@ -1454,7 +1454,7 @@ Script_04f_4dbe::
 	move MovementData_OneUp
 	face FACE_LEFT
 	move MovementData_OneLeft
-	setmap $12, $00
+	setmap MAP_GREEN_FOREST_P_4, $00
 	end2
 
 INCLUDE "data/text/script_sky_city_1.asm"

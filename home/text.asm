@@ -522,7 +522,7 @@ PrintTwoOptionMenu::
 	push hl
 	jp CheckCharacter
 
-INCLUDE "data/text/std_menu_options.asm"
+INCLUDE "data/text/menu_options.asm"
 
 InterpretTwoOptionMenu::
 	call .Main
@@ -608,7 +608,7 @@ Text_e7::
 	push hl
 	jp CheckCharacter
 
-INCLUDE "data/text/std_buy_sell_cancel.asm"
+INCLUDE "data/text/buy_sell_cancel.asm"
 
 Text_e8::
 ; Buy sell cancel menu

@@ -1,6 +1,6 @@
 Group02_Maps::
 ; Also used for group 08
-	dw G2_00_Header
+	dw DuoluCity2_Header
 	dw DuoluCity2_Header
 	dw ShandaFarm_Header
 	dw CoffeeForestPart1_Header
@@ -14,32 +14,30 @@ Group02_Maps::
 	dw ClockTower3f_Header
 	dw ClockTower4f_Header
 	dw ClockTower5f_Header
-	dw G2_0E_Header
+	dw GallEnterprise_Header
 	dw G2_0F_Header
 	dw G2_10_Header
 	dw G2_11_Header
-	dw G2_12_Header
-	dw G2_13_Header
-	dw G2_14_Header
-	dw G2_15_Header
-	dw G2_16_Header
+	dw ShandaFarm_12_Header
+	dw ShandaFarm_13_Header
+	dw ShandaFarm_14_Header
+	dw ShandaFarm_15_Header
+	dw MarkNinaIntro_Header
 	dw R03_Header
 	dw R04_Header
 	dw G2_19_Header
 	dw G2_1A_Header
-	dw G2_1B_Header
-	dw G2_1C_Header
-	dw G2_1D_Header
+	dw DuoluCity_1b_Header
+	dw DuoluCity_1c_Header
+	dw DuoluCity_1d_Header
 	dw G2_1E_Header
 	dw G2_1F_Header
-	dw G2_20_Header
-	dw G2_21_Header
-	dw G2_22_Header
+	dw DuoluCity_20_Header
+	dw HealingCenter_g221_Header
+	dw Shop_g222_Header
 	dw G2_23_Header
 
-G2_00_Header::
-; DuoluCity2
-	map  DuoluCity2
+	map DuoluCity2
 	warp 13, 5, $4088
 	warp 4, 7, $9038
 	warp 0, 1, $8018
@@ -54,7 +52,6 @@ G2_00_Header::
 	warp 6, 1, $7048
 	end_map
 
-; ShandaFarm
 	map  ShandaFarm
 	warp 5, 0, $2048
 	warp 0, 6, $5018
@@ -68,198 +65,165 @@ G2_00_Header::
 	warp 6, 6, $a0a0, ShandaFarm_ObjectEvents2
 	end_map
 
-; CoffeeForestPart1
 	map  CoffeeForestPart1
 	warp 10, 7, $9068
 	warp 10, 0, $2068
 	end_map
 
-; CoffeeForestPart2
 	map  CoffeeForestPart2
 	warp 1, 10, $9048
 	warp 5, 0, $2048
 	end_map
 
-; CoffeeForestPart3
 	map  CoffeeForestPart3
 	warp 0, 3, $9058
 	warp 1, 0, $6048, CoffeeForestPart3_ObjectEvents2
 	end_map
 
-; SkyRockPart1
 	map  SkyRockPart1
 	warp 10, 10, $9068
 	warp 6, 0, $2048
 	end_map
 
-; SkyRockPart2
 	map  SkyRockPart2
 	warp 0, 0, $9078
 	warp 0, 0, $9078, SkyRockPart2_ObjectEvents2
 	end_map
 
-; ClockTowerOutside
 	map  ClockTowerOutside
 	warp 1, 7, $5088
 	warp 0, 2, $8058
 	end_map
 
-; ClockTower1f
 	map  ClockTower1f
 	warp 3, 7, $9068
 	warp 0, 0, $7038
 	warp 1, 4, $6048
 	end_map
 
-; ClockTower2f
 	map  ClockTower2f
 	warp 0, 0, $7038
 	warp 7, 6, $4048
 	warp 2, 5, $6038
 	end_map
 
-; ClockTower3f
 	map  ClockTower3f
 	warp 5, 4, $5058
 	warp 0, 3, $6058
 	warp 5, 0, $3078
 	end_map
 
-; ClockTower4f
 	map  ClockTower4f
 	warp 5, 0, $3048
 	warp 5, 5, $5048
 	end_map
 
-; ClockTower5f
 	map  ClockTower5f
 	warp 1, 0, $9078
 	warp 1, 0, $9078, ClockTower5f_ObjectEvents2
 	end_map
 
-; G2_0E
-	map  G2_0E
+	map  GallEnterprise
 	warp 0, 0, $8058
 	warp 0, 0, $3018
-	warp 0, 0, $5058, G2_0E_ObjectEvents2
-	warp 0, 0, $3018, G2_0E_ObjectEvents3
-	warp 0, 0, $7058, G2_0E_ObjectEvents4
-	warp 0, 0, $8058, G2_0E_ObjectEvents3
-	warp 0, 0, $3018, G2_0E_ObjectEvents4
-	warp 0, 0, $5058, G2_0E_ObjectEvents5
+	warp 0, 0, $5058, GallEnterprise_ObjectEvents2
+	warp 0, 0, $3018, GallEnterprise_ObjectEvents3
+	warp 0, 0, $7058, GallEnterprise_ObjectEvents4
+	warp 0, 0, $8058, GallEnterprise_ObjectEvents3
+	warp 0, 0, $3018, GallEnterprise_ObjectEvents4
+	warp 0, 0, $5058, GallEnterprise_ObjectEvents5
 	end_map
 
-; G2_0F
 	map  G2_0F
 	warp 0, 0, $3018
 	warp 0, 0, $9018
 	end_map
 
-; G2_10
 	map  G2_10
 	warp 0, 0, $9018
 	warp 0, 0, $3018
 	end_map
 
-; G2_11
 	map  G2_11
 	warp 0, 0, $3028
 	warp 1, 0, $7058, G2_11_ObjectEvents2
 	warp 1, 0, $7068
 	end_map
 
-; G2_12
-	map  G2_12
+	map  ShandaFarm_12
 	warp 1, 0, $8068
 	end_map
 
-; G2_13
-	map  G2_13
+	map ShandaFarm_13, BanglinCo_MapAttributes
 	warp 0, 0, $8038
 	end_map
 
-; G2_14
-	map  G2_14
+	map  ShandaFarm_14
 	warp 0, 0, $8048
 	end_map
 
-; G2_15
-	map  G2_15
+	map ShandaFarm_15, G3_1B_MapAttributes
 	warp 1, 0, $8058
 	end_map
 
-; G2_16
-	map  G2_16
+	map  MarkNinaIntro
 	warp 0, 0, $8048
-	warp 1, 0, $4078, G2_16_ObjectEvents2
-	warp 1, 0, $6068, G2_16_ObjectEvents3
-	warp 0, 0, $8048, G2_16_ObjectEvents4
+	warp 1, 0, $4078, MarkNinaIntro_ObjectEvents2
+	warp 1, 0, $6068, MarkNinaIntro_ObjectEvents3
+	warp 0, 0, $8048, MarkNinaIntro_ObjectEvents4
 	end_map
 
-; R03
 	map  R03
 	warp 1, 0, $2068
 	warp 1, 7, $9078
 	end_map
 
-; R04
 	map  R04
 	warp 7, 5, $7088
 	warp 7, 0, $2068
 	warp 0, 0, $2028
 	end_map
 
-; G2_1A
-	map  G2_1A
+	map G2_1A, EastFishmarket_32_MapAttributes
 	warp 0, 0, $8068
 	end_map
 
-; G2_19
-	map  G2_19
+	map G2_19, EastFishmarket_31_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
-; G2_1B
-	map  G2_1B
+	map DuoluCity_1b, MapAttributes_001_40f0
 	warp 0, 0, $8048
 	end_map
 
-; G2_1C
-	map  G2_1C
+	map DuoluCity_1c, MapAttributes_001_4140
 	warp 0, 0, $8058
 	end_map
 
-; G2_1D
-	map  G2_1D
+	map DuoluCity_1d, MapAttributes_001_4118
 	warp 0, 0, $8058
 	end_map
 
-; G2_1E
-	map  G2_1E
+	map G2_1E, MapAttributes_001_412c
 	warp 0, 0, $8038
 	end_map
 
-; G2_1F
-	map  G2_1F
+	map G2_1F, MapAttributes_001_40f0
 	warp 0, 0, $8048
 	end_map
 
-; G2_20
-	map  G2_20
+	map DuoluCity_20, MapAttributes_001_4104
 	warp 0, 0, $8048
 	end_map
 
-; G2_21
-	map  G2_21
+	map HealingCenter_g221, EastFishmarket_31_MapAttributes
 	warp 0, 0, $8068
 	end_map
 
-; G2_22
-	map  G2_22
+	map Shop_g222, EastFishmarket_32_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
-; G2_23
 	map  G2_23
 	warp 0, 0, $5058
 	end_map
@@ -374,7 +338,7 @@ ClockTower5f_MapEvents:
 	warp_event 10,  8, $0c, $01, $00
 	events_end
 
-G2_0E_MapEvents:
+GallEnterprise_MapEvents:
 	script_event  5,  8, 11, Script_012_482b
 	script_event  6,  8, 11, Script_012_4850
 	warp_event ABSOLUTE,  8, $01, $0b, $00
@@ -402,27 +366,27 @@ G2_11_MapEvents:
 	script_event  3,  5, 10, Script_012_4781
 	events_end
 
-G2_12_MapEvents:
+ShandaFarm_12_MapEvents:
 	warp_event ABSOLUTE,  8, $02, $02, $00
 	event_07  9,  3, $0a
 	events_end
 
-G2_13_MapEvents:
+ShandaFarm_13_MapEvents:
 	warp_event ABSOLUTE,  8, $02, $03, $00
 	event_07 10,  3, $0b
 	events_end
 
-G2_14_MapEvents:
+ShandaFarm_14_MapEvents:
 	warp_event ABSOLUTE,  8, $02, $04, $00
 	event_07  1,  3, $0c
 	events_end
 
-G2_15_MapEvents:
+ShandaFarm_15_MapEvents:
 	warp_event ABSOLUTE,  8, $02, $05, $00
 	event_07  2,  3, $0d
 	events_end
 
-G2_16_MapEvents:
+MarkNinaIntro_MapEvents:
 	warp_event ABSOLUTE,  8, $02, $08, $00
 	event_07  2,  3, $0e
 	events_end
@@ -462,17 +426,17 @@ G2_1A_MapEvents:
 	event_04  4,  3,  0, Script_012_49c8
 	events_end
 
-G2_1B_MapEvents:
+DuoluCity_1b_MapEvents:
 	warp_event ABSOLUTE,  8, $01, $03, $00
 	event_07  9,  3, $01
 	events_end
 
-G2_1C_MapEvents:
+DuoluCity_1c_MapEvents:
 	warp_event ABSOLUTE,  8, $01, $04, $00
 	event_07 10,  3, $05
 	events_end
 
-G2_1D_MapEvents:
+DuoluCity_1d_MapEvents:
 	warp_event ABSOLUTE,  8, $01, $05, $00
 	event_07  5,  3, $03
 	events_end
@@ -487,18 +451,18 @@ G2_1F_MapEvents:
 	event_07  2,  3, $06
 	events_end
 
-G2_20_MapEvents:
+DuoluCity_20_MapEvents:
 	warp_event ABSOLUTE,  8, $01, $08, $00
 	event_07  3,  3, $02
 	events_end
 
-G2_21_MapEvents:
+HealingCenter_g221_MapEvents:
 	warp_event ABSOLUTE,  8, $01, $0a, $00
 	event_04  4,  4,  0, Script_012_498a
 	event_04  8,  4,  0, Script_012_4998
 	events_end
 
-G2_22_MapEvents:
+Shop_g222_MapEvents:
 	warp_event ABSOLUTE,  8, $01, $09, $00
 	event_04  4,  3,  0, Script_012_49b6
 	events_end
@@ -507,7 +471,7 @@ G2_23_MapEvents:
 	events_end
 
 Group03_Maps::
-	dw G3_00_Header
+	dw GreenForestP12_Header
 	dw GreenForestP12_Header
 	dw GreenForestP21_Header
 	dw GreenForestP31_Header
@@ -535,49 +499,42 @@ Group03_Maps::
 	dw G3_19_Header
 	dw G3_1A_Header
 	dw G3_1B_Header
-	dw G3_1C_Header
+	dw BanglinCo_Header
 	dw G3_1D_Header
 	dw G3_1E_Header
 	dw G3_1F_Header
-	dw G3_20_Header
-	dw G3_21_Header
-	dw G3_22_Header
-	dw G3_23_Header
+	dw GreenForest_20_Header
+	dw GreenForest_21_Header
+	dw GreenForest_22_Header
+	dw GreenForest_23_Header
 
-G3_00_Header::
-; GreenForestP12
-	map  GreenForestP12
+	map GreenForestP12
 	warp 10, 7, $9068
 	warp 10, 0, $2068
 	warp 8, 0, $2048
 	end_map
 
-; GreenForestP21
 	map  GreenForestP21
 	warp 0, 10, $9068
 	warp 4, 0, $2068
 	end_map
 
-; GreenForestP31
 	map  GreenForestP31
 	warp 0, 3, $9068
 	warp 0, 0, $4058
 	end_map
 
-; GreenForestP13
 	map  GreenForestP13
 	warp 10, 7, $9068
 	warp 10, 0, $2068
 	warp 8, 0, $2048
 	end_map
 
-; GreenForestP22
 	map  GreenForestP22
 	warp 0, 10, $9068
 	warp 4, 0, $2068
 	end_map
 
-; GreenForestP32
 	map  GreenForestP32
 	warp 0, 3, $9068
 	warp 0, 0, $4048
@@ -585,7 +542,6 @@ G3_00_Header::
 	warp 0, 3, $9068, GreenForestP32_ObjectEvents, GreenForestP32_MapEvents3
 	end_map
 
-; SkyCity
 	map  SkyCity
 	warp 0, 0, $2048
 	warp 0, 5, $6018
@@ -604,7 +560,6 @@ G3_00_Header::
 	warp 1, 6, $2068
 	end_map
 
-; BanglinCo1f
 	map  BanglinCo1f
 	warp 0, 0, $9058
 	warp 1, 0, $6088
@@ -617,26 +572,22 @@ G3_00_Header::
 	warp 0, 0, $6058, BanglinCo1f_ObjectEvents6, BanglinCo1f_MapEvents5
 	end_map
 
-; BanglinCo2
 	map  BanglinCo2
 	warp 0, 0, $7028
 	warp 0, 0, $7028, BanglinCo2_ObjectEvents2, BanglinCo2_MapEvents2
 	end_map
 
-; ContestHall
 	map  ContestHall
 	warp 1, 0, $4038
 	warp 1, 0, $20b0, ContestHall_ObjectEvents2
 	end_map
 
-; BanglinCo2f
 	map  BanglinCo2f
 	warp 0, 0, $3018
 	warp 7, 0, $7088
 	warp 7, 7, $8078
 	end_map
 
-; BanglinCo3f
 	map  BanglinCo3f
 	warp 7, 0, $7078
 	warp 7, 7, $8078
@@ -645,7 +596,6 @@ G3_00_Header::
 	warp 0, 0, $4058
 	end_map
 
-; BanglinCo4f
 	map  BanglinCo4f
 	warp 5, 1, $6038
 	warp 0, 2, $5058
@@ -654,7 +604,6 @@ G3_00_Header::
 	warp 7, 6, $5078
 	end_map
 
-; BanglinCo5f
 	map  BanglinCo5f
 	warp 0, 6, $7028
 	warp 7, 6, $5078
@@ -662,119 +611,98 @@ G3_00_Header::
 	warp 4, 5, $5048
 	end_map
 
-; FashionStore
 	map  FashionStore
 	warp 0, 0, $9058
 	warp 1, 0, $6058, FashionStore_ObjectEvents2
 	end_map
 
-; AirportOutside
 	map  AirportOutside
 	warp 0, 0, $9058
 	warp 0, 0, $5058
 	end_map
 
-; Airport
 	map  Airport
 	warp 0, 0, $9048
 	warp 1, 0, $7048, Airport_ObjectEvents2
 	end_map
 
-; GreenForestP4
-	map  GreenForestP4
+	map GreenForestP4, GreenForest_21_MapAttributes
 	warp 5, 0, $5068
 	warp 0, 0, $6048
 	warp 5, 5, $6038
 	end_map
 
-; GreenForestP5
-	map  GreenForestP5
+	map GreenForestP5, GreenForest_22_MapAttributes
 	warp 0, 0, $9058
 	end_map
 
-; GreenForestP6
-	map  GreenForestP6
+	map GreenForestP6, GreenForest_23_MapAttributes
 	warp 0, 0, $9038
 	end_map
 
-; G3_15
 	map  G3_15
 	warp 0, 0, $2068
 	warp 1, 5, $7078
 	end_map
 
-; G3_16
 	map  G3_16
 	warp 7, 0, $7088
 	warp 0, 0, $2038
 	end_map
 
-; G3_17
-	map  G3_17
+	map G3_17, MapAttributes_001_41b8
 	warp 0, 0, $8048
 	end_map
 
-; G3_18
-	map  G3_18
+	map G3_18, CarpetWomansHouse1_MapAttributes
 	warp 0, 0, $8038
 	end_map
 
-; G3_19
-	map  G3_19
+	map G3_19, FangfangsHouse1_MapAttributes
 	warp 0, 0, $8078
 	end_map
 
-; G3_1A
-	map  G3_1A
+	map G3_1A, MapAttributes_001_4118
 	warp 0, 0, $8058
 	end_map
 
-; G3_1B
 	map  G3_1B
 	warp 0, 0, $8078
 	end_map
 
-; G3_1C
-	map  G3_1C
+	map  BanglinCo
 	warp 0, 0, $8038
 	end_map
 
-; G3_1D
-	map  G3_1D
+	map G3_1D, BellHealingCenter1_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
-; G3_1E
-	map  G3_1E
+	map G3_1E, MapAttributes_018_408c
 	warp 0, 0, $8058
 	end_map
 
-; G3_1F
 	map  G3_1F
 	warp 0, 3, $9068
 	warp 0, 0, $5058, G3_1F_ObjectEvents2
 	end_map
 
-; G3_20
-	map  G3_20
+	map  GreenForest_20
 	warp 0, 3, $9068
 	end_map
 
-; G3_21
-	map  G3_21
+	map  GreenForest_21
 	warp 5, 0, $5068
 	warp 0, 0, $6048
 	warp 5, 5, $6038
-	warp 3, 3, $4038, G3_21_ObjectEvents2
+	warp 3, 3, $4038, GreenForest_21_ObjectEvents2
 	end_map
 
-; G3_22
-	map  G3_22
+	map  GreenForest_22
 	warp 0, 0, $9058
 	end_map
 
-; G3_23
-	map  G3_23
+	map  GreenForest_23
 	warp 0, 0, $9038
 	end_map
 
@@ -1013,7 +941,7 @@ G3_1B_MapEvents:
 	event_07  2,  3, $09
 	events_end
 
-G3_1C_MapEvents:
+BanglinCo_MapEvents:
 	warp_event  3,  8, $07, $07, $00
 	warp_event  4,  8, $07, $07, $00
 	event_07  8,  3, $08
@@ -1036,20 +964,20 @@ G3_1F_MapEvents:
 	warp_event ABSOLUTE, 15, $01, $02, $00
 	events_end
 
-G3_20_MapEvents:
+GreenForest_20_MapEvents:
 	warp_event ABSOLUTE, 15, $04, $02, $00
 	events_end
 
-G3_21_MapEvents:
+GreenForest_21_MapEvents:
 	warp_event 16,  4, $03, $01, $00
 	warp_event  4,  4, $22, $00, $00
 	warp_event 13, 14, $23, $00, $00
 	events_end
 
-G3_22_MapEvents:
+GreenForest_22_MapEvents:
 	warp_event ABSOLUTE,  9, $21, $01, $00
 	events_end
 
-G3_23_MapEvents:
+GreenForest_23_MapEvents:
 	warp_event ABSOLUTE,  9, $21, $02, $00
 	events_end

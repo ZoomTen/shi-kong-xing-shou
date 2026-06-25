@@ -1,4 +1,4 @@
-G4_32_ObjectEvents:
+EastFishmarket_32_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_055_5316
 	objects_end
 
@@ -17,7 +17,7 @@ Script_055_531a:
 Script_055_532b:
 	end
 
-G4_31_ObjectEvents:
+EastFishmarket_31_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_055_5343
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_055_5347
 	objects_end
@@ -65,19 +65,19 @@ G4_02_ObjectEvents:
 G4_03_ObjectEvents:
 G4_04_ObjectEvents:
 G4_05_ObjectEvents:
-G4_0C_ObjectEvents2:
+EastFishmarket_0c_ObjectEvents2:
 G4_0F_ObjectEvents:
-G4_12_ObjectEvents2:
+EastFishmarketUndersea_12_ObjectEvents2:
 G4_30_ObjectEvents:
 G4_42_ObjectEvents:
 G4_43_ObjectEvents:
 	objects_end
 
 Script_055_53f2:
-	setmap $44, $00
+	setmap MAP_G4_44, $00
 	end
 
-G4_0B_ObjectEvents:
+EastFishmarket_0b_ObjectEvents:
 	object_event $19, 15,  6, 0, $00, $00, $08, $00, Script_055_5933
 	object_event $1c,  4,  7, 0, $00, $00, $0b, $01, Script_055_5937
 	object_event $1a, 11,  6, 0, $00, $00, $06, $02, Script_055_593b
@@ -92,10 +92,10 @@ G4_0B_ObjectEvents:
 ; TODO: unreferenced data block, classify type
 unk_055_545a:
 	checkbit wEventFlags + 7, $03, Script_055_5464
-	setmap $0c, $00
+	setmap MAP_EAST_FISHMARKET_0C, $00
 	end2
 Script_055_5464:
-	setmap $0c, $03
+	setmap MAP_EAST_FISHMARKET_0C, $03
 	end2
 Script_055_5468:
 	face FACE_DOWN
@@ -105,9 +105,9 @@ Script_055_5468:
 	spriteface  1, FACE_DOWN
 	end
 Script_055_5475:
-	setmap $0c, $02
+	setmap MAP_EAST_FISHMARKET_0C, $02
 	end2
-G4_0C_ObjectEvents:
+EastFishmarket_0c_ObjectEvents:
 	object_event $08,  8,  5, wEventFlags + 7, $02, $01, $00, $00, Script_055_54b3
 	object_event $1f,  6,  5, 0, $00, $00, $00, $01, Script_055_5536
 	object_event $1e,  6,  7, 0, $00, $00, $00, $02, Script_055_553a
@@ -179,7 +179,7 @@ Script_055_553a:
 	textface text_55_62c8
 	end
 
-G4_0D_ObjectEvents:
+EastFishmarketUndersea_0d_ObjectEvents:
 	object_event $53, 16,  4, 0, $00, $00, $0a, $00, Script_055_5957
 	object_event $54,  9,  2, 0, $00, $00, $06, $01, Script_055_5968
 	object_event $53,  2,  6, 0, $00, $00, $00, $02, Script_055_5979
@@ -190,11 +190,11 @@ G4_0D_ObjectEvents:
 	object_event $53, 16, 15, 0, $00, $00, $00, $01, Script_055_59c0
 	objects_end
 
-G4_12_ObjectEvents:
+EastFishmarketUndersea_12_ObjectEvents:
 	object_event $55,  4,  3, 0, $00, $00, $0b, $00, Script_055_5a0f
 	objects_end
 
-G4_11_ObjectEvents:
+EastFishmarketUndersea_11_ObjectEvents:
 	object_event $4a,  4,  4, wEventFlags + 8, $03, $00, $00, $00, Script_055_55af
 	objects_end
 
@@ -242,12 +242,12 @@ Script_055_55bd:
 	setbit wEventFlags + 8, $03
 	end
 
-G4_0E_ObjectEvents:
+EastFishmarketUndersea_0e_ObjectEvents:
 	object_event $61,  2,  2, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
 	object_event $61,  3,  2, wEventFlags + 8, $04, $00, $00, $01, Script_055_53f0
 	objects_end
 
-G4_0E_ObjectEvents2:
+EastFishmarketUndersea_0e_ObjectEvents2:
 	object_event $61,  2,  2, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
 	object_event $61,  3,  2, wEventFlags + 8, $04, $00, $00, $01, Script_055_53f0
 	object_event $4a,  2,  3, wEventFlags + 8, $04, $00, $00, $02, Script_055_5666
@@ -256,10 +256,10 @@ G4_0E_ObjectEvents2:
 ; TODO: unreferenced data block, classify type
 unk_055_5658:
 	checkbit wEventFlags + 8, $03, Script_055_5662
-	setmap $0e, $01
+	setmap MAP_EAST_FISHMARKET_UNDERSEA_0E, $01
 	end
 Script_055_5662:
-	setmap $0e, $03
+	setmap MAP_EAST_FISHMARKET_UNDERSEA_0E, $03
 	end
 Script_055_5666:
 	spriteface  2, FACE_RIGHT
@@ -282,7 +282,7 @@ Script_055_5666:
 	setattach $01, $00, $10, $00
 	objmove $00, MovementData_055_7c53
 	clearattach $01
-	setmap $0f, $02
+	setmap MAP_G4_0F, $02
 	spriteface  2, FACE_UP
 	emote $02, $03
 	delay $03, $20
@@ -324,13 +324,13 @@ Script_055_571c:
 	end
 
 Script_055_571d:
-	setmap $05, $00
+	setmap MAP_G4_05, $00
 	end
 
 Script_055_5721:
 	checkbit wEventFlags + 8, $05, Script_055_571d
 	setplayerchar $00
-	setmap $05, $01
+	setmap MAP_G4_05, $01
 	spriteface  3, $04
 	spriteface  2, FACE_UP
 	emote $02, $00
@@ -412,20 +412,20 @@ Script_055_5721:
 	objmove $03, MovementData_055_7cd5
 	clearobject $03
 	face FACE_DOWN
-	setmap $0f, $01
+	setmap MAP_G4_0F, $01
 	end
 
 Script_055_5823:
 	face FACE_DOWN
-	setmap $04, $00
+	setmap MAP_G4_04, $00
 	end
 
-G4_24_ObjectEvents2:
+SacredtreeStardreamDeparture_ObjectEvents2:
 	object_event $4d,  6,  4, 0, $00, $00, $00, $00, Script_055_53f0
 	object_event $62,  6,  5, 0, $00, $00, $00, $01, Script_055_53f0
 	objects_end
 
-G4_13_ObjectEvents:
+EastFishmarketUndersea_13_ObjectEvents:
 	object_event $54,  2,  4, 0, $00, $00, $00, $00, Script_055_587c
 	object_event $55,  9,  4, 0, $00, $00, $00, $01, Script_055_58aa
 	object_event $53,  7,  2, 0, $00, $00, $00, $02, Script_055_58bf
@@ -500,26 +500,26 @@ Script_055_58bf:
 Script_055_58ca:
 	end
 
-G4_2C_ObjectEvents:
+EastFishmarket_2c_ObjectEvents:
 	object_event $18,  5,  5, 0, $00, $00, $00, $00, Script_055_5a1b
 	object_event $1d,  8,  5, 0, $00, $00, $00, $01, Script_055_5a4c
 	objects_end
 
-G4_2D_ObjectEvents:
+EastFishmarket_2d_ObjectEvents:
 	object_event $1f,  3,  3, 0, $00, $00, $00, $00, Script_055_5a50
 	object_event $1e,  5,  5, 0, $00, $00, $06, $01, Script_055_5a54
 	objects_end
 
-G4_2E_ObjectEvents:
+EastFishmarket_2e_ObjectEvents:
 	object_event $16,  3,  4, 0, $00, $00, $00, $00, Script_055_5a6d
 	object_event $19,  8,  3, 0, $00, $00, $06, $01, Script_055_5a71
 	objects_end
 
-G4_2F_ObjectEvents:
+EastFishmarket_2f_ObjectEvents:
 	object_event $1b,  4,  5, 0, $00, $00, $06, $00, Script_055_5a75
 	objects_end
 
-G4_33_ObjectEvents:
+EastFishmarket_33_ObjectEvents:
 	object_event $08,  4,  4, wEventFlags + 7, $02, $00, $00, $00, Script_055_5a79
 	object_event $4b,  6,  3, 0, $00, $00, $00, $01, Script_055_5a7d
 	objects_end

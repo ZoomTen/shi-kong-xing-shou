@@ -2,7 +2,7 @@
 unk_058_4000:
 	end
 
-G4_38_ObjectEvents:
+GeothermalShop_ObjectEvents:
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_058_400d
 	objects_end
 
@@ -21,7 +21,7 @@ Script_058_4011::
 Script_058_4022::
 	end
 
-G4_39_ObjectEvents:
+GeothermalHealingCenter_ObjectEvents:
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_058_403a
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_058_403e
 	objects_end
@@ -57,7 +57,7 @@ Script_058_405d::
 INCLUDE "data/text/script_geothermal_healing_center.asm"
 INCLUDE "data/text/script_geothermal_shop.asm"
 Script_058_40bc::
-	setmap $14, $08 ; TEMP
+	setmap MAP_GEOTHERMAL_CITY_14, $08
 	checkbit wEventFlags + 9, $04, Script_058_40da
 	playsound SFX_2c
 	runmovement MovementData_00b_41d5
@@ -72,7 +72,7 @@ Script_058_40da:
 	end
 
 Script_058_40db::
-	setmap $1e, $01 ; TEMP
+	setmap MAP_G4_1E, $01
 	end
 
 Script_058_40df::
@@ -88,7 +88,7 @@ Script_058_40e9::
 G4_17_ObjectEvents:
 G4_1E_ObjectEvents:
 G4_1F_ObjectEvents:
-G4_4F_ObjectEvents3:
+LifeValleyRescue_ObjectEvents3:
 G4_50_ObjectEvents:
 	objects_end
 
@@ -98,17 +98,17 @@ Script_058_40eb::
 
 Script_058_40ed::
 	randomwarp
-	setmap $20, $00
+	setmap MAP_G4_20, $00
 	end
 
 Script_058_40f2::
 	warp6c
 	checkbit wEventFlags + 11, $05, Script_058_40fd
-	setmap $17, $00
+	setmap MAP_G4_17, $00
 	end
 
 Script_058_40fd::
-	setmap $50, $00
+	setmap MAP_G4_50, $00
 	end
 
 G4_20_ObjectEvents:
@@ -119,7 +119,7 @@ G4_20_ObjectEvents:
 	object_event $68, 22, 20, wEventFlags + 10, $01, $01, $09, $00, Script_058_40f2
 	objects_end
 
-G4_18_ObjectEvents:
+TravelingShip_18_ObjectEvents:
 	object_event $31, 11,  3, 0, $00, $00, $00, $00, Script_058_4145
 	objects_end
 
@@ -196,7 +196,7 @@ G4_52_ObjectEvents:
 	object_event $69,  5,  5, 0, $00, $00, $00, $02, Script_058_4232
 	objects_end
 
-G4_19_ObjectEvents:
+TravelingShip_19_ObjectEvents:
 	object_event $69,  8,  3, wEventFlags + 11, $01, $00, $00, $00, Script_058_4383
 	object_event $69,  6,  7, wEventFlags + 11, $01, $00, $00, $01, Script_058_4383
 	object_event $69,  5,  5, wEventFlags + 11, $01, $00, $00, $02, Script_058_4383
@@ -204,7 +204,7 @@ G4_19_ObjectEvents:
 Script_058_4232:
 	setplayerchar $00
 	face FACE_LEFT
-	setmap $52, $01
+	setmap MAP_G4_52, $01
 	spriteface  2, FACE_LEFT
 	spriteface  5, FACE_RIGHT
 	spriteface  3, FACE_DOWN
@@ -329,7 +329,7 @@ Script_058_4383:
 Script_058_438d:
 	setplayerchar $00
 	face FACE_LEFT
-	setmap $19, $01
+	setmap MAP_TRAVELING_SHIP_19, $01
 	spriteface  2, FACE_LEFT
 	spriteface  5, FACE_RIGHT
 	spriteface  3, FACE_DOWN
@@ -454,14 +454,14 @@ G4_52_ObjectEvents2:
 	object_event $69,  6,  8, 0, $00, $00, $00, $03, Script_058_40e9
 	objects_end
 
-G4_19_ObjectEvents2:
+TravelingShip_19_ObjectEvents2:
 	object_event $06,  8,  6, wEventFlags + 24, $01, $00, $00, $00, Script_058_40e9
 	object_event $69,  6,  6, wEventFlags + 24, $01, $00, $00, $01, Script_058_40e9
 	object_event $69,  6,  7, wEventFlags + 24, $01, $00, $00, $02, Script_058_40e9
 	object_event $69,  6,  8, wEventFlags + 24, $01, $00, $00, $03, Script_058_40e9
 	objects_end
 
-G4_14_ObjectEvents:
+GeothermalCity_14_ObjectEvents:
 	object_event $23,  2, 15, 0, $00, $00, $0a, $00, Script_058_458f
 	object_event $24,  8,  6, 0, $00, $00, $06, $01, Script_058_45db
 	object_event $14, 13, 21, wEventFlags + 11, $05, $01, $00, $00, Script_058_457f
@@ -529,7 +529,7 @@ Script_058_45e5::
 	textface text_58_5f40
 	end
 
-G4_34_ObjectEvents:
+GeothermalCity_34_ObjectEvents:
 	object_event $14,  4,  3, wEventFlags + 11, $05, $01, $0b, $00, Script_058_4600
 	object_event $17,  6,  5, wEventFlags + 11, $05, $01, $00, $01, Script_058_4604
 	objects_end
@@ -542,7 +542,7 @@ Script_058_4604:
 	textface text_58_60db
 	end
 
-G4_35_ObjectEvents:
+GeothermalCity_35_ObjectEvents:
 	object_event $1f,  7,  5, wEventFlags + 11, $05, $01, $00, $00, Script_058_461f
 	object_event $19,  2,  3, wEventFlags + 11, $05, $01, $00, $01, Script_058_4623
 	objects_end
@@ -555,7 +555,7 @@ Script_058_4623::
 	textface text_58_6182
 	end
 
-G4_37_ObjectEvents:
+GeothermalCity_37_ObjectEvents:
 	object_event $15,  4,  3, wEventFlags + 11, $05, $01, $00, $00, Script_058_463e
 	object_event $1a,  7,  3, wEventFlags + 11, $05, $01, $0a, $01, Script_058_4642
 	objects_end
@@ -577,11 +577,11 @@ Script_058_4659::
 	textface text_58_6321
 	end
 
-G4_36_ObjectEvents2:
+GeothermalCity_36_ObjectEvents2:
 	object_event $6d,  8,  3, 0, $00, $00, $00, $00, Script_058_46fd
 	objects_end
 
-G4_36_ObjectEvents:
+GeothermalCity_36_ObjectEvents:
 	object_event $6d,  8,  3, wEventFlags + 10, $02, $00, $00, $00, Script_058_468c
 	object_event $1a,  8,  3, wEventFlags + 10, $02, $01, $00, $00, Script_058_46d9
 	objects_end
@@ -643,15 +643,15 @@ Script_058_46fd:
 
 Script_058_4701:
 	checkbit wEventFlags + 11, $05, Script_058_470b
-	setmap $36, $00
+	setmap MAP_GEOTHERMAL_CITY_36, $00
 	end
 
 Script_058_470b:
-	setmap $36, $01
+	setmap MAP_GEOTHERMAL_CITY_36, $01
 	end
 
 Script_058_470f:
-	setmap $16, $00
+	setmap MAP_DEATH_VALLEY, $00
 	checkbit wEventFlags + 11, $02, Script_058_4735
 	stext text_58_4ebc
 	emote  0, EMOTE_EXCLAMATION
@@ -676,7 +676,7 @@ Script_058_4735:
 Script_058_4748:
 	end
 
-G4_16_ObjectEvents:
+DeathValley_ObjectEvents:
 	object_event $0a, 21, 10, wEventFlags + 11, $03, $00, $00, $00, Script_058_4797
 	object_event $0b, 21, 11, wEventFlags + 11, $03, $00, $00, $01, Script_058_40e9
 	object_event $67, 19, 26, wEventFlags + 11, $05, $00, $00, $00, Script_058_481c
@@ -740,7 +740,7 @@ Script_058_481c::
 	stext text_58_59c6
 	end
 
-G4_15_ObjectEvents:
+LifeValley_ObjectEvents:
 	object_event $20,  7, 19, wEventFlags + 11, $04, $00, $00, $00, Script_058_4838
 	objects_end
 
@@ -768,12 +768,12 @@ Script_058_4864:
 	textface text_58_5a7d
 	end
 
-G4_4F_ObjectEvents:
+LifeValleyRescue_ObjectEvents:
 	object_event $4f,  5,  5, wEventFlags + 11, $05, $00, $00, $00, Script_058_48a5
 	object_event $51,  6,  5, wEventFlags + 11, $05, $00, $00, $01, Script_058_48a1
 	objects_end
 
-G4_4F_ObjectEvents2:
+LifeValleyRescue_ObjectEvents2:
 	object_event $4f,  5,  5, 0, $00, $00, $00, $00, Script_058_40e9
 	object_event $51,  6,  5, 0, $00, $00, $00, $01, Script_058_40e9
 	object_event $0a,  6,  6, 0, $00, $00, $00, $02, Script_058_40e9
@@ -784,7 +784,7 @@ Script_058_48a1::
 Script_058_48a5::
 	setplayerchar $00
 	face FACE_UP
-	setmap $4f, $01
+	setmap MAP_LIFE_VALLEY_RESCUE, $01
 	spriteface 4, FACE_UP
 	stext text_58_5aac
 	stext text_58_5a99
@@ -855,7 +855,7 @@ Script_058_48a5::
 	emote 0, EMOTE_TEAR
 	delay $03, $20
 	setbit wEventFlags + 11, $05
-	setmap $24, $02
+	setmap MAP_SACREDTREE_STARDREAM_DEPARTURE, $02
 	spriteface 3, FACE_UP
 	stext text_58_5d71
 	emote 2, EMOTE_ANGER
@@ -875,17 +875,17 @@ Script_058_48a5::
 	stext text_58_5e0f
 	stext text_58_5e56
 	stext text_58_5e73
-	setmap $4f, $02
+	setmap MAP_LIFE_VALLEY_RESCUE, $02
 	end
 Script_058_49bc::
 	face FACE_DOWN
-	setmap $15, $02
+	setmap MAP_LIFE_VALLEY, $02
 	end
 ObjSprite_58_49c2:
 	object_event $50,  6, 11, 0, $00, $00, $00, $01, Script_058_40e9
 	objects_end
 
-G4_24_ObjectEvents3:
+SacredtreeStardreamDeparture_ObjectEvents3:
 	object_event $4d, 6, 3, 0, $00, $00, $00, $00, Script_058_40e9
 	object_event $62, 6, 4, 0, $00, $00, $00, $01, Script_058_40e9
 	objects_end
@@ -905,12 +905,12 @@ unk_058_49fd:
 Script_058_4a09::
 	checkbit wEventFlags + 11, $05, Script_058_4a13
 Script_058_4a0f::
-	setmap $1e, $00
+	setmap MAP_G4_1E, $00
 	end
 
 Script_058_4a13::
 	checkbit wEventFlags + 12, $01, Script_058_4a0f
-	setmap $1e, $03
+	setmap MAP_G4_1E, $03
 	end
 
 G4_1E_ObjectEvents2:
@@ -927,7 +927,7 @@ Script_058_4a29::
 	setbit wEventFlags + 12, $01
 	end
 
-G4_51_ObjectEvents:
+TravelingShip_51_ObjectEvents:
 	object_event $31, 11, 3, 0, $00, $00, $00, $00, Script_058_4a60
 	object_event $51, 8, 4, 0, $00, $00, $00, $01, Script_058_4a5c
 	objects_end

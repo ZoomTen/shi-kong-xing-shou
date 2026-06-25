@@ -139,11 +139,11 @@ G6_19_ObjectEvents:
 	objects_end
 Script_06c_4198::
 	checkbit wEventFlags + 22, $05, Script_06c_41a2
-	setmap $1b, $00
+	setmap MAP_G6_1B, $00
 	end
 
 Script_06c_41a2:
-	setmap $1b, $01
+	setmap MAP_G6_1B, $01
 	end
 
 Script_06c_41a6:
@@ -358,7 +358,7 @@ Script_06c_437e:
 	end
 
 Script_06c_439a:
-	setmap $1e, $00
+	setmap MAP_G6_1E, $00
 	end
 
 G6_1D_ObjectEvents:
@@ -410,7 +410,7 @@ Script_06c_441a::
 	warp6c
 	setplayerchar $00
 	face FACE_UP
-	setmap $20, $00
+	setmap MAP_G6_20, $00
 	spriteface  3, FACE_UP
 	spriteface  4, FACE_UP
 	stext text_6c_702f
@@ -475,7 +475,7 @@ G6_0A_ObjectEvents:
 	object_event $25,  7, 28, 0, $00, $00, $00, $03, Script_06c_7a6a
 	objects_end
 
-G6_0B_ObjectEvents:
+EndingEpilogue_ObjectEvents:
 	object_event $5e,  9, 17, wEventFlags + 23, $02, $00, $00, $00, Script_06c_4596
 	object_event $5f,  9, 17, wEventFlags + 23, $02, $01, $00, $00, Script_06c_4596
 	object_event $22,  1, 16, 0, $00, $00, $00, $01, Script_06c_7a51
@@ -562,7 +562,7 @@ Script_06c_460e::
 
 Script_06c_4621:
 	face FACE_DOWN
-	setmap $09, $00
+	setmap MAP_G6_09, $00
 	end
 Script_06c_4627::
 	checkbit wEventFlags + 23, $00, Script_06c_463a
@@ -575,7 +575,7 @@ Script_06c_4627::
 
 Script_06c_463a:
 	face FACE_LEFT
-	setmap $0a, $00
+	setmap MAP_G6_0A, $00
 	end
 Script_06c_4640::
 	checkbit wEventFlags + 23, $01, Script_06c_4653
@@ -588,7 +588,7 @@ Script_06c_4640::
 
 Script_06c_4653:
 	face FACE_DOWN
-	setmap $0b, $00
+	setmap MAP_ENDING_EPILOGUE, $00
 	end
 
 Script_06c_4659:
@@ -673,7 +673,7 @@ Script_06c_4706:
 	end
 
 G6_01_ObjectEvents:
-G6_02_ObjectEvents2:
+KingkongMountain_ObjectEvents2:
 G6_03_ObjectEvents:
 G6_04_ObjectEvents:
 G6_05_ObjectEvents:
@@ -691,20 +691,20 @@ G6_1B_ObjectEvents2:
 G6_1E_ObjectEvents:
 G6_25_ObjectEvents:
 G6_2A_ObjectEvents:
-G6_2B_ObjectEvents2:
+BaalCapitalProfessor_2b_ObjectEvents2:
 G6_2C_ObjectEvents:
 	objects_end
 Script_06c_4708::
 	checkbit wEventFlags + 18, $06, Script_06c_4712
-	setmap $02, $01
+	setmap MAP_KINGKONG_MOUNTAIN, $01
 	end2
 
 Script_06c_4712:
-	setmap $02, $00
+	setmap MAP_KINGKONG_MOUNTAIN, $00
 	end2
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-G6_02_ObjectEvents:
+KingkongMountain_ObjectEvents:
 	object_event $62,  8,  3, wEventFlags + 18, $07, $00, $00, $00, Script_06c_4722
 	objects_end
 Script_06c_4722:
@@ -752,23 +752,23 @@ Script_06c_4752:
 	end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-G6_07_ObjectEvents:
+BaalCapitalProfessor_07_ObjectEvents:
 	object_event $5a,  6,  6, wEventFlags + 19, $03, $00, $00, $00, Script_06c_502c
 	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_47e9
 	objects_end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-G6_07_ObjectEvents2:
+BaalCapitalProfessor_07_ObjectEvents2:
 	object_event $5b,  6,  6, wEventFlags + 19, $03, $00, $00, $00, Script_06c_502c
 	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_47e9
 	objects_end
 
-G6_07_ObjectEvents4:
+BaalCapitalProfessor_07_ObjectEvents4:
 	object_event $59,  6,  6, 0, $00, $00, $00, $00, Script_06c_4706
 	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_07_ObjectEvents3:
+BaalCapitalProfessor_07_ObjectEvents3:
 	object_event $58,  5,  6, 0, $00, $00, $00, $00, Script_06c_47e9
 	objects_end
 
@@ -784,7 +784,7 @@ Script_06c_47fb:
 	stext text_6c_61cf
 	end
 
-G6_0C_ObjectEvents:
+BaalCapital_0c_ObjectEvents:
 	object_event $19,  6,  9, 0, $00, $00, $09, $00, Script_06c_4890
 	object_event $16,  8, 27, 0, $00, $00, $0b, $01, Script_06c_4894
 	object_event $14, 11,  6, 0, $00, $00, $06, $02, Script_06c_48a2
@@ -795,7 +795,7 @@ G6_0C_ObjectEvents:
 	object_event $22, 23, 12, 0, $00, $00, $09, $02, Script_06c_48c0
 	objects_end
 
-G6_0C_ObjectEvents2:
+BaalCapital_0c_ObjectEvents2:
 	object_event $0e, 18,  5, 0, $00, $00, $00, $00, Script_06c_4706
 	object_event $12, 15,  5, 0, $00, $00, $00, $01, Script_06c_4706
 	object_event $1b, 20,  5, 0, $00, $00, $00, $02, Script_06c_4706
@@ -1045,12 +1045,12 @@ Script_06c_4ac8:
 
 Script_06c_4ae1:
 	face FACE_DOWN
-	setmap $0f, $03
+	setmap MAP_G6_0F, $03
 	end2
 
 Script_06c_4ae7:
 	setplayerchar $00
-	setmap $13, $00
+	setmap MAP_G6_13, $00
 	emote  0, EMOTE_EXCLAMATION
 	delay $03, $20
 	setattach $01, $00, $10, $00
@@ -1153,61 +1153,61 @@ ObjSprite_6c_4c0b::
 	object_event $50,  9,  3, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_22_ObjectEvents:
+BaalCapital_22_ObjectEvents:
 	object_event $19,  3,  6, 0, $00, $00, $08, $00, Script_06c_4daa
 	object_event $16,  9,  5, 0, $00, $00, $00, $01, Script_06c_4db8
 	objects_end
 
-G6_23_ObjectEvents:
+BaalCapital_23_ObjectEvents:
 	object_event $20,  4,  4, 0, $00, $00, $07, $00, Script_06c_4dc6
 	object_event $1f,  6,  4, 0, $00, $00, $00, $01, Script_06c_4dca
 	objects_end
 
-G6_24_ObjectEvents:
+BaalCapital_24_ObjectEvents:
 	object_event $1b,  9,  6, 0, $00, $00, $00, $00, Script_06c_4dce
 	object_event $1a,  4,  6, 0, $00, $00, $09, $01, Script_06c_4dd2
 	objects_end
 
-G6_27_ObjectEvents:
+BaalCapitalBlacksmith_ObjectEvents:
 	object_event $24,  4,  5, 0, $00, $00, $00, $00, Script_06c_4dd6
 	objects_end
 
-G6_2B_ObjectEvents4:
+BaalCapitalProfessor_2b_ObjectEvents4:
 	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4cc1
 	objects_end
 
-G6_2B_ObjectEvents:
+BaalCapitalProfessor_2b_ObjectEvents:
 	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4cc1
 	objects_end
 
-G6_2B_ObjectEvents3:
+BaalCapitalProfessor_2b_ObjectEvents3:
 	object_event $5a,  5,  4, 0, $00, $00, $00, $00, Script_06c_4cc1
 	object_event $58,  6,  4, 0, $00, $00, $00, $00, Script_06c_4ceb
 	objects_end
 Script_06c_4c97::
 	checkbit wEventFlags + 18, $04, Script_06c_4ca1
-	setmap $2b, $00
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $00
 	end2
 
 Script_06c_4ca1:
 	checkbit wEventFlags + 18, $06, Script_06c_4cab
-	setmap $2b, $02
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $02
 	end2
 
 Script_06c_4cab:
 	checkbit wEventFlags + 19, $01, Script_06c_4cb5
-	setmap $2b, $00
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $00
 	end2
 
 Script_06c_4cb5:
-	setmap $2b, $03
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $03
 	end2
 Script_06c_4cb9::
-	setmap $2b, $01
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $01
 	end2
 
 Script_06c_4cbd:
-	setmap $2b, $05
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $05
 	end2
 
 Script_06c_4cc1:
@@ -1265,7 +1265,7 @@ Script_06c_4cf9:
 	spritewalk  3, MOVE_UP
 	spritewalk  3, MOVE_UP
 	clearobject $03
-	setmap $2b, $04
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $04
 	setbit wEventFlags + 18, $05
 	setbit wEventFlags + 18, $06
 	end
@@ -1275,11 +1275,11 @@ unk_06c_4d4f::
 	object_event $58,  6,  4, wEventFlags + 18, $04, $01, $00, $00, Script_06c_4e3d
 	objects_end
 
-G6_26_ObjectEvents:
+BaalCapital_26_ObjectEvents:
 	object_event $58,  4,  4, wEventFlags + 18, $04, $00, $00, $00, Script_06c_4ea3
 	objects_end
 
-G6_26_ObjectEvents2:
+BaalCapital_26_ObjectEvents2:
 	object_event $58,  4,  4, 0, $00, $00, $00, $00, Script_06c_4706
 	objects_end
 ; TODO: map array reached via binary map header (source map unknown)
@@ -1404,7 +1404,7 @@ Script_06c_4e4b:
 	spritewalk  3, MOVE_UP
 	spritewalk  3, MOVE_UP
 	clearobject $03
-	setmap $2b, $02
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $02
 	setbit wEventFlags + 18, $06
 	stext text_6c_5dd0
 	end
@@ -1431,12 +1431,12 @@ Script_06c_4eba::
 	end
 
 Script_06c_4ed0:
-	setmap $03, $01
+	setmap MAP_G6_03, $01
 	end2
 Script_06c_4ed4::
 	checkbit wEventFlags + 19, $02, Script_06c_4ede
 Script_06c_4eda:
-	setmap $0c, $01
+	setmap MAP_BAAL_CAPITAL_0C, $01
 	end
 
 Script_06c_4ede:
@@ -1479,15 +1479,15 @@ Script_06c_4f23::
 
 Script_06c_4f39:
 	setplayerchar $00
-	setmap $0d, $03
+	setmap MAP_G6_0D, $03
 	objmove $02, MovementData_06c_79a6
-	setmap $07, $03
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_07, $03
 	spriteface  2, FACE_LEFT
 	stext text_6c_621e
-	setmap $2c, $00
+	setmap MAP_G6_2C, $00
 	delay $03, $20
 	face FACE_LEFT
-	setmap $10, $01
+	setmap MAP_G6_10, $01
 	spriteface  2, FACE_RIGHT
 	stext text_6c_624d
 	stext text_6c_627c
@@ -1538,26 +1538,26 @@ Script_06c_4fc1:
 	end
 Script_06c_4fe5:
 	checkbit wEventFlags + 18, $06, Script_06c_4fef
-	setmap $2b, $00
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $00
 	end2
 Script_06c_4fef:
 	checkbit wEventFlags + 19, $02, Script_06c_4ff9
-	setmap $2b, $04
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $04
 	end2
 Script_06c_4ff9:
-	setmap $2b, $06
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $06
 	end2
 Script_06c_4ffd::
 	face FACE_DOWN
-	setmap $06, $01
+	setmap MAP_G6_06, $01
 	end2
 Script_06c_5003::
-	setmap $07, $02
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_07, $02
 	end2
 Script_06c_5007::
 	checkbit wEventFlags + 19, $03, Script_06c_5003
 	face FACE_UP
-	setmap $07, $00
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_07, $00
 	spriteface  2, FACE_LEFT
 	stext text_6c_6045
 	spriteface  2, FACE_DOWN
@@ -1565,7 +1565,7 @@ Script_06c_5007::
 	objmove $00, MovementData_06c_79d7
 	clearattach $00
 	stext text_6c_6068
-	setmap $07, $01
+	setmap MAP_BAAL_CAPITAL_PROFESSOR_07, $01
 Script_06c_502c::
 	startbattle BattleData_02d_4f29
 	checkbit wEventFlags + 3, $03, Script_06c_4ffd
@@ -1594,14 +1594,14 @@ Script_06c_5068::
 Script_06c_506f:
 	checkbit wEventFlags + 18, $04, Script_06c_50fd
 	setplayerchar $00
-	setmap $2a, $00
+	setmap MAP_G6_2A, $00
 	stext text_6c_5785
 	stext text_6c_57a7
 	stext text_6c_57e6
 	stext text_6c_583f
 	face FACE_UP
 	scont
-	setmap $0c, $0b
+	setmap MAP_BAAL_CAPITAL_0C, $0b
 	spriteface  2, FACE_UP
 	spriteface  3, FACE_UP
 	spriteface  4, FACE_UP
@@ -1638,7 +1638,7 @@ Script_06c_506f:
 	stext text_6c_595f
 	clearplayerpos
 	spritewalk  2, MOVE_LEFT
-	setmap $0c, $0c
+	setmap MAP_BAAL_CAPITAL_0C, $0c
 	setbit wEventFlags + 18, $04
 	end
 

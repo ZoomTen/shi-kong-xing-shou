@@ -69,7 +69,7 @@ Script_06e_4109::
 	stext text_6e_44f1
 	stext text_6e_4510
 	runmovement MovementData_00b_71b0
-	setmap $02, $00
+	setmap MAP_G7_02, $00
 	spriteface  2, FACE_LEFT
 	emote  2, EMOTE_QUESTION
 	delay $03, $20
@@ -85,7 +85,7 @@ Script_06e_4109::
 	emote  3, EMOTE_TEAR
 	delay $03, $20
 	stext text_6e_4591
-	setmap $03, $00
+	setmap MAP_G7_03, $00
 	stext text_6e_45b5
 	loadobjsprite ObjSprite_6e_43eb
 	spritewalk  3, MOVE_DOWN
@@ -109,7 +109,7 @@ Script_06e_4109::
 	emote  3, EMOTE_EXCLAMATION
 	delay $03, $20
 	stext text_6e_46a6
-	setmap $04, $00
+	setmap MAP_G7_04, $00
 	emote  2, EMOTE_EXCLAMATION
 	delay $03, $20
 	stext text_6e_46f5
@@ -155,7 +155,7 @@ Script_06e_4109::
 	emote  4, EMOTE_TEAR
 	delay $02, $20
 	stext text_6e_482a
-	setmap $05, $00
+	setmap MAP_G7_05, $00
 	spriteface  3, FACE_UP
 	spriteface  4, FACE_UP
 	stext text_6e_4836
@@ -176,7 +176,7 @@ Script_06e_4109::
 	stext text_6e_4960
 	stext text_6e_49ad
 	stext text_6e_49d6
-	setmap $06, $00
+	setmap MAP_G7_06, $00
 	spriteface  2, FACE_LEFT
 	stext text_6e_49e3
 	emote  4, EMOTE_EXCLAMATION
@@ -203,7 +203,7 @@ Script_06e_4109::
 	stext text_6e_4b0d
 	spritewalk  2, MOVE_UP
 	stext text_6e_4b1d
-	setmap $07, $00
+	setmap MAP_G7_07, $00
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_LEFT
 	spriteface  4, FACE_LEFT
@@ -236,7 +236,7 @@ Script_06e_4109::
 	stext text_6e_4cec
 	stext text_6e_4d15
 	checkbit wEventFlags + 20, $03, Script_06e_4361
-	setmap $08, $00
+	setmap MAP_G7_08, $00
 	spriteface  3, FACE_LEFT
 	spritewalk  2, MOVE_RIGHT
 	stext text_6e_4d21
@@ -296,12 +296,14 @@ ObjSprite_6e_43f6:
 INCLUDE "data/text/script_ending_epilogue.asm"
 INCLUDE "data/text/script_ending_finale.asm"
 G7_09_MapAttributes:
-	map_attr_data \
-		6, 5, \
-		Layout_06e_507d, Blocks_06e_5120, Metatiles_06e_509c, AttrMap_06e_5180, \
-		Palettes_06e_51b4, \
-		0, Tileset_55, \
-		Collision_06e_51fc
+	map_attr G7_09, \
+	   Layout_06e_507d, \
+	   Blocks_06e_5120, \
+	   Metatiles_06e_509c, \
+	   AttrMap_06e_5180, \
+	   Palettes_06e_51b4, \
+	   0, Tileset_55, \
+	   Collision_06e_51fc
 Layout_06e_507d::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_06e_507d.bin"
@@ -312,41 +314,6 @@ Blocks_06e_5120::
 AttrMap_06e_5180::
 INCBIN "gfx/attrmaps/attrmap_06e_5180.bin"
 Palettes_06e_51b4::
-	RGB 31, 30, 28
-	RGB 27, 25, 18
-	RGB 18, 14, 9
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 19, 26, 11
-	RGB 6, 13, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 8, 26, 31
-	RGB 0, 11, 30
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 31, 24, 10
-	RGB 21, 10, 0
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 27, 25, 21
-	RGB 0, 15, 30
-	RGB 0, 0, 0
-	RGB 31, 30, 28
-	RGB 20, 27, 27
-	RGB 8, 14, 14
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+	INCLUDE "data/maps/palettes/Palettes_06e_51b4.pal"
 Collision_06e_51fc::
 	INCBIN "data/maps/collision/Collision_06e_51fc.bin"

@@ -1,17 +1,17 @@
 Group06_Maps::
 	dw G6_00_Header
 	dw G6_01_Header
-	dw G6_02_Header
+	dw KingkongMountain_Header
 	dw G6_03_Header
 	dw G6_04_Header
 	dw G6_05_Header
 	dw G6_06_Header
-	dw G6_07_Header
+	dw BaalCapitalProfessor_07_Header
 	dw G6_08_Header
 	dw G6_09_Header
 	dw G6_0A_Header
-	dw G6_0B_Header
-	dw G6_0C_Header
+	dw EndingEpilogue_Header
+	dw BaalCapital_0c_Header
 	dw G6_0D_Header
 	dw G6_0E_Header
 	dw G6_0F_Header
@@ -33,16 +33,16 @@ Group06_Maps::
 	dw G6_1F_Header
 	dw G6_20_Header
 	dw G6_21_Header
-	dw G6_22_Header
-	dw G6_23_Header
-	dw G6_24_Header
+	dw BaalCapital_22_Header
+	dw BaalCapital_23_Header
+	dw BaalCapital_24_Header
 	dw G6_25_Header
-	dw G6_26_Header
-	dw G6_27_Header
+	dw BaalCapital_26_Header
+	dw BaalCapitalBlacksmith_Header
 	dw G6_28_Header
 	dw G6_29_Header
 	dw G6_2A_Header
-	dw G6_2B_Header
+	dw BaalCapitalProfessor_2b_Header
 	dw G6_2C_Header
 
 G6_00_Header::
@@ -51,9 +51,9 @@ G6_00_Header::
 	warp 5, 10, $9058
 	end_map
 
-	map  G6_02
+	map  KingkongMountain
 	warp 10, 0, $4088
-	warp 10, 0, $4088, G6_02_ObjectEvents2
+	warp 10, 0, $4088, KingkongMountain_ObjectEvents2
 	end_map
 
 	map  G6_03
@@ -76,11 +76,11 @@ G6_00_Header::
 	warp 3, 5, $5058
 	end_map
 
-	map  G6_07
+	map BaalCapitalProfessor_07, G7_06_MapAttributes
 	warp 1, 1, $9048
-	warp 1, 1, $6048, G6_07_ObjectEvents2
-	warp 1, 1, $9048, G6_07_ObjectEvents3
-	warp 1, 1, $20b0, G6_07_ObjectEvents4
+	warp 1, 1, $6048, BaalCapitalProfessor_07_ObjectEvents2
+	warp 1, 1, $9048, BaalCapitalProfessor_07_ObjectEvents3
+	warp 1, 1, $20b0, BaalCapitalProfessor_07_ObjectEvents4
 	end_map
 
 	map  G6_08
@@ -98,11 +98,11 @@ G6_00_Header::
 	warp 0, 0, $1048
 	end_map
 
-	map  G6_0B
+	map  EndingEpilogue
 	warp 0, 0, $3028
 	end_map
 
-	map  G6_0C
+	map  BaalCapital_0c
 	warp 5, 5, $7068
 	warp 13, 0, $5058
 	warp 13, 5, $8048
@@ -114,7 +114,7 @@ G6_00_Header::
 	warp 0, 6, $8048
 	warp 0, 3, $6018
 	warp 0, 0, $8048
-	warp 7, 0, $6038, G6_0C_ObjectEvents2
+	warp 7, 0, $6038, BaalCapital_0c_ObjectEvents2
 	warp 7, 0, $6038
 	end_map
 
@@ -223,40 +223,40 @@ G6_00_Header::
 	warp 1, 0, $6048
 	end_map
 
-	map  G6_21
+	map G6_21, G7_01_MapAttributes
 	warp 1, 0, $8058
 	end_map
 
-	map  G6_22
+	map BaalCapital_22, MapAttributes_001_40f0
 	warp 0, 0, $8038
 	end_map
 
-	map  G6_23
+	map BaalCapital_23, MapAttributes_001_4104
 	warp 0, 0, $8038
 	end_map
 
-	map  G6_24
+	map BaalCapital_24, MapAttributes_001_4104
 	warp 0, 0, $8038
 	end_map
 
-	map  G6_25
+	map G6_25, MapAttributes_001_412c
 	warp 0, 0, $8038
 	end_map
 
-	map  G6_26
+	map BaalCapital_26, MapAttributes_001_4154
 	warp 0, 0, $8038
-	warp 0, 0, $b0b0, G6_26_ObjectEvents2
+	warp 0, 0, $b0b0, BaalCapital_26_ObjectEvents2
 	end_map
 
-	map  G6_27
+	map BaalCapitalBlacksmith, BanglinCo_MapAttributes
 	warp 0, 0, $8038
 	end_map
 
-	map  G6_28
+	map G6_28, EastFishmarket_32_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
-	map  G6_29
+	map G6_29, EastFishmarket_31_MapAttributes
 	warp 0, 0, $8058
 	end_map
 
@@ -264,12 +264,12 @@ G6_00_Header::
 	warp 0, 0, $20b0
 	end_map
 
-	map  G6_2B
+	map  BaalCapitalProfessor_2b
 	warp 0, 0, $8058
-	warp 0, 0, $4058, G6_2B_ObjectEvents2
-	warp 0, 0, $8058, G6_2B_ObjectEvents3
-	warp 0, 0, $8058, G6_2B_ObjectEvents2
-	warp 0, 0, $5058, G6_2B_ObjectEvents4
+	warp 0, 0, $4058, BaalCapitalProfessor_2b_ObjectEvents2
+	warp 0, 0, $8058, BaalCapitalProfessor_2b_ObjectEvents3
+	warp 0, 0, $8058, BaalCapitalProfessor_2b_ObjectEvents2
+	warp 0, 0, $5058, BaalCapitalProfessor_2b_ObjectEvents4
 	end_map
 
 	map  G6_2C
@@ -281,7 +281,7 @@ G6_01_MapEvents:
 	warp_event ABSOLUTE, 29, $0e, $01
 	signpost_event 18, 27, $04
 	events_end
-G6_02_MapEvents:
+KingkongMountain_MapEvents:
 	warp_event 29, 3, $01, $00
 	events_end
 G6_03_MapEvents:
@@ -300,7 +300,7 @@ G6_06_MapEvents:
 	warp_event 8, 1, $05, $01
 	script_event 11, 14, $00, Script_06c_5007
 	events_end
-G6_07_MapEvents:
+BaalCapitalProfessor_07_MapEvents:
 	warp_event ABSOLUTE, 11, $06, $01
 	events_end
 G6_08_MapEvents:
@@ -312,9 +312,9 @@ G6_09_MapEvents:
 G6_0A_MapEvents:
 	script_event ABSOLUTE, 0, $00, Script_06c_4640
 	events_end
-G6_0B_MapEvents:
+EndingEpilogue_MapEvents:
 	events_end
-G6_0C_MapEvents:
+BaalCapital_0c_MapEvents:
 	warp_event 16, 15, $29, $00
 	script_event 31, 3, $00, Script_06c_4c97
 	warp_event 30, 16, $24, $00
@@ -425,14 +425,14 @@ G6_21_MapEvents:
 	warp_event 11, ABSOLUTE, $08, $00
 	event_07 10, 4, $0a
 	events_end
-G6_22_MapEvents:
+BaalCapital_22_MapEvents:
 	warp_event ABSOLUTE, 8, $0c, $08
 	event_07 9, 3, $01
 	events_end
-G6_23_MapEvents:
+BaalCapital_23_MapEvents:
 	warp_event ABSOLUTE, 8, $0c, $06
 	events_end
-G6_24_MapEvents:
+BaalCapital_24_MapEvents:
 	warp_event ABSOLUTE, 8, $0c, $02
 	event_07 4, 3, $02
 	events_end
@@ -440,11 +440,11 @@ G6_25_MapEvents:
 	warp_event ABSOLUTE, 8, $0c, $05
 	event_07 8, 3, $03
 	events_end
-G6_26_MapEvents:
+BaalCapital_26_MapEvents:
 	warp_event ABSOLUTE, 8, $0c, $07
 	event_07 2, 3, $04
 	events_end
-G6_27_MapEvents:
+BaalCapitalBlacksmith_MapEvents:
 	warp_event ABSOLUTE, 8, $0c, $04
 	event_07 1, 3, $05
 	events_end
@@ -460,7 +460,7 @@ G6_29_MapEvents:
 G6_2A_MapEvents:
 G6_2C_MapEvents:
 	events_end
-G6_2B_MapEvents:
+BaalCapitalProfessor_2b_MapEvents:
 	script_event 5, 2, $00, Script_06c_4eba
 	script_event ABSOLUTE, 9, $00, Script_06c_4ed4
 	events_end
@@ -484,20 +484,20 @@ G7_00_Header::
 	warp 1, 0, $8058
 	end_map
 
-	map  G7_02
+	map G7_02, BellVillage1_MapAttributes
 	warp 4, 5, $20b0
 	end_map
 
-	map  G7_03
+	map G7_03, G4_44_MapAttributes
 	warp 0, 0, $20b0
 	warp 5, 0, $20b0, G7_03_ObjectEvents2
 	end_map
 
-	map  G7_04
+	map G7_04, TravelingShip_51_MapAttributes
 	warp 3, 0, $20b0
 	end_map
 
-	map  G7_05
+	map G7_05, SacredtreeVillage_55_MapAttributes
 	warp 2, 0, $20b0
 	end_map
 
@@ -505,11 +505,11 @@ G7_00_Header::
 	warp 0, 1, $20b0
 	end_map
 
-	map  G7_07
+	map G7_07, BanglinCo1f_MapAttributes
 	warp 0, 0, $20b0
 	end_map
 
-	map  G7_08
+	map G7_08, BallotsHouse1_MapAttributes
 	warp 0, 0, $20b0
 	end_map
 
@@ -533,12 +533,14 @@ G7_09_MapEvents:
 G7_0A_MapEvents:
 	events_end
 G7_0A_MapAttributes:
-	map_attr_data \
-		6, 10, \
-		Layout_069_496e, Blocks_069_4aa3, Metatiles_069_49ab, AttrMap_069_4b6b, \
-		Palettes_069_4bc3, \
-		0, Tileset_20, \
-		Collision_069_4c0b
+	map_attr G7_0A, \
+	   Layout_069_496e, \
+	   Blocks_069_4aa3, \
+	   Metatiles_069_49ab, \
+	   AttrMap_069_4b6b, \
+	   Palettes_069_4bc3, \
+	   0, Tileset_20, \
+	   Collision_069_4c0b
 Layout_069_496e::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_069_496e.bin"
@@ -549,42 +551,7 @@ Blocks_069_4aa3::
 AttrMap_069_4b6b::
 INCBIN "gfx/attrmaps/attrmap_069_4b6b.bin"
 Palettes_069_4bc3::
-	RGB 31, 31, 31
-	RGB 31, 28, 4
-	RGB 9, 4, 20
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
-	RGB 0, 0, 0
+	INCLUDE "data/maps/palettes/Palettes_069_4bc3.pal"
 Collision_069_4c0b::
 	INCBIN "data/maps/collision/Collision_069_4c0b.bin"
 

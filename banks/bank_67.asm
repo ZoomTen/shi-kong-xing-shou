@@ -3,7 +3,7 @@ Script_067_6e01::
 	end
 
 Script_067_6e06:
-	setmap $03, $00
+	setmap MAP_G5_03, $00
 	end2
 
 G5_03_ObjectEvents:

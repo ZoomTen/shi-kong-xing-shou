@@ -12,20 +12,20 @@ Group00_Maps::
 	dw BellObservatory1_Header
 	dw BellSchoolSouthClassroom1_Header
 	dw TechCity_Header
-	dw MapHeader_007_4579
-	dw MapHeader_007_458b
-	dw MapHeader_007_459d
-	dw MapHeader_007_45af
-	dw MapHeader_007_45c1
-	dw MapHeader_007_45d3
+	dw Map_007_4579_Header
+	dw Map_007_458b_Header
+	dw Map_007_459d_Header
+	dw Map_007_45af_Header
+	dw Map_007_45c1_Header
+	dw Map_007_45d3_Header
 	dw TechShop_Header
 	dw TechHealingCenter_Header
 	dw CrystalVillage_Header
-	dw MapHeader_007_4687
-	dw MapHeader_007_4699
-	dw MapHeader_007_46ab
-	dw MapHeader_007_46bd
-	dw MapHeader_007_46cf
+	dw Map_007_4687_Header
+	dw Map_007_4699_Header
+	dw Map_007_46ab_Header
+	dw Map_007_46bd_Header
+	dw Map_007_46cf_Header
 	dw CrystalHealingCenter_Header
 	dw Junkyard_Header
 	dw PowerPlantOutside_Header
@@ -45,7 +45,6 @@ Group00_Maps::
 	dw BellObservatoryDestroyed_Header
 	dw BlueMoon_Header
 
-; BellVillage1
 	map  BellVillage1
 	warp 6, 5, $9048    ; 0
 	warp 1, 0, $2048    ; 1
@@ -58,19 +57,16 @@ Group00_Maps::
 	warp 0, 5, $7048    ; 8
 	end_map
 
-; BellSchoolOutside1
 	map  BellSchoolOutside1
 	warp 0, 5, $9058    ; 0
 	warp 0, 0, $6058    ; 1
 	end_map
 
-; BellObservatoryOutside1
 	map  BellObservatoryOutside1
 	warp 0, 1, $8018
 	warp 5, 0, $7058
 	end_map
 
-; BallotsHouse1
 	map  BallotsHouse1
 	warp 0, 0, $8038
 	warp 1, 0, $4078
@@ -79,51 +75,42 @@ Group00_Maps::
 	warp 0, 0, $8038, BallotsHouse1_ObjectEvents4
 	end_map
 
-; HayatosHouse1
 	map  HayatosHouse1
 	warp 0, 0, $8078
 	end_map
 
-; CarpetWomansHouse1
 	map  CarpetWomansHouse1
 	warp 0, 0, $8038
 	end_map
 
-; FangfangsHouse1
 	map  FangfangsHouse1
 	warp 0, 0, $8078
 	end_map
 
-; BellHealingCenter1
 	map  BellHealingCenter1
 	warp 0, 0, $8068
 	end_map
 
-; BellSchool1
 	map  BellSchool1
 	warp 0, 5, $8068
 	warp 0, 5, $6028
 	warp 0, 0, $7028
 	end_map
 
-; BellObservatory1
 	map  BellObservatory1
 	warp 1, 1, $8068
 	warp 0, 1, $b088, BellObservatory1_ObjectEvents2
 	end_map
 
-; BellSchoolSouthClassroom1
-	map  BellSchoolSouthClassroom1
+	map BellSchoolSouthClassroom1, BellSchoolClassroom_MapAttributes
 	warp 1, 0, $4078
 	end_map
 
-; BellSchoolNorthClassroom1
-	map  BellSchoolNorthClassroom1
+	map BellSchoolNorthClassroom1, BellSchoolClassroom_MapAttributes
 	warp 1, 0, $4078
 	warp 0, 1, $5078, BellObservatory1_ObjectEvents, BellSchoolNorthClassroom1_MapEvents2
 	end_map
 
-; BlueMoon
 	map  BlueMoon
 	warp 0, 5, $20b0, BellObservatory1_ObjectEvents
 	end_map
@@ -226,20 +213,20 @@ Group01_Maps::
 	dw BellObservatory2_Header
 	dw BellSchoolSouthClassroom2_Header
 	dw TechCity_Header
-	dw MapHeader_007_4579
-	dw MapHeader_007_458b
-	dw MapHeader_007_459d
-	dw MapHeader_007_45af
-	dw MapHeader_007_45c1
-	dw MapHeader_007_45d3
+	dw Map_007_4579_Header
+	dw Map_007_458b_Header
+	dw Map_007_459d_Header
+	dw Map_007_45af_Header
+	dw Map_007_45c1_Header
+	dw Map_007_45d3_Header
 	dw TechShop_Header
 	dw TechHealingCenter_Header
 	dw CrystalVillage_Header
-	dw MapHeader_007_4687
-	dw MapHeader_007_4699
-	dw MapHeader_007_46ab
-	dw MapHeader_007_46bd
-	dw MapHeader_007_46cf
+	dw Map_007_4687_Header
+	dw Map_007_4699_Header
+	dw Map_007_46ab_Header
+	dw Map_007_46bd_Header
+	dw Map_007_46cf_Header
 	dw CrystalHealingCenter_Header
 	dw Junkyard_Header
 	dw PowerPlantOutside_Header
@@ -259,17 +246,16 @@ Group01_Maps::
 	dw BellObservatoryDestroyed_Header
 	dw BlueMoon2_Header
 	dw TechCityBlackout_Header
-	dw MapHeader_007_49b1
-	dw MapHeader_007_49c3
-	dw MapHeader_007_49d5
-	dw MapHeader_007_49e7
-	dw MapHeader_007_49f9
-	dw MapHeader_007_4a0b
+	dw Map_007_49b1_Header
+	dw Map_007_49c3_Header
+	dw Map_007_49d5_Header
+	dw Map_007_49e7_Header
+	dw Map_007_49f9_Header
+	dw Map_007_4a0b_Header
 	dw TechShopBlackout_Header
 	dw TechHealingCenterBlackout_Header
 
-; BellVillage2
-	map BellVillage2
+	map BellVillage2, BellVillage1_MapAttributes
 	warp 6, 5, $9048
 	warp 1, 0, $2048
 	warp 7, 1, $7088
@@ -281,323 +267,271 @@ Group01_Maps::
 	warp 0, 5, $7048
 	end_map
 
-; BellSchoolOutside2
-	map BellSchoolOutside2
+	map BellSchoolOutside2, BellSchoolOutside1_MapAttributes
 	warp 0, 5, $9058
 	warp 0, 0, $6058
 	end_map
 
-; BellObservatoryOutside2
-	map BellObservatoryOutside2
+	map BellObservatoryOutside2, BellObservatoryOutside1_MapAttributes
 	warp 0, 1, $8018, BellSchoolOutside2_ObjectEvents, BellObservatoryOutside2_MapEvents
 	warp 5, 0, $7058, BellSchoolOutside2_ObjectEvents, BellObservatoryOutside2_MapEvents
 	end_map
 
-; BallotsHouse2
-	map BallotsHouse2
+	map BallotsHouse2, BallotsHouse1_MapAttributes
 	warp 0, 0, $8038
 	warp 0, 0, $5078, BallotsHouse2_ObjectEvents, BallotsHouse2_MapEvents2
 	end_map
 
-; HayatosHouse2
-	map HayatosHouse2
+	map HayatosHouse2, HayatosHouse1_MapAttributes
 	warp 0, 0, $8078
 	end_map
 
-; CarpetWomansHouse2
-	map CarpetWomansHouse2
+	map CarpetWomansHouse2, CarpetWomansHouse1_MapAttributes
 	warp 0, 0, $8038
 	end_map
 
-; FangfangsHouse2
-	map FangfangsHouse2
+	map FangfangsHouse2, FangfangsHouse1_MapAttributes
 	warp 0, 0, $8078
 	end_map
 
-; BellHealingCenter2
-	map BellHealingCenter2
+	map BellHealingCenter2, BellHealingCenter1_MapAttributes
 	warp 0, 0, $8068
 	end_map
 
-; BellSchool2
-	map BellSchool2
+	map BellSchool2, BellSchool1_MapAttributes
 	warp 0, 5, $8068
 	warp 0, 5, $6028
 	warp 0, 0, $7028
 	end_map
 
-; BellObservatory2
-	map BellObservatory2
+	map BellObservatory2, BellObservatory1_MapAttributes
 	warp 1, 1, $8068
 	end_map
 
-; BellSchoolSouthClassroom2
-	map BellSchoolSouthClassroom2
+	map BellSchoolSouthClassroom2, BellSchoolClassroom_MapAttributes
 	warp 1, 0, $4078
 	end_map
 
-BellSchoolNorthClassroom2_Header::
-	; map XXXXX
-	dbaw2 BellSchoolNorthClassroom_MapAttributes
-	warp  1, 0, $4078, BellSchoolOutside2_ObjectEvents, BellSchoolNorthClassroom2_MapEvents
+	map BellSchoolNorthClassroom2, BellSchoolClassroom_MapAttributes
+	warp 1, 0, $4078, BellSchoolOutside2_ObjectEvents
+	end_map
 
-TechCity_Header::
-	; map XXXXX
-	dbaw2 TechCity_MapAttributes
-	warp  6, 7, $9068, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  0, 0, $2058, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  13, 0, $2058, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  0, 2, $7028, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  0, 6, $7028, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  1, 6, $7058, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  10, 7, $7038, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  13, 6, $7048, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  13, 1, $7068, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  8, 0, $7048, TechCity_ObjectEvents, TechCity_MapEvents
-	warp  4, 0, $7058, TechCity_ObjectEvents, TechCity_MapEvents
+	map TechCity
+	warp 6, 7, $9068
+	warp 0, 0, $2058
+	warp 13, 0, $2058
+	warp 0, 2, $7028
+	warp 0, 6, $7028
+	warp 1, 6, $7058
+	warp 10, 7, $7038
+	warp 13, 6, $7048
+	warp 13, 1, $7068
+	warp 8, 0, $7048
+	warp 4, 0, $7058
+	end_map
 
-MapHeader_007_4579::
-	; map XXXXX
-	dbaw2 MapAttributes_001_40f0
+	map Map_007_4579, MapAttributes_001_40f0
 	warp  0, 0, $8048, ObjectEvents_00f_401a, MapEvents_007_4ba5
+	end_map
 
-MapHeader_007_458b::
-	; map XXXXX
-	dbaw2 MapAttributes_001_4104
+	map Map_007_458b, MapAttributes_001_4104
 	warp  0, 0, $8048, ObjectEvents_00f_4329, MapEvents_007_4bb2
+	end_map
 
-MapHeader_007_459d::
-	; map XXXXX
-	dbaw2 MapAttributes_001_4118
+	map Map_007_459d, MapAttributes_001_4118
 	warp  0, 0, $8058, ObjectEvents_00f_4000, MapEvents_007_4bbf
+	end_map
 
-MapHeader_007_45af::
-	; map XXXXX
-	dbaw2 MapAttributes_001_412c
+	map Map_007_45af, MapAttributes_001_412c
 	warp  0, 0, $8038, ObjectEvents_00f_4039, MapEvents_007_4bcc
+	end_map
 
-MapHeader_007_45c1::
-	; map XXXXX
-	dbaw2 MapAttributes_001_4140
+	map Map_007_45c1, MapAttributes_001_4140
 	warp  0, 0, $8058, ObjectEvents_00f_4348, MapEvents_007_4bd9
+	end_map
 
-MapHeader_007_45d3::
-	; map XXXXX
-	dbaw2 MapAttributes_001_4154
+	map Map_007_45d3, MapAttributes_001_4154
 	warp  0, 0, $8048, ObjectEvents_00f_43d2, MapEvents_007_4be6
 	warp  0, 0, $7058, ObjectEvents_00f_43e9, MapEvents_007_4bf3
 	warp  0, 0, $8048, ObjectEvents_00f_4416, MapEvents_007_4be6
+	end_map
 
-TechShop_Header::
-	; map XXXXX
-	dbaw2 TechShop_MapAttributes
-	warp  0, 0, $8058, TechShop_ObjectEvents, TechShop_MapEvents
+	map TechShop, EastFishmarket_32_MapAttributes
+	warp 0, 0, $8058
+	end_map
 
-TechHealingCenter_Header::
-	; map XXXXX
-	dbaw2 TechHealingCenter_MapAttributes
-	warp  0, 0, $8058, TechHealingCenter_ObjectEvents, MapEvents_007_4c13
+	map TechHealingCenter, EastFishmarket_31_MapAttributes
+	warp 0, 0, $8058, TechHealingCenter_ObjectEvents, MapEvents_007_4c13
+	end_map
 
-CrystalVillage_Header::
-	; map XXXXX
-	dbaw2 CrystalVillage_MapAttributes
-	warp  4, 5, $9048, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  3, 0, $2058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  5, 0, $5058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  7, 0, $6068, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  0, 5, $8058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  7, 5, $6068, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  4, 3, $7058, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
-	warp  0, 0, $6038, CrystalVillage_ObjectEvents, CrystalVillage_MapEvents
+	map CrystalVillage
+	warp 4, 5, $9048
+	warp 3, 0, $2058
+	warp 5, 0, $5058
+	warp 7, 0, $6068
+	warp 0, 5, $8058
+	warp 7, 5, $6068
+	warp 4, 3, $7058
+	warp 0, 0, $6038
+	end_map
 
-MapHeader_007_4687::
-	; map XXXXX
-	dbaw2 MapAttributes_001_41a4
+	map Map_007_4687, MapAttributes_001_41a4
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4c63
+	end_map
 
-MapHeader_007_4699::
-	; map XXXXX
-	dbaw2 MapAttributes_001_41b8
+	map Map_007_4699, MapAttributes_001_41b8
 	warp  0, 0, $8048, ObjectEvents_00e_49c5, MapEvents_007_4c70
+	end_map
 
-MapHeader_007_46ab::
-	; map XXXXX
-	dbaw2 MapAttributes_001_41cc
+	map Map_007_46ab, MapAttributes_001_41cc
 	warp  0, 0, $8068, ObjectEvents_00e_49df, MapEvents_007_4c7d
+	end_map
 
-MapHeader_007_46bd::
-	; map XXXXX
-	dbaw2 MapAttributes_001_41e0
+	map Map_007_46bd, MapAttributes_001_41e0
 	warp  0, 0, $8058, ObjectEvents_00e_49ef, MapEvents_007_4c8a
+	end_map
 
-MapHeader_007_46cf::
-	; map XXXXX
-	dbaw2 MapAttributes_001_41f4
+	map Map_007_46cf, MapAttributes_001_41f4
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4c97
 	warp  1, 0, $4088, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4c97
+	end_map
 
-CrystalHealingCenter_Header::
-	; map XXXXX
-	dbaw2 CrystalHealingCenter_MapAttributes
-	warp  0, 0, $8068, ObjectEvents_00e_4664, MapEvents_007_4caa
+	map CrystalHealingCenter
+	warp 0, 0, $8068, ObjectEvents_00e_4664, MapEvents_007_4caa
+	end_map
 
-Junkyard_Header::
-	; map XXXXX
-	dbaw2 Junkyard_MapAttributes
-	warp  0, 0, $8068, ObjectEvents_00e_4537, MapEvents_007_4cbd
+	map Junkyard
+	warp 0, 0, $8068, ObjectEvents_00e_4537, MapEvents_007_4cbd
+	end_map
 
-PowerPlantOutside_Header::
-	; map XXXXX
-	dbaw2 PowerPlantOutside_MapAttributes
-	warp  7, 0, $2068, PowerPlantOutside_ObjectEvents, PowerPlantOutside_MapEvents
-	warp  0, 0, $7058, PowerPlantOutside_ObjectEvents, PowerPlantOutside_MapEvents
-	warp  0, 0, $8088, PowerPlantOutside_ObjectEvents2, PowerPlantOutside_MapEvents
-	warp  0, 0, $8088, PowerPlantOutside_ObjectEvents, PowerPlantOutside_MapEvents
+	map PowerPlantOutside
+	warp 7, 0, $2068
+	warp 0, 0, $7058
+	warp 0, 0, $8088, PowerPlantOutside_ObjectEvents2
+	warp 0, 0, $8088
+	end_map
 
-PowerPlant1F_Header::
-	; map XXXXX
-	dbaw2 PowerPlant1F_MapAttributes
-	warp  1, 0, $9038, PowerPlant1F_ObjectEvents, PowerPlant1F_MapEvents
-	warp  0, 0, $9028, PowerPlant1F_ObjectEvents, PowerPlant1F_MapEvents
+	map PowerPlant1F
+	warp 1, 0, $9038
+	warp 0, 0, $9028
+	end_map
 
-PowerPlant2F_Header::
-	; map XXXXX
-	dbaw2 PowerPlant2F_MapAttributes
-	warp  0, 0, $9028, PowerPlant2F_ObjectEvents, PowerPlant2F_MapEvents
-	warp  1, 0, $2078, PowerPlant2F_ObjectEvents, PowerPlant2F_MapEvents
+	map PowerPlant2F
+	warp 0, 0, $9028
+	warp 1, 0, $2078
+	end_map
 
-PowerPlant3F_Header::
-	; map XXXXX
-	dbaw2 PowerPlant3F_MapAttributes
-	warp  1, 0, $2078, PowerPlant3F_ObjectEvents, PowerPlant3F_MapEvents
-	warp  0, 0, $9028, PowerPlant3F_ObjectEvents, PowerPlant3F_MapEvents
+	map PowerPlant3F
+	warp 1, 0, $2078
+	warp 0, 0, $9028
+	end_map
 
-PowerPlant4F_Header::
-	; map XXXXX
-	dbaw2 PowerPlant4F_MapAttributes
-	warp  0, 0, $9028, PowerPlant4F_ObjectEvents, PowerPlant4F_MapEvents
+	map PowerPlant4F
+	warp 0, 0, $9028
+	end_map
 
-Hideout_Header::
-	; map XXXXX
-	dbaw2 Hideout_MapAttributes
-	warp  13, 7, $9088, ObjectEvents_00e_4a1a, Hideout_MapEvents
+	map Hideout
+	warp 13, 7, $9088, ObjectEvents_00e_4a1a
+	end_map
 
-CrystalMinesP1_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_4000
-	warp  0, 3, $9038, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
-	warp  0, 0, $5048, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
-	warp  5, 0, $3088, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
-	warp  5, 3, $7088, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP1_MapEvents
+	map CrystalMinesP1, MapAttributes_017_4000
+	warp 0, 3, $9038, BellSchoolNorthClassroom_ObjectEvents
+	warp 0, 0, $5048, BellSchoolNorthClassroom_ObjectEvents
+	warp 5, 0, $3088, BellSchoolNorthClassroom_ObjectEvents
+	warp 5, 3, $7088, BellSchoolNorthClassroom_ObjectEvents
+	end_map
 
-CrystalMinesP2_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_4014
-	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP2_MapEvents
+	map CrystalMinesP2, MapAttributes_017_4014
+	warp 0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents
+	end_map
 
-CrystalMinesP3_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_4028
-	warp  5, 3, $5038, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
-	warp  0, 0, $3018, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
-	warp  0, 3, $7018, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
-	warp  4, 0, $2038, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
-	warp  5, 0, $2078, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP3_MapEvents
+	map CrystalMinesP3, MapAttributes_017_4028
+	warp 5, 3, $5038, BellSchoolNorthClassroom_ObjectEvents
+	warp 0, 0, $3018, BellSchoolNorthClassroom_ObjectEvents
+	warp 0, 3, $7018, BellSchoolNorthClassroom_ObjectEvents
+	warp 4, 0, $2038, BellSchoolNorthClassroom_ObjectEvents
+	warp 5, 0, $2078, BellSchoolNorthClassroom_ObjectEvents
+	end_map
 
-CrystalMinesP4_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_403c
-	warp  0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP4_MapEvents
+	map CrystalMinesP4, MapAttributes_017_403c
+	warp 0, 0, $9058, BellSchoolNorthClassroom_ObjectEvents
+	end_map
 
-CrystalMinesP5_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_4050
-	warp  5, 5, $9058, BellSchoolNorthClassroom_ObjectEvents, CrystalMinesP5_MapEvents
-	warp  7, 5, $9078, ObjectEvents_00e_4a75, CrystalMinesP5_MapEvents
+	map CrystalMinesP5, MapAttributes_017_4050
+	warp 5, 5, $9058, BellSchoolNorthClassroom_ObjectEvents
+	warp 7, 5, $9078, ObjectEvents_00e_4a75
+	end_map
 
-R01_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_474b
-	warp  3, 0, $2078, ObjectEvents_00e_422d, R01_MapEvents
-	warp  0, 0, $2028, ObjectEvents_00e_422d, R01_MapEvents
+	map R01, MapAttributes_017_474b
+	warp 3, 0, $2078, ObjectEvents_00e_422d
+	warp 0, 0, $2028, ObjectEvents_00e_422d
+	end_map
 
-R02_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_475f
-	warp  5, 3, $9068, ObjectEvents_00f_4000, R02_MapEvents
-	warp  0, 3, $9058, ObjectEvents_00f_4000, R02_MapEvents
-	warp  5, 0, $2068, ObjectEvents_00f_4000, R02_MapEvents
-	warp  0, 0, $4028, ObjectEvents_00f_4000, R02_MapEvents
+	map R02, MapAttributes_017_475f
+	warp 5, 3, $9068, ObjectEvents_00f_4000
+	warp 0, 3, $9058, ObjectEvents_00f_4000
+	warp 5, 0, $2068, ObjectEvents_00f_4000
+	warp 0, 0, $4028, ObjectEvents_00f_4000
+	end_map
 
-BellObservatoryDestroyed_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_017_4a09
-	warp  0, 1, $8018, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4e21
+	map BellObservatoryDestroyed, MapAttributes_017_4a09
+	warp 0, 1, $8018, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4e21
+	end_map
 
-BlueMoon2_Header::
-	; map XXXXX
-	dbaw2 BlueMoon_MapAttributes
-	warp  0, 5, $20b0, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4e2e
+	map BlueMoon2, BlueMoon_MapAttributes
+	warp 0, 5, $20b0, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4e2e
+	end_map
 
-TechCityBlackout_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_018_4000
-	warp  6, 7, $9068, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  0, 0, $2058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  13, 0, $2058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  0, 2, $7028, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  0, 6, $7028, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  1, 6, $7058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  10, 7, $7038, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  13, 6, $7048, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  13, 1, $7068, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  8, 0, $7048, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  4, 0, $7058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  6, 3, $8078, ObjectEvents_00e_44ff, MapEvents_007_4e90
-	warp  6, 3, $8078, ObjectEvents_00e_43d5, MapEvents_007_4e2f
-	warp  13, 1, $7068, ObjectEvents_00e_4366, MapEvents_007_4e2f
-	warp  13, 1, $7068, ObjectEvents_00e_426b, MapEvents_007_4e2f
+	map TechCityBlackout, MapAttributes_018_4000
+	warp 6, 7, $9068, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 0, 0, $2058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 13, 0, $2058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 0, 2, $7028, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 0, 6, $7028, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 1, 6, $7058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 10, 7, $7038, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 13, 6, $7048, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 13, 1, $7068, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 8, 0, $7048, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 4, 0, $7058, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 6, 3, $8078, ObjectEvents_00e_44ff, MapEvents_007_4e90
+	warp 6, 3, $8078, ObjectEvents_00e_43d5, MapEvents_007_4e2f
+	warp 13, 1, $7068, ObjectEvents_00e_4366, MapEvents_007_4e2f
+	warp 13, 1, $7068, ObjectEvents_00e_426b, MapEvents_007_4e2f
+	end_map
 
-MapHeader_007_49b1::
-	; map XXXXX
-	dbaw2 MapAttributes_018_4014
+	map Map_007_49b1, MapAttributes_018_4014
 	warp  0, 0, $8048, ObjectEvents_00e_4578, MapEvents_007_4e91
+	end_map
 
-MapHeader_007_49c3::
-	; map XXXXX
-	dbaw2 MapAttributes_018_4028
+	map Map_007_49c3, MapAttributes_018_4028
 	warp  0, 0, $8048, ObjectEvents_00e_4597, MapEvents_007_4e9e
+	end_map
 
-MapHeader_007_49d5::
-	; map XXXXX
-	dbaw2 MapAttributes_018_403c
+	map Map_007_49d5, MapAttributes_018_403c
 	warp  0, 0, $8058, BellSchoolNorthClassroom_ObjectEvents, MapEvents_007_4eab
+	end_map
 
-MapHeader_007_49e7::
-	; map XXXXX
-	dbaw2 MapAttributes_018_4050
+	map Map_007_49e7, MapAttributes_018_4050
 	warp  0, 0, $8038, ObjectEvents_00e_45c0, MapEvents_007_4eb8
+	end_map
 
-MapHeader_007_49f9::
-	; map XXXXX
-	dbaw2 MapAttributes_018_4064
+	map Map_007_49f9, MapAttributes_018_4064
 	warp  0, 0, $8058, ObjectEvents_00e_4632, MapEvents_007_4ec5
+	end_map
 
-MapHeader_007_4a0b::
-	; map XXXXX
-	dbaw2 MapAttributes_018_4078
+	map Map_007_4a0b, MapAttributes_018_4078
 	warp  0, 0, $8048, ObjectEvents_00e_481c, MapEvents_007_4ed2
 	warp  0, 0, $8048, ObjectEvents_00e_469f, MapEvents_007_4ed2
+	end_map
 
-TechShopBlackout_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_018_408c
-	warp  0, 0, $8058, ObjectEvents_00e_4642, MapEvents_007_4edf
+	map TechShopBlackout, MapAttributes_018_408c
+	warp 0, 0, $8058, ObjectEvents_00e_4642, MapEvents_007_4edf
+	end_map
 
-TechHealingCenterBlackout_Header::
-	; map XXXXX
-	dbaw2 MapAttributes_018_40a0
-	warp  0, 0, $8058, ObjectEvents_00e_4664, MapEvents_007_4eec
+	map TechHealingCenterBlackout, MapAttributes_018_40a0
+	warp 0, 0, $8058, ObjectEvents_00e_4664, MapEvents_007_4eec
+	end_map
 
 BellVillage2_MapEvents::
 	script_event ABSOLUTE, 19, $00, Script_00e_409f
