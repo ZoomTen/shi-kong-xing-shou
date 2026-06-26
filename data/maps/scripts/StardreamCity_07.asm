@@ -46,7 +46,7 @@ Script_066_42aa::
 	checkbit wEventFlags + 15, $05, Script_066_42c1
 	textface text_66_6de6
 	stext text_66_6e8b
-	scr_48 $02, $1f
+	giveitem ITEMNAMECAT_KEY, KEYITEM_1f
 	stext text_66_6e9a
 	setbit wEventFlags + 15, $05
 	end
@@ -74,7 +74,7 @@ Script_066_42d6::
 Script_066_42e1::
 	face FACE_UP
 	stext text_66_6f2c
-	scr_48 $02, $21
+	giveitem ITEMNAMECAT_KEY, KEYITEM_21
 	setbit wEventFlags + 16, $01
 	end
 
@@ -94,8 +94,8 @@ Script_066_4302::
 	emote  0, EMOTE_TEAR
 	delay $03, $20
 	stext text_66_7213
-	scr_48 $02, $24
-	listdec $02, $23
+	giveitem ITEMNAMECAT_KEY, KEYITEM_24
+	takeitem ITEMNAMECAT_KEY, KEYITEM_23
 	setbit wEventFlags + 16, $03
 	end
 

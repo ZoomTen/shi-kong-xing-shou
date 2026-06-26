@@ -10,7 +10,7 @@ Script_06c_4722::
 	clearobject $02
 	setbit wEventFlags + 18, $07
 	stext text_6c_5f78
-	scr_48 $02, $26
+	giveitem ITEMNAMECAT_KEY, KEYITEM_26
 
 Script_06c_473a::
 	end

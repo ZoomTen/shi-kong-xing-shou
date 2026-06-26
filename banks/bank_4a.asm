@@ -134,8 +134,8 @@ LearnLevelUpMove::
 	dec e
 	jr nz, .asm_40d1
 	ld a, $33
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call ClearBGMap0
 	call Func_04a_412a
 	ld a, $01
@@ -154,8 +154,8 @@ LearnLevelUpMove::
 .asm_4108
 	push hl
 	ld a, $33
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	pop hl
 	ld a, [wd9e3]
 	ld [hli], a

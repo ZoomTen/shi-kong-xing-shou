@@ -36,7 +36,7 @@ Script_066_43f5::
 	delay $03, $20
 	stext text_66_6a18
 	stext text_66_6a9c
-	scr_48 $02, $1d
+	giveitem ITEMNAMECAT_KEY, KEYITEM_1d
 	setbit wEventFlags + 17, $05
 	end
 

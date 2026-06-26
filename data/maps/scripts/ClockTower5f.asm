@@ -69,7 +69,7 @@ Script_012_4781::
 	stext text_12_7bbb
 	stext text_12_7be4
 	stext text_12_7c4b
-	scr_48 $02, $0a
+	giveitem ITEMNAMECAT_KEY, KEYITEM_0a
 	stext text_12_7c5a
 	stext text_12_7ca6
 	stext text_12_7cb9

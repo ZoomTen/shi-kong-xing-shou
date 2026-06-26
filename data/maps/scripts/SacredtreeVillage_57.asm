@@ -17,7 +17,7 @@ Script_05a_4314::
 	checkbit wEventFlags + 3, $03, unk_05a_4000
 	stext text_5a_62e8
 	stext text_5a_6311
-	scr_48 $02, $16
+	giveitem ITEMNAMECAT_KEY, KEYITEM_16
 	setbit wEventFlags + 13, $04
 	end
 

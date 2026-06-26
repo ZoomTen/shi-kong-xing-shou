@@ -91,7 +91,23 @@
 	const TM48 ; $57
 	const TM49 ; $58
 	const TM50 ; $59
-DEF NUM_ITEMS EQU const_value - 1
+DEF NUM_ITEMS EQU const_value - 1 ; last real id ($00-$59 = items + TMs)
+; ItemNames has 103 physical entries. $5a-$66 are unused placeholder slots
+; (all point to the same string, text_1e_5218). Named for index-completeness
+; only; nothing references them.
+	const ITEM_5a ; $5a
+	const ITEM_5b ; $5b
+	const ITEM_5c ; $5c
+	const ITEM_5d ; $5d
+	const ITEM_5e ; $5e
+	const ITEM_5f ; $5f
+	const ITEM_60 ; $60
+	const ITEM_61 ; $61
+	const ITEM_62 ; $62
+	const ITEM_63 ; $63
+	const ITEM_64 ; $64
+	const ITEM_65 ; $65
+	const ITEM_66 ; $66
 
 ; Equipment IDs (EquipmentNames)
 	const_def
@@ -117,9 +133,27 @@ DEF NUM_ITEMS EQU const_value - 1
 	const EQUIP_13 ; $13
 	const EQUIP_14 ; $14
 	const EQUIP_15 ; $15
-DEF NUM_EQUIPMENT EQU const_value - 1
+DEF NUM_EQUIPMENT EQU const_value - 1 ; last real id ($00-$15 = 22 equipment)
+; EquipmentNames has 36 physical entries. $16-$23 are unused placeholder slots
+; (all point to the same string, text_1e_5302). Named for index-completeness
+; only; nothing references them. Note the display filter (Func_01e_4719) further
+; restricts the equipment list to ids < $16, so $16+ can never appear in the bag.
+	const EQUIP_16 ; $16
+	const EQUIP_17 ; $17
+	const EQUIP_18 ; $18
+	const EQUIP_19 ; $19
+	const EQUIP_1a ; $1a
+	const EQUIP_1b ; $1b
+	const EQUIP_1c ; $1c
+	const EQUIP_1d ; $1d
+	const EQUIP_1e ; $1e
+	const EQUIP_1f ; $1f
+	const EQUIP_20 ; $20
+	const EQUIP_21 ; $21
+	const EQUIP_22 ; $22
+	const EQUIP_23 ; $23
 
-; Key item IDs (KeyItemNames)
+; Key item IDs (KeyItemNames) - all 41 entries are real (no placeholder padding)
 	const_def
 	const KEYITEM_00 ; $00
 	const KEYITEM_01 ; $01

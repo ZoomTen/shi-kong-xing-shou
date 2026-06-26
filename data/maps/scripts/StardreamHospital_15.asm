@@ -113,7 +113,7 @@ Script_066_49ca::
 	spriteface  3, FACE_DOWN
 	stext text_66_751c
 	stext text_66_7580
-	scr_48 $02, $25
+	giveitem ITEMNAMECAT_KEY, KEYITEM_25
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $1d, $02
 	playsound SFX_2c

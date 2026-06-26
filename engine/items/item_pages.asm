@@ -1,6 +1,6 @@
 DrawItemPageWithIcons::
 	ld de, Pointers_01e_4849
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -10,7 +10,7 @@ DrawItemPageWithIcons::
 	ld l, a
 	push hl
 	ld de, ItemNameCategories
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -69,7 +69,7 @@ DrawItemPageWithIcons::
 
 DrawItemListPage::
 	ld de, Pointers_01e_4849
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -79,7 +79,7 @@ DrawItemListPage::
 	ld l, a
 	push hl
 	ld de, ItemNameCategories
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -146,7 +146,7 @@ DrawItemListPage::
 Func_01e_4719::
 	push bc
 	ld c, a
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	and a
 	jr z, .map0
 	cp 1
@@ -200,7 +200,7 @@ Func_01e_4745::
 
 Func_01e_475c::
 	ld de, PointerTable_01e_59cc
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -237,7 +237,7 @@ Func_01e_475c::
 	ld h, 0
 	add hl, bc
 	ld a, [hl]
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -256,7 +256,7 @@ Func_01e_475c::
 
 Func_01e_47af::
 	ld de, PointerTable_01e_59cc
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -305,7 +305,7 @@ Func_01e_47af::
 
 Func_01e_47fb::
 	ld de, PointerTable_01e_59cc
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -357,9 +357,9 @@ Func_01e_4837::
 	ret
 
 Pointers_01e_4849::
-	dw wd300
-	dw wddb0
-	dw wd284
+	dw wItemBag
+	dw wEquipmentBag
+	dw wKeyItemBag
 
 Func_01e_484f::
 	ld a, [wd1fe]

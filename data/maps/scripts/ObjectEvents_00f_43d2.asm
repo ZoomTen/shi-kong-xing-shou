@@ -112,9 +112,9 @@ Script_00f_4507::
 	spritewalk $02, $01
 	stext text_0f_531f
 	stext text_0f_538f
-	scr_48 $02, $06
+	giveitem ITEMNAMECAT_KEY, KEYITEM_06
 	stext text_0f_539e
-	scr_48 $02, $07
+	giveitem ITEMNAMECAT_KEY, KEYITEM_07
 	stext text_0f_53ad
 	spriteface $03, $00
 	spriteface $04, $00

@@ -47,7 +47,7 @@ Script_012_4a05::
 	setmap MAP_COFFEE_FOREST_PART_3, $01
 	stext text_12_64fb
 	stext text_12_653d
-	scr_48 $02, $08
+	giveitem ITEMNAMECAT_KEY, KEYITEM_08
 	setbit wEventFlags + 3, $05
 	end
 
@@ -163,7 +163,7 @@ Script_012_4b94::
 	emote $00, $02
 	delay $03, $20
 	stext text_12_7033
-	scr_48 $02, $09
+	giveitem ITEMNAMECAT_KEY, KEYITEM_09
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $0e, $07
 	spriteface  3, FACE_LEFT

@@ -27,8 +27,8 @@ WriteSaveData:
 	ld a, c
 	cp $11
 	jr c, .asm_498d
-	ld de, sa430
-	ld hl, wddb0
+	ld de, sEquipmentBag
+	ld hl, wEquipmentBag
 	ld bc, $0050
 	call CopyBytes3
 	ld de, sa500

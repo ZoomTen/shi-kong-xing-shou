@@ -31,7 +31,7 @@ Script_00e_4012::
 	emote $00, $00
 	delay $03, $20
 	stext text_0e_4c6a
-	scr_48 2, 1
+	giveitem ITEMNAMECAT_KEY, KEYITEM_01
 	setbit wEventFlags, 4
 	end
 
@@ -162,6 +162,6 @@ Script_00e_412f::
 Script_00e_4130::
 	checkbit wEventFlags + 2, $02, Script_00e_412f
 	stext text_0e_71b4
-	scr_48 $02, $04
+	giveitem ITEMNAMECAT_KEY, KEYITEM_04
 	setbit wEventFlags + 2, $02
 	end

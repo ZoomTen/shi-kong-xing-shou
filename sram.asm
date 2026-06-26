@@ -14,7 +14,7 @@ sPlayerScreenX:: ds 2
 	ds $4
 sTilemap:: ds $190
 sPartyMons:: ds $200
-sa430:: ds $50 ; -> wddb0
+sEquipmentBag:: ds $50 ; -> wEquipmentBag
 
 	ds $26
 sa4a6:: ds $10 ; -> wdb20 + $17C

@@ -404,25 +404,25 @@ Func_02b_6ae6::
 
 BattleIntro_Jump_5::
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	ld a, 1
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
 	add $55
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
 	add 2
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	ld a, 9
 	ldh [hVRAMCopyWidth], a
 	ld a, 4
@@ -646,25 +646,18 @@ OAMList_758e::
 	db -1
 
 
-BattleAnimTable_02b_7594::
-	db $00, $0f, $23, $23, $14, $00, $00, $00, $00, $0f, $37, $00, $00, $00, $00, $28
-	db $0f, $00, $00, $00, $5a, $14, $2a, $00, $00, $1e, $0f, $00, $14, $00, $19, $14
-	db $2d, $28, $00, $00, $00, $00, $00, $00, $00, $00, $37, $14, $14, $23, $44, $00
-	db $00, $19, $1e, $23, $32, $41, $00, $32, $28, $2e, $40, $32, $32, $32, $00, $00
-	db $14, $19, $1e, $37, $4b, $78, $55, $14, $19, $32, $2d, $46, $14, $28, $3c, $50
-	db $0f, $14, $1e, $23, $3a, $50, $00, $14, $0f, $28, $3c, $50, $00, $14, $19, $12
-	db $28, $3c, $50, $00, $00, $00, $00, $0f, $14, $28, $39, $4b, $00, $00, $00, $00
-	db $00, $00, $14, $26, $3e, $0f, $50, $00, $1e, $46, $00, $50, $00, $00, $14, $00
-	db $00, $00, $00, $50, $00
+INCLUDE "data/moves/power.asm"
 
-; ramp ascending to $c8
-; TODO: unk_ - data, referenced via `ld de, unk_02b_7619 + $a`
-unk_02b_7619::
+; Damage multiplier (percent) when the attacker's stat stage EXCEEDS the defender's,
+; indexed (base +$a) by the clamped stage difference 0-20: $64 (x1.0) rising to $c8 (x2.0).
+; See GetStatStageDamageMultiplier. First 10 bytes are below the +$a base (unused).
+DamageStageMultiplier_Up::
 	db $00, $00, $00, $00, $00, $00, $00, $00, $05, $05, $64, $6e, $6e, $78, $78, $82
 	db $82, $8c, $8c, $96, $96, $a0, $a0, $aa, $aa, $b4, $b4, $be, $be, $c8, $c8
 
-; ramp descending to $00
-; TODO: unk_ - data, referenced via `ld de, unk_02b_7638`
-unk_02b_7638::
+; Damage multiplier (percent) when the attacker's stat stage is BELOW the defender's,
+; indexed by the clamped stage difference 0-20: $64 (x1.0) falling to $32 (x0.5).
+; See GetStatStageDamageMultiplier. Trailing zeros are past the clamp (unused).
+DamageStageMultiplier_Down::
 	db $64, $5f, $5f, $5a, $5a, $55, $55, $50, $50, $4b, $4b, $46, $46, $41, $41, $3c
 	db $3c, $37, $37, $32, $32, $00, $00, $00

@@ -296,11 +296,11 @@ BattleMenu_HandleInput::
 	and a
 	jr nz, .attack
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	ld a, 5
 	ld [wd9af], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	call GetStatTile
 	and a
 	jr z, .attack
@@ -354,7 +354,7 @@ BattleMenu_HandleInput::
 	xor a
 	ld [wSelectedOption], a
 	ld [wSelectedPage], a
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld hl, wBattleScriptPos
 	ld [hl], $4c
 	inc hl
@@ -374,7 +374,7 @@ BattleMenu_HandleInput::
 	xor a
 	ld [wSelectedOption], a
 	ld [wSelectedPage], a
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ret
 
 .selected_3:

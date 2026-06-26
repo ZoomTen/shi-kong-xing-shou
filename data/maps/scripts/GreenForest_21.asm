@@ -68,7 +68,7 @@ Script_04f_45c6::
 	delay $03, $20
 	stext text_4f_6a43
 	stext text_4f_6aa8
-	scr_48 $02, $0b
+	giveitem ITEMNAMECAT_KEY, KEYITEM_0b
 	emote  5, EMOTE_EXCLAMATION
 	delay $03, $20
 	spriteface  5, FACE_RIGHT

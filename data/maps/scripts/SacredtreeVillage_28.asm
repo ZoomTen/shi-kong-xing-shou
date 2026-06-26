@@ -91,7 +91,7 @@ Script_05a_448c::
 
 Script_05a_4498::
 	stext text_5a_604f
-	scr_48 $02, $15
+	giveitem ITEMNAMECAT_KEY, KEYITEM_15
 	checkbit wEventFlags + 13, $01, Script_05a_44a5
 	end
 

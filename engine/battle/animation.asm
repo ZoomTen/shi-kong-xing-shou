@@ -7,7 +7,7 @@ Func_02e_4000::
 	jr Func_02e_400a.asm_403c
 
 Func_02e_400a::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_401e
 	ld a, [wd9ea]
@@ -17,7 +17,7 @@ Func_02e_400a::
 	jr .asm_403c
 .asm_401e
 	ld de, wd9e2
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -150,7 +150,7 @@ Func_02e_4122::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ret
 
@@ -177,7 +177,7 @@ Func_02e_4136::
 	jr nz, .asm_417d
 	ld l, e
 	ld h, d
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_416d
 	pop de
@@ -221,7 +221,7 @@ Func_02e_4191::
 	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
 	ld a, SFX_0c
@@ -229,12 +229,12 @@ Func_02e_4191::
 	ret
 
 Func_02e_41af::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_41c3
 	call Func_02e_4203
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $04
 	ld [wBattleState], a
 	ret
@@ -254,7 +254,7 @@ Func_02e_41af::
 	ret nz
 	ld a, [wd98c]
 	ld b, a
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp b
 	jr nc, .asm_41fb
 	inc hl
@@ -270,14 +270,14 @@ Func_02e_41af::
 .asm_41f2
 	ld [hl], d
 .asm_41f3
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_41fb
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 Func_02e_4203::
 	call Func_02e_411e
@@ -298,7 +298,7 @@ Func_02e_4203::
 	ret
 
 Func_02e_4231::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_426a
 	call Func_02e_411e
@@ -314,7 +314,7 @@ Func_02e_4231::
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ld a, $05
@@ -345,16 +345,16 @@ Func_02e_4231::
 	jr nz, .asm_42a2
 	ld a, [wd98c]
 	ld b, a
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp b
 	jp nc, .asm_4375
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
 .asm_42a2
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_42f7
 	ld a, [wBattleAnimID]
@@ -414,7 +414,7 @@ Func_02e_4231::
 	ld a, [wd98e]
 	inc a
 	ld [wd98e], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4311
 	ld a, [wd9ea]
@@ -478,7 +478,7 @@ Func_02e_4231::
 .asm_4375
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98e], a
 	ret
 .asm_4380
@@ -518,7 +518,7 @@ Func_02e_4231::
 	ret
 
 Func_02e_43a9::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_43d1
 	ld a, SFX_2f
@@ -530,7 +530,7 @@ Func_02e_43a9::
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $06
 	ld [wBattleState], a
 	ret
@@ -538,7 +538,7 @@ Func_02e_43a9::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_43ea
 	ld a, [wd990]
@@ -560,7 +560,7 @@ Func_02e_43a9::
 	ld a, $06
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	bit 0, a
 	jr z, .asm_440d
 	ld e, $00
@@ -571,22 +571,22 @@ Func_02e_43a9::
 .asm_4410
 	ld a, [wd98c]
 	ld b, a
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp b
 	jr nc, .asm_441f
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_441f
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98e], a
 	ld [wd98c], a
 	ret
 
 Func_02e_442d::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_4468
 	call Func_02e_411e
@@ -604,7 +604,7 @@ Func_02e_442d::
 	call PlaySound
 	farcall Func_030_45c9
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $07
 	ld [wBattleState], a
 	xor a
@@ -639,7 +639,7 @@ Func_02e_4489::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_44de
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_449d
 	ld a, [wd990]
@@ -727,7 +727,7 @@ Func_02e_4489::
 	ret nz
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ret
 
@@ -735,7 +735,7 @@ Func_02e_4523::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_4561
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4537
 	ld a, [wd990]
@@ -799,7 +799,7 @@ Func_02e_4523::
 	ret nz
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
@@ -825,7 +825,7 @@ Func_02e_45a0::
 	ld [hl], $00
 	ret
 .asm_45bc
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_45e7
 	ld a, [wd990]
@@ -880,7 +880,7 @@ Func_02e_45a0::
 	ld [hl], $00
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wBattleState], a
 	ret
@@ -889,7 +889,7 @@ Func_02e_4621::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_466d
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4635
 	ld a, [wd990]
@@ -967,7 +967,7 @@ Func_02e_4621::
 .asm_469e
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
@@ -980,7 +980,7 @@ Func_02e_46b0::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_4702
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_46c4
 	ld a, [wd990]
@@ -1081,7 +1081,7 @@ Func_02e_46b0::
 .asm_4751
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
@@ -1097,7 +1097,7 @@ Mode_DeltaTbl_4763::
 	db $00, $d0
 	db $ff, $ff
 Func_02e_476d::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_47e7
 	ld a, SFX_3d
@@ -1110,7 +1110,7 @@ Func_02e_476d::
 	ld [wd990], a
 	ld a, $08
 	ld [wBattleState], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_47be
 	ld hl, $982A
@@ -1129,7 +1129,7 @@ Func_02e_476d::
 	inc hl
 	ld [hl], $10
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
@@ -1150,12 +1150,12 @@ Func_02e_476d::
 	inc hl
 	ld [hl], $10
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
 .asm_47e7
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4810
 	ld a, [wd98f]
@@ -1200,7 +1200,7 @@ Func_02e_476d::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	di
 	ld a, $8F
 	ldh [rLYC], a
@@ -1209,7 +1209,7 @@ Func_02e_476d::
 	ld [hl], $6F
 	inc hl
 	ld [hl], $10
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4868
 	ld de, Mode_Tilemap_4883
@@ -1236,12 +1236,12 @@ Func_02e_476d::
 Mode_Tilemap_4883:: INCBIN "gfx/tilemaps/mode_tilemap_4883.tilemap"
 Mode_Tilemap_48a1:: INCBIN "gfx/tilemaps/mode_tilemap_48a1.tilemap"
 Func_02e_48c9::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_48dd
 	call Func_02e_4203
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $09
 	ld [wBattleState], a
 	ret
@@ -1282,14 +1282,14 @@ Func_02e_48c9::
 .asm_4914
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
 	ret
 
 Func_02e_4922::
 	call Func_02e_411e
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_493b
 	ld a, [wBattleState]
@@ -1340,7 +1340,7 @@ Func_02e_4956::
 	ret
 
 Func_02e_4984::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_49f1
 	cp $02
@@ -1365,7 +1365,7 @@ Func_02e_4984::
 	jp z, .asm_4aa9
 	cp $6F
 	jp z, .asm_4a57
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_49db
 	ld hl, wd1a0
@@ -1375,7 +1375,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $01
 	ld a, $08
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_49eb
 .asm_49db
 	ld hl, wd1a0
@@ -1385,7 +1385,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $01
 	ld a, $09
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_49eb
 	ld a, $0C
 	ld [wBattleState], a
@@ -1399,7 +1399,7 @@ Func_02e_4984::
 	cp $C0
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a02
 	ld hl, wd1a0
@@ -1409,7 +1409,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $05
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a13
 	ld hl, wd1a0
@@ -1420,7 +1420,7 @@ Func_02e_4984::
 	cp $30
 	ret nz
 	ld a, $0B
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a24
 	ld hl, wd1a0
@@ -1431,7 +1431,7 @@ Func_02e_4984::
 	cp $B0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a35
 	ld hl, wd1a0
@@ -1441,7 +1441,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $05
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a46
 	ld hl, wd1a0
@@ -1452,7 +1452,7 @@ Func_02e_4984::
 	cp $48
 	ret nz
 	ld a, $0A
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a57
 	ld hl, wd1a0
@@ -1462,7 +1462,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $05
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a68
 	ldh a, [hFadeFrameCounter]
@@ -1477,7 +1477,7 @@ Func_02e_4984::
 	cp $05
 	ret c
 	ld a, $6F
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a80
 	ldh a, [hFadeFrameCounter]
@@ -1492,7 +1492,7 @@ Func_02e_4984::
 	cp $05
 	ret c
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4a98
 	ld hl, wd1a0
@@ -1502,7 +1502,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $06
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4aa9
 	ld hl, wd1a0
@@ -1512,7 +1512,7 @@ Func_02e_4984::
 	inc hl
 	ld [hl], $06
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4aba
 	ldh a, [hFadeFrameCounter]
@@ -1532,7 +1532,7 @@ Func_02e_4984::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 Func_02e_4adf::
 	ld e, $08
@@ -1553,7 +1553,7 @@ Func_02e_4ae7::
 	ret
 
 Func_02e_4af2::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_4b46
 	cp $02
@@ -1568,7 +1568,7 @@ Func_02e_4af2::
 	jp z, .asm_4bbd
 	cp $06
 	jp z, .asm_4bce
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4b30
 	ld hl, wd1a0
@@ -1578,7 +1578,7 @@ Func_02e_4af2::
 	inc hl
 	ld [hl], $01
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_4b40
 .asm_4b30
 	ld hl, wd1a0
@@ -1588,7 +1588,7 @@ Func_02e_4af2::
 	inc hl
 	ld [hl], $01
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_4b40
 	ld a, $0D
 	ld [wBattleState], a
@@ -1612,7 +1612,7 @@ Func_02e_4af2::
 	cp $D0
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4b68
 	ld hl, wd1a0
@@ -1622,7 +1622,7 @@ Func_02e_4af2::
 	inc hl
 	ld [hl], $01
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4b79
 	ldh a, [hFadeFrameCounter]
@@ -1643,7 +1643,7 @@ Func_02e_4af2::
 	cp $10
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4b9b
 	ldh a, [hFadeFrameCounter]
@@ -1664,7 +1664,7 @@ Func_02e_4af2::
 	cp $D0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4bbd
 	ld hl, wd1a0
@@ -1674,7 +1674,7 @@ Func_02e_4af2::
 	inc hl
 	ld [hl], $01
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4bce
 	ldh a, [hFadeFrameCounter]
@@ -1695,7 +1695,7 @@ Func_02e_4af2::
 	cp $40
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4bf0
 	ld hl, wd1a0
@@ -1703,7 +1703,7 @@ Func_02e_4af2::
 	inc hl
 	ld [hl], $05
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ret
 
@@ -1753,7 +1753,7 @@ Func_02e_4c3d::
 	ret
 
 Func_02e_4c57::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_4cb5
 	cp $02
@@ -1772,7 +1772,7 @@ Func_02e_4c57::
 	jp z, .asm_4d60
 	cp $09
 	jp z, .asm_4d71
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4c9f
 	ld hl, wd1a0
@@ -1782,7 +1782,7 @@ Func_02e_4c57::
 	inc hl
 	ld [hl], $01
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_4caf
 .asm_4c9f
 	ld hl, wd1a0
@@ -1792,7 +1792,7 @@ Func_02e_4c57::
 	inc hl
 	ld [hl], $01
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_4caf
 	ld a, $10
 	ld [wBattleState], a
@@ -1814,7 +1814,7 @@ Func_02e_4c57::
 	cp $C8
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4cd3
 	ld hl, wd1a0
@@ -1824,7 +1824,7 @@ Func_02e_4c57::
 	inc hl
 	ld [hl], $01
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4ce4
 	ld hl, wd1a0
@@ -1843,7 +1843,7 @@ Func_02e_4c57::
 	cp $40
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4d02
 	ld hl, wd1a0
@@ -1862,7 +1862,7 @@ Func_02e_4c57::
 	cp $B0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4d20
 	ld hl, wd1a0
@@ -1872,7 +1872,7 @@ Func_02e_4c57::
 	inc hl
 	ld [hl], $01
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4d31
 	ld hl, wd1a0
@@ -1891,7 +1891,7 @@ Func_02e_4c57::
 	cp $38
 	ret nz
 	ld a, $08
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4d4f
 	ld hl, wd1a0
@@ -1901,7 +1901,7 @@ Func_02e_4c57::
 	inc hl
 	ld [hl], $03
 	ld a, $09
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4d60
 	ld hl, wd1a0
@@ -1911,7 +1911,7 @@ Func_02e_4c57::
 	inc hl
 	ld [hl], $03
 	ld a, $09
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4d71
 	ldh a, [hFadeFrameCounter]
@@ -1932,7 +1932,7 @@ Func_02e_4c57::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_4d96::
@@ -1949,7 +1949,7 @@ Func_02e_4d96::
 	ret
 
 Func_02e_4db2::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_4dd5
 	call Func_02e_411e
@@ -1959,7 +1959,7 @@ Func_02e_4db2::
 	ld a, [wBattleState]
 	ld [wd98c], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $12
 	ld [wBattleState], a
 	ret
@@ -1976,13 +1976,13 @@ Func_02e_4db2::
 	ret nz
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
 	ret
 
 Func_02e_4df4::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_4e48
 	cp $02
@@ -1997,7 +1997,7 @@ Func_02e_4df4::
 	jp z, .asm_4e9d
 	cp $07
 	jp z, .asm_4eae
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4e32
 	ld hl, wd1a0
@@ -2007,7 +2007,7 @@ Func_02e_4df4::
 	inc hl
 	ld [hl], $05
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_4e42
 .asm_4e32
 	ld hl, wd1a0
@@ -2017,7 +2017,7 @@ Func_02e_4df4::
 	inc hl
 	ld [hl], $05
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_4e42
 	ld a, $13
 	ld [wBattleState], a
@@ -2031,7 +2031,7 @@ Func_02e_4df4::
 	cp $C8
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4e59
 	ld hl, wd1a0
@@ -2041,7 +2041,7 @@ Func_02e_4df4::
 	inc hl
 	ld [hl], $05
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4e6a
 	ld hl, wd1a0
@@ -2052,7 +2052,7 @@ Func_02e_4df4::
 	cp $14
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4e7b
 	ld hl, wd1a0
@@ -2063,7 +2063,7 @@ Func_02e_4df4::
 	cp $B0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4e8c
 	ld hl, wd1a0
@@ -2073,7 +2073,7 @@ Func_02e_4df4::
 	inc hl
 	ld [hl], $05
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4e9d
 	ld hl, wd1a0
@@ -2084,7 +2084,7 @@ Func_02e_4df4::
 	cp $64
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4eae
 	ld hl, wd1a0
@@ -2109,7 +2109,7 @@ Func_02e_4df4::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_4eda::
@@ -2180,7 +2180,7 @@ Func_02e_4f59::
 	ret
 
 Func_02e_4f6c::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_4fe1
 	call Func_02e_411e
@@ -2191,7 +2191,7 @@ Func_02e_4f6c::
 	ld [wd990], a
 	ld a, $18
 	ld [wBattleState], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4fb8
 	ld hl, $982A
@@ -2210,7 +2210,7 @@ Func_02e_4f6c::
 	inc hl
 	ld [hl], $10
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
@@ -2231,12 +2231,12 @@ Func_02e_4f6c::
 	inc hl
 	ld [hl], $10
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
 .asm_4fe1
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_500a
 	ld a, [wd98f]
@@ -2281,7 +2281,7 @@ Func_02e_4f6c::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	di
 	ld a, $8F
 	ldh [rLYC], a
@@ -2290,7 +2290,7 @@ Func_02e_4f6c::
 	ld [hl], $6F
 	inc hl
 	ld [hl], $10
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_5062
 	ld de, Mode_Tilemap_4883
@@ -2316,14 +2316,14 @@ Func_02e_4f6c::
 	ret
 
 Func_02e_507d::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5097
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98e], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $19
 	ld [wBattleState], a
 	ret
@@ -2378,12 +2378,12 @@ Func_02e_507d::
 	and a
 	ret nz
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ret
 
 Func_02e_50e7::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_50fb
 	call Func_02e_411e
@@ -2393,7 +2393,7 @@ Func_02e_50e7::
 	ld [wBattleState], a
 .asm_50fb
 	ld hl, wd100
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld c, a
 	and a
 	jr z, .asm_510f
@@ -2408,7 +2408,7 @@ Func_02e_50e7::
 	dec c
 	jr nz, .asm_5106
 .asm_510f
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld c, a
 	ld a, $06
 	sub c
@@ -2419,7 +2419,7 @@ Func_02e_50e7::
 	ld c, a
 	and a
 	jr z, .asm_513e
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_512f
 	ld a, [wd98f]
@@ -2441,7 +2441,7 @@ Func_02e_50e7::
 	dec c
 	jr nz, .asm_5138
 .asm_513e
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_514f
 	ld a, [wd98f]
@@ -2463,14 +2463,14 @@ Func_02e_50e7::
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $07
 	ret c
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 Mode_Tilemap_5179:: INCBIN "gfx/tilemaps/mode_tilemap_5179.tilemap"
 Mode_Tilemap_519d:: INCBIN "gfx/tilemaps/mode_tilemap_519d.tilemap"
@@ -2481,7 +2481,7 @@ Func_02e_51c1::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd990], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5200
 	ld a, [wd990]
@@ -2532,7 +2532,7 @@ Func_02e_5227::
 	add hl, de
 	push hl
 	pop de
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5263
 	call Func_02e_411e
@@ -2572,7 +2572,7 @@ Func_02e_5227::
 	ret
 
 Func_02e_5287::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_529b
 	call Func_02e_411e
@@ -2582,14 +2582,14 @@ Func_02e_5287::
 	ld [wBattleState], a
 .asm_529b
 	farcall Func_033_4000
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $0A
 	ret c
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_52b3::
@@ -2600,12 +2600,12 @@ Func_02e_52b3::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ret
 
 Func_02e_52d0::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_531b
 	cp $02
@@ -2614,7 +2614,7 @@ Func_02e_52d0::
 	jp z, .asm_534d
 	cp $05
 	jp z, .asm_535d
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5302
 	ld hl, wd1a0
@@ -2626,7 +2626,7 @@ Func_02e_52d0::
 	inc hl
 	ld [hl], $06
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5315
 .asm_5302
 	ld hl, wd1a0
@@ -2638,7 +2638,7 @@ Func_02e_52d0::
 	inc hl
 	ld [hl], $06
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5315
 	ld a, $1F
 	ld [wBattleState], a
@@ -2652,7 +2652,7 @@ Func_02e_52d0::
 	cp $38
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_532b
 	ldh a, [hFadeFrameCounter]
@@ -2685,7 +2685,7 @@ Func_02e_52d0::
 	cp $50
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_535d
 	ldh a, [hFadeFrameCounter]
@@ -2715,15 +2715,15 @@ Func_02e_52d0::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_5390::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_53cf
 	call Func_02e_4203
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_53bc
 	call Func_02e_411e
@@ -2733,7 +2733,7 @@ Func_02e_5390::
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $20
 	ld [wBattleState], a
 	ret
@@ -2742,7 +2742,7 @@ Func_02e_5390::
 	ld [wBattleState], a
 	call Func_02e_4c3d
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $20
 	ld [wBattleState], a
 	ret
@@ -2762,7 +2762,7 @@ Func_02e_5390::
 	ret nz
 	ld a, [wd98c]
 	ld b, a
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp b
 	jr nc, .asm_5407
 	inc hl
@@ -2778,25 +2778,25 @@ Func_02e_5390::
 .asm_53fe
 	ld [hl], d
 .asm_53ff
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5407
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_540f::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jr z, .asm_544c
 	cp $02
 	jr z, .asm_546d
 	xor a
 	ld [wd98e], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5436
 	ld hl, wd1a0
@@ -2806,7 +2806,7 @@ Func_02e_540f::
 	inc hl
 	ld [hl], $03
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5446
 .asm_5436
 	ld hl, wd1a0
@@ -2816,7 +2816,7 @@ Func_02e_540f::
 	inc hl
 	ld [hl], $03
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5446
 	ld a, $21
 	ld [wBattleState], a
@@ -2870,12 +2870,12 @@ Func_02e_540f::
 	call Func_02e_4adf
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98e], a
 	ret
 
 Func_02e_549f::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_54f3
 	cp $02
@@ -2890,7 +2890,7 @@ Func_02e_549f::
 	jp z, .asm_5563
 	cp $06
 	jp z, .asm_5574
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_54dd
 	ld hl, wd1a0
@@ -2900,7 +2900,7 @@ Func_02e_549f::
 	inc hl
 	ld [hl], $01
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_54ed
 .asm_54dd
 	ld hl, wd1a0
@@ -2910,7 +2910,7 @@ Func_02e_549f::
 	inc hl
 	ld [hl], $01
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_54ed
 	ld a, $22
 	ld [wBattleState], a
@@ -2936,7 +2936,7 @@ Func_02e_549f::
 	cp $D0
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5518
 	ld hl, wd1a0
@@ -2946,7 +2946,7 @@ Func_02e_549f::
 	inc hl
 	ld [hl], $05
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5529
 	ldh a, [hFadeFrameCounter]
@@ -2959,7 +2959,7 @@ Func_02e_549f::
 	cp $10
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_553e
 	ldh a, [hFadeFrameCounter]
@@ -2982,7 +2982,7 @@ Func_02e_549f::
 	cp $D0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5563
 	ld hl, wd1a0
@@ -2992,7 +2992,7 @@ Func_02e_549f::
 	inc hl
 	ld [hl], $05
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5574
 	ldh a, [hFadeFrameCounter]
@@ -3005,7 +3005,7 @@ Func_02e_549f::
 	cp $40
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5589
 	ldh a, [hFadeFrameCounter]
@@ -3021,12 +3021,12 @@ Func_02e_549f::
 	ret c
 	ld [hl], $00
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ret
 
 Func_02e_55a3::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_55ca
 	call Func_02e_411e
@@ -3040,7 +3040,7 @@ Func_02e_55a3::
 	xor a
 	ld [wd98e], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_55ca
 	ld a, [wd98f]
@@ -3057,7 +3057,7 @@ Func_02e_55a3::
 	jr nz, .asm_55ea
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98e], a
 	ret
 .asm_55ea
@@ -3074,7 +3074,7 @@ Func_02e_55a3::
 	ret
 
 Func_02e_5601::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jp nz, .asm_5690
 	ld a, [hSCX]
@@ -3083,7 +3083,7 @@ Func_02e_5601::
 	ld a, [hSCY]
 	ld [wd9ac], a
 	ld [wWY], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_5658
 	ld hl, $982A
@@ -3108,7 +3108,7 @@ Func_02e_5601::
 	ld a, $00
 	ld [wd98c], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
@@ -3135,7 +3135,7 @@ Func_02e_5601::
 	ld a, $30
 	ld [wd98c], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
@@ -3154,7 +3154,7 @@ Func_02e_5601::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	di
 	ld a, $8F
 	ldh [rLYC], a
@@ -3163,7 +3163,7 @@ Func_02e_5601::
 	ld [hl], $6F
 	inc hl
 	ld [hl], $10
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_56dc
 	ld de, Mode_Tilemap_4883
@@ -3197,7 +3197,7 @@ Func_02e_5601::
 	ret
 
 Func_02e_570d::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5761
 	cp $02
@@ -3212,7 +3212,7 @@ Func_02e_570d::
 	jp z, .asm_57b6
 	cp $07
 	jp z, .asm_57c7
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_574b
 	ld hl, wd1a0
@@ -3222,7 +3222,7 @@ Func_02e_570d::
 	inc hl
 	ld [hl], $05
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_575b
 .asm_574b
 	ld hl, wd1a0
@@ -3232,7 +3232,7 @@ Func_02e_570d::
 	inc hl
 	ld [hl], $05
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_575b
 	ld a, $25
 	ld [wBattleState], a
@@ -3246,7 +3246,7 @@ Func_02e_570d::
 	cp $C8
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5772
 	ld hl, wd1a0
@@ -3256,7 +3256,7 @@ Func_02e_570d::
 	inc hl
 	ld [hl], $05
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5783
 	ld hl, wd1a0
@@ -3267,7 +3267,7 @@ Func_02e_570d::
 	cp $14
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5794
 	ld hl, wd1a0
@@ -3278,7 +3278,7 @@ Func_02e_570d::
 	cp $B0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_57a5
 	ld hl, wd1a0
@@ -3288,7 +3288,7 @@ Func_02e_570d::
 	inc hl
 	ld [hl], $05
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_57b6
 	ld hl, wd1a0
@@ -3299,7 +3299,7 @@ Func_02e_570d::
 	cp $64
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_57c7
 	ld hl, wd1a0
@@ -3307,11 +3307,11 @@ Func_02e_570d::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_57d8::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_582c
 	cp $02
@@ -3326,7 +3326,7 @@ Func_02e_57d8::
 	jp z, .asm_588a
 	cp $07
 	jp z, .asm_58a4
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5816
 	ld hl, wd1a0
@@ -3336,7 +3336,7 @@ Func_02e_57d8::
 	inc hl
 	ld [hl], $05
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5826
 .asm_5816
 	ld hl, wd1a0
@@ -3346,7 +3346,7 @@ Func_02e_57d8::
 	inc hl
 	ld [hl], $05
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5826
 	ld a, $26
 	ld [wBattleState], a
@@ -3360,7 +3360,7 @@ Func_02e_57d8::
 	cp $C8
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_583d
 	ld hl, wd1a0
@@ -3370,7 +3370,7 @@ Func_02e_57d8::
 	inc hl
 	ld [hl], $05
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_584e
 	ld hl, wd1a0
@@ -3381,7 +3381,7 @@ Func_02e_57d8::
 	cp $14
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld hl, wd1a0
 	ld bc, $0002
 	add hl, bc
@@ -3396,7 +3396,7 @@ Func_02e_57d8::
 	cp $B0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_5879
 	ld hl, wd1a0
@@ -3406,7 +3406,7 @@ Func_02e_57d8::
 	inc hl
 	ld [hl], $05
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_588a
 	ld hl, wd1a0
@@ -3417,7 +3417,7 @@ Func_02e_57d8::
 	cp $64
 	ret nz
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld hl, wd1a0
 	ld bc, $0002
 	add hl, bc
@@ -3427,7 +3427,7 @@ Func_02e_57d8::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_58b8
 	ld hl, wd1a0
@@ -3456,7 +3456,7 @@ Func_02e_57d8::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_58dd::
@@ -3598,7 +3598,7 @@ Func_02e_59a0::
 	and $1F
 	jp nz, .asm_5a50
 	ld de, Mode_CoordTbl_5a5d
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -3606,7 +3606,7 @@ Func_02e_59a0::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -3624,13 +3624,13 @@ Func_02e_59a0::
 	ld hl, $0004
 	add hl, bc
 	ld [hl], $01
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $06
 	ret c
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_59f6
 	ldh a, [hFadeFrameCounter]
@@ -3676,7 +3676,7 @@ Func_02e_59a0::
 	jr nz, .asm_5a50
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	call Func_02e_4ae7
 	ret
@@ -3697,13 +3697,13 @@ Mode_CoordTbl_5a5d::
 	db $50, $70, $20, $20
 	db $50, $80, $20, $30
 Func_02e_5a71::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5aa8
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Mode_PtrTbl_5ad6
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -3726,9 +3726,9 @@ Func_02e_5a71::
 	ld [hli], a
 	ld bc, $0004
 	add hl, bc
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	dec a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $02
 	jr nc, .asm_5a8d
 	ret
@@ -3754,7 +3754,7 @@ Func_02e_5a71::
 	ret c
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98e], a
 	call Func_02e_4ae7
 	ret
@@ -3766,7 +3766,7 @@ Mode_PtrTbl_5ad6_5ada::
 Mode_PtrTbl_5ad6_5ae6::
 	db $30, $28, $02, $30, $28, $02, $30, $28, $02, $30, $28, $02
 Func_02e_5af2::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5b08
 	call Func_02e_411e
@@ -3781,7 +3781,7 @@ Func_02e_5af2::
 	ret nz
 .asm_5b0d
 	ld hl, wd100
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld c, a
 	ld a, $06
 	sub c
@@ -3799,7 +3799,7 @@ Func_02e_5af2::
 	dec c
 	jr nz, .asm_5b1c
 .asm_5b25
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	add a
 	ld c, a
 	add a
@@ -3807,7 +3807,7 @@ Func_02e_5af2::
 	ld c, a
 	and a
 	jr z, .asm_5b50
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5b41
 	ld a, [wd98f]
@@ -3829,7 +3829,7 @@ Func_02e_5af2::
 	dec c
 	jr nz, .asm_5b4a
 .asm_5b50
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5b61
 	ld a, [wd98f]
@@ -3851,23 +3851,23 @@ Func_02e_5af2::
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $07
 	ret c
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_5b8b::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5bc6
 	cp $04
 	jp z, .asm_5be3
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5bb0
 	ld hl, wd1a0
@@ -3877,7 +3877,7 @@ Func_02e_5b8b::
 	inc hl
 	ld [hl], $06
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5bc0
 .asm_5bb0
 	ld hl, wd1a0
@@ -3887,7 +3887,7 @@ Func_02e_5b8b::
 	inc hl
 	ld [hl], $06
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5bc0
 	ld a, $34
 	ld [wBattleState], a
@@ -3936,16 +3936,16 @@ Func_02e_5b8b::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_5c11::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5c4c
 	cp $04
 	jp z, .asm_5c69
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5c36
 	ld hl, wd1a0
@@ -3955,7 +3955,7 @@ Func_02e_5c11::
 	inc hl
 	ld [hl], $06
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5c46
 .asm_5c36
 	ld hl, wd1a0
@@ -3965,7 +3965,7 @@ Func_02e_5c11::
 	inc hl
 	ld [hl], $06
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5c46
 	ld a, $35
 	ld [wBattleState], a
@@ -4014,16 +4014,16 @@ Func_02e_5c11::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_5c97::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5cd2
 	cp $04
 	jp z, .asm_5cef
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5cbc
 	ld hl, wd1a0
@@ -4033,7 +4033,7 @@ Func_02e_5c97::
 	inc hl
 	ld [hl], $0E
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5ccc
 .asm_5cbc
 	ld hl, wd1a0
@@ -4043,7 +4043,7 @@ Func_02e_5c97::
 	inc hl
 	ld [hl], $0E
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5ccc
 	ld a, $36
 	ld [wBattleState], a
@@ -4092,16 +4092,16 @@ Func_02e_5c97::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_5d1d::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5d58
 	cp $04
 	jp z, .asm_5d75
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5d42
 	ld hl, wd1a0
@@ -4111,7 +4111,7 @@ Func_02e_5d1d::
 	inc hl
 	ld [hl], $0E
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_5d52
 .asm_5d42
 	ld hl, wd1a0
@@ -4121,7 +4121,7 @@ Func_02e_5d1d::
 	inc hl
 	ld [hl], $0E
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_5d52
 	ld a, $37
 	ld [wBattleState], a
@@ -4170,7 +4170,7 @@ Func_02e_5d1d::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_02e_5da3::
@@ -4191,8 +4191,8 @@ Func_02e_5db6::
 	ret
 
 Func_02e_5dc1::
-	farcall Func_030_4027
-	ld a, [wd986]
+	farcall RollMoveHit
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_5dd2
 	ld a, $01
@@ -4213,12 +4213,12 @@ Func_02e_5dc1::
 	ret
 
 Func_02e_5dea::
-	farcall Func_030_4027
+	farcall RollMoveHit
 	call Func_02e_411e
 	ld a, [wd993]
 	and a
 	jr nz, .asm_5e21
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5e09
 	ld a, [wd981]
@@ -4248,14 +4248,14 @@ Func_02e_5dea::
 
 Func_02e_5e26::
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	farcall Func_02b_4098
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5e4e
 	ld a, [wd981]
@@ -4346,8 +4346,8 @@ Func_02e_5ec1::
 	ret
 .asm_5eef
 	ld a, $5A
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call .asm_5f0b
 	call .asm_5f0b
 .asm_5f00
@@ -4366,7 +4366,7 @@ Func_02e_5f14::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd990], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5f3a
 	ld a, [wd990]
@@ -4398,7 +4398,7 @@ Func_02e_5f51::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ret
 Func_02e_5f6e::
@@ -4430,7 +4430,7 @@ Func_02e_5f89::
 	call Func_02e_411e
 	jp Func_02e_411e
 Func_02e_5fa4::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5fd6
 	call Func_02e_411e
@@ -4441,7 +4441,7 @@ Func_02e_5fa4::
 	ld [wd990], a
 	farcall Func_030_45e2
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $45
 	ld [wBattleState], a
 	xor a
@@ -4463,7 +4463,7 @@ Func_02e_5fa4::
 Func_02e_5fe5::
 	ret
 Func_02e_5fe6::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_605b
 	call Func_02e_411e
@@ -4474,7 +4474,7 @@ Func_02e_5fe6::
 	ld [wd990], a
 	ld a, $46
 	ld [wBattleState], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_6032
 	ld hl, $982A
@@ -4493,7 +4493,7 @@ Func_02e_5fe6::
 	inc hl
 	ld [hl], $10
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
@@ -4514,12 +4514,12 @@ Func_02e_5fe6::
 	inc hl
 	ld [hl], $10
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98e], a
 	ret
 .asm_605b
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_6084
 	ld a, [wd98f]
@@ -4564,7 +4564,7 @@ Func_02e_5fe6::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	di
 	ld a, $8F
 	ldh [rLYC], a
@@ -4573,7 +4573,7 @@ Func_02e_5fe6::
 	ld [hl], $6F
 	inc hl
 	ld [hl], $10
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_60dc
 	ld de, Mode_Tilemap_4883
@@ -4633,7 +4633,7 @@ Func_02e_60f7::
 	pop de
 	ret
 .asm_613b
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jp nz, .asm_615b
 	ld a, [de]
@@ -4698,12 +4698,12 @@ Func_02e_60f7::
 	ld d, a
 	ret
 Func_02e_617f::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_6193
 	call Func_02e_60f7
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $48
 	ld [wBattleState], a
 	ret
@@ -4711,12 +4711,12 @@ Func_02e_617f::
 	farcall Func_02d_6e2c
 	ret
 Func_02e_619a::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_61ae
 	call Func_02e_60f7
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $47
 	ld [wBattleState], a
 	ret
@@ -4724,16 +4724,16 @@ Func_02e_619a::
 	farcall Func_02d_6d77
 	ret
 Func_02e_61b5::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_61c6
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	ld [wd98f], a
 	ld a, $49
 	ld [wBattleState], a
 .asm_61c6
 	ld hl, wd100
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld c, a
 	and a
 	jr z, .asm_61da
@@ -4748,7 +4748,7 @@ Func_02e_61b5::
 	dec c
 	jr nz, .asm_61d1
 .asm_61da
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld c, a
 	ld a, $06
 	sub c
@@ -4759,7 +4759,7 @@ Func_02e_61b5::
 	ld c, a
 	and a
 	jr z, .asm_6209
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_61fa
 	ld a, [wd98f]
@@ -4781,7 +4781,7 @@ Func_02e_61b5::
 	dec c
 	jr nz, .asm_6203
 .asm_6209
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_621a
 	ld a, [wd98f]
@@ -4803,14 +4803,14 @@ Func_02e_61b5::
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $07
 	ret c
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 Func_02e_6244::
 	xor a
@@ -4855,7 +4855,7 @@ Func_02e_627e::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_62ca
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6292
 	ld a, [wd990]
@@ -4912,7 +4912,7 @@ Func_02e_627e::
 	ret nz
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a
@@ -4924,7 +4924,7 @@ Func_02e_62ef::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_633b
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6303
 	ld a, [wd990]
@@ -4981,7 +4981,7 @@ Func_02e_62ef::
 	ret nz
 	xor a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wBattleState], a
 	ld hl, wd1a0
 	xor a

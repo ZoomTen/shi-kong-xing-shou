@@ -1,5 +1,5 @@
 Func_033_4000::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4033
 	ld a, [wd990]
@@ -15,7 +15,7 @@ Func_033_4000::
 	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ld de, TilemapPointers_033_40E1
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -39,7 +39,7 @@ Func_033_4000::
 	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
 	ld de, TilemapPointers_033_40CD
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld l, a
 	ld h, $00
 	add hl, hl

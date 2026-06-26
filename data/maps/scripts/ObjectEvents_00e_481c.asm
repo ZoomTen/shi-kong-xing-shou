@@ -32,7 +32,7 @@ Script_00e_484d::
 	delay $03, $20
 	face FACE_UP
 	stext text_0e_5e73
-	listdec $02, $01
+	takeitem ITEMNAMECAT_KEY, KEYITEM_01
 	setbit wEventFlags, $06
 	end
 

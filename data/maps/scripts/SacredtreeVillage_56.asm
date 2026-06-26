@@ -10,7 +10,7 @@ Script_05a_42df::
 Script_05a_42e9::
 	checkbit wEventFlags + 13, $05, Script_05a_42fa
 	textface text_5a_634a
-	listdec $02, $16
+	takeitem ITEMNAMECAT_KEY, KEYITEM_16
 	setbit wEventFlags + 13, $05
 	end
 

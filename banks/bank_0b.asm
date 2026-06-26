@@ -1920,7 +1920,7 @@ Script_3b:: ; start a battle (startbattle)
 	ld [wBattleIntroJumptableIndex], a
 	ld [wScriptByte], a
 	ld a, $0c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
 	ld [wd987], a
 	ld hl, wEnemyMon
@@ -2359,21 +2359,21 @@ Script_48::
 	call PlaySound
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld a, 1
-	ld [wd9d3], a
-	farcall asm_039_479f
+	ld [wItemQty], a
+	farcall AddItemToBag
 	xor a
 	ld [wScriptByte], a
 	ret
 
-; list pointers indexed by wd1f4; each -> a wram (id,count) list searched by Script_4d/Script_59
+; list pointers indexed by wItemCategory; each -> a wram (id,count) list searched by Script_4d/Script_59
 ; TODO: unk_ - indexed table (index hli)
 unk_00b_5192::
-	dw wd300, wddb0, wd284
+	dw wItemBag, wEquipmentBag, wKeyItemBag
 
 Script_49::
 	ld a, [wcd20]
@@ -2568,7 +2568,7 @@ Script_4c::
 Script_4d::
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld de, unk_00b_5192
 	ld l, a
 	ld h, $00
@@ -2601,7 +2601,7 @@ Script_4d::
 	and a
 	jr nz, .asm_532d
 	ld [hl], $00
-	farcall Func_024_605d
+	farcall CompactItems
 .asm_532d
 	xor a
 	ld [wScriptByte], a
@@ -2692,12 +2692,12 @@ Script_50::
 	ret
 .asm_53cf
 	push hl
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld a, $01
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld a, $01
-	ld [wd9d3], a
-	farcall asm_039_479f
+	ld [wItemQty], a
+	farcall AddItemToBag
 	pop hl
 	ret
 .asm_53e5
@@ -2740,7 +2740,7 @@ Script_50::
 Script_51::
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld de, unk_00b_5192
 	ld l, a
 	ld h, $00
@@ -2917,7 +2917,7 @@ Script_58::
 Script_59::
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld de, unk_00b_5192
 	ld l, a
 	ld h, $00
@@ -2968,7 +2968,7 @@ Script_59::
 Script_5a::
 	call GetScriptByte
 	ld a, [wScriptByte]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld de, unk_00b_5192
 	ld l, a
 	ld h, $00
@@ -3003,7 +3003,7 @@ Script_5a::
 	and a
 	jr nz, .asm_55f9
 	ld [hl], $00
-	farcall Func_024_605d
+	farcall CompactItems
 .asm_55f9
 	xor a
 	ld [wScriptByte], a

@@ -2062,7 +2062,7 @@ Func_02d_6d77::
 	jp nz, .asm_6e01
 	jp .asm_6e12
 .asm_6dd3
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6de6
 	ld a, [hli]
@@ -2109,7 +2109,7 @@ Func_02d_6d77::
 .asm_6e12
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_6e1a
 	ld a, l
@@ -2209,7 +2209,7 @@ Func_02d_6e2c::
 .asm_6eb4
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_6ebc
 	ld a, l
@@ -2251,7 +2251,7 @@ Func_02d_6ece::
 	ld [bc], a
 	ret
 ; Object motion paths: per-frame signed (dx,dy) added to (Func_02d_6e2c) / subtracted from
-; (Func_02d_6d77) an object's X,Y (wd1a0[0..1]); direction via wd986, step cursor wd1a0[7].
+; (Func_02d_6d77) an object's X,Y (wd1a0[0..1]); direction via wBattleTurn, step cursor wd1a0[7].
 ; Path pointer in wd1a0[5..6], selected by wd98d. dx = -1 ($ff) ends a path; $88/$77 dx = control frames.
 Battle_ObjectMotionPaths::
 	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $88, $ff, $00, $fe, $00, $fe, $00, $fe

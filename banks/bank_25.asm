@@ -140,10 +140,10 @@ Func_025_40d3::
 	ret
 
 Func_025_40d9::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, Func_025_40f0
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, Func_025_40f6
 
@@ -155,7 +155,7 @@ Func_025_40e5::
 	jp _ComputeStatValue
 
 Func_025_40f0::
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, Func_025_40e5
 
@@ -1834,7 +1834,7 @@ Func_025_4d3d::
 	ret
 
 Func_025_4d5c::
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	ld de, wd1f5
 	ld [de], a
 	call AdvanceBattleScript
@@ -2605,7 +2605,7 @@ Func_025_534f::
 	ret
 
 Func_025_535a::
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	and a
 	jr z, Func_025_5368
 	ld bc, $80

@@ -1,5 +1,5 @@
 Debug_InitDex::
-	ld de, wd284
+	ld de, wKeyItemBag
 	ld hl, .unk_2cb8
 .asm_2caa
 REPT 2
@@ -57,7 +57,7 @@ ENDR
 	db $28, $01
 
 Debug_InitParty::
-	ld de, wddb0
+	ld de, wEquipmentBag
 	ld hl, .unk_2d16
 .copy
 	ld a, [hli]
@@ -94,7 +94,7 @@ Debug_InitParty::
 	db $ff, $ff
 
 Debug_GiveItems::
-	ld de, wd300
+	ld de, wItemBag
 	ld hl, .item_data
 .copy
 	ld a, [hli]

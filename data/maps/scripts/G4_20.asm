@@ -64,7 +64,7 @@ Script_058_41c7::
 	checkbit wEventFlags + 11, $02, Script_058_41de
 	textface text_58_54f9
 	stext text_58_556e
-	scr_48 $02, $11
+	giveitem ITEMNAMECAT_KEY, KEYITEM_11
 	stext text_58_557e
 	setbit wEventFlags + 11, $02
 	end

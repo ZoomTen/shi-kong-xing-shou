@@ -39,7 +39,7 @@ Func_038_4000::
 	add c
 	ld [de], a
 	inc de
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4071
 	ld a, [wBattleAnimID]
@@ -79,7 +79,7 @@ Func_038_4000::
 	inc de
 	ld a, [hli]
 	ld [de], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_40b0
 	ld a, [wBattleAnimID]

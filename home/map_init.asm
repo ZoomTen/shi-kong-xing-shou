@@ -76,7 +76,7 @@ StartingInventory_Combo0::
 	ld [wMoney + 2], a
 
 ; Init items
-	ld hl, wd300
+	ld hl, wItemBag
 	ld [hl], $05
 	inc hl
 	ld [hl], 2
@@ -92,7 +92,7 @@ StartingInventory_Combo1::
 	ld [wMoney + 2], a
 
 ; Init items
-	ld hl, wd300
+	ld hl, wItemBag
 	ld [hl], $05
 	inc hl
 	ld [hl], 2
@@ -108,7 +108,7 @@ StartingInventory_Combo2::
 	ld [wMoney + 2], a
 
 ; Init items
-	ld hl, wd300
+	ld hl, wItemBag
 	ld [hl], $05
 	inc hl
 	ld [hl], 2
@@ -143,7 +143,7 @@ StartingInventory_Combo4::
 	ld [wMoney + 2], a
 
 ; Init items
-	ld hl, wd300
+	ld hl, wItemBag
 	ld [hl], $05
 	inc hl
 	ld [hl], 2

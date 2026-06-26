@@ -216,12 +216,12 @@ ShowLevelUp::
 	ld a, BGM_LEVEL_UP_JINGLE
 	call PlaySound
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	ld a, $2d
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	farcall LearnLevelUpMove
 	ret
 

@@ -1,4 +1,4 @@
-Func_02d_4000::
+ShowBattleMessage::
 	ld bc, $0480
 	ld hl, $8b60
 	xor a
@@ -10,7 +10,7 @@ Func_02d_4000::
 	farcall Func_026_45b9
 	call DelayFrame
 	ld de, BattleTextPointers
-	ld a, [wd3ff]
+	ld a, [wBattleMessageID]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -28,7 +28,7 @@ Func_02d_4000::
 	ret
 
 Func_02d_403d::
-	ld a, [wd3ff]
+	ld a, [wBattleMessageID]
 	cp $2b
 	jr z, Func_02d_404d
 	cp $2c

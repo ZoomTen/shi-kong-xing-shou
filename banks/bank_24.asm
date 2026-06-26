@@ -1429,15 +1429,15 @@ Func_024_4d77::
 	push hl
 	call Func_024_4e9f.asm_4ebd
 	pop hl
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld [hl], a
-	call Func_024_605d
-	ld a, [wd9f3]
+	call CompactItems
+	ld a, [wCurItemID]
 	and a
 	jr z, .asm_4e2a
 	jr .asm_4e27
 .asm_4e23
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld [hl], a
 .asm_4e27
 	call Func_024_603b
@@ -1726,7 +1726,7 @@ Func_024_4efd::
 	ld d, a
 	ld a, [hli]
 	ld e, a
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $15
 	jr z, .asm_5026
 	cp $16
@@ -1906,7 +1906,7 @@ Func_024_503e::
 	jr .asm_5156
 .asm_5149
 	ld de, unk_024_6e04
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	sub $28
 	ld l, a
 	ld h, $00
@@ -2314,7 +2314,7 @@ Func_024_5405::
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_556b
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	and a
 	jr z, .asm_546d
 	call Func_024_6ba1
@@ -2331,7 +2331,7 @@ Func_024_5405::
 	ld [wd9da + 1], a
 	ret
 .asm_546d
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	and a
 	ret z
 	ld a, [wd0c1]
@@ -2362,7 +2362,7 @@ Func_024_5405::
 	farcall Func_04a_4000
 	ret
 .asm_54ab
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $17
 	jr z, .asm_54c2
 	ld a, [wSelectedOption]
@@ -2418,7 +2418,7 @@ Func_024_5405::
 	and a
 	jr z, .asm_54eb
 	ld de, unk_024_6e04
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	sub $28
 	ld l, a
 	ld h, $00
@@ -2545,7 +2545,7 @@ Func_024_5405::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	sub $27
 	ld d, a
 .asm_55e9
@@ -2568,7 +2568,7 @@ Script_024_55f9::
 Func_024_5603::
 	call GetPartyMonPtr
 	ld de, Jumptable_024_5616
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -3234,7 +3234,7 @@ Func_024_5a49::
 	ld a, [wSelectedOption]
 	and a
 	jr z, .asm_5ac5
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	cp $01
 	jr z, .asm_5ab3
 	cp $02
@@ -3250,7 +3250,7 @@ Func_024_5a49::
 	ld [hl], HIGH(Script_024_4652)
 	jr .asm_5afe
 .asm_5ac5
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	and a
 	jp z, .asm_5b19
 	ld a, [wd1fe]
@@ -3263,9 +3263,9 @@ Func_024_5a49::
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld a, [hl]
-	ld [wd9d3], a
+	ld [wItemQty], a
 	jp .asm_5b7e
 .asm_5ae7
 	ldh a, [hJoypadPressed]
@@ -3305,11 +3305,11 @@ Func_024_5a49::
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld a, [hl]
-	ld [wd9d3], a
+	ld [wItemQty], a
 	ld de, unk_024_5f82
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -3544,7 +3544,7 @@ Pointers_024_5c97_5ebf::
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 Func_024_5f19::
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $23
 	jr z, .asm_5f29
 	cp $24
@@ -3595,7 +3595,7 @@ Script_024_5f78::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $02
 	bs_end_script3
-; TODO: unk_ - lookup table indexed by wd9f3
+; TODO: unk_ - lookup table indexed by wCurItemID
 unk_024_5f82::
 	db $00, $04, $04, $04, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
 	db $01, $01, $01, $01, $01, $03, $03, $03, $04, $04, $04, $04, $04, $04, $04, $04
@@ -3667,12 +3667,12 @@ Func_024_603b::
 	jr nz, .asm_6056
 	ld [hl], $00
 .asm_6056
-	ld [wd9d3], a
+	ld [wItemQty], a
 	xor a
 	ld [wd0c0], a
-Func_024_605d::
+CompactItems::
 	ld de, unk_024_6096
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -3717,7 +3717,7 @@ Func_024_605d::
 	jr .asm_608c
 .asm_6095
 	ret
-; TODO: unk_ - lookup table indexed by wd1f4
+; TODO: unk_ - lookup table indexed by wItemCategory
 unk_024_6096::
 	db $78, $28, $2d
 Func_024_6099::
@@ -3746,7 +3746,7 @@ Func_024_6099::
 	ret nc
 	inc a
 	ld [wSelectedOption], a
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	cp $01
 	jr z, .asm_60e9
 	call .asm_62f7
@@ -3801,7 +3801,7 @@ Func_024_6099::
 	bit 4, a
 	jr z, .asm_6189
 	ld de, unk_024_6344
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -3857,20 +3857,20 @@ Func_024_6099::
 	jp z, .asm_627d
 	ld a, SFX_11
 	call PlaySound
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	cp $01
 	jr z, .asm_61e4
 	call .asm_62f7
 	and a
 	ret z
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld a, [wd3f9 + 1]
 	and a
 	jp nz, .asm_622c
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	and a
 	jr z, .asm_6208
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $07
 	ret nz
 	call Func_024_6ba1
@@ -3894,7 +3894,7 @@ Func_024_6099::
 	ret
 .asm_61e4
 	call .asm_62f7
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	call Func_024_6ba1
 	ld a, $02
 	ld [wBattleScriptState], a
@@ -4098,7 +4098,7 @@ Func_024_6328::
 	xor a
 	ldh [hFFC6], a
 	ret
-; TODO: unk_ - lookup table indexed by wd1f4
+; TODO: unk_ - lookup table indexed by wItemCategory
 unk_024_6344::
 	db $17, $07, $08
 Func_024_6347::
@@ -4133,7 +4133,7 @@ Func_024_6347::
 	bit 0, a
 	jp z, Func_024_6a61
 	ld a, [wSelectedOption]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	call Func_024_6ba1
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -5640,7 +5640,7 @@ SpriteOAMTemplate_Pointers::
 	db $FF
 
 INCLUDE "data/moves/pp.asm"
-; TODO: unk_ - indexed table (index wd9f3)
+; TODO: unk_ - indexed table (index wCurItemID)
 unk_024_6e04::
 	db $89, $35, $4d, $6b, $2e, $05, $45, $16, $73, $23, $4c, $22, $07, $78, $19, $40
 	db $81, $77, $5d, $06, $1e, $4f, $75, $0a, $2a, $61, $3b, $32, $68, $85, $88, $5a

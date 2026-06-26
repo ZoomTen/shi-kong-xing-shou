@@ -9,7 +9,7 @@ Func_032_4000::
 	jr nz, .asm_4009
 	xor a
 	ld [wVirtualOAMPtr], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4026
 	ld a, [wd9ea]
@@ -86,7 +86,7 @@ Func_032_4000::
 	add c
 	ld [de], a
 	inc de
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_40ca
 	ld a, [wBattleAnimID]
@@ -126,7 +126,7 @@ Func_032_4000::
 	inc de
 	ld a, [hli]
 	ld [de], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4109
 	ld a, [wBattleAnimID]

@@ -124,7 +124,7 @@ Script_04f_47de::
 	stext text_4f_79aa
 	stext text_4f_79b7
 	stext text_4f_79ef
-	scr_48 $02, $0e
+	giveitem ITEMNAMECAT_KEY, KEYITEM_0e
 	setbit wEventFlags + 6, $07
 	end
 
@@ -460,8 +460,8 @@ Script_04f_4a7a::
 	checkbit wEventFlags + 7, $00, Script_04f_4aae
 	stext text_4f_7a15
 	stext text_4f_7a54
-	listdec $02, $0e
-	scr_48 $00, $14
+	takeitem ITEMNAMECAT_KEY, KEYITEM_0e
+	giveitem ITEMNAMECAT_ITEM, ITEM_14
 	setbit wEventFlags + 7, $00
 	end
 
@@ -469,8 +469,8 @@ Script_04f_4a97::
 	checkbit wEventFlags + 7, $00, Script_04f_4aae
 	stext text_4f_7a70
 	stext text_4f_7ac3
-	listdec $02, $0e
-	scr_48 $00, $05
+	takeitem ITEMNAMECAT_KEY, KEYITEM_0e
+	giveitem ITEMNAMECAT_ITEM, ITEM_05
 	setbit wEventFlags + 7, $00
 	end
 

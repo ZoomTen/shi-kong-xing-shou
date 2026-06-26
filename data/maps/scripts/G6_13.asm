@@ -81,7 +81,7 @@ Script_06c_4cd5::
 	spritewalk  2, MOVE_UP
 	clearobject $02
 	stext text_6c_5fc7
-	listdec $02, $27
+	takeitem ITEMNAMECAT_KEY, KEYITEM_27
 	setbit wEventFlags + 19, $02
 	end
 

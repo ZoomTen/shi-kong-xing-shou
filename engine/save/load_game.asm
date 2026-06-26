@@ -46,8 +46,8 @@ LoadSaveData:
 	dec de
 	ld a, [hli]
 	ld [de], a
-	ld de, wddb0
-	ld hl, sa430
+	ld de, wEquipmentBag
+	ld hl, sEquipmentBag
 	ld bc, $0050
 	call CopyBytes3
 	ld de, wde00

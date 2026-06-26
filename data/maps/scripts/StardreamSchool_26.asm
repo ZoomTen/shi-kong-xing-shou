@@ -25,6 +25,6 @@ Script_066_46a4::
 Script_066_46b2::
 	stext text_66_6063
 	stext text_66_60cd
-	scr_48 $02, $1c
+	giveitem ITEMNAMECAT_KEY, KEYITEM_1c
 	setbit wEventFlags + 16, $04
 	end

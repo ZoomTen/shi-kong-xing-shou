@@ -33,7 +33,7 @@ Script_059_4785::
 	spriteface  2, FACE_DOWN
 	stext text_59_6e14
 	stext text_59_6e54
-	scr_48 $02, $18
+	giveitem ITEMNAMECAT_KEY, KEYITEM_18
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $3f, $02
 	stext text_59_6e63
@@ -110,7 +110,7 @@ unk_059_4839::
 
 Script_059_4867::
 	stext text_59_6415
-	scr_48 $02, $15
+	giveitem ITEMNAMECAT_KEY, KEYITEM_15
 	end
 
 Script_059_486e::
@@ -126,7 +126,7 @@ Script_059_486f::
 
 unk_059_4887::
 	stext text_59_6415
-	scr_48 $02, $15
+	giveitem ITEMNAMECAT_KEY, KEYITEM_15
 	setbit wEventFlags + 23, $05
 	end
 

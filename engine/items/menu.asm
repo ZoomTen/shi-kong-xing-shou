@@ -139,7 +139,7 @@ Func_01e_434d::
 
 DrawItemMenuPage::
 	ld de, ItemNameCategories
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -149,7 +149,7 @@ DrawItemMenuPage::
 	ld l, a
 	push hl
 	ld de, MartGroups
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -211,7 +211,7 @@ DrawItemMenuPage::
 
 Func_01e_43d3::
 	ld de, ItemPriceTables
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -273,7 +273,7 @@ Func_01e_4416::
 
 Func_01e_4441::
 	ld de, ItemPriceTables
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -281,7 +281,7 @@ Func_01e_4441::
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -292,7 +292,7 @@ Func_01e_4441::
 	ldh [hMathValue], a
 	xor a
 	ldh [hMathValue + 2], a
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, [wEventFlags + 4]

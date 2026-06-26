@@ -4,7 +4,7 @@ Func_039_40a0::
 	xor a
 	ld [hFFC6], a
 	ldh [hFFC5], a
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld [wSelectedPage], a
 	ld [wSelectedOption], a
 	ld a, $01
@@ -119,7 +119,7 @@ Func_039_417e::
 	call PlaySound
 	xor a
 	ld [wSelectedOption], a
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld hl, wcde0
 	inc hl
 	ld [hl], $0E
@@ -135,7 +135,7 @@ Func_039_417e::
 	call PlaySound
 	ld a, $01
 	ld [wSelectedOption], a
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld hl, wcde0
 	inc hl
 	ld [hl], $36
@@ -285,7 +285,7 @@ Func_039_4250::
 	bit 0, a
 	jr z, .asm_42f7
 	ld de, unk_039_43ea
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -339,11 +339,11 @@ Func_039_4250::
 	call Func_039_4430
 	and a
 	ret z
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	inc hl
 	ld a, [hli]
 	ld [wd9f4], a
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	and a
 	jr nz, .asm_4352
 	jr .asm_4352
@@ -352,7 +352,7 @@ Func_039_4250::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld a, $01
-	ld [wd9d3], a
+	ld [wItemQty], a
 	ld hl, wBattleScriptPos
 	ld [hl], LOW(unk_039_43ed)
 	inc hl
@@ -367,18 +367,18 @@ Func_039_4250::
 	call Func_039_595d
 	ret
 .asm_437a
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	and a
 	ret z
 	ld a, $01
-	ld [wd9d3], a
+	ld [wItemQty], a
 	call Func_039_45db
 	and a
 	jr nz, .asm_43a8
 	call Func_039_4879
 	ld a, $01
 	ld [wBattleScriptState], a
-	ld [wd9d3], a
+	ld [wItemQty], a
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
@@ -420,7 +420,7 @@ Func_039_4250::
 	ldh [hFFC5], a
 	call Func_039_485c
 	ld a, [wSelectedOption]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ret
 unk_039_43ea::
 	db $1d, $09, $0b
@@ -500,19 +500,19 @@ Func_039_4469::
 	bit 0, a
 	jr z, .asm_44a9
 	ld hl, wd9f4
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	cp [hl]
 	ret z
 	inc a
-	ld [wd9d3], a
+	ld [wItemQty], a
 	call .asm_45a0
 	and a
 	jp z, .asm_4533
 	jr .asm_44bc
 .asm_44a9
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	inc a
-	ld [wd9d3], a
+	ld [wItemQty], a
 	cp $64
 	jr nc, .asm_44bc
 	call Func_039_45db
@@ -520,19 +520,19 @@ Func_039_4469::
 	jr nz, .asm_44bc
 	jr .asm_4533
 .asm_44bc
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	dec a
-	ld [wd9d3], a
+	ld [wItemQty], a
 	ret
 .asm_44c4
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .asm_44d9
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	cp $01
 	ret z
 	dec a
-	ld [wd9d3], a
+	ld [wItemQty], a
 	call Func_039_45db
 	jr .asm_4533
 .asm_44d9
@@ -543,7 +543,7 @@ Func_039_4469::
 	bit 0, a
 	jr z, .asm_4500
 	ld hl, wd9f4
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	cp [hl]
 	ret nc
 	add $0A
@@ -551,15 +551,15 @@ Func_039_4469::
 	jr z, .asm_44f4
 	ret nc
 .asm_44f4
-	ld [wd9d3], a
+	ld [wItemQty], a
 	call .asm_45a0
 	and a
 	jp z, .asm_4533
 	jr .asm_4514
 .asm_4500
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	add $0A
-	ld [wd9d3], a
+	ld [wItemQty], a
 	cp $64
 	jr nc, .asm_4514
 	call Func_039_45db
@@ -567,26 +567,26 @@ Func_039_4469::
 	jr nz, .asm_4514
 	jr .asm_4533
 .asm_4514
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	sub $0A
-	ld [wd9d3], a
+	ld [wItemQty], a
 	ret
 .asm_451d
 	ldh a, [hJoypadPressed]
 	bit 5, a
 	jr z, .asm_4558
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	cp $0A
 	ret c
 	sub $0A
-	ld [wd9d3], a
+	ld [wItemQty], a
 	call Func_039_45db
 	jr .asm_4533
 .asm_4533
 	ld a, SFX_11
 	call PlaySound
 	ld hl, $99EB
-	ld de, wd9d3
+	ld de, wItemQty
 	ld a, $13
 	ld [wd8fe], a
 	ld a, $01
@@ -770,9 +770,9 @@ Func_039_462f::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
-	ld [hl], LOW(asm_039_479f.Data)
+	ld [hl], LOW(AddItemToBag.Data)
 	inc hl
-	ld [hl], HIGH(asm_039_479f.Data)
+	ld [hl], HIGH(AddItemToBag.Data)
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01
@@ -791,9 +791,9 @@ Func_039_462f::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
-	ld [hl], LOW(asm_039_479f.Data)
+	ld [hl], LOW(AddItemToBag.Data)
 	inc hl
-	ld [hl], HIGH(asm_039_479f.Data)
+	ld [hl], HIGH(AddItemToBag.Data)
 	xor a
 	ld [wBattleScriptByte], a
 	ld a, $01
@@ -840,7 +840,7 @@ Func_039_462f::
 	call Func_039_485c
 	call Func_039_4430
 	inc hl
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	ld b, a
 	ld a, [hl]
 	sub b
@@ -853,7 +853,7 @@ Func_039_462f::
 	ret
 .asm_4749
 	ld de, Func_039_4782
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -900,7 +900,7 @@ Func_039_4781::
 	ret
 Func_039_4782::
 	ld a, b
-	jr z, asm_039_479f.asm_47b2
+	jr z, AddItemToBag.asm_47b2
 Func_039_4785::
 	ld hl, wMathScratch + 2
 	ld a, [wMoney + 2]
@@ -914,11 +914,14 @@ Func_039_4785::
 	ld a, [wMoney]
 	sbc [hl]
 	ld [wMoney], a
-asm_039_479f::
-	ld a, [wd1f4]
+; Adds wItemQty of item wCurItemID to the bag array for category wItemCategory
+; (wItemBag/wEquipmentBag/wKeyItemBag via .Bags). The universal item-grant primitive: the shop buy
+; path, the giveitem script op, and the "grant-on-name" loaders all land here.
+AddItemToBag::
+	ld a, [wItemCategory]
 	cp $02
 	jr nz, .asm_47c6
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $20
 	jr nz, .asm_47b7
 	ld a, [wEventFlags + $10]
@@ -927,15 +930,15 @@ asm_039_479f::
 	ld [wEventFlags + $10], a
 	jr .asm_47c6
 .asm_47b7
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $02
 	jr nz, .asm_47c6
 	ld a, [wEventFlags + 1]
 	set 3, a
 	ld [wEventFlags + 1], a
 .asm_47c6
-	ld de, .Pointers
-	ld a, [wd1f4]
+	ld de, .Bags
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -943,7 +946,7 @@ asm_039_479f::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld b, a
 .asm_47d8
 	ld a, [hl]
@@ -957,16 +960,16 @@ asm_039_479f::
 .asm_47e3
 	ld [hl], b
 	inc hl
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	add [hl]
 	ld [hl], a
 	cp $64
 	ret c
 	ld [hl], $63
 	sub $63
-	ld [wd9d3], a
-	ld de, .Pointers
-	ld a, [wd1f4]
+	ld [wItemQty], a
+	ld de, .Bags
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -974,7 +977,7 @@ asm_039_479f::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld b, a
 .asm_4806
 	ld a, [hl]
@@ -986,14 +989,14 @@ asm_039_479f::
 .asm_480e
 	ld [hl], b
 	inc hl
-	ld a, [wd9d3]
+	ld a, [wItemQty]
 	ld [hl], a
 	ret
 
-.Pointers
-	dw wd300
-	dw wddb0
-	dw wd284
+.Bags
+	dw wItemBag
+	dw wEquipmentBag
+	dw wKeyItemBag
 .Data
 ; TODO: unidentified data ($481b-$485b)
 	db $3D, $00, $04, $80, $8A, $02, $04, $00, $93, $75, $25, $74, $41, $02, $0C, $00
@@ -1047,7 +1050,7 @@ Func_039_4892::
 	xor a
 	ld [hFFC6], a
 	ldh [hFFC5], a
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld [wSelectedPage], a
 	ld [wSelectedOption], a
 	ld [wTextboxPos], a
@@ -1731,7 +1734,7 @@ Func_039_4deb::
 	ret z
 	push bc
 	ld d, a
-	ld hl, wddb0
+	ld hl, wEquipmentBag
 	ld bc, $0002
 	ld e, $28
 .asm_4e45
@@ -2658,7 +2661,7 @@ Func_039_5522::
 	ld a, SFX_11
 	call PlaySound
 	ld a, b
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	call Func_039_4879
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -2808,13 +2811,13 @@ Func_039_56de::
 	ld bc, $017C
 	call CopyBytes3
 	ld de, wdca0
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
 	add hl, de
 	ld a, [hl]
 	ld [wMonBoxCount], a
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	sla a
 	add $A9
 	ld h, a
@@ -2822,7 +2825,7 @@ Func_039_56de::
 	ld de, wMonBox
 	ld bc, $017C
 	call CopyBytes3
-	ld a, [wd1f4]
+	ld a, [wItemCategory]
 	ld [wdc9d], a
 	xor a
 	ld [rRAMG], a

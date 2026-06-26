@@ -84,14 +84,14 @@ Func_02b_402b::
 	ret
 
 Func_02b_4098::
-	call Func_02b_5651
+	call CalcMoveDamage
 	call Func_02b_5ef2
 
 Func_02b_409e::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .enemy_only
 
@@ -152,7 +152,7 @@ Func_02b_409e::
 	ret
 
 .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .player
 
@@ -225,10 +225,10 @@ Func_02b_409e::
 	ret
 
 Func_02b_419d::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .enemy_only
 
@@ -269,7 +269,7 @@ Func_02b_419d::
 	ret
 
 .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .player
 
@@ -566,7 +566,7 @@ BattleEnd_Jump_1::
 	farcall Func_02e_4000
 	call Func_02b_4b5b
 	call Func_02b_4b7a
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr z, Func_02b_43f0
 	ld a, [wd9dc]
@@ -586,7 +586,7 @@ Func_02b_43f0::
 	ret
 
 Func_02b_4409::
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, Func_02b_4454
 	ld a, BGM_MONSTER_FAINTED
@@ -598,8 +598,8 @@ Func_02b_4409::
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
 	ld a, $57
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ret
@@ -612,8 +612,8 @@ Func_02b_4436::
 	ld a, GAMEMODE_GAME_OVER
 	ld [wTargetMode], a
 	ld a, $57
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ret
@@ -627,8 +627,8 @@ Func_02b_4454::
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
 	ld a, $29
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ld a, [wd9ea]
@@ -639,8 +639,8 @@ Func_02b_4454::
 	jp nz, Func_02b_4519
 	call Func_02b_453a
 	ld a, $2b
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ld a, BGM_EXP_JINGLE
@@ -650,8 +650,8 @@ Func_02b_4454::
 	ld a, [wMathScratch + 3]
 	ld [wd9ce], a
 	ld a, $2c
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	call AddMoney
@@ -1024,31 +1024,31 @@ Func_02b_4b4e::
 	ret
 
 Func_02b_4b5b::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .clear
 	jr .set
 
 .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .set
 
 .clear
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ret
 
 .set
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ret
 
 Func_02b_4b7a::
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	ret z
 	ld de, wdb00
@@ -1088,7 +1088,7 @@ Func_02b_4b7a::
 	ret
 
 Func_02b_4bb7::
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jp nz, .next_enemy
 	ld a, [wd981]
@@ -1390,13 +1390,13 @@ BattleTurns_Jump_9::
 	cp 1
 	jr nz, .check_action
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $31
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	ld a, 1
 	ld [wd98a], a
 	ret
@@ -1408,16 +1408,16 @@ BattleTurns_Jump_9::
 	xor a
 	ld [wdcaf], a
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	ld a, 1
 	ld [wd98a], a
 	ld a, 3
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	xor a
-	ld [wd9b5], a
-	ld [wd98b], a
+	ld [wMoveTargetsEnemy], a
+	ld [wBattleAnimStep], a
 	ret
 
 BattleTurns_Jump_1::
@@ -1503,12 +1503,12 @@ BattleTurns_Jump_2::
 
 .enemy
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	jr .done
 
 .player
 	xor a
-	ld [wd986], a
+	ld [wBattleTurn], a
 	jr .done
 
 .ai
@@ -1523,7 +1523,7 @@ BattleTurns_Jump_2::
 	ld [wd9d7], a
 	farcall Func_025_4101
 	ld a, 1
-	ld [wd986], a
+	ld [wBattleTurn], a
 	ld a, [wd9ea]
 	cp 2
 	jr z, .done
@@ -1533,7 +1533,7 @@ BattleTurns_Jump_2::
 	cp b
 	jr nc, .done
 	xor a
-	ld [wd986], a
+	ld [wBattleTurn], a
 
 .done
 	call Func_02b_4f7b
@@ -1547,7 +1547,7 @@ Func_02b_4f38::
 	ld a, [wd9ea]
 	and a
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd9b4]
@@ -1562,12 +1562,12 @@ Func_02b_4f38::
 
 .trigger
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $3f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .clear_enemy
 	xor a
@@ -1580,7 +1580,7 @@ Func_02b_4f38::
 
 .finish
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 5
 	ld [wd9af], a
 	xor a
@@ -1588,7 +1588,7 @@ Func_02b_4f38::
 	ret
 
 Func_02b_4f7b::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd984]
@@ -1624,7 +1624,7 @@ Func_02b_4f7b::
 	ret
 
 Func_02b_4fb7::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd984]
@@ -1654,7 +1654,7 @@ Func_02b_4fb7::
 	ret
 
 Func_02b_4fe4::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd984]
@@ -1695,20 +1695,20 @@ Func_02b_4fe4::
 
 Func_02b_502a::
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	xor a
 	ld [wd9d7], a
 	farcall Func_025_40d9
 	ld a, $19
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	jr Func_02b_5044
 
 Func_02b_503f::
 	ld a, $18
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 
 Func_02b_5044::
-	farcall Func_02d_4000
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	xor a
@@ -1737,7 +1737,7 @@ Func_02b_5074::
 	and 3
 	jr nz, .recover
 	ld a, $1e
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -1747,13 +1747,13 @@ Func_02b_5074::
 	res 1, a
 	ld [hl], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $1e
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 5
 	ld [wd9af], a
 	xor a
@@ -1762,8 +1762,8 @@ Func_02b_5074::
 
 Func_02b_50a9::
 	xor a
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	ld a, 2
 	ld [wd9af], a
 	call GetStatByte
@@ -1787,7 +1787,7 @@ Func_02b_50a9::
 	xor a
 	ld [wd9b1], a
 	ld de, wd9ba
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1804,8 +1804,8 @@ Func_02b_50a9::
 .play
 	call Func_02b_409e
 	ld a, $1a
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ret
@@ -1816,9 +1816,9 @@ Func_02b_5113::
 	and 3
 	jr z, .recover
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $25
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -1828,12 +1828,12 @@ Func_02b_5113::
 	res 4, a
 	ld [hl], a
 	ld a, $26
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	xor a
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	ld a, 5
 	ld [wd9af], a
 	xor a
@@ -1850,7 +1850,7 @@ Func_02b_514b::
 	and 1
 	push af
 	ld de, wd996
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1864,7 +1864,7 @@ Func_02b_514b::
 	res 5, a
 	ld [hl], a
 	ld de, wd996
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1872,7 +1872,7 @@ Func_02b_514b::
 	ret
 
 Func_02b_517d::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .enemy
 	ld a, [wd981]
@@ -1894,17 +1894,17 @@ Func_02b_517d::
 	res 7, a
 	ld [hl], a
 	ld a, $24
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 6
 	ld [wBattleIntroJumptableIndex], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 BattleTurns_Jump_3::
 	call BattleAI_ChooseAction
 	ld de, wd9f5
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1914,8 +1914,8 @@ BattleTurns_Jump_3::
 	cp 1
 	jr z, .flee
 	ld a, $4f
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	ld a, 5
 	ldh [hBattleJumptableIndex], a
@@ -1925,15 +1925,15 @@ BattleTurns_Jump_3::
 
 .flee
 	ld a, $50
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Func_02b_5578
 	ret
 
 .status
 	ld de, wd996
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1941,9 +1941,9 @@ BattleTurns_Jump_3::
 	and a
 	jr z, .check_swap
 	ld a, $23
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld de, wd9e2
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, 0
 	add hl, de
@@ -1954,11 +1954,11 @@ BattleTurns_Jump_3::
 	ld a, [wd9ea]
 	cp 2
 	jr nz, .random
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .random
 	ld a, $30
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	jr .commit
 
 .random
@@ -1966,18 +1966,18 @@ BattleTurns_Jump_3::
 	ld a, [wd991]
 	and 3
 	add $a
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 
 .commit
 	xor a
-	ld [wd9b5], a
-	farcall Func_02d_4000
+	ld [wMoveTargetsEnemy], a
+	farcall ShowBattleMessage
 	ld a, 3
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
 BattleTurns_Jump_8::
-	farcall Func_02d_4000
+	farcall ShowBattleMessage
 	call DelayFrame
 	ld a, [wBattleScriptPos]
 	ld e, a
@@ -2000,7 +2000,7 @@ BattleTurns_Jump_4::
 	ret
 
 BattleAI_ChooseAction::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	ret nz
 	ld a, [wd9b9]
@@ -2009,7 +2009,7 @@ BattleAI_ChooseAction::
 	ld a, 5
 	ld [wd9af], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	call GetStatTile
 	and a
 	ret nz
@@ -2408,15 +2408,15 @@ BattleTurns_Jump_5::
 	ld de, $8680
 	ld bc, $80
 	call CopyBytesVRAM
-	farcall Func_030_4000
+	farcall ExecuteMoveEffect
 
 BattleTurns_Jump_7::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	and a
 	jr nz, EndBattleTurn
 
 Func_02b_555f::
-	farcall Func_02d_4000
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Func_02b_5e0f
 	ldh a, [hBattleJumptableIndex]
@@ -2437,7 +2437,7 @@ Func_02b_5578::
 	ld a, [hBattleJumptableIndex]
 	cp 5
 	ret z
-	ld hl, wd986
+	ld hl, wBattleTurn
 	ld a, 1
 	sub [hl]
 	ld [hl], a
@@ -2480,7 +2480,7 @@ Wait32Frames::
 	ret
 
 BattleTurns_Jump_6::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp 1
 	jp z, Func_02b_5628
 	cp 2
@@ -2513,12 +2513,12 @@ Func_02b_55f7::
 	ret
 
 Func_02b_5611::
-	farcall Func_02d_4000
+	farcall ShowBattleMessage
 	call Wait32Frames
 	xor a
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, 5
 	ldh [hBattleJumptableIndex], a
 	ret
@@ -2526,47 +2526,47 @@ Func_02b_5611::
 Func_02b_5628::
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_5809
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, 1
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $1b
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	jp ReturnToBattleMenu
 
 
-Func_02b_5651::
+CalcMoveDamage::
 	ld a, [wd9c7]
 	and a
-	jr nz, Func_02b_565f
+	jr nz, ComputeMoveDamage
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ret
 
-Func_02b_565f::
-	call Func_02b_591e
-	ld hl, wd9c5
-	ld a, [wd9c3]
+ComputeMoveDamage::
+	call ComputeDamageStats
+	ld hl, wAttackerStatHi
+	ld a, [wDefenderStatHi]
 	cp [hl]
 	jr c, .compute
 	dec hl
-	ld a, [wd9c2]
+	ld a, [wDefenderStatLo]
 	cp [hl]
 	jr c, .compute
-	call Func_02b_5884
+	call ComputeMoveDamage_Alt
 	jr .store
 
 .compute
-	call Func_02b_5912
+	call GetMovePower
 	ldh [hMathOperand], a
-	ld a, [wd9c4]
+	ld a, [wAttackerStatLo]
 	ldh [hMathValue], a
-	ld a, [wd9c5]
+	ld a, [wAttackerStatHi]
 	ldh [hMathValue + 1], a
 	xor a
 	ldh [hMathValue + 2], a
@@ -2574,7 +2574,7 @@ Func_02b_565f::
 	ld a, $64
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
-	call Func_02b_58df
+	call GetStatStageDamageMultiplier
 	ldh [hMathOperand], a
 	farcall Multiply32By8
 	ld a, $64
@@ -2590,7 +2590,7 @@ Func_02b_565f::
 	push af
 	ldh a, [hMathValue + 1]
 	push af
-	call Func_02b_57bf
+	call GetStatDeltaDamageFactor
 	ldh [hMathOperand], a
 	pop af
 	ldh [hMathValue + 1], a
@@ -2613,7 +2613,7 @@ Func_02b_565f::
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
-	call Func_02b_5712
+	call ApplyCriticalHit
 	ret
 
 .low_byte
@@ -2626,16 +2626,16 @@ Func_02b_565f::
 	ret
 
 .nonzero
-	call Func_02b_5712
+	call ApplyCriticalHit
 	ret
 
-Func_02b_5712::
+ApplyCriticalHit::
 	ld a, [wBattleAnimID]
 	cp 4
 	ret z
 	call AdvanceRNG
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 9
 	ld [wd9af], a
 	call GetStatTile
@@ -2653,8 +2653,8 @@ Func_02b_5712::
 
 .crit
 	ld a, $27
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ld a, [wd9b0]
@@ -2674,11 +2674,11 @@ Func_02b_5712::
 	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	ld a, $14
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
-Func_02b_577c::
-	ld a, [wd3ff]
+SetEffectivenessIndicator::
+	ld a, [wBattleMessageID]
 	and a
 	ret nz
 	ld a, [wd9c7]
@@ -2697,44 +2697,44 @@ Func_02b_577c::
 
 .grade0
 	ld a, $13
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .grade14
 	ld a, $14
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .grade0f
 	ld a, $15
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .grade5
 	ld a, $16
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .grade2
 	ld a, $17
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .grade0a
 	ld a, $35
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
-Func_02b_57bf::
-	ld a, [wd9c2]
+GetStatDeltaDamageFactor::
+	ld a, [wDefenderStatLo]
 	ld c, a
-	ld a, [wd9c3]
+	ld a, [wDefenderStatHi]
 	ld b, a
-	ld a, [wd9c4]
+	ld a, [wAttackerStatLo]
 	sub c
 	ld l, a
 	ldh [hMathValue], a
-	ld a, [wd9c5]
+	ld a, [wAttackerStatHi]
 	sbc b
 	ld h, a
 	ldh [hMathValue + 1], a
@@ -2742,7 +2742,7 @@ Func_02b_57bf::
 	ldh [hMathValue + 2], a
 	ld de, StatValueToGrade - 1
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 1
 	ld [wd9af], a
 	call GetStatByte
@@ -2896,12 +2896,12 @@ StatValueToGrade::
 	db $15
 	db $15
 
-Func_02b_5884::
-	call Func_02b_5912
+ComputeMoveDamage_Alt::
+	call GetMovePower
 	ldh [hMathOperand], a
-	ld a, [wd9c2]
+	ld a, [wDefenderStatLo]
 	ldh [hMathValue], a
-	ld a, [wd9c3]
+	ld a, [wDefenderStatHi]
 	ldh [hMathValue + 1], a
 	xor a
 	ldh [hMathValue + 2], a
@@ -2913,14 +2913,14 @@ Func_02b_5884::
 	ld c, a
 	ldh a, [hMathValue + 1]
 	ld b, a
-	ld a, [wd9c2]
+	ld a, [wDefenderStatLo]
 	ld l, a
-	ld a, [wd9c3]
+	ld a, [wDefenderStatHi]
 	ld h, a
 	add hl, bc
-	ld a, [wd9c4]
+	ld a, [wAttackerStatLo]
 	ld c, a
-	ld a, [wd9c5]
+	ld a, [wAttackerStatHi]
 	ld b, a
 	ld a, l
 	sub c
@@ -2938,28 +2938,28 @@ Func_02b_5884::
 	farcall Divide32By16_4Digit
 	ret
 
-Func_02b_58df::
+GetStatStageDamageMultiplier::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld [wd9af], a
 	call GetStatByte
 	ld c, a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 1
 	ld [wd9af], a
 	call GetStatByte
 	cp c
 	jr c, .descending
 	sub c
-	ld de, unk_02b_7619 + $a
+	ld de, DamageStageMultiplier_Up + $a
 	jr .clamp
 
 .descending
 	ld b, a
 	ld a, c
 	sub b
-	ld de, unk_02b_7638
+	ld de, DamageStageMultiplier_Down
 
 .clamp
 	cp $14
@@ -2975,8 +2975,8 @@ Func_02b_58df::
 	
 	ret
 
-Func_02b_5912::
-	ld de, BattleAnimTable_02b_7594
+GetMovePower::
+	ld de, MovePower
 	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, 0
@@ -2984,15 +2984,15 @@ Func_02b_5912::
 	ld a, [hl]
 	ret
 
-Func_02b_591e::
+ComputeDamageStats::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 1
 	ld [wd9d7], a
 	farcall Func_025_40d9
 	xor a
 	ld [wd9af], a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ldh [hMathValue + 2], a
 	call GetStatTile
 	ldh [hMathOperand], a
@@ -3003,18 +3003,18 @@ Func_02b_591e::
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 	ldh a, [hMathValue]
-	ld [wd9c2], a
+	ld [wDefenderStatLo], a
 	ldh a, [hMathValue + 1]
-	ld [wd9c3], a
+	ld [wDefenderStatHi], a
 	ld a, 2
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 2
 	ld a, 5
 	ld [wd9d7], a
 	farcall Func_025_40d9
 	ld a, 1
 	ld [wd9af], a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	xor a
 	ldh [hMathValue + 2], a
 	call GetStatTile
@@ -3024,13 +3024,13 @@ Func_02b_591e::
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
 	ldh a, [hMathValue]
-	ld [wd9c4], a
+	ld [wAttackerStatLo], a
 	ldh a, [hMathValue + 1]
-	ld [wd9c5], a
+	ld [wAttackerStatHi], a
 	ret
 
 Func_02b_5998::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .player
 	ld a, [wd984]
@@ -3079,7 +3079,7 @@ Func_02b_5998::
 	ret
 
 Func_02b_59df::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd984]
@@ -3142,17 +3142,17 @@ StatTypeRemap::
 
 Func_02b_5a30::
 	xor a
-	ld [wd98b], a
-	call Func_02b_5651
+	ld [wBattleAnimStep], a
+	call CalcMoveDamage
 
 Func_02b_5a37::
 	call Func_02b_5ef2
 	xor a
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jp nz, Func_02b_5aed
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jp nz, Func_02b_5af4
 
@@ -3248,7 +3248,7 @@ asm_02b_5ae1::
 	jp Func_02b_555f
 
 Func_02b_5aed::
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jp nz, Func_02b_5a4c
 
@@ -3348,43 +3348,43 @@ Func_02b_5b82::
 	cp 5
 	jr nc, .dmg05
 	ld a, $17
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .none
 	ld a, $13
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .dmg05
 	ld a, $16
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .dmg0a
 	ld a, $35
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .dmg14
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .dmg1e
 	ld a, $15
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 .dmg28
 	ld a, $14
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_02b_5bc9::
 	ld a, $2e
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	ld a, [wd99a]
 	ld [wd9b0], a
@@ -3392,22 +3392,22 @@ Func_02b_5bc9::
 	ld [wd9b1], a
 	call Func_02b_5eb7
 	ld a, 1
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call Func_02b_419d
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ld a, $2f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_02b_5bfb::
 	xor a
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .enemy_only
 
@@ -3448,7 +3448,7 @@ Func_02b_5bfb::
 	jp Func_02b_5b4b
 
 .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .player
 
@@ -3522,7 +3522,7 @@ Func_02b_5ccd::
 	ret
 
 Func_02b_5cce::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .player
 	call Func_02b_4374
@@ -3545,7 +3545,7 @@ Func_02b_5cce::
 
 .got_actor
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld bc, $14
 	add hl, bc
 	ld a, [hl]
@@ -3574,8 +3574,8 @@ Func_02b_5d28::
 	push hl
 	ld [wd9e9], a
 	ld a, $2e
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Func_02b_5d7e
 	ld a, [wd99a]
@@ -3592,24 +3592,24 @@ Func_02b_5d28::
 	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call Func_02b_419d
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ld a, $40
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	pop hl
 	pop af
 	ret
 
 Func_02b_5d7e::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .alt
 
@@ -3618,7 +3618,7 @@ Func_02b_5d7e::
 	ret
 
 .enemy
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .player
 
@@ -3665,21 +3665,21 @@ Func_02b_5d98::
 
 Func_02b_5ddd::
 	ld a, $2e
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call Func_02b_419d
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ld a, $40
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	pop hl
 	ld [hl], 0
 	pop af
-	farcall Func_02d_4000
+	farcall ShowBattleMessage
 	call Wait32Frames
 	ret
 
@@ -3690,7 +3690,7 @@ Func_02b_5e0c::
 
 Func_02b_5e0f::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	call GetStatTile
@@ -3706,7 +3706,7 @@ Func_02b_5e0f::
 
 Func_02b_5e31::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -3718,7 +3718,7 @@ Func_02b_5e31::
 
 Func_02b_5e48::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -3730,7 +3730,7 @@ Func_02b_5e48::
 
 Func_02b_5e5f::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -3751,14 +3751,14 @@ Func_02b_5e73::
 Func_02b_5e82::
 	call Func_02b_5eb7
 	ld a, 1
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call Func_02b_419d
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ld a, $40
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ret
@@ -3809,7 +3809,7 @@ Func_02b_5eb7::
 
 Func_02b_5ef2::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	call GetStatTile
@@ -3835,7 +3835,7 @@ Func_02b_5ef2::
 
 Func_02b_5f2d::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	xor a
 	ld [wd9af], a
 	ld a, $ff
@@ -3852,7 +3852,7 @@ Func_02b_5f46::
 	ld a, [wd9b1]
 	ld b, a
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 6
 	ld [wd9af], a
 	call GetStatTile
@@ -3874,7 +3874,7 @@ Func_02b_5f46::
 
 Func_02b_5f79::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -3914,29 +3914,29 @@ Func_02b_5f79::
 
 Func_02b_5fc1::
 	ld a, $5b
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	ld a, $a
 	ld [wd9c7], a
 	ld a, $63
 	ld [wBattleAnimID], a
 	ld a, 1
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call Func_02b_4098
 	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call Func_02b_419d
 	ret
 
 Func_02b_5ff2::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 5
 	ld [wd9af], a
 	call GetStatTile
@@ -3951,7 +3951,7 @@ Func_02b_5ff2::
 	ld [wd9af], a
 	xor a
 	call SetStatTile
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd9c9]
@@ -3976,12 +3976,12 @@ Func_02b_6040::
 	ld [wBattleAnimID], a
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_57ae
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -3992,21 +3992,21 @@ Func_02b_6066::
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ld a, $13
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, 1
 	ld [hFFC6], a
 	xor a
 	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
 	ret
 
 Func_02b_608b::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 5
 	ld [wd9af], a
 	call GetStatTile
@@ -4021,7 +4021,7 @@ Func_02b_608b::
 	ld [wd9af], a
 	xor a
 	call SetStatTile
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	xor a
@@ -4056,7 +4056,7 @@ Func_02b_60e4::
 
 Func_02b_60f7::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 5
 	ld [wd9af], a
 	call GetStatTile
@@ -4072,7 +4072,7 @@ Func_02b_60f7::
 
 .active
 	call SetStatTile
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
 	ld a, [wd9e2]
@@ -4086,7 +4086,7 @@ Func_02b_60f7::
 
 Func_02b_612c::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	xor a
@@ -4098,15 +4098,15 @@ Func_02b_612c::
 	ld [wd9b0], a
 	ld [wd9b1], a
 	ld a, $22
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
 	ret
 
 Func_02b_6159::
 	ld a, 1
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, 5
 	ld [wd9af], a
 	call GetStatTile

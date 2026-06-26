@@ -47,8 +47,8 @@ Script_00e_46ce::
 	delay $03, $20
 	stext text_0e_6a00
 	stext text_0e_6a52
-	listdec $02, $02
-	scr_48 $02, $03
+	takeitem ITEMNAMECAT_KEY, KEYITEM_02
+	giveitem ITEMNAMECAT_KEY, KEYITEM_03
 	setbit wEventFlags + 1, $04
 	end
 
@@ -135,8 +135,8 @@ Script_00e_47ef::
 	fadein
 	stext text_0e_7217
 	stext text_0e_726f
-	listdec $02, $04
-	scr_48 $02, $05
+	takeitem ITEMNAMECAT_KEY, KEYITEM_04
+	giveitem ITEMNAMECAT_KEY, KEYITEM_05
 	setbit wEventFlags + 2, $03
 	end
 

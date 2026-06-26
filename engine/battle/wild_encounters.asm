@@ -49,7 +49,7 @@ Func_02d_50b3::
 .skip
 	call Func_02d_510c
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld e, l
 	ld d, h
 	ld bc, wd876
@@ -58,7 +58,7 @@ Func_02d_50b3::
 	call Func_02d_5147
 	push bc
 	ld bc, wdb00
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -74,15 +74,15 @@ ENDR
 	add hl, bc
 	push hl
 	pop bc
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, [wd9bf]
 	dec a
 	ld [wd9bf], a
 	jr nz, .loop
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call DelayFrame
 	call Func_02d_51ba
 	ret

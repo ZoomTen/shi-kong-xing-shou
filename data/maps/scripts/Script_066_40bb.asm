@@ -28,7 +28,7 @@ Script_066_40d5::
 	clearobject $02
 	face FACE_LEFT
 	stext text_66_5f11
-	scr_48 $02, $19
+	giveitem ITEMNAMECAT_KEY, KEYITEM_19
 	clearobject $03
 	setbit wEventFlags + 15, $02
 	face FACE_RIGHT
@@ -36,7 +36,7 @@ Script_066_40d5::
 	delay $03, $20
 	stext text_66_5f21
 	stext text_66_5f5b
-	scr_48 $02, $1a
+	giveitem ITEMNAMECAT_KEY, KEYITEM_1a
 	clearobject $04
 	setbit wEventFlags + 16, $02
 	setbit wEventFlags + 17, $00

@@ -377,7 +377,7 @@ wTileAnimFrameCounters:: ds 1
 wd1f1:: ds 1
 wd1f2:: ds 1
 wd1f3:: ds 1
-wd1f4:: ds 1
+wItemCategory:: ds 1
 
 wd1f5:: ds 1
 wd1f6:: ds 1
@@ -389,7 +389,7 @@ wd1fa:: ds 1
 wVirtualOAMPtr:: ds 1
 wd1fc:: ds 1
 wd1fd:: ds 1
-; copy of the unk_00b_5192[wd1f4] list pointer (set/used by Script_4d/Script_59)
+; copy of the unk_00b_5192[wItemCategory] list pointer (set/used by Script_4d/Script_59)
 wd1fe:: ds 1
 wd1ff:: ds 1
 
@@ -401,10 +401,10 @@ wPartyMon4:: party_struct wPartyMon4
 wPartyMon5:: party_struct wPartyMon5
 wPartyMon6:: party_struct wPartyMon6
 
-wd284:: ds $7c
+wKeyItemBag:: ds $7c
 
 ; Items (ID, Quantity)
-wd300:: ds $f0
+wItemBag:: ds $f0
 wd3f0:: ds 1
 wd3f1:: ds 1
 wd3f2:: ds 1
@@ -422,7 +422,7 @@ wEastFacingTile::  ds 1 ; FACE_RIGHT
 
 wd3f9:: ds 5
 wBattleIntroJumptableIndex:: ds 1
-wd3ff:: ds 1
+wBattleMessageID:: ds 1
 
 ; sound engine
 wd400:: ds 1
@@ -551,12 +551,12 @@ wd983:: ds 1
 wEnemyMonPtr:: ; pointer to wEnemyMon
 wd984:: ds 1
 wd985:: ds 1
-wd986:: ds 1
+wBattleTurn:: ds 1 ; 0 = player, 1 = enemy
 wd987:: ds 1
 wBattleAnimID:: ds 1
 wBattleState:: ds 1
 wd98a:: ds 1
-wd98b:: ds 1
+wBattleAnimStep:: ds 1
 wd98c:: ds 1
 wd98d:: ds 1
 wd98e:: ds 1
@@ -593,10 +593,10 @@ wd9af:: ds 1
 wd9b0:: ds 1
 wd9b1:: ds 1
 
-wd9b2:: ds 1
+wSideSelect:: ds 1 ; boolean battler selector; stat code XORs w/ wBattleTurn (0=defender,1=attacker), faint code 0=player/1=enemy
 wd9b3:: ds 1
 wd9b4:: ds 1
-wd9b5:: ds 1
+wMoveTargetsEnemy:: ds 1
 wd9b6:: ds 2
 wd9b8:: ds 1
 wd9b9:: ds 1
@@ -608,10 +608,10 @@ wBattleMusic:: ds 1
 wd9bf:: ds 1
 
 wCharacterTileSrc:: ds 2
-wd9c2:: ds 1
-wd9c3:: ds 1
-wd9c4:: ds 1
-wd9c5:: ds 1
+wDefenderStatLo:: ds 1
+wDefenderStatHi:: ds 1
+wAttackerStatLo:: ds 1
+wAttackerStatHi:: ds 1
 	ds 1
 wd9c7:: ds 1
 wd9c8:: ds 1
@@ -627,7 +627,7 @@ wd9cf:: ds 1
 wd9d0:: ds 1
 wd9d1:: ds 1
 wd9d2:: ds 1
-wd9d3:: ds 1
+wItemQty:: ds 1
 wd9d4:: ds 1
 wd9d5:: ds 1
 
@@ -660,7 +660,7 @@ wd9ef:: ds 1
 wTempBank:: ds 1
 wBattleScriptBank:: ds 1
 wd9f2:: ds 1
-wd9f3:: ds 1
+wCurItemID:: ds 1
 wd9f4:: ds 1
 wd9f5:: ds 1
 wd9f6:: ds 1
@@ -815,7 +815,7 @@ wCharVariantFlags:: ds $38
 wdd50:: ds 1
 	ds $5f
 
-wddb0:: ds $50
+wEquipmentBag:: ds $50
 
 wde00:: ds $16
 wde16:: ds $16

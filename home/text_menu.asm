@@ -112,7 +112,7 @@ MenuText_ec::
 	jp Menu_CheckCharacter
 
 MenuText_e6::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_0c22
 	ld a, [wd9e2]
@@ -137,7 +137,7 @@ MenuText_e5::
 	jp Menu_CheckCharacter
 
 MenuText_e8::
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	ld d, a
 	farcall PrintItemName
 	pop hl

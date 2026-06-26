@@ -49,7 +49,7 @@ Script_058_45c3::
 	checkbit wEventFlags + 11, $06, Script_058_45d7
 	textface text_58_5ea9
 	stext text_58_5ef8
-	scr_48 $00, $17
+	giveitem ITEMNAMECAT_ITEM, ITEM_17
 	setbit wEventFlags + 11, $06
 	end
 

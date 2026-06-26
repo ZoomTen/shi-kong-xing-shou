@@ -198,7 +198,7 @@ Script_012_44db::
 	spriteface  3, FACE_UP
 	face FACE_UP
 	stext text_12_6898
-	listdec $02, $08
+	takeitem ITEMNAMECAT_KEY, KEYITEM_08
 	spriteface  2, FACE_LEFT
 	spriteface  2, FACE_LEFT
 	spriteface  2, FACE_LEFT

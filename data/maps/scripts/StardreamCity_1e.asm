@@ -32,7 +32,7 @@ Script_066_438b::
 	checkbit wEventFlags + 16, $07, Script_066_439f
 	textface text_66_6ffe
 	stext text_66_7044
-	scr_48 $02, $22
+	giveitem ITEMNAMECAT_KEY, KEYITEM_22
 	setbit wEventFlags + 16, $07
 	end
 

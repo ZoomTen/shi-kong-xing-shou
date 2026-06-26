@@ -159,7 +159,7 @@ Script_055_5721::
 	objmove $02, MovementData_055_7d36
 	clearobject $02
 	stext text_55_6f0b
-	scr_48 $02, $0f
+	giveitem ITEMNAMECAT_KEY, KEYITEM_0f
 	setbit wEventFlags + 8, $05
 	warpmode GAMEMODE_METEOR_CUTSCENE2, $24, $01
 	spriteface  3, FACE_UP

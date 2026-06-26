@@ -44,7 +44,7 @@ Script_05c_421d::
 	checkbit wEventFlags + 9, $00, Script_05c_4231
 	textface text_5c_4d57
 	stext text_5c_4d90
-	scr_48 $00, $11
+	giveitem ITEMNAMECAT_ITEM, ITEM_11
 	setbit wEventFlags + 9, $00
 	end
 

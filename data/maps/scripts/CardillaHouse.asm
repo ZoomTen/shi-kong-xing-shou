@@ -180,8 +180,8 @@ Script_066_487d::
 	stext text_66_6c21
 	stext text_66_6c6a
 	stext text_66_6c79
-	scr_48 $02, $1e
-	listdec $02, $1d
+	giveitem ITEMNAMECAT_KEY, KEYITEM_1e
+	takeitem ITEMNAMECAT_KEY, KEYITEM_1d
 	setbit wEventFlags + 16, $05
 	end
 

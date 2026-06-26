@@ -31,7 +31,7 @@ Script_058_4797::
 	stext text_58_588d
 	stext text_58_589d
 	stext text_58_58e8
-	scr_48 $02, $12
+	giveitem ITEMNAMECAT_KEY, KEYITEM_12
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $16, $01
 	spriteface  2, FACE_UP

@@ -37,10 +37,10 @@ SetStatTile::
 	push af
 	ld a, [wd9af]
 	ld b, a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_1197
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_119d
 
@@ -50,7 +50,7 @@ SetStatTile::
 	jr .asm_11a3
 
 .asm_1197
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_118f
 
@@ -81,10 +81,10 @@ GetStatTile::
 	push bc
 	ld a, [wd9af]
 	ld b, a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_11ce
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_11d4
 
@@ -94,7 +94,7 @@ GetStatTile::
 	jr .asm_11da
 
 .asm_11ce
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_11c6
 
@@ -125,11 +125,11 @@ AddStatTile::
 	push af
 	ld a, [wd9af]
 	ld b, a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_1205
 
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_120b
 
@@ -139,7 +139,7 @@ AddStatTile::
 	jr .asm_1211
 
 .asm_1205
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_11fd
 
@@ -222,11 +222,11 @@ GetStatByte::
 	ld a, [wd9af]
 	ld c, a
 	ld b, 0
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_127a
 
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_1280
 
@@ -238,7 +238,7 @@ GetStatByte::
 	jr .asm_1288
 
 .asm_127a
-	ld a, [wd9b2]
+	ld a, [wSideSelect]
 	and a
 	jr nz, .asm_1270
 

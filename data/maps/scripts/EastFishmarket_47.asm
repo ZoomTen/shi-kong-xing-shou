@@ -23,8 +23,8 @@ Script_05c_42c3::
 	checkbit wEventFlags + 12, $00, Script_05c_42da
 	textface text_5c_4f73
 	stext text_5c_4fd9
-	listdec $02, $13
-	scr_48 $00, $27
+	takeitem ITEMNAMECAT_KEY, KEYITEM_13
+	giveitem ITEMNAMECAT_ITEM, ITEM_27
 	setbit wEventFlags + 12, $00
 	end
 

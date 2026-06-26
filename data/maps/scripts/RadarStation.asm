@@ -23,7 +23,7 @@ Script_05a_44e5::
 	objmove $02, MovementData_05a_776a
 	clearobject $02 ; TEMP
 	stext text_5a_673a
-	scr_48 $02, $17
+	giveitem ITEMNAMECAT_KEY, KEYITEM_17
 	emote  0, EMOTE_QUESTION
 	delay $03, $20 ; TEMP
 	stext text_5a_674d

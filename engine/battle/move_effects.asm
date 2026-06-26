@@ -1,6 +1,6 @@
 ; Move-effect engine: effect dispatch, MoveEffectPointers, per-effect handlers, SetCaughtMon, and effect graphics.
-Func_030_4000::
-	ld a, [wd986]
+ExecuteMoveEffect::
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4018
 	ld a, [wd9ea]
@@ -10,7 +10,7 @@ Func_030_4000::
 	xor a
 	ld [wd9ea], a
 	ld de, Jumptable_030_4335
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	jr .asm_401e
 
 .asm_4018
@@ -27,16 +27,16 @@ Func_030_4000::
 	ld l, a
 	jp hl
 
-Func_030_4027::
-	call Func_030_4187
+RollMoveHit::
+	call CheckMoveCategoryGate
 	and a
 	jp nz, .asm_40ed
-	call Func_030_42ab
+	call ComputeTypeEffectiveness
 	ld a, [wd9c7]
 	and a
 	jp z, .asm_40ed
 	call AdvanceRNG
-	ld de, BattleAnimMoveParam_030_40f8
+	ld de, MoveAccuracy
 	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
@@ -127,19 +127,9 @@ Func_030_4027::
 	ld a, $01
 	ld [wd993], a
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimID
-BattleAnimMoveParam_030_40f8::
-	db $00, $4b, $64, $5f, $64, $5a, $55, $37, $64, $55, $64, $00, $00, $37, $64, $64
-	db $64, $00, $00, $64, $64, $4b, $64, $64, $00, $5f, $55, $00, $64, $37, $64, $64
-	db $64, $64, $1e, $3c, $00, $50, $00, $00, $00, $00, $5a, $64, $64, $64, $5a, $19
-	db $00, $5a, $64, $64, $64, $55, $64, $55, $4b, $50, $64, $64, $64, $64, $64, $32
-	db $64, $46, $64, $64, $50, $64, $50, $64, $64, $64, $55, $5a, $46, $64, $55, $55
-	db $4b, $41, $5a, $64, $64, $5a, $1e, $64, $4b, $64, $46, $55, $64, $64, $64, $64
-	db $64, $64, $5a, $50, $46, $4b, $46, $64, $5f, $64, $64, $50, $50, $3c, $64, $50
-	db $3c, $46, $64, $55, $50, $50, $5a, $00, $5a, $50, $00, $5a, $5f, $64, $64, $00
-	db $37, $55, $00, $4b, $28, $00, $00, $00, $00, $37, $00, $00, $00, $64, $64
-Func_030_4187::
-	ld de, BattleAnimMoveParam_030_4214
+INCLUDE "data/moves/accuracy.asm"
+CheckMoveCategoryGate::
+	ld de, MoveCategory
 	ld a, [wBattleAnimID]
 	ld l, a
 	ld h, $00
@@ -156,7 +146,7 @@ Func_030_4187::
 	ret
 .asm_41a1
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -170,7 +160,7 @@ Func_030_4187::
 	jr .asm_420f
 .asm_41bd
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -184,7 +174,7 @@ Func_030_4187::
 	jr .asm_420f
 .asm_41da
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -196,7 +186,7 @@ Func_030_4187::
 	and a
 	jr nz, .asm_4211
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -213,28 +203,17 @@ Func_030_4187::
 .asm_4211
 	ld a, $01
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimID
-BattleAnimMoveParam_030_4214::
-	db $00, $00, $01, $00, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $00
-	db $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $01, $00, $00, $01, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00, $01, $00, $02, $00, $00, $00, $00, $00, $00
-	db $00, $01, $00, $00, $00, $00, $02, $00, $00, $00, $00, $00, $00, $01, $00, $00
-	db $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $01, $00
-	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00, $00, $00, $00
+INCLUDE "data/moves/category.asm"
 
-Func_030_42ab::
+ComputeTypeEffectiveness::
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	xor a
 	ld [wd9af], a
 	call GetStatByte
 	ld d, a
 	farcall Func_01e_4284
-	ld de, Pointers_030_42db
+	ld de, TypeMatchupChart
 	ld a, [wd8ff]
 	ld l, a
 	ld h, $00
@@ -253,32 +232,7 @@ Func_030_42ab::
 	ld [wd9c7], a
 	ret
 
-Pointers_030_42db::
-	dw Pointers_030_42db_42ed
-	dw Pointers_030_42db_42ed
-	dw Pointers_030_42db_42f6
-	dw Pointers_030_42db_42ff
-	dw Pointers_030_42db_4308
-	dw Pointers_030_42db_4311
-	dw Pointers_030_42db_431a
-	dw Pointers_030_42db_4323
-	dw Pointers_030_42db_432c
-Pointers_030_42db_42ed::
-	db $0a, $08, $05, $0a, $0a, $0a, $0a, $0d, $0a
-Pointers_030_42db_42f6::
-	db $0a, $0d, $08, $05, $0a, $0a, $0a, $0a, $0a
-Pointers_030_42db_42ff::
-	db $0a, $0a, $0d, $08, $0a, $0a, $0a, $05, $0a
-Pointers_030_42db_4308::
-	db $0a, $0a, $0a, $0a, $08, $05, $0a, $0a, $0d
-Pointers_030_42db_4311::
-	db $0a, $0a, $0a, $0a, $0d, $08, $05, $0a, $0a
-Pointers_030_42db_431a::
-	db $0a, $0a, $0a, $0a, $0a, $0d, $08, $0a, $05
-Pointers_030_42db_4323::
-	db $0a, $05, $0a, $0d, $0a, $0a, $0a, $08, $0a
-Pointers_030_42db_432c::
-	db $0a, $0a, $0a, $0a, $05, $0a, $0d, $0a, $08
+INCLUDE "data/moves/type_matchup.asm"
 
 Jumptable_030_4335::
 	dw Func_030_4385
@@ -328,9 +282,9 @@ Func_030_4385::
 	jr nz, .asm_4395
 
 	ld a, $52
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 .asm_4395:
@@ -363,11 +317,11 @@ Func_030_4385::
 	jr nz, .copy
 
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $51
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 .next_slot
@@ -381,11 +335,11 @@ Func_030_4385::
 
 ; No free slot
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $53
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call Func_030_43ee
 	ret
 
@@ -438,30 +392,30 @@ SetCaughtMon::
 
 Func_030_442a::
 	ld a, $01
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $03
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $54
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4442::
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $40
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4467
 	call ComputeEnemyMonStat
@@ -486,11 +440,11 @@ Func_030_4442::
 	ld [wd9b1], a
 	ret
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $1e
 	ld [wd9b0], a
 	xor a
@@ -498,14 +452,14 @@ Func_030_4442::
 	ret
 
 MoveEffectPointers::
-	dw Func_030_55a5 ; $00
+	dw MoveEffect_Damage ; $00
 	dw Func_030_555c ; $01
 	dw Func_030_5603 ; $02
 	dw Func_030_564a ; $03
 	dw Func_030_54de ; $04
 	dw Func_030_5486 ; $05
 	dw Func_030_5465 ; $06
-	dw Func_030_55a5 ; $07
+	dw MoveEffect_Damage ; $07
 	dw Func_030_5441 ; $08
 	dw Func_030_564a ; $09
 	dw Func_030_564a ; $0a
@@ -598,7 +552,7 @@ MoveEffectPointers::
 	dw Func_030_4aa5 ; $61
 	dw Func_030_564a ; $62
 	dw Func_030_4a89 ; $63
-	dw Func_030_55a5 ; $64
+	dw MoveEffect_Damage ; $64
 	dw Func_030_4b2d ; $65
 	dw Func_030_4a3d ; $66
 	dw Func_030_4b30 ; $67
@@ -607,7 +561,7 @@ MoveEffectPointers::
 	dw Func_030_4a03 ; $6a
 	dw Func_030_49d2 ; $6b
 	dw Func_030_564a ; $6c
-	dw Func_030_55a5 ; $6d
+	dw MoveEffect_Damage ; $6d
 	dw Func_030_50f8 ; $6e
 	dw Func_030_5441 ; $6f
 	dw Func_030_498e ; $70
@@ -682,49 +636,49 @@ Func_030_45e2::
 
 Func_030_45fb::
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4605::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $8c
 	call SetStatTile
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4619::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $8b
 	call SetStatTile
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_462d::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $8a
 	call SetStatTile
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4641::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4658
 	ld a, [wActiveMonPtr]
@@ -755,9 +709,9 @@ Func_030_4641::
 	set 5, a
 	ld [hl], a
 	ld a, $4e
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4689::
@@ -765,10 +719,10 @@ Func_030_4689::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd9b2], a
-	ld [wd98b], a
+	ld [wSideSelect], a
+	ld [wBattleAnimStep], a
 	ld a, $5c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $88
@@ -782,7 +736,7 @@ Func_030_4689::
 	ld a, [wd991]
 	cp $82
 	jr nc, .asm_46b0
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_46c7
 	ld a, [wd991]
@@ -798,15 +752,15 @@ Func_030_46ce::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $87
 	call SetStatTile
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_46ed::
@@ -817,23 +771,23 @@ Func_030_46ed::
 	and a
 	jp nz, Func_030_55ab
 	ld de, wd9f5
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, de
 	ld [hl], $02
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_470d::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_474d
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $59
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, [wd984]
 	ld l, a
 	ld a, [wd985]
@@ -871,9 +825,9 @@ Func_030_470d::
 	and a
 	jp nz, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $59
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, [wActiveMonPtr]
 	ld l, a
 	ld a, [wd982]
@@ -914,8 +868,8 @@ Func_030_4793::
 	and a
 	jp z, Func_030_55ab
 	ld a, $58
-	ld [wd3ff], a
-	ld a, [wd986]
+	ld [wBattleMessageID], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_47d3
 	ld a, $01
@@ -966,7 +920,7 @@ Func_030_47ee::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4803
 	ld a, $01
@@ -979,12 +933,12 @@ Func_030_47ee::
 
 Func_030_480b::
 	ld a, $4d
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	call .asm_481c
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 .asm_481c
 	xor a
 	ld [wd9af], a
@@ -1011,7 +965,7 @@ Func_030_480b::
 	ld a, $0a
 	call SetStatTile
 	ld a, $4d
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_485d::
@@ -1019,11 +973,11 @@ Func_030_485d::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $40
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4873::
@@ -1031,16 +985,16 @@ Func_030_4873::
 	and a
 	jp z, Func_030_55ab
 	ld a, $4c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
 	and a
 	jr nz, .asm_48a7
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	ld a, $02
@@ -1051,7 +1005,7 @@ Func_030_4873::
 	call SetStatTile
 	ret
 .asm_48a7
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_48b4
 	ld a, [wd9e3]
@@ -1073,16 +1027,16 @@ Func_030_48c5::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	xor a
 	call SetStatTile
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4901
 	xor a
@@ -1107,10 +1061,10 @@ Func_030_48c5::
 
 Func_030_4919::
 	ld a, $4b
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	call AdvanceRNG
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	ld a, [wd991]
@@ -1121,7 +1075,7 @@ Func_030_4919::
 	ld [wd9af], a
 	ld a, $7a
 	call SetStatTile
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_494a
 	ld a, $01
@@ -1137,10 +1091,10 @@ Func_030_4950::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_496d
 	ld a, $01
@@ -1156,9 +1110,9 @@ Func_030_4973::
 	and a
 	jp z, Func_030_55ab
 	ld a, $4a
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $77
@@ -1171,7 +1125,7 @@ Func_030_498e::
 	jp z, Func_030_55ab
 	call AdvanceRNG
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	ld a, [wd991]
@@ -1183,10 +1137,10 @@ Func_030_498e::
 	ld a, $70
 	call SetStatTile
 	ld a, $49
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
-	ld a, [wd986]
+	ld [wMoveTargetsEnemy], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_49cc
 	ld a, $8e
@@ -1202,16 +1156,16 @@ Func_030_49d2::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	ld a, $01
 	call SetStatTile
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_49fd
 	ld a, $01
@@ -1227,9 +1181,9 @@ Func_030_4a03::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
@@ -1241,9 +1195,9 @@ Func_030_4a20::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $19
@@ -1255,7 +1209,7 @@ Func_030_4a3d::
 	and a
 	jp z, Func_030_55ab
 Func_030_4a44::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4a54
 	ld a, [wActiveMonPtr]
@@ -1287,9 +1241,9 @@ Func_030_4a44::
 	set 0, a
 	ld [hl], a
 	ld a, $1a
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4a89::
@@ -1297,9 +1251,9 @@ Func_030_4a89::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $48
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $63
@@ -1308,7 +1262,7 @@ Func_030_4a89::
 
 Func_030_4aa5::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -1320,23 +1274,23 @@ Func_030_4aa5::
 	ld a, $02
 	call SetStatTile
 	ld a, $46
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4aca
 	xor a
 	call SetStatTile
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_57e1
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4aec::
@@ -1344,31 +1298,31 @@ Func_030_4aec::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $32
 	ret nc
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $01
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $1f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4b1b::
 	call Func_030_537b
 	ld a, $40
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4b2d::
@@ -1379,9 +1333,9 @@ Func_030_4b30::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
@@ -1390,7 +1344,7 @@ Func_030_4b30::
 
 Func_030_4b4d::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -1402,23 +1356,23 @@ Func_030_4b4d::
 	ld a, $02
 	call SetStatTile
 	ld a, $47
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4b72
 	xor a
 	call SetStatTile
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_57f4
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4b94::
@@ -1426,9 +1380,9 @@ Func_030_4b94::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
@@ -1440,9 +1394,9 @@ Func_030_4bb1::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $32
@@ -1450,14 +1404,14 @@ Func_030_4bb1::
 
 Func_030_4bcb::
 	ld a, $01
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $08
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $21
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4be3::
@@ -1465,21 +1419,21 @@ Func_030_4be3::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
 	ret nc
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $01
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $1f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4c12::
@@ -1487,10 +1441,10 @@ Func_030_4c12::
 	and a
 	jp z, Func_030_55ab
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4c2e
 	ld a, [wd9e5]
@@ -1506,18 +1460,18 @@ Func_030_4c12::
 	ret nz
 	call Func_030_4c8f
 	ld a, $40
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4c50::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4c63
 	ld a, [wd9e5]
@@ -1528,21 +1482,21 @@ Func_030_4c50::
 	ld d, a
 .asm_4c67
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
 	ret nc
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $08
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $21
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 Func_030_4c8f::
 	ld a, [wd9b1]
@@ -1578,7 +1532,7 @@ Func_030_4c8f::
 
 Func_030_4cca::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -1590,23 +1544,23 @@ Func_030_4cca::
 	ld a, $02
 	call SetStatTile
 	ld a, $46
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4cef
 	xor a
 	call SetStatTile
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_57d1
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	jp Func_030_4d24
 
 Func_030_4d13::
@@ -1614,16 +1568,16 @@ Func_030_4d13::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 Func_030_4d24::
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
 	ret nc
 Func_030_4d2d::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4d3d
 	ld a, [wActiveMonPtr]
@@ -1651,14 +1605,14 @@ Func_030_4d2d::
 	set 2, a
 	ld [hl], a
 	ld a, $19
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4d64::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -1667,9 +1621,9 @@ Func_030_4d64::
 	ld a, $01
 	call SetStatTile
 	ld a, $36
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $3e
@@ -1680,9 +1634,9 @@ Func_030_4d64::
 	jr z, .asm_4da4
 	call SetStatTile
 	ld a, $36
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -1693,21 +1647,21 @@ Func_030_4d64::
 	ld [wd9af], a
 	call SetStatTile
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $37
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Func_030_5372
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_580f
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $06
 	ld [wd9af], a
 	call GetStatTile
@@ -1725,7 +1679,7 @@ Func_030_4d64::
 	xor a
 	call SetStatTile
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4e0b::
@@ -1733,9 +1687,9 @@ Func_030_4e0b::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $19
@@ -1747,15 +1701,15 @@ Func_030_4e28::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $19
 	ret nc
 Func_030_4e42::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4e52
 	ld a, [wActiveMonPtr]
@@ -1783,9 +1737,9 @@ Func_030_4e42::
 	set 3, a
 	ld [hl], a
 	ld a, $18
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4e79::
@@ -1793,16 +1747,16 @@ Func_030_4e79::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $19
 	ret nc
 
 Func_030_4e93::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4ea3
 	ld a, [wActiveMonPtr]
@@ -1830,9 +1784,9 @@ Func_030_4e93::
 	set 1, a
 	ld [hl], a
 	ld a, $1e
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4eca::
@@ -1863,18 +1817,18 @@ Func_030_4eca::
 	xor a
 	ld [wd9b1], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4f10::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4f27
 	ld a, [wActiveMonPtr]
@@ -1903,16 +1857,16 @@ Func_030_4f10::
 	xor a
 	ld [wd9b1], a
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4f5f::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -1921,23 +1875,23 @@ Func_030_4f5f::
 	ld a, $02
 	call SetStatTile
 	ld a, $46
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_4f7d
 	xor a
 	call SetStatTile
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_580f
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_4f9f::
@@ -1945,8 +1899,8 @@ Func_030_4f9f::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
-	ld a, [wd986]
+	ld [wMoveTargetsEnemy], a
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4fb6
 	call ComputeEnemyMonStat
@@ -1961,20 +1915,20 @@ Func_030_4f9f::
 	sbc a, $00
 	ld [wd9b1], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $14
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4fd4::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $02
 	ld [wd9af], a
 	ld a, $01
 	call AddStatTile
 	ld a, $3c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_4fe8::
@@ -1984,23 +1938,23 @@ Func_030_4fe8::
 
 Func_030_4fef::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $08
 	ld [wd9af], a
 	ld a, $01
 	call AddStatTile
 	ld a, $3a
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_5003::
 	ld a, $1c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b5], a
-	ld a, [wd986]
+	ld [wMoveTargetsEnemy], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_501c
 	call ComputeEnemyMonStat
@@ -2018,7 +1972,7 @@ Func_030_5003::
 	ld a, [wd99b]
 	sbc a, b
 	ld [wd9b1], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_5045
 	ld a, [wActiveMonPtr]
@@ -2046,21 +2000,21 @@ Func_030_5056::
 
 Func_030_505d::
 	ld a, $01
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	xor a
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $44
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_5074::
 	ld a, $43
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld [wd9af], a
 	ld a, $01
 	call AddStatTile
@@ -2086,7 +2040,7 @@ Func_030_50a4::
 	and a
 	jp nz, Func_030_55ab
 	ld hl, wd9f5
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_50be
 	ld hl, wd9f6
@@ -2094,9 +2048,9 @@ Func_030_50a4::
 	ld a, $02
 	ld [hl], a
 	ld a, $42
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_50cc::
@@ -2104,8 +2058,8 @@ Func_030_50cc::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
-	ld a, [wd986]
+	ld [wMoveTargetsEnemy], a
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_50e3
 	call ComputeEnemyMonStat
@@ -2118,7 +2072,7 @@ Func_030_50cc::
 	ld a, [wd999]
 	ld [wd9b1], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_50f8::
@@ -2126,13 +2080,13 @@ Func_030_50f8::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 Func_030_5103::
 	ld a, $1b
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
-	ld a, [wd986]
+	ld [wMoveTargetsEnemy], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_511d
 	ld a, [wActiveMonPtr]
@@ -2168,13 +2122,13 @@ Func_030_513a::
 
 Func_030_5141::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $03
 	ld [wd9af], a
 	ld a, $03
 	call AddStatTile
 	ld a, $41
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_5155::
@@ -2182,14 +2136,14 @@ Func_030_5155::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
 	ret nc
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_517f
 	ld a, [wActiveMonPtr]
@@ -2215,8 +2169,8 @@ Func_030_5190::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd9b5], a
-	ld a, [wd986]
+	ld [wMoveTargetsEnemy], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_51a6
 	call ComputeEnemyMonStat
@@ -2229,7 +2183,7 @@ Func_030_5190::
 	ld a, [wd999]
 	ld [wd9b1], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_51bb::
@@ -2239,24 +2193,24 @@ Func_030_51bb::
 
 Func_030_51c2::
 	ld a, $01
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $01
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $1f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_51da::
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $40
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $04
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_51f3
 	call ComputeEnemyMonStat
@@ -2297,22 +2251,22 @@ Func_030_51da::
 
 Func_030_5231::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $09
 	ld [wd9af], a
 	ld a, $01
 	call AddStatTile
 	ld a, $45
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_5249::
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -2325,11 +2279,11 @@ Func_030_5249::
 	push af
 	call SetStatTile
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	pop af
 	call SetStatTile
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call .asm_52b1
 	ret
 .asm_527d
@@ -2338,27 +2292,27 @@ Func_030_5249::
 	jr z, .asm_5292
 	call SetStatTile
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call .asm_52b1
 	ret
 .asm_5292
 	call SetStatTile
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	xor a
 	call SetStatTile
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call .asm_52b1
 	ret
 .asm_52b1
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_52bd
 	ld a, $01
@@ -2371,7 +2325,7 @@ Func_030_5249::
 
 Func_030_52c3::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -2383,9 +2337,9 @@ Func_030_52c3::
 	add $02
 	call SetStatTile
 	ld a, $36
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $04
 	ld [wd9af], a
 	ld a, $0e
@@ -2396,9 +2350,9 @@ Func_030_52c3::
 	jr z, .asm_530b
 	call SetStatTile
 	ld a, $36
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -2409,21 +2363,21 @@ Func_030_52c3::
 	ld [wd9af], a
 	call SetStatTile
 	xor a
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $37
-	ld [wd3ff], a
-	farcall Func_02d_4000
+	ld [wBattleMessageID], a
+	farcall ShowBattleMessage
 	call Func_030_5372
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld de, Script_023_580f
 	farcall Func_02e_4000
 	call DelayFrame
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $06
 	ld [wd9af], a
 	call GetStatTile
@@ -2441,7 +2395,7 @@ Func_030_52c3::
 	xor a
 	call SetStatTile
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 Func_030_5372::
 	ld c, $20
@@ -2492,15 +2446,15 @@ Func_030_53ba::
 
 .asm_53c1
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $3e
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	call AdvanceRNG
 	call Func_030_53ee
 	and a
 	jr z, .asm_53c1
 
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_53df
 	ld de, wd97c
@@ -2518,7 +2472,7 @@ Func_030_53ba::
 	ret
 
 Func_030_53ee::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_53fe
 
@@ -2553,24 +2507,24 @@ Func_030_53ee::
 
 Func_030_541a::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $01
 	ld [wd9af], a
 	ld a, $01
 	call AddStatTile
 	ld a, $38
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_542e::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	xor a
 	ld [wd9af], a
 	ld a, $01
 	call AddStatTile
 	ld a, $3b
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_5441::
@@ -2580,16 +2534,16 @@ Func_030_5441::
 
 Func_030_5448::
 	ld a, $01
-	ld [wd9b2], a
-	ld [wd9b5], a
+	ld [wSideSelect], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $02
 	ld [wd9af], a
 	ld a, $ff
 	call AddStatTile
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $20
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ret
 
 Func_030_5465::
@@ -2597,25 +2551,25 @@ Func_030_5465::
 	and a
 	jp z, Func_030_55ab
 	ld a, $01
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $01
 	ld [wd9af], a
 	ld a, $fe
 	call AddStatTile
 	ld a, $1f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_5486::
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $03
-	ld [wd98b], a
-	ld a, [wd986]
+	ld [wBattleAnimStep], a
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_54a0
 	call ComputeEnemyMonStat
@@ -2659,7 +2613,7 @@ Func_030_54de::
 	and a
 	jp z, Func_030_55ab
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -2688,7 +2642,7 @@ Func_030_54de::
 	push af
 	call SetStatTile
 .asm_5524
-	farcall Func_02b_5651
+	farcall CalcMoveDamage
 	ld a, [wd9b0]
 	ldh [hMathValue], a
 	ld a, [wd9b1]
@@ -2706,9 +2660,9 @@ Func_030_54de::
 	ldh a, [hMathValue + 1]
 	ld [wd9b1], a
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Func_030_555c::
@@ -2747,14 +2701,14 @@ Func_030_555c::
 	set 4, a
 	ld [hl], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $1c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
-Func_030_55a5::
+MoveEffect_Damage::
 	ld a, [wd993]
 	and a
 	jr nz, Func_030_55c2
@@ -2764,11 +2718,11 @@ Func_030_55ab::
 	ld a, [wd991]
 	and $03
 	add $0f
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 Func_030_55c2::
 	ld a, [wd98d]
@@ -2803,16 +2757,16 @@ Func_030_55c2::
 	set 4, a
 	ld [hl], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ld a, $1c
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_5603::
 	xor a
-	ld [wd9b2], a
+	ld [wSideSelect], a
 	ld a, $05
 	ld [wd9af], a
 	call GetStatTile
@@ -2824,9 +2778,9 @@ Func_030_5603::
 	add $02
 	call SetStatTile
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 .asm_562a
 	dec a
@@ -2834,16 +2788,16 @@ Func_030_5603::
 	jr z, .asm_563c
 	call SetStatTile
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 .asm_563c
 	call SetStatTile
 	ld a, $34
-	ld [wd3ff], a
+	ld [wBattleMessageID], a
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 
 Func_030_564a::
@@ -2851,9 +2805,9 @@ Func_030_564a::
 	and a
 	jp z, Func_030_55ab
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	ret
 
 Pointers_030_565c::
@@ -3391,7 +3345,7 @@ Func_030_5e79::
 	add hl, hl
 	add hl, hl
 	add hl, de
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	add a
 	ld e, a
 	ld d, $00
@@ -3428,7 +3382,7 @@ Func_030_5e79::
 	jr c, .asm_5e82
 	ret
 .asm_5ef1
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_5efc
 	ld de, BattleAnimData_030_5f3e
@@ -3464,7 +3418,7 @@ Func_030_5e79::
 	add [hl]
 	ld [bc], a
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): 2D table [wd9ae-1]x[wd986], sprite/coord record
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): 2D table [wd9ae-1]x[wBattleTurn], sprite/coord record
 BattleAnimStepTable_030_5f2a::
 	db $40, $60, $10, $10, $50, $70, $20, $20, $38, $80, $08, $30, $58, $68, $28, $18
 	db $58, $80, $28, $30
@@ -3504,7 +3458,7 @@ Func_030_5fe0::
 .asm_5fff
 	ld de, BattleAnimData_030_607b
 .asm_6002
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -3582,7 +3536,7 @@ Func_030_5fe0::
 	xor a
 	ld [wd9ae], a
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wd986] sprite-position setup (copied to wd1a0)
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wBattleTurn] sprite-position setup (copied to wd1a0)
 BattleAnimData_030_607b::
 	db $10, $18, $40, $68, $20, $40, $50, $90, $30, $28, $60, $78
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6087`
@@ -3603,7 +3557,7 @@ Func_030_609f::
 .asm_60af
 	ld a, $01
 	ld [wd9ae], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_60dc
 	ld hl, wd1a0
@@ -3712,7 +3666,7 @@ Func_030_6136::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_618e
 	ld hl, wd1a0
@@ -3752,7 +3706,7 @@ Func_030_6136::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_61c8
 	ld hl, wd1a0
@@ -3780,7 +3734,7 @@ Func_030_6136::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_61f5
 	ld hl, wd1a0
@@ -3819,7 +3773,7 @@ Func_030_6136::
 .asm_6214
 	ld a, $05
 	ld [wd9ae], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_622b
 	ld hl, wd1a0
@@ -3841,7 +3795,7 @@ Func_030_6136::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6254
 	ld hl, wd1a0
@@ -3881,7 +3835,7 @@ Func_030_6136::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_628f
 	ld hl, wd1a0
@@ -3906,9 +3860,9 @@ Func_030_6136::
 	ld [wd9ae], a
 .asm_629e
 	ld a, $01
-	ld [wd9b5], a
+	ld [wMoveTargetsEnemy], a
 	farcall Func_02b_4098
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_62b9
 	ld a, [wd981]
@@ -3937,7 +3891,7 @@ Func_030_6136::
 	ld [hFFC6], a
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
 	ret
@@ -3945,7 +3899,7 @@ Func_030_6136::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6307
 	ld hl, wd1a0
@@ -3984,7 +3938,7 @@ Func_030_6136::
 .asm_6326
 	ld a, $01
 	ld [wd9ae], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_633d
 	ld hl, wd1a0
@@ -4137,7 +4091,7 @@ Func_030_63a8::
 	ret
 .asm_6416
 	ld de, BattleAnimData_030_64cc
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4218,7 +4172,7 @@ Func_030_63a8::
 	ret
 .asm_6495
 	ld de, BattleAnimData_030_64c8
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4250,10 +4204,10 @@ Func_030_63a8::
 	inc a
 	ld [wd9ae], a
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleTurn
 BattleAnimData_030_64c8::
 	db $20, $28, $50, $78
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleTurn
 BattleAnimData_030_64cc::
 	db $40, $a0, $10, $50
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): $88-terminated anim/movement sequence (auto-stepped via [bc+4])
@@ -4303,7 +4257,7 @@ Func_030_6591::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4375,7 +4329,7 @@ Func_030_6591::
 	inc [hl]
 	jr .asm_66bc
 .asm_6643
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6659
 	ld hl, $0000
@@ -4416,7 +4370,7 @@ Func_030_6591::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4553,7 +4507,7 @@ Func_030_671c::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	add a
 	add l
@@ -4595,7 +4549,7 @@ Func_030_671c::
 	inc [hl]
 	jr .asm_67e5
 .asm_6791
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_67a1
 	ld hl, $0001
@@ -4623,7 +4577,7 @@ Func_030_671c::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	add a
 	add l
@@ -4677,7 +4631,7 @@ Func_030_6816::
 	ret
 .asm_6825
 	ld de, BattleAnimData_030_68b2
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4693,7 +4647,7 @@ Func_030_6816::
 	ld [hli], a
 	ld a, [de]
 	ld [hli], a
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
 	ld [hl], a
 	inc de
@@ -4703,15 +4657,15 @@ Func_030_6816::
 	pop bc
 	inc de
 	inc de
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $03
 	jr c, .asm_6835
 	ld a, $01
 	ld [wd9ae], a
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_6861
 	ldh a, [hFadeFrameCounter]
@@ -4766,7 +4720,7 @@ Func_030_6816::
 	inc hl
 	ld [hl], $00
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleTurn
 BattleAnimData_030_68b2::
 	db $54, $68, $24, $18, $4c, $78, $1c, $28, $4c, $88, $30, $38
 Func_030_68be::
@@ -4882,7 +4836,7 @@ Func_030_693a::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -4993,7 +4947,7 @@ Func_030_6a5e::
 	jr nz, .asm_6aa1
 	ld a, $01
 	ld [wd9ae], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6a86
 	ld hl, wd1a0
@@ -5091,7 +5045,7 @@ Func_030_6b36::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5141,7 +5095,7 @@ Func_30_6ba6::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5165,7 +5119,7 @@ Func_30_6bcb::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5180,7 +5134,7 @@ Func_30_6bcb::
 	ld [hli], a
 	ld [hl], $06
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleTurn
 BattleAnimData_030_6bee::
 	db $40, $60, $10, $10
 Func_030_6bf2::
@@ -5202,7 +5156,7 @@ Func_030_6bf2::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5226,7 +5180,7 @@ Func_30_6c33::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5250,7 +5204,7 @@ Func_30_6c58::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5286,7 +5240,7 @@ Func_030_6c7f::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5333,7 +5287,7 @@ Func_030_6c7f::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5356,7 +5310,7 @@ Func_030_6c7f::
 	add hl, de
 	push hl
 	ld de, BattleAnimData_030_6bee
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5442,7 +5396,7 @@ Func_030_6d76::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5549,7 +5503,7 @@ Func_030_6e5a::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5582,7 +5536,7 @@ Func_030_6ea0::
 	ld [wd9ae], a
 	cp $04
 	ret c
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6eb9
 	ld hl, wd1a0
@@ -5624,7 +5578,7 @@ Func_030_6ec2::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -5653,7 +5607,7 @@ Func_030_6ec2::
 	ld a, [hl]
 	and a
 	jp z, .asm_6f5b
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6f3b
 	ld hl, $0000
@@ -5721,7 +5675,7 @@ Func_30_6f98::
 	ld [wd9aa], a
 .asm_6fa9
 	ld de, wPaletteBuffer
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6fc0
 	ld a, [wd99e]
@@ -5750,7 +5704,7 @@ Func_30_6fce::
 	ld h, a
 Func_30_6fd6::
 	ld b, $08
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_6fea
 	ld a, [wd99e]
@@ -5779,7 +5733,7 @@ Func_030_6ff6::
 	and a
 	jp nz, Func_30_6f98
 	ld de, wPaletteBuffer
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_701e
 	ld a, [wd99e]
@@ -5802,7 +5756,7 @@ Func_030_6ff6::
 	add hl, de
 .asm_702a
 	ld b, $06
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_703e
 	ld a, [wd99e]
@@ -6021,7 +5975,7 @@ Func_030_7189::
 	jr nz, .asm_718f
 	ret
 Func_030_7194::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_71f2
 	cp $02
@@ -6040,7 +5994,7 @@ Func_030_7194::
 	jp z, .asm_727e
 	cp $09
 	jp z, .asm_72b4
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_71dc
 	ld hl, wd1a0
@@ -6050,7 +6004,7 @@ Func_030_7194::
 	inc hl
 	ld [hl], $01
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_71ec
 .asm_71dc
 	ld hl, wd1a0
@@ -6060,7 +6014,7 @@ Func_030_7194::
 	inc hl
 	ld [hl], $01
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_71ec
 	ld a, $29
 	ld [wBattleState], a
@@ -6073,7 +6027,7 @@ Func_030_7194::
 	cp $d0
 	ret nz
 	ld a, $02
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7202
 	ld hl, wd1a0
@@ -6083,7 +6037,7 @@ Func_030_7194::
 	inc hl
 	ld [hl], $02
 	ld a, $03
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7213
 	ld hl, wd1a0
@@ -6094,7 +6048,7 @@ Func_030_7194::
 	ret nz
 	jp .asm_72c6
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7226
 	ld hl, wd1a0
@@ -6104,7 +6058,7 @@ Func_030_7194::
 	cp $d0
 	ret nz
 	ld a, $05
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7236
 	ld hl, wd1a0
@@ -6114,7 +6068,7 @@ Func_030_7194::
 	inc hl
 	ld [hl], $02
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7247
 	ld hl, wd1a0
@@ -6125,10 +6079,10 @@ Func_030_7194::
 	ret nz
 	jp .asm_72c6
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_725a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_726d
 	ld hl, wd1a0
@@ -6147,7 +6101,7 @@ Func_030_7194::
 	ld [hl], $06
 .asm_7278
 	ld a, $08
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_727e
 	ldh a, [hFadeFrameCounter]
@@ -6161,7 +6115,7 @@ Func_030_7194::
 	ld [hl], a
 	cp $09
 	ret c
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_72a3
 	ld hl, wd1a0
@@ -6180,7 +6134,7 @@ Func_030_7194::
 	ld [hl], $03
 .asm_72ae
 	ld a, $09
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_72b4
 	ldh a, [hFadeFrameCounter]
@@ -6200,10 +6154,10 @@ Func_030_7194::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 Func_030_72d7::
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_73af
 	cp $0b
@@ -6240,7 +6194,7 @@ Func_030_72d7::
 	jp z, .asm_7541
 	cp $42
 	jp z, .asm_7510
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_734f
 	ld hl, wd1a0
@@ -6252,7 +6206,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $06
 	ld a, $2a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	jr .asm_7362
 .asm_734f
 	ld hl, wd1a0
@@ -6264,7 +6218,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $06
 	ld a, $6f
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 .asm_7362
 	ld a, $2a
 	ld [wBattleState], a
@@ -6297,7 +6251,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $04
 	ld a, $0b
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7399
 	ldh a, [hFadeFrameCounter]
@@ -6310,7 +6264,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $03
 	ld a, $01
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_73af
 	ld hl, wd1a0
@@ -6328,7 +6282,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $02
 	ld a, $16
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_73cb
 	ldh a, [hFadeFrameCounter]
@@ -6343,7 +6297,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $06
 	ld a, $de
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_73e8
 	ldh a, [hFadeFrameCounter]
@@ -6373,7 +6327,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $02
 	ld a, $06
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7419
 	ldh a, [hFadeFrameCounter]
@@ -6384,7 +6338,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $03
 	ld a, $07
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_742d
 	ld hl, wd1a0
@@ -6404,7 +6358,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $04
 	ld a, $08
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_744b
 	ldh a, [hFadeFrameCounter]
@@ -6419,7 +6373,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $06
 	ld a, $09
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7468
 	ldh a, [hFadeFrameCounter]
@@ -6473,7 +6427,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $02
 	ld a, $2c
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_74bf
 	ldh a, [hFadeFrameCounter]
@@ -6486,7 +6440,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $03
 	ld a, $04
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_74d5
 	ld hl, wd1a0
@@ -6506,7 +6460,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $04
 	ld a, $37
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_74f3
 	ldh a, [hFadeFrameCounter]
@@ -6521,7 +6475,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $06
 	ld a, $42
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7510
 	ldh a, [hFadeFrameCounter]
@@ -6551,7 +6505,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $04
 	ld a, $4d
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7541
 	ldh a, [hFadeFrameCounter]
@@ -6564,7 +6518,7 @@ Func_030_72d7::
 	inc hl
 	ld [hl], $03
 	ld a, $58
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7557
 	ld hl, wd1a0
@@ -6582,7 +6536,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $02
 	ld a, $63
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7573
 	ldh a, [hFadeFrameCounter]
@@ -6597,7 +6551,7 @@ Func_030_72d7::
 	add hl, bc
 	ld [hl], $06
 	ld a, $62
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 .asm_7590
 	ldh a, [hFadeFrameCounter]
@@ -6629,10 +6583,10 @@ Func_030_72d7::
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ret
 Func_030_75c7::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_75e9
 	ld hl, wd1a0
@@ -6683,7 +6637,7 @@ Func_030_7610::
 	ret nz
 	ld hl, wd1a0
 	ld de, wd1a8
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_7633
 	ld a, [de]
@@ -6788,7 +6742,7 @@ Func_030_766a::
 	ld [wd9ae], a
 	jr .asm_772e
 .asm_76ba
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_76d2
 	ld hl, $0001
@@ -6813,7 +6767,7 @@ Func_030_766a::
 	ld [hl], $03
 	jr .asm_7719
 .asm_76e4
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_76f6
 	ld hl, $0001
@@ -6894,7 +6848,7 @@ Func_030_773b::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -6931,7 +6885,7 @@ Func_030_773b::
 	ld a, [hl]
 	and a
 	jp z, .asm_783f
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_77c8
 	ld hl, $0000
@@ -6967,7 +6921,7 @@ Func_030_773b::
 	ld a, [hl]
 	and a
 	jp z, .asm_783f
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_7809
 	ld hl, $0000
@@ -7001,14 +6955,14 @@ Func_030_773b::
 	ld hl, $0000
 	add hl, bc
 	call Func_030_7181
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	cp $14
 	jr nz, .asm_783f
 	xor a
 	ld [wBattleState], a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	call Func_030_7189
 	ret
 .asm_783f
@@ -7046,7 +7000,7 @@ Func_030_784c::
 	and $03
 	ret nz
 	ld de, BattleAnimData_030_7981
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -7054,7 +7008,7 @@ Func_030_784c::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -7072,9 +7026,9 @@ Func_030_784c::
 	ld hl, $0004
 	add hl, bc
 	ld [hl], $01
-	ld a, [wd98b]
+	ld a, [wBattleAnimStep]
 	inc a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	xor a
 	ld [wd98c], a
 	ret
@@ -7112,7 +7066,7 @@ Func_030_784c::
 	add hl, de
 	ld e, l
 	ld d, h
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -7140,7 +7094,7 @@ Func_030_784c::
 	ld a, [hl]
 	add $04
 	ld [hl], a
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_7924
 	ld a, [hl]
@@ -7184,7 +7138,7 @@ Func_030_784c::
 	cp $0a
 	jr c, .asm_7974
 	xor a
-	ld [wd98b], a
+	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ld [wd98e], a
 	ld [wBattleState], a
@@ -7198,7 +7152,7 @@ Func_030_784c::
 	cp $b8
 	jp c, .asm_784f
 	ret
-; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd98b
+; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimStep
 BattleAnimData_030_7981::
 	db $30, $28, $50, $78, $30, $18, $50, $68, $30, $38, $50, $88
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd98e

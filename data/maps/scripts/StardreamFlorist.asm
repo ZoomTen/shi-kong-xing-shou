@@ -26,7 +26,7 @@ Script_066_4557::
 	checkbit wEventFlags + 16, $00, Script_066_456b
 	stext text_66_5f95
 	stext text_66_5fde
-	scr_48 $02, $1b
+	giveitem ITEMNAMECAT_KEY, KEYITEM_1b
 	setbit wEventFlags + 16, $00
 	end
 

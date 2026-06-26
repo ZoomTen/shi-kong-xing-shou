@@ -245,10 +245,10 @@ MoveName_Pointers::
 INCLUDE "data/text/move_names.asm"
 
 Func_026_45b9::
-	ld a, [wd986]
+	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_45cf
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .asm_45d5
 .asm_45c5
@@ -258,7 +258,7 @@ Func_026_45b9::
 	ld b, a
 	jr .asm_45dd
 .asm_45cf
-	ld a, [wd9b5]
+	ld a, [wMoveTargetsEnemy]
 	and a
 	jr nz, .asm_45c5
 .asm_45d5

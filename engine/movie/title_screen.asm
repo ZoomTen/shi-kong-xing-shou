@@ -144,7 +144,7 @@ Intro_Delay:
 	ret
 
 LoadDebugItems:
-	ld hl, wd300
+	ld hl, wItemBag
 	ld [hl], ITEM_04
 	inc hl
 	ld [hl], 99

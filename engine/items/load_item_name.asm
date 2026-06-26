@@ -10,7 +10,7 @@ LoadItemNameByIndex::
 	add hl, hl
 	add hl, de
 	ld a, [hli]
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	push hl
 	ld de, ItemNameCategories
 	ld l, a
@@ -22,7 +22,7 @@ LoadItemNameByIndex::
 	ld e, a
 	pop hl
 	ld a, [hli]
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -32,6 +32,9 @@ LoadItemNameByIndex::
 	ld a, [hli]
 	ld [wTextStart + 1], a
 	ld a, 1
-	ld [wd9d3], a
-	farcall asm_039_479f
+	ld [wItemQty], a
+; NB: dual purpose — this farcall also GRANTS the item (see AddItemToBag /
+; LoadShopItemName). Loading the name for an "obtained" message is what deposits
+; it in the bag.
+	farcall AddItemToBag
 	ret

@@ -20,8 +20,8 @@ Script_066_459b::
 	checkbit wEventFlags + 15, $03, Script_066_45b2
 	stext text_66_70db
 	stext text_66_715f
-	scr_48 $02, $23
-	listdec $02, $19
+	giveitem ITEMNAMECAT_KEY, KEYITEM_23
+	takeitem ITEMNAMECAT_KEY, KEYITEM_19
 	setbit wEventFlags + 15, $03
 	end
 

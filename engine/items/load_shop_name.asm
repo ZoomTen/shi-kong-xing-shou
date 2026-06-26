@@ -6,7 +6,7 @@ LoadShopItemName::
 	ld a, [wItemNameCategory]
 	cp ITEMNAMECAT_PRICE
 	jr z, asm_01e_6e89
-	ld [wd1f4], a
+	ld [wItemCategory], a
 	ld de, ItemNameCategories
 	ld l, a
 	ld h, 0
@@ -16,7 +16,7 @@ LoadShopItemName::
 	ld d, [hl]
 	ld e, a
 	ld a, [wItemNameIndex]
-	ld [wd9f3], a
+	ld [wCurItemID], a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -26,8 +26,12 @@ LoadShopItemName::
 	ld a, [hli]
 	ld [wTextStart + 1], a
 	ld a, 1
-	ld [wd9d3], a
-	farcall asm_039_479f
+	ld [wItemQty], a
+; NB: dual purpose — besides loading the NAME for the textbox, this farcall GRANTS
+; the item (1 of wCurItemID in category wItemCategory). Printing an "obtained"/
+; "found" item's name is what deposits it in the bag. Display-only contexts use
+; PrintItemName instead.
+	farcall AddItemToBag
 	ret
 
 asm_01e_6e89::

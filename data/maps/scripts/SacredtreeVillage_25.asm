@@ -233,7 +233,7 @@ Script_059_433e::
 	stext text_59_54d3
 	stext text_59_5511
 	stext text_59_5571
-	scr_48 $02, $14
+	giveitem ITEMNAMECAT_KEY, KEYITEM_14
 	setbit wEventFlags + 12, $06
 	end
 
@@ -338,8 +338,16 @@ Script_059_4412::
 Script_059_4416::
 	checkbit wEventFlags + 14, $04, Script_059_442a
 	textface text_59_74a9
-	stext text_59_7593
-	scr_48 $01, $26
+	stext text_59_7593 ; "得到了～神奇果實" (got 神奇果實 / Magic Fruit)
+; ORIGINAL-ROM BUG (preserved): the text grants 神奇果實, which is ITEM_26 in the
+; ItemNames table, so this should be `giveitem ITEMNAMECAT_ITEM, ITEM_26` (cf.
+; G5_03.asm and found_items.asm, which grant ITEM_26 correctly). The id $26 is
+; right but the category is ITEMNAMECAT_EQUIP instead of ITEMNAMECAT_ITEM. At
+; runtime this stores id $26 in the equipment bag (wEquipmentBag); equip id $26 is out of
+; range (EquipmentNames has 36 entries, $00-$23), the display filter hides ids
+; >= $16, and no script ever reads it back, so the reward is silently lost. Left
+; as-is to match the original ROM; do not "fix".
+	giveitem ITEMNAMECAT_EQUIP, $26
 	setbit wEventFlags + 14, $04
 	end
 

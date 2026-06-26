@@ -1154,7 +1154,7 @@ Func_01e_6acd::
 	ld b, [hl]
 	and a
 	jp z, .asm_6c6b
-	ld a, [wd9f3]
+	ld a, [wCurItemID]
 	cp $01
 	jr z, .asm_6afc
 	cp $02

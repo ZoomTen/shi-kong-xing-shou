@@ -12,7 +12,7 @@ Script_058_4642::
 	textface text_58_6277
 	stext text_58_62c1
 	stext text_58_6310
-	scr_48 $02, $13
+	giveitem ITEMNAMECAT_KEY, KEYITEM_13
 	setbit wEventFlags + 11, $07
 	end
 

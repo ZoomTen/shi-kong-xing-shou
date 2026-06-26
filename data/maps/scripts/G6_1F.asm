@@ -67,7 +67,7 @@ Script_06c_502c::
 	clearobject $02
 	stext text_6c_610e
 	setbit wEventFlags + 19, $03
-	scr_48 $02, $28
+	giveitem ITEMNAMECAT_KEY, KEYITEM_28
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $07, $01
 	stext text_6c_611d

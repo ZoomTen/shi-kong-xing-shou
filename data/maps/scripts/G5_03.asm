@@ -31,7 +31,7 @@ Script_067_6e6d::
 	checkbit wEventFlags + 20, $00, Script_067_6e81
 	textface text_67_6f6d
 	stext text_67_6f86
-	scr_48 $00, $23
+	giveitem ITEMNAMECAT_ITEM, ITEM_23
 	setbit wEventFlags + 20, $00
 	end
 
@@ -66,7 +66,7 @@ Script_067_6eb3::
 	checkbit wEventFlags + 20, $01, Script_067_6ec7
 	textface text_67_7002
 	stext text_67_7025
-	scr_48 $00, $3a
+	giveitem ITEMNAMECAT_ITEM, TM19
 	setbit wEventFlags + 20, $01
 	end
 
@@ -117,7 +117,7 @@ Script_067_6f16::
 	checkbit wEventFlags + 20, $02, Script_067_6f2a
 	textface text_67_7044
 	stext text_67_7069
-	scr_48 $00, $26
+	giveitem ITEMNAMECAT_ITEM, ITEM_26
 	setbit wEventFlags + 20, $02
 	end
 

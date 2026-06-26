@@ -386,13 +386,13 @@ MACRO startbattle
 ENDM
 
 	const script_ifmoney ; $3c
-MACRO ifmoney
+MACRO checkmoney
 	db script_ifmoney
 	dw \1
 ENDM
 
 	const script_ifmoney2 ; $3d
-MACRO ifmoney2
+MACRO takemoney
 	db script_ifmoney2
 	dw \1
 ENDM
@@ -443,7 +443,7 @@ MACRO setup45
 ENDM
 
 	const script_addmoney ; $46
-MACRO addmoney
+MACRO givemoney
 	db script_addmoney
 	db \1, \2
 ENDM
@@ -455,7 +455,7 @@ MACRO warpmode2
 ENDM
 
 	const script_48 ; $48
-MACRO scr_48
+MACRO giveitem
 	db script_48
 	db \1
 	db \2
@@ -483,7 +483,7 @@ MACRO returnmap
 ENDM
 
 	const script_listdec ; $4d
-MACRO listdec
+MACRO takeitem
 	db script_listdec
 	db \1, \2
 ENDM
@@ -556,13 +556,13 @@ MACRO setplayersprite
 ENDM
 
 	const script_listop59 ; $59
-MACRO listop59
+MACRO checkitems
 	db script_listop59
 	db \1, \2, \3
 ENDM
 
 	const script_listop5a ; $5a
-MACRO listop5a
+MACRO takeitems
 	db script_listop5a
 	db \1, \2, \3
 ENDM

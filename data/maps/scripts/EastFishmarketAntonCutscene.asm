@@ -57,7 +57,7 @@ Script_05c_436c::
 	loadobjsprite ObjSprite_5c_4520
 	objmove $02, MovementData_05c_5127
 	clearobject $02
-	listdec $02, $0f
+	takeitem ITEMNAMECAT_KEY, KEYITEM_0f
 	setmap MAP_EAST_FISHMARKET_4E, $01
 	stext text_5c_4928
 	stext text_5c_4953
@@ -124,7 +124,7 @@ Script_05c_436c::
 	face FACE_RIGHT
 	stext text_5c_4b2d
 	stext text_5c_4b87
-	scr_48 $02, $10
+	giveitem ITEMNAMECAT_KEY, KEYITEM_10
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $4d, $01
 	spriteface  2, FACE_LEFT

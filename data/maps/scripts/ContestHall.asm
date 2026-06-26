@@ -311,7 +311,7 @@ Script_04e_4419::
 	delay $03, $20
 	stext text_4e_59b0
 	stext text_4e_59c1
-	scr_48 $02, $0c
+	giveitem ITEMNAMECAT_KEY, KEYITEM_0c
 	stext text_4e_59d4
 	spriteface  2, FACE_DOWN
 	spriteface  3, FACE_DOWN
@@ -381,7 +381,7 @@ Script_04e_44dc::
 	spriteface  2, FACE_LEFT
 	stext text_4e_5c6f
 	stext text_4e_5cad
-	scr_48 $02, $0d
+	giveitem ITEMNAMECAT_KEY, KEYITEM_0d
 	incsteps
 	warpmode GAMEMODE_CRYSTAL_CUTSCENE, $08, $08
 	spriteface  2, FACE_LEFT
