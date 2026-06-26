@@ -341,357 +341,248 @@ Hideout_MapAttributes::
 Hideout_Layout::
 	db MAPTYPE_HIDEOUT
 	INCBIN "data/maps/layouts/Hideout.bin"
-
 Hideout_Metatiles:: INCBIN "data/maps/metatiles/Hideout.bin"
-
 Hideout_Blocks:: INCBIN "data/maps/blocks/Hideout.bin"
-
-Hideout_AttrMap:: INCBIN "gfx/attrmaps/hideout_attrmap.bin"
-
+Hideout_AttrMap:: INCBIN "data/maps/attrmaps/hideout_attrmap.bin"
 Hideout_Palettes:: INCLUDE"data/maps/palettes/Hideout.pal"
-
 Hideout_Collision:: INCBIN "data/maps/collision/Hideout_Collision.bin"
 
 PowerPlant1F_Layout::
 	db MAPTYPE_POWER_PLANT_1F
 	INCBIN "data/maps/layouts/PowerPlant1F.bin"
-
 PowerPlant1F_Blocks:: INCBIN "data/maps/blocks/PowerPlant1F.bin"
-
 PowerPlant2F_Layout::
 	db MAPTYPE_POWER_PLANT_2F
 	INCBIN "data/maps/layouts/PowerPlant2F.bin"
-
 PowerPlant2F_Blocks:: INCBIN "data/maps/blocks/PowerPlant2F.bin"
-
 PowerPlant3F_Layout::
 	db MAPTYPE_POWER_PLANT_3F
 	INCBIN "data/maps/layouts/PowerPlant3F.bin"
-
 PowerPlant3F_Blocks:: INCBIN "data/maps/blocks/PowerPlant3F.bin"
-
 PowerPlant4F_Layout::
 	db MAPTYPE_POWER_PLANT_4F
 	INCBIN "data/maps/layouts/PowerPlant4F.bin"
-
 PowerPlant_Metatiles:: INCBIN "data/maps/metatiles/PowerPlant.bin"
-
 PowerPlant4F_Blocks:: INCBIN "data/maps/blocks/PowerPlant4F.bin"
-
-PowerPlant_AttrMap:: INCBIN "gfx/attrmaps/powerplant_attrmap.bin"
-
+PowerPlant_AttrMap:: INCBIN "data/maps/attrmaps/powerplant_attrmap.bin"
 PowerPlant_Palettes:: INCLUDE"data/maps/palettes/PowerPlant.pal"
-
 PowerPlant_Collision:: INCBIN "data/maps/collision/PowerPlant_Collision.bin"
 
 PowerPlantOutside_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/PowerPlantOutside.bin"
-
 PowerPlantOutside_Metatiles:: INCBIN "data/maps/metatiles/PowerPlantOutside.bin"
-
 PowerPlantOutside_Blocks:: INCBIN "data/maps/blocks/PowerPlantOutside.bin"
-
-PowerPlantOutside_AttrMap:: INCBIN "gfx/attrmaps/powerplantoutside_attrmap.bin"
-
+PowerPlantOutside_AttrMap:: INCBIN "data/maps/attrmaps/powerplantoutside_attrmap.bin"
 PowerPlantOutside_Palettes:: INCLUDE"data/maps/palettes/PowerPlantOutside.pal"
-
 PowerPlantOutside_Collision:: INCBIN "data/maps/collision/PowerPlantOutside_Collision.bin"
 
 Junkyard_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Junkyard.bin"
-
 Junkyard_Metatiles:: INCBIN "data/maps/metatiles/Junkyard.bin"
-
 Junkyard_Blocks:: INCBIN "data/maps/blocks/Junkyard.bin"
-
-Junkyard_AttrMap:: INCBIN "gfx/attrmaps/junkyard_attrmap.bin"
-
+Junkyard_AttrMap:: INCBIN "data/maps/attrmaps/junkyard_attrmap.bin"
 Junkyard_Palettes:: INCLUDE"data/maps/palettes/Junkyard.pal"
-
 Junkyard_Collision:: INCBIN "data/maps/collision/Junkyard_Collision.bin"
 
 Layout_001_4eeb::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_4eeb.bin"
-
 Metatiles_001_4f0a:: INCBIN "data/maps/metatiles/Metatiles_001_4f0a.bin"
-
 Blocks_001_4f76:: INCBIN "data/maps/blocks/Blocks_001_4f76.bin"
-
-AttrMap_001_4fc2:: INCBIN "gfx/attrmaps/attrmap_001_4fc2.bin"
-
+AttrMap_001_4fc2:: INCBIN "data/maps/attrmaps/attrmap_001_4fc2.bin"
 Palettes_001_5013:: INCLUDE"data/maps/palettes/Palettes_001_5013.pal"
-
 Collision_001_505b:: INCBIN "data/maps/collision/Collision_001_505b.bin"
 
 Layout_001_5076::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5076.bin"
-
 Blocks_001_5095:: INCBIN "data/maps/blocks/Blocks_001_5095.bin"
 
 Layout_001_50d5::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_50d5.bin"
-
 Blocks_001_50f4:: INCBIN "data/maps/blocks/Blocks_001_50f4.bin"
 
 Layout_001_5138::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5138.bin"
-
 Blocks_001_5157:: INCBIN "data/maps/blocks/Blocks_001_5157.bin"
 
 Layout_001_5197::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5197.bin"
-
 Blocks_001_51b6:: INCBIN "data/maps/blocks/Blocks_001_51b6.bin"
 
 Layout_001_51fa::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_51fa.bin"
-
 Metatiles_001_5219:: INCBIN "data/maps/metatiles/Metatiles_001_5219.bin"
-
 Blocks_001_5301:: INCBIN "data/maps/blocks/Blocks_001_5301.bin"
-
-AttrMap_001_5361:: INCBIN "gfx/attrmaps/attrmap_001_5361.bin"
-
+AttrMap_001_5361:: INCBIN "data/maps/attrmaps/attrmap_001_5361.bin"
 Palettes_001_5402:: INCLUDE"data/maps/palettes/Palettes_001_5402.pal"
-
 Collision_001_544a:: INCBIN "data/maps/collision/Collision_001_544a.bin"
 
 CrystalVillage_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/CrystalVillage.bin"
-
 CrystalVillage_Metatiles:: INCBIN "data/maps/metatiles/CrystalVillage.bin"
-
 CrystalVillage_Blocks:: INCBIN "data/maps/blocks/CrystalVillage.bin"
-
-CrystalVillage_AttrMap:: INCBIN "gfx/attrmaps/crystalvillage_attrmap.bin"
-
+CrystalVillage_AttrMap:: INCBIN "data/maps/attrmaps/crystalvillage_attrmap.bin"
 CrystalVillage_Palettes:: INCLUDE"data/maps/palettes/CrystalVillage.pal"
-
 CrystalVillage_Collision:: INCBIN "data/maps/collision/CrystalVillage_Collision.bin"
 
 Layout_001_58a7::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_58a7.bin"
-
 Metatiles_001_58c6:: INCBIN "data/maps/metatiles/Metatiles_001_58c6.bin"
-
 Blocks_001_592a:: INCBIN "data/maps/blocks/Blocks_001_592a.bin"
-
-AttrMap_001_5976:: INCBIN "gfx/attrmaps/attrmap_001_5976.bin"
-
+AttrMap_001_5976:: INCBIN "data/maps/attrmaps/attrmap_001_5976.bin"
 Palettes_001_59c7:: INCLUDE"data/maps/palettes/Palettes_001_59c7.pal"
-
 Collision_001_5a0f:: INCBIN "data/maps/collision/Collision_001_5a0f.bin"
 
 Layout_001_5a28::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5a28.bin"
-
 Metatiles_001_5a47:: INCBIN "data/maps/metatiles/Metatiles_001_5a47.bin"
-
 Blocks_001_5ab3:: INCBIN "data/maps/blocks/Blocks_001_5ab3.bin"
-
-AttrMap_001_5b13:: INCBIN "gfx/attrmaps/attrmap_001_5b13.bin"
-
+AttrMap_001_5b13:: INCBIN "data/maps/attrmaps/attrmap_001_5b13.bin"
 Palettes_001_5b55:: INCLUDE"data/maps/palettes/Palettes_001_5b55.pal"
-
 Collision_001_5b9d:: INCBIN "data/maps/collision/Collision_001_5b9d.bin"
 
 Layout_001_5bb9::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5bb9.bin"
-
 Blocks_001_5bd8:: INCBIN "data/maps/blocks/Blocks_001_5bd8.bin"
 
 Layout_001_5c18::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5c18.bin"
-
 Blocks_001_5c37:: INCBIN "data/maps/blocks/Blocks_001_5c37.bin"
 
 Layout_001_5c7b::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5c7b.bin"
-
 Blocks_001_5c9a:: INCBIN "data/maps/blocks/Blocks_001_5c9a.bin"
 
 Layout_001_5cd2::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5cd2.bin"
-
 Blocks_001_5cf1:: INCBIN "data/maps/blocks/Blocks_001_5cf1.bin"
 
 Layout_001_5d35::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5d35.bin"
-
 Blocks_001_5d54:: INCBIN "data/maps/blocks/Blocks_001_5d54.bin"
 
 Layout_001_5db4::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_5db4.bin"
-
 Metatiles_001_5dd3:: INCBIN "data/maps/metatiles/Metatiles_001_5dd3.bin"
-
 Blocks_001_5eb3:: INCBIN "data/maps/blocks/Blocks_001_5eb3.bin"
-
-AttrMap_001_5efb:: INCBIN "gfx/attrmaps/attrmap_001_5efb.bin"
-
+AttrMap_001_5efb:: INCBIN "data/maps/attrmaps/attrmap_001_5efb.bin"
 Palettes_001_5f8c:: INCLUDE"data/maps/palettes/Palettes_001_5f8c.pal"
-
 Collision_001_5fd4:: INCBIN "data/maps/collision/Collision_001_5fd4.bin"
 
 TechCity_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/TechCity.bin"
-
 TechCity_Metatiles:: INCBIN "data/maps/metatiles/TechCity.bin"
-
 TechCity_Blocks:: INCBIN "data/maps/blocks/TechCity.bin"
-
-TechCity_AttrMap:: INCBIN "gfx/attrmaps/techcity_attrmap.bin"
-
+TechCity_AttrMap:: INCBIN "data/maps/attrmaps/techcity_attrmap.bin"
 TechCity_Palettes:: INCLUDE"data/maps/palettes/TechCity.pal"
-
 TechCity_Collision:: INCBIN "data/maps/collision/TechCity_Collision.bin"
 
 BellSchoolSouthClassroom_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchoolSouthClassroom.bin"
-
 BellSchoolSouthClassroom_Metatiles:: INCBIN "data/maps/metatiles/BellSchoolSouthClassroom.bin"
-
 BellSchoolSouthClassroom_Blocks:: INCBIN "data/maps/blocks/BellSchoolSouthClassroom.bin"
-
-BellSchoolSouthClassroom_AttrMap:: INCBIN "gfx/attrmaps/bellschoolsouthclassroom_attrmap.bin"
-
+BellSchoolSouthClassroom_AttrMap:: INCBIN "data/maps/attrmaps/bellschoolsouthclassroom_attrmap.bin"
 BellSchoolSouthClassroom_Palettes:: INCLUDE"data/maps/palettes/BellSchoolSouthClassroom.pal"
-
 BellSchoolSouthClassroom_Collision:: INCBIN "data/maps/collision/BellSchoolSouthClassroom_Collision.bin"
 
 BellObservatory1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellObservatory1.bin"
-
 BellObservatory1_Metatiles:: INCBIN "data/maps/metatiles/BellObservatory1.bin"
-
 BellObservatory1_Blocks:: INCBIN "data/maps/blocks/BellObservatory1.bin"
-
-BellObservatory1_AttrMap:: INCBIN "gfx/attrmaps/bellobservatory1_attrmap.bin"
-
+BellObservatory1_AttrMap:: INCBIN "data/maps/attrmaps/bellobservatory1_attrmap.bin"
 BellObservatory1_Palettes:: INCLUDE"data/maps/palettes/BellObservatory1.pal"
-
 BellObservatory1_Collision:: INCBIN "data/maps/collision/BellObservatory1_Collision.bin"
 
 BellSchool1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchool1.bin"
-
 BellSchool1_Metatiles:: INCBIN "data/maps/metatiles/BellSchool1.bin"
-
 BellSchool1_Blocks:: INCBIN "data/maps/blocks/BellSchool1.bin"
-
-BellSchool1_AttrMap:: INCBIN "gfx/attrmaps/bellschool1_attrmap.bin"
-
+BellSchool1_AttrMap:: INCBIN "data/maps/attrmaps/bellschool1_attrmap.bin"
 BellSchool1_Palettes:: INCLUDE"data/maps/palettes/BellSchool1.pal"
-
 BellSchool1_Collision:: INCBIN "data/maps/collision/BellSchool1_Collision.bin"
 
 BellHealingCenter1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellHealingCenter1.bin"
-
 BellHealingCenter1_Metatiles:: INCBIN "data/maps/metatiles/BellHealingCenter1.bin"
-
 BellHealingCenter1_Blocks:: INCBIN "data/maps/blocks/BellHealingCenter1.bin"
-
-BellHealingCenter1_AttrMap:: INCBIN "gfx/attrmaps/bellhealingcenter1_attrmap.bin"
-
+BellHealingCenter1_AttrMap:: INCBIN "data/maps/attrmaps/bellhealingcenter1_attrmap.bin"
 BellHealingCenter1_Palettes:: INCLUDE"data/maps/palettes/BellHealingCenter1.pal"
-
 BellHealingCenter1_Collision:: INCBIN "data/maps/collision/BellHealingCenter1_Collision.bin"
 
 BallotsHouse1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BallotsHouse1.bin"
-
 BallotsHouse1_Blocks:: INCBIN "data/maps/blocks/BallotsHouse1.bin"
 
 HayatosHouse1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/HayatosHouse1.bin"
-
 HayatosHouse1_Blocks:: INCBIN "data/maps/blocks/HayatosHouse1.bin"
 
 CarpetWomansHouse1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/CarpetWomansHouse1.bin"
-
 CarpetWomansHouse1_Blocks:: INCBIN "data/maps/blocks/CarpetWomansHouse1.bin"
 
 FangfangsHouse1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/FangfangsHouse1.bin"
 
+; shared
 Houses1_Metatiles:: INCBIN "data/maps/metatiles/Houses1.bin"
 
 FangfangsHouse1_Blocks:: INCBIN "data/maps/blocks/FangfangsHouse1.bin"
 
-Houses1_AttrMap:: INCBIN "gfx/attrmaps/fangfangshouse1_attrmap.bin"
-
+Houses1_AttrMap:: INCBIN "data/maps/attrmaps/fangfangshouse1_attrmap.bin"
 Houses1_Palettes:: INCLUDE"data/maps/palettes/Houses1.pal"
-
 Houses1_Collision:: INCBIN "data/maps/collision/Houses1_Collision.bin"
 
 BellObservatoryOutside1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellObservatoryOutside1.bin"
-
 BellObservatoryOutside1_Metatiles:: INCBIN "data/maps/metatiles/BellObservatoryOutside1.bin"
-
 BellObservatoryOutside1_Blocks:: INCBIN "data/maps/blocks/BellObservatoryOutside1.bin"
-
-BellObservatoryOutside1_AttrMap:: INCBIN "gfx/attrmaps/bellobservatoryoutside1_attrmap.bin"
-
+BellObservatoryOutside1_AttrMap:: INCBIN "data/maps/attrmaps/bellobservatoryoutside1_attrmap.bin"
 BellObservatoryOutside1_Palettes:: INCLUDE"data/maps/palettes/BellObservatoryOutside1.pal"
-
 BellObservatoryOutside1_Collision:: INCBIN "data/maps/collision/BellObservatoryOutside1_Collision.bin"
 
 BellSchoolOutside1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellSchoolOutside1.bin"
-
 BellSchoolOutside1_Metatiles:: INCBIN "data/maps/metatiles/BellSchoolOutside1.bin"
-
 BellSchoolOutside1_Blocks:: INCBIN "data/maps/blocks/BellSchoolOutside1.bin"
-
-BellSchoolOutside1_AttrMap:: INCBIN "gfx/attrmaps/bellschooloutside1_attrmap.bin"
-
+BellSchoolOutside1_AttrMap:: INCBIN "data/maps/attrmaps/bellschooloutside1_attrmap.bin"
 BellSchoolOutside1_Palettes:: INCLUDE"data/maps/palettes/BellSchoolOutside1.pal"
-
 BellSchoolOutside1_Collision:: INCBIN "data/maps/collision/BellSchoolOutside1_Collision.bin"
 
 BellVillage1_Layout::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/BellVillage1.bin"
-
 BellVillage1_Metatiles:: INCBIN "data/maps/metatiles/BellVillage1.bin"
-
 BellVillage1_Blocks:: INCBIN "data/maps/blocks/BellVillage1.bin"
-
-BellVillage1_AttrMap:: INCBIN "data/maps/attributes/BellVillage1.bin"
-
+BellVillage1_AttrMap:: INCBIN "data/maps/attrmaps/BellVillage1.bin"
 BellVillage1_Palettes:: INCLUDE"data/maps/palettes/BellVillage1.pal"
-
 BellVillage1_Collision:: INCBIN "data/maps/collision/BellVillage1_Collision.bin"
 
 G2_23_MapAttributes::
@@ -703,12 +594,13 @@ G2_23_MapAttributes::
 	   Palettes_001_795e, \
 	   Tileset_001_79a8, Tileset_001_79a8, \
 	   Collision_001_79a6
+
 Layout_001_792e::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_001_792e.bin"
 Metatiles_001_7953:: INCBIN "data/maps/metatiles/Metatiles_001_7953.bin"
 Blocks_001_7957:: INCBIN "data/maps/blocks/Blocks_001_7957.bin"
-AttrMap_001_795b:: INCBIN "gfx/attrmaps/attrmap_001_795b.bin"
+AttrMap_001_795b:: INCBIN "data/maps/attrmaps/attrmap_001_795b.bin"
 Palettes_001_795e:: INCLUDE"data/maps/palettes/Palettes_001_795e.pal"
 Collision_001_79a6:: INCBIN "data/maps/collision/Collision_001_79a6.bin"
 Tileset_001_79a8:: INCBIN "gfx/tilesets/gfx_001_79a8.2bpp"

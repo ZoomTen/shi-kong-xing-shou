@@ -54,7 +54,7 @@ Layout_050_47f3::
 	INCBIN "data/maps/layouts/Layout_050_47f3.bin"
 Metatiles_050_4824:: INCBIN "data/maps/metatiles/Metatiles_050_4824.bin"
 Blocks_050_48f0:: INCBIN "data/maps/blocks/Blocks_050_48f0.bin"
-AttrMap_050_499c:: INCBIN "gfx/attrmaps/attrmap_050_499c.bin"
+AttrMap_050_499c:: INCBIN "data/maps/attrmaps/attrmap_050_499c.bin"
 Palettes_050_4a39:: INCLUDE"data/maps/palettes/Palettes_050_4a39.pal"
 Collision_050_4a81:: INCBIN "data/maps/collision/Collision_050_4a81.bin"
 
@@ -114,7 +114,7 @@ Layout_050_52a0::
 	INCBIN "data/maps/layouts/Layout_050_52a0.bin"
 Metatiles_050_52d1:: INCBIN "data/maps/metatiles/Metatiles_050_52d1.bin"
 Blocks_050_539d:: INCBIN "data/maps/blocks/Blocks_050_539d.bin"
-AttrMap_050_5449:: INCBIN "gfx/attrmaps/attrmap_050_5449.bin"
+AttrMap_050_5449:: INCBIN "data/maps/attrmaps/attrmap_050_5449.bin"
 Palettes_050_54e4:: INCLUDE"data/maps/palettes/Palettes_050_54e4.pal"
 Collision_050_552c:: INCBIN "data/maps/collision/Collision_050_552c.bin"
 
@@ -132,7 +132,7 @@ Layout_050_5574::
 	INCBIN "data/maps/layouts/Layout_050_5574.bin"
 Metatiles_050_5656:: INCBIN "data/maps/metatiles/Metatiles_050_5656.bin"
 Blocks_050_580e:: INCBIN "data/maps/blocks/Blocks_050_580e.bin"
-AttrMap_050_5abe:: INCBIN "gfx/attrmaps/attrmap_050_5abe.bin"
+AttrMap_050_5abe:: INCBIN "data/maps/attrmaps/attrmap_050_5abe.bin"
 Palettes_050_5b5f:: INCLUDE"data/maps/palettes/Palettes_050_5b5f.pal"
 Collision_050_5ba7:: INCBIN "data/maps/collision/Collision_050_5ba7.bin"
 
@@ -150,7 +150,7 @@ Layout_050_5c2a::
 	INCBIN "data/maps/layouts/Layout_050_5c2a.bin"
 Metatiles_050_5c49:: INCBIN "data/maps/metatiles/Metatiles_050_5c49.bin"
 Blocks_050_5d11:: INCBIN "data/maps/blocks/Blocks_050_5d11.bin"
-AttrMap_050_5d6d:: INCBIN "gfx/attrmaps/attrmap_050_5d6d.bin"
+AttrMap_050_5d6d:: INCBIN "data/maps/attrmaps/attrmap_050_5d6d.bin"
 Palettes_050_5dfd:: INCLUDE"data/maps/palettes/Palettes_050_5dfd.pal"
 Collision_050_5e45:: INCBIN "data/maps/collision/Collision_050_5e45.bin"
 
@@ -168,7 +168,7 @@ Layout_050_5e8c::
 	INCBIN "data/maps/layouts/Layout_050_5e8c.bin"
 Metatiles_050_5eab:: INCBIN "data/maps/metatiles/Metatiles_050_5eab.bin"
 Blocks_050_5f0f:: INCBIN "data/maps/blocks/Blocks_050_5f0f.bin"
-AttrMap_050_5f63:: INCBIN "gfx/attrmaps/attrmap_050_5f63.bin"
+AttrMap_050_5f63:: INCBIN "data/maps/attrmaps/attrmap_050_5f63.bin"
 Palettes_050_5f8c:: INCLUDE"data/maps/palettes/Palettes_050_5f8c.pal"
 Collision_050_5fd4:: INCBIN "data/maps/collision/Collision_050_5fd4.bin"
 
@@ -186,7 +186,7 @@ Layout_050_6002::
 	INCBIN "data/maps/layouts/Layout_050_6002.bin"
 Metatiles_050_6027:: INCBIN "data/maps/metatiles/Metatiles_050_6027.bin"
 Blocks_050_610b:: INCBIN "data/maps/blocks/Blocks_050_610b.bin"
-AttrMap_050_617b:: INCBIN "gfx/attrmaps/attrmap_050_617b.bin"
+AttrMap_050_617b:: INCBIN "data/maps/attrmaps/attrmap_050_617b.bin"
 Palettes_050_61df:: INCLUDE"data/maps/palettes/Palettes_050_61df.pal"
 Collision_050_6227:: INCBIN "data/maps/collision/Collision_050_6227.bin"
 
@@ -246,7 +246,7 @@ Layout_050_67ec::
 	INCBIN "data/maps/layouts/Layout_050_67ec.bin"
 Metatiles_050_687d:: INCBIN "data/maps/metatiles/Metatiles_050_687d.bin"
 Blocks_050_69e1:: INCBIN "data/maps/blocks/Blocks_050_69e1.bin"
-AttrMap_050_6b01:: INCBIN "gfx/attrmaps/attrmap_050_6b01.bin"
+AttrMap_050_6b01:: INCBIN "data/maps/attrmaps/attrmap_050_6b01.bin"
 Palettes_050_6b92:: INCLUDE"data/maps/palettes/Palettes_050_6b92.pal"
 Collision_050_6bda:: INCBIN "data/maps/collision/Collision_050_6bda.bin"
 
@@ -264,7 +264,7 @@ Layout_050_6c48::
 	INCBIN "data/maps/layouts/Layout_050_6c48.bin"
 Metatiles_050_6c67:: INCBIN "data/maps/metatiles/Metatiles_050_6c67.bin"
 Blocks_050_6d3f:: INCBIN "data/maps/blocks/Blocks_050_6d3f.bin"
-AttrMap_050_6da3:: INCBIN "gfx/attrmaps/attrmap_050_6da3.bin"
+AttrMap_050_6da3:: INCBIN "data/maps/attrmaps/attrmap_050_6da3.bin"
 Palettes_050_6e40:: INCLUDE"data/maps/palettes/Palettes_050_6e40.pal"
 Collision_050_6e88:: INCBIN "data/maps/collision/Collision_050_6e88.bin"
 
@@ -282,7 +282,7 @@ Layout_050_6ed3::
 	INCBIN "data/maps/layouts/Layout_050_6ed3.bin"
 Metatiles_050_6ef2:: INCBIN "data/maps/metatiles/Metatiles_050_6ef2.bin"
 Blocks_050_6fce:: INCBIN "data/maps/blocks/Blocks_050_6fce.bin"
-AttrMap_050_703e:: INCBIN "gfx/attrmaps/attrmap_050_703e.bin"
+AttrMap_050_703e:: INCBIN "data/maps/attrmaps/attrmap_050_703e.bin"
 Palettes_050_70b2:: INCLUDE"data/maps/palettes/Palettes_050_70b2.pal"
 Collision_050_70fa:: INCBIN "data/maps/collision/Collision_050_70fa.bin"
 
@@ -300,7 +300,7 @@ Layout_050_7146::
 	INCBIN "data/maps/layouts/Layout_050_7146.bin"
 Metatiles_050_7165:: INCBIN "data/maps/metatiles/Metatiles_050_7165.bin"
 Blocks_050_7225:: INCBIN "data/maps/blocks/Blocks_050_7225.bin"
-AttrMap_050_7281:: INCBIN "gfx/attrmaps/attrmap_050_7281.bin"
+AttrMap_050_7281:: INCBIN "data/maps/attrmaps/attrmap_050_7281.bin"
 Palettes_050_7318:: INCLUDE"data/maps/palettes/Palettes_050_7318.pal"
 Collision_050_7360:: INCBIN "data/maps/collision/Collision_050_7360.bin"
 
@@ -346,7 +346,7 @@ Layout_050_75a1::
 	INCBIN "data/maps/layouts/Layout_050_75a1.bin"
 Metatiles_050_75c0:: INCBIN "data/maps/metatiles/Metatiles_050_75c0.bin"
 Blocks_050_767c:: INCBIN "data/maps/blocks/Blocks_050_767c.bin"
-AttrMap_050_76d4:: INCBIN "gfx/attrmaps/attrmap_050_76d4.bin"
+AttrMap_050_76d4:: INCBIN "data/maps/attrmaps/attrmap_050_76d4.bin"
 Palettes_050_774a:: INCLUDE"data/maps/palettes/Palettes_050_774a.pal"
 Collision_050_7792:: INCBIN "data/maps/collision/Collision_050_7792.bin"
 
@@ -378,7 +378,7 @@ Layout_050_78af::
 	INCBIN "data/maps/layouts/Layout_050_78af.bin"
 Metatiles_050_78f8:: INCBIN "data/maps/metatiles/Metatiles_050_78f8.bin"
 Blocks_050_7970:: INCBIN "data/maps/blocks/Blocks_050_7970.bin"
-AttrMap_050_79e4:: INCBIN "gfx/attrmaps/attrmap_050_79e4.bin"
+AttrMap_050_79e4:: INCBIN "data/maps/attrmaps/attrmap_050_79e4.bin"
 Palettes_050_7a4a:: INCLUDE"data/maps/palettes/Palettes_050_7a4a.pal"
 Collision_050_7a92:: INCBIN "data/maps/collision/Collision_050_7a92.bin"
 

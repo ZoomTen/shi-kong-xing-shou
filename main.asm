@@ -1,8 +1,5 @@
 INCLUDE "constants.asm"
 
-SECTION "bank01", ROMX
-INCLUDE "banks/bank_01.asm"
-
 SECTION "bank04", ROMX
 INCLUDE "engine/gfx/oam.asm"
 
@@ -79,9 +76,6 @@ INCLUDE "banks/bank_0e.asm"
 SECTION "bank0f", ROMX
 INCLUDE "banks/bank_0f.asm"
 
-SECTION "bank11", ROMX
-INCLUDE "banks/bank_11.asm"
-
 SECTION "bank12", ROMX
 INCLUDE "banks/bank_12.asm"
 
@@ -93,12 +87,6 @@ INCLUDE "banks/bank_14.asm"
 
 SECTION "bank15", ROMX
 INCLUDE "banks/bank_15.asm"
-
-SECTION "bank17", ROMX
-INCLUDE "banks/bank_17.asm"
-
-SECTION "bank18", ROMX
-INCLUDE "banks/bank_18.asm"
 
 SECTION "Letter Cutscene", ROMX
 INCLUDE "engine/movie/letter.asm"
@@ -224,20 +212,11 @@ INCLUDE "banks/bank_4e.asm"
 SECTION "bank4f", ROMX
 INCLUDE "banks/bank_4f.asm"
 
-SECTION "bank50", ROMX
-INCLUDE "banks/bank_50.asm"
-
-SECTION "bank53", ROMX
-INCLUDE "banks/bank_53.asm"
-
 SECTION "Airport 2 Cutscene", ROMX
 INCLUDE "engine/movie/airport2.asm"
 
 SECTION "bank55", ROMX
 INCLUDE "banks/bank_55.asm"
-
-SECTION "bank57", ROMX
-INCLUDE "banks/bank_57.asm"
 
 SECTION "bank58", ROMX
 INCLUDE "banks/bank_58.asm"
@@ -284,9 +263,6 @@ INCLUDE "engine/movie/world_map.asm"
 SECTION "Sound Test", ROMX
 INCLUDE "engine/debug/sound_test.asm"
 
-SECTION "bank64", ROMX
-INCLUDE "banks/bank_64.asm"
-
 SECTION "bank66", ROMX
 INCLUDE "banks/bank_66.asm"
 
@@ -298,18 +274,6 @@ INCLUDE "engine/movie/floating_island.asm"
 
 SECTION "bank67", ROMX
 INCLUDE "banks/bank_67.asm"
-
-SECTION "bank69", ROMX
-INCLUDE "banks/bank_69.asm"
-
-SECTION "bank6a", ROMX
-INCLUDE "banks/bank_6a.asm"
-
-SECTION "bank6b", ROMX
-INCLUDE "banks/bank_6b.asm"
-
-SECTION "bank6b #2", ROMX
-INCLUDE "banks/bank_6b_2.asm"
 
 SECTION "bank6c", ROMX
 INCLUDE "banks/bank_6c.asm"

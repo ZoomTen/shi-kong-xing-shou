@@ -25,7 +25,7 @@ Layout_064_43ef::
 	INCBIN "data/maps/layouts/Layout_064_43ef.bin"
 Metatiles_064_44d1:: INCBIN "data/maps/metatiles/Metatiles_064_44d1.bin"
 Blocks_064_4649:: INCBIN "data/maps/blocks/Blocks_064_4649.bin"
-AttrMap_064_48ed:: INCBIN "gfx/attrmaps/attrmap_064_48ed.bin"
+AttrMap_064_48ed:: INCBIN "data/maps/attrmaps/attrmap_064_48ed.bin"
 Palettes_064_4946:: INCLUDE"data/maps/palettes/Palettes_064_4946.pal"
 Collision_064_498e:: INCBIN "data/maps/collision/Collision_064_498e.bin"
 G5_03_MapAttributes::
@@ -81,7 +81,7 @@ Layout_064_4f18::
 	INCBIN "data/maps/layouts/Layout_064_4f18.bin"
 Metatiles_064_4f7d:: INCBIN "data/maps/metatiles/Metatiles_064_4f7d.bin"
 Blocks_064_507d:: INCBIN "data/maps/blocks/Blocks_064_507d.bin"
-AttrMap_064_51d5:: INCBIN "gfx/attrmaps/attrmap_064_51d5.bin"
+AttrMap_064_51d5:: INCBIN "data/maps/attrmaps/attrmap_064_51d5.bin"
 Palettes_064_5220:: INCLUDE"data/maps/palettes/Palettes_064_5220.pal"
 Collision_064_5268:: INCBIN "data/maps/collision/Collision_064_5268.bin"
 StardreamCity_07_MapAttributes::
@@ -98,7 +98,7 @@ Layout_064_52bd::
 	INCBIN "data/maps/layouts/Layout_064_52bd.bin"
 Metatiles_064_5396:: INCBIN "data/maps/metatiles/Metatiles_064_5396.bin"
 Blocks_064_5546:: INCBIN "data/maps/blocks/Blocks_064_5546.bin"
-AttrMap_064_57ae:: INCBIN "gfx/attrmaps/attrmap_064_57ae.bin"
+AttrMap_064_57ae:: INCBIN "data/maps/attrmaps/attrmap_064_57ae.bin"
 Palettes_064_584f:: INCLUDE"data/maps/palettes/Palettes_064_584f.pal"
 Collision_064_5897:: INCBIN "data/maps/collision/Collision_064_5897.bin"
 G5_08_MapAttributes::
@@ -180,7 +180,7 @@ Layout_064_611d::
 	INCBIN "data/maps/layouts/Layout_064_611d.bin"
 Metatiles_064_6166:: INCBIN "data/maps/metatiles/Metatiles_064_6166.bin"
 Blocks_064_6242:: INCBIN "data/maps/blocks/Blocks_064_6242.bin"
-AttrMap_064_630e:: INCBIN "gfx/attrmaps/attrmap_064_630e.bin"
+AttrMap_064_630e:: INCBIN "data/maps/attrmaps/attrmap_064_630e.bin"
 Palettes_064_6383:: INCLUDE"data/maps/palettes/Palettes_064_6383.pal"
 Collision_064_63cb:: INCBIN "data/maps/collision/Collision_064_63cb.bin"
 BaalCapitalProfessor_2b_MapAttributes::
@@ -197,7 +197,7 @@ Layout_064_6417::
 	INCBIN "data/maps/layouts/Layout_064_6417.bin"
 Metatiles_064_6436:: INCBIN "data/maps/metatiles/Metatiles_064_6436.bin"
 Blocks_064_64fa:: INCBIN "data/maps/blocks/Blocks_064_64fa.bin"
-AttrMap_064_655a:: INCBIN "gfx/attrmaps/attrmap_064_655a.bin"
+AttrMap_064_655a:: INCBIN "data/maps/attrmaps/attrmap_064_655a.bin"
 Palettes_064_65c9:: INCLUDE"data/maps/palettes/Palettes_064_65c9.pal"
 Collision_064_6611:: INCBIN "data/maps/collision/Collision_064_6611.bin"
 StardreamCity_0f_MapAttributes::
@@ -227,7 +227,7 @@ Layout_064_66ea::
 	INCBIN "data/maps/layouts/Layout_064_66ea.bin"
 Metatiles_064_6709:: INCBIN "data/maps/metatiles/Metatiles_064_6709.bin"
 Blocks_064_67dd:: INCBIN "data/maps/blocks/Blocks_064_67dd.bin"
-AttrMap_064_6841:: INCBIN "gfx/attrmaps/attrmap_064_6841.bin"
+AttrMap_064_6841:: INCBIN "data/maps/attrmaps/attrmap_064_6841.bin"
 Palettes_064_68b8:: INCLUDE"data/maps/palettes/Palettes_064_68b8.pal"
 Collision_064_6900:: INCBIN "data/maps/collision/Collision_064_6900.bin"
 StardreamHospital_11_MapAttributes::
@@ -296,7 +296,7 @@ Layout_064_6b86::
 	INCBIN "data/maps/layouts/Layout_064_6b86.bin"
 Metatiles_064_6ba5:: INCBIN "data/maps/metatiles/Metatiles_064_6ba5.bin"
 Blocks_064_6cad:: INCBIN "data/maps/blocks/Blocks_064_6cad.bin"
-AttrMap_064_6ce9:: INCBIN "gfx/attrmaps/attrmap_064_6ce9.bin"
+AttrMap_064_6ce9:: INCBIN "data/maps/attrmaps/attrmap_064_6ce9.bin"
 Palettes_064_6d85:: INCLUDE"data/maps/palettes/Palettes_064_6d85.pal"
 Collision_064_6dcd:: INCBIN "data/maps/collision/Collision_064_6dcd.bin"
 StardreamAirship_16_MapAttributes::
@@ -313,7 +313,7 @@ Layout_064_6e24::
 	INCBIN "data/maps/layouts/Layout_064_6e24.bin"
 Metatiles_064_6e7f:: INCBIN "data/maps/metatiles/Metatiles_064_6e7f.bin"
 Blocks_064_6f4b:: INCBIN "data/maps/blocks/Blocks_064_6f4b.bin"
-AttrMap_064_6fd7:: INCBIN "gfx/attrmaps/attrmap_064_6fd7.bin"
+AttrMap_064_6fd7:: INCBIN "data/maps/attrmaps/attrmap_064_6fd7.bin"
 Palettes_064_706a:: INCLUDE"data/maps/palettes/Palettes_064_706a.pal"
 Collision_064_70b2:: INCBIN "data/maps/collision/Collision_064_70b2.bin"
 G5_17_MapAttributes::
@@ -343,7 +343,7 @@ Layout_064_7259::
 	INCBIN "data/maps/layouts/Layout_064_7259.bin"
 Metatiles_064_7278:: INCBIN "data/maps/metatiles/Metatiles_064_7278.bin"
 Blocks_064_734c:: INCBIN "data/maps/blocks/Blocks_064_734c.bin"
-AttrMap_064_73b0:: INCBIN "gfx/attrmaps/attrmap_064_73b0.bin"
+AttrMap_064_73b0:: INCBIN "data/maps/attrmaps/attrmap_064_73b0.bin"
 Palettes_064_741f:: INCLUDE"data/maps/palettes/Palettes_064_741f.pal"
 Collision_064_7467:: INCBIN "data/maps/collision/Collision_064_7467.bin"
 G5_19_MapAttributes::
@@ -360,7 +360,7 @@ Layout_064_74b1::
 	INCBIN "data/maps/layouts/Layout_064_74b1.bin"
 Metatiles_064_74d6:: INCBIN "data/maps/metatiles/Metatiles_064_74d6.bin"
 Blocks_064_7592:: INCBIN "data/maps/blocks/Blocks_064_7592.bin"
-AttrMap_064_7612:: INCBIN "gfx/attrmaps/attrmap_064_7612.bin"
+AttrMap_064_7612:: INCBIN "data/maps/attrmaps/attrmap_064_7612.bin"
 Palettes_064_768e:: INCLUDE"data/maps/palettes/Palettes_064_768e.pal"
 Collision_064_76d6:: INCBIN "data/maps/collision/Collision_064_76d6.bin"
 PresaleHouse_1a_MapAttributes::
@@ -377,7 +377,7 @@ Layout_064_771a::
 	INCBIN "data/maps/layouts/Layout_064_771a.bin"
 Metatiles_064_7739:: INCBIN "data/maps/metatiles/Metatiles_064_7739.bin"
 Blocks_064_7801:: INCBIN "data/maps/blocks/Blocks_064_7801.bin"
-AttrMap_064_7865:: INCBIN "gfx/attrmaps/attrmap_064_7865.bin"
+AttrMap_064_7865:: INCBIN "data/maps/attrmaps/attrmap_064_7865.bin"
 Palettes_064_78c4:: INCLUDE"data/maps/palettes/Palettes_064_78c4.pal"
 Collision_064_790c:: INCBIN "data/maps/collision/Collision_064_790c.bin"
 PresaleHouseOutside_MapAttributes::
@@ -407,6 +407,6 @@ Layout_064_7a50::
 	INCBIN "data/maps/layouts/Layout_064_7a50.bin"
 Metatiles_064_7a99:: INCBIN "data/maps/metatiles/Metatiles_064_7a99.bin"
 Blocks_064_7b15:: INCBIN "data/maps/blocks/Blocks_064_7b15.bin"
-AttrMap_064_7bd5:: INCBIN "gfx/attrmaps/attrmap_064_7bd5.bin"
+AttrMap_064_7bd5:: INCBIN "data/maps/attrmaps/attrmap_064_7bd5.bin"
 Palettes_064_7c40:: INCLUDE"data/maps/palettes/Palettes_064_7c40.pal"
 Collision_064_7c88:: INCBIN "data/maps/collision/Collision_064_7c88.bin"

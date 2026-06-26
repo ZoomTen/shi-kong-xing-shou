@@ -16,7 +16,7 @@ Metatiles_011_40ed:: INCBIN "data/maps/metatiles/Metatiles_011_40ed.bin"
 
 Blocks_011_42a5:: INCBIN "data/maps/blocks/Blocks_011_42a5.bin"
 
-AttrMap_011_4561:: INCBIN "gfx/attrmaps/attrmap_011_4561.bin"
+AttrMap_011_4561:: INCBIN "data/maps/attrmaps/attrmap_011_4561.bin"
 
 Palettes_011_4602:: INCLUDE"data/maps/palettes/Palettes_011_4602.pal"
 
@@ -40,7 +40,7 @@ Metatiles_011_4782:: INCBIN "data/maps/metatiles/Metatiles_011_4782.bin"
 
 Blocks_011_484a:: INCBIN "data/maps/blocks/Blocks_011_484a.bin"
 
-AttrMap_011_4a66:: INCBIN "gfx/attrmaps/attrmap_011_4a66.bin"
+AttrMap_011_4a66:: INCBIN "data/maps/attrmaps/attrmap_011_4a66.bin"
 
 Palettes_011_4ae2:: INCLUDE"data/maps/palettes/Palettes_011_4ae2.pal"
 
@@ -96,7 +96,7 @@ Metatiles_011_50f4:: INCBIN "data/maps/metatiles/Metatiles_011_50f4.bin"
 
 Blocks_011_51d0:: INCBIN "data/maps/blocks/Blocks_011_51d0.bin"
 
-AttrMap_011_5290:: INCBIN "gfx/attrmaps/attrmap_011_5290.bin"
+AttrMap_011_5290:: INCBIN "data/maps/attrmaps/attrmap_011_5290.bin"
 
 Palettes_011_532f:: INCLUDE"data/maps/palettes/Palettes_011_532f.pal"
 
@@ -136,7 +136,7 @@ Metatiles_011_5790:: INCBIN "data/maps/metatiles/Metatiles_011_5790.bin"
 
 Blocks_011_5844:: INCBIN "data/maps/blocks/Blocks_011_5844.bin"
 
-AttrMap_011_589c:: INCBIN "gfx/attrmaps/attrmap_011_589c.bin"
+AttrMap_011_589c:: INCBIN "data/maps/attrmaps/attrmap_011_589c.bin"
 
 Palettes_011_592c:: INCLUDE"data/maps/palettes/Palettes_011_592c.pal"
 
@@ -160,7 +160,7 @@ Metatiles_011_59ff:: INCBIN "data/maps/metatiles/Metatiles_011_59ff.bin"
 
 Blocks_011_5b4f:: INCBIN "data/maps/blocks/Blocks_011_5b4f.bin"
 
-AttrMap_011_5c4b:: INCBIN "gfx/attrmaps/attrmap_011_5c4b.bin"
+AttrMap_011_5c4b:: INCBIN "data/maps/attrmaps/attrmap_011_5c4b.bin"
 
 Palettes_011_5ce4:: INCLUDE"data/maps/palettes/Palettes_011_5ce4.pal"
 
@@ -248,7 +248,7 @@ Metatiles_011_63f8:: INCBIN "data/maps/metatiles/Metatiles_011_63f8.bin"
 
 Blocks_011_6510:: INCBIN "data/maps/blocks/Blocks_011_6510.bin"
 
-AttrMap_011_656c:: INCBIN "gfx/attrmaps/attrmap_011_656c.bin"
+AttrMap_011_656c:: INCBIN "data/maps/attrmaps/attrmap_011_656c.bin"
 
 Palettes_011_65db:: INCLUDE"data/maps/palettes/Palettes_011_65db.pal"
 
@@ -320,7 +320,7 @@ Metatiles_011_685e:: INCBIN "data/maps/metatiles/Metatiles_011_685e.bin"
 
 Blocks_011_6922:: INCBIN "data/maps/blocks/Blocks_011_6922.bin"
 
-AttrMap_011_6966:: INCBIN "gfx/attrmaps/attrmap_011_6966.bin"
+AttrMap_011_6966:: INCBIN "data/maps/attrmaps/attrmap_011_6966.bin"
 
 Palettes_011_69ec:: INCLUDE"data/maps/palettes/Palettes_011_69ec.pal"
 
@@ -408,7 +408,7 @@ Metatiles_011_6cd9:: INCBIN "data/maps/metatiles/Metatiles_011_6cd9.bin"
 
 Blocks_011_6d75:: INCBIN "data/maps/blocks/Blocks_011_6d75.bin"
 
-AttrMap_011_6dd5:: INCBIN "gfx/attrmaps/attrmap_011_6dd5.bin"
+AttrMap_011_6dd5:: INCBIN "data/maps/attrmaps/attrmap_011_6dd5.bin"
 
 Palettes_011_6e2f:: INCLUDE"data/maps/palettes/Palettes_011_6e2f.pal"
 
@@ -448,7 +448,7 @@ Metatiles_011_702d:: INCBIN "data/maps/metatiles/Metatiles_011_702d.bin"
 
 Blocks_011_7085:: INCBIN "data/maps/blocks/Blocks_011_7085.bin"
 
-AttrMap_011_71b1:: INCBIN "gfx/attrmaps/attrmap_011_71b1.bin"
+AttrMap_011_71b1:: INCBIN "data/maps/attrmaps/attrmap_011_71b1.bin"
 
 Palettes_011_7205:: INCLUDE"data/maps/palettes/Palettes_011_7205.pal"
 

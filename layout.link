@@ -17,7 +17,7 @@ ROM0
 	org $150
 	"Home"
 ROMX $01
-	"bank01"
+	"Map Data 1"
 ROMX $02
 	"Audio 1"
 	"Music 1"
@@ -59,7 +59,7 @@ ROMX $10
 	"Group 02 Map Defs"
 	"Group 03 Map Defs"
 ROMX $11
-	"bank11"
+	"Map Data 2"
 ROMX $12
 	"bank12"
 ROMX $13
@@ -71,10 +71,10 @@ ROMX $15
 ROMX $16
 	"Tilesets 1"
 ROMX $17
-	"bank17"
+	"Map Data 3"
 	"Tilesets 2"
 ROMX $18
-	"bank18"
+	"Map Data 4"
 ROMX $19
 	"Tilesets 3"
 ROMX $1a
@@ -201,13 +201,13 @@ ROMX $4e
 ROMX $4f
 	"bank4f"
 ROMX $50
-	"bank50"
+	"Map Data 5"
 ROMX $51
 	"Tilesets 4"
 ROMX $52
 	"Group 04 Map Defs"
 ROMX $53
-	"bank53"
+	"Map Data 6"
 ROMX $54
 	"Tilesets 5"
 ROMX $55
@@ -216,7 +216,7 @@ ROMX $55
 ROMX $56
 	"Tilesets 6"
 ROMX $57
-	"bank57"
+	"Map Data 7"
 ROMX $58
 	"bank58"
 ROMX $59
@@ -246,7 +246,7 @@ ROMX $62
 ROMX $63
 	"Group 05 Map Defs"
 ROMX $64
-	"bank64"
+	"Map Data 8"
 ROMX $65
 	"Tilesets 7"
 ROMX $66
@@ -258,19 +258,20 @@ ROMX $67
 ROMX $69
 	"Group 06 Map Defs"
 	"Group 07 Map Defs"
-	"bank69"
+	"Map Data 9"
 ROMX $6a
-	"bank6a"
+	"Map Data 10"
 ROMX $6b
 	"Tilesets 8"
-	"bank6b"
+	"Map Data 11"
 	"Tilesets 9"
-	"bank6b #2"
+	"Map Data 12"
 	"Tilesets 10"
 ROMX $6c
 	"bank6c"
 ROMX $6e
 	"bank6e"
+	"Map Data 13"
 ROMX $6f
 	"Cutscene 1d"
 ROMX $70

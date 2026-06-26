@@ -64,7 +64,7 @@ Layout_017_43c8::
 	INCBIN "data/maps/layouts/Layout_017_43c8.bin"
 Metatiles_017_4441:: INCBIN "data/maps/metatiles/Metatiles_017_4441.bin"
 Blocks_017_4501:: INCBIN "data/maps/blocks/Blocks_017_4501.bin"
-AttrMap_017_4671:: INCBIN "gfx/attrmaps/attrmap_017_4671.bin"
+AttrMap_017_4671:: INCBIN "data/maps/attrmaps/attrmap_017_4671.bin"
 Palettes_017_46d2:: INCLUDE"data/maps/palettes/Palettes_017_46d2.pal"
 Collision_017_471a:: INCBIN "data/maps/collision/Collision_017_471a.bin"
 MapAttributes_017_474b::
@@ -94,7 +94,7 @@ Layout_017_47f8::
 	INCBIN "data/maps/layouts/Layout_017_47f8.bin"
 Metatiles_017_4849:: INCBIN "data/maps/metatiles/Metatiles_017_4849.bin"
 Blocks_017_4899:: INCBIN "data/maps/blocks/Blocks_017_4899.bin"
-AttrMap_017_4961:: INCBIN "gfx/attrmaps/attrmap_017_4961.bin"
+AttrMap_017_4961:: INCBIN "data/maps/attrmaps/attrmap_017_4961.bin"
 Palettes_017_49ac:: INCLUDE"data/maps/palettes/Palettes_017_49ac.pal"
 Collision_017_49f4:: INCBIN "data/maps/collision/Collision_017_49f4.bin"
 MapAttributes_017_4a09::
@@ -111,7 +111,7 @@ Layout_017_4a1d::
 	INCBIN "data/maps/layouts/Layout_017_4a1d.bin"
 Metatiles_017_4a5a:: INCBIN "data/maps/metatiles/Metatiles_017_4a5a.bin"
 Blocks_017_4afa:: INCBIN "data/maps/blocks/Blocks_017_4afa.bin"
-AttrMap_017_4baa:: INCBIN "gfx/attrmaps/attrmap_017_4baa.bin"
+AttrMap_017_4baa:: INCBIN "data/maps/attrmaps/attrmap_017_4baa.bin"
 Palettes_017_4c3d:: INCLUDE"data/maps/palettes/Palettes_017_4c3d.pal"
 Collision_017_4c85:: INCBIN "data/maps/collision/Collision_017_4c85.bin"
 
@@ -130,7 +130,7 @@ Layout_017_4cc2::
 	INCBIN "data/maps/layouts/Layout_017_4cc2.bin"
 Metatiles_017_4cff:: INCBIN "data/maps/metatiles/Metatiles_017_4cff.bin"
 Blocks_017_4df7:: INCBIN "data/maps/blocks/Blocks_017_4df7.bin"
-AttrMap_017_4ebf:: INCBIN "gfx/attrmaps/attrmap_017_4ebf.bin"
+AttrMap_017_4ebf:: INCBIN "data/maps/attrmaps/attrmap_017_4ebf.bin"
 Palettes_017_4f17:: INCLUDE"data/maps/palettes/Palettes_017_4f17.pal"
 Collision_017_4f5f:: INCBIN "data/maps/collision/Collision_017_4f5f.bin"
 
