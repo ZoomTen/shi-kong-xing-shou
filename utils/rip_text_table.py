@@ -4,7 +4,7 @@
 # duplicate-glyph bytes (the non-canonical alias RGBDS can't reproduce from `text`).
 #
 # Usage: rip_text_table.py <bank_hex> <table_gb_hex> <n_entries> > out.txt
-#   e.g. rip_text_table.py 26 5724 160 > data/text/monster_desc.txt
+#   e.g. rip_text_table.py 26 5724 160 > text/monster_desc.txt
 import sys
 from collections import OrderedDict
 

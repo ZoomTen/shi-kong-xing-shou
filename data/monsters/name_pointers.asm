@@ -1,4 +1,4 @@
-; Pointers to species name strings (text in data/text/mon_names.asm), indexed by species.
+; Pointers to species name strings (text in text/mon_names.asm), indexed by species.
 
 MonNamePointers::
 	dw text_26_4888 ; 000 

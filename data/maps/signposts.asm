@@ -26,7 +26,7 @@ Group00_Signposts:
 	dw text_0c_412a
 	dw text_0c_4133
 
-INCLUDE "data/text/signposts_1.asm"
+INCLUDE "text/signposts_1.asm"
 
 Group02_Signposts:
 	dw text_0c_4152
@@ -41,7 +41,7 @@ Group02_Signposts:
 	dw text_0c_41af
 	dw text_0c_41b6
 
-INCLUDE "data/text/signposts_2.asm"
+INCLUDE "text/signposts_2.asm"
 
 Group03_Signposts:
 	dw text_0c_41cb
@@ -52,7 +52,7 @@ Group03_Signposts:
 	dw text_0c_41ee
 	dw text_0c_41f7
 
-INCLUDE "data/text/signposts_3.asm"
+INCLUDE "text/signposts_3.asm"
 
 Group04_Signposts:
 	dw text_0c_4216
@@ -68,7 +68,7 @@ Group04_Signposts:
 	dw text_0c_4272
 	dw text_0c_4283
 
-INCLUDE "data/text/signposts_4.asm"
+INCLUDE "text/signposts_4.asm"
 
 Group05_Signposts:
 	dw text_0c_42a5
@@ -80,7 +80,7 @@ Group05_Signposts:
 	dw text_0c_42d3
 	dw text_0c_42db
 
-INCLUDE "data/text/signposts_5.asm"
+INCLUDE "text/signposts_5.asm"
 
 Group06_Signposts:
 	dw text_0c_42f9
@@ -90,4 +90,4 @@ Group06_Signposts:
 	dw text_0c_431a
 	dw text_0c_4322
 
-INCLUDE "data/text/signposts_6.asm"
+INCLUDE "text/signposts_6.asm"

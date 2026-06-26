@@ -242,7 +242,7 @@ MoveName_Pointers::
 	dw text_26_45aa
 	dw text_26_45b2
 
-INCLUDE "data/text/move_names.asm"
+INCLUDE "text/move_names.asm"
 
 Func_026_45b9::
 	ld a, [wBattleTurn]
@@ -497,7 +497,7 @@ asm_026_4734::
 
 INCLUDE "data/monsters/name_pointers.asm"
 
-INCLUDE "data/text/mon_names.asm"
+INCLUDE "text/mon_names.asm"
 
 Func_026_4c89::
 	ld a, [wd9d9]
@@ -785,7 +785,7 @@ Pointers_026_53be::
 	dw text_26_54be
 
 ; TODO: glyph-sequence text reached via Pointers_026_53be
-INCLUDE "data/text/monster_53be.asm"
+INCLUDE "text/monster_53be.asm"
 ; TODO: prints menu option text indexed by wSelectedOption
 Func_026_54cc::
 	ld de, PersonalityDesc_Pointers
@@ -802,7 +802,7 @@ Func_026_54cc::
 
 INCLUDE "data/monsters/personality_pointers.asm"
 
-INCLUDE "data/text/personality_desc.asm"
+INCLUDE "text/personality_desc.asm"
 
 ; seems to print a monster's move list, unreferenced
 Func_026_55b8::
@@ -964,6 +964,6 @@ Func_026_5711::
 
 INCLUDE "data/monsters/desc_pointers.asm"
 
-INCLUDE "data/text/mon_descriptions.asm"
+INCLUDE "text/mon_descriptions.asm"
 
 

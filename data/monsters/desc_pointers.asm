@@ -1,4 +1,4 @@
-; Pointers to species description strings (text in data/text/mon_descriptions.asm), indexed by species.
+; Pointers to species description strings (text in text/mon_descriptions.asm), indexed by species.
 
 MonsterDesc_Pointers::
 	dw text_26_5864 ; 000 

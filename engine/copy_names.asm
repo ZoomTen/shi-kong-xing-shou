@@ -65,4 +65,4 @@ CopySelectedOptionName:
 	ret
 
 NamePointers:: INCLUDE "data/name_pointers.asm"
-INCLUDE "data/text/names.asm"
+INCLUDE "text/names.asm"

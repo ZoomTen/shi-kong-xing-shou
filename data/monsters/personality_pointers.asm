@@ -1,4 +1,4 @@
-; Pointers to personality-description strings (text in data/text/personality_desc.asm).
+; Pointers to personality-description strings (text in text/personality_desc.asm).
 
 PersonalityDesc_Pointers::
 	dw text_26_54ee ; 000

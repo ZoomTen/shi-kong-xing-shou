@@ -300,7 +300,7 @@ _SetMapLayoutPatchForItem::
 	call ApplyMapLayoutPatch
 	ret
 
-INCLUDE "data/text/script_item_get_4212.asm"
+INCLUDE "text/script_item_get_4212.asm"
 
 INCLUDE "engine/items/names.asm"
 INCLUDE "engine/items/menu.asm"
@@ -800,7 +800,7 @@ TypeNames::
 	dw text_1e_55d5
 	dw text_1e_55d8
 
-INCLUDE "data/text/mon_types.asm"
+INCLUDE "text/mon_types.asm"
 
 INCLUDE "data/icon_pointers.asm"
 
@@ -836,7 +836,7 @@ PointerTable_01e_57ed::
 	dw text_1e_59b7
 	dw text_1e_59c4
 
-INCLUDE "data/text/script_menu_system.asm"
+INCLUDE "text/script_menu_system.asm"
 
 PointerTable_01e_59cc::
 	dw Pointers_01e_59d2
@@ -947,9 +947,9 @@ Pointers_01e_59d2::
 	dw text_1e_613f
 	dw text_1e_613f
 
-INCLUDE "data/text/script_item_descriptions_0.asm"
+INCLUDE "text/script_item_descriptions_0.asm"
 
-INCLUDE "data/text/script_item_descriptions_5c3f.asm"
+INCLUDE "text/script_item_descriptions_5c3f.asm"
 
 Pointers_01e_614f::
 	dw text_1e_6197 
@@ -988,7 +988,7 @@ Pointers_01e_614f::
 	dw text_1e_63c5 
 	dw text_1e_63c5 
 	dw text_1e_63c5
-	INCLUDE "data/text/script_equipment_descriptions.asm"
+	INCLUDE "text/script_equipment_descriptions.asm"
 Pointers_01e_63e5::
 	dw text_1e_6437 
 	dw text_1e_6438 
@@ -1031,7 +1031,7 @@ Pointers_01e_63e5::
 	dw text_1e_6550 
 	dw text_1e_6557 
 	dw text_1e_6560
-	INCLUDE "data/text/script_item_names.asm"
+	INCLUDE "text/script_item_names.asm"
 
 Pointers_01e_6567::
 	dw text_1e_6635
@@ -1137,7 +1137,7 @@ Pointers_01e_6567::
 	dw text_1e_6ac3
 	dw text_1e_6ac3
 	dw text_1e_6ac3
-	INCLUDE "data/text/script_item_effects.asm"
+	INCLUDE "text/script_item_effects.asm"
 Func_01e_6acd::
 	ld a, [$DCE6]
 	and a
@@ -1371,17 +1371,17 @@ unk_01e_6d12::
 	db $01, $01, $00, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $01, $00, $01
 	db $00, $01, $00, $01, $01, $00, $01, $00, $ff
 INCLUDE "data/monsters/species_info.asm"
-INCLUDE "data/text/script_item_get_6ddb.asm"
+INCLUDE "text/script_item_get_6ddb.asm"
 
 INCLUDE "engine/items/load_item_name.asm"
 
 INCLUDE "data/items/map_item_names.asm"
 
-INCLUDE "data/text/script_item_found.asm"
+INCLUDE "text/script_item_found.asm"
 
 INCLUDE "engine/items/load_shop_name.asm"
 
 INCLUDE "data/items/price_options.asm"
 	
-INCLUDE "data/text/store_price_options.asm"
+INCLUDE "text/store_price_options.asm"
 

@@ -1,6 +1,6 @@
 # compiled objects
 *.o
-data/text/*.asm
+text/*.asm
 
 # compiled graphics
 gfx/*.2bpp

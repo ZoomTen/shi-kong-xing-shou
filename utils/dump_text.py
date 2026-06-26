@@ -34,7 +34,7 @@ if len(sys.argv) < 3:
 # RGBDS uses the LAST live `charmap` definition of a glyph. A glyph with more than
 # one byte (e.g. 振=$a4/$a5) is ambiguous: only the canonical byte round-trips from
 # a plain `text "…"`; every other byte must be emitted as a raw `db` (see the
-# hand-written precedent in data/text/equipment_names.txt).
+# hand-written precedent in text/equipment_names.txt).
 #
 # We also read COMMENTED charmap lines into `chars` (byte->glyph) so we can still
 # *decode* a byte whose definition is commented out (e.g. 振 $a5) — but a commented

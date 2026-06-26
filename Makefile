@@ -52,7 +52,7 @@ compare: $(ROM)
 
 clean:
 	$(RM) -fv $(ROM) $(MAP) $(SYM) $(OBJS)
-	$(RM) -fv data/text/*.asm
+	$(RM) -fv text/*.asm
 	$(RM) -fv data/maps/blocks/*.bin
 	$(RM) -fv data/maps/layouts/*.bin
 	$(RM) -fv data/maps/metatiles/*.bin
@@ -89,7 +89,7 @@ $(ROM): $(OBJS) $(LAYOUT)
 	$(FIX) -cv -t $(ROM_TITLE) -l 0x33 -k A7 -m 0x1b -r 2 -p 0 $@
 	$(PYTHON) tools/sort_symbols.py $(SYM)
 
-data/text/%.asm: data/text/%.txt
+text/%.asm: text/%.txt
 	$(PYTHON) tools/tx_parse.py $< > $@
 
 ### Generate maps

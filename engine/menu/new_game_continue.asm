@@ -128,7 +128,7 @@ NewGameContinueMenu::
 	call PrintMenuText
 	ret
 
-INCLUDE "data/text/new_game_continue.asm"
+INCLUDE "text/new_game_continue.asm"
 NewGameContinueMenu_Tilemap:
 	INCBIN "gfx/tilemaps/tilemap_03c_41f7.tilemap"
 NewGameContinueMenu_Attrmap:

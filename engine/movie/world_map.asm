@@ -138,7 +138,7 @@ WorldMapNameStringPointers_4114:
 WorldMapNameStringPointers_411a:
 	dw WorldMapNames_41b9
 	dw WorldMapNames_41c2
-INCLUDE "data/text/worldmap_names.asm"
+INCLUDE "text/worldmap_names.asm"
 WorldMapLocationIdPointers:
 	dw WorldMapLocationIds
 	dw WorldMapLocationIds

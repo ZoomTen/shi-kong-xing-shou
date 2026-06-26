@@ -421,7 +421,7 @@ ItemNames::
 	dw text_1e_5218
 	dw text_1e_5218
 
-INCLUDE "data/text/item_names.asm"
+INCLUDE "text/item_names.asm"
 
 EquipmentNames::
 	dw text_1e_5268
@@ -461,7 +461,7 @@ EquipmentNames::
 	dw text_1e_5302
 	dw text_1e_5302
 
-INCLUDE "data/text/equipment_names.asm"
+INCLUDE "text/equipment_names.asm"
 
 KeyItemNames::
 	dw text_1e_5358
@@ -506,4 +506,4 @@ KeyItemNames::
 	dw text_1e_546f
 	dw text_1e_5478
 
-INCLUDE "data/text/key_item_names.asm"
+INCLUDE "text/key_item_names.asm"
