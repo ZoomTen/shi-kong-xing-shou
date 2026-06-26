@@ -196,7 +196,7 @@ CopyBGMapData::
 AdvanceBattleScriptMode::
 	ld a, [_BANKNUM]
 	push af
-	ld a, BANK(BattleAnimScript_Pointers)
+	ld a, BANK(MoveAnimScript_Pointers)
 	rst Bankswitch
 	ld a, [wBattleScriptPos]
 	ld l, a

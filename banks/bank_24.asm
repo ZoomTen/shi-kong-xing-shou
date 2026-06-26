@@ -41,7 +41,7 @@ unk_024_4041::
 	db $36, $07
 
 Func_024_4053::
-	ld de, unk_024_6d77
+	ld de, MovePP
 	ld a, [wd9bf]
 	ld l, a
 	ld h, 0
@@ -1915,7 +1915,7 @@ Func_024_503e::
 .asm_5156
 	ld [bc], a
 	inc bc
-	ld de, unk_024_6d77
+	ld de, MovePP
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -1952,7 +1952,7 @@ Func_024_503e::
 	ld a, [wd9e3]
 	ld [bc], a
 	inc bc
-	ld de, unk_024_6d77
+	ld de, MovePP
 	ld l, a
 	ld h, $00
 	add hl, de
@@ -5639,17 +5639,7 @@ SpriteOAMTemplate_Pointers::
 	db $10, $18, $00, $EE, $01
 	db $FF
 
-; TODO: unk_ - lookup table indexed by wd9bf
-unk_024_6d77::
-	db $00, $0a, $14, $1e, $14, $0a, $28, $0f, $14, $0a, $0f, $1e, $1e, $14, $0a, $19
-	db $23, $1e, $14, $1e, $05, $14, $0f, $0f, $1e, $23, $14, $14, $23, $14, $23, $1e
-	db $14, $19, $05, $19, $0f, $1e, $14, $1e, $19, $14, $0a, $1e, $23, $14, $05, $05
-	db $28, $14, $19, $14, $0a, $0a, $14, $0a, $14, $19, $05, $0f, $0f, $0f, $14, $14
-	db $1e, $0a, $0f, $0f, $0a, $05, $05, $1e, $23, $0f, $0f, $0a, $0a, $14, $0a, $05
-	db $0f, $0f, $0a, $0a, $0a, $05, $05, $1e, $0f, $0f, $0a, $05, $14, $14, $0a, $1e
-	db $0f, $0a, $05, $0f, $0f, $1e, $19, $1e, $19, $14, $0a, $05, $0f, $14, $0a, $0f
-	db $0f, $0f, $1e, $0f, $0a, $0f, $05, $0a, $14, $0a, $0f, $0f, $28, $14, $0f, $1e
-	db $28, $0a, $0a, $0a, $14, $1e, $14, $0a, $0a, $05, $0a, $0a, $0a
+INCLUDE "data/moves/pp.asm"
 ; TODO: unk_ - indexed table (index wd9f3)
 unk_024_6e04::
 	db $89, $35, $4d, $6b, $2e, $05, $45, $16, $73, $23, $4c, $22, $07, $78, $19, $40

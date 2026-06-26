@@ -61,7 +61,7 @@ Func_01e_42e4::
 	ld l, d
 	ld a, d
 	ld h, 0
-	ld de, TypeNameIndex_01e_551f
+	ld de, MoveTypes
 	add hl, de
 	ld a, [hl]
 	ld [wd8ff], a
@@ -72,7 +72,7 @@ Func_01e_42f1::
 	ld a, d
 	ld [wd9e3], a
 	ld h, 0
-	ld de, TypeNameIndex_01e_551f
+	ld de, MoveTypes
 	add hl, de
 	ld a, [hl]
 	ld [wd8ff], a
