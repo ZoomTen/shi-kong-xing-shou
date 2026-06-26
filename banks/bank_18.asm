@@ -82,73 +82,50 @@ MapAttributes_018_40a0::
 Layout_018_40b4::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_40b4.bin"
-Metatiles_018_40d3::
-	INCBIN "data/maps/metatiles/Metatiles_018_40d3.bin"
-Blocks_018_4137::
-	INCBIN "data/maps/blocks/Blocks_018_4137.bin"
-AttrMap_018_4183::
-INCBIN "gfx/attrmaps/attrmap_018_4183.bin"
-Collision_018_421c::
-	INCBIN "data/maps/collision/Collision_018_421c.bin"
+Metatiles_018_40d3:: INCBIN "data/maps/metatiles/Metatiles_018_40d3.bin"
+Blocks_018_4137:: INCBIN "data/maps/blocks/Blocks_018_4137.bin"
+AttrMap_018_4183:: INCBIN "gfx/attrmaps/attrmap_018_4183.bin"
+Collision_018_421c:: INCBIN "data/maps/collision/Collision_018_421c.bin"
 Layout_018_4235::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_4235.bin"
-Metatiles_018_4254::
-	INCBIN "data/maps/metatiles/Metatiles_018_4254.bin"
-Blocks_018_42c0::
-	INCBIN "data/maps/blocks/Blocks_018_42c0.bin"
-AttrMap_018_4320::
-INCBIN "gfx/attrmaps/attrmap_018_4320.bin"
-Collision_018_43aa::
-	INCBIN "data/maps/collision/Collision_018_43aa.bin"
+Metatiles_018_4254:: INCBIN "data/maps/metatiles/Metatiles_018_4254.bin"
+Blocks_018_42c0:: INCBIN "data/maps/blocks/Blocks_018_42c0.bin"
+AttrMap_018_4320:: INCBIN "gfx/attrmaps/attrmap_018_4320.bin"
+Collision_018_43aa:: INCBIN "data/maps/collision/Collision_018_43aa.bin"
 Layout_018_43c6::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_43c6.bin"
-Blocks_018_43e5::
-	INCBIN "data/maps/blocks/Blocks_018_43e5.bin"
+Blocks_018_43e5:: INCBIN "data/maps/blocks/Blocks_018_43e5.bin"
 Layout_018_4425::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_4425.bin"
-Blocks_018_4444::
-	INCBIN "data/maps/blocks/Blocks_018_4444.bin"
+Blocks_018_4444:: INCBIN "data/maps/blocks/Blocks_018_4444.bin"
 Layout_018_4488::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_4488.bin"
-Blocks_018_44a7::
-	INCBIN "data/maps/blocks/Blocks_018_44a7.bin"
+Blocks_018_44a7:: INCBIN "data/maps/blocks/Blocks_018_44a7.bin"
 Layout_018_44df::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_44df.bin"
-Blocks_018_44fe::
-	INCBIN "data/maps/blocks/Blocks_018_44fe.bin"
+Blocks_018_44fe:: INCBIN "data/maps/blocks/Blocks_018_44fe.bin"
 Layout_018_4542::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_4542.bin"
-Blocks_018_4561::
-	INCBIN "data/maps/blocks/Blocks_018_4561.bin"
+Blocks_018_4561:: INCBIN "data/maps/blocks/Blocks_018_4561.bin"
 Layout_018_45c1::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_45c1.bin"
-Metatiles_018_45e0::
-	INCBIN "data/maps/metatiles/Metatiles_018_45e0.bin"
-Blocks_018_46c0::
-	INCBIN "data/maps/blocks/Blocks_018_46c0.bin"
-AttrMap_018_4708::
-INCBIN "gfx/attrmaps/attrmap_018_4708.bin"
-Collision_018_47e1::
-	INCBIN "data/maps/collision/Collision_018_47e1.bin"
+Metatiles_018_45e0:: INCBIN "data/maps/metatiles/Metatiles_018_45e0.bin"
+Blocks_018_46c0:: INCBIN "data/maps/blocks/Blocks_018_46c0.bin"
+AttrMap_018_4708:: INCBIN "gfx/attrmaps/attrmap_018_4708.bin"
+Collision_018_47e1:: INCBIN "data/maps/collision/Collision_018_47e1.bin"
 Layout_018_481a::
 	db MAPTYPE_NONE
 	INCBIN "data/maps/layouts/Layout_018_481a.bin"
-Metatiles_018_48f3::
-	INCBIN "data/maps/metatiles/Metatiles_018_48f3.bin"
-Blocks_018_49af::
-	INCBIN "data/maps/blocks/Blocks_018_49af.bin"
-AttrMap_018_4b77::
-INCBIN "gfx/attrmaps/attrmap_018_4b77.bin"
-Palettes_018_4bf8::
-	INCLUDE "data/maps/palettes/Palettes_018_4bf8.pal"
-Palettes_018_4c40::
-	INCLUDE "data/maps/palettes/Palettes_018_4c40.pal"
-Collision_018_4c88::
-	INCBIN "data/maps/collision/Collision_018_4c88.bin"
+Metatiles_018_48f3:: INCBIN "data/maps/metatiles/Metatiles_018_48f3.bin"
+Blocks_018_49af:: INCBIN "data/maps/blocks/Blocks_018_49af.bin"
+AttrMap_018_4b77:: INCBIN "gfx/attrmaps/attrmap_018_4b77.bin"
+Palettes_018_4bf8:: INCLUDE"data/maps/palettes/Palettes_018_4bf8.pal"
+Palettes_018_4c40:: INCLUDE"data/maps/palettes/Palettes_018_4c40.pal"
+Collision_018_4c88:: INCBIN "data/maps/collision/Collision_018_4c88.bin"

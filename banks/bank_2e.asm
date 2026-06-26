@@ -1232,10 +1232,8 @@ Func_02e_476d::
 .asm_487c
 	farcall Func_02b_402b
 	ret
-Mode_Tilemap_4883::
-INCBIN "gfx/tilemaps/mode_tilemap_4883.tilemap"
-Mode_Tilemap_48a1::
-INCBIN "gfx/tilemaps/mode_tilemap_48a1.tilemap"
+Mode_Tilemap_4883:: INCBIN "gfx/tilemaps/mode_tilemap_4883.tilemap"
+Mode_Tilemap_48a1:: INCBIN "gfx/tilemaps/mode_tilemap_48a1.tilemap"
 Func_02e_48c9::
 	ld a, [wd98b]
 	and a
@@ -2473,10 +2471,8 @@ Func_02e_50e7::
 	ld [wBattleState], a
 	ld [wd98b], a
 	ret
-Mode_Tilemap_5179::
-INCBIN "gfx/tilemaps/mode_tilemap_5179.tilemap"
-Mode_Tilemap_519d::
-INCBIN "gfx/tilemaps/mode_tilemap_519d.tilemap"
+Mode_Tilemap_5179:: INCBIN "gfx/tilemaps/mode_tilemap_5179.tilemap"
+Mode_Tilemap_519d:: INCBIN "gfx/tilemaps/mode_tilemap_519d.tilemap"
 Func_02e_51c1::
 	call Func_02e_411e
 	ld a, [wBattleState]

@@ -85,40 +85,23 @@ TilemapPointers_033_40E1::
 	dw Tilemap_033_43f5
 	dw Tilemap_033_43f5
 
-Tilemap_033_40f5::
-	INCBIN "gfx/tilemaps/tilemap_033_40f5.tilemap"
-Tilemap_033_4125::
-	INCBIN "gfx/tilemaps/tilemap_033_4125.tilemap"
-Tilemap_033_4155::
-	INCBIN "gfx/tilemaps/tilemap_033_4155.tilemap"
-Tilemap_033_4185::
-	INCBIN "gfx/tilemaps/tilemap_033_4185.tilemap"
-Tilemap_033_41b5::
-	INCBIN "gfx/tilemaps/tilemap_033_41b5.tilemap"
-Tilemap_033_41e5::
-	INCBIN "gfx/tilemaps/tilemap_033_41e5.tilemap"
-Tilemap_033_4215::
-	INCBIN "gfx/tilemaps/tilemap_033_4215.tilemap"
-Tilemap_033_4245::
-	INCBIN "gfx/tilemaps/tilemap_033_4245.tilemap"
-Tilemap_033_4275::
-	INCBIN "gfx/tilemaps/tilemap_033_4275.tilemap"
-Tilemap_033_42a5::
-	INCBIN "gfx/tilemaps/tilemap_033_42a5.tilemap"
-Tilemap_033_42d5::
-	INCBIN "gfx/tilemaps/tilemap_033_42d5.tilemap"
-Tilemap_033_4305::
-	INCBIN "gfx/tilemaps/tilemap_033_4305.tilemap"
-Tilemap_033_4335::
-	INCBIN "gfx/tilemaps/tilemap_033_4335.tilemap"
-Tilemap_033_4365::
-	INCBIN "gfx/tilemaps/tilemap_033_4365.tilemap"
-Tilemap_033_4395::
-	INCBIN "gfx/tilemaps/tilemap_033_4395.tilemap"
-Tilemap_033_43c5::
-	INCBIN "gfx/tilemaps/tilemap_033_43c5.tilemap"
-Tilemap_033_43f5::
-	INCBIN "gfx/tilemaps/tilemap_033_43f5.tilemap"
+Tilemap_033_40f5:: INCBIN "gfx/tilemaps/tilemap_033_40f5.tilemap"
+Tilemap_033_4125:: INCBIN "gfx/tilemaps/tilemap_033_4125.tilemap"
+Tilemap_033_4155:: INCBIN "gfx/tilemaps/tilemap_033_4155.tilemap"
+Tilemap_033_4185:: INCBIN "gfx/tilemaps/tilemap_033_4185.tilemap"
+Tilemap_033_41b5:: INCBIN "gfx/tilemaps/tilemap_033_41b5.tilemap"
+Tilemap_033_41e5:: INCBIN "gfx/tilemaps/tilemap_033_41e5.tilemap"
+Tilemap_033_4215:: INCBIN "gfx/tilemaps/tilemap_033_4215.tilemap"
+Tilemap_033_4245:: INCBIN "gfx/tilemaps/tilemap_033_4245.tilemap"
+Tilemap_033_4275:: INCBIN "gfx/tilemaps/tilemap_033_4275.tilemap"
+Tilemap_033_42a5:: INCBIN "gfx/tilemaps/tilemap_033_42a5.tilemap"
+Tilemap_033_42d5:: INCBIN "gfx/tilemaps/tilemap_033_42d5.tilemap"
+Tilemap_033_4305:: INCBIN "gfx/tilemaps/tilemap_033_4305.tilemap"
+Tilemap_033_4335:: INCBIN "gfx/tilemaps/tilemap_033_4335.tilemap"
+Tilemap_033_4365:: INCBIN "gfx/tilemaps/tilemap_033_4365.tilemap"
+Tilemap_033_4395:: INCBIN "gfx/tilemaps/tilemap_033_4395.tilemap"
+Tilemap_033_43c5:: INCBIN "gfx/tilemaps/tilemap_033_43c5.tilemap"
+Tilemap_033_43f5:: INCBIN "gfx/tilemaps/tilemap_033_43f5.tilemap"
 
 ; copies bc bytes (length-prefixed at [wd990:wd98f]) to vTiles0
 Func_033_4425::

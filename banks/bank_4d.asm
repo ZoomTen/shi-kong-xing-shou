@@ -13,8 +13,7 @@ Func_04d_4000::
 	ld b, a
 	call CopyBytesVRAM
 	ret
-Bank4d_SpriteGFX::
-INCBIN "gfx/misc/bank4d_spritegfx.bin"
+Bank4d_SpriteGFX:: INCBIN "gfx/misc/bank4d_spritegfx.bin"
 Func_4d_5ed8::
 	ld l, e
 	ld h, d

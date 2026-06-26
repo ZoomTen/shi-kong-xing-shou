@@ -6,8 +6,7 @@ MACRO bgcopy_patch
 ENDM
 
 ; TODO
-unk_00b_4000::
-INCBIN "data/unk_00b_4000.bin"
+unk_00b_4000:: INCBIN "data/unk_00b_4000.bin"
 
 MovementData_OneLeft::
 	db LEFT, $ff
@@ -5399,8 +5398,7 @@ BGCopyPatch_00b_6982::
 BGCopyPatch_00b_6988::
 	bgcopy_patch 2, 2, $01, $01, $01, $01
 
-GFX_00b_698e::
-INCBIN "gfx/misc/gfx_00b_698e.2bpp"
+GFX_00b_698e:: INCBIN "gfx/misc/gfx_00b_698e.2bpp"
 Palette_00b_6ace::
 ; first 4 colors = OBJ palette (Func_00b_5273); rest is $ff/$fe/$88 data
 	RGB 21, 21, 21

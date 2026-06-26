@@ -2811,8 +2811,7 @@ BattleAI_ActionIndex::
 	db $3
 	db $3
 
-GFX_02b_54c7::
-	INCBIN "gfx/battle/image_2b_54c7.2bpp"
+GFX_02b_54c7:: INCBIN "gfx/battle/image_2b_54c7.2bpp"
 
 BattleTurns_Jump_5::
 	ld hl, GFX_02b_54c7
@@ -5898,71 +5897,51 @@ BattleIntro_Jump_6::
 	ld [wd9e1], a
 	ret
 
-Battle_TextBoxBorder_GFX::
-	INCBIN "gfx/battle_intro/textbox_border.2bpp"
+Battle_TextBoxBorder_GFX:: INCBIN "gfx/battle_intro/textbox_border.2bpp"
 
-Battle_UI_GFX::
-	INCBIN "gfx/battle_intro/ui.2bpp"
+Battle_UI_GFX:: INCBIN "gfx/battle_intro/ui.2bpp"
 
-Battle_BGPals::
-	INCBIN "gfx/battle_intro/bg.pal"
+Battle_BGPals:: INCBIN "gfx/battle_intro/bg.pal"
 
-Battle_StatusPanel_BGMap::
-	INCBIN "gfx/battle_intro/statuspanel_a.tilemap"
+Battle_StatusPanel_BGMap:: INCBIN "gfx/battle_intro/statuspanel_a.tilemap"
 ; Second 9x4 frame, not referenced by disassembled code.
 	INCBIN "gfx/battle_intro/statuspanel_b.tilemap"
 
-Battle_HUD_BGMap::
-	INCBIN "gfx/battle_intro/hud.tilemap"
+Battle_HUD_BGMap:: INCBIN "gfx/battle_intro/hud.tilemap"
 
-Battle_PlayerFace_BGMap::
-	INCBIN "gfx/battle_intro/face_player.tilemap"
+Battle_PlayerFace_BGMap:: INCBIN "gfx/battle_intro/face_player.tilemap"
 
-Battle_EnemyFace_BGMap::
-	INCBIN "gfx/battle_intro/face_enemy.tilemap"
+Battle_EnemyFace_BGMap:: INCBIN "gfx/battle_intro/face_enemy.tilemap"
 
-Battle_EnemyFace_AttrMap::
-	INCBIN "gfx/battle_intro/face_enemy_a.gbcattr"
+Battle_EnemyFace_AttrMap:: INCBIN "gfx/battle_intro/face_enemy_a.gbcattr"
 ; Second 6x6 attrmap, not referenced by disassembled code.
 	INCBIN "gfx/battle_intro/face_enemy_b.gbcattr"
 
-Battle_PlayerFace_AttrMap::
-	INCBIN "gfx/battle_intro/face_player.gbcattr"
+Battle_PlayerFace_AttrMap:: INCBIN "gfx/battle_intro/face_player.gbcattr"
 
-Battle_Panel10x4_BGMap::
-	INCBIN "gfx/battle_intro/panel10x4.tilemap"
+Battle_Panel10x4_BGMap:: INCBIN "gfx/battle_intro/panel10x4.tilemap"
 
-Battle_Panel10x4_AttrMap::
-	INCBIN "gfx/battle_intro/panel10x4.gbcattr"
+Battle_Panel10x4_AttrMap:: INCBIN "gfx/battle_intro/panel10x4.gbcattr"
 
-Battle_Panel10x3_BGMap::
-	INCBIN "gfx/battle_intro/panel10x3.tilemap"
+Battle_Panel10x3_BGMap:: INCBIN "gfx/battle_intro/panel10x3.tilemap"
 
-Battle_Panel10x3_AttrMap::
-	INCBIN "gfx/battle_intro/panel10x3.gbcattr"
+Battle_Panel10x3_AttrMap:: INCBIN "gfx/battle_intro/panel10x3.gbcattr"
 
-Battle_Panel13x6_BGMap::
-	INCBIN "gfx/battle_intro/panel13x6.tilemap"
+Battle_Panel13x6_BGMap:: INCBIN "gfx/battle_intro/panel13x6.tilemap"
 
-Battle_Panel11x10_BGMap::
-	INCBIN "gfx/battle_intro/panel11x10.tilemap"
+Battle_Panel11x10_BGMap:: INCBIN "gfx/battle_intro/panel11x10.tilemap"
 
-Battle_Panel11x10_AttrMap::
-	INCBIN "gfx/battle_intro/panel11x10.gbcattr"
+Battle_Panel11x10_AttrMap:: INCBIN "gfx/battle_intro/panel11x10.gbcattr"
 
-Battle_Panel9x6_BGMap::
-	INCBIN "gfx/battle_intro/panel9x6.tilemap"
+Battle_Panel9x6_BGMap:: INCBIN "gfx/battle_intro/panel9x6.tilemap"
 
-Battle_HUDFont_GFX::
-	INCBIN "gfx/battle_intro/hud_font.2bpp"
+Battle_HUDFont_GFX:: INCBIN "gfx/battle_intro/hud_font.2bpp"
 
-Battle_HUDStats_GFX::
-	INCBIN "gfx/battle_intro/hud_stats.2bpp"
+Battle_HUDStats_GFX:: INCBIN "gfx/battle_intro/hud_stats.2bpp"
 
 ; Last $20 bytes alias as GFX copied to vTiles $8700.
 ; TODO: indexed mid-block (+offset at runtime); consider per-entry sub-labels
-Battle_OBPals::
-	INCBIN "gfx/battle_intro/ob.pal"
+Battle_OBPals:: INCBIN "gfx/battle_intro/ob.pal"
 
 ; Source entry consumed by BuildOAMList: y, x, tile, attr.
 ; The third source byte is skipped by the reader, so it is reserved.

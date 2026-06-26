@@ -1,7 +1,5 @@
-GFX_039_4000::
-	INCBIN "gfx/misc/gfx_039_4000.2bpp"
-GFX_039_4020::
-	INCBIN "gfx/misc/gfx_039_4020.2bpp"
+GFX_039_4000:: INCBIN "gfx/misc/gfx_039_4000.2bpp"
+GFX_039_4020:: INCBIN "gfx/misc/gfx_039_4020.2bpp"
 Func_039_40a0::
 	xor a
 	ld [hFFC6], a

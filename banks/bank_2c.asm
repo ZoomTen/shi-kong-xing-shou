@@ -111,22 +111,14 @@ CharBacksprites::
 	dw CharBacksprite_5
 	dw CharBacksprite_6
 	dw CharBacksprite_7
-CharBacksprite_0::
-	INCBIN "gfx/backsprites/backsprite_0.2bpp"
-CharBacksprite_1::
-	INCBIN "gfx/backsprites/backsprite_1.2bpp"
-CharBacksprite_2::
-	INCBIN "gfx/backsprites/backsprite_2.2bpp"
-CharBacksprite_3::
-	INCBIN "gfx/backsprites/backsprite_3.2bpp"
-CharBacksprite_4::
-	INCBIN "gfx/backsprites/backsprite_4.2bpp"
-CharBacksprite_5::
-	INCBIN "gfx/backsprites/backsprite_5.2bpp"
-CharBacksprite_6::
-	INCBIN "gfx/backsprites/backsprite_6.2bpp"
-CharBacksprite_7::
-	INCBIN "gfx/backsprites/backsprite_7.2bpp"
+CharBacksprite_0:: INCBIN "gfx/backsprites/backsprite_0.2bpp"
+CharBacksprite_1:: INCBIN "gfx/backsprites/backsprite_1.2bpp"
+CharBacksprite_2:: INCBIN "gfx/backsprites/backsprite_2.2bpp"
+CharBacksprite_3:: INCBIN "gfx/backsprites/backsprite_3.2bpp"
+CharBacksprite_4:: INCBIN "gfx/backsprites/backsprite_4.2bpp"
+CharBacksprite_5:: INCBIN "gfx/backsprites/backsprite_5.2bpp"
+CharBacksprite_6:: INCBIN "gfx/backsprites/backsprite_6.2bpp"
+CharBacksprite_7:: INCBIN "gfx/backsprites/backsprite_7.2bpp"
 
 BattleTransition_InsertWhiteTile::
 	ld hl, .WhiteTile
