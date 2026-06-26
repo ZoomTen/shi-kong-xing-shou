@@ -4,7 +4,7 @@ LoadShopItemName::
 	ld a, h
 	ld [wSavedTextPos + 1], a
 	ld a, [wItemNameCategory]
-	cp 7
+	cp ITEMNAMECAT_PRICE
 	jr z, asm_01e_6e89
 	ld [wd1f4], a
 	ld de, ItemNameCategories

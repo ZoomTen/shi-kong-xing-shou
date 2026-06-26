@@ -58,258 +58,258 @@ ItemNameIndexPointers::
 	dw ItemNameIndex_01e_4e65
 
 ItemNameIndex_01e_4d99::
-	db $00, $3a
-	db $00, $42
-	db $00, $35
-	db $00, $17
+	db ITEMNAMECAT_ITEM, TM19
+	db ITEMNAMECAT_ITEM, TM27
+	db ITEMNAMECAT_ITEM, TM14
+	db ITEMNAMECAT_ITEM, ITEM_17
 
 ItemNameIndex_01e_4da1::
-	db $00, $43
-	db $00, $47
+	db ITEMNAMECAT_ITEM, TM28
+	db ITEMNAMECAT_ITEM, TM32
 
 ItemNameIndex_01e_4da5::
-	db $00, $49
+	db ITEMNAMECAT_ITEM, TM34
 
 ItemNameIndex_01e_4da7::
-	db $00, $4c
+	db ITEMNAMECAT_ITEM, TM37
 
 ItemNameIndex_01e_4da9::
-	db $00, $4f
-	db $00, $51
+	db ITEMNAMECAT_ITEM, TM40
+	db ITEMNAMECAT_ITEM, TM42
 
 ItemNameIndex_01e_4dad::
-	db $01, $09
-	db $00, $53
+	db ITEMNAMECAT_EQUIP, EQUIP_09
+	db ITEMNAMECAT_ITEM, TM44
 
 ItemNameIndex_01e_4db1::
-	db $00, $2c
-	db $01, $0a
-	db $00, $2e
+	db ITEMNAMECAT_ITEM, TM05
+	db ITEMNAMECAT_EQUIP, EQUIP_0a
+	db ITEMNAMECAT_ITEM, TM07
 
 ItemNameIndex_01e_4db7::
-	db $00, $24
-	db $00, $26
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, ITEM_26
 
 ItemNameIndex_01e_4dbb::
-	db $00, $3e
+	db ITEMNAMECAT_ITEM, TM23
 
 ItemNameIndex_01e_4dbd::
-	db $00, $0c
-	db $00, $08
-	db $00, $03
+	db ITEMNAMECAT_ITEM, ITEM_0c
+	db ITEMNAMECAT_ITEM, ITEM_08
+	db ITEMNAMECAT_ITEM, ITEM_03
 
 ItemNameIndex_01e_4dc3::
-	db $00, $3b
-	db $00, $30
-	db $00, $23
+	db ITEMNAMECAT_ITEM, TM20
+	db ITEMNAMECAT_ITEM, TM09
+	db ITEMNAMECAT_ITEM, ITEM_23
 
 ItemNameIndex_01e_4dc9::
-	db $00, $24
-	db $00, $0b
-	db $00, $22
-	db $00, $54
-	db $00, $27
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, ITEM_0b
+	db ITEMNAMECAT_ITEM, ITEM_22
+	db ITEMNAMECAT_ITEM, TM45
+	db ITEMNAMECAT_ITEM, ITEM_27
 
 ItemNameIndex_01e_4dd3::
-	db $00, $41
+	db ITEMNAMECAT_ITEM, TM26
 
 ItemNameIndex_01e_4dd5::
-	db $00, $07
-	db $00, $45
+	db ITEMNAMECAT_ITEM, ITEM_07
+	db ITEMNAMECAT_ITEM, TM30
 
 ItemNameIndex_01e_4dd9::
-	db $00, $1d
+	db ITEMNAMECAT_ITEM, ITEM_1d
 
 ItemNameIndex_01e_4ddb::
-	db $00, $4d
-	db $02, $20
-	db $00, $24
-	db $00, $3d
+	db ITEMNAMECAT_ITEM, TM38
+	db ITEMNAMECAT_KEY, KEYITEM_20
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, TM22
 
 ItemNameIndex_01e_4de3::
-	db $01, $14
-	db $00, $25
-	db $01, $0d
-	db $00, $26
+	db ITEMNAMECAT_EQUIP, EQUIP_14
+	db ITEMNAMECAT_ITEM, ITEM_25
+	db ITEMNAMECAT_EQUIP, EQUIP_0d
+	db ITEMNAMECAT_ITEM, ITEM_26
 
 ItemNameIndex_01e_4deb::
-	db $00, $08
-	db $00, $0d
-	db $00, $02
-	db $00, $36
+	db ITEMNAMECAT_ITEM, ITEM_08
+	db ITEMNAMECAT_ITEM, ITEM_0d
+	db ITEMNAMECAT_ITEM, ITEM_02
+	db ITEMNAMECAT_ITEM, TM15
 
 ItemNameIndex_01e_4df3::
-	db $00, $11
-	db $00, $28
+	db ITEMNAMECAT_ITEM, ITEM_11
+	db ITEMNAMECAT_ITEM, TM01
 
 ItemNameIndex_01e_4df7::
-	db $01, $0f
-	db $00, $4b
+	db ITEMNAMECAT_EQUIP, EQUIP_0f
+	db ITEMNAMECAT_ITEM, TM36
 
 ItemNameIndex_01e_4dfb::
-	db $00, $0c
+	db ITEMNAMECAT_ITEM, ITEM_0c
 
 ItemNameIndex_01e_4dfd::
-	db $00, $2a
-	db $00, $4a
-	db $00, $38
+	db ITEMNAMECAT_ITEM, TM03
+	db ITEMNAMECAT_ITEM, TM35
+	db ITEMNAMECAT_ITEM, TM17
 
 ItemNameIndex_01e_4e03::
-	db $00, $08
-	db $00, $14
+	db ITEMNAMECAT_ITEM, ITEM_08
+	db ITEMNAMECAT_ITEM, ITEM_14
 
 ItemNameIndex_01e_4e07::
-	db $00, $27
-	db $00, $03
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, ITEM_03
 
 ItemNameIndex_01e_4e0b::
-	db $00, $44
-	db $00, $58
+	db ITEMNAMECAT_ITEM, TM29
+	db ITEMNAMECAT_ITEM, TM49
 
 ItemNameIndex_01e_4e0f::
-	db $00, $27
-	db $00, $1d
-	db $00, $16
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, ITEM_1d
+	db ITEMNAMECAT_ITEM, ITEM_16
 
 ItemNameIndex_01e_4e15::
-	db $00, $1c
-	db $00, $39
-	db $00, $13
+	db ITEMNAMECAT_ITEM, ITEM_1c
+	db ITEMNAMECAT_ITEM, TM18
+	db ITEMNAMECAT_ITEM, ITEM_13
 
 ItemNameIndex_01e_4e1b::
-	db $00, $07
-	db $00, $1b
-	db $00, $36
-	db $00, $32
+	db ITEMNAMECAT_ITEM, ITEM_07
+	db ITEMNAMECAT_ITEM, ITEM_1b
+	db ITEMNAMECAT_ITEM, TM15
+	db ITEMNAMECAT_ITEM, TM11
 
 ItemNameIndex_01e_4e23::
-	db $00, $23
-	db $00, $12
-	db $00, $22
+	db ITEMNAMECAT_ITEM, ITEM_23
+	db ITEMNAMECAT_ITEM, ITEM_12
+	db ITEMNAMECAT_ITEM, ITEM_22
 
 ItemNameIndex_01e_4e29::
-	db $01, $14
-	db $01, $15
+	db ITEMNAMECAT_EQUIP, EQUIP_14
+	db ITEMNAMECAT_EQUIP, EQUIP_15
 
 ItemNameIndex_01e_4e2d::
-	db $00, $06
-	db $00, $02
+	db ITEMNAMECAT_ITEM, ITEM_06
+	db ITEMNAMECAT_ITEM, ITEM_02
 
 ItemNameIndex_01e_4e31::
-	db $00, $1d
-	db $00, $11
-	db $00, $23
+	db ITEMNAMECAT_ITEM, ITEM_1d
+	db ITEMNAMECAT_ITEM, ITEM_11
+	db ITEMNAMECAT_ITEM, ITEM_23
 
 ItemNameIndex_01e_4e37::
-	db $00, $06
-	db $01, $0c
-	db $00, $1b
-	db $00, $1c
-	db $00, $0c
-	db $01, $13
-	db $01, $11
+	db ITEMNAMECAT_ITEM, ITEM_06
+	db ITEMNAMECAT_EQUIP, EQUIP_0c
+	db ITEMNAMECAT_ITEM, ITEM_1b
+	db ITEMNAMECAT_ITEM, ITEM_1c
+	db ITEMNAMECAT_ITEM, ITEM_0c
+	db ITEMNAMECAT_EQUIP, EQUIP_13
+	db ITEMNAMECAT_EQUIP, EQUIP_11
 
 ItemNameIndex_01e_4e45::
-	db $00, $18
-	db $00, $23
-	db $00, $31
+	db ITEMNAMECAT_ITEM, ITEM_18
+	db ITEMNAMECAT_ITEM, ITEM_23
+	db ITEMNAMECAT_ITEM, TM10
 
 ItemNameIndex_01e_4e4b::
-	db $00, $27
-	db $00, $03
-	db $00, $24
-	db $00, $13
-	db $01, $01
-	db $00, $03
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, ITEM_03
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, ITEM_13
+	db ITEMNAMECAT_EQUIP, EQUIP_01
+	db ITEMNAMECAT_ITEM, ITEM_03
 
 ItemNameIndex_01e_4e57::
-	db $00, $27
-	db $00, $0b
-	db $00, $04
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, ITEM_0b
+	db ITEMNAMECAT_ITEM, ITEM_04
 
 ItemNameIndex_01e_4e5d::
-	db $00, $0c
-	db $00, $24
-	db $00, $01
-	db $00, $05
+	db ITEMNAMECAT_ITEM, ITEM_0c
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, ITEM_01
+	db ITEMNAMECAT_ITEM, ITEM_05
 
 ItemNameIndex_01e_4e65::
-	db $00, $0c
-	db $00, $24
-	db $00, $01
-	db $00, $05
+	db ITEMNAMECAT_ITEM, ITEM_0c
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, ITEM_01
+	db ITEMNAMECAT_ITEM, ITEM_05
 
 ItemNameIndex_01e_4e6d::
-	db $00, $02
-	db $00, $05
-	db $00, $21
+	db ITEMNAMECAT_ITEM, ITEM_02
+	db ITEMNAMECAT_ITEM, ITEM_05
+	db ITEMNAMECAT_ITEM, ITEM_21
 
 ItemNameIndex_01e_4e73::
-	db $00, $4b
-	db $01, $08
-	db $00, $07
+	db ITEMNAMECAT_ITEM, TM36
+	db ITEMNAMECAT_EQUIP, EQUIP_08
+	db ITEMNAMECAT_ITEM, ITEM_07
 
 ItemNameIndex_01e_4e79::
-	db $00, $11
-	db $00, $12
-	db $00, $27
-	db $00, $09
-	db $00, $0c
+	db ITEMNAMECAT_ITEM, ITEM_11
+	db ITEMNAMECAT_ITEM, ITEM_12
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, ITEM_09
+	db ITEMNAMECAT_ITEM, ITEM_0c
 
 ItemNameIndex_01e_4e83::
-	db $00, $04
-	db $00, $59
-	db $00, $27
-	db $00, $11
+	db ITEMNAMECAT_ITEM, ITEM_04
+	db ITEMNAMECAT_ITEM, TM50
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, ITEM_11
 
 ItemNameIndex_01e_4e8b::
-	db $00, $0a
-	db $00, $06
+	db ITEMNAMECAT_ITEM, ITEM_0a
+	db ITEMNAMECAT_ITEM, ITEM_06
 
 ItemNameIndex_01e_4e8f::
-	db $00, $12
-	db $00, $3f
-	db $00, $43
-	db $00, $26
+	db ITEMNAMECAT_ITEM, ITEM_12
+	db ITEMNAMECAT_ITEM, TM24
+	db ITEMNAMECAT_ITEM, TM28
+	db ITEMNAMECAT_ITEM, ITEM_26
 
 ItemNameIndex_01e_4e97::
-	db $00, $55
+	db ITEMNAMECAT_ITEM, TM46
 
 ItemNameIndex_01e_4e99::
-	db $00, $27
-	db $00, $29
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, TM02
 
 ItemNameIndex_01e_4e9d::
-	db $00, $12
+	db ITEMNAMECAT_ITEM, ITEM_12
 
 ItemNameIndex_01e_4e9f::
-	db $00, $11
+	db ITEMNAMECAT_ITEM, ITEM_11
 
 ItemNameIndex_01e_4ea1::
-	db $00, $06
+	db ITEMNAMECAT_ITEM, ITEM_06
 
 ItemNameIndex_01e_4ea3::
-	db $00, $27
-	db $00, $34
-	db $00, $01
-	db $00, $0c
-	db $00, $26
+	db ITEMNAMECAT_ITEM, ITEM_27
+	db ITEMNAMECAT_ITEM, TM13
+	db ITEMNAMECAT_ITEM, ITEM_01
+	db ITEMNAMECAT_ITEM, ITEM_0c
+	db ITEMNAMECAT_ITEM, ITEM_26
 
 ItemNameIndex_01e_4ead::
-	db $00, $13
+	db ITEMNAMECAT_ITEM, ITEM_13
 
 ItemNameIndex_01e_4eaf::
-	db $00, $03
-	db $00, $06
+	db ITEMNAMECAT_ITEM, ITEM_03
+	db ITEMNAMECAT_ITEM, ITEM_06
 
 ItemNameIndex_01e_4eb3::
-	db $00, $0a
+	db ITEMNAMECAT_ITEM, ITEM_0a
 
 ItemNameIndex_01e_4eb5::
-	db $02, $02
-	db $00, $24
-	db $00, $1e
-	db $00, $2f
+	db ITEMNAMECAT_KEY, KEYITEM_02
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_ITEM, ITEM_1e
+	db ITEMNAMECAT_ITEM, TM08
 
 ItemNameCategories::
 	dw ItemNames

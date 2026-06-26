@@ -1,19 +1,17 @@
-; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-; 16 (category, index) records, consumed by LoadItemNameByIndex / LoadItemNameByMapType
 ItemNameIndex_01e_6e24::
-	db $00, $01
-	db $00, $06
-	db $01, $02
-	db $00, $0d
-	db $00, $23
-	db $00, $02
-	db $00, $24
-	db $01, $10
-	db $00, $57
-	db $00, $05
-	db $00, $0b
-	db $00, $4b
-	db $00, $21
-	db $00, $0a
-	db $01, $11
-	db $00, $10
+	db ITEMNAMECAT_ITEM, ITEM_01
+	db ITEMNAMECAT_ITEM, ITEM_06
+	db ITEMNAMECAT_EQUIP, EQUIP_02
+	db ITEMNAMECAT_ITEM, ITEM_0d
+	db ITEMNAMECAT_ITEM, ITEM_23
+	db ITEMNAMECAT_ITEM, ITEM_02
+	db ITEMNAMECAT_ITEM, ITEM_24
+	db ITEMNAMECAT_EQUIP, EQUIP_10
+	db ITEMNAMECAT_ITEM, TM48
+	db ITEMNAMECAT_ITEM, ITEM_05
+	db ITEMNAMECAT_ITEM, ITEM_0b
+	db ITEMNAMECAT_ITEM, TM36
+	db ITEMNAMECAT_ITEM, ITEM_21
+	db ITEMNAMECAT_ITEM, ITEM_0a
+	db ITEMNAMECAT_EQUIP, EQUIP_11
+	db ITEMNAMECAT_ITEM, ITEM_10
