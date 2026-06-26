@@ -1058,7 +1058,7 @@ Func_025_46d0:
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_471d:
+Func_025_471d: ; unreferenced?
 	ld de, unk_025_4737
 	ld a, [bc]
 	ld l, a
@@ -1191,7 +1191,7 @@ unk_025_4737:
 	db $0
 	db $0
 
-Func_025_47a6:
+Func_025_47a6: ; unreferenced?
 	ld hl, $14
 	add hl, bc
 	ld a, [hli]
@@ -1225,7 +1225,7 @@ Func_025_47d5:
 	ld [wd0c1], a
 	ret
 
-Func_025_47dc:
+Func_025_47dc: ; unreferenced?
 	ld hl, $15
 	add hl, bc
 	ld a, [hli]
@@ -1240,7 +1240,7 @@ Func_025_47dc:
 	ret nz
 	jp Func_025_47bb
 
-Func_025_47f4:
+Func_025_47f4: ; unreferenced?
 	ld a, [hFFD7]
 	call Func_025_574c
 	jp Func_025_47c1
@@ -3487,14 +3487,26 @@ Func_025_5772:
 	ret
 
 Pointers_025_5776:
-	dw String_025_5782
-	dw String_025_5787
-	dw String_025_578c
-	dw String_025_5791
-	dw String_025_5796
-	dw String_025_579b
+	dw unk_025_5782
+	dw unk_025_5787
+	dw unk_025_578c
+	dw unk_025_5791
+	dw unk_025_5796
+	dw unk_025_579b
 
-INCLUDE "data/text/menu_25_5782.asm"
+; Strings, but they don't decode into anything coherent
+unk_025_5782:
+	db $f0, $19, $f1, $5f, $ed
+unk_025_5787:
+	db $f5, $64, $f0, $56, $ed
+unk_025_578c:
+	db $f0, $5d, $f5, $a0, $ed
+unk_025_5791:
+	db $f8, $0d, $f3, $05, $ed
+unk_025_5796:
+	db $f3, $73, $f1, $5f, $ed
+unk_025_579b:
+	db $f5, $63, $f0, $80, $ed
 
 Func_025_57a0:
 	ldh a, [hConsoleType]
