@@ -1,3 +1,4 @@
+; Move-effect engine: effect dispatch, MoveEffectPointers, per-effect handlers, SetCaughtMon, and effect graphics.
 Func_030_4000::
 	ld a, [wd986]
 	and a

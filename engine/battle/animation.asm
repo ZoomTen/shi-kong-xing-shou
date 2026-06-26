@@ -1,3 +1,4 @@
+; Battle-script/animation engine: script executor, mode state machine, animation frame data.
 Func_02e_4000::
 	ld a, e
 	ld [wBattleScriptPos], a
@@ -5687,5 +5688,3 @@ Func_02e_6e42::
 	dec c
 	jr nz, .asm_6e48
 	ret
-
-

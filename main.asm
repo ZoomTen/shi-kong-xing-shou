@@ -100,7 +100,10 @@ SECTION "bank26", ROMX
 INCLUDE "banks/bank_26.asm"
 
 SECTION "bank2b", ROMX
-INCLUDE "banks/bank_2b.asm"
+INCLUDE "engine/battle/core.asm"
+INCLUDE "engine/battle/moves.asm"
+INCLUDE "engine/battle/menu.asm"
+INCLUDE "engine/battle/intro.asm"
 
 SECTION "bank2c", ROMX
 INCLUDE "banks/bank_2c.asm"
@@ -109,13 +112,13 @@ SECTION "bank2d", ROMX
 INCLUDE "banks/bank_2d.asm"
 
 SECTION "bank2e", ROMX
-INCLUDE "banks/bank_2e.asm"
+INCLUDE "engine/battle/animation.asm"
 
 SECTION "bank2f", ROMX
 INCLUDE "banks/bank_2f.asm"
 
 SECTION "bank30", ROMX
-INCLUDE "banks/bank_30.asm"
+INCLUDE "engine/battle/move_effects.asm"
 
 SECTION "bank31", ROMX
 INCLUDE "banks/bank_31.asm"

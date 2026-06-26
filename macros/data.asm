@@ -149,3 +149,9 @@ ENDM
 MACRO dbaw2
 	dw BANK(\1), 0, \1
 ENDM
+
+MACRO mon_stats
+; per-species base-stat factors (see data/monsters/stats.asm)
+; \1 hp  \2 atk  \3 def  \4 spd  \5 mag  \6 mdef
+	db \1, \2, \3, \4, \5, \6
+ENDM
