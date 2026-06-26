@@ -1,5 +1,5 @@
 ; Battle state machine: dispatcher (BattleJumptable), battle-end, and turn handling.
-Func_02b_4000::
+ReviveFaintedPartyMons::
 	ld bc, wPartyMons
 
 .loop
@@ -32,7 +32,7 @@ Func_02b_4000::
 	jr .next
 	ret
 
-Func_02b_402b::
+RefreshBattleHUD::
 	ld a, 1
 	ld [wd0fd], a
 	xor a
@@ -63,7 +63,7 @@ Func_02b_402b::
 	ld hl, $9941
 	ld bc, $0203
 	call PrintNumber
-	call Func_02b_431e
+	call DrawPlayerHPBar
 	xor a
 	ld [wd9d7], a
 	ld a, [wd981]
@@ -80,14 +80,14 @@ Func_02b_402b::
 	ld hl, $984b
 	ld bc, $0102
 	call PrintNumber
-	call Func_02b_4243
+	call DrawEnemyHPBar
 	ret
 
-Func_02b_4098::
+CalcAndApplyMoveDamage::
 	call CalcMoveDamage
-	call Func_02b_5ef2
+	call ProcessPreMoveStatusTick
 
-Func_02b_409e::
+AnimateDamageHPDrain::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -96,12 +96,12 @@ Func_02b_409e::
 	jr nz, .enemy_only
 
 .player
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 	and a
 	jr z, .player_done
 	ld [wd9bd], a
-	call Func_02b_5b4f
+	call SubtractDamageFromHP
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -111,13 +111,13 @@ Func_02b_409e::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd9bd]
 	sub b
 	ld [wd9bc], a
-	call Func_02b_5b82
+	call SetDamageMagnitudeMessage
 	ld a, [wd9bc]
 	and a
 	ret z
@@ -125,14 +125,14 @@ Func_02b_409e::
 .player_loop
 	ld a, [wd9bd]
 	and a
-	jp z, asm_02b_5aa5
-	call Func_02b_4248
+	jp z, HandleEnemyMonFaint
+	call RenderEnemyHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd9bd]
 	dec a
 	ld [wd9bd], a
-	jp z, asm_02b_5aa5
+	jp z, HandleEnemyMonFaint
 	ld a, [wd9bc]
 	dec a
 	ld [wd9bc], a
@@ -140,7 +140,7 @@ Func_02b_409e::
 	ret
 
 .player_done
-	jp asm_02b_5aa5
+	jp HandleEnemyMonFaint
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -157,12 +157,12 @@ Func_02b_409e::
 	jr nz, .player
 
 .enemy_only
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ldh a, [hMathValue]
 	and a
-	jp z, asm_02b_5aaf
+	jp z, HandlePlayerMonFaint
 	ld [wd9bd], a
-	call Func_02b_5b4f
+	call SubtractDamageFromHP
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -172,13 +172,13 @@ Func_02b_409e::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd9bd]
 	sub b
 	ld [wd9bc], a
-	call Func_02b_5b82
+	call SetDamageMagnitudeMessage
 	ld a, [wd9bc]
 	and a
 	ret z
@@ -186,19 +186,19 @@ Func_02b_409e::
 .enemy_loop
 	ld a, [wd9bd]
 	and a
-	jp z, asm_02b_5aaf
-	call Func_02b_4326
+	jp z, HandlePlayerMonFaint
+	call RenderPlayerHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd9bd]
 	dec a
 	ld [wd9bd], a
-	jp z, asm_02b_5aaf
+	jp z, HandlePlayerMonFaint
 	ld a, [wd9bc]
 	dec a
 	ld [wd9bc], a
 	jr nz, .enemy_loop
-	call Func_02b_402b
+	call RefreshBattleHUD
 	ret
 	ld a, [wd981]
 	ld c, a
@@ -213,18 +213,18 @@ Func_02b_409e::
 	add hl, bc
 	ld a, [hl]
 	cp 1
-	jp z, asm_02b_5ae1
+	jp z, TriggerAutoRevive
 	inc hl
 	ld a, [hl]
 	cp 1
-	jp z, asm_02b_5ae1
+	jp z, TriggerAutoRevive
 	ld hl, $13
 	add hl, bc
 	ld a, $bf
 	ld [hl], a
 	ret
 
-Func_02b_419d::
+AnimateHPRestore::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -233,10 +233,10 @@ Func_02b_419d::
 	jr nz, .enemy_only
 
 .player
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 	ld [wd9bd], a
-	call Func_02b_5ca2
+	call AddHealToHP
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -246,7 +246,7 @@ Func_02b_419d::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ld a, [wd9bd]
 	ld b, a
 	ldh a, [hMathValue]
@@ -256,7 +256,7 @@ Func_02b_419d::
 
 .player_loop
 	ld a, [wd9bd]
-	call Func_02b_4248
+	call RenderEnemyHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd9bd]
@@ -274,10 +274,10 @@ Func_02b_419d::
 	jr nz, .player
 
 .enemy_only
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ldh a, [hMathValue]
 	ld [wd9bd], a
-	call Func_02b_5ca2
+	call AddHealToHP
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -287,7 +287,7 @@ Func_02b_419d::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ld a, [wd9bd]
 	ld b, a
 	ldh a, [hMathValue]
@@ -297,7 +297,7 @@ Func_02b_419d::
 
 .enemy_loop
 	ld a, [wd9bd]
-	call Func_02b_4326
+	call RenderPlayerHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd9bd]
@@ -307,7 +307,7 @@ Func_02b_419d::
 	dec a
 	ld [wd9bc], a
 	jr nz, .enemy_loop
-	call Func_02b_402b
+	call RefreshBattleHUD
 	ret
 
 GetExpToNextLevel::
@@ -315,11 +315,11 @@ GetExpToNextLevel::
 	call GetExpTableValue
 	ret
 
-Func_02b_4243::
-	call Func_02b_4296
+DrawEnemyHPBar::
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 
-Func_02b_4248::
+RenderEnemyHPBarTiles::
 	ld d, 0
 	srl a
 	rr d
@@ -377,7 +377,7 @@ Func_02b_4248::
 	ld [hl], a
 	ret
 
-Func_02b_4296::
+ComputeEnemyHPBarFill::
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -395,10 +395,10 @@ Func_02b_4296::
 	ld [wd99a], a
 	ld a, [hMathValue + 1]
 	ld [wd99b], a
-	call Func_02b_42c4
+	call ComputeHPBarFraction
 	ret
 
-Func_02b_42c4::
+ComputeHPBarFraction::
 	ld a, [wd998]
 	ld [hMathValue], a
 	ld a, [wd999]
@@ -438,12 +438,12 @@ Func_02b_42c4::
 	ld d, 0
 	ret
 
-Func_02b_431e::
-	call Func_02b_4374
+DrawPlayerHPBar::
+	call ComputePlayerHPBarFill
 	call DelayFrame
 	ldh a, [hMathValue]
 
-Func_02b_4326::
+RenderPlayerHPBarTiles::
 	ld d, 0
 	srl a
 	rr d
@@ -501,7 +501,7 @@ Func_02b_4326::
 	ld [hl], a
 	ret
 
-Func_02b_4374::
+ComputePlayerHPBarFill::
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -521,7 +521,7 @@ Func_02b_4374::
 	ld [wd99a], a
 	ld a, [hMathValue + 1]
 	ld [wd99b], a
-	call Func_02b_42c4
+	call ComputeHPBarFraction
 	ret
 
 BattleJumptable::
@@ -563,38 +563,38 @@ HandleBattleEnd::
 
 BattleEnd_Jump_1::
 	ld de, Script_023_55f6
-	farcall Func_02e_4000
-	call Func_02b_4b5b
-	call Func_02b_4b7a
+	farcall ExecuteBattleAnimScriptAt
+	call SetSideSelectForTurn
+	call AccumulateEnemyReward
 	ld a, [wSideSelect]
 	and a
-	jr z, Func_02b_43f0
+	jr z, BattleEnd_CheckPartyAlive
 	ld a, [wd9dc]
 	and a
-	jr z, Func_02b_4409
+	jr z, BattleEnd_PlayerLoss
 
-Func_02b_43f0::
-	call Func_02b_4bb7
+BattleEnd_CheckPartyAlive::
+	call BattleEnd_ScanNextLivingMon
 	and a
-	jr z, Func_02b_4409
+	jr z, BattleEnd_PlayerLoss
 	ld de, EndBattleTurn
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	ld a, 2
 	ld [hBattleJumptableIndex], a
 	xor a
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_4409::
+BattleEnd_PlayerLoss::
 	ld a, [wSideSelect]
 	and a
-	jr nz, Func_02b_4454
+	jr nz, BattleEnd_Victory
 	ld a, BGM_MONSTER_FAINTED
 	call PlaySound
 	ld a, [wEventFlags + 3]
 	set 3, a
 	ld [wEventFlags + 3], a
-	call Func_02b_4000
+	call ReviveFaintedPartyMons
 	ld a, 1
 	ld [wBattleIntroJumptableIndex], a
 	ld a, $57
@@ -604,7 +604,7 @@ Func_02b_4409::
 	call Wait32Frames
 	ret
 
-Func_02b_4436::
+BattleEnd_GameOverFade::
 	ld a, 1
 	ldh [hFade], a
 	xor a
@@ -618,7 +618,7 @@ Func_02b_4436::
 	call Wait32Frames
 	ret
 
-Func_02b_4454::
+BattleEnd_Victory::
 	ld a, [wEventFlags + 3]
 	res 3, a
 	ld [wEventFlags + 3], a
@@ -636,8 +636,8 @@ Func_02b_4454::
 	ret nz
 	ld a, [wd9f5]
 	and a
-	jp nz, Func_02b_4519
-	call Func_02b_453a
+	jp nz, BattleEnd_RestoreMonStatBackup
+	call ClampRewardValue
 	ld a, $2b
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
@@ -659,17 +659,17 @@ Func_02b_4454::
 	ld [wSelectedOption], a
 	ld bc, wPartyMons
 
-Func_02b_44c3::
+BattleEnd_AwardExpLoop::
 	ld hl, 1
 	add hl, bc
 	ld a, [hl]
 	cp $64
-	jr nc, Func_02b_4504
+	jr nc, BattleEnd_AwardExpNext
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
 	bit 6, a
-	jr z, Func_02b_4504
+	jr z, BattleEnd_AwardExpNext
 	and $41
 	ld [hl], a
 	ld de, wd1a0
@@ -697,7 +697,7 @@ Func_02b_44c3::
 	pop af
 	ld [wSelectedOption], a
 
-Func_02b_4504::
+BattleEnd_AwardExpNext::
 	call DelayFrame
 	ld hl, $16
 	add hl, bc
@@ -708,9 +708,9 @@ Func_02b_4504::
 	ld [wSelectedOption], a
 	ld a, l
 	cp $80
-	jr c, Func_02b_44c3
+	jr c, BattleEnd_AwardExpLoop
 
-Func_02b_4519::
+BattleEnd_RestoreMonStatBackup::
 	ld a, [wdb1c]
 	and a
 	ret z
@@ -723,17 +723,17 @@ Func_02b_4519::
 	ld b, $c
 	ld de, wdcbc
 
-Func_02b_452f::
+CopyStatBackupBytes::
 	ld a, [de]
 	inc de
 	ld [hli], a
 	dec b
-	jr nz, Func_02b_452f
+	jr nz, CopyStatBackupBytes
 	xor a
 	ld [wdb1c], a
 	ret
 
-Func_02b_453a::
+ClampRewardValue::
 	ld a, [wMathScratch + 1]
 	cp $27
 	jr z, .check_low
@@ -825,14 +825,14 @@ ClampMoney::
 
 INCLUDE "engine/battle/exp.asm"
 
-Func_02b_4a8e::
+MathSquareByteD::
 	xor a
 	ldh [hMathValue + 2], a
 	ldh [hMathValue + 1], a
 	ld a, d
 	ldh [hMathValue], a
 	ldh [hMathOperand], a
-	jp Func_02b_4b41
+	jp Multiply32By8_Preserve
 
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
 unk_02b_4a9b::
@@ -1003,7 +1003,7 @@ unk_02b_4a9b::
 	db $5
 	db $4
 
-Func_02b_4b41::
+Multiply32By8_Preserve::
 	push hl
 	push bc
 	push de
@@ -1013,7 +1013,7 @@ Func_02b_4b41::
 	pop hl
 	ret
 
-Func_02b_4b4e::
+Divide32By16_Preserve::
 	push hl
 	push de
 	push bc
@@ -1023,7 +1023,7 @@ Func_02b_4b4e::
 	pop hl
 	ret
 
-Func_02b_4b5b::
+SetSideSelectForTurn::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -1047,7 +1047,7 @@ Func_02b_4b5b::
 	ld [wSideSelect], a
 	ret
 
-Func_02b_4b7a::
+AccumulateEnemyReward::
 	ld a, [wSideSelect]
 	and a
 	ret z
@@ -1087,7 +1087,7 @@ Func_02b_4b7a::
 	ld [wMathScratch + 3], a
 	ret
 
-Func_02b_4bb7::
+BattleEnd_ScanNextLivingMon::
 	ld a, [wSideSelect]
 	and a
 	jp nz, .next_enemy
@@ -1159,7 +1159,7 @@ Func_02b_4bb7::
 	ld [hli], a
 	dec c
 	jr nz, .clear_loop
-	call Func_02b_6a41
+	call BattleHUD_InitBars
 	ret
 
 .next
@@ -1215,11 +1215,11 @@ Func_02b_4bb7::
 	ld [hli], a
 	dec c
 	jr nz, .clear_enemy
-	call Func_02b_6a41
+	call BattleHUD_InitBars
 	ret
 
 BattleEnd_Jump_2::
-	call Func_02b_4519
+	call BattleEnd_RestoreMonStatBackup
 	call DelayFrame
 	ld a, $80
 	ldh [rLCDC], a
@@ -1267,8 +1267,8 @@ BattleEnd_Jump_2::
 	call PlaceTilemap
 	farcall Func_025_57a0
 	call DelayFrame
-	call Func_02b_7506
-	call Func_02b_4d81
+	call ClearBattleOAMState
+	call ClearExpRewardBuffer
 	ld a, 1
 	ld [hFFAC], a
 	ld [wdcd0], a
@@ -1276,8 +1276,8 @@ BattleEnd_Jump_2::
 	ld [wPlayerAnimFrame], a
 	call UpdatePlayerAndObjectAnims
 	call DelayFrame
-	call Func_02b_4d55
-	call Func_02b_4000
+	call ReinitOverworldObjects
+	call ReviveFaintedPartyMons
 	ld a, $c7
 	ldh [rLCDC], a
 	ld a, $1c
@@ -1298,7 +1298,7 @@ BattleEnd_Jump_2::
 	call RunMapLoadHook
 	ret
 
-Func_02b_4d55::
+ReinitOverworldObjects::
 	ld bc, wcd20
 
 .loop
@@ -1329,7 +1329,7 @@ Func_02b_4d55::
 	jr c, .loop
 	ret
 
-Func_02b_4d81::
+ClearExpRewardBuffer::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
@@ -1421,7 +1421,7 @@ BattleTurns_Jump_9::
 	ret
 
 BattleTurns_Jump_1::
-	call Func_02b_7525
+	call ClearVirtualOAM
 	ld hl, $9980
 	ld bc, $0906
 	ld a, 9
@@ -1471,7 +1471,7 @@ BattleTurns_Jump_1::
 	ld a, 4
 	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
-	call Func_02b_402b
+	call RefreshBattleHUD
 	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406
@@ -1536,14 +1536,14 @@ BattleTurns_Jump_2::
 	ld [wBattleTurn], a
 
 .done
-	call Func_02b_4f7b
+	call CheckStatusPreMove
 	ld a, [wBattleIntroJumptableIndex]
 	cp 2
 	ret nz
-	call Func_02b_4f38
+	call CheckPostTurnTrigger
 	ret
 
-Func_02b_4f38::
+CheckPostTurnTrigger::
 	ld a, [wd9ea]
 	and a
 	ret nz
@@ -1587,7 +1587,7 @@ Func_02b_4f38::
 	call SetStatTile
 	ret
 
-Func_02b_4f7b::
+CheckStatusPreMove::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -1614,16 +1614,16 @@ Func_02b_4f7b::
 	add hl, bc
 	ld a, [hl]
 	bit 1, a
-	jp nz, Func_02b_5074
+	jp nz, ProcessStatusBit1
 	bit 4, a
-	jp nz, Func_02b_5113
+	jp nz, ProcessStatusBit4
 	bit 5, a
-	jp nz, Func_02b_514b
+	jp nz, ProcessStatusBit5
 	bit 7, a
-	jp nz, Func_02b_517d
+	jp nz, ProcessStatusBit7
 	ret
 
-Func_02b_4fb7::
+ProcessDamageStatus::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -1650,10 +1650,10 @@ Func_02b_4fb7::
 	add hl, bc
 	ld a, [hl]
 	bit 0, a
-	jp nz, Func_02b_50a9
+	jp nz, ProcessStatusBit0
 	ret
 
-Func_02b_4fe4::
+CheckStatusPostMove::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -1680,20 +1680,20 @@ Func_02b_4fe4::
 	add hl, bc
 	ld a, [hl]
 	bit 1, a
-	jp nz, Func_02b_5074
+	jp nz, ProcessStatusBit1
 	bit 2, a
-	jp nz, Func_02b_502a
+	jp nz, ProcessStatusBit2
 	bit 3, a
-	jp nz, Func_02b_503f
+	jp nz, ProcessStatusBit3
 	bit 4, a
-	jp nz, Func_02b_5113
+	jp nz, ProcessStatusBit4
 	bit 5, a
-	jp nz, Func_02b_514b
+	jp nz, ProcessStatusBit5
 	bit 7, a
-	jp nz, Func_02b_517d
+	jp nz, ProcessStatusBit7
 	ret
 
-Func_02b_502a::
+ProcessStatusBit2::
 	xor a
 	ld [wMoveTargetsEnemy], a
 	xor a
@@ -1701,13 +1701,13 @@ Func_02b_502a::
 	farcall Func_025_40d9
 	ld a, $19
 	ld [wBattleMessageID], a
-	jr Func_02b_5044
+	jr ApplyStatusDamageTick
 
-Func_02b_503f::
+ProcessStatusBit3::
 	ld a, $18
 	ld [wBattleMessageID], a
 
-Func_02b_5044::
+ApplyStatusDamageTick::
 	farcall ShowBattleMessage
 	call Wait32Frames
 	call Wait32Frames
@@ -1718,20 +1718,20 @@ Func_02b_5044::
 	farcall Divide32By16_4Digit
 	ldh a, [hMathValue + 1]
 	and a
-	jr nz, Func_02b_5069
+	jr nz, CommitStatusDamageHP
 	ldh a, [hMathValue]
 	and a
-	jr nz, Func_02b_5069
+	jr nz, CommitStatusDamageHP
 	ld a, 1
 
-Func_02b_5069::
+CommitStatusDamageHP::
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
-	call Func_02b_409e
+	call AnimateDamageHPDrain
 	ret
 
-Func_02b_5074::
+ProcessStatusBit1::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -1760,7 +1760,7 @@ Func_02b_5074::
 	call SetStatTile
 	ret
 
-Func_02b_50a9::
+ProcessStatusBit0::
 	xor a
 	ld [wSideSelect], a
 	ld [wMoveTargetsEnemy], a
@@ -1802,7 +1802,7 @@ Func_02b_50a9::
 	ld [wd9b0], a
 
 .play
-	call Func_02b_409e
+	call AnimateDamageHPDrain
 	ld a, $1a
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
@@ -1810,7 +1810,7 @@ Func_02b_50a9::
 	call Wait32Frames
 	ret
 
-Func_02b_5113::
+ProcessStatusBit4::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -1840,7 +1840,7 @@ Func_02b_5113::
 	call SetStatTile
 	ret
 
-Func_02b_514b::
+ProcessStatusBit5::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -1871,7 +1871,7 @@ Func_02b_514b::
 	ld [hl], 0
 	ret
 
-Func_02b_517d::
+ProcessStatusBit7::
 	ld a, [wBattleTurn]
 	and a
 	jr z, .enemy
@@ -1928,7 +1928,7 @@ BattleTurns_Jump_3::
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
 	call Wait32Frames
-	call Func_02b_5578
+	call BattleTurn_AdvanceToNextActor
 	ret
 
 .status
@@ -1983,7 +1983,7 @@ BattleTurns_Jump_8::
 	ld e, a
 	ld a, [wBattleScriptPos + 1]
 	ld d, a
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	ld a, 4
 	ld [wBattleIntroJumptableIndex], a
 	ret
@@ -1991,7 +1991,7 @@ BattleTurns_Jump_8::
 BattleTurns_Jump_4::
 	xor a
 	ld [wBattleState], a
-	farcall Func_02e_400a
+	farcall ExecuteBattleAnimScript
 	ld a, [hBattleJumptableIndex]
 	cp 5
 	ret z
@@ -2076,37 +2076,37 @@ BattleAI_Action2::
 	ld a, [wd999]
 	cp b
 	jr z, .check_low
-	jp nc, Func_02b_530e
+	jp nc, BattleAI_PickRandomMove
 
 .check_low
 	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd998]
 	cp b
-	jp nc, Func_02b_530e
+	jp nc, BattleAI_PickRandomMove
 	ld a, 3
-	jr Func_02b_532f
+	jr BattleAI_SelectMoveSlot
 
-Func_02b_530e::
+BattleAI_PickRandomMove::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
 	cp 3
-	jp z, Func_02b_530e
-	jr Func_02b_532f
+	jp z, BattleAI_PickRandomMove
+	jr BattleAI_SelectMoveSlot
 
-Func_02b_531d::
+BattleAI_PickRandomMove01::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
-	jr Func_02b_532f
+	jr BattleAI_SelectMoveSlot
 
 BattleAI_Action3::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
 
-Func_02b_532f::
+BattleAI_SelectMoveSlot::
 	ld e, a
 	add a
 	add e
@@ -2145,9 +2145,9 @@ BattleAI_Action4::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
-	jp z, Func_02b_530e
+	jp z, BattleAI_PickRandomMove
 	ld a, 3
-	jp Func_02b_532f
+	jp BattleAI_SelectMoveSlot
 
 BattleAI_Action5::
 	call ComputeEnemyMonStat
@@ -2159,7 +2159,7 @@ BattleAI_Action5::
 	ldh [hMathOperand], a
 	farcall Multiply32By8
 
-Func_02b_5389::
+BattleAI_EvalHPThreshold::
 	ld a, $a
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
@@ -2168,20 +2168,20 @@ Func_02b_5389::
 	ld a, [wd999]
 	cp b
 	jr z, .check_low
-	jp nc, Func_02b_530e
+	jp nc, BattleAI_PickRandomMove
 
 .check_low
 	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd998]
 	cp b
-	jp nc, Func_02b_530e
+	jp nc, BattleAI_PickRandomMove
 	call AdvanceRNG
 	ld a, [hMathValue]
 	cp $80
-	jp nc, Func_02b_530e
+	jp nc, BattleAI_PickRandomMove
 	ld a, 3
-	jp Func_02b_532f
+	jp BattleAI_SelectMoveSlot
 
 BattleAI_Action6::
 	call ComputeEnemyMonStat
@@ -2192,24 +2192,24 @@ BattleAI_Action6::
 	ld a, 3
 	ldh [hMathOperand], a
 	farcall Multiply32By8
-	jp Func_02b_5389
+	jp BattleAI_EvalHPThreshold
 
 BattleAI_Action7::
 	call AdvanceRNG
 	cp $cc
-	jp nc, Func_02b_531d
+	jp nc, BattleAI_PickRandomMove01
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
 	add 2
-	jp Func_02b_532f
+	jp BattleAI_SelectMoveSlot
 
 BattleAI_Action8::
 	call AdvanceRNG
 	cp $80
-	jp nc, Func_02b_530e
+	jp nc, BattleAI_PickRandomMove
 	ld a, 3
-	jp Func_02b_532f
+	jp BattleAI_SelectMoveSlot
 
 BattleAI_Action9::
 	call ComputeEnemyMonStat
@@ -2220,14 +2220,14 @@ BattleAI_Action9::
 	ld a, 3
 	ldh [hMathOperand], a
 	farcall Multiply32By8
-	jp Func_02b_5389
+	jp BattleAI_EvalHPThreshold
 
 BattleAI_Action10::
 	ld a, [wd9f7]
 	and a
 	jr nz, .has_flag
 	xor a
-	jp Func_02b_532f
+	jp BattleAI_SelectMoveSlot
 
 .has_flag
 	call AdvanceRNG
@@ -2415,25 +2415,25 @@ BattleTurns_Jump_7::
 	and a
 	jr nz, EndBattleTurn
 
-Func_02b_555f::
+BattleTurn_PostMoveSequence::
 	farcall ShowBattleMessage
 	call Wait32Frames
-	call Func_02b_5e0f
+	call ProcessEndTurnStatusTick
 	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
-	call Func_02b_5cce
+	call ApplyPostMoveStatEffects
 	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
 
-Func_02b_5578::
+BattleTurn_AdvanceToNextActor::
 	ld a, [wd98a]
 	cp 2
 	jr z, ReturnToBattleMenu
 	inc a
 	ld [wd98a], a
-	call Func_02b_4fb7
+	call ProcessDamageStatus
 	ld a, [hBattleJumptableIndex]
 	cp 5
 	ret z
@@ -2445,15 +2445,15 @@ Func_02b_5578::
 	ld [wBattleIntroJumptableIndex], a
 	xor a
 	ld [wd98e], a
-	call Func_02b_4fe4
+	call CheckStatusPostMove
 	ld a, [wBattleIntroJumptableIndex]
 	cp 2
 	ret nz
-	call Func_02b_4f38
+	call CheckPostTurnTrigger
 	ret
 
 ReturnToBattleMenu::
-	call Func_02b_4fb7
+	call ProcessDamageStatus
 	ld a, [hBattleJumptableIndex]
 	cp 5
 	ret z
@@ -2482,21 +2482,21 @@ Wait32Frames::
 BattleTurns_Jump_6::
 	ld a, [wBattleAnimStep]
 	cp 1
-	jp z, Func_02b_5628
+	jp z, BattleStep_ScriptedFlee
 	cp 2
-	jp z, Func_02b_5a30
+	jp z, BattleStep_CalcDamage
 	cp 3
-	jp z, Func_02b_5a37
+	jp z, ApplyMoveDamageToTarget
 	cp 4
-	jp z, Func_02b_5bfb
+	jp z, AnimateHealEffect
 	cp 5
-	jp z, Func_02b_5611
+	jp z, BattleStep_FinishWithMessage
 	cp 6
-	jr z, Func_02b_55f7
+	jr z, BattleStep_SetEscapeFlag
 	jp ReturnToBattleMenu
 
 
-Func_02b_55f7::
+BattleStep_SetEscapeFlag::
 	ld a, 2
 	ld [wd9f6], a
 	ld a, [wd993]
@@ -2512,7 +2512,7 @@ Func_02b_55f7::
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_5611::
+BattleStep_FinishWithMessage::
 	farcall ShowBattleMessage
 	call Wait32Frames
 	xor a
@@ -2523,12 +2523,12 @@ Func_02b_5611::
 	ldh [hBattleJumptableIndex], a
 	ret
 
-Func_02b_5628::
+BattleStep_ScriptedFlee::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_5809
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, 1
 	ld [wMoveTargetsEnemy], a
@@ -2996,8 +2996,8 @@ ComputeDamageStats::
 	ldh [hMathValue + 2], a
 	call GetStatTile
 	ldh [hMathOperand], a
-	call Func_02b_59df
-	call Func_02b_5998
+	call ApplyDefenderElementBonus
+	call ApplyAttackerElementPenalty
 	farcall Multiply32By8
 	ld a, $a
 	ldh [hMathOperand], a
@@ -3029,7 +3029,7 @@ ComputeDamageStats::
 	ld [wAttackerStatHi], a
 	ret
 
-Func_02b_5998::
+ApplyAttackerElementPenalty::
 	ld a, [wBattleTurn]
 	and a
 	jr z, .player
@@ -3078,7 +3078,7 @@ Func_02b_5998::
 	ldh [hMathOperand], a
 	ret
 
-Func_02b_59df::
+ApplyDefenderElementBonus::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -3140,29 +3140,29 @@ StatTypeRemap::
 	db $6
 	db $0
 
-Func_02b_5a30::
+BattleStep_CalcDamage::
 	xor a
 	ld [wBattleAnimStep], a
 	call CalcMoveDamage
 
-Func_02b_5a37::
-	call Func_02b_5ef2
+ApplyMoveDamageToTarget::
+	call ProcessPreMoveStatusTick
 	xor a
 	ld [wBattleAnimStep], a
 	ld a, [wBattleTurn]
 	and a
-	jp nz, Func_02b_5aed
+	jp nz, ApplyDamage_PlayerTurn
 	ld a, [wMoveTargetsEnemy]
 	and a
-	jp nz, Func_02b_5af4
+	jp nz, DrainPlayerHPBar
 
-Func_02b_5a4c::
-	call Func_02b_4296
+DrainEnemyHPBar::
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 	and a
-	jr z, asm_02b_5aa5
+	jr z, HandleEnemyMonFaint
 	ld [wd98c], a
-	call Func_02b_5b4f
+	call SubtractDamageFromHP
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -3172,48 +3172,48 @@ Func_02b_5a4c::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd98c]
 	sub b
 	ld [wd98e], a
-	call Func_02b_5b82
+	call SetDamageMagnitudeMessage
 	ld a, [wd98e]
 	and a
-	jp z, Func_02b_5b4b
+	jp z, BattleStep_AfterDamage
 
-Func_02b_5a80::
+DrainEnemyHPBarLoop::
 	ld a, [wd98c]
-	call Func_02b_4248
+	call RenderEnemyHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd98c]
 	dec a
 	ld [wd98c], a
 	and a
-	jr z, asm_02b_5aa5
+	jr z, HandleEnemyMonFaint
 	ld a, [wd98e]
 	dec a
 	ld [wd98e], a
-	jr nz, Func_02b_5a80
-	call Func_02b_402b
-	jp Func_02b_5b4b
+	jr nz, DrainEnemyHPBarLoop
+	call RefreshBattleHUD
+	jp BattleStep_AfterDamage
 
-asm_02b_5aa5::
+HandleEnemyMonFaint::
 	ld a, [wd984]
 	ld l, a
 	ld a, [wd985]
 	ld h, a
-	jr Func_02b_5ab7
+	jr MarkMonFainted
 
-asm_02b_5aaf::
+HandlePlayerMonFaint::
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
 	ld h, a
 
-Func_02b_5ab7::
+MarkMonFainted::
 	push hl
 	pop bc
 	ld hl, 2
@@ -3225,11 +3225,11 @@ Func_02b_5ab7::
 	add hl, bc
 	ld a, [hl]
 	cp 1
-	jr z, asm_02b_5ae1
+	jr z, TriggerAutoRevive
 	inc hl
 	ld a, [hl]
 	cp 1
-	jr z, asm_02b_5ae1
+	jr z, TriggerAutoRevive
 	ld hl, $13
 	add hl, bc
 	ld a, $bf
@@ -3240,25 +3240,25 @@ Func_02b_5ab7::
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-asm_02b_5ae1::
+TriggerAutoRevive::
 	ld [wd9e9], a
 	ld [hl], 0
-	call Func_02b_5bc9
+	call ReviveMonWithMessage
 	ret
-	jp Func_02b_555f
+	jp BattleTurn_PostMoveSequence
 
-Func_02b_5aed::
+ApplyDamage_PlayerTurn::
 	ld a, [wMoveTargetsEnemy]
 	and a
-	jp nz, Func_02b_5a4c
+	jp nz, DrainEnemyHPBar
 
-Func_02b_5af4::
-	call Func_02b_4374
+DrainPlayerHPBar::
+	call ComputePlayerHPBarFill
 	ldh a, [hMathValue]
 	and a
-	jr z, asm_02b_5aaf
+	jr z, HandlePlayerMonFaint
 	ld [wd98c], a
-	call Func_02b_5b4f
+	call SubtractDamageFromHP
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -3268,38 +3268,38 @@ Func_02b_5af4::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ldh a, [hMathValue]
 	ld b, a
 	ld a, [wd98c]
 	sub b
 	ld [wd98e], a
-	call Func_02b_5b82
+	call SetDamageMagnitudeMessage
 	ld a, [wd98e]
 	and a
-	jp z, Func_02b_5b4b
+	jp z, BattleStep_AfterDamage
 
-Func_02b_5b28::
+DrainPlayerHPBarLoop::
 	ld a, [wd98c]
-	call Func_02b_4326
+	call RenderPlayerHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd98c]
 	dec a
 	ld [wd98c], a
 	and a
-	jp z, asm_02b_5aaf
+	jp z, HandlePlayerMonFaint
 	ld a, [wd98e]
 	dec a
 	ld [wd98e], a
-	jr nz, Func_02b_5b28
-	call Func_02b_402b
+	jr nz, DrainPlayerHPBarLoop
+	call RefreshBattleHUD
 
-Func_02b_5b4b::
-	call Func_02b_555f
+BattleStep_AfterDamage::
+	call BattleTurn_PostMoveSequence
 	ret
 
-Func_02b_5b4f::
+SubtractDamageFromHP::
 	ld a, [wd9b0]
 	ld c, a
 	ld a, [wd9b1]
@@ -3307,13 +3307,13 @@ Func_02b_5b4f::
 	ld a, [wd999]
 	cp b
 	jr z, .check_low
-	jr nc, Func_02b_5b77
+	jr nc, ComputeHPAfterDamage
 	jr .clamp
 
 .check_low
 	ld a, [wd998]
 	cp c
-	jr nc, Func_02b_5b77
+	jr nc, ComputeHPAfterDamage
 
 .clamp
 	ld a, [wd998]
@@ -3323,7 +3323,7 @@ Func_02b_5b4f::
 	ld de, 0
 	ret
 
-Func_02b_5b77::
+ComputeHPAfterDamage::
 	ld a, [wd998]
 	sub c
 	ld e, a
@@ -3332,7 +3332,7 @@ Func_02b_5b77::
 	ld d, a
 	ret
 
-Func_02b_5b82::
+SetDamageMagnitudeMessage::
 	ld a, [wd9c7]
 	and a
 	jr z, .none
@@ -3381,7 +3381,7 @@ Func_02b_5b82::
 	ld [wBattleMessageID], a
 	ret
 
-Func_02b_5bc9::
+ReviveMonWithMessage::
 	ld a, $2e
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
@@ -3390,10 +3390,10 @@ Func_02b_5bc9::
 	ld [wd9b0], a
 	ld a, [wd99b]
 	ld [wd9b1], a
-	call Func_02b_5eb7
+	call HalveHPValue
 	ld a, 1
 	ld [wMoveTargetsEnemy], a
-	call Func_02b_419d
+	call AnimateHPRestore
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -3401,7 +3401,7 @@ Func_02b_5bc9::
 	ld [wBattleMessageID], a
 	ret
 
-Func_02b_5bfb::
+AnimateHealEffect::
 	xor a
 	ld [wBattleAnimStep], a
 	ld a, [wBattleTurn]
@@ -3412,10 +3412,10 @@ Func_02b_5bfb::
 	jr nz, .enemy_only
 
 .player
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ldh a, [hMathValue]
 	ld [wd98c], a
-	call Func_02b_5ca2
+	call AddHealToHP
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -3425,7 +3425,7 @@ Func_02b_5bfb::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ld a, [wd98c]
 	ld b, a
 	ldh a, [hMathValue]
@@ -3435,7 +3435,7 @@ Func_02b_5bfb::
 
 .player_loop
 	ld a, [wd98c]
-	call Func_02b_4248
+	call RenderEnemyHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd98c]
@@ -3445,7 +3445,7 @@ Func_02b_5bfb::
 	dec a
 	ld [wd98e], a
 	jr nz, .player_loop
-	jp Func_02b_5b4b
+	jp BattleStep_AfterDamage
 
 .enemy
 	ld a, [wMoveTargetsEnemy]
@@ -3453,10 +3453,10 @@ Func_02b_5bfb::
 	jr nz, .player
 
 .enemy_only
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ldh a, [hMathValue]
 	ld [wd98c], a
-	call Func_02b_5ca2
+	call AddHealToHP
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -3466,7 +3466,7 @@ Func_02b_5bfb::
 	ld [hl], e
 	inc hl
 	ld [hl], d
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ld a, [wd98c]
 	ld b, a
 	ldh a, [hMathValue]
@@ -3476,7 +3476,7 @@ Func_02b_5bfb::
 
 .enemy_loop
 	ld a, [wd98c]
-	call Func_02b_4326
+	call RenderPlayerHPBarTiles
 	call DelayFrame
 	call DelayFrame
 	ld a, [wd98c]
@@ -3486,10 +3486,10 @@ Func_02b_5bfb::
 	dec a
 	ld [wd98e], a
 	jr nz, .enemy_loop
-	call Func_02b_402b
-	jp Func_02b_5b4b
+	call RefreshBattleHUD
+	jp BattleStep_AfterDamage
 
-Func_02b_5ca2::
+AddHealToHP::
 	ld a, [wd9b0]
 	ld c, a
 	ld a, [wd9b1]
@@ -3505,12 +3505,12 @@ Func_02b_5ca2::
 	cp d
 	jr c, .clamp
 	jr z, .check_low
-	jr nc, Func_02b_5ccd
+	jr nc, HealHPDone
 
 .check_low
 	ld a, [wd99a]
 	cp e
-	jr nc, Func_02b_5ccd
+	jr nc, HealHPDone
 
 .clamp
 	ld a, [wd99a]
@@ -3518,14 +3518,14 @@ Func_02b_5ca2::
 	ld a, [wd99b]
 	ld d, a
 
-Func_02b_5ccd::
+HealHPDone::
 	ret
 
-Func_02b_5cce::
+ApplyPostMoveStatEffects::
 	ld a, [wBattleTurn]
 	and a
 	jr z, .player
-	call Func_02b_4374
+	call ComputePlayerHPBarFill
 	ld a, [wd981]
 	ld l, a
 	ld [wd3f0], a
@@ -3535,7 +3535,7 @@ Func_02b_5cce::
 	jr .got_actor
 
 .player
-	call Func_02b_4296
+	call ComputeEnemyHPBarFill
 	ld a, [wd984]
 	ld l, a
 	ld [wd3f0], a
@@ -3550,26 +3550,26 @@ Func_02b_5cce::
 	add hl, bc
 	ld a, [hl]
 	cp 2
-	call z, Func_02b_5d28
+	call z, ApplyLeechDrainEffect
 	cp $12
-	call z, Func_02b_5d98
+	call z, ApplyStatHealEffect
 	cp $13
-	call z, Func_02b_5d98
+	call z, ApplyStatHealEffect
 	cp $14
-	call z, Func_02b_5d98
+	call z, ApplyStatHealEffect
 	inc hl
 	ld a, [hl]
 	cp 2
-	jr z, Func_02b_5d28
+	jr z, ApplyLeechDrainEffect
 	cp $12
-	jr z, Func_02b_5d98
+	jr z, ApplyStatHealEffect
 	cp $13
-	jr z, Func_02b_5d98
+	jr z, ApplyStatHealEffect
 	cp $14
-	jr z, Func_02b_5d98
+	jr z, ApplyStatHealEffect
 	ret
 
-Func_02b_5d28::
+ApplyLeechDrainEffect::
 	push af
 	push hl
 	ld [wd9e9], a
@@ -3577,7 +3577,7 @@ Func_02b_5d28::
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
 	call Wait32Frames
-	call Func_02b_5d7e
+	call ComputeDrainBaseStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
 	ld a, [wd99b]
@@ -3593,7 +3593,7 @@ Func_02b_5d28::
 	ld [wd9b1], a
 	xor a
 	ld [wMoveTargetsEnemy], a
-	call Func_02b_419d
+	call AnimateHPRestore
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -3605,7 +3605,7 @@ Func_02b_5d28::
 	pop af
 	ret
 
-Func_02b_5d7e::
+ComputeDrainBaseStat::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .enemy
@@ -3626,14 +3626,14 @@ Func_02b_5d7e::
 	call ComputeEnemyMonStat
 	ret
 
-Func_02b_5d98::
+ApplyStatHealEffect::
 	push af
 	push hl
 	ld [wd9e9], a
 	farcall Func_025_4000
 	ldh a, [hMathValue]
 	cp $10
-	jr nc, Func_02b_5e0c
+	jr nc, ApplyStatHealEffect_Abort
 	ld a, [wd9e9]
 	cp $12
 	jr z, .stat12
@@ -3647,30 +3647,30 @@ Func_02b_5d98::
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
-	jr Func_02b_5ddd
+	jr ApplyHealEffectFinish
 
 .stat13
 	ld a, $3c
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
-	jr Func_02b_5ddd
+	jr ApplyHealEffectFinish
 
 .stat14
 	ld a, [wd99a]
 	ld [wd9b0], a
 	ld a, [wd99b]
 	ld [wd9b1], a
-	call Func_02b_5eb7
+	call HalveHPValue
 
-Func_02b_5ddd::
+ApplyHealEffectFinish::
 	ld a, $2e
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
 	call Wait32Frames
 	xor a
 	ld [wMoveTargetsEnemy], a
-	call Func_02b_419d
+	call AnimateHPRestore
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -3683,28 +3683,28 @@ Func_02b_5ddd::
 	call Wait32Frames
 	ret
 
-Func_02b_5e0c::
+ApplyStatHealEffect_Abort::
 	pop hl
 	pop af
 	ret
 
-Func_02b_5e0f::
+ProcessEndTurnStatusTick::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	call GetStatTile
 	cp $63
-	jp z, Func_02b_5fc1
+	jp z, ProcessStatusEffect63
 	cp $70
-	jp z, Func_02b_5ff2
+	jp z, ProcessDisguiseCountdown
 	cp $7d
-	jp z, Func_02b_60f7
+	jp z, ProcessMoveSwapCountdown
 	cp $88
-	jp z, Func_02b_6159
+	jp z, ProcessStatusEffect88Countdown
 	ret
 
-Func_02b_5e31::
+CheckHealOnElement5::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
@@ -3714,9 +3714,9 @@ Func_02b_5e31::
 	ld a, [wd8ff]
 	cp 5
 	ret nz
-	jp Func_02b_5e73
+	jp ApplyElementHealIfReady
 
-Func_02b_5e48::
+CheckHealOnElement2::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
@@ -3726,9 +3726,9 @@ Func_02b_5e48::
 	ld a, [wd8ff]
 	cp 2
 	ret nz
-	jp Func_02b_5e73
+	jp ApplyElementHealIfReady
 
-Func_02b_5e5f::
+CheckHealOnElement1::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
@@ -3739,20 +3739,20 @@ Func_02b_5e5f::
 	cp 1
 	ret nz
 
-Func_02b_5e73::
+ApplyElementHealIfReady::
 	ld a, [wd9b1]
 	and a
-	jr nz, Func_02b_5ea6
+	jr nz, DecrementHealCounter
 	ld a, [wd9b0]
 	cp $64
-	jr z, Func_02b_5e82
-	jr nc, Func_02b_5ea6
+	jr z, ApplyAccumulatedHeal
+	jr nc, DecrementHealCounter
 
-Func_02b_5e82::
-	call Func_02b_5eb7
+ApplyAccumulatedHeal::
+	call HalveHPValue
 	ld a, 1
 	ld [wMoveTargetsEnemy], a
-	call Func_02b_419d
+	call AnimateHPRestore
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -3763,7 +3763,7 @@ Func_02b_5e82::
 	call Wait32Frames
 	ret
 
-Func_02b_5ea6::
+DecrementHealCounter::
 	ld a, [wd9b0]
 	sub $64
 	ld [wd9b0], a
@@ -3772,7 +3772,7 @@ Func_02b_5ea6::
 	ld [wd9b1], a
 	ret
 
-Func_02b_5eb7::
+HalveHPValue::
 	ld a, [wd9b1]
 	and a
 	jr nz, .swap
@@ -3807,33 +3807,33 @@ Func_02b_5eb7::
 	ld [wd9b1], a
 	ret
 
-Func_02b_5ef2::
+ProcessPreMoveStatusTick::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
 	ld [wd9af], a
 	call GetStatTile
 	cp $e
-	jp z, Func_02b_5f46
+	jp z, AccumulateDamageToStat67
 	cp $3e
-	jp z, Func_02b_5f46
+	jp z, AccumulateDamageToStat67
 	cp $70
-	jp z, Func_02b_5ff2
+	jp z, ProcessDisguiseCountdown
 	cp $77
-	jp z, Func_02b_6040
+	jp z, ProcessStatusEffect77
 	cp $7a
-	jp z, Func_02b_608b
+	jp z, ProcessStatusEffect7a
 	cp $87
-	jp z, Func_02b_612c
+	jp z, ProcessStatusEffect87
 	cp $8a
-	jp z, Func_02b_5e5f
+	jp z, CheckHealOnElement1
 	cp $8b
-	jp z, Func_02b_5e48
+	jp z, CheckHealOnElement2
 	cp $8c
-	jp z, Func_02b_5e31
+	jp z, CheckHealOnElement5
 	ret
 
-Func_02b_5f2d::
+DecrementStatPair::
 	ld a, 1
 	ld [wSideSelect], a
 	xor a
@@ -3846,7 +3846,7 @@ Func_02b_5f2d::
 	call AddStatTile
 	ret
 
-Func_02b_5f46::
+AccumulateDamageToStat67::
 	ld a, [wd9b0]
 	ld c, a
 	ld a, [wd9b1]
@@ -3872,7 +3872,7 @@ Func_02b_5f46::
 	call SetStatTile
 	ret
 
-Func_02b_5f79::
+DoubleHPValue::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
@@ -3912,7 +3912,7 @@ Func_02b_5f79::
 	ld [wd9b1], a
 	ret
 
-Func_02b_5fc1::
+ProcessStatusEffect63::
 	ld a, $5b
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
@@ -3925,16 +3925,16 @@ Func_02b_5fc1::
 	ld [wMoveTargetsEnemy], a
 	xor a
 	ld [wBattleAnimStep], a
-	call Func_02b_4098
+	call CalcAndApplyMoveDamage
 	ldh a, [hBattleJumptableIndex]
 	cp 5
 	ret z
 	xor a
 	ld [wMoveTargetsEnemy], a
-	call Func_02b_419d
+	call AnimateHPRestore
 	ret
 
-Func_02b_5ff2::
+ProcessDisguiseCountdown::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 5
@@ -3971,14 +3971,14 @@ Func_02b_5ff2::
 	ld [wd9c8], a
 	ret
 
-Func_02b_6040::
+ProcessStatusEffect77::
 	ld a, $77
 	ld [wBattleAnimID], a
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_57ae
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, 1
 	ld [wSideSelect], a
@@ -3987,7 +3987,7 @@ Func_02b_6040::
 	xor a
 	call SetStatTile
 
-Func_02b_6066::
+ResetBattleEffectState::
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -4004,7 +4004,7 @@ Func_02b_6066::
 	ld [wd98e], a
 	ret
 
-Func_02b_608b::
+ProcessStatusEffect7a::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 5
@@ -4013,7 +4013,7 @@ Func_02b_608b::
 	dec a
 	jr z, .expired
 	call SetStatTile
-	jp Func_02b_60e4
+	jp ResetStateOnElement
 
 .expired
 	call SetStatTile
@@ -4032,7 +4032,7 @@ Func_02b_608b::
 	farcall Func_026_4d1b
 	xor a
 	ld [wd9c9], a
-	jp Func_02b_60e4
+	jp ResetStateOnElement
 
 .enemy
 	xor a
@@ -4044,17 +4044,17 @@ Func_02b_608b::
 	xor a
 	ld [wd9c8], a
 
-Func_02b_60e4::
+ResetStateOnElement::
 	ld a, [wd8ff]
 	cp 3
-	jp z, Func_02b_6066
+	jp z, ResetBattleEffectState
 	cp 0
-	jp z, Func_02b_6066
+	jp z, ResetBattleEffectState
 	cp 4
-	jp z, Func_02b_6066
+	jp z, ResetBattleEffectState
 	ret
 
-Func_02b_60f7::
+ProcessMoveSwapCountdown::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 5
@@ -4084,7 +4084,7 @@ Func_02b_60f7::
 	ld [wd9e2], a
 	ret
 
-Func_02b_612c::
+ProcessStatusEffect87::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 4
@@ -4104,7 +4104,7 @@ Func_02b_612c::
 	call Wait32Frames
 	ret
 
-Func_02b_6159::
+ProcessStatusEffect88Countdown::
 	ld a, 1
 	ld [wSideSelect], a
 	ld a, 5

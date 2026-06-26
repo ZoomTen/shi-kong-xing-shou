@@ -4,7 +4,7 @@ ShowBattleMessage::
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
-	call Func_02d_403d
+	call BattleWindow_Select
 	xor a
 	ld [wSelectedOption], a
 	farcall Func_026_45b9
@@ -27,23 +27,23 @@ ShowBattleMessage::
 	call PrintMenuText
 	ret
 
-Func_02d_403d::
+BattleWindow_Select::
 	ld a, [wBattleMessageID]
 	cp $2b
-	jr z, Func_02d_404d
+	jr z, BattleWindow_SetupWide
 	cp $2c
-	jr z, Func_02d_404d
+	jr z, BattleWindow_SetupWide
 	ld de, BattleWindowTilemap
-	jr Func_02d_405a
+	jr BattleWindow_PlaceTilemap
 
-Func_02d_404d::
+BattleWindow_SetupWide::
 	ld a, $a5
 	ld [wd9d0], a
 	ld a, $99
 	ld [wd9d1], a
 	ld de, BattleWindowTilemapWide
 
-Func_02d_405a::
+BattleWindow_PlaceTilemap::
 	ld hl, $9980
 	ld bc, $1406
 	ld a, $14
@@ -257,7 +257,7 @@ LoadScriptedPartyMon::
 	push de
 	push hl
 	pop de
-	call Func_02d_5133
+	call WildEncounter_OwnSpecies
 	pop de
 	ld bc, $16
 
@@ -279,7 +279,7 @@ LoadScriptedPartyMon::
 	ld [wd982], a
 	farcall Func_025_40f6
 	pop bc
-	call Func_02d_51f1
+	call InitWildMonVitals
 	ret
 
 ScriptedMonSlots::
@@ -326,7 +326,7 @@ LoadWildMon::
 	and a
 	jr nz, .case1
 	push bc
-	call Func_02d_5147
+	call LoadWildMonData
 	pop bc
 	xor a
 	ld [wd9d7], a
@@ -337,7 +337,7 @@ LoadWildMon::
 	ld [wd982], a
 	farcall Func_025_40f6
 	pop bc
-	call Func_02d_51f1
+	call InitWildMonVitals
 	ret
 
 .case1:
@@ -377,7 +377,7 @@ LoadWildMon::
 	ld [wd982], a
 	farcall Func_025_40f6
 	pop bc
-	call Func_02d_51f1
+	call InitWildMonVitals
 	ret
 
 .case2:
@@ -410,7 +410,7 @@ LoadWildMon::
 	ld [wd982], a
 	farcall Func_025_40f6
 	pop bc
-	call Func_02d_51f1
+	call InitWildMonVitals
 	xor a
 	ld [rRAMG], a
 	ld [rRAMB], a

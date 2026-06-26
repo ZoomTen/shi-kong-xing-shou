@@ -1,4 +1,4 @@
-Func_04d_4000::
+LoadBattleAnimGFXChunk::
 	ld a, [wCopySrc]
 	ld l, a
 	ld a, [wCopySrc + 1]
@@ -14,7 +14,7 @@ Func_04d_4000::
 	call CopyBytesVRAM
 	ret
 Bank4d_SpriteGFX:: INCBIN "gfx/misc/bank4d_spritegfx.bin"
-Func_4d_5ed8::
+LoadBattleAnimObjPalettes::
 	ld l, e
 	ld h, d
 	ld c, $b0

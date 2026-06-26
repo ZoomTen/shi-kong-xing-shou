@@ -561,7 +561,7 @@ wd98c:: ds 1
 wd98d:: ds 1
 wd98e:: ds 1
 ; far source pointer (wTempBank:wCopySrc) for gfx/record copy routines
-; (FarCopyBytes_vTiles0, Func_033_4425/4438, Func_04d_4000); also reused as
+; (FarCopyBytes_vTiles0, Func_033_4425/4438, LoadBattleAnimGFXChunk); also reused as
 ; battle scratch via the wd98f/wd990 aliases
 wCopySrc::
 wd98f:: ds 1
@@ -785,7 +785,7 @@ wdcea:: ds 1 ; follower?
 wdceb:: ds 1
 wdcec:: ds 2
 wdcee:: ds 1
-wdcef:: ds 2 ; 16-bit ptr (Func_02d_6d77)
+wdcef:: ds 2 ; 16-bit ptr (AnimateBattleObjectPath)
 wdcf1:: ds 1
 	ds 1
 

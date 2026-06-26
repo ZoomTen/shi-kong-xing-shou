@@ -130,10 +130,10 @@ BattleIntro_Jump_2::
 	ld h, a
 	ld a, [hl]
 	ld [wd9e5], a
-	farcall Func_02c_4000
+	farcall LoadBattleBacksprites
 	call DelayFrame
 	farcall SetupEnemyNameWindow
-	call Func_02b_6ad1
+	call BattleIntro_PrintNameText
 	call DelayFrame
 	ld hl, Battle_UI_GFX
 	ld de, $96d0
@@ -184,7 +184,7 @@ BattleIntro_Jump_2::
 	call DelayFrame
 	ld a, 2
 	ld [wBattleIntroJumptableIndex], a
-	call Func_02b_6a41
+	call BattleHUD_InitBars
 	ret
 
 PlayBattleMusic::
@@ -215,21 +215,21 @@ BattleMusic::
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
 
-Func_02b_6a33::
+BattleHUD_InitBarsAlt::
 	ld hl, wd93c
 	ld c, 6
-	jr asm_02b_6a46
+	jr BattleHUD_FillBars
 
-Func_02b_6a3a::
+BattleHUD_InitBarsPlayer::
 	ld hl, wd900
 	ld c, 6
-	jr asm_02b_6a46
+	jr BattleHUD_FillBars
 
-Func_02b_6a41::
+BattleHUD_InitBars::
 	ld hl, wd900
 	ld c, $c
 
-asm_02b_6a46::
+BattleHUD_FillBars::
 	ld a, $a
 	ld [hli], a
 	ld [hli], a
@@ -244,7 +244,7 @@ asm_02b_6a46::
 	ld [hli], a
 	ld [hli], a
 	dec c
-	jr nz, asm_02b_6a46
+	jr nz, BattleHUD_FillBars
 	ret
 
 BattleIntro_Jump_3::
@@ -295,10 +295,10 @@ BattleIntro_Jump_4::
 	ld a, 4
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	call Func_02b_6ae6
+	call DrawBattlePartyStatus
 	ret
 
-Func_02b_6abc::
+DrawBattleHUDLayout::
 	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406
@@ -309,7 +309,7 @@ Func_02b_6abc::
 	call PlaceTilemap
 	ret
 
-Func_02b_6ad1::
+BattleIntro_PrintNameText::
 	ld hl, wMenuTextBuffer
 	ld a, $55
 	ld [wMenuTextX], a
@@ -320,7 +320,7 @@ Func_02b_6ad1::
 	call PrintMenuText
 	ret
 
-Func_02b_6ae6::
+DrawBattlePartyStatus::
 	xor a
 	ld [wd0c1], a
 	ld de, $9942
@@ -532,7 +532,7 @@ MACRO oam_build_entry
 ENDM
 
 
-Func_02b_7506::
+ClearBattleOAMState::
 	ld hl, wcde0
 	ld [hl], 0
 	inc hl
@@ -554,7 +554,7 @@ Func_02b_7506::
 	ret
 
 
-Func_02b_7525::
+ClearVirtualOAM::
 	ld hl, wVirtualOAM
 	ld bc, $28
 	ld de, 4
@@ -567,7 +567,7 @@ Func_02b_7525::
 	ret
 
 
-Func_02b_7536::
+RefreshBattleOAM::
 	ld hl, wVirtualOAM
 	ld bc, $28
 	ld de, 4

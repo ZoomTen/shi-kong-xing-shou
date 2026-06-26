@@ -172,7 +172,7 @@ BattleMoves_LoadList::
 	ret
 
 BattleMoves_Loop::
-	call Func_02b_7536
+	call RefreshBattleOAM
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a

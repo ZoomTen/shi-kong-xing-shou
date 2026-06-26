@@ -1,12 +1,12 @@
 ; Wild encounter group/slot tables and the routines that roll and load a wild mon.
-Func_02d_507b::
+WildEncounter_LoadFromPointer::
 	ld a, [wMovementPointer]
 	ld l, a
 	ld a, [wMovementPointer + 1]
 	ld h, a
-	jp Func_02d_50b3
+	jp WildEncounter_LoadParty
 
-Func_02d_5086::
+SetupWildEncounter::
 	call LoadMapAttribute
 	ld de, WildEncGroups
 	ldh a, [hMapGroup]
@@ -39,7 +39,7 @@ Func_02d_5086::
 	ld h, [hl]
 	ld l, a
 
-Func_02d_50b3::
+WildEncounter_LoadParty::
 	ld a, [hli]
 	ld [wd9bf], a
 	cp 1
@@ -47,15 +47,15 @@ Func_02d_50b3::
 	ld a, [hl]
 	ld [wd9dc], a
 .skip
-	call Func_02d_510c
+	call WildEncounter_ClearMonData
 	xor a
 	ld [wBattleAnimStep], a
 	ld e, l
 	ld d, h
 	ld bc, wd876
 .loop
-	call Func_02d_511b
-	call Func_02d_5147
+	call WildEncounter_FlagSpecies
+	call LoadWildMonData
 	push bc
 	ld bc, wdb00
 	ld a, [wBattleAnimStep]
@@ -84,10 +84,10 @@ ENDR
 	xor a
 	ld [wBattleAnimStep], a
 	call DelayFrame
-	call Func_02d_51ba
+	call WildEncounter_InitPartyStats
 	ret
 
-Func_02d_510c::
+WildEncounter_ClearMonData::
 	push hl
 	push bc
 
@@ -103,7 +103,7 @@ Func_02d_510c::
 	pop hl
 	ret
 
-Func_02d_511b::
+WildEncounter_FlagSpecies::
 	push de
 	push hl
 	ld hl, wd7cb
@@ -123,7 +123,7 @@ Func_02d_511b::
 	pop de
 	ret
 
-Func_02d_5133::
+WildEncounter_OwnSpecies::
 	push de
 	push hl
 	ld hl, wd7cb
@@ -140,7 +140,7 @@ Func_02d_5133::
 	pop de
 	ret
 
-Func_02d_5147::
+LoadWildMonData::
 ; Load wild mon encounter data
 
 ; Get species and level
@@ -189,7 +189,7 @@ REPT 2
 ENDR
 	ret
 
-Func_02d_5184::
+LoadWildMonDataPacked::
 	ld hl, MON_SPECIES
 	add hl, bc
 REPT 2
@@ -224,12 +224,12 @@ ENDR
 	ld [hl], 0
 	ret
 
-Func_02d_51ba::
+WildEncounter_InitPartyStats::
 	xor a
 	ld [wd987], a
 	ld bc, wd876
 
-Func_02d_51c1::
+WildEncounter_CalcStatsLoop::
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
@@ -244,23 +244,23 @@ Func_02d_51c1::
 	ld [wd982], a
 	farcall Func_025_40f6
 	pop bc
-	call Func_02d_51f1
+	call InitWildMonVitals
 	ld hl, $16
 	add hl, bc
 	push hl
 	pop bc
 	ld a, h
 	cp $d9
-	jr c, Func_02d_51c1
+	jr c, WildEncounter_CalcStatsLoop
 	ret
 
-asm_02d_51eb::
-	jp Func_02d_51c1
+WildEncounter_CalcStatsLoop_Reenter::
+	jp WildEncounter_CalcStatsLoop
 	nop
 	nop
 	nop
 
-Func_02d_51f1::
+InitWildMonVitals::
 	ld hl, MON_HP
 	add hl, bc
 	ldh a, [hMathValue]

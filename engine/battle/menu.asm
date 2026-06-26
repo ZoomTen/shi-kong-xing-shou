@@ -103,7 +103,7 @@ BattleMenu_Jump_2::
 	ld [wd9f8], a
 	ld [wd9ea], a
 	ld de, Script_023_55cc
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	xor a
 	ld [wd9ea], a
 	ret
@@ -156,7 +156,7 @@ BattleMenu_Jump_2::
 	ld a, 3
 	ldh [hVRAMCopyHeight], a
 	call PlaceAttrmap
-	call Func_02b_402b
+	call RefreshBattleHUD
 	call BattleMenu_PrintHelpBar
 	ld de, Battle_Panel13x6_BGMap
 	ld hl, $9987
@@ -201,7 +201,7 @@ BattleMenu_PrintHelpBar::
 	db $ed
 
 BattleMenu_Jump_3::
-	call Func_02b_7536
+	call RefreshBattleOAM
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -310,7 +310,7 @@ BattleMenu_HandleInput::
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
 	ld [hFFC6], a
-	call Func_02b_7506
+	call ClearBattleOAMState
 	ret
 
 .attack:
@@ -329,7 +329,7 @@ BattleMenu_HandleInput::
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
 	ld [hFFC6], a
-	call Func_02b_7506
+	call ClearBattleOAMState
 	ret
 
 .attack_alt:
@@ -339,7 +339,7 @@ BattleMenu_HandleInput::
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
 	ld [hFFC6], a
-	call Func_02b_7506
+	call ClearBattleOAMState
 	ret
 
 .selected_1:
@@ -359,7 +359,7 @@ BattleMenu_HandleInput::
 	ld [hl], $4c
 	inc hl
 	ld [hl], $42
-	call Func_02b_7506
+	call ClearBattleOAMState
 	ret
 
 .selected_2:

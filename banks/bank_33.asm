@@ -1,4 +1,4 @@
-Func_033_4000::
+LoadBattleAnimBackground::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4033
@@ -118,7 +118,7 @@ Func_033_4425::
 	ret
 
 ; copies [src][len] record at [wd990:wd98f] to VRAM
-Func_033_4438::
+CopyBattleAnimBGTiles::
 	ld a, [wCopySrc]
 	ld l, a
 	ld a, [wCopySrc + 1]

@@ -1913,7 +1913,7 @@ Script_3b:: ; start a battle (startbattle)
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer + 1], a
-	farcall Func_02d_507b
+	farcall WildEncounter_LoadFromPointer
 	ld a, $01
 	ld [hBattleJumptableIndex], a
 	xor a

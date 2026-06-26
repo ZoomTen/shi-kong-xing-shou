@@ -379,8 +379,8 @@ ENDM
 
 	const script_startbattle ; $3b
 MACRO startbattle
-; \1 = enemy battle-data pointer; dereferenced in bank $2d (see Func_02d_50b3)
-	assert BANK(\1) == BANK(Func_02d_507b) ; battle-data deref in its bank
+; \1 = enemy battle-data pointer; dereferenced in bank $2d (see WildEncounter_LoadParty)
+	assert BANK(\1) == BANK(WildEncounter_LoadFromPointer) ; battle-data deref in its bank
 	db script_startbattle
 	dw \1
 ENDM

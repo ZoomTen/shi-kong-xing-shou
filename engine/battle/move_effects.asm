@@ -9,7 +9,7 @@ ExecuteMoveEffect::
 
 	xor a
 	ld [wd9ea], a
-	ld de, Jumptable_030_4335
+	ld de, ItemEffectPointers
 	ld a, [wCurItemID]
 	jr .asm_401e
 
@@ -234,49 +234,49 @@ ComputeTypeEffectiveness::
 
 INCLUDE "data/moves/type_matchup.asm"
 
-Jumptable_030_4335::
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_542e
-	dw Func_030_541a
-	dw Func_030_5141
-	dw Func_030_4fd4
-	dw Func_030_4fef
-	dw Func_030_51c2
-	dw Func_030_505d
-	dw Func_030_442a
-	dw Func_030_5448
-	dw Func_030_4bcb
-	dw Func_030_4442
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
-	dw Func_030_4385
+ItemEffectPointers::
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw MoveEffect_RaiseUserStat0
+	dw MoveEffect_RaiseUserStat1
+	dw MoveEffect_RaiseUserStat3By3
+	dw MoveEffect_RaiseUserStat2
+	dw MoveEffect_RaiseUserStat8
+	dw MoveEffect_LowerEnemyStat1
+	dw MoveEffect_LowerEnemyStat0
+	dw ItemEffect_LowerStat3
+	dw MoveEffect_LowerEnemyStat2
+	dw MoveEffect_LowerEnemyStat8
+	dw ItemEffect_SetAnimStep6
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
+	dw ItemEffect_CatchMon
 
-Func_030_4385::
+ItemEffect_CatchMon::
 	ld a, [wd993]
 	and a
 	jr nz, .asm_4395
@@ -340,10 +340,10 @@ Func_030_4385::
 	ld [wBattleMessageID], a
 	ld a, $05
 	ld [wBattleAnimStep], a
-	call Func_030_43ee
+	call StoreCaughtMonInBox
 	ret
 
-Func_030_43ee::
+StoreCaughtMonInBox::
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -390,7 +390,7 @@ SetCaughtMon::
 	pop hl
 	ret
 
-Func_030_442a::
+ItemEffect_LowerStat3::
 	ld a, $01
 	ld [wSideSelect], a
 	ld [wMoveTargetsEnemy], a
@@ -402,7 +402,7 @@ Func_030_442a::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4442::
+ItemEffect_SetAnimStep6::
 	ld a, $06
 	ld [wBattleAnimStep], a
 	ret
@@ -453,150 +453,150 @@ Func_030_4442::
 
 MoveEffectPointers::
 	dw MoveEffect_Damage ; $00
-	dw Func_030_555c ; $01
-	dw Func_030_5603 ; $02
-	dw Func_030_564a ; $03
-	dw Func_030_54de ; $04
-	dw Func_030_5486 ; $05
-	dw Func_030_5465 ; $06
+	dw MoveEffect_SetStatus4Variant ; $01
+	dw MoveEffect_RandomStatTileTwoTurn ; $02
+	dw MoveEffect_GenericHit ; $03
+	dw MoveEffect_TypedFractionalDamage ; $04
+	dw MoveEffect_HalfStatDamage ; $05
+	dw MoveEffect_LowerEnemyStat1By2 ; $06
 	dw MoveEffect_Damage ; $07
-	dw Func_030_5441 ; $08
-	dw Func_030_564a ; $09
-	dw Func_030_564a ; $0a
-	dw Func_030_542e ; $0b
-	dw Func_030_541a ; $0c
-	dw Func_030_53ba ; $0d
-	dw Func_030_52c3 ; $0e
-	dw Func_030_564a ; $0f
-	dw Func_030_5249 ; $10
-	dw Func_030_5231 ; $11
-	dw Func_030_51da ; $12
-	dw Func_030_51bb ; $13
-	dw Func_030_5190 ; $14
-	dw Func_030_5249 ; $15
-	dw Func_030_5155 ; $16
-	dw Func_030_5441 ; $17
-	dw Func_030_542e ; $18
-	dw Func_030_564a ; $19
-	dw Func_030_564a ; $1a
-	dw Func_030_513a ; $1b
-	dw Func_030_564a ; $1c
-	dw Func_030_50f8 ; $1d
-	dw Func_030_564a ; $1e
-	dw Func_030_564a ; $1f
-	dw Func_030_564a ; $20
-	dw Func_030_564a ; $21
-	dw Func_030_50cc ; $22
-	dw Func_030_50a4 ; $23
-	dw Func_030_5074 ; $24
-	dw Func_030_5056 ; $25
-	dw Func_030_5003 ; $26
-	dw Func_030_4fe8 ; $27
-	dw Func_030_541a ; $28
-	dw Func_030_4fd4 ; $29
-	dw Func_030_564a ; $2a
-	dw Func_030_564a ; $2b
-	dw Func_030_564a ; $2c
-	dw Func_030_564a ; $2d
-	dw Func_030_564a ; $2e
-	dw Func_030_4f9f ; $2f
-	dw Func_030_541a ; $30
-	dw Func_030_5155 ; $31
-	dw Func_030_564a ; $32
-	dw Func_030_564a ; $33
-	dw Func_030_4f5f ; $34
-	dw Func_030_564a ; $35
-	dw Func_030_4f10 ; $36
-	dw Func_030_564a ; $37
-	dw Func_030_564a ; $38
-	dw Func_030_4eca ; $39
-	dw Func_030_4eca ; $3a
-	dw Func_030_4e79 ; $3b
-	dw Func_030_4e28 ; $3c
-	dw Func_030_4e0b ; $3d
-	dw Func_030_4d64 ; $3e
-	dw Func_030_564a ; $3f
-	dw Func_030_4d13 ; $40
-	dw Func_030_564a ; $41
-	dw Func_030_4d13 ; $42
-	dw Func_030_564a ; $43
-	dw Func_030_564a ; $44
-	dw Func_030_5190 ; $45
-	dw Func_030_4cca ; $46
-	dw Func_030_4c50 ; $47
-	dw Func_030_564a ; $48
-	dw Func_030_564a ; $49
-	dw Func_030_4c12 ; $4a
-	dw Func_030_564a ; $4b
-	dw Func_030_564a ; $4c
-	dw Func_030_4be3 ; $4d
-	dw Func_030_4bb1 ; $4e
-	dw Func_030_4b94 ; $4f
-	dw Func_030_564a ; $50
-	dw Func_030_564a ; $51
-	dw Func_030_564a ; $52
-	dw Func_030_4b4d ; $53
-	dw Func_030_564a ; $54
-	dw Func_030_564a ; $55
-	dw Func_030_50cc ; $56
-	dw Func_030_4e79 ; $57
-	dw Func_030_564a ; $58
-	dw Func_030_4b30 ; $59
-	dw Func_030_4e79 ; $5a
-	dw Func_030_4b30 ; $5b
-	dw Func_030_4e93 ; $5c
-	dw Func_030_4b1b ; $5d
-	dw Func_030_564a ; $5e
-	dw Func_030_4aec ; $5f
-	dw Func_030_564a ; $60
-	dw Func_030_4aa5 ; $61
-	dw Func_030_564a ; $62
-	dw Func_030_4a89 ; $63
+	dw MoveEffect_LowerEnemyStat2OnHit ; $08
+	dw MoveEffect_GenericHit ; $09
+	dw MoveEffect_GenericHit ; $0a
+	dw MoveEffect_RaiseUserStat0 ; $0b
+	dw MoveEffect_RaiseUserStat1 ; $0c
+	dw MoveEffect_DisableRandomMove ; $0d
+	dw MoveEffect_TwoTurnChargeB ; $0e
+	dw MoveEffect_GenericHit ; $0f
+	dw MoveEffect_TwoTurnChargeA ; $10
+	dw MoveEffect_RaiseUserStat9 ; $11
+	dw MoveEffect_HalfStatValueFail ; $12
+	dw MoveEffect_LowerEnemyStat1OnHit ; $13
+	dw MoveEffect_HealValueFromStat ; $14
+	dw MoveEffect_TwoTurnChargeA ; $15
+	dw MoveEffect_TrySetStatus7_30 ; $16
+	dw MoveEffect_LowerEnemyStat2OnHit ; $17
+	dw MoveEffect_RaiseUserStat0 ; $18
+	dw MoveEffect_GenericHit ; $19
+	dw MoveEffect_GenericHit ; $1a
+	dw MoveEffect_RaiseUserStat3OnHit ; $1b
+	dw MoveEffect_GenericHit ; $1c
+	dw MoveEffect_SetStatus5OnHit ; $1d
+	dw MoveEffect_GenericHit ; $1e
+	dw MoveEffect_GenericHit ; $1f
+	dw MoveEffect_GenericHit ; $20
+	dw MoveEffect_GenericHit ; $21
+	dw MoveEffect_HealValueFromStatOnHit ; $22
+	dw MoveEffect_SetFlagD9F5Msg42 ; $23
+	dw MoveEffect_RaiseUserStats0to3 ; $24
+	dw MoveEffect_LowerEnemyStat0OnHit ; $25
+	dw MoveEffect_DrainSetStatus4 ; $26
+	dw MoveEffect_RaiseUserStat8OnHit ; $27
+	dw MoveEffect_RaiseUserStat1 ; $28
+	dw MoveEffect_RaiseUserStat2 ; $29
+	dw MoveEffect_GenericHit ; $2a
+	dw MoveEffect_GenericHit ; $2b
+	dw MoveEffect_GenericHit ; $2c
+	dw MoveEffect_GenericHit ; $2d
+	dw MoveEffect_GenericHit ; $2e
+	dw MoveEffect_StatMinus5Value ; $2f
+	dw MoveEffect_RaiseUserStat1 ; $30
+	dw MoveEffect_TrySetStatus7_30 ; $31
+	dw MoveEffect_GenericHit ; $32
+	dw MoveEffect_GenericHit ; $33
+	dw MoveEffect_InflictMajorStatusD ; $34
+	dw MoveEffect_GenericHit ; $35
+	dw MoveEffect_LevelTimes2Damage ; $36
+	dw MoveEffect_GenericHit ; $37
+	dw MoveEffect_GenericHit ; $38
+	dw MoveEffect_QuarterStoredValue ; $39
+	dw MoveEffect_QuarterStoredValue ; $3a
+	dw MoveEffect_TryStatus1_10 ; $3b
+	dw MoveEffect_TryStatus3_10 ; $3c
+	dw MoveEffect_TryStatus2_10 ; $3d
+	dw MoveEffect_TwoTurnStatHeal ; $3e
+	dw MoveEffect_GenericHit ; $3f
+	dw MoveEffect_SetStatus2OnHit ; $40
+	dw MoveEffect_GenericHit ; $41
+	dw MoveEffect_SetStatus2OnHit ; $42
+	dw MoveEffect_GenericHit ; $43
+	dw MoveEffect_GenericHit ; $44
+	dw MoveEffect_HealValueFromStat ; $45
+	dw MoveEffect_InflictMajorStatusC ; $46
+	dw MoveEffect_TryLowerEnemyStat8_30 ; $47
+	dw MoveEffect_GenericHit ; $48
+	dw MoveEffect_GenericHit ; $49
+	dw MoveEffect_RecallHalveValue ; $4a
+	dw MoveEffect_GenericHit ; $4b
+	dw MoveEffect_GenericHit ; $4c
+	dw MoveEffect_TryLowerEnemyStat1_30 ; $4d
+	dw MoveEffect_TryLowerEnemyStat8_20 ; $4e
+	dw MoveEffect_TryStatus3_30 ; $4f
+	dw MoveEffect_GenericHit ; $50
+	dw MoveEffect_GenericHit ; $51
+	dw MoveEffect_GenericHit ; $52
+	dw MoveEffect_InflictMajorStatusB ; $53
+	dw MoveEffect_GenericHit ; $54
+	dw MoveEffect_GenericHit ; $55
+	dw MoveEffect_HealValueFromStatOnHit ; $56
+	dw MoveEffect_TryStatus1_10 ; $57
+	dw MoveEffect_GenericHit ; $58
+	dw MoveEffect_TryStatus1_30 ; $59
+	dw MoveEffect_TryStatus1_10 ; $5a
+	dw MoveEffect_TryStatus1_30 ; $5b
+	dw MoveEffect_SetStatus1 ; $5c
+	dw MoveEffect_DoubleValueFailMsg40 ; $5d
+	dw MoveEffect_GenericHit ; $5e
+	dw MoveEffect_TryLowerEnemyStat1_20 ; $5f
+	dw MoveEffect_GenericHit ; $60
+	dw MoveEffect_InflictMajorStatusA ; $61
+	dw MoveEffect_GenericHit ; $62
+	dw MoveEffect_SetStatTile63 ; $63
 	dw MoveEffect_Damage ; $64
-	dw Func_030_4b2d ; $65
-	dw Func_030_4a3d ; $66
-	dw Func_030_4b30 ; $67
-	dw Func_030_4a20 ; $68
-	dw Func_030_4a20 ; $69
-	dw Func_030_4a03 ; $6a
-	dw Func_030_49d2 ; $6b
-	dw Func_030_564a ; $6c
+	dw MoveEffect_SetStatus1Always ; $65
+	dw MoveEffect_SetStatus0OnHit ; $66
+	dw MoveEffect_TryStatus1_30 ; $67
+	dw MoveEffect_TryStatus5_Chance10 ; $68
+	dw MoveEffect_TryStatus5_Chance10 ; $69
+	dw MoveEffect_TryLowerEnemyStat0 ; $6a
+	dw MoveEffect_SetFlagD9B3 ; $6b
+	dw MoveEffect_GenericHit ; $6c
 	dw MoveEffect_Damage ; $6d
-	dw Func_030_50f8 ; $6e
-	dw Func_030_5441 ; $6f
-	dw Func_030_498e ; $70
-	dw Func_030_53ba ; $71
-	dw Func_030_4aec ; $72
-	dw Func_030_4aec ; $73
-	dw Func_030_4aec ; $74
-	dw Func_030_564a ; $75
-	dw Func_030_564a ; $76
-	dw Func_030_4973 ; $77
-	dw Func_030_4950 ; $78
-	dw Func_030_4950 ; $79
-	dw Func_030_4919 ; $7a
-	dw Func_030_48c5 ; $7b
-	dw Func_030_48bb ; $7c
-	dw Func_030_4873 ; $7d
-	dw Func_030_485d ; $7e
-	dw Func_030_480b ; $7f
-	dw Func_030_4a3d ; $80
-	dw Func_030_47ee ; $81
-	dw Func_030_51da ; $82
-	dw Func_030_564a ; $83
-	dw Func_030_4793 ; $84
-	dw Func_030_470d ; $85
-	dw Func_030_46ed ; $86
-	dw Func_030_46ce ; $87
-	dw Func_030_4689 ; $88
-	dw Func_030_4641 ; $89
-	dw Func_030_462d ; $8a
-	dw Func_030_4619 ; $8b
-	dw Func_030_4605 ; $8c
-	dw Func_030_45fb ; $8d
-	dw Func_030_564a ; $8e
+	dw MoveEffect_SetStatus5OnHit ; $6e
+	dw MoveEffect_LowerEnemyStat2OnHit ; $6f
+	dw MoveEffect_RandomStatTileMsg49 ; $70
+	dw MoveEffect_DisableRandomMove ; $71
+	dw MoveEffect_TryLowerEnemyStat1_20 ; $72
+	dw MoveEffect_TryLowerEnemyStat1_20 ; $73
+	dw MoveEffect_TryLowerEnemyStat1_20 ; $74
+	dw MoveEffect_GenericHit ; $75
+	dw MoveEffect_GenericHit ; $76
+	dw MoveEffect_SetStatTile77 ; $77
+	dw MoveEffect_SetFlagD9B6 ; $78
+	dw MoveEffect_SetFlagD9B6 ; $79
+	dw MoveEffect_Disguise ; $7a
+	dw MoveEffect_Transform ; $7b
+	dw MoveEffect_LowerEnemyStat8OnHit ; $7c
+	dw MoveEffect_MirrorCounter ; $7d
+	dw MoveEffect_FailMsg40Step4 ; $7e
+	dw MoveEffect_ResetAllStatStages ; $7f
+	dw MoveEffect_SetStatus0OnHit ; $80
+	dw MoveEffect_BindSetStatus0 ; $81
+	dw MoveEffect_HalfStatValueFail ; $82
+	dw MoveEffect_GenericHit ; $83
+	dw MoveEffect_StealMoney ; $84
+	dw MoveEffect_SwapStatBlock ; $85
+	dw MoveEffect_SetTurnFlagD9F5 ; $86
+	dw MoveEffect_SetStatTile87 ; $87
+	dw MoveEffect_SeedRandomCounter ; $88
+	dw MoveEffect_InflictMultiStatus ; $89
+	dw MoveEffect_SetStatTile8a ; $8a
+	dw MoveEffect_SetStatTile8b ; $8b
+	dw MoveEffect_SetStatTile8c ; $8c
+	dw MoveEffect_SelfAnimAdvance ; $8d
+	dw MoveEffect_GenericHit ; $8e
 
-Func_030_45c9::
+LoadBattleEffectGFX::
 	ld de, Pointers_030_565c
 	ld a, [wd98f]
 	ld l, a
@@ -615,7 +615,7 @@ Func_030_45c9::
 	call CopyBytesVRAM
 	ret
 
-Func_030_45e2::
+LoadBattleEffectGFXAlt::
 	ld de, Pointers_030_58f8
 	ld a, [wd98f]
 	ld l, a
@@ -634,14 +634,14 @@ Func_030_45e2::
 	call CopyBytesVRAM
 	ret
 
-Func_030_45fb::
+MoveEffect_SelfAnimAdvance::
 	ld a, $02
 	ld [wBattleAnimStep], a
 	xor a
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4605::
+MoveEffect_SetStatTile8c::
 	xor a
 	ld [wSideSelect], a
 	ld a, $04
@@ -652,7 +652,7 @@ Func_030_4605::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4619::
+MoveEffect_SetStatTile8b::
 	xor a
 	ld [wSideSelect], a
 	ld a, $04
@@ -663,7 +663,7 @@ Func_030_4619::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_462d::
+MoveEffect_SetStatTile8a::
 	xor a
 	ld [wSideSelect], a
 	ld a, $04
@@ -674,10 +674,10 @@ Func_030_462d::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4641::
+MoveEffect_InflictMultiStatus::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4658
@@ -696,10 +696,10 @@ Func_030_4641::
 	add hl, bc
 	ld a, [hli]
 	cp $11
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [hli]
 	cp $11
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -714,10 +714,10 @@ Func_030_4641::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4689::
+MoveEffect_SeedRandomCounter::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wSideSelect], a
 	ld [wBattleAnimStep], a
@@ -747,10 +747,10 @@ Func_030_4689::
 	ld [wd9e3], a
 	ret
 
-Func_030_46ce::
+MoveEffect_SetStatTile87::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wSideSelect], a
 	ld a, $04
@@ -763,13 +763,13 @@ Func_030_46ce::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_46ed::
+MoveEffect_SetTurnFlagD9F5::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [hFFD6]
 	and a
-	jp nz, Func_030_55ab
+	jp nz, MoveEffect_MissMessage
 	ld de, wd9f5
 	ld a, [wBattleTurn]
 	ld l, a
@@ -780,7 +780,7 @@ Func_030_46ed::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_470d::
+MoveEffect_SwapStatBlock::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_474d
@@ -823,7 +823,7 @@ Func_030_470d::
 .asm_474d
 	ld a, [wdb1c]
 	and a
-	jp nz, Func_030_55ab
+	jp nz, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $59
@@ -863,10 +863,10 @@ Func_030_470d::
 	ld [wdb1c], a
 	ret
 
-Func_030_4793::
+MoveEffect_StealMoney::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $58
 	ld [wBattleMessageID], a
 	ld a, [wBattleTurn]
@@ -916,22 +916,22 @@ Func_030_4793::
 	ld [hld], a
 	ret
 
-Func_030_47ee::
+MoveEffect_BindSetStatus0::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4803
 	ld a, $01
 	ld [wd9bb], a
-	jp Func_030_4a44
+	jp MoveEffect_SetStatus0
 .asm_4803
 	ld a, $01
 	ld [wd9ba], a
-	jp Func_030_4a44
+	jp MoveEffect_SetStatus0
 
-Func_030_480b::
+MoveEffect_ResetAllStatStages::
 	ld a, $4d
 	ld [wBattleMessageID], a
 	xor a
@@ -968,10 +968,10 @@ Func_030_480b::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_485d::
+MoveEffect_FailMsg40Step4::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wMoveTargetsEnemy], a
 	ld a, $04
@@ -980,10 +980,10 @@ Func_030_485d::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4873::
+MoveEffect_MirrorCounter::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $4c
 	ld [wBattleMessageID], a
 	xor a
@@ -1016,16 +1016,16 @@ Func_030_4873::
 	ld [wd9e3], a
 	ret
 
-Func_030_48bb::
+MoveEffect_LowerEnemyStat8OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
-	jp Func_030_4bcb
+	jp z, MoveEffect_MissMessage
+	jp MoveEffect_LowerEnemyStat8
 
-Func_030_48c5::
+MoveEffect_Transform::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1059,7 +1059,7 @@ Func_030_48c5::
 	ld [wd9c9], a
 	ret
 
-Func_030_4919::
+MoveEffect_Disguise::
 	ld a, $4b
 	ld [wBattleMessageID], a
 	call AdvanceRNG
@@ -1086,10 +1086,10 @@ Func_030_4919::
 	ld [wd9b8], a
 	ret
 
-Func_030_4950::
+MoveEffect_SetFlagD9B6::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1105,10 +1105,10 @@ Func_030_4950::
 	ld [wd9b6], a
 	ret
 
-Func_030_4973::
+MoveEffect_SetStatTile77::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $4a
 	ld [wBattleMessageID], a
 	xor a
@@ -1119,10 +1119,10 @@ Func_030_4973::
 	call SetStatTile
 	ret
 
-Func_030_498e::
+MoveEffect_RandomStatTileMsg49::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	call AdvanceRNG
 	ld a, $01
 	ld [wSideSelect], a
@@ -1151,10 +1151,10 @@ Func_030_498e::
 	ld [wd9e2], a
 	ret
 
-Func_030_49d2::
+MoveEffect_SetFlagD9B3::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -1176,10 +1176,10 @@ Func_030_49d2::
 	ld [wd9b4], a
 	ret
 
-Func_030_4a03::
+MoveEffect_TryLowerEnemyStat0::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1188,12 +1188,12 @@ Func_030_4a03::
 	ld a, [wd991]
 	cp $4c
 	ret nc
-	jp Func_030_505d
+	jp MoveEffect_LowerEnemyStat0
 
-Func_030_4a20::
+MoveEffect_TryStatus5_Chance10::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1202,13 +1202,13 @@ Func_030_4a20::
 	ld a, [wd991]
 	cp $19
 	ret nc
-	jp Func_030_5103
+	jp MoveEffect_SetStatus5
 
-Func_030_4a3d::
+MoveEffect_SetStatus0OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
-Func_030_4a44::
+	jp z, MoveEffect_MissMessage
+MoveEffect_SetStatus0::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4a54
@@ -1227,14 +1227,14 @@ Func_030_4a44::
 	add hl, bc
 	ld a, [hli]
 	cp $11
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	cp $15
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [hli]
 	cp $11
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	cp $15
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -1246,10 +1246,10 @@ Func_030_4a44::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4a89::
+MoveEffect_SetStatTile63::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $48
@@ -1260,7 +1260,7 @@ Func_030_4a89::
 	call SetStatTile
 	ret
 
-Func_030_4aa5::
+MoveEffect_InflictMajorStatusA::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -1270,7 +1270,7 @@ Func_030_4aa5::
 	jr nz, .asm_4aca
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $02
 	call SetStatTile
 	ld a, $46
@@ -1285,7 +1285,7 @@ Func_030_4aa5::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_57e1
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, $02
 	ld [wBattleAnimStep], a
@@ -1293,10 +1293,10 @@ Func_030_4aa5::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4aec::
+MoveEffect_TryLowerEnemyStat1_20::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1315,8 +1315,8 @@ Func_030_4aec::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4b1b::
-	call Func_030_537b
+MoveEffect_DoubleValueFailMsg40::
+	call DoubleStoredValue16
 	ld a, $40
 	ld [wBattleMessageID], a
 	ld a, $04
@@ -1325,13 +1325,13 @@ Func_030_4b1b::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4b2d::
-	jp Func_030_4e93
+MoveEffect_SetStatus1Always::
+	jp MoveEffect_SetStatus1
 
-Func_030_4b30::
+MoveEffect_TryStatus1_30::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1340,9 +1340,9 @@ Func_030_4b30::
 	ld a, [wd991]
 	cp $4c
 	ret nc
-	jp Func_030_4e93
+	jp MoveEffect_SetStatus1
 
-Func_030_4b4d::
+MoveEffect_InflictMajorStatusB::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -1352,7 +1352,7 @@ Func_030_4b4d::
 	jr nz, .asm_4b72
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $02
 	call SetStatTile
 	ld a, $47
@@ -1367,7 +1367,7 @@ Func_030_4b4d::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_57f4
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, $02
 	ld [wBattleAnimStep], a
@@ -1375,10 +1375,10 @@ Func_030_4b4d::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4b94::
+MoveEffect_TryStatus3_30::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1387,12 +1387,12 @@ Func_030_4b94::
 	ld a, [wd991]
 	cp $4c
 	ret nc
-	jp Func_030_4e42
+	jp MoveEffect_SetStatus3
 
-Func_030_4bb1::
+MoveEffect_TryLowerEnemyStat8_20::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1402,7 +1402,7 @@ Func_030_4bb1::
 	cp $32
 	ret nc
 
-Func_030_4bcb::
+MoveEffect_LowerEnemyStat8::
 	ld a, $01
 	ld [wSideSelect], a
 	ld [wMoveTargetsEnemy], a
@@ -1414,10 +1414,10 @@ Func_030_4bcb::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4be3::
+MoveEffect_TryLowerEnemyStat1_30::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1436,10 +1436,10 @@ Func_030_4be3::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4c12::
+MoveEffect_RecallHalveValue::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $34
 	ld [wBattleMessageID], a
 	xor a
@@ -1458,7 +1458,7 @@ Func_030_4c12::
 	ld a, [wFacingTileX]
 	cp $07
 	ret nz
-	call Func_030_4c8f
+	call HalveStoredValue16
 	ld a, $40
 	ld [wBattleMessageID], a
 	ld a, $04
@@ -1467,10 +1467,10 @@ Func_030_4c12::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4c50::
+MoveEffect_TryLowerEnemyStat8_30::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4c63
@@ -1498,7 +1498,7 @@ Func_030_4c50::
 	ld a, $21
 	ld [wBattleMessageID], a
 	ret
-Func_030_4c8f::
+HalveStoredValue16::
 	ld a, [wd9b1]
 	and a
 	jr nz, .asm_4c9f
@@ -1530,7 +1530,7 @@ Func_030_4c8f::
 	ld [wd9b1], a
 	ret
 
-Func_030_4cca::
+MoveEffect_InflictMajorStatusC::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -1540,7 +1540,7 @@ Func_030_4cca::
 	jr nz, .asm_4cef
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $02
 	call SetStatTile
 	ld a, $46
@@ -1555,28 +1555,28 @@ Func_030_4cca::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_57d1
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, $02
 	ld [wBattleAnimStep], a
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
-	jp Func_030_4d24
+	jp MoveEffect_TryStatus2_30
 
-Func_030_4d13::
+MoveEffect_SetStatus2OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
 	ld [wBattleAnimStep], a
-Func_030_4d24::
+MoveEffect_TryStatus2_30::
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
 	ret nc
-Func_030_4d2d::
+MoveEffect_SetStatus2::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4d3d
@@ -1610,7 +1610,7 @@ Func_030_4d2d::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4d64::
+MoveEffect_TwoTurnStatHeal::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -1651,12 +1651,12 @@ Func_030_4d64::
 	ld a, $37
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
-	call Func_030_5372
+	call WaitFrames32
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_580f
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, $03
 	ld [wBattleAnimStep], a
@@ -1669,7 +1669,7 @@ Func_030_4d64::
 	ld a, $07
 	ld [wd9af], a
 	call GetStatTile
-	call Func_030_537b
+	call DoubleStoredValue16
 	ld a, $06
 	ld [wd9af], a
 	xor a
@@ -1682,10 +1682,10 @@ Func_030_4d64::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4e0b::
+MoveEffect_TryStatus2_10::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1694,12 +1694,12 @@ Func_030_4e0b::
 	ld a, [wd991]
 	cp $19
 	ret nc
-	jp Func_030_4d2d
+	jp MoveEffect_SetStatus2
 
-Func_030_4e28::
+MoveEffect_TryStatus3_10::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1708,7 +1708,7 @@ Func_030_4e28::
 	ld a, [wd991]
 	cp $19
 	ret nc
-Func_030_4e42::
+MoveEffect_SetStatus3::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4e52
@@ -1742,10 +1742,10 @@ Func_030_4e42::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4e79::
+MoveEffect_TryStatus1_10::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -1755,7 +1755,7 @@ Func_030_4e79::
 	cp $19
 	ret nc
 
-Func_030_4e93::
+MoveEffect_SetStatus1::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4ea3
@@ -1789,10 +1789,10 @@ Func_030_4e93::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4eca::
+MoveEffect_QuarterStoredValue::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [wd9b1]
 	and a
 	jr nz, .asm_4ee1
@@ -1824,10 +1824,10 @@ Func_030_4eca::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4f10::
+MoveEffect_LevelTimes2Damage::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_4f27
@@ -1864,7 +1864,7 @@ Func_030_4f10::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4f5f::
+MoveEffect_InflictMajorStatusD::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -1886,7 +1886,7 @@ Func_030_4f5f::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_580f
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, $02
 	ld [wBattleAnimStep], a
@@ -1894,10 +1894,10 @@ Func_030_4f5f::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_4f9f::
+MoveEffect_StatMinus5Value::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, [wBattleTurn]
@@ -1920,7 +1920,7 @@ Func_030_4f9f::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4fd4::
+MoveEffect_RaiseUserStat2::
 	xor a
 	ld [wSideSelect], a
 	ld a, $02
@@ -1931,12 +1931,12 @@ Func_030_4fd4::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_4fe8::
+MoveEffect_RaiseUserStat8OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 
-Func_030_4fef::
+MoveEffect_RaiseUserStat8::
 	xor a
 	ld [wSideSelect], a
 	ld a, $08
@@ -1947,7 +1947,7 @@ Func_030_4fef::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_5003::
+MoveEffect_DrainSetStatus4::
 	ld a, $1c
 	ld [wBattleMessageID], a
 	ld a, $04
@@ -1993,12 +1993,12 @@ Func_030_5003::
 	ld [hl], a
 	ret
 
-Func_030_5056::
+MoveEffect_LowerEnemyStat0OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 
-Func_030_505d::
+MoveEffect_LowerEnemyStat0::
 	ld a, $01
 	ld [wSideSelect], a
 	ld [wMoveTargetsEnemy], a
@@ -2010,7 +2010,7 @@ Func_030_505d::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_5074::
+MoveEffect_RaiseUserStats0to3::
 	ld a, $43
 	ld [wBattleMessageID], a
 	xor a
@@ -2032,13 +2032,13 @@ Func_030_5074::
 	call AddStatTile
 	ret
 
-Func_030_50a4::
+MoveEffect_SetFlagD9F5Msg42::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [hFFD6]
 	and a
-	jp nz, Func_030_55ab
+	jp nz, MoveEffect_MissMessage
 	ld hl, wd9f5
 	ld a, [wBattleTurn]
 	and a
@@ -2053,10 +2053,10 @@ Func_030_50a4::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_50cc::
+MoveEffect_HealValueFromStatOnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, [wBattleTurn]
@@ -2075,13 +2075,13 @@ Func_030_50cc::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_50f8::
+MoveEffect_SetStatus5OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wBattleAnimStep], a
-Func_030_5103::
+MoveEffect_SetStatus5::
 	ld a, $1b
 	ld [wBattleMessageID], a
 	ld a, $01
@@ -2115,12 +2115,12 @@ Func_030_5103::
 	ld [hl], a
 	ret
 
-Func_030_513a::
+MoveEffect_RaiseUserStat3OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 
-Func_030_5141::
+MoveEffect_RaiseUserStat3By3::
 	xor a
 	ld [wSideSelect], a
 	ld a, $03
@@ -2131,10 +2131,10 @@ Func_030_5141::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_5155::
+MoveEffect_TrySetStatus7_30::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $02
@@ -2164,10 +2164,10 @@ Func_030_5155::
 	ld [hl], a
 	ret
 
-Func_030_5190::
+MoveEffect_HealValueFromStat::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wMoveTargetsEnemy], a
 	ld a, [wBattleTurn]
@@ -2186,12 +2186,12 @@ Func_030_5190::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_51bb::
+MoveEffect_LowerEnemyStat1OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 
-Func_030_51c2::
+MoveEffect_LowerEnemyStat1::
 	ld a, $01
 	ld [wSideSelect], a
 	ld [wMoveTargetsEnemy], a
@@ -2203,7 +2203,7 @@ Func_030_51c2::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_51da::
+MoveEffect_HalfStatValueFail::
 	xor a
 	ld [wMoveTargetsEnemy], a
 	ld a, $40
@@ -2249,7 +2249,7 @@ Func_030_51da::
 	ld [wd9b1], a
 	ret
 
-Func_030_5231::
+MoveEffect_RaiseUserStat9::
 	xor a
 	ld [wSideSelect], a
 	ld a, $09
@@ -2262,7 +2262,7 @@ Func_030_5231::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_5249::
+MoveEffect_TwoTurnChargeA::
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	xor a
@@ -2323,7 +2323,7 @@ Func_030_5249::
 	ld [wd9b4], a
 	ret
 
-Func_030_52c3::
+MoveEffect_TwoTurnChargeB::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -2367,12 +2367,12 @@ Func_030_52c3::
 	ld a, $37
 	ld [wBattleMessageID], a
 	farcall ShowBattleMessage
-	call Func_030_5372
+	call WaitFrames32
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld de, Script_023_580f
-	farcall Func_02e_4000
+	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
 	ld a, $03
 	ld [wBattleAnimStep], a
@@ -2385,7 +2385,7 @@ Func_030_52c3::
 	ld a, $07
 	ld [wd9af], a
 	call GetStatTile
-	call Func_030_537b
+	call DoubleStoredValue16
 	ld a, $06
 	ld [wd9af], a
 	xor a
@@ -2397,14 +2397,14 @@ Func_030_52c3::
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ret
-Func_030_5372::
+WaitFrames32::
 	ld c, $20
 .asm_5374
 	call DelayFrame
 	dec c
 	jr nz, .asm_5374
 	ret
-Func_030_537b::
+DoubleStoredValue16::
 	ld [wd9b1], a
 	and a
 	jr nz, .asm_538b
@@ -2439,10 +2439,10 @@ Func_030_537b::
 	ld [wd9b1], a
 	ret
 
-Func_030_53ba::
+MoveEffect_DisableRandomMove::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 
 .asm_53c1
 	ld a, $01
@@ -2450,7 +2450,7 @@ Func_030_53ba::
 	ld a, $3e
 	ld [wBattleMessageID], a
 	call AdvanceRNG
-	call Func_030_53ee
+	call GetRandomMoveSlotByte
 	and a
 	jr z, .asm_53c1
 
@@ -2471,7 +2471,7 @@ Func_030_53ba::
 	ld [hl], $01
 	ret
 
-Func_030_53ee::
+GetRandomMoveSlotByte::
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_53fe
@@ -2505,7 +2505,7 @@ Func_030_53ee::
 	ld a, [hl]
 	ret
 
-Func_030_541a::
+MoveEffect_RaiseUserStat1::
 	xor a
 	ld [wSideSelect], a
 	ld a, $01
@@ -2516,7 +2516,7 @@ Func_030_541a::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_542e::
+MoveEffect_RaiseUserStat0::
 	xor a
 	ld [wSideSelect], a
 	xor a
@@ -2527,12 +2527,12 @@ Func_030_542e::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_5441::
+MoveEffect_LowerEnemyStat2OnHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 
-Func_030_5448::
+MoveEffect_LowerEnemyStat2::
 	ld a, $01
 	ld [wSideSelect], a
 	ld [wMoveTargetsEnemy], a
@@ -2546,10 +2546,10 @@ Func_030_5448::
 	ld [wBattleMessageID], a
 	ret
 
-Func_030_5465::
+MoveEffect_LowerEnemyStat1By2::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $01
 	ld [wSideSelect], a
 	ld a, $01
@@ -2562,7 +2562,7 @@ Func_030_5465::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_5486::
+MoveEffect_HalfStatDamage::
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ld a, $34
@@ -2608,10 +2608,10 @@ Func_030_5486::
 	ld [wd9b1], a
 	ret
 
-Func_030_54de::
+MoveEffect_TypedFractionalDamage::
 	ld a, [wd9c7]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -2665,10 +2665,10 @@ Func_030_54de::
 	ld [wMoveTargetsEnemy], a
 	ret
 
-Func_030_555c::
+MoveEffect_SetStatus4Variant::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, [wd98d]
 	and a
 	jr nz, .asm_5573
@@ -2711,9 +2711,9 @@ Func_030_555c::
 MoveEffect_Damage::
 	ld a, [wd993]
 	and a
-	jr nz, Func_030_55c2
+	jr nz, MoveEffect_SetStatus4
 
-Func_030_55ab::
+MoveEffect_MissMessage::
 	call AdvanceRNG
 	ld a, [wd991]
 	and $03
@@ -2724,7 +2724,7 @@ Func_030_55ab::
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
 	ret
-Func_030_55c2::
+MoveEffect_SetStatus4::
 	ld a, [wd98d]
 	and a
 	jr nz, .asm_55d2
@@ -2764,7 +2764,7 @@ Func_030_55c2::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_5603::
+MoveEffect_RandomStatTileTwoTurn::
 	xor a
 	ld [wSideSelect], a
 	ld a, $05
@@ -2800,10 +2800,10 @@ Func_030_5603::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_030_564a::
+MoveEffect_GenericHit::
 	ld a, [wd993]
 	and a
-	jp z, Func_030_55ab
+	jp z, MoveEffect_MissMessage
 	ld a, $02
 	ld [wBattleAnimStep], a
 	ld a, $01
@@ -2924,86 +2924,86 @@ Palettes_030_5bb4:: ; 3 palettes (orphan)
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-Func_030_5bcc::
+RunBattleAnimPaletteEffect::
 	ld a, [wd9a0]
 	and a
 	ret z
 	cp $01
-	jp z, Func_030_6f88
+	jp z, PaletteAnimFade1
 	cp $02
-	jp z, Func_030_6ff6
+	jp z, PaletteAnimFade2
 	cp $03
-	jp z, Func_030_704a
+	jp z, PaletteAnimFade3
 	cp $04
-	jp z, Func_030_70b7
+	jp z, PaletteAnimFade4
 	cp $05
-	jp z, Func_030_711c
+	jp z, PaletteAnimFade5
 	ret
-Func_030_5beb::
+RunBattleAnimSprites::
 	ld a, [wd9ad]
 	and a
 	ret z
 	ld a, [wBattleAnimID]
 	cp $3b
-	jp z, Func_030_6b36
+	jp z, AnimMove_3b
 	cp $3c
-	jp z, Func_030_6bf2
+	jp z, AnimMove_3c
 	cp $3d
-	jp z, Func_030_6c7f
+	jp z, AnimMove_3d
 	cp $41
-	jp z, Func_030_6d38
+	jp z, AnimMove_41
 	cp $45
-	jp z, Func_030_6d76
+	jp z, AnimMove_45
 	cp $48
-	jp z, Func_030_6e19
+	jp z, AnimMove_48
 	cp $4a
-	jp z, Func_030_6e5a
+	jp z, AnimMove_4a
 	cp $4b
-	jp z, Func_030_6ea0
+	jp z, AnimMove_4b
 	cp $4e
-	jp z, Func_030_6ec2
+	jp z, AnimMove_4e
 	cp $53
-	jp z, Func_030_6a5e
+	jp z, AnimMove_53
 	cp $54
-	jp z, Func_030_693a
+	jp z, AnimMove_54
 	cp $56
-	jp z, Func_030_692a
+	jp z, AnimMove_56
 	cp $57
-	jp z, Func_030_68dc
+	jp z, AnimMove_57
 	cp $5c
-	jp z, Func_030_68be
+	jp z, AnimMove_5c
 	cp $63
-	jp z, Func_030_6816
+	jp z, AnimMove_63
 	cp $6a
-	jp z, Func_030_671c
+	jp z, AnimMove_6a
 	cp $6b
-	jp z, Func_030_66e1
+	jp z, AnimMove_6b
 	cp $6c
-	jp z, Func_030_6591
+	jp z, AnimMove_6c
 	cp $6f
-	jp z, Func_030_63a8
+	jp z, AnimMove_6f
 	cp $76
-	jp z, Func_030_635e
+	jp z, AnimMove_76
 	cp $79
-	jp z, Func_030_6349
+	jp z, AnimMove_79
 	cp $7e
-	jp z, Func_030_6136
+	jp z, AnimMove_7e
 	cp $81
-	jp z, Func_030_609f
+	jp z, AnimMove_81
 	cp $82
-	jp z, Func_030_5fe0
+	jp z, AnimMove_82
 	cp $83
-	jp z, Func_030_5e79
+	jp z, AnimMove_83
 	cp $88
-	jp z, Func_030_5dd8
+	jp z, AnimMove_88
 	cp $8a
-	jp z, Func_030_5d56
+	jp z, AnimMove_8a
 	cp $8b
-	jp z, Func_030_5d09
+	jp z, AnimMove_8b
 	cp $8c
-	jp z, Func_030_5c85
+	jp z, AnimMove_8c
 	ret
-Func_030_5c85::
+AnimMove_8c::
 	ld bc, wd1a8
 .asm_5c88
 	ld hl, $0004
@@ -3066,7 +3066,7 @@ Func_030_5c85::
 .asm_5ce3
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 .asm_5cea
 	ld hl, $0008
 	add hl, bc
@@ -3082,14 +3082,14 @@ BattleAnimData_030_5cf7::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wd9ae] 2B coord-delta added to sprite pos at wd1a0
 BattleAnimStepTable_030_5cff::
 	db $d0, $08, $d0, $18, $d0, $00, $d0, $20, $d0, $10
-Func_030_5d09::
+AnimMove_8b::
 	ld bc, wd1a8
 .asm_5d0c
 	ld hl, $0004
 	add hl, bc
 	ld a, [hl]
 	and a
-	jp z, Func_30_5d61
+	jp z, AnimMove_8a_Spawn
 	ld hl, $0005
 	add hl, bc
 	inc [hl]
@@ -3105,7 +3105,7 @@ Func_030_5d09::
 .asm_5d2a
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 .asm_5d31
 	ld hl, $0005
 	add hl, bc
@@ -3130,18 +3130,18 @@ Func_030_5d09::
 	cp $e0
 	jp nz, .asm_5d0c
 	ret
-Func_030_5d56::
+AnimMove_8a::
 	ld bc, wd1a8
-Func_30_5d59::
+AnimMove_8a_Loop::
 	ld hl, $0004
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, Func_30_5d96
-Func_30_5d61::
+	jr nz, AnimMove_8a_Advance
+AnimMove_8a_Spawn::
 	ldh a, [hFadeFrameCounter]
 	and $07
-	jr nz, Func_30_5dc1
+	jr nz, AnimMove_8a_Next
 	ld [hl], $01
 	ld de, BattleAnimStepTable_030_5dce
 	ld a, [wd9ae]
@@ -3173,7 +3173,7 @@ Func_30_5d61::
 	xor a
 	ld [wd9ae], a
 	ret
-Func_30_5d96::
+AnimMove_8a_Advance::
 	ld hl, $0000
 	add hl, bc
 	dec [hl]
@@ -3185,33 +3185,33 @@ Func_30_5d96::
 	jr c, .asm_5dac
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 .asm_5dac
 	ldh a, [hFadeFrameCounter]
 	and $03
-	jr nz, Func_30_5dc1
+	jr nz, AnimMove_8a_Next
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
 	cp $04
 	jr nz, .asm_5dbf
 	ld [hl], $05
-	jr Func_30_5dc1
+	jr AnimMove_8a_Next
 .asm_5dbf
 	ld [hl], $04
-Func_30_5dc1::
+AnimMove_8a_Next::
 	ld hl, $0008
 	add hl, bc
 	push hl
 	pop bc
 	ld a, l
 	cp $e0
-	jp nz, Func_30_5d59
+	jp nz, AnimMove_8a_Loop
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
 BattleAnimStepTable_030_5dce::
 	db $f8, $00, $00, $10, $04, $20, $fc, $08, $04, $18
-Func_030_5dd8::
+AnimMove_88::
 	ld bc, wd1a8
 	ld hl, $0004
 	add hl, bc
@@ -3306,7 +3306,7 @@ Func_030_5dd8::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
 BattleAnimStepTable_030_5e69::
 	db $04, $fc, $fc, $04, $04, $04, $fc, $fc, $00, $04, $00, $fc, $fc, $04, $04, $04
-Func_030_5e79::
+AnimMove_83::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_5ef1
@@ -3331,7 +3331,7 @@ Func_030_5e79::
 	jr c, .asm_5ee5
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	jr .asm_5ee5
 .asm_5ea7
 	ldh a, [hFadeFrameCounter]
@@ -3438,7 +3438,7 @@ BattleAnimData_030_5f8f::
 	db $01, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02
 	db $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02
 	db $88
-Func_030_5fe0::
+AnimMove_82::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_5fff
@@ -3545,7 +3545,7 @@ BattleAnimData_030_6087::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6093`
 BattleAnimData_030_6093::
 	db $20, $28, $50, $68, $30, $38, $60, $78, $10, $40, $40, $90
-Func_030_609f::
+AnimMove_81::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_60af
@@ -3635,7 +3635,7 @@ Func_030_609f::
 	ld a, $03
 	ld [wd9ae], a
 	ret
-Func_030_6136::
+AnimMove_7e::
 	ld a, [wd9ae]
 	and a
 	jp z, .asm_6326
@@ -3657,7 +3657,7 @@ Func_030_6136::
 	jp z, .asm_6166
 	ret
 .asm_6166
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	xor a
 	ld [wd9ad], a
 	ld [wd9ae], a
@@ -3861,7 +3861,7 @@ Func_030_6136::
 .asm_629e
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
-	farcall Func_02b_4098
+	farcall CalcAndApplyMoveDamage
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_62b9
@@ -3956,7 +3956,7 @@ Func_030_6136::
 	inc hl
 	ld [hl], $01
 	ret
-Func_030_6349::
+AnimMove_79::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -3971,7 +3971,7 @@ Func_030_6349::
 .asm_635b
 	ld [hl], $03
 	ret
-Func_030_635e::
+AnimMove_76::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	jr nz, .asm_6374
@@ -4020,7 +4020,7 @@ Func_030_635e::
 	xor a
 	ld [wd9ae], a
 	ret
-Func_030_63a8::
+AnimMove_6f::
 	ld a, [wd9ae]
 	and a
 	jp z, .asm_6495
@@ -4049,7 +4049,7 @@ Func_030_63a8::
 	cp $88
 	jr nz, .asm_63e7
 .asm_63dc
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	xor a
 	ld [wd9ad], a
 	ld [wd9ae], a
@@ -4147,7 +4147,7 @@ Func_030_63a8::
 	ret c
 	ld a, $04
 	ld [wd9ae], a
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	ret
 .asm_6471
 	ld hl, wd1a0
@@ -4168,7 +4168,7 @@ Func_030_63a8::
 	ret c
 	ld a, $02
 	ld [wd9ae], a
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	ret
 .asm_6495
 	ld de, BattleAnimData_030_64c8
@@ -4225,7 +4225,7 @@ BattleAnimSeq_030_64d0::
 	db $01, $05, $fe, $05, $fc, $05, $fb, $04, $fb, $01, $fb, $00, $fb, $fe, $fb, $fc
 	db $fd, $fb, $00, $fb, $03, $fb, $04, $fc, $05, $ff, $04, $04, $00, $05, $fb, $03
 	db $88
-Func_030_6591::
+AnimMove_6c::
 	ld bc, wd1a8
 .asm_6594
 	ld hl, $0004
@@ -4425,7 +4425,7 @@ BattleAnimStepTable_030_66c9::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
 BattleAnimStepTable_030_66d5::
 	db $80, $a0, $50, $d0, $80, $90, $50, $e0, $80, $b0, $50, $f0
-Func_030_66e1::
+AnimMove_6b::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_66e8
@@ -4475,7 +4475,7 @@ Func_030_66e1::
 	dec hl
 	inc [hl]
 	ret
-Func_030_671c::
+AnimMove_6a::
 	ld bc, wd1a0
 .asm_671f
 	ld hl, $0004
@@ -4620,7 +4620,7 @@ BattleAnimData_030_67f2::
 BattleAnimData_030_6804::
 	db $50, $30, $01, $20, $60, $01, $40, $30, $02, $10, $60, $02, $60, $30, $02, $30
 	db $60, $02
-Func_030_6816::
+AnimMove_63::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_6825
@@ -4723,7 +4723,7 @@ Func_030_6816::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleTurn
 BattleAnimData_030_68b2::
 	db $54, $68, $24, $18, $4c, $78, $1c, $28, $4c, $88, $30, $38
-Func_030_68be::
+AnimMove_5c::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -4739,13 +4739,13 @@ Func_030_68be::
 	ld a, $06
 	ld [hl], a
 	ld [de], a
-	jr Func_30_68f8
+	jr AnimMove_5c_Step
 .asm_68d7
 	xor a
 	ld [hl], a
 	ld [de], a
-	jr Func_30_68f8
-Func_030_68dc::
+	jr AnimMove_5c_Step
+AnimMove_57::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
@@ -4761,12 +4761,12 @@ Func_030_68dc::
 	ld a, $03
 	ld [hl], a
 	ld [de], a
-	jr Func_30_68f8
+	jr AnimMove_5c_Step
 .asm_68f5
 	xor a
 	ld [hl], a
 	ld [de], a
-Func_30_68f8::
+AnimMove_5c_Step::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -4798,7 +4798,7 @@ Func_30_68f8::
 	add $08
 	ld [hl], a
 	ret
-Func_030_692a::
+AnimMove_56::
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	ret nz
@@ -4810,7 +4810,7 @@ Func_030_692a::
 	ret z
 	inc [hl]
 	ret
-Func_030_693a::
+AnimMove_54::
 	ld bc, wd1a0
 .asm_693d
 	ld hl, $0004
@@ -4919,7 +4919,7 @@ Func_030_693a::
 .asm_69dd
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 .asm_69e4
 	ld hl, $0008
 	add hl, bc
@@ -4941,7 +4941,7 @@ BattleAnimSeq_030_6a09::
 	db $02, $02, $01, $02, $02, $01, $02, $02, $02, $01, $02, $01, $02, $01, $02, $01
 	db $02, $00, $00, $02, $fe, $02, $fe, $02, $fe, $02, $ff, $02, $00, $02, $ff, $02
 	db $03, $03, $03, $02, $88
-Func_030_6a5e::
+AnimMove_53::
 	ld a, [wd9ae]
 	and a
 	jr nz, .asm_6aa1
@@ -5016,7 +5016,7 @@ Func_030_6a5e::
 	xor a
 	ld [wd9ad], a
 	ld [wd9ae], a
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); indexed table (index wd98e)
 BattleAnimData_030_6adb::
@@ -5026,18 +5026,18 @@ BattleAnimData_030_6adb::
 	db $02, $00, $00, $02, $fd, $00, $fd, $00, $fd, $01, $fd, $03, $ff, $03, $01, $02
 	db $01, $02, $02, $02, $02, $01, $02, $01, $02, $00, $02, $01, $00, $02, $fe, $01
 	db $fe, $02, $ff, $03, $01, $03, $02, $02, $02, $01, $88
-Func_030_6b36::
+AnimMove_3b::
 	ld a, [wd9ae]
 	cp $01
-	jp z, Func_030_6b77
+	jp z, AnimMove_3b_Flicker
 	cp $02
-	jp z, Func_30_6ba6
+	jp z, AnimMove_3b_PhaseB
 	cp $03
-	jp z, Func_030_6b77
+	jp z, AnimMove_3b_Flicker
 	cp $04
-	jp z, Func_30_6bcb
+	jp z, AnimMove_3b_PhaseC
 	cp $05
-	jp z, Func_030_6b77
+	jp z, AnimMove_3b_Flicker
 	ld a, $01
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5061,7 +5061,7 @@ Func_030_6b36::
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_030_6b77::
+AnimMove_3b_Flicker::
 	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5083,11 +5083,11 @@ Func_030_6b77::
 	ld de, wd1a0
 	ld hl, $0008
 	add hl, de
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	xor a
 	ld [wd9ad], a
 	ret
-Func_30_6ba6::
+AnimMove_3b_PhaseB::
 	ld a, $03
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5111,7 +5111,7 @@ Func_30_6ba6::
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_30_6bcb::
+AnimMove_3b_PhaseC::
 	ld a, $05
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5137,18 +5137,18 @@ Func_30_6bcb::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleTurn
 BattleAnimData_030_6bee::
 	db $40, $60, $10, $10
-Func_030_6bf2::
+AnimMove_3c::
 	ld a, [wd9ae]
 	cp $01
-	jp z, Func_030_6b77
+	jp z, AnimMove_3b_Flicker
 	cp $02
-	jp z, Func_30_6c33
+	jp z, AnimMove_3c_PhaseB
 	cp $03
-	jp z, Func_030_6b77
+	jp z, AnimMove_3b_Flicker
 	cp $04
-	jp z, Func_30_6c58
+	jp z, AnimMove_3c_PhaseC
 	cp $05
-	jp z, Func_030_6b77
+	jp z, AnimMove_3b_Flicker
 	ld a, $01
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5172,7 +5172,7 @@ Func_030_6bf2::
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_30_6c33::
+AnimMove_3c_PhaseB::
 	ld a, $03
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5196,7 +5196,7 @@ Func_30_6c33::
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_30_6c58::
+AnimMove_3c_PhaseC::
 	ld a, $05
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5221,16 +5221,16 @@ Func_30_6c58::
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_030_6c7f::
+AnimMove_3d::
 	ld a, [wd9ae]
 	cp $01
 	jp z, .asm_6cc0
 	cp $02
-	jp z, Func_30_6c33
+	jp z, AnimMove_3c_PhaseB
 	cp $03
 	jp z, .asm_6cc0
 	cp $04
-	jp z, Func_30_6c58
+	jp z, AnimMove_3c_PhaseC
 	cp $05
 	jp z, .asm_6cc0
 	ld a, $01
@@ -5276,7 +5276,7 @@ Func_030_6c7f::
 	ld de, wd1a0
 	ld hl, $0008
 	add hl, de
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	xor a
 	ld [wd9ad], a
 	ret
@@ -5327,7 +5327,7 @@ Func_030_6c7f::
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_030_6d38::
+AnimMove_41::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -5350,7 +5350,7 @@ Func_030_6d38::
 	jr nz, .asm_6d5e
 	ld l, c
 	ld h, b
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	jr .asm_6d63
 .asm_6d5e
 	ld hl, $0002
@@ -5368,7 +5368,7 @@ Func_030_6d38::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); indexed table (index hl)
 BattleAnimSeq_030_6d6f::
 	db $01, $02, $03, $03, $02, $01, $ff
-Func_030_6d76::
+AnimMove_45::
 	ld bc, wd1a0
 .asm_6d79
 	ld hl, $0004
@@ -5386,7 +5386,7 @@ Func_030_6d76::
 	xor a
 	ld [wd9ae], a
 	ld [wd9ad], a
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	ret
 .asm_6d9e
 	ld l, a
@@ -5447,7 +5447,7 @@ BattleAnimData_030_6df1::
 	db $40, $60, $10, $10, $50, $70, $20, $20, $60, $58, $30, $08, $48, $88, $18, $38
 	db $48, $68, $18, $20, $60, $80, $30, $30, $40, $68, $10, $18, $50, $70, $20, $20
 	db $60, $80, $30, $30, $48, $88, $18, $38
-Func_030_6e19::
+AnimMove_48::
 	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5490,7 +5490,7 @@ Func_030_6e19::
 .asm_6e57
 	ld [hl], $03
 	ret
-Func_030_6e5a::
+AnimMove_4a::
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	ret nz
@@ -5530,7 +5530,7 @@ Func_030_6e5a::
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
 BattleAnimStepTable_030_6e94::
 	db $40, $78, $10, $28, $40, $68, $10, $18, $40, $88, $10, $38
-Func_030_6ea0::
+AnimMove_4b::
 	ld a, [wd9ae]
 	inc a
 	ld [wd9ae], a
@@ -5552,7 +5552,7 @@ Func_030_6ea0::
 	sub $08
 	ld [hl], a
 	ret
-Func_030_6ec2::
+AnimMove_4e::
 	ld bc, wd1a8
 .asm_6ec5
 	ld hl, $0004
@@ -5640,7 +5640,7 @@ Func_030_6ec2::
 .asm_6f54
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 .asm_6f5b
 	ld hl, $0008
 	add hl, bc
@@ -5654,7 +5654,7 @@ Func_030_6ec2::
 BattleAnimRngTable_030_6f68::
 	db $30, $80, $00, $18, $30, $88, $00, $20, $30, $90, $00, $28, $30, $98, $00, $30
 	db $30, $a0, $00, $38, $30, $a8, $00, $40, $30, $b0, $00, $48, $30, $b8, $00, $50
-Func_030_6f88::
+PaletteAnimFade1::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5663,8 +5663,8 @@ Func_030_6f88::
 	sub [hl]
 	ld [hl], a
 	and a
-	jr z, Func_30_6fce
-Func_30_6f98::
+	jr z, PaletteAnimFade1_Load
+PaletteAnimFade1_Apply::
 	ld a, [wd99f]
 	dec a
 	ld [wd99f], a
@@ -5686,7 +5686,7 @@ Func_30_6f98::
 	ld l, a
 	ld h, $00
 	add hl, de
-	jr Func_30_6fd6
+	jr PaletteAnimFade1_LoadBlend
 .asm_6fc0
 	ld a, [wd99e]
 	and a
@@ -5696,13 +5696,13 @@ Func_30_6f98::
 	ld l, a
 	ld h, $00
 	add hl, de
-	jr Func_30_6fd6
-Func_30_6fce::
+	jr PaletteAnimFade1_LoadBlend
+PaletteAnimFade1_Load::
 	ld a, [wd99c]
 	ld l, a
 	ld a, [wd99d]
 	ld h, a
-Func_30_6fd6::
+PaletteAnimFade1_LoadBlend::
 	ld b, $08
 	ld a, [wBattleTurn]
 	and a
@@ -5722,7 +5722,7 @@ Func_30_6fd6::
 	ld c, $b0
 	call LoadPalettes_BCPD
 	ret
-Func_030_6ff6::
+PaletteAnimFade2::
 	ld a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -5731,7 +5731,7 @@ Func_030_6ff6::
 	sub [hl]
 	ld [hl], a
 	and a
-	jp nz, Func_30_6f98
+	jp nz, PaletteAnimFade1_Apply
 	ld de, wPaletteBuffer
 	ld a, [wBattleTurn]
 	and a
@@ -5774,7 +5774,7 @@ Func_030_6ff6::
 	ld c, $b2
 	call LoadPalettes_BCPD
 	ret
-Func_030_704a::
+PaletteAnimFade3::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5839,7 +5839,7 @@ Func_030_704a::
 	ld b, $40
 	call LoadPalettes_BCPD
 	ret
-Func_030_70b7::
+PaletteAnimFade4::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5898,7 +5898,7 @@ Func_030_70b7::
 	ld b, $40
 	call LoadPalettes_BCPD
 	ret
-Func_030_711c::
+PaletteAnimFade5::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5957,7 +5957,7 @@ Func_030_711c::
 	ld b, $40
 	call LoadPalettes_BCPD
 	ret
-Func_030_7181::
+ClearAnimSpriteSlot::
 	ld e, $08
 	xor a
 .asm_7184
@@ -5965,7 +5965,7 @@ Func_030_7181::
 	dec e
 	jr nz, .asm_7184
 	ret
-Func_030_7189::
+ClearAnimSpriteTable::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
@@ -5974,7 +5974,7 @@ Func_030_7189::
 	dec c
 	jr nz, .asm_718f
 	ret
-Func_030_7194::
+BattleAnim_SlideSpriteAcross::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_71f2
@@ -6150,13 +6150,13 @@ Func_030_7194::
 	ret c
 .asm_72c6
 	ld hl, wd1a0
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
-Func_030_72d7::
+BattleAnim_GatherToCenter::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_73af
@@ -6579,13 +6579,13 @@ Func_030_72d7::
 	jp .asm_75b6
 .asm_75b6
 	ld hl, wd1a0
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
-Func_030_75c7::
+BattleAnim_SlideSpriteOut::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_75e9
@@ -6598,7 +6598,7 @@ Func_030_75c7::
 	xor a
 	ld [wBattleState], a
 	ld hl, wd1a0
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	ret
 .asm_75e3
 	ld a, [hl]
@@ -6615,7 +6615,7 @@ Func_030_75c7::
 	xor a
 	ld [wBattleState], a
 	ld hl, wd1a0
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	ret
 .asm_75ff
 	ld a, [hl]
@@ -6631,7 +6631,7 @@ Func_030_75c7::
 	ret c
 	ld [hl], $04
 	ret
-Func_030_7610::
+BattleAnim_ConvergeSprites::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
@@ -6700,7 +6700,7 @@ Func_030_7610::
 	ld a, $01
 	ld [de], a
 	ret
-Func_030_766a::
+BattleAnim_SweepPaletteFlash::
 	ld de, wd1a0
 .asm_766d
 	ld hl, $0004
@@ -6820,7 +6820,7 @@ Func_030_766a::
 	cp $b0
 	jp c, .asm_766d
 	ret
-Func_030_773b::
+BattleAnim_RandomScatterBurst::
 	ld bc, wd1a0
 .asm_773e
 	ld hl, $0004
@@ -6954,7 +6954,7 @@ Func_030_773b::
 .asm_7822
 	ld hl, $0000
 	add hl, bc
-	call Func_030_7181
+	call ClearAnimSpriteSlot
 	ld a, [wBattleAnimStep]
 	inc a
 	ld [wBattleAnimStep], a
@@ -6963,7 +6963,7 @@ Func_030_773b::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
-	call Func_030_7189
+	call ClearAnimSpriteTable
 	ret
 .asm_783f
 	ld hl, $0008
@@ -6974,7 +6974,7 @@ Func_030_773b::
 	cp $e0
 	jp c, .asm_773e
 	ret
-Func_030_784c::
+BattleAnim_MultiStageSweep::
 	ld bc, wd1a0
 .asm_784f
 	ld hl, $0004

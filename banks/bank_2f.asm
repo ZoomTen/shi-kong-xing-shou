@@ -1,4 +1,4 @@
-Func_02f_4000::
+LoadBattleAnimGFX::
 	ld de, Pointers_02f_4099
 	ld a, [wd98f]
 	jr Func_02f_400e

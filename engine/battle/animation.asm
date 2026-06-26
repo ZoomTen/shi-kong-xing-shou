@@ -1,12 +1,12 @@
 ; Battle-script/animation engine: script executor, mode state machine, animation frame data.
-Func_02e_4000::
+ExecuteBattleAnimScriptAt::
 	ld a, e
 	ld [wBattleScriptPos], a
 	ld a, d
 	ld [wBattleScriptPos + 1], a
-	jr Func_02e_400a.asm_403c
+	jr ExecuteBattleAnimScript.asm_403c
 
-Func_02e_400a::
+ExecuteBattleAnimScript::
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_401e
@@ -28,7 +28,7 @@ Func_02e_400a::
 	ld a, [wBattleAnimID]
 	farcall Func_023_4000
 .asm_403c
-	call Func_02e_6e42
+	call InitObjectAnimBuffer
 	xor a
 	ld [hFFC6], a
 .asm_4043
@@ -41,8 +41,8 @@ Func_02e_400a::
 	and a
 	jr nz, .asm_4068
 	call .asm_406d
-	farcall Func_030_5beb
-	farcall Func_030_5bcc
+	farcall RunBattleAnimSprites
+	farcall RunBattleAnimPaletteEffect
 	jr .asm_4043
 .asm_4068
 	xor a
@@ -60,92 +60,92 @@ Func_02e_400a::
 	ld l, a
 	jp hl
 Mode_StateJumpTable::
-	dw Func_02e_411e
-	dw Func_02e_4122
-	dw Func_02e_4136
-	dw Func_02e_4191
-	dw Func_02e_41af
-	dw Func_02e_4231
-	dw Func_02e_43a9
-	dw Func_02e_442d
-	dw Func_02e_476d
-	dw Func_02e_48c9
-	dw Func_02e_4922
-	dw Func_02e_4956
-	dw Func_02e_4984
-	dw Func_02e_4af2
-	dw Func_02e_4bff
-	dw Func_02e_4c22
-	dw Func_02e_4c57
-	dw Func_02e_4d96
-	dw Func_02e_4db2
-	dw Func_02e_4df4
-	dw Func_02e_4eda
-	dw Func_02e_4ee8
-	dw Func_02e_4f20
-	dw Func_02e_4f59
-	dw Func_02e_4f6c
-	dw Func_02e_507d
-	dw Func_02e_50e7
-	dw Func_02e_51c1
-	dw Func_02e_5227
-	dw Func_02e_5287
-	dw Func_02e_52b3
-	dw Func_02e_52d0
-	dw Func_02e_5390
-	dw Func_02e_540f
-	dw Func_02e_549f
-	dw Func_02e_55a3
-	dw Func_02e_5601
-	dw Func_02e_570d
-	dw Func_02e_57d8
-	dw Func_02e_58dd
-	dw Func_02e_58ea
-	dw Func_02e_5907
-	dw Func_02e_590e
-	dw Func_02e_5915
-	dw Func_02e_591c
-	dw Func_02e_5923
-	dw Func_02e_592a
-	dw Func_02e_595c
-	dw Func_02e_598d
-	dw Func_02e_59a0
-	dw Func_02e_5a71
-	dw Func_02e_5af2
-	dw Func_02e_5b8b
-	dw Func_02e_5c11
-	dw Func_02e_5c97
-	dw Func_02e_5d1d
-	dw Func_02e_5da3
-	dw Func_02e_5db6
-	dw Func_02e_5dc1
-	dw Func_02e_5dea
-	dw Func_02e_5e26
-	dw Func_02e_5e76
-	dw Func_02e_5e8b
-	dw Func_02e_5ea4
-	dw Func_02e_5ec1
-	dw Func_02e_5f14
-	dw Func_02e_5f51
-	dw Func_02e_5f6e
-	dw Func_02e_5f89
-	dw Func_02e_5fa4
-	dw Func_02e_5fe6
-	dw Func_02e_619a
-	dw Func_02e_617f
-	dw Func_02e_61b5
-	dw Func_02e_6244
-	dw Func_02e_6249
-	dw Func_02e_624e
-	dw Func_02e_6253
-	dw Func_02e_6258
-	dw Func_02e_625d
-	dw Func_02e_6262
-Func_02e_411e::
+	dw ReadBattleScriptByte
+	dw Mode_ResetAnimState
+	dw Mode_SpawnObjectSprites
+	dw Mode_EndAnimSequence
+	dw Mode_AnimateTileCycle
+	dw Mode_StepObjectMotion
+	dw Mode_FlashImpactBox
+	dw Mode_DispatchSpecialAnim
+	dw Mode_SlideWindowOpen
+	dw Mode_StreamObjectTiles
+	dw Mode_SetMonStatusBit5
+	dw Mode_SetEffectParams1
+	dw Mode_DiveAttackAnim
+	dw Mode_RicochetAnim
+	dw Mode_CopyGfxToVram
+	dw Mode_RandomBranchOrSpawn
+	dw Mode_ArcThrowAnim
+	dw Mode_SetEffectParams2
+	dw Mode_DelayFrames
+	dw Mode_SpinThrowAnim
+	dw Mode_ClearObjectsAndFlags
+	dw Mode_ClearStatusWindows
+	dw Mode_DrawStatusWindows
+	dw Mode_SetEffectParams3
+	dw Mode_SlideWindowOpen2
+	dw Mode_ShiftObjectFrames
+	dw Mode_RevealTileBoxRows
+	dw Mode_SwapMonPic
+	dw Mode_WriteObjectSlotBytes
+	dw Mode_LoadAnimBackground
+	dw Mode_LoadAnimGFX
+	dw Mode_ClawSwipeAnim
+	dw Mode_AnimateTileCycle2
+	dw Mode_DiagonalSlamAnim
+	dw Mode_HopAcrossAnim
+	dw Mode_ShakeScreenDeltas
+	dw Mode_SlideWindowAndPan
+	dw Mode_DashAcrossAnim
+	dw Mode_DashFlipAnim
+	dw Mode_SetFlag9ad
+	dw Mode_LoadAnimBGTiles
+	dw Mode_SlideSpriteAcross
+	dw Mode_GatherToCenter
+	dw Mode_SlideSpriteOut
+	dw Mode_ConvergeSprites
+	dw Mode_SweepPaletteFlash
+	dw Mode_SwayObjectLeft
+	dw Mode_SwayObjectRight
+	dw Mode_SetEffectParams4
+	dw Mode_ScatterObjectsAnim
+	dw Mode_ConvergeObjectsAnim
+	dw Mode_RevealTileBox2
+	dw Mode_LungeForwardAnim
+	dw Mode_LungeReturnAnim
+	dw Mode_BigLungeForwardAnim
+	dw Mode_BigLungeReturnAnim
+	dw Mode_SetEffectParams5
+	dw Mode_ClearFlag9ad
+	dw Mode_RollHitAndBranch
+	dw Mode_RollHitCheckStatus
+	dw Mode_CheckFaintEndBattle
+	dw Mode_RandomBranch
+	dw Mode_LoadAnimObjPalette
+	dw Mode_LoadAnimGFXChunk
+	dw Mode_TryCatchMon
+	dw Mode_ReloadMonPic
+	dw Mode_SetAnimIDAndInit
+	dw Mode_BranchOnFlagD6
+	dw Mode_RandomBranch2
+	dw Mode_LaunchProjectileAnim
+	dw Mode_SlideWindowOpen3
+	dw Mode_StartObjectAnim2d_6d77
+	dw Mode_StartObjectAnim2d_6e2c
+	dw Mode_RevealTileBox3
+	dw Mode_NopState1
+	dw Mode_NopState2
+	dw Mode_NopState3
+	dw Mode_NopState4
+	dw Mode_NopState5
+	dw Mode_NopState6
+	dw Mode_PlayScriptSound
+ReadBattleScriptByte::
 	call AdvanceBattleScriptMode
 	ret
 
-Func_02e_4122::
+Mode_ResetAnimState::
 	farcall Func_02f_4008
 	xor a
 	ld [wBattleState], a
@@ -154,17 +154,17 @@ Func_02e_4122::
 	ld [wd98c], a
 	ret
 
-Func_02e_4136::
-	call Func_02e_411e
+Mode_SpawnObjectSprites::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld b, a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld c, a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld d, a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld e, a
 	push de
@@ -194,7 +194,7 @@ Func_02e_4136::
 	ld [hli], a
 .asm_4172
 	push hl
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	pop hl
 	ld [hl], a
@@ -208,13 +208,13 @@ Func_02e_4136::
 	cp $E0
 	jr c, .asm_4156
 	pop de
-	call Func_02e_411e
+	call ReadBattleScriptByte
 .asm_418c
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_4191::
+Mode_EndAnimSequence::
 	ld a, $01
 	ld [hFFC6], a
 	xor a
@@ -228,11 +228,11 @@ Func_02e_4191::
 	call PlaySound
 	ret
 
-Func_02e_41af::
+Mode_AnimateTileCycle::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_41c3
-	call Func_02e_4203
+	call ReadObjectAnimParams
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $04
@@ -279,38 +279,38 @@ Func_02e_41af::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ret
-Func_02e_4203::
-	call Func_02e_411e
+ReadObjectAnimParams::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98d], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98e], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98c], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ret
 
-Func_02e_4231::
+Mode_StepObjectMotion::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_426a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98d], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98c], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
@@ -517,16 +517,16 @@ Func_02e_4231::
 	ld [bc], a
 	ret
 
-Func_02e_43a9::
+Mode_FlashImpactBox::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_43d1
 	ld a, SFX_2f
 	call PlaySound
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98c], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
@@ -585,14 +585,14 @@ Func_02e_43a9::
 	ld [wd98c], a
 	ret
 
-Func_02e_442d::
+Mode_DispatchSpecialAnim::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_4468
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld de, Mode_SoundTbl_4478
@@ -602,7 +602,7 @@ Func_02e_442d::
 	add hl, de
 	ld a, [de]
 	call PlaySound
-	farcall Func_030_45c9
+	farcall LoadBattleEffectGFX
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $07
@@ -628,14 +628,14 @@ Func_02e_442d::
 Mode_SoundTbl_4478::
 	db SFX_10, SFX_27, SFX_17
 Mode_StatePtrs_447b::
-	dw Func_02e_4489
-	dw Func_02e_4523
-	dw Func_02e_45a0
-	dw Func_02e_4621
-	dw Func_02e_46b0
-	dw Func_02e_46b0
-	dw Func_02e_4621
-Func_02e_4489::
+	dw SubAnim_RisingArc
+	dw SubAnim_Pulse
+	dw SubAnim_Blink
+	dw SubAnim_Spread
+	dw SubAnim_PathMove
+	dw SubAnim_PathMove
+	dw SubAnim_Spread
+SubAnim_RisingArc::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_44de
@@ -731,7 +731,7 @@ Func_02e_4489::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4523::
+SubAnim_Pulse::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_4561
@@ -808,7 +808,7 @@ Func_02e_4523::
 	ld [hli], a
 	ret
 
-Func_02e_45a0::
+SubAnim_Blink::
 	ldh a, [hFadeFrameCounter]
 	and $0F
 	ret nz
@@ -885,7 +885,7 @@ Func_02e_45a0::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4621::
+SubAnim_Spread::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_466d
@@ -976,7 +976,7 @@ Func_02e_4621::
 	ld [hli], a
 	ret
 
-Func_02e_46b0::
+SubAnim_PathMove::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_4702
@@ -1096,16 +1096,16 @@ Mode_DeltaTbl_4763::
 	db $28, $00
 	db $00, $d0
 	db $ff, $ff
-Func_02e_476d::
+Mode_SlideWindowOpen::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_47e7
 	ld a, SFX_3d
 	call PlaySound
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $08
@@ -1231,15 +1231,15 @@ Func_02e_476d::
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 .asm_487c
-	farcall Func_02b_402b
+	farcall RefreshBattleHUD
 	ret
 Mode_Tilemap_4883:: INCBIN "gfx/tilemaps/mode_tilemap_4883.tilemap"
 Mode_Tilemap_48a1:: INCBIN "gfx/tilemaps/mode_tilemap_48a1.tilemap"
-Func_02e_48c9::
+Mode_StreamObjectTiles::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_48dd
-	call Func_02e_4203
+	call ReadObjectAnimParams
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $09
@@ -1287,8 +1287,8 @@ Func_02e_48c9::
 	ld [wd98e], a
 	ret
 
-Func_02e_4922::
-	call Func_02e_411e
+Mode_SetMonStatusBit5::
+	call ReadBattleScriptByte
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_493b
@@ -1320,17 +1320,17 @@ Func_02e_4922::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4956::
-	call Func_02e_411e
+Mode_SetEffectParams1::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99e], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99c], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99d], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $01
@@ -1339,7 +1339,7 @@ Func_02e_4956::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4984::
+Mode_DiveAttackAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_49f1
@@ -1528,13 +1528,13 @@ Func_02e_4984::
 	ret c
 	ld [hl], $00
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
-Func_02e_4adf::
+ClearObjectSlot::
 	ld e, $08
 	xor a
 .asm_4ae2
@@ -1542,7 +1542,7 @@ Func_02e_4adf::
 	dec e
 	jr nz, .asm_4ae2
 	ret
-Func_02e_4ae7::
+ClearAllObjectSlots::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
@@ -1552,7 +1552,7 @@ Func_02e_4ae7::
 	jr nz, .asm_4aed
 	ret
 
-Func_02e_4af2::
+Mode_RicochetAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_4b46
@@ -1707,14 +1707,14 @@ Func_02e_4af2::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4bff::
-	call Func_02e_411e
+Mode_CopyGfxToVram::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wTempBank], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	call FarCopyBytes_vTiles0
@@ -1722,20 +1722,20 @@ Func_02e_4bff::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4c22::
+Mode_RandomBranchOrSpawn::
 	call AdvanceRNG
 	ld a, [wd991]
 	and $01
 	jr z, .asm_4c37
-	call Func_02e_411e
-	call Func_02e_4c3d
+	call ReadBattleScriptByte
+	call AdvanceBattleScriptByState
 	xor a
 	ld [wBattleState], a
 	ret
 .asm_4c37
-	call Func_02e_411e
-	jp Func_02e_4136
-Func_02e_4c3d::
+	call ReadBattleScriptByte
+	jp Mode_SpawnObjectSprites
+AdvanceBattleScriptByState::
 	push de
 	ld a, [wBattleScriptPos]
 	ld e, a
@@ -1752,7 +1752,7 @@ Func_02e_4c3d::
 	pop de
 	ret
 
-Func_02e_4c57::
+Mode_ArcThrowAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_4cb5
@@ -1928,18 +1928,18 @@ Func_02e_4c57::
 	ret nz
 .asm_4d85
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_4d96::
-	call Func_02e_411e
+Mode_SetEffectParams2::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99e], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $02
@@ -1948,14 +1948,14 @@ Func_02e_4d96::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4db2::
+Mode_DelayFrames::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_4dd5
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98e], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98c], a
 	ld a, $01
@@ -1981,7 +1981,7 @@ Func_02e_4db2::
 	ld [wd98e], a
 	ret
 
-Func_02e_4df4::
+Mode_SpinThrowAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_4e48
@@ -2105,22 +2105,22 @@ Func_02e_4df4::
 	cp $20
 	ret nz
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_4eda::
-	call Func_02e_4ae7
+Mode_ClearObjectsAndFlags::
+	call ClearAllObjectSlots
 	xor a
 	ld [wBattleState], a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ret
 
-Func_02e_4ee8::
+Mode_ClearStatusWindows::
 	ld hl, $982A
 	ld bc, $0A03
 	ld a, $0A
@@ -2146,7 +2146,7 @@ Func_02e_4ee8::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4f20::
+Mode_DrawStatusWindows::
 	ld de, Mode_Tilemap_4883
 	ld hl, $982A
 	ld bc, $0A03
@@ -2163,14 +2163,14 @@ Func_02e_4f20::
 	ld a, $04
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	farcall Func_02b_402b
-	farcall Func_02b_6abc
+	farcall RefreshBattleHUD
+	farcall DrawBattleHUDLayout
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_4f59::
-	call Func_02e_411e
+Mode_SetEffectParams3::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $03
@@ -2179,14 +2179,14 @@ Func_02e_4f59::
 	ld [wBattleState], a
 	ret
 
-Func_02e_4f6c::
+Mode_SlideWindowOpen2::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_4fe1
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $18
@@ -2312,14 +2312,14 @@ Func_02e_4f6c::
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 .asm_5076
-	farcall Func_02b_402b
+	farcall RefreshBattleHUD
 	ret
 
-Func_02e_507d::
+Mode_ShiftObjectFrames::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5097
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98e], a
 	ld a, $01
@@ -2382,11 +2382,11 @@ Func_02e_507d::
 	ld [wBattleState], a
 	ret
 
-Func_02e_50e7::
+Mode_RevealTileBoxRows::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_50fb
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
 	ld a, $1A
@@ -2474,11 +2474,11 @@ Func_02e_50e7::
 	ret
 Mode_Tilemap_5179:: INCBIN "gfx/tilemaps/mode_tilemap_5179.tilemap"
 Mode_Tilemap_519d:: INCBIN "gfx/tilemaps/mode_tilemap_519d.tilemap"
-Func_02e_51c1::
-	call Func_02e_411e
+Mode_SwapMonPic::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98d], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, [wBattleTurn]
@@ -2520,8 +2520,8 @@ Func_02e_51c1::
 	ld [wBattleState], a
 	ret
 
-Func_02e_5227::
-	call Func_02e_411e
+Mode_WriteObjectSlotBytes::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld l, a
 	ld h, $00
@@ -2535,53 +2535,53 @@ Func_02e_5227::
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_5263
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [de], a
 	inc de
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [de], a
 	inc de
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [de], a
 	ld a, $03
 	ld [wBattleState], a
-	call Func_02e_4c3d
+	call AdvanceBattleScriptByState
 	xor a
 	ld [wBattleState], a
 	ret
 .asm_5263
 	ld a, $03
 	ld [wBattleState], a
-	call Func_02e_4c3d
-	call Func_02e_411e
+	call AdvanceBattleScriptByState
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [de], a
 	inc de
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [de], a
 	inc de
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [de], a
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_5287::
+Mode_LoadAnimBackground::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_529b
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $1D
 	ld [wBattleState], a
 .asm_529b
-	farcall Func_033_4000
+	farcall LoadBattleAnimBackground
 	ld a, [wBattleAnimStep]
 	inc a
 	ld [wBattleAnimStep], a
@@ -2592,11 +2592,11 @@ Func_02e_5287::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_52b3::
-	call Func_02e_411e
+Mode_LoadAnimGFX::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	farcall Func_02f_4000
+	farcall LoadBattleAnimGFX
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
@@ -2604,7 +2604,7 @@ Func_02e_52b3::
 	ld [wd98c], a
 	ret
 
-Func_02e_52d0::
+Mode_ClawSwipeAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_531b
@@ -2711,25 +2711,25 @@ Func_02e_52d0::
 	jr .asm_537f
 .asm_537f
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_5390::
+Mode_AnimateTileCycle2::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_53cf
-	call Func_02e_4203
+	call ReadObjectAnimParams
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_53bc
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $01
@@ -2740,7 +2740,7 @@ Func_02e_5390::
 .asm_53bc
 	ld a, $02
 	ld [wBattleState], a
-	call Func_02e_4c3d
+	call AdvanceBattleScriptByState
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $20
@@ -2788,7 +2788,7 @@ Func_02e_5390::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_540f::
+Mode_DiagonalSlamAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jr z, .asm_544c
@@ -2867,14 +2867,14 @@ Func_02e_540f::
 	jr .asm_548e
 .asm_548e
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld [wd98e], a
 	ret
 
-Func_02e_549f::
+Mode_HopAcrossAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_54f3
@@ -3025,14 +3025,14 @@ Func_02e_549f::
 	ld [wBattleState], a
 	ret
 
-Func_02e_55a3::
+Mode_ShakeScreenDeltas::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_55ca
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $23
@@ -3073,7 +3073,7 @@ Func_02e_55a3::
 	ld [wd98e], a
 	ret
 
-Func_02e_5601::
+Mode_SlideWindowAndPan::
 	ld a, [wBattleAnimStep]
 	and a
 	jp nz, .asm_5690
@@ -3185,7 +3185,7 @@ Func_02e_5601::
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 .asm_56f0
-	farcall Func_02b_402b
+	farcall RefreshBattleHUD
 	xor a
 	ld [wBattleState], a
 	ld a, [hSCX]
@@ -3196,7 +3196,7 @@ Func_02e_5601::
 	ld [wWY], a
 	ret
 
-Func_02e_570d::
+Mode_DashAcrossAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5761
@@ -3303,14 +3303,14 @@ Func_02e_570d::
 	ret
 .asm_57c7
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_57d8::
+Mode_DashFlipAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_582c
@@ -3452,14 +3452,14 @@ Func_02e_57d8::
 	cp $05
 	ret c
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_58dd::
+Mode_SetFlag9ad::
 	ld a, $01
 	ld [wd9ad], a
 	xor a
@@ -3467,39 +3467,39 @@ Func_02e_58dd::
 	ld [wd9ae], a
 	ret
 
-Func_02e_58ea::
-	call Func_02e_411e
+Mode_LoadAnimBGTiles::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
-	farcall Func_033_4438
+	farcall CopyBattleAnimBGTiles
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_5907::
-	farcall Func_030_7194
+Mode_SlideSpriteAcross::
+	farcall BattleAnim_SlideSpriteAcross
 	ret
 
-Func_02e_590e::
-	farcall Func_030_72d7
+Mode_GatherToCenter::
+	farcall BattleAnim_GatherToCenter
 	ret
 
-Func_02e_5915::
-	farcall Func_030_75c7
+Mode_SlideSpriteOut::
+	farcall BattleAnim_SlideSpriteOut
 	ret
 
-Func_02e_591c::
-	farcall Func_030_7610
+Mode_ConvergeSprites::
+	farcall BattleAnim_ConvergeSprites
 	ret
 
-Func_02e_5923::
-	farcall Func_030_766a
+Mode_SweepPaletteFlash::
+	farcall BattleAnim_SweepPaletteFlash
 	ret
 
-Func_02e_592a::
+Mode_SwayObjectLeft::
 	ld hl, wd1a0
 	dec [hl]
 	ld a, [hFadeFrameCounter]
@@ -3526,13 +3526,13 @@ Func_02e_592a::
 	ret
 .asm_594e
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ret
 
-Func_02e_595c::
+Mode_SwayObjectRight::
 	ld hl, wd1a0
 	inc [hl]
 	ld a, [hFadeFrameCounter]
@@ -3565,13 +3565,13 @@ Func_02e_595c::
 	ret
 .asm_5982
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_598d::
-	call Func_02e_411e
+Mode_SetEffectParams4::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $04
@@ -3580,7 +3580,7 @@ Func_02e_598d::
 	ld [wBattleState], a
 	ret
 
-Func_02e_59a0::
+Mode_ScatterObjectsAnim::
 	ld bc, wd1a0
 .asm_59a3
 	ld hl, $0004
@@ -3668,7 +3668,7 @@ Func_02e_59a0::
 .asm_5a30
 	ld hl, $0000
 	add hl, bc
-	call Func_02e_4adf
+	call ClearObjectSlot
 	ld a, [wd98c]
 	inc a
 	ld [wd98c], a
@@ -3678,7 +3678,7 @@ Func_02e_59a0::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld [wd98c], a
-	call Func_02e_4ae7
+	call ClearAllObjectSlots
 	ret
 .asm_5a50
 	ld hl, $0008
@@ -3696,7 +3696,7 @@ Mode_CoordTbl_5a5d::
 	db $50, $88, $20, $38
 	db $50, $70, $20, $20
 	db $50, $80, $20, $30
-Func_02e_5a71::
+Mode_ConvergeObjectsAnim::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5aa8
@@ -3756,7 +3756,7 @@ Func_02e_5a71::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ld [wd98e], a
-	call Func_02e_4ae7
+	call ClearAllObjectSlots
 	ret
 Mode_PtrTbl_5ad6::
 	dw Mode_PtrTbl_5ad6_5ada
@@ -3765,11 +3765,11 @@ Mode_PtrTbl_5ad6_5ada::
 	db $60, $78, $02, $60, $78, $02, $60, $78, $02, $60, $78, $02
 Mode_PtrTbl_5ad6_5ae6::
 	db $30, $28, $02, $30, $28, $02, $30, $28, $02, $30, $28, $02
-Func_02e_5af2::
+Mode_RevealTileBox2::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5b08
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
 	ld a, $33
@@ -3861,7 +3861,7 @@ Func_02e_5af2::
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_5b8b::
+Mode_LungeForwardAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5bc6
@@ -3932,14 +3932,14 @@ Func_02e_5b8b::
 	jr .asm_5c00
 .asm_5c00
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_5c11::
+Mode_LungeReturnAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5c4c
@@ -4010,14 +4010,14 @@ Func_02e_5c11::
 	jr .asm_5c86
 .asm_5c86
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_5c97::
+Mode_BigLungeForwardAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5cd2
@@ -4088,14 +4088,14 @@ Func_02e_5c97::
 	jr .asm_5d0c
 .asm_5d0c
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_5d1d::
+Mode_BigLungeReturnAnim::
 	ld a, [wBattleAnimStep]
 	cp $01
 	jp z, .asm_5d58
@@ -4166,15 +4166,15 @@ Func_02e_5d1d::
 	jr .asm_5d92
 .asm_5d92
 	ld hl, wd1a0
-	call Func_02e_4adf
+	call ClearObjectSlot
 	xor a
 	ld [wBattleState], a
 	ld [wd98e], a
 	ld [wBattleAnimStep], a
 	ret
 
-Func_02e_5da3::
-	call Func_02e_411e
+Mode_SetEffectParams5::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd99f], a
 	ld a, $05
@@ -4183,14 +4183,14 @@ Func_02e_5da3::
 	ld [wBattleState], a
 	ret
 
-Func_02e_5db6::
+Mode_ClearFlag9ad::
 	xor a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ld [wBattleState], a
 	ret
 
-Func_02e_5dc1::
+Mode_RollHitAndBranch::
 	farcall RollMoveHit
 	ld a, [wBattleTurn]
 	and a
@@ -4212,9 +4212,9 @@ Func_02e_5dc1::
 	ld [wd98c], a
 	ret
 
-Func_02e_5dea::
+Mode_RollHitCheckStatus::
 	farcall RollMoveHit
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wd993]
 	and a
 	jr nz, .asm_5e21
@@ -4237,7 +4237,7 @@ Func_02e_5dea::
 	ld a, [hl]
 	bit 4, a
 	jr nz, .asm_5e1d
-	call Func_02e_4c3d
+	call AdvanceBattleScriptByState
 .asm_5e1d
 	xor a
 	ld [wd993], a
@@ -4246,10 +4246,10 @@ Func_02e_5dea::
 	ld [wBattleState], a
 	ret
 
-Func_02e_5e26::
+Mode_CheckFaintEndBattle::
 	ld a, $01
 	ld [wMoveTargetsEnemy], a
-	farcall Func_02b_4098
+	farcall CalcAndApplyMoveDamage
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
@@ -4286,42 +4286,42 @@ Func_02e_5e26::
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02e_5e76::
-	call Func_02e_411e
+Mode_RandomBranch::
+	call ReadBattleScriptByte
 	call AdvanceRNG
 	ld a, [wd991]
 	and $01
 	jr z, .asm_5e86
-	call Func_02e_4c3d
+	call AdvanceBattleScriptByState
 .asm_5e86
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_5e8b::
-	call Func_02e_411e
+Mode_LoadAnimObjPalette::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld e, a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld d, a
-	farcall Func_4d_5ed8
+	farcall LoadBattleAnimObjPalettes
 	xor a
 	ld [wBattleState], a
 	ret
 
-Func_02e_5ea4::
-	call Func_02e_411e
+Mode_LoadAnimGFXChunk::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
-	farcall Func_04d_4000
+	farcall LoadBattleAnimGFXChunk
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_5ec1::
+Mode_TryCatchMon::
 	farcall Func_01e_6acd
 	ld a, d
 	and a
@@ -4362,8 +4362,8 @@ Func_02e_5ec1::
 	dec c
 	jr nz, .asm_5f0d
 	ret
-Func_02e_5f14::
-	call Func_02e_411e
+Mode_ReloadMonPic::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, [wBattleTurn]
@@ -4390,8 +4390,8 @@ Func_02e_5f14::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_5f51::
-	call Func_02e_411e
+Mode_SetAnimIDAndInit::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wBattleAnimID], a
 	farcall Func_02f_4008
@@ -4401,8 +4401,8 @@ Func_02e_5f51::
 	ld [wBattleAnimStep], a
 	ld [wd98c], a
 	ret
-Func_02e_5f6e::
-	call Func_02e_411e
+Mode_BranchOnFlagD6::
+	call ReadBattleScriptByte
 	ld a, [hFFD6]
 	ld b, a
 	ld a, $01
@@ -4411,35 +4411,35 @@ Func_02e_5f6e::
 	ld a, [wd993]
 	and a
 	jr nz, .asm_5f84
-	call Func_02e_4c3d
+	call AdvanceBattleScriptByState
 .asm_5f84
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_5f89::
+Mode_RandomBranch2::
 	call AdvanceRNG
 	ld a, [wd991]
 	and $01
 	jr z, .asm_5f9e
-	call Func_02e_411e
-	call Func_02e_4c3d
+	call ReadBattleScriptByte
+	call AdvanceBattleScriptByState
 	xor a
 	ld [wBattleState], a
 	ret
 .asm_5f9e
-	call Func_02e_411e
-	jp Func_02e_411e
-Func_02e_5fa4::
+	call ReadBattleScriptByte
+	jp ReadBattleScriptByte
+Mode_LaunchProjectileAnim::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_5fd6
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
-	farcall Func_030_45e2
+	farcall LoadBattleEffectGFXAlt
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $45
@@ -4450,7 +4450,7 @@ Func_02e_5fa4::
 	call PlaySound
 	ret
 .asm_5fd6
-	ld de, Jumptable_02e_6270
+	ld de, ProjectileLaunchAnimJumptable
 	ld a, [wd98f]
 	ld l, a
 	ld h, $00
@@ -4460,16 +4460,16 @@ Func_02e_5fa4::
 	ld h, [hl]
 	ld l, a
 	jp hl
-Func_02e_5fe5::
+Mode_Nop::
 	ret
-Func_02e_5fe6::
+Mode_SlideWindowOpen3::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_605b
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98f], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd990], a
 	ld a, $46
@@ -4595,16 +4595,16 @@ Func_02e_5fe6::
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 .asm_60f0
-	farcall Func_02b_402b
+	farcall RefreshBattleHUD
 	ret
-Func_02e_60f7::
-	call Func_02e_411e
+Mode_LoadObjectArray::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld [wd98d], a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld e, a
-	call Func_02e_411e
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	ld d, a
 	ld a, [wd98d]
@@ -4697,33 +4697,33 @@ Func_02e_60f7::
 	ld a, [hli]
 	ld d, a
 	ret
-Func_02e_617f::
+Mode_StartObjectAnim2d_6e2c::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_6193
-	call Func_02e_60f7
+	call Mode_LoadObjectArray
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $48
 	ld [wBattleState], a
 	ret
 .asm_6193
-	farcall Func_02d_6e2c
+	farcall AnimateBattleObjectPathFwd
 	ret
-Func_02e_619a::
+Mode_StartObjectAnim2d_6d77::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_61ae
-	call Func_02e_60f7
+	call Mode_LoadObjectArray
 	ld a, $01
 	ld [wBattleAnimStep], a
 	ld a, $47
 	ld [wBattleState], a
 	ret
 .asm_61ae
-	farcall Func_02d_6d77
+	farcall AnimateBattleObjectPath
 	ret
-Func_02e_61b5::
+Mode_RevealTileBox3::
 	ld a, [wBattleAnimStep]
 	and a
 	jr nz, .asm_61c6
@@ -4812,46 +4812,46 @@ Func_02e_61b5::
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
 	ret
-Func_02e_6244::
+Mode_NopState1::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6249::
+Mode_NopState2::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_624e::
+Mode_NopState3::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6253::
+Mode_NopState4::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6258::
+Mode_NopState5::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_625d::
+Mode_NopState6::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6262::
-	call Func_02e_411e
+Mode_PlayScriptSound::
+	call ReadBattleScriptByte
 	ld a, [wBattleState]
 	call PlaySound
 	xor a
 	ld [wBattleState], a
 	ret
-Jumptable_02e_6270::
-	dw Func_02e_627e
-	dw Func_02e_62ef
-	dw Func_02e_627e
-	dw Func_02e_62ef
-	dw Func_02e_62ef
-	dw Func_02e_62ef
-	dw Func_02e_627e
-Func_02e_627e::
+ProjectileLaunchAnimJumptable::
+	dw ProjectileAnim_ApproachRight
+	dw ProjectileAnim_ApproachLeft
+	dw ProjectileAnim_ApproachRight
+	dw ProjectileAnim_ApproachLeft
+	dw ProjectileAnim_ApproachLeft
+	dw ProjectileAnim_ApproachLeft
+	dw ProjectileAnim_ApproachRight
+ProjectileAnim_ApproachRight::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_62ca
@@ -4920,7 +4920,7 @@ Func_02e_627e::
 	ld [hli], a
 	ld [hli], a
 	ret
-Func_02e_62ef::
+ProjectileAnim_ApproachLeft::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_633b
@@ -5679,7 +5679,7 @@ ObjectAnim_02e_6e37::
 	dw ObjectAnimFrame_02e_6e39
 ObjectAnimFrame_02e_6e39::
 	db $38, $60, $08, $10, $01, $04, $c5, $71, $00
-Func_02e_6e42::
+InitObjectAnimBuffer::
 	ld hl, wd1a0
 	ld c, $40
 	xor a

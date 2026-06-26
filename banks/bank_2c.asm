@@ -1,4 +1,4 @@
-Func_02c_4000::
+LoadBattleBacksprites::
 	ld de, CharBacksprites
 	ld a, [wPlayerChar]
 	ld l, a
@@ -31,7 +31,7 @@ Func_02c_4000::
 	call LoadEnemyMonPic
 	farcall Func_026_4d47
 	ret
-Func_02c_403e::
+LoadBattleBacksprite_Setup::
 	push de
 	ld de, CharBacksprites
 	ld a, $00
@@ -49,7 +49,7 @@ Func_02c_403e::
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	ret
-; Character battle backsprites, indexed by wPlayerChar (party/character index, see Func_02c_4000).
+; Character battle backsprites, indexed by wPlayerChar (party/character index, see LoadBattleBacksprites).
 ; Per-character 4-color palette; pointer table -> palette records.
 CharBackspritePals::
 	dw CharBackspritePal_0
@@ -261,7 +261,7 @@ AnimateBattleTransition::
 	ld e, a
 	ret
 
-Func_2c_53a6::
+BattleTransition_OffsetToWindowLocation::
 	ld a, c
 	sub $10
 	and $1f
@@ -285,10 +285,10 @@ Func_2c_53a6::
 	ld e, a
 	ret
 
-Func_2c_53ca::
+BattleTransition_Stub::
 	ret
 
-Func_2c_53cb::
+ClearOAMSpriteAtTile::
 	push hl
 	push bc
 	inc c
@@ -301,20 +301,20 @@ Func_2c_53cb::
 	hlcoord 0, 0
 	ld e, $18
 
-Func_2c_53df::
+ClearOAMSpriteAtTile_Loop::
 	ld a, [hli]
 	or a
-	jr z, Func_2c_5413
+	jr z, ClearOAMSpriteAtTile_Skip
 	inc hl
 	inc hl
 	ld a, [hli]
 	and $f8
 	cp b
-	jr nz, Func_2c_5405
+	jr nz, ClearOAMSpriteAtTile_Next
 	ld a, [hl]
 	and $f8
 	cp c
-	jr nz, Func_2c_5405
+	jr nz, ClearOAMSpriteAtTile_Next
 	ld a, l
 	and $e0
 	ld l, a
@@ -327,12 +327,12 @@ Func_2c_53df::
 	adc h
 	ld h, a
 	dec e
-	jr nz, Func_2c_53df
+	jr nz, ClearOAMSpriteAtTile_Loop
 	pop bc
 	pop hl
 	ret
 
-Func_2c_5405::
+ClearOAMSpriteAtTile_Next::
 	ld a, $1c
 	add l
 	ld l, a
@@ -340,12 +340,12 @@ Func_2c_5405::
 	adc h
 	ld h, a
 	dec e
-	jr nz, Func_2c_53df
+	jr nz, ClearOAMSpriteAtTile_Loop
 	pop bc
 	pop hl
 	ret
 
-Func_2c_5413::
+ClearOAMSpriteAtTile_Skip::
 	ld a, $1f
 	add l
 	ld l, a
@@ -353,7 +353,7 @@ Func_2c_5413::
 	adc h
 	ld h, a
 	dec e
-	jr nz, Func_2c_53df
+	jr nz, ClearOAMSpriteAtTile_Loop
 	pop bc
 	pop hl
 	ret
@@ -2005,7 +2005,7 @@ BattleTransition_DiagonalCheckerboard::
 	dw $1100
 	db -1
 
-Func_02d_6d77::
+AnimateBattleObjectPath::
 	ld a, [wd98d]
 .asm_6d7a
 	ld [wdcf1], a
@@ -2087,7 +2087,7 @@ Func_02d_6d77::
 	add [hl]
 	ld [bc], a
 .asm_6dee
-	call Func_02d_6ece
+	call BattleObjectPath_TickCursor
 	ld a, [wdcef]
 	ld l, a
 	ld a, [wdcef + 1]
@@ -2121,7 +2121,7 @@ Func_02d_6d77::
 	jp nc, .asm_6e12
 	inc bc
 	jp .asm_6dee
-Func_02d_6e2c::
+AnimateBattleObjectPathFwd::
 	ld a, [wd98d]
 .asm_6e2f
 	ld [wdcf1], a
@@ -2187,7 +2187,7 @@ Func_02d_6e2c::
 	add [hl]
 	ld [bc], a
 .asm_6e90
-	call Func_02d_6ece
+	call BattleObjectPath_TickCursor
 	ld a, [wdcef]
 	ld l, a
 	ld a, [wdcef + 1]
@@ -2221,7 +2221,7 @@ Func_02d_6e2c::
 	jp nc, .asm_6eb4
 	inc bc
 	jp .asm_6e90
-Func_02d_6ece::
+BattleObjectPath_TickCursor::
 	ld a, [$DCF2]
 	inc a
 	ld [$DCF2], a
@@ -2250,8 +2250,8 @@ Func_02d_6ece::
 	dec bc
 	ld [bc], a
 	ret
-; Object motion paths: per-frame signed (dx,dy) added to (Func_02d_6e2c) / subtracted from
-; (Func_02d_6d77) an object's X,Y (wd1a0[0..1]); direction via wBattleTurn, step cursor wd1a0[7].
+; Object motion paths: per-frame signed (dx,dy) added to (AnimateBattleObjectPathFwd) / subtracted from
+; (AnimateBattleObjectPath) an object's X,Y (wd1a0[0..1]); direction via wBattleTurn, step cursor wd1a0[7].
 ; Path pointer in wd1a0[5..6], selected by wd98d. dx = -1 ($ff) ends a path; $88/$77 dx = control frames.
 Battle_ObjectMotionPaths::
 	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $88, $ff, $00, $fe, $00, $fe, $00, $fe

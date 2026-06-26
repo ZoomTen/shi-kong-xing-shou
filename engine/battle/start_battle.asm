@@ -173,7 +173,7 @@ CheckPartyAllFainted: ; unreferenced?
 	ret
 
 InitBattleParticipants:
-	farcall Func_02d_5086
+	farcall SetupWildEncounter
 	xor a
 	ld [wd987], a
 	ld hl, wd876
