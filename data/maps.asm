@@ -89,3 +89,9 @@ INCLUDE "data/maps/attributes/bank_6b_2.asm"
 
 SECTION "Map Data 13", ROMX
 INCLUDE "data/maps/attributes/bank_6e.asm"
+
+SECTION "Scripts 1", ROMX
+INCLUDE "data/maps/scripts/bank_08.asm"
+
+SECTION "Scripts 2", ROMX
+INCLUDE "data/maps/scripts/bank_08_2.asm"

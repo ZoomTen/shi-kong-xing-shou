@@ -23,26 +23,10 @@ SECTION "Tilesets", ROMX
 INCLUDE "data/maps/tilesets.asm"
 
 SECTION "bank08", ROMX
-INCLUDE "banks/bank_08.asm"
-INCLUDE "data/text/bank08_misc2.asm"
-INCLUDE "data/text/script_ballots_house.asm"
-INCLUDE "data/text/script_bell_village1_1.asm"
-INCLUDE "data/text/script_hayatos_house1_1.asm"
-INCLUDE "data/text/script_carpet_womans_house1_1.asm"
-INCLUDE "data/text/script_fangfangs_house1_1.asm"
-INCLUDE "data/text/script_carpet_womans_house1_2.asm"
-INCLUDE "data/text/script_bell_healing_center.asm"
-INCLUDE "data/text/script_bell_observatory.asm"
-INCLUDE "data/text/script_ballots_house1.asm"
-INCLUDE "data/text/script_bell_village1_2.asm"
-INCLUDE "data/text/script_hayatos_house1_2.asm"
-INCLUDE "data/text/script_carpet_womans_house1_3.asm"
-INCLUDE "data/text/script_fangfangs_house1_2.asm"
-INCLUDE "data/text/script_carpet_womans_house1_4.asm"
-INCLUDE "data/text/script_bell_school1.asm"
-INCLUDE "data/text/script_bell_school_south_classroom1.asm"
-INCLUDE "data/text/script_bell_school_north_classroom.asm"
-INCLUDE "data/text/script_ballots_house_5468.asm"
+GotoOverworld:: ; unreferenced?
+	xor a ; GAMEMODE_OVERWORLD
+	ld [wTargetMode], a
+	jp JumpToGameMode
 
 SECTION "Meteor Cutscene", ROMX
 INCLUDE "engine/movie/meteor.asm"

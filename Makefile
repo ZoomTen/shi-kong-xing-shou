@@ -23,6 +23,7 @@ SOURCES := \
 	data/monsters/pics.asm \
 	data/gfx.asm \
 	data/maps.asm \
+	data/text.asm \
 	multicart.asm \
 	audio.asm
 
