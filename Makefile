@@ -22,6 +22,7 @@ SOURCES := \
 	bank_nums.asm \
 	data/monsters/pics.asm \
 	data/gfx.asm \
+	data/maps.asm \
 	multicart.asm \
 	audio.asm
 

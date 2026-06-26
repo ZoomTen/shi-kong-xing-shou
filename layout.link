@@ -31,7 +31,8 @@ ROMX $05
 ROMX $06
 	"Tilesets"
 ROMX $07
-	"bank07"
+	"Group 00 Map Defs"
+	"Group 01 Map Defs"
 ROMX $08
 	"bank08"
 	"Meteor Cutscene"

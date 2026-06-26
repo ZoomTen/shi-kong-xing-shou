@@ -25,9 +25,6 @@ INCLUDE "engine/overworld/zones.asm"
 SECTION "Tilesets", ROMX
 INCLUDE "data/maps/tilesets.asm"
 
-SECTION "bank07", ROMX
-INCLUDE "banks/bank_07.asm"
-
 SECTION "bank08", ROMX
 INCLUDE "banks/bank_08.asm"
 INCLUDE "data/text/bank08_misc2.asm"

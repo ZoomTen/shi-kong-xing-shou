@@ -50,15 +50,15 @@ BallotsHouse_StartScript::
 	setmappredef MAPPREDEF_01
 	end
 
-GotoOverworld: ; unreferenced?
+GotoOverworld:: ; unreferenced?
 	xor a ; GAMEMODE_OVERWORLD
 	ld [wTargetMode], a
 	jp JumpToGameMode
 
-EmptyScript_008:
+EmptyScript_008::
 	end
 
-Script_008_408a:
+Script_008_408a::
 	checkbit wEventFlags, 0, .script_4113 ; check bit 0
 	setmap MAP_BELL_OBSERVATORY_1, $01
 	face FACE_UP
@@ -112,23 +112,23 @@ Script_008_408a:
 	setmap MAP_BELL_OBSERVATORY_1, $00
 	end
 
-BallotsHouse1_ObjectEvents2:
+BallotsHouse1_ObjectEvents2::
 	object_event $11,  5,  3, 0, $00, $00, $00, $00, Script_008_4123
 	objects_end
 
-Script_008_4123:
+Script_008_4123::
 	textface text_08_4cf4
 	end
 
-BallotsHouse1_ObjectEvents3:
+BallotsHouse1_ObjectEvents3::
 	object_event $11,  5,  3, 0, $00, $00, $00, $00, Script_008_4133
 	objects_end
 
-Script_008_4133:
+Script_008_4133::
 	textface text_08_4e04
 	end
 
-Script_008_4137:
+Script_008_4137::
 	checkbit wEventFlags, 0, .script_414d
 ; No entry
 	stext text_08_4b77
@@ -143,7 +143,7 @@ Script_008_4137:
 	setmap MAP_BELL_SCHOOL_1, $00
 	end
 
-Script_008_4151:
+Script_008_4151::
 	checkbit wEventFlags, 1, .script_41a3
 	stext text_08_4d0b
 	face FACE_UP
@@ -176,7 +176,7 @@ Script_008_4151:
 	setmap MAP_BELL_VILLAGE_1, $06
 	end
 
-Script_008_41a7:
+Script_008_41a7::
 	checkbit wEventFlags, 1, .script_41b1
 	setmap MAP_BALLOTS_HOUSE_1, $00
 	end
@@ -185,7 +185,7 @@ Script_008_41a7:
 	setmap MAP_BALLOTS_HOUSE_1, $03
 	end
 
-Script_008_41b5:
+Script_008_41b5::
 	checkbit wEventFlags, 2, .script_41bf
 	setmap MAP_BELL_SCHOOL_1, $02
 	end
@@ -196,7 +196,7 @@ Script_008_41b5:
 	move MovementData_OneLeft
 	end
 
-Script_008_41c8:
+Script_008_41c8::
 	face FACE_UP
 	spriteface 6, FACE_RIGHT
 	spritewalk 6, MOVE_RIGHT
@@ -224,7 +224,7 @@ Script_008_41c8:
 	setbit wEventFlags, 3
 	end
 
-Script_008_4214:
+Script_008_4214::
 	setmap MAP_BALLOTS_HOUSE_1, $04
 	face FACE_UP
 	spriteface 2, FACE_RIGHT
@@ -257,12 +257,12 @@ Script_008_4214:
 	warpmode GAMEMODE_METEOR_CUTSCENE, $04, $00
 	end
 
-BallotsHouse1_ObjectEvents4:
+BallotsHouse1_ObjectEvents4::
 	object_event $11,  3,  4, 0, $00, $00, $00, $00, EmptyScript_008
 	object_event $24,  4,  4, 0, $00, $00, $00, $01, EmptyScript_008
 	objects_end
 
-Script_008_4285:
+Script_008_4285::
 	stext text_08_55a7
 	face FACE_UP
 	move MovementData_OneUp
@@ -271,7 +271,7 @@ Script_008_4285:
 	spriteface 1, FACE_UP
 	end
 
-Script_008_4295:
+Script_008_4295::
 	stext text_08_4f82
 	face FACE_UP
 	move MovementData_OneUp
@@ -280,7 +280,7 @@ Script_008_4295:
 Bank08_EmptyObjectEvent::
 	objects_end
 
-BellVillage1_ObjectEvents:
+BellVillage1_ObjectEvents::
 	object_event $1b, $10, $09,     0, 0, 0, 9, 0, Script_008_42ed
 	object_event $13, $08, $0E,     0, 0, 0, 5, 1, Script_008_42fb
 	object_event $20, $0E, $0D,     0, 0, 0, 7, 2, Script_008_4309
@@ -290,7 +290,7 @@ BellVillage1_ObjectEvents:
 	object_event $01, $05, $10, wEventFlags, 1, 1, 0, 0, Script_008_4319
 	objects_end
 
-Script_008_42ed:
+Script_008_42ed::
 	checkbit wEventFlags, 1, .script_42f7
 	textface text_08_46b1
 	end
@@ -299,7 +299,7 @@ Script_008_42ed:
 	textface text_08_4e23
 	end
 
-Script_008_42fb:
+Script_008_42fb::
 	checkbit wEventFlags, 1, .script_4305
 	textface text_08_46fe
 	end
@@ -308,32 +308,32 @@ Script_008_42fb:
 	textface text_08_4e55
 	end
 
-Script_008_4309:
+Script_008_4309::
 	textface text_08_4768
 	end
 
-Script_008_430d:
+Script_008_430d::
 	textface text_08_47af
 	end
 
-Script_008_4311:
+Script_008_4311::
 	textface text_08_47fb
 	end
 
-Script_008_4315:
+Script_008_4315::
 	textface text_08_4837
 	end
 
-Script_008_4319:
+Script_008_4319::
 	textface text_08_4e15
 	end
 
-HayatosHouse1_ObjectEvents:
+HayatosHouse1_ObjectEvents::
 	object_event $22,  5,  6, 0, $00, $00, $06, $00, Script_008_4334
 	object_event $26,  8,  3, wEventFlags, $01, $00, $00, $01, Script_008_4342
 	objects_end
 
-Script_008_4334:
+Script_008_4334::
 	checkbit wEventFlags, 1, .script_433e
 	textface text_08_48d0
 	end
@@ -342,16 +342,16 @@ Script_008_4334:
 	textface text_08_4eb0
 	end
 
-Script_008_4342:
+Script_008_4342::
 	textface text_08_4911
 	end
 
-CarpetWomansHouse1_ObjectEvents:
+CarpetWomansHouse1_ObjectEvents::
 	object_event $1f,  4,  6, 0, $00, $00, $06, $00, Script_008_435d
 	object_event $15,  7,  4, 0, $00, $00, $06, $01, Script_008_436e
 	objects_end
 
-Script_008_435d:
+Script_008_435d::
 	checkbit wEventFlags, 1, .script_436a
 	textface text_08_497a
 	stext text_08_49cc
@@ -361,7 +361,7 @@ Script_008_435d:
 	textface text_08_4ecc
 	end
 
-Script_008_436e:
+Script_008_436e::
 	checkbit wEventFlags, 1, .script_4378
 	textface text_08_4aac
 	end
@@ -370,13 +370,13 @@ Script_008_436e:
 	textface text_08_4f1a
 	end
 
-FangfangsHouse1_ObjectEvents:
+FangfangsHouse1_ObjectEvents::
 	object_event $15,  5,  6, 0, $00, $00, $06, $00, Script_008_439e
 	object_event $18,  8,  3, 0, $00, $00, $0a, $01, Script_008_43ac
 	object_event $1a,  5,  3, wEventFlags, $01, $00, $00, $02, Script_008_43b0
 	objects_end
 
-Script_008_439e:
+Script_008_439e::
 	checkbit wEventFlags, 1, .script_43a8
 	textface text_08_49db
 	end
@@ -385,58 +385,58 @@ Script_008_439e:
 	textface text_08_4ef4
 	end
 
-Script_008_43ac:
+Script_008_43ac::
 	textface text_08_4a2e
 	end
 
-Script_008_43b0:
+Script_008_43b0::
 	textface text_08_4a87
 	end
 
-BellHealingCenter1_ObjectEvents:
+BellHealingCenter1_ObjectEvents::
 	object_event $25,  5,  2, 0, $00, $00, $00, $00, Script_008_43c0
 	objects_end
 
-Script_008_43c0:
+Script_008_43c0::
 	stext text_08_4b14
 	end
 
-Script_008_43c4:
+Script_008_43c4::
 	face FACE_UP
 	stext text_08_4b14
 	end
 
-BellObservatory1_ObjectEvents2:
+BellObservatory1_ObjectEvents2::
 	object_event $11,  3,  7, 0, $00, $00, $00, $00, EmptyScript_008
 	objects_end
 
-BellSchool1_ObjectEvents:
+BellSchool1_ObjectEvents::
 	object_event $24,  4, 13, wEventFlags, $03, $00, $00, $00, Script_008_43ed
 	object_event $16,  7,  7, 0, $00, $00, $00, $01, Script_008_43f1
 	objects_end
 
-Script_008_43ed:
+Script_008_43ed::
 	textface text_08_4fa8
 	end
 
-Script_008_43f1:
+Script_008_43f1::
 	textface text_08_5001
 	end
 
-BellSchoolSouthClassroom1_ObjectEvents:
+BellSchoolSouthClassroom1_ObjectEvents::
 	object_event $1e,  7,  6, 0, $00, $00, $00, $00, Script_008_440c
 	object_event $21,  4,  6, 0, $00, $00, $00, $01, Script_008_4410
 	objects_end
 
-Script_008_440c:
+Script_008_440c::
 	textface text_08_5039
 	end
 
-Script_008_4410:
+Script_008_4410::
 	textface text_08_506b
 	end
 
-BellSchoolNorthClassroom1_ObjectEvents:
+BellSchoolNorthClassroom1_ObjectEvents::
 	object_event $26,  4,  8, 0, $00, $00, $00, $00, Script_008_4463
 	object_event $2c,  3,  8, 0, $00, $00, $00, $01, Script_008_4462
 	object_event $1e,  7,  8, 0, $00, $00, $00, $02, Script_008_44da
@@ -446,10 +446,10 @@ BellSchoolNorthClassroom1_ObjectEvents:
 	object_event $24,  5,  2, wEventFlags, $02, $01, $00, $04, Script_008_44e8
 	objects_end
 
-Script_008_4462:
+Script_008_4462::
 	end
 
-Script_008_4463:
+Script_008_4463::
 	checkbit wEventFlags, $02, Script_008_44d3
 	walkpath
 	face FACE_UP
@@ -492,37 +492,37 @@ Script_008_4463:
 	setmappredef MAPPREDEF_03
 	end
 
-Script_008_44d3:
+Script_008_44d3::
 	textface text_08_5291
 	spriteface 2, FACE_UP
 	end
 
-Script_008_44da:
+Script_008_44da::
 	textface text_08_52d0
 	spriteface 4, FACE_UP
 	end
 
-Script_008_44e1:
+Script_008_44e1::
 	textface text_08_5267
 	spriteface 5, FACE_UP
 	end
 
-Script_008_44e8:
+Script_008_44e8::
 	textface text_08_522e
 	spriteface 6, FACE_DOWN
 	end
 
-Script_008_44ef:
+Script_008_44ef::
 	textface text_08_4519
 	startbattle BattleData_02d_506b
 	loadscriptedmon $09
 
-Script_008_44f7:
+Script_008_44f7::
 	textface text_08_4519
 	startbattle BattleData_02d_506b
 	loadscriptedmon $09
 
-Script_008_44ff:
+Script_008_44ff::
 	textface text_08_452d
 	checkbit wEventFlags + 4, $01, .done
 	scr_35 $01
@@ -530,7 +530,7 @@ Script_008_44ff:
 .done
 	end
 
-Script_008_450c:
+Script_008_450c::
 	textface text_08_4537
 	checkbit wEventFlags + 3, 3, .script_4517
 	scr_37
