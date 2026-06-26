@@ -66,6 +66,20 @@ MACRO map_attr
 ; \7 = tileset 1
 ; \8 = tileset 2
 ; \9 = collision
+	IF !STRCMP("\7", "0")
+	; \7 == 0, tilesets MUST be from BANK("Tilesets")
+		assert BANK(\8) == BANK("Tilesets")
+	ELSE
+	; \7 filled in, both tilesets read from THIS bank
+		assert BANK(\7) == BANK(@)
+		assert BANK(\8) == BANK(@)
+	ENDC
+	assert BANK(\2) == BANK(@)
+	assert BANK(\3) == BANK(@)
+	assert BANK(\4) == BANK(@)
+	assert BANK(\5) == BANK(@)
+	assert BANK(\6) == BANK(@)
+
 	db \1_WIDTH, \1_HEIGHT
 	dw \2, \3, \4, \5, \6, \7, \8, 0, \9
 ENDM
