@@ -29,6 +29,7 @@ ENDM
 
 	const script_textface ; $04
 MACRO textface
+	assert BANK(\1) == BANK(@)
 	db script_textface
 	dw \1
 ENDM
@@ -71,6 +72,7 @@ ENDM
 MACRO checkbit
 	db script_checkbit
 	dw \1
+	assert BANK(\3) == BANK(@)
 	db \2
 	dw \3
 ENDM
@@ -96,6 +98,7 @@ MACRO movemap
 ; Applies movement data to the loaded map.
 ; It should be used with maps that have
 ; no associated object events.
+	assert BANK(\1) == BANK(Func_00b_6229) ; movemap step derefs in its bank
 	db script_movemap
 	dw \1 ; movement data (same as sprite)
 ENDM
@@ -107,6 +110,7 @@ ENDM
 
 	const script_move ; $0f
 MACRO move
+	assert BANK(\1) == BANK(Func_00b_60dd) ; move step derefs in its bank
 	db script_move
 	dw \1 ; movement data
 ENDM
@@ -118,6 +122,7 @@ ENDM
 
 	const script_move2 ; $11
 MACRO move2
+	assert BANK(\1) == BANK(Func_00b_60b2) ; move2 step derefs in its bank
 	db script_move2
 	dw \1
 ENDM
@@ -130,12 +135,14 @@ ENDM
 	const script_setbgcopy ; $13
 MACRO setbgcopy
 ; \1 = BG dest (VRAM); \2 = BG-copy table, dereferenced in bank $0b (Func_00b_606f)
+	assert BANK(\2) == BANK(Func_00b_606f) ; BG-copy stamper derefs in its bank
 	db script_setbgcopy
 	dw \1, \2
 ENDM
 
 	const script_stext ; $14
 MACRO stext
+	assert BANK(\1) == BANK(@)
 	db script_stext
 	dw \1 ; text
 ENDM
@@ -149,6 +156,7 @@ ENDM
 
 	const script_loadobjsprite ; $16
 MACRO loadobjsprite
+	assert BANK(\1) == BANK(@)
 	db script_loadobjsprite
 	dw \1
 ENDM
@@ -162,6 +170,7 @@ ENDM
 	const script_objscript ; $18
 MACRO objscript
 	db script_objscript
+	assert BANK(\2) == BANK(Script_19) ; run as a script by objscriptstep ($19)
 	db \1 ; sprite ID
 	dw \2 ; movement script
 ENDM
@@ -274,6 +283,7 @@ ENDM
 
 	const script_jumpifnotdown ; $2b
 MACRO jumpifnotdown
+	assert BANK(\1) == BANK(@)
 	db script_jumpifnotdown
 	dw \1
 ENDM
@@ -305,6 +315,7 @@ ENDM
 	const script_setbgcopyplayer ; $30
 MACRO setbgcopyplayer
 ; \1 = BG-copy pointer table (dw -> {w,h,tiles}); dereferenced in bank $0b (Func_00b_606f)
+	assert BANK(\1) == BANK(Func_00b_606f) ; BG-copy stamper derefs in its bank
 	db script_setbgcopyplayer
 	dw \1
 ENDM
@@ -356,6 +367,7 @@ ENDM
 
 	const script_runmovement ; $39
 MACRO runmovement
+	assert BANK(\1) == BANK(Script_3a) ; runmovement step ($3a) derefs in its bank
 	db script_runmovement
 	dw \1
 ENDM
@@ -368,6 +380,7 @@ ENDM
 	const script_startbattle ; $3b
 MACRO startbattle
 ; \1 = enemy battle-data pointer; dereferenced in bank $2d (see Func_02d_50b3)
+	assert BANK(\1) == BANK(Func_02d_507b) ; battle-data deref in its bank
 	db script_startbattle
 	dw \1
 ENDM
@@ -386,6 +399,7 @@ ENDM
 
 	const script_sjump ; $3e
 MACRO sjump
+	assert BANK(\1) == BANK(@)
 	db script_sjump
 	dw \1
 ENDM
@@ -477,6 +491,7 @@ ENDM
 	const script_objmove ; $4e
 MACRO objmove
 	db script_objmove
+	assert BANK(\2) == BANK(@)
 	db \1
 	dw \2
 ENDM
@@ -512,6 +527,7 @@ ENDM
 	const script_objmoveb ; $54
 MACRO objmoveb
 	db script_objmoveb
+	assert BANK(\2) == BANK(Script_55) ; run by Script_55 (handler forces this bank)
 	db \1
 	dw \2
 ENDM
@@ -553,6 +569,7 @@ ENDM
 
 	const script_jumpifnotright ; $5b
 MACRO jumpifnotright
+	assert BANK(\1) == BANK(@)
 	db script_jumpifnotright
 	dw \1
 ENDM
@@ -599,6 +616,7 @@ ENDM
 	const script_ifcharindex ; $63
 MACRO ifcharindex
 	db script_ifcharindex
+	assert BANK(\2) == BANK(@)
 	db \1
 	dw \2
 ENDM
@@ -664,6 +682,15 @@ ENDM
 
 	const script_6e ; $6e
 MACRO scr_6e
+	assert BANK(\1) == BANK(@)
+	assert BANK(\2) == BANK(@)
+	assert BANK(\3) == BANK(@)
+	assert BANK(\4) == BANK(@)
+	assert BANK(\5) == BANK(@)
+	assert BANK(\6) == BANK(@)
+	assert BANK(\7) == BANK(@)
+	assert BANK(\8) == BANK(@)
+	assert BANK(\9) == BANK(@)
 	db script_6e
 	dw \1, \2, \3, \4, \5, \6, \7, \8, \9
 ENDM
@@ -686,6 +713,10 @@ ENDM
 
 	const script_facemove3 ; $72
 MACRO facemove3
+	assert BANK(\1) == BANK(@)
+	assert BANK(\2) == BANK(@)
+	assert BANK(\3) == BANK(@)
+	assert BANK(\4) == BANK(@)
 	db script_facemove3
 	dw \1, \2, \3, \4
 ENDM

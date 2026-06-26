@@ -128,6 +128,9 @@ MACRO object_event
 	db \2, \3
 	dw \4
 	db \5, \6, \7, \8
+	if STRCMP("\9", "$0000") && STRCMP("\9", "0")
+		assert BANK(\9) == BANK(@) ; script in same bank as its object-event list
+	endc
 	dw \9
 ENDM
 

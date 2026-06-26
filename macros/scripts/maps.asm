@@ -37,9 +37,11 @@ else
 endc
 
 if _NARG  > 4
-	dw \5 ; same bank
+	assert BANK(\5) == BANK(@) ; same bank
+	dw \5
 else
-	dw {__current_map__}_MapEvents ; same bank
+	assert BANK({__current_map__}_MapEvents) == BANK(@) ; same bank
+	dw {__current_map__}_MapEvents
 endc
 ENDM
 

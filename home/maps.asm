@@ -932,10 +932,8 @@ LoadMapPalettes1::
 	ret
 
 LoadTilesetHeader::
-; always from bank 06
 	ld a, BANK("Tilesets")
 	rst Bankswitch
-
 	ld a, [wMapTileset2Pointer]
 	ld l, a
 	ld a, [wMapTileset2Pointer + 1]
@@ -944,7 +942,6 @@ LoadTilesetHeader::
 	ld a, [hli]
 	cp -1
 	ret z
-
 ; load params for CopyBytesVRAM
 ; bank
 	ld [wTilesetBank], a
