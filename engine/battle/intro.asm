@@ -74,10 +74,10 @@ BattleIntro_Jump_1::
 	ldh [hSCYHigh], a
 	ld [wd9f8], a
 	ld [wBattleScriptByte], a
-	ld [wd9cc], a
-	ld [wd9cd], a
-	ld [wd9ca], a
-	ld [wd9cb], a
+	ld [wMathScratch + 2], a
+	ld [wMathScratch + 3], a
+	ld [wMathScratch], a
+	ld [wMathScratch + 1], a
 	ld [wd9f6], a
 	ld [wd9f5], a
 	ld [wd9ea], a

@@ -656,11 +656,11 @@ Func_039_4469::
 Func_039_45c5::
 	farcall Func_01e_4441
 	ldh a, [hMathValue + 2]
-	ld [wd9ca], a
+	ld [wMathScratch], a
 	ldh a, [hMathValue + 1]
-	ld [wd9cb], a
+	ld [wMathScratch + 1], a
 	ldh a, [hMathValue]
-	ld [wd9cc], a
+	ld [wMathScratch + 2], a
 	ret
 Func_039_45db::
 	farcall Func_01e_4441
@@ -686,11 +686,11 @@ Func_039_45db::
 	jr .asm_4612
 .asm_4601
 	ldh a, [hMathValue + 2]
-	ld [wd9ca], a
+	ld [wMathScratch], a
 	ldh a, [hMathValue + 1]
-	ld [wd9cb], a
+	ld [wMathScratch + 1], a
 	ldh a, [hMathValue]
-	ld [wd9cc], a
+	ld [wMathScratch + 2], a
 	xor a
 	ret
 .asm_4612
@@ -803,7 +803,7 @@ Func_039_462f::
 	call Func_039_485c
 	ret
 .asm_46ec
-	ld hl, wd9cc
+	ld hl, wMathScratch + 2
 	ld a, [wMoney + 2]
 	add [hl]
 	ld [wMoney + 2], a
@@ -902,7 +902,7 @@ Func_039_4782::
 	ld a, b
 	jr z, asm_039_479f.asm_47b2
 Func_039_4785::
-	ld hl, wd9cc
+	ld hl, wMathScratch + 2
 	ld a, [wMoney + 2]
 	sub [hl]
 	ld [wMoney + 2], a

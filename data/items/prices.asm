@@ -1,0 +1,70 @@
+; seems to be shop prices
+ItemPriceTables::
+	dw ItemPrices
+	dw TMPrices
+
+ItemPrices::
+	bigdw 0
+	bigdw 100
+	bigdw 300
+	bigdw 600
+	bigdw 10000
+	bigdw 50
+	bigdw 150
+	bigdw 300
+	bigdw 1000
+	bigdw 20
+	bigdw 80
+	bigdw 3000
+	bigdw 100
+	bigdw 100
+	bigdw 100
+	bigdw 200
+	bigdw 200
+	bigdw 500
+	bigdw 2000
+	bigdw 5000
+	bigdw 10000
+	bigdw 500
+	bigdw 1000
+	bigdw 5000
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 200
+	bigdw 500
+	bigdw 200
+	bigdw 500
+	bigdw 1000
+	bigdw 50000
+	bigdw 1000
+
+TMPrices::
+	bigdw 0
+	bigdw 2500
+	bigdw 10000
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1500
+	bigdw 1000
+	bigdw 2000
+	bigdw 500
+	bigdw 1500
+	bigdw 3000
+	bigdw 1000

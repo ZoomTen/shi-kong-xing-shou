@@ -1,6 +1,6 @@
 ; wMapType (wd0f4) - map "type" id. First byte of every map layout; LoadMapLayout
 ; (home/maps.asm) reads it into wMapType. Indexes (x2) LayoutPatches_01e_4910 (load-time
-; conditional layout patches applied per event flag) and Pointers_01e_4d29 (per-type
+; conditional layout patches applied per event flag) and ItemNameIndexPointers (per-type
 ; dug-item name table, LoadItemNameByMapType). $00 = ordinary map (no dig mechanic).
 	const_def
 	const MAPTYPE_NONE             ; $00 ordinary map (most maps)

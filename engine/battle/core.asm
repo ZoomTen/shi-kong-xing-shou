@@ -645,16 +645,16 @@ Func_02b_4454::
 	call Wait32Frames
 	ld a, BGM_EXP_JINGLE
 	call PlaySound
-	ld a, [wd9cc]
+	ld a, [wMathScratch + 2]
 	ld [wd9cf], a
-	ld a, [wd9cd]
+	ld a, [wMathScratch + 3]
 	ld [wd9ce], a
 	ld a, $2c
 	ld [wd3ff], a
 	farcall Func_02d_4000
 	call Wait32Frames
 	call Wait32Frames
-	call AddExpToTotal
+	call AddMoney
 	xor a
 	ld [wSelectedOption], a
 	ld bc, wPartyMons
@@ -734,21 +734,21 @@ Func_02b_452f::
 	ret
 
 Func_02b_453a::
-	ld a, [wd9cb]
+	ld a, [wMathScratch + 1]
 	cp $27
 	jr z, .check_low
 	jr nc, .max
 	ld [wd9ce], a
-	ld a, [wd9ca]
+	ld a, [wMathScratch]
 	ld [wd9cf], a
 	ret
 
 .check_low
-	ld a, [wd9ca]
+	ld a, [wMathScratch]
 	cp $f
 	jr nc, .max
 	ld [wd9cf], a
-	ld a, [wd9cb]
+	ld a, [wMathScratch + 1]
 	ld [wd9ce], a
 	ret
 
@@ -761,12 +761,12 @@ Func_02b_453a::
 
 ; TODO: dest is wMoney (clamped to 99999, fed from PriceOptions),
 ; but caller plays BGM_EXP_JINGLE. money or exp?
-AddExpToTotal::
+AddMoney::
 	ld hl, wMoney + 2
-	ld a, [wd9cc]
+	ld a, [wMathScratch + 2]
 	add [hl]
 	ld [hld], a
-	ld a, [wd9cd]
+	ld a, [wMathScratch + 3]
 	adc [hl]
 	ld [hld], a
 	ld a, 0
@@ -785,7 +785,7 @@ AddMonExp::
 	ld a, [wExpGained]
 	add [hl]
 	ld [hli], a
-	ld a, [wd9cb]
+	ld a, [wMathScratch + 1]
 	adc [hl]
 	ld [hli], a
 	ld a, 0
@@ -1063,28 +1063,28 @@ Func_02b_4b7a::
 	ld a, [hli]
 	ld d, a
 	push hl
-	ld a, [wd9ca]
+	ld a, [wMathScratch]
 	ld l, a
-	ld a, [wd9cb]
+	ld a, [wMathScratch + 1]
 	ld h, a
 	add hl, de
 	ld a, l
-	ld [wd9ca], a
+	ld [wMathScratch], a
 	ld a, h
-	ld [wd9cb], a
+	ld [wMathScratch + 1], a
 	pop hl
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	ld a, [wd9cc]
+	ld a, [wMathScratch + 2]
 	ld l, a
-	ld a, [wd9cd]
+	ld a, [wMathScratch + 3]
 	ld h, a
 	add hl, de
 	ld a, l
-	ld [wd9cc], a
+	ld [wMathScratch + 2], a
 	ld a, h
-	ld [wd9cd], a
+	ld [wMathScratch + 3], a
 	ret
 
 Func_02b_4bb7::

@@ -616,11 +616,11 @@ wd9c5:: ds 1
 wd9c7:: ds 1
 wd9c8:: ds 1
 wd9c9:: ds 1
+; wd9ca-wd9cd: shared multi-byte scratch buffer borrowed for big-number work
+; (exp gained, money/price transaction amounts, 16-bit add accumulators).
+; wExpGained is a co-alias used when the buffer holds an exp value.
 wExpGained::
-wd9ca:: ds 1
-wd9cb:: ds 1
-wd9cc:: ds 1
-wd9cd:: ds 1
+wMathScratch:: ds 4
 wd9ce:: ds 1
 wd9cf:: ds 1
 
