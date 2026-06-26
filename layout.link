@@ -55,16 +55,23 @@ ROMX $0c
 ROMX $0d
 	"bank0d"
 ROMX $0e
-	"bank0e"
+	"Scripts 3"
+	"Text 2"
+	"Scripts 4"
 ROMX $0f
-	"bank0f"
+	"Scripts 5"
+	"Text 3"
+	"Scripts 6"
 ROMX $10
 	"Group 02 Map Defs"
 	"Group 03 Map Defs"
 ROMX $11
 	"Map Data 2"
 ROMX $12
-	"bank12"
+	"Scripts 7"
+	"Text 4"
+	"Scripts 8"
+	"Text 5"
 ROMX $13
 	"bank13"
 ROMX $14
@@ -199,10 +206,18 @@ ROMX $4c
 ROMX $4d
 	"bank4d"
 ROMX $4e
-	"bank4e"
+	"Scripts 9"
+	"Text 6"
+	"Scripts 10"
 	"Airport Cutscene GFX"
 ROMX $4f
-	"bank4f"
+	"Scripts 11"
+	"Text 7"
+	"Scripts 12"
+	"Text 8"
+	"Scripts 13"
+	"Text 9"
+	"Scripts 14"
 ROMX $50
 	"Map Data 5"
 ROMX $51
@@ -215,21 +230,43 @@ ROMX $54
 	"Tilesets 5"
 ROMX $55
 	"Airport 2 Cutscene"
-	"bank55"
+	"Scripts 15"
+	"Text 10"
+	"Scripts 16"
+	"Text 11"
+	"Scripts 17"
 ROMX $56
 	"Tilesets 6"
 ROMX $57
 	"Map Data 7"
 ROMX $58
-	"bank58"
+	"Scripts 18"
+	"Text 12"
+	"Scripts 19"
+	"Text 13"
+	"Scripts 20"
 ROMX $59
-	"bank59"
+	"Scripts 21"
+	"Text 14"
+	"Scripts 22"
+	"Text 15"
+	"Scripts 23"
 ROMX $5a
-	"bank5a"
+	"Scripts 24"
+	"Text 16"
+	"Scripts 25"
+	"Text 17"
+	"Scripts 26"
 ROMX $5b
 	"Mice Minigame"
 ROMX $5c
-	"bank5c"
+	"Scripts 27"
+	"Text 18"
+	"Scripts 28"
+	"Text 19"
+	"Scripts 29"
+	"Text 20"
+	"Scripts 30"
 	"Helen Cutscene"
 ROMX $5d
 	"Rhythm Minigame"
@@ -253,11 +290,16 @@ ROMX $64
 ROMX $65
 	"Tilesets 7"
 ROMX $66
-	"bank66"
+	"Scripts 31"
+	"Text 21"
+	"Scripts 32"
+	"Text 22"
+	"Scripts 33"
 ROMX $67
 	"Beach"
 	"Floating Island"
-	"bank67"
+	"Scripts 34"
+	"Text 23"
 ROMX $69
 	"Group 06 Map Defs"
 	"Group 07 Map Defs"
@@ -271,9 +313,14 @@ ROMX $6b
 	"Map Data 12"
 	"Tilesets 10"
 ROMX $6c
-	"bank6c"
+	"Scripts 35"
+	"Text 24"
+	"Scripts 36"
+	"Text 25"
+	"Scripts 37"
 ROMX $6e
-	"bank6e"
+	"Scripts 38"
+	"Text 26"
 	"Map Data 13"
 ROMX $6f
 	"Cutscene 1d"

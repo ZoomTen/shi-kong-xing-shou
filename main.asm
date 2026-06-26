@@ -54,15 +54,6 @@ INCLUDE "engine/overworld/map_items.asm"
 SECTION "bank0d", ROMX
 INCLUDE "banks/bank_0d.asm"
 
-SECTION "bank0e", ROMX
-INCLUDE "banks/bank_0e.asm"
-
-SECTION "bank0f", ROMX
-INCLUDE "banks/bank_0f.asm"
-
-SECTION "bank12", ROMX
-INCLUDE "banks/bank_12.asm"
-
 SECTION "bank13", ROMX
 INCLUDE "banks/bank_13.asm"
 
@@ -190,32 +181,11 @@ INCLUDE "banks/bank_4a.asm"
 SECTION "bank4d", ROMX
 INCLUDE "banks/bank_4d.asm"
 
-SECTION "bank4e", ROMX
-INCLUDE "banks/bank_4e.asm"
-
-SECTION "bank4f", ROMX
-INCLUDE "banks/bank_4f.asm"
-
 SECTION "Airport 2 Cutscene", ROMX
 INCLUDE "engine/movie/airport2.asm"
 
-SECTION "bank55", ROMX
-INCLUDE "banks/bank_55.asm"
-
-SECTION "bank58", ROMX
-INCLUDE "banks/bank_58.asm"
-
-SECTION "bank59", ROMX
-INCLUDE "banks/bank_59.asm"
-
-SECTION "bank5a", ROMX
-INCLUDE "banks/bank_5a.asm"
-
 SECTION "Mice Minigame", ROMX
 INCLUDE "engine/minigame/mice.asm"
-
-SECTION "bank5c", ROMX
-INCLUDE "banks/bank_5c.asm"
 
 SECTION "Helen Cutscene", ROMX
 INCLUDE "engine/movie/helen.asm"
@@ -247,23 +217,11 @@ INCLUDE "engine/movie/world_map.asm"
 SECTION "Sound Test", ROMX
 INCLUDE "engine/debug/sound_test.asm"
 
-SECTION "bank66", ROMX
-INCLUDE "banks/bank_66.asm"
-
 SECTION "Beach", ROMX
 INCLUDE "engine/movie/beach.asm"
 
 SECTION "Floating Island", ROMX
 INCLUDE "engine/movie/floating_island.asm"
-
-SECTION "bank67", ROMX
-INCLUDE "banks/bank_67.asm"
-
-SECTION "bank6c", ROMX
-INCLUDE "banks/bank_6c.asm"
-
-SECTION "bank6e", ROMX
-INCLUDE "banks/bank_6e.asm"
 
 SECTION "Cutscene 1d", ROMX
 INCLUDE "engine/movie/1d.asm"
