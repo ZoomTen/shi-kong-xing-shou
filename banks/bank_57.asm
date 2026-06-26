@@ -1,4 +1,4 @@
-LifeValley_MapAttributes:
+LifeValley_MapAttributes::
 	map_attr LIFE_VALLEY, \
 	   Layout_057_4014, \
 	   Blocks_057_4252, \
@@ -21,7 +21,7 @@ Palettes_057_457a::
 Collision_057_45c2::
 	INCBIN "data/maps/collision/Collision_057_45c2.bin"
 
-DeathValley_MapAttributes:
+DeathValley_MapAttributes::
 	map_attr DEATH_VALLEY, \
 	   Layout_057_462e, \
 	   Blocks_057_4864, \
@@ -44,7 +44,7 @@ Palettes_057_4b8b::
 Collision_057_4bd3::
 	INCBIN "data/maps/collision/Collision_057_4bd3.bin"
 
-G4_50_MapAttributes:
+G4_50_MapAttributes::
 	map_attr G4_50, \
 	   Layout_057_4c3d, \
 	   Blocks_057_4d1c, \
@@ -67,7 +67,7 @@ Palettes_057_4e00::
 Collision_057_4e48::
 	INCBIN "data/maps/collision/Collision_057_4e48.bin"
 
-TravelingShip_51_MapAttributes:
+TravelingShip_51_MapAttributes::
 	map_attr TRAVELING_SHIP_51, \
 	   Layout_057_4e9c, \
 	   Blocks_057_4ecf, \
@@ -77,7 +77,7 @@ TravelingShip_51_MapAttributes:
 	   0, Tileset_59, \
 	   Collision_057_51cf
 
-G4_52_MapAttributes:
+G4_52_MapAttributes::
 	map_attr G4_52, \
 	   Layout_057_4f77, \
 	   Blocks_057_508a, \
@@ -105,7 +105,7 @@ Palettes_057_5187::
 Collision_057_51cf::
 	INCBIN "data/maps/collision/Collision_057_51cf.bin"
 
-G4_1A_MapAttributes:
+G4_1A_MapAttributes::
 	map_attr G4_1A, \
 	   Layout_057_5258, \
 	   Blocks_057_52bd, \
@@ -115,7 +115,7 @@ G4_1A_MapAttributes:
 	   0, Tileset_60, \
 	   Collision_057_5979
 
-G4_1B_MapAttributes:
+G4_1B_MapAttributes::
 	map_attr G4_1B, \
 	   Layout_057_53ed, \
 	   Blocks_057_5452, \
@@ -125,7 +125,7 @@ G4_1B_MapAttributes:
 	   0, Tileset_60, \
 	   Collision_057_5979
 
-G4_1C_MapAttributes:
+G4_1C_MapAttributes::
 	map_attr G4_1C, \
 	   Layout_057_5576, \
 	   Blocks_057_55db, \
@@ -135,7 +135,7 @@ G4_1C_MapAttributes:
 	   0, Tileset_60, \
 	   Collision_057_5979
 
-SacredtreeTimeTravel_MapAttributes:
+SacredtreeTimeTravel_MapAttributes::
 	map_attr SACREDTREE_TIME_TRAVEL, \
 	   Layout_057_56fb, \
 	   Blocks_057_5848, \
@@ -173,7 +173,7 @@ Palettes_057_5931::
 Collision_057_5979::
 	INCBIN "data/maps/collision/Collision_057_5979.bin"
 
-G4_1E_MapAttributes:
+G4_1E_MapAttributes::
 	map_attr G4_1E, \
 	   Layout_057_59d2, \
 	   Blocks_057_5a73, \
@@ -196,7 +196,7 @@ Palettes_057_5b4b::
 Collision_057_5b93::
 	INCBIN "data/maps/collision/Collision_057_5b93.bin"
 
-G5_27_MapAttributes:
+G5_27_MapAttributes::
 	map_attr G5_27, \
 	   Layout_057_5bbe, \
 	   Blocks_057_5c21, \
@@ -219,7 +219,7 @@ Palettes_057_5c88::
 Collision_057_5cd0::
 	INCBIN "data/maps/collision/Collision_057_5cd0.bin"
 
-G4_20_MapAttributes:
+G4_20_MapAttributes::
 	map_attr G4_20, \
 	   Layout_057_5cf6, \
 	   Blocks_057_5dff, \
@@ -242,7 +242,7 @@ Palettes_057_5e9f::
 Collision_057_5ee7::
 	INCBIN "data/maps/collision/Collision_057_5ee7.bin"
 
-G4_60_MapAttributes:
+G4_60_MapAttributes::
 	map_attr G4_60, \
 	   Layout_057_5f56, \
 	   Blocks_057_5fe7, \
@@ -252,7 +252,7 @@ G4_60_MapAttributes:
 	   0, Tileset_64, \
 	   Collision_057_6805
 
-G4_61_MapAttributes:
+G4_61_MapAttributes::
 	map_attr G4_61, \
 	   Layout_057_611f, \
 	   Blocks_057_61b0, \
@@ -262,7 +262,7 @@ G4_61_MapAttributes:
 	   0, Tileset_64, \
 	   Collision_057_6805
 
-G4_62_MapAttributes:
+G4_62_MapAttributes::
 	map_attr G4_62, \
 	   Layout_057_62f4, \
 	   Blocks_057_6385, \
@@ -272,7 +272,7 @@ G4_62_MapAttributes:
 	   0, Tileset_64, \
 	   Collision_057_6805
 
-RadarStation_MapAttributes:
+RadarStation_MapAttributes::
 	map_attr RADAR_STATION, \
 	   Layout_057_64e1, \
 	   Blocks_057_665a, \
@@ -310,7 +310,7 @@ Palettes_057_67bd::
 Collision_057_6805::
 	INCBIN "data/maps/collision/Collision_057_6805.bin"
 
-SacredtreeVillage_25_MapAttributes:
+SacredtreeVillage_25_MapAttributes::
 	map_attr SACREDTREE_VILLAGE_25, \
 	   Layout_057_688e, \
 	   Blocks_057_691f, \
@@ -320,7 +320,7 @@ SacredtreeVillage_25_MapAttributes:
 	   0, Tileset_66, \
 	   Collision_057_7249
 
-G4_26_MapAttributes:
+G4_26_MapAttributes::
 	map_attr G4_26, \
 	   Layout_057_6b1b, \
 	   Blocks_057_6bac, \
@@ -330,7 +330,7 @@ G4_26_MapAttributes:
 	   0, Tileset_66, \
 	   Collision_057_7249
 
-SacredtreeVillage_27_MapAttributes:
+SacredtreeVillage_27_MapAttributes::
 	map_attr SACREDTREE_VILLAGE_27, \
 	   Layout_057_6da8, \
 	   Blocks_057_6f71, \
@@ -363,7 +363,7 @@ Palettes_057_7201::
 Collision_057_7249::
 	INCBIN "data/maps/collision/Collision_057_7249.bin"
 
-SacredtreeVillage_55_MapAttributes:
+SacredtreeVillage_55_MapAttributes::
 	map_attr SACREDTREE_VILLAGE_55, \
 	   Layout_057_72c0, \
 	   Blocks_057_72e9, \
@@ -373,7 +373,7 @@ SacredtreeVillage_55_MapAttributes:
 	   0, Tileset_65, \
 	   Collision_057_7604
 
-G4_29_MapAttributes:
+G4_29_MapAttributes::
 	map_attr G4_29, \
 	   Layout_057_7371, \
 	   Blocks_057_74a6, \
@@ -401,7 +401,7 @@ Palettes_057_75bc::
 Collision_057_7604::
 	INCBIN "data/maps/collision/Collision_057_7604.bin"
 
-G4_5E_MapAttributes:
+G4_5E_MapAttributes::
 	map_attr G4_5E, \
 	   Layout_057_765c, \
 	   Blocks_057_7741, \
@@ -424,7 +424,7 @@ Palettes_057_7868::
 Collision_057_78b0::
 	INCBIN "data/maps/collision/Collision_057_78b0.bin"
 
-G4_5F_MapAttributes:
+G4_5F_MapAttributes::
 	map_attr G4_5F, \
 	   Layout_057_78da, \
 	   Blocks_057_79ab, \
@@ -447,7 +447,7 @@ Palettes_057_7abe::
 Collision_057_7b06::
 	INCBIN "data/maps/collision/Collision_057_7b06.bin"
 
-G4_53_MapAttributes:
+G4_53_MapAttributes::
 	map_attr G4_53, \
 	   Layout_057_7b43, \
 	   Blocks_057_7bd6, \
@@ -470,7 +470,7 @@ Palettes_057_7c55::
 Collision_057_7c9d::
 	INCBIN "data/maps/collision/Collision_057_7c9d.bin"
 
-G4_54_MapAttributes:
+G4_54_MapAttributes::
 	map_attr G4_54, \
 	   Layout_057_7ccf, \
 	   Blocks_057_7dc6, \

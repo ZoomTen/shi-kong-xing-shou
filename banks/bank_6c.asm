@@ -1,8 +1,8 @@
-G6_28_ObjectEvents:
+G6_28_ObjectEvents::
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_06c_400c
 	objects_end
 
-Script_06c_400c:
+Script_06c_400c::
 	textface text_6c_40a4
 	end
 Script_06c_4010::
@@ -13,18 +13,18 @@ Script_06c_4010::
 	scr_35 $0b
 	end
 
-Script_06c_4021:
+Script_06c_4021::
 	end
 
-G6_29_ObjectEvents:
+G6_29_ObjectEvents::
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_06c_4039
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_06c_403d
 	objects_end
 
-Script_06c_4039:
+Script_06c_4039::
 	stext text_6c_405d
 	end
-Script_06c_403d:
+Script_06c_403d::
 	stext text_6c_4075
 	end
 Script_06c_4041::
@@ -34,7 +34,7 @@ Script_06c_4041::
 	scr_37
 	end
 
-Script_06c_404e:
+Script_06c_404e::
 	end
 Script_06c_404f::
 	face FACE_UP
@@ -43,24 +43,24 @@ Script_06c_404f::
 	townmusicanim
 	end
 
-Script_06c_405c:
+Script_06c_405c::
 	end
 
 INCLUDE "data/text/script_g6_08_1.asm"
 
-G6_18_ObjectEvents:
+G6_18_ObjectEvents::
 	object_event $04,  6, 11, wEventFlags + 21, $07, $00, $00, $00, Script_06c_40e8
 	object_event $06, 10,  6, wEventFlags + 22, $00, $00, $00, $01, Script_06c_4111
 	object_event $02, 10, 15, wEventFlags + 22, $01, $00, $00, $02, Script_06c_413a
 	object_event $0c, 15,  8, wEventFlags + 22, $02, $00, $00, $03, Script_06c_4163
 	objects_end
-Script_06c_40e8:
+Script_06c_40e8::
 	checkbit wEventFlags + 21, $06, Script_06c_40f6
 	textface text_6c_6aa6
 	setbit wEventFlags + 20, $06
 	end
 
-Script_06c_40f6:
+Script_06c_40f6::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -74,13 +74,13 @@ Script_06c_40f6:
 	setbit wEventFlags + 21, $07
 	end
 
-Script_06c_4111:
+Script_06c_4111::
 	checkbit wEventFlags + 21, $06, Script_06c_411f
 	stext text_6c_6ad5
 	setbit wEventFlags + 20, $07
 	end
 
-Script_06c_411f:
+Script_06c_411f::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -94,13 +94,13 @@ Script_06c_411f:
 	setbit wEventFlags + 22, $00
 	end
 
-Script_06c_413a:
+Script_06c_413a::
 	checkbit wEventFlags + 21, $06, Script_06c_4148
 	stext text_6c_6b13
 	setbit wEventFlags + 21, $02
 	end
 
-Script_06c_4148:
+Script_06c_4148::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -114,13 +114,13 @@ Script_06c_4148:
 	setbit wEventFlags + 22, $01
 	end
 
-Script_06c_4163:
+Script_06c_4163::
 	checkbit wEventFlags + 21, $06, Script_06c_4171
 	stext text_6c_6b44
 	setbit wEventFlags + 21, $03
 	end
 
-Script_06c_4171:
+Script_06c_4171::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -134,7 +134,7 @@ Script_06c_4171:
 	setbit wEventFlags + 22, $02
 	end
 
-G6_19_ObjectEvents:
+G6_19_ObjectEvents::
 	object_event $29,  5,  4, wEventFlags + 21, $06, $00, $00, $00, Script_06c_41a6
 	objects_end
 Script_06c_4198::
@@ -142,51 +142,51 @@ Script_06c_4198::
 	setmap MAP_G6_1B, $00
 	end
 
-Script_06c_41a2:
+Script_06c_41a2::
 	setmap MAP_G6_1B, $01
 	end
 
-Script_06c_41a6:
+Script_06c_41a6::
 	checkbit wEventFlags + 20, $06, Script_06c_41b0
 	stext text_6c_6a32
 	end
 
-Script_06c_41b0:
+Script_06c_41b0::
 	checkbit wEventFlags + 20, $07, Script_06c_41ba
 	stext text_6c_6a32
 	end
 
-Script_06c_41ba:
+Script_06c_41ba::
 	checkbit wEventFlags + 21, $02, Script_06c_41c4
 	stext text_6c_6a32
 	end
 
-Script_06c_41c4:
+Script_06c_41c4::
 	checkbit wEventFlags + 21, $03, Script_06c_41ce
 	stext text_6c_6a32
 	end
 
-Script_06c_41ce:
+Script_06c_41ce::
 	checkbit wEventFlags + 21, $04, Script_06c_41d8
 	stext text_6c_6a32
 	end
 
-Script_06c_41d8:
+Script_06c_41d8::
 	checkbit wEventFlags + 21, $05, Script_06c_41e2
 	stext text_6c_6a32
 	end
 
-Script_06c_41e2:
+Script_06c_41e2::
 	checkbit wEventFlags + 21, $03, Script_06c_41ec
 	stext text_6c_6c58
 	end
 
-Script_06c_41ec:
+Script_06c_41ec::
 	checkbit wEventFlags + 21, $04, Script_06c_41f6
 	stext text_6c_6a32
 	end
 
-Script_06c_41f6:
+Script_06c_41f6::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -231,17 +231,17 @@ ObjSprite_6c_4266::
 	object_event $59,  5,  8, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_1A_ObjectEvents:
+G6_1A_ObjectEvents::
 	object_event $08,  4,  4, wEventFlags + 22, $03, $00, $00, $00, Script_06c_4289
 	object_event $0a,  7,  4, wEventFlags + 22, $04, $00, $00, $01, Script_06c_42b2
 	objects_end
-Script_06c_4289:
+Script_06c_4289::
 	checkbit wEventFlags + 21, $06, Script_06c_4297
 	stext text_6c_6bad
 	setbit wEventFlags + 21, $04
 	end
 
-Script_06c_4297:
+Script_06c_4297::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -255,13 +255,13 @@ Script_06c_4297:
 	setbit wEventFlags + 22, $03
 	end
 
-Script_06c_42b2:
+Script_06c_42b2::
 	checkbit wEventFlags + 21, $06, Script_06c_42c0
 	stext text_6c_6bf2
 	setbit wEventFlags + 21, $05
 	end
 
-Script_06c_42c0:
+Script_06c_42c0::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -275,15 +275,15 @@ Script_06c_42c0:
 	setbit wEventFlags + 22, $04
 	end
 
-G6_1B_ObjectEvents:
+G6_1B_ObjectEvents::
 	object_event $0e,  5,  4, wEventFlags + 20, $03, $00, $00, $00, Script_06c_42e7
 	objects_end
-Script_06c_42e7:
+Script_06c_42e7::
 	checkbit wEventFlags + 21, $06, Script_06c_42f5
 	stext text_6c_6c25
 	setbit wEventFlags + 20, $04
 	end
-Script_06c_42f5:
+Script_06c_42f5::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -306,7 +306,7 @@ Script_06c_4310::
 	stext text_6c_6fb1
 	end
 
-Script_06c_4326:
+Script_06c_4326::
 	checkbit wEventFlags + 22, $01, Script_06c_433c
 	clearplayerpos
 	face FACE_LEFT
@@ -316,7 +316,7 @@ Script_06c_4326:
 	stext text_6c_6fb1
 	end
 
-Script_06c_433c:
+Script_06c_433c::
 	checkbit wEventFlags + 22, $02, Script_06c_4352
 	clearplayerpos
 	face FACE_LEFT
@@ -326,7 +326,7 @@ Script_06c_433c:
 	stext text_6c_6fb1
 	end
 
-Script_06c_4352:
+Script_06c_4352::
 	checkbit wEventFlags + 22, $03, Script_06c_4368
 	clearplayerpos
 	face FACE_LEFT
@@ -336,7 +336,7 @@ Script_06c_4352:
 	stext text_6c_6fb1
 	end
 
-Script_06c_4368:
+Script_06c_4368::
 	checkbit wEventFlags + 22, $04, Script_06c_437e
 	clearplayerpos
 	face FACE_LEFT
@@ -346,7 +346,7 @@ Script_06c_4368:
 	stext text_6c_6fb1
 	end
 
-Script_06c_437e:
+Script_06c_437e::
 	checkbit wEventFlags + 20, $03, Script_06c_439a
 	checkbit wEventFlags + 22, $04, Script_06c_439a
 	clearplayerpos
@@ -357,15 +357,15 @@ Script_06c_437e:
 	stext text_6c_6fb1
 	end
 
-Script_06c_439a:
+Script_06c_439a::
 	setmap MAP_G6_1E, $00
 	end
 
-G6_1D_ObjectEvents:
+G6_1D_ObjectEvents::
 	object_event $22,  8,  4, 0, $00, $00, $00, $00, Script_06c_43aa
 	objects_end
 
-Script_06c_43aa:
+Script_06c_43aa::
 	textface text_6c_40a4
 	end
 Script_06c_43ae::
@@ -376,34 +376,34 @@ Script_06c_43ae::
 Script_06c_43b8::
 	face FACE_RIGHT
 	spriteface  2, FACE_LEFT
-Script_06c_43bd:
+Script_06c_43bd::
 	stext text_6c_40a4
 	checkbit wEventFlags + 4, $01, Script_06c_43c9
 	scr_35 $0c
 	end
 
-Script_06c_43c9:
+Script_06c_43c9::
 	end
 
-G6_20_ObjectEvents:
+G6_20_ObjectEvents::
 	object_event $11,  5,  4, wEventFlags + 24, $03, $00, $00, $00, Script_06c_43aa
 	object_event $59,  4,  5, wEventFlags + 24, $03, $00, $00, $01, Script_06c_43aa
 	object_event $29,  5,  5, wEventFlags + 24, $03, $00, $00, $02, Script_06c_43aa
 	objects_end
 
-G6_21_ObjectEvents:
+G6_21_ObjectEvents::
 	object_event $11,  3,  4, 0, $00, $00, $00, $00, Script_06c_440e
 	object_event $59,  3,  6, 0, $00, $00, $00, $01, Script_06c_4412
 	object_event $29,  7,  3, 0, $00, $00, $00, $02, Script_06c_4416
 	objects_end
 
-Script_06c_440e:
+Script_06c_440e::
 	stext text_6c_743e
 	end
-Script_06c_4412:
+Script_06c_4412::
 	stext text_6c_741a
 	end
-Script_06c_4416:
+Script_06c_4416::
 	stext text_6c_7476
 	end
 Script_06c_441a::
@@ -454,35 +454,35 @@ Script_06c_441a::
 	setbit wEventFlags + 24, $03
 	end
 
-G6_08_ObjectEvents:
+G6_08_ObjectEvents::
 	object_event $5d, 16,  4, wEventFlags + 22, $07, $00, $00, $00, Script_06c_455a
 	object_event $22, 15, 17, 0, $00, $00, $00, $01, Script_06c_7a51
 	object_event $25,  3,  1, 0, $00, $00, $00, $02, Script_06c_7a5e
 	object_event $25,  1, 12, 0, $00, $00, $00, $03, Script_06c_7a6a
 	objects_end
 
-G6_09_ObjectEvents:
+G6_09_ObjectEvents::
 	object_event $5c, 14, 25, wEventFlags + 23, $00, $00, $00, $00, Script_06c_456d
 	object_event $22, 14,  4, 0, $00, $00, $00, $01, Script_06c_7a51
 	object_event $25,  3, 28, 0, $00, $00, $00, $02, Script_06c_7a5e
 	object_event $25,  2, 23, 0, $00, $00, $00, $03, Script_06c_7a6a
 	objects_end
 
-G6_0A_ObjectEvents:
+G6_0A_ObjectEvents::
 	object_event $50,  4,  3, wEventFlags + 23, $01, $00, $00, $00, Script_06c_4580
 	object_event $22, 16, 25, 0, $00, $00, $00, $01, Script_06c_7a51
 	object_event $25,  4, 13, 0, $00, $00, $00, $02, Script_06c_7a5e
 	object_event $25,  7, 28, 0, $00, $00, $00, $03, Script_06c_7a6a
 	objects_end
 
-EndingEpilogue_ObjectEvents:
+EndingEpilogue_ObjectEvents::
 	object_event $5e,  9, 17, wEventFlags + 23, $02, $00, $00, $00, Script_06c_4596
 	object_event $5f,  9, 17, wEventFlags + 23, $02, $01, $00, $00, Script_06c_4596
 	object_event $22,  1, 16, 0, $00, $00, $00, $01, Script_06c_7a51
 	object_event $25, 10, 28, 0, $00, $00, $00, $02, Script_06c_7a5e
 	object_event $25,  8,  2, 0, $00, $00, $00, $03, Script_06c_7a6a
 	objects_end
-Script_06c_455a:
+Script_06c_455a::
 	textface text_6c_748f
 	startbattle BattleData_02d_4f85
 	checkbit wEventFlags + 3, $03, Script_06c_473a
@@ -490,7 +490,7 @@ Script_06c_455a:
 	setbit wEventFlags + 22, $07
 	end
 
-Script_06c_456d:
+Script_06c_456d::
 	textface text_6c_74d2
 	startbattle BattleData_02d_4fb3
 	checkbit wEventFlags + 3, $03, Script_06c_473a
@@ -498,7 +498,7 @@ Script_06c_456d:
 	setbit wEventFlags + 23, $00
 	end
 
-Script_06c_4580:
+Script_06c_4580::
 	textface text_6c_757d
 	startbattle BattleData_02d_4fe1
 	checkbit wEventFlags + 3, $03, Script_06c_473a
@@ -507,7 +507,7 @@ Script_06c_4580:
 	setbit wEventFlags + 23, $01
 	end
 
-Script_06c_4596:
+Script_06c_4596::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -560,7 +560,7 @@ Script_06c_460e::
 	spriteface  1, FACE_LEFT
 	end
 
-Script_06c_4621:
+Script_06c_4621::
 	face FACE_DOWN
 	setmap MAP_G6_09, $00
 	end
@@ -573,7 +573,7 @@ Script_06c_4627::
 	spriteface  1, FACE_LEFT
 	end
 
-Script_06c_463a:
+Script_06c_463a::
 	face FACE_LEFT
 	setmap MAP_G6_0A, $00
 	end
@@ -586,17 +586,17 @@ Script_06c_4640::
 	spriteface  1, FACE_DOWN
 	end
 
-Script_06c_4653:
+Script_06c_4653::
 	face FACE_DOWN
 	setmap MAP_ENDING_EPILOGUE, $00
 	end
 
-Script_06c_4659:
+Script_06c_4659::
 	dirmovement
 	end
 
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_06c_465b:
+unk_06c_465b::
 	db $11, $00, $00, $00, $00, $00, $00, $06, $47, $88
 ObjSprite_6c_4665::
 	object_event $5e,  9, 17, 0, $00, $00, $00, $00, Script_06c_4706
@@ -627,15 +627,15 @@ Script_06c_4671::
 	spriteface  4, FACE_LEFT
 	end
 
-G6_1C_ObjectEvents:
+G6_1C_ObjectEvents::
 	object_event $25,  3,  4, 0, $00, $00, $00, $00, Script_06c_46ce
 	object_event $25,  8,  4, 0, $00, $00, $00, $01, Script_06c_46d2
 	objects_end
 
-Script_06c_46ce:
+Script_06c_46ce::
 	stext text_6c_405d
 	end
-Script_06c_46d2:
+Script_06c_46d2::
 	stext text_6c_4075
 	end
 Script_06c_46d6::
@@ -645,13 +645,13 @@ Script_06c_46d6::
 	end
 Script_06c_46e0::
 	face FACE_UP
-Script_06c_46e2:
+Script_06c_46e2::
 	stext text_6c_405d
 	checkbit wEventFlags + 3, $03, Script_06c_46ed
 	scr_37
 	end
 
-Script_06c_46ed:
+Script_06c_46ed::
 	end
 Script_06c_46ee::
 	face FACE_RIGHT
@@ -660,16 +660,16 @@ Script_06c_46ee::
 	end
 Script_06c_46f8::
 	face FACE_UP
-Script_06c_46fa:
+Script_06c_46fa::
 	stext text_6c_4075
 	checkbit wEventFlags + 3, $03, Script_06c_4705
 	townmusicanim
 	end
 
-Script_06c_4705:
+Script_06c_4705::
 	end
 
-Script_06c_4706:
+Script_06c_4706::
 	end
 
 Bank6c_EmptyObjectEvent::
@@ -679,15 +679,15 @@ Script_06c_4708::
 	setmap MAP_KINGKONG_MOUNTAIN, $01
 	end2
 
-Script_06c_4712:
+Script_06c_4712::
 	setmap MAP_KINGKONG_MOUNTAIN, $00
 	end2
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-KingkongMountain_ObjectEvents:
+KingkongMountain_ObjectEvents::
 	object_event $62,  8,  3, wEventFlags + 18, $07, $00, $00, $00, Script_06c_4722
 	objects_end
-Script_06c_4722:
+Script_06c_4722::
 	textface text_6c_5f63
 	startbattle BattleData_02d_4efb
 	checkbit wEventFlags + 3, $03, Script_06c_473a
@@ -699,11 +699,11 @@ Script_06c_473a::
 	end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-G6_0D_ObjectEvents2:
+G6_0D_ObjectEvents2::
 	object_event $0e,  6,  5, wEventFlags + 24, $02, $00, $00, $00, Script_06c_4706
 	object_event $0f,  6,  6, wEventFlags + 24, $02, $00, $00, $01, Script_06c_4706
 	objects_end
-Script_06c_4752:
+Script_06c_4752::
 	setplayerchar $00
 	face FACE_DOWN
 	warpmode GAMEMODE_FLOATING_ISLAND_CUTSCENE2, $0d, $01
@@ -732,39 +732,39 @@ Script_06c_4752:
 	end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-BaalCapitalProfessor_07_ObjectEvents:
+BaalCapitalProfessor_07_ObjectEvents::
 	object_event $5a,  6,  6, wEventFlags + 19, $03, $00, $00, $00, Script_06c_502c
 	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_47e9
 	objects_end
 
 ; TODO: object_event array + interleaved scripts/text - per-bank carve
-BaalCapitalProfessor_07_ObjectEvents2:
+BaalCapitalProfessor_07_ObjectEvents2::
 	object_event $5b,  6,  6, wEventFlags + 19, $03, $00, $00, $00, Script_06c_502c
 	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_47e9
 	objects_end
 
-BaalCapitalProfessor_07_ObjectEvents4:
+BaalCapitalProfessor_07_ObjectEvents4::
 	object_event $59,  6,  6, 0, $00, $00, $00, $00, Script_06c_4706
 	object_event $58,  5,  6, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-BaalCapitalProfessor_07_ObjectEvents3:
+BaalCapitalProfessor_07_ObjectEvents3::
 	object_event $58,  5,  6, 0, $00, $00, $00, $00, Script_06c_47e9
 	objects_end
 
-Script_06c_47e9:
+Script_06c_47e9::
 	checkbit wEventFlags + 19, $03, Script_06c_47f0
 	end
-Script_06c_47f0:
+Script_06c_47f0::
 	ifcharindex $01, Script_06c_47fb
 	stext text_6c_5bde
 	stext text_6c_5c09
 	end
-Script_06c_47fb:
+Script_06c_47fb::
 	stext text_6c_61cf
 	end
 
-BaalCapital_0c_ObjectEvents:
+BaalCapital_0c_ObjectEvents::
 	object_event $19,  6,  9, 0, $00, $00, $09, $00, Script_06c_4890
 	object_event $16,  8, 27, 0, $00, $00, $0b, $01, Script_06c_4894
 	object_event $14, 11,  6, 0, $00, $00, $06, $02, Script_06c_48a2
@@ -775,7 +775,7 @@ BaalCapital_0c_ObjectEvents:
 	object_event $22, 23, 12, 0, $00, $00, $09, $02, Script_06c_48c0
 	objects_end
 
-BaalCapital_0c_ObjectEvents2:
+BaalCapital_0c_ObjectEvents2::
 	object_event $0e, 18,  5, 0, $00, $00, $00, $00, Script_06c_4706
 	object_event $12, 15,  5, 0, $00, $00, $00, $01, Script_06c_4706
 	object_event $1b, 20,  5, 0, $00, $00, $00, $02, Script_06c_4706
@@ -783,91 +783,91 @@ BaalCapital_0c_ObjectEvents2:
 	object_event $15, 18,  7, 0, $00, $00, $00, $04, Script_06c_4706
 	objects_end
 
-Script_06c_4890:
+Script_06c_4890::
 	textface text_6c_517a
 	end
-Script_06c_4894:
+Script_06c_4894::
 	checkbit wEventFlags + 18, $04, Script_06c_489e
 	textface text_6c_5197
 	end
-Script_06c_489e:
+Script_06c_489e::
 	textface text_6c_5996
 	end
-Script_06c_48a2:
+Script_06c_48a2::
 	textface text_6c_51ff
 	end
-Script_06c_48a6:
+Script_06c_48a6::
 	textface text_6c_5265
 	end
-Script_06c_48aa:
+Script_06c_48aa::
 	textface text_6c_52bf
 	end
-Script_06c_48ae:
+Script_06c_48ae::
 	textface text_6c_5317
 	end
-Script_06c_48b2:
+Script_06c_48b2::
 	checkbit wEventFlags + 18, $04, Script_06c_48bc
 	textface text_6c_5368
 	end
-Script_06c_48bc:
+Script_06c_48bc::
 	textface text_6c_59cb
 	end
-Script_06c_48c0:
+Script_06c_48c0::
 	checkbit wEventFlags + 18, $04, Script_06c_48ca
 	textface text_6c_53e5
 	end
-Script_06c_48ca:
+Script_06c_48ca::
 	textface text_6c_5a48
 	end
 
-G6_0D_ObjectEvents:
+G6_0D_ObjectEvents::
 	object_event $70,  6,  2, wEventFlags + 19, $03, $01, $00, $00, Script_06c_4706
 	object_event $16,  6,  4, wEventFlags + 19, $03, $01, $00, $01, Script_06c_4f14
 	objects_end
 
-G6_0D_ObjectEvents3:
+G6_0D_ObjectEvents3::
 	object_event $70,  6,  2, wEventFlags + 19, $03, $01, $00, $00, Script_06c_4706
 	objects_end
 
-G6_10_ObjectEvents2:
+G6_10_ObjectEvents2::
 	object_event $29,  3,  5, 0, $00, $00, $00, $00, Script_06c_48fd
 	objects_end
 
-Script_06c_48fd:
+Script_06c_48fd::
 	textface text_6c_64f3
 	end
 
-G6_14_ObjectEvents:
+G6_14_ObjectEvents::
 	object_event $02,  3,  5, wEventFlags + 19, $04, $00, $00, $00, Script_06c_498b
 	object_event $03,  3,  4, wEventFlags + 19, $04, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_11_ObjectEvents:
+G6_11_ObjectEvents::
 	object_event $04,  3,  4, wEventFlags + 19, $05, $00, $00, $00, Script_06c_49ab
 	object_event $05,  3,  3, wEventFlags + 19, $05, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_15_ObjectEvents:
+G6_15_ObjectEvents::
 	object_event $06,  3,  5, wEventFlags + 19, $06, $00, $00, $00, Script_06c_49cb
 	object_event $07,  3,  4, wEventFlags + 19, $06, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_12_ObjectEvents:
+G6_12_ObjectEvents::
 	object_event $08,  3,  4, wEventFlags + 19, $07, $00, $00, $00, Script_06c_49eb
 	object_event $09,  3,  3, wEventFlags + 19, $07, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_16_ObjectEvents:
+G6_16_ObjectEvents::
 	object_event $0a,  3,  5, wEventFlags + 21, $00, $00, $00, $00, Script_06c_4a0b
 	object_event $0b,  3,  4, wEventFlags + 21, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_17_ObjectEvents:
+G6_17_ObjectEvents::
 	object_event $0c,  7,  4, wEventFlags + 21, $01, $00, $00, $00, Script_06c_4a2b
 	object_event $0d,  7,  3, wEventFlags + 21, $01, $00, $00, $01, Script_06c_4706
 	objects_end
 
-Script_06c_498b:
+Script_06c_498b::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -882,7 +882,7 @@ Script_06c_498b:
 	scr_62 $01, $01
 	setbit wEventFlags + 19, $04
 	end
-Script_06c_49ab:
+Script_06c_49ab::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -897,7 +897,7 @@ Script_06c_49ab:
 	scr_62 $02, $01
 	setbit wEventFlags + 19, $05
 	end
-Script_06c_49cb:
+Script_06c_49cb::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -912,7 +912,7 @@ Script_06c_49cb:
 	scr_62 $03, $01
 	setbit wEventFlags + 19, $06
 	end
-Script_06c_49eb:
+Script_06c_49eb::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -927,7 +927,7 @@ Script_06c_49eb:
 	scr_62 $04, $01
 	setbit wEventFlags + 19, $07
 	end
-Script_06c_4a0b:
+Script_06c_4a0b::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -942,7 +942,7 @@ Script_06c_4a0b:
 	scr_62 $05, $01
 	setbit wEventFlags + 21, $00
 	end
-Script_06c_4a2b:
+Script_06c_4a2b::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -968,7 +968,7 @@ Script_06c_4a4b::
 	stext text_6c_6665
 	end
 
-Script_06c_4a64:
+Script_06c_4a64::
 	checkbit wEventFlags + 19, $05, Script_06c_4a7d
 	clearplayerpos
 	face FACE_DOWN
@@ -979,7 +979,7 @@ Script_06c_4a64:
 	stext text_6c_6665
 	end
 
-Script_06c_4a7d:
+Script_06c_4a7d::
 	checkbit wEventFlags + 19, $06, Script_06c_4a96
 	clearplayerpos
 	face FACE_DOWN
@@ -990,7 +990,7 @@ Script_06c_4a7d:
 	stext text_6c_6665
 	end
 
-Script_06c_4a96:
+Script_06c_4a96::
 	checkbit wEventFlags + 19, $07, Script_06c_4aaf
 	clearplayerpos
 	face FACE_DOWN
@@ -1001,7 +1001,7 @@ Script_06c_4a96:
 	stext text_6c_6665
 	end
 
-Script_06c_4aaf:
+Script_06c_4aaf::
 	checkbit wEventFlags + 21, $00, Script_06c_4ac8
 	clearplayerpos
 	face FACE_DOWN
@@ -1012,7 +1012,7 @@ Script_06c_4aaf:
 	stext text_6c_6665
 	end
 
-Script_06c_4ac8:
+Script_06c_4ac8::
 	checkbit wEventFlags + 21, $01, Script_06c_4ae7
 	clearplayerpos
 	face FACE_DOWN
@@ -1023,12 +1023,12 @@ Script_06c_4ac8:
 	stext text_6c_6665
 	end
 
-Script_06c_4ae1:
+Script_06c_4ae1::
 	face FACE_DOWN
 	setmap MAP_G6_0F, $03
 	end2
 
-Script_06c_4ae7:
+Script_06c_4ae7::
 	setplayerchar $00
 	setmap MAP_G6_13, $00
 	emote  0, EMOTE_EXCLAMATION
@@ -1090,7 +1090,7 @@ Script_06c_4ae7:
 	setbit wEventFlags + 20, $03
 	end
 
-Script_06c_4b9c:
+Script_06c_4b9c::
 	stext text_6c_68ea
 	stext text_6c_68fd
 	setattach $01, $00, $00, $f0
@@ -1126,41 +1126,41 @@ Script_06c_4b9c:
 	scr_62 $07, $00
 	end
 
-G6_13_ObjectEvents:
+G6_13_ObjectEvents::
 	object_event $0e,  8,  3, 0, $00, $00, $00, $00, Script_06c_4706
 	objects_end
 ObjSprite_6c_4c0b::
 	object_event $50,  9,  3, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-BaalCapital_22_ObjectEvents:
+BaalCapital_22_ObjectEvents::
 	object_event $19,  3,  6, 0, $00, $00, $08, $00, Script_06c_4daa
 	object_event $16,  9,  5, 0, $00, $00, $00, $01, Script_06c_4db8
 	objects_end
 
-BaalCapital_23_ObjectEvents:
+BaalCapital_23_ObjectEvents::
 	object_event $20,  4,  4, 0, $00, $00, $07, $00, Script_06c_4dc6
 	object_event $1f,  6,  4, 0, $00, $00, $00, $01, Script_06c_4dca
 	objects_end
 
-BaalCapital_24_ObjectEvents:
+BaalCapital_24_ObjectEvents::
 	object_event $1b,  9,  6, 0, $00, $00, $00, $00, Script_06c_4dce
 	object_event $1a,  4,  6, 0, $00, $00, $09, $01, Script_06c_4dd2
 	objects_end
 
-BaalCapitalBlacksmith_ObjectEvents:
+BaalCapitalBlacksmith_ObjectEvents::
 	object_event $24,  4,  5, 0, $00, $00, $00, $00, Script_06c_4dd6
 	objects_end
 
-BaalCapitalProfessor_2b_ObjectEvents4:
+BaalCapitalProfessor_2b_ObjectEvents4::
 	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4cc1
 	objects_end
 
-BaalCapitalProfessor_2b_ObjectEvents:
+BaalCapitalProfessor_2b_ObjectEvents::
 	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4cc1
 	objects_end
 
-BaalCapitalProfessor_2b_ObjectEvents3:
+BaalCapitalProfessor_2b_ObjectEvents3::
 	object_event $5a,  5,  4, 0, $00, $00, $00, $00, Script_06c_4cc1
 	object_event $58,  6,  4, 0, $00, $00, $00, $00, Script_06c_4ceb
 	objects_end
@@ -1169,38 +1169,38 @@ Script_06c_4c97::
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $00
 	end2
 
-Script_06c_4ca1:
+Script_06c_4ca1::
 	checkbit wEventFlags + 18, $06, Script_06c_4cab
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $02
 	end2
 
-Script_06c_4cab:
+Script_06c_4cab::
 	checkbit wEventFlags + 19, $01, Script_06c_4cb5
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $00
 	end2
 
-Script_06c_4cb5:
+Script_06c_4cb5::
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $03
 	end2
 Script_06c_4cb9::
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $01
 	end2
 
-Script_06c_4cbd:
+Script_06c_4cbd::
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $05
 	end2
 
-Script_06c_4cc1:
+Script_06c_4cc1::
 	checkbit wEventFlags + 18, $06, Script_06c_4ccb
 	textface text_6c_5682
 	end
 
-Script_06c_4ccb:
+Script_06c_4ccb::
 	checkbit wEventFlags + 19, $00, Script_06c_4cd5
 	textface text_6c_5e58
 	end
 
-Script_06c_4cd5:
+Script_06c_4cd5::
 	textface text_6c_5f88
 	spriteface  2, FACE_UP
 	spritewalk  2, MOVE_UP
@@ -1210,14 +1210,14 @@ Script_06c_4cd5:
 	setbit wEventFlags + 19, $02
 	end
 
-Script_06c_4ceb:
+Script_06c_4ceb::
 	ifcharindex $01, Script_06c_4cf9
 	stext text_6c_5bde
 	stext text_6c_5be7
 	stext text_6c_5c09
 	end
 
-Script_06c_4cf9:
+Script_06c_4cf9::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -1255,22 +1255,22 @@ unk_06c_4d4f::
 	object_event $58,  6,  4, wEventFlags + 18, $04, $01, $00, $00, Script_06c_4e3d
 	objects_end
 
-BaalCapital_26_ObjectEvents:
+BaalCapital_26_ObjectEvents::
 	object_event $58,  4,  4, wEventFlags + 18, $04, $00, $00, $00, Script_06c_4ea3
 	objects_end
 
-BaalCapital_26_ObjectEvents2:
+BaalCapital_26_ObjectEvents2::
 	object_event $58,  4,  4, 0, $00, $00, $00, $00, Script_06c_4706
 	objects_end
 ; TODO: map array reached via binary map header (source map unknown)
-ObjectEvents_06c_4d7e:
+ObjectEvents_06c_4d7e::
 	object_event $5a,  5,  3, 0, $00, $00, $00, $00, Script_06c_4d8a
 	objects_end
-Script_06c_4d8a:
+Script_06c_4d8a::
 	checkbit wEventFlags + 19, $00, Script_06c_4d94
 	textface text_6c_5dd0
 	end
-Script_06c_4d94:
+Script_06c_4d94::
 	textface text_6c_5f88
 	spriteface  2, FACE_UP
 	spritewalk  2, MOVE_UP
@@ -1279,43 +1279,43 @@ Script_06c_4d94:
 	listdec $02, $27
 	setbit wEventFlags + 19, $02
 	end
-Script_06c_4daa:
+Script_06c_4daa::
 	checkbit wEventFlags + 18, $04, Script_06c_4db4
 	textface text_6c_542b
 	end
-Script_06c_4db4:
+Script_06c_4db4::
 	textface text_6c_5a95
 	end
-Script_06c_4db8:
+Script_06c_4db8::
 	checkbit wEventFlags + 18, $04, Script_06c_4dc2
 	textface text_6c_547d
 	end
-Script_06c_4dc2:
+Script_06c_4dc2::
 	textface text_6c_5b0a
 	end
-Script_06c_4dc6:
+Script_06c_4dc6::
 	textface text_6c_54d1
 	end
-Script_06c_4dca:
+Script_06c_4dca::
 	textface text_6c_553e
 	end
-Script_06c_4dce:
+Script_06c_4dce::
 	textface text_6c_559c
 	end
-Script_06c_4dd2:
+Script_06c_4dd2::
 	textface text_6c_55f6
 	end
-Script_06c_4dd6:
+Script_06c_4dd6::
 	checkbit wEventFlags + 18, $06, Script_06c_4de0
 	textface text_6c_5634
 	end
 
-Script_06c_4de0:
+Script_06c_4de0::
 	checkbit wEventFlags + 18, $07, Script_06c_4dea
 	textface text_6c_5ee0
 	end
 
-Script_06c_4dea:
+Script_06c_4dea::
 	checkbit wEventFlags + 19, $00, Script_06c_4e2b
 	walkpath
 	face FACE_UP
@@ -1339,27 +1339,27 @@ Script_06c_4dea:
 	setbit wEventFlags + 19, $00
 	end
 
-Script_06c_4e2b:
+Script_06c_4e2b::
 	textface text_6c_5634
 	end
 
-Script_06c_4e2f:
+Script_06c_4e2f::
 	checkbit wEventFlags + 18, $04, Script_06c_4e39
 	textface text_6c_5682
 	end
 
-Script_06c_4e39:
+Script_06c_4e39::
 	textface text_6c_5b7e
 	end
 
-Script_06c_4e3d:
+Script_06c_4e3d::
 	ifcharindex $01, Script_06c_4e4b
 	stext text_6c_5bde
 	stext text_6c_5be7
 	stext text_6c_5c09
 	end
 
-Script_06c_4e4b:
+Script_06c_4e4b::
 	checkbit wEventFlags + 18, $05, Script_06c_4e9f
 	emote  3, EMOTE_EXCLAMATION
 	delay $03, $20
@@ -1389,15 +1389,15 @@ Script_06c_4e4b:
 	stext text_6c_5dd0
 	end
 
-Script_06c_4e9f:
+Script_06c_4e9f::
 	stext text_6c_5e58
 	end
-Script_06c_4ea3:
+Script_06c_4ea3::
 	textface text_6c_56d4
 	textface text_6c_5755
 	setbit wEventFlags + 23, $06
 	end
-ObjectEvents_06c_4eae:
+ObjectEvents_06c_4eae::
 	object_event $5a, 11, 13, 0, $00, $00, $00, $00, Script_06c_4706
 	objects_end
 Script_06c_4eba::
@@ -1410,16 +1410,16 @@ Script_06c_4eba::
 	spriteface  1, FACE_DOWN
 	end
 
-Script_06c_4ed0:
+Script_06c_4ed0::
 	setmap MAP_G6_03, $01
 	end2
 Script_06c_4ed4::
 	checkbit wEventFlags + 19, $02, Script_06c_4ede
-Script_06c_4eda:
+Script_06c_4eda::
 	setmap MAP_BAAL_CAPITAL_0C, $01
 	end
 
-Script_06c_4ede:
+Script_06c_4ede::
 	checkbit wEventFlags + 19, $01, Script_06c_4eda
 	playsound SFX_2c
 	runmovement MovementData_00b_41d5
@@ -1440,7 +1440,7 @@ Script_06c_4ede:
 	setbit wEventFlags + 19, $01
 	end
 
-Script_06c_4f14:
+Script_06c_4f14::
 	stext text_6c_61ec
 	spriteface  3, FACE_UP
 	spritewalk  3, MOVE_UP
@@ -1457,7 +1457,7 @@ Script_06c_4f23::
 	spriteface  1, FACE_DOWN
 	end
 
-Script_06c_4f39:
+Script_06c_4f39::
 	setplayerchar $00
 	setmap MAP_G6_0D, $03
 	objmove $02, MovementData_06c_79a6
@@ -1498,11 +1498,11 @@ unk_06c_4f9e::
 	object_event $59,  3,  9, 0, $00, $00, $00, $01, Script_06c_4706
 	objects_end
 
-G6_1F_ObjectEvents:
+G6_1F_ObjectEvents::
 	object_event $59,  5,  4, wEventFlags + 22, $06, $00, $00, $01, Script_06c_4fc1
 	object_event $29,  5,  5, wEventFlags + 22, $06, $00, $00, $00, Script_06c_4fc1
 	objects_end
-Script_06c_4fc1:
+Script_06c_4fc1::
 	textface text_6c_6fc8
 	stext text_6c_6fea
 	stext text_6c_7019
@@ -1516,15 +1516,15 @@ Script_06c_4fc1:
 	clearobject $02
 	setbit wEventFlags + 22, $06
 	end
-Script_06c_4fe5:
+Script_06c_4fe5::
 	checkbit wEventFlags + 18, $06, Script_06c_4fef
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $00
 	end2
-Script_06c_4fef:
+Script_06c_4fef::
 	checkbit wEventFlags + 19, $02, Script_06c_4ff9
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $04
 	end2
-Script_06c_4ff9:
+Script_06c_4ff9::
 	setmap MAP_BAAL_CAPITAL_PROFESSOR_2B, $06
 	end2
 Script_06c_4ffd::
@@ -1571,7 +1571,7 @@ Script_06c_5068::
 	checkbit wEventFlags + 23, $06, Script_06c_506f
 	end
 
-Script_06c_506f:
+Script_06c_506f::
 	checkbit wEventFlags + 18, $04, Script_06c_50fd
 	setplayerchar $00
 	setmap MAP_G6_2A, $00
@@ -1622,7 +1622,7 @@ Script_06c_506f:
 	setbit wEventFlags + 18, $04
 	end
 
-Script_06c_50fd:
+Script_06c_50fd::
 	end
 
 INCLUDE "data/text/script_baal_capital_arrival.asm"
@@ -1663,29 +1663,29 @@ INCLUDE "data/text/script_g6_08_2.asm"
 INCLUDE "data/text/script_g6_09.asm"
 INCLUDE "data/text/script_g6_0a.asm"
 INCLUDE "data/text/script_g6_0b_1.asm"
-MovementData_06c_7913:
+MovementData_06c_7913::
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc
 	db $88
-MovementData_06c_7944:
+MovementData_06c_7944::
 	db $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04
 	db $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04
-MovementData_06c_7964:
+MovementData_06c_7964::
 	db $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04
 	db $88
-MovementData_06c_7975:
+MovementData_06c_7975::
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
-MovementData_06c_7995:
+MovementData_06c_7995::
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $88
-MovementData_06c_79a6:
+MovementData_06c_79a6::
 	db $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00
 	db $ff, $00, $ff, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fd, $00, $fd, $00, $fd, $00, $fd, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
 	db $88
-MovementData_06c_79d7:
+MovementData_06c_79d7::
 	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
 	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
@@ -1694,29 +1694,29 @@ MovementData_06c_79d7:
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $88
-Script_06c_7a51:
+Script_06c_7a51::
 	textface text_6c_40a4
 	checkbit wEventFlags + 4, $01, Script_06c_7a5d
 	scr_35 $0d
 	end
 
-Script_06c_7a5d:
+Script_06c_7a5d::
 	end
 
-Script_06c_7a5e:
+Script_06c_7a5e::
 	textface text_6c_405d
 	checkbit wEventFlags + 3, $03, Script_06c_7a69
 	scr_37
 	end
 
-Script_06c_7a69:
+Script_06c_7a69::
 	end
 
-Script_06c_7a6a:
+Script_06c_7a6a::
 	textface text_6c_4075
 	checkbit wEventFlags + 3, $03, Script_06c_7a75
 	townmusicanim
 	end
 
-Script_06c_7a75:
+Script_06c_7a75::
 	end

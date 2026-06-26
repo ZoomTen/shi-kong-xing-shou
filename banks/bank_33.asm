@@ -1,4 +1,4 @@
-Func_033_4000:
+Func_033_4000::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4033
@@ -57,12 +57,12 @@ Func_033_4000:
 	call PlaceTilemap
 	ret
 
-Attrmap_033_406D:
+Attrmap_033_406D::
 	ds $30, $06 ; 8x6, all palette 6
-Attrmap_033_409D:
+Attrmap_033_409D::
 	ds $30, $07 ; 8x6, all palette 7
 
-TilemapPointers_033_40CD:
+TilemapPointers_033_40CD::
 	dw Tilemap_033_40f5
 	dw Tilemap_033_4125
 	dw Tilemap_033_4155
@@ -73,7 +73,7 @@ TilemapPointers_033_40CD:
 	dw Tilemap_033_4245
 	dw Tilemap_033_43f5
 	dw Tilemap_033_43f5
-TilemapPointers_033_40E1:
+TilemapPointers_033_40E1::
 	dw Tilemap_033_4275
 	dw Tilemap_033_42a5
 	dw Tilemap_033_42d5
@@ -85,43 +85,43 @@ TilemapPointers_033_40E1:
 	dw Tilemap_033_43f5
 	dw Tilemap_033_43f5
 
-Tilemap_033_40f5:
+Tilemap_033_40f5::
 	INCBIN "gfx/tilemaps/tilemap_033_40f5.tilemap"
-Tilemap_033_4125:
+Tilemap_033_4125::
 	INCBIN "gfx/tilemaps/tilemap_033_4125.tilemap"
-Tilemap_033_4155:
+Tilemap_033_4155::
 	INCBIN "gfx/tilemaps/tilemap_033_4155.tilemap"
-Tilemap_033_4185:
+Tilemap_033_4185::
 	INCBIN "gfx/tilemaps/tilemap_033_4185.tilemap"
-Tilemap_033_41b5:
+Tilemap_033_41b5::
 	INCBIN "gfx/tilemaps/tilemap_033_41b5.tilemap"
-Tilemap_033_41e5:
+Tilemap_033_41e5::
 	INCBIN "gfx/tilemaps/tilemap_033_41e5.tilemap"
-Tilemap_033_4215:
+Tilemap_033_4215::
 	INCBIN "gfx/tilemaps/tilemap_033_4215.tilemap"
-Tilemap_033_4245:
+Tilemap_033_4245::
 	INCBIN "gfx/tilemaps/tilemap_033_4245.tilemap"
-Tilemap_033_4275:
+Tilemap_033_4275::
 	INCBIN "gfx/tilemaps/tilemap_033_4275.tilemap"
-Tilemap_033_42a5:
+Tilemap_033_42a5::
 	INCBIN "gfx/tilemaps/tilemap_033_42a5.tilemap"
-Tilemap_033_42d5:
+Tilemap_033_42d5::
 	INCBIN "gfx/tilemaps/tilemap_033_42d5.tilemap"
-Tilemap_033_4305:
+Tilemap_033_4305::
 	INCBIN "gfx/tilemaps/tilemap_033_4305.tilemap"
-Tilemap_033_4335:
+Tilemap_033_4335::
 	INCBIN "gfx/tilemaps/tilemap_033_4335.tilemap"
-Tilemap_033_4365:
+Tilemap_033_4365::
 	INCBIN "gfx/tilemaps/tilemap_033_4365.tilemap"
-Tilemap_033_4395:
+Tilemap_033_4395::
 	INCBIN "gfx/tilemaps/tilemap_033_4395.tilemap"
-Tilemap_033_43c5:
+Tilemap_033_43c5::
 	INCBIN "gfx/tilemaps/tilemap_033_43c5.tilemap"
-Tilemap_033_43f5:
+Tilemap_033_43f5::
 	INCBIN "gfx/tilemaps/tilemap_033_43f5.tilemap"
 
 ; copies bc bytes (length-prefixed at [wd990:wd98f]) to vTiles0
-Func_033_4425:
+Func_033_4425::
 	ld a, [wCopySrc]
 	ld l, a
 	ld a, [wCopySrc + 1]
@@ -135,7 +135,7 @@ Func_033_4425:
 	ret
 
 ; copies [src][len] record at [wd990:wd98f] to VRAM
-Func_033_4438:
+Func_033_4438::
 	ld a, [wCopySrc]
 	ld l, a
 	ld a, [wCopySrc + 1]
@@ -152,52 +152,52 @@ Func_033_4438:
 	ret
 
 ; battle-bg tile GFX: [dw len][2bpp] records, indexed by a computed wd990:wd98f pointer
-SubImage_033_444c:
+SubImage_033_444c::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_444c.2bpp"
 .e
-SubImage_033_4b0e:
+SubImage_033_4b0e::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_4b0e.2bpp"
 .e
-SubImage_033_4c90:
+SubImage_033_4c90::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_4c90.2bpp"
 .e
-SubImage_033_5352:
+SubImage_033_5352::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_5352.2bpp"
 .e
-SubImage_033_5834:
+SubImage_033_5834::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_5834.2bpp"
 .e
-SubImage_033_5ed6:
+SubImage_033_5ed6::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_5ed6.2bpp"
 .e
-SubImage_033_66d8:
+SubImage_033_66d8::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_66d8.2bpp"
 .e
-SubImage_033_6cda:
+SubImage_033_6cda::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_6cda.2bpp"
 .e
-SubImage_033_739c:
+SubImage_033_739c::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_739c.2bpp"
 .e
-SubImage_033_799e:
+SubImage_033_799e::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_33_799e.2bpp"

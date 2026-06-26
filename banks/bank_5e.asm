@@ -1,4 +1,4 @@
-Func_05e_4000:
+Func_05e_4000::
 	ld hl, wVirtualOAM
 	ld bc, 40
 	ld de, 4
@@ -10,7 +10,7 @@ Func_05e_4000:
 	jr nz, .asm_4009
 	ret
 
-Func_05e_4011:
+Func_05e_4011::
 	ld hl, wcd50
 	ld b, $52
 .clear

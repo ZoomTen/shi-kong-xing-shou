@@ -6,7 +6,7 @@ MACRO bgcopy_patch
 ENDM
 
 ; TODO
-unk_00b_4000:
+unk_00b_4000::
 INCBIN "data/unk_00b_4000.bin"
 
 MovementData_OneLeft::
@@ -39,7 +39,7 @@ MovementData_00b_4154::
 MovementData_00b_4158::
 	db RIGHT, DOWN, DOWN, LEFT, $ff
 
-Pointers_00b_415d:
+Pointers_00b_415d::
 	dw .unk_00b_416d
 	dw .unk_00b_4173
 	dw .unk_00b_416d
@@ -58,7 +58,7 @@ Pointers_00b_415d:
 	db $2b, $2d, $2c, $2e
 
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_00b_4179:
+unk_00b_4179::
 	db $ff, $ff
 
 _DispatchScriptCommand::
@@ -88,31 +88,31 @@ MovementData_OneUp::
 unk_00b_4195::
 	dw unk_00b_4199, unk_00b_4179
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_00b_4199:
+unk_00b_4199::
 	db $02, $04, $3e, $3e, $3e, $3e, $3e, $3e, $3e, $3e
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_00b_41a3:
+unk_00b_41a3::
 	dw unk_00b_41a7, unk_00b_4179
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_00b_41a7:
+unk_00b_41a7::
 	db $02, $02, $6d, $6a, $6d, $68
 	db $02, $02, $01, $01, $01, $01
 	db $02, $04, $03, $03, $03, $03, $03, $03, $03, $03
 	db $02, $04, $02, $02, $02, $02, $03, $03, $03, $03
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_00b_41c7:
+unk_00b_41c7::
 	dw unk_00b_41cb, unk_00b_4179
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_00b_41cb:
+unk_00b_41cb::
 	db $02, $04, $0c, $0e, $0d, $0f, $10, $12, $11, $13
 MovementData_00b_41d5::
 	db $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $04, $00, $fc, $00, $fc, $00, $04, $00, $88
-MovementData_00b_41fe:
+MovementData_00b_41fe::
 	db $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $01, $00, $ff, $00, $88
-MovementData_00b_4227:
+MovementData_00b_4227::
 	db $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $02, $00, $fe, $00, $88
 
-ScriptCommandTable:
+ScriptCommandTable::
 ; Entries correspond to script_* constants (see macros/script.asm)
 	dw Script_continue ; $00
 	dw Script_spriteface       ; $01
@@ -235,11 +235,11 @@ ScriptCommandTable:
 	dw Script_76       ; $76
 	dw Script_77       ; $77
 
-Script_continue:
+Script_continue::
 	call GetScriptByte
 	ret
 
-Script_spriteface:
+Script_spriteface::
 	call GetSpriteIDByte
 	call GetScriptByte
 	ld a, [wSelectedObjectOffset]
@@ -259,7 +259,7 @@ Script_spriteface:
 	call UpdateQueuedSpriteSlot
 	ret
 
-GetSpriteIDByte:
+GetSpriteIDByte::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	cp $88
@@ -285,7 +285,7 @@ GetSpriteIDByte:
 	ld [wSelectedObjectOffset], a
 	ret
 
-Script_delay:
+Script_delay::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wcbfc], a
@@ -296,7 +296,7 @@ Script_delay:
 	ld [wScriptByte], a
 	ret
 
-Script_03:
+Script_03::
 ; Delay?
 	ld hl, wcbfc
 	ldh a, [hFadeFrameCounter]
@@ -311,7 +311,7 @@ Script_03:
 	ld [wScriptByte], a
 	ret
 
-Script_04:
+Script_04::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wTextStart], a
@@ -343,7 +343,7 @@ Script_04:
 	call UpdateQueuedSpriteSlot
 	ret
 
-AdjustTextboxYPosition:
+AdjustTextboxYPosition::
 	ld a, TEXTBOX_TOP
 	ld [wTextboxPos], a
 ; Check y coord
@@ -355,7 +355,7 @@ AdjustTextboxYPosition:
 	ld [wTextboxPos], a
 	ret
 
-Script_face:
+Script_face::
 ; Makes the player face a certain direction.
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -372,7 +372,7 @@ Script_face:
 	call UpdatePlayerAnim
 	ret
 
-Script_spritewalk:
+Script_spritewalk::
 	call GetSpriteIDByte
 	call GetScriptByte
 	ld a, [wSelectedObjectOffset]
@@ -392,13 +392,13 @@ Script_spritewalk:
 	ld [wScriptByte], a
 	ret
 
-Script_07:
+Script_07::
 	call UpdateSelectedObject
 	call Func_00b_445e
 	call UpdatePlayerAnim
 	ret
 
-Func_00b_445e:
+Func_00b_445e::
 	ld a, [wd1e2]
 	and a
 	ret z
@@ -428,7 +428,7 @@ Func_00b_445e:
 	dec [hl]
 	ret
 
-Script_08:
+Script_08::
 	call GetSpriteIDByte
 	ld a, [wSelectedObjectOffset]
 	ld c, a
@@ -444,7 +444,7 @@ Script_08:
 	ld [wScriptByte], a
 	ret
 
-Script_end:
+Script_end::
 	xor a
 	ldh [hFFD6], a
 	ldh [hSimulatedJoypadState], a
@@ -453,7 +453,7 @@ Script_end:
 	call RunMapLoadHook
 	ret
 
-Script_checkbit:
+Script_checkbit::
 	call GetFlagLocation
 	bit 0, b
 	jr nz, .asm_44c9
@@ -485,7 +485,7 @@ Script_checkbit:
 	ld [wScriptByte], a
 	ret
 
-GetFlagLocation:
+GetFlagLocation::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -509,7 +509,7 @@ GetFlagLocation:
 	jr nz, .asm_44ff
 	ret
 
-Script_setbit:
+Script_setbit::
 	call GetFlagLocation
 	set 0, b
 	ld a, [wScriptByte]
@@ -528,7 +528,7 @@ Script_setbit:
 	ld [wScriptByte], a
 	ret
 
-Script_setmap:
+Script_setmap::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ldh [hMapNumber], a
@@ -542,7 +542,7 @@ Script_setmap:
 	ld [wScriptByte], a
 	ret
 
-Script_movemap:
+Script_movemap::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -553,23 +553,23 @@ Script_movemap:
 	ld [wScriptByte], a
 	ret
 
-MovementData_TwelveUp:
+MovementData_TwelveUp::
 rept 12
 	db UP
 endr
 	db $ff
 
-MovementData_TwoDown:
+MovementData_TwoDown::
 	db DOWN, DOWN, $ff
 
-Script_0e:
+Script_0e::
 	call DelayFrame
 	call Func_00b_653d
 	call Func_00b_6229
 	call Func_00b_625c
 	ret
 
-Script_move:
+Script_move::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -583,13 +583,13 @@ Script_move:
 	ldh [hSimulatedJoypadState], a
 	ret
 
-Script_10:
+Script_10::
 	call Func_00b_60dd
 	call Func_00b_61d6
 	call UpdatePlayerAnim
 	ret
 
-Script_11:
+Script_11::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -601,12 +601,12 @@ Script_11:
 	ld [wScriptByte], a
 	ret
 
-Script_12:
+Script_12::
 	call Func_00b_60b2
 	call UpdatePlayerAnim
 	ret
 
-Script_13:
+Script_13::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wdcca], a
@@ -627,7 +627,7 @@ Script_13:
 	ld [wdccf], a
 	ret
 
-Script_text:
+Script_text::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wTextStart], a
@@ -644,7 +644,7 @@ Script_text:
 	ld [wScriptByte], a
 	ret
 
-Script_emote:
+Script_emote::
 ; Display emote
 	ld a, SFX_44
 	call PlaySound
@@ -711,7 +711,7 @@ Script_emote:
 	ret ; ?
 
 ; TODO: indexed data table, classify type
-unk_00b_465b:
+unk_00b_465b::
 ; direction-indexed {dy, dx, value, 0} offset entries
 	db $00, $00, $00, $00
 	db $f0, $00, $1d, $00
@@ -719,7 +719,7 @@ unk_00b_465b:
 	db $00, $10, $20, $00
 
 ; TODO: indexed data table, classify type
-unk_00b_466b:
+unk_00b_466b::
 ; direction-indexed {dy, dx, value, 0} offset entries
 	db $f8, $08, $05, $00
 	db $f0, $08, $07, $00
@@ -728,7 +728,7 @@ unk_00b_466b:
 	db $f2, $0a, $0d, $00
 	db $c0, $00, $19, $00
 
-Script_16:
+Script_16::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -746,7 +746,7 @@ Script_16:
 	ld [wScriptByte], a
 	ret
 
-Script_17:
+Script_17::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -767,7 +767,7 @@ Script_17:
 	ld [hli], a
 	ret
 
-Script_18:
+Script_18::
 	call GetSpriteIDByte
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -792,7 +792,7 @@ Script_18:
 	ld [wScriptByte], a
 	ret
 
-Script_19:
+Script_19::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -828,12 +828,12 @@ Script_19:
 	add [hl]
 	ld [de], a
 
-asm_00b_4734:
+asm_00b_4734::
 	ld a, script_objscriptstep
 	ld [wScriptByte], a
 	ret
 
-asm_00b_473a:
+asm_00b_473a::
 	ld a, [wSavedTextPos]
 	ld [wScriptPos], a
 	ld a, [wSavedTextPos + 1]
@@ -844,7 +844,7 @@ asm_00b_473a:
 	ld [wScriptByte], a
 	ret
 
-Script_1a:
+Script_1a::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -872,7 +872,7 @@ Script_1a:
 	ld [wScriptByte], a
 	ret
 
-Script_1b:
+Script_1b::
 	call GetSpriteIDByte
 	ld a, [wSelectedObjectOffset]
 	ld c, a
@@ -886,10 +886,10 @@ Script_1b:
 	ld [wScriptByte], a
 	ret
 
-Script_1c:
+Script_1c::
 	call GetSpriteIDByte
 
-Func_00b_4799:
+Func_00b_4799::
 	ld a, [wSelectedObjectOffset]
 	ld l, a
 	ld h, HIGH(wVisibleObjects)
@@ -902,7 +902,7 @@ Func_00b_4799:
 	ld [wScriptByte], a
 	ret
 
-Script_1d:
+Script_1d::
 	call GetSpriteIDByte
 	ld a, [wSelectedObjectOffset]
 	ld c, a
@@ -942,7 +942,7 @@ Script_1d:
 	ld [wScriptByte], a
 	ret
 
-Script_1e:
+Script_1e::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld hl, wda00
@@ -962,7 +962,7 @@ Script_1e:
 	ld [wScriptByte], a
 	ret
 
-Script_1f:
+Script_1f::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ldh [hMapPredef], a
@@ -970,7 +970,7 @@ Script_1f:
 	ld [wScriptByte], a
 	ret
 
-Script_20:
+Script_20::
 	ld de, Jumptable_00b_482d
 	ld a, [wd080]
 	ld l, a
@@ -982,7 +982,7 @@ Script_20:
 	ld l, a
 	jp hl
 
-Jumptable_00b_482d:
+Jumptable_00b_482d::
 	dw asm_00b_4841
 	dw asm_00b_48b6
 	dw asm_00b_48e0
@@ -991,7 +991,7 @@ Jumptable_00b_482d:
 	dw asm_00b_4955
 
 ; TODO: unk_ - data, referenced via `ld de, unk_00b_4839`
-unk_00b_4839:
+unk_00b_4839::
 	db $16
 	db $0
 	db $f4
@@ -1001,7 +1001,7 @@ unk_00b_4839:
 	db $0
 	db $0
 
-asm_00b_4841:
+asm_00b_4841::
 	ld a, SFX_4b
 	call PlaySound
 	ld a, 1
@@ -1012,7 +1012,7 @@ asm_00b_4841:
 	dec de
 	ld bc, wcd40
 
-asm_00b_4856:
+asm_00b_4856::
 	ld hl, 2
 	add hl, bc
 	ld a, [hl]
@@ -1075,7 +1075,7 @@ asm_00b_4856:
 	call LoadSpritePalette
 	ret
 
-asm_00b_48ad:
+asm_00b_48ad::
 	ld hl, $20
 	add hl, bc
 	push hl
@@ -1083,7 +1083,7 @@ asm_00b_48ad:
 	jr asm_00b_4856
 	ret
 
-asm_00b_48b6:
+asm_00b_48b6::
 	ld a, [wd081]
 	inc a
 	ld [wd081], a
@@ -1108,7 +1108,7 @@ asm_00b_48b6:
 	ld [hl], 1
 	ret
 
-asm_00b_48e0:
+asm_00b_48e0::
 	ld a, [wd081]
 	inc a
 	ld [wd081], a
@@ -1131,7 +1131,7 @@ asm_00b_48e0:
 	ld [hl], 2
 	ret
 
-asm_00b_4907:
+asm_00b_4907::
 	ld a, [wd081]
 	inc a
 	ld [wd081], a
@@ -1154,7 +1154,7 @@ asm_00b_4907:
 	ld [hl], 3
 	ret
 
-asm_00b_492e:
+asm_00b_492e::
 	ld a, [wd081]
 	inc a
 	ld [wd081], a
@@ -1177,7 +1177,7 @@ asm_00b_492e:
 	ld [hl], 4
 	ret
 
-asm_00b_4955:
+asm_00b_4955::
 	ld a, [wd081]
 	inc a
 	ld [wd081], a
@@ -1191,7 +1191,7 @@ asm_00b_4955:
 	call PlaySound
 	ret
 
-Script_21:
+Script_21::
 	call GetSpriteIDByte
 	ld a, [wSelectedObjectOffset]
 	ld l, a
@@ -1210,7 +1210,7 @@ Script_21:
 	ld [wScriptByte], a
 	ret
 
-Script_22:
+Script_22::
 	call GetSpriteIDByte
 	ld a, [wSelectedObjectOffset]
 	ld l, a
@@ -1227,7 +1227,7 @@ Script_22:
 	ld [wScriptByte], a
 	ret
 
-Script_23:
+Script_23::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld hl, wPlayerScreenY
@@ -1235,12 +1235,12 @@ Script_23:
 	and a
 	jr z, asm_00b_49ba
 
-asm_00b_49b6:
+asm_00b_49b6::
 	add hl, bc
 	dec a
 	jr nz, asm_00b_49b6
 
-asm_00b_49ba:
+asm_00b_49ba::
 	ld a, l
 	ld [wSelectedObjectOffset], a
 	call GetScriptByte
@@ -1259,7 +1259,7 @@ asm_00b_49ba:
 	ld [wScriptByte], a
 	ret
 
-Script_24:
+Script_24::
 	ld a, [wPlayerFacing]
 	cp 1
 	jr z, asm_00b_4a1a
@@ -1271,7 +1271,7 @@ Script_24:
 	jr z, asm_00b_4a0c
 	jr asm_00b_4a1a
 
-asm_00b_49f0:
+asm_00b_49f0::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_4143)
 	inc hl
@@ -1280,7 +1280,7 @@ asm_00b_49f0:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_49fe:
+asm_00b_49fe::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_414b)
 	inc hl
@@ -1289,7 +1289,7 @@ asm_00b_49fe:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4a0c:
+asm_00b_4a0c::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_418e)
 	inc hl
@@ -1298,12 +1298,12 @@ asm_00b_4a0c:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4a1a:
+asm_00b_4a1a::
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Func_00b_4a1f:
+Func_00b_4a1f::
 	ld a, [wPlayerScreenY]
 	sub $10
 	srl a
@@ -1326,32 +1326,32 @@ Func_00b_4a1f:
 	ld [wPlayerMapX], a
 	ret
 
-Script_25:
+Script_25::
 	call Func_00b_61a2
 	call Func_00b_61d6
 	call UpdatePlayerAnim
 	call Func_00b_4a1f
 	ret
 
-Script_26:
+Script_26::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld hl, wda00
 	ld de, $c
 
-asm_00b_4a61:
+asm_00b_4a61::
 	dec a
 	jr z, asm_00b_4a67
 	add hl, de
 	jr asm_00b_4a61
 
-asm_00b_4a67:
+asm_00b_4a67::
 	ld [hl], $ff
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_27:
+Script_27::
 	call GetFlagLocation
 	res 0, b
 	ld a, [wScriptByte]
@@ -1359,19 +1359,19 @@ Script_27:
 	and a
 	jr z, asm_00b_4a7f
 
-asm_00b_4a7a:
+asm_00b_4a7a::
 	rlc b
 	dec c
 	jr nz, asm_00b_4a7a
 
-asm_00b_4a7f:
+asm_00b_4a7f::
 	ld a, b
 	ld [hl], a
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_28:
+Script_28::
 	ld bc, wPaletteBuffer
 	xor a
 	ldh [hPaletteFadeState], a
@@ -1383,7 +1383,7 @@ Script_28:
 	ld [wScriptByte], a
 	ret
 
-Script_29:
+Script_29::
 	ld hl, wPaletteBuffer
 	xor a
 	ldh [hPaletteFadeState], a
@@ -1393,7 +1393,7 @@ Script_29:
 	ld [wScriptByte], a
 	ret
 
-Script_farjump:
+Script_farjump::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ldh [hScriptBank], a
@@ -1409,7 +1409,7 @@ Script_farjump:
 	ld [wScriptByte], a
 	ret
 
-Script_2b:
+Script_2b::
 	ld a, [wPlayerFacing]
 	and a
 	jr z, asm_00b_4ae3
@@ -1421,7 +1421,7 @@ Script_2b:
 	ld [wScriptPos + 1], a
 	jr asm_00b_4af7
 
-asm_00b_4ae3:
+asm_00b_4ae3::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -1431,12 +1431,12 @@ asm_00b_4ae3:
 	pop af
 	ld [wScriptPos], a
 
-asm_00b_4af7:
+asm_00b_4af7::
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_2c:
+Script_2c::
 	ld bc, wPaletteBuffer
 	xor a
 	ldh [hPaletteFadeState], a
@@ -1458,7 +1458,7 @@ Script_2c:
 	ld [wScriptByte], a
 	ret
 
-Script_2d:
+Script_2d::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld e, a
@@ -1484,10 +1484,10 @@ Script_2d:
 	ld [hVRAMCopyHeight], a
 	ld c, a
 
-asm_00b_4b5a:
+asm_00b_4b5a::
 	push hl
 
-asm_00b_4b5b:
+asm_00b_4b5b::
 	ld a, [de]
 	ld [hli], a
 	inc de
@@ -1506,7 +1506,7 @@ asm_00b_4b5b:
 	ld [wScriptByte], a
 	ret
 
-Script_2e:
+Script_2e::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld c, a
@@ -1522,7 +1522,7 @@ Script_2e:
 	ld [wScriptByte], a
 	ret
 
-Script_2f:
+Script_2f::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld e, a
@@ -1552,7 +1552,7 @@ Script_2f:
 	ld [wScriptByte], a
 	ret
 
-Script_30:
+Script_30::
 	ld a, [wd083]
 	ld [wdcca], a
 	ld a, [wd083 + 1]
@@ -1570,7 +1570,7 @@ Script_30:
 	ld [wdccf], a
 	ret
 
-Script_31:
+Script_31::
 	ld a, [wd083]
 	ld e, a
 	ld a, [wd083 + 1]
@@ -1598,7 +1598,7 @@ Script_31:
 	ld [wScriptByte], a
 	ret
 
-Script_32:
+Script_32::
 	ld a, [wPlayerFacing]
 	cp 3
 	jr z, asm_00b_4c5a
@@ -1610,7 +1610,7 @@ Script_32:
 	jr z, asm_00b_4c4c
 	jr asm_00b_4c5a
 
-asm_00b_4c30:
+asm_00b_4c30::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_414e)
 	inc hl
@@ -1619,7 +1619,7 @@ asm_00b_4c30:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4c3e:
+asm_00b_4c3e::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_4151)
 	inc hl
@@ -1628,7 +1628,7 @@ asm_00b_4c3e:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4c4c:
+asm_00b_4c4c::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_4154)
 	inc hl
@@ -1637,12 +1637,12 @@ asm_00b_4c4c:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4c5a:
+asm_00b_4c5a::
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_33:
+Script_33::
 	ld a, [wPlayerFacing]
 	cp 1
 	jr z, asm_00b_4c9e
@@ -1654,7 +1654,7 @@ Script_33:
 	jr z, asm_00b_4c90
 	jr asm_00b_4c9e
 
-asm_00b_4c74:
+asm_00b_4c74::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_4158)
 	inc hl
@@ -1663,7 +1663,7 @@ asm_00b_4c74:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4c82:
+asm_00b_4c82::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_414b)
 	inc hl
@@ -1672,7 +1672,7 @@ asm_00b_4c82:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4c90:
+asm_00b_4c90::
 	ld hl, wMovementPointer
 	ld [hl], LOW(MovementData_00b_418e)
 	inc hl
@@ -1681,12 +1681,12 @@ asm_00b_4c90:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_4c9e:
+asm_00b_4c9e::
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_34:
+Script_34::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wTargetMode], a
@@ -1702,7 +1702,7 @@ Script_34:
 	ld [wScriptByte], a
 	ret
 
-Script_35:
+Script_35::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wd9f2], a
@@ -1713,7 +1713,7 @@ Script_35:
 	ld [wScriptByte], a
 	ret
 
-Script_36:
+Script_36::
 	ld a, BGM_TOWN1
 	call PlaySound
 	farcall Func_039_4892
@@ -1721,7 +1721,7 @@ Script_36:
 	ld [wScriptByte], a
 	ret
 
-Script_37:
+Script_37::
 	ld a, SFX_29
 	call PlaySound
 	call Func_00b_4dc5
@@ -1732,19 +1732,19 @@ Script_37:
 	ld [wScriptByte], a
 	ret
 
-Func_00b_4d04:
+Func_00b_4d04::
 	xor a
 	ld [hFFB9], a
 	ld bc, wde00
 
-asm_00b_4d0b:
+asm_00b_4d0b::
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
 	and a
 	jr nz, asm_00b_4d20
 
-asm_00b_4d13:
+asm_00b_4d13::
 	ld hl, $16
 	add hl, bc
 	push hl
@@ -1754,7 +1754,7 @@ asm_00b_4d13:
 	jr c, asm_00b_4d0b
 	jr asm_00b_4d3c
 
-asm_00b_4d20:
+asm_00b_4d20::
 	push bc
 	call ComputeStatAtBC
 	pop bc
@@ -1770,10 +1770,10 @@ asm_00b_4d20:
 	call Func_00b_4d6c
 	jr asm_00b_4d13
 
-asm_00b_4d3c:
+asm_00b_4d3c::
 	ld bc, wPartyMons
 
-asm_00b_4d3f:
+asm_00b_4d3f::
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
@@ -1801,7 +1801,7 @@ asm_00b_4d3f:
 	jr c, asm_00b_4d3f
 	ret
 
-Func_00b_4d6c:
+Func_00b_4d6c::
 	ld hl, 7
 	add hl, bc
 	ld a, [hl]
@@ -1846,7 +1846,7 @@ Func_00b_4d6c:
 	ld [hli], a
 	ret
 
-Func_00b_4dc5:
+Func_00b_4dc5::
 	ld hl, Palette_White
 	call CopyBackgroundPalettes
 	ld hl, Palette_White
@@ -1861,13 +1861,13 @@ Func_00b_4dc5:
 	call DelayFrame
 	ret
 
-Script_38:
+Script_38::
 	farcall LoadWildMon
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_39:
+Script_39::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -1878,7 +1878,7 @@ Script_39:
 	ld [wScriptByte], a
 	ret
 
-Script_3a:
+Script_3a::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
@@ -1907,7 +1907,7 @@ Script_3a:
 	ld [wMovementPointer + 1], a
 	ret
 
-Script_3b: ; start a battle (startbattle)
+Script_3b:: ; start a battle (startbattle)
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wMovementPointer], a
@@ -1961,7 +1961,7 @@ Script_3b: ; start a battle (startbattle)
 	call DelayFrame
 	ret
 
-Script_3c:
+Script_3c::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld e, a
@@ -1995,7 +1995,7 @@ Script_3c:
 	ld [wScriptByte], a
 	ret
 
-Script_3d:
+Script_3d::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld e, a
@@ -2037,7 +2037,7 @@ Script_3d:
 	ld [wScriptByte], a
 	ret
 
-Script_3e:
+Script_3e::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -2050,7 +2050,7 @@ Script_3e:
 	ld [wScriptByte], a
 	ret
 
-Script_3f:
+Script_3f::
 	ld c, $00
 	ld a, [wEventFlags + 7]
 	bit 4, a
@@ -2099,7 +2099,7 @@ Script_3f:
 	ld [wScriptByte], a
 	ret
 
-Script_40:
+Script_40::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld hl, wda00
@@ -2116,7 +2116,7 @@ Script_40:
 	ld [wScriptByte], a
 	ret
 
-Script_41:
+Script_41::
 	ld bc, wVisibleObjects + OBJECT_LENGTH
 .asm_4fb7
 	ld hl, OBJECT_ACTIVE
@@ -2148,7 +2148,7 @@ Script_41:
 	call DelayFrame
 	ret
 
-Script_42:
+Script_42::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld hl, wda00
@@ -2192,7 +2192,7 @@ Script_42:
 	ld [wScriptByte], a
 	ret
 
-Script_43:
+Script_43::
 	call DelayFrame
 	ld bc, wPaletteBuffer
 	xor a
@@ -2213,7 +2213,7 @@ Script_43:
 	ld [wScriptByte], a
 	ret
 
-Func_00b_505c:
+Func_00b_505c::
 	di
 	ld a, $01
 	ldh [rVBK], a
@@ -2246,7 +2246,7 @@ Func_00b_505c:
 	ei
 	ret
 
-Palette_00b_508d:
+Palette_00b_508d::
 	RGB 31, 31, 31
 	RGB 30, 25, 0
 	RGB 29, 0, 0
@@ -2279,14 +2279,14 @@ Palette_00b_508d:
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-Script_44:
+Script_44::
 	xor a
 	ld [wPlayerMapX], a
 	ld [wPlayerMapY], a
 	ld [wScriptByte], a
 	ret
 
-Script_45:
+Script_45::
 	call DelayFrame
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -2316,7 +2316,7 @@ Script_45:
 	ld [wScriptByte], a
 	ret
 
-Script_46:
+Script_46::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld e, a
@@ -2336,7 +2336,7 @@ Script_46:
 	ld [wScriptByte], a
 	ret
 
-Script_47:
+Script_47::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wTargetMode], a
@@ -2355,7 +2355,7 @@ Script_47:
 	ld [wScriptByte], a
 	ret
 
-Script_48:
+Script_48::
 	ld a, SFX_1a
 	call PlaySound
 	call GetScriptByte
@@ -2373,10 +2373,10 @@ Script_48:
 
 ; list pointers indexed by wd1f4; each -> a wram (id,count) list searched by Script_4d/Script_59
 ; TODO: unk_ - indexed table (index hli)
-unk_00b_5192:
+unk_00b_5192::
 	dw wd300, wddb0, wd284
 
-Script_49:
+Script_49::
 	ld a, [wcd20]
 	sub $10
 	ld [wd0f9], a
@@ -2466,7 +2466,7 @@ Script_49:
 	ld h, a
 	ret
 
-Script_4a:
+Script_4a::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wdcac], a
@@ -2537,7 +2537,7 @@ Func_00b_5273::
 	ld [hl], $07
 	ret
 
-Script_4b:
+Script_4b::
 	xor a
 	ld [wd0ef], a
 	ld [wdcac], a
@@ -2557,7 +2557,7 @@ Script_4b:
 	jr nz, .asm_52dc
 	ret
 
-Script_4c:
+Script_4c::
 	ld a, GAMEMODE_GAME_OVER
 	ld [wTargetMode], a
 	ld a, $01
@@ -2566,7 +2566,7 @@ Script_4c:
 	ld [wScriptByte], a
 	ret
 
-Script_4d:
+Script_4d::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wd1f4], a
@@ -2608,7 +2608,7 @@ Script_4d:
 	ld [wScriptByte], a
 	ret
 
-Script_4e:
+Script_4e::
 	call GetSpriteIDByte
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -2630,7 +2630,7 @@ Script_4e:
 	ld [wScriptByte], a
 	ret
 
-Script_4f:
+Script_4f::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld d, a
@@ -2669,7 +2669,7 @@ Script_4f:
 	ld [wScriptByte], a
 	ret
 
-Script_50:
+Script_50::
 	call GetPartyMonPtr
 	push hl
 	ld hl, MON_ITEM
@@ -2738,7 +2738,7 @@ Script_50:
 	jr c, .asm_53e8
 	ret
 
-Script_51:
+Script_51::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wd1f4], a
@@ -2782,7 +2782,7 @@ Script_51:
 	ld [wScriptByte], a
 	ret
 
-Script_52:
+Script_52::
 	ld a, [wd0da]
 	inc a
 	ld [wd0da], a
@@ -2790,7 +2790,7 @@ Script_52:
 	ld [wScriptByte], a
 	ret
 
-Script_53:
+Script_53::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ldh [hMapNumber], a
@@ -2806,7 +2806,7 @@ Script_53:
 	ld [wScriptByte], a
 	ret
 
-Script_54:
+Script_54::
 	call GetSpriteIDByte
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -2830,7 +2830,7 @@ Script_54:
 	ld [wScriptByte], a
 	ret
 
-Script_55:
+Script_55::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	push af
@@ -2864,7 +2864,7 @@ Script_55:
 	ld [wScriptByte], a
 	ret
 
-Script_56:
+Script_56::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld b, a
@@ -2885,14 +2885,14 @@ Script_56:
 	ld [wScriptByte], a
 	ret
 
-Script_57:
+Script_57::
 	ld a, $01
 	ld [wd0f0], a
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_58:
+Script_58::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wPlayerSpriteID], a
@@ -2915,7 +2915,7 @@ Script_58:
 	call UpdatePlayerAnim
 	ret
 
-Script_59:
+Script_59::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wd1f4], a
@@ -2966,7 +2966,7 @@ Script_59:
 	ld [wScriptByte], a
 	ret
 
-Script_5a:
+Script_5a::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wd1f4], a
@@ -3010,7 +3010,7 @@ Script_5a:
 	ld [wScriptByte], a
 	ret
 
-Script_5b:
+Script_5b::
 	ld a, [wPlayerFacing]
 	cp $03
 	jr z, .asm_5617
@@ -3035,7 +3035,7 @@ Script_5b:
 	ld [wScriptByte], a
 	ret
 
-Script_5c:
+Script_5c::
 	call Func_00b_4dc5
 	call Func_00b_4dc5
 	ld bc, wPartyMons
@@ -3074,7 +3074,7 @@ Script_5c:
 	ld [wScriptByte], a
 	ret
 
-Script_5d:
+Script_5d::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wPartyScanType], a
@@ -3096,7 +3096,7 @@ Script_5d:
 	ld [wScriptByte], a
 	ret
 
-Script_5e:
+Script_5e::
 ; Follower
 	call GetScriptByte
 	ld a, [wScriptByte]
@@ -3105,7 +3105,7 @@ Script_5e:
 	ld [wScriptByte], a
 	ret
 
-Script_5f:
+Script_5f::
 	ld a, [wPlayerScreenX]
 	ld e, a
 	ld a, [wcd21]
@@ -3368,20 +3368,20 @@ Script_5f:
 .move_5892
 	db $00, $02, $ff
 
-Script_60:
+Script_60::
 	call Func_00b_6134
 	call Func_00b_6168
 	call UpdatePlayerAnim
 	call Func_00b_610b
 	ret
 
-Script_61:
+Script_61::
 	farcall LoadScriptedPartyMon
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_62:
+Script_62::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wdcf3], a
@@ -3395,7 +3395,7 @@ Script_62:
 	ld [wdcf4], a
 	ret
 
-Script_63:
+Script_63::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld d, a
@@ -3428,7 +3428,7 @@ Script_63:
 	ld [wScriptByte], a
 	ret
 
-Script_64:
+Script_64::
 	call .asm_5917
 	ld a, $01
 	ld [wdcbb], a
@@ -3449,7 +3449,7 @@ Script_64:
 	jr nz, .asm_5920
 	ret
 
-Script_65:
+Script_65::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [wPlayerChar], a
@@ -3458,7 +3458,7 @@ Script_65:
 	ld [wScriptByte], a
 	ret
 
-Script_66:
+Script_66::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld e, a
@@ -3476,7 +3476,7 @@ Script_66:
 	ld [wScriptByte], a
 	ret
 
-Script_67:
+Script_67::
 	push hl
 	push bc
 	push de
@@ -3511,7 +3511,7 @@ Script_67:
 	ld [wScriptByte], a
 	ret
 
-Script_68:
+Script_68::
 	ld bc, wPartyMons
 	ld hl, MON_MOVE1ID
 	add hl, bc
@@ -3553,7 +3553,7 @@ Script_68:
 	ld [hl], $0C
 	jr Func_00b_5a04
 
-Func_00b_59da:
+Func_00b_59da::
 	ld bc, wPartyMons
 	ld hl, MON_MOVE1ID
 	add hl, bc
@@ -3580,12 +3580,12 @@ Func_00b_59da:
 	ld [hl], $0C
 	inc hl
 	ld [hl], $0C
-Func_00b_5a04:
+Func_00b_5a04::
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_69:
+Script_69::
 	xor a
 	ldh [hFFD6], a
 	ldh [hSimulatedJoypadState], a
@@ -3594,7 +3594,7 @@ Script_69:
 	call RunMapLoadHook
 	ret
 
-Script_6a:
+Script_6a::
 	ld a, [wEventFlags + 9]
 	res 5, a
 	ld [wEventFlags + 9], a
@@ -3690,7 +3690,7 @@ Script_6a:
 	ld [de], a
 	ret
 
-Script_6b:
+Script_6b::
 	ld a, MAP_POWER_PLANT_3F
 	ldh [hMapNumber], a
 	ld a, [wdcfe]
@@ -3708,7 +3708,7 @@ Script_6b:
 	ld [wScriptByte], a
 	ret
 
-Script_6c:
+Script_6c::
 	ld a, $02
 	ld [wdcea], a
 	xor a
@@ -3720,7 +3720,7 @@ Script_6c:
 	ld [wScriptByte], a
 	ret
 
-Script_6d:
+Script_6d::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld b, a
@@ -3795,7 +3795,7 @@ Script_6d:
 	ld [wScriptByte], a
 	ret
 
-Script_6e:
+Script_6e::
 	ld c, $00
 	ld a, [wEventFlags + $10]
 	bit 0, a
@@ -4047,7 +4047,7 @@ Script_6e:
 	ld [wEventFlags + $F], a
 	ret
 
-Script_6f: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (text_1e_6ddb)
+Script_6f:: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (text_1e_6ddb)
 	ld a, [wdce8]
 	and a
 	jr z, .asm_5dd6
@@ -4146,7 +4146,7 @@ Script_6f: ; if wdce8: script goto; else show TEXTSRC_SCRIPT_MSG (text_1e_6ddb)
 	ld [wScriptByte], a
 	ret
 
-Script_70:
+Script_70::
 	ld a, [wSavedScriptBank]
 	ld [hScriptBank], a
 	xor a
@@ -4154,7 +4154,7 @@ Script_70:
 	ld [hFFD6], a
 	ret
 
-Script_71:
+Script_71::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	ld [hMapGroup], a
@@ -4162,7 +4162,7 @@ Script_71:
 	ld [wScriptByte], a
 	ret
 
-Script_72:
+Script_72::
 	ld a, [wPlayerFacing]
 	and a
 	jr z, .asm_5ece
@@ -4195,7 +4195,7 @@ Script_72:
 	ld [wScriptByte], a
 	ret
 
-Script_73:
+Script_73::
 	ld a, [wPlayerFacing]
 	and a
 	jr z, .asm_5efa
@@ -4251,13 +4251,13 @@ Script_73:
 	ld [wScriptByte], a
 	ret
 
-Script_74:
+Script_74::
 	farcall WorldMap
 	xor a
 	ld [wScriptByte], a
 	ret
 
-Script_75:
+Script_75::
 	xor a
 	ldh [hFFD6], a
 	ldh [hSimulatedJoypadState], a
@@ -4361,7 +4361,7 @@ Script_75:
 	pop hl
 	ret
 
-Script_76:
+Script_76::
 	call GetScriptByte
 	ld a, [wScriptByte]
 	call PlaySound
@@ -4369,7 +4369,7 @@ Script_76:
 	ld [wScriptByte], a
 	ret
 
-Script_77:
+Script_77::
 	ld a, [wPlayerScreenX]
 	ld e, a
 	ld a, [wcd21]
@@ -4440,7 +4440,7 @@ Func_00b_605c::
 	ret
 	ret
 
-Func_00b_606f:
+Func_00b_606f::
 	ld a, [wdccf]
 	and a
 	ret z
@@ -4486,7 +4486,7 @@ Func_00b_606f:
 	ld [wdccf], a
 	ret
 
-Func_00b_60b2:
+Func_00b_60b2::
 	ld a, [wMovementPointer]
 	ld l, a
 	ld a, [wMovementPointer + 1]
@@ -4498,7 +4498,7 @@ Func_00b_60b2:
 	ld [wScriptByte], a
 	ret
 
-asm_00b_60c4:
+asm_00b_60c4::
 	ld a, [wPlayerScreenY]
 	add [hl]
 	ld [wPlayerScreenY], a
@@ -4513,7 +4513,7 @@ asm_00b_60c4:
 	ld [wMovementPointer + 1], a
 	ret
 
-Func_00b_60dd:
+Func_00b_60dd::
 	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
@@ -4544,7 +4544,7 @@ Func_00b_60dd:
 	ldh [hFFAC], a
 	ret
 
-Func_00b_610b:
+Func_00b_610b::
 	ld a, [wFollowerObject]
 	sub $10
 	srl a
@@ -4567,7 +4567,7 @@ Func_00b_610b:
 	ld [wcd32 + 1], a
 	ret
 
-Func_00b_6134:
+Func_00b_6134::
 	ldh a, [hFFDD]
 	and a
 	ret nz
@@ -4597,7 +4597,7 @@ Func_00b_6134:
 	ld [wdceb], a
 	ret
 
-Func_00b_6168:
+Func_00b_6168::
 	ldh a, [hFFDD]
 	and a
 	ret z
@@ -4666,7 +4666,7 @@ Func_00b_61a2::
 	ld [wdcd0], a
 	ret
 
-Func_00b_61d6:
+Func_00b_61d6::
 	ldh a, [hSimulatedJoypadState]
 	and a
 	ret z
@@ -4716,7 +4716,7 @@ Func_00b_61d6:
 	ldh [hSimulatedJoypadState], a
 	ret
 
-Func_00b_6229:
+Func_00b_6229::
 	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
@@ -4749,7 +4749,7 @@ Func_00b_6229:
 .directions
 	db $08, $04, $02, $01
 
-Func_00b_625c:
+Func_00b_625c::
 	ldh a, [hFF9E]
 	cp $80
 	ret nc
@@ -5116,7 +5116,7 @@ Func_00b_625c:
 	ret nc
 	inc [hl]
 	ret
-Func_00b_64b2:
+Func_00b_64b2::
 	ld hl, wPartyMons
 .asm_64b5
 	ld a, [hl]
@@ -5199,7 +5199,7 @@ Func_00b_64b2:
 .PartyMonBufferPointers
 	dw wde00, wde16, wde2c, wde42, wde58, wde6e, wde84, wde9a
 
-Func_00b_653d:
+Func_00b_653d::
 	ldh a, [hSimulatedJoypadState]
 	and a
 	ret z
@@ -5317,7 +5317,7 @@ Func_00b_65e7::
 	ld a, $00
 	ldh [rVBK], a
 
-Func_00b_65f6:
+Func_00b_65f6::
 	push hl
 .asm_65f7
 	ld a, [de]
@@ -5360,7 +5360,7 @@ Func_00b_65f6:
 	ret
 
 ; structured data table
-unk_00b_662b:
+unk_00b_662b::
 ; pointer table: dw record, dw handler
 	dw .record_6645, unk_00b_4179
 	dw .record_664b, unk_00b_4179
@@ -5384,24 +5384,24 @@ INCBIN "data/record_00b_6668.bin"
 BGCopyTable_00b_696a::
 	dw BGCopyPatch_00b_696e
 	dw unk_00b_4179
-BGCopyPatch_00b_696e:
+BGCopyPatch_00b_696e::
 	bgcopy_patch 2, 2, $24, $25, $06, $26
 BGCopyTable_00b_6974::
 	dw BGCopyPatch_00b_6978
 	dw unk_00b_4179
-BGCopyPatch_00b_6978:
+BGCopyPatch_00b_6978::
 	bgcopy_patch 2, 2, $4f, $21, $50, $22
 BGCopyTable_00b_697e::
 	dw BGCopyPatch_00b_6982
 	dw unk_00b_4179
-BGCopyPatch_00b_6982:
+BGCopyPatch_00b_6982::
 	bgcopy_patch 2, 2, $33, $35, $34, $36
-BGCopyPatch_00b_6988:
+BGCopyPatch_00b_6988::
 	bgcopy_patch 2, 2, $01, $01, $01, $01
 
-GFX_00b_698e:
+GFX_00b_698e::
 INCBIN "gfx/misc/gfx_00b_698e.2bpp"
-Palette_00b_6ace:
+Palette_00b_6ace::
 ; first 4 colors = OBJ palette (Func_00b_5273); rest is $ff/$fe/$88 data
 	RGB 21, 21, 21
 	RGB 0, 0, 0

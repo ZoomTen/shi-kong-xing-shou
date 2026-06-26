@@ -1,73 +1,73 @@
-unk_05c_4000:
+unk_05c_4000::
 	setmap MAP_G4_06, $00
 	end2
 
-Script_05c_4004:
+Script_05c_4004::
 	checkbit wEventFlags + 9, $02, Script_05c_4015
 	checkbit wEventFlags + 8, $05, Script_05c_4015
 	farjump2 Script_055_5475
 	end
 
-Script_05c_4015:
+Script_05c_4015::
 	setmap MAP_G4_44, $02
 	end2
 
-Airport_g465_ObjectEvents:
+Airport_g465_ObjectEvents::
 	object_event $45, 10,  5, wEventFlags + 14, $05, $01, $00, $00, Script_05c_4025
 	objects_end
-Script_05c_4025:
+Script_05c_4025::
 	textface text_5c_402d
 	farjump2 Script_066_4140
 	end
 INCLUDE "data/text/script_airport_65_1.asm"
-Script_05c_4058:
+Script_05c_4058::
 	setmap MAP_G4_10, $01
 	end
-Script_05c_405c:
+Script_05c_405c::
 	farjump2 Script_058_40bc
 	end
 
-EastFishmarketShop_ObjectEvents:
+EastFishmarketShop_ObjectEvents::
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_05c_406d
 	objects_end
-Script_05c_406d:
+Script_05c_406d::
 	textface text_5c_4105
 	end
-Script_05c_4071:
+Script_05c_4071::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_5c_4105
 	checkbit wEventFlags + 4, $01, Script_05c_4082
 	scr_35 $05
 	end
-Script_05c_4082:
+Script_05c_4082::
 	end
 
-EastFishmarketHealingCenter_ObjectEvents:
+EastFishmarketHealingCenter_ObjectEvents::
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_05c_409a
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_05c_409e
 	objects_end
-Script_05c_409a:
+Script_05c_409a::
 	stext text_5c_40be
 	end
-Script_05c_409e:
+Script_05c_409e::
 	stext text_5c_40d6
 	end
-Script_05c_40a2:
+Script_05c_40a2::
 	face FACE_UP
 	stext text_5c_40be
 	checkbit wEventFlags + 3, $03, Script_05c_40af
 	scr_37
 	end
-Script_05c_40af:
+Script_05c_40af::
 	end
-Script_05c_40b0:
+Script_05c_40b0::
 	face FACE_UP
 	stext text_5c_40d6
 	checkbit wEventFlags + 3, $03, Script_05c_40bd
 	townmusicanim
 	end
-Script_05c_40bd:
+Script_05c_40bd::
 	end
 INCLUDE "data/text/script_east_fishmarket_healing_center.asm"
 INCLUDE "data/text/script_east_fishmarket_shop.asm"
@@ -77,7 +77,7 @@ Script_05c_411c::
 Bank5c_EmptyObjectEvent::
 	objects_end
 
-G4_44_ObjectEvents2:
+G4_44_ObjectEvents2::
 	object_event $1e, 11,  6, wEventFlags + 23, $04, $00, $00, $00, Script_05c_411c
 	object_event $53, 12,  7, wEventFlags + 23, $04, $00, $00, $01, Script_05c_411c
 	objects_end
@@ -97,7 +97,7 @@ Script_05c_4135:: ; farjump2 target (bank_55)
 	setbit wEventFlags + 23, $04
 	end
 
-EastFishmarket_45_ObjectEvents:
+EastFishmarket_45_ObjectEvents::
 	object_event $1c, 15,  6, wEventFlags + 8, $07, $01, $07, $00, Script_05c_4250
 	object_event $14,  4,  7, wEventFlags + 8, $07, $01, $09, $01, Script_05c_4241
 	object_event $13,  5, 14, wEventFlags + 8, $07, $01, $00, $02, Script_05c_4235
@@ -105,24 +105,24 @@ EastFishmarket_45_ObjectEvents:
 	object_event $17,  9, 20, wEventFlags + 8, $07, $01, $09, $04, Script_05c_4211
 	object_event $16, 12, 13, wEventFlags + 8, $07, $00, $00, $00, Script_05c_419f
 	objects_end
-Script_05c_419f:
+Script_05c_419f::
 	setplayerchar $00
 	setmap MAP_EAST_FISHMARKET_4E, $00
 	end
 
-EastFishmarket_4e_ObjectEvents2:
+EastFishmarket_4e_ObjectEvents2::
 	object_event $65,  5,  3, 0, $00, $00, $00, $00, Script_05c_411c
 	objects_end
 
-EastFishmarket_4e_ObjectEvents:
+EastFishmarket_4e_ObjectEvents::
 	object_event $65,  5,  3, 0, $00, $00, $00, $00, Script_05c_411c
 	object_event $16,  5,  6, 0, $00, $00, $00, $01, Script_05c_41c8
 	objects_end
-Script_05c_41c8:
+Script_05c_41c8::
 	textface text_5c_47fc
 	checkbit wEventFlags + 8, $06, Script_05c_41d2
 	end
-Script_05c_41d2:
+Script_05c_41d2::
 	spriteface  3, FACE_UP
 	emote  0, EMOTE_EXCLAMATION
 	delay $03, $20
@@ -143,72 +143,72 @@ Script_05c_41d2:
 ObjSprite_5c_4205::
 	object_event $56,  5,  8, 0, $00, $00, $00, $02, Script_05c_411c
 	objects_end
-Script_05c_4211:
+Script_05c_4211::
 	textface text_5c_4ddb
 	end
-Script_05c_4215:
+Script_05c_4215::
 	ifcharindex $00, Script_05c_421d
 	textface text_5c_4dcc
 	end
-Script_05c_421d:
+Script_05c_421d::
 	checkbit wEventFlags + 9, $00, Script_05c_4231
 	textface text_5c_4d57
 	stext text_5c_4d90
 	scr_48 $00, $11
 	setbit wEventFlags + 9, $00
 	end
-Script_05c_4231:
+Script_05c_4231::
 	textface text_5c_4da1
 	end
-Script_05c_4235:
+Script_05c_4235::
 	textface text_5c_4ce1
 	ifcharindex $04, Script_05c_423d
 	end
-Script_05c_423d:
+Script_05c_423d::
 	stext text_5c_4d27
 	end
-Script_05c_4241:
+Script_05c_4241::
 	textface text_5c_4c5e
 	ifcharindex $04, Script_05c_4249
 	end
-Script_05c_4249:
+Script_05c_4249::
 	stext text_5c_4ca6
 	stext text_5c_4cd1
 	end
-Script_05c_4250:
+Script_05c_4250::
 	textface text_5c_4c42
 	end
 
-EastFishmarket_46_ObjectEvents:
+EastFishmarket_46_ObjectEvents::
 	object_event $18,  5,  5, 0, $00, $00, $00, $00, Script_05c_426b
 	object_event $1d,  8,  5, 0, $00, $00, $00, $01, Script_05c_4277
 	objects_end
-Script_05c_426b:
+Script_05c_426b::
 	textface text_5c_4e2b
 	ifcharindex $04, Script_05c_4273
 	end
-Script_05c_4273:
+Script_05c_4273::
 	stext text_5c_4e60
 	end
-Script_05c_4277:
+Script_05c_4277::
 	textface text_5c_4e68
 	ifcharindex $04, Script_05c_427f
 	end
-Script_05c_427f:
+Script_05c_427f::
 	emote  3, EMOTE_EXCLAMATION
 	delay $03, $20
 	stext text_5c_4ea2
 	end
 
-EastFishmarket_47_ObjectEvents:
+EastFishmarket_47_ObjectEvents::
 	object_event $1f,  3,  3, 0, $00, $00, $00, $00, Script_05c_42a0
 	object_event $1e,  5,  5, 0, $00, $00, $06, $01, Script_05c_42a4
 	objects_end
-Script_05c_42a0:
+Script_05c_42a0::
 	textface text_5c_4eb8
 	end
 
-Script_05c_42a4:
+Script_05c_42a4::
 	checkbit wEventFlags + 11, $07, Script_05c_42c3
 	textface text_5c_4ef8
 	spriteface  2, FACE_DOWN
@@ -220,7 +220,7 @@ Script_05c_42a4:
 	delay $03, $20
 	end
 
-Script_05c_42c3:
+Script_05c_42c3::
 	checkbit wEventFlags + 12, $00, Script_05c_42da
 	textface text_5c_4f73
 	stext text_5c_4fd9
@@ -229,33 +229,33 @@ Script_05c_42c3:
 	setbit wEventFlags + 12, $00
 	end
 
-Script_05c_42da:
+Script_05c_42da::
 	textface text_5c_4fe9
 	end
 
-EastFishmarket_48_ObjectEvents:
+EastFishmarket_48_ObjectEvents::
 	object_event $16,  3,  4, 0, $00, $00, $00, $00, Script_05c_42f5
 	object_event $19,  8,  3, 0, $00, $00, $06, $01, Script_05c_42f9
 	objects_end
-Script_05c_42f5:
+Script_05c_42f5::
 	textface text_5c_4538
 	end
-Script_05c_42f9:
+Script_05c_42f9::
 	textface text_5c_5025
 	end
 
-EastFishmarket_49_ObjectEvents:
+EastFishmarket_49_ObjectEvents::
 	object_event $1b,  4,  5, 0, $00, $00, $06, $00, Script_05c_4309
 	objects_end
 
-Script_05c_4309:
+Script_05c_4309::
 	textface text_5c_5035
 	end
 
-EastFishmarketAntonCutscene_ObjectEvents:
+EastFishmarketAntonCutscene_ObjectEvents::
 	object_event $64,  4,  4, wEventFlags + 8, $06, $00, $00, $00, Script_05c_4319
 	objects_end
-Script_05c_4319:
+Script_05c_4319::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -276,25 +276,25 @@ Script_05c_4319:
 	setbit wEventFlags + 8, $06
 	end
 
-Script_05c_434b:
+Script_05c_434b::
 	checkbit wEventFlags + 9, $01, Script_05c_4355
 Script_05c_4351::
 	setmap MAP_EAST_FISHMARKET_MERMAID_CUTSCENE, $00
 	end2
 
-Script_05c_4355:
+Script_05c_4355::
 	checkbit wEventFlags + 9, $02, Script_05c_4351
 	setmap MAP_EAST_FISHMARKET_MERMAID_CUTSCENE, $01
 	end2
 
-EastFishmarketMermaidCutscene_ObjectEvents2:
+EastFishmarketMermaidCutscene_ObjectEvents2::
 	object_event $62,  6,  5, 0, $00, $00, $00, $00, Script_05c_436c
 	objects_end
 
-Script_05c_436b:
+Script_05c_436b::
 	end
 
-Script_05c_436c:
+Script_05c_436c::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -397,12 +397,12 @@ Script_05c_436c:
 	setbit wEventFlags + 9, $03
 	end
 
-EastFishmarketAntonCutscene_ObjectEvents2:
+EastFishmarketAntonCutscene_ObjectEvents2::
 	object_event $08,  9,  6, wEventFlags + 9, $03, $00, $00, $00, Script_05c_411c
 	object_event $09, 10,  6, wEventFlags + 9, $03, $00, $00, $01, Script_05c_411c
 	objects_end
 
-EastFishmarket_4e_ObjectEvents3:
+EastFishmarket_4e_ObjectEvents3::
 	object_event $08,  5,  4, 0, $00, $00, $00, $00, Script_05c_411c
 	object_event $09,  6,  4, 0, $00, $00, $00, $01, Script_05c_411c
 	object_event $1e,  5, 10, 0, $00, $00, $00, $02, Script_05c_411c

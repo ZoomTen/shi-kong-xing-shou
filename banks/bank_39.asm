@@ -1,8 +1,8 @@
-GFX_039_4000:
+GFX_039_4000::
 	INCBIN "gfx/misc/gfx_039_4000.2bpp"
-GFX_039_4020:
+GFX_039_4020::
 	INCBIN "gfx/misc/gfx_039_4020.2bpp"
-Func_039_40a0:
+Func_039_40a0::
 	xor a
 	ld [hFFC6], a
 	ldh [hFFC5], a
@@ -63,13 +63,13 @@ Func_039_40a0:
 	ld h, [hl]
 	ld l, a
 	jp hl
-unk_039_4111:
+unk_039_4111::
 	dw Func_039_417e
 	dw Func_039_4250
 	dw Func_039_4469
 	dw Func_039_462f
 	dw Func_039_4892
-ScreenScript_39_411b:
+ScreenScript_39_411b::
 	bs_save_palbuf
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
@@ -92,7 +92,7 @@ ScreenScript_39_411b:
 	bs_set_sprite_pos $18, $0e
 	bs_lcd_on_loadpal
 	bs_end_script
-Func_039_417e:
+Func_039_417e::
 .asm_417e
 	farcall Func_024_4062
 	call DelayFrame
@@ -158,7 +158,7 @@ Func_039_417e:
 	ld [wSelectedOption], a
 	ret
 ; TODO
-asm_039_41fb:
+asm_039_41fb::
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
@@ -180,9 +180,9 @@ asm_039_41fb:
 	ldh [hFFC5], a
 	ret
 ; TODO: unk_ - data, referenced via `ld [hl], LOW(unk_039_4224)`
-unk_039_4224:
+unk_039_4224::
 	db $08, $14, $4c, $11, $17, $09, $40
-Func_039_422b:
+Func_039_422b::
 	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -206,14 +206,14 @@ Func_039_422b:
 	ld [hl], a
 	ret
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-ScreenScript_39_4248:
+ScreenScript_39_4248::
 	bs_clear_region
 	bs_draw_item_page
 	bs_set_sprite_pos $30, $0e
 	bs_draw_item_x
 	bs_draw_item_arrows
 	bs_end_script
-Func_039_4250:
+Func_039_4250::
 .asm_4250
 	farcall Func_024_4062
 	call DelayFrame
@@ -424,23 +424,23 @@ Func_039_4250:
 	ld a, [wSelectedOption]
 	ld [wd1f4], a
 	ret
-unk_039_43ea:
+unk_039_43ea::
 	db $1d, $09, $0b
-unk_039_43ed:
+unk_039_43ed::
 	db $5c, $0a, $02, $0e, $09, $af, $76, $dd, $76, $45, $05
-unk_039_43f8:
+unk_039_43f8::
 	db $5c, $08
 	db $1a
-unk_039_43fb:
+unk_039_43fb::
 	db $1b, $08, $06, $8d, $98, $3d, $00, $04, $80, $8a, $41, $43, $44, $1a
-unk_039_4409:
+unk_039_4409::
 	db $43
 	db $1a
-unk_039_440b:
+unk_039_440b::
 	db $01, $99, $61, $29, $3d, $5c, $01, $3d, $00, $04, $80, $8a, $02, $00, $00
 	db $41, $75, $d3, $73, $02, $04, $00, $93, $75, $25, $74, $3b, $13, $d7, $d0, $05
 	db $03, $01, $0c, $5c, $01, $1a
-Func_039_4430:
+Func_039_4430::
 	ld a, [wd1fe]
 	ld e, a
 	ld a, [wd1ff]
@@ -458,7 +458,7 @@ Func_039_4430:
 	add hl, de
 	ld a, [hl]
 	ret
-Func_039_444a:
+Func_039_444a::
 	ld a, [wd1fe]
 	ld e, a
 	ld a, [wd1ff]
@@ -472,12 +472,12 @@ Func_039_444a:
 	add hl, de
 	ld a, [hl]
 	ret
-ScreenScript_39_445e:
+ScreenScript_39_445e::
 	bs_draw_aa_434d $09
 	bs_place_tile_attr $090e, Tilemap_4a_76af, Attrmap_4a_76dd
 	bs_draw_q_4416
 	bs_end_script
-Func_039_4469:
+Func_039_4469::
 .asm_4469
 	farcall Func_024_4062
 	call DelayFrame
@@ -655,7 +655,7 @@ Func_039_4469:
 .asm_45c2
 	ld a, $01
 	ret
-Func_039_45c5:
+Func_039_45c5::
 	farcall Func_01e_4441
 	ldh a, [hMathValue + 2]
 	ld [wd9ca], a
@@ -664,7 +664,7 @@ Func_039_45c5:
 	ldh a, [hMathValue]
 	ld [wd9cc], a
 	ret
-Func_039_45db:
+Func_039_45db::
 	farcall Func_01e_4441
 	ld hl, wMoney
 	ldh a, [hMathValue + 2]
@@ -698,14 +698,14 @@ Func_039_45db:
 .asm_4612
 	ld a, $01
 	ret
-unk_039_4615:
+unk_039_4615::
 	db $02, $0c, $00, $35, $76, $c7, $74, $41, $43, $1a
-ScreenScript_39_461f:
+ScreenScript_39_461f::
 	bs_print_text_xy String_025_60db, $a0, $a8
 	bs_place_tile_attr $0f06, Tilemap_4a_770b, Attrmap_4a_772b
 	bs_set_sprite_pos $48, $86
 	bs_end_script
-Func_039_462f:
+Func_039_462f::
 .asm_462f
 	farcall Func_024_4062
 	call DelayFrame
@@ -898,12 +898,12 @@ Func_039_462f:
 	ld [de], a
 	inc de
 	jr .asm_4778
-Func_039_4781:
+Func_039_4781::
 	ret
-Func_039_4782:
+Func_039_4782::
 	ld a, b
 	jr z, asm_039_479f.asm_47b2
-Func_039_4785:
+Func_039_4785::
 	ld hl, wd9cc
 	ld a, [wMoney + 2]
 	sub [hl]
@@ -1090,7 +1090,7 @@ Func_039_4892::
 	xor a
 	ld [hFFC6], a
 	ret
-ScreenScript_Pointers:
+ScreenScript_Pointers::
 	dw ScreenScript_39_4928
 	dw ScreenScript_39_4ac7
 	dw ScreenScript_39_4cc1
@@ -1102,7 +1102,7 @@ ScreenScript_Pointers:
 	dw ScreenScript_39_55eb
 	dw ScreenScript_39_5734
 	dw ScreenScript_39_5811
-Func_039_4904:
+Func_039_4904::
 	ld de, ScreenLoop_Pointers
 	ldh a, [hFFC5]
 	ld l, a
@@ -1113,7 +1113,7 @@ Func_039_4904:
 	ld h, [hl]
 	ld l, a
 	jp hl
-ScreenLoop_Pointers:
+ScreenLoop_Pointers::
 	dw Func_039_497c
 	dw Func_039_4afd
 	dw Func_039_4cda
@@ -1125,7 +1125,7 @@ ScreenLoop_Pointers:
 	dw Func_039_5604
 	dw Func_039_574d
 	dw Func_039_5826
-ScreenScript_39_4928:
+ScreenScript_39_4928::
 	bs_save_palbuf
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
@@ -1146,7 +1146,7 @@ ScreenScript_39_4928:
 	bs_set_sprite_pos $18, $66
 	bs_lcd_on_loadpal
 	bs_end_script
-Func_039_497c:
+Func_039_497c::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -1307,12 +1307,12 @@ Func_039_497c:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
-ScreenScript_39_4ac0:
+ScreenScript_39_4ac0::
 	bs_draw_aa_434d $19
 	bs_draw_aa_434d $0b
 	bs_select_menu $00
 	bs_end_script3
-ScreenScript_39_4ac7:
+ScreenScript_39_4ac7::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -1332,7 +1332,7 @@ ScreenScript_39_4ac7:
 	bs_set_sprite_pos $18, $08
 	bs_lcd_on_loadpal
 	bs_end_script
-Func_039_4afd:
+Func_039_4afd::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -1501,7 +1501,7 @@ Func_039_4afd:
 	xor a
 	ldh [hFFC5], a
 	ret
-ScreenScript_39_4c38:
+ScreenScript_39_4c38::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -1521,7 +1521,7 @@ ScreenScript_39_4c38:
 	bs_set_sprite_pos $18, $66
 	bs_lcd_on_loadpal
 	bs_end_script
-ScreenScript_39_4c8b:
+ScreenScript_39_4c8b::
 	bs_draw_z_434d $00
 	bs_place_tile_attr $000c, Tilemap_4a_6537, Attrmap_4a_6227
 	bs_draw_z_434d $1d
@@ -1530,7 +1530,7 @@ ScreenScript_39_4c8b:
 	bs_select_menu $01
 	bs_set_sprite_pos $1c, $48
 	bs_end_script3
-ScreenScript_39_4ca4:
+ScreenScript_39_4ca4::
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -1541,16 +1541,16 @@ ScreenScript_39_4ca4:
 	bs_end_script3
 ; TODO: pointer table - resolve dw targets (cross-bank/wram or mid-block)
 ; party-menu cursor coords (6 y,x pairs)
-PartyCursor_Coords:
+PartyCursor_Coords::
 	db $18, $08, $18, $40, $18, $78, $38, $08, $38, $40, $38, $78
-ScreenScript_39_4cc1:
+ScreenScript_39_4cc1::
 	bs_draw_z_434d $0d
 	bs_place_tile_attr $000c, Tilemap_4a_6537, Attrmap_4a_6227
 	bs_print_text_xy String_025_60db, $98, $a0
 	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
 	bs_set_sprite_pos $48, $86
 	bs_end_script
-Func_039_4cda:
+Func_039_4cda::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -1648,7 +1648,7 @@ Func_039_4cda:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
-ScreenScript_39_4d92:
+ScreenScript_39_4d92::
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_draw_z_434d $00
@@ -1665,7 +1665,7 @@ ScreenScript_39_4d92:
 	bs_print_hp
 	bs_draw_party_list
 	bs_end_script
-ScreenScript_39_4dc1:
+ScreenScript_39_4dc1::
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_draw_z_434d $00
@@ -1676,11 +1676,11 @@ ScreenScript_39_4dc1:
 	bs_draw_party_list
 	bs_select_menu $01
 	bs_end_script3
-ScreenScript_39_4de2:
+ScreenScript_39_4de2::
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_end_script3
-Func_039_4deb:
+Func_039_4deb::
 	ld a, $01
 	ldh [hFFC5], a
 	call Func_039_485c
@@ -1790,28 +1790,28 @@ Func_039_4deb:
 	cp $60
 	jr c, .asm_4e5a
 	ret
-ScreenScript_39_4e87:
+ScreenScript_39_4e87::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
 	bs_draw_r_46af
 	bs_draw_aa_434d $1c
 	bs_set_sprite_pos $18, $10
 	bs_end_script
-ScreenScript_39_4e9a:
+ScreenScript_39_4e9a::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
 	bs_draw_r_46af
 	bs_draw_aa_434d $0c
 	bs_set_sprite_pos $18, $10
 	bs_end_script
-ScreenScript_39_4ead:
+ScreenScript_39_4ead::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
 	bs_draw_r_46af
 	bs_draw_aa_434d $1a
 	bs_set_sprite_pos $18, $10
 	bs_end_script
-Func_039_4ec0:
+Func_039_4ec0::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -1991,7 +1991,7 @@ Func_039_4ec0:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
-Func_039_5016:
+Func_039_5016::
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	ret z
@@ -2010,24 +2010,24 @@ Func_039_5016:
 	ldh [hFFC6], a
 	call Func_039_485c
 	ret
-ScreenScript_39_503b:
+ScreenScript_39_503b::
 	bs_draw_aa_434d $18
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
 	bs_draw_r_46af
 	bs_draw_aa_434d $1a
 	bs_select_menu $03
 	bs_end_script3
-ScreenScript_39_504a:
+ScreenScript_39_504a::
 	bs_draw_r_46af
 	bs_end_script3
-ScreenScript_39_504c:
+ScreenScript_39_504c::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_print_text_xy String_025_61a3, $2f, $5b
 	bs_draw_aa_434d $0b
 	bs_place_tile_attr $0b00, Tilemap_4a_774b, Attrmap_4a_77b9
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_end_script3
-Func_039_5067:
+Func_039_5067::
 	call GetBoxMonPtr
 	ld a, [bc]
 	ld de, Table_39_5074
@@ -2036,7 +2036,7 @@ Func_039_5067:
 	add hl, de
 	ld a, [hl]
 	ret
-Table_39_5074:
+Table_39_5074::
 	db $00, $00, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
@@ -2048,7 +2048,7 @@ Table_39_5074:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00
-Func_039_5115:
+Func_039_5115::
 	push af
 	ld bc, wMonBox
 	ld a, [wMonBoxIndex]
@@ -2067,7 +2067,7 @@ Func_039_5115:
 .asm_512b
 	ld a, [bc]
 	ret
-ScreenScript_39_512d:
+ScreenScript_39_512d::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -2085,7 +2085,7 @@ ScreenScript_39_512d:
 	bs_print_stats_2
 	bs_lcd_on_loadpal
 	bs_end_script
-Func_039_5163:
+Func_039_5163::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -2202,14 +2202,14 @@ Func_039_5163:
 	inc hl
 	ld [hl], $01
 	ret
-ScreenScript_39_5241:
+ScreenScript_39_5241::
 	bs_draw_mon_full $06, $93e0, $62, $6e
 	bs_print_hp_2
 	bs_clear_oam
 	bs_print_stats_2
 	bs_draw_ab_42ba
 	bs_end_script3
-ScreenScript_39_524c:
+ScreenScript_39_524c::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -2228,11 +2228,11 @@ ScreenScript_39_524c:
 	bs_set_sprite_pos $18, $10
 	bs_lcd_on_loadpal
 	bs_end_script
-ScreenScript_39_5296:
+ScreenScript_39_5296::
 	bs_place_tile_attr $0000, Tilemap_4a_5d45, Attrmap_4a_5dfb
 	bs_draw_party_stats
 	bs_end_script3
-Func_039_529f:
+Func_039_529f::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -2341,14 +2341,14 @@ Func_039_529f:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
-ScreenScript_39_536d:
+ScreenScript_39_536d::
 	bs_draw_mon_full $06, $93e0, $62, $6e
 	bs_print_hp_2
 	bs_draw_ab_42ba
 	bs_clear_bgbox_at $07, $11, $9822
 	bs_draw_party_stats
 	bs_end_script3
-ScreenScript_39_537c:
+ScreenScript_39_537c::
 	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
 	bs_print_text_xy String_025_6099, $a0, $fd
 	bs_draw_mon_full $06, $93e0, $62, $6e
@@ -2356,14 +2356,14 @@ ScreenScript_39_537c:
 	bs_clear_oam
 	bs_print_stats_2
 	bs_end_script3
-ScreenScript_39_5392:
+ScreenScript_39_5392::
 	bs_draw_aa_434d $10
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_print_text_xy String_025_60db, $e4, $fd
 	bs_place_tile_attr $0f06, Tilemap_4a_7ad3, Attrmap_4a_664b
 	bs_set_sprite_pos $48, $86
 	bs_end_script
-Func_039_53ab:
+Func_039_53ab::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -2467,11 +2467,11 @@ Func_039_53ab:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
-ScreenScript_39_5468:
+ScreenScript_39_5468::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $1a
 	bs_end_script3
-ScreenScript_39_5470:
+ScreenScript_39_5470::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $11
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
@@ -2479,13 +2479,13 @@ ScreenScript_39_5470:
 	bs_draw_aa_434d $1a
 	bs_select_menu $03
 	bs_end_script3
-ScreenScript_39_5484:
+ScreenScript_39_5484::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $12
 	bs_draw_aa_434d $1a
 	bs_select_menu $03
 	bs_end_script3
-Func_039_5490:
+Func_039_5490::
 	ld hl, wPartyMons
 	ld bc, $0016
 .asm_5496
@@ -2522,7 +2522,7 @@ Func_039_5490:
 	dec a
 	ld [wMonBoxCount], a
 	ret
-Func_039_54c8:
+Func_039_54c8::
 	ld bc, wMonBox
 .asm_54cb
 	ld hl, $0000
@@ -2561,7 +2561,7 @@ Func_039_54c8:
 	cp $80
 	jr c, .asm_54cb
 	ret
-ScreenScript_39_54fd:
+ScreenScript_39_54fd::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_print_text_xy String_025_61bf, $a8, $b0
 	bs_print_text_xy String_025_61b6, $b0, $c0
@@ -2572,7 +2572,7 @@ ScreenScript_39_54fd:
 	bs_draw_aa_434d $1b
 	bs_set_sprite_pos $18, $10
 	bs_end_script
-Func_039_5522:
+Func_039_5522::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -2671,19 +2671,19 @@ Func_039_5522:
 	ld a, $08
 	ldh [hFFC5], a
 	ret
-ScreenScript_39_55dd:
+ScreenScript_39_55dd::
 	bs_clear_bgbox_at $0a, $09, $9821
 	bs_place_tile_attr $0000, Tilemap_4a_79df, Attrmap_4a_7a59
 	bs_draw_box_markers
 	bs_end_script3
-ScreenScript_39_55eb:
+ScreenScript_39_55eb::
 	bs_draw_aa_434d $14
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_print_text_xy String_025_60db, $e4, $fd
 	bs_place_tile_attr $0f06, Tilemap_4a_7ad3, Attrmap_4a_664b
 	bs_set_sprite_pos $48, $86
 	bs_end_script
-Func_039_5604:
+Func_039_5604::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -2774,11 +2774,11 @@ Func_039_5604:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
-ScreenScript_39_56b5:
+ScreenScript_39_56b5::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $1b
 	bs_end_script3
-ScreenScript_39_56bd:
+ScreenScript_39_56bd::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $15
 	bs_place_tile_attr $0000, Tilemap_4a_79df, Attrmap_4a_7a59
@@ -2789,7 +2789,7 @@ ScreenScript_39_56bd:
 	bs_draw_aa_434d $1b
 	bs_select_menu $07
 	bs_end_script3
-Func_039_56de:
+Func_039_56de::
 	ld de, wdca0
 	ld a, [wdc9d]
 	ld l, a
@@ -2829,14 +2829,14 @@ Func_039_56de:
 	xor a
 	ld [rRAMG], a
 	ret
-ScreenScript_39_5734:
+ScreenScript_39_5734::
 	bs_draw_aa_434d $16
 	bs_place_tile_attr $000c, Tilemap_4a_7635, Tilemap_4a_74c7
 	bs_print_text_xy String_025_60db, $e4, $fd
 	bs_place_tile_attr $0f06, Tilemap_4a_7ad3, Attrmap_4a_664b
 	bs_set_sprite_pos $48, $86
 	bs_end_script
-Func_039_574d:
+Func_039_574d::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -2925,7 +2925,7 @@ Func_039_574d:
 	ldh [hFFC5], a
 	call Func_039_485c
 	ret
-ScreenScript_39_57f5:
+ScreenScript_39_57f5::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $17
 	bs_place_tile_attr $0000, Tilemap_4a_7827, Attrmap_4a_78c5
@@ -2933,17 +2933,17 @@ ScreenScript_39_57f5:
 	bs_draw_aa_434d $1c
 	bs_select_menu $03
 	bs_end_script3
-ScreenScript_39_5809:
+ScreenScript_39_5809::
 	bs_clear_bgbox_at $06, $05, $98cf
 	bs_draw_aa_434d $1c
 	bs_end_script3
-ScreenScript_39_5811:
+ScreenScript_39_5811::
 	bs_clear_bgbox_at $09, $14, $9800
 	bs_vram_copy3 $0080, $8980, BattleUIGFX_527a
 	bs_place_tile_attr $0401, Tilemap_4a_606d, Attrmap_4a_60b7
 	bs_print_equip_name
 	bs_end_script3
-Func_039_5826:
+Func_039_5826::
 	farcall Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -3041,7 +3041,7 @@ Func_039_5826:
 	inc hl
 	ld [hl], $01
 	ret
-ScreenScript_39_58dd:
+ScreenScript_39_58dd::
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -3051,7 +3051,7 @@ ScreenScript_39_58dd:
 	bs_draw_status_2
 	bs_print_equip_name
 	bs_end_script3
-ScreenScript_39_58f5:
+ScreenScript_39_58f5::
 	bs_save_palbuf
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
@@ -3071,7 +3071,7 @@ ScreenScript_39_58f5:
 	bs_set_sprite_pos $18, $10
 	bs_lcd_on_loadpal
 	bs_end_script
-Func_039_5940:
+Func_039_5940::
 	ld a, $03
 	ldh [hFFC5], a
 	call Func_039_485c
@@ -3088,7 +3088,7 @@ Func_039_5940:
 	dec a
 	ld [wMonBoxCount], a
 	ret
-Func_039_595d:
+Func_039_595d::
 	ld hl, wcde0
 	ld [hl], $00
 	inc hl

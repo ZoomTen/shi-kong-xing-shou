@@ -1,4 +1,4 @@
-Func_023_4000:
+Func_023_4000::
 	ld de, BattleAnimScript_Pointers
 	ld a, [wBattleAnimID]
 	ld l, a
@@ -2048,7 +2048,7 @@ BattleAnimScript_023_55b5::
 	anim_03
 
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
-Script_023_55cc:
+Script_023_55cc::
 	anim_80 SFX_29
 	anim_62 $e2, $5e
 	anim_63 $14, $40
@@ -2062,12 +2062,12 @@ Script_023_55cc:
 	anim_63 $ac, $5b
 	anim_03
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
-Script_023_55f6:
+Script_023_55f6::
 	anim_80 SFX_39
 	anim_73
 	anim_03
 ; TODO disassemble
-Func_023_55fa:
+Func_023_55fa::
 	db $11, $0e, $56, $fa, $f3, $d9, $6f, $26, $00, $29, $19, $2a, $ea, $88, $d0, $2a
 	db $ea, $89, $d0, $c9, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56
 	db $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56, $5e, $56
@@ -2079,7 +2079,7 @@ Func_023_55fa:
 	db $00, $03, $00, $7e, $67, $3f, $1c, $47, $02, $08, $10, $08, $10, $09, $06, $01
 	db $01, $09, $00, $03, $00, $86, $67, $3f, $20, $4e, $02, $08, $10, $08, $10, $0b
 	db $09, $00, $03, $00, $8c, $67, $40, $03
-BattleScript_023_56a2:
+BattleScript_023_56a2::
 	anim_20
 	anim_63 $24, $53
 	anim_02 $08, $10, $08, $10, $0d
@@ -2099,7 +2099,7 @@ BattleScript_023_56a2:
 	anim_20
 	anim_63 $ac, $5b
 	anim_03
-Func_023_56de:
+Func_023_56de::
 	ld hl, BattleScript_023_56a2
 	ld a, l
 	ld [wBattleScriptPos], a
@@ -2111,7 +2111,7 @@ Func_023_56de:
 	ld [wBattleState], a
 	ret
 ; TODO disassemble
-Func_023_56f3:
+Func_023_56f3::
 	db $21, $c6, $56, $7d, $ea, $88, $d0, $7c, $ea, $89, $d0, $af, $ea, $93, $d9, $af
 	db $ea, $89, $d9, $c9, $3e, $ea, $5e, $3f, $30, $5c, $02, $30, $28, $60, $78, $01
 	db $50, $45, $2e, $03, $3e, $f2, $5e, $3f, $74, $5c, $02, $30, $28, $60, $78, $01
@@ -2124,7 +2124,7 @@ Func_023_56f3:
 	db $50, $45, $2f, $03, $3e, $2a, $5f, $3f, $50, $5e, $02, $40, $78, $10, $28, $01
 	db $50, $45, $2f, $03, $3e, $32, $5f, $3f, $94, $5e, $02, $40, $78, $10, $28, $01
 	db $50, $45, $2f, $03, $50, $27, $43, $02, $1d, $00, $03
-Script_023_57ae:
+Script_023_57ae::
 	anim_01
 	anim_80 SFX_36
 	anim_02 $40, $68, $10, $18, $01
@@ -2136,7 +2136,7 @@ Script_023_57ae:
 	anim_20
 	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
-Script_023_57d1:
+Script_023_57d1::
 	anim_66 $90
 	anim_80 SFX_42
 	anim_72 $00, ObjectAnim_02e_6e37
@@ -2145,7 +2145,7 @@ Script_023_57d1:
 	anim_06 $06, $01
 	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
-Script_023_57e1:
+Script_023_57e1::
 	anim_14 $3a, (GFX_03a_4000 + 15286)
 	anim_08 ScrollDeltas_02e_67ed
 	anim_72 $00, ObjectAnim_02e_6c69
@@ -2154,7 +2154,7 @@ Script_023_57e1:
 	anim_18 $07, $04
 	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
-Script_023_57f4:
+Script_023_57f4::
 	anim_66 $53
 	anim_02 $40, $68, $10, $18, $01
 	anim_09 $00, $07, $00, MovementDeltas_02e_6606
@@ -2162,12 +2162,12 @@ Script_023_57f4:
 	anim_06 $02, $00
 	anim_03
 ; TODO disassemble (script data, read via AdvanceBattleScriptMode)
-Script_023_5809:
+Script_023_5809::
 	anim_07 $01, $00
 	anim_10 $00
 	anim_03
 ; TODO: battle/screen-script VM bytecode - needs opcode-table decoder (LEAVE per scope)
-Script_023_580f:
+Script_023_580f::
 	anim_66 $8f
 	anim_02 $40, $68, $10, $18, $01
 	anim_09 $00, $03, $00, MovementDeltas_02e_6771

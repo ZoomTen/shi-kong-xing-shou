@@ -1,4 +1,4 @@
-StardreamShop_ObjectEvents:
+StardreamShop_ObjectEvents::
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_066_400c
 	objects_end
 
@@ -13,10 +13,10 @@ Script_066_4010::
 	scr_35 $0a
 	end
 
-Script_066_4021:
+Script_066_4021::
 	end
 
-StardreamHealingCenter_ObjectEvents:
+StardreamHealingCenter_ObjectEvents::
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_066_4039
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_066_403d
 	objects_end
@@ -35,7 +35,7 @@ Script_066_4041::
 	scr_37
 	end
 
-Script_066_404e:
+Script_066_404e::
 	end
 Script_066_404f::
 	face FACE_UP
@@ -44,7 +44,7 @@ Script_066_404f::
 	townmusicanim
 	end
 
-Script_066_405c:
+Script_066_405c::
 	end
 INCLUDE "data/text/script_stardream_healing_center.asm"
 INCLUDE "data/text/script_stardream_shop.asm"
@@ -53,11 +53,11 @@ Script_066_40bb::
 	setmap MAP_PERMAFROST_GARDEN, $00
 	end2
 
-Script_066_40c5:
+Script_066_40c5::
 	setmap MAP_PERMAFROST_GARDEN, $02
 	end2
 
-PermafrostGarden_ObjectEvents3:
+PermafrostGarden_ObjectEvents3::
 	object_event $57, 26, 25, wEventFlags + 17, $00, $00, $00, $00, Script_066_40d5
 	objects_end
 
@@ -122,7 +122,7 @@ Script_066_4172::
 	textface text_66_4d45
 	end
 
-StardreamAirship_18_ObjectEvents:
+StardreamAirship_18_ObjectEvents::
 	object_event $62,  7,  3, wEventFlags + 14, $07, $00, $00, $00, Script_066_4182
 	objects_end
 
@@ -143,7 +143,7 @@ Script_066_4182::
 	stext text_66_4e17
 	end
 
-StardreamAirship_16_ObjectEvents:
+StardreamAirship_16_ObjectEvents::
 	object_event $12,  1,  5, 0, $00, $00, $00, $00, Script_066_4172
 	object_event $25, 16,  3, 0, $00, $00, $00, $01, Script_066_41f2
 	object_event $22, 20,  3, 0, $00, $00, $00, $02, Script_066_41f2
@@ -155,7 +155,7 @@ Script_066_41d1::
 	scr_37
 	end
 
-Script_066_41de:
+Script_066_41de::
 	end
 Script_066_41df::
 	face FACE_LEFT
@@ -165,7 +165,7 @@ Script_066_41df::
 	scr_35 $09
 	end
 
-Script_066_41f0:
+Script_066_41f0::
 	end
 Script_066_41f1::
 	end
@@ -176,7 +176,7 @@ Script_066_41f2::
 Bank66_EmptyObjectEvent::
 	objects_end
 
-PresaleHouseOutside_ObjectEvents:
+PresaleHouseOutside_ObjectEvents::
 	object_event $12, 23,  3, 0, $00, $00, $00, $00, Script_066_4200
 	objects_end
 
@@ -188,10 +188,10 @@ Script_066_4204::
 	stext text_66_4eab
 	end
 
-Script_066_420e:
+Script_066_420e::
 	end
 
-StardreamCity_07_ObjectEvents:
+StardreamCity_07_ObjectEvents::
 	object_event $14, 33,  8, 0, $00, $00, $00, $00, Script_066_428a
 	object_event $17, 26,  7, 0, $00, $00, $00, $01, Script_066_428e
 	object_event $1c, 21, 10, 0, $00, $00, $00, $02, Script_066_42a0
@@ -209,7 +209,7 @@ Script_066_427e::
 	textface text_66_7b6c
 	end
 
-Script_066_4286:
+Script_066_4286::
 	textface text_66_7b99
 	end
 
@@ -225,7 +225,7 @@ Script_066_4292::
 	setmap MAP_PRESALE_HOUSE_1F, $00
 	end2
 
-Script_066_429c:
+Script_066_429c::
 	setmap MAP_PRESALE_HOUSE_1F, $01
 	end2
 
@@ -234,7 +234,7 @@ Script_066_42a0::
 	textface text_66_500c
 	end
 
-Script_066_42aa:
+Script_066_42aa::
 	checkbit wEventFlags + 15, $05, Script_066_42c1
 	textface text_66_6de6
 	stext text_66_6e8b
@@ -243,25 +243,25 @@ Script_066_42aa:
 	setbit wEventFlags + 15, $05
 	end
 
-Script_066_42c1:
+Script_066_42c1::
 	checkbit wEventFlags + 15, $04, Script_066_42cb
 	textface text_66_6e9a
 	end
 
-Script_066_42cb:
+Script_066_42cb::
 	textface text_66_776e
 	end
 Script_066_42cf::
 	checkbit wEventFlags + 15, $01, Script_066_42d6
-Script_066_42d5:
+Script_066_42d5::
 	end
 
-Script_066_42d6:
+Script_066_42d6::
 	checkbit wEventFlags + 16, $01, Script_066_42d5
 	countflags10 $07, $e1, $42
 	end
 
-Script_066_42e1:
+Script_066_42e1::
 	face FACE_UP
 	stext text_66_6f2c
 	scr_48 $02, $21
@@ -273,12 +273,12 @@ Script_066_42ee::
 	textface text_66_5083
 	end
 
-Script_066_42f8:
+Script_066_42f8::
 	checkbit wEventFlags + 15, $03, Script_066_4302
 	textface text_66_709b
 	end
 
-Script_066_4302:
+Script_066_4302::
 	checkbit wEventFlags + 16, $03, Script_066_431f
 	textface text_66_71a4
 	emote  0, EMOTE_TEAR
@@ -289,7 +289,7 @@ Script_066_4302:
 	setbit wEventFlags + 16, $03
 	end
 
-Script_066_431f:
+Script_066_431f::
 	textface text_66_7225
 	end
 
@@ -298,7 +298,7 @@ Script_066_4323::
 	textface text_66_50b5
 	end
 
-Script_066_432d:
+Script_066_432d::
 	textface text_66_7796
 	end
 
@@ -318,7 +318,7 @@ Script_066_433d::
 	textface text_66_5287
 	end
 
-StardreamCity_1e_ObjectEvents:
+StardreamCity_1e_ObjectEvents::
 	object_event $1d,  5,  3, 0, $00, $00, $00, $00, Script_066_436b
 	object_event $1a,  6,  6, 0, $00, $00, $00, $01, Script_066_4358
 	objects_end
@@ -337,18 +337,18 @@ Script_066_436b::
 	textface text_66_5313
 	end
 
-Script_066_4375:
+Script_066_4375::
 	checkbit wEventFlags + 17, $07, Script_066_4383
 	textface text_66_6f3e
 	setbit wEventFlags + 17, $07
 	end
 
-Script_066_4383:
+Script_066_4383::
 	countflags10 $06, $8b, $43
 	textface text_66_6fa2
 	end
 
-Script_066_438b:
+Script_066_438b::
 	checkbit wEventFlags + 16, $07, Script_066_439f
 	textface text_66_6ffe
 	stext text_66_7044
@@ -356,16 +356,16 @@ Script_066_438b:
 	setbit wEventFlags + 16, $07
 	end
 
-Script_066_439f:
+Script_066_439f::
 	textface text_66_7055
 	end
 
-PresaleHouse_1f_ObjectEvents2:
+PresaleHouse_1f_ObjectEvents2::
 	object_event $20,  4,  3, 0, $00, $00, $00, $00, Script_066_43dd
 	object_event $19,  5,  5, 0, $00, $00, $00, $01, Script_066_4440
 	objects_end
 
-PresaleHouse_1f_ObjectEvents:
+PresaleHouse_1f_ObjectEvents::
 	object_event $20,  4,  3, 0, $00, $00, $00, $00, Script_066_43dd
 	object_event $19,  5,  5, wEventFlags + 17, $02, $00, $00, $01, Script_066_4444
 	objects_end
@@ -378,13 +378,13 @@ Script_066_43dd::
 	textface text_66_5407
 	end
 
-Script_066_43e7:
+Script_066_43e7::
 	checkbit wEventFlags + 17, $04, Script_066_43f5
 	textface text_66_66f2
 	setbit wEventFlags + 17, $03
 	end
 
-Script_066_43f5:
+Script_066_43f5::
 	checkbit wEventFlags + 17, $05, Script_066_442c
 	walkpath
 	face FACE_UP
@@ -406,7 +406,7 @@ Script_066_43f5:
 	setbit wEventFlags + 17, $05
 	end
 
-Script_066_442c:
+Script_066_442c::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -438,24 +438,24 @@ Script_066_4444::
 	delay $03, $20
 	end
 
-G5_27_ObjectEvents4:
+G5_27_ObjectEvents4::
 	object_event $19,  6,  6, wEventFlags + 17, $04, $00, $00, $00, Script_066_41f2
 	objects_end
 
-G5_27_ObjectEvents3:
+G5_27_ObjectEvents3::
 	object_event $73,  6,  6, 0, $00, $00, $00, $00, Script_066_41f2
 	objects_end
 
-G5_27_ObjectEvents2:
+G5_27_ObjectEvents2::
 	object_event $73,  4,  8, 0, $00, $00, $00, $00, Script_066_41f2
 	objects_end
 Script_066_448e::
 	checkbit wEventFlags + 17, $03, Script_066_4498
-Script_066_4494:
+Script_066_4494::
 	setmap MAP_G5_27, $00
 	end
 
-Script_066_4498:
+Script_066_4498::
 	checkbit wEventFlags + 17, $04, Script_066_4494
 	setplayerchar $00
 	setmap MAP_G5_27, $01
@@ -497,7 +497,7 @@ Script_066_4498:
 	setbit wEventFlags + 17, $04
 	end
 
-StardreamCity_20_ObjectEvents:
+StardreamCity_20_ObjectEvents::
 	object_event $16,  7,  6, 0, $00, $00, $08, $00, Script_066_451c
 	objects_end
 
@@ -505,7 +505,7 @@ Script_066_451c::
 	textface text_66_54d3
 	end
 
-StardreamFlorist_ObjectEvents:
+StardreamFlorist_ObjectEvents::
 	object_event $23,  8,  2, 0, $00, $00, $00, $00, Script_066_454d
 	object_event $25,  5,  4, 0, $00, $00, $06, $01, Script_066_4537
 	objects_end
@@ -515,7 +515,7 @@ Script_066_4537::
 	textface text_66_551e
 	end
 
-Script_066_4541:
+Script_066_4541::
 	textface text_66_5f6c
 	end
 Script_066_4545::
@@ -528,7 +528,7 @@ Script_066_454d::
 	stext text_66_5571
 	end
 
-Script_066_4557:
+Script_066_4557::
 	checkbit wEventFlags + 16, $00, Script_066_456b
 	stext text_66_5f95
 	stext text_66_5fde
@@ -536,11 +536,11 @@ Script_066_4557:
 	setbit wEventFlags + 16, $00
 	end
 
-Script_066_456b:
+Script_066_456b::
 	stext text_66_5fef
 	end
 
-StardreamCity_0f_ObjectEvents:
+StardreamCity_0f_ObjectEvents::
 	object_event $1b,  2,  6, 0, $00, $00, $00, $00, Script_066_458e
 	object_event $21,  8,  4, 0, $00, $00, $06, $01, Script_066_45b6
 	objects_end
@@ -551,12 +551,12 @@ Script_066_4586::
 
 Script_066_458e::
 	spriteface  2, FACE_RIGHT
-Script_066_4591:
+Script_066_4591::
 	checkbit wEventFlags + 15, $02, Script_066_459b
 	stext text_66_55a9
 	end
 
-Script_066_459b:
+Script_066_459b::
 	checkbit wEventFlags + 15, $03, Script_066_45b2
 	stext text_66_70db
 	stext text_66_715f
@@ -565,7 +565,7 @@ Script_066_459b:
 	setbit wEventFlags + 15, $03
 	end
 
-Script_066_45b2:
+Script_066_45b2::
 	stext text_66_716f
 	end
 
@@ -573,7 +573,7 @@ Script_066_45b6::
 	textface text_66_55ff
 	end
 
-StardreamHospital_11_ObjectEvents:
+StardreamHospital_11_ObjectEvents::
 	object_event $13,  2,  6, 0, $00, $00, $00, $00, Script_066_45c6
 	objects_end
 
@@ -582,7 +582,7 @@ Script_066_45c6::
 	stext text_66_5739
 	end
 
-StardreamHospital_12_ObjectEvents:
+StardreamHospital_12_ObjectEvents::
 	object_event $15, 10,  6, 0, $00, $00, $06, $00, Script_066_45ef
 	object_event $1d,  4,  4, wEventFlags + 15, $00, $00, $00, $01, Script_066_45f3
 	object_event $1d,  3,  4, wEventFlags + 15, $00, $01, $00, $01, Script_066_45f7
@@ -600,7 +600,7 @@ Script_066_45f7::
 	textface text_66_5ce9
 	end
 
-StardreamHospital_13_ObjectEvents:
+StardreamHospital_13_ObjectEvents::
 	object_event $12,  2,  3, 0, $00, $00, $00, $00, Script_066_461d
 	object_event $14,  6,  3, 0, $00, $00, $00, $01, Script_066_4621
 	object_event $17,  9,  6, 0, $00, $00, $05, $02, Script_066_4625
@@ -618,7 +618,7 @@ Script_066_4625::
 	textface text_66_5821
 	end
 
-StardreamHospital_14_ObjectEvents:
+StardreamHospital_14_ObjectEvents::
 	object_event $16,  4,  5, 0, $00, $00, $00, $00, Script_066_4640
 	object_event $1f,  6,  3, 0, $00, $00, $00, $01, Script_066_465c
 	objects_end
@@ -639,7 +639,7 @@ Script_066_465c::
 	textface text_66_5903
 	end
 
-StardreamSchool_24_ObjectEvents:
+StardreamSchool_24_ObjectEvents::
 	object_event $22,  6, 10, 0, $00, $00, $00, $00, Script_066_466c
 	objects_end
 
@@ -647,7 +647,7 @@ Script_066_466c::
 	textface text_66_564a
 	end
 
-StardreamSchool_25_ObjectEvents:
+StardreamSchool_25_ObjectEvents::
 	object_event $1e,  5,  5, 0, $00, $00, $00, $00, Script_066_467c
 	objects_end
 
@@ -655,7 +655,7 @@ Script_066_467c::
 	textface text_66_5696
 	end
 
-StardreamSchool_26_ObjectEvents:
+StardreamSchool_26_ObjectEvents::
 	object_event $24,  6,  3, 0, $00, $00, $00, $00, Script_066_468c
 	objects_end
 
@@ -664,29 +664,29 @@ Script_066_468c::
 	textface text_66_56c0
 	end
 
-Script_066_4696:
+Script_066_4696::
 	checkbit wEventFlags + 15, $04, Script_066_46a0
 	textface text_66_60dd
 	end
 
-Script_066_46a0:
+Script_066_46a0::
 	textface text_66_77d4
 	end
 
-Script_066_46a4:
+Script_066_46a4::
 	checkbit wEventFlags + 16, $04, Script_066_4696
 	textface text_66_6027
 	countflags10 $05, $b2, $46
 	end
 
-Script_066_46b2:
+Script_066_46b2::
 	stext text_66_6063
 	stext text_66_60cd
 	scr_48 $02, $1c
 	setbit wEventFlags + 16, $04
 	end
 
-CardillaHouse_ObjectEvents:
+CardillaHouse_ObjectEvents::
 	object_event $18,  6,  4, 0, $00, $00, $00, $00, Script_066_46cc
 	objects_end
 
@@ -746,12 +746,12 @@ Script_066_46cc::
 	setbit wEventFlags + 15, $00
 	end
 
-Script_066_476b:
+Script_066_476b::
 	countflags10 $03, $73, $47
 	textface text_66_5c77
 	end
 
-Script_066_4773:
+Script_066_4773::
 	checkbit wEventFlags + 17, $01, Script_066_479a
 	walkpath
 	face FACE_UP
@@ -767,12 +767,12 @@ Script_066_4773:
 	setbit wEventFlags + 17, $01
 	end
 
-Script_066_479a:
+Script_066_479a::
 	checkbit wEventFlags + 16, $05, Script_066_47a4
 	textface text_66_61c1
 	end
 
-Script_066_47a4:
+Script_066_47a4::
 	checkbit wEventFlags + 15, $06, Script_066_47b2
 	textface text_66_6d46
 	setbit wEventFlags + 17, $06
@@ -782,22 +782,22 @@ Script_066_47b2::
 	textface text_66_74f2
 	end
 
-PresaleHouse_1a_ObjectEvents2:
+PresaleHouse_1a_ObjectEvents2::
 	object_event $27,  5,  5, 0, $00, $00, $00, $00, Script_066_4869
 	object_event $28,  4,  5, 0, $00, $00, $00, $01, Script_066_4869
 	objects_end
 Script_066_47cd::
 	checkbit wEventFlags + 17, $01, Script_066_47dd
 	setmap MAP_PRESALE_HOUSE_1A, $00
-Script_066_47d6:
+Script_066_47d6::
 	end2
 
-Script_066_47d7:
+Script_066_47d7::
 	face FACE_DOWN
 	setmap MAP_G5_19, $01
 	end
 
-Script_066_47dd:
+Script_066_47dd::
 	setmap MAP_PRESALE_HOUSE_1A, $01
 	checkbit wEventFlags + 17, $02, Script_066_47d6
 	spriteface  2, FACE_LEFT
@@ -854,7 +854,7 @@ Script_066_4869::
 	stext text_66_66d4
 	end
 
-Script_066_487d:
+Script_066_487d::
 	checkbit wEventFlags + 16, $05, Script_066_48a7
 	walkpath
 	face FACE_UP
@@ -871,7 +871,7 @@ Script_066_487d:
 	setbit wEventFlags + 16, $05
 	end
 
-Script_066_48a7:
+Script_066_48a7::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -882,7 +882,7 @@ Script_066_48a7:
 	delay $03, $20
 	end
 
-PermafrostGarden_ObjectEvents2:
+PermafrostGarden_ObjectEvents2::
 	object_event $0e, 15, 23, 0, $00, $00, $00, $00, Script_066_41f2
 	object_event $31, 18, 23, 0, $00, $00, $00, $01, Script_066_41f2
 	object_event $14, 16, 23, 0, $00, $00, $00, $02, Script_066_41f2
@@ -890,13 +890,13 @@ PermafrostGarden_ObjectEvents2:
 	object_event $57, 16, 15, 0, $00, $00, $00, $04, Script_066_41f2
 	objects_end
 
-StardreamHospital_15_ObjectEvents:
+StardreamHospital_15_ObjectEvents::
 	object_event $6f,  5,  3, 0, $00, $00, $00, $00, Script_066_495f
 	object_event $13,  6,  2, 0, $00, $00, $00, $01, Script_066_4937
 	object_event $0f,  4,  2, 0, $00, $00, $00, $02, Script_066_41f2
 	objects_end
 
-StardreamHospital_15_ObjectEvents2:
+StardreamHospital_15_ObjectEvents2::
 	object_event $0e,  6,  3, 0, $00, $00, $00, $00, Script_066_41f2
 	object_event $13,  7,  3, 0, $00, $00, $00, $01, Script_066_41f2
 	object_event $0f,  6,  2, 0, $00, $00, $00, $02, Script_066_41f2
@@ -917,7 +917,7 @@ Script_066_4937::
 	setbit wEventFlags + 15, $01
 	end
 
-Script_066_495b:
+Script_066_495b::
 	textface text_66_5e62
 	end
 
@@ -925,51 +925,51 @@ Script_066_495f::
 	scr_6e Script_066_4973, Script_066_497a, Script_066_4981, Script_066_4988, Script_066_498f, Script_066_4996, Script_066_499d, Script_066_49ab, Script_066_49b9
 	end
 
-Script_066_4973:
+Script_066_4973::
 	stext text_66_725f
 	stext text_66_7bca
 	end
 
-Script_066_497a:
+Script_066_497a::
 	stext text_66_725f
 	stext text_66_7be0
 	end
 
-Script_066_4981:
+Script_066_4981::
 	stext text_66_725f
 	stext text_66_7bf7
 	end
 
-Script_066_4988:
+Script_066_4988::
 	stext text_66_7267
 	stext text_66_7c0e
 	end
 
-Script_066_498f:
+Script_066_498f::
 	stext text_66_7267
 	stext text_66_7c25
 	end
 
-Script_066_4996:
+Script_066_4996::
 	stext text_66_727b
 	stext text_66_7c3c
 	end
 
-Script_066_499d:
+Script_066_499d::
 	stext text_66_727b
 	stext text_66_72bb
 	stext text_66_7c53
 	farjump Script_066_49ca
 	end
 
-Script_066_49ab:
+Script_066_49ab::
 	stext text_66_7297
 	stext text_66_72c9
 	stext text_66_7c6a
 	farjump Script_066_49ca
 	end
 
-Script_066_49b9:
+Script_066_49b9::
 	stext text_66_72d7
 	stext text_66_72ef
 	stext text_66_730d
@@ -977,7 +977,7 @@ Script_066_49b9:
 	farjump Script_066_49ca
 	end
 
-Script_066_49ca:
+Script_066_49ca::
 	stext text_66_7336
 	checkbit wEventFlags + 3, $03, Script_066_4a98
 	stext text_66_73c3
@@ -1051,7 +1051,7 @@ Script_066_49ca:
 	setbit wEventFlags + 15, $04
 	end
 
-Script_066_4a98:
+Script_066_4a98::
 	stext text_66_734c
 	end
 
@@ -1059,7 +1059,7 @@ ObjSprite_66_4a9c::
 	object_event $23,  4, 10, 0, $00, $00, $00, $03, Script_066_41f2
 	objects_end
 
-CardillaHouse_ObjectEvents2:
+CardillaHouse_ObjectEvents2::
 	object_event $18,  6,  5, 0, $00, $00, $00, $00, Script_066_47b2
 	object_event $0e,  5,  5, wEventFlags + 15, $04, $00, $00, $01, Script_066_41f2
 	object_event $0f,  5,  4, wEventFlags + 15, $04, $00, $00, $02, Script_066_41f2
@@ -1069,11 +1069,11 @@ Script_066_4aca::
 	setmap MAP_STARDREAM_HOSPITAL_15, $00
 	end2
 
-Script_066_4ad4:
+Script_066_4ad4::
 	setmap MAP_STARDREAM_HOSPITAL_15, $02
 	end2
 
-G5_0E_ObjectEvents2:
+G5_0E_ObjectEvents2::
 	object_event $0e,  5,  4, wEventFlags + 18, $00, $00, $00, $00, Script_066_41f2
 	object_event $0f,  5,  5, wEventFlags + 18, $00, $00, $00, $01, Script_066_41f2
 	objects_end
@@ -1095,11 +1095,11 @@ Script_066_4aef::
 	setbit wEventFlags + 18, $00
 	end
 
-Script_066_4b20:
+Script_066_4b20::
 	setmap MAP_G5_0E, $00
 	end2
 
-StardreamMachineRoom_0b_ObjectEvents:
+StardreamMachineRoom_0b_ObjectEvents::
 	object_event $62, 14,  3, wEventFlags + 18, $01, $00, $00, $00, Script_066_4b53
 	object_event $74, 14,  2, wEventFlags + 18, $01, $01, $00, $01, Script_066_41f2
 	objects_end
@@ -1150,7 +1150,7 @@ Script_066_4bb1::
 	spriteface  3, FACE_UP
 	end2
 
-Script_066_4bc1:
+Script_066_4bc1::
 	setmap MAP_STARDREAM_MACHINE_ROOM_0D, $02
 	end2
 
@@ -1201,7 +1201,7 @@ Script_066_4bc9::
 	farjump2 Script_06c_4752
 	end
 
-CardillaHouse_ObjectEvents3:
+CardillaHouse_ObjectEvents3::
 	object_event $0e,  4,  4, 0, $00, $00, $00, $00, Script_066_41f2
 	object_event $0f,  3,  4, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
@@ -1209,12 +1209,12 @@ ObjSprite_66_4c55::
 	object_event $50,  5,  0, 0, $00, $00, $00, $02, Script_066_41f2
 	objects_end
 
-StardreamMachineRoom_0d_ObjectEvents:
+StardreamMachineRoom_0d_ObjectEvents::
 	object_event $0e,  4,  2, 0, $00, $00, $00, $00, Script_066_4bc5
 	object_event $0f,  4,  3, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
 
-StardreamMachineRoom_0d_ObjectEvents2:
+StardreamMachineRoom_0d_ObjectEvents2::
 	object_event $6f,  4,  2, 0, $00, $00, $00, $00, Script_066_4bc9
 	object_event $0f,  4,  3, 0, $00, $00, $00, $01, Script_066_41f2
 	objects_end
@@ -1222,7 +1222,7 @@ Script_066_4c8f::
 	checkbit wEventFlags + 15, $05, Script_066_4c96
 	end
 
-Script_066_4c96:
+Script_066_4c96::
 	stext text_66_7bbc
 	farjump2 Script_067_6e06
 	end
@@ -1271,40 +1271,40 @@ INCLUDE "data/text/script_stardream_machine_room_0b.asm"
 INCLUDE "data/text/script_stardream_machine_room_0d_2.asm"
 INCLUDE "data/text/script_stardream_machine_room_07_5.asm"
 INCLUDE "data/text/script_stardream_hospital_15_3.asm"
-MovementData_066_7cc7:
+MovementData_066_7cc7::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $03, $00, $03, $00, $03, $00, $03, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $05, $00, $05, $00, $06, $00
 	db $00, $00, $00, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88
-MovementData_066_7d04:
+MovementData_066_7d04::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $88
-MovementData_066_7d15:
+MovementData_066_7d15::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $88
-MovementData_066_7d36:
+MovementData_066_7d36::
 	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
 	db $88
-MovementData_066_7d47:
+MovementData_066_7d47::
 	db $ff, $00, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $ff, $ff, $ff, $00
 	db $ff, $ff, $ff, $00, $ff, $ff, $00, $ff, $00, $ff, $01, $ff, $01, $ff, $01, $ff
 	db $01, $ff, $01, $00, $01, $ff, $02, $00, $02, $ff, $02, $00, $02, $ff, $04, $00
 	db $04, $ff, $04, $ff, $06, $00, $88
-MovementData_066_7d7e:
+MovementData_066_7d7e::
 	db $ff, $00, $fe, $00, $fe, $01, $fe, $00, $fe, $01, $fe, $00, $ff, $01, $ff, $00
 	db $ff, $01, $ff, $00, $ff, $01, $00, $01, $00, $01, $01, $01, $01, $01, $01, $01
 	db $01, $01, $01, $00, $01, $01, $02, $00, $02, $01, $02, $00, $02, $01, $02, $00
 	db $02, $00, $04, $01, $04, $01, $06, $00, $88
-MovementData_066_7db7:
+MovementData_066_7db7::
 	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
 	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00, $fc, $00
 	db $fc, $00, $fc, $00, $fc, $00, $fc, $00, $88
-MovementData_066_7de0:
+MovementData_066_7de0::
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $88
-MovementData_066_7e09:
+MovementData_066_7e09::
 	db $ff, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
 	db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $00, $ff, $00, $ff, $00, $ff, $01, $ff
 	db $01, $ff, $01, $ff, $01, $00, $01, $ff, $02, $00, $02, $ff, $02, $00, $02, $ff

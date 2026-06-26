@@ -1,4 +1,4 @@
-Func_024_4000:
+Func_024_4000::
 	ld a, [wdcbb]
 	and a
 	jr nz, .asm_4011
@@ -35,12 +35,12 @@ Func_024_4000:
 	ret
 
 ; TODO: unk_ - indexed table (index hli)
-unk_024_4041:
+unk_024_4041::
 	db $00, $10, $02, $03, $04, $05, $06, $07
 	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f
 	db $36, $07
 
-Func_024_4053:
+Func_024_4053::
 	ld de, unk_024_6d77
 	ld a, [wd9bf]
 	ld l, a
@@ -50,7 +50,7 @@ Func_024_4053:
 	ld [wd9bf], a
 	ret
 
-Func_024_4062:
+Func_024_4062::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -78,7 +78,7 @@ Func_024_4062:
 	jr nz, .asm_406b
 	call Func_024_6c42
 	ret
-Func_024_408a:
+Func_024_408a::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -108,7 +108,7 @@ Func_024_408a:
 	call Func_024_6c09
 	call Func_024_6bd0
 	ret
-Func_024_40b8:
+Func_024_40b8::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -137,7 +137,7 @@ Func_024_40b8:
 	call Func_024_6c42
 	call Func_024_6c09
 	ret
-Func_024_40e3:
+Func_024_40e3::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -182,7 +182,7 @@ _ExecuteBattleScript::
 	farcall Func_025_424e
 	ret
 
-Pointers_024_4130:
+Pointers_024_4130::
 	dw Script_024_4162
 	dw Script_024_4162
 	dw Script_024_4181
@@ -209,7 +209,7 @@ Pointers_024_4130:
 	dw Script_024_453f
 	dw Script_024_4304
 
-Script_024_4162:
+Script_024_4162::
 	bs_print_text_xy String_025_60a9, $a9, $fd
 	bs_vram_copy3 $0090, $8a00, BattleUIGFX_476a
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -218,7 +218,7 @@ Script_024_4162:
 	bs_save_palbuf
 	bs_end_script
 
-Script_024_4181:
+Script_024_4181::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -238,17 +238,17 @@ Script_024_4181:
 	bs_set_sprite_pos $18, $08
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_41b7:
+Script_024_41b7::
 	bs_print_text_xy String_025_60b7, $a0, $fd
 	bs_draw_status_icons
 	bs_set_sprite_pos $78, $78
 	bs_end_script
-Script_024_41c1:
+Script_024_41c1::
 	bs_print_text_xy String_025_60be, $a0, $fd
 	bs_draw_status_icons
 	bs_set_sprite_pos $78, $78
 	bs_end_script
-Script_024_41cb:
+Script_024_41cb::
 	bs_place_tile_attr $0d0c, Tilemap_4a_7f7f, Attrmap_4a_7fab
 	bs_print_text_xy String_025_6099, $a0, $fd
 	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
@@ -257,21 +257,21 @@ Script_024_41cb:
 	bs_draw_status_2
 	bs_set_cursor
 	bs_end_script3
-Script_024_41e3:
+Script_024_41e3::
 	bs_place_tile_attr $0000, Tilemap_4a_5d45, Attrmap_4a_5dfb
 	bs_draw_equip_list
 	bs_end_script3
-Script_024_41ec:
+Script_024_41ec::
 	bs_clear_bgbox_at $09, $14, $9800
 	bs_vram_copy3 $0080, $8980, BattleUIGFX_527a
 	bs_vram_copy3 $0100, $8a00, BattleUIGFX_52fa
 	bs_place_tile_attr $0401, Tilemap_4a_606d, Attrmap_4a_60b7
 	bs_print_equip_name
 	bs_end_script3
-Script_024_4208:
+Script_024_4208::
 	bs_copy_sprite_pos
 	bs_end_script3
-Script_024_420a:
+Script_024_420a::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
@@ -310,7 +310,7 @@ Script_024_420a:
 	bs_print_num_full_2 $0a, wMoney, $0305, $010a
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_42a5:
+Script_024_42a5::
 	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
 	bs_clear_vram_2
 	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
@@ -319,12 +319,12 @@ Script_024_42a5:
 	bs_draw_x_47fb
 	bs_draw_page_arrows
 	bs_end_script
-Script_024_42bb:
+Script_024_42bb::
 	bs_print_text_xy String_025_60c8, $90, $a0
 	bs_place_tile_attr $0d0c, Tilemap_4a_64ab, Attrmap_4a_64d7
 	bs_set_sprite_pos $78, $78
 	bs_end_script
-Script_024_42cb:
+Script_024_42cb::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
@@ -343,16 +343,16 @@ Script_024_42cb:
 	bs_set_sprite_pos $18, $08
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_42fa:
+Script_024_42fa::
 	bs_draw_y
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_draw_party_list
 	bs_end_script3
-Script_024_4304:
+Script_024_4304::
 	bs_skip_if_empty $02
 	bs_load_bgpal_buf $b100  ; SRAM (monster-box bytes reused as palette)
 	db $65, $27, $62, $53, $1a  ; trailing/branch data
-Script_024_430e:
+Script_024_430e::
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $04
@@ -360,20 +360,20 @@ Script_024_430e:
 	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
 	bs_set_sprite_pos $48, $88
 	bs_end_script
-Script_024_432e:
+Script_024_432e::
 	bs_place_tile_attr $0902, Tilemap_4a_666b, Attrmap_4a_66db
 	bs_draw_party_4
 	bs_place_tile_attr $000c, Tilemap_4a_62a1, Attrmap_4a_6227
 	bs_print_menu_pg_b $05
 	bs_set_sprite_pos $28, $58
 	bs_end_script
-Script_024_4343:
+Script_024_4343::
 	bs_print_menu_pg_b $06
 	bs_print_text_xy String_025_60db, $18, $20
 	bs_place_tile_attr $0f0c, Tilemap_4a_674b, Attrmap_4a_676b
 	bs_set_sprite_pos $78, $88
 	bs_end_script
-Script_024_4355:
+Script_024_4355::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -393,7 +393,7 @@ Script_024_4355:
 	bs_set_sprite_pos $18, $10
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_438b:
+Script_024_438b::
 	bs_clear_bgbox_at $09, $14, $9800
 	bs_vram_copy3 $0080, $96e0, BattleUIGFX_527a
 	bs_print_equip_n $80
@@ -404,7 +404,7 @@ Script_024_438b:
 	bs_set_cursor_2
 	bs_set_sprite_pos $30, $30
 	bs_end_script
-Script_024_43af:
+Script_024_43af::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_count_dex
@@ -427,7 +427,7 @@ Script_024_43af:
 	bs_set_sprite_pos $18, $60
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_4404:
+Script_024_4404::
 	bs_clear_bgbox_at $12, $0a, $980a
 	bs_clear_bgbox_at $07, $08, $9921
 	bs_place_tile_attr $0a01, Tilemap_4a_6a83, Attrmap_4a_6aa8
@@ -437,7 +437,7 @@ Script_024_4404:
 	bs_draw_text_5711
 	bs_clear_oam
 	bs_end_script
-Script_024_4421:
+Script_024_4421::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_clear_bgbox_at $12, $14, $9800
@@ -468,7 +468,7 @@ Script_024_4421:
 	bs_draw_u_54cc
 	bs_load_pals_a
 	bs_end_script3
-Script_024_449d:
+Script_024_449d::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_count_dex
@@ -493,7 +493,7 @@ Script_024_449d:
 	bs_draw_ac_407b
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_4509:
+Script_024_4509::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_place_tile_attr $0101, Tilemap_4a_7211, Attrmap_4a_72b5
 	bs_draw_clock
@@ -503,22 +503,22 @@ Script_024_4509:
 	bs_print_num_full_2 $0a, wd874, $0102, $0c08
 	bs_print_num_full_2 $0a, wd875, $0102, $0f08
 	bs_end_script
-Script_024_453f:
+Script_024_453f::
 	bs_print_equip_n $80
 	bs_clear_oam
 	bs_print_menu_pg_a $07
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_end_script
-Script_024_454c:
+Script_024_454c::
 	bs_init_menu_a
 	bs_end_menu
-Script_024_454e:
+Script_024_454e::
 	bs_draw_v_40b7
 	bs_load_pals_b
 	bs_draw_u_54cc
 	bs_load_pals_a
 	bs_end_script3
-Script_024_4553:
+Script_024_4553::
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -527,7 +527,7 @@ Script_024_4553:
 	bs_draw_s_42ba
 	bs_print_hp
 	bs_end_script3
-Script_024_4564:
+Script_024_4564::
 	bs_lcd_off_loadpal
 	bs_load_map_bg
 	bs_vram_copy3 $0090, $8a00, BattleUIGFX_476a
@@ -540,7 +540,7 @@ Script_024_4564:
 	bs_init_bank4
 	bs_lcd_on_loadpal
 	bs_end_script3
-Script_024_4589:
+Script_024_4589::
 	bs_clear_bgbox $07, $06
 	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
 	bs_print_hp
@@ -548,13 +548,13 @@ Script_024_4589:
 	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
 	bs_print_hp
 	bs_select_menu $02
-Script_024_45a0:
+Script_024_45a0::
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_print_text_xy String_025_60b7, $a0, $fd
 	bs_draw_status_icons
 	bs_select_menu $03
-Script_024_45b0:
+Script_024_45b0::
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -564,13 +564,13 @@ Script_024_45b0:
 	bs_draw_status_2
 	bs_set_cursor
 	bs_end_script3
-Script_024_45c2:
+Script_024_45c2::
 	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
 	bs_print_text_xy String_025_6099, $a0, $fd
 	bs_print_hp
 	bs_print_all_stats
 	bs_end_script3
-Script_024_45d1:
+Script_024_45d1::
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -581,7 +581,7 @@ Script_024_45d1:
 	bs_draw_equip_list
 	bs_set_cursor
 	bs_end_script3
-Script_024_45e8:
+Script_024_45e8::
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -592,19 +592,19 @@ Script_024_45e8:
 	bs_print_equip_name
 	bs_set_cursor
 	bs_end_script3
-Script_024_4601:
+Script_024_4601::
 	bs_clear_bgbox_at $09, $14, $9800
 	bs_place_tile_attr $0000, Tilemap_4a_5d45, Attrmap_4a_5dfb
 	bs_draw_equip_list
 	bs_end_script3
-BattleScript_024_460f:
+BattleScript_024_460f::
 	bs_clear_bgbox_at $09, $14, $9800
 	bs_print_text_xy String_025_60b7, $a0, $fd
 	bs_draw_status_icons
 	bs_draw_party_list
 	bs_load_menu_entry
 	bs_end_script3
-Script_024_461d:
+Script_024_461d::
 	bs_swap_mon_data
 	bs_draw_party_list
 	bs_load_mon_objpal $06
@@ -613,39 +613,39 @@ Script_024_461d:
 	bs_print_hp
 	bs_load_menu_entry_n $03
 	bs_end_script3
-Script_024_462b:
+Script_024_462b::
 	bs_clear_bgbox_at $0c, $0e, $9806
 	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
 	bs_print_num_full_2 $0a, wMoney, $0305, $010a
 	bs_print_menu_pg_a $01
 	bs_end_script3
-Script_024_4642:
+Script_024_4642::
 	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
 	bs_draw_item_list
 	bs_draw_page_arrows
 	bs_draw_x_47fb
 	bs_set_sprite_pos $18, $40
 	bs_end_script3
-Script_024_4650:
+Script_024_4650::
 	bs_draw_x_47fb
 	bs_end_script3
-Script_024_4652:
+Script_024_4652::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
 	bs_draw_item_list
 	bs_draw_x_47fb
 	bs_draw_page_arrows
 	bs_end_script3
-Script_024_4664:
+Script_024_4664::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_draw_x_47fb
 	bs_end_script3
-Script_024_466d:
+Script_024_466d::
 	bs_print_text_xy String_025_60cf, $90, $a0
 	bs_place_tile_attr $0d0c, Tilemap_4a_64ab, Attrmap_4a_64d7
 	bs_set_sprite_pos $78, $78
 	bs_end_script
-Script_024_467d:
+Script_024_467d::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
@@ -662,14 +662,14 @@ Script_024_467d:
 	bs_draw_x_47fb
 	bs_lcd_on_loadpal
 	bs_end_script3
-Script_024_46bf:
+Script_024_46bf::
 	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
 	bs_print_hp
 	bs_draw_status_2
 	bs_draw_s_42ba
 	bs_print_hp
 	bs_end_script3
-Script_024_46cb:
+Script_024_46cb::
 	bs_lcd_off_loadpal
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
@@ -685,7 +685,7 @@ Script_024_46cb:
 	bs_print_hp
 	bs_lcd_on_loadpal
 	bs_end_script3
-Script_024_46f5:
+Script_024_46f5::
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_025_6129
@@ -699,7 +699,7 @@ Script_024_46f5:
 	bs_draw_status_2
 	bs_draw_s_42ba
 	bs_end_script3
-Script_024_471d:
+Script_024_471d::
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
@@ -707,7 +707,7 @@ Script_024_471d:
 	bs_print_text_xy String_025_60db, $98, $a0
 	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
 	bs_end_script3
-Script_024_473b:
+Script_024_473b::
 	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
 	bs_print_menu_pg_b $05
 	bs_place_tile_attr $000c, Tilemap_4a_62a1, Attrmap_4a_6227
@@ -716,7 +716,7 @@ Script_024_473b:
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_end_script3
-Script_024_475c:
+Script_024_475c::
 	bs_lcd_off_loadpal
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
@@ -726,12 +726,12 @@ Script_024_475c:
 	bs_print_hp
 	bs_lcd_on_loadpal
 	bs_end_script3
-Script_024_4771:
+Script_024_4771::
 	bs_draw_equip_list
 	bs_end_script3
 	bs_draw_w_4745
 	bs_end_script3
-Script_024_4775:
+Script_024_4775::
 	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
 	bs_clear_bgbox_at $06, $0c, $9824
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
@@ -741,7 +741,7 @@ Script_024_4775:
 	bs_draw_s_42ba
 	bs_print_hp
 	bs_end_script3
-Script_024_4792:
+Script_024_4792::
 	bs_clear_bgbox_at $05, $07, $982a
 	bs_clear_bgbox_at $0a, $14, $9900
 	bs_vram_copy3 $0040, $9400, BattleUIGFX_571a
@@ -751,7 +751,7 @@ Script_024_4792:
 	bs_draw_8_items
 	bs_print_num_indir wSelectedPage, $0102, $1111
 	bs_end_script3
-Script_024_47bb:
+Script_024_47bb::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_draw_text_50ad
 	bs_print_text_xy String_025_6104, $80, $9c
@@ -766,7 +766,7 @@ Script_024_47bb:
 	bs_set_sprite_pos $78, $88
 	bs_end_script
 
-Func_024_4804:
+Func_024_4804::
 	ld de, MenuStateJumptable
 	ldh a, [hFFC5]
 	ld l, a
@@ -777,7 +777,7 @@ Func_024_4804:
 	ld h, [hl]
 	ld l, a
 	jp hl
-MenuStateJumptable:
+MenuStateJumptable::
 	dw Func_024_6ac8.loop
 	dw Func_024_6ac8.loop
 	dw Func_024_696d
@@ -803,7 +803,7 @@ MenuStateJumptable:
 	dw Func_024_48bd
 	dw Func_024_4844
 	dw Func_024_5398
-Func_024_4844:
+Func_024_4844::
 .asm_4844
 	call Func_024_40b8
 	call DelayFrame
@@ -850,11 +850,11 @@ Func_024_4844:
 	ld [hli], a
 	ret
 ; Orphan dead data (unreferenced; not code/text/palette).
-unk_024_4893:
+unk_024_4893::
 	db $08, $03, $e0, $03, $00, $90, $9a, $4e, $03, $b0, $00, $e0, $96, $1a, $49, $0b
 	db $29, $61, $0c, $69, $61, $02, $00, $00, $6f, $5a, $9b, $57, $10, $0d, $06, $0e
 	db $e0, $93, $0f, $62, $6e, $1c, $50, $12, $09, $1a
-Func_024_48bd:
+Func_024_48bd::
 .asm_48bd
 	call Func_024_40b8
 	call DelayFrame
@@ -952,7 +952,7 @@ Func_024_48bd:
 
 INCLUDE "engine/save/save_game.asm"
 
-Func_024_4a87:
+Func_024_4a87::
 	call Func_024_40e3
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -1020,7 +1020,7 @@ Func_024_4a87:
 	call WriteSaveData
 	ret
 
-Func_024_4b04:
+Func_024_4b04::
 .asm_4b04
 	call Func_024_40e3
 	call DelayFrame
@@ -1153,10 +1153,10 @@ Func_024_4b04:
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
-MenuOptionCoords_024_4be8:
+MenuOptionCoords_024_4be8::
 	db $20, $14, $18, $18, $20, $34, $18, $38, $20, $54, $18, $58, $20, $74, $18, $78
 	db $48, $14, $40, $18, $48, $34, $40, $38, $48, $54, $40, $58, $48, $74, $40, $78
-Func_024_4c08:
+Func_024_4c08::
 .asm_4c08
 	call Func_024_40b8
 	call DelayFrame
@@ -1192,7 +1192,7 @@ Func_024_4c08:
 	ldh [hFFC5], a
 	call Func_024_694c
 	ret
-Func_024_4c48:
+Func_024_4c48::
 .asm_4c48
 	call Func_024_40b8
 	call DelayFrame
@@ -1331,7 +1331,7 @@ Func_024_4c48:
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
-Script_024_4d49:
+Script_024_4d49::
 	bs_clear_bgbox_at $12, $0a, $980a
 	bs_load_mon_pic_cond $9140
 	bs_load_mon_objpal_2 $06
@@ -1340,12 +1340,12 @@ Script_024_4d49:
 	bs_draw_8_items
 	bs_print_num_indir wd9d8, $0103, $0507
 	bs_end_script3
-Script_024_4d6a:
+Script_024_4d6a::
 	bs_load_mon_objpal_2 $06
 	bs_load_mon_pic_cond $9140
 	bs_print_num_indir wd9d8, $0103, $0507
 	bs_end_script3
-Func_024_4d77:
+Func_024_4d77::
 .asm_4d77
 	call Func_024_408a
 	call DelayFrame
@@ -1483,7 +1483,7 @@ Func_024_4d77:
 	ld [hli], a
 	ld [hli], a
 	ret
-Script_024_4e77:
+Script_024_4e77::
 	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
@@ -1499,7 +1499,7 @@ Script_024_4e77:
 	bs_set_cursor_2
 	bs_set_sprite_pos $30, $30
 	bs_end_script3
-Func_024_4e9f:
+Func_024_4e9f::
 	ld a, [wd9da + 1]
 	ld de, OptionCursorCoords
 	ld l, a
@@ -1543,7 +1543,7 @@ Func_024_4e9f:
 	inc hl
 	inc hl
 	jr .asm_4ec6
-Func_024_4ed9:
+Func_024_4ed9::
 .asm_4ed9
 	call Func_024_40b8
 	call DelayFrame
@@ -1560,9 +1560,9 @@ Func_024_4ed9:
 	xor a
 	ldh [hFFC6], a
 	ret
-MenuOptionTable_024_4ef5:
+MenuOptionTable_024_4ef5::
 	db $18, $10, $18, $58, $38, $10, $38, $58
-Func_024_4efd:
+Func_024_4efd::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .asm_4f32
@@ -1755,7 +1755,7 @@ Func_024_4efd:
 	add hl, de
 	ld a, [hli]
 	ret
-Func_024_503e:
+Func_024_503e::
 .asm_503e
 	call Func_024_40b8
 	call DelayFrame
@@ -1963,7 +1963,7 @@ Func_024_503e:
 	xor a
 	ld [wSelectedOption], a
 	ret
-Func_024_519d:
+Func_024_519d::
 .asm_519d
 	call Func_024_40b8
 	call DelayFrame
@@ -2058,7 +2058,7 @@ Func_024_519d:
 	ldh [hFFC5], a
 	call Func_024_694c
 	ret
-Script_024_524f:
+Script_024_524f::
 	bs_clear_bgbox_at $12, $0c, $9808
 	bs_clear_bgbox_at $06, $14, $9980
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -2068,7 +2068,7 @@ Script_024_524f:
 	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
 	bs_end_script3
 	db $c9  ; trailing/branch data
-Func_024_5277:
+Func_024_5277::
 .asm_5277
 	call Func_024_40b8
 	call DelayFrame
@@ -2169,7 +2169,7 @@ Func_024_5277:
 	call Func_024_5ffb
 	call Func_024_503e.asm_50ff
 	ret
-Func_024_5330:
+Func_024_5330::
 .asm_5330
 	call Func_024_40b8
 	call DelayFrame
@@ -2223,7 +2223,7 @@ Func_024_5330:
 	ld [wBattleIntroJumptableIndex], a
 	call Func_024_5ffb
 	ret
-Func_024_5398:
+Func_024_5398::
 .asm_5398
 	call Func_024_40b8
 	call DelayFrame
@@ -2279,7 +2279,7 @@ Func_024_5398:
 	ld [wBattleIntroJumptableIndex], a
 	call Func_024_5ffb
 	ret
-Func_024_5405:
+Func_024_5405::
 	xor a
 	ld [wdcae], a
 .asm_5409
@@ -2561,11 +2561,11 @@ Func_024_5405:
 .asm_55f7
 	xor a
 	ret
-Script_024_55f9:
+Script_024_55f9::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $03
 	bs_end_script3
-Func_024_5603:
+Func_024_5603::
 	call GetPartyMonPtr
 	ld de, Jumptable_024_5616
 	ld a, [wd9f3]
@@ -2579,7 +2579,7 @@ Func_024_5603:
 	jp hl
 .asm_5615
 	ret
-Jumptable_024_5616:
+Jumptable_024_5616::
 	dw Func_024_5646
 	dw Func_024_5646
 	dw Func_024_5646
@@ -2604,9 +2604,9 @@ Jumptable_024_5616:
 	dw Func_024_5646
 	dw Func_024_5646
 	dw Func_024_5a20
-Func_024_5646:
+Func_024_5646::
 	ret
-Func_024_5647:
+Func_024_5647::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2651,11 +2651,11 @@ Func_024_5647:
 	inc hl
 	ld [hl], d
 	ret
-Func_024_568b:
+Func_024_568b::
 	ld a, $01
 	ld [wd3f9 + 4], a
 	ret
-Func_024_5691:
+Func_024_5691::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2700,7 +2700,7 @@ Func_024_5691:
 	inc hl
 	ld [hl], d
 	ret
-Func_024_56d5:
+Func_024_56d5::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2745,7 +2745,7 @@ Func_024_56d5:
 	inc hl
 	ld [hl], d
 	ret
-Func_024_5719:
+Func_024_5719::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2790,7 +2790,7 @@ Func_024_5719:
 	inc hl
 	ld [hl], d
 	ret
-Func_024_575d:
+Func_024_575d::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2862,7 +2862,7 @@ Func_024_575d:
 	inc hl
 	ld [hl], d
 	ret
-Func_024_57e0:
+Func_024_57e0::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2934,7 +2934,7 @@ Func_024_57e0:
 	inc hl
 	ld [hl], d
 	ret
-Func_024_5863:
+Func_024_5863::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2958,7 +2958,7 @@ Func_024_5863:
 	ld a, [wd9d8]
 	ld [hl], a
 	ret
-Func_024_5895:
+Func_024_5895::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2971,7 +2971,7 @@ Func_024_5895:
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58ad:
+Func_024_58ad::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -2984,11 +2984,11 @@ Func_024_58ad:
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58c4:
+Func_024_58c4::
 	ld a, $01
 	ld [wd3f9 + 4], a
 	ret
-Func_024_58ca:
+Func_024_58ca::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3001,7 +3001,7 @@ Func_024_58ca:
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58e2:
+Func_024_58e2::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3014,7 +3014,7 @@ Func_024_58e2:
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58fa:
+Func_024_58fa::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3027,7 +3027,7 @@ Func_024_58fa:
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_5912:
+Func_024_5912::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3039,7 +3039,7 @@ Func_024_5912:
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_5928:
+Func_024_5928::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3084,7 +3084,7 @@ Func_024_5928:
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_598a:
+Func_024_598a::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3129,7 +3129,7 @@ Func_024_598a:
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_59ec:
+Func_024_59ec::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3154,7 +3154,7 @@ Func_024_59ec:
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_5a20:
+Func_024_5a20::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
@@ -3181,7 +3181,7 @@ Func_024_5a20:
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_5a49:
+Func_024_5a49::
 .asm_5a49
 	call Func_024_40b8
 	call DelayFrame
@@ -3487,7 +3487,7 @@ Func_024_5a49:
 	ldh [hFade], a
 	call Func_024_689a
 	ret
-Pointers_024_5c97:
+Pointers_024_5c97::
 	dw Pointers_024_5c97_5ca7
 	dw Pointers_024_5c97_5ca7
 	dw Pointers_024_5c97_5d13
@@ -3496,7 +3496,7 @@ Pointers_024_5c97:
 	dw Pointers_024_5c97_5e6f
 	dw Pointers_024_5c97_5ebf
 	dw Pointers_024_5c97_5ca7
-Pointers_024_5c97_5ca7:
+Pointers_024_5c97_5ca7::
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
@@ -3504,19 +3504,19 @@ Pointers_024_5c97_5ca7:
 	db $1d, $01, $1d, $01, $1a, $01, $15, $01, $15, $01, $15, $01, $15, $01, $15, $01
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-Pointers_024_5c97_5d13:
+Pointers_024_5c97_5d13::
 	db $00, $00, $00, $00, $00, $00, $03, $00, $03, $00, $03, $00, $06, $00, $06, $00
 	db $00, $00, $08, $01, $08, $01, $08, $01, $08, $01, $08, $01, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00
-Pointers_024_5c97_5d5b:
+Pointers_024_5c97_5d5b::
 	db $00, $00, $01, $00, $01, $00, $01, $00, $04, $00, $04, $00, $04, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $0b, $00, $0b, $00, $0b, $00, $0b, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $00
 	db $04, $00, $00, $00, $00, $00, $00, $00
-Pointers_024_5c97_5da3:
+Pointers_024_5c97_5da3::
 	db $00, $00, $0f, $01, $0f, $01, $0f, $01, $0f, $01, $0f, $01, $06, $00, $06, $00
 	db $06, $00, $06, $00, $06, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $15, $00, $15, $00, $00, $00
@@ -3530,20 +3530,20 @@ Pointers_024_5c97_5da3:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $5f, $01, $5f, $01, $5f, $01, $5f, $01, $00, $00, $00, $00
-Pointers_024_5c97_5e6f:
+Pointers_024_5c97_5e6f::
 	db $00, $00, $01, $00, $01, $00, $03, $00, $03, $00, $03, $00, $03, $00, $00, $00
 	db $0e, $01, $0e, $01, $0e, $01, $0e, $01, $0e, $01, $0e, $01, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $17, $00
 	db $17, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-Pointers_024_5c97_5ebf:
+Pointers_024_5c97_5ebf::
 	db $00, $00, $01, $01, $01, $01, $03, $01, $03, $01, $03, $01, $03, $01, $03, $01
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-Func_024_5f19:
+Func_024_5f19::
 	ld a, [wd9f3]
 	cp $23
 	jr z, .asm_5f29
@@ -3585,18 +3585,18 @@ Func_024_5f19:
 	inc hl
 	ld [hl], $00
 	ret
-Script_024_5f67:
+Script_024_5f67::
 	bs_place_tile_attr $0600, Tilemap_4a_6357, Attrmap_4a_6401
 	bs_draw_item_list
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_draw_x_47fb
 	bs_end_script3
-Script_024_5f78:
+Script_024_5f78::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $02
 	bs_end_script3
 ; TODO: unk_ - lookup table indexed by wd9f3
-unk_024_5f82:
+unk_024_5f82::
 	db $00, $04, $04, $04, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
 	db $01, $01, $01, $01, $01, $03, $03, $03, $04, $04, $04, $04, $04, $04, $04, $04
 	db $04, $04, $04, $05, $05, $05, $0a, $09, $02, $02, $02, $02, $02, $02, $02, $02
@@ -3605,7 +3605,7 @@ unk_024_5f82:
 	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
 	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
 	db $02, $02, $02, $02, $02, $02, $02, $02, $02
-Func_024_5ffb:
+Func_024_5ffb::
 	ld hl, wcde0
 	ld [hl], $00
 	inc hl
@@ -3630,7 +3630,7 @@ Func_024_5ffb:
 	dec c
 	jr nz, .asm_601d
 	ret
-Func_024_6022:
+Func_024_6022::
 	ld hl, wcdf8
 	ld [hl], $00
 	inc hl
@@ -3647,7 +3647,7 @@ Func_024_6022:
 	dec c
 	jr nz, .asm_6036
 	ret
-Func_024_603b:
+Func_024_603b::
 	ld a, [wd1fe]
 	ld e, a
 	ld a, [wd1ff]
@@ -3670,7 +3670,7 @@ Func_024_603b:
 	ld [wd9d3], a
 	xor a
 	ld [wd0c0], a
-Func_024_605d:
+Func_024_605d::
 	ld de, unk_024_6096
 	ld a, [wd1f4]
 	ld l, a
@@ -3718,9 +3718,9 @@ Func_024_605d:
 .asm_6095
 	ret
 ; TODO: unk_ - lookup table indexed by wd1f4
-unk_024_6096:
+unk_024_6096::
 	db $78, $28, $2d
-Func_024_6099:
+Func_024_6099::
 .asm_6099
 	call Func_024_40b8
 	call DelayFrame
@@ -4081,7 +4081,7 @@ Func_024_6099:
 	add hl, de
 	ld a, [hl]
 	ret
-Func_024_6328:
+Func_024_6328::
 .asm_6328
 	call Func_024_40b8
 	call DelayFrame
@@ -4099,9 +4099,9 @@ Func_024_6328:
 	ldh [hFFC6], a
 	ret
 ; TODO: unk_ - lookup table indexed by wd1f4
-unk_024_6344:
+unk_024_6344::
 	db $17, $07, $08
-Func_024_6347:
+Func_024_6347::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .asm_635a
@@ -4147,7 +4147,7 @@ Func_024_6347:
 	ld [wSelectedOption], a
 	ld [wSelectedPage], a
 	ret
-Func_024_63a4:
+Func_024_63a4::
 .asm_63a4
 	call Func_024_40b8
 	call DelayFrame
@@ -4290,7 +4290,7 @@ Func_024_63a4:
 	ret
 .asm_64a8
 	ret
-Func_024_64a9:
+Func_024_64a9::
 .asm_64a9
 	call Func_024_40b8
 	call DelayFrame
@@ -4386,7 +4386,7 @@ Func_024_64a9:
 	ld a, $05
 	ldh [hFFC5], a
 	ret
-Func_024_655a:
+Func_024_655a::
 .asm_655a
 	call Func_024_40b8
 	call DelayFrame
@@ -4478,7 +4478,7 @@ Func_024_655a:
 	ld a, $04
 	ldh [hFFC5], a
 	ret
-Func_024_6603:
+Func_024_6603::
 .asm_6603
 	call Func_024_40b8
 	call DelayFrame
@@ -4585,13 +4585,13 @@ Func_024_6603:
 	ld a, $01
 	ldh [hFFC6], a
 	ret
-Script_024_66ca:
+Script_024_66ca::
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
 	bs_draw_party_list
 	bs_print_text_xy String_025_60be, $a0, $fd
 	bs_draw_status_icons
 	bs_select_menu $03
-Func_024_66da:
+Func_024_66da::
 	ld a, [wSelectedOption]
 	ld de, OptionCursorCoords
 	ld l, a
@@ -4611,7 +4611,7 @@ Func_024_66da:
 	ld a, [bc]
 	ld [hli], a
 	ret
-Func_024_66f8:
+Func_024_66f8::
 .asm_66f8
 	call Func_024_4062
 	call DelayFrame
@@ -4845,7 +4845,7 @@ Func_024_6864::
 	add $10
 	ld [wPlayerScreenX], a
 	ret
-Func_024_689a:
+Func_024_689a::
 	ld a, $80
 	ldh [rLCDC], a
 	ld hl, Palette_White
@@ -4895,7 +4895,7 @@ Func_024_689a:
 	ldh [hFFC5], a
 	ld [wBattleScriptState], a
 	ret
-Func_024_6916:
+Func_024_6916::
 	ld hl, wPartyMon1
 	ld bc, $0016
 	ld a, d
@@ -4925,16 +4925,16 @@ Func_024_6916:
 .asm_693f
 	xor a
 	ret
-Func_024_6941:
+Func_024_6941::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
-Func_024_6947:
+Func_024_6947::
 	ld [hli], a
 	dec c
 	jr nz, Func_024_6947
 	ret
-Func_024_694c:
+Func_024_694c::
 	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
@@ -4956,9 +4956,9 @@ Func_024_694c:
 	ld [bc], a
 	ret
 
-MenuOptionTable_024_6969:
+MenuOptionTable_024_6969::
 	db $78, $78, $88, $78
-Func_024_696d:
+Func_024_696d::
 	call Func_024_4062
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -4974,11 +4974,11 @@ Func_024_696d:
 	xor a
 	ldh [hFFC6], a
 	ret
-Func_024_6989:
+Func_024_6989::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, Func_024_69aa
-Func_024_698f:
+Func_024_698f::
 	ld a, [wSelectedOption]
 	cp $03
 	ret nc
@@ -4992,22 +4992,22 @@ Func_024_698f:
 	sub $03
 	ld [wSelectedOption], a
 	ret
-Func_024_69aa:
+Func_024_69aa::
 	ldh a, [hJoypadPressed]
 	bit 6, a
 	jr z, Func_024_69bd
-Func_024_69b0:
+Func_024_69b0::
 	ld a, [wSelectedOption]
 	cp $03
 	ret c
 	sub $03
 	ld [wSelectedOption], a
 	jr Func_024_69f3
-Func_024_69bd:
+Func_024_69bd::
 	ldh a, [hJoypadPressed]
 	bit 5, a
 	jr z, Func_024_69d1
-Func_024_69c3:
+Func_024_69c3::
 	ld a, [wSelectedOption]
 	and a
 	ret z
@@ -5016,11 +5016,11 @@ Func_024_69c3:
 	dec a
 	ld [wSelectedOption], a
 	jr Func_024_69f3
-Func_024_69d1:
+Func_024_69d1::
 	ldh a, [hJoypadPressed]
 	bit 4, a
 	jr z, Func_024_6a20
-Func_024_69d7:
+Func_024_69d7::
 	ld a, [wSelectedOption]
 	cp $02
 	ret z
@@ -5036,7 +5036,7 @@ Func_024_69d7:
 	dec a
 	ld [wSelectedOption], a
 	ret
-Func_024_69f3:
+Func_024_69f3::
 	ld a, SFX_11
 	call PlaySound
 	ld de, OptionCursorCoords
@@ -5061,7 +5061,7 @@ Func_024_69f3:
 	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
-Func_024_6a20:
+Func_024_6a20::
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jr z, Func_024_6a61
@@ -5094,7 +5094,7 @@ Func_024_6a20:
 	inc hl
 	ld [hl], HIGH(Script_024_41c1)
 	ret
-Func_024_6a61:
+Func_024_6a61::
 	ldh a, [hJoypadPressed]
 	bit 1, a
 	jr z, Func_024_6a9e
@@ -5103,7 +5103,7 @@ Func_024_6a61:
 	ldh a, [hBattleJumptableIndex]
 	and a
 	jr nz, Func_024_6a8c
-Func_024_6a71:
+Func_024_6a71::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -5117,7 +5117,7 @@ Func_024_6a71:
 	ldh [hFFC5], a
 	call Func_024_5ffb
 	ret
-Func_024_6a8c:
+Func_024_6a8c::
 	xor a
 	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
@@ -5126,10 +5126,10 @@ Func_024_6a8c:
 	ldh [hFFC6], a
 	ld a, $03
 	ld [wBattleIntroJumptableIndex], a
-Func_024_6a9e:
+Func_024_6a9e::
 	ret
 
-OptionCursorCoords:
+OptionCursorCoords::
 	db $18, $08
 	db $18, $40
 	db $18, $78
@@ -5137,10 +5137,10 @@ OptionCursorCoords:
 	db $38, $40
 	db $38, $78
 
-Func_024_6aab:
+Func_024_6aab::
 	ldh a, [hFadeFrameCounter]
 	and $07
-Func_024_6aaf:
+Func_024_6aaf::
 	ret nz
 	ld bc, wcde0
 	ld hl, $0003
@@ -5162,7 +5162,7 @@ Func_024_6aaf:
 	ld [hl], a
 	ret
 
-Func_024_6ac8:
+Func_024_6ac8::
 ; Start menu main loop
 .loop
 	call Func_024_4062
@@ -5183,7 +5183,7 @@ Func_024_6ac8:
 	ldh [hFFC6], a
 	ret
 
-StartMenu_Input:
+StartMenu_Input::
 ; Check down
 	ldh a, [hJoypadPressed]
 	bit D_DOWN_F, a
@@ -5307,10 +5307,10 @@ StartMenu_Input:
 .ret
 	ret
 
-MenuOptionStateTable_024_6b9c:
+MenuOptionStateTable_024_6b9c::
 	db $02, $07, $14, $12, $15
 
-Func_024_6ba1:
+Func_024_6ba1::
 	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
@@ -5329,7 +5329,7 @@ Func_024_6ba1:
 	ld [hli], a
 	ret
 
-StartMenu_BounceCursor:
+StartMenu_BounceCursor::
 	ldh a, [hFadeFrameCounter]
 	and 7 ; 0 or 8
 	ret nz
@@ -5350,7 +5350,7 @@ StartMenu_BounceCursor:
 	ld [bc], a
 	ret
 
-Func_024_6bd0:
+Func_024_6bd0::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf8
 	ld a, [de]
@@ -5399,7 +5399,7 @@ Func_024_6bd0:
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6c09:
+Func_024_6c09::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf0
 	ld a, [de]
@@ -5448,7 +5448,7 @@ Func_024_6c09:
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6c42:
+Func_024_6c42::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcde0
 	ld a, [de]
@@ -5497,7 +5497,7 @@ Func_024_6c42:
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6c7b:
+Func_024_6c7b::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf0
 	ld a, [de]
@@ -5546,7 +5546,7 @@ Func_024_6c7b:
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6cb4:
+Func_024_6cb4::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf8
 	ld a, [de]
@@ -5595,7 +5595,7 @@ Func_024_6cb4:
 	ld [wVirtualOAMPtr], a
 	ret
 
-SpriteOAMTemplate_Pointers:
+SpriteOAMTemplate_Pointers::
 	dw .template0
 	dw .template0
 	dw .template1
@@ -5640,7 +5640,7 @@ SpriteOAMTemplate_Pointers:
 	db $FF
 
 ; TODO: unk_ - lookup table indexed by wd9bf
-unk_024_6d77:
+unk_024_6d77::
 	db $00, $0a, $14, $1e, $14, $0a, $28, $0f, $14, $0a, $0f, $1e, $1e, $14, $0a, $19
 	db $23, $1e, $14, $1e, $05, $14, $0f, $0f, $1e, $23, $14, $14, $23, $14, $23, $1e
 	db $14, $19, $05, $19, $0f, $1e, $14, $1e, $19, $14, $0a, $1e, $23, $14, $05, $05
@@ -5651,12 +5651,12 @@ unk_024_6d77:
 	db $0f, $0f, $1e, $0f, $0a, $0f, $05, $0a, $14, $0a, $0f, $0f, $28, $14, $0f, $1e
 	db $28, $0a, $0a, $0a, $14, $1e, $14, $0a, $0a, $05, $0a, $0a, $0a
 ; TODO: unk_ - indexed table (index wd9f3)
-unk_024_6e04:
+unk_024_6e04::
 	db $89, $35, $4d, $6b, $2e, $05, $45, $16, $73, $23, $4c, $22, $07, $78, $19, $40
 	db $81, $77, $5d, $06, $1e, $4f, $75, $0a, $2a, $61, $3b, $32, $68, $85, $88, $5a
 	db $3c, $8c, $48, $66, $44, $54, $26, $50, $8b, $8a, $39, $7b, $3d, $31, $20, $5b
 	db $84, $7d
-Pointers_024_6e36:
+Pointers_024_6e36::
 	dw Pointers_024_6e36_6f68
 	dw Pointers_024_6e36_6f68
 	dw Pointers_024_6e36_6f82
@@ -5810,460 +5810,460 @@ Pointers_024_6e36:
 	dw Pointers_024_6e36_7bc7
 	dw Pointers_024_6e36_7bdc
 	dw Pointers_024_6e36_7bf0
-Pointers_024_6e36_6f68:
+Pointers_024_6e36_6f68::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_6f82:
+Pointers_024_6e36_6f82::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_6f9c:
+Pointers_024_6e36_6f9c::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_6fb6:
+Pointers_024_6e36_6fb6::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_6fd0:
+Pointers_024_6e36_6fd0::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_6fea:
+Pointers_024_6e36_6fea::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_7004:
+Pointers_024_6e36_7004::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_701e:
+Pointers_024_6e36_701e::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_7038:
+Pointers_024_6e36_7038::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_7052:
+Pointers_024_6e36_7052::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_706c:
+Pointers_024_6e36_706c::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7082:
+Pointers_024_6e36_7082::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7098:
+Pointers_024_6e36_7098::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_70ae:
+Pointers_024_6e36_70ae::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_70c4:
+Pointers_024_6e36_70c4::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_70da:
+Pointers_024_6e36_70da::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_70f0:
+Pointers_024_6e36_70f0::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7106:
+Pointers_024_6e36_7106::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_711c:
+Pointers_024_6e36_711c::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7132:
+Pointers_024_6e36_7132::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7148:
+Pointers_024_6e36_7148::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_715d:
+Pointers_024_6e36_715d::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7172:
+Pointers_024_6e36_7172::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7187:
+Pointers_024_6e36_7187::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_719c:
+Pointers_024_6e36_719c::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_71b1:
+Pointers_024_6e36_71b1::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_71c6:
+Pointers_024_6e36_71c6::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_71db:
+Pointers_024_6e36_71db::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_71f0:
+Pointers_024_6e36_71f0::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7205:
+Pointers_024_6e36_7205::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_721a:
+Pointers_024_6e36_721a::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_722e:
+Pointers_024_6e36_722e::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7242:
+Pointers_024_6e36_7242::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7256:
+Pointers_024_6e36_7256::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_726a:
+Pointers_024_6e36_726a::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_727e:
+Pointers_024_6e36_727e::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7292:
+Pointers_024_6e36_7292::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_72a6:
+Pointers_024_6e36_72a6::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_72ba:
+Pointers_024_6e36_72ba::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_72ce:
+Pointers_024_6e36_72ce::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_72e2:
+Pointers_024_6e36_72e2::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_72f6:
+Pointers_024_6e36_72f6::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_730a:
+Pointers_024_6e36_730a::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_731e:
+Pointers_024_6e36_731e::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7332:
+Pointers_024_6e36_7332::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7346:
+Pointers_024_6e36_7346::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_735a:
+Pointers_024_6e36_735a::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_736e:
+Pointers_024_6e36_736e::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7382:
+Pointers_024_6e36_7382::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7396:
+Pointers_024_6e36_7396::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_73aa:
+Pointers_024_6e36_73aa::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_73be:
+Pointers_024_6e36_73be::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_73d2:
+Pointers_024_6e36_73d2::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_73e6:
+Pointers_024_6e36_73e6::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_73fa:
+Pointers_024_6e36_73fa::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_740e:
+Pointers_024_6e36_740e::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7422:
+Pointers_024_6e36_7422::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7436:
+Pointers_024_6e36_7436::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_744a:
+Pointers_024_6e36_744a::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_745e:
+Pointers_024_6e36_745e::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7472:
+Pointers_024_6e36_7472::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7486:
+Pointers_024_6e36_7486::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_749a:
+Pointers_024_6e36_749a::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_74ae:
+Pointers_024_6e36_74ae::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_74c2:
+Pointers_024_6e36_74c2::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_74d6:
+Pointers_024_6e36_74d6::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_74ea:
+Pointers_024_6e36_74ea::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_74fe:
+Pointers_024_6e36_74fe::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7512:
+Pointers_024_6e36_7512::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7526:
+Pointers_024_6e36_7526::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_753a:
+Pointers_024_6e36_753a::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_754f:
+Pointers_024_6e36_754f::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7564:
+Pointers_024_6e36_7564::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7579:
+Pointers_024_6e36_7579::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_758e:
+Pointers_024_6e36_758e::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_75a3:
+Pointers_024_6e36_75a3::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_75b8:
+Pointers_024_6e36_75b8::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_75cd:
+Pointers_024_6e36_75cd::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_75e2:
+Pointers_024_6e36_75e2::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_75f7:
+Pointers_024_6e36_75f7::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_760c:
+Pointers_024_6e36_760c::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_7626:
+Pointers_024_6e36_7626::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_7640:
+Pointers_024_6e36_7640::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_765a:
+Pointers_024_6e36_765a::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_7674:
+Pointers_024_6e36_7674::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_768e:
+Pointers_024_6e36_768e::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_76a8:
+Pointers_024_6e36_76a8::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_76c2:
+Pointers_024_6e36_76c2::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_76dc:
+Pointers_024_6e36_76dc::
 	db $01, $02, $05, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $19, $1b, $1c, $1e
 	db $1f, $21, $27, $2b, $2d, $2e, $2f, $31, $32, $ff
-Pointers_024_6e36_76f6:
+Pointers_024_6e36_76f6::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_770c:
+Pointers_024_6e36_770c::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7722:
+Pointers_024_6e36_7722::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7738:
+Pointers_024_6e36_7738::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_774e:
+Pointers_024_6e36_774e::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7764:
+Pointers_024_6e36_7764::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_777a:
+Pointers_024_6e36_777a::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_7790:
+Pointers_024_6e36_7790::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_77a6:
+Pointers_024_6e36_77a6::
 	db $01, $06, $07, $08, $0a, $0c, $0d, $0f, $10, $11, $14, $15, $18, $1e, $1f, $25
 	db $27, $2a, $2f, $31, $32, $ff
-Pointers_024_6e36_77bc:
+Pointers_024_6e36_77bc::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_77d1:
+Pointers_024_6e36_77d1::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_77e6:
+Pointers_024_6e36_77e6::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_77fb:
+Pointers_024_6e36_77fb::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7810:
+Pointers_024_6e36_7810::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7825:
+Pointers_024_6e36_7825::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_783a:
+Pointers_024_6e36_783a::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_784f:
+Pointers_024_6e36_784f::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7864:
+Pointers_024_6e36_7864::
 	db $01, $03, $06, $08, $0a, $0b, $0c, $0d, $0f, $11, $14, $18, $1e, $1f, $23, $27
 	db $29, $2f, $31, $32, $ff
-Pointers_024_6e36_7879:
+Pointers_024_6e36_7879::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_788d:
+Pointers_024_6e36_788d::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_78a1:
+Pointers_024_6e36_78a1::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_78b5:
+Pointers_024_6e36_78b5::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_78c9:
+Pointers_024_6e36_78c9::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_78dd:
+Pointers_024_6e36_78dd::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_78f1:
+Pointers_024_6e36_78f1::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7905:
+Pointers_024_6e36_7905::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7919:
+Pointers_024_6e36_7919::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $13, $14, $18, $1a, $1e, $1f, $24, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_792d:
+Pointers_024_6e36_792d::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7941:
+Pointers_024_6e36_7941::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7955:
+Pointers_024_6e36_7955::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7969:
+Pointers_024_6e36_7969::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_797d:
+Pointers_024_6e36_797d::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7991:
+Pointers_024_6e36_7991::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_79a5:
+Pointers_024_6e36_79a5::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_79b9:
+Pointers_024_6e36_79b9::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_79cd:
+Pointers_024_6e36_79cd::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_79e1:
+Pointers_024_6e36_79e1::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_79f5:
+Pointers_024_6e36_79f5::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a09:
+Pointers_024_6e36_7a09::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a1d:
+Pointers_024_6e36_7a1d::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a31:
+Pointers_024_6e36_7a31::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a45:
+Pointers_024_6e36_7a45::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a59:
+Pointers_024_6e36_7a59::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a6d:
+Pointers_024_6e36_7a6d::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a81:
+Pointers_024_6e36_7a81::
 	db $01, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $16, $18, $1e, $1f, $26, $27, $28
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7a95:
+Pointers_024_6e36_7a95::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7aa9:
+Pointers_024_6e36_7aa9::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7abd:
+Pointers_024_6e36_7abd::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7ad1:
+Pointers_024_6e36_7ad1::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7ae5:
+Pointers_024_6e36_7ae5::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7af9:
+Pointers_024_6e36_7af9::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7b0d:
+Pointers_024_6e36_7b0d::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7b21:
+Pointers_024_6e36_7b21::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7b35:
+Pointers_024_6e36_7b35::
 	db $01, $04, $06, $08, $0a, $0c, $0d, $0f, $11, $14, $18, $1d, $1e, $1f, $20, $27
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7b49:
+Pointers_024_6e36_7b49::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7b5e:
+Pointers_024_6e36_7b5e::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7b73:
+Pointers_024_6e36_7b73::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7b88:
+Pointers_024_6e36_7b88::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7b9d:
+Pointers_024_6e36_7b9d::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7bb2:
+Pointers_024_6e36_7bb2::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7bc7:
+Pointers_024_6e36_7bc7::
 	db $01, $06, $08, $0a, $0c, $0d, $0e, $0f, $11, $12, $14, $18, $1e, $1f, $22, $27
 	db $2f, $30, $31, $32, $ff
-Pointers_024_6e36_7bdc:
+Pointers_024_6e36_7bdc::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff
-Pointers_024_6e36_7bf0:
+Pointers_024_6e36_7bf0::
 	db $01, $06, $08, $09, $0a, $0c, $0d, $0f, $11, $14, $17, $18, $1e, $1f, $27, $2c
 	db $2f, $31, $32, $ff, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 

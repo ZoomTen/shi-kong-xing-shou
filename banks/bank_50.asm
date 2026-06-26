@@ -1,4 +1,4 @@
-GreenForestP12_MapAttributes:
+GreenForestP12_MapAttributes::
 	map_attr GREEN_FOREST_P_12, \
 	   Layout_050_4050, \
 	   Blocks_050_4105, \
@@ -8,7 +8,7 @@ GreenForestP12_MapAttributes:
 	   0, Tileset_31, \
 	   Collision_050_4a81
 
-GreenForestP21_MapAttributes:
+GreenForestP21_MapAttributes::
 	map_attr GREEN_FOREST_P_21, \
 	   Layout_050_43b1, \
 	   Blocks_050_4466, \
@@ -18,7 +18,7 @@ GreenForestP21_MapAttributes:
 	   0, Tileset_31, \
 	   Collision_050_4a81
 
-GreenForestP31_MapAttributes:
+GreenForestP31_MapAttributes::
 	map_attr GREEN_FOREST_P_31, \
 	   Layout_050_4712, \
 	   Blocks_050_4743, \
@@ -28,7 +28,7 @@ GreenForestP31_MapAttributes:
 	   0, Tileset_31, \
 	   Collision_050_4a81
 
-G3_1F_MapAttributes:
+G3_1F_MapAttributes::
 	map_attr G3_1F, \
 	   Layout_050_47f3, \
 	   Blocks_050_48f0, \
@@ -66,7 +66,7 @@ Palettes_050_4a39::
 Collision_050_4a81::
 	INCBIN "data/maps/collision/Collision_050_4a81.bin"
 
-GreenForestP13_MapAttributes:
+GreenForestP13_MapAttributes::
 	map_attr GREEN_FOREST_P_13, \
 	   Layout_050_4b05, \
 	   Blocks_050_4bba, \
@@ -76,7 +76,7 @@ GreenForestP13_MapAttributes:
 	   0, Tileset_32, \
 	   Collision_050_552c
 
-GreenForestP22_MapAttributes:
+GreenForestP22_MapAttributes::
 	map_attr GREEN_FOREST_P_22, \
 	   Layout_050_4e5e, \
 	   Blocks_050_4f13, \
@@ -86,7 +86,7 @@ GreenForestP22_MapAttributes:
 	   0, Tileset_32, \
 	   Collision_050_552c
 
-GreenForestP32_MapAttributes:
+GreenForestP32_MapAttributes::
 	map_attr GREEN_FOREST_P_32, \
 	   Layout_050_51bf, \
 	   Blocks_050_51f0, \
@@ -96,7 +96,7 @@ GreenForestP32_MapAttributes:
 	   0, Tileset_32, \
 	   Collision_050_552c
 
-GreenForest_20_MapAttributes:
+GreenForest_20_MapAttributes::
 	map_attr GREEN_FOREST_20, \
 	   Layout_050_52a0, \
 	   Blocks_050_539d, \
@@ -134,7 +134,7 @@ Palettes_050_54e4::
 Collision_050_552c::
 	INCBIN "data/maps/collision/Collision_050_552c.bin"
 
-SkyCity_MapAttributes:
+SkyCity_MapAttributes::
 	map_attr SKY_CITY, \
 	   Layout_050_5574, \
 	   Blocks_050_580e, \
@@ -157,7 +157,7 @@ Palettes_050_5b5f::
 Collision_050_5ba7::
 	INCBIN "data/maps/collision/Collision_050_5ba7.bin"
 
-BanglinCo1f_MapAttributes:
+BanglinCo1f_MapAttributes::
 	map_attr BANGLIN_CO_1F, \
 	   Layout_050_5c2a, \
 	   Blocks_050_5d11, \
@@ -180,7 +180,7 @@ Palettes_050_5dfd::
 Collision_050_5e45::
 	INCBIN "data/maps/collision/Collision_050_5e45.bin"
 
-BanglinCo2_MapAttributes:
+BanglinCo2_MapAttributes::
 	map_attr BANGLIN_CO_2, \
 	   Layout_050_5e8c, \
 	   Blocks_050_5f0f, \
@@ -203,7 +203,7 @@ Palettes_050_5f8c::
 Collision_050_5fd4::
 	INCBIN "data/maps/collision/Collision_050_5fd4.bin"
 
-ContestHall_MapAttributes:
+ContestHall_MapAttributes::
 	map_attr CONTEST_HALL, \
 	   Layout_050_6002, \
 	   Blocks_050_610b, \
@@ -226,7 +226,7 @@ Palettes_050_61df::
 Collision_050_6227::
 	INCBIN "data/maps/collision/Collision_050_6227.bin"
 
-BanglinCo2f_MapAttributes:
+BanglinCo2f_MapAttributes::
 	map_attr BANGLIN_CO_2F, \
 	   Layout_050_62b1, \
 	   Blocks_050_6342, \
@@ -236,7 +236,7 @@ BanglinCo2f_MapAttributes:
 	   0, Tileset_37, \
 	   Collision_050_6bda
 
-BanglinCo3f_MapAttributes:
+BanglinCo3f_MapAttributes::
 	map_attr BANGLIN_CO_3F, \
 	   Layout_050_643e, \
 	   Blocks_050_64cf, \
@@ -246,7 +246,7 @@ BanglinCo3f_MapAttributes:
 	   0, Tileset_37, \
 	   Collision_050_6bda
 
-BanglinCo4f_MapAttributes:
+BanglinCo4f_MapAttributes::
 	map_attr BANGLIN_CO_4F, \
 	   Layout_050_662b, \
 	   Blocks_050_66bc, \
@@ -256,7 +256,7 @@ BanglinCo4f_MapAttributes:
 	   0, Tileset_37, \
 	   Collision_050_6bda
 
-BanglinCo5f_MapAttributes:
+BanglinCo5f_MapAttributes::
 	map_attr BANGLIN_CO_5F, \
 	   Layout_050_67ec, \
 	   Blocks_050_69e1, \
@@ -294,7 +294,7 @@ Palettes_050_6b92::
 Collision_050_6bda::
 	INCBIN "data/maps/collision/Collision_050_6bda.bin"
 
-FashionStore_MapAttributes:
+FashionStore_MapAttributes::
 	map_attr FASHION_STORE, \
 	   Layout_050_6c48, \
 	   Blocks_050_6d3f, \
@@ -317,7 +317,7 @@ Palettes_050_6e40::
 Collision_050_6e88::
 	INCBIN "data/maps/collision/Collision_050_6e88.bin"
 
-AirportOutside_MapAttributes:
+AirportOutside_MapAttributes::
 	map_attr AIRPORT_OUTSIDE, \
 	   Layout_050_6ed3, \
 	   Blocks_050_6fce, \
@@ -340,7 +340,7 @@ Palettes_050_70b2::
 Collision_050_70fa::
 	INCBIN "data/maps/collision/Collision_050_70fa.bin"
 
-Airport_MapAttributes:
+Airport_MapAttributes::
 	map_attr AIRPORT, \
 	   Layout_050_7146, \
 	   Blocks_050_7225, \
@@ -363,7 +363,7 @@ Palettes_050_7318::
 Collision_050_7360::
 	INCBIN "data/maps/collision/Collision_050_7360.bin"
 
-GreenForest_21_MapAttributes:
+GreenForest_21_MapAttributes::
 	map_attr GREEN_FOREST_21, \
 	   Layout_050_73cd, \
 	   Blocks_050_7432, \
@@ -373,7 +373,7 @@ GreenForest_21_MapAttributes:
 	   0, Tileset_41, \
 	   Collision_050_7792
 
-GreenForest_22_MapAttributes:
+GreenForest_22_MapAttributes::
 	map_attr GREEN_FOREST_22, \
 	   Layout_050_752a, \
 	   Blocks_050_7549, \
@@ -383,7 +383,7 @@ GreenForest_22_MapAttributes:
 	   0, Tileset_41, \
 	   Collision_050_7792
 
-GreenForest_23_MapAttributes:
+GreenForest_23_MapAttributes::
 	map_attr GREEN_FOREST_23, \
 	   Layout_050_75a1, \
 	   Blocks_050_767c, \
@@ -416,7 +416,7 @@ Palettes_050_774a::
 Collision_050_7792::
 	INCBIN "data/maps/collision/Collision_050_7792.bin"
 
-G3_15_MapAttributes:
+G3_15_MapAttributes::
 	map_attr G3_15, \
 	   Layout_050_77ea, \
 	   Blocks_050_7827, \
@@ -426,7 +426,7 @@ G3_15_MapAttributes:
 	   0, Tileset_44, \
 	   Collision_050_7a92
 
-G3_16_MapAttributes:
+G3_16_MapAttributes::
 	map_attr G3_16, \
 	   Layout_050_78af, \
 	   Blocks_050_7970, \

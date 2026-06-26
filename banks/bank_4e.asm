@@ -1,9 +1,9 @@
-unk_04e_4000:
+unk_04e_4000::
 	end
 Script_04e_4001:: ; farjump2 target (bank_4f)
 	setmap MAP_BANGLIN_CO_1F, $06
 	end
-Script_04e_4005:
+Script_04e_4005::
 	setmap MAP_BANGLIN_CO_2, $00
 	end
 
@@ -12,7 +12,7 @@ Bank4e_EmptyObjectEvent::
 Script_04e_400a::
 	end
 
-BanglinCo2_ObjectEvents:
+BanglinCo2_ObjectEvents::
 	object_event $3e,  2,  2, 0, $00, $00, $00, $00, Script_04e_4043
 	object_event $27,  9,  5, 0, $00, $00, $00, $01, Script_04e_4047
 	object_event $1d,  9,  2, 0, $00, $00, $00, $02, Script_04e_404b
@@ -20,19 +20,19 @@ BanglinCo2_ObjectEvents:
 	object_event $13,  5, 10, 0, $00, $00, $00, $04, Script_04e_400a
 	objects_end
 
-Script_04e_4043:
+Script_04e_4043::
 	textface text_4e_4dd3
 	end
 
-Script_04e_4047:
+Script_04e_4047::
 	textface text_4e_4ec6
 	end
 
-Script_04e_404b:
+Script_04e_404b::
 	textface text_4e_4e23
 	end
 
-Script_04e_404f:
+Script_04e_404f::
 	textface text_4e_4e4c
 	end
 
@@ -51,7 +51,7 @@ Script_04e_4053::
 	spriteface  4, FACE_LEFT
 	spriteface  5, FACE_LEFT
 	stext text_4e_4faf
-Script_04e_407c:
+Script_04e_407c::
 	warpmode GAMEMODE_RHYTHM_MINIGAME, $0a, $00
 	spriteface  2, FACE_RIGHT
 	spriteface  3, FACE_RIGHT
@@ -62,20 +62,20 @@ Script_04e_407c:
 	farjump Script_04e_407c
 	end
 
-Script_04e_409a:
+Script_04e_409a::
 	stext text_4e_5086
 	stext text_4e_50c4
 	setmap MAP_BANGLIN_CO_2, $01
 	end
 
-ContestHall_ObjectEvents:
+ContestHall_ObjectEvents::
 	object_event $06,  3,  5, 0, $00, $00, $00, $00, Script_04e_400a
 	object_event $45,  3,  7, 0, $00, $00, $00, $01, Script_04e_400a
 	object_event $45,  8,  5, 0, $00, $00, $00, $02, Script_04e_400a
 	object_event $45,  8,  7, 0, $00, $00, $00, $03, Script_04e_400a
 	objects_end
 
-BanglinCo2_ObjectEvents2:
+BanglinCo2_ObjectEvents2::
 	object_event $3e,  2,  2, 0, $00, $00, $00, $00, Script_04e_4109
 	object_event $27,  9,  5, 0, $00, $00, $00, $01, Script_04e_410d
 	object_event $1d,  9,  2, 0, $00, $00, $00, $02, Script_04e_4111
@@ -83,19 +83,19 @@ BanglinCo2_ObjectEvents2:
 	object_event $13,  5, 10, 0, $00, $00, $00, $04, Script_04e_400a
 	objects_end
 
-Script_04e_4109:
+Script_04e_4109::
 	textface text_4e_50d1
 	end
 
-Script_04e_410d:
+Script_04e_410d::
 	textface text_4e_51aa
 	end
 
-Script_04e_4111:
+Script_04e_4111::
 	textface text_4e_5146
 	end
 
-Script_04e_4115:
+Script_04e_4115::
 	textface text_4e_5172
 	end
 
@@ -300,7 +300,7 @@ Script_04e_4119::
 	setbit wEventFlags + 24, $04
 	end
 
-BanglinCo1f_ObjectEvents4:
+BanglinCo1f_ObjectEvents4::
 	object_event $06,  4,  5, wEventFlags + 24, $04, $00, $00, $00, Script_04e_400a
 	object_event $07,  3,  5, wEventFlags + 24, $04, $00, $00, $01, Script_04e_400a
 	objects_end
@@ -326,14 +326,14 @@ ObjSprite_4e_43c9::
 	object_event $3f,  5,  0, 0, $00, $00, $00, $04, Script_04e_400a
 	objects_end
 
-ContestHall_ObjectEvents2:
+ContestHall_ObjectEvents2::
 	object_event $06,  3,  5, 0, $00, $00, $00, $00, Script_04e_400a
 	object_event $45,  3,  7, 0, $00, $00, $00, $01, Script_04e_400a
 	object_event $45,  8,  5, 0, $00, $00, $00, $02, Script_04e_400a
 	object_event $45,  8,  7, 0, $00, $00, $00, $03, Script_04e_400a
 	objects_end
 
-BanglinCo5f_ObjectEvents2:
+BanglinCo5f_ObjectEvents2::
 	object_event $27, 11,  6, wEventFlags + 6, $05, $00, $00, $00, Script_04e_400a
 	object_event $28, 10,  6, wEventFlags + 6, $05, $00, $00, $01, Script_04e_400a
 	objects_end
@@ -388,12 +388,12 @@ Script_04e_4419::
 	setmappredef MAPPREDEF_13
 	end
 
-Script_04e_44aa:
+Script_04e_44aa::
 	face FACE_DOWN
 	setmap MAP_BANGLIN_CO_5F, $03
 	end
 
-BanglinCo1f_ObjectEvents6:
+BanglinCo1f_ObjectEvents6::
 	object_event $35,  6,  5, wEventFlags + 6, $06, $00, $00, $00, Script_04e_400a
 	object_event $06,  6,  6, wEventFlags + 6, $06, $00, $00, $01, Script_04e_400a
 	object_event $04,  5,  6, wEventFlags + 6, $06, $00, $00, $02, Script_04e_400a
@@ -404,7 +404,7 @@ Script_04e_44d2::
 	setmap MAP_BANGLIN_CO_1F, $07
 	end
 
-Script_04e_44dc:
+Script_04e_44dc::
 	checkbit wEventFlags + 6, $06, Script_04e_4586
 	setplayerchar $00
 	face FACE_RIGHT
@@ -466,21 +466,21 @@ Script_04e_44dc:
 	setbit wEventFlags + 6, $06
 	end
 
-Script_04e_4586:
+Script_04e_4586::
 	setmap MAP_BANGLIN_CO_1F, $07
 	end
 
-Airport_ObjectEvents2:
+Airport_ObjectEvents2::
 	object_event $35,  6,  5, wEventFlags + 6, $06, $01, $00, $00, Script_04e_400a
 	object_event $06,  7,  5, wEventFlags + 6, $06, $01, $00, $01, Script_04e_400a
 	object_event $04,  7,  6, wEventFlags + 6, $06, $01, $00, $02, Script_04e_400a
 	objects_end
 
-Airport_ObjectEvents:
+Airport_ObjectEvents::
 	object_event $35,  6,  5, wEventFlags + 6, $06, $01, $00, $00, Script_04e_45b8
 	objects_end
 
-Script_04e_45b8:
+Script_04e_45b8::
 	walkpath
 	setplayerchar $00
 	face FACE_UP
@@ -530,7 +530,7 @@ INCLUDE "engine/movie/airport.asm"
 INCLUDE "data/text/script_banglin_co2.asm"
 INCLUDE "data/text/script_banglin_co_contest.asm"
 INCLUDE "data/text/script_airport_5d75.asm"
-MovementData_4e_5ff6:
+MovementData_4e_5ff6::
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
@@ -538,7 +538,7 @@ MovementData_4e_5ff6:
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
 	db $00, $88
-MovementData_04e_6058:
+MovementData_04e_6058::
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
@@ -552,7 +552,7 @@ MovementData_04e_6058:
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
 	db $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00
 	db $88
-MovementData_04e_6119:
+MovementData_04e_6119::
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
@@ -560,7 +560,7 @@ MovementData_04e_6119:
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 	db $88
-MovementData_04e_617a:
+MovementData_04e_617a::
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
@@ -568,7 +568,7 @@ MovementData_04e_617a:
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00, $fe, $00
 	db $88
-MovementData_04e_61db:
+MovementData_04e_61db::
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02
 	db $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02, $00, $02

@@ -1,4 +1,4 @@
-G5_01_MapAttributes:
+G5_01_MapAttributes::
 	map_attr G5_01, \
 	   Layout_064_4028, \
 	   Blocks_064_4137, \
@@ -7,7 +7,7 @@ G5_01_MapAttributes:
 	   Palettes_064_4946, \
 	   0, Tileset_72, \
 	   Collision_064_498e
-PermafrostGarden_MapAttributes:
+PermafrostGarden_MapAttributes::
 	map_attr PERMAFROST_GARDEN, \
 	   Layout_064_43ef, \
 	   Blocks_064_4649, \
@@ -34,7 +34,7 @@ Palettes_064_4946::
 	INCLUDE "data/maps/palettes/Palettes_064_4946.pal"
 Collision_064_498e::
 	INCBIN "data/maps/collision/Collision_064_498e.bin"
-G5_03_MapAttributes:
+G5_03_MapAttributes::
 	map_attr G5_03, \
 	   Layout_064_4a3d, \
 	   Blocks_064_4aa2, \
@@ -43,7 +43,7 @@ G5_03_MapAttributes:
 	   Palettes_064_5220, \
 	   0, Tileset_73, \
 	   Collision_064_5268
-G5_04_MapAttributes:
+G5_04_MapAttributes::
 	map_attr G5_04, \
 	   Layout_064_4bda, \
 	   Blocks_064_4c3f, \
@@ -52,7 +52,7 @@ G5_04_MapAttributes:
 	   Palettes_064_5220, \
 	   0, Tileset_73, \
 	   Collision_064_5268
-G5_05_MapAttributes:
+G5_05_MapAttributes::
 	map_attr G5_05, \
 	   Layout_064_4d8b, \
 	   Blocks_064_4df0, \
@@ -61,7 +61,7 @@ G5_05_MapAttributes:
 	   Palettes_064_5220, \
 	   0, Tileset_73, \
 	   Collision_064_5268
-G5_06_MapAttributes:
+G5_06_MapAttributes::
 	map_attr G5_06, \
 	   Layout_064_4f18, \
 	   Blocks_064_507d, \
@@ -98,7 +98,7 @@ Palettes_064_5220::
 	INCLUDE "data/maps/palettes/Palettes_064_5220.pal"
 Collision_064_5268::
 	INCBIN "data/maps/collision/Collision_064_5268.bin"
-StardreamCity_07_MapAttributes:
+StardreamCity_07_MapAttributes::
 	map_attr STARDREAM_CITY_07, \
 	   Layout_064_52bd, \
 	   Blocks_064_5546, \
@@ -120,7 +120,7 @@ Palettes_064_584f::
 	INCLUDE "data/maps/palettes/Palettes_064_584f.pal"
 Collision_064_5897::
 	INCBIN "data/maps/collision/Collision_064_5897.bin"
-G5_08_MapAttributes:
+G5_08_MapAttributes::
 	map_attr G5_08, \
 	   Layout_064_597c, \
 	   Blocks_064_59f5, \
@@ -129,7 +129,7 @@ G5_08_MapAttributes:
 	   Palettes_064_6383, \
 	   0, Tileset_75, \
 	   Collision_064_63cb
-G5_09_MapAttributes:
+G5_09_MapAttributes::
 	map_attr G5_09, \
 	   Layout_064_5b1d, \
 	   Blocks_064_5b66, \
@@ -138,7 +138,7 @@ G5_09_MapAttributes:
 	   Palettes_064_6383, \
 	   0, Tileset_75, \
 	   Collision_064_63cb
-G5_0A_MapAttributes:
+G5_0A_MapAttributes::
 	map_attr G5_0A, \
 	   Layout_064_5c12, \
 	   Blocks_064_5c8b, \
@@ -147,7 +147,7 @@ G5_0A_MapAttributes:
 	   Palettes_064_6383, \
 	   0, Tileset_75, \
 	   Collision_064_63cb
-StardreamMachineRoom_0b_MapAttributes:
+StardreamMachineRoom_0b_MapAttributes::
 	map_attr STARDREAM_MACHINE_ROOM_0B, \
 	   Layout_064_5da7, \
 	   Blocks_064_5e20, \
@@ -156,7 +156,7 @@ StardreamMachineRoom_0b_MapAttributes:
 	   Palettes_064_6383, \
 	   0, Tileset_75, \
 	   Collision_064_63cb
-G5_0C_MapAttributes:
+G5_0C_MapAttributes::
 	map_attr G5_0C, \
 	   Layout_064_5f48, \
 	   Blocks_064_5fc1, \
@@ -165,7 +165,7 @@ G5_0C_MapAttributes:
 	   Palettes_064_6383, \
 	   0, Tileset_75, \
 	   Collision_064_63cb
-StardreamMachineRoom_0d_MapAttributes:
+StardreamMachineRoom_0d_MapAttributes::
 	map_attr STARDREAM_MACHINE_ROOM_0D, \
 	   Layout_064_611d, \
 	   Blocks_064_6242, \
@@ -212,7 +212,7 @@ Palettes_064_6383::
 	INCLUDE "data/maps/palettes/Palettes_064_6383.pal"
 Collision_064_63cb::
 	INCBIN "data/maps/collision/Collision_064_63cb.bin"
-BaalCapitalProfessor_2b_MapAttributes:
+BaalCapitalProfessor_2b_MapAttributes::
 	map_attr BAAL_CAPITAL_PROFESSOR_2B, \
 	   Layout_064_6417, \
 	   Blocks_064_64fa, \
@@ -234,7 +234,7 @@ Palettes_064_65c9::
 	INCLUDE "data/maps/palettes/Palettes_064_65c9.pal"
 Collision_064_6611::
 	INCBIN "data/maps/collision/Collision_064_6611.bin"
-StardreamCity_0f_MapAttributes:
+StardreamCity_0f_MapAttributes::
 	map_attr STARDREAM_CITY_0F, \
 	   Layout_064_666b, \
 	   Blocks_064_668a, \
@@ -243,7 +243,7 @@ StardreamCity_0f_MapAttributes:
 	   Palettes_064_68b8, \
 	   0, Tileset_77, \
 	   Collision_064_6900
-StardreamFlorist_MapAttributes:
+StardreamFlorist_MapAttributes::
 	map_attr STARDREAM_FLORIST, \
 	   Layout_064_66ea, \
 	   Blocks_064_67dd, \
@@ -270,7 +270,7 @@ Palettes_064_68b8::
 	INCLUDE "data/maps/palettes/Palettes_064_68b8.pal"
 Collision_064_6900::
 	INCBIN "data/maps/collision/Collision_064_6900.bin"
-StardreamHospital_11_MapAttributes:
+StardreamHospital_11_MapAttributes::
 	map_attr STARDREAM_HOSPITAL_11, \
 	   Layout_064_699a, \
 	   Blocks_064_69b9, \
@@ -279,7 +279,7 @@ StardreamHospital_11_MapAttributes:
 	   Palettes_064_6d85, \
 	   0, Tileset_78, \
 	   Collision_064_6dcd
-StardreamHospital_12_MapAttributes:
+StardreamHospital_12_MapAttributes::
 	map_attr STARDREAM_HOSPITAL_12, \
 	   Layout_064_6a15, \
 	   Blocks_064_6a48, \
@@ -288,7 +288,7 @@ StardreamHospital_12_MapAttributes:
 	   Palettes_064_6d85, \
 	   0, Tileset_78, \
 	   Collision_064_6dcd
-StardreamHospital_13_MapAttributes:
+StardreamHospital_13_MapAttributes::
 	map_attr STARDREAM_HOSPITAL_13, \
 	   Layout_064_6a90, \
 	   Blocks_064_6aaf, \
@@ -297,7 +297,7 @@ StardreamHospital_13_MapAttributes:
 	   Palettes_064_6d85, \
 	   0, Tileset_78, \
 	   Collision_064_6dcd
-StardreamHospital_14_MapAttributes:
+StardreamHospital_14_MapAttributes::
 	map_attr STARDREAM_HOSPITAL_14, \
 	   Layout_064_6b0f, \
 	   Blocks_064_6b2e, \
@@ -306,7 +306,7 @@ StardreamHospital_14_MapAttributes:
 	   Palettes_064_6d85, \
 	   0, Tileset_78, \
 	   Collision_064_6dcd
-StardreamHospital_15_MapAttributes:
+StardreamHospital_15_MapAttributes::
 	map_attr STARDREAM_HOSPITAL_15, \
 	   Layout_064_6b86, \
 	   Blocks_064_6cad, \
@@ -348,7 +348,7 @@ Palettes_064_6d85::
 	INCLUDE "data/maps/palettes/Palettes_064_6d85.pal"
 Collision_064_6dcd::
 	INCBIN "data/maps/collision/Collision_064_6dcd.bin"
-StardreamAirship_16_MapAttributes:
+StardreamAirship_16_MapAttributes::
 	map_attr STARDREAM_AIRSHIP_16, \
 	   Layout_064_6e24, \
 	   Blocks_064_6f4b, \
@@ -370,7 +370,7 @@ Palettes_064_706a::
 	INCLUDE "data/maps/palettes/Palettes_064_706a.pal"
 Collision_064_70b2::
 	INCBIN "data/maps/collision/Collision_064_70b2.bin"
-G5_17_MapAttributes:
+G5_17_MapAttributes::
 	map_attr G5_17, \
 	   Layout_064_710e, \
 	   Blocks_064_7169, \
@@ -379,7 +379,7 @@ G5_17_MapAttributes:
 	   Palettes_064_741f, \
 	   0, Tileset_80, \
 	   Collision_064_7467
-StardreamAirship_18_MapAttributes:
+StardreamAirship_18_MapAttributes::
 	map_attr STARDREAM_AIRSHIP_18, \
 	   Layout_064_7259, \
 	   Blocks_064_734c, \
@@ -406,7 +406,7 @@ Palettes_064_741f::
 	INCLUDE "data/maps/palettes/Palettes_064_741f.pal"
 Collision_064_7467::
 	INCBIN "data/maps/collision/Collision_064_7467.bin"
-G5_19_MapAttributes:
+G5_19_MapAttributes::
 	map_attr G5_19, \
 	   Layout_064_74b1, \
 	   Blocks_064_7592, \
@@ -428,7 +428,7 @@ Palettes_064_768e::
 	INCLUDE "data/maps/palettes/Palettes_064_768e.pal"
 Collision_064_76d6::
 	INCBIN "data/maps/collision/Collision_064_76d6.bin"
-PresaleHouse_1a_MapAttributes:
+PresaleHouse_1a_MapAttributes::
 	map_attr PRESALE_HOUSE_1A, \
 	   Layout_064_771a, \
 	   Blocks_064_7801, \
@@ -450,7 +450,7 @@ Palettes_064_78c4::
 	INCLUDE "data/maps/palettes/Palettes_064_78c4.pal"
 Collision_064_790c::
 	INCBIN "data/maps/collision/Collision_064_790c.bin"
-PresaleHouseOutside_MapAttributes:
+PresaleHouseOutside_MapAttributes::
 	map_attr PRESALE_HOUSE_OUTSIDE, \
 	   Layout_064_7967, \
 	   Blocks_064_79b0, \
@@ -459,7 +459,7 @@ PresaleHouseOutside_MapAttributes:
 	   Palettes_064_7c40, \
 	   0, Tileset_83, \
 	   Collision_064_7c88
-G5_1C_MapAttributes:
+G5_1C_MapAttributes::
 	map_attr G5_1C, \
 	   Layout_064_7a50, \
 	   Blocks_064_7b15, \

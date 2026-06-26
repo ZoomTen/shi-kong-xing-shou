@@ -1,10 +1,10 @@
-Script_012_4000:
+Script_012_4000::
 	face FACE_RIGHT
 	ifcharindex $02, Script_012_400a
 	stext text_12_6443
 	end
 
-Script_012_400a:
+Script_012_400a::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -14,31 +14,31 @@ Script_012_400a:
 	swapfollower
 	end
 
-Script_012_401b:
+Script_012_401b::
 	face FACE_UP
 	ifcharindex $02, Script_012_400a
 	stext text_12_6443
 	end
 
-Script_012_4025:
+Script_012_4025::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_400a
 	stext text_12_6443
 	end
 
-Script_012_402f:
+Script_012_402f::
 	face FACE_LEFT
 	ifcharindex $02, Script_012_400a
 	stext text_12_6443
 	end
 
-Script_012_4039:
+Script_012_4039::
 	face FACE_RIGHT
 	ifcharindex $02, Script_012_4043
 	stext text_12_6443
 	end
 
-Script_012_4043:
+Script_012_4043::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -48,25 +48,25 @@ Script_012_4043:
 	swapfollower
 	end
 
-Script_012_4054:
+Script_012_4054::
 	face FACE_UP
 	ifcharindex $02, Script_012_4043
 	stext text_12_6443
 	end
 
-Script_012_405e:
+Script_012_405e::
 	face FACE_LEFT
 	ifcharindex $02, Script_012_4043
 	stext text_12_6443
 	end
 
-Script_012_4068:
+Script_012_4068::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_4072
 	stext text_12_6443
 	end
 
-Script_012_4072:
+Script_012_4072::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -76,19 +76,19 @@ Script_012_4072:
 	swapfollower
 	end
 
-Script_012_4083:
+Script_012_4083::
 	face FACE_UP
 	ifcharindex $02, Script_012_4072
 	stext text_12_6443
 	end
 
-Script_012_408d:
+Script_012_408d::
 	face FACE_RIGHT
 	ifcharindex $02, Script_012_4097
 	stext text_12_6443
 	end
 
-Script_012_4097:
+Script_012_4097::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -98,25 +98,25 @@ Script_012_4097:
 	swapfollower
 	end
 
-Script_012_40a8:
+Script_012_40a8::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_4097
 	stext text_12_6443
 	end
 
-Script_012_40b2:
+Script_012_40b2::
 	face FACE_LEFT
 	ifcharindex $02, Script_012_4097
 	stext text_12_6443
 	end
 
-Script_012_40bc:
+Script_012_40bc::
 	face FACE_UP
 	ifcharindex $02, Script_012_40c6
 	stext text_12_6443
 	end
 
-Script_012_40c6:
+Script_012_40c6::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -126,19 +126,19 @@ Script_012_40c6:
 	swapfollower
 	end
 
-Script_012_40d7:
+Script_012_40d7::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_40c6
 	stext text_12_6443
 	end
 
-Script_012_40e1:
+Script_012_40e1::
 	face FACE_UP
 	ifcharindex $02, Script_012_40eb
 	stext text_12_6443
 	end
 
-Script_012_40eb:
+Script_012_40eb::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -148,19 +148,19 @@ Script_012_40eb:
 	swapfollower
 	end
 
-Script_012_40fc:
+Script_012_40fc::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_40eb
 	stext text_12_6443
 	end
 
-Script_012_4106:
+Script_012_4106::
 	face FACE_UP
 	ifcharindex $02, Script_012_4110
 	stext text_12_6443
 	end
 
-Script_012_4110:
+Script_012_4110::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -170,19 +170,19 @@ Script_012_4110:
 	swapfollower
 	end
 
-Script_012_4121:
+Script_012_4121::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_4110
 	stext text_12_6443
 	end
 
-Script_012_412b:
+Script_012_412b::
 	face FACE_UP
 	ifcharindex $02, Script_012_4135
 	stext text_12_6443
 	end
 
-Script_012_4135:
+Script_012_4135::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -192,19 +192,19 @@ Script_012_4135:
 	swapfollower
 	end
 
-Script_012_4146:
+Script_012_4146::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_4135
 	stext text_12_6443
 	end
 
-Script_012_4150:
+Script_012_4150::
 	face FACE_RIGHT
 	ifcharindex $02, Script_012_415a
 	stext text_12_6443
 	end
 
-Script_012_415a:
+Script_012_415a::
 	swapfollower
 	delay $03, $10
 	scr_49
@@ -214,33 +214,33 @@ Script_012_415a:
 	swapfollower
 	end
 
-Script_012_416b:
+Script_012_416b::
 	face FACE_LEFT
 	ifcharindex $02, Script_012_415a
 	stext text_12_6443
 	end
 
-Script_012_4175:
+Script_012_4175::
 	face FACE_UP
 	ifcharindex $02, Script_012_415a
 	stext text_12_6443
 	end
 
-Script_012_417f:
+Script_012_417f::
 	face FACE_DOWN
 	ifcharindex $02, Script_012_415a
 	stext text_12_6443
 	end
 
-Script_012_4189:
+Script_012_4189::
 	warp3 $01, $00, $02
 	end
 
-Script_012_418e:
+Script_012_418e::
 	ifcharindex $01, Script_012_4193
 	end
 
-Script_012_4193:
+Script_012_4193::
 	face FACE_LEFT
 	spriteface  1, FACE_LEFT
 	setattach $01, $00, $f0, $00
@@ -254,11 +254,11 @@ Script_012_4193:
 	spriteface  1, FACE_LEFT
 	end
 
-Script_012_41b5:
+Script_012_41b5::
 	ifcharindex $01, Script_012_41ba
 	end
 
-Script_012_41ba:
+Script_012_41ba::
 	face FACE_RIGHT
 	spriteface  1, FACE_RIGHT
 	setattach $01, $00, $f0, $00
@@ -275,11 +275,11 @@ Script_012_41ba:
 Bank12_EmptyObjectEvent::
 	objects_end
 
-ObjectEvents_012_41dd:
+ObjectEvents_012_41dd::
 	object_event $2a,  9,  9, 0, $00, $00, $00, $00, Script_012_41e9
 	objects_end
 
-Script_012_41e9:
+Script_012_41e9::
 	textface text_12_41f1
 	startbattle BattleData_02d_506b
 	swapfollower
@@ -287,7 +287,7 @@ Script_012_41e9:
 
 INCLUDE "data/text/script_g2_1f.asm"
 
-DuoluCity2_ObjectEvents:
+DuoluCity2_ObjectEvents::
 	object_event $15,  8,  4, 0, $00, $00, $0a, $00, Script_012_4613
 	object_event $21,  3,  8, 0, $00, $00, $0b, $01, Script_012_4617
 	object_event $12,  8, 10, 0, $00, $00, $08, $02, Script_012_461b
@@ -299,35 +299,35 @@ DuoluCity2_ObjectEvents:
 	object_event $19,  9, 20, 0, $00, $00, $08, $03, Script_012_469e
 	objects_end
 
-DuoluCity_1b_ObjectEvents:
+DuoluCity_1b_ObjectEvents::
 	object_event $16,  4,  6, 0, $00, $00, $09, $00, Script_012_46a2
 	object_event $19,  8,  6, 0, $00, $00, $06, $01, Script_012_46a6
 	objects_end
 
-DuoluCity_1c_ObjectEvents:
+DuoluCity_1c_ObjectEvents::
 	object_event $1b,  5,  4, 0, $00, $00, $06, $00, Script_012_46aa
 	object_event $1a,  9,  6, 0, $00, $00, $07, $01, Script_012_46ae
 	objects_end
 
-DuoluCity_1d_ObjectEvents:
+DuoluCity_1d_ObjectEvents::
 	object_event $1c,  6,  3, 0, $00, $00, $07, $00, Script_012_46b2
 	object_event $1a,  4,  6, 0, $00, $00, $0b, $01, Script_012_46b6
 	object_event $15,  6,  7, 0, $00, $00, $06, $02, Script_012_46ba
 	objects_end
 
-DuoluCity_20_ObjectEvents:
+DuoluCity_20_ObjectEvents::
 	object_event $22,  7,  5, 0, $00, $00, $06, $00, Script_012_46be
 	objects_end
 
-GallEnterprise_ObjectEvents:
+GallEnterprise_ObjectEvents::
 	object_event $2d,  6,  5, wEventFlags + 3, $02, $00, $00, $00, Script_012_46c2
 	objects_end
 
-ClockTower1f_ObjectEvents:
+ClockTower1f_ObjectEvents::
 	object_event $24,  6, 13, wEventFlags + 4, $06, $00, $00, $00, Script_012_46fb
 	objects_end
 
-ShandaFarm_ObjectEvents:
+ShandaFarm_ObjectEvents::
 	object_event $17, 15,  6, 0, $00, $00, $09, $00, Script_012_48b7
 	object_event $20,  9,  8, 0, $00, $00, $08, $01, Script_012_48bb
 	object_event $12,  4, 16, 0, $00, $00, $08, $02, Script_012_48c9
@@ -337,39 +337,39 @@ ShandaFarm_ObjectEvents:
 	object_event $1a, 11, 25, 0, $00, $00, $09, $01, Script_012_48f7
 	objects_end
 
-ShandaFarm_12_ObjectEvents:
+ShandaFarm_12_ObjectEvents::
 	object_event $23,  3,  3, 0, $00, $00, $0b, $00, Script_012_4905
 	object_event $25,  5,  5, 0, $00, $00, $06, $01, Script_012_4913
 	objects_end
 
-ShandaFarm_13_ObjectEvents:
+ShandaFarm_13_ObjectEvents::
 	object_event $22,  3,  5, 0, $00, $00, $09, $00, Script_012_4917
 	object_event $21,  8,  6, 0, $00, $00, $06, $01, Script_012_491b
 	objects_end
 
-ShandaFarm_14_ObjectEvents:
+ShandaFarm_14_ObjectEvents::
 	object_event $1e,  9,  3, 0, $00, $00, $00, $00, Script_012_491f
 	object_event $1f,  5,  3, 0, $00, $00, $06, $01, Script_012_492d
 	object_event $18,  6,  6, 0, $00, $00, $05, $02, Script_012_493b
 	objects_end
 
-ShandaFarm_15_ObjectEvents:
+ShandaFarm_15_ObjectEvents::
 	object_event $16,  7,  5, 0, $00, $00, $08, $00, Script_012_495d
 	objects_end
 
-SkyRockPart2_ObjectEvents2:
+SkyRockPart2_ObjectEvents2::
 	object_event $30,  5,  7, wEventFlags + 4, $07, $00, $00, $00, Script_012_44cc
 	object_event $04,  6,  8, wEventFlags + 4, $07, $00, $00, $02, Script_012_44cc
 	objects_end
 
-Script_012_4397:
+Script_012_4397::
 	checkbit wEventFlags + 3, $06, Script_012_43a1
 
-Script_012_439d:
+Script_012_439d::
 	setmap MAP_SKY_ROCK_PART_2, $00
 	end
 
-Script_012_43a1:
+Script_012_43a1::
 	checkbit wEventFlags + 4, $07, Script_012_439d
 	setplayerchar $00
 	setmap MAP_SKY_ROCK_PART_2, $01
@@ -442,45 +442,45 @@ Script_012_43a1:
 	setbit wEventFlags + 4, $07
 	end
 
-Script_012_446e:
+Script_012_446e::
 	object_event $30,  1,  8, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
-ObjSprite_012_447a:
+ObjSprite_012_447a::
 	object_event $31,  8,  8, 0, $00, $00, $00, $01, Script_012_44cc
 	objects_end
 
-ObjSprite_012_4486:
+ObjSprite_012_4486::
 	object_event $49,  5,  5, 0, $00, $00, $00, $02, Script_012_44cc
 	objects_end
 
-Script_012_4492:
+Script_012_4492::
 	object_event $48,  5,  1, 0, $00, $00, $00, $03, Script_012_44cc
 	objects_end
 
-MarkNinaIntro_ObjectEvents3:
+MarkNinaIntro_ObjectEvents3::
 	object_event $30,  7,  3, wEventFlags + 3, $06, $00, $00, $00, Script_012_44cc
 	object_event $04,  8,  4, wEventFlags + 3, $06, $00, $00, $02, Script_012_44cc
 	objects_end
 
-MarkNinaIntro_ObjectEvents2:
+MarkNinaIntro_ObjectEvents2::
 	object_event $47,  8,  3, 0, $00, $00, $00, $00, Script_012_44cc
 	object_event $04,  8,  4, 0, $00, $00, $00, $02, Script_012_44cc
 	objects_end
 
-Script_012_44cc:
+Script_012_44cc::
         end
 
-Script_012_44cd:
+Script_012_44cd::
 	checkbit wEventFlags + 3, $05, Script_012_44db
 	setmap MAP_MARK_NINA_INTRO, $00
 	end
 
-Script_012_44d7:
+Script_012_44d7::
 	setmap MAP_MARK_NINA_INTRO, $03
 	end
 
-Script_012_44db:
+Script_012_44db::
 	checkbit wEventFlags + 3, $06, Script_012_44d7
 	setplayerchar $00
 	setmap MAP_MARK_NINA_INTRO, $01
@@ -542,21 +542,21 @@ Script_012_44db:
 	setbit wEventFlags + 3, $06
 	end
 
-MarkNinaIntro_ObjectEvents:
+MarkNinaIntro_ObjectEvents::
 	object_event $47,  8,  3, 0, $00, $00, $00, $00, Script_012_45ab
 	object_event $05,  8,  4, wEventFlags + 3, $04, $00, $00, $01, Script_012_45af
 	object_event $04,  7,  2, wEventFlags + 3, $04, $00, $00, $02, Script_012_45b3
 	objects_end
 
-Script_012_45ab:
+Script_012_45ab::
 	stext text_12_6159
 	end
 
-Script_012_45af:
+Script_012_45af::
 	textface text_12_6164
 	end
 
-Script_012_45b3:
+Script_012_45b3::
 	textface text_12_6171
 	emote $00, $03
 	delay $03, $20
@@ -594,127 +594,127 @@ Script_012_45b3:
 	setbit wEventFlags + 3, $04
 	end
 
-Script_012_4613:
+Script_012_4613::
 	textface text_12_5194
 	end
 
-Script_012_4617:
+Script_012_4617::
 	textface text_12_51a6
 	end
 
-Script_012_461b:
+Script_012_461b::
 	checkbit wEventFlags + 4, $02, Script_012_4625
 	textface text_12_51d9
 	end
 
-Script_012_4625:
+Script_012_4625::
 	textface text_12_723c
 	end
 
-Script_012_4629:
+Script_012_4629::
 	checkbit wEventFlags + 4, $02, Script_012_4633
 	textface text_12_5223
 	end
 
-Script_012_4633:
+Script_012_4633::
 	textface text_12_7267
 	end
 
-Script_012_4637:
+Script_012_4637::
 	checkbit wEventFlags + 4, $02, Script_012_4641
 	textface text_12_52aa
 	end
 
-Script_012_4641:
+Script_012_4641::
 	checkbit wEventFlags + 4, $03, Script_012_464b
 	textface text_12_72ef
 	end
 
-Script_012_464b:
+Script_012_464b::
 	checkbit wEventFlags + 4, $05, Script_012_4659
 	textface text_12_76dc
 	setbit wEventFlags + 4, $04
 	end
 
-Script_012_4659:
+Script_012_4659::
 	textface text_12_7885
 	end
 
-Script_012_465d:
+Script_012_465d::
 	checkbit wEventFlags + 4, $02, Script_012_4667
 	textface text_12_530c
 	end
 
-Script_012_4667:
+Script_012_4667::
 	checkbit wEventFlags + 4, $03, Script_012_4671
 	textface text_12_7320
 	end
 
-Script_012_4671:
+Script_012_4671::
 	checkbit wEventFlags + 4, $05, Script_012_467b
 	textface text_12_7746
 	end
 
-Script_012_467b:
+Script_012_467b::
 	textface text_12_735b
 	end
 
-Script_012_467f:
+Script_012_467f::
 	checkbit wEventFlags + 4, $02, Script_012_4689
 	textface text_12_5338
 	end
 
-Script_012_4689:
+Script_012_4689::
 	textface text_12_736f
 	end
 
-Script_012_468d:
+Script_012_468d::
 	textface text_12_5396
 	checkbit wEventFlags + 3, $03, Script_012_469a
 	stext text_12_53b6
 	end
 
-Script_012_469a:
+Script_012_469a::
 	stext text_12_53a4
 	end
 
-Script_012_469e:
+Script_012_469e::
 	textface text_12_546f
 	end
 
-Script_012_46a2:
+Script_012_46a2::
 	textface text_12_54b8
 	end
 
-Script_012_46a6:
+Script_012_46a6::
 	textface text_12_5528
 	end
 
-Script_012_46aa:
+Script_012_46aa::
 	textface text_12_5589
 	end
 
-Script_012_46ae:
+Script_012_46ae::
 	textface text_12_560d
 	end
 
-Script_012_46b2:
+Script_012_46b2::
 	textface text_12_563e
 	end
 
-Script_012_46b6:
+Script_012_46b6::
 	textface text_12_5682
 	end
 
-Script_012_46ba:
+Script_012_46ba::
 	textface text_12_56ec
 	end
 
-Script_012_46be:
+Script_012_46be::
 	textface text_12_5733
 	end
 
-Script_012_46c2:
+Script_012_46c2::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -737,14 +737,14 @@ Script_012_46c2:
 	setbit wEventFlags + 3, $02
 	end
 
-Script_012_46fb:
+Script_012_46fb::
 	checkbit wEventFlags + 4, $04, Script_012_4705
 
-Script_012_4701:
+Script_012_4701::
 	textface text_12_5b24
 	end
 
-Script_012_4705:
+Script_012_4705::
 	checkbit wEventFlags + 4, $05, Script_012_4701
 	textface text_12_7787
 	end
@@ -754,19 +754,19 @@ Script_012_470f::
 	setmap MAP_CLOCK_TOWER_5F, $01
 	end2
 
-Script_012_4719:
+Script_012_4719::
 	setmap MAP_CLOCK_TOWER_5F, $00
 	end2
 
-ClockTower5f_ObjectEvents:
+ClockTower5f_ObjectEvents::
 	object_event $33,  5,  3, wEventFlags + 4, $05, $00, $00, $00, Script_012_4735
 	objects_end
 	
-ObjectEvents_012_4729:
+ObjectEvents_012_4729::
 	object_event $48,  5,  3, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 
-Script_012_4735:
+Script_012_4735::
 	textface text_12_77ea
 	stext text_12_77ff
 	stext text_12_7870
@@ -793,10 +793,10 @@ Script_012_4735:
 	setmappredef MAPPREDEF_0a
 	end
 
-Script_012_4780:
+Script_012_4780::
 	end
 
-Script_012_4781:
+Script_012_4781::
 	setplayerchar $00
 	setmap MAP_G2_11, $01
 	face FACE_LEFT
@@ -839,28 +839,28 @@ Script_012_4781:
 	setmappredef MAPPREDEF_0b
 	end
 
-GallEnterprise_ObjectEvents4:
+GallEnterprise_ObjectEvents4::
 	object_event $2f,  5,  4, 0, $00, $00, $00, $00, Script_012_4819
 	object_event $30,  4,  4, 0, $00, $00, $00, $01, Script_012_481d
 	object_event $04,  6,  5, wEventFlags + $17, $07, $00, $00, $02, Script_012_4827
 	objects_end
 
-Script_012_4819:
+Script_012_4819::
 	textface text_12_7e2d
 	end
 
-Script_012_481d:
+Script_012_481d::
 	checkbit wEventFlags + 4, $06, Script_012_4826
 	textface text_12_7e6d
 
-Script_012_4826:
+Script_012_4826::
 	end
 
-Script_012_4827:
+Script_012_4827::
 	textface text_12_7cdd
 	end
 
-Script_012_482b:
+Script_012_482b::
 	stext text_12_7cf0
 	spritewalk  4, MOVE_DOWN
 	face FACE_UP
@@ -885,7 +885,7 @@ Script_012_4850::
 	spritewalk  1, MOVE_DOWN
 	spriteface  1, FACE_UP
 
-Script_012_4862:
+Script_012_4862::
 	emote $00, $03
 	delay $03, $20
 	stext text_12_7d04
@@ -917,135 +917,135 @@ Script_012_4862:
 	setbit wEventFlags + 23, $07
 	end
 
-Script_012_48b7:
+Script_012_48b7::
 	textface text_12_5b82
 	end
 
-Script_012_48bb:
+Script_012_48bb::
 	checkbit wEventFlags + 3, $05, Script_012_48c5
 	textface text_12_5ba7
 	end
 
-Script_012_48c5:
+Script_012_48c5::
 	textface text_12_6550
 	end
 
-Script_012_48c9:
+Script_012_48c9::
 	checkbit wEventFlags + 3, $05, Script_012_48d3
 	textface text_12_5bd5
 	end
 
-Script_012_48d3:
+Script_012_48d3::
 	textface text_12_65ab
 	end
 
-Script_012_48d7:
+Script_012_48d7::
 	checkbit wEventFlags + 3, $05, Script_012_48e1
 	textface text_12_5c51
 	end
 
-Script_012_48e1:
+Script_012_48e1::
 	textface text_12_6629
 	end
 
-Script_012_48e5:
+Script_012_48e5::
 	textface text_12_5c92
 	end
 
-Script_012_48e9:
+Script_012_48e9::
 	checkbit wEventFlags + 3, $05, Script_012_48f3
 	textface text_12_5d14
 	end
 
-Script_012_48f3:
+Script_012_48f3::
 	textface text_12_6655
 	end
 
-Script_012_48f7:
+Script_012_48f7::
 	checkbit wEventFlags + 3, $05, Script_012_4901
 	textface text_12_5d7a
 	end
 
-Script_012_4901:
+Script_012_4901::
 	textface text_12_66e4
 	end
 
-Script_012_4905:
+Script_012_4905::
 	checkbit wEventFlags + 3, $05, Script_012_490f
 	textface text_12_5dab
 	end
 
-Script_012_490f:
+Script_012_490f::
 	textface text_12_673b
 	end
 
-Script_012_4913:
+Script_012_4913::
 	textface text_12_5dff
 	end
 
-Script_012_4917:
+Script_012_4917::
 	textface text_12_5e82
 	end
 
-Script_012_491b:
+Script_012_491b::
 	textface text_12_5f2e
 	end
 
-Script_012_491f:
+Script_012_491f::
 	checkbit wEventFlags + 3, $05, Script_012_4929
 	textface text_12_5fa8
 	end
 
-Script_012_4929:
+Script_012_4929::
 	textface text_12_6796
 	end
 
-Script_012_492d:
+Script_012_492d::
 	checkbit wEventFlags + 3, $05, Script_012_4937
 	textface text_12_5fc7
 	end
 
-Script_012_4937:
+Script_012_4937::
 	textface text_12_67b8
 	end
 
-Script_012_493b:
+Script_012_493b::
 	checkbit wEventFlags + 3, $05, Script_012_4948
 	textface text_12_6032
 	stext text_12_6064
 	end
 
-Script_012_4948:
+Script_012_4948::
 	checkbit wEventFlags + 3, $07, Script_012_4959
 	textface text_12_6812
 	stext text_12_6864
 	setbit wEventFlags + 3, $07
 	end
 
-Script_012_4959:
+Script_012_4959::
 	textface text_12_6812
 	end
 
-Script_012_495d:
+Script_012_495d::
 	checkbit wEventFlags + 3, $05, Script_012_4967
 	textface text_12_60b5
 	end
 
-Script_012_4967:
+Script_012_4967::
 	textface text_12_686f
 	end
 
-G2_19_ObjectEvents:
-HealingCenter_g221_ObjectEvents:
+G2_19_ObjectEvents::
+HealingCenter_g221_ObjectEvents::
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_012_4982
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_012_4986
 	objects_end
 
-Script_012_4982:
+Script_012_4982::
 	stext text_12_7ebe
 	end
 
-Script_012_4986:
+Script_012_4986::
 	stext text_12_7ed6
 	end
 
@@ -1056,7 +1056,7 @@ Script_012_498a::
 	scr_37
 	end
 
-Script_012_4997:
+Script_012_4997::
 	end
 
 Script_012_4998::
@@ -1066,19 +1066,19 @@ Script_012_4998::
 	townmusicanim
 	end
 
-Script_012_49a5:
+Script_012_49a5::
 	end
 
-G2_1A_ObjectEvents:
-Shop_g222_ObjectEvents:
+G2_1A_ObjectEvents::
+Shop_g222_ObjectEvents::
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_012_49b2
 	objects_end
 
-Script_012_49b2:
+Script_012_49b2::
 	textface text_12_7f05
 	end
 
-Script_012_49b6:
+Script_012_49b6::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_12_7f05
@@ -1086,10 +1086,10 @@ Script_012_49b6:
 	scr_35 $01
 	end
 
-Script_012_49c7:
+Script_012_49c7::
 	end
 
-Script_012_49c8:
+Script_012_49c8::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_12_7f05
@@ -1103,20 +1103,20 @@ Script_012_49d9::
 	checkbit wEventFlags + 3, $02, Script_012_49e9
 	end
 
-Script_012_49e9:
+Script_012_49e9::
 	checkbit wEventFlags + 4, $07, Script_012_49f8
 	emote $00, $03
 	delay $03, $20
 	stext text_12_5abd
 	
-Script_012_49f8:
+Script_012_49f8::
 	end
 
-CoffeeForestPart3_ObjectEvents:
+CoffeeForestPart3_ObjectEvents::
 	object_event $32,  6,  5, wEventFlags + 3, $05, $00, $00, $00, Script_012_4a05
 	objects_end
 
-Script_012_4a05:
+Script_012_4a05::
 	textface text_12_6471
 	stext text_12_6486
 	startbattle BattleData_02d_4b40
@@ -1165,54 +1165,54 @@ Script_012_4a05:
 	setbit wEventFlags + 3, $05
 	end
 	
-Script_012_4a93:
+Script_012_4a93::
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4a9f:
+Script_012_4a9f::
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4aab:
+Script_012_4aab::
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4ab7:
+Script_012_4ab7::
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4ac3:
+Script_012_4ac3::
 	object_event $48,  6,  5, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4acf:
+Script_012_4acf::
 	end
 	
-Script_012_4ad0:
+Script_012_4ad0::
 	object_event $48, 13, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4adc:
+Script_012_4adc::
 	object_event $48, 18, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4ae8:
+Script_012_4ae8::
 	object_event $48, 16, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4af4:
+Script_012_4af4::
 	object_event $48, 14, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-Script_012_4b00:
+Script_012_4b00::
 	object_event $48, 17, 11, 0, $00, $00, $00, $01, Script_012_4acf
 	objects_end
 	
-ShandaFarm_ObjectEvents2:
+ShandaFarm_ObjectEvents2::
 	object_event $1d, 14, 18, 0, $00, $00, $00, $00, Script_012_4acf
 	objects_end
 
-GallEnterprise_ObjectEvents2:
+GallEnterprise_ObjectEvents2::
 	object_event $2f,  4,  2, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 	object_event $2d,  6,  3, wEventFlags + 4, $02, $00, $00, $01, Script_012_44cc
 	object_event $30,  5,  2, wEventFlags + 4, $02, $00, $00, $02, Script_012_44cc
@@ -1220,7 +1220,7 @@ GallEnterprise_ObjectEvents2:
 	object_event $04,  4,  4, wEventFlags + 4, $02, $00, $00, $03, Script_012_44cc
 	objects_end
 
-GallEnterprise_ObjectEvents5:
+GallEnterprise_ObjectEvents5::
 	object_event $2f,  5,  3, wEventFlags + 4, $02, $00, $00, $00, Script_012_44cc
 
 	object_event $2d,  6,  3, wEventFlags + 4, $02, $00, $00, $01, Script_012_44cc
@@ -1233,21 +1233,21 @@ Script_012_4b72::
 	setmap MAP_GALL_ENTERPRISE, $00
 	end
 
-Script_012_4b7c:
+Script_012_4b7c::
 	checkbit wEventFlags + 4, $03, Script_012_4b86
 	setmap MAP_GALL_ENTERPRISE, $00
 	end
 
-Script_012_4b86:
+Script_012_4b86::
 	checkbit wEventFlags + 4, $06, Script_012_4b90
 	setmap MAP_GALL_ENTERPRISE, $05
 	end
 
-Script_012_4b90:
+Script_012_4b90::
 	setmap MAP_GALL_ENTERPRISE, $04
 	end
 
-Script_012_4b94:
+Script_012_4b94::
 	checkbit wEventFlags + 4, $02, Script_012_4b7c
 	setplayerchar $00
 	setmap MAP_GALL_ENTERPRISE, $02
@@ -1324,15 +1324,15 @@ Script_012_4b94:
 	setmappredef MAPPREDEF_08
 	end
 
-G2_11_ObjectEvents2:
+G2_11_ObjectEvents2::
 	object_event $04,  6,  6, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
-G2_23_ObjectEvents:
+G2_23_ObjectEvents::
 	object_event $11,  5,  2, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
-Script_012_4c89:
+Script_012_4c89::
 	object_event $04,  1,  6, 0, $00, $00, $00, $00, Script_012_44cc
 	objects_end
 
@@ -1389,20 +1389,20 @@ Script_012_4d14::
 	setmap MAP_GALL_ENTERPRISE, $01
 	end2
 
-Script_012_4d1e:
+Script_012_4d1e::
 	checkbit wEventFlags + 4, $06, Script_012_4d28
 	setmap MAP_GALL_ENTERPRISE, $03
 	end2
 
-Script_012_4d28:
+Script_012_4d28::
 	setmap MAP_GALL_ENTERPRISE, $06
 	end2
 
-GallEnterprise_ObjectEvents3:
+GallEnterprise_ObjectEvents3::
 	object_event $2d,  6,  5, 0, $00, $00, $00, $00, Script_012_4d38
 	objects_end
 
-Script_012_4d38:
+Script_012_4d38::
 	checkbit wEventFlags + 4, $05, Script_012_4d6d
 	walkpath
 	face FACE_UP
@@ -1424,11 +1424,11 @@ Script_012_4d38:
 	stext text_12_7696
 	end
 
-Script_012_4d6d:
+Script_012_4d6d::
 	textface text_12_78bd
 	end
 
-Script_012_4d71:
+Script_012_4d71::
 	farjump2 Script_04f_4384
 	end
 

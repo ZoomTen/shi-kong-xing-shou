@@ -1,4 +1,4 @@
-Func_02c_4000:
+Func_02c_4000::
 	ld de, CharBacksprites
 	ld a, [wPlayerChar]
 	ld l, a
@@ -31,7 +31,7 @@ Func_02c_4000:
 	call LoadEnemyMonPic
 	farcall Func_026_4d47
 	ret
-Func_02c_403e:
+Func_02c_403e::
 	push de
 	ld de, CharBacksprites
 	ld a, $00
@@ -51,7 +51,7 @@ Func_02c_403e:
 	ret
 ; Character battle backsprites, indexed by wPlayerChar (party/character index, see Func_02c_4000).
 ; Per-character 4-color palette; pointer table -> palette records.
-CharBackspritePals:
+CharBackspritePals::
 	dw CharBackspritePal_0
 	dw CharBackspritePal_1
 	dw CharBackspritePal_2
@@ -60,49 +60,49 @@ CharBackspritePals:
 	dw CharBackspritePal_5
 	dw CharBackspritePal_6
 	dw CharBackspritePal_7
-CharBackspritePal_0:
+CharBackspritePal_0::
 	RGB 31, 31, 31
 	RGB 31, 19, 0
 	RGB 29, 0, 0
 	RGB 0, 0, 0
-CharBackspritePal_1:
+CharBackspritePal_1::
 	RGB 31, 31, 31
 	RGB 31, 19, 0
 	RGB 14, 8, 31
 	RGB 0, 0, 0
-CharBackspritePal_2:
+CharBackspritePal_2::
 	RGB 31, 31, 31
 	RGB 31, 22, 12
 	RGB 0, 14, 0
 	RGB 0, 0, 0
-CharBackspritePal_3:
+CharBackspritePal_3::
 	RGB 31, 31, 31
 	RGB 31, 19, 0
 	RGB 17, 13, 5
 	RGB 0, 0, 0
-CharBackspritePal_4:
+CharBackspritePal_4::
 	RGB 31, 31, 31
 	RGB 31, 22, 12
 	RGB 0, 17, 29
 	RGB 0, 0, 0
-CharBackspritePal_5:
+CharBackspritePal_5::
 	RGB 31, 31, 31
 	RGB 31, 19, 0
 	RGB 29, 0, 13
 	RGB 0, 0, 0
-CharBackspritePal_6:
+CharBackspritePal_6::
 	RGB 31, 31, 31
 	RGB 31, 19, 0
 	RGB 12, 15, 28
 	RGB 0, 0, 0
-CharBackspritePal_7:
+CharBackspritePal_7::
 	RGB 31, 31, 31
 	RGB 31, 19, 0
 	RGB 31, 27, 0
 	RGB 0, 0, 0
 
 ; Per-character backsprite GFX (6x6 tiles -> VRAM $90D0); pointer table -> GFX blocks.
-CharBacksprites:
+CharBacksprites::
 	dw CharBacksprite_0
 	dw CharBacksprite_1
 	dw CharBacksprite_2
@@ -128,7 +128,7 @@ CharBacksprite_6::
 CharBacksprite_7::
 	INCBIN "gfx/backsprites/backsprite_7.2bpp"
 
-BattleTransition_InsertWhiteTile:
+BattleTransition_InsertWhiteTile::
 	ld hl, .WhiteTile
 	ld de, $8a00
 	ld bc, $10
@@ -147,7 +147,7 @@ BattleTransition_InsertWhiteTile:
 	db $ff, $ff, $ff, $ff
 	db $ff, $ff, $ff, $ff
 
-StartBattleTransition:
+StartBattleTransition::
 	call BattleTransition_InsertWhiteTile
 .run
 ; Fetch transition type
@@ -190,7 +190,7 @@ StartBattleTransition:
 	jp .run
 	ret
 
-AnimateBattleTransition:
+AnimateBattleTransition::
 	ld a, [wd0ba]
 	and $1f
 	ld [wdcdd], a
@@ -269,7 +269,7 @@ AnimateBattleTransition:
 	ld e, a
 	ret
 
-Func_2c_53a6:
+Func_2c_53a6::
 	ld a, c
 	sub $10
 	and $1f
@@ -293,10 +293,10 @@ Func_2c_53a6:
 	ld e, a
 	ret
 
-Func_2c_53ca:
+Func_2c_53ca::
 	ret
 
-Func_2c_53cb:
+Func_2c_53cb::
 	push hl
 	push bc
 	inc c
@@ -309,7 +309,7 @@ Func_2c_53cb:
 	hlcoord 0, 0
 	ld e, $18
 
-Func_2c_53df:
+Func_2c_53df::
 	ld a, [hli]
 	or a
 	jr z, Func_2c_5413
@@ -340,7 +340,7 @@ Func_2c_53df:
 	pop hl
 	ret
 
-Func_2c_5405:
+Func_2c_5405::
 	ld a, $1c
 	add l
 	ld l, a
@@ -353,7 +353,7 @@ Func_2c_5405:
 	pop hl
 	ret
 
-Func_2c_5413:
+Func_2c_5413::
 	ld a, $1f
 	add l
 	ld l, a
@@ -366,7 +366,7 @@ Func_2c_5413:
 	pop hl
 	ret
 
-BattleTransitionTypes:
+BattleTransitionTypes::
 	dw BattleTransition_CircleInward
 	dw BattleTransition_DiamondInward
 	dw BattleTransition_CrossInward
@@ -376,7 +376,7 @@ BattleTransitionTypes:
 	dw BattleTransition_VerticalLines
 	dw BattleTransition_DiagonalCheckerboard
 
-BattleTransition_CircleInward:
+BattleTransition_CircleInward::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -602,7 +602,7 @@ BattleTransition_CircleInward:
 	dw $809, $80a, $909, $90a
 	db -1
 
-BattleTransition_DiamondInward:
+BattleTransition_DiamondInward::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -827,7 +827,7 @@ BattleTransition_DiamondInward:
 	dw $809, $80a, $909, $90a
 	db -1
 
-BattleTransition_CrossInward:
+BattleTransition_CrossInward::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -1026,7 +1026,7 @@ BattleTransition_CrossInward:
 	dw $1003, $1010, $1102, $1111
 	db -1
 
-BattleTransition_Dissolve:
+BattleTransition_Dissolve::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -1297,7 +1297,7 @@ BattleTransition_Dissolve:
 	dw $702, $913, $d07, $f13
 	db -1
 
-BattleTransition_HorizontalStripes:
+BattleTransition_HorizontalStripes::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -1480,7 +1480,7 @@ BattleTransition_HorizontalStripes:
 	dw $1113, $1000
 	db -1
 
-BattleTransition_DiamondOutward:
+BattleTransition_DiamondOutward::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -1649,7 +1649,7 @@ BattleTransition_DiamondOutward:
 	dw $1100
 	db -1
 
-BattleTransition_VerticalLines:
+BattleTransition_VerticalLines::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -1814,7 +1814,7 @@ BattleTransition_VerticalLines:
 	dw $110b, $a, $10a, $20a
 	db -1
 
-BattleTransition_DiagonalCheckerboard:
+BattleTransition_DiagonalCheckerboard::
 	dw .frame0
 	dw .frame1
 	dw .frame2
@@ -2013,7 +2013,7 @@ BattleTransition_DiagonalCheckerboard:
 	dw $1100
 	db -1
 
-Func_02d_6d77:
+Func_02d_6d77::
 	ld a, [wd98d]
 .asm_6d7a
 	ld [wdcf1], a
@@ -2129,7 +2129,7 @@ Func_02d_6d77:
 	jp nc, .asm_6e12
 	inc bc
 	jp .asm_6dee
-Func_02d_6e2c:
+Func_02d_6e2c::
 	ld a, [wd98d]
 .asm_6e2f
 	ld [wdcf1], a
@@ -2229,7 +2229,7 @@ Func_02d_6e2c:
 	jp nc, .asm_6eb4
 	inc bc
 	jp .asm_6e90
-Func_02d_6ece:
+Func_02d_6ece::
 	ld a, [$DCF2]
 	inc a
 	ld [$DCF2], a
@@ -2261,7 +2261,7 @@ Func_02d_6ece:
 ; Object motion paths: per-frame signed (dx,dy) added to (Func_02d_6e2c) / subtracted from
 ; (Func_02d_6d77) an object's X,Y (wd1a0[0..1]); direction via wd986, step cursor wd1a0[7].
 ; Path pointer in wd1a0[5..6], selected by wd98d. dx = -1 ($ff) ends a path; $88/$77 dx = control frames.
-Battle_ObjectMotionPaths:
+Battle_ObjectMotionPaths::
 	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $88, $ff, $00, $fe, $00, $fe, $00, $fe
 	db $00, $fc
 	db -1

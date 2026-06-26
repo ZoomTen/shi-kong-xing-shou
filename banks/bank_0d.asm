@@ -102,7 +102,7 @@ _AnimatePaperScroll::
 	ld h, [hl]
 	ld l, a
 	push hl
-Func_00d_40b8:
+Func_00d_40b8::
 	pop hl
 	ld a, [hli]
 	push hl
@@ -142,7 +142,7 @@ Func_00d_40b8:
 	cp $0A
 	jr c, .asm_40e7
 	ret
-Func_00d_40ff:
+Func_00d_40ff::
 	ld hl, $98C0
 	ld de, wd100
 	ld bc, $1404
@@ -164,7 +164,7 @@ Func_00d_40ff:
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 	ret
-Func_00d_412c:
+Func_00d_412c::
 	ld a, $09
 	ld [wAnimFrameCounter], a
 .asm_4131
@@ -226,7 +226,7 @@ Func_00d_412c:
 	dec c
 	jr nz, .asm_417f
 	ret
-Func_00d_4193:
+Func_00d_4193::
 	ld a, [wAnimFramePtr]
 	ld e, a
 	ld a, [wAnimFramePtr + 1]
@@ -258,7 +258,7 @@ Func_00d_4193:
 	dec c
 	jr nz, .asm_41ac
 	ret
-Func_00d_41c0:
+Func_00d_41c0::
 	hlcoord 0, 6
 	ld de, wd100
 	ld c, $50
@@ -278,7 +278,7 @@ Func_00d_41c0:
 	dec c
 	jr nz, .asm_41c8
 	ret
-Func_00d_41db:
+Func_00d_41db::
 	ld a, [wAnimFrameCounter]
 	dec a
 	ld l, a
@@ -314,7 +314,7 @@ Func_00d_41db:
 	dec c
 	jr nz, .asm_4206
 	ret
-Func_00d_4212:
+Func_00d_4212::
 	ld a, [wAnimFrameCounter]
 	cp $09
 	ret z
@@ -354,16 +354,16 @@ Func_00d_4212:
 	ret
 
 ; TODO: unk_ - data, referenced via `ld de, unk_00d_424c`
-unk_00d_424c:
+unk_00d_424c::
 	db $a1, $a3, $a3, $a4
 ; TODO: font/character tiles copied to VRAM $8A00
-PaperScrollTiles:
+PaperScrollTiles::
 	INCBIN "gfx/paper_scroll/tiles_4250.2bpp"
 ; TODO: source pointers for the two paper layouts, indexed *2
-Pointers_00d_42a0:
+Pointers_00d_42a0::
 	dw Tilemap_00d_432a, Tilemap_00d_4352
 
-Func_00d_42a4:
+Func_00d_42a4::
 	and $0F
 	push af
 	srl a
@@ -433,16 +433,16 @@ Func_00d_42a4:
 	ret
 
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_00d_4302:
+unk_00d_4302::
 	db $86, $86, $86, $86, $86, $86, $86, $86, $86, $86, $86, $80, $80, $80, $80, $80
 	db $80, $80, $80, $86, $86, $80, $80, $80, $80, $80, $80, $80, $80, $86, $86, $86
 	db $86, $86, $86, $86, $86, $86, $86, $86
-Tilemap_00d_432a:
+Tilemap_00d_432a::
 	INCBIN "gfx/tilemaps/tilemap_00d_432a.tilemap"
-Tilemap_00d_4352:
+Tilemap_00d_4352::
 	INCBIN "gfx/tilemaps/tilemap_00d_4352.tilemap"
 ; TODO: paper-scroll script pointer table, indexed by hScrollNumber *2
-Pointers_00d_437a:
+Pointers_00d_437a::
 	dw Script_00d_43c2, Script_00d_43c2, Script_00d_43c8, Script_00d_43cf, Script_00d_43d5, Script_00d_43dc, Script_00d_43e3, Script_00d_43e9
 	dw Script_00d_43ef, Script_00d_43f6, Script_00d_43fd, Script_00d_4404, Script_00d_440b, Script_00d_4412, Script_00d_4418, Script_00d_441e
 	dw Script_00d_4426, Script_00d_442e, Script_00d_4434, Script_00d_443c, Script_00d_4445, Script_00d_444e, Script_00d_4457, Script_00d_4460
@@ -450,9 +450,9 @@ Pointers_00d_437a:
 	dw Script_00d_44ae, Script_00d_44b6, Script_00d_44be, Script_00d_44c7
 ; TODO: paper-scroll scripts (F0/ED character command lists)
 INCLUDE "data/text/paperscroll_move_names.asm"
-PaperEmotesTiles:
+PaperEmotesTiles::
 	INCBIN "gfx/paper_scroll/tiles_44cf.2bpp"
-LightbulbEmoteTiles:
+LightbulbEmoteTiles::
 	INCBIN "gfx/paper_scroll/tiles_460f.2bpp"
-ContinueBlinkerTiles:
+ContinueBlinkerTiles::
 	INCBIN "gfx/paper_scroll/tiles_464f.2bpp"

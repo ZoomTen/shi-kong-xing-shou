@@ -1,4 +1,4 @@
-LoadBattleAnimGFX_03e:
+LoadBattleAnimGFX_03e::
 	ld de, Pointers_03e_401b
 	ld a, [wBattleAnimID]
 	sub BATTLE_ANIM_BANK_7_START
@@ -16,7 +16,7 @@ LoadBattleAnimGFX_03e:
 	ld de, vTiles0
 	call CopyBytesVRAM
 	ret
-Pointers_03e_401b:
+Pointers_03e_401b::
 	dw SubImage_03e_4041
 	dw SubImage_03e_4843
 	dw SubImage_03e_4f65
@@ -36,91 +36,91 @@ Pointers_03e_401b:
 	dw SubImage_03e_765b
 	dw SubImage_03e_765b
 	dw SubImage_03e_7c9d
-SubImage_03e_4041:
+SubImage_03e_4041::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_4041.bin"
 .e
 
-SubImage_03e_4843:
+SubImage_03e_4843::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_4843.2bpp"
 .e
 
-SubImage_03e_4f65:
+SubImage_03e_4f65::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_4f65.2bpp"
 .e
 
-SubImage_03e_50e7:
+SubImage_03e_50e7::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_50e7.2bpp"
 .e
 
-SubImage_03e_5549:
+SubImage_03e_5549::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_5549.2bpp"
 .e
 
-SubImage_03e_564b:
+SubImage_03e_564b::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_564b.2bpp"
 .e
 
-SubImage_03e_58cd:
+SubImage_03e_58cd::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_58cd.2bpp"
 .e
 
-SubImage_03e_5b6f:
+SubImage_03e_5b6f::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_5b6f.2bpp"
 .e
 
-SubImage_03e_6151:
+SubImage_03e_6151::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_6151.2bpp"
 .e
 
-SubImage_03e_6493:
+SubImage_03e_6493::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_6493.2bpp"
 .e
 
-SubImage_03e_6bb5:
+SubImage_03e_6bb5::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_6bb5.2bpp"
 .e
 
-SubImage_03e_7057:
+SubImage_03e_7057::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_7057.2bpp"
 .e
 
-SubImage_03e_71d9:
+SubImage_03e_71d9::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_71d9.2bpp"
 .e
 
-SubImage_03e_765b:
+SubImage_03e_765b::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_765b.2bpp"
 .e
 
-SubImage_03e_7c9d:
+SubImage_03e_7c9d::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_3e_7c9d.2bpp"

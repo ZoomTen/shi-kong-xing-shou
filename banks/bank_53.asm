@@ -1,4 +1,4 @@
-G4_01_MapAttributes:
+G4_01_MapAttributes::
 	map_attr G4_01, \
 	   Layout_053_4050, \
 	   Blocks_053_40e1, \
@@ -8,7 +8,7 @@ G4_01_MapAttributes:
 	   0, Tileset_45, \
 	   Collision_053_4998
 
-G4_02_MapAttributes:
+G4_02_MapAttributes::
 	map_attr G4_02, \
 	   Layout_053_4275, \
 	   Blocks_053_4306, \
@@ -18,7 +18,7 @@ G4_02_MapAttributes:
 	   0, Tileset_45, \
 	   Collision_053_4998
 
-G4_03_MapAttributes:
+G4_03_MapAttributes::
 	map_attr G4_03, \
 	   Layout_053_44a2, \
 	   Blocks_053_4507, \
@@ -28,7 +28,7 @@ G4_03_MapAttributes:
 	   0, Tileset_45, \
 	   Collision_053_4998
 
-G4_04_MapAttributes:
+G4_04_MapAttributes::
 	map_attr G4_04, \
 	   Layout_053_4633, \
 	   Blocks_053_47d4, \
@@ -66,7 +66,7 @@ Palettes_053_4950::
 Collision_053_4998::
 	INCBIN "data/maps/collision/Collision_053_4998.bin"
 
-G4_05_MapAttributes:
+G4_05_MapAttributes::
 	map_attr G4_05, \
 	   Layout_053_49fc, \
 	   Blocks_053_4aaf, \
@@ -89,7 +89,7 @@ Palettes_053_4b9e::
 Collision_053_4be6::
 	INCBIN "data/maps/collision/Collision_053_4be6.bin"
 
-G4_06_MapAttributes:
+G4_06_MapAttributes::
 	map_attr G4_06, \
 	   Layout_053_4c70, \
 	   Blocks_053_4cd5, \
@@ -99,7 +99,7 @@ G4_06_MapAttributes:
 	   0, Tileset_47, \
 	   Collision_053_52d5
 
-G4_07_MapAttributes:
+G4_07_MapAttributes::
 	map_attr G4_07, \
 	   Layout_053_4d81, \
 	   Blocks_053_4de6, \
@@ -109,7 +109,7 @@ G4_07_MapAttributes:
 	   0, Tileset_47, \
 	   Collision_053_52d5
 
-G4_08_MapAttributes:
+G4_08_MapAttributes::
 	map_attr G4_08, \
 	   Layout_053_4e7a, \
 	   Blocks_053_4edf, \
@@ -119,7 +119,7 @@ G4_08_MapAttributes:
 	   0, Tileset_47, \
 	   Collision_053_52d5
 
-G4_09_MapAttributes:
+G4_09_MapAttributes::
 	map_attr G4_09, \
 	   Layout_053_4fa3, \
 	   Blocks_053_5008, \
@@ -129,7 +129,7 @@ G4_09_MapAttributes:
 	   0, Tileset_47, \
 	   Collision_053_52d5
 
-EastFishmarketMermaidCutscene_MapAttributes:
+EastFishmarketMermaidCutscene_MapAttributes::
 	map_attr EAST_FISHMARKET_MERMAID_CUTSCENE, \
 	   Layout_053_50e4, \
 	   Blocks_053_51fb, \
@@ -172,7 +172,7 @@ Palettes_053_528d::
 Collision_053_52d5::
 	INCBIN "data/maps/collision/Collision_053_52d5.bin"
 
-EastFishmarket_45_MapAttributes:
+EastFishmarket_45_MapAttributes::
 	map_attr EAST_FISHMARKET_45, \
 	   Layout_053_5329, \
 	   Blocks_053_54aa, \
@@ -195,7 +195,7 @@ Palettes_053_56d6::
 Collision_053_571e::
 	INCBIN "data/maps/collision/Collision_053_571e.bin"
 
-G4_44_MapAttributes:
+G4_44_MapAttributes::
 	map_attr G4_44, \
 	   Layout_053_576f, \
 	   Blocks_053_583c, \
@@ -218,7 +218,7 @@ Palettes_053_5906::
 Collision_053_594e::
 	INCBIN "data/maps/collision/Collision_053_594e.bin"
 
-EastFishmarketUndersea_0d_MapAttributes:
+EastFishmarketUndersea_0d_MapAttributes::
 	map_attr EAST_FISHMARKET_UNDERSEA_0D, \
 	   Layout_053_5987, \
 	   Blocks_053_5aa8, \
@@ -241,7 +241,7 @@ Palettes_053_5cb1::
 Collision_053_5cf9::
 	INCBIN "data/maps/collision/Collision_053_5cf9.bin"
 
-EastFishmarketUndersea_0e_MapAttributes:
+EastFishmarketUndersea_0e_MapAttributes::
 	map_attr EAST_FISHMARKET_UNDERSEA_0E, \
 	   Layout_053_5d3d, \
 	   Blocks_053_5e2a, \
@@ -264,7 +264,7 @@ Palettes_053_6004::
 Collision_053_604c::
 	INCBIN "data/maps/collision/Collision_053_604c.bin"
 
-G4_0F_MapAttributes:
+G4_0F_MapAttributes::
 	map_attr G4_0F, \
 	   Layout_053_6083, \
 	   Blocks_053_61b6, \
@@ -287,7 +287,7 @@ Palettes_053_6297::
 Collision_053_62df::
 	INCBIN "data/maps/collision/Collision_053_62df.bin"
 
-EastFishmarketUndersea_11_MapAttributes:
+EastFishmarketUndersea_11_MapAttributes::
 	map_attr EAST_FISHMARKET_UNDERSEA_11, \
 	   Layout_053_6361, \
 	   Blocks_053_6380, \
@@ -297,7 +297,7 @@ EastFishmarketUndersea_11_MapAttributes:
 	   0, Tileset_53, \
 	   Collision_053_6696
 
-EastFishmarketUndersea_12_MapAttributes:
+EastFishmarketUndersea_12_MapAttributes::
 	map_attr EAST_FISHMARKET_UNDERSEA_12, \
 	   Layout_053_63c8, \
 	   Blocks_053_63e7, \
@@ -307,7 +307,7 @@ EastFishmarketUndersea_12_MapAttributes:
 	   0, Tileset_53, \
 	   Collision_053_6696
 
-EastFishmarketUndersea_13_MapAttributes:
+EastFishmarketUndersea_13_MapAttributes::
 	map_attr EAST_FISHMARKET_UNDERSEA_13, \
 	   Layout_053_642b, \
 	   Blocks_053_656e, \
@@ -340,7 +340,7 @@ Palettes_053_664e::
 Collision_053_6696::
 	INCBIN "data/maps/collision/Collision_053_6696.bin"
 
-G4_10_MapAttributes:
+G4_10_MapAttributes::
 	map_attr G4_10, \
 	   Layout_053_66f4, \
 	   Blocks_053_67bd, \
@@ -363,7 +363,7 @@ Palettes_053_683d::
 Collision_053_6885::
 	INCBIN "data/maps/collision/Collision_053_6885.bin"
 
-GeothermalCity_14_MapAttributes:
+GeothermalCity_14_MapAttributes::
 	map_attr GEOTHERMAL_CITY_14, \
 	   Layout_053_68bd, \
 	   Blocks_053_6a16, \
@@ -386,7 +386,7 @@ Palettes_053_6bf3::
 Collision_053_6c3b::
 	INCBIN "data/maps/collision/Collision_053_6c3b.bin"
 
-EastFishmarket_4e_MapAttributes:
+EastFishmarket_4e_MapAttributes::
 	map_attr EAST_FISHMARKET_4E, \
 	   Layout_053_6c88, \
 	   Blocks_053_6d87, \
@@ -409,7 +409,7 @@ Palettes_053_6e6b::
 Collision_053_6eb3::
 	INCBIN "data/maps/collision/Collision_053_6eb3.bin"
 
-LifeValleyRescue_MapAttributes:
+LifeValleyRescue_MapAttributes::
 	map_attr LIFE_VALLEY_RESCUE, \
 	   Layout_053_6f00, \
 	   Blocks_053_6fe5, \

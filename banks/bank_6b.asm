@@ -1,4 +1,4 @@
-G6_2A_MapAttributes:
+G6_2A_MapAttributes::
 	map_attr G6_2A, \
 	   Layout_06b_6524, \
 	   Blocks_06b_65f3, \

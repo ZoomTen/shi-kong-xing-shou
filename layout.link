@@ -56,7 +56,8 @@ ROMX $0e
 ROMX $0f
 	"bank0f"
 ROMX $10
-	"bank10"
+	"Group 02 Map Defs"
+	"Group 03 Map Defs"
 ROMX $11
 	"bank11"
 ROMX $12
@@ -204,7 +205,7 @@ ROMX $50
 ROMX $51
 	"Tilesets 4"
 ROMX $52
-	"bank52"
+	"Group 04 Map Defs"
 ROMX $53
 	"bank53"
 ROMX $54
@@ -243,7 +244,7 @@ ROMX $62
 	"World Map Cutscene"
 	"Sound Test"
 ROMX $63
-	"bank63"
+	"Group 05 Map Defs"
 ROMX $64
 	"bank64"
 ROMX $65
@@ -255,6 +256,8 @@ ROMX $67
 	"Floating Island"
 	"bank67"
 ROMX $69
+	"Group 06 Map Defs"
+	"Group 07 Map Defs"
 	"bank69"
 ROMX $6a
 	"bank6a"

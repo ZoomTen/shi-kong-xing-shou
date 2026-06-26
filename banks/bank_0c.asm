@@ -1,4 +1,4 @@
-Func_00c_4000:
+Func_00c_4000::
 	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_4013
@@ -23,7 +23,7 @@ Func_00c_4000:
 	ld de, vTiles0
 	call CopyBytesVRAM_Bank0C
 	ret
-Func_00c_402b:
+Func_00c_402b::
 	ld a, [wSelectedOption]
 	cp $03
 	jr nz, .asm_403e

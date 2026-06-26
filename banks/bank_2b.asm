@@ -1,4 +1,4 @@
-Func_02b_4000:
+Func_02b_4000::
 	ld bc, wPartyMons
 
 .loop
@@ -31,7 +31,7 @@ Func_02b_4000:
 	jr .next
 	ret
 
-Func_02b_402b:
+Func_02b_402b::
 	ld a, 1
 	ld [wd0fd], a
 	xor a
@@ -82,11 +82,11 @@ Func_02b_402b:
 	call Func_02b_4243
 	ret
 
-Func_02b_4098:
+Func_02b_4098::
 	call Func_02b_5651
 	call Func_02b_5ef2
 
-Func_02b_409e:
+Func_02b_409e::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -223,7 +223,7 @@ Func_02b_409e:
 	ld [hl], a
 	ret
 
-Func_02b_419d:
+Func_02b_419d::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -309,16 +309,16 @@ Func_02b_419d:
 	call Func_02b_402b
 	ret
 
-GetExpToNextLevel:
+GetExpToNextLevel::
 	call GetMonNextLevel
 	call GetExpTableValue
 	ret
 
-Func_02b_4243:
+Func_02b_4243::
 	call Func_02b_4296
 	ldh a, [hMathValue]
 
-Func_02b_4248:
+Func_02b_4248::
 	ld d, 0
 	srl a
 	rr d
@@ -376,7 +376,7 @@ Func_02b_4248:
 	ld [hl], a
 	ret
 
-Func_02b_4296:
+Func_02b_4296::
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -397,7 +397,7 @@ Func_02b_4296:
 	call Func_02b_42c4
 	ret
 
-Func_02b_42c4:
+Func_02b_42c4::
 	ld a, [wd998]
 	ld [hMathValue], a
 	ld a, [wd999]
@@ -437,12 +437,12 @@ Func_02b_42c4:
 	ld d, 0
 	ret
 
-Func_02b_431e:
+Func_02b_431e::
 	call Func_02b_4374
 	call DelayFrame
 	ldh a, [hMathValue]
 
-Func_02b_4326:
+Func_02b_4326::
 	ld d, 0
 	srl a
 	rr d
@@ -500,7 +500,7 @@ Func_02b_4326:
 	ld [hl], a
 	ret
 
-Func_02b_4374:
+Func_02b_4374::
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -523,7 +523,7 @@ Func_02b_4374:
 	call Func_02b_42c4
 	ret
 
-BattleJumptable:
+BattleJumptable::
 	ld de, .Jumptable
 	ldh a, [hBattleJumptableIndex]
 	ld l, a
@@ -544,7 +544,7 @@ BattleJumptable:
 	dw HandleBattleEnd
 
 
-HandleBattleEnd:
+HandleBattleEnd::
 	ld de, .Jumptable
 	ld a, [wBattleIntroJumptableIndex]
 	ld l, a
@@ -560,7 +560,7 @@ HandleBattleEnd:
 	dw BattleEnd_Jump_1
 	dw BattleEnd_Jump_2
 
-BattleEnd_Jump_1:
+BattleEnd_Jump_1::
 	ld de, Script_023_55f6
 	farcall Func_02e_4000
 	call Func_02b_4b5b
@@ -572,7 +572,7 @@ BattleEnd_Jump_1:
 	and a
 	jr z, Func_02b_4409
 
-Func_02b_43f0:
+Func_02b_43f0::
 	call Func_02b_4bb7
 	and a
 	jr z, Func_02b_4409
@@ -584,7 +584,7 @@ Func_02b_43f0:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_4409:
+Func_02b_4409::
 	ld a, [wd9b2]
 	and a
 	jr nz, Func_02b_4454
@@ -603,7 +603,7 @@ Func_02b_4409:
 	call Wait32Frames
 	ret
 
-Func_02b_4436:
+Func_02b_4436::
 	ld a, 1
 	ldh [hFade], a
 	xor a
@@ -617,7 +617,7 @@ Func_02b_4436:
 	call Wait32Frames
 	ret
 
-Func_02b_4454:
+Func_02b_4454::
 	ld a, [wEventFlags + 3]
 	res 3, a
 	ld [wEventFlags + 3], a
@@ -658,7 +658,7 @@ Func_02b_4454:
 	ld [wSelectedOption], a
 	ld bc, wPartyMons
 
-Func_02b_44c3:
+Func_02b_44c3::
 	ld hl, 1
 	add hl, bc
 	ld a, [hl]
@@ -696,7 +696,7 @@ Func_02b_44c3:
 	pop af
 	ld [wSelectedOption], a
 
-Func_02b_4504:
+Func_02b_4504::
 	call DelayFrame
 	ld hl, $16
 	add hl, bc
@@ -709,7 +709,7 @@ Func_02b_4504:
 	cp $80
 	jr c, Func_02b_44c3
 
-Func_02b_4519:
+Func_02b_4519::
 	ld a, [wdb1c]
 	and a
 	ret z
@@ -722,7 +722,7 @@ Func_02b_4519:
 	ld b, $c
 	ld de, wdcbc
 
-Func_02b_452f:
+Func_02b_452f::
 	ld a, [de]
 	inc de
 	ld [hli], a
@@ -732,7 +732,7 @@ Func_02b_452f:
 	ld [wdb1c], a
 	ret
 
-Func_02b_453a:
+Func_02b_453a::
 	ld a, [wd9cb]
 	cp $27
 	jr z, .check_low
@@ -760,7 +760,7 @@ Func_02b_453a:
 
 ; TODO: dest is wMoney (clamped to 99999, fed from PriceOptions),
 ; but caller plays BGM_EXP_JINGLE. money or exp?
-AddExpToTotal:
+AddExpToTotal::
 	ld hl, wMoney + 2
 	ld a, [wd9cc]
 	add [hl]
@@ -774,7 +774,7 @@ AddExpToTotal:
 	call ClampMoney
 	ret
 
-AddMonExp:
+AddMonExp::
 	ld a, [wActiveMonPtr]
 	ld l, a
 	ld a, [wd982]
@@ -792,7 +792,7 @@ AddMonExp:
 	ld [hli], a
 	ret
 
-ClampMoney:
+ClampMoney::
 	ld hl, wMoney
 	ld a, [hli]
 	cp 1
@@ -822,7 +822,7 @@ ClampMoney:
 	ret z
 	jr .clamp
 
-CheckLevelUp:
+CheckLevelUp::
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -929,7 +929,7 @@ ENDM
 
 ; 4-byte records: 24-bit cumulative EXP + level byte.
 ; Indexed by level; ExpTable_HighLevels is the entry for level >= $3d.
-ExpTable:
+ExpTable::
 	exp_entry 0, 0
 	exp_entry 8, 1
 	exp_entry 27, 2
@@ -992,7 +992,7 @@ ExpTable:
 	exp_entry 216000, 59
 	exp_entry 226981, 60
 
-ExpTable_HighLevels:
+ExpTable_HighLevels::
 	exp_entry 238328, 61
 	exp_entry 250047, 62
 	exp_entry 262144, 63
@@ -1033,7 +1033,7 @@ ExpTable_HighLevels:
 	exp_entry 970299, 98
 	exp_entry 970299, 98
 
-ShowLevelUp:
+ShowLevelUp::
 	call ClearBGMap0
 	call DrawLevelUpStats
 	ld a, BGM_LEVEL_UP_JINGLE
@@ -1048,7 +1048,7 @@ ShowLevelUp:
 	farcall LearnLevelUpMove
 	ret
 
-DrawLevelUpStats:
+DrawLevelUpStats::
 	ld hl, GFX_02b_54c7
 	ld de, $8680
 	ld bc, $80
@@ -1171,12 +1171,12 @@ DrawLevelUpStats:
 	pop bc
 	ret
 
-Tilemap_02b_4910: INCBIN "gfx/image_2b_4910.tilemap"
-AttrMap_02b_49a0: INCBIN "gfx/image_2b_49a0.gbcattr"
+Tilemap_02b_4910:: INCBIN "gfx/image_2b_4910.tilemap"
+AttrMap_02b_49a0:: INCBIN "gfx/image_2b_49a0.gbcattr"
 
 INCLUDE "data/text/stat_names.asm"
 
-GetMonNextLevel:
+GetMonNextLevel::
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -1188,7 +1188,7 @@ GetMonNextLevel:
 	ld [wd9e8], a
 	ret
 
-GetExpTableValue:
+GetExpTableValue::
 	ld a, [wd9e8]
 	and a
 	jr z, .next_level
@@ -1235,7 +1235,7 @@ GetExpTableValue:
 .done
 	ret
 
-Func_02b_4a8e:
+Func_02b_4a8e::
 	xor a
 	ldh [hMathValue + 2], a
 	ldh [hMathValue + 1], a
@@ -1245,7 +1245,7 @@ Func_02b_4a8e:
 	jp Func_02b_4b41
 
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_02b_4a9b:
+unk_02b_4a9b::
 	db $11
 	db $0
 	db $0
@@ -1413,7 +1413,7 @@ unk_02b_4a9b:
 	db $5
 	db $4
 
-Func_02b_4b41:
+Func_02b_4b41::
 	push hl
 	push bc
 	push de
@@ -1423,7 +1423,7 @@ Func_02b_4b41:
 	pop hl
 	ret
 
-Func_02b_4b4e:
+Func_02b_4b4e::
 	push hl
 	push de
 	push bc
@@ -1433,7 +1433,7 @@ Func_02b_4b4e:
 	pop hl
 	ret
 
-Func_02b_4b5b:
+Func_02b_4b5b::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -1457,7 +1457,7 @@ Func_02b_4b5b:
 	ld [wd9b2], a
 	ret
 
-Func_02b_4b7a:
+Func_02b_4b7a::
 	ld a, [wd9b2]
 	and a
 	ret z
@@ -1497,7 +1497,7 @@ Func_02b_4b7a:
 	ld [wd9cd], a
 	ret
 
-Func_02b_4bb7:
+Func_02b_4bb7::
 	ld a, [wd9b2]
 	and a
 	jp nz, .next_enemy
@@ -1628,7 +1628,7 @@ Func_02b_4bb7:
 	call Func_02b_6a41
 	ret
 
-BattleEnd_Jump_2:
+BattleEnd_Jump_2::
 	call Func_02b_4519
 	call DelayFrame
 	ld a, $80
@@ -1708,7 +1708,7 @@ BattleEnd_Jump_2:
 	call RunMapLoadHook
 	ret
 
-Func_02b_4d55:
+Func_02b_4d55::
 	ld bc, wcd20
 
 .loop
@@ -1739,7 +1739,7 @@ Func_02b_4d55:
 	jr c, .loop
 	ret
 
-Func_02b_4d81:
+Func_02b_4d81::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
@@ -1750,7 +1750,7 @@ Func_02b_4d81:
 	jr nz, .loop
 	ret
 
-HandleBattleTurns:
+HandleBattleTurns::
 	ld de, .Jumptable
 	ld a, [wBattleIntroJumptableIndex]
 	ld l, a
@@ -1774,7 +1774,7 @@ HandleBattleTurns:
 	dw BattleTurns_Jump_9
 	dw BattleTurns_Jump_10
 
-BattleTurns_Jump_10:
+BattleTurns_Jump_10::
 	call DelayFrame
 	call BattleMenu_Jump_4
 	call DelayFrame
@@ -1786,7 +1786,7 @@ BattleTurns_Jump_10:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleTurns_Jump_9:
+BattleTurns_Jump_9::
 	call DelayFrame
 	call BattleMenu_Jump_4
 	call DelayFrame
@@ -1830,7 +1830,7 @@ BattleTurns_Jump_9:
 	ld [wd98b], a
 	ret
 
-BattleTurns_Jump_1:
+BattleTurns_Jump_1::
 	call Func_02b_7525
 	ld hl, $9980
 	ld bc, $0906
@@ -1894,7 +1894,7 @@ BattleTurns_Jump_1:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleTurns_Jump_2:
+BattleTurns_Jump_2::
 	ld a, 2
 	ld [wBattleIntroJumptableIndex], a
 	ld a, 1
@@ -1953,7 +1953,7 @@ BattleTurns_Jump_2:
 	call Func_02b_4f38
 	ret
 
-Func_02b_4f38:
+Func_02b_4f38::
 	ld a, [wd9ea]
 	and a
 	ret nz
@@ -1997,7 +1997,7 @@ Func_02b_4f38:
 	call SetStatTile
 	ret
 
-Func_02b_4f7b:
+Func_02b_4f7b::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -2033,7 +2033,7 @@ Func_02b_4f7b:
 	jp nz, Func_02b_517d
 	ret
 
-Func_02b_4fb7:
+Func_02b_4fb7::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -2063,7 +2063,7 @@ Func_02b_4fb7:
 	jp nz, Func_02b_50a9
 	ret
 
-Func_02b_4fe4:
+Func_02b_4fe4::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -2103,7 +2103,7 @@ Func_02b_4fe4:
 	jp nz, Func_02b_517d
 	ret
 
-Func_02b_502a:
+Func_02b_502a::
 	xor a
 	ld [wd9b5], a
 	xor a
@@ -2113,11 +2113,11 @@ Func_02b_502a:
 	ld [wd3ff], a
 	jr Func_02b_5044
 
-Func_02b_503f:
+Func_02b_503f::
 	ld a, $18
 	ld [wd3ff], a
 
-Func_02b_5044:
+Func_02b_5044::
 	farcall Func_02d_4000
 	call Wait32Frames
 	call Wait32Frames
@@ -2134,14 +2134,14 @@ Func_02b_5044:
 	jr nz, Func_02b_5069
 	ld a, 1
 
-Func_02b_5069:
+Func_02b_5069::
 	ld [wd9b0], a
 	xor a
 	ld [wd9b1], a
 	call Func_02b_409e
 	ret
 
-Func_02b_5074:
+Func_02b_5074::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -2170,7 +2170,7 @@ Func_02b_5074:
 	call SetStatTile
 	ret
 
-Func_02b_50a9:
+Func_02b_50a9::
 	xor a
 	ld [wd9b2], a
 	ld [wd9b5], a
@@ -2220,7 +2220,7 @@ Func_02b_50a9:
 	call Wait32Frames
 	ret
 
-Func_02b_5113:
+Func_02b_5113::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -2250,7 +2250,7 @@ Func_02b_5113:
 	call SetStatTile
 	ret
 
-Func_02b_514b:
+Func_02b_514b::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -2281,7 +2281,7 @@ Func_02b_514b:
 	ld [hl], 0
 	ret
 
-Func_02b_517d:
+Func_02b_517d::
 	ld a, [wd986]
 	and a
 	jr z, .enemy
@@ -2311,7 +2311,7 @@ Func_02b_517d:
 	ld [wd9b5], a
 	ret
 
-BattleTurns_Jump_3:
+BattleTurns_Jump_3::
 	call BattleAI_ChooseAction
 	ld de, wd9f5
 	ld a, [wd986]
@@ -2386,7 +2386,7 @@ BattleTurns_Jump_3:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleTurns_Jump_8:
+BattleTurns_Jump_8::
 	farcall Func_02d_4000
 	call DelayFrame
 	ld a, [wBattleScriptPos]
@@ -2398,7 +2398,7 @@ BattleTurns_Jump_8:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleTurns_Jump_4:
+BattleTurns_Jump_4::
 	xor a
 	ld [wBattleState], a
 	farcall Func_02e_400a
@@ -2409,7 +2409,7 @@ BattleTurns_Jump_4:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleAI_ChooseAction:
+BattleAI_ChooseAction::
 	ld a, [wd986]
 	and a
 	ret nz
@@ -2424,7 +2424,7 @@ BattleAI_ChooseAction:
 	and a
 	ret nz
 
-BattleAI_Dispatch:
+BattleAI_Dispatch::
 	ld de, BattleAI_ActionIndex
 	ld a, [wd984]
 	ld l, a
@@ -2457,7 +2457,7 @@ BattleAI_Dispatch:
 	dw BattleAI_Action9
 	dw BattleAI_Action10
 
-BattleAI_Action0:
+BattleAI_Action0::
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $cc
@@ -2469,7 +2469,7 @@ BattleAI_Action0:
 	ld [wd9f5], a
 	ret
 
-BattleAI_Action2:
+BattleAI_Action2::
 	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
@@ -2497,7 +2497,7 @@ BattleAI_Action2:
 	ld a, 3
 	jr Func_02b_532f
 
-Func_02b_530e:
+Func_02b_530e::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
@@ -2505,18 +2505,18 @@ Func_02b_530e:
 	jp z, Func_02b_530e
 	jr Func_02b_532f
 
-Func_02b_531d:
+Func_02b_531d::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
 	jr Func_02b_532f
 
-BattleAI_Action3:
+BattleAI_Action3::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 3
 
-Func_02b_532f:
+Func_02b_532f::
 	ld e, a
 	add a
 	add e
@@ -2551,7 +2551,7 @@ Func_02b_532f:
 	ld [wd9e2], a
 	ret
 
-BattleAI_Action4:
+BattleAI_Action4::
 	call AdvanceRNG
 	ld a, [wd991]
 	and 1
@@ -2559,7 +2559,7 @@ BattleAI_Action4:
 	ld a, 3
 	jp Func_02b_532f
 
-BattleAI_Action5:
+BattleAI_Action5::
 	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
@@ -2569,7 +2569,7 @@ BattleAI_Action5:
 	ldh [hMathOperand], a
 	farcall Multiply32By8
 
-Func_02b_5389:
+Func_02b_5389::
 	ld a, $a
 	ldh [hMathOperand], a
 	farcall Divide32By16_4Digit
@@ -2593,7 +2593,7 @@ Func_02b_5389:
 	ld a, 3
 	jp Func_02b_532f
 
-BattleAI_Action6:
+BattleAI_Action6::
 	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
@@ -2604,7 +2604,7 @@ BattleAI_Action6:
 	farcall Multiply32By8
 	jp Func_02b_5389
 
-BattleAI_Action7:
+BattleAI_Action7::
 	call AdvanceRNG
 	cp $cc
 	jp nc, Func_02b_531d
@@ -2614,14 +2614,14 @@ BattleAI_Action7:
 	add 2
 	jp Func_02b_532f
 
-BattleAI_Action8:
+BattleAI_Action8::
 	call AdvanceRNG
 	cp $80
 	jp nc, Func_02b_530e
 	ld a, 3
 	jp Func_02b_532f
 
-BattleAI_Action9:
+BattleAI_Action9::
 	call ComputeEnemyMonStat
 	ld a, [wd99a]
 	ldh [hMathValue], a
@@ -2632,7 +2632,7 @@ BattleAI_Action9:
 	farcall Multiply32By8
 	jp Func_02b_5389
 
-BattleAI_Action10:
+BattleAI_Action10::
 	ld a, [wd9f7]
 	and a
 	jr nz, .has_flag
@@ -2648,7 +2648,7 @@ BattleAI_Action10:
 	ret
 
 ; TODO: confirm. Monster state byte -> BattleAI_Dispatch jumptable index.
-BattleAI_ActionIndex:
+BattleAI_ActionIndex::
 	db $0
 	db $3
 	db $3
@@ -2811,22 +2811,22 @@ BattleAI_ActionIndex:
 	db $3
 	db $3
 
-GFX_02b_54c7:
+GFX_02b_54c7::
 	INCBIN "gfx/battle/image_2b_54c7.2bpp"
 
-BattleTurns_Jump_5:
+BattleTurns_Jump_5::
 	ld hl, GFX_02b_54c7
 	ld de, $8680
 	ld bc, $80
 	call CopyBytesVRAM
 	farcall Func_030_4000
 
-BattleTurns_Jump_7:
+BattleTurns_Jump_7::
 	ld a, [wd98b]
 	and a
 	jr nz, EndBattleTurn
 
-Func_02b_555f:
+Func_02b_555f::
 	farcall Func_02d_4000
 	call Wait32Frames
 	call Func_02b_5e0f
@@ -2838,7 +2838,7 @@ Func_02b_555f:
 	cp 5
 	ret z
 
-Func_02b_5578:
+Func_02b_5578::
 	ld a, [wd98a]
 	cp 2
 	jr z, ReturnToBattleMenu
@@ -2863,7 +2863,7 @@ Func_02b_5578:
 	call Func_02b_4f38
 	ret
 
-ReturnToBattleMenu:
+ReturnToBattleMenu::
 	call Func_02b_4fb7
 	ld a, [hBattleJumptableIndex]
 	cp 5
@@ -2877,12 +2877,12 @@ ReturnToBattleMenu:
 	ld [hBattleJumptableIndex], a
 	ret
 
-EndBattleTurn:
+EndBattleTurn::
 	ld a, 5
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Wait32Frames:
+Wait32Frames::
 	ld c, 32
 .delay
 	call DelayFrame
@@ -2890,7 +2890,7 @@ Wait32Frames:
 	jr nz, .delay
 	ret
 
-BattleTurns_Jump_6:
+BattleTurns_Jump_6::
 	ld a, [wd98b]
 	cp 1
 	jp z, Func_02b_5628
@@ -2907,7 +2907,7 @@ BattleTurns_Jump_6:
 	jp ReturnToBattleMenu
 
 
-Func_02b_55f7:
+Func_02b_55f7::
 	ld a, 2
 	ld [wd9f6], a
 	ld a, [wd993]
@@ -2923,7 +2923,7 @@ Func_02b_55f7:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02b_5611:
+Func_02b_5611::
 	farcall Func_02d_4000
 	call Wait32Frames
 	xor a
@@ -2934,7 +2934,7 @@ Func_02b_5611:
 	ldh [hBattleJumptableIndex], a
 	ret
 
-Func_02b_5628:
+Func_02b_5628::
 	xor a
 	ld [wBattleState], a
 	ld [wd98b], a
@@ -2950,7 +2950,7 @@ Func_02b_5628:
 	jp ReturnToBattleMenu
 
 
-Func_02b_5651:
+Func_02b_5651::
 	ld a, [wd9c7]
 	and a
 	jr nz, Func_02b_565f
@@ -2959,7 +2959,7 @@ Func_02b_5651:
 	ld [wd9b1], a
 	ret
 
-Func_02b_565f:
+Func_02b_565f::
 	call Func_02b_591e
 	ld hl, wd9c5
 	ld a, [wd9c3]
@@ -3040,7 +3040,7 @@ Func_02b_565f:
 	call Func_02b_5712
 	ret
 
-Func_02b_5712:
+Func_02b_5712::
 	ld a, [wBattleAnimID]
 	cp 4
 	ret z
@@ -3088,7 +3088,7 @@ Func_02b_5712:
 	ld [wd3ff], a
 	ret
 
-Func_02b_577c:
+Func_02b_577c::
 	ld a, [wd3ff]
 	and a
 	ret nz
@@ -3136,7 +3136,7 @@ Func_02b_577c:
 	ld [wd3ff], a
 	ret
 
-Func_02b_57bf:
+Func_02b_57bf::
 	ld a, [wd9c2]
 	ld c, a
 	ld a, [wd9c3]
@@ -3181,7 +3181,7 @@ Func_02b_57bf:
 	ret
 
 ; TODO: confirm. Indexed by stat delta (< $14); descending values.
-StatDeltaToValue:
+StatDeltaToValue::
 	db $5a
 	db $55
 	db $50
@@ -3205,7 +3205,7 @@ StatDeltaToValue:
 	db $0
 
 ; TODO: confirm. 1-based index -> grade tier (groups of 5, $2..$15).
-StatValueToGrade:
+StatValueToGrade::
 	db $2
 	db $2
 	db $2
@@ -3307,7 +3307,7 @@ StatValueToGrade:
 	db $15
 	db $15
 
-Func_02b_5884:
+Func_02b_5884::
 	call Func_02b_5912
 	ldh [hMathOperand], a
 	ld a, [wd9c2]
@@ -3349,7 +3349,7 @@ Func_02b_5884:
 	farcall Divide32By16_4Digit
 	ret
 
-Func_02b_58df:
+Func_02b_58df::
 	ld a, 1
 	ld [wd9b2], a
 	ld [wd9af], a
@@ -3386,7 +3386,7 @@ Func_02b_58df:
 	
 	ret
 
-Func_02b_5912:
+Func_02b_5912::
 	ld de, BattleAnimTable_02b_7594
 	ld a, [wBattleAnimID]
 	ld l, a
@@ -3395,7 +3395,7 @@ Func_02b_5912:
 	ld a, [hl]
 	ret
 
-Func_02b_591e:
+Func_02b_591e::
 	xor a
 	ld [wd9b2], a
 	ld a, 1
@@ -3440,7 +3440,7 @@ Func_02b_591e:
 	ld [wd9c5], a
 	ret
 
-Func_02b_5998:
+Func_02b_5998::
 	ld a, [wd986]
 	and a
 	jr z, .player
@@ -3489,7 +3489,7 @@ Func_02b_5998:
 	ldh [hMathOperand], a
 	ret
 
-Func_02b_59df:
+Func_02b_59df::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -3542,7 +3542,7 @@ Func_02b_59df:
 	ret
 
 ; TODO: confirm. 7-entry index remap.
-StatTypeRemap:
+StatTypeRemap::
 	db $3
 	db $2
 	db $5
@@ -3551,12 +3551,12 @@ StatTypeRemap:
 	db $6
 	db $0
 
-Func_02b_5a30:
+Func_02b_5a30::
 	xor a
 	ld [wd98b], a
 	call Func_02b_5651
 
-Func_02b_5a37:
+Func_02b_5a37::
 	call Func_02b_5ef2
 	xor a
 	ld [wd98b], a
@@ -3567,7 +3567,7 @@ Func_02b_5a37:
 	and a
 	jp nz, Func_02b_5af4
 
-Func_02b_5a4c:
+Func_02b_5a4c::
 	call Func_02b_4296
 	ldh a, [hMathValue]
 	and a
@@ -3594,7 +3594,7 @@ Func_02b_5a4c:
 	and a
 	jp z, Func_02b_5b4b
 
-Func_02b_5a80:
+Func_02b_5a80::
 	ld a, [wd98c]
 	call Func_02b_4248
 	call DelayFrame
@@ -3611,20 +3611,20 @@ Func_02b_5a80:
 	call Func_02b_402b
 	jp Func_02b_5b4b
 
-asm_02b_5aa5:
+asm_02b_5aa5::
 	ld a, [wd984]
 	ld l, a
 	ld a, [wd985]
 	ld h, a
 	jr Func_02b_5ab7
 
-asm_02b_5aaf:
+asm_02b_5aaf::
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
 	ld h, a
 
-Func_02b_5ab7:
+Func_02b_5ab7::
 	push hl
 	pop bc
 	ld hl, 2
@@ -3651,19 +3651,19 @@ Func_02b_5ab7:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-asm_02b_5ae1:
+asm_02b_5ae1::
 	ld [wd9e9], a
 	ld [hl], 0
 	call Func_02b_5bc9
 	ret
 	jp Func_02b_555f
 
-Func_02b_5aed:
+Func_02b_5aed::
 	ld a, [wd9b5]
 	and a
 	jp nz, Func_02b_5a4c
 
-Func_02b_5af4:
+Func_02b_5af4::
 	call Func_02b_4374
 	ldh a, [hMathValue]
 	and a
@@ -3690,7 +3690,7 @@ Func_02b_5af4:
 	and a
 	jp z, Func_02b_5b4b
 
-Func_02b_5b28:
+Func_02b_5b28::
 	ld a, [wd98c]
 	call Func_02b_4326
 	call DelayFrame
@@ -3706,11 +3706,11 @@ Func_02b_5b28:
 	jr nz, Func_02b_5b28
 	call Func_02b_402b
 
-Func_02b_5b4b:
+Func_02b_5b4b::
 	call Func_02b_555f
 	ret
 
-Func_02b_5b4f:
+Func_02b_5b4f::
 	ld a, [wd9b0]
 	ld c, a
 	ld a, [wd9b1]
@@ -3734,7 +3734,7 @@ Func_02b_5b4f:
 	ld de, 0
 	ret
 
-Func_02b_5b77:
+Func_02b_5b77::
 	ld a, [wd998]
 	sub c
 	ld e, a
@@ -3743,7 +3743,7 @@ Func_02b_5b77:
 	ld d, a
 	ret
 
-Func_02b_5b82:
+Func_02b_5b82::
 	ld a, [wd9c7]
 	and a
 	jr z, .none
@@ -3792,7 +3792,7 @@ Func_02b_5b82:
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bc9:
+Func_02b_5bc9::
 	ld a, $2e
 	ld [wd3ff], a
 	farcall Func_02d_4000
@@ -3812,7 +3812,7 @@ Func_02b_5bc9:
 	ld [wd3ff], a
 	ret
 
-Func_02b_5bfb:
+Func_02b_5bfb::
 	xor a
 	ld [wd98b], a
 	ld a, [wd986]
@@ -3900,7 +3900,7 @@ Func_02b_5bfb:
 	call Func_02b_402b
 	jp Func_02b_5b4b
 
-Func_02b_5ca2:
+Func_02b_5ca2::
 	ld a, [wd9b0]
 	ld c, a
 	ld a, [wd9b1]
@@ -3929,10 +3929,10 @@ Func_02b_5ca2:
 	ld a, [wd99b]
 	ld d, a
 
-Func_02b_5ccd:
+Func_02b_5ccd::
 	ret
 
-Func_02b_5cce:
+Func_02b_5cce::
 	ld a, [wd986]
 	and a
 	jr z, .player
@@ -3980,7 +3980,7 @@ Func_02b_5cce:
 	jr z, Func_02b_5d98
 	ret
 
-Func_02b_5d28:
+Func_02b_5d28::
 	push af
 	push hl
 	ld [wd9e9], a
@@ -4016,7 +4016,7 @@ Func_02b_5d28:
 	pop af
 	ret
 
-Func_02b_5d7e:
+Func_02b_5d7e::
 	ld a, [wd986]
 	and a
 	jr nz, .enemy
@@ -4037,7 +4037,7 @@ Func_02b_5d7e:
 	call ComputeEnemyMonStat
 	ret
 
-Func_02b_5d98:
+Func_02b_5d98::
 	push af
 	push hl
 	ld [wd9e9], a
@@ -4074,7 +4074,7 @@ Func_02b_5d98:
 	ld [wd9b1], a
 	call Func_02b_5eb7
 
-Func_02b_5ddd:
+Func_02b_5ddd::
 	ld a, $2e
 	ld [wd3ff], a
 	farcall Func_02d_4000
@@ -4094,12 +4094,12 @@ Func_02b_5ddd:
 	call Wait32Frames
 	ret
 
-Func_02b_5e0c:
+Func_02b_5e0c::
 	pop hl
 	pop af
 	ret
 
-Func_02b_5e0f:
+Func_02b_5e0f::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4115,7 +4115,7 @@ Func_02b_5e0f:
 	jp z, Func_02b_6159
 	ret
 
-Func_02b_5e31:
+Func_02b_5e31::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4127,7 +4127,7 @@ Func_02b_5e31:
 	ret nz
 	jp Func_02b_5e73
 
-Func_02b_5e48:
+Func_02b_5e48::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4139,7 +4139,7 @@ Func_02b_5e48:
 	ret nz
 	jp Func_02b_5e73
 
-Func_02b_5e5f:
+Func_02b_5e5f::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4150,7 +4150,7 @@ Func_02b_5e5f:
 	cp 1
 	ret nz
 
-Func_02b_5e73:
+Func_02b_5e73::
 	ld a, [wd9b1]
 	and a
 	jr nz, Func_02b_5ea6
@@ -4159,7 +4159,7 @@ Func_02b_5e73:
 	jr z, Func_02b_5e82
 	jr nc, Func_02b_5ea6
 
-Func_02b_5e82:
+Func_02b_5e82::
 	call Func_02b_5eb7
 	ld a, 1
 	ld [wd9b5], a
@@ -4174,7 +4174,7 @@ Func_02b_5e82:
 	call Wait32Frames
 	ret
 
-Func_02b_5ea6:
+Func_02b_5ea6::
 	ld a, [wd9b0]
 	sub $64
 	ld [wd9b0], a
@@ -4183,7 +4183,7 @@ Func_02b_5ea6:
 	ld [wd9b1], a
 	ret
 
-Func_02b_5eb7:
+Func_02b_5eb7::
 	ld a, [wd9b1]
 	and a
 	jr nz, .swap
@@ -4218,7 +4218,7 @@ Func_02b_5eb7:
 	ld [wd9b1], a
 	ret
 
-Func_02b_5ef2:
+Func_02b_5ef2::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4244,7 +4244,7 @@ Func_02b_5ef2:
 	jp z, Func_02b_5e31
 	ret
 
-Func_02b_5f2d:
+Func_02b_5f2d::
 	ld a, 1
 	ld [wd9b2], a
 	xor a
@@ -4257,7 +4257,7 @@ Func_02b_5f2d:
 	call AddStatTile
 	ret
 
-Func_02b_5f46:
+Func_02b_5f46::
 	ld a, [wd9b0]
 	ld c, a
 	ld a, [wd9b1]
@@ -4283,7 +4283,7 @@ Func_02b_5f46:
 	call SetStatTile
 	ret
 
-Func_02b_5f79:
+Func_02b_5f79::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4323,7 +4323,7 @@ Func_02b_5f79:
 	ld [wd9b1], a
 	ret
 
-Func_02b_5fc1:
+Func_02b_5fc1::
 	ld a, $5b
 	ld [wd3ff], a
 	farcall Func_02d_4000
@@ -4345,7 +4345,7 @@ Func_02b_5fc1:
 	call Func_02b_419d
 	ret
 
-Func_02b_5ff2:
+Func_02b_5ff2::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 5
@@ -4382,7 +4382,7 @@ Func_02b_5ff2:
 	ld [wd9c8], a
 	ret
 
-Func_02b_6040:
+Func_02b_6040::
 	ld a, $77
 	ld [wBattleAnimID], a
 	xor a
@@ -4398,7 +4398,7 @@ Func_02b_6040:
 	xor a
 	call SetStatTile
 
-Func_02b_6066:
+Func_02b_6066::
 	xor a
 	ld [wd9b0], a
 	ld [wd9b1], a
@@ -4415,7 +4415,7 @@ Func_02b_6066:
 	ld [wd98e], a
 	ret
 
-Func_02b_608b:
+Func_02b_608b::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 5
@@ -4455,7 +4455,7 @@ Func_02b_608b:
 	xor a
 	ld [wd9c8], a
 
-Func_02b_60e4:
+Func_02b_60e4::
 	ld a, [wd8ff]
 	cp 3
 	jp z, Func_02b_6066
@@ -4465,7 +4465,7 @@ Func_02b_60e4:
 	jp z, Func_02b_6066
 	ret
 
-Func_02b_60f7:
+Func_02b_60f7::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 5
@@ -4495,7 +4495,7 @@ Func_02b_60f7:
 	ld [wd9e2], a
 	ret
 
-Func_02b_612c:
+Func_02b_612c::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 4
@@ -4515,7 +4515,7 @@ Func_02b_612c:
 	call Wait32Frames
 	ret
 
-Func_02b_6159:
+Func_02b_6159::
 	ld a, 1
 	ld [wd9b2], a
 	ld a, 5
@@ -4535,7 +4535,7 @@ Func_02b_6159:
 	call SetStatTile
 	ret
 
-HandleBattleMoves:
+HandleBattleMoves::
 	ld de, .Jumptable
 	ld a, [wBattleIntroJumptableIndex]
 	ld l, a
@@ -4551,7 +4551,7 @@ HandleBattleMoves:
 	dw BattleMoves_Init
 	dw BattleMoves_Loop
 
-BattleMoves_Init:
+BattleMoves_Init::
 	ld a, $d
 	ldh [hVRAMCopyWidth], a
 	ld a, 6
@@ -4665,7 +4665,7 @@ BattleMoves_Init:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleMoves_LoadList:
+BattleMoves_LoadList::
 	xor a
 	ld [wd0c0], a
 	ld a, $fd
@@ -4707,7 +4707,7 @@ BattleMoves_LoadList:
 .done:
 	ret
 
-BattleMoves_Loop:
+BattleMoves_Loop::
 	call Func_02b_7536
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -4725,7 +4725,7 @@ BattleMoves_Loop:
 	ldh [hFFC6], a
 	ret
 
-BattleMoves_HandleInput:
+BattleMoves_HandleInput::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .not_down
@@ -4875,7 +4875,7 @@ BattleMoves_HandleInput:
 	ld [hFFC6], a
 	ret
 
-BattleMoves_GetCursorState:
+BattleMoves_GetCursorState::
 	ld de, wd978
 	ld a, [wSelectedOption]
 	ld l, a
@@ -4884,7 +4884,7 @@ BattleMoves_GetCursorState:
 	ld a, [hli]
 	ret
 
-BattleMoves_GetMoveID:
+BattleMoves_GetMoveID::
 	ld bc, 7
 	ld a, [wd981]
 	ld l, a
@@ -4905,7 +4905,7 @@ BattleMoves_GetMoveID:
 	ld a, [hl]
 	ret
 
-HandleBattleMenu:
+HandleBattleMenu::
 	ld de, .Jumptable
 	ld a, [wBattleIntroJumptableIndex]
 	ld l, a
@@ -4924,7 +4924,7 @@ HandleBattleMenu:
 	dw BattleMenu_Jump_4
 	dw BattleMenu_Jump_5
 
-BattleMenu_Jump_1:
+BattleMenu_Jump_1::
 	xor a
 	ld [wd9f6], a
 	ld [wd9f5], a
@@ -4984,7 +4984,7 @@ BattleMenu_Jump_1:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleMenu_Jump_2:
+BattleMenu_Jump_2::
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -5088,7 +5088,7 @@ BattleMenu_Jump_2:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleMenu_PrintHelpBar:
+BattleMenu_PrintHelpBar::
 	call DelayFrame
 	ld hl, .Text
 	ld a, $ab
@@ -5106,7 +5106,7 @@ BattleMenu_PrintHelpBar:
 	db $f1, $2c, $2d, $2e, $2f, $30, $31
 	db $ed
 
-BattleMenu_Jump_3:
+BattleMenu_Jump_3::
 	call Func_02b_7536
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
@@ -5124,7 +5124,7 @@ BattleMenu_Jump_3:
 	ldh [hFFC6], a
 	ret
 
-BattleMenu_HandleInput:
+BattleMenu_HandleInput::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .not_right
@@ -5336,7 +5336,7 @@ BattleMenu_HandleInput:
 	dw $7678
 	dw $7688
 
-BattleMenu_AnimCursor:
+BattleMenu_AnimCursor::
 	ldh a, [hFadeFrameCounter]
 	and 7
 	ret nz
@@ -5362,7 +5362,7 @@ BattleMenu_AnimCursor:
 	ld [hl], a
 	ret
 
-BattleMenu_Jump_4:
+BattleMenu_Jump_4::
 	ld hl, Palette_White
 	call CopyBackgroundPalettes
 	ld hl, Palette_White
@@ -5416,13 +5416,13 @@ BattleMenu_Jump_4:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleMenu_Jump_5:
+BattleMenu_Jump_5::
 	ld a, 3
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
 
-HandleBattleIntro:
+HandleBattleIntro::
 	ld de, .Jumptable
 	ld a, [wBattleIntroJumptableIndex]
 	ld l, a
@@ -5442,7 +5442,7 @@ HandleBattleIntro:
 	dw BattleIntro_Jump_5
 	dw BattleIntro_Jump_6
 
-BattleIntro_Jump_1:
+BattleIntro_Jump_1::
 	farcall Func_00b_4dc5
 	call DelayFrame
 	farcall Func_00b_4dc5
@@ -5544,7 +5544,7 @@ BattleIntro_Jump_1:
 	call DelayFrame
 	ret
 
-BattleIntro_Jump_2:
+BattleIntro_Jump_2::
 	call DelayFrame
 	call PlayBattleMusic
 	ld a, [wd981]
@@ -5610,7 +5610,7 @@ BattleIntro_Jump_2:
 	call Func_02b_6a41
 	ret
 
-PlayBattleMusic:
+PlayBattleMusic::
 	ld de, BattleMusic
 	ld a, [wBattleMusic]
 	ld l, a
@@ -5620,17 +5620,17 @@ PlayBattleMusic:
 	call PlaySound
 	ret
 
-PlayMusic_74:
+PlayMusic_74::
 	ld a, BGM_74
 	call PlaySound
 	ret
 
-PlayMeteorMusic:
+PlayMeteorMusic::
 	ld a, BGM_METEOR
 	call PlaySound
 	ret
 
-BattleMusic:
+BattleMusic::
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
@@ -5638,21 +5638,21 @@ BattleMusic:
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
 	db BGM_BATTLE1, BGM_BATTLE2, BGM_BATTLE3, BGM_BATTLE4, BGM_BATTLE1
 
-Func_02b_6a33:
+Func_02b_6a33::
 	ld hl, wd93c
 	ld c, 6
 	jr asm_02b_6a46
 
-Func_02b_6a3a:
+Func_02b_6a3a::
 	ld hl, wd900
 	ld c, 6
 	jr asm_02b_6a46
 
-Func_02b_6a41:
+Func_02b_6a41::
 	ld hl, wd900
 	ld c, $c
 
-asm_02b_6a46:
+asm_02b_6a46::
 	ld a, $a
 	ld [hli], a
 	ld [hli], a
@@ -5670,7 +5670,7 @@ asm_02b_6a46:
 	jr nz, asm_02b_6a46
 	ret
 
-BattleIntro_Jump_3:
+BattleIntro_Jump_3::
 	di
 	ld a, $30
 	ldh [rLYC], a
@@ -5696,7 +5696,7 @@ BattleIntro_Jump_3:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleIntro_Jump_4:
+BattleIntro_Jump_4::
 	ldh a, [hSCX]
 	sub 2
 	ldh [hSCX], a
@@ -5721,7 +5721,7 @@ BattleIntro_Jump_4:
 	call Func_02b_6ae6
 	ret
 
-Func_02b_6abc:
+Func_02b_6abc::
 	ld de, Battle_HUD_BGMap
 	ld hl, $9980
 	ld bc, $1406
@@ -5732,7 +5732,7 @@ Func_02b_6abc:
 	call PlaceTilemap
 	ret
 
-Func_02b_6ad1:
+Func_02b_6ad1::
 	ld hl, wMenuTextBuffer
 	ld a, $55
 	ld [wMenuTextX], a
@@ -5743,7 +5743,7 @@ Func_02b_6ad1:
 	call PrintMenuText
 	ret
 
-Func_02b_6ae6:
+Func_02b_6ae6::
 	xor a
 	ld [wd0c1], a
 	ld de, $9942
@@ -5825,7 +5825,7 @@ Func_02b_6ae6:
 	jr c, .enemy_loop
 	ret
 
-BattleIntro_Jump_5:
+BattleIntro_Jump_5::
 	ld a, 1
 	ld [wd986], a
 	ld a, 1
@@ -5867,7 +5867,7 @@ BattleIntro_Jump_5:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-BattleIntro_Jump_6:
+BattleIntro_Jump_6::
 	ld a, [wWX]
 	sub 4
 	ld [wWX], a
@@ -5898,7 +5898,7 @@ BattleIntro_Jump_6:
 	ld [wd9e1], a
 	ret
 
-Battle_TextBoxBorder_GFX:
+Battle_TextBoxBorder_GFX::
 	INCBIN "gfx/battle_intro/textbox_border.2bpp"
 
 Battle_UI_GFX::
@@ -5975,7 +5975,7 @@ MACRO oam_build_entry
 ENDM
 
 
-Func_02b_7506:
+Func_02b_7506::
 	ld hl, wcde0
 	ld [hl], 0
 	inc hl
@@ -5997,7 +5997,7 @@ Func_02b_7506:
 	ret
 
 
-Func_02b_7525:
+Func_02b_7525::
 	ld hl, wVirtualOAM
 	ld bc, $28
 	ld de, 4
@@ -6010,7 +6010,7 @@ Func_02b_7525:
 	ret
 
 
-Func_02b_7536:
+Func_02b_7536::
 	ld hl, wVirtualOAM
 	ld bc, $28
 	ld de, 4
@@ -6028,7 +6028,7 @@ Func_02b_7536:
 
 ; Builds OAM entries from the list selected by wcde2.
 ; wcde0/wcde1 = base y/x offset, wVirtualOAMPtr = write cursor into wVirtualOAM.
-BuildOAMList:
+BuildOAMList::
 	ld hl, OAMList_Pointers
 	ld de, wcde0
 	ld a, [de]
@@ -6078,18 +6078,18 @@ BuildOAMList:
 	ret
 
 
-OAMList_Pointers:
+OAMList_Pointers::
 	dw OAMList_758e
 	dw OAMList_758e
 	dw OAMList_758e
 
-OAMList_758e:
+OAMList_758e::
 	; y, x, tile, attr
 	oam_build_entry $00, $00, $70, $01
 	db -1
 
 
-BattleAnimTable_02b_7594:
+BattleAnimTable_02b_7594::
 	db $00, $0f, $23, $23, $14, $00, $00, $00, $00, $0f, $37, $00, $00, $00, $00, $28
 	db $0f, $00, $00, $00, $5a, $14, $2a, $00, $00, $1e, $0f, $00, $14, $00, $19, $14
 	db $2d, $28, $00, $00, $00, $00, $00, $00, $00, $00, $37, $14, $14, $23, $44, $00
@@ -6102,13 +6102,13 @@ BattleAnimTable_02b_7594:
 
 ; ramp ascending to $c8
 ; TODO: unk_ - data, referenced via `ld de, unk_02b_7619 + $a`
-unk_02b_7619:
+unk_02b_7619::
 	db $00, $00, $00, $00, $00, $00, $00, $00, $05, $05, $64, $6e, $6e, $78, $78, $82
 	db $82, $8c, $8c, $96, $96, $a0, $a0, $aa, $aa, $b4, $b4, $be, $be, $c8, $c8
 
 ; ramp descending to $00
 ; TODO: unk_ - data, referenced via `ld de, unk_02b_7638`
-unk_02b_7638:
+unk_02b_7638::
 	db $64, $5f, $5f, $5a, $5a, $55, $55, $50, $50, $4b, $4b, $46, $46, $41, $41, $3c
 	db $3c, $37, $37, $32, $32, $00, $00, $00
 

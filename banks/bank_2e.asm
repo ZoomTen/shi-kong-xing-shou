@@ -1,11 +1,11 @@
-Func_02e_4000:
+Func_02e_4000::
 	ld a, e
 	ld [wBattleScriptPos], a
 	ld a, d
 	ld [wBattleScriptPos + 1], a
 	jr Func_02e_400a.asm_403c
 
-Func_02e_400a:
+Func_02e_400a::
 	ld a, [wd986]
 	and a
 	jr z, .asm_401e
@@ -58,7 +58,7 @@ Func_02e_400a:
 	ld h, [hl]
 	ld l, a
 	jp hl
-Mode_StateJumpTable:
+Mode_StateJumpTable::
 	dw Func_02e_411e
 	dw Func_02e_4122
 	dw Func_02e_4136
@@ -140,11 +140,11 @@ Mode_StateJumpTable:
 	dw Func_02e_6258
 	dw Func_02e_625d
 	dw Func_02e_6262
-Func_02e_411e:
+Func_02e_411e::
 	call AdvanceBattleScriptMode
 	ret
 
-Func_02e_4122:
+Func_02e_4122::
 	farcall Func_02f_4008
 	xor a
 	ld [wBattleState], a
@@ -153,7 +153,7 @@ Func_02e_4122:
 	ld [wd98c], a
 	ret
 
-Func_02e_4136:
+Func_02e_4136::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld b, a
@@ -213,7 +213,7 @@ Func_02e_4136:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4191:
+Func_02e_4191::
 	ld a, $01
 	ld [hFFC6], a
 	xor a
@@ -227,7 +227,7 @@ Func_02e_4191:
 	call PlaySound
 	ret
 
-Func_02e_41af:
+Func_02e_41af::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_41c3
@@ -278,7 +278,7 @@ Func_02e_41af:
 	ld [wBattleState], a
 	ld [wd98b], a
 	ret
-Func_02e_4203:
+Func_02e_4203::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98d], a
@@ -296,7 +296,7 @@ Func_02e_4203:
 	ld [wd990], a
 	ret
 
-Func_02e_4231:
+Func_02e_4231::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_426a
@@ -516,7 +516,7 @@ Func_02e_4231:
 	ld [bc], a
 	ret
 
-Func_02e_43a9:
+Func_02e_43a9::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_43d1
@@ -584,7 +584,7 @@ Func_02e_43a9:
 	ld [wd98c], a
 	ret
 
-Func_02e_442d:
+Func_02e_442d::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_4468
@@ -624,9 +624,9 @@ Func_02e_442d:
 .asm_4477
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-Mode_SoundTbl_4478:
+Mode_SoundTbl_4478::
 	db SFX_10, SFX_27, SFX_17
-Mode_StatePtrs_447b:
+Mode_StatePtrs_447b::
 	dw Func_02e_4489
 	dw Func_02e_4523
 	dw Func_02e_45a0
@@ -634,7 +634,7 @@ Mode_StatePtrs_447b:
 	dw Func_02e_46b0
 	dw Func_02e_46b0
 	dw Func_02e_4621
-Func_02e_4489:
+Func_02e_4489::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_44de
@@ -730,7 +730,7 @@ Func_02e_4489:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4523:
+Func_02e_4523::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_4561
@@ -807,7 +807,7 @@ Func_02e_4523:
 	ld [hli], a
 	ret
 
-Func_02e_45a0:
+Func_02e_45a0::
 	ldh a, [hFadeFrameCounter]
 	and $0F
 	ret nz
@@ -884,7 +884,7 @@ Func_02e_45a0:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4621:
+Func_02e_4621::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_466d
@@ -975,7 +975,7 @@ Func_02e_4621:
 	ld [hli], a
 	ret
 
-Func_02e_46b0:
+Func_02e_46b0::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_4702
@@ -1089,13 +1089,13 @@ Func_02e_46b0:
 	ld [hli], a
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-Mode_DeltaTbl_4763:
+Mode_DeltaTbl_4763::
 	db $00, $00
 	db $00, $30
 	db $28, $00
 	db $00, $d0
 	db $ff, $ff
-Func_02e_476d:
+Func_02e_476d::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_47e7
@@ -1232,11 +1232,11 @@ Func_02e_476d:
 .asm_487c
 	farcall Func_02b_402b
 	ret
-Mode_Tilemap_4883:
+Mode_Tilemap_4883::
 INCBIN "gfx/tilemaps/mode_tilemap_4883.tilemap"
-Mode_Tilemap_48a1:
+Mode_Tilemap_48a1::
 INCBIN "gfx/tilemaps/mode_tilemap_48a1.tilemap"
-Func_02e_48c9:
+Func_02e_48c9::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_48dd
@@ -1288,7 +1288,7 @@ Func_02e_48c9:
 	ld [wd98e], a
 	ret
 
-Func_02e_4922:
+Func_02e_4922::
 	call Func_02e_411e
 	ld a, [wd986]
 	and a
@@ -1321,7 +1321,7 @@ Func_02e_4922:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4956:
+Func_02e_4956::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd99e], a
@@ -1340,7 +1340,7 @@ Func_02e_4956:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4984:
+Func_02e_4984::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_49f1
@@ -1535,7 +1535,7 @@ Func_02e_4984:
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
-Func_02e_4adf:
+Func_02e_4adf::
 	ld e, $08
 	xor a
 .asm_4ae2
@@ -1543,7 +1543,7 @@ Func_02e_4adf:
 	dec e
 	jr nz, .asm_4ae2
 	ret
-Func_02e_4ae7:
+Func_02e_4ae7::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
@@ -1553,7 +1553,7 @@ Func_02e_4ae7:
 	jr nz, .asm_4aed
 	ret
 
-Func_02e_4af2:
+Func_02e_4af2::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_4b46
@@ -1708,7 +1708,7 @@ Func_02e_4af2:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4bff:
+Func_02e_4bff::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wTempBank], a
@@ -1723,7 +1723,7 @@ Func_02e_4bff:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4c22:
+Func_02e_4c22::
 	call AdvanceRNG
 	ld a, [wd991]
 	and $01
@@ -1736,7 +1736,7 @@ Func_02e_4c22:
 .asm_4c37
 	call Func_02e_411e
 	jp Func_02e_4136
-Func_02e_4c3d:
+Func_02e_4c3d::
 	push de
 	ld a, [wBattleScriptPos]
 	ld e, a
@@ -1753,7 +1753,7 @@ Func_02e_4c3d:
 	pop de
 	ret
 
-Func_02e_4c57:
+Func_02e_4c57::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_4cb5
@@ -1936,7 +1936,7 @@ Func_02e_4c57:
 	ld [wd98b], a
 	ret
 
-Func_02e_4d96:
+Func_02e_4d96::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd99e], a
@@ -1949,7 +1949,7 @@ Func_02e_4d96:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4db2:
+Func_02e_4db2::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_4dd5
@@ -1982,7 +1982,7 @@ Func_02e_4db2:
 	ld [wd98e], a
 	ret
 
-Func_02e_4df4:
+Func_02e_4df4::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_4e48
@@ -2113,7 +2113,7 @@ Func_02e_4df4:
 	ld [wd98b], a
 	ret
 
-Func_02e_4eda:
+Func_02e_4eda::
 	call Func_02e_4ae7
 	xor a
 	ld [wBattleState], a
@@ -2121,7 +2121,7 @@ Func_02e_4eda:
 	ld [wd9ae], a
 	ret
 
-Func_02e_4ee8:
+Func_02e_4ee8::
 	ld hl, $982A
 	ld bc, $0A03
 	ld a, $0A
@@ -2147,7 +2147,7 @@ Func_02e_4ee8:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4f20:
+Func_02e_4f20::
 	ld de, Mode_Tilemap_4883
 	ld hl, $982A
 	ld bc, $0A03
@@ -2170,7 +2170,7 @@ Func_02e_4f20:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4f59:
+Func_02e_4f59::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd99f], a
@@ -2180,7 +2180,7 @@ Func_02e_4f59:
 	ld [wBattleState], a
 	ret
 
-Func_02e_4f6c:
+Func_02e_4f6c::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_4fe1
@@ -2316,7 +2316,7 @@ Func_02e_4f6c:
 	farcall Func_02b_402b
 	ret
 
-Func_02e_507d:
+Func_02e_507d::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_5097
@@ -2383,7 +2383,7 @@ Func_02e_507d:
 	ld [wBattleState], a
 	ret
 
-Func_02e_50e7:
+Func_02e_50e7::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_50fb
@@ -2473,11 +2473,11 @@ Func_02e_50e7:
 	ld [wBattleState], a
 	ld [wd98b], a
 	ret
-Mode_Tilemap_5179:
+Mode_Tilemap_5179::
 INCBIN "gfx/tilemaps/mode_tilemap_5179.tilemap"
-Mode_Tilemap_519d:
+Mode_Tilemap_519d::
 INCBIN "gfx/tilemaps/mode_tilemap_519d.tilemap"
-Func_02e_51c1:
+Func_02e_51c1::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98d], a
@@ -2523,7 +2523,7 @@ Func_02e_51c1:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5227:
+Func_02e_5227::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld l, a
@@ -2574,7 +2574,7 @@ Func_02e_5227:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5287:
+Func_02e_5287::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_529b
@@ -2595,7 +2595,7 @@ Func_02e_5287:
 	ld [wd98b], a
 	ret
 
-Func_02e_52b3:
+Func_02e_52b3::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98f], a
@@ -2607,7 +2607,7 @@ Func_02e_52b3:
 	ld [wd98c], a
 	ret
 
-Func_02e_52d0:
+Func_02e_52d0::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_531b
@@ -2721,7 +2721,7 @@ Func_02e_52d0:
 	ld [wd98b], a
 	ret
 
-Func_02e_5390:
+Func_02e_5390::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_53cf
@@ -2791,7 +2791,7 @@ Func_02e_5390:
 	ld [wd98b], a
 	ret
 
-Func_02e_540f:
+Func_02e_540f::
 	ld a, [wd98b]
 	cp $01
 	jr z, .asm_544c
@@ -2877,7 +2877,7 @@ Func_02e_540f:
 	ld [wd98e], a
 	ret
 
-Func_02e_549f:
+Func_02e_549f::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_54f3
@@ -3028,7 +3028,7 @@ Func_02e_549f:
 	ld [wBattleState], a
 	ret
 
-Func_02e_55a3:
+Func_02e_55a3::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_55ca
@@ -3076,7 +3076,7 @@ Func_02e_55a3:
 	ld [wd98e], a
 	ret
 
-Func_02e_5601:
+Func_02e_5601::
 	ld a, [wd98b]
 	and a
 	jp nz, .asm_5690
@@ -3199,7 +3199,7 @@ Func_02e_5601:
 	ld [wWY], a
 	ret
 
-Func_02e_570d:
+Func_02e_570d::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_5761
@@ -3313,7 +3313,7 @@ Func_02e_570d:
 	ld [wd98b], a
 	ret
 
-Func_02e_57d8:
+Func_02e_57d8::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_582c
@@ -3462,7 +3462,7 @@ Func_02e_57d8:
 	ld [wd98b], a
 	ret
 
-Func_02e_58dd:
+Func_02e_58dd::
 	ld a, $01
 	ld [wd9ad], a
 	xor a
@@ -3470,7 +3470,7 @@ Func_02e_58dd:
 	ld [wd9ae], a
 	ret
 
-Func_02e_58ea:
+Func_02e_58ea::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98f], a
@@ -3482,27 +3482,27 @@ Func_02e_58ea:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5907:
+Func_02e_5907::
 	farcall Func_030_7194
 	ret
 
-Func_02e_590e:
+Func_02e_590e::
 	farcall Func_030_72d7
 	ret
 
-Func_02e_5915:
+Func_02e_5915::
 	farcall Func_030_75c7
 	ret
 
-Func_02e_591c:
+Func_02e_591c::
 	farcall Func_030_7610
 	ret
 
-Func_02e_5923:
+Func_02e_5923::
 	farcall Func_030_766a
 	ret
 
-Func_02e_592a:
+Func_02e_592a::
 	ld hl, wd1a0
 	dec [hl]
 	ld a, [hFadeFrameCounter]
@@ -3535,7 +3535,7 @@ Func_02e_592a:
 	ld [wd98e], a
 	ret
 
-Func_02e_595c:
+Func_02e_595c::
 	ld hl, wd1a0
 	inc [hl]
 	ld a, [hFadeFrameCounter]
@@ -3573,7 +3573,7 @@ Func_02e_595c:
 	ld [wBattleState], a
 	ret
 
-Func_02e_598d:
+Func_02e_598d::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd99f], a
@@ -3583,7 +3583,7 @@ Func_02e_598d:
 	ld [wBattleState], a
 	ret
 
-Func_02e_59a0:
+Func_02e_59a0::
 	ld bc, wd1a0
 .asm_59a3
 	ld hl, $0004
@@ -3693,13 +3693,13 @@ Func_02e_59a0:
 	jp c, .asm_59a3
 	ret
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
-Mode_CoordTbl_5a5d:
+Mode_CoordTbl_5a5d::
 	db $50, $78, $20, $28
 	db $50, $68, $20, $18
 	db $50, $88, $20, $38
 	db $50, $70, $20, $20
 	db $50, $80, $20, $30
-Func_02e_5a71:
+Func_02e_5a71::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_5aa8
@@ -3761,14 +3761,14 @@ Func_02e_5a71:
 	ld [wd98e], a
 	call Func_02e_4ae7
 	ret
-Mode_PtrTbl_5ad6:
+Mode_PtrTbl_5ad6::
 	dw Mode_PtrTbl_5ad6_5ada
 	dw Mode_PtrTbl_5ad6_5ae6
-Mode_PtrTbl_5ad6_5ada:
+Mode_PtrTbl_5ad6_5ada::
 	db $60, $78, $02, $60, $78, $02, $60, $78, $02, $60, $78, $02
-Mode_PtrTbl_5ad6_5ae6:
+Mode_PtrTbl_5ad6_5ae6::
 	db $30, $28, $02, $30, $28, $02, $30, $28, $02, $30, $28, $02
-Func_02e_5af2:
+Func_02e_5af2::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_5b08
@@ -3864,7 +3864,7 @@ Func_02e_5af2:
 	ld [wd98b], a
 	ret
 
-Func_02e_5b8b:
+Func_02e_5b8b::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_5bc6
@@ -3942,7 +3942,7 @@ Func_02e_5b8b:
 	ld [wd98b], a
 	ret
 
-Func_02e_5c11:
+Func_02e_5c11::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_5c4c
@@ -4020,7 +4020,7 @@ Func_02e_5c11:
 	ld [wd98b], a
 	ret
 
-Func_02e_5c97:
+Func_02e_5c97::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_5cd2
@@ -4098,7 +4098,7 @@ Func_02e_5c97:
 	ld [wd98b], a
 	ret
 
-Func_02e_5d1d:
+Func_02e_5d1d::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_5d58
@@ -4176,7 +4176,7 @@ Func_02e_5d1d:
 	ld [wd98b], a
 	ret
 
-Func_02e_5da3:
+Func_02e_5da3::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd99f], a
@@ -4186,14 +4186,14 @@ Func_02e_5da3:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5db6:
+Func_02e_5db6::
 	xor a
 	ld [wd9ad], a
 	ld [wd9ae], a
 	ld [wBattleState], a
 	ret
 
-Func_02e_5dc1:
+Func_02e_5dc1::
 	farcall Func_030_4027
 	ld a, [wd986]
 	and a
@@ -4215,7 +4215,7 @@ Func_02e_5dc1:
 	ld [wd98c], a
 	ret
 
-Func_02e_5dea:
+Func_02e_5dea::
 	farcall Func_030_4027
 	call Func_02e_411e
 	ld a, [wd993]
@@ -4249,7 +4249,7 @@ Func_02e_5dea:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5e26:
+Func_02e_5e26::
 	ld a, $01
 	ld [wd9b5], a
 	farcall Func_02b_4098
@@ -4289,7 +4289,7 @@ Func_02e_5e26:
 	ld [wBattleIntroJumptableIndex], a
 	ret
 
-Func_02e_5e76:
+Func_02e_5e76::
 	call Func_02e_411e
 	call AdvanceRNG
 	ld a, [wd991]
@@ -4301,7 +4301,7 @@ Func_02e_5e76:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5e8b:
+Func_02e_5e8b::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld e, a
@@ -4313,7 +4313,7 @@ Func_02e_5e8b:
 	ld [wBattleState], a
 	ret
 
-Func_02e_5ea4:
+Func_02e_5ea4::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98f], a
@@ -4324,7 +4324,7 @@ Func_02e_5ea4:
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_5ec1:
+Func_02e_5ec1::
 	farcall Func_01e_6acd
 	ld a, d
 	and a
@@ -4365,7 +4365,7 @@ Func_02e_5ec1:
 	dec c
 	jr nz, .asm_5f0d
 	ret
-Func_02e_5f14:
+Func_02e_5f14::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd990], a
@@ -4393,7 +4393,7 @@ Func_02e_5f14:
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_5f51:
+Func_02e_5f51::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wBattleAnimID], a
@@ -4404,7 +4404,7 @@ Func_02e_5f51:
 	ld [wd98b], a
 	ld [wd98c], a
 	ret
-Func_02e_5f6e:
+Func_02e_5f6e::
 	call Func_02e_411e
 	ld a, [hFFD6]
 	ld b, a
@@ -4419,7 +4419,7 @@ Func_02e_5f6e:
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_5f89:
+Func_02e_5f89::
 	call AdvanceRNG
 	ld a, [wd991]
 	and $01
@@ -4432,7 +4432,7 @@ Func_02e_5f89:
 .asm_5f9e
 	call Func_02e_411e
 	jp Func_02e_411e
-Func_02e_5fa4:
+Func_02e_5fa4::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_5fd6
@@ -4463,9 +4463,9 @@ Func_02e_5fa4:
 	ld h, [hl]
 	ld l, a
 	jp hl
-Func_02e_5fe5:
+Func_02e_5fe5::
 	ret
-Func_02e_5fe6:
+Func_02e_5fe6::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_605b
@@ -4600,7 +4600,7 @@ Func_02e_5fe6:
 .asm_60f0
 	farcall Func_02b_402b
 	ret
-Func_02e_60f7:
+Func_02e_60f7::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	ld [wd98d], a
@@ -4700,7 +4700,7 @@ Func_02e_60f7:
 	ld a, [hli]
 	ld d, a
 	ret
-Func_02e_617f:
+Func_02e_617f::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_6193
@@ -4713,7 +4713,7 @@ Func_02e_617f:
 .asm_6193
 	farcall Func_02d_6e2c
 	ret
-Func_02e_619a:
+Func_02e_619a::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_61ae
@@ -4726,7 +4726,7 @@ Func_02e_619a:
 .asm_61ae
 	farcall Func_02d_6d77
 	ret
-Func_02e_61b5:
+Func_02e_61b5::
 	ld a, [wd98b]
 	and a
 	jr nz, .asm_61c6
@@ -4815,38 +4815,38 @@ Func_02e_61b5:
 	ld [wBattleState], a
 	ld [wd98b], a
 	ret
-Func_02e_6244:
+Func_02e_6244::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6249:
+Func_02e_6249::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_624e:
+Func_02e_624e::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6253:
+Func_02e_6253::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6258:
+Func_02e_6258::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_625d:
+Func_02e_625d::
 	xor a
 	ld [wBattleState], a
 	ret
-Func_02e_6262:
+Func_02e_6262::
 	call Func_02e_411e
 	ld a, [wBattleState]
 	call PlaySound
 	xor a
 	ld [wBattleState], a
 	ret
-Jumptable_02e_6270:
+Jumptable_02e_6270::
 	dw Func_02e_627e
 	dw Func_02e_62ef
 	dw Func_02e_627e
@@ -4854,7 +4854,7 @@ Jumptable_02e_6270:
 	dw Func_02e_62ef
 	dw Func_02e_62ef
 	dw Func_02e_627e
-Func_02e_627e:
+Func_02e_627e::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_62ca
@@ -4923,7 +4923,7 @@ Func_02e_627e:
 	ld [hli], a
 	ld [hli], a
 	ret
-Func_02e_62ef:
+Func_02e_62ef::
 	ld a, [wd98e]
 	and a
 	jr nz, .asm_633b
@@ -4992,239 +4992,239 @@ Func_02e_62ef:
 	ld [hli], a
 	ld [hli], a
 	ret
-MovementDeltas_02e_6360:
+MovementDeltas_02e_6360::
 	db $04, $05, $06, $04, $05, $06, $04, $04, $05, $05, $06, $06, $06, $00, $06, $00, $06, $00, $06, $00, $ff
-MovementDeltas_02e_6375:
+MovementDeltas_02e_6375::
 	db $01, $01, $02, $02, $03, $03, $03, $00, $ff
-MovementDeltas_02e_637e:
+MovementDeltas_02e_637e::
 	db $0b, $0c, $0d, $0e, $0f, $10, $0b, $0c, $0d, $0e, $0f, $10, $11, $12, $00, $ff
-MovementDeltas_02e_638e:
+MovementDeltas_02e_638e::
 	db $01, $02, $03, $04, $05, $06, $07, $08, $09, $0a, $00, $ff
-MovementDeltas_02e_639a:
+MovementDeltas_02e_639a::
 	db $01, $02, $03, $04, $05, $06, $06, $00, $06, $00, $06, $00, $06, $00, $06, $00, $ff
-MovementDeltas_02e_63ab:
+MovementDeltas_02e_63ab::
 	db $01, $02, $03, $02, $01, $00, $01, $02, $03, $02, $01, $00, $00, $00, $ff
-MovementDeltas_02e_63ba:
+MovementDeltas_02e_63ba::
 	db $01, $02, $03, $04, $05, $04, $03, $02, $01, $00, $ff
-MovementDeltas_02e_63c5:
+MovementDeltas_02e_63c5::
 	db $02, $03, $03, $04, $04, $00, $ff
-MovementDeltas_02e_63cc:
+MovementDeltas_02e_63cc::
 	db $04, $04, $05, $05, $06, $06, $07, $07, $00, $00, $ff
-MovementDeltas_02e_63d7:
+MovementDeltas_02e_63d7::
 	db $01, $00, $02, $00, $03, $00, $01, $02, $03, $00, $ff
-MovementDeltas_02e_63e2:
+MovementDeltas_02e_63e2::
 	db $01, $02, $03, $04, $05, $06, $01, $02, $03, $04, $05, $06, $01, $02, $03, $04, $05, $06, $ff
-MovementDeltas_02e_63f5:
+MovementDeltas_02e_63f5::
 	db $06, $06, $06, $07, $07, $07, $00, $ff
-MovementDeltas_02e_63fd:
+MovementDeltas_02e_63fd::
 	db $01, $02, $03, $04, $05, $06, $01, $02, $03, $04, $05, $06, $00, $ff
-MovementDeltas_02e_640b:
+MovementDeltas_02e_640b::
 	db $01, $02, $03, $04, $00, $ff
-MovementDeltas_02e_6411:
+MovementDeltas_02e_6411::
 	db $05, $06, $07, $08, $00, $ff
-MovementDeltas_02e_6417:
+MovementDeltas_02e_6417::
 	db $09, $0a, $0b, $0c, $00, $ff
-MovementDeltas_02e_641d:
+MovementDeltas_02e_641d::
 	db $01, $02, $03, $04, $05, $06, $03, $04, $05, $06, $03, $04, $05, $06, $03, $04, $05, $06, $00, $ff
-MovementDeltas_02e_6431:
+MovementDeltas_02e_6431::
 	db $01, $01, $02, $02, $03, $03, $04, $04, $05, $05, $06, $06, $07, $07, $00, $ff
-MovementDeltas_02e_6441:
+MovementDeltas_02e_6441::
 	db $01, $02, $03, $04, $00, $ff
-MovementDeltas_02e_6447:
+MovementDeltas_02e_6447::
 	db $03, $04, $04, $06, $06, $00, $ff
-MovementDeltas_02e_644e:
+MovementDeltas_02e_644e::
 	db $01, $00, $01, $00, $02, $00, $02, $00, $03, $00, $03, $00, $03, $ff
 	db $06, $06, $07, $07, $08, $07, $08, $07, $08, $08, $00, $ff
-MovementDeltas_02e_6468:
+MovementDeltas_02e_6468::
 	db $01, $02, $03, $04, $05, $04, $02, $01, $00, $ff
-MovementDeltas_02e_6472:
+MovementDeltas_02e_6472::
 	db $01, $02, $03, $04, $05, $00, $ff
-MovementDeltas_02e_6479:
+MovementDeltas_02e_6479::
 	db $06, $07, $08, $09, $0a, $00, $ff
-MovementDeltas_02e_6480:
+MovementDeltas_02e_6480::
 	db $05, $06, $07, $08, $05, $06, $07, $08, $00, $ff
-MovementDeltas_02e_648a:
+MovementDeltas_02e_648a::
 	db $01, $02, $03, $04, $01, $02, $03, $04, $01, $02, $03, $04, $00, $ff
-MovementDeltas_02e_6498:
+MovementDeltas_02e_6498::
 	db $01, $02, $03, $01, $02, $03, $01, $02, $03, $01, $02, $03, $00, $ff
-MovementDeltas_02e_64a6:
+MovementDeltas_02e_64a6::
 	db $01, $01, $02, $02, $03, $03, $04, $04, $05, $05, $06, $06, $00, $ff
-MovementDeltas_02e_64b4:
+MovementDeltas_02e_64b4::
 	db $01, $01, $00, $01, $00, $02, $03, $04, $05, $06, $00, $ff
-MovementDeltas_02e_64c0:
+MovementDeltas_02e_64c0::
 	db $02, $03, $04, $05, $06, $02, $03, $04, $05, $06, $00, $ff
-MovementDeltas_02e_64cc:
+MovementDeltas_02e_64cc::
 	db $04, $05, $06, $00, $ff
-MovementDeltas_02e_64d1:
+MovementDeltas_02e_64d1::
 	db $02, $03, $04, $05, $00, $ff
-MovementDeltas_02e_64d7:
+MovementDeltas_02e_64d7::
 	db $0a, $0b, $0c, $0d, $00, $ff
-MovementDeltas_02e_64dd:
+MovementDeltas_02e_64dd::
 	db $01, $02, $03, $01, $02, $03, $00, $ff
-MovementDeltas_02e_64e5:
+MovementDeltas_02e_64e5::
 	db $03, $04, $03, $04, $03, $04, $00, $ff
-MovementDeltas_02e_64ed:
+MovementDeltas_02e_64ed::
 	db $01, $01, $02, $02, $02, $00, $ff
-MovementDeltas_02e_64f4:
+MovementDeltas_02e_64f4::
 	db $03, $03, $04, $04, $05, $05, $00, $ff
-MovementDeltas_02e_64fc:
+MovementDeltas_02e_64fc::
 	db $01, $01, $02, $02, $03, $02, $03, $02, $03, $03, $00, $ff
-MovementDeltas_02e_6508:
+MovementDeltas_02e_6508::
 	db $01, $01, $02, $02, $02, $00, $ff
-MovementDeltas_02e_650f:
+MovementDeltas_02e_650f::
 	db $01, $02, $03, $04, $01, $02, $03, $04, $00, $ff
-MovementDeltas_02e_6519:
+MovementDeltas_02e_6519::
 	db $05, $06, $07, $08, $00, $ff
-MovementDeltas_02e_651f:
+MovementDeltas_02e_651f::
 	db $09, $09, $0a, $0a, $0b, $0b, $0c, $0c, $00, $ff
-MovementDeltas_02e_6529:
+MovementDeltas_02e_6529::
 	db $01, $01, $01, $00, $01, $02, $01, $02, $01, $02, $02, $00, $ff
-MovementDeltas_02e_6536:
+MovementDeltas_02e_6536::
 	db $03, $03, $00, $03, $00, $03, $00, $ff
-MovementDeltas_02e_653e:
+MovementDeltas_02e_653e::
 	db $01, $01, $00, $01, $00, $01, $00, $ff
-MovementDeltas_02e_6546:
+MovementDeltas_02e_6546::
 	db $01, $02, $03, $00, $ff
-MovementDeltas_02e_654b:
+MovementDeltas_02e_654b::
 	db $04, $05, $06, $00, $ff
-MovementDeltas_02e_6550:
+MovementDeltas_02e_6550::
 	db $07, $07, $07, $00, $07, $00, $ff
-MovementDeltas_02e_6557:
+MovementDeltas_02e_6557::
 	db $06, $07, $08, $09, $00, $ff
-MovementDeltas_02e_655d:
+MovementDeltas_02e_655d::
 	db $01, $02, $03, $00, $ff
-MovementDeltas_02e_6562:
+MovementDeltas_02e_6562::
 	db $01, $02, $03, $01, $02, $03, $00, $ff
-MovementDeltas_02e_656a:
+MovementDeltas_02e_656a::
 	db $02, $02, $03, $03, $04, $04, $00, $ff
 	db $01, $02, $03, $00, $ff
-MovementDeltas_02e_6577:
+MovementDeltas_02e_6577::
 	db $01, $02, $03, $04, $00, $ff
-MovementDeltas_02e_657d:
+MovementDeltas_02e_657d::
 	db $01, $02, $03, $04, $05, $06, $05, $06, $00, $06, $00, $06, $00, $ff
 	db $04, $05, $05, $05, $05, $03, $02, $02, $03, $03, $02, $03, $ff
-MovementDeltas_02e_6598:
+MovementDeltas_02e_6598::
 	db $01, $01, $02, $02, $03, $03, $04, $04, $04, $ff
-MovementDeltas_02e_65a2:
+MovementDeltas_02e_65a2::
 	db $01, $00, $02, $00, $03, $00, $04, $00, $ff
-MovementDeltas_02e_65ab:
+MovementDeltas_02e_65ab::
 	db $05, $06, $07, $07, $07, $00, $07, $00, $07, $00, $07, $00, $ff
-MovementDeltas_02e_65b8:
+MovementDeltas_02e_65b8::
 	db $05, $06, $07, $07, $07, $07, $ff
-MovementDeltas_02e_65bf:
+MovementDeltas_02e_65bf::
 	db $01, $01, $02, $02, $02, $03, $03, $03, $02, $02, $03, $03, $02, $03, $02, $03, $04, $04, $00, $ff
-MovementDeltas_02e_65d3:
+MovementDeltas_02e_65d3::
 	db $01, $01, $01, $02, $02, $02, $02, $03, $03, $03, $03, $03, $04, $04, $04, $04, $04, $04, $00, $ff
 	db $01, $01, $02, $02, $03, $03, $04, $04, $00, $ff
-MovementDeltas_02e_65f1:
+MovementDeltas_02e_65f1::
 	db $04, $05, $05, $06, $06, $00, $ff
-MovementDeltas_02e_65f8:
+MovementDeltas_02e_65f8::
 	db $04, $05, $06, $07, $00, $ff
-MovementDeltas_02e_65fe:
+MovementDeltas_02e_65fe::
 	db $04, $04, $05, $05, $06, $06, $00, $ff
-MovementDeltas_02e_6606:
+MovementDeltas_02e_6606::
 	db $01, $01, $02, $02, $03, $03, $00, $ff
-MovementDeltas_02e_660e:
+MovementDeltas_02e_660e::
 	db $04, $05, $06, $00, $00, $ff
-MovementDeltas_02e_6614:
+MovementDeltas_02e_6614::
 	db $06, $06, $05, $05, $04, $04, $04, $00, $04, $00, $04, $00, $04, $00, $ff
-MovementDeltas_02e_6623:
+MovementDeltas_02e_6623::
 	db $01, $02, $03, $01, $02, $03, $00, $ff
-MovementDeltas_02e_662b:
+MovementDeltas_02e_662b::
 	db $01, $02, $03, $04, $00, $00, $ff
-MovementDeltas_02e_6632:
+MovementDeltas_02e_6632::
 	db $01, $02, $03, $04, $05, $06, $07, $08, $05, $06, $07, $08, $00, $ff
-MovementDeltas_02e_6640:
+MovementDeltas_02e_6640::
 	db $01, $02, $03, $00, $ff
-MovementDeltas_02e_6645:
+MovementDeltas_02e_6645::
 	db $01, $02, $01, $02, $01, $02, $00, $ff
-MovementDeltas_02e_664d:
+MovementDeltas_02e_664d::
 	db $01, $02, $01, $02, $03, $03, $00, $ff
-MovementDeltas_02e_6655:
+MovementDeltas_02e_6655::
 	db $04, $05, $06, $00, $ff
-MovementDeltas_02e_665a:
+MovementDeltas_02e_665a::
 	db $07, $08, $09, $00, $ff
 	db $0a, $0b, $0c, $0d, $0e, $0a, $0b, $0c, $0d, $0e, $0e, $00, $ff
-MovementDeltas_02e_666c:
+MovementDeltas_02e_666c::
 	db $01, $02, $01, $02, $03, $04, $04, $00, $ff
-MovementDeltas_02e_6675:
+MovementDeltas_02e_6675::
 	db $05, $05, $05, $06, $06, $06, $00, $ff
-MovementDeltas_02e_667d:
+MovementDeltas_02e_667d::
 	db $07, $07, $07, $08, $08, $00, $ff
-MovementDeltas_02e_6684:
+MovementDeltas_02e_6684::
 	db $01, $01, $02, $02, $03, $03, $00, $ff
-MovementDeltas_02e_668c:
+MovementDeltas_02e_668c::
 	db $04, $05, $06, $00, $ff
-MovementDeltas_02e_6691:
+MovementDeltas_02e_6691::
 	db $07, $08, $09, $00, $ff
-MovementDeltas_02e_6696:
+MovementDeltas_02e_6696::
 	db $08, $09, $0a, $00, $ff
-MovementDeltas_02e_669b:
+MovementDeltas_02e_669b::
 	db $04, $05, $06, $07, $00, $ff
-MovementDeltas_02e_66a1:
+MovementDeltas_02e_66a1::
 	db $01, $01, $02, $02, $03, $03, $00, $ff
-MovementDeltas_02e_66a9:
+MovementDeltas_02e_66a9::
 	db $05, $05, $06, $06, $07, $07, $00, $07, $00, $ff
-MovementDeltas_02e_66b3:
+MovementDeltas_02e_66b3::
 	db $01, $02, $01, $02, $03, $04, $03, $04, $00, $04, $00, $ff
-MovementDeltas_02e_66bf:
+MovementDeltas_02e_66bf::
 	db $05, $06, $05, $06, $05, $06, $05, $00, $06, $00, $05, $00, $ff
-MovementDeltas_02e_66cc:
+MovementDeltas_02e_66cc::
 	db $01, $02, $03, $04, $05, $03, $05, $04, $05, $03, $04, $05, $00, $ff
-MovementDeltas_02e_66da:
+MovementDeltas_02e_66da::
 	db $01, $02, $03, $04, $02, $03, $04, $03, $04, $03, $04, $00, $ff
-MovementDeltas_02e_66e7:
+MovementDeltas_02e_66e7::
 	db $05, $06, $05, $06, $00, $ff
-MovementDeltas_02e_66ed:
+MovementDeltas_02e_66ed::
 	db $07, $08, $07, $08, $09, $00, $ff
-MovementDeltas_02e_66f4:
+MovementDeltas_02e_66f4::
 	db $0a, $0a, $0b, $0b, $0c, $0c, $0d, $0d, $00, $ff
 	db $01, $02, $03, $01, $02, $03, $01, $02, $03, $01, $02, $03, $00, $ff
-MovementDeltas_02e_670c:
+MovementDeltas_02e_670c::
 	db $01, $01, $02, $02, $03, $03, $00, $03, $00, $03, $00, $03, $00, $ff
-MovementDeltas_02e_671a:
+MovementDeltas_02e_671a::
 	db $01, $02, $03, $01, $02, $03, $01, $02, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $ff
-MovementDeltas_02e_672d:
+MovementDeltas_02e_672d::
 	db $06, $07, $08, $09, $00, $ff
-MovementDeltas_02e_6733:
+MovementDeltas_02e_6733::
 	db $01, $01, $02, $02, $03, $03, $04, $04, $05, $05, $05, $05, $ff
-MovementDeltas_02e_6740:
+MovementDeltas_02e_6740::
 	db $01, $02, $03, $04, $05, $00, $ff
-MovementDeltas_02e_6747:
+MovementDeltas_02e_6747::
 	db $06, $07, $08, $00, $ff
-MovementDeltas_02e_674c:
+MovementDeltas_02e_674c::
 	db $09, $00, $ff
-MovementDeltas_02e_674f:
+MovementDeltas_02e_674f::
 	db $01, $02, $03, $02, $03, $00, $ff
-MovementDeltas_02e_6756:
+MovementDeltas_02e_6756::
 	db $07, $08, $09, $0a, $07, $08, $09, $0a, $07, $08, $09, $0a, $00, $ff
-MovementDeltas_02e_6764:
+MovementDeltas_02e_6764::
 	db $01, $02, $03, $04, $05, $06, $04, $03, $05, $06, $01, $00, $ff
-MovementDeltas_02e_6771:
+MovementDeltas_02e_6771::
 	db $01, $02, $03, $04, $05, $00, $ff
 	db $01, $02, $03, $04, $00, $ff
-MovementDeltas_02e_677e:
+MovementDeltas_02e_677e::
 	db $05, $06, $07, $08, $08, $08, $00, $ff
 	db $09, $0a, $09, $0a, $00, $ff
 	db $0b, $0c, $0b, $0c, $0b, $0c, $ff
-MovementDeltas_02e_6793:
+MovementDeltas_02e_6793::
 	db $0d, $0d, $0e, $05, $00, $ff
-MovementDeltas_02e_6799:
+MovementDeltas_02e_6799::
 	db $0f, $10, $0f, $10, $00, $ff
 	db $04, $05, $06, $05, $04, $05, $06, $00, $ff
 	db $04, $05, $06, $04, $05, $06, $00, $ff
 	db $01, $02, $03, $02, $01, $00, $ff
 	db $01, $02, $02, $03, $03, $00, $ff
 	db $01, $02, $03, $01, $02, $03, $01, $02, $03, $01, $02, $03, $00, $ff
-MovementDeltas_02e_67cc:
+MovementDeltas_02e_67cc::
 	db $03, $03
-ScrollDeltas_02e_67ce:
+ScrollDeltas_02e_67ce::
 	db $03, $03, $fd, $fd, $fd, $fd, $fd, $fd, $fd, $fd, $03, $03, $03, $03, $02, $02
 	db $02, $02, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $02, $02, $02, $02, $88
-ScrollDeltas_02e_67ed:
+ScrollDeltas_02e_67ed::
 	db $04
 	db $04, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $fc, $fc, $88
-ScrollDeltas_02e_67fe:
+ScrollDeltas_02e_67fe::
 	db $fc, $fc, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $04, $04
 	db $88, $04, $04, $00, $00, $00, $00, $00, $fc, $fc, $00, $00, $00, $00, $00, $fc
 	db $fc, $00, $00, $00, $00, $00, $04, $04, $00, $00, $00, $00, $00, $04, $04, $00
@@ -5232,33 +5232,33 @@ ScrollDeltas_02e_67fe:
 	db $02, $fe, $02, $fe, $88, $02, $02, $02, $02, $02, $02, $02, $02, $88, $fe, $fe
 	db $fe, $fe, $fe, $fe, $fe, $fe, $88, $fe, $02, $fe, $02, $fe, $02, $fe, $02, $88
 	db $fe, $00, $fe, $00, $fe, $00, $fe, $00, $88
-ScrollDeltas_02e_6867:
+ScrollDeltas_02e_6867::
 	db $fc, $00, $fc, $00, $fc, $00, $fc
 	db $00, $88
-ScrollDeltas_02e_6870:
+ScrollDeltas_02e_6870::
 	db $04, $00, $04, $00, $04, $00, $04, $00, $88, $02, $00, $02, $00, $02
 	db $00, $02, $00, $88
-ScrollDeltas_02e_6882:
+ScrollDeltas_02e_6882::
 	db $fc, $00, $fc, $00, $04, $00, $04, $00, $88
-ScrollDeltas_02e_688b:
+ScrollDeltas_02e_688b::
 	db $fc, $00, $fc
 	db $00, $fc, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $04, $00, $04
 	db $00, $04, $00, $00, $00, $fc, $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04
 	db $00, $00, $00, $00, $00, $fc, $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04
 	db $00, $00, $00, $00, $00, $88
-ScrollDeltas_02e_68c4:
+ScrollDeltas_02e_68c4::
 	db $00, $fc, $00, $fc, $00, $fc, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $04, $00, $04, $00, $04, $00, $00, $00, $fc
 	db $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04, $00, $00, $00, $00, $00, $fc
 	db $00, $fc, $00, $00, $00, $00, $00, $04, $00, $04, $00, $00, $00, $00, $88
-ScrollDeltas_02e_68fd:
+ScrollDeltas_02e_68fd::
 	db $ff
 	db $ff, $ff, $fe, $ff, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff
 	db $fe, $00, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $ff
 	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $fe
 	db $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $ff, $fe, $ff, $fe, $fe, $fe, $fe
 	db $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $ff, $fe, $88
-MovementDeltas_02e_694e:
+MovementDeltas_02e_694e::
 	db $02, $03, $04, $ff
 	db $06, $07, $08, $00, $ff
 	db $08, $07, $06, $05, $05, $06, $07, $08, $08, $00, $ff
@@ -5267,422 +5267,422 @@ MovementDeltas_02e_694e:
 	db $02, $03, $ff
 ; Object OAM animations, runtime-reached via wd1a0. Each = a frame-pointer table (dw -> frame)
 ; immediately followed by its 9-byte OAM frames; some frames are shared across animations.
-ObjectAnim_02e_6970:
+ObjectAnim_02e_6970::
 	dw ObjectAnimFrame_02e_6972
-ObjectAnimFrame_02e_6972:
+ObjectAnimFrame_02e_6972::
 	db $6c, $7c, $6c, $7c, $01, $04, $f1, $6e, $00
-ObjectAnim_02e_697b:
+ObjectAnim_02e_697b::
 	dw ObjectAnimFrame_02e_697d
-ObjectAnimFrame_02e_697d:
+ObjectAnimFrame_02e_697d::
 	db $18, $18, $40, $68, $01, $02, $32, $71, $00
-ObjectAnim_02e_6986:
+ObjectAnim_02e_6986::
 	dw ObjectAnimFrame_02e_698a
 	dw ObjectAnimFrame_02e_6993
-ObjectAnimFrame_02e_698a:
+ObjectAnimFrame_02e_698a::
 	db $48, $70, $18, $20, $01, $02, $96, $7d, $00
-ObjectAnimFrame_02e_6993:
+ObjectAnimFrame_02e_6993::
 	db $50, $78, $20, $18, $03, $04, $96, $7d, $00
-ObjectAnim_02e_699c:
+ObjectAnim_02e_699c::
 	dw ObjectAnimFrame_02e_69a4
 	dw ObjectAnimFrame_02e_69ad
 	dw ObjectAnimFrame_02e_69b6
 	dw ObjectAnimFrame_02e_69bf
-ObjectAnimFrame_02e_69a4:
+ObjectAnimFrame_02e_69a4::
 	db $18, $40, $48, $90, $01, $01, $18, $73, $00
-ObjectAnimFrame_02e_69ad:
+ObjectAnimFrame_02e_69ad::
 	db $18, $10, $48, $60, $01, $01, $49, $73, $00
-ObjectAnimFrame_02e_69b6:
+ObjectAnimFrame_02e_69b6::
 	db $08, $28, $38, $78, $01, $01, $7a, $73, $00
-ObjectAnimFrame_02e_69bf:
+ObjectAnimFrame_02e_69bf::
 	db $28, $28, $58, $78, $01, $01, $ab, $73, $00
-ObjectAnim_02e_69c8:
+ObjectAnim_02e_69c8::
 	dw ObjectAnimFrame_02e_69ce
 	dw ObjectAnimFrame_02e_69d7
 	dw ObjectAnimFrame_02e_69e0
-ObjectAnimFrame_02e_69ce:
+ObjectAnimFrame_02e_69ce::
 	db $20, $68, $f0, $18, $02, $03, $4d, $7d, $00
-ObjectAnimFrame_02e_69d7:
+ObjectAnimFrame_02e_69d7::
 	db $1c, $68, $ec, $18, $02, $03, $4d, $7d, $00
-ObjectAnimFrame_02e_69e0:
+ObjectAnimFrame_02e_69e0::
 	db $18, $68, $e8, $18, $02, $03, $4d, $7d, $00
-ObjectAnim_02e_69e9:
+ObjectAnim_02e_69e9::
 	dw ObjectAnimFrame_02e_69ed
 	dw ObjectAnimFrame_02e_69f6
-ObjectAnimFrame_02e_69ed:
+ObjectAnimFrame_02e_69ed::
 	db $28, $18, $50, $68, $01, $03, $00, $00, $00
-ObjectAnimFrame_02e_69f6:
+ObjectAnimFrame_02e_69f6::
 	db $20, $28, $58, $78, $01, $03, $00, $00, $00
-ObjectAnim_02e_69ff:
+ObjectAnim_02e_69ff::
 	dw ObjectAnimFrame_02e_6a03
 	dw ObjectAnimFrame_02e_6a0c
-ObjectAnimFrame_02e_6a03:
+ObjectAnimFrame_02e_6a03::
 	db $28, $18, $50, $68, $04, $05, $83, $71, $00
-ObjectAnimFrame_02e_6a0c:
+ObjectAnimFrame_02e_6a0c::
 	db $20, $28, $58, $78, $04, $05, $83, $71, $00
-ObjectAnim_02e_6a15:
+ObjectAnim_02e_6a15::
 	dw ObjectAnimFrame_02e_6a1b
 	dw ObjectAnimFrame_02e_6a24
 	dw ObjectAnimFrame_02e_6a2d
-ObjectAnimFrame_02e_6a1b:
+ObjectAnimFrame_02e_6a1b::
 	db $10, $18, $40, $68, $00, $01, $00, $00, $00
-ObjectAnimFrame_02e_6a24:
+ObjectAnimFrame_02e_6a24::
 	db $10, $48, $38, $50, $02, $03, $00, $00, $00
-ObjectAnimFrame_02e_6a2d:
+ObjectAnimFrame_02e_6a2d::
 	db $10, $48, $38, $50, $02, $03, $00, $00, $00
-ObjectAnim_02e_6a36:
+ObjectAnim_02e_6a36::
 	dw ObjectAnimFrame_02e_6a3a
 	dw ObjectAnimFrame_02e_6a43
-ObjectAnimFrame_02e_6a3a:
+ObjectAnimFrame_02e_6a3a::
 	db $10, $0c, $40, $60, $01, $01, $dc, $73, $00
-ObjectAnimFrame_02e_6a43:
+ObjectAnimFrame_02e_6a43::
 	db $10, $3c, $40, $90, $01, $01, $ed, $73, $00
-ObjectAnim_02e_6a4c:
+ObjectAnim_02e_6a4c::
 	dw ObjectAnimFrame_02e_6a56
 	dw ObjectAnimFrame_02e_6a5f
 	dw ObjectAnimFrame_02e_6a68
 	dw ObjectAnimFrame_02e_6a71
 	dw ObjectAnimFrame_02e_6a7a
-ObjectAnimFrame_02e_6a56:
+ObjectAnimFrame_02e_6a56::
 	db $40, $68, $10, $18, $01, $01, $00, $00, $00
-ObjectAnimFrame_02e_6a5f:
+ObjectAnimFrame_02e_6a5f::
 	db $38, $67, $08, $17, $03, $03, $fe, $73, $00
-ObjectAnimFrame_02e_6a68:
+ObjectAnimFrame_02e_6a68::
 	db $38, $90, $08, $40, $04, $04, $1f, $74, $00
-ObjectAnimFrame_02e_6a71:
+ObjectAnimFrame_02e_6a71::
 	db $62, $66, $32, $16, $05, $05, $40, $74, $00
-ObjectAnimFrame_02e_6a7a:
+ObjectAnimFrame_02e_6a7a::
 	db $61, $90, $31, $40, $06, $06, $61, $74, $00
-ObjectAnim_02e_6a83:
+ObjectAnim_02e_6a83::
 	dw ObjectAnimFrame_02e_6a8d
 	dw ObjectAnimFrame_02e_6a96
 	dw ObjectAnimFrame_02e_6a9f
 	dw ObjectAnimFrame_02e_6aa8
 	dw ObjectAnimFrame_02e_6ab1
-ObjectAnimFrame_02e_6a8d:
+ObjectAnimFrame_02e_6a8d::
 	db $1c, $20, $50, $70, $01, $03, $00, $00, $00
-ObjectAnimFrame_02e_6a96:
+ObjectAnimFrame_02e_6a96::
 	db $38, $10, $78, $60, $04, $05, $40, $74, $00
-ObjectAnimFrame_02e_6a9f:
+ObjectAnimFrame_02e_6a9f::
 	db $08, $40, $38, $90, $05, $04, $1f, $74, $00
-ObjectAnimFrame_02e_6aa8:
+ObjectAnimFrame_02e_6aa8::
 	db $08, $10, $38, $60, $04, $05, $fe, $73, $00
-ObjectAnimFrame_02e_6ab1:
+ObjectAnimFrame_02e_6ab1::
 	db $38, $40, $78, $90, $05, $04, $61, $74, $00
-ObjectAnim_02e_6aba:
+ObjectAnim_02e_6aba::
 	dw ObjectAnimFrame_02e_6a8d
 	dw ObjectAnimFrame_02e_6ac4
 	dw ObjectAnimFrame_02e_6acd
 	dw ObjectAnimFrame_02e_6ad6
 	dw ObjectAnimFrame_02e_6adf
-ObjectAnimFrame_02e_6ac4:
+ObjectAnimFrame_02e_6ac4::
 	db $2c, $20, $60, $70, $04, $05, $82, $74, $00
-ObjectAnimFrame_02e_6acd:
+ObjectAnimFrame_02e_6acd::
 	db $1c, $30, $50, $80, $05, $04, $a3, $74, $00
-ObjectAnimFrame_02e_6ad6:
+ObjectAnimFrame_02e_6ad6::
 	db $1c, $20, $50, $70, $04, $05, $c4, $74, $00
-ObjectAnimFrame_02e_6adf:
+ObjectAnimFrame_02e_6adf::
 	db $2c, $30, $60, $80, $05, $04, $e5, $74, $00
-ObjectAnim_02e_6ae8:
+ObjectAnim_02e_6ae8::
 	dw ObjectAnimFrame_02e_6aec
 	dw ObjectAnimFrame_02e_6af5
-ObjectAnimFrame_02e_6aec:
+ObjectAnimFrame_02e_6aec::
 	db $40, $68, $10, $18, $04, $06, $96, $7d, $00
-ObjectAnimFrame_02e_6af5:
+ObjectAnimFrame_02e_6af5::
 	db $58, $70, $28, $28, $07, $09, $96, $7d, $00
-ObjectAnim_02e_6afe:
+ObjectAnim_02e_6afe::
 	dw ObjectAnimFrame_02e_6b02
 	dw ObjectAnimFrame_02e_6b0b
-ObjectAnimFrame_02e_6b02:
+ObjectAnimFrame_02e_6b02::
 	db $48, $68, $18, $18, $01, $03, $00, $00, $00
-ObjectAnimFrame_02e_6b0b:
+ObjectAnimFrame_02e_6b0b::
 	db $48, $68, $20, $20, $04, $06, $00, $00, $00
-ObjectAnim_02e_6b14:
+ObjectAnim_02e_6b14::
 	dw ObjectAnimFrame_02e_6b18
 	dw ObjectAnimFrame_02e_6b21
-ObjectAnimFrame_02e_6b18:
+ObjectAnimFrame_02e_6b18::
 	db $10, $18, $40, $68, $05, $08, $06, $75, $00
-ObjectAnimFrame_02e_6b21:
+ObjectAnimFrame_02e_6b21::
 	db $30, $f8, $60, $88, $09, $0a, $06, $75, $00
-ObjectAnim_02e_6b2a:
+ObjectAnim_02e_6b2a::
 	dw ObjectAnimFrame_02e_6b2e
 	dw ObjectAnimFrame_02e_6b37
-ObjectAnimFrame_02e_6b2e:
+ObjectAnimFrame_02e_6b2e::
 	db $40, $d0, $10, $a0, $05, $08, $5f, $75, $00
-ObjectAnimFrame_02e_6b37:
+ObjectAnimFrame_02e_6b37::
 	db $60, $b0, $30, $d0, $09, $0a, $5f, $75, $00
-ObjectAnim_02e_6b40:
+ObjectAnim_02e_6b40::
 	dw ObjectAnimFrame_02e_6b42
-ObjectAnimFrame_02e_6b42:
+ObjectAnimFrame_02e_6b42::
 	db $28, $68, $f0, $18, $01, $04, $a4, $71, $00
-ObjectAnim_02e_6b4b:
+ObjectAnim_02e_6b4b::
 	dw ObjectAnimFrame_02e_6b4d
-ObjectAnimFrame_02e_6b4d:
+ObjectAnimFrame_02e_6b4d::
 	db $40, $88, $08, $38, $01, $04, $a4, $71, $00
-ObjectAnim_02e_6b56:
+ObjectAnim_02e_6b56::
 	dw ObjectAnimFrame_02e_6b58
-ObjectAnimFrame_02e_6b58:
+ObjectAnimFrame_02e_6b58::
 	db $38, $78, $00, $28, $01, $04, $a4, $71, $00
-ObjectAnim_02e_6b61:
+ObjectAnim_02e_6b61::
 	dw ObjectAnimFrame_02e_6b65
 	dw ObjectAnimFrame_02e_6b6e
-ObjectAnimFrame_02e_6b65:
+ObjectAnimFrame_02e_6b65::
 	db $20, $18, $50, $68, $01, $04, $06, $75, $00
-ObjectAnimFrame_02e_6b6e:
+ObjectAnimFrame_02e_6b6e::
 	db $30, $f8, $60, $88, $05, $06, $06, $75, $00
-ObjectAnim_02e_6b77:
+ObjectAnim_02e_6b77::
 	dw ObjectAnimFrame_02e_6b7b
 	dw ObjectAnimFrame_02e_6b84
-ObjectAnimFrame_02e_6b7b:
+ObjectAnimFrame_02e_6b7b::
 	db $50, $d0, $20, $a0, $01, $04, $5f, $75, $00
-ObjectAnimFrame_02e_6b84:
+ObjectAnimFrame_02e_6b84::
 	db $60, $b0, $30, $d0, $05, $06, $5f, $75, $00
-ObjectAnim_02e_6b8d:
+ObjectAnim_02e_6b8d::
 	dw ObjectAnimFrame_02e_6b8f
-ObjectAnimFrame_02e_6b8f:
+ObjectAnimFrame_02e_6b8f::
 	db $10, $18, $40, $68, $01, $02, $32, $71, $00
-ObjectAnim_02e_6b98:
+ObjectAnim_02e_6b98::
 	dw ObjectAnimFrame_02e_6b9a
-ObjectAnimFrame_02e_6b9a:
+ObjectAnimFrame_02e_6b9a::
 	db $20, $28, $50, $68, $04, $00, $fa, $6e, $00
-ObjectAnim_02e_6ba3:
+ObjectAnim_02e_6ba3::
 	dw ObjectAnimFrame_02e_6ba5
-ObjectAnimFrame_02e_6ba5:
+ObjectAnimFrame_02e_6ba5::
 	db $38, $6c, $10, $24, $01, $03, $1f, $74, $00
-ObjectAnim_02e_6bae:
+ObjectAnim_02e_6bae::
 	dw ObjectAnimFrame_02e_6bb0
-ObjectAnimFrame_02e_6bb0:
+ObjectAnimFrame_02e_6bb0::
 	db $48, $70, $18, $20, $01, $03, $00, $00, $00
-ObjectAnim_02e_6bb9:
+ObjectAnim_02e_6bb9::
 	dw ObjectAnimFrame_02e_6bbb
-ObjectAnimFrame_02e_6bbb:
+ObjectAnimFrame_02e_6bbb::
 	db $28, $74, $f8, $24, $01, $01, $a4, $71, $00
-ObjectAnim_02e_6bc4:
+ObjectAnim_02e_6bc4::
 	dw ObjectAnimFrame_02e_6bc6
-ObjectAnimFrame_02e_6bc6:
+ObjectAnimFrame_02e_6bc6::
 	db $28, $48, $f8, $f8, $01, $01, $c5, $71, $00
-ObjectAnim_02e_6bcf:
+ObjectAnim_02e_6bcf::
 	dw ObjectAnimFrame_02e_6bd1
-ObjectAnimFrame_02e_6bd1:
+ObjectAnimFrame_02e_6bd1::
 	db $28, $a4, $f8, $54, $01, $01, $e6, $71, $00
-ObjectAnim_02e_6bda:
+ObjectAnim_02e_6bda::
 	dw ObjectAnimFrame_02e_6bdc
-ObjectAnimFrame_02e_6bdc:
+ObjectAnimFrame_02e_6bdc::
 	db $18, $20, $48, $70, $01, $04, $32, $71, $00
-ObjectAnim_02e_6be5:
+ObjectAnim_02e_6be5::
 	dw ObjectAnimFrame_02e_6be7
-ObjectAnimFrame_02e_6be7:
+ObjectAnimFrame_02e_6be7::
 	db $28, $68, $00, $18, $01, $04, $fc, $76, $00
-ObjectAnim_02e_6bf0:
+ObjectAnim_02e_6bf0::
 	dw ObjectAnimFrame_02e_6bf2
-ObjectAnimFrame_02e_6bf2:
+ObjectAnimFrame_02e_6bf2::
 	db $20, $78, $f8, $28, $01, $04, $5f, $77, $00
-ObjectAnim_02e_6bfb:
+ObjectAnim_02e_6bfb::
 	dw ObjectAnimFrame_02e_6bff
 	dw ObjectAnimFrame_02e_6c08
-ObjectAnimFrame_02e_6bff:
+ObjectAnimFrame_02e_6bff::
 	db $38, $68, $08, $10, $01, $03, $e6, $71, $00
-ObjectAnimFrame_02e_6c08:
+ObjectAnimFrame_02e_6c08::
 	db $38, $68, $08, $10, $04, $06, $c5, $71, $00
-ObjectAnim_02e_6c11:
+ObjectAnim_02e_6c11::
 	dw ObjectAnimFrame_02e_6c13
-ObjectAnimFrame_02e_6c13:
+ObjectAnimFrame_02e_6c13::
 	db $20, $78, $f0, $28, $01, $02, $a4, $71, $00
-ObjectAnim_02e_6c1c:
+ObjectAnim_02e_6c1c::
 	dw ObjectAnimFrame_02e_6c1e
-ObjectAnimFrame_02e_6c1e:
+ObjectAnimFrame_02e_6c1e::
 	db $20, $60, $f0, $10, $01, $02, $a4, $71, $00
-ObjectAnim_02e_6c27:
+ObjectAnim_02e_6c27::
 	dw ObjectAnimFrame_02e_6c29
-ObjectAnimFrame_02e_6c29:
+ObjectAnimFrame_02e_6c29::
 	db $18, $70, $e8, $30, $01, $02, $a4, $71, $00
-ObjectAnim_02e_6c32:
+ObjectAnim_02e_6c32::
 	dw ObjectAnimFrame_02e_6c34
-ObjectAnimFrame_02e_6c34:
+ObjectAnimFrame_02e_6c34::
 	db $28, $80, $f8, $30, $01, $02, $a4, $71, $00
-ObjectAnim_02e_6c3d:
+ObjectAnim_02e_6c3d::
 	dw ObjectAnimFrame_02e_6c3f
-ObjectAnimFrame_02e_6c3f:
+ObjectAnimFrame_02e_6c3f::
 	db $18, $20, $48, $70, $01, $06, $32, $71, $00
-ObjectAnim_02e_6c48:
+ObjectAnim_02e_6c48::
 	dw ObjectAnimFrame_02e_6c4a
-ObjectAnimFrame_02e_6c4a:
+ObjectAnimFrame_02e_6c4a::
 	db $68, $68, $38, $18, $01, $04, $c2, $77, $00
-ObjectAnim_02e_6c53:
+ObjectAnim_02e_6c53::
 	dw ObjectAnimFrame_02e_6c55
-ObjectAnimFrame_02e_6c55:
+ObjectAnimFrame_02e_6c55::
 	db $18, $20, $48, $70, $01, $04, $32, $71, $00
-ObjectAnim_02e_6c5e:
+ObjectAnim_02e_6c5e::
 	dw ObjectAnimFrame_02e_6c60
-ObjectAnimFrame_02e_6c60:
+ObjectAnimFrame_02e_6c60::
 	db $40, $74, $30, $24, $01, $07, $eb, $77, $00
-ObjectAnim_02e_6c69:
+ObjectAnim_02e_6c69::
 	dw ObjectAnimFrame_02e_6c6b
-ObjectAnimFrame_02e_6c6b:
+ObjectAnimFrame_02e_6c6b::
 	db $58, $6c, $30, $24, $01, $03, $eb, $77, $00
-ObjectAnim_02e_6c74:
+ObjectAnim_02e_6c74::
 	dw ObjectAnimFrame_02e_6c80
 	dw ObjectAnimFrame_02e_6c89
-ObjectAnim_02e_6c78:
+ObjectAnim_02e_6c78::
 	dw ObjectAnimFrame_02e_6c92
 	dw ObjectAnimFrame_02e_6c9b
-ObjectAnim_02e_6c7c:
+ObjectAnim_02e_6c7c::
 	dw ObjectAnimFrame_02e_6ca4
 	dw ObjectAnimFrame_02e_6cad
-ObjectAnimFrame_02e_6c80:
+ObjectAnimFrame_02e_6c80::
 	db $28, $88, $f8, $38, $01, $02, $e6, $71, $00
-ObjectAnimFrame_02e_6c89:
+ObjectAnimFrame_02e_6c89::
 	db $38, $90, $08, $40, $02, $03, $e6, $71, $00
-ObjectAnimFrame_02e_6c92:
+ObjectAnimFrame_02e_6c92::
 	db $40, $88, $10, $38, $01, $03, $e6, $71, $00
-ObjectAnimFrame_02e_6c9b:
+ObjectAnimFrame_02e_6c9b::
 	db $50, $90, $20, $40, $02, $03, $e6, $71, $00
-ObjectAnimFrame_02e_6ca4:
+ObjectAnimFrame_02e_6ca4::
 	db $30, $88, $00, $38, $01, $03, $e6, $71, $00
-ObjectAnimFrame_02e_6cad:
+ObjectAnimFrame_02e_6cad::
 	db $38, $a8, $08, $58, $02, $03, $e6, $71, $00
-ObjectAnim_02e_6cb6:
+ObjectAnim_02e_6cb6::
 	dw ObjectAnimFrame_02e_6cb8
-ObjectAnimFrame_02e_6cb8:
+ObjectAnimFrame_02e_6cb8::
 	db $18, $20, $48, $70, $01, $01, $32, $71, $00
-ObjectAnim_02e_6cc1:
+ObjectAnim_02e_6cc1::
 	dw ObjectAnimFrame_02e_6cc3
-ObjectAnimFrame_02e_6cc3:
+ObjectAnimFrame_02e_6cc3::
 	db $50, $68, $20, $18, $01, $04, $83, $71, $00
-ObjectAnim_02e_6ccc:
+ObjectAnim_02e_6ccc::
 	dw ObjectAnimFrame_02e_6cce
-ObjectAnimFrame_02e_6cce:
+ObjectAnimFrame_02e_6cce::
 	db $40, $78, $10, $28, $01, $04, $83, $71, $00
-ObjectAnim_02e_6cd7:
+ObjectAnim_02e_6cd7::
 	dw ObjectAnimFrame_02e_6cd9
-ObjectAnimFrame_02e_6cd9:
+ObjectAnimFrame_02e_6cd9::
 	db $48, $88, $18, $38, $01, $04, $83, $71, $00
-ObjectAnim_02e_6ce2:
+ObjectAnim_02e_6ce2::
 	dw ObjectAnimFrame_02e_6ce4
-ObjectAnimFrame_02e_6ce4:
+ObjectAnimFrame_02e_6ce4::
 	db $20, $68, $00, $18, $01, $04, $66, $78, $00
-ObjectAnim_02e_6ced:
+ObjectAnim_02e_6ced::
 	dw ObjectAnimFrame_02e_6cef
-ObjectAnimFrame_02e_6cef:
+ObjectAnimFrame_02e_6cef::
 	db $20, $88, $10, $38, $01, $04, $a9, $78, $00
-ObjectAnim_02e_6cf8:
+ObjectAnim_02e_6cf8::
 	dw ObjectAnimFrame_02e_6cfa
-ObjectAnimFrame_02e_6cfa:
+ObjectAnimFrame_02e_6cfa::
 	db $28, $70, $08, $20, $01, $04, $66, $78, $00
-ObjectAnim_02e_6d03:
+ObjectAnim_02e_6d03::
 	dw ObjectAnimFrame_02e_6d05
-ObjectAnimFrame_02e_6d05:
+ObjectAnimFrame_02e_6d05::
 	db $30, $80, $00, $30, $01, $04, $a9, $78, $00
-ObjectAnim_02e_6d0e:
+ObjectAnim_02e_6d0e::
 	dw ObjectAnimFrame_02e_6d10
-ObjectAnimFrame_02e_6d10:
+ObjectAnimFrame_02e_6d10::
 	db $10, $10, $48, $70, $01, $04, $ec, $78, $00
-ObjectAnim_02e_6d19:
+ObjectAnim_02e_6d19::
 	dw ObjectAnimFrame_02e_6d1f
 	dw ObjectAnimFrame_02e_6d28
 	dw ObjectAnimFrame_02e_6d31
-ObjectAnimFrame_02e_6d1f:
+ObjectAnimFrame_02e_6d1f::
 	db $40, $68, $10, $18, $01, $02, $53, $79, $00
-ObjectAnimFrame_02e_6d28:
+ObjectAnimFrame_02e_6d28::
 	db $50, $88, $20, $38, $01, $04, $1c, $7a, $00
-ObjectAnimFrame_02e_6d31:
+ObjectAnimFrame_02e_6d31::
 	db $60, $68, $30, $18, $03, $04, $53, $79, $00
-ObjectAnim_02e_6d3a:
+ObjectAnim_02e_6d3a::
 	dw ObjectAnimFrame_02e_6d3c
-ObjectAnimFrame_02e_6d3c:
+ObjectAnimFrame_02e_6d3c::
 	db $38, $60, $08, $10, $01, $03, $c5, $71, $00
-ObjectAnim_02e_6d45:
+ObjectAnim_02e_6d45::
 	dw ObjectAnimFrame_02e_6d47
-ObjectAnimFrame_02e_6d47:
+ObjectAnimFrame_02e_6d47::
 	db $10, $18, $40, $68, $01, $03, $32, $71, $00
-ObjectAnim_02e_6d50:
+ObjectAnim_02e_6d50::
 	dw ObjectAnimFrame_02e_6d52
-ObjectAnimFrame_02e_6d52:
+ObjectAnimFrame_02e_6d52::
 	db $30, $50, $f0, $00, $01, $03, $e5, $7a, $00
-ObjectAnim_02e_6d5b:
+ObjectAnim_02e_6d5b::
 	dw ObjectAnimFrame_02e_6d5d
-ObjectAnimFrame_02e_6d5d:
+ObjectAnimFrame_02e_6d5d::
 	db $30, $18, $58, $68, $01, $03, $83, $71, $00
-ObjectAnim_02e_6d66:
+ObjectAnim_02e_6d66::
 	dw ObjectAnimFrame_02e_6d68
-ObjectAnimFrame_02e_6d68:
+ObjectAnimFrame_02e_6d68::
 	db $30, $18, $58, $68, $01, $03, $16, $7b, $00
-ObjectAnim_02e_6d71:
+ObjectAnim_02e_6d71::
 	dw ObjectAnimFrame_02e_6d73
-ObjectAnimFrame_02e_6d73:
+ObjectAnimFrame_02e_6d73::
 	db $30, $18, $58, $68, $01, $03, $37, $7b, $00
-ObjectAnim_02e_6d7c:
+ObjectAnim_02e_6d7c::
 	dw ObjectAnimFrame_02e_6d7e
-ObjectAnimFrame_02e_6d7e:
+ObjectAnimFrame_02e_6d7e::
 	db $20, $68, $f0, $20, $04, $07, $a4, $71, $00
-ObjectAnim_02e_6d87:
+ObjectAnim_02e_6d87::
 	dw ObjectAnimFrame_02e_6d89
-ObjectAnimFrame_02e_6d89:
+ObjectAnimFrame_02e_6d89::
 	db $60, $68, $30, $20, $04, $07, $83, $71, $00
-ObjectAnim_02e_6d92:
+ObjectAnim_02e_6d92::
 	dw ObjectAnimFrame_02e_6d94
-ObjectAnimFrame_02e_6d94:
+ObjectAnimFrame_02e_6d94::
 	db $38, $40, $10, $00, $04, $07, $58, $7b, $00
-ObjectAnim_02e_6d9d:
+ObjectAnim_02e_6d9d::
 	dw ObjectAnimFrame_02e_6d9f
-ObjectAnimFrame_02e_6d9f:
+ObjectAnimFrame_02e_6d9f::
 	db $38, $60, $08, $10, $08, $0a, $c5, $71, $00
-ObjectAnim_02e_6da8:
+ObjectAnim_02e_6da8::
 	dw ObjectAnimFrame_02e_6daa
-ObjectAnimFrame_02e_6daa:
+ObjectAnimFrame_02e_6daa::
 	db $08, $b0, $d8, $68, $01, $03, $9a, $7b, $00
-ObjectAnim_02e_6db3:
+ObjectAnim_02e_6db3::
 	dw ObjectAnimFrame_02e_6db5
-ObjectAnimFrame_02e_6db5:
+ObjectAnimFrame_02e_6db5::
 	db $08, $d8, $d8, $90, $01, $03, $9a, $7b, $00
-ObjectAnim_02e_6dbe:
+ObjectAnim_02e_6dbe::
 	dw ObjectAnimFrame_02e_6dc0
-ObjectAnimFrame_02e_6dc0:
+ObjectAnimFrame_02e_6dc0::
 	db $08, $c8, $d8, $80, $01, $03, $9a, $7b, $00
-ObjectAnim_02e_6dc9:
+ObjectAnim_02e_6dc9::
 	dw ObjectAnimFrame_02e_6dcb
-ObjectAnimFrame_02e_6dcb:
+ObjectAnimFrame_02e_6dcb::
 	db $10, $08, $40, $58, $01, $00, $83, $71, $00
-ObjectAnim_02e_6dd4:
+ObjectAnim_02e_6dd4::
 	dw ObjectAnimFrame_02e_6dd6
-ObjectAnimFrame_02e_6dd6:
+ObjectAnimFrame_02e_6dd6::
 	db $60, $58, $30, $08, $01, $03, $53, $79, $00
-ObjectAnim_02e_6ddf:
+ObjectAnim_02e_6ddf::
 	dw ObjectAnimFrame_02e_6de1
-ObjectAnimFrame_02e_6de1:
+ObjectAnimFrame_02e_6de1::
 	db $10, $10, $48, $70, $07, $0a, $b1, $7c, $00
-ObjectAnim_02e_6dea:
+ObjectAnim_02e_6dea::
 	dw ObjectAnimFrame_02e_6dec
-ObjectAnimFrame_02e_6dec:
+ObjectAnimFrame_02e_6dec::
 	db $50, $58, $20, $08, $01, $03, $53, $79, $00
-ObjectAnim_02e_6df5:
+ObjectAnim_02e_6df5::
 	dw ObjectAnimFrame_02e_6df7
-ObjectAnimFrame_02e_6df7:
+ObjectAnimFrame_02e_6df7::
 	db $20, $20, $50, $70, $01, $03, $08, $7d, $00
-ObjectAnim_02e_6e00:
+ObjectAnim_02e_6e00::
 	dw ObjectAnimFrame_02e_6e02
-ObjectAnimFrame_02e_6e02:
+ObjectAnimFrame_02e_6e02::
 	db $28, $20, $58, $70, $04, $05, $83, $71, $00
-ObjectAnim_02e_6e0b:
+ObjectAnim_02e_6e0b::
 	dw ObjectAnimFrame_02e_6e0d
-ObjectAnimFrame_02e_6e0d:
+ObjectAnimFrame_02e_6e0d::
 	db $48, $68, $18, $18, $01, $03, $00, $00, $00
-ObjectAnim_02e_6e16:
+ObjectAnim_02e_6e16::
 	dw ObjectAnimFrame_02e_6e18
-ObjectAnimFrame_02e_6e18:
+ObjectAnimFrame_02e_6e18::
 	db $48, $70, $18, $20, $04, $06, $00, $00, $00
-ObjectAnim_02e_6e21:
+ObjectAnim_02e_6e21::
 	dw ObjectAnimFrame_02e_6e23
-ObjectAnimFrame_02e_6e23:
+ObjectAnimFrame_02e_6e23::
 	db $50, $64, $20, $14, $01, $02, $83, $71, $00
-ObjectAnim_02e_6e2c:
+ObjectAnim_02e_6e2c::
 	dw ObjectAnimFrame_02e_6e2e
-ObjectAnimFrame_02e_6e2e:
+ObjectAnimFrame_02e_6e2e::
 	db $40, $68, $10, $18, $03, $08, $00, $00, $00
-ObjectAnim_02e_6e37:
+ObjectAnim_02e_6e37::
 	dw ObjectAnimFrame_02e_6e39
-ObjectAnimFrame_02e_6e39:
+ObjectAnimFrame_02e_6e39::
 	db $38, $60, $08, $10, $01, $04, $c5, $71, $00
-Func_02e_6e42:
+Func_02e_6e42::
 	ld hl, wd1a0
 	ld c, $40
 	xor a

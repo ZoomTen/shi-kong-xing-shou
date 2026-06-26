@@ -1,4 +1,4 @@
-G6_01_MapAttributes:
+G6_01_MapAttributes::
 	map_attr G6_01, \
 	   Layout_06a_4028, \
 	   Blocks_06a_410a, \
@@ -8,7 +8,7 @@ G6_01_MapAttributes:
 	   0, Tileset_84, \
 	   Collision_06a_48e9
 
-KingkongMountain_MapAttributes:
+KingkongMountain_MapAttributes::
 	map_attr KINGKONG_MOUNTAIN, \
 	   Layout_06a_43a2, \
 	   Blocks_06a_4558, \
@@ -36,7 +36,7 @@ Palettes_06a_48a1::
 Collision_06a_48e9::
 	INCBIN "data/maps/collision/Collision_06a_48e9.bin"
 
-G6_03_MapAttributes:
+G6_03_MapAttributes::
 	map_attr G6_03, \
 	   Layout_06a_4983, \
 	   Blocks_06a_49e8, \
@@ -46,7 +46,7 @@ G6_03_MapAttributes:
 	   0, Tileset_85, \
 	   Collision_06a_529f
 
-G6_04_MapAttributes:
+G6_04_MapAttributes::
 	map_attr G6_04, \
 	   Layout_06a_4b00, \
 	   Blocks_06a_4b65, \
@@ -56,7 +56,7 @@ G6_04_MapAttributes:
 	   0, Tileset_85, \
 	   Collision_06a_529f
 
-G6_05_MapAttributes:
+G6_05_MapAttributes::
 	map_attr G6_05, \
 	   Layout_06a_4cad, \
 	   Blocks_06a_4d12, \
@@ -66,7 +66,7 @@ G6_05_MapAttributes:
 	   0, Tileset_85, \
 	   Collision_06a_529f
 
-G6_06_MapAttributes:
+G6_06_MapAttributes::
 	map_attr G6_06, \
 	   Layout_06a_4e5e, \
 	   Blocks_06a_4ec3, \
@@ -76,7 +76,7 @@ G6_06_MapAttributes:
 	   0, Tileset_85, \
 	   Collision_06a_529f
 
-G7_06_MapAttributes:
+G7_06_MapAttributes::
 	map_attr G7_06, \
 	   Layout_06a_4ffb, \
 	   Blocks_06a_515c, \
@@ -119,7 +119,7 @@ Palettes_06a_5257::
 Collision_06a_529f::
 	INCBIN "data/maps/collision/Collision_06a_529f.bin"
 
-G6_08_MapAttributes:
+G6_08_MapAttributes::
 	map_attr G6_08, \
 	   Layout_06a_533f, \
 	   Blocks_06a_53d6, \
@@ -129,7 +129,7 @@ G6_08_MapAttributes:
 	   0, Tileset_86, \
 	   Collision_06a_5f0f
 
-G6_09_MapAttributes:
+G6_09_MapAttributes::
 	map_attr G6_09, \
 	   Layout_06a_55e2, \
 	   Blocks_06a_5679, \
@@ -139,7 +139,7 @@ G6_09_MapAttributes:
 	   0, Tileset_86, \
 	   Collision_06a_5f0f
 
-G6_0A_MapAttributes:
+G6_0A_MapAttributes::
 	map_attr G6_0A, \
 	   Layout_06a_58a1, \
 	   Blocks_06a_5938, \
@@ -149,7 +149,7 @@ G6_0A_MapAttributes:
 	   0, Tileset_86, \
 	   Collision_06a_5f0f
 
-EndingEpilogue_MapAttributes:
+EndingEpilogue_MapAttributes::
 	map_attr ENDING_EPILOGUE, \
 	   Layout_06a_5b3c, \
 	   Blocks_06a_5c6b, \
@@ -187,7 +187,7 @@ Palettes_06a_5ec7::
 Collision_06a_5f0f::
 	INCBIN "data/maps/collision/Collision_06a_5f0f.bin"
 
-BaalCapital_0c_MapAttributes:
+BaalCapital_0c_MapAttributes::
 	map_attr BAAL_CAPITAL_0C, \
 	   Layout_06a_5f4a, \
 	   Blocks_06a_615d, \
@@ -210,7 +210,7 @@ Palettes_06a_6479::
 Collision_06a_64c1::
 	INCBIN "data/maps/collision/Collision_06a_64c1.bin"
 
-G6_0D_MapAttributes:
+G6_0D_MapAttributes::
 	map_attr G6_0D, \
 	   Layout_06a_6517, \
 	   Blocks_06a_65ae, \
@@ -233,7 +233,7 @@ Palettes_06a_6639::
 Collision_06a_6681::
 	INCBIN "data/maps/collision/Collision_06a_6681.bin"
 
-G6_0E_MapAttributes:
+G6_0E_MapAttributes::
 	map_attr G6_0E, \
 	   Layout_06a_66b4, \
 	   Blocks_06a_6739, \
@@ -256,7 +256,7 @@ Palettes_06a_67fc::
 Collision_06a_6844::
 	INCBIN "data/maps/collision/Collision_06a_6844.bin"
 
-G6_0F_MapAttributes:
+G6_0F_MapAttributes::
 	map_attr G6_0F, \
 	   Layout_06a_686b, \
 	   Blocks_06a_6962, \
@@ -279,7 +279,7 @@ Palettes_06a_6a21::
 Collision_06a_6a69::
 	INCBIN "data/maps/collision/Collision_06a_6a69.bin"
 
-G6_10_MapAttributes:
+G6_10_MapAttributes::
 	map_attr G6_10, \
 	   Layout_06a_6b3b, \
 	   Blocks_06a_6b5a, \
@@ -289,7 +289,7 @@ G6_10_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_11_MapAttributes:
+G6_11_MapAttributes::
 	map_attr G6_11, \
 	   Layout_06a_6bbe, \
 	   Blocks_06a_6bdd, \
@@ -299,7 +299,7 @@ G6_11_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_12_MapAttributes:
+G6_12_MapAttributes::
 	map_attr G6_12, \
 	   Layout_06a_6c3d, \
 	   Blocks_06a_6c5c, \
@@ -309,7 +309,7 @@ G6_12_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_13_MapAttributes:
+G6_13_MapAttributes::
 	map_attr G6_13, \
 	   Layout_06a_6cbc, \
 	   Blocks_06a_6cdb, \
@@ -319,7 +319,7 @@ G6_13_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_14_MapAttributes:
+G6_14_MapAttributes::
 	map_attr G6_14, \
 	   Layout_06a_6d3f, \
 	   Blocks_06a_6d5e, \
@@ -329,7 +329,7 @@ G6_14_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_15_MapAttributes:
+G6_15_MapAttributes::
 	map_attr G6_15, \
 	   Layout_06a_6dca, \
 	   Blocks_06a_6de9, \
@@ -339,7 +339,7 @@ G6_15_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_16_MapAttributes:
+G6_16_MapAttributes::
 	map_attr G6_16, \
 	   Layout_06a_6e4d, \
 	   Blocks_06a_6e6c, \
@@ -349,7 +349,7 @@ G6_16_MapAttributes:
 	   0, Tileset_91, \
 	   Collision_06a_70c5
 
-G6_17_MapAttributes:
+G6_17_MapAttributes::
 	map_attr G6_17, \
 	   Layout_06a_6ed0, \
 	   Blocks_06a_6fb7, \
@@ -407,7 +407,7 @@ Palettes_06a_707d::
 Collision_06a_70c5::
 	INCBIN "data/maps/collision/Collision_06a_70c5.bin"
 
-G6_18_MapAttributes:
+G6_18_MapAttributes::
 	map_attr G6_18, \
 	   Layout_06a_710c, \
 	   Blocks_06a_71f9, \
@@ -430,7 +430,7 @@ Palettes_06a_738a::
 Collision_06a_73d2::
 	INCBIN "data/maps/collision/Collision_06a_73d2.bin"
 
-G6_19_MapAttributes:
+G6_19_MapAttributes::
 	map_attr G6_19, \
 	   Layout_06a_7459, \
 	   Blocks_06a_7478, \
@@ -440,7 +440,7 @@ G6_19_MapAttributes:
 	   0, Tileset_93, \
 	   Collision_06a_7864
 
-G6_1A_MapAttributes:
+G6_1A_MapAttributes::
 	map_attr G6_1A, \
 	   Layout_06a_74bc, \
 	   Blocks_06a_74db, \
@@ -450,7 +450,7 @@ G6_1A_MapAttributes:
 	   0, Tileset_93, \
 	   Collision_06a_7864
 
-G6_1B_MapAttributes:
+G6_1B_MapAttributes::
 	map_attr G6_1B, \
 	   Layout_06a_7517, \
 	   Blocks_06a_7536, \
@@ -460,7 +460,7 @@ G6_1B_MapAttributes:
 	   0, Tileset_93, \
 	   Collision_06a_7864
 
-G6_1C_MapAttributes:
+G6_1C_MapAttributes::
 	map_attr G6_1C, \
 	   Layout_06a_7576, \
 	   Blocks_06a_7595, \
@@ -470,7 +470,7 @@ G6_1C_MapAttributes:
 	   0, Tileset_93, \
 	   Collision_06a_7864
 
-G6_1D_MapAttributes:
+G6_1D_MapAttributes::
 	map_attr G6_1D, \
 	   Layout_06a_75dd, \
 	   Blocks_06a_7744, \
@@ -513,7 +513,7 @@ Palettes_06a_781c::
 Collision_06a_7864::
 	INCBIN "data/maps/collision/Collision_06a_7864.bin"
 
-G6_1E_MapAttributes:
+G6_1E_MapAttributes::
 	map_attr G6_1E, \
 	   Layout_06a_78df, \
 	   Blocks_06a_793a, \
@@ -523,7 +523,7 @@ G6_1E_MapAttributes:
 	   0, Tileset_94, \
 	   Collision_06a_7b9f
 
-G6_1F_MapAttributes:
+G6_1F_MapAttributes::
 	map_attr G6_1F, \
 	   Layout_06a_7a22, \
 	   Blocks_06a_7a9f, \
@@ -551,7 +551,7 @@ Palettes_06a_7b57::
 Collision_06a_7b9f::
 	INCBIN "data/maps/collision/Collision_06a_7b9f.bin"
 
-G6_20_MapAttributes:
+G6_20_MapAttributes::
 	map_attr G6_20, \
 	   Layout_06a_7bca, \
 	   Blocks_06a_7c89, \
@@ -574,7 +574,7 @@ Palettes_06a_7d69::
 Collision_06a_7db1::
 	INCBIN "data/maps/collision/Collision_06a_7db1.bin"
 
-G7_01_MapAttributes:
+G7_01_MapAttributes::
 	map_attr G7_01, \
 	   Layout_06a_7dee, \
 	   Blocks_06a_7eb1, \

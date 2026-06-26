@@ -1,0 +1,11 @@
+G7_01_MapEvents::
+G7_02_MapEvents::
+G7_03_MapEvents::
+G7_04_MapEvents::
+G7_05_MapEvents::
+G7_06_MapEvents::
+G7_07_MapEvents::
+G7_08_MapEvents::
+G7_09_MapEvents::
+G7_0A_MapEvents::
+	events_end

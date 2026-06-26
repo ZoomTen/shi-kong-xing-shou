@@ -12,7 +12,7 @@ _UpdateVisibleObjects::
 
 	ld bc, wcd40
 
-Func_009_4010:
+Func_009_4010::
 	ld hl, $0002
 	add hl, bc
 	ld a, [hl]
@@ -54,7 +54,7 @@ Func_009_4010:
 	jp hl
 
 	dec [hl]
-Func_009_404e:
+Func_009_404e::
 	ldh a, [hFFD6]
 	and a
 	ret nz
@@ -66,7 +66,7 @@ Func_009_404e:
 	cp $E0
 	ret nc
 	jr Func_009_4010
-Func_009_405e:
+Func_009_405e::
 	ld hl, $0008
 	add hl, bc
 	ld a, [hl]
@@ -103,7 +103,7 @@ Func_009_405e:
 	ldh a, [hFFD6]
 	and a
 	jp z, Func_009_404e
-Func_009_4096:
+Func_009_4096::
 	ld hl, $0008
 	add hl, bc
 	ld [hl], $00
@@ -111,7 +111,7 @@ Func_009_4096:
 	ld [wScriptByte], a
 	ld [wd1e2], a
 	jp Func_009_404e
-Func_009_40a6:
+Func_009_40a6::
 	ld e, a
 	ld a, [hli]
 	ld d, a
@@ -126,7 +126,7 @@ Func_009_40a6:
 	inc hl
 	ld [hl], a
 	jp Func_009_404e
-Func_009_40b8:
+Func_009_40b8::
 	push hl
 	push de
 	and a
@@ -266,61 +266,61 @@ Func_009_40b8:
 	ret
 
 ; TODO: unk_ - indexed table (index wPlayerMap2Y)
-unk_009_4193:
+unk_009_4193::
 	db $01, $00, $ff, $00, $00, $ff, $00, $01
 ; TODO: pointer table into unk_009_41b5 records, indexed by object field $0008, *2
-Pointers_009_419b:
+Pointers_009_419b::
 	dw unk_009_41b5, unk_009_41b6, unk_009_41ba, unk_009_41be, unk_009_41c2, unk_009_41c6, unk_009_41d3
 	dw unk_009_41e0, unk_009_41f9, unk_009_4212, unk_009_4225, unk_009_4238, unk_009_424b
 ; TODO: unk_ - data, referenced via `; TODO: pointer table into unk_009_41b5 records, indexed by object field $0008, *2`
-unk_009_41b5:
+unk_009_41b5::
 	db $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41b6:
+unk_009_41b6::
 	db $01, $01, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41ba:
+unk_009_41ba::
 	db $01, $02, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41be:
+unk_009_41be::
 	db $01, $03, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41c2:
+unk_009_41c2::
 	db $01, $04, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41c6:
+unk_009_41c6::
 	db $3f, $02, $10, $7f, $02, $10, $3f, $01, $10, $3f, $01, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41d3:
+unk_009_41d3::
 	db $3f, $03, $10, $3f, $03, $10, $3f, $04, $10, $7f, $04, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41e0:
+unk_009_41e0::
 	db $1f, $03, $10, $1f, $03, $10, $1f, $01, $10, $1f, $04, $10, $1f, $04, $10, $1f
 	db $04, $10, $1f, $02, $10, $6f, $03, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_41f9:
+unk_009_41f9::
 	db $1f, $04, $10, $1f, $04, $10, $1f, $02, $10, $1f, $02, $10, $1f, $03, $10, $1f
 	db $03, $10, $1f, $01, $10, $1f, $01, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_4212:
+unk_009_4212::
 	db $3f, $02, $10, $3f, $02, $10, $1f, $03, $10, $1f, $01, $10, $2f, $01, $10, $6f
 	db $04, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_4225:
+unk_009_4225::
 	db $1f, $01, $10, $2f, $01, $10, $3f, $01, $10, $3f, $02, $10, $4f, $02, $10, $5f
 	db $02, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_4238:
+unk_009_4238::
 	db $4f, $04, $10, $3f, $04, $10, $2f, $04, $10, $1f, $03, $10, $2f, $03, $10, $3f
 	db $03, $10, $ff
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_009_424b:
+unk_009_424b::
 	db $3f, $03, $10, $3f, $04, $10, $ff
 ; TODO: action handlers indexed by object field $000f, *2; jumped via jp hl
-Jumptable_009_4252:
+Jumptable_009_4252::
 	dw Func_009_425c, Func_009_426f, Func_009_42a2, Func_009_42cd, Func_009_42fd
 
-Func_009_425c:
+Func_009_425c::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	jp nz, Func_009_404e
@@ -332,7 +332,7 @@ Func_009_425c:
 	dec [hl]
 	jp Func_009_404e
 
-Func_009_426f:
+Func_009_426f::
 	ld hl, $0011
 	add hl, bc
 	ld a, [hl]
@@ -359,13 +359,13 @@ Func_009_426f:
 	add hl, bc
 	ld [hl], $01
 	jp Func_009_404e
-Func_009_4299:
+Func_009_4299::
 	ld hl, $000F
 	add hl, bc
 	ld [hl], $00
 	jp Func_009_404e
 
-Func_009_42a2:
+Func_009_42a2::
 	ld hl, $0011
 	add hl, bc
 	ld a, [hl]
@@ -393,7 +393,7 @@ Func_009_42a2:
 	ld [hl], $01
 	jp Func_009_404e
 
-Func_009_42cd:
+Func_009_42cd::
 	ld hl, $0011
 	add hl, bc
 	ld a, [hl]
@@ -423,7 +423,7 @@ Func_009_42cd:
 	ld [hl], $01
 	jp Func_009_404e
 
-Func_009_42fd:
+Func_009_42fd::
 	ld hl, $0011
 	add hl, bc
 	ld a, [hl]

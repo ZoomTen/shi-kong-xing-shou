@@ -11,7 +11,7 @@ Func_026_4000::
 	call PrintMenuText
 	ret
 
-Func_026_4012:
+Func_026_4012::
 	ld a, [wd0c0]
 	add a
 	add a
@@ -67,37 +67,37 @@ Func_026_4012:
 	ret
 
 ; TODO: tilemap-record pointers for the move box, indexed by wd0c0 (slot 0-3)
-Pointers_026_4072:
+Pointers_026_4072::
 	dw Tilemap_026_407a
 	dw Tilemap_026_4092
 	dw Tilemap_026_40aa
 	dw Tilemap_026_40c2
 
 ; TODO: 4x4 tile arrangements for the move box (16 tiles + 8-byte trailer each)
-Tilemap_026_407a:
+Tilemap_026_407a::
 	db $a0, $a2, $a4, $a6, $a8, $aa, $ac, $ae, $a1, $a3, $a5, $a7, $a9, $ab, $ad, $af
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
-Tilemap_026_4092:
+Tilemap_026_4092::
 	db $b0, $b2, $b4, $b6, $b8, $ba, $bc, $be, $b1, $b3, $b5, $b7, $b9, $bb, $bd, $bf
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
-Tilemap_026_40aa:
+Tilemap_026_40aa::
 	db $c0, $c2, $c4, $c6, $c8, $ca, $cc, $ce, $c1, $c3, $c5, $c7, $c9, $cb, $cd, $cf
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
-Tilemap_026_40c2:
+Tilemap_026_40c2::
 	db $d0, $d2, $d4, $d6, $d8, $da, $dc, $de, $d1, $d3, $d5, $d7, $d9, $db, $dd, $df
 	db $00, $00, $00, $00, $00, $16, $00, $00
 
 ; TODO: move-box BG-map position pairs, indexed by wd0c0 (slot 0-3)
-Pointers_026_40da:
+Pointers_026_40da::
 	db $01, $02
 	db $01, $0b
 	db $05, $02
 	db $05, $0b
 
-MoveName_Pointers:
+MoveName_Pointers::
 	dw text_26_4200
 	dw text_26_4200
 	dw text_26_4205
@@ -244,7 +244,7 @@ MoveName_Pointers:
 
 INCLUDE "data/text/move_names.asm"
 
-Func_026_45b9:
+Func_026_45b9::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_45cf
@@ -285,7 +285,7 @@ Func_026_45b9:
 	ldh [hFFD4], a
 	ret
 
-Func_026_45f8:
+Func_026_45f8::
 	call GetPartyMonPtr
 	ld a, [bc]
 	and a
@@ -335,14 +335,14 @@ asm_026_4616::
 	call PrintMenuText
 	ret
 
-asm_026_464a:
+asm_026_464a::
 	call GetBoxMonPtr
 	jr asm_026_4652
 
-asm_026_464f:
+asm_026_464f::
 	call GetPartyMonPtr
 
-asm_026_4652:
+asm_026_4652::
 	ld a, [bc]
 	and a
 	ret z
@@ -370,7 +370,7 @@ asm_026_4652:
 	call PrintMenuText
 	ret
 
-asm_026_4680:
+asm_026_4680::
 	ld a, [wd0c0]
 	ld l, a
 	cp $a0
@@ -397,13 +397,13 @@ asm_026_4680:
 	call PrintMenuText
 	ret
 
-Tilemap_026_46ab:
+Tilemap_026_46ab::
 	db $27
 	db $28
 	db $29
 	db $2a
 
-asm_026_46af:
+asm_026_46af::
 	xor a
 	ld [wd0c1], a
 	ld bc, wMonBox
@@ -411,7 +411,7 @@ asm_026_46af:
 	and a
 	jr z, asm_026_46c5
 
-asm_026_46bc:
+asm_026_46bc::
 	ld hl, $13
 	add hl, bc
 	push hl
@@ -419,7 +419,7 @@ asm_026_46bc:
 	dec a
 	jr nz, asm_026_46bc
 
-asm_026_46c5:
+asm_026_46c5::
 	push bc
 	ld a, [bc]
 	and a
@@ -482,7 +482,7 @@ asm_026_46c5:
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 
-asm_026_4734:
+asm_026_4734::
 	pop bc
 	ld hl, $13
 	add hl, bc
@@ -659,7 +659,7 @@ MonNamePointers::
 
 INCLUDE "data/text/mon_names.asm"
 
-Func_026_4c89:
+Func_026_4c89::
 	ld a, [wd9d9]
 	ld l, a
 	ld h, 0
@@ -687,7 +687,7 @@ Func_026_4c89:
 	call CopyBytes3
 	ret
 
-Func_026_4cb6:
+Func_026_4cb6::
 	ld a, [wd9d9]
 	ld l, a
 	ld h, $00
@@ -725,7 +725,7 @@ Func_026_4cb6:
 
 
 ; TODO: loads a monster's palette (indexed by wd9e5) into wPaletteBuffer
-Func_026_4cef:
+Func_026_4cef::
 	ld a, [wd9e5]
 	ld l, a
 	ld h, $00
@@ -754,7 +754,7 @@ Func_026_4cef:
 	call LoadPalettes_BCPD
 	ret
 
-Func_026_4d1b:
+Func_026_4d1b::
 	ld a, [wd9e5]
 	ld l, a
 	ld h, $00
@@ -783,7 +783,7 @@ Func_026_4d1b:
 	call LoadPalettes_BCPD
 	ret
 
-Func_026_4d47:
+Func_026_4d47::
 	ld a, [wEnemyMonSpecies]
 	ld l, a
 	ld h, $00
@@ -815,7 +815,7 @@ Func_026_4d47:
 INCLUDE "data/monsters/palettes.asm"
 
 ; TODO: prints a monster's name (MonNamePointers, indexed by wd9d8)
-Func_026_53ab:
+Func_026_53ab::
 	ld a, [wd9d8]
 	inc a
 	ld l, a
@@ -830,7 +830,7 @@ Func_026_53ab:
 	ret
 
 ; TODO: 112-entry pointer table + glyph-sequence text (move-list style); indexer not yet found
-Pointers_026_53be:
+Pointers_026_53be::
 	dw text_26_549e
 	dw text_26_549e
 	dw text_26_54ae
@@ -947,7 +947,7 @@ Pointers_026_53be:
 ; TODO: glyph-sequence text reached via Pointers_026_53be
 INCLUDE "data/text/monster_53be.asm"
 ; TODO: prints menu option text indexed by wSelectedOption
-Func_026_54cc:
+Func_026_54cc::
 	ld de, PersonalityDesc_Pointers
 	ld a, [wSelectedOption]
 	ld l, a
@@ -960,7 +960,7 @@ Func_026_54cc:
 	call PrintMenuText
 	ret
 
-PersonalityDesc_Pointers:
+PersonalityDesc_Pointers::
 	dw text_26_54ee
 	dw text_26_550d
 	dw text_26_5530
@@ -973,7 +973,7 @@ PersonalityDesc_Pointers:
 INCLUDE "data/text/personality_desc.asm"
 
 ; seems to print a monster's move list, unreferenced
-Func_026_55b8:
+Func_026_55b8::
 	ld a, [wd9da + 1]
 	ld l, a
 	ld h, $00
@@ -1100,23 +1100,23 @@ Func_026_55b8:
 	dw Unk_026_56ee
 
 ; appears to be text, but no interpretation matches
-Unk_026_56a8:
+Unk_026_56a8::
 	db $f0, $a7, $f3, $b1, $f0, $20, $62, $f2, $2c, $05, $f1, $7c, $f0, $18, $f1, $5f
 	db $f6, $57, $f0, $58, $ed
 
-Unk_026_56bd:
+Unk_026_56bd::
 	db $f1, $59, $d5, $f3, $b1, $f0, $20, $62, $15, $f6, $58, $f3, $0c, $f0, $39, $f2
 	db $2c, $f0, $ac, $f2, $05, $f1, $7c, $f0, $18, $f1, $5f, $f6, $57, $f0, $06, $f1
 	db $92, $f0, $a0, $97, $19, $f2, $93, $f0, $18, $f2, $6d, $f6, $57, $f0, $0c, $58
 	db $ed
 
-Unk_026_56ee:
+Unk_026_56ee::
 	db $f1, $59, $d5, $f0, $bf, $26, $27, $28, $cd, $34, $31, $35, $f3, $0d, $f1, $1f
 	db $c5, $f0, $20, $b5, $f1, $11, $f0, $18, $f5, $df, $f0, $04, $06, $f1, $0c, $f0
 	db $1c, $58, $ed
 
 ; TODO: prints a monster's description text indexed by wd9d8
-Func_026_5711:
+Func_026_5711::
 	ld de, MonsterDesc_Pointers
 	ld a, [wd9d8]
 	inc a
@@ -1130,7 +1130,7 @@ Func_026_5711:
 	call PrintMenuText
 	ret
 
-MonsterDesc_Pointers:
+MonsterDesc_Pointers::
 	dw text_26_5864
 	dw text_26_5869
 	dw text_26_5886

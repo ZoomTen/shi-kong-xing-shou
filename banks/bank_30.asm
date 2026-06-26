@@ -127,7 +127,7 @@ Func_030_4027::
 	ld [wd993], a
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimID
-BattleAnimMoveParam_030_40f8:
+BattleAnimMoveParam_030_40f8::
 	db $00, $4b, $64, $5f, $64, $5a, $55, $37, $64, $55, $64, $00, $00, $37, $64, $64
 	db $64, $00, $00, $64, $64, $4b, $64, $64, $00, $5f, $55, $00, $64, $37, $64, $64
 	db $64, $64, $1e, $3c, $00, $50, $00, $00, $00, $00, $5a, $64, $64, $64, $5a, $19
@@ -137,7 +137,7 @@ BattleAnimMoveParam_030_40f8:
 	db $64, $64, $5a, $50, $46, $4b, $46, $64, $5f, $64, $64, $50, $50, $3c, $64, $50
 	db $3c, $46, $64, $55, $50, $50, $5a, $00, $5a, $50, $00, $5a, $5f, $64, $64, $00
 	db $37, $55, $00, $4b, $28, $00, $00, $00, $00, $37, $00, $00, $00, $64, $64
-Func_030_4187:
+Func_030_4187::
 	ld de, BattleAnimMoveParam_030_4214
 	ld a, [wBattleAnimID]
 	ld l, a
@@ -213,7 +213,7 @@ Func_030_4187:
 	ld a, $01
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wBattleAnimID
-BattleAnimMoveParam_030_4214:
+BattleAnimMoveParam_030_4214::
 	db $00, $00, $01, $00, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $00
 	db $03, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
@@ -225,7 +225,7 @@ BattleAnimMoveParam_030_4214:
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00
 
-Func_030_42ab:
+Func_030_42ab::
 	ld a, $01
 	ld [wd9b2], a
 	xor a
@@ -252,7 +252,7 @@ Func_030_42ab:
 	ld [wd9c7], a
 	ret
 
-Pointers_030_42db:
+Pointers_030_42db::
 	dw Pointers_030_42db_42ed
 	dw Pointers_030_42db_42ed
 	dw Pointers_030_42db_42f6
@@ -262,24 +262,24 @@ Pointers_030_42db:
 	dw Pointers_030_42db_431a
 	dw Pointers_030_42db_4323
 	dw Pointers_030_42db_432c
-Pointers_030_42db_42ed:
+Pointers_030_42db_42ed::
 	db $0a, $08, $05, $0a, $0a, $0a, $0a, $0d, $0a
-Pointers_030_42db_42f6:
+Pointers_030_42db_42f6::
 	db $0a, $0d, $08, $05, $0a, $0a, $0a, $0a, $0a
-Pointers_030_42db_42ff:
+Pointers_030_42db_42ff::
 	db $0a, $0a, $0d, $08, $0a, $0a, $0a, $05, $0a
-Pointers_030_42db_4308:
+Pointers_030_42db_4308::
 	db $0a, $0a, $0a, $0a, $08, $05, $0a, $0a, $0d
-Pointers_030_42db_4311:
+Pointers_030_42db_4311::
 	db $0a, $0a, $0a, $0a, $0d, $08, $05, $0a, $0a
-Pointers_030_42db_431a:
+Pointers_030_42db_431a::
 	db $0a, $0a, $0a, $0a, $0a, $0d, $08, $0a, $05
-Pointers_030_42db_4323:
+Pointers_030_42db_4323::
 	db $0a, $05, $0a, $0d, $0a, $0a, $0a, $08, $0a
-Pointers_030_42db_432c:
+Pointers_030_42db_432c::
 	db $0a, $0a, $0a, $0a, $05, $0a, $0d, $0a, $08
 
-Jumptable_030_4335:
+Jumptable_030_4335::
 	dw Func_030_4385
 	dw Func_030_4385
 	dw Func_030_4385
@@ -321,7 +321,7 @@ Jumptable_030_4335:
 	dw Func_030_4385
 	dw Func_030_4385
 
-Func_030_4385:
+Func_030_4385::
 	ld a, [wd993]
 	and a
 	jr nz, .asm_4395
@@ -388,7 +388,7 @@ Func_030_4385:
 	call Func_030_43ee
 	ret
 
-Func_030_43ee:
+Func_030_43ee::
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
@@ -415,7 +415,7 @@ Func_030_43ee:
 	ld [wMonBoxCount], a
 	ret
 
-SetCaughtMon:
+SetCaughtMon::
 	push de
 	push hl
 	ld hl, wd7cb
@@ -435,7 +435,7 @@ SetCaughtMon:
 	pop hl
 	ret
 
-Func_030_442a:
+Func_030_442a::
 	ld a, $01
 	ld [wd9b2], a
 	ld [wd9b5], a
@@ -447,7 +447,7 @@ Func_030_442a:
 	ld [wd3ff], a
 	ret
 
-Func_030_4442:
+Func_030_4442::
 	ld a, $06
 	ld [wd98b], a
 	ret
@@ -496,7 +496,7 @@ Func_030_4442:
 	ld [wd9b1], a
 	ret
 
-MoveEffectPointers:
+MoveEffectPointers::
 	dw Func_030_55a5 ; $00
 	dw Func_030_555c ; $01
 	dw Func_030_5603 ; $02
@@ -641,7 +641,7 @@ MoveEffectPointers:
 	dw Func_030_45fb ; $8d
 	dw Func_030_564a ; $8e
 
-Func_030_45c9:
+Func_030_45c9::
 	ld de, Pointers_030_565c
 	ld a, [wd98f]
 	ld l, a
@@ -660,7 +660,7 @@ Func_030_45c9:
 	call CopyBytesVRAM
 	ret
 
-Func_030_45e2:
+Func_030_45e2::
 	ld de, Pointers_030_58f8
 	ld a, [wd98f]
 	ld l, a
@@ -679,14 +679,14 @@ Func_030_45e2:
 	call CopyBytesVRAM
 	ret
 
-Func_030_45fb:
+Func_030_45fb::
 	ld a, $02
 	ld [wd98b], a
 	xor a
 	ld [wd9b5], a
 	ret
 
-Func_030_4605:
+Func_030_4605::
 	xor a
 	ld [wd9b2], a
 	ld a, $04
@@ -697,7 +697,7 @@ Func_030_4605:
 	ld [wd3ff], a
 	ret
 
-Func_030_4619:
+Func_030_4619::
 	xor a
 	ld [wd9b2], a
 	ld a, $04
@@ -708,7 +708,7 @@ Func_030_4619:
 	ld [wd3ff], a
 	ret
 
-Func_030_462d:
+Func_030_462d::
 	xor a
 	ld [wd9b2], a
 	ld a, $04
@@ -719,7 +719,7 @@ Func_030_462d:
 	ld [wd3ff], a
 	ret
 
-Func_030_4641:
+Func_030_4641::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -759,7 +759,7 @@ Func_030_4641:
 	ld [wd9b5], a
 	ret
 
-Func_030_4689:
+Func_030_4689::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -792,7 +792,7 @@ Func_030_4689:
 	ld [wd9e3], a
 	ret
 
-Func_030_46ce:
+Func_030_46ce::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -808,7 +808,7 @@ Func_030_46ce:
 	ld [wd98b], a
 	ret
 
-Func_030_46ed:
+Func_030_46ed::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -825,7 +825,7 @@ Func_030_46ed:
 	ld [wd98b], a
 	ret
 
-Func_030_470d:
+Func_030_470d::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_474d
@@ -908,7 +908,7 @@ Func_030_470d:
 	ld [wdb1c], a
 	ret
 
-Func_030_4793:
+Func_030_4793::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -961,7 +961,7 @@ Func_030_4793:
 	ld [hld], a
 	ret
 
-Func_030_47ee:
+Func_030_47ee::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -976,7 +976,7 @@ Func_030_47ee:
 	ld [wd9ba], a
 	jp Func_030_4a44
 
-Func_030_480b:
+Func_030_480b::
 	ld a, $4d
 	ld [wd3ff], a
 	xor a
@@ -1013,7 +1013,7 @@ Func_030_480b:
 	ld [wd3ff], a
 	ret
 
-Func_030_485d:
+Func_030_485d::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1025,7 +1025,7 @@ Func_030_485d:
 	ld [wd3ff], a
 	ret
 
-Func_030_4873:
+Func_030_4873::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1061,13 +1061,13 @@ Func_030_4873:
 	ld [wd9e3], a
 	ret
 
-Func_030_48bb:
+Func_030_48bb::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 	jp Func_030_4bcb
 
-Func_030_48c5:
+Func_030_48c5::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1104,7 +1104,7 @@ Func_030_48c5:
 	ld [wd9c9], a
 	ret
 
-Func_030_4919:
+Func_030_4919::
 	ld a, $4b
 	ld [wd3ff], a
 	call AdvanceRNG
@@ -1131,7 +1131,7 @@ Func_030_4919:
 	ld [wd9b8], a
 	ret
 
-Func_030_4950:
+Func_030_4950::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1150,7 +1150,7 @@ Func_030_4950:
 	ld [wd9b6], a
 	ret
 
-Func_030_4973:
+Func_030_4973::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1164,7 +1164,7 @@ Func_030_4973:
 	call SetStatTile
 	ret
 
-Func_030_498e:
+Func_030_498e::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1196,7 +1196,7 @@ Func_030_498e:
 	ld [wd9e2], a
 	ret
 
-Func_030_49d2:
+Func_030_49d2::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1221,7 +1221,7 @@ Func_030_49d2:
 	ld [wd9b4], a
 	ret
 
-Func_030_4a03:
+Func_030_4a03::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1235,7 +1235,7 @@ Func_030_4a03:
 	ret nc
 	jp Func_030_505d
 
-Func_030_4a20:
+Func_030_4a20::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1249,11 +1249,11 @@ Func_030_4a20:
 	ret nc
 	jp Func_030_5103
 
-Func_030_4a3d:
+Func_030_4a3d::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
-Func_030_4a44:
+Func_030_4a44::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4a54
@@ -1291,7 +1291,7 @@ Func_030_4a44:
 	ld [wd9b5], a
 	ret
 
-Func_030_4a89:
+Func_030_4a89::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1305,7 +1305,7 @@ Func_030_4a89:
 	call SetStatTile
 	ret
 
-Func_030_4aa5:
+Func_030_4aa5::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -1338,7 +1338,7 @@ Func_030_4aa5:
 	ld [wd9b5], a
 	ret
 
-Func_030_4aec:
+Func_030_4aec::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1360,7 +1360,7 @@ Func_030_4aec:
 	ld [wd3ff], a
 	ret
 
-Func_030_4b1b:
+Func_030_4b1b::
 	call Func_030_537b
 	ld a, $40
 	ld [wd3ff], a
@@ -1370,10 +1370,10 @@ Func_030_4b1b:
 	ld [wd9b5], a
 	ret
 
-Func_030_4b2d:
+Func_030_4b2d::
 	jp Func_030_4e93
 
-Func_030_4b30:
+Func_030_4b30::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1387,7 +1387,7 @@ Func_030_4b30:
 	ret nc
 	jp Func_030_4e93
 
-Func_030_4b4d:
+Func_030_4b4d::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -1420,7 +1420,7 @@ Func_030_4b4d:
 	ld [wd9b5], a
 	ret
 
-Func_030_4b94:
+Func_030_4b94::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1434,7 +1434,7 @@ Func_030_4b94:
 	ret nc
 	jp Func_030_4e42
 
-Func_030_4bb1:
+Func_030_4bb1::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1447,7 +1447,7 @@ Func_030_4bb1:
 	cp $32
 	ret nc
 
-Func_030_4bcb:
+Func_030_4bcb::
 	ld a, $01
 	ld [wd9b2], a
 	ld [wd9b5], a
@@ -1459,7 +1459,7 @@ Func_030_4bcb:
 	ld [wd3ff], a
 	ret
 
-Func_030_4be3:
+Func_030_4be3::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1481,7 +1481,7 @@ Func_030_4be3:
 	ld [wd3ff], a
 	ret
 
-Func_030_4c12:
+Func_030_4c12::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1512,7 +1512,7 @@ Func_030_4c12:
 	ld [wd9b5], a
 	ret
 
-Func_030_4c50:
+Func_030_4c50::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1543,7 +1543,7 @@ Func_030_4c50:
 	ld a, $21
 	ld [wd3ff], a
 	ret
-Func_030_4c8f:
+Func_030_4c8f::
 	ld a, [wd9b1]
 	and a
 	jr nz, .asm_4c9f
@@ -1575,7 +1575,7 @@ Func_030_4c8f:
 	ld [wd9b1], a
 	ret
 
-Func_030_4cca:
+Func_030_4cca::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -1608,7 +1608,7 @@ Func_030_4cca:
 	ld [wd9b5], a
 	jp Func_030_4d24
 
-Func_030_4d13:
+Func_030_4d13::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1616,12 +1616,12 @@ Func_030_4d13:
 	ld [wd9b5], a
 	ld a, $02
 	ld [wd98b], a
-Func_030_4d24:
+Func_030_4d24::
 	call AdvanceRNG
 	ld a, [wd991]
 	cp $4c
 	ret nc
-Func_030_4d2d:
+Func_030_4d2d::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4d3d
@@ -1655,7 +1655,7 @@ Func_030_4d2d:
 	ld [wd9b5], a
 	ret
 
-Func_030_4d64:
+Func_030_4d64::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -1727,7 +1727,7 @@ Func_030_4d64:
 	ld [wd9b5], a
 	ret
 
-Func_030_4e0b:
+Func_030_4e0b::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1741,7 +1741,7 @@ Func_030_4e0b:
 	ret nc
 	jp Func_030_4d2d
 
-Func_030_4e28:
+Func_030_4e28::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1753,7 +1753,7 @@ Func_030_4e28:
 	ld a, [wd991]
 	cp $19
 	ret nc
-Func_030_4e42:
+Func_030_4e42::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4e52
@@ -1787,7 +1787,7 @@ Func_030_4e42:
 	ld [wd9b5], a
 	ret
 
-Func_030_4e79:
+Func_030_4e79::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1800,7 +1800,7 @@ Func_030_4e79:
 	cp $19
 	ret nc
 
-Func_030_4e93:
+Func_030_4e93::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_4ea3
@@ -1834,7 +1834,7 @@ Func_030_4e93:
 	ld [wd9b5], a
 	ret
 
-Func_030_4eca:
+Func_030_4eca::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1869,7 +1869,7 @@ Func_030_4eca:
 	ld [wd3ff], a
 	ret
 
-Func_030_4f10:
+Func_030_4f10::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1909,7 +1909,7 @@ Func_030_4f10:
 	ld [wd9b5], a
 	ret
 
-Func_030_4f5f:
+Func_030_4f5f::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -1939,7 +1939,7 @@ Func_030_4f5f:
 	ld [wd9b5], a
 	ret
 
-Func_030_4f9f:
+Func_030_4f9f::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -1965,7 +1965,7 @@ Func_030_4f9f:
 	ld [wd3ff], a
 	ret
 
-Func_030_4fd4:
+Func_030_4fd4::
 	xor a
 	ld [wd9b2], a
 	ld a, $02
@@ -1976,12 +1976,12 @@ Func_030_4fd4:
 	ld [wd3ff], a
 	ret
 
-Func_030_4fe8:
+Func_030_4fe8::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 
-Func_030_4fef:
+Func_030_4fef::
 	xor a
 	ld [wd9b2], a
 	ld a, $08
@@ -1992,7 +1992,7 @@ Func_030_4fef:
 	ld [wd3ff], a
 	ret
 
-Func_030_5003:
+Func_030_5003::
 	ld a, $1c
 	ld [wd3ff], a
 	ld a, $04
@@ -2038,12 +2038,12 @@ Func_030_5003:
 	ld [hl], a
 	ret
 
-Func_030_5056:
+Func_030_5056::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 
-Func_030_505d:
+Func_030_505d::
 	ld a, $01
 	ld [wd9b2], a
 	ld [wd9b5], a
@@ -2055,7 +2055,7 @@ Func_030_505d:
 	ld [wd3ff], a
 	ret
 
-Func_030_5074:
+Func_030_5074::
 	ld a, $43
 	ld [wd3ff], a
 	xor a
@@ -2077,7 +2077,7 @@ Func_030_5074:
 	call AddStatTile
 	ret
 
-Func_030_50a4:
+Func_030_50a4::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2098,7 +2098,7 @@ Func_030_50a4:
 	ld [wd98b], a
 	ret
 
-Func_030_50cc:
+Func_030_50cc::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2120,13 +2120,13 @@ Func_030_50cc:
 	ld [wd98b], a
 	ret
 
-Func_030_50f8:
+Func_030_50f8::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 	xor a
 	ld [wd98b], a
-Func_030_5103:
+Func_030_5103::
 	ld a, $1b
 	ld [wd3ff], a
 	ld a, $01
@@ -2160,12 +2160,12 @@ Func_030_5103:
 	ld [hl], a
 	ret
 
-Func_030_513a:
+Func_030_513a::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 
-Func_030_5141:
+Func_030_5141::
 	xor a
 	ld [wd9b2], a
 	ld a, $03
@@ -2176,7 +2176,7 @@ Func_030_5141:
 	ld [wd3ff], a
 	ret
 
-Func_030_5155:
+Func_030_5155::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2209,7 +2209,7 @@ Func_030_5155:
 	ld [hl], a
 	ret
 
-Func_030_5190:
+Func_030_5190::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2231,12 +2231,12 @@ Func_030_5190:
 	ld [wd98b], a
 	ret
 
-Func_030_51bb:
+Func_030_51bb::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 
-Func_030_51c2:
+Func_030_51c2::
 	ld a, $01
 	ld [wd9b2], a
 	ld [wd9b5], a
@@ -2248,7 +2248,7 @@ Func_030_51c2:
 	ld [wd3ff], a
 	ret
 
-Func_030_51da:
+Func_030_51da::
 	xor a
 	ld [wd9b5], a
 	ld a, $40
@@ -2294,7 +2294,7 @@ Func_030_51da:
 	ld [wd9b1], a
 	ret
 
-Func_030_5231:
+Func_030_5231::
 	xor a
 	ld [wd9b2], a
 	ld a, $09
@@ -2307,7 +2307,7 @@ Func_030_5231:
 	ld [wd9b5], a
 	ret
 
-Func_030_5249:
+Func_030_5249::
 	ld a, $01
 	ld [wd9b5], a
 	xor a
@@ -2368,7 +2368,7 @@ Func_030_5249:
 	ld [wd9b4], a
 	ret
 
-Func_030_52c3:
+Func_030_52c3::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -2442,14 +2442,14 @@ Func_030_52c3:
 	ld a, $01
 	ld [wd9b5], a
 	ret
-Func_030_5372:
+Func_030_5372::
 	ld c, $20
 .asm_5374
 	call DelayFrame
 	dec c
 	jr nz, .asm_5374
 	ret
-Func_030_537b:
+Func_030_537b::
 	ld [wd9b1], a
 	and a
 	jr nz, .asm_538b
@@ -2484,7 +2484,7 @@ Func_030_537b:
 	ld [wd9b1], a
 	ret
 
-Func_030_53ba:
+Func_030_53ba::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2516,7 +2516,7 @@ Func_030_53ba:
 	ld [hl], $01
 	ret
 
-Func_030_53ee:
+Func_030_53ee::
 	ld a, [wd986]
 	and a
 	jr z, .asm_53fe
@@ -2550,7 +2550,7 @@ Func_030_53ee:
 	ld a, [hl]
 	ret
 
-Func_030_541a:
+Func_030_541a::
 	xor a
 	ld [wd9b2], a
 	ld a, $01
@@ -2561,7 +2561,7 @@ Func_030_541a:
 	ld [wd3ff], a
 	ret
 
-Func_030_542e:
+Func_030_542e::
 	xor a
 	ld [wd9b2], a
 	xor a
@@ -2572,12 +2572,12 @@ Func_030_542e:
 	ld [wd3ff], a
 	ret
 
-Func_030_5441:
+Func_030_5441::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
 
-Func_030_5448:
+Func_030_5448::
 	ld a, $01
 	ld [wd9b2], a
 	ld [wd9b5], a
@@ -2591,7 +2591,7 @@ Func_030_5448:
 	ld [wd3ff], a
 	ret
 
-Func_030_5465:
+Func_030_5465::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2607,7 +2607,7 @@ Func_030_5465:
 	ld [wd9b5], a
 	ret
 
-Func_030_5486:
+Func_030_5486::
 	ld a, $01
 	ld [wd9b5], a
 	ld a, $34
@@ -2653,7 +2653,7 @@ Func_030_5486:
 	ld [wd9b1], a
 	ret
 
-Func_030_54de:
+Func_030_54de::
 	ld a, [wd9c7]
 	and a
 	jp z, Func_030_55ab
@@ -2710,7 +2710,7 @@ Func_030_54de:
 	ld [wd9b5], a
 	ret
 
-Func_030_555c:
+Func_030_555c::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2753,12 +2753,12 @@ Func_030_555c:
 	ld [wd98b], a
 	ret
 
-Func_030_55a5:
+Func_030_55a5::
 	ld a, [wd993]
 	and a
 	jr nz, Func_030_55c2
 
-Func_030_55ab:
+Func_030_55ab::
 	call AdvanceRNG
 	ld a, [wd991]
 	and $03
@@ -2769,7 +2769,7 @@ Func_030_55ab:
 	ld a, $01
 	ld [wd9b5], a
 	ret
-Func_030_55c2:
+Func_030_55c2::
 	ld a, [wd98d]
 	and a
 	jr nz, .asm_55d2
@@ -2809,7 +2809,7 @@ Func_030_55c2:
 	ld [wd98b], a
 	ret
 
-Func_030_5603:
+Func_030_5603::
 	xor a
 	ld [wd9b2], a
 	ld a, $05
@@ -2845,7 +2845,7 @@ Func_030_5603:
 	ld [wd98b], a
 	ret
 
-Func_030_564a:
+Func_030_564a::
 	ld a, [wd993]
 	and a
 	jp z, Func_030_55ab
@@ -2855,7 +2855,7 @@ Func_030_564a:
 	ld [wd9b5], a
 	ret
 
-Pointers_030_565c:
+Pointers_030_565c::
 	dw .image_566a
 	dw .image_572c
 	dw .image_57ae
@@ -2906,7 +2906,7 @@ Pointers_030_565c:
 	INCBIN "gfx/misc/gfx_30_58b8.2bpp"
 .image_58b6_e
 
-Pointers_030_58f8:
+Pointers_030_58f8::
 	dw SubImage_030_5906
 	dw SubImage_030_5968
 	dw SubImage_030_59ca
@@ -2914,49 +2914,49 @@ Pointers_030_58f8:
 	dw SubImage_030_5a8e
 	dw SubImage_030_5af0
 	dw SubImage_030_5b52
-GFX_030_5906:
-SubImage_030_5906:
+GFX_030_5906::
+SubImage_030_5906::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_5906.2bpp"
 .e
 
-SubImage_030_5968:
+SubImage_030_5968::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_5968.2bpp"
 .e
 
-SubImage_030_59ca:
+SubImage_030_59ca::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_59ca.2bpp"
 .e
 
-SubImage_030_5a2c:
+SubImage_030_5a2c::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_5a2c.2bpp"
 .e
 
-SubImage_030_5a8e:
+SubImage_030_5a8e::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_5a8e.2bpp"
 .e
 
-SubImage_030_5af0:
+SubImage_030_5af0::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_5af0.2bpp"
 .e
 
-SubImage_030_5b52:
+SubImage_030_5b52::
 	dw .e - .d
 .d
 	INCBIN "gfx/misc/gfx_30_5b52.2bpp"
 .e
-Palettes_030_5bb4: ; 3 palettes (orphan)
+Palettes_030_5bb4:: ; 3 palettes (orphan)
 	RGB 28, 7, 28
 	RGB 0, 0, 0
 	RGB 0, 0, 0
@@ -2969,7 +2969,7 @@ Palettes_030_5bb4: ; 3 palettes (orphan)
 	RGB 0, 0, 0
 	RGB 0, 0, 0
 	RGB 0, 0, 0
-Func_030_5bcc:
+Func_030_5bcc::
 	ld a, [wd9a0]
 	and a
 	ret z
@@ -2984,7 +2984,7 @@ Func_030_5bcc:
 	cp $05
 	jp z, Func_030_711c
 	ret
-Func_030_5beb:
+Func_030_5beb::
 	ld a, [wd9ad]
 	and a
 	ret z
@@ -3048,7 +3048,7 @@ Func_030_5beb:
 	cp $8c
 	jp z, Func_030_5c85
 	ret
-Func_030_5c85:
+Func_030_5c85::
 	ld bc, wd1a8
 .asm_5c88
 	ld hl, $0004
@@ -3122,12 +3122,12 @@ Func_030_5c85:
 	jp nz, .asm_5c88
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_5cf7`
-BattleAnimData_030_5cf7:
+BattleAnimData_030_5cf7::
 	db $03, $04, $05, $00, $05, $00, $05, $ff
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wd9ae] 2B coord-delta added to sprite pos at wd1a0
-BattleAnimStepTable_030_5cff:
+BattleAnimStepTable_030_5cff::
 	db $d0, $08, $d0, $18, $d0, $00, $d0, $20, $d0, $10
-Func_030_5d09:
+Func_030_5d09::
 	ld bc, wd1a8
 .asm_5d0c
 	ld hl, $0004
@@ -3175,15 +3175,15 @@ Func_030_5d09:
 	cp $e0
 	jp nz, .asm_5d0c
 	ret
-Func_030_5d56:
+Func_030_5d56::
 	ld bc, wd1a8
-Func_30_5d59:
+Func_30_5d59::
 	ld hl, $0004
 	add hl, bc
 	ld a, [hl]
 	and a
 	jr nz, Func_30_5d96
-Func_30_5d61:
+Func_30_5d61::
 	ldh a, [hFadeFrameCounter]
 	and $07
 	jr nz, Func_30_5dc1
@@ -3218,7 +3218,7 @@ Func_30_5d61:
 	xor a
 	ld [wd9ae], a
 	ret
-Func_30_5d96:
+Func_30_5d96::
 	ld hl, $0000
 	add hl, bc
 	dec [hl]
@@ -3244,7 +3244,7 @@ Func_30_5d96:
 	jr Func_30_5dc1
 .asm_5dbf
 	ld [hl], $04
-Func_30_5dc1:
+Func_30_5dc1::
 	ld hl, $0008
 	add hl, bc
 	push hl
@@ -3254,9 +3254,9 @@ Func_30_5dc1:
 	jp nz, Func_30_5d59
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
-BattleAnimStepTable_030_5dce:
+BattleAnimStepTable_030_5dce::
 	db $f8, $00, $00, $10, $04, $20, $fc, $08, $04, $18
-Func_030_5dd8:
+Func_030_5dd8::
 	ld bc, wd1a8
 	ld hl, $0004
 	add hl, bc
@@ -3349,9 +3349,9 @@ Func_030_5dd8:
 	ld [hl], $02
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
-BattleAnimStepTable_030_5e69:
+BattleAnimStepTable_030_5e69::
 	db $04, $fc, $fc, $04, $04, $04, $fc, $fc, $00, $04, $00, $fc, $fc, $04, $04, $04
-Func_030_5e79:
+Func_030_5e79::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_5ef1
@@ -3464,11 +3464,11 @@ Func_030_5e79:
 	ld [bc], a
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): 2D table [wd9ae-1]x[wd986], sprite/coord record
-BattleAnimStepTable_030_5f2a:
+BattleAnimStepTable_030_5f2a::
 	db $40, $60, $10, $10, $50, $70, $20, $20, $38, $80, $08, $30, $58, $68, $28, $18
 	db $58, $80, $28, $30
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_5f3e`
-BattleAnimData_030_5f3e:
+BattleAnimData_030_5f3e::
 	db $ff, $ff, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe
 	db $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe
 	db $00, $fe, $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe
@@ -3476,14 +3476,14 @@ BattleAnimData_030_5f3e:
 	db $ff, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $ff, $fe, $00, $fe
 	db $88
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_5f8f`
-BattleAnimData_030_5f8f:
+BattleAnimData_030_5f8f::
 	db $00, $01, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02
 	db $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02
 	db $01, $02, $02, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02
 	db $01, $02, $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02
 	db $02, $02, $01, $02, $02, $02, $01, $02, $02, $02, $02, $02, $01, $02, $02, $02
 	db $88
-Func_030_5fe0:
+Func_030_5fe0::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_5fff
@@ -3582,15 +3582,15 @@ Func_030_5fe0:
 	ld [wd9ae], a
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): per-[wd986] sprite-position setup (copied to wd1a0)
-BattleAnimData_030_607b:
+BattleAnimData_030_607b::
 	db $10, $18, $40, $68, $20, $40, $50, $90, $30, $28, $60, $78
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6087`
-BattleAnimData_030_6087:
+BattleAnimData_030_6087::
 	db $10, $28, $40, $78, $30, $18, $60, $68, $20, $40, $50, $90
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6093`
-BattleAnimData_030_6093:
+BattleAnimData_030_6093::
 	db $20, $28, $50, $68, $30, $38, $60, $78, $10, $40, $40, $90
-Func_030_609f:
+Func_030_609f::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_60af
@@ -3680,7 +3680,7 @@ Func_030_609f:
 	ld a, $03
 	ld [wd9ae], a
 	ret
-Func_030_6136:
+Func_030_6136::
 	ld a, [wd9ae]
 	and a
 	jp z, .asm_6326
@@ -4001,7 +4001,7 @@ Func_030_6136:
 	inc hl
 	ld [hl], $01
 	ret
-Func_030_6349:
+Func_030_6349::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -4016,7 +4016,7 @@ Func_030_6349:
 .asm_635b
 	ld [hl], $03
 	ret
-Func_030_635e:
+Func_030_635e::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	jr nz, .asm_6374
@@ -4065,7 +4065,7 @@ Func_030_635e:
 	xor a
 	ld [wd9ae], a
 	ret
-Func_030_63a8:
+Func_030_63a8::
 	ld a, [wd9ae]
 	and a
 	jp z, .asm_6495
@@ -4250,13 +4250,13 @@ Func_030_63a8:
 	ld [wd9ae], a
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
-BattleAnimData_030_64c8:
+BattleAnimData_030_64c8::
 	db $20, $28, $50, $78
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
-BattleAnimData_030_64cc:
+BattleAnimData_030_64cc::
 	db $40, $a0, $10, $50
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): $88-terminated anim/movement sequence (auto-stepped via [bc+4])
-BattleAnimSeq_030_64d0:
+BattleAnimSeq_030_64d0::
 	db $ff, $00, $fd, $ff, $fd, $fe, $fd, $fd, $fd, $fd, $fe, $fd, $fe, $fd, $fe, $fd
 	db $ff, $fd, $ff, $fd, $ff, $fd, $00, $fd, $ff, $fd, $00, $fd, $00, $fd, $00, $fd
 	db $01, $fd, $00, $fd, $01, $fd, $02, $fd, $01, $fd, $02, $fd, $01, $fd, $03, $fd
@@ -4270,7 +4270,7 @@ BattleAnimSeq_030_64d0:
 	db $01, $05, $fe, $05, $fc, $05, $fb, $04, $fb, $01, $fb, $00, $fb, $fe, $fb, $fc
 	db $fd, $fb, $00, $fb, $03, $fb, $04, $fc, $05, $ff, $04, $04, $00, $05, $fb, $03
 	db $88
-Func_030_6591:
+Func_030_6591::
 	ld bc, wd1a8
 .asm_6594
 	ld hl, $0004
@@ -4465,12 +4465,12 @@ Func_030_6591:
 	jp c, .asm_6594
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
-BattleAnimStepTable_030_66c9:
+BattleAnimStepTable_030_66c9::
 	db $30, $28, $70, $78, $30, $18, $70, $68, $30, $38, $70, $88
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
-BattleAnimStepTable_030_66d5:
+BattleAnimStepTable_030_66d5::
 	db $80, $a0, $50, $d0, $80, $90, $50, $e0, $80, $b0, $50, $f0
-Func_030_66e1:
+Func_030_66e1::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_66e8
@@ -4520,7 +4520,7 @@ Func_030_66e1:
 	dec hl
 	inc [hl]
 	ret
-Func_030_671c:
+Func_030_671c::
 	ld bc, wd1a0
 .asm_671f
 	ld hl, $0004
@@ -4658,14 +4658,14 @@ Func_030_671c:
 	jp c, .asm_671f
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_67f2`
-BattleAnimData_030_67f2:
+BattleAnimData_030_67f2::
 	db $20, $30, $01, $50, $60, $01, $10, $30, $02, $40, $60, $02, $30, $30, $02, $60
 	db $60, $02
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6804`
-BattleAnimData_030_6804:
+BattleAnimData_030_6804::
 	db $50, $30, $01, $20, $60, $01, $40, $30, $02, $10, $60, $02, $60, $30, $02, $30
 	db $60, $02
-Func_030_6816:
+Func_030_6816::
 	ld a, [wd9ae]
 	and a
 	jr z, .asm_6825
@@ -4766,9 +4766,9 @@ Func_030_6816:
 	ld [hl], $00
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
-BattleAnimData_030_68b2:
+BattleAnimData_030_68b2::
 	db $54, $68, $24, $18, $4c, $78, $1c, $28, $4c, $88, $30, $38
-Func_030_68be:
+Func_030_68be::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -4790,7 +4790,7 @@ Func_030_68be:
 	ld [hl], a
 	ld [de], a
 	jr Func_30_68f8
-Func_030_68dc:
+Func_030_68dc::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
@@ -4811,7 +4811,7 @@ Func_030_68dc:
 	xor a
 	ld [hl], a
 	ld [de], a
-Func_30_68f8:
+Func_30_68f8::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -4843,7 +4843,7 @@ Func_30_68f8:
 	add $08
 	ld [hl], a
 	ret
-Func_030_692a:
+Func_030_692a::
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	ret nz
@@ -4855,7 +4855,7 @@ Func_030_692a:
 	ret z
 	inc [hl]
 	ret
-Func_030_693a:
+Func_030_693a::
 	ld bc, wd1a0
 .asm_693d
 	ld hl, $0004
@@ -4975,18 +4975,18 @@ Func_030_693a:
 	jp c, .asm_693d
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
-BattleAnimStepTable_030_69f1:
+BattleAnimStepTable_030_69f1::
 	db $30, $78, $00, $20, $30, $88, $00, $30, $30, $70, $00, $18, $30, $80, $00, $28
 	db $30, $68, $00, $10, $30, $90, $00, $38
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by hl
-BattleAnimSeq_030_6a09:
+BattleAnimSeq_030_6a09::
 	db $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00, $03, $00
 	db $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00, $04, $00
 	db $ff, $00, $fd, $01, $fd, $01, $fd, $01, $fd, $02, $fd, $02, $fe, $03, $fe, $03
 	db $02, $02, $01, $02, $02, $01, $02, $02, $02, $01, $02, $01, $02, $01, $02, $01
 	db $02, $00, $00, $02, $fe, $02, $fe, $02, $fe, $02, $ff, $02, $00, $02, $ff, $02
 	db $03, $03, $03, $02, $88
-Func_030_6a5e:
+Func_030_6a5e::
 	ld a, [wd9ae]
 	and a
 	jr nz, .asm_6aa1
@@ -5064,14 +5064,14 @@ Func_030_6a5e:
 	call Func_030_7189
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); indexed table (index wd98e)
-BattleAnimData_030_6adb:
+BattleAnimData_030_6adb::
 	db $ff, $00, $fd, $00, $fd, $00, $fd, $00, $fd, $01, $fd, $00, $fd, $01, $fd, $02
 	db $fd, $02, $ff, $02, $ff, $02, $01, $02, $01, $02, $02, $02, $02, $01, $02, $01
 	db $02, $00, $02, $01, $02, $00, $02, $01, $02, $00, $02, $00, $02, $00, $02, $00
 	db $02, $00, $00, $02, $fd, $00, $fd, $00, $fd, $01, $fd, $03, $ff, $03, $01, $02
 	db $01, $02, $02, $02, $02, $01, $02, $01, $02, $00, $02, $01, $00, $02, $fe, $01
 	db $fe, $02, $ff, $03, $01, $03, $02, $02, $02, $01, $88
-Func_030_6b36:
+Func_030_6b36::
 	ld a, [wd9ae]
 	cp $01
 	jp z, Func_030_6b77
@@ -5106,7 +5106,7 @@ Func_030_6b36:
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_030_6b77:
+Func_030_6b77::
 	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5132,7 +5132,7 @@ Func_030_6b77:
 	xor a
 	ld [wd9ad], a
 	ret
-Func_30_6ba6:
+Func_30_6ba6::
 	ld a, $03
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5156,7 +5156,7 @@ Func_30_6ba6:
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_30_6bcb:
+Func_30_6bcb::
 	ld a, $05
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5180,9 +5180,9 @@ Func_30_6bcb:
 	ld [hl], $06
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd986
-BattleAnimData_030_6bee:
+BattleAnimData_030_6bee::
 	db $40, $60, $10, $10
-Func_030_6bf2:
+Func_030_6bf2::
 	ld a, [wd9ae]
 	cp $01
 	jp z, Func_030_6b77
@@ -5217,7 +5217,7 @@ Func_030_6bf2:
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_30_6c33:
+Func_30_6c33::
 	ld a, $03
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5241,7 +5241,7 @@ Func_30_6c33:
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_30_6c58:
+Func_30_6c58::
 	ld a, $05
 	ld [wd9ae], a
 	ld de, wd1a0
@@ -5266,7 +5266,7 @@ Func_30_6c58:
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_030_6c7f:
+Func_030_6c7f::
 	ld a, [wd9ae]
 	cp $01
 	jp z, .asm_6cc0
@@ -5372,7 +5372,7 @@ Func_030_6c7f:
 	ld [hli], a
 	ld [hl], $06
 	ret
-Func_030_6d38:
+Func_030_6d38::
 	ldh a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -5411,9 +5411,9 @@ Func_030_6d38:
 	jr c, .asm_6d40
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); indexed table (index hl)
-BattleAnimSeq_030_6d6f:
+BattleAnimSeq_030_6d6f::
 	db $01, $02, $03, $03, $02, $01, $ff
-Func_030_6d76:
+Func_030_6d76::
 	ld bc, wd1a0
 .asm_6d79
 	ld hl, $0004
@@ -5488,11 +5488,11 @@ Func_030_6d76:
 	jp c, .asm_6d79
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); data, referenced via `ld de, BattleAnimData_030_6df1`
-BattleAnimData_030_6df1:
+BattleAnimData_030_6df1::
 	db $40, $60, $10, $10, $50, $70, $20, $20, $60, $58, $30, $08, $48, $88, $18, $38
 	db $48, $68, $18, $20, $60, $80, $30, $30, $40, $68, $10, $18, $50, $70, $20, $20
 	db $60, $80, $30, $30, $48, $88, $18, $38
-Func_030_6e19:
+Func_030_6e19::
 	ldh a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5535,7 +5535,7 @@ Func_030_6e19:
 .asm_6e57
 	ld [hl], $03
 	ret
-Func_030_6e5a:
+Func_030_6e5a::
 	ldh a, [hFadeFrameCounter]
 	and $0f
 	ret nz
@@ -5573,9 +5573,9 @@ Func_030_6e5a:
 	ld [wd9ae], a
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd9ae
-BattleAnimStepTable_030_6e94:
+BattleAnimStepTable_030_6e94::
 	db $40, $78, $10, $28, $40, $68, $10, $18, $40, $88, $10, $38
-Func_030_6ea0:
+Func_030_6ea0::
 	ld a, [wd9ae]
 	inc a
 	ld [wd9ae], a
@@ -5597,7 +5597,7 @@ Func_030_6ea0:
 	sub $08
 	ld [hl], a
 	ret
-Func_030_6ec2:
+Func_030_6ec2::
 	ld bc, wd1a8
 .asm_6ec5
 	ld hl, $0004
@@ -5696,10 +5696,10 @@ Func_030_6ec2:
 	jp c, .asm_6ec5
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine): RNG-selected ([wd991]&7) 4B record
-BattleAnimRngTable_030_6f68:
+BattleAnimRngTable_030_6f68::
 	db $30, $80, $00, $18, $30, $88, $00, $20, $30, $90, $00, $28, $30, $98, $00, $30
 	db $30, $a0, $00, $38, $30, $a8, $00, $40, $30, $b0, $00, $48, $30, $b8, $00, $50
-Func_030_6f88:
+Func_030_6f88::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5709,7 +5709,7 @@ Func_030_6f88:
 	ld [hl], a
 	and a
 	jr z, Func_30_6fce
-Func_30_6f98:
+Func_30_6f98::
 	ld a, [wd99f]
 	dec a
 	ld [wd99f], a
@@ -5742,12 +5742,12 @@ Func_30_6f98:
 	ld h, $00
 	add hl, de
 	jr Func_30_6fd6
-Func_30_6fce:
+Func_30_6fce::
 	ld a, [wd99c]
 	ld l, a
 	ld a, [wd99d]
 	ld h, a
-Func_30_6fd6:
+Func_30_6fd6::
 	ld b, $08
 	ld a, [wd986]
 	and a
@@ -5767,7 +5767,7 @@ Func_30_6fd6:
 	ld c, $b0
 	call LoadPalettes_BCPD
 	ret
-Func_030_6ff6:
+Func_030_6ff6::
 	ld a, [hFadeFrameCounter]
 	and $03
 	ret nz
@@ -5819,7 +5819,7 @@ Func_030_6ff6:
 	ld c, $b2
 	call LoadPalettes_BCPD
 	ret
-Func_030_704a:
+Func_030_704a::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5884,7 +5884,7 @@ Func_030_704a:
 	ld b, $40
 	call LoadPalettes_BCPD
 	ret
-Func_030_70b7:
+Func_030_70b7::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -5943,7 +5943,7 @@ Func_030_70b7:
 	ld b, $40
 	call LoadPalettes_BCPD
 	ret
-Func_030_711c:
+Func_030_711c::
 	ld a, [hFadeFrameCounter]
 	and $07
 	ret nz
@@ -6002,7 +6002,7 @@ Func_030_711c:
 	ld b, $40
 	call LoadPalettes_BCPD
 	ret
-Func_030_7181:
+Func_030_7181::
 	ld e, $08
 	xor a
 .asm_7184
@@ -6010,7 +6010,7 @@ Func_030_7181:
 	dec e
 	jr nz, .asm_7184
 	ret
-Func_030_7189:
+Func_030_7189::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
@@ -6019,7 +6019,7 @@ Func_030_7189:
 	dec c
 	jr nz, .asm_718f
 	ret
-Func_030_7194:
+Func_030_7194::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_71f2
@@ -6201,7 +6201,7 @@ Func_030_7194:
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
-Func_030_72d7:
+Func_030_72d7::
 	ld a, [wd98b]
 	cp $01
 	jp z, .asm_73af
@@ -6630,7 +6630,7 @@ Func_030_72d7:
 	ld [wd98e], a
 	ld [wd98b], a
 	ret
-Func_030_75c7:
+Func_030_75c7::
 	ld a, [wd986]
 	and a
 	jr nz, .asm_75e9
@@ -6676,7 +6676,7 @@ Func_030_75c7:
 	ret c
 	ld [hl], $04
 	ret
-Func_030_7610:
+Func_030_7610::
 	ldh a, [hFadeFrameCounter]
 	and $01
 	ret nz
@@ -6745,7 +6745,7 @@ Func_030_7610:
 	ld a, $01
 	ld [de], a
 	ret
-Func_030_766a:
+Func_030_766a::
 	ld de, wd1a0
 .asm_766d
 	ld hl, $0004
@@ -6865,7 +6865,7 @@ Func_030_766a:
 	cp $b0
 	jp c, .asm_766d
 	ret
-Func_030_773b:
+Func_030_773b::
 	ld bc, wd1a0
 .asm_773e
 	ld hl, $0004
@@ -7019,7 +7019,7 @@ Func_030_773b:
 	cp $e0
 	jp c, .asm_773e
 	ret
-Func_030_784c:
+Func_030_784c::
 	ld bc, wd1a0
 .asm_784f
 	ld hl, $0004
@@ -7198,10 +7198,10 @@ Func_030_784c:
 	jp c, .asm_784f
 	ret
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd98b
-BattleAnimData_030_7981:
+BattleAnimData_030_7981::
 	db $30, $28, $50, $78, $30, $18, $50, $68, $30, $38, $50, $88
 ; battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); lookup table indexed by wd98e
-BattleAnimData_030_798d:
+BattleAnimData_030_798d::
 	db $f0, $70, $f0, $20, $f0, $60, $f0, $10, $f0, $80, $f0, $30
 ; TODO: unk_ - battle move-anim data (bank30 MoveEffectPointers/wBattleAnimID engine); orphan (no direct reference; computed pointer or dead)
-unk_030_7999:
+unk_030_7999::

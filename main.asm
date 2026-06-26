@@ -79,9 +79,6 @@ INCLUDE "banks/bank_0e.asm"
 SECTION "bank0f", ROMX
 INCLUDE "banks/bank_0f.asm"
 
-SECTION "bank10", ROMX
-INCLUDE "banks/bank_10.asm"
-
 SECTION "bank11", ROMX
 INCLUDE "banks/bank_11.asm"
 
@@ -230,9 +227,6 @@ INCLUDE "banks/bank_4f.asm"
 SECTION "bank50", ROMX
 INCLUDE "banks/bank_50.asm"
 
-SECTION "bank52", ROMX
-INCLUDE "banks/bank_52.asm"
-
 SECTION "bank53", ROMX
 INCLUDE "banks/bank_53.asm"
 
@@ -289,9 +283,6 @@ INCLUDE "engine/movie/world_map.asm"
 
 SECTION "Sound Test", ROMX
 INCLUDE "engine/debug/sound_test.asm"
-
-SECTION "bank63", ROMX
-INCLUDE "banks/bank_63.asm"
 
 SECTION "bank64", ROMX
 INCLUDE "banks/bank_64.asm"

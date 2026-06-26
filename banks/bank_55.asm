@@ -1,12 +1,12 @@
-EastFishmarket_32_ObjectEvents:
+EastFishmarket_32_ObjectEvents::
 	object_event $22,  2,  3, 0, $00, $00, $00, $00, Script_055_5316
 	objects_end
 
-Script_055_5316:
+Script_055_5316::
 	textface text_55_53ae
 	end
 
-Script_055_531a:
+Script_055_531a::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_55_53ae
@@ -14,40 +14,40 @@ Script_055_531a:
 	scr_35 $05
 	end
 
-Script_055_532b:
+Script_055_532b::
 	end
 
-EastFishmarket_31_ObjectEvents:
+EastFishmarket_31_ObjectEvents::
 	object_event $25,  4,  2, 0, $00, $00, $00, $00, Script_055_5343
 	object_event $25,  8,  2, 0, $00, $00, $00, $01, Script_055_5347
 	objects_end
 
-Script_055_5343:
+Script_055_5343::
 	stext text_55_5367
 	end
 
-Script_055_5347:
+Script_055_5347::
 	stext text_55_537f
 	end
 
-Script_055_534b:
+Script_055_534b::
 	face FACE_UP
 	stext text_55_5367
 	checkbit wEventFlags + 3, $03, Script_055_5358
 	scr_37
 	end
 
-Script_055_5358:
+Script_055_5358::
 	end
 
-Script_055_5359:
+Script_055_5359::
 	face FACE_UP
 	stext text_55_537f
 	checkbit wEventFlags + 3, $03, Script_055_5366
 	townmusicanim
 	end
 
-Script_055_5366:
+Script_055_5366::
 	end
 
 INCLUDE "data/text/script_east_fishmarket_31.asm"
@@ -57,17 +57,17 @@ INCLUDE "data/text/script_east_fishmarket_undersea_13_1.asm"
 Script_055_53ef::
 	end
 
-Script_055_53f0:
+Script_055_53f0::
 	end
 
 Bank55_EmptyObjectEvent::
 	objects_end
 
-Script_055_53f2:
+Script_055_53f2::
 	setmap MAP_G4_44, $00
 	end
 
-EastFishmarket_0b_ObjectEvents:
+EastFishmarket_0b_ObjectEvents::
 	object_event $19, 15,  6, 0, $00, $00, $08, $00, Script_055_5933
 	object_event $1c,  4,  7, 0, $00, $00, $0b, $01, Script_055_5937
 	object_event $1a, 11,  6, 0, $00, $00, $06, $02, Script_055_593b
@@ -80,45 +80,45 @@ EastFishmarket_0b_ObjectEvents:
 	objects_end
 
 ; TODO: unreferenced data block, classify type
-unk_055_545a:
+unk_055_545a::
 	checkbit wEventFlags + 7, $03, Script_055_5464
 	setmap MAP_EAST_FISHMARKET_0C, $00
 	end2
-Script_055_5464:
+Script_055_5464::
 	setmap MAP_EAST_FISHMARKET_0C, $03
 	end2
-Script_055_5468:
+Script_055_5468::
 	face FACE_DOWN
 	move MovementData_OneDown
 	clearplayerpos
 	spritewalk  1, MOVE_UP
 	spriteface  1, FACE_DOWN
 	end
-Script_055_5475:
+Script_055_5475::
 	setmap MAP_EAST_FISHMARKET_0C, $02
 	end2
-EastFishmarket_0c_ObjectEvents:
+EastFishmarket_0c_ObjectEvents::
 	object_event $08,  8,  5, wEventFlags + 7, $02, $01, $00, $00, Script_055_54b3
 	object_event $1f,  6,  5, 0, $00, $00, $00, $01, Script_055_5536
 	object_event $1e,  6,  7, 0, $00, $00, $00, $02, Script_055_553a
 	objects_end
 
-ObjSprite_055_549b:
+ObjSprite_055_549b::
 	object_event $60,  6,  8, 0, $00, $00, $00, $03, Script_055_53f0
 	objects_end
 
-ObjSprite_055_54a7:
+ObjSprite_055_54a7::
 	object_event $60,  6,  7, 0, $00, $00, $00, $04, Script_055_53f0
 	objects_end
 
-Script_055_54b3:
+Script_055_54b3::
 	ifcharindex $00, Script_055_54c1
 	emote $02, $04
 	delay $03, $20
 	textface text_55_645b
 	end
 
-Script_055_54c1:
+Script_055_54c1::
 	walkpath
 	face FACE_UP
 	stext text_55_6326
@@ -161,15 +161,15 @@ Script_055_54c1:
 	stext text_55_6489
 	end
 
-Script_055_5536:
+Script_055_5536::
 	textface text_55_62ff
 	end
 
-Script_055_553a:
+Script_055_553a::
 	textface text_55_62c8
 	end
 
-EastFishmarketUndersea_0d_ObjectEvents:
+EastFishmarketUndersea_0d_ObjectEvents::
 	object_event $53, 16,  4, 0, $00, $00, $0a, $00, Script_055_5957
 	object_event $54,  9,  2, 0, $00, $00, $06, $01, Script_055_5968
 	object_event $53,  2,  6, 0, $00, $00, $00, $02, Script_055_5979
@@ -180,22 +180,22 @@ EastFishmarketUndersea_0d_ObjectEvents:
 	object_event $53, 16, 15, 0, $00, $00, $00, $01, Script_055_59c0
 	objects_end
 
-EastFishmarketUndersea_12_ObjectEvents:
+EastFishmarketUndersea_12_ObjectEvents::
 	object_event $55,  4,  3, 0, $00, $00, $0b, $00, Script_055_5a0f
 	objects_end
 
-EastFishmarketUndersea_11_ObjectEvents:
+EastFishmarketUndersea_11_ObjectEvents::
 	object_event $4a,  4,  4, wEventFlags + 8, $03, $00, $00, $00, Script_055_55af
 	objects_end
 
-Script_055_55af:
+Script_055_55af::
 	ifcharindex $00, Script_055_55bd
 	emote $02, $03
 	delay $03, $20
 	textface text_55_68c8
 	end
 
-Script_055_55bd:
+Script_055_55bd::
 	spriteface  2, FACE_DOWN
 	walkpath
 	face FACE_UP
@@ -232,26 +232,26 @@ Script_055_55bd:
 	setbit wEventFlags + 8, $03
 	end
 
-EastFishmarketUndersea_0e_ObjectEvents:
+EastFishmarketUndersea_0e_ObjectEvents::
 	object_event $61,  2,  2, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
 	object_event $61,  3,  2, wEventFlags + 8, $04, $00, $00, $01, Script_055_53f0
 	objects_end
 
-EastFishmarketUndersea_0e_ObjectEvents2:
+EastFishmarketUndersea_0e_ObjectEvents2::
 	object_event $61,  2,  2, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
 	object_event $61,  3,  2, wEventFlags + 8, $04, $00, $00, $01, Script_055_53f0
 	object_event $4a,  2,  3, wEventFlags + 8, $04, $00, $00, $02, Script_055_5666
 	objects_end
 
 ; TODO: unreferenced data block, classify type
-unk_055_5658:
+unk_055_5658::
 	checkbit wEventFlags + 8, $03, Script_055_5662
 	setmap MAP_EAST_FISHMARKET_UNDERSEA_0E, $01
 	end
-Script_055_5662:
+Script_055_5662::
 	setmap MAP_EAST_FISHMARKET_UNDERSEA_0E, $03
 	end
-Script_055_5666:
+Script_055_5666::
 	spriteface  2, FACE_RIGHT
 	stext text_55_6b4c
 	spriteface  2, FACE_UP
@@ -292,32 +292,32 @@ Script_055_5666:
 	setbit wEventFlags + 8, $04
 	end
 
-G4_0F_ObjectEvents2:
+G4_0F_ObjectEvents2::
 	object_event $4a,  6,  4, wEventFlags + 8, $04, $00, $00, $00, Script_055_53f0
 	objects_end
 
-G4_05_ObjectEvents2:
+G4_05_ObjectEvents2::
 	object_event $4a,  5,  7, 0, $00, $00, $00, $00, Script_055_53f0
 	object_event $1e,  6,  3, 0, $00, $00, $00, $01, Script_055_53f0
 	object_event $4c,  6,  6, 0, $00, $00, $00, $02, Script_055_53f0
 	objects_end
 ; $155704
 
-ObjSprite_055_5704:
+ObjSprite_055_5704::
 	object_event $48,  6,  3, 0, $00, $00, $00, $00, Script_055_53f0
 	objects_end
 
-ObjSprite_055_5710:
+ObjSprite_055_5710::
 	object_event $56,  6,  0, 0, $00, $00, $00, $00, Script_055_53f0
 	objects_end
-Script_055_571c:
+Script_055_571c::
 	end
 
-Script_055_571d:
+Script_055_571d::
 	setmap MAP_G4_05, $00
 	end
 
-Script_055_5721:
+Script_055_5721::
 	checkbit wEventFlags + 8, $05, Script_055_571d
 	setplayerchar $00
 	setmap MAP_G4_05, $01
@@ -405,229 +405,229 @@ Script_055_5721:
 	setmap MAP_G4_0F, $01
 	end
 
-Script_055_5823:
+Script_055_5823::
 	face FACE_DOWN
 	setmap MAP_G4_04, $00
 	end
 
-SacredtreeStardreamDeparture_ObjectEvents2:
+SacredtreeStardreamDeparture_ObjectEvents2::
 	object_event $4d,  6,  4, 0, $00, $00, $00, $00, Script_055_53f0
 	object_event $62,  6,  5, 0, $00, $00, $00, $01, Script_055_53f0
 	objects_end
 
-EastFishmarketUndersea_13_ObjectEvents:
+EastFishmarketUndersea_13_ObjectEvents::
 	object_event $54,  2,  4, 0, $00, $00, $00, $00, Script_055_587c
 	object_event $55,  9,  4, 0, $00, $00, $00, $01, Script_055_58aa
 	object_event $53,  7,  2, 0, $00, $00, $00, $02, Script_055_58bf
 	objects_end
 
-Script_055_5862:
+Script_055_5862::
 	ifcharindex $03, Script_055_586f
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_55_64e9
 	end
 
-Script_055_586f:
+Script_055_586f::
 	face FACE_LEFT
 	spriteface  2, FACE_RIGHT
 	stext text_55_67b7
 	farjump Script_055_5887
 	end
 
-Script_055_587c:
+Script_055_587c::
 	ifcharindex $03, Script_055_5884
 	textface text_55_64e9
 	end
 
-Script_055_5884:
+Script_055_5884::
 	textface text_55_67b7
 
-Script_055_5887:
+Script_055_5887::
 	checkbit wEventFlags + 3, $03, Script_055_588f
 	scr_37
 	end
 
-Script_055_588f:
+Script_055_588f::
 	end
 
-Script_055_5890:
+Script_055_5890::
 	ifcharindex $03, Script_055_589d
 	face FACE_RIGHT
 	spriteface  3, FACE_LEFT
 	stext text_55_64f1
 	end
 
-Script_055_589d:
+Script_055_589d::
 	face FACE_RIGHT
 	spriteface  3, FACE_LEFT
 	stext text_55_683c
 	farjump Script_055_58b5
 	end
 
-Script_055_58aa:
+Script_055_58aa::
 	ifcharindex $03, Script_055_58b2
 	textface text_55_64f1
 	end
 
-Script_055_58b2:
+Script_055_58b2::
 	textface text_55_683c
 
-Script_055_58b5:
+Script_055_58b5::
 	checkbit wEventFlags + 4, $01, Script_055_58be
 	scr_35 $06
 	end
 
-Script_055_58be:
+Script_055_58be::
 	end
 
-Script_055_58bf:
+Script_055_58bf::
 	textface text_55_53c5
 	checkbit wEventFlags + 3, $03, Script_055_58ca
 	townmusicanim
 	end
 
-Script_055_58ca:
+Script_055_58ca::
 	end
 
-EastFishmarket_2c_ObjectEvents:
+EastFishmarket_2c_ObjectEvents::
 	object_event $18,  5,  5, 0, $00, $00, $00, $00, Script_055_5a1b
 	object_event $1d,  8,  5, 0, $00, $00, $00, $01, Script_055_5a4c
 	objects_end
 
-EastFishmarket_2d_ObjectEvents:
+EastFishmarket_2d_ObjectEvents::
 	object_event $1f,  3,  3, 0, $00, $00, $00, $00, Script_055_5a50
 	object_event $1e,  5,  5, 0, $00, $00, $06, $01, Script_055_5a54
 	objects_end
 
-EastFishmarket_2e_ObjectEvents:
+EastFishmarket_2e_ObjectEvents::
 	object_event $16,  3,  4, 0, $00, $00, $00, $00, Script_055_5a6d
 	object_event $19,  8,  3, 0, $00, $00, $06, $01, Script_055_5a71
 	objects_end
 
-EastFishmarket_2f_ObjectEvents:
+EastFishmarket_2f_ObjectEvents::
 	object_event $1b,  4,  5, 0, $00, $00, $06, $00, Script_055_5a75
 	objects_end
 
-EastFishmarket_33_ObjectEvents:
+EastFishmarket_33_ObjectEvents::
 	object_event $08,  4,  4, wEventFlags + 7, $02, $00, $00, $00, Script_055_5a79
 	object_event $4b,  6,  3, 0, $00, $00, $00, $01, Script_055_5a7d
 	objects_end
 
-Script_055_5933:
+Script_055_5933::
 	textface text_55_5b1f
 	end
 
-Script_055_5937:
+Script_055_5937::
 	textface text_55_5b52
 	end
 
-Script_055_593b:
+Script_055_593b::
 	textface text_55_5ba0
 	end
 
-Script_055_593f:
+Script_055_593f::
 	textface text_55_5be3
 	end
 
-Script_055_5943:
+Script_055_5943::
 	textface text_55_5c28
 	end
 
-Script_055_5947:
+Script_055_5947::
 	textface text_55_5c6f
 	end
 
-Script_055_594b:
+Script_055_594b::
 	textface text_55_5cbb
 	end
 
-Script_055_594f:
+Script_055_594f::
 	textface text_55_5d0a
 	end
 
-Script_055_5953:
+Script_055_5953::
 	textface text_55_5fc7
 	end
 
-Script_055_5957:
+Script_055_5957::
 	ifcharindex $03, Script_055_595f
 	textface text_55_64aa
 	end
 
-Script_055_595f:
+Script_055_595f::
 	textface text_55_64f9
 	setbit wEventFlags + 7, $04
 	countflags7
 	end
 
-Script_055_5968:
+Script_055_5968::
 	ifcharindex $03, Script_055_5970
 	textface text_55_64b2
 	end
 
-Script_055_5970:
+Script_055_5970::
 	textface text_55_650e
 	setbit wEventFlags + 7, $05
 	countflags7
 	end
 
-Script_055_5979:
+Script_055_5979::
 	ifcharindex $03, Script_055_5981
 	textface text_55_64ba
 	end
 
-Script_055_5981:
+Script_055_5981::
 	textface text_55_653d
 	setbit wEventFlags + 7, $06
 	countflags7
 	end
 
-Script_055_598a:
+Script_055_598a::
 	ifcharindex $03, Script_055_5992
 	textface text_55_64c2
 	end
 
-Script_055_5992:
+Script_055_5992::
 	checkbit wEventFlags + 8, $05, Script_055_59a1
 	textface text_55_65c6
 	setbit wEventFlags + 7, $07
 	countflags7
 	end
 
-Script_055_59a1:
+Script_055_59a1::
 	textface text_55_6fab
 	end
 
-Script_055_59a5:
+Script_055_59a5::
 	ifcharindex $03, Script_055_59ad
 	textface text_55_64ca
 	end
 
-Script_055_59ad:
+Script_055_59ad::
 	checkbit wEventFlags + 8, $05, Script_055_59bc
 	textface text_55_6630
 	setbit wEventFlags + 8, $00
 	countflags7
 	end
 
-Script_055_59bc:
+Script_055_59bc::
 	textface text_55_6fda
 	end
 
-Script_055_59c0:
+Script_055_59c0::
 	ifcharindex $03, Script_055_59c8
 	textface text_55_64da
 	end
 
-Script_055_59c8:
+Script_055_59c8::
 	checkbit wEventFlags + 8, $05, Script_055_59d7
 	textface text_55_6684
 	setbit wEventFlags + 8, $01
 	countflags7
 	end
 
-Script_055_59d7:
+Script_055_59d7::
 	walkpath
 	face FACE_UP
 	dirmovement
@@ -642,34 +642,34 @@ Script_055_59d7:
 	farjump2 Script_05c_4135
 	end
 
-Script_055_59f7:
+Script_055_59f7::
 	ifcharindex $03, Script_055_59ff
 	textface text_55_64d2
 	end
 
-Script_055_59ff:
+Script_055_59ff::
 	textface text_55_6704
 	end
 
-Script_055_5a03:
+Script_055_5a03::
 	ifcharindex $03, Script_055_5a0b
 	textface text_55_64d2
 	end
 
-Script_055_5a0b:
+Script_055_5a0b::
 	textface text_55_672a
 	end
 
-Script_055_5a0f:
+Script_055_5a0f::
 	ifcharindex $03, Script_055_5a17
 	textface text_55_64e1
 	end
 
-Script_055_5a17:
+Script_055_5a17::
 	textface text_55_673a
 	end
 
-Script_055_5a1b:
+Script_055_5a1b::
 	textface text_55_5d57
 	spriteface  3, FACE_LEFT
 	stext text_55_5da9
@@ -688,15 +688,15 @@ Script_055_5a1b:
 	delay $03, $20
 	end
 
-Script_055_5a4c:
+Script_055_5a4c::
 	textface text_55_5da9
 	end
 
-Script_055_5a50:
+Script_055_5a50::
 	textface text_55_5e56
 	end
 
-Script_055_5a54:
+Script_055_5a54::
 	textface text_55_5e96
 	spriteface  2, FACE_DOWN
 	stext text_55_5edc
@@ -707,23 +707,23 @@ Script_055_5a54:
 	delay $03, $20
 	end
 
-Script_055_5a6d:
+Script_055_5a6d::
 	textface text_55_5f11
 	end
 
-Script_055_5a71:
+Script_055_5a71::
 	textface text_55_5f65
 	end
 
-Script_055_5a75:
+Script_055_5a75::
 	textface text_55_5f91
 	end
 
-Script_055_5a79:
+Script_055_5a79::
 	textface text_55_5fe4
 	end
 
-Script_055_5a7d:
+Script_055_5a7d::
 	checkbit wEventFlags + 7, $02, Script_055_5aeb
 	walkpath
 	face FACE_UP
@@ -763,7 +763,7 @@ Script_055_5a7d:
 	setbit wEventFlags + 7, $02
 	end
 
-Script_055_5aeb:
+Script_055_5aeb::
 	textface text_55_6288
 	end
 
@@ -785,7 +785,7 @@ INCLUDE "data/text/script_east_fishmarket_undersea_11.asm"
 INCLUDE "data/text/script_east_fishmarket_undersea_0e.asm"
 INCLUDE "data/text/script_east_fishmarket_0d_3.asm"
 
-MovementData_055_7c53:
+MovementData_055_7c53::
 	db $fe, $00
 	db $fe, $00
 	db $fe, $00
@@ -820,7 +820,7 @@ MovementData_055_7c53:
 	db $fe, $00
 	db $88
 
-MovementData_055_7c94:
+MovementData_055_7c94::
 	db $02, $00
 	db $02, $00
 	db $02, $00
@@ -855,7 +855,7 @@ MovementData_055_7c94:
 	db $02, $00
 	db $88
 
-MovementData_055_7cd5:
+MovementData_055_7cd5::
 	db $02, $00
 	db $02, $00
 	db $02, $00
@@ -906,7 +906,7 @@ MovementData_055_7cd5:
 	db $02, $00
 	db $88
 
-MovementData_055_7d36:
+MovementData_055_7d36::
 	db $02, $00
 	db $02, $00
 	db $02, $00
@@ -945,7 +945,7 @@ MovementData_055_7d36:
 	db $01, $00
 	db $88
 
-MovementData_055_7d7f:
+MovementData_055_7d7f::
 	db $ff, $00, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $fe, $ff, $fe, $00
 	db $fe, $ff, $fe, $00, $fe, $ff, $fe, $00, $ff, $ff, $ff, $00, $ff, $00, $ff, $ff
 	db $ff, $00, $ff, $ff, $ff, $00, $ff, $ff, $ff, $00, $ff, $ff, $ff, $ff, $00, $ff
@@ -955,7 +955,7 @@ MovementData_055_7d7f:
 	db $04, $00, $04, $00, $04, $00, $04, $ff, $04, $00, $04, $00, $04, $00, $04, $00
 	db $04, $00, $04, $00, $04, $00, $88
 
-MovementData_055_7df6:
+MovementData_055_7df6::
 	db $ff, $00
 	db $fe, $00
 	db $fe, $00
@@ -1016,7 +1016,7 @@ MovementData_055_7df6:
 	db $04, $01
 	db $88
 
-MovementData_055_7e6b:
+MovementData_055_7e6b::
 	db $ff, $ff
 	db $fe, $ff
 	db $fe, $ff
@@ -1104,7 +1104,7 @@ MovementData_055_7e6b:
 	db $03, $03
 	db $01, $88
 
-MovementData_055_7f17:
+MovementData_055_7f17::
 	db $ff, $ff
 	db $fc, $fc
 	db $fc, $fc
@@ -1127,7 +1127,7 @@ MovementData_055_7f17:
 	db $fc, $fc
 	db $88
 
-MovementData_055_7f40:
+MovementData_055_7f40::
 	db $ff, $00
 	db $fc, $00
 	db $fc, $00
@@ -1152,7 +1152,7 @@ MovementData_055_7f40:
 	db $fc, $00
 	db $88
 
-MovementData_055_7f6d:
+MovementData_055_7f6d::
 	db $ff, $01, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04
 	db $fd, $04, $fc, $04, $fd, $04, $fc, $04, $fc, $04, $fd, $04, $fc, $04, $fd, $04
 	db $fc, $04, $fc, $04, $fd, $04, $fc, $04, $88, $00, $00, $00, $00, $00, $00, $00

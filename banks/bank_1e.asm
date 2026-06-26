@@ -30,7 +30,7 @@ _ClearMapLayoutPatch::
 	call ApplyMapLayoutPatch
 	ret
 
-LayoutPatches_01e_402a:
+LayoutPatches_01e_402a::
 	dw .patch_0
 	dw .patch_0
 	dw .patch_2
@@ -97,7 +97,7 @@ _SetMapLayoutPatch::
 	call ApplyMapLayoutPatch
 	ret
 
-LayoutPatches_01e_40ad:
+LayoutPatches_01e_40ad::
 	dw .patch_0
 	dw .patch_1
 	dw .patch_2
@@ -172,7 +172,7 @@ _ApplyMapLayoutPatchIfClear::
 	call ApplyMapLayoutPatch
 	ret
 
-LayoutPatches_01e_414f:
+LayoutPatches_01e_414f::
 	dw .patch_none
 	dw .patch_none
 	dw .patch_none
@@ -372,7 +372,7 @@ PrintItemName::
 	call PrintMenuText
 	ret
 
-Func_01e_4284:
+Func_01e_4284::
 	ld l, d
 	ld h, 0
 	ld de, MonIcons
@@ -406,7 +406,7 @@ Func_01e_4290::
 	call PrintMenuText
 	ret
 
-Func_01e_42ba:
+Func_01e_42ba::
 	ld l, d
 	ld h, 0
 	ld de, MonIcons
@@ -431,7 +431,7 @@ Func_01e_42ba:
 	call PrintMenuText
 	ret
 
-Func_01e_42e4:
+Func_01e_42e4::
 	ld l, d
 	ld a, d
 	ld h, 0
@@ -441,7 +441,7 @@ Func_01e_42e4:
 	ld [wd8ff], a
 	ret
 
-Func_01e_42f1:
+Func_01e_42f1::
 	ld l, d
 	ld a, d
 	ld [wd9e3], a
@@ -497,7 +497,7 @@ Func_01e_431f::
 	call CopyBytesVRAM
 	ret
 
-Func_01e_434d:
+Func_01e_434d::
 	ld de, PointerTable_01e_57ed
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
@@ -511,7 +511,7 @@ Func_01e_434d:
 	call PrintMenuText
 	ret
 
-DrawItemMenuPage:
+DrawItemMenuPage::
 	ld de, Pointers_01e_4ebd
 	ld a, [wd1f4]
 	ld l, a
@@ -583,7 +583,7 @@ DrawItemMenuPage:
 	jr c, .loop
 	ret
 
-Func_01e_43d3:
+Func_01e_43d3::
 	ld de, Pointers_01e_447d
 	ld a, [wd1f4]
 	ld l, a
@@ -623,7 +623,7 @@ Func_01e_43d3:
 	call PrintNumber
 	ret
 
-Func_01e_4416:
+Func_01e_4416::
 	call Func_01e_4441
 	ld de, wd1f5
 	ldh a, [hMathValue + 2]
@@ -645,7 +645,7 @@ Func_01e_4416:
 	call PrintNumber
 	ret
 
-Func_01e_4441:
+Func_01e_4441::
 	ld de, Pointers_01e_447d
 	ld a, [wd1f4]
 	ld l, a
@@ -680,11 +680,11 @@ Func_01e_4441:
 	ret
 
 ; seems to be shop prices
-Pointers_01e_447d:
+Pointers_01e_447d::
 	dw Unk_01e_4481
 	dw Unk_01e_44d1
 
-Unk_01e_4481:
+Unk_01e_4481::
 	bigdw 0
 	bigdw 100
 	bigdw 300
@@ -726,7 +726,7 @@ Unk_01e_4481:
 	bigdw 50000
 	bigdw 1000
 
-Unk_01e_44d1:
+Unk_01e_44d1::
 	bigdw 0
 	bigdw 2500
 	bigdw 10000
@@ -750,11 +750,11 @@ Unk_01e_44d1:
 	bigdw 3000
 	bigdw 1000
 
-Pointers_01e_44fd:
+Pointers_01e_44fd::
 	dw Pointers_01e_4501
 	dw Pointers_01e_459b
 
-Pointers_01e_4501:
+Pointers_01e_4501::
 	dw Unk_01e_451d
 	dw Unk_01e_4526
 	dw Unk_01e_452f
@@ -770,36 +770,36 @@ Pointers_01e_4501:
 	dw Unk_01e_4589
 	dw Unk_01e_4592
 
-Unk_01e_451d:
+Unk_01e_451d::
 	db $01, $05, $0c, $0d, $0e, $12, $18, $27, -1
-Unk_01e_4526:
+Unk_01e_4526::
 	db $02, $05, $06, $0d, $0e, $12, $15, $27, -1
-Unk_01e_452f:
+Unk_01e_452f::
 	db $06, $09, $0c, $0d, $11, $19, $20, $23, -1
-Unk_01e_4538:
+Unk_01e_4538::
 	db $02, $05, $06, $0c, $12, $15, $23, $22, -1
-Unk_01e_4541:
+Unk_01e_4541::
 	db $02, $05, $09, $0a, $0b, $0c, $1c, $1e, -1
-Unk_01e_454a:
+Unk_01e_454a::
 	db $02, $03, $05, $06, $0c, $0d, $12, $15, -1
-Unk_01e_4553:
+Unk_01e_4553::
 	db $02, $03, $0a, $11, $12, $15, $24, $22, -1
-Unk_01e_455c:
+Unk_01e_455c::
 	db $03, $06, $07, $0c, $0d, $0f, $12, $15, -1
-Unk_01e_4565:
+Unk_01e_4565::
 	db $03, $07, $0c, $11, $13, $16, $24, $27, -1
-Unk_01e_456e:
+Unk_01e_456e::
 	db $03, $06, $0c, $0d, $15, $1d, $1a, $1e, -1
-Unk_01e_4577:
+Unk_01e_4577::
 	db $07, $08, $0c, $0d, $11, $16, $24, $27, -1
-Unk_01e_4580:
+Unk_01e_4580::
 	db $03, $08, $0c, $11, $14, $16, $17, $25, -1
-Unk_01e_4589:
+Unk_01e_4589::
 	db $03, $07, $0a, $0c, $11, $13, $15, $17, -1
-Unk_01e_4592:
+Unk_01e_4592::
 	db $03, $04, $08, $11, $13, $16, $22, $25, -1
 
-Pointers_01e_459b:
+Pointers_01e_459b::
 	dw Unk_01e_45b7
 	dw Unk_01e_45c0
 	dw Unk_01e_45c9
@@ -815,36 +815,36 @@ Pointers_01e_459b:
 	dw Unk_01e_4623
 	dw Unk_01e_462c
 
-Unk_01e_45b7:
+Unk_01e_45b7::
 	db $08, $09, $0c, $0f, $12, $10, $11, $13, -1
-Unk_01e_45c0:
+Unk_01e_45c0::
 	db $08, $05, $0f, $11, $12, $15, $01, $02, -1
-Unk_01e_45c9:
+Unk_01e_45c9::
 	db $06, $0d, $10, $13, $15, $09, $02, $01, -1
-Unk_01e_45d2:
+Unk_01e_45d2::
 	db $03, $0f, $12, $13, $15, $01, $0e, $0a, -1
-Unk_01e_45db:
+Unk_01e_45db::
 	db $12, $15, $0e, $07, $04, $0a, $0f, $03, -1
-Unk_01e_45e4:
+Unk_01e_45e4::
 	db $04, $0b, $0d, $11, $01, $13, $03, $0c, -1
-Unk_01e_45ed:
+Unk_01e_45ed::
 	db $0b, $08, $04, $05, $11, $12, $13, $01, -1
-Unk_01e_45f6:
+Unk_01e_45f6::
 	db $03, $0a, $09, $15, $10, $05, $0c, $01, -1
-Unk_01e_45ff:
+Unk_01e_45ff::
 	db $13, $14, $08, $0a, $0f, $01, $0b, $15, -1
-Unk_01e_4608:
+Unk_01e_4608::
 	db $13, $11, $01, $15, $06, $07, $0c, $0e, -1
-Unk_01e_4611:
+Unk_01e_4611::
 	db $01, $02, $11, $15, $06, $07, $0c, $0e, -1
-Unk_01e_461a:
+Unk_01e_461a::
 	db $01, $02, $11, $13, $14, $15, $10, $09, -1
-Unk_01e_4623:
+Unk_01e_4623::
 	db $0a, $0b, $0c, $0d, $0e, $0f, $14, $10, -1
-Unk_01e_462c:
+Unk_01e_462c::
 	db $01, $02, $10, $11, $12, $13, $14, $15, -1
 
-DrawItemPageWithIcons:
+DrawItemPageWithIcons::
 	ld de, Pointers_01e_4849
 	ld a, [wd1f4]
 	ld l, a
@@ -913,7 +913,7 @@ DrawItemPageWithIcons:
 	jr c, .loop
 	ret
 
-DrawItemListPage:
+DrawItemListPage::
 	ld de, Pointers_01e_4849
 	ld a, [wd1f4]
 	ld l, a
@@ -989,7 +989,7 @@ DrawItemListPage:
 	jr c, .loop
 	ret
 
-Func_01e_4719:
+Func_01e_4719::
 	push bc
 	ld c, a
 	ld a, [wd1f4]
@@ -1028,7 +1028,7 @@ Func_01e_4719:
 	pop bc
 	ret
 
-Func_01e_4745:
+Func_01e_4745::
 	ld de, Pointers_01e_614f
 	ld a, [wd9d4]
 	ld l, a
@@ -1044,7 +1044,7 @@ Func_01e_4745:
 	ld l, a
 	jp Func_01e_4837
 
-Func_01e_475c:
+Func_01e_475c::
 	ld de, PointerTable_01e_59cc
 	ld a, [wd1f4]
 	ld l, a
@@ -1100,7 +1100,7 @@ Func_01e_475c:
 	call PrintMenuText
 	ret
 
-Func_01e_47af:
+Func_01e_47af::
 	ld de, PointerTable_01e_59cc
 	ld a, [wd1f4]
 	ld l, a
@@ -1149,7 +1149,7 @@ Func_01e_47af:
 	call PrintMenuText
 	ret
 
-Func_01e_47fb:
+Func_01e_47fb::
 	ld de, PointerTable_01e_59cc
 	ld a, [wd1f4]
 	ld l, a
@@ -1192,7 +1192,7 @@ Func_01e_47fb:
 	ld h, [hl]
 	ld l, a
 
-Func_01e_4837:
+Func_01e_4837::
 	ld a, $a0
 	ld [wMenuTextX], a
 	ld a, $e8
@@ -1202,12 +1202,12 @@ Func_01e_4837:
 	call PrintMenuText
 	ret
 
-Pointers_01e_4849:
+Pointers_01e_4849::
 	dw wd300
 	dw wddb0
 	dw wd284
 
-Func_01e_484f:
+Func_01e_484f::
 	ld a, [wd1fe]
 	ld l, a
 	ld a, [wd1ff]
@@ -1234,7 +1234,7 @@ Func_01e_484f:
 	call PrintMenuText
 	ret
 
-Func_01e_487b:
+Func_01e_487b::
 	ld a, [wd1fe]
 	ld l, a
 	ld a, [wd1ff]
@@ -1262,7 +1262,7 @@ Func_01e_487b:
 	ret
 
 ; Clear bit b of the flag byte at [de].
-ClearLayoutFlag:
+ClearLayoutFlag::
 	ld a, [de]
 	ld l, a
 	ld a, b
@@ -1287,7 +1287,7 @@ ClearLayoutFlag:
 	ret
 
 ; Set bit b of the flag byte at [de].
-SetLayoutFlag:
+SetLayoutFlag::
 	ld a, [de]
 	ld l, a
 	ld a, b
@@ -1313,7 +1313,7 @@ SetLayoutFlag:
 
 ; Write the patch's block value into wMapLayout at row*hMapWidth + col.
 ; hl -> col (db), row (db), value (db)
-ApplyMapLayoutPatch:
+ApplyMapLayoutPatch::
 	push bc
 	ld a, [hli]
 	ld e, a
@@ -1341,7 +1341,7 @@ ApplyMapLayoutPatch:
 	ret
 
 ; Return a = bit b of the flag byte at [de] (0 or 1).
-TestLayoutFlag:
+TestLayoutFlag::
 	push bc
 	push hl
 	ld a, [de]
@@ -1365,7 +1365,7 @@ TestLayoutFlag:
 	pop bc
 	ret
 
-LayoutPatches_01e_4910:
+LayoutPatches_01e_4910::
 	dw MapLayoutPatches_None
 	dw MapLayoutPatches_01e_4cf5
 	dw MapLayoutPatches_01e_4cfc
@@ -1703,11 +1703,11 @@ LayoutPatches_01e_4910:
 	db 1
 	layout_patch wdabb, 2, 3, 2, $18
 
-MapLayoutPatches_None:
+MapLayoutPatches_None::
 	db 0
 	layout_patch 0, 0, 0, 0, 0
 
-MapLayoutPatches_01e_4cd6:
+MapLayoutPatches_01e_4cd6::
 	db 5
 	layout_patch wdab9, 0, $0b, 3, $57
 	layout_patch wdab9, 1, 0, $0a, $58
@@ -1715,27 +1715,27 @@ MapLayoutPatches_01e_4cd6:
 	layout_patch wdab9, 3, 0, $0b, $5a
 	layout_patch wdab9, 4, 2, $0b, $5b
 
-MapLayoutPatches_01e_4cf5:
+MapLayoutPatches_01e_4cf5::
 	db 1
 	layout_patch wdab9, 5, 2, 0, $16
 
-MapLayoutPatches_01e_4cfc:
+MapLayoutPatches_01e_4cfc::
 	db 2
 	layout_patch wdab9, 6, 3, 6, $3e
 	layout_patch wdab9, 7, 8, 7, $3f
 
-MapLayoutPatches_01e_4d09:
+MapLayoutPatches_01e_4d09::
 	db 1
 	layout_patch wdaba, 0, 2, 0, $14
 
-MapLayoutPatches_01e_4d10:
+MapLayoutPatches_01e_4d10::
 	db 4
 	layout_patch wdaba, 1, 1, 0, $54
 	layout_patch wdaba, 2, $0b, 0, $55
 	layout_patch wdaba, 3, 0, 8, $56
 	layout_patch wdaba, 4, 5, 8, $57
 
-Pointers_01e_4d29:
+Pointers_01e_4d29::
 ; appears to be category, index
 	dw MapLayoutPatches_None
 	dw ItemNameIndex_01e_4ead
@@ -1794,150 +1794,150 @@ Pointers_01e_4d29:
 	dw ItemNameIndex_01e_4dad
 	dw ItemNameIndex_01e_4e65
 
-ItemNameIndex_01e_4d99:
+ItemNameIndex_01e_4d99::
 	db $00, $3a
 	db $00, $42
 	db $00, $35
 	db $00, $17
 
-ItemNameIndex_01e_4da1:
+ItemNameIndex_01e_4da1::
 	db $00, $43
 	db $00, $47
 
-ItemNameIndex_01e_4da5:
+ItemNameIndex_01e_4da5::
 	db $00, $49
 
-ItemNameIndex_01e_4da7:
+ItemNameIndex_01e_4da7::
 	db $00, $4c
 
-ItemNameIndex_01e_4da9:
+ItemNameIndex_01e_4da9::
 	db $00, $4f
 	db $00, $51
 
-ItemNameIndex_01e_4dad:
+ItemNameIndex_01e_4dad::
 	db $01, $09
 	db $00, $53
 
-ItemNameIndex_01e_4db1:
+ItemNameIndex_01e_4db1::
 	db $00, $2c
 	db $01, $0a
 	db $00, $2e
 
-ItemNameIndex_01e_4db7:
+ItemNameIndex_01e_4db7::
 	db $00, $24
 	db $00, $26
 
-ItemNameIndex_01e_4dbb:
+ItemNameIndex_01e_4dbb::
 	db $00, $3e
 
-ItemNameIndex_01e_4dbd:
+ItemNameIndex_01e_4dbd::
 	db $00, $0c
 	db $00, $08
 	db $00, $03
 
-ItemNameIndex_01e_4dc3:
+ItemNameIndex_01e_4dc3::
 	db $00, $3b
 	db $00, $30
 	db $00, $23
 
-ItemNameIndex_01e_4dc9:
+ItemNameIndex_01e_4dc9::
 	db $00, $24
 	db $00, $0b
 	db $00, $22
 	db $00, $54
 	db $00, $27
 
-ItemNameIndex_01e_4dd3:
+ItemNameIndex_01e_4dd3::
 	db $00, $41
 
-ItemNameIndex_01e_4dd5:
+ItemNameIndex_01e_4dd5::
 	db $00, $07
 	db $00, $45
 
-ItemNameIndex_01e_4dd9:
+ItemNameIndex_01e_4dd9::
 	db $00, $1d
 
-ItemNameIndex_01e_4ddb:
+ItemNameIndex_01e_4ddb::
 	db $00, $4d
 	db $02, $20
 	db $00, $24
 	db $00, $3d
 
-ItemNameIndex_01e_4de3:
+ItemNameIndex_01e_4de3::
 	db $01, $14
 	db $00, $25
 	db $01, $0d
 	db $00, $26
 
-ItemNameIndex_01e_4deb:
+ItemNameIndex_01e_4deb::
 	db $00, $08
 	db $00, $0d
 	db $00, $02
 	db $00, $36
 
-ItemNameIndex_01e_4df3:
+ItemNameIndex_01e_4df3::
 	db $00, $11
 	db $00, $28
 
-ItemNameIndex_01e_4df7:
+ItemNameIndex_01e_4df7::
 	db $01, $0f
 	db $00, $4b
 
-ItemNameIndex_01e_4dfb:
+ItemNameIndex_01e_4dfb::
 	db $00, $0c
 
-ItemNameIndex_01e_4dfd:
+ItemNameIndex_01e_4dfd::
 	db $00, $2a
 	db $00, $4a
 	db $00, $38
 
-ItemNameIndex_01e_4e03:
+ItemNameIndex_01e_4e03::
 	db $00, $08
 	db $00, $14
 
-ItemNameIndex_01e_4e07:
+ItemNameIndex_01e_4e07::
 	db $00, $27
 	db $00, $03
 
-ItemNameIndex_01e_4e0b:
+ItemNameIndex_01e_4e0b::
 	db $00, $44
 	db $00, $58
 
-ItemNameIndex_01e_4e0f:
+ItemNameIndex_01e_4e0f::
 	db $00, $27
 	db $00, $1d
 	db $00, $16
 
-ItemNameIndex_01e_4e15:
+ItemNameIndex_01e_4e15::
 	db $00, $1c
 	db $00, $39
 	db $00, $13
 
-ItemNameIndex_01e_4e1b:
+ItemNameIndex_01e_4e1b::
 	db $00, $07
 	db $00, $1b
 	db $00, $36
 	db $00, $32
 
-ItemNameIndex_01e_4e23:
+ItemNameIndex_01e_4e23::
 	db $00, $23
 	db $00, $12
 	db $00, $22
 
-ItemNameIndex_01e_4e29:
+ItemNameIndex_01e_4e29::
 	db $01, $14
 	db $01, $15
 
-ItemNameIndex_01e_4e2d:
+ItemNameIndex_01e_4e2d::
 	db $00, $06
 	db $00, $02
 
-ItemNameIndex_01e_4e31:
+ItemNameIndex_01e_4e31::
 	db $00, $1d
 	db $00, $11
 	db $00, $23
 
-ItemNameIndex_01e_4e37:
+ItemNameIndex_01e_4e37::
 	db $00, $06
 	db $01, $0c
 	db $00, $1b
@@ -1946,12 +1946,12 @@ ItemNameIndex_01e_4e37:
 	db $01, $13
 	db $01, $11
 
-ItemNameIndex_01e_4e45:
+ItemNameIndex_01e_4e45::
 	db $00, $18
 	db $00, $23
 	db $00, $31
 
-ItemNameIndex_01e_4e4b:
+ItemNameIndex_01e_4e4b::
 	db $00, $27
 	db $00, $03
 	db $00, $24
@@ -1959,101 +1959,101 @@ ItemNameIndex_01e_4e4b:
 	db $01, $01
 	db $00, $03
 
-ItemNameIndex_01e_4e57:
+ItemNameIndex_01e_4e57::
 	db $00, $27
 	db $00, $0b
 	db $00, $04
 
-ItemNameIndex_01e_4e5d:
+ItemNameIndex_01e_4e5d::
 	db $00, $0c
 	db $00, $24
 	db $00, $01
 	db $00, $05
 
-ItemNameIndex_01e_4e65:
+ItemNameIndex_01e_4e65::
 	db $00, $0c
 	db $00, $24
 	db $00, $01
 	db $00, $05
 
-ItemNameIndex_01e_4e6d:
+ItemNameIndex_01e_4e6d::
 	db $00, $02
 	db $00, $05
 	db $00, $21
 
-ItemNameIndex_01e_4e73:
+ItemNameIndex_01e_4e73::
 	db $00, $4b
 	db $01, $08
 	db $00, $07
 
-ItemNameIndex_01e_4e79:
+ItemNameIndex_01e_4e79::
 	db $00, $11
 	db $00, $12
 	db $00, $27
 	db $00, $09
 	db $00, $0c
 
-ItemNameIndex_01e_4e83:
+ItemNameIndex_01e_4e83::
 	db $00, $04
 	db $00, $59
 	db $00, $27
 	db $00, $11
 
-ItemNameIndex_01e_4e8b:
+ItemNameIndex_01e_4e8b::
 	db $00, $0a
 	db $00, $06
 
-ItemNameIndex_01e_4e8f:
+ItemNameIndex_01e_4e8f::
 	db $00, $12
 	db $00, $3f
 	db $00, $43
 	db $00, $26
 
-ItemNameIndex_01e_4e97:
+ItemNameIndex_01e_4e97::
 	db $00, $55
 
-ItemNameIndex_01e_4e99:
+ItemNameIndex_01e_4e99::
 	db $00, $27
 	db $00, $29
 
-ItemNameIndex_01e_4e9d:
+ItemNameIndex_01e_4e9d::
 	db $00, $12
 
-ItemNameIndex_01e_4e9f:
+ItemNameIndex_01e_4e9f::
 	db $00, $11
 
-ItemNameIndex_01e_4ea1:
+ItemNameIndex_01e_4ea1::
 	db $00, $06
 
-ItemNameIndex_01e_4ea3:
+ItemNameIndex_01e_4ea3::
 	db $00, $27
 	db $00, $34
 	db $00, $01
 	db $00, $0c
 	db $00, $26
 
-ItemNameIndex_01e_4ead:
+ItemNameIndex_01e_4ead::
 	db $00, $13
 
-ItemNameIndex_01e_4eaf:
+ItemNameIndex_01e_4eaf::
 	db $00, $03
 	db $00, $06
 
-ItemNameIndex_01e_4eb3:
+ItemNameIndex_01e_4eb3::
 	db $00, $0a
 
-ItemNameIndex_01e_4eb5:
+ItemNameIndex_01e_4eb5::
 	db $02, $02
 	db $00, $24
 	db $00, $1e
 	db $00, $2f
 
-Pointers_01e_4ebd:
+Pointers_01e_4ebd::
 	dw ItemNames
 	dw EquipmentNames
 	dw KeyItemNames
 
-ItemNames:
+ItemNames::
 	dw text_1e_4f91
 	dw text_1e_4f97
 	dw text_1e_4f9d
@@ -2160,7 +2160,7 @@ ItemNames:
 
 INCLUDE "data/text/item_names.asm"
 
-EquipmentNames:
+EquipmentNames::
 	dw text_1e_5268
 	dw text_1e_526e
 	dw text_1e_5274
@@ -2200,7 +2200,7 @@ EquipmentNames:
 
 INCLUDE "data/text/equipment_names.asm"
 
-KeyItemNames:
+KeyItemNames::
 	dw text_1e_5358
 	dw text_1e_535e
 	dw text_1e_5365
@@ -2248,7 +2248,7 @@ INCLUDE "data/text/key_item_names.asm"
 INCLUDE "data/monsters/menu_icons.asm"
 
 ; type-name index per wBattleAnimID (low nibble -> TypeNames)
-TypeNameIndex_01e_551f:
+TypeNameIndex_01e_551f::
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $04, $04, $04, $04, $04, $04
@@ -2259,7 +2259,7 @@ TypeNameIndex_01e_551f:
 	db $05, $08, $08, $08, $08, $08, $08, $06, $06, $06, $08, $08, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $01, $02, $06, $00, $00
 
-TypeNames:
+TypeNames::
 	dw text_1e_55c0
 	dw text_1e_55c3
 	dw text_1e_55c6
@@ -2274,7 +2274,7 @@ INCLUDE "data/text/mon_types.asm"
 
 INCLUDE "data/icon_pointers.asm"
 
-PointerTable_01e_57ed:
+PointerTable_01e_57ed::
 	dw text_1e_5829
 	dw text_1e_582a
 	dw text_1e_5836
@@ -2308,11 +2308,11 @@ PointerTable_01e_57ed:
 
 INCLUDE "data/text/script_menu_system.asm"
 
-PointerTable_01e_59cc:
+PointerTable_01e_59cc::
 	dw Pointers_01e_59d2
 	dw Pointers_01e_614f
 	dw Pointers_01e_63e5
-Pointers_01e_59d2:
+Pointers_01e_59d2::
 	dw text_1e_5aa0
 	dw text_1e_5aa1
 	dw text_1e_5ab2
@@ -2421,7 +2421,7 @@ INCLUDE "data/text/script_item_descriptions_0.asm"
 
 INCLUDE "data/text/script_item_descriptions_5c3f.asm"
 
-Pointers_01e_614f:
+Pointers_01e_614f::
 	dw text_1e_6197 
 	dw text_1e_6198 
 	dw text_1e_61b7 
@@ -2459,7 +2459,7 @@ Pointers_01e_614f:
 	dw text_1e_63c5 
 	dw text_1e_63c5
 	INCLUDE "data/text/script_equipment_descriptions.asm"
-Pointers_01e_63e5:
+Pointers_01e_63e5::
 	dw text_1e_6437 
 	dw text_1e_6438 
 	dw text_1e_6442 
@@ -2503,7 +2503,7 @@ Pointers_01e_63e5:
 	dw text_1e_6560
 	INCLUDE "data/text/script_item_names.asm"
 
-Pointers_01e_6567:
+Pointers_01e_6567::
 	dw text_1e_6635
 	dw text_1e_6636
 	dw text_1e_6646
@@ -2608,7 +2608,7 @@ Pointers_01e_6567:
 	dw text_1e_6ac3
 	dw text_1e_6ac3
 	INCLUDE "data/text/script_item_effects.asm"
-Func_01e_6acd:
+Func_01e_6acd::
 	ld a, [$DCE6]
 	and a
 	jr nz, .asm_6ad9
@@ -2816,31 +2816,31 @@ Func_01e_6acd:
 	ld d, $00
 	ret
 ; TODO: unk_ - data, referenced via `ld de, unk_01e_6c6e`
-unk_01e_6c6e:
+unk_01e_6c6e::
 	db $01, $01, $01, $01, $01, $01, $00, $01, $01, $01, $01, $01, $01, $01, $00, $01
 	db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $00, $01, $01, $01, $01, $01
 	db $01, $01, $00, $01, $01, $01, $01, $01, $ff
 ; TODO: unk_ - data, referenced via `ld de, unk_01e_6c97`
-unk_01e_6c97:
+unk_01e_6c97::
 	db $00, $00, $01, $00, $00, $01, $00, $00, $00, $01, $00, $00, $01, $00, $01, $00
 	db $00, $01, $00, $00, $00, $00, $00, $00, $01, $00, $00, $01, $00, $00, $00, $00
 	db $01, $00, $00, $00, $00, $00, $00, $00, $ff
 ; TODO: unk_ - data, referenced via `ld de, unk_01e_6cc0`
-unk_01e_6cc0:
+unk_01e_6cc0::
 	db $00, $01, $01, $00, $01, $00, $00, $00, $01, $00, $01, $00, $00, $01, $00, $01
 	db $00, $01, $00, $00, $00, $01, $01, $00, $01, $00, $01, $01, $00, $01, $00, $01
 	db $00, $00, $00, $01, $00, $00, $01, $00, $ff
 ; TODO: unk_ - data, referenced via `ld de, unk_01e_6ce9`
-unk_01e_6ce9:
+unk_01e_6ce9::
 	db $00, $01, $01, $00, $00, $01, $01, $00, $01, $00, $01, $00, $01, $01, $01, $00
 	db $01, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $01, $00, $00
 	db $00, $01, $00, $01, $00, $01, $00, $00, $ff
 ; TODO: unk_ - data, referenced via `ld de, unk_01e_6d12`
-unk_01e_6d12:
+unk_01e_6d12::
 	db $01, $01, $01, $00, $01, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $00
 	db $01, $01, $00, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $01, $00, $01
 	db $00, $01, $00, $01, $01, $00, $01, $00, $ff
-MonSpeciesTable_01e_6d3b:
+MonSpeciesTable_01e_6d3b::
 	db $00, $02, $02, $03, $01, $02, $03, $02, $01, $01, $02, $01, $03, $01, $02, $01
 	db $01, $03, $01, $02, $03, $02, $03, $03, $02, $01, $03, $02, $02, $02, $02, $03
 	db $03, $02, $01, $02, $01, $03, $03, $02, $02, $01, $02, $02, $03, $03, $03, $03
@@ -2893,7 +2893,7 @@ LoadItemNameByIndex::
 
 ; TODO: cutscene/minigame data - classify records (verify consumer: db vs dw vs [sub-table][data])
 ; 16 (category, index) records, consumed by LoadItemNameByIndex / LoadItemNameByMapType
-ItemNameIndex_01e_6e24:
+ItemNameIndex_01e_6e24::
 	db $00, $01
 	db $00, $06
 	db $01, $02
@@ -2945,7 +2945,7 @@ LoadShopItemName::
 	farcall asm_039_479f
 	ret
 
-asm_01e_6e89:
+asm_01e_6e89::
 	ld a, [wItemNameIndex]
 	ld de, PriceOptions
 	ld l, a
@@ -2969,7 +2969,7 @@ asm_01e_6e89:
 	farcall AddExpToTotal
 	ret
 
-PriceOptions:
+PriceOptions::
 	bigdw 500
 	bigdw 500
 	bigdw 1000
@@ -2978,7 +2978,7 @@ PriceOptions:
 	bigdw 2500
 	
 
-PriceTexts:
+PriceTexts::
 	dw text_1e_6ece
 	dw text_1e_6ece
 	dw text_1e_6ed5

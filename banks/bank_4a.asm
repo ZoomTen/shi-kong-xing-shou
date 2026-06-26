@@ -2,7 +2,7 @@ MACRO levelup_move ; level, move
 	db \1, \2
 ENDM
 
-Func_04a_4000:
+Func_04a_4000::
 	ld de, Learnset_Pointers
 	ld a, [wd981]
 	ld c, a
@@ -91,7 +91,7 @@ Func_04a_4000:
 	ldh [hFFC6], a
 	ret
 
-LearnLevelUpMove:
+LearnLevelUpMove::
 	ld de, Learnset_Pointers
 	ld a, [wd981]
 	ld c, a
@@ -172,7 +172,7 @@ LearnLevelUpMove:
 	ld [hli], a
 	ret
 
-Func_04a_412a:
+Func_04a_412a::
 	ld hl, wcde0
 	ld [hl], $00
 	inc hl
@@ -192,7 +192,7 @@ Func_04a_412a:
 	ld [hl], $00
 	inc hl
 	ret
-Learnset_Pointers:
+Learnset_Pointers::
 	dw Learnset_Default
 	dw Learnset_Default
 	dw Learnset_42a4
@@ -353,7 +353,7 @@ Learnset_Pointers:
 	dw Learnset_5272
 	dw Learnset_5283
 	dw Learnset_529a
-Learnset_Default:
+Learnset_Default::
 	levelup_move 4, $2b
 	levelup_move 7, $25
 	levelup_move 15, $1a
@@ -368,7 +368,7 @@ Learnset_Default:
 	levelup_move 54, $3e
 	levelup_move 59, $83
 	db $ff
-Learnset_42a4:
+Learnset_42a4::
 	levelup_move 5, $03
 	levelup_move 8, $29
 	levelup_move 11, $39
@@ -383,7 +383,7 @@ Learnset_42a4:
 	levelup_move 53, $56
 	levelup_move 57, $14
 	db $ff
-Learnset_42bf:
+Learnset_42bf::
 	levelup_move 4, $13
 	levelup_move 7, $1a
 	levelup_move 11, $17
@@ -399,7 +399,7 @@ Learnset_42bf:
 	levelup_move 53, $0e
 	levelup_move 60, $4d
 	db $ff
-Learnset_42dc:
+Learnset_42dc::
 	levelup_move 7, $1f
 	levelup_move 10, $2b
 	levelup_move 14, $20
@@ -415,7 +415,7 @@ Learnset_42dc:
 	levelup_move 52, $3a
 	levelup_move 59, $36
 	db $ff
-Learnset_42f9:
+Learnset_42f9::
 	levelup_move 4, $08
 	levelup_move 7, $0d
 	levelup_move 12, $23
@@ -430,7 +430,7 @@ Learnset_42f9:
 	levelup_move 55, $3f
 	levelup_move 61, $30
 	db $ff
-Learnset_4314:
+Learnset_4314::
 	levelup_move 4, $13
 	levelup_move 6, $1f
 	levelup_move 9, $32
@@ -447,7 +447,7 @@ Learnset_4314:
 	levelup_move 56, $3f
 	levelup_move 60, $88
 	db $ff
-Learnset_4333:
+Learnset_4333::
 	levelup_move 4, $0b
 	levelup_move 10, $08
 	levelup_move 14, $31
@@ -462,7 +462,7 @@ Learnset_4333:
 	levelup_move 54, $35
 	levelup_move 59, $62
 	db $ff
-Learnset_434e:
+Learnset_434e::
 	levelup_move 3, $13
 	levelup_move 8, $15
 	levelup_move 11, $27
@@ -478,7 +478,7 @@ Learnset_434e:
 	levelup_move 54, $35
 	levelup_move 59, $14
 	db $ff
-Learnset_436b:
+Learnset_436b::
 	levelup_move 5, $25
 	levelup_move 10, $37
 	levelup_move 14, $13
@@ -493,7 +493,7 @@ Learnset_436b:
 	levelup_move 56, $06
 	levelup_move 61, $35
 	db $ff
-Learnset_4386:
+Learnset_4386::
 	levelup_move 8, $02
 	levelup_move 10, $0b
 	levelup_move 13, $31
@@ -507,7 +507,7 @@ Learnset_4386:
 	levelup_move 52, $39
 	levelup_move 58, $3e
 	db $ff
-Learnset_439f:
+Learnset_439f::
 	levelup_move 4, $25
 	levelup_move 7, $1c
 	levelup_move 8, $13
@@ -522,7 +522,7 @@ Learnset_439f:
 	levelup_move 55, $45
 	levelup_move 60, $83
 	db $ff
-Learnset_43ba:
+Learnset_43ba::
 	levelup_move 6, $13
 	levelup_move 11, $40
 	levelup_move 16, $1e
@@ -537,7 +537,7 @@ Learnset_43ba:
 	levelup_move 55, $7a
 	levelup_move 57, $7b
 	db $ff
-Learnset_43d5:
+Learnset_43d5::
 	levelup_move 10, $0c
 	levelup_move 16, $15
 	levelup_move 18, $41
@@ -552,7 +552,7 @@ Learnset_43d5:
 	levelup_move 55, $43
 	levelup_move 61, $7e
 	db $ff
-Learnset_43f0:
+Learnset_43f0::
 	levelup_move 3, $0e
 	levelup_move 8, $18
 	levelup_move 14, $0f
@@ -567,7 +567,7 @@ Learnset_43f0:
 	levelup_move 55, $45
 	levelup_move 61, $46
 	db $ff
-Learnset_440b:
+Learnset_440b::
 	levelup_move 4, $0c
 	levelup_move 10, $30
 	levelup_move 15, $41
@@ -582,7 +582,7 @@ Learnset_440b:
 	levelup_move 52, $42
 	levelup_move 61, $43
 	db $ff
-Learnset_4426:
+Learnset_4426::
 	levelup_move 8, $05
 	levelup_move 12, $0b
 	levelup_move 15, $03
@@ -596,7 +596,7 @@ Learnset_4426:
 	levelup_move 56, $43
 	levelup_move 62, $46
 	db $ff
-Learnset_443f:
+Learnset_443f::
 	levelup_move 5, $0b
 	levelup_move 7, $19
 	levelup_move 10, $23
@@ -614,7 +614,7 @@ Learnset_443f:
 	levelup_move 55, $46
 	levelup_move 60, $8a
 	db $ff
-Learnset_4460:
+Learnset_4460::
 	levelup_move 5, $13
 	levelup_move 10, $40
 	levelup_move 13, $0d
@@ -628,7 +628,7 @@ Learnset_4460:
 	levelup_move 51, $45
 	levelup_move 57, $7f
 	db $ff
-Learnset_4479:
+Learnset_4479::
 	levelup_move 5, $25
 	levelup_move 10, $40
 	levelup_move 14, $11
@@ -642,7 +642,7 @@ Learnset_4479:
 	levelup_move 53, $43
 	levelup_move 59, $46
 	db $ff
-Learnset_4492:
+Learnset_4492::
 	levelup_move 7, $2c
 	levelup_move 10, $25
 	levelup_move 15, $1f
@@ -659,7 +659,7 @@ Learnset_4492:
 	levelup_move 58, $42
 	levelup_move 62, $43
 	db $ff
-Learnset_44b1:
+Learnset_44b1::
 	levelup_move 6, $25
 	levelup_move 12, $1c
 	levelup_move 15, $47
@@ -675,7 +675,7 @@ Learnset_44b1:
 	levelup_move 57, $4d
 	levelup_move 62, $4e
 	db $ff
-Learnset_44ce:
+Learnset_44ce::
 	levelup_move 5, $17
 	levelup_move 8, $04
 	levelup_move 16, $47
@@ -689,7 +689,7 @@ Learnset_44ce:
 	levelup_move 55, $4a
 	levelup_move 61, $4e
 	db $ff
-Learnset_44e7:
+Learnset_44e7::
 	levelup_move 5, $0b
 	levelup_move 8, $03
 	levelup_move 12, $29
@@ -707,7 +707,7 @@ Learnset_44e7:
 	levelup_move 56, $4e
 	levelup_move 60, $4d
 	db $ff
-Learnset_4508:
+Learnset_4508::
 	levelup_move 2, $2c
 	levelup_move 7, $13
 	levelup_move 13, $47
@@ -721,7 +721,7 @@ Learnset_4508:
 	levelup_move 54, $4d
 	levelup_move 62, $4f
 	db $ff
-Learnset_4521:
+Learnset_4521::
 	levelup_move 4, $17
 	levelup_move 8, $20
 	levelup_move 10, $08
@@ -737,7 +737,7 @@ Learnset_4521:
 	levelup_move 53, $4a
 	levelup_move 59, $4e
 	db $ff
-Learnset_453e:
+Learnset_453e::
 	levelup_move 5, $0d
 	levelup_move 8, $47
 	levelup_move 12, $0c
@@ -750,7 +750,7 @@ Learnset_453e:
 	levelup_move 53, $4d
 	levelup_move 61, $4f
 	db $ff
-Learnset_4555:
+Learnset_4555::
 	levelup_move 8, $7c
 	levelup_move 15, $12
 	levelup_move 20, $18
@@ -763,7 +763,7 @@ Learnset_4555:
 	levelup_move 59, $4f
 	levelup_move 62, $4d
 	db $ff
-Learnset_456c:
+Learnset_456c::
 	levelup_move 3, $0c
 	levelup_move 8, $13
 	levelup_move 15, $03
@@ -780,7 +780,7 @@ Learnset_456c:
 	levelup_move 56, $4d
 	levelup_move 63, $4e
 	db $ff
-Learnset_458b:
+Learnset_458b::
 	levelup_move 5, $0f
 	levelup_move 11, $0e
 	levelup_move 17, $09
@@ -793,7 +793,7 @@ Learnset_458b:
 	levelup_move 58, $4c
 	levelup_move 61, $4d
 	db $ff
-Learnset_45a2:
+Learnset_45a2::
 	levelup_move 4, $13
 	levelup_move 10, $47
 	levelup_move 18, $7c
@@ -808,7 +808,7 @@ Learnset_45a2:
 	levelup_move 60, $4d
 	levelup_move 62, $4e
 	db $ff
-Learnset_45bd:
+Learnset_45bd::
 	levelup_move 10, $0b
 	levelup_move 16, $17
 	levelup_move 21, $23
@@ -824,7 +824,7 @@ Learnset_45bd:
 	levelup_move 56, $61
 	levelup_move 60, $64
 	db $ff
-Learnset_45da:
+Learnset_45da::
 	levelup_move 3, $13
 	levelup_move 9, $08
 	levelup_move 14, $7e
@@ -837,7 +837,7 @@ Learnset_45da:
 	levelup_move 53, $65
 	levelup_move 59, $66
 	db $ff
-Learnset_45f1:
+Learnset_45f1::
 	levelup_move 3, $13
 	levelup_move 9, $5d
 	levelup_move 14, $27
@@ -853,7 +853,7 @@ Learnset_45f1:
 	levelup_move 58, $65
 	levelup_move 63, $66
 	db $ff
-Learnset_460e:
+Learnset_460e::
 	levelup_move 5, $60
 	levelup_move 9, $10
 	levelup_move 13, $13
@@ -869,7 +869,7 @@ Learnset_460e:
 	levelup_move 54, $62
 	levelup_move 58, $63
 	db $ff
-Learnset_462b:
+Learnset_462b::
 	levelup_move 8, $25
 	levelup_move 18, $5f
 	levelup_move 21, $17
@@ -883,7 +883,7 @@ Learnset_462b:
 	levelup_move 54, $2d
 	levelup_move 60, $2f
 	db $ff
-Learnset_4644:
+Learnset_4644::
 	levelup_move 3, $25
 	levelup_move 7, $66
 	levelup_move 11, $5d
@@ -898,7 +898,7 @@ Learnset_4644:
 	levelup_move 56, $83
 	levelup_move 60, $16
 	db $ff
-Learnset_465f:
+Learnset_465f::
 	levelup_move 5, $17
 	levelup_move 9, $1f
 	levelup_move 14, $5d
@@ -914,7 +914,7 @@ Learnset_465f:
 	levelup_move 55, $66
 	levelup_move 59, $63
 	db $ff
-Learnset_467c:
+Learnset_467c::
 	levelup_move 10, $13
 	levelup_move 14, $5d
 	levelup_move 20, $23
@@ -928,7 +928,7 @@ Learnset_467c:
 	levelup_move 51, $14
 	levelup_move 54, $27
 	db $ff
-Learnset_4695:
+Learnset_4695::
 	levelup_move 3, $18
 	levelup_move 8, $64
 	levelup_move 12, $80
@@ -943,7 +943,7 @@ Learnset_4695:
 	levelup_move 53, $60
 	levelup_move 59, $5e
 	db $ff
-Learnset_46b0:
+Learnset_46b0::
 	levelup_move 5, $13
 	levelup_move 10, $66
 	levelup_move 14, $25
@@ -959,7 +959,7 @@ Learnset_46b0:
 	levelup_move 56, $65
 	levelup_move 61, $6e
 	db $ff
-Learnset_46cd:
+Learnset_46cd::
 	levelup_move 5, $08
 	levelup_move 10, $15
 	levelup_move 13, $86
@@ -976,7 +976,7 @@ Learnset_46cd:
 	levelup_move 59, $76
 	levelup_move 62, $16
 	db $ff
-Learnset_46ec:
+Learnset_46ec::
 	levelup_move 5, $1e
 	levelup_move 8, $08
 	levelup_move 12, $29
@@ -994,7 +994,7 @@ Learnset_46ec:
 	levelup_move 55, $7a
 	levelup_move 57, $7b
 	db $ff
-Learnset_470d:
+Learnset_470d::
 	levelup_move 10, $07
 	levelup_move 15, $7e
 	levelup_move 21, $81
@@ -1007,7 +1007,7 @@ Learnset_470d:
 	levelup_move 56, $89
 	levelup_move 60, $72
 	db $ff
-Learnset_4724:
+Learnset_4724::
 	levelup_move 11, $03
 	levelup_move 16, $7c
 	levelup_move 19, $72
@@ -1022,7 +1022,7 @@ Learnset_4724:
 	levelup_move 57, $27
 	levelup_move 61, $84
 	db $ff
-Learnset_473f:
+Learnset_473f::
 	levelup_move 10, $1e
 	levelup_move 16, $0b
 	levelup_move 24, $16
@@ -1036,7 +1036,7 @@ Learnset_473f:
 	levelup_move 53, $73
 	levelup_move 59, $74
 	db $ff
-Learnset_4758:
+Learnset_4758::
 	levelup_move 10, $72
 	levelup_move 16, $7c
 	levelup_move 25, $73
@@ -1048,7 +1048,7 @@ Learnset_4758:
 	levelup_move 55, $76
 	levelup_move 60, $26
 	db $ff
-Learnset_476d:
+Learnset_476d::
 	levelup_move 11, $1a
 	levelup_move 14, $17
 	levelup_move 17, $11
@@ -1062,7 +1062,7 @@ Learnset_476d:
 	levelup_move 58, $74
 	levelup_move 62, $76
 	db $ff
-Learnset_4786:
+Learnset_4786::
 	levelup_move 7, $08
 	levelup_move 16, $20
 	levelup_move 20, $27
@@ -1076,7 +1076,7 @@ Learnset_4786:
 	levelup_move 51, $72
 	levelup_move 57, $76
 	db $ff
-Learnset_479f:
+Learnset_479f::
 	levelup_move 4, $27
 	levelup_move 10, $0b
 	levelup_move 18, $72
@@ -1090,7 +1090,7 @@ Learnset_479f:
 	levelup_move 56, $16
 	levelup_move 61, $75
 	db $ff
-Learnset_47b8:
+Learnset_47b8::
 	levelup_move 6, $13
 	levelup_move 12, $03
 	levelup_move 16, $23
@@ -1104,7 +1104,7 @@ Learnset_47b8:
 	levelup_move 56, $74
 	levelup_move 63, $77
 	db $ff
-Learnset_47d1:
+Learnset_47d1::
 	levelup_move 7, $13
 	levelup_move 16, $50
 	levelup_move 22, $0e
@@ -1117,7 +1117,7 @@ Learnset_47d1:
 	levelup_move 56, $53
 	levelup_move 62, $55
 	db $ff
-Learnset_47e8:
+Learnset_47e8::
 	levelup_move 4, $0c
 	levelup_move 11, $10
 	levelup_move 16, $53
@@ -1130,7 +1130,7 @@ Learnset_47e8:
 	levelup_move 57, $54
 	levelup_move 63, $55
 	db $ff
-Learnset_47ff:
+Learnset_47ff::
 	levelup_move 9, $50
 	levelup_move 15, $51
 	levelup_move 21, $52
@@ -1143,7 +1143,7 @@ Learnset_47ff:
 	levelup_move 55, $1a
 	levelup_move 61, $6c
 	db $ff
-Learnset_4816:
+Learnset_4816::
 	levelup_move 6, $25
 	levelup_move 14, $15
 	levelup_move 20, $0e
@@ -1156,7 +1156,7 @@ Learnset_4816:
 	levelup_move 55, $55
 	levelup_move 60, $14
 	db $ff
-Learnset_482d:
+Learnset_482d::
 	levelup_move 6, $1a
 	levelup_move 12, $24
 	levelup_move 15, $15
@@ -1170,7 +1170,7 @@ Learnset_482d:
 	levelup_move 55, $55
 	levelup_move 61, $56
 	db $ff
-Learnset_4846:
+Learnset_4846::
 	levelup_move 10, $15
 	levelup_move 16, $51
 	levelup_move 19, $52
@@ -1187,7 +1187,7 @@ Learnset_4846:
 	levelup_move 56, $24
 	levelup_move 60, $28
 	db $ff
-Learnset_4865:
+Learnset_4865::
 	levelup_move 11, $50
 	levelup_move 20, $1d
 	levelup_move 26, $51
@@ -1199,7 +1199,7 @@ Learnset_4865:
 	levelup_move 53, $56
 	levelup_move 59, $05
 	db $ff
-Learnset_487a:
+Learnset_487a::
 	levelup_move 8, $07
 	levelup_move 16, $0f
 	levelup_move 20, $13
@@ -1216,7 +1216,7 @@ Learnset_487a:
 	levelup_move 61, $55
 	levelup_move 64, $56
 	db $ff
-Learnset_4899:
+Learnset_4899::
 	levelup_move 6, $25
 	levelup_move 13, $50
 	levelup_move 16, $7e
@@ -1230,7 +1230,7 @@ Learnset_4899:
 	levelup_move 54, $55
 	levelup_move 59, $56
 	db $ff
-Learnset_48b2:
+Learnset_48b2::
 	levelup_move 4, $13
 	levelup_move 8, $50
 	levelup_move 14, $0e
@@ -1245,7 +1245,7 @@ Learnset_48b2:
 	levelup_move 55, $55
 	levelup_move 60, $56
 	db $ff
-Learnset_48cd:
+Learnset_48cd::
 	levelup_move 4, $0c
 	levelup_move 11, $0e
 	levelup_move 17, $03
@@ -1261,7 +1261,7 @@ Learnset_48cd:
 	levelup_move 58, $6a
 	levelup_move 62, $6b
 	db $ff
-Learnset_48ea:
+Learnset_48ea::
 	levelup_move 5, $2c
 	levelup_move 10, $1e
 	levelup_move 16, $25
@@ -1273,7 +1273,7 @@ Learnset_48ea:
 	levelup_move 54, $70
 	levelup_move 60, $6c
 	db $ff
-Learnset_48ff:
+Learnset_48ff::
 	levelup_move 3, $08
 	levelup_move 9, $1a
 	levelup_move 14, $25
@@ -1289,7 +1289,7 @@ Learnset_48ff:
 	levelup_move 59, $6c
 	levelup_move 62, $71
 	db $ff
-Learnset_491c:
+Learnset_491c::
 	levelup_move 3, $0d
 	levelup_move 9, $1d
 	levelup_move 14, $71
@@ -1307,7 +1307,7 @@ Learnset_491c:
 	levelup_move 59, $6b
 	levelup_move 62, $6d
 	db $ff
-Learnset_493d:
+Learnset_493d::
 	levelup_move 7, $6e
 	levelup_move 16, $1f
 	levelup_move 25, $69
@@ -1320,7 +1320,7 @@ Learnset_493d:
 	levelup_move 58, $70
 	levelup_move 62, $5a
 	db $ff
-Learnset_4954:
+Learnset_4954::
 	levelup_move 6, $0c
 	levelup_move 9, $67
 	levelup_move 14, $68
@@ -1335,7 +1335,7 @@ Learnset_4954:
 	levelup_move 55, $70
 	levelup_move 60, $6c
 	db $ff
-Learnset_496f:
+Learnset_496f::
 	levelup_move 5, $13
 	levelup_move 9, $6d
 	levelup_move 14, $6f
@@ -1349,7 +1349,7 @@ Learnset_496f:
 	levelup_move 56, $6b
 	levelup_move 61, $6c
 	db $ff
-Learnset_4988:
+Learnset_4988::
 	levelup_move 6, $68
 	levelup_move 12, $0c
 	levelup_move 17, $03
@@ -1364,7 +1364,7 @@ Learnset_4988:
 	levelup_move 58, $6c
 	levelup_move 62, $70
 	db $ff
-Learnset_49a3:
+Learnset_49a3::
 	levelup_move 6, $1d
 	levelup_move 10, $7e
 	levelup_move 17, $81
@@ -1377,7 +1377,7 @@ Learnset_49a3:
 	levelup_move 56, $6b
 	levelup_move 60, $1b
 	db $ff
-Learnset_49ba:
+Learnset_49ba::
 	levelup_move 8, $70
 	levelup_move 14, $68
 	levelup_move 23, $08
@@ -1390,7 +1390,7 @@ Learnset_49ba:
 	levelup_move 55, $69
 	levelup_move 61, $6c
 	db $ff
-Learnset_49d1:
+Learnset_49d1::
 	levelup_move 8, $25
 	levelup_move 11, $09
 	levelup_move 15, $13
@@ -1404,7 +1404,7 @@ Learnset_49d1:
 	levelup_move 57, $5c
 	levelup_move 62, $5b
 	db $ff
-Learnset_49ea:
+Learnset_49ea::
 	levelup_move 7, $13
 	levelup_move 14, $57
 	levelup_move 18, $09
@@ -1421,7 +1421,7 @@ Learnset_49ea:
 	levelup_move 55, $22
 	levelup_move 62, $14
 	db $ff
-Learnset_4a09:
+Learnset_4a09::
 	levelup_move 3, $25
 	levelup_move 7, $08
 	levelup_move 9, $15
@@ -1437,7 +1437,7 @@ Learnset_4a09:
 	levelup_move 59, $5b
 	levelup_move 63, $77
 	db $ff
-Learnset_4a26:
+Learnset_4a26::
 	levelup_move 6, $13
 	levelup_move 12, $1f
 	levelup_move 15, $25
@@ -1450,7 +1450,7 @@ Learnset_4a26:
 	levelup_move 59, $6d
 	levelup_move 62, $5b
 	db $ff
-Learnset_4a3d:
+Learnset_4a3d::
 	levelup_move 14, $03
 	levelup_move 18, $25
 	levelup_move 20, $57
@@ -1465,7 +1465,7 @@ Learnset_4a3d:
 	levelup_move 55, $5b
 	levelup_move 61, $83
 	db $ff
-Learnset_4a58:
+Learnset_4a58::
 	levelup_move 4, $08
 	levelup_move 11, $09
 	levelup_move 16, $25
@@ -1480,7 +1480,7 @@ Learnset_4a58:
 	levelup_move 53, $4b
 	levelup_move 60, $4f
 	db $ff
-Learnset_4a73:
+Learnset_4a73::
 	levelup_move 6, $0c
 	levelup_move 11, $80
 	levelup_move 15, $17
@@ -1496,7 +1496,7 @@ Learnset_4a73:
 	levelup_move 59, $5b
 	levelup_move 62, $5a
 	db $ff
-Learnset_4a90:
+Learnset_4a90::
 	levelup_move 9, $03
 	levelup_move 12, $0b
 	levelup_move 14, $32
@@ -1513,7 +1513,7 @@ Learnset_4a90:
 	levelup_move 55, $59
 	levelup_move 61, $5b
 	db $ff
-Learnset_4aaf:
+Learnset_4aaf::
 	levelup_move 6, $0b
 	levelup_move 17, $03
 	levelup_move 20, $08
@@ -1529,7 +1529,7 @@ Learnset_4aaf:
 	levelup_move 61, $5c
 	levelup_move 64, $5b
 	db $ff
-Learnset_4acc:
+Learnset_4acc::
 	levelup_move 9, $5c
 	levelup_move 11, $80
 	levelup_move 16, $57
@@ -1542,7 +1542,7 @@ Learnset_4acc:
 	levelup_move 56, $5c
 	levelup_move 61, $5b
 	db $ff
-Learnset_4ae3:
+Learnset_4ae3::
 	levelup_move 4, $17
 	levelup_move 7, $02
 	levelup_move 10, $25
@@ -1557,7 +1557,7 @@ Learnset_4ae3:
 	levelup_move 56, $35
 	levelup_move 62, $39
 	db $ff
-Learnset_4afe:
+Learnset_4afe::
 	levelup_move 5, $08
 	levelup_move 13, $31
 	levelup_move 19, $27
@@ -1570,7 +1570,7 @@ Learnset_4afe:
 	levelup_move 54, $0a
 	levelup_move 60, $26
 	db $ff
-Learnset_4b15:
+Learnset_4b15::
 	levelup_move 10, $13
 	levelup_move 16, $28
 	levelup_move 24, $16
@@ -1583,7 +1583,7 @@ Learnset_4b15:
 	levelup_move 56, $3f
 	levelup_move 61, $0e
 	db $ff
-Learnset_4b2c:
+Learnset_4b2c::
 	levelup_move 3, $80
 	levelup_move 10, $31
 	levelup_move 16, $7e
@@ -1597,7 +1597,7 @@ Learnset_4b2c:
 	levelup_move 58, $23
 	levelup_move 61, $34
 	db $ff
-Learnset_4b45:
+Learnset_4b45::
 	levelup_move 3, $1d
 	levelup_move 7, $31
 	levelup_move 15, $34
@@ -1613,7 +1613,7 @@ Learnset_4b45:
 	levelup_move 58, $3e
 	levelup_move 62, $39
 	db $ff
-Learnset_4b62:
+Learnset_4b62::
 	levelup_move 4, $13
 	levelup_move 10, $19
 	levelup_move 16, $18
@@ -1628,7 +1628,7 @@ Learnset_4b62:
 	levelup_move 56, $32
 	levelup_move 63, $3a
 	db $ff
-Learnset_4b7d:
+Learnset_4b7d::
 	levelup_move 6, $0b
 	levelup_move 10, $31
 	levelup_move 18, $13
@@ -1645,7 +1645,7 @@ Learnset_4b7d:
 	levelup_move 56, $3a
 	levelup_move 61, $3d
 	db $ff
-Learnset_4b9c:
+Learnset_4b9c::
 	levelup_move 10, $08
 	levelup_move 20, $04
 	levelup_move 24, $0d
@@ -1658,7 +1658,7 @@ Learnset_4b9c:
 	levelup_move 52, $3c
 	levelup_move 59, $4f
 	db $ff
-Learnset_4bb3:
+Learnset_4bb3::
 	levelup_move 9, $47
 	levelup_move 12, $34
 	levelup_move 17, $0e
@@ -1673,7 +1673,7 @@ Learnset_4bb3:
 	levelup_move 54, $86
 	levelup_move 60, $82
 	db $ff
-Learnset_4bce:
+Learnset_4bce::
 	levelup_move 8, $86
 	levelup_move 16, $0f
 	levelup_move 22, $25
@@ -1686,7 +1686,7 @@ Learnset_4bce:
 	levelup_move 53, $0e
 	levelup_move 59, $28
 	db $ff
-Learnset_4be5:
+Learnset_4be5::
 	levelup_move 10, $1e
 	levelup_move 15, $40
 	levelup_move 20, $28
@@ -1700,7 +1700,7 @@ Learnset_4be5:
 	levelup_move 60, $44
 	levelup_move 63, $45
 	db $ff
-Learnset_4bfe:
+Learnset_4bfe::
 	levelup_move 3, $0c
 	levelup_move 9, $1a
 	levelup_move 11, $40
@@ -1715,7 +1715,7 @@ Learnset_4bfe:
 	levelup_move 56, $45
 	levelup_move 61, $3d
 	db $ff
-Learnset_4c19:
+Learnset_4c19::
 	levelup_move 8, $0b
 	levelup_move 19, $0f
 	levelup_move 21, $23
@@ -1729,7 +1729,7 @@ Learnset_4c19:
 	levelup_move 58, $43
 	levelup_move 61, $8a
 	db $ff
-Learnset_4c32:
+Learnset_4c32::
 	levelup_move 4, $0c
 	levelup_move 7, $08
 	levelup_move 10, $50
@@ -1743,7 +1743,7 @@ Learnset_4c32:
 	levelup_move 54, $43
 	levelup_move 61, $0e
 	db $ff
-Learnset_4c4b:
+Learnset_4c4b::
 	levelup_move 7, $40
 	levelup_move 9, $41
 	levelup_move 13, $42
@@ -1759,7 +1759,7 @@ Learnset_4c4b:
 	levelup_move 54, $11
 	levelup_move 60, $0a
 	db $ff
-Learnset_4c68:
+Learnset_4c68::
 	levelup_move 10, $02
 	levelup_move 16, $27
 	levelup_move 22, $80
@@ -1773,7 +1773,7 @@ Learnset_4c68:
 	levelup_move 58, $42
 	levelup_move 62, $61
 	db $ff
-Learnset_4c81:
+Learnset_4c81::
 	levelup_move 8, $11
 	levelup_move 14, $0f
 	levelup_move 16, $23
@@ -1791,7 +1791,7 @@ Learnset_4c81:
 	levelup_move 53, $46
 	levelup_move 60, $39
 	db $ff
-Learnset_4ca2:
+Learnset_4ca2::
 	levelup_move 10, $08
 	levelup_move 12, $40
 	levelup_move 19, $0d
@@ -1804,7 +1804,7 @@ Learnset_4ca2:
 	levelup_move 59, $45
 	levelup_move 63, $46
 	db $ff
-Learnset_4cb9:
+Learnset_4cb9::
 	levelup_move 8, $0b
 	levelup_move 15, $47
 	levelup_move 22, $4b
@@ -1818,7 +1818,7 @@ Learnset_4cb9:
 	levelup_move 58, $4d
 	levelup_move 62, $4e
 	db $ff
-Learnset_4cd2:
+Learnset_4cd2::
 	levelup_move 8, $3c
 	levelup_move 26, $4d
 	levelup_move 30, $24
@@ -1830,7 +1830,7 @@ Learnset_4cd2:
 	levelup_move 59, $49
 	levelup_move 62, $30
 	db $ff
-Learnset_4ce7:
+Learnset_4ce7::
 	levelup_move 4, $25
 	levelup_move 9, $49
 	levelup_move 15, $7c
@@ -1845,7 +1845,7 @@ Learnset_4ce7:
 	levelup_move 60, $4c
 	levelup_move 64, $4d
 	db $ff
-Learnset_4d02:
+Learnset_4d02::
 	levelup_move 7, $48
 	levelup_move 14, $49
 	levelup_move 19, $4a
@@ -1861,7 +1861,7 @@ Learnset_4d02:
 	levelup_move 58, $4e
 	levelup_move 61, $4f
 	db $ff
-Learnset_4d1f:
+Learnset_4d1f::
 	levelup_move 5, $25
 	levelup_move 12, $09
 	levelup_move 19, $6e
@@ -1874,7 +1874,7 @@ Learnset_4d1f:
 	levelup_move 59, $4b
 	levelup_move 62, $4c
 	db $ff
-Learnset_4d36:
+Learnset_4d36::
 	levelup_move 6, $47
 	levelup_move 13, $25
 	levelup_move 18, $73
@@ -1889,7 +1889,7 @@ Learnset_4d36:
 	levelup_move 55, $4a
 	levelup_move 61, $4b
 	db $ff
-Learnset_4d51:
+Learnset_4d51::
 	levelup_move 3, $0c
 	levelup_move 9, $0f
 	levelup_move 15, $29
@@ -1905,7 +1905,7 @@ Learnset_4d51:
 	levelup_move 61, $4c
 	levelup_move 65, $4e
 	db $ff
-Learnset_4d6e:
+Learnset_4d6e::
 	levelup_move 5, $2b
 	levelup_move 9, $4c
 	levelup_move 14, $3c
@@ -1920,7 +1920,7 @@ Learnset_4d6e:
 	levelup_move 58, $4b
 	levelup_move 62, $4f
 	db $ff
-Learnset_4d89:
+Learnset_4d89::
 	levelup_move 4, $0c
 	levelup_move 9, $25
 	levelup_move 13, $1f
@@ -1937,7 +1937,7 @@ Learnset_4d89:
 	levelup_move 56, $4c
 	levelup_move 60, $4d
 	db $ff
-Learnset_4da8:
+Learnset_4da8::
 	levelup_move 4, $13
 	levelup_move 15, $57
 	levelup_move 17, $25
@@ -1951,7 +1951,7 @@ Learnset_4da8:
 	levelup_move 58, $59
 	levelup_move 62, $5b
 	db $ff
-Learnset_4dc1:
+Learnset_4dc1::
 	levelup_move 9, $5d
 	levelup_move 17, $25
 	levelup_move 26, $0c
@@ -1964,7 +1964,7 @@ Learnset_4dc1:
 	levelup_move 55, $16
 	levelup_move 60, $20
 	db $ff
-Learnset_4dd8:
+Learnset_4dd8::
 	levelup_move 5, $60
 	levelup_move 8, $29
 	levelup_move 11, $5f
@@ -1979,7 +1979,7 @@ Learnset_4dd8:
 	levelup_move 59, $62
 	levelup_move 62, $63
 	db $ff
-Learnset_4df3:
+Learnset_4df3::
 	levelup_move 4, $13
 	levelup_move 7, $09
 	levelup_move 11, $17
@@ -1996,7 +1996,7 @@ Learnset_4df3:
 	levelup_move 58, $61
 	levelup_move 62, $62
 	db $ff
-Learnset_4e12:
+Learnset_4e12::
 	levelup_move 10, $0b
 	levelup_move 16, $17
 	levelup_move 21, $23
@@ -2011,7 +2011,7 @@ Learnset_4e12:
 	levelup_move 56, $5f
 	levelup_move 61, $61
 	db $ff
-Learnset_4e2d:
+Learnset_4e2d::
 	levelup_move 8, $25
 	levelup_move 18, $5f
 	levelup_move 21, $17
@@ -2025,7 +2025,7 @@ Learnset_4e2d:
 	levelup_move 56, $39
 	levelup_move 61, $3a
 	db $ff
-Learnset_4e46:
+Learnset_4e46::
 	levelup_move 3, $13
 	levelup_move 9, $08
 	levelup_move 14, $7e
@@ -2038,7 +2038,7 @@ Learnset_4e46:
 	levelup_move 55, $62
 	levelup_move 60, $66
 	db $ff
-Learnset_4e5d:
+Learnset_4e5d::
 	levelup_move 4, $13
 	levelup_move 15, $57
 	levelup_move 17, $25
@@ -2052,7 +2052,7 @@ Learnset_4e5d:
 	levelup_move 59, $62
 	levelup_move 61, $86
 	db $ff
-Learnset_4e76:
+Learnset_4e76::
 	levelup_move 10, $0b
 	levelup_move 16, $17
 	levelup_move 21, $23
@@ -2066,7 +2066,7 @@ Learnset_4e76:
 	levelup_move 48, $64
 	levelup_move 55, $65
 	db $ff
-Learnset_4e8f:
+Learnset_4e8f::
 	levelup_move 4, $1e
 	levelup_move 6, $13
 	levelup_move 12, $03
@@ -2084,7 +2084,7 @@ Learnset_4e8f:
 	levelup_move 63, $7a
 	levelup_move 64, $7b
 	db $ff
-Learnset_4eb0:
+Learnset_4eb0::
 	levelup_move 5, $08
 	levelup_move 10, $15
 	levelup_move 13, $86
@@ -2101,7 +2101,7 @@ Learnset_4eb0:
 	levelup_move 57, $76
 	levelup_move 62, $16
 	db $ff
-Learnset_4ecf:
+Learnset_4ecf::
 	levelup_move 10, $72
 	levelup_move 16, $7c
 	levelup_move 25, $73
@@ -2114,7 +2114,7 @@ Learnset_4ecf:
 	levelup_move 57, $26
 	levelup_move 61, $76
 	db $ff
-Learnset_4ee6:
+Learnset_4ee6::
 	levelup_move 10, $1e
 	levelup_move 16, $0b
 	levelup_move 24, $16
@@ -2130,7 +2130,7 @@ Learnset_4ee6:
 	levelup_move 61, $75
 	levelup_move 64, $76
 	db $ff
-Learnset_4f03:
+Learnset_4f03::
 	levelup_move 4, $27
 	levelup_move 10, $0b
 	levelup_move 18, $72
@@ -2144,7 +2144,7 @@ Learnset_4f03:
 	levelup_move 56, $0e
 	levelup_move 61, $1e
 	db $ff
-Learnset_4f1c:
+Learnset_4f1c::
 	levelup_move 10, $07
 	levelup_move 15, $7e
 	levelup_move 21, $81
@@ -2158,7 +2158,7 @@ Learnset_4f1c:
 	levelup_move 59, $74
 	levelup_move 62, $75
 	db $ff
-Learnset_4f35:
+Learnset_4f35::
 	levelup_move 11, $1a
 	levelup_move 14, $17
 	levelup_move 17, $11
@@ -2171,7 +2171,7 @@ Learnset_4f35:
 	levelup_move 57, $73
 	levelup_move 63, $74
 	db $ff
-Learnset_4f4c:
+Learnset_4f4c::
 	levelup_move 7, $08
 	levelup_move 16, $20
 	levelup_move 20, $27
@@ -2185,7 +2185,7 @@ Learnset_4f4c:
 	levelup_move 56, $75
 	levelup_move 61, $76
 	db $ff
-Learnset_4f65:
+Learnset_4f65::
 	levelup_move 10, $72
 	levelup_move 16, $7c
 	levelup_move 25, $73
@@ -2197,7 +2197,7 @@ Learnset_4f65:
 	levelup_move 53, $1e
 	levelup_move 60, $76
 	db $ff
-Learnset_4f7a:
+Learnset_4f7a::
 	levelup_move 9, $50
 	levelup_move 15, $51
 	levelup_move 21, $52
@@ -2211,7 +2211,7 @@ Learnset_4f7a:
 	levelup_move 61, $7d
 	levelup_move 64, $88
 	db $ff
-Learnset_4f93:
+Learnset_4f93::
 	levelup_move 4, $13
 	levelup_move 8, $50
 	levelup_move 14, $0e
@@ -2226,7 +2226,7 @@ Learnset_4f93:
 	levelup_move 59, $55
 	levelup_move 61, $56
 	db $ff
-Learnset_4fae:
+Learnset_4fae::
 	levelup_move 8, $07
 	levelup_move 16, $0f
 	levelup_move 20, $13
@@ -2242,7 +2242,7 @@ Learnset_4fae:
 	levelup_move 58, $53
 	levelup_move 62, $55
 	db $ff
-Learnset_4fcb:
+Learnset_4fcb::
 	levelup_move 4, $0c
 	levelup_move 11, $10
 	levelup_move 16, $53
@@ -2255,7 +2255,7 @@ Learnset_4fcb:
 	levelup_move 56, $54
 	levelup_move 61, $55
 	db $ff
-Learnset_4fe2:
+Learnset_4fe2::
 	levelup_move 11, $50
 	levelup_move 20, $1d
 	levelup_move 26, $51
@@ -2268,7 +2268,7 @@ Learnset_4fe2:
 	levelup_move 56, $24
 	levelup_move 62, $55
 	db $ff
-Learnset_4ff9:
+Learnset_4ff9::
 	levelup_move 7, $13
 	levelup_move 16, $50
 	levelup_move 22, $0e
@@ -2282,7 +2282,7 @@ Learnset_4ff9:
 	levelup_move 57, $56
 	levelup_move 62, $55
 	db $ff
-Learnset_5012:
+Learnset_5012::
 	levelup_move 6, $1a
 	levelup_move 12, $24
 	levelup_move 15, $15
@@ -2298,7 +2298,7 @@ Learnset_5012:
 	levelup_move 60, $38
 	levelup_move 63, $55
 	db $ff
-Learnset_502f:
+Learnset_502f::
 	levelup_move 6, $25
 	levelup_move 13, $50
 	levelup_move 16, $7e
@@ -2312,7 +2312,7 @@ Learnset_502f:
 	levelup_move 57, $56
 	levelup_move 62, $55
 	db $ff
-Learnset_5048:
+Learnset_5048::
 	levelup_move 10, $15
 	levelup_move 16, $51
 	levelup_move 19, $52
@@ -2329,7 +2329,7 @@ Learnset_5048:
 	levelup_move 57, $1a
 	levelup_move 60, $24
 	db $ff
-Learnset_5067:
+Learnset_5067::
 	levelup_move 3, $0d
 	levelup_move 9, $1d
 	levelup_move 14, $71
@@ -2346,7 +2346,7 @@ Learnset_5067:
 	levelup_move 55, $68
 	levelup_move 60, $6b
 	db $ff
-Learnset_5086:
+Learnset_5086::
 	levelup_move 6, $68
 	levelup_move 12, $0c
 	levelup_move 17, $03
@@ -2360,7 +2360,7 @@ Learnset_5086:
 	levelup_move 56, $6a
 	levelup_move 61, $6c
 	db $ff
-Learnset_509f:
+Learnset_509f::
 	levelup_move 3, $08
 	levelup_move 9, $1a
 	levelup_move 14, $25
@@ -2376,10 +2376,10 @@ Learnset_509f:
 	levelup_move 59, $6e
 	levelup_move 61, $6c
 	db $ff
-Learnset_50bc:
+Learnset_50bc::
 	levelup_move 55, $7d
 	db $ff
-Learnset_50bf:
+Learnset_50bf::
 	levelup_move 3, $28
 	levelup_move 9, $1d
 	levelup_move 14, $86
@@ -2396,7 +2396,7 @@ Learnset_50bf:
 	levelup_move 54, $24
 	levelup_move 60, $6b
 	db $ff
-Learnset_50de:
+Learnset_50de::
 	levelup_move 6, $0c
 	levelup_move 9, $67
 	levelup_move 14, $68
@@ -2412,7 +2412,7 @@ Learnset_50de:
 	levelup_move 58, $83
 	levelup_move 63, $6c
 	db $ff
-Learnset_50fb:
+Learnset_50fb::
 	levelup_move 7, $13
 	levelup_move 16, $50
 	levelup_move 22, $0e
@@ -2426,7 +2426,7 @@ Learnset_50fb:
 	levelup_move 58, $69
 	levelup_move 63, $6b
 	db $ff
-Learnset_5114:
+Learnset_5114::
 	levelup_move 7, $6e
 	levelup_move 16, $1f
 	levelup_move 25, $69
@@ -2439,7 +2439,7 @@ Learnset_5114:
 	levelup_move 56, $6f
 	levelup_move 61, $6c
 	db $ff
-Learnset_512b:
+Learnset_512b::
 	levelup_move 5, $2c
 	levelup_move 10, $1e
 	levelup_move 16, $25
@@ -2452,7 +2452,7 @@ Learnset_512b:
 	levelup_move 59, $6b
 	levelup_move 62, $6c
 	db $ff
-Learnset_5142:
+Learnset_5142::
 	levelup_move 6, $0b
 	levelup_move 17, $03
 	levelup_move 20, $08
@@ -2468,7 +2468,7 @@ Learnset_5142:
 	levelup_move 59, $5c
 	levelup_move 62, $5b
 	db $ff
-Learnset_515f:
+Learnset_515f::
 	levelup_move 9, $5c
 	levelup_move 11, $80
 	levelup_move 16, $57
@@ -2482,7 +2482,7 @@ Learnset_515f:
 	levelup_move 57, $78
 	levelup_move 61, $79
 	db $ff
-Learnset_5178:
+Learnset_5178::
 	levelup_move 3, $25
 	levelup_move 7, $08
 	levelup_move 9, $15
@@ -2498,7 +2498,7 @@ Learnset_5178:
 	levelup_move 58, $5b
 	levelup_move 62, $5a
 	db $ff
-Learnset_5195:
+Learnset_5195::
 	levelup_move 8, $25
 	levelup_move 11, $09
 	levelup_move 15, $13
@@ -2511,7 +2511,7 @@ Learnset_5195:
 	levelup_move 56, $87
 	levelup_move 61, $5b
 	db $ff
-Learnset_51ac:
+Learnset_51ac::
 	levelup_move 9, $5c
 	levelup_move 11, $80
 	levelup_move 16, $57
@@ -2525,7 +2525,7 @@ Learnset_51ac:
 	levelup_move 58, $0f
 	levelup_move 63, $86
 	db $ff
-Learnset_51c5:
+Learnset_51c5::
 	levelup_move 7, $13
 	levelup_move 14, $57
 	levelup_move 18, $09
@@ -2542,7 +2542,7 @@ Learnset_51c5:
 	levelup_move 55, $79
 	levelup_move 61, $70
 	db $ff
-Learnset_51e4:
+Learnset_51e4::
 	levelup_move 9, $5c
 	levelup_move 11, $80
 	levelup_move 16, $57
@@ -2556,7 +2556,7 @@ Learnset_51e4:
 	levelup_move 59, $5b
 	levelup_move 62, $70
 	db $ff
-Learnset_51fd:
+Learnset_51fd::
 	levelup_move 5, $08
 	levelup_move 10, $16
 	levelup_move 13, $0f
@@ -2572,7 +2572,7 @@ Learnset_51fd:
 	levelup_move 51, $75
 	levelup_move 57, $76
 	levelup_move 62, $0e
-Learnset_521b:
+Learnset_521b::
 	levelup_move 11, $1a
 	levelup_move 14, $17
 	levelup_move 17, $11
@@ -2586,9 +2586,9 @@ Learnset_521b:
 	levelup_move 58, $74
 	levelup_move 63, $76
 	db $ff
-Learnset_5234:
+Learnset_5234::
 	db $ff
-Learnset_5235:
+Learnset_5235::
 	levelup_move 6, $0b
 	levelup_move 10, $31
 	levelup_move 18, $13
@@ -2601,7 +2601,7 @@ Learnset_5235:
 	levelup_move 39, $16
 	levelup_move 43, $8a
 	db $ff
-Learnset_524c:
+Learnset_524c::
 	levelup_move 5, $0d
 	levelup_move 8, $47
 	levelup_move 12, $0c
@@ -2611,7 +2611,7 @@ Learnset_524c:
 	levelup_move 44, $4b
 	levelup_move 45, $8b
 	db $ff
-Learnset_525d:
+Learnset_525d::
 	levelup_move 4, $0c
 	levelup_move 10, $30
 	levelup_move 15, $41
@@ -2623,7 +2623,7 @@ Learnset_525d:
 	levelup_move 41, $45
 	levelup_move 42, $22
 	db $ff
-Learnset_5272:
+Learnset_5272::
 	levelup_move 11, $1a
 	levelup_move 14, $17
 	levelup_move 17, $11
@@ -2633,7 +2633,7 @@ Learnset_5272:
 	levelup_move 38, $7b
 	levelup_move 44, $75
 	db $ff
-Learnset_5283:
+Learnset_5283::
 	levelup_move 9, $03
 	levelup_move 12, $0b
 	levelup_move 14, $32
@@ -2646,7 +2646,7 @@ Learnset_5283:
 	levelup_move 39, $3d
 	levelup_move 42, $3c
 	db $ff
-Learnset_529a:
+Learnset_529a::
 	levelup_move 9, $03
 	levelup_move 12, $0b
 	levelup_move 14, $32
@@ -2659,9 +2659,9 @@ Learnset_529a:
 	levelup_move 39, $3d
 	levelup_move 42, $3c
 	db $ff
-TextFont_GFX:
+TextFont_GFX::
 INCBIN "gfx/misc/textfont_gfx.2bpp"
-Func_04a_5691:
+Func_04a_5691::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	push af
@@ -2731,26 +2731,26 @@ INCBIN "gfx/tilemaps/tilemap_4a_5d45.tilemap"
 Attrmap_4a_5dfb::
 INCBIN "gfx/attrmaps/attrmap_4a_5dfb.bin"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_4a_5eb1:
+unk_4a_5eb1::
 	ds 18
-Tilemap_4a_5ec3:
+Tilemap_4a_5ec3::
 INCBIN "gfx/tilemaps/tilemap_4a_5ec3.tilemap"
-Tilemap_4a_5ec7:
+Tilemap_4a_5ec7::
 INCBIN "gfx/tilemaps/tilemap_4a_5ec7.tilemap"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_4a_5ecb:
+unk_4a_5ecb::
 	ds 13
-Tilemap_4a_5ed8:
+Tilemap_4a_5ed8::
 INCBIN "gfx/tilemaps/tilemap_4a_5ed8.tilemap"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_4a_5fc0:
+unk_4a_5fc0::
 	ds 5
-Tilemap_4a_5fc5:
+Tilemap_4a_5fc5::
 INCBIN "gfx/tilemaps/tilemap_4a_5fc5.tilemap"
-Tilemap_4a_6017:
+Tilemap_4a_6017::
 INCBIN "gfx/tilemaps/tilemap_4a_6017.tilemap"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_4a_6051:
+unk_4a_6051::
 	ds 28
 Tilemap_4a_606d::
 INCBIN "gfx/tilemaps/tilemap_4a_606d.tilemap"
@@ -2766,9 +2766,9 @@ Attrmap_4a_6227::
 INCBIN "gfx/attrmaps/attrmap_4a_6227.bin"
 Tilemap_4a_62a1::
 INCBIN "gfx/tilemaps/tilemap_4a_62a1.tilemap"
-Tilemap_4a_631b:
+Tilemap_4a_631b::
 INCBIN "gfx/tilemaps/tilemap_4a_631b.tilemap"
-Attrmap_4a_6339:
+Attrmap_4a_6339::
 INCBIN "gfx/attrmaps/attrmap_4a_6339.bin"
 Tilemap_4a_6357::
 INCBIN "gfx/tilemaps/tilemap_4a_6357.tilemap"
@@ -2778,13 +2778,13 @@ Tilemap_4a_64ab::
 INCBIN "gfx/tilemaps/tilemap_4a_64ab.tilemap"
 Attrmap_4a_64d7::
 INCBIN "gfx/attrmaps/attrmap_4a_64d7.bin"
-Tilemap_4a_6503:
+Tilemap_4a_6503::
 INCBIN "gfx/tilemaps/tilemap_4a_6503.tilemap"
-Attrmap_4a_651d:
+Attrmap_4a_651d::
 INCBIN "gfx/attrmaps/attrmap_4a_651d.bin"
 Tilemap_4a_6537::
 INCBIN "gfx/tilemaps/tilemap_4a_6537.tilemap"
-Attrmap_4a_65b1:
+Attrmap_4a_65b1::
 INCBIN "gfx/attrmaps/attrmap_4a_65b1.bin"
 Tilemap_4a_662b::
 INCBIN "gfx/tilemaps/tilemap_4a_662b.tilemap"
@@ -2842,27 +2842,27 @@ Tilemap_4a_7211::
 INCBIN "gfx/tilemaps/tilemap_4a_7211.tilemap"
 Attrmap_4a_72b5::
 INCBIN "gfx/attrmaps/attrmap_4a_72b5.bin"
-Tilemap_4a_7359:
+Tilemap_4a_7359::
 INCBIN "gfx/tilemaps/tilemap_4a_7359.tilemap"
-Tilemap_4a_73d3:
+Tilemap_4a_73d3::
 INCBIN "gfx/tilemaps/tilemap_4a_73d3.tilemap"
-Tilemap_4a_7425:
+Tilemap_4a_7425::
 INCBIN "gfx/tilemaps/tilemap_4a_7425.tilemap"
 Tilemap_4a_74c7::
 INCBIN "gfx/tilemaps/tilemap_4a_74c7.tilemap"
-Tilemap_4a_7541:
+Tilemap_4a_7541::
 INCBIN "gfx/tilemaps/tilemap_4a_7541.tilemap"
-Tilemap_4a_7593:
+Tilemap_4a_7593::
 INCBIN "gfx/tilemaps/tilemap_4a_7593.tilemap"
 Tilemap_4a_7635::
 INCBIN "gfx/tilemaps/tilemap_4a_7635.tilemap"
-Tilemap_4a_76af:
+Tilemap_4a_76af::
 INCBIN "gfx/tilemaps/tilemap_4a_76af.tilemap"
-Attrmap_4a_76dd:
+Attrmap_4a_76dd::
 INCBIN "gfx/attrmaps/attrmap_4a_76dd.bin"
-Tilemap_4a_770b:
+Tilemap_4a_770b::
 INCBIN "gfx/tilemaps/tilemap_4a_770b.tilemap"
-Attrmap_4a_772b:
+Attrmap_4a_772b::
 INCBIN "gfx/attrmaps/attrmap_4a_772b.bin"
 Tilemap_4a_774b::
 INCBIN "gfx/tilemaps/tilemap_4a_774b.tilemap"
@@ -2882,17 +2882,17 @@ Attrmap_4a_7a59::
 INCBIN "gfx/attrmaps/attrmap_4a_7a59.bin"
 Tilemap_4a_7ad3::
 INCBIN "gfx/tilemaps/tilemap_4a_7ad3.tilemap"
-Tilemap_4a_7af3:
+Tilemap_4a_7af3::
 INCBIN "gfx/tilemaps/tilemap_4a_7af3.tilemap"
-Attrmap_4a_7bcd:
+Attrmap_4a_7bcd::
 INCBIN "gfx/attrmaps/attrmap_4a_7bcd.bin"
-Tilemap_4a_7ca7:
+Tilemap_4a_7ca7::
 INCBIN "gfx/tilemaps/tilemap_4a_7ca7.tilemap"
-Attrmap_4a_7d5d:
+Attrmap_4a_7d5d::
 INCBIN "gfx/attrmaps/attrmap_4a_7d5d.bin"
-Tilemap_4a_7e13:
+Tilemap_4a_7e13::
 INCBIN "gfx/tilemaps/tilemap_4a_7e13.tilemap"
-Attrmap_4a_7ec9:
+Attrmap_4a_7ec9::
 INCBIN "gfx/attrmaps/attrmap_4a_7ec9.bin"
 Tilemap_4a_7f7f::
 INCBIN "gfx/tilemaps/tilemap_4a_7f7f.tilemap"

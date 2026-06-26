@@ -25,7 +25,7 @@ _LoadTextFaceExtraSprites2::
 	call LoadPalettes_OCPD
 	ret
 
-FaceSprites2_Palette_Pointers:
+FaceSprites2_Palette_Pointers::
 	dw .face_58
 	dw .face_59
 	dw .face_60
@@ -138,7 +138,7 @@ FaceSprites2_Palette_Pointers:
 .face_119: INCBIN "gfx/faces/face_119.obj.gbcpal"
 .face_120: INCBIN "gfx/faces/face_120.obj.gbcpal"
 
-FaceSprites2_GFX_Pointers:
+FaceSprites2_GFX_Pointers::
 	dw .face_58
 	dw .face_59
 	dw .face_60

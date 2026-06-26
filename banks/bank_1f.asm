@@ -26,7 +26,7 @@ _LoadTextFaceGFX::
 	call LoadPalettes_BCPD
 	ret
 
-Func_01f_4028:
+Func_01f_4028::
 ; 2bpp
 	ld de, unk_01f_4335
 	ld a, [wPlayerChar]
@@ -64,7 +64,7 @@ Func_01f_4028:
 	call CopyBytes3
 	ret
 
-Func_01f_405d:
+Func_01f_405d::
 	ld a, [wBattleScriptByte]
 	push af
 	cp 3
@@ -103,10 +103,10 @@ Func_01f_405d:
 	ret
 
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_01f_4091:
+unk_01f_4091::
 	db $90, $91, $92, $93, $94, $95, $96, $97, $93
 
-Func_01f_409a:
+Func_01f_409a::
 	ld bc, wPaletteBuffer
 	ld hl, $38
 	add hl, bc
@@ -122,7 +122,7 @@ Func_01f_409a:
 .unk_40af
 	db $ff, $7f, $dc, $01, $0f, $15, $00, $00
 
-Func_01f_40b7:
+Func_01f_40b7::
 	ld a, [wSelectedOption]
 	cp 3
 	jr nz, .asm_40ca
@@ -156,7 +156,7 @@ Func_01f_40b7:
 	call CopyBytes3
 	ret
 
-Func_01f_40ea:
+Func_01f_40ea::
 	ld hl, $9822
 	ld a, 16
 	ld b, a

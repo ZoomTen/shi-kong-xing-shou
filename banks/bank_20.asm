@@ -26,7 +26,7 @@ _LoadTextFaceExtraSprites::
 	call LoadPalettes_OCPD
 	ret
 
-Func_020_402b:
+Func_020_402b::
 	ld bc, wcaf0
 	ld hl, 1 palettes
 	add hl, bc
@@ -39,13 +39,13 @@ Func_020_402b:
 	call CopyBytes3
 	ret
 
-Palette_20_4040:
+Palette_20_4040::
 	RGB 21, 21, 21
 	RGB 28, 18,  0
 	RGB 31, 25, 17
 	RGB 18, 24,  0
 
-Func_20_4048:
+Func_20_4048::
 	ld a, [wSelectedOption]
 	cp 3
 	jr nz, Func_020_405b
@@ -56,7 +56,7 @@ Func_20_4048:
 	call Func_020_402b
 	ret
 
-Func_020_405b:
+Func_020_405b::
 	ld bc, wcaf0
 	ld hl, 1 palettes
 	add hl, bc
@@ -77,7 +77,7 @@ Func_020_405b:
 	call CopyBytes3
 	ret
 
-Func_20_407b:
+Func_20_407b::
 	ld de, FacePicExtrasPointers
 	ld a, [wPlayerChar]
 	ld l, a
@@ -111,7 +111,7 @@ Func_20_407b:
 	call CopyBytes3
 	ret
 
-FacePaletteExtrasPointers:
+FacePaletteExtrasPointers::
 	dw .face_00
 	dw .face_01
 	dw .face_02
@@ -220,7 +220,7 @@ FacePaletteExtrasPointers:
 .face_51:: INCBIN "gfx/faces/face_51.obj.gbcpal"
 .face_55:: INCBIN "gfx/faces/face_55.obj.gbcpal"
 
-FacePicExtrasPointers:
+FacePicExtrasPointers::
 	dw .face_00
 	dw .face_01
 	dw .face_02
