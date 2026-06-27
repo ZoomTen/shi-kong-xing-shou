@@ -57,3 +57,7 @@ data/maps/metatiles/*.bin
 # compiled utils
 utils/look_block
 utils/check_diff
+
+.ninja_log
+.ninja.lock
+/build.ninja

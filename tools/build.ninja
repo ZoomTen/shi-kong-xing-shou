@@ -1,0 +1,18 @@
+cc = gcc
+cflags = -O3 -flto -std=c17 -Wall -Wextra -Wno-missing-field-initializers
+
+rule CC
+  command = $cc $cflags -o $out $in
+  description = CC $out
+
+build scan_includes: CC scan_includes.c
+
+build gfx: CC gfx.c | common.h
+
+build tmx2data: CC tmx2data.c lib/expat/Xmltok.c lib/expat/Xmlparse.c lib/expat/Xmlrole.c
+
+build face2gfx: CC face2gfx.c lib/miniz/miniz.c lib/plum/libplum.c
+
+build all: phony scan_includes gfx tmx2data face2gfx
+
+default all
