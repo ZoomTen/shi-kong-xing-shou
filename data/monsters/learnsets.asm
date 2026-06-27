@@ -1,11 +1,7 @@
 ; Level-up learnsets, indexed by species via Learnset_Pointers.
-; Each block: levelup_move <level>, <move id> ... terminated by $ff.
-
 MACRO levelup_move ; level, move
 	db \1, \2
 ENDM
-
-Learnset_Pointers::
 	dw Learnset_Default
 	dw Learnset_Default
 	dw Learnset_42a4

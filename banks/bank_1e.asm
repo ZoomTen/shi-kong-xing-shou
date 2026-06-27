@@ -783,26 +783,17 @@ MapLayoutPatches_01e_4d10::
 	layout_patch wdaba, 3, 0, 8, $56
 	layout_patch wdaba, 4, 5, 8, $57
 
-INCLUDE "data/items/name_pointers.asm"
+ItemNameIndexPointers:: INCLUDE "data/items/name_pointers.asm"
 
-INCLUDE "data/monsters/menu_icons.asm"
+MonIcons: INCLUDE "data/monsters/menu_icons.asm"
 
-INCLUDE "data/moves/types.asm"
+MoveTypes:: INCLUDE "data/moves/types.asm"
 
-TypeNames::
-	dw text_1e_55c0
-	dw text_1e_55c3
-	dw text_1e_55c6
-	dw text_1e_55c9
-	dw text_1e_55cc
-	dw text_1e_55cf
-	dw text_1e_55d2
-	dw text_1e_55d5
-	dw text_1e_55d8
+TypeNames:: INCLUDE "data/type_name_pointers.asm"
 
 INCLUDE "text/mon_types.asm"
 
-INCLUDE "data/icon_pointers.asm"
+IconPointers:: INCLUDE "data/icon_pointers.asm"
 
 PointerTable_01e_57ed::
 	dw text_1e_5829
@@ -842,6 +833,7 @@ PointerTable_01e_59cc::
 	dw Pointers_01e_59d2
 	dw Pointers_01e_614f
 	dw Pointers_01e_63e5
+
 Pointers_01e_59d2::
 	dw text_1e_5aa0
 	dw text_1e_5aa1
@@ -947,9 +939,7 @@ Pointers_01e_59d2::
 	dw text_1e_613f
 	dw text_1e_613f
 
-INCLUDE "text/script_item_descriptions_0.asm"
-
-INCLUDE "text/script_item_descriptions_5c3f.asm"
+INCLUDE "text/script_item_descriptions.asm"
 
 Pointers_01e_614f::
 	dw text_1e_6197 
@@ -988,7 +978,9 @@ Pointers_01e_614f::
 	dw text_1e_63c5 
 	dw text_1e_63c5 
 	dw text_1e_63c5
-	INCLUDE "text/script_equipment_descriptions.asm"
+
+INCLUDE "text/script_equipment_descriptions.asm"
+
 Pointers_01e_63e5::
 	dw text_1e_6437 
 	dw text_1e_6438 
@@ -1031,7 +1023,8 @@ Pointers_01e_63e5::
 	dw text_1e_6550 
 	dw text_1e_6557 
 	dw text_1e_6560
-	INCLUDE "text/script_item_names.asm"
+
+INCLUDE "text/script_item_names.asm"
 
 Pointers_01e_6567::
 	dw text_1e_6635
@@ -1137,7 +1130,9 @@ Pointers_01e_6567::
 	dw text_1e_6ac3
 	dw text_1e_6ac3
 	dw text_1e_6ac3
-	INCLUDE "text/script_item_effects.asm"
+
+INCLUDE "text/script_item_effects.asm"
+
 Func_01e_6acd::
 	ld a, [$DCE6]
 	and a
@@ -1370,7 +1365,9 @@ unk_01e_6d12::
 	db $01, $01, $01, $00, $01, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $00
 	db $01, $01, $00, $01, $01, $00, $01, $01, $01, $01, $00, $01, $01, $01, $00, $01
 	db $00, $01, $00, $01, $01, $00, $01, $00, $ff
-INCLUDE "data/monsters/species_info.asm"
+
+	INCLUDE "data/monsters/species_info.asm"
+
 INCLUDE "text/script_item_get_6ddb.asm"
 
 INCLUDE "engine/items/load_item_name.asm"

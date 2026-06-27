@@ -1,4 +1,3 @@
-ItemNameIndexPointers::
 ; appears to be category, index
 	dw MapLayoutPatches_None
 	dw ItemNameIndex_01e_4ead

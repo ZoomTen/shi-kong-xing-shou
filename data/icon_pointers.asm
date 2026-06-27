@@ -1,4 +1,3 @@
-IconPointers:
 	dw image_01e_55ed ; 0
 	dw image_01e_55ed ; 1
 	dw image_01e_562d ; 2

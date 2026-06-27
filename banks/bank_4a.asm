@@ -188,7 +188,7 @@ Func_04a_412a::
 	ld [hl], $00
 	inc hl
 	ret
-INCLUDE "data/monsters/learnsets.asm"
+Learnset_Pointers:: INCLUDE "data/monsters/learnsets.asm"
 TextFont_GFX:: INCBIN "gfx/misc/textfont_gfx.2bpp"
 Func_04a_5691::
 	call AdvanceBattleScript

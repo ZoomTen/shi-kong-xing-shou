@@ -1,4 +1,3 @@
-MonIcons:
 	db ICON_00 ; MON_000
 	db ICON_04 ; MON_001
 	db ICON_04 ; MON_002

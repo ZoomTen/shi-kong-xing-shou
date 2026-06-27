@@ -1,6 +1,3 @@
-; Pointers to species description strings (text in text/mon_descriptions.asm), indexed by species.
-
-MonsterDesc_Pointers::
 	dw text_26_5864 ; 000 
 	dw text_26_5869 ; 001 暴躁猴
 	dw text_26_5886 ; 002 綠巨人

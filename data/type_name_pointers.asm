@@ -1,0 +1,9 @@
+	dw text_1e_55c0
+	dw text_1e_55c3
+	dw text_1e_55c6
+	dw text_1e_55c9
+	dw text_1e_55cc
+	dw text_1e_55cf
+	dw text_1e_55d2
+	dw text_1e_55d5
+	dw text_1e_55d8

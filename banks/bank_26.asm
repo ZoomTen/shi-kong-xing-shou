@@ -962,7 +962,7 @@ Func_026_5711::
 	call PrintMenuText
 	ret
 
-INCLUDE "data/monsters/desc_pointers.asm"
+MonsterDesc_Pointers:: INCLUDE "data/monsters/desc_pointers.asm"
 
 INCLUDE "text/mon_descriptions.asm"
 
