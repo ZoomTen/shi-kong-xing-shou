@@ -1,6 +1,5 @@
 @org $5c, $4e2b:
 	init NAME_BLANK, PIC_18;
-@org $5c, $4e2e:
 	text "海藍⋯⋯";
 	line "真是抱歉～";
 	para "";
@@ -14,13 +13,11 @@
 
 @org $5c, $4e60:
 	init NAME_HELEN, PIC_HELEN_0;
-@org $5c, $4e63:
 	text "⋯⋯⋯";
 	done;
 
 @org $5c, $4e68:
 	init NAME_BLANK, PIC_1D;
-@org $5c, $4e6b:
 	text "喂～老公～";
 	line "";
 	db $f2, $ad; #"我"
@@ -45,7 +42,6 @@
 
 @org $5c, $4ea2:
 	init NAME_BLANK, PIC_1D;
-@org $5c, $4ea5:
 	text "啊﹗海藍～";
 	line "是妳啊﹗";
 	done;

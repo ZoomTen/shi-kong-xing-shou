@@ -1,6 +1,5 @@
 @org $5a, $6663:
 	init NAME_3F, PIC_75;
-@org $5a, $6666:
 	text "愚蠢的人類﹐闖";
 	line "進這裡﹐是因為";
 	para "你的勇氣﹖";
@@ -19,7 +18,6 @@
 
 @org $5a, $66f0:
 	init NAME_3F, PIC_75;
-@org $5a, $66f3:
 	text "嗚⋯⋯";
 	line "力量還沒有完全";
 	cont "復甦嗎﹖";
@@ -31,14 +29,12 @@
 
 @org $5a, $673a:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $673d:
 	text "得到了";
 	line "程式磁片⚬";
 	done;
 
 @org $5a, $674d:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $6750:
 	text "灼熱的紅蓮⋯⋯";
 	para "星獸似乎正期待";
 	line "著某件事的發生";

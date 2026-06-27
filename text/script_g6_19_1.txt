@@ -1,6 +1,5 @@
 @org $6c, $6a32:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $6a35:
 	text "唉～～";
 	line "";
 	db $f2, $c8; #"沒"

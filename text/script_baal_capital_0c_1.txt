@@ -1,13 +1,11 @@
 @org $6c, $517a:
 	init NAME_BLANK, PIC_19;
-@org $6c, $517d:
 	text "這裡是天空之城";
 	line "巴爾之都⚬";
 	done;
 
 @org $6c, $5197:
 	init NAME_BLANK, PIC_16;
-@org $6c, $519a:
 	text "你看過新聞了嗎";
 	line "那個在天空上的";
 	cont "裂縫﹐很有可能";
@@ -22,7 +20,6 @@
 
 @org $6c, $51ff:
 	init NAME_BLANK, PIC_14;
-@org $6c, $5202:
 	text "席菈博士是個很";
 	line "厲害的電腦專家";
 	cont "雖然是個女孩子";
@@ -39,7 +36,6 @@
 
 @org $6c, $5265:
 	init NAME_BLANK, PIC_17;
-@org $6c, $5268:
 	text "好恐佈～";
 	line "";
 	db $f2, $cd; #"好"
@@ -60,7 +56,6 @@
 
 @org $6c, $52bf:
 	init NAME_BLANK, PIC_13;
-@org $6c, $52c2:
 	text "席菈博士有個忠";
 	line "心的機器人﹐名";
 	cont "字叫貝爾⚬";
@@ -72,7 +67,6 @@
 
 @org $6c, $5317:
 	init NAME_BLANK, PIC_1C;
-@org $6c, $531a:
 	text "我看到了喲～";
 	para "有一個留著路鬍";
 	line "";
@@ -87,7 +81,6 @@
 
 @org $6c, $5368:
 	init NAME_BLANK, PIC_15;
-@org $6c, $536b:
 	text "旁邊有座金鋼山";
 	line "";
 	db $f3, $c2; #"順"
@@ -109,7 +102,6 @@
 
 @org $6c, $53e5:
 	init NAME_BLANK, PIC_22;
-@org $6c, $53e8:
 	text "月亮的藍光似乎";
 	line "愈來愈濃了﹗";
 	para "在晚上時﹐看到";

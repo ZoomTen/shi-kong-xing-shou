@@ -1,6 +1,5 @@
 @org $59, $761a:
 	init NAME_BLANK, PIC_23;
-@org $59, $761d:
 	text "真是忙呀﹗";
 	line "";
 	db $f1, $65; #"有"
@@ -21,7 +20,6 @@
 
 @org $59, $7685:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $7688:
 	text "糟糕～";
 	line "要怎麼突破門口";
 	cont "的守衛﹖";
@@ -29,7 +27,6 @@
 
 @org $59, $76a3:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $59, $76a6:
 	text "擋路的傢伙";
 	line "真是麻煩～";
 	para "";
@@ -41,7 +38,6 @@
 
 @org $59, $76c2:
 	init NAME_2A, PIC_17;
-@org $59, $76c5:
 	text "ｚＺｚ～Ｚｚ～";
 	done;
 

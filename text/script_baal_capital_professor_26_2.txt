@@ -1,6 +1,5 @@
 @org $6c, $5f88:
 	init NAME_4E, PIC_72;
-@org $6c, $5f8b:
 	text "這就是金鋼鑽頭";
 	line "了⚬";
 	para "";
@@ -15,7 +14,6 @@
 
 @org $6c, $5fc7:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $5fca:
 	text "有一種不對勁的";
 	line "感覺⋯";
 	para "";

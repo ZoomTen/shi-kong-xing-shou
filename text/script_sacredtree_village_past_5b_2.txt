@@ -1,6 +1,5 @@
 @org $5a, $637c:
 	init NAME_48, PIC_70;
-@org $5a, $637f:
 	text "完蛋了﹗";
 	line "修補時空裂縫的";
 	cont "";
@@ -17,7 +16,6 @@
 
 @org $5a, $63ee:
 	init NAME_48, PIC_70;
-@org $5a, $63f1:
 	text "方程式就像是雙";
 	line "面刃一樣﹐除了";
 	para "";
@@ -37,13 +35,11 @@
 
 @org $5a, $645e:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $6461:
 	text "就可以怎麼樣﹖";
 	done;
 
 @org $5a, $646e:
 	init NAME_48, PIC_70;
-@org $5a, $6471:
 	text "如果逆向執行的";
 	line "話﹐就可以將星";
 	cont "系的裂縫擴大﹗";
@@ -63,14 +59,12 @@
 
 @org $5a, $6502:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $5a, $6505:
 	text "這就糟了﹐得拿";
 	line "回方程式才行﹗";
 	done;
 
 @org $5a, $6520:
 	init NAME_48, PIC_70;
-@org $5a, $6523:
 	text "南方的衛星雷達";
 	line "站﹐聚集了許多";
 	para "的星獸⚬";
@@ -87,7 +81,6 @@
 
 @org $5a, $65a6:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $65a9:
 	text "這個個性﹐跟某";
 	line "個人還真像⋯⋯";
 	cont "南方的衛星雷達";
@@ -97,7 +90,6 @@
 
 @org $5a, $65dd:
 	init NAME_48, PIC_70;
-@org $5a, $65e0:
 	text "南方的衛星雷達";
 	line "站﹐聚集了許多";
 	para "的星獸⚬";

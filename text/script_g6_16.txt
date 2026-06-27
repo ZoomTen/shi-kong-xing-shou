@@ -1,6 +1,5 @@
 @org $6c, $65bf:
 	init NAME_LANTE, PIC_42;
-@org $6c, $65c2:
 	text "怎麼辦～";
 	line "";
 	db $f2, $ce; #"怎"

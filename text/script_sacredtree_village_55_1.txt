@@ -1,6 +1,5 @@
 @org $59, $5279:
 	init NAME_BLANK, PIC_16;
-@org $59, $527c:
 	text "怎麼辦﹖";
 	line "普兒被不知名的";
 	cont "";
@@ -16,7 +15,6 @@
 
 @org $59, $52c3:
 	init NAME_BLANK, PIC_16;
-@org $59, $52c6:
 	text "怎麼辦﹖";
 	line "普兒被不知名的";
 	cont "";

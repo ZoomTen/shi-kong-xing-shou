@@ -1,13 +1,11 @@
 @org $66, $7a0c:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $66, $7a0f:
 	text "怎麼回事﹖";
 	line "米特﹗﹗";
 	done;
 
 @org $66, $7a20:
 	init NAME_MITT, PIC_07;
-@org $66, $7a23:
 	text "我怎麼了﹖";
 	line "太累了嗎﹖";
 	cont "不行﹐得儘快將";
@@ -16,7 +14,6 @@
 
 @org $66, $7a50:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $7a53:
 	text "哦～呵呵呵呵～";
 	line "";
 	db $f2, $57; #"這"
@@ -25,20 +22,17 @@
 
 @org $66, $7a6d:
 	init NAME_KULU, PIC_KULU;
-@org $66, $7a70:
 	text "在下也不清楚⋯";
 	done;
 
 @org $66, $7a7e:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $7a81:
 	text "誰⋯";
 	line "誰來救救我呀﹗";
 	done;
 
 @org $66, $7a94:
 	init NAME_MITT, PIC_07;
-@org $66, $7a97:
 	text "照這麼看來﹐星";
 	line "系裂縫持續的擴";
 	cont "大﹐一旦到達某";
@@ -51,7 +45,6 @@
 
 @org $66, $7af9:
 	init NAME_MITT, PIC_07;
-@org $66, $7afc:
 	text "巴洛特﹐一百二";
 	line "十年前﹐八大科";
 	cont "";

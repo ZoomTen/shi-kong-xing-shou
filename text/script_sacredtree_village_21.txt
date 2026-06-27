@@ -1,6 +1,5 @@
 @org $59, $76d1:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $76d4:
 	text "有道力場擋住了";
 	line "";
 	db $f1, $2c; #"道"
@@ -9,7 +8,6 @@
 
 @org $59, $76e9:
 	init NAME_RANDT, PIC_06;
-@org $59, $76ec:
 	text "這種程度的黑洞";
 	line "";
 	db $f0, $19; #"力"
@@ -25,7 +23,6 @@
 
 @org $59, $771a:
 	init NAME_0F, PIC_0F;
-@org $59, $771d:
 	text "畢達～畢達畢～";
 	done;
 

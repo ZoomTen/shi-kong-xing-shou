@@ -1,6 +1,5 @@
 @org $59, $74a9:
 	init NAME_BLANK, PIC_16;
-@org $59, $74ac:
 	text "爸爸去逝之前﹐";
 	line "曾一度說著他的";
 	para "遺憾～雕像上的";
@@ -36,14 +35,12 @@
 
 @org $59, $7593:
 	init NAME_BALLOT, PIC_BALLOT_1;
-@org $59, $7596:
 	text "得到了～";
 	line "神奇果實";
 	done;
 
 @org $59, $75a5:
 	init NAME_BLANK, PIC_16;
-@org $59, $75a8:
 	text "爸爸～";
 	line "";
 	db $f2, $4a; #"你"
@@ -55,7 +52,6 @@
 
 @org $59, $75c1:
 	init NAME_BLANK, PIC_19;
-@org $59, $75c4:
 	text "奇怪﹖";
 	line "衛星電視為什麼";
 	cont "收不到訊號了﹖";

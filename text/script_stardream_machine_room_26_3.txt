@@ -1,6 +1,5 @@
 @org $66, $77d4:
 	init NAME_BLANK, PIC_24;
-@org $66, $77d7:
 	text "米特﹐看到你沒";
 	line "";
 	db $f2, $d6; #"事"
@@ -15,7 +14,6 @@
 
 @org $66, $7806:
 	init NAME_MITT, PIC_07;
-@org $66, $7809:
 	text "這裡就是星夢城";
 	line "的機械室⚬";
 	para "飛空引擎的設計";
@@ -54,7 +52,6 @@
 
 @org $66, $7920:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $7923:
 	text "嗯﹗我知道了⚬";
 	done;
 

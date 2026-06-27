@@ -1,6 +1,5 @@
 @org $58, $6246:
 	init NAME_BLANK, PIC_15;
-@org $58, $6249:
 	text "我們家琳琳﹐一";
 	line "";
 	db $f0, $80; #"天"
@@ -13,7 +12,6 @@
 
 @org $58, $6277:
 	init NAME_BLANK, PIC_1A;
-@org $58, $627a:
 	text "是叭拉叭拉超人";
 	line "啦﹗";
 	para "發現大屁屁老妖";
@@ -30,7 +28,6 @@
 
 @org $58, $62c1:
 	init NAME_BLANK, PIC_1A;
-@org $58, $62c4:
 	text "人家要寄這個模";
 	line "型給東漁市的表";
 	para "哥﹐要怎麼寄呢";
@@ -43,13 +40,11 @@
 
 @org $58, $6310:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $6313:
 	text "得到超人模型﹗";
 	done;
 
 @org $58, $6321:
 	init NAME_BLANK, PIC_1A;
-@org $58, $6324:
 	text "要把模型交給東";
 	line "漁市的表哥唷﹗";
 	para "這個是最流行的";
@@ -66,7 +61,6 @@
 
 @org $58, $6381:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $58, $6384:
 	text "巴洛特﹐你來了";
 	line "";
 	db $f1, $5c; #"嗎"
@@ -83,7 +77,6 @@
 
 @org $58, $63c6:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $63c9:
 	text "藍特＆音樂靈加";
 	line "";
 	db $f2, $30; #"入"

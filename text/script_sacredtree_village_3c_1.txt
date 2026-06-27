@@ -1,6 +1,5 @@
 @org $59, $4d80:
 	init NAME_BLANK, PIC_1A;
-@org $59, $4d83:
 	text "嗚～嗚～";
 	line "";
 	db $f2, $cd; #"好"
@@ -21,7 +20,6 @@
 
 @org $59, $4dab:
 	init NAME_BLANK, PIC_21;
-@org $59, $4dae:
 	text "普兒昨天不曉得";
 	line "到哪兒玩了⋯";
 	cont "一回來後﹐整個";

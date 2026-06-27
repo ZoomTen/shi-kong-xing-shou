@@ -1,6 +1,5 @@
 @org $6c, $741a:
 	init NAME_4F, PIC_73;
-@org $6c, $741d:
 	text "可惡⋯";
 	line "臭電腦﹗";
 	para "給我快一點﹗";
@@ -11,7 +10,6 @@
 
 @org $6c, $743e:
 	init NAME_SAYA, PIC_11;
-@org $6c, $7441:
 	text "在能源填充完前";
 	line "一定要趕回來";
 	cont "";
@@ -23,7 +21,6 @@
 
 @org $6c, $7476:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $7479:
 	text "巴洛特﹐";
 	line "一切要小心呀﹗";
 	done;

@@ -1,6 +1,5 @@
 @org $6c, $5a95:
 	init NAME_BLANK, PIC_19;
-@org $6c, $5a98:
 	text "嗚～嗚～";
 	line "一切都完了嗎﹖";
 	para "外面的人都說世";
@@ -21,7 +20,6 @@
 
 @org $6c, $5b0a:
 	init NAME_BLANK, PIC_16;
-@org $6c, $5b0d:
 	text "哎唷～";
 	line "";
 	db $f2, $ad; #"我"

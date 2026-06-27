@@ -1,6 +1,5 @@
 @org $66, $776e:
 	init NAME_57, PIC_1C;
-@org $66, $7771:
 	text "米特﹖";
 	line "";
 	db $f1, $03; #"真"
@@ -15,7 +14,6 @@
 
 @org $66, $7796:
 	init NAME_BLANK, PIC_16;
-@org $66, $7799:
 	text "怎麼辦﹗";
 	line "冰山島就要崩解";
 	cont "";

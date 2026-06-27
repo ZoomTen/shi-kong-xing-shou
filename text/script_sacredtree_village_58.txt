@@ -1,6 +1,5 @@
 @org $5a, $5bb6:
 	init NAME_56, PIC_1E;
-@org $5a, $5bb9:
 	text "卡爾大哥～";
 	line "";
 	db $f2, $4a; #"你"
@@ -17,7 +16,6 @@
 
 @org $5a, $5c0c:
 	init NAME_BLANK, PIC_21;
-@org $5a, $5c0f:
 	text "卡爾最近為了什";
 	line "麼方程式的﹐一";
 	para "定把身體累壞了";
@@ -30,7 +28,6 @@
 
 @org $5a, $5c61:
 	init NAME_BLANK, PIC_21;
-@org $5a, $5c64:
 	text "啊﹗你聽到了﹖";
 	line "人家⋯";
 	para "人家沒有說出什";

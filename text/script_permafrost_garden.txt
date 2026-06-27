@@ -1,18 +1,15 @@
 @org $66, $5f05:
 	init NAME_4C, PIC_5F;
-@org $66, $5f08:
 	text "嗚～吼吼﹗";
 	done;
 
 @org $66, $5f11:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $5f14:
 	text "得到雪熊爪﹗";
 	done;
 
 @org $66, $5f21:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $66, $5f24:
 	text "這帽子⋯";
 	line "";
 	db $f2, $b6; #"上"
@@ -24,7 +21,6 @@
 
 @org $66, $5f5b:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $5f5e:
 	text "得到父親之帽⚬";
 	done;
 

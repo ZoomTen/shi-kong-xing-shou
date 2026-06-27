@@ -1,6 +1,5 @@
 @org $6c, $6c25:
 	init NAME_MITT, PIC_48;
-@org $6c, $6c28:
 	text "巴洛特⋯";
 	line "";
 	db $f2, $07; #"對"

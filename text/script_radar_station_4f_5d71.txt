@@ -1,6 +1,5 @@
 @org $58, $5d71:
 	init NAME_40, PIC_69;
-@org $58, $5d74:
 	text "什⋯什麼﹖";
 	line "連大地能源都被";
 	cont "切斷了﹖";
@@ -12,25 +11,21 @@
 
 @org $58, $5dac:
 	init NAME_40, PIC_69;
-@org $58, $5daf:
 	text "給我殺殺殺﹗﹗";
 	done;
 
 @org $58, $5dba:
 	init NAME_STAR_BEAST, PIC_6A;
-@org $58, $5dbd:
 	text "嘰～嘰嘰﹗";
 	done;
 
 @org $58, $5dc7:
 	init NAME_40, PIC_69;
-@org $58, $5dca:
 	text "你⋯你是﹖";
 	done;
 
 @org $58, $5dd2:
 	init NAME_40, PIC_69;
-@org $58, $5dd5:
 	text "你⋯你﹗﹗﹗";
 	line "";
 	db $f1, $43; #"是"
@@ -44,7 +39,6 @@
 
 @org $58, $5e0f:
 	init NAME_3F, PIC_75;
-@org $58, $5e12:
 	text "我是該感謝您呢";
 	line "";
 	db $f2, $65; #"還"
@@ -61,20 +55,17 @@
 
 @org $58, $5e56:
 	init NAME_40, PIC_69;
-@org $58, $5e59:
 	text "殿⋯殿下⋯⋯";
 	line "請⋯請饒命呀﹗";
 	done;
 
 @org $58, $5e73:
 	init NAME_3F, PIC_75;
-@org $58, $5e76:
 	text "⋯⋯⋯⋯";
 	done;
 
 @org $58, $5e7c:
 	init NAME_BLANK, PIC_20;
-@org $58, $5e7f:
 	text "啊﹗﹗";
 	line "怎麼回事﹖";
 	cont "怎麼打起盹來了";

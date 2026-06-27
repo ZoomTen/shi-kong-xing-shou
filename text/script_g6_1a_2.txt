@@ -1,6 +1,5 @@
 @org $6c, $6f1c:
 	init NAME_HELEN, PIC_HELEN_0;
-@org $6c, $6f1f:
 	text "安東⋯";
 	line "現在還不是我們";
 	cont "見面的時候⚬";
@@ -8,7 +7,6 @@
 
 @org $6c, $6f41:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $6c, $6f44:
 	text "剛才的任性﹐真";
 	line "";
 	db $f1, $43; #"是"

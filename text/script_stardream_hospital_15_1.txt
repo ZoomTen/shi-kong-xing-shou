@@ -1,6 +1,5 @@
 @org $66, $5d40:
 	init NAME_BLANK, PIC_13;
-@org $66, $5d43:
 	text "都過一個月了﹐";
 	line "米特還是沒有";
 	cont "好轉的跡像⚬";
@@ -13,7 +12,6 @@
 
 @org $66, $5d8c:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $5d8f:
 	text "要怎麼樣才能喚";
 	line "";
 	db $f2, $36; #"醒"
@@ -22,7 +20,6 @@
 
 @org $66, $5da8:
 	init NAME_BLANK, PIC_13;
-@org $66, $5dab:
 	text "以目前看來﹐米";
 	line "特完全失去了求";
 	cont "生的意願⚬";
@@ -47,7 +44,6 @@
 
 @org $66, $5e2c:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $5e2f:
 	text "尋找米特的回憶";
 	line "所有能勾起他回";
 	cont "憶的東西都可以";
@@ -61,7 +57,6 @@
 
 @org $66, $5e62:
 	init NAME_BLANK, PIC_13;
-@org $66, $5e65:
 	text "以目前看來﹐米";
 	line "特完全失去了求";
 	cont "生的意願⚬";
@@ -83,13 +78,11 @@
 
 @org $66, $5ee7:
 	init NAME_MITT, PIC_07;
-@org $66, $5eea:
 	text "⋯⋯⋯";
 	done;
 
 @org $66, $5eef:
 	init NAME_4B, PIC_30;
-@org $66, $5ef2:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"

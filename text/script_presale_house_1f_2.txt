@@ -1,6 +1,5 @@
 @org $66, $66f2:
 	init $5b, PIC_20;
-@org $66, $66f5:
 	text "你們要問預售屋";
 	line "的事﹖";
 	para "";
@@ -31,7 +30,6 @@
 
 @org $66, $67b0:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $66, $67b3:
 	text "糟糕﹗";
 	line "";
 	db $f1, $65; #"有"
@@ -40,7 +38,6 @@
 
 @org $66, $67c3:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $67c6:
 	text "這名婆婆還有一";
 	line "點心跳﹐";
 	cont "但是沒呼吸了﹗";
@@ -50,7 +47,6 @@
 
 @org $66, $67f8:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $67fb:
 	text "爸爸曾經教過我";
 	line "緊急狀況的心肺";
 	cont "復甦術⋯⋯";
@@ -71,7 +67,6 @@
 
 @org $66, $6866:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $6869:
 	text "呀～嘔嘔﹗﹗";
 	line "整個嘴巴上都是";
 	cont "老婆婆假牙的味";
@@ -88,7 +83,6 @@
 
 @org $66, $68c0:
 	init NAME_BLANK, PIC_19;
-@org $66, $68c3:
 	text "這裡是哪裡﹖";
 	line "你是誰﹖";
 	para "";
@@ -101,7 +95,6 @@
 
 @org $66, $68e9:
 	init NAME_BLANK, PIC_19;
-@org $66, $68ec:
 	text "好可怕呀﹗⋯";
 	line "";
 	db $f2, $ce; #"怎"
@@ -115,7 +108,6 @@
 
 @org $66, $6924:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $6927:
 	text "老婆婆～";
 	line "";
 	db $f2, $ad; #"我"
@@ -124,7 +116,6 @@
 
 @org $66, $693d:
 	init NAME_BLANK, PIC_19;
-@org $66, $6940:
 	text "啊啊啊﹗";
 	line "你要假裝乖小孩";
 	para "然後綁架我嗎﹖";
@@ -140,14 +131,12 @@
 
 @org $66, $69ae:
 	init $5b, PIC_20;
-@org $66, $69b1:
 	text "老⋯老媽﹗﹗﹗";
 	line "你沒有事吧﹗";
 	done;
 
 @org $66, $69c7:
 	init NAME_BLANK, PIC_19;
-@org $66, $69ca:
 	text "你⋯你又是誰﹖";
 	line "你是那位乖小孩";
 	para "綁架集團的人嗎";
@@ -160,7 +149,6 @@
 
 @org $66, $6a18:
 	init $5b, PIC_20;
-@org $66, $6a1b:
 	text "年輕人﹐";
 	line "不要介意⚬";
 	para "我老媽一向都是";
@@ -188,13 +176,11 @@
 
 @org $66, $6a9c:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $6a9f:
 	text "得到了地契﹗";
 	done;
 
 @org $66, $6aab:
 	init $5b, PIC_20;
-@org $66, $6aae:
 	text "非常感謝你們﹗";
 	line "老媽﹐你不要再";
 	cont "亂跑了﹗";
@@ -203,7 +189,6 @@
 
 @org $66, $6ade:
 	init NAME_BLANK, PIC_19;
-@org $66, $6ae1:
 	text "你這個綁架我的";
 	line "人﹐怎麼叫我老";
 	cont "媽了﹖";
@@ -211,13 +196,11 @@
 
 @org $66, $6b01:
 	init $5b, PIC_20;
-@org $66, $6b04:
 	text "⋯⋯⋯";
 	done;
 
 @org $66, $6b09:
 	init NAME_BLANK, PIC_19;
-@org $66, $6b0c:
 	text "嘻嘻～";
 	line "他們想要綁架我";
 	cont "";

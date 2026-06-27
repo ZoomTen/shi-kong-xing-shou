@@ -1,6 +1,5 @@
 @org $59, $4b9e:
 	init NAME_BLANK, PIC_18;
-@org $59, $4ba1:
 	text "奇蹟之泉除了供";
 	line "應神木養份外﹐";
 	para "同時還是很有效";

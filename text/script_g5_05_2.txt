@@ -1,6 +1,5 @@
 @org $67, $6fb7:
 	init NAME_2F, PIC_58;
-@org $67, $6fba:
 	text "需要治療嗎﹖";
 	line "";
 	getchoice String_1cc5;

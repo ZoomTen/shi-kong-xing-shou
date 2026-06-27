@@ -1,6 +1,5 @@
 @org $6c, $6542:
 	init NAME_NINA, PIC_NINA_4;
-@org $6c, $6545:
 	text "怎麼會這樣﹖";
 	line "妮娜也跟巴洛特";
 	cont "一起去﹗";

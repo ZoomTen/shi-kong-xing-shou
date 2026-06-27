@@ -1,6 +1,5 @@
 @org $66, $56c0:
 	init NAME_BLANK, PIC_24;
-@org $66, $56c3:
 	text "我是本校的美術";
 	line "老師⚬";
 	cont "米特是我所教過";

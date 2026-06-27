@@ -1,6 +1,5 @@
 @org $6e, $4401:
 	init NAME_53, PIC_60;
-@org $6e, $4404:
 	text "嗚哇～";
 	line "不～～﹗";
 	cont "不可能﹗﹗﹗";
@@ -8,7 +7,6 @@
 
 @org $6e, $441b:
 	init NAME_SAYA, PIC_11;
-@org $6e, $441e:
 	text "不行﹗";
 	line "弗烈茲星系就快";
 	cont "要爆炸了﹗";
@@ -18,7 +16,6 @@
 
 @org $6e, $4451:
 	init NAME_20, PIC_30;
-@org $6e, $4454:
 	text "時空跳躍系統⋯";
 	line "準備完成⚬";
 	para "目標地⋯地球⋯";
@@ -30,21 +27,18 @@
 
 @org $6e, $449a:
 	init NAME_4F, PIC_73;
-@org $6e, $449d:
 	text "逃不了爆炸震波";
 	line "的範圍嗎﹖";
 	done;
 
 @org $6e, $44b3:
 	init NAME_4F, PIC_73;
-@org $6e, $44b6:
 	text "全速跳脫";
 	line "震爆波﹗";
 	done;
 
 @org $6e, $44c5:
 	init NAME_20, PIC_30;
-@org $6e, $44c8:
 	text "警告～警告～";
 	line "";
 	db $f2, $80; #"核"
@@ -55,7 +49,6 @@
 
 @org $6e, $44f1:
 	init NAME_SAYA, PIC_11;
-@org $6e, $44f4:
 	text "所有引擎動力全";
 	line "開﹗";
 	cont "全速脫離﹗";
@@ -63,13 +56,11 @@
 
 @org $6e, $4510:
 	init NAME_4F, PIC_73;
-@org $6e, $4513:
 	text "啊啊啊啊﹗﹗﹗";
 	done;
 
 @org $6e, $451d:
 	init NAME_HAYATO, PIC_HAYATO;
-@org $6e, $4520:
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	line "";
@@ -81,7 +72,6 @@
 
 @org $6e, $454b:
 	init NAME_FANGFANG, PIC_1A;
-@org $6e, $454e:
 	text "真的耶﹗";
 	line "";
 	db $f1, $58; #"要"
@@ -95,7 +85,6 @@
 
 @org $6e, $456b:
 	init NAME_HAYATO, PIC_HAYATO;
-@org $6e, $456e:
 	text "ＯＨ～";
 	line "ＢＡＢＹ～";
 	line "";
@@ -105,7 +94,6 @@
 
 @org $6e, $4591:
 	init NAME_FANGFANG, PIC_1A;
-@org $6e, $4594:
 	text "巴洛特一定會回";
 	line "來的⋯⋯";
 	cont "一定的⋯⋯⋯";
@@ -113,7 +101,6 @@
 
 @org $6e, $45b5:
 	init NAME_HELEN, PIC_HELEN_0;
-@org $6e, $45b8:
 	text "安東～";
 	line "";
 	db $f2, $4a; #"你"
@@ -127,7 +114,6 @@
 
 @org $6e, $45e4:
 	init NAME_BLANK, PIC_14;
-@org $6e, $45e7:
 	text "啊啊﹗海藍～";
 	line "妳在這裡啊﹗";
 	para "和我們一起過生";
@@ -143,7 +129,6 @@
 
 @org $6e, $4635:
 	init NAME_HELEN, PIC_HELEN_0;
-@org $6e, $4638:
 	text "不必了⋯⋯";
 	line "先謝謝你們的好";
 	cont "意⚬";
@@ -158,7 +143,6 @@
 
 @org $6e, $46a6:
 	init NAME_BLANK, PIC_14;
-@org $6e, $46a9:
 	text "海藍﹗";
 	line "糟了～";
 	para "";
@@ -174,20 +158,17 @@
 
 @org $6e, $46f5:
 	init NAME_43, PIC_50;
-@org $6e, $46f8:
 	text "啊啊啊啊﹗﹗";
 	line "老⋯老鼠﹗﹗﹗";
 	done;
 
 @org $6e, $470c:
 	init NAME_44, PIC_4D;
-@org $6e, $470f:
 	text "吱吱吱吱～﹗";
 	done;
 
 @org $6e, $4719:
 	init NAME_43, PIC_50;
-@org $6e, $471c:
 	text "啊啊啊啊啊﹗﹗";
 	line "";
 	db $f1, $8f; #"救"
@@ -196,20 +177,17 @@
 
 @org $6e, $472f:
 	init NAME_LANTE, PIC_LANTE_1;
-@org $6e, $4732:
 	text "怎麼了﹖啊﹗";
 	line "好可愛的老鼠﹗";
 	done;
 
 @org $6e, $474c:
 	init NAME_44, PIC_4D;
-@org $6e, $474f:
 	text "吱吱﹗";
 	done;
 
 @org $6e, $4755:
 	init NAME_43, PIC_50;
-@org $6e, $4758:
 	text "可愛﹗";
 	line "";
 	db $f1, $03; #"真"
@@ -222,14 +200,12 @@
 
 @org $6e, $4788:
 	init NAME_46, PIC_6E;
-@org $6e, $478b:
 	text "只是隻老鼠嘛～";
 	line "大驚小怪的⋯";
 	done;
 
 @org $6e, $47a5:
 	init NAME_43, PIC_50;
-@org $6e, $47a8:
 	text "只是隻老鼠﹖";
 	line "";
 	db $f1, $03; #"真"
@@ -242,7 +218,6 @@
 
 @org $6e, $47f0:
 	init NAME_43, PIC_50;
-@org $6e, $47f3:
 	text "都是你﹗";
 	line "買了這一艘老鼠";
 	cont "船﹗";
@@ -254,20 +229,17 @@
 
 @org $6e, $482a:
 	init NAME_LANTE, PIC_41;
-@org $6e, $482d:
 	text "老媽⋯⋯⋯";
 	done;
 
 @org $6e, $4836:
 	init NAME_BLANK, PIC_1E;
-@org $6e, $4839:
 	text "後來呢﹖";
 	line "後來呢﹖";
 	done;
 
 @org $6e, $4847:
 	init NAME_RANDT, PIC_06;
-@org $6e, $484a:
 	text "後來啊～";
 	line "";
 	db $f2, $48; #"那"
@@ -284,7 +256,6 @@
 
 @org $6e, $48a0:
 	init NAME_BLANK, PIC_1A;
-@org $6e, $48a3:
 	text "有多大﹖";
 	line "";
 	db $f1, $65; #"有"
@@ -293,7 +264,6 @@
 
 @org $6e, $48b5:
 	init NAME_RANDT, PIC_46;
-@org $6e, $48b8:
 	text "嗯～大概有我們";
 	line "村子的三倍⋯";
 	cont "不﹐五倍大﹗";
@@ -301,13 +271,11 @@
 
 @org $6e, $48e0:
 	init NAME_BLANK, PIC_1A;
-@org $6e, $48e3:
 	text "哇哇哇﹗";
 	done;
 
 @org $6e, $48ea:
 	init NAME_RANDT, PIC_06;
-@org $6e, $48ed:
 	text "不過並沒有嚇到";
 	line "我⚬";
 	para "只見我雙手一擋";
@@ -321,14 +289,12 @@
 
 @org $6e, $494e:
 	init NAME_BLANK, PIC_1E;
-@org $6e, $4951:
 	text "哇哇哇哇﹗";
 	line "好厲害﹗";
 	done;
 
 @org $6e, $4960:
 	init NAME_RANDT, PIC_06;
-@org $6e, $4963:
 	text "呵呵呵～";
 	line "不要露出這麼驚";
 	cont "訝的表情喲～";
@@ -341,7 +307,6 @@
 
 @org $6e, $49ad:
 	init NAME_BLANK, PIC_1A;
-@org $6e, $49b0:
 	text "雷德好棒喲﹗﹗";
 	para "我長大也要跟雷";
 	line "德一樣﹗";
@@ -349,13 +314,11 @@
 
 @org $6e, $49d6:
 	init NAME_RANDT, PIC_06;
-@org $6e, $49d9:
 	text "哈哈哈哈哈～～";
 	done;
 
 @org $6e, $49e3:
 	init NAME_4F, PIC_73;
-@org $6e, $49e6:
 	text "真是麻煩⋯";
 	line "";
 	db $f2, $57; #"這"
@@ -364,7 +327,6 @@
 
 @org $6e, $49fc:
 	init NAME_4F, PIC_73;
-@org $6e, $49ff:
 	text "哦﹗﹗好痛﹗";
 	line "巴克﹐不要怕～";
 	cont "";
@@ -376,14 +338,12 @@
 
 @org $6e, $4a27:
 	init NAME_BUCK, PIC_BUCK;
-@org $6e, $4a2a:
 	text "貝爾．醒．";
 	line "過來了﹖";
 	done;
 
 @org $6e, $4a3c:
 	init NAME_4D, PIC_6C;
-@org $6e, $4a3f:
 	text "啊﹗﹖";
 	line "";
 	db $f1, $43; #"是"
@@ -396,7 +356,6 @@
 
 @org $6e, $4a6e:
 	init NAME_4F, PIC_73;
-@org $6e, $4a71:
 	text "算了﹐又不全是";
 	line "你的錯⚬";
 	para "還是想要變成人";
@@ -405,13 +364,11 @@
 
 @org $6e, $4a98:
 	init NAME_BUCK, PIC_BUCK;
-@org $6e, $4a9b:
 	text "貝爾⋯變成人﹖";
 	done;
 
 @org $6e, $4aa9:
 	init NAME_4D, PIC_6C;
-@org $6e, $4aac:
 	text "不要了⋯⋯";
 	line "巴克說過﹐當我";
 	cont "們會生氣﹐會感";
@@ -427,19 +384,16 @@
 
 @org $6e, $4afe:
 	init NAME_BUCK, PIC_BUCK;
-@org $6e, $4b01:
 	text "貝爾小姐⋯⋯";
 	done;
 
 @org $6e, $4b0d:
 	init NAME_4D, PIC_6C;
-@org $6e, $4b10:
 	text "巴克﹐謝謝你⋯";
 	done;
 
 @org $6e, $4b1d:
 	init NAME_4F, PIC_73;
-@org $6e, $4b20:
 	text "哈哈哈哈～";
 	line "頭一次看見會談";
 	cont "戀愛的機器人﹗";
@@ -453,7 +407,6 @@
 
 @org $6e, $4b59:
 	init NAME_38, PIC_61;
-@org $6e, $4b5c:
 	text "喂～喂～";
 	line "兒子呀～";
 	para "";
@@ -472,7 +425,6 @@
 
 @org $6e, $4b9b:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $6e, $4b9e:
 	text "進展﹖";
 	line "你是指懲罰者的";
 	cont "事﹖";
@@ -480,7 +432,6 @@
 
 @org $6e, $4bb8:
 	init NAME_38, PIC_61;
-@org $6e, $4bbb:
 	text "如果只是這種無";
 	line "聊的事的話﹐那";
 	para "";
@@ -498,14 +449,12 @@
 
 @org $6e, $4c06:
 	init NAME_NINA, PIC_02;
-@org $6e, $4c09:
 	text "伯父為什麼一直";
 	line "看著我﹖";
 	done;
 
 @org $6e, $4c1e:
 	init NAME_CLAUDE, PIC_CLAUDE_3;
-@org $6e, $4c21:
 	text "做什麼﹗";
 	line "老色鬼﹐";
 	para "不看看自己多大";
@@ -514,7 +463,6 @@
 
 @org $6e, $4c49:
 	init NAME_38, PIC_61;
-@org $6e, $4c4c:
 	text "克勞德﹐你還不";
 	line "明瞭爸爸的用心";
 	cont "嗎﹖";
@@ -522,13 +470,11 @@
 
 @org $6e, $4c6a:
 	init NAME_NINA, PIC_02;
-@org $6e, $4c6d:
 	text "⋯⋯⋯";
 	done;
 
 @org $6e, $4c72:
 	init NAME_CLAUDE, PIC_CLAUDE_2;
-@org $6e, $4c75:
 	text "這．還．用．你";
 	line "．說﹗";
 	para "偷偷跟你說﹐妮";
@@ -538,14 +484,12 @@
 
 @org $6e, $4cad:
 	init NAME_38, PIC_61;
-@org $6e, $4cb0:
 	text "哦哦﹗﹗";
 	line "『那個』﹗﹗";
 	done;
 
 @org $6e, $4cc2:
 	init NAME_NINA, PIC_NINA_3;
-@org $6e, $4cc5:
 	text "亂說⋯⋯";
 	line "妮娜只是⋯⋯";
 	para "只是說⋯";
@@ -554,7 +498,6 @@
 
 @org $6e, $4cec:
 	init NAME_CLAUDE, PIC_CLAUDE_2;
-@org $6e, $4cef:
 	text "聽到了吧～";
 	line "妮娜說要～";
 	para "";
@@ -567,13 +510,11 @@
 
 @org $6e, $4d15:
 	init NAME_38, PIC_61;
-@org $6e, $4d18:
 	text "哈哈哈哈哈～";
 	done;
 
 @org $6e, $4d21:
 	init NAME_5A, PIC_18;
-@org $6e, $4d24:
 	text "少爺～";
 	line "";
 	db $f2, $4a; #"你"
@@ -586,7 +527,6 @@
 
 @org $6e, $4d68:
 	init NAME_MITT, PIC_48;
-@org $6e, $4d6b:
 	text "對不起﹐讓你擔";
 	line "心了⋯⋯";
 	cont "";
@@ -596,7 +536,6 @@
 
 @org $6e, $4d90:
 	init NAME_5A, PIC_18;
-@org $6e, $4d93:
 	text "嗚嗚～少爺～";
 	para "";
 	db $f2, $ad; #"我"
@@ -612,7 +551,6 @@
 
 @org $6e, $4db0:
 	init NAME_MITT, PIC_47;
-@org $6e, $4db3:
 	text "嘻嘻嘻～";
 	line "剛回來就有好多";
 	cont "事要忙﹗";
@@ -626,14 +564,12 @@
 
 @org $6e, $4e1d:
 	init NAME_5A, PIC_18;
-@org $6e, $4e20:
 	text "嗚～嗚～嗚～";
 	line "少爺⋯⋯⋯";
 	done;
 
 @org $6e, $4e36:
 	init NAME_MITT, PIC_07;
-@org $6e, $4e39:
 	text "對不起⋯⋯⋯";
 	done;
 

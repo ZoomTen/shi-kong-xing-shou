@@ -1,6 +1,5 @@
 @org $66, $54d3:
 	init NAME_BLANK, PIC_16;
-@org $66, $54d6:
 	text "怎麼辦﹖冰山島";
 	line "就快要崩解了﹐";
 	para "";

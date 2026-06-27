@@ -1,6 +1,5 @@
 @org $67, $6fdb:
 	init NAME_2E, PIC_57;
-@org $67, $6fde:
 	text "這裡是怪獸膠囊";
 	line "";
 	db $f1, $39; #"存"
@@ -10,7 +9,6 @@
 	getchoice String_1cc5;
 @org $67, $7002:
 	init NAME_31, PIC_5A;
-@org $67, $7005:
 	text "遇上你真好⚬";
 	line "這就當做是";
 	line "見面禮好了⚬";
@@ -19,7 +17,6 @@
 
 @org $67, $7025:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $67, $7028:
 	text "得到祕技";
 	db $f1, $2a; #"１"
 	text "";
@@ -29,7 +26,6 @@
 
 @org $67, $7036:
 	init NAME_31, PIC_5A;
-@org $67, $7039:
 	text "遇上你真好⚬";
 	done;
 

@@ -1,6 +1,5 @@
 @org $5c, $458c:
 	init NAME_3A, PIC_63;
-@org $5c, $458f:
 	text "再見了～我要進";
 	line "行我的第二個深";
 	cont "奧的沈思了⋯";
@@ -8,14 +7,12 @@
 
 @org $5c, $45b8:
 	init NAME_BLANK, PIC_1E;
-@org $5c, $45bb:
 	text "我⋯我回來了﹗";
 	line "嗚嗚嗚～媽媽﹗";
 	done;
 
 @org $5c, $45d3:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $45d6:
 	text "怎麼回事﹖";
 	line "怎麼都沒有人﹖";
 	para "發生了什麼事﹖";
@@ -23,7 +20,6 @@
 
 @org $5c, $45fb:
 	init NAME_BLANK, PIC_16;
-@org $5c, $45fe:
 	text "哼﹗我就知道﹗";
 	line "原來海青是人魚";
 	para "";

@@ -1,13 +1,11 @@
 @org $6c, $5f63:
 	init NAME_STAR_BEAST, PIC_6A;
-@org $6c, $5f66:
 	text "呼嚕～呼嚕～";
 	line "嚕嚕﹗";
 	done;
 
 @org $6c, $5f78:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $5f7b:
 	text "得到金鋼鑽⚬";
 	done;
 

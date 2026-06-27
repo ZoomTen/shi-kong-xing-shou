@@ -1,6 +1,5 @@
 @org $58, $6144:
 	init NAME_BLANK, PIC_1F;
-@org $58, $6147:
 	text "聽姐夫說﹐神木";
 	line "村那裡﹐好像漸";
 	cont "";
@@ -12,7 +11,6 @@
 
 @org $58, $6182:
 	init NAME_BLANK, PIC_19;
-@org $58, $6185:
 	text "剛剛在城外發現";
 	line "一些可怕的星獸";
 	cont "鬼鬼崇崇東張西";

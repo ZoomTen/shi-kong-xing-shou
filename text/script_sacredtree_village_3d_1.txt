@@ -1,6 +1,5 @@
 @org $59, $4df2:
 	init NAME_BLANK, PIC_16;
-@org $59, $4df5:
 	text "唉～想聽聽我這";
 	line "";
 	db $f2, $4f; #"個"
@@ -12,14 +11,12 @@
 	getchoice String_1cc5;
 @org $59, $4e17:
 	init NAME_BLANK, PIC_16;
-@org $59, $4e1a:
 	text "唉～人生充滿了";
 	line "遺憾⋯⋯";
 	done;
 
 @org $59, $4e2d:
 	init NAME_BLANK, PIC_16;
-@org $59, $4e30:
 	text "你真是個善良的";
 	line "小孩⚬";
 	para "在我還小的時候";
@@ -57,7 +54,6 @@
 
 @org $59, $4f14:
 	init NAME_BLANK, PIC_19;
-@org $59, $4f17:
 	text "奇怪﹖";
 	line "衛星電視為什麼";
 	cont "收不到訊號了﹖";

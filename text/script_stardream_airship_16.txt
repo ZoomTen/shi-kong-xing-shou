@@ -1,6 +1,5 @@
 @org $66, $4d45:
 	init NAME_BLANK, PIC_12;
-@org $66, $4d48:
 	text "引擎室被不明的";
 	line "異物侵入﹗";
 	para "如果沒有在引擎";
@@ -13,7 +12,6 @@
 
 @org $66, $4d8e:
 	init NAME_BLANK, PIC_25;
-@org $66, $4d91:
 	text "這裡是專用醫務";
 	line "室⚬";
 	para "總裁有暈機的情";

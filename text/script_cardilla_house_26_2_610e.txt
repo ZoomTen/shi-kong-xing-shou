@@ -1,6 +1,5 @@
 @org $66, $610e:
 	init NAME_5A, PIC_18;
-@org $66, $6111:
 	text "不好了～";
 	line "不好了﹗";
 	cont "米特少爺最喜歡";
@@ -20,13 +19,11 @@
 
 @org $66, $618d:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $6190:
 	text "一男一女﹖";
 	done;
 
 @org $66, $619b:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $66, $619e:
 	text "有種不好的預感";
 	line "難道會是～";
 	cont "『他們』﹖";
@@ -34,7 +31,6 @@
 
 @org $66, $61c1:
 	init NAME_5A, PIC_18;
-@org $66, $61c4:
 	text "不好了～";
 	line "不好了﹗";
 	cont "米特少爺最喜歡";

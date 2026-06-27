@@ -1,6 +1,5 @@
 @org $59, $55b1:
 	init NAME_47, PIC_6F;
-@org $59, $55b4:
 	text "人類⋯";
 	line "又來了嗎﹖";
 	para "發現者⋯⋯死﹗";
@@ -8,7 +7,6 @@
 
 @org $59, $55d1:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $55d4:
 	text "看樣子﹐星獸正";
 	line "在抽取神木的能";
 	cont "量⚬神木也才因此而";
@@ -21,7 +19,6 @@
 
 @org $59, $5625:
 	init NAME_40, PIC_69;
-@org $59, $5628:
 	text "什麼﹗﹗";
 	line "連自然能源都停";
 	cont "止抽取了﹖";
@@ -34,13 +31,11 @@
 
 @org $59, $5668:
 	init NAME_40, PIC_69;
-@org $59, $566b:
 	text "給我殺﹗﹗﹗";
 	done;
 
 @org $59, $5675:
 	init NAME_RANDT, PIC_46;
-@org $59, $5678:
 	text "完成了﹗";
 	line "";
 	db $f1, $03; #"真"
@@ -55,7 +50,6 @@
 
 @org $59, $56a1:
 	init NAME_LANTE, PIC_45;
-@org $59, $56a4:
 	text "什麼﹖";
 	line "星獸從神木的內";
 	cont "部抽取能量﹖";
@@ -69,7 +63,6 @@
 
 @org $59, $56f4:
 	init NAME_LANTE, PIC_06;
-@org $59, $56f7:
 	text "不過目前最要緊";
 	line "的﹐就是回復奇";
 	cont "";
@@ -79,14 +72,12 @@
 
 @org $59, $5719:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $571c:
 	text "這就是能產生泉";
 	line "水的機器嗎﹖";
 	done;
 
 @org $59, $5732:
 	init NAME_LANTE, PIC_06;
-@org $59, $5735:
 	text "錯﹗就相對論來";
 	line "說﹐無中生有是";
 	cont "不可能的﹗";
@@ -103,14 +94,12 @@
 
 @org $59, $57a0:
 	init NAME_LANTE, PIC_46;
-@org $59, $57a3:
 	text "我這就到過去取";
 	line "來奇蹟泉水﹗";
 	done;
 
 @org $59, $57bb:
 	init NAME_LANTE, PIC_43;
-@org $59, $57be:
 	text "一個人做這種事";
 	line "的話﹐真是沒有";
 	cont "安全感啊﹗";
@@ -121,7 +110,6 @@
 
 @org $59, $5810:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $5813:
 	text "啊﹗";
 	line "";
 	db $f1, $43; #"是"
@@ -130,7 +118,6 @@
 
 @org $59, $5822:
 	init NAME_LANTE, PIC_06;
-@org $59, $5825:
 	text "出發了﹗";
 	line "時光．實驗１號";
 	cont "到十年前的神木";
@@ -139,7 +126,6 @@
 
 @org $59, $584c:
 	init NAME_20, PIC_30;
-@org $59, $584f:
 	text "回溯⋯⋯７年～";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -150,7 +136,6 @@
 
 @org $59, $5868:
 	init NAME_LANTE, PIC_06;
-@org $59, $586b:
 	text "見到這種歷史性";
 	line "的革新發明﹐真";
 	para "";
@@ -161,7 +146,6 @@
 
 @org $59, $5899:
 	init NAME_20, PIC_30;
-@org $59, $589c:
 	text "回溯⋯１０年～";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -172,7 +156,6 @@
 
 @org $59, $58b6:
 	init NAME_LANTE, PIC_46;
-@org $59, $58b9:
 	text "慢慢慢著﹗";
 	line "不是";
 	db $f1, $2a; #"１"
@@ -183,13 +166,11 @@
 
 @org $59, $58cf:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $58d2:
 	text "⋯⋯⋯";
 	done;
 
 @org $59, $58d7:
 	init NAME_20, PIC_30;
-@org $59, $58da:
 	text "回溯⋯３５年～";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -200,14 +181,12 @@
 
 @org $59, $58f3:
 	init NAME_LANTE, PIC_45;
-@org $59, $58f6:
 	text "爛機器﹗";
 	line "快給我停下來﹗";
 	done;
 
 @org $59, $590a:
 	init NAME_20, PIC_30;
-@org $59, $590d:
 	text "警告～警告﹗";
 	line "系統過載～";
 	cont "";
@@ -221,7 +200,6 @@
 
 @org $59, $5928:
 	init NAME_LANTE, PIC_45;
-@org $59, $592b:
 	text "難道⋯⋯";
 	line "";
 	db $f2, $ad; #"我"
@@ -252,7 +230,6 @@
 
 @org $59, $59a3:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $59, $59a6:
 	text "現在⋯";
 	line "不是說這種話的";
 	cont "時候吧﹗";
@@ -261,21 +238,18 @@
 
 @org $59, $59d1:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $59d4:
 	text "這裡是哪裡﹖";
 	line "平安降落了嗎﹖";
 	done;
 
 @org $59, $59ec:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $59ef:
 	text "這裡是哪裡﹖";
 	line "得詳細的問清楚";
 	done;
 
 @org $59, $5a08:
 	init NAME_48, PIC_70;
-@org $59, $5a0b:
 	text "哎呀﹗醒了嗎﹖";
 	para "";
 	db $f1, $32; #"嗯"
@@ -292,7 +266,6 @@
 
 @org $59, $5a8c:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $5a8f:
 	text "真是謝謝你⚬";
 	line "這種語氣聽來真";
 	cont "";
@@ -302,7 +275,6 @@
 
 @org $59, $5ab1:
 	init NAME_48, PIC_70;
-@org $59, $5ab4:
 	text "不用客氣⚬";
 	line "我是時空科學家";
 	cont "卡爾⚬";
@@ -310,7 +282,6 @@
 
 @org $59, $5ad3:
 	init NAME_48, PIC_70;
-@org $59, $5ad6:
 	text "星系產生了破洞";
 	line "﹐地球就要出現";
 	para "危機⚬";
@@ -341,7 +312,6 @@
 
 @org $59, $5bcf:
 	init NAME_48, PIC_70;
-@org $59, $5bd2:
 	text "先是這樣⋯";
 	line "";
 	db $f2, $da; #"再"
@@ -367,13 +337,11 @@
 
 @org $59, $5c71:
 	init NAME_BLANK, PIC_13;
-@org $59, $5c74:
 	text "這裡是神木村⚬";
 	done;
 
 @org $59, $5c83:
 	init NAME_BLANK, PIC_15;
-@org $59, $5c86:
 	text "天空出現了好大";
 	line "的裂縫﹗";
 	para "世界也出現了好";
@@ -387,7 +355,6 @@
 
 @org $59, $5cec:
 	init NAME_BLANK, PIC_14;
-@org $59, $5cef:
 	text "什麼﹖雕像﹖";
 	line "這裡哪有什麼雕";
 	cont "像⚬";
@@ -397,7 +364,6 @@
 
 @org $59, $5d23:
 	init NAME_BLANK, PIC_17;
-@org $59, $5d26:
 	text "卡爾說﹐星系的";
 	line "裂縫導致了地球";
 	cont "的危機⚬";
@@ -420,7 +386,6 @@
 
 @org $59, $5db7:
 	init NAME_BLANK, PIC_16;
-@org $59, $5dba:
 	text "昨天我們家仔仔";
 	line "吃壞肚子了﹐我";
 	para "";
@@ -438,7 +403,6 @@
 
 @org $59, $5df8:
 	init NAME_BLANK, PIC_19;
-@org $59, $5dfb:
 	text "最近的月亮﹐變";
 	line "得好藍好藍﹗";
 	cont "藍的好可怕﹗";
@@ -448,7 +412,6 @@
 
 @org $59, $5e34:
 	init NAME_BLANK, PIC_25;
-@org $59, $5e37:
 	text "帕達的父母﹐在";
 	line "一次空難事件中";
 	para "﹐全部都去逝了";
@@ -462,7 +425,6 @@
 
 @org $59, $5e8a:
 	init NAME_BLANK, PIC_18;
-@org $59, $5e8d:
 	text "怎麼辦⋯";
 	line "";
 	db $f2, $ce; #"怎"
@@ -491,7 +453,6 @@
 
 @org $59, $5f31:
 	init NAME_BLANK, PIC_20;
-@org $59, $5f34:
 	text "咭咭咭咭～";
 	line "到手了﹗";
 	para "終於到手了﹗";
@@ -503,7 +464,6 @@
 
 @org $59, $5f7f:
 	init NAME_BLANK, PIC_1E;
-@org $59, $5f82:
 	text "卡爾大哥～";
 	line "";
 	db $f2, $4a; #"你"
@@ -520,7 +480,6 @@
 
 @org $59, $5fd5:
 	init NAME_BLANK, PIC_21;
-@org $59, $5fd8:
 	text "卡爾最近為了什";
 	line "麼方程式的﹐一";
 	para "定把身體累壞了";
@@ -533,7 +492,6 @@
 
 @org $59, $602a:
 	init NAME_BLANK, PIC_21;
-@org $59, $602d:
 	text "啊﹗你聽到了﹖";
 	line "人家⋯";
 	para "人家沒有說出什";
@@ -545,7 +503,6 @@
 
 @org $59, $6079:
 	init NAME_BLANK, PIC_1B;
-@org $59, $607c:
 	text "唉～還是⋯";
 	line "拿回來⋯⋯";
 	cont "可是⋯⋯";
@@ -563,7 +520,6 @@
 
 @org $59, $60e0:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $60e3:
 	text "這裡到底是哪裡";
 	line "到底是哪裡的時";
 	cont "空﹖";
@@ -576,7 +532,6 @@
 
 @org $59, $6138:
 	init NAME_LANTE, PIC_06;
-@org $59, $613b:
 	text "巴洛特﹐你醒了";
 	line "呀﹗";
 	para "哈哈哈～";
@@ -597,14 +552,12 @@
 
 @org $59, $6195:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6198:
 	text "這裡到底是哪裡";
 	line "﹗";
 	done;
 
 @org $59, $61a9:
 	init NAME_LANTE, PIC_06;
-@org $59, $61ac:
 	text "這才是了不起的";
 	line "地方﹗";
 	para "你知道嗎﹖";
@@ -633,7 +586,6 @@
 
 @org $59, $622e:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $59, $6231:
 	text "真⋯真是驚人﹗";
 	para "但為什麼年";
 	line "";
@@ -646,7 +598,6 @@
 
 @org $59, $627d:
 	init NAME_LANTE, PIC_06;
-@org $59, $6280:
 	text "嗯～我也是這麼";
 	line "";
 	db $f2, $d1; #"想"
@@ -662,7 +613,6 @@
 
 @org $59, $62c9:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $59, $62cc:
 	text "這麼說來﹐爸爸";
 	line "一直尋找的﹐也";
 	para "";
@@ -673,7 +623,6 @@
 
 @org $59, $62ff:
 	init NAME_LANTE, PIC_06;
-@org $59, $6302:
 	text "真是糟糕﹗";
 	line "我的時光．實驗";
 	cont "一號﹐變得亂七";
@@ -694,7 +643,6 @@
 
 @org $59, $637f:
 	init NAME_LANTE, PIC_06;
-@org $59, $6382:
 	text "真是糟糕﹗";
 	line "我的時光．實驗";
 	cont "一號﹐變得亂七";
@@ -715,21 +663,18 @@
 
 @org $59, $63ff:
 	init NAME_0F, PIC_0F;
-@org $59, $6402:
 	text "嗶達嗶～達達～";
 	line "嗶～";
 	done;
 
 @org $59, $6415:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6418:
 	text "得到奇蹟之水﹗";
 	line "";
 	done;
 
 @org $59, $6425:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $59, $6428:
 	text "爆炸聲是從神木";
 	line "村傳來的﹗";
 	para "發生了什麼事﹖";
@@ -737,7 +682,6 @@
 
 @org $59, $644d:
 	init NAME_BLANK, PIC_14;
-@org $59, $6450:
 	text "嚇了一大跳﹗";
 	line "卡爾的家﹐剛才";
 	cont "發生了大爆炸﹐";
@@ -754,7 +698,6 @@
 
 @org $59, $6498:
 	init NAME_BLANK, PIC_16;
-@org $59, $649b:
 	text "卡爾的家就這麼";
 	line "磅～的一聲﹐被";
 	line "炸掉了﹗";
@@ -765,7 +708,6 @@
 
 @org $59, $64e4:
 	init NAME_BLANK, PIC_1B;
-@org $59, $64e7:
 	text "我受不了了﹐我";
 	line "一定要講出來﹗";
 	para "姆斯看上了帕達";
@@ -799,7 +741,6 @@
 
 @org $59, $65c0:
 	init NAME_BLANK, PIC_1B;
-@org $59, $65c3:
 	text "這不是⋯帕達的";
 	line "懷錶嗎﹖";
 	cont "";
@@ -814,7 +755,6 @@
 
 @org $59, $6607:
 	init NAME_BLANK, PIC_1B;
-@org $59, $660a:
 	text "真是謝謝你﹗";
 	line "如此一來﹐帕達";
 	cont "一定可以重新再";
@@ -823,7 +763,6 @@
 
 @org $59, $6639:
 	init NAME_BLANK, PIC_20;
-@org $59, $663c:
 	text "什麼﹖那傢伙想";
 	line "拿回懷錶﹖";
 	cont "做夢﹗";
@@ -833,7 +772,6 @@
 
 @org $59, $666b:
 	init NAME_BLANK, PIC_20;
-@org $59, $666e:
 	text "無論如何﹐都想";
 	line "拿回懷錶嗎﹖";
 	para "哼﹗看來那傢伙";
@@ -843,7 +781,6 @@
 
 @org $59, $66ae:
 	init NAME_BLANK, PIC_20;
-@org $59, $66b1:
 	text "可⋯可惡﹗";
 	line "不⋯不要再打了";
 	cont "我知道錯了⋯";
@@ -851,13 +788,11 @@
 
 @org $59, $66d7:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $66da:
 	text "得到傳家懷錶﹗";
 	done;
 
 @org $59, $66e7:
 	init NAME_BLANK, PIC_20;
-@org $59, $66ea:
 	text "可⋯可惡﹗";
 	line "不⋯不要再打了";
 	cont "我知道錯了⋯";
@@ -865,7 +800,6 @@
 
 @org $59, $6710:
 	init NAME_BLANK, PIC_18;
-@org $59, $6713:
 	text "我終於找到我的";
 	line "懷錶了﹗";
 	cont "爸爸～媽媽﹗";
@@ -874,7 +808,6 @@
 
 @org $59, $6742:
 	init NAME_48, PIC_70;
-@org $59, $6745:
 	text "完蛋了﹗";
 	line "修補時空裂縫的";
 	cont "";
@@ -891,7 +824,6 @@
 
 @org $59, $67b4:
 	init NAME_48, PIC_70;
-@org $59, $67b7:
 	text "方程式就像是雙";
 	line "面刃一樣﹐除了";
 	para "";
@@ -911,13 +843,11 @@
 
 @org $59, $6824:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6827:
 	text "就可以怎麼樣﹖";
 	done;
 
 @org $59, $6834:
 	init NAME_48, PIC_70;
-@org $59, $6837:
 	text "如果逆向執行的";
 	line "話﹐就可以將星";
 	cont "系的裂縫擴大﹗";
@@ -937,14 +867,12 @@
 
 @org $59, $68c8:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $59, $68cb:
 	text "這就糟了﹐得拿";
 	line "回方程式才行﹗";
 	done;
 
 @org $59, $68e6:
 	init NAME_48, PIC_70;
-@org $59, $68e9:
 	text "南方的衛星雷達";
 	line "站﹐聚集了許多";
 	para "的星獸⚬";
@@ -961,7 +889,6 @@
 
 @org $59, $696c:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $696f:
 	text "這個個性﹐跟某";
 	line "個人還真像⋯⋯";
 	cont "南方的衛星雷達";
@@ -971,7 +898,6 @@
 
 @org $59, $69a3:
 	init NAME_48, PIC_70;
-@org $59, $69a6:
 	text "南方的衛星雷達";
 	line "站﹐聚集了許多";
 	para "的星獸⚬";
@@ -988,7 +914,6 @@
 
 @org $59, $6a29:
 	init NAME_3F, PIC_75;
-@org $59, $6a2c:
 	text "愚蠢的人類﹐闖";
 	line "進這裡﹐是因為";
 	para "你的勇氣﹖";
@@ -1007,7 +932,6 @@
 
 @org $59, $6ab6:
 	init NAME_3F, PIC_75;
-@org $59, $6ab9:
 	text "嗚⋯⋯";
 	line "力量還沒有完全";
 	cont "復甦嗎﹖";
@@ -1019,14 +943,12 @@
 
 @org $59, $6b00:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6b03:
 	text "得到了";
 	line "程式磁片⚬";
 	done;
 
 @org $59, $6b13:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6b16:
 	text "灼熱的紅蓮⋯⋯";
 	para "星獸似乎正期待";
 	line "著某件事的發生";
@@ -1039,7 +961,6 @@
 
 @org $59, $6b82:
 	init NAME_48, PIC_70;
-@org $59, $6b85:
 	text "沒錯﹗這就是我";
 	line "的方程式﹗";
 	para "巴洛特﹐真是非";
@@ -1054,7 +975,6 @@
 
 @org $59, $6bef:
 	init NAME_48, PIC_70;
-@org $59, $6bf2:
 	text "唉～裂縫的持續";
 	line "擴大﹐使得更強";
 	para "";
@@ -1086,7 +1006,6 @@
 
 @org $59, $6cc3:
 	init NAME_RANDT, PIC_06;
-@org $59, $6cc6:
 	text "曾祖父完成他的";
 	line "時空程式了嗎﹖";
 	para "";
@@ -1098,7 +1017,6 @@
 
 @org $59, $6d05:
 	init NAME_LANTE, PIC_43;
-@org $59, $6d08:
 	text "完成了﹗";
 	para "時光．實驗";
 	db $f1, $2b; #"２"
@@ -1111,7 +1029,6 @@
 
 @org $59, $6d2c:
 	init NAME_LANTE, PIC_06;
-@org $59, $6d2f:
 	text "怎麼了﹖";
 	line "怎麼露出那種不";
 	cont "相信的表情～";
@@ -1131,21 +1048,18 @@
 
 @org $59, $6d90:
 	init NAME_LANTE, PIC_06;
-@org $59, $6d93:
 	text "不要再懷疑了﹗";
 	line "趕快上來吧﹗";
 	done;
 
 @org $59, $6daa:
 	init NAME_0F, PIC_0F;
-@org $59, $6dad:
 	text "嗶達嗶～達達～";
 	line "嗶～";
 	done;
 
 @org $59, $6dc0:
 	init NAME_20, PIC_30;
-@org $59, $6dc3:
 	text "時光～前進～";
 	line "";
 	db $f2, $53; #"目"

@@ -1,6 +1,5 @@
 @org $66, $40a4:
 	init NAME_19, PIC_22;
-@org $66, $40a7:
 	text "需要什麼服務嗎";
 	line "";
 	db $f1, $5d; #"﹖"

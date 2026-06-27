@@ -1,26 +1,22 @@
 @org $66, $4dd7:
 	init NAME_STAR_BEAST, PIC_6A;
-@org $66, $4dda:
 	text "巴⋯巴洛特⋯⋯";
 	line "殺﹗﹗";
 	done;
 
 @org $66, $4dee:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $66, $4df1:
 	text "沒想到星獸居然";
 	line "追到了這裡﹗";
 	done;
 
 @org $66, $4e0b:
 	init NAME_STAR_BEAST, PIC_6A;
-@org $66, $4e0e:
 	text "殺⋯殺﹗";
 	done;
 
 @org $66, $4e17:
 	init NAME_BLANK, PIC_12;
-@org $66, $4e1a:
 	text "真是危險～";
 	line "幸好平安";
 	db $f2, $05; #"降"

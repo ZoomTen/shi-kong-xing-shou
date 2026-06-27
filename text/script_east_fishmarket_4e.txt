@@ -1,6 +1,5 @@
 @org $5c, $47fc:
 	init NAME_BLANK, PIC_16;
-@org $5c, $47ff:
 	text "哼﹗我就知道﹗";
 	para "原來海青是人魚";
 	line "";
@@ -19,7 +18,6 @@
 
 @org $5c, $485a:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $485d:
 	text "糟糕～";
 	line "";
 	db $f2, $57; #"這"
@@ -28,21 +26,18 @@
 
 @org $5c, $486f:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $4872:
 	text "魚之魂傳來了一";
 	line "陣聲音～";
 	done;
 
 @org $5c, $4889:
 	init NAME_42, PIC_6B;
-@org $5c, $488c:
 	text "到最高處～";
 	line "最高的地方～";
 	done;
 
 @org $5c, $48a2:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $48a5:
 	text "最高的地方﹖";
 	para "東漁市最高的地";
 	line "方﹖";
@@ -50,7 +45,6 @@
 
 @org $5c, $48c2:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $48c5:
 	text "燈塔﹗﹗﹗";
 	line "";
 	db $f1, $b7; #"魚"

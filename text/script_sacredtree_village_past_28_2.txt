@@ -1,6 +1,5 @@
 @org $5a, $5d6f:
 	init NAME_LANTE, PIC_06;
-@org $5a, $5d72:
 	text "巴洛特﹐你醒了";
 	line "呀﹗";
 	para "哈哈哈～";
@@ -21,14 +20,12 @@
 
 @org $5a, $5dcc:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $5dcf:
 	text "這裡到底是哪裡";
 	line "﹗";
 	done;
 
 @org $5a, $5de0:
 	init NAME_LANTE, PIC_06;
-@org $5a, $5de3:
 	text "這才是了不起的";
 	line "地方﹗";
 	para "你知道嗎﹖";
@@ -57,7 +54,6 @@
 
 @org $5a, $5e65:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $5a, $5e68:
 	text "真⋯真是驚人﹗";
 	para "為什麼１２０年";
 	line "";
@@ -70,7 +66,6 @@
 
 @org $5a, $5eb7:
 	init NAME_LANTE, PIC_06;
-@org $5a, $5eba:
 	text "嗯～我也是這麼";
 	line "";
 	db $f2, $d1; #"想"
@@ -86,7 +81,6 @@
 
 @org $5a, $5f03:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $5a, $5f06:
 	text "這麼說來﹐爸爸";
 	line "一直尋找的﹐也";
 	para "";
@@ -97,7 +91,6 @@
 
 @org $5a, $5f39:
 	init NAME_LANTE, PIC_06;
-@org $5a, $5f3c:
 	text "真是糟糕﹗";
 	line "我的時光．實驗";
 	cont "一號﹐變得亂七";
@@ -118,7 +111,6 @@
 
 @org $5a, $5fb9:
 	init NAME_LANTE, PIC_06;
-@org $5a, $5fbc:
 	text "真是糟糕﹗";
 	line "我的時光．實驗";
 	cont "一號﹐變得亂七";
@@ -139,21 +131,18 @@
 
 @org $5a, $6039:
 	init NAME_0F, PIC_0F;
-@org $5a, $603c:
 	text "嗶達嗶～達達～";
 	line "嗶～";
 	done;
 
 @org $5a, $604f:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $6052:
 	text "得到奇蹟之水﹗";
 	line "";
 	done;
 
 @org $5a, $605f:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $5a, $6062:
 	text "爆炸聲是從神木";
 	line "村傳來的﹗";
 	para "發生了什麼事﹖";

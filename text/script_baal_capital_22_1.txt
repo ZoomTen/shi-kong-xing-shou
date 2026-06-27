@@ -1,6 +1,5 @@
 @org $6c, $542b:
 	init NAME_BLANK, PIC_19;
-@org $6c, $542e:
 	text "前天新聞報完藍";
 	line "";
 	db $f3, $bb; #"月"
@@ -19,7 +18,6 @@
 
 @org $6c, $547d:
 	init NAME_BLANK, PIC_16;
-@org $6c, $5480:
 	text "哎唷～我老伴真";
 	line "";
 	db $f1, $43; #"是"

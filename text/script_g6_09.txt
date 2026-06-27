@@ -1,6 +1,5 @@
 @org $6c, $74d2:
 	init NAME_52, $77;
-@org $6c, $74d5:
 	text "懲罰者已經從那";
 	line "該死的裂縫中出";
 	cont "現了⚬";

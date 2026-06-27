@@ -1,6 +1,5 @@
 @org $66, $5f6c:
 	init NAME_BLANK, PIC_25;
-@org $66, $5f6f:
 	text "米特常來花店裡";
 	line "買花﹗";
 	para "他最喜歡紫羅蘭";
@@ -9,7 +8,6 @@
 
 @org $66, $5f95:
 	init NAME_BLANK, PIC_23;
-@org $66, $5f98:
 	text "紫羅蘭﹖";
 	line "";
 	db $f1, $32; #"嗯"
@@ -22,13 +20,11 @@
 
 @org $66, $5fde:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $5fe1:
 	text "得到了紫羅蘭﹗";
 	done;
 
 @org $66, $5fef:
 	init NAME_BLANK, PIC_23;
-@org $66, $5ff2:
 	text "本店的花﹐都是";
 	line "屬於寒帶品種⚬";
 	para "每一朵都是栽培";

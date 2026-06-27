@@ -1,6 +1,5 @@
 @org $5a, $72b0:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $72b3:
 	text "糟糕～";
 	line "要怎麼突破門口";
 	cont "的守衛﹖";
@@ -8,7 +7,6 @@
 
 @org $5a, $72ce:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $5a, $72d1:
 	text "擋路的傢伙";
 	line "真是麻煩～";
 	para "";
@@ -20,13 +18,11 @@
 
 @org $5a, $72ed:
 	init NAME_2A, PIC_17;
-@org $5a, $72f0:
 	text "ｚＺｚ～Ｚｚ～";
 	done;
 
 @org $5a, $72fc:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $72ff:
 	text "有道力場擋住了";
 	line "";
 	db $f1, $2c; #"道"
@@ -35,7 +31,6 @@
 
 @org $5a, $7314:
 	init NAME_RANDT, PIC_06;
-@org $5a, $7317:
 	text "這種程度的黑洞";
 	line "";
 	db $f0, $19; #"力"
@@ -51,13 +46,11 @@
 
 @org $5a, $7345:
 	init NAME_0F, PIC_0F;
-@org $5a, $7348:
 	text "畢達～畢達畢～";
 	done;
 
 @org $5a, $7357:
 	init NAME_40, PIC_69;
-@org $5a, $735a:
 	text "你就是巴洛特嗎";
 	line "居然有人能夠進";
 	cont "來這裡﹐真是叫";
@@ -89,7 +82,6 @@
 
 @org $5a, $7443:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $7446:
 	text "星獸們處心積慮";
 	line "的想擴大星系的";
 	para "裂縫﹖";
@@ -100,7 +92,6 @@
 
 @org $5a, $7488:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $5a, $748b:
 	text "對了﹗巴洛特﹗";
 	para "他們的旅行船曾";
 	line "到過一個極涷的";
@@ -118,7 +109,6 @@
 
 @org $5a, $7505:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $5a, $7508:
 	text "星夢城﹖哇～";
 	line "";
 	db $f2, $48; #"那"
@@ -131,7 +121,6 @@
 
 @org $5a, $754b:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $5a, $754e:
 	text "喂～邦林企業﹖";
 	line "";
 	db $f1, $34; #"找"
@@ -165,7 +154,6 @@
 
 @org $5a, $7621:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $5a, $7624:
 	text "搞定﹗";
 	line "我們就到東漁市";
 	cont "機場等爸爸的專";
@@ -176,7 +164,6 @@
 
 @org $5a, $7669:
 	init NAME_3F, PIC_75;
-@org $5a, $766c:
 	text "他是﹖";
 	line "我還記得⋯";
 	cont "在１２０態迴⋯";
@@ -189,7 +176,6 @@
 
 @org $5a, $76bd:
 	init NAME_BLANK, PIC_12;
-@org $5a, $76c0:
 	text "少爺您好﹗";
 	line "專機等侯已久～";
 	cont "請你上飛機吧﹗";

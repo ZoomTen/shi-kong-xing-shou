@@ -1,6 +1,5 @@
 @org $5a, $611e:
 	init NAME_BLANK, PIC_1B;
-@org $5a, $6121:
 	text "我受不了了﹐我";
 	line "一定要講出來﹗";
 	para "姆斯看上了帕達";
@@ -34,7 +33,6 @@
 
 @org $5a, $61fa:
 	init NAME_BLANK, PIC_1B;
-@org $5a, $61fd:
 	text "這不是⋯帕達的";
 	line "懷錶嗎﹖";
 	cont "";
@@ -49,7 +47,6 @@
 
 @org $5a, $6241:
 	init NAME_BLANK, PIC_1B;
-@org $5a, $6244:
 	text "真是謝謝你﹗";
 	line "如此一來﹐帕達";
 	cont "一定可以重新再";

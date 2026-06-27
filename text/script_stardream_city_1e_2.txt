@@ -1,6 +1,5 @@
 @org $66, $6f3e:
 	init NAME_59, PIC_1D;
-@org $66, $6f41:
 	text "要喚回米特的回";
 	line "憶嗎﹖";
 	para "這個就一定要清";
@@ -13,7 +12,6 @@
 
 @org $66, $6fa2:
 	init NAME_59, PIC_1D;
-@org $66, $6fa5:
 	text "燉呀燉～";
 	line "不要急～";
 	cont "要以小火慢燉～";
@@ -30,7 +28,6 @@
 
 @org $66, $6ffe:
 	init NAME_59, PIC_1D;
-@org $66, $7001:
 	text "大．成．功﹗";
 	line "我終於做出謝麗";
 	cont "娜味道的清燉兔";
@@ -43,13 +40,11 @@
 
 @org $66, $7044:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $7047:
 	text "得到清燉兔肉﹗";
 	done;
 
 @org $66, $7055:
 	init NAME_59, PIC_1D;
-@org $66, $7058:
 	text "大．成．功﹗";
 	line "我終於做出謝麗";
 	cont "娜味道的清燉兔";

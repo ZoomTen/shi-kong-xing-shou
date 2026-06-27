@@ -1,13 +1,11 @@
 @org $4e, $5d75:
 	init NAME_38, PIC_61;
-@org $4e, $5d78:
 	text "克勞德⋯你⋯";
 	line "真的要去嗎﹖";
 	done;
 
 @org $4e, $5d8c:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $4e, $5d8f:
 	text "一定要去﹗";
 	line "我要跟妮娜一起";
 	cont "";
@@ -17,7 +15,6 @@
 
 @org $4e, $5dac:
 	init NAME_38, PIC_61;
-@org $4e, $5daf:
 	text "我⋯一路上要小";
 	line "心哦﹗";
 	para "不可以喝生的水";
@@ -26,13 +23,11 @@
 
 @org $4e, $5dd6:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $4e, $5dd9:
 	text "知道了啦﹗";
 	done;
 
 @org $4e, $5de3:
 	init NAME_38, PIC_61;
-@org $4e, $5de6:
 	text "妮娜小姐～";
 	line "妳是個不錯的女";
 	cont "";
@@ -46,13 +41,11 @@
 
 @org $4e, $5e1b:
 	init NAME_NINA, PIC_02;
-@org $4e, $5e1e:
 	text "哈瑪斯伯父﹖";
 	done;
 
 @org $4e, $5e2b:
 	init NAME_38, PIC_61;
-@org $4e, $5e2e:
 	text "哈哈哈～";
 	line "";
 	db $f2, $c8; #"沒"
@@ -64,14 +57,12 @@
 
 @org $4e, $5e5e:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $4e, $5e61:
 	text "我會的～";
 	line "哈瑪斯先生⚬";
 	done;
 
 @org $4e, $5e75:
 	init NAME_38, PIC_61;
-@org $4e, $5e78:
 	text "嗚～～克勞德～";
 	line "";
 	db $f2, $b6; #"上"
@@ -82,20 +73,17 @@
 
 @org $4e, $5ea3:
 	init NAME_21, PIC_31;
-@org $4e, $5ea6:
 	text "嘔～呃～喵～呃";
 	line "哽⋯哽住了﹗";
 	done;
 
 @org $4e, $5ec1:
 	init NAME_CLAUDE, PIC_CLAUDE_1;
-@org $4e, $5ec4:
 	text "怎麼回事﹖";
 	done;
 
 @org $4e, $5ece:
 	init NAME_21, PIC_31;
-@org $4e, $5ed1:
 	text "喵～啊﹗";
 	line "終於吐出來了﹗";
 	para "就是這個石頭﹐";
@@ -105,13 +93,11 @@
 
 @org $4e, $5f06:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $4e, $5f09:
 	text "得到珍珠項鍊⚬";
 	done;
 
 @org $4e, $5f17:
 	init NAME_21, PIC_31;
-@org $4e, $5f1a:
 	text "喵﹗﹗";
 	line "";
 	db $f1, $03; #"真"
@@ -122,7 +108,6 @@
 
 @org $4e, $5f2c:
 	init NAME_BLANK, PIC_15;
-@org $4e, $5f2f:
 	text "這不是我的珍珠";
 	line "項鍊嗎﹖";
 	cont "";
@@ -140,19 +125,16 @@
 
 @org $4e, $5f6b:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $4e, $5f6e:
 	text "得到ＸＸＸ﹗";
 	done;
 
 @org $4e, $5f79:
 	init NAME_BLANK, PIC_15;
-@org $4e, $5f7c:
 	text "真是謝謝你⚬";
 	done;
 
 @org $4e, $5f87:
 	init NAME_BLANK, PIC_15;
-@org $4e, $5f8a:
 	text "這不是我的珍項";
 	line "鍊嗎﹖";
 	para "我就是因為少了";
@@ -167,12 +149,10 @@
 
 @org $4e, $5fda:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $4e, $5fdd:
 	text "得到ＸＸＸ﹗";
 	done;
 
 @org $4e, $5fe8:
 	init NAME_BLANK, PIC_15;
-@org $4e, $5feb:
 	text "真是謝謝你⚬";
 	done;

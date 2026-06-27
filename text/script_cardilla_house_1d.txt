@@ -1,6 +1,5 @@
 @org $66, $5936:
 	init NAME_5A, PIC_18;
-@org $66, $5939:
 	text "你們要找卡迪拉";
 	line "老爺先生﹖";
 	cont "這⋯先生和夫人";
@@ -9,7 +8,6 @@
 
 @org $66, $596b:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $66, $596e:
 	text "怎麼會這樣﹖";
 	line "";
 	db $f1, $62; #"到"
@@ -18,7 +16,6 @@
 
 @org $66, $5986:
 	init NAME_5A, PIC_18;
-@org $66, $5989:
 	text "先生是一位相當";
 	line "傑出的星空彩繪";
 	cont "";
@@ -39,7 +36,6 @@
 
 @org $66, $59e0:
 	init NAME_49, PIC_14;
-@org $66, $59e3:
 	text "米特﹐知道了嗎";
 	line "";
 	db $f1, $58; #"要"
@@ -54,7 +50,6 @@
 
 @org $66, $5a33:
 	init NAME_MITT, PIC_07;
-@org $66, $5a36:
 	text "是的﹐爸爸⚬";
 	para "爸爸﹐現在月球";
 	line "因為弗烈茲星系";
@@ -74,7 +69,6 @@
 
 @org $66, $5a89:
 	init NAME_49, PIC_14;
-@org $66, $5a8c:
 	text "米特也發現這個";
 	line "問題了嗎﹖";
 	para "爸爸真是高興⚬";
@@ -92,7 +86,6 @@
 
 @org $66, $5b30:
 	init NAME_4A, PIC_50;
-@org $66, $5b33:
 	text "親愛的﹐";
 	line "你們有聽到";
 	cont "什麼聲音嗎﹖";
@@ -100,14 +93,12 @@
 
 @org $66, $5b52:
 	init NAME_MITT, PIC_07;
-@org $66, $5b55:
 	text "媽媽聽到了什麼";
 	line "嗎﹖";
 	done;
 
 @org $66, $5b66:
 	init NAME_49, PIC_14;
-@org $66, $5b69:
 	text "糟糕﹗是那隻瘋";
 	line "";
 	db $f0, $04; #"狂"
@@ -119,26 +110,22 @@
 
 @org $66, $5b9f:
 	init NAME_4A, PIC_50;
-@org $66, $5ba2:
 	text "不～親愛的﹐我";
 	line "們一起逃﹗";
 	done;
 
 @org $66, $5bba:
 	init NAME_4A, PIC_50;
-@org $66, $5bbd:
 	text "親⋯親愛的﹗";
 	done;
 
 @org $66, $5bc9:
 	init NAME_MITT, PIC_4A;
-@org $66, $5bcc:
 	text "爸爸﹗";
 	done;
 
 @org $66, $5bd2:
 	init NAME_5A, PIC_18;
-@org $66, $5bd5:
 	text "於是﹐等到救護";
 	line "";
 	db $f0, $23; #"人"
@@ -166,7 +153,6 @@
 
 @org $66, $5c77:
 	init NAME_5A, PIC_18;
-@org $66, $5c7a:
 	text "米特在爸媽過逝";
 	line "後﹐因為傷心過";
 	para "度﹐而把自己封";

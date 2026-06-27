@@ -1,6 +1,5 @@
 @org $6c, $61ec:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $61ef:
 	text "你們終於來了﹗";
 	line "趕快上來吧⚬";
 	para "路上再跟你們慢";
@@ -11,7 +10,6 @@
 
 @org $6c, $621e:
 	init NAME_4F, PIC_73;
-@org $6c, $6221:
 	text "怎麼會這樣﹖";
 	line "";
 	db $f1, $aa; #"晶"
@@ -24,7 +22,6 @@
 
 @org $6c, $624d:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $6250:
 	text "哈哈哈～";
 	line "很棒吧﹗";
 	para "這可是我一生中";
@@ -33,7 +30,6 @@
 
 @org $6c, $627c:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $627f:
 	text "一百二十年前﹐";
 	line "八大科家就是用";
 	para "";
@@ -53,7 +49,6 @@
 
 @org $6c, $62eb:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $62ee:
 	text "所以當時的八大";
 	line "科學家﹐就留下";
 	para "了那張設計圖﹖";
@@ -61,7 +56,6 @@
 
 @org $6c, $6317:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $631a:
 	text "是的⚬他們應該";
 	line "是預測到﹐在不";
 	para "久的將來﹐一定";
@@ -71,7 +65,6 @@
 
 @org $6c, $635b:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $635e:
 	text "好了﹐";
 	line "時間不多了⚬";
 	para "這就啟動時空跳";
@@ -87,7 +80,6 @@
 
 @org $6c, $63ca:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $63cd:
 	text "啟動時光跳躍系";
 	line "統⚬";
 	para "地點～";
@@ -96,7 +88,6 @@
 
 @org $6c, $63f4:
 	init NAME_20, PIC_30;
-@org $6c, $63f7:
 	text "時空跳躍⋯⋯";
 	line "檢查終了﹗";
 	cont "弗烈茲星系⋯";
@@ -108,7 +99,6 @@
 
 @org $6c, $6440:
 	init NAME_20, PIC_30;
-@org $6c, $6443:
 	text "警告～警告﹗";
 	line "";
 	db $f1, $90; #"機"
@@ -119,7 +109,6 @@
 
 @org $6c, $6470:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $6473:
 	text "怎麼回事﹖";
 	para "啊﹗";
 	line "";
@@ -131,14 +120,12 @@
 
 @org $6c, $64a5:
 	init NAME_20, PIC_30;
-@org $6c, $64a8:
 	text "人工操作⋯";
 	line "切換完成⚬";
 	done;
 
 @org $6c, $64bc:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $64bf:
 	text "巴洛特﹐趕快找";
 	line "出發生故障的原";
 	cont "因⚬";

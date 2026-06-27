@@ -1,6 +1,5 @@
 @org $5c, $4eb8:
 	init NAME_BLANK, PIC_1F;
-@org $5c, $4ebb:
 	text "南方的海島上﹐";
 	line "";
 	db $f1, $65; #"有"
@@ -18,7 +17,6 @@
 
 @org $5c, $4ef8:
 	init NAME_BLANK, PIC_1E;
-@org $5c, $4efb:
 	text "媽媽～琳琳表妹";
 	line "說要寄布拉布拉";
 	para "超人模型給我﹗";
@@ -28,7 +26,6 @@
 
 @org $5c, $4f3e:
 	init NAME_BLANK, PIC_1F;
-@org $5c, $4f41:
 	text "不要吵﹗";
 	line "再吵小心被章魚";
 	cont "吃掉﹗";
@@ -36,14 +33,12 @@
 
 @org $5c, $4f5e:
 	init NAME_BLANK, PIC_1E;
-@org $5c, $4f61:
 	text "章魚﹗﹗嗚～～";
 	line "嗚嗚～";
 	done;
 
 @org $5c, $4f73:
 	init NAME_BLANK, PIC_1E;
-@org $5c, $4f76:
 	text "這是⋯⋯布拉布";
 	line "拉超人﹖﹖﹗﹗";
 	cont "太．棒．了﹗";
@@ -63,14 +58,12 @@
 
 @org $5c, $4fd9:
 	init NAME_BALLOT, PIC_BALLOT_1;
-@org $5c, $4fdc:
 	text "得到了";
 	line "縮地射線";
 	done;
 
 @org $5c, $4fe9:
 	init NAME_BLANK, PIC_1E;
-@org $5c, $4fec:
 	text "哇～哇～布拉布";
 	line "拉超人耶﹗";
 	cont "哈哈哈哈～";

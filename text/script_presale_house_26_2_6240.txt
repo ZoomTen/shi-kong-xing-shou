@@ -1,6 +1,5 @@
 @org $66, $6240:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $6243:
 	text "哦～呵呵呵呵﹗";
 	line "這個音樂盒﹐";
 	cont "一定可以賣不少";
@@ -9,7 +8,6 @@
 
 @org $66, $626c:
 	init NAME_KULU, PIC_KULU;
-@org $66, $626f:
 	text "是的⚬";
 	line "雖然不無小補﹐";
 	cont "但在下認為﹐還";
@@ -19,7 +17,6 @@
 
 @org $66, $62aa:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $62ad:
 	text "啊﹗";
 	line "";
 	db $f1, $7b; #"果"
@@ -35,7 +32,6 @@
 
 @org $66, $62df:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $62e2:
 	text "我們﹖";
 	line "既然你們問起了";
 	cont "那我就仁慈的告";
@@ -46,14 +42,12 @@
 
 @org $66, $630f:
 	init NAME_KULU, PIC_KULU;
-@org $66, $6312:
 	text "來自銀河系裡的";
 	line "正義使者﹗";
 	done;
 
 @org $66, $632b:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $632e:
 	text "穿梭於黑夜的浪";
 	line "";
 	db $f5, $2c; #"漫"
@@ -64,33 +58,28 @@
 
 @org $66, $6343:
 	init NAME_KULU, PIC_KULU;
-@org $66, $6346:
 	text "貫徹愛．正義．";
 	line "勇氣的真理﹗";
 	done;
 
 @org $66, $635e:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $6361:
 	text "拉琪﹗";
 	done;
 
 @org $66, $6367:
 	init NAME_KULU, PIC_KULU;
-@org $66, $636a:
 	text "庫魯﹗";
 	done;
 
 @org $66, $6370:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $6373:
 	text "閃．電．隊～～";
 	line "誕生﹗﹗";
 	done;
 
 @org $66, $6384:
 	init NAME_KULU, PIC_KULU;
-@org $66, $6387:
 	text "在下為了能實現";
 	line "夢想﹐什麼事都";
 	cont "做得出來﹗";
@@ -105,7 +94,6 @@
 
 @org $66, $63e7:
 	init NAME_KULU, PIC_KULU;
-@org $66, $63ea:
 	text "哼﹗知道在下的";
 	line "厲害了吧﹗";
 	para "這只是在下千萬";
@@ -114,7 +102,6 @@
 
 @org $66, $641f:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $6422:
 	text "是嗎﹖";
 	line "那就拿出你全部";
 	cont "的力量再戰吧﹗";
@@ -122,7 +109,6 @@
 
 @org $66, $6440:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $6443:
 	text "慢⋯慢⋯";
 	line "慢慢著﹗";
 	para "不⋯不要再打了";
@@ -150,7 +136,6 @@
 
 @org $66, $648d:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $6490:
 	text "夢想﹖";
 	line "";
 	db $f1, $ab; #"３"
@@ -169,7 +154,6 @@
 
 @org $66, $649e:
 	init NAME_KULU, PIC_KULU;
-@org $66, $64a1:
 	text "是的﹗眼前這棟";
 	line "豪華的別宅﹐正";
 	para "是在下和拉琪的";
@@ -178,7 +162,6 @@
 
 @org $66, $64cf:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $64d2:
 	text "哦～呵呵呵呵﹗";
 	line "沒．有．錯﹗";
 	para "瞧瞧它獨樹一格";
@@ -195,7 +178,6 @@
 
 @org $66, $6534:
 	init NAME_KULU, PIC_KULU;
-@org $66, $6537:
 	text "是的⚬";
 	para "";
 	db $f1, $d3; #"所"
@@ -214,7 +196,6 @@
 
 @org $66, $659f:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $66, $65a2:
 	text "看來你們還沒有";
 	line "";
 	db $f1, $60; #"學"
@@ -223,7 +204,6 @@
 
 @org $66, $65b5:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $65b8:
 	text "哦～呵呵呵呵﹗";
 	line "閃電隊一向是個";
 	cont "愛好和平的正義";
@@ -240,7 +220,6 @@
 
 @org $66, $6634:
 	init NAME_KULU, PIC_KULU;
-@org $66, $6637:
 	text "嗯﹐和在下想的";
 	line "";
 	db $f1, $33; #"﹐"

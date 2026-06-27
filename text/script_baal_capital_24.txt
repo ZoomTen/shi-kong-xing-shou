@@ -1,6 +1,5 @@
 @org $6c, $559c:
 	init NAME_BLANK, PIC_1B;
-@org $6c, $559f:
 	text "新聞報導說﹐星";
 	line "系的裂縫至致了";
 	cont "月亮的偏移⚬";
@@ -20,7 +19,6 @@
 
 @org $6c, $55f6:
 	init NAME_BLANK, PIC_1A;
-@org $6c, $55f9:
 	text "爸爸～";
 	line "天空的裂縫會下";
 	cont "雨唷﹗";

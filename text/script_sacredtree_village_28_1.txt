@@ -1,6 +1,5 @@
 @org $59, $6de8:
 	init NAME_RANDT, PIC_06;
-@org $59, $6deb:
 	text "呼～終於成功了";
 	line "";
 	db $f1, $03; #"真"
@@ -13,7 +12,6 @@
 
 @org $59, $6e14:
 	init NAME_LANTE, PIC_06;
-@org $59, $6e17:
 	text "這就是動力晶片";
 	line "已經取回了奇蹟";
 	cont "之水﹐時光．實";
@@ -25,7 +23,6 @@
 
 @org $59, $6e54:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6e57:
 	text "得到晶片６";
 	db $f1, $35; #"﹗"
 	text "";
@@ -33,7 +30,6 @@
 
 @org $59, $6e63:
 	init NAME_RANDT, PIC_06;
-@org $59, $6e66:
 	text "聽說巴洛特要尋";
 	line "找的﹐是古代的";
 	para "偉大發明﹗";
@@ -53,7 +49,6 @@
 
 @org $59, $6eed:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6ef0:
 	text "雷德＆時空怪加";
 	line "";
 	db $f2, $30; #"入"
@@ -66,7 +61,6 @@
 
 @org $59, $6f05:
 	init NAME_SYSTEM, PIC_VAST_FAME;
-@org $59, $6f08:
 	text "將雷德置於隊伍";
 	line "排頭﹐如遇到擋";
 	cont "路之黑洞力場⚬";

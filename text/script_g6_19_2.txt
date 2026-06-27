@@ -1,6 +1,5 @@
 @org $6c, $6c58:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $6c5b:
 	text "唉～難道地球就";
 	line "";
 	db $f2, $57; #"這"
@@ -11,7 +10,6 @@
 
 @org $6c, $6c75:
 	init NAME_4F, PIC_73;
-@org $6c, $6c78:
 	text "終於找到你們了";
 	line "又是你這個敗事";
 	para "有餘的雷歐老頭";
@@ -22,7 +20,6 @@
 
 @org $6c, $6ccd:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $6cd0:
 	text "可惡﹗";
 	line "雖然很不服氣﹐";
 	cont "但卻沒有辦法反";
@@ -31,7 +28,6 @@
 
 @org $6c, $6cf9:
 	init NAME_4F, PIC_73;
-@org $6c, $6cfc:
 	text "你們為什麼不等";
 	line "";
 	db $f2, $ad; #"我"
@@ -52,13 +48,11 @@
 
 @org $6c, $6d89:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $6d8c:
 	text "古代飛空兵器﹖";
 	done;
 
 @org $6c, $6d99:
 	init NAME_4F, PIC_73;
-@org $6c, $6d9c:
 	text "是的⚬";
 	line "沒有時間解釋了";
 	cont "再拖下去的話﹐";
@@ -76,13 +70,11 @@
 
 @org $6c, $6e0c:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $6e0f:
 	text "沒有⚬";
 	done;
 
 @org $6c, $6e15:
 	init NAME_4F, PIC_73;
-@org $6c, $6e18:
 	text "這真是太好了⚬";
 	line "那你就跟我走吧";
 	para "巴洛特﹐把同伴";

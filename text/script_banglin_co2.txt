@@ -1,6 +1,5 @@
 @org $4e, $4d02:
 	init NAME_BLANK, PIC_14;
-@org $4e, $4d05:
 	text "少爺總算是回來";
 	line "了﹗";
 	para "這次的選秀會﹐";
@@ -12,7 +11,6 @@
 
 @org $4e, $4d48:
 	init NAME_BLANK, PIC_1F;
-@org $4e, $4d4b:
 	text "您不是妮娜小姐";
 	line "嗎﹖";
 	para "";
@@ -26,7 +24,6 @@
 	getchoice String_1cc5;
 @org $4e, $4d82:
 	init NAME_BLANK, PIC_1F;
-@org $4e, $4d85:
 	text "是這樣子的嗎﹖";
 	line "那您動作就要快";
 	cont "一些了⚬";
@@ -38,7 +35,6 @@
 
 @org $4e, $4db9:
 	init NAME_BLANK, PIC_1F;
-@org $4e, $4dbc:
 	text "好的⚬";
 	para "我這就帶您到會";
 	line "場⚬";
@@ -46,7 +42,6 @@
 
 @org $4e, $4dd3:
 	init NAME_35, PIC_5E;
-@org $4e, $4dd6:
 	text "哈哈哈哈～";
 	line "瞧你們那副窮酸";
 	cont "";
@@ -58,7 +53,6 @@
 
 @org $4e, $4e05:
 	init NAME_BLANK, PIC_13;
-@org $4e, $4e08:
 	text "好⋯好緊張⋯";
 	line "";
 	db $f2, $31; #"深"
@@ -74,7 +68,6 @@
 
 @org $4e, $4e23:
 	init NAME_BLANK, PIC_1D;
-@org $4e, $4e26:
 	text "可惡的麗子～";
 	line "都是她﹐害我們";
 	cont "沒有新衣服⋯⋯";
@@ -82,7 +75,6 @@
 
 @org $4e, $4e4c:
 	init NAME_BLANK, PIC_25;
-@org $4e, $4e4f:
 	text "不公平～";
 	line "";
 	db $f2, $57; #"這"
@@ -93,7 +85,6 @@
 
 @org $4e, $4e80:
 	init NAME_BLANK, PIC_1F;
-@org $4e, $4e83:
 	text "圖釘呢﹖";
 	line "在哪裡﹖";
 	cont "喔﹗在這裡﹗";
@@ -109,7 +100,6 @@
 
 @org $4e, $4ec6:
 	init NAME_LAKI, PIC_LAKI;
-@org $4e, $4ec9:
 	text "哦～呵呵呵﹗";
 	line "那個笨蛋麗子﹐";
 	cont "得意不了多久的";
@@ -131,7 +121,6 @@
 
 @org $4e, $4f64:
 	init NAME_BLANK, PIC_13;
-@org $4e, $4f67:
 	text "第５９３２號﹐";
 	line "妮娜小姐⚬";
 	para "第一次選秀評分";
@@ -140,14 +129,12 @@
 
 @org $4e, $4f99:
 	init NAME_NINA, PIC_02;
-@org $4e, $4f9c:
 	text "哦⋯﹗";
 	line "好的﹐謝謝您⚬";
 	done;
 
 @org $4e, $4faf:
 	init NAME_JUDGE, PIC_50;
-@org $4e, $4fb2:
 	text "第一循環淘汰賽";
 	line "比的是反應及機";
 	cont "智⚬";
@@ -173,7 +160,6 @@
 
 @org $4e, $5035:
 	init NAME_JUDGE, PIC_50;
-@org $4e, $5038:
 	text "沒有關係﹐這只";
 	line "是熱身的測試⚬";
 	para "誰沒有失敗的經";
@@ -187,7 +173,6 @@
 
 @org $4e, $5086:
 	init NAME_JUDGE, PIC_50;
-@org $4e, $5089:
 	text "嗯～感覺不錯～";
 	cont "您可以回休息室";
 	line "了⚬";
@@ -198,13 +183,11 @@
 
 @org $4e, $50c4:
 	init NAME_NINA, PIC_02;
-@org $4e, $50c7:
 	text "謝謝你們⚬";
 	done;
 
 @org $4e, $50d1:
 	init NAME_35, PIC_5E;
-@org $4e, $50d4:
 	text "哈哈哈哈～";
 	line "妳也比完了嗎﹖";
 	para "呵呵～";
@@ -221,7 +204,6 @@
 
 @org $4e, $5109:
 	init NAME_BLANK, PIC_13;
-@org $4e, $510c:
 	text "嗚哇～";
 	line "人家剛在台上﹐";
 	cont "手腳僵硬⋯";
@@ -232,7 +214,6 @@
 
 @org $4e, $5146:
 	init NAME_BLANK, PIC_1D;
-@org $4e, $5149:
 	text "我用我最深的詛";
 	line "";
 	db $f1, $02; #"咒"
@@ -245,7 +226,6 @@
 
 @org $4e, $5172:
 	init NAME_BLANK, PIC_25;
-@org $4e, $5175:
 	text "好緊張～";
 	line "";
 	db $f2, $cd; #"好"
@@ -254,7 +234,6 @@
 
 @org $4e, $5187:
 	init NAME_BLANK, PIC_1F;
-@org $4e, $518a:
 	text "咭咭咭咭～";
 	cont "";
 	db $f2, $ad; #"我"
@@ -264,7 +243,6 @@
 
 @org $4e, $51aa:
 	init NAME_LAKI, PIC_LAKI;
-@org $4e, $51ad:
 	text "哦～呵呵呵呵﹗";
 	line "什麼反應測試～";
 	para "在我拉琪看來﹐";

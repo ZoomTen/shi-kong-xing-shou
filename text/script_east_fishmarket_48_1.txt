@@ -1,6 +1,5 @@
 @org $5c, $4538:
 	init NAME_BLANK, PIC_16;
-@org $5c, $453b:
 	text "南方海島上﹐有";
 	line "座衛星雷達站⚬";
 	para "";

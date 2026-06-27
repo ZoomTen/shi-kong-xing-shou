@@ -1,6 +1,5 @@
 @org $59, $772c:
 	init NAME_40, PIC_69;
-@org $59, $772f:
 	text "你就是巴洛特嗎";
 	line "居然有人能夠進";
 	cont "來這裡﹐真是叫";
@@ -32,7 +31,6 @@
 
 @org $59, $7818:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $781b:
 	text "星獸們處心積慮";
 	line "的想擴大星系的";
 	para "裂縫﹖";
@@ -43,7 +41,6 @@
 
 @org $59, $785d:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $59, $7860:
 	text "對了﹗巴洛特﹗";
 	para "他們的旅行船曾";
 	line "到過一個極涷的";
@@ -61,7 +58,6 @@
 
 @org $59, $78da:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $59, $78dd:
 	text "星夢城﹖";
 	para "哇～";
 	line "";
@@ -78,7 +74,6 @@
 
 @org $59, $792c:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $59, $792f:
 	text "喂～邦林企業﹖";
 	line "";
 	db $f1, $34; #"找"
@@ -112,7 +107,6 @@
 
 @org $59, $7a01:
 	init NAME_CLAUDE, PIC_CLAUDE_0;
-@org $59, $7a04:
 	text "搞定﹗";
 	line "我們就到東漁市";
 	cont "機場等爸爸的專";
@@ -123,7 +117,6 @@
 
 @org $59, $7a49:
 	init NAME_3F, PIC_75;
-@org $59, $7a4c:
 	text "他是﹖";
 	line "我還記得⋯";
 	cont "在１２０年前⋯";
@@ -136,7 +129,6 @@
 
 @org $59, $7a9e:
 	init NAME_BLANK, PIC_12;
-@org $59, $7aa1:
 	text "少爺您好﹗";
 	line "專機等侯已久～";
 	cont "請你上飛機吧﹗";

@@ -1,12 +1,10 @@
 @org $5a, $58a8:
 	init NAME_BLANK, PIC_13;
-@org $5a, $58ab:
 	text "這裡是神木村⚬";
 	done;
 
 @org $5a, $58ba:
 	init NAME_BLANK, PIC_15;
-@org $5a, $58bd:
 	text "天空出現了好大";
 	line "的裂縫﹗";
 	para "世界也出現了好";
@@ -20,7 +18,6 @@
 
 @org $5a, $5923:
 	init NAME_BLANK, PIC_14;
-@org $5a, $5926:
 	text "什麼﹖雕像﹖";
 	line "這裡哪有什麼雕";
 	cont "像⚬";
@@ -30,7 +27,6 @@
 
 @org $5a, $595a:
 	init NAME_BLANK, PIC_17;
-@org $5a, $595d:
 	text "卡爾說﹐星系的";
 	line "裂縫導致了地球";
 	cont "的危機⚬";
@@ -53,7 +49,6 @@
 
 @org $5a, $59ee:
 	init NAME_BLANK, PIC_16;
-@org $5a, $59f1:
 	text "昨天我們家仔仔";
 	line "吃壞肚子了﹐我";
 	para "";
@@ -71,7 +66,6 @@
 
 @org $5a, $5a2f:
 	init NAME_BLANK, PIC_19;
-@org $5a, $5a32:
 	text "最近的月亮﹐變";
 	line "得好藍好藍﹗";
 	cont "藍的好可怕﹗";
@@ -81,7 +75,6 @@
 
 @org $5a, $5a6b:
 	init NAME_BLANK, PIC_25;
-@org $5a, $5a6e:
 	text "帕達的父母﹐在";
 	line "一次空難事件中";
 	para "﹐全部都去逝了";

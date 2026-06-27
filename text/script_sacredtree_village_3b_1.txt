@@ -1,6 +1,5 @@
 @org $59, $4c14:
 	init NAME_BLANK, PIC_1F;
-@org $59, $4c17:
 	text "老公一天到晚研";
 	line "";
 	db $f4, $ab; #"究"
@@ -18,7 +17,6 @@
 
 @org $59, $4c6c:
 	init NAME_BLANK, PIC_1F;
-@org $59, $4c6f:
 	text "老公～";
 	line "";
 	db $f2, $ad; #"我"
@@ -27,7 +25,6 @@
 
 @org $59, $4c82:
 	init NAME_BLANK, PIC_24;
-@org $59, $4c85:
 	text "哦～是這樣的啊";
 	line "依神木的切片組";
 	cont "";
@@ -38,13 +35,11 @@
 
 @org $59, $4cb7:
 	init NAME_BLANK, PIC_1F;
-@org $59, $4cba:
 	text "嗚嗚～嗚嗚⋯";
 	done;
 
 @org $59, $4cc5:
 	init NAME_BLANK, PIC_24;
-@org $59, $4cc8:
 	text "真是神奇﹗神木";
 	line "就像是人類一樣";
 	para "神木的內部發生";
@@ -73,7 +68,6 @@
 
 @org $59, $4d63:
 	init NAME_BLANK, PIC_1F;
-@org $59, $4d66:
 	text "嗚嗚嗚～～";
 	line "";
 	db $f2, $ad; #"我"

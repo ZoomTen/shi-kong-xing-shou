@@ -1,6 +1,5 @@
 @org $67, $6f65:
 	init NAME_31, PIC_5A;
-@org $67, $6f68:
 	text "⋯⋯⋯";
 	done;
 

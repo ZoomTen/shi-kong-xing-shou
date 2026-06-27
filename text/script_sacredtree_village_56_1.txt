@@ -1,6 +1,5 @@
 @org $5a, $5ac1:
 	init NAME_55, PIC_18;
-@org $5a, $5ac4:
 	text "怎麼辦⋯";
 	line "";
 	db $f2, $ce; #"怎"

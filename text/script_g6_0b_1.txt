@@ -1,6 +1,5 @@
 @org $6c, $765d:
 	init NAME_53, $78;
-@org $6c, $7660:
 	text "奉吾之名、奉吾";
 	line "之力～";
 	para "";
@@ -15,7 +14,6 @@
 
 @org $6c, $76a8:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $6c, $76ab:
 	text "糟了﹗";
 	line "這就是終極的淨";
 	cont "化咒文嗎﹖";
@@ -25,7 +23,6 @@
 
 @org $6c, $76db:
 	init NAME_53, $78;
-@org $6c, $76de:
 	text "嗚⋯⋯呃⋯⋯";
 	line "阻礙者⋯⋯⋯";
 	para "奉吾之名﹐奉吾";
@@ -39,7 +36,6 @@
 
 @org $6c, $7725:
 	init NAME_53, PIC_60;
-@org $6c, $7728:
 	text "低等的人類⚬";
 	para "吾囚於空間裂縫";
 	line "中之苦﹐汝能體";
@@ -72,7 +68,6 @@
 
 @org $6c, $77f4:
 	init NAME_53, PIC_60;
-@org $6c, $77f7:
 	text "呃⋯吾之力量尚";
 	line "";
 	db $f7, $20; #"未"
@@ -89,7 +84,6 @@
 
 @org $6c, $7835:
 	init NAME_53, PIC_60;
-@org $6c, $7838:
 	text "奉吾之名、奉吾";
 	line "之力～";
 	para "";
@@ -105,7 +99,6 @@
 
 @org $6c, $788f:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $6c, $7892:
 	text "可惡﹗";
 	line "我不會讓你得懲";
 	cont "的﹗";
@@ -113,13 +106,11 @@
 
 @org $6c, $78ab:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $6c, $78ae:
 	text "可惡﹗﹗";
 	done;
 
 @org $6c, $78b6:
 	init NAME_SAYA, PIC_11;
-@org $6c, $78b9:
 	text "巴洛特﹗";
 	line "";
 	db $f1, $81; #"超"
@@ -138,18 +129,15 @@
 
 @org $6c, $78ed:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $78f0:
 	text "是的﹗";
 	done;
 
 @org $6c, $78f5:
 	init NAME_53, PIC_60;
-@org $6c, $78f8:
 	text "沒有這麼容易～";
 	done;
 
 @org $6c, $7906:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $6c, $7909:
 	text "啊啊啊﹗﹗﹗﹗";
 	done;

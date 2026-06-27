@@ -1,6 +1,5 @@
 @org $6c, $661f:
 	init NAME_LANTE, PIC_43;
-@org $6c, $6622:
 	text "少了我的幫助﹐";
 	line "巴洛特會覺得沒";
 	cont "有安全感嗎﹖";
@@ -13,20 +12,17 @@
 
 @org $6c, $6665:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $6c, $6668:
 	text "可惡⋯打不開﹗";
 	done;
 
 @org $6c, $6676:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $6c, $6679:
 	text "米特﹖";
 	line "這是怎麼回事﹖";
 	done;
 
 @org $6c, $668d:
 	init NAME_MITT, PIC_49;
-@org $6c, $6690:
 	text "哈哈哈哈～";
 	para "";
 	db $f2, $57; #"這"
@@ -41,14 +37,12 @@
 
 @org $6c, $66d2:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $6c, $66d5:
 	text "米特﹗";
 	line "你在說什麼﹖";
 	done;
 
 @org $6c, $66e8:
 	init NAME_MITT, PIC_49;
-@org $6c, $66eb:
 	text "裂縫的程度﹐就";
 	line "快要讓懲罰者通";
 	cont "過了⚬";
@@ -61,7 +55,6 @@
 
 @org $6c, $6745:
 	init NAME_3F, PIC_75;
-@org $6c, $6748:
 	text "我乃星獸三魔人";
 	line "";
 	db $f0, $02; #"之"
@@ -77,7 +70,6 @@
 
 @org $6c, $6781:
 	init NAME_50, PIC_75;
-@org $6c, $6784:
 	text "哈哈哈～";
 	line "一百二十年前﹐";
 	cont "你破壞了我的計";
@@ -96,28 +88,24 @@
 
 @org $6c, $67d2:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $67d5:
 	text "米特﹗﹗";
 	line "支持住﹗";
 	done;
 
 @org $6c, $67e5:
 	init NAME_MITT, PIC_07;
-@org $6c, $67e8:
 	text "巴⋯巴⋯";
 	line "巴洛特⋯";
 	done;
 
 @org $6c, $67fa:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $67fd:
 	text "米特﹗";
 	line "不要放手啊﹗";
 	done;
 
 @org $6c, $680f:
 	init NAME_MITT, PIC_48;
-@org $6c, $6812:
 	text "巴洛特⋯";
 	line "";
 	db $f2, $07; #"對"
@@ -127,7 +115,6 @@
 
 @org $6c, $682f:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $6832:
 	text "不要再說這種話";
 	line "了﹗";
 	para "";
@@ -140,7 +127,6 @@
 
 @org $6c, $685a:
 	init NAME_MITT, PIC_48;
-@org $6c, $685d:
 	text "巴洛特⋯";
 	line "謝謝你⋯⋯";
 	cont "";
@@ -159,13 +145,11 @@
 
 @org $6c, $68a9:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $6c, $68ac:
 	text "米特﹗﹗﹗";
 	done;
 
 @org $6c, $68b4:
 	init NAME_MITT, PIC_07;
-@org $6c, $68b7:
 	text "巴洛特⋯";
 	line "謝謝你⋯⋯";
 	para "";
@@ -178,34 +162,29 @@
 
 @org $6c, $68dc:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $6c, $68df:
 	text "米～特﹗﹗﹗﹗";
 	done;
 
 @org $6c, $68ea:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $68ed:
 	text "米特﹗﹗";
 	line "支持住﹗";
 	done;
 
 @org $6c, $68fd:
 	init NAME_MITT, PIC_07;
-@org $6c, $6900:
 	text "巴⋯巴⋯";
 	line "巴洛特⋯";
 	done;
 
 @org $6c, $6912:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $6c, $6915:
 	text "米特﹗";
 	line "不要放手啊﹗";
 	done;
 
 @org $6c, $6927:
 	init NAME_MITT, PIC_48;
-@org $6c, $692a:
 	text "巴洛特⋯";
 	line "";
 	db $f2, $07; #"對"
@@ -215,7 +194,6 @@
 
 @org $6c, $6947:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $694a:
 	text "不要再說這種話";
 	line "了﹗";
 	para "";
@@ -228,14 +206,12 @@
 
 @org $6c, $6972:
 	init NAME_MITT, PIC_07;
-@org $6c, $6975:
 	text "巴洛特⋯";
 	line "謝謝你⋯⋯";
 	done;
 
 @org $6c, $6986:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $6989:
 	text "米特～";
 	line "千萬不可以放棄";
 	para "你不是答應過我";
@@ -245,7 +221,6 @@
 
 @org $6c, $69c5:
 	init NAME_MITT, PIC_07;
-@org $6c, $69c8:
 	text "爸爸⋯⋯";
 	line "";
 	db $f2, $ad; #"我"
@@ -259,7 +234,6 @@
 
 @org $6c, $69e4:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $69e7:
 	text "對了⋯⋯";
 	line "";
 	db $f2, $d7; #"就"
@@ -271,14 +245,12 @@
 
 @org $6c, $6a04:
 	init NAME_BALLOT, PIC_BALLOT_1;
-@org $6c, $6a07:
 	text "呼～呼呼～";
 	line "太好了～米特⋯";
 	done;
 
 @org $6c, $6a1d:
 	init NAME_MITT, PIC_48;
-@org $6c, $6a20:
 	text "巴洛特⋯";
 	line "";
 	db $f2, $07; #"對"

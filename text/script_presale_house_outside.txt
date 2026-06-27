@@ -1,6 +1,5 @@
 @org $66, $4e55:
 	init NAME_BLANK, PIC_12;
-@org $66, $4e58:
 	text "唉～機體已嚴重";
 	line "";
 	db $f1, $51; #"的"

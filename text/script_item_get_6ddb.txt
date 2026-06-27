@@ -1,6 +1,5 @@
 @org $1e, $6ddb:
 	init NAME_MITT, PIC_47;
-@org $1e, $6dde:
 	text "獲得";
 	db $eb; #"?"
 	text "";

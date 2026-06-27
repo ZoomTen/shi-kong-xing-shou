@@ -1,6 +1,5 @@
 @org $59, $4f6a:
 	init NAME_RANDT, PIC_06;
-@org $59, $4f6d:
 	text "地震這麼頻繁﹐";
 	para "讓我無";
 	db $f0, $bb; #"法"
@@ -15,7 +14,6 @@
 
 @org $59, $4fa1:
 	init NAME_RANDT, PIC_06;
-@org $59, $4fa4:
 	text "製造～製造～";
 	para "";
 	db $f2, $4a; #"你"
@@ -27,7 +25,6 @@
 
 @org $59, $4fc7:
 	init NAME_RANDT, PIC_06;
-@org $59, $4fca:
 	text "哎呀～";
 	line "";
 	db $f2, $dc; #"得"
@@ -48,7 +45,6 @@
 
 @org $59, $5009:
 	init NAME_RANDT, PIC_06;
-@org $59, $500c:
 	text "你說什麼﹖";
 	line "動力晶片﹖";
 	cont "你就是賽亞的兒";
@@ -68,19 +64,16 @@
 
 @org $59, $50a5:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $50a8:
 	text "了不起的發明﹖";
 	done;
 
 @org $59, $50b7:
 	init NAME_RANDT, PIC_06;
-@org $59, $50ba:
 	text "沒．有．錯﹗";
 	done;
 
 @org $59, $50c7:
 	init NAME_RANDT, PIC_06;
-@org $59, $50ca:
 	text "根據我的偵測﹐";
 	cont "在距地球";
 	line "１９３２光年";
@@ -101,7 +94,6 @@
 
 @org $59, $5155:
 	init NAME_RANDT, PIC_06;
-@org $59, $5158:
 	text "不過沒有時間探";
 	line "";
 	db $f7, $37; #"討"
@@ -127,7 +119,6 @@
 
 @org $59, $520e:
 	init NAME_RANDT, PIC_06;
-@org $59, $5211:
 	text "神木一定發生了";
 	line "什麼變故﹐才會";
 	cont "";

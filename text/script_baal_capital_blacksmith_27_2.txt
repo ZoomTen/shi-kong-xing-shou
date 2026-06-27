@@ -1,6 +1,5 @@
 @org $6c, $5ee0:
 	init NAME_BLANK, PIC_24;
-@org $6c, $5ee3:
 	text "金剛鑽頭﹖";
 	line "最近都沒有打造";
 	cont "這種東西了⚬";
@@ -11,7 +10,6 @@
 
 @org $6c, $5f30:
 	init NAME_BLANK, PIC_24;
-@org $6c, $5f33:
 	text "拿到金鋼鑽了";
 	db $f1, $35; #"﹗"
 	text "";
@@ -22,7 +20,6 @@
 
 @org $6c, $5f4d:
 	init NAME_BLANK, PIC_24;
-@org $6c, $5f50:
 	text "這";
 	db $f2, $d7; #"就"
 	text "是金剛鑽頭";

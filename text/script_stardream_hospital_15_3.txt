@@ -1,6 +1,5 @@
 @org $66, $7bca:
 	init NAME_4B, PIC_30;
-@org $66, $7bcd:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -13,7 +12,6 @@
 
 @org $66, $7be0:
 	init NAME_4B, PIC_30;
-@org $66, $7be3:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -26,7 +24,6 @@
 
 @org $66, $7bf7:
 	init NAME_4B, PIC_30;
-@org $66, $7bfa:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -39,7 +36,6 @@
 
 @org $66, $7c0e:
 	init NAME_4B, PIC_30;
-@org $66, $7c11:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -52,7 +48,6 @@
 
 @org $66, $7c25:
 	init NAME_4B, PIC_30;
-@org $66, $7c28:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -65,7 +60,6 @@
 
 @org $66, $7c3c:
 	init NAME_4B, PIC_30;
-@org $66, $7c3f:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -78,7 +72,6 @@
 
 @org $66, $7c53:
 	init NAME_4B, PIC_30;
-@org $66, $7c56:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -91,7 +84,6 @@
 
 @org $66, $7c6a:
 	init NAME_4B, PIC_30;
-@org $66, $7c6d:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -104,7 +96,6 @@
 
 @org $66, $7c81:
 	init NAME_4B, PIC_30;
-@org $66, $7c84:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -117,7 +108,6 @@
 
 @org $66, $7c98:
 	init NAME_4B, PIC_30;
-@org $66, $7c9b:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"
@@ -130,7 +120,6 @@
 
 @org $66, $7caf:
 	init NAME_4B, PIC_30;
-@org $66, $7cb2:
 	text "求生指數⋯⋯";
 	line "";
 	db $f2, $c7; #"⋯"

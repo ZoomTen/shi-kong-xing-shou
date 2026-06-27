@@ -1,6 +1,5 @@
 @org $58, $4a88:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $58, $4a8b:
 	text "哇～";
 	line "";
 	db $f2, $cd; #"好"
@@ -9,7 +8,6 @@
 
 @org $58, $4a9c:
 	init NAME_BLANK, PIC_23;
-@org $58, $4a9f:
 	text "啊﹗怎麼會這樣";
 	line "昨天晚上在生之";
 	cont "谷的火山能源站";
@@ -22,7 +20,6 @@
 
 @org $58, $4b04:
 	init NAME_BLANK, PIC_24;
-@org $58, $4b07:
 	text "不見了﹗";
 	line "";
 	db $f1, $03; #"真"

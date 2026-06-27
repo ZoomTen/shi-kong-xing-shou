@@ -1,20 +1,17 @@
 @org $5a, $5608:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $560b:
 	text "這裡是哪裡﹖";
 	line "平安降落了嗎﹖";
 	done;
 
 @org $5a, $5623:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $5626:
 	text "這裡是哪裡﹖";
 	line "得詳細的問清楚";
 	done;
 
 @org $5a, $563f:
 	init NAME_BLANK, PIC_70;
-@org $5a, $5642:
 	text "哎呀﹗醒了嗎﹖";
 	para "";
 	db $f1, $32; #"嗯"
@@ -31,7 +28,6 @@
 
 @org $5a, $56c3:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5a, $56c6:
 	text "真是謝謝你⚬";
 	line "這種語氣聽來真";
 	cont "";
@@ -41,7 +37,6 @@
 
 @org $5a, $56e8:
 	init NAME_BLANK, PIC_70;
-@org $5a, $56eb:
 	text "不用客氣⚬";
 	line "我是時空科學家";
 	cont "卡爾⚬";
@@ -49,7 +44,6 @@
 
 @org $5a, $570a:
 	init NAME_48, PIC_70;
-@org $5a, $570d:
 	text "星系產生了破洞";
 	line "﹐地球就要出現";
 	para "危機⚬";
@@ -80,7 +74,6 @@
 
 @org $5a, $5806:
 	init NAME_48, PIC_70;
-@org $5a, $5809:
 	text "先是這樣⋯";
 	line "";
 	db $f2, $da; #"再"

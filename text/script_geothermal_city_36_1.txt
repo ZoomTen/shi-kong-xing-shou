@@ -1,13 +1,11 @@
 @org $58, $4b4a:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4b4d:
 	text "ｚＺｚｚＺ～";
 	line "ＺｚｚＺ～";
 	done;
 
 @org $58, $4b5e:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4b61:
 	text "啊﹗早上了﹗";
 	line "";
 	db $f1, $8f; #"救"
@@ -17,7 +15,6 @@
 
 @org $58, $4b7f:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4b82:
 	text "快⋯快救我⋯";
 	line "";
 	db $f2, $ad; #"我"
@@ -28,7 +25,6 @@
 
 @org $58, $4b99:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4b9c:
 	text "真是謝謝你﹗";
 	line "剛才有一瞬間﹐";
 	cont "我還真以為會在";
@@ -38,13 +34,11 @@
 
 @org $58, $4bd6:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $4bd9:
 	text "這是怎麼回事﹖";
 	done;
 
 @org $58, $4be7:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4bea:
 	text "真是恐怖﹗";
 	line "昨天晚上﹐我一";
 	cont "陣奇怪的笛聲﹐";
@@ -76,7 +70,6 @@
 
 @org $58, $4c97:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $4c9a:
 	text "笛聲﹖";
 	line "城裡的人﹐往哪";
 	cont "個方向去了﹖";
@@ -84,7 +77,6 @@
 
 @org $58, $4cbc:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4cbf:
 	text "好像往死之谷的";
 	line "";
 	db $f1, $cf; #"方"
@@ -98,7 +90,6 @@
 
 @org $58, $4d0c:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4d0f:
 	text "城裡的人﹐好像";
 	line "往死之谷的方向";
 	para "去了⋯⋯";
@@ -115,7 +106,6 @@
 
 @org $58, $4d98:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4d9b:
 	text "地熱城旁有座雙";
 	line "";
 	db $f0, $c9; #"子"
@@ -141,7 +131,6 @@
 
 @org $58, $4e39:
 	init NAME_BLANK, PIC_1A;
-@org $58, $4e3c:
 	text "最近的地震多了";
 	line "";
 	db $f1, $b5; #"點"
@@ -171,7 +160,6 @@
 
 @org $58, $4ebc:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $4ebf:
 	text "笛聲⋯⋯";
 	line "突然有種濃濃的";
 	cont "睡意⋯";
@@ -179,7 +167,6 @@
 
 @org $58, $4edb:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $58, $4ede:
 	text "真是危險～";
 	line "";
 	db $f2, $da; #"再"

@@ -1,6 +1,5 @@
 @org $58, $61bc:
 	init NAME_BLANK, PIC_1A;
-@org $58, $61bf:
 	text "哈哈哈～";
 	line "村人終於回來了";
 	cont "";

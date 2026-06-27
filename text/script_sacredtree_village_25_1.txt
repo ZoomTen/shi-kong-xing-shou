@@ -1,6 +1,5 @@
 @org $59, $48ea:
 	init NAME_BLANK, PIC_13;
-@org $59, $48ed:
 	text "這裡是神木村⚬";
 	para "";
 	db $f1, $03; #"真"
@@ -28,7 +27,6 @@
 
 @org $59, $493b:
 	init NAME_BLANK, PIC_15;
-@org $59, $493e:
 	text "你見過雷德了嗎";
 	line "他們家世代都是";
 	cont "研究時間的科學";
@@ -39,7 +37,6 @@
 
 @org $59, $4986:
 	init NAME_BLANK, PIC_14;
-@org $59, $4989:
 	text "供給神木養份的";
 	line "";
 	db $f1, $a8; #"奇"
@@ -77,7 +74,6 @@
 
 @org $59, $49ff:
 	init NAME_BLANK, PIC_17;
-@org $59, $4a02:
 	text "看到那尊雕像了";
 	line "";
 	db $f1, $5c; #"嗎"
@@ -104,7 +100,6 @@
 
 @org $59, $4a92:
 	init NAME_BLANK, PIC_16;
-@org $59, $4a95:
 	text "每天晚上﹐我只";
 	line "要抬起頭﹐看到";
 	cont "天空的裂縫時﹐";
@@ -114,7 +109,6 @@
 
 @org $59, $4ad5:
 	init NAME_BLANK, PIC_19;
-@org $59, $4ad8:
 	text "神木的葉子慢慢";
 	line "的枯掉了﹗";
 	para "再這麼下去﹐神";
@@ -128,7 +122,6 @@
 
 @org $59, $4b37:
 	init NAME_BLANK, PIC_1C;
-@org $59, $4b3a:
 	text "昨天跟普兒去冒";
 	line "險﹐結果遇到⋯";
 	para "嗚～遇到可怕的";

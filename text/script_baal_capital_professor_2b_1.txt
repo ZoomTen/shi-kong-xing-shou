@@ -1,6 +1,5 @@
 @org $6c, $5682:
 	init NAME_4E, PIC_72;
-@org $6c, $5685:
 	text "我是應力研究所";
 	line "";
 	db $f1, $51; #"的"

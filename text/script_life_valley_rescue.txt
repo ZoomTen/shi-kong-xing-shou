@@ -1,13 +1,11 @@
 @org $58, $5a99:
 	init NAME_45, PIC_6D;
-@org $58, $5a9c:
 	text "嘿嘿嘿嘿～";
 	line "嘿轟轟～";
 	done;
 
 @org $58, $5aac:
 	init NAME_46, PIC_6E;
-@org $58, $5aaf:
 	text "藍特﹗";
 	line "";
 	db $f1, $8f; #"救"
@@ -16,7 +14,6 @@
 
 @org $58, $5ac1:
 	init NAME_LANTE, PIC_41;
-@org $58, $5ac4:
 	text "爸爸﹗";
 	line "";
 	db $f1, $c8; #"可"
@@ -25,14 +22,12 @@
 
 @org $58, $5ad6:
 	init NAME_45, PIC_6D;
-@org $58, $5ad9:
 	text "嘿嘿嘿嘿～";
 	line "嘿轟轟～";
 	done;
 
 @org $58, $5ae9:
 	init NAME_46, PIC_6E;
-@org $58, $5aec:
 	text "真是危險﹗";
 	line "這個星獸在生之";
 	cont "谷裡﹐裝設了能";
@@ -52,7 +47,6 @@
 
 @org $58, $5b70:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $58, $5b73:
 	text "老爹﹗";
 	line "你知道他是誰嗎";
 	cont "他就是巴洛特唷";
@@ -61,7 +55,6 @@
 
 @org $58, $5b9a:
 	init NAME_46, PIC_6E;
-@org $58, $5b9d:
 	text "哦﹗是巴洛特呀";
 	line "你爸爸前陣子還";
 	cont "";
@@ -77,21 +70,18 @@
 
 @org $58, $5bd5:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $5bd8:
 	text "拿到了﹗";
 	line "謝謝您～";
 	done;
 
 @org $58, $5be6:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $5be9:
 	text "爸爸曾經找過您";
 	line "是為了什麼事呢";
 	done;
 
 @org $58, $5c02:
 	init NAME_46, PIC_6E;
-@org $58, $5c05:
 	text "他正在尋找﹐古";
 	line "";
 	db $f4, $dd; #"代"
@@ -103,7 +93,6 @@
 
 @org $58, $5c45:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $58, $5c48:
 	text "老爹﹗";
 	line "我也要跟巴洛特";
 	cont "一起旅行⚬";
@@ -111,14 +100,12 @@
 
 @org $58, $5c68:
 	init NAME_46, PIC_6E;
-@org $58, $5c6b:
 	text "藍藍藍特﹗";
 	line "這太⋯危險了﹗";
 	done;
 
 @org $58, $5c7f:
 	init NAME_LANTE, PIC_LANTE_0;
-@org $58, $5c82:
 	text "老爹不同意嗎﹖";
 	line "";
 	db $f1, $03; #"真"
@@ -132,7 +119,6 @@
 
 @org $58, $5cbb:
 	init NAME_46, PIC_6E;
-@org $58, $5cbe:
 	text "慢⋯慢著﹗";
 	line "你這是在威脅我";
 	cont "嗎﹖﹖";
@@ -141,13 +127,11 @@
 
 @org $58, $5ce6:
 	init NAME_LANTE, PIC_LANTE_1;
-@org $58, $5ce9:
 	text "萬歲﹗";
 	done;
 
 @org $58, $5cf0:
 	init NAME_46, PIC_6E;
-@org $58, $5cf3:
 	text "真是⋯⋯";
 	line "";
 	db $f2, $ad; #"我"
@@ -157,7 +141,6 @@
 
 @org $58, $5d14:
 	init NAME_LANTE, PIC_42;
-@org $58, $5d17:
 	text "糟了﹗";
 	line "我忘了地熱城的";
 	cont "人﹐還被我關在";

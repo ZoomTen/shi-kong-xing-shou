@@ -1,6 +1,5 @@
 @org $66, $7971:
 	init NAME_STAR_BEAST, PIC_6A;
-@org $66, $7974:
 	text "吼～吼～";
 	line "";
 	db $f2, $76; #"吼"
@@ -13,7 +12,6 @@
 
 @org $66, $7981:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $7984:
 	text "太陽之石";
 	db $f0, $94; #"歸"
 	text "位";
@@ -23,7 +21,6 @@
 
 @org $66, $7990:
 	init NAME_MITT, PIC_07;
-@org $66, $7993:
 	text "終於～完成了﹗";
 	line "軌跡描繪完成﹗";
 	para "接著只要把月之";
@@ -41,19 +38,16 @@
 
 @org $66, $79cc:
 	init NAME_MITT, PIC_4A;
-@org $66, $79cf:
 	text "是誰﹖";
 	done;
 
 @org $66, $79d6:
 	init NAME_3F, PIC_75;
-@org $66, $79d9:
 	text "呵呵呵呵～";
 	done;
 
 @org $66, $79e1:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $79e4:
 	text "不曉得米特那裡";
 	line "的情況如何了﹗";
 	cont "過去瞧瞧吧﹗";

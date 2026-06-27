@@ -1,6 +1,5 @@
 @org $4f, $406d:
 	init NAME_19, PIC_22;
-@org $4f, $4070:
 	text "需要";
 	db $f1, $c9; #"服"
 	text "務嗎";

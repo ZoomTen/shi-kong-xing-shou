@@ -1,6 +1,5 @@
 @org $58, $608c:
 	init NAME_BLANK, PIC_14;
-@org $58, $608f:
 	text "唉呀～";
 	line "";
 	db $f2, $60; #"被"
@@ -13,7 +12,6 @@
 
 @org $58, $60db:
 	init NAME_BLANK, PIC_17;
-@org $58, $60de:
 	text "這幾天被關在死";
 	line "";
 	db $f0, $02; #"之"

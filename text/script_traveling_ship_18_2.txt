@@ -1,6 +1,5 @@
 @org $58, $54f9:
 	init NAME_43, PIC_50;
-@org $58, $54fc:
 	text "啊～真是可怕﹗";
 	line "那些從船裡游出";
 	cont "";
@@ -18,13 +17,11 @@
 
 @org $58, $556e:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $5571:
 	text "得到絕緣耳機﹗";
 	done;
 
 @org $58, $557e:
 	init NAME_43, PIC_50;
-@org $58, $5581:
 	text "不行了～";
 	line "真的快來不及了";
 	cont "";
@@ -40,7 +37,6 @@
 
 @org $58, $55ea:
 	init NAME_43, PIC_50;
-@org $58, $55ed:
 	text "不行了～";
 	line "真的快來不及了";
 	cont "";
@@ -56,7 +52,6 @@
 
 @org $58, $5656:
 	init NAME_BALLOT, PIC_BALLOT_4;
-@org $58, $5659:
 	text "詭異的笛聲又來";
 	line "了⋯⋯";
 	cont "意識又⋯開始模";
@@ -69,7 +64,6 @@
 
 @org $58, $5697:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $58, $569a:
 	text "戴起耳機後﹐果";
 	line "然就聽不見任何";
 	cont "聲音了﹗";

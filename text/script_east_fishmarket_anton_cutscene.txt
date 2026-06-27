@@ -1,13 +1,11 @@
 @org $5c, $465e:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $4661:
 	text "安東﹖﹖﹗";
 	line "這是怎麼回事﹖";
 	done;
 
 @org $5c, $4678:
 	init NAME_ANTON, PIC_62;
-@org $5c, $467b:
 	text "海⋯海藍⋯";
 	line "是人魚的事⋯";
 	cont "";
@@ -23,14 +21,12 @@
 
 @org $5c, $46dc:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $46df:
 	text "振作一點﹐安東";
 	line "﹗";
 	done;
 
 @org $5c, $46f0:
 	init NAME_ANTON, PIC_62;
-@org $5c, $46f3:
 	text "我⋯我⋯";
 	line "";
 	db $f2, $c8; #"沒"
@@ -42,7 +38,6 @@
 
 @org $5c, $4729:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $5c, $472c:
 	text "好的﹗";
 	line "我一定會的﹗";
 	cont "安東﹐不要再說";
@@ -54,7 +49,6 @@
 
 @org $5c, $476c:
 	init NAME_ANTON, PIC_62;
-@org $5c, $476f:
 	text "謝⋯謝⋯⋯";
 	line "海⋯海藍⋯";
 	para "雖然妳騙了我⋯";
@@ -79,7 +73,6 @@
 
 @org $5c, $47b6:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $5c, $47b9:
 	text "安東﹗﹗﹗﹗";
 	line "";
 	db $f1, $c8; #"可"

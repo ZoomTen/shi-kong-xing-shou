@@ -1,6 +1,5 @@
 @org $66, $4ef4:
 	init NAME_BLANK, PIC_14;
-@org $66, $4ef7:
 	text "這裡是星夢城⚬";
 	line "";
 	db $f1, $cc; #"很"
@@ -14,7 +13,6 @@
 
 @org $66, $4f51:
 	init NAME_BLANK, PIC_17;
-@org $66, $4f54:
 	text "卡迪拉是個知名";
 	line "的星空彩繪家⚬";
 	cont "對於星象的了解";
@@ -47,7 +45,6 @@
 
 @org $66, $500c:
 	init NAME_57, PIC_1C;
-@org $66, $500f:
 	text "米特的爸爸媽媽";
 	line "被星獸殺死了⚬";
 	para "米特從此就變得";
@@ -61,7 +58,6 @@
 
 @org $66, $5083:
 	init NAME_58, PIC_1A;
-@org $66, $5086:
 	text "這隻布蘭特熊娃";
 	line "";
 	db $f6, $d5; #"娃"
@@ -74,7 +70,6 @@
 
 @org $66, $50b5:
 	init NAME_BLANK, PIC_16;
-@org $66, $50b8:
 	text "米特是個好小孩";
 	line "";
 	db $f2, $6b; #"自"
@@ -96,7 +91,6 @@
 
 @org $66, $513e:
 	init NAME_BLANK, PIC_13;
-@org $66, $5141:
 	text "你們有沒有看到";
 	line "晚上的月亮﹐又";
 	cont "變得更藍了﹗";
@@ -115,7 +109,6 @@
 
 @org $66, $51bc:
 	init NAME_BLANK, PIC_15;
-@org $66, $51bf:
 	text "城外有間預售屋";
 	line "破破爛爛的﹐";
 	para "居然還要";
@@ -135,7 +128,6 @@
 
 @org $66, $523a:
 	init NAME_BLANK, PIC_19;
-@org $66, $523d:
 	text "冰山島這幾個月";
 	line "以來﹐漸漸的在";
 	cont "崩解⚬";
@@ -146,7 +138,6 @@
 
 @org $66, $5287:
 	init NAME_BLANK, PIC_16;
-@org $66, $528a:
 	text "唉呀﹗";
 	line "天象異變﹐";
 	line "連潮汐都變得";

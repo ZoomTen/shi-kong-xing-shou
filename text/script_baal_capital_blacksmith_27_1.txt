@@ -1,6 +1,5 @@
 @org $6c, $5634:
 	init NAME_BLANK, PIC_24;
-@org $6c, $5637:
 	text "本店的打造技術";
 	line "是一流的⚬";
 	para "就連像金鋼鑽那";

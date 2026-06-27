@@ -1,6 +1,5 @@
 @org $5c, $402d:
 	init NAME_BLANK, PIC_53;
-@org $5c, $4030:
 	text "少爺您好﹗";
 	line "專機等侯已久～";
 	cont "請你上飛機吧﹗";

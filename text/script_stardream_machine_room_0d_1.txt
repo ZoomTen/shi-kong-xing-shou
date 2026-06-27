@@ -1,6 +1,5 @@
 @org $66, $792e:
 	init NAME_MITT, PIC_07;
-@org $66, $7931:
 	text "爸爸﹐相信我可";
 	line "";
 	db $f1, $cb; #"以"

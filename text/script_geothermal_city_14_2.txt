@@ -1,6 +1,5 @@
 @org $58, $4f15:
 	init NAME_BLANK, PIC_23;
-@org $58, $4f18:
 	text "什麼﹖";
 	line "城裡的人都在死";
 	line "";
@@ -18,14 +17,12 @@
 
 @org $58, $4f70:
 	init NAME_BLANK, PIC_23;
-@org $58, $4f73:
 	text "真是氣死人了﹗";
 	line "該怎麼辦﹖";
 	done;
 
 @org $58, $4f88:
 	init NAME_BLANK, PIC_23;
-@org $58, $4f8b:
 	text "對了﹗這附近的";
 	line "海域常出現一艘";
 	cont "";
@@ -40,7 +37,6 @@
 
 @org $58, $4ff1:
 	init NAME_BLANK, PIC_23;
-@org $58, $4ff4:
 	text "這附近的海域常";
 	line "";
 	db $f2, $0a; #"出"

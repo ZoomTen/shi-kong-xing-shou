@@ -1,6 +1,5 @@
 @org $5a, $67bc:
 	init NAME_48, PIC_70;
-@org $5a, $67bf:
 	text "沒錯﹗這就是我";
 	line "的方程式﹗";
 	para "巴洛特﹐真是非";
@@ -15,7 +14,6 @@
 
 @org $5a, $6829:
 	init NAME_48, PIC_70;
-@org $5a, $682c:
 	text "唉～裂縫的持續";
 	line "擴大﹐使得更強";
 	para "";

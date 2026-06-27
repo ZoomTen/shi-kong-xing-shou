@@ -1,6 +1,5 @@
 @org $6c, $6e62:
 	init NAME_NINA, PIC_NINA_1;
-@org $6c, $6e65:
 	text "事情一定還有轉";
 	line "機的⚬";
 	para "不管如何﹐妮娜";
@@ -9,7 +8,6 @@
 
 @org $6c, $6e97:
 	init NAME_CLAUDE, PIC_CLAUDE_2;
-@org $6c, $6e9a:
 	text "古代飛空兵器﹖";
 	line "這怎麼可以少得";
 	cont "了我呢﹖";
@@ -17,14 +15,12 @@
 
 @org $6c, $6ebb:
 	init NAME_BUCK, PIC_BUCK;
-@org $6c, $6ebe:
 	text "巴克．幫忙．巴";
 	line "洛特﹗";
 	done;
 
 @org $6c, $6ed1:
 	init NAME_RANDT, PIC_43;
-@org $6c, $6ed4:
 	text "因為需要我的幫";
 	line "助﹐才能讓事情";
 	para "有轉機的餘地嗎";

@@ -1,25 +1,21 @@
 @org $67, $6f6d:
 	init NAME_2D, PIC_56;
-@org $67, $6f70:
 	text "啊﹗是你啊﹗";
 	line "這個送你⚬";
 	done;
 
 @org $67, $6f86:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $67, $6f89:
 	text "得到干擾電波⚬";
 	done;
 
 @org $67, $6f97:
 	init NAME_2D, PIC_56;
-@org $67, $6f9a:
 	text "路上小心﹗";
 	done;
 
 @org $67, $6fa5:
 	init NAME_2E, PIC_57;
-@org $67, $6fa8:
 	text "需要治療嗎﹖";
 	line "";
 	getchoice String_1cc5;

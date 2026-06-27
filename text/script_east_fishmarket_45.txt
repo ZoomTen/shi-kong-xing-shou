@@ -1,6 +1,5 @@
 @org $5c, $4c42:
 	init NAME_BLANK, PIC_1C;
-@org $5c, $4c45:
 	text "萬歲～";
 	line "又可以到海邊玩";
 	cont "耍了﹗";
@@ -8,7 +7,6 @@
 
 @org $5c, $4c5e:
 	init NAME_BLANK, PIC_14;
-@org $5c, $4c61:
 	text "安東⋯";
 	line "";
 	db $f2, $ad; #"我"
@@ -21,7 +19,6 @@
 
 @org $5c, $4ca6:
 	init NAME_HELEN, PIC_HELEN_0;
-@org $5c, $4ca9:
 	text "我不恨你們﹐但";
 	line "也不喜歡你們⚬";
 	cont "離我遠一些﹗";
@@ -29,13 +26,11 @@
 
 @org $5c, $4cd1:
 	init NAME_BLANK, PIC_14;
-@org $5c, $4cd4:
 	text "呃⋯是⋯是的⚬";
 	done;
 
 @org $5c, $4ce1:
 	init NAME_BLANK, PIC_13;
-@org $5c, $4ce4:
 	text "海藍⋯";
 	line "請原諒我們⋯⋯";
 	para "在那種情形下﹐";
@@ -46,7 +41,6 @@
 
 @org $5c, $4d27:
 	init NAME_HELEN, PIC_HELEN_0;
-@org $5c, $4d2a:
 	text "原諒與否﹐有什";
 	line "麼差別嗎﹖";
 	para "安東不會因此而";
@@ -57,7 +51,6 @@
 
 @org $5c, $4d57:
 	init NAME_BLANK, PIC_15;
-@org $5c, $4d5a:
 	text "瓜瓜這次能平安";
 	line "回來﹐真是多虧";
 	cont "了你⋯";
@@ -77,7 +70,6 @@
 
 @org $5c, $4d90:
 	init NAME_BALLOT, PIC_BALLOT_1;
-@org $5c, $4d93:
 	text "得到了";
 	line "";
 	db $f1, $8c; #"萬"
@@ -88,7 +80,6 @@
 
 @org $5c, $4da1:
 	init NAME_BLANK, PIC_15;
-@org $5c, $4da4:
 	text "瓜瓜這次能平安";
 	line "回來﹐真是多虧";
 	cont "了你⋯";
@@ -97,13 +88,11 @@
 
 @org $5c, $4dcc:
 	init NAME_BLANK, PIC_15;
-@org $5c, $4dcf:
 	text "瓜瓜回來了⋯";
 	done;
 
 @org $5c, $4ddb:
 	init NAME_BLANK, PIC_17;
-@org $5c, $4dde:
 	text "安東的死亡⋯";
 	line "都是我的錯⋯";
 	para "";

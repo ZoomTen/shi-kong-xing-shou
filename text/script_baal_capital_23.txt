@@ -1,6 +1,5 @@
 @org $6c, $54d1:
 	init NAME_BLANK, PIC_20;
-@org $6c, $54d4:
 	text "新聞說冰山島沉";
 	line "了⚬";
 	para "不過幸好在危急";
@@ -24,7 +23,6 @@
 
 @org $6c, $553e:
 	init NAME_BLANK, PIC_1F;
-@org $6c, $5541:
 	text "在一百二十年前";
 	line "八大科學家也曾";
 	cont "經解救過地球⚬";

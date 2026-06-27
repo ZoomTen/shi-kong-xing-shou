@@ -1,6 +1,5 @@
 @org $6c, $757d:
 	init NAME_50, PIC_75;
-@org $6c, $7580:
 	text "你們還能夠來到";
 	line "這裡﹐不由得讓";
 	para "我打從心裡偑服";
@@ -27,7 +26,6 @@
 
 @org $6c, $7643:
 	init NAME_50, PIC_75;
-@org $6c, $7646:
 	text "不⋯不可能⋯⋯";
 	line "不⋯甘心⋯";
 	done;

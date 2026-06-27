@@ -1,6 +1,5 @@
 @org $6c, $5996:
 	init NAME_BLANK, PIC_16;
-@org $6c, $5999:
 	text "天啊～";
 	line "世界末日就要到";
 	line "";
@@ -16,7 +15,6 @@
 
 @org $6c, $59cb:
 	init NAME_BLANK, PIC_15;
-@org $6c, $59ce:
 	text "旁邊有座金鋼山";
 	line "";
 	db $f3, $c2; #"順"
@@ -38,7 +36,6 @@
 
 @org $6c, $5a48:
 	init NAME_BLANK, PIC_22;
-@org $6c, $5a4b:
 	text "啊⋯啊⋯啊⋯";
 	line "月亮撞擊地球的";
 	cont "話⋯⋯";

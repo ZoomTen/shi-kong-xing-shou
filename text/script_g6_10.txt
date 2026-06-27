@@ -1,6 +1,5 @@
 @org $6c, $64f3:
 	init NAME_DR_LEO, PIC_DR_LEO;
-@org $6c, $64f6:
 	text "巴洛特﹐趕快找";
 	line "出發生故障的原";
 	cont "因⚬";

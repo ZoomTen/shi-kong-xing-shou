@@ -1,6 +1,5 @@
 @org $66, $5739:
 	init NAME_BLANK, PIC_13;
-@org $66, $573c:
 	text "這裡是星夢醫院";
 	line "本院的一樓是一";
 	cont "般診所﹐二樓是";

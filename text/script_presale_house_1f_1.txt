@@ -1,6 +1,5 @@
 @org $66, $5407:
 	init $5b, PIC_20;
-@org $66, $540a:
 	text "你看過城外的預";
 	line "售屋了嗎﹖";
 	para "地點好﹐環境佳";
@@ -21,7 +20,6 @@
 
 @org $66, $5447:
 	init NAME_BLANK, PIC_19;
-@org $66, $544a:
 	text "啊﹖你是誰﹖";
 	line "老伴呀﹐你怎麼";
 	cont "變年輕了﹖";
@@ -29,7 +27,6 @@
 
 @org $66, $546d:
 	init $5b, PIC_20;
-@org $66, $5470:
 	text "原諒我媽﹐他得";
 	line "了老年痴呆症⚬";
 	cont "媽～他不是啦﹗";
@@ -37,7 +34,6 @@
 
 @org $66, $549d:
 	init NAME_BLANK, PIC_19;
-@org $66, $54a0:
 	text "啊﹖";
 	line "那你又是誰﹖";
 	cont "我怎麼會在這裡";
@@ -46,7 +42,6 @@
 
 @org $66, $54cb:
 	init $5b, PIC_20;
-@org $66, $54ce:
 	text "⋯⋯⋯";
 	done;
 

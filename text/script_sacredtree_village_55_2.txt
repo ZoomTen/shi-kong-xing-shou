@@ -1,6 +1,5 @@
 @org $59, $6f51:
 	init NAME_BLANK, PIC_16;
-@org $59, $6f54:
 	text "啊﹗泉水又滿了";
 	line "";
 	db $f1, $03; #"真"
@@ -12,7 +11,6 @@
 
 @org $59, $6f79:
 	init NAME_STAR_BEAST, PIC_6A;
-@org $59, $6f7c:
 	text "喀～喀～";
 	para "能源⋯計劃⋯";
 	para "阻礙者⋯⋯殺﹗";
@@ -20,14 +18,12 @@
 
 @org $59, $6f9e:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $6fa1:
 	text "看來星獸的狙擊";
 	line "目標是我﹗";
 	done;
 
 @org $59, $6fb9:
 	init NAME_LANTE, PIC_06;
-@org $59, $6fbc:
 	text "可能是因為﹐你";
 	line "破壞了他們抽取";
 	cont "";
@@ -47,7 +43,6 @@
 
 @org $59, $700f:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $7012:
 	text "星獸們抽取能源";
 	line "";
 	db $f1, $33; #"﹐"
@@ -59,7 +54,6 @@
 
 @org $59, $7030:
 	init NAME_LANTE, PIC_06;
-@org $59, $7033:
 	text "這我就不清楚了";
 	line "不過﹐據我的追";
 	cont "";
@@ -80,7 +74,6 @@
 
 @org $59, $70c9:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $70cc:
 	text "南方的衛星雷達";
 	line "站﹖";
 	para "星獸所謂『計劃";

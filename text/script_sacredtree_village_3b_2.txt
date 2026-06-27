@@ -1,6 +1,5 @@
 @org $59, $739e:
 	init NAME_BLANK, PIC_24;
-@org $59, $73a1:
 	text "真是神奇﹗神木";
 	line "";
 	db $f1, $1a; #"復"
@@ -13,7 +12,6 @@
 
 @org $59, $73e9:
 	init NAME_BLANK, PIC_1F;
-@org $59, $73ec:
 	text "嗚嗚嗚～～";
 	line "";
 	db $f2, $ad; #"我"

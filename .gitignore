@@ -4,6 +4,8 @@ text/*.asm
 
 # compiled graphics
 gfx/*.2bpp
+gfx/gale/*.2bpp
+gfx/meteor/*.2bpp
 gfx/battle/*.2bpp
 gfx/battle_intro/*.2bpp
 gfx/textbox/*.2bpp

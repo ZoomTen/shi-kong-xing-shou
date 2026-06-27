@@ -1,6 +1,5 @@
 @org $59, $5339:
 	init NAME_BLANK, PIC_1A;
-@org $59, $533c:
 	text "好痛⋯好熱⋯⋯";
 	line "神木裡面⋯⋯";
 	cont "";
@@ -14,7 +13,6 @@
 
 @org $59, $538c:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $59, $538f:
 	text "神木裡面﹖";
 	line "莫非她到過神木";
 	cont "裡面﹖";
@@ -31,7 +29,6 @@
 
 @org $59, $53fb:
 	init NAME_BLANK, PIC_1A;
-@org $59, $53fe:
 	text "好痛⋯好熱⋯⋯";
 	line "神木裡面⋯⋯";
 	cont "";

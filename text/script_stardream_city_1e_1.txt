@@ -1,6 +1,5 @@
 @org $66, $5313:
 	init NAME_59, PIC_1D;
-@org $66, $5316:
 	text "米特的媽媽的廚";
 	line "藝﹐真不是蓋的";
 	para "尤其是她做的清";
@@ -15,7 +14,6 @@
 
 @org $66, $537a:
 	init NAME_BLANK, PIC_1A;
-@org $66, $537d:
 	text "媽媽～人家不要";
 	line "再吃雪兔肉了啦";
 	para "米特的媽媽﹐做";
@@ -24,14 +22,12 @@
 
 @org $66, $53b1:
 	init NAME_59, PIC_1D;
-@org $66, $53b4:
 	text "所以媽媽正在努";
 	line "力呀﹗";
 	done;
 
 @org $66, $53c8:
 	init NAME_BLANK, PIC_1A;
-@org $66, $53cb:
 	text "可是人家已經吃";
 	line "了一個月的兔子";
 	cont "肉了﹗";

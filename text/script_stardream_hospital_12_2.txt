@@ -1,6 +1,5 @@
 @org $66, $5ce9:
 	init NAME_BLANK, PIC_1D;
-@org $66, $5cec:
 	text "米特為了逃避悲";
 	line "傷的情緒﹐把自";
 	cont "";

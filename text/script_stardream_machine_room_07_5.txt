@@ -1,6 +1,5 @@
 @org $66, $7b6c:
 	init NAME_BLANK, PIC_23;
-@org $66, $7b6f:
 	text "快走開";
 	db $f2, $1f; #"～"
 	text "";
@@ -13,7 +12,6 @@
 
 @org $66, $7b99:
 	init NAME_BLANK, PIC_23;
-@org $66, $7b9c:
 	text "我最討厭";
 	db $f7, $5a; #"笛"
 	text "聲了";
@@ -25,7 +23,6 @@
 
 @org $66, $7bbc:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $66, $7bbf:
 	text "槌．槌．槌";
 	done;
 

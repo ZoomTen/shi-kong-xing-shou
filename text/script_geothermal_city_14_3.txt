@@ -1,6 +1,5 @@
 @org $58, $5ea9:
 	init NAME_BLANK, PIC_23;
-@org $58, $5eac:
 	text "巴洛特呀～";
 	line "真是感謝你﹗";
 	para "";
@@ -13,7 +12,6 @@
 
 @org $58, $5ef8:
 	init NAME_BALLOT, PIC_BALLOT_1;
-@org $58, $5efb:
 	text "得到了";
 	line "";
 	db $f1, $99; #"營"
@@ -24,7 +22,6 @@
 
 @org $58, $5f09:
 	init NAME_BLANK, PIC_23;
-@org $58, $5f0c:
 	text "巴洛特呀～";
 	line "真是感謝你﹗";
 	cont "";
@@ -35,7 +32,6 @@
 
 @org $58, $5f40:
 	init NAME_BLANK, PIC_24;
-@org $58, $5f43:
 	text "生之谷的火山﹐";
 	line "好像又回復平靜";
 	cont "了⚬";
@@ -45,7 +41,6 @@
 
 @org $58, $5f77:
 	init NAME_BLANK, PIC_14;
-@org $58, $5f7a:
 	text "藍特之前還因為";
 	line "火山的事情﹐跑";
 	cont "來警告我們⚬";
@@ -56,7 +51,6 @@
 
 @org $58, $5fc7:
 	init NAME_BLANK, PIC_13;
-@org $58, $5fca:
 	text "哼﹗雖然藍特把";
 	line "我們關起來﹐是";
 	cont "出於好意﹗";
@@ -66,7 +60,6 @@
 
 @org $58, $6003:
 	init NAME_BLANK, PIC_1A;
-@org $58, $6006:
 	text "藍特哥哥好棒唷";
 	line "他的笛聲會讓人";
 	cont "跳舞唷﹗";
@@ -74,7 +67,6 @@
 
 @org $58, $602b:
 	init NAME_BLANK, PIC_16;
-@org $58, $602e:
 	text "真是可怕⋯⋯";
 	line "剛才看見一大群";
 	cont "老鼠﹐一起游向";

@@ -1,6 +1,5 @@
 @org $5a, $6087:
 	init NAME_BLANK, PIC_14;
-@org $5a, $608a:
 	text "嚇了一大跳﹗";
 	line "卡爾的家﹐剛才";
 	cont "發生了大爆炸﹐";
@@ -17,7 +16,6 @@
 
 @org $5a, $60d2:
 	init NAME_BLANK, PIC_16;
-@org $5a, $60d5:
 	text "卡爾的家就這麼";
 	line "磅～的一聲﹐被";
 	line "炸掉了﹗";

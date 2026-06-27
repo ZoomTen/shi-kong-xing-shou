@@ -1,6 +1,5 @@
 @org $66, $6655:
 	init NAME_LAKI, PIC_LAKI;
-@org $66, $6658:
 	text "哦～呵呵呵呵﹗";
 	line "閃電隊一向是個";
 	cont "愛好和平的正義";
@@ -17,7 +16,6 @@
 
 @org $66, $66d4:
 	init NAME_KULU, PIC_KULU;
-@org $66, $66d7:
 	text "嗯﹐和在下想的";
 	line "一點都沒有錯﹗";
 	done;

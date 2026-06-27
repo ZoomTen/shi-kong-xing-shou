@@ -1,6 +1,5 @@
 @org $5a, $5b68:
 	init NAME_54, PIC_20;
-@org $5a, $5b6b:
 	text "咭咭咭咭～";
 	line "到手了﹗";
 	para "終於到手了﹗";

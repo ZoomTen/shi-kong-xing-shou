@@ -1,6 +1,5 @@
 @org $6c, $405d:
 	init NAME_14, PIC_25;
-@org $6c, $4060:
 	text "需要妮可治療嗎";
 	line "";
 	db $f1, $5d; #"﹖"
@@ -9,7 +8,6 @@
 	getchoice String_1cc5;
 @org $6c, $4075:
 	init NAME_1A, PIC_25;
-@org $6c, $4078:
 	text "這裡是星獸膠囊";
 	line "";
 	db $f1, $39; #"存"
@@ -20,7 +18,6 @@
 	getchoice String_1cc5;
 @org $6c, $40a4:
 	init NAME_19, PIC_22;
-@org $6c, $40a7:
 	text "需要什麼服務嗎";
 	line "";
 	db $f1, $5d; #"﹖"

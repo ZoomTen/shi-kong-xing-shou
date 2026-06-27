@@ -1,6 +1,5 @@
 @org $6c, $56d4:
 	init NAME_4D, PIC_6C;
-@org $6c, $56d7:
 	text "席菈博士﹖";
 	cont "席菈博士有了突";
 	line "然的任務⚬";
@@ -18,7 +17,6 @@
 
 @org $6c, $5755:
 	init NAME_BALLOT, PIC_BALLOT_3;
-@org $6c, $5758:
 	text "真是糟糕﹗";
 	para "這下該怎麼辦";
 	line "才好﹗";
@@ -28,7 +26,6 @@
 
 @org $6c, $5785:
 	init NAME_BLANK, PIC_25;
-@org $6c, $5788:
 	text "您好﹐歡迎收看";
 	line "藍月現象後續報";
 	cont "";
@@ -38,7 +35,6 @@
 
 @org $6c, $57a7:
 	init NAME_BLANK, PIC_23;
-@org $6c, $57aa:
 	text "是的⚬";
 	line "繼發表藍月現象";
 	cont "的科學家﹐接著";
@@ -48,7 +44,6 @@
 
 @org $6c, $57e6:
 	init NAME_BLANK, PIC_25;
-@org $6c, $57e9:
 	text "是⋯⋯是的⚬";
 	para "在８４０小時";
 	db $f2, $21; #"後"
@@ -63,7 +58,6 @@
 
 @org $6c, $583f:
 	init NAME_BLANK, PIC_23;
-@org $6c, $5842:
 	text "是的⚬地球將面";
 	line "臨有始以來最大";
 	cont "的浩劫⚬";
@@ -75,7 +69,6 @@
 
 @org $6c, $589e:
 	init NAME_BLANK, PIC_12;
-@org $6c, $58a1:
 	text "啊⋯﹗﹗﹗";
 	line "怎麼會這樣﹗";
 	cont "";
@@ -85,7 +78,6 @@
 
 @org $6c, $58c1:
 	init NAME_BLANK, PIC_1B;
-@org $6c, $58c4:
 	text "我不要死﹗";
 	line "嗚～嗚～";
 	cont "";
@@ -95,20 +87,17 @@
 
 @org $6c, $58e3:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $58e6:
 	text "８４０個小時﹖";
 	done;
 
 @org $6c, $58f3:
 	init NAME_MITT, PIC_4A;
-@org $6c, $58f6:
 	text "呵呵呵～";
 	line "８４０個小時～";
 	done;
 
 @org $6c, $5909:
 	init NAME_MITT, PIC_07;
-@org $6c, $590c:
 	text "動作再不快一點";
 	line "";
 	db $f1, $51; #"的"
@@ -124,7 +113,6 @@
 
 @org $6c, $595f:
 	init NAME_BALLOT, PIC_BALLOT_5;
-@org $6c, $5962:
 	text "嗯﹗時間急迫﹐";
 	line "得趕緊向貝爾機";
 	para "";

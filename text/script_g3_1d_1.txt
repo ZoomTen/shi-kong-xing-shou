@@ -1,6 +1,5 @@
 @org $4f, $407f:
 	init NAME_14, PIC_25;
-@org $4f, $4082:
 	text "需要妮可治療嗎";
 	line "";
 	db $f1, $5d; #"﹖"

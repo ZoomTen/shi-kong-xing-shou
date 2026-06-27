@@ -1,6 +1,5 @@
 @org $66, $6d46:
 	init NAME_5A, PIC_18;
-@org $66, $6d49:
 	text "我曾經聽米特少";
 	line "爺說過﹐他有個";
 	cont "";

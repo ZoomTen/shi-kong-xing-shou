@@ -1,6 +1,5 @@
 @org $58, $5a0c:
 	init NAME_BLANK, PIC_20;
-@org $58, $5a0f:
 	text "小朋友～";
 	line "能源站現在很不";
 	cont "安全﹗";
@@ -11,7 +10,6 @@
 
 @org $58, $5a50:
 	init NAME_BLANK, PIC_20;
-@org $58, $5a53:
 	text "小朋友～";
 	line "裡面很⋯很⋯";
 	cont "";
@@ -31,7 +29,6 @@
 
 @org $58, $5a7d:
 	init NAME_BLANK, PIC_20;
-@org $58, $5a80:
 	text "眼⋯眼皮⋯好重";
 	line "ｚＺｚ～ＺｚＺ";
 	done;
