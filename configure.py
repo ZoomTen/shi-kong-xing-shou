@@ -13,6 +13,7 @@ objs = [
   "data/monsters/pics.o",
   "data/gfx.o",
   "data/maps.o",
+  "data/maps/tilesets.o",
   "data/text.o",
   "multicart.o",
   "audio.o"

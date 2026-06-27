@@ -1,3 +1,7 @@
+INCLUDE "constants.asm"
+
+SECTION "Tilesets", ROMX
+
 Tileset_1::
 	tileset_fragment TilesetFrag_1, $9000, $560
 	tileset_fragment TilesetFrag_2, $9570, $280

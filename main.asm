@@ -19,9 +19,6 @@ INCLUDE "engine/overworld/interaction.asm"
 INCLUDE "engine/overworld/process_input.asm"
 INCLUDE "engine/overworld/zones.asm"
 
-SECTION "Tilesets", ROMX
-INCLUDE "data/maps/tilesets.asm"
-
 SECTION "bank08", ROMX
 GotoOverworld:: ; unreferenced?
 	xor a ; GAMEMODE_OVERWORLD
