@@ -142,7 +142,10 @@ default compare
   face_re = re.compile(r"(gfx/faces/.+?)\.(?:bg|obj)\.(?:2bpp|gbcpal)$")
   interleave_gfx_re = re.compile(r"gfx/(character_set|battle|sprites|intro)/(.+)$")
   tmx_re = re.compile(r"data/maps/(metatiles|blocks|layouts)/(.+?)\.bin$")
-  txt_re = re.compile(r"text/(.+?)\.asm")
+  # text files may be relocated under an include dir (see override_deps),
+  # so tolerate an optional `lang_xx/` prefix.
+  inc_alt = "|".join(re.escape(d) for d in inc_dirs)
+  txt_re = re.compile(r"(?:(?:%s)/)?text/(.+?)\.asm" % inc_alt)
   
   # Here's the wrench in the regularity: faces are .ora, and they make
   # 2bpp & gbcpal for BOTH bg & obj.
