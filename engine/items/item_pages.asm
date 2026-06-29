@@ -57,7 +57,7 @@ DrawItemPageWithIcons::
 	ld a, [hli]
 	ld [wd0c3], a
 	push hl
-	farcall Func_025_4288
+	farcall PrintItemGridNumber
 	pop hl
 	pop de
 	ld a, [wd0c1]
@@ -131,7 +131,7 @@ DrawItemListPage::
 	jr z, .skip
 	ld [wd0c3], a
 	push hl
-	farcall Func_025_425d
+	farcall PrintItemListNumber
 	pop hl
 
 .skip

@@ -17,7 +17,7 @@ Menu_CheckCharacter::
 MenuText_Done::
 	ld a, [wd9d6]
 	and a
-	jr z, .asm_0b94
+	jr z, .done
 
 	xor a
 	ld [wd9d6], a
@@ -31,7 +31,7 @@ MenuText_Done::
 	push hl
 	jp Menu_CheckCharacter
 
-.asm_0b94
+.done
 	pop hl
 	ret
 
@@ -114,14 +114,14 @@ MenuText_ec::
 MenuText_e6::
 	ld a, [wBattleTurn]
 	and a
-	jr nz, .asm_0c22
+	jr nz, .enemyTurn
 	ld a, [wd9e2]
-	jr .asm_0c25
+	jr .gotValue
 
-.asm_0c22
+.enemyTurn
 	ld a, [wd9e3]
 
-.asm_0c25
+.gotValue
 	ld [wd9d8], a
 	farcall Func_026_4000
 	pop hl
@@ -192,14 +192,14 @@ Menu_CheckCharacter_Continue::
 	ld b, a
 	and $0f
 	cp $08
-	jr nc, .asm_0caf
+	jr nc, .useBase80
 	or $90
-	jr .asm_0cb1
+	jr .storeTileDestHigh
 
-.asm_0caf
+.useBase80
 	or $80
 
-.asm_0cb1
+.storeTileDestHigh
 	ld [wCharacterTileDest + 1], a
 	ld a, b
 	and $f0

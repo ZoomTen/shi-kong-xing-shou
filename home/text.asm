@@ -86,7 +86,7 @@ CheckCharacter_Continue::
 	ld [wTextDelayFrames], a
 	jr nz, .check_delay
 
-	call .Func_1a5f
+	call .QueueCharBGMapPointers
 	ld a, 1
 	ld [wCharacterBGMapTransferStatus], a
 	call DelayFrame
@@ -97,16 +97,16 @@ CheckCharacter_Continue::
 	ld [wTextDelayFrames], a
 	jp CheckCharacter
 
-.Func_1a5f:
+.QueueCharBGMapPointers:
 	lb hl, 5, 13
 	ld a, [wTextboxPos]
 	and a
-	jr z, .asm_1a6b
+	jr z, .gotBaseCoord
 
 ; top half of screen
 	lb hl, 5, 3
 
-.asm_1a6b:
+.gotBaseCoord:
 	ld a, [wTextLine]
 	add a
 	add l
@@ -653,13 +653,13 @@ _Text_e8::
 	set 0, a
 	res 1, a
 	ld [wEventFlags + 4], a
-	jr .asm_1dd4
+	jr .setCursorX
 
 .left_option1
 	ld a, [wEventFlags + 4] ; waste
 	res 0, a
 	ld [wEventFlags + 4], a
-	jr .asm_1dd4
+	jr .setCursorX
 
 .check_right
 	ldh a, [hJoypadPressed]
@@ -677,14 +677,14 @@ _Text_e8::
 ; option 0
 	set 0, a
 	ld [wEventFlags + 4], a
-	jr .asm_1dd4
+	jr .setCursorX
 
 .right_option1
 	set 1, a
 	res 0, a
 	ld [wEventFlags + 4], a
 
-.asm_1dd4:
+.setCursorX:
 	ld a, [wEventFlags + 4]
 	and %11
 ; a = a * $20
@@ -796,10 +796,10 @@ UpdateTextBGMap::
 	ld hl, $050d
 	ld a, [wTextboxPos]
 	and a
-	jr z, .asm_1e87
+	jr z, .gotRow1Coord
 
 	ld hl, $0503
-.asm_1e87
+.gotRow1Coord
 	call GetTextBGMapPointer
 	ld e, l
 	ld d, h
@@ -819,10 +819,10 @@ UpdateTextBGMap::
 	ld hl, $050f
 	ld a, [wTextboxPos]
 	and a
-	jr z, .asm_1eb9
+	jr z, .gotRow2Coord
 
 	ld hl, $0505
-.asm_1eb9
+.gotRow2Coord
 	call GetTextBGMapPointer
 	ld e, l
 	ld d, h
@@ -866,7 +866,7 @@ CopyTextRowToBuffer::
 StoreBGMapPointers::
 	push bc
 	push de
-.asm_1f00:
+.colLoop:
 	ld a, e
 	ld [hli], a
 	ld a, d
@@ -880,20 +880,20 @@ StoreBGMapPointers::
 	or b
 	ld e, a
 	dec c
-	jr nz, .asm_1f00
+	jr nz, .colLoop
 
 	pop de
 	ld a, $20
 	add e
 	ld e, a
-	jr nc, .asm_1f1f
+	jr nc, .nextRow
 
 	inc d
 	ld a, d
 	and $03
 	or $98
 	ld d, a
-.asm_1f1f
+.nextRow
 	pop bc
 	dec b
 	jr nz, StoreBGMapPointers
@@ -960,16 +960,16 @@ InitTextboxCursor::
 	ld [hl], $3f
 	ld a, [hBattleJumptableIndex]
 	and a
-	jr nz, .asm_1f81
+	jr nz, .cursorYBottom
 
 	ld a, [wTextboxPos]
 	and a
-	jr nz, .asm_1f83
+	jr nz, .storeCursorXTile
 
-.asm_1f81
+.cursorYBottom
 	ld [hl], $8f
 
-.asm_1f83
+.storeCursorXTile
 	inc hl
 	ld [hl], $98
 	inc hl
@@ -994,12 +994,12 @@ AnimateTextboxCursor::
 	dec hl
 	ld a, [hl]
 	cp 3
-	jr z, .asm_1fae
+	jr z, .setCursorTile4
 
 	ld [hl], 3
 	ret
 
-.asm_1fae
+.setCursorTile4
 	ld [hl], 4
 	ret
 

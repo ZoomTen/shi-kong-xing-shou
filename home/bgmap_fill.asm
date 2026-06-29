@@ -2,7 +2,7 @@ ClearBGMapBox::
 	ld a, 0
 	ldh [rVBK], a
 
-.asm_0ff3
+.clearRow
 	push hl
 	di
 
@@ -42,7 +42,7 @@ ClearBGMapBox::
 	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
-	jr nz, .asm_0ff3
+	jr nz, .clearRow
 
 	ld a, 0
 	ldh [rVBK], a
@@ -56,7 +56,7 @@ ClearBGMapBox_VRAM1::
 	ld a, 1
 	ldh [rVBK], a
 
-.asm_102b
+.clearRow
 	push hl
 	di
 
@@ -96,7 +96,7 @@ ClearBGMapBox_VRAM1::
 	ldh a, [hVRAMCopyWidth]
 	ld b, a
 	dec c
-	jr nz, .asm_102b
+	jr nz, .clearRow
 
 	ld a, 0
 	ldh [rVBK], a

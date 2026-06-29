@@ -1,6 +1,6 @@
 NextLivePartyMon::
 	ld de, wdd00
-.asm_0faf
+.nextSlot
 	ld a, [wSelectedOption]
 	inc a
 	and $07
@@ -14,11 +14,11 @@ NextLivePartyMon::
 	ld a, [hl]
 	and a
 	ret nz
-	jr .asm_0faf
+	jr .nextSlot
 
 PrevLivePartyMon::
 	ld de, wdd00
-.asm_0fc7
+.prevSlot
 	ld a, [wSelectedOption]
 	dec a
 	and $07
@@ -32,7 +32,7 @@ PrevLivePartyMon::
 	ld a, [hl]
 	and a
 	ret nz
-	jr .asm_0fc7
+	jr .prevSlot
 
 GetPartyMonPtr::
 	ld a, [wSelectedOption]
@@ -41,14 +41,14 @@ GetPartyMonPtrByIndex::
 GetMonStructPtr::
 	ld de, $16
 	and a
-	jr z, .asm_0fec
+	jr z, .gotPtr
 
-.asm_0fe8
+.loop
 	add hl, de
 	dec a
-	jr nz, .asm_0fe8
+	jr nz, .loop
 
-.asm_0fec
+.gotPtr
 	push hl
 	pop bc
 	ret

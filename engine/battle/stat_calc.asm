@@ -157,7 +157,7 @@ Func_025_41d1::
 Func_025_41ec::
 	ld a, b
 	cp 1
-	jr z, Func_025_4236
+	jr z, Divide32By16_Finish
 	ldh a, [hMathAccum]
 	sla a
 	ldh [hMathAccum], a
@@ -171,7 +171,7 @@ Func_025_41ec::
 	rl a
 	ldh [hMathAccum + 3], a
 	dec e
-	jr nz, Func_025_4222
+	jr nz, Divide32By16_StepDigit
 	ld a, 8
 	ld e, a
 	ldh a, [hMathOperand + 1]

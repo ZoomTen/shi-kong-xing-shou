@@ -7,13 +7,13 @@ GetBoxMonPtr::
 	and a
 	ret z
 
-.asm_12f3
+.advancePtr
 	ld hl, $13
 	add hl, bc
 	push hl
 	pop bc
 	dec a
-	jr nz, .asm_12f3
+	jr nz, .advancePtr
 	ret
 
 SRAMTest_Fast::
@@ -69,23 +69,23 @@ GetFirstEmptyPartySlot::
 	push hl
 	push de
 	ld hl, wPartyMons
-.asm_1334
+.nextSlot
 	ld a, [hl]
 	and a
-	jr z, .asm_1346
+	jr z, .foundEmpty
 
 	ld de, $16
 	add hl, de
 	ld a, l
 	cp $80
-	jr c, .asm_1334
+	jr c, .nextSlot
 
 	ld a, 1
 	pop de
 	pop hl
 	ret
 
-.asm_1346
+.foundEmpty
 	xor a
 	push hl
 	pop bc
@@ -222,10 +222,10 @@ ReloadMapObjects::
 	ld a, [wObjectEventPointer + 1]
 	ld h, a
 	ld de, wda00
-.asm_13e7
+.nextObject
 	ld a, [hl]
 	cp $88
-	jr z, .asm_13fa
+	jr z, .done
 
 	ld a, $ff
 	ld [de], a
@@ -237,9 +237,9 @@ ReloadMapObjects::
 	inc de
 	dec c
 	jr nz, .copy
-	jr .asm_13e7
+	jr .nextObject
 
-.asm_13fa
+.done
 	ld [de], a
 	pop af
 	rst Bankswitch

@@ -39,26 +39,26 @@ SetStatTile::
 	ld b, a
 	ld a, [wBattleTurn]
 	and a
-	jr nz, .asm_1197
+	jr nz, .enemyTurn
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_119d
+	jr nz, .attacker
 
-.asm_118f
+.defender
 	ld de, wd93c
 	ld a, [wd987]
-	jr .asm_11a3
+	jr .gotBase
 
-.asm_1197
+.enemyTurn
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_118f
+	jr nz, .defender
 
-.asm_119d
+.attacker
 	ld de, wd900
 	ld a, [wd983]
 
-.asm_11a3
+.gotBase
 	add a
 	ld l, a
 	add a
@@ -83,26 +83,26 @@ GetStatTile::
 	ld b, a
 	ld a, [wBattleTurn]
 	and a
-	jr nz, .asm_11ce
+	jr nz, .enemyTurn
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_11d4
+	jr nz, .attacker
 
-.asm_11c6
+.defender
 	ld de, wd93c
 	ld a, [wd987]
-	jr .asm_11da
+	jr .gotBase
 
-.asm_11ce
+.enemyTurn
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_11c6
+	jr nz, .defender
 
-.asm_11d4
+.attacker
 	ld de, wd900
 	ld a, [wd983]
 
-.asm_11da
+.gotBase
 	add a
 	ld l, a
 	add a
@@ -127,27 +127,27 @@ AddStatTile::
 	ld b, a
 	ld a, [wBattleTurn]
 	and a
-	jr nz, .asm_1205
+	jr nz, .enemyTurn
 
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_120b
+	jr nz, .attacker
 
-.asm_11fd
+.defender
 	ld de, wd93c
 	ld a, [wd987]
-	jr .asm_1211
+	jr .gotBase
 
-.asm_1205
+.enemyTurn
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_11fd
+	jr nz, .defender
 
-.asm_120b
+.attacker
 	ld de, wd900
 	ld a, [wd983]
 
-.asm_1211
+.gotBase
 	add a
 	ld l, a
 	add a
@@ -164,21 +164,21 @@ AddStatTile::
 	ld [hl], a
 	ld a, [wd9af]
 	cp 4
-	jr nc, .asm_1236
+	jr nc, .done
 
 	ld a, [hl]
 	cp $0e
-	jr nc, .asm_1234
+	jr nc, .clampHigh
 	cp $07
-	jr nc, .asm_1236
+	jr nc, .done
 
 	ld [hl], $07
-	jr .asm_1236
+	jr .done
 
-.asm_1234
+.clampHigh
 	ld [hl], $0d
 
-.asm_1236
+.done
 	pop bc
 	pop de
 	pop hl
@@ -188,8 +188,8 @@ SwapMathValueBytes::
 	push bc
 	ldh a, [hMathValue + 2]
 	and a
-	jr nz, .asm_1259
-	jr z, .asm_124c
+	jr nz, .done
+	jr z, .byte2Zero
 
 ; inaccessible
 	push af
@@ -200,10 +200,10 @@ SwapMathValueBytes::
 	pop bc
 	ret
 
-.asm_124c
+.byte2Zero
 	ldh a, [hMathValue + 1]
 	and a
-	jr z, .asm_1259
+	jr z, .done
 
 	ld b, a
 	ldh a, [hMathValue]
@@ -211,7 +211,7 @@ SwapMathValueBytes::
 	ld a, b
 	ldh [hMathValue], a
 
-.asm_1259
+.done
 	pop bc
 	ret
 
@@ -224,31 +224,31 @@ GetStatByte::
 	ld b, 0
 	ld a, [wBattleTurn]
 	and a
-	jr nz, .asm_127a
+	jr nz, .enemyTurn
 
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_1280
+	jr nz, .attacker
 
-.asm_1270
+.defender
 	ld a, [wd984]
 	ld l, a
 	ld a, [wd985]
 	ld h, a
-	jr .asm_1288
+	jr .gotPointer
 
-.asm_127a
+.enemyTurn
 	ld a, [wSideSelect]
 	and a
-	jr nz, .asm_1270
+	jr nz, .defender
 
-.asm_1280
+.attacker
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
 	ld h, a
 
-.asm_1288
+.gotPointer
 	add hl, bc
 	ld a, [hl]
 	pop bc

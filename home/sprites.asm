@@ -31,65 +31,65 @@ InitPlayerAnim::
 
 InitPartyAnimBuffers::
 	ld hl, wPartyMons
-.asm_0456:
+.scanLoop:
 	ld a, [hl]
 	cp $51
-	jr z, .asm_0481
+	jr z, .useBuffer0
 	cp $75
-	jr z, .asm_0486
+	jr z, .useBuffer1
 	cp $6c
-	jr z, .asm_048b
+	jr z, .useBuffer2
 	cp $5b
-	jr z, .asm_0490
+	jr z, .useBuffer3
 	cp $63
-	jr z, .asm_0495
+	jr z, .useBuffer4
 	cp $91
-	jr z, .asm_049a
+	jr z, .useBuffer5
 	cp $90
-	jr z, .asm_049f
+	jr z, .useBuffer6
 	cp $7e
-	jr z, .asm_04a4
+	jr z, .useBuffer7
 
 	ld bc, $16
 	add hl, bc
 	ld a, l
 	cp $80
 	ret nc
-	jr .asm_0456
+	jr .scanLoop
 
-.asm_0481
+.useBuffer0
 	ld de, wde00
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_0486
+.useBuffer1
 	ld de, wde16
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_048b
+.useBuffer2
 	ld de, wde2c
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_0490
+.useBuffer3
 	ld de, wde42
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_0495
+.useBuffer4
 	ld de, wde58
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_049a
+.useBuffer5
 	ld de, wde6e
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_049f
+.useBuffer6
 	ld de, wde84
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_04a4
+.useBuffer7
 	ld de, wde9a
-	jr .asm_04a9
+	jr .copyBuffers
 
-.asm_04a9:
+.copyBuffers:
 	push hl
 	ld bc, $16
 .copy1
@@ -103,7 +103,7 @@ InitPartyAnimBuffers::
 	jr nz, .copy1
 
 	pop de
-	ld bc, .unk_04d0
+	ld bc, .bufferPointers
 	ld a, [wcd24]
 	ld l, a
 	ld h, 0
@@ -124,7 +124,7 @@ InitPartyAnimBuffers::
 	jr nz, .copy2
 	ret
 
-.unk_04d0
+.bufferPointers
 	dw wde00
 	dw wde00
 	dw wde00
@@ -160,7 +160,7 @@ SetPartySlotStatus::
 
 ClearPartyAnimBuffer::
 	ld a, [wdcf3]
-	ld de, .unk_0521
+	ld de, .bufferPtrs
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -169,7 +169,7 @@ ClearPartyAnimBuffer::
 	ld h, [hl]
 	ld l, a
 	ld bc, $16
-.asm_0517
+.clearLoop
 	ld a, [hli]
 	ld [hl], 0
 	inc hl
@@ -177,10 +177,10 @@ ClearPartyAnimBuffer::
 	dec c
 	ld a, c
 	or b
-	jr nz, .asm_0517
+	jr nz, .clearLoop
 	ret
 
-.unk_0521
+.bufferPtrs
 	dw wde00
 	dw wde16
 	dw wde2c
@@ -195,7 +195,7 @@ GetPlayerFacingOffset::
 	ld b, a
 	ld a, [wPlayerScreenX]
 	ld c, a
-	ld de, .unk_054f
+	ld de, .facingOffsets
 	ld a, [wPlayerFacing]
 	ld l, a
 	ld h, 0
@@ -209,7 +209,7 @@ GetPlayerFacingOffset::
 	ld [wcd21], a
 	ret
 
-.unk_054f
+.facingOffsets
 	db $f0, $00
 	db $10, $00
 	db $00, $10
@@ -232,57 +232,57 @@ SpawnPlayerSprite::
 	ld [wPlayerFacing], a
 	ld a, [wd0e4]
 	and a
-	jr z, .asm_058a
+	jr z, .computeSpriteID
 
 	ld a, [wd0e4]
 	ld [wPlayerSpriteID], a
-	jp .asm_05e9 ; jr
+	jp .updateAndExit ; jr
 
-.asm_058a
+.computeSpriteID
 	ld a, [wPlayerChar]
 	cp 3
-	jr nz, .asm_05a0
+	jr nz, .charSpriteID
 	ld hl, wCharVariantFlags
 	ld a, [hl]
 	cp $80
-	jr nz, .asm_05a0
+	jr nz, .charSpriteID
 
 	ld a, $36
 	ld [wPlayerSpriteID], a
-	jr .asm_05a7
+	jr .checkFollower
 
-.asm_05a0
+.charSpriteID
 	ld a, [wPlayerChar]
 	add a
 	ld [wPlayerSpriteID], a
 
-.asm_05a7
+.checkFollower
 	ld a, [wdcea]
 	and a
-	jr z, .asm_05e9
+	jr z, .updateAndExit
 
 	cp 2
-	jr z, .asm_05b8
+	jr z, .followerMode2
 
 	ld a, 1
 	ld [wcd24], a
-	jr .asm_05ca
+	jr .setupAnim
 
-.asm_05b8
+.followerMode2
 	ld a, [wPlayerChar]
 	and a
-	jr z, .asm_05c5
+	jr z, .char0Variant
 
 	add a
 	inc a
 	ld [wcd24], a
-	jr .asm_05ca
+	jr .setupAnim
 
-.asm_05c5
+.char0Variant
 	ld a, $10
 	ld [wcd24], a
 
-.asm_05ca
+.setupAnim
 	ld a, [wPlayerFacing]
 	ld [wcd23], a
 	ld [wdcec], a
@@ -296,7 +296,7 @@ SpawnPlayerSprite::
 	ld a, 8
 	ld [wcd26], a
 
-.asm_05e9
+.updateAndExit
 	call _UpdatePlayerAnim
 	call UpdateSpriteAnimQueueFast
 	pop af

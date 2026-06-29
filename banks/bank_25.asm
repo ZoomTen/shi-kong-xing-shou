@@ -1,4 +1,4 @@
-Func_025_4000::
+ComputeScaledHP::
 	ld a, [wd3f0]
 	ld c, a
 	ld a, [wd3f1]
@@ -7,13 +7,13 @@ Func_025_4000::
 	add hl, bc
 	ld a, [hld]
 	and a
-	jr z, Func_025_4017
+	jr z, .highByteZero
 	ldh [hMathValue], a
 	ld a, [hl]
 	ldh [hMathValue + 1], a
-	jr Func_025_4020
+	jr .scaleAndDivide
 
-Func_025_4017::
+.highByteZero
 	ld a, [hl]
 	and a
 	ret z
@@ -22,7 +22,7 @@ Func_025_4017::
 	ld a, [hl]
 	ldh [hMathValue], a
 
-Func_025_4020::
+.scaleAndDivide
 	xor a
 	ldh [hMathValue + 2], a
 	ld a, $20
@@ -64,59 +64,59 @@ Func_025_4020::
 ScanParty::
 	ld bc, wPartyMons
 
-Func_025_406a::
+.loop
 	ld hl, 0
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, Func_025_407b
-	call Func_025_4087
+	jr z, .nextMon
+	call CheckPartyMonMatch
 	ld a, [wPartyScanType]
 	cp $ff
 	ret z
 
-Func_025_407b::
+.nextMon
 	ld hl, $16
 	add hl, bc
 	push hl
 	pop bc
 	ld a, l
 	cp $80
-	jr c, Func_025_406a
+	jr c, .loop
 	ret
 
-Func_025_4087::
-	ld de, unk_025_4737
+CheckPartyMonMatch::
+	ld de, SpeciesScanTypeTable
 	ld a, [bc]
 	ld l, a
 	ld h, 0
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, Func_025_4099
+	jr z, .checkElement14
 	ld a, [wPartyScanType]
 	cp [hl]
-	jr z, Func_025_40d3
+	jr z, .markFound
 
-Func_025_4099::
+.checkElement14
 	ld hl, $14
 	add hl, bc
 	ld a, [hli]
 	cp $11
-	jr c, Func_025_40b8
+	jr c, .checkElement15
 	cp $15
-	jr nc, Func_025_40b8
+	jr nc, .checkElement15
 	sub $f
 	ld [hFFD7], a
 	ld d, a
 	ld a, [wPartyScanType]
 	cp d
-	jr nz, Func_025_40b8
-	call Func_025_47fd
+	jr nz, .checkElement15
+	call IsSpeciesInCategoryList
 	and a
-	jr z, Func_025_40d3
+	jr z, .markFound
 
-Func_025_40b8::
+.checkElement15
 	ld hl, $15
 	add hl, bc
 	ld a, [hli]
@@ -130,36 +130,36 @@ Func_025_40b8::
 	ld a, [wPartyScanType]
 	cp d
 	ret nz
-	call Func_025_47fd
+	call IsSpeciesInCategoryList
 	and a
 	ret nz
 
-Func_025_40d3::
+.markFound
 	ld a, $ff
 	ld [wPartyScanType], a
 	ret
 
-Func_025_40d9::
+ComputeBattlerStat::
 	ld a, [wBattleTurn]
 	and a
-	jr nz, Func_025_40f0
+	jr nz, ComputeBattlerStat_TurnSet
 	ld a, [wSideSelect]
 	and a
-	jr nz, Func_025_40f6
+	jr nz, ComputeActiveBattlerStat
 
-Func_025_40e5::
+ComputeEnemyBattlerStat::
 	ld a, [wd984]
 	ld c, a
 	ld a, [wd985]
 	ld b, a
 	jp _ComputeStatValue
 
-Func_025_40f0::
+ComputeBattlerStat_TurnSet::
 	ld a, [wSideSelect]
 	and a
-	jr nz, Func_025_40e5
+	jr nz, ComputeEnemyBattlerStat
 
-Func_025_40f6::
+ComputeActiveBattlerStat::
 	ld a, [wd981]
 	ld c, a
 	ld a, [wd982]
@@ -168,13 +168,13 @@ Func_025_40f6::
 
 INCLUDE "engine/battle/stat_calc.asm"
 
-Func_025_4222::
+Divide32By16_StepDigit::
 	ld a, e
 	cp 1
-	jr nz, Func_025_4228
+	jr nz, Divide32By16_ShiftDivisor
 	dec b
 
-Func_025_4228::
+Divide32By16_ShiftDivisor::
 	ldh a, [hMathOperand]
 	srl a
 	ldh [hMathOperand], a
@@ -183,7 +183,7 @@ Func_025_4228::
 	ldh [hMathOperand + 1], a
 	jr Func_025_41d1
 
-Func_025_4236::
+Divide32By16_Finish::
 	ldh a, [hMathValue + 2]
 	ldh [hMathOperand], a
 	ldh a, [hMathAccum]
@@ -199,8 +199,8 @@ Func_025_4236::
 	pop hl
 	ret
 
-Func_025_424e::
-	ld de, Jumptable_025_42b3
+DispatchBattleScriptCommand::
+	ld de, BattleScriptCommandTable
 	ld a, [wBattleScriptByte]
 	ld l, a
 	ld h, 0
@@ -211,7 +211,7 @@ Func_025_424e::
 	ld l, a
 	jp hl
 
-Func_025_425d::
+PrintItemListNumber::
 	ld de, wd1f5
 	ld a, [wd0c3]
 	ld [de], a
@@ -233,7 +233,7 @@ Func_025_425d::
 	call _PrintNumber
 	ret
 
-Func_025_4288::
+PrintItemGridNumber::
 	ld de, wd1f5
 	ld a, [wd0c3]
 	ld [de], a
@@ -255,109 +255,109 @@ Func_025_4288::
 	call _PrintNumber
 	ret
 
-Jumptable_025_42b3::
-	dw Func_025_4373
-	dw Func_025_4377
-	dw Func_025_43a5
-	dw Func_025_43ac
-	dw Func_025_43e3
-	dw Func_025_4465
-	dw Func_025_4470
-	dw Func_025_447e
-	dw Func_025_4488
-	dw Func_025_44a0
-	dw Func_025_44b8
-	dw Func_025_4525
-	dw Func_025_4543
-	dw Func_025_4561
-	dw Func_025_4573
-	dw Func_025_4582
-	dw Func_025_459a
-	dw Func_025_45bf
-	dw Func_025_45d7
-	dw Func_025_462e
-	dw Func_025_4640
-	dw Func_025_4684
-	dw Func_025_4697
-	dw Func_025_46a8
-	dw Func_025_46b3
-	dw Func_025_4858
-	dw Func_025_489e
-	dw Func_025_48a6
-	dw Func_025_48d3
-	dw Func_025_4944
-	dw Func_025_4a32
-	dw Func_025_4a75
-	dw Func_025_4b0a
-	dw Func_025_4b7a
-	dw Func_025_4b9b
-	dw Func_025_4bae
-	dw Func_025_4bf1
-	dw Func_025_4c16
-	dw Func_025_4c6f
-	dw Func_025_4c95
-	dw Func_025_4cba
-	dw Func_025_4d25
-	dw Func_025_4d3d
-	dw Func_025_4d5c
-	dw Func_025_4d8f
-	dw Func_025_4dd8
-	dw Func_025_4e07
-	dw Func_025_4e5b
-	dw Func_025_4ea4
-	dw Func_025_4edb
-	dw Func_025_4efe
-	dw Func_025_4f10
-	dw Func_025_4f87
-	dw Func_025_4fc0
-	dw Func_025_4fd2
-	dw Func_025_501e
-	dw Func_025_5044
-	dw Func_025_5061
-	dw Func_025_50ad
-	dw Func_025_514f
-	dw Func_025_51e3
-	dw Func_025_527c
-	dw Func_025_52a3
-	dw Func_025_52f1
-	dw Func_025_532e
-	dw Func_025_533d
-	dw Func_025_535a
-	dw Func_025_5377
-	dw Func_025_53ae
-	dw Func_025_5464
-	dw Func_025_546f
-	dw Func_025_5487
-	dw Func_025_54b1
-	dw Func_025_54b7
-	dw Func_025_54bd
-	dw Func_025_54d0
-	dw Func_025_558b
-	dw Func_025_559e
-	dw Func_025_55b4
-	dw Func_025_55e1
-	dw Func_025_4b40
-	dw Func_025_487b
-	dw Func_025_5199
-	dw Func_025_4dad
-	dw Func_025_55e6
-	dw Func_025_5124
-	dw Func_025_5087
-	dw Func_025_50ef
-	dw Func_025_43fe
-	dw Func_025_442f
-	dw Func_025_44de
-	dw Func_025_444a
-	dw Func_025_4c3c
-	dw Func_025_4b5d
-	dw Func_025_5566
-	dw Func_025_50cc
+BattleScriptCommandTable::
+	dw BattleScriptCmd_Nop
+	dw BattleScriptCmd_PrintTextXY
+	dw BattleScriptCmd_PlaceTileAttr
+	dw BattleScriptCmd_VramCopy3
+	dw BattleScriptCmd_SetSpritePos
+	dw BattleScriptCmd_EndScript
+	dw BattleScriptCmd_InitMenuA
+	dw BattleScriptCmd_EndMenu
+	dw BattleScriptCmd_LcdOffLoadPal
+	dw BattleScriptCmd_LcdOnLoadPal
+	dw BattleScriptCmd_ResetScrollClr
+	dw LoadPaletteBufferFromScript
+	dw LoadObjPaletteBufferFromScript
+	dw LoadPartyMonPalette
+	dw LoadPartyMonPic
+	dw ClearAndPrintMonName
+	dw DrawPartyMonIcons
+	dw HideVirtualOAMSprites
+	dw PrintPartyMonHP
+	dw LoadAndApplyPartyMonPalette
+	dw RestoreMapScreen
+	dw SelectMenuOptionFromScript
+	dw BackupPaletteBuffer
+	dw UpdateVirtualOAM
+	dw DrawMonScanPanel
+	dw ClearScriptBox
+	dw ResetBattleScriptState
+	dw ClearScriptBoxAt
+	dw DrawPartyMonStatusIcons
+	dw DrawPartyMonStats
+	dw UpdatePartyScrollArrows
+	dw DrawPartyMonMoveList
+	dw DrawPartyMonEquipName
+	dw LoadMenuCursorEntry
+	dw CopySpritePos
+	dw SwapPartyMonData
+	dw LoadMenuEntryByIndex
+	dw DrawScriptMenuTextA
+	dw DrawScriptMenuTextB
+	dw RedrawItemList
+	dw DrawPageArrows
+	dw DrawSelectedItemName
+	dw ClearItemMenuVRAM
+	dw PrintItemQuantity
+	dw DrawItemTextRight
+	dw DrawPartyMonName
+	dw DrawPartyMonMoveNames
+	dw PrintEquipNameByIndex
+	dw DrawMonEquipDetail
+	dw LoadMonPicIfSeen
+	dw LoadMonBGPalette
+	dw DrawDexNamePage
+	dw PrintTwoRecordNumbers
+	dw LoadSelectedMonPalette
+	dw PrintNumberFromScriptPtr
+	dw DrawSelectedMonName
+	dw DrawDexMonIconType
+	dw DrawMonDescription
+	dw LoadPlayerCharGfxPrintText
+	dw PrintScriptNumberDouble
+	dw DrawSaveOverwriteDialog
+	dw FillVRAMFromScript
+	dw SetMenuCursorSprites
+	dw FarCopyToVRAMFromScript
+	dw EndBattleScript
+	dw DrawItemPageByFlag
+	dw ClearItemCategoryMarker
+	dw ClearAndDrawItemList
+	dw DrawItemPageArrows
+	dw PrintItemPrice
+	dw ClearAndDrawBoxMonList
+	dw LoadBoxMonPicAndPalette
+	dw PrintBoxMonHP
+	dw PrintBoxMonStats
+	dw DrawBoxMonStatsScreen
+	dw DrawBoxSlotNumbers
+	dw ClearMenuOptionList
+	dw ResetScrollAndClearBGMap
+	dw CountDexSeenAndOwned
+	dw ScriptCmdNop
+	dw DrawPartyMonTypeName
+	dw ClearScriptBoxVRAM1
+	dw PrintScriptNumberSingle
+	dw DrawItemTextLeft
+	dw SkipScriptIfMonField14Zero
+	dw DrawActiveMenuEntries
+	dw DrawPersonalityDescription
+	dw DrawSelectedOptionInfo
+	dw BattleScriptCmd_SetTwoSprites
+	dw BattleScriptCmd_LoadPalsA
+	dw BattleScriptCmd_LoadMenuOption
+	dw BattleScriptCmd_LoadPalsB
+	dw DrawScriptMenuTextC
+	dw DrawBoxMonTypeName
+	dw PrintBoxCursorNumber
+	dw LoadPlayerFacePic
 
-Func_025_4373::
+BattleScriptCmd_Nop::
 	call AdvanceBattleScript
 	ret
 
-Func_025_4377::
+BattleScriptCmd_PrintTextXY::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld e, a
@@ -379,11 +379,11 @@ Func_025_4377::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_43a5::
+BattleScriptCmd_PlaceTileAttr::
 	farcall Func_04a_5691
 	ret
 
-Func_025_43ac::
+BattleScriptCmd_VramCopy3::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld c, a
@@ -410,7 +410,7 @@ Func_025_43ac::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_43e3::
+BattleScriptCmd_SetSpritePos::
 	ld bc, wcde0
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
@@ -426,7 +426,7 @@ Func_025_43e3::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_43fe::
+BattleScriptCmd_SetTwoSprites::
 	ld bc, wcdf0
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
@@ -453,7 +453,7 @@ Func_025_43fe::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_442f::
+BattleScriptCmd_LoadPalsA::
 	farcall Func_00c_402b
 	farcall StageSelectedCharObjPal
 	ld hl, wcaf0
@@ -464,7 +464,7 @@ Func_025_442f::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_444a::
+BattleScriptCmd_LoadPalsB::
 	farcall Func_00c_4000
 	farcall Func_20_4048
 	ld hl, wcaf0
@@ -475,29 +475,29 @@ Func_025_444a::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4465::
+BattleScriptCmd_EndScript::
 	xor a
 	ld [wBattleScriptState], a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
 	ret
 
-Func_025_4470::
-	call Func_025_6078
-	call Func_025_605f
-	call Func_025_602a
+BattleScriptCmd_InitMenuA::
+	call CopyScreenRegionToBuffer
+	call PlaceScreenBufferTilemap
+	call ApplyScreenBufferAttrmap
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_447e::
+BattleScriptCmd_EndMenu::
 	xor a
 	ldh [hFFC5], a
 	ld [wBattleScriptState], a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4488::
+BattleScriptCmd_LcdOffLoadPal::
 	ld a, $80
 	ldh [rLCDC], a
 	ld hl, Palette_White
@@ -509,7 +509,7 @@ Func_025_4488::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_44a0::
+BattleScriptCmd_LcdOnLoadPal::
 	ld a, $c7
 	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
@@ -521,7 +521,7 @@ Func_025_44a0::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_44b8::
+BattleScriptCmd_ResetScrollClr::
 	ldh a, [hSCX]
 	ld [wd0bc], a
 	ldh a, [hSCXHigh]
@@ -540,10 +540,10 @@ Func_025_44b8::
 	call ClearBGMap0
 	ret
 
-Func_025_44de::
+BattleScriptCmd_LoadMenuOption::
 	ld a, [wPlayerChar]
 	ld [wSelectedOption], a
-	ld de, MenuOptionTable_025_4505
+	ld de, CharObjectPosTable
 	ld a, [wSelectedOption]
 	ld l, a
 	ld h, 0
@@ -566,11 +566,11 @@ Func_025_44de::
 	ld [wBattleScriptByte], a
 	ret
 
-MenuOptionTable_025_4505::
+CharObjectPosTable::
 	dw $1420
 
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
-unk_025_4507::
+MenuOptionCoords::
 	dw $1818
 	dw $3420
 	dw $3818
@@ -587,7 +587,7 @@ unk_025_4507::
 	dw $7448
 	dw $7840
 
-Func_025_4525::
+LoadPaletteBufferFromScript::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	push af
@@ -603,7 +603,7 @@ Func_025_4525::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4543::
+LoadObjPaletteBufferFromScript::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	push af
@@ -619,7 +619,7 @@ Func_025_4543::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4561::
+LoadPartyMonPalette::
 	call GetPartyMonPtr
 	ld a, [bc]
 	ld [wd9d9], a
@@ -628,7 +628,7 @@ Func_025_4561::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4573::
+LoadPartyMonPic::
 	call GetPartyMonPtr
 	ld a, [bc]
 	ld [wd9d9], a
@@ -637,7 +637,7 @@ Func_025_4573::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4582::
+ClearAndPrintMonName::
 	ld bc, $c0
 	ld hl, $9620
 	xor a
@@ -648,16 +648,16 @@ Func_025_4582::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_459a::
+DrawPartyMonIcons::
 	xor a
 	ld [wd0c3], a
 	ld bc, wPartyMons
 
-Func_025_45a1::
+.loop
 	ld a, [bc]
 	and a
-	jr z, Func_025_45ba
-	call Func_025_585a
+	jr z, .done
+	call DrawPartyMonIconBox
 	ld a, [wd0c3]
 	inc a
 	ld [wd0c3], a
@@ -667,33 +667,33 @@ Func_025_45a1::
 	ld b, h
 	ld a, c
 	cp $80
-	jr c, Func_025_45a1
+	jr c, .loop
 
-Func_025_45ba::
+.done
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_45bf::
+HideVirtualOAMSprites::
 	ld hl, wc000
 	ld bc, $28
 	ld de, 4
 
-Func_025_45c8::
+.loop
 	ld a, $a0
 	ld [hl], a
 	add hl, de
 	dec c
-	jr nz, Func_025_45c8
+	jr nz, .loop
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_025_45d7::
+PrintPartyMonHP::
 	call GetPartyMonPtr
 
-Func_025_45da::
+PrintMonCurAndMaxHP::
 	push bc
 	inc bc
 	inc bc
@@ -739,7 +739,7 @@ Func_025_45da::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_462e::
+LoadAndApplyPartyMonPalette::
 	call GetPartyMonPtr
 	ld a, [bc]
 	ld [wd9d9], a
@@ -748,7 +748,7 @@ Func_025_462e::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4640::
+RestoreMapScreen::
 	ld a, [wd0bc]
 	ldh [hSCX], a
 	ld a, [wd0bd]
@@ -769,7 +769,7 @@ Func_025_4640::
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	call Func_025_57a0
+	call LoadScreenAttrmap
 	ld hl, wScreenRowBuffer
 	ld de, wPaletteBuffer
 	ld bc, $80
@@ -778,17 +778,17 @@ Func_025_4640::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4684::
+SelectMenuOptionFromScript::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ldh [hFFC5], a
-	call Func_025_572f
+	call LoadSelectedMenuEntry
 	xor a
 	ld [wBattleScriptState], a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4697::
+BackupPaletteBuffer::
 	ld hl, wPaletteBuffer
 	ld de, wScreenRowBuffer
 	ld bc, $80
@@ -797,13 +797,13 @@ Func_025_4697::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_46a8::
+UpdateVirtualOAM::
 	farcall _BuildVirtualOAM
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_46b3::
+DrawMonScanPanel::
 	xor a
 	ld [wd0c1], a
 	ld [wd0c0], a
@@ -811,16 +811,16 @@ Func_025_46b3::
 	ld [wd9d8], a
 	ldh a, [hBattleJumptableIndex]
 	and a
-	jr nz, Func_025_46d0
+	jr nz, .placePanel
 	call GetPartyMonPtr
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
 	cp $bf
-	jr z, Func_025_46d0
+	jr z, .placePanel
 
-Func_025_46d0::
-	ld de, Pointers_025_4848
+.placePanel
+	ld de, BoxTilemapPointers
 	ld a, [wd9d8]
 	ld l, a
 	ld h, 0
@@ -846,7 +846,7 @@ Func_025_46d0::
 	ld h, a
 	ld [wd0b9], a
 	call PlaceTilemap
-	ld de, Pointers_025_4850
+	ld de, BoxAttrmapPointers
 	ld a, [wd9d8]
 	ld l, a
 	ld h, 0
@@ -874,8 +874,8 @@ Func_025_46d0::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_471d:: ; unreferenced?
-	ld de, unk_025_4737
+ShowSpeciesScanTypeLabel:: ; unreferenced?
+	ld de, SpeciesScanTypeTable
 	ld a, [bc]
 	ld l, a
 	ld h, 0
@@ -885,16 +885,16 @@ Func_025_471d:: ; unreferenced?
 	ret z
 	dec a
 	ld [hFFD7], a
-	jp Func_025_47bb
+	jp PrintScanTypeLabel
 
-Func_025_472f::
+AdvanceScanDisplayLine::
 	ld a, [wd9d8]
 	inc a
 	ld [wd9d8], a
 	ret
 
 ; TODO: unk_ - lookup table indexed by bc
-unk_025_4737::
+SpeciesScanTypeTable::
 	db $0
 	db $0
 	db $0
@@ -1007,7 +1007,7 @@ unk_025_4737::
 	db $0
 	db $0
 
-Func_025_47a6:: ; unreferenced?
+ShowMonScanType1:: ; unreferenced?
 	ld hl, $14
 	add hl, bc
 	ld a, [hli]
@@ -1017,31 +1017,31 @@ Func_025_47a6:: ; unreferenced?
 	ret nc
 	sub $f
 	ld [hFFD7], a
-	call Func_025_47fd
+	call IsSpeciesInCategoryList
 	and a
 	ret nz
 
-Func_025_47bb::
+PrintScanTypeLabel::
 	ld a, [hFFD7]
-	call Func_025_574c
+	call PrintMenuStringByIndex
 
-Func_025_47c1::
+AdvanceAndRecordScanType::
 	ld a, [wd9d8]
 	inc a
 	ld [wd9d8], a
 	ld a, [wd0c1]
 	and a
-	jr z, Func_025_47d5
+	jr z, .recordSlot1
 	ld a, [hFFD7]
 	ld [wd0c0], a
 	ret
 
-Func_025_47d5::
+.recordSlot1
 	ld a, [hFFD7]
 	ld [wd0c1], a
 	ret
 
-Func_025_47dc:: ; unreferenced?
+ShowMonScanType2:: ; unreferenced?
 	ld hl, $15
 	add hl, bc
 	ld a, [hli]
@@ -1051,28 +1051,28 @@ Func_025_47dc:: ; unreferenced?
 	ret nc
 	sub $f
 	ld [hFFD7], a
-	call Func_025_47fd
+	call IsSpeciesInCategoryList
 	and a
 	ret nz
-	jp Func_025_47bb
+	jp PrintScanTypeLabel
 
-Func_025_47f4:: ; unreferenced?
+PrintScanTypeLabelAlt:: ; unreferenced?
 	ld a, [hFFD7]
-	call Func_025_574c
-	jp Func_025_47c1
+	call PrintMenuStringByIndex
+	jp AdvanceAndRecordScanType
 
-Func_025_47fd::
+IsSpeciesInCategoryList::
 	push hl
 	cp 5
-	jr nz, Func_025_480b
+	jr nz, .loadList
 	push af
 	ld a, [wdce4]
 	cp 1
-	jr nz, Func_025_4822
+	jr nz, .cat5Bail
 	pop af
 
-Func_025_480b::
-	ld de, Pointers_025_482a
+.loadList
+	ld de, CategorySpeciesLists
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -1083,66 +1083,66 @@ Func_025_480b::
 	ld a, [bc]
 	ld e, a
 
-Func_025_4818::
+.scanLoop
 	ld a, [hli]
 	cp $ff
-	jr z, Func_025_4823
+	jr z, .notInList
 	cp e
-	jr z, Func_025_4827
-	jr Func_025_4818
+	jr z, .inList
+	jr .scanLoop
 
-Func_025_4822::
+.cat5Bail
 	pop af
 
-Func_025_4823::
+.notInList
 	ld a, 1
 	pop hl
 	ret
 
-Func_025_4827::
+.inList
 	xor a
 	pop hl
 	ret
 
-Pointers_025_482a::
-	dw unk_025_4836
-	dw unk_025_483e
-	dw unk_025_4840
-	dw unk_025_4842
-	dw unk_025_4844
-	dw unk_025_4846
+CategorySpeciesLists::
+	dw ScanMatchList0
+	dw ScanMatchList1
+	dw ScanMatchList2
+	dw ScanMatchList3
+	dw ScanMatchList4
+	dw ScanMatchList5
 
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_025_4836::
+ScanMatchList0::
 	db $2, $3, $5, $6, $7, $9, $a, -1
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_025_483e::
+ScanMatchList1::
 	db $d, -1
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_025_4840::
+ScanMatchList2::
 	db $22, -1
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_025_4842::
+ScanMatchList3::
 	db $22, -1
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_025_4844::
+ScanMatchList4::
 	db $30, -1
 ; TODO: unk_ - record pointed to by a dw pointer-table
-unk_025_4846::
+ScanMatchList5::
 	db $22, -1
 
-Pointers_025_4848::
-	dw Tilemap_025_61c4
-	dw Tilemap_025_61c4
-	dw Tilemap_025_6220
-	dw Tilemap_025_62a8
-Pointers_025_4850::
-	dw Tilemap_025_61f2
-	dw Tilemap_025_61f2
-	dw Tilemap_025_6264
-	dw Tilemap_025_62fc
+BoxTilemapPointers::
+	dw Tilemap_MonInfoBox7x6
+	dw Tilemap_MonInfoBox7x6
+	dw Tilemap_MonInfoBox8x8
+	dw Tilemap_MonInfoBox8x10
+BoxAttrmapPointers::
+	dw AttrMap_MonInfoBox7x6
+	dw AttrMap_MonInfoBox7x6
+	dw AttrMap_MonInfoBox8x8
+	dw AttrMap_MonInfoBox8x10
 
-Func_025_4858::
+ClearScriptBox::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld c, a
@@ -1160,7 +1160,7 @@ Func_025_4858::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_487b::
+ClearScriptBoxVRAM1::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld c, a
@@ -1178,13 +1178,13 @@ Func_025_487b::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_489e::
+ResetBattleScriptState::
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wBattleScriptState], a
 	ret
 
-Func_025_48a6::
+ClearScriptBoxAt::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld c, a
@@ -1207,47 +1207,47 @@ Func_025_48a6::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_48d3::
+DrawPartyMonStatusIcons::
 	call GetPartyMonPtr
 	ld hl, $13
 	add hl, bc
 	ld a, [hl]
 	cp $bf
-	jr z, Func_025_492f
+	jr z, EndStatusIconCmd
 	ld [wd9d8], a
 	bit 0, a
-	call nz, Func_025_4901
+	call nz, DrawStatusIconBit0
 	ld a, [wd9d8]
 	bit 1, a
-	call nz, Func_025_4909
+	call nz, DrawStatusIconBit1
 	ld a, [wd9d8]
 	bit 4, a
-	call nz, Func_025_4911
+	call nz, DrawStatusIconBit4
 	ld a, [wd9d8]
 	bit 5, a
-	call nz, Func_025_4919
-	jr Func_025_492f
+	call nz, DrawStatusIconBit5
+	jr EndStatusIconCmd
 
-Func_025_4901::
-	ld de, Tilemap_025_4934
+DrawStatusIconBit0::
+	ld de, StatusIconTilesBit0
 	ld hl, $0f0c
-	jr Func_025_491f
+	jr PlaceStatusIcon
 
-Func_025_4909::
-	ld de, Tilemap_025_4938
+DrawStatusIconBit1::
+	ld de, StatusIconTilesBit1
 	ld hl, $110c
-	jr Func_025_491f
+	jr PlaceStatusIcon
 
-Func_025_4911::
-	ld de, Tilemap_025_493c
+DrawStatusIconBit4::
+	ld de, StatusIconTilesBit4
 	ld hl, $0f0e
-	jr Func_025_491f
+	jr PlaceStatusIcon
 
-Func_025_4919::
-	ld de, Tilemap_025_4940
+DrawStatusIconBit5::
+	ld de, StatusIconTilesBit5
 	ld hl, $110e
 
-Func_025_491f::
+PlaceStatusIcon::
 	call GetTextBGMapPointer
 	ld bc, $0202
 	ld a, 2
@@ -1256,24 +1256,24 @@ Func_025_491f::
 	call PlaceTilemap
 	ret
 
-Func_025_492f::
+EndStatusIconCmd::
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Tilemap_025_4934::
+StatusIconTilesBit0::
 	db $2e, $2f, $36, $37
-Tilemap_025_4938::
+StatusIconTilesBit1::
 	db $32, $33, $3a, $3b
-Tilemap_025_493c::
+StatusIconTilesBit4::
 	db $30, $31, $38, $39
-Tilemap_025_4940::
+StatusIconTilesBit5::
 	db $34, $35, $3c, $3d
 
-Func_025_4944::
+DrawPartyMonStats::
 	call GetPartyMonPtr
 
-Func_025_4947::
+PrintMonStats::
 	push bc
 	ld a, 1
 	ld [wd9d7], a
@@ -1386,19 +1386,19 @@ Func_025_4947::
 	ld [wd0fd], a
 	call _PrintNumber
 	pop bc
-	call Func_025_561b
+	call PrintExpToNextLevel
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4a32::
+UpdatePartyScrollArrows::
 	ld hl, wcde0
 	ld [hl], $a0
 	ld hl, wcdf0
 	ld [hl], $a0
 	ld a, [wSelectedOption]
 	and a
-	jr z, Func_025_4a65
+	jr z, .showDownArrow
 	ld hl, wcdf0
 	ld a, $90
 	ld [hli], a
@@ -1408,7 +1408,7 @@ Func_025_4a32::
 	ld [hli], a
 	ld a, [wSelectedOption]
 	cp 5
-	jr z, Func_025_4a70
+	jr z, .done
 	push af
 	inc a
 	ld [wSelectedOption], a
@@ -1417,9 +1417,9 @@ Func_025_4a32::
 	ld [wSelectedOption], a
 	ld a, [bc]
 	and a
-	jr z, Func_025_4a70
+	jr z, .done
 
-Func_025_4a65::
+.showDownArrow
 	ld hl, wcde0
 	ld a, $90
 	ld [hli], a
@@ -1427,12 +1427,12 @@ Func_025_4a65::
 	ld [hli], a
 	ld [hl], 1
 
-Func_025_4a70::
+.done
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4a75::
+DrawPartyMonMoveList::
 	ld bc, $0400
 	ld hl, $8a00
 	xor a
@@ -1440,16 +1440,16 @@ Func_025_4a75::
 	call DelayFrame
 	call GetPartyMonPtr
 
-Func_025_4a85::
+DrawMonMoveList::
 	xor a
 	ld [wd0c0], a
 	ld hl, 7
 	add hl, bc
 
-Func_025_4a8d::
+.loop
 	ld a, [hli]
 	and a
-	jr z, Func_025_4b05
+	jr z, .done
 	ld [wd9d8], a
 	ld a, [hli]
 	ld [wd0c3], a
@@ -1498,14 +1498,14 @@ Func_025_4a8d::
 	inc a
 	ld [wd0c0], a
 	cp 4
-	jr nz, Func_025_4a8d
+	jr nz, .loop
 
-Func_025_4b05::
+.done
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4b0a::
+DrawPartyMonEquipName::
 	ld bc, $0100
 	ld hl, $8a00
 	xor a
@@ -1530,7 +1530,7 @@ Func_025_4b0a::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4b40::
+DrawPartyMonTypeName::
 	ld bc, $40
 	ld hl, $8790
 	xor a
@@ -1544,7 +1544,7 @@ Func_025_4b40::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4b5d::
+DrawBoxMonTypeName::
 	ld bc, $40
 	ld hl, $8790
 	xor a
@@ -1558,7 +1558,7 @@ Func_025_4b5d::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4b7a::
+LoadMenuCursorEntry::
 	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
@@ -1582,7 +1582,7 @@ Func_025_4b7a::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4b9b::
+CopySpritePos::
 	ld hl, wcde0
 	ld de, wcdf0
 	ld a, [hli]
@@ -1597,7 +1597,7 @@ Func_025_4b9b::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4bae::
+SwapPartyMonData::
 	ld a, [wSelectedOption]
 	push af
 	ld a, [wd9d9]
@@ -1609,12 +1609,12 @@ Func_025_4bae::
 	ld hl, wd100
 	ld d, $16
 
-Func_025_4bc5::
+.copyMonBToTemp
 	ld a, [bc]
 	ld [hli], a
 	inc bc
 	dec d
-	jr nz, Func_025_4bc5
+	jr nz, .copyMonBToTemp
 	call GetPartyMonPtr
 	push bc
 	pop hl
@@ -1622,29 +1622,29 @@ Func_025_4bc5::
 	push hl
 	ld d, $16
 
-Func_025_4bd4::
+.copyMonAToB
 	ld a, [hli]
 	ld [bc], a
 	inc bc
 	dec d
-	jr nz, Func_025_4bd4
+	jr nz, .copyMonAToB
 	pop bc
 	ld hl, wd100
 	ld d, $16
 
-Func_025_4be0::
+.copyTempToMonA
 	ld a, [hli]
 	ld [bc], a
 	inc bc
 	dec d
-	jr nz, Func_025_4be0
+	jr nz, .copyTempToMonA
 	ld a, [wd9d9]
 	ld [wSelectedOption], a
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4bf1::
+LoadMenuEntryByIndex::
 	call AdvanceBattleScript
 	ld de, wd1a0
 	ld a, [wBattleScriptByte]
@@ -1669,7 +1669,7 @@ Func_025_4bf1::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4c16::
+DrawScriptMenuTextA::
 	ld bc, $0480
 	ld hl, $8a00
 	xor a
@@ -1686,7 +1686,7 @@ Func_025_4c16::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4c3c::
+DrawScriptMenuTextC::
 	ld bc, $0200
 	ld hl, $9600
 	xor a
@@ -1708,7 +1708,7 @@ Func_025_4c3c::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4c6f::
+DrawScriptMenuTextB::
 	ld bc, $0240
 	ld hl, $8d80
 	xor a
@@ -1725,7 +1725,7 @@ Func_025_4c6f::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4c95::
+RedrawItemList::
 	ld bc, $0400
 	ld hl, $9400
 	xor a
@@ -1741,37 +1741,37 @@ Func_025_4c95::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4cba::
+DrawPageArrows::
 	ld a, [wSelectedPage]
 	and a
-	jr z, Func_025_4cca
+	jr z, .noLeftArrow
 	ld hl, $996f
 	call WaitVRAM_STAT
 	ld [hl], $e8
-	jr Func_025_4cd2
+	jr .checkRightArrow
 
-Func_025_4cca::
+.noLeftArrow
 	ld hl, $996f
 	call WaitVRAM_STAT
 	ld [hl], 0
 
-Func_025_4cd2::
+.checkRightArrow
 	ld a, [wSelectedPage]
 	inc a
-	call Func_025_4d12
+	call GetItemListPageByte
 	and a
-	jr z, Func_025_4ce6
+	jr z, .noRightArrow
 	ld hl, $9972
 	call WaitVRAM_STAT
 	ld [hl], $e9
-	jr Func_025_4cee
+	jr .printPageNumber
 
-Func_025_4ce6::
+.noRightArrow
 	ld hl, $9972
 	call WaitVRAM_STAT
 	ld [hl], 0
 
-Func_025_4cee::
+.printPageNumber
 	ld de, wd1f5
 	ld a, [wSelectedPage]
 	inc a
@@ -1789,13 +1789,13 @@ Func_025_4cee::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4d12::
+GetItemListPageByte::
 	ld l, a
 	add a
 	add a
 	add l
 
-Func_025_4d16::
+GetItemListByte::
 	ld l, a
 	ld h, 0
 	ld a, [wd1fe]
@@ -1807,7 +1807,7 @@ Func_025_4d16::
 	ld a, [hl]
 	ret
 
-Func_025_4d25::
+DrawSelectedItemName::
 	ld bc, $0480
 	ld hl, $8a00
 	xor a
@@ -1818,7 +1818,7 @@ Func_025_4d25::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4d3d::
+ClearItemMenuVRAM::
 	ld bc, $0400
 	ld hl, $9400
 	xor a
@@ -1833,7 +1833,7 @@ Func_025_4d3d::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4d5c::
+PrintItemQuantity::
 	ld a, [wItemQty]
 	ld de, wd1f5
 	ld [de], a
@@ -1858,7 +1858,7 @@ Func_025_4d5c::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4d8f::
+DrawItemTextRight::
 	ld bc, $0480
 	ld hl, $8a00
 	xor a
@@ -1870,7 +1870,7 @@ Func_025_4d8f::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4dad::
+DrawItemTextLeft::
 	ld bc, $0400
 	ld hl, $9400
 	xor a
@@ -1887,7 +1887,7 @@ Func_025_4dad::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4dd8::
+DrawPartyMonName::
 	call GetPartyMonPtr
 	ld bc, $0500
 	ld hl, $8a80
@@ -1906,7 +1906,7 @@ Func_025_4dd8::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4e07::
+DrawPartyMonMoveNames::
 	ld bc, $0400
 	ld hl, $8980
 	xor a
@@ -1918,10 +1918,10 @@ Func_025_4e07::
 	ld hl, 7
 	add hl, bc
 
-Func_025_4e1f::
+.moveLoop
 	ld a, [hli]
 	and a
-	jr z, Func_025_4e56
+	jr z, .done
 	ld [wd9d8], a
 	ld a, [hli]
 	ld [wd0c3], a
@@ -1945,14 +1945,14 @@ Func_025_4e1f::
 	inc a
 	ld [wd0c0], a
 	cp 4
-	jr nz, Func_025_4e1f
+	jr nz, .moveLoop
 
-Func_025_4e56::
+.done
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4e5b::
+PrintEquipNameByIndex::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [wd9d8], a
@@ -1987,7 +1987,7 @@ Func_025_4e5b::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4ea4::
+DrawMonEquipDetail::
 	ld bc, $0480
 	ld hl, $8a00
 	xor a
@@ -2015,7 +2015,7 @@ Func_025_4ea4::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4edb::
+LoadMonPicIfSeen::
 	ld de, wd7cb
 	ld a, [wd9d8]
 	ld l, a
@@ -2023,23 +2023,23 @@ Func_025_4edb::
 	add hl, de
 	ld a, [hl]
 	and a
-	jr nz, Func_025_4eef
+	jr nz, .seen
 	xor a
 	ld [wd9d9], a
-	jr Func_025_4ef6
+	jr .loadPic
 
-Func_025_4eef::
+.seen
 	ld a, [wd9d8]
 	inc a
 	ld [wd9d9], a
 
-Func_025_4ef6::
+.loadPic
 	call LoadMonPic
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4efe::
+LoadMonBGPalette::
 	ld a, [wd9d8]
 	inc a
 	ld [wd9d9], a
@@ -2048,7 +2048,7 @@ Func_025_4efe::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4f10::
+DrawDexNamePage::
 	ld bc, $0600
 	ld hl, $8800
 	xor a
@@ -2057,22 +2057,22 @@ Func_025_4f10::
 	ld a, [wSelectedPage]
 	ld hl, wd7cb
 	ld de, 8
-	call Func_025_4f7f
+	call AddDEToHLNTimes
 	xor a
 	ld [wd0c1], a
 
-Func_025_4f2d::
+.dexLoop
 	ld a, [hli]
 	push hl
 	and a
-	jr nz, Func_025_4f38
+	jr nz, .notBlank
 	xor a
 	ld [wd0c0], a
-	jr Func_025_4f68
+	jr .printNameNext
 
-Func_025_4f38::
+.notBlank
 	cp 2
-	jr nz, Func_025_4f62
+	jr nz, .seen
 	ld a, l
 	sub $cb
 	ld [wd0c0], a
@@ -2091,38 +2091,38 @@ Func_025_4f38::
 	ldh [hVRAMCopyHeight], a
 	ld e, $38
 	call IncFillBoxVRAM
-	jr Func_025_4f68
+	jr .printNameNext
 
-Func_025_4f62::
+.seen
 	ld a, l
 	sub $cb
 	ld [wd0c0], a
 
-Func_025_4f68::
+.printNameNext
 	farcall asm_026_4680
 	pop hl
 	ld a, [wd0c1]
 	inc a
 	ld [wd0c1], a
 	cp 8
-	jr c, Func_025_4f2d
+	jr c, .dexLoop
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4f7f::
+AddDEToHLNTimes::
 	and a
-	jr z, Func_025_4f86
+	jr z, .done
 
-Func_025_4f82::
+.loop
 	add hl, de
 	dec a
-	jr nz, Func_025_4f82
+	jr nz, .loop
 
-Func_025_4f86::
+.done
 	ret
 
-Func_025_4f87::
+PrintTwoRecordNumbers::
 	ld de, wd0d5
 	ld hl, $99e5
 	ld a, $a
@@ -2147,7 +2147,7 @@ Func_025_4f87::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4fc0::
+LoadSelectedMonPalette::
 	ld a, [wd9d8]
 	inc a
 	ld [wd9d9], a
@@ -2156,7 +2156,7 @@ Func_025_4fc0::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_4fd2::
+PrintNumberFromScriptPtr::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld e, a
@@ -2194,7 +2194,7 @@ Func_025_4fd2::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_501e::
+DrawSelectedMonName::
 	ld bc, $c0
 	ld hl, $9720
 	xor a
@@ -2211,7 +2211,7 @@ Func_025_501e::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5044::
+DrawDexMonIconType::
 ; Used in dex
 	ld bc, $40
 	ld hl, $93c0
@@ -2226,7 +2226,7 @@ Func_025_5044::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5061::
+DrawMonDescription::
 	ld bc, $06c0
 	ld hl, $8800
 	xor a
@@ -2243,7 +2243,7 @@ Func_025_5061::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5087::
+DrawPersonalityDescription::
 	ld bc, $0480
 	ld hl, $8800
 	xor a
@@ -2260,7 +2260,7 @@ Func_025_5087::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_50ad::
+LoadPlayerCharGfxPrintText::
 	farcall Func_01f_4028
 	ld hl, wMenuTextBuffer
 	ld a, $70
@@ -2274,7 +2274,7 @@ Func_025_50ad::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_50cc::
+LoadPlayerFacePic::
 	farcall Func_20_407b
 	ld hl, wcaf0
 	ld c, $80
@@ -2293,7 +2293,7 @@ Func_025_50cc::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_50ef::
+DrawSelectedOptionInfo::
 	farcall Func_01f_40b7
 	ld hl, wPaletteBuffer
 	ld c, $80
@@ -2313,11 +2313,11 @@ Func_025_50ef::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5124::
+DrawActiveMenuEntries::
 	xor a
 	ld [wBattleScriptByte], a
 
-Func_025_5128::
+.loop
 	ld de, wdd00
 	ld a, [wBattleScriptByte]
 	ld l, a
@@ -2328,20 +2328,20 @@ Func_025_5128::
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, Func_025_513f
+	jr z, .next
 	farcall Func_01f_405d
 
-Func_025_513f::
+.next
 	ld a, [wBattleScriptByte]
 	inc a
 	ld [wBattleScriptByte], a
 	cp 8
-	jr c, Func_025_5128
+	jr c, .loop
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_514f::
+PrintScriptNumberDouble::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [wd8fe], a
@@ -2375,7 +2375,7 @@ Func_025_514f::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5199::
+PrintScriptNumberSingle::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [wd8fe], a
@@ -2409,10 +2409,10 @@ Func_025_5199::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_51e3::
+DrawSaveOverwriteDialog::
 	ld a, [wd9d9]
 	and a
-	jr z, Func_025_5221
+	jr z, .saveResult
 	ld hl, String_025_6112
 	ld a, $80
 	ld [wMenuTextX], a
@@ -2423,7 +2423,7 @@ Func_025_51e3::
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
-	ld de, Tilemap_025_6350
+	ld de, Tilemap_OverwriteConfirm20x6
 	ld a, [de]
 	inc de
 	ld b, a
@@ -2441,7 +2441,7 @@ Func_025_51e3::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5221::
+.saveResult
 	ld hl, String_025_611b
 	ld a, $80
 	ld [wMenuTextX], a
@@ -2452,7 +2452,7 @@ Func_025_5221::
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
-	ld de, Tilemap_025_63ca
+	ld de, Tilemap_SaveResult20x6
 	ld a, [de]
 	inc de
 	ld b, a
@@ -2466,12 +2466,12 @@ Func_025_5221::
 	ld a, [wTextBGMapPointer + 1]
 	ld h, a
 	call PlaceTilemap
-	call Func_025_525d
+	call StampSaveTimeRecord
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_525d::
+StampSaveTimeRecord::
 	ld a, [wd0d5]
 	ld [wd871], a
 	ld a, [wd0d6]
@@ -2484,7 +2484,7 @@ Func_025_525d::
 	ld [wd875], a
 	ret
 
-Func_025_527c::
+FillVRAMFromScript::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld c, a
@@ -2505,14 +2505,14 @@ Func_025_527c::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_52a3::
+SetMenuCursorSprites::
 	ld hl, wcdf0
 	ld [hl], $a0
 	ld hl, wcdf8
 	ld [hl], $a0
 	ld a, [wSelectedOption]
 	and a
-	jr z, Func_025_52d6
+	jr z, .setSecondCursor
 	ld hl, wcdf0
 	ld a, $94
 	ld [hli], a
@@ -2522,7 +2522,7 @@ Func_025_52a3::
 	ld [hli], a
 	ld a, [wSelectedOption]
 	cp 5
-	jr z, Func_025_52e1
+	jr z, .resetState
 	push af
 	inc a
 	ld [wSelectedOption], a
@@ -2531,9 +2531,9 @@ Func_025_52a3::
 	ld [wSelectedOption], a
 	ld a, [bc]
 	and a
-	jr z, Func_025_52e1
+	jr z, .resetState
 
-Func_025_52d6::
+.setSecondCursor
 	ld hl, wcdf8
 	ld a, $94
 	ld [hli], a
@@ -2541,7 +2541,7 @@ Func_025_52d6::
 	ld [hli], a
 	ld [hl], 1
 
-Func_025_52e1::
+.resetState
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
@@ -2551,7 +2551,7 @@ Func_025_52e1::
 	ld [hl], $30
 	ret
 
-Func_025_52f1::
+FarCopyToVRAMFromScript::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [wTempBank], a
@@ -2580,7 +2580,7 @@ Func_025_52f1::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_532e::
+EndBattleScript::
 	xor a
 	ldh [hFFC5], a
 	ld [wBattleScriptState], a
@@ -2589,41 +2589,41 @@ Func_025_532e::
 	ld [hFFC6], a
 	ret
 
-Func_025_533d::
+DrawItemPageByFlag::
 	ld a, [wEventFlags + 4]
 	bit 0, a
-	jr z, Func_025_534f
+	jr z, .plainPage
 	farcall DrawItemPageWithIcons
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_534f::
+.plainPage
 	farcall DrawItemMenuPage
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_535a::
+ClearItemCategoryMarker::
 	ld a, [wItemCategory]
 	and a
-	jr z, Func_025_5368
+	jr z, .cat0
 	ld bc, $80
 	ld hl, $9290
-	jr Func_025_536e
+	jr .fill
 
-Func_025_5368::
+.cat0
 	ld bc, $80
 	ld hl, $9310
 
-Func_025_536e::
+.fill
 	xor a
 	call ByteFillVRAM
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5377::
+ClearAndDrawItemList::
 	ld bc, $0200
 	ld hl, $9600
 	xor a
@@ -2636,54 +2636,54 @@ Func_025_5377::
 	call DelayFrame
 	ld a, [wEventFlags + 4]
 	bit 0, a
-	jr z, Func_025_53a3
+	jr z, .plainList
 	farcall Func_01e_47af
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_53a3::
+.plainList
 	farcall Func_01e_475c
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_53ae::
+DrawItemPageArrows::
 	ld a, [wEventFlags + 4]
 	bit 0, a
-	jp z, Func_025_5410
+	jp z, .drawArrowsAlt
 	ld a, [wSelectedPage]
 	and a
-	jr z, Func_025_53c6
+	jr z, .clearLeftArrow
 	ld hl, $998f
 	call WaitVRAM_STAT
 	ld [hl], $f8
-	jr Func_025_53ce
+	jr .drawRightArrow
 
-Func_025_53c6::
+.clearLeftArrow
 	ld hl, $998f
 	call WaitVRAM_STAT
 	ld [hl], 0
 
-Func_025_53ce::
+.drawRightArrow
 	ld a, [wSelectedPage]
 	inc a
 	add a
 	add a
-	call Func_025_4d16
+	call GetItemListByte
 	and a
-	jr z, Func_025_53e4
+	jr z, .clearRightArrow
 	ld hl, $9992
 	call WaitVRAM_STAT
 	ld [hl], $f9
-	jr Func_025_53ec
+	jr .printPageNum
 
-Func_025_53e4::
+.clearRightArrow
 	ld hl, $9992
 	call WaitVRAM_STAT
 	ld [hl], 0
 
-Func_025_53ec::
+.printPageNum
 	ld de, wd1f5
 	ld a, [wSelectedPage]
 	inc a
@@ -2701,35 +2701,35 @@ Func_025_53ec::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5410::
+.drawArrowsAlt
 	ld a, [wSelectedPage]
 	and a
-	jr z, Func_025_5420
+	jr z, .clearLeftArrowAlt
 	ld hl, $998f
 	call WaitVRAM_STAT
 	ld [hl], $f8
-	jr Func_025_5428
+	jr .drawRightArrowAlt
 
-Func_025_5420::
+.clearLeftArrowAlt
 	ld hl, $998f
 	call WaitVRAM_STAT
 	ld [hl], 0
 
-Func_025_5428::
+.drawRightArrowAlt
 	ld a, [wSelectedPage]
 	and a
-	jr nz, Func_025_5438
+	jr nz, .clearRightArrowAlt
 	ld hl, $9992
 	call WaitVRAM_STAT
 	ld [hl], $f9
-	jr Func_025_5440
+	jr .printPageNumAlt
 
-Func_025_5438::
+.clearRightArrowAlt
 	ld hl, $9992
 	call WaitVRAM_STAT
 	ld [hl], 0
 
-Func_025_5440::
+.printPageNumAlt
 	ld de, wd1f5
 	ld a, [wSelectedPage]
 	inc a
@@ -2747,13 +2747,13 @@ Func_025_5440::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5464::
+PrintItemPrice::
 	farcall Func_01e_4416
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_546f::
+ClearAndDrawBoxMonList::
 	ld bc, $0500
 	ld hl, $8a80
 	xor a
@@ -2764,7 +2764,7 @@ Func_025_546f::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5487::
+LoadBoxMonPicAndPalette::
 	call GetBoxMonPtr
 	push bc
 	ld a, [bc]
@@ -2782,27 +2782,27 @@ Func_025_5487::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_54b1::
+PrintBoxMonHP::
 	call GetBoxMonPtr
-	jp Func_025_45da
+	jp PrintMonCurAndMaxHP
 
-Func_025_54b7::
+PrintBoxMonStats::
 	call GetBoxMonPtr
-	jp Func_025_4947
+	jp PrintMonStats
 
-Func_025_54bd::
+DrawBoxMonStatsScreen::
 	ld bc, $0400
 	ld hl, $8a00
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
 	call GetBoxMonPtr
-	jp Func_025_4a85
+	jp DrawMonMoveList
 
-Func_025_54d0::
+DrawBoxSlotNumbers::
 	ld c, 0
 
-Func_025_54d2::
+.drawSlotRow
 	push bc
 	ld a, [wMonBoxIndex]
 	add c
@@ -2835,7 +2835,7 @@ Func_025_54d2::
 	add hl, de
 	ld a, [hl]
 	and a
-	jr z, Func_025_552a
+	jr z, .skipLeftMarker
 	ld l, c
 	swap l
 	ld h, 0
@@ -2851,18 +2851,18 @@ Func_025_54d2::
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 
-Func_025_552a::
+.skipLeftMarker
 	pop bc
 	push bc
-	jr Func_025_5555
+	jr .nextSlot
 
-Func_025_552e::
+.drawLeftMarker
 	ld a, [wMonBoxIndex]
 	add c
 	ld l, a
 	ld a, [wdc9d]
 	cp l
-	jr nz, Func_025_5555
+	jr nz, .nextSlot
 	ld l, c
 	swap l
 	ld h, 0
@@ -2878,12 +2878,12 @@ Func_025_552e::
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
 
-Func_025_5555::
+.nextSlot
 	pop bc
 	inc c
 	ld a, c
 	cp 5
-	jp c, Func_025_54d2
+	jp c, .drawSlotRow
 	xor a
 	ld [wBattleScriptByte], a
 	ret
@@ -2894,7 +2894,7 @@ SelectionMarkerLeftTiles::
 	db $2b
 	db $2c
 
-Func_025_5566::
+PrintBoxCursorNumber::
 	ld de, wd1f5
 	ld a, [wdc9d]
 	inc a
@@ -2912,24 +2912,24 @@ Func_025_5566::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_558b::
-	call Func_025_5593
+ClearMenuOptionList::
+	call ClearMenuOptionBuffer
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_5593::
+ClearMenuOptionBuffer::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
 
-Func_025_5599::
+.clearLoop
 	ld [hli], a
 	dec c
-	jr nz, Func_025_5599
+	jr nz, .clearLoop
 	ret
 
-Func_025_559e::
+ResetScrollAndClearBGMap::
 	xor a
 	ldh [hFade], a
 	ldh [hSCX], a
@@ -2942,43 +2942,43 @@ Func_025_559e::
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_55b4::
+CountDexSeenAndOwned::
 	xor a
 	ld [wd0d6], a
 	ld [wd0d5], a
 	ld hl, wd7cb
 	ld bc, $9f
 
-Func_025_55c1::
+.countLoop
 	ld a, [hli]
 	and a
-	jr z, Func_025_55d7
+	jr z, .nextEntry
 	cp 1
-	jr z, Func_025_55d0
+	jr z, .incSeen
 	ld a, [wd0d5]
 	inc a
 	ld [wd0d5], a
 
-Func_025_55d0::
+.incSeen
 	ld a, [wd0d6]
 	inc a
 	ld [wd0d6], a
 
-Func_025_55d7::
+.nextEntry
 	dec c
 	ld a, c
 	or b
-	jr nz, Func_025_55c1
+	jr nz, .countLoop
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_55e1::
+ScriptCmdNop::
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_55e6::
+SkipScriptIfMonField14Zero::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	call GetPartyMonPtr
@@ -2986,15 +2986,15 @@ Func_025_55e6::
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr nz, Func_025_55fa
-	call Func_025_55ff
+	jr nz, .done
+	call AdvanceScriptPosByByte
 
-Func_025_55fa::
+.done
 	xor a
 	ld [wBattleScriptByte], a
 	ret
 
-Func_025_55ff::
+AdvanceScriptPosByByte::
 	push de
 	push hl
 	ld a, [wBattleScriptPos]
@@ -3013,7 +3013,7 @@ Func_025_55ff::
 	pop de
 	ret
 
-Func_025_561b::
+PrintExpToNextLevel::
 	ld a, [wd981]
 	ld l, a
 	ld a, [wd982]
@@ -3254,7 +3254,7 @@ unknown::
 	db $ff
 	db $ff
 
-Func_025_572f::
+LoadSelectedMenuEntry::
 	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
@@ -3276,8 +3276,8 @@ Func_025_572f::
 	ld [bc], a
 	ret
 
-Func_025_574c::
-	ld de, Pointers_025_5776
+PrintMenuStringByIndex::
+	ld de, MenuTextPointers
 	dec a
 	ld l, a
 	ld h, 0
@@ -3294,37 +3294,37 @@ Func_025_574c::
 	ld [wMenuTextEndX], a
 	ld a, [wd9d8]
 	cp 2
-	jr nz, Func_025_5772
+	jr nz, .printMenuText
 	ld a, $98
 	ld [wMenuTextX], a
 
-Func_025_5772::
+.printMenuText
 	call PrintMenuText
 	ret
 
-Pointers_025_5776::
-	dw unk_025_5782
-	dw unk_025_5787
-	dw unk_025_578c
-	dw unk_025_5791
-	dw unk_025_5796
-	dw unk_025_579b
+MenuTextPointers::
+	dw MenuTextString0
+	dw MenuTextString1
+	dw MenuTextString2
+	dw MenuTextString3
+	dw MenuTextString4
+	dw MenuTextString5
 
 ; Strings, but they don't decode into anything coherent
-unk_025_5782::
+MenuTextString0::
 	db $f0, $19, $f1, $5f, $ed
-unk_025_5787::
+MenuTextString1::
 	db $f5, $64, $f0, $56, $ed
-unk_025_578c::
+MenuTextString2::
 	db $f0, $5d, $f5, $a0, $ed
-unk_025_5791::
+MenuTextString3::
 	db $f8, $0d, $f3, $05, $ed
-unk_025_5796::
+MenuTextString4::
 	db $f3, $73, $f1, $5f, $ed
-unk_025_579b::
+MenuTextString5::
 	db $f5, $63, $f0, $80, $ed
 
-Func_025_57a0::
+LoadScreenAttrmap::
 	ldh a, [hConsoleType]
 	cp BOOTUP_A_CGB
 	ret nz
@@ -3333,7 +3333,7 @@ Func_025_57a0::
 	ld [wAnimFramePtr + 1], a
 	ld a, l
 	ld [wAnimFramePtr], a
-	call Func_025_581f
+	call BuildAttrmapStrip
 	ld de, wd100
 	ld a, [wd0ba]
 	ld l, a
@@ -3345,7 +3345,7 @@ Func_025_57a0::
 	ld a, 6
 	ld [hVRAMCopyHeight], a
 	call PlaceAttrmap
-	call Func_025_581f
+	call BuildAttrmapStrip
 	ld a, [wd0ba]
 	ld l, a
 	ld a, [wd0bb]
@@ -3363,7 +3363,7 @@ Func_025_57a0::
 	ld a, 6
 	ld [hVRAMCopyHeight], a
 	call PlaceAttrmap
-	call Func_025_581f
+	call BuildAttrmapStrip
 	ld a, [wd0ba]
 	ld l, a
 	ld a, [wd0bb]
@@ -3383,7 +3383,7 @@ Func_025_57a0::
 	call PlaceAttrmap
 	ret
 
-Func_025_581f::
+BuildAttrmapStrip::
 	ld hl, wd100
 	ld a, h
 	ld [wBGMapAddr + 1], a
@@ -3396,7 +3396,7 @@ Func_025_581f::
 	ld de, wMapTileAttrs
 	ld c, $78
 
-Func_025_5837::
+.convertTile
 	ld a, [hli]
 	push hl
 	ld l, a
@@ -3414,14 +3414,14 @@ Func_025_5837::
 	inc [hl]
 	pop hl
 	dec c
-	jr nz, Func_025_5837
+	jr nz, .convertTile
 	ld a, l
 	ld [wAnimFramePtr], a
 	ld a, h
 	ld [wAnimFramePtr + 1], a
 	ret
 
-Func_025_585a::
+DrawPartyMonIconBox::
 	push bc
 
 ; Get starting address for each "icon box"
@@ -3445,7 +3445,7 @@ Func_025_585a::
 	ld [hVRAMCopyWidth], a
 	ld a, $04
 	ld [hVRAMCopyHeight], a
-	ld de, Tilemap_025_645c
+	ld de, Tilemap_PartyMonIconBox6x4
 	call PlaceTilemap
 
 ; Place attribute map
@@ -3458,7 +3458,7 @@ Func_025_585a::
 	ld [hVRAMCopyWidth], a
 	ld a, $04
 	ld [hVRAMCopyHeight], a
-	ld de, AttrMap_025_6444
+	ld de, AttrMap_PartyMonIconBox6x4
 	call PlaceAttrmap
 
 	pop bc
@@ -3490,12 +3490,12 @@ Func_025_585a::
 
 	pop bc
 	push bc
-	call Func_025_5dcb
+	call PrintMonIconNumber
 	pop bc
 	push bc
 
 	call DelayFrame
-	call Func_025_58ed
+	call DrawMonStatBar
 	pop bc
 	ret
 
@@ -3507,7 +3507,7 @@ Func_025_585a::
 	db $04, $07
 	db $04, $0e
 
-Func_025_58ed::
+DrawMonStatBar::
 	ld a, c
 	ld [wd3f0], a
 	ld a, b
@@ -3516,13 +3516,13 @@ Func_025_58ed::
 	add hl, bc
 	ld a, [hld]
 	and a
-	jr z, Func_025_5904
+	jr z, .singleByteValue
 	ldh [hMathValue], a
 	ld a, [hl]
 	ldh [hMathValue + 1], a
-	jr Func_025_590d
+	jr .computeBarFill
 
-Func_025_5904::
+.singleByteValue
 	ld a, [hl]
 	and a
 	ret z
@@ -3531,7 +3531,7 @@ Func_025_5904::
 	ld a, [hl]
 	ldh [hMathValue], a
 
-Func_025_590d::
+.computeBarFill
 	xor a
 	ldh [hMathValue + 2], a
 	ld a, $20
@@ -3571,11 +3571,11 @@ Func_025_590d::
 	ld d, 0
 	ldh a, [hMathValue]
 	cp $20
-	jr c, Func_025_595f
+	jr c, .splitTiles
 	ld a, $20
 	ldh [hMathValue], a
 
-Func_025_595f::
+.splitTiles
 	srl a
 	rr d
 	srl a
@@ -3597,28 +3597,28 @@ Func_025_595f::
 	ld a, e
 	ld b, a
 	and a
-	jr z, Func_025_598f
+	jr z, .checkPartial
 
-Func_025_5986::
+.fillLoop
 	call WaitVRAM_STAT
 	ld a, $70
 	ld [hli], a
 	dec e
-	jr nz, Func_025_5986
+	jr nz, .fillLoop
 
-Func_025_598f::
+.checkPartial
 	ld a, b
 	cp 4
 	ret z
 	ld a, e
 	and a
-	jr nz, Func_025_599d
+	jr nz, .drawCap
 	ld a, d
 	and a
-	jr nz, Func_025_599d
+	jr nz, .drawCap
 	ld d, 1
 
-Func_025_599d::
+.drawCap
 	ld a, $78
 	sub d
 	ld d, a
@@ -3628,7 +3628,7 @@ Func_025_599d::
 	ret
 
 INCLUDE "data/monsters/stats.asm"
-Func_025_5dcb::
+PrintMonIconNumber::
 	ld hl, 1
 	add hl, bc
 	push hl
@@ -3659,9 +3659,9 @@ _PrintNumber::
 	ld a, b
 	and $f
 	cp 1
-	jr z, Func_025_5e1e
+	jr z, .load1Byte
 	cp 2
-	jr z, Func_025_5e15
+	jr z, .load2Bytes
 	ld a, [de]
 	ldh [hMathValue + 2], a
 	inc de
@@ -3670,21 +3670,21 @@ _PrintNumber::
 	inc de
 	ld a, [de]
 	ldh [hMathValue], a
-	jr Func_025_5e21
+	jr .dispatchByDigitCount
 
-Func_025_5e15::
+.load2Bytes
 	ld a, [de]
 	ldh [hMathValue + 1], a
 	inc de
 	ld a, [de]
 	ldh [hMathValue], a
-	jr Func_025_5e21
+	jr .dispatchByDigitCount
 
-Func_025_5e1e::
+.load1Byte
 	ld a, [de]
 	ldh [hMathValue], a
 
-Func_025_5e21::
+.dispatchByDigitCount
 	push de
 	ld d, b
 	ld a, c
@@ -3693,97 +3693,97 @@ Func_025_5e21::
 	ld c, a
 	ld a, b
 	cp 2
-	jr z, Func_025_5e92
+	jr z, .printTensOnes
 	cp 3
-	jr z, Func_025_5e82
+	jr z, .printHundreds
 	cp 4
-	jr z, Func_025_5e71
+	jr z, .printThousands
 	cp 5
-	jr z, Func_025_5e60
+	jr z, .printTenThousands
 	cp 6
-	jr z, Func_025_5e4e
+	jr z, .printHundredThousands
 	ld a, $f
 	ldh [hMathOperand], a
 	ld a, $42
 	ldh [hMathOperand + 1], a
 	ld a, $40
 	ldh [hMathAccum + 3], a
-	call Func_025_5f0e
-	call Func_025_5fc1
+	call PrintPlaceValueDigit
+	call AdvanceDigitColumn
 
-Func_025_5e4e::
+.printHundredThousands
 	ld a, 1
 	ldh [hMathOperand], a
 	ld a, $86
 	ldh [hMathOperand + 1], a
 	ld a, $a0
 	ldh [hMathAccum + 3], a
-	call Func_025_5f0e
-	call Func_025_5fc1
+	call PrintPlaceValueDigit
+	call AdvanceDigitColumn
 
-Func_025_5e60::
+.printTenThousands
 	xor a
 	ldh [hMathOperand], a
 	ld a, $27
 	ldh [hMathOperand + 1], a
 	ld a, $10
 	ldh [hMathAccum + 3], a
-	call Func_025_5f0e
-	call Func_025_5fc1
+	call PrintPlaceValueDigit
+	call AdvanceDigitColumn
 
-Func_025_5e71::
+.printThousands
 	xor a
 	ldh [hMathOperand], a
 	ld a, 3
 	ldh [hMathOperand + 1], a
 	ld a, $e8
 	ldh [hMathAccum + 3], a
-	call Func_025_5f0e
-	call Func_025_5fc1
+	call PrintPlaceValueDigit
+	call AdvanceDigitColumn
 
-Func_025_5e82::
+.printHundreds
 	xor a
 	ldh [hMathOperand], a
 	xor a
 	ldh [hMathOperand + 1], a
 	ld a, $64
 	ldh [hMathAccum + 3], a
-	call Func_025_5f0e
-	call Func_025_5fc1
+	call PrintPlaceValueDigit
+	call AdvanceDigitColumn
 
-Func_025_5e92::
+.printTensOnes
 	ld c, 0
 	ldh a, [hMathValue]
 
-Func_025_5e96::
+.divModTenLoop
 	cp $a
-	jr c, Func_025_5e9f
+	jr c, .printTens
 	sub $a
 	inc c
-	jr Func_025_5e96
+	jr .divModTenLoop
 
-Func_025_5e9f::
+.printTens
 	ld b, a
 	ldh a, [hMathValue + 3]
 	or c
 	ldh [hMathValue + 3], a
-	jr nz, Func_025_5eac
-	call Func_025_5f94
-	jr Func_025_5ed9
+	jr nz, .tensSingle
+	call PrintLeadingZeroDigit
+	jr .printOnes
 
-Func_025_5eac::
+.tensSingle
 	ld a, [wd1fc]
 	and a
-	jr nz, Func_025_5ebe
+	jr nz, .tensDouble
 	ld a, [wd8fe]
 	add c
 	ld c, a
 	call WaitVRAM_STAT
 	ld a, c
 	ld [hl], a
-	jr Func_025_5ed9
+	jr .printOnes
 
-Func_025_5ebe::
+.tensDouble
 	push bc
 	ld a, c
 	add a
@@ -3804,11 +3804,11 @@ Func_025_5ebe::
 	pop hl
 	pop bc
 
-Func_025_5ed9::
-	call Func_025_5fc1
+.printOnes
+	call AdvanceDigitColumn
 	ld a, [wd1fc]
 	and a
-	jr nz, Func_025_5ef0
+	jr nz, .onesDouble
 	ld a, [wd8fe]
 	add b
 	ld b, a
@@ -3820,7 +3820,7 @@ Func_025_5ed9::
 	pop bc
 	ret
 
-Func_025_5ef0::
+.onesDouble
 	ld a, b
 	add a
 	ld b, a
@@ -3844,16 +3844,16 @@ Func_025_5ef0::
 	pop bc
 	ret
 
-Func_025_5f0e::
+PrintPlaceValueDigit::
 	ld c, 0
 
-Func_025_5f10::
+.subtractLoop
 	ldh a, [hMathOperand]
 	ld b, a
 	ldh a, [hMathValue + 2]
 	ldh [hMathAccum + 2], a
 	cp b
-	jr c, Func_025_5f60
+	jr c, .printDigit
 	sub b
 	ldh [hMathValue + 2], a
 	ldh a, [hMathOperand + 1]
@@ -3861,15 +3861,15 @@ Func_025_5f10::
 	ldh a, [hMathValue + 1]
 	ldh [hMathAccum + 1], a
 	cp b
-	jr nc, Func_025_5f32
+	jr nc, .subMidByte
 	ldh a, [hMathValue + 2]
 	or 0
-	jr z, Func_025_5f5c
+	jr z, .restoreHigh
 	dec a
 	ldh [hMathValue + 2], a
 	ldh a, [hMathValue + 1]
 
-Func_025_5f32::
+.subMidByte
 	sub b
 	ldh [hMathValue + 1], a
 	ldh a, [hMathAccum + 3]
@@ -3877,43 +3877,43 @@ Func_025_5f32::
 	ldh a, [hMathValue]
 	ldh [hMathAccum], a
 	cp b
-	jr nc, Func_025_5f52
+	jr nc, .subLowByte
 	ldh a, [hMathValue + 1]
 	and a
-	jr nz, Func_025_5f4d
+	jr nz, .borrowLowByte
 	ldh a, [hMathValue + 2]
 	and a
-	jr z, Func_025_5f58
+	jr z, .restoreMid
 	dec a
 	ldh [hMathValue + 2], a
 	xor a
 
-Func_025_5f4d::
+.borrowLowByte
 	dec a
 	ldh [hMathValue + 1], a
 	ldh a, [hMathValue]
 
-Func_025_5f52::
+.subLowByte
 	sub b
 	ldh [hMathValue], a
 	inc c
-	jr Func_025_5f10
+	jr .subtractLoop
 
-Func_025_5f58::
+.restoreMid
 	ldh a, [hMathAccum + 1]
 	ldh [hMathValue + 1], a
 
-Func_025_5f5c::
+.restoreHigh
 	ldh a, [hMathAccum + 2]
 	ldh [hMathValue + 2], a
 
-Func_025_5f60::
+.printDigit
 	ldh a, [hMathValue + 3]
 	or c
-	jr z, Func_025_5f94
+	jr z, PrintLeadingZeroDigit
 	ld a, [wd1fc]
 	and a
-	jr nz, Func_025_5f78
+	jr nz, .printDigitTall
 	ld a, [wd8fe]
 	add c
 	ld c, a
@@ -3923,7 +3923,7 @@ Func_025_5f60::
 	ldh [hMathValue + 3], a
 	ret
 
-Func_025_5f78::
+.printDigitTall
 	ld a, c
 	add a
 	ld c, a
@@ -3944,23 +3944,23 @@ Func_025_5f78::
 	pop hl
 	ret
 
-Func_025_5f94::
+PrintLeadingZeroDigit::
 	ld a, [wd0fd]
 	and a
-	jr nz, Func_025_5f9d
+	jr nz, .drawZeroTile
 	bit 7, d
 	ret z
 
-Func_025_5f9d::
+.drawZeroTile
 	ld a, [wd1fc]
 	and a
-	jr nz, Func_025_5fab
+	jr nz, .drawZeroTileTall
 	call WaitVRAM_STAT
 	ld a, [wd8fe]
 	ld [hl], a
 	ret
 
-Func_025_5fab::
+.drawZeroTileTall
 	call WaitVRAM_STAT
 	ld a, [wd8fe]
 	ld [hl], a
@@ -3974,20 +3974,20 @@ Func_025_5fab::
 	pop hl
 	ret
 
-Func_025_5fc1::
+AdvanceDigitColumn::
 	bit 7, d
-	jr nz, Func_025_5fcd
+	jr nz, .advance
 	bit 6, d
-	jr z, Func_025_5fcd
+	jr z, .advance
 	ldh a, [hMathValue + 3]
 	and a
 	ret z
 
-Func_025_5fcd::
+.advance
 	inc hl
 	ret
 
-Func_025_5fcf::
+DrawStatusConditionIcons::
 	ld e, 0
 	ld hl, $13
 	add hl, bc
@@ -3995,35 +3995,35 @@ Func_025_5fcf::
 	cp $bf
 	ret z
 	bit 4, a
-	jr z, Func_025_5fe0
-	call Func_025_5ffb
+	jr z, .checkBit5
+	call DrawStatusIcon
 
-Func_025_5fe0::
+.checkBit5
 	inc e
 	ld a, [hl]
 	bit 5, a
-	jr z, Func_025_5fe9
-	call Func_025_5ffb
+	jr z, .checkBit1
+	call DrawStatusIcon
 
-Func_025_5fe9::
+.checkBit1
 	inc e
 	ld a, [hl]
 	bit 1, a
-	jr z, Func_025_5ff2
-	call Func_025_5ffb
+	jr z, .checkBit0
+	call DrawStatusIcon
 
-Func_025_5ff2::
+.checkBit0
 	inc e
 	ld a, [hl]
 	bit 0, a
 	ret z
-	call Func_025_5ffb
+	call DrawStatusIcon
 	ret
 
-Func_025_5ffb::
+DrawStatusIcon::
 	push hl
 	push bc
-	ld bc, unk_025_6022
+	ld bc, StatusIconBGMapOffsets
 	ld l, e
 	ld h, 0
 	add hl, hl
@@ -4050,18 +4050,18 @@ Func_025_5ffb::
 	ret
 
 ; TODO: unk_ - indexed table (index hli)
-unk_025_6022::
+StatusIconBGMapOffsets::
 	dw $100d
 	dw $120d
 	dw $100f
 	dw $120f
 
-Func_025_602a::
+ApplyScreenBufferAttrmap::
 	ld hl, wScreenRowBuffer
 	ld de, wd100
 	ld c, $54
 
-Func_025_6032::
+.lookupAttr
 	ld a, [hli]
 	push hl
 	ld hl, wMapTileAttrs
@@ -4075,7 +4075,7 @@ Func_025_6032::
 	inc de
 	pop hl
 	dec c
-	jr nz, Func_025_6032
+	jr nz, .lookupAttr
 	ld a, [wTextBGMapPointer]
 	ld l, a
 	ld a, [wTextBGMapPointer + 1]
@@ -4090,7 +4090,7 @@ Func_025_6032::
 	call PlaceAttrmap
 	ret
 
-Func_025_605f::
+PlaceScreenBufferTilemap::
 	ld hl, $0d00
 	call GetTextBGMapPointer
 	ld a, 7
@@ -4103,22 +4103,22 @@ Func_025_605f::
 	call PlaceTilemap
 	ret
 
-Func_025_6078::
+CopyScreenRegionToBuffer::
 	hlcoord 0, 0
 	ld de, $d
 	add hl, de
 	ld de, wScreenRowBuffer
 	ld bc, $070c
 
-Func_025_6085::
+.nextRow
 	push hl
 
-Func_025_6086::
+.copyTile
 	ld a, [hli]
 	ld [de], a
 	inc de
 	dec b
-	jr nz, Func_025_6086
+	jr nz, .copyTile
 	pop hl
 	push bc
 	ld bc, $14
@@ -4126,40 +4126,40 @@ Func_025_6086::
 	pop bc
 	ld b, 7
 	dec c
-	jr nz, Func_025_6085
+	jr nz, .nextRow
 	ret
 
 INCLUDE "text/menu_25_6099.asm"
 
-Palette_025_6129::
+Palette_BattleUIBG::
 	db $ff, $7f, $14, $63, $a5, $35, $00, $00, $ff, $7f, $5f, $03, $1b, $00, $00, $00
 	db $ff, $7f, $a0, $7e, $80, $70, $00, $00, $ff, $7f, $d6, $6e, $6b, $41, $00, $00
 	db $ff, $7f, $4d, $03, $c0, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 
-Palette_025_6169::
+Palette_BattleUIObj::
 	db $b5, $56, $00, $00, $1d, $00, $bf, $67, $b5, $56, $ff, $45, $3f, $53, $7e, $03
 	db $b5, $56, $00, $00, $d6, $6e, $de, $7b, $b5, $56, $00, $00, $1d, $00, $bf, $67
 	db $ff, $7f, $6b, $7f, $4a, $7d, $00, $00, $ff, $7f, $3f, $03, $18, $00, $00, $00
 
 INCLUDE "text/menu_25_6199.asm"
 
-Tilemap_025_61c4:: INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
-Tilemap_025_61f2:: INCBIN "gfx/tilemaps/tilemap_025_61f2.tilemap"
-Tilemap_025_6220:: INCBIN "gfx/tilemaps/tilemap_025_6220.tilemap"
-Tilemap_025_6264:: INCBIN "gfx/tilemaps/tilemap_025_6264.tilemap"
-Tilemap_025_62a8:: INCBIN "gfx/tilemaps/tilemap_025_62a8.tilemap"
-Tilemap_025_62fc:: INCBIN "gfx/tilemaps/tilemap_025_62fc.tilemap"
-Tilemap_025_6350:: INCBIN "gfx/tilemaps/tilemap_025_6350.tilemap"
-Tilemap_025_63ca:: INCBIN "gfx/tilemaps/tilemap_025_63ca.tilemap"
+Tilemap_MonInfoBox7x6:: INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
+AttrMap_MonInfoBox7x6:: INCBIN "gfx/tilemaps/tilemap_025_61f2.tilemap"
+Tilemap_MonInfoBox8x8:: INCBIN "gfx/tilemaps/tilemap_025_6220.tilemap"
+AttrMap_MonInfoBox8x8:: INCBIN "gfx/tilemaps/tilemap_025_6264.tilemap"
+Tilemap_MonInfoBox8x10:: INCBIN "gfx/tilemaps/tilemap_025_62a8.tilemap"
+AttrMap_MonInfoBox8x10:: INCBIN "gfx/tilemaps/tilemap_025_62fc.tilemap"
+Tilemap_OverwriteConfirm20x6:: INCBIN "gfx/tilemaps/tilemap_025_6350.tilemap"
+Tilemap_SaveResult20x6:: INCBIN "gfx/tilemaps/tilemap_025_63ca.tilemap"
 
-AttrMap_025_6444::
+AttrMap_PartyMonIconBox6x4::
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $02, $01, $01, $01, $01, $02 ; HP Bar
 
-Tilemap_025_645c::
+Tilemap_PartyMonIconBox6x4::
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $17, $0a, $0b ; Lv01

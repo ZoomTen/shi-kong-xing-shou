@@ -562,11 +562,11 @@ Debug_NewGameMinimal::
 RunMapLoadHook::
 	ld a, [wd0ef]
 	and a
-	jr z, .asm_19c3
+	jr z, .loadEmotes
 
 	farcall Func_00b_5273
 	ret
 
-.asm_19c3
+.loadEmotes
 	farcall LoadEmotesAndPromptGFX
 	ret

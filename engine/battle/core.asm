@@ -1265,7 +1265,7 @@ BattleEnd_Jump_2::
 	ld a, $12
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	farcall Func_025_57a0
+	farcall LoadScreenAttrmap
 	call DelayFrame
 	call ClearBattleOAMState
 	call ClearExpRewardBuffer
@@ -1698,7 +1698,7 @@ ProcessStatusBit2::
 	ld [wMoveTargetsEnemy], a
 	xor a
 	ld [wd9d7], a
-	farcall Func_025_40d9
+	farcall ComputeBattlerStat
 	ld a, $19
 	ld [wBattleMessageID], a
 	jr ApplyStatusDamageTick
@@ -2989,7 +2989,7 @@ ComputeDamageStats::
 	ld [wSideSelect], a
 	ld a, 1
 	ld [wd9d7], a
-	farcall Func_025_40d9
+	farcall ComputeBattlerStat
 	xor a
 	ld [wd9af], a
 	ld [wSideSelect], a
@@ -3011,7 +3011,7 @@ ComputeDamageStats::
 	ld a, 2
 	ld a, 5
 	ld [wd9d7], a
-	farcall Func_025_40d9
+	farcall ComputeBattlerStat
 	ld a, 1
 	ld [wd9af], a
 	ld [wSideSelect], a
@@ -3630,7 +3630,7 @@ ApplyStatHealEffect::
 	push af
 	push hl
 	ld [wd9e9], a
-	farcall Func_025_4000
+	farcall ComputeScaledHP
 	ldh a, [hMathValue]
 	cp $10
 	jr nc, ApplyStatHealEffect_Abort

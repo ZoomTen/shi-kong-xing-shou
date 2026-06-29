@@ -1,4 +1,4 @@
-; Battle/screen-script VM (Func_025_424e dispatcher, Jumptable_025_42b3).
+; Battle/screen-script VM (DispatchBattleScriptCommand dispatcher, BattleScriptCommandTable).
 ; Used by bank 24 (battle) and bank 39 (screen) scripts. Operand counts validated
 ; against bank 24 (61/63 linear-exact). Mnemonics are best-effort.
 

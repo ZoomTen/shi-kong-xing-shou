@@ -172,7 +172,7 @@ LoadMapBGPalettes::
 	add hl, de
 	push hl
 	pop de
-	ld hl, .unk_0a3e
+	ld hl, .fixedBGPalette
 	ld bc, 8
 .copy2
 	ld a, [hli]
@@ -184,7 +184,7 @@ LoadMapBGPalettes::
 	jr nz, .copy2
 	ret
 
-.unk_0a3e
+.fixedBGPalette
 	dw $7fff
 	dw $7e57
 	dw $792c
@@ -242,16 +242,16 @@ LoadBattlePalettes::
 	ret
 
 Pointers_0a8b::
-	dw .unk_0a9b
-	dw .unk_0aab
-	dw .unk_0abb
-	dw .unk_0acb
-	dw .unk_0adb
-	dw .unk_0aeb
-	dw .unk_0afb
-	dw .unk_0b0b
+	dw .battlePalsChar0
+	dw .battlePalsChar1
+	dw .battlePalsChar2
+	dw .battlePalsChar3
+	dw .battlePalsChar4
+	dw .battlePalsChar5
+	dw .battlePalsChar6
+	dw .battlePalsChar7
 
-.unk_0a9b
+.battlePalsChar0
 	dw $56b5
 	dw $0000
 	dw $001d
@@ -261,7 +261,7 @@ Pointers_0a8b::
 	dw $7ab0
 	dw $77df
 
-.unk_0aab
+.battlePalsChar1
 	dw $56b5
 	dw $0000
 	dw $65ad
@@ -271,7 +271,7 @@ Pointers_0a8b::
 	dw $0220
 	dw $7fff
 
-.unk_0abb
+.battlePalsChar2
 	dw $56b5
 	dw $0000
 	dw $0220
@@ -281,7 +281,7 @@ Pointers_0a8b::
 	dw $2978
 	dw $73df
 
-.unk_0acb
+.battlePalsChar3
 	dw $56b5
 	dw $0000
 	dw $01fc
@@ -291,7 +291,7 @@ Pointers_0a8b::
 	dw $001e
 	dw $77df
 
-.unk_0adb
+.battlePalsChar4
 	dw $56b5
 	dw $0000
 	dw $7e80
@@ -301,7 +301,7 @@ Pointers_0a8b::
 	dw $7ab0
 	dw $77df
 
-.unk_0aeb
+.battlePalsChar5
 	dw $56b5
 	dw $0000
 	dw $4419
@@ -311,7 +311,7 @@ Pointers_0a8b::
 	dw $7ab0
 	dw $77df
 
-.unk_0afb
+.battlePalsChar6
 	dw $56b5
 	dw $0000
 	dw $65ad
@@ -321,7 +321,7 @@ Pointers_0a8b::
 	dw $2978
 	dw $73df
 
-.unk_0b0b
+.battlePalsChar7
 	dw $56b5
 	dw $0000
 	dw $02fe

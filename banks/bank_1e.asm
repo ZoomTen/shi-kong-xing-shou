@@ -1170,7 +1170,7 @@ Func_01e_6acd::
 	ld [wd3f0], a
 	ld a, [wd985]
 	ld [wd3f1], a
-	farcall Func_025_4000
+	farcall ComputeScaledHP
 	ldh a, [hMathValue]
 	cp $16
 	jp nc, .asm_6b2a
@@ -1258,7 +1258,7 @@ Func_01e_6acd::
 	ld [wd3f0], a
 	ld a, [wd985]
 	ld [wd3f1], a
-	farcall Func_025_4000
+	farcall ComputeScaledHP
 	ldh a, [hMathValue]
 	cp $16
 	jp nc, .asm_6c6b
@@ -1298,7 +1298,7 @@ Func_01e_6acd::
 	ld [wd3f0], a
 	ld a, [wd985]
 	ld [wd3f1], a
-	farcall Func_025_4000
+	farcall ComputeScaledHP
 	ldh a, [hMathValue]
 	cp $20
 	jp nc, .asm_6b6a
@@ -1322,7 +1322,7 @@ Func_01e_6acd::
 	ld [wd3f0], a
 	ld a, [wd985]
 	ld [wd3f1], a
-	farcall Func_025_4000
+	farcall ComputeScaledHP
 	ldh a, [hMathValue]
 	cp $18
 	jp nc, .asm_6b4a
@@ -1333,7 +1333,7 @@ Func_01e_6acd::
 	ld [wd3f0], a
 	ld a, [wd985]
 	ld [wd3f1], a
-	farcall Func_025_4000
+	farcall ComputeScaledHP
 	ldh a, [hMathValue]
 	cp $0F
 	jp c, .asm_6b8a

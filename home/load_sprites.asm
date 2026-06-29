@@ -47,7 +47,7 @@ LoadTextFaceExtraSprites::
 
 LoadObjectSprite::
 	ld bc, wcd40
-.asm_08a5
+.findFreeSlot
 	ld hl, 2
 	add hl, bc
 	ld a, [hl]
@@ -130,13 +130,13 @@ NextObjectSpriteSlot::
 	add hl, bc
 	ld a, l
 	cp $e0
-	jr z, .asm_0922
+	jr z, .noFreeSlot
 
 	push hl
 	pop bc
-	jr LoadObjectSprite.asm_08a5
+	jr LoadObjectSprite.findFreeSlot
 
-.asm_0922
+.noFreeSlot
 	ld c, 0
 	ret
 

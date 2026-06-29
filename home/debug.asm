@@ -1,7 +1,7 @@
 Debug_InitDex::
 	ld de, wKeyItemBag
-	ld hl, .unk_2cb8
-.asm_2caa
+	ld hl, .keyItemData
+.copyLoop
 REPT 2
 	ld a, [hl]
 	ld [de], a
@@ -11,10 +11,10 @@ ENDR
 	dec c ; should be dec bc
 	ld a, c
 	or b
-	jr nz, .asm_2caa
+	jr nz, .copyLoop
 	ret
 
-.unk_2cb8
+.keyItemData
 	db $01, $01
 	db $02, $01
 	db $03, $01
@@ -58,7 +58,7 @@ ENDR
 
 Debug_InitParty::
 	ld de, wEquipmentBag
-	ld hl, .unk_2d16
+	ld hl, .equipmentData
 .copy
 	ld a, [hli]
 	cp $ff
@@ -67,7 +67,7 @@ Debug_InitParty::
 	inc de
 	jr .copy
 
-.unk_2d16
+.equipmentData
 	db $01, $01
 	db $02, $01
 	db $03, $01
@@ -81,7 +81,7 @@ Debug_InitParty::
 	db $0f, $01
 	db $ff, $ff
 
-.unk_2d2e ; unused
+.equipmentData2 ; unused
 	db $0d, $03
 	db $0e, $03
 	db $0f, $03
@@ -200,7 +200,7 @@ Debug_GiveItems::
 
 Debug_InitMonFlags::
 	ld hl, wdd00
-.asm_2e07
+.setFlagLoop
 	ld [hl], $01
 	dec c ; @bad: use dec bc
 	ld a, c
@@ -209,7 +209,7 @@ Debug_InitMonFlags::
 
 	ld de, 8
 	add hl, de
-	jr .asm_2e07
+	jr .setFlagLoop
 
 Debug_GivePartyMon::
 	ld de, wde00
@@ -242,7 +242,7 @@ Debug_GivePartyMon::
 
 Debug_FillMonList::
 	ld de, wMonBox
-.asm_2e3b
+.fillNextMon
 	ld hl, DebugPartyMonData
 	ld bc, $13
 .copy
@@ -261,11 +261,11 @@ Debug_FillMonList::
 	ld [wdcf3], a
 	cp $14
 	ret nc
-	jr .asm_2e3b
+	jr .fillNextMon
 
 Debug_InitDexAndParty::
 	ld de, wd7cb
-	ld hl, .unk_2ea0
+	ld hl, .dexData
 	ld bc, $9e
 .copy1
 	ld a, [hli]
@@ -278,7 +278,7 @@ Debug_InitDexAndParty::
 	jr nz, .copy1
 
 	ld bc, $0000
-.asm_2e6a
+.setFlagLoop
 	ld de, wdd00
 	ld l, c
 	ld h, 0
@@ -290,7 +290,7 @@ Debug_InitDexAndParty::
 	inc bc
 	ld a, c
 	cp 8
-	jr c, .asm_2e6a
+	jr c, .setFlagLoop
 
 	ld de, wde00
 	ld hl, DebugPartyMonData
@@ -312,7 +312,7 @@ Debug_InitDexAndParty::
 	ld [wdcea], a
 	ret
 
-.unk_2ea0
+.dexData
 ; Dex values (1 is seen, 2 is caught)
 	db $01, $01, $01, $01, $01, $02, $02, $02 ; 01
 	db $02, $02, $02, $01, $01, $01, $01, $01 ; 02

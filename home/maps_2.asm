@@ -11,9 +11,9 @@ _BuildBlockmap::
 	ld a, [wMapLayoutPointer + 1]
 	ld h, a
 	ld b, 5
-.asm_26f9
+.blockRowLoop
 	ld c, 6
-.asm_26fb
+.blockColLoop
 	push bc
 	ld a, [hli]
 	push hl
@@ -27,9 +27,9 @@ _BuildBlockmap::
 	add hl, hl
 	add hl, de
 	ld b, 2
-.asm_270e
+.metatileRowLoop
 	ld c, 2
-.asm_2710
+.metatileColLoop
 	ld a, [hli]
 	push hl
 	ld l, a
@@ -54,9 +54,9 @@ _BuildBlockmap::
 	ld [wd0b2 + 1], a
 	pop hl
 	dec c
-	jp nz, .asm_2710
+	jp nz, .metatileColLoop
 	dec b
-	jr z, .asm_2756
+	jr z, .blockDone
 
 	ld a, [wd0b2]
 	add $2c
@@ -64,9 +64,9 @@ _BuildBlockmap::
 	ld a, [wd0b2 + 1]
 	adc 0
 	ld [wd0b2 + 1], a
-	jp .asm_270e
+	jp .metatileRowLoop
 
-.asm_2756
+.blockDone
 	ld a, [wd0b2]
 	sub $30
 	ld [wd0b2], a
@@ -76,7 +76,7 @@ _BuildBlockmap::
 	pop hl
 	pop bc
 	dec c
-	jp nz, .asm_26fb
+	jp nz, .blockColLoop
 
 	ldh a, [hMapWidth]
 	sub 6
@@ -92,7 +92,7 @@ _BuildBlockmap::
 	adc 0
 	ld [wd0b2 + 1], a
 	dec b
-	jp nz, .asm_26f9
+	jp nz, .blockRowLoop
 	ret
 
 PlaceMetatile::

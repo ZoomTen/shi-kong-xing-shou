@@ -4,10 +4,10 @@ FlushSoundQueue::
 	ld hl, wdae3
 	ld e, [hl]
 	inc hl
-.asm_25df
+.loop
 	ld a, l
 	cp e
-	jr nc, .asm_25ed
+	jr nc, .done
 
 	ld a, [hli]
 	push hl
@@ -15,13 +15,13 @@ FlushSoundQueue::
 	call PlayQueuedSound
 	pop de
 	pop hl
-	jr .asm_25df
+	jr .loop
 
-.asm_25ed
+.done
 	pop af
 	rst Bankswitch
 
-.asm_25ef
+.resetQueuePtr
 	ld a, $e4
 	ld [wdae3], a
 	ret
@@ -29,7 +29,7 @@ FlushSoundQueue::
 ResetSoundQueue::
 	xor a
 	ld [wdae2], a
-	jr FlushSoundQueue.asm_25ef
+	jr FlushSoundQueue.resetQueuePtr
 
 QueueSound::
 	cp $7f
@@ -54,11 +54,11 @@ _QueueSound::
 	push hl
 	ld hl, wdae2
 	bit 0, [hl]
-	jr z, .asm_261e
+	jr z, .enqueue
 	cp $53
 	jr c, .exit
 
-.asm_261e
+.enqueue
 	ld hl, wdae3
 	ld l, [hl]
 	ld [hl], a
@@ -87,50 +87,50 @@ PlayQueuedSound::
 ; Load sound bank?
 	ld e, a
 	cp BGM_53
-	jr c, .asm_2677
+	jr c, .useCurrentBank
 	cp BGM_ACADEMY
-	jr c, .asm_2657
+	jr c, .bankAudio1
 	cp BGM_INTRO
-	jr c, .asm_265b
+	jr c, .bankAudio2
 	cp BGM_76
-	jr c, .asm_2653
+	jr c, .bankAudio3
 
 	ld a, BANK("Audio 3")
-	jr .asm_265d
+	jr .gotBank
 
-.asm_2653
+.bankAudio3
 	ld a, BANK("Audio 3")
-	jr .asm_265d
+	jr .gotBank
 
-.asm_2657
+.bankAudio1
 	ld a, BANK("Audio 1")
-	jr c, .asm_265d ; jr
+	jr c, .gotBank ; jr
 
-.asm_265b
+.bankAudio2
 	ld a, BANK("Audio 2")
 
-.asm_265d
+.gotBank
 	ld hl, wCurrentSoundBank
 	cp [hl]
-	jr z, .asm_2672
+	jr z, .switchAndLoad
 
 	ld d, a
 	push de
 	ld e, 0
 	ld a, [wCurrentSoundBank]
-	call .asm_2672
+	call .switchAndLoad
 	pop de
 	ld a, d
 	ld [wCurrentSoundBank], a
 
-.asm_2672
+.switchAndLoad
 	rst Bankswitch
 	ld a, e
 	jp SOUND_LOAD
 
-.asm_2677
+.useCurrentBank
 	ld a, [wCurrentSoundBank]
-	jr .asm_2672
+	jr .switchAndLoad
 
 WaitSoundFlush::
 	ldh a, [rLCDC]
@@ -140,9 +140,9 @@ WaitSoundFlush::
 	ei
 	xor a
 	ld [hVBlank], a
-.asm_2689
+.waitVBlank
 	halt
 	ld a, [hVBlank]
 	or a
-	jr z, .asm_2689
+	jr z, .waitVBlank
 	ret

@@ -170,14 +170,14 @@ _GetBlockCollision::
 	ld d, 0
 	ld a, c
 	and a
-	jr z, .asm_20d2
+	jr z, .gotRow
 
-.asm_20ce
+.rowLoop
 	add hl, de
 	dec c
-	jr nz, .asm_20ce
+	jr nz, .rowLoop
 
-.asm_20d2
+.gotRow
 	pop de
 	ld a, d
 	ld c, a
@@ -198,17 +198,17 @@ _GetBlockCollision::
 	add hl, de
 	ld a, b
 	and a
-	jr z, .asm_20f1
+	jr z, .checkYQuad
 
 	inc hl
 	inc hl
-.asm_20f1
+.checkYQuad
 	ld a, c
 	and a
-	jr z, .asm_20f6
+	jr z, .lookupCollision
 
 	inc hl
-.asm_20f6
+.lookupCollision
 	ld a, [wMapCollisionsPointer]
 	ld e, a
 	ld a, [wMapCollisionsPointer + 1]
@@ -224,22 +224,22 @@ _GetBlockCollision::
 _UpdatePlayerAnim::
 	ldh a, [hFFAC]
 	and a
-	jr z, .asm_211f
+	jr z, .animateObjects
 
 	ld a, [wdcd0]
 	and a
-	jr nz, .asm_211c
+	jr nz, .animatePlayer
 
 	ldh a, [hFFAD]
 	inc a
 	ldh [hFFAD], a
 	cp 5
-	jr c, .asm_211f
+	jr c, .animateObjects
 
-.asm_211c
+.animatePlayer
 	call AnimatePlayerSprite
 
-.asm_211f
+.animateObjects
 	call AnimateObjectSprite
 	ret
 
@@ -252,7 +252,7 @@ AnimatePlayerSprite::
 	sub [hl]
 	ld [hl], a
 
-.asm_2130:
+.getFrame:
 	ld a, [wPlayerSpriteID]
 	ld [wMapSpriteID], a
 	call GetSpriteGFXPointers
@@ -280,10 +280,10 @@ AnimatePlayerSprite::
 	ld h, [hl]
 	ld l, a
 	cp $ff
-	jr nz, .asm_216d
+	jr nz, .notAnimEnd
 	ld a, h
 	cp $ff
-	jr nz, .asm_216d
+	jr nz, .notAnimEnd
 
 	xor a
 	ld [wPlayerAnimFrame], a
@@ -292,32 +292,32 @@ AnimatePlayerSprite::
 	ldh [hFFAC], a
 	ret
 
-.asm_216d:
+.notAnimEnd:
 	ld a, l
 	cp $ee
-	jr nz, .asm_2182
+	jr nz, .drawFrame
 	ld a, h
 	cp $ee
-	jr nz, .asm_2182
+	jr nz, .drawFrame
 
 	xor a
 	ld [wPlayerAnimFrame], a
 	ld [wd3f4], a
 	ldh [hFFAD], a
-	jr .asm_2130
+	jr .getFrame
 
-.asm_2182:
+.drawFrame:
 	ld a, [wcd06]
 	swap a
 	ld e, a
 	ld a, [wcd07]
 	and a
-	jr z, .asm_2192
+	jr z, .copyFrame
 
 	ld a, $40
 	add e
 	ld e, a
-.asm_2192
+.copyFrame
 	ld d, $80
 	ld bc, $40
 	call CopyBytesVRAM
@@ -325,11 +325,11 @@ AnimatePlayerSprite::
 	inc [hl]
 	ld a, [hl]
 	cp 1
-	jr nc, .asm_21a7
+	jr nc, .checkSimInput
 	xor a
 	ld [wd3f4], a
 
-.asm_21a7
+.checkSimInput
 	ldh a, [hSimulatedJoypadState]
 	and a
 	ret nz
@@ -354,7 +354,7 @@ AnimateObjectSprite::
 
 	ld a, [wdceb]
 	and a
-	jr nz, .asm_21d8
+	jr nz, .animate
 
 	ldh a, [hFFDC]
 	inc a
@@ -362,7 +362,7 @@ AnimateObjectSprite::
 	cp 5
 	jp c, UpdateSpriteAnimQueue
 
-.asm_21d8
+.animate
 	xor a
 	ldh [hFFDC], a
 	ld [wdceb], a
@@ -371,7 +371,7 @@ AnimateObjectSprite::
 	sub [hl]
 	ld [hl], a
 
-.asm_21e5
+.getFrame
 	ld a, [wcd24]
 	ld [wMapSpriteID], a
 	call GetSpriteGFXPointers
@@ -399,10 +399,10 @@ AnimateObjectSprite::
 	ld h, [hl]
 	ld l, a
 	cp $ff
-	jr nz, .asm_221f
+	jr nz, .notAnimEnd
 	ld a, h
 	cp $ff
-	jr nz, .asm_221f
+	jr nz, .notAnimEnd
 
 	xor a
 	ld [wcd25], a
@@ -410,32 +410,32 @@ AnimateObjectSprite::
 	ldh [hFFDB], a
 	ret
 
-.asm_221f
+.notAnimEnd
 	ld a, l
 	cp $ee
-	jr nz, .asm_2231
+	jr nz, .drawFrame
 	ld a, h
 	cp $ee
-	jr nz, .asm_2231
+	jr nz, .drawFrame
 
 	xor a
 	ld [wcd25], a
 	ldh [hFFDC], a
-	jr .asm_21e5
+	jr .getFrame
 
-.asm_2231
+.drawFrame
 	ld a, [wcd26]
 	swap a
 	ld e, a
 	ld a, [wcd27]
 	and a
-	jr z, .asm_2241
+	jr z, .copyFrame
 
 	ld a, $40
 	add e
 	ld e, a
 
-.asm_2241
+.copyFrame
 	ld d, $80
 	ld bc, $40
 	call CopyBytesVRAM
@@ -445,16 +445,16 @@ AnimateObjectSprite::
 
 UpdateSpriteAnimQueue::
 	ld bc, wcd40
-.asm_2251:
+.loop:
 	ld hl, $0d
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .asm_2293
+	jr z, .nextEntry
 	dec [hl]
 	ld a, [hl]
 	and a
-	jr nz, .asm_2293
+	jr nz, .nextEntry
 
 	ld hl, 3
 	ld de, wd9fa
@@ -493,33 +493,33 @@ UpdateSpriteAnimQueue::
 	jr nz, .copy
 	ret
 
-.asm_2293:
+.nextEntry:
 	ld hl, $20
 	add hl, bc
 	ld a, l
 	cp $e0
-	jr nc, .asm_22a0
+	jr nc, .queueDone
 
 	ld b, h
 	ld c, l
-	jr .asm_2251
+	jr .loop
 
-.asm_22a0
+.queueDone
 	call UpdateTileAnimation
 	ret
 
 UpdateSpriteAnimQueueFast::
 	ld bc, wcd40
-.asm_22a7:
+.loop:
 	ld hl, $0d
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .asm_22ea
+	jr z, .nextEntry
 	dec [hl]
 	ld a, [hl]
 	and a
-	jr nz, .asm_22ea
+	jr nz, .nextEntry
 
 	ld hl, 3
 	ld de, wd9fa
@@ -552,7 +552,7 @@ ENDR
 	jr nz, .copy
 
 	pop bc
-.asm_22ea:
+.nextEntry:
 	ld hl, $20
 	add hl, bc
 	ld a, l
@@ -561,7 +561,7 @@ ENDR
 
 	ld b, h
 	ld c, l
-	jr .asm_22a7
+	jr .loop
 
 AnimateQueuedSprite::
 	ld a, [wd9fb]
@@ -591,10 +591,10 @@ AnimateQueuedSprite::
 	ld h, [hl]
 	ld l, a
 	cp $ff
-	jr nz, .asm_2332
+	jr nz, .notAnimEnd
 	ld a, h
 	cp $ff
-	jr nz, .asm_2332
+	jr nz, .notAnimEnd
 
 	xor a
 	ld [wd9fc], a
@@ -603,19 +603,19 @@ AnimateQueuedSprite::
 	ld [hl], 0
 	ret
 
-.asm_2332:
+.notAnimEnd:
 	ld a, l
 	cp $ee
-	jr nz, .asm_2341
+	jr nz, .drawFrame
 	ld a, h
 	cp $ee
-	jr nz, .asm_2341
+	jr nz, .drawFrame
 
 	xor a
 	ld [wd9fc], a
 	ret
 
-.asm_2341
+.drawFrame
 	ld a, [wd9fd]
 	swap a
 	ld e, a
@@ -626,13 +626,13 @@ AnimateQueuedSprite::
 	ld e, a
 	ld a, [wd9fe]
 	and a
-	jr z, .asm_2358
+	jr z, .copyFrame
 
 	ld a, $40
 	add e
 	ld e, a
 
-.asm_2358
+.copyFrame
 	ld bc, $40
 	call CopyBytesVRAM
 	ld hl, wd9fc
@@ -738,17 +738,17 @@ LoadMapAttrs::
 	ldh [hFFA9], a
 	ld a, [wd9d2]
 	and a
-	jr z, .asm_2473
+	jr z, .computeScrollX
 
 	ldh a, [hFFAA]
-	jr .asm_2478
+	jr .gotScrollX
 
-.asm_2473
+.computeScrollX
 	ldh a, [hMapOffsetX]
 	add a
 	ldh [hFFAA], a
 
-.asm_2478
+.gotScrollX
 	ld l, a
 	ld h, 0
 REPT 4
@@ -761,17 +761,17 @@ ENDR
 	ld [wd0c6 + 1], a
 	ld a, [wd9d2]
 	and a
-	jr z, .asm_249d
+	jr z, .computeScrollY
 
 	ldh a, [hFFAB]
-	jr .asm_24a2
+	jr .gotScrollY
 
-.asm_249d
+.computeScrollY
 	ldh a, [hMapOffsetY]
 	add a
 	ldh [hFFAB], a
 
-.asm_24a2
+.gotScrollY
 	ld l, a
 	ld h, 0
 REPT 4
@@ -849,10 +849,10 @@ GetMapLayoutPointer::
 	ldh a, [hMapWidth]
 	ld e, a
 	ld d, 0
-.asm_2537
+.rowLoop
 	add hl, de
 	dec b
-	jr nz, .asm_2537
+	jr nz, .rowLoop
 
 .skip
 	ldh a, [hMapOffsetX]

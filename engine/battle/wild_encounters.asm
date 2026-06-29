@@ -242,7 +242,7 @@ WildEncounter_CalcStatsLoop::
 	ld [wd981], a
 	ld a, b
 	ld [wd982], a
-	farcall Func_025_40f6
+	farcall ComputeActiveBattlerStat
 	pop bc
 	call InitWildMonVitals
 	ld hl, $16

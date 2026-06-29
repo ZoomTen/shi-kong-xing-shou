@@ -1,7 +1,7 @@
 UpdatePaletteFade::
 	ldh a, [hPaletteFadeState]
 	cp 1
-	jp z, .asm_29f1
+	jp z, .fadeStep
 	cp 2
 	jp z, .ret
 
@@ -31,14 +31,14 @@ UpdatePaletteFade::
 	ldh [hPaletteFadeState], a
 	ret
 
-.asm_29f1:
+.fadeStep:
 	ld hl, wBGPals2
 	ld bc, wBGPals1
 	ld e, $40
 	xor a
 	ld [wPaletteFadeChanged], a
 
-.asm_29fd:
+.fadeColor:
 	push de
 	ld a, [hl]
 	and $1f
@@ -46,24 +46,24 @@ UpdatePaletteFade::
 	ld a, [bc]
 	and $1f
 	cp d
-	jr z, .asm_2a23
+	jr z, .fadeGreen
 
 	push af
 	ld a, [wPaletteFadeDirection]
 	and a
-	jr z, .asm_2a15
+	jr z, .redInc
 
 	pop af
 	sub $01
 	ld d, a
-	jr .asm_2a19
+	jr .storeRed
 
-.asm_2a15:
+.redInc:
 	pop af
 	add $01
 	ld d, a
 
-.asm_2a19:
+.storeRed:
 	ld a, $01
 	ld [wPaletteFadeChanged], a
 	ld a, [bc]
@@ -71,7 +71,7 @@ UpdatePaletteFade::
 	or d
 	ld [bc], a
 
-.asm_2a23:
+.fadeGreen:
 	ld a, [hl]
 	and $f0
 	swap a
@@ -94,24 +94,24 @@ UpdatePaletteFade::
 	or e
 	srl a
 	cp d
-	jr z, .asm_2a76
+	jr z, .fadeBlue
 
 	push af
 	ld a, [wPaletteFadeDirection]
 	and a
-	jr z, .asm_2a52
+	jr z, .greenInc
 
 	pop af
 	sub $01
 	ld d, a
-	jr .asm_2a56
+	jr .storeGreen
 
-.asm_2a52:
+.greenInc:
 	pop af
 	add $01
 	ld d, a
 
-.asm_2a56:
+.storeGreen:
 	ld a, $01
 	ld [wPaletteFadeChanged], a
 	ld a, d
@@ -135,7 +135,7 @@ UpdatePaletteFade::
 	or e
 	ld [bc], a
 
-.asm_2a76:
+.fadeBlue:
 	ld a, [hl]
 	srl a
 	srl a
@@ -144,24 +144,24 @@ UpdatePaletteFade::
 	srl a
 	srl a
 	cp d
-	jr z, .asm_2aa5
+	jr z, .nextColor
 
 	push af
 	ld a, [wPaletteFadeDirection]
 	and a
-	jr z, .asm_2a91
+	jr z, .blueInc
 
 	pop af
 	sub $01
 	ld d, a
-	jr .asm_2a95
+	jr .storeBlue
 
-.asm_2a91:
+.blueInc:
 	pop af
 	add $01
 	ld d, a
 
-.asm_2a95:
+.storeBlue:
 	ld a, $01
 	ld [wPaletteFadeChanged], a
 	ld a, d
@@ -173,12 +173,12 @@ UpdatePaletteFade::
 	or d
 	ld [bc], a
 
-.asm_2aa5:
+.nextColor:
 	inc hl
 	inc bc
 	pop de
 	dec e
-	jp nz, .asm_29fd
+	jp nz, .fadeColor
 
 	ld a, [wPaletteFadeChanged]
 	and a

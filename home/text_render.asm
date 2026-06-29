@@ -140,7 +140,7 @@ FlushBGMapBuffer::
 	ld sp, hl
 	ld hl, wd100
 	ld de, wd128
-.asm_298b
+.loop
 REPT 2
 	pop bc
 	ld a, 1
@@ -165,7 +165,7 @@ ENDR
 	dec a
 	dec a
 	ldh [hFFA5], a
-	jr nz, .asm_298b
+	jr nz, .loop
 
 	ldh a, [hFFA2]
 	ld l, a
