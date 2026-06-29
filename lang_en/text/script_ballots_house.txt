@@ -1,0 +1,78 @@
+@org $08, $4542 (House_CutsceneText1):
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Ah, time to";
+	line "add the";
+	cont "finishing";
+	cont "touches!";
+	done;
+
+@org $08, $4552 (House_CutsceneText2):
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Add a bit of";
+	line "seasoning";
+	cont "here...";
+	done;
+
+@org $08, $456d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "That's it!";
+	para "It tastes";
+	line "exactly like";
+	cont "Mom's cooking!";
+	done;
+
+@org $08, $458a:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "I miss you,";
+	line "Mom...";
+	done;
+
+@org $08, $45a5:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "...No, I can't";
+	line "think about";
+	cont "that!";
+	para "I promised";
+	line "you that I'd";
+	cont "be strong!";
+	done;
+
+@org $08, $45cc:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad, time for";
+	line "dinner!";
+	done;
+
+@org $08, $45db:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Daaad, time";
+	line "for dinner!";
+	done;
+
+@org $08, $45f0:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Huh, is Dad";
+	line "at the";
+	cont "observatory";
+	cont "again?";
+	para "He's been";
+	line "there all";
+	cont "night, that's";
+	cont "weird...";
+	para "I'll get him";
+	line "to come back";
+	cont "for dinner,";
+	cont "before the";
+	cont "food I've";
+	cont "worked so";
+	cont "hard on gets";
+	cont "cold.";
+	done;

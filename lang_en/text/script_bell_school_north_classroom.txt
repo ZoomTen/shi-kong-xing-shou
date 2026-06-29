@@ -1,0 +1,211 @@
+@org $08, $50a3:
+	english;
+	init NAME_HAYATO, PIC_HAYATO;
+	text "Oh baby~";
+	para "Hey Ballot,";
+	line "you came at a";
+	cont "great time!";
+	para "Say hello to";
+	line "my new";
+	cont "friend,";
+	cont "Advanced";
+	cont "Hayato Mark";
+	cont "I!";
+	done;
+
+@org $08, $50e8:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Yeah okay,";
+	line "that's cool";
+	cont "and all but I";
+	cont "gotta get";
+	cont "going now!";
+	done;
+
+@org $08, $5105:
+	english;
+	init NAME_HAYATO, PIC_HAYATO;
+	text "Oh no~";
+	para "Ballot, don't";
+	line "be such a";
+	cont "sour grape.";
+	para "This is a";
+	line "robot that a";
+	cont "genius";
+	cont "roboticist";
+	cont "friend of";
+	cont "mine lent me.";
+	para "He's very";
+	line "famous. Wanna";
+	cont "know who he";
+	cont "is?";
+	done;
+
+@org $08, $5188:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Uhh, I'm not";
+	line "really";
+	cont "interested.";
+	done;
+
+@org $08, $5195:
+	english;
+	init NAME_HAYATO, PIC_HAYATO;
+	text "Oh baby~";
+	para "It's rare for";
+	line "you to show";
+	cont "this much";
+	cont "interest, and";
+	cont "Hayato is";
+	cont "really moved.";
+	para "After school,";
+	line "Hayato will";
+	cont "take you to";
+	cont "find him.";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $08, $51e5:
+	english;
+	init NAME_FANGFANG, PIC_1A;
+	text "Ballot! Mr.";
+	line "Mo is here.";
+	para "Go back to";
+	line "your seat.";
+	cont "Your seating";
+	cont "position";
+	cont "changed!";
+	cont "You're now in";
+	cont "the top right";
+	cont "seat.";
+	done;
+
+@org $08, $522e:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "Ballot!";
+	para "Where do you";
+	line "think you're";
+	cont "going? Hurry";
+	cont "up and sit";
+	cont "down!";
+	done;
+
+@org $08, $5267:
+	english;
+	init NAME_FANGFANG, PIC_1A;
+	text "Quickly";
+	line "return to";
+	cont "your seat.";
+	cont "You're sitting";
+	cont "at the upper";
+	cont "right.";
+	done;
+
+@org $08, $5291:
+	english;
+	init NAME_HAYATO, PIC_HAYATO;
+	text "Oh baby~";
+	para "It's time for";
+	line "class! You";
+	cont "should pay";
+	cont "attention to";
+	cont "the lesson";
+	cont "and be more";
+	cont "conscientious";
+	cont "like me.";
+	done;
+
+@org $08, $52d0:
+	english;
+	init NAME_BLANK, PIC_1E;
+	text "It's time for";
+	line "cl... class.";
+	para "B-Ba-Ballot...";
+	para "G-go sit... sit";
+	line "down.";
+	done;
+
+@org $08, $5306:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "Good morning,";
+	line "class!";
+	para "There will be";
+	line "a spectacular";
+	cont "meteor shower";
+	cont "tonight. You";
+	cont "all know";
+	cont "that, right?";
+	para "I'm sure you're";
+	line "all looking";
+	cont "forward to";
+	cont "it!";
+	done;
+
+@org $08, $5346:
+	english;
+	init NAME_HAYATO, PIC_HAYATO;
+	text "Oh baby~";
+	para "Dad bought a";
+	line "super deluxe";
+	cont "telescope for";
+	cont "Hayato just";
+	cont "for the";
+	cont "occasion!";
+	done;
+
+@org $08, $5387:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "Yeah... Very,";
+	line "very good...";
+	para "Anyway, can";
+	line "anyone tell";
+	cont "me more about";
+	cont "this meteor";
+	cont "shower?";
+	done;
+
+@org $08, $53af:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "The meteor";
+	line "shower";
+	cont "originates in";
+	cont "the Frigo";
+	cont "Galaxy.";
+	para "It's been 120";
+	line "years since";
+	cont "the last";
+	cont "meteor shower";
+	cont "event took";
+	cont "place, about";
+	cont "1932 light";
+	cont "years from";
+	cont "Earth.";
+	done;
+
+@org $08, $53ef:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "Bravo, bravo!";
+	para "As a reward,";
+	line "I'll dismiss";
+	cont "you all early";
+	cont "today!";
+	para "Ballot! I'll";
+	line "visit your";
+	cont "house later";
+	cont "to ask your";
+	cont "father about";
+	cont "watching the";
+	cont "meteor shower";
+	cont "at the";
+	cont "observatory";
+	cont "tonight. I'll";
+	cont "see you";
+	cont "later.";
+	done;

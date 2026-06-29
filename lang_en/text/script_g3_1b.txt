@@ -1,0 +1,18 @@
+@org $4f, $5372:
+	english;
+	init NAME_BLANK, PIC_18;
+	text "Claude, the";
+	line "son of Bang";
+	cont "Lin";
+	cont "Entreprises'";
+	cont "president, is";
+	cont "a very";
+	cont "naughty kid.";
+	para "However, he";
+	line "is very fond";
+	cont "of small";
+	cont "animals.";
+	para "I often see";
+	line "him talking";
+	cont "to them...";
+	done;

@@ -1,0 +1,56 @@
+@org $6c, $5996:
+	init NAME_BLANK, PIC_16;
+	text "天啊～";
+	line "世界末日就要到";
+	line "";
+	db $f1, $64; #"了"
+	text "";
+	db $5c; #"嗎"
+	text "";
+	db $5d; #"﹖"
+	text "";
+	para "我得趕緊做完最";
+	line "後的事情⋯⋯";
+	done;
+
+@org $6c, $59cb:
+	init NAME_BLANK, PIC_15;
+	text "旁邊有座金鋼山";
+	line "";
+	db $f3, $c2; #"順"
+	text "利的話﹐可以";
+	cont "採到金鋼鑽喲﹗";
+	line "但是金鋼鑽是最";
+	cont "硬的材料﹐普通";
+	line "";
+	db $f0, $23; #"人"
+	text "";
+	db $76; #"無"
+	text "";
+	db $bb; #"法"
+	text "加工呢⚬";
+	para "如果是鐵鋪的鑄";
+	line "造師的話﹐或許";
+	cont "不是問題⚬";
+	done;
+
+@org $6c, $5a48:
+	init NAME_BLANK, PIC_22;
+	text "啊⋯啊⋯啊⋯";
+	line "月亮撞擊地球的";
+	cont "話⋯⋯";
+	line "";
+	db $f2, $48; #"那"
+	text "";
+	db $ad; #"我"
+	text "們還活得了";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"﹖"
+	text "";
+	para "啊啊啊啊啊⋯⋯";
+	line "";
+	db $f2, $d4; #"嚇"
+	text "到講不出話來";
+	done;

@@ -3,7 +3,7 @@ INCLUDE "constants.asm"
 
 SECTION "HRAM", HRAM[$ff8c]
 
-hFF8C:: ds 1
+hEnglishMode:: ds 1
 hFF8D:: ds 1
 hFF8E:: ds 1
 hFF8F:: ds 1

@@ -1,0 +1,56 @@
+@org $66, $77d4:
+	init NAME_BLANK, PIC_24;
+	text "米特﹐看到你沒";
+	line "";
+	db $f2, $d6; #"事"
+	text "了﹐總算放下";
+	para "";
+	db $f2, $c5; #"心"
+	text "裡的那塊大石";
+	line "";
+	db $f0, $d2; #"頭"
+	text "了⚬";
+	done;
+
+@org $66, $7806:
+	init NAME_MITT, PIC_07;
+	text "這裡就是星夢城";
+	line "的機械室⚬";
+	para "飛空引擎的設計";
+	line "原理﹐是採用太";
+	cont "";
+	db $f0, $c4; #"陽"
+	text "及月亮的引力";
+	line "作用⚬";
+	para "";
+	db $f1, $a7; #"達"
+	text "";
+	db $6a; #"?"
+	text "飛行的目的";
+	line "由爸爸親自描繪";
+	cont "太陽及月亮的運";
+	line "行軌跡⚬";
+	para "但從星系裂縫造";
+	line "成後﹐月亮逐漸";
+	cont "偏移軌道﹐引力";
+	line "";
+	db $f0, $32; #"不"
+	text "再制衡⚬";
+	para "巴洛特﹐你走另";
+	line "外一邊﹐將太陽";
+	cont "";
+	db $f0, $02; #"之"
+	text "";
+	db $3d; #"?"
+	text "重新歸位⚬";
+	para "我到另一邊﹐重";
+	line "繪月亮軌跡⚬";
+	para "同時啟動二邊的";
+	line "引力﹐飛空引擎";
+	cont "才能運轉⚬";
+	done;
+
+@org $66, $7920:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "嗯﹗我知道了⚬";
+	done;

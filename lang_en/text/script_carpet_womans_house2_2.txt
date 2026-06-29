@@ -1,0 +1,17 @@
+@org $0e, $528c:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "No one's seen";
+	line "Saya since";
+	cont "the meteor";
+	cont "shower.";
+	para "The";
+	line "observatory";
+	cont "was also";
+	cont "destroyed...";
+	para "Pull yourself";
+	line "together,";
+	cont "Ballot! I'm";
+	cont "sure he'll be";
+	cont "fine.";
+	done;

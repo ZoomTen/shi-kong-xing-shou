@@ -1,0 +1,76 @@
+@org $25, $6099 (String_025_6099):
+	english;
+	text "kDefSpdMdfExp";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $25, $60a9 (String_025_60a9):
+	english;
+	text "Beast";
+	para "Item";
+	para "Party";
+	para "Dex";
+	para "Save";
+	line;
+
+@org $25, $60b7 (String_025_60b7):
+	text "移位";
+	db $f1, $3d; #"詳"
+	text "細";
+	line;
+
+@org $25, $60be (String_025_60be):
+	text "交換詳細";
+	line;
+	text "詳細";
+	line;
+
+@org $25, $60c8 (String_025_60c8):
+	text "使用";
+	db $f1, $41; #"丟"
+	text "棄";
+	line;
+
+@org $25, $60cf (String_025_60cf):
+	text "裝備";
+	db $f1, $41; #"丟"
+	text "棄";
+	line;
+	text "辦詳";
+	line;
+
+@org $25, $60db (String_025_60db):
+	english;
+	text "Yes No";
+	line;
+
+@org $25, $60e0 (String_025_60e0):
+	text "主角１";
+	line;
+
+@org $25, $60e7 (String_025_60e7):
+	text "特技是吃飽睡﹐睡飽吃⚬       ";
+	line;
+
+@org $25, $6104 (String_025_6104):
+	english;
+	text "Do you want";
+	line "to save?";
+	line;
+
+@org $25, $610d (String_025_610d):
+	english;
+	text "Yes No";
+	line;
+
+@org $25, $6112 (String_025_6112):
+	english;
+	text "Is it OK to";
+	line "overwrite?";
+	line;
+
+@org $25, $611b (String_025_611b):
+	english;
+	text "Save OK";
+	para "Save failed";
+	line;

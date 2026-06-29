@@ -1,0 +1,119 @@
+@org $12, $5b82:
+	english;
+	init NAME_BLANK, PIC_17;
+	text "Welcome to";
+	line "Mountreach";
+	cont "Farm, the";
+	cont "town of";
+	cont "shepherds.";
+	done;
+
+@org $12, $5ba7:
+	english;
+	init NAME_BLANK, PIC_20;
+	text "Woohoo!";
+	line "Hahaha!";
+	para "Heeheehee!";
+	line "Hohoho!";
+	para "Weather's";
+	line "great!";
+	para "Eeheeheehee!";
+	done;
+
+@org $12, $5bd5:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "How terrible...";
+	line "Meteors from";
+	cont "the shower";
+	cont "from some";
+	cont "time ago hit";
+	cont "a coffee tree";
+	cont "in the Coffee";
+	cont "Forest, which";
+	cont "turned into a";
+	cont "coffee Star";
+	cont "Beast!";
+	para "That monster";
+	line "sometimes";
+	cont "emits a burst";
+	cont "of coffee";
+	cont "scent...";
+	para "Those who";
+	line "smell it";
+	cont "become";
+	cont "incredibly";
+	cont "excited.";
+	done;
+
+@org $12, $5c51:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "I heard that";
+	line "Gale Cohoho...";
+	cont "Ahaha...";
+	cont "Thahahat's...";
+	cont "Whee!";
+	para "The thought";
+	line "ohohohof...";
+	cont "Whoo!";
+	para "I'm! On! FIRE!";
+	done;
+
+@org $12, $5c92:
+	english;
+	init NAME_BLANK, PIC_21;
+	text "Every time I";
+	line "smelled";
+	cont "coffee, I";
+	cont "would pinch";
+	cont "my nose, and";
+	cont "almost";
+	cont "suffocated";
+	cont "once because";
+	cont "of that...";
+	para "Gale Corp's";
+	line "chairman is";
+	cont "offering a";
+	cont "lot of money";
+	cont "to anyone who";
+	cont "can find his";
+	cont "long-lost";
+	cont "grandson.";
+	# XXX pyphen not installed, text may be clipped!
+	para "I must find";
+	line "him!";
+	done;
+
+@org $12, $5d14:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "Oooooh!";
+	# XXX pyphen not installed, text may be clipped!
+	para "What... what is";
+	line "this?";
+	# XXX pyphen not installed, text may be clipped!
+	para "A power,";
+	line "coursing";
+	cont "through my 80";
+	cont "year-old";
+	cont "body, from my";
+	cont "feet to my";
+	cont "head!";
+	# XXX pyphen not installed, text may be clipped!
+	para "WOOOOOH!";
+	# XXX pyphen not installed, text may be clipped!
+	para "Am I... a";
+	line "superwoman?";
+	done;
+
+@org $12, $5d7a:
+	english;
+	init NAME_BLANK, PIC_1A;
+	text "Waaah!";
+	line "Everyone's";
+	cont "acting so";
+	cont "weird!";
+	para "I'm scared!";
+	line "Waaah!";
+	done;

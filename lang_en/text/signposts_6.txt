@@ -1,0 +1,28 @@
+@org $0c, $42f9:
+	english;
+	text "→Golden";
+	line "Mountain";
+	done;
+
+@org $0c, $4303:
+	english;
+	text "Stress";
+	line "Research";
+	cont "Institute";
+	done;
+
+@org $0c, $430e:
+	english;
+	text "←Airport";
+	done;
+
+@org $0c, $431a:
+	english;
+	text "Golden";
+	line "Mountain";
+	done;
+
+@org $0c, $4322:
+	english;
+	text "Iron Shop";
+	done;

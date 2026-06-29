@@ -1,0 +1,33 @@
+@org $0e, $5b91:
+	english;
+	init NAME_19, PIC_22;
+	text "What a";
+	line "hassle!";
+	para "There is no";
+	line "electricity,";
+	cont "the";
+	cont "electronic";
+	cont "cash register";
+	cont "can't be used...";
+	para "What do you";
+	line "want? Don't";
+	cont "steal in the";
+	cont "dark!";
+	done;
+
+@org $0e, $5bdd:
+	english;
+	init NAME_14, PIC_25;
+	text "Do you need";
+	line "my treatment?";
+	getchoice String_1cc5;
+
+@org $0e, $5bf5:
+	english;
+	init NAME_1A, PIC_25;
+	text "This is the";
+	line "Star Beast";
+	cont "Storage Bank.";
+	cont "Do you need";
+	cont "my help?";
+	getchoice String_1cc5;

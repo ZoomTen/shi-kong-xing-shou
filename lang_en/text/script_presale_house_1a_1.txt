@@ -1,0 +1,21 @@
+@org $66, $6655:
+	init NAME_LAKI, PIC_LAKI;
+	text "哦～呵呵呵呵﹗";
+	line "閃電隊一向是個";
+	cont "愛好和平的正義";
+	line "使者⚬";
+	para "才不會做出打架";
+	line "這種粗魯的事﹗";
+	para "如果想要回音樂";
+	line "";
+	db $f3, $0a; #"盒"
+	text "﹐除非幫我們";
+	cont "買下這棟夢幻之";
+	line "屋吧﹗";
+	done;
+
+@org $66, $66d4:
+	init NAME_KULU, PIC_KULU;
+	text "嗯﹐和在下想的";
+	line "一點都沒有錯﹗";
+	done;

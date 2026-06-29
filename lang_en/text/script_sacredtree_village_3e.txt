@@ -1,0 +1,42 @@
+@org $59, $761a:
+	init NAME_BLANK, PIC_23;
+	text "真是忙呀﹗";
+	line "";
+	db $f1, $65; #"有"
+	text "";
+	db $64; #"了"
+	text "事業之後的";
+	cont "男人﹐真是忙碌";
+	line "咦～你在看什麼";
+	cont "";
+	db $f2, $48; #"那"
+	text "幅照片裡的是";
+	line "我們公司的創辦";
+	cont "人、也是我的祖";
+	line "";
+	db $f4, $64; #"父"
+	text "～帕達⚬";
+	done;
+
+@org $59, $7685:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "糟糕～";
+	line "要怎麼突破門口";
+	cont "的守衛﹖";
+	done;
+
+@org $59, $76a3:
+	init NAME_LANTE, PIC_LANTE_0;
+	text "擋路的傢伙";
+	line "真是麻煩～";
+	para "";
+	db $f2, $56; #"看"
+	text "";
+	db $ad; #"我"
+	text "的～";
+	done;
+
+@org $59, $76c2:
+	init NAME_2A, PIC_17;
+	text "ｚＺｚ～Ｚｚ～";
+	done;

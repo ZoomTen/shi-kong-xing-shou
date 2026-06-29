@@ -1,0 +1,6 @@
+@org $6c, $659b:
+	init NAME_HELEN, PIC_HELEN_0;
+	text "原來如此⚬";
+	line "一起找出問題的";
+	cont "根源吧⚬";
+	done;

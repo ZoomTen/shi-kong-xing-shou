@@ -1,0 +1,158 @@
+@org $4e, $5d75:
+	init NAME_38, PIC_61;
+	text "克勞德⋯你⋯";
+	line "真的要去嗎﹖";
+	done;
+
+@org $4e, $5d8c:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "一定要去﹗";
+	line "我要跟妮娜一起";
+	cont "";
+	db $f2, $bc; #"去"
+	text "﹗";
+	done;
+
+@org $4e, $5dac:
+	init NAME_38, PIC_61;
+	text "我⋯一路上要小";
+	line "心哦﹗";
+	para "不可以喝生的水";
+	line "哦﹗";
+	done;
+
+@org $4e, $5dd6:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "知道了啦﹗";
+	done;
+
+@org $4e, $5de3:
+	init NAME_38, PIC_61;
+	text "妮娜小姐～";
+	line "妳是個不錯的女";
+	cont "";
+	db $f2, $92; #"孩"
+	text "";
+	db $1f; #"?"
+	text "";
+	para "如果是妳的話﹐";
+	line "倒是可以～";
+	done;
+
+@org $4e, $5e1b:
+	init NAME_NINA, PIC_02;
+	text "哈瑪斯伯父﹖";
+	done;
+
+@org $4e, $5e2b:
+	init NAME_38, PIC_61;
+	text "哈哈哈～";
+	line "";
+	db $f2, $c8; #"沒"
+	text "有什麼﹗";
+	cont "巴洛特﹐克勞德";
+	line "還要你們多照顧";
+	line "了﹗";
+	done;
+
+@org $4e, $5e5e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "我會的～";
+	line "哈瑪斯先生⚬";
+	done;
+
+@org $4e, $5e75:
+	init NAME_38, PIC_61;
+	text "嗚～～克勞德～";
+	line "";
+	db $f2, $b6; #"上"
+	text "廁所完﹐要記";
+	cont "得洗手唷﹗";
+	line "嗚嗚嗚～";
+	done;
+
+@org $4e, $5ea3:
+	init NAME_21, PIC_31;
+	text "嘔～呃～喵～呃";
+	line "哽⋯哽住了﹗";
+	done;
+
+@org $4e, $5ec1:
+	init NAME_CLAUDE, PIC_CLAUDE_1;
+	text "怎麼回事﹖";
+	done;
+
+@org $4e, $5ece:
+	init NAME_21, PIC_31;
+	text "喵～啊﹗";
+	line "終於吐出來了﹗";
+	para "就是這個石頭﹐";
+	line "卡在喉嚨裡好久";
+	cont "了﹗";
+	done;
+
+@org $4e, $5f06:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "得到珍珠項鍊⚬";
+	done;
+
+@org $4e, $5f17:
+	init NAME_21, PIC_31;
+	text "喵﹗﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "舒服喵～";
+	done;
+
+@org $4e, $5f2c:
+	init NAME_BLANK, PIC_15;
+	text "這不是我的珍珠";
+	line "項鍊嗎﹖";
+	cont "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "太好了﹗";
+	para "為了感謝你﹐這";
+	line "";
+	db $f2, $4f; #"個"
+	text "";
+	db $d7; #"?"
+	text "送給你了﹗";
+	done;
+
+@org $4e, $5f6b:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到ＸＸＸ﹗";
+	done;
+
+@org $4e, $5f79:
+	init NAME_BLANK, PIC_15;
+	text "真是謝謝你⚬";
+	done;
+
+@org $4e, $5f87:
+	init NAME_BLANK, PIC_15;
+	text "這不是我的珍項";
+	line "鍊嗎﹖";
+	para "我就是因為少了";
+	line "這項鍊﹐才落選";
+	cont "";
+	db $f1, $51; #"的"
+	text "⋯";
+	para "不過還是要謝謝";
+	line "你⚬";
+	para "這個就給你了﹗";
+	done;
+
+@org $4e, $5fda:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到ＸＸＸ﹗";
+	done;
+
+@org $4e, $5fe8:
+	init NAME_BLANK, PIC_15;
+	text "真是謝謝你⚬";
+	done;

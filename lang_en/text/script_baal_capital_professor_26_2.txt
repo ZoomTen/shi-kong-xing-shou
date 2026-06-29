@@ -1,0 +1,27 @@
+@org $6c, $5f88:
+	init NAME_4E, PIC_72;
+	text "這就是金鋼鑽頭";
+	line "了⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "謝謝你了﹗";
+	line "這下子﹐還怕你";
+	cont "切不開﹖";
+	line "咭咭咭咭～";
+	done;
+
+@org $6c, $5fc7:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "有一種不對勁的";
+	line "感覺⋯";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $4f; #"個"
+	text "教授有點奇";
+	line "";
+	db $f1, $29; #"怪"
+	text "⋯";
+	done;

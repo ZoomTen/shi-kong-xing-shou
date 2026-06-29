@@ -1,0 +1,40 @@
+@org $12, $76dc:
+	english;
+	init NAME_BLANK, PIC_18;
+	text "How weird!";
+	line "How very";
+	cont "weird! I";
+	cont "finally";
+	cont "figured out";
+	cont "what seemed";
+	cont "so strange to";
+	cont "me!";
+	para "The time on";
+	line "the clock";
+	cont "tower doesn't";
+	cont "seem to";
+	cont "advance at";
+	cont "all!";
+	para "Is something";
+	line "wrong with";
+	cont "the clock";
+	cont "tower?";
+	para "Or am I";
+	line "imagining";
+	cont "things?";
+	done;
+
+@org $12, $7746:
+	english;
+	init NAME_BLANK, PIC_1C;
+	text "That's sooo";
+	line "weird!";
+	para "I just";
+	line "finished my";
+	cont "snacks, why";
+	cont "is it still 3";
+	cont "o'clock?";
+	para "I'm full... I";
+	line "don't wanna";
+	cont "eat anymore!";
+	done;

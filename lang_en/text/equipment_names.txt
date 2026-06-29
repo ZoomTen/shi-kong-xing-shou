@@ -1,0 +1,109 @@
+@org $1e, $5268:
+	text "    ";
+	return;
+
+@org $1e, $526e:
+	english;
+	text "Mir.Capsule";
+	return;
+
+@org $1e, $5274:
+	english;
+	text "Vital Drop";
+	return;
+
+@org $1e, $527c:
+	english;
+	text "Fire Spear";
+	return;
+
+@org $1e, $5284:
+	english;
+	text "Mer Spear";
+	return;
+
+@org $1e, $528c:
+	english;
+	text "Thd. Spear";
+	return;
+
+@org $1e, $5294:
+	english;
+	text "Stone Spear";
+	return;
+
+@org $1e, $529c:
+	english;
+	text "Wind Spear";
+	return;
+
+@org $1e, $52a4:
+	english;
+	text "Wood Spear";
+	return;
+
+@org $1e, $52ab:
+	english;
+	text "Wild Spear";
+	return;
+
+@org $1e, $52b1:
+	english;
+	text "Fire Scale";
+	return;
+
+@org $1e, $52b7:
+	english;
+	text "Mer Tear";
+	return;
+
+@org $1e, $52c0:
+	english;
+	text "Thd. Tear";
+	return;
+
+@org $1e, $52c6:
+	english;
+	text "Stn. Feather";
+	return;
+
+@org $1e, $52cf:
+	english;
+	text "Wind Cloth";
+	return;
+
+@org $1e, $52d8:
+	english;
+	text "Wood Shield";
+	return;
+
+@org $1e, $52de:
+	english;
+	text "Alarm Clock";
+	return;
+
+@org $1e, $52e2:
+	english;
+	text "Divine Guard";
+	return;
+
+@org $1e, $52ea:
+	english;
+	text "Healing Jade";
+	return;
+
+@org $1e, $52f2:
+	english;
+	text "Vital Jade";
+	return;
+
+@org $1e, $52fa:
+	english;
+	text "Miracle Jade";
+	return;
+
+@org $1e, $5302:
+	english;
+	text "Phantom";
+	line "Crystal";
+	return;

@@ -1,0 +1,88 @@
+@org $58, $6246:
+	init NAME_BLANK, PIC_15;
+	text "我們家琳琳﹐一";
+	line "";
+	db $f0, $80; #"天"
+	text "到晚迷那個做";
+	para "喇叭英雄的﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "不像個女生﹗";
+	done;
+
+@org $58, $6277:
+	init NAME_BLANK, PIC_1A;
+	text "是叭拉叭拉超人";
+	line "啦﹗";
+	para "發現大屁屁老妖";
+	line "怪﹗";
+	para "叭拉．必殺．光";
+	line "";
+	db $f0, $b9; #"波"
+	text "﹗﹗";
+	para "嗶嗶嗶～嗶～";
+	line "";
+	db $f2, $6e; #"碰"
+	text "﹗";
+	done;
+
+@org $58, $62c1:
+	init NAME_BLANK, PIC_1A;
+	text "人家要寄這個模";
+	line "型給東漁市的表";
+	para "哥﹐要怎麼寄呢";
+	line "";
+	db $f2, $4a; #"你"
+	text "能幫我把這個";
+	cont "交給表哥嗎﹖";
+	line "謝謝你﹗";
+	done;
+
+@org $58, $6310:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到超人模型﹗";
+	done;
+
+@org $58, $6321:
+	init NAME_BLANK, PIC_1A;
+	text "要把模型交給東";
+	line "漁市的表哥唷﹗";
+	para "這個是最流行的";
+	line "叭拉叭拉超人唷";
+	para "叭拉．必殺．光";
+	line "";
+	db $f0, $b9; #"波"
+	text "﹗﹗﹗";
+	cont "嗶嗶嗶～嗶～";
+	line "";
+	db $f2, $6e; #"碰"
+	text "﹗";
+	done;
+
+@org $58, $6381:
+	init NAME_LANTE, PIC_LANTE_0;
+	text "巴洛特﹐你來了";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"﹖"
+	text "";
+	cont "所有村人都已經";
+	line "被放回來了⚬";
+	para "一起尋找剩下的";
+	line "";
+	db $f1, $aa; #"晶"
+	text "片吧﹗";
+	done;
+
+@org $58, $63c6:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "藍特＆音樂靈加";
+	line "";
+	db $f2, $30; #"入"
+	text "";
+	db $5c; #"隊"
+	text "";
+	db $5d; #"伍"
+	text "⚬";
+	done;

@@ -1,0 +1,134 @@
+@org $4f, $53d3:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Aah! The";
+	line "pearl";
+	cont "necklace I";
+	cont "was going to";
+	cont "wear for the";
+	cont "talent show";
+	cont "is gone...";
+	para "Waaaah!";
+	para "What am I";
+	line "going to do";
+	cont "now?";
+	done;
+
+@org $4f, $540f:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "A cat just";
+	line "came by and";
+	cont "stole some";
+	cont "fish!";
+	para "What a pest...";
+	done;
+
+@org $4f, $5430:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Dad?";
+	para "Isn't that";
+	line "dad?";
+	para "I finally";
+	line "found him!";
+	done;
+
+@org $4f, $5457:
+	english;
+	init NAME_2A, PIC_53;
+	text "Hello, sir.";
+	para "Please come";
+	line "this way.";
+	done;
+
+@org $4f, $5470:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "...";
+	done;
+
+@org $4f, $5477:
+	english;
+	init NAME_2A, PIC_53;
+	text "Excuse me,";
+	line "sir!";
+	para "These are";
+	line "Bang Lin";
+	cont "Corp's";
+	cont "internal";
+	cont "offices, and";
+	cont "they are not";
+	cont "currently";
+	cont "open to the";
+	cont "public.";
+	para "We'll have to";
+	line "ask you to";
+	cont "leave.";
+	done;
+
+@org $4f, $54bb:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Who was that";
+	line "man?";
+	done;
+
+@org $4f, $54ce:
+	english;
+	init NAME_2A, PIC_53;
+	text "That man is";
+	line "the";
+	cont "president's";
+	cont "honored";
+	cont "guest.";
+	done;
+
+@org $4f, $54e8:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "But he's my";
+	line "dad!";
+	done;
+
+@org $4f, $54fb:
+	english;
+	init NAME_2A, PIC_53;
+	text "Sir...";
+	para "Please excuse";
+	line "me for my";
+	cont "rudeness.";
+	para "We are";
+	line "rofessionally";
+	cont "trained to";
+	cont "not believe";
+	cont "these kinds";
+	cont "of lies.";
+	# XXX pyphen not installed, text may be clipped!
+	para "Bang Lin";
+	line "Entreprises";
+	cont "thanks you";
+	cont "for your";
+	cont "interest, and";
+	cont "invites you";
+	cont "to visit the";
+	cont "exhibition in";
+	cont "the lobby to";
+	cont "your heart's";
+	cont "content.";
+	para "Have a good";
+	line "day.";
+	done;
+
+@org $4f, $5580:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Darn it...";
+	para "Just when I";
+	line "had found";
+	cont "dad.";
+	para "But...";
+	para "But at least";
+	line "I know where";
+	cont "he is now.";
+	done;

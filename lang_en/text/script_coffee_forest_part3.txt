@@ -1,0 +1,53 @@
+@org $12, $6471:
+	english;
+	init NAME_27, PIC_51;
+	text "Gluggo gluggo";
+	line "glug!";
+	done;
+
+@org $12, $6486:
+	english;
+	init NAME_NINA, PIC_NINA_4;
+	text "Oh no! It is";
+	line "about to emit";
+	cont "an exciting";
+	cont "scent!";
+	para "We have to";
+	line "hurry and";
+	cont "defeat it!";
+	done;
+
+@org $12, $64ba:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "Whoa! What's";
+	line "going on!";
+	cont "What was I";
+	cont "doing?";
+	# XXX pyphen not installed, text may be clipped!
+	para "I feels like";
+	line "I was having";
+	cont "a very";
+	cont "exciting";
+	cont "dream...";
+	done;
+
+@org $12, $64fb:
+	english;
+	init NAME_NINA, PIC_NINA_1;
+	text "This is the";
+	line "Angel Tree!";
+	cont "With an Angel";
+	cont "Leaf, my";
+	cont "brother's";
+	cont "injuries can";
+	cont "be cured for";
+	cont "sure!";
+	done;
+
+@org $12, $653d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Got the Angel";
+	line "Leaf!";
+	done;

@@ -16,13 +16,14 @@ objs = [
   "data/maps/tilesets.o",
   "data/text.o",
   "multicart.o",
-  "audio.o"
+  "audio.o",
+  "repointed.o"
 ]
 
 # for translation work
 inc_dirs = [
-  # "lang_en",
-  # "lang_zh"
+  "lang_en",
+  "lang_zh"
 ]
 
 # no really this is it, the `scan_includes` equivalent.
@@ -72,7 +73,7 @@ def which_binary(app):
 if __name__ == "__main__":
   all_deps = set()
   preamble = f"""
-asm_flags =
+asm_flags = -I lang_en -I lang_zh 
 rom = shi_kong_xing_shou.gbc
 sym = shi_kong_xing_shou.sym
 map = shi_kong_xing_shou.map
@@ -115,17 +116,14 @@ rule TEXT
   command = {which_binary("python3")} {which_binary("tools/tx_parse.py")} $in > $out
   description = TEXT $in
 
+rule REPOINT
+  command = {which_binary("python3")} utils/translation/repoint.py --repointed repointed.asm $in
+  description = Generate all translated text
+
 rule TMX
   command = {which_binary("tools/tmx2data")} $in $out
   description = TMX $out
 
-rule COMPARE
-  command = md5sum -c $in
-  description = Verifying match
-
-build compare: COMPARE rom.md5 | $rom
-
-default compare
 """
   print(preamble)
   print("build $rom | $sym $map: LINK %s | $layout" % (" ".join(objs)))
@@ -163,6 +161,7 @@ default compare
     ]
     print("build %s: FACE %s.ora" % (" ".join(outs), i))
     
+  en_text = []   # lang_en text .asm outputs, repointed together in one pass
   for i in all_deps:
     gfx_opts = ""
 
@@ -192,7 +191,7 @@ default compare
       src = i.replace(".1bpp", ".png")
       x = interleave_gfx_re.match(i)
       if x:
-        if x.group(1) == "character_set":
+        if x.group(1) == "character_set" and x.group(2) != "english.1bpp":
           gfx_opts = "--interleave"
       if gfx_opts != "":
         print("build %s: 1BPP_GFX %s\n  gfx = %s" % (i, src, gfx_opts))
@@ -210,7 +209,12 @@ default compare
     # Rather stare at a block of "mostly characters" than "mostly `db`".
     if txt_re.match(i):
       txt_out = os.path.splitext(i)[0]
-      print("build %s: TEXT %s.txt" % (i, txt_out))
+      # English text goes through one REPOINT pass (collected below); any
+      # lang_zh-only fallback still uses the plain per-file TEXT rule.
+      if i.startswith("lang_en/"):
+        en_text.append(i)
+      else:
+        print("build %s: TEXT %s.txt" % (i, txt_out))
       continue
     
     # TMX's are a cheap way to "have an editor" without actually
@@ -220,3 +224,13 @@ default compare
       print("build %s: TMX data/maps/%s/%s.tmx" % (i, x.group(1), x.group(2)))
     except AttributeError:
       pass
+
+  # One REPOINT pass converts every translated block in the English text into an
+  # in-bank `tfarjump` stub and emits its body into repointed.asm (its own
+  # object, sections auto-placed by rgblink). $in = the .txt sources.
+  if en_text:
+    en_text = sorted(set(en_text))
+    asm_outs = " ".join(en_text)
+    txt_ins = " ".join(os.path.splitext(a)[0] + ".txt" for a in en_text)
+    print("build %s repointed.asm: REPOINT %s | utils/translation/repoint.py "
+          "tools/tx_parse.py charmap.asm" % (asm_outs, txt_ins))

@@ -1,0 +1,31 @@
+@org $08, $4f1a:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "There will be";
+	line "a massive";
+	cont "meteor shower";
+	cont "tonight. I";
+	cont "can't miss";
+	cont "this rare";
+	cont "spectacle!";
+	para "By the way,";
+	line "tonight, we";
+	cont "will go to";
+	cont "your father's";
+	cont "observatory";
+	cont "to watch the";
+	cont "meteor";
+	cont "shower.";
+	done;
+
+@org $08, $4f82:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "I'm almost";
+	line "late for";
+	cont "school! It's";
+	cont "not the time";
+	cont "to go";
+	cont "wandering";
+	cont "off.";
+	done;

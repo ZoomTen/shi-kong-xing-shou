@@ -1,0 +1,31 @@
+@org $4f, $6746:
+	english;
+	init NAME_33, PIC_5C;
+	text "Rumble";
+	line "rumble...";
+	para "More ugly";
+	line "living?";
+	para "Isn't becoming";
+	line "a beautiful";
+	cont "stone statue";
+	cont "a blessing";
+	cont "for you?";
+	done;
+
+@org $4f, $6787:
+	english;
+	init NAME_2C, PIC_55;
+	text "Ah!";
+	para "My mask!";
+	done;
+
+@org $4f, $6799:
+	english;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "My... My name's";
+	line "Claude...";
+	para "W-we... We";
+	line "should hurry";
+	cont "back to see";
+	cont "Mr. Rabbit!";
+	done;

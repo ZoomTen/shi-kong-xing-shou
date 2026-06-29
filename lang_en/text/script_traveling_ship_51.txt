@@ -1,0 +1,107 @@
+@org $58, $644a:
+	init NAME_46, PIC_6E;
+	text "藍特～";
+	line "";
+	db $f2, $4a; #"你"
+	text "回來啦﹗";
+	cont "出去旅行要特別";
+	line "小心唷﹗";
+	done;
+
+@org $58, $6475:
+	init NAME_43, PIC_50;
+	text "藍特﹗";
+	line "居然敢離家出走";
+	cont "也好﹗";
+	para "不可以變成不良";
+	line "少年唷﹗";
+	done;
+
+@org $58, $64a8:
+	init NAME_43, PIC_50;
+	text "那是什麼聲音﹖";
+	line "";
+	db $f1, $be; #"甲"
+	text "板下好像又有";
+	cont "老鼠了﹗";
+	para "巴洛特﹐就算幫";
+	line "我的忙好了﹗";
+	cont "幫我趕跑那些老";
+	line "鼠好嗎﹖";
+	line "";
+	getchoice String_1cc5;
+
+@org $58, $6503:
+	init NAME_43, PIC_50;
+	text "啊﹗藍特怎麼可";
+	line "";
+	db $f1, $cb; #"以"
+	text "跟那種自私的";
+	para "朋友一起旅行呢";
+	line "﹖";
+	done;
+
+@org $58, $6534:
+	init NAME_43, PIC_50;
+	text "那就謝謝你了﹗";
+	done;
+
+@org $58, $6543:
+	init NAME_43, PIC_50;
+	text "甲板下好像又有";
+	line "老鼠的聲音﹗";
+	para "巴洛特﹐幫我";
+	line "把牠們趕跑啦﹗";
+	done;
+
+@org $58, $657b:
+	init NAME_43, PIC_50;
+	text "真是感謝﹗";
+	line "這個就給你了﹗";
+	cont "不曉得為什麼﹐";
+	line "這裡的老鼠還真";
+	line "多呀﹗";
+	done;
+
+@org $58, $65b7:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $58, $65c6:
+	init NAME_43, PIC_50;
+	text "真是感謝﹗";
+	line "這個就給你了﹗";
+	cont "老鼠的聲音聽來";
+	line "少多了⋯⋯";
+	done;
+
+@org $58, $65f5:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $58, $6604:
+	init NAME_43, PIC_50;
+	text "太感謝了﹗";
+	line "這個就給你了﹗";
+	cont "";
+	db $f1, $be; #"甲"
+	text "板下﹐應該已";
+	line "";
+	db $f1, $73; #"經"
+	text "沒有老鼠了吧";
+	done;
+
+@org $58, $6639:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了ｘｘｘ﹗";
+	done;
+
+@org $58, $6648:
+	init NAME_43, PIC_50;
+	text "我最討厭老鼠了";
+	line "";
+	db $f1, $35; #"﹗"
+	text "";
+	done;

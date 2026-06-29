@@ -1,0 +1,177 @@
+@org $12, $5194:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Welcome to";
+	line "Dorington,";
+	cont "home of the";
+	cont "world-famous";
+	cont "Gale";
+	cont "Enterprises.";
+	done;
+
+@org $12, $51a6:
+	english;
+	init NAME_BLANK, PIC_21;
+	text "Do you see";
+	line "that tall";
+	cont "tower over";
+	cont "there? That";
+	cont "building is";
+	cont "the";
+	cont "headquarters";
+	cont "of the famous";
+	cont "Gale";
+	cont "Enterprises!";
+	done;
+
+@org $12, $51d9:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "Do you see";
+	line "that";
+	cont "noticeboard?";
+	cont "How sad..";
+	cont "Gale";
+	cont "Enterprises'";
+	cont "chairman is";
+	cont "still trying";
+	cont "to find his";
+	cont "grandchild,";
+	cont "who vanished";
+	cont "16 years ago.";
+	done;
+
+@org $12, $5223:
+	english;
+	init NAME_BLANK, PIC_23;
+	text "If you go";
+	line "west, you'll";
+	cont "see the Clock";
+	cont "Tower. The";
+	cont "chairman of";
+	cont "Gale";
+	cont "Enterprises";
+	cont "erected it as";
+	cont "a memorial to";
+	cont "his deceased";
+	cont "daughter. It's";
+	cont "become a";
+	cont "landmark of";
+	cont "Dorington,";
+	cont "and we all";
+	cont "set our";
+	cont "watches";
+	cont "according to";
+	cont "the time on";
+	cont "the Clock";
+	cont "Tower.";
+	done;
+
+@org $12, $52aa:
+	english;
+	init NAME_BLANK, PIC_18;
+	text "The grandson";
+	line "of Gale";
+	cont "Enterprises'";
+	cont "chairman was";
+	cont "said to have";
+	cont "worn a shiny";
+	cont "necklace in";
+	cont "the shape of";
+	cont "the moon,";
+	cont "known as the";
+	cont "Moon Glaze.";
+	cont "I'm sure it's";
+	cont "worth a";
+	cont "fortune! If I";
+	cont "find it, I'll";
+	cont "be rich!";
+	done;
+
+@org $12, $530c:
+	english;
+	init NAME_BLANK, PIC_1C;
+	text "The time on";
+	line "the clock";
+	cont "tower is 3pm!";
+	cont "Hehe, it's";
+	cont "teatime!";
+	done;
+
+@org $12, $5338:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Aiyeee!! This";
+	line "is serious!";
+	cont "If I find the";
+	cont "chairman's";
+	cont "grandson";
+	cont "before anyone";
+	cont "else, I'll get";
+	cont "a lot of";
+	cont "money! I must";
+	cont "find him";
+	cont "before anyone";
+	cont "else does!";
+	done;
+
+@org $12, $5396:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Do you want";
+	line "to know";
+	cont "something?";
+	getchoice String_1cc5;
+
+@org $12, $53a4:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "If that's how";
+	line "it is...";
+	done;
+
+@org $12, $53b6:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "16 years ago,";
+	line "the daughter";
+	cont "of Harrison,";
+	cont "Gale";
+	cont "Enterprises'";
+	cont "chairman, had";
+	cont "a";
+	cont "relationship";
+	cont "with a";
+	cont "shepherd. The";
+	cont "chairman was";
+	cont "furious as he";
+	cont "felt that the";
+	cont "shepherd was";
+	cont "not worthy of";
+	cont "his daughter,";
+	cont "so he forced";
+	cont "them to break";
+	cont "up and had";
+	cont "the child";
+	cont "sent away.";
+	cont "The chairman's";
+	cont "daughter died";
+	cont "of depression";
+	cont "shortly";
+	cont "after.";
+	done;
+
+@org $12, $546f:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "If you go";
+	line "south, you";
+	cont "will arrive";
+	cont "at Mountreach";
+	cont "Farm. It is a";
+	cont "simple town";
+	cont "that produces";
+	cont "mainly coffee";
+	cont "and angel";
+	cont "leaves.";
+	done;

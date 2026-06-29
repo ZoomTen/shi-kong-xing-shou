@@ -1,0 +1,39 @@
+@org $0c, $42a5:
+	english;
+	text "Star Dream";
+	line "City";
+	done;
+
+@org $0c, $42ad:
+	english;
+	text "School";
+	done;
+
+@org $0c, $42b5:
+	english;
+	text "↓Seaside";
+	done;
+
+@org $0c, $42bd:
+	english;
+	text "←Frozen";
+	line "Garden";
+	done;
+
+@org $0c, $42c7:
+	english;
+	text "Star Dream";
+	line "City Hospital";
+	done;
+
+@org $0c, $42d3:
+	english;
+	text "Frozen Garden";
+	done;
+
+@org $0c, $42db:
+	english;
+	text "Warning:";
+	line "Monsters";
+	cont "Ahead";
+	done;

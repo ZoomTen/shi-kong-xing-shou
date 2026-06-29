@@ -1,0 +1,77 @@
+@org $58, $5ea9:
+	init NAME_BLANK, PIC_23;
+	text "巴洛特呀～";
+	line "真是感謝你﹗";
+	para "";
+	db $f1, $58; #"要"
+	text "不是你的話﹐";
+	line "他們就回不來了";
+	cont "這個就給你了﹐";
+	line "千萬不要推辭喲";
+	done;
+
+@org $58, $5ef8:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了";
+	line "";
+	db $f1, $99; #"營"
+	text "";
+	db $9a; #"養"
+	text "大餐";
+	done;
+
+@org $58, $5f09:
+	init NAME_BLANK, PIC_23;
+	text "巴洛特呀～";
+	line "真是感謝你﹗";
+	cont "";
+	db $f1, $58; #"要"
+	text "不是你的話﹐";
+	line "他們就回不來了";
+	done;
+
+@org $58, $5f40:
+	init NAME_BLANK, PIC_24;
+	text "生之谷的火山﹐";
+	line "好像又回復平靜";
+	cont "了⚬";
+	para "又可以安心的工";
+	line "作了⚬";
+	done;
+
+@org $58, $5f77:
+	init NAME_BLANK, PIC_14;
+	text "藍特之前還因為";
+	line "火山的事情﹐跑";
+	cont "來警告我們⚬";
+	para "我還罵他是騙人";
+	line "的壞小孩⋯";
+	cont "真是對不起⋯⋯";
+	done;
+
+@org $58, $5fc7:
+	init NAME_BLANK, PIC_13;
+	text "哼﹗雖然藍特把";
+	line "我們關起來﹐是";
+	cont "出於好意﹗";
+	line "但我還是很生氣";
+	line "哼哼哼﹗";
+	done;
+
+@org $58, $6003:
+	init NAME_BLANK, PIC_1A;
+	text "藍特哥哥好棒唷";
+	line "他的笛聲會讓人";
+	cont "跳舞唷﹗";
+	done;
+
+@org $58, $602b:
+	init NAME_BLANK, PIC_16;
+	text "真是可怕⋯⋯";
+	line "剛才看見一大群";
+	cont "老鼠﹐一起游向";
+	line "了那艘旅行船⚬";
+	para "遠遠的看﹐就像";
+	line "在底比斯海上拖";
+	cont "著一條黑色的線";
+	done;

@@ -1,0 +1,132 @@
+@org $0f, $4691:
+	english;
+	init NAME_21, PIC_31;
+	text "Miao~ Zzzz~";
+	done;
+
+@org $0f, $46aa:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "Oh no! The";
+	line "entrance has";
+	cont "been blocked";
+	cont "by this";
+	cont "monstrous";
+	cont "cat!";
+	para "I'd better go";
+	line "report back";
+	cont "to Dr. Leo.";
+	done;
+
+@org $0f, $46e3:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "What?";
+	para "A monster";
+	line "cat?";
+	para "What shall we";
+	line "do..?";
+	done;
+
+@org $0f, $46fe:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I've got it!";
+	line "We can use a";
+	cont "robot rat to";
+	cont "distract him!";
+	para "But how can";
+	line "we make one";
+	cont "while the";
+	cont "power is";
+	cont "out..?";
+	done;
+
+@org $0f, $473b:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "How";
+	line "frustrating!";
+	para "As a last";
+	line "resort, I'll";
+	cont "have to make";
+	cont "it spring-";
+	cont "powered.";
+	para "Even though";
+	line "it would be";
+	cont "embarrasing";
+	cont "for me to";
+	cont "make";
+	cont "clockwork";
+	cont "rats..";
+	para "Give me a";
+	line "bit, and I'll";
+	cont "find the";
+	cont "parts I";
+	cont "need..";
+	done;
+
+@org $0f, $479e:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Darn it!";
+	para "I used to";
+	line "think that";
+	cont "making";
+	cont "clockworks";
+	cont "was below me,";
+	cont "so I threw";
+	cont "all those";
+	cont "parts out.";
+	para "Sorry,";
+	line "Ballot, but I";
+	cont "need some";
+	cont "springs!";
+	done;
+
+@org $0f, $4808:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Got it!";
+	done;
+
+@org $0f, $4813:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "To make the";
+	line "robot rat, we";
+	cont "need a";
+	cont "spring.";
+	done;
+
+@org $0f, $4838:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Springs? I";
+	line "never thought";
+	cont "Dr. Leo would";
+	cont "need such a";
+	cont "thing...";
+	para "Where did I";
+	line "put it...?";
+	para "Ah, today's";
+	line "weather sure";
+	cont "is nice, but";
+	cont "dark clouds";
+	cont "are";
+	cont "gathering...";
+	done;
+
+@org $0f, $48ae:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Ah, right!";
+	para "The spring!";
+	para "I forgot";
+	line "where I put";
+	cont "it, so feel";
+	cont "free to";
+	cont "search in";
+	cont "these piles";
+	cont "of treasure!";
+	done;

@@ -1,0 +1,24 @@
+@org $55, $673a:
+	english;
+	init NAME_3C, PIC_65;
+	text "Did you know?";
+	line "A mermaid has";
+	cont "two souls.";
+	para "One is that";
+	line "of a human,";
+	cont "the other is";
+	cont "that of a";
+	cont "fish.";
+	para "If a mermaid";
+	line "loses her";
+	cont "fish soul,";
+	cont "the remaining";
+	cont "human soul";
+	cont "will quickly";
+	cont "disappear";
+	cont "too.";
+	para "And she'll end";
+	line "up turning";
+	cont "into foam!";
+	cont "How scary!";
+	done;

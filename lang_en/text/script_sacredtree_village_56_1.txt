@@ -1,0 +1,27 @@
+@org $5a, $5ac1:
+	init NAME_55, PIC_18;
+	text "怎麼辦⋯";
+	line "";
+	db $f2, $ce; #"怎"
+	text "";
+	db $cf; #"麼"
+	text "辦⋯";
+	cont "爸爸留下來的懷";
+	line "";
+	db $f7, $9d; #"錶"
+	text "⋯不見了﹖";
+	para "我已經什麼都沒";
+	line "有了﹐如今又遺";
+	para "失了爸爸遺留的";
+	line "懷錶⋯⋯";
+	para "";
+	db $f2, $48; #"那"
+	text "是爸媽飛機失";
+	line "事前﹐給帕達最";
+	cont "後的遺物⋯⋯";
+	line "";
+	db $f2, $ad; #"我"
+	text "什麼都沒有了";
+	cont "再活下去⋯";
+	line "有什麼意義呢﹖";
+	done;

@@ -1,0 +1,21 @@
+@org $12, $5733:
+	english;
+	init NAME_BLANK, PIC_22;
+	text "Haiz... I";
+	line "really want";
+	cont "to do";
+	cont "business";
+	cont "overseas. But";
+	cont "the";
+	cont "relationship";
+	cont "between our";
+	cont "country and";
+	cont "the";
+	cont "neighboring";
+	cont "ones isn't";
+	cont "good. Even";
+	cont "the roads";
+	cont "have been";
+	cont "blocked...";
+	cont "Haiz~";
+	done;

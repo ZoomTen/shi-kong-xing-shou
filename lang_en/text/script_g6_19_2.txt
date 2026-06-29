@@ -1,0 +1,88 @@
+@org $6c, $6c58:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "唉～難道地球就";
+	line "";
+	db $f2, $57; #"這"
+	text "";
+	db $cf; #"?"
+	text "的完了嗎﹖";
+	done;
+
+@org $6c, $6c75:
+	init NAME_4F, PIC_73;
+	text "終於找到你們了";
+	line "又是你這個敗事";
+	para "有餘的雷歐老頭";
+	line "把晶片交給貝爾";
+	para "機器人保管﹐自";
+	line "然有我的目的⚬";
+	done;
+
+@org $6c, $6ccd:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "可惡﹗";
+	line "雖然很不服氣﹐";
+	cont "但卻沒有辦法反";
+	line "馭⋯⋯";
+	done;
+
+@org $6c, $6cf9:
+	init NAME_4F, PIC_73;
+	text "你們為什麼不等";
+	line "";
+	db $f2, $ad; #"我"
+	text "回來﹐就私自";
+	cont "行動﹗";
+	para "";
+	db $f1, $65; #"有"
+	text "人找到了古代";
+	line "的飛空兵器﹐緊";
+	cont "急委託我前往修";
+	line "復⚬";
+	para "才會暫時離開巴";
+	line "爾之都﹐並把動";
+	cont "力晶片封住⚬";
+	para "沒想到會發生這";
+	line "種事⚬";
+	done;
+
+@org $6c, $6d89:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "古代飛空兵器﹖";
+	done;
+
+@org $6c, $6d99:
+	init NAME_4F, PIC_73;
+	text "是的⚬";
+	line "沒有時間解釋了";
+	cont "再拖下去的話﹐";
+	line "就快要來不及了";
+	para "";
+	db $f1, $65; #"有"
+	text "一股極大的能";
+	line "量正要從裂縫竄";
+	cont "出⚬";
+	para "";
+	db $f1, $aa; #"晶"
+	text "片組成的『核";
+	line "』沒有受損吧﹖";
+	done;
+
+@org $6c, $6e0c:
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "沒有⚬";
+	done;
+
+@org $6c, $6e15:
+	init NAME_4F, PIC_73;
+	text "這真是太好了⚬";
+	line "那你就跟我走吧";
+	para "巴洛特﹐把同伴";
+	line "";
+	db $f1, $34; #"找"
+	text "齊後﹐我們在";
+	cont "";
+	db $f3, $15; #"綠"
+	text "州的地方會合";
+	line "吧⚬";
+	done;

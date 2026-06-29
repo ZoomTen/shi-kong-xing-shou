@@ -1,0 +1,121 @@
+@org $08, $4b77:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "The school's";
+	line "door is";
+	cont "locked...";
+	done;
+
+@org $08, $4b8b:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad! Dinner";
+	line "is ready!";
+	done;
+
+@org $08, $4b9f:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad, time for";
+	line "dinner!";
+	done;
+
+@org $08, $4baf:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Daaaaaaad!";
+	done;
+
+@org $08, $4bbb:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "It's Ballot!";
+	para "...";
+	done;
+
+@org $08, $4bd2:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad...";
+	done;
+
+@org $08, $4bdc:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Hush, don't";
+	line "talk.";
+	para "Come here.";
+	done;
+
+@org $08, $4bf3:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "I haven't seen";
+	line "you this";
+	cont "closely since";
+	cont "Mom got sick.";
+	done;
+
+@org $08, $4c1d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad... What's";
+	line "wrong?";
+	done;
+
+@org $08, $4c2e:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Shush, don't";
+	line "say anything.";
+	para "Take a look";
+	line "at the stars.";
+	done;
+
+@org $08, $4c4c:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad, isn't the";
+	line "moon supposed";
+	cont "to be pale";
+	cont "and yellow?";
+	para "Why is it";
+	line "looking a";
+	cont "little blue";
+	cont "tonight? It's";
+	cont "a bit scary...";
+	done;
+
+@org $08, $4c8c:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "...It's finally";
+	line "here?";
+	para "It's a little";
+	line "too early";
+	cont "than I";
+	cont "thought.";
+	done;
+
+@org $08, $4cb5:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad...";
+	done;
+
+@org $08, $4cbd:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "...";
+	done;
+
+@org $08, $4cc6:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Oh no! If I";
+	line "don't hurry to";
+	cont "school, I'll";
+	cont "definitely be";
+	cont "late.";
+	# XXX pyphen not installed, text may be clipped!
+	done;

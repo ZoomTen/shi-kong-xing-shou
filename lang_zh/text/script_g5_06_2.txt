@@ -1,0 +1,19 @@
+@org $67, $7044:
+	init NAME_2F, PIC_58;
+	text "終於有人聽懂我";
+	line "的話了⚬";
+	line "這個送你⚬";
+	line "";
+	done;
+
+@org $67, $7069:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到神奇果實";
+	db $f1, $53; #"⚬"
+	text "";
+	done;
+
+@org $67, $7079:
+	init NAME_2F, PIC_58;
+	text "謝謝你﹗";
+	done;

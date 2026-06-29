@@ -1,0 +1,1810 @@
+@org $26, $5864:
+	text "﹖﹖﹖";
+	line;
+
+@org $26, $5869:
+	english;
+	text "Irritable and";
+	line "angry. It";
+	cont "recklessly";
+	cont "starts";
+	cont "fights.";
+	line;
+
+@org $26, $5886:
+	english;
+	text "At about";
+	line "3.2m, it has";
+	cont "boundless";
+	cont "strength.";
+	line;
+
+@org $26, $58a9:
+	english;
+	text "Good at using";
+	line "punches.";
+	cont "Often";
+	cont "delivers";
+	cont "fatal punches";
+	cont "while its";
+	cont "victim is";
+	cont "unawares.";
+	line;
+
+@org $26, $58d6:
+	english;
+	text "The whole";
+	line "body is made";
+	cont "of rubber,";
+	cont "even if";
+	cont "broken can";
+	cont "immediately";
+	cont "regenerate.";
+	line;
+
+@org $26, $58fa:
+	english;
+	text "He is known";
+	line "for his";
+	cont "invincible";
+	cont "body and his";
+	cont "weakness is";
+	cont "above the";
+	cont "eyes.";
+	line;
+
+@org $26, $591e:
+	english;
+	text "He has a";
+	line "timid";
+	cont "personality";
+	cont "and is always";
+	cont "looking for";
+	cont "someone to";
+	cont "protect.";
+	line;
+
+@org $26, $5941:
+	english;
+	text "Born in the";
+	line "green";
+	cont "grassland, he";
+	cont "has the power";
+	cont "to manipulate";
+	cont "lightning.";
+	line;
+
+@org $26, $5964:
+	english;
+	text "Eccentric and";
+	line "passionate";
+	cont "nature,";
+	cont "unpredictable";
+	cont "moves, often";
+	cont "with heaven";
+	cont "and earth as";
+	cont "their home.";
+	line;
+
+@org $26, $598d:
+	english;
+	text "Transformed";
+	line "by the aliens";
+	cont "robot, the";
+	cont "whole body is";
+	cont "covered with";
+	cont "high-tech";
+	cont "weapons.";
+	line;
+
+@org $26, $59b2:
+	english;
+	text "Long lived in";
+	line "the cave,";
+	cont "with the";
+	cont "ability to";
+	cont "hear the";
+	cont "sound of the";
+	cont "location.";
+	line;
+
+@org $26, $59d5:
+	english;
+	text "Resentment of";
+	line "all things,";
+	cont "has been";
+	cont "brutal to the";
+	cont "point of";
+	cont "killing";
+	cont "people on";
+	cont "sight.";
+	line;
+
+@org $26, $59f8:
+	english;
+	text "Rare immortal";
+	line "beast, legend";
+	cont "has it that";
+	cont "if you see it";
+	cont "once, you";
+	cont "will live";
+	cont "forever.";
+	line;
+
+@org $26, $5a23:
+	english;
+	text "The scales of";
+	line "its body have";
+	cont "evolved into";
+	cont "spikes.";
+	line;
+
+@org $26, $5a4a:
+	english;
+	text "The fire that";
+	line "comes out of";
+	cont "its mouth is";
+	cont "strong enough";
+	cont "to melt all";
+	cont "weapons.";
+	line;
+
+@org $26, $5a6b:
+	english;
+	text "It is usually";
+	line "a puddle of";
+	cont "lava, but";
+	cont "only when it";
+	cont "attacks does";
+	cont "it show its";
+	cont "original";
+	cont "form.";
+	line;
+
+@org $26, $5a8b:
+	english;
+	text "The flame on";
+	line "its tail is a";
+	cont "symbol of its";
+	cont "life. Without";
+	cont "fire, its";
+	cont "speed will be";
+	cont "reduced.";
+	line;
+
+@org $26, $5abe:
+	english;
+	text "A spirit that";
+	line "possesses a";
+	cont "candle and is";
+	cont "often";
+	cont "mistaken for";
+	cont "a ghost.";
+	line;
+
+@org $26, $5ae0:
+	english;
+	text "The high";
+	line "temperature";
+	cont "of the";
+	cont "furnace can";
+	cont "produce any";
+	cont "weapon of the";
+	cont "highest";
+	cont "quality.";
+	line;
+
+@org $26, $5b0a:
+	english;
+	text "He thinks he";
+	line "is more";
+	cont "important";
+	cont "than the sun,";
+	cont "and has";
+	cont "always wanted";
+	cont "to take over";
+	cont "the position";
+	cont "of the sun.";
+	line;
+
+@org $26, $5b30:
+	english;
+	text "The fastest";
+	line "in the fire";
+	cont "system, come";
+	cont "and go";
+	cont "without a";
+	cont "shadow.";
+	line;
+
+@org $26, $5b50:
+	english;
+	text "He often";
+	line "pretends to";
+	cont "be a";
+	cont "ferryman, but";
+	cont "when people";
+	cont "are not";
+	cont "paying";
+	cont "attention, he";
+	cont "pushes them";
+	cont "into the sea.";
+	line;
+
+@org $26, $5b7d:
+	english;
+	text "Pufferfish's";
+	line "brother, his";
+	cont "body has no";
+	cont "music to cure";
+	cont "the poison.";
+	line;
+
+@org $26, $5b9d:
+	english;
+	text "Although very";
+	line "heavy, but";
+	cont "very good at";
+	cont "slipping";
+	cont "through the";
+	cont "ice river";
+	cont "full of thin";
+	cont "ice.";
+	line;
+
+@org $26, $5bc5:
+	english;
+	text "Often in the";
+	line "sea to create";
+	cont "big waves, is";
+	cont "the legendary";
+	cont "sea monster.";
+	line;
+
+@org $26, $5be5:
+	english;
+	text "The sea";
+	line "dragon king's";
+	cont "army teacher,";
+	cont "can see";
+	cont "through the";
+	cont "human heart,";
+	cont "very wise.";
+	line;
+
+@org $26, $5c06:
+	english;
+	text "He swims";
+	line "backward with";
+	cont "a quick cheek-";
+	cont "vibrating";
+	cont "motion. Its";
+	cont "speed is very";
+	cont "fast.";
+	# XXX pyphen not installed, text may be clipped!
+	# XXX Text overflows on: ['a quick cheek-']
+	line;
+
+@org $26, $5c35:
+	english;
+	text "When in";
+	line "danger, it";
+	cont "spits out";
+	cont "bubbles from";
+	cont "its mouth and";
+	cont "rolls quickly";
+	cont "to escape.";
+	line;
+
+@org $26, $5c6d:
+	english;
+	text "When the";
+	line "spawning";
+	cont "period";
+	cont "begins,";
+	cont "goldfish";
+	cont "kings gather";
+	cont "from all";
+	cont "over, and";
+	cont "rivers are";
+	cont "also affected";
+	cont "by the";
+	cont "spawning";
+	cont "period.";
+	line;
+
+@org $26, $5ca6:
+	english;
+	text "Specializing";
+	line "in eating";
+	cont "children";
+	cont "swimming in";
+	cont "the sea, has";
+	cont "shot the";
+	cont "great white";
+	cont "shark 1, 2";
+	cont "episodes.";
+	line;
+
+@org $26, $5ccd:
+	english;
+	text "The woman who";
+	line "loved Zeus,";
+	cont "the sun god,";
+	cont "eventually";
+	cont "became the";
+	cont "most romantic";
+	cont "symbol of the";
+	cont "onstellation.";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $26, $5cfe:
+	english;
+	text "The weeds";
+	line "that cover";
+	cont "the whole";
+	cont "body can";
+	cont "disturb the";
+	cont "attention of";
+	cont "the other";
+	cont "party and";
+	cont "make them";
+	cont "feel";
+	cont "instantly";
+	cont "moved.";
+	line;
+
+@org $26, $5d35:
+	english;
+	text "The big";
+	line "mushroom on";
+	cont "the top of";
+	cont "the head,";
+	cont "everyone who";
+	cont "sees it will";
+	cont "have the";
+	cont "desire to";
+	cont "bite it.";
+	line;
+
+@org $26, $5d65:
+	english;
+	text "Thousands of";
+	line "years old";
+	cont "trees are";
+	cont "transformed";
+	cont "into tree";
+	cont "spirits,";
+	cont "which can";
+	cont "move freely";
+	cont "away from the";
+	cont "soil.";
+	line;
+
+@org $26, $5d8f:
+	english;
+	text "Under the";
+	line "brightly";
+	cont "colored";
+	cont "appearance,";
+	cont "hidden sharp";
+	cont "steel teeth,";
+	cont "cold bite";
+	cont "from behind.";
+	line;
+
+@org $26, $5dc2:
+	english;
+	text "The sharpness";
+	line "is comparable";
+	cont "to that of a";
+	cont "sickle, and";
+	cont "it is said";
+	cont "that even";
+	cont "stones can be";
+	cont "shattered.";
+	line;
+
+@org $26, $5de7:
+	english;
+	text "Its large";
+	line "body makes";
+	cont "the noise it";
+	cont "makes when it";
+	cont "moves its";
+	cont "body travels";
+	cont "a long";
+	cont "distance.";
+	line;
+
+@org $26, $5e1e:
+	english;
+	text "This is a";
+	line "huge flower";
+	cont "that grows in";
+	cont "the swamp and";
+	cont "has a strong";
+	cont "poison.";
+	line;
+
+@org $26, $5e41:
+	english;
+	text "A monster";
+	line "that looks";
+	cont "like a";
+	cont "ladybug, and";
+	cont "its wings";
+	cont "produce";
+	cont "static";
+	cont "electricity.";
+	line;
+
+@org $26, $5e60:
+	english;
+	text "A monster";
+	line "that likes to";
+	cont "eat shiitake";
+	cont "mushrooms and";
+	cont "often";
+	cont "imagines";
+	cont "itself to be";
+	cont "the top of";
+	cont "the line.";
+	line;
+
+@org $26, $5e8a:
+	english;
+	text "Thought it";
+	line "would evolve";
+	cont "from a";
+	cont "caterpillar";
+	cont "into a";
+	cont "beautiful";
+	cont "butterfly,";
+	cont "but only has";
+	cont "a pair of";
+	cont "ugly wings.";
+	line;
+
+@org $26, $5ebb:
+	english;
+	text "The immortal";
+	line "dragon that";
+	cont "guards the";
+	cont "entrance and";
+	cont "exit of the";
+	cont "immortal";
+	cont "world has the";
+	cont "ability to";
+	cont "distinguish";
+	cont "between the";
+	cont "real and the";
+	cont "fake by the";
+	cont "horns on its";
+	cont "head.";
+	line;
+
+@org $26, $5eea:
+	english;
+	text "It is said";
+	line "that at one";
+	cont "time the";
+	cont "species was";
+	cont "almost";
+	cont "extinct, but";
+	cont "only a few";
+	cont "were lucky";
+	cont "enough to";
+	cont "survive.";
+	line;
+
+@org $26, $5f1c:
+	english;
+	text "Because of";
+	line "the different";
+	cont "structure of";
+	cont "its eyes, it";
+	cont "can see";
+	cont "clearly in";
+	cont "the dark";
+	cont "because of";
+	cont "its heat-";
+	cont "sensing";
+	cont "function.";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $26, $5f4a:
+	english;
+	text "When angry,";
+	line "it can cause";
+	cont "a sandstorm";
+	cont "that no one";
+	cont "can stop, and";
+	cont "it can even";
+	cont "move a whole";
+	cont "mountain.";
+	line;
+
+@org $26, $5f73:
+	english;
+	text "They can fly";
+	line "freely in the";
+	cont "air because";
+	cont "of their";
+	cont "feathered";
+	cont "wings, but";
+	cont "their numbers";
+	cont "are quite";
+	cont "rare.";
+	line;
+
+@org $26, $5f9f:
+	english;
+	text "Legend has it";
+	line "that when a";
+	cont "messenger";
+	cont "sees its";
+	cont "trail, it";
+	cont "means bad";
+	cont "luck is";
+	cont "coming.";
+	line;
+
+@org $26, $5fcb:
+	english;
+	text "Will call for";
+	line "the sound of";
+	cont "the wind";
+	cont "chirping,";
+	cont "swinging the";
+	cont "wings can";
+	cont "cause a huge";
+	cont "dragon whirl.";
+	line;
+
+@org $26, $5ff8:
+	english;
+	text "90% of its";
+	line "body has been";
+	cont "mechanized,";
+	cont "but it flies";
+	cont "stiffly";
+	cont "because of";
+	cont "the rusted";
+	cont "screws.";
+	line;
+
+@org $26, $6026:
+	english;
+	text "Open the";
+	line "feathered";
+	cont "wings can";
+	cont "cover the";
+	cont "sky, is the";
+	cont "wind and";
+	cont "earth's";
+	cont "guardian god.";
+	line;
+
+@org $26, $6049:
+	english;
+	text "The";
+	line "transformed";
+	cont "pterodactyl";
+	cont "has";
+	cont "artificial";
+	cont "intelligence";
+	cont "and learns to";
+	cont "set traps";
+	cont "against";
+	cont "enemies.";
+	line;
+
+@org $26, $6078:
+	english;
+	text "With the";
+	line "ability to";
+	cont "dig in the";
+	cont "ground while";
+	cont "moving at";
+	cont "high speed.";
+	line;
+
+@org $26, $60a0:
+	english;
+	text "Often spit";
+	line "out sticky";
+	cont "mud to";
+	cont "confuse the";
+	cont "enemy's";
+	cont "vision, and";
+	cont "take the";
+	cont "opportunity";
+	cont "to escape.";
+	line;
+
+@org $26, $60cb:
+	english;
+	text "Collect all";
+	line "the ore";
+	cont "essence in";
+	cont "the four";
+	cont "corners of";
+	cont "the head,";
+	cont "thus gaining";
+	cont "strong";
+	cont "defensive";
+	cont "power.";
+	line;
+
+@org $26, $60f5:
+	english;
+	text "He can";
+	line "continuously";
+	cont "throw rocks";
+	cont "to attack his";
+	cont "opponents,";
+	cont "but his";
+	cont "weakness lies";
+	cont "in his two";
+	cont "arms.";
+	line;
+
+@org $26, $6126:
+	english;
+	text "A rock-like";
+	line "monster that";
+	cont "specializes";
+	cont "in winning in";
+	cont "combat with";
+	cont "its wrist";
+	cont "strength.";
+	line;
+
+@org $26, $614b:
+	english;
+	text "Hard body and";
+	line "the ability";
+	cont "to disappear";
+	cont "into the";
+	cont "ground, can";
+	cont "move freely";
+	cont "in the";
+	cont "ground.";
+	line;
+
+@org $26, $6176:
+	english;
+	text "The fierce";
+	line "cracking";
+	cont "force of the";
+	cont "impact, seems";
+	cont "to break even";
+	cont "the feeling";
+	cont "of the";
+	cont "mountain.";
+	line;
+
+@org $26, $619b:
+	english;
+	text "The whole";
+	line "body is";
+	cont "covered with";
+	cont "a steel";
+	cont "shell, the";
+	cont "general";
+	cont "attack is not";
+	cont "painful.";
+	line;
+
+@org $26, $61c4:
+	english;
+	text "Always";
+	line "energetic, it";
+	cont "often carries";
+	cont "rocks to pass";
+	cont "the time.";
+	line;
+
+@org $26, $61eb:
+	english;
+	text "At will, it";
+	line "will use the";
+	cont "whole body of";
+	cont "the mud to";
+	cont "transform";
+	cont "into a human";
+	cont "form, and";
+	cont "then turn";
+	cont "into a beach";
+	cont "of mud when";
+	cont "it touches";
+	cont "water.";
+	line;
+
+@org $26, $621d:
+	english;
+	text "Legend has it";
+	line "that it is a";
+	cont "red devil";
+	cont "feared by";
+	cont "everyone in";
+	cont "the western";
+	cont "region in";
+	cont "ancient";
+	cont "times.";
+	line;
+
+@org $26, $6247:
+	english;
+	text "It is a giant";
+	line "monster with";
+	cont "exceptional";
+	cont "intelligence";
+	cont "and can fly";
+	cont "in the sky";
+	cont "with";
+	cont "flexibility.";
+	line;
+
+@org $26, $6273:
+	english;
+	text "It has a very";
+	line "high guard";
+	cont "and speed,";
+	cont "and will";
+	cont "chase after";
+	cont "anything that";
+	cont "is alive.";
+	line;
+
+@org $26, $629f:
+	english;
+	text "It is";
+	line "summoned from";
+	cont "the dark";
+	cont "domain and";
+	cont "has a fearful";
+	cont "form.";
+	line;
+
+@org $26, $62c7:
+	english;
+	text "Gained life";
+	line "through the";
+	cont "power of";
+	cont "evil, he";
+	cont "holds a large";
+	cont "axe in his";
+	cont "hands to";
+	cont "defend";
+	cont "himself.";
+	line;
+
+@org $26, $62f7:
+	english;
+	text "He has a";
+	line "sharp tooth";
+	cont "that can";
+	cont "easily tear";
+	cont "apart even";
+	cont "bones.";
+	line;
+
+@org $26, $631b:
+	english;
+	text "It is";
+	line "composed of a";
+	cont "computer";
+	cont "virus of";
+	cont "super";
+	cont "malicious";
+	cont "quality, and";
+	cont "uses the";
+	cont "computer to";
+	cont "commit";
+	cont "crimes.";
+	line;
+
+@org $26, $6342:
+	english;
+	text "It often";
+	line "makes";
+	cont "unexpected";
+	cont "noises in the";
+	cont "dark forest";
+	cont "to scare";
+	cont "passers-by.";
+	line;
+
+@org $26, $6373:
+	english;
+	text "If it comes";
+	line "into contact";
+	cont "with the";
+	cont "tangled";
+	cont "threads it";
+	cont "spits out, it";
+	cont "will";
+	cont "immediately";
+	cont "become";
+	cont "entangled and";
+	cont "immobilized.";
+	line;
+
+@org $26, $63a0:
+	english;
+	text "Once it opens";
+	line "its mouth, it";
+	cont "just eats,";
+	cont "and it doesn't";
+	cont "even let go";
+	cont "of garbage.";
+	line;
+
+@org $26, $63cf:
+	english;
+	text "He is";
+	line "optimistic";
+	cont "and does not";
+	cont "like to";
+	cont "fight, but he";
+	cont "will not";
+	cont "allow people";
+	cont "who trespass";
+	cont "on sacred";
+	cont "ground to be";
+	cont "pardoned.";
+	line;
+
+@org $26, $6400:
+	english;
+	text "Legend has it";
+	line "that he is a";
+	cont "descendant of";
+	cont "the thunder";
+	cont "god, and";
+	cont "whenever he";
+	cont "coughs, it's";
+	cont "time for";
+	cont "thunder.";
+	line;
+
+@org $26, $642b:
+	english;
+	text "The walking";
+	line "stick beside";
+	cont "him has the";
+	cont "ability to";
+	cont "expel the";
+	cont "possession of";
+	cont "evil spirits";
+	cont "for people.";
+	line;
+
+@org $26, $644f:
+	english;
+	text "Whenever the";
+	line "sky is";
+	cont "abnormal, you";
+	cont "can see his";
+	cont "vestiges.";
+	line;
+
+@org $26, $6473:
+	english;
+	text "By the";
+	line "thunder stone";
+	cont "cultivated";
+	cont "into the";
+	cont "thunder";
+	cont "beast, with";
+	cont "the power to";
+	cont "manipulate";
+	cont "lightning.";
+	line;
+
+@org $26, $6499:
+	english;
+	text "When he";
+	line "starts to";
+	cont "swing the";
+	cont "weapon in his";
+	cont "hand, it is a";
+	cont "sign of the";
+	cont "great";
+	cont "tsunami.";
+	line;
+
+@org $26, $64c1:
+	english;
+	text "The horn on";
+	line "the head,";
+	cont "once the";
+	cont "energy";
+	cont "gathered,";
+	cont "will also";
+	cont "send a";
+	cont "powerful";
+	cont "electric";
+	cont "wave.";
+	line;
+
+@org $26, $64ea:
+	english;
+	text "It is said";
+	line "that in the";
+	cont "long ago,";
+	cont "when the war";
+	cont "occurred, he";
+	cont "will fall";
+	cont "from the sky.";
+	line;
+
+@org $26, $6519:
+	english;
+	text "Made of";
+	line "hardened";
+	cont "steel, the";
+	cont "lightning";
+	cont "symbol on his";
+	cont "body is the";
+	cont "biggest";
+	cont "feature.";
+	line;
+
+@org $26, $6545:
+	english;
+	text "The body will";
+	line "automatically";
+	cont "gather the";
+	cont "electric";
+	cont "molecules in";
+	cont "the";
+	cont "atmosphere";
+	cont "and glow with";
+	cont "the";
+	cont "electricity.";
+	line;
+
+@org $26, $656b:
+	english;
+	text "Very";
+	line "spiritual";
+	cont "canine, the";
+	cont "whole body";
+	cont "glowing";
+	cont "purple-blue";
+	cont "mysterious";
+	cont "light.";
+	line;
+
+@org $26, $6594:
+	english;
+	text "Although it";
+	line "is made of";
+	cont "machinery, it";
+	cont "will chase";
+	cont "after rodents";
+	cont "when it sees";
+	cont "them.";
+	line;
+
+@org $26, $65b9:
+	english;
+	text "Appearance";
+	line "looks like a";
+	cont "cat, but in";
+	cont "fact is a";
+	cont "very smart";
+	cont "little tiger.";
+	line;
+
+@org $26, $65e2:
+	english;
+	text "He is a very";
+	line "loyal monster";
+	cont "and can";
+	cont "faithfully";
+	cont "complete the";
+	cont "tasks given";
+	cont "by his";
+	cont "master.";
+	line;
+
+@org $26, $6609:
+	english;
+	text "He is very";
+	line "popular with";
+	cont "people and";
+	cont "likes to hear";
+	cont "praise.";
+	line;
+
+@org $26, $6638:
+	english;
+	text "He has";
+	line "appeared";
+	cont "everywhere";
+	cont "through time";
+	cont "and space and";
+	cont "is a human";
+	cont "from the";
+	cont "ancient";
+	cont "times.";
+	line;
+
+@org $26, $6666:
+	english;
+	text "All his life";
+	line "he has been";
+	cont "looking for";
+	cont "an object to";
+	cont "fight, as if";
+	cont "he can't keep";
+	cont "still.";
+	line;
+
+@org $26, $6691:
+	english;
+	text "He is a";
+	line "special";
+	cont "monster with";
+	cont "two heads and";
+	cont "two";
+	cont "personalities";
+	cont "at the same";
+	cont "time.";
+	line;
+
+@org $26, $66b2:
+	english;
+	text "It has a";
+	line "slippery and";
+	cont "sticky tongue";
+	cont "and likes to";
+	cont "live in dark";
+	cont "and humid";
+	cont "places.";
+	line;
+
+@org $26, $66dc:
+	english;
+	text "When he gets";
+	line "angry, the";
+	cont "flame coming";
+	cont "out of his";
+	cont "head can burn";
+	cont "up";
+	cont "everything.";
+	line;
+
+@org $26, $670b:
+	english;
+	text "It can";
+	line "imitate";
+	cont "various";
+	cont "sounds at";
+	cont "will and is a";
+	cont "highly loyal";
+	cont "bird-beast-";
+	cont "like monster.";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $26, $6730:
+	english;
+	text "His entire";
+	line "body is";
+	cont "surrounded by";
+	cont "an exuberant";
+	cont "flame, and";
+	cont "his";
+	cont "personality";
+	cont "is as violent";
+	cont "as the flame.";
+	line;
+
+@org $26, $675e:
+	english;
+	text "With the";
+	line "swing of his";
+	cont "sword, he can";
+	cont "drop a meteor-";
+	cont "like flame.";
+	# XXX pyphen not installed, text may be clipped!
+	# XXX Text overflows on: ['drop a meteor-']
+	line;
+
+@org $26, $6783:
+	english;
+	text "When he";
+	line "wields his";
+	cont "sword, he";
+	cont "will shoot";
+	cont "out powerful";
+	cont "flames that";
+	cont "will plunge";
+	cont "the";
+	cont "surrounding";
+	cont "area into a";
+	cont "sea of fire.";
+	line;
+
+@org $26, $67a7:
+	english;
+	text "The fire";
+	line "spirit is";
+	cont "still young,";
+	cont "but when it";
+	cont "gets angry,";
+	cont "it is as";
+	cont "powerful as";
+	cont "anyone else.";
+	line;
+
+@org $26, $67d5:
+	english;
+	text "The fire";
+	line "spirit is a";
+	cont "trained beast";
+	cont "that can burn";
+	cont "down a forest";
+	cont "with its";
+	cont "flames.";
+	line;
+
+@org $26, $67ff:
+	english;
+	text "Legend has it";
+	line "that it is";
+	cont "the walking";
+	cont "tool that Li";
+	cont "Nezha carries";
+	cont "with him.";
+	line;
+
+@org $26, $681d:
+	english;
+	text "He is in";
+	line "charge of the";
+	cont "fire of";
+	cont "nature and is";
+	cont "respected by";
+	cont "all fire";
+	cont "beasts.";
+	line;
+
+@org $26, $684a:
+	english;
+	text "He sleeps in";
+	line "a pearl shell";
+	cont "in the deep";
+	cont "sea and";
+	cont "occasionally";
+	cont "swims out of";
+	cont "the water to";
+	cont "spy on";
+	cont "humans.";
+	line;
+
+@org $26, $6878:
+	english;
+	text "He can only";
+	line "be seen when";
+	cont "a storm";
+	cont "occurs, and";
+	cont "he only feeds";
+	cont "once a year";
+	cont "and spends";
+	cont "the rest of";
+	cont "his time";
+	cont "hibernating.";
+	line;
+
+@org $26, $68ad:
+	english;
+	text "With an";
+	line "endless";
+	cont "number of";
+	cont "tentacles,";
+	cont "especially";
+	cont "like to eat";
+	cont "children to";
+	cont "enrich their";
+	cont "energy.";
+	line;
+
+@org $26, $68d8:
+	english;
+	text "It";
+	line "deliberately";
+	cont "creates";
+	cont "tsunami, and";
+	cont "once it is";
+	cont "swept into";
+	cont "it, it will";
+	cont "become its";
+	cont "belly.";
+	line;
+
+@org $26, $6900:
+	english;
+	text "It uses its";
+	line "extended";
+	cont "tentacles to";
+	cont "cling to its";
+	cont "enemies and";
+	cont "suck their";
+	cont "essence to";
+	cont "death.";
+	line;
+
+@org $26, $692d:
+	english;
+	text "Due to the";
+	line "thin skin, it";
+	cont "will raise";
+	cont "the blood";
+	cont "temperature";
+	cont "when exposed";
+	cont "to sunlight.";
+	line;
+
+@org $26, $695c:
+	english;
+	text "A giant";
+	line "turtle-like";
+	cont "creature that";
+	cont "can swim";
+	cont "hundreds of";
+	cont "miles without";
+	cont "getting tired";
+	cont "despite its";
+	cont "slow";
+	cont "movements.";
+	line;
+
+@org $26, $6985:
+	english;
+	text "The sound of";
+	line "its stomach";
+	cont "growling";
+	cont "indicates";
+	cont "that it is";
+	cont "hungry.";
+	line;
+
+@org $26, $69a6:
+	english;
+	text "Normally, it";
+	line "sleeps";
+	cont "quietly on";
+	cont "the ocean";
+	cont "floor, but";
+	cont "when it is";
+	cont "hungry, it";
+	cont "will open its";
+	cont "clam shell to";
+	cont "feed.";
+	line;
+
+@org $26, $69d3:
+	english;
+	text "The wool on";
+	line "its body";
+	cont "keeps it";
+	cont "warm, making";
+	cont "it a very";
+	cont "docile";
+	cont "herbivore.";
+	line;
+
+@org $26, $69fc:
+	english;
+	text "The beetle";
+	line "has a strong";
+	cont "willpower and";
+	cont "perfect";
+	cont "defensive";
+	cont "power.";
+	line;
+
+@org $26, $6a24:
+	english;
+	text "The beetle is";
+	line "irascible,";
+	cont "untamed and";
+	cont "not easy to";
+	cont "get close to";
+	cont "humans.";
+	line;
+
+@org $26, $6a49:
+	english;
+	text "The gentle";
+	line "nature,";
+	cont "always";
+	cont "smiling, like";
+	cont "to spy on";
+	cont "people's every";
+	cont "move.";
+	line;
+
+@org $26, $6a75:
+	english;
+	text "This red hair";
+	line "is said to";
+	cont "have the";
+	cont "hardness of a";
+	cont "rare metal.";
+	line;
+
+@org $26, $6aa4:
+	english;
+	text "The attack is";
+	line "carried out";
+	cont "with";
+	cont "abnormally";
+	cont "developed";
+	cont "muscles, and";
+	cont "the";
+	cont "destructive";
+	cont "power is";
+	cont "quite";
+	cont "amazing.";
+	line;
+
+@org $26, $6acb:
+	english;
+	text "When too much";
+	line "static";
+	cont "electricity";
+	cont "is gathered,";
+	cont "even the soft";
+	cont "hairs that";
+	cont "are not";
+	cont "subject to";
+	cont "suction on";
+	cont "the surface";
+	cont "will stand";
+	cont "up.";
+	line;
+
+@org $26, $6af9:
+	english;
+	text "The horn on";
+	line "the head is";
+	cont "bent because";
+	cont "it will only";
+	cont "blindly";
+	cont "charge";
+	cont "straight";
+	cont "ahead to";
+	cont "destroy.";
+	line;
+
+@org $26, $6b2b:
+	english;
+	text "A timid grass";
+	line "monster that";
+	cont "hides in the";
+	cont "grass when it";
+	cont "encounters";
+	cont "something it";
+	cont "is afraid of.";
+	line;
+
+@org $26, $6b58:
+	english;
+	text "The heart";
+	line "needs to turn";
+	cont "the hair bar";
+	cont "to move, and";
+	cont "the top is";
+	cont "transformed";
+	cont "into a";
+	cont "parachute-";
+	cont "like flying";
+	cont "function.";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $26, $6b8a:
+	english;
+	text "Most like to";
+	line "swing its";
+	cont "wings, to";
+	cont "beautiful";
+	cont "posture in";
+	cont "the sky to";
+	cont "fly freely.";
+	line;
+
+@org $26, $6bba:
+	english;
+	text "It is not";
+	line "very smart,";
+	cont "and when it";
+	cont "encounters";
+	cont "danger, it";
+	cont "will make an";
+	cont "unpleasant";
+	cont "screaming";
+	cont "sound.";
+	line;
+
+@org $26, $6be2:
+	english;
+	text "It is one of";
+	line "the most";
+	cont "difficult";
+	cont "monsters to";
+	cont "see, and when";
+	cont "it flips its";
+	cont "body, it may";
+	cont "cause a big";
+	cont "earthquake.";
+	line;
+
+@org $26, $6c0c:
+	english;
+	text "Use the wings";
+	line "behind the";
+	cont "back to fly";
+	cont "in the air,";
+	cont "whether on";
+	cont "the ground or";
+	cont "in the air";
+	cont "can play.";
+	line;
+
+@org $26, $6c3e:
+	english;
+	text "The spirit";
+	line "that lives in";
+	cont "the sky is a";
+	cont "naughty ghost";
+	cont "that people";
+	cont "are afraid";
+	cont "of.";
+	line;
+
+@org $26, $6c65:
+	english;
+	text "Have strong";
+	line "wings and";
+	cont "amazing";
+	cont "physical";
+	cont "strength,";
+	cont "like to fly";
+	cont "in the canyon";
+	cont "and stream.";
+	line;
+
+@org $26, $6c92:
+	english;
+	text "Only at night";
+	line "will come out";
+	cont "to move,";
+	cont "relying on";
+	cont "the light of";
+	cont "the eyes to";
+	cont "find prey.";
+	line;
+
+@org $26, $6cb6:
+	english;
+	text "The";
+	line "ultrasonic";
+	cont "waves";
+	cont "generated";
+	cont "when flying";
+	cont "can paralyze";
+	cont "enemies who";
+	cont "hear them.";
+	line;
+
+@org $26, $6cda:
+	english;
+	text "It is said";
+	line "that the";
+	cont "colorful";
+	cont "rainbow that";
+	cont "appears in";
+	cont "the sky is";
+	cont "painted by";
+	cont "him.";
+	line;
+
+@org $26, $6d02:
+	english;
+	text "The scent of";
+	line "coffee";
+	cont "emitted from";
+	cont "its body will";
+	cont "make people";
+	cont "excited.";
+	line;
+
+@org $26, $6d25:
+	english;
+	text "The whole";
+	line "body is as";
+	cont "hard as";
+	cont "diamond, it";
+	cont "can be said";
+	cont "to be";
+	cont "destructible.";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $26, $6d46:
+	english;
+	text "It likes to";
+	line "be covered";
+	cont "with mud and";
+	cont "enjoys";
+	cont "sunbathing";
+	cont "quite";
+	cont "comfortably.";
+	line;
+
+@org $26, $6d6f:
+	english;
+	text "The center of";
+	line "the body is";
+	cont "called the";
+	cont "core part,";
+	cont "each attack";
+	cont "will shoot";
+	cont "out stones.";
+	line;
+
+@org $26, $6d9e:
+	english;
+	text "The best";
+	line "technique is";
+	cont "to use the";
+	cont "horns on the";
+	cont "body to spin";
+	cont "like a";
+	cont "gyroscope on";
+	cont "the ground";
+	cont "and slash the";
+	cont "enemy.";
+	line;
+
+@org $26, $6dcf:
+	english;
+	text "As long as it";
+	line "holds";
+	cont "something, it";
+	cont "will not let";
+	cont "go until it";
+	cont "breaks.";
+	line;
+
+@org $26, $6dfa:
+	english;
+	text "It often";
+	line "sneaks under";
+	cont "the ground";
+	cont "and does not";
+	cont "like to show";
+	cont "its face.";
+	line;
+
+@org $26, $6e1c:
+	english;
+	text "When it finds";
+	line "prey, it can";
+	cont "accurately";
+	cont "capture the";
+	cont "prey and is";
+	cont "very smart.";
+	line;
+
+@org $26, $6e4a:
+	english;
+	text "It is said";
+	line "that the lamp";
+	cont "in its hand";
+	cont "can guide the";
+	cont "souls of the";
+	cont "dead to the";
+	cont "road to hell.";
+	line;
+
+@org $26, $6e79:
+	english;
+	text "The messenger";
+	line "sent by the";
+	cont "dark hell,";
+	cont "specializing";
+	cont "in seducing";
+	cont "the evil-";
+	cont "minded human.";
+	# XXX pyphen not installed, text may be clipped!
+	line;
+
+@org $26, $6e9f:
+	english;
+	text "What is";
+	line "inside the";
+	cont "body wrapped";
+	cont "in cloth is";
+	cont "still a";
+	cont "mystery.";
+	line;
+
+@org $26, $6eca:
+	english;
+	text "A creature";
+	line "derived from";
+	cont "the dark";
+	cont "forces of";
+	cont "evil that is";
+	cont "still";
+	cont "evolving.";
+	line;
+
+@org $26, $6ef6:
+	english;
+	text "When";
+	line "attacking,";
+	cont "they use";
+	cont "their bodies";
+	cont "to wrap";
+	cont "around their";
+	cont "enemies and";
+	cont "suffocate";
+	cont "them to";
+	cont "death.";
+	line;
+
+@org $26, $6f1f:
+	english;
+	text "He has an";
+	line "unkind smile";
+	cont "and is";
+	cont "planning his";
+	cont "next target.";
+	line;
+
+@org $26, $6f4d:
+	english;
+	text "Attack speed";
+	line "is very fast,";
+	cont "can kill the";
+	cont "opponent in";
+	cont "an instant.";
+	line;
+
+@org $26, $6f71:
+	english;
+	text "Although the";
+	line "body is";
+	cont "small, but";
+	cont "the chain";
+	cont "knife on the";
+	cont "tail, can";
+	cont "quickly tear";
+	cont "anything.";
+	line;
+
+@org $26, $6f9d:
+	english;
+	text "The head has";
+	line "been";
+	cont "completely";
+	cont "metalized to";
+	cont "defend";
+	cont "against most";
+	cont "attacks.";
+	line;
+
+@org $26, $6fc3:
+	english;
+	text "Have the";
+	line "ability to";
+	cont "travel";
+	cont "through time";
+	cont "and space";
+	cont "tunnels at";
+	cont "will, even";
+	cont "unknown";
+	cont "worlds.";
+	line;
+
+@org $26, $6ff0:
+	english;
+	text "Play songs";
+	line "that make";
+	cont "people who";
+	cont "hear the";
+	cont "music drift";
+	cont "off to sleep.";
+	line;
+
+@org $26, $7014:
+	english;
+	text "Will eat time";
+	line "as their own";
+	cont "energy, so";
+	cont "that time";
+	cont "does not";
+	cont "move.";
+	line;
+
+@org $26, $703b:
+	english;
+	text "Accurate";
+	line "ability to";
+	cont "tell the";
+	cont "time, but";
+	cont "look at it";
+	cont "for a long";
+	cont "time, but it";
+	cont "will be sure";
+	cont "to sleep Oh";
+	cont "......";
+	line;
+
+@org $26, $7067:
+	english;
+	text "Temperament";
+	line "like to make";
+	cont "bad, will use";
+	cont "with";
+	cont "lightning";
+	cont "long light to";
+	cont "attack.";
+	line;
+
+@org $26, $7096:
+	english;
+	text "The eyes are";
+	line "its biggest";
+	cont "feature, and";
+	cont "it can see";
+	cont "clearly in";
+	cont "the dark.";
+	line;
+
+@org $26, $70c0:
+	english;
+	text "The natural";
+	line "good singing";
+	cont "voice, when";
+	cont "the mood is";
+	cont "good throat";
+	cont "can sing a";
+	cont "song at any";
+	cont "time.";
+	line;
+
+@org $26, $70eb:
+	english;
+	text "Usually lives";
+	line "on the";
+	cont "ground, but";
+	cont "when it";
+	cont "encounters";
+	cont "danger, it";
+	cont "will escape";
+	cont "by flying.";
+	line;
+
+@org $26, $7116:
+	english;
+	text "He is the";
+	line "head of the";
+	cont "dragon in";
+	cont "mythology,";
+	cont "and travels";
+	cont "between the";
+	cont "world's skies.";
+	line;

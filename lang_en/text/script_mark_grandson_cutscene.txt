@@ -1,0 +1,584 @@
+@org $12, $6898:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Brother... This";
+	line "is an Angel";
+	cont "Leaf, hurry,";
+	cont "eat it!";
+	para "Yes... Like";
+	line "this...";
+	done;
+
+@org $12, $68c4:
+	english;
+	init NAME_25, PIC_4F;
+	text "Nina?";
+	done;
+
+@org $12, $68ce:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Brother!";
+	line "You're okay...!";
+	para "You're okay...";
+	done;
+
+@org $12, $68e4:
+	english;
+	init NAME_25, PIC_4F;
+	text "Nina, thank";
+	line "you...";
+	done;
+
+@org $12, $68f5:
+	english;
+	init NAME_NINA, PIC_NINA_4;
+	text "Brother, is";
+	line "the moon-";
+	cont "shaped";
+	cont "necklace";
+	cont "around your";
+	cont "neck really";
+	cont "the Moon";
+	cont "Glaze?";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $12, $691e:
+	english;
+	init NAME_25, PIC_4F;
+	text "The Moon...";
+	done;
+
+@org $12, $6927:
+	english;
+	init NAME_25, PIC_4F;
+	text "N... No!";
+	para "This isn't the";
+	line "Moon Glaze,";
+	cont "it's only...";
+	cont "only a...";
+	done;
+
+@org $12, $6953:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Gale Corp's";
+	line "chairman has";
+	cont "gotten sick";
+	cont "trying to";
+	cont "find his lost";
+	cont "grandson! Can";
+	cont "you bear to";
+	cont "see him like";
+	cont "this?";
+	done;
+
+@org $12, $69a3:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Brother...";
+	done;
+
+@org $12, $69ac:
+	english;
+	init NAME_25, PIC_4F;
+	text "No! I am not";
+	line "this cold-";
+	cont "blooded";
+	cont "monster's";
+	cont "grandson!";
+	cont "Where was he,";
+	cont "when I was";
+	cont "working so";
+	cont "hard to";
+	cont "survive?!";
+	# XXX pyphen not installed, text may be clipped!
+	para "It's because";
+	line "of him that I";
+	cont "have this";
+	cont "life, don't I?";
+	para "And now that";
+	line "he's in need,";
+	cont "he suddenly";
+	cont "remembers me!";
+	para "How selfish";
+	line "is that?";
+	done;
+
+@org $12, $6a58:
+	english;
+	init NAME_NINA, PIC_NINA_2;
+	text "Brother...";
+	# XXX pyphen not installed, text may be clipped!
+	para "I remember";
+	line "you once told";
+	cont "me to forgive";
+	cont "the mistakes";
+	cont "of others.";
+	para "A life filled";
+	line "with regret";
+	cont "is the most";
+	cont "pitiful.";
+	done;
+
+@org $12, $6aa0:
+	english;
+	init NAME_25, PIC_4F;
+	text "Regret... No, I";
+	line "refuse!";
+	para "No matter";
+	line "what happens,";
+	cont "I don't want";
+	cont "to have";
+	cont "anything to";
+	cont "do with him!";
+	done;
+
+@org $12, $6adb:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Oh no!";
+	para "Mark has just";
+	line "recovered,";
+	cont "his body won't";
+	cont "be able to";
+	cont "take this";
+	cont "amount of";
+	cont "strain.";
+	done;
+
+@org $12, $6b0f:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Is he going";
+	line "to do";
+	cont "something";
+	cont "stupid?";
+	para "I'm so";
+	line "worried...";
+	done;
+
+@org $12, $6b30:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "If that's the";
+	line "case, that's";
+	cont "not good!";
+	para "Nina, do you";
+	line "know where";
+	cont "Mark might";
+	cont "go?";
+	done;
+
+@org $12, $6b6a:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Mark loves to";
+	line "go to the top";
+	cont "of the Sky";
+	cont "Rock and";
+	cont "stare into";
+	cont "the distance...";
+	done;
+
+@org $12, $6b93:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "The Sky Rock?";
+	# XXX pyphen not installed, text may be clipped!
+	para "We have to";
+	line "hurry and";
+	cont "find Mark as";
+	cont "fast as";
+	cont "possible!";
+	done;
+
+@org $12, $6bb4:
+	english;
+	init NAME_NINA, PIC_02;
+	text "I'll go with";
+	line "you!";
+	done;
+
+@org $12, $6bc1:
+	english;
+	init NAME_25, PIC_4F;
+	text "Why?";
+	# XXX pyphen not installed, text may be clipped!
+	para "Nina, wouldn't";
+	line "it be nice";
+	cont "for us to";
+	cont "keep living";
+	cont "like this, as";
+	cont "siblings?";
+	# XXX pyphen not installed, text may be clipped!
+	para "Why are you";
+	line "forcing me to";
+	cont "do this?";
+	done;
+
+@org $12, $6c0b:
+	english;
+	init NAME_25, PIC_4F;
+	text "Only when I";
+	line "saw the";
+	cont "notice from";
+	cont "Gale Corp.";
+	cont "did it dawn";
+	cont "on me who I";
+	cont "really was.";
+	para "Yet, this";
+	line "brings me no";
+	cont "joy...";
+	done;
+
+@org $12, $6c54:
+	english;
+	init NAME_25, PIC_4F;
+	text "To save his";
+	line "own";
+	cont "reputation,";
+	cont "this man";
+	cont "drove my";
+	cont "father away,";
+	cont "and";
+	cont "indirectly";
+	cont "caused mom's";
+	cont "death...";
+	para "I... I hate";
+	line "him!";
+	done;
+
+@org $12, $6ca6:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Brother... But";
+	line "no matter";
+	cont "what, the";
+	cont "blood that";
+	cont "flows through";
+	cont "our veins";
+	cont "cannot be";
+	cont "changed.";
+	done;
+
+@org $12, $6cd1:
+	english;
+	init NAME_25, PIC_4F;
+	text "Our blood?";
+	para "This kind of";
+	line "bloodline... I";
+	cont "don't want any";
+	cont "part of it!";
+	done;
+
+@org $12, $6cee:
+	english;
+	init NAME_25, PIC_4F;
+	text "This is... a";
+	line "letter... from";
+	cont "m-mom?";
+	done;
+
+@org $12, $6d08:
+	english;
+	init NAME_BLANK, PIC_BALLOT_0;
+	text "To my son,";
+	line "whose name I";
+	cont "do not know";
+	cont "as yet:";
+	para "I am sorry.";
+	para "It appears as";
+	line "if I will not";
+	cont "be able to";
+	cont "meet you...";
+	para "My love...";
+	para "From the";
+	line "moment I";
+	cont "first met";
+	cont "your father,";
+	cont "our lifes";
+	cont "have been";
+	cont "filled with";
+	cont "vitabilities.";
+	# XXX pyphen not installed, text may be clipped!
+	para "Even though";
+	line "this may have";
+	cont "been a";
+	cont "tragedy, the";
+	cont "fruits of our";
+	cont "relationship";
+	cont "remain sweet.";
+	para "Are you";
+	line "feeling";
+	cont "resent?";
+	cont "Grief?";
+	cont "Sadness?";
+	para "My unnamed";
+	line "son... My love...";
+	para "Do not feel";
+	line "this way, as";
+	cont "people must";
+	cont "all learn to";
+	cont "show empathy.";
+	para "I do not have";
+	line "long for this";
+	cont "world...";
+	para "My son...";
+	para "I hope that";
+	line "you can still";
+	cont "feel my love...";
+	para "Even if it";
+	line "may be hard...";
+	para "I'm sorry...";
+	para "I don't think";
+	line "I will be";
+	cont "able to meet";
+	cont "you...";
+	para "My love...";
+	para "My yet-";
+	line "unnamed son...";
+	# XXX pyphen not installed, text may be clipped!
+	para "Love,";
+	para "Sang Ni-Lin";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $12, $6e65:
+	english;
+	init NAME_25, PIC_4F;
+	text "M... Mom...";
+	para "Waaah...";
+	done;
+
+@org $12, $6e7d:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Mark... No";
+	line "matter what,";
+	cont "you'll always";
+	cont "be my dearest";
+	cont "brother!";
+	done;
+
+@org $12, $6ea8:
+	english;
+	init NAME_25, PIC_4F;
+	text "Nina... Thank";
+	line "you... People";
+	cont "must learn to";
+	cont "show empathy...";
+	cont "right?";
+	para "I'll do my";
+	line "best... Mom...";
+	para "I'll find him";
+	line "and clear";
+	cont "everything";
+	cont "up!";
+	done;
+
+@org $12, $6ef7:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Mark... You'll";
+	line "always be my";
+	cont "brother...";
+	# XXX pyphen not installed, text may be clipped!
+	para "Forever and";
+	line "ever...";
+	done;
+
+@org $12, $6f16:
+	english;
+	init NAME_25, PIC_4F;
+	text "...";
+	done;
+
+@org $12, $6f1e:
+	english;
+	init NAME_28, PIC_4E;
+	text "Oh... My";
+	line "grandson...";
+	done;
+
+@org $12, $6f2f:
+	english;
+	init NAME_1B, PIC_4C;
+	text "Thanks to";
+	line "you, Ballot,";
+	cont "the chairman's";
+	cont "grandson has";
+	cont "been found!";
+	para "Gale Corp.";
+	line "has a";
+	cont "successor!";
+	para "As the";
+	line "manager of";
+	cont "the";
+	cont "procurement";
+	cont "department, I";
+	cont "couldn't be";
+	cont "happier.";
+	done;
+
+@org $12, $6f96:
+	english;
+	init NAME_25, PIC_4F;
+	text "Ballot... Thank";
+	line "you!";
+	done;
+
+@org $12, $6faa:
+	english;
+	init NAME_28, PIC_4E;
+	text "Mark... You";
+	line "still won't";
+	cont "talk to me?";
+	done;
+
+@org $12, $6fc4:
+	english;
+	init NAME_25, PIC_4F;
+	text "...";
+	done;
+
+@org $12, $6fcc:
+	english;
+	init NAME_28, PIC_4E;
+	text "I can't blame";
+	line "you... This is";
+	cont "all my fault...";
+	done;
+
+@org $12, $6fe9:
+	english;
+	init NAME_28, PIC_4E;
+	text "Ballot, Quito";
+	line "told me";
+	cont "everything!";
+	para "This Power";
+	line "Chip is for";
+	cont "you.";
+	para "I don't think";
+	line "Nina will";
+	cont "mind.";
+	done;
+
+@org $12, $7033:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got Chip 2!";
+	done;
+
+@org $12, $7042:
+	english;
+	init NAME_28, PIC_4E;
+	text "When Mark was";
+	line "seriously";
+	cont "injured, Nina";
+	cont "sold me this";
+	cont "chip...";
+	# XXX pyphen not installed, text may be clipped!
+	para "Just to heal";
+	line "my grandson...";
+	# XXX pyphen not installed, text may be clipped!
+	para "I truly am...";
+	line "Unworthy to";
+	cont "be... your";
+	cont "grandpa...";
+	done;
+
+@org $12, $70a2:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Mr. Chairman...";
+	done;
+
+@org $12, $70af:
+	english;
+	init NAME_25, PIC_4F;
+	text "I came here,";
+	line "didn't I?";
+	para "Mom once said";
+	line "that people";
+	cont "must learn to";
+	cont "show empathy...";
+	cont "Didn't she? ...";
+	para "Grandpa!";
+	done;
+
+@org $12, $70ec:
+	english;
+	init NAME_28, PIC_4E;
+	text "M... Ma... Mark?";
+	para "Did you just";
+	line "speak to me?";
+	para "This is";
+	line "great!";
+	para "Did you all";
+	line "hear that?";
+	done;
+
+@org $12, $7122:
+	english;
+	init NAME_28, PIC_4E;
+	text "Did you hear";
+	line "that? And,";
+	cont "Nina! You're";
+	cont "Mark's sister,";
+	cont "so you can";
+	cont "call me that";
+	cont "too!";
+	done;
+
+@org $12, $7159:
+	english;
+	init NAME_NINA, PIC_02;
+	text "...Gr... Grandpa?";
+	done;
+
+@org $12, $7169:
+	english;
+	init NAME_28, PIC_4E;
+	text "It's decided";
+	line "then!";
+	cont "Tomorrow,";
+	cont "we'll hold the";
+	cont "handover";
+	cont "ceremony";
+	cont "tomorrow!";
+	para "Nina, Ballot,";
+	line "you have to";
+	cont "come too!";
+	para "I have";
+	line "prepared a";
+	cont "VIP room for";
+	cont "you, you can";
+	cont "stay there";
+	cont "for the";
+	cont "night! We'll";
+	cont "hold the";
+	cont "ceremony";
+	cont "tomorrow";
+	cont "morning, in";
+	cont "the lobby.";
+	done;
+
+@org $12, $71f8:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Thank you.";
+	done;
+
+@org $12, $7203:
+	english;
+	init NAME_28, PIC_4E;
+	text "Mark! I have";
+	line "a lot to say";
+	cont "to you!";
+	# XXX pyphen not installed, text may be clipped!
+	para "Let's go chat";
+	line "in my room!";
+	cont "Ha ha ha!";
+	done;

@@ -1,6 +1,8 @@
 # compiled objects
 *.o
-text/*.asm
+lang_en/text/*.asm
+lang_zh/text/*.asm
+/repointed.asm
 
 # compiled graphics
 gfx/*.2bpp

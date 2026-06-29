@@ -121,3 +121,15 @@ ENDM
 MACRO menu_done2
 	db MENUTX_END2
 ENDM
+
+MACRO english
+	db $ff
+	setcharmap english
+ENDM
+
+DEF TX_FAR EQU $fa
+MACRO tfarjump
+	db TX_FAR
+	dw \1
+	db BANK(\1)
+ENDM

@@ -1,0 +1,47 @@
+@org $55, $5e56:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "The city of";
+	line "Geosear is on";
+	cont "an island";
+	cont "south from";
+	cont "here.";
+	para "It has an";
+	line "energy plant";
+	cont "that converts";
+	cont "heat into";
+	cont "electricity.";
+	done;
+
+@org $55, $5e96:
+	english;
+	init NAME_BLANK, PIC_1E;
+	text "Mom! Cousin";
+	line "Linlin said";
+	cont "she wanted to";
+	cont "send me a";
+	cont "Super Brabra";
+	cont "figurine!";
+	para "Why hasn't it";
+	line "arrived yet?";
+	para "I waaant";
+	line "iiiit!";
+	done;
+
+@org $55, $5edc:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Shush!";
+	para "If you keep";
+	line "making noise,";
+	cont "the mermaids";
+	cont "are going to";
+	cont "eat you!";
+	done;
+
+@org $55, $5efc:
+	english;
+	init NAME_BLANK, PIC_1E;
+	text "Mermaids...!";
+	line "Waaaaah!";
+	done;

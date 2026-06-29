@@ -1,0 +1,15 @@
+@org $66, $54d3:
+	init NAME_BLANK, PIC_16;
+	text "怎麼辦﹖冰山島";
+	line "就快要崩解了﹐";
+	para "";
+	db $f1, $58; #"要"
+	text "怎麼辦才好⋯";
+	line "卡迪拉又過世了";
+	para "怎麼辦～";
+	line "";
+	db $f2, $ce; #"怎"
+	text "";
+	db $cf; #"?"
+	text "辦才好﹗";
+	done;

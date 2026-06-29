@@ -1,0 +1,36 @@
+@org $55, $67b7:
+	english;
+	init NAME_3B, PIC_64;
+	text "I am the best";
+	line "crab doctor";
+	cont "of Deepa Sea.";
+	para "Are you hurt?";
+	para "Although I";
+	line "have never";
+	cont "healed humans";
+	cont "before, crabs";
+	cont "are smart";
+	cont "animals. By";
+	cont "doing this,";
+	cont "this should";
+	cont "work on";
+	cont "humans as";
+	cont "well!";
+	getchoice String_1cc5;
+
+@org $55, $683c:
+	english;
+	init NAME_3C, PIC_65;
+	text "Whoa! It had";
+	line "to be fate... I";
+	cont "went 'round";
+	cont "the Deepa Sea";
+	cont "today, and";
+	cont "came across";
+	cont "treasure!";
+	para "Time to";
+	line "discount";
+	cont "everything!";
+	cont "Everything's";
+	cont "cheap!";
+	done;

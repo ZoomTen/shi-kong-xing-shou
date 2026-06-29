@@ -797,7 +797,7 @@ IconPointers:: INCLUDE "data/icon_pointers.asm"
 
 PointerTable_01e_57ed::
 	dw text_1e_5829
-	dw text_1e_582a
+	dw text_1e_5829 ; EN: merged into the $5829 block (was text_1e_582a)
 	dw text_1e_5836
 	dw text_1e_5841
 	dw text_1e_584f
@@ -836,7 +836,7 @@ PointerTable_01e_59cc::
 
 Pointers_01e_59d2::
 	dw text_1e_5aa0
-	dw text_1e_5aa1
+	dw text_1e_5aa0 ; EN: merged into the $5aa0 block (was text_1e_5aa1)
 	dw text_1e_5ab2
 	dw text_1e_5ac6
 	dw text_1e_5ad7
@@ -942,8 +942,8 @@ Pointers_01e_59d2::
 INCLUDE "text/script_item_descriptions.asm"
 
 Pointers_01e_614f::
-	dw text_1e_6197 
-	dw text_1e_6198 
+	dw text_1e_6197
+	dw text_1e_6197 ; EN: merged into the $6197 block (was text_1e_6198)
 	dw text_1e_61b7 
 	dw text_1e_61d1 
 	dw text_1e_61e8 
@@ -982,8 +982,8 @@ Pointers_01e_614f::
 INCLUDE "text/script_equipment_descriptions.asm"
 
 Pointers_01e_63e5::
-	dw text_1e_6437 
-	dw text_1e_6438 
+	dw text_1e_6437
+	dw text_1e_6437 ; EN: merged into the $6437 block (was text_1e_6438)
 	dw text_1e_6442 
 	dw text_1e_644b 
 	dw text_1e_6458 
@@ -1028,7 +1028,7 @@ INCLUDE "text/script_item_names.asm"
 
 Pointers_01e_6567::
 	dw text_1e_6635
-	dw text_1e_6636
+	dw text_1e_6635 ; EN: merged into the $6635 block (was text_1e_6636)
 	dw text_1e_6646
 	dw text_1e_6659
 	dw text_1e_6669

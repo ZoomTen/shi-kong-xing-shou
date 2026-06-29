@@ -1,0 +1,57 @@
+@org $0c, $4152:
+	english;
+	text "Dorington";
+	done;
+
+@org $0c, $415a:
+	english;
+	text "←Clock Tower";
+	done;
+
+@org $0c, $4162:
+	english;
+	text "↓Mountreach";
+	line "Farm";
+	done;
+
+@org $0c, $416d:
+	english;
+	text "Mountreach";
+	line "Farm";
+	done;
+
+@org $0c, $4176:
+	english;
+	text "←Coffee";
+	line "Forest";
+	done;
+
+@org $0c, $417f:
+	english;
+	text "↑Dorington";
+	done;
+
+@org $0c, $4189:
+	english;
+	text "↓Mountreach";
+	line "Farm";
+	done;
+
+@org $0c, $4194:
+	english;
+	text "↑Coffee";
+	line "Forest";
+	para "←Sky Rock";
+	para "↓Mountreach";
+	line "Farm";
+	done;
+
+@org $0c, $41af:
+	english;
+	text "Coffee Forest";
+	done;
+
+@org $0c, $41b6:
+	english;
+	text "Sky Rock";
+	done;

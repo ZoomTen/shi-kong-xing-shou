@@ -1,0 +1,10 @@
+@org $59, $40a9:
+	init NAME_19, PIC_22;
+	text "需要什麼服務嗎";
+	line "";
+	db $f1, $5d; #"﹖"
+	text "";
+	line "";
+	buysellcancel;
+	text "";
+	done;

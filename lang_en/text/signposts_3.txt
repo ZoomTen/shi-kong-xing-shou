@@ -1,0 +1,30 @@
+@org $0c, $41cb:
+	english;
+	text "↑Airport";
+	done;
+
+@org $0c, $41d3:
+	english;
+	text "Sky City";
+	done;
+
+@org $0c, $41da:
+	english;
+	text "←Green Forest";
+	done;
+
+@org $0c, $41e5:
+	english;
+	text "↑Sky City";
+	done;
+
+@org $0c, $41ee:
+	english;
+	text "Green Forest";
+	done;
+
+@org $0c, $41f7:
+	english;
+	text "Bang Lin";
+	line "Enterprises";
+	done;

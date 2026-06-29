@@ -1,0 +1,47 @@
+@org $5c, $4e2b:
+	init NAME_BLANK, PIC_18;
+	text "海藍⋯⋯";
+	line "真是抱歉～";
+	para "";
+	db $f2, $22; #"即"
+	text "使安東走了﹐";
+	line "也要好好的活下";
+	cont "";
+	db $f2, $bc; #"去"
+	text "哦﹗";
+	done;
+
+@org $5c, $4e60:
+	init NAME_HELEN, PIC_HELEN_0;
+	text "⋯⋯⋯";
+	done;
+
+@org $5c, $4e68:
+	init NAME_BLANK, PIC_1D;
+	text "喂～老公～";
+	line "";
+	db $f2, $ad; #"我"
+	text "";
+	db $d7; #"?"
+	text "說嘛﹗";
+	para "那海藍果然怪怪";
+	line "";
+	db $f1, $51; #"的"
+	text "";
+	db $35; #"?"
+	text "";
+	cont "原來真的是人魚";
+	line "";
+	db $f1, $1d; #"變"
+	text "";
+	db $51; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	done;
+
+@org $5c, $4ea2:
+	init NAME_BLANK, PIC_1D;
+	text "啊﹗海藍～";
+	line "是妳啊﹗";
+	done;

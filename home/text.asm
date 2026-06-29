@@ -1,4 +1,6 @@
 _PrintText::
+	xor a
+	ldh [hEnglishMode], a
 	ldh a, [hTextSource]
 	cp TEXTSRC_SCRIPT
 	jr z, .script
@@ -34,6 +36,8 @@ CheckCharacter::
 	pop hl
 	ld a, [hli]
 	push hl
+	cp TX_FAR
+	jp z, Text_FarJump
 	cp $f0
 	jp nc, .SwitchCharacterSet
 	cp $e0
@@ -48,6 +52,12 @@ CheckCharacter::
 ; $f0 = 40:4000, $f1 = $40:6000, $f2 = $41:4000, etc.
 GetCharacterSetBase::
 	and $0f
+	cp $f
+	jr z, .english
+	push af
+		ld a, 0
+		ldh [hEnglishMode], a
+	pop af
 	push af
 	srl a
 	add BANK(GFX_040_4000)
@@ -63,6 +73,16 @@ GetCharacterSetBase::
 .store
 	ld [wCharacterTileSource + 1], a
 	xor a
+	ld [wCharacterTileSource], a
+	ret
+.english
+	ld a, 1
+	ldh [hEnglishMode], a
+	ld a, BANK(Charset_English)
+	ld [hTargetBank], a
+	ld a, HIGH(Charset_English)
+	ld [wCharacterTileSource + 1], a
+	ld a, LOW(Charset_English)
 	ld [wCharacterTileSource], a
 	ret
 
@@ -111,8 +131,15 @@ CheckCharacter_Continue::
 	add a
 	add l
 	ld l, a
+	ldh a, [hEnglishMode]
+	and a
+	jr z, .x1
+	ld a, [wCharacterTilemapPos]
+	jr .x2
+.x1
 	ld a, [wCharacterTilemapPos]
 	add a
+.x2
 	add h
 	ld h, a
 	call GetTextBGMapPointer
@@ -121,8 +148,11 @@ CheckCharacter_Continue::
 	ld hl, wBGMapBufferPointers
 	push de
 	call .StoreBGMapPointer
-; round two
 	pop de
+	ldh a, [hEnglishMode]
+	and a
+	ret nz ; English: one tile wide -- skip the second column
+; round two
 	ld a, e
 	inc a
 	and BG_MAP_WIDTH - 1
@@ -140,6 +170,9 @@ CheckCharacter_Continue::
 	ld [hli], a
 	ld a, d
 	ld [hli], a
+	ldh a, [hEnglishMode]
+	and a
+	ret nz ; English: one cell -- leave the row below as the box's own interior
 ; Next row in BG map
 	ld a, 1 * BG_MAP_WIDTH
 	add e
@@ -187,8 +220,15 @@ RequestLoadCharacter_wTilemap::
 	add hl, de
 
 ; Initial starting position for tile 1
+	ldh a, [hEnglishMode]
+	and a
+	jr z, .x3
+	ld a, [wCharacterTilemapPos]
+	jr .x4
+.x3
 	ld a, [wCharacterTilemapPos]
 	add a ; 2 tiles wide
+.x4
 	ld e, a
 
 ; Line to print text on (line 0 or line 1)
@@ -208,6 +248,14 @@ RequestLoadCharacter_wTilemap::
 	push hl
 ; Tile 1
 	ld [hl], c
+	ldh a, [hEnglishMode]
+	and a
+	jr z, .x5
+; English: one tile only. Leave the rest of the cell as whatever the box drew
+; (its own interior), so this works for any box -- dialog, signpost, etc.
+	pop hl
+	jr .english
+.x5
 ; Tile 2
 	inc c
 	add hl, de
@@ -221,7 +269,6 @@ RequestLoadCharacter_wTilemap::
 	inc c
 	add hl, de
 	ld [hl], c
-
 ; Get character tile source
 	ld a, [wCharacterTileSource]
 	ld e, a
@@ -245,16 +292,45 @@ ENDR
 	ld [wCharacterTileTransferStatus], a
 	call DelayFrame
 
+
 	ld a, [wCharacterTilePos]
 	add 4
 	ld [wCharacterTilePos], a
 	; 7 characters max per line
 	cp 8 * 7
+.x6
 	ret c
 
 	xor a
 	ld [wCharacterTilePos], a
 	ret
+
+.english
+; Set the font bank too -- a blank/Chinese name's $f0 may have left hTargetBank
+; on a Chinese charset bank, and the transfer reads the glyph from hTargetBank.
+	ld a, BANK(Charset_English)
+	ld [hTargetBank], a
+	ld a, [wCurrentCharacterByte]
+	ld l, a
+	ld h, 0
+	ld de, Charset_English
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, de
+	ld a, l
+	ld [wCharacterTileSrc], a
+	ld a, h
+	ld [wCharacterTileSrc + 1], a
+	ld a, 1
+	ld [wCharacterTileCount], a
+	ld a, 1
+	ld [wCharacterTileTransferStatus], a
+	ld a, [wCharacterTilePos]
+	add 1
+	ld [wCharacterTilePos], a
+	cp $38
+	jr .x6
 
 CheckCharacter_Commands::
 	ld de, .commands
@@ -301,8 +377,19 @@ Text_Init::
 	rst Bankswitch
 	call OpenDialogTextbox ; load face picture
 	call DelayFrame
+	; LoadTextName leaves hEnglishMode = the NAME's mode (an English name sets it;
+	; a blank/Chinese name's $f0|n clears it). Keep it through the textbox draw so
+	; an English name gets compact single-row cells, then restore the dialog's own
+	; mode for the body text.
+	ldh a, [hEnglishMode]
+	push af
 	call LoadTextName
 	call AnimateTextboxOpen
+	ldh a, [hEnglishMode]
+	and a
+	call nz, SingleRowNameCells
+	pop af
+	ldh [hEnglishMode], a
 	call BuildVirtualOAM
 	call DelayFrame
 	pop af
@@ -359,9 +446,9 @@ RequestLoadCharacter_Name::
 	ld a, [hli]
 	push hl
 	cp $f0
-	jr nc, .switch_characterset
+	jp nc, .switch_characterset
 	cp TX_LINE
-	jr z, .end_of_name
+	jp z, .end_of_name
 
 	ld [wCurrentCharacterByte], a
 	ld a, [wCharacterTilePos]
@@ -378,6 +465,9 @@ RequestLoadCharacter_Name::
 	ld a, b
 	and $f0
 	ld [wCharacterTileDest], a
+	ldh a, [hEnglishMode]
+	and a
+	jr nz, .english_name
 
 ; Get character tile source
 	ld a, [wCharacterTileSource]
@@ -408,6 +498,32 @@ ENDR
 	pop hl
 	jp RequestLoadCharacter_Name
 
+.english_name
+	ld a, [wCurrentCharacterByte]
+	ld l, a
+	ld h, 0
+	ld de, Charset_English
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, de
+	ld a, l
+	ld [wCharacterTileSrc], a
+	ld a, h
+	ld [wCharacterTileSrc + 1], a
+	ld a, 1
+	ld [wCharacterTileCount], a
+	ld a, 1
+	ld [wCharacterTileTransferStatus], a
+	call DelayFrame
+	ld a, [wCharacterTilePos]
+	; advance by 1: glyphs load compactly to $e0,$e1,$e2,...; SingleRowNameCells
+	; then maps them to adjacent top cells (cols 5+) with blank bottoms.
+	add 1
+	ld [wCharacterTilePos], a
+	pop hl
+	jp RequestLoadCharacter_Name
+
 .switch_characterset
 	call GetCharacterSetBase
 	pop hl
@@ -417,6 +533,58 @@ ENDR
 	pop hl
 	ld a, BANK(NamePointers)
 	rst Bankswitch
+	ret
+
+SingleRowNameCells::
+; An English name loaded its glyphs compactly to $e0,$e1,... The static name
+; area is column-major (top/bottom = consecutive ids) and would stack them, so
+; rewrite it as a single row -- top cols 5..18 = the glyph tiles then $a0
+; padding, bottom row = $a0 -- and re-blit the textbox to VRAM.
+	ld a, [wTextboxPointer]
+	ld l, a
+	ld a, [wTextboxPointer + 1]
+	ld h, a
+	push hl
+	decoord 5, 1, NULL ; name top row (col 5, row 1)
+	add hl, de
+	ld a, [wCharacterTilePos] ; name length (advance-1)
+	ld b, a
+	ld c, 14 ; name columns 5..18
+	ld e, $e0 ; first glyph tile id
+.top
+	ld a, b
+	and a
+	jr z, .top_blank
+	ld a, e
+	inc e
+	dec b
+	jr .top_put
+.top_blank
+	ld a, $a0
+.top_put
+	ld [hli], a
+	dec c
+	jr nz, .top
+	pop hl
+	decoord 5, 2, NULL ; name bottom row
+	add hl, de
+	ld c, 14
+	ld a, $a0
+.bottom
+	ld [hli], a
+	dec c
+	jr nz, .bottom
+; re-blit the box (replicates AnimateTextboxOpen's final copy)
+	ld a, [wTextboxPos]
+	and a
+	jr z, .pos0
+	ld hl, $0000
+	jr .blit
+.pos0
+	ld hl, $000A
+.blit
+	call GetTextBGMapPointer
+	call CopyTextboxToVRAM
 	ret
 
 Text_e1::

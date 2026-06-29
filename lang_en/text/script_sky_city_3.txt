@@ -1,0 +1,45 @@
+@org $4f, $798c:
+	english;
+	init NAME_21, PIC_31;
+	text "Erk... Urk..";
+	line "Meork...";
+	para "I'm ch-";
+	line "choking!";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $4f, $79aa:
+	english;
+	init NAME_CLAUDE, PIC_CLAUDE_1;
+	text "What";
+	line "happened?";
+	done;
+
+@org $4f, $79b7:
+	english;
+	init NAME_21, PIC_31;
+	text "Mawwah!";
+	para "Finally";
+	line "managed to";
+	cont "spit it out!";
+	para "It's this";
+	line "stone, it got";
+	cont "stuck in my";
+	cont "throat for a";
+	cont "while!";
+	done;
+
+@org $4f, $79ef:
+	english;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "Got Pearl";
+	line "Necklace.";
+	done;
+
+@org $4f, $7a00:
+	english;
+	init NAME_21, PIC_31;
+	text "Meow!";
+	para "I feel so";
+	line "good, meow.";
+	done;

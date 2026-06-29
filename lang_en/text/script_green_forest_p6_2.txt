@@ -1,0 +1,33 @@
+@org $4f, $663f:
+	english;
+	init NAME_2D, PIC_56;
+	text "Darling...";
+	line "Woink woink...";
+	para "Our child...";
+	line "Turned into";
+	cont "stone!";
+	done;
+
+@org $4f, $666c:
+	english;
+	init NAME_2D, PIC_56;
+	text "Dear... Sniff,";
+	line "oink...";
+	para "If our child";
+	line "is to remain";
+	cont "like this";
+	cont "forever, I";
+	cont "have no wish";
+	cont "to live";
+	cont "anymore...";
+	para "Run me down";
+	line "with these";
+	cont "sexy tusks of";
+	cont "yours!";
+	done;
+
+@org $4f, $66c4:
+	english;
+	init NAME_32, PIC_56;
+	text "...";
+	done;

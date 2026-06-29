@@ -1,0 +1,27 @@
+@org $08, $4fa8:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "Good morning,";
+	line "Ballot.";
+	para "Hurry up,";
+	line "class is";
+	cont "about to";
+	cont "start!";
+	para "Huh? Don't you";
+	line "remember that";
+	cont "your class is";
+	cont "further down";
+	cont "the hallway?";
+	done;
+
+@org $08, $5001:
+	english;
+	init NAME_PRINCIPAL, PIC_16;
+	text "Ballot, good";
+	line "morning.";
+	para "Why do you";
+	line "look glum";
+	cont "when it's so";
+	cont "early in the";
+	cont "morning?";
+	done;

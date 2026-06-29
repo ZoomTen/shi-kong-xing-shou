@@ -1,0 +1,116 @@
+@org $4f, $6922:
+	english;
+	init NAME_2D, PIC_56;
+	text "Darling!";
+	line "Woink woink...";
+	para "Our child... Is";
+	line "finally back";
+	cont "to normal!";
+	done;
+
+@org $4f, $6950:
+	english;
+	init NAME_2D, PIC_56;
+	text "Dear... Woink";
+	line "oink...";
+	para "Our child is";
+	line "back to";
+	cont "normal!";
+	para "I'm so";
+	line "relieved...";
+	para "Ram into me";
+	line "with these";
+	cont "sexy tusks of";
+	cont "yours to";
+	cont "celebrate!";
+	done;
+
+@org $4f, $69af:
+	english;
+	init NAME_2D, PIC_56;
+	text "Yaaawn... Oink!";
+	para "That was a";
+	line "good nap.";
+	done;
+
+@org $4f, $69c8:
+	english;
+	init NAME_2F, PIC_58;
+	text "Thank you so";
+	line "much!";
+	para "I can once";
+	line "more watch";
+	cont "the sunrise";
+	cont "from the";
+	cont "forest with";
+	cont "my beloved";
+	cont "Ms. Rabbit.";
+	para "As thanks,";
+	line "I'll make you";
+	cont "the sexiest,";
+	cont "most";
+	cont "beautiful";
+	cont "dress ever";
+	cont "made!";
+	para "Wait here for";
+	line "a moment.";
+	done;
+
+@org $4f, $6a43:
+	english;
+	init NAME_2F, PIC_58;
+	text "It's done!";
+	para "I used all of";
+	line "my fur to";
+	cont "make a dress";
+	cont "as gorgeous";
+	cont "as Ms. Rabbit";
+	cont "herself.";
+	para "If you wear";
+	line "it, I can";
+	cont "assure you";
+	cont "that you'll be";
+	cont "just as sexy";
+	cont "as her.";
+	done;
+
+@org $4f, $6aa8:
+	english;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "Got Sexy";
+	line "Dress.";
+	done;
+
+@org $4f, $6ab8:
+	english;
+	init NAME_CLAUDE, PIC_CLAUDE_1;
+	text "Oh no!";
+	para "We're almost";
+	line "out of time...";
+	cont "I have to";
+	cont "hurry back!";
+	done;
+
+@org $4f, $6ae3:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Mr. Claude,";
+	line "thank you.";
+	done;
+
+@org $4f, $6afa:
+	english;
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "N-no, you're";
+	line "welcome...";
+	para "Nina.";
+	# XXX pyphen not installed, text may be clipped!
+	para "The talent";
+	line "show is about";
+	cont "to start.";
+	para "Don't be late...";
+	line "I'll be";
+	cont "waiting for";
+	cont "you.";
+	para "Bye!";
+	done;

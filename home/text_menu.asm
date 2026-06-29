@@ -1,4 +1,14 @@
 PrintMenuText::
+; Save/restore the ROM bank around the whole menu string. A tfarjump inside it
+; switches banks; without this, control returns to the caller (e.g. the bank-25
+; menu script processor) with the wrong bank loaded -> corrupted command stream.
+	ld a, [_BANKNUM]
+	push af
+	call .run
+	pop af
+	rst Bankswitch
+	ret
+.run
 	call DelayFrame
 	push hl
 
@@ -7,6 +17,8 @@ Menu_CheckCharacter::
 	pop hl
 	ld a, [hli]
 	push hl
+	cp TX_FAR
+	jp z, MenuText_FarJump
 	cp $f0
 	jp nc, Menu_GetCharacterSetBase
 	cp $e0
@@ -99,12 +111,19 @@ MenuText_ClearBox::
 	call DelayFrame
 
 MenuText_ec::
+; English menu text uses `para` (from make_english's \n boxes) purely as a line
+; break, so skip the wait-for-input prompt and the box clear -- the lines just
+; flow. Chinese menus keep the original wait+clear behaviour.
+	ldh a, [hEnglishMode]
+	and a
+	jr nz, .english
 	call WaitTextboxInput
 	ld bc, $480
 	ld hl, $8b60
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
+.english
 	xor a
 	ld [wCharacterTilePos], a
 	pop hl
@@ -204,6 +223,9 @@ Menu_CheckCharacter_Continue::
 	ld a, b
 	and $f0
 	ld [wCharacterTileDest], a
+	ldh a, [hEnglishMode]
+	and a
+	jr nz, .english
 	ld a, [wCharacterTileSource]
 	ld e, a
 	ld a, [wCharacterTileSource + 1]
@@ -228,6 +250,44 @@ ENDR
 	ld c, a
 	ld a, [wCharacterTilePos]
 	add 4
+	ld [wCharacterTilePos], a
+	cp c
+	jp c, Menu_CheckCharacter
+	xor a
+	ld [wCharacterTilePos], a
+	jp Menu_CheckCharacter
+
+.english
+; 1-tile English glyph from Charset_English (char*8), one tile, placed on the
+; top tiles of the 2x2 cells (advance 2 -> top-left, then top-right); the cells'
+; lower tiles stay whatever the menu drew. Kept in the menu interpreter so the
+; bank menu functions stay byte-identical to `progress`.
+	ld a, BANK(Charset_English)
+	ld [hTargetBank], a
+	ld a, [wCurrentCharacterByte]
+	ld l, a
+	ld h, 0
+	ld de, Charset_English
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, de
+	ld a, l
+	ld [wCharacterTileSrc], a
+	ld a, h
+	ld [wCharacterTileSrc + 1], a
+	ld a, 1
+	ld [wCharacterTileCount], a
+	ld a, 1
+	ld [wCharacterTileTransferStatus], a
+	call DelayFrame
+; No per-char lower-tile clear: the bank caller clears the whole region up front
+; (the desc draw clears $8800; the name draw clears $8d00), so the cells the
+; English writes into are already blank.
+	ld a, [wMenuTextEndX]
+	ld c, a
+	ld a, [wCharacterTilePos]
+	add 2
 	ld [wCharacterTilePos], a
 	cp c
 	jp c, Menu_CheckCharacter

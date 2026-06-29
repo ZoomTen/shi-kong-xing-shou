@@ -1,0 +1,6 @@
+@org $12, $7f05:
+	english;
+	init NAME_19, PIC_22;
+	text "Do you need";
+	line "something?";
+	line;

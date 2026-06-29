@@ -1,0 +1,111 @@
+@org $0f, $48f3 (unkText_00f_48f3):
+	english;
+	init NAME_BLANK, PIC_16;
+	text "The spring? I";
+	line "forgot where";
+	cont "I put it, so";
+	cont "feel free to";
+	cont "search in";
+	cont "these piles";
+	cont "of treasure!";
+	done;
+
+@org $0f, $492c:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the";
+	line "Spring!";
+	done;
+
+@org $0f, $493b:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "It's not";
+	line "wrong! This";
+	cont "is what I";
+	cont "want to do";
+	cont "with my hair...";
+	cont "it's really";
+	cont "embarrassing...";
+	cont "ugh... if you";
+	cont "do it with";
+	cont "your face";
+	cont "covered, you";
+	cont "won't feel";
+	cont "that way! I'll";
+	cont "be back in a";
+	cont "minute.";
+	done;
+
+@org $0f, $498f:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Here's the";
+	line "clockwork";
+	cont "rat.";
+	para "I still feel";
+	line "ashamed of";
+	cont "resorting to";
+	cont "such simple";
+	cont "tech...";
+	para "Ballot! You'd";
+	line "better not";
+	cont "tell anyone I";
+	cont "made it!";
+	done;
+
+@org $0f, $49e7:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the";
+	line "Clockwork";
+	cont "Rat!";
+	done;
+
+@org $0f, $49fb:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "With the";
+	line "clockwork";
+	cont "rat, you";
+	cont "should be";
+	cont "able to";
+	cont "distract that";
+	cont "monster cat.";
+	cont "Ah, I feel";
+	cont "embarrassed";
+	cont "just thinking";
+	cont "about it...";
+	done;
+
+@org $0f, $4a46:
+	english;
+	init NAME_21, PIC_31;
+	text "Miao~ Miao~";
+	done;
+
+@org $0f, $4a5a:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Good kitty!";
+	line "Just hurry";
+	cont "up, and";
+	cont "leave..";
+	done;
+
+@org $0f, $4a72:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Ah! The";
+	line "spring's";
+	cont "unwound!";
+	done;
+
+@org $0f, $4a8e:
+	english;
+	init NAME_21, PIC_31;
+	text "Miao~ Miao!!!";
+	para "(Damn it! I've";
+	line "been";
+	cont "tricked!)";
+	done;

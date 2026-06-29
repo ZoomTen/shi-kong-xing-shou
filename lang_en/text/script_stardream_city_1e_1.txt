@@ -1,0 +1,36 @@
+@org $66, $5313:
+	init NAME_59, PIC_1D;
+	text "米特的媽媽的廚";
+	line "藝﹐真不是蓋的";
+	para "尤其是她做的清";
+	line "燉雪兔肉﹐真是";
+	cont "美味極了⚬";
+	para "唉～卡迪拉夫婦";
+	line "倆都不幸過世了";
+	cont "";
+	db $f1, $03; #"真"
+	text "叫人傷心～";
+	done;
+
+@org $66, $537a:
+	init NAME_BLANK, PIC_1A;
+	text "媽媽～人家不要";
+	line "再吃雪兔肉了啦";
+	para "米特的媽媽﹐做";
+	line "的比較好吃﹗";
+	done;
+
+@org $66, $53b1:
+	init NAME_59, PIC_1D;
+	text "所以媽媽正在努";
+	line "力呀﹗";
+	done;
+
+@org $66, $53c8:
+	init NAME_BLANK, PIC_1A;
+	text "可是人家已經吃";
+	line "了一個月的兔子";
+	cont "肉了﹗";
+	line "同學都笑人家是";
+	line "兔子女孩啦﹗";
+	done;

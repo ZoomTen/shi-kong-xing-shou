@@ -1,0 +1,105 @@
+@org $5a, $637c:
+	init NAME_48, PIC_70;
+	text "完蛋了﹗";
+	line "修補時空裂縫的";
+	cont "";
+	db $f1, $cf; #"方"
+	text "程式﹐終於完";
+	line "成了﹗";
+	para "但是﹐就在剛才";
+	line "一群星獸闖了進";
+	para "來﹐搶走了方程";
+	line "式﹗";
+	para "還將我的設備﹐";
+	line "全部搗毀⚬";
+	done;
+
+@org $5a, $63ee:
+	init NAME_48, PIC_70;
+	text "方程式就像是雙";
+	line "面刃一樣﹐除了";
+	para "";
+	db $f1, $c8; #"可"
+	text "";
+	db $cb; #"以"
+	text "修補裂縫之";
+	line "外～";
+	cont "如果以逆向執行";
+	line "的話﹐就可以⋯";
+	line "";
+	db $f2, $d7; #"就"
+	text "可以⋯";
+	para "唉～這就是我能";
+	line "力的可怕之處⋯";
+	done;
+
+@org $5a, $645e:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "就可以怎麼樣﹖";
+	done;
+
+@org $5a, $646e:
+	init NAME_48, PIC_70;
+	text "如果逆向執行的";
+	line "話﹐就可以將星";
+	cont "系的裂縫擴大﹗";
+	para "";
+	db $f1, $cb; #"以"
+	text "現在的狀況﹐";
+	line "如果裂縫如果再";
+	para "擴大的話﹐將會";
+	line "影響到星體相互";
+	para "間的引力﹗";
+	line "";
+	db $f1, $62; #"到"
+	text "時候﹐就會引";
+	cont "發一場很可怕的";
+	line "災難﹗";
+	done;
+
+@org $5a, $6502:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "這就糟了﹐得拿";
+	line "回方程式才行﹗";
+	done;
+
+@org $5a, $6520:
+	init NAME_48, PIC_70;
+	text "南方的衛星雷達";
+	line "站﹐聚集了許多";
+	para "的星獸⚬";
+	line "";
+	db $f1, $58; #"要"
+	text "將程式送到裂";
+	cont "縫處﹐那裡是最";
+	line "好的發射站台﹗";
+	para "巴洛特真是個見";
+	line "義勇為的好人﹗";
+	para "一定要將方式程";
+	line "搶回來喲﹗";
+	done;
+
+@org $5a, $65a6:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這個個性﹐跟某";
+	line "個人還真像⋯⋯";
+	cont "南方的衛星雷達";
+	line "站嗎﹖";
+	line "我了解了﹗";
+	done;
+
+@org $5a, $65dd:
+	init NAME_48, PIC_70;
+	text "南方的衛星雷達";
+	line "站﹐聚集了許多";
+	para "的星獸⚬";
+	line "";
+	db $f1, $58; #"要"
+	text "將程式送到裂";
+	cont "縫處﹐那裡是最";
+	line "好的發射站台﹗";
+	para "巴洛特真是個見";
+	line "義勇為的好人﹗";
+	para "一定要將方式程";
+	line "搶回來喲﹗";
+	done;

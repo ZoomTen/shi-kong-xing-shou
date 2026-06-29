@@ -1,0 +1,376 @@
+@org $12, $78bd:
+	english;
+	init NAME_1B, PIC_4C;
+	text "I feel";
+	line "exhausted...";
+	para "It's still";
+	line "daytime, so";
+	cont "why do I feel";
+	cont "so tired?";
+	para "Is it just";
+	line "me? It feels";
+	cont "like this has";
+	cont "been an";
+	cont "extremely";
+	cont "long day.";
+	para "Ballot, go to";
+	line "your room and";
+	cont "get some";
+	cont "rest!";
+	para "You'll have to";
+	line "be on time";
+	cont "for the";
+	cont "ceremony";
+	cont "tomorrow!";
+	done;
+
+@org $12, $7945:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Ballot, let's";
+	line "attend my";
+	cont "brother's";
+	cont "handover";
+	cont "ceremony";
+	cont "tomorrow!";
+	done;
+
+@org $12, $7970:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Yeah.";
+	done;
+
+@org $12, $7977:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Are you...";
+	line "going to";
+	cont "leave once";
+	cont "the handover";
+	cont "ceremony is";
+	cont "over?";
+	done;
+
+@org $12, $799d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Yes.";
+	# XXX pyphen not installed, text may be clipped!
+	para "I must find";
+	line "dad and the";
+	cont "power chips,";
+	cont "so I have to";
+	cont "go.";
+	done;
+
+@org $12, $79cc:
+	english;
+	init NAME_NINA, PIC_02;
+	text "...";
+	para "Then... we...";
+	# XXX pyphen not installed, text may be clipped!
+	para "See you";
+	line "tomorrow!";
+	done;
+
+@org $12, $79ea:
+	english;
+	text "The next day,";
+	line "GaleCorp held";
+	cont "a lavish";
+	cont "director";
+	cont "handover";
+	cont "ceremony.";
+	para "Because of";
+	line "this, Nina";
+	cont "was";
+	cont "constantly";
+	cont "crying in the";
+	cont "audience.";
+	para "The ceremony";
+	line "went off";
+	cont "without a";
+	cont "hitch, and a";
+	cont "new";
+	cont "generation of";
+	cont "directors";
+	cont "began for";
+	cont "GaleCorp,";
+	cont "with Mark";
+	cont "taking the";
+	cont "reins.";
+	para "The";
+	line "newspapers";
+	cont "were filled";
+	cont "with reports";
+	cont "on Mark's";
+	cont "inaguration.";
+	done;
+
+@org $12, $7a96:
+	english;
+	init NAME_25, PIC_4F;
+	text "Ballot, are";
+	line "you leaving?";
+	done;
+
+@org $12, $7aac:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Yes.";
+	# XXX pyphen not installed, text may be clipped!
+	para "I have to";
+	line "keep going";
+	cont "and find the";
+	cont "other Power";
+	cont "Chips.";
+	done;
+
+@org $12, $7ad7:
+	english;
+	init NAME_28, PIC_4E;
+	text "Power Chips?";
+	para "Ah... I hate";
+	line "having to say";
+	cont "this...";
+	para "But since you";
+	line "helped me so";
+	cont "much...";
+	para "The president";
+	line "of GaleCorp's";
+	cont "rival";
+	cont "entreprise,";
+	cont "Bang Lin, has";
+	cont "another chip.";
+	para "That's because";
+	line "his ancestor";
+	cont "was also one";
+	cont "of the eight";
+	cont "great";
+	cont "scientists...";
+	done;
+
+@org $12, $7b78:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Bang Lin";
+	line "Enterprises?";
+	done;
+
+@org $12, $7b83:
+	english;
+	init NAME_28, PIC_4E;
+	text "Yes. It is";
+	line "located in";
+	cont "Sky City, and";
+	cont "is our";
+	cont "biggest";
+	cont "business";
+	cont "rival.";
+	done;
+
+@org $12, $7bbb:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "But there's no";
+	line "way to get";
+	cont "there from";
+	cont "Dorington!";
+	done;
+
+@org $12, $7be4:
+	english;
+	init NAME_28, PIC_4E;
+	text "Heheheh!";
+	para "This isn't a";
+	line "problem at";
+	cont "all.";
+	para "GaleCorp is a";
+	line "world-";
+	cont "renowned";
+	cont "global";
+	cont "company,";
+	cont "after all.";
+	# XXX pyphen not installed, text may be clipped!
+	para "Such an";
+	line "insignificant";
+	cont "issue isn't";
+	cont "going to stop";
+	cont "us.";
+	para "This is for";
+	line "you!";
+	done;
+
+@org $12, $7c4b:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got a Golden";
+	line "Key!";
+	done;
+
+@org $12, $7c5a:
+	english;
+	init NAME_28, PIC_4E;
+	text "There's an";
+	line "iron door";
+	cont "inside the";
+	cont "Clock Tower,";
+	cont "leading to";
+	cont "Dama's";
+	cont "capital.";
+	para "This is the";
+	line "secret to";
+	cont "Gale Corp's";
+	cont "worldwide";
+	cont "distribution";
+	cont "circuit!";
+	done;
+
+@org $12, $7ca6:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Thank you,";
+	line "Mr. Chairman!";
+	done;
+
+@org $12, $7cb9:
+	english;
+	init NAME_28, PIC_4E;
+	text "Thank you";
+	line "too, Ballot!";
+	para "Good luck";
+	line "with your";
+	cont "mission!";
+	done;
+
+@org $12, $7cdd:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Ballot...";
+	done;
+
+@org $12, $7cf0:
+	english;
+	init NAME_BUCK, PIC_02;
+	text "Ballot, wait!";
+	done;
+
+@org $12, $7d04:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Nina?";
+	done;
+
+@org $12, $7d0e:
+	english;
+	init NAME_NINA, PIC_02;
+	text "I... I've been";
+	line "thinking";
+	cont "about it for";
+	cont "a while...";
+	para "Now that my";
+	line "brother has";
+	cont "become the";
+	cont "director of";
+	cont "Gale Corp... I";
+	cont "can rest";
+	cont "easy... And I...";
+	para "I want to";
+	line "uncover the";
+	cont "secrets of";
+	cont "the spaceship";
+	cont "with you,";
+	cont "Ballot!";
+	done;
+
+@org $12, $7d79:
+	english;
+	init NAME_28, PIC_4E;
+	text "Ni... Nina!";
+	# XXX pyphen not installed, text may be clipped!
+	para "How can that";
+	line "be!";
+	done;
+
+@org $12, $7d90:
+	english;
+	init NAME_25, PIC_4F;
+	text "Nina... You've";
+	line "been";
+	cont "interested in";
+	cont "the research";
+	cont "that our";
+	cont "father left";
+	cont "behind for a";
+	cont "while now.";
+	para "Follow your";
+	line "interests,";
+	cont "you have your";
+	cont "brother's full";
+	cont "support!";
+	done;
+
+@org $12, $7de7:
+	english;
+	init NAME_28, PIC_4E;
+	text "Ma...Mark!";
+	done;
+
+@org $12, $7df5:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Ballot...";
+	done;
+
+@org $12, $7e02:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "This...";
+	line "Alright!";
+	# XXX pyphen not installed, text may be clipped!
+	para "Let's go,";
+	line "everyone!";
+	done;
+
+@org $12, $7e1a:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Ballot, thank";
+	line "you!";
+	done;
+
+@org $12, $7e2d:
+	english;
+	init NAME_28, PIC_4E;
+	text "Use the";
+	line "Golden Key to";
+	cont "open the door";
+	cont "in the Clock";
+	cont "Tower.";
+	para "You'll be able";
+	line "to get to";
+	cont "Dama's";
+	cont "capital.";
+	para "Good luck";
+	line "with your";
+	cont "mission!";
+	done;
+
+@org $12, $7e6d:
+	english;
+	init NAME_25, PIC_4F;
+	text "Ballot!";
+	para "Take good";
+	line "care of Nina.";
+	para "Otherwise, I";
+	line "won't let you";
+	cont "off the hook!";
+	done;
+
+@org $12, $7eac:
+	text "嗨ＯＨＢＡＢＹ";
+	line;
+	line "嗨ＮＯ";
+	line;
+	line;

@@ -1,0 +1,1235 @@
+@org $0e, $6967:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Isn't this a";
+	line "rainbow";
+	cont "crystal?";
+	cont "That's great!";
+	para "Now I can";
+	line "make a new";
+	cont "core for the";
+	cont "Golden";
+	cont "Phoenix!";
+	done;
+
+@org $0e, $69a6:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "...";
+	done;
+
+@org $0e, $69ae:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "...";
+	done;
+
+@org $0e, $69b6:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "It's done!";
+	para "The True";
+	line "Golden";
+	cont "Phoenix!";
+	para "With this, I";
+	line "can";
+	cont "definitely";
+	cont "defeat the";
+	cont "Volts!";
+	done;
+
+@org $0e, $69ef:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Sure you can...";
+	done;
+
+@org $0e, $6a00:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "...";
+	para "The shadow of";
+	line "my former";
+	cont "loss still";
+	cont "haunts me.";
+	para "I don't dare";
+	line "to try again,";
+	cont "so will you";
+	cont "take the True";
+	cont "Golden";
+	cont "Phoenix and";
+	cont "go in my";
+	cont "stead to";
+	cont "battle Team";
+	cont "Volt?";
+	done;
+
+@org $0e, $6a52:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the";
+	line "Phoenix!";
+	done;
+
+@org $0e, $6a61:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "...";
+	para "The shadow of";
+	line "my former";
+	cont "loss still";
+	cont "haunts me.";
+	para "I don't dare";
+	line "to try again,";
+	cont "so will you";
+	cont "take the True";
+	cont "Golden";
+	cont "Phoenix and";
+	cont "go in my";
+	cont "stead to";
+	cont "battle Team";
+	cont "Volt?";
+	done;
+
+@org $0e, $6ab3:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "Haha! So you";
+	line "finally came!";
+	done;
+
+@org $0e, $6acf:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "We thought";
+	line "you'd turned";
+	cont "tail and";
+	cont "fled!";
+	para "Do you still";
+	line "want to";
+	cont "battle us,";
+	cont "knowing you";
+	cont "don't stand a";
+	cont "chance?";
+	done;
+
+@org $0e, $6b0b:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "Ehehehehehe!";
+	para "I can almost";
+	line "feel the";
+	cont "crisp 30";
+	cont "million yen";
+	cont "in my hands!";
+	para "It's a dream";
+	line "come true!";
+	done;
+
+@org $0e, $6b3f:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "Still not";
+	line "content to";
+	cont "quit and save";
+	cont "the effort?";
+	para "This won't";
+	line "change";
+	cont "anything, you";
+	cont "know!";
+	done;
+
+@org $0e, $6b6f:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "Ehehehe~ I'm";
+	line "not usually";
+	cont "this patient,";
+	cont "but just this";
+	cont "once, I'll";
+	cont "give you";
+	cont "another";
+	cont "chance!";
+	done;
+
+@org $0e, $6ba5:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "We... We lost?!";
+	line "Impossible!";
+	done;
+
+@org $0e, $6bbd:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "Hooray! Those";
+	line "dastardly";
+	cont "Volts have";
+	cont "lost!";
+	para "I knew it all";
+	line "along: Dr Leo";
+	cont "is the best";
+	cont "inventor in";
+	cont "the world!";
+	done;
+
+@org $0e, $6c02:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Hahaha! You";
+	line "won't have to";
+	cont "worry about";
+	cont "that 30";
+	cont "million yen";
+	cont "anymore!";
+	done;
+
+@org $0e, $6c29:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＢＵＣＫ ＣＡＮＮＯＴ";
+	line "ＬＡＵＧＨ．．．";
+	para "ＢＵＣＫ ＷＡＮＴＳ ＴＯ";
+	line "ＬＡＵＧＨ．．．";
+	done;
+
+@org $0e, $6c51:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "H.. HOLD IT!";
+	para "I still have";
+	line "one last";
+	cont "trick up my";
+	cont "sleeve!";
+	para "Remember this";
+	line "remote?";
+	done;
+
+@org $0e, $6c92:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "Laki, you";
+	line "genius!";
+	para "Just one";
+	line "little press,";
+	cont "and...!";
+	done;
+
+@org $0e, $6cc8:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "That's right!";
+	para "Your precious";
+	line "power plant";
+	cont "goes boom!";
+	para "You'd better";
+	line "hand over";
+	cont "that 30";
+	cont "million";
+	cont "anyway!";
+	done;
+
+@org $0e, $6d1a:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "Dr Leo";
+	line "finally";
+	cont "defeated the";
+	cont "Volts!";
+	para "We shouldn't";
+	line "have doubted";
+	cont "him.";
+	done;
+
+@org $0e, $6d47:
+	english;
+	init NAME_BLANK, PIC_17;
+	text "This city has";
+	line "the largest";
+	cont "racing car";
+	cont "manufacturing";
+	cont "line in the";
+	cont "world.";
+	done;
+
+@org $0e, $6d70:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "A long time";
+	line "ago, Leo's";
+	cont "great-";
+	para "grandfather";
+	line "and seven";
+	cont "other";
+	cont "scientists";
+	cont "saved the";
+	cont "Earth, so";
+	cont "everyone in";
+	cont "this city";
+	cont "respects him.";
+	done;
+
+@org $0e, $6dc7:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "Dr Leo is";
+	line "certainly the";
+	cont "best inventor";
+	cont "in the world.";
+	done;
+
+@org $0e, $6dec:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "Darn it...";
+	line "Where did my";
+	cont "diamond";
+	cont "necklace go?";
+	done;
+
+@org $0e, $6e16:
+	english;
+	init NAME_1D, PIC_1A;
+	text "Dot's";
+	line "lightspeed";
+	cont "machine found";
+	cont "a diamond,";
+	cont "and it used";
+	cont "its drill";
+	cont "(worth ¥9456";
+	cont "billion) to";
+	cont "crush it to";
+	cont "pieces!";
+	done;
+
+@org $0e, $6e80:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "W... Wait,";
+	line "what?!";
+	# XXX pyphen not installed, text may be clipped!
+	para "Aaah!";
+	done;
+
+@org $0e, $6e99:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Hahaha, so";
+	line "you beat the";
+	cont "Volts! Well";
+	cont "done!";
+	para "The power's";
+	line "still out,";
+	cont "though..";
+	para "Ballot, could";
+	line "I ask another";
+	cont "favour of";
+	cont "you?";
+	para "Can you go to";
+	line "the power";
+	cont "plant and";
+	cont "investigate";
+	cont "why?";
+	done;
+
+@org $0e, $6f19:
+	english;
+	init NAME_21, PIC_31;
+	text "Miao... Zzzz...";
+	done;
+
+@org $0e, $6f32:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Oh no! The";
+	line "entrance's";
+	cont "been blocked";
+	cont "by this";
+	cont "monstrous";
+	cont "cat!";
+	para "I'd better go";
+	line "report back";
+	cont "to the";
+	cont "professor.";
+	done;
+
+@org $0e, $6f6b:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "What? A";
+	line "monster cat?";
+	cont "What shall we";
+	cont "do..?";
+	done;
+
+@org $0e, $6f86:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I've got it!";
+	line "We can use a";
+	cont "robot rat to";
+	cont "distract him!";
+	para "But how can";
+	line "we make those";
+	cont "while the";
+	cont "power is";
+	cont "out..?";
+	done;
+
+@org $0e, $6fc3:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "How";
+	line "frustrating!";
+	para "As a last";
+	line "resort, I'll";
+	cont "have to make";
+	cont "it spring-";
+	cont "powered.";
+	# XXX pyphen not installed, text may be clipped!
+	para "Even though";
+	line "it would be";
+	cont "embarrasing";
+	cont "for me to";
+	cont "make";
+	cont "clockwork";
+	cont "rats..";
+	para "Give me a";
+	line "bit, and I'll";
+	cont "find the";
+	cont "parts I";
+	cont "need..";
+	done;
+
+@org $0e, $7026:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Darn it! I";
+	line "used to think";
+	cont "that making";
+	cont "clockworks";
+	cont "was below me,";
+	cont "so I threw";
+	cont "all those";
+	cont "parts out.";
+	para "Sorry,";
+	line "Ballot, but I";
+	cont "need some";
+	cont "springs!";
+	done;
+
+@org $0e, $7090:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "I've got it!";
+	done;
+
+@org $0e, $709b:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "To make the";
+	line "robot rat, we";
+	cont "need a";
+	cont "spring.";
+	done;
+
+@org $0e, $70c0:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Springs?";
+	para "I never";
+	line "thought Dr.";
+	cont "Leo would";
+	cont "need such a";
+	cont "thing...";
+	para "Where did I";
+	line "put it...?";
+	para "Ah, today's";
+	line "weather sure";
+	cont "is nice, but";
+	cont "dark clouds";
+	cont "are";
+	cont "gathering...";
+	done;
+
+@org $0e, $7136:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Ah, right!";
+	line "The spring!";
+	para "I forgot";
+	line "where I put";
+	cont "it, so feel";
+	cont "free to";
+	cont "search in";
+	cont "these piles";
+	cont "of treasure!";
+	done;
+
+@org $0e, $717b:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "The spring? I";
+	line "forgot where";
+	cont "I put it, so";
+	cont "feel free to";
+	cont "search in";
+	cont "these piles";
+	cont "of treasure!";
+	done;
+
+@org $0e, $71b4:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the";
+	line "Spring!";
+	done;
+
+@org $0e, $71c3:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "That's right!";
+	para "This is the";
+	line "spring I";
+	cont "wanted...";
+	para "How em-";
+	line "barrassing..";
+	cont "I'll just have";
+	cont "to bite the";
+	cont "bullet and do";
+	cont "it.";
+	done;
+
+@org $0e, $7217:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Here's the";
+	line "clockwork";
+	cont "rat.";
+	para "I still feel";
+	line "ashamed of";
+	cont "resorting to";
+	cont "such simple";
+	cont "tech...";
+	para "Ballot! You'd";
+	line "better not";
+	cont "tell anyone I";
+	cont "made it!";
+	done;
+
+@org $0e, $726f:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the";
+	line "Clockwork";
+	cont "Rat!";
+	done;
+
+@org $0e, $7283:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "With the";
+	line "clockwork";
+	cont "rat, you";
+	cont "should be";
+	cont "able to";
+	cont "distract that";
+	cont "monster cat.";
+	cont "Ah, I feel";
+	cont "embarrassed";
+	cont "just thinking";
+	cont "about it...";
+	done;
+
+@org $0e, $72ce:
+	english;
+	init NAME_21, PIC_31;
+	text "Miao~ Miao~";
+	done;
+
+@org $0e, $72e2:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Good kitty!";
+	line "Just hurry";
+	cont "up, and";
+	cont "leave..";
+	done;
+
+@org $0e, $72fa:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Ah! The";
+	line "spring's";
+	cont "unwound!";
+	done;
+
+@org $0e, $7316:
+	english;
+	init NAME_21, PIC_31;
+	text "Miao~ Miao!!!";
+	para "(Damn it! I've";
+	line "been";
+	cont "tricked!)";
+	done;
+
+@org $0e, $733f:
+	english;
+	init NAME_23, PIC_17;
+	text "Waaah...";
+	done;
+
+@org $0e, $734f:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Eh? What's";
+	line "happened to";
+	cont "you?";
+	done;
+
+@org $0e, $735f:
+	english;
+	init NAME_23, PIC_17;
+	text "Oh, thank";
+	line "you! After";
+	cont "the outage in";
+	cont "Tech City, I";
+	cont "rushed over";
+	cont "to";
+	cont "investigate";
+	cont "the cause.";
+	para "I didn't";
+	line "expect that I";
+	cont "would be tied";
+	cont "up by Team";
+	cont "Volt!";
+	para "Thank you for";
+	line "rescuing me!";
+	done;
+
+@org $0e, $73b0:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "Eheheheh~!";
+	para "With these 30";
+	line "million yen,";
+	cont "our dream can";
+	cont "finally...";
+	done;
+
+@org $0e, $73d4:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "Just so! Now";
+	line "we can....";
+	done;
+
+@org $0e, $73f9:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "Y-y-yo-you?!";
+	para "How did you";
+	line "get here?!";
+	done;
+
+@org $0e, $740e:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "You- Are you";
+	line "here to ruin";
+	cont "our dreams";
+	cont "again? I";
+	cont "think it's";
+	cont "time to teach";
+	cont "you a lesson!";
+	done;
+
+@org $0e, $744b:
+	english;
+	init NAME_LAKI, PIC_LAKI;
+	text "Y-you! You'd";
+	line "better";
+	cont "remember";
+	cont "this!";
+	done;
+
+@org $0e, $7478:
+	english;
+	init NAME_KULU, PIC_KULU;
+	text "We'll let you";
+	line "go this time!";
+	para "You'd better";
+	line "remember this";
+	cont "mercy!";
+	para "Truth,";
+	line "justice and";
+	cont "courage: Team";
+	cont "Volt, out!";
+	done;
+
+@org $0e, $74c4:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "These guys...";
+	done;
+
+@org $0e, $74cf:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "If I flip";
+	line "this...";
+	done;
+
+@org $0e, $74de:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Ah! The power";
+	line "is back?";
+	para "I've never";
+	line "been this";
+	cont "glad to see";
+	cont "the light.";
+	done;
+
+@org $0e, $7511:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "Apparently";
+	line "the power";
+	cont "went out";
+	cont "because of";
+	cont "Team Volt.";
+	para "Thank you,";
+	line "Ballot, for";
+	cont "bringing it";
+	cont "back!";
+	done;
+
+@org $0e, $7550:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "It-It's";
+	line "blinding...";
+	para "My eyes had";
+	line "just gotten";
+	cont "used to the";
+	cont "dark, and";
+	cont "suddenly the";
+	cont "blinding";
+	cont "lights came";
+	cont "back on...";
+	done;
+
+@org $0e, $7597:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "In the end,";
+	line "Team Volt was";
+	cont "only defeated";
+	cont "with Dr. Leo's";
+	cont "assistance.";
+	para "He certainly";
+	line "is the best";
+	cont "inventor in";
+	cont "the world.";
+	done;
+
+@org $0e, $75d8:
+	english;
+	init NAME_BLANK, PIC_17;
+	text "Have you";
+	line "heard of Gale";
+	cont "Enterprises?";
+	para "It's one of";
+	line "the biggest";
+	cont "companies in";
+	cont "the world,";
+	cont "second only";
+	cont "to Bang Lin!";
+	done;
+
+@org $0e, $762c:
+	english;
+	init NAME_BLANK, PIC_21;
+	text "Waaah!";
+	para "The lights";
+	line "are back on,";
+	cont "so we have to";
+	cont "go to school!";
+	para "Waaah!";
+	done;
+
+@org $0e, $765d:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "This is the";
+	line "scrapyard of";
+	cont "Tech City.";
+	cont "They may look";
+	cont "like pieces";
+	cont "of junk, but";
+	cont "to me, they're";
+	cont "treasure!";
+	done;
+
+@org $0e, $76a3:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "That meteor";
+	line "shower";
+	cont "earlier";
+	cont "wrecked most";
+	cont "of the roads";
+	cont "from here to";
+	cont "Dorington!";
+	para "What shall I";
+	line "do?";
+	done;
+
+@org $0e, $76dc:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "You were the";
+	line "one who saved";
+	cont "Burt?";
+	para "Thank you!";
+	line "Please take";
+	cont "this as a";
+	cont "token of my";
+	cont "gratitude!";
+	done;
+
+@org $0e, $7723:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "I can't stress";
+	line "how grateful";
+	cont "I am!";
+	done;
+
+@org $0e, $7736:
+	english;
+	init NAME_23, PIC_17;
+	text "Thank you";
+	line "very much for";
+	cont "the rescue.";
+	done;
+
+@org $0e, $7746:
+	english;
+	init NAME_19, PIC_22;
+	text "The";
+	line "electricity";
+	cont "is back, so I";
+	cont "have a pile";
+	cont "of documents";
+	cont "to work on..";
+	para "I'm very busy,";
+	line "so is there";
+	cont "anything you";
+	cont "need?";
+	done;
+
+@org $0e, $7781:
+	english;
+	init NAME_1B, PIC_4C;
+	text "Dr. Leo";
+	line "finally";
+	cont "finished his";
+	cont "anti-gravity";
+	cont "device! As";
+	cont "the manager";
+	cont "of the";
+	cont "procurement";
+	cont "department of";
+	cont "GaleCorp, I";
+	cont "can finally";
+	cont "return for my";
+	cont "important";
+	cont "meeting!";
+	done;
+
+@org $0e, $77d3:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "AAAAAAAHHH!!";
+	para "Ballot! You're";
+	line "right on";
+	cont "time!";
+	para "There's been a";
+	line "major";
+	cont "breakthrough!";
+	done;
+
+@org $0e, $7809:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "A major";
+	line "breakthrough?";
+	done;
+
+@org $0e, $781b:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I took a look";
+	line "at those";
+	cont "blueprints";
+	cont "you gave me,";
+	cont "and they're";
+	cont "truly";
+	cont "wonderful!";
+	para "These";
+	line "blueprints";
+	cont "are for a";
+	cont "giant";
+	cont "spaceship!";
+	para "Where could";
+	line "you have";
+	cont "gotten these?";
+	done;
+
+@org $0e, $788a:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "This is the";
+	line "only thing my";
+	cont "father left";
+	cont "behind..";
+	para "I hoped that";
+	line "by following";
+	cont "in his";
+	cont "footsteps, I'd";
+	cont "figure out";
+	cont "where he";
+	cont "went.";
+	done;
+
+@org $0e, $78d6:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Oh, I see...";
+	para "Wait, what's";
+	line "this?";
+	para "In the";
+	line "blueprints";
+	cont "for the Core,";
+	cont "there are 8";
+	cont "missing";
+	cont "pieces...";
+	para "Unless...";
+	done;
+
+@org $0e, $792c:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I've got it!";
+	para "These";
+	line "sections";
+	cont "correspond to";
+	cont "the power";
+	cont "circuits,";
+	cont "which are the";
+	cont "most";
+	cont "important";
+	cont "piece of the";
+	cont "core!";
+	para "As far as I";
+	line "can gather,";
+	cont "those chips";
+	cont "should be in";
+	cont "the";
+	cont "possession of";
+	cont "8 scientists,";
+	cont "and I have";
+	cont "one of them.";
+	para "Ballot!";
+	para "You want to";
+	line "find your";
+	cont "father, don't";
+	cont "you? How";
+	cont "about we make";
+	cont "a deal?";
+	para "I'll finish";
+	line "the hull of";
+	cont "the";
+	cont "spaceship,";
+	cont "while you go";
+	cont "and hunt down";
+	cont "the other 7";
+	cont "chips so that";
+	cont "we can make";
+	cont "this thing";
+	cont "fly.";
+	para "How about";
+	line "that?";
+	done;
+
+@org $0e, $7a00:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Power";
+	line "circuits?";
+	para "Dad must have";
+	line "been trying";
+	cont "to solve the";
+	cont "mystery of";
+	cont "these little";
+	cont "things.";
+	para "Alright!";
+	para "Dr. Leo, it's";
+	line "a deal!";
+	done;
+
+@org $0e, $7a3f:
+	english;
+	init NAME_1B, PIC_4C;
+	text "These";
+	line "circuits?";
+	para "I think I";
+	line "remember the";
+	cont "chairman";
+	cont "having";
+	cont "something";
+	cont "like that";
+	cont "once, but";
+	cont "something";
+	cont "unfortunate";
+	cont "happened";
+	cont "since then...";
+	para "It's kind of";
+	line "hard to";
+	cont "explain...";
+	para "Ballot, if";
+	line "you come over";
+	cont "to GaleCorp,";
+	cont "I'll help you";
+	cont "make an";
+	cont "appointment";
+	cont "with the";
+	cont "chairman.";
+	para "I've got to go";
+	line "now, see you!";
+	done;
+
+@org $0e, $7ad8:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "You want to";
+	line "find your";
+	cont "father, don't";
+	cont "you?";
+	para "I'll finish";
+	line "the hull of";
+	cont "the";
+	cont "spaceship, so";
+	cont "go and hunt";
+	cont "down the";
+	cont "other 7 chips";
+	cont "so that we";
+	cont "can make this";
+	cont "thing fly.";
+	done;
+
+@org $0e, $7b3a:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Ballot, hold";
+	line "on! Don't";
+	cont "leave in such";
+	cont "a hurry.";
+	para "This is for";
+	line "you!";
+	para "It's a tracker";
+	line "to help you";
+	cont "find the";
+	cont "circuits,";
+	cont "along with a";
+	cont "PDA.";
+	para "With this,";
+	line "you can find";
+	cont "out where all";
+	cont "the chips";
+	cont "are!";
+	para "The PDA will";
+	line "be convenient";
+	cont "as well: you";
+	cont "can use it to";
+	cont "send the";
+	cont "diagrams you";
+	cont "find to me.";
+	done;
+
+@org $0e, $7bcb:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the Chip";
+	line "Tracker!";
+	done;
+
+@org $0e, $7bda:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the PDA!";
+	done;
+
+@org $0e, $7be9:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Buck, why";
+	line "don't you go";
+	cont "with Ballot?";
+	para "With more";
+	line "people in the";
+	cont "party, it'll";
+	cont "be safer for";
+	cont "him to";
+	cont "travel.";
+	done;
+
+@org $0e, $7c1d:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＤＯＣＴＯＲ．．．．";
+	line "ＢＵＣＫ．．．";
+	cont "ＢＵＣＫ．．．";
+	done;
+
+@org $0e, $7c32:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I know what";
+	line "you're";
+	cont "thinking!";
+	para "Once you";
+	line "return";
+	cont "safely, I'll";
+	cont "figure out";
+	cont "something to";
+	cont "make you more";
+	cont "humanlike!";
+	para "How about";
+	line "that?";
+	done;
+
+@org $0e, $7c75:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＤＯＣＴＯＲ．．．";
+	line "ＲＥＡＬＬＹ？";
+	done;
+
+@org $0e, $7c82:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Just tweak";
+	line "this, and";
+	cont "solder that...";
+	para "OK! The";
+	line "modifications";
+	cont "are complete!";
+	para "Buck, this";
+	line "brand new";
+	cont "robot bird is";
+	cont "for you!";
+	para "I've named it";
+	line "Beattro, and";
+	cont "it can carry";
+	cont "you across";
+	cont "small gaps in";
+	cont "the road!";
+	done;
+
+@org $0e, $7ce9:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Buck and";
+	line "Beattro";
+	cont "joined the";
+	cont "party!";
+	done;
+
+@org $0e, $7d01:
+	english;
+	init NAME_SYSTEM, PIC_VAST_FAME;
+	text "Star Beast";
+	line "Beattro";
+	cont "joined the";
+	cont "party. If";
+	cont "Buck is";
+	cont "leading the";
+	cont "party, he can";
+	cont "use Beattro's";
+	cont "power to";
+	cont "cross small";
+	cont "holes in the";
+	cont "ground.";
+	done;
+
+@org $0e, $7d5d:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Go on! You";
+	line "can start at";
+	cont "GaleCorp, and";
+	cont "find the";
+	cont "other 7";
+	cont "circuits from";
+	cont "there.";
+	done;
+
+@org $0e, $7d8b:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Go on! You";
+	line "can start at";
+	cont "GaleCorp, and";
+	cont "find the";
+	cont "other 7";
+	cont "circuits from";
+	cont "there.";
+	done;
+
+@org $0e, $7db9:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "This hole...";
+	line "How will we";
+	cont "cross it?";
+	done;
+
+@org $0e, $7dd1:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＢＡＬＬＯＴ！ ＬＥＴ";
+	line "ＢＵＣＫ ＬＥＡＤ．";
+	cont "ＢＥＡＴＴＲＯ ＣＡＮ";
+	cont "ＦＬＹ ＯＶＥＲ";
+	cont "ＨＯＬＥＳ．";
+	done;
+
+@org $0e, $7dff:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "No! I better";
+	line "ask Hayato";
+	cont "about the";
+	cont "genius";
+	cont "mechanical";
+	cont "inventor";
+	cont "first...";
+	done;
+
+@org $0e, $7e33:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Without the";
+	line "Rainbow";
+	cont "Crystal, I'll";
+	cont "never win...";
+	done;
+
+@org $0e, $7e60:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Come on!";
+	done;

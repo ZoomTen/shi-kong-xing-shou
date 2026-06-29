@@ -1,0 +1,10 @@
+@org $6c, $6c25:
+	init NAME_MITT, PIC_48;
+	text "巴洛特⋯";
+	line "";
+	db $f2, $07; #"對"
+	text "不起⋯⋯";
+	cont "要是我沒有被";
+	line "附身的話﹐就好";
+	line "了⋯";
+	done;

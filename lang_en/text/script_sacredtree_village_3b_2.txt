@@ -1,0 +1,23 @@
+@org $59, $739e:
+	init NAME_BLANK, PIC_24;
+	text "真是神奇﹗神木";
+	line "";
+	db $f1, $1a; #"復"
+	text "原後的組織細";
+	para "胞～";
+	line "變得更強軔了⚬";
+	para "一點都看不出﹐";
+	line "曾經枯萎的跡像";
+	done;
+
+@org $59, $73e9:
+	init NAME_BLANK, PIC_1F;
+	text "嗚嗚嗚～～";
+	line "";
+	db $f2, $ad; #"我"
+	text "的心～";
+	cont "";
+	db $f2, $24; #"也"
+	text "已經枯萎了﹗";
+	line "嗚嗚嗚～";
+	done;

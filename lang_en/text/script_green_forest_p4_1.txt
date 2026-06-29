@@ -1,0 +1,17 @@
+@org $4f, $6225:
+	english;
+	init NAME_2E, PIC_57;
+	text "Coo!";
+	done;
+
+@org $4f, $6233:
+	english;
+	init NAME_2F, PIC_58;
+	text "...";
+	done;
+
+@org $4f, $623b:
+	english;
+	init NAME_30, PIC_58;
+	text "...";
+	done;

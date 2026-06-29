@@ -1,0 +1,24 @@
+@org $08, $4519:
+	english;
+	init NAME_0, $1a;
+	text "OK, I'll risk";
+	line "it!";
+	done;
+
+@org $08, $4526:
+	english;
+	init NAME_0, $1a;
+	text "!";
+	done;
+
+@org $08, $452d:
+	english;
+	init NAME_0, $1a;
+	text "Hahaha";
+	done;
+
+@org $08, $4537:
+	english;
+	init NAME_0, $1a;
+	text "Hahaha";
+	getchoice String_1cd0;

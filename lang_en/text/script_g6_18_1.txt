@@ -1,0 +1,43 @@
+@org $6c, $6aa6:
+	init NAME_NINA, PIC_02;
+	text "巴洛特⋯⋯";
+	line "千萬不可以灰心";
+	cont "哦﹗";
+	line "一定還有希望的";
+	done;
+
+@org $6c, $6ad5:
+	init NAME_CLAUDE, PIC_CLAUDE_0;
+	text "妮娜⋯⋯";
+	line "發生了什事都不";
+	para "要緊﹐只要妮娜";
+	line "和我在一起﹐那";
+	cont "";
+	db $f2, $d7; #"就"
+	text "";
+	db $cd; #"?"
+	text "了⚬";
+	done;
+
+@org $6c, $6b13:
+	init NAME_BUCK, PIC_BUCK;
+	text "巴克．要．死了";
+	line "．嗎﹖";
+	para "巴克．下輩子．";
+	line "要變成．人類⋯";
+	done;
+
+@org $6c, $6b44:
+	init NAME_RANDT, PIC_44;
+	text "唉⋯⋯⋯";
+	line "";
+	db $f2, $65; #"還"
+	text "有什辦法可以";
+	cont "想嗎﹖";
+	para "都是巴洛特的錯";
+	line "要是巴洛特有著";
+	cont "像我一樣的精明";
+	line "頭腦的話﹐就不";
+	cont "會發生這種事情";
+	line "了﹗";
+	done;

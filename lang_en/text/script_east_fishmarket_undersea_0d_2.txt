@@ -1,0 +1,121 @@
+@org $55, $64f9:
+	english;
+	init NAME_3A, PIC_63;
+	text "This is the";
+	line "mermaids'";
+	cont "home.";
+	done;
+
+@org $55, $650e:
+	english;
+	init NAME_3B, PIC_64;
+	text "Are you the";
+	line "humans";
+	cont "Haiqing";
+	cont "rescued?";
+	para "She's truly";
+	line "such a kind";
+	cont "mermaid...";
+	done;
+
+@org $55, $653d:
+	english;
+	init NAME_3A, PIC_63;
+	text "Haiqing's";
+	line "sister,";
+	cont "Helen, fell";
+	cont "in love with";
+	cont "a human.";
+	para "So she";
+	line "exchanged her";
+	cont "fish soul for";
+	cont "3 months of";
+	cont "human form";
+	cont "with the Sea";
+	cont "Witch.";
+	para "If she doesn't";
+	line "come back in";
+	cont "3 months,";
+	cont "she'll turn";
+	cont "into foam...";
+	para "What a";
+	line "foolish";
+	cont "mermaid...";
+	done;
+
+@org $55, $65c6:
+	english;
+	init NAME_3C, PIC_65;
+	text "Beyond here";
+	line "is the";
+	cont "territory of";
+	cont "the Sea";
+	cont "Witch.";
+	para "The Sea Witch";
+	line "is really";
+	cont "scary...";
+	para "The simple";
+	line "thought of";
+	cont "going over";
+	cont "there... Ooh!";
+	para "My body just";
+	line "curls up by";
+	cont "itself.";
+	done;
+
+@org $55, $6630:
+	english;
+	init NAME_3B, PIC_64;
+	text "The humans";
+	line "above keep";
+	cont "saying that";
+	cont "Haiqing eats";
+	cont "their kids!";
+	para "She does no";
+	line "such thing!";
+	para "In fact,";
+	line "Haiqing often";
+	cont "saves";
+	cont "children from";
+	cont "drowning!";
+	done;
+
+@org $55, $6684:
+	english;
+	init NAME_3A, PIC_63;
+	text "Are you a";
+	line "human from";
+	cont "above?";
+	para "You want to";
+	line "go back";
+	cont "there?";
+	para "Sorry... Not";
+	line "right now. I'm";
+	cont "wondering,";
+	cont "which came";
+	cont "first, the";
+	cont "turtle or the";
+	cont "egg?";
+	para "I'll take you";
+	line "back on land";
+	cont "once I figure";
+	cont "that out.";
+	done;
+
+@org $55, $6704:
+	english;
+	init NAME_3C, PIC_65;
+	text "Haiqing went";
+	line "looking for";
+	cont "Helen on the";
+	cont "land above!";
+	para "She isn't here";
+	line "right now!";
+	done;
+
+@org $55, $672a:
+	english;
+	init NAME_3C, PIC_65;
+	text "I hate";
+	line "humans!";
+	done;

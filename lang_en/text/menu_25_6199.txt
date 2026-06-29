@@ -1,0 +1,20 @@
+@org $25, $6199 (String_025_6199):
+	text "一般";
+	db $f1, $45; #"裝"
+	text "備";
+	db $f1, $b4; #"元"
+	line;
+
+@org $25, $61a3 (String_025_61a3):
+	text "狀態存放領取換盒子放生";
+	line;
+
+@org $25, $61b6 (String_025_61b6):
+	english;
+	text "Location";
+	line;
+
+@org $25, $61bf (String_025_61bf):
+	english;
+	text "Box";
+	line;

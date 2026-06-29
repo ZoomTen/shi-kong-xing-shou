@@ -1,0 +1,9 @@
+@org $55, $53c5:
+	english;
+	init NAME_3A, PIC_63;
+	text "This is the";
+	line "Star Beast";
+	cont "Storage Bank.";
+	para "Do you need";
+	line "something?";
+	getchoice String_1cc5;

@@ -1,0 +1,11 @@
+@org $08, $4ecc:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "You...";
+	para "I just re-";
+	line "washed my";
+	cont "carpet, and";
+	cont "you've dirtied";
+	cont "it AGAIN!";
+	# XXX pyphen not installed, text may be clipped!
+	done;

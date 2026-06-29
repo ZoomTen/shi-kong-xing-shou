@@ -1,0 +1,18 @@
+@org $66, $792e:
+	init NAME_MITT, PIC_07;
+	text "爸爸﹐相信我可";
+	line "";
+	db $f1, $cb; #"以"
+	text "做到的﹗";
+	para "巴洛特﹐你快到";
+	line "另外一邊﹐將太";
+	cont "";
+	db $f0, $c4; #"陽"
+	text "";
+	db $02; #"?"
+	text "";
+	db $3d; #"?"
+	text "";
+	db $94; #"?"
+	text "位吧﹗";
+	done;

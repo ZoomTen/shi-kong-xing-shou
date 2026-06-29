@@ -1,0 +1,22 @@
+@org $6c, $5fef:
+	init NAME_4D, PIC_6C;
+	text "你要做什麼﹖";
+	line "這個不行﹗";
+	done;
+
+@org $6c, $6009:
+	init NAME_4E, PIC_72;
+	text "不要再掙扎了⚬";
+	line "乖乖的﹐";
+	cont "不會痛的﹗";
+	done;
+
+@org $6c, $602a:
+	init NAME_4E, PIC_6C;
+	text "啊啊啊﹗﹗﹗";
+	done;
+
+@org $6c, $6036:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "發生了什事﹖";
+	done;

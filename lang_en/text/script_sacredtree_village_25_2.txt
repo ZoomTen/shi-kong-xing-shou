@@ -1,0 +1,60 @@
+@org $59, $544f:
+	init NAME_BLANK, PIC_1C;
+	text "神木裡面﹖";
+	line "我和普兒昨天到";
+	para "神木裡面去冒險";
+	line "結果﹐在裡面碰";
+	para "到了可怕的大螞";
+	line "";
+	db $f3, $72; #"蟻"
+	text "﹗";
+	para "人家一時就腳軟";
+	line "";
+	db $f1, $64; #"了"
+	text "";
+	db $33; #"﹐"
+	text "普兒為了把";
+	cont "我推出神木﹐被";
+	line "螞蟻咬傷了﹗";
+	line "嗚～嗚～";
+	done;
+
+@org $59, $54d3:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "神木裡面﹖";
+	line "神木外表平滑﹐";
+	cont "";
+	db $f1, $8a; #"除"
+	text "";
+	db $64; #"了"
+	text "乾枯之外﹐";
+	line "並沒有進入的洞";
+	line "口啊﹖";
+	done;
+
+@org $59, $5511:
+	init NAME_BLANK, PIC_1C;
+	text "這個給你﹗";
+	line "我和普兒﹐就是";
+	cont "";
+	db $f1, $40; #"用"
+	text "這個繩勾﹐爬";
+	line "到樹上的⚬";
+	para "神木的入口就在";
+	line "樹上⚬";
+	para "我再也不敢到神";
+	line "木那裡玩了﹗";
+	done;
+
+@org $59, $5571:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到了繩勾﹗";
+	done;
+
+@org $59, $5580:
+	init NAME_BLANK, PIC_1C;
+	text "神木的入口就在";
+	line "樹上⚬";
+	para "我再也不敢到神";
+	line "木那裡玩了﹗";
+	done;

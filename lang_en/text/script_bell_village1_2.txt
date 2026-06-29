@@ -1,0 +1,33 @@
+@org $08, $4e15:
+	english;
+	init NAME_SNOWY, PIC_SNOWY;
+	text "Woof! Woof!";
+	done;
+
+@org $08, $4e23:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "The news is";
+	line "reporting";
+	cont "that there";
+	cont "will be a";
+	cont "massive";
+	cont "meteor shower";
+	cont "tonight. I";
+	cont "really look";
+	cont "forward to";
+	cont "it!";
+	done;
+
+@org $08, $4e55:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "Every time";
+	line "the meteor";
+	cont "shower is";
+	cont "mentioned,";
+	cont "Saya looks";
+	cont "troubled...";
+	para "Ballot, do";
+	line "you know why?";
+	done;

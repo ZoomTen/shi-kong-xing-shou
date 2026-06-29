@@ -1,0 +1,74 @@
+@org $5c, $4eb8:
+	init NAME_BLANK, PIC_1F;
+	text "南方的海島上﹐";
+	line "";
+	db $f1, $65; #"有"
+	text "座地熱城⚬";
+	para "那裡是一個將地";
+	line "";
+	db $f0, $39; #"熱"
+	text "轉換成電力的";
+	cont "";
+	db $f1, $8d; #"能"
+	text "";
+	db $96; #"?"
+	text "站⚬";
+	done;
+
+@org $5c, $4ef8:
+	init NAME_BLANK, PIC_1E;
+	text "媽媽～琳琳表妹";
+	line "說要寄布拉布拉";
+	para "超人模型給我﹗";
+	line "怎麼還沒有來﹖";
+	cont "我．要．啦﹗﹗";
+	done;
+
+@org $5c, $4f3e:
+	init NAME_BLANK, PIC_1F;
+	text "不要吵﹗";
+	line "再吵小心被章魚";
+	cont "吃掉﹗";
+	done;
+
+@org $5c, $4f5e:
+	init NAME_BLANK, PIC_1E;
+	text "章魚﹗﹗嗚～～";
+	line "嗚嗚～";
+	done;
+
+@org $5c, $4f73:
+	init NAME_BLANK, PIC_1E;
+	text "這是⋯⋯布拉布";
+	line "拉超人﹖﹖﹗﹗";
+	cont "太．棒．了﹗";
+	para "這是琳琳表妹要";
+	line "給我的嗎﹖";
+	para "太．高．興．了";
+	line "謝謝你～";
+	para "";
+	db $f2, $57; #"這"
+	text "";
+	db $4f; #"?"
+	text "";
+	db $d7; #"?"
+	text "送給你了";
+	line "好高興﹗";
+	done;
+
+@org $5c, $4fd9:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了";
+	line "縮地射線";
+	done;
+
+@org $5c, $4fe9:
+	init NAME_BLANK, PIC_1E;
+	text "哇～哇～布拉布";
+	line "拉超人耶﹗";
+	cont "哈哈哈哈～";
+	line "";
+	db $f2, $ad; #"我"
+	text "要帶去學校給";
+	cont "大家看﹗";
+	done;

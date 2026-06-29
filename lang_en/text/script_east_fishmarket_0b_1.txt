@@ -1,0 +1,138 @@
+@org $55, $5aef:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "Young master,";
+	line "this is";
+	cont "Dongyu Town.";
+	para "I hope your";
+	line "journey goes";
+	cont "well.";
+	done;
+
+@org $55, $5b1f:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "Welcome to";
+	line "the Dongyu";
+	cont "Town, the";
+	cont "city of";
+	cont "fishing.";
+	para "We're";
+	line "surrounded by";
+	cont "the Deepa";
+	cont "Sea.";
+	done;
+
+@org $55, $5b52:
+	english;
+	init NAME_BLANK, PIC_1C;
+	text "It's said that";
+	line "kids that go";
+	cont "play at the";
+	cont "beach get";
+	cont "eaten by";
+	cont "mermaids!";
+	para "That's what";
+	line "mom said";
+	cont "happened to";
+	cont "Xiaogui!";
+	done;
+
+@org $55, $5ba0:
+	english;
+	init NAME_BLANK, PIC_1A;
+	text "In the Sacred";
+	line "Tree Village,";
+	cont "across the";
+	cont "sea, there's a";
+	cont "super, super";
+	cont "big tree!";
+	done;
+
+@org $55, $5be3:
+	english;
+	init NAME_BLANK, PIC_14;
+	text "Anton's family";
+	line "has worked as";
+	cont "marine";
+	cont "scientists";
+	cont "for";
+	cont "generations.";
+	para "His ancestors";
+	line "also descend";
+	cont "from the 8";
+	cont "great";
+	cont "scientists!";
+	done;
+
+@org $55, $5c28:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "Waaah...";
+	line "Xiaogui...";
+	para "My poor";
+	line "child...";
+	para "Sniff...";
+	para "Xiaogui was";
+	line "eaten by";
+	cont "mermaids!";
+	para "Waaah...";
+	para "These";
+	line "horrible";
+	cont "mermaids!";
+	done;
+
+@org $55, $5c6f:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Mermaids have";
+	line "been spotted";
+	cont "near the";
+	cont "beach lately,";
+	cont "and children";
+	cont "on the beach";
+	cont "have started";
+	cont "disappearing";
+	cont "for no";
+	cont "reason!";
+	para "The mermaids";
+	line "must have";
+	cont "eaten them!";
+	done;
+
+@org $55, $5cbb:
+	english;
+	init NAME_BLANK, PIC_17;
+	text "Some time";
+	line "ago, I saw";
+	cont "Anton's";
+	cont "fiancee,";
+	cont "Helen,";
+	cont "talking with";
+	cont "a mermaid at";
+	cont "the beach.";
+	para "I wasn't";
+	line "mistaken, was";
+	cont "I?";
+	para "I have to";
+	line "figure this";
+	cont "out!";
+	done;
+
+@org $55, $5d0a:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Ah... Since the";
+	line "meteor";
+	cont "shower, a";
+	cont "crack";
+	cont "appeared in";
+	cont "the sky.";
+	para "And this";
+	line "crack seems";
+	cont "to be getting";
+	cont "bigger and";
+	cont "bigger!";
+	para "That's really";
+	line "worrying.";
+	done;

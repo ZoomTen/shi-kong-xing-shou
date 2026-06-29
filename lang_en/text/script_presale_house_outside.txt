@@ -1,0 +1,15 @@
+@org $66, $4e55:
+	init NAME_BLANK, PIC_12;
+	text "唉～機體已嚴重";
+	line "";
+	db $f1, $51; #"的"
+	text "損毀﹐看樣子";
+	para "是沒有辦法再飛";
+	line "了﹗";
+	cont "連絡公司裡的航";
+	line "空部門﹐前來修";
+	line "理吧﹗";
+	done;
+
+@org $66, $4eab:
+	signpost;

@@ -1,0 +1,65 @@
+@org $0c, $4216:
+	signpost;
+	text "神木村";
+	done;
+
+@org $0c, $421e:
+	english;
+	text "←Spring of";
+	line "Miracles";
+	done;
+
+@org $0c, $4229:
+	english;
+	text "↓Radar";
+	line "Station";
+	done;
+
+@org $0c, $4233:
+	signpost;
+	text "←神木村";
+	done;
+
+@org $0c, $423d:
+	signpost;
+	text "↑神木村";
+	line "↓雷達站";
+	done;
+
+@org $0c, $4250:
+	english;
+	text "Radar Station";
+	done;
+
+@org $0c, $4258:
+	english;
+	text "Mermaid";
+	line "Village";
+	done;
+
+@org $0c, $4260:
+	english;
+	text "Temple of the";
+	line "Sea Witch";
+	done;
+
+@org $0c, $426a:
+	english;
+	text "Valley of";
+	line "Life";
+	done;
+
+@org $0c, $4272:
+	english;
+	text "↑ Valley of";
+	line "Life";
+	para "Valley of";
+	line "the Dead";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $0c, $4283:
+	signpost;
+	text "↓神木村";
+	line "←地熱城";
+	done;

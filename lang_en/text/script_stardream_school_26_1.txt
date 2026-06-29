@@ -1,0 +1,13 @@
+@org $66, $56c0:
+	init NAME_BLANK, PIC_24;
+	text "我是本校的美術";
+	line "老師⚬";
+	cont "米特是我所教過";
+	line "最有天份的";
+	line "小孩子⚬";
+	para "如果加以栽培的";
+	line "話﹐一定會有不";
+	cont "得了的表現⚬";
+	para "唉～可惜呀～";
+	line "真是可惜⋯";
+	done;

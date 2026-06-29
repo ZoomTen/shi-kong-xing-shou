@@ -1,0 +1,31 @@
+@org $12, $5589:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "Sixteen years";
+	line "ago, Chairman";
+	cont "Harrison's";
+	cont "daughter fell";
+	cont "in love with";
+	cont "a man! He was";
+	cont "a shepherd at";
+	cont "Mountreach";
+	cont "Farm. The";
+	cont "shepherd was";
+	cont "later chased";
+	cont "out of here";
+	cont "and never";
+	cont "seen again...";
+	done;
+
+@org $12, $560d:
+	english;
+	init NAME_BLANK, PIC_1A;
+	text "That... monster";
+	line "behind you...";
+	cont "is that one";
+	cont "of the Star";
+	cont "Beasts Dad";
+	cont "was talking";
+	cont "about? It's";
+	cont "scary!";
+	done;

@@ -1,0 +1,10 @@
+@org $67, $6f54:
+	init NAME_2E, PIC_57;
+	text "⋯⋯⋯";
+	line "";
+	done;
+
+@org $67, $6f5d:
+	init NAME_2D, PIC_56;
+	text "⋯⋯⋯";
+	done;

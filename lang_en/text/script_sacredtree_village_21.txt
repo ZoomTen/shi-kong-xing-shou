@@ -1,0 +1,27 @@
+@org $59, $76d1:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "有道力場擋住了";
+	line "";
+	db $f1, $2c; #"道"
+	text "路﹗";
+	done;
+
+@org $59, $76e9:
+	init NAME_RANDT, PIC_06;
+	text "這種程度的黑洞";
+	line "";
+	db $f0, $19; #"力"
+	text "場﹐真是小兒";
+	cont "科﹗";
+	line "時空怪～";
+	line "";
+	db $f2, $56; #"看"
+	text "";
+	db $4a; #"你"
+	text "的了﹗";
+	done;
+
+@org $59, $771a:
+	init NAME_0F, PIC_0F;
+	text "畢達～畢達畢～";
+	done;

@@ -1,0 +1,15 @@
+@org $4f, $61fa:
+	english;
+	init NAME_2C, PIC_55;
+	text "Huh?";
+	para "There you";
+	line "are!";
+	para "It's right";
+	line "here.";
+	done;
+
+@org $4f, $621a:
+	english;
+	init NAME_2C, PIC_55;
+	text "Follow me!";
+	done;

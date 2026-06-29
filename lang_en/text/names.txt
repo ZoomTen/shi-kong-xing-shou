@@ -1,0 +1,458 @@
+@org $a, $46b3 (BlankName):
+	text "   ";
+	line;
+
+@org $a, $46b8 (BallotName):
+	english;
+	text "Ballot";
+	line;
+
+@org $a, $46bf (BuckName):
+	english;
+	text "Buck";
+	line;
+
+@org $a, $46c6 (NinaName):
+	english;
+	text "Nina";
+	line;
+
+@org $0a, $46cd (ClaudeName):
+	english;
+	text "Claude";
+	line;
+
+@org $0a, $46d3 (HelenName):
+	english;
+	text "Helen";
+	line;
+
+@org $0a, $46da (LanteName):
+	english;
+	text "Lante";
+	line;
+
+@org $0a, $46e1 (RandtName):
+	english;
+	text "Randt";
+	line;
+
+@org $0a, $46e8 (MittName):
+	english;
+	text "Mitt";
+	line;
+
+@org $0a, $46ef (SnowyName):
+	english;
+	text "Snowy";
+	line;
+
+@org $0a, $46f6:
+	english;
+	text "Beattro";
+	line;
+
+@org $0a, $46fd:
+	english;
+	text "Electreep";
+	line;
+
+@org $0a, $4703:
+	english;
+	text "Charrot";
+	line;
+
+@org $0a, $4709:
+	english;
+	text "Merlith";
+	line;
+
+@org $0a, $470e:
+	english;
+	text "Muserode";
+	line;
+
+@org $0a, $4715:
+	english;
+	text "Signaliton";
+	line;
+
+@org $0a, $471b:
+	english;
+	text "Drawvile";
+	line;
+
+@org $0a, $4720 (SayaName):
+	english;
+	text "Saya";
+	line;
+
+@org $0a, $4727 (HayatoName):
+	english;
+	text "Hayato";
+	line;
+
+@org $0a, $472e (FangfangName):
+	english;
+	text "Fangfang";
+	line;
+
+@org $0a, $4735:
+	english;
+	text "Nicole";
+	line;
+
+@org $0a, $473c (MrMoName):
+	english;
+	text "Mr. Mo";
+	line;
+
+@org $0a, $4742 (PrincipalName):
+	english;
+	text "Principal";
+	line;
+
+@org $0a, $4749:
+	english;
+	text "Monster";
+	line;
+
+@org $0a, $4750 (SystemName):
+	text "系 統";
+	line;
+
+@org $0a, $4757:
+	english;
+	text "Owner";
+	line;
+
+@org $0a, $475e:
+	english;
+	text "Ina";
+	line;
+
+@org $0a, $4765:
+	english;
+	text "Quito";
+	line;
+
+@org $0a, $476c (DrLeoName):
+	english;
+	text "Leo";
+	line;
+
+@org $0a, $4773:
+	english;
+	text "Dot";
+	line;
+
+@org $0a, $477a (LakiName):
+	english;
+	text "Laki";
+	line;
+
+@org $0a, $4781 (KuluName):
+	english;
+	text "Kulu";
+	line;
+
+@org $0a, $4788:
+	english;
+	text "Computer";
+	line;
+
+@org $0a, $478e:
+	english;
+	text "Cat";
+	line;
+
+@org $0a, $4795:
+	english;
+	text "Volt Grunt";
+	line;
+
+@org $0a, $479c:
+	english;
+	text "Burt";
+	line;
+
+@org $0a, $47a3:
+	english;
+	text "Diep";
+	line;
+
+@org $0a, $47aa:
+	english;
+	text "Mark";
+	line;
+
+@org $0a, $47b1:
+	english;
+	text "Electreep";
+	line;
+
+@org $0a, $47b7:
+	english;
+	text "Caunfee";
+	line;
+
+@org $0a, $47bd:
+	english;
+	text "Harrison";
+	line;
+
+@org $0a, $47c3:
+	english;
+	text "Tymer";
+	line;
+
+@org $0a, $47ca:
+	english;
+	text "Blacksuit";
+	line;
+
+@org $0a, $47d3:
+	english;
+	text "Babe";
+	line;
+
+@org $0a, $47da:
+	english;
+	text "Masked Man";
+	line;
+
+@org $0a, $47e1:
+	english;
+	text "Mountain Pig";
+	line;
+
+@org $0a, $47e8:
+	english;
+	text "Dove";
+	line;
+
+@org $0a, $47ef:
+	english;
+	text "Mr. Rabbit";
+	line;
+
+@org $0a, $47f6:
+	english;
+	text "Stone rabbit";
+	line;
+
+@org $0a, $47fd:
+	english;
+	text "Fat Cat";
+	line;
+
+@org $0a, $4804:
+	english;
+	text "Stone";
+	line "Mountain Pig";
+	line;
+
+@org $0a, $480a:
+	english;
+	text "Volgas";
+	line;
+
+@org $0a, $4811:
+	english;
+	text "Ms. Rabbit";
+	line;
+
+@org $0a, $4818:
+	english;
+	text "Lizzy";
+	line;
+
+@org $0a, $481f (JudgeName):
+	english;
+	text "Judges";
+	line;
+
+@org $0a, $4826 (HostName):
+	english;
+	text "Host";
+	line;
+
+@org $0a, $482d:
+	english;
+	text "Hamas";
+	line;
+
+@org $0a, $4834 (AntonName):
+	english;
+	text "Anton";
+	line;
+
+@org $0a, $483b:
+	english;
+	text "Turtle";
+	line;
+
+@org $0a, $4842:
+	english;
+	text "Crab";
+	line;
+
+@org $0a, $4849:
+	english;
+	text "Shrimp";
+	line;
+
+@org $0a, $4850 (HaiqingName):
+	english;
+	text "Haiqing";
+	line;
+
+@org $0a, $4857:
+	english;
+	text "Sea Witch";
+	line;
+
+@org $0a, $485e:
+	english;
+	text "Unknown";
+	line;
+
+@org $0a, $4865:
+	english;
+	text "Manwulf";
+	line;
+
+@org $0a, $486b (StarBeastName):
+	english;
+	text "Star Beast";
+	line;
+
+@org $0a, $4872:
+	english;
+	text "Fish Soul";
+	line;
+
+@org $0a, $4878:
+	english;
+	text "Dido";
+	line;
+
+@org $0a, $487f:
+	english;
+	text "Rat";
+	line;
+
+@org $0a, $4886:
+	english;
+	text "Sperk";
+	line;
+
+@org $0a, $488c:
+	english;
+	text "Gilead";
+	line;
+
+@org $0a, $4893:
+	english;
+	text "Termite";
+	line;
+
+@org $0a, $489a:
+	english;
+	text "Cal";
+	line;
+
+@org $0a, $48a1:
+	english;
+	text "Kadira";
+	line;
+
+@org $0a, $48a7:
+	english;
+	text "Xylina";
+	line;
+
+@org $0a, $48ae:
+	english;
+	text "Analyzer";
+	line;
+
+@org $0a, $48b5:
+	english;
+	text "Freezdy";
+	line;
+
+@org $0a, $48bc:
+	english;
+	text "Belle";
+	line;
+
+@org $0a, $48c3:
+	english;
+	text "Professor";
+	line;
+
+@org $0a, $48ca:
+	english;
+	text "Sera";
+	line;
+
+@org $0a, $48d1:
+	english;
+	text "Fiendrake";
+	line;
+
+@org $0a, $48d7:
+	english;
+	text "Fientide";
+	line;
+
+@org $0a, $48de:
+	english;
+	text "Fiegnite";
+	line;
+
+@org $0a, $48e5:
+	english;
+	text "Escudge";
+	line;
+
+@org $0a, $48eb:
+	english;
+	text "Muse";
+	line;
+
+@org $0a, $48f2:
+	english;
+	text "Pada";
+	line;
+
+@org $0a, $48f9:
+	english;
+	text "Sonny";
+	line;
+
+@org $0a, $4900:
+	english;
+	text "Nook";
+	line;
+
+@org $0a, $4907:
+	english;
+	text "Tia";
+	line;
+
+@org $0a, $490e:
+	english;
+	text "Maggie";
+	line;
+
+@org $0a, $4915:
+	english;
+	text "Butler";
+	line;
+
+@org $0a, $491c:
+	english;
+	text "Ace";
+	line;

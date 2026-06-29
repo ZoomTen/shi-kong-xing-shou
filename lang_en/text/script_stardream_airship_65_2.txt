@@ -1,0 +1,37 @@
+@org $66, $4ca2:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "怎麼回事﹖";
+	done;
+
+@org $66, $4caf:
+	init NAME_BLANK, PIC_12;
+	text "主引擎室內有異";
+	line "";
+	db $f2, $0d; #"物"
+	text "侵入﹗";
+	cont "";
+	db $f1, $28; #"主"
+	text "引擎運轉不正";
+	line "常﹐切換至副引";
+	line "擎﹗";
+	done;
+
+@org $66, $4ce9:
+	init NAME_BLANK, PIC_12;
+	text "切換成功﹐但副";
+	line "引擎似乎也受損";
+	cont "了﹗";
+	done;
+
+@org $66, $4d09:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "是侵入的異物所";
+	line "造成的嗎﹖";
+	cont "我去看看好了﹗";
+	done;
+
+@org $66, $4d2c:
+	init NAME_BLANK, PIC_12;
+	text "那就麻煩巴洛特";
+	line "少爺了﹗";
+	done;

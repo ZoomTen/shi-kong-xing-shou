@@ -1,0 +1,143 @@
+@org $6c, $765d:
+	init NAME_53, $78;
+	text "奉吾之名、奉吾";
+	line "之力～";
+	para "";
+	db $f2, $63; #"比"
+	text "太陽更灼熱～";
+	line "";
+	db $f2, $63; #"比"
+	text "血液更炙紅～";
+	para "召喚紅蓮之星﹐";
+	line "化為焚風～";
+	done;
+
+@org $6c, $76a8:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "糟了﹗";
+	line "這就是終極的淨";
+	cont "化咒文嗎﹖";
+	line "絕對不能讓他唱";
+	line "完﹗";
+	done;
+
+@org $6c, $76db:
+	init NAME_53, $78;
+	text "嗚⋯⋯呃⋯⋯";
+	line "阻礙者⋯⋯⋯";
+	para "奉吾之名﹐奉吾";
+	line "之力～";
+	para "";
+	db $f2, $63; #"比"
+	text "黑夜更潻黑的";
+	line "力量～";
+	cont "回歸吾身﹗";
+	done;
+
+@org $6c, $7725:
+	init NAME_53, PIC_60;
+	text "低等的人類⚬";
+	para "吾囚於空間裂縫";
+	line "中之苦﹐汝能體";
+	cont "會﹖";
+	para "月亮既將成為火";
+	line "蓮～";
+	para "既將對你們伸出";
+	line "炙熱的舌頭﹐吞";
+	cont "";
+	db $f7, $d0; #"噬"
+	text "一切⚬";
+	para "";
+	db $f1, $40; #"用"
+	text "它吹出的風蒸";
+	line "發你們的血液～";
+	para "用它憤怒的火灰";
+	line "化你們的骨頭～";
+	para "";
+	db $f2, $3e; #"何"
+	text "";
+	db $14; #"?"
+	text "";
+	db $50; #"?"
+	text "﹖";
+	para "接受淨化不是很";
+	line "好嗎﹖";
+	para "在吾之面前﹐體";
+	line "會恐懼吧﹗";
+	done;
+
+@org $6c, $77f4:
+	init NAME_53, PIC_60;
+	text "呃⋯吾之力量尚";
+	line "";
+	db $f7, $20; #"未"
+	text "回復⋯⋯";
+	para "執意要做最後的";
+	line "掙扎嗎﹖";
+	para "一切似乎都太遲";
+	line "";
+	db $f1, $64; #"了"
+	text "";
+	db $35; #"?"
+	text "";
+	done;
+
+@org $6c, $7835:
+	init NAME_53, PIC_60;
+	text "奉吾之名、奉吾";
+	line "之力～";
+	para "";
+	db $f2, $63; #"比"
+	text "太陽更灼熱～";
+	line "";
+	db $f2, $63; #"比"
+	text "血液更炙紅～";
+	para "召喚紅蓮之星﹐";
+	line "化為焚風～綻開";
+	cont "千萬度火舌～";
+	done;
+
+@org $6c, $788f:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "可惡﹗";
+	line "我不會讓你得懲";
+	cont "的﹗";
+	done;
+
+@org $6c, $78ab:
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "可惡﹗﹗";
+	done;
+
+@org $6c, $78b6:
+	init NAME_SAYA, PIC_11;
+	text "巴洛特﹗";
+	line "";
+	db $f1, $81; #"超"
+	text "．能源砲能源";
+	cont "";
+	db $f1, $56; #"已"
+	text "";
+	db $57; #"?"
+	text "";
+	db $35; #"?"
+	text "";
+	para "趕快回到白鳥號";
+	line "上﹗";
+	cont "動作快﹗﹗";
+	done;
+
+@org $6c, $78ed:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "是的﹗";
+	done;
+
+@org $6c, $78f5:
+	init NAME_53, PIC_60;
+	text "沒有這麼容易～";
+	done;
+
+@org $6c, $7906:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "啊啊啊﹗﹗﹗﹗";
+	done;

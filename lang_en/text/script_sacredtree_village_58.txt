@@ -1,0 +1,38 @@
+@org $5a, $5bb6:
+	init NAME_56, PIC_1E;
+	text "卡爾大哥～";
+	line "";
+	db $f2, $4a; #"你"
+	text "";
+	db $cd; #"好"
+	text "棒喲﹗";
+	para "嘻嘻～";
+	line "姐姐在睡覺時﹐";
+	cont "常常這樣講喲﹗";
+	line "姐姐好奇怪～";
+	para "睡覺還會講話﹗";
+	line "嘻嘻～";
+	done;
+
+@org $5a, $5c0c:
+	init NAME_BLANK, PIC_21;
+	text "卡爾最近為了什";
+	line "麼方程式的﹐一";
+	para "定把身體累壞了";
+	line "";
+	db $f1, $58; #"要"
+	text "趕快燉一鍋超";
+	cont "級的補湯﹐給我";
+	line "的小爾爾喝～";
+	done;
+
+@org $5a, $5c61:
+	init NAME_BLANK, PIC_21;
+	text "啊﹗你聽到了﹖";
+	line "人家⋯";
+	para "人家沒有說出什";
+	line "麼奇怪的稱呼啦";
+	cont "真是討厭﹗";
+	line "人家最討厭卡爾";
+	line "大哥了﹗";
+	done;

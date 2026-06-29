@@ -1,0 +1,6 @@
+@org $12, $41f1:
+	english;
+	init NAME_BLANK, PIC_1A;
+	text "OK, I'll risk";
+	line "it!";
+	done;

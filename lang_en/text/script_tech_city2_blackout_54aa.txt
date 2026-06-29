@@ -1,0 +1,327 @@
+@org $0e, $54aa:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Huh?";
+	para "Why is it so";
+	line "dark here?";
+	para "What";
+	line "happened?";
+	done;
+
+@org $0e, $54ce:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "How did this";
+	line "happen?";
+	para "The power has";
+	line "gone out and";
+	cont "now nothing";
+	cont "can be done!";
+	para "Not even the";
+	line "lights are";
+	cont "coming on!";
+	done;
+
+@org $0e, $5518:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "The power";
+	line "suddenly went";
+	cont "out!";
+	para "What's going";
+	line "on? Is there";
+	cont "a problem at";
+	cont "the power";
+	cont "plant?";
+	done;
+
+@org $0e, $5555:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Ow, it hurts";
+	line "so much...";
+	para "I can hardly";
+	line "see in the";
+	cont "dark, and my";
+	cont "bones are old";
+	cont "and brittle...";
+	done;
+
+@org $0e, $5592:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "A couple of";
+	line "days ago, two";
+	cont "people";
+	cont "calling";
+	cont "themselves";
+	cont "Team Volt";
+	cont "raced against";
+	cont "us, and we";
+	cont "lost ¥30";
+	cont "million that";
+	cont "day!";
+	para "I can't";
+	line "believe it!";
+	cont "We specialise";
+	cont "in high-speed";
+	cont "cars here and";
+	cont "we even sent";
+	cont "Dr. Leo, our";
+	cont "best";
+	cont "scientist!";
+	para "How could we";
+	line "have lost?";
+	para "We don't even";
+	line "have that";
+	cont "amount of";
+	cont "money!";
+	done;
+
+@org $0e, $5666:
+	english;
+	init NAME_BLANK, PIC_17;
+	text "This city has";
+	line "the largest";
+	cont "racing car";
+	cont "manufacturing";
+	cont "line in the";
+	cont "world.";
+	para "However, we";
+	line "lost to two";
+	cont "foreigners a";
+	cont "while ago!";
+	para "Even though";
+	line "we sent Dr.";
+	cont "Leo to the";
+	cont "challenge, we";
+	cont "still lost 30";
+	cont "million!";
+	done;
+
+@org $0e, $56f4:
+	english;
+	init NAME_BLANK, PIC_1C;
+	text "Take a look!";
+	line "My high-speed";
+	cont "racing car!";
+	cont "Tourtega";
+	cont "Mk.I! If";
+	cont "those";
+	cont "scoundrels";
+	cont "come again,";
+	cont "I'll beat them";
+	cont "with this!";
+	done;
+
+@org $0e, $5740:
+	english;
+	init NAME_BLANK, PIC_21;
+	text "It's so dark!";
+	line "I'm scared!";
+	cont "Waah...";
+	done;
+
+@org $0e, $576d:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "A long time";
+	line "ago, Leo's";
+	cont "great-";
+	para "grandfather";
+	line "and seven";
+	cont "other";
+	cont "scientists";
+	cont "saved the";
+	cont "Earth, so";
+	cont "everyone in";
+	cont "this city";
+	cont "respects him.";
+	para "But in this";
+	line "race, Leo";
+	cont "lost by a";
+	cont "huge margin!";
+	para "Are we over-";
+	para "estimating";
+	line "him?";
+	done;
+
+@org $0e, $5806:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "This is our";
+	line "scrapyard.";
+	cont "They may look";
+	cont "like pieces";
+	cont "of junk, but";
+	cont "to me, they're";
+	cont "treasure!";
+	done;
+
+@org $0e, $584c:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "Dr. Leo is";
+	line "aging, yet he";
+	cont "has no";
+	cont "children.";
+	para "So, he built";
+	line "a robot named";
+	cont "Buck.";
+	para "Is it just";
+	line "me, or is it";
+	cont "that every";
+	cont "time I see";
+	cont "Buck, I get";
+	cont "the feeling";
+	cont "that he is";
+	cont "somewhat";
+	cont "depressed...";
+	done;
+
+@org $0e, $58bd:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Tech City is";
+	line "an enclosed";
+	cont "town, and all";
+	cont "our lights";
+	cont "are electric";
+	cont "lights.";
+	para "But there are";
+	line "special";
+	cont "precautions";
+	cont "in the power";
+	cont "station to";
+	cont "prevent";
+	cont "situations";
+	cont "like this";
+	cont "from";
+	cont "happening!";
+	para "How odd...";
+	done;
+
+@org $0e, $592f:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "Leo lost ¥30";
+	line "million";
+	cont "racing";
+	cont "against Team";
+	cont "Volt on";
+	cont "behalf of";
+	cont "Tech City!";
+	para "Now I have no";
+	line "idea where to";
+	cont "get the ¥30";
+	cont "million from!";
+	para "I should have";
+	line "known better";
+	cont "than to send";
+	cont "Dr. Leo out";
+	cont "in the field...";
+	done;
+
+@org $0e, $5992:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "Hmph! Hairy's";
+	line "been bullying";
+	cont "people with";
+	cont "Tourtega";
+	cont "Mk.I!";
+	para "Dad, please";
+	line "help me";
+	cont "modify Pippo";
+	cont "Mk.III to";
+	cont "stop him!";
+	done;
+
+@org $0e, $59f6:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "What a joke!";
+	para "They're asking";
+	line "everyone to";
+	cont "chip in to";
+	cont "cover the ¥30";
+	cont "million they";
+	cont "lost!";
+	para "Hide this!";
+	para "That one too!";
+	line "Yeah!";
+	para "Did you see";
+	line "anything?";
+	cont "There's";
+	cont "nothing here,";
+	cont "buddy!";
+	done;
+
+@org $0e, $5a5a:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "This";
+	line "inexplicable";
+	cont "power outage";
+	cont "has been a";
+	cont "real pain!";
+	para "I can't see";
+	line "the follow-up";
+	cont "news reports";
+	cont "on the Star";
+	cont "Beast";
+	cont "incidents.";
+	para "By the way,";
+	line "why hasn't";
+	cont "Burt come";
+	cont "back from his";
+	cont "trip to the";
+	cont "power plant";
+	cont "to fix the";
+	cont "outage?";
+	done;
+
+@org $0e, $5ac1:
+	english;
+	init NAME_1D, PIC_1A;
+	text "Mom? Do you";
+	line "want to hide";
+	cont "Dot's machine";
+	cont "too?";
+	para "It goes at";
+	line "the speed of";
+	cont "light! It's";
+	cont "probably";
+	cont "worth ¥9456";
+	cont "billion!";
+	done;
+
+@org $0e, $5b18:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "There's no";
+	line "need!";
+	done;
+
+@org $0e, $5b22:
+	english;
+	init NAME_1D, PIC_1A;
+	text "I'll hide it";
+	line "anyway!";
+	done;
+
+@org $0e, $5b43:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "The power's";
+	line "gone out, and";
+	cont "my son, Burt,";
+	cont "went to the";
+	cont "power plant";
+	cont "to fix it!";
+	para "He's been gone";
+	line "for quite a";
+	cont "while and I'm";
+	cont "worried about";
+	cont "him...";
+	done;

@@ -1,0 +1,21 @@
+@org $08, $5039:
+	english;
+	init NAME_BLANK, PIC_1E;
+	text "Today I'm";
+	line "going to take";
+	cont "Horticulture";
+	cont "1.";
+	para "So I brought";
+	line "my pet mouse!";
+	cont "Meet Jiji!";
+	done;
+
+@org $08, $506b:
+	english;
+	init NAME_BLANK, PIC_21;
+	text "My packed";
+	line "lunch today";
+	cont "is delicious.";
+	para "You can't have";
+	line "it!";
+	done;

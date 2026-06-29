@@ -1,0 +1,46 @@
+@org $5a, $6663:
+	init NAME_3F, PIC_75;
+	text "愚蠢的人類﹐闖";
+	line "進這裡﹐是因為";
+	para "你的勇氣﹖";
+	line "還是無知呢﹖";
+	para "偉大的神將化為";
+	line "可以焚毀一切的";
+	cont "紅蓮﹐降臨到這";
+	line "";
+	db $f2, $4f; #"個"
+	text "世界⚬";
+	para "呵呵呵～";
+	line "不過﹐我想你沒";
+	cont "有辦法親眼目睹";
+	line "了﹗";
+	done;
+
+@org $5a, $66f0:
+	init NAME_3F, PIC_75;
+	text "嗚⋯⋯";
+	line "力量還沒有完全";
+	cont "復甦嗎﹖";
+	line "我會記住你的⚬";
+	para "灼熱的紅蓮﹐就";
+	line "要降臨了﹗";
+	cont "哈哈哈哈～";
+	done;
+
+@org $5a, $673a:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到了";
+	line "程式磁片⚬";
+	done;
+
+@org $5a, $674d:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "灼熱的紅蓮⋯⋯";
+	para "星獸似乎正期待";
+	line "著某件事的發生";
+	para "在我的時代也是";
+	line "如此⋯⋯";
+	para "到底是什麼呢﹖";
+	line "那種不安的感覺";
+	cont "﹐愈來愈濃了⋯";
+	done;

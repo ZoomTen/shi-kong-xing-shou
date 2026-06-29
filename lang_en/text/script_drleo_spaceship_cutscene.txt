@@ -1,0 +1,379 @@
+@org $0f, $4f42:
+	english;
+	init NAME_1B, PIC_4C;
+	text "Dr. Leo";
+	line "finally";
+	cont "finished his";
+	cont "anti-gravity";
+	cont "device! As";
+	cont "the manager";
+	cont "of the";
+	cont "procurement";
+	cont "department of";
+	cont "GaleCorp, I";
+	cont "can finally";
+	cont "return for my";
+	cont "important";
+	cont "meeting!";
+	done;
+
+@org $0f, $4f94:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "AAAAAAAHHH!!";
+	para "Ballot! You're";
+	line "right on";
+	cont "time!";
+	para "There's been a";
+	line "major";
+	cont "breakthrough!";
+	done;
+
+@org $0f, $4fca:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "A major";
+	line "breakthrough?";
+	done;
+
+@org $0f, $4fdc:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I took a look";
+	line "at those";
+	cont "blueprints";
+	cont "you gave me,";
+	cont "and they're";
+	cont "truly";
+	cont "wonderful!";
+	para "These";
+	line "blueprints";
+	cont "are for a";
+	cont "giant";
+	cont "spaceship!";
+	para "Where could";
+	line "you have";
+	cont "gotten these?";
+	done;
+
+@org $0f, $504b:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "This is the";
+	line "only thing my";
+	cont "father left";
+	cont "behind..";
+	para "I hoped that";
+	line "by following";
+	cont "in his";
+	cont "footsteps, I'd";
+	cont "figure out";
+	cont "where he";
+	cont "went.";
+	done;
+
+@org $0f, $5097:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Oh, I see...";
+	para "Wait, what's";
+	line "this?";
+	para "In the";
+	line "blueprints";
+	cont "for the Core,";
+	cont "there are 8";
+	cont "missing";
+	cont "pieces...";
+	para "Unless...";
+	done;
+
+@org $0f, $50ed:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I've got it!";
+	para "These";
+	line "sections";
+	cont "correspond to";
+	cont "the power";
+	cont "circuits,";
+	cont "which are the";
+	cont "most";
+	cont "important";
+	cont "piece of the";
+	cont "core!";
+	para "As far as I";
+	line "can gather,";
+	cont "those chips";
+	cont "should be in";
+	cont "the";
+	cont "possession of";
+	cont "8 scientists,";
+	cont "and I have";
+	cont "one of them.";
+	para "Ballot!";
+	para "You want to";
+	line "find your";
+	cont "father, don't";
+	cont "you? How";
+	cont "about we make";
+	cont "a deal?";
+	para "I'll finish";
+	line "the hull of";
+	cont "the";
+	cont "spaceship,";
+	cont "while you go";
+	cont "and hunt down";
+	cont "the other 7";
+	cont "chips so that";
+	cont "we can make";
+	cont "this thing";
+	cont "fly.";
+	para "How about";
+	line "that?";
+	done;
+
+@org $0f, $51c1:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Power";
+	line "circuits?";
+	para "Dad must have";
+	line "been trying";
+	cont "to solve the";
+	cont "mystery of";
+	cont "these little";
+	cont "things.";
+	para "Alright!";
+	para "Dr. Leo, it's";
+	line "a deal!";
+	done;
+
+@org $0f, $5200:
+	english;
+	init NAME_1B, PIC_4C;
+	text "These";
+	line "circuits?";
+	para "I think I";
+	line "remember the";
+	cont "chairman";
+	cont "having";
+	cont "something";
+	cont "like that";
+	cont "once, but";
+	cont "something";
+	cont "unfortunate";
+	cont "happened";
+	cont "since then...";
+	para "It's kind of";
+	line "hard to";
+	cont "explain...";
+	para "Ballot, if";
+	line "you come over";
+	cont "to Gale Corp,";
+	cont "I'll help you";
+	cont "make an";
+	cont "appointment";
+	cont "with the";
+	cont "chairman.";
+	para "I've got to go";
+	line "now, see you!";
+	done;
+
+@org $0f, $5299:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "You want to";
+	line "find your";
+	cont "father, don't";
+	cont "you?";
+	para "I'll finish";
+	line "the hull of";
+	cont "the";
+	cont "spaceship, so";
+	cont "go and hunt";
+	cont "down the";
+	cont "other 7 chips";
+	cont "so that we";
+	cont "can make this";
+	cont "thing fly.";
+	done;
+
+@org $0f, $52fb:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Ballot, hold";
+	line "on! Don't";
+	cont "leave in such";
+	cont "a hurry!";
+	done;
+
+@org $0f, $531f:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "This is for";
+	line "you!";
+	para "It's a tracker";
+	line "to help you";
+	cont "find the";
+	cont "circuits,";
+	cont "along with a";
+	cont "PDA.";
+	para "With this,";
+	line "you can find";
+	cont "out where all";
+	cont "the chips";
+	cont "are!";
+	para "The PDA will";
+	line "be convenient";
+	cont "as well: you";
+	cont "can use it to";
+	cont "send the";
+	cont "diagrams you";
+	cont "find to me.";
+	done;
+
+@org $0f, $538f:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the Chip";
+	line "Tracker!";
+	done;
+
+@org $0f, $539e:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Got the PDA!";
+	done;
+
+@org $0f, $53ad:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Buck, why";
+	line "don't you go";
+	cont "with Ballot?";
+	para "With more";
+	line "people in the";
+	cont "party, it'll";
+	cont "be safer for";
+	cont "him to";
+	cont "travel.";
+	done;
+
+@org $0f, $53e1:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＤＯＣＴＯＲ．．．．";
+	line "ＢＵＣＫ．．．";
+	cont "ＢＵＣＫ．．．";
+	done;
+
+@org $0f, $53f6:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "I know what";
+	line "you're";
+	cont "thinking!";
+	para "Once you";
+	line "return";
+	cont "safely, I'll";
+	cont "figure out";
+	cont "something to";
+	cont "make you more";
+	cont "humanlike!";
+	para "How about";
+	line "that?";
+	done;
+
+@org $0f, $5439:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＤＯＣＴＯＲ．．．";
+	line "ＲＥＡＬＬＹ？";
+	done;
+
+@org $0f, $5446:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Just tweak";
+	line "this, and";
+	cont "solder that...";
+	para "OK! The";
+	line "modifications";
+	cont "are complete!";
+	para "Buck, this";
+	line "brand new";
+	cont "robot bird is";
+	cont "for you!";
+	para "I've named it";
+	line "Beattro, and";
+	cont "it can carry";
+	cont "you across";
+	cont "small bumps";
+	cont "in the road!";
+	done;
+
+@org $0f, $54ad:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "Buck and";
+	line "Beattro";
+	cont "joined the";
+	cont "party!";
+	done;
+
+@org $0f, $54c5:
+	english;
+	init NAME_SYSTEM, PIC_VAST_FAME;
+	text "Star Beast";
+	line "Beattro";
+	cont "joined the";
+	cont "party. If";
+	cont "Buck is";
+	cont "leading the";
+	cont "party, he can";
+	cont "use Beattro's";
+	cont "power to";
+	cont "cross small";
+	cont "holes in the";
+	cont "ground.";
+	done;
+
+@org $0f, $5521:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Go on! You";
+	line "can start at";
+	cont "GaleCorp, and";
+	cont "find the";
+	cont "other 7 chips";
+	cont "from there.";
+	done;
+
+@org $0f, $554f:
+	english;
+	init NAME_DR_LEO, PIC_DR_LEO;
+	text "Go on! You";
+	line "can start at";
+	cont "GaleCorp, and";
+	cont "find the";
+	cont "other 7 chips";
+	cont "from there.";
+	done;
+
+@org $0f, $557d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "This hole...";
+	line "How will we";
+	cont "cross it?";
+	done;
+
+@org $0f, $5595:
+	english;
+	init NAME_BUCK, PIC_BUCK;
+	text "ＢＡＬＬＯＴ！ ＬＥＴ";
+	line "ＢＵＣＫ ＬＥＡＤ．";
+	cont "ＢＥＡＴＴＲＯ ＣＡＮ";
+	cont "ＦＬＹ ＯＶＥＲ";
+	cont "ＨＯＬＥＳ．";
+	done;

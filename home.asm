@@ -27,6 +27,7 @@ INCLUDE "home/battle_stats.asm"
 INCLUDE "home/misc.asm"
 INCLUDE "home/map_init.asm"
 INCLUDE "home/text.asm"
+INCLUDE "home/text_far.asm"
 INCLUDE "home/maps.asm"
 INCLUDE "home/sound.asm"
 	ds $40

@@ -1,0 +1,716 @@
+@org $26, $4200:
+	text "死之吻";
+	line;
+
+@org $26, $4205:
+	text "狂咬";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $420c:
+	text "打擊";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4213:
+	text "瘋狂";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $421a:
+	text "突擊";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4221:
+	text "防禦破碎";
+	line;
+
+@org $26, $4227:
+	text "催眠術";
+	forcemap " ", 0;
+	line;
+
+@org $26, $422e:
+	text "煙幕彈";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4235:
+	text "百裂巴掌";
+	line;
+
+@org $26, $423b:
+	text "全力一擊";
+	line;
+
+@org $26, $4241:
+	text "集氣";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4248:
+	text "硬化";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $424f:
+	text "封印";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4256:
+	text "忍耐";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $425d:
+	text "咬人攻擊";
+	line;
+
+@org $26, $4263:
+	text "綑綁";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $426a:
+	text "精神集中";
+	line;
+
+@org $26, $4270:
+	text "療傷術";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4277:
+	text "尖叫";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $427e:
+	text "犧牲攻擊";
+	line;
+
+@org $26, $4284:
+	text "勒緊不放";
+	line;
+
+@org $26, $428a:
+	text "電光一閃";
+	line;
+
+@org $26, $4290:
+	text "分身";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4297:
+	text "熱血";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $429e:
+	text "正拳";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42a5:
+	text "碎石擊";
+	forcemap " ", 0;
+	line;
+
+@org $26, $42ac:
+	text "縮小";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42b3:
+	text "尖槍刺";
+	forcemap " ", 0;
+	line;
+
+@org $26, $42ba:
+	text "洗腦";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42c1:
+	text "拍打翅膀";
+	line;
+
+@org $26, $42c7:
+	text "偷吃步";
+	forcemap " ", 0;
+	line;
+
+@org $26, $42ce:
+	text "先發制人";
+	line;
+
+@org $26, $42d4:
+	text "尖角攻擊";
+	line;
+
+@org $26, $42da:
+	text "致命刺殺";
+	line;
+
+@org $26, $42e0:
+	text "狼嚎";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42e7:
+	text "潛力";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42ee:
+	text "哀號";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42f5:
+	text "沉睡";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $42fc:
+	text "疾風護身";
+	line;
+
+@org $26, $4302:
+	text "銅牆鐵壁";
+	line;
+
+@org $26, $4308:
+	text "瞄準";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $430f:
+	text "劍氣";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4316:
+	text "切斬";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $431d:
+	text "撞擊";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4324:
+	text "一刀兩斷";
+	line;
+
+@org $26, $432a:
+	text "靈劍";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4331:
+	text "二刀流";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4338:
+	text "盾攻勢";
+	forcemap " ", 0;
+	line;
+
+@org $26, $433f:
+	text "瞬間突擊";
+	line;
+
+@org $26, $4345:
+	text "手刀";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $434c:
+	text "居合斬";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4353:
+	text "蓄力";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $435a:
+	text "鬥氣．嵐";
+	line;
+
+@org $26, $4360:
+	text "無雙";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4367:
+	text "百噸鐵拳";
+	line;
+
+@org $26, $436d:
+	text "氣合摔";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4374:
+	text "地獄車";
+	forcemap " ", 0;
+	line;
+
+@org $26, $437b:
+	text "必殺投擲";
+	line;
+
+@org $26, $4381:
+	text "天電拳";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4388:
+	text "寒冰拳";
+	forcemap " ", 0;
+	line;
+
+@org $26, $438f:
+	text "烈焰拳";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4396:
+	text "吸收反擊";
+	line;
+
+@org $26, $439c:
+	text "亂打一通";
+	line;
+
+@org $26, $43a2:
+	text "火炎彈";
+	forcemap " ", 0;
+	line;
+
+@org $26, $43a9:
+	text "噴射火炎";
+	line;
+
+@org $26, $43af:
+	text "火焰旋風";
+	line;
+
+@org $26, $43b5:
+	text "火焰爆炸";
+	line;
+
+@org $26, $43bb:
+	text "火鳥之翼";
+	line;
+
+@org $26, $43c1:
+	text "同歸於盡";
+	line;
+
+@org $26, $43c7:
+	text "毒炎";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $43ce:
+	text "濃縮泡沫";
+	line;
+
+@org $26, $43d4:
+	text "雨飄紅";
+	forcemap " ", 0;
+	line;
+
+@org $26, $43db:
+	text "強力水柱";
+	line;
+
+@org $26, $43e1:
+	text "暴雨";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $43e8:
+	text "海嘯";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $43ef:
+	text "寒冰雨";
+	forcemap " ", 0;
+	line;
+
+@org $26, $43f6:
+	text "冰凍光束";
+	line;
+
+@org $26, $43fc:
+	text "暴風雪";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4403:
+	text "黑暗地獄";
+	line;
+
+@org $26, $4409:
+	text "飛砂走石";
+	line;
+
+@org $26, $440f:
+	text "落石";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4416:
+	text "石崩";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $441d:
+	text "挖地洞";
+	forcemap " ", 0;
+	line;
+
+@org $26, $4424:
+	text "大地震";
+	forcemap " ", 0;
+	line;
+
+@org $26, $442b:
+	text "殞石巨彈";
+	line;
+
+@org $26, $4431:
+	text "地裂";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4438:
+	text "電擊";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $443f:
+	text "疾雷";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4446:
+	text "爆炸雷擊";
+	line;
+
+@org $26, $444c:
+	text "闇雷";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4453:
+	text "天雷殛頂";
+	line;
+
+@org $26, $4459:
+	text "強電磁波";
+	line;
+
+@org $26, $445f:
+	text "吸星大法";
+	line;
+
+@org $26, $4465:
+	text "藤鞭";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $446c:
+	text "樹汁";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4473:
+	text "散葉刀片";
+	line;
+
+@org $26, $4479:
+	text "太陽光束";
+	line;
+
+@org $26, $447f:
+	text "無盡花雨";
+	line;
+
+@org $26, $4485:
+	text "寄魂種子";
+	line;
+
+@org $26, $448b:
+	text "香甜孢子";
+	line;
+
+@org $26, $4491:
+	text "麻痺花粉";
+	line;
+
+@org $26, $4497:
+	text "猛毒孢子";
+	line;
+
+@org $26, $449d:
+	text "舌頭舔舔";
+	line;
+
+@org $26, $44a3:
+	text "怨恨";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $44aa:
+	text "衝擊波";
+	forcemap " ", 0;
+	line;
+
+@org $26, $44b1:
+	text "地獄光束";
+	line;
+
+@org $26, $44b7:
+	text "邪惡侵蝕";
+	line;
+
+@org $26, $44bd:
+	text "靈魂纏身";
+	line;
+
+@org $26, $44c3:
+	text "催眠音波";
+	line;
+
+@org $26, $44c9:
+	text "魅惑音波";
+	line;
+
+@org $26, $44cf:
+	text "干";
+	text "擾";
+	text "音波";
+	line;
+
+@org $26, $44d7:
+	text "詛咒";
+	text "音波";
+	line;
+
+@org $26, $44de:
+	text "封印音波";
+	line;
+
+@org $26, $44e4:
+	text "真空";
+	text "波";
+	forcemap " ", 0;
+	line;
+
+@org $26, $44ec:
+	text "強力旋";
+	text "渦";
+	line;
+
+@org $26, $44f3:
+	text "龍捲";
+	text "風";
+	forcemap " ", 0;
+	line;
+
+@org $26, $44fb:
+	text "沙漠";
+	text "風暴";
+	line;
+
+@org $26, $4502:
+	text "旋";
+	text "燕";
+	text "嵐";
+	text "舞";
+	line;
+
+@org $26, $450b:
+	text "替";
+	text "身";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4513:
+	text "必殺神";
+	text "弓";
+	line;
+
+@org $26, $451a:
+	text "神之";
+	text "忿怒";
+	line;
+
+@org $26, $4521:
+	text "飛天";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4528:
+	text "天";
+	text "國";
+	text "之鳥";
+	line;
+
+@org $26, $4530:
+	text "黏液";
+	text "  ";
+	line;
+
+@org $26, $4537:
+	text "模仿";
+	text "  ";
+	line;
+
+@org $26, $453e:
+	text "吸血";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $4545:
+	text "血";
+	text "霧";
+	text "  ";
+	line;
+
+@org $26, $454d:
+	text "毒";
+	text "瓦斯";
+	text " ";
+	line;
+
+@org $26, $4555:
+	text "淬";
+	text "毒";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $455d:
+	text "大";
+	text "回復";
+	text " ";
+	line;
+
+@org $26, $4565:
+	text "狂";
+	text "獸";
+	text "裂破";
+	line;
+
+@org $26, $456d:
+	text "偷";
+	text "竊";
+	text "  ";
+	line;
+
+@org $26, $4575:
+	text "變";
+	text "身";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $457d:
+	text "煙";
+	text "遁";
+	text "  ";
+	line;
+
+@org $26, $4585:
+	text "鏡";
+	text "壁";
+	forcemap " ", 0;
+	text " ";
+	line;
+
+@org $26, $458d:
+	text "謎";
+	text "   ";
+	line;
+
+@org $26, $4594:
+	text "詛咒";
+	text "  ";
+	line;
+
+@org $26, $459b:
+	text "浴";
+	text "火";
+	text "重生";
+	line;
+
+@org $26, $45a3:
+	text "水";
+	text "華三昧";
+	line;
+
+@org $26, $45aa:
+	text "天雷";
+	text "障";
+	text "壁";
+	line;
+
+@org $26, $45b2:
+	text "基本";
+	text "攻擊";
+	line;

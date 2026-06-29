@@ -1,0 +1,49 @@
+@org $66, $610e:
+	init NAME_5A, PIC_18;
+	text "不好了～";
+	line "不好了﹗";
+	cont "米特少爺最喜歡";
+	line "的水晶音樂盒被";
+	line "人給偷走了﹗";
+	para "就在剛才﹐有一";
+	line "男一女侵入了少";
+	para "爺的房間﹐把水";
+	line "晶音樂盒給偷走";
+	cont "了﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "糟糕﹗";
+	done;
+
+@org $66, $618d:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "一男一女﹖";
+	done;
+
+@org $66, $619b:
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "有種不好的預感";
+	line "難道會是～";
+	cont "『他們』﹖";
+	done;
+
+@org $66, $61c1:
+	init NAME_5A, PIC_18;
+	text "不好了～";
+	line "不好了﹗";
+	cont "米特少爺最喜歡";
+	line "的水晶音樂盒被";
+	line "人給偷走了﹗";
+	para "就在剛才﹐有一";
+	line "男一女侵入了少";
+	para "爺的房間﹐把水";
+	line "晶音樂盒給偷走";
+	cont "了﹗";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"?"
+	text "糟糕﹗";
+	done;

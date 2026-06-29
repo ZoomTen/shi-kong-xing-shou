@@ -1,0 +1,39 @@
+@org $4f, $52bc:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "There's a";
+	line "forest near";
+	cont "Sky City";
+	cont "called the";
+	cont "Sea of Green.";
+	para "But suddenly,";
+	line "for some";
+	cont "unknown";
+	cont "reason, all";
+	cont "of the trees";
+	cont "turned to";
+	cont "stone.";
+	para "This is";
+	line "really";
+	cont "strange...";
+	done;
+
+@org $4f, $531d:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "There were a";
+	line "lot of small";
+	cont "animals";
+	cont "living in the";
+	cont "Sea of Green...";
+	para "But many of";
+	line "them suddenly";
+	cont "disappeared,";
+	cont "and some";
+	cont "turned into";
+	cont "stone.";
+	para "Just what in";
+	line "the world";
+	cont "happened?";
+	# XXX pyphen not installed, text may be clipped!
+	done;

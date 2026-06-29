@@ -1,0 +1,385 @@
+@org $4f, $55bf:
+	english;
+	init NAME_2A, PIC_53;
+	text "Hello, sir.";
+	para "These are the";
+	line "Bang Lin";
+	cont "Entreprises";
+	cont "internal";
+	cont "offices.";
+	para "They are not";
+	line "open for";
+	cont "tours.";
+	para "You are";
+	line "however free";
+	cont "to visit the";
+	cont "exhibition in";
+	cont "the lobby to";
+	cont "your heart's";
+	cont "content.";
+	para "Have a good";
+	line "day.";
+	done;
+
+@org $4f, $5619:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "Hello! This";
+	line "is the Bang";
+	cont "Lin";
+	cont "Entreprises";
+	cont "front desk.";
+	cont "All of the";
+	cont "products you";
+	cont "see here are";
+	cont "epresentative";
+	cont "of our";
+	cont "company.";
+	# XXX pyphen not installed, text may be clipped!
+	para "Especially";
+	line "this retro-";
+	cont "styled";
+	cont "necklace";
+	cont "here!";
+	# XXX pyphen not installed, text may be clipped!
+	para "It is";
+	line "expected to";
+	cont "start a wave";
+	cont "of retro";
+	cont "fashion";
+	cont "throughout";
+	cont "the world.";
+	done;
+
+@org $4f, $568f:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Hello! This";
+	line "is the";
+	cont "registration";
+	cont "desk for the";
+	cont "retro-styled";
+	cont "necklace";
+	cont "spokesperson";
+	cont "talent show.";
+	para "Do you wish";
+	line "to sign up?";
+	done;
+
+@org $4f, $56c8:
+	english;
+	init NAME_2B, PIC_25;
+	text "Hey there!";
+	para "I'm Babe, the";
+	line "product";
+	cont "commentator.";
+	para "Do you need";
+	line "my services?";
+	done;
+
+@org $4f, $56fa:
+	english;
+	init NAME_BLANK, PIC_14;
+	text "Oh no...";
+	para "The young";
+	line "master";
+	cont "slipped away";
+	cont "again!";
+	para "I'm going to";
+	line "get chewed";
+	cont "out by the";
+	cont "president";
+	cont "again!";
+	para "What to do?";
+	done;
+
+@org $4f, $572e:
+	english;
+	init NAME_NINA, PIC_NINA_4;
+	text "That";
+	line "necklace?";
+	para "Isn't the";
+	line "thing";
+	cont "embedded in";
+	cont "it a power";
+	cont "chip?";
+	done;
+
+@org $4f, $5762:
+	english;
+	init NAME_2B, PIC_25;
+	text "Hello!";
+	para "This is Bang";
+	line "Lin's latest";
+	cont "product: the";
+	cont "retro-styled";
+	cont "necklace.";
+	para "It is";
+	line "embedded with";
+	cont "a chip from";
+	cont "an ancient";
+	cont "technology.";
+	para "Its retro";
+	line "elegance is";
+	cont "brought out";
+	cont "by its high-";
+	cont "tech,";
+	cont "streamlined";
+	cont "shape.";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $4f, $57d9:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "A power chip?";
+	done;
+
+@org $4f, $57e7:
+	english;
+	init NAME_2B, PIC_25;
+	text "Yes.";
+	para "The design,";
+	line "as well as";
+	cont "the power";
+	cont "chip, were";
+	cont "provided by";
+	cont "the president";
+	cont "himself.";
+	done;
+
+@org $4f, $5826:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "How can we";
+	line "get it?";
+	done;
+
+@org $4f, $583e:
+	english;
+	init NAME_2B, PIC_25;
+	text "This product";
+	line "is still only";
+	cont "a sample.";
+	para "Once it gains";
+	line "global";
+	cont "popularity,";
+	cont "mass";
+	cont "production";
+	cont "will begin.";
+	para "The current";
+	line "pre-order";
+	cont "price is of";
+	cont "45 million ¥.";
+	done;
+
+@org $4f, $588e:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "4... 45";
+	line "million?";
+	done;
+
+@org $4f, $589f:
+	english;
+	init NAME_2B, PIC_25;
+	text "Yes.";
+	# XXX pyphen not installed, text may be clipped!
+	para "Also, the";
+	line "company is";
+	cont "currently";
+	cont "holding a";
+	cont "grand talent";
+	cont "show to";
+	cont "kickstart the";
+	cont "product's";
+	cont "popularity.";
+	para "The winner";
+	line "will receive";
+	cont "this product";
+	cont "as well.";
+	para "This young";
+	line "lady looks";
+	cont "quite";
+	cont "beautiful,";
+	cont "you could";
+	cont "consider";
+	cont "signing up at";
+	cont "the service";
+	cont "desk!";
+	done;
+
+@org $4f, $592a:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Where are we";
+	line "going to get";
+	cont "45 million ¥?";
+	para "What are we";
+	line "going to do?";
+	done;
+
+@org $4f, $594e:
+	english;
+	init NAME_NINA, PIC_02;
+	text "...";
+	done;
+
+@org $4f, $5955:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "The talent";
+	line "show! Nina!";
+	para "If you";
+	line "participate,";
+	cont "you'll be";
+	cont "chosen for";
+	cont "sure!";
+	para "That way,";
+	line "we'll be able";
+	cont "to get the";
+	cont "power chip!";
+	done;
+
+@org $4f, $59ab:
+	english;
+	init NAME_NINA, PIC_02;
+	text "I... I can't...";
+	para "I don't have";
+	line "any beautiful";
+	cont "clothes... I";
+	cont "can't";
+	cont "participate...";
+	done;
+
+@org $4f, $59df:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Don't worry";
+	line "about that,";
+	cont "we'll find";
+	cont "another way";
+	cont "for you to";
+	cont "qualify.";
+	done;
+
+@org $4f, $5a16:
+	english;
+	init NAME_NINA, PIC_02;
+	text "I... I...";
+	para "I will give";
+	line "it a try...";
+	done;
+
+@org $4f, $5a2d:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Hello! This";
+	line "is the";
+	cont "registration";
+	cont "desk for the";
+	cont "retro-styled";
+	cont "necklace";
+	cont "spokesperson";
+	cont "talent show.";
+	para "Do you wish";
+	line "to sign up?";
+	getchoice String_1cc5;
+
+@org $4f, $5a69:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Y-yes...";
+	done;
+
+@org $4f, $5a78:
+	english;
+	init NAME_NINA, PIC_02;
+	text "I...";
+	para "I still can't...";
+	done;
+
+@org $4f, $5a8e:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Alright.";
+	para "You can";
+	line "register";
+	cont "here.";
+	para "Okay!";
+	para "The";
+	line "registration";
+	cont "is complete,";
+	cont "your number";
+	cont "is 5932.";
+	done;
+
+@org $4f, $5acf:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Your";
+	line "registration";
+	cont "number is";
+	cont "5932.";
+	done;
+
+@org $4f, $5ae7:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Thank you.";
+	done;
+
+@org $4f, $5af1:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "You're";
+	line "welcome.";
+	para "Please pardon";
+	line "my";
+	cont "indiscretion,";
+	cont "but I suggest";
+	cont "you buy a";
+	cont "dress to suit";
+	cont "you. That";
+	cont "way, you'll be";
+	cont "sure to stand";
+	cont "out from the";
+	cont "competition!";
+	done;
+
+@org $4f, $5b4f:
+	english;
+	init NAME_NINA, PIC_02;
+	text "Y-yes...";
+	para "Thanks...";
+	done;
+
+@org $4f, $5b5f:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "What to do?";
+	para "Lizzy bought";
+	line "all the";
+	cont "clothes in";
+	cont "the clothing";
+	cont "shop.";
+	para "I don't have";
+	line "any new dress";
+	cont "to wear for";
+	cont "the talent";
+	cont "show!";
+	done;
+
+@org $4f, $5ba1:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "Lizzy is so";
+	line "mean!";
+	para "If I don't";
+	line "have any new";
+	cont "clothes, how";
+	cont "can I go on";
+	cont "stage?";
+	para "I can't!";
+	para "Waaaah!";
+	done;

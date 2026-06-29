@@ -1,0 +1,67 @@
+@org $59, $74a9:
+	init NAME_BLANK, PIC_16;
+	text "爸爸去逝之前﹐";
+	line "曾一度說著他的";
+	para "遺憾～雕像上的";
+	line "那名少年﹐曾經";
+	cont "幫他一個大忙⚬";
+	para "";
+	db $f1, $3f; #"使"
+	text "他沒有造成更";
+	line "大的錯誤⚬";
+	para "啊﹗你長得和雕";
+	line "像上的少年﹐真";
+	cont "";
+	db $f1, $43; #"是"
+	text "一模一樣⚬";
+	para "或許是命運的安";
+	line "排呀﹗";
+	cont "這個東西﹐是爸";
+	line "";
+	db $f3, $a5; #"爸"
+	text "一直想給那名";
+	line "";
+	db $f4, $85; #"少"
+	text "年的⚬";
+	para "現在就交給你了";
+	line "爸爸～";
+	para "";
+	db $f2, $4a; #"你"
+	text "現在一定很高";
+	line "";
+	db $f1, $88; #"興"
+	text "吧﹗";
+	done;
+
+@org $59, $7593:
+	init NAME_BALLOT, PIC_BALLOT_1;
+	text "得到了～";
+	line "神奇果實";
+	done;
+
+@org $59, $75a5:
+	init NAME_BLANK, PIC_16;
+	text "爸爸～";
+	line "";
+	db $f2, $4a; #"你"
+	text "現在一定很高";
+	cont "";
+	db $f1, $88; #"興"
+	text "吧﹗";
+	done;
+
+@org $59, $75c1:
+	init NAME_BLANK, PIC_19;
+	text "奇怪﹖";
+	line "衛星電視為什麼";
+	cont "收不到訊號了﹖";
+	line "";
+	db $f1, $03; #"真"
+	text "";
+	db $43; #"是"
+	text "氣人﹗";
+	cont "南邊的衛星雷達";
+	line "站到底在做什麼";
+	line "﹖";
+	para "最近老是這樣﹗";
+	done;

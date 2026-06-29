@@ -1,0 +1,16 @@
+@org $55, $5367:
+	english;
+	init NAME_14, PIC_25;
+	text "Do you need";
+	line "my treatment?";
+	getchoice String_1cc5;
+
+@org $55, $537f:
+	english;
+	init NAME_1A, PIC_25;
+	text "This is the";
+	line "Star Beast";
+	cont "Storage Bank.";
+	cont "Do you need";
+	cont "my help?";
+	getchoice String_1cc5;

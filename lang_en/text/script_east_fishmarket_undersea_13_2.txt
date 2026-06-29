@@ -1,0 +1,11 @@
+@org $55, $64e9:
+	english;
+	init NAME_3B, PIC_64;
+	text "...";
+	done;
+
+@org $55, $64f1:
+	english;
+	init NAME_3C, PIC_65;
+	text "...";
+	done;

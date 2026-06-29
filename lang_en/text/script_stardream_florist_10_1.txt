@@ -1,0 +1,36 @@
+@org $66, $551e:
+	init NAME_BLANK, PIC_25;
+	text "想要買花嗎﹖";
+	para "這裡的花都是最";
+	line "新鮮的唷⚬";
+	para "如果不曉得該送";
+	line "";
+	db $f3, $0d; #"什"
+	text "麼花的話﹐可";
+	cont "";
+	db $f1, $cb; #"以"
+	text "來問我唷﹗";
+	done;
+
+@org $66, $5571:
+	init NAME_BLANK, PIC_23;
+	text "本店的花﹐都是";
+	line "屬於寒帶品種⚬";
+	para "每一朵都是栽培";
+	line "者的苦心⚬";
+	done;
+
+@org $66, $55a9:
+	init NAME_BLANK, PIC_1B;
+	text "唉～朋友都說﹐";
+	line "我賣的都是小孩";
+	cont "的玩具⚬";
+	line "沒有男子漢的氣";
+	line "慨⚬";
+	para "";
+	db $f1, $03; #"真"
+	text "想要個可以代";
+	line "";
+	db $f4, $47; #"表"
+	text "男子漢的東西";
+	done;

@@ -1,0 +1,275 @@
+@org $0e, $4abe:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad must be";
+	line "somewhere. I'm";
+	cont "sure there'll";
+	cont "be a lead in";
+	cont "the house!";
+	done;
+
+@org $0e, $4af9:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "I'll have to";
+	line "search inside";
+	cont "first, I'm";
+	cont "sure there'll";
+	cont "be a lead";
+	cont "somewhere.";
+	done;
+
+@org $0e, $4b34:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "I found a";
+	line "diary in the";
+	cont "drawer!";
+	done;
+
+@org $0e, $4b4d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "...";
+	para "April 20th";
+	para "There are";
+	line "signs of the";
+	cont "moon turning";
+	cont "blue.";
+	para "If we don't";
+	line "decipher the";
+	cont "diagram soon,";
+	cont "I'm afraid we";
+	cont "won't be able";
+	cont "to stop it.";
+	done;
+
+@org $0e, $4bc0:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "A yellowed";
+	line "design";
+	cont "diagram is";
+	cont "enclosed in";
+	cont "the diary!";
+	para "The diagram";
+	line "contains a";
+	cont "dense";
+	cont "mechanical";
+	cont "con-";
+	cont "struction...";
+	done;
+
+@org $0e, $4bfb:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad must have";
+	line "wanted to";
+	cont "unearth the";
+	cont "secrets of";
+	cont "the design";
+	cont "schematics.";
+	cont "If I can";
+	cont "unlock the";
+	cont "secrets of";
+	cont "the";
+	cont "blueprints,";
+	cont "I'll probably";
+	cont "find Dad.";
+	para "But this";
+	line "diagram... no";
+	cont "matter how";
+	cont "hard I try, I";
+	cont "can't";
+	cont "understand";
+	cont "it...";
+	done;
+
+@org $0e, $4c6a:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_2;
+	text "Hayato once";
+	line "mentioned";
+	cont "that his";
+	cont "friend is a";
+	cont "genius";
+	cont "mechanical";
+	cont "inventor. He";
+	cont "must be able";
+	cont "to figure out";
+	cont "the secret of";
+	cont "the diagram!";
+	para "I have to";
+	line "find Hayato,";
+	cont "even though I";
+	cont "don't want to...";
+	done;
+
+@org $0e, $4cdd:
+	english;
+	init NAME_17, PIC_09;
+	text "Awoo~ Woof!";
+	line "Ruff!";
+	done;
+
+@org $0e, $4cec:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Don't.. Don't";
+	line "come any";
+	cont "closer!";
+	done;
+
+@org $0e, $4cfd:
+	english;
+	init NAME_17, PIC_09;
+	text "Ruff! Ruff!";
+	line "Woof!";
+	done;
+
+@org $0e, $4d10:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_4;
+	text "Snowy?";
+	para "It is you!";
+	para "What";
+	line "happened?";
+	para "How did this";
+	line "happen?";
+	done;
+
+@org $0e, $4d42:
+	english;
+	init NAME_SNOWY, PIC_09;
+	text "Ruff! Ruff!";
+	done;
+
+@org $0e, $4d50:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "It seems like";
+	line "something big";
+	cont "has happened!";
+	para "Snowy!";
+	para "Come on, let's";
+	line "go find";
+	cont "Hayato!";
+	done;
+
+@org $0e, $4d81:
+	english;
+	init NAME_SYSTEM, PIC_VAST_FAME;
+	text "Snowy joined";
+	line "your party!";
+	done;
+
+@org $0e, $4d99:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "The";
+	line "observatory";
+	cont "has been";
+	cont "destroyed.";
+	para "Yet, no";
+	line "bodies were";
+	cont "found within";
+	cont "the";
+	cont "observatory.";
+	para "Ballot!";
+	para "Your father";
+	line "must be alive";
+	cont "somewhere.";
+	cont "You'll have to";
+	cont "be self-";
+	cont "sufficient";
+	cont "for now!";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $0e, $4e05:
+	english;
+	init NAME_BLANK, PIC_13;
+	text "The news";
+	line "reports say";
+	cont "that";
+	cont "yesterday's";
+	cont "meteor shower";
+	cont "hit a few";
+	cont "animals.";
+	para "Some of the";
+	line "affected";
+	cont "animals";
+	cont "turned into";
+	cont "mysterious";
+	cont "creatures!";
+	para "Scientists";
+	line "have";
+	cont "tentatively";
+	cont "named them -";
+	cont "Star Beasts.";
+	para "...Wait,";
+	line "Ballot, what's";
+	cont "that behind";
+	cont "you?";
+	para "AHH!!";
+	line "BALLOT!!";
+	cont "WATCH OUT!";
+	done;
+
+@org $0e, $4e82:
+	english;
+	init NAME_BLANK, PIC_20;
+	text "Hooray!";
+	para "No class";
+	line "today because";
+	cont "of the meteor";
+	cont "shower!";
+	done;
+
+@org $0e, $4eb4:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "Ballot! I";
+	line "made cookies!";
+	para "Super de-li-";
+	line "cious!";
+	# XXX pyphen not installed, text may be clipped!
+	para "Ahh! Look";
+	line "out! You're";
+	cont "being chased";
+	cont "by one of";
+	cont "those Star";
+	cont "Beasts!";
+	done;
+
+@org $0e, $4efa:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "Uhh... Is that";
+	line "a crack in";
+	cont "the sky, or";
+	cont "am I going";
+	cont "mad?";
+	done;
+
+@org $0e, $4f2f:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "I saw it! I";
+	line "saw it!";
+	para "Last night a";
+	line "bunch of";
+	cont "meteors hit";
+	cont "the";
+	cont "observatory";
+	cont "with a bang!";
+	para "My rabbits";
+	line "got hit too,";
+	cont "and they";
+	cont "turned into";
+	cont "monsters!";
+	para "I was so";
+	line "scared that I";
+	cont "got rid of";
+	cont "them all!";
+	done;

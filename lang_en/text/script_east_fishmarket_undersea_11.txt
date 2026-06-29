@@ -1,0 +1,165 @@
+@org $55, $6894:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "Ah! You're";
+	line "awake?";
+	para "I'm so sorry...";
+	line "The tide was";
+	cont "exceptionally";
+	cont "strong, so I";
+	cont "could only";
+	cont "save you...";
+	done;
+
+@org $55, $68c8:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "Huh?";
+	done;
+
+@org $55, $68d1:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Are the kid";
+	line "isappearances";
+	cont "all just";
+	cont "accidental";
+	cont "drownings?";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $55, $68f6:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "I don't know";
+	line "either...";
+	para "But I saw an";
+	line "outstretched";
+	cont "octopus";
+	cont "tentacle...";
+	para "So maybe...";
+	para "The Sea";
+	line "Witch...";
+	done;
+
+@org $55, $6931:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "The Sea";
+	line "Witch?";
+	done;
+
+@org $55, $693d:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "Yes...";
+	para "My sister";
+	line "also gave her";
+	cont "fish soul to";
+	cont "her to get a";
+	cont "human form";
+	cont "for 3 months.";
+	done;
+
+@org $55, $697d:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "Have you seen";
+	line "my sister,";
+	cont "Helen?";
+	done;
+
+@org $55, $6997:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Yeah, we've";
+	line "seen her.";
+	done;
+
+@org $55, $69a5:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "Has she said";
+	line "anything";
+	cont "about coming";
+	cont "back?";
+	para "It's been";
+	line "almost 3";
+	cont "months... If";
+	cont "she doesn't";
+	cont "come back,";
+	cont "she'll turn";
+	cont "into foam!";
+	done;
+
+@org $55, $69eb:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "How can this";
+	line "be?";
+	para "Is there";
+	line "anything that";
+	cont "can be done?";
+	done;
+
+@org $55, $6a12:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "I will go beg";
+	line "the Sea Witch";
+	cont "to return my";
+	cont "sister's fish";
+	cont "soul to her.";
+	done;
+
+@org $55, $6a3e:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Got it.";
+	para "Thank you so";
+	line "much for";
+	cont "saving us...";
+	para "I'll help you";
+	line "get the fish";
+	cont "soul back.";
+	done;
+
+@org $55, $6a75:
+	english;
+	init NAME_HAIQING, PIC_66;
+	text "Thank you,";
+	line "kind human.";
+	para "Today is the";
+	line "final day of";
+	cont "the 3 months...";
+	para "But my sister";
+	line "said that";
+	cont "even so,";
+	cont "she'll turn";
+	cont "into foam in";
+	cont "Anton's arms.";
+	para "I can't just";
+	line "watch her";
+	cont "turn into";
+	cont "foam!";
+	para "If she doesn't";
+	line "have a fish";
+	cont "soul...";
+	para "I'm so";
+	line "worried...";
+	para "I better go";
+	line "with you!";
+	cont "Let's meet at";
+	cont "the Sea";
+	cont "Witch's";
+	cont "palace.";
+	done;
+
+@org $55, $6b37:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "The Sea";
+	line "Witch's";
+	cont "palace?";
+	para "Alright.";
+	done;

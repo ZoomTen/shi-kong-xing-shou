@@ -1,0 +1,355 @@
+@org $1e, $6635:
+	text "";
+	line "";
+
+@org $1e, $6646:
+	text "以很高的速度﹐收服怪獸的膠囊⚬";
+	line "";
+
+@org $1e, $6659:
+	text "能以很高的機率收服怪獸⚬";
+	line "";
+
+@org $1e, $6669:
+	text "１００﹪收服怪獸的強力膠囊⚬";
+	line "";
+
+@org $1e, $667e:
+	text "回復體力３０點";
+	line "";
+
+@org $1e, $6689:
+	text "回復體力５０點";
+	line "";
+
+@org $1e, $6694:
+	text "回復體力１００點";
+	line "";
+
+@org $1e, $66a0:
+	text "回復體力２００點";
+	line "";
+
+@org $1e, $66ac:
+	text "回復體力２０﹪";
+	line "";
+
+@org $1e, $66b8:
+	text "回復體力５０﹪";
+	line "";
+
+@org $1e, $66c4:
+	text "回復體力１００﹪";
+	line "";
+
+@org $1e, $66d1:
+	text "解除中毒狀態";
+	line "";
+
+@org $1e, $66db:
+	text "解除麻痺狀態";
+	line "";
+
+@org $1e, $66e5:
+	text "解除催眠狀態";
+	line "";
+
+@org $1e, $66ef:
+	text "解除燒傷狀態";
+	line "";
+
+@org $1e, $66f9:
+	text "解除凍傷狀態";
+	line "";
+
+@org $1e, $6703:
+	text "解除所有異常狀態";
+	line "";
+
+@org $1e, $670f:
+	text "復活﹐且回復體力２０﹪";
+	line "";
+
+@org $1e, $6721:
+	text "復活﹐且回復體力５０﹪";
+	line "";
+
+@org $1e, $6733:
+	text "復活﹐且回復所有狀態";
+	line "";
+
+@org $1e, $6741:
+	text "回復技巧點數１０點";
+	line "";
+
+@org $1e, $674e:
+	text "回復技巧全部點數";
+	line "";
+
+@org $1e, $675c:
+	text "回復所有技巧全部點數";
+	line "";
+
+@org $1e, $676c:
+	text "提昇攻擊力";
+	line "";
+
+@org $1e, $6775:
+	text "提昇防禦力";
+	line "";
+
+@org $1e, $677e:
+	text "提昇閃避率";
+	line "";
+
+@org $1e, $6788:
+	text "提昇命中率";
+	line "";
+
+@org $1e, $6792:
+	text "提昇速度";
+	line "";
+
+@org $1e, $679a:
+	text "降低敵人防禦力";
+	line "";
+
+@org $1e, $67a4:
+	text "降低敵人攻擊力";
+	line "";
+
+@org $1e, $67ae:
+	text "降低敵人閃避率";
+	line "";
+
+@org $1e, $67b9:
+	text "降低敵人命中率";
+	line "";
+
+@org $1e, $67c4:
+	text "降低敵人速度";
+	line "";
+
+@org $1e, $67ce:
+	text "１００﹪從非重要的戰鬥中逃脫";
+	line "";
+
+@org $1e, $67e4:
+	text "１００步內不會遇到等級比自己弱的怪獸";
+	line "";
+
+@org $1e, $67ff:
+	text "２００步內不會遇到等級比自己弱的怪獸";
+	line "";
+
+@org $1e, $681a:
+	text "２００步內完全不會碰到怪獸";
+	line "";
+
+@org $1e, $682f:
+	text "等級提昇";
+	line "";
+
+@org $1e, $6837:
+	text "離開迷宮";
+	line "";
+
+@org $1e, $683d:
+	text "學習到詛咒技能⚬";
+	line "";
+
+@org $1e, $6847:
+	text "學習到鬥氣．嵐技能⚬";
+	line "";
+
+@org $1e, $6855:
+	text "學習到冰凍光束技能⚬";
+	line "";
+
+@org $1e, $6863:
+	text "學習到邪惡侵蝕技能⚬";
+	line "";
+
+@org $1e, $6871:
+	text "學習到靈劍技能⚬";
+	line "";
+
+@org $1e, $687d:
+	text "學習到突擊技能⚬";
+	line "";
+
+@org $1e, $6889:
+	text "學習到同歸於盡技能⚬";
+	line "";
+
+@org $1e, $6897:
+	text "學習到電光一閃技能⚬";
+	line "";
+
+@org $1e, $68a5:
+	text "學習到強力旋渦技能⚬";
+	line "";
+
+@org $1e, $68b3:
+	text "學習到狼嚎技能⚬";
+	line "";
+
+@org $1e, $68bf:
+	text "學習到寒冰雨技能⚬";
+	line "";
+
+@org $1e, $68cc:
+	text "學習到致命刺殺技能⚬";
+	line "";
+
+@org $1e, $68da:
+	text "學習到催眠術技能⚬";
+	line "";
+
+@org $1e, $68e7:
+	text "學習到必殺神弓技能⚬";
+	line "";
+
+@org $1e, $68f5:
+	text "學習到正拳技能⚬";
+	line "";
+
+@org $1e, $6901:
+	text "學習到火炎彈技能⚬";
+	line "";
+
+@org $1e, $690e:
+	text "學習到淬毒技能⚬";
+	line "";
+
+@org $1e, $691a:
+	text "學習到替身技能";
+	line "";
+
+@org $1e, $6925:
+	text "學習到吸星大法技能⚬";
+	line "";
+
+@org $1e, $6933:
+	text "學習到防禦破碎技能⚬";
+	line "";
+
+@org $1e, $6941:
+	text "學習到拍打翅膀技能⚬";
+	line "";
+
+@org $1e, $694f:
+	text "學習到黑暗地獄技能⚬";
+	line "";
+
+@org $1e, $695d:
+	text "學習到沙漠風暴技能⚬";
+	line "";
+
+@org $1e, $696b:
+	text "學習到全力一擊技能⚬";
+	line "";
+
+@org $1e, $6979:
+	text "學習到劍氣技能⚬";
+	line "";
+
+@org $1e, $6985:
+	text "學習到太陽光束技能⚬";
+	line "";
+
+@org $1e, $6993:
+	text "學習到天電拳技能⚬";
+	line "";
+
+@org $1e, $69a0:
+	text "學習到手刀技能⚬";
+	line "";
+
+@org $1e, $69ac:
+	text "學習到怨恨技能⚬";
+	line "";
+
+@org $1e, $69b8:
+	text "學習到變身技能⚬";
+	line "";
+
+@org $1e, $69c4:
+	text "學習到謎技能⚬";
+	line "";
+
+@org $1e, $69cd:
+	text "學習到闇雷技能⚬";
+	line "";
+
+@org $1e, $69d9:
+	text "學習到寒冰拳技能⚬";
+	line "";
+
+@org $1e, $69e6:
+	text "學習到天雷障壁技能⚬";
+	line "";
+
+@org $1e, $69f6:
+	text "學習到雨飄紅技能⚬";
+	line "";
+
+@org $1e, $6a03:
+	text "學習到猛毒孢子技能⚬";
+	line "";
+
+@org $1e, $6a11:
+	text "學習到火鳥之翼技能⚬";
+	line "";
+
+@org $1e, $6a1f:
+	text "學習到大地震技能⚬";
+	line "";
+
+@org $1e, $6a2c:
+	text "學習到沈睡技能⚬";
+	line "";
+
+@org $1e, $6a39:
+	text "學習到飛砂走石技能⚬";
+	line "";
+
+@org $1e, $6a47:
+	text "學習到水華三昧技能⚬";
+	line "";
+
+@org $1e, $6a55:
+	text "學習到浴火重生技能⚬";
+	line "";
+
+@org $1e, $6a63:
+	text "學習到地獄車技能⚬";
+	line "";
+
+@org $1e, $6a70:
+	text "學習到天國之鳥技能⚬";
+	line "";
+
+@org $1e, $6a80:
+	text "學習到烈焰拳技能⚬";
+	line "";
+
+@org $1e, $6a8d:
+	text "學習到瞬間攻擊技能⚬";
+	line "";
+
+@org $1e, $6a9b:
+	text "學習到先發制人技能⚬";
+	line "";
+
+@org $1e, $6aa9:
+	text "學習到天雷殛頂技能⚬";
+	line "";
+
+@org $1e, $6ab7:
+	text "學習到偷竊技能⚬";
+	line "";
+
+@org $1e, $6ac3:
+	text "學習到模仿技能⚬";
+	line "";

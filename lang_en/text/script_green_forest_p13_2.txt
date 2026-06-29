@@ -1,0 +1,30 @@
+@org $4f, $66cb:
+	english;
+	init NAME_2D, PIC_56;
+	text "It's you!";
+	para "For your own";
+	line "good, you";
+	cont "should't go";
+	cont "over there.";
+	para "There's a";
+	line "scary volcano";
+	cont "monster";
+	cont "ahead.";
+	done;
+
+@org $4f, $6707:
+	english;
+	init NAME_2D, PIC_56;
+	text "You want to";
+	line "go through";
+	cont "anyway?";
+	para "Oh... Take";
+	line "care, then...";
+	done;
+
+@org $4f, $6734:
+	english;
+	init NAME_2D, PIC_56;
+	text "Oh... Take";
+	line "care...";
+	done;

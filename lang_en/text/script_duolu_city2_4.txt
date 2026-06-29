@@ -1,0 +1,15 @@
+@org $12, $7885:
+	english;
+	init NAME_BLANK, PIC_18;
+	text "How strange!";
+	line "How very";
+	cont "strange!";
+	para "The time on";
+	line "the clock";
+	cont "tower has";
+	cont "started";
+	cont "moving again!";
+	para "Looks like I";
+	line "was imagining";
+	cont "things.";
+	done;

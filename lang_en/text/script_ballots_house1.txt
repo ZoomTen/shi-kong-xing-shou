@@ -1,0 +1,83 @@
+@org $08, $4cf4:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Are you";
+	line "awake? It's";
+	cont "time to go to";
+	cont "school.";
+	done;
+
+@org $08, $4d0b:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Ballot! Wait!";
+	done;
+
+@org $08, $4d1a:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "...?";
+	para "Dad, what's";
+	line "the matter?";
+	done;
+
+@org $08, $4d2d:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Let's finish";
+	line "breakfast";
+	cont "first.";
+	done;
+
+@org $08, $4d3e:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "I can't, dad.";
+	line "I'm already";
+	cont "late!";
+	done;
+
+@org $08, $4d56:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Ballot, about";
+	line "that...";
+	done;
+
+@org $08, $4d70:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Huh?";
+	done;
+
+@org $08, $4d77:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "...Nevermind.";
+	line "Hurry along";
+	cont "now.";
+	done;
+
+@org $08, $4d8f:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_3;
+	text "Not again!";
+	para "Ever since";
+	line "Mom passed";
+	cont "away, you";
+	cont "just can't";
+	cont "seem to speak";
+	cont "honestly";
+	cont "anymore!";
+	para "I'm 12 years";
+	line "old, not a";
+	cont "kid!";
+	para "D-dad... You";
+	line "big dummy!";
+	done;
+
+@org $08, $4e04:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "...Just go.";
+	done;

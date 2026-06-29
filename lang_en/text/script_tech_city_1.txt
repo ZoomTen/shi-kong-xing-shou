@@ -1,0 +1,134 @@
+@org $0f, $4c56:
+	english;
+	init NAME_BLANK, PIC_1F;
+	text "Ah! The power";
+	line "is back?";
+	para "I've never";
+	line "been this";
+	cont "glad to see";
+	cont "the light.";
+	done;
+
+@org $0f, $4c89:
+	english;
+	init NAME_BLANK, PIC_1B;
+	text "Apparently";
+	line "the power";
+	cont "went out";
+	cont "because of";
+	cont "Team Volt.";
+	para "Thank you,";
+	line "Ballot, for";
+	cont "bringing it";
+	cont "back!";
+	done;
+
+@org $0f, $4cc8:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "It-It's";
+	line "blinding...";
+	para "My eyes had";
+	line "just gotten";
+	cont "used to the";
+	cont "dark, and";
+	cont "suddenly the";
+	cont "blinding";
+	cont "lights came";
+	cont "back on...";
+	done;
+
+@org $0f, $4d0f:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "In the end,";
+	line "Team Volt was";
+	cont "only defeated";
+	cont "with Dr. Leo's";
+	cont "assistance.";
+	para "He certainly";
+	line "is the best";
+	cont "inventor in";
+	cont "the world.";
+	done;
+
+@org $0f, $4d50:
+	english;
+	init NAME_BLANK, PIC_17;
+	text "Have you";
+	line "heard of Gale";
+	cont "Enterprises?";
+	para "It's one of";
+	line "the biggest";
+	cont "companies in";
+	cont "the world,";
+	cont "second only";
+	cont "to Bang Lin!";
+	done;
+
+@org $0f, $4da4:
+	english;
+	init NAME_BLANK, PIC_21;
+	text "Waaah!";
+	para "The lights";
+	line "are back on,";
+	cont "so we have to";
+	cont "go to school!";
+	para "Waaah!";
+	done;
+
+@org $0f, $4dd5:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "This is the";
+	line "scrapyard of";
+	cont "Tech City.";
+	cont "They may look";
+	cont "like pieces";
+	cont "of junk, but";
+	cont "to me, they're";
+	cont "treasure!";
+	done;
+
+@org $0f, $4e1b:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "That meteor";
+	line "shower";
+	cont "earlier";
+	cont "wrecked most";
+	cont "of the roads";
+	cont "from here to";
+	cont "Dorington!";
+	para "What shall I";
+	line "do?";
+	done;
+
+@org $0f, $4e54:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "You were the";
+	line "one who saved";
+	cont "Burt?";
+	para "Thank you!";
+	line "Please take";
+	cont "this as a";
+	cont "token of my";
+	cont "gratitude!";
+	done;
+
+@org $0f, $4e9b:
+	english;
+	init NAME_BLANK, PIC_16;
+	text "I can't stress";
+	line "how grateful";
+	cont "I am!";
+	done;
+
+@org $0f, $4eae:
+	english;
+	init NAME_23, PIC_17;
+	text "Thank you";
+	line "very much for";
+	cont "the rescue.";
+	done;

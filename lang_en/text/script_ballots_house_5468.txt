@@ -1,0 +1,101 @@
+@org $08, $5468:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "No! Certainly";
+	line "not.";
+	done;
+
+@org $08, $547e:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "I don't know";
+	line "why you're";
+	cont "making such a";
+	cont "fuss about";
+	cont "it!";
+	para "Just let the";
+	line "kids watch";
+	cont "the meteor";
+	cont "shower, what";
+	cont "could go";
+	cont "wrong?";
+	done;
+
+@org $08, $54d2:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "No, I can't.";
+	line "Especially";
+	cont "not tonight,";
+	cont "of all";
+	cont "nights.";
+	done;
+
+@org $08, $54eb:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "...You're not";
+	line "making any";
+	cont "sense!";
+	done;
+
+@org $08, $5500:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "Dad... what's";
+	line "wrong with";
+	cont "you?";
+	done;
+
+@org $08, $550e:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "Ballot! You";
+	line "must";
+	cont "remember!";
+	para "Tonight, and";
+	line "only tonight!";
+	para "No matter";
+	line "what, you";
+	cont "must stay";
+	cont "home. No";
+	cont "matter what";
+	cont "you hear,";
+	cont "don't come";
+	cont "out. Do you";
+	cont "understand?";
+	done;
+
+@org $08, $557d:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "What's going";
+	line "on?";
+	done;
+
+@org $08, $558a:
+	english;
+	init NAME_SAYA, PIC_11;
+	text "...";
+	done;
+
+@org $08, $5592:
+	english;
+	init NAME_MR_MO, PIC_24;
+	text "Students,";
+	line "class";
+	cont "dismissed!";
+	done;
+
+@org $08, $55a7:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_0;
+	text "I can't! I";
+	line "have to go to";
+	cont "the";
+	cont "observatory";
+	cont "quickly, find";
+	cont "my dad and";
+	cont "get home for";
+	cont "dinner!";
+	done;

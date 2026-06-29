@@ -1,0 +1,94 @@
+@org $66, $5d40:
+	init NAME_BLANK, PIC_13;
+	text "都過一個月了﹐";
+	line "米特還是沒有";
+	cont "好轉的跡像⚬";
+	para "米特把自己封閉";
+	line "起來﹐逃避現實";
+	cont "";
+	db $f1, $51; #"的"
+	text "打擊⋯";
+	done;
+
+@org $66, $5d8c:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "要怎麼樣才能喚";
+	line "";
+	db $f2, $36; #"醒"
+	text "米特呢﹖";
+	done;
+
+@org $66, $5da8:
+	init NAME_BLANK, PIC_13;
+	text "以目前看來﹐米";
+	line "特完全失去了求";
+	cont "生的意願⚬";
+	para "";
+	db $f1, $8a; #"除"
+	text "非能勾起讓米";
+	line "特想起過去的回";
+	para "憶﹐刺激他的思";
+	line "緒⚬讓他再度有";
+	cont "";
+	db $f1, $64; #"了"
+	text "";
+	db $8f; #"?"
+	text "";
+	db $23; #"?"
+	text "";
+	db $51; #"?"
+	text "意願⚬";
+	para "如此一來﹐就有";
+	line "醒過來的可能⚬";
+	done;
+
+@org $66, $5e2c:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "尋找米特的回憶";
+	line "所有能勾起他回";
+	cont "憶的東西都可以";
+	line "";
+	db $f1, $5c; #"嗎"
+	text "";
+	db $5d; #"?"
+	text "";
+	line "我了解了⚬";
+	done;
+
+@org $66, $5e62:
+	init NAME_BLANK, PIC_13;
+	text "以目前看來﹐米";
+	line "特完全失去了求";
+	cont "生的意願⚬";
+	para "";
+	db $f1, $8a; #"除"
+	text "非能勾起讓米";
+	line "特想起過去的回";
+	cont "憶﹐刺激他的思";
+	line "緒⚬";
+	para "讓他再度有了救";
+	line "";
+	db $f1, $23; #"生"
+	text "";
+	db $51; #"?"
+	text "意願⚬";
+	para "如此一來﹐就有";
+	line "醒過來的可能⚬";
+	done;
+
+@org $66, $5ee7:
+	init NAME_MITT, PIC_07;
+	text "⋯⋯⋯";
+	done;
+
+@org $66, $5eef:
+	init NAME_4B, PIC_30;
+	text "求生指數⋯⋯";
+	line "";
+	db $f2, $c7; #"⋯"
+	text "";
+	db $c7; #"?"
+	text "";
+	db $c7; #"?"
+	text "０％";
+	done;

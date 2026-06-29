@@ -1,0 +1,56 @@
+@org $66, $6f3e:
+	init NAME_59, PIC_1D;
+	text "要喚回米特的回";
+	line "憶嗎﹖";
+	para "這個就一定要清";
+	line "燉雪兔肉才行了";
+	para "我這就準備材料";
+	line "我一會要做出有";
+	para "謝麗娜味道的清";
+	line "燉雪兔肉的﹗";
+	done;
+
+@org $66, $6fa2:
+	init NAME_59, PIC_1D;
+	text "燉呀燉～";
+	line "不要急～";
+	cont "要以小火慢燉～";
+	line "待會再來拿吧﹗";
+	para "看我施展料理的";
+	line "";
+	db $f1, $72; #"魔"
+	text "法﹐可愛的雪";
+	cont "兔﹐要變得美味";
+	line "";
+	db $f3, $c5; #"喲"
+	text "﹗";
+	done;
+
+@org $66, $6ffe:
+	init NAME_59, PIC_1D;
+	text "大．成．功﹗";
+	line "我終於做出謝麗";
+	cont "娜味道的清燉兔";
+	line "肉了﹗";
+	para "這味道一定會喚";
+	line "";
+	db $f2, $36; #"醒"
+	text "米特的﹗";
+	done;
+
+@org $66, $7044:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "得到清燉兔肉﹗";
+	done;
+
+@org $66, $7055:
+	init NAME_59, PIC_1D;
+	text "大．成．功﹗";
+	line "我終於做出謝麗";
+	cont "娜味道的清燉兔";
+	line "肉了﹗";
+	para "這味道一定會喚";
+	line "";
+	db $f2, $36; #"醒"
+	text "米特的﹗";
+	done;

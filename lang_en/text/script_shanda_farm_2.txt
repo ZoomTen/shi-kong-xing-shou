@@ -1,0 +1,103 @@
+@org $12, $6550:
+	english;
+	init NAME_BLANK, PIC_20;
+	text "The coffee";
+	line "monster in";
+	cont "Coffee Forest";
+	cont "is gone?";
+	# XXX pyphen not installed, text may be clipped!
+	para "That's great";
+	line "news!";
+	# XXX pyphen not installed, text may be clipped!
+	para "To celebrate,";
+	line "I'll make";
+	cont "myself a";
+	cont "super-strong";
+	cont "cup of";
+	cont "coffee... I";
+	cont "need more";
+	cont "excitement!";
+	done;
+
+@org $12, $65ab:
+	english;
+	init NAME_BLANK, PIC_12;
+	text "How terrible...";
+	line "Meteors from";
+	cont "the shower";
+	cont "from some";
+	cont "time ago hit";
+	cont "a coffee tree";
+	cont "in the Coffee";
+	cont "Forest, which";
+	cont "turned into a";
+	cont "coffee Star";
+	cont "Beast!";
+	para "That monster";
+	line "sometimes";
+	cont "emits a burst";
+	cont "of coffee";
+	cont "scent...";
+	para "Those who";
+	line "smell it";
+	cont "become";
+	cont "incredibly";
+	cont "excited.";
+	done;
+
+@org $12, $6629:
+	english;
+	init NAME_BLANK, PIC_1D;
+	text "It feels like";
+	line "I was having";
+	cont "a super-";
+	cont "exciting";
+	cont "dream...";
+	# XXX pyphen not installed, text may be clipped!
+	para "But it might";
+	line "not have been";
+	cont "one, after";
+	cont "all...";
+	done;
+
+@org $12, $6655:
+	english;
+	init NAME_BLANK, PIC_19;
+	text "I just had a";
+	line "dream... Little";
+	cont "80 year-old";
+	cont "me was a";
+	cont "superwoman!";
+	para "How";
+	line "embarrassing";
+	cont "that was...";
+	# XXX pyphen not installed, text may be clipped!
+	para "But it was a";
+	line "really";
+	cont "exhausting";
+	cont "dream. My";
+	cont "poor 80 year-";
+	cont "old body";
+	cont "feels like";
+	cont "its going to";
+	cont "crumble right";
+	cont "here and now!";
+	# XXX pyphen not installed, text may be clipped!
+	done;
+
+@org $12, $66e4:
+	english;
+	init NAME_BLANK, PIC_1A;
+	text "Mark often";
+	line "tells us";
+	cont "stories!";
+	para "He's the best";
+	line "person in the";
+	cont "whooole";
+	cont "world!";
+	para "Mom always";
+	line "says that he";
+	cont "has a very";
+	cont "unique";
+	cont "personality!";
+	done;

@@ -1,0 +1,28 @@
+@org $5a, $5cb0:
+	init NAME_BLANK, PIC_1B;
+	text "唉～還是⋯";
+	line "拿回來⋯⋯";
+	cont "可是⋯⋯";
+	para "昨天做了一件事";
+	line "情﹐拿到了不少";
+	cont "的酬勞⚬";
+	para "但是今天看到那";
+	line "";
+	db $f2, $4f; #"個"
+	text "人⋯⋯";
+	cont "";
+	db $f2, $ad; #"我"
+	text "真的好後悔⋯";
+	done;
+
+@org $5a, $5d17:
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "這裡到底是哪裡";
+	line "到底是哪裡的時";
+	cont "空﹖";
+	line "天空⋯";
+	cont "為什麼也有道裂";
+	line "縫﹖";
+	para "月亮也泛著藍光";
+	line "這裡到底是哪裡";
+	done;

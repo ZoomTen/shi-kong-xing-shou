@@ -1,0 +1,55 @@
+@org $4f, $7a15:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Isn't this my";
+	line "pearl";
+	cont "necklace?";
+	para "Thank you so";
+	line "much!";
+	para "Take this for";
+	line "your trouble!";
+	done;
+
+@org $4f, $7a54:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Got Revive!";
+	done;
+
+@org $4f, $7a62:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Thank you so";
+	line "much.";
+	done;
+
+@org $4f, $7a70:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Isn't this my";
+	line "pearl";
+	cont "necklace?";
+	para "I lost the";
+	line "talent show";
+	cont "because I";
+	cont "didn't have";
+	cont "it...";
+	para "Thank you";
+	line "anyway.";
+	para "This is for";
+	line "you!";
+	done;
+
+@org $4f, $7ac3:
+	english;
+	init NAME_BALLOT, PIC_BALLOT_5;
+	text "Got Peary";
+	line "Berry!";
+	done;
+
+@org $4f, $7ad3:
+	english;
+	init NAME_BLANK, PIC_15;
+	text "Thank you so";
+	line "much.";
+	done;
