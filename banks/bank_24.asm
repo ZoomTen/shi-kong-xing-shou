@@ -288,6 +288,7 @@ Script_024_420a::
 	bs_set_sprite_pos $18, $10
 	bs_lcd_on_loadpal
 	bs_end_script
+Script_024_424c::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a

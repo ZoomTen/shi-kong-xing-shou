@@ -1124,10 +1124,10 @@ Mode_SlideWindowOpen::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $72
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_SetScroll)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_SetScroll)
 	ld a, $01
 	ld [wBattleAnimStep], a
 	xor a
@@ -1145,10 +1145,10 @@ Mode_SlideWindowOpen::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $B5
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_B_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_B_Window)
 	ld a, $01
 	ld [wBattleAnimStep], a
 	xor a
@@ -1205,10 +1205,10 @@ Mode_SlideWindowOpen::
 	ld a, $8F
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $6F
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_Idle)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_Idle)
 	ld a, [wBattleTurn]
 	and a
 	jr nz, .asm_4868
@@ -2205,10 +2205,10 @@ Mode_SlideWindowOpen2::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $72
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_SetScroll)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_SetScroll)
 	ld a, $01
 	ld [wBattleAnimStep], a
 	xor a
@@ -2226,10 +2226,10 @@ Mode_SlideWindowOpen2::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $B5
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_B_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_B_Window)
 	ld a, $01
 	ld [wBattleAnimStep], a
 	xor a
@@ -2286,10 +2286,10 @@ Mode_SlideWindowOpen2::
 	ld a, $8F
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $6F
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_Idle)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_Idle)
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_5062
@@ -3097,10 +3097,10 @@ Mode_SlideWindowAndPan::
 	ld a, $00
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $EB
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_C_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_C_Window)
 	ld a, $18
 	ld [wd98f], a
 	ld a, $30
@@ -3124,10 +3124,10 @@ Mode_SlideWindowAndPan::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $EB
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_C_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_C_Window)
 	ld a, $48
 	ld [wd98f], a
 	ld a, $60
@@ -3159,10 +3159,10 @@ Mode_SlideWindowAndPan::
 	ld a, $8F
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $6F
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_Idle)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_Idle)
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_56dc
@@ -4488,10 +4488,10 @@ Mode_SlideWindowOpen3::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $72
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_SetScroll)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_SetScroll)
 	ld a, $01
 	ld [wBattleAnimStep], a
 	xor a
@@ -4509,10 +4509,10 @@ Mode_SlideWindowOpen3::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $B5
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_B_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_B_Window)
 	ld a, $01
 	ld [wBattleAnimStep], a
 	xor a
@@ -4569,10 +4569,10 @@ Mode_SlideWindowOpen3::
 	ld a, $8F
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $6F
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_Idle)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_Idle)
 	ld a, [wBattleTurn]
 	and a
 	jr z, .asm_60dc

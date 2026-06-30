@@ -356,9 +356,9 @@ BattleMenu_HandleInput::
 	ld [wSelectedPage], a
 	ld [wItemCategory], a
 	ld hl, wBattleScriptPos
-	ld [hl], $4c
+	ld [hl], LOW(Script_024_424c)
 	inc hl
-	ld [hl], $42
+	ld [hl], HIGH(Script_024_424c)
 	call ClearBattleOAMState
 	ret
 

@@ -17,10 +17,10 @@ LCDSplit_A_Window::
 	ld a, $80
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $9a
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_A_HW)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_A_HW)
 	jp Finish_LCD
 
 LCDSplit_A_HW::
@@ -32,10 +32,10 @@ LCDSplit_A_HW::
 	ld a, $20
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $7f
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_A_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_A_Window)
 	jp Finish_LCD
 
 LCDSplit_B_Window::
@@ -47,10 +47,10 @@ LCDSplit_B_Window::
 	ld a, $60
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $d0
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_B_HW)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_B_HW)
 	jp Finish_LCD
 
 LCDSplit_B_HW::
@@ -62,10 +62,10 @@ LCDSplit_B_HW::
 	ld a, $30
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $b5
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_B_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_B_Window)
 	jp Finish_LCD
 
 LCDSplit_C_Window::
@@ -77,10 +77,10 @@ LCDSplit_C_Window::
 	ld a, [wd98f]
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $07
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_C_Custom)
 	inc hl
-	ld [hl], $11
+	ld [hl], HIGH(LCDSplit_C_Custom)
 	jp Finish_LCD
 
 LCDSplit_C_Custom::
@@ -92,10 +92,10 @@ LCDSplit_C_Custom::
 	ld a, [wd990]
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $23
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_C_HW)
 	inc hl
-	ld [hl], $11
+	ld [hl], HIGH(LCDSplit_C_HW)
 	jp Finish_LCD
 
 LCDSplit_C_HW::
@@ -107,9 +107,9 @@ LCDSplit_C_HW::
 	ld a, [wd98c]
 	ldh [rLYC], a
 	ei
-	ld hl, wd9e0
-	ld [hl], $eb
+	ld hl, wLCDFunction
+	ld [hl], LOW(LCDSplit_C_Window)
 	inc hl
-	ld [hl], $10
+	ld [hl], HIGH(LCDSplit_C_Window)
 	jp Finish_LCD
 

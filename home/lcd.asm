@@ -6,9 +6,9 @@ LCD::
 	push hl
 
 ; run LCD routine pointer
-	ld a, [wd9e0]
+	ld a, [wLCDFunction]
 	ld l, a
-	ld a, [wd9e1]
+	ld a, [wLCDFunction + 1]
 	ld h, a
 	or l
 	and a

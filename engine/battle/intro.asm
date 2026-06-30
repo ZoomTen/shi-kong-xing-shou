@@ -258,11 +258,11 @@ BattleIntro_Jump_3::
 	ld [wWX], a
 	xor a
 	ld [wWY], a
-	ld hl, $1072
+	ld hl, LCDSplit_SetScroll
 	ld a, l
-	ld [wd9e0], a
+	ld [wLCDFunction], a
 	ld a, h
-	ld [wd9e1], a
+	ld [wLCDFunction + 1], a
 	ld a, $c7
 	ldh [rLCDC], a
 	ld hl, wPaletteBuffer
@@ -468,11 +468,11 @@ BattleIntro_Jump_6::
 	ld a, $8f
 	ldh [rLYC], a
 	ei
-	ld hl, $106f
+	ld hl, LCDSplit_Idle
 	ld a, l
-	ld [wd9e0], a
+	ld [wLCDFunction], a
 	ld a, h
-	ld [wd9e1], a
+	ld [wLCDFunction + 1], a
 	ret
 
 Battle_TextBoxBorder_GFX:: INCBIN "gfx/battle_intro/textbox_border.2bpp"

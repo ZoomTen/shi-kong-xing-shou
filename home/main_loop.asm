@@ -41,9 +41,9 @@ _Start::
 
 	ld hl, LCDSplit_Idle
 	ld a, l
-	ld [wd9e0], a
+	ld [wLCDFunction], a
 	ld a, h
-	ld [wd9e1], a
+	ld [wLCDFunction + 1], a
 	ei
 	ld a, 2
 	ld [wCurrentSoundBank], a

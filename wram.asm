@@ -642,8 +642,7 @@ wPlayerChar:: ds 1
 wWX:: ds 1
 wWY:: ds 1
 
-wd9e0:: ds 1
-wd9e1:: ds 1
+wLCDFunction:: ds 2
 wd9e2:: ds 1
 wd9e3:: ds 1
 wEnemyMonSpecies:: ds 1
