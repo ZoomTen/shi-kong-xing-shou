@@ -27,7 +27,7 @@ CyclePlayerCharacter:
 	jr z, .slotEmpty
 	pop af
 	ld [wPlayerChar], a
-	farcall Func_024_4000
+	farcall InitPlayerCharSprite
 	farcall CopyNameByIndex
 	ret
 

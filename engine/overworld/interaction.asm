@@ -31,7 +31,7 @@ OverworldInteract:
 	ld [wdcd0], a
 	ld a, 8
 	ld [wPlayerSpriteID], a
-	farcall Func_024_6864
+	farcall MovePlayerSpriteForward
 	call InitFollowerState
 	call _UpdatePlayerMapCoords
 	call ParseCurrentMapEvents
@@ -49,7 +49,7 @@ TryBoardFacingBlock:
 	ld a, [wPlayerChar]
 	cp 4
 	ret nz
-	farcall Func_024_6864
+	farcall MovePlayerSpriteForward
 	ld a, 9
 	ld [wPlayerSpriteID], a
 	ld [wd0e4], a
