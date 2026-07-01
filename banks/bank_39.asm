@@ -92,7 +92,7 @@ ScreenScript_39_411b::
 	bs_end_script
 Func_039_417e::
 .asm_417e
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -213,7 +213,7 @@ ScreenScript_39_4248::
 	bs_end_script
 Func_039_4250::
 .asm_4250
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -477,7 +477,7 @@ ScreenScript_39_445e::
 	bs_end_script
 Func_039_4469::
 .asm_4469
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -705,7 +705,7 @@ ScreenScript_39_461f::
 	bs_end_script
 Func_039_462f::
 .asm_462f
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1148,7 +1148,7 @@ ScreenScript_39_4928::
 	bs_lcd_on_loadpal
 	bs_end_script
 Func_039_497c::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1334,7 +1334,7 @@ ScreenScript_39_4ac7::
 	bs_lcd_on_loadpal
 	bs_end_script
 Func_039_4afd::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1552,7 +1552,7 @@ ScreenScript_39_4cc1::
 	bs_set_sprite_pos $48, $86
 	bs_end_script
 Func_039_4cda::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1813,7 +1813,7 @@ ScreenScript_39_4ead::
 	bs_set_sprite_pos $18, $10
 	bs_end_script
 Func_039_4ec0::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2087,7 +2087,7 @@ ScreenScript_39_512d::
 	bs_lcd_on_loadpal
 	bs_end_script
 Func_039_5163::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2234,7 +2234,7 @@ ScreenScript_39_5296::
 	bs_draw_party_stats
 	bs_end_script3
 Func_039_529f::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2365,7 +2365,7 @@ ScreenScript_39_5392::
 	bs_set_sprite_pos $48, $86
 	bs_end_script
 Func_039_53ab::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2574,7 +2574,7 @@ ScreenScript_39_54fd::
 	bs_set_sprite_pos $18, $10
 	bs_end_script
 Func_039_5522::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2685,7 +2685,7 @@ ScreenScript_39_55eb::
 	bs_set_sprite_pos $48, $86
 	bs_end_script
 Func_039_5604::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2838,7 +2838,7 @@ ScreenScript_39_5734::
 	bs_set_sprite_pos $48, $86
 	bs_end_script
 Func_039_574d::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2945,7 +2945,7 @@ ScreenScript_39_5811::
 	bs_print_equip_name
 	bs_end_script3
 Func_039_5826::
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a

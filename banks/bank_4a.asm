@@ -70,7 +70,7 @@ Func_04a_4000::
 	ld [hli], a
 	ld [wd9bf], a
 	push hl
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop hl
 	ld a, [wd9bf]
 	ld [hli], a
@@ -161,7 +161,7 @@ LearnLevelUpMove::
 	ld [hli], a
 	push hl
 	ld [wd9bf], a
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop hl
 	ld a, [wd9bf]
 	ld [hli], a

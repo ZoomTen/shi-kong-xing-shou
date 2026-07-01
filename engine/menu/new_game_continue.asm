@@ -61,7 +61,7 @@ NewGameContinueMenu::
 	ld [wSelectedOption], a
 	call FadeInPalette
 .asm_416a
-	farcall Func_024_4062
+	farcall ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
