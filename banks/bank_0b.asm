@@ -1806,7 +1806,7 @@ Func_00b_4d6c::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 	ld hl, 8
 	add hl, bc
@@ -1816,7 +1816,7 @@ Func_00b_4d6c::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 	ld hl, $b
 	add hl, bc
@@ -1826,7 +1826,7 @@ Func_00b_4d6c::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 	ld hl, $e
 	add hl, bc
@@ -1836,7 +1836,7 @@ Func_00b_4d6c::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 	ld hl, $11
 	add hl, bc

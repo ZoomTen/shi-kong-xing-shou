@@ -1,4 +1,4 @@
-Func_024_4000::
+InitPlayerCharSprite::
 	ld a, [wdcbb]
 	and a
 	jr nz, .asm_4011
@@ -20,7 +20,7 @@ Func_024_4000::
 .asm_4024
 	ld a, [wPlayerChar]
 .asm_4027
-	ld de, unk_024_4041
+	ld de, PlayerCharSpriteTable
 	ld l, a
 	ld h, $00
 	add hl, hl
@@ -34,13 +34,19 @@ Func_024_4000::
 	farcall LoadPlayerPartnerObjPals
 	ret
 
-; TODO: unk_ - indexed table (index hli)
-unk_024_4041::
-	db $00, $10, $02, $03, $04, $05, $06, $07
-	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f
+; [wPlayerChar] * 2 -> db sprite_id, anim_id
+PlayerCharSpriteTable::
+	db $00, $10
+	db $02, $03
+	db $04, $05
+	db $06, $07
+	db $08, $09
+	db $0a, $0b
+	db $0c, $0d
+	db $0e, $0f
 	db $36, $07
 
-Func_024_4053::
+LookupMovePP::
 	ld de, MovePP
 	ld a, [wd9bf]
 	ld l, a
@@ -50,7 +56,7 @@ Func_024_4053::
 	ld [wd9bf], a
 	ret
 
-Func_024_4062::
+ClearMenuSprites4::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -76,9 +82,9 @@ Func_024_4062::
 	add hl, de
 	dec c
 	jr nz, .asm_406b
-	call Func_024_6c42
+	call DrawMenuCursorOAM
 	ret
-Func_024_408a::
+ClearMenuSprites12::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -104,11 +110,11 @@ Func_024_408a::
 	add hl, de
 	dec c
 	jr nz, .asm_4093
-	call Func_024_6c42
-	call Func_024_6c09
-	call Func_024_6bd0
+	call DrawMenuCursorOAM
+	call DrawMenuSpriteSlot1
+	call DrawMenuSpriteSlot2
 	ret
-Func_024_40b8::
+ClearMenuSprites8::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -134,10 +140,10 @@ Func_024_40b8::
 	add hl, de
 	dec c
 	jr nz, .asm_40c1
-	call Func_024_6c42
-	call Func_024_6c09
+	call DrawMenuCursorOAM
+	call DrawMenuSpriteSlot1
 	ret
-Func_024_40e3::
+ClearAllMenuSprites::
 	ld hl, wVirtualOAM
 	ld bc, $0027
 	ld de, $0004
@@ -147,9 +153,9 @@ Func_024_40e3::
 	add hl, de
 	dec c
 	jr nz, .asm_40ec
-	call Func_024_6c42
-	call Func_024_6c7b
-	call Func_024_6cb4
+	call DrawMenuCursorOAM
+	call DrawMenuSpriteSlot1Low
+	call DrawMenuSpriteSlot2Low
 	ret
 
 _ExecuteBattleScript::
@@ -161,10 +167,10 @@ _ExecuteBattleScript::
 	jr z, .asm_4111
 	cp 2
 	jr z, .asm_4129
-	jp Func_024_4804
+	jp DispatchMenuState
 
 .asm_4111:
-	ld de, Pointers_024_4130
+	ld de, MenuScreenScriptPointers
 	ldh a, [hFFC5]
 	ld l, a
 	ld h, 0
@@ -182,7 +188,7 @@ _ExecuteBattleScript::
 	farcall DispatchBattleScriptCommand
 	ret
 
-Pointers_024_4130::
+MenuScreenScriptPointers::
 	dw Script_024_4162
 	dw Script_024_4162
 	dw Script_024_4181
@@ -767,7 +773,7 @@ Script_024_47bb::
 	bs_set_sprite_pos $78, $88
 	bs_end_script
 
-Func_024_4804::
+DispatchMenuState::
 	ld de, MenuStateJumptable
 	ldh a, [hFFC5]
 	ld l, a
@@ -779,34 +785,34 @@ Func_024_4804::
 	ld l, a
 	jp hl
 MenuStateJumptable::
-	dw Func_024_6ac8.loop
-	dw Func_024_6ac8.loop
-	dw Func_024_696d
-	dw Func_024_66f8
-	dw Func_024_6603
-	dw Func_024_655a
-	dw Func_024_64a9
-	dw Func_024_6328
-	dw Func_024_63a4
-	dw Func_024_6099
-	dw Func_024_5a49
-	dw Func_024_5405
-	dw Func_024_5330
-	dw Func_024_5277
-	dw Func_024_519d
-	dw Func_024_503e
-	dw Func_024_4ed9
-	dw Func_024_4d77
-	dw Func_024_4c48
-	dw Func_024_4c08
-	dw Func_024_4b04
-	dw Func_024_4a87
-	dw Func_024_48bd
-	dw Func_024_4844
-	dw Func_024_5398
-Func_024_4844::
+	dw StartMenu_MainLoop.loop
+	dw StartMenu_MainLoop.loop
+	dw StartMenu_PartyScreen
+	dw StartMenu_PartyMonMenu
+	dw StartMenu_PartyStatsPage1
+	dw StartMenu_PartyStatsPage2
+	dw StartMenu_PartyStatsPage3
+	dw StartMenu_ItemCategoryMenu
+	dw StartMenu_PartySelectScreen
+	dw StartMenu_ItemScreen
+	dw StartMenu_ItemActionScreen
+	dw StartMenu_UseItemScreen
+	dw StartMenu_ItemResultMessage
+	dw StartMenu_ReplaceMovePrompt
+	dw StartMenu_MoveSelectScreen
+	dw StartMenu_TeachMoveScreen
+	dw StartMenu_MoveSelectGrid
+	dw StartMenu_GiveItemScreen
+	dw StartMenu_DexScreen
+	dw StartMenu_DexEntryScreen
+	dw StartMenu_CharacterSelect
+	dw StartMenu_SaveExecute
+	dw StartMenu_SaveConfirm
+	dw StartMenu_MessagePrompt
+	dw StartMenu_MoveLearnedMessage
+StartMenu_MessagePrompt::
 .asm_4844
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -838,7 +844,7 @@ Func_024_4844::
 	ldh [hFFC6], a
 	ld a, $09
 	ld [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wcdf8
 	xor a
 	ld [hli], a
@@ -851,13 +857,13 @@ Func_024_4844::
 	ld [hli], a
 	ret
 ; Orphan dead data (unreferenced; not code/text/palette).
-unk_024_4893::
+OrphanData_024_4893::
 	db $08, $03, $e0, $03, $00, $90, $9a, $4e, $03, $b0, $00, $e0, $96, $1a, $49, $0b
 	db $29, $61, $0c, $69, $61, $02, $00, $00, $6f, $5a, $9b, $57, $10, $0d, $06, $0e
 	db $e0, $93, $0f, $62, $6e, $1c, $50, $12, $09, $1a
-Func_024_48bd::
+StartMenu_SaveConfirm::
 .asm_48bd
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -875,7 +881,7 @@ Func_024_48bd::
 	ld a, [wd9d9]
 	and a
 	jp z, .asm_495f
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	ld a, [wSelectedOption]
 	swap a
 	add $78
@@ -938,7 +944,7 @@ Func_024_48bd::
 	ldh [hFFC5], a
 	xor a
 	ld [wd9d9], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
 .asm_4957
 	ldh a, [hJoypadPressed]
@@ -949,12 +955,12 @@ Func_024_48bd::
 	ldh a, [hJoypadPressed]
 	and $03
 	ret z
-	jp Func_024_6a71
+	jp ReturnToStartMenuMain
 
 INCLUDE "engine/save/save_game.asm"
 
-Func_024_4a87::
-	call Func_024_40e3
+StartMenu_SaveExecute::
+	call ClearAllMenuSprites
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -962,9 +968,9 @@ Func_024_4a87::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_4a9f
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_4aa3
-	jr Func_024_4a87
+	jr StartMenu_SaveExecute
 .asm_4a9f
 	xor a
 	ldh [hFFC6], a
@@ -997,10 +1003,10 @@ Func_024_4a87::
 .asm_4acf
 	ldh a, [hJoypadPressed]
 	bit 0, a
-	jp z, Func_024_6a61
+	jp z, HandleMenuCancel
 	ld a, [wSelectedOption]
 	and a
-	jp nz, Func_024_6a71
+	jp nz, ReturnToStartMenuMain
 	ld a, $01
 	ld [wBattleScriptState], a
 	xor a
@@ -1009,8 +1015,8 @@ Func_024_4a87::
 	ldh [hFFC6], a
 	ld a, $16
 	ldh [hFFC5], a
-	call Func_024_5ffb
-	call Func_024_6022
+	call ClearMenuCursorSprites
+	call ClearMenuListSprites
 	call SRAMTest_Fast
 	ld b, a
 	ld a, $01
@@ -1021,9 +1027,9 @@ Func_024_4a87::
 	call WriteSaveData
 	ret
 
-Func_024_4b04::
+StartMenu_CharacterSelect::
 .asm_4b04
-	call Func_024_40e3
+	call ClearAllMenuSprites
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1120,7 +1126,7 @@ Func_024_4b04::
 	call PlaySound
 	ld a, [wSelectedOption]
 	ld [wPlayerChar], a
-	call Func_024_4000
+	call InitPlayerCharSprite
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -1132,7 +1138,7 @@ Func_024_4b04::
 	ld a, $01
 	ldh [hFFC6], a
 	ldh [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
 .asm_4bc0
 	ldh a, [hJoypadPressed]
@@ -1140,7 +1146,7 @@ Func_024_4b04::
 	ret z
 	ld a, SFX_11
 	call PlaySound
-	call Func_024_4000
+	call InitPlayerCharSprite
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -1152,14 +1158,14 @@ Func_024_4b04::
 	ld a, $01
 	ldh [hFFC6], a
 	ldh [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
 MenuOptionCoords_024_4be8::
 	db $20, $14, $18, $18, $20, $34, $18, $38, $20, $54, $18, $58, $20, $74, $18, $78
 	db $48, $14, $40, $18, $48, $34, $40, $38, $48, $54, $40, $58, $48, $74, $40, $78
-Func_024_4c08::
+StartMenu_DexEntryScreen::
 .asm_4c08
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1191,11 +1197,11 @@ Func_024_4c08::
 	ldh [hFFC6], a
 	ld a, $12
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
-Func_024_4c48::
+StartMenu_DexScreen::
 .asm_4c48
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1203,7 +1209,7 @@ Func_024_4c48::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_4c60
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_4c64
 	jr .asm_4c48
 .asm_4c60
@@ -1307,7 +1313,7 @@ Func_024_4c48::
 .asm_4d11
 	ldh a, [hJoypadPressed]
 	bit 0, a
-	jp z, Func_024_6a61
+	jp z, HandleMenuCancel
 	ld a, SFX_11
 	call PlaySound
 	ld de, wd7cb
@@ -1321,7 +1327,7 @@ Func_024_4c48::
 	ld [wd9da], a
 	ld a, l
 	ld [wd9da + 1], a
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	xor a
@@ -1330,7 +1336,7 @@ Func_024_4c48::
 	ldh [hFFC6], a
 	ld a, $13
 	ldh [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
 Script_024_4d49::
 	bs_clear_bgbox_at $12, $0a, $980a
@@ -1346,9 +1352,9 @@ Script_024_4d6a::
 	bs_load_mon_pic_cond $9140
 	bs_print_num_indir wd9d8, $0103, $0507
 	bs_end_script3
-Func_024_4d77::
+StartMenu_GiveItemScreen::
 .asm_4d77
-	call Func_024_408a
+	call ClearMenuSprites12
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1356,7 +1362,7 @@ Func_024_4d77::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_4d8f
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_4d93
 	jr .asm_4d77
 .asm_4d8f
@@ -1395,7 +1401,7 @@ Func_024_4d77::
 .asm_4dc8
 	ld a, SFX_11
 	call PlaySound
-	call Func_024_4e9f
+	call SetPartyMenuCursor
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -1416,7 +1422,7 @@ Func_024_4d77::
 	ld a, SFX_11
 	call PlaySound
 	ld a, $0B
-	call Func_024_4efd.asm_5032
+	call HandlePartyGridInput.asm_5032
 	call GetPartyMonPtrByIndex
 	ld hl, $0014
 	ld a, [wSelectedOption]
@@ -1428,7 +1434,7 @@ Func_024_4d77::
 	and a
 	jr z, .asm_4e23
 	push hl
-	call Func_024_4e9f.asm_4ebd
+	call SetPartyMenuCursor.asm_4ebd
 	pop hl
 	ld a, [wCurItemID]
 	ld [hl], a
@@ -1441,7 +1447,7 @@ Func_024_4d77::
 	ld a, [wCurItemID]
 	ld [hl], a
 .asm_4e27
-	call Func_024_603b
+	call ConsumeSelectedItem
 .asm_4e2a
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -1472,7 +1478,7 @@ Func_024_4d77::
 	ldh [hFFC6], a
 	ld a, $0B
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wcdf8
 	xor a
 	ld [hli], a
@@ -1500,7 +1506,7 @@ Script_024_4e77::
 	bs_set_cursor_2
 	bs_set_sprite_pos $30, $30
 	bs_end_script3
-Func_024_4e9f::
+SetPartyMenuCursor::
 	ld a, [wd9da + 1]
 	ld de, OptionCursorCoords
 	ld l, a
@@ -1544,9 +1550,9 @@ Func_024_4e9f::
 	inc hl
 	inc hl
 	jr .asm_4ec6
-Func_024_4ed9::
+StartMenu_MoveSelectGrid::
 .asm_4ed9
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1554,8 +1560,8 @@ Func_024_4ed9::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_4ef1
-	call Func_024_6aab
-	call Func_024_4efd
+	call AnimateMenuCursorBounce
+	call HandlePartyGridInput
 	jr .asm_4ed9
 .asm_4ef1
 	xor a
@@ -1563,7 +1569,7 @@ Func_024_4ed9::
 	ret
 MenuOptionTable_024_4ef5::
 	db $18, $10, $18, $58, $38, $10, $38, $58
-Func_024_4efd::
+HandlePartyGridInput::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .asm_4f32
@@ -1698,7 +1704,7 @@ Func_024_4efd::
 	ld a, $0B
 	call .asm_5032
 	ld [wSelectedOption], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	call .asm_5011
 	ret
 .asm_4fef
@@ -1717,7 +1723,7 @@ Func_024_4efd::
 	ldh [hFFC6], a
 	ld a, $0B
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_5011
 	ld c, l
@@ -1756,9 +1762,9 @@ Func_024_4efd::
 	add hl, de
 	ld a, [hli]
 	ret
-Func_024_503e::
+StartMenu_TeachMoveScreen::
 .asm_503e
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -1812,7 +1818,7 @@ Func_024_503e::
 	ld a, [hBattleJumptableIndex]
 	cp $05
 	jr z, .asm_50c0
-	call Func_024_603b
+	call ConsumeSelectedItem
 	ld a, $01
 	ld [wBattleScriptState], a
 	xor a
@@ -1821,7 +1827,7 @@ Func_024_503e::
 	ldh [hFFC6], a
 	ld a, $0B
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	xor a
 	ld [wSelectedOption], a
 	ret
@@ -1833,7 +1839,7 @@ Func_024_503e::
 	ld [wBattleScriptState], a
 	ld a, $01
 	ldh [hFFC6], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	call .asm_50ff
 	ret
 .asm_50d8
@@ -1855,7 +1861,7 @@ Func_024_503e::
 	ldh [hFFC6], a
 	ld a, $0E
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_50ff
 	ld hl, wd1a0
@@ -1906,7 +1912,7 @@ Func_024_503e::
 	ld a, [wd9e3]
 	jr .asm_5156
 .asm_5149
-	ld de, unk_024_6e04
+	ld de, TMMoveTable
 	ld a, [wCurItemID]
 	sub $28
 	ld l, a
@@ -1964,9 +1970,9 @@ Func_024_503e::
 	xor a
 	ld [wSelectedOption], a
 	ret
-Func_024_519d::
+StartMenu_MoveSelectScreen::
 .asm_519d
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2011,7 +2017,7 @@ Func_024_519d::
 	jp z, .asm_5204
 	ld a, SFX_11
 	call PlaySound
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	ld a, $0F
@@ -2042,7 +2048,7 @@ Func_024_519d::
 	ldh [hFFC6], a
 	ld a, $0D
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_5232
 	ld a, $02
@@ -2057,7 +2063,7 @@ Func_024_519d::
 	ldh [hFFC6], a
 	ld a, $0D
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 Script_024_524f::
 	bs_clear_bgbox_at $12, $0c, $9808
@@ -2069,9 +2075,9 @@ Script_024_524f::
 	bs_place_tile_attr $0f06, Tilemap_4a_662b, Attrmap_4a_664b
 	bs_end_script3
 	db $c9  ; trailing/branch data
-Func_024_5277::
+StartMenu_ReplaceMovePrompt::
 .asm_5277
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2079,7 +2085,7 @@ Func_024_5277::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_528f
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_5293
 	jr .asm_5277
 .asm_528f
@@ -2118,7 +2124,7 @@ Func_024_5277::
 	ld a, [wSelectedOption]
 	and a
 	jr nz, .asm_52f6
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	ld a, $0E
@@ -2158,7 +2164,7 @@ Func_024_5277::
 	ldh [hFFC6], a
 	ld a, $0B
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_531a
 	ld a, $01
@@ -2167,12 +2173,12 @@ Func_024_5277::
 	ld [wBattleScriptByte], a
 	ld [hFFC5], a
 	ld [wBattleScriptState], a
-	call Func_024_5ffb
-	call Func_024_503e.asm_50ff
+	call ClearMenuCursorSprites
+	call StartMenu_TeachMoveScreen.asm_50ff
 	ret
-Func_024_5330::
+StartMenu_ItemResultMessage::
 .asm_5330
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2202,11 +2208,11 @@ Func_024_5330::
 	ldh [hFFC6], a
 	ld a, $0B
 	ld [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld a, [wdcae]
 	and a
 	ret nz
-	call Func_024_603b
+	call ConsumeSelectedItem
 	ld a, [hBattleJumptableIndex]
 	and a
 	ret z
@@ -2222,11 +2228,11 @@ Func_024_5330::
 	ld [hBattleJumptableIndex], a
 	ld a, $08
 	ld [wBattleIntroJumptableIndex], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
-Func_024_5398::
+StartMenu_MoveLearnedMessage::
 .asm_5398
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2258,11 +2264,11 @@ Func_024_5398::
 	ldh [hFFC6], a
 	ld a, $0B
 	ld [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld a, [wdcae]
 	and a
 	ret nz
-	call Func_024_603b
+	call ConsumeSelectedItem
 	ld a, [hBattleJumptableIndex]
 	and a
 	ret z
@@ -2278,13 +2284,13 @@ Func_024_5398::
 	ld [hBattleJumptableIndex], a
 	ld a, $08
 	ld [wBattleIntroJumptableIndex], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
-Func_024_5405::
+StartMenu_UseItemScreen::
 	xor a
 	ld [wdcae], a
 .asm_5409
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -2292,7 +2298,7 @@ Func_024_5405::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_5421
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_5425
 	jr .asm_5409
 .asm_5421
@@ -2302,23 +2308,23 @@ Func_024_5405::
 .asm_5425
 	ldh a, [hJoypadPressed]
 	bit 7, a
-	jp nz, Func_024_698f
+	jp nz, PartyCursor_MoveDown
 	ldh a, [hJoypadPressed]
 	bit 6, a
-	jp nz, Func_024_69b0
+	jp nz, PartyCursor_MoveUp
 	ldh a, [hJoypadPressed]
 	bit 5, a
-	jp nz, Func_024_69c3
+	jp nz, PartyCursor_MoveLeft
 	ldh a, [hJoypadPressed]
 	bit 4, a
-	jp nz, Func_024_69d7
+	jp nz, PartyCursor_MoveRight
 	ldh a, [hJoypadPressed]
 	bit 0, a
 	jp z, .asm_556b
 	ld a, [wItemCategory]
 	and a
 	jr z, .asm_546d
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	ld a, $11
@@ -2346,7 +2352,7 @@ Func_024_5405::
 	jr z, .asm_5488
 	ret
 .asm_5488
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	call GetPartyMonPtr
 	ld hl, $0001
 	add hl, bc
@@ -2368,23 +2374,23 @@ Func_024_5405::
 	jr z, .asm_54c2
 	ld a, [wSelectedOption]
 	ld [wd0c3], a
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $10
 	ld [hFFC5], a
 	jr .asm_54dd
 .asm_54c2
 	call .asm_5594
 .asm_54c5
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	xor a
 	ld [wd3f9 + 4], a
-	call Func_024_5603
+	call DispatchItemEffect
 	ld a, [wd3f9 + 4]
 	and a
 	jr nz, .asm_54eb
 	ld a, $0C
 	ld [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 .asm_54dd
 	ld a, $01
 	ld [wBattleScriptState], a
@@ -2408,17 +2414,17 @@ Func_024_5405::
 	ldh [hFFC6], a
 	ld a, $0C
 	ldh [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ld a, $01
 	ld [wdcae], a
 	ret
 .asm_5512
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	call GetPartyMonPtr
 	call .asm_55d6
 	and a
 	jr z, .asm_54eb
-	ld de, unk_024_6e04
+	ld de, TMMoveTable
 	ld a, [wCurItemID]
 	sub $28
 	ld l, a
@@ -2449,10 +2455,10 @@ Func_024_5405::
 	ldh [hFFC6], a
 	ret
 .asm_5552
-	call Func_024_503e.asm_513b
+	call StartMenu_TeachMoveScreen.asm_513b
 	ld a, $0C
 	ld [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ld a, $01
 	ld [wBattleScriptState], a
 	xor a
@@ -2478,7 +2484,7 @@ Func_024_5405::
 	ldh [hFFC6], a
 	ld a, $09
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_5593
 	ret
@@ -2566,9 +2572,9 @@ Script_024_55f9::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $03
 	bs_end_script3
-Func_024_5603::
+DispatchItemEffect::
 	call GetPartyMonPtr
-	ld de, Jumptable_024_5616
+	ld de, ItemEffectJumptable
 	ld a, [wCurItemID]
 	ld l, a
 	ld h, $00
@@ -2580,39 +2586,39 @@ Func_024_5603::
 	jp hl
 .asm_5615
 	ret
-Jumptable_024_5616::
-	dw Func_024_5646
-	dw Func_024_5646
-	dw Func_024_5646
-	dw Func_024_5646
-	dw Func_024_5646
-	dw Func_024_5647
-	dw Func_024_5691
-	dw Func_024_56d5
-	dw Func_024_5719
-	dw Func_024_575d
-	dw Func_024_57e0
-	dw Func_024_5863
-	dw Func_024_5895
-	dw Func_024_58ad
-	dw Func_024_58ca
-	dw Func_024_58e2
-	dw Func_024_58fa
-	dw Func_024_5912
-	dw Func_024_5928
-	dw Func_024_598a
-	dw Func_024_59ec
-	dw Func_024_5646
-	dw Func_024_5646
-	dw Func_024_5a20
-Func_024_5646::
+ItemEffectJumptable::
+	dw ItemEffect_Null
+	dw ItemEffect_Null
+	dw ItemEffect_Null
+	dw ItemEffect_Null
+	dw ItemEffect_Null
+	dw ItemEffect_HealHP30
+	dw ItemEffect_HealHP50
+	dw ItemEffect_HealHP100
+	dw ItemEffect_HealHP200
+	dw ItemEffect_HealHP20Pct
+	dw ItemEffect_HealHP50Pct
+	dw ItemEffect_HealHPFull
+	dw ItemEffect_CureStatusBit0
+	dw ItemEffect_CureStatusBit1
+	dw ItemEffect_CureStatusBit4
+	dw ItemEffect_CureStatusBit2
+	dw ItemEffect_CureStatusBit3
+	dw ItemEffect_CureAllStatus
+	dw ItemEffect_Revive20Pct
+	dw ItemEffect_Revive50Pct
+	dw ItemEffect_ReviveFull
+	dw ItemEffect_Null
+	dw ItemEffect_Null
+	dw ItemEffect_RestorePP
+ItemEffect_Null::
 	ret
-Func_024_5647::
+ItemEffect_HealHP30::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2652,16 +2658,16 @@ Func_024_5647::
 	inc hl
 	ld [hl], d
 	ret
-Func_024_568b::
+SetItemUseFailed::
 	ld a, $01
 	ld [wd3f9 + 4], a
 	ret
-Func_024_5691::
+ItemEffect_HealHP50::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2701,12 +2707,12 @@ Func_024_5691::
 	inc hl
 	ld [hl], d
 	ret
-Func_024_56d5::
+ItemEffect_HealHP100::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2746,12 +2752,12 @@ Func_024_56d5::
 	inc hl
 	ld [hl], d
 	ret
-Func_024_5719::
+ItemEffect_HealHP200::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2791,12 +2797,12 @@ Func_024_5719::
 	inc hl
 	ld [hl], d
 	ret
-Func_024_575d::
+ItemEffect_HealHP20Pct::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2863,12 +2869,12 @@ Func_024_575d::
 	inc hl
 	ld [hl], d
 	ret
-Func_024_57e0::
+ItemEffect_HealHP50Pct::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2935,12 +2941,12 @@ Func_024_57e0::
 	inc hl
 	ld [hl], d
 	ret
-Func_024_5863::
+ItemEffect_HealHPFull::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	ld a, SFX_33
 	call PlaySound
 	push bc
@@ -2959,93 +2965,93 @@ Func_024_5863::
 	ld a, [wd9d8]
 	ld [hl], a
 	ret
-Func_024_5895::
+ItemEffect_CureStatusBit0::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	bit 0, a
-	jp z, Func_024_58c4
+	jp z, SetItemUseFailed_NoStatus
 	res 0, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58ad::
+ItemEffect_CureStatusBit1::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	bit 1, a
-	jr z, Func_024_58c4
+	jr z, SetItemUseFailed_NoStatus
 	res 1, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58c4::
+SetItemUseFailed_NoStatus::
 	ld a, $01
 	ld [wd3f9 + 4], a
 	ret
-Func_024_58ca::
+ItemEffect_CureStatusBit4::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	bit 4, a
-	jp z, Func_024_58c4
+	jp z, SetItemUseFailed_NoStatus
 	res 4, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58e2::
+ItemEffect_CureStatusBit2::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	bit 2, a
-	jp z, Func_024_58c4
+	jp z, SetItemUseFailed_NoStatus
 	res 2, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_58fa::
+ItemEffect_CureStatusBit3::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	bit 3, a
-	jp z, Func_024_58c4
+	jp z, SetItemUseFailed_NoStatus
 	res 3, a
 	ld [hl], a
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_5912::
+ItemEffect_CureAllStatus::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	and a
-	jp z, Func_024_58c4
+	jp z, SetItemUseFailed_NoStatus
 	ld [hl], $00
 	ld a, SFX_4c
 	call PlaySound
 	ret
-Func_024_5928::
+ItemEffect_Revive20Pct::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp nz, Func_024_568b
+	jp nz, SetItemUseFailed
 	ld [hl], $00
 	push bc
 	xor a
@@ -3085,12 +3091,12 @@ Func_024_5928::
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_598a::
+ItemEffect_Revive50Pct::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp nz, Func_024_568b
+	jp nz, SetItemUseFailed
 	ld [hl], $00
 	push bc
 	xor a
@@ -3130,12 +3136,12 @@ Func_024_598a::
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_59ec::
+ItemEffect_ReviveFull::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp nz, Func_024_568b
+	jp nz, SetItemUseFailed
 	ld [hl], $00
 	push bc
 	xor a
@@ -3155,12 +3161,12 @@ Func_024_59ec::
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_5a20::
+ItemEffect_RestorePP::
 	ld hl, $0013
 	add hl, bc
 	ld a, [hl]
 	cp $BF
-	jp z, Func_024_568b
+	jp z, SetItemUseFailed
 	call GetPartyMonPtr
 	ld hl, $0007
 	add hl, bc
@@ -3182,9 +3188,9 @@ Func_024_5a20::
 	ld a, SFX_33
 	call PlaySound
 	ret
-Func_024_5a49::
+StartMenu_ItemActionScreen::
 .asm_5a49
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -3192,7 +3198,7 @@ Func_024_5a49::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_5a61
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_5a65
 	jr .asm_5a49
 .asm_5a61
@@ -3242,7 +3248,7 @@ Func_024_5a49::
 	ret z
 	jr .asm_5ab3
 .asm_5ab3
-	call Func_024_603b
+	call ConsumeSelectedItem
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -3287,7 +3293,7 @@ Func_024_5a49::
 	ldh [hFFC6], a
 	ld a, $09
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wcdf0
 	ld [hl], $00
 	inc hl
@@ -3309,7 +3315,7 @@ Func_024_5a49::
 	ld [wCurItemID], a
 	ld a, [hl]
 	ld [wItemQty], a
-	ld de, unk_024_5f82
+	ld de, ItemUseActionTable
 	ld a, [wCurItemID]
 	ld l, a
 	ld h, $00
@@ -3347,7 +3353,7 @@ Func_024_5a49::
 .asm_5b7e
 	ld [wd0c1], a
 .asm_5b81
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	ld a, $0B
@@ -3357,7 +3363,7 @@ Func_024_5a49::
 	ld [wSelectedOption], a
 	ld a, $01
 	ldh [hFFC6], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
 .asm_5b9c
 	ld [wd0c1], a
@@ -3376,7 +3382,7 @@ Func_024_5a49::
 	ld a, [wd9eb]
 	and a
 	jp nz, .asm_5c20
-	call Func_024_5f19
+	call UseRepelItem
 	call .asm_5c4d
 	ret
 .asm_5bc7
@@ -3398,8 +3404,8 @@ Func_024_5a49::
 	ld [wd0e4], a
 	ld [wPlayerAnimFrame], a
 	ld [wd0df], a
-	call Func_024_5ffb
-	call Func_024_603b
+	call ClearMenuCursorSprites
+	call ConsumeSelectedItem
 	ret
 .asm_5bf4
 	ld a, [hBattleJumptableIndex]
@@ -3417,8 +3423,8 @@ Func_024_5a49::
 	ld [hBattleJumptableIndex], a
 	ld a, $09
 	ld [wBattleIntroJumptableIndex], a
-	call Func_024_603b
-	call Func_024_5ffb
+	call ConsumeSelectedItem
+	call ClearMenuCursorSprites
 	call DelayFrame
 	ret
 .asm_5c20
@@ -3436,7 +3442,7 @@ Func_024_5a49::
 	ldh [hFFC6], a
 	ld a, $09
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wcdf0
 	ld [hl], $00
 	inc hl
@@ -3457,7 +3463,7 @@ Func_024_5a49::
 	ldh [hFFC6], a
 	ld a, $09
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wcdf0
 	ld [hl], $00
 	inc hl
@@ -3486,7 +3492,7 @@ Func_024_5a49::
 	ldh [hWarpNumber], a
 	ld a, $01
 	ldh [hFade], a
-	call Func_024_689a
+	call RedrawOverworldScreen
 	ret
 Pointers_024_5c97::
 	dw Pointers_024_5c97_5ca7
@@ -3544,7 +3550,7 @@ Pointers_024_5c97_5ebf::
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-Func_024_5f19::
+UseRepelItem::
 	ld a, [wCurItemID]
 	cp $23
 	jr z, .asm_5f29
@@ -3565,7 +3571,7 @@ Func_024_5f19::
 	ld a, $C8
 	ld [wd9eb], a
 .asm_5f3c
-	call Func_024_603b
+	call ConsumeSelectedItem
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -3578,7 +3584,7 @@ Func_024_5f19::
 	ldh [hFFC6], a
 	ld a, $09
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wcdf0
 	ld [hl], $00
 	inc hl
@@ -3596,17 +3602,130 @@ Script_024_5f78::
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $02
 	bs_end_script3
-; TODO: unk_ - lookup table indexed by wCurItemID
-unk_024_5f82::
-	db $00, $04, $04, $04, $04, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01
-	db $01, $01, $01, $01, $01, $03, $03, $03, $04, $04, $04, $04, $04, $04, $04, $04
-	db $04, $04, $04, $05, $05, $05, $0a, $09, $02, $02, $02, $02, $02, $02, $02, $02
-	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
-	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
-	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
-	db $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02, $02
-	db $02, $02, $02, $02, $02, $02, $02, $02, $02
-Func_024_5ffb::
+; [wCurItemID] -> item-use action class
+ItemUseActionTable::
+	db $00
+	db $04
+	db $04
+	db $04
+	db $04
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $01
+	db $03
+	db $03
+	db $03
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $04
+	db $05
+	db $05
+	db $05
+	db $0a
+	db $09
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+	db $02
+ClearMenuCursorSprites::
 	ld hl, wcde0
 	ld [hl], $00
 	inc hl
@@ -3631,7 +3750,7 @@ Func_024_5ffb::
 	dec c
 	jr nz, .asm_601d
 	ret
-Func_024_6022::
+ClearMenuListSprites::
 	ld hl, wcdf8
 	ld [hl], $00
 	inc hl
@@ -3648,7 +3767,7 @@ Func_024_6022::
 	dec c
 	jr nz, .asm_6036
 	ret
-Func_024_603b::
+ConsumeSelectedItem::
 	ld a, [wd1fe]
 	ld e, a
 	ld a, [wd1ff]
@@ -3672,7 +3791,7 @@ Func_024_603b::
 	xor a
 	ld [wd0c0], a
 CompactItems::
-	ld de, unk_024_6096
+	ld de, ItemCategorySizes
 	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
@@ -3718,12 +3837,14 @@ CompactItems::
 	jr .asm_608c
 .asm_6095
 	ret
-; TODO: unk_ - lookup table indexed by wItemCategory
-unk_024_6096::
-	db $78, $28, $2d
-Func_024_6099::
+; [wItemCategory] -> item-list capacity
+ItemCategorySizes::
+	db $78
+	db $28
+	db $2d
+StartMenu_ItemScreen::
 .asm_6099
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -3731,7 +3852,7 @@ Func_024_6099::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_60b1
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_60b5
 	jr .asm_6099
 .asm_60b1
@@ -3801,7 +3922,7 @@ Func_024_6099::
 	ldh a, [hJoypadPressed]
 	bit 4, a
 	jr z, .asm_6189
-	ld de, unk_024_6344
+	ld de, ItemCategoryMaxPage
 	ld a, [wItemCategory]
 	ld l, a
 	ld h, $00
@@ -3874,10 +3995,10 @@ Func_024_6099::
 	ld a, [wCurItemID]
 	cp $07
 	ret nz
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, [wdce4]
 	cp $01
-	jp nz, Func_024_5a49.asm_5c20
+	jp nz, StartMenu_ItemActionScreen.asm_5c20
 	ld a, $01
 	ldh [hFFD6], a
 	ld [wd0fd + 1], a
@@ -3891,12 +4012,12 @@ Func_024_6099::
 	ld [hl], LOW(Script_4a_7fd7)
 	inc hl
 	ld [hl], HIGH(Script_4a_7fd7)
-	call Func_024_689a
+	call RedrawOverworldScreen
 	ret
 .asm_61e4
 	call .asm_62f7
 	ld [wCurItemID], a
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld a, $0A
@@ -3911,7 +4032,7 @@ Func_024_6099::
 	ld [hl], HIGH(Script_024_466d)
 	ret
 .asm_6208
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	ld a, $0A
@@ -4009,7 +4130,7 @@ Func_024_6099::
 	ldh [hFFC6], a
 	ld a, $07
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_62b2
 	xor a
@@ -4020,7 +4141,7 @@ Func_024_6099::
 	ldh [hFFC6], a
 	ld a, $03
 	ld [wBattleIntroJumptableIndex], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
 .asm_62c8
 	ldh a, [hJoypadPressed]
@@ -4082,9 +4203,9 @@ Func_024_6099::
 	add hl, de
 	ld a, [hl]
 	ret
-Func_024_6328::
+StartMenu_ItemCategoryMenu::
 .asm_6328
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4092,17 +4213,19 @@ Func_024_6328::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_6340
-	call Func_024_6aab
-	call Func_024_6347
+	call AnimateMenuCursorBounce
+	call HandleItemCategoryInput
 	jr .asm_6328
 .asm_6340
 	xor a
 	ldh [hFFC6], a
 	ret
-; TODO: unk_ - lookup table indexed by wItemCategory
-unk_024_6344::
-	db $17, $07, $08
-Func_024_6347::
+; [wItemCategory] -> max page index
+ItemCategoryMaxPage::
+	db $17
+	db $07
+	db $08
+HandleItemCategoryInput::
 	ldh a, [hJoypadPressed]
 	bit 7, a
 	jr z, .asm_635a
@@ -4132,10 +4255,10 @@ Func_024_6347::
 .asm_637a
 	ldh a, [hJoypadPressed]
 	bit 0, a
-	jp z, Func_024_6a61
+	jp z, HandleMenuCancel
 	ld a, [wSelectedOption]
 	ld [wItemCategory], a
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	ld a, $09
@@ -4148,9 +4271,9 @@ Func_024_6347::
 	ld [wSelectedOption], a
 	ld [wSelectedPage], a
 	ret
-Func_024_63a4::
+StartMenu_PartySelectScreen::
 .asm_63a4
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4158,7 +4281,7 @@ Func_024_63a4::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_63bc
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_63c0
 	jr .asm_63a4
 .asm_63bc
@@ -4287,13 +4410,13 @@ Func_024_63a4::
 	ldh [hFFC6], a
 	ld a, $03
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ret
 .asm_64a8
 	ret
-Func_024_64a9::
+StartMenu_PartyStatsPage3::
 .asm_64a9
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4337,7 +4460,7 @@ Func_024_64a9::
 .asm_64f3
 	ld a, SFX_28
 	call PlaySound
-	call Func_024_66da
+	call SaveSelectedPartySlot
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -4387,9 +4510,9 @@ Func_024_64a9::
 	ld a, $05
 	ldh [hFFC5], a
 	ret
-Func_024_655a::
+StartMenu_PartyStatsPage2::
 .asm_655a
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4433,7 +4556,7 @@ Func_024_655a::
 .asm_65a4
 	ld a, SFX_28
 	call PlaySound
-	call Func_024_66da
+	call SaveSelectedPartySlot
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -4479,9 +4602,9 @@ Func_024_655a::
 	ld a, $04
 	ldh [hFFC5], a
 	ret
-Func_024_6603::
+StartMenu_PartyStatsPage1::
 .asm_6603
-	call Func_024_40b8
+	call ClearMenuSprites8
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4525,7 +4648,7 @@ Func_024_6603::
 .asm_664d
 	ld a, SFX_28
 	call PlaySound
-	call Func_024_66da
+	call SaveSelectedPartySlot
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -4563,7 +4686,7 @@ Func_024_6603::
 	jr nz, .asm_66b1
 	ld a, $02
 	ld [wBattleScriptState], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wBattleScriptPos
 	ld [hl], LOW(Script_024_45a0)
 	inc hl
@@ -4576,7 +4699,7 @@ Func_024_6603::
 .asm_66b1
 	ld a, $02
 	ld [wBattleScriptState], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wBattleScriptPos
 	ld [hl], LOW(Script_024_66ca)
 	inc hl
@@ -4592,7 +4715,7 @@ Script_024_66ca::
 	bs_print_text_xy String_025_60be, $a0, $fd
 	bs_draw_status_icons
 	bs_select_menu $03
-Func_024_66da::
+SaveSelectedPartySlot::
 	ld a, [wSelectedOption]
 	ld de, OptionCursorCoords
 	ld l, a
@@ -4612,9 +4735,9 @@ Func_024_66da::
 	ld a, [bc]
 	ld [hli], a
 	ret
-Func_024_66f8::
+StartMenu_PartyMonMenu::
 .asm_66f8
-	call Func_024_4062
+	call ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4622,7 +4745,7 @@ Func_024_66f8::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_6710
-	call Func_024_6aab
+	call AnimateMenuCursorBounce
 	call .asm_6714
 	jr .asm_66f8
 .asm_6710
@@ -4677,7 +4800,7 @@ Func_024_66f8::
 	jr z, .asm_6767
 	ret
 .asm_6767
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	xor a
@@ -4696,7 +4819,7 @@ Func_024_66f8::
 	ldh a, [hBattleJumptableIndex]
 	and a
 	jp nz, .asm_67b8
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, $01
 	ld [wBattleScriptState], a
 	xor a
@@ -4747,7 +4870,7 @@ Func_024_66f8::
 	ld a, [wd983]
 	cp d
 	ret z
-	call Func_024_6916
+	call SelectActivePartyMon
 	and a
 	ret z
 	ld a, d
@@ -4765,7 +4888,7 @@ Func_024_66f8::
 	ld [hBattleJumptableIndex], a
 	ld a, $08
 	ld [wBattleIntroJumptableIndex], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	call DelayFrame
 	ld hl, wd978
 	ld c, $04
@@ -4805,7 +4928,7 @@ Func_024_66f8::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ldh [hFFC5], a
-	call Func_024_694c
+	call LoadMenuCursorState
 	ld hl, wBattleScriptPos
 	ld [hl], LOW(Script_024_4589)
 	inc hl
@@ -4816,7 +4939,7 @@ Func_024_66f8::
 	ldh [hFFC6], a
 	ret
 
-Func_024_6864::
+MovePlayerSpriteForward::
 	ld a, [wPlayerFacing]
 	and a
 	jr z, .asm_687f
@@ -4846,7 +4969,7 @@ Func_024_6864::
 	add $10
 	ld [wPlayerScreenX], a
 	ret
-Func_024_689a::
+RedrawOverworldScreen::
 	ld a, $80
 	ldh [rLCDC], a
 	ld hl, Palette_White
@@ -4879,8 +5002,8 @@ Func_024_689a::
 	ld hl, wScreenRowBuffer
 	ld bc, $0080
 	call CopyBytes3
-	call Func_024_6941
-	ld hl, Func_024_4000
+	call ClearMenuCursorTable
+	ld hl, InitPlayerCharSprite
 	ld b, $04
 	rst $30
 	ld a, $c7
@@ -4896,7 +5019,7 @@ Func_024_689a::
 	ldh [hFFC5], a
 	ld [wBattleScriptState], a
 	ret
-Func_024_6916::
+SelectActivePartyMon::
 	ld hl, wPartyMon1
 	ld bc, $0016
 	ld a, d
@@ -4926,16 +5049,16 @@ Func_024_6916::
 .asm_693f
 	xor a
 	ret
-Func_024_6941::
+ClearMenuCursorTable::
 	ld hl, wd1a0
 	ld c, $40
 	xor a
-Func_024_6947::
+ClearMenuCursorTable_Loop::
 	ld [hli], a
 	dec c
-	jr nz, Func_024_6947
+	jr nz, ClearMenuCursorTable_Loop
 	ret
-Func_024_694c::
+LoadMenuCursorState::
 	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
@@ -4959,8 +5082,8 @@ Func_024_694c::
 
 MenuOptionTable_024_6969::
 	db $78, $78, $88, $78
-Func_024_696d::
-	call Func_024_4062
+StartMenu_PartyScreen::
+	call ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -4968,18 +5091,18 @@ Func_024_696d::
 	ldh a, [hFFC6]
 	and a
 	jr nz, .asm_6985
-	call Func_024_6aab
-	call Func_024_6989
-	jr Func_024_696d
+	call AnimateMenuCursorBounce
+	call PartyInput_CheckDown
+	jr StartMenu_PartyScreen
 .asm_6985
 	xor a
 	ldh [hFFC6], a
 	ret
-Func_024_6989::
+PartyInput_CheckDown::
 	ldh a, [hJoypadPressed]
 	bit 7, a
-	jr z, Func_024_69aa
-Func_024_698f::
+	jr z, PartyInput_CheckUp
+PartyCursor_MoveDown::
 	ld a, [wSelectedOption]
 	cp $03
 	ret nc
@@ -4988,27 +5111,27 @@ Func_024_698f::
 	call GetPartyMonPtr
 	ld a, [bc]
 	and a
-	jr nz, Func_024_69f3
+	jr nz, RefreshPartyCursor
 	ld a, [wSelectedOption]
 	sub $03
 	ld [wSelectedOption], a
 	ret
-Func_024_69aa::
+PartyInput_CheckUp::
 	ldh a, [hJoypadPressed]
 	bit 6, a
-	jr z, Func_024_69bd
-Func_024_69b0::
+	jr z, PartyInput_CheckLeft
+PartyCursor_MoveUp::
 	ld a, [wSelectedOption]
 	cp $03
 	ret c
 	sub $03
 	ld [wSelectedOption], a
-	jr Func_024_69f3
-Func_024_69bd::
+	jr RefreshPartyCursor
+PartyInput_CheckLeft::
 	ldh a, [hJoypadPressed]
 	bit 5, a
-	jr z, Func_024_69d1
-Func_024_69c3::
+	jr z, PartyInput_CheckRight
+PartyCursor_MoveLeft::
 	ld a, [wSelectedOption]
 	and a
 	ret z
@@ -5016,12 +5139,12 @@ Func_024_69c3::
 	ret z
 	dec a
 	ld [wSelectedOption], a
-	jr Func_024_69f3
-Func_024_69d1::
+	jr RefreshPartyCursor
+PartyInput_CheckRight::
 	ldh a, [hJoypadPressed]
 	bit 4, a
-	jr z, Func_024_6a20
-Func_024_69d7::
+	jr z, PartyScreen_ConfirmSelection
+PartyCursor_MoveRight::
 	ld a, [wSelectedOption]
 	cp $02
 	ret z
@@ -5032,12 +5155,12 @@ Func_024_69d7::
 	call GetPartyMonPtr
 	ld a, [bc]
 	and a
-	jr nz, Func_024_69f3
+	jr nz, RefreshPartyCursor
 	ld a, [wSelectedOption]
 	dec a
 	ld [wSelectedOption], a
 	ret
-Func_024_69f3::
+RefreshPartyCursor::
 	ld a, SFX_11
 	call PlaySound
 	ld de, OptionCursorCoords
@@ -5062,13 +5185,13 @@ Func_024_69f3::
 	ld [wBattleScriptByte], a
 	ld a, $01
 	ldh [hFFC6], a
-Func_024_6a20::
+PartyScreen_ConfirmSelection::
 	ldh a, [hJoypadPressed]
 	bit 0, a
-	jr z, Func_024_6a61
+	jr z, HandleMenuCancel
 	ld a, SFX_11
 	call PlaySound
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ldh a, [hBattleJumptableIndex]
 	and a
 	jr nz, .asm_6a46
@@ -5095,16 +5218,16 @@ Func_024_6a20::
 	inc hl
 	ld [hl], HIGH(Script_024_41c1)
 	ret
-Func_024_6a61::
+HandleMenuCancel::
 	ldh a, [hJoypadPressed]
 	bit 1, a
-	jr z, Func_024_6a9e
+	jr z, PartyInput_Return
 	ld a, SFX_11
 	call PlaySound
 	ldh a, [hBattleJumptableIndex]
 	and a
-	jr nz, Func_024_6a8c
-Func_024_6a71::
+	jr nz, ExitMenuToBattle
+ReturnToStartMenuMain::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
@@ -5116,9 +5239,9 @@ Func_024_6a71::
 	ld a, $01
 	ldh [hFFC6], a
 	ldh [hFFC5], a
-	call Func_024_5ffb
+	call ClearMenuCursorSprites
 	ret
-Func_024_6a8c::
+ExitMenuToBattle::
 	xor a
 	ld [wBattleScriptByte], a
 	ldh [hFFC5], a
@@ -5127,7 +5250,7 @@ Func_024_6a8c::
 	ldh [hFFC6], a
 	ld a, $03
 	ld [wBattleIntroJumptableIndex], a
-Func_024_6a9e::
+PartyInput_Return::
 	ret
 
 OptionCursorCoords::
@@ -5138,10 +5261,10 @@ OptionCursorCoords::
 	db $38, $40
 	db $38, $78
 
-Func_024_6aab::
+AnimateMenuCursorBounce::
 	ldh a, [hFadeFrameCounter]
 	and $07
-Func_024_6aaf::
+AnimateMenuCursorBounce_Apply::
 	ret nz
 	ld bc, wcde0
 	ld hl, $0003
@@ -5163,10 +5286,10 @@ Func_024_6aaf::
 	ld [hl], a
 	ret
 
-Func_024_6ac8::
+StartMenu_MainLoop::
 ; Start menu main loop
 .loop
-	call Func_024_4062
+	call ClearMenuSprites4
 	call DelayFrame
 	ldh a, [hFadeFrameCounter]
 	inc a
@@ -5268,7 +5391,7 @@ StartMenu_Input::
 .asm_6b57
 	ld a, SFX_11
 	call PlaySound
-	call Func_024_6ba1
+	call SaveMenuCursorState
 	ld a, 1
 	ld [wBattleScriptState], a
 	ldh [hFFC6], a
@@ -5311,7 +5434,7 @@ StartMenu_Input::
 MenuOptionStateTable_024_6b9c::
 	db $02, $07, $14, $12, $15
 
-Func_024_6ba1::
+SaveMenuCursorState::
 	ld de, wd1a0
 	ldh a, [hFFC5]
 	ld l, a
@@ -5351,7 +5474,7 @@ StartMenu_BounceCursor::
 	ld [bc], a
 	ret
 
-Func_024_6bd0::
+DrawMenuSpriteSlot2::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf8
 	ld a, [de]
@@ -5400,7 +5523,7 @@ Func_024_6bd0::
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6c09::
+DrawMenuSpriteSlot1::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf0
 	ld a, [de]
@@ -5449,7 +5572,7 @@ Func_024_6c09::
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6c42::
+DrawMenuCursorOAM::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcde0
 	ld a, [de]
@@ -5498,7 +5621,7 @@ Func_024_6c42::
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6c7b::
+DrawMenuSpriteSlot1Low::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf0
 	ld a, [de]
@@ -5547,7 +5670,7 @@ Func_024_6c7b::
 	ld [wVirtualOAMPtr], a
 	ret
 
-Func_024_6cb4::
+DrawMenuSpriteSlot2Low::
 	ld hl, SpriteOAMTemplate_Pointers
 	ld de, wcdf8
 	ld a, [de]
@@ -5641,12 +5764,58 @@ SpriteOAMTemplate_Pointers::
 	db $FF
 
 INCLUDE "data/moves/pp.asm"
-; TODO: unk_ - indexed table (index wCurItemID)
-unk_024_6e04::
-	db $89, $35, $4d, $6b, $2e, $05, $45, $16, $73, $23, $4c, $22, $07, $78, $19, $40
-	db $81, $77, $5d, $06, $1e, $4f, $75, $0a, $2a, $61, $3b, $32, $68, $85, $88, $5a
-	db $3c, $8c, $48, $66, $44, $54, $26, $50, $8b, $8a, $39, $7b, $3d, $31, $20, $5b
-	db $84, $7d
+; [wCurItemID - $28] -> MOVE_* taught by TM
+TMMoveTable::
+	db $89
+	db $35
+	db $4d
+	db $6b
+	db $2e
+	db $05
+	db $45
+	db $16
+	db $73
+	db $23
+	db $4c
+	db $22
+	db $07
+	db $78
+	db $19
+	db $40
+	db $81
+	db $77
+	db $5d
+	db $06
+	db $1e
+	db $4f
+	db $75
+	db $0a
+	db $2a
+	db $61
+	db $3b
+	db $32
+	db $68
+	db $85
+	db $88
+	db $5a
+	db $3c
+	db $8c
+	db $48
+	db $66
+	db $44
+	db $54
+	db $26
+	db $50
+	db $8b
+	db $8a
+	db $39
+	db $7b
+	db $3d
+	db $31
+	db $20
+	db $5b
+	db $84
+	db $7d
 Pointers_024_6e36::
 	dw Pointers_024_6e36_6f68
 	dw Pointers_024_6e36_6f68

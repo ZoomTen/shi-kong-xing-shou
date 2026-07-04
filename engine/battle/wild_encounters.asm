@@ -273,7 +273,7 @@ InitWildMonVitals::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 
 	ld hl, MON_MOVE1PP
@@ -284,7 +284,7 @@ InitWildMonVitals::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 
 	ld hl, MON_MOVE2PP
@@ -295,7 +295,7 @@ InitWildMonVitals::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 
 	ld hl, MON_MOVE3PP
@@ -306,7 +306,7 @@ InitWildMonVitals::
 	ld a, [hl]
 	ld [wd9bf], a
 	push bc
-	farcall Func_024_4053
+	farcall LookupMovePP
 	pop bc
 
 	ld hl, MON_MOVE4PP
