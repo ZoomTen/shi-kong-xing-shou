@@ -27,6 +27,9 @@ gfx/misc/*.2bpp
 gfx/paper_scroll/*.2bpp
 gfx/backsprites/*.2bpp
 gfx/tileanim/*.2bpp
+lang_en/gfx/**/*.2bpp
+lang_en/gfx/**/*.1bpp
+lang_en/gfx/**/*.gbcpal
 data/maps/blocks/*.bin
 data/maps/layouts/*.bin
 data/maps/metatiles/*.bin

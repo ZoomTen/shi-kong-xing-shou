@@ -43,9 +43,11 @@ PrintCharacter::
 ; BG map addresses are held at wBGMapBufferPointers
 	ld hl, wBGMapBufferPointers
 	ld sp, hl
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	jr nz, .english
+ENDC
 	ld a, [wcbf3]
 ; Each character occupies four tiles
 REPT 3
@@ -55,8 +57,11 @@ REPT 3
 ENDR
 	pop bc
 	ld [bc], a
+IF DEF(ENGLISH)
 	jr .restore
+ENDC
 
+IF DEF(ENGLISH)
 .english
 ; One tile: .Func_1a5f stored a single cell, so the row below keeps whatever the
 ; box drew (its own interior). Box-agnostic -- dialog, signpost, etc.
@@ -65,6 +70,7 @@ ENDR
 	ld [bc], a
 
 .restore
+ENDC
 ; Restore old SP
 	ldh a, [hFFA2]
 	ld l, a

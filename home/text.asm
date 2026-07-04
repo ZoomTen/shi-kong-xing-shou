@@ -1,6 +1,8 @@
 _PrintText::
+IF DEF(ENGLISH)
 	xor a
 	ldh [hEnglishMode], a
+ENDC
 	ldh a, [hTextSource]
 	cp TEXTSRC_SCRIPT
 	jr z, .script
@@ -36,8 +38,10 @@ CheckCharacter::
 	pop hl
 	ld a, [hli]
 	push hl
+IF DEF(ENGLISH)
 	cp TX_FAR
 	jp z, Text_FarJump
+ENDC
 	cp $f0
 	jp nc, .SwitchCharacterSet
 	cp $e0
@@ -52,12 +56,14 @@ CheckCharacter::
 ; $f0 = 40:4000, $f1 = $40:6000, $f2 = $41:4000, etc.
 GetCharacterSetBase::
 	and $0f
+IF DEF(ENGLISH)
 	cp $f
 	jr z, .english
 	push af
 		ld a, 0
 		ldh [hEnglishMode], a
 	pop af
+ENDC
 	push af
 	srl a
 	add BANK(GFX_040_4000)
@@ -73,6 +79,7 @@ GetCharacterSetBase::
 .store
 	ld [wCharacterTileSource + 1], a
 	xor a
+IF DEF(ENGLISH)
 	ld [wCharacterTileSource], a
 	ret
 .english
@@ -83,6 +90,7 @@ GetCharacterSetBase::
 	ld a, HIGH(Charset_English)
 	ld [wCharacterTileSource + 1], a
 	ld a, LOW(Charset_English)
+ENDC
 	ld [wCharacterTileSource], a
 	ret
 
@@ -131,15 +139,19 @@ CheckCharacter_Continue::
 	add a
 	add l
 	ld l, a
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	jr z, .x1
 	ld a, [wCharacterTilemapPos]
 	jr .x2
 .x1
+ENDC
 	ld a, [wCharacterTilemapPos]
 	add a
+IF DEF(ENGLISH)
 .x2
+ENDC
 	add h
 	ld h, a
 	call GetTextBGMapPointer
@@ -148,11 +160,17 @@ CheckCharacter_Continue::
 	ld hl, wBGMapBufferPointers
 	push de
 	call .StoreBGMapPointer
+IF DEF(ENGLISH)
 	pop de
 	ldh a, [hEnglishMode]
 	and a
 	ret nz ; English: one tile wide -- skip the second column
+ENDC
 ; round two
+IF DEF(ENGLISH)
+ELSE
+	pop de
+ENDC
 	ld a, e
 	inc a
 	and BG_MAP_WIDTH - 1
@@ -170,9 +188,11 @@ CheckCharacter_Continue::
 	ld [hli], a
 	ld a, d
 	ld [hli], a
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	ret nz ; English: one cell -- leave the row below as the box's own interior
+ENDC
 ; Next row in BG map
 	ld a, 1 * BG_MAP_WIDTH
 	add e
@@ -220,15 +240,19 @@ RequestLoadCharacter_wTilemap::
 	add hl, de
 
 ; Initial starting position for tile 1
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	jr z, .x3
 	ld a, [wCharacterTilemapPos]
 	jr .x4
 .x3
+ENDC
 	ld a, [wCharacterTilemapPos]
 	add a ; 2 tiles wide
+IF DEF(ENGLISH)
 .x4
+ENDC
 	ld e, a
 
 ; Line to print text on (line 0 or line 1)
@@ -248,6 +272,7 @@ RequestLoadCharacter_wTilemap::
 	push hl
 ; Tile 1
 	ld [hl], c
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	jr z, .x5
@@ -256,6 +281,7 @@ RequestLoadCharacter_wTilemap::
 	pop hl
 	jr .english
 .x5
+ENDC
 ; Tile 2
 	inc c
 	add hl, de
@@ -269,6 +295,10 @@ RequestLoadCharacter_wTilemap::
 	inc c
 	add hl, de
 	ld [hl], c
+IF DEF(ENGLISH)
+ELSE
+
+ENDC
 ; Get character tile source
 	ld a, [wCharacterTileSource]
 	ld e, a
@@ -292,18 +322,23 @@ ENDR
 	ld [wCharacterTileTransferStatus], a
 	call DelayFrame
 
+IF DEF(ENGLISH)
 
+ENDC
 	ld a, [wCharacterTilePos]
 	add 4
 	ld [wCharacterTilePos], a
 	; 7 characters max per line
 	cp 8 * 7
+IF DEF(ENGLISH)
 .x6
+ENDC
 	ret c
 
 	xor a
 	ld [wCharacterTilePos], a
 	ret
+IF DEF(ENGLISH)
 
 .english
 ; Set the font bank too -- a blank/Chinese name's $f0 may have left hTargetBank
@@ -331,6 +366,7 @@ ENDR
 	ld [wCharacterTilePos], a
 	cp $38
 	jr .x6
+ENDC
 
 CheckCharacter_Commands::
 	ld de, .commands
@@ -377,6 +413,7 @@ Text_Init::
 	rst Bankswitch
 	call OpenDialogTextbox ; load face picture
 	call DelayFrame
+IF DEF(ENGLISH)
 	; LoadTextName leaves hEnglishMode = the NAME's mode (an English name sets it;
 	; a blank/Chinese name's $f0|n clears it). Keep it through the textbox draw so
 	; an English name gets compact single-row cells, then restore the dialog's own
@@ -401,11 +438,14 @@ Text_Init::
 	call SingleRowNameCells ; flip the cells to the glyphs, revealing the whole name
 	jr .nameDrawn
 .chineseName
+ENDC
 	call LoadTextName
 	call AnimateTextboxOpen
+IF DEF(ENGLISH)
 .nameDrawn
 	pop af
 	ldh [hEnglishMode], a
+ENDC
 	call BuildVirtualOAM
 	call DelayFrame
 	pop af
@@ -432,19 +472,35 @@ Text_Init::
 	ld [wCharacterTilePos], a
 	jp CheckCharacter
 
+IF DEF(ENGLISH)
 ClearNameTiles::
 ; Blank the 16-tile name glyph region ($e0..$ef) at $8e00.
+ELSE
+LoadTextName::
+; Clear old name buffer
+ENDC
 	ld bc, $10 tiles
 	ld hl, $8e00
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
+IF DEF(ENGLISH)
 	ret
+ENDC
 
+IF DEF(ENGLISH)
 GetNamePointer::
 ; hl = this textbox's name string; bank switched to NamePointers.
+ELSE
+; Load name
+ENDC
 	ld a, BANK(NamePointers)
 	rst Bankswitch
+IF DEF(ENGLISH)
+ELSE
+	xor a
+	ld [wCharacterTilePos], a
+ENDC
 	ld de, NamePointers
 	ld a, [wTextNameID]
 	ld l, a
@@ -454,6 +510,7 @@ GetNamePointer::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+IF DEF(ENGLISH)
 	ret
 
 LoadTextName::
@@ -462,6 +519,7 @@ LoadTextName::
 	ld [wCharacterTilePos], a
 	call GetNamePointer
 	; falls through to RequestLoadCharacter_Name
+ENDC
 
 RequestLoadCharacter_Name::
 ; Used for names on textboxes
@@ -470,9 +528,17 @@ RequestLoadCharacter_Name::
 	ld a, [hli]
 	push hl
 	cp $f0
+IF DEF(ENGLISH)
 	jp nc, .switch_characterset
+ELSE
+	jr nc, .switch_characterset
+ENDC
 	cp TX_LINE
+IF DEF(ENGLISH)
 	jp z, .end_of_name
+ELSE
+	jr z, .end_of_name
+ENDC
 
 	ld [wCurrentCharacterByte], a
 	ld a, [wCharacterTilePos]
@@ -489,9 +555,11 @@ RequestLoadCharacter_Name::
 	ld a, b
 	and $f0
 	ld [wCharacterTileDest], a
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	jr nz, .english_name
+ENDC
 
 ; Get character tile source
 	ld a, [wCharacterTileSource]
@@ -522,6 +590,7 @@ ENDR
 	pop hl
 	jp RequestLoadCharacter_Name
 
+IF DEF(ENGLISH)
 .english_name
 	ld a, [wCurrentCharacterByte]
 	ld l, a
@@ -548,6 +617,7 @@ ENDR
 	pop hl
 	jp RequestLoadCharacter_Name
 
+ENDC
 .switch_characterset
 	call GetCharacterSetBase
 	pop hl
@@ -558,6 +628,7 @@ ENDR
 	ld a, BANK(NamePointers)
 	rst Bankswitch
 	ret
+IF DEF(ENGLISH)
 
 SingleRowNameCells::
 ; The static name area is column-major (top/bottom = consecutive tile ids), which
@@ -631,6 +702,7 @@ BlankNameCells::
 	dec c
 	jr nz, .bottom
 	jp ReblitTextbox
+ENDC
 
 Text_e1::
 ; Save current bank
@@ -703,14 +775,21 @@ ClearExtraSprites::
 	ret
 
 Text_ItemName::
+IF DEF(ENGLISH)
 	ld a, [_BANKNUM]
 	ldh [hFFD4], a ; host bank; Text_e4 restores it when the name returns
+ENDC
 	call ParseMapEventsAtPlayer
 	pop hl
+IF DEF(ENGLISH)
 ; item-name code+data live in $1e; a translated (repointed) host runs in a far bank,
 ; so map $1e explicitly instead of relying on SetMapLayoutPatchForItem's side effect
 	ld a, BANK(LoadItemNameByMapType)
 	rst Bankswitch
+ELSE
+; bank 1e set by SetMapLayoutPatchForItem
+; got item name
+ENDC
 	call LoadItemNameByMapType
 	ld a, [wTextStart]
 	ld l, a
@@ -720,13 +799,17 @@ Text_ItemName::
 	jp CheckCharacter
 
 Text_e4::
+IF DEF(ENGLISH)
 ; Resume the host message after an embedded item name. That name may have been a
 ; TX_FAR stub that left its own (far) bank mapped, so restore the host bank saved
 ; by the itemname handler in hFFD4 before reading on. Without this the host's own
 ; bytes are read from the wrong bank and the box floods with garbage.
+ENDC
 	pop hl
+IF DEF(ENGLISH)
 	ldh a, [hFFD4]
 	rst Bankswitch
+ENDC
 	ld a, [wSavedTextPos]
 	ld l, a
 	ld a, [wSavedTextPos + 1]
@@ -948,11 +1031,15 @@ Text_e9_Stub::
 	jp CheckCharacter
 
 Text_ItemName2::
+IF DEF(ENGLISH)
 	ld a, [_BANKNUM]
 	ldh [hFFD4], a ; host bank; Text_e4 restores it when the name returns
+ENDC
 	pop hl
+IF DEF(ENGLISH)
 	ld a, BANK(LoadShopItemName) ; item-name code+data live in $1e; a translated host is far
 	rst Bankswitch
+ENDC
 	call LoadShopItemName
 	ld a, [wTextStart]
 	ld l, a
@@ -962,11 +1049,15 @@ Text_ItemName2::
 	jp CheckCharacter
 
 Text_eb::
+IF DEF(ENGLISH)
 	ld a, [_BANKNUM]
 	ldh [hFFD4], a ; host bank; Text_e4 restores it when the name returns
+ENDC
 	pop hl
+IF DEF(ENGLISH)
 	ld a, BANK(LoadItemNameByIndex)
 	rst Bankswitch
+ENDC
 	call LoadItemNameByIndex
 	ld a, [wTextStart]
 	ld l, a

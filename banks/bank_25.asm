@@ -2308,6 +2308,7 @@ DrawSelectedOptionInfo::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
 	; clear the name region ($8d00, tiles $d0-$dc) so the previously selected
 	; name doesn't linger under the new one (mirrors the desc draw's clear)
 	ld hl, $8d00
@@ -2316,6 +2317,7 @@ DrawSelectedOptionInfo::
 	call ByteFillVRAM
 	call DelayFrame
 	ld hl, wMenuTextBuffer ; reload the string pointer (clobbered by the clear)
+ENDC
 	call PrintMenuText
 	xor a
 	ld [wBattleScriptByte], a

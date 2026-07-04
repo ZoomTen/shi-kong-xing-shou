@@ -1,4 +1,5 @@
 PrintMenuText::
+IF DEF(ENGLISH)
 ; Save/restore the ROM bank around the whole menu string. A tfarjump inside it
 ; switches banks; without this, control returns to the caller (e.g. the bank-25
 ; menu script processor) with the wrong bank loaded -> corrupted command stream.
@@ -9,6 +10,7 @@ PrintMenuText::
 	rst Bankswitch
 	ret
 .run
+ENDC
 	call DelayFrame
 	push hl
 
@@ -17,8 +19,10 @@ Menu_CheckCharacter::
 	pop hl
 	ld a, [hli]
 	push hl
+IF DEF(ENGLISH)
 	cp TX_FAR
 	jp z, MenuText_FarJump
+ENDC
 	cp $f0
 	jp nc, Menu_GetCharacterSetBase
 	cp $e0
@@ -111,30 +115,36 @@ MenuText_ClearBox::
 	call DelayFrame
 
 MenuText_ec::
+IF DEF(ENGLISH)
 ; English menu text uses `para` (from make_english's \n boxes) purely as a line
 ; break, so skip the wait-for-input prompt and the box clear -- the lines just
 ; flow. Chinese menus keep the original wait+clear behaviour.
 	ldh a, [hEnglishMode]
 	and a
 	jr nz, .english
+ENDC
 	call WaitTextboxInput
 	ld bc, $480
 	ld hl, $8b60
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
+IF DEF(ENGLISH)
 .english
 ; para is a line break here: round the tile cursor up to the next visual row
 ; ($24 tile ids = one 18-col row) rather than back to 0, which overwrites line 1.
 	ld a, [wCharacterTilePos]
 	ld b, a
+ENDC
 	xor a
+IF DEF(ENGLISH)
 .nextRow
 	cp b
 	jr nc, .gotRow
 	add $24
 	jr .nextRow
 .gotRow
+ENDC
 	ld [wCharacterTilePos], a
 	pop hl
 	push hl
@@ -233,9 +243,11 @@ Menu_CheckCharacter_Continue::
 	ld a, b
 	and $f0
 	ld [wCharacterTileDest], a
+IF DEF(ENGLISH)
 	ldh a, [hEnglishMode]
 	and a
 	jr nz, .english
+ENDC
 	ld a, [wCharacterTileSource]
 	ld e, a
 	ld a, [wCharacterTileSource + 1]
@@ -266,6 +278,7 @@ ENDR
 	xor a
 	ld [wCharacterTilePos], a
 	jp Menu_CheckCharacter
+IF DEF(ENGLISH)
 
 .english
 ; 1-tile English glyph from Charset_English (char*8), one tile, placed on the
@@ -304,3 +317,4 @@ ENDR
 	xor a
 	ld [wCharacterTilePos], a
 	jp Menu_CheckCharacter
+ENDC

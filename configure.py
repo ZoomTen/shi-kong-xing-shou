@@ -3,6 +3,12 @@ import os.path
 import glob
 import shutil
 
+# To build a matching baserom (hopefully):
+#   1. remove "repointed.o" from `objs`
+#   2. remove "lang_en" from `inc_dirs`
+#   3. remove "-I lang_en -D ENGLISH" from `asm_flags` (below)
+#   4. (optional) delete the lang_en/ overlay directory
+
 objs = [
   "home.o",
   "main.o",
@@ -17,24 +23,55 @@ objs = [
   "data/text.o",
   "multicart.o",
   "audio.o",
-  "repointed.o"
+  "repointed.o"   # EN overlay (strip #1)
 ]
 
 # for translation work
 inc_dirs = [
-  "lang_en",
+  "lang_en",      # EN overlay (strip #2)
   "lang_zh"
 ]
 
 # no really this is it, the `scan_includes` equivalent.
 dep_re = re.compile(r"(INCLUDE|INCBIN)\s+\"([^\"]+)\"", re.I)
+
+# Resolve `IF DEF(ENGLISH)` blocks the way rgbasm will, so english-only deps
+# (e.g. the english charset INCBIN, home/text_far.asm) are not scanned into the
+# Chinese build. Only the uppercase ENGLISH gate is evaluated; every other
+# conditional (macro `IF _NARG`/`ELIF`, lowercase `if`) is passed through so all
+# its branches are still scanned exactly as before.
+def resolve_english(text, english):
+  out = []
+  stack = []  # each frame: {"english": bool, "active": bool}
+  for ln in text.split("\n"):
+    s = ln.strip()
+    below = stack[-1]["active"] if stack else True
+    if s == "IF DEF(ENGLISH)":
+      stack.append({"english": True, "active": below and english}); continue
+    if s.startswith("IF ") or s == "IF":
+      stack.append({"english": False, "active": below}); continue
+    if s == "ELSE" and stack:
+      top = stack[-1]
+      par = stack[-2]["active"] if len(stack) > 1 else True
+      top["active"] = (par and not english) if top["english"] else par
+      continue
+    if s.startswith("ELIF") and stack:
+      stack[-1]["active"] = stack[-2]["active"] if len(stack) > 1 else True
+      continue
+    if s == "ENDC" and stack:
+      stack.pop(); continue
+    if all(fr["active"] for fr in stack):
+      out.append(ln)
+  return "\n".join(out)
+
 def find_deps(file_name, out_set, scanned_files):
   if file_name in scanned_files:
     return
   scanned_files.add(file_name)
   try:
     with open(file_name, "rb") as f:
-      incls = dep_re.findall(f.read().decode("latin-1"))
+      text = resolve_english(f.read().decode("latin-1"), "lang_en" in inc_dirs)
+      incls = dep_re.findall(text)
       for i in incls:
         incl_file = i[1]
         out_set.add(incl_file)
@@ -73,7 +110,7 @@ def which_binary(app):
 if __name__ == "__main__":
   all_deps = set()
   preamble = f"""
-asm_flags = -I lang_en -I lang_zh 
+asm_flags = -I lang_en -I lang_zh -D ENGLISH
 rom = shi_kong_xing_shou.gbc
 sym = shi_kong_xing_shou.sym
 map = shi_kong_xing_shou.map
