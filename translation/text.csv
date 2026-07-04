@@ -7,6 +7,7 @@ bank08_misc2,08,4519,,0,$1a,done,,嗯﹐找死﹗,"OK, I'll risk it!",0,0,
 ,08,4537,,0,$1a,getchoice String_1cd0,,嗯嗯嗯,"Hahaha
 
 ",0,0,
+battle_menu,2b,65dd,BattleMenu_HelpText,,,db $ed,1,攻擊道具交換逃跑,AtkMonBagRun,0,0,
 battle_messages,2d,4216,BattleText_4216,,,done,,"辰虎：師兄﹐一較高下吧﹗
 嚴龍：我不會輸給你的⚬
 辰虎：試過才知道﹗
