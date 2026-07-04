@@ -1,0 +1,3 @@
+@org $2b, $65dd (BattleMenu_HelpText):
+	text "攻擊道具交換逃跑";
+	db $ed;

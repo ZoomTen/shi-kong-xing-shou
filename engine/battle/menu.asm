@@ -184,7 +184,7 @@ BattleMenu_Jump_2::
 
 BattleMenu_PrintHelpBar::
 	call DelayFrame
-	ld hl, .Text
+	ld hl, BattleMenu_HelpText
 	ld a, $ab
 	ld [wMenuTextX], a
 	ld a, $ff
@@ -194,11 +194,7 @@ BattleMenu_PrintHelpBar::
 	call PrintMenuText
 	ret
 
-; 攻擊 道具 交換 逃跑 (Attack Item Switch Flee)
-.Text:
-	db $f0, $24, $07
-	db $f1, $2c, $2d, $2e, $2f, $30, $31
-	db $ed
+INCLUDE "text/battle_menu.asm"
 
 BattleMenu_Jump_3::
 	call RefreshBattleOAM
