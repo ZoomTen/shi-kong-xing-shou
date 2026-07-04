@@ -1,5 +1,0 @@
-@org $4f, $6281:
-	english;
-	init NAME_32, PIC_56;
-	text "...";
-	done;

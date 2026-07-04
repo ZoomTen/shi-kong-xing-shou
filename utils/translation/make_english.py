@@ -8,18 +8,23 @@ becomes one block:
     @org $bank, $addr (label):
         init NAME_x, PIC_y;     ; only when name/pic are set
         text "<first line>";
-        line "<next line>";     ; one per \\n in the en cell
+        line "<next line>";     ; single \\n = line break (text->line->cont...)
+        para "<new page>";      ; blank line (\\n\\n) = new textbox
         done;
 
 English line breaks come from 13-glyph line-limiting + automatic hyphenation
 (pyphen), ported from english2's tools/csv2asm.py, so a long English string is
 wrapped to fit the textbox the same way the real en build does. Author line
-breaks in the en cell (\\n) are honoured first, then each is wrapped.
+breaks are honoured first, then each line is wrapped. A single \\n is a line
+break within the box; a blank line (\\n\\n) opens a new textbox (para). Inline
+`<itemname2>`-style markers become their directive (see INLINE_COMMANDS).
 
 This is a translation *scaffold*, not a byte-exact rebuild. The CSV collapsed
 everything except name/pic and line breaks, so choices (getchoice), forcemap,
 raw db glyphs and the exact terminator (done vs return) are NOT recovered. init
-values are re-prefixed with NAME_/PIC_ unless they already start with `$`.
+values are re-prefixed with NAME_/PIC_ unless they already start with `$`. Inline
+command markers (`<itemname2>`, `⟨name⟩`, ...) in the en cell ARE emitted as
+their directives -- see INLINE_COMMANDS.
 
 Untranslated rows (empty `en`) are NOT reconstructed: their original block is
 copied *verbatim* from the matching source file under --source-dir (text/ or
@@ -37,7 +42,6 @@ import os
 import re
 import sys
 
-SEG_RE = re.compile(r'\\n|\n')   # split en on literal \n or a real newline
 WRAP_LIMIT = 13                  # glyphs per line (matches csv2asm.py)
 ORG_RE = re.compile(r'^@org \$([0-9a-fA-F]+), \$([0-9a-fA-F]+)')  # block header
 
@@ -57,6 +61,27 @@ CONTRACTIONS = {
     "'ï": "\U0001d48a", "'ü": "\U0001d496",
 }
 _HAVE_PYPHEN = importlib.util.find_spec('pyphen') is not None
+
+# Inline commands: a `<token>` or `⟨token⟩` in the en cell is emitted as the
+# mapped directive instead of wrapped as literal text, so a translated block can carry
+# the item-name / battle inserts that sit mid-string. Covers the dialog item-name
+# macros (itemname/itemname2) that gen_csv drops, and the raw control bytes it surfaces
+# as ⟨...⟩ tokens in the zh column. Both bracket styles are accepted.
+INLINE_COMMANDS = {
+    'itemname':  'itemname',   # $e3  dialog: item name
+    'itemname2': 'itemname2',  # $ea  dialog: item name (shop / found)
+    'name':      'db $e7',     # battle: insert name
+    'name2':     'db $e8',     # battle: insert name (variant)
+    'trainer':   'db $e9',     # battle: insert trainer name
+    'num':       'db $e1',     # battle: insert number
+    'e5':        'db $e5',     # raw control byte
+    'e6':        'db $e6',     # raw control byte
+}
+# <token> or ⟨token⟩; longest keys first so `itemname2` beats `itemname`.
+MARKER_RE = re.compile(
+    r'[<\u27e8](' +
+    '|'.join(sorted((re.escape(k) for k in INLINE_COMMANDS), key=len, reverse=True)) +
+    r')[>\u27e9]')
 
 
 def wrap(text, lang, warnings):
@@ -185,6 +210,67 @@ def inject_english(lines):
     return lines
 
 
+def emit_text_run(lines, text, nowrap, lang, warnings, starter, sub,
+                  keep_lead=False, keep_trail=False, append=False, menu=False):
+    """Wrap one text run and append its text/line/cont lines; return the new sub
+    count. `append` keeps the run's first piece on the current visual line (`text`),
+    for text that follows an inline marker so it does not force a new line. A space
+    touching an inline-command marker is preserved (e.g. `Found <itemname2>`)."""
+    if text == '':
+        return sub
+    # Strip ONLY the space touching a marker (carried by lead/trail); a marker-free
+    # run passes through unchanged so wrap() behaves exactly as before this feature.
+    lead = trail = ''
+    if keep_lead and text[:1] == ' ':
+        lead, text = ' ', text.lstrip(' ')
+    if keep_trail and text[-1:] == ' ':
+        trail, text = ' ', text.rstrip(' ')
+    work = text
+    for og, glyph in CONTRACTIONS.items():
+        work = work.replace(og, glyph)
+    pieces = [work.strip()] if nowrap else wrap(work, lang, warnings)
+    pieces = [p for p in pieces if p != '']
+    if not pieces:
+        if lead or trail:
+            if append:
+                lines.append('\ttext " ";')
+            else:
+                sub += 1
+                kw = starter if sub == 1 else ('para' if menu else 'line' if sub == 2 else 'cont')
+                lines.append('\t%s " ";' % kw)
+        return sub
+    out = []
+    for piece in pieces:
+        for og, glyph in CONTRACTIONS.items():
+            piece = piece.replace(glyph, og)
+        out.append(piece)
+    out[0] = lead + out[0]
+    out[-1] = out[-1] + trail
+    for i, piece in enumerate(out):
+        if append and i == 0:
+            kw = 'text'  # continue the current line after the marker, no forced break
+        else:
+            sub += 1
+            kw = starter if sub == 1 else ('para' if menu else 'line' if sub == 2 else 'cont')
+        lines.append('\t%s "%s";' % (kw, piece))
+    return sub
+
+
+def open_visual_line(lines, box, sub, menu):
+    """A marker is the first content of a new visual line, so emit the break directive a
+    leading text run would have carried. Box 1's line 1 is opened by the textbox itself,
+    so nothing. Menu blocks use `para` for every break. Returns sub."""
+    sub += 1
+    if sub == 1:
+        if box > 1:
+            lines.append('\tpara;')
+    elif menu:
+        lines.append('\tpara;')
+    else:
+        lines.append('\tline;' if sub == 2 else '\tcont;')
+    return sub
+
+
 def emit_block(row, lang, keep_zh_comment, mark_english=False):
     lines = []
     hdr = '@org $%s, $%s' % (row['bank'], row['addr'])
@@ -202,30 +288,43 @@ def emit_block(row, lang, keep_zh_comment, mark_english=False):
         zh = row.get('zh', '').replace('\\n', ' ').replace('\n', ' ')
         lines.append('\t# TODO untranslated -- zh: %s' % zh)
 
-    # count contraction glyphs as one column, restore them for display
-    work = en.replace('"', "'")
-    for og, glyph in CONTRACTIONS.items():
-        work = work.replace(og, glyph)
-
     # `nowrap` (any value) skips the 13-glyph wrap -- e.g. names, which are
     # rendered by readers that don't line-wrap; author \n breaks still apply.
     nowrap = bool(row.get('nowrap', ''))
-    # Each author `\n` segment after the first opens a new textbox (`para`);
-    # within a segment, wrapping yields `line`/`cont`. (Two `text`s in a row
-    # would just concatenate on one line.)
+    # Menu-read blocks (names/menu items/descriptions, terminated by `line`) reach the
+    # menu interpreter, where line=Done and cont=Skip -- only `para` is a line break
+    # there (MenuText_ec). So emit every break as `para` for them.
+    menu = (row.get('textend') or '').strip().startswith('line')
+    # Box/line structure: a blank line (`\n\n`) starts a new textbox (`para`); a single
+    # `\n` forces a line break within the box, walking text -> line -> cont -> cont...
+    # just as the 13-glyph auto-wrap does. Inline-command markers (`<itemname2>`) are
+    # emitted as their own directive, splitting the surrounding text. Literal `\\n` in
+    # the cell is accepted as a newline too.
+    en_quoted = en.replace('\\n', '\n').replace('"', "'")
     box = 0
-    for seg in SEG_RE.split(work):
+    for para_seg in en_quoted.split('\n\n'):
         box += 1
-        starter = 'para' if box > 1 else 'text'
         warnings = []
-        pieces = [seg.strip()] if nowrap else wrap(seg, lang, warnings)
         sub = 0
-        for piece in pieces:
-            for og, glyph in CONTRACTIONS.items():
-                piece = piece.replace(glyph, og)
-            sub += 1
-            kw = starter if sub == 1 else ('line' if sub == 2 else 'cont')
-            lines.append('\t%s "%s";' % (kw, piece))
+        for line_seg in para_seg.split('\n'):
+            line_content = False  # has this visual line's opening directive been emitted?
+            pos = 0
+            for m in MARKER_RE.finditer(line_seg):
+                starter = 'para' if box > 1 and sub == 0 else 'text'
+                before = sub
+                sub = emit_text_run(lines, line_seg[pos:m.start()], nowrap, lang, warnings,
+                                    starter, sub, keep_lead=pos > 0, keep_trail=True,
+                                    append=pos > 0, menu=menu)
+                if sub > before:
+                    line_content = True
+                if not line_content:
+                    sub = open_visual_line(lines, box, sub, menu)  # marker leads the line
+                    line_content = True
+                lines.append('\t%s;' % INLINE_COMMANDS[m.group(1)])
+                pos = m.end()
+            starter = 'para' if box > 1 and sub == 0 else 'text'
+            sub = emit_text_run(lines, line_seg[pos:], nowrap, lang, warnings,
+                                starter, sub, keep_lead=pos > 0, append=pos > 0, menu=menu)
         for w in warnings:
             lines.append('\t# %s' % w)
     # `textend` is the block's terminating command, derived per-block from the

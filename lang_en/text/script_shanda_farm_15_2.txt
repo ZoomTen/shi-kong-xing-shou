@@ -1,9 +1,0 @@
-@org $12, $686f:
-	english;
-	init NAME_BLANK, PIC_16;
-	text "It's coffee";
-	line "season, we";
-	cont "have to hurry";
-	cont "and harvest";
-	cont "it!";
-	done;

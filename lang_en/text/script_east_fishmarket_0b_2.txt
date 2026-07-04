@@ -1,7 +1,0 @@
-@org $55, $5fc7:
-	english;
-	init NAME_BLANK, PIC_16;
-	text "This is";
-	line "Dongyu Town's";
-	cont "town square.";
-	done;

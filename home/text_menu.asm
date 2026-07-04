@@ -124,7 +124,17 @@ MenuText_ec::
 	call ByteFillVRAM
 	call DelayFrame
 .english
+; para is a line break here: round the tile cursor up to the next visual row
+; ($24 tile ids = one 18-col row) rather than back to 0, which overwrites line 1.
+	ld a, [wCharacterTilePos]
+	ld b, a
 	xor a
+.nextRow
+	cp b
+	jr nc, .gotRow
+	add $24
+	jr .nextRow
+.gotRow
 	ld [wCharacterTilePos], a
 	pop hl
 	push hl

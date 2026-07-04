@@ -1,3 +1,0 @@
-@org $00, $1d59 (Std_BuySellCancel_String):
-	text " 買 賣 取消";
-	buysellcancel_menu;

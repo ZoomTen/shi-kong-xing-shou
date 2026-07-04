@@ -1,6 +1,6 @@
 # compiled objects
 *.o
-lang_en/text/*.asm
+lang_en/text/*
 lang_zh/text/*.asm
 /repointed.asm
 

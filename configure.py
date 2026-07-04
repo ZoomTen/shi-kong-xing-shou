@@ -116,6 +116,10 @@ rule TEXT
   command = {which_binary("python3")} {which_binary("tools/tx_parse.py")} $in > $out
   description = TEXT $in
 
+rule MAKE_ENGLISH
+  command = {which_binary("python3")} utils/translation/make_english.py --csv $in
+  description = Generate English text from $in
+
 rule REPOINT
   command = {which_binary("python3")} utils/translation/repoint.py --repointed repointed.asm $in
   description = Generate all translated text
@@ -225,12 +229,24 @@ rule TMX
     except AttributeError:
       pass
 
-  # One REPOINT pass converts every translated block in the English text into an
-  # in-bank `tfarjump` stub and emits its body into repointed.asm (its own
-  # object, sections auto-placed by rgblink). $in = the .txt sources.
   if en_text:
     en_text = sorted(set(en_text))
     asm_outs = " ".join(en_text)
-    txt_ins = " ".join(os.path.splitext(a)[0] + ".txt" for a in en_text)
+    txt_outs = [os.path.splitext(a)[0] + ".txt" for a in en_text]
+    txt_ins = " ".join(txt_outs)
+
+    # One MAKE_ENGLISH pass rebuilds every English .txt from the filled-in
+    # translation CSV (make_english writes them all in a single invocation).
+    # Implicit deps: the tool itself and the lang_zh source blocks it copies
+    # verbatim for untranslated rows.
+    zh_srcs = [t.replace("lang_en/", "lang_zh/", 1) for t in txt_outs]
+    zh_srcs = [s for s in zh_srcs if os.path.exists(s)]
+    print("build %s: MAKE_ENGLISH translation/text.csv | "
+          "utils/translation/make_english.py %s"
+          % (txt_ins, " ".join(zh_srcs)))
+
+    # One REPOINT pass converts every translated block in the English text into
+    # an in-bank `tfarjump` stub and emits its body into repointed.asm (its own
+    # object, sections auto-placed by rgblink). $in = the .txt sources above.
     print("build %s repointed.asm: REPOINT %s | utils/translation/repoint.py "
           "tools/tx_parse.py charmap.asm" % (asm_outs, txt_ins))

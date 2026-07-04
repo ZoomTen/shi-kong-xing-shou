@@ -1,7 +1,0 @@
-@org $4f, $4356:
-	init NAME_BALLOT, PIC_BALLOT_3;
-	text "嗚～好痛﹗";
-	cont "被這種草刺到﹐";
-	line "就像被針刺到一";
-	line "樣﹗";
-	done;

@@ -1,9 +1,0 @@
-@org $08, $4ef4:
-	english;
-	init NAME_BLANK, PIC_15;
-	text "Are you here";
-	line "to see";
-	cont "Fangfang? She";
-	cont "went to";
-	cont "school~";
-	done;

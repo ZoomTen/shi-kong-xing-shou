@@ -1,5 +1,0 @@
-@org $67, $6fc9:
-	init NAME_31, PIC_5A;
-	text "需要治療嗎﹖";
-	line "";
-	getchoice String_1cc5;

@@ -1,4 +1,0 @@
-@org $67, $6f65:
-	init NAME_31, PIC_5A;
-	text "⋯⋯⋯";
-	done;

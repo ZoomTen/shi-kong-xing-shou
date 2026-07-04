@@ -1,7 +1,0 @@
-@org $08, $4eb0:
-	english;
-	init NAME_BLANK, PIC_22;
-	text "Hi, Ballot!";
-	line "Hayato's gone";
-	cont "to school.";
-	done;

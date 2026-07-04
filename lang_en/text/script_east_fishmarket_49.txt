@@ -1,7 +1,0 @@
-@org $5c, $5035:
-	init NAME_BLANK, PIC_1B;
-	text "我曾看過人魚喲";
-	line "";
-	db $f3, $1e; #"長"
-	text "得還真是漂亮";
-	done;

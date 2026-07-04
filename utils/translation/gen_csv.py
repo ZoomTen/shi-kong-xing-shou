@@ -19,7 +19,7 @@ Columns: file, bank, addr, label, name, pic, zh, en, deepl, checked
                  (the `NAME_`/`PIC_` prefix stripped), else blank; not carried
                  across blocks
   - zh         : the source Chinese, reconstructed from the quoted text plus
-                 `db ... ; #"X"` glyphs; line/cont/para breaks become `\\n`
+                 `db ... ; #"X"` glyphs; line/cont breaks become `\\n`, para `\\n\\n`
   - en         : human translation (blank on fresh generation; carried on merge)
   - deepl      : machine draft (blank; carried on merge)
   - checked    : review flag (blank; carried on merge)
@@ -112,8 +112,10 @@ def reconstruct_zh(body_lines, brk):
                 parts.append(t.group(1))
             # other db (control bytes / notes) contribute nothing
             continue
-        if directive in BREAK_DIRECTIVES:
-            parts.append(brk)
+        if directive == 'para':
+            parts.append(brk + brk)   # blank line between textboxes
+        elif directive in BREAK_DIRECTIVES:
+            parts.append(brk)         # line / cont -> a single break
         parts.extend(QUOTE_RE.findall(line))
     zh = ''.join(parts)
     # trim leading/trailing break markers produced by lone line;/para; etc.

@@ -1,8 +1,0 @@
-@org $4f, $407f:
-	init NAME_14, PIC_25;
-	text "需要妮可治療嗎";
-	line "";
-	db $f1, $5d; #"﹖"
-	text "";
-	line "";
-	getchoice String_1cc5;

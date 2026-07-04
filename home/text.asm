@@ -383,11 +383,27 @@ Text_Init::
 	; mode for the body text.
 	ldh a, [hEnglishMode]
 	push af
+	; An English name (first byte = the `english` control code $ff) draws scrambled
+	; if it goes up during the open animation: its glyphs load compactly to $e0..
+	; but the static name cells are column-major. Defer the glyph load until the box
+	; is open and the cells are single-row, so the name only ever appears correct.
+	; Chinese names keep the load-then-open path; their 2x2 cells match column-major.
+	call GetNamePointer
+	ld a, [hl]
+	cp $ff
+	jr nz, .chineseName
+	call ClearNameTiles
+	ld a, BANK(AnimateTextboxOpen) ; ClearNameTiles/DelayFrame may leave another bank
+	rst Bankswitch
+	call AnimateTextboxOpen
+	call BlankNameCells ; hide the name slot so the per-glyph load below is invisible
+	call LoadTextName ; stream the glyphs into $e0.. behind the blank cells
+	call SingleRowNameCells ; flip the cells to the glyphs, revealing the whole name
+	jr .nameDrawn
+.chineseName
 	call LoadTextName
 	call AnimateTextboxOpen
-	ldh a, [hEnglishMode]
-	and a
-	call nz, SingleRowNameCells
+.nameDrawn
 	pop af
 	ldh [hEnglishMode], a
 	call BuildVirtualOAM
@@ -416,19 +432,19 @@ Text_Init::
 	ld [wCharacterTilePos], a
 	jp CheckCharacter
 
-LoadTextName::
-; Clear old name buffer
+ClearNameTiles::
+; Blank the 16-tile name glyph region ($e0..$ef) at $8e00.
 	ld bc, $10 tiles
 	ld hl, $8e00
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
+	ret
 
-; Load name
+GetNamePointer::
+; hl = this textbox's name string; bank switched to NamePointers.
 	ld a, BANK(NamePointers)
 	rst Bankswitch
-	xor a
-	ld [wCharacterTilePos], a
 	ld de, NamePointers
 	ld a, [wTextNameID]
 	ld l, a
@@ -438,6 +454,14 @@ LoadTextName::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	ret
+
+LoadTextName::
+	call ClearNameTiles
+	xor a
+	ld [wCharacterTilePos], a
+	call GetNamePointer
+	; falls through to RequestLoadCharacter_Name
 
 RequestLoadCharacter_Name::
 ; Used for names on textboxes
@@ -536,10 +560,10 @@ ENDR
 	ret
 
 SingleRowNameCells::
-; An English name loaded its glyphs compactly to $e0,$e1,... The static name
-; area is column-major (top/bottom = consecutive ids) and would stack them, so
-; rewrite it as a single row -- top cols 5..18 = the glyph tiles then $a0
-; padding, bottom row = $a0 -- and re-blit the textbox to VRAM.
+; The static name area is column-major (top/bottom = consecutive tile ids), which
+; stacks an English name's compact glyphs. Rewrite it as a single row: top cols
+; 5..18 point at the 14 consecutive glyph ids $e0..$ed, bottom row is blank. Called
+; before the glyphs load, so columns past the name land on cleared (blank) tiles.
 	ld a, [wTextboxPointer]
 	ld l, a
 	ld a, [wTextboxPointer + 1]
@@ -547,21 +571,11 @@ SingleRowNameCells::
 	push hl
 	decoord 5, 1, NULL ; name top row (col 5, row 1)
 	add hl, de
-	ld a, [wCharacterTilePos] ; name length (advance-1)
-	ld b, a
 	ld c, 14 ; name columns 5..18
 	ld e, $e0 ; first glyph tile id
 .top
-	ld a, b
-	and a
-	jr z, .top_blank
 	ld a, e
 	inc e
-	dec b
-	jr .top_put
-.top_blank
-	ld a, $a0
-.top_put
 	ld [hli], a
 	dec c
 	jr nz, .top
@@ -574,7 +588,10 @@ SingleRowNameCells::
 	ld [hli], a
 	dec c
 	jr nz, .bottom
-; re-blit the box (replicates AnimateTextboxOpen's final copy)
+	jp ReblitTextbox
+
+ReblitTextbox::
+; Copy the textbox tilemap buffer to VRAM, as AnimateTextboxOpen's final copy does.
 	ld a, [wTextboxPos]
 	and a
 	jr z, .pos0
@@ -586,6 +603,34 @@ SingleRowNameCells::
 	call GetTextBGMapPointer
 	call CopyTextboxToVRAM
 	ret
+
+BlankNameCells::
+; Point every name cell (top and bottom rows, cols 5..18) at the blank tile $a0 and
+; re-blit. The glyphs streamed in afterward stay hidden until SingleRowNameCells
+; flips the cells to them, so the name appears at once instead of typing in.
+	ld a, [wTextboxPointer]
+	ld l, a
+	ld a, [wTextboxPointer + 1]
+	ld h, a
+	push hl
+	decoord 5, 1, NULL
+	add hl, de
+	ld c, 14
+	ld a, $a0
+.top
+	ld [hli], a
+	dec c
+	jr nz, .top
+	pop hl
+	decoord 5, 2, NULL
+	add hl, de
+	ld c, 14
+	ld a, $a0
+.bottom
+	ld [hli], a
+	dec c
+	jr nz, .bottom
+	jp ReblitTextbox
 
 Text_e1::
 ; Save current bank
@@ -658,10 +703,14 @@ ClearExtraSprites::
 	ret
 
 Text_ItemName::
+	ld a, [_BANKNUM]
+	ldh [hFFD4], a ; host bank; Text_e4 restores it when the name returns
 	call ParseMapEventsAtPlayer
 	pop hl
-; bank 1e set by SetMapLayoutPatchForItem
-; got item name
+; item-name code+data live in $1e; a translated (repointed) host runs in a far bank,
+; so map $1e explicitly instead of relying on SetMapLayoutPatchForItem's side effect
+	ld a, BANK(LoadItemNameByMapType)
+	rst Bankswitch
 	call LoadItemNameByMapType
 	ld a, [wTextStart]
 	ld l, a
@@ -671,7 +720,13 @@ Text_ItemName::
 	jp CheckCharacter
 
 Text_e4::
+; Resume the host message after an embedded item name. That name may have been a
+; TX_FAR stub that left its own (far) bank mapped, so restore the host bank saved
+; by the itemname handler in hFFD4 before reading on. Without this the host's own
+; bytes are read from the wrong bank and the box floods with garbage.
 	pop hl
+	ldh a, [hFFD4]
+	rst Bankswitch
 	ld a, [wSavedTextPos]
 	ld l, a
 	ld a, [wSavedTextPos + 1]
@@ -893,7 +948,11 @@ Text_e9_Stub::
 	jp CheckCharacter
 
 Text_ItemName2::
+	ld a, [_BANKNUM]
+	ldh [hFFD4], a ; host bank; Text_e4 restores it when the name returns
 	pop hl
+	ld a, BANK(LoadShopItemName) ; item-name code+data live in $1e; a translated host is far
+	rst Bankswitch
 	call LoadShopItemName
 	ld a, [wTextStart]
 	ld l, a
@@ -903,7 +962,11 @@ Text_ItemName2::
 	jp CheckCharacter
 
 Text_eb::
+	ld a, [_BANKNUM]
+	ldh [hFFD4], a ; host bank; Text_e4 restores it when the name returns
 	pop hl
+	ld a, BANK(LoadItemNameByIndex)
+	rst Bankswitch
 	call LoadItemNameByIndex
 	ld a, [wTextStart]
 	ld l, a

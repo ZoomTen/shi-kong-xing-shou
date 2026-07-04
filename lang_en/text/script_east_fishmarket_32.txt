@@ -1,6 +1,0 @@
-@org $55, $53ae:
-	english;
-	init NAME_19, PIC_22;
-	text "Do you need";
-	line "something?";
-	done;

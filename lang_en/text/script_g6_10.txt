@@ -1,8 +1,0 @@
-@org $6c, $64f3:
-	init NAME_DR_LEO, PIC_DR_LEO;
-	text "巴洛特﹐趕快找";
-	line "出發生故障的原";
-	cont "因⚬";
-	para "我設法穩住機身";
-	line "快﹗";
-	done;

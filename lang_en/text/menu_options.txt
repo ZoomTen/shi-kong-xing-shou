@@ -1,9 +1,0 @@
-@org $00, $1cc5 (String_1cc5):
-	text "  是  否";
-	choice;
-
-@org $00, $1cd0 (String_1cd0):
-	text "  回春 ";
-	db $f0, $68; #"靈"
-	text "動";
-	choice;
