@@ -219,7 +219,7 @@ Script_024_4162::
 	bs_print_text_xy String_025_60a9, $a9, $fd
 	bs_vram_copy3 $0090, $8a00, BattleUIGFX_476a
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_place_tile_attr $0d00, Attrmap_4a_5745, Tilemap_4a_56ef
+	bs_place_tile_attr $0d00, Tilemap_4a_5745, Attrmap_4a_56ef
 	bs_set_sprite_pos $18, $76
 	bs_save_palbuf
 	bs_end_script
@@ -232,7 +232,7 @@ Script_024_4181::
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
 	bs_load_mon_pic $93e0
@@ -257,7 +257,7 @@ Script_024_41c1::
 Script_024_41cb::
 	bs_place_tile_attr $0d0c, Tilemap_4a_7f7f, Attrmap_4a_7fab
 	bs_print_text_xy String_025_6099, $a0, $fd
-	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5905, Attrmap_4a_579b
 	bs_print_hp
 	bs_print_all_stats
 	bs_draw_status_2
@@ -338,7 +338,7 @@ Script_024_42cb::
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
 	bs_load_mon_pic $93e0
@@ -387,7 +387,7 @@ Script_024_4355::
 	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_load_mon_bgpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -539,7 +539,7 @@ Script_024_4564::
 	bs_load_map_bg
 	bs_vram_copy3 $0090, $8a00, BattleUIGFX_476a
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_place_tile_attr $0d00, Attrmap_4a_5745, Tilemap_4a_56ef
+	bs_place_tile_attr $0d00, Tilemap_4a_5745, Attrmap_4a_56ef
 	bs_set_sprite_pos $18, $76
 	bs_print_text_xy String_025_60a9, $a9, $fd
 	bs_load_menu_entry_n $01
@@ -549,14 +549,14 @@ Script_024_4564::
 	bs_end_script3
 Script_024_4589::
 	bs_clear_bgbox $07, $06
-	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_place_tile_attr $0009, Tilemap_4a_5c8f, Attrmap_4a_5bd9
 	bs_print_hp
 	bs_select_menu $02
-	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_place_tile_attr $0009, Tilemap_4a_5c8f, Attrmap_4a_5bd9
 	bs_print_hp
 	bs_select_menu $02
 Script_024_45a0::
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_print_text_xy String_025_60b7, $a0, $fd
 	bs_draw_status_icons
@@ -572,7 +572,7 @@ Script_024_45b0::
 	bs_set_cursor
 	bs_end_script3
 Script_024_45c2::
-	bs_place_tile_attr $0000, Attrmap_4a_5905, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5905, Attrmap_4a_579b
 	bs_print_text_xy String_025_6099, $a0, $fd
 	bs_print_hp
 	bs_print_all_stats
@@ -670,7 +670,7 @@ Script_024_467d::
 	bs_lcd_on_loadpal
 	bs_end_script3
 Script_024_46bf::
-	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_place_tile_attr $0009, Tilemap_4a_5c8f, Attrmap_4a_5bd9
 	bs_print_hp
 	bs_draw_status_2
 	bs_draw_s_42ba
@@ -682,7 +682,7 @@ Script_024_46cb::
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
 	bs_load_mon_pic $93e0
@@ -697,7 +697,7 @@ Script_024_46f5::
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_load_mon_bgpal $06
 	bs_load_mon_pic $93e0
@@ -707,7 +707,7 @@ Script_024_46f5::
 	bs_draw_s_42ba
 	bs_end_script3
 Script_024_471d::
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_place_tile_attr $000c, Tilemap_4a_61ad, Attrmap_4a_6227
 	bs_print_menu_pg_a $04
@@ -720,13 +720,13 @@ Script_024_473b::
 	bs_place_tile_attr $000c, Tilemap_4a_62a1, Attrmap_4a_6227
 	bs_end_script3
 	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_end_script3
 Script_024_475c::
 	bs_lcd_off_loadpal
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_draw_status_2
 	bs_draw_s_42ba
@@ -739,7 +739,7 @@ Script_024_4771::
 	bs_draw_w_4745
 	bs_end_script3
 Script_024_4775::
-	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_place_tile_attr $0009, Tilemap_4a_5c8f, Attrmap_4a_5bd9
 	bs_clear_bgbox_at $06, $0c, $9824
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_draw_party_list
@@ -1491,7 +1491,7 @@ StartMenu_GiveItemScreen::
 	ld [hli], a
 	ret
 Script_024_4e77::
-	bs_place_tile_attr $0009, Attrmap_4a_5c8f, Tilemap_4a_5bd9
+	bs_place_tile_attr $0009, Tilemap_4a_5c8f, Attrmap_4a_5bd9
 	bs_load_mon_objpal $06
 	bs_load_mon_pic $93e0
 	bs_print_mon_name $62, $6e
@@ -4710,7 +4710,7 @@ StartMenu_PartyStatsPage1::
 	ldh [hFFC6], a
 	ret
 Script_024_66ca::
-	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Tilemap_4a_579b
+	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_print_text_xy String_025_60be, $a0, $fd
 	bs_draw_status_icons
