@@ -84,7 +84,139 @@ MARKER_RE = re.compile(
     r')[>\u27e9]')
 
 
+# --- VWF pixel-aware wrapping (Pass 3) ------------------------------------
+# Wrap by summed VWF advance widths (english_vwf_widths.asm, the same table the ROM
+# uses) instead of a flat glyph count, so proportional lines fill the 14-tile box.
+WRAP_PX = 110   # per-line pixel budget (14-tile text area = 112px; ~2px margin)
+
+
+def _load_char_px():
+    """char / contraction-placeholder -> VWF advance width in px. Reads the generated
+    english_vwf_widths.asm (code->width) + the english charmap (token->code); no PIL
+    needed. Returns None on any failure so wrap() falls back to the glyph-count wrap."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    repo = os.path.dirname(os.path.dirname(here))
+    wpath = os.path.join(repo, "lang_en", "gfx", "character_set", "english_vwf_widths.asm")
+    cpath = os.path.join(repo, "charmap.asm")
+    try:
+        widths, started = [], False
+        with open(wpath, encoding="utf-8", errors="replace") as f:
+            for ln in f:
+                if "VWFWidths::" in ln:
+                    started = True
+                    continue
+                if not started:
+                    continue
+                m = re.match(r"\s*db\s+(.+)", ln)
+                if not m:
+                    if widths:
+                        break
+                    continue
+                for tok in m.group(1).split(","):
+                    tok = tok.strip().split(";")[0].strip()
+                    if tok.startswith("$"):
+                        widths.append(int(tok[1:], 16))
+        cm, in_en = {}, False
+        with open(cpath, encoding="utf-8", errors="replace") as f:
+            for ln in f:
+                s = ln.strip()
+                if s.startswith("NEWCHARMAP english"):
+                    in_en = True
+                    continue
+                if in_en and s.startswith("NEWCHARMAP"):
+                    break
+                if not in_en:
+                    continue
+                m = re.match(r'charmap\s+"(.*)",\s*\$([0-9a-fA-F]+)', s)
+                if m:
+                    cm[m.group(1)] = int(m.group(2), 16)
+        if not widths or not cm:
+            return None
+        px = {}
+        for tok, code in cm.items():
+            if code < len(widths):
+                px[tok] = widths[code]
+        for og, glyph in CONTRACTIONS.items():
+            if og in cm and cm[og] < len(widths):
+                px[glyph] = widths[cm[og]]
+        return px
+    except (OSError, ValueError):
+        return None
+
+
+CHAR_PX = _load_char_px()
+_DEFAULT_PX = 6
+_HYPHEN_PX = (CHAR_PX or {}).get("-", 3)
+
+
+def _line_px(s):
+    return sum(CHAR_PX.get(ch, _DEFAULT_PX) for ch in s)
+
+
+def _hyph_fragments(word, wrapper):
+    """Break an over-long word into hyphenated fragments, each <= WRAP_PX px."""
+    pts = sorted(set([0] + list(wrapper.positions(word)) + [len(word)]))
+    frags, start = [], 0
+    while start < len(word):
+        best = None
+        for p in pts:
+            if p <= start:
+                continue
+            last = (p == len(word))
+            if _line_px(word[start:p]) + (0 if last else _HYPHEN_PX) <= WRAP_PX:
+                best = p
+            elif best is not None:
+                break
+        if best is None:
+            nxt = [p for p in pts if p > start]
+            best = nxt[0] if nxt else len(word)
+        last = (best == len(word))
+        frags.append(word[start:best] + ("" if last else "-"))
+        start = best
+    return frags
+
+
 def wrap(text, lang, warnings):
+    """Pixel-aware greedy word wrap using VWF advance widths (WRAP_PX budget).
+    Contractions arrive as single-char placeholders. Falls back to the legacy
+    glyph-count wrap (_wrap_count) if the VWF width table is unavailable."""
+    if CHAR_PX is None:
+        return _wrap_count(text, lang, warnings)
+    wrapper = None
+    if _HAVE_PYPHEN:
+        import pyphen
+        wrapper = pyphen.Pyphen(lang=pyphen.language_fallback(lang))
+    lines = [""]
+    for word in re.split(r" +", text):
+        if word == "":
+            continue
+        cand = word if lines[-1] == "" else lines[-1] + " " + word
+        if _line_px(cand) <= WRAP_PX:
+            lines[-1] = cand
+            continue
+        if lines[-1] != "" and _line_px(word) <= WRAP_PX:
+            lines.append(word)
+            continue
+        if lines[-1] != "":
+            lines.append("")
+        if wrapper:
+            warnings.append("XXX Automatic hyphenation, please check")
+            for k, frag in enumerate(_hyph_fragments(word, wrapper)):
+                if k == 0:
+                    lines[-1] = frag
+                else:
+                    lines.append(frag)
+        else:
+            warnings.append("XXX pyphen not installed, long word may clip!")
+            lines[-1] = word
+    lines = [l for l in lines if l != ""]
+    over = [l for l in lines if _line_px(l) > WRAP_PX]
+    if over:
+        warnings.append("XXX Text overflows (px>%d) on: %r" % (WRAP_PX, over))
+    return lines
+
+
+def _wrap_count(text, lang, warnings):
     """13-glyph line limit + pyphen auto-hyphenation. Ported from csv2asm.py.
 
     Appends any `XXX` advisories to `warnings` instead of printing them, so the

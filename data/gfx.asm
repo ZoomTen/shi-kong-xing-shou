@@ -497,4 +497,5 @@ IF DEF(ENGLISH)
 
 SECTION "charset english", ROMX
 Charset_English:: INCBIN "gfx/character_set/english.1bpp"
+VWF_Charset_English:: INCBIN "gfx/character_set/english_vwf.1bpp"
 ENDC

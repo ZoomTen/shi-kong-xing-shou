@@ -96,6 +96,11 @@ ENDC
 
 CheckCharacter_Continue::
 	ld [wCurrentCharacterByte], a
+IF DEF(ENGLISH)
+	ldh a, [hEnglishMode]
+	and a
+	jp nz, VWF_PrintChar
+ENDC
 	call RequestLoadCharacter_wTilemap
 
 .check_delay
@@ -470,6 +475,9 @@ ENDC
 	ld [wCharacterTilemapPos], a
 	ld [wTextLine], a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	call VWF_ResetLine
+ENDC
 	jp CheckCharacter
 
 IF DEF(ENGLISH)
@@ -592,6 +600,8 @@ ENDR
 
 IF DEF(ENGLISH)
 .english_name
+	ld a, BANK(Charset_English)
+	ld [hTargetBank], a
 	ld a, [wCurrentCharacterByte]
 	ld l, a
 	ld h, 0
@@ -608,10 +618,10 @@ IF DEF(ENGLISH)
 	ld [wCharacterTileCount], a
 	ld a, 1
 	ld [wCharacterTileTransferStatus], a
+	xor a
+	ldh [hVBlank], a
 	call DelayFrame
 	ld a, [wCharacterTilePos]
-	; advance by 1: glyphs load compactly to $e0,$e1,$e2,...; SingleRowNameCells
-	; then maps them to adjacent top cells (cols 5+) with blank bottoms.
 	add 1
 	ld [wCharacterTilePos], a
 	pop hl
@@ -742,9 +752,15 @@ Text_e1::
 	ld [wCharacterTilemapPos], a
 	ld [wTextLine], a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	call VWF_ResetLine
+ENDC
 	jp CheckCharacter
 
 Text_End::
+IF DEF(ENGLISH)
+	call VWF_FlushPartial
+ENDC
 	call WaitTextboxInput
 
 Text_EndCont::
@@ -1067,6 +1083,9 @@ ENDC
 	jp CheckCharacter
 
 Text_Paragraph::
+IF DEF(ENGLISH)
+	call VWF_FlushPartial
+ENDC
 	call WaitTextboxInput
 	call ClearTextboxTilemap
 	call UpdateTextBGMap
@@ -1074,6 +1093,9 @@ Text_Paragraph::
 	ld [wCharacterTilemapPos], a
 	ld [wTextLine], a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	call VWF_ResetLine
+ENDC
 	jp CheckCharacter
 
 ClearTextboxTilemap::
@@ -1096,6 +1118,9 @@ ClearTextboxTilemap::
 	ret
 
 Text_NextLine::
+IF DEF(ENGLISH)
+	call VWF_FlushPartial
+ENDC
 	xor a
 	ld [wCharacterTilemapPos], a
 
@@ -1274,6 +1299,9 @@ ScrollTextboxUp::
 	ret
 
 Text_Cont::
+IF DEF(ENGLISH)
+	call VWF_FlushPartial
+ENDC
 	call WaitTextboxInput
 	jp Text_NextLine
 

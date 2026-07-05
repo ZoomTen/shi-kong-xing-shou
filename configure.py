@@ -85,6 +85,15 @@ def find_deps(file_name, out_set, scanned_files):
 def override_deps(in_set):
   r = set()
   for i in in_set:
+    # English text is GENERATED into lang_en/text (make_english + repoint) from the
+    # lang_zh/*.txt source, so resolve a bare text/*.asm include to lang_en even before the
+    # stub exists -- otherwise a freshly-cleaned tree falls through to lang_zh and configure
+    # emits no REPOINT rule. Baserom build (no lang_en in inc_dirs) is unaffected; and when
+    # the stub already exists this matches the old lang_en-first resolution.
+    if ("lang_en" in inc_dirs and i.startswith("text/") and i.endswith(".asm")
+        and glob.glob("lang_zh/%s.txt" % os.path.splitext(i)[0])):
+      r.add("lang_en/" + i)
+      continue
     ok = 0
     for inc_dir in inc_dirs:
       k = "%s/%s" % (inc_dir, os.path.splitext(i)[0])
@@ -232,7 +241,7 @@ rule TMX
       src = i.replace(".1bpp", ".png")
       x = interleave_gfx_re.match(i)
       if x:
-        if x.group(1) == "character_set" and x.group(2) != "english.1bpp":
+        if x.group(1) == "character_set" and not x.group(2).startswith("english"):
           gfx_opts = "--interleave"
       if gfx_opts != "":
         print("build %s: 1BPP_GFX %s\n  gfx = %s" % (i, src, gfx_opts))

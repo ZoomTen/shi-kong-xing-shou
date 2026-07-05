@@ -51,7 +51,17 @@ wc0a0:: ds $10
 
 wBGMapBufferPointers:: ds $38
 
-wc0e8:: ds $18
+; English VWF rolling window of 2 tiles
+wVWFWindow::
+wVWFBufferTile1:: ds 8
+; once Tile1 is sent to VRAM, this is moved to Tile1
+wVWFBufferTile2:: ds 8
+wVWFWindowEnd::
+
+; sub-tile pixel cursor
+wVWFSubX:: ds 1
+
+	ds 7
 
 wMapLayout:: ds $640
 
