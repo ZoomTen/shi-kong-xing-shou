@@ -317,6 +317,16 @@ BattleIntro_PrintNameText::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	; clear the name region ($9550, tiles $55-$61) so a shorter proportional name
+	; doesn't leave the tail of the previously shown wider one
+	ld hl, $9550
+	ld bc, $00c0
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	ld hl, wMenuTextBuffer ; reload the string pointer (clobbered by the clear)
+ENDC
 	call PrintMenuText
 	ret
 

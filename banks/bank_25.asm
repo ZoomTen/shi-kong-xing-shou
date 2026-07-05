@@ -2269,6 +2269,17 @@ LoadPlayerCharGfxPrintText::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	; clear the name region ($9700, tiles $70-$7c) so a shorter proportional name
+	; doesn't leave the tail of the previously shown wider one (mirrors
+	; DrawSelectedOptionInfo)
+	ld hl, $9700
+	ld bc, $00c0
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	ld hl, wMenuTextBuffer ; reload the string pointer (clobbered by the clear)
+ENDC
 	call PrintMenuText
 	xor a
 	ld [wBattleScriptByte], a
@@ -2430,6 +2441,16 @@ DrawSaveOverwriteDialog::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	; clear the dialog text region ($8800, tiles $80-$9c) so a shorter proportional
+	; string doesn't leave the tail of a wider one
+	ld hl, $8800
+	ld bc, ($9c - $80) * $10
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	ld hl, String_025_6112 ; reload the string pointer (clobbered by the clear)
+ENDC
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer
@@ -2459,6 +2480,16 @@ DrawSaveOverwriteDialog::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	; clear the dialog text region ($8800, tiles $80-$94) so the shorter "Save OK"
+	; doesn't leave the tail of the wider "Is it OK to overwrite?" prompt
+	ld hl, $8800
+	ld bc, ($94 - $80) * $10
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	ld hl, String_025_611b ; reload the string pointer (clobbered by the clear)
+ENDC
 	call PrintMenuText
 	ld hl, $c
 	call GetTextBGMapPointer

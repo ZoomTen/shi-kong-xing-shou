@@ -76,6 +76,8 @@ INLINE_COMMANDS = {
     'num':       'db $e1',     # battle: insert number
     'e5':        'db $e5',     # raw control byte
     'e6':        'db $e6',     # raw control byte
+    'even':      'db $ef',     # composed-menu: flush the VWF glyph to the next
+                               # whole tile so labels don't share a tile
 }
 # <token> or ⟨token⟩; longest keys first so `itemname2` beats `itemname`.
 MARKER_RE = re.compile(
@@ -87,7 +89,15 @@ MARKER_RE = re.compile(
 # --- VWF pixel-aware wrapping (Pass 3) ------------------------------------
 # Wrap by summed VWF advance widths (english_vwf_widths.asm, the same table the ROM
 # uses) instead of a flat glyph count, so proportional lines fill the 14-tile box.
-WRAP_PX = 110   # per-line pixel budget (14-tile text area = 112px; ~2px margin)
+WRAP_PX = 110   # per-line pixel budget (14-tile dialog text area = 112px; ~2px margin)
+# Several menu boxes are 18 tiles wide = 144px (the ShowBattleMessage box and the
+# character/monster description boxes), so their menu-rendered (para-breaking)
+# blocks get a wider budget. `_active_wrap_px` is set per-block in emit_block from
+# the block's file+type and read by the wrap helpers below; it defaults to
+# WRAP_PX for every other box.
+WRAP_PX_WIDE = 142
+WIDE_FILES = {'battle_messages', 'personality_desc', 'mon_descriptions'}
+_active_wrap_px = WRAP_PX
 
 
 def _load_char_px():
@@ -163,7 +173,7 @@ def _hyph_fragments(word, wrapper):
             if p <= start:
                 continue
             last = (p == len(word))
-            if _line_px(word[start:p]) + (0 if last else _HYPHEN_PX) <= WRAP_PX:
+            if _line_px(word[start:p]) + (0 if last else _HYPHEN_PX) <= _active_wrap_px:
                 best = p
             elif best is not None:
                 break
@@ -191,10 +201,10 @@ def wrap(text, lang, warnings):
         if word == "":
             continue
         cand = word if lines[-1] == "" else lines[-1] + " " + word
-        if _line_px(cand) <= WRAP_PX:
+        if _line_px(cand) <= _active_wrap_px:
             lines[-1] = cand
             continue
-        if lines[-1] != "" and _line_px(word) <= WRAP_PX:
+        if lines[-1] != "" and _line_px(word) <= _active_wrap_px:
             lines.append(word)
             continue
         if lines[-1] != "":
@@ -210,9 +220,9 @@ def wrap(text, lang, warnings):
             warnings.append("XXX pyphen not installed, long word may clip!")
             lines[-1] = word
     lines = [l for l in lines if l != ""]
-    over = [l for l in lines if _line_px(l) > WRAP_PX]
+    over = [l for l in lines if _line_px(l) > _active_wrap_px]
     if over:
-        warnings.append("XXX Text overflows (px>%d) on: %r" % (WRAP_PX, over))
+        warnings.append("XXX Text overflows (px>%d) on: %r" % (_active_wrap_px, over))
     return lines
 
 
@@ -427,6 +437,13 @@ def emit_block(row, lang, keep_zh_comment, mark_english=False):
     # menu interpreter, where line=Done and cont=Skip -- only `para` is a line break
     # there (MenuText_ec). So emit every break as `para` for them.
     menu = (row.get('textend') or '').strip().startswith('line')
+    # Menu blocks bound for an 18-tile box (144px) -- battle messages, character &
+    # monster descriptions -- get the wider wrap budget. Dialogue-style blocks
+    # (line/cont, menu=False, e.g. the rival pre-battle dialogue in battle_messages)
+    # keep the default 14-tile width.
+    global _active_wrap_px
+    _active_wrap_px = (WRAP_PX_WIDE if menu and row.get('file_resolved') in WIDE_FILES
+                       else WRAP_PX)
     # Box/line structure: a blank line (`\n\n`) starts a new textbox (`para`); a single
     # `\n` forces a line break within the box, walking text -> line -> cont -> cont...
     # just as the 13-glyph auto-wrap does. Inline-command markers (`<itemname2>`) are

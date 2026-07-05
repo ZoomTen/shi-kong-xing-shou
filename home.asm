@@ -30,6 +30,7 @@ INCLUDE "home/text.asm"
 IF DEF(ENGLISH)
 INCLUDE "home/text_far.asm"
 INCLUDE "home/text_vwf.asm"
+INCLUDE "home/text_menu_vwf.asm"
 ENDC
 INCLUDE "home/maps.asm"
 INCLUDE "home/sound.asm"

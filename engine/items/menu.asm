@@ -54,6 +54,18 @@ Func_01e_42ba::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	; clear the type-name region ($9790, tiles $79-$7d) so a shorter proportional
+	; type name doesn't leave the tail of a wider one. (The per-mon callers clear
+	; $8790 -- the wrong VRAM block for id $79 -- so the real target is uncleared.)
+	push hl
+	ld hl, $9790
+	ld bc, ($7d - $79) * $10
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	pop hl
+ENDC
 	call PrintMenuText
 	ret
 
@@ -91,6 +103,17 @@ Func_01e_42f1::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+	; clear the move-type panel ($8eb0, tiles $eb-$fd) so a shorter type name
+	; doesn't leave the tail of a wider one as the move cursor moves
+	push hl
+	ld hl, $8eb0
+	ld bc, ($fd - $eb) * $10
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	pop hl
+ENDC
 	call PrintMenuText
 	ret
 

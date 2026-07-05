@@ -13,6 +13,13 @@ IF DEF(ENGLISH)
 ENDC
 	call DelayFrame
 	push hl
+IF DEF(ENGLISH)
+; Start each menu string with a clean VWF window. This MUST come after `push hl`:
+; VWF_ResetLine leaves hl = wVWFWindow+16, and hl is the string pointer that the
+; fall-through into Menu_CheckCharacter pops back. Doing it before push hl fed
+; the reader the window address ($C0F8) instead of the text -> garbage/runaway.
+	call VWF_ResetLine
+ENDC
 
 Menu_CheckCharacter::
 ; Text routine used for menus, battles and other things
@@ -48,6 +55,12 @@ MenuText_Done::
 	jp Menu_CheckCharacter
 
 .done
+IF DEF(ENGLISH)
+; real end of the string: flush the last partial tile so the final glyph shows.
+; (Nested $e7 name returns take the branch above and DON'T flush, so a name
+; carries its sub-pixel cursor into the text that follows it.)
+	call Menu_VWF_FlushPartial
+ENDC
 	pop hl
 	ret
 
@@ -79,7 +92,13 @@ Menu_CheckCharacter_Commands::
 	dw MenuText_ec     ; $ec
 	dw MenuText_Done ; $ed
 	dw MenuText_Skip ; $ee
+IF DEF(ENGLISH)
+	dw MenuText_TileFlush ; $ef -- flush the pending VWF glyph to the next whole
+	; tile, so composed-menu labels ("Attack<even>Party<even>...") don't share a
+	; tile and can be mapped one-per-button by the (hand-rearranged) tilemap.
+ELSE
 	dw MenuText_Skip ; $ef
+ENDC
 
 MenuText_Skip::
 	jp Menu_CheckCharacter
@@ -103,6 +122,10 @@ MenuText_e1::
 	jp Menu_CheckCharacter
 
 MenuText_e2::
+IF DEF(ENGLISH)
+; flush the last partial tile so the final glyph shows before we wait for input
+	call Menu_VWF_FlushPartial
+ENDC
 	pop hl
 	call WaitTextboxInput
 	ret
@@ -131,8 +154,10 @@ ENDC
 	call DelayFrame
 IF DEF(ENGLISH)
 .english
-; para is a line break here: round the tile cursor up to the next visual row
-; ($24 tile ids = one 18-col row) rather than back to 0, which overwrites line 1.
+; para is a line break: flush any pending VWF partial first, then round the
+; tile cursor up to the next visual row ($24 tile ids = one 18-col row) rather
+; than back to 0, which overwrites line 1.
+	call Menu_VWF_FlushPartial
 	ld a, [wCharacterTilePos]
 	ld b, a
 ENDC
@@ -217,6 +242,17 @@ MenuText_e7::
 
 Menu_GetCharacterSetBase::
 	call GetCharacterSetBase
+IF DEF(ENGLISH)
+; EN->ZH switch: flush the pending VWF partial so the last English glyph is
+; committed and the cursor advances to a whole (even) tile. A fixed 2x2 Chinese
+; glyph only needs an even wCharacterTilePos (it spans two adjacent columns), and
+; the English +2 advance already yields that -- so no further rounding is needed.
+	ldh a, [hEnglishMode]
+	and a
+	jr nz, .noFlush
+	call Menu_VWF_FlushPartial
+.noFlush
+ENDC
 	jp Menu_CheckCharacter
 
 Menu_CheckCharacter_Continue::
@@ -281,40 +317,10 @@ ENDR
 IF DEF(ENGLISH)
 
 .english
-; 1-tile English glyph from Charset_English (char*8), one tile, placed on the
-; top tiles of the 2x2 cells (advance 2 -> top-left, then top-right); the cells'
-; lower tiles stay whatever the menu drew. Kept in the menu interpreter so the
-; bank menu functions stay byte-identical to `progress`.
-	ld a, BANK(Charset_English)
-	ld [hTargetBank], a
-	ld a, [wCurrentCharacterByte]
-	ld l, a
-	ld h, 0
-	ld de, Charset_English
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	add hl, de
-	ld a, l
-	ld [wCharacterTileSrc], a
-	ld a, h
-	ld [wCharacterTileSrc + 1], a
-	ld a, 1
-	ld [wCharacterTileCount], a
-	ld a, 1
-	ld [wCharacterTileTransferStatus], a
-	call DelayFrame
-; No per-char lower-tile clear: the bank caller clears the whole region up front
-; (the desc draw clears $8800; the name draw clears $8d00), so the cells the
-; English writes into are already blank.
-	ld a, [wMenuTextEndX]
-	ld c, a
-	ld a, [wCharacterTilePos]
-	add 2
-	ld [wCharacterTilePos], a
-	cp c
-	jp c, Menu_CheckCharacter
-	xor a
-	ld [wCharacterTilePos], a
-	jp Menu_CheckCharacter
+; Variable-width path: composite proportional glyphs into the rolling window
+; and stream finalized tiles into the menu's fixed VRAM slots (top row of the
+; 2x2 cells). See home/text_menu_vwf.asm. The bank caller still clears the whole
+; region up front (desc draw clears $8800; name draw clears $8d00), so cells the
+; text doesn't reach stay blank.
+	jp Menu_VWF_PrintChar
 ENDC
