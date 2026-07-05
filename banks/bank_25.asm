@@ -4145,13 +4145,15 @@ Palette_BattleUIObj::
 INCLUDE "text/menu_25_6199.asm"
 
 Tilemap_MonInfoBox7x6:: INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
-AttrMap_MonInfoBox7x6:: INCBIN "gfx/tilemaps/tilemap_025_61f2.tilemap"
+AttrMap_MonInfoBox7x6:: INCBIN "gfx/attrmaps/attrmap_025_61f2.bin"
 Tilemap_MonInfoBox8x8:: INCBIN "gfx/tilemaps/tilemap_025_6220.tilemap"
-AttrMap_MonInfoBox8x8:: INCBIN "gfx/tilemaps/tilemap_025_6264.tilemap"
+AttrMap_MonInfoBox8x8:: INCBIN "gfx/attrmaps/attrmap_025_6264.bin"
 Tilemap_MonInfoBox8x10:: INCBIN "gfx/tilemaps/tilemap_025_62a8.tilemap"
-AttrMap_MonInfoBox8x10:: INCBIN "gfx/tilemaps/tilemap_025_62fc.tilemap"
-Tilemap_OverwriteConfirm20x6:: INCBIN "gfx/tilemaps/tilemap_025_6350.tilemap"
-Tilemap_SaveResult20x6:: INCBIN "gfx/tilemaps/tilemap_025_63ca.tilemap"
+AttrMap_MonInfoBox8x10:: INCBIN "gfx/attrmaps/attrmap_025_62fc.bin"
+Tilemap_OverwriteConfirm20x6:: db $14, $06
+	INCBIN "gfx/tilemaps/tilemap_025_6350.tilemap"
+Tilemap_SaveResult20x6:: db $14, $06
+	INCBIN "gfx/tilemaps/tilemap_025_63ca.tilemap"
 
 AttrMap_PartyMonIconBox6x4::
 	db $00, $00, $00, $00, $00, $00
