@@ -449,7 +449,10 @@ def emit_block(row, lang, keep_zh_comment, mark_english=False):
     # just as the 13-glyph auto-wrap does. Inline-command markers (`<itemname2>`) are
     # emitted as their own directive, splitting the surrounding text. Literal `\\n` in
     # the cell is accepted as a newline too.
-    en_quoted = en.replace('\\n', '\n').replace('"', "'")
+    # The CSV is CRLF in the working tree (.gitattributes), so multiline cells
+    # carry \r\n -- normalise to bare \n or the \r leaks into the emitted strings.
+    en_quoted = en.replace('\r\n', '\n').replace('\r', '\n')
+    en_quoted = en_quoted.replace('\\n', '\n').replace('"', "'")
     box = 0
     for para_seg in en_quoted.split('\n\n'):
         box += 1
