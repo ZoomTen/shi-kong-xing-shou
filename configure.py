@@ -187,13 +187,19 @@ rule TMX
     all_deps = all_deps | deps
     print("build %s: COMPILE %s | %s" % (o, src_asm, " ".join(deps)))
   
-  face_re = re.compile(r"(gfx/faces/.+?)\.(?:bg|obj)\.(?:2bpp|gbcpal)$")
-  interleave_gfx_re = re.compile(r"gfx/(character_set|battle|sprites|intro)/(.+)$")
-  tmx_re = re.compile(r"data/maps/(metatiles|blocks|layouts)/(.+?)\.bin$")
-  # text files may be relocated under an include dir (see override_deps),
-  # so tolerate an optional `lang_xx/` prefix.
+  # Assets may be relocated under an include dir (see override_deps), so every
+  # path regex must tolerate an optional `lang_xx/` prefix -- otherwise an
+  # overlaid file (e.g. lang_en/gfx/intro/text1.2bpp) fails the `gfx/...` anchor
+  # and silently falls through to the plain rule, losing --interleave.
   inc_alt = "|".join(re.escape(d) for d in inc_dirs)
-  txt_re = re.compile(r"(?:(?:%s)/)?text/(.+?)\.asm" % inc_alt)
+  opt_lang = r"(?:(?:%s)/)?" % inc_alt
+  # NB: face_re stays base-only on purpose -- its group(1) feeds the FACE output
+  # paths, so a lang prefix would have to be threaded through; no faces are
+  # overlaid, so leave it anchored to the base tree.
+  face_re = re.compile(r"(gfx/faces/.+?)\.(?:bg|obj)\.(?:2bpp|gbcpal)$")
+  interleave_gfx_re = re.compile(opt_lang + r"gfx/(character_set|battle|sprites|intro)/(.+)$")
+  tmx_re = re.compile(r"data/maps/(metatiles|blocks|layouts)/(.+?)\.bin$")
+  txt_re = re.compile(opt_lang + r"text/(.+?)\.asm")
   
   # Here's the wrench in the regularity: faces are .ora, and they make
   # 2bpp & gbcpal for BOTH bg & obj.
