@@ -158,6 +158,10 @@ rule PALETTE
   command = {which_binary("rgbgfx")} -p $out $in
   description = PALETTE $out
 
+rule CAT
+  command = cat $in > $out
+  description = CAT $out
+
 rule TEXT
   command = {which_binary("python3")} {which_binary("tools/tx_parse.py")} $in > $out
   description = TEXT $in
@@ -193,6 +197,21 @@ rule TMX
   # and silently falls through to the plain rule, losing --interleave.
   inc_alt = "|".join(re.escape(d) for d in inc_dirs)
   opt_lang = r"(?:(?:%s)/)?" % inc_alt
+
+  # Some 2bpp files are really several images back to back; those get one png
+  # per image, converted separately and concatenated. Keyed by base (un-overlaid)
+  # target path; each part is resolved through override_deps, so translating one
+  # sub-image only needs its own png dropped into lang_en/.
+  concat_gfx = {
+    "gfx/misc/battleuigfx_5a3a.2bpp": [
+      "gfx/misc/stat_cash.2bpp",
+      "gfx/misc/stat_colon.2bpp",
+      "gfx/misc/stat_seen.2bpp",
+      "gfx/misc/stat_caught.2bpp",
+      "gfx/misc/stat_playtime.2bpp",
+      "gfx/misc/stat_num_crystals.2bpp",
+    ],
+  }
   # NB: face_re stays base-only on purpose -- its group(1) feeds the FACE output
   # paths, so a lang prefix would have to be threaded through; no faces are
   # overlaid, so leave it anchored to the base tree.
@@ -223,6 +242,16 @@ rule TMX
 
     # already processed by the previous loop
     if face_re.match(i):
+      continue
+
+    base = re.sub("^" + opt_lang, "", i)
+    if base in concat_gfx:
+      # override_deps() is per-part here (not on the whole list) to keep the
+      # concatenation order stable.
+      parts = [override_deps({p}).pop() for p in concat_gfx[base]]
+      for part in parts:
+        print("build %s: 2BPP %s" % (part, part.replace(".2bpp", ".png")))
+      print("build %s: CAT %s" % (i, " ".join(parts)))
       continue
 
     if i.endswith(".2bpp"):
