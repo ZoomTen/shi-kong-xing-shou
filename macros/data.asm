@@ -1,9 +1,5 @@
 ; Borrowed from pret/pokegold
 
-MACRO dr
-	INCBIN "baserom.gbc", \1, \2 +- \1
-ENDM
-
 MACRO lb ; r, hi, lo
 	ld \1, ((\2) & $ff) << 8 | ((\3) & $ff)
 ENDM
