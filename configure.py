@@ -232,7 +232,9 @@ rule TMX
         where, name = x.group(1), x.group(2)
         if where == "intro":
           if name.startswith("text"):
-            gfx_opts = "--interleave --remove-whitespace"
+            gfx_opts = "--interleave"
+            if not i.startswith("lang_en/"):
+              gfx_opts += " --remove-whitespace"
           elif name == "stars.2bpp":
             gfx_opts = "--interleave"
         else:

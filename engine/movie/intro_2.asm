@@ -927,6 +927,12 @@ Intro_LoadNewTextSprites:
 
 Intro_TextSprites:
 	dw .Nothing
+IF DEF(ENGLISH)
+; all use the same mapping
+REPT 8
+	dw .BallotText
+ENDR
+ELSE
 	dw .BallotText
 	dw .BuckText
 	dw .NinaText
@@ -935,6 +941,7 @@ Intro_TextSprites:
 	dw .LanteText
 	dw .RandtText
 	dw .MittText
+ENDC
 
 .Nothing:
 	dsprite  0,  0,  0,  0, $00, 0
@@ -976,6 +983,10 @@ Intro_TextSprites:
 	dsprite  6,  0,  4,  0, $3e, 0
 	dsprite  6,  0,  5,  0, $40, 0
 	dsprite  6,  0,  6,  0, $42, 0
+IF DEF(ENGLISH)
+	dsprite  6,  0,  7,  0, $44, 0
+	dsprite  6,  0,  8,  0, $46, 0
+ENDC
 	db -1 ; end
 
 .BuckText:
