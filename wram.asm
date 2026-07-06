@@ -332,12 +332,12 @@ wTextboxPointer:: ds 2
 wd0d1:: ds 2
 wd0d3:: ds 1
 wBattleCounter:: ds 1 ; step counter
-wd0d5:: ds 1
-wd0d6:: ds 1
+wDexCaughtCount:: ds 1
+wDexSeenCount:: ds 1
 
 wMoney:: ds 3
 
-wd0da:: ds 1
+wCrystalCount:: ds 1
 
 wGameTimeHours:: ds 1
 wGameTimeMinutes:: ds 1
@@ -528,14 +528,15 @@ wSound2Channel8:: channel_struct wSound2Channel8
 
 wd76e:: ds $5d
 
-wd7cb:: ds $9f ; mon dex
+wDexStatuses:: ds $9f ; per-mon dex status: 0=unknown, 1=seen, 2+=caught
 
 wMenuTextBuffer:: ds 7
-wd871:: ds 1
-wd872:: ds 1
-wd873:: ds 1
-wd874:: ds 1
-wd875:: ds 1
+wSaveRecord::
+wSaveRecordCaught:: ds 1
+wSaveRecordSeen:: ds 1
+wSaveRecordCrystals:: ds 1
+wSaveRecordHours:: ds 1
+wSaveRecordMinutes:: ds 1
 
 wEnemyMon:: ; enemy mon struct (species at +0; set by Script_3b/scr_startbattle)
 wd876:: ds $16

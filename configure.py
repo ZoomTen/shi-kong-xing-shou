@@ -202,16 +202,9 @@ rule TMX
   # per image, converted separately and concatenated. Keyed by base (un-overlaid)
   # target path; each part is resolved through override_deps, so translating one
   # sub-image only needs its own png dropped into lang_en/.
-  concat_gfx = {
-    "gfx/misc/battleuigfx_5a3a.2bpp": [
-      "gfx/misc/stat_cash.2bpp",
-      "gfx/misc/stat_colon.2bpp",
-      "gfx/misc/stat_seen.2bpp",
-      "gfx/misc/stat_caught.2bpp",
-      "gfx/misc/stat_playtime.2bpp",
-      "gfx/misc/stat_num_crystals.2bpp",
-    ],
-  }
+  # (Currently unused: the save-screen label sheet is now six INCBINs under
+  # SaveScreenLabelsGFX, so lang_en piece overrides resolve like any other file.)
+  concat_gfx = {}
   # NB: face_re stays base-only on purpose -- its group(1) feeds the FACE output
   # paths, so a lang prefix would have to be threaded through; no faces are
   # overlaid, so leave it anchored to the base tree.

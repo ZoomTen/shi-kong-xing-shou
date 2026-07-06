@@ -2782,9 +2782,9 @@ Script_51::
 	ret
 
 Script_52::
-	ld a, [wd0da]
+	ld a, [wCrystalCount]
 	inc a
-	ld [wd0da], a
+	ld [wCrystalCount], a
 	xor a
 	ld [wScriptByte], a
 	ret
