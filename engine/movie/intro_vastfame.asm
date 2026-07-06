@@ -100,7 +100,11 @@ Intro_VastFame::
 
 	ld hl, Intro_Begin_GFX
 	ld de, vTiles2
+IF DEF(ENGLISH)
+	ld bc, $180
+ELSE
 	ld bc, $170
+ENDC
 	call CopyBytesVRAM
 
 	ld hl, Intro_Stars_GFX
