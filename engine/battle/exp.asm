@@ -239,14 +239,14 @@ DrawLevelUpStats::
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText
-	ld de, Tilemap_02b_4910
+	ld de, LevelUpStatsTilemap
 	ld hl, $9808
 	ld bc, $0c0c
 	ld a, $c
 	ldh [hVRAMCopyWidth], a
 	ldh [hVRAMCopyHeight], a
 	call PlaceTilemap
-	ld de, AttrMap_02b_49a0
+	ld de, LevelUpStatsAttrmap
 	ld hl, $9808
 	ld bc, $0c0c
 	ld a, $c
@@ -348,8 +348,8 @@ DrawLevelUpStats::
 	pop bc
 	ret
 
-Tilemap_02b_4910:: INCBIN "gfx/image_2b_4910.tilemap"
-AttrMap_02b_49a0:: INCBIN "gfx/image_2b_49a0.gbcattr"
+LevelUpStatsTilemap:: INCBIN "gfx/levelupstats.tilemap"
+LevelUpStatsAttrmap:: INCBIN "gfx/levelupstats.gbcattr"
 
 INCLUDE "text/stat_names.asm"
 
