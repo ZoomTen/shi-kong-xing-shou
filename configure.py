@@ -239,6 +239,10 @@ rule TMX
             gfx_opts = "--interleave"
         else:
           gfx_opts = "--interleave"
+      # 8x16 OBJ sheets; title_screen.2bpp (the BG layer) must stay plain
+      elif i.startswith("lang_en/gfx/title_screen/") and \
+           os.path.basename(i) in ("title_screen_sprites.2bpp", "characters.2bpp"):
+        gfx_opts = "--interleave"
       if gfx_opts != "":
         print("build %s: 2BPP_GFX %s\n  gfx = %s" % (i, src, gfx_opts))
       else:

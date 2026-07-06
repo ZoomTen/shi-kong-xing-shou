@@ -66,10 +66,17 @@ TitleScreen:
 	call FarCopyBytesVRAM
 
 	call Intro_ClearScreenState
+IF DEF(ENGLISH)
+	ld a, $20
+	ld [wcd43], a
+	ld a, $18
+	ld [wcd42], a
+ELSE
 	ld a, 8
 	ld [wcd43], a
 	ld a, $10
 	ld [wcd42], a
+ENDC
 	ld a, 1
 	ld [wcd44], a
 	ld a, $81
@@ -880,6 +887,71 @@ TitleScreen_Sprites:
 	dsprite  0,  0,  5,  0, $00, 0
 	db -1 ; end
 
+IF DEF(ENGLISH)
+.TitleScreen:
+	dsprite  5,  0,  0,  0, $00, 0
+	dsprite  7,  0,  0,  0, $02, 0
+	dsprite  4,  0,  1,  0, $04, 0
+	dsprite  6,  0,  1,  0, $06, 0
+	dsprite  3,  0,  2,  0, $08, 0
+	dsprite  5,  0,  2,  0, $0a, 0
+	dsprite  7,  0,  2,  0, $0c, 0
+	dsprite  3,  0,  3,  0, $0e, 0
+	dsprite  5,  0,  3,  0, $10, 0
+	dsprite  7,  0,  3,  0, $12, 0
+	dsprite  3,  0,  4,  0, $14, 0
+	dsprite  3,  0,  5,  0, $16, 0
+	dsprite  3,  0,  5,  0, $18, 0
+	dsprite  5,  0,  5,  0, $1a, 0
+	dsprite  6,  4,  6,  0, $1c, 1
+	dsprite  3,  0,  7,  0, $1e, 0
+	dsprite  3,  0,  8,  0, $20, 0
+	dsprite  -1,  0,  9,  0, $22, 0
+	dsprite  0,  0,  8,  0, $24, 0
+	dsprite  31,  7,  0,  0, $00, 0 ; early $FF
+	dsprite  0,  0,  0,  0, $00, 0
+	dsprite  0,  0,  0,  0, $00, 0
+	dsprite  0,  0,  0,  0, $00, 0
+	dsprite  0,  0,  0,  0, $00, 0
+	db -1 ; end
+
+.PushStartText:
+	dsprite  0,  0,  0,  0, $28, 2
+	dsprite  0,  0,  1,  0, $2a, 2
+	dsprite  0,  0,  2,  0, $2c, 2
+	dsprite  0,  0,  3,  0, $2e, 2
+	dsprite  0,  0,  4,  0, $30, 2
+	dsprite  0,  0,  5,  0, $32, 2
+	db -1 ; end
+
+.NewGameText:
+	dsprite  0,  0,  0,  0, $40, 2
+	dsprite  0,  0,  1,  0, $42, 2
+	dsprite  0,  0,  2,  0, $44, 2
+	dsprite  0,  0,  3,  0, $46, 2
+	dsprite  0,  0,  4,  0, $48, 2
+	dsprite  0,  0,  5,  0, $4a, 2
+	db -1 ; end
+
+.NewGameContinueText:
+	dsprite  0,  0,  0,  0, $40, 2
+	dsprite  0,  0,  1,  0, $42, 2
+	dsprite  0,  0,  2,  0, $44, 2
+	dsprite  0,  0,  3,  0, $46, 2
+	dsprite  0,  0,  4,  0, $48, 2
+	dsprite  0,  0,  5,  0, $4a, 2
+	dsprite  2,  0,  0,  0, $4c, 2
+	dsprite  2,  0,  1,  0, $4e, 2
+	dsprite  2,  0,  2,  0, $50, 2
+	dsprite  2,  0,  3,  0, $52, 2
+	dsprite  2,  0,  4,  0, $54, 2
+	dsprite  2,  0,  5,  0, $56, 2
+	db -1 ; end
+
+.Cursor:
+	dsprite  0,  0,  0,  0, $58, 2
+	db -1 ; end
+ELSE
 .TitleScreen:
 	dsprite  0,  0, 10,  0, $00, 0
 	dsprite  1,  0,  7,  0, $02, 0
@@ -943,4 +1015,4 @@ TitleScreen_Sprites:
 .Cursor:
 	dsprite  0,  0,  0,  0, $60, 2
 	db -1 ; end
-
+ENDC
