@@ -210,8 +210,8 @@ MenuScreenScriptPointers::
 	dw Script_024_43af
 	dw Script_024_4404
 	dw Script_024_4421
-	dw Script_024_449d
-	dw Script_024_4509
+	dw SaveScreenScript
+	dw SaveRecordBoxScript
 	dw Script_024_453f
 	dw Script_024_4304
 
@@ -228,7 +228,7 @@ Script_024_4181::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -280,9 +280,9 @@ Script_024_4208::
 Script_024_420a::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
-	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0200, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
-	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $8ea0, MenuDigits2GFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -297,9 +297,9 @@ Script_024_420a::
 Script_024_424c::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
-	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0200, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
-	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $8ea0, MenuDigits2GFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_vram_copy3 $0020, $8e80, BattleUIGFX_4e6a
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
@@ -334,7 +334,7 @@ Script_024_42bb::
 Script_024_42cb::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -384,7 +384,7 @@ Script_024_4355::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
@@ -415,7 +415,7 @@ Script_024_43af::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_count_dex
-	bs_vram_copy3 $0140, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0140, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $0020, $9380, BattleUIGFX_4e0a
 	bs_vram_copy3 $0020, $93a0, BattleUIGFX_4e6a
 	bs_vram_copy3 $0320, $9400, BattleUIGFX_571a
@@ -452,15 +452,15 @@ Script_024_4421::
 	bs_vram_copy3 $0100, $8000, Pointers_00c_63dc_63ee
 	bs_print_text_xy String_025_60e0, $d0, $dc
 	bs_print_text_xy String_025_60e7, $80, $c8
-	bs_vram_copy3 $00a0, $8e00, BattleUIGFX_4e9a
-	bs_vram_copy3 $0100, $9000, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9100, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9200, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9300, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9400, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9500, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9600, BattleUIGFX_5e4a
-	bs_vram_copy3 $0100, $9700, BattleUIGFX_5e4a
+	bs_vram_copy3 $00a0, $8e00, MenuDigitsIconsGFX
+	bs_vram_copy3 $0100, $9000, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9100, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9200, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9300, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9400, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9500, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9600, StartMenuBGGFX
+	bs_vram_copy3 $0100, $9700, StartMenuBGGFX
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
 	bs_place_tile_attr $0000, Tilemap_4a_6c61, Attrmap_4a_6dcb
@@ -475,40 +475,40 @@ Script_024_4421::
 	bs_draw_u_54cc
 	bs_load_pals_a
 	bs_end_script3
-Script_024_449d::
+SaveScreenScript::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_count_dex
-	bs_vram_copy3 $0140, $9000, BattleUIGFX_4e9a
-	bs_vram_copy3 $0140, $9140, BattleUIGFX_55da
-	bs_vram_copy3 $0400, $9280, BattleUIGFX_5a3a
-	bs_vram_copy3 $0010, $97c0, BattleUIGFX_5e3a
+	bs_vram_copy3 $0140, $9000, MenuDigitsIconsGFX
+	bs_vram_copy3 $0140, $9140, MenuDigits2GFX
+	bs_vram_copy3 $0400, $9280, SaveScreenLabelsGFX
+	bs_vram_copy3 $0010, $97c0, SaveScreenColonGFX
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
 	bs_draw_text_50ad
 	bs_print_text_xy String_025_6104, $80, $9c
 	bs_print_text_xy String_025_610d, $68, $70
-	bs_place_tile_attr $0000, Tilemap_4a_6f35, Attrmap_4a_6fc7
-	bs_place_tile_attr $0c00, Tilemap_4a_7059, Attrmap_4a_70bb
-	bs_place_tile_attr $000c, Tilemap_4a_711d, Attrmap_4a_7197
+	bs_place_tile_attr $0000, SaveScreenPlayerPanelTilemap, SaveScreenPlayerPanelAttrmap
+	bs_place_tile_attr $0c00, SaveScreenRecordsPanelTilemap, SaveScreenRecordsPanelAttrmap
+	bs_place_tile_attr $000c, SaveScreenConfirmBarTilemap, SaveScreenConfirmBarAttrmap
 	bs_print_num_full_2 $0a, wMoney, $0305, $0e0a
-	bs_print_num_full $14, wd0da, $0102, $0808
-	bs_print_num_full_2 $0a, wd0d5, $0103, $1006
-	bs_print_num_full_2 $0a, wd0d6, $0103, $1002
+	bs_print_num_full $14, wCrystalCount, $0102, $0808
+	bs_print_num_full_2 $0a, wDexCaughtCount, $0103, $1006
+	bs_print_num_full_2 $0a, wDexSeenCount, $0103, $1002
 	bs_clear_oam
 	bs_set_sprite_pos $78, $88
 	bs_draw_ac_407b
 	bs_lcd_on_loadpal
 	bs_end_script
-Script_024_4509::
+SaveRecordBoxScript::
 	bs_clear_bgbox_at $0c, $14, $9800
-	bs_place_tile_attr $0101, Tilemap_4a_7211, Attrmap_4a_72b5
+	bs_place_tile_attr $0101, SaveRecordBoxTilemap, SaveRecordBoxAttrmap
 	bs_draw_clock
-	bs_print_num_full_2 $0a, wd871, $0103, $0608
-	bs_print_num_full_2 $0a, wd872, $0103, $0604
-	bs_print_num_full $14, wd873, $0102, $1002
-	bs_print_num_full_2 $0a, wd874, $0102, $0c08
-	bs_print_num_full_2 $0a, wd875, $0102, $0f08
+	bs_print_num_full_2 $0a, wSaveRecordCaught, $0103, $0608
+	bs_print_num_full_2 $0a, wSaveRecordSeen, $0103, $0604
+	bs_print_num_full $14, wSaveRecordCrystals, $0102, $1002
+	bs_print_num_full_2 $0a, wSaveRecordHours, $0102, $0c08
+	bs_print_num_full_2 $0a, wSaveRecordMinutes, $0102, $0f08
 	bs_end_script
 Script_024_453f::
 	bs_print_equip_n $80
@@ -655,9 +655,9 @@ Script_024_466d::
 Script_024_467d::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
-	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0200, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $01e0, $9200, BattleUIGFX_53fa
-	bs_vram_copy3 $0140, $8ea0, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $8ea0, MenuDigits2GFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_place_tile_attr $0000, Tilemap_4a_6101, Attrmap_4a_6157
 	bs_print_num_full_2 $0a, wMoney, $0305, $010a
@@ -678,7 +678,7 @@ Script_024_46bf::
 	bs_end_script3
 Script_024_46cb::
 	bs_lcd_off_loadpal
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -693,7 +693,7 @@ Script_024_46cb::
 	bs_lcd_on_loadpal
 	bs_end_script3
 Script_024_46f5::
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -719,7 +719,7 @@ Script_024_473b::
 	bs_print_menu_pg_b $05
 	bs_place_tile_attr $000c, Tilemap_4a_62a1, Attrmap_4a_6227
 	bs_end_script3
-	bs_vram_copy3 $0200, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0200, $9000, MenuDigitsIconsGFX
 	bs_place_tile_attr $0000, Tilemap_4a_5a6f, Attrmap_4a_579b
 	bs_draw_party_list
 	bs_end_script3
@@ -758,18 +758,18 @@ Script_024_4792::
 	bs_draw_8_items
 	bs_print_num_indir wSelectedPage, $0102, $1111
 	bs_end_script3
-Script_024_47bb::
+SaveScreenRedrawScript::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_draw_text_50ad
 	bs_print_text_xy String_025_6104, $80, $9c
 	bs_print_text_xy String_025_610d, $68, $70
-	bs_place_tile_attr $0000, Tilemap_4a_6f35, Attrmap_4a_6fc7
-	bs_place_tile_attr $0c00, Tilemap_4a_7059, Attrmap_4a_70bb
-	bs_place_tile_attr $000c, Tilemap_4a_711d, Attrmap_4a_7197
+	bs_place_tile_attr $0000, SaveScreenPlayerPanelTilemap, SaveScreenPlayerPanelAttrmap
+	bs_place_tile_attr $0c00, SaveScreenRecordsPanelTilemap, SaveScreenRecordsPanelAttrmap
+	bs_place_tile_attr $000c, SaveScreenConfirmBarTilemap, SaveScreenConfirmBarAttrmap
 	bs_print_num_full_2 $0a, wMoney, $0305, $0e0a
-	bs_print_num_full $14, wd0da, $0102, $0808
-	bs_print_num_full_2 $0a, wd0d5, $0103, $1006
-	bs_print_num_full_2 $0a, wd0d6, $0103, $1002
+	bs_print_num_full $14, wCrystalCount, $0102, $0808
+	bs_print_num_full_2 $0a, wDexCaughtCount, $0103, $1006
+	bs_print_num_full_2 $0a, wDexSeenCount, $0103, $1002
 	bs_set_sprite_pos $78, $88
 	bs_end_script
 
@@ -921,9 +921,9 @@ StartMenu_SaveConfirm::
 	ld a, $02
 	ld [wBattleScriptState], a
 	ld hl, wBattleScriptPos
-	ld [hl], LOW(Script_024_47bb)
+	ld [hl], LOW(SaveScreenRedrawScript)
 	inc hl
-	ld [hl], HIGH(Script_024_47bb)
+	ld [hl], HIGH(SaveScreenRedrawScript)
 	xor a
 	ld [wBattleScriptByte], a
 	ld [wSelectedOption], a
@@ -1316,7 +1316,7 @@ StartMenu_DexScreen::
 	jp z, HandleMenuCancel
 	ld a, SFX_11
 	call PlaySound
-	ld de, wd7cb
+	ld de, wDexStatuses
 	ld a, [wd9d8]
 	ld l, a
 	ld h, $00

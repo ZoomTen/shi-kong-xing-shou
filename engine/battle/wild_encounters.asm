@@ -106,7 +106,7 @@ WildEncounter_ClearMonData::
 WildEncounter_FlagSpecies::
 	push de
 	push hl
-	ld hl, wd7cb
+	ld hl, wDexStatuses
 	ld a, [de]
 	cp $a0
 	jr nc, .done
@@ -126,7 +126,7 @@ WildEncounter_FlagSpecies::
 WildEncounter_OwnSpecies::
 	push de
 	push hl
-	ld hl, wd7cb
+	ld hl, wDexStatuses
 	ld a, [de]
 	cp $a0
 	jr nc, .done

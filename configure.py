@@ -145,16 +145,9 @@ default compare
   
   # Some 2bpp files are really several images back to back; those get
   # one png per image, converted separately and concatenated.
-  concat_gfx = {
-    "gfx/misc/battleuigfx_5a3a.2bpp": [
-      "gfx/misc/stat_cash.2bpp",
-      "gfx/misc/stat_colon.2bpp",
-      "gfx/misc/stat_seen.2bpp",
-      "gfx/misc/stat_caught.2bpp",
-      "gfx/misc/stat_playtime.2bpp",
-      "gfx/misc/stat_num_crystals.2bpp",
-    ],
-  }
+  # (Currently unused: the save-screen label sheet is now six INCBINs
+  # under SaveScreenLabelsGFX instead of one concatenated blob.)
+  concat_gfx = {}
 
   face_re = re.compile(r"(gfx/faces/.+?)\.(?:bg|obj)\.(?:2bpp|gbcpal)$")
   interleave_gfx_re = re.compile(r"gfx/(character_set|battle|sprites|intro)/(.+)$")
