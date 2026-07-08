@@ -352,6 +352,23 @@ def inject_english(lines):
     return lines
 
 
+def source_has_signpost(row, source_dir):
+    """True if the original block opens with a `signpost;` directive ($e1).
+
+    The CSV drops bare prefixes, so a reconstructed translation would silently
+    lose the $e1. That byte is what opens the sign textbox (Text_e1 ->
+    OpenPlaceNameTextbox) and backs the screen up into wScreenRowBuffer; without
+    it the block's `done` ($e2) still runs CloseTextbox, which "restores" stale
+    wScreenRowBuffer bytes (palette scratch) over the tilemap and sprays them
+    into the BG map."""
+    blocks = load_source_blocks(source_dir, row['file_resolved'])
+    try:
+        key = (int(row['bank'], 16), int(row['addr'], 16))
+    except (ValueError, KeyError):
+        return False
+    return any(l.strip() == 'signpost;' for l in blocks.get(key) or [])
+
+
 def emit_text_run(lines, text, nowrap, lang, warnings, starter, sub,
                   keep_lead=False, keep_trail=False, append=False, menu=False):
     """Wrap one text run and append its text/line/cont lines; return the new sub
@@ -413,7 +430,7 @@ def open_visual_line(lines, box, sub, menu):
     return sub
 
 
-def emit_block(row, lang, keep_zh_comment, mark_english=False):
+def emit_block(row, lang, keep_zh_comment, mark_english=False, sign=False):
     lines = []
     hdr = '@org $%s, $%s' % (row['bank'], row['addr'])
     if row.get('label'):
@@ -484,6 +501,10 @@ def emit_block(row, lang, keep_zh_comment, mark_english=False):
     lines.append('\t%s;' % (row.get('textend') or 'done'))
     if mark_english:
         inject_english(lines)
+    if sign:
+        # $e1 must be the first byte, before `english;`'s $ff, matching the
+        # original stream order (E1 FF ...).
+        lines.insert(1, '\tsignpost;')
     return lines
 
 
@@ -552,7 +573,8 @@ def main():
                 continue
             blocks.append('\n'.join(
                 emit_block(row, args.lang, not args.no_zh_comment,
-                           mark_english=True)))
+                           mark_english=True,
+                           sign=source_has_signpost(row, args.source_dir))))
             rows_out += 1
         if not blocks:
             continue
