@@ -842,11 +842,25 @@ PrintTwoOptionMenu::
 	ld a, h
 	ld [wTextStart + 1], a
 	push hl
+IF DEF(ENGLISH)
+; the options must land on the box's bottom text line, where InitTextboxCursor
+; hardcodes the cursor row. If the question left the reader mid-line, advance
+; (or scroll) like an explicit newline; a host that already emitted `line`
+; before getchoice sits at column 0 and must not be advanced twice
+	ld a, [wCharacterTilemapPos]
+	and a
+	jp nz, Text_NextLine
+ENDC
 	jp CheckCharacter
 
 INCLUDE "text/menu_options.asm"
 
 InterpretTwoOptionMenu::
+IF DEF(ENGLISH)
+; the choice string is VWF-rendered and nothing after it prints more text, so
+; a narrow final glyph (the "o" of "No") is still sitting in the partial buffer
+	call VWF_FlushPartial
+ENDC
 	call .Main
 	jp Text_EndCont
 

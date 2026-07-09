@@ -307,7 +307,7 @@ menu_25_6199,25,6199,String_025_6199,,,line,,一般裝備元,,0,0,
 ,25,61a3,String_025_61a3,,,line,,狀態存放領取換盒子放生,,0,0,
 ,25,61b6,String_025_61b6,,,line,,目前位置,Location,1,0,
 ,25,61bf,String_025_61bf,,,line,,盒子,Box,1,0,
-menu_options,00,1cc5,String_1cc5,,,choice,,是  否,,0,0,
+menu_options,00,1cc5,String_1cc5,,,choice,1,是  否,"        Yes          No",0,0,
 ,00,1cd0,String_1cd0,,,choice,,回春 靈動,,0,0,
 mon_descriptions,26,5864,,,,line,,﹖﹖﹖,,0,0,
 ,26,5869,,,,line,1,個性暴躁易怒﹐生氣時會卯起來亂打⚬,Irritable and angry. It recklessly starts fights.,0,1,
@@ -5660,7 +5660,7 @@ script_east_fishmarket_2f,55,5f91,,BLANK,1B,done,,"我曾看過人魚喲
 
 That's really scary...",0,0,
 script_east_fishmarket_31,55,5367,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",Do you need my treatment?,0,0,
+﹖",Need treatment?,0,0,
 ,55,537f,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
@@ -9128,7 +9128,7 @@ Huh? You want to know about a genius mechanical inventor?
 
 I know one, his name is Dr. Leo! He lives in the next city over, Tech City~",0,0,
 script_healing_center,12,7ebe,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",Do you need my treatment?,0,0,
+﹖",Need treatment?,0,0,
 ,12,7ed6,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
@@ -14602,7 +14602,7 @@ There is no electricity, the electronic cash register can't be used...
 
 What do you want? Don't steal in the dark!",0,0,
 ,0e,5bdd,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",Do you need my treatment?,0,0,
+﹖",Need treatment?,0,0,
 ,0e,5bf5,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
@@ -15877,7 +15877,7 @@ It goes at the speed of light! It's probably worth ¥9456 billion!",0,0,
 
 Aaah!",0,0,
 script_tech_healing_center,0f,4efb,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",Do you need my treatment?,0,0,
+﹖",Need treatment?,0,0,
 ,0f,4f13,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 

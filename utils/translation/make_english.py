@@ -387,7 +387,9 @@ def emit_text_run(lines, text, nowrap, lang, warnings, starter, sub,
     work = text
     for og, glyph in CONTRACTIONS.items():
         work = work.replace(og, glyph)
-    pieces = [work.strip()] if nowrap else wrap(work, lang, warnings)
+    # nowrap keeps leading spaces: choice/menu strings pad with them to land on
+    # the hardcoded cursor stops (e.g. String_1cc5's Yes/No columns)
+    pieces = [work.rstrip()] if nowrap else wrap(work, lang, warnings)
     pieces = [p for p in pieces if p != '']
     if not pieces:
         if lead or trail:
