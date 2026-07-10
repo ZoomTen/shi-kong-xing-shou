@@ -35,10 +35,10 @@ sa652:: ds 1
 sa6db:: ds $17c ; -> wdb20
 
 	ds 1
-sa858:: ds 5
+sSaveRecord:: ds 5 ; -> wSaveRecord (caught/seen/crystals/hours/minutes)
 
 	ds 3
-sa860:: ds $98 ; -> wd7cb
+sDexStatuses:: ds $98 ; -> wDexStatuses (only $98 of its $9f bytes are saved)
 
 
 SECTION "SRAM Bank 1", SRAM[$b600], BANK[1]

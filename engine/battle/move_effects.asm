@@ -373,7 +373,7 @@ StoreCaughtMonInBox::
 SetCaughtMon::
 	push de
 	push hl
-	ld hl, wd7cb
+	ld hl, wDexStatuses
 ; check if species is valid
 	ld a, [de]
 	cp NUM_MONS

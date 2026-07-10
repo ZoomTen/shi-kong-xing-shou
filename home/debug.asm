@@ -264,7 +264,7 @@ Debug_FillMonList::
 	jr .fillNextMon
 
 Debug_InitDexAndParty::
-	ld de, wd7cb
+	ld de, wDexStatuses
 	ld hl, .dexData
 	ld bc, $9e
 .copy1
@@ -303,11 +303,11 @@ Debug_InitDexAndParty::
 	jr nz, .copy2
 
 	ld a, $9f
-	ld [wd0d6], a
+	ld [wDexSeenCount], a
 	ld a, $89
-	ld [wd0d5], a
+	ld [wDexCaughtCount], a
 	ld a, $06
-	ld [wd0da], a
+	ld [wCrystalCount], a
 	ld a, $02
 	ld [wdcea], a
 	ret

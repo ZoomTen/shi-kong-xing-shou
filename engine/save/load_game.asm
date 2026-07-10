@@ -19,8 +19,8 @@ LoadSaveData:
 	ld de, wPartyMons
 	ld bc, $0200
 	call CopyBytes3
-	ld hl, sa860
-	ld de, wd7cb
+	ld hl, sDexStatuses
+	ld de, wDexStatuses
 	ld bc, $0098
 	call CopyBytes3
 	ld hl, sa4a6
@@ -35,8 +35,8 @@ LoadSaveData:
 	ld de, wMonBox
 	ld bc, $017C
 	call CopyBytes3
-	ld hl, sa858
-	ld de, wd871
+	ld hl, sSaveRecord
+	ld de, wSaveRecordCaught
 	ld bc, $0005
 	call CopyBytes3
 	ld de, wPlayerScreenX

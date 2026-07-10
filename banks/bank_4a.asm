@@ -355,22 +355,22 @@ Tilemap_4a_6c61:: db $14, $12
 	INCBIN "gfx/tilemaps/tilemap_4a_6c61.tilemap"
 Attrmap_4a_6dcb:: db $14, $12
 	INCBIN "gfx/attrmaps/attrmap_4a_6dcb.bin"
-Tilemap_4a_6f35:: db $0c, $0c
-	INCBIN "gfx/tilemaps/tilemap_4a_6f35.tilemap"
-Attrmap_4a_6fc7:: db $0c, $0c
-	INCBIN "gfx/attrmaps/attrmap_4a_6fc7.bin"
-Tilemap_4a_7059:: db $08, $0c
-	INCBIN "gfx/tilemaps/tilemap_4a_7059.tilemap"
-Attrmap_4a_70bb:: db $08, $0c
-	INCBIN "gfx/attrmaps/attrmap_4a_70bb.bin"
-Tilemap_4a_711d:: db $14, $06
-	INCBIN "gfx/tilemaps/tilemap_4a_711d.tilemap"
-Attrmap_4a_7197:: db $14, $06
-	INCBIN "gfx/attrmaps/attrmap_4a_7197.bin"
-Tilemap_4a_7211:: db $12, $09
-	INCBIN "gfx/tilemaps/tilemap_4a_7211.tilemap"
-Attrmap_4a_72b5:: db $12, $09
-	INCBIN "gfx/attrmaps/attrmap_4a_72b5.bin"
+SaveScreenPlayerPanelTilemap:: db $0c, $0c
+	INCBIN "gfx/tilemaps/savescreen_playerpanel.tilemap"
+SaveScreenPlayerPanelAttrmap:: db $0c, $0c
+	INCBIN "gfx/attrmaps/savescreen_playerpanel_attrmap.bin"
+SaveScreenRecordsPanelTilemap:: db $08, $0c
+	INCBIN "gfx/tilemaps/savescreen_recordspanel.tilemap"
+SaveScreenRecordsPanelAttrmap:: db $08, $0c
+	INCBIN "gfx/attrmaps/savescreen_recordspanel_attrmap.bin"
+SaveScreenConfirmBarTilemap:: db $14, $06
+	INCBIN "gfx/tilemaps/savescreen_confirmbar.tilemap"
+SaveScreenConfirmBarAttrmap:: db $14, $06
+	INCBIN "gfx/attrmaps/savescreen_confirmbar_attrmap.bin"
+SaveRecordBoxTilemap:: db $12, $09
+	INCBIN "gfx/tilemaps/saverecordbox.tilemap"
+SaveRecordBoxAttrmap:: db $12, $09
+	INCBIN "gfx/attrmaps/saverecordbox_attrmap.bin"
 Tilemap_4a_7359:: db $14, $06
 	INCBIN "gfx/tilemaps/tilemap_4a_7359.tilemap"
 Attrmap_4a_73d3:: db $14, $04

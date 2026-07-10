@@ -74,8 +74,8 @@ WriteSaveData:
 	ld hl, wPartyMons
 	ld bc, $0200
 	call CopyBytes3
-	ld de, sa860
-	ld hl, wd7cb
+	ld de, sDexStatuses
+	ld hl, wDexStatuses
 	ld bc, $0098
 	call CopyBytes3
 	ld de, sa4a6
@@ -90,8 +90,8 @@ WriteSaveData:
 	ld hl, wMonBox
 	ld bc, $017C
 	call CopyBytes3
-	ld de, sa858
-	ld hl, wd871
+	ld de, sSaveRecord
+	ld hl, wSaveRecordCaught
 	ld bc, $0005
 	call CopyBytes3
 	ld a, [sMapOffsetX + $14]

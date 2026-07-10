@@ -111,6 +111,10 @@ rule PALETTE
   command = {which_binary("rgbgfx")} -p $out $in
   description = PALETTE $out
 
+rule CAT
+  command = cat $in > $out
+  description = CAT $out
+
 rule TEXT
   command = {which_binary("python3")} {which_binary("tools/tx_parse.py")} $in > $out
   description = TEXT $in
@@ -139,6 +143,12 @@ default compare
     all_deps = all_deps | deps
     print("build %s: COMPILE %s | %s" % (o, src_asm, " ".join(deps)))
   
+  # Some 2bpp files are really several images back to back; those get
+  # one png per image, converted separately and concatenated.
+  # (Currently unused: the save-screen label sheet is now six INCBINs
+  # under SaveScreenLabelsGFX instead of one concatenated blob.)
+  concat_gfx = {}
+
   face_re = re.compile(r"(gfx/faces/.+?)\.(?:bg|obj)\.(?:2bpp|gbcpal)$")
   interleave_gfx_re = re.compile(r"gfx/(character_set|battle|sprites|intro)/(.+)$")
   tmx_re = re.compile(r"data/maps/(metatiles|blocks|layouts)/(.+?)\.bin$")
@@ -168,6 +178,13 @@ default compare
 
     # already processed by the previous loop
     if face_re.match(i):
+      continue
+
+    if i in concat_gfx:
+      parts = concat_gfx[i]
+      for part in parts:
+        print("build %s: 2BPP %s" % (part, part.replace(".2bpp", ".png")))
+      print("build %s: CAT %s" % (i, " ".join(parts)))
       continue
 
     if i.endswith(".2bpp"):

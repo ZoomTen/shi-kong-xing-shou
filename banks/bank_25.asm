@@ -2016,7 +2016,7 @@ DrawMonEquipDetail::
 	ret
 
 LoadMonPicIfSeen::
-	ld de, wd7cb
+	ld de, wDexStatuses
 	ld a, [wd9d8]
 	ld l, a
 	ld h, 0
@@ -2055,7 +2055,7 @@ DrawDexNamePage::
 	call ByteFillVRAM
 	call DelayFrame
 	ld a, [wSelectedPage]
-	ld hl, wd7cb
+	ld hl, wDexStatuses
 	ld de, 8
 	call AddDEToHLNTimes
 	xor a
@@ -2123,7 +2123,7 @@ AddDEToHLNTimes::
 	ret
 
 PrintTwoRecordNumbers::
-	ld de, wd0d5
+	ld de, wDexCaughtCount
 	ld hl, $99e5
 	ld a, $a
 	ld [wd8fe], a
@@ -2133,7 +2133,7 @@ PrintTwoRecordNumbers::
 	ld a, 0
 	ld [wd0fd], a
 	call _PrintNumber
-	ld de, wd0d6
+	ld de, wDexSeenCount
 	ld hl, $9965
 	ld a, $a
 	ld [wd8fe], a
@@ -2472,16 +2472,16 @@ DrawSaveOverwriteDialog::
 	ret
 
 StampSaveTimeRecord::
-	ld a, [wd0d5]
-	ld [wd871], a
-	ld a, [wd0d6]
-	ld [wd872], a
-	ld a, [wd0da]
-	ld [wd873], a
+	ld a, [wDexCaughtCount]
+	ld [wSaveRecordCaught], a
+	ld a, [wDexSeenCount]
+	ld [wSaveRecordSeen], a
+	ld a, [wCrystalCount]
+	ld [wSaveRecordCrystals], a
 	ld a, [wGameTimeHours]
-	ld [wd874], a
+	ld [wSaveRecordHours], a
 	ld a, [wGameTimeMinutes]
-	ld [wd875], a
+	ld [wSaveRecordMinutes], a
 	ret
 
 FillVRAMFromScript::
@@ -2944,9 +2944,9 @@ ResetScrollAndClearBGMap::
 
 CountDexSeenAndOwned::
 	xor a
-	ld [wd0d6], a
-	ld [wd0d5], a
-	ld hl, wd7cb
+	ld [wDexSeenCount], a
+	ld [wDexCaughtCount], a
+	ld hl, wDexStatuses
 	ld bc, $9f
 
 .countLoop
@@ -2955,14 +2955,14 @@ CountDexSeenAndOwned::
 	jr z, .nextEntry
 	cp 1
 	jr z, .incSeen
-	ld a, [wd0d5]
+	ld a, [wDexCaughtCount]
 	inc a
-	ld [wd0d5], a
+	ld [wDexCaughtCount], a
 
 .incSeen
-	ld a, [wd0d6]
+	ld a, [wDexSeenCount]
 	inc a
-	ld [wd0d6], a
+	ld [wDexSeenCount], a
 
 .nextEntry
 	dec c

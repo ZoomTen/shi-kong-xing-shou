@@ -72,9 +72,9 @@ ScreenScript_39_411b::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $0090, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0090, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00a0, $9090, BattleUIGFX_483a
-	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $9130, MenuDigits2GFX
 	bs_vram_copy3 $0030, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0020, $9270, GFX_039_4000
 	bs_print_text_xy String_025_6199, $29, $3d
@@ -1131,9 +1131,9 @@ ScreenScript_39_4928::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_clr
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $0090, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0090, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00a0, $9090, BattleUIGFX_483a
-	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $9130, MenuDigits2GFX
 	bs_vram_copy3 $0020, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
 	bs_print_text_xy String_025_61a3, $2f, $5b
@@ -1317,7 +1317,7 @@ ScreenScript_39_4ac7::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -1506,9 +1506,9 @@ ScreenScript_39_4c38::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $0090, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0090, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00a0, $9090, BattleUIGFX_483a
-	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $9130, MenuDigits2GFX
 	bs_vram_copy3 $0020, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
 	bs_print_text_xy String_025_61a3, $2f, $5b
@@ -2072,7 +2072,7 @@ ScreenScript_39_512d::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $03e0, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $03e0, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00b0, $96e0, BattleUIGFX_491a
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
@@ -2214,9 +2214,9 @@ ScreenScript_39_524c::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $0090, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0090, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00a0, $9090, BattleUIGFX_483a
-	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $9130, MenuDigits2GFX
 	bs_vram_copy3 $0020, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
 	bs_load_bgpal_buf Palette_BattleUIBG
@@ -3057,9 +3057,9 @@ ScreenScript_39_58f5::
 	bs_lcd_off_loadpal
 	bs_reset_scroll_2
 	bs_vram_copy3 $0020, $8fe0, BattleUIGFX_4b8a
-	bs_vram_copy3 $0090, $9000, BattleUIGFX_4e9a
+	bs_vram_copy3 $0090, $9000, MenuDigitsIconsGFX
 	bs_vram_copy3 $00a0, $9090, BattleUIGFX_483a
-	bs_vram_copy3 $0140, $9130, BattleUIGFX_55da
+	bs_vram_copy3 $0140, $9130, MenuDigits2GFX
 	bs_vram_copy3 $0020, $8f80, BattleUIGFX_4e6a
 	bs_farcopy_vram $39, $0080, $9270, GFX_039_4020
 	bs_load_bgpal_buf Palette_BattleUIBG
