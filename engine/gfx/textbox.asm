@@ -444,6 +444,6 @@ DrawTextboxBorderColumnOpen:
 
 TextboxBorderColumn: db $a3, $a4, $a4, $a4, $a4, $a4, $a4, $a6
 DialogTextboxTilemap: INCBIN "gfx/tilemaps/tilemap_00a_42e3.tilemap"
-PlaceNameTextboxTilemap: INCBIN "gfx/tilemaps/tilemap_00a_4383.tilemap"
+PlaceNameTextboxTilemap: INCBIN "gfx/textbox/place_name.tilemap"
 PlaceNameTextboxGFX: INCBIN "gfx/textbox/place_name.2bpp"
 TextboxBorderGFX: INCBIN "gfx/textbox/border.2bpp"
