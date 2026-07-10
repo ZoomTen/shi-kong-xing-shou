@@ -486,8 +486,17 @@ SaveScreenScript::
 	bs_load_bgpal_buf Palette_BattleUIBG
 	bs_load_objpal_buf Palette_BattleUIObj
 	bs_draw_text_50ad
+IF DEF(ENGLISH)
+; EN prompt region spans line 1 ($80+) AND the para line 2 ($a4+, +$24/row), so
+; EndX covers through $bd for the pre-print clear; Yes/No moves to $c4-$cf (the
+; ZH cells $68-$6f hold only 4 top-row slots -- the 5-tile English strip's final
+; flush spilled into $70 and clobbered the player name's first tile).
+	bs_print_text_xy String_025_6104, $80, $be
+	bs_print_text_xy String_025_610d, $c4, $d0
+ELSE
 	bs_print_text_xy String_025_6104, $80, $9c
 	bs_print_text_xy String_025_610d, $68, $70
+ENDC
 	bs_place_tile_attr $0000, SaveScreenPlayerPanelTilemap, SaveScreenPlayerPanelAttrmap
 	bs_place_tile_attr $0c00, SaveScreenRecordsPanelTilemap, SaveScreenRecordsPanelAttrmap
 	bs_place_tile_attr $000c, SaveScreenConfirmBarTilemap, SaveScreenConfirmBarAttrmap
@@ -496,7 +505,11 @@ SaveScreenScript::
 	bs_print_num_full_2 $0a, wDexCaughtCount, $0103, $1006
 	bs_print_num_full_2 $0a, wDexSeenCount, $0103, $1002
 	bs_clear_oam
+IF DEF(ENGLISH)
+	bs_set_sprite_pos $78, $80 ; cursor one column left, see StartMenu_SaveConfirm
+ELSE
 	bs_set_sprite_pos $78, $88
+ENDC
 	bs_draw_ac_407b
 	bs_lcd_on_loadpal
 	bs_end_script
@@ -761,8 +774,14 @@ Script_024_4792::
 SaveScreenRedrawScript::
 	bs_clear_bgbox_at $0c, $14, $9800
 	bs_draw_text_50ad
+IF DEF(ENGLISH)
+; same EN region layout as SaveScreenScript above
+	bs_print_text_xy String_025_6104, $80, $be
+	bs_print_text_xy String_025_610d, $c4, $d0
+ELSE
 	bs_print_text_xy String_025_6104, $80, $9c
 	bs_print_text_xy String_025_610d, $68, $70
+ENDC
 	bs_place_tile_attr $0000, SaveScreenPlayerPanelTilemap, SaveScreenPlayerPanelAttrmap
 	bs_place_tile_attr $0c00, SaveScreenRecordsPanelTilemap, SaveScreenRecordsPanelAttrmap
 	bs_place_tile_attr $000c, SaveScreenConfirmBarTilemap, SaveScreenConfirmBarAttrmap
@@ -770,7 +789,11 @@ SaveScreenRedrawScript::
 	bs_print_num_full $14, wCrystalCount, $0102, $0808
 	bs_print_num_full_2 $0a, wDexCaughtCount, $0103, $1006
 	bs_print_num_full_2 $0a, wDexSeenCount, $0103, $1002
+IF DEF(ENGLISH)
+	bs_set_sprite_pos $78, $80 ; cursor one column left, see StartMenu_SaveConfirm
+ELSE
 	bs_set_sprite_pos $78, $88
+ENDC
 	bs_end_script
 
 DispatchMenuState::
@@ -887,7 +910,14 @@ StartMenu_SaveConfirm::
 	add $78
 	ld hl, wcde0
 	ld [hli], a
+IF DEF(ENGLISH)
+; EN confirm-bar tilemap starts the Yes/No text one column further left (col 16),
+; in what used to be the blank cursor column -- park the cursor in the new blank
+; column (col 15) so it doesn't cover the first glyph
+	ld a, $7e
+ELSE
 	ld a, $86
+ENDC
 	ld [hli], a
 	ld a, $01
 	ld [hli], a

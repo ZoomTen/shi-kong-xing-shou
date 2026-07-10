@@ -296,8 +296,9 @@ menu_25_6099,25,6099,String_025_6099,,,line,,攻擊防禦速度魔防經驗值,A
 ,25,60db,String_025_60db,,,line,,是否,Yes No,0,0,
 ,25,60e0,String_025_60e0,,,line,,主角１,Chara 1,1,0,
 ,25,60e7,String_025_60e7,,,line,,特技是吃飽睡﹐睡飽吃⚬,"Skills include eating and sleeping, sleeping and eating.",1,0,
-,25,6104,String_025_6104,,,line,,確定要存檔嗎﹖,Do you want to save?,0,0,
-,25,610d,String_025_610d,,,line,,是否,Yes No,0,0,
+,25,6104,String_025_6104,,,line,,確定要存檔嗎﹖,"Do you want to
+save?",0,0,
+,25,610d,String_025_610d,,,line,,是否,Yes<even>No,0,0,
 ,25,6112,String_025_6112,,,line,,確定要覆蓋嗎﹖,Is it OK to overwrite?,1,0,
 ,25,611b,String_025_611b,,,line,,"存檔成功﹗
 存檔失敗﹗","Save OK

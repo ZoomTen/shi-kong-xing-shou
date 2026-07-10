@@ -370,6 +370,43 @@ BattleScriptCmd_PrintTextXY::
 	call AdvanceBattleScript
 	ld a, [wBattleScriptByte]
 	ld [wMenuTextEndX], a
+IF DEF(ENGLISH)
+; Clear the whole target tile region (X..EndX) before printing: the English VWF
+; writes only the top-row tiles the string actually reaches, so anything stale
+; in the region (e.g. title-screen tiles still in VRAM on the save screen) stays
+; visible in the bottom-row cells and past the end of the string. Mirrors the
+; explicit clears in DrawSaveOverwriteDialog / LoadPlayerCharGfxPrintText.
+	push de
+	ld a, [wMenuTextX]
+	ld e, a
+	swap a
+	ld d, a
+	and $0f
+	cp $08
+	jr nc, .base8000
+	or $90
+	jr .gotBase
+.base8000
+	or $80
+.gotBase
+	ld h, a
+	ld a, d
+	and $f0
+	ld l, a ; hl = VRAM address of the first tile in the region
+	ld a, [wMenuTextEndX]
+	sub e
+	swap a ; bc = (EndX - X) tiles * 16 bytes
+	ld d, a
+	and $0f
+	ld b, a
+	ld a, d
+	and $f0
+	ld c, a
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	pop de
+ENDC
 	xor a
 	ld [wCharacterTilePos], a
 	push de
@@ -2442,10 +2479,11 @@ DrawSaveOverwriteDialog::
 	xor a
 	ld [wCharacterTilePos], a
 IF DEF(ENGLISH)
-	; clear the dialog text region ($8800, tiles $80-$9c) so a shorter proportional
-	; string doesn't leave the tail of a wider one
+	; clear the dialog text region ($8800, tiles $80-$bd) so a shorter proportional
+	; string doesn't leave the tail of a wider one; extends through the para
+	; line-2 tiles ($a4+, +$24/row) the EN tilemap maps on its second row
 	ld hl, $8800
-	ld bc, ($9c - $80) * $10
+	ld bc, ($be - $80) * $10
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
