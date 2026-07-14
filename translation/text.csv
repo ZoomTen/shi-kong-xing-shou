@@ -285,13 +285,13 @@ key_item_names,1e,5358,,,,return,,,,0,0,
 ,1e,5468,,,,return,,金鋼鑽,Drill,0,0,
 ,1e,546f,,,,return,,金鋼鑽頭,Drill Head,0,0,
 ,1e,5478,,,,return,,晶片８,Chip 8,0,0,
-menu_25_6099,25,6099,String_025_6099,,,line,1,攻擊防禦速度魔防經驗值,Atk<even>Def<even>Spd<even>Mdf<even>Exp,1,0,
+menu_25_6099,25,6099,String_025_6099,,,line,1,攻擊防禦速度魔防經驗值,Attack<even>Defense<even>Speed<even>Resist<even>Exp,1,0,
 ,25,60a9,String_025_60a9,,,line,1,怪獸道具同伴圖鑑存檔,Beast<even>Item<even>Party<even>Dex<even>Save,1,0,
 ,25,60b7,String_025_60b7,,,line,1,移位詳細,Move<even>Detail,0,0,
 ,25,60be,String_025_60be,,,line,1,"交換詳細
-詳細","Swap<even>Detail
+詳細","Swap <even>Detail
 Detail",0,0,
-,25,60c8,String_025_60c8,,,line,1,使用丟棄,Use<even>Toss,0,0,
+,25,60c8,String_025_60c8,,,line,1,使用丟棄,Use  <even>Toss,0,0,
 ,25,60cf,String_025_60cf,,,line,1,"裝備丟棄
 辦詳","Equip<even>Toss
 Detail",0,0,
@@ -16169,7 +16169,7 @@ signposts_6,0c,42f9,,,,done,,←金鋼山,→Golden Mountain,1,0,
 ,0c,430e,,,,done,,→空中港口,←Airport,1,0,
 ,0c,431a,,,,done,,金鋼山,Golden Mountain,1,0,
 ,0c,4322,,,,done,,打鐵鋪,Iron Shop,1,0,
-stat_names,2b,4a30,StatNames_Text,,,line,,攻擊防禦速度法力魔防,Attack<even>Defense<even>Speed<even>Special<even>SpDef,0,0,
+stat_names,2b,4a30,StatNames_Text,,,line,,攻擊防禦速度法力魔防,Attack<even>Defense<even>Speed<even>Magic<even>Resist,0,0,
 store_price_options,1e,6ece,,,,return,,５００元,¥500,0,0,
 ,1e,6ed5,,,,return,,１０００元,¥1000,0,0,
 ,1e,6edd,,,,return,,１５００元,¥1500,0,0,

@@ -377,13 +377,16 @@ def emit_text_run(lines, text, nowrap, lang, warnings, starter, sub,
     touching an inline-command marker is preserved (e.g. `Found <itemname2>`)."""
     if text == '':
         return sub
-    # Strip ONLY the space touching a marker (carried by lead/trail); a marker-free
-    # run passes through unchanged so wrap() behaves exactly as before this feature.
+    # Carry the space(s) touching a marker in lead/trail (preserving the exact
+    # count so menu strings can pad to a tile boundary, per the nowrap note below);
+    # a marker-free run passes through unchanged so wrap() behaves as before.
     lead = trail = ''
     if keep_lead and text[:1] == ' ':
-        lead, text = ' ', text.lstrip(' ')
+        stripped = text.lstrip(' ')
+        lead, text = text[:len(text) - len(stripped)], stripped
     if keep_trail and text[-1:] == ' ':
-        trail, text = ' ', text.rstrip(' ')
+        stripped = text.rstrip(' ')
+        trail, text = text[len(stripped):], stripped
     work = text
     for og, glyph in CONTRACTIONS.items():
         work = work.replace(og, glyph)
