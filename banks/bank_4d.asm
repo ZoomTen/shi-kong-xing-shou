@@ -13,7 +13,108 @@ LoadBattleAnimGFXChunk::
 	ld b, a
 	call CopyBytesVRAM
 	ret
-Bank4d_SpriteGFX:: INCBIN "gfx/misc/bank4d_spritegfx.bin"
+Bank4d_SpriteGFX::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_00.2bpp"
+.e
+Bank4d_Gfx01::
+	dw $8100
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_01.2bpp"
+.e
+Bank4d_Gfx02::
+	dw $8100
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_02.2bpp"
+.e
+Bank4d_Gfx03::
+	dw $8100
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_03.2bpp"
+.e
+Bank4d_Gfx04::
+	dw $8100
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_04.2bpp"
+.e
+Bank4d_Gfx05::
+	dw $8100
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_05.2bpp"
+.e
+Bank4d_Gfx06::
+	dw $8680
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_06.2bpp"
+.e
+Bank4d_Gfx07::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_07.2bpp"
+.e
+Bank4d_Gfx08::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_08.2bpp"
+.e
+Bank4d_Gfx09::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_09.2bpp"
+.e
+Bank4d_Gfx10::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_10.2bpp"
+.e
+Bank4d_Gfx11::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_11.2bpp"
+.e
+Bank4d_Gfx12::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_12.2bpp"
+.e
+Bank4d_Gfx13::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_13.2bpp"
+.e
+Bank4d_Gfx14::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_14.2bpp"
+.e
+Bank4d_Gfx15::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_15.2bpp"
+.e
+Bank4d_Gfx16::
+	dw $8000
+	dw .e - .d
+.d
+	INCBIN "gfx/misc/bank4d_gfx_16.2bpp"
+.e
 LoadBattleAnimObjPalettes::
 	ld l, e
 	ld h, d
