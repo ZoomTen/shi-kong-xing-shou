@@ -55,12 +55,18 @@ Func_01e_42ba::
 	xor a
 	ld [wCharacterTilePos], a
 IF DEF(ENGLISH)
-	; clear the type-name region ($9790, tiles $79-$7d) so a shorter proportional
-	; type name doesn't leave the tail of a wider one. (The per-mon callers clear
-	; $8790 -- the wrong VRAM block for id $79 -- so the real target is uncleared.)
+	; EN type-name field is 4 tiles wide: 2 extra tiles WEST of the ZH glyph, into
+	; the blank slack of the "Type" graphic. The lang_en status tilemaps repoint
+	; cols 10-11 (was the blank $1f/$20 slack) to the VWF tiles $75/$77, so start
+	; the proportional text at $75 -- longer English type names ("Thunder") now fit.
+	ld a, $75
+	ld [wMenuTextX], a
+	; clear the whole field ($9750, tiles $75-$7c) so a shorter type name doesn't
+	; leave the tail of a wider one. (The per-mon callers clear $8790 -- the wrong
+	; VRAM block for id $79 -- so the real target is uncleared.)
 	push hl
-	ld hl, $9790
-	ld bc, ($7d - $79) * $10
+	ld hl, $9750
+	ld bc, ($7d - $75) * $10
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
