@@ -70,10 +70,10 @@ through it!",0,0,
 ,2d,444d,BattleText_444d,,,line,1,命中了⟨name⟩的要害﹗﹗,"Hit <name>
 critically!!",1,0,
 ,2d,445c,BattleText_445c,,,line,1,"辰虎：師兄﹐這就是你的程度嗎﹖
-巴洛特：可⋯可惡﹗","Chenhu: Senior, is this all you've got?
+巴洛特：可⋯可惡﹗","Chen Hu: Senior, is this all you've got?
 Ballot: D... Damn it!",1,0,?
 ,2d,4487,BattleText_4487,,,line,1,戰鬥勝利了﹗,Won the battle!,1,0,
-,2d,4492,BattleText_4492,,,line,1,辰虎：可惡﹗師兄﹐我會再努力的﹗,"Chenhu: Damn it! Senior, I'll train even harder!",1,0,
+,2d,4492,BattleText_4492,,,line,1,辰虎：可惡﹗師兄﹐我會再努力的﹗,"Chen Hu: Damn it! Senior, I'll train even harder!",1,0,
 ,2d,44ac,BattleText_44ac,,,line,1,得到⟨num⟩點經驗值,Gained <num> EXP,1,0,
 ,2d,44b7,BattleText_44b7,,,line,1,得到⟨num⟩元,Gained <num> yuan,1,0,
 ,2d,44bf,BattleText_44bf,,,done,1,⟨name⟩升級了﹗,<name> leveled up!,1,0,
@@ -246,7 +246,7 @@ item_names,1e,4f91,,,,return,,,,0,0,
 ,1e,5218,,,,return,,祕技５０,TM50,0,0,
 key_item_names,1e,5358,,,,return,,,,0,0,
 ,1e,535e,,,,return,,設計圖,Blueprints,0,0,
-,1e,5365,,,,return,,彩虹水晶,RainbowCrystal,0,0,
+,1e,5365,,,,return,,彩虹水晶,Rainbow Crystal,0,0,
 ,1e,536e,,,,return,,鳳凰號,Phx. Car,0,0,
 ,1e,5374,,,,return,,發條,Spring,0,0,
 ,1e,5379,,,,return,,發條老鼠,Windup Rat,0,0,
@@ -256,7 +256,7 @@ key_item_names,1e,5358,,,,return,,,,0,0,
 ,1e,5395,,,,return,,晶片２,Chip 2,0,0,
 ,1e,539c,,,,return,,金鑰匙,Gold Key,0,0,
 ,1e,53a2,,,,return,,性感禮服,Sexy Dress,0,0,
-,1e,53aa,,,,return,,復古項鍊,Old Necklace,0,0,
+,1e,53aa,,,,return,,復古項鍊,Retro Necklace,0,0,
 ,1e,53b3,,,,return,,晶片３,Chip 3,0,0,
 ,1e,53ba,,,,return,,珍珠項鍊,Pearl Necklace,0,0,
 ,1e,53c2,,,,return,,魚之魂,Fish Soul,0,0,
@@ -757,7 +757,7 @@ move_names,26,4200,,,,line,,死之吻,Kiss of Death,1,0,
 ,26,4473,,,,line,,散葉刀片,Razor Leaf,1,0,
 ,26,4479,,,,line,,太陽光束,Solar Beam,1,0,
 ,26,447f,,,,line,,無盡花雨,Petal Storm,1,0,
-,26,4485,,,,line,,寄魂種子,Leech Seed,1,0,
+,26,4485,,,,line,,寄魂種子,Soul Seed,1,0,
 ,26,448b,,,,line,,香甜孢子,Sweet Spore,1,0,
 ,26,4491,,,,line,,麻痺花粉,Stun Pollen,1,0,
 ,26,4497,,,,line,,猛毒孢子,Toxic Spore,1,0,
@@ -828,7 +828,7 @@ names,a,46b3,BlankName,,,line,,,,0,0,
 ,0a,4757,,,,line,,老 闆,Owner,0,0,
 ,0a,475e,,,,line,,艾 娜,Ina,0,0,
 ,0a,4765,,,,line,,基 多,Quito,0,0,
-,0a,476c,DrLeoName,,,line,,雷 歐,Leo,0,0,
+,0a,476c,DrLeoName,,,line,,雷 歐,Dr. Leo,0,0,
 ,0a,4773,,,,line,,荳 荳,Dot,0,0,
 ,0a,477a,LakiName,,,line,,拉 琪,Laki,0,0,
 ,0a,4781,KuluName,,,line,,庫 魯,Kulu,0,0,
@@ -856,7 +856,7 @@ names,a,46b3,BlankName,,,line,,,,0,0,
 ,0a,4818,,,,line,,麗 子,Lizzy,0,0,
 ,0a,481f,JudgeName,,,line,,評 審,Judges,0,0,
 ,0a,4826,HostName,,,line,,主持人,Host,0,0,
-,0a,482d,,,,line,,哈瑪斯,Hamas,0,0,
+,0a,482d,,,,line,,哈瑪斯,Hammas,0,0,
 ,0a,4834,AntonName,,,line,,安 東,Anton,0,0,
 ,0a,483b,,,,line,,烏 龜,Turtle,1,0,
 ,0a,4842,,,,line,,螃 蟹,Crab,1,0,
@@ -1001,15 +1001,21 @@ script_airport_5d75,4e,5d75,,38,61,done,,"克勞德⋯你⋯
 得洗手唷﹗
 嗚嗚嗚～",,0,0,
 ,4e,5ea3,,21,31,done,,"嘔～呃～喵～呃
-哽⋯哽住了﹗",,0,0,
-,4e,5ec1,,CLAUDE,CLAUDE_1,done,,怎麼回事﹖,,0,0,
+哽⋯哽住了﹗","Erk... Urk.. Meork...
+
+I'm ch-choking!",0,0,
+,4e,5ec1,,CLAUDE,CLAUDE_1,done,,怎麼回事﹖,What's going on?,0,0,
 ,4e,5ece,,21,31,done,,"喵～啊﹗
 終於吐出來了﹗
 
 就是這個石頭﹐
 卡在喉嚨裡好久
-了﹗",,0,0,
-,4e,5f06,,CLAUDE,CLAUDE_0,done,,得到珍珠項鍊⚬,,0,0,
+了﹗","Mawwah!
+
+Finally managed to spit it out!
+
+It's this stone, it got stuck in my throat for a while!",0,0,
+,4e,5f06,,CLAUDE,CLAUDE_0,done,,得到珍珠項鍊⚬,Got Pearl Necklace.,0,0,
 ,4e,5f17,,21,31,done,,"喵﹗﹗
 真?舒服喵～",,0,0,
 ,4e,5f2c,,BLANK,15,done,,"這不是我的珍珠
@@ -1019,7 +1025,7 @@ script_airport_5d75,4e,5d75,,38,61,done,,"克勞德⋯你⋯
 為了感謝你﹐這
 個?送給你了﹗",,0,0,
 ,4e,5f6b,,BALLOT,BALLOT_5,done,,得到ＸＸＸ﹗,,0,0,
-,4e,5f79,,BLANK,15,done,,真是謝謝你⚬,,0,0,
+,4e,5f79,,BLANK,15,done,,真是謝謝你⚬,Thank you so much.,0,0,
 ,4e,5f87,,BLANK,15,done,,"這不是我的珍項
 鍊嗎﹖
 
@@ -1030,9 +1036,15 @@ script_airport_5d75,4e,5d75,,38,61,done,,"克勞德⋯你⋯
 不過還是要謝謝
 你⚬
 
-這個就給你了﹗",,0,0,
+這個就給你了﹗","Isn't this my pearl necklace?
+
+I lost the talent show because I didn't have it...
+
+Thank you anyway.
+
+This is for you!",0,0,
 ,4e,5fda,,BALLOT,BALLOT_5,done,,得到ＸＸＸ﹗,,0,0,
-,4e,5fe8,,BLANK,15,done,,真是謝謝你⚬,,0,0,
+,4e,5fe8,,BLANK,15,done,,真是謝謝你⚬,Thank you so much.,0,0,
 script_airport_65_1,5c,402d,,BLANK,53,done,,"少爺您好﹗
 專機等侯已久～
 請你上飛機吧﹗",,0,0,
@@ -1376,7 +1388,7 @@ script_baal_capital_professor_2b_2,6c,5b7e,,4E,72,done,,"咭咭咭～
 
 咭咭咭～
 那麼不就可以⋯",,0,0,
-,6c,5bde,,4D,6C,done,,⋯⋯⋯⋯,,0,0,
+,6c,5bde,,4D,6C,done,,⋯⋯⋯⋯,...,0,0,
 ,6c,5be7,,BALLOT,BALLOT_3,done,,"不行呀～
 貝爾機器人根本
 就不理我⋯",,0,0,
@@ -1420,7 +1432,7 @@ script_baal_capital_professor_2b_2,6c,5b7e,,4E,72,done,,"咭咭咭～
 
 只要動個小手術
 小小的手術⚬",,0,0,
-,6c,5d9e,,4D,6C,done,,好的⚬,,0,0,
+,6c,5d9e,,4D,6C,done,,好的⚬,Yes.,0,0,
 ,6c,5da7,,BUCK,BUCK,done,,貝爾⋯⋯,,0,0,
 ,6c,5db2,,4D,6C,done,,"很可惜﹐我們相
 見的太晚了⚬",,0,0,
@@ -1697,7 +1709,7 @@ script_banglin_co1f_1,4f,55bf,,2A,53,done,,"您好～先生⚬
 觀大廳內的展示
 祝您愉快⚬","Hello, sir.
 
-These are the Bang Lin Entreprises internal offices.
+These are the Bang Lin Enterprises internal offices.
 
 They are not open for tours.
 
@@ -1715,15 +1727,15 @@ Have a good day.",0,0,
 古風項鍊﹗
 
 預估能掀起全球
-一陣復古風⚬","Hello! This is the Bang Lin Entreprises front desk. All of the products you see here are representative of our company.
+一陣復古風⚬","Hello! This is the Bang Lin Enterprises front desk. All of the products you see here are representative of our company.
 
-Especially this retro-styled necklace here!
+Especially this Retro Necklace here!
 
 It is expected to start a wave of retro fashion throughout the world.",0,0,
 ,4f,568f,,BLANK,1F,done,,"您好～這裡是復
 古風項鍊代言人
 選秀會報名處⚬
-您要報名嗎﹖","Hello! This is the registration desk for the retro-styled necklace spokesperson talent show.
+您要報名嗎﹖","Hello! This is the registration desk for the Retro Necklace spokesperson talent show.
 
 Do you wish to sign up?",0,0,
 ,4f,56c8,,2B,25,done,,"您好～
@@ -1767,7 +1779,7 @@ Isn't the thing embedded in it a power chip?",0,0,
 托出整體的復古
 典雅⚬","Hello!
 
-This is Bang Lin's latest product: the retro-styled necklace.
+This is Bang Lin's latest product: the Retro Necklace.
 
 It is embedded with a chip from an ancient technology.
 
@@ -1855,7 +1867,7 @@ I will give it a try...",0,0,
 ,4f,5a2d,,BLANK,1F,getchoice String_1cc5,,"您好～這裡是復
 古風項鍊代言人
 選秀會報名處⚬
-您要報名嗎﹖","Hello! This is the registration desk for the retro-styled necklace spokesperson talent show.
+您要報名嗎﹖","Hello! This is the registration desk for the Retro Necklace spokesperson talent show.
 
 Do you wish to sign up?",0,0,
 ,4f,5a69,,NINA,02,done,,是⋯⋯是的⋯⋯,Y-yes...,0,0,
@@ -2079,7 +2091,7 @@ Yes, thank you.",0,0,
 
 Beneath a beautiful appearance, a sharp mind is needed.
 
-This is what Bang Lin Entreprises requires.
+This is what Bang Lin Enterprises requires.
 
 Are you ready?
 
@@ -2219,7 +2231,7 @@ Thank you... Thank you!",0,0,
 做最後的自選服
 裝展示⚬","Next, those who have passed the preliminary selection, please go to the stage for your personally-selected clothing show.",0,0,
 ,4f,72bd,,NINA,02,done,,"要趕快換上兔先
-生特製的禮服⚬",I must hurry and change into Mr.Rabbit's specially-made dress.,0,0,
+生特製的禮服⚬",I must hurry and change into Mr. Rabbit's specially-made dress.,0,0,
 ,4f,72db,,NINA,NINA_4,done,,"啊⋯⋯這是什麼
 ﹖
 
@@ -2245,7 +2257,7 @@ H-how could this be?",0,0,
 千金的～
 麗子小姐﹗","Ladies and gentlemen, thank you for your patience!
 
-Bang Lin Entreprises' product spokesperson talent show is about to reach its climax.
+Bang Lin Enterprises' product spokesperson talent show is about to reach its climax.
 
 Now, we will evaluate these beautiful girls' clothing, that they selected themselves!
 
@@ -2367,7 +2379,7 @@ Thank you all!",0,0,
 頒發這條價值
 萬的復古項
 鍊﹗
-恭喜妮娜﹗","We now invite Bang Lin's president, Mr. Hamas, to congratulate Nina and award her this valuable retro-styled necklace!
+恭喜妮娜﹗","We now invite Bang Lin's president, Mr. Hammas, to congratulate Nina and award her this valuable Retro Necklace!
 
 Congratulations, miss Nina!",0,0,
 ,4f,7689,,LAKI,LAKI,done,,"你們這些沒有眼
@@ -2426,7 +2438,7 @@ I'll come with you!",0,0,
 復古項鍊﹗
 終於到手了﹗","Ohohoho!
 
-The retro-styled necklace!
+The Retro Necklace!
 
 It's finally ours!",0,0,
 ,4f,77fe,,KULU,KULU,done,,"在下真是非常的
@@ -2494,39 +2506,67 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 評審⚬
 
 幸好他準時回來
-了⚬",,0,0,
+了⚬","The young master is finally back!
+
+He's the main judge for this talent show.
+
+Thankfully, he came back on time.
+
+",0,0,
 ,4e,4d48,,BLANK,1F,getchoice String_1cc5,,"您不是妮娜小姐
 嗎﹖
 
 選秀會就要快開
 始了﹐您準備好
-了嗎﹖",,0,0,
+了嗎﹖","Aren't you miss Nina?
+
+The talent show is about to start, are you ready?",0,0,
 ,4e,4d82,,BLANK,1F,done,,"是這樣子的嗎﹖
 那您動作就要快
 一些了⚬
 
 選秀會就要舉行
-了⚬",,0,0,
+了⚬","Is that so?
+
+You should hurry then.
+
+The talent show is about to begin.",0,0,
 ,4e,4db9,,BLANK,1F,done,,"好的⚬
 
 我這就帶您到會
-場⚬",,0,0,
+場⚬","Very well.
+
+I'll take you to the venue now.",0,0,
 ,4e,4dd3,,35,5E,done,,"哈哈哈哈～
 瞧你們那副窮酸
 樣～
 
 真是叫人笑到肚
-子疼～",,0,0,
+子疼～","Ahahaha!
+
+Just look at you... You're so pitiful!
+
+Oh, my sides hurt...",0,0,
 ,4e,4e05,,BLANK,13,done,,"好⋯好緊張⋯
 深呼吸～
-深呼吸～",,0,0,
+深呼吸～","S-so nervous...
+
+Breathe in, breathe out...",0,0,
 ,4e,4e23,,BLANK,1D,done,,"可惡的麗子～
 都是她﹐害我們
-沒有新衣服⋯⋯",,0,0,
+沒有新衣服⋯⋯","Damn that Lizzy...
+
+Because of her, we can't get any new clothes...",0,0,
 ,4e,4e4c,,BLANK,25,done,,"不公平～
 這次選秀會﹐根
 本就不公平～
-人家沒有衣服穿",,0,0,
+人家沒有衣服穿","It's not fair...
+
+This talent show is absolutely not fair!
+
+I don't have anything to put on...
+
+",0,0,
 ,4e,4e80,,BLANK,1F,done,,"圖釘呢﹖
 在哪裡﹖
 喔﹗在這裡﹗
@@ -2534,7 +2574,19 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 
 這．樣．一．來
 就﹗﹗﹗
-呵呵呵呵～",,0,0,
+呵呵呵呵～","Where are the thumbtacks?
+
+Here?
+
+Oh! Here they are!
+
+Heheheh...
+
+Riiight there, perfect!
+
+Heheheh...
+
+",0,0,
 ,4e,4ec6,,LAKI,LAKI,done,,"哦～呵呵呵﹗
 那個笨蛋麗子﹐
 得意不了多久的
@@ -2549,14 +2601,28 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 這樣一來﹐就沒
 有問題了﹗
 哦哦哦哦～
-呵呵呵呵﹗",,0,0,
+呵呵呵呵﹗","Oh ho ho ho!
+
+Stupid Lizzy, I'll show her what true queenly demeanor is!
+
+And that necklace will be ours!
+
+Oh ho ho ho!
+
+This way, there will be no problem!
+
+Ho ho ho ho!
+
+Heh heh heh!",0,0,
 ,4e,4f64,,BLANK,13,done,,"第５９３２號﹐
 妮娜小姐⚬
 
 第一次選秀評分
 請準備上台⚬",,0,0,
 ,4e,4f99,,NINA,02,done,,"哦⋯﹗
-好的﹐謝謝您⚬",,0,0,
+好的﹐謝謝您⚬","Oh...!
+
+Yes, thank you.",0,0,
 ,4e,4faf,,JUDGE,50,done,,"第一循環淘汰賽
 比的是反應及機
 智⚬
@@ -2572,7 +2638,19 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 妮娜小姐～
 測驗開始～
 後台人員
-請準備﹗",,0,0,
+請準備﹗","The first eliminatory round will be a test of reflexes and wits.
+
+Beneath a beautiful appearance, a sharp mind is needed.
+
+This is what Bang Lin Enterprises requires.
+
+Are you ready?
+
+Miss Nina!
+
+The quizz is about to start!
+
+Backstage crew, get ready!",0,0,
 ,4e,5035,,JUDGE,50,done,,"沒有關係﹐這只
 是熱身的測試⚬
 
@@ -2582,15 +2660,27 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 你說是吧～
 美麗的小姐⚬
 
-再試一下吧﹗",,0,0,
+再試一下吧﹗","Don't worry, this was just a warm-up test.
+
+Who didn't fail once in their life?
+
+What do you say, young beauty?
+
+Try again!",0,0,
 ,4e,5086,,JUDGE,50,done,,"嗯～感覺不錯～
 您可以回休息室
 了⚬
 
 結果我們會通知
 各位⚬
-辛苦了⚬",,0,0,
-,4e,50c4,,NINA,02,done,,謝謝你們⚬,,0,0,
+辛苦了⚬","Hm, not bad.
+
+You can go back to the lounge.
+
+We will notify you of the results.
+
+Thank you for your trouble.",0,0,
+,4e,50c4,,NINA,02,done,,謝謝你們⚬,Thank you.,0,0,
 ,4e,50d1,,35,5E,done,,"哈哈哈哈～
 妳也比完了嗎﹖
 
@@ -2598,23 +2688,39 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 這個反應測試～
 
 我一定可以通過
-的⚬",,0,0,
+的⚬","Ha ha ha ha!
+
+Are you done too?
+
+Hehe...
+
+This kind of test, I'm sure I can pass.",0,0,
 ,4e,5109,,BLANK,13,done,,"嗚哇～
 人家剛在台上﹐
 手腳僵硬⋯
 根本就沒有辦法
 動﹗
-完蛋了啦﹗",,0,0,
+完蛋了啦﹗","Waah...
+
+While on-stage, my hands and feet were so stiff... I couldn't move at all!
+
+It's all over!",0,0,
 ,4e,5146,,BLANK,1D,done,,"我用我最深的詛
 咒﹗
 
 詛咒麗子落選吧
-詛咒～詛咒﹗",,0,0,
+詛咒～詛咒﹗","I'll use my most potent curse!
+
+I'll curse Lizzy to fail...
+
+Curse you... Curse you...!",0,0,
 ,4e,5172,,BLANK,25,done,,"好緊張～
-好緊張～",,0,0,
+好緊張～",I'm so nervous... So nervous!,0,0,
 ,4e,5187,,BLANK,1F,done,,"咭咭咭咭～
 我的圖釘戰術～
-是無敵的﹗",,0,0,
+是無敵的﹗","Hee hee hee...
+
+My thumbtack technique is unbeatable!",0,0,
 ,4e,51aa,,LAKI,LAKI,done,,"哦～呵呵呵呵﹗
 什麼反應測試～
 
@@ -2623,7 +2729,15 @@ script_banglin_co2,4e,4d02,,BLANK,14,done,,"少爺總算是回來
 遊戲罷了⚬
 
 哦哦哦哦～
-呵呵呵呵﹗",,0,0,
+呵呵呵呵﹗","Oh ho ho ho!
+
+What kind of reflexes test was that!
+
+Frankly, this is all just child's play.
+
+Ohohohoho!
+
+Eheheheheh!",0,0,
 script_banglin_co_1c_1,4f,53d3,,BLANK,15,done,,"呀﹗我要參加選
 秀會用的珍珠項
 鍊不見了⋯
@@ -2660,7 +2774,7 @@ Please come this way.",0,0,
 目前並沒有開放
 參觀﹐請您留步","Excuse me, sir!
 
-These are Bang Lin Corp's internal offices, and they are not currently open to the public.
+These are Bang Lin Enterprises's internal offices, and they are not currently open to the public.
 
 We'll have to ask you to leave.",0,0,
 ,4f,54bb,,BALLOT,BALLOT_5,done,,"剛才那位先生是
@@ -2688,7 +2802,7 @@ Please excuse me for my rudeness.
 
 We are professionally trained to not believe these kinds of lies.
 
-Bang Lin Entreprises thanks you for your interest, and invites you to visit the exhibition in the lobby to your heart's content.
+Bang Lin Enterprises thanks you for your interest, and invites you to visit the exhibition in the lobby to your heart's content.
 
 Have a good day.",0,0,
 ,4f,5580,,BALLOT,BALLOT_3,done,,"可惡⋯⋯
@@ -2741,37 +2855,51 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 ,4e,521d,,BLANK,1D,done,,"啊﹗
 我入選了﹗
 
-萬歲﹗",,0,0,
+萬歲﹗","Ah!
+
+I was chosen!
+
+Phew!",0,0,
 ,4e,5235,,BLANK,13,done,,"３１６２號～
 麗子小姐⚬",,0,0,
 ,4e,524c,,35,5E,done,,"呵呵呵～～
-理所當然的⚬",,0,0,
+理所當然的⚬","Heh heh heh...
+
+Of course.",0,0,
 ,4e,5263,,BLANK,13,done,,"４０９８號～
 拉琪小姐⚬",,0,0,
 ,4e,527a,,LAKI,LAKI,done,,"哦哦哦哦～
-呵呵呵呵﹗",,0,0,
+呵呵呵呵﹗","Ohohoho...
+
+Eheheheheh!",0,0,
 ,4e,528d,,BLANK,13,done,,"號～
-薇薇小姐⚬",,0,0,
+薇薇小姐⚬","No. 1234, miss Wei Wei.",0,0,
 ,4e,529f,,BLANK,1F,done,,"我⋯我入選了﹖
-好高興﹗",,0,0,
-,4e,52b3,,NINA,02,done,,沒有希望了嗎﹖,,0,0,
+好高興﹗","I... I was picked?
+
+I'm so glad!",0,0,
+,4e,52b3,,NINA,02,done,,沒有希望了嗎﹖,Did I fail?,0,0,
 ,4e,52c3,,BLANK,13,done,,"最後一位～
 第５９３２號～
 妮娜小姐⚬",,0,0,
 ,4e,52e8,,NINA,NINA_1,done,,"妮娜⋯入選了﹖
-謝謝⋯謝謝您﹗",,0,0,
+謝謝⋯謝謝您﹗","I... was chosen?
+
+Thank you... Thank you!",0,0,
 ,4e,5303,,BLANK,13,done,,"以上﹐通過初選
 的??展示台上
 
 做最後的自選服
 裝展示⚬",,0,0,
 ,4e,5337,,NINA,02,done,,"要趕快換上兔先
-生特製的禮服⚬",,0,0,
+生特製的禮服⚬",I must hurry and change into Mr. Rabbit's specially-made dress.,0,0,
 ,4e,5355,,NINA,NINA_4,done,,"啊⋯⋯這是什麼
 ﹖
 
 怎⋯怎麼會這樣
-﹖",,0,0,
+﹖","Ah... What is this?
+
+H-how could this be?",0,0,
 ,4e,5375,,HOST,50,done,,"各位先生～
 各位女士～
 讓大家久等了﹗
@@ -2802,9 +2930,17 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 傳說中的⋯⋯
 夏娃的羽衣嗎﹖
 鼻⋯鼻血止不住
-﹗﹗﹗",,0,0,
+﹗﹗﹗","I-is this...
+
+The fabled...
+
+Eve's feather dress?
+
+My... My nose won't stop bleeding!",0,0,
 ,4e,54aa,,KULU,KULU,done,,"太棒了﹗
-拉琪太棒了﹗",,0,0,
+拉琪太棒了﹗","Amazing!
+
+Laki is amazing!",0,0,
 ,4e,54c0,,HOST,50,done,,"這⋯這真是太勁
 暴了﹗
 
@@ -2816,7 +2952,11 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 出的鼻血看來～
 拉琪小姐似乎獲
 得了很高的評價
-﹗",,0,0,
+﹗","This... This is quite a shock!
+
+Miss Laki choosing such a bold style was unexpected.
+
+The nosebleeds from the jury just flow and flow... Miss Laki seems to be getting a high ranking!",0,0,
 ,4e,5530,,HOST,50,done,,"接下來﹐選秀會
 的最後一位美少
 女⚬
@@ -2824,35 +2964,49 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 我們一起歡迎﹐
 第５９３２號～
 妮娜小姐﹗",,0,0,
-,4e,5578,,BALLOT,BALLOT_5,done,,妮娜～加油～﹗,,0,0,
-,4e,5587,,HOST,50,done,,妮娜小姐﹖,,0,0,
-,4e,5595,,NINA,02,done,,是⋯是的⋯⋯,,0,0,
+,4e,5578,,BALLOT,BALLOT_5,done,,妮娜～加油～﹗,"Nina, good luck!",0,0,
+,4e,5587,,HOST,50,done,,妮娜小姐﹖,Miss Nina?,0,0,
+,4e,5595,,NINA,02,done,,是⋯是的⋯⋯,Y-yes...,0,0,
 ,4e,55a3,,BALLOT,BALLOT_5,done,,"這就是⋯超性感
-華麗的禮服﹖",,0,0,
-,4e,55bf,,JUDGE,53,done,,這⋯這簡直是⋯,,0,0,
+華麗的禮服﹖",This... is a super-sexy and gorgeous dress?,0,0,
+,4e,55bf,,JUDGE,53,done,,這⋯這簡直是⋯,This... This is simply...,0,0,
 ,4e,55cf,,CLAUDE,CLAUDE_2,done,,"好呀﹗
 
 好有創意的衣服
-啊﹗",,0,0,
+啊﹗","Great!
+
+What a creative dress!",0,0,
 ,4e,55eb,,JUDGE,53,done,,"少⋯少爺﹖
 少爺這麼認為﹖
 
 這是多麼有創意
-的服裝啊﹗",,0,0,
+的服裝啊﹗","Y-young master?
+
+You think so?
+
+Well, it is a very creative outfit!",0,0,
 ,4e,561f,,NINA,02,done,,"克勞德﹖
 他怎麼會在評審
-席呢﹖",,0,0,
+席呢﹖","Claude?
+
+Why is he part of the jury?",0,0,
 ,4e,563d,,HOST,50,done,,"好的⚬
 所??美少女都
 已經展示過她們
 的服裝了⚬",,0,0,
 ,4e,5666,,HOST,50,done,,"哦哦哦哦﹗
 結果出來了﹗
-最後優勝者是⋯",,0,0,
+最後優勝者是⋯","Ohoho!
+
+The results are in!
+
+The winner is...",0,0,
 ,4e,568a,,HOST,50,done,,"第５９３２號的
 妮娜小姐﹗﹗",,0,0,
 ,4e,56a5,,NINA,NINA_1,done,,"謝謝⋯
-謝謝你們～",,0,0,
+謝謝你們～","Thank you...
+
+Thank you all!",0,0,
 ,4e,56b8,,HOST,50,done,,"我們這就請～
 邦林科技的總裁
 哈瑪斯先生⚬
@@ -2870,40 +3024,64 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 給了各位特別的
 恩惠﹐展示了我
 傲人的胴體﹐你
-們居然不會欣賞",,0,0,
+們居然不會欣賞","You blind jerks!
+
+I, the wonderful queen of Team Volt, Laki...
+
+I have made you all the special favor of showing you my wonderful body, and you didn't appreciate any of it! ",0,0,
 ,4e,577d,,KULU,KULU,done,,"沒錯﹗
 
 這條項鍊﹐我們
-就拿走了﹗",,0,0,
-,4e,579f,,LAKI,LAKI,done,,哦哦～呵呵呵﹗,,0,0,
+就拿走了﹗","Rest assured!
+
+We'll take that necklace anyway!",0,0,
+,4e,579f,,LAKI,LAKI,done,,哦哦～呵呵呵﹗,Oho... Heheheh!,0,0,
 ,4e,57ae,,38,61,done,,"糟糕﹗
 項鍊被搶走了﹗
 
 得儘快要回來才
-行﹗",,0,0,
+行﹗","Oh no!
+
+The necklace was stolen!
+
+Someone must get it back as soon as possible!",0,0,
 ,4e,57d7,,BALLOT,BALLOT_5,done,,"妮娜﹗
 
 我們得起快搶回
-項鍊才行啊﹗",,0,0,
-,4e,57fb,,NINA,02,done,,好的⚬,,0,0,
+項鍊才行啊﹗","Nina!
+
+We need to get that necklace back!",0,0,
+,4e,57fb,,NINA,02,done,,好的⚬,Yes.,0,0,
 ,4e,5804,,CLAUDE,CLAUDE_0,done,,"妮娜﹗
 
 閃電隊往大樓內
-部逃去了﹗",,0,0,
-,4e,5826,,BALLOT,BALLOT_5,done,,我們快追﹗,,0,0,
+部逃去了﹗","Nina!
+
+Team Volt escaped further into the building!",0,0,
+,4e,5826,,BALLOT,BALLOT_5,done,,我們快追﹗,We're on it!,0,0,
 ,4e,5833,,CLAUDE,CLAUDE_0,done,,"不行﹗
 妮娜一個人的話
 我不放心﹗
-我也一起去﹗",,0,0,
+我也一起去﹗","No!
+
+I'll be too worried to let Nina go alone!
+
+I'll come with you!",0,0,
 ,4e,5861,,LAKI,LAKI,done,,"哦～呵呵呵﹗
 復古項鍊﹗
-終於到手了﹗",,0,0,
+終於到手了﹗","Ohohoho!
+
+The Retro Necklace!
+
+It's finally ours!",0,0,
 ,4e,5886,,KULU,KULU,done,,"在下真是非常的
 感動～
 
 在下和拉琪的夢
 想﹐終於可以實
-現了﹗",,0,0,
+現了﹗","I'm feeling so moved...
+
+Our dream can now finally come true!",0,0,
 ,4e,58bc,,LAKI,LAKI,done,,"不過還是很生氣
 我絞盡腦汁想出
 的樹葉裝﹐真的
@@ -2912,7 +3090,9 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 ,4e,58f5,,KULU,KULU,done,,"不～﹗
 在下認為﹐拉琪
 的樹葉裝是最棒
-的﹗",,0,0,
+的﹗","No way!
+
+I think that your leaf costume is the absolute best!",0,0,
 ,4e,591e,,LAKI,LAKI,done,,"不過話說回來⚬
 我們拿到了項鍊
 現?要怎麼離開
@@ -2920,15 +3100,19 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 ,4e,594e,,KULU,KULU,done,,"又是你們﹗
 看來在下要稍
 微拿出一點實力
-了⚬",,0,0,
+了⚬","It's you again!
+
+Looks like I'll have to show you what I'm made of.",0,0,
 ,4e,597a,,LAKI,LAKI,done,,"哦～呵呵呵﹗
 我要讓那隻笨白
 兔了解﹐誰才是
 真正的女王﹗",,0,0,
 ,4e,59b0,,LAKI,LAKI,done,,"哼﹗
-還你就還你﹗",,0,0,
+還你就還你﹗","Hmph!
+
+Take it back, then!",0,0,
 ,4e,59c1,,BALLOT,BALLOT_5,done,,"得到了復古項鍊
-﹗",,0,0,
+﹗",Got Retro Necklace!,0,0,
 ,4e,59d4,,KULU,KULU,done,,"知道我們的厲害
 了吧﹖
 
@@ -2936,7 +3120,11 @@ script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 你們﹗
 
 下次見面時﹐就
-不留情了﹗",,0,0,
+不留情了﹗","Do you have any idea of how great we are?
+
+We'll let you go this time!
+
+But next time we meet, there will be no mercy for you!",0,0,
 ,4e,5a18,,38,61,done,,"你就是巴洛特嗎
 真?非常的感謝
 你⚬
@@ -3050,7 +3238,7 @@ script_bell_healing_center2,0e,52d0,,14,25,done,,"受傷了嗎﹖
 
 If you're hurt, just enter this alpha ray emitter and you'll recover in a second! If you are injured, come to Nicole!",0,0,
 ,0e,5333,,BALLOT,BALLOT_0,done,,"學校的門關起來
-了﹗",The school's door is closed...,0,0,
+了﹗",The school's door is locked...,0,0,
 ,0e,5347,,BLANK,12,done,,"從流星雨過後﹐
 有時候可以在道
 路上看到星獸⚬
@@ -4424,7 +4612,7 @@ Unless...",0,0,
 
 好嗎﹖","I've got it!
 
-These sections correspond to the power circuits, which are the most important piece of the core!
+These sections correspond to the power chips, which are the most important piece of the core!
 
 As far as I can gather, those chips should be in the possession of 8 scientists, and I have one of them.
 
@@ -4443,7 +4631,7 @@ How about that?",0,0,
 好的﹗
 
 雷歐博士～
-我答應你⚬","Power circuits?
+我答應你⚬","Power chips?
 
 Dad must have been trying to solve the mystery of these little things.
 
@@ -4468,13 +4656,13 @@ Dr. Leo, it's a deal!",0,0,
 我再幫你引見董
 事長⚬
 
-各位﹐再見了⚬","These circuits?
+各位﹐再見了⚬","These chips?
 
 I think I remember the chairman having something like that once, but something unfortunate happened since then...
 
 It's kind of hard to explain...
 
-Ballot, if you come over to Gale Corp, I'll help you make an appointment with the chairman.
+Ballot, if you come over to GaleCorp, I'll help you make an appointment with the chairman.
 
 I've got to go now, see you!",0,0,
 ,0f,5299,,DR_LEO,DR_LEO,done,,"你不是想找到你
@@ -4509,7 +4697,7 @@ I'll finish the hull of the spaceship, so go and hunt down the other 7 chips so 
 將得到的晶片﹐
 傳輸給我⚬","This is for you!
 
-It's a tracker to help you find the circuits, along with a PDA.
+It's a tracker to help you find the chips, along with a PDA.
 
 With this, you can find out where all the chips are!
 
@@ -4559,7 +4747,7 @@ OK! The modifications are complete!
 
 Buck, this brand new robot bird is for you!
 
-I've named it Beattro, and it can carry you across small bumps in the road!",0,0,
+I've named it Beattro, and it can carry you across small gaps in the road!",0,0,
 ,0f,54ad,,BALLOT,BALLOT_1,done,,"巴克＆機械鳥
 加入隊伍﹗",Buck and Beattro joined the party!,0,0,
 ,0f,54c5,,SYSTEM,VAST_FAME,done,,"星獸．機械鳥加
@@ -4592,7 +4780,7 @@ script_duolu_city2,12,723c,,BLANK,12,done,,"加爾企業董可長
 找到了孫子﹖
 
 真是替他感到高
-興～","Gale Corp.'s chairman's grandson has been found?
+興～","GaleCorp's chairman's grandson has been found?
 
 I'm so happy for him!",0,0,
 ,12,7267,,BLANK,23,done,,"往西邊走的話﹐
@@ -4607,7 +4795,7 @@ I'm so happy for him!",0,0,
 
 我們都是依照鐘
 塔上的時間座息
-的⚬","If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.
+的⚬","If you go west, you'll see the Clock Tower. The chairman of GaleCorp erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.
 
 ",0,0,
 ,12,72ef,,BLANK,18,done,,"真是奇怪﹗真是
@@ -4634,21 +4822,21 @@ This is... so strange!",0,0,
 ",0,0,
 ,12,736f,,BLANK,1F,done,,"加爾企業明天就
 要舉行董事交接
-典禮﹗真是期待","Gale Corp. will be holding a handover ceremony tomorrow!
+典禮﹗真是期待","GaleCorp will be holding a handover ceremony tomorrow!
 
 I'm really looking forward to it.",0,0,
-script_duolu_city2_1,12,5194,,BLANK,15,done,,這裡是多魯市⚬,"Welcome to Dorington, home of the world-famous Gale Enterprises.",0,0,
+script_duolu_city2_1,12,5194,,BLANK,15,done,,這裡是多魯市⚬,"Welcome to Dorington, home of the world-famous Gale Corporation.",0,0,
 ,12,51a6,,BLANK,21,done,,"看到那棟最高的
 建築了嗎﹖
 那就是鼎鼎大名
-的加爾企業唷﹗",Do you see that tall tower over there? That building is the headquarters of the famous Gale Enterprises!,0,0,
+的加爾企業唷﹗",Do you see that tall tower over there? That building is the headquarters of GaleCorp!,0,0,
 ,12,51d9,,BLANK,12,done,,"看過告示版了嗎
 ﹖真是可憐啊～
 加爾企業的董事
 長正在尋找十六
 
 年前失散的孫子
-呢⚬","Do you see that noticeboard? How sad.. Gale Enterprises' chairman is still trying to find his grandchild, who vanished 16 years ago.",0,0,
+呢⚬","Do you see that notice? How sad.. GaleCorp's chairman is still trying to find his grandchild, who vanished 16 years ago.",0,0,
 ,12,5223,,BLANK,23,done,,"往西邊走的話﹐
 就是鐘塔了⚬
 那是加爾企業董
@@ -4660,7 +4848,7 @@ script_duolu_city2_1,12,5194,,BLANK,15,done,,這裡是多魯市⚬,"Welcome to D
 
 呢⚬我們都是依
 照鐘塔上的時間
-作息的⚬","If you go west, you'll see the Clock Tower. The chairman of Gale Enterprises erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.",0,0,
+作息的⚬","If you go west, you'll see the Clock Tower. The chairman of GaleCorp erected it as a memorial to his deceased daughter. It's become a landmark of Dorington, and we all set our watches according to the time on the Clock Tower.",0,0,
 ,12,52aa,,BLANK,18,done,,"加爾企業董事長
 失散的孫子﹐身
 
@@ -4668,7 +4856,7 @@ script_duolu_city2_1,12,5194,,BLANK,15,done,,這裡是多魯市⚬,"Welcome to D
 光的月型項鍊﹐
 名叫月琉璃⚬要
 是被我找到的話
-﹐我就發財了⚬","The grandson of Gale Enterprises' chairman was said to have worn a shiny necklace in the shape of the moon, known as the Moon Glaze. I'm sure it's worth a fortune! If I find it, I'll be rich!",0,0,
+﹐我就發財了⚬","The grandson of GaleCorp's chairman was said to have worn a shiny necklace in the shape of the moon, known as the Moon Glaze. I'm sure it's worth a fortune! If I find it, I'll be rich!",0,0,
 ,12,530c,,BLANK,1C,done,,"哦～鐘塔的時間
 已經３點了﹗
 
@@ -4703,7 +4891,7 @@ script_duolu_city2_1,12,5194,,BLANK,15,done,,這裡是多魯市⚬,"Welcome to D
 小嬰兒送走⚬
 
 之後﹐董事長的
-女兒便鬱鬱而終","16 years ago, the daughter of Harrison, Gale Enterprises' chairman, had a relationship with a shepherd. The chairman was furious as he felt that the shepherd was not worthy of his daughter, so he forced them to break up and had the child sent away. The chairman's daughter died of depression shortly after.",0,0,
+女兒便鬱鬱而終","16 years ago, the daughter of Harrison, GaleCorp's chairman, had a relationship with a shepherd. The chairman was furious as he felt that the shepherd was not worthy of his daughter, so he forced them to break up and had the child sent away. The chairman's daughter died of depression shortly after.",0,0,
 ,12,546f,,BLANK,19,done,,"往南邊走﹐就會
 到達山達農莊⚬
 
@@ -5125,7 +5313,7 @@ What happened?",0,0,
 燒死她﹐為死去
 的小孩報仇﹗","Hmph! I knew it!
 
-It turned out that Helen was a transformed mermaid! I heard her conversations with the mermaid, all of it!
+It turned out that Haiqing was a transformed mermaid! I heard her conversations with the mermaid, all of it!
 
 Humph!
 
@@ -5228,7 +5416,7 @@ Don't worry, I'll make sure to rescue Helen!",0,0,
 哼﹗燒死她﹐為
 死去的小孩報仇","Hmph! I knew it!
 
-It turned out that Helen was a transformed mermaid! I heard her conversations with the mermaid, all of it!
+It turned out that Haiqing was a transformed mermaid! I heard her conversations with the mermaid, all of it!
 
 Humph!
 
@@ -5368,7 +5556,7 @@ Forgive me...",0,0,
 He often said, ""I want us to go on an adventure together!"", with such a spark in his eyes...
 
 Anton...",0,0,
-,55,7788,,BALLOT,BALLOT_5,done,,得到了晶片４﹗,Got Power Chip 4!,0,0,
+,55,7788,,BALLOT,BALLOT_5,done,,得到了晶片４﹗,Got Chip 4!,0,0,
 ,55,7797,,HELEN,HELEN_0,done,,"巴洛特﹐我會堅
 強的活下去的⚬
 
@@ -5563,13 +5751,21 @@ I'm gona take it to school to show it to everyone!",0,0,
 They're so beautiful!",0,0,
 script_east_fishmarket_0d_4,5c,458c,,3A,63,done,,"再見了～我要進
 行我的第二個深
-奧的沈思了⋯",,0,0,
+奧的沈思了⋯","Goodbye now!
+
+It's time for me to dive into my second round of deep thought...",0,0,
 ,5c,45b8,,BLANK,1E,done,,"我⋯我回來了﹗
-嗚嗚嗚～媽媽﹗",,0,0,
+嗚嗚嗚～媽媽﹗","I'm... I'm back!
+
+Waaaaaaaah! Moooom!",0,0,
 ,5c,45d3,,BALLOT,BALLOT_5,done,,"怎麼回事﹖
 怎麼都沒有人﹖
 
-發生了什麼事﹖",,0,0,
+發生了什麼事﹖","What is going on?
+
+Where is everyone?
+
+What happened?",0,0,
 ,5c,45fb,,BLANK,16,done,,"哼﹗我就知道﹗
 原來海青是人魚
 
@@ -5713,7 +5909,7 @@ No! I don't want Anton to leave me!",0,0,
 可以一起行動了
 ﹗","Are you Ballot?
 
-I've received an e-mail from President Hamas.
+I've received an e-mail from President Hammas.
 
 You're trying to unearth the secrets of an ancient spaceship?
 
@@ -5778,30 +5974,50 @@ Ballot, can you help me bring Helen back here? After we get the power chip back,
 吧﹗","Ballot, can you help me bring Helen back here? After we get the power chip back, we'll set off!",0,0,
 script_east_fishmarket_45,5c,4c42,,BLANK,1C,done,,"萬歲～
 又可以到海邊玩
-耍了﹗",,0,0,
+耍了﹗","Yipee!
+
+It's time to go play at the beach again!",0,0,
 ,5c,4c5e,,BLANK,14,done,,"安東⋯
 我們錯怪他了⋯
 
 真不曉得要怎麼
 向海藍交待⋯
 海藍⋯
-請原諒我們⋯",,0,0,
+請原諒我們⋯","Anton...
+
+We were wrong about him...
+
+I really don't know say that to Helen...
+
+Helen...
+
+Please forgive us...",0,0,
 ,5c,4ca6,,HELEN,HELEN_0,done,,"我不恨你們﹐但
 也不喜歡你們⚬
-離我遠一些﹗",,0,0,
-,5c,4cd1,,BLANK,14,done,,呃⋯是⋯是的⚬,,0,0,
+離我遠一些﹗","I don't hate you, but I don't like you either.
+
+Stay away from me!",0,0,
+,5c,4cd1,,BLANK,14,done,,呃⋯是⋯是的⚬,Uh... O... Okay.,0,0,
 ,5c,4ce1,,BLANK,13,done,,"海藍⋯
 請原諒我們⋯⋯
 
 在那種情形下﹐
 大家都被仇恨沖
 昏了頭⋯
-真是遺憾⋯",,0,0,
+真是遺憾⋯","Helen...
+
+Please forgive us...
+
+At that moment, everyone was blinded by hatred...
+
+I'm so sorry...",0,0,
 ,5c,4d27,,HELEN,HELEN_0,done,,"原諒與否﹐有什
 麼差別嗎﹖
 
 安東不會因此而
-活過來⋯",,0,0,
+活過來⋯","What difference will it make whether I forgive you or not?
+
+It won't bring Anton back to life...",0,0,
 ,5c,4d57,,BLANK,15,done,,"瓜瓜這次能平安
 回來﹐真是多虧
 了你⋯
@@ -5813,8 +6029,10 @@ script_east_fishmarket_45,5c,4c42,,BLANK,1C,done,,"萬歲～
 ,5c,4da1,,BLANK,15,done,,"瓜瓜這次能平安
 回來﹐真是多虧
 了你⋯
-謝謝你⚬",,0,0,
-,5c,4dcc,,BLANK,15,done,,瓜瓜回來了⋯,,0,0,
+謝謝你⚬","Gua Gua came back safely, all thanks to you...
+
+Thank you.",0,0,
+,5c,4dcc,,BLANK,15,done,,瓜瓜回來了⋯,Gua Gua came back...,0,0,
 ,5c,4ddb,,BLANK,17,done,,"安東的死亡⋯
 都是我的錯⋯
 
@@ -5822,14 +6040,24 @@ script_east_fishmarket_45,5c,4c42,,BLANK,1C,done,,"萬歲～
 的話⋯
 就不會發生這種
 事了﹗
-都是我不好⋯",,0,0,
+都是我不好⋯","Anton's death...
+
+It's my fault...
+
+If I wasn't so jealous... This wouldn't have happened!
+
+It's all my fault...",0,0,
 script_east_fishmarket_46,5c,4e2b,,BLANK,18,done,,"海藍⋯⋯
 真是抱歉～
 
 即使安東走了﹐
 也要好好的活下
-去哦﹗",,0,0,
-,5c,4e60,,HELEN,HELEN_0,done,,⋯⋯⋯,,0,0,
+去哦﹗","Helen...
+
+I'm so sorry.
+
+Even though Anton is gone, you have to be strong!",0,0,
+,5c,4e60,,HELEN,HELEN_0,done,,⋯⋯⋯,...,0,0,
 ,5c,4e68,,BLANK,1D,done,,"喂～老公～
 我?說嘛﹗
 
@@ -5838,7 +6066,7 @@ script_east_fishmarket_46,5c,4e2b,,BLANK,18,done,,"海藍⋯⋯
 原來真的是人魚
 變??",,0,0,
 ,5c,4ea2,,BLANK,1D,done,,"啊﹗海藍～
-是妳啊﹗",,0,0,
+是妳啊﹗",Ah! H-Helen... It's you!,0,0,
 script_east_fishmarket_47,5c,4eb8,,BLANK,1F,done,,"南方的海島上﹐
 有座地熱城⚬
 
@@ -5850,12 +6078,18 @@ script_east_fishmarket_47,5c,4eb8,,BLANK,1F,done,,"南方的海島上﹐
 
 超人模型給我﹗
 怎麼還沒有來﹖
-我．要．啦﹗﹗",,0,0,
+我．要．啦﹗﹗","Mom! Cousin Linlin said she wanted to send me a Super Brabra figurine!
+
+Why hasn't it arrived yet?
+
+I waaant iiiit!",0,0,
 ,5c,4f3e,,BLANK,1F,done,,"不要吵﹗
 再吵小心被章魚
-吃掉﹗",,0,0,
+吃掉﹗","Shush!
+
+If you keep making noise, the mermaids are going to eat you!",0,0,
 ,5c,4f5e,,BLANK,1E,done,,"章魚﹗﹗嗚～～
-嗚嗚～",,0,0,
+嗚嗚～",Mermaids...! Waaaaah!,0,0,
 ,5c,4f73,,BLANK,1E,done,,"這是⋯⋯布拉布
 拉超人﹖﹖﹗﹗
 太．棒．了﹗
@@ -5874,7 +6108,11 @@ script_east_fishmarket_47,5c,4eb8,,BLANK,1F,done,,"南方的海島上﹐
 拉超人耶﹗
 哈哈哈哈～
 我要帶去學校給
-大家看﹗",,0,0,
+大家看﹗","Wahoo! Super Brabra!
+
+Hahahaha!
+
+I'm gona take it to school to show it to everyone!",0,0,
 script_east_fishmarket_48_1,5c,4538,,BLANK,16,done,,"南方海島上﹐有
 座衛星雷達站⚬
 
@@ -5883,10 +6121,16 @@ script_east_fishmarket_48_1,5c,4538,,BLANK,16,done,,"南方海島上﹐有
 訊號⚬
 
 科技真是方便的
-東西呀⚬",,0,0,
-script_east_fishmarket_48_2,5c,5025,,BLANK,19,done,,安東～嗚嗚嗚～,,0,0,
+東西呀⚬","There's a satellite radar station on the island south from here.
+
+A lot of signals can be sent and received using satellites.
+
+Technology sure is incredible!",0,0,
+script_east_fishmarket_48_2,5c,5025,,BLANK,19,done,,安東～嗚嗚嗚～,Anton... Sniff...,0,0,
 script_east_fishmarket_49,5c,5035,,BLANK,1B,done,,"我曾看過人魚喲
-長得還真是漂亮",,0,0,
+長得還真是漂亮","I've seen mermaids before.
+
+They're so beautiful!",0,0,
 script_east_fishmarket_4e,5c,47fc,,BLANK,16,done,,"哼﹗我就知道﹗
 
 原來海青是人魚
@@ -5898,21 +6142,33 @@ script_east_fishmarket_4e,5c,47fc,,BLANK,16,done,,"哼﹗我就知道﹗
 哼﹗燒死她﹐為
 死去的小孩報仇",,0,0,
 ,5c,485a,,BALLOT,BALLOT_5,done,,"糟糕～
-這要怎麼辦﹖",,0,0,
+這要怎麼辦﹖","Oh no...
+
+What to do?",0,0,
 ,5c,486f,,BALLOT,BALLOT_5,done,,"魚之魂傳來了一
-陣聲音～",,0,0,
+陣聲音～",A sound came from the fish soul...,0,0,
 ,5c,4889,,42,6B,done,,"到最高處～
-最高的地方～",,0,0,
+最高的地方～","The highest place...
+
+At the highest place...",0,0,
 ,5c,48a2,,BALLOT,BALLOT_5,done,,"最高的地方﹖
 
 東漁市最高的地
-方﹖",,0,0,
+方﹖","The highest place?
+
+What's the highest place in Dongyu Town?",0,0,
 ,5c,48c2,,BALLOT,BALLOT_5,done,,"燈塔﹗﹗﹗
 魚之魂的聲音﹐
 是指燈塔嗎﹖
-儘快到達吧﹗",,0,0,
+儘快到達吧﹗","The lighthouse!
+
+Was the fish soul talking about the lighthouse?
+
+We have to get there as fast as possible!",0,0,
 script_east_fishmarket_anton_cutscene,5c,465e,,BALLOT,BALLOT_5,done,,"安東﹖﹖﹗
-這是怎麼回事﹖",,0,0,
+這是怎麼回事﹖","Anton?!
+
+What happened?",0,0,
 ,5c,4678,,ANTON,62,done,,"海⋯海藍⋯
 是人魚的事⋯
 被發現了⋯
@@ -5922,15 +6178,31 @@ script_east_fishmarket_anton_cutscene,5c,465e,,BALLOT,BALLOT_5,done,,"安東﹖�
 失去了理智⋯
 強行⋯⋯
 捉走了海藍⋯
-呃⋯呃⋯⋯",,0,0,
+呃⋯呃⋯⋯","He... Helen...
+
+They found out... she was a mermaid...
+
+Cough...
+
+They... completely lost their minds...
+
+They took her... by force...
+
+Cough, cough...",0,0,
 ,5c,46dc,,BALLOT,BALLOT_5,done,,"振作一點﹐安東
-﹗",,0,0,
+﹗","Hang in there, Anton!",0,0,
 ,5c,46f0,,ANTON,62,done,,"我⋯我⋯
 沒有辦法⋯
 保護海藍⋯
 
 請⋯請你們⋯
-一定要⋯救她⋯",,0,0,
+一定要⋯救她⋯","I... I can't...
+
+Protect Helen...
+
+Ple... Please...
+
+You have to... Save her...",0,0,
 ,5c,4729,,BALLOT,BALLOT_5,done,,"好的﹗
 我一定會的﹗
 安東﹐不要再說
@@ -5938,7 +6210,13 @@ script_east_fishmarket_anton_cutscene,5c,465e,,BALLOT,BALLOT_5,done,,"安東﹖�
 振作些﹗
 
 我這就去救回海
-藍﹗",,0,0,
+藍﹗","Got it!
+
+I'll do everything I can!
+
+Anton, don't speak, hang in there!
+
+I'm going to save Helen right now!",0,0,
 ,5c,476c,,ANTON,62,done,,"謝⋯謝⋯⋯
 海⋯海藍⋯
 
@@ -5955,26 +6233,38 @@ script_east_fishmarket_anton_cutscene,5c,465e,,BALLOT,BALLOT_5,done,,"安東﹖�
 安東﹗﹗
 
 你放心﹐我一定
-會救出海藍的﹗",,0,0,
+會救出海藍的﹗","ANTON!!!
+
+No!
+
+Why did this have to happen?
+
+Anton!
+
+Don't worry, I'll make sure to rescue Helen!",0,0,
 script_east_fishmarket_healing_center,5c,40be,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 ,5c,40d6,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
-script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀～,,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
+script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀～,Kwee... Skwee!,0,0,
 ,5c,4902,,42,6B,done,,"丟下吧～
-丟下我吧～",,0,0,
+丟下我吧～","Down...
+
+Put me down...",0,0,
 ,5c,4914,,BALLOT,BALLOT_5,done,,"將魚之魂丟下嗎
-﹖",,0,0,
+﹖",Put the fish soul down here?,0,0,
 ,5c,4928,,BLANK,1F,done,,"你這個妖女﹐殺
 害我兒子的兇手
-我要妳償命﹗",,0,0,
+我要妳償命﹗","You witch, you'll pay for the murder of my son with your life!",0,0,
 ,5c,4953,,HELEN,HELEN_1,done,,"安東⋯放開我﹗
 
 安東受了重傷﹐
-我要去救他﹗",,0,0,
+我要去救他﹗","Anton... Let me go!
+
+Anton has been badly hurt, I have to save him!",0,0,
 ,5c,497e,,BLANK,20,done,,"安東那傢伙﹐一
 定和妳串通好了
 
@@ -5982,24 +6272,44 @@ script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀�
 家後代的名號﹐
 
 卻做這種見不得
-人的勾當﹗",,0,0,
+人的勾當﹗","Anton must have colluded with you!
+
+Such a shameful thing to do for a descendant of one of the great scientists!",0,0,
 ,5c,49d1,,HELEN,HELEN_0,done,,"你胡說﹗
 他沒有﹗
 
 他不曉得這件事
 放開我～
-我要去救安東﹗",,0,0,
+我要去救安東﹗","What are you saying?!
+
+He didn't!
+
+He didn't know anything about this!
+
+Let me go...
+
+I must go save Anton!",0,0,
 ,5c,4a08,,BLANK,20,done,,"你們就一起到地
-獄相見吧﹗",,0,0,
+獄相見吧﹗",You can go meet each other in Hell!,0,0,
 ,5c,4a25,,HELEN,HELEN_0,done,,"不～不要﹗
-放開我﹗",,0,0,
+放開我﹗","N-nooo!
+
+Let me go!",0,0,
 ,5c,4a3a,,HELEN,HELEN_3,done,,"這是⋯⋯海青﹗
 海青﹗
-妳⋯⋯﹗",,0,0,
+妳⋯⋯﹗","This is... Haiqing!
+
+Haiqing!
+
+You...!",0,0,
 ,5c,4a5a,,BLANK,1E,done,,"媽媽﹗
-人家好怕啊﹗",,0,0,
+人家好怕啊﹗","Mom!
+
+I was so scared!",0,0,
 ,5c,4a70,,BLANK,15,done,,"瓜⋯瓜瓜﹗
-我的瓜瓜﹗﹗﹗",,0,0,
+我的瓜瓜﹗﹗﹗","G... Gua Gua!
+
+My little Gua Gua!",0,0,
 ,5c,4a89,,BLANK,1E,done,,"是人魚姐姐救了
 我的⚬
 
@@ -6007,8 +6317,12 @@ script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀�
 有一隻好大～
 好大的章魚～
 殺了很多小朋友
-哦﹗",,0,0,
-,5c,4ad6,,BLANK,20,done,,這是怎麼回事⋯,,0,0,
+哦﹗","The mermaid miss saved me.
+
+I saw it!
+
+There was a super big octopus that killed lots of children!",0,0,
+,5c,4ad6,,BLANK,20,done,,這是怎麼回事⋯,What's this...,0,0,
 ,5c,4ae6,,,,done,,"終於～
 知道了嗎﹖
 那又如何⋯⋯
@@ -6017,7 +6331,21 @@ script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀�
 自私好嗎﹖
 
 安東～我⋯我⋯
-原諒我⋯⋯",,0,0,
+原諒我⋯⋯","In the end...
+
+Did you know about it?
+
+But then, why...
+
+Haiqing... 
+
+Can you please forgive my selfishness?
+
+Anton... 
+
+I... I...
+
+Forgive me...",0,0,
 ,5c,4b2d,,HELEN,HELEN_2,done,,"這就是安東的動
 力晶片⚬
 
@@ -6027,8 +6355,12 @@ script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀�
 
 眼神是多麼的興
 奮啊⋯⋯
-安東⋯⋯",,0,0,
-,5c,4b87,,BALLOT,BALLOT_5,done,,得到了晶片４﹗,,0,0,
+安東⋯⋯","This is Anton's power chip.
+
+He often said, ""I want us to go on an adventure together!"", with such a spark in his eyes...
+
+Anton...",0,0,
+,5c,4b87,,BALLOT,BALLOT_5,done,,得到了晶片４﹗,Got Chip 4!,0,0,
 ,5c,4b96,,HELEN,HELEN_0,done,,"巴洛特﹐我會堅
 強的話下去的⚬
 
@@ -6045,9 +6377,9 @@ script_east_fishmarket_mermaid_cutscene,5c,48f2,,3F,6A,done,,喀囉～喀喀喀�
 頭﹐將可化為人
 
 魚﹐通過大海或
-湖泊⚬",,0,0,
+湖泊⚬","If Helen leads the party, she can turn into a mermaid to lead the party across seas and lakes.",0,0,
 script_east_fishmarket_shop,5c,4105,,19,22,done,,"需要什麼服務嗎
-﹖",,0,0,
+﹖",Do you need something?,0,0,
 script_east_fishmarket_undersea_0d_1,55,64aa,,3A,63,done,,⋯⋯⋯,...,0,0,
 ,55,64b2,,3B,64,done,,⋯⋯⋯,...,0,0,
 ,55,64ba,,3B,63,done,,⋯⋯⋯,...,0,0,
@@ -6680,7 +7012,7 @@ script_ending_epilogue,6e,4401,,53,60,done,,"嗚哇～
 ,6e,4c49,,38,61,done,,"克勞德﹐你還不
 明瞭爸爸的用心
 嗎﹖",,0,0,
-,6e,4c6a,,NINA,02,done,,⋯⋯⋯,,0,0,
+,6e,4c6a,,NINA,02,done,,⋯⋯⋯,...,0,0,
 ,6e,4c72,,CLAUDE,CLAUDE_2,done,,"這．還．用．你
 ．說﹗
 
@@ -6764,15 +7096,21 @@ script_ending_finale,6e,4e43,,BALLOT,BALLOT_5,done,,"終於⋯
 那我就仁慈的
 告訴你們吧﹗",,0,0,
 ,6e,4fb5,,KULU,KULU,done,,"來自銀河系裡的
-正義使者﹗",,0,0,
+正義使者﹗","Messengers of justice, from the Milky Way!
+
+",0,0,
 ,6e,4fd1,,LAKI,LAKI,done,,"穿梭於黑夜的浪
-漫勇士﹗",,0,0,
+漫勇士﹗","Dashing heroes, in both night and day!
+
+",0,0,
 ,6e,4fe9,,KULU,KULU,done,,"貫徹愛．正義．
-勇氣的真理﹗",,0,0,
-,6e,5004,,LAKI,LAKI,done,,拉琪﹗,,0,0,
-,6e,500d,,KULU,KULU,done,,庫魯﹗,,0,0,
+勇氣的真理﹗","With truth, justice, courage and love!
+
+",0,0,
+,6e,5004,,LAKI,LAKI,done,,拉琪﹗,Laki!,0,0,
+,6e,500d,,KULU,KULU,done,,庫魯﹗,Kulu!,0,0,
 ,6e,5016,,LAKI,LAKI,done,,"閃．電．隊～～
-誕生﹗﹗",,0,0,
+誕生﹗﹗",Witness the birth of the Volts!,0,0,
 ,6e,502a,,LAKI,LAKI,done,,好冷⋯⋯,,0,0,
 ,6e,5033,,KULU,KULU,done,,"在下覺得我們好
 像被遺忘了⋯",,0,0,
@@ -7110,7 +7448,7 @@ Leave it to me, I'll help you out with the clothes.
 
 I have a friend who's a famous tailor.
 
-Let's meet in the Sea of Green!
+Let's meet in the Green Forest!
 
 See ya - please come!",0,0,
 ,4f,6146,,BALLOT,BALLOT_5,done,,真是奇怪的人⋯,What a weird guy...,0,0,
@@ -7125,7 +7463,7 @@ See ya - please come!",0,0,
 只好到綠色樹海
 與他碰面了⚬","We don't have a choice, there's no longer any clothes in the city...
 
-We'll have to go meet him in the Sea of Green.
+We'll have to go meet him in the Green Forest.
 
 ",0,0,
 ,4f,61aa,,BALLOT,BALLOT_5,done,,"這裡是綠色樹海
@@ -7134,7 +7472,7 @@ We'll have to go meet him in the Sea of Green.
 頭做的樹﹖
 
 石頭做的小動物
-真是奇怪～","That's the Sea of Green?
+真是奇怪～","That's the Green Forest?
 
 Why are there stone trees everywhere?
 
@@ -7234,7 +7572,7 @@ script_g3_1a_1,4f,52bc,,BLANK,16,done,,"在天之都的附近
 突然間～
 所有的樹都
 變成了石頭⚬
-真是奇怪啊⋯","There's a forest near Sky City called the Sea of Green.
+真是奇怪啊⋯","There's a forest near Sky City called the Green Forest.
 
 But suddenly, for some unknown reason, all of the trees turned to stone.
 
@@ -7247,7 +7585,7 @@ This is really strange...",0,0,
 石頭⚬
 
 到底是怎麼回事
-呢﹖","There were a lot of small animals living in the Sea of Green...
+呢﹖","There were a lot of small animals living in the Green Forest...
 
 But many of them suddenly disappeared, and some turned into stone.
 
@@ -7256,7 +7594,7 @@ script_g3_1a_2,4f,6bf9,,BLANK,16,done,,"綠色樹海又變成
 一片綠油油了⚬
 
 真是搞不懂怎麼
-回事⚬","The trees in the Sea of Green have become green once more.
+回事⚬","The trees in the Green Forest have become green once more.
 
 I really don't understand what's going on.",0,0,
 ,4f,6c29,,BLANK,1F,done,,"好噁心喔﹗
@@ -7269,7 +7607,7 @@ I really don't understand what's going on.",0,0,
 朵的老鼠﹗
 好噁心喔﹗","Gross!
 
-In the Sea of Green, I saw a furless little bunny...
+In the Green Forest, I saw a furless little bunny...
 
 Without fur, white rabbits look like long-eared rats!
 
@@ -7285,18 +7623,18 @@ script_g3_1b,4f,5372,,BLANK,18,done,,"邦林企業總裁的
 喜歡小動物⚬
 
 常看見他對著小
-動物自言自語⋯","Claude, the son of Bang Lin Entreprises' president, is a very naughty kid.
+動物自言自語⋯","Claude, the son of Bang Lin Enterprises' president, is a very naughty kid.
 
 However, he is very fond of small animals.
 
 I often see him talking to them...",0,0,
 script_g3_1d_1,4f,407f,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 script_g3_1d_2,4f,4097,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
 script_g3_1e,4f,406d,,19,22,done,,需要服務嗎﹖,,0,0,
 script_g4_1e,58,63df,,STAR_BEAST,6A,done,,"嘰嘰～阻礙計劃
 者⋯嘰嘰⋯殺﹗",,0,0,
@@ -7307,14 +7645,14 @@ script_g4_1e,58,63df,,STAR_BEAST,6A,done,,"嘰嘰～阻礙計劃
 
 這種不安的感覺
 到底是什麼呢﹖",,0,0,
-script_g5_03_1,67,6f54,,2E,57,done,,⋯⋯⋯,,0,0,
-,67,6f5d,,2D,56,done,,⋯⋯⋯,,0,0,
+script_g5_03_1,67,6f54,,2E,57,done,,⋯⋯⋯,...,0,0,
+,67,6f5d,,2D,56,done,,⋯⋯⋯,...,0,0,
 script_g5_03_2,67,6f6d,,2D,56,done,,"啊﹗是你啊﹗
 這個送你⚬",,0,0,
 ,67,6f86,,BALLOT,BALLOT_5,done,,得到干擾電波⚬,,0,0,
 ,67,6f97,,2D,56,done,,路上小心﹗,,0,0,
 ,67,6fa5,,2E,57,getchoice String_1cc5,,需要治療嗎﹖,,0,0,
-script_g5_04_1,67,6f65,,31,5A,done,,⋯⋯⋯,,0,0,
+script_g5_04_1,67,6f65,,31,5A,done,,⋯⋯⋯,...,0,0,
 script_g5_04_2,67,6fdb,,2E,57,getchoice String_1cc5,,"這裡是怪獸膠囊
 存放銀行⚬
 需要服務嗎﹖",,0,0,
@@ -7323,23 +7661,25 @@ script_g5_04_2,67,6fdb,,2E,57,getchoice String_1cc5,,"這裡是怪獸膠囊
 見面禮好了⚬",,0,0,
 ,67,7025,,BALLOT,BALLOT_5,done,,得到祕技１?⚬,,0,0,
 ,67,7036,,31,5A,done,,遇上你真好⚬,,0,0,
-script_g5_05_1,67,6f4b,,2F,58,done,,⋯⋯⋯,,0,0,
+script_g5_05_1,67,6f4b,,2F,58,done,,⋯⋯⋯,...,0,0,
 script_g5_05_2,67,6fb7,,2F,58,getchoice String_1cc5,,需要治療嗎﹖,,0,0,
 script_g5_06_1,67,6fc9,,31,5A,getchoice String_1cc5,,需要治療嗎﹖,,0,0,
 script_g5_06_2,67,7044,,2F,58,done,,"終於有人聽懂我
 的話了⚬
 這個送你⚬",,0,0,
 ,67,7069,,BALLOT,BALLOT_5,done,,得到神奇果實⚬,,0,0,
-,67,7079,,2F,58,done,,謝謝你﹗,,0,0,
+,67,7079,,2F,58,done,,謝謝你﹗,"Thank you!
+
+",0,0,
 script_g6_08_1,6c,405d,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 ,6c,4075,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
 ,6c,40a4,,19,22,done,,"需要什麼服務嗎
-﹖",,0,0,
+﹖",Do you need something?,0,0,
 script_g6_08_2,6c,748f,,51,$76,done,,"想要阻止懲罰者
 嗎﹖
 
@@ -8185,7 +8525,7 @@ Ah... I hate having to say this...
 
 But since you helped me so much...
 
-The president of GaleCorp's rival entreprise, Bang Lin, has another chip.
+The president of GaleCorp's rival enterprise, Bang Lin, has another chip.
 
 That's because his ancestor was also one of the eight great scientists...",0,0,
 ,12,7b78,,BALLOT,BALLOT_5,done,,邦林企業﹖,Bang Lin Enterprises?,0,0,
@@ -8217,7 +8557,7 @@ GaleCorp is a world-renowned global company, after all.
 Such an insignificant issue isn't going to stop us.
 
 This is for you!",0,0,
-,12,7c4b,,BALLOT,BALLOT_1,done,,得到金鑰匙﹗,Got a Golden Key!,0,0,
+,12,7c4b,,BALLOT,BALLOT_1,done,,得到金鑰匙﹗,Got a Gold Key!,0,0,
 ,12,7c5a,,28,4E,done,,"鐘塔內有扇密閉
 的鐵門﹐就是通
 往達瑪之都
@@ -8226,7 +8566,7 @@ This is for you!",0,0,
 這就是加爾企業
 對外流通的祕密","There's an iron door inside the Clock Tower, leading to Dama's capital.
 
-This is the secret to Gale Corp's worldwide distribution circuit!",0,0,
+This is the secret to GaleCorp's worldwide distribution circuit!",0,0,
 ,12,7ca6,,BALLOT,BALLOT_5,done,,"謝謝你～董事長
 ﹗","Thank you, Mr. Chairman!",0,0,
 ,12,7cb9,,28,4E,done,,"我也要感謝你～
@@ -8251,7 +8591,7 @@ Good luck with your mission!",0,0,
 解開古代太空船
 的祕密﹗","I... I've been thinking about it for a while...
 
-Now that my brother has become the director of Gale Corp... I can rest easy... And I...
+Now that my brother has become the director of GaleCorp... I can rest easy... And I...
 
 I want to uncover the secrets of the spaceship with you, Ballot!",0,0,
 ,12,7d79,,28,4E,done,,"妮⋯妮娜﹗
@@ -8285,7 +8625,7 @@ Let's go, everyone!",0,0,
 就可以通到達瑪
 之都了⚬
 
-祝你任務順利⚬","Use the Golden Key to open the door in the Clock Tower.
+祝你任務順利⚬","Use the Gold Key to open the door in the Clock Tower.
 
 You'll be able to get to Dama's capital.
 
@@ -8586,14 +8926,14 @@ script_geothermal_city_37,58,6246,,BLANK,15,done,,"我們家琳琳﹐一
 ,58,63c6,,BALLOT,BALLOT_5,done,,"藍特＆音樂靈加
 入隊伍⚬",,0,0,
 script_geothermal_healing_center,58,405e,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 ,58,4076,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
 script_geothermal_shop,58,40a5,,19,22,done,,"需要什麼服務嗎
-﹖",,0,0,
+﹖",Do you need something?,0,0,
 script_green_forest_20,4f,6746,,33,5C,done,,"轟隆～轟隆～
 還有醜陋的活人
 嗎﹖
@@ -8823,7 +9163,7 @@ Bye!
 script_green_forest_4356,4f,4356,,BALLOT,BALLOT_3,done,,"嗚～好痛﹗
 被這種草刺到﹐
 就像被針刺到一
-樣﹗",,0,0,
+樣﹗",Ouch! Being pricked by this grass is like being pricked by a needle!,0,0,
 script_green_forest_p13_1,4f,61ed,,2D,56,done,,拱拱～拱～,"Oink oink!
 
 ",0,0,
@@ -8836,7 +9176,7 @@ script_green_forest_p13_2,4f,66cb,,2D,56,done,,"是你呀﹗
 
 For your own good, you should't go over there.
 
-There's a scary volcano monster ahead.
+There's a Volgas ahead.
 
 ",0,0,
 ,4f,6707,,2D,56,done,,"既使這樣﹐你都
@@ -8896,9 +9236,9 @@ Why isn't Nina here yet?",0,0,
 裡的所有東西變
 成石頭⚬","Mr. Rabbit here is the animal kingdom's most famous tailor!
 
-But the meteor shower hit the volcanic rock in the Sea of Green...
+But the meteor shower hit the volcanic rock in the Green Forest...
 
-The rock transformed into a volcano monster, which turned everything in the forest to stone.",0,0,
+The rock transformed into Volgas, which turned everything in the forest to stone.",0,0,
 ,4f,634a,,NINA,NINA_2,done,,真是可憐⚬,"That's truly terrible...
 
 ",0,0,
@@ -8925,7 +9265,7 @@ Because of this, it is very sad and doesn't have the heart to make clothes...",0
 森林裡的火山怪
 ﹐應該就可以解
 救森林裡被石化
-的動物們了⚬","If we defeat the volcano monster in the forest, we should be able to rescue the petrified animals.
+的動物們了⚬","If we defeat the Volgas in the forest, we should be able to rescue the petrified animals.
 
 ",0,0,
 ,4f,6422,,NINA,02,done,,"好的﹐妮娜會努
@@ -9321,7 +9661,7 @@ script_item_get_4212,1e,4212,,BALLOT,BALLOT_0,done,,獲得,"Obtained
 <itemname>!",1,0,
 script_item_get_6ddb,1e,6ddb,,MITT,47,done,,獲得?,Obtained?,1,0,
 script_item_names,1e,6437,,,,"line """"",,機械構造圖,Blueprints,0,0,
-,1e,6442,,,,"line """"",,彩虹水晶,RainbowCrystal,0,0,
+,1e,6442,,,,"line """"",,彩虹水晶,Rainbow Crystal,0,0,
 ,1e,644b,,,,"line """"",,真．黃金鳳凰號,Phx. Car,0,0,
 ,1e,6458,,,,"line """"",,發條,Spring,0,0,
 ,1e,645d,,,,"line """"",,發條老鼠,Windup Rat,0,0,
@@ -9331,7 +9671,7 @@ script_item_names,1e,6437,,,,"line """"",,機械構造圖,Blueprints,0,0,
 ,1e,6479,,,,"line """"",,晶片２,Chip 2,0,0,
 ,1e,6480,,,,"line """"",,金鑰匙,Gold Key,0,0,
 ,1e,6486,,,,"line """"",,性感禮服,Sexy Dress,0,0,
-,1e,648e,,,,"line """"",,復古項鍊,Old Necklace,0,0,
+,1e,648e,,,,"line """"",,復古項鍊,Retro Necklace,0,0,
 ,1e,6497,,,,"line """"",,晶片３,Chip 3,0,0,
 ,1e,649e,,,,"line """"",,珍珠項鍊,Pearl Necklace,0,0,
 ,1e,64a6,,,,"line """"",,魚之魂,Fish Soul,0,0,
@@ -9481,7 +9821,7 @@ This isn't the Moon Glaze, it's only... only a...",0,0,
 失散的孫子﹐己
 經病倒了﹐你還
 忍心瞧他這樣下
-去嗎﹖",Gale Corp's chairman has gotten sick trying to find his lost grandson! Can you bear to see him like this?,0,0,
+去嗎﹖",GaleCorp's chairman has gotten sick trying to find his lost grandson! Can you bear to see him like this?,0,0,
 ,12,69a3,,NINA,02,done,,哥⋯⋯,"Brother...
 
 ",0,0,
@@ -9585,7 +9925,7 @@ Why are you forcing me to do this?
 身世⚬
 
 然而﹐我一點都
-不高興⋯","Only when I saw the notice from Gale Corp. did it dawn on me who I really was.
+不高興⋯","Only when I saw the notice from GaleCorp. did it dawn on me who I really was.
 
 Yet, this brings me no joy...",0,0,
 ,12,6c54,,25,4F,done,,"『他』為了維持
@@ -9741,7 +10081,7 @@ Forever and ever...
 的我﹐實在是相
 當的高興⚬","Thanks to you, Ballot, the chairman's grandson has been found!
 
-Gale Corp. has a successor!
+GaleCorp has a successor!
 
 As the manager of the procurement department, I couldn't be happier.",0,0,
 ,12,6f96,,25,4F,done,,"巴洛特⋯謝謝你
@@ -9873,7 +10213,7 @@ What should I do?",0,0,
 很多的藥﹐但哥
 哥的傷還是愈來
 愈嚴重⋯
-怎麼辦﹖","Sniff... While my brother was herding sheep, they suddenly smelled the scent of coffee from the coffee monster.
+怎麼辦﹖","Sniff... While my brother was herding sheep, they suddenly smelled the scent of coffee from Caunfee.
 
 They all went completely crazy and my brother was seriously injured! I tried so many cures, but his injuries are only getting worse...
 
@@ -9913,7 +10253,7 @@ But his condition... Without an Angel Leaf... Sniff...",0,0,
 有人敢到裡面採
 取天使之葉⚬","In the deepest part of Coffee Forest is an Angel Tree. Its leaves have strong healing properties.
 
-But a coffee monster lurks there, so no one dares to go in to harvest Angel Leaves.",0,0,
+But Caunfee lurks there, so no one dares to go in to harvest Angel Leaves.",0,0,
 ,12,636e,,BALLOT,BALLOT_5,done,,"咖啡林﹖
 我一定會將天使
 之葉採回來的﹗","Coffee Forest?
@@ -10040,14 +10380,14 @@ Truth, justice and courage: Team Volt, out!",0,0,
 ,0f,4c47,,BALLOT,BALLOT_0,done,,這個開關是⋯⋯,If I flip this...,0,0,
 script_power_plant_outside_1,0f,4691,,21,31,done,,"喵嗚～嗚⚬
 
-ｚＺ～ｚＺ～",Miao~ Zzzz~,0,0,
+ｚＺ～ｚＺ～",Miao... Zzzz...,0,0,
 ,0f,46aa,,BALLOT,BALLOT_2,done,,"不行﹗
 
 整個入口都被貓
 怪擋住了﹗
 
 得回去向博士報
-告才行﹗","Oh no! The entrance has been blocked by this monstrous cat!
+告才行﹗","Oh no! The entrance's been blocked by a monster cat!
 
 I'd better go report back to Dr. Leo.",0,0,
 ,0f,46e3,,DR_LEO,DR_LEO,done,,"什麼﹖貓怪﹖
@@ -10079,9 +10419,9 @@ But how can we make one while the power is out..?",0,0,
 你等一下～
 我找一下零件⋯","How frustrating!
 
-As a last resort, I'll have to make it spring- powered.
+As a last resort, I'll have to make it spring-powered.
 
-Even though it would be embarrasing for me to make clockwork rats..
+Even though it would be embarrasing for me to make wind-up rats..
 
 Give me a bit, and I'll find the parts I need..",0,0,
 ,0f,479e,,DR_LEO,DR_LEO,done,,"糟糕～
@@ -10161,9 +10501,11 @@ script_power_plant_outside_2,0f,48f3,unkText_00f_48f3,BLANK,16,done,,"發條﹖
 蒙著臉做就不會
 這麼覺得吧﹗
 
-等我一下下～","It's not wrong! This is what I want to do with my hair... it's really embarrassing... ugh... if you do it with your face covered, you won't feel that way! I'll be back in a minute.
+等我一下下～","That's right!
 
-",1,0,
+This is the spring I wanted...
+
+How embarrassing.. I'll just have to bite the bullet and do it.",1,0,
 ,0f,498f,,DR_LEO,DR_LEO,done,,"這就是發條老鼠
 ⚬沒想到蒙著臉﹐
 還是覺得一樣的
@@ -10171,13 +10513,13 @@ script_power_plant_outside_2,0f,48f3,unkText_00f_48f3,BLANK,16,done,,"發條﹖
 
 喂～巴洛特﹗
 千萬不可以說出
-去唷⚬","Here's the clockwork rat.
+去唷⚬","Here's the wind-up rat.
 
 I still feel ashamed of resorting to such simple tech...
 
 Ballot! You'd better not tell anyone I made it!",0,0,
 ,0f,49e7,,BALLOT,BALLOT_1,done,,"得到了發條老鼠
-﹗",Got the Clockwork Rat!,0,0,
+﹗",Got the Wind-Up Rat!,0,0,
 ,0f,49fb,,DR_LEO,DR_LEO,done,,"有了發條老鼠﹐
 應該就可以引開
 發電塔的貓怪了
@@ -10186,7 +10528,7 @@ Ballot! You'd better not tell anyone I made it!",0,0,
 哎呀～
 
 想到就覺得丟臉
-⋯⋯","With the clockwork rat, you should be able to distract that monster cat. Ah, I feel embarrassed just thinking about it...",0,0,
+⋯⋯","With the wind-up rat, you should be able to distract that monster cat. Ah, I feel embarrassed just thinking about it...",0,0,
 ,0f,4a46,,21,31,done,,"喵嗚～喵～
 
 嗚嗚～",Miao~ Miao~,0,0,
@@ -10288,7 +10630,7 @@ script_presale_house_1f_1,66,5407,,$5b,20,done,,"你看過城外的預
 那你又是誰﹖
 我怎麼會在這裡
 你要綁架我嗎﹖",,0,0,
-,66,54cb,,$5b,20,done,,⋯⋯⋯,,0,0,
+,66,54cb,,$5b,20,done,,⋯⋯⋯,...,0,0,
 script_presale_house_1f_2,66,66f2,,$5b,20,done,,"你們要問預售屋
 的事﹖
 
@@ -10394,7 +10736,7 @@ script_presale_house_1f_2,66,66f2,,$5b,20,done,,"你們要問預售屋
 ,66,6ade,,BLANK,19,done,,"你這個綁架我的
 人﹐怎麼叫我老
 媽了﹖",,0,0,
-,66,6b01,,$5b,20,done,,⋯⋯⋯,,0,0,
+,66,6b01,,$5b,20,done,,⋯⋯⋯,...,0,0,
 ,66,6b09,,BLANK,19,done,,"嘻嘻～
 他們想要綁架我
 等?腳不像蛋糕
@@ -10421,15 +10763,19 @@ script_presale_house_26_2_6240,66,6240,,LAKI,LAKI,done,,"哦～呵呵呵呵﹗
 那我就仁慈的告
 訴你們吧﹗",,0,0,
 ,66,630f,,KULU,KULU,done,,"來自銀河系裡的
-正義使者﹗",,0,0,
+正義使者﹗","Messengers of justice, from the Milky Way!
+
+",0,0,
 ,66,632b,,LAKI,LAKI,done,,"穿梭於黑夜的浪
 漫?士﹗",,0,0,
 ,66,6343,,KULU,KULU,done,,"貫徹愛．正義．
-勇氣的真理﹗",,0,0,
-,66,635e,,LAKI,LAKI,done,,拉琪﹗,,0,0,
-,66,6367,,KULU,KULU,done,,庫魯﹗,,0,0,
+勇氣的真理﹗","With truth, justice, courage and love!
+
+",0,0,
+,66,635e,,LAKI,LAKI,done,,拉琪﹗,Laki!,0,0,
+,66,6367,,KULU,KULU,done,,庫魯﹗,Kulu!,0,0,
 ,66,6370,,LAKI,LAKI,done,,"閃．電．隊～～
-誕生﹗﹗",,0,0,
+誕生﹗﹗",Witness the birth of the Volts!,0,0,
 ,66,6384,,KULU,KULU,done,,"在下為了能實現
 夢想﹐什麼事都
 做得出來﹗
@@ -10648,7 +10994,7 @@ script_radar_station_4f_5d71,58,5d71,,40,69,done,,"什⋯什麼﹖
 你說﹖",,0,0,
 ,58,5e56,,40,69,done,,"殿⋯殿下⋯⋯
 請⋯請饒命呀﹗",,0,0,
-,58,5e73,,3F,75,done,,⋯⋯⋯⋯,,0,0,
+,58,5e73,,3F,75,done,,⋯⋯⋯⋯,...,0,0,
 ,58,5e7c,,BLANK,20,done,,"啊﹗﹗
 怎麼回事﹖
 怎麼打起盹來了
@@ -10690,23 +11036,23 @@ script_radar_station_63,5a,6663,,3F,75,done,,"愚蠢的人類﹐闖
 那種不安的感覺
 ﹐愈來愈濃了⋯",,0,0,
 script_sacredtree_healing_center_40,59,4062,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 ,59,407a,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
 script_sacredtree_healing_center_5c,5a,405e,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 ,5a,4076,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
 script_sacredtree_shop_41,59,40a9,,19,22,done,,"需要什麼服務嗎
-﹖",,0,0,
+﹖",Do you need something?,0,0,
 script_sacredtree_shop_5d,5a,40a5,,19,22,done,,"需要什麼服務嗎
-﹖",,0,0,
+﹖",Do you need something?,0,0,
 script_sacredtree_stardream_departure,59,772c,,40,69,done,,"你就是巴洛特嗎
 居然有人能夠進
 來這裡﹐真是叫
@@ -10878,7 +11224,7 @@ script_sacredtree_time_travel,59,55b1,,47,6F,done,,"人類⋯
 ⋯⋯１３年～⋯",,0,0,
 ,59,58b6,,LANTE,46,done,,"慢慢慢著﹗
 不是１０年嗎﹖",,0,0,
-,59,58cf,,BALLOT,BALLOT_5,done,,⋯⋯⋯,,0,0,
+,59,58cf,,BALLOT,BALLOT_5,done,,⋯⋯⋯,...,0,0,
 ,59,58d7,,20,30,done,,"回溯⋯３５年～
 ⋯⋯４３年～",,0,0,
 ,59,58f3,,LANTE,45,done,,"爛機器﹗
@@ -11908,7 +12254,7 @@ script_sacredtree_village_28_3,5a,68fd,,RANDT,06,done,,"曾祖父完成他的
 
 你現在一定很高
 興吧﹗",,0,0,
-,5a,71c1,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,,0,0,
+,5a,71c1,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,Got XXX!,0,0,
 ,5a,71d0,,BLANK,16,done,,"爸爸～
 你現在一定很高
 興吧﹗",,0,0,
@@ -12626,7 +12972,7 @@ script_sacredtree_village_4521,5a,4521,,BLANK,13,done,,"這裡是神木村⚬
 ⋯⋯１３年～⋯",,0,0,
 ,5a,54ed,,LANTE,46,done,,"慢慢慢著﹗
 不是１０年嗎﹖",,0,0,
-,5a,5506,,BALLOT,BALLOT_5,done,,⋯⋯⋯,,0,0,
+,5a,5506,,BALLOT,BALLOT_5,done,,⋯⋯⋯,...,0,0,
 ,5a,550e,,20,30,done,,"回溯⋯３５年～
 ⋯⋯４３年～",,0,0,
 ,5a,552a,,LANTE,45,done,,"爛機器﹗
@@ -13123,7 +13469,7 @@ Eeheeheehee!",0,0,
 啡的香氣～
 
 聞到的人都會變
-得異常的興奮⚬","How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into a coffee Star Beast!
+得異常的興奮⚬","How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into Caunfee!
 
 That monster sometimes emits a burst of coffee scent...
 
@@ -13150,7 +13496,7 @@ I'm! On! FIRE!",0,0,
 我一定要找到
 才行﹗","Every time I smelled coffee, I would pinch my nose, and almost suffocated once because of that...
 
-Gale Corp's chairman is offering a lot of money to anyone who can find his long-lost grandson. 
+GaleCorp's chairman is offering a lot of money to anyone who can find his long-lost grandson. 
 
 I must find him!",0,0,
 ,12,5d14,,BLANK,19,done,,"嗚哦哦哦﹗
@@ -13184,7 +13530,7 @@ script_shanda_farm_12_1,12,5dab,,BLANK,23,done,,"咖啡林的咖啡怪
 到牠的氣味﹐人
 都會變得非常的
 興奮﹗我得要將
-門窗關緊才行﹗","The coffee monster lurking in Coffee Forest is real scary! 
+門窗關緊才行﹗","The Caunfee lurking in Coffee Forest is real scary! 
 
 I heard that people who smell its scent go completely mad! 
 
@@ -13292,7 +13638,7 @@ No... S-stay away!",0,0,
 這該怎麼辦才好
 ﹖","When my wife came back from going outside, she was like a completely different person!
 
-She must have caught a whiff of the coffee monster's scent.
+She must have caught a whiff of Caunfee's scent.
 
 What am I supposed to do?",0,0,
 script_shanda_farm_14_2,12,6796,,BLANK,1E,done,,"媽媽又變成原來
@@ -13319,7 +13665,7 @@ Ah! Why are there knife nicks everywhere?",0,0,
 你﹗
 不然的話﹐我可
 能就慘死在菜刀
-底下了⋯⋯","Are you the one who defeated the coffee monster? Thank you so much! 
+底下了⋯⋯","Are you the one who defeated Caunfee? Thank you so much! 
 
 Otherwise, I might've ended up chopped into tiny cubes...
 
@@ -13383,7 +13729,7 @@ To celebrate, I'll make myself a super-strong cup of coffee... I need more excit
 氣～
 
 聞到的人都會變
-得異常的興奮⚬","How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into a coffee Star Beast!
+得異常的興奮⚬","How terrible... Meteors from the shower from some time ago hit a coffee tree in the Coffee Forest, which turned into Caunfee!
 
 That monster sometimes emits a burst of coffee scent...
 
@@ -13436,7 +13782,7 @@ script_sky_city_1,4f,4de3,,BLANK,16,done,,"這裡是天之都⚬
 
 You see this tall building over there?
 
-That's the head office of the famous Bang Lin Entreprises.",0,0,
+That's the head office of the famous Bang Lin Enterprises.",0,0,
 ,4f,4e1c,,BLANK,16,done,,"邦林科技要甄選
 『復古風項鍊』
 的女性代言人⚬
@@ -13475,7 +13821,7 @@ What a naughty kid!",0,0,
 業化﹐是邦林企
 業的口號⚬","The grandfather of Bang Lin's current president is also one of the 8 scientists who saved the Earth.
 
-Putting the spirit of science at the entreprise's service is Bang Lin's motto.",0,0,
+Putting the spirit of science at the enterprises' service is Bang Lin's motto.",0,0,
 ,4f,4f38,,BLANK,13,done,,"哎呀～
 不要丟髒我的新
 衣服唷﹗
@@ -13516,9 +13862,9 @@ If it goes any slower, I won't be able to buy new clothes...",0,0,
 
 尤其是鑲在裡面
 的古代晶片﹐更
-是價值連城唷﹗","The prize for Bang Lin Entreprise's talent show is very beautiful!
+是價值連城唷﹗","The prize for Bang Lin Enterprise's talent show is very beautiful!
 
-It's a retro-styled necklace.
+It's a Retro Necklace.
 
 And the ancient chip embedded in it is the most valuable part of it all!",0,0,
 ,4f,5048,,BLANK,1C,done,,"爸爸說﹐在邦林
@@ -13611,7 +13957,7 @@ script_stardream_airship_18,66,4dd7,,STAR_BEAST,6A,done,,"巴⋯巴洛特⋯⋯
 
 請少爺萬事小心
 ⚬",,0,0,
-script_stardream_airship_65_2,66,4ca2,,BALLOT,BALLOT_5,done,,怎麼回事﹖,,0,0,
+script_stardream_airship_65_2,66,4ca2,,BALLOT,BALLOT_5,done,,怎麼回事﹖,What's going on?,0,0,
 ,66,4caf,,BLANK,12,done,,"主引擎室內有異
 物侵入﹗
 主引擎運轉不正
@@ -13900,12 +14246,12 @@ script_stardream_florist_10_2,66,5f6c,,BLANK,25,done,,"米特常來花店裡
 每一朵都是栽培
 者的苦心⚬",,0,0,
 script_stardream_healing_center,66,405d,,14,25,getchoice String_1cc5,,"需要妮可治療嗎
-﹖",,0,0,
+﹖",Need treatment?,0,0,
 ,66,4075,,1A,25,getchoice String_1cc5,,"這裡是星獸膠囊
 存放銀行⚬
 
 需要艾娜的服務
-嗎﹖",,0,0,
+嗎﹖",This is the Star Beast Storage Bank. Do you need my help?,0,0,
 script_stardream_hospital_11,66,5739,,BLANK,13,done,,"這裡是星夢醫院
 本院的一樓是一
 般診所﹐二樓是
@@ -14002,10 +14348,10 @@ script_stardream_hospital_15_1,66,5d40,,BLANK,13,done,,"都過一個月了﹐
 
 如此一來﹐就有
 醒過來的可能⚬",,0,0,
-,66,5ee7,,MITT,07,done,,⋯⋯⋯,,0,0,
+,66,5ee7,,MITT,07,done,,⋯⋯⋯,...,0,0,
 ,66,5eef,,4B,30,done,,"求生指數⋯⋯
 ⋯??０％",,0,0,
-script_stardream_hospital_15_2,66,725f,,MITT,07,done,,⋯⋯⋯,,0,0,
+script_stardream_hospital_15_2,66,725f,,MITT,07,done,,⋯⋯⋯,...,0,0,
 ,66,7267,,MITT,48,done,,"呃⋯嗚嗚⋯
 不要⋯",,0,0,
 ,66,727b,,MITT,07,done,,"逃⋯快逃⋯我⋯
@@ -14035,7 +14381,7 @@ script_stardream_hospital_15_2,66,725f,,MITT,07,done,,⋯⋯⋯,,0,0,
 
 加油呀～
 醒???﹗",,0,0,
-,66,73ab,,MITT,07,done,,⋯⋯⋯⋯,,0,0,
+,66,73ab,,MITT,07,done,,⋯⋯⋯⋯,...,0,0,
 ,66,73b4,,BALLOT,BALLOT_5,done,,還是不行嗎﹖,,0,0,
 ,66,73c3,,BALLOT,BALLOT_5,done,,"米特～醒醒呀﹗
 不要絕望﹐許多
@@ -14321,7 +14667,7 @@ script_stardream_secret_base,66,6de6,,57,1C,done,,"米特的祕密基地
 ,66,6f1b,,BALLOT,BALLOT_5,done,,得到米特日記﹗,,0,0,
 ,66,6f2c,,BALLOT,BALLOT_5,done,,得到全家福照﹗,,0,0,
 script_stardream_shop,66,40a4,,19,22,done,,"需要什麼服務嗎
-﹖",,0,0,
+﹖",Do you need something?,0,0,
 script_tech_city2_blackout_54aa,0e,54aa,,BALLOT,BALLOT_4,done,,"奇怪﹖
 
 這裡怎麼會這麼
@@ -14491,7 +14837,7 @@ Is it just me, or is it that every time I see Buck, I get the feeling that he is
 電力塔內設有特
 殊防範措施啊﹗
 
-真是奇怪⋯","Tech City is an enclosed town, and all our lights are electric lights.
+真是奇怪⋯","Tech City is an enclosed city, and all our lights are electric lights.
 
 But there are special precautions in the power station to prevent situations like this from happening!
 
@@ -14971,7 +15317,7 @@ This won't change anything, you know!",0,0,
 雷歐才是最厲害
 的發明家﹗","Hooray! Those dastardly Volts have lost!
 
-I knew it all along: Dr Leo is the best inventor in the world!",0,0,
+I knew it all along: Dr. Leo is the best inventor in the world!",0,0,
 ,0e,6c02,,BALLOT,BALLOT_0,done,,"哈哈哈～
 
 那三千萬的賭金
@@ -15022,7 +15368,7 @@ You'd better hand over that 30 million anyway!",0,0,
 敗了閃電隊﹗
 
 我們之前都錯怪
-他了⚬","Dr Leo finally defeated the Volts!
+他了⚬","Dr. Leo finally defeated the Volts!
 
 We shouldn't have doubted him.",0,0,
 ,0e,6d47,,BLANK,17,done,,"這裡是全世界最
@@ -15040,7 +15386,7 @@ We shouldn't have doubted him.",0,0,
 grandfather and seven other scientists saved the Earth, so everyone in this city respects him.",0,0,
 ,0e,6dc7,,BLANK,12,done,,"雷歐博士果然是
 世界第一的機械
-發明家⚬",Dr Leo is certainly the best inventor in the world.,0,0,
+發明家⚬",Dr. Leo is certainly the best inventor in the world.,0,0,
 ,0e,6dec,,BLANK,13,done,,"糟糕⋯
 
 我的水藍鑽石項
@@ -15091,9 +15437,9 @@ Can you go to the power plant and investigate why?",0,0,
 怪擋住了﹗
 
 得回去向博士報
-告才行﹗","Oh no! The entrance's been blocked by this monstrous cat!
+告才行﹗","Oh no! The entrance's been blocked by a monster cat!
 
-I'd better go report back to the professor.",0,0,
+I'd better go report back to Dr. Leo.",0,0,
 ,0e,6f6b,,DR_LEO,DR_LEO,done,,"什麼﹖貓怪﹖
 
 該怎麼辦才好⋯",What? A monster cat? What shall we do..?,0,0,
@@ -15105,7 +15451,7 @@ I'd better go report back to the professor.",0,0,
 但是沒有電力﹐
 該怎麼製作呢⋯","I've got it! We can use a robot rat to distract him!
 
-But how can we make those while the power is out..?",0,0,
+But how can we make one while the power is out..?",0,0,
 ,0e,6fc3,,DR_LEO,DR_LEO,done,,"真叫人生氣﹗
 
 在不得已的情況
@@ -15121,7 +15467,7 @@ But how can we make those while the power is out..?",0,0,
 
 As a last resort, I'll have to make it spring-powered.
 
-Even though it would be embarrasing for me to make clockwork rats..
+Even though it would be embarrasing for me to make wind-up rats..
 
 Give me a bit, and I'll find the parts I need..",0,0,
 ,0e,7026,,DR_LEO,DR_LEO,done,,"糟糕～
@@ -15140,7 +15486,7 @@ Give me a bit, and I'll find the parts I need..",0,0,
 ﹗","Darn it! I used to think that making clockworks was below me, so I threw all those parts out.
 
 Sorry, Ballot, but I need some springs!",0,0,
-,0e,7090,,BALLOT,BALLOT_0,done,,我知道了﹗,I've got it!,0,0,
+,0e,7090,,BALLOT,BALLOT_0,done,,我知道了﹗,Got it!,0,0,
 ,0e,709b,,DR_LEO,DR_LEO,done,,"要做成機械老鼠
 ﹐
 得找到發條才行
@@ -15203,7 +15549,7 @@ I forgot where I put it, so feel free to search in these piles of treasure!",0,0
 
 This is the spring I wanted...
 
-How em- barrassing.. I'll just have to bite the bullet and do it.",0,0,
+How embarrassing.. I'll just have to bite the bullet and do it.",0,0,
 ,0e,7217,,DR_LEO,DR_LEO,done,,"這就是發條老鼠
 ⚬沒想到蒙著臉﹐
 還是覺得一樣的
@@ -15211,13 +15557,13 @@ How em- barrassing.. I'll just have to bite the bullet and do it.",0,0,
 
 喂～巴洛特﹗
 千萬不可以說出
-去唷⚬","Here's the clockwork rat.
+去唷⚬","Here's the wind-up rat.
 
 I still feel ashamed of resorting to such simple tech...
 
 Ballot! You'd better not tell anyone I made it!",0,0,
 ,0e,726f,,BALLOT,BALLOT_1,done,,"得到了發條老鼠
-﹗",Got the Clockwork Rat!,0,0,
+﹗",Got the Wind-Up Rat!,0,0,
 ,0e,7283,,DR_LEO,DR_LEO,done,,"有了發條老鼠﹐
 應該就可以引開
 發電塔的貓怪了
@@ -15226,7 +15572,7 @@ Ballot! You'd better not tell anyone I made it!",0,0,
 哎呀～
 
 想到就覺得丟臉
-⋯⋯","With the clockwork rat, you should be able to distract that monster cat. Ah, I feel embarrassed just thinking about it...",0,0,
+⋯⋯","With the wind-up rat, you should be able to distract that monster cat. Ah, I feel embarrassed just thinking about it...",0,0,
 ,0e,72ce,,21,31,done,,"喵嗚～喵～
 
 嗚嗚～",Miao~ Miao~,0,0,
@@ -15344,7 +15690,7 @@ He certainly is the best inventor in the world.",0,0,
 加爾企業及邦林
 企業﹐
 都是數一數二的
-大企業喲⚬","Have you heard of Gale Enterprises?
+大企業喲⚬","Have you heard of GaleCorp?
 
 It's one of the biggest companies in the world, second only to Bang Lin!",0,0,
 ,0e,762c,,BLANK,21,done,,"嗚～嗚～
@@ -15364,7 +15710,7 @@ Waaah!",0,0,
 別看這些破破爛
 爛的東西﹐
 這些全是我的寶
-貝﹗","This is the scrapyard of Tech City. They may look like pieces of junk, but to me, they're treasure!",0,0,
+貝﹗","This is our scrapyard. They may look like pieces of junk, but to me, they're treasure!",0,0,
 ,0e,76a3,,BLANK,12,done,,"前陣子的流星雨
 ﹐
 打壞了通往多魯
@@ -15490,7 +15836,7 @@ Unless...",0,0,
 
 好嗎﹖","I've got it!
 
-These sections correspond to the power circuits, which are the most important piece of the core!
+These sections correspond to the power chips, which are the most important piece of the core!
 
 As far as I can gather, those chips should be in the possession of 8 scientists, and I have one of them.
 
@@ -15509,7 +15855,7 @@ How about that?",0,0,
 好的﹗
 
 雷歐博士～
-我答應你⚬","Power circuits?
+我答應你⚬","Power chips?
 
 Dad must have been trying to solve the mystery of these little things.
 
@@ -15534,7 +15880,7 @@ Dr. Leo, it's a deal!",0,0,
 我再幫你引見董
 事長⚬
 
-各位﹐再見了⚬","These circuits?
+各位﹐再見了⚬","These chips?
 
 I think I remember the chairman having something like that once, but something unfortunate happened since then...
 
@@ -15578,7 +15924,7 @@ I'll finish the hull of the spaceship, so go and hunt down the other 7 chips so 
 
 This is for you!
 
-It's a tracker to help you find the circuits, along with a PDA.
+It's a tracker to help you find the chips, along with a PDA.
 
 With this, you can find out where all the chips are!
 
@@ -15644,12 +15990,12 @@ I've named it Beattro, and it can carry you across small gaps in the road!",0,0,
 
 到加爾企業﹐
 尋找剩下的七個
-動力晶片吧⚬","Go on! You can start at GaleCorp, and find the other 7 circuits from there.",0,0,
+動力晶片吧⚬","Go on! You can start at GaleCorp, and find the other 7 chips from there.",0,0,
 ,0e,7d8b,,DR_LEO,DR_LEO,done,,"去吧～
 
 到加爾企業﹐
 尋找剩下的七個
-動力晶片吧⚬","Go on! You can start at GaleCorp, and find the other 7 circuits from there.",0,0,
+動力晶片吧⚬","Go on! You can start at GaleCorp, and find the other 7 chips from there.",0,0,
 ,0e,7db9,,BALLOT,BALLOT_2,done,,"這個洞⋯
 該怎麼通過呢﹖",This hole... How will we cross it?,0,0,
 ,0e,7dd1,,BUCK,BUCK,done,,"巴洛特．巴克．
@@ -15709,7 +16055,7 @@ He certainly is the best inventor in the world.",0,0,
 加爾企業及邦林
 企業﹐
 都是數一數二的
-大企業喲⚬","Have you heard of Gale Enterprises?
+大企業喲⚬","Have you heard of GaleCorp?
 
 It's one of the biggest companies in the world, second only to Bang Lin!",0,0,
 ,0f,4da4,,BLANK,21,done,,"嗚～嗚～
@@ -15729,7 +16075,7 @@ Waaah!",0,0,
 別看這些破破爛
 爛的東西﹐
 這些全是我的寶
-貝﹗","This is the scrapyard of Tech City. They may look like pieces of junk, but to me, they're treasure!",0,0,
+貝﹗","This is our scrapyard. They may look like pieces of junk, but to me, they're treasure!",0,0,
 ,0f,4e1b,,BLANK,12,done,,"前陣子的流星雨
 ﹐
 打壞了通往多魯
@@ -16086,17 +16432,17 @@ script_traveling_ship_51,58,644a,,46,6E,done,,"藍特～
 不曉得為什麼﹐
 這裡的老鼠還真
 多呀﹗",,0,0,
-,58,65b7,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,,0,0,
+,58,65b7,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,Got XXX!,0,0,
 ,58,65c6,,43,50,done,,"真是感謝﹗
 這個就給你了﹗
 老鼠的聲音聽來
 少多了⋯⋯",,0,0,
-,58,65f5,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,,0,0,
+,58,65f5,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,Got XXX!,0,0,
 ,58,6604,,43,50,done,,"太感謝了﹗
 這個就給你了﹗
 甲板下﹐應該已
 經沒有老鼠了吧",,0,0,
-,58,6639,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,,0,0,
+,58,6639,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,Got XXX!,0,0,
 ,58,6648,,43,50,done,,"我最討厭老鼠了
 ﹗",,0,0,
 signposts_1,c,40a7,,,,done,,往學校,↑School,0,0,
@@ -16148,7 +16494,7 @@ signposts_4,0c,4216,,,,done,,神木村,,1,0,
 ↓雷達站",,1,0,
 ,0c,4250,,,,done,,雷達站,Radar Station,1,0,
 ,0c,4258,,,,done,,人魚村,Mermaid Village,1,0,
-,0c,4260,,,,done,,海巫之殿,Temple of the Sea Witch,1,0,
+,0c,4260,,,,done,,海巫之殿,Sea Witch Palace,1,0,
 ,0c,426a,,,,done,,生之谷,Valley of Life,1,0,
 ,0c,4272,,,,done,,"↑生之谷
  死之谷","↑ Valley of Life
@@ -16177,25 +16523,25 @@ store_price_options,1e,6ece,,,,return,,５００元,¥500,0,0,
 ,1e,6eed,,,,return,,２５００元,¥2500,0,0,
 worldmap_names,62,411e,WorldMapNames,,,line,,貝爾鎮,,0,0,
 ,62,4124,WorldMapNames_4124,,,line,,科技城,,0,0,
-,62,412a,WorldMapNames_412a,,,line,,水晶村,,0,0,
+,62,412a,WorldMapNames_412a,,,line,,水晶村,Crystal Town,0,0,
 ,62,4131,WorldMapNames_4131,,,line,,水晶礦坑,,0,0,
-,62,4139,WorldMapNames_4139,,,line,,發電廠,,0,0,
-,62,413f,WorldMapNames_413f,,,line,,多魯市,,0,0,
-,62,4146,WorldMapNames_4146,,,line,,多魯市,,0,0,
-,62,414d,WorldMapNames_414d,,,line,,山達農莊,,0,0,
-,62,4155,WorldMapNames_4155,,,line,,咖啡林,,0,0,
-,62,415b,WorldMapNames_415b,,,line,,天之岩,,0,0,
-,62,4161,WorldMapNames_4161,,,line,,天之都,,0,0,
-,62,4167,WorldMapNames_4167,,,line,,綠色樹海,,0,0,
+,62,4139,WorldMapNames_4139,,,line,,發電廠,Power Plant,0,0,
+,62,413f,WorldMapNames_413f,,,line,,多魯市,Dorington,0,0,
+,62,4146,WorldMapNames_4146,,,line,,多魯市,Dorington,0,0,
+,62,414d,WorldMapNames_414d,,,line,,山達農莊,Mountreach Farm,0,0,
+,62,4155,WorldMapNames_4155,,,line,,咖啡林,Coffee Forest,0,0,
+,62,415b,WorldMapNames_415b,,,line,,天之岩,Sky Rock,0,0,
+,62,4161,WorldMapNames_4161,,,line,,天之都,Sky City,0,0,
+,62,4167,WorldMapNames_4167,,,line,,綠色樹海,Green Forest,0,0,
 ,62,416f,WorldMapNames_416f,,,line,,鐘塔祕門出口,,0,0,
 ,62,417c,WorldMapNames_417c,,,line,,東漁市,,0,0,
 ,62,4183,WorldMapNames_4183,,,line,,地熱城,,0,0,
 ,62,4189,WorldMapNames_4189,,,line,,神木村,,0,0,
-,62,4190,WorldMapNames_4190,,,line,,生之谷,,0,0,
+,62,4190,WorldMapNames_4190,,,line,,生之谷,Valley of Life,0,0,
 ,62,4197,WorldMapNames_4197,,,line,,死之谷,,0,0,
-,62,419d,WorldMapNames_419d,,,line,,雷達站,,0,0,
-,62,41a4,WorldMapNames_41a4,,,line,,星夢城,,0,0,
-,62,41ab,WorldMapNames_41ab,,,line,,永凍園,,0,0,
+,62,419d,WorldMapNames_419d,,,line,,雷達站,Radar Station,0,0,
+,62,41a4,WorldMapNames_41a4,,,line,,星夢城,Star Dream City,0,0,
+,62,41ab,WorldMapNames_41ab,,,line,,永凍園,Frozen Garden,0,0,
 ,62,41b2,WorldMapNames_41b2,,,line,,預售屋,,0,0,
 ,62,41b9,WorldMapNames_41b9,,,line,,巴爾之都,,0,0,
-,62,41c2,WorldMapNames_41c2,,,line,,金鋼山,,0,0,
+,62,41c2,WorldMapNames_41c2,,,line,,金鋼山,Golden Mountain,0,0,
