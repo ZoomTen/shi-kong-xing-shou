@@ -34,7 +34,11 @@ GaleCutscene::
 	call CopyBytes3
 	ld hl, GaleCutscene_GFX
 	ld de, $9000
+IF DEF(ENGLISH)
+	ld bc, $700 ; whole cutscene font
+ELSE
 	ld bc, $0800
+ENDC
 	call CopyBytesVRAM
 	call .ClearVisibleObjects
 	call .HideSprites
@@ -69,7 +73,11 @@ GaleCutscene::
 	ld [wTargetMode], a
 	jp JumpToGameMode
 .State0
+IF DEF(ENGLISH)
+	ld c, $F0 ; more reading time for english text
+ELSE
 	ld c, $40
+ENDC
 	call .DelayCFrames
 	ld a, $01
 	ld [wdcf5], a
@@ -109,6 +117,8 @@ GaleCutscene::
 	ld [wdcf3], a
 	cp $04
 	jr z, .ResetScene
+IF !DEF(ENGLISH)
+	; the EN build keeps the cutscene font loaded for all screens
 	ld de, .GfxPointers
 	ld l, a
 	ld h, $00
@@ -120,6 +130,7 @@ GaleCutscene::
 	ld de, $9000
 	ld bc, $0800
 	call CopyBytesVRAM
+ENDC
 	ld de, .TilemapPointers
 	ld a, [wdcf3]
 	ld l, a
@@ -131,9 +142,16 @@ GaleCutscene::
 	ld l, a
 	push hl
 	pop de
+IF DEF(ENGLISH)
+	; taller text window, rows 2-15
+	ld hl, $9840
+	ld bc, $140E
+	ld a, $0E
+ELSE
 	ld hl, $9880
 	ld bc, $140A
 	ld a, $0A
+ENDC
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a

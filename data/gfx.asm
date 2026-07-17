@@ -130,7 +130,11 @@ GaleCutscene_Tilemap2:: INCBIN "gfx/gale/galecutscene_tilemap2.tilemap"
 GaleCutscene_Tilemap3:: INCBIN "gfx/gale/galecutscene_tilemap3.tilemap"
 GaleCutscene_BlackPalette:: INCLUDE "gfx/gale/black.pal"
 GaleCutscene_Palette:: INCLUDE "gfx/gale/palette.pal"
+IF DEF(ENGLISH)
+GaleCutscene_GFX:: INCBIN "gfx/cutscenes/inverted_font.2bpp"
+ELSE
 GaleCutscene_GFX:: INCBIN "gfx/gale/galecutscene_gfx.2bpp"
+ENDC
 
 SECTION "Letter Cutscene GFX", ROMX
 
