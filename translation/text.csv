@@ -17,18 +17,25 @@ Chen Hu: You'll have to try it to find out!
 Yan Long: <name>, it's up to you.",1,0,
 ,2d,4257,BattleText_4257,,,done,1,⟨trainer⟩：⟨name⟩﹐去吧﹗,"<trainer>: Go, <name>!",0,0,
 ,2d,4263,BattleText_4263,,,done,1,⟨trainer⟩：輪到你了﹐⟨name⟩﹗,"<trainer>: Your turn,
+
 <name>!",0,0,
 ,2d,4273,BattleText_4273,,,done,1,⟨trainer⟩：⟨name⟩﹐就靠你了﹗,"<trainer>: <name>,
+
 it's up to you!",0,0,
 ,2d,4282,BattleText_4282,,,done,1,⟨trainer⟩：加油吧﹐⟨name⟩﹗,"<trainer>: Good luck,
+
 <name>!",0,0,
 ,2d,428e,BattleText_428e,,,done,1,⟨trainer⟩：看我的厲害⚬⟨name⟩﹖﹐去吧﹗,"<trainer>: Watch me!
+
 <name>, go!",0,0,
 ,2d,42a5,BattleText_42a5,,,line,1,⟨trainer⟩：做的不錯﹐⟨name⟩回來吧﹗,"<trainer>: Well done!
+
 <name>, come back!",0,0,
 ,2d,42bb,BattleText_42bb,,,done,1,⟨trainer⟩：算了～回來吧﹐⟨name⟩﹗,"<trainer>: Nevermind.
+
 Come back, <name>!",0,0,
 ,2d,42cf,BattleText_42cf,,,done,1,⟨trainer⟩：危險﹗回來吧﹐⟨name⟩﹗,"<trainer>: Be careful!
+
 <name>! Come back!",0,0,
 ,2d,42e1,BattleText_42e1,,,line,1,⟨name⟩的攻擊～⟨e6⟩～﹗,"<name> used
 <e6>!",0,0,
