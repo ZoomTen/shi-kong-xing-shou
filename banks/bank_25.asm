@@ -2086,7 +2086,11 @@ LoadMonBGPalette::
 	ret
 
 DrawDexNamePage::
+IF DEF(ENGLISH)
+	ld bc, $0700 ; 7-col names span tiles $80-$ef
+ELSE
 	ld bc, $0600
+ENDC
 	ld hl, $8800
 	xor a
 	call ByteFillVRAM
@@ -2113,7 +2117,11 @@ DrawDexNamePage::
 	ld a, l
 	sub $cb
 	ld [wd0c0], a
+IF DEF(ENGLISH)
+	ld de, $982b ; caught icon at BG col 11 (swapped: OAM select-cursor sits at col 10)
+ELSE
 	ld de, $982c
+ENDC
 	ld a, [wd0c1]
 	swap a
 	ld l, a
@@ -2161,7 +2169,11 @@ AddDEToHLNTimes::
 
 PrintTwoRecordNumbers::
 	ld de, wDexCaughtCount
+IF DEF(ENGLISH)
+	ld hl, $99e4 ; mon box shifted 1 col left
+ELSE
 	ld hl, $99e5
+ENDC
 	ld a, $a
 	ld [wd8fe], a
 	xor a
@@ -2171,7 +2183,11 @@ PrintTwoRecordNumbers::
 	ld [wd0fd], a
 	call _PrintNumber
 	ld de, wDexSeenCount
+IF DEF(ENGLISH)
+	ld hl, $9964 ; mon box shifted 1 col left
+ELSE
 	ld hl, $9965
+ENDC
 	ld a, $a
 	ld [wd8fe], a
 	xor a
@@ -2232,14 +2248,32 @@ PrintNumberFromScriptPtr::
 	ret
 
 DrawSelectedMonName::
+IF DEF(ENGLISH)
+; EN: relocate the mon-name field to the free $ec-$fd block (9 columns) so long English
+; names ("Cloud Beast", 11 chars) fit -- the ZH slot $72-$7d (6 cols) truncates them and
+; $7e+ is frame/description VRAM. The freed $72 block now holds the dex type field
+; (see Func_01e_4290), so clear ONLY the name's $ec block here -- never $9720, or a
+; name redraw would erase the type. lang_en Tilemap_4a_6a83 maps the name to $ec..$fd.
+	ld bc, ($fe - $ec) * $10
+	ld hl, $8ec0
+ELSE
 	ld bc, $c0
 	ld hl, $9720
+ENDC
 	xor a
 	call ByteFillVRAM
 	call DelayFrame
+IF DEF(ENGLISH)
+	ld a, $ec
+ELSE
 	ld a, $72
+ENDC
 	ld [wMenuTextX], a
+IF DEF(ENGLISH)
+	ld a, $fe
+ELSE
 	ld a, $7e
+ENDC
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
@@ -4223,12 +4257,24 @@ Palette_BattleUIObj::
 
 INCLUDE "text/menu_25_6199.asm"
 
-Tilemap_MonInfoBox7x6:: INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
-AttrMap_MonInfoBox7x6:: INCBIN "gfx/attrmaps/attrmap_025_61f2.bin"
-Tilemap_MonInfoBox8x8:: INCBIN "gfx/tilemaps/tilemap_025_6220.tilemap"
-AttrMap_MonInfoBox8x8:: INCBIN "gfx/attrmaps/attrmap_025_6264.bin"
-Tilemap_MonInfoBox8x10:: INCBIN "gfx/tilemaps/tilemap_025_62a8.tilemap"
-AttrMap_MonInfoBox8x10:: INCBIN "gfx/attrmaps/attrmap_025_62fc.bin"
+Tilemap_MonInfoBox7x6:: db $07, $06
+	dw $998d
+	INCBIN "gfx/tilemaps/tilemap_025_61c4.tilemap"
+AttrMap_MonInfoBox7x6:: db $07, $06
+	dw $998d
+	INCBIN "gfx/attrmaps/attrmap_025_61f2.bin"
+Tilemap_MonInfoBox8x8:: db $08, $08
+	dw $9940
+	INCBIN "gfx/tilemaps/tilemap_025_6220.tilemap"
+AttrMap_MonInfoBox8x8:: db $08, $08
+	dw $9940
+	INCBIN "gfx/attrmaps/attrmap_025_6264.bin"
+Tilemap_MonInfoBox8x10:: db $08, $0a
+	dw $9900
+	INCBIN "gfx/tilemaps/tilemap_025_62a8.tilemap"
+AttrMap_MonInfoBox8x10:: db $08, $0a
+	dw $9900
+	INCBIN "gfx/attrmaps/attrmap_025_62fc.bin"
 Tilemap_OverwriteConfirm20x6:: db $14, $06
 	INCBIN "gfx/tilemaps/tilemap_025_6350.tilemap"
 Tilemap_SaveResult20x6:: db $14, $06

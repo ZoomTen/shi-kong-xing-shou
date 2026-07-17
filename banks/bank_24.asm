@@ -423,20 +423,43 @@ Script_024_43af::
 	bs_load_objpal_buf Palette_BattleUIObj
 	bs_load_mon_bgpal_2 $06
 	bs_load_mon_pic_cond $9140
+IF DEF(ENGLISH)
+; EN: shift the whole dex layout one column left -- mon box flush at col0, list panel
+; widened to 11 and moved to col9 (keeps the inter-panel gap). Seen/Caught numbers in
+; PrintTwoRecordNumbers are shifted to match.
+	bs_place_tile_attr $0000, Tilemap_4a_681f, Attrmap_4a_6861
+	bs_print_num_indir wd9d8, $0103, $0307 ; col3: shifted left to clear the box's lower-right corner
+	bs_place_tile_attr $0009, Tilemap_4a_68a3, Attrmap_4a_68dd
+	bs_print_two_nums
+	bs_place_tile_attr $0900, Tilemap_4a_6917, Attrmap_4a_69cd
+ELSE
 	bs_place_tile_attr $0100, Tilemap_4a_681f, Attrmap_4a_6861
 	bs_print_num_indir wd9d8, $0103, $0507
 	bs_place_tile_attr $0109, Tilemap_4a_68a3, Attrmap_4a_68dd
 	bs_print_two_nums
 	bs_place_tile_attr $0a00, Tilemap_4a_6917, Attrmap_4a_69cd
+ENDC
 	bs_draw_8_items
 	bs_print_num_indir wSelectedPage, $0102, $1111
 	bs_clear_oam
+IF DEF(ENGLISH)
+	bs_set_sprite_pos $18, $58 ; selected-cursor OAM at col10 (swapped with caught icon)
+ELSE
 	bs_set_sprite_pos $18, $60
+ENDC
 	bs_lcd_on_loadpal
 	bs_end_script
 Script_024_4404::
+IF DEF(ENGLISH)
+	bs_clear_bgbox_at $12, $0b, $9809 ; EN list panel is 11 wide at col9 -- clear all of it
+ELSE
 	bs_clear_bgbox_at $12, $0a, $980a
+ENDC
+IF DEF(ENGLISH)
+	bs_clear_bgbox_at $07, $08, $9920 ; EN Seen/Caught bars sit at col0 (shifted left)
+ELSE
 	bs_clear_bgbox_at $07, $08, $9921
+ENDC
 	bs_place_tile_attr $0a01, Tilemap_4a_6a83, Attrmap_4a_6aa8
 	bs_draw_text_53ab
 	bs_draw_dex_pic
@@ -765,9 +788,16 @@ Script_024_4792::
 	bs_clear_bgbox_at $05, $07, $982a
 	bs_clear_bgbox_at $0a, $14, $9900
 	bs_vram_copy3 $0040, $9400, BattleUIGFX_571a
+IF DEF(ENGLISH)
+; EN: page-turn redraw must use the same shifted-left coords as the initial draw.
+	bs_place_tile_attr $0009, Tilemap_4a_68a3, Attrmap_4a_68dd
+	bs_print_two_nums
+	bs_place_tile_attr $0900, Tilemap_4a_6917, Attrmap_4a_69cd
+ELSE
 	bs_place_tile_attr $0109, Tilemap_4a_68a3, Attrmap_4a_68dd
 	bs_print_two_nums
 	bs_place_tile_attr $0a00, Tilemap_4a_6917, Attrmap_4a_69cd
+ENDC
 	bs_draw_8_items
 	bs_print_num_indir wSelectedPage, $0102, $1111
 	bs_end_script3
@@ -1369,18 +1399,34 @@ StartMenu_DexScreen::
 	call ClearMenuCursorSprites
 	ret
 Script_024_4d49::
+IF DEF(ENGLISH)
+	bs_clear_bgbox_at $12, $0b, $9809 ; EN list panel is 11 wide at col9 -- clear all of it
+ELSE
 	bs_clear_bgbox_at $12, $0a, $980a
+ENDC
 	bs_load_mon_pic_cond $9140
 	bs_load_mon_objpal_2 $06
+IF DEF(ENGLISH)
+	bs_place_tile_attr $0900, Tilemap_4a_6917, Attrmap_4a_69cd ; shifted-left dex list
+ELSE
 	bs_place_tile_attr $0a00, Tilemap_4a_6917, Attrmap_4a_69cd
+ENDC
 	bs_print_num_indir wSelectedPage, $0102, $1111
 	bs_draw_8_items
+IF DEF(ENGLISH)
+	bs_print_num_indir wd9d8, $0103, $0307 ; shifted-left mon box
+ELSE
 	bs_print_num_indir wd9d8, $0103, $0507
+ENDC
 	bs_end_script3
 Script_024_4d6a::
 	bs_load_mon_objpal_2 $06
 	bs_load_mon_pic_cond $9140
+IF DEF(ENGLISH)
+	bs_print_num_indir wd9d8, $0103, $0307 ; shifted-left mon box
+ELSE
 	bs_print_num_indir wd9d8, $0103, $0507
+ENDC
 	bs_end_script3
 StartMenu_GiveItemScreen::
 .asm_4d77

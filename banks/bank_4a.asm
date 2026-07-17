@@ -260,8 +260,10 @@ Tilemap_4a_5d45:: db $14, $09
 Attrmap_4a_5dfb:: db $14, $09
 	INCBIN "gfx/attrmaps/attrmap_4a_5dfb.bin"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
+IF !DEF(ENGLISH)
 unk_4a_5eb1::
-	ds 18
+	ds 18 ; unreferenced padding; dropped in EN to fit the widened dex-list panel
+ENDC
 Tilemap_4a_5ec3:: db $02, $01
 	INCBIN "gfx/tilemaps/tilemap_4a_5ec3.tilemap"
 Tilemap_4a_5ec7:: db $01, $02
@@ -279,8 +281,10 @@ Tilemap_4a_5fc5:: db $08, $0a
 Tilemap_4a_6017:: db $07, $08
 	INCBIN "gfx/tilemaps/tilemap_4a_6017.tilemap"
 ; TODO: unk_ - orphan (no direct reference; computed pointer or dead)
+IF !DEF(ENGLISH)
 unk_4a_6051::
-	ds 28
+	ds 28 ; unreferenced padding; dropped in EN to fit the widened dex-list panel
+ENDC
 Tilemap_4a_606d:: db $0c, $06
 	INCBIN "gfx/tilemaps/tilemap_4a_606d.tilemap"
 Attrmap_4a_60b7:: db $0c, $06
@@ -331,6 +335,8 @@ Tilemap_4a_678b:: db $0c, $06
 	INCBIN "gfx/tilemaps/tilemap_4a_678b.tilemap"
 Attrmap_4a_67d5:: db $0c, $06
 	INCBIN "gfx/attrmaps/attrmap_4a_67d5.bin"
+; EN mon box: bottom row keeps a continuous $07 edge up to the exposed corner
+; (the EN mon# prints at cols 3-5; ZH printed at 4-6 with a 09 prefix at col 3).
 Tilemap_4a_681f:: db $08, $08
 	INCBIN "gfx/tilemaps/tilemap_4a_681f.tilemap"
 Attrmap_4a_6861:: db $08, $08
@@ -339,14 +345,35 @@ Tilemap_4a_68a3:: db $08, $07
 	INCBIN "gfx/tilemaps/tilemap_4a_68a3.tilemap"
 Attrmap_4a_68dd:: db $08, $07
 	INCBIN "gfx/attrmaps/attrmap_4a_68dd.bin"
+IF DEF(ENGLISH)
+; EN dex-list panel: 11 wide (was 10), placed one column left (col9) so the mon box
+; can sit flush at col0 and the inter-panel gap survives. Name grid is 7 columns at
+; stride 14 tiles/row: [border][icon][gap][7-col name][border]. Matched by the shifted
+; placement coords in bank_24, asm_026_4680 (stride) and DrawDexNamePage (clear+icon).
+Tilemap_4a_6917:: db $0b, $12
+	INCBIN "gfx/tilemaps/tilemap_4a_6917.tilemap"
+Attrmap_4a_69cd:: db $0b, $12
+	INCBIN "gfx/attrmaps/attrmap_4a_69cd.bin"
+ELSE
 Tilemap_4a_6917:: db $0a, $12
 	INCBIN "gfx/tilemaps/tilemap_4a_6917.tilemap"
 Attrmap_4a_69cd:: db $0a, $12
 	INCBIN "gfx/attrmaps/attrmap_4a_69cd.bin"
+ENDC
+IF DEF(ENGLISH)
+; EN dex name/type box widened 7->10 tiles: the type-name field gains 3 columns.
+; The type field is relocated to free VRAM $ec-$f5 (see Func_01e_4290) because the
+; ZH slot $3c-$3f is boxed in by BattleUIGFX at $40+; the extra columns point there.
+Tilemap_4a_6a83:: db $0a, $05
+	INCBIN "gfx/tilemaps/tilemap_4a_6a83.tilemap"
+Attrmap_4a_6aa8:: db $0a, $05
+	INCBIN "gfx/attrmaps/attrmap_4a_6aa8.bin"
+ELSE
 Tilemap_4a_6a83:: db $07, $05
 	INCBIN "gfx/tilemaps/tilemap_4a_6a83.tilemap"
 Attrmap_4a_6aa8:: db $07, $05
 	INCBIN "gfx/attrmaps/attrmap_4a_6aa8.bin"
+ENDC
 Tilemap_4a_6acd:: db $14, $0a
 	INCBIN "gfx/tilemaps/tilemap_4a_6acd.tilemap"
 Attrmap_4a_6b97:: db $14, $0a

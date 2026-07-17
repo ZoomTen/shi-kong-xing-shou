@@ -383,6 +383,22 @@ asm_026_4680::
 	ld h, [hl]
 	ld l, a
 	ld a, [wd0c1]
+IF DEF(ENGLISH)
+; EN: 7-column name field, stride 14 tiles/row (X = $80 + row*14) so long English names
+; fit. EndX = X+14 clamps each row to its own 7 columns (no spill into the next row's
+; tiles). lang_en Tilemap_4a_6917 lays the cells out to match.
+	add a      ; *2
+	ld e, a
+	add a      ; *4
+	ld d, a
+	add a      ; *8
+	add d      ; *12
+	add e      ; *14
+	add $80
+	ld [wMenuTextX], a
+	add $0e    ; EndX = X + 14 (7 columns)
+	ld [wMenuTextEndX], a
+ELSE
 	add a
 	add a
 	ld d, a
@@ -392,6 +408,7 @@ asm_026_4680::
 	ld [wMenuTextX], a
 	ld a, $e0
 	ld [wMenuTextEndX], a
+ENDC
 	xor a
 	ld [wCharacterTilePos], a
 	call PrintMenuText

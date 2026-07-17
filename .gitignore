@@ -30,6 +30,9 @@ gfx/tileanim/*.2bpp
 lang_en/gfx/**/*.2bpp
 lang_en/gfx/**/*.1bpp
 lang_en/gfx/**/*.gbcpal
+lang_zh/gfx/**/*.2bpp
+lang_zh/gfx/**/*.1bpp
+lang_zh/gfx/**/*.gbcpal
 data/maps/blocks/*.bin
 data/maps/layouts/*.bin
 data/maps/metatiles/*.bin

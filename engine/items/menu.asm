@@ -29,6 +29,23 @@ Func_01e_4290::
 	ld [wMenuTextEndX], a
 	xor a
 	ld [wCharacterTilePos], a
+IF DEF(ENGLISH)
+; EN: relocate the dex type-name field to VRAM tiles $72-$7b (5 columns). The ZH slot
+; $3c-$3f is boxed in by BattleUIGFX at $40+; the $72 block is freed by moving the mon
+; name to the $ec block (see DrawSelectedMonName). lang_en Tilemap_4a_6a83 points the
+; type columns at $72/$74/$76/$78/$7a.
+	ld a, $72
+	ld [wMenuTextX], a
+	ld a, $7c
+	ld [wMenuTextEndX], a
+	push hl
+	ld hl, $9720
+	ld bc, ($7c - $72) * $10
+	xor a
+	call ByteFillVRAM
+	call DelayFrame
+	pop hl
+ENDC
 	call PrintMenuText
 	ret
 
