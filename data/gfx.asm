@@ -93,8 +93,13 @@ MeteorCutscene_TextPalette:: INCBIN "gfx/meteor/cutscene_text.pal"
 MeteorCutscene_Text1_Tilemap:: INCBIN "gfx/meteor/text_1.tilemap"
 MeteorCutscene_Text4_Tilemap:: INCBIN "gfx/meteor/text_4.tilemap"
 MeteorCutscene_TextAttr:: INCBIN "gfx/meteor/cutscene_text.attr"
+IF DEF(ENGLISH)
+MeteorCutscene_TextGFX_1::
+MeteorCutscene_TextGFX_2:: INCBIN "gfx/cutscenes/inverted_font.2bpp"
+ELSE
 MeteorCutscene_TextGFX_1:: INCBIN "gfx/meteor/text_gfx_1.2bpp"
 MeteorCutscene_TextGFX_2:: INCBIN "gfx/meteor/text_gfx_2.2bpp"
+ENDC
 MeteorCutscene_TextGFX_3:: INCBIN "gfx/meteor/text_gfx_3.2bpp"
 unk_008_6eae:: INCBIN "data/unk_008_6eae.bin" ; ??
 MeteorCutscene_Text2_Tilemap:: INCBIN "gfx/meteor/text_2.tilemap"

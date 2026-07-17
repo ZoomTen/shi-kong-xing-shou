@@ -74,7 +74,11 @@ MeteorCutscene::
 
 	ld hl, MeteorCutscene_TextGFX_1
 	ld de, vTiles2
+IF DEF(ENGLISH)
+	ld bc, $700 ; whole cutscene font
+ELSE
 	ld bc, $520
+ENDC
 	call CopyBytesVRAM
 
 	call MeteorCutscene_ClearSpriteBuffer
@@ -578,7 +582,11 @@ MeteorCutscene_DoFadeFromMeteors:
 
 	ld hl, MeteorCutscene_TextGFX_2
 	ld de, vTiles2
+IF DEF(ENGLISH)
+	ld bc, $700 ; whole cutscene font
+ELSE
 	ld bc, $800
+ENDC
 	call CopyBytesVRAM
 
 	ld hl, MeteorCutscene_TextGFX_3
@@ -637,9 +645,15 @@ MeteorCutscene_LoadTexts:
 	ld l, a
 	push hl
 	pop de
+IF DEF(ENGLISH)
+	hlbgcoord 0, 6
+	lb bc, $14, 7
+	ld a, 7
+ELSE
 	hlbgcoord 0, 8
 	lb bc, $14, 2
 	ld a, 2
+ENDC
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
@@ -704,9 +718,15 @@ MeteorCutscene_LoadTexts2:
 	ld l, a
 	push hl
 	pop de
+IF DEF(ENGLISH)
+	hlbgcoord 0, 6
+	lb bc, $14, 7
+	ld a, 7
+ELSE
 	hlbgcoord 0, 8
 	lb bc, $14, 2
 	ld a, 2
+ENDC
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
