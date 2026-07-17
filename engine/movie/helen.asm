@@ -31,7 +31,11 @@ HelenCutscene::
 	call CopyBytes3
 	ld hl, GFX_5c
 	ld de, $9000
+IF DEF(ENGLISH)
+	ld bc, $700 ; whole cutscene font
+ELSE
 	ld bc, $0800
+ENDC
 	call CopyBytesVRAM
 	call Func_05c_5705
 	call Func_05c_5740
@@ -108,8 +112,14 @@ HelenCutscene::
 	push hl
 	pop de
 	ld hl, $98E0
+IF DEF(ENGLISH)
+	; 3-row window so a wrapped caption gets a blank tile row between lines
+	ld bc, $1403
+	ld a, $03
+ELSE
 	ld bc, $1402
 	ld a, $02
+ENDC
 	ldh [hVRAMCopyHeight], a
 	ld a, $14
 	ldh [hVRAMCopyWidth], a
@@ -129,7 +139,27 @@ HelenCutscene::
 	ld [hFade], a
 	ret
 StripTilemapPointers_5c:
+IF DEF(ENGLISH)
+	; caption 1 is drawn from the background tilemap; strips are captions 2-8.
+	; the 8th entry repeats caption 8 to hold it on-screen before the fade (as ZH did).
+	dw .en1
+	dw .en2
+	dw .en3
+	dw .en4
+	dw .en5
+	dw .en6
+	dw .en7
+	dw .en7
+.en1 INCBIN "gfx/helen/strip1.tilemap"
+.en2 INCBIN "gfx/helen/strip2.tilemap"
+.en3 INCBIN "gfx/helen/strip3.tilemap"
+.en4 INCBIN "gfx/helen/strip4.tilemap"
+.en5 INCBIN "gfx/helen/strip5.tilemap"
+.en6 INCBIN "gfx/helen/strip6.tilemap"
+.en7 INCBIN "gfx/helen/strip7.tilemap"
+ELSE
 INCBIN "gfx/tilemaps/striptilemappointers_5c.tilemap"
+ENDC
 Func_05c_5705:
 	ld hl, wVisibleObjects
 	ld bc, $0100
@@ -249,6 +279,12 @@ INCBIN "gfx/attrmaps/attrmap_5c.bin"
 Tilemap_5c:
 INCBIN "gfx/tilemaps/tilemap_5c.tilemap"
 StripTilemaps_5c:
+IF !DEF(ENGLISH)
 INCBIN "gfx/tilemaps/striptilemaps_5c.tilemap"
+ENDC
 GFX_5c:
+IF DEF(ENGLISH)
+INCBIN "gfx/cutscenes/inverted_font.2bpp"
+ELSE
 INCBIN "gfx/misc/gfx_5c.bin"
+ENDC
