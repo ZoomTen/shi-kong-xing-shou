@@ -184,7 +184,15 @@ LetterCutscene_Tilemap1:: INCBIN "gfx/tilemaps/lettercutscene_tilemap1.tilemap"
 LetterCutscene_Tilemap2:: INCBIN "gfx/tilemaps/lettercutscene_tilemap2.tilemap"
 LetterCutscene_Tilemap3:: INCBIN "gfx/tilemaps/lettercutscene_tilemap3.tilemap"
 
+IF DEF(ENGLISH)
+LetterCutscene_GFX:: INCBIN "gfx/letter/screen1.2bpp"
+LetterCutscene_GFX_Screen2:: INCBIN "gfx/letter/screen2.2bpp"
+LetterCutscene_GFX_Screen3:: INCBIN "gfx/letter/screen3.2bpp"
+LetterCutscene_GFX_Screen4:: INCBIN "gfx/letter/screen4.2bpp"
+LetterCutscene_GFX_Screen5:: INCBIN "gfx/letter/screen5.2bpp"
+ELSE
 LetterCutscene_GFX:: INCBIN "gfx/misc/lettercutscene_gfx.2bpp"
+ENDC
 
 
 SECTION "Airport Cutscene GFX", ROMX

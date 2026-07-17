@@ -79,7 +79,11 @@ LetterCutscene::
 	ld a, [wdcf3]
 	inc a
 	ld [wdcf3], a
+IF DEF(ENGLISH)
+	cp $ff ; longer reading time for english text (single-byte max)
+ELSE
 	cp $C0
+ENDC
 	ret nz
 	xor a
 	ld [wdcf3], a
@@ -153,10 +157,17 @@ LetterCutscene::
 	dw LetterCutscene_Tilemap2
 	dw LetterCutscene_Tilemap3
 .GfxPointers
+IF DEF(ENGLISH)
+	dw LetterCutscene_GFX_Screen2
+	dw LetterCutscene_GFX_Screen3
+	dw LetterCutscene_GFX_Screen4
+	dw LetterCutscene_GFX_Screen5
+ELSE
 	dw LetterCutscene_GFX + $600
 	dw LetterCutscene_GFX + $DD0
 	dw LetterCutscene_GFX + $1520
 	dw LetterCutscene_GFX + $1B40
+ENDC
 
 .ClearVisibleObjects
 	ld hl, wVisibleObjects
