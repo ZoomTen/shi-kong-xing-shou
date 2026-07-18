@@ -7,6 +7,7 @@ IncFillBoxVRAM::
 	ld a, e
 	push bc
 	ld c, a
+.copy_retry
 	di
 
 .waitLCD1
@@ -27,8 +28,13 @@ IncFillBoxVRAM::
 ; Verify that byte was written
 	ld a, [hl]
 	cp c
+IF DEF(ENGLISH)
+; English: retry the same byte without re-pushing bc (see PlaceTilemap).
+	jr nz, .copy_retry
+ELSE
 ; @bug: if jump is taken, causes stack issue
 	jr nz, .copy
+ENDC
 
 	inc l
 	inc e

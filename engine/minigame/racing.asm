@@ -7,6 +7,9 @@ RacingMinigame::
 	ldh [hSCXHigh], a
 	ldh [hSCY], a
 	ldh [hSCYHigh], a
+IF DEF(ENGLISH)
+	ldh [hEnglishMode], a
+ENDC
 	ld [wdcf3], a
 	ld [wdcf4], a
 	ld [wdcfb], a

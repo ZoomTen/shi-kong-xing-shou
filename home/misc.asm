@@ -133,6 +133,7 @@ CopyBGMapData::
 	ld a, [de]
 	push bc
 	ld c, a
+.copy_retry
 	di
 
 .waitLCD1
@@ -153,7 +154,12 @@ CopyBGMapData::
 ; Verify that byte was written
 	ld a, [hl]
 	cp c
+IF DEF(ENGLISH)
+; English: retry the same byte without re-pushing bc (see PlaceTilemap).
+	jr nz, .copy_retry
+ELSE
 	jr nz, .copy
+ENDC
 
 ; Keep x coordinate if we are still on the same row (x < BG_MAP_WIDTH)
 ; Zero if x = BG_MAP_WIDTH after increment
@@ -353,6 +359,7 @@ FillBoxVRAM::
 	ld a, e
 	push bc
 	ld c, a
+.copy_retry
 	di
 
 .waitLCD1
@@ -373,7 +380,12 @@ FillBoxVRAM::
 ; Verify that byte was written
 	ld a, [hl]
 	cp c
+IF DEF(ENGLISH)
+; English: retry the same byte without re-pushing bc (see PlaceTilemap).
+	jr nz, .copy_retry
+ELSE
 	jr nz, .copy
+ENDC
 
 ; Keep x coordinate if we are still on the same row (x < BG_MAP_WIDTH)
 ; Zero if x = BG_MAP_WIDTH after increment

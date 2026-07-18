@@ -120,6 +120,7 @@ PlaceTilemap::
 	ld a, [de]
 	push bc ; potential stack issue?
 	ld c, a
+.copy_retry
 	di
 
 .waitLCD1
@@ -140,7 +141,14 @@ PlaceTilemap::
 ; Verify that byte was written (if fail, messes up the stack)
 	ld a, [hl]
 	cp c
+IF DEF(ENGLISH)
+; English: retry the same byte without re-pushing bc. A repeated verify
+; failure would otherwise leak the stack (push bc with no matching pop)
+; until it overruns wLCDFunction and the next STAT interrupt jumps to garbage.
+	jr nz, .copy_retry
+ELSE
 	jr nz, .copy
+ENDC
 
 ; Keep x coordinate if we are still on the same row (x < BG_MAP_WIDTH)
 ; Zero if x = BG_MAP_WIDTH after increment
