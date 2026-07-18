@@ -102,6 +102,7 @@ BattleMenu_Jump_2::
 	ld [wBattleAnimID], a
 	ld [wd9f8], a
 	ld [wd9ea], a
+	assert BANK(Script_023_55cc) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_55cc
 	farcall ExecuteBattleAnimScriptAt
 	xor a

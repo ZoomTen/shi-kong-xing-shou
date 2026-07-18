@@ -1898,6 +1898,7 @@ BattleAnimScript_023_55b5::
 	anim_02 $18, $20, $48, $70, $01
 	anim_09 $00, $07, $00, MovementDeltas_02e_64fc
 	anim_03
+Script_023_55c5::
 	anim_80 SFX_47
 	anim_65 $01
 	anim_51 $01

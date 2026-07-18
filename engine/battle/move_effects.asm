@@ -1284,6 +1284,7 @@ MoveEffect_InflictMajorStatusA::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_57e1) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_57e1
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
@@ -1366,6 +1367,7 @@ MoveEffect_InflictMajorStatusB::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_57f4) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_57f4
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
@@ -1554,6 +1556,7 @@ MoveEffect_InflictMajorStatusC::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_57d1) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_57d1
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
@@ -1655,6 +1658,7 @@ MoveEffect_TwoTurnStatHeal::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_580f) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_580f
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
@@ -1885,6 +1889,7 @@ MoveEffect_InflictMajorStatusD::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_580f) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_580f
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
@@ -2371,6 +2376,7 @@ MoveEffect_TwoTurnChargeB::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_580f) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_580f
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
