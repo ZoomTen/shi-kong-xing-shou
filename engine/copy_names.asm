@@ -37,7 +37,7 @@ IF DEF(ENGLISH)
 	ret z
 	inc bc
 	ld a, c
-	cp LOW(wMenuTextBuffer + 6)
+	cp LOW(wMenuTextBuffer + 7)
 	jr nz, .loop
 	ld a, TX_LINE
 	ld [bc], a
