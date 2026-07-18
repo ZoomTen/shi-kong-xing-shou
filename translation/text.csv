@@ -2073,9 +2073,7 @@ Heh heh heh!",0,0,
 妮娜小姐⚬
 
 第一次選秀評分
-請準備上台⚬","N°5932, miss Nina.
-
-Please get ready to go on stage for the first round of the talent show.",0,0,
+請準備上台⚬",,0,0,
 ,4f,6f36,,NINA,02,done,,"哦⋯﹗
 好的﹐謝謝您⚬","Oh...!
 
@@ -2196,7 +2194,7 @@ Ohohohoho!
 
 Eheheheheh!",0,0,
 ,4f,7197,,BLANK,13,done,,"宣佈休息室
-初賽入選名單⚬",We'll now announce the preliminary finalists for lounge 218.,0,0,
+初賽入選名單⚬",,0,0,
 ,4f,71b2,,BLANK,1D,done,,"啊﹗
 我入選了﹗
 
@@ -2206,13 +2204,13 @@ I was chosen!
 
 Phew!",0,0,
 ,4f,71ca,,BLANK,13,done,,"號～
-麗子小姐⚬","No. 3162, miss Lizzy.",0,0,
+麗子小姐⚬",,0,0,
 ,4f,71dc,,35,5E,done,,"呵呵呵～～
 理所當然的⚬","Heh heh heh...
 
 Of course.",0,0,
 ,4f,71f3,,BLANK,13,done,,"號～
-拉琪小姐⚬","No. 4098, miss Laki.",0,0,
+拉琪小姐⚬",,0,0,
 ,4f,7205,,LAKI,LAKI,done,,"哦哦哦哦～
 呵呵呵呵﹗","Ohohoho...
 
@@ -2226,9 +2224,7 @@ I'm so glad!",0,0,
 ,4f,723e,,NINA,02,done,,沒有希望了嗎﹖,Did I fail?,0,0,
 ,4f,724e,,BLANK,13,done,,"最後一位～
 第號～
-妮娜小姐⚬","And finally...
-
-No.5932, miss Nina.",0,0,
+妮娜小姐⚬",,0,0,
 ,4f,726e,,NINA,NINA_1,done,,"妮娜⋯入選了﹖
 謝謝⋯謝謝您﹗","I... was chosen?
 
@@ -2237,7 +2233,7 @@ Thank you... Thank you!",0,0,
 的請到展示台上
 
 做最後的自選服
-裝展示⚬","Next, those who have passed the preliminary selection, please go to the stage for your personally-selected clothing show.",0,0,
+裝展示⚬",,0,0,
 ,4f,72bd,,NINA,02,done,,"要趕快換上兔先
 生特製的禮服⚬",I must hurry and change into Mr. Rabbit's specially-made dress.,0,0,
 ,4f,72db,,NINA,NINA_4,done,,"啊⋯⋯這是什麼
@@ -2263,19 +2259,7 @@ H-how could this be?",0,0,
 第號的～
 也就是世界名模
 千金的～
-麗子小姐﹗","Ladies and gentlemen, thank you for your patience!
-
-Bang Lin Enterprises' product spokesperson talent show is about to reach its climax.
-
-Now, we will evaluate these beautiful girls' clothing, that they selected themselves!
-
-And let's welcome!
-
-No. 3162...
-
-That is, the world's ultimate supermodel... 
-
-Miss Lizzy!",0,0,
+麗子小姐﹗",,0,0,
 ,4f,739e,,HOST,50,done,,"麗子小姐的服裝
 真是令人賞心悅
 目啊﹗
@@ -2284,15 +2268,7 @@ Miss Lizzy!",0,0,
 
 讓我們觀迎～
 第號的～
-拉琪小姐～","Miss Lizzy's clothing is truly delightful!
-
-But here comes the competition!
-
-Let's welcome...
-
-No. 4098...
-
-Miss Laki!",0,0,
+拉琪小姐～",,0,0,
 ,4f,73f5,,JUDGE,50,done,,"這⋯這是⋯
 傳說中的⋯⋯
 夏娃的羽衣嗎﹖
@@ -2330,11 +2306,7 @@ The nosebleeds from the jury just flow and flow... Miss Laki seems to be getting
 
 我們一起歡迎﹐
 第號的～
-妮娜小姐﹗","Next, the last beauty in our talent show.
-
-We warmly welcome, No.5932...
-
-Miss Nina!",0,0,
+妮娜小姐﹗",,0,0,
 ,4f,74f5,,BALLOT,BALLOT_5,done,,妮娜～加油～﹗,"Nina, good luck!",0,0,
 ,4f,7504,,HOST,50,done,,妮娜小姐﹖,Miss Nina?,0,0,
 ,4f,7512,,NINA,02,done,,是⋯是的⋯⋯,Y-yes...,0,0,
@@ -2364,9 +2336,7 @@ Why is he part of the jury?",0,0,
 ,4f,75ba,,HOST,50,done,,"好的⚬
 所有的美少女都
 已經展示過她們
-的服裝了⚬","Alright.
-
-All the girls have shown their clothing.",0,0,
+的服裝了⚬",,0,0,
 ,4f,75e3,,HOST,50,done,,"哦哦哦哦﹗
 結果出來了﹗
 最後優勝者是⋯","Ohoho!
@@ -2375,7 +2345,7 @@ The results are in!
 
 The winner is...",0,0,
 ,4f,7607,,HOST,50,done,,"第號的妮娜
-小姐﹗﹗","No. 5932, miss Nina!",0,0,
+小姐﹗﹗",,0,0,
 ,4f,761d,,NINA,NINA_1,done,,"謝謝⋯
 謝謝你們～","Thank you...
 
@@ -2387,9 +2357,7 @@ Thank you all!",0,0,
 頒發這條價值
 萬的復古項
 鍊﹗
-恭喜妮娜﹗","We now invite Bang Lin's president, Mr. Hammas, to congratulate Nina and award her this valuable Retro Necklace!
-
-Congratulations, miss Nina!",0,0,
+恭喜妮娜﹗",,0,0,
 ,4f,7689,,LAKI,LAKI,done,,"你們這些沒有眼
 睛的人﹗
 
@@ -2461,9 +2429,7 @@ Our dream can now finally come true!",0,0,
 我絞盡腦汁想出
 的樹裝﹐真的比
 不上那隻笨白兔
-嗎﹖","But I'm still so angry!
-
-Is the leaf costume I racked my brains to come up with really not as good as that stupid rabbit?",0,0,
+嗎﹖",,0,0,
 ,4f,786c,,KULU,KULU,done,,"不～﹗
 在下認為﹐拉琪
 的樹葉裝是最棒
@@ -2473,9 +2439,7 @@ I think that your leaf costume is the absolute best!",0,0,
 ,4f,7895,,LAKI,LAKI,done,,"不過話說回來⚬
 我們拿到了項鍊
 現在要怎麼離開
-這裡﹖","But anyway.
-
-Now that we got the necklace... How do we get out of here?",0,0,
+這裡﹖",,0,0,
 ,4f,78c5,,KULU,KULU,done,,"又是你們﹗
 看來在下要稍
 微拿出一點實力
@@ -2485,9 +2449,7 @@ Looks like I'll have to show you what I'm made of.",0,0,
 ,4f,78f1,,LAKI,LAKI,done,,"哦～呵呵呵﹗
 我要讓那隻笨白
 兔了解﹐才是真
-正的女王﹗","Ohohoho!
-
-I want that dumb rabbit to understand who's the real queen here!",0,0,
+正的女王﹗",,0,0,
 ,4f,7924,,LAKI,LAKI,done,,"哼﹗
 還你就還你﹗","Hmph!
 
@@ -2626,7 +2588,9 @@ Heh heh heh!",0,0,
 妮娜小姐⚬
 
 第一次選秀評分
-請準備上台⚬",,0,0,
+請準備上台⚬","N°5932, miss Nina.
+
+Please get ready to go on stage for the first round of the talent show.",0,0,
 ,4e,4f99,,NINA,02,done,,"哦⋯﹗
 好的﹐謝謝您⚬","Oh...!
 
@@ -2859,7 +2823,7 @@ This is for you!",0,0,
 ,4f,7ad3,,BLANK,15,done,,真是謝謝你⚬,Thank you so much.,0,0,
 script_banglin_co_contest,4e,51fa,,BLANK,13,done,,"宣佈～
 休息２１８室
-初賽入選名單⚬",,0,0,
+初賽入選名單⚬",We'll now announce the preliminary finalists for lounge 218.,0,0,
 ,4e,521d,,BLANK,1D,done,,"啊﹗
 我入選了﹗
 
@@ -2869,13 +2833,13 @@ I was chosen!
 
 Phew!",0,0,
 ,4e,5235,,BLANK,13,done,,"３１６２號～
-麗子小姐⚬",,0,0,
+麗子小姐⚬","No. 3162, miss Lizzy.",0,0,
 ,4e,524c,,35,5E,done,,"呵呵呵～～
 理所當然的⚬","Heh heh heh...
 
 Of course.",0,0,
 ,4e,5263,,BLANK,13,done,,"４０９８號～
-拉琪小姐⚬",,0,0,
+拉琪小姐⚬","No. 4098, miss Laki.",0,0,
 ,4e,527a,,LAKI,LAKI,done,,"哦哦哦哦～
 呵呵呵呵﹗","Ohohoho...
 
@@ -2889,7 +2853,9 @@ I'm so glad!",0,0,
 ,4e,52b3,,NINA,02,done,,沒有希望了嗎﹖,Did I fail?,0,0,
 ,4e,52c3,,BLANK,13,done,,"最後一位～
 第５９３２號～
-妮娜小姐⚬",,0,0,
+妮娜小姐⚬","And finally...
+
+No.5932, miss Nina.",0,0,
 ,4e,52e8,,NINA,NINA_1,done,,"妮娜⋯入選了﹖
 謝謝⋯謝謝您﹗","I... was chosen?
 
@@ -2898,7 +2864,7 @@ Thank you... Thank you!",0,0,
 的??展示台上
 
 做最後的自選服
-裝展示⚬",,0,0,
+裝展示⚬","Next, those who have passed the preliminary selection, please go to the stage for your personally-selected clothing show.",0,0,
 ,4e,5337,,NINA,02,done,,"要趕快換上兔先
 生特製的禮服⚬",I must hurry and change into Mr. Rabbit's specially-made dress.,0,0,
 ,4e,5355,,NINA,NINA_4,done,,"啊⋯⋯這是什麼
@@ -2924,7 +2890,19 @@ H-how could this be?",0,0,
 第３１６２號～
 也?是世界名模
 千金的～
-麗子小姐﹗",,0,0,
+麗子小姐﹗","Ladies and gentlemen, thank you for your patience!
+
+Bang Lin Enterprises' product spokesperson talent show is about to reach its climax.
+
+Now, we will evaluate these beautiful girls' clothing, that they selected themselves!
+
+And let's welcome!
+
+No. 3162...
+
+That is, the world's ultimate supermodel... 
+
+Miss Lizzy!",0,0,
 ,4e,541b,,HOST,50,done,,"麗子小姐的服裝
 真?令人賞心悅
 目啊﹗
@@ -2933,7 +2911,15 @@ H-how could this be?",0,0,
 
 讓我們觀迎～
 第４０９８號～
-拉琪小姐～",,0,0,
+拉琪小姐～","Miss Lizzy's clothing is truly delightful!
+
+But here comes the competition!
+
+Let's welcome...
+
+No. 4098...
+
+Miss Laki!",0,0,
 ,4e,5475,,JUDGE,53,done,,"這⋯這是⋯
 傳說中的⋯⋯
 夏娃的羽衣嗎﹖
@@ -2971,7 +2957,11 @@ The nosebleeds from the jury just flow and flow... Miss Laki seems to be getting
 
 我們一起歡迎﹐
 第５９３２號～
-妮娜小姐﹗",,0,0,
+妮娜小姐﹗","Next, the last beauty in our talent show.
+
+We warmly welcome, No.5932...
+
+Miss Nina!",0,0,
 ,4e,5578,,BALLOT,BALLOT_5,done,,妮娜～加油～﹗,"Nina, good luck!",0,0,
 ,4e,5587,,HOST,50,done,,妮娜小姐﹖,Miss Nina?,0,0,
 ,4e,5595,,NINA,02,done,,是⋯是的⋯⋯,Y-yes...,0,0,
@@ -3001,7 +2991,9 @@ Why is he part of the jury?",0,0,
 ,4e,563d,,HOST,50,done,,"好的⚬
 所??美少女都
 已經展示過她們
-的服裝了⚬",,0,0,
+的服裝了⚬","Alright.
+
+All the girls have shown their clothing.",0,0,
 ,4e,5666,,HOST,50,done,,"哦哦哦哦﹗
 結果出來了﹗
 最後優勝者是⋯","Ohoho!
@@ -3010,7 +3002,7 @@ The results are in!
 
 The winner is...",0,0,
 ,4e,568a,,HOST,50,done,,"第５９３２號的
-妮娜小姐﹗﹗",,0,0,
+妮娜小姐﹗﹗","No. 5932, miss Nina!",0,0,
 ,4e,56a5,,NINA,NINA_1,done,,"謝謝⋯
 謝謝你們～","Thank you...
 
@@ -3022,7 +3014,9 @@ Thank you all!",0,0,
 頒發這條價值
 萬??古項
 鍊﹗
-恭喜妮娜﹗",,0,0,
+恭喜妮娜﹗","We now invite Bang Lin's president, Mr. Hammas, to congratulate Nina and award her this valuable Retro Necklace!
+
+Congratulations, miss Nina!",0,0,
 ,4e,5711,,LAKI,LAKI,done,,"你們這些沒有眼
 睛的人﹗
 
@@ -3094,7 +3088,9 @@ Our dream can now finally come true!",0,0,
 我絞盡腦汁想出
 的樹葉裝﹐真的
 比不上那隻
-笨白兔嗎﹖",,0,0,
+笨白兔嗎﹖","But I'm still so angry!
+
+Is the leaf costume I racked my brains to come up with really not as good as that stupid rabbit?",0,0,
 ,4e,58f5,,KULU,KULU,done,,"不～﹗
 在下認為﹐拉琪
 的樹葉裝是最棒
@@ -3104,7 +3100,9 @@ I think that your leaf costume is the absolute best!",0,0,
 ,4e,591e,,LAKI,LAKI,done,,"不過話說回來⚬
 我們拿到了項鍊
 現?要怎麼離開
-這裡﹖",,0,0,
+這裡﹖","But anyway.
+
+Now that we got the necklace... How do we get out of here?",0,0,
 ,4e,594e,,KULU,KULU,done,,"又是你們﹗
 看來在下要稍
 微拿出一點實力
@@ -3114,7 +3112,9 @@ Looks like I'll have to show you what I'm made of.",0,0,
 ,4e,597a,,LAKI,LAKI,done,,"哦～呵呵呵﹗
 我要讓那隻笨白
 兔了解﹐誰才是
-真正的女王﹗",,0,0,
+真正的女王﹗","Ohohoho!
+
+I want that dumb rabbit to understand who's the real queen here!",0,0,
 ,4e,59b0,,LAKI,LAKI,done,,"哼﹗
 還你就還你﹗","Hmph!
 
@@ -5388,17 +5388,7 @@ I'm going to save Helen right now!",0,0,
 我還是⋯⋯
 愛⋯⋯
 著⋯⋯⋯
-妳⋯⋯⋯","Thank... you...
-
-H... Helen...
-
-You might have lied... to me...
-
-But I... I still...
-
-Love...
-
-You...",0,0,
+妳⋯⋯⋯",,0,0,
 ,55,73b7,,BALLOT,BALLOT_3,done,,"安東﹗﹗﹗﹗
 可惡﹗
 
@@ -5424,13 +5414,7 @@ Don't worry, I'll make sure to rescue Helen!",0,0,
 了﹗
 
 哼﹗燒死她﹐為
-死去的小孩報仇","Hmph! I knew it!
-
-It turned out that Haiqing was a transformed mermaid! I heard her conversations with the mermaid, all of it!
-
-Humph!
-
-We'll burn her at the stake to avenge the deaths of our children!",0,0,
+死去的小孩報仇",,0,0,
 ,55,745b,,BALLOT,BALLOT_5,done,,"糟糕～
 這要怎麼辦﹖","Oh no...
 
@@ -5576,17 +5560,9 @@ Anton...",0,0,
 嗎﹖
 安東不能做的﹐
 就由我來完成吧
-﹗","Ballot, I'll keep on living.
-
-For Haiqing...
-
-And for Anton...
-
-Do you want me to join you?
-
-Let me do what Anton couldn't!",0,0,
+﹗",,0,0,
 ,55,77f8,,BALLOT,BALLOT_5,done,,"海藍＆水精靈加
-入隊伍⚬",Helen & Merlith joined the party.,0,0,
+入隊伍⚬",,0,0,
 ,55,780f,,SYSTEM,VAST_FAME,done,,"如將海藍置於排
 頭﹐將可化為人
 
@@ -5643,13 +5619,9 @@ It won't bring Anton back to life...",0,0,
 了你⋯
 
 該怎麼感謝你呢
-這個就給你了﹗","Gua Gua came back safely, all thanks to you...
-
-How could I thank you?
-
-Here, have this!",0,0,
+這個就給你了﹗",,0,0,
 ,55,7991,,BALLOT,BALLOT_1,done,,"得到了
-萬能血清",Got Cure-all Serum!,0,0,
+萬能血清",,0,0,
 ,55,79a2,,BLANK,15,done,,"瓜瓜這次能平安
 回來﹐真是多虧
 了你⋯
@@ -5688,13 +5660,7 @@ Even though Anton is gone, you have to be strong!",0,0,
 那海藍果然怪怪
 的﹗
 原來真的是人魚
-變的﹗","Hey, dear!
-
-I'll just say it!
-
-I knew that Helen was weird!
-
-It turned out she was a transformed mermaid!",0,0,
+變的﹗",,0,0,
 ,55,7aa3,,BLANK,1D,done,,"啊﹗海藍～
 是妳啊﹗",Ah! H-Helen... It's you!,0,0,
 ,55,7ab9,,BLANK,1F,done,,"南方的海島上﹐
@@ -5733,17 +5699,7 @@ If you keep making noise, the mermaids are going to eat you!",0,0,
 謝謝你～
 
 這個就送給你了
-好高興﹗","This is... Super Brabra?!
-
-AWESOME!
-
-This is what my cousin wanted to send me?
-
-I'm SO happy!
-
-Thank you! 
-
-I'm so happy to give this to you!",0,0,
+好高興﹗",,0,0,
 ,55,7bda,,BALLOT,BALLOT_1,done,,得到了ｘｘｘ﹗,Got XXX!,0,0,
 ,55,7be9,,BLANK,1E,done,,"哇～哇～布拉布
 拉超人耶﹗
@@ -6033,9 +5989,13 @@ It won't bring Anton back to life...",0,0,
 了你⋯
 
 該怎麼感謝你呢
-這????了﹗",,0,0,
+這????了﹗","Gua Gua came back safely, all thanks to you...
+
+How could I thank you?
+
+Here, have this!",0,0,
 ,5c,4d90,,BALLOT,BALLOT_1,done,,"得到了
-萬?血清",,0,0,
+萬?血清",Got Cure-all Serum!,0,0,
 ,5c,4da1,,BLANK,15,done,,"瓜瓜這次能平安
 回來﹐真是多虧
 了你⋯
@@ -6074,7 +6034,13 @@ Even though Anton is gone, you have to be strong!",0,0,
 那海藍果然怪怪
 的?
 原來真的是人魚
-變??",,0,0,
+變??","Hey, dear!
+
+I'll just say it!
+
+I knew that Helen was weird!
+
+It turned out she was a transformed mermaid!",0,0,
 ,5c,4ea2,,BLANK,1D,done,,"啊﹗海藍～
 是妳啊﹗",Ah! H-Helen... It's you!,0,0,
 script_east_fishmarket_47,5c,4eb8,,BLANK,1F,done,,"南方的海島上﹐
@@ -6111,7 +6077,17 @@ If you keep making noise, the mermaids are going to eat you!",0,0,
 謝謝你～
 
 這??送給你了
-好高興﹗",,0,0,
+好高興﹗","This is... Super Brabra?!
+
+AWESOME!
+
+This is what my cousin wanted to send me?
+
+I'm SO happy!
+
+Thank you! 
+
+I'm so happy to give this to you!",0,0,
 ,5c,4fd9,,BALLOT,BALLOT_1,done,,"得到了
 縮地射線",,0,0,
 ,5c,4fe9,,BLANK,1E,done,,"哇～哇～布拉布
@@ -6150,7 +6126,13 @@ script_east_fishmarket_4e,5c,47fc,,BLANK,16,done,,"哼﹗我就知道﹗
 了﹗
 
 哼﹗燒死她﹐為
-死去的小孩報仇",,0,0,
+死去的小孩報仇","Hmph! I knew it!
+
+It turned out that Haiqing was a transformed mermaid! I heard her conversations with the mermaid, all of it!
+
+Humph!
+
+We'll burn her at the stake to avenge the deaths of our children!",0,0,
 ,5c,485a,,BALLOT,BALLOT_5,done,,"糟糕～
 這要怎麼辦﹖","Oh no...
 
@@ -6235,7 +6217,17 @@ I'm going to save Helen right now!",0,0,
 我?是⋯⋯
 愛⋯⋯
 著???
-妳⋯⋯⋯",,0,0,
+妳⋯⋯⋯","Thank... you...
+
+H... Helen...
+
+You might have lied... to me...
+
+But I... I still...
+
+Love...
+
+You...",0,0,
 ,5c,47b6,,BALLOT,BALLOT_3,done,,"安東﹗﹗﹗﹗
 可惡﹗
 
@@ -6380,9 +6372,17 @@ Anton...",0,0,
 嗎﹖
 安東不能做的﹐
 就由我來完成吧
-﹗",,0,0,
+﹗","Ballot, I'll keep on living.
+
+For Haiqing...
+
+And for Anton...
+
+Do you want me to join you?
+
+Let me do what Anton couldn't!",0,0,
 ,5c,4bf7,,BALLOT,BALLOT_5,done,,"海藍＆水精靈加
-入??⚬",,0,0,
+入??⚬",Helen & Merlith joined the party.,0,0,
 ,5c,4c0e,,SYSTEM,VAST_FAME,done,,"如將海藍置於排
 頭﹐將可化為人
 
