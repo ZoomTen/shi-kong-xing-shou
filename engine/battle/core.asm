@@ -562,6 +562,7 @@ HandleBattleEnd::
 	dw BattleEnd_Jump_2
 
 BattleEnd_Jump_1::
+	assert BANK(Script_023_55f6) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_55f6
 	farcall ExecuteBattleAnimScriptAt
 	call SetSideSelectForTurn
@@ -577,7 +578,8 @@ BattleEnd_CheckPartyAlive::
 	call BattleEnd_ScanNextLivingMon
 	and a
 	jr z, BattleEnd_PlayerLoss
-	ld de, EndBattleTurn
+	assert BANK(Script_023_55c5) == BANK(MoveAnimScript_Pointers)
+	ld de, Script_023_55c5
 	farcall ExecuteBattleAnimScriptAt
 	ld a, 2
 	ld [hBattleJumptableIndex], a
@@ -2527,6 +2529,7 @@ BattleStep_ScriptedFlee::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_5809) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_5809
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
@@ -3977,6 +3980,7 @@ ProcessStatusEffect77::
 	xor a
 	ld [wBattleState], a
 	ld [wBattleAnimStep], a
+	assert BANK(Script_023_57ae) == BANK(MoveAnimScript_Pointers)
 	ld de, Script_023_57ae
 	farcall ExecuteBattleAnimScriptAt
 	call DelayFrame
