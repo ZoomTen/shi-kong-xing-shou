@@ -91,7 +91,8 @@ Ballot: D... Damn it!",1,0,?
 ,2d,44ec,BattleText_44ec,,,line,1,使用～⟨name2⟩,Used <name2>!,1,0,
 ,2d,44f3,BattleText_44f3,,,line,1,使用道具,Use item,1,0,
 ,2d,44f9,BattleText_44f9,,,line,1,提升⟨name⟩點魔禦力,Raised <name> points of Magic Defense,1,0,
-,2d,4505,BattleText_4505,,,done,1,⟨name⟩學到了新技巧～⟨e6⟩,<name> learned <e6>!,1,0,
+,2d,4505,BattleText_4505,,,done,1,⟨name⟩學到了新技巧～⟨e6⟩,"<name> learned
+<e6>!",1,0,
 ,2d,4511,BattleText_4511,,,line,1,效果不錯﹗,It's quite effective!,1,0,
 ,2d,451b,BattleText_451b,,,line,1,效果還可以﹗,It's somewhat effective!,1,0,
 ,2d,4525,BattleText_4525,,,line,1,⟨name⟩忍耐中,<name> is enduring,1,0,
