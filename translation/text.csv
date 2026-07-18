@@ -318,7 +318,7 @@ menu_25_6199,25,6199,String_025_6199,,,line,,一般裝備元,,0,0,
 ,25,61a3,String_025_61a3,,,line,,狀態存放領取換盒子放生,,0,0,
 ,25,61b6,String_025_61b6,,,line,,目前位置,Location,1,0,
 ,25,61bf,String_025_61bf,,,line,,盒子,Box,1,0,
-menu_options,00,1cc5,String_1cc5,,,choice,1,是  否,"        Yes          No",0,0,
+menu_options,00,1cc5,String_1cc5,,,choice,1,是  否,        Yes          No,0,0,
 ,00,1cd0,String_1cd0,,,choice,,回春 靈動,,0,0,
 mon_descriptions,26,5864,,,,line,,﹖﹖﹖,,0,0,
 ,26,5869,,,,line,1,個性暴躁易怒﹐生氣時會卯起來亂打⚬,Irritable and angry. It recklessly starts fights.,0,1,
@@ -1551,7 +1551,7 @@ If we don't do anything, it will be too late when 'that' time comes!",0,0,
 
 Why? Why, why, why, why, why? 
 
-Why did you leave behind!?",0,0,
+Why did you leave me here!?",0,0,
 ,12,75b7,,BALLOT,BALLOT_4,done,,爸﹗﹗,"Dad!!!
 
 ",0,0,
@@ -1815,7 +1815,7 @@ The design, as well as the power chip, were provided by the president himself.",
 
 Once it gains global popularity, mass production will begin.
 
-The current pre-order price is of 45 million ¥.",0,0,
+The current pre-order price is of ¥45 million.",0,0,
 ,4f,588e,,BALLOT,BALLOT_4,done,,"４⋯
 ４５００萬﹖",4... 45 million?,0,0,
 ,4f,589f,,2B,25,done,,"是的⚬
@@ -1842,7 +1842,7 @@ This young lady looks quite beautiful, you could consider signing up at the serv
 ,4f,592a,,BALLOT,BALLOT_5,done,,"要如何籌到
 ４５００萬呢﹖
 
-該怎麼辦﹖","Where are we going to get 45 million ¥?
+該怎麼辦﹖","Where are we going to get ¥45 million?
 
 What are we going to do?",0,0,
 ,4f,594e,,NINA,02,done,,⋯⋯,...,0,0,
@@ -2767,7 +2767,7 @@ What a pest...",0,0,
 我終於找到他了
 ﹗","Dad?
 
-Isn't that dad?
+That's him, isn't it?
 
 I finally found him!",0,0,
 ,4f,5457,,2A,53,done,,"先生您好⚬
@@ -2821,7 +2821,7 @@ Have a good day.",0,0,
 不過至少知道爸
 爸的行蹤了⚬","Darn it...
 
-Just when I had found dad.
+Just when I had found Dad.
 
 But...
 
@@ -4285,7 +4285,7 @@ It's all because of those damned Volt people!",0,0,
 當成高速賽車的
 核心的話﹐
 那一定就是最高
-級的高速賽車﹗",All the best racing cars use a Rainbow Crystal in their core! It's ir- replaceable!,0,0,
+級的高速賽車﹗",All the best racing cars use a Rainbow Crystal in their core! It's irreplaceable!,0,0,
 ,0e,64ad,,BLANK,20,done,,"這次不能忘記⋯
 不然頭目就⋯
 
@@ -4405,14 +4405,16 @@ You won't stop me from retreating!",0,0,
 
 雖然被打敗了﹐
 但你還是阻止不
-了我的徹退的﹗",Damn it! I've been beaten! But you're still no match my retreating skills!,0,0,
+了我的徹退的﹗",Damn it! I've been beaten! But you're still no match for my retreating skills!,0,0,
 ,0e,67e0,,BALLOT,BALLOT_0,done,,"這一定就是彩虹
 水晶了﹗
 
 雷歐博士有了這
 個﹐
 一定就可以打敗
-閃電隊了﹗","This must be the Rainbow Crystal! With this, Dr. Leo will be able to defeat the Volts!",0,0,
+閃電隊了﹗","This must be the Rainbow Crystal!
+
+With this, Dr. Leo will be able to defeat the Volts!",0,0,
 ,0e,6821,,BALLOT,BALLOT_1,done,,得到彩虹水晶⚬,Got the Rainbow Crystal!,0,0,
 ,0e,6832,,BLANK,12,done,,"閃電集團莫名奇
 妙的跑光了﹗
@@ -8341,7 +8343,9 @@ script_gall_enterprise_0e_1,12,579d,,1B,4C,done,,"巴洛特﹐是你呀
 
 或許可以向董事
 長要求動力晶片
-吧⚬","The Chairman overworked himself for this! He is now recuperating and is not available to receive guests. About the power chip ~ if you can find his lost grandson, maybe he can ask the chairman for the power chip.
+吧⚬","The Chairman overworked himself for this! He is now recuperating and is not available to receive guests.
+
+About the power chip... if you can find his lost grandson, maybe he can ask the chairman for that chip.
 
 ",0,0,
 ,12,599a,,1B,4C,done,,"糟糕～都這麼晚
@@ -8465,7 +8469,7 @@ You'll have to be on time for the ceremony tomorrow!",0,0,
 動力晶片﹐我必
 須要走了⚬","Yes. 
 
-I must find dad and the power chips, so I have to go.",0,0,
+I must find Dad and the Power Chips, so I have to go.",0,0,
 ,12,79cc,,NINA,02,done,,"⋯⋯⋯
 那麼⋯我們就⋯
 明天見囉﹗","...
@@ -8542,7 +8546,7 @@ That's because his ancestor was also one of the eight great scientists...",0,0,
 的邦林企業⚬
 
 是本公司最大的
-商業對手⚬","Yes. It is located in Sky City, and is our biggest business rival.",0,0,
+商業對手⚬","Yes. It is located in Sky City, and is our biggest business rival.",0,0,city of heaven?
 ,12,7bbb,,BALLOT,BALLOT_5,done,,"但是多魯市﹐並
 沒有對外連結的
 道路啊﹗",But there's no way to get there from Dorington!,0,0,
@@ -8572,9 +8576,9 @@ This is for you!",0,0,
 的通道⚬
 
 這就是加爾企業
-對外流通的祕密","There's an iron door inside the Clock Tower, leading to Dama's capital.
+對外流通的祕密","There's an iron door inside the Clock Tower that leads there.
 
-This is the secret to GaleCorp's worldwide distribution circuit!",0,0,
+This is the secret to GaleCorp's worldwide distribution circuit!",0,0,city of dama / dama's capital? is that even a place?
 ,12,7ca6,,BALLOT,BALLOT_5,done,,"謝謝你～董事長
 ﹗","Thank you, Mr. Chairman!",0,0,
 ,12,7cb9,,28,4E,done,,"我也要感謝你～
@@ -15227,7 +15231,7 @@ script_tech_city2_drleo_6967,0e,6967,,DR_LEO,DR_LEO,done,,"這不是彩虹水晶
 
 等等～
 這就把黃金鳳凰
-號的核心換掉⚬","Isn't this a rainbow crystal? That's great!
+號的核心換掉⚬","Isn't this the Rainbow Crystal? That's great!
 
 Now I can make a new core for the Golden Phoenix!",0,0,
 ,0e,69a6,,DR_LEO,DR_LEO,done,,⋯⋯⋯,...,0,0,
